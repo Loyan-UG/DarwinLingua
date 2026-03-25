@@ -1,450 +1,247 @@
 # Darwin Lingua
 
-Darwin Lingua is a modular language-learning platform built with .NET 10 and .NET MAUI.
+[![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![.NET MAUI](https://img.shields.io/badge/.NET%20MAUI-Cross--Platform-512BD4?logo=dotnet&logoColor=white)](https://learn.microsoft.com/dotnet/maui/)
+[![SQLite](https://img.shields.io/badge/SQLite-Local%20Storage-003B57?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![EF Core](https://img.shields.io/badge/EF%20Core-ORM-6DB33F?logo=.net&logoColor=white)](https://learn.microsoft.com/ef/core/)
+[![Architecture](https://img.shields.io/badge/Architecture-Modular%20Monolith-0A7EA4)](#architecture)
+[![Approach](https://img.shields.io/badge/Approach-Local--First-1F8A70)](#phase-1-focus)
+[![Status](https://img.shields.io/badge/Status-Docs%20%26%20Scaffolding-F39C12)](#current-status)
 
-It is designed as a **multi-product language ecosystem** where each end-user product targets a specific language while sharing a common architectural foundation.
+Darwin Lingua is a modular language-learning platform built with `.NET 10` and `.NET MAUI`.
 
-The first active end-user product is:
+It is designed as a multi-product ecosystem where each learner-facing product targets a specific language while reusing a shared architectural foundation. The first active product is **Darwin Deutsch**, a German-learning app focused on practical vocabulary for immigrants, newcomers, foreign workers, and other real-world learners.
 
-- **Darwin Deutsch** — the German-learning product
+## Current Status
 
-The architecture is intentionally designed so that additional products can be introduced later, such as:
+This repository is currently **documentation-first and scaffold-first**.
 
+- The product, domain, storage, offline, and import strategy are documented in depth.
+- The solution structure is scaffolded under `src/`.
+- The MAUI app is still close to the default template.
+- The import tool is currently a placeholder.
+- Test projects exist, but they are still placeholder tests.
+
+In other words: the architectural direction is strong, but the business implementation is still at an early stage.
+
+## Why This Project Exists
+
+Most language apps optimize for generic drills. Darwin Deutsch is intended to optimize for **practical language use in real life**.
+
+Phase 1 starts with a disciplined vocabulary-first product that helps users:
+
+- browse German vocabulary by `CEFR` level
+- browse vocabulary by real-life topic
+- read meanings in one or two selected meaning languages
+- read example sentences
+- mark favorites
+- keep lightweight local learning state
+- use the app offline
+
+The long-term direction expands beyond vocabulary into practice, richer lexical intelligence, and eventually newcomer-support resource discovery.
+
+## Phase 1 Focus
+
+### Included in Phase 1
+
+- German vocabulary entries
+- CEFR-based browsing
+- topic-based browsing
+- multilingual meanings
+- example sentences
+- one or two selected meaning languages
+- platform text-to-speech
+- favorites
+- lightweight user word state
+- local SQLite storage
+- JSON-based content import
+- offline-capable core experience
+
+### Explicitly Deferred
+
+- spaced repetition
+- flashcards and review sessions
+- grammar engine
+- collocations and lexical relations
+- cloud sync
+- admin editing workflows
+- web app and public API
+- migrant support resource directory
+- merge/update import behavior
+
+## Product Direction
+
+Darwin Lingua is not intended to remain a single-language app. The platform is designed so future products can reuse the same core foundation, for example:
+
+- Darwin Deutsch
 - Darwin English
 - Darwin Arabic
 - Darwin Turkish
 - Darwin Persian
 
-Each product can provide a focused learning experience for one target language while reusing the same core platform architecture.
+The key design rule is simple: **do not hardcode the platform as German-only even though Phase 1 is German-focused**.
 
----
+## Architecture
 
-## Platform Vision
+The documented architectural direction is:
 
-Darwin Lingua is not intended to be just a single-language app.
+- modular monolith
+- clean architecture
+- bounded contexts
+- local-first Phase 1 delivery
+- shared business logic across delivery applications
+- structured content import instead of ad hoc content editing
 
-It is designed as a reusable learning platform that supports:
+### Active Phase 1 Contexts
 
-- multiple language products
-- cross-platform mobile and desktop delivery
-- shared domain and application core
-- local-first learning experience
-- structured content growth through import packages
-- future expansion to web, API, admin, practice, and resource-discovery modules
+- `Catalog`
+- `Learning`
+- `ContentOps`
+- `Localization`
 
-In Phase 1, the platform will ship only one active learner-facing product:
+### Deferred but Designed
 
-- **Darwin Deutsch**
+- `Practice`
+- `Resource Discovery`
 
----
+### Important Architectural Notes
 
-## Darwin Deutsch
-
-Darwin Deutsch is the first Darwin Lingua product.
-
-It is a vocabulary-first German learning application focused on practical language learning for:
-
-- immigrants
-- newcomers
-- foreign workers
-- international learners
-- users who need structured and useful German support in daily life
-
-Phase 1 focuses on:
-
-- CEFR-based vocabulary browsing
-- topic-based vocabulary browsing
-- multilingual meanings
-- example sentences
-- one or two selected meaning languages
-- local-first behavior
-- favorites
-- lightweight user word state
-- structured JSON-based content import
-
----
-
-## Product Strategy
-
-Darwin Lingua uses a two-level naming and product strategy:
-
-### Platform / Solution Level
-
-- **Darwin Lingua**
-
-This is the ecosystem, repository, solution, and architectural umbrella.
-
-### End-User Product Level
-
-- **Darwin Deutsch**
-
-This is the current user-facing application for German learning.
-
-### Future Product Pattern
-
-Future products should follow the same naming pattern:
-
-- Darwin + target language name
-
-Examples:
-
-- Darwin English
-- Darwin Arabic
-- Darwin Turkish
-
-This is why the architecture must not be hardcoded as German-only, even though Phase 1 implementation is German-focused.
-
----
-
-## Core Principles
-
-The platform is built around these principles:
-
-- **Clean Architecture**
-- **Modular Monolith**
-- **Local-first Phase 1**
-- **Vocabulary-first Phase 1**
-- **Shared business core**
-- **Clear bounded contexts**
-- **Structured content import**
-- **Future-ready multi-language product design**
-
----
-
-## Technology Direction
-
-Current intended stack:
-
-- **.NET 10**
-- **.NET MAUI**
-- **Visual Studio 2026**
-- **EF Core**
-- **SQLite** for Phase 1 local storage
-
-Planned future expansion may include:
-
-- Web API
-- Admin application
-- Web application
-- cloud sync scenarios
-- richer practice features
-- additional language products
-
----
+- Shared content and user state should remain logically separate.
+- Import is an operational context, not a UI shortcut or temporary script concern.
+- Phase 1 should stay small on purpose.
+- A modular monolith is the right choice here; microservices would be premature.
 
 ## Repository Structure
 
-Recommended repository structure:
+Current repository layout:
 
 ```text
-/README.md
-/LICENSE.md
-/NOTICE.md
-/.editorconfig
-/.gitattributes
-/.gitignore
-/Directory.Build.props
-/Directory.Build.targets
-/Directory.Packages.props
-/global.json
+DarwinLingua/
+├─ docs/
+├─ src/
+│  ├─ Apps/
+│  │  ├─ DarwinDeutsch.Maui/
+│  │  └─ DarwinLingua.ImportTool/
+│  ├─ BuildingBlocks/
+│  │  ├─ DarwinLingua.Contracts/
+│  │  └─ DarwinLingua.SharedKernel/
+│  └─ Modules/
+│     ├─ Catalog/
+│     ├─ ContentOps/
+│     ├─ Learning/
+│     └─ Localization/
+├─ tests/
+├─ tools/
+├─ assets/
+└─ DarwinLingua.slnx
+```
 
-/docs
-/src
-/tests
-/tools
-/assets
+Note: the documentation sometimes discusses a leaner five-project Phase 1 cut (`Domain`, `Application`, `Infrastructure`, `Maui`, `ImportTool`). The current codebase is organized as **modular context-based scaffolding**, which is acceptable, but the implementation should stay disciplined so the internal boundaries remain clear.
 
-The product is designed as a **local-first, vocabulary-first learning platform** focused on practical German usage for immigrants, newcomers, and other learners who need structured and useful support in real life.
+## Documentation Map
 
-The first production goal is a strong Phase 1 application with:
-
-- CEFR-based vocabulary browsing
-- topic-based vocabulary browsing
-- multilingual meanings
-- example sentences
-- one or two selected meaning languages
-- local-first behavior
-- favorites
-- lightweight user word state
-- structured JSON-based content import
-
-The long-term direction includes future expansion toward:
-
-- practice and review features
-- richer lexical intelligence
-- web platform support
-- content management workflows
-- migrant-support resource discovery
-- optional cloud and sync scenarios
-
----
-
-## Why This Project Exists
-
-Many German-learning products focus only on generic language drills. Darwin Deutsch is designed with a more practical goal:
-
-- help users learn German vocabulary in structured levels from A1 to C2
-- support multiple target meaning languages
-- support real-life topic-based learning
-- remain useful offline
-- grow gradually through controlled content packages
-- eventually support real-world newcomer needs beyond vocabulary
-
-This project is intentionally designed to begin with a disciplined, high-value Phase 1 instead of an oversized first release.
-
----
-
-## Core Product Direction
-
-Darwin Deutsch is designed around these principles:
-
-- **Vocabulary-first for Phase 1**
-- **Local-first architecture**
-- **Clean domain boundaries**
-- **Shared business core across platforms**
-- **Structured content growth**
-- **Extensibility without premature complexity**
-
-The project begins as a modular monolith and is intentionally not designed as microservices.
-
----
-
-## Technology Direction
-
-Current intended stack:
-
-- **.NET 10**
-- **.NET MAUI**
-- **Visual Studio 2026**
-- **EF Core**
-- **SQLite** for Phase 1 local storage
-
-Planned future expansion may include:
-
-- Web API
-- Web application
-- Admin/content management application
-- cloud synchronization scenarios
-
----
-
-## Repository Documentation Structure
-
-The documentation is organized under the `docs/` folder.
+The documentation is the strongest part of the repository right now. Start here:
 
 ### Overview
 
-- [Product Vision](docs/00-overview/01-Product-Vision.md)
-- [Product Scope](docs/00-overview/02-Product-Scope.md)
-- [Product Phases](docs/00-overview/03-Product-Phases.md)
-- [Name Ideas](docs/00-overview/04-Name-Ideas.md)
+- [Product Vision](docs/01-%20Product-Vision.md)
+- [Product Scope](docs/02-%20Product-Scope.md)
+- [Product Phases](docs/03-%20Product-Phases.md)
+- [Early Product Decisions](docs/21-%20Early%20Product%20Decisions.md)
 
 ### Content and Import
 
-- [Content Strategy](docs/10-content/11-Content-Strategy.md)
-- [AI Content Format](docs/10-content/12-AI-Content-Format.md)
-- [Import Rules](docs/10-content/13-Import-Rules.md)
-- [Import Workflow](docs/10-content/14-Import-Workflow.md)
+- [Content Strategy](docs/11-%20Content-Strategy.md)
+- [AI Content Format](docs/12-%20AI-Content-Format.md)
+- [Entry Structure Example](docs/13-%20Entry%20Structure.json)
+- [Import Rules](docs/14-%20Import-Rules.md)
+- [Import Workflow](docs/34-%20Import-Workflow.md)
+- [Topic Seed Ideas](docs/15-%20Topic-Seed-Ideas.md)
 
 ### Domain
 
-- [Domain Model](docs/20-domain/21-Domain-Model.md)
-- [Domain Rules](docs/20-domain/22-Domain-Rules.md)
-- [Entity Relationships](docs/20-domain/23-Entity-Relationships.md)
-- [Phase 1 Domain Cut](docs/20-domain/24-Phase-1-Domain-Cut.md)
-- [Bounded Contexts](docs/20-domain/25-Bounded-Contexts.md)
+- [Domain Model](docs/22-%20Domain-Model.md)
+- [Domain Rules](docs/23-%20Domain-Rules.md)
+- [Entity Relationships](docs/24-%20Entity-Relationships.md)
+- [Phase 1 Domain Cut](docs/25-%20Phase-1-Domain-Cut.md)
+- [Bounded Contexts](docs/26-%20Bounded-Contexts.md)
 
-### Architecture
+### Architecture and Runtime
 
-- [Solution Architecture](docs/30-architecture/31-Solution-Architecture.md)
-- [Storage Strategy](docs/30-architecture/32-Storage-Strategy.md)
-- [Offline Strategy](docs/30-architecture/33-Offline-Strategy.md)
+- [Solution Architecture](docs/31-%20Solution-Architecture.md)
+- [Storage Strategy](docs/32-%20Storage-Strategy.md)
+- [Offline Strategy](docs/33-%20Offline-Strategy.md)
+- [Phase 1 Use Cases](docs/41-%20Phase-1-Use-Cases.md)
 
-### Implementation
+### Repository Reference
 
-- [Phase 1 Use Cases](docs/40-implementation/41-Phase-1-Use-Cases.md)
-
-### Reference
-
-- [Initial Topic Seed Ideas](docs/90-reference/91-Initial-Topic-Seed-Ideas.md)
-
----
+- [Documentation Index Draft](docs/00-%20Docs.md)
+- [Solution Folder Draft](docs/00-%20Solution%20Folders.md)
+- [Structure Draft](docs/00-%20Stracture.md)
 
 ## Recommended Reading Order
 
-If you are new to the project, read the documentation in this order:
+1. [Product Vision](docs/01-%20Product-Vision.md)
+2. [Product Phases](docs/03-%20Product-Phases.md)
+3. [Content Strategy](docs/11-%20Content-Strategy.md)
+4. [Domain Model](docs/22-%20Domain-Model.md)
+5. [Phase 1 Domain Cut](docs/25-%20Phase-1-Domain-Cut.md)
+6. [Bounded Contexts](docs/26-%20Bounded-Contexts.md)
+7. [Solution Architecture](docs/31-%20Solution-Architecture.md)
+8. [Storage Strategy](docs/32-%20Storage-Strategy.md)
+9. [Offline Strategy](docs/33-%20Offline-Strategy.md)
+10. [Import Workflow](docs/34-%20Import-Workflow.md)
+11. [Phase 1 Use Cases](docs/41-%20Phase-1-Use-Cases.md)
 
-1. [Product Vision](docs/00-overview/01-Product-Vision.md)
-2. [Product Scope](docs/00-overview/02-Product-Scope.md)
-3. [Product Phases](docs/00-overview/03-Product-Phases.md)
-4. [Content Strategy](docs/10-content/11-Content-Strategy.md)
-5. [AI Content Format](docs/10-content/12-AI-Content-Format.md)
-6. [Domain Model](docs/20-domain/21-Domain-Model.md)
-7. [Domain Rules](docs/20-domain/22-Domain-Rules.md)
-8. [Entity Relationships](docs/20-domain/23-Entity-Relationships.md)
-9. [Phase 1 Domain Cut](docs/20-domain/24-Phase-1-Domain-Cut.md)
-10. [Bounded Contexts](docs/20-domain/25-Bounded-Contexts.md)
-11. [Solution Architecture](docs/30-architecture/31-Solution-Architecture.md)
-12. [Storage Strategy](docs/30-architecture/32-Storage-Strategy.md)
-13. [Offline Strategy](docs/30-architecture/33-Offline-Strategy.md)
-14. [Import Workflow](docs/10-content/14-Import-Workflow.md)
-15. [Phase 1 Use Cases](docs/40-implementation/41-Phase-1-Use-Cases.md)
+## Technology Stack
 
----
+- `.NET 10`
+- `.NET MAUI`
+- `EF Core` (architectural target)
+- `SQLite` for Phase 1 local storage
+- `xUnit` for test projects
+- `Visual Studio` solution via `DarwinLingua.slnx`
 
-## Phase 1 Summary
+## Getting Started
 
-Phase 1 is intentionally smaller than the long-term product vision.
+### Prerequisites
 
-### Phase 1 includes
+- `.NET 10 SDK`
+- `.NET MAUI` workloads
+- `Visual Studio 2026` or another environment that supports `.slnx` and MAUI
 
-- German vocabulary entries
-- CEFR levels
-- topic-based categorization
-- multilingual meanings
-- example sentences
-- one or two selected meaning languages
-- platform-based text-to-speech usage
-- favorites
-- lightweight user word state
-- local SQLite storage
-- structured JSON import workflow
-- local-first/offline-first behavior
+### Open the Solution
 
-### Phase 1 does not include
-
-- full practice engine
-- spaced repetition
-- collocations and lexical relations
-- grammar engine
-- support-resource discovery
-- cloud sync
-- web application
-- admin editing workflows
-- content merging during import
-
-This boundary is deliberate and should be preserved.
-
----
-
-## Domain Overview
-
-The project domain is divided into bounded contexts.
-
-### Active in Phase 1
-
-- **Content Catalog**
-- **Learning Profile**
-- **Content Operations**
-- **Localization Support**
-
-### Designed but deferred
-
-- **Practice**
-- **Resource Discovery**
-
-For details, see [Bounded Contexts](docs/20-domain/25-Bounded-Contexts.md).
-
----
-
-## Architecture Overview
-
-Darwin Deutsch should be implemented as a **modular monolith** with clean internal boundaries.
-
-### Phase 1 projects
-
-- `DarwinDeutsch.Domain`
-- `DarwinDeutsch.Application`
-- `DarwinDeutsch.Infrastructure`
-- `DarwinDeutsch.Maui`
-- `DarwinDeutsch.ImportTool`
-
-### Planned future projects
-
-- `DarwinDeutsch.WebApi`
-- `DarwinDeutsch.Web`
-- `DarwinDeutsch.Admin`
-
-For details, see [Solution Architecture](docs/30-architecture/31-Solution-Architecture.md).
-
----
-
-## Storage Overview
-
-Phase 1 storage strategy:
-
-- **SQLite**
-- **EF Core**
-- one local relational database per app installation
-- imported content packages
-- locally stored user preferences and lightweight user state
-- no server dependency for core learning behavior
-
-For details, see:
-
-- [Storage Strategy](docs/30-architecture/32-Storage-Strategy.md)
-- [Offline Strategy](docs/30-architecture/33-Offline-Strategy.md)
-
----
-
-## Content Import Overview
-
-Darwin Deutsch content is expected to grow gradually through structured content packages.
-
-The official Phase 1 content import approach is:
-
-- JSON-based input
-- validated structure
-- controlled language/topic references
-- duplicate detection
-- skip duplicates
-- insert valid content
-- import reporting and traceability
-
-For details, see:
-
-- [AI Content Format](docs/10-content/12-AI-Content-Format.md)
-- [Import Rules](docs/10-content/13-Import-Rules.md)
-- [Import Workflow](docs/10-content/14-Import-Workflow.md)
-
----
-
-## Essential Phase 1 Use Cases
-
-The most important Phase 1 use cases are:
-
-- browse words by CEFR
-- browse words by topic
-- search words by German lemma
-- get word details
-- update meaning language preferences
-- toggle favorite
-- track word viewed
-- mark word as known
-- mark word as difficult
-- import content package
-- initialize database
-- seed reference data
-- ensure user learning profile exists
-
-For full details, see [Phase 1 Use Cases](docs/40-implementation/41-Phase-1-Use-Cases.md).
-
----
-
-## Recommended Solution Folder Direction
-
-A recommended future solution structure is:
+Open:
 
 ```text
-/README.md
-/docs
-/src
-  /DarwinDeutsch.Domain
-  /DarwinDeutsch.Application
-  /DarwinDeutsch.Infrastructure
-  /DarwinDeutsch.Maui
-  /DarwinDeutsch.ImportTool
-/tests
-  /DarwinDeutsch.Domain.Tests
-  /DarwinDeutsch.Application.Tests
-  /DarwinDeutsch.Infrastructure.Tests
+DarwinLingua.slnx
+```
+
+### Current Reality
+
+You can explore and extend the solution structure now, but you should not expect a feature-complete learner product yet. Most domain, application, infrastructure, import, and test projects are still scaffolds and need real implementation.
+
+## What Is Strong About This Project
+
+- clear product positioning
+- disciplined Phase 1 scope
+- strong bounded-context thinking
+- pragmatic local-first strategy
+- import pipeline treated as a first-class workflow
+- good separation between shared content and user state
+
+## Known Repository Gaps
+
+At the moment, the repository still has a few documentation and implementation mismatches:
+
+- `docs/02- Product-Scope.md` currently duplicates `Product Vision`
+- several docs still reference older file names or an older folder taxonomy
+- `docs/14- Import-Rules.md` has Markdown formatting issues
+- the source code does not yet implement the documented architecture in depth
+
+## Guiding Principle
+
+The project should remain:
+
+**useful, stable, local-first, and expandable.**
