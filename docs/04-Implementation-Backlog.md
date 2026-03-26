@@ -155,8 +155,8 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 ### 11. Application Use Cases
 
-- [ ] implement `InitializeDatabase`
-- [ ] implement `SeedReferenceData`
+- [x] implement `InitializeDatabase`
+- [x] implement `SeedReferenceData`
 - [x] implement `EnsureUserLearningProfileExists`
 - [x] implement `GetUserLearningProfile`
 - [x] implement `GetTopics`
@@ -200,14 +200,14 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 - [-] add domain tests for aggregate invariants
 - [-] add application tests for main use cases
-- [ ] add infrastructure tests for persistence mappings
+- [x] add infrastructure tests for persistence mappings
 - [-] add import workflow tests
 - [x] cover successful package import with SQLite-backed integration testing
 - [x] cover duplicate `packageId` rejection with SQLite-backed integration testing
 - [x] cover SQLite search-index bootstrap and prefix-first ranking with integration tests
 - [x] cover legacy `EnsureCreated` database baselining with integration tests
-- [ ] add seed-data tests
-- [ ] add localization coverage checks
+- [x] add seed-data tests
+- [x] add localization coverage checks
 - [ ] add smoke tests for the MAUI startup path where practical
 - [!] resolve local Windows application-control policy issue blocking some test assemblies and transitive dependencies; current default solution test run excludes `Learning.Domain.Tests`, `Catalog.Domain.Tests`, `Localization.Domain.Tests`, `ContentOps.Application.Tests`, and SQLite-backed infrastructure tests
 

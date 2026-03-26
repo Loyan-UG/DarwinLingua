@@ -32,13 +32,24 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
     /// <inheritdoc />
     public async Task InitializeAsync(CancellationToken cancellationToken)
     {
+        await EnsureDatabaseSchemaAsync(cancellationToken).ConfigureAwait(false);
+        await SeedReferenceDataAsync(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc />
+    public async Task EnsureDatabaseSchemaAsync(CancellationToken cancellationToken)
+    {
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
         await PrepareSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await ApplySqliteOperationalIndexesAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
 
+    /// <inheritdoc />
+    public async Task SeedReferenceDataAsync(CancellationToken cancellationToken)
+    {
         foreach (IDatabaseSeeder databaseSeeder in _databaseSeeders)
         {
             await databaseSeeder.SeedAsync(cancellationToken).ConfigureAwait(false);
