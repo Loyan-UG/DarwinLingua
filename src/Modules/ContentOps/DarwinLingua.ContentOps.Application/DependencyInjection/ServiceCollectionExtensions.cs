@@ -1,3 +1,5 @@
+using DarwinLingua.ContentOps.Application.Abstractions;
+using DarwinLingua.ContentOps.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -15,6 +17,8 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddContentOpsApplication(this IServiceCollection services)
     {
         ArgumentNullException.ThrowIfNull(services);
+
+        services.AddScoped<IContentImportService, ContentImportService>();
 
         return services;
     }

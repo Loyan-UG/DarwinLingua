@@ -9,10 +9,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Catalog\DarwinLingua.Catalog.Domain\DarwinLingua.Catalog.Domain.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\DarwinLingua.Contracts\DarwinLingua.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\DarwinLingua.Infrastructure\DarwinLingua.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\DarwinLingua.SharedKernel\DarwinLingua.SharedKernel.csproj" />
     <ProjectReference Include="..\DarwinLingua.ContentOps.Application\DarwinLingua.ContentOps.Application.csproj" />
     <ProjectReference Include="..\DarwinLingua.ContentOps.Domain\DarwinLingua.ContentOps.Domain.csproj" />
+    <ProjectReference Include="..\..\Localization\DarwinLingua.Localization.Domain\DarwinLingua.Localization.Domain.csproj" />
   </ItemGroup>
 
 </Project>

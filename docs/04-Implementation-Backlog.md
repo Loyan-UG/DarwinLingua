@@ -54,6 +54,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] add `global.json`
 - [x] add `Directory.Build.props`
 - [x] add `Directory.Packages.props`
+- [x] add local EF Core tool manifest for migration commands
 - [x] define package version management strategy
 - [x] define solution-wide nullable and warnings policy
 - [x] set up formatting and analysis defaults
@@ -100,9 +101,9 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 - [x] create EF Core database context
 - [x] configure SQLite persistence for the MAUI/local application
-- [-] define migration strategy in code
+- [x] define migration strategy in code
 - [x] implement database initialization flow
-- [ ] create migration-based startup initialization
+- [x] create migration-based startup initialization
 - [x] define database file location strategy per platform
 - [ ] add basic transactional support for write workflows
 
@@ -133,24 +134,24 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 - [x] implement `UserLearningProfile`
 - [x] implement `UserFavoriteWord`
-- [ ] implement `UserWordState`
+- [x] implement `UserWordState`
 - [-] enforce separation between content and user state
 - [x] persist user meaning-language preferences
 - [x] persist user UI-language preference
 
 ### 10. Content Operations Implementation
 
-- [ ] implement `ContentPackage`
-- [ ] implement `ContentPackageEntry`
-- [ ] define package/result status model
-- [ ] implement content package file reader
-- [ ] implement JSON parser
-- [ ] implement file-level validation
-- [ ] implement entry-level validation
-- [ ] implement normalization pipeline
-- [ ] implement duplicate detection
-- [ ] implement import summary/report model
-- [ ] implement transactional persistence for imports
+- [x] implement `ContentPackage`
+- [x] implement `ContentPackageEntry`
+- [x] define package/result status model
+- [x] implement content package file reader
+- [x] implement JSON parser
+- [x] implement file-level validation
+- [x] implement entry-level validation
+- [x] implement normalization pipeline
+- [x] implement duplicate detection
+- [x] implement import summary/report model
+- [x] implement transactional persistence for imports
 
 ### 11. Application Use Cases
 
@@ -167,10 +168,12 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] implement `UpdateUiLanguagePreference`
 - [x] implement `ToggleFavorite`
 - [x] implement `GetFavoriteWords`
-- [ ] implement `TrackWordViewed`
-- [ ] implement `MarkWordKnown`
-- [ ] implement `MarkWordDifficult`
-- [ ] implement `ImportContentPackage`
+- [x] implement `TrackWordViewed`
+- [x] implement `MarkWordKnown`
+- [x] implement `MarkWordDifficult`
+- [x] implement `ClearWordKnownState`
+- [x] implement `ClearWordDifficultState`
+- [x] implement `ImportContentPackage`
 
 ### 12. MAUI Screens
 
@@ -188,17 +191,21 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 - [x] define lemma normalization/search behavior
 - [x] implement local search queries
-- [ ] evaluate and implement SQLite search/index strategy
-- [ ] integrate platform TTS for words
-- [ ] integrate platform TTS for example sentences
-- [ ] define graceful failure behavior for missing TTS capability
+- [x] evaluate and implement SQLite search/index strategy
+- [x] integrate platform TTS for words
+- [x] integrate platform TTS for example sentences
+- [x] define graceful failure behavior for missing TTS capability
 
 ### 14. Testing and Quality
 
 - [-] add domain tests for aggregate invariants
 - [-] add application tests for main use cases
 - [ ] add infrastructure tests for persistence mappings
-- [ ] add import workflow tests
+- [-] add import workflow tests
+- [x] cover successful package import with SQLite-backed integration testing
+- [x] cover duplicate `packageId` rejection with SQLite-backed integration testing
+- [x] cover SQLite search-index bootstrap and prefix-first ranking with integration tests
+- [x] cover legacy `EnsureCreated` database baselining with integration tests
 - [ ] add seed-data tests
 - [ ] add localization coverage checks
 - [ ] add smoke tests for the MAUI startup path where practical

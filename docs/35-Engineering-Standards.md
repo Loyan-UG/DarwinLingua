@@ -165,7 +165,30 @@ Testing is required for the important rules and workflows.
 
 ---
 
-## 11. Final Rule
+## 11. Migration Standard
+
+Database schema changes must use EF Core migrations.
+
+### Rules
+
+- do not introduce schema drift by editing local SQLite files manually
+- do not add new tables, columns, or indexes without a migration
+- use the local tool manifest and run `dotnet tool restore` before migration commands when needed
+- keep startup initialization migration-based
+- treat `EnsureCreated` as legacy compatibility only, not as the normal forward path
+
+### Current Practical Workflow
+
+Typical workflow for schema changes:
+
+1. update entity/configuration code
+2. create a migration
+3. build and test the solution
+4. keep README and backlog aligned if the storage workflow changed materially
+
+---
+
+## 12. Final Rule
 
 The project standard is:
 

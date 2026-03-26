@@ -1,3 +1,6 @@
+using DarwinLingua.ContentOps.Application.Abstractions;
+using DarwinLingua.ContentOps.Infrastructure.Repositories;
+using DarwinLingua.ContentOps.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
@@ -15,6 +18,10 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddContentOpsInfrastructure(this IServiceCollection services)
     {
         ArgumentNullException.ThrowIfNull(services);
+
+        services.AddScoped<IContentImportFileReader, ContentImportFileReader>();
+        services.AddScoped<IContentImportParser, ContentImportParser>();
+        services.AddScoped<IContentImportRepository, ContentImportRepository>();
 
         return services;
     }

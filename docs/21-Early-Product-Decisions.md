@@ -100,3 +100,11 @@ Phase 1 code is not throwaway code. It must be written to production quality sta
 Phase 1 should use a single local learning profile per app installation.
 
 This keeps the first release aligned with the local-first requirement and avoids introducing account or multi-user complexity before the core product is stable.
+
+---
+
+## Decision 16 - Phase 1 Audio Behavior
+
+Phase 1 should use platform text-to-speech for German words and German example sentences.
+
+If the platform does not support text-to-speech or does not have a compatible German voice available, the UI must fail gracefully with a localized non-blocking message instead of crashing or pretending playback succeeded.

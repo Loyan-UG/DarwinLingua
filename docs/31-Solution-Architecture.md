@@ -648,6 +648,10 @@ Example groups:
 - content operations sets
 - localization sets
 
+Startup initialization should use EF Core migrations.
+
+Legacy local databases created earlier with `EnsureCreated` may be baselined during startup compatibility handling, but new schema evolution should always move through migrations.
+
 ---
 
 ## 10.3 EF Core Configuration Strategy

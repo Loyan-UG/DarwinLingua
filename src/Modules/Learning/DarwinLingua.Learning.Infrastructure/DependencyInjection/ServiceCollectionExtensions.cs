@@ -22,6 +22,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IUserLearningProfileRepository, UserLearningProfileRepository>();
         services.AddScoped<IUserFavoriteWordRepository, UserFavoriteWordRepository>();
         services.AddScoped<IUserFavoriteWordCatalogReader, UserFavoriteWordCatalogReader>();
+        services.AddScoped<IUserWordStateRepository, UserWordStateRepository>();
+        services.AddScoped<IUserWordStateCatalogReader, UserWordStateCatalogReader>();
         services.AddScoped<ILearningPreferenceLanguageValidator, LearningPreferenceLanguageValidator>();
 
         return services;

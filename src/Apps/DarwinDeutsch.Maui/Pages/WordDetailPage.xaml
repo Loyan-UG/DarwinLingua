@@ -8,11 +8,34 @@
                    Style="{StaticResource Headline}"
                    SemanticProperties.HeadingLevel="Level1" />
 
+            <Button x:Name="SpeakWordButton"
+                    Clicked="OnSpeakWordButtonClicked"
+                    IsVisible="False" />
+
             <Label x:Name="MetadataLabel"
                    Style="{StaticResource Body}" />
 
             <Button x:Name="FavoriteButton"
                     Clicked="OnFavoriteButtonClicked" />
+
+            <Label x:Name="AudioStatusLabel"
+                   Style="{StaticResource Body}"
+                   TextColor="{StaticResource Gray500}"
+                   IsVisible="False" />
+
+            <Label x:Name="LearningStateCaptionLabel"
+                   Style="{StaticResource Title2}" />
+
+            <Label x:Name="LearningStateValueLabel"
+                   Style="{StaticResource Body}"
+                   LineBreakMode="WordWrap" />
+
+            <HorizontalStackLayout Spacing="12">
+                <Button x:Name="KnownButton"
+                        Clicked="OnKnownButtonClicked" />
+                <Button x:Name="DifficultButton"
+                        Clicked="OnDifficultButtonClicked" />
+            </HorizontalStackLayout>
 
             <Label x:Name="TopicsCaptionLabel"
                    Style="{StaticResource Title2}" />

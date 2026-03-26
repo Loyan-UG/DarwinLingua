@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
@@ -19,7 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\BuildingBlocks\DarwinLingua.Infrastructure\DarwinLingua.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Modules\Catalog\DarwinLingua.Catalog.Application\DarwinLingua.Catalog.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Modules\Catalog\DarwinLingua.Catalog.Infrastructure\DarwinLingua.Catalog.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Modules\ContentOps\DarwinLingua.ContentOps.Application\DarwinLingua.ContentOps.Application.csproj" />
     <ProjectReference Include="..\..\..\..\src\Modules\ContentOps\DarwinLingua.ContentOps.Infrastructure\DarwinLingua.ContentOps.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Modules\Localization\DarwinLingua.Localization.Application\DarwinLingua.Localization.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Modules\Localization\DarwinLingua.Localization.Infrastructure\DarwinLingua.Localization.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

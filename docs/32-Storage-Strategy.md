@@ -322,9 +322,11 @@ Migrations should live in:
 
 On first app launch, the database should be created and migrations applied in a controlled way.
 
-### Recommendation
+### Current Direction
 
-Prefer migration-based initialization rather than ad hoc table creation logic.
+Use migration-based startup initialization.
+
+For local developer databases that were created earlier with `EnsureCreated`, the startup flow should baseline the initial migration history before continuing with normal migrations so existing local files do not break during the transition.
 
 ---
 
@@ -459,7 +461,15 @@ Create unique indexes for:
 ## 13.3 Search Reality
 
 Phase 1 search does not need advanced full-text search.
-Simple indexed lookup/filtering is enough.
+
+The current preferred strategy is:
+
+- normalized German lemma search
+- prefix-first ranking for the best learner-facing results
+- contains fallback for broader recall
+- explicit SQLite indexes for the active normalized-lemma path
+
+This keeps search simple, predictable, and fast enough for the Phase 1 local dataset shape.
 
 ---
 

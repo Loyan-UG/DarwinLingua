@@ -77,6 +77,7 @@ A duplicate is a handled outcome, not a fatal import error.
 - `packageName` is required
 - `entries` is required
 - `entries` must not be empty
+- `packageId` must be unique in the local database
 
 ### 4.2 Entry-Level Validation
 
@@ -145,6 +146,7 @@ The Phase 1 import pipeline must not:
 - auto-create unknown topics
 - auto-create unknown languages
 - silently coerce invalid values into fallback values
+- re-import an existing `packageId`
 
 If the data is bad, the system should show it as bad data and reject that entry.
 

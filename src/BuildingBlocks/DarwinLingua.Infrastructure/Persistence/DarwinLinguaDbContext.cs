@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.ContentOps.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence.Configurations;
 using DarwinLingua.Learning.Domain.Entities;
 using DarwinLingua.Localization.Domain.Entities;
@@ -72,9 +73,24 @@ public sealed class DarwinLinguaDbContext : DbContext
     public DbSet<UserLearningProfile> UserLearningProfiles => Set<UserLearningProfile>();
 
     /// <summary>
+    /// Gets the imported content-package audit rows.
+    /// </summary>
+    public DbSet<ContentPackage> ContentPackages => Set<ContentPackage>();
+
+    /// <summary>
+    /// Gets the content-package entry audit rows.
+    /// </summary>
+    public DbSet<ContentPackageEntry> ContentPackageEntries => Set<ContentPackageEntry>();
+
+    /// <summary>
     /// Gets the local user favorite words.
     /// </summary>
     public DbSet<UserFavoriteWord> UserFavoriteWords => Set<UserFavoriteWord>();
+
+    /// <summary>
+    /// Gets the local user lightweight word states.
+    /// </summary>
+    public DbSet<UserWordState> UserWordStates => Set<UserWordState>();
 
     /// <summary>
     /// Applies all explicit entity configurations.
@@ -93,8 +109,11 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ExampleSentenceConfiguration());
         modelBuilder.ApplyConfiguration(new ExampleTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new WordTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new ContentPackageConfiguration());
+        modelBuilder.ApplyConfiguration(new ContentPackageEntryConfiguration());
         modelBuilder.ApplyConfiguration(new UserLearningProfileConfiguration());
         modelBuilder.ApplyConfiguration(new UserFavoriteWordConfiguration());
+        modelBuilder.ApplyConfiguration(new UserWordStateConfiguration());
 
         base.OnModelCreating(modelBuilder);
     }

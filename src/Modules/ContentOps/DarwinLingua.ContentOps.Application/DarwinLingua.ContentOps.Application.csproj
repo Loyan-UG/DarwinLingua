@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Catalog\DarwinLingua.Catalog.Domain\DarwinLingua.Catalog.Domain.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\DarwinLingua.Contracts\DarwinLingua.Contracts.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\DarwinLingua.SharedKernel\DarwinLingua.SharedKernel.csproj" />
     <ProjectReference Include="..\DarwinLingua.ContentOps.Domain\DarwinLingua.ContentOps.Domain.csproj" />

@@ -1,6 +1,8 @@
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
+using DarwinLingua.ContentOps.Application.Abstractions;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
+using DarwinLingua.ContentOps.Application.Models;
 using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
@@ -41,7 +43,38 @@ internal static class Program
         ILogger logger = host.Services
             .GetRequiredService<ILoggerFactory>()
             .CreateLogger("DarwinLingua.ImportTool");
-        logger.LogInformation("Darwin Lingua import tool bootstrap is ready and the local database is initialized.");
+
+        if (args.Length == 0)
+        {
+            logger.LogInformation("Darwin Lingua import tool is ready. Pass a JSON file path as the first argument to import content.");
+            await host.StopAsync().ConfigureAwait(false);
+            return;
+        }
+
+        IContentImportService contentImportService = host.Services.GetRequiredService<IContentImportService>();
+        ImportContentPackageResult result = await contentImportService
+            .ImportAsync(new ImportContentPackageRequest(args[0]), CancellationToken.None)
+            .ConfigureAwait(false);
+
+        logger.LogInformation(
+            "Import finished. Success={IsSuccess}; PackageId={PackageId}; Status={Status}; Total={Total}; Imported={Imported}; Duplicates={Duplicates}; Invalid={Invalid}; Warnings={Warnings}",
+            result.IsSuccess,
+            result.PackageId ?? "<none>",
+            result.Status,
+            result.TotalEntries,
+            result.ImportedEntries,
+            result.SkippedDuplicateEntries,
+            result.InvalidEntries,
+            result.WarningCount);
+
+        foreach (ImportIssueModel issue in result.Issues)
+        {
+            logger.LogInformation(
+                "{Severity}: {EntryContext}{Message}",
+                issue.Severity,
+                issue.EntryIndex is null ? string.Empty : $"Entry {issue.EntryIndex}: ",
+                issue.Message);
+        }
 
         await host.StopAsync().ConfigureAwait(false);
     }

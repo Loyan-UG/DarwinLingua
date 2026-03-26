@@ -20,6 +20,7 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<IUserLearningProfileService, UserLearningProfileService>();
         services.AddScoped<IUserFavoriteWordService, UserFavoriteWordService>();
+        services.AddScoped<IUserWordStateService, UserWordStateService>();
 
         return services;
     }

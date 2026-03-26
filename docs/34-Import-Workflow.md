@@ -147,6 +147,17 @@ Each entry should contain at minimum:
 
 Optional metadata may also be present.
 
+### Current Implementation Note
+
+The current Phase 1 implementation maps each imported entry to:
+
+- one `WordEntry`
+- one primary `WordSense`
+- one set of sense translations
+- one ordered set of example sentences under that sense
+
+Multi-sense import packages can be introduced later, but they are not part of the current import contract.
+
 ---
 
 # 5. Import Workflow Overview
@@ -244,6 +255,7 @@ Validate package-level fields.
 ## Rules
 
 - packageId must not be empty
+- packageId must be unique in the local database
 - entries must exist
 - entries must not be empty
 - packageVersion must be supported

@@ -148,9 +148,79 @@ public static class AppStrings
     public static string WordDetailAddFavoriteButton => GetRequiredString(nameof(WordDetailAddFavoriteButton));
 
     /// <summary>
+    /// Gets the localized caption for speaking the current word aloud.
+    /// </summary>
+    public static string WordDetailSpeakWordButton => GetRequiredString(nameof(WordDetailSpeakWordButton));
+
+    /// <summary>
+    /// Gets the localized caption for speaking a German example sentence aloud.
+    /// </summary>
+    public static string WordDetailSpeakExampleButton => GetRequiredString(nameof(WordDetailSpeakExampleButton));
+
+    /// <summary>
+    /// Gets the localized audio failure message shown when TTS is unavailable on the device.
+    /// </summary>
+    public static string WordDetailAudioNotSupported => GetRequiredString(nameof(WordDetailAudioNotSupported));
+
+    /// <summary>
+    /// Gets the localized audio failure message shown when no compatible German voice is available.
+    /// </summary>
+    public static string WordDetailAudioLocaleUnavailable => GetRequiredString(nameof(WordDetailAudioLocaleUnavailable));
+
+    /// <summary>
+    /// Gets the localized audio failure message shown when playback fails unexpectedly.
+    /// </summary>
+    public static string WordDetailAudioFailed => GetRequiredString(nameof(WordDetailAudioFailed));
+
+    /// <summary>
     /// Gets the localized caption for removing the current word from favorites.
     /// </summary>
     public static string WordDetailRemoveFavoriteButton => GetRequiredString(nameof(WordDetailRemoveFavoriteButton));
+
+    /// <summary>
+    /// Gets the localized label for the lightweight learning-state section.
+    /// </summary>
+    public static string WordDetailLearningStateLabel => GetRequiredString(nameof(WordDetailLearningStateLabel));
+
+    /// <summary>
+    /// Gets the localized placeholder shown when no lightweight learning state is available.
+    /// </summary>
+    public static string WordDetailLearningStateUnknown => GetRequiredString(nameof(WordDetailLearningStateUnknown));
+
+    /// <summary>
+    /// Gets the localized caption for marking the current word as known.
+    /// </summary>
+    public static string WordDetailMarkKnownButton => GetRequiredString(nameof(WordDetailMarkKnownButton));
+
+    /// <summary>
+    /// Gets the localized caption for clearing the known marker from the current word.
+    /// </summary>
+    public static string WordDetailClearKnownButton => GetRequiredString(nameof(WordDetailClearKnownButton));
+
+    /// <summary>
+    /// Gets the localized caption for marking the current word as difficult.
+    /// </summary>
+    public static string WordDetailMarkDifficultButton => GetRequiredString(nameof(WordDetailMarkDifficultButton));
+
+    /// <summary>
+    /// Gets the localized caption for clearing the difficult marker from the current word.
+    /// </summary>
+    public static string WordDetailClearDifficultButton => GetRequiredString(nameof(WordDetailClearDifficultButton));
+
+    /// <summary>
+    /// Gets the localized status text shown when a word is marked as known.
+    /// </summary>
+    public static string WordDetailStateKnown => GetRequiredString(nameof(WordDetailStateKnown));
+
+    /// <summary>
+    /// Gets the localized status text shown when a word is marked as difficult.
+    /// </summary>
+    public static string WordDetailStateDifficult => GetRequiredString(nameof(WordDetailStateDifficult));
+
+    /// <summary>
+    /// Gets the localized format string for the tracked word-detail view count.
+    /// </summary>
+    public static string WordDetailViewCountFormat => GetRequiredString(nameof(WordDetailViewCountFormat));
 
     /// <summary>
     /// Gets the localized label for the topic section on the word-detail page.

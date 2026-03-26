@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Resources.Strings;
+using DarwinDeutsch.Maui.Services.Audio;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
@@ -15,8 +16,12 @@ public partial class WordDetailPage : ContentPage
     private readonly IWordDetailQueryService _wordDetailQueryService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly IUserFavoriteWordService _userFavoriteWordService;
+    private readonly IUserWordStateService _userWordStateService;
+    private readonly ISpeechPlaybackService _speechPlaybackService;
     private string _wordPublicId = string.Empty;
     private bool _isFavorite;
+    private UserWordStateModel? _userWordState;
+    private CancellationTokenSource? _speechCancellationTokenSource;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordDetailPage"/> class.
@@ -24,17 +29,23 @@ public partial class WordDetailPage : ContentPage
     public WordDetailPage(
         IWordDetailQueryService wordDetailQueryService,
         IUserLearningProfileService userLearningProfileService,
-        IUserFavoriteWordService userFavoriteWordService)
+        IUserFavoriteWordService userFavoriteWordService,
+        IUserWordStateService userWordStateService,
+        ISpeechPlaybackService speechPlaybackService)
     {
         ArgumentNullException.ThrowIfNull(wordDetailQueryService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
         ArgumentNullException.ThrowIfNull(userFavoriteWordService);
+        ArgumentNullException.ThrowIfNull(userWordStateService);
+        ArgumentNullException.ThrowIfNull(speechPlaybackService);
 
         InitializeComponent();
 
         _wordDetailQueryService = wordDetailQueryService;
         _userLearningProfileService = userLearningProfileService;
         _userFavoriteWordService = userFavoriteWordService;
+        _userWordStateService = userWordStateService;
+        _speechPlaybackService = speechPlaybackService;
     }
 
     /// <summary>
@@ -57,14 +68,31 @@ public partial class WordDetailPage : ContentPage
     }
 
     /// <summary>
+    /// Cancels any in-flight pronunciation request when the page is no longer visible.
+    /// </summary>
+    protected override void OnDisappearing()
+    {
+        CancelSpeechRequest();
+
+        base.OnDisappearing();
+    }
+
+    /// <summary>
     /// Loads the selected lexical entry using the current profile language preferences.
     /// </summary>
     private async Task RefreshAsync()
     {
+        Title = AppStrings.WordDetailTitle;
         TopicsCaptionLabel.Text = AppStrings.WordDetailTopicsLabel;
+        LearningStateCaptionLabel.Text = AppStrings.WordDetailLearningStateLabel;
         EmptyStateLabel.Text = AppStrings.WordDetailNotFound;
         SensesContainer.Children.Clear();
+        SpeakWordButton.IsVisible = false;
         FavoriteButton.IsVisible = false;
+        KnownButton.IsVisible = false;
+        DifficultButton.IsVisible = false;
+        LearningStateValueLabel.Text = string.Empty;
+        ClearAudioStatus();
 
         if (!Guid.TryParse(WordPublicId, out Guid publicId))
         {
@@ -94,14 +122,20 @@ public partial class WordDetailPage : ContentPage
         _isFavorite = await _userFavoriteWordService
             .IsFavoriteAsync(publicId, CancellationToken.None)
             .ConfigureAwait(true);
+        _userWordState = await _userWordStateService
+            .TrackWordViewedAsync(publicId, CancellationToken.None)
+            .ConfigureAwait(true);
 
         Title = BuildHeadline(word);
         HeadlineLabel.Text = BuildHeadline(word);
+        SpeakWordButton.Text = AppStrings.WordDetailSpeakWordButton;
+        SpeakWordButton.IsVisible = true;
         MetadataLabel.Text = $"{word.PartOfSpeech} · {word.CefrLevel}";
         FavoriteButton.Text = _isFavorite
             ? AppStrings.WordDetailRemoveFavoriteButton
             : AppStrings.WordDetailAddFavoriteButton;
         FavoriteButton.IsVisible = true;
+        ApplyUserWordState();
         TopicsValueLabel.Text = word.Topics.Count == 0
             ? AppStrings.WordDetailNoTopics
             : string.Join(", ", word.Topics);
@@ -120,9 +154,14 @@ public partial class WordDetailPage : ContentPage
     {
         Title = AppStrings.WordDetailTitle;
         HeadlineLabel.Text = AppStrings.WordDetailTitle;
+        SpeakWordButton.IsVisible = false;
         MetadataLabel.Text = string.Empty;
         FavoriteButton.IsVisible = false;
+        KnownButton.IsVisible = false;
+        DifficultButton.IsVisible = false;
+        LearningStateValueLabel.Text = string.Empty;
         TopicsValueLabel.Text = string.Empty;
+        ClearAudioStatus();
         EmptyStateLabel.IsVisible = true;
     }
 
@@ -146,9 +185,58 @@ public partial class WordDetailPage : ContentPage
     }
 
     /// <summary>
+    /// Marks the current lexical entry as known.
+    /// </summary>
+    private async void OnKnownButtonClicked(object? sender, EventArgs e)
+    {
+        if (!Guid.TryParse(WordPublicId, out Guid publicId))
+        {
+            return;
+        }
+
+        _userWordState = _userWordState?.IsKnown == true
+            ? await _userWordStateService.ClearWordKnownStateAsync(publicId, CancellationToken.None).ConfigureAwait(true)
+            : await _userWordStateService.MarkWordKnownAsync(publicId, CancellationToken.None).ConfigureAwait(true);
+
+        ApplyUserWordState();
+    }
+
+    /// <summary>
+    /// Marks the current lexical entry as difficult.
+    /// </summary>
+    private async void OnDifficultButtonClicked(object? sender, EventArgs e)
+    {
+        if (!Guid.TryParse(WordPublicId, out Guid publicId))
+        {
+            return;
+        }
+
+        _userWordState = _userWordState?.IsDifficult == true
+            ? await _userWordStateService.ClearWordDifficultStateAsync(publicId, CancellationToken.None).ConfigureAwait(true)
+            : await _userWordStateService.MarkWordDifficultAsync(publicId, CancellationToken.None).ConfigureAwait(true);
+
+        ApplyUserWordState();
+    }
+
+    /// <summary>
+    /// Speaks the currently selected lexical headline using the platform TTS service.
+    /// </summary>
+    private async void OnSpeakWordButtonClicked(object? sender, EventArgs e)
+    {
+        string headline = HeadlineLabel.Text ?? string.Empty;
+
+        if (string.IsNullOrWhiteSpace(headline))
+        {
+            return;
+        }
+
+        await SpeakGermanTextAsync(headline).ConfigureAwait(true);
+    }
+
+    /// <summary>
     /// Builds the visual block for a single sense.
     /// </summary>
-    private static View BuildSenseView(WordSenseDetailModel sense)
+    private View BuildSenseView(WordSenseDetailModel sense)
     {
         ArgumentNullException.ThrowIfNull(sense);
 
@@ -192,11 +280,26 @@ public partial class WordDetailPage : ContentPage
                 Margin = new Thickness(8, 0, 0, 0),
             };
 
-            exampleLayout.Children.Add(new Label
+            Grid exampleHeaderLayout = new()
+            {
+                ColumnDefinitions =
+                {
+                    new ColumnDefinition(GridLength.Star),
+                    new ColumnDefinition(GridLength.Auto),
+                },
+                ColumnSpacing = 12,
+            };
+
+            Label exampleTextLabel = new()
             {
                 Text = example.GermanText,
                 Style = (Style)Application.Current!.Resources["Body"],
-            });
+            };
+            Button speakExampleButton = BuildSpeechButton(AppStrings.WordDetailSpeakExampleButton, example.GermanText);
+
+            exampleHeaderLayout.Add(exampleTextLabel);
+            exampleHeaderLayout.Add(speakExampleButton, 1, 0);
+            exampleLayout.Children.Add(exampleHeaderLayout);
 
             if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
             {
@@ -227,6 +330,27 @@ public partial class WordDetailPage : ContentPage
     }
 
     /// <summary>
+    /// Creates a speech action button for a German text fragment.
+    /// </summary>
+    /// <param name="buttonText">The localized button text.</param>
+    /// <param name="spokenText">The German text to pronounce.</param>
+    /// <returns>A configured button instance.</returns>
+    private Button BuildSpeechButton(string buttonText, string spokenText)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(buttonText);
+        ArgumentException.ThrowIfNullOrWhiteSpace(spokenText);
+
+        Button button = new()
+        {
+            Text = buttonText,
+        };
+
+        button.Clicked += async (_, _) => await SpeakGermanTextAsync(spokenText).ConfigureAwait(true);
+
+        return button;
+    }
+
+    /// <summary>
     /// Builds the page headline for the current lexical entry.
     /// </summary>
     private static string BuildHeadline(WordDetailModel word)
@@ -236,5 +360,107 @@ public partial class WordDetailPage : ContentPage
         return string.IsNullOrWhiteSpace(word.Article)
             ? word.Lemma
             : $"{word.Article} {word.Lemma}";
+    }
+
+    /// <summary>
+    /// Applies the current lightweight user-word-state snapshot to the page controls.
+    /// </summary>
+    private void ApplyUserWordState()
+    {
+        if (_userWordState is null)
+        {
+            LearningStateValueLabel.Text = AppStrings.WordDetailLearningStateUnknown;
+            KnownButton.IsVisible = false;
+            DifficultButton.IsVisible = false;
+            return;
+        }
+
+        List<string> statusParts = [$"{string.Format(AppStrings.WordDetailViewCountFormat, _userWordState.ViewCount)}"];
+
+        if (_userWordState.IsKnown)
+        {
+            statusParts.Add(AppStrings.WordDetailStateKnown);
+        }
+
+        if (_userWordState.IsDifficult)
+        {
+            statusParts.Add(AppStrings.WordDetailStateDifficult);
+        }
+
+        LearningStateValueLabel.Text = string.Join(Environment.NewLine, statusParts);
+
+        KnownButton.Text = _userWordState.IsKnown
+            ? AppStrings.WordDetailClearKnownButton
+            : AppStrings.WordDetailMarkKnownButton;
+        KnownButton.IsVisible = true;
+        KnownButton.IsEnabled = true;
+
+        DifficultButton.Text = _userWordState.IsDifficult
+            ? AppStrings.WordDetailClearDifficultButton
+            : AppStrings.WordDetailMarkDifficultButton;
+        DifficultButton.IsVisible = true;
+        DifficultButton.IsEnabled = true;
+    }
+
+    /// <summary>
+    /// Attempts to pronounce German content and surfaces any non-success outcome as a localized UI message.
+    /// </summary>
+    /// <param name="text">The German text to pronounce.</param>
+    private async Task SpeakGermanTextAsync(string text)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(text);
+
+        ClearAudioStatus();
+        ResetSpeechRequest();
+
+        SpeechPlaybackResult result = await _speechPlaybackService
+            .SpeakAsync(text, "de", _speechCancellationTokenSource!.Token)
+            .ConfigureAwait(true);
+
+        if (result.IsSuccess || result.Status == SpeechPlaybackStatus.Cancelled)
+        {
+            return;
+        }
+
+        AudioStatusLabel.Text = result.Status switch
+        {
+            SpeechPlaybackStatus.Unsupported => AppStrings.WordDetailAudioNotSupported,
+            SpeechPlaybackStatus.LocaleUnavailable => AppStrings.WordDetailAudioLocaleUnavailable,
+            _ => AppStrings.WordDetailAudioFailed,
+        };
+        AudioStatusLabel.IsVisible = true;
+    }
+
+    /// <summary>
+    /// Clears the current audio status message from the page.
+    /// </summary>
+    private void ClearAudioStatus()
+    {
+        AudioStatusLabel.Text = string.Empty;
+        AudioStatusLabel.IsVisible = false;
+    }
+
+    /// <summary>
+    /// Replaces any active pronunciation request token with a fresh one.
+    /// </summary>
+    private void ResetSpeechRequest()
+    {
+        CancelSpeechRequest();
+        _speechCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    /// <summary>
+    /// Cancels and disposes the active pronunciation request token when one exists.
+    /// </summary>
+    private void CancelSpeechRequest()
+    {
+        if (_speechCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _speechCancellationTokenSource.Cancel();
+        _speechCancellationTokenSource.Dispose();
+        _speechCancellationTokenSource = null;
     }
 }

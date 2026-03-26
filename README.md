@@ -17,13 +17,15 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 
 - the product direction, domain, storage, offline, and import strategy are documented
 - the solution structure exists under `src/`
-- the MAUI app now has startup initialization, local SQLite bootstrapping, UI localization, persisted local learning-profile preferences, CEFR browsing, topic browsing, German lemma search, word details, a favorites tab, and settings-based language selection
+- the MAUI app now has migration-based local SQLite startup initialization, compatibility baselining for older local `EnsureCreated` databases, UI localization, persisted local learning-profile preferences, CEFR browsing, topic browsing, indexed German lemma search with prefix-first ranking, word details, favorites, settings-based language selection, and platform TTS actions for German words and example sentences with graceful localized failure handling
 - the catalog module now contains the first real lexical aggregate model for words, senses, translations, examples, topic links, browse/search queries, and detail-query foundations
-- the learning module now persists local favorite words separately from catalog content and exposes favorite toggle/list workflows
-- the import tool can bootstrap the shared local database and reference seeds
-- important Phase 1 workflows such as lightweight user word state, richer import execution, audio, and release hardening are still not implemented yet
+- the learning module now persists local favorite words and lightweight user word state separately from catalog content, including favorite toggle/list workflows, view tracking, and known/difficult markers with clear actions
+- the import tool can bootstrap the shared local database, apply reference seeds, import canonical JSON content packages, skip duplicates conservatively, reject repeated `packageId` values, and return an operator-facing summary
+- important Phase 1 workflows such as broader UI/UX foundation work and release hardening are still not implemented yet
 
-The next high-priority slices are `UserWordState` and the real `ImportContentPackage` workflow based on the backlog.
+The current import contract maps one imported entry to one imported sense with meanings and examples.
+
+The next high-priority slices are UI/UX foundation work and release hardening based on the backlog.
 
 ## Product Direction
 
@@ -194,6 +196,17 @@ Prerequisites:
 - `.NET 10 SDK`
 - `.NET MAUI` workloads
 - Visual Studio version with `.slnx` and MAUI support
+
+Optional developer tooling:
+
+- `dotnet tool restore` for local EF Core migration commands
+
+Common local migration commands:
+
+```text
+dotnet tool restore
+dotnet tool run dotnet-ef migrations add <MigrationName> --project src/BuildingBlocks/DarwinLingua.Infrastructure --context DarwinLinguaDbContext --output-dir Persistence/Migrations
+```
 
 Open:
 

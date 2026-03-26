@@ -155,8 +155,10 @@ Allow the user to search words using German text.
 Phase 1 search should remain simple:
 
 - German lemma search
-- optional prefix/contains behavior
+- prefix-first ranking
+- contains fallback
 - no advanced semantic search
+- deterministic ordering on normalized lemma
 
 ---
 
@@ -254,6 +256,7 @@ Allow the user to hear pronunciation of the selected German word.
 
 This is a UI/platform use case.
 The content domain does not own audio playback.
+If TTS support or a compatible German voice is unavailable, the UI should show a localized non-blocking message and continue normally.
 
 ---
 
@@ -278,6 +281,10 @@ Allow the user to hear pronunciation of a German example sentence.
 2. UI calls platform audio/TTS service
 3. service attempts playback
 4. UI reflects success or graceful failure
+
+## Notes
+
+If TTS support or a compatible German voice is unavailable, the UI should show a localized non-blocking message and continue normally.
 
 ---
 

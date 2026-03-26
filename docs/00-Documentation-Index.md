@@ -100,6 +100,7 @@ If you are new to the project, read the documents in this order:
 - `22-Domain-Model.md` explains the domain concepts.
 - `23-Domain-Rules.md` defines invariant and lifecycle rules.
 - `31-Solution-Architecture.md` defines project/layer structure and dependency direction.
+- `32-Storage-Strategy.md` defines the SQLite, migration, and indexing direction for Phase 1.
 
 ---
 
