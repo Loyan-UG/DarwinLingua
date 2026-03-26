@@ -207,7 +207,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] cover SQLite search-index bootstrap and prefix-first ranking with integration tests
 - [x] cover legacy `EnsureCreated` database baselining with integration tests
 - [x] add seed-data tests
-- [ ] add localization coverage checks
+- [x] add localization coverage checks
 - [ ] add smoke tests for the MAUI startup path where practical
 - [!] resolve local Windows application-control policy issue blocking some test assemblies and transitive dependencies; current default solution test run excludes `Learning.Domain.Tests`, `Catalog.Domain.Tests`, `Localization.Domain.Tests`, `ContentOps.Application.Tests`, and SQLite-backed infrastructure tests
 

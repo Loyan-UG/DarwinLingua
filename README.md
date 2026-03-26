@@ -23,6 +23,7 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - the learning module now persists local favorite words and lightweight user word state separately from catalog content, including favorite toggle/list workflows, view tracking, and known/difficult markers with clear actions
 - the import tool can bootstrap the shared local database, apply reference seeds, import canonical JSON content packages, skip duplicates conservatively, reject repeated `packageId` values, and return an operator-facing summary
 - SQLite-backed integration tests now cover reference-data seeding presence and idempotency for Phase 1 language/topic seed workflows
+- localization coverage checks now enforce English/German `AppStrings` resource-key parity in automated tests
 - important Phase 1 workflows such as broader UI/UX foundation work and release hardening are still not implemented yet
 
 The current import contract maps one imported entry to one imported sense with meanings and examples.
