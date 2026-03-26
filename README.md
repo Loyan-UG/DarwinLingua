@@ -31,6 +31,7 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - application-layer tests now cover core ContentOps import failure paths such as file-read errors, parser errors, and duplicate package rejection
 - CI workflow now runs restore/build/test for non-MAUI projects and all test projects on GitHub Actions
 - shared infrastructure now exposes a transactional execution service for write workflows, with commit/rollback coverage
+- UI state handling now includes explicit loading/error/empty behavior in key browse/search pages, with broader UX foundation work still in progress
 - important Phase 1 workflows such as broader UI/UX foundation work and release hardening are still not implemented yet
 
 The current import contract maps one imported entry to one imported sense with meanings and examples.

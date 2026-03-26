@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DarwinDeutsch.Maui.Pages.SearchWordsPage">
     <Grid Padding="24"
-          RowDefinitions="Auto,Auto,Auto,Auto,*"
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*"
           RowSpacing="12">
         <Label x:Name="HeadlineLabel"
                Grid.Row="0"
@@ -24,8 +24,18 @@
                Style="{StaticResource Body}"
                IsVisible="False" />
 
+        <Label x:Name="LoadingStateLabel"
+               Grid.Row="4"
+               Style="{StaticResource Body}"
+               IsVisible="False" />
+
+        <Label x:Name="ErrorStateLabel"
+               Grid.Row="5"
+               Style="{StaticResource Body}"
+               IsVisible="False" />
+
         <CollectionView x:Name="WordsCollectionView"
-                        Grid.Row="4"
+                        Grid.Row="6"
                         SelectionMode="Single"
                         SelectionChanged="OnWordsSelectionChanged">
             <CollectionView.ItemTemplate>

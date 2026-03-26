@@ -343,6 +343,16 @@ public static class AppStrings
     public static string LanguageOptionGerman => GetRequiredString(nameof(LanguageOptionGerman));
 
     /// <summary>
+    /// Gets the localized loading-state message used by data-driven pages.
+    /// </summary>
+    public static string CommonStateLoading => GetRequiredString(nameof(CommonStateLoading));
+
+    /// <summary>
+    /// Gets the localized generic error-state message used by data-driven pages.
+    /// </summary>
+    public static string CommonStateError => GetRequiredString(nameof(CommonStateError));
+
+    /// <summary>
     /// Gets a required localized string by key.
     /// </summary>
     /// <param name="name">The resource key name.</param>

@@ -94,7 +94,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [ ] define design tokens and styling foundations
 - [-] replace default template screens with real product screens
 - [ ] establish reusable UI components for list items, filters, and detail sections
-- [ ] define empty/loading/error states
+- [-] define empty/loading/error states
 - [ ] define accessibility baseline for typography, contrast, and touch targets
 
 ### 6. Storage Foundation

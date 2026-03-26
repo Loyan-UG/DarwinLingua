@@ -66,6 +66,8 @@ public partial class TopicsPage : ContentPage
         HeadlineLabel.Text = AppStrings.TopicsPageHeadline;
         DescriptionLabel.Text = AppStrings.TopicsPageDescription;
         EmptyStateLabel.Text = AppStrings.TopicsPageEmpty;
+        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        ErrorStateLabel.Text = AppStrings.CommonStateError;
     }
 
     /// <summary>
@@ -73,13 +75,41 @@ public partial class TopicsPage : ContentPage
     /// </summary>
     private async Task RefreshTopicsAsync()
     {
-        IReadOnlyList<TopicListItemModel> topics = await _topicQueryService
-            .GetTopicsAsync(_appLocalizationService.CurrentCulture.TwoLetterISOLanguageName, CancellationToken.None)
-            .ConfigureAwait(true);
+        ShowLoadingState();
 
-        TopicsCollectionView.ItemsSource = topics;
-        EmptyStateLabel.IsVisible = topics.Count == 0;
-        TopicsCollectionView.IsVisible = topics.Count > 0;
+        try
+        {
+            IReadOnlyList<TopicListItemModel> topics = await _topicQueryService
+                .GetTopicsAsync(_appLocalizationService.CurrentCulture.TwoLetterISOLanguageName, CancellationToken.None)
+                .ConfigureAwait(true);
+
+            TopicsCollectionView.ItemsSource = topics;
+            EmptyStateLabel.IsVisible = topics.Count == 0;
+            TopicsCollectionView.IsVisible = topics.Count > 0;
+            ErrorStateLabel.IsVisible = false;
+        }
+        catch
+        {
+            TopicsCollectionView.ItemsSource = Array.Empty<TopicListItemModel>();
+            TopicsCollectionView.IsVisible = false;
+            EmptyStateLabel.IsVisible = false;
+            ErrorStateLabel.IsVisible = true;
+        }
+        finally
+        {
+            LoadingStateLabel.IsVisible = false;
+        }
+    }
+
+    /// <summary>
+    /// Shows the loading state while topic data is being fetched.
+    /// </summary>
+    private void ShowLoadingState()
+    {
+        LoadingStateLabel.IsVisible = true;
+        ErrorStateLabel.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        TopicsCollectionView.IsVisible = false;
     }
 
     /// <summary>
