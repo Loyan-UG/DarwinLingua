@@ -27,6 +27,7 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - infrastructure mapping tests now verify key EF Core uniqueness/index constraints for Phase 1 persistence entities
 - import workflow tests now cover mixed valid/invalid entries and duplicate-entry skipping behavior within a package
 - practical smoke tests now guard the MAUI startup path to ensure DB initialization and localization initialization remain wired
+- domain tests now cover additional aggregate invariants and state-transition rules for catalog and learning entities
 - important Phase 1 workflows such as broader UI/UX foundation work and release hardening are still not implemented yet
 
 The current import contract maps one imported entry to one imported sense with meanings and examples.
