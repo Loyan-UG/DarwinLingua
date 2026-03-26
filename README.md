@@ -18,6 +18,7 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - the product direction, domain, storage, offline, and import strategy are documented
 - the solution structure exists under `src/`
 - the MAUI app now has migration-based local SQLite startup initialization, compatibility baselining for older local `EnsureCreated` databases, UI localization, persisted local learning-profile preferences, CEFR browsing, topic browsing, indexed German lemma search with prefix-first ranking, word details, favorites, settings-based language selection, and platform TTS actions for German words and example sentences with graceful localized failure handling
+- the startup infrastructure now exposes explicit `InitializeDatabase` and `SeedReferenceData` use-case workflows (while preserving one-call startup initialization)
 - the catalog module now contains the first real lexical aggregate model for words, senses, translations, examples, topic links, browse/search queries, and detail-query foundations
 - the learning module now persists local favorite words and lightweight user word state separately from catalog content, including favorite toggle/list workflows, view tracking, and known/difficult markers with clear actions
 - the import tool can bootstrap the shared local database, apply reference seeds, import canonical JSON content packages, skip duplicates conservatively, reject repeated `packageId` values, and return an operator-facing summary

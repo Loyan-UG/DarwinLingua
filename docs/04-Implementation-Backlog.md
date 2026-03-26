@@ -155,8 +155,8 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 ### 11. Application Use Cases
 
-- [ ] implement `InitializeDatabase`
-- [ ] implement `SeedReferenceData`
+- [x] implement `InitializeDatabase`
+- [x] implement `SeedReferenceData`
 - [x] implement `EnsureUserLearningProfileExists`
 - [x] implement `GetUserLearningProfile`
 - [x] implement `GetTopics`
