@@ -199,7 +199,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 ### 14. Testing and Quality
 
 - [x] add domain tests for aggregate invariants
-- [-] add application tests for main use cases
+- [x] add application tests for main use cases
 - [x] add infrastructure tests for persistence mappings
 - [x] add import workflow tests
 - [x] cover successful package import with SQLite-backed integration testing
