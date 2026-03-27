@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 namespace DarwinDeutsch.Maui.Controls;
 
 /// <summary>
@@ -32,6 +34,14 @@ public partial class ActionBlockView : ContentView
         });
 
     /// <summary>
+    /// Backing bindable property for <see cref="ActionCommand"/>.
+    /// </summary>
+    public static readonly BindableProperty ActionCommandProperty = BindableProperty.Create(
+        nameof(ActionCommand),
+        typeof(ICommand),
+        typeof(ActionBlockView));
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="ActionBlockView"/> class.
     /// </summary>
     public ActionBlockView()
@@ -63,10 +73,24 @@ public partial class ActionBlockView : ContentView
     }
 
     /// <summary>
+    /// Gets or sets the optional command executed when the action button is tapped.
+    /// </summary>
+    public ICommand? ActionCommand
+    {
+        get => (ICommand?)GetValue(ActionCommandProperty);
+        set => SetValue(ActionCommandProperty, value);
+    }
+
+    /// <summary>
     /// Handles action button taps.
     /// </summary>
     private void OnActionButtonClicked(object? sender, EventArgs e)
     {
+        if (ActionCommand?.CanExecute(null) == true)
+        {
+            ActionCommand.Execute(null);
+        }
+
         ActionInvoked?.Invoke(this, EventArgs.Empty);
     }
 }

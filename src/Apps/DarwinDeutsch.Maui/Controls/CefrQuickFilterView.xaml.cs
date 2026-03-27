@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Windows.Input;
+
 namespace DarwinDeutsch.Maui.Controls;
 
 /// <summary>
@@ -32,6 +35,14 @@ public partial class CefrQuickFilterView : ContentView
         });
 
     /// <summary>
+    /// Backing bindable property for <see cref="LevelSelectedCommand"/>.
+    /// </summary>
+    public static readonly BindableProperty LevelSelectedCommandProperty = BindableProperty.Create(
+        nameof(LevelSelectedCommand),
+        typeof(ICommand),
+        typeof(CefrQuickFilterView));
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="CefrQuickFilterView"/> class.
     /// </summary>
     public CefrQuickFilterView()
@@ -64,6 +75,15 @@ public partial class CefrQuickFilterView : ContentView
     }
 
     /// <summary>
+    /// Gets or sets the optional command executed when a CEFR level is selected.
+    /// </summary>
+    public ICommand? LevelSelectedCommand
+    {
+        get => (ICommand?)GetValue(LevelSelectedCommandProperty);
+        set => SetValue(LevelSelectedCommandProperty, value);
+    }
+
+    /// <summary>
     /// Handles quick-filter button taps.
     /// </summary>
     private void OnCefrButtonClicked(object? sender, EventArgs e)
@@ -74,6 +94,12 @@ public partial class CefrQuickFilterView : ContentView
         }
 
         SelectedLevel = button.Text;
+
+        if (LevelSelectedCommand?.CanExecute(SelectedLevel) == true)
+        {
+            LevelSelectedCommand.Execute(SelectedLevel);
+        }
+
         LevelSelected?.Invoke(this, EventArgs.Empty);
     }
 
@@ -82,12 +108,10 @@ public partial class CefrQuickFilterView : ContentView
     /// </summary>
     private void ApplySelectedState()
     {
-        ApplyButtonSelection(A1Button);
-        ApplyButtonSelection(A2Button);
-        ApplyButtonSelection(B1Button);
-        ApplyButtonSelection(B2Button);
-        ApplyButtonSelection(C1Button);
-        ApplyButtonSelection(C2Button);
+        foreach (Button button in GetCefrButtons())
+        {
+            ApplyButtonSelection(button);
+        }
     }
 
     /// <summary>
@@ -102,5 +126,18 @@ public partial class CefrQuickFilterView : ContentView
         button.TextColor = isSelected
             ? (Color?)Application.Current?.Resources["White"] ?? Colors.White
             : null;
+    }
+
+    /// <summary>
+    /// Returns the fixed CEFR buttons used by the control.
+    /// </summary>
+    private IEnumerable<Button> GetCefrButtons()
+    {
+        yield return A1Button;
+        yield return A2Button;
+        yield return B1Button;
+        yield return B2Button;
+        yield return C1Button;
+        yield return C2Button;
     }
 }
