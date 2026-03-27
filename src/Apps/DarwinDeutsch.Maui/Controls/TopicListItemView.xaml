@@ -3,12 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DarwinDeutsch.Maui.Controls.TopicListItemView">
     <Border Margin="0,0,0,10"
-            Padding="16">
-        <VerticalStackLayout Spacing="4">
+            Padding="16"
+            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}">
+        <Grid ColumnDefinitions="Auto,*"
+              ColumnSpacing="14">
+            <Border Grid.Column="0"
+                    Padding="10,6"
+                    VerticalOptions="Start"
+                    StrokeThickness="0"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray900}}">
+                <Label x:Name="TopicKeyLabel"
+                       FontAttributes="Bold"
+                       FontSize="12"
+                       TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+            </Border>
+
+            <VerticalStackLayout Grid.Column="1"
+                                 Spacing="4">
             <Label x:Name="DisplayNameLabel"
                    Style="{StaticResource Title2}" />
-            <Label x:Name="TopicKeyLabel"
-                   Style="{StaticResource Body}" />
-        </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
     </Border>
 </ContentView>

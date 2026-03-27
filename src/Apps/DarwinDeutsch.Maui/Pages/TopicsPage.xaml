@@ -4,43 +4,70 @@
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.TopicsPage">
     <Grid Padding="24"
-          RowDefinitions="Auto,Auto,Auto,Auto,Auto,*"
-          RowSpacing="12">
-        <Label x:Name="HeadlineLabel"
-               Grid.Row="0"
-               Style="{StaticResource Headline}"
-               SemanticProperties.HeadingLevel="Level1" />
+          RowDefinitions="Auto,Auto,*"
+          RowSpacing="18">
+        <Border Grid.Row="0"
+                Padding="24"
+                StrokeThickness="0"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray950}}">
+            <VerticalStackLayout Spacing="10">
+                <Label x:Name="HeadlineLabel"
+                       Style="{StaticResource Headline}"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                       SemanticProperties.HeadingLevel="Level1" />
 
-        <Label x:Name="DescriptionLabel"
-               Grid.Row="1"
-               Style="{StaticResource Body}"
-               LineBreakMode="WordWrap" />
+                <Label x:Name="DescriptionLabel"
+                       Style="{StaticResource Body}"
+                       LineBreakMode="WordWrap" />
+            </VerticalStackLayout>
+        </Border>
 
-        <Label x:Name="EmptyStateLabel"
-               Grid.Row="2"
-               Style="{StaticResource Body}"
-               IsVisible="False" />
+        <Border Grid.Row="1"
+                Padding="20">
+            <VerticalStackLayout Spacing="12">
+                <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
+                                              LevelSelected="OnCefrLevelSelected" />
 
-        <Label x:Name="LoadingStateLabel"
-               Grid.Row="3"
-               Style="{StaticResource Body}"
-               IsVisible="False" />
+                <controls:ActionBlockView x:Name="SearchActionBlockView"
+                                          ActionInvoked="OnSearchActionInvoked" />
 
-        <Label x:Name="ErrorStateLabel"
-               Grid.Row="4"
-               Style="{StaticResource Body}"
-               IsVisible="False" />
+                <controls:ActionBlockView x:Name="FavoritesActionBlockView"
+                                          ActionInvoked="OnFavoritesActionInvoked" />
+            </VerticalStackLayout>
+        </Border>
 
-        <CollectionView x:Name="TopicsCollectionView"
-                        Grid.Row="5"
-                        SelectionMode="Single"
-                        SelectionChanged="OnTopicsSelectionChanged">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <controls:TopicListItemView DisplayName="{Binding DisplayName}"
-                                                TopicKey="{Binding Key}" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Border Grid.Row="2"
+                Padding="20">
+            <Grid RowDefinitions="Auto,Auto,Auto,*"
+                  RowSpacing="12">
+                <Label x:Name="LoadingStateLabel"
+                       Grid.Row="0"
+                       Style="{StaticResource Body}"
+                       IsVisible="False" />
+
+                <Label x:Name="ErrorStateLabel"
+                       Grid.Row="1"
+                       Style="{StaticResource Body}"
+                       IsVisible="False" />
+
+                <Label x:Name="EmptyStateLabel"
+                       Grid.Row="2"
+                       Style="{StaticResource Body}"
+                       IsVisible="False" />
+
+                <CollectionView x:Name="TopicsCollectionView"
+                                Grid.Row="3"
+                                SelectionMode="Single"
+                                SelectionChanged="OnTopicsSelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:TopicListItemView DisplayName="{Binding DisplayName}"
+                                                        TopicKey="{Binding Key}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Border>
     </Grid>
 </ContentPage>

@@ -35,13 +35,14 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - UI state handling now includes explicit loading/error/empty behavior across core data-driven browse/search/favorites pages
 - accessibility baseline updates now enforce 44px touch targets and improved typography contrast/legibility defaults in shared MAUI styles
 - reusable UI component extraction now includes shared word-list-item, topic-list-item, detail-section, CEFR quick-filter, and action-block views applied across home and browse screens
-- home now exposes dashboard-style quick actions for search, topic browse, and favorites navigation in addition to CEFR quick-filter shortcuts
+- home now exposes a dashboard-style product screen for learner context, CEFR browsing, and quick navigation actions
+- the browse tab now functions as a dedicated browse hub with CEFR shortcuts, topic discovery, and direct links into search and favorites
 - shared MAUI style resources now define baseline design tokens for spacing, typography, touch targets, and semantic surface/text colors
-- important Phase 1 workflows such as broader UI/UX foundation work and release hardening are still not implemented yet
+- important Phase 1 workflows such as release hardening and final warning cleanup are still not implemented yet
 
 The current import contract maps one imported entry to one imported sense with meanings and examples.
 
-The next high-priority slices are UI/UX foundation work and release hardening based on the backlog.
+The next high-priority slices are release hardening, warning cleanup, and additional MAUI smoke coverage based on the backlog.
 
 ## Product Direction
 

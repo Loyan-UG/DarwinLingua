@@ -17,6 +17,7 @@ Use it when:
 - Phase 1 is still in progress.
 - Core app flows exist: home, CEFR browse, topic browse, search, word details, favorites, settings.
 - Home now includes dashboard quick actions for search, topic browse, and favorites in addition to CEFR shortcuts.
+- The browse tab now acts as a real browse hub with CEFR shortcuts, topic browsing, and direct paths to search and favorites.
 - Catalog domain hardening is complete for Phase 1 aggregate invariants, uniqueness constraints, and topic-link relationship constraints.
 - Learning-domain separation is now enforced at the persistence boundary: local user-state rows stay decoupled from catalog-content foreign keys and survive content-row deletion.
 - Current MAUI user-facing labels and lexical metadata text are now routed through `AppStrings` resource catalogs for both English and German.
@@ -34,12 +35,12 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on Phase 1 items still marked in progress, especially **remaining UI/UX foundation work**.
+Focus next on Phase 1 execution slices that improve quality and release readiness, especially **release hardening**, **smoke coverage expansion**, and **warning cleanup**.
 
 Suggested scope:
 
-1. Continue replacing remaining template-era UI surfaces with final product-oriented layouts.
-2. Expand MAUI smoke coverage where practical around reusable controls and navigation-critical flows.
+1. Expand MAUI smoke coverage around navigation-critical flows and reusable controls.
+2. Resolve remaining build warnings that still surface during full Windows checks.
 3. Keep all new user-facing labels localized through `AppStrings`.
 4. Update `docs/04-Implementation-Backlog.md` and `README.md` to reflect actual completion state.
 
@@ -54,7 +55,7 @@ Continue DarwinLingua Phase 1 implementation from the latest commit.
 
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
-- Prioritize Phase 1 backlog items still marked in progress, especially remaining UI/UX foundation work.
+- Prioritize Phase 1 release-hardening work, warning cleanup, and pragmatic MAUI smoke coverage additions.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.
 - Run the full local Windows .NET checks after changes.

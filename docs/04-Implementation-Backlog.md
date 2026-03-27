@@ -93,7 +93,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 - [x] define application navigation structure
 - [x] define design tokens and styling foundations
-- [-] replace default template screens with real product screens
+- [x] replace default template screens with real product screens
 - [x] establish reusable UI components for list items, filters, and detail sections
 - [x] define empty/loading/error states
 - [x] define accessibility baseline for typography, contrast, and touch targets
@@ -178,7 +178,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 ### 12. MAUI Screens
 
-- [-] implement home/browse screen
+- [x] implement home/browse screen
 - [x] implement CEFR browsing flow
 - [x] implement topic browsing flow
 - [x] implement search flow

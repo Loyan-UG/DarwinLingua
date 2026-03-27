@@ -79,6 +79,11 @@ public partial class TopicsPage : ContentPage
         Title = AppStrings.BrowseTabTitle;
         HeadlineLabel.Text = AppStrings.TopicsPageHeadline;
         DescriptionLabel.Text = AppStrings.TopicsPageDescription;
+        CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
+        SearchActionBlockView.Caption = AppStrings.HomeSearchLabel;
+        SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;
+        FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
+        FavoritesActionBlockView.ButtonText = AppStrings.HomeFavoritesButton;
         EmptyStateLabel.Text = AppStrings.TopicsPageEmpty;
         LoadingStateLabel.Text = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.CommonStateError;
@@ -124,6 +129,38 @@ public partial class TopicsPage : ContentPage
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         TopicsCollectionView.IsVisible = false;
+    }
+
+    /// <summary>
+    /// Navigates directly to the selected CEFR browse page from the browse hub.
+    /// </summary>
+    private async void OnCefrLevelSelected(object? sender, EventArgs e)
+    {
+        string cefrLevel = CefrQuickFilterView.SelectedLevel;
+        if (string.IsNullOrWhiteSpace(cefrLevel))
+        {
+            return;
+        }
+
+        string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
+        await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+            .ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Navigates to search from the browse hub.
+    /// </summary>
+    private async void OnSearchActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(SearchWordsPage)).ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Navigates to favorites from the browse hub.
+    /// </summary>
+    private async void OnFavoritesActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//favorites").ConfigureAwait(true);
     }
 
     /// <summary>
