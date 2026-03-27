@@ -58,6 +58,8 @@ public partial class CefrWordsPage : ContentPage
         HeadlineLabel.Text = string.Format(AppStrings.CefrWordsPageHeadlineFormat, CefrLevel);
         DescriptionLabel.Text = AppStrings.CefrWordsPageDescription;
         EmptyStateLabel.Text = AppStrings.CefrWordsPageEmpty;
+        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        ErrorStateLabel.Text = AppStrings.CommonStateError;
 
         if (string.IsNullOrWhiteSpace(CefrLevel))
         {
@@ -65,21 +67,34 @@ public partial class CefrWordsPage : ContentPage
             return;
         }
 
-        UserLearningProfileModel profile = await _userLearningProfileService
-            .GetCurrentProfileAsync(CancellationToken.None)
-            .ConfigureAwait(true);
+        ShowLoadingState();
 
-        IReadOnlyList<WordListItemModel> words = await _wordQueryService
-            .GetWordsByCefrAsync(CefrLevel, profile.PreferredMeaningLanguage1, CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            UserLearningProfileModel profile = await _userLearningProfileService
+                .GetCurrentProfileAsync(CancellationToken.None)
+                .ConfigureAwait(true);
 
-        ShowEmptyState(words
-            .Select(word => new CefrWordItemViewModel(
-                word.PublicId,
-                string.IsNullOrWhiteSpace(word.Article) ? word.Lemma : $"{word.Article} {word.Lemma}",
-                word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
-                $"{word.PartOfSpeech} · {word.CefrLevel}"))
-            .ToArray());
+            IReadOnlyList<WordListItemModel> words = await _wordQueryService
+                .GetWordsByCefrAsync(CefrLevel, profile.PreferredMeaningLanguage1, CancellationToken.None)
+                .ConfigureAwait(true);
+
+            ShowEmptyState(words
+                .Select(word => new CefrWordItemViewModel(
+                    word.PublicId,
+                    string.IsNullOrWhiteSpace(word.Article) ? word.Lemma : $"{word.Article} {word.Lemma}",
+                    word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
+                    $"{word.PartOfSpeech} · {word.CefrLevel}"))
+                .ToArray());
+        }
+        catch
+        {
+            ShowErrorState();
+        }
+        finally
+        {
+            LoadingStateLabel.IsVisible = false;
+        }
     }
 
     /// <summary>
@@ -88,8 +103,31 @@ public partial class CefrWordsPage : ContentPage
     private void ShowEmptyState(IReadOnlyList<CefrWordItemViewModel> words)
     {
         WordsCollectionView.ItemsSource = words;
+        ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
+    }
+
+    /// <summary>
+    /// Shows the loading state while CEFR words are being loaded.
+    /// </summary>
+    private void ShowLoadingState()
+    {
+        LoadingStateLabel.IsVisible = true;
+        ErrorStateLabel.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        WordsCollectionView.IsVisible = false;
+    }
+
+    /// <summary>
+    /// Shows the generic error state when CEFR word loading fails.
+    /// </summary>
+    private void ShowErrorState()
+    {
+        WordsCollectionView.ItemsSource = Array.Empty<CefrWordItemViewModel>();
+        WordsCollectionView.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        ErrorStateLabel.IsVisible = true;
     }
 
     /// <summary>

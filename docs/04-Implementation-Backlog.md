@@ -58,7 +58,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] define package version management strategy
 - [x] define solution-wide nullable and warnings policy
 - [x] set up formatting and analysis defaults
-- [ ] add CI pipeline for restore, build, and tests
+- [x] add CI pipeline for restore, build, and tests
 
 ### 2. Documentation and Standards Adoption
 
@@ -94,8 +94,8 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [ ] define design tokens and styling foundations
 - [-] replace default template screens with real product screens
 - [ ] establish reusable UI components for list items, filters, and detail sections
-- [ ] define empty/loading/error states
-- [ ] define accessibility baseline for typography, contrast, and touch targets
+- [x] define empty/loading/error states
+- [x] define accessibility baseline for typography, contrast, and touch targets
 
 ### 6. Storage Foundation
 
@@ -105,7 +105,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] implement database initialization flow
 - [x] create migration-based startup initialization
 - [x] define database file location strategy per platform
-- [ ] add basic transactional support for write workflows
+- [x] add basic transactional support for write workflows
 
 ### 7. Reference Data and Seeding
 
@@ -155,8 +155,8 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 ### 11. Application Use Cases
 
-- [ ] implement `InitializeDatabase`
-- [ ] implement `SeedReferenceData`
+- [x] implement `InitializeDatabase`
+- [x] implement `SeedReferenceData`
 - [x] implement `EnsureUserLearningProfileExists`
 - [x] implement `GetUserLearningProfile`
 - [x] implement `GetTopics`
@@ -198,17 +198,17 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 ### 14. Testing and Quality
 
-- [-] add domain tests for aggregate invariants
-- [-] add application tests for main use cases
-- [ ] add infrastructure tests for persistence mappings
-- [-] add import workflow tests
+- [x] add domain tests for aggregate invariants
+- [x] add application tests for main use cases
+- [x] add infrastructure tests for persistence mappings
+- [x] add import workflow tests
 - [x] cover successful package import with SQLite-backed integration testing
 - [x] cover duplicate `packageId` rejection with SQLite-backed integration testing
 - [x] cover SQLite search-index bootstrap and prefix-first ranking with integration tests
 - [x] cover legacy `EnsureCreated` database baselining with integration tests
-- [ ] add seed-data tests
-- [ ] add localization coverage checks
-- [ ] add smoke tests for the MAUI startup path where practical
+- [x] add seed-data tests
+- [x] add localization coverage checks
+- [x] add smoke tests for the MAUI startup path where practical
 - [!] resolve local Windows application-control policy issue blocking some test assemblies and transitive dependencies; current default solution test run excludes `Learning.Domain.Tests`, `Catalog.Domain.Tests`, `Localization.Domain.Tests`, `ContentOps.Application.Tests`, and SQLite-backed infrastructure tests
 
 ### 15. Release Readiness

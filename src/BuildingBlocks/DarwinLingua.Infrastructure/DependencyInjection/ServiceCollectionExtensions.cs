@@ -53,6 +53,7 @@ public static class ServiceCollectionExtensions
         });
 
         services.AddSingleton<IDatabaseInitializer, DarwinLinguaDatabaseInitializer>();
+        services.AddSingleton<ITransactionalExecutionService, TransactionalExecutionService>();
 
         return services;
     }

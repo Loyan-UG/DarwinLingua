@@ -47,25 +47,55 @@ public partial class FavoritesPage : ContentPage
         HeadlineLabel.Text = AppStrings.FavoritesPageHeadline;
         DescriptionLabel.Text = AppStrings.FavoritesPageDescription;
         EmptyStateLabel.Text = AppStrings.FavoritesPageEmpty;
+        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        ErrorStateLabel.Text = AppStrings.CommonStateError;
 
-        UserLearningProfileModel profile = await _userLearningProfileService
-            .GetCurrentProfileAsync(CancellationToken.None)
-            .ConfigureAwait(true);
+        ShowLoadingState();
 
-        IReadOnlyList<FavoriteWordListItemModel> favoriteWords = await _userFavoriteWordService
-            .GetFavoriteWordsAsync(profile.PreferredMeaningLanguage1, CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            UserLearningProfileModel profile = await _userLearningProfileService
+                .GetCurrentProfileAsync(CancellationToken.None)
+                .ConfigureAwait(true);
 
-        FavoritesCollectionView.ItemsSource = favoriteWords
-            .Select(word => new FavoriteWordItemViewModel(
-                word.PublicId,
-                BuildLemmaLine(word),
-                word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
-                $"{word.PartOfSpeech} · {word.CefrLevel}"))
-            .ToArray();
+            IReadOnlyList<FavoriteWordListItemModel> favoriteWords = await _userFavoriteWordService
+                .GetFavoriteWordsAsync(profile.PreferredMeaningLanguage1, CancellationToken.None)
+                .ConfigureAwait(true);
 
-        EmptyStateLabel.IsVisible = favoriteWords.Count == 0;
-        FavoritesCollectionView.IsVisible = favoriteWords.Count > 0;
+            FavoritesCollectionView.ItemsSource = favoriteWords
+                .Select(word => new FavoriteWordItemViewModel(
+                    word.PublicId,
+                    BuildLemmaLine(word),
+                    word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
+                    $"{word.PartOfSpeech} · {word.CefrLevel}"))
+                .ToArray();
+
+            EmptyStateLabel.IsVisible = favoriteWords.Count == 0;
+            FavoritesCollectionView.IsVisible = favoriteWords.Count > 0;
+            ErrorStateLabel.IsVisible = false;
+        }
+        catch
+        {
+            FavoritesCollectionView.ItemsSource = Array.Empty<FavoriteWordItemViewModel>();
+            FavoritesCollectionView.IsVisible = false;
+            EmptyStateLabel.IsVisible = false;
+            ErrorStateLabel.IsVisible = true;
+        }
+        finally
+        {
+            LoadingStateLabel.IsVisible = false;
+        }
+    }
+
+    /// <summary>
+    /// Shows the loading state while favorites are being loaded.
+    /// </summary>
+    private void ShowLoadingState()
+    {
+        LoadingStateLabel.IsVisible = true;
+        ErrorStateLabel.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        FavoritesCollectionView.IsVisible = false;
     }
 
     /// <summary>

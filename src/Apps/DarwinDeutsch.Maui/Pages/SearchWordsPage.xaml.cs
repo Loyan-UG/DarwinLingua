@@ -75,6 +75,8 @@ public partial class SearchWordsPage : ContentPage
         DescriptionLabel.Text = AppStrings.SearchWordsPageDescription;
         SearchBarControl.Placeholder = AppStrings.SearchWordsPagePlaceholder;
         EmptyStateLabel.Text = AppStrings.SearchWordsPageEmpty;
+        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        ErrorStateLabel.Text = AppStrings.CommonStateError;
     }
 
     /// <summary>
@@ -82,29 +84,42 @@ public partial class SearchWordsPage : ContentPage
     /// </summary>
     private async Task SearchAsync()
     {
-        UserLearningProfileModel profile = await _userLearningProfileService
-            .GetCurrentProfileAsync(CancellationToken.None)
-            .ConfigureAwait(true);
+        ShowLoadingState();
 
-        string query = SearchBarControl.Text ?? string.Empty;
-
-        if (string.IsNullOrWhiteSpace(query))
+        try
         {
-            ShowResults(Array.Empty<SearchWordItemViewModel>());
-            return;
+            UserLearningProfileModel profile = await _userLearningProfileService
+                .GetCurrentProfileAsync(CancellationToken.None)
+                .ConfigureAwait(true);
+
+            string query = SearchBarControl.Text ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                ShowResults(Array.Empty<SearchWordItemViewModel>());
+                return;
+            }
+
+            IReadOnlyList<WordListItemModel> words = await _wordQueryService
+                .SearchWordsAsync(query, profile.PreferredMeaningLanguage1, CancellationToken.None)
+                .ConfigureAwait(true);
+
+            ShowResults(words
+                .Select(word => new SearchWordItemViewModel(
+                    word.PublicId,
+                    string.IsNullOrWhiteSpace(word.Article) ? word.Lemma : $"{word.Article} {word.Lemma}",
+                    word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
+                    $"{word.PartOfSpeech} · {word.CefrLevel}"))
+                .ToArray());
         }
-
-        IReadOnlyList<WordListItemModel> words = await _wordQueryService
-            .SearchWordsAsync(query, profile.PreferredMeaningLanguage1, CancellationToken.None)
-            .ConfigureAwait(true);
-
-        ShowResults(words
-            .Select(word => new SearchWordItemViewModel(
-                word.PublicId,
-                string.IsNullOrWhiteSpace(word.Article) ? word.Lemma : $"{word.Article} {word.Lemma}",
-                word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
-                $"{word.PartOfSpeech} · {word.CefrLevel}"))
-            .ToArray());
+        catch
+        {
+            ShowErrorState();
+        }
+        finally
+        {
+            LoadingStateLabel.IsVisible = false;
+        }
     }
 
     /// <summary>
@@ -113,8 +128,31 @@ public partial class SearchWordsPage : ContentPage
     private void ShowResults(IReadOnlyList<SearchWordItemViewModel> words)
     {
         WordsCollectionView.ItemsSource = words;
+        ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
+    }
+
+    /// <summary>
+    /// Shows the loading state while the query is being executed.
+    /// </summary>
+    private void ShowLoadingState()
+    {
+        LoadingStateLabel.IsVisible = true;
+        ErrorStateLabel.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        WordsCollectionView.IsVisible = false;
+    }
+
+    /// <summary>
+    /// Shows the generic error state when the query cannot be completed.
+    /// </summary>
+    private void ShowErrorState()
+    {
+        WordsCollectionView.ItemsSource = Array.Empty<SearchWordItemViewModel>();
+        WordsCollectionView.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        ErrorStateLabel.IsVisible = true;
     }
 
     /// <summary>

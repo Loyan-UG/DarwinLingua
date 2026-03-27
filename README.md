@@ -18,9 +18,21 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - the product direction, domain, storage, offline, and import strategy are documented
 - the solution structure exists under `src/`
 - the MAUI app now has migration-based local SQLite startup initialization, compatibility baselining for older local `EnsureCreated` databases, UI localization, persisted local learning-profile preferences, CEFR browsing, topic browsing, indexed German lemma search with prefix-first ranking, word details, favorites, settings-based language selection, and platform TTS actions for German words and example sentences with graceful localized failure handling
+- the startup infrastructure now exposes explicit `InitializeDatabase` and `SeedReferenceData` use-case workflows (while preserving one-call startup initialization)
 - the catalog module now contains the first real lexical aggregate model for words, senses, translations, examples, topic links, browse/search queries, and detail-query foundations
 - the learning module now persists local favorite words and lightweight user word state separately from catalog content, including favorite toggle/list workflows, view tracking, and known/difficult markers with clear actions
 - the import tool can bootstrap the shared local database, apply reference seeds, import canonical JSON content packages, skip duplicates conservatively, reject repeated `packageId` values, and return an operator-facing summary
+- SQLite-backed integration tests now cover reference-data seeding presence and idempotency for Phase 1 language/topic seed workflows
+- localization coverage checks now enforce English/German `AppStrings` resource-key parity in automated tests
+- infrastructure mapping tests now verify key EF Core uniqueness/index constraints for Phase 1 persistence entities
+- import workflow tests now cover mixed valid/invalid entries and duplicate-entry skipping behavior within a package
+- practical smoke tests now guard the MAUI startup path to ensure DB initialization and localization initialization remain wired
+- domain tests now cover additional aggregate invariants and state-transition rules for catalog and learning entities
+- application-layer tests now cover core ContentOps import failure paths such as file-read errors, parser errors, and duplicate package rejection
+- CI workflow now runs restore/build/test for non-MAUI projects and all test projects on GitHub Actions
+- shared infrastructure now exposes a transactional execution service for write workflows, with commit/rollback coverage
+- UI state handling now includes explicit loading/error/empty behavior across core data-driven browse/search/favorites pages
+- accessibility baseline updates now enforce 44px touch targets and improved typography contrast/legibility defaults in shared MAUI styles
 - important Phase 1 workflows such as broader UI/UX foundation work and release hardening are still not implemented yet
 
 The current import contract maps one imported entry to one imported sense with meanings and examples.

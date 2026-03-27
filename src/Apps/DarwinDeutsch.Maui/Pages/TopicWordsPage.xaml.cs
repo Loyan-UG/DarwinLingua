@@ -71,32 +71,76 @@ public partial class TopicWordsPage : ContentPage
         HeadlineLabel.Text = string.Format(AppStrings.TopicWordsPageHeadlineFormat, TopicTitle);
         DescriptionLabel.Text = AppStrings.TopicWordsPageDescription;
         EmptyStateLabel.Text = AppStrings.TopicWordsPageEmpty;
+        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        ErrorStateLabel.Text = AppStrings.CommonStateError;
 
         if (string.IsNullOrWhiteSpace(TopicKey))
         {
-            WordsCollectionView.ItemsSource = Array.Empty<TopicWordItemViewModel>();
-            EmptyStateLabel.IsVisible = true;
-            WordsCollectionView.IsVisible = false;
+            ShowEmptyState(Array.Empty<TopicWordItemViewModel>());
             return;
         }
 
-        UserLearningProfileModel profile = await _userLearningProfileService
-            .GetCurrentProfileAsync(CancellationToken.None)
-            .ConfigureAwait(true);
+        ShowLoadingState();
 
-        IReadOnlyList<WordListItemModel> words = await _wordQueryService
-            .GetWordsByTopicAsync(TopicKey, profile.PreferredMeaningLanguage1, CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            UserLearningProfileModel profile = await _userLearningProfileService
+                .GetCurrentProfileAsync(CancellationToken.None)
+                .ConfigureAwait(true);
 
-        WordsCollectionView.ItemsSource = words
-            .Select(word => new TopicWordItemViewModel(
-                word.PublicId,
-                BuildLemmaLine(word),
-                word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
-                $"{word.PartOfSpeech} · {word.CefrLevel}"))
-            .ToArray();
+            IReadOnlyList<WordListItemModel> words = await _wordQueryService
+                .GetWordsByTopicAsync(TopicKey, profile.PreferredMeaningLanguage1, CancellationToken.None)
+                .ConfigureAwait(true);
+
+            ShowEmptyState(words
+                .Select(word => new TopicWordItemViewModel(
+                    word.PublicId,
+                    BuildLemmaLine(word),
+                    word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
+                    $"{word.PartOfSpeech} · {word.CefrLevel}"))
+                .ToArray());
+        }
+        catch
+        {
+            ShowErrorState();
+        }
+        finally
+        {
+            LoadingStateLabel.IsVisible = false;
+        }
+    }
+
+    /// <summary>
+    /// Applies the current topic-word results and empty state visibility.
+    /// </summary>
+    private void ShowEmptyState(IReadOnlyList<TopicWordItemViewModel> words)
+    {
+        WordsCollectionView.ItemsSource = words;
+        ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
+    }
+
+    /// <summary>
+    /// Shows the loading state while topic words are being loaded.
+    /// </summary>
+    private void ShowLoadingState()
+    {
+        LoadingStateLabel.IsVisible = true;
+        ErrorStateLabel.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        WordsCollectionView.IsVisible = false;
+    }
+
+    /// <summary>
+    /// Shows the generic error state when topic-word loading fails.
+    /// </summary>
+    private void ShowErrorState()
+    {
+        WordsCollectionView.ItemsSource = Array.Empty<TopicWordItemViewModel>();
+        WordsCollectionView.IsVisible = false;
+        EmptyStateLabel.IsVisible = false;
+        ErrorStateLabel.IsVisible = true;
     }
 
     /// <summary>

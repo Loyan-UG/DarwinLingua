@@ -63,6 +63,55 @@ public sealed class WordEntryTests
             DateTime.UtcNow));
     }
 
+    /// <summary>
+    /// Verifies that setting a new primary sense demotes the previous primary sense.
+    /// </summary>
+    [Fact]
+    public void AddSense_ShouldSwitchPrimarySenseWhenNewPrimaryIsAdded()
+    {
+        WordEntry word = CreateWordEntry();
+        WordSense firstSense = word.AddSense(Guid.NewGuid(), 1, true, PublicationStatus.Active, DateTime.UtcNow);
+        WordSense secondSense = word.AddSense(Guid.NewGuid(), 2, true, PublicationStatus.Active, DateTime.UtcNow);
+
+        Assert.False(firstSense.IsPrimarySense);
+        Assert.True(secondSense.IsPrimarySense);
+        Assert.Equal(secondSense, word.GetPrimarySense());
+    }
+
+    /// <summary>
+    /// Verifies that duplicate example orders are rejected within one sense.
+    /// </summary>
+    [Fact]
+    public void AddExample_ShouldRejectDuplicateSentenceOrderPerSense()
+    {
+        WordEntry word = CreateWordEntry();
+        WordSense sense = word.AddSense(Guid.NewGuid(), 1, true, PublicationStatus.Active, DateTime.UtcNow);
+        sense.AddExample(Guid.NewGuid(), 1, "Ich gehe zum Bahnhof.", true, DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => sense.AddExample(
+            Guid.NewGuid(),
+            1,
+            "Wir treffen uns am Bahnhof.",
+            false,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that setting a new primary topic demotes the previous primary topic.
+    /// </summary>
+    [Fact]
+    public void AddTopic_ShouldSwitchPrimaryTopicWhenNewPrimaryIsAdded()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordTopic firstTopic = word.AddTopic(Guid.NewGuid(), Guid.NewGuid(), true, DateTime.UtcNow);
+        WordTopic secondTopic = word.AddTopic(Guid.NewGuid(), Guid.NewGuid(), true, DateTime.UtcNow);
+
+        Assert.False(firstTopic.IsPrimaryTopic);
+        Assert.True(secondTopic.IsPrimaryTopic);
+        Assert.Single(word.Topics.Where(topic => topic.IsPrimaryTopic));
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(
