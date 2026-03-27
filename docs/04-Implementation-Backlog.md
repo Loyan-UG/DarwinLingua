@@ -310,7 +310,7 @@ Phase 3 focuses on richer lexical intelligence while continuing to prioritize th
 - [x] surface collocations in the word-detail flow
 - [x] surface word families in the word-detail flow
 - [x] surface lexical relations in the word-detail flow
-- [ ] review and polish the main learner-facing screens for stronger visual consistency
+- [x] review and polish the main learner-facing screens for stronger visual consistency
 
 ### 25. Phase 3 Quality and Release Readiness
 

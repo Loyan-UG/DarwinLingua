@@ -2,17 +2,21 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DarwinDeutsch.Maui.Controls.ActionBlockView">
-    <Border Padding="16"
-            StrokeThickness="0"
-            BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#141414}">
+    <Border Padding="18"
+            Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+            StrokeShape="RoundRectangle 24"
+            StrokeThickness="1"
+            BackgroundColor="{AppThemeBinding Light=#F8F4FF, Dark=#10161E}">
         <Grid ColumnDefinitions="*,Auto"
               ColumnSpacing="12">
             <Label x:Name="CaptionLabel"
                    Grid.Column="0"
                    Style="{DynamicResource Title2}"
+                   TextColor="{AppThemeBinding Light=#190649, Dark=White}"
                    VerticalOptions="Center" />
             <Button x:Name="ActionButton"
                     Grid.Column="1"
+                    CornerRadius="18"
                     Clicked="OnActionButtonClicked" />
         </Grid>
     </Border>

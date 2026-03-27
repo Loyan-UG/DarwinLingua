@@ -47,7 +47,7 @@ Use it when:
 - Practice now also has a dedicated `DarwinLingua.Practice.Application.Tests` project that covers review-queue/session delegation and quiz-answer submission behavior at the application-service layer.
 - Practice infrastructure coverage now also includes query/persistence behavior for missing meanings and inactive content filtering, plus a release-readiness performance test over a realistic early-learning practice dataset.
 - Manual/device-bound Practice validation now has a dedicated worksheet in `docs/46-Phase-2-Practice-Validation-Worksheet.md`.
-- Phase 3 mobile lexical-intelligence slices now include imported usage/context labels, learner-facing grammar notes, collocations, word families, and synonym/antonym relations on `WordEntry`, all flowing through `GetWordDetails` into the upgraded word-detail screen.
+- Phase 3 mobile lexical-intelligence slices now include imported usage/context labels, learner-facing grammar notes, collocations, word families, and synonym/antonym relations on `WordEntry`, all flowing through `GetWordDetails` into the upgraded word-detail screen, plus broader visual-consistency polish across the main learner-facing mobile screens.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
 ---
@@ -59,7 +59,7 @@ Focus next on the remaining Phase 2 practice quality and release-readiness items
 Suggested scope:
 
 1. Validate Phase 2 practice flows on target devices using `docs/46-Phase-2-Practice-Validation-Worksheet.md`.
-2. Continue Phase 3 with broader learner-facing UI consistency and polish across the main mobile screens, then validate the enhanced word-detail experience on target devices.
+2. Validate the enhanced Phase 3 learner-facing mobile UI on target devices, especially the upgraded word-detail and polished home/search/browse/practice flows.
 3. Keep the remaining manual device worksheet items for offline behavior, English UI, German UI, and TTS queued for final Phase 1 sign-off, then extend that validation to Practice flows.
 
 ---
@@ -74,7 +74,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - Phase 1 and Phase 2 only have manual device-bound validation left from my side.
-- Prioritize broader Phase 3 mobile UI/UX polish after the implemented usage/context labels, grammar notes, collocations, word families, and lexical relations, then validate the upgraded word-detail screen on target devices.
+- Prioritize Phase 3 device validation after the implemented usage/context labels, grammar notes, collocations, word families, lexical relations, and broader learner-facing UI polish.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.
 - Run the full local Windows .NET checks after changes.

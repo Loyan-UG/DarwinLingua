@@ -4,48 +4,88 @@
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.SearchWordsPage">
     <Grid Padding="24"
-          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*"
-          RowSpacing="12">
-        <Label x:Name="HeadlineLabel"
-               Grid.Row="0"
-               Style="{DynamicResource Headline}"
-               SemanticProperties.HeadingLevel="Level1" />
+          RowDefinitions="Auto,Auto,*"
+          RowSpacing="18">
+        <Border Grid.Row="0"
+                Padding="24"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 28"
+                BackgroundColor="{AppThemeBinding Light=#E9E0FF, Dark=#141A24}">
+            <VerticalStackLayout Spacing="10">
+                <Border Padding="10,6"
+                        HorizontalOptions="Start"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 14"
+                        BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#232C3A}">
+                    <Label x:Name="StatusBadgeLabel"
+                           Style="{DynamicResource Body}" />
+                </Border>
+                <Label x:Name="HeadlineLabel"
+                       Style="{DynamicResource Headline}"
+                       SemanticProperties.HeadingLevel="Level1" />
 
-        <Label x:Name="DescriptionLabel"
-               Grid.Row="1"
-               Style="{DynamicResource Body}"
-               LineBreakMode="WordWrap" />
+                <Label x:Name="DescriptionLabel"
+                       Style="{DynamicResource Body}"
+                       LineBreakMode="WordWrap" />
+            </VerticalStackLayout>
+        </Border>
 
-        <SearchBar x:Name="SearchBarControl"
-                   Grid.Row="2"
-                   SearchButtonPressed="OnSearchButtonPressed" />
+        <Border Grid.Row="1"
+                Padding="20"
+                Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                StrokeShape="RoundRectangle 24"
+                StrokeThickness="1"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
+            <VerticalStackLayout Spacing="12">
+                <Label x:Name="SearchSectionLabel"
+                       Style="{DynamicResource Title2}" />
+                <SearchBar x:Name="SearchBarControl"
+                           SearchButtonPressed="OnSearchButtonPressed" />
+                <Label x:Name="SearchHintLabel"
+                       Style="{DynamicResource Body}" />
+            </VerticalStackLayout>
+        </Border>
 
-        <Label x:Name="EmptyStateLabel"
-               Grid.Row="3"
-               Style="{DynamicResource Body}"
-               IsVisible="False" />
+        <Border Grid.Row="2"
+                Padding="20"
+                Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                StrokeShape="RoundRectangle 24"
+                StrokeThickness="1"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
+                  RowSpacing="12">
+                <Label x:Name="ResultsSectionLabel"
+                       Grid.Row="0"
+                       Style="{DynamicResource Title2}" />
 
-        <Label x:Name="LoadingStateLabel"
-               Grid.Row="4"
-               Style="{DynamicResource Body}"
-               IsVisible="False" />
+                <Label x:Name="EmptyStateLabel"
+                       Grid.Row="1"
+                       Style="{DynamicResource Body}"
+                       IsVisible="False" />
 
-        <Label x:Name="ErrorStateLabel"
-               Grid.Row="5"
-               Style="{DynamicResource Body}"
-               IsVisible="False" />
+                <Label x:Name="LoadingStateLabel"
+                       Grid.Row="2"
+                       Style="{DynamicResource Body}"
+                       IsVisible="False" />
 
-        <CollectionView x:Name="WordsCollectionView"
-                        Grid.Row="6"
-                        SelectionMode="Single"
-                        SelectionChanged="OnWordsSelectionChanged">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <controls:WordListItemView Lemma="{Binding Lemma}"
-                                               PrimaryMeaning="{Binding PrimaryMeaning}"
-                                               MetadataLine="{Binding MetadataLine}" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                <Label x:Name="ErrorStateLabel"
+                       Grid.Row="3"
+                       Style="{DynamicResource Body}"
+                       IsVisible="False" />
+
+                <CollectionView x:Name="WordsCollectionView"
+                                Grid.Row="4"
+                                SelectionMode="Single"
+                                SelectionChanged="OnWordsSelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:WordListItemView Lemma="{Binding Lemma}"
+                                                       PrimaryMeaning="{Binding PrimaryMeaning}"
+                                                       MetadataLine="{Binding MetadataLine}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Border>
     </Grid>
 </ContentPage>

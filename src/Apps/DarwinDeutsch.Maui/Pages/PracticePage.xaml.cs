@@ -76,8 +76,11 @@ public partial class PracticePage : ContentPage
     private void ApplyLocalizedText()
     {
         Title = AppStrings.PracticeTabTitle;
+        StatusBadgeLabel.Text = AppStrings.PracticePageStatusBadge;
         HeadlineLabel.Text = AppStrings.PracticePageHeadline;
         DescriptionLabel.Text = AppStrings.PracticePageDescription;
+        ProgressSectionLabel.Text = AppStrings.PracticePageProgressSectionLabel;
+        ActionsSectionLabel.Text = AppStrings.PracticePageActionsSectionLabel;
         DueNowSectionView.SectionTitle = AppStrings.PracticePageDueNowLabel;
         SuccessRateSectionView.SectionTitle = AppStrings.PracticePageSuccessRateLabel;
         MasteredSectionView.SectionTitle = AppStrings.PracticePageMasteredLabel;

@@ -8,8 +8,17 @@
                              Spacing="18">
             <Border Padding="24"
                     StrokeThickness="0"
-                    BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#141414}">
+                    StrokeShape="RoundRectangle 28"
+                    BackgroundColor="{AppThemeBinding Light=#E9E0FF, Dark=#141A24}">
                 <VerticalStackLayout Spacing="12">
+                    <Border Padding="10,6"
+                            HorizontalOptions="Start"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#232C3A}">
+                        <Label x:Name="StatusBadgeLabel"
+                               Style="{DynamicResource Body}" />
+                    </Border>
                     <Label x:Name="HeadlineLabel"
                            Style="{DynamicResource Headline}"
                            HorizontalOptions="Start"
@@ -22,7 +31,14 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border Padding="20">
+            <Label x:Name="ProfileSectionLabel"
+                   Style="{DynamicResource Title2}" />
+
+            <Border Padding="20"
+                    Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="1"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
                 <VerticalStackLayout Spacing="16">
                     <controls:DetailSectionView x:Name="CurrentLanguageSectionView" />
                     <controls:DetailSectionView x:Name="MeaningLanguagesSectionView" />
@@ -31,24 +47,33 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border Padding="20">
-                <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
-                                              LevelSelected="OnCefrLevelSelected" />
+            <Label x:Name="ExploreSectionLabel"
+                   Style="{DynamicResource Title2}" />
+
+            <Border Padding="20"
+                    Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="1"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
+                <VerticalStackLayout Spacing="16">
+                    <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
+                                                  LevelSelected="OnCefrLevelSelected" />
+
+                    <VerticalStackLayout Spacing="12">
+                        <controls:ActionBlockView x:Name="PracticeActionBlockView"
+                                                  ActionInvoked="OnPracticeActionInvoked" />
+
+                        <controls:ActionBlockView x:Name="SearchActionBlockView"
+                                                  ActionInvoked="OnSearchActionInvoked" />
+
+                        <controls:ActionBlockView x:Name="BrowseTopicsActionBlockView"
+                                                  ActionInvoked="OnBrowseTopicsActionInvoked" />
+
+                        <controls:ActionBlockView x:Name="FavoritesActionBlockView"
+                                                  ActionInvoked="OnFavoritesActionInvoked" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
             </Border>
-
-            <VerticalStackLayout Spacing="12">
-                <controls:ActionBlockView x:Name="PracticeActionBlockView"
-                                          ActionInvoked="OnPracticeActionInvoked" />
-
-                <controls:ActionBlockView x:Name="SearchActionBlockView"
-                                          ActionInvoked="OnSearchActionInvoked" />
-
-                <controls:ActionBlockView x:Name="BrowseTopicsActionBlockView"
-                                          ActionInvoked="OnBrowseTopicsActionInvoked" />
-
-                <controls:ActionBlockView x:Name="FavoritesActionBlockView"
-                                          ActionInvoked="OnFavoritesActionInvoked" />
-            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

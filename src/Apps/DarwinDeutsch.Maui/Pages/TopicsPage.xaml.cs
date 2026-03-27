@@ -77,8 +77,11 @@ public partial class TopicsPage : ContentPage
     private void ApplyLocalizedText()
     {
         Title = AppStrings.BrowseTabTitle;
+        StatusBadgeLabel.Text = AppStrings.TopicsPageStatusBadge;
         HeadlineLabel.Text = AppStrings.TopicsPageHeadline;
         DescriptionLabel.Text = AppStrings.TopicsPageDescription;
+        ShortcutsSectionLabel.Text = AppStrings.TopicsPageShortcutsLabel;
+        TopicsSectionLabel.Text = AppStrings.TopicsPageTopicListLabel;
         CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
         SearchActionBlockView.Caption = AppStrings.HomeSearchLabel;
         SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;

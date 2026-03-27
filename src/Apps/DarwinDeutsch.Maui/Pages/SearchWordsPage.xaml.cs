@@ -72,8 +72,12 @@ public partial class SearchWordsPage : ContentPage
     private void ApplyLocalizedText()
     {
         Title = AppStrings.SearchWordsPageTitle;
+        StatusBadgeLabel.Text = AppStrings.SearchWordsPageStatusBadge;
         HeadlineLabel.Text = AppStrings.SearchWordsPageHeadline;
         DescriptionLabel.Text = AppStrings.SearchWordsPageDescription;
+        SearchSectionLabel.Text = AppStrings.SearchWordsPageSearchSectionLabel;
+        SearchHintLabel.Text = AppStrings.SearchWordsPageSearchHint;
+        ResultsSectionLabel.Text = AppStrings.SearchWordsPageResultsLabel;
         SearchBarControl.Placeholder = AppStrings.SearchWordsPagePlaceholder;
         EmptyStateLabel.Text = AppStrings.SearchWordsPageEmpty;
         LoadingStateLabel.Text = AppStrings.CommonStateLoading;

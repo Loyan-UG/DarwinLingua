@@ -8,8 +8,17 @@
                              Spacing="18">
             <Border Padding="24"
                     StrokeThickness="0"
-                    BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#141414}">
+                    StrokeShape="RoundRectangle 28"
+                    BackgroundColor="{AppThemeBinding Light=#E9E0FF, Dark=#141A24}">
                 <VerticalStackLayout Spacing="10">
+                    <Border Padding="10,6"
+                            HorizontalOptions="Start"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#232C3A}">
+                        <Label x:Name="StatusBadgeLabel"
+                               Style="{DynamicResource Body}" />
+                    </Border>
                     <Label x:Name="HeadlineLabel"
                            Style="{DynamicResource Headline}"
                            SemanticProperties.HeadingLevel="Level1" />
@@ -19,7 +28,14 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border Padding="20">
+            <Label x:Name="ProgressSectionLabel"
+                   Style="{DynamicResource Title2}" />
+
+            <Border Padding="20"
+                    Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="1"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
                 <Grid ColumnDefinitions="*,*"
                       ColumnSpacing="16"
                       RowDefinitions="Auto,Auto"
@@ -39,16 +55,29 @@
                 </Grid>
             </Border>
 
-            <VerticalStackLayout Spacing="12">
-                <controls:ActionBlockView x:Name="StartFlashcardsActionBlockView"
-                                          ActionInvoked="OnStartFlashcardsActionInvoked" />
-                <controls:ActionBlockView x:Name="StartQuizActionBlockView"
-                                          ActionInvoked="OnStartQuizActionInvoked" />
-                <controls:ActionBlockView x:Name="RefreshPracticeActionBlockView"
-                                          ActionInvoked="OnRefreshPracticeActionInvoked" />
-            </VerticalStackLayout>
+            <Label x:Name="ActionsSectionLabel"
+                   Style="{DynamicResource Title2}" />
 
-            <Border Padding="20">
+            <Border Padding="20"
+                    Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="1"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
+                <VerticalStackLayout Spacing="12">
+                    <controls:ActionBlockView x:Name="StartFlashcardsActionBlockView"
+                                              ActionInvoked="OnStartFlashcardsActionInvoked" />
+                    <controls:ActionBlockView x:Name="StartQuizActionBlockView"
+                                              ActionInvoked="OnStartQuizActionInvoked" />
+                    <controls:ActionBlockView x:Name="RefreshPracticeActionBlockView"
+                                              ActionInvoked="OnRefreshPracticeActionInvoked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="20"
+                    Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="1"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="ReviewSessionSectionLabel"
                            Style="{DynamicResource Title2}" />
@@ -70,7 +99,11 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border Padding="20">
+            <Border Padding="20"
+                    Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="1"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="RecentActivitySectionLabel"
                            Style="{DynamicResource Title2}" />

@@ -9,8 +9,17 @@
         <Border Grid.Row="0"
                 Padding="24"
                 StrokeThickness="0"
-                BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#141414}">
+                StrokeShape="RoundRectangle 28"
+                BackgroundColor="{AppThemeBinding Light=#E9E0FF, Dark=#141A24}">
             <VerticalStackLayout Spacing="10">
+                <Border Padding="10,6"
+                        HorizontalOptions="Start"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 14"
+                        BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#232C3A}">
+                    <Label x:Name="StatusBadgeLabel"
+                           Style="{DynamicResource Body}" />
+                </Border>
                 <Label x:Name="HeadlineLabel"
                        Style="{DynamicResource Headline}"
                        HorizontalOptions="Start"
@@ -24,8 +33,14 @@
         </Border>
 
         <Border Grid.Row="1"
-                Padding="20">
+                Padding="20"
+                Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                StrokeShape="RoundRectangle 24"
+                StrokeThickness="1"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
             <VerticalStackLayout Spacing="12">
+                <Label x:Name="ShortcutsSectionLabel"
+                       Style="{DynamicResource Title2}" />
                 <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
                                               LevelSelected="OnCefrLevelSelected" />
 
@@ -38,26 +53,34 @@
         </Border>
 
         <Border Grid.Row="2"
-                Padding="20">
-            <Grid RowDefinitions="Auto,Auto,Auto,*"
+                Padding="20"
+                Stroke="{AppThemeBinding Light=#D8C9F4, Dark=#2A3340}"
+                StrokeShape="RoundRectangle 24"
+                StrokeThickness="1"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
                   RowSpacing="12">
-                <Label x:Name="LoadingStateLabel"
+                <Label x:Name="TopicsSectionLabel"
                        Grid.Row="0"
-                       Style="{DynamicResource Body}"
-                       IsVisible="False" />
+                       Style="{DynamicResource Title2}" />
 
-                <Label x:Name="ErrorStateLabel"
+                <Label x:Name="LoadingStateLabel"
                        Grid.Row="1"
                        Style="{DynamicResource Body}"
                        IsVisible="False" />
 
-                <Label x:Name="EmptyStateLabel"
+                <Label x:Name="ErrorStateLabel"
                        Grid.Row="2"
                        Style="{DynamicResource Body}"
                        IsVisible="False" />
 
+                <Label x:Name="EmptyStateLabel"
+                       Grid.Row="3"
+                       Style="{DynamicResource Body}"
+                       IsVisible="False" />
+
                 <CollectionView x:Name="TopicsCollectionView"
-                                Grid.Row="3"
+                                Grid.Row="4"
                                 SelectionMode="Single"
                                 SelectionChanged="OnTopicsSelectionChanged">
                     <CollectionView.ItemTemplate>

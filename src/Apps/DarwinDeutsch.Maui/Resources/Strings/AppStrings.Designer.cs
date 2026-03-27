@@ -53,6 +53,21 @@ public static class AppStrings
     public static string HomeIntro => GetRequiredString(nameof(HomeIntro));
 
     /// <summary>
+    /// Gets the localized status badge shown on the home page hero.
+    /// </summary>
+    public static string HomePageStatusBadge => GetRequiredString(nameof(HomePageStatusBadge));
+
+    /// <summary>
+    /// Gets the localized profile section heading on the home page.
+    /// </summary>
+    public static string HomePageProfileSectionLabel => GetRequiredString(nameof(HomePageProfileSectionLabel));
+
+    /// <summary>
+    /// Gets the localized action section heading on the home page.
+    /// </summary>
+    public static string HomePageExploreSectionLabel => GetRequiredString(nameof(HomePageExploreSectionLabel));
+
+    /// <summary>
     /// Gets the localized label for the current UI language section.
     /// </summary>
     public static string HomeCurrentUiLanguageLabel => GetRequiredString(nameof(HomeCurrentUiLanguageLabel));
@@ -141,6 +156,21 @@ public static class AppStrings
     /// Gets the localized description for the topics page.
     /// </summary>
     public static string TopicsPageDescription => GetRequiredString(nameof(TopicsPageDescription));
+
+    /// <summary>
+    /// Gets the localized status badge shown on the topics page hero.
+    /// </summary>
+    public static string TopicsPageStatusBadge => GetRequiredString(nameof(TopicsPageStatusBadge));
+
+    /// <summary>
+    /// Gets the localized shortcuts section heading on the topics page.
+    /// </summary>
+    public static string TopicsPageShortcutsLabel => GetRequiredString(nameof(TopicsPageShortcutsLabel));
+
+    /// <summary>
+    /// Gets the localized topic-list section heading on the topics page.
+    /// </summary>
+    public static string TopicsPageTopicListLabel => GetRequiredString(nameof(TopicsPageTopicListLabel));
 
     /// <summary>
     /// Gets the localized empty state for the topics page.
@@ -458,6 +488,26 @@ public static class AppStrings
     public static string SearchWordsPageDescription => GetRequiredString(nameof(SearchWordsPageDescription));
 
     /// <summary>
+    /// Gets the localized status badge shown on the search page hero.
+    /// </summary>
+    public static string SearchWordsPageStatusBadge => GetRequiredString(nameof(SearchWordsPageStatusBadge));
+
+    /// <summary>
+    /// Gets the localized heading for the search input section.
+    /// </summary>
+    public static string SearchWordsPageSearchSectionLabel => GetRequiredString(nameof(SearchWordsPageSearchSectionLabel));
+
+    /// <summary>
+    /// Gets the localized helper text shown below the search bar.
+    /// </summary>
+    public static string SearchWordsPageSearchHint => GetRequiredString(nameof(SearchWordsPageSearchHint));
+
+    /// <summary>
+    /// Gets the localized heading for the search results section.
+    /// </summary>
+    public static string SearchWordsPageResultsLabel => GetRequiredString(nameof(SearchWordsPageResultsLabel));
+
+    /// <summary>
     /// Gets the localized placeholder for the search bar.
     /// </summary>
     public static string SearchWordsPagePlaceholder => GetRequiredString(nameof(SearchWordsPagePlaceholder));
@@ -496,6 +546,21 @@ public static class AppStrings
     /// Gets the localized description for the practice page.
     /// </summary>
     public static string PracticePageDescription => GetRequiredString(nameof(PracticePageDescription));
+
+    /// <summary>
+    /// Gets the localized status badge shown on the practice page hero.
+    /// </summary>
+    public static string PracticePageStatusBadge => GetRequiredString(nameof(PracticePageStatusBadge));
+
+    /// <summary>
+    /// Gets the localized heading for the practice progress section.
+    /// </summary>
+    public static string PracticePageProgressSectionLabel => GetRequiredString(nameof(PracticePageProgressSectionLabel));
+
+    /// <summary>
+    /// Gets the localized heading for the practice actions section.
+    /// </summary>
+    public static string PracticePageActionsSectionLabel => GetRequiredString(nameof(PracticePageActionsSectionLabel));
 
     /// <summary>
     /// Gets the localized label for the due-now metric.
