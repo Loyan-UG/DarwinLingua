@@ -453,14 +453,24 @@ public static class AppStrings
     public static string PracticePageStrugglingValueFormat => GetRequiredString(nameof(PracticePageStrugglingValueFormat));
 
     /// <summary>
-    /// Gets the localized label for the review-start action block.
+    /// Gets the localized label for the flashcard-start action block.
     /// </summary>
-    public static string PracticePageStartReviewLabel => GetRequiredString(nameof(PracticePageStartReviewLabel));
+    public static string PracticePageStartFlashcardsLabel => GetRequiredString(nameof(PracticePageStartFlashcardsLabel));
 
     /// <summary>
-    /// Gets the localized caption for the review-start action button.
+    /// Gets the localized caption for the flashcard-start action button.
     /// </summary>
-    public static string PracticePageStartReviewButton => GetRequiredString(nameof(PracticePageStartReviewButton));
+    public static string PracticePageStartFlashcardsButton => GetRequiredString(nameof(PracticePageStartFlashcardsButton));
+
+    /// <summary>
+    /// Gets the localized label for the quiz-start action block.
+    /// </summary>
+    public static string PracticePageStartQuizLabel => GetRequiredString(nameof(PracticePageStartQuizLabel));
+
+    /// <summary>
+    /// Gets the localized caption for the quiz-start action button.
+    /// </summary>
+    public static string PracticePageStartQuizButton => GetRequiredString(nameof(PracticePageStartQuizButton));
 
     /// <summary>
     /// Gets the localized label for the refresh action block.
@@ -556,6 +566,151 @@ public static class AppStrings
     /// Gets the localized easy-outcome label for recent activity.
     /// </summary>
     public static string PracticePageOutcomeEasy => GetRequiredString(nameof(PracticePageOutcomeEasy));
+
+    /// <summary>
+    /// Gets the localized title for the flashcard session page.
+    /// </summary>
+    public static string PracticeFlashcardPageTitle => GetRequiredString(nameof(PracticeFlashcardPageTitle));
+
+    /// <summary>
+    /// Gets the localized headline for the flashcard session page.
+    /// </summary>
+    public static string PracticeFlashcardPageHeadline => GetRequiredString(nameof(PracticeFlashcardPageHeadline));
+
+    /// <summary>
+    /// Gets the localized description for the flashcard session page.
+    /// </summary>
+    public static string PracticeFlashcardPageDescription => GetRequiredString(nameof(PracticeFlashcardPageDescription));
+
+    /// <summary>
+    /// Gets the localized title for the quiz session page.
+    /// </summary>
+    public static string PracticeQuizPageTitle => GetRequiredString(nameof(PracticeQuizPageTitle));
+
+    /// <summary>
+    /// Gets the localized headline for the quiz session page.
+    /// </summary>
+    public static string PracticeQuizPageHeadline => GetRequiredString(nameof(PracticeQuizPageHeadline));
+
+    /// <summary>
+    /// Gets the localized description for the quiz session page.
+    /// </summary>
+    public static string PracticeQuizPageDescription => GetRequiredString(nameof(PracticeQuizPageDescription));
+
+    /// <summary>
+    /// Gets the localized caption for revealing the current answer.
+    /// </summary>
+    public static string PracticeSessionRevealButton => GetRequiredString(nameof(PracticeSessionRevealButton));
+
+    /// <summary>
+    /// Gets the localized caption for advancing to the next practice item.
+    /// </summary>
+    public static string PracticeSessionNextButton => GetRequiredString(nameof(PracticeSessionNextButton));
+
+    /// <summary>
+    /// Gets the localized caption for finishing the current practice session.
+    /// </summary>
+    public static string PracticeSessionFinishButton => GetRequiredString(nameof(PracticeSessionFinishButton));
+
+    /// <summary>
+    /// Gets the localized caption for returning to the practice overview.
+    /// </summary>
+    public static string PracticeSessionReturnButton => GetRequiredString(nameof(PracticeSessionReturnButton));
+
+    /// <summary>
+    /// Gets the localized heading for per-answer feedback.
+    /// </summary>
+    public static string PracticeSessionFeedbackHeadline => GetRequiredString(nameof(PracticeSessionFeedbackHeadline));
+
+    /// <summary>
+    /// Gets the localized heading for the session summary.
+    /// </summary>
+    public static string PracticeSessionSummaryHeadline => GetRequiredString(nameof(PracticeSessionSummaryHeadline));
+
+    /// <summary>
+    /// Gets the localized state label shown when the session is complete.
+    /// </summary>
+    public static string PracticeSessionSummaryState => GetRequiredString(nameof(PracticeSessionSummaryState));
+
+    /// <summary>
+    /// Gets the localized empty state for practice sessions with no available items.
+    /// </summary>
+    public static string PracticeSessionEmpty => GetRequiredString(nameof(PracticeSessionEmpty));
+
+    /// <summary>
+    /// Gets the localized progress format for practice sessions.
+    /// </summary>
+    public static string PracticeSessionProgressFormat => GetRequiredString(nameof(PracticeSessionProgressFormat));
+
+    /// <summary>
+    /// Gets the localized metadata format for one session item.
+    /// </summary>
+    public static string PracticeSessionMetadataFormat => GetRequiredString(nameof(PracticeSessionMetadataFormat));
+
+    /// <summary>
+    /// Gets the localized due-at format shown after answers.
+    /// </summary>
+    public static string PracticeSessionDueAtFormat => GetRequiredString(nameof(PracticeSessionDueAtFormat));
+
+    /// <summary>
+    /// Gets the localized feedback-body format shown after answers.
+    /// </summary>
+    public static string PracticeSessionFeedbackBodyFormat => GetRequiredString(nameof(PracticeSessionFeedbackBodyFormat));
+
+    /// <summary>
+    /// Gets the localized summary-body format shown at the end of a session.
+    /// </summary>
+    public static string PracticeSessionSummaryBodyFormat => GetRequiredString(nameof(PracticeSessionSummaryBodyFormat));
+
+    /// <summary>
+    /// Gets the localized hint shown before the answer is revealed.
+    /// </summary>
+    public static string PracticeSessionAnswerHiddenHint => GetRequiredString(nameof(PracticeSessionAnswerHiddenHint));
+
+    /// <summary>
+    /// Gets the localized hint shown after the answer is revealed.
+    /// </summary>
+    public static string PracticeSessionAnswerRevealedHint => GetRequiredString(nameof(PracticeSessionAnswerRevealedHint));
+
+    /// <summary>
+    /// Gets the localized label for the flashcard prompt.
+    /// </summary>
+    public static string PracticeFlashcardPromptLabel => GetRequiredString(nameof(PracticeFlashcardPromptLabel));
+
+    /// <summary>
+    /// Gets the localized hint for the flashcard flow.
+    /// </summary>
+    public static string PracticeFlashcardPromptHint => GetRequiredString(nameof(PracticeFlashcardPromptHint));
+
+    /// <summary>
+    /// Gets the localized label for the flashcard revealed answer.
+    /// </summary>
+    public static string PracticeFlashcardAnswerLabel => GetRequiredString(nameof(PracticeFlashcardAnswerLabel));
+
+    /// <summary>
+    /// Gets the localized completion state for the flashcard flow.
+    /// </summary>
+    public static string PracticeFlashcardSessionComplete => GetRequiredString(nameof(PracticeFlashcardSessionComplete));
+
+    /// <summary>
+    /// Gets the localized label for the quiz prompt.
+    /// </summary>
+    public static string PracticeQuizPromptLabel => GetRequiredString(nameof(PracticeQuizPromptLabel));
+
+    /// <summary>
+    /// Gets the localized hint for the quiz flow.
+    /// </summary>
+    public static string PracticeQuizPromptHint => GetRequiredString(nameof(PracticeQuizPromptHint));
+
+    /// <summary>
+    /// Gets the localized label for the quiz revealed answer.
+    /// </summary>
+    public static string PracticeQuizAnswerLabel => GetRequiredString(nameof(PracticeQuizAnswerLabel));
+
+    /// <summary>
+    /// Gets the localized completion state for the quiz flow.
+    /// </summary>
+    public static string PracticeQuizSessionComplete => GetRequiredString(nameof(PracticeQuizSessionComplete));
 
     /// <summary>
     /// Gets the localized headline for the settings page.

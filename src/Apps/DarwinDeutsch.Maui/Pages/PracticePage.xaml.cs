@@ -82,8 +82,10 @@ public partial class PracticePage : ContentPage
         SuccessRateSectionView.SectionTitle = AppStrings.PracticePageSuccessRateLabel;
         MasteredSectionView.SectionTitle = AppStrings.PracticePageMasteredLabel;
         StrugglingSectionView.SectionTitle = AppStrings.PracticePageStrugglingLabel;
-        StartReviewActionBlockView.Caption = AppStrings.PracticePageStartReviewLabel;
-        StartReviewActionBlockView.ButtonText = AppStrings.PracticePageStartReviewButton;
+        StartFlashcardsActionBlockView.Caption = AppStrings.PracticePageStartFlashcardsLabel;
+        StartFlashcardsActionBlockView.ButtonText = AppStrings.PracticePageStartFlashcardsButton;
+        StartQuizActionBlockView.Caption = AppStrings.PracticePageStartQuizLabel;
+        StartQuizActionBlockView.ButtonText = AppStrings.PracticePageStartQuizButton;
         RefreshPracticeActionBlockView.Caption = AppStrings.PracticePageRefreshLabel;
         RefreshPracticeActionBlockView.ButtonText = AppStrings.PracticePageRefreshButton;
         ReviewSessionSectionLabel.Text = AppStrings.PracticePageReviewSessionHeading;
@@ -106,6 +108,7 @@ public partial class PracticePage : ContentPage
 
             ApplySnapshot(snapshot);
             ApplyRecentActivity(recentActivity);
+            await LoadReviewPreviewAsync(profile.PreferredMeaningLanguage1).ConfigureAwait(true);
         }
         catch
         {
@@ -162,7 +165,7 @@ public partial class PracticePage : ContentPage
         RecentActivityStateLabel.IsVisible = true;
     }
 
-    private async Task StartReviewPreviewAsync()
+    private async Task LoadReviewPreviewAsync(string meaningLanguageCode)
     {
         ReviewSessionStateLabel.Text = AppStrings.CommonStateLoading;
         ReviewSessionStateLabel.IsVisible = true;
@@ -170,11 +173,8 @@ public partial class PracticePage : ContentPage
 
         try
         {
-            UserLearningProfileModel profile = await _userLearningProfileService
-                .GetCurrentProfileAsync(CancellationToken.None)
-                .ConfigureAwait(true);
             PracticeReviewSessionModel session = await _practiceReviewSessionService
-                .StartAsync(profile.PreferredMeaningLanguage1, 5, CancellationToken.None)
+                .StartAsync(meaningLanguageCode, 5, CancellationToken.None)
                 .ConfigureAwait(true);
 
             PracticeWordItemViewModel[] items = session.Items
@@ -201,9 +201,16 @@ public partial class PracticePage : ContentPage
         }
     }
 
-    private async void OnStartReviewActionInvoked(object? sender, EventArgs e)
+    private async void OnStartFlashcardsActionInvoked(object? sender, EventArgs e)
     {
-        await StartReviewPreviewAsync().ConfigureAwait(true);
+        await Shell.Current.GoToAsync($"{nameof(PracticeSessionPage)}?mode=flashcard")
+            .ConfigureAwait(true);
+    }
+
+    private async void OnStartQuizActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"{nameof(PracticeSessionPage)}?mode=quiz")
+            .ConfigureAwait(true);
     }
 
     private async void OnRefreshPracticeActionInvoked(object? sender, EventArgs e)

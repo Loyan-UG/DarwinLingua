@@ -258,16 +258,16 @@ Phase 2 focuses on turning imported content into repeatable learning behavior wh
 
 - [x] add a localized practice entry point to the MAUI navigation flow
 - [x] implement the practice overview screen
-- [ ] implement the flashcard session flow
-- [ ] implement the quiz session flow
-- [ ] implement answer feedback and session-summary states
-- [ ] keep all new learner-facing text localized in `AppStrings.resx` and `AppStrings.de.resx`
+- [x] implement the flashcard session flow
+- [x] implement the quiz session flow
+- [x] implement answer feedback and session-summary states
+- [x] keep all new learner-facing text localized in `AppStrings.resx` and `AppStrings.de.resx`
 
 ### 20. Phase 2 Quality and Release Readiness
 
 - [ ] add application tests for review and quiz use cases
 - [ ] add infrastructure tests for practice queries and persistence
-- [ ] add MAUI smoke tests for practice navigation
+- [x] add MAUI smoke tests for practice navigation
 - [ ] validate practice flows on target devices
 - [ ] validate performance on realistic early-learning datasets
 

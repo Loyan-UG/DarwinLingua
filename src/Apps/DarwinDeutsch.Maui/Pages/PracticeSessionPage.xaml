@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarwinDeutsch.Maui.Pages.PracticeSessionPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="24"
+                             Spacing="18">
+            <Border Padding="24"
+                    StrokeThickness="0"
+                    BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#141414}">
+                <VerticalStackLayout Spacing="10">
+                    <Label x:Name="SessionHeadlineLabel"
+                           Style="{DynamicResource Headline}"
+                           SemanticProperties.HeadingLevel="Level1" />
+                    <Label x:Name="SessionDescriptionLabel"
+                           Style="{DynamicResource Body}"
+                           LineBreakMode="WordWrap" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border x:Name="SessionStateBorder"
+                    Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="SessionProgressLabel"
+                           Style="{DynamicResource Title2}" />
+                    <Label x:Name="SessionStateLabel"
+                           Style="{DynamicResource Body}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border x:Name="PromptCardBorder"
+                    Padding="24">
+                <VerticalStackLayout Spacing="14">
+                    <Label x:Name="PromptTitleLabel"
+                           Style="{DynamicResource Body}" />
+                    <Label x:Name="PromptValueLabel"
+                           Style="{DynamicResource Headline}" />
+                    <Label x:Name="PromptMetadataLabel"
+                           Style="{DynamicResource Body}" />
+                    <BoxView HeightRequest="1"
+                             Color="{DynamicResource Gray300}" />
+                    <Label x:Name="AnswerTitleLabel"
+                           Style="{DynamicResource Body}"
+                           IsVisible="False" />
+                    <Label x:Name="AnswerValueLabel"
+                           Style="{DynamicResource Title2}"
+                           IsVisible="False" />
+                    <Label x:Name="AnswerHintLabel"
+                           Style="{DynamicResource Body}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout x:Name="PrimaryActionsLayout"
+                                 Spacing="12">
+                <Button x:Name="RevealButton"
+                        Clicked="OnRevealButtonClicked" />
+                <Grid x:Name="OutcomeButtonsGrid"
+                      IsVisible="False"
+                      ColumnDefinitions="*,*"
+                      ColumnSpacing="12"
+                      RowDefinitions="Auto,Auto"
+                      RowSpacing="12">
+                    <Button x:Name="IncorrectButton"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Clicked="OnIncorrectButtonClicked" />
+                    <Button x:Name="HardButton"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Clicked="OnHardButtonClicked" />
+                    <Button x:Name="CorrectButton"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Clicked="OnCorrectButtonClicked" />
+                    <Button x:Name="EasyButton"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Clicked="OnEasyButtonClicked" />
+                </Grid>
+                <Button x:Name="NextButton"
+                        IsVisible="False"
+                        Clicked="OnNextButtonClicked" />
+                <Button x:Name="FinishButton"
+                        IsVisible="False"
+                        Clicked="OnFinishButtonClicked" />
+            </VerticalStackLayout>
+
+            <Border x:Name="FeedbackBorder"
+                    Padding="20"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="FeedbackHeadlineLabel"
+                           Style="{DynamicResource Title2}" />
+                    <Label x:Name="FeedbackBodyLabel"
+                           Style="{DynamicResource Body}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border x:Name="SummaryBorder"
+                    Padding="20"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="10">
+                    <Label x:Name="SummaryHeadlineLabel"
+                           Style="{DynamicResource Title2}" />
+                    <Label x:Name="SummaryBodyLabel"
+                           Style="{DynamicResource Body}" />
+                    <Button x:Name="ReturnToPracticeButton"
+                            Clicked="OnReturnToPracticeButtonClicked" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

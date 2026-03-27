@@ -40,8 +40,10 @@
             </Border>
 
             <VerticalStackLayout Spacing="12">
-                <controls:ActionBlockView x:Name="StartReviewActionBlockView"
-                                          ActionInvoked="OnStartReviewActionInvoked" />
+                <controls:ActionBlockView x:Name="StartFlashcardsActionBlockView"
+                                          ActionInvoked="OnStartFlashcardsActionInvoked" />
+                <controls:ActionBlockView x:Name="StartQuizActionBlockView"
+                                          ActionInvoked="OnStartQuizActionInvoked" />
                 <controls:ActionBlockView x:Name="RefreshPracticeActionBlockView"
                                           ActionInvoked="OnRefreshPracticeActionInvoked" />
             </VerticalStackLayout>

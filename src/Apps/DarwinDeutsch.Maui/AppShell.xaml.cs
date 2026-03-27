@@ -75,6 +75,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(CefrWordsPage), typeof(CefrWordsPage));
         Routing.RegisterRoute(nameof(SearchWordsPage), typeof(SearchWordsPage));
         Routing.RegisterRoute(nameof(WordDetailPage), typeof(WordDetailPage));
+        Routing.RegisterRoute(nameof(PracticeSessionPage), typeof(PracticeSessionPage));
 
         Items.Add(new TabBar
         {

@@ -57,6 +57,7 @@ public static class MauiProgram
             .AddSingleton<AppShell>()
             .AddSingleton<HomePage>()
             .AddSingleton<PracticePage>()
+            .AddTransient<PracticeSessionPage>()
             .AddSingleton<TopicsPage>()
             .AddSingleton<FavoritesPage>()
             .AddTransient<TopicWordsPage>()
