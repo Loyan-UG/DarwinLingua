@@ -64,6 +64,9 @@ internal sealed class ContentImportParser : IContentImportParser
             (entry.UsageLabels ?? []).Select(label => label ?? string.Empty).ToArray(),
             (entry.ContextLabels ?? []).Select(label => label ?? string.Empty).ToArray(),
             (entry.GrammarNotes ?? []).Select(note => note ?? string.Empty).ToArray(),
+            (entry.Collocations ?? []).Select(collocation => new ParsedContentCollocationModel(
+                collocation.Text ?? string.Empty,
+                collocation.Meaning)).ToArray(),
             (entry.Meanings ?? []).Select(meaning => new ParsedContentMeaningModel(
                 meaning.Language ?? string.Empty,
                 meaning.Text ?? string.Empty)).ToArray(),
@@ -113,6 +116,8 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public string?[]? GrammarNotes { get; set; }
 
+        public ContentCollocationDocument[]? Collocations { get; set; }
+
         public ContentMeaningDocument[]? Meanings { get; set; }
 
         public ContentExampleDocument[]? Examples { get; set; }
@@ -123,6 +128,13 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? Language { get; set; }
 
         public string? Text { get; set; }
+    }
+
+    private sealed class ContentCollocationDocument
+    {
+        public string? Text { get; set; }
+
+        public string? Meaning { get; set; }
     }
 
     private sealed class ContentExampleDocument

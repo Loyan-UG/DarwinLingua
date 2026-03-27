@@ -89,14 +89,17 @@ public partial class WordDetailPage : ContentPage
         UsageLabelsHeadingLabel.Text = AppStrings.WordDetailUsageLabelsLabel;
         ContextLabelsHeadingLabel.Text = AppStrings.WordDetailContextLabelsLabel;
         GrammarNotesHeadingLabel.Text = AppStrings.WordDetailGrammarNotesLabel;
+        CollocationsHeadingLabel.Text = AppStrings.WordDetailCollocationsLabel;
         EmptyStateLabel.Text = AppStrings.WordDetailNotFound;
         SensesContainer.Children.Clear();
         UsageLabelsFlexLayout.Children.Clear();
         ContextLabelsFlexLayout.Children.Clear();
         GrammarNotesStackLayout.Children.Clear();
+        CollocationsStackLayout.Children.Clear();
         UsageLabelsBorder.IsVisible = false;
         ContextLabelsBorder.IsVisible = false;
         GrammarNotesBorder.IsVisible = false;
+        CollocationsBorder.IsVisible = false;
         SpeakWordButton.IsVisible = false;
         FavoriteButton.IsVisible = false;
         KnownButton.IsVisible = false;
@@ -149,6 +152,7 @@ public partial class WordDetailPage : ContentPage
         ApplyWordLabels(UsageLabelsFlexLayout, UsageLabelsBorder, word.UsageLabels);
         ApplyWordLabels(ContextLabelsFlexLayout, ContextLabelsBorder, word.ContextLabels);
         ApplyGrammarNotes(word.GrammarNotes);
+        ApplyCollocations(word.Collocations);
         TopicsSectionView.SectionValue = word.Topics.Count == 0
             ? AppStrings.WordDetailNoTopics
             : string.Join(", ", word.Topics);
@@ -175,9 +179,11 @@ public partial class WordDetailPage : ContentPage
         UsageLabelsFlexLayout.Children.Clear();
         ContextLabelsFlexLayout.Children.Clear();
         GrammarNotesStackLayout.Children.Clear();
+        CollocationsStackLayout.Children.Clear();
         UsageLabelsBorder.IsVisible = false;
         ContextLabelsBorder.IsVisible = false;
         GrammarNotesBorder.IsVisible = false;
+        CollocationsBorder.IsVisible = false;
         LearningStateSectionView.SectionValue = string.Empty;
         TopicsSectionView.SectionValue = string.Empty;
         ClearAudioStatus();
@@ -468,6 +474,50 @@ public partial class WordDetailPage : ContentPage
                     Text = grammarNote,
                     Style = ResolveAppTextStyle("Body"),
                 },
+            });
+        }
+    }
+
+    /// <summary>
+    /// Renders collocations as compact phrase cards with optional meaning hints.
+    /// </summary>
+    private void ApplyCollocations(IReadOnlyList<WordCollocationDetailModel> collocations)
+    {
+        ArgumentNullException.ThrowIfNull(collocations);
+
+        CollocationsStackLayout.Children.Clear();
+        CollocationsBorder.IsVisible = collocations.Count > 0;
+
+        foreach (WordCollocationDetailModel collocation in collocations)
+        {
+            VerticalStackLayout content = new()
+            {
+                Spacing = 4,
+            };
+
+            content.Children.Add(new Label
+            {
+                Text = collocation.Text,
+                Style = ResolveAppTextStyle("Title2"),
+            });
+
+            if (!string.IsNullOrWhiteSpace(collocation.Meaning))
+            {
+                content.Children.Add(new Label
+                {
+                    Text = collocation.Meaning,
+                    Style = ResolveAppTextStyle("Body"),
+                });
+            }
+
+            CollocationsStackLayout.Children.Add(new Border
+            {
+                Padding = new Thickness(14, 12),
+                StrokeThickness = 0,
+                BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                    ? Color.FromArgb("#17212F")
+                    : Color.FromArgb("#F1F5F9"),
+                Content = content,
             });
         }
     }

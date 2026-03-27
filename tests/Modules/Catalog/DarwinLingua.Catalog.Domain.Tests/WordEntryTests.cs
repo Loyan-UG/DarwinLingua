@@ -323,6 +323,22 @@ public sealed class WordEntryTests
             DateTime.UtcNow));
     }
 
+    /// <summary>
+    /// Verifies that duplicate collocation text is rejected within a single entry.
+    /// </summary>
+    [Fact]
+    public void AddCollocation_ShouldRejectDuplicateText()
+    {
+        WordEntry word = CreateWordEntry();
+        word.AddCollocation(Guid.NewGuid(), "Brot kaufen", "to buy bread", DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => word.AddCollocation(
+            Guid.NewGuid(),
+            "Brot kaufen",
+            "buy bread",
+            DateTime.UtcNow));
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(

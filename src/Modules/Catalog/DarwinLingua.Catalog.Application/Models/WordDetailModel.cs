@@ -14,8 +14,16 @@ public sealed record WordDetailModel(
     IReadOnlyList<string> UsageLabels,
     IReadOnlyList<string> ContextLabels,
     IReadOnlyList<string> GrammarNotes,
+    IReadOnlyList<WordCollocationDetailModel> Collocations,
     IReadOnlyList<string> Topics,
     IReadOnlyList<WordSenseDetailModel> Senses);
+
+/// <summary>
+/// Represents one collocation block on the word detail screen.
+/// </summary>
+public sealed record WordCollocationDetailModel(
+    string Text,
+    string? Meaning);
 
 /// <summary>
 /// Represents a sense block on the word detail screen.

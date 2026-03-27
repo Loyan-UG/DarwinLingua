@@ -15,6 +15,7 @@ public sealed partial class WordEntry
     private readonly List<WordTopic> _topics = [];
     private readonly List<WordLabel> _labels = [];
     private readonly List<WordGrammarNote> _grammarNotes = [];
+    private readonly List<WordCollocation> _collocations = [];
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordEntry"/> class for EF Core materialization.
@@ -178,6 +179,11 @@ public sealed partial class WordEntry
     public IReadOnlyCollection<WordGrammarNote> GrammarNotes => _grammarNotes.AsReadOnly();
 
     /// <summary>
+    /// Gets the collocations attached to the entry.
+    /// </summary>
+    public IReadOnlyCollection<WordCollocation> Collocations => _collocations.AsReadOnly();
+
+    /// <summary>
     /// Adds a sense to the lexical entry.
     /// </summary>
     public WordSense AddSense(
@@ -331,6 +337,41 @@ public sealed partial class WordEntry
     }
 
     /// <summary>
+    /// Adds a collocation to the entry.
+    /// </summary>
+    public WordCollocation AddCollocation(
+        Guid id,
+        string text,
+        string? meaning,
+        DateTime createdAtUtc)
+    {
+        if (_collocations.Any(existingCollocation => existingCollocation.Id == id))
+        {
+            throw new DomainRuleException("Duplicate collocation identifiers are not allowed within the same word entry.");
+        }
+
+        string normalizedText = NormalizeCollocationText(text);
+
+        if (_collocations.Any(existingCollocation => string.Equals(existingCollocation.Text, normalizedText, StringComparison.Ordinal)))
+        {
+            throw new DomainRuleException("Duplicate collocation text is not allowed within the same word entry.");
+        }
+
+        WordCollocation collocation = new(
+            id,
+            Id,
+            normalizedText,
+            NormalizeCollocationMeaning(meaning),
+            _collocations.Count + 1,
+            createdAtUtc);
+
+        _collocations.Add(collocation);
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+
+        return collocation;
+    }
+
+    /// <summary>
     /// Resolves the primary sense when one exists, otherwise falls back to the first ordered sense.
     /// </summary>
     public WordSense? GetPrimarySense()
@@ -381,6 +422,23 @@ public sealed partial class WordEntry
         }
 
         return CollapseWhitespace().Replace(value.Trim(), " ");
+    }
+
+    private static string NormalizeCollocationText(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            throw new DomainRuleException("Word collocation text cannot be empty.");
+        }
+
+        return CollapseWhitespace().Replace(value.Trim(), " ");
+    }
+
+    private static string? NormalizeCollocationMeaning(string? value)
+    {
+        return string.IsNullOrWhiteSpace(value)
+            ? null
+            : CollapseWhitespace().Replace(value.Trim(), " ");
     }
 
     private static DateTime NormalizeUtc(DateTime value, string parameterName)

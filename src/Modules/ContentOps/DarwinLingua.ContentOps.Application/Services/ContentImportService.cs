@@ -162,6 +162,7 @@ internal sealed class ContentImportService : IContentImportService
         string[] usageLabels = ValidateLabelKeys(entry.UsageLabels, "usageLabels", entryErrors);
         string[] contextLabels = ValidateLabelKeys(entry.ContextLabels, "contextLabels", entryErrors);
         string[] grammarNotes = ValidateGrammarNotes(entry.GrammarNotes, entryErrors);
+        ParsedContentCollocationModel[] collocations = ValidateCollocations(entry.Collocations, entryErrors);
 
         if (string.IsNullOrWhiteSpace(normalizedLemma))
         {
@@ -320,6 +321,11 @@ internal sealed class ContentImportService : IContentImportService
         foreach (string grammarNote in grammarNotes)
         {
             wordEntry.AddGrammarNote(Guid.NewGuid(), grammarNote, DateTime.UtcNow);
+        }
+
+        foreach (ParsedContentCollocationModel collocation in collocations)
+        {
+            wordEntry.AddCollocation(Guid.NewGuid(), collocation.Text, collocation.Meaning, DateTime.UtcNow);
         }
 
         importedWords.Add(wordEntry);
@@ -533,6 +539,48 @@ internal sealed class ContentImportService : IContentImportService
             }
 
             normalized.Add(normalizedGrammarNote);
+        }
+
+        return normalized.ToArray();
+    }
+
+    private static ParsedContentCollocationModel[] ValidateCollocations(
+        IReadOnlyList<ParsedContentCollocationModel> collocations,
+        ICollection<string> entryErrors)
+    {
+        List<ParsedContentCollocationModel> normalized = [];
+
+        foreach (ParsedContentCollocationModel collocation in collocations)
+        {
+            string normalizedText = NormalizeText(collocation.Text);
+
+            if (string.IsNullOrWhiteSpace(normalizedText))
+            {
+                entryErrors.Add("Entry collocations cannot contain empty text.");
+                continue;
+            }
+
+            if (normalizedText.Length > 256)
+            {
+                entryErrors.Add("Entry collocation text must not exceed 256 characters.");
+                continue;
+            }
+
+            string? normalizedMeaning = NormalizeOptionalText(collocation.Meaning);
+
+            if (normalizedMeaning is not null && normalizedMeaning.Length > 256)
+            {
+                entryErrors.Add("Entry collocation meaning must not exceed 256 characters.");
+                continue;
+            }
+
+            if (normalized.Any(existing => string.Equals(existing.Text, normalizedText, StringComparison.Ordinal)))
+            {
+                entryErrors.Add($"Duplicate collocation '{normalizedText}' is not allowed.");
+                continue;
+            }
+
+            normalized.Add(new ParsedContentCollocationModel(normalizedText, normalizedMeaning));
         }
 
         return normalized.ToArray();

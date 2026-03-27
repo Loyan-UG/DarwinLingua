@@ -64,6 +64,7 @@ public sealed class ContentImportServiceTests
             Assert.Contains("informal", detail!.UsageLabels);
             Assert.Contains("shopping", detail.ContextLabels);
             Assert.Contains("Plural form is mostly used when talking about different bread types.", detail.GrammarNotes);
+            Assert.Contains(detail.Collocations, collocation => collocation.Text == "frisches Brot kaufen" && collocation.Meaning == "to buy fresh bread");
         }
         finally
         {
@@ -343,6 +344,12 @@ public sealed class ContentImportServiceTests
                   "usageLabels": ["informal"],
                   "contextLabels": ["shopping"],
                   "grammarNotes": ["Plural form is mostly used when talking about different bread types."],
+                  "collocations": [
+                    {
+                      "text": "frisches Brot kaufen",
+                      "meaning": "to buy fresh bread"
+                    }
+                  ],
                   "meanings": [
                     {
                       "language": "en",

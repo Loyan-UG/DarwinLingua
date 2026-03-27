@@ -88,6 +88,11 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             .Select(note => note.Text)
             .ToArray();
 
+        IReadOnlyList<WordCollocationDetailModel> collocations = word.Collocations
+            .OrderBy(collocation => collocation.SortOrder)
+            .Select(collocation => new WordCollocationDetailModel(collocation.Text, collocation.Meaning))
+            .ToArray();
+
         IReadOnlyList<WordSenseDetailModel> senses = word.Senses
             .OrderByDescending(sense => sense.IsPrimarySense)
             .ThenBy(sense => sense.SenseOrder)
@@ -116,6 +121,7 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             usageLabels,
             contextLabels,
             grammarNotes,
+            collocations,
             topicNames,
             senses);
     }
