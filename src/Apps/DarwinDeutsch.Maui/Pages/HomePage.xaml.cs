@@ -59,6 +59,20 @@ public partial class HomePage : ContentPage
     }
 
     /// <summary>
+    /// Releases event subscriptions when the page handler is detached.
+    /// </summary>
+    /// <param name="args">The handler-changing event arguments.</param>
+    protected override void OnHandlerChanging(HandlerChangingEventArgs args)
+    {
+        if (args.NewHandler is null)
+        {
+            _appLocalizationService.CultureChanged -= OnCultureChanged;
+        }
+
+        base.OnHandlerChanging(args);
+    }
+
+    /// <summary>
     /// Handles culture changes raised by the localization service.
     /// </summary>
     /// <param name="sender">The event sender.</param>
