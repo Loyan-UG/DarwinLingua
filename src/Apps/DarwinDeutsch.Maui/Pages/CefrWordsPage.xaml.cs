@@ -57,6 +57,8 @@ public partial class CefrWordsPage : ContentPage
         Title = string.IsNullOrWhiteSpace(CefrLevel) ? AppStrings.CefrWordsPageTitle : CefrLevel;
         HeadlineLabel.Text = string.Format(AppStrings.CefrWordsPageHeadlineFormat, CefrLevel);
         DescriptionLabel.Text = AppStrings.CefrWordsPageDescription;
+        CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
+        CefrQuickFilterView.SelectedLevel = CefrLevel;
         EmptyStateLabel.Text = AppStrings.CefrWordsPageEmpty;
         LoadingStateLabel.Text = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.CommonStateError;
@@ -95,6 +97,21 @@ public partial class CefrWordsPage : ContentPage
         {
             LoadingStateLabel.IsVisible = false;
         }
+    }
+
+    /// <summary>
+    /// Refreshes the list using the selected quick-filter CEFR level.
+    /// </summary>
+    private async void OnCefrLevelSelected(object? sender, EventArgs e)
+    {
+        string cefrLevel = CefrQuickFilterView.SelectedLevel;
+        if (string.IsNullOrWhiteSpace(cefrLevel))
+        {
+            return;
+        }
+
+        CefrLevel = cefrLevel;
+        await RefreshAsync().ConfigureAwait(true);
     }
 
     /// <summary>

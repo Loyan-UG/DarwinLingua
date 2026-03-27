@@ -59,6 +59,20 @@ public partial class HomePage : ContentPage
     }
 
     /// <summary>
+    /// Releases event subscriptions when the page handler is detached.
+    /// </summary>
+    /// <param name="args">The handler-changing event arguments.</param>
+    protected override void OnHandlerChanging(HandlerChangingEventArgs args)
+    {
+        if (args.NewHandler is null)
+        {
+            _appLocalizationService.CultureChanged -= OnCultureChanged;
+        }
+
+        base.OnHandlerChanging(args);
+    }
+
+    /// <summary>
     /// Handles culture changes raised by the localization service.
     /// </summary>
     /// <param name="sender">The event sender.</param>
@@ -86,9 +100,13 @@ public partial class HomePage : ContentPage
         SupportedLanguagesSectionView.SectionTitle = AppStrings.HomeSupportedLanguagesLabel;
         MeaningLanguagesSectionView.SectionTitle = AppStrings.HomeMeaningLanguagesLabel;
         TopicsSectionView.SectionTitle = AppStrings.HomeTopicsLabel;
-        CefrBrowseCaptionLabel.Text = AppStrings.HomeCefrBrowseLabel;
-        SearchCaptionLabel.Text = AppStrings.HomeSearchLabel;
-        SearchButton.Text = AppStrings.HomeSearchButton;
+        CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
+        SearchActionBlockView.Caption = AppStrings.HomeSearchLabel;
+        SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;
+        BrowseTopicsActionBlockView.Caption = AppStrings.HomeBrowseTopicsLabel;
+        BrowseTopicsActionBlockView.ButtonText = AppStrings.HomeBrowseTopicsButton;
+        FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
+        FavoritesActionBlockView.ButtonText = AppStrings.HomeFavoritesButton;
     }
 
     /// <summary>
@@ -153,23 +171,40 @@ public partial class HomePage : ContentPage
     /// <summary>
     /// Navigates to the selected CEFR browse page.
     /// </summary>
-    private async void OnCefrBrowseClicked(object? sender, EventArgs e)
+    private async void OnCefrLevelSelected(object? sender, EventArgs e)
     {
-        if (sender is not Button button || string.IsNullOrWhiteSpace(button.Text))
+        string cefrLevel = CefrQuickFilterView.SelectedLevel;
+        if (string.IsNullOrWhiteSpace(cefrLevel))
         {
             return;
         }
 
-        string cefrLevel = Uri.EscapeDataString(button.Text);
-        await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={cefrLevel}")
+        string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
+        await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
             .ConfigureAwait(true);
     }
 
     /// <summary>
     /// Navigates to the lexical search page.
     /// </summary>
-    private async void OnSearchClicked(object? sender, EventArgs e)
+    private async void OnSearchActionInvoked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(SearchWordsPage)).ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Navigates to the topics browse tab from the home dashboard.
+    /// </summary>
+    private async void OnBrowseTopicsActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//browse").ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Navigates to the favorites tab from the home dashboard.
+    /// </summary>
+    private async void OnFavoritesActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//favorites").ConfigureAwait(true);
     }
 }
