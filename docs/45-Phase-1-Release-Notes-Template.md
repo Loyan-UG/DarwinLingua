@@ -1,5 +1,7 @@
 # Phase 1 Release Notes Template
 
+Use `tools/Phase1/New-Phase1ReleaseNotesDraft.ps1` if you want to prefill this document from the latest automated release-prep summary before adding manual validation outcomes.
+
 ## Release Summary
 
 - Release label:
