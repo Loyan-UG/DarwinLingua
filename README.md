@@ -41,11 +41,11 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - home now exposes a dashboard-style product screen for learner context, CEFR browsing, and quick navigation actions
 - the browse tab now functions as a dedicated browse hub with CEFR shortcuts, topic discovery, and direct links into search and favorites
 - shared MAUI style resources now define baseline design tokens for spacing, typography, touch targets, and semantic surface/text colors
-- important Phase 1 workflows such as release hardening and final warning cleanup are still not implemented yet
+- the canonical modular-monolith Phase 1 project/reference structure is now locked and documented in the solution architecture guide
 
 The current import contract maps one imported entry to one imported sense with meanings and examples.
 
-The next high-priority slices are release hardening, warning cleanup, and additional MAUI smoke coverage based on the backlog.
+The next high-priority work is manual device validation for offline behavior, English UI, German UI, and TTS, followed by release sign-off capture.
 
 ## Product Direction
 

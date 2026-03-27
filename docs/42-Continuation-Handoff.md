@@ -36,19 +36,20 @@ Use it when:
 - Automated release-readiness coverage now includes clean-install database initialization validation and sample content-package import validation.
 - Automated release-readiness coverage now also validates import and browse/search responsiveness on a realistic starter dataset size.
 - MAUI smoke coverage now also guards localized shell/page wiring and ensures core learner flows stay free of direct network dependencies.
+- The canonical Phase 1 project/reference structure is now locked to the current modular-monolith layout documented in `docs/31-Solution-Architecture.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
 ---
 
 ## Recommended Next Implementation Slice
 
-Focus next on Phase 1 execution slices that improve quality and release readiness, especially **release hardening**, **smoke coverage expansion**, and **warning cleanup**.
+Focus next on the remaining Phase 1 release-execution work. The main engineering implementation slices are effectively complete; the remaining gaps are manual validation and final sign-off capture.
 
 Suggested scope:
 
 1. Execute the manual device worksheet for offline behavior, English UI, German UI, and TTS validation.
 2. Capture accepted known issues and the final release recommendation in the release-notes template.
-3. Keep all new user-facing labels localized through `AppStrings`.
+3. If manual findings require code changes, keep all new user-facing labels localized through `AppStrings` and rerun the Windows checks.
 
 ---
 
@@ -61,7 +62,7 @@ Continue DarwinLingua Phase 1 implementation from the latest commit.
 
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
-- Prioritize Phase 1 release-hardening work, warning cleanup, and pragmatic MAUI smoke coverage additions.
+- Prioritize executing the remaining manual Phase 1 validation worksheet and capturing release sign-off results.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.
 - Run the full local Windows .NET checks after changes.

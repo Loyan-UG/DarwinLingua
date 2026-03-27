@@ -72,7 +72,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 
 ### 3. Architecture and Project Wiring
 
-- [-] decide and lock the canonical Phase 1 project/reference structure
+- [x] decide and lock the canonical Phase 1 project/reference structure
 - [x] add real project references between Domain, Application, Infrastructure, and hosts
 - [x] create composition roots for MAUI and ImportTool
 - [x] define dependency injection registration conventions
