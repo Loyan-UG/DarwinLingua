@@ -46,6 +46,7 @@ Use it when:
 - The Practice UI now supports end-to-end flashcard and quiz sessions, including answer reveal, answer submission, per-answer feedback, and a session summary state, all localized through `AppStrings`.
 - Practice now also has a dedicated `DarwinLingua.Practice.Application.Tests` project that covers review-queue/session delegation and quiz-answer submission behavior at the application-service layer.
 - Practice infrastructure coverage now also includes query/persistence behavior for missing meanings and inactive content filtering, plus a release-readiness performance test over a realistic early-learning practice dataset.
+- Manual/device-bound Practice validation now has a dedicated worksheet in `docs/46-Phase-2-Practice-Validation-Worksheet.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
 ---
@@ -56,7 +57,7 @@ Focus next on the remaining Phase 2 practice quality and release-readiness items
 
 Suggested scope:
 
-1. Validate Phase 2 practice flows on target devices and record findings alongside the existing Phase 1 manual worksheet.
+1. Validate Phase 2 practice flows on target devices using `docs/46-Phase-2-Practice-Validation-Worksheet.md`.
 2. Keep the remaining manual device worksheet items for offline behavior, English UI, German UI, and TTS queued for final Phase 1 sign-off, then extend that validation to Practice flows.
 3. Add more automation only if a concrete release-sign-off gap remains after device validation.
 
