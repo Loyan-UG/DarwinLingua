@@ -60,6 +60,7 @@ public sealed class WordDetailQueryServiceTests
         word.AddLabel(Guid.NewGuid(), WordLabelKind.Context, "shopping", DateTime.UtcNow);
         word.AddGrammarNote(Guid.NewGuid(), "Usually used with \"an der\" in shopping contexts.", DateTime.UtcNow);
         word.AddCollocation(Guid.NewGuid(), "an der Kasse bezahlen", "to pay at the checkout", DateTime.UtcNow);
+        word.AddFamilyMember(Guid.NewGuid(), "Kassierer", "Profession", "person working at the checkout", DateTime.UtcNow);
 
         ServiceCollection services = new();
         services.AddCatalogApplication();
@@ -83,6 +84,7 @@ public sealed class WordDetailQueryServiceTests
         Assert.Contains("shopping", result.ContextLabels);
         Assert.Contains("Usually used with \"an der\" in shopping contexts.", result.GrammarNotes);
         Assert.Contains(result.Collocations, collocation => collocation.Text == "an der Kasse bezahlen" && collocation.Meaning == "to pay at the checkout");
+        Assert.Contains(result.WordFamilies, member => member.Lemma == "Kassierer" && member.RelationLabel == "Profession");
         Assert.Contains("Einkaufen", result.Topics);
 
         WordSenseDetailModel senseResult = Assert.Single(result.Senses);

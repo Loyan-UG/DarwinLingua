@@ -16,6 +16,7 @@ public sealed partial class WordEntry
     private readonly List<WordLabel> _labels = [];
     private readonly List<WordGrammarNote> _grammarNotes = [];
     private readonly List<WordCollocation> _collocations = [];
+    private readonly List<WordFamilyMember> _familyMembers = [];
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordEntry"/> class for EF Core materialization.
@@ -182,6 +183,11 @@ public sealed partial class WordEntry
     /// Gets the collocations attached to the entry.
     /// </summary>
     public IReadOnlyCollection<WordCollocation> Collocations => _collocations.AsReadOnly();
+
+    /// <summary>
+    /// Gets the word-family members attached to the entry.
+    /// </summary>
+    public IReadOnlyCollection<WordFamilyMember> FamilyMembers => _familyMembers.AsReadOnly();
 
     /// <summary>
     /// Adds a sense to the lexical entry.
@@ -372,6 +378,46 @@ public sealed partial class WordEntry
     }
 
     /// <summary>
+    /// Adds a word-family member to the entry.
+    /// </summary>
+    public WordFamilyMember AddFamilyMember(
+        Guid id,
+        string lemma,
+        string relationLabel,
+        string? note,
+        DateTime createdAtUtc)
+    {
+        if (_familyMembers.Any(existingMember => existingMember.Id == id))
+        {
+            throw new DomainRuleException("Duplicate family-member identifiers are not allowed within the same word entry.");
+        }
+
+        string normalizedLemma = NormalizeFamilyMemberLemma(lemma);
+        string normalizedRelationLabel = NormalizeFamilyMemberRelationLabel(relationLabel);
+
+        if (_familyMembers.Any(existingMember =>
+                string.Equals(existingMember.Lemma, normalizedLemma, StringComparison.Ordinal) &&
+                string.Equals(existingMember.RelationLabel, normalizedRelationLabel, StringComparison.Ordinal)))
+        {
+            throw new DomainRuleException("Duplicate family-member lemma and relation label are not allowed within the same word entry.");
+        }
+
+        WordFamilyMember familyMember = new(
+            id,
+            Id,
+            normalizedLemma,
+            normalizedRelationLabel,
+            NormalizeFamilyMemberNote(note),
+            _familyMembers.Count + 1,
+            createdAtUtc);
+
+        _familyMembers.Add(familyMember);
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+
+        return familyMember;
+    }
+
+    /// <summary>
     /// Resolves the primary sense when one exists, otherwise falls back to the first ordered sense.
     /// </summary>
     public WordSense? GetPrimarySense()
@@ -435,6 +481,33 @@ public sealed partial class WordEntry
     }
 
     private static string? NormalizeCollocationMeaning(string? value)
+    {
+        return string.IsNullOrWhiteSpace(value)
+            ? null
+            : CollapseWhitespace().Replace(value.Trim(), " ");
+    }
+
+    private static string NormalizeFamilyMemberLemma(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            throw new DomainRuleException("Word family-member lemma cannot be empty.");
+        }
+
+        return CollapseWhitespace().Replace(value.Trim(), " ");
+    }
+
+    private static string NormalizeFamilyMemberRelationLabel(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            throw new DomainRuleException("Word family-member relation label cannot be empty.");
+        }
+
+        return CollapseWhitespace().Replace(value.Trim(), " ");
+    }
+
+    private static string? NormalizeFamilyMemberNote(string? value)
     {
         return string.IsNullOrWhiteSpace(value)
             ? null

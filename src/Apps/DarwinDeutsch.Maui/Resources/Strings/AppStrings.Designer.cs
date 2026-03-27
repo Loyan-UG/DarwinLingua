@@ -283,6 +283,11 @@ public static class AppStrings
     public static string WordDetailCollocationsLabel => GetRequiredString(nameof(WordDetailCollocationsLabel));
 
     /// <summary>
+    /// Gets the localized label for the word-family section on the word-detail page.
+    /// </summary>
+    public static string WordDetailWordFamiliesLabel => GetRequiredString(nameof(WordDetailWordFamiliesLabel));
+
+    /// <summary>
     /// Gets the localized empty-topic message for the word-detail page.
     /// </summary>
     public static string WordDetailNoTopics => GetRequiredString(nameof(WordDetailNoTopics));

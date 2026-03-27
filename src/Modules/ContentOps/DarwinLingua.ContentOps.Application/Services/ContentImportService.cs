@@ -163,6 +163,7 @@ internal sealed class ContentImportService : IContentImportService
         string[] contextLabels = ValidateLabelKeys(entry.ContextLabels, "contextLabels", entryErrors);
         string[] grammarNotes = ValidateGrammarNotes(entry.GrammarNotes, entryErrors);
         ParsedContentCollocationModel[] collocations = ValidateCollocations(entry.Collocations, entryErrors);
+        ParsedContentWordFamilyMemberModel[] wordFamilies = ValidateWordFamilies(entry.WordFamilies, entryErrors);
 
         if (string.IsNullOrWhiteSpace(normalizedLemma))
         {
@@ -326,6 +327,11 @@ internal sealed class ContentImportService : IContentImportService
         foreach (ParsedContentCollocationModel collocation in collocations)
         {
             wordEntry.AddCollocation(Guid.NewGuid(), collocation.Text, collocation.Meaning, DateTime.UtcNow);
+        }
+
+        foreach (ParsedContentWordFamilyMemberModel familyMember in wordFamilies)
+        {
+            wordEntry.AddFamilyMember(Guid.NewGuid(), familyMember.Lemma, familyMember.RelationLabel, familyMember.Note, DateTime.UtcNow);
         }
 
         importedWords.Add(wordEntry);
@@ -581,6 +587,63 @@ internal sealed class ContentImportService : IContentImportService
             }
 
             normalized.Add(new ParsedContentCollocationModel(normalizedText, normalizedMeaning));
+        }
+
+        return normalized.ToArray();
+    }
+
+    private static ParsedContentWordFamilyMemberModel[] ValidateWordFamilies(
+        IReadOnlyList<ParsedContentWordFamilyMemberModel> wordFamilies,
+        ICollection<string> entryErrors)
+    {
+        List<ParsedContentWordFamilyMemberModel> normalized = [];
+
+        foreach (ParsedContentWordFamilyMemberModel familyMember in wordFamilies)
+        {
+            string normalizedLemma = NormalizeText(familyMember.Lemma);
+            string normalizedRelationLabel = NormalizeText(familyMember.RelationLabel);
+
+            if (string.IsNullOrWhiteSpace(normalizedLemma))
+            {
+                entryErrors.Add("Entry wordFamilies cannot contain empty lemma values.");
+                continue;
+            }
+
+            if (string.IsNullOrWhiteSpace(normalizedRelationLabel))
+            {
+                entryErrors.Add("Entry wordFamilies cannot contain empty relationLabel values.");
+                continue;
+            }
+
+            if (normalizedLemma.Length > 128)
+            {
+                entryErrors.Add("Entry wordFamilies lemma must not exceed 128 characters.");
+                continue;
+            }
+
+            if (normalizedRelationLabel.Length > 64)
+            {
+                entryErrors.Add("Entry wordFamilies relationLabel must not exceed 64 characters.");
+                continue;
+            }
+
+            string? normalizedNote = NormalizeOptionalText(familyMember.Note);
+
+            if (normalizedNote is not null && normalizedNote.Length > 256)
+            {
+                entryErrors.Add("Entry wordFamilies note must not exceed 256 characters.");
+                continue;
+            }
+
+            if (normalized.Any(existing =>
+                    string.Equals(existing.Lemma, normalizedLemma, StringComparison.Ordinal) &&
+                    string.Equals(existing.RelationLabel, normalizedRelationLabel, StringComparison.Ordinal)))
+            {
+                entryErrors.Add($"Duplicate wordFamilies member '{normalizedLemma}' with relation '{normalizedRelationLabel}' is not allowed.");
+                continue;
+            }
+
+            normalized.Add(new ParsedContentWordFamilyMemberModel(normalizedLemma, normalizedRelationLabel, normalizedNote));
         }
 
         return normalized.ToArray();

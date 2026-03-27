@@ -15,6 +15,7 @@ public sealed record WordDetailModel(
     IReadOnlyList<string> ContextLabels,
     IReadOnlyList<string> GrammarNotes,
     IReadOnlyList<WordCollocationDetailModel> Collocations,
+    IReadOnlyList<WordFamilyMemberDetailModel> WordFamilies,
     IReadOnlyList<string> Topics,
     IReadOnlyList<WordSenseDetailModel> Senses);
 
@@ -24,6 +25,14 @@ public sealed record WordDetailModel(
 public sealed record WordCollocationDetailModel(
     string Text,
     string? Meaning);
+
+/// <summary>
+/// Represents one word-family member block on the word detail screen.
+/// </summary>
+public sealed record WordFamilyMemberDetailModel(
+    string Lemma,
+    string RelationLabel,
+    string? Note);
 
 /// <summary>
 /// Represents a sense block on the word detail screen.

@@ -65,6 +65,7 @@ public sealed class ContentImportServiceTests
             Assert.Contains("shopping", detail.ContextLabels);
             Assert.Contains("Plural form is mostly used when talking about different bread types.", detail.GrammarNotes);
             Assert.Contains(detail.Collocations, collocation => collocation.Text == "frisches Brot kaufen" && collocation.Meaning == "to buy fresh bread");
+            Assert.Contains(detail.WordFamilies, member => member.Lemma == "Bäcker" && member.RelationLabel == "Profession");
         }
         finally
         {
@@ -348,6 +349,13 @@ public sealed class ContentImportServiceTests
                     {
                       "text": "frisches Brot kaufen",
                       "meaning": "to buy fresh bread"
+                    }
+                  ],
+                  "wordFamilies": [
+                    {
+                      "lemma": "Bäcker",
+                      "relationLabel": "Profession",
+                      "note": "person who bakes or sells bread"
                     }
                   ],
                   "meanings": [

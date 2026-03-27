@@ -94,6 +94,17 @@
                 </VerticalStackLayout>
             </Border>
 
+            <Border x:Name="WordFamiliesBorder"
+                    Padding="20"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="WordFamiliesHeadingLabel"
+                           Style="{DynamicResource Title2}" />
+                    <VerticalStackLayout x:Name="WordFamiliesStackLayout"
+                                         Spacing="10" />
+                </VerticalStackLayout>
+            </Border>
+
             <Border Padding="20">
                 <controls:DetailSectionView x:Name="TopicsSectionView" />
             </Border>

@@ -150,6 +150,7 @@ internal sealed class WordEntryRepository : IWordEntryRepository
                     .ThenInclude(example => example.Translations)
             .Include(word => word.Topics)
             .Include(word => word.Collocations)
+            .Include(word => word.FamilyMembers)
             .Include(word => word.GrammarNotes)
             .Include(word => word.Labels);
     }

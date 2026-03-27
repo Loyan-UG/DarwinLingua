@@ -90,16 +90,19 @@ public partial class WordDetailPage : ContentPage
         ContextLabelsHeadingLabel.Text = AppStrings.WordDetailContextLabelsLabel;
         GrammarNotesHeadingLabel.Text = AppStrings.WordDetailGrammarNotesLabel;
         CollocationsHeadingLabel.Text = AppStrings.WordDetailCollocationsLabel;
+        WordFamiliesHeadingLabel.Text = AppStrings.WordDetailWordFamiliesLabel;
         EmptyStateLabel.Text = AppStrings.WordDetailNotFound;
         SensesContainer.Children.Clear();
         UsageLabelsFlexLayout.Children.Clear();
         ContextLabelsFlexLayout.Children.Clear();
         GrammarNotesStackLayout.Children.Clear();
         CollocationsStackLayout.Children.Clear();
+        WordFamiliesStackLayout.Children.Clear();
         UsageLabelsBorder.IsVisible = false;
         ContextLabelsBorder.IsVisible = false;
         GrammarNotesBorder.IsVisible = false;
         CollocationsBorder.IsVisible = false;
+        WordFamiliesBorder.IsVisible = false;
         SpeakWordButton.IsVisible = false;
         FavoriteButton.IsVisible = false;
         KnownButton.IsVisible = false;
@@ -153,6 +156,7 @@ public partial class WordDetailPage : ContentPage
         ApplyWordLabels(ContextLabelsFlexLayout, ContextLabelsBorder, word.ContextLabels);
         ApplyGrammarNotes(word.GrammarNotes);
         ApplyCollocations(word.Collocations);
+        ApplyWordFamilies(word.WordFamilies);
         TopicsSectionView.SectionValue = word.Topics.Count == 0
             ? AppStrings.WordDetailNoTopics
             : string.Join(", ", word.Topics);
@@ -180,10 +184,12 @@ public partial class WordDetailPage : ContentPage
         ContextLabelsFlexLayout.Children.Clear();
         GrammarNotesStackLayout.Children.Clear();
         CollocationsStackLayout.Children.Clear();
+        WordFamiliesStackLayout.Children.Clear();
         UsageLabelsBorder.IsVisible = false;
         ContextLabelsBorder.IsVisible = false;
         GrammarNotesBorder.IsVisible = false;
         CollocationsBorder.IsVisible = false;
+        WordFamiliesBorder.IsVisible = false;
         LearningStateSectionView.SectionValue = string.Empty;
         TopicsSectionView.SectionValue = string.Empty;
         ClearAudioStatus();
@@ -517,6 +523,72 @@ public partial class WordDetailPage : ContentPage
                 BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
                     ? Color.FromArgb("#17212F")
                     : Color.FromArgb("#F1F5F9"),
+                Content = content,
+            });
+        }
+    }
+
+    /// <summary>
+    /// Renders word-family members as compact derivation cards.
+    /// </summary>
+    private void ApplyWordFamilies(IReadOnlyList<WordFamilyMemberDetailModel> wordFamilies)
+    {
+        ArgumentNullException.ThrowIfNull(wordFamilies);
+
+        WordFamiliesStackLayout.Children.Clear();
+        WordFamiliesBorder.IsVisible = wordFamilies.Count > 0;
+
+        foreach (WordFamilyMemberDetailModel familyMember in wordFamilies)
+        {
+            Grid header = new()
+            {
+                ColumnDefinitions =
+                {
+                    new ColumnDefinition(GridLength.Star),
+                    new ColumnDefinition(GridLength.Auto),
+                },
+                ColumnSpacing = 12,
+            };
+
+            header.Add(new Label
+            {
+                Text = familyMember.Lemma,
+                Style = ResolveAppTextStyle("Title2"),
+            });
+
+            header.Add(new Label
+            {
+                Text = familyMember.RelationLabel,
+                FontSize = 12,
+                FontAttributes = FontAttributes.Bold,
+                TextColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                    ? Color.FromArgb("#BFDBFE")
+                    : Color.FromArgb("#1D4ED8"),
+                VerticalTextAlignment = TextAlignment.Center,
+            }, 1, 0);
+
+            VerticalStackLayout content = new()
+            {
+                Spacing = 4,
+            };
+            content.Children.Add(header);
+
+            if (!string.IsNullOrWhiteSpace(familyMember.Note))
+            {
+                content.Children.Add(new Label
+                {
+                    Text = familyMember.Note,
+                    Style = ResolveAppTextStyle("Body"),
+                });
+            }
+
+            WordFamiliesStackLayout.Children.Add(new Border
+            {
+                Padding = new Thickness(14, 12),
+                StrokeThickness = 0,
+                BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                    ? Color.FromArgb("#18242F")
+                    : Color.FromArgb("#EFF6FF"),
                 Content = content,
             });
         }

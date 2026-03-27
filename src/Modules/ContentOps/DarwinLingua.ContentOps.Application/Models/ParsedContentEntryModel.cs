@@ -13,6 +13,7 @@ public sealed record ParsedContentEntryModel(
     IReadOnlyList<string> ContextLabels,
     IReadOnlyList<string> GrammarNotes,
     IReadOnlyList<ParsedContentCollocationModel> Collocations,
+    IReadOnlyList<ParsedContentWordFamilyMemberModel> WordFamilies,
     IReadOnlyList<ParsedContentMeaningModel> Meanings,
     IReadOnlyList<ParsedContentExampleModel> Examples,
     string? Article,

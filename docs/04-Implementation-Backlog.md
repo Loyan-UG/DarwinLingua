@@ -288,7 +288,7 @@ Phase 3 focuses on richer lexical intelligence while continuing to prioritize th
 - [x] implement lexical usage/context labels on `WordEntry`
 - [x] persist lexical labels with uniqueness and ordering constraints
 - [x] implement grammar notes
-- [ ] implement word families
+- [x] implement word families
 - [x] implement collocations
 - [ ] implement lexical relations such as synonyms and antonyms
 
@@ -299,6 +299,7 @@ Phase 3 focuses on richer lexical intelligence while continuing to prioritize th
 - [x] expose lexical labels from `GetWordDetails`
 - [x] expose grammar notes from `GetWordDetails`
 - [x] expose collocations from `GetWordDetails`
+- [x] expose word families from `GetWordDetails`
 - [ ] expose richer lexical relations from detail queries
 
 ### 24. Mobile Word Detail UX Evolution
@@ -307,6 +308,7 @@ Phase 3 focuses on richer lexical intelligence while continuing to prioritize th
 - [x] render usage/context metadata as wrapped chips with localized display text
 - [x] surface grammar notes in the word-detail flow
 - [x] surface collocations in the word-detail flow
+- [x] surface word families in the word-detail flow
 - [ ] surface lexical relations in the word-detail flow
 - [ ] review and polish the main learner-facing screens for stronger visual consistency
 

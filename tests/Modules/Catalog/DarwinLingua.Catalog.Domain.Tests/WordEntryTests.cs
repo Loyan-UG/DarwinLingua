@@ -339,6 +339,23 @@ public sealed class WordEntryTests
             DateTime.UtcNow));
     }
 
+    /// <summary>
+    /// Verifies that duplicate word-family members with the same relation are rejected.
+    /// </summary>
+    [Fact]
+    public void AddFamilyMember_ShouldRejectDuplicateLemmaAndRelation()
+    {
+        WordEntry word = CreateWordEntry();
+        word.AddFamilyMember(Guid.NewGuid(), "Bäcker", "Profession", "person who bakes bread", DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => word.AddFamilyMember(
+            Guid.NewGuid(),
+            "Bäcker",
+            "Profession",
+            "bread baker",
+            DateTime.UtcNow));
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(

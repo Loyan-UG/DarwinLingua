@@ -84,6 +84,11 @@ public sealed class DarwinLinguaDbContext : DbContext
     public DbSet<WordCollocation> WordCollocations => Set<WordCollocation>();
 
     /// <summary>
+    /// Gets the lexical word-family data set.
+    /// </summary>
+    public DbSet<WordFamilyMember> WordFamilyMembers => Set<WordFamilyMember>();
+
+    /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
     public DbSet<UserLearningProfile> UserLearningProfiles => Set<UserLearningProfile>();
@@ -131,6 +136,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new TopicLocalizationConfiguration());
         modelBuilder.ApplyConfiguration(new WordEntryConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollocationConfiguration());
+        modelBuilder.ApplyConfiguration(new WordFamilyMemberConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

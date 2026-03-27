@@ -96,6 +96,7 @@ Each vocabulary entry should contain:
 - `contextLabels`
 - `grammarNotes`
 - `collocations`
+- `wordFamilies`
 - `notes`
 
 ---
