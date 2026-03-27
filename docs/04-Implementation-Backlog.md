@@ -210,7 +210,7 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] add seed-data tests
 - [x] add localization coverage checks
 - [x] add smoke tests for the MAUI startup path where practical
-- [!] resolve local Windows application-control policy issue blocking some test assemblies and transitive dependencies; current default solution test run excludes `Learning.Domain.Tests`, `Catalog.Domain.Tests`, `Localization.Domain.Tests`, `ContentOps.Application.Tests`, and SQLite-backed infrastructure tests
+- [x] resolve local Windows application-control policy issue blocking some test assemblies and transitive dependencies; full local Windows solution restore/build/test now runs successfully
 
 ### 15. Release Readiness
 

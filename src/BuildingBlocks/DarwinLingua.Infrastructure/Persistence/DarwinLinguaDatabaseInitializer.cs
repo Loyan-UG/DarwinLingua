@@ -118,7 +118,8 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             """,
             cancellationToken).ConfigureAwait(false);
 
-        string productVersion = dbContext.Model.GetProductVersion();
+        string productVersion = dbContext.Model.GetProductVersion()
+            ?? throw new InvalidOperationException("The EF Core relational model does not expose a product version.");
         await dbContext.Database.ExecuteSqlInterpolatedAsync(
             $"""
             INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
