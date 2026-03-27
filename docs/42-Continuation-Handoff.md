@@ -19,6 +19,8 @@ Use it when:
 - Shared MAUI reusable controls currently include:
   - `WordListItemView`
   - `DetailSectionView`
+  - `CefrQuickFilterView`
+  - `ActionBlockView`
 - Database initialization, seed workflows, localization setup, and transactional write service are implemented.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
@@ -33,14 +35,14 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on completing the reusable component backlog item for **filters/actions** in MAUI screens.
+Focus next on Phase 1 items still marked in progress, especially **remaining UI/UX foundation work** and **domain constraint hardening**.
 
 Suggested scope:
 
-1. Extract a reusable CEFR quick-filter/action block from `HomePage`.
-2. Reuse the same component in other screens where applicable.
-3. Keep all user-facing labels localized through `AppStrings`.
-4. Add/adjust MAUI tests or smoke checks where practical.
+1. Continue replacing remaining template-era UI surfaces with final product-oriented layouts.
+2. Strengthen catalog/learning persistence and aggregate invariants still marked in progress.
+3. Expand MAUI smoke coverage where practical around reusable controls and navigation-critical flows.
+4. Keep all user-facing labels localized through `AppStrings`.
 5. Update `docs/04-Implementation-Backlog.md` and `README.md` to reflect actual completion state.
 
 ---
@@ -54,7 +56,7 @@ Continue DarwinLingua Phase 1 implementation from the latest commit.
 
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
-- Prioritize completing reusable MAUI filter/action components (the backlog item currently marked in progress).
+- Prioritize Phase 1 backlog items still marked in progress, especially remaining UI/UX foundation and domain constraint hardening tasks.
 - Keep all user-facing text localized via AppStrings resources.
 - After code changes, update backlog/docs status accurately.
 - If the environment lacks dotnet SDK, document the limitation clearly and still complete code/doc updates.

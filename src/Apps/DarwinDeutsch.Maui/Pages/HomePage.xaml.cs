@@ -86,9 +86,9 @@ public partial class HomePage : ContentPage
         SupportedLanguagesSectionView.SectionTitle = AppStrings.HomeSupportedLanguagesLabel;
         MeaningLanguagesSectionView.SectionTitle = AppStrings.HomeMeaningLanguagesLabel;
         TopicsSectionView.SectionTitle = AppStrings.HomeTopicsLabel;
-        CefrBrowseCaptionLabel.Text = AppStrings.HomeCefrBrowseLabel;
-        SearchCaptionLabel.Text = AppStrings.HomeSearchLabel;
-        SearchButton.Text = AppStrings.HomeSearchButton;
+        CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
+        SearchActionBlockView.Caption = AppStrings.HomeSearchLabel;
+        SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;
     }
 
     /// <summary>
@@ -153,22 +153,23 @@ public partial class HomePage : ContentPage
     /// <summary>
     /// Navigates to the selected CEFR browse page.
     /// </summary>
-    private async void OnCefrBrowseClicked(object? sender, EventArgs e)
+    private async void OnCefrLevelSelected(object? sender, EventArgs e)
     {
-        if (sender is not Button button || string.IsNullOrWhiteSpace(button.Text))
+        string cefrLevel = CefrQuickFilterView.SelectedLevel;
+        if (string.IsNullOrWhiteSpace(cefrLevel))
         {
             return;
         }
 
-        string cefrLevel = Uri.EscapeDataString(button.Text);
-        await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={cefrLevel}")
+        string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
+        await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
             .ConfigureAwait(true);
     }
 
     /// <summary>
     /// Navigates to the lexical search page.
     /// </summary>
-    private async void OnSearchClicked(object? sender, EventArgs e)
+    private async void OnSearchActionInvoked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(SearchWordsPage)).ConfigureAwait(true);
     }

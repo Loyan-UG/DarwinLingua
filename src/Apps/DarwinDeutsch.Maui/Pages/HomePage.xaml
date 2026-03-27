@@ -21,28 +21,11 @@
 
             <controls:DetailSectionView x:Name="TopicsSectionView" />
 
-            <VerticalStackLayout Spacing="8">
-                <Label x:Name="CefrBrowseCaptionLabel"
-                       Style="{StaticResource Title2}" />
-                <FlexLayout Wrap="Wrap"
-                            Direction="Row"
-                            JustifyContent="Start"
-                            AlignItems="Start">
-                    <Button Text="A1" Clicked="OnCefrBrowseClicked" />
-                    <Button Text="A2" Clicked="OnCefrBrowseClicked" />
-                    <Button Text="B1" Clicked="OnCefrBrowseClicked" />
-                    <Button Text="B2" Clicked="OnCefrBrowseClicked" />
-                    <Button Text="C1" Clicked="OnCefrBrowseClicked" />
-                    <Button Text="C2" Clicked="OnCefrBrowseClicked" />
-                </FlexLayout>
-            </VerticalStackLayout>
+            <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
+                                          LevelSelected="OnCefrLevelSelected" />
 
-            <VerticalStackLayout Spacing="8">
-                <Label x:Name="SearchCaptionLabel"
-                       Style="{StaticResource Title2}" />
-                <Button x:Name="SearchButton"
-                        Clicked="OnSearchClicked" />
-            </VerticalStackLayout>
+            <controls:ActionBlockView x:Name="SearchActionBlockView"
+                                      ActionInvoked="OnSearchActionInvoked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
