@@ -109,9 +109,12 @@ public sealed class MauiBrowseScreenSmokeTests
 
         Assert.Contains("UsageLabelsBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContextLabelsBorder", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("GrammarNotesBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("UsageLabelsFlexLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContextLabelsFlexLayout", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("GrammarNotesStackLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ApplyWordLabels", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("ApplyGrammarNotes", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("LexiconTagDisplayText", codeBehindSource, StringComparison.Ordinal);
     }
 

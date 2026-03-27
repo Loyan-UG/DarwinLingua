@@ -74,6 +74,11 @@ public sealed class DarwinLinguaDbContext : DbContext
     public DbSet<WordLabel> WordLabels => Set<WordLabel>();
 
     /// <summary>
+    /// Gets the lexical grammar-note data set.
+    /// </summary>
+    public DbSet<WordGrammarNote> WordGrammarNotes => Set<WordGrammarNote>();
+
+    /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
     public DbSet<UserLearningProfile> UserLearningProfiles => Set<UserLearningProfile>();
@@ -120,6 +125,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new TopicConfiguration());
         modelBuilder.ApplyConfiguration(new TopicLocalizationConfiguration());
         modelBuilder.ApplyConfiguration(new WordEntryConfiguration());
+        modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());
         modelBuilder.ApplyConfiguration(new SenseTranslationConfiguration());

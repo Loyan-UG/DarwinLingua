@@ -94,6 +94,7 @@ Each vocabulary entry should contain:
 - `plural`
 - `usageLabels`
 - `contextLabels`
+- `grammarNotes`
 - `notes`
 
 ---

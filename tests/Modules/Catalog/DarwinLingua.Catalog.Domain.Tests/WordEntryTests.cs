@@ -308,6 +308,21 @@ public sealed class WordEntryTests
         Assert.Equal(2, word.Labels.Count);
     }
 
+    /// <summary>
+    /// Verifies that duplicate grammar-note text is rejected within a single entry.
+    /// </summary>
+    [Fact]
+    public void AddGrammarNote_ShouldRejectDuplicateText()
+    {
+        WordEntry word = CreateWordEntry();
+        word.AddGrammarNote(Guid.NewGuid(), "Often used with the definite article.", DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => word.AddGrammarNote(
+            Guid.NewGuid(),
+            "Often used with the definite article.",
+            DateTime.UtcNow));
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(

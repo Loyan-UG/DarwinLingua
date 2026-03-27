@@ -88,12 +88,15 @@ public partial class WordDetailPage : ContentPage
         LearningStateSectionView.SectionTitle = AppStrings.WordDetailLearningStateLabel;
         UsageLabelsHeadingLabel.Text = AppStrings.WordDetailUsageLabelsLabel;
         ContextLabelsHeadingLabel.Text = AppStrings.WordDetailContextLabelsLabel;
+        GrammarNotesHeadingLabel.Text = AppStrings.WordDetailGrammarNotesLabel;
         EmptyStateLabel.Text = AppStrings.WordDetailNotFound;
         SensesContainer.Children.Clear();
         UsageLabelsFlexLayout.Children.Clear();
         ContextLabelsFlexLayout.Children.Clear();
+        GrammarNotesStackLayout.Children.Clear();
         UsageLabelsBorder.IsVisible = false;
         ContextLabelsBorder.IsVisible = false;
+        GrammarNotesBorder.IsVisible = false;
         SpeakWordButton.IsVisible = false;
         FavoriteButton.IsVisible = false;
         KnownButton.IsVisible = false;
@@ -145,6 +148,7 @@ public partial class WordDetailPage : ContentPage
         ApplyUserWordState();
         ApplyWordLabels(UsageLabelsFlexLayout, UsageLabelsBorder, word.UsageLabels);
         ApplyWordLabels(ContextLabelsFlexLayout, ContextLabelsBorder, word.ContextLabels);
+        ApplyGrammarNotes(word.GrammarNotes);
         TopicsSectionView.SectionValue = word.Topics.Count == 0
             ? AppStrings.WordDetailNoTopics
             : string.Join(", ", word.Topics);
@@ -170,8 +174,10 @@ public partial class WordDetailPage : ContentPage
         DifficultButton.IsVisible = false;
         UsageLabelsFlexLayout.Children.Clear();
         ContextLabelsFlexLayout.Children.Clear();
+        GrammarNotesStackLayout.Children.Clear();
         UsageLabelsBorder.IsVisible = false;
         ContextLabelsBorder.IsVisible = false;
+        GrammarNotesBorder.IsVisible = false;
         LearningStateSectionView.SectionValue = string.Empty;
         TopicsSectionView.SectionValue = string.Empty;
         ClearAudioStatus();
@@ -436,6 +442,34 @@ public partial class WordDetailPage : ContentPage
                 FontAttributes = FontAttributes.Bold,
             },
         };
+    }
+
+    /// <summary>
+    /// Renders learner-facing grammar notes as stacked callouts.
+    /// </summary>
+    private void ApplyGrammarNotes(IReadOnlyList<string> grammarNotes)
+    {
+        ArgumentNullException.ThrowIfNull(grammarNotes);
+
+        GrammarNotesStackLayout.Children.Clear();
+        GrammarNotesBorder.IsVisible = grammarNotes.Count > 0;
+
+        foreach (string grammarNote in grammarNotes)
+        {
+            GrammarNotesStackLayout.Children.Add(new Border
+            {
+                Padding = new Thickness(14, 12),
+                StrokeThickness = 0,
+                BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                    ? Color.FromArgb("#1F2937")
+                    : Color.FromArgb("#F8FAFC"),
+                Content = new Label
+                {
+                    Text = grammarNote,
+                    Style = ResolveAppTextStyle("Body"),
+                },
+            });
+        }
     }
 
     /// <summary>

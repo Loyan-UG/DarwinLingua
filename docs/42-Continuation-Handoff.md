@@ -47,7 +47,7 @@ Use it when:
 - Practice now also has a dedicated `DarwinLingua.Practice.Application.Tests` project that covers review-queue/session delegation and quiz-answer submission behavior at the application-service layer.
 - Practice infrastructure coverage now also includes query/persistence behavior for missing meanings and inactive content filtering, plus a release-readiness performance test over a realistic early-learning practice dataset.
 - Manual/device-bound Practice validation now has a dedicated worksheet in `docs/46-Phase-2-Practice-Validation-Worksheet.md`.
-- Phase 3 has now started with the first mobile-focused lexical-intelligence slice: imported usage/context labels persist on `WordEntry`, flow through `GetWordDetails`, and render as localized chips in an upgraded word-detail screen.
+- Phase 3 has now started with the first mobile-focused lexical-intelligence slices: imported usage/context labels and learner-facing grammar notes persist on `WordEntry`, flow through `GetWordDetails`, and render in an upgraded word-detail screen.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
 ---
@@ -59,7 +59,7 @@ Focus next on the remaining Phase 2 practice quality and release-readiness items
 Suggested scope:
 
 1. Validate Phase 2 practice flows on target devices using `docs/46-Phase-2-Practice-Validation-Worksheet.md`.
-2. Continue Phase 3 with the next lexical-intelligence slice, preferably grammar notes or collocations on the upgraded word-detail screen.
+2. Continue Phase 3 with the next lexical-intelligence slice, preferably collocations or word families on the upgraded word-detail screen.
 3. Keep the remaining manual device worksheet items for offline behavior, English UI, German UI, and TTS queued for final Phase 1 sign-off, then extend that validation to Practice flows.
 
 ---
@@ -73,8 +73,8 @@ Continue DarwinLingua implementation from the latest commit.
 
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
-- Phase 1 release validation still has manual device-bound checks open, but Phase 2 implementation has now started.
-- Prioritize the remaining manual/device-bound Phase 2 quality item under the Practice backlog, continuing from the implemented application tests, infrastructure tests, performance validation, MAUI practice tab, overview screen, and session UI.
+- Phase 1 and Phase 2 only have manual device-bound validation left from my side.
+- Prioritize the next Phase 3 mobile lexical-intelligence slice after the implemented usage/context labels and grammar notes, preferably collocations or word families on the upgraded word-detail screen.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.
 - Run the full local Windows .NET checks after changes.

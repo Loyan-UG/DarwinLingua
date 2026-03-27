@@ -88,6 +88,8 @@ public sealed class PersistenceMappingConfigurationTests
                 ?? throw new Xunit.Sdk.XunitException("WordTopic mapping is missing from the model.");
             IEntityType wordLabelEntity = dbContext.Model.FindEntityType(typeof(WordLabel))
                 ?? throw new Xunit.Sdk.XunitException("WordLabel mapping is missing from the model.");
+            IEntityType wordGrammarNoteEntity = dbContext.Model.FindEntityType(typeof(WordGrammarNote))
+                ?? throw new Xunit.Sdk.XunitException("WordGrammarNote mapping is missing from the model.");
 
             Assert.Contains(
                 translationEntity.GetIndexes(),
@@ -137,6 +139,13 @@ public sealed class PersistenceMappingConfigurationTests
                     index.IsUnique &&
                     index.Properties.Select(property => property.Name).SequenceEqual(
                         [nameof(WordLabel.WordEntryId), nameof(WordLabel.Kind), nameof(WordLabel.Key)]));
+
+            Assert.Contains(
+                wordGrammarNoteEntity.GetIndexes(),
+                index =>
+                    index.IsUnique &&
+                    index.Properties.Select(property => property.Name).SequenceEqual(
+                        [nameof(WordGrammarNote.WordEntryId), nameof(WordGrammarNote.Text)]));
         }
         finally
         {

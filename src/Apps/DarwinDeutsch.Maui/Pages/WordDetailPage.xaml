@@ -72,6 +72,17 @@
                 </VerticalStackLayout>
             </Border>
 
+            <Border x:Name="GrammarNotesBorder"
+                    Padding="20"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="GrammarNotesHeadingLabel"
+                           Style="{DynamicResource Title2}" />
+                    <VerticalStackLayout x:Name="GrammarNotesStackLayout"
+                                         Spacing="10" />
+                </VerticalStackLayout>
+            </Border>
+
             <Border Padding="20">
                 <controls:DetailSectionView x:Name="TopicsSectionView" />
             </Border>

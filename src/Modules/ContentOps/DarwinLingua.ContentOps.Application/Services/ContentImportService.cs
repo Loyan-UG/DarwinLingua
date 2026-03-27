@@ -161,6 +161,7 @@ internal sealed class ContentImportService : IContentImportService
             .ToArray();
         string[] usageLabels = ValidateLabelKeys(entry.UsageLabels, "usageLabels", entryErrors);
         string[] contextLabels = ValidateLabelKeys(entry.ContextLabels, "contextLabels", entryErrors);
+        string[] grammarNotes = ValidateGrammarNotes(entry.GrammarNotes, entryErrors);
 
         if (string.IsNullOrWhiteSpace(normalizedLemma))
         {
@@ -314,6 +315,11 @@ internal sealed class ContentImportService : IContentImportService
         foreach (string contextLabel in contextLabels)
         {
             wordEntry.AddLabel(Guid.NewGuid(), WordLabelKind.Context, contextLabel, DateTime.UtcNow);
+        }
+
+        foreach (string grammarNote in grammarNotes)
+        {
+            wordEntry.AddGrammarNote(Guid.NewGuid(), grammarNote, DateTime.UtcNow);
         }
 
         importedWords.Add(wordEntry);
@@ -493,6 +499,40 @@ internal sealed class ContentImportService : IContentImportService
             }
 
             normalized.Add(normalizedLabel);
+        }
+
+        return normalized.ToArray();
+    }
+
+    private static string[] ValidateGrammarNotes(
+        IReadOnlyList<string> grammarNotes,
+        ICollection<string> entryErrors)
+    {
+        List<string> normalized = [];
+
+        foreach (string? grammarNote in grammarNotes)
+        {
+            string normalizedGrammarNote = NormalizeText(grammarNote);
+
+            if (string.IsNullOrWhiteSpace(normalizedGrammarNote))
+            {
+                entryErrors.Add("Entry grammarNotes cannot contain empty items.");
+                continue;
+            }
+
+            if (normalizedGrammarNote.Length > 512)
+            {
+                entryErrors.Add("Entry grammarNotes items must not exceed 512 characters.");
+                continue;
+            }
+
+            if (normalized.Contains(normalizedGrammarNote, StringComparer.Ordinal))
+            {
+                entryErrors.Add($"Duplicate grammarNotes item '{normalizedGrammarNote}' is not allowed.");
+                continue;
+            }
+
+            normalized.Add(normalizedGrammarNote);
         }
 
         return normalized.ToArray();

@@ -273,6 +273,11 @@ public static class AppStrings
     public static string WordDetailContextLabelsLabel => GetRequiredString(nameof(WordDetailContextLabelsLabel));
 
     /// <summary>
+    /// Gets the localized label for the grammar-notes section on the word-detail page.
+    /// </summary>
+    public static string WordDetailGrammarNotesLabel => GetRequiredString(nameof(WordDetailGrammarNotesLabel));
+
+    /// <summary>
     /// Gets the localized empty-topic message for the word-detail page.
     /// </summary>
     public static string WordDetailNoTopics => GetRequiredString(nameof(WordDetailNoTopics));

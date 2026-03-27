@@ -11,6 +11,7 @@ public sealed record ParsedContentEntryModel(
     IReadOnlyList<string> Topics,
     IReadOnlyList<string> UsageLabels,
     IReadOnlyList<string> ContextLabels,
+    IReadOnlyList<string> GrammarNotes,
     IReadOnlyList<ParsedContentMeaningModel> Meanings,
     IReadOnlyList<ParsedContentExampleModel> Examples,
     string? Article,

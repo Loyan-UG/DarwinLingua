@@ -83,6 +83,11 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             .Select(label => label.Key)
             .ToArray();
 
+        IReadOnlyList<string> grammarNotes = word.GrammarNotes
+            .OrderBy(note => note.SortOrder)
+            .Select(note => note.Text)
+            .ToArray();
+
         IReadOnlyList<WordSenseDetailModel> senses = word.Senses
             .OrderByDescending(sense => sense.IsPrimarySense)
             .ThenBy(sense => sense.SenseOrder)
@@ -110,6 +115,7 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             word.PrimaryCefrLevel.ToString(),
             usageLabels,
             contextLabels,
+            grammarNotes,
             topicNames,
             senses);
     }

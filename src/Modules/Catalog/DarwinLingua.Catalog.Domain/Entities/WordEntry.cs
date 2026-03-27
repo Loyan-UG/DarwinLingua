@@ -14,6 +14,7 @@ public sealed partial class WordEntry
     private readonly List<WordSense> _senses = [];
     private readonly List<WordTopic> _topics = [];
     private readonly List<WordLabel> _labels = [];
+    private readonly List<WordGrammarNote> _grammarNotes = [];
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordEntry"/> class for EF Core materialization.
@@ -172,6 +173,11 @@ public sealed partial class WordEntry
     public IReadOnlyCollection<WordLabel> Labels => _labels.AsReadOnly();
 
     /// <summary>
+    /// Gets the grammar notes attached to the entry.
+    /// </summary>
+    public IReadOnlyCollection<WordGrammarNote> GrammarNotes => _grammarNotes.AsReadOnly();
+
+    /// <summary>
     /// Adds a sense to the lexical entry.
     /// </summary>
     public WordSense AddSense(
@@ -292,6 +298,39 @@ public sealed partial class WordEntry
     }
 
     /// <summary>
+    /// Adds a grammar note to the entry.
+    /// </summary>
+    public WordGrammarNote AddGrammarNote(
+        Guid id,
+        string text,
+        DateTime createdAtUtc)
+    {
+        if (_grammarNotes.Any(existingNote => existingNote.Id == id))
+        {
+            throw new DomainRuleException("Duplicate grammar-note identifiers are not allowed within the same word entry.");
+        }
+
+        string normalizedText = NormalizeGrammarNoteText(text);
+
+        if (_grammarNotes.Any(existingNote => string.Equals(existingNote.Text, normalizedText, StringComparison.Ordinal)))
+        {
+            throw new DomainRuleException("Duplicate grammar-note text is not allowed within the same word entry.");
+        }
+
+        WordGrammarNote grammarNote = new(
+            id,
+            Id,
+            normalizedText,
+            _grammarNotes.Count + 1,
+            createdAtUtc);
+
+        _grammarNotes.Add(grammarNote);
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+
+        return grammarNote;
+    }
+
+    /// <summary>
     /// Resolves the primary sense when one exists, otherwise falls back to the first ordered sense.
     /// </summary>
     public WordSense? GetPrimarySense()
@@ -332,6 +371,16 @@ public sealed partial class WordEntry
         }
 
         return value.Trim().ToLowerInvariant();
+    }
+
+    private static string NormalizeGrammarNoteText(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            throw new DomainRuleException("Word grammar-note text cannot be empty.");
+        }
+
+        return CollapseWhitespace().Replace(value.Trim(), " ");
     }
 
     private static DateTime NormalizeUtc(DateTime value, string parameterName)

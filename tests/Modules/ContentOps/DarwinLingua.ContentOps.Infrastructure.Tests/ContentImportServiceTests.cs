@@ -63,6 +63,7 @@ public sealed class ContentImportServiceTests
             Assert.NotNull(detail);
             Assert.Contains("informal", detail!.UsageLabels);
             Assert.Contains("shopping", detail.ContextLabels);
+            Assert.Contains("Plural form is mostly used when talking about different bread types.", detail.GrammarNotes);
         }
         finally
         {
@@ -341,6 +342,7 @@ public sealed class ContentImportServiceTests
                   "topics": ["shopping"],
                   "usageLabels": ["informal"],
                   "contextLabels": ["shopping"],
+                  "grammarNotes": ["Plural form is mostly used when talking about different bread types."],
                   "meanings": [
                     {
                       "language": "en",
