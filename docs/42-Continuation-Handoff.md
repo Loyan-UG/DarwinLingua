@@ -31,6 +31,7 @@ Use it when:
 - Full local Windows checks now succeed: `dotnet restore`, `dotnet build`, and `dotnet test` on `DarwinLingua.slnx`.
 - On Windows, prefer `dotnet test DarwinLingua.slnx -c Debug --no-restore -m:1` to avoid transient MAUI Android file-lock failures inside `obj\Debug\net10.0-android`.
 - Phase 1 release validation now has a dedicated checklist in `docs/43-Phase-1-Release-Checklist.md`.
+- Manual device validation now has a dedicated worksheet in `docs/44-Phase-1-Manual-Validation-Worksheet.md`.
 - Automated release-readiness coverage now includes clean-install database initialization validation and sample content-package import validation.
 - Automated release-readiness coverage now also validates import and browse/search responsiveness on a realistic starter dataset size.
 - MAUI smoke coverage now also guards localized shell/page wiring and ensures core learner flows stay free of direct network dependencies.
@@ -44,10 +45,9 @@ Focus next on Phase 1 execution slices that improve quality and release readines
 
 Suggested scope:
 
-1. Validate offline behavior on target platforms and actual device TTS behavior.
-2. Validate English and German UI on the intended release device matrix.
-3. Record release-run known issues and manual validation evidence from the device matrix.
-4. Keep all new user-facing labels localized through `AppStrings`.
+1. Execute the manual device worksheet for offline behavior, English UI, German UI, and TTS validation.
+2. Record release-run known issues and manual validation evidence from the device matrix.
+3. Keep all new user-facing labels localized through `AppStrings`.
 
 ---
 

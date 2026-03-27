@@ -8,6 +8,8 @@ It is intentionally practical.
 
 Use it before publishing any installer, test build, or internal milestone candidate that may be treated as a release.
 
+Pair it with `docs/44-Phase-1-Manual-Validation-Worksheet.md` for the device-bound checks.
+
 ---
 
 ## Preconditions
