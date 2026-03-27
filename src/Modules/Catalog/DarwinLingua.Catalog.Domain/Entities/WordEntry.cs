@@ -177,6 +177,11 @@ public sealed partial class WordEntry
         string? shortDefinitionDe = null,
         string? shortGloss = null)
     {
+        if (_senses.Any(existingSense => existingSense.Id == id))
+        {
+            throw new DomainRuleException("Duplicate sense identifiers are not allowed within the same word entry.");
+        }
+
         if (_senses.Any(existingSense => existingSense.SenseOrder == senseOrder))
         {
             throw new DomainRuleException("Duplicate sense order is not allowed within the same word entry.");
@@ -215,6 +220,11 @@ public sealed partial class WordEntry
         bool isPrimaryTopic,
         DateTime createdAtUtc)
     {
+        if (_topics.Any(existingTopic => existingTopic.Id == id))
+        {
+            throw new DomainRuleException("Duplicate topic-link identifiers are not allowed within the same word entry.");
+        }
+
         if (topicId == Guid.Empty)
         {
             throw new DomainRuleException("Topic identifier cannot be empty.");

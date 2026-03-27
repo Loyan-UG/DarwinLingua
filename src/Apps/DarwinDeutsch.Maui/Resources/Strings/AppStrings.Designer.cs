@@ -88,6 +88,26 @@ public static class AppStrings
     public static string HomeSearchButton => GetRequiredString(nameof(HomeSearchButton));
 
     /// <summary>
+    /// Gets the localized label for the browse-topics quick action section.
+    /// </summary>
+    public static string HomeBrowseTopicsLabel => GetRequiredString(nameof(HomeBrowseTopicsLabel));
+
+    /// <summary>
+    /// Gets the localized caption for the browse-topics quick action button.
+    /// </summary>
+    public static string HomeBrowseTopicsButton => GetRequiredString(nameof(HomeBrowseTopicsButton));
+
+    /// <summary>
+    /// Gets the localized label for the favorites quick action section.
+    /// </summary>
+    public static string HomeFavoritesLabel => GetRequiredString(nameof(HomeFavoritesLabel));
+
+    /// <summary>
+    /// Gets the localized caption for the favorites quick action button.
+    /// </summary>
+    public static string HomeFavoritesButton => GetRequiredString(nameof(HomeFavoritesButton));
+
+    /// <summary>
     /// Gets the localized placeholder shown when no topics are available.
     /// </summary>
     public static string HomeNoTopics => GetRequiredString(nameof(HomeNoTopics));

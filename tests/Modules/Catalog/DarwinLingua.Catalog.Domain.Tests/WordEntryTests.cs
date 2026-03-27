@@ -29,6 +29,24 @@ public sealed class WordEntryTests
     }
 
     /// <summary>
+    /// Verifies that duplicate sense identifiers are rejected.
+    /// </summary>
+    [Fact]
+    public void AddSense_ShouldRejectDuplicateSenseIdentifier()
+    {
+        WordEntry word = CreateWordEntry();
+        Guid senseId = Guid.NewGuid();
+        word.AddSense(senseId, 1, true, PublicationStatus.Active, DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => word.AddSense(
+            senseId,
+            2,
+            false,
+            PublicationStatus.Active,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
     /// Verifies that duplicate topic links are rejected.
     /// </summary>
     [Fact]
@@ -41,6 +59,23 @@ public sealed class WordEntryTests
         Assert.Throws<DomainRuleException>(() => word.AddTopic(
             Guid.NewGuid(),
             topicId,
+            false,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that duplicate topic-link identifiers are rejected.
+    /// </summary>
+    [Fact]
+    public void AddTopic_ShouldRejectDuplicateTopicLinkIdentifier()
+    {
+        WordEntry word = CreateWordEntry();
+        Guid topicLinkId = Guid.NewGuid();
+        word.AddTopic(topicLinkId, Guid.NewGuid(), true, DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => word.AddTopic(
+            topicLinkId,
+            Guid.NewGuid(),
             false,
             DateTime.UtcNow));
     }

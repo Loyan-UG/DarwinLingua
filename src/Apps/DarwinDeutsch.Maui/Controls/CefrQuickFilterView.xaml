@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarwinDeutsch.Maui.Controls.CefrQuickFilterView">
+    <VerticalStackLayout Spacing="8">
+        <Label x:Name="CaptionLabel"
+               Style="{StaticResource Title2}" />
+        <FlexLayout Wrap="Wrap"
+                    Direction="Row"
+                    JustifyContent="Start"
+                    AlignItems="Start">
+            <Button x:Name="A1Button" Text="A1" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="A2Button" Text="A2" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="B1Button" Text="B1" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="B2Button" Text="B2" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="C1Button" Text="C1" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="C2Button" Text="C2" Clicked="OnCefrButtonClicked" />
+        </FlexLayout>
+    </VerticalStackLayout>
+</ContentView>
