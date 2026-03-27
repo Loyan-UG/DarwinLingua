@@ -45,6 +45,7 @@ Use it when:
 - The MAUI app now exposes a localized `Practice` tab and home-screen entry point, plus a real practice overview screen with progress metrics, review-session preview, and recent activity backed by the Practice application services.
 - The Practice UI now supports end-to-end flashcard and quiz sessions, including answer reveal, answer submission, per-answer feedback, and a session summary state, all localized through `AppStrings`.
 - Practice now also has a dedicated `DarwinLingua.Practice.Application.Tests` project that covers review-queue/session delegation and quiz-answer submission behavior at the application-service layer.
+- Practice infrastructure coverage now also includes query/persistence behavior for missing meanings and inactive content filtering, plus a release-readiness performance test over a realistic early-learning practice dataset.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
 ---
@@ -55,9 +56,9 @@ Focus next on the remaining Phase 2 practice quality and release-readiness items
 
 Suggested scope:
 
-1. Add any missing infrastructure-level query/persistence coverage only if a concrete Practice risk remains after the existing integration and application tests.
-2. Validate Phase 2 performance against a realistic early-learning dataset and document the bound used.
-3. Keep the remaining manual device worksheet items for offline behavior, English UI, German UI, and TTS queued for final Phase 1 sign-off, then extend that validation to Practice flows.
+1. Validate Phase 2 practice flows on target devices and record findings alongside the existing Phase 1 manual worksheet.
+2. Keep the remaining manual device worksheet items for offline behavior, English UI, German UI, and TTS queued for final Phase 1 sign-off, then extend that validation to Practice flows.
+3. Add more automation only if a concrete release-sign-off gap remains after device validation.
 
 ---
 
@@ -71,7 +72,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - Phase 1 release validation still has manual device-bound checks open, but Phase 2 implementation has now started.
-- Prioritize the next ordered Phase 2 quality items under the Practice backlog, continuing from the implemented application tests, MAUI practice tab, overview screen, and session UI.
+- Prioritize the remaining manual/device-bound Phase 2 quality item under the Practice backlog, continuing from the implemented application tests, infrastructure tests, performance validation, MAUI practice tab, overview screen, and session UI.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.
 - Run the full local Windows .NET checks after changes.
