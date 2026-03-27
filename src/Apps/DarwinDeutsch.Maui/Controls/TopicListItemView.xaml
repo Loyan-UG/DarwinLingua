@@ -4,18 +4,18 @@
              x:Class="DarwinDeutsch.Maui.Controls.TopicListItemView">
     <Border Margin="0,0,0,10"
             Padding="16"
-            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}">
+            BackgroundColor="{AppThemeBinding Light=White, Dark=#141414}">
         <Grid ColumnDefinitions="Auto,*"
               ColumnSpacing="14">
             <Border Grid.Column="0"
                     Padding="10,6"
                     VerticalOptions="Start"
                     StrokeThickness="0"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray900}}">
+                    BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#212121}">
                 <Label x:Name="TopicKeyLabel"
                        FontAttributes="Bold"
                        FontSize="12"
-                       TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                       TextColor="{AppThemeBinding Light=#190649, Dark=White}" />
             </Border>
 
             <VerticalStackLayout Grid.Column="1"

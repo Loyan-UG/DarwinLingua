@@ -4,7 +4,7 @@
              x:Class="DarwinDeutsch.Maui.Controls.ActionBlockView">
     <Border Padding="16"
             StrokeThickness="0"
-            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray950}}">
+            BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#141414}">
         <Grid ColumnDefinitions="*,Auto"
               ColumnSpacing="12">
             <Label x:Name="CaptionLabel"

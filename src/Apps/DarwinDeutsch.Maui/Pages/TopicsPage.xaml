@@ -9,7 +9,7 @@
         <Border Grid.Row="0"
                 Padding="24"
                 StrokeThickness="0"
-                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray950}}">
+                BackgroundColor="{AppThemeBinding Light=#DFD8F7, Dark=#141414}">
             <VerticalStackLayout Spacing="10">
                 <Label x:Name="HeadlineLabel"
                        Style="{DynamicResource Headline}"

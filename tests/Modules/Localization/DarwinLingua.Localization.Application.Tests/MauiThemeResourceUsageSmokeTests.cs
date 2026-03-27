@@ -42,6 +42,35 @@ public sealed class MauiThemeResourceUsageSmokeTests
     }
 
     /// <summary>
+    /// Verifies that non-style MAUI XAML does not use nested StaticResource lookups inside AppThemeBinding.
+    /// </summary>
+    [Fact]
+    public void NonStyleXaml_ShouldNotUseStaticResourceInsideAppThemeBinding()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string mauiRoot = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui");
+        string[] xamlPaths = Directory.GetFiles(mauiRoot, "*.xaml", SearchOption.AllDirectories)
+            .Where(path => !path.Contains($"{Path.DirectorySeparatorChar}Resources{Path.DirectorySeparatorChar}Styles{Path.DirectorySeparatorChar}", StringComparison.Ordinal))
+            .ToArray();
+
+        Assert.NotEmpty(xamlPaths);
+
+        foreach (string xamlPath in xamlPaths)
+        {
+            string sourceCode = File.ReadAllText(xamlPath);
+
+            Assert.DoesNotContain(
+                "AppThemeBinding Light={StaticResource",
+                sourceCode,
+                StringComparison.Ordinal);
+            Assert.DoesNotContain(
+                "Dark={StaticResource",
+                sourceCode,
+                StringComparison.Ordinal);
+        }
+    }
+
+    /// <summary>
     /// Resolves the application-level resource keys declared in App.xaml.
     /// </summary>
     private static HashSet<string> ReadApplicationResourceKeys(string appXamlPath)
