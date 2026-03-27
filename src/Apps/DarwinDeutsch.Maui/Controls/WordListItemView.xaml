@@ -6,11 +6,11 @@
             Padding="16">
         <VerticalStackLayout Spacing="4">
             <Label x:Name="LemmaLabel"
-                   Style="{StaticResource Title2}" />
+                   Style="{DynamicResource Title2}" />
             <Label x:Name="PrimaryMeaningLabel"
-                   Style="{StaticResource Body}" />
+                   Style="{DynamicResource Body}" />
             <Label x:Name="MetadataLineLabel"
-                   Style="{StaticResource Body}" />
+                   Style="{DynamicResource Body}" />
         </VerticalStackLayout>
     </Border>
 </ContentView>

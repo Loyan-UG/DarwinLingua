@@ -251,7 +251,7 @@ public partial class WordDetailPage : ContentPage
             senseLayout.Children.Add(new Label
             {
                 Text = sense.ShortDefinitionDe,
-                Style = (Style)Application.Current!.Resources["Title2"],
+                Style = ResolveAppTextStyle("Title2"),
             });
         }
 
@@ -260,7 +260,7 @@ public partial class WordDetailPage : ContentPage
             senseLayout.Children.Add(new Label
             {
                 Text = sense.PrimaryMeaning,
-                Style = (Style)Application.Current!.Resources["Body"],
+                Style = ResolveAppTextStyle("Body"),
             });
         }
 
@@ -269,7 +269,7 @@ public partial class WordDetailPage : ContentPage
             senseLayout.Children.Add(new Label
             {
                 Text = sense.SecondaryMeaning,
-                Style = (Style)Application.Current!.Resources["Body"],
+                Style = ResolveAppTextStyle("Body"),
             });
         }
 
@@ -294,7 +294,7 @@ public partial class WordDetailPage : ContentPage
             Label exampleTextLabel = new()
             {
                 Text = example.GermanText,
-                Style = (Style)Application.Current!.Resources["Body"],
+                Style = ResolveAppTextStyle("Body"),
             };
             Button speakExampleButton = BuildSpeechButton(AppStrings.WordDetailSpeakExampleButton, example.GermanText);
 
@@ -307,7 +307,7 @@ public partial class WordDetailPage : ContentPage
                 exampleLayout.Children.Add(new Label
                 {
                     Text = example.PrimaryMeaning,
-                    Style = (Style)Application.Current!.Resources["Body"],
+                    Style = ResolveAppTextStyle("Body"),
                 });
             }
 
@@ -316,7 +316,7 @@ public partial class WordDetailPage : ContentPage
                 exampleLayout.Children.Add(new Label
                 {
                     Text = example.SecondaryMeaning,
-                    Style = (Style)Application.Current!.Resources["Body"],
+                    Style = ResolveAppTextStyle("Body"),
                 });
             }
 
@@ -361,6 +361,21 @@ public partial class WordDetailPage : ContentPage
         return string.IsNullOrWhiteSpace(word.Article)
             ? word.Lemma
             : $"{word.Article} {word.Lemma}";
+    }
+
+    /// <summary>
+    /// Resolves an application-scoped text style while tolerating early resource-initialization timing.
+    /// </summary>
+    private static Style? ResolveAppTextStyle(string resourceKey)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(resourceKey);
+
+        if (Application.Current?.Resources.TryGetValue(resourceKey, out object? style) == true)
+        {
+            return style as Style;
+        }
+
+        return null;
     }
 
     /// <summary>

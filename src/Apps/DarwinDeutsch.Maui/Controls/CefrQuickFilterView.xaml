@@ -4,7 +4,7 @@
              x:Class="DarwinDeutsch.Maui.Controls.CefrQuickFilterView">
     <VerticalStackLayout Spacing="8">
         <Label x:Name="CaptionLabel"
-               Style="{StaticResource Title2}" />
+               Style="{DynamicResource Title2}" />
         <FlexLayout Wrap="Wrap"
                     Direction="Row"
                     JustifyContent="Start"

@@ -6,7 +6,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="16">
             <Label x:Name="HeadlineLabel"
-                   Style="{StaticResource Headline}"
+                   Style="{DynamicResource Headline}"
                    SemanticProperties.HeadingLevel="Level1" />
 
             <Button x:Name="SpeakWordButton"
@@ -14,13 +14,13 @@
                     IsVisible="False" />
 
             <Label x:Name="MetadataLabel"
-                   Style="{StaticResource Body}" />
+                   Style="{DynamicResource Body}" />
 
             <Button x:Name="FavoriteButton"
                     Clicked="OnFavoriteButtonClicked" />
 
             <Label x:Name="AudioStatusLabel"
-                   Style="{StaticResource Body}"
+                   Style="{DynamicResource Body}"
                    TextColor="{StaticResource Gray500}"
                    IsVisible="False" />
 
@@ -36,7 +36,7 @@
             <controls:DetailSectionView x:Name="TopicsSectionView" />
 
             <Label x:Name="EmptyStateLabel"
-                   Style="{StaticResource Body}"
+                   Style="{DynamicResource Body}"
                    IsVisible="False" />
 
             <VerticalStackLayout x:Name="SensesContainer"

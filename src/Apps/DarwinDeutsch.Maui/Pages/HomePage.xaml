@@ -11,13 +11,13 @@
                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray950}}">
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="HeadlineLabel"
-                           Style="{StaticResource Headline}"
+                           Style="{DynamicResource Headline}"
                            HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
                            SemanticProperties.HeadingLevel="Level1" />
 
                     <Label x:Name="IntroLabel"
-                           Style="{StaticResource Body}"
+                           Style="{DynamicResource Body}"
                            LineBreakMode="WordWrap" />
                 </VerticalStackLayout>
             </Border>

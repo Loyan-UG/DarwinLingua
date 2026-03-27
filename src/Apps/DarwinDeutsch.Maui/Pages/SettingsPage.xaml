@@ -5,16 +5,16 @@
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="16">
             <Label x:Name="HeadlineLabel"
-                   Style="{StaticResource Headline}"
+                   Style="{DynamicResource Headline}"
                    SemanticProperties.HeadingLevel="Level1" />
 
             <Label x:Name="DescriptionLabel"
-                   Style="{StaticResource Body}"
+                   Style="{DynamicResource Body}"
                    LineBreakMode="WordWrap" />
 
             <VerticalStackLayout Spacing="6">
                 <Label x:Name="LanguagePickerCaptionLabel"
-                       Style="{StaticResource Title2}" />
+                       Style="{DynamicResource Title2}" />
                 <Picker x:Name="LanguagePicker"
                         ItemDisplayBinding="{Binding DisplayName}"
                         SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />
@@ -22,7 +22,7 @@
 
             <VerticalStackLayout Spacing="6">
                 <Label x:Name="PrimaryMeaningLanguageCaptionLabel"
-                       Style="{StaticResource Title2}" />
+                       Style="{DynamicResource Title2}" />
                 <Picker x:Name="PrimaryMeaningLanguagePicker"
                         ItemDisplayBinding="{Binding DisplayName}"
                         SelectedIndexChanged="OnPrimaryMeaningLanguagePickerSelectedIndexChanged" />
@@ -30,7 +30,7 @@
 
             <VerticalStackLayout Spacing="6">
                 <Label x:Name="SecondaryMeaningLanguageCaptionLabel"
-                       Style="{StaticResource Title2}" />
+                       Style="{DynamicResource Title2}" />
                 <Picker x:Name="SecondaryMeaningLanguagePicker"
                         ItemDisplayBinding="{Binding DisplayName}"
                         SelectedIndexChanged="OnSecondaryMeaningLanguagePickerSelectedIndexChanged" />

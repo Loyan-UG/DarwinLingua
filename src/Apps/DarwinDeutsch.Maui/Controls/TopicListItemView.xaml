@@ -21,7 +21,7 @@
             <VerticalStackLayout Grid.Column="1"
                                  Spacing="4">
             <Label x:Name="DisplayNameLabel"
-                   Style="{StaticResource Title2}" />
+                   Style="{DynamicResource Title2}" />
             </VerticalStackLayout>
         </Grid>
     </Border>

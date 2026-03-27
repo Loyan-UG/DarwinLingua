@@ -8,12 +8,12 @@
           RowSpacing="12">
         <Label x:Name="HeadlineLabel"
                Grid.Row="0"
-               Style="{StaticResource Headline}"
+               Style="{DynamicResource Headline}"
                SemanticProperties.HeadingLevel="Level1" />
 
         <Label x:Name="DescriptionLabel"
                Grid.Row="1"
-               Style="{StaticResource Body}"
+               Style="{DynamicResource Body}"
                LineBreakMode="WordWrap" />
 
         <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
@@ -22,17 +22,17 @@
 
         <Label x:Name="EmptyStateLabel"
                Grid.Row="3"
-               Style="{StaticResource Body}"
+               Style="{DynamicResource Body}"
                IsVisible="False" />
 
         <Label x:Name="LoadingStateLabel"
                Grid.Row="4"
-               Style="{StaticResource Body}"
+               Style="{DynamicResource Body}"
                IsVisible="False" />
 
         <Label x:Name="ErrorStateLabel"
                Grid.Row="5"
-               Style="{StaticResource Body}"
+               Style="{DynamicResource Body}"
                IsVisible="False" />
 
         <CollectionView x:Name="WordsCollectionView"

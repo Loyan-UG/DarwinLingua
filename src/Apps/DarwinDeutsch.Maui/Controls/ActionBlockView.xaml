@@ -9,7 +9,7 @@
               ColumnSpacing="12">
             <Label x:Name="CaptionLabel"
                    Grid.Column="0"
-                   Style="{StaticResource Title2}"
+                   Style="{DynamicResource Title2}"
                    VerticalOptions="Center" />
             <Button x:Name="ActionButton"
                     Grid.Column="1"

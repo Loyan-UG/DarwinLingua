@@ -4,9 +4,9 @@
              x:Class="DarwinDeutsch.Maui.Controls.DetailSectionView">
     <VerticalStackLayout Spacing="4">
         <Label x:Name="SectionTitleLabel"
-               Style="{StaticResource Title2}" />
+               Style="{DynamicResource Title2}" />
         <Label x:Name="SectionValueLabel"
-               Style="{StaticResource Body}"
+               Style="{DynamicResource Body}"
                LineBreakMode="WordWrap" />
     </VerticalStackLayout>
 </ContentView>
