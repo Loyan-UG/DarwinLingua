@@ -33,6 +33,7 @@ Use it when:
 - Phase 1 release validation now has a dedicated checklist in `docs/43-Phase-1-Release-Checklist.md`.
 - Manual device validation now has a dedicated worksheet in `docs/44-Phase-1-Manual-Validation-Worksheet.md`.
 - Release sign-off and accepted-known-issues capture now have a template in `docs/45-Phase-1-Release-Notes-Template.md`.
+- Windows release-prep automation now has a dedicated script in `tools/Phase1/Invoke-Phase1ReleasePrep.ps1` to capture restore/build/test evidence and prefill release metadata.
 - Automated release-readiness coverage now includes clean-install database initialization validation and sample content-package import validation.
 - Automated release-readiness coverage now also validates import and browse/search responsiveness on a realistic starter dataset size.
 - MAUI smoke coverage now also guards localized shell/page wiring and ensures core learner flows stay free of direct network dependencies.
