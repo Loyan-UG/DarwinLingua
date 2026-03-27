@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.CefrWordsPage">
     <Grid Padding="24"
-          RowDefinitions="Auto,Auto,Auto,Auto,Auto,*"
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*"
           RowSpacing="12">
         <Label x:Name="HeadlineLabel"
                Grid.Row="0"
@@ -16,23 +16,27 @@
                Style="{StaticResource Body}"
                LineBreakMode="WordWrap" />
 
-        <Label x:Name="EmptyStateLabel"
-               Grid.Row="2"
-               Style="{StaticResource Body}"
-               IsVisible="False" />
+        <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
+                                      Grid.Row="2"
+                                      LevelSelected="OnCefrLevelSelected" />
 
-        <Label x:Name="LoadingStateLabel"
+        <Label x:Name="EmptyStateLabel"
                Grid.Row="3"
                Style="{StaticResource Body}"
                IsVisible="False" />
 
-        <Label x:Name="ErrorStateLabel"
+        <Label x:Name="LoadingStateLabel"
                Grid.Row="4"
                Style="{StaticResource Body}"
                IsVisible="False" />
 
+        <Label x:Name="ErrorStateLabel"
+               Grid.Row="5"
+               Style="{StaticResource Body}"
+               IsVisible="False" />
+
         <CollectionView x:Name="WordsCollectionView"
-                        Grid.Row="5"
+                        Grid.Row="6"
                         SelectionMode="Single"
                         SelectionChanged="OnWordsSelectionChanged">
             <CollectionView.ItemTemplate>

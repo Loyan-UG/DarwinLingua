@@ -77,6 +77,11 @@ public sealed class ExampleSentence
         string translationText,
         DateTime createdAtUtc)
     {
+        if (_translations.Any(existingTranslation => existingTranslation.Id == id))
+        {
+            throw new DomainRuleException("Duplicate example translation identifiers are not allowed.");
+        }
+
         if (_translations.Any(existingTranslation => existingTranslation.LanguageCode == languageCode))
         {
             throw new DomainRuleException("Duplicate example translation languages are not allowed.");

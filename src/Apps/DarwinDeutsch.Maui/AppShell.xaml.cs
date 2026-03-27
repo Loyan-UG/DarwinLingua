@@ -94,6 +94,20 @@ public partial class AppShell : Shell
     }
 
     /// <summary>
+    /// Releases event subscriptions when the shell handler is detached.
+    /// </summary>
+    /// <param name="args">The handler-changing event arguments.</param>
+    protected override void OnHandlerChanging(HandlerChangingEventArgs args)
+    {
+        if (args.NewHandler is null)
+        {
+            _appLocalizationService.CultureChanged -= OnCultureChanged;
+        }
+
+        base.OnHandlerChanging(args);
+    }
+
+    /// <summary>
     /// Applies localized titles to the shell and its navigation items.
     /// </summary>
     private void ApplyLocalizedShellText()

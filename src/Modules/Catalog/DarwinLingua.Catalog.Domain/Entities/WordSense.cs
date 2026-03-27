@@ -90,6 +90,11 @@ public sealed class WordSense
         bool isPrimary,
         DateTime createdAtUtc)
     {
+        if (_translations.Any(existingTranslation => existingTranslation.Id == id))
+        {
+            throw new DomainRuleException("Duplicate translation identifiers are not allowed within the same sense.");
+        }
+
         if (_translations.Any(existingTranslation => existingTranslation.LanguageCode == languageCode))
         {
             throw new DomainRuleException("Duplicate translation languages are not allowed within the same sense.");
@@ -127,6 +132,11 @@ public sealed class WordSense
         bool isPrimaryExample,
         DateTime createdAtUtc)
     {
+        if (_examples.Any(existingExample => existingExample.Id == id))
+        {
+            throw new DomainRuleException("Duplicate example identifiers are not allowed within the same sense.");
+        }
+
         if (_examples.Any(existingExample => existingExample.SentenceOrder == sentenceOrder))
         {
             throw new DomainRuleException("Duplicate example sentence orders are not allowed within the same sense.");
