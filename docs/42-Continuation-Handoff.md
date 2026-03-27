@@ -16,6 +16,7 @@ Use it when:
 
 - Phase 1 is still in progress.
 - Core app flows exist: home, CEFR browse, topic browse, search, word details, favorites, settings.
+- Home now includes dashboard quick actions for search, topic browse, and favorites in addition to CEFR shortcuts.
 - Shared MAUI reusable controls currently include:
   - `WordListItemView`
   - `TopicListItemView`

@@ -34,6 +34,7 @@ The repository is currently **in active Phase 1 implementation**, not feature-co
 - UI state handling now includes explicit loading/error/empty behavior across core data-driven browse/search/favorites pages
 - accessibility baseline updates now enforce 44px touch targets and improved typography contrast/legibility defaults in shared MAUI styles
 - reusable UI component extraction now includes shared word-list-item, topic-list-item, detail-section, CEFR quick-filter, and action-block views applied across home and browse screens
+- home now exposes dashboard-style quick actions for search, topic browse, and favorites navigation in addition to CEFR quick-filter shortcuts
 - shared MAUI style resources now define baseline design tokens for spacing, typography, touch targets, and semantic surface/text colors
 - important Phase 1 workflows such as broader UI/UX foundation work and release hardening are still not implemented yet
 

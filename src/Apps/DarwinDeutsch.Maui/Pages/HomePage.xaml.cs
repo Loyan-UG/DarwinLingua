@@ -89,6 +89,10 @@ public partial class HomePage : ContentPage
         CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
         SearchActionBlockView.Caption = AppStrings.HomeSearchLabel;
         SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;
+        BrowseTopicsActionBlockView.Caption = AppStrings.HomeTopicsLabel;
+        BrowseTopicsActionBlockView.ButtonText = AppStrings.BrowseTabTitle;
+        FavoritesActionBlockView.Caption = AppStrings.FavoritesPageTitle;
+        FavoritesActionBlockView.ButtonText = AppStrings.FavoritesTabTitle;
     }
 
     /// <summary>
@@ -172,5 +176,21 @@ public partial class HomePage : ContentPage
     private async void OnSearchActionInvoked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(SearchWordsPage)).ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Navigates to the topics browse tab from the home dashboard.
+    /// </summary>
+    private async void OnBrowseTopicsActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//browse").ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Navigates to the favorites tab from the home dashboard.
+    /// </summary>
+    private async void OnFavoritesActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//favorites").ConfigureAwait(true);
     }
 }

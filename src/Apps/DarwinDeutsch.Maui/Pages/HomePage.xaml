@@ -26,6 +26,12 @@
 
             <controls:ActionBlockView x:Name="SearchActionBlockView"
                                       ActionInvoked="OnSearchActionInvoked" />
+
+            <controls:ActionBlockView x:Name="BrowseTopicsActionBlockView"
+                                      ActionInvoked="OnBrowseTopicsActionInvoked" />
+
+            <controls:ActionBlockView x:Name="FavoritesActionBlockView"
+                                      ActionInvoked="OnFavoritesActionInvoked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
