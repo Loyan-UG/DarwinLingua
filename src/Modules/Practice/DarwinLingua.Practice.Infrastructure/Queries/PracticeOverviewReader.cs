@@ -33,9 +33,16 @@ internal sealed class PracticeOverviewReader : IPracticeOverviewReader
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        DateTime nowUtc = DateTime.UtcNow;
         List<PracticeStateRow> trackedRows = await LoadTrackedRowsAsync(dbContext, cancellationToken).ConfigureAwait(false);
-
-        List<PracticeStateRow> reviewCandidates = OrderReviewCandidates(trackedRows)
+        List<PracticeStateRow> reviewCandidates = GetEligibleReviewCandidates(trackedRows, nowUtc)
+            .OrderByDescending(row => IsDueNow(row, nowUtc))
+            .ThenByDescending(row => row.IsDifficult)
+            .ThenBy(row => row.DueAtUtc ?? row.LastViewedAtUtc)
+            .ThenBy(row => row.LastViewedAtUtc)
+            .ThenByDescending(row => row.ViewCount)
+            .ThenByDescending(row => GetCefrSortWeight(row.CefrLevel))
+            .ThenBy(row => row.Lemma, StringComparer.OrdinalIgnoreCase)
             .Take(PreviewSize)
             .ToList();
 
@@ -47,7 +54,7 @@ internal sealed class PracticeOverviewReader : IPracticeOverviewReader
 
         return new PracticeOverviewModel(
             trackedRows.Count,
-            trackedRows.Count(row => row.LastViewedAtUtc is not null && (!row.IsKnown || row.IsDifficult)),
+            GetEligibleReviewCandidates(trackedRows, nowUtc).Count(),
             trackedRows.Count(row => row.IsDifficult),
             trackedRows.Count(row => row.IsKnown),
             trackedRows.Count(row => row.LastViewedAtUtc is not null),
@@ -77,8 +84,17 @@ internal sealed class PracticeOverviewReader : IPracticeOverviewReader
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        DateTime nowUtc = DateTime.UtcNow;
         List<PracticeStateRow> trackedRows = await LoadTrackedRowsAsync(dbContext, cancellationToken).ConfigureAwait(false);
-        List<PracticeStateRow> orderedCandidates = OrderReviewCandidates(trackedRows).ToList();
+        List<PracticeStateRow> orderedCandidates = GetEligibleReviewCandidates(trackedRows, nowUtc)
+            .OrderByDescending(row => IsDueNow(row, nowUtc))
+            .ThenByDescending(row => row.IsDifficult)
+            .ThenBy(row => row.DueAtUtc ?? row.LastViewedAtUtc)
+            .ThenBy(row => row.LastViewedAtUtc)
+            .ThenByDescending(row => row.ViewCount)
+            .ThenByDescending(row => GetCefrSortWeight(row.CefrLevel))
+            .ThenBy(row => row.Lemma, StringComparer.OrdinalIgnoreCase)
+            .ToList();
 
         Dictionary<Guid, string?> meaningsByWordEntryId = await LoadMeaningsByWordEntryIdAsync(
             dbContext,
@@ -95,6 +111,8 @@ internal sealed class PracticeOverviewReader : IPracticeOverviewReader
                     row.Lemma,
                     row.CefrLevel,
                     meaningsByWordEntryId.GetValueOrDefault(row.WordEntryId),
+                    row.DueAtUtc,
+                    IsDueNow(row, nowUtc),
                     row.IsDifficult,
                     row.IsKnown,
                     row.ViewCount,
@@ -110,6 +128,10 @@ internal sealed class PracticeOverviewReader : IPracticeOverviewReader
             from userWordState in dbContext.UserWordStates.AsNoTracking()
             join wordEntry in dbContext.WordEntries.AsNoTracking()
                 on userWordState.WordEntryPublicId equals wordEntry.PublicId
+            join reviewStateJoin in dbContext.PracticeReviewStates.AsNoTracking()
+                on new { userWordState.UserId, userWordState.WordEntryPublicId }
+                equals new { reviewStateJoin.UserId, reviewStateJoin.WordEntryPublicId } into reviewStates
+            from reviewState in reviewStates.DefaultIfEmpty()
             where userWordState.UserId == LocalInstallationUser.UserId &&
                 wordEntry.PublicationStatus == PublicationStatus.Active
             select new PracticeStateRow(
@@ -121,25 +143,33 @@ internal sealed class PracticeOverviewReader : IPracticeOverviewReader
                 userWordState.IsDifficult,
                 userWordState.ViewCount,
                 userWordState.LastViewedAtUtc,
-                userWordState.UpdatedAtUtc))
+                userWordState.UpdatedAtUtc,
+                reviewState == null ? null : reviewState.DueAtUtc,
+                reviewState == null ? null : reviewState.LastAttemptedAtUtc,
+                reviewState == null ? 0 : reviewState.TotalAttemptCount))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Applies the current deterministic review-priority rule:
-    /// difficult words first, then oldest last-view timestamps, then higher view counts,
-    /// then higher CEFR levels, then alphabetical lemma as the final tie-breaker.
+    /// Applies the current deterministic review rule:
+    /// currently due scheduled words first, then remaining eligible tracked words,
+    /// with difficult words, older schedule/view timestamps, higher view counts, higher CEFR levels,
+    /// and alphabetical lemma as deterministic tie-breakers.
     /// </summary>
-    private static IOrderedEnumerable<PracticeStateRow> OrderReviewCandidates(IEnumerable<PracticeStateRow> trackedRows)
+    private static IEnumerable<PracticeStateRow> GetEligibleReviewCandidates(
+        IEnumerable<PracticeStateRow> trackedRows,
+        DateTime nowUtc)
     {
-        return trackedRows
-            .Where(row => row.LastViewedAtUtc is not null && (!row.IsKnown || row.IsDifficult))
-            .OrderByDescending(row => row.IsDifficult)
-            .ThenBy(row => row.LastViewedAtUtc)
-            .ThenByDescending(row => row.ViewCount)
-            .ThenByDescending(row => GetCefrSortWeight(row.CefrLevel))
-            .ThenBy(row => row.Lemma, StringComparer.OrdinalIgnoreCase);
+        return trackedRows.Where(row =>
+            row.LastViewedAtUtc is not null &&
+            (!row.IsKnown || row.IsDifficult) &&
+            (row.TotalAttemptCount == 0 || row.DueAtUtc is null || row.DueAtUtc <= nowUtc));
+    }
+
+    private static bool IsDueNow(PracticeStateRow row, DateTime nowUtc)
+    {
+        return row.TotalAttemptCount > 0 && row.DueAtUtc is not null && row.DueAtUtc <= nowUtc;
     }
 
     private static int GetCefrSortWeight(string cefrLevel)
@@ -197,7 +227,10 @@ internal sealed class PracticeOverviewReader : IPracticeOverviewReader
         bool IsDifficult,
         int ViewCount,
         DateTime? LastViewedAtUtc,
-        DateTime UpdatedAtUtc);
+        DateTime UpdatedAtUtc,
+        DateTime? DueAtUtc,
+        DateTime? LastAttemptedAtUtc,
+        int TotalAttemptCount);
 
     private sealed record MeaningRow(Guid WordEntryId, string TranslationText);
 }

@@ -7,6 +7,7 @@ using DarwinLingua.ContentOps.Application.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Models;
 using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.DependencyInjection;
+using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.DependencyInjection;
@@ -16,6 +17,7 @@ using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using DarwinLingua.Practice.Application.Abstractions;
 using DarwinLingua.Practice.Application.DependencyInjection;
 using DarwinLingua.Practice.Infrastructure.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinLingua.Practice.Infrastructure.Tests;
@@ -41,25 +43,35 @@ public sealed class PracticeOverviewServiceTests
 
             serviceProvider = BuildServiceProvider(databasePath);
             SeededPracticeScenario scenario = await CreateSeededScenarioAsync(serviceProvider, packagePath);
+            DateTime nowUtc = DateTime.UtcNow;
+
+            await scenario.PracticeFlashcardAnswerService.SubmitAsync(
+                new DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerRequestModel(
+                    scenario.ApplicationWord.PublicId,
+                    DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Correct,
+                    AttemptedAtUtc: nowUtc.AddHours(-12)),
+                CancellationToken.None);
+
+            await scenario.PracticeFlashcardAnswerService.SubmitAsync(
+                new DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerRequestModel(
+                    scenario.IndispensabilityWord.PublicId,
+                    DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Incorrect,
+                    AttemptedAtUtc: nowUtc.AddHours(-2)),
+                CancellationToken.None);
 
             DarwinLingua.Practice.Application.Models.PracticeOverviewModel overview = await scenario.PracticeOverviewService
                 .GetOverviewAsync("en", CancellationToken.None);
 
             Assert.Equal(3, overview.TotalTrackedWords);
-            Assert.Equal(2, overview.ReviewCandidateCount);
+            Assert.Equal(1, overview.ReviewCandidateCount);
             Assert.Equal(1, overview.DifficultWordCount);
             Assert.Equal(1, overview.KnownWordCount);
             Assert.Equal(3, overview.RecentlyViewedCount);
             Assert.NotNull(overview.LastActivityAtUtc);
-            Assert.Equal(2, overview.ReviewPreview.Count);
-            Assert.Equal("Bewerbung", overview.ReviewPreview[0].Lemma);
-            Assert.Equal("job application", overview.ReviewPreview[0].PrimaryMeaning);
-            Assert.True(overview.ReviewPreview[0].IsDifficult);
-            Assert.Contains(
-                overview.ReviewPreview,
-                item => item.Lemma == "Unabdingbarkeit" &&
-                    item.PrimaryMeaning == "indispensability" &&
-                    !item.IsKnown);
+            DarwinLingua.Practice.Application.Models.PracticeWordPreviewModel reviewPreview = Assert.Single(overview.ReviewPreview);
+            Assert.Equal("Unabdingbarkeit", reviewPreview.Lemma);
+            Assert.Equal("indispensability", reviewPreview.PrimaryMeaning);
+            Assert.False(reviewPreview.IsKnown);
         }
         finally
         {
@@ -102,18 +114,160 @@ public sealed class PracticeOverviewServiceTests
             await Task.Delay(30);
             await scenario.UserWordStateService.TrackWordViewedAsync(scenario.IndispensabilityWord.PublicId, CancellationToken.None);
 
+            DateTime nowUtc = DateTime.UtcNow;
+            await scenario.PracticeFlashcardAnswerService.SubmitAsync(
+                new DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerRequestModel(
+                    scenario.ApplicationWord.PublicId,
+                    DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Correct,
+                    AttemptedAtUtc: nowUtc.AddHours(-12)),
+                CancellationToken.None);
+
+            await scenario.PracticeFlashcardAnswerService.SubmitAsync(
+                new DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerRequestModel(
+                    scenario.EnvironmentWord.PublicId,
+                    DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Incorrect,
+                    AttemptedAtUtc: nowUtc.AddHours(-1)),
+                CancellationToken.None);
+
             DarwinLingua.Practice.Application.Models.PracticeReviewQueueModel queue = await scenario.PracticeReviewQueueService
                 .GetQueueAsync("en", CancellationToken.None);
 
-            Assert.Equal(4, queue.TotalCandidates);
-            Assert.Equal(4, queue.Items.Count);
-            Assert.Equal([1, 2, 3, 4], queue.Items.Select(item => item.Position).ToArray());
-            Assert.Equal("Bewerbung", queue.Items[0].Lemma);
-            Assert.Equal("Umgebung", queue.Items[1].Lemma);
-            Assert.Equal("Termin", queue.Items[2].Lemma);
-            Assert.Equal("Unabdingbarkeit", queue.Items[3].Lemma);
-            Assert.All(queue.Items.Take(2), item => Assert.True(item.IsDifficult));
-            Assert.All(queue.Items.Skip(2), item => Assert.False(item.IsDifficult));
+            Assert.Equal(3, queue.TotalCandidates);
+            Assert.Equal(3, queue.Items.Count);
+            Assert.Equal([1, 2, 3], queue.Items.Select(item => item.Position).ToArray());
+            Assert.Equal("Umgebung", queue.Items[0].Lemma);
+            Assert.True(queue.Items[0].IsDueNow);
+            Assert.NotNull(queue.Items[0].DueAtUtc);
+            Assert.Equal("Termin", queue.Items[1].Lemma);
+            Assert.False(queue.Items[1].IsDueNow);
+            Assert.Equal("Unabdingbarkeit", queue.Items[2].Lemma);
+            Assert.DoesNotContain(queue.Items, item => item.Lemma == "Bewerbung");
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(packagePath))
+            {
+                File.Delete(packagePath);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Verifies that submitting a flashcard answer persists attempt history and scheduling state.
+    /// </summary>
+    [Fact]
+    public async Task SubmitAsync_ShouldPersistAttemptAndReviewState()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-practice-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-practice-package-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            File.Copy(GetSamplePackagePath(), packagePath, overwrite: true);
+
+            serviceProvider = BuildServiceProvider(databasePath);
+            SeededPracticeScenario scenario = await CreateSeededScenarioAsync(serviceProvider, packagePath);
+            DateTime attemptedAtUtc = DateTime.UtcNow.AddMinutes(-15);
+
+            DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerResultModel result =
+                await scenario.PracticeFlashcardAnswerService.SubmitAsync(
+                    new DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerRequestModel(
+                        scenario.ApplicationWord.PublicId,
+                        DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Correct,
+                        ResponseMilliseconds: 1250,
+                        AttemptedAtUtc: attemptedAtUtc),
+                    CancellationToken.None);
+
+            Assert.Equal(scenario.ApplicationWord.PublicId, result.WordEntryPublicId);
+            Assert.Equal(DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Correct, result.Outcome);
+            Assert.Null(result.DueAtUtcBeforeAttempt);
+            Assert.Equal(attemptedAtUtc.AddDays(1), result.DueAtUtcAfterAttempt);
+            Assert.Equal(1, result.TotalAttemptCount);
+            Assert.Equal(1, result.ConsecutiveSuccessCount);
+            Assert.Equal(0, result.ConsecutiveFailureCount);
+
+            await using DarwinLinguaDbContext dbContext = await scenario.DbContextFactory.CreateDbContextAsync(CancellationToken.None);
+
+            DarwinLingua.Practice.Domain.Entities.PracticeReviewState reviewState = Assert.Single(
+                dbContext.PracticeReviewStates.Where(state => state.WordEntryPublicId == scenario.ApplicationWord.PublicId));
+            DarwinLingua.Practice.Domain.Entities.PracticeAttempt attempt = Assert.Single(
+                dbContext.PracticeAttempts.Where(row => row.WordEntryPublicId == scenario.ApplicationWord.PublicId));
+
+            Assert.Equal(result.DueAtUtcAfterAttempt, reviewState.DueAtUtc);
+            Assert.Equal(attemptedAtUtc, reviewState.LastAttemptedAtUtc);
+            Assert.Equal(DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Correct, reviewState.LastOutcome);
+            Assert.Equal(1, reviewState.TotalAttemptCount);
+            Assert.Equal(result.DueAtUtcAfterAttempt, attempt.DueAtUtcAfterAttempt);
+            Assert.Equal(1250, attempt.ResponseMilliseconds);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(packagePath))
+            {
+                File.Delete(packagePath);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Verifies that repeated failures persist counters and shorten the next due window deterministically.
+    /// </summary>
+    [Fact]
+    public async Task SubmitAsync_ShouldUpdateFailureCountersAndDueSchedule()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-practice-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-practice-package-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            File.Copy(GetSamplePackagePath(), packagePath, overwrite: true);
+
+            serviceProvider = BuildServiceProvider(databasePath);
+            SeededPracticeScenario scenario = await CreateSeededScenarioAsync(serviceProvider, packagePath);
+            DateTime firstAttemptAtUtc = DateTime.UtcNow.AddHours(-3);
+            DateTime secondAttemptAtUtc = firstAttemptAtUtc.AddMinutes(20);
+
+            await scenario.PracticeFlashcardAnswerService.SubmitAsync(
+                new DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerRequestModel(
+                    scenario.IndispensabilityWord.PublicId,
+                    DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Incorrect,
+                    AttemptedAtUtc: firstAttemptAtUtc),
+                CancellationToken.None);
+
+            DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerResultModel secondResult =
+                await scenario.PracticeFlashcardAnswerService.SubmitAsync(
+                    new DarwinLingua.Practice.Application.Models.PracticeFlashcardAnswerRequestModel(
+                        scenario.IndispensabilityWord.PublicId,
+                        DarwinLingua.Practice.Domain.Entities.PracticeAttemptOutcome.Incorrect,
+                        AttemptedAtUtc: secondAttemptAtUtc),
+                    CancellationToken.None);
+
+            Assert.Equal(firstAttemptAtUtc.AddMinutes(10), secondResult.DueAtUtcBeforeAttempt);
+            Assert.Equal(secondAttemptAtUtc.AddMinutes(30), secondResult.DueAtUtcAfterAttempt);
+            Assert.Equal(2, secondResult.TotalAttemptCount);
+            Assert.Equal(0, secondResult.ConsecutiveSuccessCount);
+            Assert.Equal(2, secondResult.ConsecutiveFailureCount);
+
+            await using DarwinLinguaDbContext dbContext = await scenario.DbContextFactory.CreateDbContextAsync(CancellationToken.None);
+            DarwinLingua.Practice.Domain.Entities.PracticeReviewState reviewState = Assert.Single(
+                dbContext.PracticeReviewStates.Where(state => state.WordEntryPublicId == scenario.IndispensabilityWord.PublicId));
+
+            Assert.Equal(2, reviewState.TotalAttemptCount);
+            Assert.Equal(2, reviewState.ConsecutiveFailureCount);
+            Assert.Equal(secondAttemptAtUtc.AddMinutes(30), reviewState.DueAtUtc);
+            Assert.Equal(2, dbContext.PracticeAttempts.Count(row => row.WordEntryPublicId == scenario.IndispensabilityWord.PublicId));
         }
         finally
         {
@@ -209,6 +363,8 @@ public sealed class PracticeOverviewServiceTests
         await userWordStateService.TrackWordViewedAsync(indispensabilityWord.PublicId, CancellationToken.None);
 
         return new SeededPracticeScenario(
+            serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>(),
+            serviceProvider.GetRequiredService<IPracticeFlashcardAnswerService>(),
             serviceProvider.GetRequiredService<IPracticeOverviewService>(),
             serviceProvider.GetRequiredService<IPracticeReviewQueueService>(),
             userWordStateService,
@@ -220,6 +376,8 @@ public sealed class PracticeOverviewServiceTests
     }
 
     private sealed record SeededPracticeScenario(
+        IDbContextFactory<DarwinLinguaDbContext> DbContextFactory,
+        IPracticeFlashcardAnswerService PracticeFlashcardAnswerService,
         IPracticeOverviewService PracticeOverviewService,
         IPracticeReviewQueueService PracticeReviewQueueService,
         IUserWordStateService UserWordStateService,

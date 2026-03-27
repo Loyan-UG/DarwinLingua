@@ -9,6 +9,8 @@ public sealed record PracticeReviewQueueItemModel(
     string Lemma,
     string CefrLevel,
     string? PrimaryMeaning,
+    DateTime? DueAtUtc,
+    bool IsDueNow,
     bool IsDifficult,
     bool IsKnown,
     int ViewCount,

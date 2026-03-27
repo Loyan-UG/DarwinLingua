@@ -16,6 +16,7 @@ public static class ServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(services);
 
+        services.AddScoped<IPracticeFlashcardAnswerService, PracticeFlashcardAnswerService>();
         services.AddScoped<IPracticeOverviewService, PracticeOverviewService>();
         services.AddScoped<IPracticeReviewQueueService, PracticeReviewQueueService>();
 

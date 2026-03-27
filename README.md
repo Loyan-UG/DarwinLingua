@@ -14,15 +14,13 @@ The first learner-facing product is **Darwin Deutsch**, a German-learning applic
 ## Current Status
 
 - `Phase 1 MVP implementation`: `Completed`
-  - local-first MAUI app, import pipeline, multilingual seed languages, browse/search/detail flows, favorites, lightweight user state, and platform TTS are implemented
+  - local-first MAUI app, import pipeline, browse/search/detail flows, favorites, lightweight user state, localization, and TTS
 - `Phase 1 release validation`: `In Progress`
-  - automated restore/build/test, clean-install initialization, sample-package import, and starter-dataset performance checks are complete
-  - remaining work is manual device validation for offline behavior, English UI, German UI, and TTS sign-off
+  - automated validation is complete; manual device validation for offline behavior, English UI, German UI, and TTS remains open
 - `Phase 2 practice and review`: `In Progress`
-  - `Practice` bounded context is active
-  - practice overview, deterministic review queue, and the persistence model for attempts/scheduling are in place
+  - practice overview, due-aware review queue, flashcard answer submission, and persisted scheduling/attempt history are implemented
 - `Phases 3-5`: `Planned`
-  - enhanced lexical intelligence, resource directory, and server-backed expansion remain future work
+  - enhanced lexical intelligence, resource discovery, and server-backed expansion remain future work
 
 ## Product Direction
 

@@ -41,19 +41,19 @@ Use it when:
 - The canonical Phase 1 project/reference structure is now locked to the current modular-monolith layout documented in `docs/31-Solution-Architecture.md`.
 - Starter localization reference data now seeds meaning-language support for `en`, `fa`, `ru`, `ar`, `pl`, `tr`, `ro`, `sq`, `ckb`, and `kmr`, with `en`/`de` still serving as the initial UI-language pair.
 - The canonical Phase 1 sample content package now contains twelve German seed words across CEFR `A1`-`C2`, each carrying meanings in the seeded starter language set.
-- Phase 2 has officially started with the new `Practice` bounded context, an initial `GetPracticeOverview` use case, a deterministic `GetReviewQueue` flow, and persisted practice-attempt/review-state entities for upcoming answer workflows.
+- Phase 2 now includes the new `Practice` bounded context, `GetPracticeOverview`, a due-aware deterministic `GetReviewQueue`, and `SubmitFlashcardAnswer` with persisted attempt history and spaced-repetition scheduling updates.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
 ---
 
 ## Recommended Next Implementation Slice
 
-Focus next on Phase 2 practice behavior while keeping the remaining Phase 1 manual release checks visible.
+Focus next on the remaining Phase 2 practice workflows while keeping the remaining Phase 1 manual release checks visible.
 
 Suggested scope:
 
-1. Implement the first answer-submission workflow on top of the new `Practice` module.
-2. Add spaced-repetition scheduling updates that write to the new review-state/attempt persistence model.
+1. Implement `StartReviewSession` so the due-aware queue can open an actual learner session payload.
+2. Add `GetRecentActivity` and/or `GetLearningProgressSnapshot` on top of the persisted practice-attempt history.
 3. Keep the remaining manual device worksheet items for offline behavior, English UI, German UI, and TTS queued for final Phase 1 sign-off.
 
 ---
@@ -68,7 +68,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - Phase 1 release validation still has manual device-bound checks open, but Phase 2 implementation has now started.
-- Prioritize the next ordered Phase 2 items under the Practice backlog, starting with answer/session foundations on top of the new practice persistence model.
+- Prioritize the next ordered Phase 2 items under the Practice backlog, starting with session/activity workflows on top of the new practice persistence model.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.
 - Run the full local Windows .NET checks after changes.
