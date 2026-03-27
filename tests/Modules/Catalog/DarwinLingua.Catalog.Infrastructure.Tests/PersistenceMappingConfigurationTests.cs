@@ -86,6 +86,8 @@ public sealed class PersistenceMappingConfigurationTests
                 ?? throw new Xunit.Sdk.XunitException("WordSense mapping is missing from the model.");
             IEntityType wordTopicEntity = dbContext.Model.FindEntityType(typeof(WordTopic))
                 ?? throw new Xunit.Sdk.XunitException("WordTopic mapping is missing from the model.");
+            IEntityType wordLabelEntity = dbContext.Model.FindEntityType(typeof(WordLabel))
+                ?? throw new Xunit.Sdk.XunitException("WordLabel mapping is missing from the model.");
 
             Assert.Contains(
                 translationEntity.GetIndexes(),
@@ -128,6 +130,13 @@ public sealed class PersistenceMappingConfigurationTests
                     index.GetDatabaseName() == "IX_WordTopics_PrimaryPerWordEntry" &&
                     index.IsUnique &&
                     index.Properties.Select(property => property.Name).SequenceEqual([nameof(WordTopic.WordEntryId)]));
+
+            Assert.Contains(
+                wordLabelEntity.GetIndexes(),
+                index =>
+                    index.IsUnique &&
+                    index.Properties.Select(property => property.Name).SequenceEqual(
+                        [nameof(WordLabel.WordEntryId), nameof(WordLabel.Kind), nameof(WordLabel.Key)]));
         }
         finally
         {

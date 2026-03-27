@@ -159,6 +159,8 @@ internal sealed class ContentImportService : IContentImportService
             .Select(topic => NormalizeText(topic).ToLowerInvariant())
             .Distinct(StringComparer.Ordinal)
             .ToArray();
+        string[] usageLabels = ValidateLabelKeys(entry.UsageLabels, "usageLabels", entryErrors);
+        string[] contextLabels = ValidateLabelKeys(entry.ContextLabels, "contextLabels", entryErrors);
 
         if (string.IsNullOrWhiteSpace(normalizedLemma))
         {
@@ -304,6 +306,16 @@ internal sealed class ContentImportService : IContentImportService
             wordEntry.AddTopic(Guid.NewGuid(), topic.Id, topicIndex == 0, DateTime.UtcNow);
         }
 
+        foreach (string usageLabel in usageLabels)
+        {
+            wordEntry.AddLabel(Guid.NewGuid(), WordLabelKind.Usage, usageLabel, DateTime.UtcNow);
+        }
+
+        foreach (string contextLabel in contextLabels)
+        {
+            wordEntry.AddLabel(Guid.NewGuid(), WordLabelKind.Context, contextLabel, DateTime.UtcNow);
+        }
+
         importedWords.Add(wordEntry);
 
         contentPackage.AddEntry(
@@ -438,6 +450,52 @@ internal sealed class ContentImportService : IContentImportService
     private static string NormalizeText(string? value)
     {
         return string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
+    }
+
+    private static string[] ValidateLabelKeys(
+        IReadOnlyList<string> labels,
+        string fieldName,
+        ICollection<string> entryErrors)
+    {
+        List<string> normalized = [];
+
+        foreach (string? label in labels)
+        {
+            string normalizedLabel = NormalizeText(label).ToLowerInvariant();
+
+            if (string.IsNullOrWhiteSpace(normalizedLabel))
+            {
+                entryErrors.Add($"Entry {fieldName} cannot contain empty items.");
+                continue;
+            }
+
+            if (normalizedLabel.Length > 64)
+            {
+                entryErrors.Add($"Entry {fieldName} items must not exceed 64 characters.");
+                continue;
+            }
+
+            bool isValid = normalizedLabel.All(character =>
+                (character >= 'a' && character <= 'z') ||
+                (character >= '0' && character <= '9') ||
+                character == '-');
+
+            if (!isValid || normalizedLabel.StartsWith("-", StringComparison.Ordinal) || normalizedLabel.EndsWith("-", StringComparison.Ordinal))
+            {
+                entryErrors.Add($"Entry {fieldName} items must use lowercase kebab-case keys.");
+                continue;
+            }
+
+            if (normalized.Contains(normalizedLabel, StringComparer.Ordinal))
+            {
+                entryErrors.Add($"Duplicate {fieldName} item '{normalizedLabel}' is not allowed.");
+                continue;
+            }
+
+            normalized.Add(normalizedLabel);
+        }
+
+        return normalized.ToArray();
     }
 
     private static string? NormalizeOptionalText(string? value)

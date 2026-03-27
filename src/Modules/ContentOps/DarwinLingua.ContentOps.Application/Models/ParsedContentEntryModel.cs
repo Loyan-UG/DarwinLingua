@@ -9,6 +9,8 @@ public sealed record ParsedContentEntryModel(
     string CefrLevel,
     string PartOfSpeech,
     IReadOnlyList<string> Topics,
+    IReadOnlyList<string> UsageLabels,
+    IReadOnlyList<string> ContextLabels,
     IReadOnlyList<ParsedContentMeaningModel> Meanings,
     IReadOnlyList<ParsedContentExampleModel> Examples,
     string? Article,

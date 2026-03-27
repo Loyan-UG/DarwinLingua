@@ -93,6 +93,7 @@ Each vocabulary entry should contain:
 - `article`
 - `plural`
 - `usageLabels`
+- `contextLabels`
 - `notes`
 
 ---

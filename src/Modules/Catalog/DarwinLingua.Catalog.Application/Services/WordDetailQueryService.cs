@@ -71,6 +71,18 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             })
             .ToArray();
 
+        IReadOnlyList<string> usageLabels = word.Labels
+            .Where(label => label.Kind == WordLabelKind.Usage)
+            .OrderBy(label => label.SortOrder)
+            .Select(label => label.Key)
+            .ToArray();
+
+        IReadOnlyList<string> contextLabels = word.Labels
+            .Where(label => label.Kind == WordLabelKind.Context)
+            .OrderBy(label => label.SortOrder)
+            .Select(label => label.Key)
+            .ToArray();
+
         IReadOnlyList<WordSenseDetailModel> senses = word.Senses
             .OrderByDescending(sense => sense.IsPrimarySense)
             .ThenBy(sense => sense.SenseOrder)
@@ -96,6 +108,8 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             word.InfinitiveForm,
             word.PartOfSpeech.ToString(),
             word.PrimaryCefrLevel.ToString(),
+            usageLabels,
+            contextLabels,
             topicNames,
             senses);
     }

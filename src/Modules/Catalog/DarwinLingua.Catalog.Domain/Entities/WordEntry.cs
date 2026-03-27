@@ -13,6 +13,7 @@ public sealed partial class WordEntry
 {
     private readonly List<WordSense> _senses = [];
     private readonly List<WordTopic> _topics = [];
+    private readonly List<WordLabel> _labels = [];
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordEntry"/> class for EF Core materialization.
@@ -166,6 +167,11 @@ public sealed partial class WordEntry
     public IReadOnlyCollection<WordTopic> Topics => _topics.AsReadOnly();
 
     /// <summary>
+    /// Gets the lexical labels attached to the entry.
+    /// </summary>
+    public IReadOnlyCollection<WordLabel> Labels => _labels.AsReadOnly();
+
+    /// <summary>
     /// Adds a sense to the lexical entry.
     /// </summary>
     public WordSense AddSense(
@@ -251,6 +257,41 @@ public sealed partial class WordEntry
     }
 
     /// <summary>
+    /// Adds a lexical usage or context label to the entry.
+    /// </summary>
+    public WordLabel AddLabel(
+        Guid id,
+        WordLabelKind kind,
+        string key,
+        DateTime createdAtUtc)
+    {
+        if (_labels.Any(existingLabel => existingLabel.Id == id))
+        {
+            throw new DomainRuleException("Duplicate word-label identifiers are not allowed within the same word entry.");
+        }
+
+        string normalizedKey = NormalizeLabelKey(key);
+
+        if (_labels.Any(existingLabel => existingLabel.Kind == kind && existingLabel.Key == normalizedKey))
+        {
+            throw new DomainRuleException("Duplicate word-label keys are not allowed within the same word entry and label kind.");
+        }
+
+        WordLabel label = new(
+            id,
+            Id,
+            kind,
+            normalizedKey,
+            _labels.Count(existingLabel => existingLabel.Kind == kind) + 1,
+            createdAtUtc);
+
+        _labels.Add(label);
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+
+        return label;
+    }
+
+    /// <summary>
     /// Resolves the primary sense when one exists, otherwise falls back to the first ordered sense.
     /// </summary>
     public WordSense? GetPrimarySense()
@@ -281,6 +322,16 @@ public sealed partial class WordEntry
     private static string NormalizeLemma(string lemma)
     {
         return CollapseWhitespace().Replace(lemma.Trim(), " ").ToLowerInvariant();
+    }
+
+    private static string NormalizeLabelKey(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            throw new DomainRuleException("Word label key cannot be empty.");
+        }
+
+        return value.Trim().ToLowerInvariant();
     }
 
     private static DateTime NormalizeUtc(DateTime value, string parameterName)

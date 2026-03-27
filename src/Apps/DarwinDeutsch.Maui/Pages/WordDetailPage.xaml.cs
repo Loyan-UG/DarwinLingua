@@ -86,8 +86,14 @@ public partial class WordDetailPage : ContentPage
         Title = AppStrings.WordDetailTitle;
         TopicsSectionView.SectionTitle = AppStrings.WordDetailTopicsLabel;
         LearningStateSectionView.SectionTitle = AppStrings.WordDetailLearningStateLabel;
+        UsageLabelsHeadingLabel.Text = AppStrings.WordDetailUsageLabelsLabel;
+        ContextLabelsHeadingLabel.Text = AppStrings.WordDetailContextLabelsLabel;
         EmptyStateLabel.Text = AppStrings.WordDetailNotFound;
         SensesContainer.Children.Clear();
+        UsageLabelsFlexLayout.Children.Clear();
+        ContextLabelsFlexLayout.Children.Clear();
+        UsageLabelsBorder.IsVisible = false;
+        ContextLabelsBorder.IsVisible = false;
         SpeakWordButton.IsVisible = false;
         FavoriteButton.IsVisible = false;
         KnownButton.IsVisible = false;
@@ -137,6 +143,8 @@ public partial class WordDetailPage : ContentPage
             : AppStrings.WordDetailAddFavoriteButton;
         FavoriteButton.IsVisible = true;
         ApplyUserWordState();
+        ApplyWordLabels(UsageLabelsFlexLayout, UsageLabelsBorder, word.UsageLabels);
+        ApplyWordLabels(ContextLabelsFlexLayout, ContextLabelsBorder, word.ContextLabels);
         TopicsSectionView.SectionValue = word.Topics.Count == 0
             ? AppStrings.WordDetailNoTopics
             : string.Join(", ", word.Topics);
@@ -160,6 +168,10 @@ public partial class WordDetailPage : ContentPage
         FavoriteButton.IsVisible = false;
         KnownButton.IsVisible = false;
         DifficultButton.IsVisible = false;
+        UsageLabelsFlexLayout.Children.Clear();
+        ContextLabelsFlexLayout.Children.Clear();
+        UsageLabelsBorder.IsVisible = false;
+        ContextLabelsBorder.IsVisible = false;
         LearningStateSectionView.SectionValue = string.Empty;
         TopicsSectionView.SectionValue = string.Empty;
         ClearAudioStatus();
@@ -326,6 +338,9 @@ public partial class WordDetailPage : ContentPage
         return new Border
         {
             Padding = 16,
+            BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                ? Color.FromArgb("#111827")
+                : Color.FromArgb("#F8FAFC"),
             Content = senseLayout,
         };
     }
@@ -376,6 +391,51 @@ public partial class WordDetailPage : ContentPage
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Renders the supplied lexical labels as wrapped chips.
+    /// </summary>
+    private static void ApplyWordLabels(FlexLayout container, Border hostBorder, IReadOnlyList<string> labelKeys)
+    {
+        ArgumentNullException.ThrowIfNull(container);
+        ArgumentNullException.ThrowIfNull(hostBorder);
+        ArgumentNullException.ThrowIfNull(labelKeys);
+
+        container.Children.Clear();
+        hostBorder.IsVisible = labelKeys.Count > 0;
+
+        foreach (string labelKey in labelKeys)
+        {
+            container.Children.Add(BuildWordLabelChip(labelKey));
+        }
+    }
+
+    /// <summary>
+    /// Creates one wrapped metadata chip for a lexical label key.
+    /// </summary>
+    private static View BuildWordLabelChip(string labelKey)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(labelKey);
+
+        return new Border
+        {
+            Padding = new Thickness(12, 7),
+            Margin = new Thickness(0, 0, 8, 8),
+            StrokeThickness = 0,
+            BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                ? Color.FromArgb("#223047")
+                : Color.FromArgb("#DCEAFE"),
+            Content = new Label
+            {
+                Text = LexiconTagDisplayText.GetDisplayName(labelKey),
+                TextColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                    ? Color.FromArgb("#F8FAFC")
+                    : Color.FromArgb("#1E3A8A"),
+                FontSize = 13,
+                FontAttributes = FontAttributes.Bold,
+            },
+        };
     }
 
     /// <summary>

@@ -55,6 +55,14 @@ public sealed class ContentImportServiceTests
             DarwinLingua.Catalog.Application.Models.WordListItemModel importedWord = Assert.Single(words);
             Assert.Equal("Brot", importedWord.Lemma);
             Assert.Equal("bread", importedWord.PrimaryMeaning);
+
+            IWordDetailQueryService detailQueryService = serviceProvider.GetRequiredService<IWordDetailQueryService>();
+            DarwinLingua.Catalog.Application.Models.WordDetailModel? detail = await detailQueryService
+                .GetWordDetailsAsync(importedWord.PublicId, "en", null, "en", CancellationToken.None);
+
+            Assert.NotNull(detail);
+            Assert.Contains("informal", detail!.UsageLabels);
+            Assert.Contains("shopping", detail.ContextLabels);
         }
         finally
         {
@@ -331,6 +339,8 @@ public sealed class ContentImportServiceTests
                   "article": "das",
                   "plural": "Brote",
                   "topics": ["shopping"],
+                  "usageLabels": ["informal"],
+                  "contextLabels": ["shopping"],
                   "meanings": [
                     {
                       "language": "en",

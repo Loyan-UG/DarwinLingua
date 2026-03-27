@@ -273,17 +273,46 @@ Phase 2 focuses on turning imported content into repeatable learning behavior wh
 
 ---
 
-## Phase 3 Backlog Placeholder
+## Phase 3 Backlog
 
-Phase 3 focuses on richer lexical intelligence.
+Phase 3 focuses on richer lexical intelligence while continuing to prioritize the mobile learner experience.
 
-Planned areas:
+### 21. Phase 3 Planning and Content-Contract Evolution
 
-- word families
-- collocations
-- lexical relations
-- grammar notes
-- richer usage metadata
+- [x] define the ordered Phase 3 backlog and mobile execution slices
+- [x] extend the content package contract for lexical usage/context labels
+- [x] add sample content coverage for the first lexical-intelligence metadata slice
+
+### 22. Lexical Intelligence Domain Foundation
+
+- [x] implement lexical usage/context labels on `WordEntry`
+- [x] persist lexical labels with uniqueness and ordering constraints
+- [ ] implement grammar notes
+- [ ] implement word families
+- [ ] implement collocations
+- [ ] implement lexical relations such as synonyms and antonyms
+
+### 23. Lexical Intelligence Import and Query Workflows
+
+- [x] parse and validate `usageLabels` and `contextLabels` during import
+- [x] persist imported lexical labels through the current content pipeline
+- [x] expose lexical labels from `GetWordDetails`
+- [ ] expose grammar notes from `GetWordDetails`
+- [ ] expose richer lexical relations from detail queries
+
+### 24. Mobile Word Detail UX Evolution
+
+- [x] redesign the word-detail hero and metadata layout for richer content
+- [x] render usage/context metadata as wrapped chips with localized display text
+- [ ] surface grammar notes in the word-detail flow
+- [ ] surface collocations and lexical relations in the word-detail flow
+- [ ] review and polish the main learner-facing screens for stronger visual consistency
+
+### 25. Phase 3 Quality and Release Readiness
+
+- [x] add domain/application/infrastructure coverage for lexical-label behavior
+- [x] add localization smoke coverage for lexical-label display helpers
+- [ ] validate enhanced word-detail UX on target devices
 
 ---
 

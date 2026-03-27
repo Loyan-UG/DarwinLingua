@@ -11,6 +11,8 @@ public sealed record WordDetailModel(
     string? InfinitiveForm,
     string PartOfSpeech,
     string CefrLevel,
+    IReadOnlyList<string> UsageLabels,
+    IReadOnlyList<string> ContextLabels,
     IReadOnlyList<string> Topics,
     IReadOnlyList<WordSenseDetailModel> Senses);
 

@@ -92,6 +92,30 @@ public sealed class MauiBrowseScreenSmokeTests
     }
 
     /// <summary>
+    /// Verifies that the word-detail screen exposes the richer lexical metadata sections.
+    /// </summary>
+    [Fact]
+    public void WordDetailPage_ShouldExposeLexicalMetadataChips()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string wordDetailXamlPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/WordDetailPage.xaml");
+        string wordDetailCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/WordDetailPage.xaml.cs");
+
+        Assert.True(File.Exists(wordDetailXamlPath), $"Word detail XAML file not found: {wordDetailXamlPath}");
+        Assert.True(File.Exists(wordDetailCodeBehindPath), $"Word detail code-behind file not found: {wordDetailCodeBehindPath}");
+
+        string xamlSource = File.ReadAllText(wordDetailXamlPath);
+        string codeBehindSource = File.ReadAllText(wordDetailCodeBehindPath);
+
+        Assert.Contains("UsageLabelsBorder", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ContextLabelsBorder", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("UsageLabelsFlexLayout", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ContextLabelsFlexLayout", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ApplyWordLabels", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("LexiconTagDisplayText", codeBehindSource, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// Resolves the repository root path by walking parent directories.
     /// </summary>
     private static string ResolveRepositoryRoot()

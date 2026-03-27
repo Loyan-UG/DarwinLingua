@@ -30,6 +30,12 @@ public sealed class LexiconMetadataLocalizationSmokeTests
             string sourceCode = File.ReadAllText(fullPath);
 
             Assert.Contains("LexiconDisplayText.FormatMetadata", sourceCode, StringComparison.Ordinal);
+
+            if (relativePath.EndsWith("WordDetailPage.xaml.cs", StringComparison.Ordinal))
+            {
+                Assert.Contains("LexiconTagDisplayText", sourceCode, StringComparison.Ordinal);
+            }
+
             Assert.DoesNotContain("PartOfSpeech} · {word.CefrLevel}", sourceCode, StringComparison.Ordinal);
         }
     }
@@ -53,6 +59,27 @@ public sealed class LexiconMetadataLocalizationSmokeTests
         Assert.Contains("AppStrings.PartOfSpeechNoun", sourceCode, StringComparison.Ordinal);
         Assert.Contains("AppStrings.PartOfSpeechVerb", sourceCode, StringComparison.Ordinal);
         Assert.Contains("AppStrings.PartOfSpeechOther", sourceCode, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// Verifies that the lexical-tag helper maps starter label keys to AppStrings resource entries.
+    /// </summary>
+    [Fact]
+    public void LexiconTagDisplayText_ShouldResolveKnownTagsFromAppStrings()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string helperPath = Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinDeutsch.Maui/Services/Localization/LexiconTagDisplayText.cs");
+
+        Assert.True(File.Exists(helperPath), $"Lexical-tag helper source file not found: {helperPath}");
+
+        string sourceCode = File.ReadAllText(helperPath);
+
+        Assert.Contains("AppStrings.WordLabelFormal", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("AppStrings.WordLabelInformal", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("AppStrings.WordLabelShopping", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("AppStrings.WordLabelDoctor", sourceCode, StringComparison.Ordinal);
     }
 
     /// <summary>

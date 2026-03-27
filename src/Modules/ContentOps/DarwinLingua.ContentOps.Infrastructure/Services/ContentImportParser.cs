@@ -61,6 +61,8 @@ internal sealed class ContentImportParser : IContentImportParser
             entry.CefrLevel ?? string.Empty,
             entry.PartOfSpeech ?? string.Empty,
             (entry.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            (entry.UsageLabels ?? []).Select(label => label ?? string.Empty).ToArray(),
+            (entry.ContextLabels ?? []).Select(label => label ?? string.Empty).ToArray(),
             (entry.Meanings ?? []).Select(meaning => new ParsedContentMeaningModel(
                 meaning.Language ?? string.Empty,
                 meaning.Text ?? string.Empty)).ToArray(),
@@ -103,6 +105,10 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? Plural { get; set; }
 
         public string?[]? Topics { get; set; }
+
+        public string?[]? UsageLabels { get; set; }
+
+        public string?[]? ContextLabels { get; set; }
 
         public ContentMeaningDocument[]? Meanings { get; set; }
 

@@ -276,6 +276,38 @@ public sealed class WordEntryTests
         Assert.Single(word.Topics, topic => topic.IsPrimaryTopic);
     }
 
+    /// <summary>
+    /// Verifies that duplicate lexical labels are rejected within the same label kind.
+    /// </summary>
+    [Fact]
+    public void AddLabel_ShouldRejectDuplicateKeyPerKind()
+    {
+        WordEntry word = CreateWordEntry();
+        word.AddLabel(Guid.NewGuid(), WordLabelKind.Usage, "formal", DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => word.AddLabel(
+            Guid.NewGuid(),
+            WordLabelKind.Usage,
+            "formal",
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that the same key can be reused across different lexical label kinds.
+    /// </summary>
+    [Fact]
+    public void AddLabel_ShouldAllowSameKeyAcrossDifferentKinds()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordLabel usageLabel = word.AddLabel(Guid.NewGuid(), WordLabelKind.Usage, "formal", DateTime.UtcNow);
+        WordLabel contextLabel = word.AddLabel(Guid.NewGuid(), WordLabelKind.Context, "formal", DateTime.UtcNow);
+
+        Assert.Equal(WordLabelKind.Usage, usageLabel.Kind);
+        Assert.Equal(WordLabelKind.Context, contextLabel.Kind);
+        Assert.Equal(2, word.Labels.Count);
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(

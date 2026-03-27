@@ -263,6 +263,16 @@ public static class AppStrings
     public static string WordDetailTopicsLabel => GetRequiredString(nameof(WordDetailTopicsLabel));
 
     /// <summary>
+    /// Gets the localized label for the usage-label section on the word-detail page.
+    /// </summary>
+    public static string WordDetailUsageLabelsLabel => GetRequiredString(nameof(WordDetailUsageLabelsLabel));
+
+    /// <summary>
+    /// Gets the localized label for the context-label section on the word-detail page.
+    /// </summary>
+    public static string WordDetailContextLabelsLabel => GetRequiredString(nameof(WordDetailContextLabelsLabel));
+
+    /// <summary>
     /// Gets the localized empty-topic message for the word-detail page.
     /// </summary>
     public static string WordDetailNoTopics => GetRequiredString(nameof(WordDetailNoTopics));
@@ -331,6 +341,51 @@ public static class AppStrings
     /// Gets the localized display label for uncategorized parts of speech.
     /// </summary>
     public static string PartOfSpeechOther => GetRequiredString(nameof(PartOfSpeechOther));
+
+    /// <summary>
+    /// Gets the localized display label for formal lexical usage.
+    /// </summary>
+    public static string WordLabelFormal => GetRequiredString(nameof(WordLabelFormal));
+
+    /// <summary>
+    /// Gets the localized display label for informal lexical usage.
+    /// </summary>
+    public static string WordLabelInformal => GetRequiredString(nameof(WordLabelInformal));
+
+    /// <summary>
+    /// Gets the localized display label for spoken lexical usage.
+    /// </summary>
+    public static string WordLabelSpoken => GetRequiredString(nameof(WordLabelSpoken));
+
+    /// <summary>
+    /// Gets the localized display label for written lexical usage.
+    /// </summary>
+    public static string WordLabelWritten => GetRequiredString(nameof(WordLabelWritten));
+
+    /// <summary>
+    /// Gets the localized display label for daily-life context.
+    /// </summary>
+    public static string WordLabelDailyLife => GetRequiredString(nameof(WordLabelDailyLife));
+
+    /// <summary>
+    /// Gets the localized display label for shopping context.
+    /// </summary>
+    public static string WordLabelShopping => GetRequiredString(nameof(WordLabelShopping));
+
+    /// <summary>
+    /// Gets the localized display label for work context.
+    /// </summary>
+    public static string WordLabelWork => GetRequiredString(nameof(WordLabelWork));
+
+    /// <summary>
+    /// Gets the localized display label for paperwork context.
+    /// </summary>
+    public static string WordLabelPaperwork => GetRequiredString(nameof(WordLabelPaperwork));
+
+    /// <summary>
+    /// Gets the localized display label for doctor/medical context.
+    /// </summary>
+    public static string WordLabelDoctor => GetRequiredString(nameof(WordLabelDoctor));
 
     /// <summary>
     /// Gets the localized not-found state for the word-detail page.

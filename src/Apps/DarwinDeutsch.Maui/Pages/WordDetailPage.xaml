@@ -4,20 +4,29 @@
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.WordDetailPage">
     <ScrollView>
-        <VerticalStackLayout Padding="24" Spacing="16">
-            <Label x:Name="HeadlineLabel"
-                   Style="{DynamicResource Headline}"
-                   SemanticProperties.HeadingLevel="Level1" />
+        <VerticalStackLayout Padding="24" Spacing="18">
+            <Border Padding="22"
+                    StrokeThickness="0"
+                    BackgroundColor="{AppThemeBinding Light=#EEF2FF, Dark=#171C24}">
+                <VerticalStackLayout Spacing="14">
+                    <Label x:Name="HeadlineLabel"
+                           Style="{DynamicResource Headline}"
+                           HorizontalOptions="Start"
+                           HorizontalTextAlignment="Start"
+                           SemanticProperties.HeadingLevel="Level1" />
 
-            <Button x:Name="SpeakWordButton"
-                    Clicked="OnSpeakWordButtonClicked"
-                    IsVisible="False" />
+                    <Label x:Name="MetadataLabel"
+                           Style="{DynamicResource Body}" />
 
-            <Label x:Name="MetadataLabel"
-                   Style="{DynamicResource Body}" />
-
-            <Button x:Name="FavoriteButton"
-                    Clicked="OnFavoriteButtonClicked" />
+                    <HorizontalStackLayout Spacing="12">
+                        <Button x:Name="SpeakWordButton"
+                                Clicked="OnSpeakWordButtonClicked"
+                                IsVisible="False" />
+                        <Button x:Name="FavoriteButton"
+                                Clicked="OnFavoriteButtonClicked" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
 
             <Label x:Name="AudioStatusLabel"
                    Style="{DynamicResource Body}"
@@ -33,7 +42,39 @@
                         Clicked="OnDifficultButtonClicked" />
             </HorizontalStackLayout>
 
-            <controls:DetailSectionView x:Name="TopicsSectionView" />
+            <Border x:Name="UsageLabelsBorder"
+                    Padding="20"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="UsageLabelsHeadingLabel"
+                           Style="{DynamicResource Title2}" />
+                    <FlexLayout x:Name="UsageLabelsFlexLayout"
+                                Wrap="Wrap"
+                                Direction="Row"
+                                JustifyContent="Start"
+                                AlignItems="Start"
+                                BindableLayout.ItemsSource="{x:Null}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border x:Name="ContextLabelsBorder"
+                    Padding="20"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="ContextLabelsHeadingLabel"
+                           Style="{DynamicResource Title2}" />
+                    <FlexLayout x:Name="ContextLabelsFlexLayout"
+                                Wrap="Wrap"
+                                Direction="Row"
+                                JustifyContent="Start"
+                                AlignItems="Start"
+                                BindableLayout.ItemsSource="{x:Null}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="20">
+                <controls:DetailSectionView x:Name="TopicsSectionView" />
+            </Border>
 
             <Label x:Name="EmptyStateLabel"
                    Style="{DynamicResource Body}"

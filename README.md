@@ -19,8 +19,10 @@ The first learner-facing product is **Darwin Deutsch**, a German-learning applic
   - automated validation is complete; manual device validation for offline behavior, English UI, German UI, and TTS remains open
 - `Phase 2 practice and review`: `In Progress`
   - practice tab/navigation, overview screen, flashcard and quiz session UI, answer feedback, session summary, due-aware review queue, recent activity, learning progress snapshot, answer submission, and persisted scheduling/attempt history are implemented
-- `Phases 3-5`: `Planned`
-  - enhanced lexical intelligence, resource discovery, and server-backed expansion remain future work
+- `Phase 3 enhanced lexical intelligence`: `In Progress`
+  - lexical usage/context labels now flow from imported content into a richer word-detail screen, while grammar notes, collocations, and lexical relations remain next
+- `Phases 4-5`: `Planned`
+  - resource discovery and server-backed expansion remain future work
 
 ## Product Direction
 

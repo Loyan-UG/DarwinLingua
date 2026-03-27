@@ -56,6 +56,8 @@ public sealed class WordDetailQueryServiceTests
         example.AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "I pay at the checkout.", DateTime.UtcNow);
         example.AddTranslation(Guid.NewGuid(), LanguageCode.From("fa"), "من در صندوق پرداخت می‌کنم.", DateTime.UtcNow);
         word.AddTopic(Guid.NewGuid(), topicId, true, DateTime.UtcNow);
+        word.AddLabel(Guid.NewGuid(), WordLabelKind.Usage, "formal", DateTime.UtcNow);
+        word.AddLabel(Guid.NewGuid(), WordLabelKind.Context, "shopping", DateTime.UtcNow);
 
         ServiceCollection services = new();
         services.AddCatalogApplication();
@@ -75,6 +77,8 @@ public sealed class WordDetailQueryServiceTests
         Assert.NotNull(result);
         Assert.Equal("Kasse", result!.Lemma);
         Assert.Equal("die", result.Article);
+        Assert.Contains("formal", result.UsageLabels);
+        Assert.Contains("shopping", result.ContextLabels);
         Assert.Contains("Einkaufen", result.Topics);
 
         WordSenseDetailModel senseResult = Assert.Single(result.Senses);
