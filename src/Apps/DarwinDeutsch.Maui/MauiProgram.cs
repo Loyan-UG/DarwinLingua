@@ -1,6 +1,7 @@
 using DarwinDeutsch.Maui.Pages;
 using DarwinDeutsch.Maui.Services.Audio;
 using DarwinDeutsch.Maui.Services.Localization;
+using DarwinDeutsch.Maui.Services.Onboarding;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -54,7 +55,9 @@ public static class MauiProgram
             .AddPracticeInfrastructure()
             .AddSingleton<ISpeechPlaybackService, SpeechPlaybackService>()
             .AddSingleton<IAppLocalizationService, AppLocalizationService>()
+            .AddSingleton<IAppOnboardingService, AppOnboardingService>()
             .AddSingleton<AppShell>()
+            .AddSingleton<WelcomePage>()
             .AddSingleton<HomePage>()
             .AddSingleton<PracticePage>()
             .AddTransient<PracticeSessionPage>()

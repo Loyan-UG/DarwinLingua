@@ -8,6 +8,17 @@ namespace DarwinDeutsch.Maui.Controls;
 /// </summary>
 public partial class CefrQuickFilterView : ContentView
 {
+    private static readonly IReadOnlyDictionary<string, CefrButtonPalette> ButtonPalettes =
+        new Dictionary<string, CefrButtonPalette>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["A1"] = new(Colors.White, Color.FromArgb("#2B7FFF"), Color.FromArgb("#E4F0FF")),
+            ["A2"] = new(Colors.White, Color.FromArgb("#1FA3A3"), Color.FromArgb("#DCF7F4")),
+            ["B1"] = new(Colors.White, Color.FromArgb("#2F9D57"), Color.FromArgb("#E1F6E7")),
+            ["B2"] = new(Colors.White, Color.FromArgb("#D0A019"), Color.FromArgb("#FFF5D7")),
+            ["C1"] = new(Colors.White, Color.FromArgb("#E07A1F"), Color.FromArgb("#FFE8D3")),
+            ["C2"] = new(Colors.White, Color.FromArgb("#D64545"), Color.FromArgb("#FFE0E0")),
+        };
+
     /// <summary>
     /// Backing bindable property for <see cref="Caption"/>.
     /// </summary>
@@ -120,12 +131,26 @@ public partial class CefrQuickFilterView : ContentView
     private void ApplyButtonSelection(Button button)
     {
         bool isSelected = string.Equals(button.Text, SelectedLevel, StringComparison.OrdinalIgnoreCase);
-        button.BackgroundColor = isSelected
-            ? ResolveAppColor("Primary", Colors.DarkSlateBlue)
-            : null;
-        button.TextColor = isSelected
-            ? ResolveAppColor("White", Colors.White)
-            : null;
+        CefrButtonPalette palette = ResolvePalette(button.Text);
+
+        button.FontSize = 19;
+        button.FontAttributes = FontAttributes.Bold;
+        button.HeightRequest = 58;
+        button.Padding = new Thickness(0);
+        button.BorderWidth = 1;
+        button.BorderColor = palette.AccentColor;
+        button.BackgroundColor = isSelected ? palette.AccentColor : palette.SurfaceColor;
+        button.TextColor = isSelected ? palette.SelectedTextColor : palette.AccentColor;
+    }
+
+    private static CefrButtonPalette ResolvePalette(string? level)
+    {
+        if (!string.IsNullOrWhiteSpace(level) && ButtonPalettes.TryGetValue(level, out CefrButtonPalette? palette))
+        {
+            return palette;
+        }
+
+        return new CefrButtonPalette(Colors.White, ResolveAppColor("Primary", Colors.DarkSlateBlue), ResolveAppColor("Secondary", Colors.LightGray));
     }
 
     /// <summary>
@@ -156,4 +181,6 @@ public partial class CefrQuickFilterView : ContentView
         yield return C1Button;
         yield return C2Button;
     }
+
+    private sealed record CefrButtonPalette(Color SelectedTextColor, Color AccentColor, Color SurfaceColor);
 }

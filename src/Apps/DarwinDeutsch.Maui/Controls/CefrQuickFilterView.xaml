@@ -5,16 +5,16 @@
     <VerticalStackLayout Spacing="12">
         <Label x:Name="CaptionLabel"
                Style="{DynamicResource Caption}" />
-        <FlexLayout Wrap="Wrap"
-                    Direction="Row"
-                    JustifyContent="Start"
-                    AlignItems="Start">
-            <Button x:Name="A1Button" Margin="0,0,10,10" Text="A1" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="A2Button" Margin="0,0,10,10" Text="A2" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="B1Button" Margin="0,0,10,10" Text="B1" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="B2Button" Margin="0,0,10,10" Text="B2" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="C1Button" Margin="0,0,10,10" Text="C1" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="C2Button" Margin="0,0,10,10" Text="C2" Clicked="OnCefrButtonClicked" />
-        </FlexLayout>
+        <Grid ColumnDefinitions="*,*,*"
+              RowDefinitions="Auto,Auto"
+              ColumnSpacing="10"
+              RowSpacing="10">
+            <Button x:Name="A1Button" Grid.Row="0" Grid.Column="0" Text="A1" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="A2Button" Grid.Row="0" Grid.Column="1" Text="A2" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="B1Button" Grid.Row="0" Grid.Column="2" Text="B1" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="B2Button" Grid.Row="1" Grid.Column="0" Text="B2" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="C1Button" Grid.Row="1" Grid.Column="1" Text="C1" Clicked="OnCefrButtonClicked" />
+            <Button x:Name="C2Button" Grid.Row="1" Grid.Column="2" Text="C2" Clicked="OnCefrButtonClicked" />
+        </Grid>
     </VerticalStackLayout>
 </ContentView>

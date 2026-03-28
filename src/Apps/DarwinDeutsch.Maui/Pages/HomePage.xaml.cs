@@ -93,11 +93,11 @@ public partial class HomePage : ContentPage
     private void ApplyLocalizedText()
     {
         Title = AppStrings.HomeTabTitle;
-        StatusBadgeLabel.Text = AppStrings.HomePageStatusBadge;
-        HeadlineLabel.Text = AppStrings.HomeHeadline;
-        IntroLabel.Text = AppStrings.HomeIntro;
-        ProfileSectionLabel.Text = AppStrings.HomePageProfileSectionLabel;
+        LogoPlaceholderLabel.Text = AppStrings.HomeLogoPlaceholder;
+        AppNameLabel.Text = AppStrings.AppTitle;
+        AppSubtitleLabel.Text = AppStrings.HomeHeaderSubtitle;
         ExploreSectionLabel.Text = AppStrings.HomePageExploreSectionLabel;
+        ProfileSectionLabel.Text = AppStrings.HomePageProfileSectionLabel;
         CurrentLanguageSectionView.SectionTitle = AppStrings.HomeCurrentUiLanguageLabel;
         CurrentLanguageSectionView.SectionValue = _appLocalizationService.CurrentCulture.NativeName;
         SupportedLanguagesSectionView.SectionTitle = AppStrings.HomeSupportedLanguagesLabel;

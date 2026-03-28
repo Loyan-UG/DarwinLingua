@@ -10,41 +10,32 @@
                     StrokeThickness="0"
                     StrokeShape="RoundRectangle 28"
                     BackgroundColor="{AppThemeBinding Light=#E8F3F1, Dark=#16212B}">
-                <VerticalStackLayout Spacing="12">
-                    <Border Padding="10,6"
-                            HorizontalOptions="Start"
-                            StrokeThickness="0"
-                            StrokeShape="RoundRectangle 14"
-                            BackgroundColor="{AppThemeBinding Light=#FFF8EC, Dark=#22313B}">
-                        <Label x:Name="StatusBadgeLabel"
-                               Style="{DynamicResource Caption}" />
+                <Grid ColumnDefinitions="84,*"
+                      ColumnSpacing="16">
+                    <Border Grid.Column="0"
+                            Padding="12"
+                            StrokeShape="RoundRectangle 24"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#1F2B36}">
+                        <Grid>
+                            <Label x:Name="LogoPlaceholderLabel"
+                                   Style="{DynamicResource Caption}"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
                     </Border>
-                    <Label x:Name="HeadlineLabel"
-                           Style="{DynamicResource Headline}"
-                           HorizontalOptions="Start"
-                           HorizontalTextAlignment="Start"
-                           SemanticProperties.HeadingLevel="Level1" />
 
-                    <Label x:Name="IntroLabel"
-                           Style="{DynamicResource Body}"
-                           LineBreakMode="WordWrap" />
-                </VerticalStackLayout>
-            </Border>
-
-            <Label x:Name="ProfileSectionLabel"
-                   Style="{DynamicResource Title2}" />
-
-            <Border Padding="20"
-                    Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                    StrokeShape="RoundRectangle 24"
-                    StrokeThickness="1"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="16">
-                    <controls:DetailSectionView x:Name="CurrentLanguageSectionView" />
-                    <controls:DetailSectionView x:Name="MeaningLanguagesSectionView" />
-                    <controls:DetailSectionView x:Name="TopicsSectionView" />
-                    <controls:DetailSectionView x:Name="SupportedLanguagesSectionView" />
-                </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1"
+                                         Spacing="8"
+                                         VerticalOptions="Center">
+                        <Label x:Name="AppNameLabel"
+                               Style="{DynamicResource SubHeadline}"
+                               SemanticProperties.HeadingLevel="Level1" />
+                        <Label x:Name="AppSubtitleLabel"
+                               Style="{DynamicResource Body}" />
+                    </VerticalStackLayout>
+                </Grid>
             </Border>
 
             <Label x:Name="ExploreSectionLabel"
@@ -72,6 +63,22 @@
                         <controls:ActionBlockView x:Name="FavoritesActionBlockView"
                                                   ActionInvoked="OnFavoritesActionInvoked" />
                     </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label x:Name="ProfileSectionLabel"
+                   Style="{DynamicResource Title2}" />
+
+            <Border Padding="20"
+                    Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="1"
+                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                <VerticalStackLayout Spacing="16">
+                    <controls:DetailSectionView x:Name="CurrentLanguageSectionView" />
+                    <controls:DetailSectionView x:Name="MeaningLanguagesSectionView" />
+                    <controls:DetailSectionView x:Name="TopicsSectionView" />
+                    <controls:DetailSectionView x:Name="SupportedLanguagesSectionView" />
                 </VerticalStackLayout>
             </Border>
         </VerticalStackLayout>

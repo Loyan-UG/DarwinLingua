@@ -28,6 +28,71 @@ public static class AppStrings
     public static string HomeTabTitle => GetRequiredString(nameof(HomeTabTitle));
 
     /// <summary>
+    /// Gets the localized prompt asking which language the app should use.
+    /// </summary>
+    public static string WelcomeLanguageQuestion => GetRequiredString(nameof(WelcomeLanguageQuestion));
+
+    /// <summary>
+    /// Gets the localized headline for the welcome experience.
+    /// </summary>
+    public static string WelcomeHeadline => GetRequiredString(nameof(WelcomeHeadline));
+
+    /// <summary>
+    /// Gets the localized description for the welcome experience.
+    /// </summary>
+    public static string WelcomeDescription => GetRequiredString(nameof(WelcomeDescription));
+
+    /// <summary>
+    /// Gets the localized heading for currently available features.
+    /// </summary>
+    public static string WelcomeCurrentFeaturesTitle => GetRequiredString(nameof(WelcomeCurrentFeaturesTitle));
+
+    /// <summary>
+    /// Gets the localized body describing currently available features.
+    /// </summary>
+    public static string WelcomeCurrentFeaturesBody => GetRequiredString(nameof(WelcomeCurrentFeaturesBody));
+
+    /// <summary>
+    /// Gets the localized heading for supported learning languages.
+    /// </summary>
+    public static string WelcomeLearnWithLanguagesTitle => GetRequiredString(nameof(WelcomeLearnWithLanguagesTitle));
+
+    /// <summary>
+    /// Gets the localized format for supported learning languages.
+    /// </summary>
+    public static string WelcomeLearnWithLanguagesBodyFormat => GetRequiredString(nameof(WelcomeLearnWithLanguagesBodyFormat));
+
+    /// <summary>
+    /// Gets the localized heading for interface-language availability.
+    /// </summary>
+    public static string WelcomeInterfaceLanguagesTitle => GetRequiredString(nameof(WelcomeInterfaceLanguagesTitle));
+
+    /// <summary>
+    /// Gets the localized format describing current and planned interface languages.
+    /// </summary>
+    public static string WelcomeInterfaceLanguagesBodyFormat => GetRequiredString(nameof(WelcomeInterfaceLanguagesBodyFormat));
+
+    /// <summary>
+    /// Gets the localized fallback shown when no extra UI languages are planned.
+    /// </summary>
+    public static string WelcomeNoPlannedUiLanguages => GetRequiredString(nameof(WelcomeNoPlannedUiLanguages));
+
+    /// <summary>
+    /// Gets the localized heading for upcoming features.
+    /// </summary>
+    public static string WelcomeFutureFeaturesTitle => GetRequiredString(nameof(WelcomeFutureFeaturesTitle));
+
+    /// <summary>
+    /// Gets the localized body describing upcoming features.
+    /// </summary>
+    public static string WelcomeFutureFeaturesBody => GetRequiredString(nameof(WelcomeFutureFeaturesBody));
+
+    /// <summary>
+    /// Gets the localized caption for the welcome-start button.
+    /// </summary>
+    public static string WelcomeStartButton => GetRequiredString(nameof(WelcomeStartButton));
+
+    /// <summary>
     /// Gets the localized title for the practice tab.
     /// </summary>
     public static string PracticeTabTitle => GetRequiredString(nameof(PracticeTabTitle));
@@ -56,6 +121,16 @@ public static class AppStrings
     /// Gets the localized status badge shown on the home page hero.
     /// </summary>
     public static string HomePageStatusBadge => GetRequiredString(nameof(HomePageStatusBadge));
+
+    /// <summary>
+    /// Gets the localized placeholder text for the home logo box.
+    /// </summary>
+    public static string HomeLogoPlaceholder => GetRequiredString(nameof(HomeLogoPlaceholder));
+
+    /// <summary>
+    /// Gets the localized subtitle shown below the app name on the home header.
+    /// </summary>
+    public static string HomeHeaderSubtitle => GetRequiredString(nameof(HomeHeaderSubtitle));
 
     /// <summary>
     /// Gets the localized profile section heading on the home page.

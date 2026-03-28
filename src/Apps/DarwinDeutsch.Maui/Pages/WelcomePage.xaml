@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarwinDeutsch.Maui.Pages.WelcomePage">
+    <ScrollView>
+        <VerticalStackLayout Padding="24"
+                             Spacing="18">
+            <Border Padding="24"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 28"
+                    BackgroundColor="{AppThemeBinding Light=#E8F3F1, Dark=#16212B}">
+                <VerticalStackLayout Spacing="16">
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="LanguageQuestionLabel"
+                               Style="{DynamicResource Caption}" />
+                        <Picker x:Name="LanguagePicker"
+                                ItemDisplayBinding="{Binding DisplayName}"
+                                SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label x:Name="HeadlineLabel"
+                               Style="{DynamicResource Headline}"
+                               SemanticProperties.HeadingLevel="Level1" />
+                        <Label x:Name="DescriptionLabel"
+                               Style="{DynamicResource Body}" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="20"
+                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                <VerticalStackLayout Spacing="18">
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="CurrentFeaturesLabel"
+                               Style="{DynamicResource Title2}" />
+                        <Label x:Name="CurrentFeaturesBodyLabel"
+                               Style="{DynamicResource Body}" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="LearnWithLanguagesLabel"
+                               Style="{DynamicResource Title2}" />
+                        <Label x:Name="LearnWithLanguagesBodyLabel"
+                               Style="{DynamicResource Body}" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="InterfaceLanguagesLabel"
+                               Style="{DynamicResource Title2}" />
+                        <Label x:Name="InterfaceLanguagesBodyLabel"
+                               Style="{DynamicResource Body}" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="FutureFeaturesLabel"
+                               Style="{DynamicResource Title2}" />
+                        <Label x:Name="FutureFeaturesBodyLabel"
+                               Style="{DynamicResource Body}" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button x:Name="StartButton"
+                    Clicked="OnStartButtonClicked"
+                    HorizontalOptions="Fill"
+                    Margin="0,4,0,8" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

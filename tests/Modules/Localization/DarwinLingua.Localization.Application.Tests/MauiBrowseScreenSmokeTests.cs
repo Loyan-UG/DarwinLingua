@@ -13,19 +13,33 @@ public sealed class MauiBrowseScreenSmokeTests
     {
         string repositoryRoot = ResolveRepositoryRoot();
         string homePagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/HomePage.xaml");
+        string welcomePagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/WelcomePage.xaml");
+        string appPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/App.xaml.cs");
 
         Assert.True(File.Exists(homePagePath), $"Home page XAML file not found: {homePagePath}");
+        Assert.True(File.Exists(welcomePagePath), $"Welcome page XAML file not found: {welcomePagePath}");
+        Assert.True(File.Exists(appPath), $"App code-behind file not found: {appPath}");
 
         string sourceCode = File.ReadAllText(homePagePath);
+        string welcomeSource = File.ReadAllText(welcomePagePath);
+        string appSource = File.ReadAllText(appPath);
 
         Assert.Contains("CefrQuickFilterView", sourceCode, StringComparison.Ordinal);
-        Assert.Contains("StatusBadgeLabel", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("LogoPlaceholderLabel", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("AppNameLabel", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("AppSubtitleLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("ProfileSectionLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("ExploreSectionLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("PracticeActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("SearchActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("BrowseTopicsActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("FavoritesActionBlockView", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("LanguagePicker", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("CurrentFeaturesBodyLabel", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("LearnWithLanguagesBodyLabel", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("InterfaceLanguagesBodyLabel", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("StartButton", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("ShouldShowWelcomeExperience", appSource, StringComparison.Ordinal);
     }
 
     /// <summary>
