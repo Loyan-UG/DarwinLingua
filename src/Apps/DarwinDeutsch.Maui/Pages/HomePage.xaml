@@ -8,13 +8,13 @@
                              Spacing="18">
             <Border Padding="24"
                     StrokeThickness="0"
-                    StrokeShape="RoundRectangle 28"
+                    StrokeShape="RoundRectangle 18"
                     BackgroundColor="{AppThemeBinding Light=#E8F3F1, Dark=#16212B}">
                 <Grid ColumnDefinitions="84,*"
                       ColumnSpacing="16">
                     <Border Grid.Column="0"
                             Padding="12"
-                            StrokeShape="RoundRectangle 24"
+                            StrokeShape="RoundRectangle 18"
                             BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#1F2B36}">
                         <Grid>
                             <Label x:Name="LogoPlaceholderLabel"
@@ -43,7 +43,7 @@
 
             <Border Padding="20"
                     Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                    StrokeShape="RoundRectangle 24"
+                    StrokeShape="RoundRectangle 18"
                     StrokeThickness="1"
                     BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
                 <VerticalStackLayout Spacing="16">
@@ -66,21 +66,6 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Label x:Name="ProfileSectionLabel"
-                   Style="{DynamicResource Title2}" />
-
-            <Border Padding="20"
-                    Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                    StrokeShape="RoundRectangle 24"
-                    StrokeThickness="1"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="16">
-                    <controls:DetailSectionView x:Name="CurrentLanguageSectionView" />
-                    <controls:DetailSectionView x:Name="MeaningLanguagesSectionView" />
-                    <controls:DetailSectionView x:Name="TopicsSectionView" />
-                    <controls:DetailSectionView x:Name="SupportedLanguagesSectionView" />
-                </VerticalStackLayout>
-            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -87,9 +87,15 @@ public partial class SettingsPage : ContentPage
         Title = AppStrings.SettingsTabTitle;
         HeadlineLabel.Text = AppStrings.SettingsHeadline;
         DescriptionLabel.Text = AppStrings.SettingsDescription;
+        AppInfoSectionLabel.Text = AppStrings.SettingsAppInfoSectionLabel;
         LanguagePickerCaptionLabel.Text = AppStrings.SettingsUiLanguageLabel;
         PrimaryMeaningLanguageCaptionLabel.Text = AppStrings.SettingsPrimaryMeaningLanguageLabel;
         SecondaryMeaningLanguageCaptionLabel.Text = AppStrings.SettingsSecondaryMeaningLanguageLabel;
+        CurrentLanguageSectionView.SectionTitle = AppStrings.HomeCurrentUiLanguageLabel;
+        MeaningLanguagesSectionView.SectionTitle = AppStrings.HomeMeaningLanguagesLabel;
+        SupportedLanguagesSectionView.SectionTitle = AppStrings.HomeSupportedLanguagesLabel;
+        CurrentFeaturesSectionView.SectionTitle = AppStrings.WelcomeCurrentFeaturesTitle;
+        FutureFeaturesSectionView.SectionTitle = AppStrings.WelcomeFutureFeaturesTitle;
     }
 
     /// <summary>
@@ -137,7 +143,52 @@ public partial class SettingsPage : ContentPage
             profile.PreferredMeaningLanguage2 ?? string.Empty,
             StringComparison.OrdinalIgnoreCase));
 
+        CurrentLanguageSectionView.SectionValue = supportedUiLanguages
+            .Single(option => string.Equals(option.CultureName, profile.UiLanguageCode, StringComparison.OrdinalIgnoreCase))
+            .DisplayName;
+        MeaningLanguagesSectionView.SectionValue = BuildMeaningLanguageSummary(
+            supportedMeaningLanguages,
+            profile.PreferredMeaningLanguage1,
+            profile.PreferredMeaningLanguage2);
+        SupportedLanguagesSectionView.SectionValue = supportedMeaningLanguages.Count == 0
+            ? AppStrings.HomeNoLanguages
+            : string.Join(Environment.NewLine, supportedMeaningLanguages.Select(language => $"{language.NativeName} ({language.Code})"));
+        CurrentFeaturesSectionView.SectionValue = AppStrings.WelcomeCurrentFeaturesBody;
+        FutureFeaturesSectionView.SectionValue = AppStrings.WelcomeFutureFeaturesBody;
+
         _isUpdatingSelection = false;
+    }
+
+    private static string BuildMeaningLanguageSummary(
+        IReadOnlyList<SupportedLanguageModel> supportedMeaningLanguages,
+        string primaryLanguageCode,
+        string? secondaryLanguageCode)
+    {
+        string primaryMeaningLanguage = ResolveLanguageDisplayName(supportedMeaningLanguages, primaryLanguageCode);
+        string? secondaryMeaningLanguage = string.IsNullOrWhiteSpace(secondaryLanguageCode)
+            ? null
+            : ResolveLanguageDisplayName(supportedMeaningLanguages, secondaryLanguageCode);
+
+        return secondaryMeaningLanguage is null
+            ? primaryMeaningLanguage
+            : $"{primaryMeaningLanguage}, {secondaryMeaningLanguage}";
+    }
+
+    private static string ResolveLanguageDisplayName(
+        IReadOnlyList<SupportedLanguageModel> supportedLanguages,
+        string languageCode)
+    {
+        ArgumentNullException.ThrowIfNull(supportedLanguages);
+        ArgumentException.ThrowIfNullOrWhiteSpace(languageCode);
+
+        SupportedLanguageModel? language = supportedLanguages.SingleOrDefault(candidate => string.Equals(
+            candidate.Code,
+            languageCode,
+            StringComparison.OrdinalIgnoreCase));
+
+        return language is null
+            ? languageCode
+            : $"{language.NativeName} ({language.Code})";
     }
 
     /// <summary>

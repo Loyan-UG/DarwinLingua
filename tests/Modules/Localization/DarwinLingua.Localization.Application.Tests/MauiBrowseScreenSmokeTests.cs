@@ -28,7 +28,6 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("LogoPlaceholderLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("AppNameLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("AppSubtitleLabel", sourceCode, StringComparison.Ordinal);
-        Assert.Contains("ProfileSectionLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("ExploreSectionLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("PracticeActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("SearchActionBlockView", sourceCode, StringComparison.Ordinal);
@@ -40,6 +39,33 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("InterfaceLanguagesBodyLabel", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("StartButton", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("ShouldShowWelcomeExperience", appSource, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// Verifies that the settings screen hosts the app-information content removed from home.
+    /// </summary>
+    [Fact]
+    public void SettingsPage_ShouldExposeAppInformationSections()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string settingsPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/SettingsPage.xaml");
+        string settingsCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/SettingsPage.xaml.cs");
+
+        Assert.True(File.Exists(settingsPagePath), $"Settings page XAML file not found: {settingsPagePath}");
+        Assert.True(File.Exists(settingsCodeBehindPath), $"Settings page code-behind file not found: {settingsCodeBehindPath}");
+
+        string xamlSource = File.ReadAllText(settingsPagePath);
+        string codeBehindSource = File.ReadAllText(settingsCodeBehindPath);
+
+        Assert.Contains("AppInfoSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("CurrentLanguageSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("MeaningLanguagesSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SupportedLanguagesSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("CurrentFeaturesSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("FutureFeaturesSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsAppInfoSectionLabel", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("WelcomeCurrentFeaturesBody", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("WelcomeFutureFeaturesBody", codeBehindSource, StringComparison.Ordinal);
     }
 
     /// <summary>

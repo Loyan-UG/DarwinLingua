@@ -10,7 +10,7 @@
     <x:Double x:Key="TokenSpacingLg">20</x:Double>
     <x:Double x:Key="TokenSpacingXl">28</x:Double>
     <x:Double x:Key="TokenCornerRadiusMd">18</x:Double>
-    <x:Double x:Key="TokenCornerRadiusLg">26</x:Double>
+    <x:Double x:Key="TokenCornerRadiusLg">18</x:Double>
     <x:Double x:Key="TokenTouchTargetMin">48</x:Double>
     <x:Double x:Key="TokenFontCaption">13</x:Double>
     <x:Double x:Key="TokenFontBody">16</x:Double>
@@ -28,7 +28,7 @@
 
     <Style TargetType="Border">
         <Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource ColorCardStrokeLight}, Dark={StaticResource ColorCardStrokeDark}}" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 22"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 18"/>
         <Setter Property="StrokeThickness" Value="1"/>
     </Style>
 

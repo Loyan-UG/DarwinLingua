@@ -948,6 +948,11 @@ public static class AppStrings
     public static string SettingsDescription => GetRequiredString(nameof(SettingsDescription));
 
     /// <summary>
+    /// Gets the localized heading for the app-information section on the settings page.
+    /// </summary>
+    public static string SettingsAppInfoSectionLabel => GetRequiredString(nameof(SettingsAppInfoSectionLabel));
+
+    /// <summary>
     /// Gets the localized picker title for the UI language selector.
     /// </summary>
     public static string SettingsUiLanguageLabel => GetRequiredString(nameof(SettingsUiLanguageLabel));
