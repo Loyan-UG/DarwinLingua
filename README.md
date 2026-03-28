@@ -109,6 +109,7 @@ The project has explicit implementation standards in:
 - [Phase 1 Manual Validation Worksheet](docs/44-Phase-1-Manual-Validation-Worksheet.md)
 - [Phase 1 Release Notes Template](docs/45-Phase-1-Release-Notes-Template.md)
 - [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
+- [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 
 Important rules include:
 
@@ -140,6 +141,7 @@ Important rules include:
 - [Phase 1 Manual Validation Worksheet](docs/44-Phase-1-Manual-Validation-Worksheet.md)
 - [Phase 1 Release Notes Template](docs/45-Phase-1-Release-Notes-Template.md)
 - [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
+- [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 
 ### Content and Import
 
@@ -183,6 +185,7 @@ Important rules include:
 18. [Phase 1 Manual Validation Worksheet](docs/44-Phase-1-Manual-Validation-Worksheet.md)
 19. [Phase 1 Release Notes Template](docs/45-Phase-1-Release-Notes-Template.md)
 20. [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
+21. [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 
 ## Repository Structure
 
