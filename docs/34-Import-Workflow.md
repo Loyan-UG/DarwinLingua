@@ -166,21 +166,30 @@ Multi-sense import packages can be introduced later, but they are not part of th
 
 The recommended high-level import flow is:
 
-1. select file
-2. read file
-3. parse JSON
-4. validate file structure
-5. validate package metadata
-6. validate each entry structure
-7. validate reference values
-8. normalize import values
-9. detect duplicates
-10. create content package record
-11. process entries
-12. write valid content
-13. write package entry results
-14. finalize package summary
-15. return import report
+1. select content area
+2. select folder
+3. discover JSON files
+4. confirm batch
+5. read file
+6. parse JSON
+7. validate file structure
+8. validate package metadata
+9. validate each entry structure
+10. validate reference values
+11. normalize import values
+12. detect duplicates
+13. create content package record
+14. process entries
+15. write valid content
+16. write package entry results
+17. finalize package summary
+18. return import report
+
+### Current Tooling Note
+
+The current console import tool is folder-oriented. The operator selects one content area, chooses a root folder, and the tool imports every `.json` file found under that folder.
+
+The current tool writes to the host-machine SQLite database path used by the console host. Mobile app builds on Android and iOS keep their own sandbox databases, so importing on the host machine does not automatically populate an emulator or physical mobile-device database.
 
 ---
 
@@ -197,6 +206,7 @@ Acquire the input JSON file from the operator.
 The file may come from:
 
 - a local filesystem path
+- a batch-discovered folder of JSON files
 - drag-and-drop in a future desktop tool
 - command-line argument in a console tool
 
@@ -684,7 +694,9 @@ The Infrastructure should provide:
 The ImportTool should provide:
 
 - operator interaction
-- file selection or argument handling
+- content-area selection
+- folder selection or argument handling
+- batch file discovery
 - command execution trigger
 - result display
 

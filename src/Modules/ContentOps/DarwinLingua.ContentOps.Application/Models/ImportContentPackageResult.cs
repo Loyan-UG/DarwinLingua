@@ -13,4 +13,5 @@ public sealed record ImportContentPackageResult(
     int SkippedDuplicateEntries,
     int InvalidEntries,
     int WarningCount,
-    IReadOnlyList<ImportIssueModel> Issues);
+    IReadOnlyList<ImportIssueModel> Issues,
+    IReadOnlyList<string> ImportedLemmas);

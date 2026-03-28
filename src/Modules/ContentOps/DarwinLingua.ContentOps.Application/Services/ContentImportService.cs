@@ -134,7 +134,10 @@ internal sealed class ContentImportService : IContentImportService
             contentPackage.SkippedDuplicateEntries,
             contentPackage.InvalidEntries,
             contentPackage.WarningCount,
-            issues);
+            issues,
+            importedWords
+                .Select(word => word.Lemma)
+                .ToArray());
     }
 
     private async Task ProcessEntryAsync(
@@ -748,6 +751,7 @@ internal sealed class ContentImportService : IContentImportService
             0,
             totalEntries,
             issues.Count(issue => string.Equals(issue.Severity, "Warning", StringComparison.Ordinal)),
-            issues);
+            issues,
+            Array.Empty<string>());
     }
 }

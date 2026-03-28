@@ -47,6 +47,7 @@ public sealed class ContentImportServiceTests
             Assert.Equal(1, result.ImportedEntries);
             Assert.Equal(0, result.SkippedDuplicateEntries);
             Assert.Equal(0, result.InvalidEntries);
+            Assert.Equal(["Brot"], result.ImportedLemmas);
 
             IWordQueryService wordQueryService = serviceProvider.GetRequiredService<IWordQueryService>();
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordListItemModel> words = await wordQueryService
@@ -246,6 +247,9 @@ public sealed class ContentImportServiceTests
             Assert.Equal(12, result.ImportedEntries);
             Assert.Equal(0, result.SkippedDuplicateEntries);
             Assert.Equal(0, result.InvalidEntries);
+            Assert.Equal(12, result.ImportedLemmas.Count);
+            Assert.Contains("Brot", result.ImportedLemmas);
+            Assert.Contains("Unabdingbarkeit", result.ImportedLemmas);
 
             IWordQueryService wordQueryService = serviceProvider.GetRequiredService<IWordQueryService>();
 
