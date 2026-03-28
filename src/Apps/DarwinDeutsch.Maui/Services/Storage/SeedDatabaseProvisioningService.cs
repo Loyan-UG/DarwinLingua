@@ -12,6 +12,9 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
 {
     private const string SeedDatabaseAssetName = "darwin-lingua.seed.db";
     private const string SeedSignaturePreferenceKey = "seed-database-applied-signature";
+    private const string SeedLastAppliedAtPreferenceKey = "seed-database-last-applied-at-utc";
+    private const string SeedLastAppliedPackageCountPreferenceKey = "seed-database-last-applied-package-count";
+    private const string SeedLastAppliedWordCountPreferenceKey = "seed-database-last-applied-word-count";
 
     /// <inheritdoc />
     public async Task EnsureSeedDatabaseAsync(string databasePath, CancellationToken cancellationToken)
@@ -35,7 +38,11 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             await using FileStream localDatabaseStream = File.Create(databasePath);
             seedAssetSnapshot.Stream.Position = 0;
             await seedAssetSnapshot.Stream.CopyToAsync(localDatabaseStream, cancellationToken).ConfigureAwait(false);
-            Preferences.Default.Set(SeedSignaturePreferenceKey, seedAssetSnapshot.Signature);
+
+            int importedPackages = await CountRowsAsync(databasePath, "ContentPackages", cancellationToken).ConfigureAwait(false);
+            int importedWords = await CountRowsAsync(databasePath, "WordEntries", cancellationToken).ConfigureAwait(false);
+            DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
+            PersistAppliedSeedMetadata(seedAssetSnapshot.Signature, appliedAtUtc, importedPackages, importedWords);
             return;
         }
 
@@ -53,7 +60,7 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         await using SeedAssetSnapshot? seedAssetSnapshot = await LoadSeedAssetSnapshotAsync(cancellationToken).ConfigureAwait(false);
         if (seedAssetSnapshot is null)
         {
-            return new SeedDatabaseUpdateStatus(false, false, 0, 0, string.Empty);
+            return new SeedDatabaseUpdateStatus(false, false, 0, 0, string.Empty, GetAppliedSeedSignature(), GetLastAppliedAtUtc(), GetLastAppliedPackageCount(), GetLastAppliedWordCount());
         }
 
         string? appliedSignature = Preferences.Default.Get<string?>(SeedSignaturePreferenceKey, null);
@@ -62,12 +69,30 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             int seedPackages = await CountRowsInStreamAsync(seedAssetSnapshot.Stream, "ContentPackages", cancellationToken).ConfigureAwait(false);
             int seedWords = await CountRowsInStreamAsync(seedAssetSnapshot.Stream, "WordEntries", cancellationToken).ConfigureAwait(false);
 
-            return new SeedDatabaseUpdateStatus(true, true, seedPackages, seedWords, seedAssetSnapshot.Signature);
+            return new SeedDatabaseUpdateStatus(
+                true,
+                true,
+                seedPackages,
+                seedWords,
+                seedAssetSnapshot.Signature,
+                GetAppliedSeedSignature(),
+                GetLastAppliedAtUtc(),
+                GetLastAppliedPackageCount(),
+                GetLastAppliedWordCount());
         }
 
         if (string.Equals(appliedSignature, seedAssetSnapshot.Signature, StringComparison.Ordinal))
         {
-            return new SeedDatabaseUpdateStatus(true, false, 0, 0, seedAssetSnapshot.Signature);
+            return new SeedDatabaseUpdateStatus(
+                true,
+                false,
+                0,
+                0,
+                seedAssetSnapshot.Signature,
+                GetAppliedSeedSignature(),
+                GetLastAppliedAtUtc(),
+                GetLastAppliedPackageCount(),
+                GetLastAppliedWordCount());
         }
 
         string temporarySeedPath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-seed-status-{Guid.NewGuid():N}.db");
@@ -90,7 +115,11 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
                 pendingPackages > 0,
                 pendingPackages,
                 pendingWords,
-                seedAssetSnapshot.Signature);
+                seedAssetSnapshot.Signature,
+                GetAppliedSeedSignature(),
+                GetLastAppliedAtUtc(),
+                GetLastAppliedPackageCount(),
+                GetLastAppliedWordCount());
         }
         finally
         {
@@ -106,7 +135,7 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         await using SeedAssetSnapshot? seedAssetSnapshot = await LoadSeedAssetSnapshotAsync(cancellationToken).ConfigureAwait(false);
         if (seedAssetSnapshot is null)
         {
-            return new SeedDatabaseUpdateResult(false, false, 0, 0, string.Empty, "The packaged seed database is not available.");
+            return new SeedDatabaseUpdateResult(false, false, 0, 0, string.Empty, null, "The packaged seed database is not available.");
         }
 
         if (!File.Exists(databasePath))
@@ -115,8 +144,9 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
 
             int importedPackages = await CountRowsAsync(databasePath, "ContentPackages", cancellationToken).ConfigureAwait(false);
             int importedWords = await CountRowsAsync(databasePath, "WordEntries", cancellationToken).ConfigureAwait(false);
+            DateTimeOffset appliedAtUtc = GetLastAppliedAtUtc() ?? DateTimeOffset.UtcNow;
 
-            return new SeedDatabaseUpdateResult(true, true, importedPackages, importedWords, seedAssetSnapshot.Signature, null);
+            return new SeedDatabaseUpdateResult(true, true, importedPackages, importedWords, seedAssetSnapshot.Signature, appliedAtUtc, null);
         }
 
         string temporarySeedPath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-seed-{Guid.NewGuid():N}.db");
@@ -178,7 +208,8 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE seed;", cancellationToken).ConfigureAwait(false);
             await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
 
-            Preferences.Default.Set(SeedSignaturePreferenceKey, seedAssetSnapshot.Signature);
+            DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
+            PersistAppliedSeedMetadata(seedAssetSnapshot.Signature, appliedAtUtc, importedPackages, importedWords);
 
             return new SeedDatabaseUpdateResult(
                 true,
@@ -186,11 +217,12 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
                 importedPackages,
                 importedWords,
                 seedAssetSnapshot.Signature,
+                appliedAtUtc,
                 null);
         }
         catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or SqliteException)
         {
-            return new SeedDatabaseUpdateResult(false, false, 0, 0, seedAssetSnapshot.Signature, exception.Message);
+            return new SeedDatabaseUpdateResult(false, false, 0, 0, seedAssetSnapshot.Signature, null, exception.Message);
         }
         finally
         {
@@ -346,6 +378,37 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
     private static SqliteParameter CreateParameter(string name, object value)
     {
         return new SqliteParameter(name, value);
+    }
+
+    private static void PersistAppliedSeedMetadata(string signature, DateTimeOffset appliedAtUtc, int packageCount, int wordCount)
+    {
+        Preferences.Default.Set(SeedSignaturePreferenceKey, signature);
+        Preferences.Default.Set(SeedLastAppliedAtPreferenceKey, appliedAtUtc.UtcDateTime.ToString("O"));
+        Preferences.Default.Set(SeedLastAppliedPackageCountPreferenceKey, packageCount);
+        Preferences.Default.Set(SeedLastAppliedWordCountPreferenceKey, wordCount);
+    }
+
+    private static string GetAppliedSeedSignature()
+    {
+        return Preferences.Default.Get(SeedSignaturePreferenceKey, string.Empty);
+    }
+
+    private static DateTimeOffset? GetLastAppliedAtUtc()
+    {
+        string? persistedValue = Preferences.Default.Get<string?>(SeedLastAppliedAtPreferenceKey, null);
+        return DateTimeOffset.TryParse(persistedValue, out DateTimeOffset parsedValue)
+            ? parsedValue
+            : null;
+    }
+
+    private static int GetLastAppliedPackageCount()
+    {
+        return Preferences.Default.Get(SeedLastAppliedPackageCountPreferenceKey, 0);
+    }
+
+    private static int GetLastAppliedWordCount()
+    {
+        return Preferences.Default.Get(SeedLastAppliedWordCountPreferenceKey, 0);
     }
 
     private static string CreateSeedMergeScript()

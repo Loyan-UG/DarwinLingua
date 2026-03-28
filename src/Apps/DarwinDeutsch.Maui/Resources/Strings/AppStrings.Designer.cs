@@ -988,6 +988,11 @@ public static class AppStrings
     public static string SettingsContentUpdatesDetailsLabel => GetRequiredString(nameof(SettingsContentUpdatesDetailsLabel));
 
     /// <summary>
+    /// Gets the localized label for the packaged seed-content diagnostics line.
+    /// </summary>
+    public static string SettingsContentUpdatesDiagnosticsLabel => GetRequiredString(nameof(SettingsContentUpdatesDiagnosticsLabel));
+
+    /// <summary>
     /// Gets the localized caption for applying a packaged content update.
     /// </summary>
     public static string SettingsContentUpdatesApplyButton => GetRequiredString(nameof(SettingsContentUpdatesApplyButton));
@@ -1031,6 +1036,46 @@ public static class AppStrings
     /// Gets the localized detail shown when no packaged seed database is available.
     /// </summary>
     public static string SettingsContentUpdatesUnavailableDetails => GetRequiredString(nameof(SettingsContentUpdatesUnavailableDetails));
+
+    /// <summary>
+    /// Gets the localized diagnostics shown when no packaged seed database is available.
+    /// </summary>
+    public static string SettingsContentUpdatesUnavailableDiagnostics => GetRequiredString(nameof(SettingsContentUpdatesUnavailableDiagnostics));
+
+    /// <summary>
+    /// Gets the localized diagnostics line format for the local database path.
+    /// </summary>
+    public static string SettingsContentUpdatesDatabasePathFormat => GetRequiredString(nameof(SettingsContentUpdatesDatabasePathFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line format for the packaged seed signature.
+    /// </summary>
+    public static string SettingsContentUpdatesSeedSignatureFormat => GetRequiredString(nameof(SettingsContentUpdatesSeedSignatureFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line format for the applied seed signature.
+    /// </summary>
+    public static string SettingsContentUpdatesAppliedSignatureFormat => GetRequiredString(nameof(SettingsContentUpdatesAppliedSignatureFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line format for the last packaged-seed apply time.
+    /// </summary>
+    public static string SettingsContentUpdatesLastAppliedAtFormat => GetRequiredString(nameof(SettingsContentUpdatesLastAppliedAtFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line format for the last packaged-seed merge summary.
+    /// </summary>
+    public static string SettingsContentUpdatesLastAppliedSummaryFormat => GetRequiredString(nameof(SettingsContentUpdatesLastAppliedSummaryFormat));
+
+    /// <summary>
+    /// Gets the localized fallback shown when no packaged seed has been applied yet.
+    /// </summary>
+    public static string SettingsContentUpdatesNeverAppliedValue => GetRequiredString(nameof(SettingsContentUpdatesNeverAppliedValue));
+
+    /// <summary>
+    /// Gets the localized fallback shown when a packaged-seed signature is unknown.
+    /// </summary>
+    public static string SettingsContentUpdatesUnknownSignatureValue => GetRequiredString(nameof(SettingsContentUpdatesUnknownSignatureValue));
 
     /// <summary>
     /// Gets the localized dialog title shown after a successful packaged content update.

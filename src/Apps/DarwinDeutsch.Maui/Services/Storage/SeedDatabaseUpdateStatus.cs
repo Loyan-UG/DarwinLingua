@@ -8,4 +8,8 @@ public sealed record SeedDatabaseUpdateStatus(
     bool IsUpdateAvailable,
     int PendingPackageCount,
     int PendingWordCount,
-    string SeedSignature);
+    string SeedSignature,
+    string AppliedSignature,
+    DateTimeOffset? LastAppliedAtUtc,
+    int LastAppliedPackageCount,
+    int LastAppliedWordCount);

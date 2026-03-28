@@ -105,6 +105,7 @@ public partial class SettingsPage : ContentPage
         ContentUpdatesSectionLabel.Text = AppStrings.SettingsContentUpdatesSectionLabel;
         ContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
         ContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
+        ContentUpdateDiagnosticsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDiagnosticsLabel;
         ApplySeedUpdateButton.Text = AppStrings.SettingsContentUpdatesApplyButton;
     }
 
@@ -172,6 +173,7 @@ public partial class SettingsPage : ContentPage
 
         ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
         ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
+        ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, GetLocalDatabasePath());
         ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
         ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
             ? AppStrings.SettingsContentUpdatesApplyButton
@@ -395,6 +397,46 @@ public partial class SettingsPage : ContentPage
                 seedDatabaseUpdateStatus.PendingPackageCount,
                 seedDatabaseUpdateStatus.PendingWordCount)
             : AppStrings.SettingsContentUpdatesCurrentDetails;
+    }
+
+    private static string BuildContentUpdateDiagnostics(SeedDatabaseUpdateStatus seedDatabaseUpdateStatus, string databasePath)
+    {
+        ArgumentNullException.ThrowIfNull(seedDatabaseUpdateStatus);
+        ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
+
+        if (!seedDatabaseUpdateStatus.IsSeedAvailable)
+        {
+            return AppStrings.SettingsContentUpdatesUnavailableDiagnostics;
+        }
+
+        string seedSignature = BuildSignatureDisplay(seedDatabaseUpdateStatus.SeedSignature);
+        string appliedSignature = BuildSignatureDisplay(seedDatabaseUpdateStatus.AppliedSignature);
+        string lastAppliedAt = seedDatabaseUpdateStatus.LastAppliedAtUtc?.ToLocalTime().ToString("g")
+            ?? AppStrings.SettingsContentUpdatesNeverAppliedValue;
+        string lastAppliedSummary = string.Format(
+            AppStrings.SettingsContentUpdatesLastAppliedSummaryFormat,
+            seedDatabaseUpdateStatus.LastAppliedPackageCount,
+            seedDatabaseUpdateStatus.LastAppliedWordCount);
+
+        return string.Join(
+            Environment.NewLine,
+            string.Format(AppStrings.SettingsContentUpdatesDatabasePathFormat, databasePath),
+            string.Format(AppStrings.SettingsContentUpdatesSeedSignatureFormat, seedSignature),
+            string.Format(AppStrings.SettingsContentUpdatesAppliedSignatureFormat, appliedSignature),
+            string.Format(AppStrings.SettingsContentUpdatesLastAppliedAtFormat, lastAppliedAt),
+            lastAppliedSummary);
+    }
+
+    private static string BuildSignatureDisplay(string? signature)
+    {
+        if (string.IsNullOrWhiteSpace(signature))
+        {
+            return AppStrings.SettingsContentUpdatesUnknownSignatureValue;
+        }
+
+        return signature.Length <= 12
+            ? signature
+            : signature[..12];
     }
 
     /// <summary>

@@ -9,4 +9,5 @@ public sealed record SeedDatabaseUpdateResult(
     int ImportedPackages,
     int ImportedWords,
     string SeedSignature,
+    DateTimeOffset? AppliedAtUtc,
     string? ErrorMessage);

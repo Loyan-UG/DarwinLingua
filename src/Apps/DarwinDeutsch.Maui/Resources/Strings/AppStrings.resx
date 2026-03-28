@@ -524,6 +524,9 @@
   <data name="SettingsContentUpdatesDetailsLabel" xml:space="preserve">
     <value>Update details</value>
   </data>
+  <data name="SettingsContentUpdatesDiagnosticsLabel" xml:space="preserve">
+    <value>Applied seed details</value>
+  </data>
   <data name="SettingsContentUpdatesApplyButton" xml:space="preserve">
     <value>Apply Content Update</value>
   </data>
@@ -550,6 +553,30 @@
   </data>
   <data name="SettingsContentUpdatesUnavailableDetails" xml:space="preserve">
     <value>This app build does not include a packaged seed database.</value>
+  </data>
+  <data name="SettingsContentUpdatesUnavailableDiagnostics" xml:space="preserve">
+    <value>No seed diagnostics are available because this app build has no packaged seed database.</value>
+  </data>
+  <data name="SettingsContentUpdatesDatabasePathFormat" xml:space="preserve">
+    <value>Local database: {0}</value>
+  </data>
+  <data name="SettingsContentUpdatesSeedSignatureFormat" xml:space="preserve">
+    <value>Packaged seed signature: {0}</value>
+  </data>
+  <data name="SettingsContentUpdatesAppliedSignatureFormat" xml:space="preserve">
+    <value>Applied seed signature: {0}</value>
+  </data>
+  <data name="SettingsContentUpdatesLastAppliedAtFormat" xml:space="preserve">
+    <value>Last applied: {0}</value>
+  </data>
+  <data name="SettingsContentUpdatesLastAppliedSummaryFormat" xml:space="preserve">
+    <value>Last merge summary: {0} package(s), {1} word(s).</value>
+  </data>
+  <data name="SettingsContentUpdatesNeverAppliedValue" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="SettingsContentUpdatesUnknownSignatureValue" xml:space="preserve">
+    <value>Unknown</value>
   </data>
   <data name="SettingsContentUpdatesCompletedTitle" xml:space="preserve">
     <value>Content Updated</value>
