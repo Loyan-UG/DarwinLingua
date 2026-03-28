@@ -73,6 +73,7 @@
                     BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
                 <VerticalStackLayout Spacing="16">
                     <controls:DetailSectionView x:Name="ContentUpdateStatusSectionView" />
+                    <controls:DetailSectionView x:Name="ContentUpdateDetailsSectionView" />
 
                     <Button x:Name="ApplySeedUpdateButton"
                             Clicked="OnApplySeedUpdateButtonClicked" />

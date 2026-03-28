@@ -6,4 +6,6 @@ namespace DarwinDeutsch.Maui.Services.Storage;
 public sealed record SeedDatabaseUpdateStatus(
     bool IsSeedAvailable,
     bool IsUpdateAvailable,
+    int PendingPackageCount,
+    int PendingWordCount,
     string SeedSignature);

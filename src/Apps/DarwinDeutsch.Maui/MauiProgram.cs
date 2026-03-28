@@ -92,13 +92,19 @@ public static class MauiProgram
 
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService =
             app.Services.GetRequiredService<ISeedDatabaseProvisioningService>();
+        string databasePath = Path.Combine(FileSystem.Current.AppDataDirectory, "darwin-lingua.db");
         seedDatabaseProvisioningService
-            .EnsureSeedDatabaseAsync(Path.Combine(FileSystem.Current.AppDataDirectory, "darwin-lingua.db"), CancellationToken.None)
+            .EnsureSeedDatabaseAsync(databasePath, CancellationToken.None)
             .GetAwaiter()
             .GetResult();
 
         IDatabaseInitializer databaseInitializer = app.Services.GetRequiredService<IDatabaseInitializer>();
         databaseInitializer.InitializeAsync(CancellationToken.None).GetAwaiter().GetResult();
+
+        seedDatabaseProvisioningService
+            .ApplySeedUpdateAsync(databasePath, CancellationToken.None)
+            .GetAwaiter()
+            .GetResult();
 
         IAppLocalizationService localizationService = app.Services.GetRequiredService<IAppLocalizationService>();
         localizationService.InitializeAsync(CancellationToken.None).GetAwaiter().GetResult();

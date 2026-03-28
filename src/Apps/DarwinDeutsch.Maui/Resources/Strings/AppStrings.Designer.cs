@@ -983,6 +983,11 @@ public static class AppStrings
     public static string SettingsContentUpdatesStatusLabel => GetRequiredString(nameof(SettingsContentUpdatesStatusLabel));
 
     /// <summary>
+    /// Gets the localized label for the packaged seed-content detail line.
+    /// </summary>
+    public static string SettingsContentUpdatesDetailsLabel => GetRequiredString(nameof(SettingsContentUpdatesDetailsLabel));
+
+    /// <summary>
     /// Gets the localized caption for applying a packaged content update.
     /// </summary>
     public static string SettingsContentUpdatesApplyButton => GetRequiredString(nameof(SettingsContentUpdatesApplyButton));
@@ -1003,14 +1008,29 @@ public static class AppStrings
     public static string SettingsContentUpdatesAvailableStatus => GetRequiredString(nameof(SettingsContentUpdatesAvailableStatus));
 
     /// <summary>
+    /// Gets the localized detail format shown when a packaged content update is available.
+    /// </summary>
+    public static string SettingsContentUpdatesAvailableDetailsFormat => GetRequiredString(nameof(SettingsContentUpdatesAvailableDetailsFormat));
+
+    /// <summary>
     /// Gets the localized status shown when packaged content is already current.
     /// </summary>
     public static string SettingsContentUpdatesCurrentStatus => GetRequiredString(nameof(SettingsContentUpdatesCurrentStatus));
 
     /// <summary>
+    /// Gets the localized detail shown when packaged content is already current.
+    /// </summary>
+    public static string SettingsContentUpdatesCurrentDetails => GetRequiredString(nameof(SettingsContentUpdatesCurrentDetails));
+
+    /// <summary>
     /// Gets the localized status shown when no packaged seed database is available.
     /// </summary>
     public static string SettingsContentUpdatesUnavailableStatus => GetRequiredString(nameof(SettingsContentUpdatesUnavailableStatus));
+
+    /// <summary>
+    /// Gets the localized detail shown when no packaged seed database is available.
+    /// </summary>
+    public static string SettingsContentUpdatesUnavailableDetails => GetRequiredString(nameof(SettingsContentUpdatesUnavailableDetails));
 
     /// <summary>
     /// Gets the localized dialog title shown after a successful packaged content update.

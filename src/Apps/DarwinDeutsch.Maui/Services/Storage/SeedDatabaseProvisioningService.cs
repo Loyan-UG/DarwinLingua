@@ -53,14 +53,49 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         await using SeedAssetSnapshot? seedAssetSnapshot = await LoadSeedAssetSnapshotAsync(cancellationToken).ConfigureAwait(false);
         if (seedAssetSnapshot is null)
         {
-            return new SeedDatabaseUpdateStatus(false, false, string.Empty);
+            return new SeedDatabaseUpdateStatus(false, false, 0, 0, string.Empty);
         }
 
         string? appliedSignature = Preferences.Default.Get<string?>(SeedSignaturePreferenceKey, null);
-        bool isUpdateAvailable = !File.Exists(databasePath) ||
-            !string.Equals(appliedSignature, seedAssetSnapshot.Signature, StringComparison.Ordinal);
+        if (!File.Exists(databasePath))
+        {
+            int seedPackages = await CountRowsInStreamAsync(seedAssetSnapshot.Stream, "ContentPackages", cancellationToken).ConfigureAwait(false);
+            int seedWords = await CountRowsInStreamAsync(seedAssetSnapshot.Stream, "WordEntries", cancellationToken).ConfigureAwait(false);
 
-        return new SeedDatabaseUpdateStatus(true, isUpdateAvailable, seedAssetSnapshot.Signature);
+            return new SeedDatabaseUpdateStatus(true, true, seedPackages, seedWords, seedAssetSnapshot.Signature);
+        }
+
+        if (string.Equals(appliedSignature, seedAssetSnapshot.Signature, StringComparison.Ordinal))
+        {
+            return new SeedDatabaseUpdateStatus(true, false, 0, 0, seedAssetSnapshot.Signature);
+        }
+
+        string temporarySeedPath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-seed-status-{Guid.NewGuid():N}.db");
+
+        try
+        {
+            seedAssetSnapshot.Stream.Position = 0;
+            await using (FileStream tempSeedStream = File.Create(temporarySeedPath))
+            {
+                await seedAssetSnapshot.Stream.CopyToAsync(tempSeedStream, cancellationToken).ConfigureAwait(false);
+            }
+
+            (int pendingPackages, int pendingWords) = await CountPendingSeedUpdatesAsync(
+                databasePath,
+                temporarySeedPath,
+                cancellationToken).ConfigureAwait(false);
+
+            return new SeedDatabaseUpdateStatus(
+                true,
+                pendingPackages > 0,
+                pendingPackages,
+                pendingWords,
+                seedAssetSnapshot.Signature);
+        }
+        finally
+        {
+            TryDeleteFile(temporarySeedPath);
+        }
     }
 
     /// <inheritdoc />
@@ -200,6 +235,82 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             null,
             $"SELECT COUNT(*) FROM {tableName};",
             cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task<int> CountRowsInStreamAsync(
+        MemoryStream seedStream,
+        string tableName,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(seedStream);
+
+        string temporarySeedPath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-seed-count-{Guid.NewGuid():N}.db");
+
+        try
+        {
+            seedStream.Position = 0;
+            await using (FileStream tempSeedStream = File.Create(temporarySeedPath))
+            {
+                await seedStream.CopyToAsync(tempSeedStream, cancellationToken).ConfigureAwait(false);
+            }
+
+            return await CountRowsAsync(temporarySeedPath, tableName, cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            TryDeleteFile(temporarySeedPath);
+        }
+    }
+
+    private static async Task<(int PendingPackages, int PendingWords)> CountPendingSeedUpdatesAsync(
+        string databasePath,
+        string seedPath,
+        CancellationToken cancellationToken)
+    {
+        await using SqliteConnection localConnection = new($"Data Source={databasePath}");
+        await localConnection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        await using DbTransaction transaction = await localConnection.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
+
+        await ExecuteNonQueryAsync(
+            localConnection,
+            transaction,
+            "ATTACH DATABASE $seedPath AS seed;",
+            cancellationToken,
+            CreateParameter("$seedPath", seedPath)).ConfigureAwait(false);
+
+        int pendingPackages = await ExecuteScalarIntAsync(
+            localConnection,
+            transaction,
+            """
+            SELECT COUNT(*)
+            FROM seed.ContentPackages AS seedPackages
+            WHERE NOT EXISTS (
+                SELECT 1
+                FROM ContentPackages AS localPackages
+                WHERE localPackages.PackageId = seedPackages.PackageId);
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        int pendingWords = await ExecuteScalarIntAsync(
+            localConnection,
+            transaction,
+            """
+            SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
+            FROM seed.ContentPackageEntries AS seedEntries
+            INNER JOIN seed.ContentPackages AS seedPackages
+                ON seedPackages.Id = seedEntries.ContentPackageId
+            WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
+              AND NOT EXISTS (
+                  SELECT 1
+                  FROM ContentPackages AS localPackages
+                  WHERE localPackages.PackageId = seedPackages.PackageId);
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE seed;", cancellationToken).ConfigureAwait(false);
+        await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+
+        return (pendingPackages, pendingWords);
     }
 
     private static async Task ExecuteNonQueryAsync(

@@ -104,6 +104,7 @@ public partial class SettingsPage : ContentPage
         FutureFeaturesSectionView.SectionTitle = AppStrings.WelcomeFutureFeaturesTitle;
         ContentUpdatesSectionLabel.Text = AppStrings.SettingsContentUpdatesSectionLabel;
         ContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
+        ContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
         ApplySeedUpdateButton.Text = AppStrings.SettingsContentUpdatesApplyButton;
     }
 
@@ -170,6 +171,7 @@ public partial class SettingsPage : ContentPage
             .ConfigureAwait(true);
 
         ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
+        ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
         ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
         ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
             ? AppStrings.SettingsContentUpdatesApplyButton
@@ -376,6 +378,23 @@ public partial class SettingsPage : ContentPage
         return seedDatabaseUpdateStatus.IsUpdateAvailable
             ? AppStrings.SettingsContentUpdatesAvailableStatus
             : AppStrings.SettingsContentUpdatesCurrentStatus;
+    }
+
+    private static string BuildContentUpdateDetails(SeedDatabaseUpdateStatus seedDatabaseUpdateStatus)
+    {
+        ArgumentNullException.ThrowIfNull(seedDatabaseUpdateStatus);
+
+        if (!seedDatabaseUpdateStatus.IsSeedAvailable)
+        {
+            return AppStrings.SettingsContentUpdatesUnavailableDetails;
+        }
+
+        return seedDatabaseUpdateStatus.IsUpdateAvailable
+            ? string.Format(
+                AppStrings.SettingsContentUpdatesAvailableDetailsFormat,
+                seedDatabaseUpdateStatus.PendingPackageCount,
+                seedDatabaseUpdateStatus.PendingWordCount)
+            : AppStrings.SettingsContentUpdatesCurrentDetails;
     }
 
     /// <summary>

@@ -521,6 +521,9 @@
   <data name="SettingsContentUpdatesStatusLabel" xml:space="preserve">
     <value>Packaged seed content</value>
   </data>
+  <data name="SettingsContentUpdatesDetailsLabel" xml:space="preserve">
+    <value>Update details</value>
+  </data>
   <data name="SettingsContentUpdatesApplyButton" xml:space="preserve">
     <value>Apply Content Update</value>
   </data>
@@ -533,11 +536,20 @@
   <data name="SettingsContentUpdatesAvailableStatus" xml:space="preserve">
     <value>A packaged content update is available and can be added to this device.</value>
   </data>
+  <data name="SettingsContentUpdatesAvailableDetailsFormat" xml:space="preserve">
+    <value>{0} new package(s) and {1} new word(s) are ready to import from the packaged seed.</value>
+  </data>
   <data name="SettingsContentUpdatesCurrentStatus" xml:space="preserve">
     <value>This device already contains the latest packaged seed content.</value>
   </data>
+  <data name="SettingsContentUpdatesCurrentDetails" xml:space="preserve">
+    <value>No additional packaged content is waiting to be merged.</value>
+  </data>
   <data name="SettingsContentUpdatesUnavailableStatus" xml:space="preserve">
     <value>No packaged seed database is available in this app build.</value>
+  </data>
+  <data name="SettingsContentUpdatesUnavailableDetails" xml:space="preserve">
+    <value>This app build does not include a packaged seed database.</value>
   </data>
   <data name="SettingsContentUpdatesCompletedTitle" xml:space="preserve">
     <value>Content Updated</value>
