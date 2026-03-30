@@ -64,6 +64,7 @@ All project documentation should remain in English.
 - `48-Mobile-Validation-Bundle-Runbook.md`
 - `49-Local-Postgres-Setup.md`
 - `50-Phase-5-Remote-Update-Validation-Worksheet.md`
+- `51-Local-Server-Bootstrap.md`
 
 Related release-execution helpers live under `tools/Phase1/`.
 
@@ -91,9 +92,10 @@ If you are new to the project, read the documents in this order:
 16. `35-Engineering-Standards.md`
 17. `34-Import-Workflow.md`
 18. `49-Local-Postgres-Setup.md`
-19. `04-Implementation-Backlog.md`
-20. `42-Continuation-Handoff.md`
-21. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
+19. `51-Local-Server-Bootstrap.md`
+20. `04-Implementation-Backlog.md`
+21. `42-Continuation-Handoff.md`
+22. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
 
 ---
 

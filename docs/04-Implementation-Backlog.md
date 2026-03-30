@@ -370,6 +370,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] add publish-history and retention-summary endpoints for admin operations
 - [x] add rollback workflow for superseded package batches
 - [x] add audit trail for publish, rollback, and cleanup events
+- [x] add a local bootstrap flow for first server import and publish
 
 ### 29. Mobile Content Update Client
 

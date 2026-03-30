@@ -22,7 +22,7 @@ The first learner-facing product is **Darwin Deutsch**, a German-learning applic
 - `Phase 3 enhanced lexical intelligence`: `In Progress`
   - lexical usage/context labels, grammar notes, collocations, word families, and synonym/antonym relations now flow from imported content into a richer word-detail screen, and the main learner-facing mobile screens now share a cleaner visual hierarchy
 - `Phase 5 server content distribution`: `In Progress`
-  - the backend foundation now includes a Web API host, PostgreSQL-backed manifest persistence, package download endpoints, schema compatibility checks, local PostgreSQL/Web API development templates, a server-side import workflow that stages draft package batches plus explicit publish and rollback endpoints, lightweight admin endpoints to inspect, summarize, clean up, and audit draft/published/superseded batches, and mobile Settings flows for full, catalog, and `A1`-`C2` remote updates with local-state-preserving apply logic, richer scope/checksum/schema diagnostics, and recent on-device update history
+  - the backend foundation now includes a Web API host, PostgreSQL-backed manifest persistence, package download endpoints, schema compatibility checks, local PostgreSQL/Web API development templates, a server-side import workflow that stages draft package batches plus explicit publish and rollback endpoints, lightweight admin endpoints to inspect, summarize, clean up, and audit draft/published/superseded batches, a one-command local bootstrap flow for first import/publish, and mobile Settings flows for full, catalog, and `A1`-`C2` remote updates with local-state-preserving apply logic, richer scope/checksum/schema diagnostics, and recent on-device update history
 - `Phase 4 support resources`: `Planned`
   - resource discovery and non-lexical support content remain future work
 
@@ -119,6 +119,7 @@ The project has explicit implementation standards in:
 - [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 - [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
 - [Phase 5 Remote Update Validation Worksheet](docs/50-Phase-5-Remote-Update-Validation-Worksheet.md)
+- [Local Server Bootstrap](docs/51-Local-Server-Bootstrap.md)
 
 Important rules include:
 
