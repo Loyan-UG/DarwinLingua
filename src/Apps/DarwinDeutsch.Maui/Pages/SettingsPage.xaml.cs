@@ -2,6 +2,7 @@ using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Storage;
+using DarwinDeutsch.Maui.Services.Updates;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Localization.Application.Abstractions;
@@ -16,10 +17,12 @@ public partial class SettingsPage : ContentPage
 {
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private readonly IRemoteContentUpdateService _remoteContentUpdateService;
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly ILanguageQueryService _languageQueryService;
     private bool _isUpdatingSelection;
+    private bool _isApplyingRemoteUpdate;
     private bool _isApplyingSeedUpdate;
 
     /// <summary>
@@ -31,12 +34,14 @@ public partial class SettingsPage : ContentPage
     public SettingsPage(
         IAppLocalizationService appLocalizationService,
         ICefrBrowseStateService cefrBrowseStateService,
+        IRemoteContentUpdateService remoteContentUpdateService,
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
         IUserLearningProfileService userLearningProfileService,
         ILanguageQueryService languageQueryService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
+        ArgumentNullException.ThrowIfNull(remoteContentUpdateService);
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
         ArgumentNullException.ThrowIfNull(languageQueryService);
@@ -45,6 +50,7 @@ public partial class SettingsPage : ContentPage
 
         _appLocalizationService = appLocalizationService;
         _cefrBrowseStateService = cefrBrowseStateService;
+        _remoteContentUpdateService = remoteContentUpdateService;
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
         _userLearningProfileService = userLearningProfileService;
         _languageQueryService = languageQueryService;
@@ -108,9 +114,15 @@ public partial class SettingsPage : ContentPage
         CurrentFeaturesSectionView.SectionTitle = AppStrings.WelcomeCurrentFeaturesTitle;
         FutureFeaturesSectionView.SectionTitle = AppStrings.WelcomeFutureFeaturesTitle;
         ContentUpdatesSectionLabel.Text = AppStrings.SettingsContentUpdatesSectionLabel;
+        RemoteContentUpdatesSectionLabel.Text = AppStrings.SettingsRemoteContentUpdatesSectionLabel;
+        PackagedSeedUpdatesSectionLabel.Text = AppStrings.SettingsPackagedSeedUpdatesSectionLabel;
         ContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
         ContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
         ContentUpdateDiagnosticsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDiagnosticsLabel;
+        RemoteContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
+        RemoteContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
+        RemoteContentUpdateDiagnosticsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDiagnosticsLabel;
+        ApplyRemoteUpdateButton.Text = AppStrings.SettingsRemoteContentUpdatesApplyButton;
         ApplySeedUpdateButton.Text = AppStrings.SettingsContentUpdatesApplyButton;
     }
 
@@ -175,6 +187,9 @@ public partial class SettingsPage : ContentPage
         SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await _seedDatabaseProvisioningService
             .GetUpdateStatusAsync(GetLocalDatabasePath(), CancellationToken.None)
             .ConfigureAwait(true);
+        RemoteContentUpdateStatus remoteContentUpdateStatus = await _remoteContentUpdateService
+            .GetUpdateStatusAsync(GetLocalDatabasePath(), CancellationToken.None)
+            .ConfigureAwait(true);
 
         ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
         ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
@@ -184,7 +199,67 @@ public partial class SettingsPage : ContentPage
             ? AppStrings.SettingsContentUpdatesApplyButton
             : AppStrings.SettingsContentUpdatesAppliedButton;
 
+        RemoteContentUpdateStatusSectionView.SectionValue = BuildRemoteContentUpdateStatus(remoteContentUpdateStatus);
+        RemoteContentUpdateDetailsSectionView.SectionValue = BuildRemoteContentUpdateDetails(remoteContentUpdateStatus);
+        RemoteContentUpdateDiagnosticsSectionView.SectionValue = BuildRemoteContentUpdateDiagnostics(remoteContentUpdateStatus);
+        ApplyRemoteUpdateButton.IsEnabled = remoteContentUpdateStatus.IsRemoteConfigured && remoteContentUpdateStatus.IsServerReachable && !_isApplyingRemoteUpdate;
+        ApplyRemoteUpdateButton.Text = remoteContentUpdateStatus.IsUpdateAvailable
+            ? AppStrings.SettingsRemoteContentUpdatesApplyButton
+            : AppStrings.SettingsRemoteContentUpdatesAppliedButton;
+
         _isUpdatingSelection = false;
+    }
+
+    private async void OnApplyRemoteUpdateButtonClicked(object? sender, EventArgs e)
+    {
+        if (_isApplyingRemoteUpdate)
+        {
+            return;
+        }
+
+        _isApplyingRemoteUpdate = true;
+        ApplyRemoteUpdateButton.IsEnabled = false;
+        ApplyRemoteUpdateButton.Text = AppStrings.SettingsRemoteContentUpdatesApplyingButton;
+
+        try
+        {
+            RemoteContentUpdateResult result = await _remoteContentUpdateService
+                .ApplyFullUpdateAsync(GetLocalDatabasePath(), CancellationToken.None)
+                .ConfigureAwait(true);
+
+            if (!result.IsSuccess)
+            {
+                await DisplayAlertAsync(
+                        AppStrings.SettingsRemoteContentUpdatesFailedTitle,
+                        string.Format(AppStrings.SettingsRemoteContentUpdatesFailedMessageFormat, result.ErrorMessage ?? AppStrings.SettingsRemoteContentUpdatesUnavailableStatus),
+                        AppStrings.SettingsContentUpdatesDismissButton)
+                    .ConfigureAwait(true);
+            }
+            else if (result.AppliedChanges)
+            {
+                _cefrBrowseStateService.ResetCache();
+
+                await DisplayAlertAsync(
+                        AppStrings.SettingsRemoteContentUpdatesCompletedTitle,
+                        string.Format(AppStrings.SettingsRemoteContentUpdatesCompletedMessageFormat, result.AppliedVersion, result.ImportedWords),
+                        AppStrings.SettingsContentUpdatesDismissButton)
+                    .ConfigureAwait(true);
+            }
+            else
+            {
+                await DisplayAlertAsync(
+                        AppStrings.SettingsRemoteContentUpdatesUpToDateTitle,
+                        AppStrings.SettingsRemoteContentUpdatesUpToDateMessage,
+                        AppStrings.SettingsContentUpdatesDismissButton)
+                    .ConfigureAwait(true);
+            }
+
+            await RebuildPageStateAsync().ConfigureAwait(true);
+        }
+        finally
+        {
+            _isApplyingRemoteUpdate = false;
+        }
     }
 
     private async void OnApplySeedUpdateButtonClicked(object? sender, EventArgs e)
@@ -444,6 +519,77 @@ public partial class SettingsPage : ContentPage
         return signature.Length <= 12
             ? signature
             : signature[..12];
+    }
+
+    private static string BuildRemoteContentUpdateStatus(RemoteContentUpdateStatus remoteContentUpdateStatus)
+    {
+        ArgumentNullException.ThrowIfNull(remoteContentUpdateStatus);
+
+        if (!remoteContentUpdateStatus.IsRemoteConfigured)
+        {
+            return AppStrings.SettingsRemoteContentUpdatesUnavailableStatus;
+        }
+
+        if (!remoteContentUpdateStatus.IsServerReachable)
+        {
+            return AppStrings.SettingsRemoteContentUpdatesUnreachableStatus;
+        }
+
+        return remoteContentUpdateStatus.IsUpdateAvailable
+            ? AppStrings.SettingsRemoteContentUpdatesAvailableStatus
+            : AppStrings.SettingsRemoteContentUpdatesCurrentStatus;
+    }
+
+    private static string BuildRemoteContentUpdateDetails(RemoteContentUpdateStatus remoteContentUpdateStatus)
+    {
+        ArgumentNullException.ThrowIfNull(remoteContentUpdateStatus);
+
+        if (!remoteContentUpdateStatus.IsRemoteConfigured)
+        {
+            return AppStrings.SettingsRemoteContentUpdatesUnavailableDetails;
+        }
+
+        if (!remoteContentUpdateStatus.IsServerReachable)
+        {
+            return AppStrings.SettingsRemoteContentUpdatesUnreachableDetails;
+        }
+
+        return remoteContentUpdateStatus.IsUpdateAvailable
+            ? string.Format(
+                AppStrings.SettingsRemoteContentUpdatesAvailableDetailsFormat,
+                remoteContentUpdateStatus.RemoteVersion,
+                remoteContentUpdateStatus.PendingWordCount)
+            : string.Format(
+                AppStrings.SettingsRemoteContentUpdatesCurrentDetailsFormat,
+                string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalVersion)
+                    ? AppStrings.SettingsContentUpdatesNeverAppliedValue
+                    : remoteContentUpdateStatus.LocalVersion);
+    }
+
+    private static string BuildRemoteContentUpdateDiagnostics(RemoteContentUpdateStatus remoteContentUpdateStatus)
+    {
+        ArgumentNullException.ThrowIfNull(remoteContentUpdateStatus);
+
+        string localPackage = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalPackageId)
+            ? AppStrings.SettingsContentUpdatesNeverAppliedValue
+            : remoteContentUpdateStatus.LocalPackageId;
+        string remotePackage = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.RemotePackageId)
+            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
+            : remoteContentUpdateStatus.RemotePackageId;
+        string lastUpdatedAt = remoteContentUpdateStatus.LastSuccessfulUpdateAtUtc?.ToLocalTime().ToString("g")
+            ?? AppStrings.SettingsContentUpdatesNeverAppliedValue;
+        string lastFailure = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LastFailureMessage)
+            ? AppStrings.SettingsRemoteContentUpdatesNoFailureValue
+            : remoteContentUpdateStatus.LastFailureMessage;
+
+        return string.Join(
+            Environment.NewLine,
+            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalPackageFormat, localPackage),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesRemotePackageFormat, remotePackage),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalVersionFormat, string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalVersion) ? AppStrings.SettingsContentUpdatesNeverAppliedValue : remoteContentUpdateStatus.LocalVersion),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteVersionFormat, string.IsNullOrWhiteSpace(remoteContentUpdateStatus.RemoteVersion) ? AppStrings.SettingsContentUpdatesUnknownSignatureValue : remoteContentUpdateStatus.RemoteVersion),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesLastUpdatedAtFormat, lastUpdatedAt),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesLastFailureFormat, lastFailure));
     }
 
     /// <summary>

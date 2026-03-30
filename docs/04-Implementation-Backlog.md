@@ -368,18 +368,18 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 
 ### 29. Mobile Content Update Client
 
-- [ ] add a mobile update client that can fetch manifests and packages from the Web API
-- [ ] implement transactional application of downloaded packages into local SQLite
-- [ ] preserve favorites, preferences, word state, and practice state during shared-content updates
-- [ ] add diagnostics for local version, remote version, last update time, and last update failure
+- [x] add a mobile update client that can fetch manifests and packages from the Web API
+- [x] implement transactional application of downloaded packages into local SQLite
+- [x] preserve favorites, preferences, word state, and practice state during shared-content updates
+- [x] add diagnostics for local version, remote version, last update time, and last update failure
 
 ### 30. Settings Update UX
 
-- [ ] add a primary `Update All Content` action in settings
+- [x] add a primary `Update All Content` action in settings
 - [ ] add per-area update actions in settings
 - [ ] add `A1`-`C2` per-level update actions for the word catalog
 - [ ] expose update counts and version summaries before apply
-- [ ] define non-blocking offline/error behavior for update actions
+- [x] define non-blocking offline/error behavior for update actions
 
 ### 31. Future Platform Expansion
 

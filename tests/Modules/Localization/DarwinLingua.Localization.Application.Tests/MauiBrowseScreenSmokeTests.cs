@@ -76,6 +76,12 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("CurrentFeaturesSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("FutureFeaturesSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContentUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("RemoteContentUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("PackagedSeedUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("RemoteContentUpdateStatusSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("RemoteContentUpdateDetailsSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("RemoteContentUpdateDiagnosticsSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ApplyRemoteUpdateButton", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContentUpdateStatusSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContentUpdateDetailsSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContentUpdateDiagnosticsSectionView", xamlSource, StringComparison.Ordinal);
@@ -84,6 +90,10 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("WelcomeCurrentFeaturesBody", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("WelcomeFutureFeaturesBody", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("IRemoteContentUpdateService", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("OnApplyRemoteUpdateButtonClicked", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("BuildRemoteContentUpdateStatus", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("BuildRemoteContentUpdateDiagnostics", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnApplySeedUpdateButtonClicked", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildContentUpdateDetails", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildContentUpdateDiagnostics", codeBehindSource, StringComparison.Ordinal);

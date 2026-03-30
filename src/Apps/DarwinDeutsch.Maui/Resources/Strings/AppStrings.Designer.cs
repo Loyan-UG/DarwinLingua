@@ -1123,6 +1123,136 @@ public static class AppStrings
     public static string SettingsContentUpdatesFailedMessageFormat => GetRequiredString(nameof(SettingsContentUpdatesFailedMessageFormat));
 
     /// <summary>
+    /// Gets the localized section label for remote server-backed content updates.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesSectionLabel => GetRequiredString(nameof(SettingsRemoteContentUpdatesSectionLabel));
+
+    /// <summary>
+    /// Gets the localized section label for bundled seed updates.
+    /// </summary>
+    public static string SettingsPackagedSeedUpdatesSectionLabel => GetRequiredString(nameof(SettingsPackagedSeedUpdatesSectionLabel));
+
+    /// <summary>
+    /// Gets the localized button label for applying the remote full-content update.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesApplyButton => GetRequiredString(nameof(SettingsRemoteContentUpdatesApplyButton));
+
+    /// <summary>
+    /// Gets the localized button label shown when remote content is already current.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesAppliedButton => GetRequiredString(nameof(SettingsRemoteContentUpdatesAppliedButton));
+
+    /// <summary>
+    /// Gets the localized button label shown while a remote content update is running.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesApplyingButton => GetRequiredString(nameof(SettingsRemoteContentUpdatesApplyingButton));
+
+    /// <summary>
+    /// Gets the localized status shown when a remote content update is available.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesAvailableStatus => GetRequiredString(nameof(SettingsRemoteContentUpdatesAvailableStatus));
+
+    /// <summary>
+    /// Gets the localized detail shown when a remote content update is available.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesAvailableDetailsFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesAvailableDetailsFormat));
+
+    /// <summary>
+    /// Gets the localized status shown when remote content is already current.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesCurrentStatus => GetRequiredString(nameof(SettingsRemoteContentUpdatesCurrentStatus));
+
+    /// <summary>
+    /// Gets the localized detail shown when remote content is already current.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesCurrentDetailsFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesCurrentDetailsFormat));
+
+    /// <summary>
+    /// Gets the localized status shown when remote updates are not configured.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesUnavailableStatus => GetRequiredString(nameof(SettingsRemoteContentUpdatesUnavailableStatus));
+
+    /// <summary>
+    /// Gets the localized detail shown when remote updates are not configured.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesUnavailableDetails => GetRequiredString(nameof(SettingsRemoteContentUpdatesUnavailableDetails));
+
+    /// <summary>
+    /// Gets the localized status shown when the remote server is unreachable.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesUnreachableStatus => GetRequiredString(nameof(SettingsRemoteContentUpdatesUnreachableStatus));
+
+    /// <summary>
+    /// Gets the localized detail shown when the remote server is unreachable.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesUnreachableDetails => GetRequiredString(nameof(SettingsRemoteContentUpdatesUnreachableDetails));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the local full package identifier.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesLocalPackageFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesLocalPackageFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the remote full package identifier.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesRemotePackageFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesRemotePackageFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the local content version.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesLocalVersionFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesLocalVersionFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the remote content version.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesRemoteVersionFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesRemoteVersionFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the last successful remote update time.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesLastUpdatedAtFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesLastUpdatedAtFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the last remote update failure.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesLastFailureFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesLastFailureFormat));
+
+    /// <summary>
+    /// Gets the localized fallback shown when no remote failure is recorded.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesNoFailureValue => GetRequiredString(nameof(SettingsRemoteContentUpdatesNoFailureValue));
+
+    /// <summary>
+    /// Gets the localized dialog title shown after a successful remote content update.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesCompletedTitle => GetRequiredString(nameof(SettingsRemoteContentUpdatesCompletedTitle));
+
+    /// <summary>
+    /// Gets the localized dialog body shown after a successful remote content update.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesCompletedMessageFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesCompletedMessageFormat));
+
+    /// <summary>
+    /// Gets the localized dialog title shown when no remote update is needed.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesUpToDateTitle => GetRequiredString(nameof(SettingsRemoteContentUpdatesUpToDateTitle));
+
+    /// <summary>
+    /// Gets the localized dialog body shown when no remote update is needed.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesUpToDateMessage => GetRequiredString(nameof(SettingsRemoteContentUpdatesUpToDateMessage));
+
+    /// <summary>
+    /// Gets the localized dialog title shown when a remote update fails.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesFailedTitle => GetRequiredString(nameof(SettingsRemoteContentUpdatesFailedTitle));
+
+    /// <summary>
+    /// Gets the localized dialog body shown when a remote update fails.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesFailedMessageFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesFailedMessageFormat));
+
+    /// <summary>
     /// Gets the localized dismiss-button caption for packaged content update dialogs.
     /// </summary>
     public static string SettingsContentUpdatesDismissButton => GetRequiredString(nameof(SettingsContentUpdatesDismissButton));

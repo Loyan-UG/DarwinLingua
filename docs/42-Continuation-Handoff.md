@@ -57,6 +57,7 @@ Use it when:
 - The second Phase 5 foundation slice now persists `ClientProduct`, `ContentStream`, and `PublishedPackage` metadata in PostgreSQL-backed storage and serves manifests from that persistence layer.
 - The third Phase 5 foundation slice now exposes package-download endpoints for package ID, full, area, and CEFR scopes, backed by payload files under `assets/ServerContent/PublishedPackages`, with compatibility checks via `clientSchemaVersion`.
 - The fourth Phase 5 slice now runs the canonical content import pipeline on the server side, writes imported content into the shared PostgreSQL-backed catalog, generates versioned full/catalog/CEFR package payloads, and records server import receipts through `POST /api/admin/content/catalog/import`.
+- The fifth Phase 5 slice now lets the MAUI client fetch manifests and full packages from the Web API, apply downloaded catalog packages transactionally into local SQLite, preserve favorites/preferences/word state/practice state during content replacement, and expose a primary `Update All Content` action with remote-version diagnostics in Settings.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
@@ -64,13 +65,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the fifth executable Phase 5 slice: mobile consumption of the server-backed content model.
+Focus next on the sixth executable Phase 5 slice: granular mobile update controls and server publishing refinement.
 
 Suggested scope:
 
-1. Add the mobile update client that fetches manifests and downloads packages from the Web API.
-2. Apply downloaded packages transactionally into local SQLite while preserving favorites, preferences, word state, and practice state.
-3. Keep draft-vs-published server workflow design open as the next backend refinement after the first end-to-end mobile update path works.
+1. Add per-area update actions in Settings on top of the new full-update flow.
+2. Add `A1`-`C2` per-level catalog update actions and pre-apply update counts/version summaries.
+3. Refine the server-side publishing workflow so draft vs published package lifecycle is explicit before broader platform rollout.
 
 ---
 
@@ -84,7 +85,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - The next architecture slice is the server-authored content-distribution model documented in docs/36-Server-Content-Distribution.md.
-- Prioritize the first Phase 5 foundation work: Web API host, mobile content manifest contract, and package/version model for shared content updates.
+- Prioritize the next Phase 5 work: granular mobile update controls, version/count previews, and the draft-vs-published server publishing workflow.
 - Keep the mobile app local-first: local SQLite remains the runtime store and user state must survive content updates.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.

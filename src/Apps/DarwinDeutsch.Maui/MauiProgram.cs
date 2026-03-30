@@ -4,6 +4,7 @@ using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Onboarding;
 using DarwinDeutsch.Maui.Services.Storage;
+using DarwinDeutsch.Maui.Services.Updates;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -60,6 +61,17 @@ public static class MauiProgram
             .AddSingleton<IAppLocalizationService, AppLocalizationService>()
             .AddSingleton<IAppOnboardingService, AppOnboardingService>()
             .AddSingleton<ISeedDatabaseProvisioningService, SeedDatabaseProvisioningService>()
+            .AddSingleton(new RemoteContentUpdateOptions
+            {
+                BaseUrl = GetDefaultRemoteContentBaseUrl(),
+                ClientProductKey = "darwin-deutsch",
+                ClientSchemaVersion = 1,
+            })
+            .AddSingleton(_ => new HttpClient
+            {
+                Timeout = TimeSpan.FromSeconds(10),
+            })
+            .AddSingleton<IRemoteContentUpdateService, RemoteContentUpdateService>()
             .AddSingleton<AppShell>()
             .AddSingleton<WelcomePage>()
             .AddSingleton<HomePage>()
@@ -110,5 +122,14 @@ public static class MauiProgram
 
         IAppLocalizationService localizationService = app.Services.GetRequiredService<IAppLocalizationService>();
         localizationService.InitializeAsync(CancellationToken.None).GetAwaiter().GetResult();
+    }
+
+    private static string GetDefaultRemoteContentBaseUrl()
+    {
+#if ANDROID
+        return "http://10.0.2.2:5099";
+#else
+        return "http://localhost:5099";
+#endif
     }
 }

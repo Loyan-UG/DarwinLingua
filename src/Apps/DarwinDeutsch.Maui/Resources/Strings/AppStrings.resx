@@ -605,6 +605,84 @@
   <data name="SettingsContentUpdatesFailedMessageFormat" xml:space="preserve">
     <value>The packaged content update could not be applied: {0}</value>
   </data>
+  <data name="SettingsRemoteContentUpdatesSectionLabel" xml:space="preserve">
+    <value>Server content updates</value>
+  </data>
+  <data name="SettingsPackagedSeedUpdatesSectionLabel" xml:space="preserve">
+    <value>Bundled seed updates</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesApplyButton" xml:space="preserve">
+    <value>Update All Content</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesAppliedButton" xml:space="preserve">
+    <value>Already Using Latest Server Content</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesApplyingButton" xml:space="preserve">
+    <value>Updating Content...</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesAvailableStatus" xml:space="preserve">
+    <value>A newer server content package is available.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesAvailableDetailsFormat" xml:space="preserve">
+    <value>Version {0} is ready to apply and contains {1} word(s).</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesCurrentStatus" xml:space="preserve">
+    <value>This device already uses the latest server package.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesCurrentDetailsFormat" xml:space="preserve">
+    <value>The current applied full-content version is {0}.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesUnavailableStatus" xml:space="preserve">
+    <value>Remote content updates are not configured in this build.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesUnavailableDetails" xml:space="preserve">
+    <value>This app build does not have a remote update endpoint configured.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesUnreachableStatus" xml:space="preserve">
+    <value>The update server could not be reached.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesUnreachableDetails" xml:space="preserve">
+    <value>Check that the Web API is running and reachable from this device.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesLocalPackageFormat" xml:space="preserve">
+    <value>Local full package: {0}</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesRemotePackageFormat" xml:space="preserve">
+    <value>Remote full package: {0}</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesLocalVersionFormat" xml:space="preserve">
+    <value>Local version: {0}</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesRemoteVersionFormat" xml:space="preserve">
+    <value>Remote version: {0}</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesLastUpdatedAtFormat" xml:space="preserve">
+    <value>Last successful remote update: {0}</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesLastFailureFormat" xml:space="preserve">
+    <value>Last remote failure: {0}</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesNoFailureValue" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesCompletedTitle" xml:space="preserve">
+    <value>Server Content Updated</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesCompletedMessageFormat" xml:space="preserve">
+    <value>Applied remote version {0} and refreshed {1} word(s).</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesUpToDateTitle" xml:space="preserve">
+    <value>Already Up to Date</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesUpToDateMessage" xml:space="preserve">
+    <value>This device already has the latest server content package.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesFailedTitle" xml:space="preserve">
+    <value>Remote Update Failed</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesFailedMessageFormat" xml:space="preserve">
+    <value>The server content update could not be applied: {0}</value>
+  </data>
   <data name="SettingsContentUpdatesDismissButton" xml:space="preserve">
     <value>OK</value>
   </data>
