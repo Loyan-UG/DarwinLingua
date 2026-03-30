@@ -51,6 +51,6 @@ internal sealed class SenseTranslationConfiguration : IEntityTypeConfiguration<S
         builder.HasIndex(translation => translation.WordSenseId)
             .HasDatabaseName("IX_SenseTranslations_PrimaryPerSense")
             .IsUnique()
-            .HasFilter($"[{nameof(SenseTranslation.IsPrimary)}] = 1");
+            .HasFilter($"\"{nameof(SenseTranslation.IsPrimary)}\"");
     }
 }

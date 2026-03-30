@@ -22,6 +22,7 @@ public sealed class ServerContentDatabaseBootstrapper(
         ArgumentNullException.ThrowIfNull(options);
 
         await dbContext.Database.EnsureCreatedAsync(cancellationToken).ConfigureAwait(false);
+        await EnsureServerContentBaseSchemaAsync(cancellationToken).ConfigureAwait(false);
         await ApplyPublishedPackageCompatibilityUpdatesAsync(cancellationToken).ConfigureAwait(false);
 
         DateTimeOffset now = DateTimeOffset.UtcNow;
@@ -126,6 +127,199 @@ public sealed class ServerContentDatabaseBootstrapper(
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
     }
 
+    private async Task EnsureServerContentBaseSchemaAsync(CancellationToken cancellationToken)
+    {
+        if (!await TableExistsAsync("ClientProducts", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteCreateTableAsync(
+                    """
+                    CREATE TABLE "ClientProducts" (
+                        "Id" TEXT NOT NULL CONSTRAINT "PK_ClientProducts" PRIMARY KEY,
+                        "Key" TEXT NOT NULL,
+                        "DisplayName" TEXT NOT NULL,
+                        "LearningLanguageCode" TEXT NOT NULL,
+                        "DefaultUiLanguageCode" TEXT NOT NULL,
+                        "IsActive" INTEGER NOT NULL,
+                        "CreatedAtUtc" TEXT NOT NULL,
+                        "UpdatedAtUtc" TEXT NOT NULL
+                    );
+                    CREATE UNIQUE INDEX "IX_ClientProducts_Key" ON "ClientProducts" ("Key");
+                    """,
+                    """
+                    CREATE TABLE "ClientProducts" (
+                        "Id" uuid NOT NULL,
+                        "Key" character varying(128) NOT NULL,
+                        "DisplayName" character varying(256) NOT NULL,
+                        "LearningLanguageCode" character varying(16) NOT NULL,
+                        "DefaultUiLanguageCode" character varying(16) NOT NULL,
+                        "IsActive" boolean NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_ClientProducts" PRIMARY KEY ("Id")
+                    );
+                    CREATE UNIQUE INDEX "IX_ClientProducts_Key" ON "ClientProducts" ("Key");
+                    """,
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!await TableExistsAsync("ContentStreams", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteCreateTableAsync(
+                    """
+                    CREATE TABLE "ContentStreams" (
+                        "Id" TEXT NOT NULL CONSTRAINT "PK_ContentStreams" PRIMARY KEY,
+                        "ClientProductId" TEXT NOT NULL,
+                        "ContentAreaKey" TEXT NOT NULL,
+                        "SliceKey" TEXT NOT NULL,
+                        "LearningLanguageCode" TEXT NOT NULL,
+                        "SchemaVersion" INTEGER NOT NULL,
+                        "IsActive" INTEGER NOT NULL,
+                        "CreatedAtUtc" TEXT NOT NULL,
+                        "UpdatedAtUtc" TEXT NOT NULL,
+                        CONSTRAINT "FK_ContentStreams_ClientProducts_ClientProductId"
+                            FOREIGN KEY ("ClientProductId") REFERENCES "ClientProducts" ("Id") ON DELETE CASCADE
+                    );
+                    CREATE UNIQUE INDEX "IX_ContentStreams_ClientProductId_ContentAreaKey_SliceKey"
+                    ON "ContentStreams" ("ClientProductId", "ContentAreaKey", "SliceKey");
+                    """,
+                    """
+                    CREATE TABLE "ContentStreams" (
+                        "Id" uuid NOT NULL,
+                        "ClientProductId" uuid NOT NULL,
+                        "ContentAreaKey" character varying(128) NOT NULL,
+                        "SliceKey" character varying(128) NOT NULL,
+                        "LearningLanguageCode" character varying(16) NOT NULL,
+                        "SchemaVersion" integer NOT NULL,
+                        "IsActive" boolean NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_ContentStreams" PRIMARY KEY ("Id"),
+                        CONSTRAINT "FK_ContentStreams_ClientProducts_ClientProductId"
+                            FOREIGN KEY ("ClientProductId") REFERENCES "ClientProducts" ("Id") ON DELETE CASCADE
+                    );
+                    CREATE UNIQUE INDEX "IX_ContentStreams_ClientProductId_ContentAreaKey_SliceKey"
+                    ON "ContentStreams" ("ClientProductId", "ContentAreaKey", "SliceKey");
+                    """,
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!await TableExistsAsync("PublishedPackages", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteCreateTableAsync(
+                    """
+                    CREATE TABLE "PublishedPackages" (
+                        "Id" TEXT NOT NULL CONSTRAINT "PK_PublishedPackages" PRIMARY KEY,
+                        "PackageId" TEXT NOT NULL,
+                        "ContentStreamId" TEXT NOT NULL,
+                        "PackageType" TEXT NOT NULL,
+                        "Version" TEXT NOT NULL,
+                        "PublicationBatchId" TEXT NOT NULL,
+                        "PublicationStatus" TEXT NOT NULL,
+                        "SchemaVersion" INTEGER NOT NULL,
+                        "MinimumAppSchemaVersion" INTEGER NOT NULL,
+                        "Checksum" TEXT NOT NULL,
+                        "EntryCount" INTEGER NOT NULL,
+                        "WordCount" INTEGER NOT NULL,
+                        "RelativeDownloadPath" TEXT NOT NULL,
+                        "CreatedAtUtc" TEXT NOT NULL,
+                        "UpdatedAtUtc" TEXT NOT NULL,
+                        "PublishedAtUtc" TEXT NULL,
+                        "SupersededAtUtc" TEXT NULL,
+                        CONSTRAINT "FK_PublishedPackages_ContentStreams_ContentStreamId"
+                            FOREIGN KEY ("ContentStreamId") REFERENCES "ContentStreams" ("Id") ON DELETE CASCADE
+                    );
+                    CREATE UNIQUE INDEX "IX_PublishedPackages_PackageId" ON "PublishedPackages" ("PackageId");
+                    CREATE INDEX "IX_PublishedPackages_ContentStreamId_PublicationStatus_CreatedAtUtc"
+                    ON "PublishedPackages" ("ContentStreamId", "PublicationStatus", "CreatedAtUtc");
+                    """,
+                    """
+                    CREATE TABLE "PublishedPackages" (
+                        "Id" uuid NOT NULL,
+                        "PackageId" character varying(256) NOT NULL,
+                        "ContentStreamId" uuid NOT NULL,
+                        "PackageType" character varying(128) NOT NULL,
+                        "Version" character varying(64) NOT NULL,
+                        "PublicationBatchId" character varying(128) NOT NULL,
+                        "PublicationStatus" character varying(32) NOT NULL,
+                        "SchemaVersion" integer NOT NULL,
+                        "MinimumAppSchemaVersion" integer NOT NULL,
+                        "Checksum" character varying(256) NOT NULL,
+                        "EntryCount" integer NOT NULL,
+                        "WordCount" integer NOT NULL,
+                        "RelativeDownloadPath" character varying(512) NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                        "PublishedAtUtc" timestamp with time zone NULL,
+                        "SupersededAtUtc" timestamp with time zone NULL,
+                        CONSTRAINT "PK_PublishedPackages" PRIMARY KEY ("Id"),
+                        CONSTRAINT "FK_PublishedPackages_ContentStreams_ContentStreamId"
+                            FOREIGN KEY ("ContentStreamId") REFERENCES "ContentStreams" ("Id") ON DELETE CASCADE
+                    );
+                    CREATE UNIQUE INDEX "IX_PublishedPackages_PackageId" ON "PublishedPackages" ("PackageId");
+                    CREATE INDEX "IX_PublishedPackages_ContentStreamId_PublicationStatus_CreatedAtUtc"
+                    ON "PublishedPackages" ("ContentStreamId", "PublicationStatus", "CreatedAtUtc");
+                    """,
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!await TableExistsAsync("ContentImportReceipts", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteCreateTableAsync(
+                    """
+                    CREATE TABLE "ContentImportReceipts" (
+                        "Id" TEXT NOT NULL CONSTRAINT "PK_ContentImportReceipts" PRIMARY KEY,
+                        "ClientProductKey" TEXT NOT NULL,
+                        "SourceFilePath" TEXT NOT NULL,
+                        "SourceFileName" TEXT NOT NULL,
+                        "ImportedPackageId" TEXT NULL,
+                        "ImportedPackageName" TEXT NULL,
+                        "ImportStatus" TEXT NOT NULL,
+                        "TotalEntries" INTEGER NOT NULL,
+                        "ImportedEntries" INTEGER NOT NULL,
+                        "SkippedDuplicateEntries" INTEGER NOT NULL,
+                        "InvalidEntries" INTEGER NOT NULL,
+                        "WarningCount" INTEGER NOT NULL,
+                        "IssueSummary" TEXT NOT NULL,
+                        "DraftPublicationBatchId" TEXT NULL,
+                        "PublishedPackageCount" INTEGER NOT NULL,
+                        "PublishedPackageIds" TEXT NOT NULL,
+                        "CreatedAtUtc" TEXT NOT NULL,
+                        "UpdatedAtUtc" TEXT NOT NULL
+                    );
+                    CREATE INDEX "IX_ContentImportReceipts_CreatedAtUtc" ON "ContentImportReceipts" ("CreatedAtUtc");
+                    """,
+                    """
+                    CREATE TABLE "ContentImportReceipts" (
+                        "Id" uuid NOT NULL,
+                        "ClientProductKey" character varying(128) NOT NULL,
+                        "SourceFilePath" character varying(1024) NOT NULL,
+                        "SourceFileName" character varying(256) NOT NULL,
+                        "ImportedPackageId" character varying(256) NULL,
+                        "ImportedPackageName" character varying(256) NULL,
+                        "ImportStatus" character varying(64) NOT NULL,
+                        "TotalEntries" integer NOT NULL,
+                        "ImportedEntries" integer NOT NULL,
+                        "SkippedDuplicateEntries" integer NOT NULL,
+                        "InvalidEntries" integer NOT NULL,
+                        "WarningCount" integer NOT NULL,
+                        "IssueSummary" character varying(4000) NOT NULL,
+                        "DraftPublicationBatchId" character varying(128) NULL,
+                        "PublishedPackageCount" integer NOT NULL,
+                        "PublishedPackageIds" character varying(4000) NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_ContentImportReceipts" PRIMARY KEY ("Id")
+                    );
+                    CREATE INDEX "IX_ContentImportReceipts_CreatedAtUtc" ON "ContentImportReceipts" ("CreatedAtUtc");
+                    """,
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+    }
+
     private async Task ApplyPublishedPackageCompatibilityUpdatesAsync(CancellationToken cancellationToken)
     {
         if (!await ColumnExistsAsync("PublishedPackages", "PublicationBatchId", cancellationToken).ConfigureAwait(false))
@@ -200,6 +394,24 @@ public sealed class ServerContentDatabaseBootstrapper(
                 .ConfigureAwait(false);
         }
 
+        if (!await ColumnExistsAsync("ContentImportReceipts", "PublishedPackageCount", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteColumnAddAsync(
+                    """ALTER TABLE "ContentImportReceipts" ADD COLUMN "PublishedPackageCount" INTEGER NOT NULL DEFAULT 0;""",
+                    """ALTER TABLE "ContentImportReceipts" ADD COLUMN "PublishedPackageCount" integer NOT NULL DEFAULT 0;""",
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!await ColumnExistsAsync("ContentImportReceipts", "UpdatedAtUtc", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteColumnAddAsync(
+                    """ALTER TABLE "ContentImportReceipts" ADD COLUMN "UpdatedAtUtc" TEXT NULL;""",
+                    """ALTER TABLE "ContentImportReceipts" ADD COLUMN "UpdatedAtUtc" timestamp with time zone NULL;""",
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
         await dbContext.Database.ExecuteSqlRawAsync(
                 """UPDATE "PublishedPackages" SET "PublicationBatchId" = COALESCE(NULLIF("PublicationBatchId", ''), "Version", "PackageId");""",
                 cancellationToken)
@@ -210,6 +422,10 @@ public sealed class ServerContentDatabaseBootstrapper(
             .ConfigureAwait(false);
         await dbContext.Database.ExecuteSqlRawAsync(
                 """UPDATE "PublishedPackages" SET "PublishedAtUtc" = COALESCE("PublishedAtUtc", "CreatedAtUtc") WHERE "PublicationStatus" = 'Published';""",
+                cancellationToken)
+            .ConfigureAwait(false);
+        await dbContext.Database.ExecuteSqlRawAsync(
+                """UPDATE "ContentImportReceipts" SET "UpdatedAtUtc" = COALESCE("UpdatedAtUtc", "CreatedAtUtc");""",
                 cancellationToken)
             .ConfigureAwait(false);
     }

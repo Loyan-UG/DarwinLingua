@@ -338,7 +338,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                 table: "ExampleSentences",
                 column: "WordSenseId",
                 unique: true,
-                filter: "[IsPrimaryExample] = 1");
+                filter: "\"IsPrimaryExample\"");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ExampleTranslations_ExampleSentenceId_LanguageCode",
@@ -363,7 +363,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                 table: "SenseTranslations",
                 column: "WordSenseId",
                 unique: true,
-                filter: "[IsPrimary] = 1");
+                filter: "\"IsPrimary\"");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TopicLocalizations_TopicId_LanguageCode",
@@ -433,14 +433,14 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                 table: "WordSenses",
                 column: "WordEntryId",
                 unique: true,
-                filter: "[IsPrimarySense] = 1");
+                filter: "\"IsPrimarySense\"");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WordTopics_PrimaryPerWordEntry",
                 table: "WordTopics",
                 column: "WordEntryId",
                 unique: true,
-                filter: "[IsPrimaryTopic] = 1");
+                filter: "\"IsPrimaryTopic\"");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WordTopics_WordEntryId_TopicId",

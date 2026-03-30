@@ -26,6 +26,23 @@ function Assert-PathExists {
     }
 }
 
+function Resolve-WebApiSettingsPath {
+    param([string]$WorkspaceRoot)
+
+    $candidatePaths = @(
+        (Join-Path $WorkspaceRoot "src\Apps\DarwinLingua.WebApi\appsettings.Development.Local.json"),
+        (Join-Path $WorkspaceRoot "src\Apps\DarwinLingua.WebApi\appsettings.Development.json")
+    )
+
+    foreach ($candidatePath in $candidatePaths) {
+        if (Test-Path -LiteralPath $candidatePath) {
+            return $candidatePath
+        }
+    }
+
+    throw "Local Web API settings not found. Expected one of: $($candidatePaths -join ', ')"
+}
+
 function Wait-ForHealth {
     param(
         [string]$HealthUrl,
@@ -36,7 +53,7 @@ function Wait-ForHealth {
     do {
         try {
             $response = Invoke-RestMethod -Uri $HealthUrl -Method Get -TimeoutSec 5
-            if ($response.status -eq "Healthy") {
+            if ($response.status -in @("Healthy", "ok", "OK")) {
                 return
             }
         }
@@ -46,6 +63,34 @@ function Wait-ForHealth {
     } while ((Get-Date) -lt $deadline)
 
     throw "Web API did not become healthy within $TimeoutSeconds seconds. Checked: $HealthUrl"
+}
+
+function Invoke-JsonRequest {
+    param(
+        [string]$Uri,
+        [string]$Method,
+        [string]$Body
+    )
+
+    try {
+        return Invoke-RestMethod -Uri $Uri -Method $Method -ContentType "application/json" -Body $Body
+    }
+    catch {
+        $response = $_.Exception.Response
+        if ($null -eq $response) {
+            throw
+        }
+
+        $reader = New-Object System.IO.StreamReader($response.GetResponseStream())
+        $errorBody = $reader.ReadToEnd()
+        $statusCode = try { [int]$response.StatusCode } catch { 0 }
+
+        if (-not [string]::IsNullOrWhiteSpace($errorBody)) {
+            throw "Request to $Uri failed with status $statusCode. Body: $errorBody"
+        }
+
+        throw "Request to $Uri failed with status $statusCode."
+    }
 }
 
 function Get-JsonFiles {
@@ -60,9 +105,9 @@ function Get-JsonFiles {
     }
 
     if (Test-Path -LiteralPath $TargetPath -PathType Container) {
-        $jsonFiles = Get-ChildItem -LiteralPath $TargetPath -Filter *.json -File -Recurse |
+        $jsonFiles = @(Get-ChildItem -LiteralPath $TargetPath -Filter *.json -File -Recurse |
             Sort-Object FullName |
-            Select-Object -ExpandProperty FullName
+            Select-Object -ExpandProperty FullName)
 
         if ($jsonFiles.Count -eq 0) {
             throw "No .json files were found under: $TargetPath"
@@ -75,9 +120,8 @@ function Get-JsonFiles {
 }
 
 $workspaceRoot = (Resolve-Path ".").Path
-$localSettingsPath = Join-Path $workspaceRoot "src\Apps\DarwinLingua.WebApi\appsettings.Development.Local.json"
-
-Assert-PathExists -Path $localSettingsPath -Description "Local Web API settings"
+$localSettingsPath = Resolve-WebApiSettingsPath -WorkspaceRoot $workspaceRoot
+Write-Step "Using Web API settings file: $localSettingsPath"
 
 $contentFiles = Get-JsonFiles -TargetPath $ContentPath
 $webApiProjectFullPath = Join-Path $workspaceRoot $WebApiProjectPath
@@ -88,11 +132,12 @@ $webApiProcess = $null
 try {
     if ($StartWebApi.IsPresent) {
         Write-Step "Starting Web API in a separate process"
+        $startupCommand = '$env:ASPNETCORE_ENVIRONMENT=''Development''; $env:DOTNET_ENVIRONMENT=''Development''; $env:ASPNETCORE_URLS=''{1}''; dotnet run --project "{0}" --no-launch-profile' -f $webApiProjectFullPath, $ApiBaseUrl
         $webApiProcess = Start-Process powershell `
             -ArgumentList @(
                 "-NoProfile",
                 "-ExecutionPolicy", "Bypass",
-                "-Command", "dotnet run --project `"$webApiProjectFullPath`" --no-launch-profile"
+                "-Command", $startupCommand
             ) `
             -WorkingDirectory $workspaceRoot `
             -PassThru
@@ -109,10 +154,9 @@ try {
             clientProductKey = $ClientProductKey
         } | ConvertTo-Json
 
-        $importResponse = Invoke-RestMethod `
+        $importResponse = Invoke-JsonRequest `
             -Uri "$ApiBaseUrl/api/admin/content/catalog/import" `
             -Method Post `
-            -ContentType "application/json" `
             -Body $importBody
 
         if (-not $importResponse.isSuccess) {
@@ -131,10 +175,9 @@ try {
         publicationBatchId = $latestBatchId
     } | ConvertTo-Json
 
-    $publishResponse = Invoke-RestMethod `
+    $publishResponse = Invoke-JsonRequest `
         -Uri "$ApiBaseUrl/api/admin/content/catalog/publish" `
         -Method Post `
-        -ContentType "application/json" `
         -Body $publishBody
 
     if (-not $publishResponse.isSuccess) {

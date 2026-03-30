@@ -39,7 +39,7 @@ internal sealed class WordTopicConfiguration : IEntityTypeConfiguration<WordTopi
         builder.HasIndex(topic => topic.WordEntryId)
             .HasDatabaseName("IX_WordTopics_PrimaryPerWordEntry")
             .IsUnique()
-            .HasFilter($"[{nameof(WordTopic.IsPrimaryTopic)}] = 1");
+            .HasFilter($"\"{nameof(WordTopic.IsPrimaryTopic)}\"");
 
         builder.HasOne<Topic>()
             .WithMany()

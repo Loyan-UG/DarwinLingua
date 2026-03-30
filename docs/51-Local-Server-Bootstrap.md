@@ -15,12 +15,15 @@ Use it after:
 ## Prerequisites
 
 1. Complete `docs/49-Local-Postgres-Setup.md`.
-2. Create `src/Apps/DarwinLingua.WebApi/appsettings.Development.Local.json` from:
-   - `src/Apps/DarwinLingua.WebApi/appsettings.Development.Local.example.json`
-3. Put the real PostgreSQL passwords only in:
+2. Ensure one of these files exists:
+   - preferred: `src/Apps/DarwinLingua.WebApi/appsettings.Development.Local.json`
+   - accepted fallback: `src/Apps/DarwinLingua.WebApi/appsettings.Development.json`
+3. If you want the preferred local-only setup, create:
    - `src/Apps/DarwinLingua.WebApi/appsettings.Development.Local.json`
+   - from `src/Apps/DarwinLingua.WebApi/appsettings.Development.Local.example.json`
+4. Put the real PostgreSQL passwords only in your active local config file and in:
    - `tools/Server/Postgres/.env`
-4. Ensure your content files exist, for example:
+5. Ensure your content files exist, for example:
    - `D:\_Projects\DarwinLingua.Content\A1.json`
    - or a folder such as `D:\_Projects\DarwinLingua.Content`
 
@@ -30,7 +33,7 @@ Use it after:
 
 `tools/Server/Initialize-LocalServerContent.ps1` performs this flow:
 
-1. verifies that local Web API settings exist
+1. verifies that a usable local Web API settings file exists
 2. optionally starts the Web API
 3. waits for `/health`
 4. imports one JSON file or every JSON file in a folder

@@ -50,7 +50,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.HasIndex("WordSenseId")
                         .IsUnique()
                         .HasDatabaseName("IX_ExampleSentences_PrimaryPerSense")
-                        .HasFilter("[IsPrimaryExample] = 1");
+                        .HasFilter("\"IsPrimaryExample\"");
 
                     b.HasIndex("WordSenseId", "SentenceOrder")
                         .IsUnique();
@@ -122,7 +122,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.HasIndex("WordSenseId")
                         .IsUnique()
                         .HasDatabaseName("IX_SenseTranslations_PrimaryPerSense")
-                        .HasFilter("[IsPrimary] = 1");
+                        .HasFilter("\"IsPrimary\"");
 
                     b.HasIndex("WordSenseId", "LanguageCode")
                         .IsUnique();
@@ -461,7 +461,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.HasIndex("WordEntryId")
                         .IsUnique()
                         .HasDatabaseName("IX_WordSenses_PrimaryPerWordEntry")
-                        .HasFilter("[IsPrimarySense] = 1");
+                        .HasFilter("\"IsPrimarySense\"");
 
                     b.HasIndex("WordEntryId", "SenseOrder")
                         .IsUnique();
@@ -493,7 +493,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.HasIndex("WordEntryId")
                         .IsUnique()
                         .HasDatabaseName("IX_WordTopics_PrimaryPerWordEntry")
-                        .HasFilter("[IsPrimaryTopic] = 1");
+                        .HasFilter("\"IsPrimaryTopic\"");
 
                     b.HasIndex("WordEntryId", "TopicId")
                         .IsUnique();
