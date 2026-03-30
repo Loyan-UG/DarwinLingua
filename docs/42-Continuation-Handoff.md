@@ -64,6 +64,7 @@ Use it when:
 - The ninth Phase 5 slice now adds lightweight admin draft-management visibility: `GET /api/admin/content/catalog/drafts` lists staged and published package batches, and `GET /api/admin/content/catalog/drafts/{publicationBatchId}` exposes one batch with package-level metadata.
 - The tenth Phase 5 slice now adds a cleanup flow for superseded server package batches: `DELETE /api/admin/content/catalog/drafts/{publicationBatchId}` removes only `Superseded` batches and deletes their payload files from package storage.
 - The eleventh Phase 5 slice now adds publish-history visibility for admin operations: `GET /api/admin/content/catalog/history` returns draft/published/superseded batch history, and `GET /api/admin/content/catalog/history/summary` exposes lifecycle and retention counts per product.
+- The twelfth Phase 5 slice now records recent remote update attempts on-device and shows the last few `full`, `catalog`, and `CEFR` update runs in Settings, including applied/current/failed outcomes.
 - Manual/device-bound Phase 5 remote-update validation now has a dedicated worksheet in `docs/50-Phase-5-Remote-Update-Validation-Worksheet.md`.
 - The shared mobile validation bundle now also includes the Phase 5 remote-update worksheet through `tools/Mobile/Start-MobileValidationBundle.ps1`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
@@ -73,7 +74,7 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the twelfth executable Phase 5 slice: execute device validation and decide the remaining support-layer polish after publish-history visibility landed.
+Focus next on the thirteenth executable Phase 5 slice: execute device validation and decide the remaining support-layer polish after mobile update history landed.
 
 Suggested scope:
 

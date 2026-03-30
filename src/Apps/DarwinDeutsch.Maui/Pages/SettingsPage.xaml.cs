@@ -127,6 +127,7 @@ public partial class SettingsPage : ContentPage
         RemoteContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
         RemoteContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
         RemoteContentUpdateDiagnosticsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDiagnosticsLabel;
+        RemoteContentUpdateHistorySectionView.SectionTitle = AppStrings.SettingsRemoteContentUpdatesHistoryLabel;
         CatalogAreaUpdateSectionView.SectionTitle = AppStrings.SettingsRemoteCatalogAreaTitle;
         CefrA1UpdateSectionView.SectionTitle = "A1";
         CefrA2UpdateSectionView.SectionTitle = "A2";
@@ -212,6 +213,9 @@ public partial class SettingsPage : ContentPage
         RemoteContentUpdateStatus remoteContentUpdateStatus = await _remoteContentUpdateService
             .GetUpdateStatusAsync(GetLocalDatabasePath(), CancellationToken.None)
             .ConfigureAwait(true);
+        IReadOnlyList<RemoteContentUpdateHistoryEntry> remoteUpdateHistory = await _remoteContentUpdateService
+            .GetRecentUpdateHistoryAsync(CancellationToken.None)
+            .ConfigureAwait(true);
         Dictionary<string, RemoteContentUpdateStatus> cefrUpdateStatuses = await LoadCefrUpdateStatusesAsync().ConfigureAwait(true);
 
         ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
@@ -225,6 +229,7 @@ public partial class SettingsPage : ContentPage
         RemoteContentUpdateStatusSectionView.SectionValue = BuildRemoteContentUpdateStatus(remoteContentUpdateStatus);
         RemoteContentUpdateDetailsSectionView.SectionValue = BuildRemoteContentUpdateDetails(remoteContentUpdateStatus);
         RemoteContentUpdateDiagnosticsSectionView.SectionValue = BuildRemoteContentUpdateDiagnostics(remoteContentUpdateStatus);
+        RemoteContentUpdateHistorySectionView.SectionValue = BuildRemoteContentUpdateHistory(remoteUpdateHistory);
         ApplyRemoteUpdateButton.IsEnabled = remoteContentUpdateStatus.IsRemoteConfigured && remoteContentUpdateStatus.IsServerReachable && !_isApplyingRemoteUpdate;
         ApplyRemoteUpdateButton.Text = remoteContentUpdateStatus.IsUpdateAvailable
             ? AppStrings.SettingsRemoteContentUpdatesApplyButton
@@ -716,6 +721,72 @@ public partial class SettingsPage : ContentPage
             string.Format(AppStrings.SettingsRemoteContentUpdatesManifestGeneratedAtFormat, remoteManifestGeneratedAt),
             string.Format(AppStrings.SettingsRemoteContentUpdatesLastUpdatedAtFormat, lastUpdatedAt),
             string.Format(AppStrings.SettingsRemoteContentUpdatesLastFailureFormat, lastFailure));
+    }
+
+    private static string BuildRemoteContentUpdateHistory(IReadOnlyList<RemoteContentUpdateHistoryEntry> historyEntries)
+    {
+        ArgumentNullException.ThrowIfNull(historyEntries);
+
+        if (historyEntries.Count == 0)
+        {
+            return AppStrings.SettingsRemoteContentUpdatesHistoryEmpty;
+        }
+
+        return string.Join(
+            Environment.NewLine,
+            historyEntries
+                .Take(5)
+                .Select(BuildRemoteContentUpdateHistoryLine));
+    }
+
+    private static string BuildRemoteContentUpdateHistoryLine(RemoteContentUpdateHistoryEntry entry)
+    {
+        string occurredAt = entry.OccurredAtUtc.ToLocalTime().ToString("g");
+        string scopeName = BuildRemoteScopeDisplayName(entry.ScopeKey);
+
+        if (!entry.IsSuccess)
+        {
+            return string.Format(
+                AppStrings.SettingsRemoteContentUpdatesHistoryFailedFormat,
+                occurredAt,
+                scopeName,
+                string.IsNullOrWhiteSpace(entry.ErrorMessage) ? AppStrings.SettingsRemoteContentUpdatesUnavailableStatus : entry.ErrorMessage);
+        }
+
+        if (!entry.AppliedChanges)
+        {
+            return string.Format(
+                AppStrings.SettingsRemoteContentUpdatesHistoryCurrentFormat,
+                occurredAt,
+                scopeName);
+        }
+
+        return string.Format(
+            AppStrings.SettingsRemoteContentUpdatesHistoryAppliedFormat,
+            occurredAt,
+            scopeName,
+            string.IsNullOrWhiteSpace(entry.Version) ? AppStrings.SettingsContentUpdatesUnknownSignatureValue : entry.Version,
+            entry.ImportedWords);
+    }
+
+    private static string BuildRemoteScopeDisplayName(string scopeKey)
+    {
+        if (string.Equals(scopeKey, "all-full", StringComparison.OrdinalIgnoreCase))
+        {
+            return AppStrings.SettingsRemoteFullDatabaseTitle;
+        }
+
+        if (string.Equals(scopeKey, "catalog-full", StringComparison.OrdinalIgnoreCase))
+        {
+            return AppStrings.SettingsRemoteCatalogAreaTitle;
+        }
+
+        if (scopeKey.StartsWith("catalog-cefr-", StringComparison.OrdinalIgnoreCase))
+        {
+            return scopeKey["catalog-cefr-".Length..].ToUpperInvariant();
+        }
+
+        return scopeKey;
     }
 
     private static string BuildRemoteScopeSummary(RemoteContentUpdateStatus remoteContentUpdateStatus)

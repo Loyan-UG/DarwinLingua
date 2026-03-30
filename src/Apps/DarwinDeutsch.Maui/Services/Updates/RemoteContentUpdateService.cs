@@ -1,5 +1,6 @@
 using System.Data.Common;
 using System.Net.Http.Json;
+using System.Text.Json;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
@@ -18,10 +19,18 @@ internal sealed class RemoteContentUpdateService(
     HttpClient httpClient,
     RemoteContentUpdateOptions options) : IRemoteContentUpdateService
 {
+    private const string UpdateHistoryPreferenceKey = "remote-content-update-history-v1";
+    private const int MaxHistoryEntries = 12;
     private const string LegacyLastRemotePackageIdPreferenceKey = "remote-content-last-package-id";
     private const string LegacyLastRemotePackageVersionPreferenceKey = "remote-content-last-package-version";
     private const string LegacyLastRemoteSuccessAtPreferenceKey = "remote-content-last-success-at-utc";
     private const string LegacyLastRemoteFailureMessagePreferenceKey = "remote-content-last-failure-message";
+
+    public Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> GetRecentUpdateHistoryAsync(CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return Task.FromResult<IReadOnlyList<RemoteContentUpdateHistoryEntry>>(LoadUpdateHistory());
+    }
 
     public Task<RemoteContentUpdateStatus> GetUpdateStatusAsync(string databasePath, CancellationToken cancellationToken) =>
         GetUpdateStatusCoreAsync(databasePath, RemoteUpdateScope.FullDatabase, cancellationToken);
@@ -184,7 +193,9 @@ internal sealed class RemoteContentUpdateService(
             if (string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase))
             {
                 PersistLastFailure(scope, string.Empty);
-                return new RemoteContentUpdateResult(true, false, remotePackage.PackageId, remotePackage.Version, 0, GetLastSuccessfulUpdateAtUtc(scope), null);
+                RemoteContentUpdateResult currentResult = new(true, false, remotePackage.PackageId, remotePackage.Version, 0, GetLastSuccessfulUpdateAtUtc(scope), null);
+                RecordHistoryEntry(scope, currentResult);
+                return currentResult;
             }
 
             await DownloadPackageAsync(scope, remotePackage.PackageId, tempJsonPath, cancellationToken).ConfigureAwait(false);
@@ -199,13 +210,16 @@ internal sealed class RemoteContentUpdateService(
 
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistScopeReceipts(scope, manifest, remotePackage, appliedAtUtc);
-
-            return new RemoteContentUpdateResult(true, true, remotePackage.PackageId, remotePackage.Version, importedWords, appliedAtUtc, null);
+            RemoteContentUpdateResult appliedResult = new(true, true, remotePackage.PackageId, remotePackage.Version, importedWords, appliedAtUtc, null);
+            RecordHistoryEntry(scope, appliedResult);
+            return appliedResult;
         }
         catch (Exception exception) when (exception is HttpRequestException or TaskCanceledException or IOException or UnauthorizedAccessException or SqliteException or InvalidOperationException)
         {
             PersistLastFailure(scope, exception.Message);
-            return new RemoteContentUpdateResult(false, false, string.Empty, string.Empty, 0, null, exception.Message);
+            RemoteContentUpdateResult failedResult = new(false, false, string.Empty, string.Empty, 0, null, exception.Message);
+            RecordHistoryEntry(scope, failedResult);
+            return failedResult;
         }
         finally
         {
@@ -482,6 +496,51 @@ internal sealed class RemoteContentUpdateService(
 
         Preferences.Default.Set(preferenceKey, message);
         if (scope == RemoteUpdateScope.FullDatabase) { Preferences.Default.Set(LegacyLastRemoteFailureMessagePreferenceKey, message); }
+    }
+
+    private static IReadOnlyList<RemoteContentUpdateHistoryEntry> LoadUpdateHistory()
+    {
+        string rawHistory = Preferences.Default.Get(UpdateHistoryPreferenceKey, string.Empty);
+        if (string.IsNullOrWhiteSpace(rawHistory))
+        {
+            return [];
+        }
+
+        try
+        {
+            RemoteContentUpdateHistoryEntry[]? entries = JsonSerializer.Deserialize<RemoteContentUpdateHistoryEntry[]>(rawHistory);
+            return entries ?? [];
+        }
+        catch (JsonException)
+        {
+            Preferences.Default.Remove(UpdateHistoryPreferenceKey);
+            return [];
+        }
+    }
+
+    private static void RecordHistoryEntry(RemoteUpdateScope scope, RemoteContentUpdateResult result)
+    {
+        List<RemoteContentUpdateHistoryEntry> entries = LoadUpdateHistory()
+            .Take(MaxHistoryEntries)
+            .ToList();
+
+        DateTimeOffset occurredAtUtc = result.AppliedAtUtc ?? DateTimeOffset.UtcNow;
+        entries.Insert(0, new RemoteContentUpdateHistoryEntry(
+            scope.ScopeKey,
+            result.IsSuccess,
+            result.AppliedChanges,
+            result.AppliedPackageId,
+            result.AppliedVersion,
+            result.ImportedWords,
+            occurredAtUtc,
+            result.ErrorMessage ?? string.Empty));
+
+        if (entries.Count > MaxHistoryEntries)
+        {
+            entries.RemoveRange(MaxHistoryEntries, entries.Count - MaxHistoryEntries);
+        }
+
+        Preferences.Default.Set(UpdateHistoryPreferenceKey, JsonSerializer.Serialize(entries));
     }
 
     private static string BuildPreferenceKey(RemoteUpdateScope scope, string suffix) => $"remote-content-{scope.ScopeKey}-{suffix}";

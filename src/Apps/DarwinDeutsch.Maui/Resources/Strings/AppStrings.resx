@@ -704,6 +704,21 @@
   <data name="SettingsRemoteContentUpdatesNoFailureValue" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="SettingsRemoteContentUpdatesHistoryLabel" xml:space="preserve">
+    <value>Recent update history</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesHistoryEmpty" xml:space="preserve">
+    <value>No remote update attempts have been recorded on this device yet.</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesHistoryAppliedFormat" xml:space="preserve">
+    <value>{0}: {1} updated to {2} ({3} words)</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesHistoryCurrentFormat" xml:space="preserve">
+    <value>{0}: {1} was already current</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesHistoryFailedFormat" xml:space="preserve">
+    <value>{0}: {1} failed ({2})</value>
+  </data>
   <data name="SettingsRemoteContentUpdatesCompletedTitle" xml:space="preserve">
     <value>Server Content Updated</value>
   </data>

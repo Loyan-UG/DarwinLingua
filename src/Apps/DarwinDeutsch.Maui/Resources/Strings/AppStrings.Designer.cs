@@ -1288,6 +1288,31 @@ public static class AppStrings
     public static string SettingsRemoteContentUpdatesNoFailureValue => GetRequiredString(nameof(SettingsRemoteContentUpdatesNoFailureValue));
 
     /// <summary>
+    /// Gets the localized section title shown for recent remote update history.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesHistoryLabel => GetRequiredString(nameof(SettingsRemoteContentUpdatesHistoryLabel));
+
+    /// <summary>
+    /// Gets the localized fallback shown when no remote update history exists yet.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesHistoryEmpty => GetRequiredString(nameof(SettingsRemoteContentUpdatesHistoryEmpty));
+
+    /// <summary>
+    /// Gets the localized format used for a successful applied remote update history line.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesHistoryAppliedFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesHistoryAppliedFormat));
+
+    /// <summary>
+    /// Gets the localized format used when a remote update scope was already current.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesHistoryCurrentFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesHistoryCurrentFormat));
+
+    /// <summary>
+    /// Gets the localized format used for a failed remote update history line.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesHistoryFailedFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesHistoryFailedFormat));
+
+    /// <summary>
     /// Gets the localized dialog title shown after a successful remote content update.
     /// </summary>
     public static string SettingsRemoteContentUpdatesCompletedTitle => GetRequiredString(nameof(SettingsRemoteContentUpdatesCompletedTitle));

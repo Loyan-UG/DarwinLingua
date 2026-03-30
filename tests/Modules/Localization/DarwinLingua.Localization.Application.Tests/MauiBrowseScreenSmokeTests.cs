@@ -81,6 +81,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("RemoteContentUpdateStatusSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("RemoteContentUpdateDetailsSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("RemoteContentUpdateDiagnosticsSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("RemoteContentUpdateHistorySectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ApplyRemoteUpdateButton", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CatalogAreaUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CatalogAreaUpdateSectionView", xamlSource, StringComparison.Ordinal);
@@ -106,6 +107,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("GetCefrUpdateStatusAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildRemoteContentUpdateStatus", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildRemoteContentUpdateDiagnostics", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("BuildRemoteContentUpdateHistory", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("GetRecentUpdateHistoryAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SettingsRemoteContentUpdatesScopeFormat", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SettingsRemoteContentUpdatesRemoteChecksumFormat", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SettingsRemoteContentUpdatesManifestGeneratedAtFormat", codeBehindSource, StringComparison.Ordinal);

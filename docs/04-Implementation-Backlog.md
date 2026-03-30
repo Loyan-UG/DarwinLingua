@@ -375,6 +375,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] implement transactional application of downloaded packages into local SQLite
 - [x] preserve favorites, preferences, word state, and practice state during shared-content updates
 - [x] add diagnostics for local version, remote version, last update time, and last update failure
+- [x] add recent local update history visibility for remote update attempts
 
 ### 30. Settings Update UX
 

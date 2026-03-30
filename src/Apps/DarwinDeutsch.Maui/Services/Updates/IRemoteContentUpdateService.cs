@@ -5,6 +5,9 @@ namespace DarwinDeutsch.Maui.Services.Updates;
 /// </summary>
 public interface IRemoteContentUpdateService
 {
+    Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> GetRecentUpdateHistoryAsync(
+        CancellationToken cancellationToken);
+
     Task<RemoteContentUpdateStatus> GetUpdateStatusAsync(
         string databasePath,
         CancellationToken cancellationToken);
