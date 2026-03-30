@@ -61,20 +61,31 @@ internal sealed class RemoteContentUpdateService(
             if (remotePackage is null)
             {
                 return new RemoteContentUpdateStatus(
+                    scope.ScopeKey,
+                    scope.ContentAreaKey,
+                    scope.SliceKey,
+                    scope.PackageType,
                     true,
                     true,
                     false,
                     await GetLocalPackageIdAsync(databasePath, scope, cancellationToken).ConfigureAwait(false),
                     GetLastAppliedVersion(scope),
+                    GetLastAppliedChecksum(scope),
+                    GetLastAppliedSchemaVersion(scope),
+                    string.Empty,
                     string.Empty,
                     string.Empty,
                     0,
+                    0,
+                    manifest?.GeneratedAtUtc,
                     GetLastSuccessfulUpdateAtUtc(scope),
                     GetLastFailureMessage(scope));
             }
 
             string localPackageId = await GetLocalPackageIdAsync(databasePath, scope, cancellationToken).ConfigureAwait(false);
             string localVersion = GetLastAppliedVersion(scope);
+            string localChecksum = GetLastAppliedChecksum(scope);
+            int localSchemaVersion = GetLastAppliedSchemaVersion(scope);
 
             if (string.IsNullOrWhiteSpace(localVersion) &&
                 !string.IsNullOrWhiteSpace(localPackageId) &&
@@ -83,16 +94,39 @@ internal sealed class RemoteContentUpdateService(
                 localVersion = remotePackage.Version;
             }
 
+            if (string.IsNullOrWhiteSpace(localChecksum) &&
+                !string.IsNullOrWhiteSpace(localPackageId) &&
+                string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase))
+            {
+                localChecksum = remotePackage.Checksum;
+            }
+
+            if (localSchemaVersion <= 0 &&
+                !string.IsNullOrWhiteSpace(localPackageId) &&
+                string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase))
+            {
+                localSchemaVersion = remotePackage.SchemaVersion;
+            }
+
             bool updateAvailable = !string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase);
             return new RemoteContentUpdateStatus(
+                scope.ScopeKey,
+                scope.ContentAreaKey,
+                scope.SliceKey,
+                remotePackage.PackageType,
                 true,
                 true,
                 updateAvailable,
                 localPackageId,
                 localVersion,
+                localChecksum,
+                localSchemaVersion,
                 remotePackage.PackageId,
                 remotePackage.Version,
+                remotePackage.Checksum,
+                remotePackage.SchemaVersion,
                 updateAvailable ? remotePackage.WordCount : 0,
+                manifest?.GeneratedAtUtc,
                 GetLastSuccessfulUpdateAtUtc(scope),
                 GetLastFailureMessage(scope));
         }
@@ -101,14 +135,23 @@ internal sealed class RemoteContentUpdateService(
             PersistLastFailure(scope, exception.Message);
 
             return new RemoteContentUpdateStatus(
+                scope.ScopeKey,
+                scope.ContentAreaKey,
+                scope.SliceKey,
+                scope.PackageType,
                 true,
                 false,
                 false,
                 GetLastAppliedPackageId(scope),
                 GetLastAppliedVersion(scope),
+                GetLastAppliedChecksum(scope),
+                GetLastAppliedSchemaVersion(scope),
+                string.Empty,
                 string.Empty,
                 string.Empty,
                 0,
+                0,
+                null,
                 GetLastSuccessfulUpdateAtUtc(scope),
                 GetLastFailureMessage(scope));
         }
@@ -174,14 +217,23 @@ internal sealed class RemoteContentUpdateService(
 
     private static RemoteContentUpdateStatus CreateUnavailableStatus(RemoteUpdateScope scope) =>
         new(
+            scope.ScopeKey,
+            scope.ContentAreaKey,
+            scope.SliceKey,
+            scope.PackageType,
             false,
             false,
             false,
             GetLastAppliedPackageId(scope),
             GetLastAppliedVersion(scope),
+            GetLastAppliedChecksum(scope),
+            GetLastAppliedSchemaVersion(scope),
+            string.Empty,
             string.Empty,
             string.Empty,
             0,
+            0,
+            null,
             GetLastSuccessfulUpdateAtUtc(scope),
             GetLastFailureMessage(scope));
 
@@ -360,6 +412,16 @@ internal sealed class RemoteContentUpdateService(
                 : string.Empty;
     }
 
+    private static string GetLastAppliedChecksum(RemoteUpdateScope scope)
+    {
+        return Preferences.Default.Get(BuildPreferenceKey(scope, "checksum"), string.Empty);
+    }
+
+    private static int GetLastAppliedSchemaVersion(RemoteUpdateScope scope)
+    {
+        return Preferences.Default.Get(BuildPreferenceKey(scope, "schema-version"), 0);
+    }
+
     private static string GetLastFailureMessage(RemoteUpdateScope scope)
     {
         string message = Preferences.Default.Get(BuildPreferenceKey(scope, "last-failure-message"), string.Empty);
@@ -379,7 +441,7 @@ internal sealed class RemoteContentUpdateService(
 
         foreach (RemoteContentPackageModel package in packagesToPersist)
         {
-            PersistLastSuccess(RemoteUpdateScope.ForReceipt(package.ContentAreaKey, package.SliceKey, package.PackageType), package.PackageId, package.Version, appliedAtUtc);
+            PersistLastSuccess(RemoteUpdateScope.ForReceipt(package.ContentAreaKey, package.SliceKey, package.PackageType), package, appliedAtUtc);
         }
     }
 
@@ -390,17 +452,19 @@ internal sealed class RemoteContentUpdateService(
                 ? string.Equals(package.ContentAreaKey, appliedScope.ContentAreaKey, StringComparison.OrdinalIgnoreCase)
                 : appliedScope.Matches(package);
 
-    private static void PersistLastSuccess(RemoteUpdateScope scope, string packageId, string version, DateTimeOffset appliedAtUtc)
+    private static void PersistLastSuccess(RemoteUpdateScope scope, RemoteContentPackageModel package, DateTimeOffset appliedAtUtc)
     {
-        Preferences.Default.Set(BuildPreferenceKey(scope, "package-id"), packageId);
-        Preferences.Default.Set(BuildPreferenceKey(scope, "package-version"), version);
+        Preferences.Default.Set(BuildPreferenceKey(scope, "package-id"), package.PackageId);
+        Preferences.Default.Set(BuildPreferenceKey(scope, "package-version"), package.Version);
+        Preferences.Default.Set(BuildPreferenceKey(scope, "checksum"), package.Checksum);
+        Preferences.Default.Set(BuildPreferenceKey(scope, "schema-version"), package.SchemaVersion);
         Preferences.Default.Set(BuildPreferenceKey(scope, "last-success-at-utc"), appliedAtUtc.ToString("O"));
         Preferences.Default.Remove(BuildPreferenceKey(scope, "last-failure-message"));
 
         if (scope == RemoteUpdateScope.FullDatabase)
         {
-            Preferences.Default.Set(LegacyLastRemotePackageIdPreferenceKey, packageId);
-            Preferences.Default.Set(LegacyLastRemotePackageVersionPreferenceKey, version);
+            Preferences.Default.Set(LegacyLastRemotePackageIdPreferenceKey, package.PackageId);
+            Preferences.Default.Set(LegacyLastRemotePackageVersionPreferenceKey, package.Version);
             Preferences.Default.Set(LegacyLastRemoteSuccessAtPreferenceKey, appliedAtUtc.ToString("O"));
             Preferences.Default.Remove(LegacyLastRemoteFailureMessagePreferenceKey);
         }

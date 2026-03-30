@@ -106,6 +106,9 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("GetCefrUpdateStatusAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildRemoteContentUpdateStatus", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildRemoteContentUpdateDiagnostics", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsRemoteContentUpdatesScopeFormat", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsRemoteContentUpdatesRemoteChecksumFormat", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsRemoteContentUpdatesManifestGeneratedAtFormat", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildRemoteScopeSummary", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnApplySeedUpdateButtonClicked", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildContentUpdateDetails", codeBehindSource, StringComparison.Ordinal);

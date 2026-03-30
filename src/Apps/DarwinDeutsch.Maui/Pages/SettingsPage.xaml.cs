@@ -665,12 +665,34 @@ public partial class SettingsPage : ContentPage
     {
         ArgumentNullException.ThrowIfNull(remoteContentUpdateStatus);
 
+        string scopeKey = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.ScopeKey)
+            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
+            : remoteContentUpdateStatus.ScopeKey;
+        string contentArea = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.ContentAreaKey)
+            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
+            : remoteContentUpdateStatus.ContentAreaKey;
+        string sliceKey = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.SliceKey)
+            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
+            : remoteContentUpdateStatus.SliceKey;
+        string packageType = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.PackageType)
+            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
+            : remoteContentUpdateStatus.PackageType;
         string localPackage = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalPackageId)
             ? AppStrings.SettingsContentUpdatesNeverAppliedValue
             : remoteContentUpdateStatus.LocalPackageId;
         string remotePackage = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.RemotePackageId)
             ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
             : remoteContentUpdateStatus.RemotePackageId;
+        string localChecksum = BuildSignatureDisplay(remoteContentUpdateStatus.LocalChecksum);
+        string remoteChecksum = BuildSignatureDisplay(remoteContentUpdateStatus.RemoteChecksum);
+        string localSchemaVersion = remoteContentUpdateStatus.LocalSchemaVersion <= 0
+            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
+            : remoteContentUpdateStatus.LocalSchemaVersion.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        string remoteSchemaVersion = remoteContentUpdateStatus.RemoteSchemaVersion <= 0
+            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
+            : remoteContentUpdateStatus.RemoteSchemaVersion.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        string remoteManifestGeneratedAt = remoteContentUpdateStatus.RemoteManifestGeneratedAtUtc?.ToLocalTime().ToString("g")
+            ?? AppStrings.SettingsContentUpdatesUnknownSignatureValue;
         string lastUpdatedAt = remoteContentUpdateStatus.LastSuccessfulUpdateAtUtc?.ToLocalTime().ToString("g")
             ?? AppStrings.SettingsContentUpdatesNeverAppliedValue;
         string lastFailure = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LastFailureMessage)
@@ -679,10 +701,19 @@ public partial class SettingsPage : ContentPage
 
         return string.Join(
             Environment.NewLine,
+            string.Format(AppStrings.SettingsRemoteContentUpdatesScopeFormat, scopeKey),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesContentAreaFormat, contentArea),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesSliceFormat, sliceKey),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesPackageTypeFormat, packageType),
             string.Format(AppStrings.SettingsRemoteContentUpdatesLocalPackageFormat, localPackage),
             string.Format(AppStrings.SettingsRemoteContentUpdatesRemotePackageFormat, remotePackage),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalChecksumFormat, localChecksum),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteChecksumFormat, remoteChecksum),
             string.Format(AppStrings.SettingsRemoteContentUpdatesLocalVersionFormat, string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalVersion) ? AppStrings.SettingsContentUpdatesNeverAppliedValue : remoteContentUpdateStatus.LocalVersion),
             string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteVersionFormat, string.IsNullOrWhiteSpace(remoteContentUpdateStatus.RemoteVersion) ? AppStrings.SettingsContentUpdatesUnknownSignatureValue : remoteContentUpdateStatus.RemoteVersion),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalSchemaVersionFormat, localSchemaVersion),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteSchemaVersionFormat, remoteSchemaVersion),
+            string.Format(AppStrings.SettingsRemoteContentUpdatesManifestGeneratedAtFormat, remoteManifestGeneratedAt),
             string.Format(AppStrings.SettingsRemoteContentUpdatesLastUpdatedAtFormat, lastUpdatedAt),
             string.Format(AppStrings.SettingsRemoteContentUpdatesLastFailureFormat, lastFailure));
     }

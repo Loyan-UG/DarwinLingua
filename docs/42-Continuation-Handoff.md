@@ -60,6 +60,7 @@ Use it when:
 - The fifth Phase 5 slice now lets the MAUI client fetch manifests and full packages from the Web API, apply downloaded catalog packages transactionally into local SQLite, preserve favorites/preferences/word state/practice state during content replacement, and expose a primary `Update All Content` action with remote-version diagnostics in Settings.
 - The sixth Phase 5 slice now adds local scope-receipt tracking plus granular remote update controls in Settings: one catalog-area action, separate `A1`-`C2` actions, and pre-apply version/word-count summaries for each scope.
 - The seventh Phase 5 slice now makes server package lifecycle explicit: catalog import stages draft package batches, `POST /api/admin/content/catalog/publish` promotes one draft batch to published status, older published batches are superseded, and mobile manifest/download endpoints now expose published packages only.
+- The eighth Phase 5 slice now enriches mobile remote-update diagnostics with scope keys, content area and slice metadata, package type, checksum visibility, schema-version visibility, and manifest-generation timestamps for each Settings update surface.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
@@ -67,13 +68,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the eighth executable Phase 5 slice: richer mobile update diagnostics and validation after the server publishing lifecycle landed.
+Focus next on the ninth executable Phase 5 slice: device validation and any remaining remote-update support polish after the richer diagnostics landed.
 
 Suggested scope:
 
-1. Add checksum/scope details to the mobile Settings diagnostics so support/debugging is faster.
-2. Add device validation coverage for full, area, and CEFR-slice remote update flows.
-3. Decide whether a lightweight draft-management endpoint set is needed before broader platform rollout.
+1. Add device validation coverage for full, area, and CEFR-slice remote update flows.
+2. Decide whether a lightweight draft-management endpoint set is needed before broader platform rollout.
+3. Decide whether update history or rollback affordances are needed once device validation is complete.
 
 ---
 
@@ -87,7 +88,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - The next architecture slice is the server-authored content-distribution model documented in docs/36-Server-Content-Distribution.md.
-- Prioritize the next Phase 5 work: richer update diagnostics, device validation of remote update flows, and any needed draft-management API refinement on top of the explicit publish lifecycle.
+- Prioritize the next Phase 5 work: device validation of remote update flows, any needed draft-management API refinement on top of the explicit publish lifecycle, and support-level polish for update diagnostics/history.
 - Keep the mobile app local-first: local SQLite remains the runtime store and user state must survive content updates.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.

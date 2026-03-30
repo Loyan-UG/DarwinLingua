@@ -1213,9 +1213,39 @@ public static class AppStrings
     public static string SettingsRemoteContentUpdatesLocalPackageFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesLocalPackageFormat));
 
     /// <summary>
+    /// Gets the localized diagnostics line for the update scope key.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesScopeFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesScopeFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the content area key.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesContentAreaFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesContentAreaFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the slice key.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesSliceFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesSliceFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the package type.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesPackageTypeFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesPackageTypeFormat));
+
+    /// <summary>
     /// Gets the localized diagnostics line for the remote full package identifier.
     /// </summary>
     public static string SettingsRemoteContentUpdatesRemotePackageFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesRemotePackageFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the local package checksum.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesLocalChecksumFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesLocalChecksumFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the remote package checksum.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesRemoteChecksumFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesRemoteChecksumFormat));
 
     /// <summary>
     /// Gets the localized diagnostics line for the local content version.
@@ -1226,6 +1256,21 @@ public static class AppStrings
     /// Gets the localized diagnostics line for the remote content version.
     /// </summary>
     public static string SettingsRemoteContentUpdatesRemoteVersionFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesRemoteVersionFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the local schema version.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesLocalSchemaVersionFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesLocalSchemaVersionFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the remote schema version.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesRemoteSchemaVersionFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesRemoteSchemaVersionFormat));
+
+    /// <summary>
+    /// Gets the localized diagnostics line for the remote manifest generation time.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesManifestGeneratedAtFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesManifestGeneratedAtFormat));
 
     /// <summary>
     /// Gets the localized diagnostics line for the last successful remote update time.
