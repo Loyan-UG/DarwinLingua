@@ -65,6 +65,7 @@ Use it when:
 - The tenth Phase 5 slice now adds a cleanup flow for superseded server package batches: `DELETE /api/admin/content/catalog/drafts/{publicationBatchId}` removes only `Superseded` batches and deletes their payload files from package storage.
 - The eleventh Phase 5 slice now adds publish-history visibility for admin operations: `GET /api/admin/content/catalog/history` returns draft/published/superseded batch history, and `GET /api/admin/content/catalog/history/summary` exposes lifecycle and retention counts per product.
 - The twelfth Phase 5 slice now records recent remote update attempts on-device and shows the last few `full`, `catalog`, and `CEFR` update runs in Settings, including applied/current/failed outcomes.
+- The thirteenth Phase 5 slice now adds admin rollback support: `POST /api/admin/content/catalog/rollback` re-activates one `Superseded` batch and supersedes the currently `Published` batch for the same product.
 - Manual/device-bound Phase 5 remote-update validation now has a dedicated worksheet in `docs/50-Phase-5-Remote-Update-Validation-Worksheet.md`.
 - The shared mobile validation bundle now also includes the Phase 5 remote-update worksheet through `tools/Mobile/Start-MobileValidationBundle.ps1`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
@@ -74,13 +75,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the thirteenth executable Phase 5 slice: execute device validation and decide the remaining support-layer polish after mobile update history landed.
+Focus next on the fourteenth executable Phase 5 slice: execute device validation and decide the remaining retention/rollback support after admin rollback landed.
 
 Suggested scope:
 
 1. Execute the Phase 5 remote-update worksheet on a target device or emulator against a live Web API.
 2. Decide whether update history or rollback affordances are needed once device validation is complete.
-3. Decide whether the admin side now needs rollback tooling or a stronger retention policy after history and cleanup support exist.
+3. Decide whether the admin side now needs a stronger retention policy or rollback-audit trail after history, cleanup, and rollback support exist.
 
 ---
 
@@ -94,7 +95,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - The next architecture slice is the server-authored content-distribution model documented in docs/36-Server-Content-Distribution.md.
-- Prioritize the next Phase 5 work: executing remote-update device validation, support-level polish for update diagnostics/history, and any needed admin-side rollback or retention refinement.
+- Prioritize the next Phase 5 work: executing remote-update device validation, support-level polish for update diagnostics/history, and any needed admin-side rollback-audit or retention refinement.
 - Keep the mobile app local-first: local SQLite remains the runtime store and user state must survive content updates.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.

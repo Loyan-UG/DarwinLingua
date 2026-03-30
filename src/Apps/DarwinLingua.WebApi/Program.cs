@@ -55,6 +55,7 @@ builder.Services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
 builder.Services.AddScoped<ICatalogPackageDraftQueryService, CatalogPackageDraftQueryService>();
 builder.Services.AddScoped<ICatalogPackageCleanupService, CatalogPackageCleanupService>();
 builder.Services.AddScoped<ICatalogPublicationHistoryService, CatalogPublicationHistoryService>();
+builder.Services.AddScoped<ICatalogPackageRollbackService, CatalogPackageRollbackService>();
 builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 
@@ -128,6 +129,17 @@ app.MapPost(
     {
         AdminPublishCatalogResponse response = await releaseService
             .PublishAsync(request, cancellationToken)
+            .ConfigureAwait(false);
+
+        return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+    });
+
+app.MapPost(
+    "/api/admin/content/catalog/rollback",
+    async (AdminRollbackCatalogRequest request, ICatalogPackageRollbackService rollbackService, CancellationToken cancellationToken) =>
+    {
+        AdminRollbackCatalogResponse response = await rollbackService
+            .RollbackAsync(request, cancellationToken)
             .ConfigureAwait(false);
 
         return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
