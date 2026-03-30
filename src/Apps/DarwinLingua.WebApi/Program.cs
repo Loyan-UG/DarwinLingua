@@ -1,6 +1,8 @@
 using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Models;
+using DarwinLingua.WebApi.Persistence;
 using DarwinLingua.WebApi.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -17,9 +19,27 @@ builder.Services
     .Validate(options => options.HasValidPackages(), "Packages must reference active client products and valid areas.")
     .ValidateOnStart();
 
-builder.Services.AddSingleton<IMobileContentManifestService, ConfiguredMobileContentManifestService>();
+string serverContentConnectionString = builder.Configuration.GetConnectionString("ServerContentAdmin")
+    ?? builder.Configuration.GetConnectionString("ServerContent")
+    ?? throw new InvalidOperationException("A ServerContent or ServerContentAdmin connection string must be configured.");
+
+builder.Services.AddDbContext<ServerContentDbContext>(options =>
+{
+    options.UseNpgsql(serverContentConnectionString);
+});
+
+builder.Services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
+builder.Services.AddScoped<IMobileContentManifestService, DatabaseMobileContentManifestService>();
 
 WebApplication app = builder.Build();
+
+await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
+{
+    IServerContentDatabaseBootstrapper bootstrapper =
+        bootstrapScope.ServiceProvider.GetRequiredService<IServerContentDatabaseBootstrapper>();
+
+    await bootstrapper.InitializeAsync(CancellationToken.None);
+}
 
 app.MapGet(
     "/api/mobile/content/manifest",

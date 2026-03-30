@@ -53,7 +53,8 @@ Use it when:
 - The next architectural direction is now explicitly defined as a server-authored content-distribution model with PostgreSQL as the shared-content source of truth, a Web API for package delivery, and mobile SQLite remaining the runtime/offline store; see `docs/36-Server-Content-Distribution.md`.
 - The server-side domain and multi-product partitioning direction are now explicitly defined in `docs/37-Shared-Content-Server-Domain.md`.
 - Local Docker Desktop setup guidance for PostgreSQL now exists in `docs/49-Local-Postgres-Setup.md` with matching config templates under `tools/Server`.
-- The first executable Phase 5 foundation slice now exists in `src/Apps/DarwinLingua.WebApi` with config-backed read-only manifest endpoints and a local-only `appsettings.Development.Local.json` override pattern.
+- The first executable Phase 5 foundation slice now exists in `src/Apps/DarwinLingua.WebApi` with a local-only `appsettings.Development.Local.json` override pattern and read-only mobile manifest endpoints.
+- The second Phase 5 foundation slice now persists `ClientProduct`, `ContentStream`, and `PublishedPackage` metadata in PostgreSQL-backed storage and serves manifests from that persistence layer.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
@@ -61,12 +62,12 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the second executable Phase 5 slice: moving from config-backed manifests to PostgreSQL-backed shared-content manifests.
+Focus next on the third executable Phase 5 slice: moving from manifest metadata to actual downloadable package delivery.
 
 Suggested scope:
 
-1. Add PostgreSQL-backed persistence for client products, content streams, and published packages.
-2. Replace config-only manifest data with repository/query-backed manifest generation.
+1. Implement package-download endpoints for full, area, and CEFR-slice updates.
+2. Add schema-version compatibility checks between mobile clients and published packages.
 3. Keep the remaining manual mobile validation worksheets visible, but treat them as parallel release work rather than the main backend slice.
 
 ---

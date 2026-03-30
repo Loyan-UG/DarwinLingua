@@ -355,6 +355,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] add baseline server configuration files for local PostgreSQL and Web API development
 - [x] define the mobile content manifest contract
 - [x] implement read-only manifest endpoints for mobile clients
+- [x] add PostgreSQL-backed persistence for client products, content streams, and published packages
 - [ ] implement package-download endpoints for full, area, and CEFR-slice updates
 - [ ] define schema-version compatibility checks between server packages and mobile clients
 

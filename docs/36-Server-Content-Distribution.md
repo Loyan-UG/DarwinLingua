@@ -312,6 +312,12 @@ The first three steps now have a baseline implementation in the repository:
 - `tools/Server/Postgres`
 - `tools/Server/Config`
 
+That baseline now includes PostgreSQL-backed storage for:
+
+- client products
+- content streams
+- published package metadata
+
 ---
 
 ## 11. Non-Goals for the First Server Slice

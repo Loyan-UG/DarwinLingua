@@ -515,6 +515,12 @@ For future content updates, the MAUI host should add:
 
 It should still avoid talking to raw database internals directly.
 
+The current Phase 5 backend foundation now mirrors that rule on the server side:
+
+- the `DarwinLingua.WebApi` host exposes mobile manifest endpoints
+- PostgreSQL-backed distribution metadata lives behind a dedicated persistence layer
+- the host still avoids exposing raw tables directly
+
 ---
 
 # 10. Naming Conventions
