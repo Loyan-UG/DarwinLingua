@@ -63,6 +63,7 @@ Use it when:
 - The eighth Phase 5 slice now enriches mobile remote-update diagnostics with scope keys, content area and slice metadata, package type, checksum visibility, schema-version visibility, and manifest-generation timestamps for each Settings update surface.
 - The ninth Phase 5 slice now adds lightweight admin draft-management visibility: `GET /api/admin/content/catalog/drafts` lists staged and published package batches, and `GET /api/admin/content/catalog/drafts/{publicationBatchId}` exposes one batch with package-level metadata.
 - The tenth Phase 5 slice now adds a cleanup flow for superseded server package batches: `DELETE /api/admin/content/catalog/drafts/{publicationBatchId}` removes only `Superseded` batches and deletes their payload files from package storage.
+- The eleventh Phase 5 slice now adds publish-history visibility for admin operations: `GET /api/admin/content/catalog/history` returns draft/published/superseded batch history, and `GET /api/admin/content/catalog/history/summary` exposes lifecycle and retention counts per product.
 - Manual/device-bound Phase 5 remote-update validation now has a dedicated worksheet in `docs/50-Phase-5-Remote-Update-Validation-Worksheet.md`.
 - The shared mobile validation bundle now also includes the Phase 5 remote-update worksheet through `tools/Mobile/Start-MobileValidationBundle.ps1`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
@@ -72,13 +73,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the eleventh executable Phase 5 slice: execute device validation and decide the remaining support-layer polish after superseded-batch cleanup landed.
+Focus next on the twelfth executable Phase 5 slice: execute device validation and decide the remaining support-layer polish after publish-history visibility landed.
 
 Suggested scope:
 
 1. Execute the Phase 5 remote-update worksheet on a target device or emulator against a live Web API.
 2. Decide whether update history or rollback affordances are needed once device validation is complete.
-3. Decide whether the admin side needs a fuller publish-history view or retention policy after cleanup support exists.
+3. Decide whether the admin side now needs rollback tooling or a stronger retention policy after history and cleanup support exist.
 
 ---
 
@@ -92,7 +93,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - The next architecture slice is the server-authored content-distribution model documented in docs/36-Server-Content-Distribution.md.
-- Prioritize the next Phase 5 work: executing remote-update device validation, support-level polish for update diagnostics/history, and any needed admin-side publish-history or retention refinement.
+- Prioritize the next Phase 5 work: executing remote-update device validation, support-level polish for update diagnostics/history, and any needed admin-side rollback or retention refinement.
 - Keep the mobile app local-first: local SQLite remains the runtime store and user state must survive content updates.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.

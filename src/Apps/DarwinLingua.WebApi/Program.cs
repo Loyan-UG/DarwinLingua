@@ -54,6 +54,7 @@ builder.Services.AddScoped<IContentImportRepository, WebApiContentImportReposito
 builder.Services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
 builder.Services.AddScoped<ICatalogPackageDraftQueryService, CatalogPackageDraftQueryService>();
 builder.Services.AddScoped<ICatalogPackageCleanupService, CatalogPackageCleanupService>();
+builder.Services.AddScoped<ICatalogPublicationHistoryService, CatalogPublicationHistoryService>();
 builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 
@@ -174,6 +175,50 @@ app.MapDelete(
             .ConfigureAwait(false);
 
         return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+    });
+
+app.MapGet(
+    "/api/admin/content/catalog/history",
+    async (string? clientProductKey, ICatalogPublicationHistoryService historyService, CancellationToken cancellationToken) =>
+    {
+        try
+        {
+            IReadOnlyList<AdminCatalogBatchHistoryResponse> response = await historyService
+                .GetHistoryAsync(clientProductKey, cancellationToken)
+                .ConfigureAwait(false);
+
+            return Results.Ok(response);
+        }
+        catch (KeyNotFoundException exception)
+        {
+            return Results.NotFound(new
+            {
+                code = "client_product_not_found",
+                message = exception.Message,
+            });
+        }
+    });
+
+app.MapGet(
+    "/api/admin/content/catalog/history/summary",
+    async (string? clientProductKey, ICatalogPublicationHistoryService historyService, CancellationToken cancellationToken) =>
+    {
+        try
+        {
+            AdminCatalogBatchHistorySummaryResponse response = await historyService
+                .GetSummaryAsync(clientProductKey, cancellationToken)
+                .ConfigureAwait(false);
+
+            return Results.Ok(response);
+        }
+        catch (KeyNotFoundException exception)
+        {
+            return Results.NotFound(new
+            {
+                code = "client_product_not_found",
+                message = exception.Message,
+            });
+        }
     });
 
 app.MapGet(
