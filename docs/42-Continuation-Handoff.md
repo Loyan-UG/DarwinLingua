@@ -61,6 +61,7 @@ Use it when:
 - The sixth Phase 5 slice now adds local scope-receipt tracking plus granular remote update controls in Settings: one catalog-area action, separate `A1`-`C2` actions, and pre-apply version/word-count summaries for each scope.
 - The seventh Phase 5 slice now makes server package lifecycle explicit: catalog import stages draft package batches, `POST /api/admin/content/catalog/publish` promotes one draft batch to published status, older published batches are superseded, and mobile manifest/download endpoints now expose published packages only.
 - The eighth Phase 5 slice now enriches mobile remote-update diagnostics with scope keys, content area and slice metadata, package type, checksum visibility, schema-version visibility, and manifest-generation timestamps for each Settings update surface.
+- The ninth Phase 5 slice now adds lightweight admin draft-management visibility: `GET /api/admin/content/catalog/drafts` lists staged and published package batches, and `GET /api/admin/content/catalog/drafts/{publicationBatchId}` exposes one batch with package-level metadata.
 - Manual/device-bound Phase 5 remote-update validation now has a dedicated worksheet in `docs/50-Phase-5-Remote-Update-Validation-Worksheet.md`.
 - The shared mobile validation bundle now also includes the Phase 5 remote-update worksheet through `tools/Mobile/Start-MobileValidationBundle.ps1`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
@@ -70,13 +71,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the ninth executable Phase 5 slice: execute device validation and decide the remaining support-layer polish after the remote-update worksheet landed.
+Focus next on the tenth executable Phase 5 slice: execute device validation and decide the remaining support-layer polish after draft-management visibility landed.
 
 Suggested scope:
 
 1. Execute the Phase 5 remote-update worksheet on a target device or emulator against a live Web API.
-2. Decide whether a lightweight draft-management endpoint set is needed before broader platform rollout.
-3. Decide whether update history or rollback affordances are needed once device validation is complete.
+2. Decide whether update history or rollback affordances are needed once device validation is complete.
+3. Decide whether the admin side needs a publish-history or superseded-batch cleanup flow.
 
 ---
 
@@ -90,7 +91,7 @@ Continue DarwinLingua implementation from the latest commit.
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
 - The next architecture slice is the server-authored content-distribution model documented in docs/36-Server-Content-Distribution.md.
-- Prioritize the next Phase 5 work: executing remote-update device validation, any needed draft-management API refinement on top of the explicit publish lifecycle, and support-level polish for update diagnostics/history.
+- Prioritize the next Phase 5 work: executing remote-update device validation, support-level polish for update diagnostics/history, and any needed admin-side publish-history refinement.
 - Keep the mobile app local-first: local SQLite remains the runtime store and user state must survive content updates.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.

@@ -1,0 +1,220 @@
+using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
+using DarwinLingua.ContentOps.Application.Abstractions;
+using DarwinLingua.ContentOps.Application.DependencyInjection;
+using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
+using DarwinLingua.Infrastructure.DependencyInjection;
+using DarwinLingua.Infrastructure.Persistence.Abstractions;
+using DarwinLingua.Localization.Infrastructure.DependencyInjection;
+using DarwinLingua.WebApi.Configuration;
+using DarwinLingua.WebApi.Models;
+using DarwinLingua.WebApi.Persistence;
+using DarwinLingua.WebApi.Persistence.Entities;
+using DarwinLingua.WebApi.Services;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
+using Xunit;
+
+namespace DarwinLingua.WebApi.Tests;
+
+public sealed class CatalogPackageDraftQueryServiceTests
+{
+    [Fact]
+    public async Task GetBatchesAsync_ReturnsDraftAndPublishedBatchesWithAggregatesAsync()
+    {
+        string tempRoot = Path.Combine(Path.GetTempPath(), "darwinlingua-webapi-draft-tests", Guid.NewGuid().ToString("N"));
+        string catalogDatabasePath = Path.Combine(tempRoot, "catalog", "catalog.db");
+        string serverDatabasePath = Path.Combine(tempRoot, "server", "server.db");
+        string packageRootPath = Path.Combine(tempRoot, "packages");
+        Directory.CreateDirectory(tempRoot);
+        Directory.CreateDirectory(Path.GetDirectoryName(serverDatabasePath)!);
+
+        try
+        {
+            using ServiceProvider serviceProvider = BuildServiceProvider(catalogDatabasePath, serverDatabasePath, packageRootPath, tempRoot);
+            await InitializeAsync(serviceProvider);
+
+            IServerCatalogImportService importService = serviceProvider.GetRequiredService<IServerCatalogImportService>();
+            ICatalogPackageReleaseService releaseService = serviceProvider.GetRequiredService<ICatalogPackageReleaseService>();
+            ICatalogPackagePublisher packagePublisher = serviceProvider.GetRequiredService<ICatalogPackagePublisher>();
+            ICatalogPackageDraftQueryService queryService = serviceProvider.GetRequiredService<ICatalogPackageDraftQueryService>();
+
+            string fixturePath = ResolveFixturePath();
+
+            AdminImportCatalogResponse firstImport = await importService
+                .ImportAndStageAsync(new AdminImportCatalogRequest(fixturePath, "darwin-deutsch"), CancellationToken.None);
+
+            await releaseService
+                .PublishAsync(new AdminPublishCatalogRequest("darwin-deutsch", firstImport.DraftPublicationBatchId!), CancellationToken.None);
+
+            await Task.Delay(TimeSpan.FromSeconds(1.1));
+
+            CatalogPackagePublicationResult secondBatch = await packagePublisher
+                .StageDraftAsync("darwin-deutsch", CancellationToken.None);
+
+            IReadOnlyList<AdminDraftCatalogBatchResponse> batches = await queryService
+                .GetBatchesAsync("darwin-deutsch", CancellationToken.None);
+
+            Assert.Equal(2, batches.Count);
+            Assert.Equal(secondBatch.PublicationBatchId, batches[0].PublicationBatchId);
+            Assert.Equal(nameof(PackagePublicationStatus.Draft), batches[0].PublicationStatus);
+            Assert.Equal(8, batches[0].PackageCount);
+            Assert.True(batches[0].TotalWordCount > 0);
+            Assert.NotEmpty(batches[0].Packages);
+            Assert.All(batches[0].Packages, package => Assert.False(string.IsNullOrWhiteSpace(package.Checksum)));
+
+            Assert.Equal(firstImport.DraftPublicationBatchId, batches[1].PublicationBatchId);
+            Assert.Equal(nameof(PackagePublicationStatus.Published), batches[1].PublicationStatus);
+            Assert.NotNull(batches[1].PublishedAtUtc);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempRoot);
+        }
+    }
+
+    [Fact]
+    public async Task GetBatchAsync_ReturnsOneSpecificBatchAsync()
+    {
+        string tempRoot = Path.Combine(Path.GetTempPath(), "darwinlingua-webapi-draft-tests", Guid.NewGuid().ToString("N"));
+        string catalogDatabasePath = Path.Combine(tempRoot, "catalog", "catalog.db");
+        string serverDatabasePath = Path.Combine(tempRoot, "server", "server.db");
+        string packageRootPath = Path.Combine(tempRoot, "packages");
+        Directory.CreateDirectory(tempRoot);
+        Directory.CreateDirectory(Path.GetDirectoryName(serverDatabasePath)!);
+
+        try
+        {
+            using ServiceProvider serviceProvider = BuildServiceProvider(catalogDatabasePath, serverDatabasePath, packageRootPath, tempRoot);
+            await InitializeAsync(serviceProvider);
+
+            IServerCatalogImportService importService = serviceProvider.GetRequiredService<IServerCatalogImportService>();
+            ICatalogPackageDraftQueryService queryService = serviceProvider.GetRequiredService<ICatalogPackageDraftQueryService>();
+
+            AdminImportCatalogResponse importResponse = await importService
+                .ImportAndStageAsync(new AdminImportCatalogRequest(ResolveFixturePath(), "darwin-deutsch"), CancellationToken.None);
+
+            AdminDraftCatalogBatchResponse batch = await queryService
+                .GetBatchAsync(importResponse.DraftPublicationBatchId!, "darwin-deutsch", CancellationToken.None);
+
+            Assert.Equal(importResponse.DraftPublicationBatchId, batch.PublicationBatchId);
+            Assert.Equal(nameof(PackagePublicationStatus.Draft), batch.PublicationStatus);
+            Assert.Equal(importResponse.StagedPackageIds.Count, batch.PackageCount);
+            Assert.Contains(batch.Packages, package => package.PackageType == "full-database");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempRoot);
+        }
+    }
+
+    private static ServiceProvider BuildServiceProvider(string catalogDatabasePath, string serverDatabasePath, string packageRootPath, string contentRootPath)
+    {
+        ServiceCollection services = new();
+        services.AddOptions();
+        services.AddLogging();
+
+        services
+            .AddDarwinLinguaInfrastructure(options => options.DatabasePath = catalogDatabasePath)
+            .AddCatalogInfrastructure()
+            .AddContentOpsApplication()
+            .AddContentOpsInfrastructure()
+            .AddLocalizationInfrastructure();
+
+        services.AddDbContext<ServerContentDbContext>(options => options.UseSqlite($"Data Source={serverDatabasePath}"));
+        services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
+        services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
+        services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
+        services.AddScoped<ICatalogPackageDraftQueryService, CatalogPackageDraftQueryService>();
+        services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
+        services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
+        services.AddSingleton<IWebHostEnvironment>(new TestWebHostEnvironment(contentRootPath));
+        services.AddSingleton<IHostEnvironment>(new TestWebHostEnvironment(contentRootPath));
+        services.Configure<ServerContentOptions>(options =>
+        {
+            options.PublicBaseUrl = "http://localhost:5099";
+            options.DefaultSchemaVersion = 1;
+            options.PackageStorage.RootPath = packageRootPath;
+            options.ClientProducts.Add(new ClientProductOptions
+            {
+                Key = "darwin-deutsch",
+                DisplayName = "Darwin Deutsch",
+                LearningLanguageCode = "de",
+                DefaultUiLanguageCode = "en",
+                IsActive = true,
+            });
+        });
+
+        return services.BuildServiceProvider();
+    }
+
+    private static async Task InitializeAsync(ServiceProvider serviceProvider)
+    {
+        IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+        await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+        IServerContentDatabaseBootstrapper bootstrapper = serviceProvider.GetRequiredService<IServerContentDatabaseBootstrapper>();
+        await bootstrapper.InitializeAsync(CancellationToken.None);
+    }
+
+    private static string ResolveFixturePath()
+    {
+        DirectoryInfo? currentDirectory = new(AppContext.BaseDirectory);
+
+        while (currentDirectory is not null)
+        {
+            string candidateSolutionPath = Path.Combine(currentDirectory.FullName, "DarwinLingua.slnx");
+            if (File.Exists(candidateSolutionPath))
+            {
+                return Path.Combine(
+                    currentDirectory.FullName,
+                    "tests",
+                    "Modules",
+                    "ContentOps",
+                    "DarwinLingua.ContentOps.Infrastructure.Tests",
+                    "Fixtures",
+                    "phase1-sample-content-package.json");
+            }
+
+            currentDirectory = currentDirectory.Parent;
+        }
+
+        throw new DirectoryNotFoundException("Unable to resolve the repository root for the content import fixture.");
+    }
+
+    private static void TryDeleteDirectory(string path)
+    {
+        if (!Directory.Exists(path))
+        {
+            return;
+        }
+
+        try
+        {
+            Directory.Delete(path, recursive: true);
+        }
+        catch (IOException)
+        {
+        }
+        catch (UnauthorizedAccessException)
+        {
+        }
+    }
+
+    private sealed class TestWebHostEnvironment(string contentRootPath) : IWebHostEnvironment, IHostEnvironment
+    {
+        public string ApplicationName { get; set; } = "DarwinLingua.WebApi.Tests";
+
+        public IFileProvider ContentRootFileProvider { get; set; } = new PhysicalFileProvider(contentRootPath);
+
+        public string ContentRootPath { get; set; } = contentRootPath;
+
+        public string EnvironmentName { get; set; } = "Development";
+
+        public string WebRootPath { get; set; } = contentRootPath;
+
+        public IFileProvider WebRootFileProvider { get; set; } = new PhysicalFileProvider(contentRootPath);
+    }
+}

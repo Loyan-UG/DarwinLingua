@@ -365,6 +365,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] persist imported content into the central PostgreSQL catalog
 - [x] persist package receipts and publishing/version metadata on the server
 - [x] define publishing workflow for draft vs published content packages
+- [x] add lightweight admin endpoints to inspect staged and published package batches
 
 ### 29. Mobile Content Update Client
 

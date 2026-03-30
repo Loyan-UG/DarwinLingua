@@ -52,6 +52,7 @@ builder.Services.AddScoped<IMobileContentManifestService, DatabaseMobileContentM
 builder.Services.AddScoped<IMobileContentPackageDeliveryService, DatabaseMobileContentPackageDeliveryService>();
 builder.Services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
 builder.Services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
+builder.Services.AddScoped<ICatalogPackageDraftQueryService, CatalogPackageDraftQueryService>();
 builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 
@@ -128,6 +129,39 @@ app.MapPost(
             .ConfigureAwait(false);
 
         return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+    });
+
+app.MapGet(
+    "/api/admin/content/catalog/drafts",
+    async (string? clientProductKey, ICatalogPackageDraftQueryService draftQueryService, CancellationToken cancellationToken) =>
+    {
+        IReadOnlyList<AdminDraftCatalogBatchResponse> response = await draftQueryService
+            .GetBatchesAsync(clientProductKey, cancellationToken)
+            .ConfigureAwait(false);
+
+        return Results.Ok(response);
+    });
+
+app.MapGet(
+    "/api/admin/content/catalog/drafts/{publicationBatchId}",
+    async (string publicationBatchId, string? clientProductKey, ICatalogPackageDraftQueryService draftQueryService, CancellationToken cancellationToken) =>
+    {
+        try
+        {
+            AdminDraftCatalogBatchResponse response = await draftQueryService
+                .GetBatchAsync(publicationBatchId, clientProductKey, cancellationToken)
+                .ConfigureAwait(false);
+
+            return Results.Ok(response);
+        }
+        catch (KeyNotFoundException exception)
+        {
+            return Results.NotFound(new
+            {
+                code = "draft_batch_not_found",
+                message = exception.Message,
+            });
+        }
     });
 
 app.MapGet(
