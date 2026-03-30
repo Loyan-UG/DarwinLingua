@@ -53,6 +53,7 @@ builder.Services.AddScoped<IMobileContentPackageDeliveryService, DatabaseMobileC
 builder.Services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
 builder.Services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
 builder.Services.AddScoped<ICatalogPackageDraftQueryService, CatalogPackageDraftQueryService>();
+builder.Services.AddScoped<ICatalogPackageCleanupService, CatalogPackageCleanupService>();
 builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 
@@ -162,6 +163,17 @@ app.MapGet(
                 message = exception.Message,
             });
         }
+    });
+
+app.MapDelete(
+    "/api/admin/content/catalog/drafts/{publicationBatchId}",
+    async (string publicationBatchId, string? clientProductKey, ICatalogPackageCleanupService cleanupService, CancellationToken cancellationToken) =>
+    {
+        AdminDeleteCatalogBatchResponse response = await cleanupService
+            .DeleteSupersededBatchAsync(publicationBatchId, clientProductKey, cancellationToken)
+            .ConfigureAwait(false);
+
+        return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
     });
 
 app.MapGet(

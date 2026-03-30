@@ -81,8 +81,8 @@ public sealed class CatalogPackagePublisher(
             .ToList();
 
         DateTimeOffset now = DateTimeOffset.UtcNow;
-        string version = now.ToString("yyyy.MM.dd.HHmmss");
-        string versionToken = now.ToString("yyyyMMddHHmmss");
+        string version = now.ToString("yyyy.MM.dd.HHmmss.fff");
+        string versionToken = now.ToString("yyyyMMddHHmmssfff");
         string outputRootPath = ResolveOutputRootPath();
 
         string publicationBatchId = $"{product.Key}-{versionToken}";
