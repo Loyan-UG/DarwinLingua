@@ -15,6 +15,7 @@ The architecture must continue to satisfy these goals:
 - support structured content import and local-first storage
 - keep infrastructure concerns out of the domain model
 - keep UI concerns out of the application core
+- keep a clean path from local seed delivery to future server-authored content distribution
 
 This document builds on:
 
@@ -143,6 +144,12 @@ Phase 1 delivery hosts are:
 
 - `DarwinDeutsch.Maui`
 - `DarwinLingua.ImportTool`
+
+Future server/web hosts are planned but not yet implemented:
+
+- `DarwinLingua.WebApi`
+- `DarwinLingua.Admin`
+- `DarwinLingua.Web`
 
 These hosts compose application and infrastructure services for a specific runtime and UX.
 
@@ -430,6 +437,12 @@ Phase 1 uses SQLite for the local-first application experience.
 
 The architecture remains ready for future server-side expansion, where PostgreSQL is still the preferred default direction for shared backend workloads if those are introduced later.
 
+For the planned server-backed content model:
+
+- PostgreSQL is the shared-content source of truth
+- the Web API exposes manifests and content packages
+- mobile SQLite remains the runtime/offline store
+
 ---
 
 ## 7.2 DbContext Strategy
@@ -468,6 +481,12 @@ Ownership split:
 - orchestration and use-case flow -> Application
 - import execution host -> `DarwinLingua.ImportTool`
 
+When the server-backed content path is introduced, the same content-package model should evolve into:
+
+1. server-side import into the shared PostgreSQL catalog
+2. Web API distribution of versioned content packages
+3. mobile application of those packages into local SQLite
+
 ---
 
 # 9. MAUI Architecture Direction
@@ -477,6 +496,14 @@ The MAUI host should continue to consume application queries, commands, DTOs, an
 It should not manipulate persistence internals or domain graphs directly.
 
 Platform text-to-speech, shell/navigation, and UI resource localization remain host concerns.
+
+For future content updates, the MAUI host should add:
+
+- one mobile-facing update client
+- update diagnostics and settings actions
+- local package-application orchestration over SQLite
+
+It should still avoid talking to raw database internals directly.
 
 ---
 
@@ -530,3 +557,9 @@ Darwin Lingua is currently implemented as a modular monolith with:
 - deferred placeholders for later contexts that are intentionally not implemented yet
 
 This is the locked project/reference structure and should be used as the baseline for the remaining Phase 1 release work and ongoing Phase 2 implementation.
+
+The next architectural expansion should preserve this modular-monolith core while adding a server content-distribution edge:
+
+- server database for shared content
+- Web API for package delivery
+- local SQLite for mobile runtime and offline access

@@ -520,24 +520,25 @@ This keeps the path open for later:
 
 ## 16.1 Phase 1 Rule
 
-Phase 1 should not implement full content update/merge logic.
+Phase 1 remains local-first, but packaged seed updates are already allowed for safe local delivery.
 
-Imported content is primarily insert-based with duplicate skip behavior.
+## 16.2 Future Direction
 
-## 16.2 Why
+When the server-backed content model is introduced, shared content updates should follow this path:
 
-This keeps import behavior predictable and prevents accidental content corruption.
+- server PostgreSQL database as shared-content source of truth
+- versioned content packages as the update unit
+- Web API distribution of manifests and package payloads
+- transactional application into local SQLite
 
-## 16.3 Future Direction
+## 16.3 Preservation Rule
 
-Later, you may support:
+Shared content updates must preserve local user state:
 
-- package update
-- merge existing entry
-- archive replaced content
-- content diff review
-
-But not in Phase 1.
+- favorites
+- preferences
+- word state
+- practice state
 
 ---
 
@@ -623,65 +624,55 @@ Keep this advantage in mind when designing content import and local storage path
 
 ## 21.1 Future Server Scenario
 
-If later you add:
+The preferred next storage expansion is now explicit:
 
-- Web API
-- admin editing
-- cloud sync
-- shared user accounts
-- centralized resource discovery
+- PostgreSQL for shared content
+- Web API for mobile content manifests and package delivery
+- local SQLite as the mobile runtime/offline database
 
-then the storage model can evolve to a server-backed architecture.
+## 21.2 Recommended Future Split
 
-For that future shared backend scenario, PostgreSQL is the preferred default server database unless a concrete requirement leads to another choice.
+### Server Shared Content Storage
 
-## 21.2 Recommended Future Server Split
-
-A likely future split would be:
-
-### Server Content Storage
-- shared content catalog
-- topics
-- languages
-- support resources
-- import history
-- admin-managed data
-- likely hosted in PostgreSQL
-
-### User Cloud Storage
-- favorites
-- preferences
-- progress
-- review state
+- lexical catalog
+- topics and languages
+- support resources later
+- content-package receipts and version metadata
+- import history and admin-managed publishing metadata
 
 ### Local Device Storage
-- cache
-- offline content
-- pending sync operations
 
-## 21.3 Why Phase 1 Still Works
+- applied shared-content packages
+- offline runtime read model
+- preferences
+- favorites
+- learning and practice state
 
-Because the current model already distinguishes shared content from user state conceptually, the future split remains feasible.
+### Future User Cloud Storage
+
+- user-linked continuity data if account sync is added later
+
+## 21.3 Why the Current Model Still Works
+
+Because the current schema already distinguishes shared content from user state conceptually, the future split remains feasible without discarding the local-first mobile design.
 
 ---
 
-# 22. Local Cache vs Source-of-Truth in Phase 1
+# 22. Local Cache vs Source-of-Truth
 
-## 22.1 Phase 1 Source-of-Truth
+## 22.1 Phase 1
 
-In Phase 1 local-only mode, the local SQLite database is the source of truth.
-
-There is no server source of truth yet.
+In Phase 1 local-only mode, the local SQLite database is the operational source of truth for that installation.
 
 ## 22.2 Future Adjustment
 
-Later, when a backend exists:
+When the server-backed content model exists:
 
-- server may become source of truth for shared content
-- user cloud state may become source of truth for account-linked preferences
-- local database may become cache + offline state layer
+- PostgreSQL becomes the source of truth for shared content
+- local SQLite becomes the runtime cache and offline working set
+- user state may remain local-first until account sync is added
 
-The current storage strategy should not block this evolution.
+The current storage strategy should actively preserve this evolution path.
 
 ---
 

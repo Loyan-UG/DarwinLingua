@@ -131,10 +131,16 @@ Extend beyond language learning into real-life support.
 
 ### Goals
 
-Expand to a broader platform and improve maintainability.
+Expand to a broader platform and turn shared content into a server-managed distribution model.
 
 ### Features
 
+- central server database for shared content
+- Web API for mobile content manifests and package downloads
+- mobile content update controls for:
+  - full database update
+  - content-area update
+  - CEFR-level word updates
 - website
 - shared backend
 - content admin panel
@@ -145,6 +151,9 @@ Expand to a broader platform and improve maintainability.
 
 ### Success Criteria
 
+- the team updates shared content in one central place
+- mobile apps can refresh local SQLite content from the Web API without losing local user state
+- full, area, and CEFR-slice updates are supported cleanly
 - content can be managed efficiently
 - code reuse remains strong
 - the system scales without architectural redesign

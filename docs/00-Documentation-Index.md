@@ -18,7 +18,7 @@ All project documentation should remain in English.
 
 ## Official Documentation Set
 
-### Product
+### Core Product and Planning
 
 - `01-Product-Vision.md`
 - `02-Product-Scope.md`
@@ -35,7 +35,7 @@ All project documentation should remain in English.
 - `15-Topic-Seed-Ideas.md`
 - `34-Import-Workflow.md`
 
-### Domain
+### Domain Reference
 
 - `22-Domain-Model.md`
 - `23-Domain-Rules.md`
@@ -43,12 +43,16 @@ All project documentation should remain in English.
 - `25-Phase-1-Domain-Cut.md`
 - `26-Bounded-Contexts.md`
 
-### Architecture and Delivery
+### Architecture and Storage
 
 - `31-Solution-Architecture.md`
 - `32-Storage-Strategy.md`
 - `33-Offline-Strategy.md`
+- `36-Server-Content-Distribution.md`
 - `35-Engineering-Standards.md`
+
+### Runbooks and Handoffs
+
 - `41-Phase-1-Use-Cases.md`
 - `42-Continuation-Handoff.md`
 - `43-Phase-1-Release-Checklist.md`
@@ -70,27 +74,20 @@ If you are new to the project, read the documents in this order:
 2. `02-Product-Scope.md`
 3. `03-Product-Phases.md`
 4. `21-Early-Product-Decisions.md`
-5. `11-Content-Strategy.md`
-6. `12-Content-Package-Format.md`
-7. `14-Import-Rules.md`
-8. `22-Domain-Model.md`
-9. `23-Domain-Rules.md`
-10. `25-Phase-1-Domain-Cut.md`
-11. `26-Bounded-Contexts.md`
-12. `31-Solution-Architecture.md`
-13. `32-Storage-Strategy.md`
-14. `33-Offline-Strategy.md`
+5. `31-Solution-Architecture.md`
+6. `32-Storage-Strategy.md`
+7. `33-Offline-Strategy.md`
+8. `36-Server-Content-Distribution.md`
+9. `11-Content-Strategy.md`
+10. `12-Content-Package-Format.md`
+11. `14-Import-Rules.md`
+12. `22-Domain-Model.md`
+13. `25-Phase-1-Domain-Cut.md`
+14. `26-Bounded-Contexts.md`
 15. `35-Engineering-Standards.md`
 16. `34-Import-Workflow.md`
-17. `41-Phase-1-Use-Cases.md`
-18. `04-Implementation-Backlog.md`
-19. `42-Continuation-Handoff.md`
-20. `43-Phase-1-Release-Checklist.md`
-21. `44-Phase-1-Manual-Validation-Worksheet.md`
-22. `45-Phase-1-Release-Notes-Template.md`
-23. `46-Phase-2-Practice-Validation-Worksheet.md`
-24. `47-Phase-3-Mobile-UX-Validation-Worksheet.md`
-25. `48-Mobile-Validation-Bundle-Runbook.md`
+17. `04-Implementation-Backlog.md`
+18. `42-Continuation-Handoff.md`
 
 ---
 
@@ -117,6 +114,14 @@ If you are new to the project, read the documents in this order:
 - `23-Domain-Rules.md` defines invariant and lifecycle rules.
 - `31-Solution-Architecture.md` defines project/layer structure and dependency direction.
 - `32-Storage-Strategy.md` defines the SQLite, migration, and indexing direction for Phase 1.
+- `33-Offline-Strategy.md` defines the local-first runtime behavior.
+- `36-Server-Content-Distribution.md` defines the future server-authored content-update architecture.
+
+### Reference vs Runbooks
+
+- domain and architecture documents should stay stable and explanatory
+- release worksheets and runbooks should stay short and operational
+- the backlog remains the main execution checklist
 
 ---
 
@@ -150,9 +155,10 @@ Examples:
 
 ## Current Cleanup Result
 
-The following draft/redundant files were removed during documentation cleanup:
+The documentation set is intentionally split into:
 
-- `00- Solution Folders.md`
-- `00- Stracture.md`
+- a smaller core reading path
+- stable reference documents
+- execution runbooks
 
-Their useful content was folded into this index, the README, and the backlog/architecture documents.
+If future cleanup is needed, prefer consolidating overlapping runbooks before touching the core architecture/domain docs.

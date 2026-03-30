@@ -258,7 +258,7 @@ These assumptions would be false in Phase 1.
 
 ---
 
-# 8. Offline Update Model for Phase 1
+# 8. Offline Update Model
 
 ## 8.1 Content Update Reality
 
@@ -274,7 +274,18 @@ Content changes happen through local database update paths such as:
 
 The app must not pretend there is automatic remote freshness if there is no backend.
 
-## 8.3 User Expectation
+## 8.3 Future Hybrid Extension
+
+When the Web API is introduced, the mobile app should still behave as a local-first client:
+
+- startup should still load from SQLite first
+- update checks must be optional and non-blocking
+- manual update actions may exist in Settings for:
+  - full content update
+  - content-area update
+  - CEFR-level word update
+
+## 8.4 User Expectation
 
 The product should behave honestly:
 
@@ -481,13 +492,13 @@ A local import utility adds content to the database.
 
 ## 15.3 Option C - Server-Downloaded Content Packs
 
-A backend later provides downloadable content updates.
+A backend later provides downloadable versioned content packages and manifests.
 
 ## 15.4 Recommendation
 
-Phase 1 should support A and/or B.
+Phase 1 supports A and B.
 
-Do not build C yet.
+The next content-distribution step should implement C while still preserving local-first runtime behavior.
 
 ---
 
@@ -562,7 +573,7 @@ This is a future product opportunity, not a current requirement.
 A likely future model for Darwin Deutsch is:
 
 - local database for offline access and caching
-- remote backend for shared content publishing
+- remote backend for shared content publishing and package manifests
 - remote account storage for user continuity
 - local queued operations for sync when back online
 

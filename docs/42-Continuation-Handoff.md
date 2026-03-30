@@ -12,7 +12,7 @@ Use it when:
 
 ---
 
-## Current Snapshot (as of 2026-03-27)
+## Current Snapshot (as of 2026-03-30)
 
 - Phase 1 is still in progress.
 - Core app flows exist: home, CEFR browse, topic browse, search, word details, favorites, settings.
@@ -50,19 +50,21 @@ Use it when:
 - Phase 3 mobile lexical-intelligence slices now include imported usage/context labels, learner-facing grammar notes, collocations, word families, and synonym/antonym relations on `WordEntry`, all flowing through `GetWordDetails` into the upgraded word-detail screen, plus broader visual-consistency polish across the main learner-facing mobile screens.
 - Manual/device-bound Phase 3 mobile UX validation now has a dedicated worksheet in `docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md`.
 - A single mobile validation bundle can now be prepared with `tools/Mobile/Start-MobileValidationBundle.ps1`, using the runbook in `docs/48-Mobile-Validation-Bundle-Runbook.md`.
+- The next architectural direction is now explicitly defined as a server-authored content-distribution model with PostgreSQL as the shared-content source of truth, a Web API for package delivery, and mobile SQLite remaining the runtime/offline store; see `docs/36-Server-Content-Distribution.md`.
+- Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
 ---
 
 ## Recommended Next Implementation Slice
 
-Focus next on the remaining Phase 2 practice quality and release-readiness items while keeping the remaining Phase 1 manual release checks visible.
+Focus next on the first executable Phase 5 slice: the server-backed shared-content foundation.
 
 Suggested scope:
 
-1. Validate Phase 2 practice flows on target devices using `docs/46-Phase-2-Practice-Validation-Worksheet.md`.
-2. Prepare one bundle with `tools/Mobile/Start-MobileValidationBundle.ps1`, execute the copied Phase 1/2/3 worksheets on target devices, and close the remaining mobile validation gates.
-3. Keep the remaining manual device worksheet items for offline behavior, English UI, German UI, and TTS queued for final Phase 1 sign-off, then extend that validation to Practice flows.
+1. Add the `DarwinLingua.WebApi` host and define the first mobile content manifest contract.
+2. Define the first server-side package/version schema for shared content in PostgreSQL-friendly terms.
+3. Keep the remaining manual mobile validation worksheets visible, but treat them as parallel release work rather than the next architecture slice.
 
 ---
 
@@ -75,8 +77,9 @@ Continue DarwinLingua implementation from the latest commit.
 
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
-- Phase 1 and Phase 2 only have manual device-bound validation left from my side.
-- Prioritize execution of the bundled mobile worksheets prepared via `tools/Mobile/Start-MobileValidationBundle.ps1` after the implemented usage/context labels, grammar notes, collocations, word families, lexical relations, and broader learner-facing UI polish.
+- The next architecture slice is the server-authored content-distribution model documented in docs/36-Server-Content-Distribution.md.
+- Prioritize the first Phase 5 foundation work: Web API host, mobile content manifest contract, and package/version model for shared content updates.
+- Keep the mobile app local-first: local SQLite remains the runtime store and user state must survive content updates.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.
 - Run the full local Windows .NET checks after changes.

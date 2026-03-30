@@ -21,8 +21,10 @@ The first learner-facing product is **Darwin Deutsch**, a German-learning applic
   - practice tab/navigation, overview screen, flashcard and quiz session UI, answer feedback, session summary, due-aware review queue, recent activity, learning progress snapshot, answer submission, and persisted scheduling/attempt history are implemented
 - `Phase 3 enhanced lexical intelligence`: `In Progress`
   - lexical usage/context labels, grammar notes, collocations, word families, and synonym/antonym relations now flow from imported content into a richer word-detail screen, and the main learner-facing mobile screens now share a cleaner visual hierarchy
-- `Phases 4-5`: `Planned`
-  - resource discovery and server-backed expansion remain future work
+- `Phase 5 server content distribution`: `Planned`
+  - the next backend slice will introduce one central shared-content database, a Web API for package delivery, and mobile update controls for full, area, and CEFR-slice refreshes
+- `Phase 4 support resources`: `Planned`
+  - resource discovery and non-lexical support content remain future work
 
 ## Product Direction
 
@@ -98,7 +100,11 @@ Deferred but designed:
 
 For the Phase 1 MAUI product, `SQLite` is the correct primary database.
 
-If later web/API/admin/server-side workloads require a stronger shared backend database, `PostgreSQL` is the preferred default direction for that server-side part of the platform.
+For the planned server-backed content model:
+
+- `PostgreSQL` is the preferred shared-content source of truth
+- the `Web API` becomes the mobile-facing content-distribution layer
+- mobile `SQLite` remains the runtime and offline database
 
 ## Engineering Standards
 
@@ -164,6 +170,7 @@ Important rules include:
 - [Solution Architecture](docs/31-Solution-Architecture.md)
 - [Storage Strategy](docs/32-Storage-Strategy.md)
 - [Offline Strategy](docs/33-Offline-Strategy.md)
+- [Server Content Distribution](docs/36-Server-Content-Distribution.md)
 
 ## Recommended Reading Order
 
@@ -180,15 +187,16 @@ Important rules include:
 11. [Solution Architecture](docs/31-Solution-Architecture.md)
 12. [Storage Strategy](docs/32-Storage-Strategy.md)
 13. [Offline Strategy](docs/33-Offline-Strategy.md)
-14. [Import Workflow](docs/34-Import-Workflow.md)
-15. [Phase 1 Use Cases](docs/41-Phase-1-Use-Cases.md)
-16. [Implementation Backlog](docs/04-Implementation-Backlog.md)
-17. [Phase 1 Release Checklist](docs/43-Phase-1-Release-Checklist.md)
-18. [Phase 1 Manual Validation Worksheet](docs/44-Phase-1-Manual-Validation-Worksheet.md)
-19. [Phase 1 Release Notes Template](docs/45-Phase-1-Release-Notes-Template.md)
-20. [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
-21. [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
-22. [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
+14. [Server Content Distribution](docs/36-Server-Content-Distribution.md)
+15. [Import Workflow](docs/34-Import-Workflow.md)
+16. [Phase 1 Use Cases](docs/41-Phase-1-Use-Cases.md)
+17. [Implementation Backlog](docs/04-Implementation-Backlog.md)
+18. [Phase 1 Release Checklist](docs/43-Phase-1-Release-Checklist.md)
+19. [Phase 1 Manual Validation Worksheet](docs/44-Phase-1-Manual-Validation-Worksheet.md)
+20. [Phase 1 Release Notes Template](docs/45-Phase-1-Release-Notes-Template.md)
+21. [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
+22. [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
+23. [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
 
 ## Repository Structure
 

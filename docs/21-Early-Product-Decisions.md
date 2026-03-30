@@ -108,3 +108,25 @@ This keeps the first release aligned with the local-first requirement and avoids
 Phase 1 should use platform text-to-speech for German words and German example sentences.
 
 If the platform does not support text-to-speech or does not have a compatible German voice available, the UI must fail gracefully with a localized non-blocking message instead of crashing or pretending playback succeeded.
+
+---
+
+## Decision 17 - Future Shared Content Source
+
+When Darwin Lingua moves to a server-backed content model, the server becomes the source of truth for shared content and the mobile SQLite database becomes the local runtime/offline copy.
+
+---
+
+## Decision 18 - Content Update Unit
+
+Mobile apps should receive shared content through versioned content packages exposed by the Web API, not through raw table synchronization.
+
+---
+
+## Decision 19 - Update Controls
+
+The mobile app should eventually support three update scopes in Settings:
+
+- update all shared content
+- update one content area
+- update one CEFR slice for the word catalog

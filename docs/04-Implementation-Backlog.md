@@ -333,18 +333,58 @@ Planned areas:
 
 ---
 
-## Phase 5 Backlog Placeholder
+## Phase 5 Backlog
 
-Phase 5 focuses on server-backed platform expansion.
+Phase 5 focuses on server-backed content distribution and platform expansion.
 
-Planned areas:
+### 26. Shared Content Source-of-Truth Architecture
 
-- Web API
-- web application
-- admin application
-- accounts and sync
-- analytics
-- monetization options
+- [ ] lock the server-authored content distribution architecture
+- [ ] define the shared-content source-of-truth boundary vs local user-state boundary
+- [ ] define the mobile update scopes:
+  - full database update
+  - content-area update
+  - CEFR-level word update
+- [ ] define server package/version metadata and checksum rules
+- [ ] define local package-receipt tracking for mobile clients
+
+### 27. Web API Content Distribution Foundation
+
+- [ ] add the Web API host to the solution structure
+- [ ] define the mobile content manifest contract
+- [ ] implement read-only manifest endpoints for mobile clients
+- [ ] implement package-download endpoints for full, area, and CEFR-slice updates
+- [ ] define schema-version compatibility checks between server packages and mobile clients
+
+### 28. Server-Side Content Operations
+
+- [ ] move the canonical import pipeline from local-only seed generation to server-side shared-content import
+- [ ] persist imported content into the central PostgreSQL catalog
+- [ ] persist package receipts and publishing/version metadata on the server
+- [ ] define publishing workflow for draft vs published content packages
+
+### 29. Mobile Content Update Client
+
+- [ ] add a mobile update client that can fetch manifests and packages from the Web API
+- [ ] implement transactional application of downloaded packages into local SQLite
+- [ ] preserve favorites, preferences, word state, and practice state during shared-content updates
+- [ ] add diagnostics for local version, remote version, last update time, and last update failure
+
+### 30. Settings Update UX
+
+- [ ] add a primary `Update All Content` action in settings
+- [ ] add per-area update actions in settings
+- [ ] add `A1`-`C2` per-level update actions for the word catalog
+- [ ] expose update counts and version summaries before apply
+- [ ] define non-blocking offline/error behavior for update actions
+
+### 31. Future Platform Expansion
+
+- [ ] add admin application planning slices
+- [ ] add web application planning slices
+- [ ] define account and sync boundaries
+- [ ] define analytics boundaries
+- [ ] define monetization boundaries
 
 ---
 
