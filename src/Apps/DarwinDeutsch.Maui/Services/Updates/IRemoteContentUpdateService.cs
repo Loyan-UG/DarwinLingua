@@ -5,17 +5,31 @@ namespace DarwinDeutsch.Maui.Services.Updates;
 /// </summary>
 public interface IRemoteContentUpdateService
 {
-    /// <summary>
-    /// Gets the current remote full-update status.
-    /// </summary>
     Task<RemoteContentUpdateStatus> GetUpdateStatusAsync(
         string databasePath,
         CancellationToken cancellationToken);
 
-    /// <summary>
-    /// Applies the latest full-database package from the Web API into local SQLite.
-    /// </summary>
+    Task<RemoteContentUpdateStatus> GetAreaUpdateStatusAsync(
+        string databasePath,
+        string areaKey,
+        CancellationToken cancellationToken);
+
+    Task<RemoteContentUpdateStatus> GetCefrUpdateStatusAsync(
+        string databasePath,
+        string cefrLevel,
+        CancellationToken cancellationToken);
+
     Task<RemoteContentUpdateResult> ApplyFullUpdateAsync(
         string databasePath,
+        CancellationToken cancellationToken);
+
+    Task<RemoteContentUpdateResult> ApplyAreaUpdateAsync(
+        string databasePath,
+        string areaKey,
+        CancellationToken cancellationToken);
+
+    Task<RemoteContentUpdateResult> ApplyCefrUpdateAsync(
+        string databasePath,
+        string cefrLevel,
         CancellationToken cancellationToken);
 }

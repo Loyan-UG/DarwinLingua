@@ -608,6 +608,18 @@
   <data name="SettingsRemoteContentUpdatesSectionLabel" xml:space="preserve">
     <value>Server content updates</value>
   </data>
+  <data name="SettingsRemoteFullDatabaseTitle" xml:space="preserve">
+    <value>Full database</value>
+  </data>
+  <data name="SettingsRemoteCatalogAreaSectionLabel" xml:space="preserve">
+    <value>Catalog area update</value>
+  </data>
+  <data name="SettingsRemoteCatalogAreaTitle" xml:space="preserve">
+    <value>Word catalog</value>
+  </data>
+  <data name="SettingsRemoteCefrLevelsSectionLabel" xml:space="preserve">
+    <value>CEFR level updates</value>
+  </data>
   <data name="SettingsPackagedSeedUpdatesSectionLabel" xml:space="preserve">
     <value>Bundled seed updates</value>
   </data>
@@ -682,6 +694,24 @@
   </data>
   <data name="SettingsRemoteContentUpdatesFailedMessageFormat" xml:space="preserve">
     <value>The server content update could not be applied: {0}</value>
+  </data>
+  <data name="SettingsRemoteContentScopeApplyButtonFormat" xml:space="preserve">
+    <value>Update {0}</value>
+  </data>
+  <data name="SettingsRemoteContentScopeApplyingButtonFormat" xml:space="preserve">
+    <value>Updating {0}...</value>
+  </data>
+  <data name="SettingsRemoteContentScopeCurrentButtonFormat" xml:space="preserve">
+    <value>{0} Current</value>
+  </data>
+  <data name="SettingsRemoteContentScopeCompletedMessageFormat" xml:space="preserve">
+    <value>Applied {0} version {1} and refreshed {2} word(s).</value>
+  </data>
+  <data name="SettingsRemoteContentScopeUpToDateMessageFormat" xml:space="preserve">
+    <value>{0} is already up to date on this device.</value>
+  </data>
+  <data name="SettingsRemoteContentScopeFailedMessageFormat" xml:space="preserve">
+    <value>The {0} update could not be applied: {1}</value>
   </data>
   <data name="SettingsContentUpdatesDismissButton" xml:space="preserve">
     <value>OK</value>

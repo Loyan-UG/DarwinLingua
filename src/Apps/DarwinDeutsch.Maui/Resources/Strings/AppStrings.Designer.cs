@@ -1128,6 +1128,26 @@ public static class AppStrings
     public static string SettingsRemoteContentUpdatesSectionLabel => GetRequiredString(nameof(SettingsRemoteContentUpdatesSectionLabel));
 
     /// <summary>
+    /// Gets the localized title for the full-database remote update scope.
+    /// </summary>
+    public static string SettingsRemoteFullDatabaseTitle => GetRequiredString(nameof(SettingsRemoteFullDatabaseTitle));
+
+    /// <summary>
+    /// Gets the localized section label for catalog-area remote updates.
+    /// </summary>
+    public static string SettingsRemoteCatalogAreaSectionLabel => GetRequiredString(nameof(SettingsRemoteCatalogAreaSectionLabel));
+
+    /// <summary>
+    /// Gets the localized title for the catalog-area remote update scope.
+    /// </summary>
+    public static string SettingsRemoteCatalogAreaTitle => GetRequiredString(nameof(SettingsRemoteCatalogAreaTitle));
+
+    /// <summary>
+    /// Gets the localized section label for CEFR-slice remote updates.
+    /// </summary>
+    public static string SettingsRemoteCefrLevelsSectionLabel => GetRequiredString(nameof(SettingsRemoteCefrLevelsSectionLabel));
+
+    /// <summary>
     /// Gets the localized section label for bundled seed updates.
     /// </summary>
     public static string SettingsPackagedSeedUpdatesSectionLabel => GetRequiredString(nameof(SettingsPackagedSeedUpdatesSectionLabel));
@@ -1251,6 +1271,36 @@ public static class AppStrings
     /// Gets the localized dialog body shown when a remote update fails.
     /// </summary>
     public static string SettingsRemoteContentUpdatesFailedMessageFormat => GetRequiredString(nameof(SettingsRemoteContentUpdatesFailedMessageFormat));
+
+    /// <summary>
+    /// Gets the localized button-label format for scoped remote updates.
+    /// </summary>
+    public static string SettingsRemoteContentScopeApplyButtonFormat => GetRequiredString(nameof(SettingsRemoteContentScopeApplyButtonFormat));
+
+    /// <summary>
+    /// Gets the localized button-label format while a scoped remote update is running.
+    /// </summary>
+    public static string SettingsRemoteContentScopeApplyingButtonFormat => GetRequiredString(nameof(SettingsRemoteContentScopeApplyingButtonFormat));
+
+    /// <summary>
+    /// Gets the localized button-label format when a scoped remote update is already current.
+    /// </summary>
+    public static string SettingsRemoteContentScopeCurrentButtonFormat => GetRequiredString(nameof(SettingsRemoteContentScopeCurrentButtonFormat));
+
+    /// <summary>
+    /// Gets the localized dialog body shown after a successful scoped remote update.
+    /// </summary>
+    public static string SettingsRemoteContentScopeCompletedMessageFormat => GetRequiredString(nameof(SettingsRemoteContentScopeCompletedMessageFormat));
+
+    /// <summary>
+    /// Gets the localized dialog body shown when a scoped remote update is already current.
+    /// </summary>
+    public static string SettingsRemoteContentScopeUpToDateMessageFormat => GetRequiredString(nameof(SettingsRemoteContentScopeUpToDateMessageFormat));
+
+    /// <summary>
+    /// Gets the localized dialog body shown when a scoped remote update fails.
+    /// </summary>
+    public static string SettingsRemoteContentScopeFailedMessageFormat => GetRequiredString(nameof(SettingsRemoteContentScopeFailedMessageFormat));
 
     /// <summary>
     /// Gets the localized dismiss-button caption for packaged content update dialogs.

@@ -347,7 +347,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
   - content-area update
   - CEFR-level word update
 - [x] define server package/version metadata and checksum rules
-- [ ] define local package-receipt tracking for mobile clients
+- [x] define local package-receipt tracking for mobile clients
 
 ### 27. Web API Content Distribution Foundation
 
@@ -376,9 +376,9 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 ### 30. Settings Update UX
 
 - [x] add a primary `Update All Content` action in settings
-- [ ] add per-area update actions in settings
-- [ ] add `A1`-`C2` per-level update actions for the word catalog
-- [ ] expose update counts and version summaries before apply
+- [x] add per-area update actions in settings
+- [x] add `A1`-`C2` per-level update actions for the word catalog
+- [x] expose update counts and version summaries before apply
 - [x] define non-blocking offline/error behavior for update actions
 
 ### 31. Future Platform Expansion
