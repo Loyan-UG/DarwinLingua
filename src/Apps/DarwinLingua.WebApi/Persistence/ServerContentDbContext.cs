@@ -65,6 +65,11 @@ public sealed class ServerContentDbContext(DbContextOptions<ServerContentDbConte
             entity.Property(package => package.PackageId).HasMaxLength(256).IsRequired();
             entity.Property(package => package.PackageType).HasMaxLength(128).IsRequired();
             entity.Property(package => package.Version).HasMaxLength(64).IsRequired();
+            entity.Property(package => package.PublicationBatchId).HasMaxLength(128).IsRequired();
+            entity.Property(package => package.PublicationStatus)
+                .HasConversion<string>()
+                .HasMaxLength(32)
+                .IsRequired();
             entity.Property(package => package.Checksum).HasMaxLength(256).IsRequired();
             entity.Property(package => package.RelativeDownloadPath).HasMaxLength(512).IsRequired();
             entity.HasOne(package => package.ContentStream)
@@ -72,6 +77,7 @@ public sealed class ServerContentDbContext(DbContextOptions<ServerContentDbConte
                 .HasForeignKey(package => package.ContentStreamId)
                 .OnDelete(DeleteBehavior.Cascade);
             entity.HasIndex(package => package.PackageId).IsUnique();
+            entity.HasIndex(package => new { package.ContentStreamId, package.PublicationStatus, package.CreatedAtUtc });
         });
 
         modelBuilder.Entity<ContentImportReceiptEntity>(entity =>

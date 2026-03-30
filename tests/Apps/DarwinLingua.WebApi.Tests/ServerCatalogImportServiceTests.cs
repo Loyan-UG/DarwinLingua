@@ -9,6 +9,7 @@ using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
+using DarwinLingua.WebApi.Persistence.Entities;
 using DarwinLingua.WebApi.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +24,7 @@ namespace DarwinLingua.WebApi.Tests;
 public sealed class ServerCatalogImportServiceTests
 {
     [Fact]
-    public async Task ImportAndPublishAsync_ImportsIntoSharedCatalogAndGeneratesPublishedPackagesAsync()
+    public async Task ImportAndStageAsync_ImportsIntoSharedCatalogAndGeneratesDraftPackagesAsync()
     {
         string tempRoot = Path.Combine(Path.GetTempPath(), "darwinlingua-webapi-tests", Guid.NewGuid().ToString("N"));
         string catalogDatabasePath = Path.Combine(tempRoot, "catalog", "catalog.db");
@@ -49,6 +50,7 @@ public sealed class ServerCatalogImportServiceTests
             services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
             services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
             services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
+            services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
             services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
             services.AddSingleton<IWebHostEnvironment>(new TestWebHostEnvironment(tempRoot));
             services.AddSingleton<IHostEnvironment>(new TestWebHostEnvironment(tempRoot));
@@ -78,13 +80,14 @@ public sealed class ServerCatalogImportServiceTests
             IServerCatalogImportService service = serviceProvider.GetRequiredService<IServerCatalogImportService>();
             string fixturePath = ResolveFixturePath();
 
-            AdminImportCatalogResponse response = await service.ImportAndPublishAsync(
+            AdminImportCatalogResponse response = await service.ImportAndStageAsync(
                 new AdminImportCatalogRequest(fixturePath, "darwin-deutsch"),
                 CancellationToken.None);
 
             Assert.True(response.IsSuccess);
             Assert.Equal(12, response.ImportedEntries);
-            Assert.Equal(8, response.PublishedPackageIds.Count);
+            Assert.Equal(8, response.StagedPackageIds.Count);
+            Assert.False(string.IsNullOrWhiteSpace(response.DraftPublicationBatchId));
 
             await using (DarwinLinguaDbContext catalogDbContext = await serviceProvider
                              .GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>()
@@ -94,14 +97,34 @@ public sealed class ServerCatalogImportServiceTests
                 Assert.Single(await catalogDbContext.ContentPackages.ToListAsync());
             }
 
-            await using (ServerContentDbContext serverDbContext = serviceProvider.GetRequiredService<ServerContentDbContext>())
+            await using (AsyncServiceScope statusScope = serviceProvider.CreateAsyncScope())
             {
+                ServerContentDbContext serverDbContext = statusScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
                 Assert.Single(await serverDbContext.ContentImportReceipts.ToListAsync());
                 Assert.Equal(8, await serverDbContext.PublishedPackages.CountAsync());
+                Assert.Equal(8, await serverDbContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Draft));
             }
 
-            string fullCatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.PublishedPackageIds.Single(packageId => packageId.Contains("catalog-full", StringComparison.Ordinal)));
+            string fullCatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.StagedPackageIds.Single(packageId => packageId.Contains("catalog-full", StringComparison.Ordinal)));
             Assert.True(File.Exists($"{fullCatalogPath}.json"));
+
+            await using (AsyncServiceScope publishScope = serviceProvider.CreateAsyncScope())
+            {
+                ICatalogPackageReleaseService releaseService = publishScope.ServiceProvider.GetRequiredService<ICatalogPackageReleaseService>();
+                AdminPublishCatalogResponse publishResponse = await releaseService.PublishAsync(
+                    new AdminPublishCatalogRequest("darwin-deutsch", response.DraftPublicationBatchId),
+                    CancellationToken.None);
+
+                Assert.True(publishResponse.IsSuccess);
+                Assert.Equal(8, publishResponse.PublishedPackageIds.Count);
+            }
+
+            await using (AsyncServiceScope publishedScope = serviceProvider.CreateAsyncScope())
+            {
+                ServerContentDbContext publishedContext = publishedScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
+                Assert.Equal(8, await publishedContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Published));
+                Assert.Equal(0, await publishedContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Draft));
+            }
         }
         finally
         {

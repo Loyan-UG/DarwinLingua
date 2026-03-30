@@ -1,7 +1,9 @@
+using System.Data.Common;
 using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Persistence;
 using DarwinLingua.WebApi.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Options;
 
 namespace DarwinLingua.WebApi.Services;
@@ -20,6 +22,7 @@ public sealed class ServerContentDatabaseBootstrapper(
         ArgumentNullException.ThrowIfNull(options);
 
         await dbContext.Database.EnsureCreatedAsync(cancellationToken).ConfigureAwait(false);
+        await ApplyPublishedPackageCompatibilityUpdatesAsync(cancellationToken).ConfigureAwait(false);
 
         DateTimeOffset now = DateTimeOffset.UtcNow;
         Dictionary<string, ClientProductEntity> productsByKey = await dbContext.ClientProducts
@@ -105,15 +108,134 @@ public sealed class ServerContentDatabaseBootstrapper(
 
             package.PackageType = configuredPackage.PackageType.Trim();
             package.Version = configuredPackage.Version.Trim();
+            package.PublicationBatchId = string.IsNullOrWhiteSpace(package.PublicationBatchId)
+                ? package.Version
+                : package.PublicationBatchId;
+            package.PublicationStatus = PackagePublicationStatus.Published;
             package.SchemaVersion = configuredPackage.SchemaVersion;
             package.MinimumAppSchemaVersion = configuredPackage.MinimumAppSchemaVersion;
             package.Checksum = configuredPackage.Checksum.Trim();
             package.EntryCount = configuredPackage.EntryCount;
             package.WordCount = configuredPackage.WordCount;
             package.RelativeDownloadPath = configuredPackage.RelativeDownloadPath.Trim();
+            package.PublishedAtUtc ??= package.CreatedAtUtc;
+            package.SupersededAtUtc = null;
             package.UpdatedAtUtc = now;
         }
 
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task ApplyPublishedPackageCompatibilityUpdatesAsync(CancellationToken cancellationToken)
+    {
+        if (!await ColumnExistsAsync("PublishedPackages", "PublicationBatchId", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteColumnAddAsync(
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "PublicationBatchId" TEXT NOT NULL DEFAULT '';""",
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "PublicationBatchId" text NOT NULL DEFAULT '';""",
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!await ColumnExistsAsync("PublishedPackages", "PublicationStatus", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteColumnAddAsync(
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "PublicationStatus" TEXT NOT NULL DEFAULT 'Published';""",
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "PublicationStatus" text NOT NULL DEFAULT 'Published';""",
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!await ColumnExistsAsync("PublishedPackages", "PublishedAtUtc", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteColumnAddAsync(
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "PublishedAtUtc" TEXT NULL;""",
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "PublishedAtUtc" timestamp with time zone NULL;""",
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!await ColumnExistsAsync("PublishedPackages", "SupersededAtUtc", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteColumnAddAsync(
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "SupersededAtUtc" TEXT NULL;""",
+                    """ALTER TABLE "PublishedPackages" ADD COLUMN "SupersededAtUtc" timestamp with time zone NULL;""",
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+                """UPDATE "PublishedPackages" SET "PublicationBatchId" = COALESCE(NULLIF("PublicationBatchId", ''), "Version", "PackageId");""",
+                cancellationToken)
+            .ConfigureAwait(false);
+        await dbContext.Database.ExecuteSqlRawAsync(
+                """UPDATE "PublishedPackages" SET "PublicationStatus" = COALESCE(NULLIF("PublicationStatus", ''), 'Published');""",
+                cancellationToken)
+            .ConfigureAwait(false);
+        await dbContext.Database.ExecuteSqlRawAsync(
+                """UPDATE "PublishedPackages" SET "PublishedAtUtc" = COALESCE("PublishedAtUtc", "CreatedAtUtc") WHERE "PublicationStatus" = 'Published';""",
+                cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    private async Task<bool> ColumnExistsAsync(string tableName, string columnName, CancellationToken cancellationToken)
+    {
+        DbConnection connection = dbContext.Database.GetDbConnection();
+        if (connection.State != System.Data.ConnectionState.Open)
+        {
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        await using DbCommand command = connection.CreateCommand();
+        if (dbContext.Database.IsSqlite())
+        {
+            command.CommandText = $"PRAGMA table_info(\"{tableName}\");";
+            await using DbDataReader reader = await command.ExecuteReaderAsync(cancellationToken).ConfigureAwait(false);
+            while (await reader.ReadAsync(cancellationToken).ConfigureAwait(false))
+            {
+                if (string.Equals(reader.GetString(1), columnName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        command.CommandText =
+            """
+            SELECT 1
+            FROM information_schema.columns
+            WHERE table_schema = 'public'
+              AND table_name = @tableName
+              AND column_name = @columnName;
+            """;
+
+        DbParameter tableParameter = command.CreateParameter();
+        tableParameter.ParameterName = "@tableName";
+        tableParameter.Value = tableName;
+        command.Parameters.Add(tableParameter);
+
+        DbParameter columnParameter = command.CreateParameter();
+        columnParameter.ParameterName = "@columnName";
+        columnParameter.Value = columnName;
+        command.Parameters.Add(columnParameter);
+
+        object? result = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+        return result is not null;
+    }
+
+    private async Task ExecuteColumnAddAsync(string sqliteSql, string postgresSql, CancellationToken cancellationToken)
+    {
+        if (dbContext.Database.IsSqlite())
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(sqliteSql, cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        if (dbContext.Database.IsNpgsql())
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(postgresSql, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

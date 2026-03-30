@@ -31,6 +31,16 @@ public sealed class PublishedPackageEntity
     public string Version { get; set; } = string.Empty;
 
     /// <summary>
+    /// Gets or sets the publication batch identifier shared by one generated package set.
+    /// </summary>
+    public string PublicationBatchId { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Gets or sets the current lifecycle state of the package.
+    /// </summary>
+    public PackagePublicationStatus PublicationStatus { get; set; }
+
+    /// <summary>
     /// Gets or sets the schema version.
     /// </summary>
     public int SchemaVersion { get; set; }
@@ -64,6 +74,16 @@ public sealed class PublishedPackageEntity
     /// Gets or sets the last update timestamp.
     /// </summary>
     public DateTimeOffset UpdatedAtUtc { get; set; }
+
+    /// <summary>
+    /// Gets or sets the timestamp when the package was published to clients.
+    /// </summary>
+    public DateTimeOffset? PublishedAtUtc { get; set; }
+
+    /// <summary>
+    /// Gets or sets the timestamp when the package became superseded.
+    /// </summary>
+    public DateTimeOffset? SupersededAtUtc { get; set; }
 
     /// <summary>
     /// Gets or sets the relative download path.

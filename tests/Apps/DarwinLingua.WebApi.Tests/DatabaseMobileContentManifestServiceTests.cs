@@ -1,5 +1,7 @@
 using DarwinLingua.WebApi.Configuration;
+using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
+using DarwinLingua.WebApi.Persistence.Entities;
 using DarwinLingua.WebApi.Services;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -63,6 +65,56 @@ public sealed class DatabaseMobileContentManifestServiceTests
             Assert.Single(manifest.Packages);
             Assert.Equal("cefr:a1", manifest.SliceKey);
             Assert.Equal("darwin-deutsch-catalog-a1-v1", manifest.Packages[0].PackageId);
+        }
+    }
+
+    [Fact]
+    public async Task DatabaseService_ExcludesDraftPackagesFromGlobalManifestAsync()
+    {
+        await using SqliteConnection connection = new("Data Source=:memory:");
+        await connection.OpenAsync();
+
+        DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
+            .UseSqlite(connection)
+            .Options;
+
+        ServerContentOptions options = CreateOptions();
+
+        await using (ServerContentDbContext seedContext = new(dbOptions))
+        {
+            ServerContentDatabaseBootstrapper bootstrapper = new(seedContext, Options.Create(options));
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+
+            ContentStreamEntity stream = await seedContext.ContentStreams.SingleAsync(existingStream => existingStream.ContentAreaKey == "catalog" && existingStream.SliceKey == "full");
+            seedContext.PublishedPackages.Add(new PublishedPackageEntity
+            {
+                Id = Guid.NewGuid(),
+                PackageId = "darwin-deutsch-catalog-full-draft",
+                ContentStreamId = stream.Id,
+                ContentStream = stream,
+                PackageType = "full-catalog",
+                Version = "2026.03.30.2",
+                PublicationBatchId = "draft-batch",
+                PublicationStatus = PackagePublicationStatus.Draft,
+                SchemaVersion = 1,
+                MinimumAppSchemaVersion = 1,
+                Checksum = "draft-checksum",
+                EntryCount = 41,
+                WordCount = 41,
+                CreatedAtUtc = new DateTimeOffset(2026, 03, 30, 11, 0, 0, TimeSpan.Zero),
+                UpdatedAtUtc = new DateTimeOffset(2026, 03, 30, 11, 0, 0, TimeSpan.Zero),
+                RelativeDownloadPath = "/downloads/packages/darwin-deutsch-catalog-full-draft.json",
+            });
+            await seedContext.SaveChangesAsync();
+        }
+
+        await using (ServerContentDbContext queryContext = new(dbOptions))
+        {
+            DatabaseMobileContentManifestService service = new(queryContext, Options.Create(options));
+
+            MobileContentManifestResponse manifest = service.GetAreaManifest("darwin-deutsch", "catalog");
+
+            Assert.DoesNotContain(manifest.Packages, package => package.PackageId == "darwin-deutsch-catalog-full-draft");
         }
     }
 

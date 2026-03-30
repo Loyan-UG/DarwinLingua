@@ -364,7 +364,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] move the canonical import pipeline from local-only seed generation to server-side shared-content import
 - [x] persist imported content into the central PostgreSQL catalog
 - [x] persist package receipts and publishing/version metadata on the server
-- [ ] define publishing workflow for draft vs published content packages
+- [x] define publishing workflow for draft vs published content packages
 
 ### 29. Mobile Content Update Client
 

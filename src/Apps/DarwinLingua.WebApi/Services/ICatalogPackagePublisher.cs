@@ -8,9 +8,9 @@ namespace DarwinLingua.WebApi.Services;
 public interface ICatalogPackagePublisher
 {
     /// <summary>
-    /// Publishes the latest catalog state for the specified client product.
+    /// Stages the latest catalog state for the specified client product as a draft package batch.
     /// </summary>
-    Task<CatalogPackagePublicationResult> PublishAsync(
+    Task<CatalogPackagePublicationResult> StageDraftAsync(
         string clientProductKey,
         CancellationToken cancellationToken);
 }

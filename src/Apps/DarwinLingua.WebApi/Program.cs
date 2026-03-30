@@ -52,6 +52,7 @@ builder.Services.AddScoped<IMobileContentManifestService, DatabaseMobileContentM
 builder.Services.AddScoped<IMobileContentPackageDeliveryService, DatabaseMobileContentPackageDeliveryService>();
 builder.Services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
 builder.Services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
+builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 
 WebApplication app = builder.Build();
@@ -112,7 +113,18 @@ app.MapPost(
     async (AdminImportCatalogRequest request, IServerCatalogImportService importService, CancellationToken cancellationToken) =>
     {
         AdminImportCatalogResponse response = await importService
-            .ImportAndPublishAsync(request, cancellationToken)
+            .ImportAndStageAsync(request, cancellationToken)
+            .ConfigureAwait(false);
+
+        return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+    });
+
+app.MapPost(
+    "/api/admin/content/catalog/publish",
+    async (AdminPublishCatalogRequest request, ICatalogPackageReleaseService releaseService, CancellationToken cancellationToken) =>
+    {
+        AdminPublishCatalogResponse response = await releaseService
+            .PublishAsync(request, cancellationToken)
             .ConfigureAwait(false);
 
         return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);

@@ -91,7 +91,8 @@ public sealed class DatabaseMobileContentPackageDeliveryService(
             .AsNoTracking()
             .Include(package => package.ContentStream)
             .ThenInclude(stream => stream.ClientProduct)
-            .Where(package => package.ContentStream.ClientProduct.Key == clientProductKey)
+            .Where(package => package.ContentStream.ClientProduct.Key == clientProductKey &&
+                              package.PublicationStatus == PackagePublicationStatus.Published)
             .AsEnumerable()
             .OrderByDescending(package => package.CreatedAtUtc)
             .ThenBy(package => package.PackageId, StringComparer.OrdinalIgnoreCase);

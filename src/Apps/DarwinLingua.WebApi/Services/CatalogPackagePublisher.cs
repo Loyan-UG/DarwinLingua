@@ -14,7 +14,7 @@ using Microsoft.Extensions.Options;
 namespace DarwinLingua.WebApi.Services;
 
 /// <summary>
-/// Publishes versioned mobile content packages from the shared catalog database.
+/// Stages versioned mobile content packages from the shared catalog database.
 /// </summary>
 public sealed class CatalogPackagePublisher(
     IDbContextFactory<DarwinLinguaDbContext> catalogDbContextFactory,
@@ -28,7 +28,7 @@ public sealed class CatalogPackagePublisher(
     };
 
     /// <inheritdoc />
-    public async Task<CatalogPackagePublicationResult> PublishAsync(string clientProductKey, CancellationToken cancellationToken)
+    public async Task<CatalogPackagePublicationResult> StageDraftAsync(string clientProductKey, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(clientProductKey);
 
@@ -85,6 +85,7 @@ public sealed class CatalogPackagePublisher(
         string versionToken = now.ToString("yyyyMMddHHmmss");
         string outputRootPath = ResolveOutputRootPath();
 
+        string publicationBatchId = $"{product.Key}-{versionToken}";
         List<PackagePublicationDefinition> definitions = BuildDefinitions(product.Key, versionToken, words);
         List<string> publishedPackageIds = [];
 
@@ -120,6 +121,8 @@ public sealed class CatalogPackagePublisher(
                 ContentStream = stream,
                 PackageType = definition.PackageType,
                 Version = version,
+                PublicationBatchId = publicationBatchId,
+                PublicationStatus = PackagePublicationStatus.Draft,
                 SchemaVersion = options.Value.DefaultSchemaVersion,
                 MinimumAppSchemaVersion = options.Value.DefaultSchemaVersion,
                 Checksum = checksum,
@@ -137,7 +140,7 @@ public sealed class CatalogPackagePublisher(
 
         await serverContentDbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
-        return new CatalogPackagePublicationResult(product.Key, version, publishedPackageIds);
+        return new CatalogPackagePublicationResult(product.Key, version, publicationBatchId, publishedPackageIds);
     }
 
     private static List<PackagePublicationDefinition> BuildDefinitions(

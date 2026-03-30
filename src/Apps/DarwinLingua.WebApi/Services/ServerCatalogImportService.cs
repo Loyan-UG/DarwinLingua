@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DarwinLingua.WebApi.Services;
 
 /// <summary>
-/// Executes one shared-catalog import and then republishes mobile package payloads.
+/// Executes one shared-catalog import and then stages mobile package payloads as drafts.
 /// </summary>
 public sealed class ServerCatalogImportService(
     IContentImportService contentImportService,
@@ -16,7 +16,7 @@ public sealed class ServerCatalogImportService(
     ServerContentDbContext serverContentDbContext) : IServerCatalogImportService
 {
     /// <inheritdoc />
-    public async Task<AdminImportCatalogResponse> ImportAndPublishAsync(
+    public async Task<AdminImportCatalogResponse> ImportAndStageAsync(
         AdminImportCatalogRequest request,
         CancellationToken cancellationToken)
     {
@@ -32,7 +32,7 @@ public sealed class ServerCatalogImportService(
         if (importResult.IsSuccess)
         {
             publicationResult = await catalogPackagePublisher
-                .PublishAsync(clientProductKey, cancellationToken)
+                .StageDraftAsync(clientProductKey, cancellationToken)
                 .ConfigureAwait(false);
         }
 
@@ -71,6 +71,7 @@ public sealed class ServerCatalogImportService(
             importResult.SkippedDuplicateEntries,
             importResult.InvalidEntries,
             importResult.WarningCount,
+            publicationResult?.PublicationBatchId,
             publicationResult?.PackageIds ?? [],
             importResult.ImportedLemmas,
             importResult.Issues.Select(issue => issue.Message).ToArray());

@@ -1,7 +1,7 @@
 namespace DarwinLingua.WebApi.Models;
 
 /// <summary>
-/// Represents the result of one server-side catalog import and publication run.
+/// Represents the result of one server-side catalog import and draft-package staging run.
 /// </summary>
 public sealed record AdminImportCatalogResponse(
     bool IsSuccess,
@@ -14,6 +14,7 @@ public sealed record AdminImportCatalogResponse(
     int SkippedDuplicateEntries,
     int InvalidEntries,
     int WarningCount,
-    IReadOnlyList<string> PublishedPackageIds,
+    string? DraftPublicationBatchId,
+    IReadOnlyList<string> StagedPackageIds,
     IReadOnlyList<string> ImportedLemmas,
     IReadOnlyList<string> IssueMessages);

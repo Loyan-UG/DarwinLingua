@@ -30,7 +30,7 @@ public sealed class DatabaseMobileContentManifestService(
         return dbContext.PublishedPackages
             .AsNoTracking()
             .Include(package => package.ContentStream)
-            .Where(package => package.ContentStream.ClientProduct.Key == product.Key)
+            .Where(package => package.ContentStream.ClientProduct.Key == product.Key && package.PublicationStatus == PackagePublicationStatus.Published)
             .GroupBy(package => package.ContentStream.ContentAreaKey)
             .Select(group => new MobileContentAreaSummaryResponse(
                 group.Key,
@@ -78,7 +78,8 @@ public sealed class DatabaseMobileContentManifestService(
             .ThenInclude(stream => stream.ClientProduct)
             .FirstOrDefault(existingPackage =>
                 existingPackage.PackageId == packageId.Trim() &&
-                existingPackage.ContentStream.ClientProduct.Key == product.Key)
+                existingPackage.ContentStream.ClientProduct.Key == product.Key &&
+                existingPackage.PublicationStatus == PackagePublicationStatus.Published)
             ?? throw new KeyNotFoundException($"No package was found for '{packageId}'.");
 
         return MapPackage(package);
@@ -134,7 +135,8 @@ public sealed class DatabaseMobileContentManifestService(
             .AsNoTracking()
             .Include(package => package.ContentStream)
             .ThenInclude(stream => stream.ClientProduct)
-            .Where(package => package.ContentStream.ClientProduct.Key == clientProductKey);
+            .Where(package => package.ContentStream.ClientProduct.Key == clientProductKey &&
+                              package.PublicationStatus == PackagePublicationStatus.Published);
 
         if (!string.IsNullOrWhiteSpace(areaKey))
         {
