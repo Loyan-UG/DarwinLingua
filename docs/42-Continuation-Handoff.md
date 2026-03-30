@@ -53,6 +53,7 @@ Use it when:
 - The next architectural direction is now explicitly defined as a server-authored content-distribution model with PostgreSQL as the shared-content source of truth, a Web API for package delivery, and mobile SQLite remaining the runtime/offline store; see `docs/36-Server-Content-Distribution.md`.
 - The server-side domain and multi-product partitioning direction are now explicitly defined in `docs/37-Shared-Content-Server-Domain.md`.
 - Local Docker Desktop setup guidance for PostgreSQL now exists in `docs/49-Local-Postgres-Setup.md` with matching config templates under `tools/Server`.
+- The first executable Phase 5 foundation slice now exists in `src/Apps/DarwinLingua.WebApi` with config-backed read-only manifest endpoints and a local-only `appsettings.Development.Local.json` override pattern.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
@@ -60,13 +61,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the first executable Phase 5 slice: the server-backed shared-content foundation.
+Focus next on the second executable Phase 5 slice: moving from config-backed manifests to PostgreSQL-backed shared-content manifests.
 
 Suggested scope:
 
-1. Add the `DarwinLingua.WebApi` host and define the first mobile content manifest contract.
-2. Define the first server-side package/version schema for shared content in PostgreSQL-friendly terms.
-3. Keep the remaining manual mobile validation worksheets visible, but treat them as parallel release work rather than the next architecture slice.
+1. Add PostgreSQL-backed persistence for client products, content streams, and published packages.
+2. Replace config-only manifest data with repository/query-backed manifest generation.
+3. Keep the remaining manual mobile validation worksheets visible, but treat them as parallel release work rather than the main backend slice.
 
 ---
 

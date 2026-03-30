@@ -144,10 +144,10 @@ Phase 1 delivery hosts are:
 
 - `DarwinDeutsch.Maui`
 - `DarwinLingua.ImportTool`
+- `DarwinLingua.WebApi` (Phase 5 foundation)
 
 Future server/web hosts are planned but not yet implemented:
 
-- `DarwinLingua.WebApi`
 - `DarwinLingua.Admin`
 - `DarwinLingua.Web`
 

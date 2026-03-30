@@ -4,6 +4,7 @@
       <Deploy Solution="Debug|*" />
     </Project>
     <Project Path="src/Apps/DarwinLingua.ImportTool/DarwinLingua.ImportTool.csproj" />
+    <Project Path="src/Apps/DarwinLingua.WebApi/DarwinLingua.WebApi.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/">
     <Project Path="src/BuildingBlocks/DarwinLingua.Contracts/DarwinLingua.Contracts.csproj" />
@@ -76,6 +77,7 @@
   <Folder Name="/Modules/ResourceDirectory/" />
   <Folder Name="/Presentation/" />
   <Folder Name="/tests/">
+    <Project Path="tests/Apps/DarwinLingua.WebApi.Tests/DarwinLingua.WebApi.Tests.csproj" />
     <Project Path="tests/Modules/Catalog/DarwinLingua.Catalog.Application.Tests/DarwinLingua.Catalog.Application.Tests.csproj" />
     <Project Path="tests/Modules/Catalog/DarwinLingua.Catalog.Infrastructure.Tests/DarwinLingua.Catalog.Infrastructure.Tests.csproj" />
     <Project Path="tests/Modules/ContentOps/DarwinLingua.ContentOps.Infrastructure.Tests/DarwinLingua.ContentOps.Infrastructure.Tests.csproj" />

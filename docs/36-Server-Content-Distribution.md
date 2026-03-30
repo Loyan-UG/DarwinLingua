@@ -306,6 +306,12 @@ The recommended execution order is:
 
 This order keeps the first slice focused on content distribution, not accounts or sync.
 
+The first three steps now have a baseline implementation in the repository:
+
+- `src/Apps/DarwinLingua.WebApi`
+- `tools/Server/Postgres`
+- `tools/Server/Config`
+
 ---
 
 ## 11. Non-Goals for the First Server Slice

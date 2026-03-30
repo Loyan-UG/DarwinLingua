@@ -22,7 +22,7 @@ The first learner-facing product is **Darwin Deutsch**, a German-learning applic
 - `Phase 3 enhanced lexical intelligence`: `In Progress`
   - lexical usage/context labels, grammar notes, collocations, word families, and synonym/antonym relations now flow from imported content into a richer word-detail screen, and the main learner-facing mobile screens now share a cleaner visual hierarchy
 - `Phase 5 server content distribution`: `Planned`
-  - the next backend slice will introduce one central shared-content database, a Web API for package delivery, multi-product shared infrastructure for future learner apps, and mobile update controls for full, area, and CEFR-slice refreshes
+  - the first backend foundation now includes a Web API host, config-backed mobile manifest endpoints, and local PostgreSQL/Web API development templates; package persistence and real server-side publishing are next
 - `Phase 4 support resources`: `Planned`
   - resource discovery and non-lexical support content remain future work
 
@@ -95,6 +95,7 @@ Active contexts:
 Deferred but designed:
 
 - `Resource Discovery`
+- `Publishing` / `Distribution` (Phase 5 foundation direction)
 
 ## Storage Direction
 
