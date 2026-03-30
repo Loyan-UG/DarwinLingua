@@ -118,6 +118,7 @@ The project has explicit implementation standards in:
 - [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
 - [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 - [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
+- [Phase 5 Remote Update Validation Worksheet](docs/50-Phase-5-Remote-Update-Validation-Worksheet.md)
 
 Important rules include:
 
@@ -151,6 +152,7 @@ Important rules include:
 - [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
 - [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 - [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
+- [Phase 5 Remote Update Validation Worksheet](docs/50-Phase-5-Remote-Update-Validation-Worksheet.md)
 
 ### Content and Import
 
@@ -199,6 +201,7 @@ Important rules include:
 21. [Phase 2 Practice Validation Worksheet](docs/46-Phase-2-Practice-Validation-Worksheet.md)
 22. [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 23. [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
+24. [Phase 5 Remote Update Validation Worksheet](docs/50-Phase-5-Remote-Update-Validation-Worksheet.md)
 
 ## Repository Structure
 

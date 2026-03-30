@@ -63,6 +63,7 @@ All project documentation should remain in English.
 - `47-Phase-3-Mobile-UX-Validation-Worksheet.md`
 - `48-Mobile-Validation-Bundle-Runbook.md`
 - `49-Local-Postgres-Setup.md`
+- `50-Phase-5-Remote-Update-Validation-Worksheet.md`
 
 Related release-execution helpers live under `tools/Phase1/`.
 
@@ -92,6 +93,7 @@ If you are new to the project, read the documents in this order:
 18. `49-Local-Postgres-Setup.md`
 19. `04-Implementation-Backlog.md`
 20. `42-Continuation-Handoff.md`
+21. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
 
 ---
 
