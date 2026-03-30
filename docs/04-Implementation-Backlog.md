@@ -341,6 +341,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 
 - [ ] lock the server-authored content distribution architecture
 - [ ] define the shared-content source-of-truth boundary vs local user-state boundary
+- [ ] define the multi-product shared-backend partition strategy for future learner apps
 - [ ] define the mobile update scopes:
   - full database update
   - content-area update
@@ -351,6 +352,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 ### 27. Web API Content Distribution Foundation
 
 - [ ] add the Web API host to the solution structure
+- [ ] add baseline server configuration files for local PostgreSQL and Web API development
 - [ ] define the mobile content manifest contract
 - [ ] implement read-only manifest endpoints for mobile clients
 - [ ] implement package-download endpoints for full, area, and CEFR-slice updates

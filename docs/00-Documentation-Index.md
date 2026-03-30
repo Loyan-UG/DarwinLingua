@@ -49,6 +49,7 @@ All project documentation should remain in English.
 - `32-Storage-Strategy.md`
 - `33-Offline-Strategy.md`
 - `36-Server-Content-Distribution.md`
+- `37-Shared-Content-Server-Domain.md`
 - `35-Engineering-Standards.md`
 
 ### Runbooks and Handoffs
@@ -61,6 +62,7 @@ All project documentation should remain in English.
 - `46-Phase-2-Practice-Validation-Worksheet.md`
 - `47-Phase-3-Mobile-UX-Validation-Worksheet.md`
 - `48-Mobile-Validation-Bundle-Runbook.md`
+- `49-Local-Postgres-Setup.md`
 
 Related release-execution helpers live under `tools/Phase1/`.
 
@@ -78,16 +80,18 @@ If you are new to the project, read the documents in this order:
 6. `32-Storage-Strategy.md`
 7. `33-Offline-Strategy.md`
 8. `36-Server-Content-Distribution.md`
-9. `11-Content-Strategy.md`
-10. `12-Content-Package-Format.md`
-11. `14-Import-Rules.md`
-12. `22-Domain-Model.md`
-13. `25-Phase-1-Domain-Cut.md`
-14. `26-Bounded-Contexts.md`
-15. `35-Engineering-Standards.md`
-16. `34-Import-Workflow.md`
-17. `04-Implementation-Backlog.md`
-18. `42-Continuation-Handoff.md`
+9. `37-Shared-Content-Server-Domain.md`
+10. `11-Content-Strategy.md`
+11. `12-Content-Package-Format.md`
+12. `14-Import-Rules.md`
+13. `22-Domain-Model.md`
+14. `25-Phase-1-Domain-Cut.md`
+15. `26-Bounded-Contexts.md`
+16. `35-Engineering-Standards.md`
+17. `34-Import-Workflow.md`
+18. `49-Local-Postgres-Setup.md`
+19. `04-Implementation-Backlog.md`
+20. `42-Continuation-Handoff.md`
 
 ---
 
@@ -116,6 +120,7 @@ If you are new to the project, read the documents in this order:
 - `32-Storage-Strategy.md` defines the SQLite, migration, and indexing direction for Phase 1.
 - `33-Offline-Strategy.md` defines the local-first runtime behavior.
 - `36-Server-Content-Distribution.md` defines the future server-authored content-update architecture.
+- `37-Shared-Content-Server-Domain.md` defines the multi-product server-side domain and publishing model.
 
 ### Reference vs Runbooks
 

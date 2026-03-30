@@ -130,3 +130,11 @@ The mobile app should eventually support three update scopes in Settings:
 - update all shared content
 - update one content area
 - update one CEFR slice for the word catalog
+
+---
+
+## Decision 20 - Shared Backend for Multiple Learner Apps
+
+Future learner apps should share the same backend infrastructure and PostgreSQL database, rather than using one isolated backend per app.
+
+Shared content should be partitioned logically by product and learning-language scope, not by separate schemas or separate databases by default.

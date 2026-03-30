@@ -49,6 +49,7 @@ The product should be divided into the following bounded contexts:
 - Learning Profile
 - Practice
 - Content Operations
+- Publishing and Distribution
 - Resource Discovery
 - Localization Support
 
@@ -335,6 +336,60 @@ The import process is operational behavior, not the heart of the learning conten
 
 ---
 
+# 6.7 Publishing and Distribution Context
+
+## 6.7.1 Purpose
+
+This future context owns how shared server-side content is published to clients.
+
+It is distinct from both raw lexical authoring and raw import execution.
+
+## 6.7.2 Responsibilities
+
+This context is responsible for:
+
+- client product registration
+- content stream definitions
+- manifest generation
+- package versioning
+- package artifact metadata
+- schema compatibility checks
+
+## 6.7.3 Core Concepts
+
+Main concepts expected later:
+
+- ClientProduct
+- ContentStream
+- PublishedPackage
+- PublishedManifest
+- PackageArtifact
+
+## 6.7.4 Dependency Rule
+
+Publishing and Distribution depends on Content Catalog and may consume Content Operations outputs.
+
+### Direction
+
+- Publishing and Distribution -> Content Catalog
+- Publishing and Distribution -> Content Operations
+
+But:
+
+- Content Catalog -X-> Publishing and Distribution
+- Learning Profile -X-> Publishing and Distribution
+
+## 6.7.5 Why It Must Stay Separate
+
+This keeps multi-app package delivery clean:
+
+- Darwin Deutsch today
+- future language apps later
+
+without mixing package publication logic into lexical entities.
+
+---
+
 # 7. Resource Discovery Context
 
 ## 7.1 Purpose
@@ -478,6 +533,7 @@ The most changeable are:
 
 - Practice
 - Content Operations
+- Publishing and Distribution
 - Resource Discovery UI behavior
 - Admin workflows
 
@@ -562,6 +618,7 @@ Recommended application-layer grouping later:
 - Content features
 - Learning profile features
 - Import/content operations features
+- publishing/distribution features
 - Practice features
 - Resource discovery features
 
@@ -727,9 +784,13 @@ Import is an operational context, not a temporary script concern.
 
 ## Decision 5
 
-Resource discovery is a future independent domain area, not an extension of vocabulary topics.
+Publishing and distribution is a future bounded context, not just an API controller wrapper around raw tables.
 
 ## Decision 6
+
+Resource discovery is a future independent domain area, not an extension of vocabulary topics.
+
+## Decision 7
 
 Language support is a supporting context used by multiple primary contexts.
 

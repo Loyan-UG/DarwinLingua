@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: darwinlingua-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DARWINLINGUA_POSTGRES_DB}
+      POSTGRES_USER: ${DARWINLINGUA_POSTGRES_SUPER_USER}
+      POSTGRES_PASSWORD: ${DARWINLINGUA_POSTGRES_SUPER_PASSWORD}
+      DARWINLINGUA_POSTGRES_DB: ${DARWINLINGUA_POSTGRES_DB}
+      DARWINLINGUA_POSTGRES_APP_USER: ${DARWINLINGUA_POSTGRES_APP_USER}
+      DARWINLINGUA_POSTGRES_APP_PASSWORD: ${DARWINLINGUA_POSTGRES_APP_PASSWORD}
+      DARWINLINGUA_POSTGRES_ADMIN_USER: ${DARWINLINGUA_POSTGRES_ADMIN_USER}
+      DARWINLINGUA_POSTGRES_ADMIN_PASSWORD: ${DARWINLINGUA_POSTGRES_ADMIN_PASSWORD}
+      TZ: ${DARWINLINGUA_TIMEZONE}
+      PGTZ: ${DARWINLINGUA_TIMEZONE}
+    ports:
+      - "5432:5432"
+    volumes:
+      - darwinlingua-postgres-data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DARWINLINGUA_POSTGRES_SUPER_USER} -d ${DARWINLINGUA_POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  pgadmin:
+    image: dpage/pgadmin4:9
+    container_name: darwinlingua-pgadmin
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${DARWINLINGUA_PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${DARWINLINGUA_PGADMIN_PASSWORD}
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "8080:80"
+    volumes:
+      - darwinlingua-pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  darwinlingua-postgres-data:
+  darwinlingua-pgadmin-data:

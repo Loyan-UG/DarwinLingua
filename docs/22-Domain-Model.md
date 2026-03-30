@@ -30,6 +30,7 @@ The domain should follow these principles:
 - support for AI-assisted content generation and import
 - support for optional offline-first usage
 - avoid overloading a single entity with unrelated concerns
+- preserve a clean path toward one shared backend that can serve multiple learner apps later
 
 ## 1.2 Domain Shape
 
@@ -1487,3 +1488,8 @@ After this document, the next architectural documents should define:
 - import pipeline design
 - API contract direction
 - offline sync strategy
+
+For the future shared backend, also see:
+
+- `36-Server-Content-Distribution.md`
+- `37-Shared-Content-Server-Domain.md`

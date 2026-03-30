@@ -51,6 +51,8 @@ Use it when:
 - Manual/device-bound Phase 3 mobile UX validation now has a dedicated worksheet in `docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md`.
 - A single mobile validation bundle can now be prepared with `tools/Mobile/Start-MobileValidationBundle.ps1`, using the runbook in `docs/48-Mobile-Validation-Bundle-Runbook.md`.
 - The next architectural direction is now explicitly defined as a server-authored content-distribution model with PostgreSQL as the shared-content source of truth, a Web API for package delivery, and mobile SQLite remaining the runtime/offline store; see `docs/36-Server-Content-Distribution.md`.
+- The server-side domain and multi-product partitioning direction are now explicitly defined in `docs/37-Shared-Content-Server-Domain.md`.
+- Local Docker Desktop setup guidance for PostgreSQL now exists in `docs/49-Local-Postgres-Setup.md` with matching config templates under `tools/Server`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 

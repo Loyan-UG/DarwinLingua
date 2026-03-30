@@ -229,6 +229,11 @@ Contains shared infrastructure building blocks that are not owned by a single bo
 
 This project is not a place for domain rules or feature logic.
 
+Operational support files for the future server path may live under:
+
+- `tools/Server/Postgres`
+- `tools/Server/Config`
+
 ---
 
 ## 3.4 Bounded-Context Modules
@@ -268,6 +273,11 @@ Current module projects:
 Deferred contexts already reserved in the solution structure but not implemented are:
 
 - `ResourceDirectory`
+
+Future server-side bounded contexts expected to appear when Phase 5 starts are:
+
+- `Publishing`
+- `Distribution`
 
 Those placeholders should stay deferred until real scope justifies them.
 

@@ -6,12 +6,15 @@ This document defines the target architecture for moving Darwin Lingua from a pu
 
 The goal is to keep the mobile apps local-first at runtime while allowing a central backend to become the canonical source of shared content updates.
 
+The same backend must also stay reusable for future learner apps beyond Darwin Deutsch.
+
 This document builds on:
 
 - `31-Solution-Architecture.md`
 - `32-Storage-Strategy.md`
 - `33-Offline-Strategy.md`
 - `34-Import-Workflow.md`
+- `37-Shared-Content-Server-Domain.md`
 
 ---
 
@@ -27,6 +30,7 @@ The long-term content model should work like this:
    - one content area
    - one CEFR slice such as `A1`
 5. learner-specific local state remains separate and must survive content updates
+6. future learner apps can reuse the same backend and database without a redesign
 
 This is a **hybrid local-first** model, not a thin-client model.
 
@@ -82,6 +86,7 @@ The recommended backend shape is:
 - one shared content database
 - one Web API for mobile update and future web/admin clients
 - one admin/import workflow that writes to the server database
+- one publishing model that can serve multiple learner products
 
 ### 3.2 Mobile Components
 
