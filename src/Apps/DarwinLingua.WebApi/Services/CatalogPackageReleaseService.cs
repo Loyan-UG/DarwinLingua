@@ -8,7 +8,9 @@ namespace DarwinLingua.WebApi.Services;
 /// <summary>
 /// Promotes one staged package batch to published status and supersedes older published batches.
 /// </summary>
-public sealed class CatalogPackageReleaseService(ServerContentDbContext dbContext) : ICatalogPackageReleaseService
+public sealed class CatalogPackageReleaseService(
+    ServerContentDbContext dbContext,
+    IContentPublicationAuditService auditService) : ICatalogPackageReleaseService
 {
     public async Task<AdminPublishCatalogResponse> PublishAsync(
         AdminPublishCatalogRequest request,
@@ -98,6 +100,15 @@ public sealed class CatalogPackageReleaseService(ServerContentDbContext dbContex
         }
 
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        await auditService.RecordAsync(
+                clientProductKey,
+                publicationBatchId,
+                ContentPublicationEventType.Publish,
+                draftBatch.Select(package => package.PackageId),
+                previouslyPublished.Select(package => package.PublicationBatchId).Distinct(StringComparer.OrdinalIgnoreCase),
+                $"Published batch version {draftBatch[0].Version}.",
+                cancellationToken)
+            .ConfigureAwait(false);
 
         return new AdminPublishCatalogResponse(
             true,

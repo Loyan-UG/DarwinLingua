@@ -13,7 +13,8 @@ namespace DarwinLingua.WebApi.Services;
 public sealed class CatalogPackageCleanupService(
     ServerContentDbContext dbContext,
     IWebHostEnvironment hostEnvironment,
-    IOptions<ServerContentOptions> options) : ICatalogPackageCleanupService
+    IOptions<ServerContentOptions> options,
+    IContentPublicationAuditService auditService) : ICatalogPackageCleanupService
 {
     public async Task<AdminDeleteCatalogBatchResponse> DeleteSupersededBatchAsync(
         string publicationBatchId,
@@ -75,6 +76,15 @@ public sealed class CatalogPackageCleanupService(
         await dbContext.PublishedPackages
             .Where(package => deletedEntityIds.Contains(package.Id))
             .ExecuteDeleteAsync(cancellationToken)
+            .ConfigureAwait(false);
+        await auditService.RecordAsync(
+                resolvedClientProductKey,
+                normalizedBatchId,
+                ContentPublicationEventType.Cleanup,
+                deletedPackageIds,
+                [],
+                "Deleted superseded package batch and payload files.",
+                cancellationToken)
             .ConfigureAwait(false);
 
         return new AdminDeleteCatalogBatchResponse(

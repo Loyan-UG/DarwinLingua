@@ -8,7 +8,9 @@ namespace DarwinLingua.WebApi.Services;
 /// <summary>
 /// Re-activates one superseded package batch and supersedes the currently published batch.
 /// </summary>
-public sealed class CatalogPackageRollbackService(ServerContentDbContext dbContext) : ICatalogPackageRollbackService
+public sealed class CatalogPackageRollbackService(
+    ServerContentDbContext dbContext,
+    IContentPublicationAuditService auditService) : ICatalogPackageRollbackService
 {
     public async Task<AdminRollbackCatalogResponse> RollbackAsync(
         AdminRollbackCatalogRequest request,
@@ -84,6 +86,15 @@ public sealed class CatalogPackageRollbackService(ServerContentDbContext dbConte
         }
 
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        await auditService.RecordAsync(
+                clientProductKey,
+                publicationBatchId,
+                ContentPublicationEventType.Rollback,
+                targetBatch.Select(package => package.PackageId),
+                currentlyPublished.Select(package => package.PublicationBatchId).Distinct(StringComparer.OrdinalIgnoreCase),
+                $"Rolled back batch version {targetBatch[0].Version}.",
+                cancellationToken)
+            .ConfigureAwait(false);
 
         return new AdminRollbackCatalogResponse(
             true,

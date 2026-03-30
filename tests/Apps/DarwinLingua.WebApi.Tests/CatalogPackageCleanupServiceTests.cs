@@ -148,6 +148,7 @@ public sealed class CatalogPackageCleanupServiceTests
         services.AddDbContext<ServerContentDbContext>(options => options.UseSqlite($"Data Source={serverDatabasePath}"));
         services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
         services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
+        services.AddScoped<IContentPublicationAuditService, ContentPublicationAuditService>();
         services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
         services.AddScoped<ICatalogPackageCleanupService, CatalogPackageCleanupService>();
         services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();

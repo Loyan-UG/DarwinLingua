@@ -164,6 +164,42 @@ public sealed class ServerContentDatabaseBootstrapper(
                 .ConfigureAwait(false);
         }
 
+        if (!await TableExistsAsync("ContentPublicationEvents", cancellationToken).ConfigureAwait(false))
+        {
+            await ExecuteCreateTableAsync(
+                    """
+                    CREATE TABLE "ContentPublicationEvents" (
+                        "Id" TEXT NOT NULL CONSTRAINT "PK_ContentPublicationEvents" PRIMARY KEY,
+                        "ClientProductKey" TEXT NOT NULL,
+                        "PublicationBatchId" TEXT NOT NULL,
+                        "EventType" TEXT NOT NULL,
+                        "PackageIds" TEXT NOT NULL,
+                        "RelatedBatchIds" TEXT NOT NULL,
+                        "Notes" TEXT NOT NULL,
+                        "OccurredAtUtc" TEXT NOT NULL
+                    );
+                    CREATE INDEX "IX_ContentPublicationEvents_ClientProductKey_OccurredAtUtc"
+                    ON "ContentPublicationEvents" ("ClientProductKey", "OccurredAtUtc");
+                    """,
+                    """
+                    CREATE TABLE "ContentPublicationEvents" (
+                        "Id" uuid NOT NULL,
+                        "ClientProductKey" character varying(128) NOT NULL,
+                        "PublicationBatchId" character varying(128) NOT NULL,
+                        "EventType" character varying(32) NOT NULL,
+                        "PackageIds" character varying(4000) NOT NULL,
+                        "RelatedBatchIds" character varying(4000) NOT NULL,
+                        "Notes" character varying(2000) NOT NULL,
+                        "OccurredAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_ContentPublicationEvents" PRIMARY KEY ("Id")
+                    );
+                    CREATE INDEX "IX_ContentPublicationEvents_ClientProductKey_OccurredAtUtc"
+                    ON "ContentPublicationEvents" ("ClientProductKey", "OccurredAtUtc");
+                    """,
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
         await dbContext.Database.ExecuteSqlRawAsync(
                 """UPDATE "PublishedPackages" SET "PublicationBatchId" = COALESCE(NULLIF("PublicationBatchId", ''), "Version", "PackageId");""",
                 cancellationToken)
@@ -225,7 +261,60 @@ public sealed class ServerContentDatabaseBootstrapper(
         return result is not null;
     }
 
+    private async Task<bool> TableExistsAsync(string tableName, CancellationToken cancellationToken)
+    {
+        DbConnection connection = dbContext.Database.GetDbConnection();
+        if (connection.State != System.Data.ConnectionState.Open)
+        {
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        await using DbCommand command = connection.CreateCommand();
+        if (dbContext.Database.IsSqlite())
+        {
+            command.CommandText =
+                """
+                SELECT 1
+                FROM sqlite_master
+                WHERE type = 'table'
+                  AND name = $tableName;
+                """;
+        }
+        else
+        {
+            command.CommandText =
+                """
+                SELECT 1
+                FROM information_schema.tables
+                WHERE table_schema = 'public'
+                  AND table_name = @tableName;
+                """;
+        }
+
+        DbParameter tableParameter = command.CreateParameter();
+        tableParameter.ParameterName = dbContext.Database.IsSqlite() ? "$tableName" : "@tableName";
+        tableParameter.Value = tableName;
+        command.Parameters.Add(tableParameter);
+
+        object? result = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+        return result is not null;
+    }
+
     private async Task ExecuteColumnAddAsync(string sqliteSql, string postgresSql, CancellationToken cancellationToken)
+    {
+        if (dbContext.Database.IsSqlite())
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(sqliteSql, cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        if (dbContext.Database.IsNpgsql())
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(postgresSql, cancellationToken).ConfigureAwait(false);
+        }
+    }
+
+    private async Task ExecuteCreateTableAsync(string sqliteSql, string postgresSql, CancellationToken cancellationToken)
     {
         if (dbContext.Database.IsSqlite())
         {

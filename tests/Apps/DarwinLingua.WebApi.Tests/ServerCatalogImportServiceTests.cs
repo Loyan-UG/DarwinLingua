@@ -47,11 +47,12 @@ public sealed class ServerCatalogImportServiceTests
                 .AddLocalizationInfrastructure();
 
             services.AddDbContext<ServerContentDbContext>(options => options.UseSqlite($"Data Source={serverDatabasePath}"));
-            services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
-            services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
-            services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
-            services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
-            services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
+        services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
+        services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
+        services.AddScoped<IContentPublicationAuditService, ContentPublicationAuditService>();
+        services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
+        services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
+        services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
             services.AddSingleton<IWebHostEnvironment>(new TestWebHostEnvironment(tempRoot));
             services.AddSingleton<IHostEnvironment>(new TestWebHostEnvironment(tempRoot));
             services.Configure<ServerContentOptions>(options =>

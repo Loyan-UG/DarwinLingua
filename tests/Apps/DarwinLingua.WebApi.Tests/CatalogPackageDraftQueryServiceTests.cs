@@ -126,6 +126,7 @@ public sealed class CatalogPackageDraftQueryServiceTests
         services.AddDbContext<ServerContentDbContext>(options => options.UseSqlite($"Data Source={serverDatabasePath}"));
         services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
         services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
+        services.AddScoped<IContentPublicationAuditService, ContentPublicationAuditService>();
         services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
         services.AddScoped<ICatalogPackageDraftQueryService, CatalogPackageDraftQueryService>();
         services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();

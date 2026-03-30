@@ -28,6 +28,11 @@ public sealed class ServerContentDbContext(DbContextOptions<ServerContentDbConte
     /// </summary>
     public DbSet<ContentImportReceiptEntity> ContentImportReceipts => Set<ContentImportReceiptEntity>();
 
+    /// <summary>
+    /// Gets the server-side publication audit events.
+    /// </summary>
+    public DbSet<ContentPublicationEventEntity> ContentPublicationEvents => Set<ContentPublicationEventEntity>();
+
     /// <inheritdoc />
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -93,6 +98,22 @@ public sealed class ServerContentDbContext(DbContextOptions<ServerContentDbConte
             entity.Property(receipt => receipt.IssueSummary).HasMaxLength(4000).IsRequired();
             entity.Property(receipt => receipt.PublishedPackageIds).HasMaxLength(4000).IsRequired();
             entity.HasIndex(receipt => receipt.CreatedAtUtc);
+        });
+
+        modelBuilder.Entity<ContentPublicationEventEntity>(entity =>
+        {
+            entity.ToTable("ContentPublicationEvents");
+            entity.HasKey(auditEvent => auditEvent.Id);
+            entity.Property(auditEvent => auditEvent.ClientProductKey).HasMaxLength(128).IsRequired();
+            entity.Property(auditEvent => auditEvent.PublicationBatchId).HasMaxLength(128).IsRequired();
+            entity.Property(auditEvent => auditEvent.EventType)
+                .HasConversion<string>()
+                .HasMaxLength(32)
+                .IsRequired();
+            entity.Property(auditEvent => auditEvent.PackageIds).HasMaxLength(4000).IsRequired();
+            entity.Property(auditEvent => auditEvent.RelatedBatchIds).HasMaxLength(4000).IsRequired();
+            entity.Property(auditEvent => auditEvent.Notes).HasMaxLength(2000).IsRequired();
+            entity.HasIndex(auditEvent => new { auditEvent.ClientProductKey, auditEvent.OccurredAtUtc });
         });
     }
 }

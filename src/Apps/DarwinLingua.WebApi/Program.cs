@@ -56,6 +56,7 @@ builder.Services.AddScoped<ICatalogPackageDraftQueryService, CatalogPackageDraft
 builder.Services.AddScoped<ICatalogPackageCleanupService, CatalogPackageCleanupService>();
 builder.Services.AddScoped<ICatalogPublicationHistoryService, CatalogPublicationHistoryService>();
 builder.Services.AddScoped<ICatalogPackageRollbackService, CatalogPackageRollbackService>();
+builder.Services.AddScoped<IContentPublicationAuditService, ContentPublicationAuditService>();
 builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 
@@ -219,6 +220,28 @@ app.MapGet(
         {
             AdminCatalogBatchHistorySummaryResponse response = await historyService
                 .GetSummaryAsync(clientProductKey, cancellationToken)
+                .ConfigureAwait(false);
+
+            return Results.Ok(response);
+        }
+        catch (KeyNotFoundException exception)
+        {
+            return Results.NotFound(new
+            {
+                code = "client_product_not_found",
+                message = exception.Message,
+            });
+        }
+    });
+
+app.MapGet(
+    "/api/admin/content/catalog/events",
+    async (string? clientProductKey, IContentPublicationAuditService auditService, CancellationToken cancellationToken) =>
+    {
+        try
+        {
+            IReadOnlyList<AdminPublicationAuditEventResponse> response = await auditService
+                .GetRecentEventsAsync(clientProductKey, cancellationToken)
                 .ConfigureAwait(false);
 
             return Results.Ok(response);

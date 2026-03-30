@@ -19,12 +19,12 @@ using Xunit;
 
 namespace DarwinLingua.WebApi.Tests;
 
-public sealed class CatalogPackageRollbackServiceTests
+public sealed class ContentPublicationAuditServiceTests
 {
     [Fact]
-    public async Task RollbackAsync_ReactivatesSupersededBatchAndSupersedesCurrentPublishedBatchAsync()
+    public async Task GetRecentEventsAsync_ReturnsPublishRollbackAndCleanupEventsAsync()
     {
-        string tempRoot = Path.Combine(Path.GetTempPath(), "darwinlingua-webapi-rollback-tests", Guid.NewGuid().ToString("N"));
+        string tempRoot = Path.Combine(Path.GetTempPath(), "darwinlingua-webapi-audit-tests", Guid.NewGuid().ToString("N"));
         string catalogDatabasePath = Path.Combine(tempRoot, "catalog", "catalog.db");
         string serverDatabasePath = Path.Combine(tempRoot, "server", "server.db");
         string packageRootPath = Path.Combine(tempRoot, "packages");
@@ -37,78 +37,31 @@ public sealed class CatalogPackageRollbackServiceTests
             await InitializeAsync(serviceProvider);
 
             IServerCatalogImportService importService = serviceProvider.GetRequiredService<IServerCatalogImportService>();
-            ICatalogPackagePublisher packagePublisher = serviceProvider.GetRequiredService<ICatalogPackagePublisher>();
+            ICatalogPackagePublisher publisher = serviceProvider.GetRequiredService<ICatalogPackagePublisher>();
             ICatalogPackageReleaseService releaseService = serviceProvider.GetRequiredService<ICatalogPackageReleaseService>();
             ICatalogPackageRollbackService rollbackService = serviceProvider.GetRequiredService<ICatalogPackageRollbackService>();
+            ICatalogPackageCleanupService cleanupService = serviceProvider.GetRequiredService<ICatalogPackageCleanupService>();
+            IContentPublicationAuditService auditService = serviceProvider.GetRequiredService<IContentPublicationAuditService>();
 
             AdminImportCatalogResponse firstImport = await importService.ImportAndStageAsync(
                 new AdminImportCatalogRequest(ResolveFixturePath(), "darwin-deutsch"),
                 CancellationToken.None);
-
-            await releaseService.PublishAsync(
-                new AdminPublishCatalogRequest("darwin-deutsch", firstImport.DraftPublicationBatchId!),
-                CancellationToken.None);
+            await releaseService.PublishAsync(new AdminPublishCatalogRequest("darwin-deutsch", firstImport.DraftPublicationBatchId!), CancellationToken.None);
 
             await Task.Delay(TimeSpan.FromSeconds(1.1));
+            CatalogPackagePublicationResult secondBatch = await publisher.StageDraftAsync("darwin-deutsch", CancellationToken.None);
+            await releaseService.PublishAsync(new AdminPublishCatalogRequest("darwin-deutsch", secondBatch.PublicationBatchId), CancellationToken.None);
 
-            CatalogPackagePublicationResult secondBatch = await packagePublisher.StageDraftAsync("darwin-deutsch", CancellationToken.None);
-            await releaseService.PublishAsync(
-                new AdminPublishCatalogRequest("darwin-deutsch", secondBatch.PublicationBatchId),
-                CancellationToken.None);
+            await rollbackService.RollbackAsync(new AdminRollbackCatalogRequest("darwin-deutsch", firstImport.DraftPublicationBatchId!), CancellationToken.None);
+            await cleanupService.DeleteSupersededBatchAsync(secondBatch.PublicationBatchId, "darwin-deutsch", CancellationToken.None);
 
-            AdminRollbackCatalogResponse rollbackResponse = await rollbackService.RollbackAsync(
-                new AdminRollbackCatalogRequest("darwin-deutsch", firstImport.DraftPublicationBatchId!),
-                CancellationToken.None);
+            IReadOnlyList<AdminPublicationAuditEventResponse> events = await auditService.GetRecentEventsAsync("darwin-deutsch", CancellationToken.None);
 
-            Assert.True(rollbackResponse.IsSuccess);
-            Assert.Equal(firstImport.DraftPublicationBatchId, rollbackResponse.PublicationBatchId);
-            Assert.Equal(8, rollbackResponse.ReactivatedPackageIds.Count);
-            Assert.Equal(8, rollbackResponse.SupersededPackageIds.Count);
-
-            await using AsyncServiceScope verificationScope = serviceProvider.CreateAsyncScope();
-            ServerContentDbContext dbContext = verificationScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
-
-            Assert.Equal(8, await dbContext.PublishedPackages.CountAsync(package =>
-                package.PublicationBatchId == firstImport.DraftPublicationBatchId &&
-                package.PublicationStatus == PackagePublicationStatus.Published));
-            Assert.Equal(8, await dbContext.PublishedPackages.CountAsync(package =>
-                package.PublicationBatchId == secondBatch.PublicationBatchId &&
-                package.PublicationStatus == PackagePublicationStatus.Superseded));
-        }
-        finally
-        {
-            TryDeleteDirectory(tempRoot);
-        }
-    }
-
-    [Fact]
-    public async Task RollbackAsync_RejectsDraftBatchAsync()
-    {
-        string tempRoot = Path.Combine(Path.GetTempPath(), "darwinlingua-webapi-rollback-tests", Guid.NewGuid().ToString("N"));
-        string catalogDatabasePath = Path.Combine(tempRoot, "catalog", "catalog.db");
-        string serverDatabasePath = Path.Combine(tempRoot, "server", "server.db");
-        string packageRootPath = Path.Combine(tempRoot, "packages");
-        Directory.CreateDirectory(tempRoot);
-        Directory.CreateDirectory(Path.GetDirectoryName(serverDatabasePath)!);
-
-        try
-        {
-            using ServiceProvider serviceProvider = BuildServiceProvider(catalogDatabasePath, serverDatabasePath, packageRootPath, tempRoot);
-            await InitializeAsync(serviceProvider);
-
-            IServerCatalogImportService importService = serviceProvider.GetRequiredService<IServerCatalogImportService>();
-            ICatalogPackageRollbackService rollbackService = serviceProvider.GetRequiredService<ICatalogPackageRollbackService>();
-
-            AdminImportCatalogResponse importResponse = await importService.ImportAndStageAsync(
-                new AdminImportCatalogRequest(ResolveFixturePath(), "darwin-deutsch"),
-                CancellationToken.None);
-
-            AdminRollbackCatalogResponse rollbackResponse = await rollbackService.RollbackAsync(
-                new AdminRollbackCatalogRequest("darwin-deutsch", importResponse.DraftPublicationBatchId!),
-                CancellationToken.None);
-
-            Assert.False(rollbackResponse.IsSuccess);
-            Assert.Contains("Only superseded package batches can be rolled back.", rollbackResponse.IssueMessages[0], StringComparison.Ordinal);
+            Assert.True(events.Count >= 4);
+            Assert.Equal("Cleanup", events[0].EventType);
+            Assert.Equal(secondBatch.PublicationBatchId, events[0].PublicationBatchId);
+            Assert.Contains(events, entry => entry.EventType == "Rollback" && entry.PublicationBatchId == firstImport.DraftPublicationBatchId);
+            Assert.Contains(events, entry => entry.EventType == "Publish" && entry.PublicationBatchId == secondBatch.PublicationBatchId);
         }
         finally
         {
@@ -132,10 +85,11 @@ public sealed class CatalogPackageRollbackServiceTests
         services.AddDbContext<ServerContentDbContext>(options => options.UseSqlite($"Data Source={serverDatabasePath}"));
         services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
         services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
-        services.AddScoped<IContentPublicationAuditService, ContentPublicationAuditService>();
         services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
         services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
         services.AddScoped<ICatalogPackageRollbackService, CatalogPackageRollbackService>();
+        services.AddScoped<ICatalogPackageCleanupService, CatalogPackageCleanupService>();
+        services.AddScoped<IContentPublicationAuditService, ContentPublicationAuditService>();
         services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
         services.AddSingleton<IWebHostEnvironment>(new TestWebHostEnvironment(contentRootPath));
         services.AddSingleton<IHostEnvironment>(new TestWebHostEnvironment(contentRootPath));
@@ -213,15 +167,10 @@ public sealed class CatalogPackageRollbackServiceTests
     private sealed class TestWebHostEnvironment(string contentRootPath) : IWebHostEnvironment, IHostEnvironment
     {
         public string ApplicationName { get; set; } = "DarwinLingua.WebApi.Tests";
-
         public IFileProvider ContentRootFileProvider { get; set; } = new PhysicalFileProvider(contentRootPath);
-
         public string ContentRootPath { get; set; } = contentRootPath;
-
         public string EnvironmentName { get; set; } = "Development";
-
         public string WebRootPath { get; set; } = contentRootPath;
-
         public IFileProvider WebRootFileProvider { get; set; } = new PhysicalFileProvider(contentRootPath);
     }
 }

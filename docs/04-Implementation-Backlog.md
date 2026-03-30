@@ -369,6 +369,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] add cleanup flow for superseded package batches and payload files
 - [x] add publish-history and retention-summary endpoints for admin operations
 - [x] add rollback workflow for superseded package batches
+- [x] add audit trail for publish, rollback, and cleanup events
 
 ### 29. Mobile Content Update Client
 
