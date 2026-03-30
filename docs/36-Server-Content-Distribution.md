@@ -318,6 +318,11 @@ That baseline now includes PostgreSQL-backed storage for:
 - content streams
 - published package metadata
 
+It also now includes:
+
+- package-download endpoints for package ID, full update, area update, and CEFR update flows
+- schema compatibility checks via `clientSchemaVersion`
+
 ---
 
 ## 11. Non-Goals for the First Server Slice

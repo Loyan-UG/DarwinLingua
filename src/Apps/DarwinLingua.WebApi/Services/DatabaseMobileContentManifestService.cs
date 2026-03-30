@@ -156,7 +156,6 @@ public sealed class DatabaseMobileContentManifestService(
     private PublishedContentPackageResponse MapPackage(PublishedPackageEntity package)
     {
         string baseUrl = options.Value.PublicBaseUrl.TrimEnd('/');
-        string relativePath = package.RelativeDownloadPath.TrimStart('/');
 
         return new PublishedContentPackageResponse(
             package.PackageId,
@@ -171,6 +170,6 @@ public sealed class DatabaseMobileContentManifestService(
             package.EntryCount,
             package.WordCount,
             package.CreatedAtUtc,
-            $"{baseUrl}/{relativePath}");
+            $"{baseUrl}/api/mobile/content/packages/{package.PackageId}/download");
     }
 }

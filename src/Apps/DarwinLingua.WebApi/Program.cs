@@ -30,6 +30,7 @@ builder.Services.AddDbContext<ServerContentDbContext>(options =>
 
 builder.Services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
 builder.Services.AddScoped<IMobileContentManifestService, DatabaseMobileContentManifestService>();
+builder.Services.AddScoped<IMobileContentPackageDeliveryService, DatabaseMobileContentPackageDeliveryService>();
 
 WebApplication app = builder.Build();
 
@@ -82,6 +83,26 @@ app.MapGet(
     });
 
 app.MapGet(
+    "/api/mobile/content/packages/{packageId}/download",
+    (string packageId, string? clientProductKey, int? clientSchemaVersion, IMobileContentPackageDeliveryService deliveryService) =>
+        ResolvePackageDownload(() => deliveryService.GetPackageById(clientProductKey, packageId, clientSchemaVersion)));
+
+app.MapGet(
+    "/api/mobile/content/download/full",
+    (string? clientProductKey, int? clientSchemaVersion, IMobileContentPackageDeliveryService deliveryService) =>
+        ResolvePackageDownload(() => deliveryService.GetLatestFullPackage(clientProductKey, clientSchemaVersion)));
+
+app.MapGet(
+    "/api/mobile/content/areas/{areaKey}/download",
+    (string areaKey, string? clientProductKey, int? clientSchemaVersion, IMobileContentPackageDeliveryService deliveryService) =>
+        ResolvePackageDownload(() => deliveryService.GetLatestAreaPackage(clientProductKey, areaKey, clientSchemaVersion)));
+
+app.MapGet(
+    "/api/mobile/content/areas/catalog/cefr/{level}/download",
+    (string level, string? clientProductKey, int? clientSchemaVersion, IMobileContentPackageDeliveryService deliveryService) =>
+        ResolvePackageDownload(() => deliveryService.GetLatestCefrPackage(clientProductKey, level, clientSchemaVersion)));
+
+app.MapGet(
     "/health",
     (IOptions<ServerContentOptions> options) =>
     {
@@ -94,5 +115,40 @@ app.MapGet(
     });
 
 app.Run();
+
+static IResult ResolvePackageDownload(Func<ContentPackageDownloadDescriptor> resolver)
+{
+    try
+    {
+        ContentPackageDownloadDescriptor package = resolver();
+        return Results.File(package.FilePath, package.ContentType, package.SuggestedFileName);
+    }
+    catch (MobileContentSchemaCompatibilityException exception)
+    {
+        return Results.Conflict(new SchemaCompatibilityErrorResponse(
+            "schema_incompatible",
+            exception.Message,
+            exception.PackageId,
+            exception.ClientSchemaVersion,
+            exception.MinimumRequiredSchemaVersion,
+            exception.PackageSchemaVersion));
+    }
+    catch (FileNotFoundException exception)
+    {
+        return Results.NotFound(new
+        {
+            code = "package_payload_missing",
+            message = exception.Message,
+        });
+    }
+    catch (KeyNotFoundException exception)
+    {
+        return Results.NotFound(new
+        {
+            code = "package_not_found",
+            message = exception.Message,
+        });
+    }
+}
 
 public partial class Program;

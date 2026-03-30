@@ -31,6 +31,11 @@ public sealed class ServerContentOptions
     public List<PublishedPackageOptions> Packages { get; } = [];
 
     /// <summary>
+    /// Gets or sets package-storage configuration.
+    /// </summary>
+    public PackageStorageOptions PackageStorage { get; set; } = new();
+
+    /// <summary>
     /// Validates that at least one active client product is available.
     /// </summary>
     public bool HasAtLeastOneActiveProduct()
@@ -57,7 +62,8 @@ public sealed class ServerContentOptions
                 string.IsNullOrWhiteSpace(package.ClientProductKey) ||
                 string.IsNullOrWhiteSpace(package.ContentAreaKey) ||
                 string.IsNullOrWhiteSpace(package.SliceKey) ||
-                string.IsNullOrWhiteSpace(package.Version))
+                string.IsNullOrWhiteSpace(package.Version) ||
+                string.IsNullOrWhiteSpace(package.RelativeDownloadPath))
             {
                 return false;
             }

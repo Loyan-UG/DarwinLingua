@@ -55,6 +55,7 @@ Use it when:
 - Local Docker Desktop setup guidance for PostgreSQL now exists in `docs/49-Local-Postgres-Setup.md` with matching config templates under `tools/Server`.
 - The first executable Phase 5 foundation slice now exists in `src/Apps/DarwinLingua.WebApi` with a local-only `appsettings.Development.Local.json` override pattern and read-only mobile manifest endpoints.
 - The second Phase 5 foundation slice now persists `ClientProduct`, `ContentStream`, and `PublishedPackage` metadata in PostgreSQL-backed storage and serves manifests from that persistence layer.
+- The third Phase 5 foundation slice now exposes package-download endpoints for package ID, full, area, and CEFR scopes, backed by payload files under `assets/ServerContent/PublishedPackages`, with compatibility checks via `clientSchemaVersion`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
@@ -62,12 +63,12 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the third executable Phase 5 slice: moving from manifest metadata to actual downloadable package delivery.
+Focus next on the fourth executable Phase 5 slice: moving from local sample payload files to real publishing and import-to-server workflows.
 
 Suggested scope:
 
-1. Implement package-download endpoints for full, area, and CEFR-slice updates.
-2. Add schema-version compatibility checks between mobile clients and published packages.
+1. Move the canonical import flow from local seed generation into shared PostgreSQL-backed server content.
+2. Add real published-package generation instead of relying on sample payload files under `assets/ServerContent/PublishedPackages`.
 3. Keep the remaining manual mobile validation worksheets visible, but treat them as parallel release work rather than the main backend slice.
 
 ---
