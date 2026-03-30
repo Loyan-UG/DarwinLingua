@@ -21,8 +21,8 @@ The first learner-facing product is **Darwin Deutsch**, a German-learning applic
   - practice tab/navigation, overview screen, flashcard and quiz session UI, answer feedback, session summary, due-aware review queue, recent activity, learning progress snapshot, answer submission, and persisted scheduling/attempt history are implemented
 - `Phase 3 enhanced lexical intelligence`: `In Progress`
   - lexical usage/context labels, grammar notes, collocations, word families, and synonym/antonym relations now flow from imported content into a richer word-detail screen, and the main learner-facing mobile screens now share a cleaner visual hierarchy
-- `Phase 5 server content distribution`: `Planned`
-  - the backend foundation now includes a Web API host, PostgreSQL-backed manifest persistence, package download endpoints, schema compatibility checks, and local PostgreSQL/Web API development templates; real server-side publishing workflows are next
+- `Phase 5 server content distribution`: `In Progress`
+  - the backend foundation now includes a Web API host, PostgreSQL-backed manifest persistence, package download endpoints, schema compatibility checks, local PostgreSQL/Web API development templates, and a server-side import-and-publish workflow that generates full/catalog/CEFR package payloads
 - `Phase 4 support resources`: `Planned`
   - resource discovery and non-lexical support content remain future work
 

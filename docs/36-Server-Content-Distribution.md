@@ -125,6 +125,18 @@ The first mobile-update API should stay read-only.
 
 Admin editing, user accounts, analytics, and monetization should remain separate concerns.
 
+### 4.2 Current Executable Foundation
+
+The current implementation now includes:
+
+- PostgreSQL-backed metadata for `ClientProduct`, `ContentStream`, `PublishedPackage`, and server import receipts
+- download endpoints for full, area, and CEFR-scoped packages
+- a server-side operator import endpoint:
+  - `POST /api/admin/content/catalog/import`
+- automatic generation of versioned package payload files from the shared catalog database
+
+The server currently publishes import-compatible JSON packages so the mobile side can later apply downloaded updates through the same conservative content-package model already used locally.
+
 ### 4.1 Recommended First Endpoints
 
 Recommended initial endpoint groups:

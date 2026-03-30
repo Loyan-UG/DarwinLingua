@@ -23,6 +23,11 @@ public sealed class ServerContentDbContext(DbContextOptions<ServerContentDbConte
     /// </summary>
     public DbSet<PublishedPackageEntity> PublishedPackages => Set<PublishedPackageEntity>();
 
+    /// <summary>
+    /// Gets the server-side content import receipts.
+    /// </summary>
+    public DbSet<ContentImportReceiptEntity> ContentImportReceipts => Set<ContentImportReceiptEntity>();
+
     /// <inheritdoc />
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -67,6 +72,21 @@ public sealed class ServerContentDbContext(DbContextOptions<ServerContentDbConte
                 .HasForeignKey(package => package.ContentStreamId)
                 .OnDelete(DeleteBehavior.Cascade);
             entity.HasIndex(package => package.PackageId).IsUnique();
+        });
+
+        modelBuilder.Entity<ContentImportReceiptEntity>(entity =>
+        {
+            entity.ToTable("ContentImportReceipts");
+            entity.HasKey(receipt => receipt.Id);
+            entity.Property(receipt => receipt.ClientProductKey).HasMaxLength(128).IsRequired();
+            entity.Property(receipt => receipt.SourceFilePath).HasMaxLength(1024).IsRequired();
+            entity.Property(receipt => receipt.SourceFileName).HasMaxLength(256).IsRequired();
+            entity.Property(receipt => receipt.ImportedPackageId).HasMaxLength(256);
+            entity.Property(receipt => receipt.ImportedPackageName).HasMaxLength(256);
+            entity.Property(receipt => receipt.ImportStatus).HasMaxLength(64).IsRequired();
+            entity.Property(receipt => receipt.IssueSummary).HasMaxLength(4000).IsRequired();
+            entity.Property(receipt => receipt.PublishedPackageIds).HasMaxLength(4000).IsRequired();
+            entity.HasIndex(receipt => receipt.CreatedAtUtc);
         });
     }
 }

@@ -57,4 +57,28 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
+
+    /// <summary>
+    /// Adds the shared PostgreSQL-backed infrastructure services used by the server-side hosts.
+    /// </summary>
+    /// <param name="services">The service collection being configured.</param>
+    /// <param name="connectionString">The PostgreSQL connection string.</param>
+    /// <returns>The same service collection for chaining.</returns>
+    public static IServiceCollection AddDarwinLinguaInfrastructureForPostgres(
+        this IServiceCollection services,
+        string connectionString)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
+
+        services.AddDbContextFactory<DarwinLinguaDbContext>(options =>
+        {
+            options.UseNpgsql(connectionString);
+        });
+
+        services.AddSingleton<IDatabaseInitializer, DarwinLinguaDatabaseInitializer>();
+        services.AddSingleton<ITransactionalExecutionService, TransactionalExecutionService>();
+
+        return services;
+    }
 }

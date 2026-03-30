@@ -148,6 +148,11 @@ public sealed class DatabaseMobileContentManifestService(
 
         return query
             .AsEnumerable()
+            .GroupBy(package => package.ContentStreamId)
+            .Select(group => group
+                .OrderByDescending(package => package.CreatedAtUtc)
+                .ThenBy(package => package.PackageId, StringComparer.OrdinalIgnoreCase)
+                .First())
             .OrderByDescending(package => package.CreatedAtUtc)
             .ThenBy(package => package.PackageId, StringComparer.OrdinalIgnoreCase)
             .ToList();

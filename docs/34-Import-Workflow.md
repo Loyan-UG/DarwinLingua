@@ -191,6 +191,16 @@ The current console import tool is folder-oriented. The operator selects one con
 
 The current tool updates the packaged `seed` SQLite database that ships with the MAUI app. On first launch after installation, the mobile app copies that packaged seed database into its own sandbox database path. Existing installed apps keep their current local database unless they are reinstalled or their app data is cleared.
 
+For the server-backed distribution path, the canonical import workflow now also exists in the Web API as a server-side operator flow:
+
+- `POST /api/admin/content/catalog/import`
+
+That endpoint imports a reviewed JSON package into the shared PostgreSQL-backed catalog, then republishes the generated mobile package payloads for:
+
+- full database
+- full catalog
+- one package per populated CEFR slice
+
 ---
 
 # 6. Detailed Import Stages

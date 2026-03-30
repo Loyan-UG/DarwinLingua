@@ -56,6 +56,7 @@ Use it when:
 - The first executable Phase 5 foundation slice now exists in `src/Apps/DarwinLingua.WebApi` with a local-only `appsettings.Development.Local.json` override pattern and read-only mobile manifest endpoints.
 - The second Phase 5 foundation slice now persists `ClientProduct`, `ContentStream`, and `PublishedPackage` metadata in PostgreSQL-backed storage and serves manifests from that persistence layer.
 - The third Phase 5 foundation slice now exposes package-download endpoints for package ID, full, area, and CEFR scopes, backed by payload files under `assets/ServerContent/PublishedPackages`, with compatibility checks via `clientSchemaVersion`.
+- The fourth Phase 5 slice now runs the canonical content import pipeline on the server side, writes imported content into the shared PostgreSQL-backed catalog, generates versioned full/catalog/CEFR package payloads, and records server import receipts through `POST /api/admin/content/catalog/import`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
 - CI (`.github/workflows/ci.yml`) runs restore/build/test on non-MAUI projects and test projects.
 
@@ -63,13 +64,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the fourth executable Phase 5 slice: moving from local sample payload files to real publishing and import-to-server workflows.
+Focus next on the fifth executable Phase 5 slice: mobile consumption of the server-backed content model.
 
 Suggested scope:
 
-1. Move the canonical import flow from local seed generation into shared PostgreSQL-backed server content.
-2. Add real published-package generation instead of relying on sample payload files under `assets/ServerContent/PublishedPackages`.
-3. Keep the remaining manual mobile validation worksheets visible, but treat them as parallel release work rather than the main backend slice.
+1. Add the mobile update client that fetches manifests and downloads packages from the Web API.
+2. Apply downloaded packages transactionally into local SQLite while preserving favorites, preferences, word state, and practice state.
+3. Keep draft-vs-published server workflow design open as the next backend refinement after the first end-to-end mobile update path works.
 
 ---
 

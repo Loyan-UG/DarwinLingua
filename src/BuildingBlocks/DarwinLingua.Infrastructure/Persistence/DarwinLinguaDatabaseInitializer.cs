@@ -2,6 +2,7 @@ using System.Data.Common;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace DarwinLingua.Infrastructure.Persistence;
 
@@ -64,6 +65,12 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
     private static async Task PrepareSchemaAsync(DarwinLinguaDbContext dbContext, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (!dbContext.Database.IsSqlite())
+        {
+            await dbContext.Database.EnsureCreatedAsync(cancellationToken).ConfigureAwait(false);
+            return;
+        }
 
         string[] availableMigrations = dbContext.Database
             .GetMigrations()
@@ -180,6 +187,11 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (!dbContext.Database.IsSqlite())
+        {
+            return;
+        }
 
         // EnsureCreated does not retrofit new indexes onto an existing database file, so critical
         // read-path indexes are applied idempotently during every startup initialization.

@@ -340,13 +340,13 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 ### 26. Shared Content Source-of-Truth Architecture
 
 - [x] lock the server-authored content distribution architecture
-- [ ] define the shared-content source-of-truth boundary vs local user-state boundary
+- [x] define the shared-content source-of-truth boundary vs local user-state boundary
 - [x] define the multi-product shared-backend partition strategy for future learner apps
-- [ ] define the mobile update scopes:
+- [x] define the mobile update scopes:
   - full database update
   - content-area update
   - CEFR-level word update
-- [ ] define server package/version metadata and checksum rules
+- [x] define server package/version metadata and checksum rules
 - [ ] define local package-receipt tracking for mobile clients
 
 ### 27. Web API Content Distribution Foundation
@@ -361,9 +361,9 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 
 ### 28. Server-Side Content Operations
 
-- [ ] move the canonical import pipeline from local-only seed generation to server-side shared-content import
-- [ ] persist imported content into the central PostgreSQL catalog
-- [ ] persist package receipts and publishing/version metadata on the server
+- [x] move the canonical import pipeline from local-only seed generation to server-side shared-content import
+- [x] persist imported content into the central PostgreSQL catalog
+- [x] persist package receipts and publishing/version metadata on the server
 - [ ] define publishing workflow for draft vs published content packages
 
 ### 29. Mobile Content Update Client

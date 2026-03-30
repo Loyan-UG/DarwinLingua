@@ -1,3 +1,11 @@
+using DarwinLingua.Catalog.Application.DependencyInjection;
+using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
+using DarwinLingua.ContentOps.Application.Abstractions;
+using DarwinLingua.ContentOps.Application.DependencyInjection;
+using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
+using DarwinLingua.Infrastructure.DependencyInjection;
+using DarwinLingua.Infrastructure.Persistence.Abstractions;
+using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
@@ -22,23 +30,40 @@ builder.Services
 string serverContentConnectionString = builder.Configuration.GetConnectionString("ServerContentAdmin")
     ?? builder.Configuration.GetConnectionString("ServerContent")
     ?? throw new InvalidOperationException("A ServerContent or ServerContentAdmin connection string must be configured.");
+string sharedCatalogConnectionString = builder.Configuration.GetConnectionString("SharedCatalogAdmin")
+    ?? builder.Configuration.GetConnectionString("SharedCatalog")
+    ?? serverContentConnectionString;
 
 builder.Services.AddDbContext<ServerContentDbContext>(options =>
 {
     options.UseNpgsql(serverContentConnectionString);
 });
 
+builder.Services
+    .AddDarwinLinguaInfrastructureForPostgres(sharedCatalogConnectionString)
+    .AddCatalogApplication()
+    .AddCatalogInfrastructure()
+    .AddContentOpsApplication()
+    .AddContentOpsInfrastructure()
+    .AddLocalizationInfrastructure();
+
 builder.Services.AddScoped<IServerContentDatabaseBootstrapper, ServerContentDatabaseBootstrapper>();
 builder.Services.AddScoped<IMobileContentManifestService, DatabaseMobileContentManifestService>();
 builder.Services.AddScoped<IMobileContentPackageDeliveryService, DatabaseMobileContentPackageDeliveryService>();
+builder.Services.AddScoped<IContentImportRepository, WebApiContentImportRepository>();
+builder.Services.AddScoped<ICatalogPackagePublisher, CatalogPackagePublisher>();
+builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 
 WebApplication app = builder.Build();
 
 await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 {
+    IDatabaseInitializer databaseInitializer =
+        bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IServerContentDatabaseBootstrapper bootstrapper =
         bootstrapScope.ServiceProvider.GetRequiredService<IServerContentDatabaseBootstrapper>();
 
+    await databaseInitializer.InitializeAsync(CancellationToken.None);
     await bootstrapper.InitializeAsync(CancellationToken.None);
 }
 
@@ -80,6 +105,17 @@ app.MapGet(
     {
         PublishedContentPackageResponse response = manifestService.GetPackage(clientProductKey, packageId);
         return Results.Ok(response);
+    });
+
+app.MapPost(
+    "/api/admin/content/catalog/import",
+    async (AdminImportCatalogRequest request, IServerCatalogImportService importService, CancellationToken cancellationToken) =>
+    {
+        AdminImportCatalogResponse response = await importService
+            .ImportAndPublishAsync(request, cancellationToken)
+            .ConfigureAwait(false);
+
+        return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
     });
 
 app.MapGet(
