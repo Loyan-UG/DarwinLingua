@@ -48,5 +48,21 @@ public sealed class TopicQueryServiceTests
         {
             return Task.FromResult(topics);
         }
+
+        public Task<IReadOnlyDictionary<Guid, string>> GetDisplayNamesByIdsAsync(
+            IReadOnlyCollection<Guid> topicIds,
+            LanguageCode preferredLanguageCode,
+            LanguageCode fallbackLanguageCode,
+            CancellationToken cancellationToken)
+        {
+            IReadOnlyDictionary<Guid, string> values = topics
+                .Where(topic => topicIds.Contains(topic.Id))
+                .ToDictionary(
+                    topic => topic.Id,
+                    topic => topic.FindLocalization(preferredLanguageCode)?.DisplayName
+                        ?? topic.FindLocalization(fallbackLanguageCode)?.DisplayName
+                        ?? topic.Key);
+            return Task.FromResult(values);
+        }
     }
 }

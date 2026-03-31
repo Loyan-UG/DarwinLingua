@@ -102,9 +102,12 @@ public sealed class WordDetailQueryServiceTests
 
     private sealed class FakeWordEntryRepository(WordEntry word) : IWordEntryRepository
     {
-        public Task<IReadOnlyList<WordEntry>> GetActiveByTopicKeyAsync(string topicKey, CancellationToken cancellationToken)
+        public Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicKeyAsync(
+            string topicKey,
+            string meaningLanguageCode,
+            CancellationToken cancellationToken)
         {
-            return Task.FromResult<IReadOnlyList<WordEntry>>([word]);
+            return Task.FromResult<IReadOnlyList<WordListItemModel>>([]);
         }
 
         public Task<WordEntry?> GetByPublicIdAsync(Guid publicId, CancellationToken cancellationToken)
@@ -112,16 +115,20 @@ public sealed class WordDetailQueryServiceTests
             return Task.FromResult(word.PublicId == publicId ? word : null);
         }
 
-        public Task<IReadOnlyList<WordEntry>> GetActiveByCefrAsync(CefrLevel cefrLevel, CancellationToken cancellationToken)
+        public Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrAsync(
+            CefrLevel cefrLevel,
+            string meaningLanguageCode,
+            CancellationToken cancellationToken)
         {
-            return Task.FromResult<IReadOnlyList<WordEntry>>(word.PrimaryCefrLevel == cefrLevel ? [word] : []);
+            return Task.FromResult<IReadOnlyList<WordListItemModel>>([]);
         }
 
-        public Task<IReadOnlyList<WordEntry>> SearchActiveByLemmaAsync(string normalizedLemmaQuery, CancellationToken cancellationToken)
+        public Task<IReadOnlyList<WordListItemModel>> SearchActiveByLemmaAsync(
+            string normalizedLemmaQuery,
+            string meaningLanguageCode,
+            CancellationToken cancellationToken)
         {
-            return Task.FromResult<IReadOnlyList<WordEntry>>(word.NormalizedLemma.Contains(normalizedLemmaQuery, StringComparison.Ordinal)
-                ? [word]
-                : []);
+            return Task.FromResult<IReadOnlyList<WordListItemModel>>([]);
         }
     }
 
@@ -130,6 +137,22 @@ public sealed class WordDetailQueryServiceTests
         public Task<IReadOnlyList<Topic>> GetAllAsync(CancellationToken cancellationToken)
         {
             return Task.FromResult(topics);
+        }
+
+        public Task<IReadOnlyDictionary<Guid, string>> GetDisplayNamesByIdsAsync(
+            IReadOnlyCollection<Guid> topicIds,
+            LanguageCode preferredLanguageCode,
+            LanguageCode fallbackLanguageCode,
+            CancellationToken cancellationToken)
+        {
+            IReadOnlyDictionary<Guid, string> values = topics
+                .Where(topic => topicIds.Contains(topic.Id))
+                .ToDictionary(
+                    topic => topic.Id,
+                    topic => topic.FindLocalization(preferredLanguageCode)?.DisplayName
+                        ?? topic.FindLocalization(fallbackLanguageCode)?.DisplayName
+                        ?? topic.Key);
+            return Task.FromResult(values);
         }
     }
 }

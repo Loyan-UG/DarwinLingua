@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
+using System.Collections.ObjectModel;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -14,8 +15,13 @@ namespace DarwinDeutsch.Maui.Pages;
 [QueryProperty(nameof(TopicTitle), "topicTitle")]
 public partial class TopicWordsPage : ContentPage
 {
+    private const int PageSize = 24;
     private readonly IWordQueryService _wordQueryService;
     private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly ObservableCollection<TopicWordItemViewModel> _visibleWords = [];
+    private IReadOnlyList<TopicWordItemViewModel> _allWords = [];
+    private int _loadedWordCount;
+    private bool _isLoadingMore;
     private string _topicKey = string.Empty;
     private string _topicTitle = string.Empty;
 
@@ -33,6 +39,7 @@ public partial class TopicWordsPage : ContentPage
 
         _wordQueryService = wordQueryService;
         _userLearningProfileService = userLearningProfileService;
+        WordsCollectionView.ItemsSource = _visibleWords;
     }
 
     /// <summary>
@@ -74,11 +81,11 @@ public partial class TopicWordsPage : ContentPage
         DescriptionLabel.Text = AppStrings.TopicWordsPageDescription;
         EmptyStateLabel.Text = AppStrings.TopicWordsPageEmpty;
         LoadingStateLabel.Text = AppStrings.CommonStateLoading;
-        ErrorStateLabel.Text = AppStrings.CommonStateError;
+        ErrorStateLabel.Text = AppStrings.TopicWordsPageLoadError;
 
         if (string.IsNullOrWhiteSpace(TopicKey))
         {
-            ShowEmptyState(Array.Empty<TopicWordItemViewModel>());
+            ShowWords(Array.Empty<TopicWordItemViewModel>());
             return;
         }
 
@@ -94,13 +101,17 @@ public partial class TopicWordsPage : ContentPage
                 .GetWordsByTopicAsync(TopicKey, profile.PreferredMeaningLanguage1, CancellationToken.None)
                 .ConfigureAwait(true);
 
-            ShowEmptyState(words
+            ShowWords(words
                 .Select(word => new TopicWordItemViewModel(
                     word.PublicId,
                     BuildLemmaLine(word),
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
                 .ToArray());
+        }
+        catch (OperationCanceledException)
+        {
+            ShowLoadingState();
         }
         catch
         {
@@ -115,9 +126,12 @@ public partial class TopicWordsPage : ContentPage
     /// <summary>
     /// Applies the current topic-word results and empty state visibility.
     /// </summary>
-    private void ShowEmptyState(IReadOnlyList<TopicWordItemViewModel> words)
+    private void ShowWords(IReadOnlyList<TopicWordItemViewModel> words)
     {
-        WordsCollectionView.ItemsSource = words;
+        _allWords = words;
+        _visibleWords.Clear();
+        _loadedWordCount = 0;
+        LoadNextPage();
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
@@ -139,10 +153,41 @@ public partial class TopicWordsPage : ContentPage
     /// </summary>
     private void ShowErrorState()
     {
-        WordsCollectionView.ItemsSource = Array.Empty<TopicWordItemViewModel>();
+        _allWords = [];
+        _visibleWords.Clear();
         WordsCollectionView.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         ErrorStateLabel.IsVisible = true;
+    }
+
+    /// <summary>
+    /// Loads the next visual page of topic words.
+    /// </summary>
+    private void LoadNextPage()
+    {
+        if (_isLoadingMore || _loadedWordCount >= _allWords.Count)
+        {
+            return;
+        }
+
+        _isLoadingMore = true;
+        int nextCount = Math.Min(PageSize, _allWords.Count - _loadedWordCount);
+
+        foreach (TopicWordItemViewModel word in _allWords.Skip(_loadedWordCount).Take(nextCount))
+        {
+            _visibleWords.Add(word);
+        }
+
+        _loadedWordCount += nextCount;
+        _isLoadingMore = false;
+    }
+
+    /// <summary>
+    /// Loads the next chunk when the learner scrolls near the end of the visible topic words.
+    /// </summary>
+    private void OnWordsRemainingItemsThresholdReached(object? sender, EventArgs e)
+    {
+        LoadNextPage();
     }
 
     /// <summary>

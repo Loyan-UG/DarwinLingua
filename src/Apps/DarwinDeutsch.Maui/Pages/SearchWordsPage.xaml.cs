@@ -81,7 +81,7 @@ public partial class SearchWordsPage : ContentPage
         SearchBarControl.Placeholder = AppStrings.SearchWordsPagePlaceholder;
         EmptyStateLabel.Text = AppStrings.SearchWordsPageEmpty;
         LoadingStateLabel.Text = AppStrings.CommonStateLoading;
-        ErrorStateLabel.Text = AppStrings.CommonStateError;
+        ErrorStateLabel.Text = AppStrings.SearchWordsPageLoadError;
     }
 
     /// <summary>
@@ -116,6 +116,10 @@ public partial class SearchWordsPage : ContentPage
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
                 .ToArray());
+        }
+        catch (OperationCanceledException)
+        {
+            ShowResults(Array.Empty<SearchWordItemViewModel>());
         }
         catch
         {

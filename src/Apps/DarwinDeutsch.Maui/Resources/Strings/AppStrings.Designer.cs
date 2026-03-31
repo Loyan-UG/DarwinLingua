@@ -278,6 +278,11 @@ public static class AppStrings
     public static string TopicWordsPageMeaningUnavailable => GetRequiredString(nameof(TopicWordsPageMeaningUnavailable));
 
     /// <summary>
+    /// Gets the localized error state for the topic-words page.
+    /// </summary>
+    public static string TopicWordsPageLoadError => GetRequiredString(nameof(TopicWordsPageLoadError));
+
+    /// <summary>
     /// Gets the localized default title for the word-detail page.
     /// </summary>
     public static string WordDetailTitle => GetRequiredString(nameof(WordDetailTitle));
@@ -543,6 +548,11 @@ public static class AppStrings
     public static string WordDetailNotFound => GetRequiredString(nameof(WordDetailNotFound));
 
     /// <summary>
+    /// Gets the localized failure state for the word-detail page.
+    /// </summary>
+    public static string WordDetailLoadFailed => GetRequiredString(nameof(WordDetailLoadFailed));
+
+    /// <summary>
     /// Gets the localized title for the CEFR browse page.
     /// </summary>
     public static string CefrWordsPageTitle => GetRequiredString(nameof(CefrWordsPageTitle));
@@ -561,6 +571,11 @@ public static class AppStrings
     /// Gets the localized empty state for the CEFR browse page.
     /// </summary>
     public static string CefrWordsPageEmpty => GetRequiredString(nameof(CefrWordsPageEmpty));
+
+    /// <summary>
+    /// Gets the localized error state for the CEFR browse page.
+    /// </summary>
+    public static string CefrWordsPageLoadError => GetRequiredString(nameof(CefrWordsPageLoadError));
 
     /// <summary>
     /// Gets the localized title for the search page.
@@ -606,6 +621,11 @@ public static class AppStrings
     /// Gets the localized empty state for the search page.
     /// </summary>
     public static string SearchWordsPageEmpty => GetRequiredString(nameof(SearchWordsPageEmpty));
+
+    /// <summary>
+    /// Gets the localized error state for the search page.
+    /// </summary>
+    public static string SearchWordsPageLoadError => GetRequiredString(nameof(SearchWordsPageLoadError));
 
     /// <summary>
     /// Gets the localized title for the favorites page.

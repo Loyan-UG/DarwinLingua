@@ -65,6 +65,7 @@ All project documentation should remain in English.
 - `49-Local-Postgres-Setup.md`
 - `50-Phase-5-Remote-Update-Validation-Worksheet.md`
 - `51-Local-Server-Bootstrap.md`
+- `52-Future-Platform-Expansion.md`
 
 Related release-execution helpers live under `tools/Phase1/`.
 
@@ -96,6 +97,7 @@ If you are new to the project, read the documents in this order:
 20. `04-Implementation-Backlog.md`
 21. `42-Continuation-Handoff.md`
 22. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
+23. `52-Future-Platform-Expansion.md`
 
 ---
 

@@ -1,5 +1,6 @@
 using System.Data.Common;
 using DarwinLingua.Catalog.Application.Abstractions;
+using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.DependencyInjection;
@@ -48,7 +49,7 @@ public sealed class CatalogSearchInfrastructureTests
             }
 
             IWordEntryRepository repository = serviceProvider.GetRequiredService<IWordEntryRepository>();
-            IReadOnlyList<WordEntry> words = await repository.SearchActiveByLemmaAsync("bahn", CancellationToken.None);
+            IReadOnlyList<WordListItemModel> words = await repository.SearchActiveByLemmaAsync("bahn", "en", CancellationToken.None);
 
             Assert.Equal(["Bahnhof", "Bahnsteig", "Abendbahn"], words.Select(word => word.Lemma).ToArray());
         }

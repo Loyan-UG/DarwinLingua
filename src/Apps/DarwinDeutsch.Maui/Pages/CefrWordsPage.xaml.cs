@@ -68,7 +68,7 @@ public partial class CefrWordsPage : ContentPage
         CefrQuickFilterView.SelectedLevel = CefrLevel;
         EmptyStateLabel.Text = AppStrings.CefrWordsPageEmpty;
         LoadingStateLabel.Text = AppStrings.CommonStateLoading;
-        ErrorStateLabel.Text = AppStrings.CommonStateError;
+        ErrorStateLabel.Text = AppStrings.CefrWordsPageLoadError;
 
         if (string.IsNullOrWhiteSpace(CefrLevel))
         {
@@ -92,6 +92,10 @@ public partial class CefrWordsPage : ContentPage
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
                 .ToArray();
             ShowWords(_allWords);
+        }
+        catch (OperationCanceledException)
+        {
+            ShowWords(Array.Empty<CefrWordItemViewModel>());
         }
         catch
         {

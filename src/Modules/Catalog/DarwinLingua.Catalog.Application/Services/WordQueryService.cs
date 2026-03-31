@@ -1,7 +1,5 @@
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
-using DarwinLingua.Catalog.Domain.Entities;
-using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using System.Text.RegularExpressions;
 
@@ -31,16 +29,9 @@ internal sealed partial class WordQueryService : IWordQueryService
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(topicKey);
-        LanguageCode resolvedMeaningLanguageCode = LanguageCode.From(meaningLanguageCode);
-
-        IReadOnlyList<WordEntry> words = await _wordEntryRepository
-            .GetActiveByTopicKeyAsync(topicKey, cancellationToken)
+        return await _wordEntryRepository
+            .GetActiveByTopicKeyAsync(topicKey, meaningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
-
-        return words
-            .OrderBy(word => word.NormalizedLemma)
-            .Select(word => Map(word, resolvedMeaningLanguageCode))
-            .ToArray();
     }
 
     /// <inheritdoc />
@@ -51,17 +42,11 @@ internal sealed partial class WordQueryService : IWordQueryService
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
 
-        LanguageCode resolvedMeaningLanguageCode = LanguageCode.From(meaningLanguageCode);
         CefrLevel resolvedCefrLevel = Enum.Parse<CefrLevel>(cefrLevel.Trim(), ignoreCase: true);
 
-        IReadOnlyList<WordEntry> words = await _wordEntryRepository
-            .GetActiveByCefrAsync(resolvedCefrLevel, cancellationToken)
+        return await _wordEntryRepository
+            .GetActiveByCefrAsync(resolvedCefrLevel, meaningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
-
-        return words
-            .OrderBy(word => word.NormalizedLemma)
-            .Select(word => Map(word, resolvedMeaningLanguageCode))
-            .ToArray();
     }
 
     /// <inheritdoc />
@@ -70,8 +55,6 @@ internal sealed partial class WordQueryService : IWordQueryService
         string meaningLanguageCode,
         CancellationToken cancellationToken)
     {
-        LanguageCode resolvedMeaningLanguageCode = LanguageCode.From(meaningLanguageCode);
-
         if (string.IsNullOrWhiteSpace(query))
         {
             return [];
@@ -84,38 +67,9 @@ internal sealed partial class WordQueryService : IWordQueryService
             return [];
         }
 
-        IReadOnlyList<WordEntry> words = await _wordEntryRepository
-            .SearchActiveByLemmaAsync(normalizedQuery, cancellationToken)
+        return await _wordEntryRepository
+            .SearchActiveByLemmaAsync(normalizedQuery, meaningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
-
-        return words
-            .OrderBy(word => word.NormalizedLemma)
-            .Select(word => Map(word, resolvedMeaningLanguageCode))
-            .ToArray();
-    }
-
-    /// <summary>
-    /// Maps the aggregate to a browse-friendly list item model.
-    /// </summary>
-    private static WordListItemModel Map(WordEntry word, LanguageCode meaningLanguageCode)
-    {
-        ArgumentNullException.ThrowIfNull(word);
-
-        WordSense? primarySense = word.GetPrimarySense();
-        SenseTranslation? preferredTranslation = primarySense?.Translations
-            .Where(translation => translation.LanguageCode == meaningLanguageCode)
-            .OrderByDescending(translation => translation.IsPrimary)
-            .ThenBy(translation => translation.TranslationText)
-            .FirstOrDefault();
-
-        return new WordListItemModel(
-            word.PublicId,
-            word.Lemma,
-            word.Article,
-            word.PluralForm,
-            word.PartOfSpeech.ToString(),
-            word.PrimaryCefrLevel.ToString(),
-            preferredTranslation?.TranslationText);
     }
 
     /// <summary>

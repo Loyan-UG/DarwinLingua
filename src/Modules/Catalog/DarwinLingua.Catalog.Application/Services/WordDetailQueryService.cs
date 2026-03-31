@@ -53,22 +53,20 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             return null;
         }
 
-        IReadOnlyList<Topic> topics = await _topicRepository
-            .GetAllAsync(cancellationToken)
-            .ConfigureAwait(false);
+        Guid[] topicIds = word.Topics
+            .Select(link => link.TopicId)
+            .Distinct()
+            .ToArray();
+        IReadOnlyDictionary<Guid, string> topicNamesById = topicIds.Length == 0
+            ? new Dictionary<Guid, string>()
+            : await _topicRepository
+                .GetDisplayNamesByIdsAsync(topicIds, uiLanguage, LanguageCode.From("en"), cancellationToken)
+                .ConfigureAwait(false);
 
         IReadOnlyList<string> topicNames = word.Topics
-            .Select(link => topics.SingleOrDefault(topic => topic.Id == link.TopicId))
-            .Where(topic => topic is not null)
-            .OrderByDescending(topic => word.Topics.Single(link => link.TopicId == topic!.Id).IsPrimaryTopic)
-            .ThenBy(topic => topic!.SortOrder)
-            .Select(topic =>
-            {
-                TopicLocalization? localization = topic!.FindLocalization(uiLanguage)
-                    ?? topic.FindLocalization(LanguageCode.From("en"));
-
-                return localization?.DisplayName ?? topic.Key;
-            })
+            .OrderByDescending(link => link.IsPrimaryTopic)
+            .ThenBy(link => topicNamesById.TryGetValue(link.TopicId, out string? topicName) ? topicName : string.Empty)
+            .Select(link => topicNamesById.TryGetValue(link.TopicId, out string? topicName) ? topicName : link.TopicId.ToString("D"))
             .ToArray();
 
         IReadOnlyList<string> usageLabels = word.Labels

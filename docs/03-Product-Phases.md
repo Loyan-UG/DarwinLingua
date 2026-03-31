@@ -148,6 +148,7 @@ Expand to a broader platform and turn shared content into a server-managed distr
 - moderation/import review tools
 - analytics
 - optional monetization
+- explicit planning boundaries for future admin and web products
 
 ### Success Criteria
 
@@ -157,3 +158,4 @@ Expand to a broader platform and turn shared content into a server-managed distr
 - content can be managed efficiently
 - code reuse remains strong
 - the system scales without architectural redesign
+- future admin/web/account/analytics/monetization work can start from explicit shared-boundary documents

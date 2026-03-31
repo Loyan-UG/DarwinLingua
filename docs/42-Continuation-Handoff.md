@@ -68,6 +68,7 @@ Use it when:
 - The thirteenth Phase 5 slice now adds admin rollback support: `POST /api/admin/content/catalog/rollback` re-activates one `Superseded` batch and supersedes the currently `Published` batch for the same product.
 - The fourteenth Phase 5 slice now adds a publication audit trail: publish, rollback, and cleanup operations write `ContentPublicationEvents`, and `GET /api/admin/content/catalog/events` returns recent audited events per product.
 - The fifteenth Phase 5 slice now adds `tools/Server/Initialize-LocalServerContent.ps1` plus `docs/51-Local-Server-Bootstrap.md`, so a fresh local PostgreSQL install can create tables, import JSON content, and publish the first server batch in one short flow.
+- Future platform-expansion planning boundaries for admin, web, account/sync, analytics, and monetization are now captured in `docs/52-Future-Platform-Expansion.md`.
 - Manual/device-bound Phase 5 remote-update validation now has a dedicated worksheet in `docs/50-Phase-5-Remote-Update-Validation-Worksheet.md`.
 - The shared mobile validation bundle now also includes the Phase 5 remote-update worksheet through `tools/Mobile/Start-MobileValidationBundle.ps1`.
 - Phase 5 planning now explicitly includes full, area, and CEFR-slice mobile content update flows in `docs/04-Implementation-Backlog.md`.
@@ -77,13 +78,13 @@ Use it when:
 
 ## Recommended Next Implementation Slice
 
-Focus next on the sixteenth executable Phase 5 slice: execute device validation and decide the remaining retention/rollback support after bootstrap, history, rollback, and audit support landed.
+Focus next on device validation and final release-signoff work after the remaining planning placeholders are now documented.
 
 Suggested scope:
 
 1. Execute the Phase 5 remote-update worksheet on a target device or emulator against a live Web API.
-2. Decide whether the mobile side needs any more update UX after real device validation.
-3. Decide whether the admin side now needs a stronger retention policy or operator notes/search after history, cleanup, rollback, audit, and bootstrap support exist.
+2. Execute the remaining Phase 1-3 device-bound validation worksheets.
+3. Fix any device-only issues discovered during those validations before marking the remaining release items complete.
 
 ---
 
@@ -96,8 +97,8 @@ Continue DarwinLingua implementation from the latest commit.
 
 Context:
 - Read and follow docs/04-Implementation-Backlog.md and docs/42-Continuation-Handoff.md first.
-- The next architecture slice is the server-authored content-distribution model documented in docs/36-Server-Content-Distribution.md.
-- Prioritize the next Phase 5 work: executing remote-update device validation, support-level polish for update diagnostics/history, and any needed admin-side retention or operator-audit refinement after the local bootstrap flow.
+- The next work is execution and validation, not a new architecture foundation.
+- Prioritize device validation across Phase 1, Phase 2, Phase 3, and Phase 5 worksheets, then fix any discovered device/runtime issues.
 - Keep the mobile app local-first: local SQLite remains the runtime store and user state must survive content updates.
 - Keep all user-facing text localized via AppStrings resources for any newly added UI.
 - After code changes, update backlog/docs status accurately.

@@ -91,7 +91,18 @@ public partial class WordDetailPage : ContentPage
     {
         base.OnAppearing();
 
-        await RefreshAsync().ConfigureAwait(true);
+        try
+        {
+            await RefreshAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
+        }
+        catch
+        {
+            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
+        }
     }
 
     /// <summary>
@@ -244,6 +255,17 @@ public partial class WordDetailPage : ContentPage
         TopicsSectionView.SectionValue = string.Empty;
         ClearAudioStatus();
         EmptyStateLabel.IsVisible = true;
+    }
+
+    /// <summary>
+    /// Shows a non-crashing failure state when the detail view cannot be loaded.
+    /// </summary>
+    private void ShowLoadFailureState(string message)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(message);
+
+        ShowNotFoundState();
+        EmptyStateLabel.Text = message;
     }
 
     /// <summary>
