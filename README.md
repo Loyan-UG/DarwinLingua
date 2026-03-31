@@ -121,6 +121,7 @@ The project has explicit implementation standards in:
 - [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
 - [Phase 5 Remote Update Validation Worksheet](docs/50-Phase-5-Remote-Update-Validation-Worksheet.md)
 - [Local Server Bootstrap](docs/51-Local-Server-Bootstrap.md)
+- [Manual System Test Runbook](docs/53-Manual-System-Test-Runbook.md)
 - [Future Platform Expansion](docs/52-Future-Platform-Expansion.md)
 
 Important rules include:
@@ -156,6 +157,7 @@ Important rules include:
 - [Phase 3 Mobile UX Validation Worksheet](docs/47-Phase-3-Mobile-UX-Validation-Worksheet.md)
 - [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
 - [Phase 5 Remote Update Validation Worksheet](docs/50-Phase-5-Remote-Update-Validation-Worksheet.md)
+- [Manual System Test Runbook](docs/53-Manual-System-Test-Runbook.md)
 
 ### Content and Import
 

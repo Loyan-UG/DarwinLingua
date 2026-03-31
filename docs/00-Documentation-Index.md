@@ -66,6 +66,7 @@ All project documentation should remain in English.
 - `50-Phase-5-Remote-Update-Validation-Worksheet.md`
 - `51-Local-Server-Bootstrap.md`
 - `52-Future-Platform-Expansion.md`
+- `53-Manual-System-Test-Runbook.md`
 
 Related release-execution helpers live under `tools/Phase1/`.
 
@@ -97,7 +98,9 @@ If you are new to the project, read the documents in this order:
 20. `04-Implementation-Backlog.md`
 21. `42-Continuation-Handoff.md`
 22. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
-23. `52-Future-Platform-Expansion.md`
+23. `51-Local-Server-Bootstrap.md`
+24. `53-Manual-System-Test-Runbook.md`
+25. `52-Future-Platform-Expansion.md`
 
 ---
 

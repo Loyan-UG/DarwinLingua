@@ -68,6 +68,7 @@ Use it when:
 - The thirteenth Phase 5 slice now adds admin rollback support: `POST /api/admin/content/catalog/rollback` re-activates one `Superseded` batch and supersedes the currently `Published` batch for the same product.
 - The fourteenth Phase 5 slice now adds a publication audit trail: publish, rollback, and cleanup operations write `ContentPublicationEvents`, and `GET /api/admin/content/catalog/events` returns recent audited events per product.
 - The fifteenth Phase 5 slice now adds `tools/Server/Initialize-LocalServerContent.ps1` plus `docs/51-Local-Server-Bootstrap.md`, so a fresh local PostgreSQL install can create tables, import JSON content, and publish the first server batch in one short flow.
+- A single end-to-end manual execution path now exists in `docs/53-Manual-System-Test-Runbook.md`, combining local PostgreSQL startup, Web API bootstrap, server import/publish, mobile sync, and expected-result checks into one operator runbook.
 - Future platform-expansion planning boundaries for admin, web, account/sync, analytics, and monetization are now captured in `docs/52-Future-Platform-Expansion.md`.
 - Manual/device-bound Phase 5 remote-update validation now has a dedicated worksheet in `docs/50-Phase-5-Remote-Update-Validation-Worksheet.md`.
 - The shared mobile validation bundle now also includes the Phase 5 remote-update worksheet through `tools/Mobile/Start-MobileValidationBundle.ps1`.
