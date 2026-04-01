@@ -79,6 +79,71 @@ internal sealed class WordEntryRepository : IWordEntryRepository
     }
 
     /// <inheritdoc />
+    public async Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicPageAsync(
+        string topicKey,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(topicKey);
+
+        if (skip < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(skip));
+        }
+
+        if (take <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(take));
+        }
+
+        string normalizedTopicKey = topicKey.Trim().ToLowerInvariant();
+        LanguageCode resolvedMeaningLanguageCode = LanguageCode.From(meaningLanguageCode);
+
+        await using DarwinLinguaDbContext dbContext = await _dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        IQueryable<Guid> matchingTopicIds = dbContext.Topics
+            .AsNoTracking()
+            .Where(topic => topic.Key == normalizedTopicKey)
+            .Select(topic => topic.Id);
+
+        List<WordBrowseProjection> words = await dbContext.WordEntries
+            .AsNoTracking()
+            .Where(word => word.PublicationStatus == PublicationStatus.Active)
+            .Where(word => word.Topics.Any(topic => matchingTopicIds.Contains(topic.TopicId)))
+            .OrderBy(word => word.NormalizedLemma)
+            .Skip(skip)
+            .Take(take)
+            .Select(word => new WordBrowseProjection(
+                word.PublicId,
+                word.Lemma,
+                word.Article,
+                word.PluralForm,
+                word.PartOfSpeech,
+                word.PrimaryCefrLevel,
+                word.NormalizedLemma,
+                word.Senses
+                    .Where(sense => sense.IsPrimarySense)
+                    .SelectMany(sense => sense.Translations
+                        .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
+                        .OrderByDescending(translation => translation.IsPrimary)
+                        .ThenBy(translation => translation.TranslationText)
+                        .Select(translation => translation.TranslationText)
+                        .Take(1))
+                    .FirstOrDefault(),
+                false))
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return words
+            .Select(MapToBrowseModel)
+            .ToArray();
+    }
+
+    /// <inheritdoc />
     public async Task<WordEntry?> GetByPublicIdAsync(Guid publicId, CancellationToken cancellationToken)
     {
         if (publicId == Guid.Empty)

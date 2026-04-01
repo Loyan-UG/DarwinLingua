@@ -26,6 +26,7 @@ public sealed class WordQueryServiceTests
             [
                 new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "ایستگاه"),
             ],
+            topicPageWords: [],
             cefrWords: [],
             cefrPageWords: [],
             searchWords: []));
@@ -42,6 +43,34 @@ public sealed class WordQueryServiceTests
     }
 
     /// <summary>
+    /// Verifies that the paged topic query delegates to the repository and returns only the requested page.
+    /// </summary>
+    [Fact]
+    public async Task GetWordsByTopicPageAsync_ShouldReturnRequestedPage()
+    {
+        ServiceCollection services = new();
+        services.AddCatalogApplication();
+        services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
+            topicWords: [],
+            topicPageWords:
+            [
+                new WordListItemModel(Guid.NewGuid(), "Brot", "das", null, "Noun", "A1", "bread"),
+            ],
+            cefrWords: [],
+            cefrPageWords: [],
+            searchWords: []));
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IWordQueryService queryService = serviceProvider.GetRequiredService<IWordQueryService>();
+
+        IReadOnlyList<WordListItemModel> words = await queryService
+            .GetWordsByTopicPageAsync("food", "en", 24, 24, CancellationToken.None);
+
+        WordListItemModel result = Assert.Single(words);
+        Assert.Equal("Brot", result.Lemma);
+    }
+
+    /// <summary>
     /// Verifies that the CEFR query returns only matching words.
     /// </summary>
     [Fact]
@@ -51,6 +80,7 @@ public sealed class WordQueryServiceTests
         services.AddCatalogApplication();
         services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
             topicWords: [],
+            topicPageWords: [],
             cefrWords:
             [
                 new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "station"),
@@ -78,6 +108,7 @@ public sealed class WordQueryServiceTests
         services.AddCatalogApplication();
         services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
             topicWords: [],
+            topicPageWords: [],
             cefrWords:
             [
                 new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "station"),
@@ -108,6 +139,7 @@ public sealed class WordQueryServiceTests
         services.AddCatalogApplication();
         services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
             topicWords: [],
+            topicPageWords: [],
             cefrWords: [],
             cefrPageWords: [],
             searchWords:
@@ -127,6 +159,7 @@ public sealed class WordQueryServiceTests
 
     private sealed class FakeWordEntryRepository(
         IReadOnlyList<WordListItemModel> topicWords,
+        IReadOnlyList<WordListItemModel> topicPageWords,
         IReadOnlyList<WordListItemModel> cefrWords,
         IReadOnlyList<WordListItemModel> cefrPageWords,
         IReadOnlyList<WordListItemModel> searchWords) : IWordEntryRepository
@@ -137,6 +170,16 @@ public sealed class WordQueryServiceTests
             CancellationToken cancellationToken)
         {
             return Task.FromResult(topicWords);
+        }
+
+        public Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicPageAsync(
+            string topicKey,
+            string meaningLanguageCode,
+            int skip,
+            int take,
+            CancellationToken cancellationToken)
+        {
+            return Task.FromResult(topicPageWords);
         }
 
         public Task<WordEntry?> GetByPublicIdAsync(Guid publicId, CancellationToken cancellationToken)

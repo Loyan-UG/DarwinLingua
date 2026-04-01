@@ -18,6 +18,16 @@ public interface IWordEntryRepository
         CancellationToken cancellationToken);
 
     /// <summary>
+    /// Returns one page of active lexical entries linked to the specified topic key.
+    /// </summary>
+    Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicPageAsync(
+        string topicKey,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        CancellationToken cancellationToken);
+
+    /// <summary>
     /// Loads a lexical entry aggregate by its public identifier.
     /// </summary>
     Task<WordEntry?> GetByPublicIdAsync(Guid publicId, CancellationToken cancellationToken);

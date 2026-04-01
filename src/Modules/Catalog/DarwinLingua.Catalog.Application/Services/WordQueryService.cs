@@ -35,6 +35,31 @@ internal sealed partial class WordQueryService : IWordQueryService
     }
 
     /// <inheritdoc />
+    public async Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
+        string topicKey,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(topicKey);
+
+        if (skip < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(skip));
+        }
+
+        if (take <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(take));
+        }
+
+        return await _wordEntryRepository
+            .GetActiveByTopicPageAsync(topicKey, meaningLanguageCode, skip, take, cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <inheritdoc />
     public async Task<IReadOnlyList<WordListItemModel>> GetWordsByCefrAsync(
         string cefrLevel,
         string meaningLanguageCode,

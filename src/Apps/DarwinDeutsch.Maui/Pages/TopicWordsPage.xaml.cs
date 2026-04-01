@@ -19,9 +19,10 @@ public partial class TopicWordsPage : ContentPage
     private readonly IWordQueryService _wordQueryService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly ObservableCollection<TopicWordItemViewModel> _visibleWords = [];
-    private IReadOnlyList<TopicWordItemViewModel> _allWords = [];
     private int _loadedWordCount;
+    private bool _hasMoreWords;
     private bool _isLoadingMore;
+    private string _meaningLanguageCode = "en";
     private string _topicKey = string.Empty;
     private string _topicTitle = string.Empty;
 
@@ -96,12 +97,13 @@ public partial class TopicWordsPage : ContentPage
             UserLearningProfileModel profile = await _userLearningProfileService
                 .GetCurrentProfileAsync(CancellationToken.None)
                 .ConfigureAwait(true);
+            _meaningLanguageCode = profile.PreferredMeaningLanguage1;
 
-            IReadOnlyList<WordListItemModel> words = await _wordQueryService
-                .GetWordsByTopicAsync(TopicKey, profile.PreferredMeaningLanguage1, CancellationToken.None)
+            IReadOnlyList<WordListItemModel> firstPage = await _wordQueryService
+                .GetWordsByTopicPageAsync(TopicKey, _meaningLanguageCode, skip: 0, take: PageSize, CancellationToken.None)
                 .ConfigureAwait(true);
 
-            ShowWords(words
+            ShowWords(firstPage
                 .Select(word => new TopicWordItemViewModel(
                     word.PublicId,
                     BuildLemmaLine(word),
@@ -128,10 +130,14 @@ public partial class TopicWordsPage : ContentPage
     /// </summary>
     private void ShowWords(IReadOnlyList<TopicWordItemViewModel> words)
     {
-        _allWords = words;
         _visibleWords.Clear();
-        _loadedWordCount = 0;
-        LoadNextPage();
+        foreach (TopicWordItemViewModel word in words)
+        {
+            _visibleWords.Add(word);
+        }
+
+        _loadedWordCount = words.Count;
+        _hasMoreWords = words.Count == PageSize;
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
@@ -153,8 +159,9 @@ public partial class TopicWordsPage : ContentPage
     /// </summary>
     private void ShowErrorState()
     {
-        _allWords = [];
         _visibleWords.Clear();
+        _loadedWordCount = 0;
+        _hasMoreWords = false;
         WordsCollectionView.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         ErrorStateLabel.IsVisible = true;
@@ -163,31 +170,52 @@ public partial class TopicWordsPage : ContentPage
     /// <summary>
     /// Loads the next visual page of topic words.
     /// </summary>
-    private void LoadNextPage()
+    private async Task LoadNextPageAsync()
     {
-        if (_isLoadingMore || _loadedWordCount >= _allWords.Count)
+        if (_isLoadingMore || !_hasMoreWords || string.IsNullOrWhiteSpace(TopicKey))
         {
             return;
         }
 
         _isLoadingMore = true;
-        int nextCount = Math.Min(PageSize, _allWords.Count - _loadedWordCount);
-
-        foreach (TopicWordItemViewModel word in _allWords.Skip(_loadedWordCount).Take(nextCount))
+        try
         {
-            _visibleWords.Add(word);
-        }
+            IReadOnlyList<WordListItemModel> nextPage = await _wordQueryService
+                .GetWordsByTopicPageAsync(TopicKey, _meaningLanguageCode, _loadedWordCount, PageSize, CancellationToken.None)
+                .ConfigureAwait(true);
 
-        _loadedWordCount += nextCount;
-        _isLoadingMore = false;
+            IReadOnlyList<TopicWordItemViewModel> viewModels = nextPage
+                .Select(word => new TopicWordItemViewModel(
+                    word.PublicId,
+                    BuildLemmaLine(word),
+                    word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
+                    LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
+                .ToArray();
+
+            foreach (TopicWordItemViewModel word in viewModels)
+            {
+                _visibleWords.Add(word);
+            }
+
+            _loadedWordCount += viewModels.Count;
+            _hasMoreWords = viewModels.Count == PageSize;
+        }
+        catch
+        {
+            _hasMoreWords = false;
+        }
+        finally
+        {
+            _isLoadingMore = false;
+        }
     }
 
     /// <summary>
     /// Loads the next chunk when the learner scrolls near the end of the visible topic words.
     /// </summary>
-    private void OnWordsRemainingItemsThresholdReached(object? sender, EventArgs e)
+    private async void OnWordsRemainingItemsThresholdReached(object? sender, EventArgs e)
     {
-        LoadNextPage();
+        await LoadNextPageAsync().ConfigureAwait(true);
     }
 
     /// <summary>

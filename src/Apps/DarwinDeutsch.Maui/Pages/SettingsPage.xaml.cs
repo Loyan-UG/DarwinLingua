@@ -404,7 +404,6 @@ public partial class SettingsPage : ContentPage
                     .ConfigureAwait(true);
             }
 
-            _isApplyingRemoteUpdate = false;
             await RebuildPageStateAsync().ConfigureAwait(true);
         }
         finally

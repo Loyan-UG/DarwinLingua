@@ -110,6 +110,16 @@ public sealed class WordDetailQueryServiceTests
             return Task.FromResult<IReadOnlyList<WordListItemModel>>([]);
         }
 
+        public Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicPageAsync(
+            string topicKey,
+            string meaningLanguageCode,
+            int skip,
+            int take,
+            CancellationToken cancellationToken)
+        {
+            return Task.FromResult<IReadOnlyList<WordListItemModel>>([]);
+        }
+
         public Task<WordEntry?> GetByPublicIdAsync(Guid publicId, CancellationToken cancellationToken)
         {
             return Task.FromResult(word.PublicId == publicId ? word : null);

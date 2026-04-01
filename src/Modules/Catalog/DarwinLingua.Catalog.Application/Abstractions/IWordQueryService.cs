@@ -16,6 +16,16 @@ public interface IWordQueryService
         CancellationToken cancellationToken);
 
     /// <summary>
+    /// Returns one page of active lexical entries linked to the specified topic key.
+    /// </summary>
+    Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
+        string topicKey,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        CancellationToken cancellationToken);
+
+    /// <summary>
     /// Returns active lexical entries for the specified CEFR level.
     /// </summary>
     Task<IReadOnlyList<WordListItemModel>> GetWordsByCefrAsync(
