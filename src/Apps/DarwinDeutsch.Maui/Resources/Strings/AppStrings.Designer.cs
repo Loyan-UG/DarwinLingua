@@ -128,6 +128,26 @@ public static class AppStrings
     public static string StartupRetryButton => GetRequiredString(nameof(StartupRetryButton));
 
     /// <summary>
+    /// Gets the localized title for the deferred remote-update prompt.
+    /// </summary>
+    public static string BackgroundRemoteUpdatePromptTitle => GetRequiredString(nameof(BackgroundRemoteUpdatePromptTitle));
+
+    /// <summary>
+    /// Gets the localized body for the deferred remote-update prompt.
+    /// </summary>
+    public static string BackgroundRemoteUpdatePromptMessageFormat => GetRequiredString(nameof(BackgroundRemoteUpdatePromptMessageFormat));
+
+    /// <summary>
+    /// Gets the localized caption for accepting a deferred remote update immediately.
+    /// </summary>
+    public static string BackgroundRemoteUpdateApplyNowButton => GetRequiredString(nameof(BackgroundRemoteUpdateApplyNowButton));
+
+    /// <summary>
+    /// Gets the localized caption for postponing a deferred remote update.
+    /// </summary>
+    public static string BackgroundRemoteUpdateLaterButton => GetRequiredString(nameof(BackgroundRemoteUpdateLaterButton));
+
+    /// <summary>
     /// Gets the localized title for the practice tab.
     /// </summary>
     public static string PracticeTabTitle => GetRequiredString(nameof(PracticeTabTitle));

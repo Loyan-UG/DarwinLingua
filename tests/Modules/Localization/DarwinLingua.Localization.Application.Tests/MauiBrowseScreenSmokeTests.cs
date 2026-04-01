@@ -19,6 +19,7 @@ public sealed class MauiBrowseScreenSmokeTests
         string appPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/App.xaml.cs");
         string mauiProgramPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/MauiProgram.cs");
         string startupInitializationServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Startup/AppStartupInitializationService.cs");
+        string backgroundRemoteUpdateCoordinatorPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Updates/BackgroundRemoteUpdateCoordinator.cs");
         string seedProvisioningServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Storage/SeedDatabaseProvisioningService.cs");
         string seedDatabaseAssetPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Resources/Raw/darwin-lingua.seed.db");
 
@@ -29,6 +30,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.True(File.Exists(appPath), $"App code-behind file not found: {appPath}");
         Assert.True(File.Exists(mauiProgramPath), $"Maui program file not found: {mauiProgramPath}");
         Assert.True(File.Exists(startupInitializationServicePath), $"Startup initialization service file not found: {startupInitializationServicePath}");
+        Assert.True(File.Exists(backgroundRemoteUpdateCoordinatorPath), $"Background remote update coordinator file not found: {backgroundRemoteUpdateCoordinatorPath}");
         Assert.True(File.Exists(seedProvisioningServicePath), $"Seed provisioning service file not found: {seedProvisioningServicePath}");
         Assert.True(File.Exists(seedDatabaseAssetPath), $"Seed database asset file not found: {seedDatabaseAssetPath}");
 
@@ -39,6 +41,7 @@ public sealed class MauiBrowseScreenSmokeTests
         string appSource = File.ReadAllText(appPath);
         string mauiProgramSource = File.ReadAllText(mauiProgramPath);
         string startupInitializationServiceSource = File.ReadAllText(startupInitializationServicePath);
+        string backgroundRemoteUpdateCoordinatorSource = File.ReadAllText(backgroundRemoteUpdateCoordinatorPath);
         string seedProvisioningServiceSource = File.ReadAllText(seedProvisioningServicePath);
 
         Assert.Contains("CefrQuickFilterView", sourceCode, StringComparison.Ordinal);
@@ -63,14 +66,20 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("GetAppShell()", appSource, StringComparison.Ordinal);
         Assert.Contains("GetWelcomePage()", appSource, StringComparison.Ordinal);
         Assert.Contains("OnStartupCompleted", appSource, StringComparison.Ordinal);
+        Assert.Contains("ScheduleInitialCheck", appSource, StringComparison.Ordinal);
+        Assert.Contains("OnWindowResumed", appSource, StringComparison.Ordinal);
         Assert.Contains("ShouldShowWelcomeExperience", appSource, StringComparison.Ordinal);
         Assert.Contains("IAppStartupInitializationService", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("IBackgroundRemoteUpdateCoordinator", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("AddSingleton<StartupPage>()", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ICefrBrowseStateService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("Task.Run", startupInitializationServiceSource, StringComparison.Ordinal);
         Assert.Contains("ApplySeedUpdateAsync", startupInitializationServiceSource, StringComparison.Ordinal);
         Assert.Contains("InitializeAsync", startupInitializationServiceSource, StringComparison.Ordinal);
+        Assert.Contains("ScheduleResumeCheck", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
+        Assert.Contains("DisplayAlert", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
+        Assert.Contains("ApplyFullUpdateAsync", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
         Assert.Contains("darwin-lingua.seed.db", seedProvisioningServiceSource, StringComparison.Ordinal);
     }
 

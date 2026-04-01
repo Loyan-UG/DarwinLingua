@@ -1,5 +1,6 @@
 using DarwinDeutsch.Maui.Pages;
 using DarwinDeutsch.Maui.Services.Onboarding;
+using DarwinDeutsch.Maui.Services.Updates;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinDeutsch.Maui;
@@ -11,6 +12,7 @@ public partial class App : Application
 {
     private readonly IServiceProvider _serviceProvider;
     private readonly IAppOnboardingService _appOnboardingService;
+    private readonly IBackgroundRemoteUpdateCoordinator _backgroundRemoteUpdateCoordinator;
     private AppShell? _appShell;
     private StartupPage? _startupPage;
     private WelcomePage? _welcomePage;
@@ -22,15 +24,18 @@ public partial class App : Application
     /// <param name="appOnboardingService">The service that tracks onboarding completion.</param>
     public App(
         IServiceProvider serviceProvider,
-        IAppOnboardingService appOnboardingService)
+        IAppOnboardingService appOnboardingService,
+        IBackgroundRemoteUpdateCoordinator backgroundRemoteUpdateCoordinator)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
         ArgumentNullException.ThrowIfNull(appOnboardingService);
+        ArgumentNullException.ThrowIfNull(backgroundRemoteUpdateCoordinator);
 
         InitializeComponent();
 
         _serviceProvider = serviceProvider;
         _appOnboardingService = appOnboardingService;
+        _backgroundRemoteUpdateCoordinator = backgroundRemoteUpdateCoordinator;
     }
 
     /// <summary>
@@ -41,7 +46,9 @@ public partial class App : Application
     protected override Window CreateWindow(IActivationState? activationState)
     {
         StartupPage startupPage = GetStartupPage();
-        return new Window(startupPage);
+        Window window = new(startupPage);
+        window.Resumed += OnWindowResumed;
+        return window;
     }
 
     private void OnStartupCompleted(object? sender, EventArgs e)
@@ -55,6 +62,8 @@ public partial class App : Application
         activeWindow.Page = _appOnboardingService.ShouldShowWelcomeExperience()
             ? GetWelcomePage()
             : GetAppShell();
+
+        _backgroundRemoteUpdateCoordinator.ScheduleInitialCheck(activeWindow);
     }
 
     private void OnWelcomeStartRequested(object? sender, EventArgs e)
@@ -95,5 +104,13 @@ public partial class App : Application
         _welcomePage = _serviceProvider.GetRequiredService<WelcomePage>();
         _welcomePage.StartRequested += OnWelcomeStartRequested;
         return _welcomePage;
+    }
+
+    private void OnWindowResumed(object? sender, EventArgs e)
+    {
+        if (sender is Window window)
+        {
+            _backgroundRemoteUpdateCoordinator.ScheduleResumeCheck(window);
+        }
     }
 }

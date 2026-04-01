@@ -73,6 +73,7 @@ public static class MauiProgram
                 Timeout = TimeSpan.FromSeconds(10),
             })
             .AddSingleton<IRemoteContentUpdateService, RemoteContentUpdateService>()
+            .AddSingleton<IBackgroundRemoteUpdateCoordinator, BackgroundRemoteUpdateCoordinator>()
             .AddSingleton<StartupPage>()
             .AddSingleton<AppShell>()
             .AddSingleton<WelcomePage>()
