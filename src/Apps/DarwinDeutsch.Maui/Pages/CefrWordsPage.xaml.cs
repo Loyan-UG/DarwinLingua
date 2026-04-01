@@ -15,8 +15,8 @@ public partial class CefrWordsPage : ContentPage
     private const int PageSize = 24;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly ObservableCollection<CefrWordItemViewModel> _visibleWords = [];
-    private IReadOnlyList<CefrWordItemViewModel> _allWords = [];
     private int _loadedWordCount;
+    private bool _hasMoreWords;
     private bool _isLoadingMore;
     private string _cefrLevel = string.Empty;
 
@@ -72,7 +72,7 @@ public partial class CefrWordsPage : ContentPage
 
         if (string.IsNullOrWhiteSpace(CefrLevel))
         {
-            ShowWords(Array.Empty<CefrWordItemViewModel>());
+            ShowWords([]);
             return;
         }
 
@@ -80,22 +80,21 @@ public partial class CefrWordsPage : ContentPage
 
         try
         {
-            IReadOnlyList<WordListItemModel> words = await _cefrBrowseStateService
-                .GetWordsAsync(CefrLevel, CancellationToken.None)
+            IReadOnlyList<WordListItemModel> firstPage = await _cefrBrowseStateService
+                .GetWordsPageAsync(CefrLevel, skip: 0, take: PageSize, CancellationToken.None)
                 .ConfigureAwait(true);
 
-            _allWords = words
+            ShowWords(firstPage
                 .Select(word => new CefrWordItemViewModel(
                     word.PublicId,
                     string.IsNullOrWhiteSpace(word.Article) ? word.Lemma : $"{word.Article} {word.Lemma}",
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
-                .ToArray();
-            ShowWords(_allWords);
+                .ToArray());
         }
         catch (OperationCanceledException)
         {
-            ShowWords(Array.Empty<CefrWordItemViewModel>());
+            ShowWords([]);
         }
         catch
         {
@@ -142,10 +141,14 @@ public partial class CefrWordsPage : ContentPage
     /// </summary>
     private void ShowWords(IReadOnlyList<CefrWordItemViewModel> words)
     {
-        _allWords = words;
         _visibleWords.Clear();
-        _loadedWordCount = 0;
-        LoadNextPage();
+        foreach (CefrWordItemViewModel word in words)
+        {
+            _visibleWords.Add(word);
+        }
+
+        _loadedWordCount = words.Count;
+        _hasMoreWords = words.Count == PageSize;
 
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
@@ -168,8 +171,9 @@ public partial class CefrWordsPage : ContentPage
     /// </summary>
     private void ShowErrorState()
     {
-        _allWords = [];
         _visibleWords.Clear();
+        _loadedWordCount = 0;
+        _hasMoreWords = false;
         WordsCollectionView.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         ErrorStateLabel.IsVisible = true;
@@ -178,31 +182,52 @@ public partial class CefrWordsPage : ContentPage
     /// <summary>
     /// Loads the next visual page of words into the collection view.
     /// </summary>
-    private void LoadNextPage()
+    private async Task LoadNextPageAsync()
     {
-        if (_isLoadingMore || _loadedWordCount >= _allWords.Count)
+        if (_isLoadingMore || !_hasMoreWords || string.IsNullOrWhiteSpace(CefrLevel))
         {
             return;
         }
 
         _isLoadingMore = true;
-
-        int nextCount = Math.Min(PageSize, _allWords.Count - _loadedWordCount);
-        foreach (CefrWordItemViewModel word in _allWords.Skip(_loadedWordCount).Take(nextCount))
+        try
         {
-            _visibleWords.Add(word);
-        }
+            IReadOnlyList<WordListItemModel> nextPage = await _cefrBrowseStateService
+                .GetWordsPageAsync(CefrLevel, _loadedWordCount, PageSize, CancellationToken.None)
+                .ConfigureAwait(true);
 
-        _loadedWordCount += nextCount;
-        _isLoadingMore = false;
+            IReadOnlyList<CefrWordItemViewModel> viewModels = nextPage
+                .Select(word => new CefrWordItemViewModel(
+                    word.PublicId,
+                    string.IsNullOrWhiteSpace(word.Article) ? word.Lemma : $"{word.Article} {word.Lemma}",
+                    word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
+                    LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
+                .ToArray();
+
+            foreach (CefrWordItemViewModel word in viewModels)
+            {
+                _visibleWords.Add(word);
+            }
+
+            _loadedWordCount += viewModels.Count;
+            _hasMoreWords = viewModels.Count == PageSize;
+        }
+        catch
+        {
+            _hasMoreWords = false;
+        }
+        finally
+        {
+            _isLoadingMore = false;
+        }
     }
 
     /// <summary>
     /// Loads the next result chunk when the learner scrolls near the end of the current list.
     /// </summary>
-    private void OnWordsRemainingItemsThresholdReached(object? sender, EventArgs e)
+    private async void OnWordsRemainingItemsThresholdReached(object? sender, EventArgs e)
     {
-        LoadNextPage();
+        await LoadNextPageAsync().ConfigureAwait(true);
     }
 
     /// <summary>

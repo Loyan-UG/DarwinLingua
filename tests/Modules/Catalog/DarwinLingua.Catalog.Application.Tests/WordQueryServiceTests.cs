@@ -27,6 +27,7 @@ public sealed class WordQueryServiceTests
                 new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "ایستگاه"),
             ],
             cefrWords: [],
+            cefrPageWords: [],
             searchWords: []));
 
         await using ServiceProvider serviceProvider = services.BuildServiceProvider();
@@ -54,6 +55,7 @@ public sealed class WordQueryServiceTests
             [
                 new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "station"),
             ],
+            cefrPageWords: [],
             searchWords: []));
 
         await using ServiceProvider serviceProvider = services.BuildServiceProvider();
@@ -67,6 +69,36 @@ public sealed class WordQueryServiceTests
     }
 
     /// <summary>
+    /// Verifies that the paged CEFR query delegates to the repository and returns only the requested page.
+    /// </summary>
+    [Fact]
+    public async Task GetWordsByCefrPageAsync_ShouldReturnRequestedPage()
+    {
+        ServiceCollection services = new();
+        services.AddCatalogApplication();
+        services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
+            topicWords: [],
+            cefrWords:
+            [
+                new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "station"),
+            ],
+            cefrPageWords:
+            [
+                new WordListItemModel(Guid.NewGuid(), "Brot", "das", null, "Noun", "A1", "bread"),
+            ],
+            searchWords: []));
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IWordQueryService queryService = serviceProvider.GetRequiredService<IWordQueryService>();
+
+        IReadOnlyList<WordListItemModel> words = await queryService
+            .GetWordsByCefrPageAsync("A1", "en", 24, 24, CancellationToken.None);
+
+        WordListItemModel result = Assert.Single(words);
+        Assert.Equal("Brot", result.Lemma);
+    }
+
+    /// <summary>
     /// Verifies that search normalizes whitespace and casing.
     /// </summary>
     [Fact]
@@ -77,6 +109,7 @@ public sealed class WordQueryServiceTests
         services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
             topicWords: [],
             cefrWords: [],
+            cefrPageWords: [],
             searchWords:
             [
                 new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "station"),
@@ -95,6 +128,7 @@ public sealed class WordQueryServiceTests
     private sealed class FakeWordEntryRepository(
         IReadOnlyList<WordListItemModel> topicWords,
         IReadOnlyList<WordListItemModel> cefrWords,
+        IReadOnlyList<WordListItemModel> cefrPageWords,
         IReadOnlyList<WordListItemModel> searchWords) : IWordEntryRepository
     {
         public Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicKeyAsync(
@@ -116,6 +150,16 @@ public sealed class WordQueryServiceTests
             CancellationToken cancellationToken)
         {
             return Task.FromResult(cefrWords);
+        }
+
+        public Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrPageAsync(
+            CefrLevel cefrLevel,
+            string meaningLanguageCode,
+            int skip,
+            int take,
+            CancellationToken cancellationToken)
+        {
+            return Task.FromResult(cefrPageWords);
         }
 
         public Task<IReadOnlyList<WordListItemModel>> SearchActiveByLemmaAsync(

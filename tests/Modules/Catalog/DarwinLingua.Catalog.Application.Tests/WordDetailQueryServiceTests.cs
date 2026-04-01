@@ -123,6 +123,16 @@ public sealed class WordDetailQueryServiceTests
             return Task.FromResult<IReadOnlyList<WordListItemModel>>([]);
         }
 
+        public Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrPageAsync(
+            CefrLevel cefrLevel,
+            string meaningLanguageCode,
+            int skip,
+            int take,
+            CancellationToken cancellationToken)
+        {
+            return Task.FromResult<IReadOnlyList<WordListItemModel>>([]);
+        }
+
         public Task<IReadOnlyList<WordListItemModel>> SearchActiveByLemmaAsync(
             string normalizedLemmaQuery,
             string meaningLanguageCode,

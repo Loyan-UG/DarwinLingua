@@ -50,6 +50,33 @@ internal sealed partial class WordQueryService : IWordQueryService
     }
 
     /// <inheritdoc />
+    public async Task<IReadOnlyList<WordListItemModel>> GetWordsByCefrPageAsync(
+        string cefrLevel,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
+
+        if (skip < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(skip));
+        }
+
+        if (take <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(take));
+        }
+
+        CefrLevel resolvedCefrLevel = Enum.Parse<CefrLevel>(cefrLevel.Trim(), ignoreCase: true);
+
+        return await _wordEntryRepository
+            .GetActiveByCefrPageAsync(resolvedCefrLevel, meaningLanguageCode, skip, take, cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <inheritdoc />
     public async Task<IReadOnlyList<WordListItemModel>> SearchWordsAsync(
         string query,
         string meaningLanguageCode,

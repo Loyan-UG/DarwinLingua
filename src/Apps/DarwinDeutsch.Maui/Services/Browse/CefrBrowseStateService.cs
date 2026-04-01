@@ -55,6 +55,34 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     }
 
     /// <inheritdoc />
+    public async Task<IReadOnlyList<WordListItemModel>> GetWordsPageAsync(
+        string cefrLevel,
+        int skip,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
+
+        if (skip < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(skip));
+        }
+
+        if (take <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(take));
+        }
+
+        UserLearningProfileModel profile = await _userLearningProfileService
+            .GetCurrentProfileAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return await _wordQueryService
+            .GetWordsByCefrPageAsync(cefrLevel, profile.PreferredMeaningLanguage1, skip, take, cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <inheritdoc />
     public async Task<Guid?> GetStartingWordPublicIdAsync(string cefrLevel, CancellationToken cancellationToken)
     {
         IReadOnlyList<WordListItemModel> words = await GetWordsAsync(cefrLevel, cancellationToken).ConfigureAwait(false);

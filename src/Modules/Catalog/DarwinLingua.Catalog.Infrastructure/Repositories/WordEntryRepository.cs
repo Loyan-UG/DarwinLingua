@@ -138,6 +138,62 @@ internal sealed class WordEntryRepository : IWordEntryRepository
     }
 
     /// <inheritdoc />
+    public async Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrPageAsync(
+        CefrLevel cefrLevel,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        if (skip < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(skip));
+        }
+
+        if (take <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(take));
+        }
+
+        LanguageCode resolvedMeaningLanguageCode = LanguageCode.From(meaningLanguageCode);
+
+        await using DarwinLinguaDbContext dbContext = await _dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<WordBrowseProjection> words = await dbContext.WordEntries
+            .AsNoTracking()
+            .Where(word => word.PublicationStatus == PublicationStatus.Active && word.PrimaryCefrLevel == cefrLevel)
+            .OrderBy(word => word.NormalizedLemma)
+            .Skip(skip)
+            .Take(take)
+            .Select(word => new WordBrowseProjection(
+                word.PublicId,
+                word.Lemma,
+                word.Article,
+                word.PluralForm,
+                word.PartOfSpeech,
+                word.PrimaryCefrLevel,
+                word.NormalizedLemma,
+                word.Senses
+                    .Where(sense => sense.IsPrimarySense)
+                    .SelectMany(sense => sense.Translations
+                        .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
+                        .OrderByDescending(translation => translation.IsPrimary)
+                        .ThenBy(translation => translation.TranslationText)
+                        .Select(translation => translation.TranslationText)
+                        .Take(1))
+                    .FirstOrDefault(),
+                false))
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return words
+            .Select(MapToBrowseModel)
+            .ToArray();
+    }
+
+    /// <inheritdoc />
     public async Task<IReadOnlyList<WordListItemModel>> SearchActiveByLemmaAsync(
         string normalizedLemmaQuery,
         string meaningLanguageCode,

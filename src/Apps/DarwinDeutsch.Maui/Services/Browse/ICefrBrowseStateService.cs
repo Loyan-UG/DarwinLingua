@@ -14,6 +14,15 @@ public interface ICefrBrowseStateService
     Task<IReadOnlyList<WordListItemModel>> GetWordsAsync(string cefrLevel, CancellationToken cancellationToken);
 
     /// <summary>
+    /// Loads one visual browse page for the specified CEFR level using the current meaning-language preference.
+    /// </summary>
+    Task<IReadOnlyList<WordListItemModel>> GetWordsPageAsync(
+        string cefrLevel,
+        int skip,
+        int take,
+        CancellationToken cancellationToken);
+
+    /// <summary>
     /// Resolves the word that should open first for the specified CEFR level.
     /// </summary>
     Task<Guid?> GetStartingWordPublicIdAsync(string cefrLevel, CancellationToken cancellationToken);

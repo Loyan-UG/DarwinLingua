@@ -31,6 +31,16 @@ public interface IWordEntryRepository
         CancellationToken cancellationToken);
 
     /// <summary>
+    /// Returns one page of active lexical entries for the specified CEFR level.
+    /// </summary>
+    Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrPageAsync(
+        CefrLevel cefrLevel,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        CancellationToken cancellationToken);
+
+    /// <summary>
     /// Searches active lexical entries by normalized lemma text.
     /// </summary>
     Task<IReadOnlyList<WordListItemModel>> SearchActiveByLemmaAsync(
