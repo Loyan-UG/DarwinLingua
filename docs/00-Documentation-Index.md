@@ -68,6 +68,11 @@ All project documentation should remain in English.
 - `52-Future-Platform-Expansion.md`
 - `53-Manual-System-Test-Runbook.md`
 
+Localized operator-oriented Persian variants also exist for:
+
+- `51-Local-Server-Bootstrap.fa.md`
+- `53-Manual-System-Test-Runbook.fa.md`
+
 Related release-execution helpers live under `tools/Phase1/`.
 
 ---

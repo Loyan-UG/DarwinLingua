@@ -121,7 +121,9 @@ The project has explicit implementation standards in:
 - [Mobile Validation Bundle Runbook](docs/48-Mobile-Validation-Bundle-Runbook.md)
 - [Phase 5 Remote Update Validation Worksheet](docs/50-Phase-5-Remote-Update-Validation-Worksheet.md)
 - [Local Server Bootstrap](docs/51-Local-Server-Bootstrap.md)
+- [Local Server Bootstrap (Persian)](docs/51-Local-Server-Bootstrap.fa.md)
 - [Manual System Test Runbook](docs/53-Manual-System-Test-Runbook.md)
+- [Manual System Test Runbook (Persian)](docs/53-Manual-System-Test-Runbook.fa.md)
 - [Future Platform Expansion](docs/52-Future-Platform-Expansion.md)
 
 Important rules include:
