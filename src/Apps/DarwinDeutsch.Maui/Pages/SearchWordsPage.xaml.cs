@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Resources.Strings;
+using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
@@ -14,26 +15,35 @@ namespace DarwinDeutsch.Maui.Pages;
 /// </summary>
 public partial class SearchWordsPage : ContentPage
 {
+    private static readonly TimeSpan SearchDebounceDelay = TimeSpan.FromMilliseconds(280);
+    private const int PrefetchResultCount = 4;
     private readonly IWordQueryService _wordQueryService;
+    private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly ILogger<SearchWordsPage> _logger;
     private CancellationTokenSource? _searchCancellationTokenSource;
+    private CancellationTokenSource? _debounceCancellationTokenSource;
+    private string _lastCompletedQuery = string.Empty;
+    private IReadOnlyList<SearchWordItemViewModel> _lastResults = Array.Empty<SearchWordItemViewModel>();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SearchWordsPage"/> class.
     /// </summary>
     public SearchWordsPage(
         IWordQueryService wordQueryService,
+        IWordDetailCacheService wordDetailCacheService,
         IUserLearningProfileService userLearningProfileService,
         ILogger<SearchWordsPage> logger)
     {
         ArgumentNullException.ThrowIfNull(wordQueryService);
+        ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
         ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
 
         _wordQueryService = wordQueryService;
+        _wordDetailCacheService = wordDetailCacheService;
         _userLearningProfileService = userLearningProfileService;
         _logger = logger;
 
@@ -55,9 +65,18 @@ public partial class SearchWordsPage : ContentPage
     /// </summary>
     protected override void OnDisappearing()
     {
+        CancelDebounceRequest();
         CancelSearchRequest();
 
         base.OnDisappearing();
+    }
+
+    /// <summary>
+    /// Starts a debounced search when the query text changes.
+    /// </summary>
+    private void OnSearchBarTextChanged(object? sender, TextChangedEventArgs e)
+    {
+        ScheduleDebouncedSearch(e.NewTextValue);
     }
 
     /// <summary>
@@ -65,6 +84,7 @@ public partial class SearchWordsPage : ContentPage
     /// </summary>
     private async void OnSearchButtonPressed(object? sender, EventArgs e)
     {
+        CancelDebounceRequest();
         await SearchAsync().ConfigureAwait(true);
     }
 
@@ -112,39 +132,55 @@ public partial class SearchWordsPage : ContentPage
         CancellationToken cancellationToken = _searchCancellationTokenSource!.Token;
         Stopwatch stopwatch = Stopwatch.StartNew();
 
-        ShowLoadingState();
-
         try
         {
-            UserLearningProfileModel profile = await _userLearningProfileService
-                .GetCurrentProfileAsync(cancellationToken)
-                .ConfigureAwait(true);
-
             string query = SearchBarControl.Text ?? string.Empty;
+            string normalizedQuery = query.Trim();
 
-            if (string.IsNullOrWhiteSpace(query))
+            if (string.IsNullOrWhiteSpace(normalizedQuery))
             {
+                _lastCompletedQuery = string.Empty;
+                _lastResults = Array.Empty<SearchWordItemViewModel>();
                 ShowResults(Array.Empty<SearchWordItemViewModel>());
                 return;
             }
 
+            if (string.Equals(_lastCompletedQuery, normalizedQuery, StringComparison.Ordinal))
+            {
+                _logger.LogDebug("Search skipped for unchanged query '{Query}'.", normalizedQuery);
+                ShowResults(_lastResults);
+                return;
+            }
+
+            UserLearningProfileModel profile = await _userLearningProfileService
+                .GetCurrentProfileAsync(cancellationToken)
+                .ConfigureAwait(true);
+
+            ShowLoadingState();
+
             IReadOnlyList<WordListItemModel> words = await _wordQueryService
-                .SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken)
+                .SearchWordsAsync(normalizedQuery, profile.PreferredMeaningLanguage1, cancellationToken)
                 .ConfigureAwait(true);
 
             _logger.LogInformation(
                 "Search completed for query '{Query}' with {ResultCount} results in {ElapsedMs} ms.",
-                query,
+                normalizedQuery,
                 words.Count,
                 stopwatch.ElapsedMilliseconds);
+            _lastCompletedQuery = normalizedQuery;
 
-            ShowResults(words
+            SearchWordItemViewModel[] results = words
                 .Select(word => new SearchWordItemViewModel(
                     word.PublicId,
                     string.IsNullOrWhiteSpace(word.Article) ? word.Lemma : $"{word.Article} {word.Lemma}",
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
-                .ToArray());
+                .ToArray();
+
+            _lastResults = results;
+            ShowResults(results);
+
+            ScheduleResultPrefetch(words, profile);
         }
         catch (OperationCanceledException)
         {
@@ -160,6 +196,42 @@ public partial class SearchWordsPage : ContentPage
         {
             LoadingStateLabel.IsVisible = false;
         }
+    }
+
+    private void ScheduleDebouncedSearch(string? query)
+    {
+        CancelDebounceRequest();
+
+        string normalizedQuery = (query ?? string.Empty).Trim();
+        if (string.IsNullOrWhiteSpace(normalizedQuery))
+        {
+            _lastCompletedQuery = string.Empty;
+            ShowResults(Array.Empty<SearchWordItemViewModel>());
+            return;
+        }
+
+        _debounceCancellationTokenSource = new CancellationTokenSource();
+        CancellationToken cancellationToken = _debounceCancellationTokenSource.Token;
+
+        _ = Task.Run(async () =>
+        {
+            try
+            {
+                await Task.Delay(SearchDebounceDelay, cancellationToken).ConfigureAwait(false);
+                await MainThread.InvokeOnMainThreadAsync(async () =>
+                {
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        return;
+                    }
+
+                    await SearchAsync().ConfigureAwait(true);
+                }).ConfigureAwait(false);
+            }
+            catch (OperationCanceledException)
+            {
+            }
+        }, cancellationToken);
     }
 
     /// <summary>
@@ -184,6 +256,18 @@ public partial class SearchWordsPage : ContentPage
         _searchCancellationTokenSource.Cancel();
         _searchCancellationTokenSource.Dispose();
         _searchCancellationTokenSource = null;
+    }
+
+    private void CancelDebounceRequest()
+    {
+        if (_debounceCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _debounceCancellationTokenSource.Cancel();
+        _debounceCancellationTokenSource.Dispose();
+        _debounceCancellationTokenSource = null;
     }
 
     /// <summary>
@@ -217,6 +301,40 @@ public partial class SearchWordsPage : ContentPage
         WordsCollectionView.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         ErrorStateLabel.IsVisible = true;
+    }
+
+    private void ScheduleResultPrefetch(IReadOnlyList<WordListItemModel> words, UserLearningProfileModel profile)
+    {
+        IReadOnlyList<WordListItemModel> prefetchCandidates = words
+            .Take(PrefetchResultCount)
+            .ToArray();
+
+        if (prefetchCandidates.Count == 0)
+        {
+            return;
+        }
+
+        _ = Task.Run(async () =>
+        {
+            foreach (WordListItemModel candidate in prefetchCandidates)
+            {
+                try
+                {
+                    await _wordDetailCacheService
+                        .PrefetchWordDetailsAsync(
+                            candidate.PublicId,
+                            profile.PreferredMeaningLanguage1,
+                            profile.PreferredMeaningLanguage2,
+                            profile.UiLanguageCode,
+                            CancellationToken.None)
+                        .ConfigureAwait(false);
+                }
+                catch (Exception exception)
+                {
+                    _logger.LogDebug(exception, "Search result prefetch failed for word {WordPublicId}.", candidate.PublicId);
+                }
+            }
+        });
     }
 
     /// <summary>
