@@ -13,15 +13,31 @@ public sealed class MauiStartupSmokeTests
     {
         string repositoryRoot = ResolveRepositoryRoot();
         string mauiProgramPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/MauiProgram.cs");
+        string startupServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Startup/AppStartupInitializationService.cs");
+        string startupPageCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/StartupPage.xaml.cs");
+        string appPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/App.xaml.cs");
 
         Assert.True(File.Exists(mauiProgramPath), $"Startup source file not found: {mauiProgramPath}");
+        Assert.True(File.Exists(startupServicePath), $"Startup initialization service file not found: {startupServicePath}");
+        Assert.True(File.Exists(startupPageCodeBehindPath), $"Startup page code-behind file not found: {startupPageCodeBehindPath}");
+        Assert.True(File.Exists(appPath), $"App source file not found: {appPath}");
 
-        string sourceCode = File.ReadAllText(mauiProgramPath);
+        string mauiProgramSource = File.ReadAllText(mauiProgramPath);
+        string startupServiceSource = File.ReadAllText(startupServicePath);
+        string startupPageCodeBehindSource = File.ReadAllText(startupPageCodeBehindPath);
+        string appSource = File.ReadAllText(appPath);
 
-        Assert.Contains("IDatabaseInitializer", sourceCode, StringComparison.Ordinal);
-        Assert.Contains(".InitializeAsync(CancellationToken.None)", sourceCode, StringComparison.Ordinal);
-        Assert.Contains("IAppLocalizationService", sourceCode, StringComparison.Ordinal);
-        Assert.Contains("localizationService.InitializeAsync(CancellationToken.None)", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("IAppStartupInitializationService", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("AddSingleton<StartupPage>()", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("IDatabaseInitializer", startupServiceSource, StringComparison.Ordinal);
+        Assert.Contains("_databaseInitializer.InitializeAsync(cancellationToken)", startupServiceSource, StringComparison.Ordinal);
+        Assert.Contains("IAppLocalizationService", startupServiceSource, StringComparison.Ordinal);
+        Assert.Contains("_appLocalizationService.InitializeAsync(cancellationToken)", startupServiceSource, StringComparison.Ordinal);
+        Assert.Contains("Task.Run", startupServiceSource, StringComparison.Ordinal);
+        Assert.Contains("StartupCompleted?.Invoke", startupPageCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("GetStartupPage()", appSource, StringComparison.Ordinal);
+        Assert.Contains("GetAppShell()", appSource, StringComparison.Ordinal);
+        Assert.Contains("GetWelcomePage()", appSource, StringComparison.Ordinal);
     }
 
     /// <summary>

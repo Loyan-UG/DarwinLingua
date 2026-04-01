@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarwinDeutsch.Maui.Pages.StartupPage">
+    <Grid Padding="24">
+        <Border Padding="24"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 4"
+                BackgroundColor="{AppThemeBinding Light=#F6FAFD, Dark=#101923}"
+                VerticalOptions="Center">
+            <VerticalStackLayout Spacing="16">
+                <ActivityIndicator x:Name="StartupIndicator"
+                                   IsRunning="True"
+                                   HorizontalOptions="Center" />
+
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="HeadlineLabel"
+                           Style="{DynamicResource Headline}"
+                           HorizontalTextAlignment="Center"
+                           SemanticProperties.HeadingLevel="Level1" />
+                    <Label x:Name="DescriptionLabel"
+                           Style="{DynamicResource Body}"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+
+                <Label x:Name="ErrorLabel"
+                       IsVisible="False"
+                       Style="{DynamicResource Caption}"
+                       TextColor="{AppThemeBinding Light=#A53A2B, Dark=#FFB7AD}" />
+
+                <Button x:Name="RetryButton"
+                        IsVisible="False"
+                        Clicked="OnRetryButtonClicked" />
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

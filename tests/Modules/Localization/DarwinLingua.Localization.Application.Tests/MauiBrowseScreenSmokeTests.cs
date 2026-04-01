@@ -13,23 +13,32 @@ public sealed class MauiBrowseScreenSmokeTests
     {
         string repositoryRoot = ResolveRepositoryRoot();
         string homePagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/HomePage.xaml");
+        string startupPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/StartupPage.xaml");
+        string startupPageCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/StartupPage.xaml.cs");
         string welcomePagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/WelcomePage.xaml");
         string appPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/App.xaml.cs");
         string mauiProgramPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/MauiProgram.cs");
+        string startupInitializationServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Startup/AppStartupInitializationService.cs");
         string seedProvisioningServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Storage/SeedDatabaseProvisioningService.cs");
         string seedDatabaseAssetPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Resources/Raw/darwin-lingua.seed.db");
 
         Assert.True(File.Exists(homePagePath), $"Home page XAML file not found: {homePagePath}");
+        Assert.True(File.Exists(startupPagePath), $"Startup page XAML file not found: {startupPagePath}");
+        Assert.True(File.Exists(startupPageCodeBehindPath), $"Startup page code-behind file not found: {startupPageCodeBehindPath}");
         Assert.True(File.Exists(welcomePagePath), $"Welcome page XAML file not found: {welcomePagePath}");
         Assert.True(File.Exists(appPath), $"App code-behind file not found: {appPath}");
         Assert.True(File.Exists(mauiProgramPath), $"Maui program file not found: {mauiProgramPath}");
+        Assert.True(File.Exists(startupInitializationServicePath), $"Startup initialization service file not found: {startupInitializationServicePath}");
         Assert.True(File.Exists(seedProvisioningServicePath), $"Seed provisioning service file not found: {seedProvisioningServicePath}");
         Assert.True(File.Exists(seedDatabaseAssetPath), $"Seed database asset file not found: {seedDatabaseAssetPath}");
 
         string sourceCode = File.ReadAllText(homePagePath);
+        string startupSource = File.ReadAllText(startupPagePath);
+        string startupCodeBehindSource = File.ReadAllText(startupPageCodeBehindPath);
         string welcomeSource = File.ReadAllText(welcomePagePath);
         string appSource = File.ReadAllText(appPath);
         string mauiProgramSource = File.ReadAllText(mauiProgramPath);
+        string startupInitializationServiceSource = File.ReadAllText(startupInitializationServicePath);
         string seedProvisioningServiceSource = File.ReadAllText(seedProvisioningServicePath);
 
         Assert.Contains("CefrQuickFilterView", sourceCode, StringComparison.Ordinal);
@@ -41,15 +50,27 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("SearchActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("BrowseTopicsActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("FavoritesActionBlockView", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("ActivityIndicator", startupSource, StringComparison.Ordinal);
+        Assert.Contains("RetryButton", startupSource, StringComparison.Ordinal);
+        Assert.Contains("RunInitializationAsync", startupCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("StartupCompleted", startupCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("LanguagePicker", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("CurrentFeaturesBodyLabel", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("LearnWithLanguagesBodyLabel", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("InterfaceLanguagesBodyLabel", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("StartButton", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("GetStartupPage()", appSource, StringComparison.Ordinal);
+        Assert.Contains("GetAppShell()", appSource, StringComparison.Ordinal);
+        Assert.Contains("GetWelcomePage()", appSource, StringComparison.Ordinal);
+        Assert.Contains("OnStartupCompleted", appSource, StringComparison.Ordinal);
         Assert.Contains("ShouldShowWelcomeExperience", appSource, StringComparison.Ordinal);
+        Assert.Contains("IAppStartupInitializationService", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("AddSingleton<StartupPage>()", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ICefrBrowseStateService", mauiProgramSource, StringComparison.Ordinal);
-        Assert.Contains("EnsureSeedDatabaseAsync", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("Task.Run", startupInitializationServiceSource, StringComparison.Ordinal);
+        Assert.Contains("ApplySeedUpdateAsync", startupInitializationServiceSource, StringComparison.Ordinal);
+        Assert.Contains("InitializeAsync", startupInitializationServiceSource, StringComparison.Ordinal);
         Assert.Contains("darwin-lingua.seed.db", seedProvisioningServiceSource, StringComparison.Ordinal);
     }
 

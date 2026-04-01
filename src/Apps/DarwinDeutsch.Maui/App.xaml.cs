@@ -1,5 +1,6 @@
 using DarwinDeutsch.Maui.Pages;
 using DarwinDeutsch.Maui.Services.Onboarding;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinDeutsch.Maui;
 
@@ -8,30 +9,28 @@ namespace DarwinDeutsch.Maui;
 /// </summary>
 public partial class App : Application
 {
-    private readonly AppShell _appShell;
-    private readonly WelcomePage _welcomePage;
+    private readonly IServiceProvider _serviceProvider;
     private readonly IAppOnboardingService _appOnboardingService;
+    private AppShell? _appShell;
+    private StartupPage? _startupPage;
+    private WelcomePage? _welcomePage;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
-    /// <param name="appShell">The application shell resolved from dependency injection.</param>
+    /// <param name="serviceProvider">The root service provider used to resolve pages lazily.</param>
+    /// <param name="appOnboardingService">The service that tracks onboarding completion.</param>
     public App(
-        AppShell appShell,
-        WelcomePage welcomePage,
+        IServiceProvider serviceProvider,
         IAppOnboardingService appOnboardingService)
     {
-        ArgumentNullException.ThrowIfNull(appShell);
-        ArgumentNullException.ThrowIfNull(welcomePage);
+        ArgumentNullException.ThrowIfNull(serviceProvider);
         ArgumentNullException.ThrowIfNull(appOnboardingService);
 
         InitializeComponent();
 
-        _appShell = appShell;
-        _welcomePage = welcomePage;
+        _serviceProvider = serviceProvider;
         _appOnboardingService = appOnboardingService;
-
-        _welcomePage.StartRequested += OnWelcomeStartRequested;
     }
 
     /// <summary>
@@ -41,11 +40,21 @@ public partial class App : Application
     /// <returns>The configured application window.</returns>
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        Page startupPage = _appOnboardingService.ShouldShowWelcomeExperience()
-            ? _welcomePage
-            : _appShell;
-
+        StartupPage startupPage = GetStartupPage();
         return new Window(startupPage);
+    }
+
+    private void OnStartupCompleted(object? sender, EventArgs e)
+    {
+        Window? activeWindow = Windows.FirstOrDefault();
+        if (activeWindow is null)
+        {
+            return;
+        }
+
+        activeWindow.Page = _appOnboardingService.ShouldShowWelcomeExperience()
+            ? GetWelcomePage()
+            : GetAppShell();
     }
 
     private void OnWelcomeStartRequested(object? sender, EventArgs e)
@@ -55,7 +64,36 @@ public partial class App : Application
         Window? activeWindow = Windows.FirstOrDefault();
         if (activeWindow is not null)
         {
-            activeWindow.Page = _appShell;
+            activeWindow.Page = GetAppShell();
         }
+    }
+
+    private StartupPage GetStartupPage()
+    {
+        if (_startupPage is not null)
+        {
+            return _startupPage;
+        }
+
+        _startupPage = _serviceProvider.GetRequiredService<StartupPage>();
+        _startupPage.StartupCompleted += OnStartupCompleted;
+        return _startupPage;
+    }
+
+    private AppShell GetAppShell()
+    {
+        return _appShell ??= _serviceProvider.GetRequiredService<AppShell>();
+    }
+
+    private WelcomePage GetWelcomePage()
+    {
+        if (_welcomePage is not null)
+        {
+            return _welcomePage;
+        }
+
+        _welcomePage = _serviceProvider.GetRequiredService<WelcomePage>();
+        _welcomePage.StartRequested += OnWelcomeStartRequested;
+        return _welcomePage;
     }
 }

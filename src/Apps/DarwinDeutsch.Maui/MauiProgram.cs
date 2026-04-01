@@ -4,13 +4,13 @@ using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Onboarding;
 using DarwinDeutsch.Maui.Services.Storage;
+using DarwinDeutsch.Maui.Services.Startup;
 using DarwinDeutsch.Maui.Services.Updates;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
 using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.DependencyInjection;
-using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Learning.Application.DependencyInjection;
 using DarwinLingua.Learning.Infrastructure.DependencyInjection;
 using DarwinLingua.Localization.Application.DependencyInjection;
@@ -19,7 +19,6 @@ using DarwinLingua.Practice.Application.DependencyInjection;
 using DarwinLingua.Practice.Infrastructure.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui;
 
@@ -62,6 +61,7 @@ public static class MauiProgram
             .AddSingleton<IAppLocalizationService, AppLocalizationService>()
             .AddSingleton<IAppOnboardingService, AppOnboardingService>()
             .AddSingleton<ISeedDatabaseProvisioningService, SeedDatabaseProvisioningService>()
+            .AddSingleton<IAppStartupInitializationService, AppStartupInitializationService>()
             .AddSingleton(new RemoteContentUpdateOptions
             {
                 BaseUrl = GetDefaultRemoteContentBaseUrl(),
@@ -73,6 +73,7 @@ public static class MauiProgram
                 Timeout = TimeSpan.FromSeconds(10),
             })
             .AddSingleton<IRemoteContentUpdateService, RemoteContentUpdateService>()
+            .AddSingleton<StartupPage>()
             .AddSingleton<AppShell>()
             .AddSingleton<WelcomePage>()
             .AddSingleton<HomePage>()
@@ -90,53 +91,7 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
-        MauiApp app = builder.Build();
-
-        InitializeStartupState(app);
-
-        return app;
-    }
-
-    /// <summary>
-    /// Executes the application startup tasks that must complete before the first window opens.
-    /// </summary>
-    /// <param name="app">The built MAUI application.</param>
-    private static void InitializeStartupState(MauiApp app)
-    {
-        ArgumentNullException.ThrowIfNull(app);
-
-        ILogger logger = app.Services
-            .GetRequiredService<ILoggerFactory>()
-            .CreateLogger("DarwinDeutsch.Maui.Startup");
-        Stopwatch startupStopwatch = Stopwatch.StartNew();
-
-        ISeedDatabaseProvisioningService seedDatabaseProvisioningService =
-            app.Services.GetRequiredService<ISeedDatabaseProvisioningService>();
-        string databasePath = Path.Combine(FileSystem.Current.AppDataDirectory, "darwin-lingua.db");
-        Stopwatch stepStopwatch = Stopwatch.StartNew();
-        seedDatabaseProvisioningService
-            .EnsureSeedDatabaseAsync(databasePath, CancellationToken.None)
-            .GetAwaiter()
-            .GetResult();
-        logger.LogInformation("Startup ensured packaged seed database in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
-
-        IDatabaseInitializer databaseInitializer = app.Services.GetRequiredService<IDatabaseInitializer>();
-        stepStopwatch.Restart();
-        databaseInitializer.InitializeAsync(CancellationToken.None).GetAwaiter().GetResult();
-        logger.LogInformation("Startup initialized local database in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
-
-        stepStopwatch.Restart();
-        seedDatabaseProvisioningService
-            .ApplySeedUpdateAsync(databasePath, CancellationToken.None)
-            .GetAwaiter()
-            .GetResult();
-        logger.LogInformation("Startup applied packaged seed updates in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
-
-        IAppLocalizationService localizationService = app.Services.GetRequiredService<IAppLocalizationService>();
-        stepStopwatch.Restart();
-        localizationService.InitializeAsync(CancellationToken.None).GetAwaiter().GetResult();
-        logger.LogInformation("Startup initialized localization in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
-        logger.LogInformation("Startup initialization completed in {ElapsedMs} ms.", startupStopwatch.ElapsedMilliseconds);
+        return builder.Build();
     }
 
     private static string GetDefaultRemoteContentBaseUrl()

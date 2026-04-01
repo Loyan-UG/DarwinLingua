@@ -93,6 +93,41 @@ public static class AppStrings
     public static string WelcomeStartButton => GetRequiredString(nameof(WelcomeStartButton));
 
     /// <summary>
+    /// Gets the localized headline shown while startup initialization is running.
+    /// </summary>
+    public static string StartupLoadingHeadline => GetRequiredString(nameof(StartupLoadingHeadline));
+
+    /// <summary>
+    /// Gets the localized description shown while startup initialization is running.
+    /// </summary>
+    public static string StartupLoadingDescription => GetRequiredString(nameof(StartupLoadingDescription));
+
+    /// <summary>
+    /// Gets the localized headline shown when startup initialization fails.
+    /// </summary>
+    public static string StartupFailedHeadline => GetRequiredString(nameof(StartupFailedHeadline));
+
+    /// <summary>
+    /// Gets the localized description shown when startup initialization fails.
+    /// </summary>
+    public static string StartupFailedDescription => GetRequiredString(nameof(StartupFailedDescription));
+
+    /// <summary>
+    /// Gets the localized format for startup failure details.
+    /// </summary>
+    public static string StartupFailedDetailsFormat => GetRequiredString(nameof(StartupFailedDetailsFormat));
+
+    /// <summary>
+    /// Gets the localized fallback shown when startup fails without a detailed error.
+    /// </summary>
+    public static string StartupFailedGenericDetails => GetRequiredString(nameof(StartupFailedGenericDetails));
+
+    /// <summary>
+    /// Gets the localized caption for the startup retry button.
+    /// </summary>
+    public static string StartupRetryButton => GetRequiredString(nameof(StartupRetryButton));
+
+    /// <summary>
     /// Gets the localized title for the practice tab.
     /// </summary>
     public static string PracticeTabTitle => GetRequiredString(nameof(PracticeTabTitle));
