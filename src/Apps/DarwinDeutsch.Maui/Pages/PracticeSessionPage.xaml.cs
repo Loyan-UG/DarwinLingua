@@ -26,8 +26,10 @@ public partial class PracticeSessionPage : ContentPage
     private string _mode = "flashcard";
     private int _currentIndex;
     private bool _isAnswerRevealed;
+    private bool _isSubmittingOutcome;
     private bool _isSessionLoaded;
     private DateTime _currentItemShownAtUtc;
+    private CancellationTokenSource? _sessionCancellationTokenSource;
 
     public PracticeSessionPage(
         IAppLocalizationService appLocalizationService,
@@ -80,7 +82,21 @@ public partial class PracticeSessionPage : ContentPage
             return;
         }
 
-        await LoadSessionAsync().ConfigureAwait(true);
+        try
+        {
+            await LoadSessionAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelSessionRequest();
+
+        base.OnDisappearing();
     }
 
     protected override void OnHandlerChanging(HandlerChangingEventArgs args)
@@ -127,25 +143,33 @@ public partial class PracticeSessionPage : ContentPage
 
     private async Task LoadSessionAsync()
     {
+        ResetSessionRequest();
+        CancellationToken cancellationToken = _sessionCancellationTokenSource!.Token;
+
         try
         {
             SetLoadingState();
 
             UserLearningProfileModel profile = await _userLearningProfileService
-                .GetCurrentProfileAsync(CancellationToken.None)
+                .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
             PracticeReviewSessionModel session = await _practiceReviewSessionService
-                .StartAsync(profile.PreferredMeaningLanguage1, SessionItemCount, CancellationToken.None)
+                .StartAsync(profile.PreferredMeaningLanguage1, SessionItemCount, cancellationToken)
                 .ConfigureAwait(true);
 
             _sessionItems = session.Items;
             _submittedOutcomes.Clear();
             _currentIndex = 0;
             _isAnswerRevealed = false;
+            _isSubmittingOutcome = false;
             _isSessionLoaded = true;
             _currentItemShownAtUtc = DateTime.UtcNow;
 
             RenderCurrentState();
+        }
+        catch (OperationCanceledException)
+        {
+            throw;
         }
         catch
         {
@@ -254,10 +278,13 @@ public partial class PracticeSessionPage : ContentPage
 
     private async Task SubmitOutcomeAsync(PracticeAttemptOutcome outcome)
     {
-        if (_currentIndex >= _sessionItems.Count)
+        if (_currentIndex >= _sessionItems.Count || _isSubmittingOutcome)
         {
             return;
         }
+
+        _isSubmittingOutcome = true;
+        OutcomeButtonsGrid.IsEnabled = false;
 
         PracticeReviewSessionItemModel currentItem = _sessionItems[_currentIndex];
         int responseMilliseconds = (int)Math.Max(
@@ -285,6 +312,10 @@ public partial class PracticeSessionPage : ContentPage
             NextButton.IsVisible = _currentIndex < _sessionItems.Count - 1;
             FinishButton.IsVisible = _currentIndex >= _sessionItems.Count - 1;
         }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
         catch
         {
             FeedbackBodyLabel.Text = AppStrings.CommonStateError;
@@ -293,6 +324,11 @@ public partial class PracticeSessionPage : ContentPage
             RevealButton.IsVisible = false;
             NextButton.IsVisible = false;
             FinishButton.IsVisible = true;
+        }
+        finally
+        {
+            _isSubmittingOutcome = false;
+            OutcomeButtonsGrid.IsEnabled = true;
         }
     }
 
@@ -304,7 +340,7 @@ public partial class PracticeSessionPage : ContentPage
         PracticeFlashcardAnswerResultModel result = await _practiceFlashcardAnswerService
             .SubmitAsync(
                 new PracticeFlashcardAnswerRequestModel(currentItem.WordEntryPublicId, outcome, responseMilliseconds),
-                CancellationToken.None)
+                _sessionCancellationTokenSource?.Token ?? CancellationToken.None)
             .ConfigureAwait(true);
 
         return new PracticeAnswerResultViewModel(
@@ -322,7 +358,7 @@ public partial class PracticeSessionPage : ContentPage
         PracticeQuizAnswerResultModel result = await _practiceQuizAnswerService
             .SubmitAsync(
                 new PracticeQuizAnswerRequestModel(currentItem.WordEntryPublicId, outcome, responseMilliseconds),
-                CancellationToken.None)
+                _sessionCancellationTokenSource?.Token ?? CancellationToken.None)
             .ConfigureAwait(true);
 
         return new PracticeAnswerResultViewModel(
@@ -340,6 +376,7 @@ public partial class PracticeSessionPage : ContentPage
         FeedbackBorder.IsVisible = false;
         NextButton.IsVisible = false;
         FinishButton.IsVisible = false;
+        OutcomeButtonsGrid.IsEnabled = true;
         RenderCurrentState();
     }
 
@@ -423,6 +460,24 @@ public partial class PracticeSessionPage : ContentPage
     private async void OnReturnToPracticeButtonClicked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//practice").ConfigureAwait(true);
+    }
+
+    private void ResetSessionRequest()
+    {
+        CancelSessionRequest();
+        _sessionCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelSessionRequest()
+    {
+        if (_sessionCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _sessionCancellationTokenSource.Cancel();
+        _sessionCancellationTokenSource.Dispose();
+        _sessionCancellationTokenSource = null;
     }
 
     private sealed record PracticeAnswerResultViewModel(
