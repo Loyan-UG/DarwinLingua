@@ -12,12 +12,15 @@ using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Services.Updates;
 
 internal sealed class RemoteContentUpdateService(
     HttpClient httpClient,
-    RemoteContentUpdateOptions options) : IRemoteContentUpdateService
+    RemoteContentUpdateOptions options,
+    ILogger<RemoteContentUpdateService> logger) : IRemoteContentUpdateService
 {
     private const string UpdateHistoryPreferenceKey = "remote-content-update-history-v1";
     private const int MaxHistoryEntries = 12;
@@ -59,6 +62,8 @@ internal sealed class RemoteContentUpdateService(
         {
             return CreateUnavailableStatus(scope);
         }
+
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         try
         {
@@ -118,6 +123,12 @@ internal sealed class RemoteContentUpdateService(
             }
 
             bool updateAvailable = !string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase);
+            logger.LogInformation(
+                "Remote update status for scope '{ScopeKey}' loaded in {ElapsedMs} ms. UpdateAvailable={UpdateAvailable}, RemotePackageId={RemotePackageId}.",
+                scope.ScopeKey,
+                stopwatch.ElapsedMilliseconds,
+                updateAvailable,
+                remotePackage.PackageId);
             return new RemoteContentUpdateStatus(
                 scope.ScopeKey,
                 scope.ContentAreaKey,
@@ -141,11 +152,17 @@ internal sealed class RemoteContentUpdateService(
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
         {
+            logger.LogDebug("Remote update status for scope '{ScopeKey}' cancelled after {ElapsedMs} ms.", scope.ScopeKey, stopwatch.ElapsedMilliseconds);
             throw;
         }
         catch (Exception exception) when (exception is HttpRequestException or TaskCanceledException or InvalidOperationException)
         {
             PersistLastFailure(scope, exception.Message);
+            logger.LogWarning(
+                exception,
+                "Remote update status for scope '{ScopeKey}' failed after {ElapsedMs} ms.",
+                scope.ScopeKey,
+                stopwatch.ElapsedMilliseconds);
 
             return new RemoteContentUpdateStatus(
                 scope.ScopeKey,
@@ -184,6 +201,7 @@ internal sealed class RemoteContentUpdateService(
         string tempJsonPath = Path.Combine(tempDirectory, "scope-update.json");
         string tempDatabasePath = Path.Combine(tempDirectory, "remote-update.db");
         Directory.CreateDirectory(tempDirectory);
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         try
         {
@@ -216,10 +234,18 @@ internal sealed class RemoteContentUpdateService(
             PersistScopeReceipts(scope, manifest, remotePackage, appliedAtUtc);
             RemoteContentUpdateResult appliedResult = new(true, true, remotePackage.PackageId, remotePackage.Version, importedWords, appliedAtUtc, null);
             RecordHistoryEntry(scope, appliedResult);
+            logger.LogInformation(
+                "Remote update apply for scope '{ScopeKey}' completed in {ElapsedMs} ms. AppliedChanges={AppliedChanges}, ImportedWords={ImportedWords}, PackageId={PackageId}.",
+                scope.ScopeKey,
+                stopwatch.ElapsedMilliseconds,
+                appliedResult.AppliedChanges,
+                importedWords,
+                remotePackage.PackageId);
             return appliedResult;
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
         {
+            logger.LogDebug("Remote update apply for scope '{ScopeKey}' cancelled after {ElapsedMs} ms.", scope.ScopeKey, stopwatch.ElapsedMilliseconds);
             throw;
         }
         catch (Exception exception) when (exception is HttpRequestException or TaskCanceledException or IOException or UnauthorizedAccessException or SqliteException or InvalidOperationException)
@@ -227,6 +253,11 @@ internal sealed class RemoteContentUpdateService(
             PersistLastFailure(scope, exception.Message);
             RemoteContentUpdateResult failedResult = new(false, false, string.Empty, string.Empty, 0, null, exception.Message);
             RecordHistoryEntry(scope, failedResult);
+            logger.LogWarning(
+                exception,
+                "Remote update apply for scope '{ScopeKey}' failed after {ElapsedMs} ms.",
+                scope.ScopeKey,
+                stopwatch.ElapsedMilliseconds);
             return failedResult;
         }
         finally

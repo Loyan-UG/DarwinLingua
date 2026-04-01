@@ -5,6 +5,8 @@ using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Practice.Application.Abstractions;
 using DarwinLingua.Practice.Application.Models;
 using DarwinLingua.Practice.Domain.Entities;
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -21,6 +23,7 @@ public partial class PracticeSessionPage : ContentPage
     private readonly IPracticeReviewSessionService _practiceReviewSessionService;
     private readonly IPracticeFlashcardAnswerService _practiceFlashcardAnswerService;
     private readonly IPracticeQuizAnswerService _practiceQuizAnswerService;
+    private readonly ILogger<PracticeSessionPage> _logger;
     private readonly List<PracticeAttemptOutcome> _submittedOutcomes = [];
     private IReadOnlyList<PracticeReviewSessionItemModel> _sessionItems = [];
     private string _mode = "flashcard";
@@ -36,13 +39,15 @@ public partial class PracticeSessionPage : ContentPage
         IUserLearningProfileService userLearningProfileService,
         IPracticeReviewSessionService practiceReviewSessionService,
         IPracticeFlashcardAnswerService practiceFlashcardAnswerService,
-        IPracticeQuizAnswerService practiceQuizAnswerService)
+        IPracticeQuizAnswerService practiceQuizAnswerService,
+        ILogger<PracticeSessionPage> logger)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
         ArgumentNullException.ThrowIfNull(practiceReviewSessionService);
         ArgumentNullException.ThrowIfNull(practiceFlashcardAnswerService);
         ArgumentNullException.ThrowIfNull(practiceQuizAnswerService);
+        ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
 
@@ -51,6 +56,7 @@ public partial class PracticeSessionPage : ContentPage
         _practiceReviewSessionService = practiceReviewSessionService;
         _practiceFlashcardAnswerService = practiceFlashcardAnswerService;
         _practiceQuizAnswerService = practiceQuizAnswerService;
+        _logger = logger;
 
         _appLocalizationService.CultureChanged += OnCultureChanged;
 
@@ -145,6 +151,7 @@ public partial class PracticeSessionPage : ContentPage
     {
         ResetSessionRequest();
         CancellationToken cancellationToken = _sessionCancellationTokenSource!.Token;
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         try
         {
@@ -166,13 +173,20 @@ public partial class PracticeSessionPage : ContentPage
             _currentItemShownAtUtc = DateTime.UtcNow;
 
             RenderCurrentState();
+            _logger.LogInformation(
+                "Practice session '{Mode}' loaded {ItemCount} items in {ElapsedMs} ms.",
+                IsQuizMode ? "quiz" : "flashcard",
+                _sessionItems.Count,
+                stopwatch.ElapsedMilliseconds);
         }
         catch (OperationCanceledException)
         {
+            _logger.LogDebug("Practice session load cancelled after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
             throw;
         }
         catch
         {
+            _logger.LogWarning("Practice session load failed after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
             SessionStateLabel.Text = AppStrings.CommonStateError;
             SessionProgressLabel.Text = string.Empty;
             PromptCardBorder.IsVisible = false;
@@ -285,6 +299,7 @@ public partial class PracticeSessionPage : ContentPage
 
         _isSubmittingOutcome = true;
         OutcomeButtonsGrid.IsEnabled = false;
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         PracticeReviewSessionItemModel currentItem = _sessionItems[_currentIndex];
         int responseMilliseconds = (int)Math.Max(
@@ -311,13 +326,22 @@ public partial class PracticeSessionPage : ContentPage
             RevealButton.IsVisible = false;
             NextButton.IsVisible = _currentIndex < _sessionItems.Count - 1;
             FinishButton.IsVisible = _currentIndex >= _sessionItems.Count - 1;
+            _logger.LogInformation(
+                "Practice session '{Mode}' submitted outcome '{Outcome}' for item {ItemIndex}/{ItemCount} in {ElapsedMs} ms.",
+                IsQuizMode ? "quiz" : "flashcard",
+                outcome,
+                _currentIndex + 1,
+                _sessionItems.Count,
+                stopwatch.ElapsedMilliseconds);
         }
         catch (OperationCanceledException)
         {
+            _logger.LogDebug("Practice session outcome submission cancelled after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
             return;
         }
         catch
         {
+            _logger.LogWarning("Practice session outcome submission failed after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
             FeedbackBodyLabel.Text = AppStrings.CommonStateError;
             FeedbackBorder.IsVisible = true;
             OutcomeButtonsGrid.IsVisible = false;

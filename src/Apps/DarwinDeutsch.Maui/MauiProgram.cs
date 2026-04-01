@@ -19,6 +19,7 @@ using DarwinLingua.Practice.Application.DependencyInjection;
 using DarwinLingua.Practice.Infrastructure.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui;
 
@@ -104,24 +105,38 @@ public static class MauiProgram
     {
         ArgumentNullException.ThrowIfNull(app);
 
+        ILogger logger = app.Services
+            .GetRequiredService<ILoggerFactory>()
+            .CreateLogger("DarwinDeutsch.Maui.Startup");
+        Stopwatch startupStopwatch = Stopwatch.StartNew();
+
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService =
             app.Services.GetRequiredService<ISeedDatabaseProvisioningService>();
         string databasePath = Path.Combine(FileSystem.Current.AppDataDirectory, "darwin-lingua.db");
+        Stopwatch stepStopwatch = Stopwatch.StartNew();
         seedDatabaseProvisioningService
             .EnsureSeedDatabaseAsync(databasePath, CancellationToken.None)
             .GetAwaiter()
             .GetResult();
+        logger.LogInformation("Startup ensured packaged seed database in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
 
         IDatabaseInitializer databaseInitializer = app.Services.GetRequiredService<IDatabaseInitializer>();
+        stepStopwatch.Restart();
         databaseInitializer.InitializeAsync(CancellationToken.None).GetAwaiter().GetResult();
+        logger.LogInformation("Startup initialized local database in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
 
+        stepStopwatch.Restart();
         seedDatabaseProvisioningService
             .ApplySeedUpdateAsync(databasePath, CancellationToken.None)
             .GetAwaiter()
             .GetResult();
+        logger.LogInformation("Startup applied packaged seed updates in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
 
         IAppLocalizationService localizationService = app.Services.GetRequiredService<IAppLocalizationService>();
+        stepStopwatch.Restart();
         localizationService.InitializeAsync(CancellationToken.None).GetAwaiter().GetResult();
+        logger.LogInformation("Startup initialized localization in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
+        logger.LogInformation("Startup initialization completed in {ElapsedMs} ms.", startupStopwatch.ElapsedMilliseconds);
     }
 
     private static string GetDefaultRemoteContentBaseUrl()

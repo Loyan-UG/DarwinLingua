@@ -4,6 +4,8 @@ using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -14,20 +16,26 @@ public partial class SearchWordsPage : ContentPage
 {
     private readonly IWordQueryService _wordQueryService;
     private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly ILogger<SearchWordsPage> _logger;
     private CancellationTokenSource? _searchCancellationTokenSource;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SearchWordsPage"/> class.
     /// </summary>
-    public SearchWordsPage(IWordQueryService wordQueryService, IUserLearningProfileService userLearningProfileService)
+    public SearchWordsPage(
+        IWordQueryService wordQueryService,
+        IUserLearningProfileService userLearningProfileService,
+        ILogger<SearchWordsPage> logger)
     {
         ArgumentNullException.ThrowIfNull(wordQueryService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
 
         _wordQueryService = wordQueryService;
         _userLearningProfileService = userLearningProfileService;
+        _logger = logger;
 
         ApplyLocalizedText();
     }
@@ -102,6 +110,7 @@ public partial class SearchWordsPage : ContentPage
     {
         ResetSearchRequest();
         CancellationToken cancellationToken = _searchCancellationTokenSource!.Token;
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         ShowLoadingState();
 
@@ -123,6 +132,12 @@ public partial class SearchWordsPage : ContentPage
                 .SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken)
                 .ConfigureAwait(true);
 
+            _logger.LogInformation(
+                "Search completed for query '{Query}' with {ResultCount} results in {ElapsedMs} ms.",
+                query,
+                words.Count,
+                stopwatch.ElapsedMilliseconds);
+
             ShowResults(words
                 .Select(word => new SearchWordItemViewModel(
                     word.PublicId,
@@ -133,10 +148,12 @@ public partial class SearchWordsPage : ContentPage
         }
         catch (OperationCanceledException)
         {
+            _logger.LogDebug("Search cancelled after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
             return;
         }
         catch
         {
+            _logger.LogWarning("Search failed after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
             ShowErrorState();
         }
         finally
