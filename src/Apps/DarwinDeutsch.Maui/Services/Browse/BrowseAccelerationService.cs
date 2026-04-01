@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Services.Localization;
+using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Abstractions;
 using Microsoft.Extensions.Logging;
 
@@ -13,7 +14,9 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     private const int TopicWarmupLimit = 12;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly ITopicBrowseStateService _topicBrowseStateService;
+    private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly ITopicQueryService _topicQueryService;
+    private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ILogger<BrowseAccelerationService> _logger;
     private readonly SemaphoreSlim _warmupGate = new(1, 1);
@@ -25,19 +28,25 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     public BrowseAccelerationService(
         ICefrBrowseStateService cefrBrowseStateService,
         ITopicBrowseStateService topicBrowseStateService,
+        IWordDetailCacheService wordDetailCacheService,
         ITopicQueryService topicQueryService,
+        IUserLearningProfileService userLearningProfileService,
         IAppLocalizationService appLocalizationService,
         ILogger<BrowseAccelerationService> logger)
     {
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
         ArgumentNullException.ThrowIfNull(topicBrowseStateService);
+        ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(topicQueryService);
+        ArgumentNullException.ThrowIfNull(userLearningProfileService);
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(logger);
 
         _cefrBrowseStateService = cefrBrowseStateService;
         _topicBrowseStateService = topicBrowseStateService;
+        _wordDetailCacheService = wordDetailCacheService;
         _topicQueryService = topicQueryService;
+        _userLearningProfileService = userLearningProfileService;
         _appLocalizationService = appLocalizationService;
         _logger = logger;
     }
@@ -69,6 +78,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     {
         _cefrBrowseStateService.ResetCache();
         _topicBrowseStateService.ResetCache();
+        _wordDetailCacheService.ResetCache();
         Interlocked.Exchange(ref _warmupScheduled, 0);
     }
 
@@ -81,9 +91,28 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
 
         try
         {
+            DarwinLingua.Learning.Application.Models.UserLearningProfileModel profile = await _userLearningProfileService
+                .GetCurrentProfileAsync(cancellationToken)
+                .ConfigureAwait(false);
+
             foreach (string cefrLevel in CefrLevels)
             {
                 await _cefrBrowseStateService.PrefetchInitialSliceAsync(cefrLevel, cancellationToken).ConfigureAwait(false);
+                IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordListItemModel> initialSlice = await _cefrBrowseStateService
+                    .GetWordsPageAsync(cefrLevel, 0, 1, cancellationToken)
+                    .ConfigureAwait(false);
+
+                if (initialSlice.Count > 0)
+                {
+                    await _wordDetailCacheService
+                        .PrefetchWordDetailsAsync(
+                            initialSlice[0].PublicId,
+                            profile.PreferredMeaningLanguage1,
+                            profile.PreferredMeaningLanguage2,
+                            profile.UiLanguageCode,
+                            cancellationToken)
+                        .ConfigureAwait(false);
+                }
             }
 
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.TopicListItemModel> topics = await _topicQueryService
@@ -93,6 +122,21 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
             foreach (string topicKey in topics.Take(TopicWarmupLimit).Select(topic => topic.Key))
             {
                 await _topicBrowseStateService.PrefetchInitialSliceAsync(topicKey, cancellationToken).ConfigureAwait(false);
+                IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordListItemModel> initialSlice = await _topicBrowseStateService
+                    .GetWordsPageAsync(topicKey, 0, 1, cancellationToken)
+                    .ConfigureAwait(false);
+
+                if (initialSlice.Count > 0)
+                {
+                    await _wordDetailCacheService
+                        .PrefetchWordDetailsAsync(
+                            initialSlice[0].PublicId,
+                            profile.PreferredMeaningLanguage1,
+                            profile.PreferredMeaningLanguage2,
+                            profile.UiLanguageCode,
+                            cancellationToken)
+                        .ConfigureAwait(false);
+                }
             }
 
             _logger.LogInformation(

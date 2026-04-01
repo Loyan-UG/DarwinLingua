@@ -25,7 +25,7 @@ public partial class WordDetailPage : ContentPage
     private static readonly Color ActiveDifficultBackgroundColor = Color.FromArgb("#F8E7D7");
     private static readonly Color InactiveActionTextColor = Colors.White;
     private static readonly Color ActiveActionTextColor = Color.FromArgb("#12495B");
-    private readonly IWordDetailQueryService _wordDetailQueryService;
+    private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly IUserFavoriteWordService _userFavoriteWordService;
@@ -44,14 +44,14 @@ public partial class WordDetailPage : ContentPage
     /// Initializes a new instance of the <see cref="WordDetailPage"/> class.
     /// </summary>
     public WordDetailPage(
-        IWordDetailQueryService wordDetailQueryService,
+        IWordDetailCacheService wordDetailCacheService,
         ICefrBrowseStateService cefrBrowseStateService,
         IUserLearningProfileService userLearningProfileService,
         IUserFavoriteWordService userFavoriteWordService,
         IUserWordStateService userWordStateService,
         ISpeechPlaybackService speechPlaybackService)
     {
-        ArgumentNullException.ThrowIfNull(wordDetailQueryService);
+        ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
         ArgumentNullException.ThrowIfNull(userFavoriteWordService);
@@ -60,7 +60,7 @@ public partial class WordDetailPage : ContentPage
 
         InitializeComponent();
 
-        _wordDetailQueryService = wordDetailQueryService;
+        _wordDetailCacheService = wordDetailCacheService;
         _cefrBrowseStateService = cefrBrowseStateService;
         _userLearningProfileService = userLearningProfileService;
         _userFavoriteWordService = userFavoriteWordService;
@@ -179,7 +179,7 @@ public partial class WordDetailPage : ContentPage
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(true);
 
-        WordDetailModel? word = await _wordDetailQueryService
+        WordDetailModel? word = await _wordDetailCacheService
             .GetWordDetailsAsync(
                 publicId,
                 profile.PreferredMeaningLanguage1,
@@ -236,6 +236,8 @@ public partial class WordDetailPage : ContentPage
         {
             _ = Task.Run(() => _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None));
         }
+
+        ScheduleWordDetailPrefetch(profile);
     }
 
     /// <summary>
@@ -936,6 +938,30 @@ public partial class WordDetailPage : ContentPage
 
         _lastTrackedWordPublicId = publicId;
         return userWordState;
+    }
+
+    private void ScheduleWordDetailPrefetch(UserLearningProfileModel profile)
+    {
+        if (_cefrBrowseNavigationState is null)
+        {
+            return;
+        }
+
+        Guid[] candidateIds =
+        [
+            _cefrBrowseNavigationState.PreviousWordPublicId ?? Guid.Empty,
+            _cefrBrowseNavigationState.NextWordPublicId ?? Guid.Empty,
+        ];
+
+        foreach (Guid candidateId in candidateIds.Where(id => id != Guid.Empty).Distinct())
+        {
+            _ = Task.Run(() => _wordDetailCacheService.PrefetchWordDetailsAsync(
+                candidateId,
+                profile.PreferredMeaningLanguage1,
+                profile.PreferredMeaningLanguage2,
+                profile.UiLanguageCode,
+                CancellationToken.None));
+        }
     }
 
     private void ResetRefreshRequest()
