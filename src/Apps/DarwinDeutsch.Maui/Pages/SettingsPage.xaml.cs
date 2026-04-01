@@ -204,23 +204,25 @@ public partial class SettingsPage : ContentPage
         CurrentFeaturesSectionView.SectionValue = AppStrings.WelcomeCurrentFeaturesBody;
         FutureFeaturesSectionView.SectionValue = AppStrings.WelcomeFutureFeaturesBody;
 
-        SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await _seedDatabaseProvisioningService
-            .GetUpdateStatusAsync(GetLocalDatabasePath(), CancellationToken.None)
+        string localDatabasePath = GetLocalDatabasePath();
+        Task<SeedDatabaseUpdateStatus> seedStatusTask = _seedDatabaseProvisioningService.GetUpdateStatusAsync(localDatabasePath, CancellationToken.None);
+        Task<RemoteContentUpdateStatus> catalogAreaStatusTask = _remoteContentUpdateService.GetAreaUpdateStatusAsync(localDatabasePath, "catalog", CancellationToken.None);
+        Task<RemoteContentUpdateStatus> remoteContentStatusTask = _remoteContentUpdateService.GetUpdateStatusAsync(localDatabasePath, CancellationToken.None);
+        Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> remoteUpdateHistoryTask = _remoteContentUpdateService.GetRecentUpdateHistoryAsync(CancellationToken.None);
+        Task<Dictionary<string, RemoteContentUpdateStatus>> cefrUpdateStatusesTask = LoadCefrUpdateStatusesAsync(localDatabasePath);
+
+        await Task.WhenAll(seedStatusTask, catalogAreaStatusTask, remoteContentStatusTask, remoteUpdateHistoryTask, cefrUpdateStatusesTask)
             .ConfigureAwait(true);
-        RemoteContentUpdateStatus catalogAreaUpdateStatus = await _remoteContentUpdateService
-            .GetAreaUpdateStatusAsync(GetLocalDatabasePath(), "catalog", CancellationToken.None)
-            .ConfigureAwait(true);
-        RemoteContentUpdateStatus remoteContentUpdateStatus = await _remoteContentUpdateService
-            .GetUpdateStatusAsync(GetLocalDatabasePath(), CancellationToken.None)
-            .ConfigureAwait(true);
-        IReadOnlyList<RemoteContentUpdateHistoryEntry> remoteUpdateHistory = await _remoteContentUpdateService
-            .GetRecentUpdateHistoryAsync(CancellationToken.None)
-            .ConfigureAwait(true);
-        Dictionary<string, RemoteContentUpdateStatus> cefrUpdateStatuses = await LoadCefrUpdateStatusesAsync().ConfigureAwait(true);
+
+        SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await seedStatusTask.ConfigureAwait(true);
+        RemoteContentUpdateStatus catalogAreaUpdateStatus = await catalogAreaStatusTask.ConfigureAwait(true);
+        RemoteContentUpdateStatus remoteContentUpdateStatus = await remoteContentStatusTask.ConfigureAwait(true);
+        IReadOnlyList<RemoteContentUpdateHistoryEntry> remoteUpdateHistory = await remoteUpdateHistoryTask.ConfigureAwait(true);
+        Dictionary<string, RemoteContentUpdateStatus> cefrUpdateStatuses = await cefrUpdateStatusesTask.ConfigureAwait(true);
 
         ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
         ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
-        ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, GetLocalDatabasePath());
+        ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, localDatabasePath);
         ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
         ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
             ? AppStrings.SettingsContentUpdatesApplyButton
@@ -330,18 +332,15 @@ public partial class SettingsPage : ContentPage
         }
     }
 
-    private async Task<Dictionary<string, RemoteContentUpdateStatus>> LoadCefrUpdateStatusesAsync()
+    private async Task<Dictionary<string, RemoteContentUpdateStatus>> LoadCefrUpdateStatusesAsync(string localDatabasePath)
     {
-        Dictionary<string, RemoteContentUpdateStatus> statuses = [];
+        Task<RemoteContentUpdateStatus>[] statusTasks = CefrLevels
+            .Select(cefrLevel => _remoteContentUpdateService.GetCefrUpdateStatusAsync(localDatabasePath, cefrLevel, CancellationToken.None))
+            .ToArray();
 
-        foreach (string cefrLevel in CefrLevels)
-        {
-            statuses[cefrLevel] = await _remoteContentUpdateService
-                .GetCefrUpdateStatusAsync(GetLocalDatabasePath(), cefrLevel, CancellationToken.None)
-                .ConfigureAwait(true);
-        }
-
-        return statuses;
+        RemoteContentUpdateStatus[] statuses = await Task.WhenAll(statusTasks).ConfigureAwait(true);
+        return CefrLevels.Zip(statuses, static (cefrLevel, status) => new KeyValuePair<string, RemoteContentUpdateStatus>(cefrLevel, status))
+            .ToDictionary();
     }
 
     private void BindCefrUpdateSection(

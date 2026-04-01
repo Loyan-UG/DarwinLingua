@@ -76,42 +76,27 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 app.MapGet(
     "/api/mobile/content/manifest",
     (string? clientProductKey, IMobileContentManifestService manifestService) =>
-    {
-        MobileContentManifestResponse response = manifestService.GetGlobalManifest(clientProductKey);
-        return Results.Ok(response);
-    });
+        ResolveQueryRequest(() => manifestService.GetGlobalManifest(clientProductKey)));
 
 app.MapGet(
     "/api/mobile/content/areas",
     (string? clientProductKey, IMobileContentManifestService manifestService) =>
-    {
-        IReadOnlyList<MobileContentAreaSummaryResponse> response = manifestService.GetAreas(clientProductKey);
-        return Results.Ok(response);
-    });
+        ResolveQueryRequest(() => manifestService.GetAreas(clientProductKey)));
 
 app.MapGet(
     "/api/mobile/content/areas/{areaKey}/manifest",
     (string areaKey, string? clientProductKey, IMobileContentManifestService manifestService) =>
-    {
-        MobileContentManifestResponse response = manifestService.GetAreaManifest(clientProductKey, areaKey);
-        return Results.Ok(response);
-    });
+        ResolveQueryRequest(() => manifestService.GetAreaManifest(clientProductKey, areaKey)));
 
 app.MapGet(
     "/api/mobile/content/areas/catalog/cefr/{level}/manifest",
     (string level, string? clientProductKey, IMobileContentManifestService manifestService) =>
-    {
-        MobileContentManifestResponse response = manifestService.GetCefrManifest(clientProductKey, level);
-        return Results.Ok(response);
-    });
+        ResolveQueryRequest(() => manifestService.GetCefrManifest(clientProductKey, level)));
 
 app.MapGet(
     "/api/mobile/content/packages/{packageId}",
     (string packageId, string? clientProductKey, IMobileContentManifestService manifestService) =>
-    {
-        PublishedContentPackageResponse response = manifestService.GetPackage(clientProductKey, packageId);
-        return Results.Ok(response);
-    });
+        ResolveQueryRequest(() => manifestService.GetPackage(clientProductKey, packageId)));
 
 app.MapPost(
     "/api/admin/content/catalog/import",
@@ -127,134 +112,61 @@ app.MapPost(
 app.MapPost(
     "/api/admin/content/catalog/publish",
     async (AdminPublishCatalogRequest request, ICatalogPackageReleaseService releaseService, CancellationToken cancellationToken) =>
-    {
-        AdminPublishCatalogResponse response = await releaseService
-            .PublishAsync(request, cancellationToken)
-            .ConfigureAwait(false);
-
-        return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-    });
+        await ResolveMutationRequestAsync(
+                async () => await releaseService.PublishAsync(request, cancellationToken).ConfigureAwait(false),
+                response => response.IsSuccess)
+            .ConfigureAwait(false));
 
 app.MapPost(
     "/api/admin/content/catalog/rollback",
     async (AdminRollbackCatalogRequest request, ICatalogPackageRollbackService rollbackService, CancellationToken cancellationToken) =>
-    {
-        AdminRollbackCatalogResponse response = await rollbackService
-            .RollbackAsync(request, cancellationToken)
-            .ConfigureAwait(false);
-
-        return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-    });
+        await ResolveMutationRequestAsync(
+                async () => await rollbackService.RollbackAsync(request, cancellationToken).ConfigureAwait(false),
+                response => response.IsSuccess)
+            .ConfigureAwait(false));
 
 app.MapGet(
     "/api/admin/content/catalog/drafts",
     async (string? clientProductKey, ICatalogPackageDraftQueryService draftQueryService, CancellationToken cancellationToken) =>
-    {
-        IReadOnlyList<AdminDraftCatalogBatchResponse> response = await draftQueryService
-            .GetBatchesAsync(clientProductKey, cancellationToken)
-            .ConfigureAwait(false);
-
-        return Results.Ok(response);
-    });
+        await ResolveQueryRequestAsync(
+                async () => await draftQueryService.GetBatchesAsync(clientProductKey, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
 
 app.MapGet(
     "/api/admin/content/catalog/drafts/{publicationBatchId}",
     async (string publicationBatchId, string? clientProductKey, ICatalogPackageDraftQueryService draftQueryService, CancellationToken cancellationToken) =>
-    {
-        try
-        {
-            AdminDraftCatalogBatchResponse response = await draftQueryService
-                .GetBatchAsync(publicationBatchId, clientProductKey, cancellationToken)
-                .ConfigureAwait(false);
-
-            return Results.Ok(response);
-        }
-        catch (KeyNotFoundException exception)
-        {
-            return Results.NotFound(new
-            {
-                code = "draft_batch_not_found",
-                message = exception.Message,
-            });
-        }
-    });
+        await ResolveQueryRequestAsync(
+                async () => await draftQueryService.GetBatchAsync(publicationBatchId, clientProductKey, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
 
 app.MapDelete(
     "/api/admin/content/catalog/drafts/{publicationBatchId}",
     async (string publicationBatchId, string? clientProductKey, ICatalogPackageCleanupService cleanupService, CancellationToken cancellationToken) =>
-    {
-        AdminDeleteCatalogBatchResponse response = await cleanupService
-            .DeleteSupersededBatchAsync(publicationBatchId, clientProductKey, cancellationToken)
-            .ConfigureAwait(false);
-
-        return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-    });
+        await ResolveMutationRequestAsync(
+                async () => await cleanupService.DeleteSupersededBatchAsync(publicationBatchId, clientProductKey, cancellationToken).ConfigureAwait(false),
+                response => response.IsSuccess)
+            .ConfigureAwait(false));
 
 app.MapGet(
     "/api/admin/content/catalog/history",
     async (string? clientProductKey, ICatalogPublicationHistoryService historyService, CancellationToken cancellationToken) =>
-    {
-        try
-        {
-            IReadOnlyList<AdminCatalogBatchHistoryResponse> response = await historyService
-                .GetHistoryAsync(clientProductKey, cancellationToken)
-                .ConfigureAwait(false);
-
-            return Results.Ok(response);
-        }
-        catch (KeyNotFoundException exception)
-        {
-            return Results.NotFound(new
-            {
-                code = "client_product_not_found",
-                message = exception.Message,
-            });
-        }
-    });
+        await ResolveQueryRequestAsync(
+                async () => await historyService.GetHistoryAsync(clientProductKey, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
 
 app.MapGet(
     "/api/admin/content/catalog/history/summary",
     async (string? clientProductKey, ICatalogPublicationHistoryService historyService, CancellationToken cancellationToken) =>
-    {
-        try
-        {
-            AdminCatalogBatchHistorySummaryResponse response = await historyService
-                .GetSummaryAsync(clientProductKey, cancellationToken)
-                .ConfigureAwait(false);
-
-            return Results.Ok(response);
-        }
-        catch (KeyNotFoundException exception)
-        {
-            return Results.NotFound(new
-            {
-                code = "client_product_not_found",
-                message = exception.Message,
-            });
-        }
-    });
+        await ResolveQueryRequestAsync(
+                async () => await historyService.GetSummaryAsync(clientProductKey, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
 
 app.MapGet(
     "/api/admin/content/catalog/events",
     async (string? clientProductKey, IContentPublicationAuditService auditService, CancellationToken cancellationToken) =>
-    {
-        try
-        {
-            IReadOnlyList<AdminPublicationAuditEventResponse> response = await auditService
-                .GetRecentEventsAsync(clientProductKey, cancellationToken)
-                .ConfigureAwait(false);
-
-            return Results.Ok(response);
-        }
-        catch (KeyNotFoundException exception)
-        {
-            return Results.NotFound(new
-            {
-                code = "client_product_not_found",
-                message = exception.Message,
-            });
-        }
-    });
+        await ResolveQueryRequestAsync(
+                async () => await auditService.GetRecentEventsAsync(clientProductKey, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
 
 app.MapGet(
     "/api/mobile/content/packages/{packageId}/download",
@@ -320,6 +232,87 @@ static IResult ResolvePackageDownload(Func<ContentPackageDownloadDescriptor> res
         return Results.NotFound(new
         {
             code = "package_not_found",
+            message = exception.Message,
+        });
+    }
+    catch (InvalidOperationException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
+            message = exception.Message,
+        });
+    }
+}
+
+static IResult ResolveQueryRequest<T>(Func<T> resolver)
+{
+    try
+    {
+        return Results.Ok(resolver());
+    }
+    catch (KeyNotFoundException exception)
+    {
+        return Results.NotFound(new
+        {
+            code = "resource_not_found",
+            message = exception.Message,
+        });
+    }
+    catch (InvalidOperationException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
+            message = exception.Message,
+        });
+    }
+}
+
+static async Task<IResult> ResolveQueryRequestAsync<T>(Func<Task<T>> resolver)
+{
+    try
+    {
+        return Results.Ok(await resolver().ConfigureAwait(false));
+    }
+    catch (KeyNotFoundException exception)
+    {
+        return Results.NotFound(new
+        {
+            code = "resource_not_found",
+            message = exception.Message,
+        });
+    }
+    catch (InvalidOperationException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
+            message = exception.Message,
+        });
+    }
+}
+
+static async Task<IResult> ResolveMutationRequestAsync<T>(Func<Task<T>> resolver, Func<T, bool> isSuccess)
+{
+    try
+    {
+        T response = await resolver().ConfigureAwait(false);
+        return isSuccess(response) ? Results.Ok(response) : Results.BadRequest(response);
+    }
+    catch (KeyNotFoundException exception)
+    {
+        return Results.NotFound(new
+        {
+            code = "resource_not_found",
+            message = exception.Message,
+        });
+    }
+    catch (InvalidOperationException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
             message = exception.Message,
         });
     }

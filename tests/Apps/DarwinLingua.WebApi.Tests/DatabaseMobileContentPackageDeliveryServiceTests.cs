@@ -79,6 +79,45 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
         }
     }
 
+    [Fact]
+    public async Task GetLatestFullPackage_ThrowsInvalidOperation_WhenClientProductKeyIsMissingAndMultipleProductsAreActiveAsync()
+    {
+        await using SqliteConnection connection = new("Data Source=:memory:");
+        await connection.OpenAsync();
+
+        DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
+            .UseSqlite(connection)
+            .Options;
+
+        ServerContentOptions options = CreateOptions();
+        options.ClientProducts.Add(new ClientProductOptions
+        {
+            Key = "darwin-persian",
+            DisplayName = "Darwin Persian",
+            LearningLanguageCode = "fa",
+            DefaultUiLanguageCode = "fa",
+            IsActive = true,
+        });
+
+        TestWebHostEnvironment environment = new()
+        {
+            ContentRootPath = "D:\\_Projects\\DarwinLingua",
+        };
+
+        await using (ServerContentDbContext seedContext = new(dbOptions))
+        {
+            ServerContentDatabaseBootstrapper bootstrapper = new(seedContext, Options.Create(options));
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+        }
+
+        await using (ServerContentDbContext queryContext = new(dbOptions))
+        {
+            DatabaseMobileContentPackageDeliveryService service = new(queryContext, Options.Create(options), environment);
+
+            Assert.Throws<InvalidOperationException>(() => service.GetLatestFullPackage(null, clientSchemaVersion: 1));
+        }
+    }
+
     private static ServerContentOptions CreateOptions()
     {
         ServerContentOptions options = new()

@@ -118,6 +118,40 @@ public sealed class DatabaseMobileContentManifestServiceTests
         }
     }
 
+    [Fact]
+    public async Task DatabaseService_ThrowsInvalidOperation_WhenClientProductKeyIsMissingAndMultipleProductsAreActiveAsync()
+    {
+        await using SqliteConnection connection = new("Data Source=:memory:");
+        await connection.OpenAsync();
+
+        DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
+            .UseSqlite(connection)
+            .Options;
+
+        ServerContentOptions options = CreateOptions();
+        options.ClientProducts.Add(new ClientProductOptions
+        {
+            Key = "darwin-persian",
+            DisplayName = "Darwin Persian",
+            LearningLanguageCode = "fa",
+            DefaultUiLanguageCode = "fa",
+            IsActive = true,
+        });
+
+        await using (ServerContentDbContext seedContext = new(dbOptions))
+        {
+            ServerContentDatabaseBootstrapper bootstrapper = new(seedContext, Options.Create(options));
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+        }
+
+        await using (ServerContentDbContext queryContext = new(dbOptions))
+        {
+            DatabaseMobileContentManifestService service = new(queryContext, Options.Create(options));
+
+            Assert.Throws<InvalidOperationException>(() => service.GetGlobalManifest(null));
+        }
+    }
+
     private static ServerContentOptions CreateOptions()
     {
         ServerContentOptions options = new()
