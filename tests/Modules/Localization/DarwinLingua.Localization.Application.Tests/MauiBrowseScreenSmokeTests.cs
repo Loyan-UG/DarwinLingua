@@ -66,11 +66,13 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("GetAppShell()", appSource, StringComparison.Ordinal);
         Assert.Contains("GetWelcomePage()", appSource, StringComparison.Ordinal);
         Assert.Contains("OnStartupCompleted", appSource, StringComparison.Ordinal);
+        Assert.Contains("EnsureScheduled", appSource, StringComparison.Ordinal);
         Assert.Contains("ScheduleInitialCheck", appSource, StringComparison.Ordinal);
         Assert.Contains("OnWindowResumed", appSource, StringComparison.Ordinal);
         Assert.Contains("ShouldShowWelcomeExperience", appSource, StringComparison.Ordinal);
         Assert.Contains("IAppStartupInitializationService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("IBackgroundRemoteUpdateCoordinator", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("IPlatformBackgroundUpdateScheduler", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("AddSingleton<StartupPage>()", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ICefrBrowseStateService", mauiProgramSource, StringComparison.Ordinal);

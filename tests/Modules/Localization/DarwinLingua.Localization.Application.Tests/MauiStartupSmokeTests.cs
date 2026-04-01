@@ -32,6 +32,7 @@ public sealed class MauiStartupSmokeTests
 
         Assert.Contains("IAppStartupInitializationService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("IBackgroundRemoteUpdateCoordinator", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("IPlatformBackgroundUpdateScheduler", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("AddSingleton<StartupPage>()", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("IDatabaseInitializer", startupServiceSource, StringComparison.Ordinal);
         Assert.Contains("_databaseInitializer.InitializeAsync(cancellationToken)", startupServiceSource, StringComparison.Ordinal);
@@ -46,6 +47,7 @@ public sealed class MauiStartupSmokeTests
         Assert.Contains("GetAppShell()", appSource, StringComparison.Ordinal);
         Assert.Contains("GetWelcomePage()", appSource, StringComparison.Ordinal);
         Assert.Contains("OnWindowResumed", appSource, StringComparison.Ordinal);
+        Assert.Contains("EnsureScheduled", appSource, StringComparison.Ordinal);
     }
 
     /// <summary>

@@ -6,6 +6,9 @@ using DarwinDeutsch.Maui.Services.Onboarding;
 using DarwinDeutsch.Maui.Services.Storage;
 using DarwinDeutsch.Maui.Services.Startup;
 using DarwinDeutsch.Maui.Services.Updates;
+#if ANDROID
+using DarwinDeutsch.Maui.Platforms.Android.Updates;
+#endif
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -74,6 +77,11 @@ public static class MauiProgram
             })
             .AddSingleton<IRemoteContentUpdateService, RemoteContentUpdateService>()
             .AddSingleton<IBackgroundRemoteUpdateCoordinator, BackgroundRemoteUpdateCoordinator>()
+#if ANDROID
+            .AddSingleton<IPlatformBackgroundUpdateScheduler, AndroidBackgroundUpdateScheduler>()
+#else
+            .AddSingleton<IPlatformBackgroundUpdateScheduler, NoOpPlatformBackgroundUpdateScheduler>()
+#endif
             .AddSingleton<StartupPage>()
             .AddSingleton<AppShell>()
             .AddSingleton<WelcomePage>()

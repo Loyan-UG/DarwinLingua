@@ -13,6 +13,7 @@ public partial class App : Application
     private readonly IServiceProvider _serviceProvider;
     private readonly IAppOnboardingService _appOnboardingService;
     private readonly IBackgroundRemoteUpdateCoordinator _backgroundRemoteUpdateCoordinator;
+    private readonly IPlatformBackgroundUpdateScheduler _platformBackgroundUpdateScheduler;
     private AppShell? _appShell;
     private StartupPage? _startupPage;
     private WelcomePage? _welcomePage;
@@ -25,17 +26,20 @@ public partial class App : Application
     public App(
         IServiceProvider serviceProvider,
         IAppOnboardingService appOnboardingService,
-        IBackgroundRemoteUpdateCoordinator backgroundRemoteUpdateCoordinator)
+        IBackgroundRemoteUpdateCoordinator backgroundRemoteUpdateCoordinator,
+        IPlatformBackgroundUpdateScheduler platformBackgroundUpdateScheduler)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
         ArgumentNullException.ThrowIfNull(appOnboardingService);
         ArgumentNullException.ThrowIfNull(backgroundRemoteUpdateCoordinator);
+        ArgumentNullException.ThrowIfNull(platformBackgroundUpdateScheduler);
 
         InitializeComponent();
 
         _serviceProvider = serviceProvider;
         _appOnboardingService = appOnboardingService;
         _backgroundRemoteUpdateCoordinator = backgroundRemoteUpdateCoordinator;
+        _platformBackgroundUpdateScheduler = platformBackgroundUpdateScheduler;
     }
 
     /// <summary>
@@ -63,6 +67,7 @@ public partial class App : Application
             ? GetWelcomePage()
             : GetAppShell();
 
+        _platformBackgroundUpdateScheduler.EnsureScheduled();
         _backgroundRemoteUpdateCoordinator.ScheduleInitialCheck(activeWindow);
     }
 
