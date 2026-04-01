@@ -37,6 +37,8 @@ public partial class WordDetailPage : ContentPage
     private UserWordStateModel? _userWordState;
     private CefrBrowseNavigationState? _cefrBrowseNavigationState;
     private CancellationTokenSource? _speechCancellationTokenSource;
+    private CancellationTokenSource? _refreshCancellationTokenSource;
+    private Guid? _lastTrackedWordPublicId;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordDetailPage"/> class.
@@ -97,7 +99,7 @@ public partial class WordDetailPage : ContentPage
         }
         catch (OperationCanceledException)
         {
-            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
+            return;
         }
         catch
         {
@@ -111,6 +113,7 @@ public partial class WordDetailPage : ContentPage
     protected override void OnDisappearing()
     {
         CancelSpeechRequest();
+        CancelRefreshRequest();
 
         base.OnDisappearing();
     }
@@ -120,6 +123,9 @@ public partial class WordDetailPage : ContentPage
     /// </summary>
     private async Task RefreshAsync()
     {
+        ResetRefreshRequest();
+        CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
+
         Title = AppStrings.WordDetailTitle;
         TopicsSectionView.SectionTitle = AppStrings.WordDetailTopicsLabel;
         LearningStateSectionView.SectionTitle = AppStrings.WordDetailLearningStateLabel;
@@ -170,7 +176,7 @@ public partial class WordDetailPage : ContentPage
         }
 
         UserLearningProfileModel profile = await _userLearningProfileService
-            .GetCurrentProfileAsync(CancellationToken.None)
+            .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(true);
 
         WordDetailModel? word = await _wordDetailQueryService
@@ -179,7 +185,7 @@ public partial class WordDetailPage : ContentPage
                 profile.PreferredMeaningLanguage1,
                 profile.PreferredMeaningLanguage2,
                 profile.UiLanguageCode,
-                CancellationToken.None)
+                cancellationToken)
             .ConfigureAwait(true);
 
         if (word is null)
@@ -188,12 +194,17 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        _isFavorite = await _userFavoriteWordService
-            .IsFavoriteAsync(publicId, CancellationToken.None)
-            .ConfigureAwait(true);
-        _userWordState = await _userWordStateService
-            .TrackWordViewedAsync(publicId, CancellationToken.None)
-            .ConfigureAwait(true);
+        Task<bool> favoriteTask = _userFavoriteWordService
+            .IsFavoriteAsync(publicId, cancellationToken);
+        Task<UserWordStateModel?> userWordStateTask = _lastTrackedWordPublicId == publicId
+            ? _userWordStateService.GetWordStateAsync(publicId, cancellationToken)
+            : TrackWordViewedAsync(publicId, cancellationToken);
+
+        await Task.WhenAll(favoriteTask, userWordStateTask).ConfigureAwait(true);
+
+        _isFavorite = favoriteTask.Result;
+        _userWordState = userWordStateTask.Result;
+        _lastTrackedWordPublicId = publicId;
 
         Title = BuildHeadline(word);
         HeadlineLabel.Text = BuildHeadline(word);
@@ -219,7 +230,7 @@ public partial class WordDetailPage : ContentPage
             SensesContainer.Children.Add(BuildSenseView(sense));
         }
 
-        await ApplyCefrNavigationStateAsync(publicId).ConfigureAwait(true);
+        await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
     }
 
     /// <summary>
@@ -279,7 +290,7 @@ public partial class WordDetailPage : ContentPage
         }
 
         _isFavorite = await _userFavoriteWordService
-            .ToggleFavoriteAsync(publicId, CancellationToken.None)
+            .ToggleFavoriteAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None)
             .ConfigureAwait(true);
 
         ApplyFavoriteButtonState();
@@ -296,8 +307,8 @@ public partial class WordDetailPage : ContentPage
         }
 
         _userWordState = _userWordState?.IsKnown == true
-            ? await _userWordStateService.ClearWordKnownStateAsync(publicId, CancellationToken.None).ConfigureAwait(true)
-            : await _userWordStateService.MarkWordKnownAsync(publicId, CancellationToken.None).ConfigureAwait(true);
+            ? await _userWordStateService.ClearWordKnownStateAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true)
+            : await _userWordStateService.MarkWordKnownAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true);
 
         ApplyUserWordState();
     }
@@ -313,8 +324,8 @@ public partial class WordDetailPage : ContentPage
         }
 
         _userWordState = _userWordState?.IsDifficult == true
-            ? await _userWordStateService.ClearWordDifficultStateAsync(publicId, CancellationToken.None).ConfigureAwait(true)
-            : await _userWordStateService.MarkWordDifficultAsync(publicId, CancellationToken.None).ConfigureAwait(true);
+            ? await _userWordStateService.ClearWordDifficultStateAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true)
+            : await _userWordStateService.MarkWordDifficultAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true);
 
         ApplyUserWordState();
     }
@@ -851,7 +862,7 @@ public partial class WordDetailPage : ContentPage
             _isFavorite ? AppStrings.WordDetailRemoveFavoriteButton : AppStrings.WordDetailAddFavoriteButton);
     }
 
-    private async Task ApplyCefrNavigationStateAsync(Guid currentWordPublicId)
+    private async Task ApplyCefrNavigationStateAsync(Guid currentWordPublicId, CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(CefrLevel))
         {
@@ -863,7 +874,7 @@ public partial class WordDetailPage : ContentPage
 
         _cefrBrowseStateService.RememberLastViewedWord(CefrLevel, currentWordPublicId);
         _cefrBrowseNavigationState = await _cefrBrowseStateService
-            .GetNavigationStateAsync(CefrLevel, currentWordPublicId, CancellationToken.None)
+            .GetNavigationStateAsync(CefrLevel, currentWordPublicId, cancellationToken)
             .ConfigureAwait(true);
 
         bool isVisible = _cefrBrowseNavigationState.TotalCount > 0;
@@ -910,5 +921,33 @@ public partial class WordDetailPage : ContentPage
         string escapedCefrLevel = Uri.EscapeDataString(CefrLevel);
         await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
             .ConfigureAwait(true);
+    }
+
+    private async Task<UserWordStateModel?> TrackWordViewedAsync(Guid publicId, CancellationToken cancellationToken)
+    {
+        UserWordStateModel userWordState = await _userWordStateService
+            .TrackWordViewedAsync(publicId, cancellationToken)
+            .ConfigureAwait(true);
+
+        _lastTrackedWordPublicId = publicId;
+        return userWordState;
+    }
+
+    private void ResetRefreshRequest()
+    {
+        CancelRefreshRequest();
+        _refreshCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelRefreshRequest()
+    {
+        if (_refreshCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _refreshCancellationTokenSource.Cancel();
+        _refreshCancellationTokenSource.Dispose();
+        _refreshCancellationTokenSource = null;
     }
 }

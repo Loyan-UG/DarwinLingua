@@ -231,6 +231,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplyWordFamilies", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyLexicalRelations", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyCefrNavigationStateAsync", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("GetWordStateAsync", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CancelRefreshRequest", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnPreviousWordButtonClicked", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnShowWordListButtonClicked", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("LexiconTagDisplayText", codeBehindSource, StringComparison.Ordinal);
