@@ -266,6 +266,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("WordsCollectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SearchWordsPageSearchHint", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SearchWordsPageResultsLabel", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CancelSearchRequest", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("GetCurrentProfileAsync(cancellationToken)", codeBehindSource, StringComparison.Ordinal);
     }
 
     /// <summary>

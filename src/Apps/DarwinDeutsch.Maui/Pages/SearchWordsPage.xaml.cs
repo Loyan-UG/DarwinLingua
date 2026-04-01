@@ -14,6 +14,7 @@ public partial class SearchWordsPage : ContentPage
 {
     private readonly IWordQueryService _wordQueryService;
     private readonly IUserLearningProfileService _userLearningProfileService;
+    private CancellationTokenSource? _searchCancellationTokenSource;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SearchWordsPage"/> class.
@@ -39,6 +40,16 @@ public partial class SearchWordsPage : ContentPage
         base.OnAppearing();
 
         ApplyLocalizedText();
+    }
+
+    /// <summary>
+    /// Cancels any in-flight search work when the page is no longer visible.
+    /// </summary>
+    protected override void OnDisappearing()
+    {
+        CancelSearchRequest();
+
+        base.OnDisappearing();
     }
 
     /// <summary>
@@ -89,12 +100,15 @@ public partial class SearchWordsPage : ContentPage
     /// </summary>
     private async Task SearchAsync()
     {
+        ResetSearchRequest();
+        CancellationToken cancellationToken = _searchCancellationTokenSource!.Token;
+
         ShowLoadingState();
 
         try
         {
             UserLearningProfileModel profile = await _userLearningProfileService
-                .GetCurrentProfileAsync(CancellationToken.None)
+                .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
 
             string query = SearchBarControl.Text ?? string.Empty;
@@ -106,7 +120,7 @@ public partial class SearchWordsPage : ContentPage
             }
 
             IReadOnlyList<WordListItemModel> words = await _wordQueryService
-                .SearchWordsAsync(query, profile.PreferredMeaningLanguage1, CancellationToken.None)
+                .SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken)
                 .ConfigureAwait(true);
 
             ShowResults(words
@@ -119,7 +133,7 @@ public partial class SearchWordsPage : ContentPage
         }
         catch (OperationCanceledException)
         {
-            ShowResults(Array.Empty<SearchWordItemViewModel>());
+            return;
         }
         catch
         {
@@ -129,6 +143,30 @@ public partial class SearchWordsPage : ContentPage
         {
             LoadingStateLabel.IsVisible = false;
         }
+    }
+
+    /// <summary>
+    /// Replaces any active search token with a fresh one.
+    /// </summary>
+    private void ResetSearchRequest()
+    {
+        CancelSearchRequest();
+        _searchCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    /// <summary>
+    /// Cancels and disposes the active search request token when one exists.
+    /// </summary>
+    private void CancelSearchRequest()
+    {
+        if (_searchCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _searchCancellationTokenSource.Cancel();
+        _searchCancellationTokenSource.Dispose();
+        _searchCancellationTokenSource = null;
     }
 
     /// <summary>

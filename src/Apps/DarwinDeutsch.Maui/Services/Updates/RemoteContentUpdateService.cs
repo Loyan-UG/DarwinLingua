@@ -139,6 +139,10 @@ internal sealed class RemoteContentUpdateService(
                 GetLastSuccessfulUpdateAtUtc(scope),
                 GetLastFailureMessage(scope));
         }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
         catch (Exception exception) when (exception is HttpRequestException or TaskCanceledException or InvalidOperationException)
         {
             PersistLastFailure(scope, exception.Message);
@@ -213,6 +217,10 @@ internal sealed class RemoteContentUpdateService(
             RemoteContentUpdateResult appliedResult = new(true, true, remotePackage.PackageId, remotePackage.Version, importedWords, appliedAtUtc, null);
             RecordHistoryEntry(scope, appliedResult);
             return appliedResult;
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
         }
         catch (Exception exception) when (exception is HttpRequestException or TaskCanceledException or IOException or UnauthorizedAccessException or SqliteException or InvalidOperationException)
         {
