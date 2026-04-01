@@ -36,6 +36,16 @@ public interface ICefrBrowseStateService
         CancellationToken cancellationToken);
 
     /// <summary>
+    /// Prefetches the initial CEFR slice to accelerate first navigation.
+    /// </summary>
+    Task PrefetchInitialSliceAsync(string cefrLevel, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Prefetches additional neighboring words for the current CEFR word-detail flow.
+    /// </summary>
+    Task PrefetchNavigationAsync(string cefrLevel, Guid currentWordPublicId, CancellationToken cancellationToken);
+
+    /// <summary>
     /// Clears any cached CEFR browse data after local content changes.
     /// </summary>
     void ResetCache();

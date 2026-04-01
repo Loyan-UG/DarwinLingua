@@ -16,7 +16,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     private static readonly TimeSpan MinimumCheckInterval = TimeSpan.FromMinutes(30);
 
     private readonly IRemoteContentUpdateService _remoteContentUpdateService;
-    private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly ILogger<BackgroundRemoteUpdateCoordinator> _logger;
     private readonly SemaphoreSlim _gate = new(1, 1);
 
@@ -25,15 +25,15 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     /// </summary>
     public BackgroundRemoteUpdateCoordinator(
         IRemoteContentUpdateService remoteContentUpdateService,
-        ICefrBrowseStateService cefrBrowseStateService,
+        IBrowseAccelerationService browseAccelerationService,
         ILogger<BackgroundRemoteUpdateCoordinator> logger)
     {
         ArgumentNullException.ThrowIfNull(remoteContentUpdateService);
-        ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
+        ArgumentNullException.ThrowIfNull(browseAccelerationService);
         ArgumentNullException.ThrowIfNull(logger);
 
         _remoteContentUpdateService = remoteContentUpdateService;
-        _cefrBrowseStateService = cefrBrowseStateService;
+        _browseAccelerationService = browseAccelerationService;
         _logger = logger;
     }
 
@@ -146,7 +146,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
 
         if (result.IsSuccess && result.AppliedChanges)
         {
-            _cefrBrowseStateService.ResetCache();
+            _browseAccelerationService.ResetCaches();
         }
 
         await MainThread.InvokeOnMainThreadAsync(() => ShowApplyResultAsync(promptPage, result)).ConfigureAwait(false);

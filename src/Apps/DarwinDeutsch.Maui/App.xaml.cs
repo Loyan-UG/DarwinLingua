@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Pages;
+using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Onboarding;
 using DarwinDeutsch.Maui.Services.Updates;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ public partial class App : Application
 {
     private readonly IServiceProvider _serviceProvider;
     private readonly IAppOnboardingService _appOnboardingService;
+    private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly IBackgroundRemoteUpdateCoordinator _backgroundRemoteUpdateCoordinator;
     private readonly IPlatformBackgroundUpdateScheduler _platformBackgroundUpdateScheduler;
     private AppShell? _appShell;
@@ -26,11 +28,13 @@ public partial class App : Application
     public App(
         IServiceProvider serviceProvider,
         IAppOnboardingService appOnboardingService,
+        IBrowseAccelerationService browseAccelerationService,
         IBackgroundRemoteUpdateCoordinator backgroundRemoteUpdateCoordinator,
         IPlatformBackgroundUpdateScheduler platformBackgroundUpdateScheduler)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
         ArgumentNullException.ThrowIfNull(appOnboardingService);
+        ArgumentNullException.ThrowIfNull(browseAccelerationService);
         ArgumentNullException.ThrowIfNull(backgroundRemoteUpdateCoordinator);
         ArgumentNullException.ThrowIfNull(platformBackgroundUpdateScheduler);
 
@@ -38,6 +42,7 @@ public partial class App : Application
 
         _serviceProvider = serviceProvider;
         _appOnboardingService = appOnboardingService;
+        _browseAccelerationService = browseAccelerationService;
         _backgroundRemoteUpdateCoordinator = backgroundRemoteUpdateCoordinator;
         _platformBackgroundUpdateScheduler = platformBackgroundUpdateScheduler;
     }
@@ -68,6 +73,7 @@ public partial class App : Application
             : GetAppShell();
 
         _platformBackgroundUpdateScheduler.EnsureScheduled();
+        _browseAccelerationService.ScheduleInitialWarmup();
         _backgroundRemoteUpdateCoordinator.ScheduleInitialCheck(activeWindow);
     }
 

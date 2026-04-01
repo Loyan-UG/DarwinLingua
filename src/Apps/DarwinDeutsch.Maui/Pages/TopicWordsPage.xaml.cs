@@ -1,9 +1,7 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Localization;
-using DarwinLingua.Catalog.Application.Abstractions;
+using DarwinDeutsch.Maui.Services.Browse;
 using DarwinLingua.Catalog.Application.Models;
-using DarwinLingua.Learning.Application.Abstractions;
-using DarwinLingua.Learning.Application.Models;
 using System.Collections.ObjectModel;
 
 namespace DarwinDeutsch.Maui.Pages;
@@ -16,13 +14,11 @@ namespace DarwinDeutsch.Maui.Pages;
 public partial class TopicWordsPage : ContentPage
 {
     private const int PageSize = 24;
-    private readonly IWordQueryService _wordQueryService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly ITopicBrowseStateService _topicBrowseStateService;
     private readonly ObservableCollection<TopicWordItemViewModel> _visibleWords = [];
     private int _loadedWordCount;
     private bool _hasMoreWords;
     private bool _isLoadingMore;
-    private string _meaningLanguageCode = "en";
     private string _topicKey = string.Empty;
     private string _topicTitle = string.Empty;
 
@@ -30,16 +26,13 @@ public partial class TopicWordsPage : ContentPage
     /// Initializes a new instance of the <see cref="TopicWordsPage"/> class.
     /// </summary>
     public TopicWordsPage(
-        IWordQueryService wordQueryService,
-        IUserLearningProfileService userLearningProfileService)
+        ITopicBrowseStateService topicBrowseStateService)
     {
-        ArgumentNullException.ThrowIfNull(wordQueryService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(topicBrowseStateService);
 
         InitializeComponent();
 
-        _wordQueryService = wordQueryService;
-        _userLearningProfileService = userLearningProfileService;
+        _topicBrowseStateService = topicBrowseStateService;
         WordsCollectionView.ItemsSource = _visibleWords;
     }
 
@@ -94,13 +87,8 @@ public partial class TopicWordsPage : ContentPage
 
         try
         {
-            UserLearningProfileModel profile = await _userLearningProfileService
-                .GetCurrentProfileAsync(CancellationToken.None)
-                .ConfigureAwait(true);
-            _meaningLanguageCode = profile.PreferredMeaningLanguage1;
-
-            IReadOnlyList<WordListItemModel> firstPage = await _wordQueryService
-                .GetWordsByTopicPageAsync(TopicKey, _meaningLanguageCode, skip: 0, take: PageSize, CancellationToken.None)
+            IReadOnlyList<WordListItemModel> firstPage = await _topicBrowseStateService
+                .GetWordsPageAsync(TopicKey, skip: 0, take: PageSize, CancellationToken.None)
                 .ConfigureAwait(true);
 
             ShowWords(firstPage
@@ -110,6 +98,8 @@ public partial class TopicWordsPage : ContentPage
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
                 .ToArray());
+
+            ScheduleNextPagePrefetch();
         }
         catch (OperationCanceledException)
         {
@@ -180,8 +170,8 @@ public partial class TopicWordsPage : ContentPage
         _isLoadingMore = true;
         try
         {
-            IReadOnlyList<WordListItemModel> nextPage = await _wordQueryService
-                .GetWordsByTopicPageAsync(TopicKey, _meaningLanguageCode, _loadedWordCount, PageSize, CancellationToken.None)
+            IReadOnlyList<WordListItemModel> nextPage = await _topicBrowseStateService
+                .GetWordsPageAsync(TopicKey, _loadedWordCount, PageSize, CancellationToken.None)
                 .ConfigureAwait(true);
 
             IReadOnlyList<TopicWordItemViewModel> viewModels = nextPage
@@ -199,6 +189,8 @@ public partial class TopicWordsPage : ContentPage
 
             _loadedWordCount += viewModels.Count;
             _hasMoreWords = viewModels.Count == PageSize;
+
+            ScheduleNextPagePrefetch();
         }
         catch
         {
@@ -216,6 +208,23 @@ public partial class TopicWordsPage : ContentPage
     private async void OnWordsRemainingItemsThresholdReached(object? sender, EventArgs e)
     {
         await LoadNextPageAsync().ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Prefetches the next topic result page into the browse cache without blocking the current UI flow.
+    /// </summary>
+    private void ScheduleNextPagePrefetch()
+    {
+        if (!_hasMoreWords || string.IsNullOrWhiteSpace(TopicKey))
+        {
+            return;
+        }
+
+        _ = Task.Run(() => _topicBrowseStateService.GetWordsPageAsync(
+            TopicKey,
+            _loadedWordCount,
+            PageSize,
+            CancellationToken.None));
     }
 
     /// <summary>

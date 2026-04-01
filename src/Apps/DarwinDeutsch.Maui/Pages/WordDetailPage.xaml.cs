@@ -231,6 +231,11 @@ public partial class WordDetailPage : ContentPage
         }
 
         await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
+
+        if (!string.IsNullOrWhiteSpace(CefrLevel))
+        {
+            _ = Task.Run(() => _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None));
+        }
     }
 
     /// <summary>

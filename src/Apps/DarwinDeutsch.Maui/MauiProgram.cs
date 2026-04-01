@@ -61,6 +61,8 @@ public static class MauiProgram
             .AddPracticeInfrastructure()
             .AddSingleton<ISpeechPlaybackService, SpeechPlaybackService>()
             .AddSingleton<ICefrBrowseStateService, CefrBrowseStateService>()
+            .AddSingleton<ITopicBrowseStateService, TopicBrowseStateService>()
+            .AddSingleton<IBrowseAccelerationService, BrowseAccelerationService>()
             .AddSingleton<IAppLocalizationService, AppLocalizationService>()
             .AddSingleton<IAppOnboardingService, AppOnboardingService>()
             .AddSingleton<ISeedDatabaseProvisioningService, SeedDatabaseProvisioningService>()

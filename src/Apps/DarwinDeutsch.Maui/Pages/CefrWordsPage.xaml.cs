@@ -91,6 +91,8 @@ public partial class CefrWordsPage : ContentPage
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
                 .ToArray());
+
+            ScheduleNextPagePrefetch();
         }
         catch (OperationCanceledException)
         {
@@ -211,6 +213,8 @@ public partial class CefrWordsPage : ContentPage
 
             _loadedWordCount += viewModels.Count;
             _hasMoreWords = viewModels.Count == PageSize;
+
+            ScheduleNextPagePrefetch();
         }
         catch
         {
@@ -228,6 +232,23 @@ public partial class CefrWordsPage : ContentPage
     private async void OnWordsRemainingItemsThresholdReached(object? sender, EventArgs e)
     {
         await LoadNextPageAsync().ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Prefetches the next CEFR result page into the browse cache without blocking the current UI flow.
+    /// </summary>
+    private void ScheduleNextPagePrefetch()
+    {
+        if (!_hasMoreWords || string.IsNullOrWhiteSpace(CefrLevel))
+        {
+            return;
+        }
+
+        _ = Task.Run(() => _cefrBrowseStateService.GetWordsPageAsync(
+            CefrLevel,
+            _loadedWordCount,
+            PageSize,
+            CancellationToken.None));
     }
 
     /// <summary>

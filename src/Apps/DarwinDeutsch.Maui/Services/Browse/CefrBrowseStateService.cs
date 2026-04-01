@@ -13,7 +13,13 @@ namespace DarwinDeutsch.Maui.Services.Browse;
 internal sealed class CefrBrowseStateService : ICefrBrowseStateService
 {
     private const string LastViewedWordPreferencePrefix = "cefr-last-viewed-word";
-    private readonly ConcurrentDictionary<string, IReadOnlyList<WordListItemModel>> _wordCache = new(StringComparer.OrdinalIgnoreCase);
+    private const int InitialSliceSize = 12;
+    private const int NavigationChunkSize = 12;
+    private const int NavigationPrefetchTargetSize = 24;
+    private const int MaxNavigationCacheSize = 96;
+    private readonly ConcurrentDictionary<string, IReadOnlyList<WordListItemModel>> _pageCache = new(StringComparer.OrdinalIgnoreCase);
+    private readonly ConcurrentDictionary<string, NavigationSliceCacheEntry> _navigationCache = new(StringComparer.OrdinalIgnoreCase);
+    private readonly ConcurrentDictionary<string, SemaphoreSlim> _navigationGates = new(StringComparer.OrdinalIgnoreCase);
     private readonly IWordQueryService _wordQueryService;
     private readonly IUserLearningProfileService _userLearningProfileService;
 
@@ -41,7 +47,14 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
             .ConfigureAwait(false);
 
         string cacheKey = BuildCacheKey(cefrLevel, profile.PreferredMeaningLanguage1);
-        if (_wordCache.TryGetValue(cacheKey, out IReadOnlyList<WordListItemModel>? cachedWords))
+        if (_navigationCache.TryGetValue(cacheKey, out NavigationSliceCacheEntry? navigationCacheEntry)
+            && !navigationCacheEntry.HasMore)
+        {
+            return navigationCacheEntry.Words;
+        }
+
+        string pageCacheKey = BuildPageCacheKey(cefrLevel, profile.PreferredMeaningLanguage1, 0, int.MaxValue);
+        if (_pageCache.TryGetValue(pageCacheKey, out IReadOnlyList<WordListItemModel>? cachedWords))
         {
             return cachedWords;
         }
@@ -50,7 +63,8 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
             .GetWordsByCefrAsync(cefrLevel, profile.PreferredMeaningLanguage1, cancellationToken)
             .ConfigureAwait(false);
 
-        _wordCache[cacheKey] = words;
+        _pageCache[pageCacheKey] = words;
+        _navigationCache[cacheKey] = new NavigationSliceCacheEntry(words, false);
         return words;
     }
 
@@ -77,30 +91,36 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return await _wordQueryService
+        string pageCacheKey = BuildPageCacheKey(cefrLevel, profile.PreferredMeaningLanguage1, skip, take);
+        if (_pageCache.TryGetValue(pageCacheKey, out IReadOnlyList<WordListItemModel>? cachedWords))
+        {
+            return cachedWords;
+        }
+
+        IReadOnlyList<WordListItemModel> words = await _wordQueryService
             .GetWordsByCefrPageAsync(cefrLevel, profile.PreferredMeaningLanguage1, skip, take, cancellationToken)
             .ConfigureAwait(false);
+
+        _pageCache[pageCacheKey] = words;
+        return words;
     }
 
     /// <inheritdoc />
     public async Task<Guid?> GetStartingWordPublicIdAsync(string cefrLevel, CancellationToken cancellationToken)
     {
-        IReadOnlyList<WordListItemModel> words = await GetWordsAsync(cefrLevel, cancellationToken).ConfigureAwait(false);
-        if (words.Count == 0)
-        {
-            return null;
-        }
-
         string preferenceKey = BuildLastViewedWordPreferenceKey(cefrLevel);
         string? persistedWordPublicId = Preferences.Default.Get<string?>(preferenceKey, null);
 
-        if (Guid.TryParse(persistedWordPublicId, out Guid rememberedWordPublicId)
-            && words.Any(word => word.PublicId == rememberedWordPublicId))
+        await PrefetchInitialSliceAsync(cefrLevel, cancellationToken).ConfigureAwait(false);
+
+        if (Guid.TryParse(persistedWordPublicId, out Guid rememberedWordPublicId))
         {
             return rememberedWordPublicId;
         }
 
-        return words[0].PublicId;
+        IReadOnlyList<WordListItemModel> words = await GetWordsPageAsync(cefrLevel, 0, InitialSliceSize, cancellationToken)
+            .ConfigureAwait(false);
+        return words.FirstOrDefault()?.PublicId;
     }
 
     /// <inheritdoc />
@@ -109,7 +129,22 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
         Guid currentWordPublicId,
         CancellationToken cancellationToken)
     {
-        IReadOnlyList<WordListItemModel> words = await GetWordsAsync(cefrLevel, cancellationToken).ConfigureAwait(false);
+        ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
+
+        UserLearningProfileModel profile = await _userLearningProfileService
+            .GetCurrentProfileAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        string cacheKey = BuildCacheKey(cefrLevel, profile.PreferredMeaningLanguage1);
+        NavigationSliceCacheEntry navigationCacheEntry = await EnsureNavigationSliceForCurrentWordAsync(
+                cefrLevel,
+                profile.PreferredMeaningLanguage1,
+                cacheKey,
+                currentWordPublicId,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        IReadOnlyList<WordListItemModel> words = navigationCacheEntry.Words;
         int currentIndex = words
             .Select((word, index) => new { word.PublicId, Index = index })
             .Where(item => item.PublicId == currentWordPublicId)
@@ -133,6 +168,54 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     }
 
     /// <inheritdoc />
+    public async Task PrefetchInitialSliceAsync(string cefrLevel, CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
+
+        UserLearningProfileModel profile = await _userLearningProfileService
+            .GetCurrentProfileAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        await EnsureNavigationSliceSizeAsync(
+                cefrLevel,
+                profile.PreferredMeaningLanguage1,
+                BuildCacheKey(cefrLevel, profile.PreferredMeaningLanguage1),
+                InitialSliceSize,
+                cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <inheritdoc />
+    public async Task PrefetchNavigationAsync(string cefrLevel, Guid currentWordPublicId, CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
+
+        UserLearningProfileModel profile = await _userLearningProfileService
+            .GetCurrentProfileAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        string cacheKey = BuildCacheKey(cefrLevel, profile.PreferredMeaningLanguage1);
+        NavigationSliceCacheEntry currentEntry = await EnsureNavigationSliceForCurrentWordAsync(
+                cefrLevel,
+                profile.PreferredMeaningLanguage1,
+                cacheKey,
+                currentWordPublicId,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        if (currentEntry.HasMore && currentEntry.Words.Count < NavigationPrefetchTargetSize)
+        {
+            await EnsureNavigationSliceSizeAsync(
+                    cefrLevel,
+                    profile.PreferredMeaningLanguage1,
+                    cacheKey,
+                    Math.Min(NavigationPrefetchTargetSize, MaxNavigationCacheSize),
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+    }
+
+    /// <inheritdoc />
     public void RememberLastViewedWord(string cefrLevel, Guid wordPublicId)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
@@ -143,7 +226,8 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     /// <inheritdoc />
     public void ResetCache()
     {
-        _wordCache.Clear();
+        _pageCache.Clear();
+        _navigationCache.Clear();
     }
 
     private static string BuildCacheKey(string cefrLevel, string meaningLanguageCode)
@@ -151,8 +235,125 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
         return $"{cefrLevel.Trim().ToUpperInvariant()}::{meaningLanguageCode.Trim().ToLowerInvariant()}";
     }
 
+    private static string BuildPageCacheKey(string cefrLevel, string meaningLanguageCode, int skip, int take)
+    {
+        return $"{BuildCacheKey(cefrLevel, meaningLanguageCode)}::{skip}::{take}";
+    }
+
     private static string BuildLastViewedWordPreferenceKey(string cefrLevel)
     {
         return $"{LastViewedWordPreferencePrefix}:{cefrLevel.Trim().ToUpperInvariant()}";
     }
+
+    private async Task<NavigationSliceCacheEntry> EnsureNavigationSliceForCurrentWordAsync(
+        string cefrLevel,
+        string meaningLanguageCode,
+        string cacheKey,
+        Guid currentWordPublicId,
+        CancellationToken cancellationToken)
+    {
+        NavigationSliceCacheEntry entry = await EnsureNavigationSliceSizeAsync(
+                cefrLevel,
+                meaningLanguageCode,
+                cacheKey,
+                InitialSliceSize,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        while (!entry.Words.Any(word => word.PublicId == currentWordPublicId) &&
+               entry.HasMore &&
+               entry.Words.Count < MaxNavigationCacheSize)
+        {
+            entry = await EnsureNavigationSliceSizeAsync(
+                    cefrLevel,
+                    meaningLanguageCode,
+                    cacheKey,
+                    Math.Min(entry.Words.Count + NavigationChunkSize, MaxNavigationCacheSize),
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        if (!entry.Words.Any(word => word.PublicId == currentWordPublicId))
+        {
+            IReadOnlyList<WordListItemModel> allWords = await _wordQueryService
+                .GetWordsByCefrAsync(cefrLevel, meaningLanguageCode, cancellationToken)
+                .ConfigureAwait(false);
+            entry = new NavigationSliceCacheEntry(allWords, false);
+            _navigationCache[cacheKey] = entry;
+        }
+
+        int currentIndex = entry.Words
+            .Select((word, index) => new { word.PublicId, Index = index })
+            .Where(item => item.PublicId == currentWordPublicId)
+            .Select(item => item.Index)
+            .DefaultIfEmpty(-1)
+            .First();
+
+        if (currentIndex >= 0 &&
+            entry.HasMore &&
+            currentIndex >= entry.Words.Count - 3 &&
+            entry.Words.Count < MaxNavigationCacheSize)
+        {
+            entry = await EnsureNavigationSliceSizeAsync(
+                    cefrLevel,
+                    meaningLanguageCode,
+                    cacheKey,
+                    Math.Min(entry.Words.Count + NavigationChunkSize, MaxNavigationCacheSize),
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+
+        return entry;
+    }
+
+    private async Task<NavigationSliceCacheEntry> EnsureNavigationSliceSizeAsync(
+        string cefrLevel,
+        string meaningLanguageCode,
+        string cacheKey,
+        int targetCount,
+        CancellationToken cancellationToken)
+    {
+        SemaphoreSlim gate = _navigationGates.GetOrAdd(cacheKey, _ => new SemaphoreSlim(1, 1));
+        await gate.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+        try
+        {
+            if (_navigationCache.TryGetValue(cacheKey, out NavigationSliceCacheEntry? existingEntry) &&
+                (existingEntry.Words.Count >= targetCount || !existingEntry.HasMore))
+            {
+                return existingEntry;
+            }
+
+            NavigationSliceCacheEntry currentEntry = existingEntry ?? new NavigationSliceCacheEntry([], true);
+            List<WordListItemModel> words = currentEntry.Words.ToList();
+            bool hasMore = currentEntry.HasMore;
+
+            while (hasMore && words.Count < targetCount && words.Count < MaxNavigationCacheSize)
+            {
+                int remaining = Math.Min(NavigationChunkSize, targetCount - words.Count);
+                if (remaining <= 0)
+                {
+                    break;
+                }
+
+                IReadOnlyList<WordListItemModel> nextPage = await _wordQueryService
+                    .GetWordsByCefrPageAsync(cefrLevel, meaningLanguageCode, words.Count, remaining, cancellationToken)
+                    .ConfigureAwait(false);
+
+                _pageCache[BuildPageCacheKey(cefrLevel, meaningLanguageCode, words.Count, remaining)] = nextPage;
+                words.AddRange(nextPage);
+                hasMore = nextPage.Count == remaining;
+            }
+
+            NavigationSliceCacheEntry updatedEntry = new(words, hasMore);
+            _navigationCache[cacheKey] = updatedEntry;
+            return updatedEntry;
+        }
+        finally
+        {
+            gate.Release();
+        }
+    }
+
+    private sealed record NavigationSliceCacheEntry(IReadOnlyList<WordListItemModel> Words, bool HasMore);
 }

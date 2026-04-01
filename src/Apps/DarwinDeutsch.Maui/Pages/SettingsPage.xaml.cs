@@ -19,7 +19,7 @@ public partial class SettingsPage : ContentPage
     private static readonly string[] CefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
     private readonly IAppLocalizationService _appLocalizationService;
-    private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly IRemoteContentUpdateService _remoteContentUpdateService;
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
     private readonly IUserLearningProfileService _userLearningProfileService;
@@ -37,14 +37,14 @@ public partial class SettingsPage : ContentPage
     /// <param name="languageQueryService">The service that loads active language reference data.</param>
     public SettingsPage(
         IAppLocalizationService appLocalizationService,
-        ICefrBrowseStateService cefrBrowseStateService,
+        IBrowseAccelerationService browseAccelerationService,
         IRemoteContentUpdateService remoteContentUpdateService,
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
         IUserLearningProfileService userLearningProfileService,
         ILanguageQueryService languageQueryService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
-        ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
+        ArgumentNullException.ThrowIfNull(browseAccelerationService);
         ArgumentNullException.ThrowIfNull(remoteContentUpdateService);
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
@@ -53,7 +53,7 @@ public partial class SettingsPage : ContentPage
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
-        _cefrBrowseStateService = cefrBrowseStateService;
+        _browseAccelerationService = browseAccelerationService;
         _remoteContentUpdateService = remoteContentUpdateService;
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
         _userLearningProfileService = userLearningProfileService;
@@ -332,7 +332,7 @@ public partial class SettingsPage : ContentPage
             }
             else if (result.AppliedChanges)
             {
-                _cefrBrowseStateService.ResetCache();
+                _browseAccelerationService.ResetCaches();
 
                 await DisplayAlertAsync(
                         AppStrings.SettingsContentUpdatesCompletedTitle,
@@ -412,7 +412,7 @@ public partial class SettingsPage : ContentPage
             }
             else if (result.AppliedChanges)
             {
-                _cefrBrowseStateService.ResetCache();
+                _browseAccelerationService.ResetCaches();
 
                 await DisplayAlertAsync(
                         AppStrings.SettingsRemoteContentUpdatesCompletedTitle,
