@@ -18,6 +18,7 @@ public partial class PracticePage : ContentPage
     private readonly IPracticeLearningProgressSnapshotService _practiceLearningProgressSnapshotService;
     private readonly IPracticeRecentActivityService _practiceRecentActivityService;
     private readonly IPracticeReviewSessionService _practiceReviewSessionService;
+    private CancellationTokenSource? _refreshCancellationTokenSource;
 
     public PracticePage(
         IAppLocalizationService appLocalizationService,
@@ -50,7 +51,22 @@ public partial class PracticePage : ContentPage
         base.OnAppearing();
 
         ApplyLocalizedText();
-        await RefreshAsync().ConfigureAwait(true);
+
+        try
+        {
+            await RefreshAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelRefreshRequest();
+
+        base.OnDisappearing();
     }
 
     protected override void OnHandlerChanging(HandlerChangingEventArgs args)
@@ -69,7 +85,14 @@ public partial class PracticePage : ContentPage
 
         MainThread.BeginInvokeOnMainThread(async () =>
         {
-            await RefreshAsync().ConfigureAwait(true);
+            try
+            {
+                await RefreshAsync().ConfigureAwait(true);
+            }
+            catch (OperationCanceledException)
+            {
+                return;
+            }
         });
     }
 
@@ -97,21 +120,35 @@ public partial class PracticePage : ContentPage
 
     private async Task RefreshAsync()
     {
+        ResetRefreshRequest();
+        CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
+
         try
         {
-            UserLearningProfileModel profile = await _userLearningProfileService
-                .GetCurrentProfileAsync(CancellationToken.None)
-                .ConfigureAwait(true);
-            PracticeLearningProgressSnapshotModel snapshot = await _practiceLearningProgressSnapshotService
-                .GetSnapshotAsync(CancellationToken.None)
-                .ConfigureAwait(true);
-            PracticeRecentActivityModel recentActivity = await _practiceRecentActivityService
-                .GetRecentActivityAsync(profile.PreferredMeaningLanguage1, 6, CancellationToken.None)
-                .ConfigureAwait(true);
+            Task<UserLearningProfileModel> profileTask = _userLearningProfileService
+                .GetCurrentProfileAsync(cancellationToken);
+            Task<PracticeLearningProgressSnapshotModel> snapshotTask = _practiceLearningProgressSnapshotService
+                .GetSnapshotAsync(cancellationToken);
+
+            await Task.WhenAll(profileTask, snapshotTask).ConfigureAwait(true);
+
+            UserLearningProfileModel profile = profileTask.Result;
+            PracticeLearningProgressSnapshotModel snapshot = snapshotTask.Result;
+
+            Task<PracticeRecentActivityModel> recentActivityTask = _practiceRecentActivityService
+                .GetRecentActivityAsync(profile.PreferredMeaningLanguage1, 6, cancellationToken);
+            Task<PracticeReviewSessionModel> reviewPreviewTask = _practiceReviewSessionService
+                .StartAsync(profile.PreferredMeaningLanguage1, 5, cancellationToken);
+
+            await Task.WhenAll(recentActivityTask, reviewPreviewTask).ConfigureAwait(true);
 
             ApplySnapshot(snapshot);
-            ApplyRecentActivity(recentActivity);
-            await LoadReviewPreviewAsync(profile.PreferredMeaningLanguage1).ConfigureAwait(true);
+            ApplyRecentActivity(recentActivityTask.Result);
+            ApplyReviewPreview(reviewPreviewTask.Result);
+        }
+        catch (OperationCanceledException)
+        {
+            throw;
         }
         catch
         {
@@ -168,40 +205,22 @@ public partial class PracticePage : ContentPage
         RecentActivityStateLabel.IsVisible = true;
     }
 
-    private async Task LoadReviewPreviewAsync(string meaningLanguageCode)
+    private void ApplyReviewPreview(PracticeReviewSessionModel session)
     {
-        ReviewSessionStateLabel.Text = AppStrings.CommonStateLoading;
+        PracticeWordItemViewModel[] items = session.Items
+            .Select(item => new PracticeWordItemViewModel(
+                item.WordEntryPublicId,
+                item.Lemma,
+                item.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
+                BuildReviewSessionMetadata(item)))
+            .ToArray();
+
+        ReviewSessionCollectionView.ItemsSource = items;
+        ReviewSessionCollectionView.IsVisible = items.Length > 0;
+        ReviewSessionStateLabel.Text = items.Length == 0
+            ? AppStrings.PracticePageReviewSessionEmpty
+            : string.Format(AppStrings.PracticePageReviewSessionSummaryFormat, session.TotalCandidates);
         ReviewSessionStateLabel.IsVisible = true;
-        ReviewSessionCollectionView.IsVisible = false;
-
-        try
-        {
-            PracticeReviewSessionModel session = await _practiceReviewSessionService
-                .StartAsync(meaningLanguageCode, 5, CancellationToken.None)
-                .ConfigureAwait(true);
-
-            PracticeWordItemViewModel[] items = session.Items
-                .Select(item => new PracticeWordItemViewModel(
-                    item.WordEntryPublicId,
-                    item.Lemma,
-                    item.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
-                    BuildReviewSessionMetadata(item)))
-                .ToArray();
-
-            ReviewSessionCollectionView.ItemsSource = items;
-            ReviewSessionCollectionView.IsVisible = items.Length > 0;
-            ReviewSessionStateLabel.Text = items.Length == 0
-                ? AppStrings.PracticePageReviewSessionEmpty
-                : string.Format(AppStrings.PracticePageReviewSessionSummaryFormat, session.TotalCandidates);
-            ReviewSessionStateLabel.IsVisible = true;
-        }
-        catch
-        {
-            ReviewSessionCollectionView.ItemsSource = Array.Empty<PracticeWordItemViewModel>();
-            ReviewSessionCollectionView.IsVisible = false;
-            ReviewSessionStateLabel.Text = AppStrings.CommonStateError;
-            ReviewSessionStateLabel.IsVisible = true;
-        }
     }
 
     private async void OnStartFlashcardsActionInvoked(object? sender, EventArgs e)
@@ -218,7 +237,14 @@ public partial class PracticePage : ContentPage
 
     private async void OnRefreshPracticeActionInvoked(object? sender, EventArgs e)
     {
-        await RefreshAsync().ConfigureAwait(true);
+        try
+        {
+            await RefreshAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
     }
 
     private async void OnReviewSessionSelectionChanged(object? sender, SelectionChangedEventArgs e)
@@ -279,4 +305,28 @@ public partial class PracticePage : ContentPage
     }
 
     private sealed record PracticeWordItemViewModel(Guid PublicId, string Lemma, string PrimaryMeaning, string MetadataLine);
+
+    private void ResetRefreshRequest()
+    {
+        CancelRefreshRequest();
+        _refreshCancellationTokenSource = new CancellationTokenSource();
+        ReviewSessionStateLabel.Text = AppStrings.CommonStateLoading;
+        ReviewSessionStateLabel.IsVisible = true;
+        ReviewSessionCollectionView.IsVisible = false;
+        RecentActivityStateLabel.Text = AppStrings.CommonStateLoading;
+        RecentActivityStateLabel.IsVisible = true;
+        RecentActivityCollectionView.IsVisible = false;
+    }
+
+    private void CancelRefreshRequest()
+    {
+        if (_refreshCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _refreshCancellationTokenSource.Cancel();
+        _refreshCancellationTokenSource.Dispose();
+        _refreshCancellationTokenSource = null;
+    }
 }

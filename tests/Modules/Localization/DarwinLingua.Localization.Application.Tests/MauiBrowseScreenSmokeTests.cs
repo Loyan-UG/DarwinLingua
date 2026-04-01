@@ -117,6 +117,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("BuildContentUpdateDetails", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildContentUpdateDiagnostics", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SettingsContentUpdatesDiagnosticsLabel", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CancelPageStateRequest", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("LoadCefrUpdateStatusesAsync(localDatabasePath, cancellationToken)", codeBehindSource, StringComparison.Ordinal);
     }
 
     /// <summary>
@@ -184,6 +186,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("IPracticeLearningProgressSnapshotService", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("IPracticeRecentActivityService", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("IPracticeReviewSessionService", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CancelRefreshRequest", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("Task.WhenAll", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OutcomeButtonsGrid", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("SummaryBorder", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("IPracticeFlashcardAnswerService", practiceSessionCodeBehindSource, StringComparison.Ordinal);

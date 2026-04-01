@@ -24,6 +24,7 @@ public partial class SettingsPage : ContentPage
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly ILanguageQueryService _languageQueryService;
+    private CancellationTokenSource? _pageStateCancellationTokenSource;
     private bool _isUpdatingSelection;
     private bool _isApplyingRemoteUpdate;
     private bool _isApplyingSeedUpdate;
@@ -69,7 +70,21 @@ public partial class SettingsPage : ContentPage
     {
         base.OnAppearing();
 
-        await RebuildPageStateAsync().ConfigureAwait(true);
+        try
+        {
+            await RebuildPageStateAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelPageStateRequest();
+
+        base.OnDisappearing();
     }
 
     /// <summary>
@@ -95,7 +110,14 @@ public partial class SettingsPage : ContentPage
     {
         MainThread.BeginInvokeOnMainThread(async () =>
         {
-            await RebuildPageStateAsync().ConfigureAwait(true);
+            try
+            {
+                await RebuildPageStateAsync().ConfigureAwait(true);
+            }
+            catch (OperationCanceledException)
+            {
+                return;
+            }
         });
     }
 
@@ -151,17 +173,20 @@ public partial class SettingsPage : ContentPage
     /// </summary>
     private async Task RebuildPageStateAsync()
     {
+        ResetPageStateRequest();
+        CancellationToken cancellationToken = _pageStateCancellationTokenSource!.Token;
+
         ApplyStaticLocalizedText();
 
         IReadOnlyList<UiLanguageOption> supportedUiLanguages = _appLocalizationService.GetSupportedLanguages();
         IReadOnlyList<SupportedLanguageModel> supportedMeaningLanguages = (await _languageQueryService
-                .GetActiveLanguagesAsync(CancellationToken.None)
+                .GetActiveLanguagesAsync(cancellationToken)
                 .ConfigureAwait(true))
             .Where(language => language.SupportsMeanings)
             .OrderBy(language => language.EnglishName)
             .ToArray();
         UserLearningProfileModel profile = await _userLearningProfileService
-            .GetCurrentProfileAsync(CancellationToken.None)
+            .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(true);
 
         List<MeaningLanguageOption> primaryMeaningOptions = supportedMeaningLanguages
@@ -205,11 +230,11 @@ public partial class SettingsPage : ContentPage
         FutureFeaturesSectionView.SectionValue = AppStrings.WelcomeFutureFeaturesBody;
 
         string localDatabasePath = GetLocalDatabasePath();
-        Task<SeedDatabaseUpdateStatus> seedStatusTask = _seedDatabaseProvisioningService.GetUpdateStatusAsync(localDatabasePath, CancellationToken.None);
-        Task<RemoteContentUpdateStatus> catalogAreaStatusTask = _remoteContentUpdateService.GetAreaUpdateStatusAsync(localDatabasePath, "catalog", CancellationToken.None);
-        Task<RemoteContentUpdateStatus> remoteContentStatusTask = _remoteContentUpdateService.GetUpdateStatusAsync(localDatabasePath, CancellationToken.None);
-        Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> remoteUpdateHistoryTask = _remoteContentUpdateService.GetRecentUpdateHistoryAsync(CancellationToken.None);
-        Task<Dictionary<string, RemoteContentUpdateStatus>> cefrUpdateStatusesTask = LoadCefrUpdateStatusesAsync(localDatabasePath);
+        Task<SeedDatabaseUpdateStatus> seedStatusTask = _seedDatabaseProvisioningService.GetUpdateStatusAsync(localDatabasePath, cancellationToken);
+        Task<RemoteContentUpdateStatus> catalogAreaStatusTask = _remoteContentUpdateService.GetAreaUpdateStatusAsync(localDatabasePath, "catalog", cancellationToken);
+        Task<RemoteContentUpdateStatus> remoteContentStatusTask = _remoteContentUpdateService.GetUpdateStatusAsync(localDatabasePath, cancellationToken);
+        Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> remoteUpdateHistoryTask = _remoteContentUpdateService.GetRecentUpdateHistoryAsync(cancellationToken);
+        Task<Dictionary<string, RemoteContentUpdateStatus>> cefrUpdateStatusesTask = LoadCefrUpdateStatusesAsync(localDatabasePath, cancellationToken);
 
         await Task.WhenAll(seedStatusTask, catalogAreaStatusTask, remoteContentStatusTask, remoteUpdateHistoryTask, cefrUpdateStatusesTask)
             .ConfigureAwait(true);
@@ -332,10 +357,10 @@ public partial class SettingsPage : ContentPage
         }
     }
 
-    private async Task<Dictionary<string, RemoteContentUpdateStatus>> LoadCefrUpdateStatusesAsync(string localDatabasePath)
+    private async Task<Dictionary<string, RemoteContentUpdateStatus>> LoadCefrUpdateStatusesAsync(string localDatabasePath, CancellationToken cancellationToken)
     {
         Task<RemoteContentUpdateStatus>[] statusTasks = CefrLevels
-            .Select(cefrLevel => _remoteContentUpdateService.GetCefrUpdateStatusAsync(localDatabasePath, cefrLevel, CancellationToken.None))
+            .Select(cefrLevel => _remoteContentUpdateService.GetCefrUpdateStatusAsync(localDatabasePath, cefrLevel, cancellationToken))
             .ToArray();
 
         RemoteContentUpdateStatus[] statuses = await Task.WhenAll(statusTasks).ConfigureAwait(true);
@@ -546,6 +571,24 @@ public partial class SettingsPage : ContentPage
     private static string GetLocalDatabasePath()
     {
         return Path.Combine(FileSystem.Current.AppDataDirectory, "darwin-lingua.db");
+    }
+
+    private void ResetPageStateRequest()
+    {
+        CancelPageStateRequest();
+        _pageStateCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelPageStateRequest()
+    {
+        if (_pageStateCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _pageStateCancellationTokenSource.Cancel();
+        _pageStateCancellationTokenSource.Dispose();
+        _pageStateCancellationTokenSource = null;
     }
 
     private static string BuildContentUpdateStatus(SeedDatabaseUpdateStatus seedDatabaseUpdateStatus)
