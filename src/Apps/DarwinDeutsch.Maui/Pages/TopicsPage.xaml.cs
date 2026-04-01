@@ -1,7 +1,6 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Localization;
-using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 
 namespace DarwinDeutsch.Maui.Pages;
@@ -13,7 +12,8 @@ public partial class TopicsPage : ContentPage
 {
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
-    private readonly ITopicQueryService _topicQueryService;
+    private readonly ITopicCatalogCacheService _topicCatalogCacheService;
+    private CancellationTokenSource? _topicsRefreshCancellationTokenSource;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TopicsPage"/> class.
@@ -21,17 +21,17 @@ public partial class TopicsPage : ContentPage
     public TopicsPage(
         IAppLocalizationService appLocalizationService,
         ICefrBrowseStateService cefrBrowseStateService,
-        ITopicQueryService topicQueryService)
+        ITopicCatalogCacheService topicCatalogCacheService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
-        ArgumentNullException.ThrowIfNull(topicQueryService);
+        ArgumentNullException.ThrowIfNull(topicCatalogCacheService);
 
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
         _cefrBrowseStateService = cefrBrowseStateService;
-        _topicQueryService = topicQueryService;
+        _topicCatalogCacheService = topicCatalogCacheService;
 
         _appLocalizationService.CultureChanged += OnCultureChanged;
 
@@ -46,7 +46,13 @@ public partial class TopicsPage : ContentPage
         base.OnAppearing();
 
         ApplyLocalizedText();
-        await RefreshTopicsAsync().ConfigureAwait(true);
+        await RefreshTopicsAsync(showLoadingState: TopicsCollectionView.ItemsSource is null).ConfigureAwait(true);
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelTopicsRefreshRequest();
+        base.OnDisappearing();
     }
 
     /// <summary>
@@ -72,7 +78,7 @@ public partial class TopicsPage : ContentPage
 
         MainThread.BeginInvokeOnMainThread(async () =>
         {
-            await RefreshTopicsAsync().ConfigureAwait(true);
+            await RefreshTopicsAsync(showLoadingState: false).ConfigureAwait(true);
         });
     }
 
@@ -100,20 +106,32 @@ public partial class TopicsPage : ContentPage
     /// <summary>
     /// Loads the localized topic list for the current UI language.
     /// </summary>
-    private async Task RefreshTopicsAsync()
+    private async Task RefreshTopicsAsync(bool showLoadingState)
     {
-        ShowLoadingState();
+        ResetTopicsRefreshRequest();
+        CancellationToken cancellationToken = _topicsRefreshCancellationTokenSource!.Token;
+
+        if (showLoadingState)
+        {
+            ShowLoadingState();
+        }
 
         try
         {
-            IReadOnlyList<TopicListItemModel> topics = await _topicQueryService
-                .GetTopicsAsync(_appLocalizationService.CurrentCulture.TwoLetterISOLanguageName, CancellationToken.None)
+            await Task.Yield();
+
+            IReadOnlyList<TopicListItemModel> topics = await _topicCatalogCacheService
+                .GetTopicsAsync(_appLocalizationService.CurrentCulture.TwoLetterISOLanguageName, cancellationToken)
                 .ConfigureAwait(true);
 
             TopicsCollectionView.ItemsSource = topics;
             EmptyStateLabel.IsVisible = topics.Count == 0;
             TopicsCollectionView.IsVisible = topics.Count > 0;
             ErrorStateLabel.IsVisible = false;
+        }
+        catch (OperationCanceledException)
+        {
+            return;
         }
         catch
         {
@@ -137,6 +155,24 @@ public partial class TopicsPage : ContentPage
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         TopicsCollectionView.IsVisible = false;
+    }
+
+    private void ResetTopicsRefreshRequest()
+    {
+        CancelTopicsRefreshRequest();
+        _topicsRefreshCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelTopicsRefreshRequest()
+    {
+        if (_topicsRefreshCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _topicsRefreshCancellationTokenSource.Cancel();
+        _topicsRefreshCancellationTokenSource.Dispose();
+        _topicsRefreshCancellationTokenSource = null;
     }
 
     /// <summary>

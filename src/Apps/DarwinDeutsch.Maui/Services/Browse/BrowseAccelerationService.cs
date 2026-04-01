@@ -13,9 +13,9 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     private static readonly string[] CefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
     private const int TopicWarmupLimit = 12;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private readonly ITopicCatalogCacheService _topicCatalogCacheService;
     private readonly ITopicBrowseStateService _topicBrowseStateService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
-    private readonly ITopicQueryService _topicQueryService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ILogger<BrowseAccelerationService> _logger;
@@ -27,25 +27,25 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     /// </summary>
     public BrowseAccelerationService(
         ICefrBrowseStateService cefrBrowseStateService,
+        ITopicCatalogCacheService topicCatalogCacheService,
         ITopicBrowseStateService topicBrowseStateService,
         IWordDetailCacheService wordDetailCacheService,
-        ITopicQueryService topicQueryService,
         IUserLearningProfileService userLearningProfileService,
         IAppLocalizationService appLocalizationService,
         ILogger<BrowseAccelerationService> logger)
     {
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
+        ArgumentNullException.ThrowIfNull(topicCatalogCacheService);
         ArgumentNullException.ThrowIfNull(topicBrowseStateService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
-        ArgumentNullException.ThrowIfNull(topicQueryService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(logger);
 
         _cefrBrowseStateService = cefrBrowseStateService;
+        _topicCatalogCacheService = topicCatalogCacheService;
         _topicBrowseStateService = topicBrowseStateService;
         _wordDetailCacheService = wordDetailCacheService;
-        _topicQueryService = topicQueryService;
         _userLearningProfileService = userLearningProfileService;
         _appLocalizationService = appLocalizationService;
         _logger = logger;
@@ -77,6 +77,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     public void ResetCaches()
     {
         _cefrBrowseStateService.ResetCache();
+        _topicCatalogCacheService.ResetCache();
         _topicBrowseStateService.ResetCache();
         _wordDetailCacheService.ResetCache();
         Interlocked.Exchange(ref _warmupScheduled, 0);
@@ -115,7 +116,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
                 }
             }
 
-            IReadOnlyList<DarwinLingua.Catalog.Application.Models.TopicListItemModel> topics = await _topicQueryService
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.TopicListItemModel> topics = await _topicCatalogCacheService
                 .GetTopicsAsync(_appLocalizationService.CurrentCulture.TwoLetterISOLanguageName, cancellationToken)
                 .ConfigureAwait(false);
 
