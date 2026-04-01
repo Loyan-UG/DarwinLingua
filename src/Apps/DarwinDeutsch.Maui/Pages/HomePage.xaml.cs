@@ -11,6 +11,7 @@ public partial class HomePage : ContentPage
 {
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private bool _isNavigatingToCefr;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="HomePage"/> class.
@@ -86,6 +87,7 @@ public partial class HomePage : ContentPage
         BrowseTopicsActionBlockView.ButtonText = AppStrings.HomeBrowseTopicsButton;
         FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
         FavoritesActionBlockView.ButtonText = AppStrings.HomeFavoritesButton;
+        CefrNavigationStatusLabel.Text = AppStrings.CommonStateLoading;
     }
 
     /// <summary>
@@ -93,28 +95,44 @@ public partial class HomePage : ContentPage
     /// </summary>
     private async void OnCefrLevelSelected(object? sender, EventArgs e)
     {
+        if (_isNavigatingToCefr)
+        {
+            return;
+        }
+
         string cefrLevel = CefrQuickFilterView.SelectedLevel;
         if (string.IsNullOrWhiteSpace(cefrLevel))
         {
             return;
         }
 
-        Guid? startingWordPublicId = await _cefrBrowseStateService
-            .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
-            .ConfigureAwait(true);
+        _isNavigatingToCefr = true;
+        SetCefrNavigationBusyState(true);
 
-        string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
-        if (startingWordPublicId is null)
+        try
         {
-            await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+            Guid? startingWordPublicId = await _cefrBrowseStateService
+                .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
                 .ConfigureAwait(true);
-            return;
-        }
 
-        string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
-        await Shell.Current.GoToAsync(
-                $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}")
-            .ConfigureAwait(true);
+            string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
+            if (startingWordPublicId is null)
+            {
+                await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+                    .ConfigureAwait(true);
+                return;
+            }
+
+            string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
+            await Shell.Current.GoToAsync(
+                    $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}")
+                .ConfigureAwait(true);
+        }
+        finally
+        {
+            _isNavigatingToCefr = false;
+            SetCefrNavigationBusyState(false);
+        }
     }
 
     /// <summary>
@@ -147,5 +165,12 @@ public partial class HomePage : ContentPage
     private async void OnFavoritesActionInvoked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//favorites").ConfigureAwait(true);
+    }
+
+    private void SetCefrNavigationBusyState(bool isBusy)
+    {
+        CefrQuickFilterView.IsEnabled = !isBusy;
+        CefrNavigationStatusLayout.IsVisible = isBusy;
+        CefrNavigationActivityIndicator.IsRunning = isBusy;
     }
 }

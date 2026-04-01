@@ -50,6 +50,19 @@
                     <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
                                                   LevelSelected="OnCefrLevelSelected" />
 
+                    <HorizontalStackLayout x:Name="CefrNavigationStatusLayout"
+                                           Spacing="10"
+                                           IsVisible="False">
+                        <ActivityIndicator x:Name="CefrNavigationActivityIndicator"
+                                           WidthRequest="18"
+                                           HeightRequest="18"
+                                           IsRunning="False"
+                                           VerticalOptions="Center" />
+                        <Label x:Name="CefrNavigationStatusLabel"
+                               Style="{DynamicResource Body}"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
                     <VerticalStackLayout Spacing="12">
                         <controls:ActionBlockView x:Name="PracticeActionBlockView"
                                                   ActionInvoked="OnPracticeActionInvoked" />
