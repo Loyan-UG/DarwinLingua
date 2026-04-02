@@ -114,6 +114,49 @@ public sealed class CatalogSearchInfrastructureTests
     }
 
     /// <summary>
+    /// Verifies that inactive lexical entries are not materialized through the detail repository path.
+    /// </summary>
+    [Fact]
+    public async Task GetByPublicIdAsync_ShouldIgnoreInactiveWordEntries()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-catalog-detail-{Guid.NewGuid():N}.db");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            Guid publicId = Guid.NewGuid();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                dbContext.WordEntries.Add(CreateWord("Altwort", "legacy word", publicId, PublicationStatus.Draft));
+                await dbContext.SaveChangesAsync(CancellationToken.None);
+            }
+
+            IWordEntryRepository repository = serviceProvider.GetRequiredService<IWordEntryRepository>();
+            WordEntry? word = await repository.GetByPublicIdAsync(publicId, CancellationToken.None);
+
+            Assert.Null(word);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            TryDeleteFile(databasePath);
+        }
+    }
+
+    /// <summary>
     /// Verifies that startup initialization recreates the required operational search indexes.
     /// </summary>
     [Fact]
@@ -319,17 +362,21 @@ public sealed class CatalogSearchInfrastructureTests
     /// <param name="lemma">The visible German lemma.</param>
     /// <param name="translationText">The primary English translation.</param>
     /// <returns>A minimal but valid lexical aggregate.</returns>
-    private static WordEntry CreateWord(string lemma, string translationText)
+    private static WordEntry CreateWord(
+        string lemma,
+        string translationText,
+        Guid? publicId = null,
+        PublicationStatus publicationStatus = PublicationStatus.Active)
     {
         DateTime nowUtc = DateTime.UtcNow;
         WordEntry word = new(
             Guid.NewGuid(),
-            Guid.NewGuid(),
+            publicId ?? Guid.NewGuid(),
             lemma,
             LanguageCode.From("de"),
             CefrLevel.A1,
             PartOfSpeech.Noun,
-            PublicationStatus.Active,
+            publicationStatus,
             ContentSourceType.Manual,
             nowUtc,
             article: "die");

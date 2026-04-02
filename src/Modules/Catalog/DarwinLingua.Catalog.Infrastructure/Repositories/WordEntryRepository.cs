@@ -150,7 +150,10 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .ConfigureAwait(false);
 
         return await CreateAggregateQuery(dbContext)
-            .SingleOrDefaultAsync(word => word.PublicId == publicId, cancellationToken)
+            .SingleOrDefaultAsync(
+                word => word.PublicId == publicId &&
+                        word.PublicationStatus == PublicationStatus.Active,
+                cancellationToken)
             .ConfigureAwait(false);
     }
 
@@ -312,9 +315,9 @@ internal sealed class WordEntryRepository : IWordEntryRepository
         return dbContext.WordEntries
             .AsNoTracking()
             .AsSplitQuery()
-            .Include(word => word.Senses)
+            .Include(word => word.Senses.Where(sense => sense.PublicationStatus == PublicationStatus.Active))
                 .ThenInclude(sense => sense.Translations)
-            .Include(word => word.Senses)
+            .Include(word => word.Senses.Where(sense => sense.PublicationStatus == PublicationStatus.Active))
                 .ThenInclude(sense => sense.Examples)
                     .ThenInclude(example => example.Translations)
             .Include(word => word.Topics)
@@ -361,18 +364,45 @@ internal sealed class WordEntryRepository : IWordEntryRepository
         LanguageCode meaningLanguageCode,
         CancellationToken cancellationToken)
     {
-        List<PrimaryMeaningRow> meanings = await dbContext.WordSenses
+        List<PrimarySenseRow> primarySenses = await dbContext.WordSenses
             .AsNoTracking()
-            .Where(sense => sense.IsPrimarySense && wordEntryIds.Contains(sense.WordEntryId))
-            .SelectMany(
-                sense => sense.Translations
-                    .Where(translation => translation.LanguageCode == meaningLanguageCode)
-                    .Select(translation => new PrimaryMeaningRow(
-                        sense.WordEntryId,
-                        translation.TranslationText,
-                        translation.IsPrimary)))
+            .Where(sense => sense.IsPrimarySense)
+            .Where(sense => wordEntryIds.Contains(sense.WordEntryId))
+            .Select(sense => new PrimarySenseRow(sense.Id, sense.WordEntryId))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
+
+        if (primarySenses.Count == 0)
+        {
+            return [];
+        }
+
+        Guid[] primarySenseIds = primarySenses
+            .Select(sense => sense.SenseId)
+            .ToArray();
+
+        List<PrimaryMeaningTranslationRow> translations = await dbContext.SenseTranslations
+            .AsNoTracking()
+            .Where(translation => translation.LanguageCode == meaningLanguageCode)
+            .Where(translation => primarySenseIds.Contains(translation.WordSenseId))
+            .Select(translation => new PrimaryMeaningTranslationRow(
+                translation.WordSenseId,
+                translation.TranslationText,
+                translation.IsPrimary))
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false)
+            ;
+
+        List<PrimaryMeaningRow> meanings = translations
+            .Join(
+                primarySenses,
+                translation => translation.WordSenseId,
+                sense => sense.SenseId,
+                (translation, sense) => new PrimaryMeaningRow(
+                    sense.WordEntryId,
+                    translation.TranslationText,
+                    translation.IsPrimary))
+            .ToList();
 
         return meanings
             .GroupBy(row => row.WordEntryId)
@@ -394,6 +424,10 @@ internal sealed class WordEntryRepository : IWordEntryRepository
         PartOfSpeech PartOfSpeech,
         CefrLevel CefrLevel,
         string NormalizedLemma);
+
+    private sealed record PrimarySenseRow(Guid SenseId, Guid WordEntryId);
+
+    private sealed record PrimaryMeaningTranslationRow(Guid WordSenseId, string TranslationText, bool IsPrimary);
 
     private sealed record PrimaryMeaningRow(Guid WordEntryId, string TranslationText, bool IsPrimary);
 }
