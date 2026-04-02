@@ -2,6 +2,7 @@ using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
@@ -14,6 +15,7 @@ public partial class HomePage : ContentPage
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
+    private readonly ILogger<HomePage> _logger;
     private bool _isNavigatingToCefr;
 
     /// <summary>
@@ -23,17 +25,20 @@ public partial class HomePage : ContentPage
     public HomePage(
         IAppLocalizationService appLocalizationService,
         ICefrBrowseStateService cefrBrowseStateService,
-        IPerformanceTelemetryService performanceTelemetryService)
+        IPerformanceTelemetryService performanceTelemetryService,
+        ILogger<HomePage> logger)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
+        ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
         _cefrBrowseStateService = cefrBrowseStateService;
         _performanceTelemetryService = performanceTelemetryService;
+        _logger = logger;
 
         _appLocalizationService.CultureChanged += OnCultureChanged;
 
@@ -137,15 +142,29 @@ public partial class HomePage : ContentPage
 
             _performanceTelemetryService.Record("home.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
         }
-        catch
+        catch (OperationCanceledException)
+        {
+            _performanceTelemetryService.Record("home.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
+        }
+        catch (Exception exception)
         {
             _performanceTelemetryService.Record("home.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
-            throw;
+            _logger.LogWarning(exception, "Home CEFR navigation failed for level '{CefrLevel}'.", cefrLevel);
+            CefrNavigationStatusLabel.Text = AppStrings.CommonStateError;
+            CefrNavigationStatusLayout.IsVisible = true;
         }
         finally
         {
             _isNavigatingToCefr = false;
-            SetCefrNavigationBusyState(false);
+            if (CefrNavigationStatusLabel.Text == AppStrings.CommonStateError)
+            {
+                CefrQuickFilterView.IsEnabled = true;
+                CefrNavigationActivityIndicator.IsRunning = false;
+            }
+            else
+            {
+                SetCefrNavigationBusyState(false);
+            }
         }
     }
 
@@ -184,6 +203,11 @@ public partial class HomePage : ContentPage
     private void SetCefrNavigationBusyState(bool isBusy)
     {
         CefrQuickFilterView.IsEnabled = !isBusy;
+        if (isBusy)
+        {
+            CefrNavigationStatusLabel.Text = AppStrings.CommonStateLoading;
+        }
+
         CefrNavigationStatusLayout.IsVisible = isBusy;
         CefrNavigationActivityIndicator.IsRunning = isBusy;
     }
