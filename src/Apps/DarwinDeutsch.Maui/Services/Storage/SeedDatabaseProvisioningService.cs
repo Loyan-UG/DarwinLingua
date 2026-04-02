@@ -149,6 +149,19 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             return new SeedDatabaseUpdateResult(true, true, importedPackages, importedWords, seedAssetSnapshot.Signature, appliedAtUtc, null);
         }
 
+        string? appliedSignature = Preferences.Default.Get<string?>(SeedSignaturePreferenceKey, null);
+        if (string.Equals(appliedSignature, seedAssetSnapshot.Signature, StringComparison.Ordinal))
+        {
+            return new SeedDatabaseUpdateResult(
+                true,
+                false,
+                0,
+                0,
+                seedAssetSnapshot.Signature,
+                GetLastAppliedAtUtc(),
+                null);
+        }
+
         string temporarySeedPath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-seed-{Guid.NewGuid():N}.db");
 
         try
