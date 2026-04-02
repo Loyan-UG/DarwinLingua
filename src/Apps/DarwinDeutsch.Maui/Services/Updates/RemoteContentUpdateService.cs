@@ -477,8 +477,14 @@ internal sealed class RemoteContentUpdateService(
     {
         if (scope == RemoteUpdateScope.FullDatabase)
         {
+            string persistedPackageId = GetLastAppliedPackageId(scope);
+            if (!string.IsNullOrWhiteSpace(persistedPackageId))
+            {
+                return persistedPackageId;
+            }
+
             string localFullPackageId = await GetLocalFullPackageIdAsync(databasePath, cancellationToken).ConfigureAwait(false);
-            return string.IsNullOrWhiteSpace(localFullPackageId) ? GetLastAppliedPackageId(scope) : localFullPackageId;
+            return localFullPackageId;
         }
 
         return GetLastAppliedPackageId(scope);
