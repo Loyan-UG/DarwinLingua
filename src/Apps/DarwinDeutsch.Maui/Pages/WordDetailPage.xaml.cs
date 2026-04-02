@@ -20,6 +20,7 @@ namespace DarwinDeutsch.Maui.Pages;
 [QueryProperty(nameof(CefrLevel), "cefrLevel")]
 public partial class WordDetailPage : ContentPage
 {
+    private const int DeferredSenseBatchSize = 2;
     private static readonly Color InactiveActionBackgroundColor = Color.FromArgb("#155E75");
     private static readonly Color ActiveActionBackgroundColor = Color.FromArgb("#D6EEF6");
     private static readonly Color InactiveKnownBackgroundColor = Color.FromArgb("#155E63");
@@ -230,12 +231,7 @@ public partial class WordDetailPage : ContentPage
         ApplyCollocations(word.Collocations);
         ApplyWordFamilies(word.WordFamilies);
         ApplyLexicalRelations(word.Synonyms, word.Antonyms);
-
-        foreach (WordSenseDetailModel sense in word.Senses)
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-            SensesContainer.Children.Add(BuildSenseView(sense));
-        }
+        await RenderSensesAsync(word.Senses, cancellationToken).ConfigureAwait(true);
 
         if (!string.IsNullOrWhiteSpace(CefrLevel))
         {
@@ -244,6 +240,41 @@ public partial class WordDetailPage : ContentPage
 
         ScheduleWordDetailPrefetch(profile);
         _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, word.Senses.Count);
+    }
+
+    /// <summary>
+    /// Renders the first sense immediately and hydrates the rest in small UI-friendly batches.
+    /// </summary>
+    private async Task RenderSensesAsync(IReadOnlyList<WordSenseDetailModel> senses, CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(senses);
+
+        if (senses.Count == 0)
+        {
+            return;
+        }
+
+        cancellationToken.ThrowIfCancellationRequested();
+        SensesContainer.Children.Add(BuildSenseView(senses[0]));
+
+        if (senses.Count == 1)
+        {
+            return;
+        }
+
+        for (int index = 1; index < senses.Count; index += DeferredSenseBatchSize)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            await Task.Yield();
+            cancellationToken.ThrowIfCancellationRequested();
+
+            int batchEnd = Math.Min(index + DeferredSenseBatchSize, senses.Count);
+            for (int batchIndex = index; batchIndex < batchEnd; batchIndex++)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                SensesContainer.Children.Add(BuildSenseView(senses[batchIndex]));
+            }
+        }
     }
 
     /// <summary>
