@@ -287,38 +287,38 @@ internal sealed class WordEntryRepository : IWordEntryRepository
 
         string prefixPattern = $"{normalizedLemmaQuery}%";
         string containsPattern = $"%{normalizedLemmaQuery}%";
-
-        List<WordBrowseProjection> words = await dbContext.WordEntries
+        IQueryable<WordEntry> activeWords = dbContext.WordEntries
             .AsNoTracking()
-            .Where(word => word.PublicationStatus == PublicationStatus.Active)
-            .Where(word =>
-                EF.Functions.Like(word.NormalizedLemma, prefixPattern) ||
-                EF.Functions.Like(word.NormalizedLemma, containsPattern))
-            .OrderByDescending(word => EF.Functions.Like(word.NormalizedLemma, prefixPattern))
-            .ThenBy(word => word.NormalizedLemma)
-            .Select(word => new WordBrowseProjection(
-                word.PublicId,
-                word.Lemma,
-                word.Article,
-                word.PluralForm,
-                word.PartOfSpeech,
-                word.PrimaryCefrLevel,
-                word.NormalizedLemma,
-                word.Senses
-                    .Where(sense => sense.IsPrimarySense)
-                    .SelectMany(sense => sense.Translations
-                        .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
-                        .OrderByDescending(translation => translation.IsPrimary)
-                        .ThenBy(translation => translation.TranslationText)
-                        .Select(translation => translation.TranslationText)
-                        .Take(1))
-                    .FirstOrDefault(),
-                EF.Functions.Like(word.NormalizedLemma, prefixPattern)))
+            .Where(word => word.PublicationStatus == PublicationStatus.Active);
+
+        List<WordBrowseProjection> prefixMatches = await activeWords
+            .Where(word => EF.Functions.Like(word.NormalizedLemma, prefixPattern))
+            .OrderBy(word => word.NormalizedLemma)
+            .Select(word => CreateBrowseProjection(word, resolvedMeaningLanguageCode, true))
             .Take(SearchResultLimit)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return words
+        if (prefixMatches.Count >= SearchResultLimit)
+        {
+            return prefixMatches
+                .Select(MapToBrowseModel)
+                .ToArray();
+        }
+
+        int remainingCount = SearchResultLimit - prefixMatches.Count;
+
+        List<WordBrowseProjection> containsMatches = await activeWords
+            .Where(word => !EF.Functions.Like(word.NormalizedLemma, prefixPattern))
+            .Where(word => EF.Functions.Like(word.NormalizedLemma, containsPattern))
+            .OrderBy(word => word.NormalizedLemma)
+            .Select(word => CreateBrowseProjection(word, resolvedMeaningLanguageCode, false))
+            .Take(remainingCount)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return prefixMatches
+            .Concat(containsMatches)
             .Select(MapToBrowseModel)
             .ToArray();
     }
@@ -358,6 +358,31 @@ internal sealed class WordEntryRepository : IWordEntryRepository
         string NormalizedLemma,
         string? PrimaryMeaning,
         bool IsPrefixMatch);
+
+    private static WordBrowseProjection CreateBrowseProjection(
+        WordEntry word,
+        LanguageCode resolvedMeaningLanguageCode,
+        bool isPrefixMatch)
+    {
+        return new WordBrowseProjection(
+            word.PublicId,
+            word.Lemma,
+            word.Article,
+            word.PluralForm,
+            word.PartOfSpeech,
+            word.PrimaryCefrLevel,
+            word.NormalizedLemma,
+            word.Senses
+                .Where(sense => sense.IsPrimarySense)
+                .SelectMany(sense => sense.Translations
+                    .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
+                    .OrderByDescending(translation => translation.IsPrimary)
+                    .ThenBy(translation => translation.TranslationText)
+                    .Select(translation => translation.TranslationText)
+                    .Take(1))
+                .FirstOrDefault(),
+            isPrefixMatch);
+    }
 
     private static WordListItemModel MapToBrowseModel(WordBrowseProjection word)
     {
