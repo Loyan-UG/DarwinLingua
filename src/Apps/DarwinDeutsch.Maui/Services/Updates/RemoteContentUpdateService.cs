@@ -215,10 +215,10 @@ internal sealed class RemoteContentUpdateService(
 
         try
         {
-            Stopwatch manifestStopwatch = Stopwatch.StartNew();
-            RemoteContentManifestModel? manifest = await GetManifestAsync(scope.BuildManifestUri(options), cancellationToken).ConfigureAwait(false);
-            manifestStopwatch.Stop();
-            performanceTelemetryService.Record($"remote-update.apply.manifest:{scope.ScopeKey}", manifestStopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
+            RemoteContentManifestModel? manifest = await ExecuteTimedPhaseAsync(
+                $"remote-update.apply.manifest:{scope.ScopeKey}",
+                () => GetManifestAsync(scope.BuildManifestUri(options), cancellationToken),
+                cancellationToken).ConfigureAwait(false);
 
             RemoteContentPackageModel remotePackage = SelectLatestPackage(manifest, scope)
                 ?? throw new InvalidOperationException("The remote manifest does not contain a compatible package for this update scope.");
@@ -241,25 +241,28 @@ internal sealed class RemoteContentUpdateService(
             string tempDatabasePath = Path.Combine(tempDirectory, "remote-update.db");
             Directory.CreateDirectory(tempDirectory);
 
-            Stopwatch downloadStopwatch = Stopwatch.StartNew();
-            await DownloadPackageAsync(scope, remotePackage.PackageId, tempJsonPath, cancellationToken).ConfigureAwait(false);
-            downloadStopwatch.Stop();
-            performanceTelemetryService.Record($"remote-update.apply.download:{scope.ScopeKey}", downloadStopwatch.Elapsed, PerformanceTelemetryOutcome.Success, remotePackage.WordCount);
+            await ExecuteTimedPhaseAsync(
+                $"remote-update.apply.download:{scope.ScopeKey}",
+                () => DownloadPackageAsync(scope, remotePackage.PackageId, tempJsonPath, cancellationToken),
+                cancellationToken,
+                remotePackage.WordCount).ConfigureAwait(false);
 
-            Stopwatch importStopwatch = Stopwatch.StartNew();
-            await ImportIntoTemporaryDatabaseAsync(tempJsonPath, tempDatabasePath, cancellationToken).ConfigureAwait(false);
-            importStopwatch.Stop();
-            performanceTelemetryService.Record($"remote-update.apply.temp-import:{scope.ScopeKey}", importStopwatch.Elapsed, PerformanceTelemetryOutcome.Success, remotePackage.WordCount);
+            await ExecuteTimedPhaseAsync(
+                $"remote-update.apply.temp-import:{scope.ScopeKey}",
+                () => ImportIntoTemporaryDatabaseAsync(tempJsonPath, tempDatabasePath, cancellationToken),
+                cancellationToken,
+                remotePackage.WordCount).ConfigureAwait(false);
 
-            Stopwatch replaceStopwatch = Stopwatch.StartNew();
-            await (scope.ReplaceMode switch
-            {
-                ReplaceMode.FullDatabase => ReplaceAllContentTablesAsync(databasePath, tempDatabasePath, cancellationToken),
-                ReplaceMode.CefrLevel => ReplaceCefrLevelContentAsync(databasePath, tempDatabasePath, scope.CefrLevel, cancellationToken),
-                _ => throw new InvalidOperationException($"The update scope '{scope.ScopeKey}' is not supported.")
-            }).ConfigureAwait(false);
-            replaceStopwatch.Stop();
-            performanceTelemetryService.Record($"remote-update.apply.replace:{scope.ScopeKey}", replaceStopwatch.Elapsed, PerformanceTelemetryOutcome.Success, remotePackage.WordCount);
+            await ExecuteTimedPhaseAsync(
+                $"remote-update.apply.replace:{scope.ScopeKey}",
+                () => scope.ReplaceMode switch
+                {
+                    ReplaceMode.FullDatabase => ReplaceAllContentTablesAsync(databasePath, tempDatabasePath, cancellationToken),
+                    ReplaceMode.CefrLevel => ReplaceCefrLevelContentAsync(databasePath, tempDatabasePath, scope.CefrLevel, cancellationToken),
+                    _ => throw new InvalidOperationException($"The update scope '{scope.ScopeKey}' is not supported.")
+                },
+                cancellationToken,
+                remotePackage.WordCount).ConfigureAwait(false);
 
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistScopeReceipts(scope, manifest, remotePackage, appliedAtUtc);
@@ -308,6 +311,57 @@ internal sealed class RemoteContentUpdateService(
     }
 
     private bool IsConfigured() => !string.IsNullOrWhiteSpace(options.BaseUrl);
+
+    private async Task ExecuteTimedPhaseAsync(
+        string operationKey,
+        Func<Task> operation,
+        CancellationToken cancellationToken,
+        int itemCount = 0)
+    {
+        Stopwatch stopwatch = Stopwatch.StartNew();
+
+        try
+        {
+            await operation().ConfigureAwait(false);
+            performanceTelemetryService.Record(operationKey, stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, itemCount);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            performanceTelemetryService.Record(operationKey, stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled, itemCount);
+            throw;
+        }
+        catch
+        {
+            performanceTelemetryService.Record(operationKey, stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed, itemCount);
+            throw;
+        }
+    }
+
+    private async Task<T> ExecuteTimedPhaseAsync<T>(
+        string operationKey,
+        Func<Task<T>> operation,
+        CancellationToken cancellationToken,
+        int itemCount = 0)
+    {
+        Stopwatch stopwatch = Stopwatch.StartNew();
+
+        try
+        {
+            T result = await operation().ConfigureAwait(false);
+            performanceTelemetryService.Record(operationKey, stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, itemCount);
+            return result;
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            performanceTelemetryService.Record(operationKey, stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled, itemCount);
+            throw;
+        }
+        catch
+        {
+            performanceTelemetryService.Record(operationKey, stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed, itemCount);
+            throw;
+        }
+    }
 
     private async Task<RemoteContentManifestModel?> GetManifestAsync(string requestUri, CancellationToken cancellationToken)
     {
