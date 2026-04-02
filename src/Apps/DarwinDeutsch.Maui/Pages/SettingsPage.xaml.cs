@@ -317,6 +317,12 @@ public partial class SettingsPage : ContentPage
         ApplyCatalogAreaUpdateButton.IsEnabled = catalogAreaUpdateStatus.IsRemoteConfigured && catalogAreaUpdateStatus.IsServerReachable && catalogAreaUpdateStatus.IsUpdateAvailable && !_isApplyingRemoteUpdate;
         ApplyCatalogAreaUpdateButton.Text = BuildRemoteScopeButtonText(catalogAreaUpdateStatus, AppStrings.SettingsRemoteCatalogAreaTitle);
 
+        if (!catalogAreaUpdateStatus.IsRemoteConfigured || !catalogAreaUpdateStatus.IsServerReachable)
+        {
+            ApplyUnavailableCefrUpdateSections(catalogAreaUpdateStatus);
+            return;
+        }
+
         await Task.Yield();
         cancellationToken.ThrowIfCancellationRequested();
 
@@ -327,6 +333,25 @@ public partial class SettingsPage : ContentPage
         BindCefrUpdateSection(CefrB2UpdateSectionView, ApplyCefrB2UpdateButton, "B2", cefrUpdateStatuses["B2"]);
         BindCefrUpdateSection(CefrC1UpdateSectionView, ApplyCefrC1UpdateButton, "C1", cefrUpdateStatuses["C1"]);
         BindCefrUpdateSection(CefrC2UpdateSectionView, ApplyCefrC2UpdateButton, "C2", cefrUpdateStatuses["C2"]);
+    }
+
+    private void ApplyUnavailableCefrUpdateSections(RemoteContentUpdateStatus baseStatus)
+    {
+        RemoteContentUpdateStatus unavailableStatus = baseStatus with
+        {
+            ScopeKey = "catalog-cefr-unavailable",
+            SliceKey = string.Empty,
+            PackageType = "catalog-cefr",
+            IsUpdateAvailable = false,
+            PendingWordCount = 0,
+        };
+
+        BindCefrUpdateSection(CefrA1UpdateSectionView, ApplyCefrA1UpdateButton, "A1", unavailableStatus);
+        BindCefrUpdateSection(CefrA2UpdateSectionView, ApplyCefrA2UpdateButton, "A2", unavailableStatus);
+        BindCefrUpdateSection(CefrB1UpdateSectionView, ApplyCefrB1UpdateButton, "B1", unavailableStatus);
+        BindCefrUpdateSection(CefrB2UpdateSectionView, ApplyCefrB2UpdateButton, "B2", unavailableStatus);
+        BindCefrUpdateSection(CefrC1UpdateSectionView, ApplyCefrC1UpdateButton, "C1", unavailableStatus);
+        BindCefrUpdateSection(CefrC2UpdateSectionView, ApplyCefrC2UpdateButton, "C2", unavailableStatus);
     }
 
     private async void OnApplyRemoteUpdateButtonClicked(object? sender, EventArgs e)
