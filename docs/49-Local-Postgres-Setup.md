@@ -22,7 +22,7 @@ You need:
 - Docker Desktop installed and running
 - WSL 2 enabled
 - port `5432` free on your machine
-- port `8080` free if you also start pgAdmin
+- port `5050` free if you also start pgAdmin
 
 Recommended:
 
@@ -53,7 +53,7 @@ The provided templates assume:
 - app user: `darwinlingua_app`
 - migrations/import user: `darwinlingua_admin`
 - PostgreSQL exposed on `localhost:5432`
-- pgAdmin exposed on `localhost:8080`
+- pgAdmin exposed on `localhost:5050`
 
 These defaults are fine for local development.
 
@@ -102,19 +102,112 @@ You can verify PostgreSQL with:
 docker exec -it darwinlingua-postgres psql -U postgres -d darwinlingua_shared -c "\dt"
 ```
 
-Or open pgAdmin:
+You can also verify it with pgAdmin.
 
-- URL: `http://localhost:8080`
-- login with the values from `.env`
+### 5.1 Option A: Use the pgAdmin Container From Docker Compose
 
-Then register the PostgreSQL server with:
+This project already starts a **pgAdmin container** for you.
 
-- host: `postgres`
-- port: `5432`
-- username: `postgres`
-- password: the `DARWINLINGUA_POSTGRES_SUPER_PASSWORD` value from `.env`
+Open:
+
+- URL: `http://localhost:5050`
+
+Log in with:
+
+- email: the `DARWINLINGUA_PGADMIN_EMAIL` value from `.env`
+- password: the `DARWINLINGUA_PGADMIN_PASSWORD` value from `.env`
+
+After login, click:
+
+- `Add New Server`
+
+In the **General** tab:
+
+- Name: `DarwinLingua Local Postgres`
+
+In the **Connection** tab use:
+
+- Host name/address: `postgres`
+- Port: `5432`
+- Maintenance database: `postgres`
+- Username: `postgres`
+- Password: the `DARWINLINGUA_POSTGRES_SUPER_PASSWORD` value from `.env`
+
+Then save.
 
 Use `postgres` as the host inside pgAdmin because it runs inside the same Docker network.
+
+### 5.2 Option B: Use pgAdmin Installed on Windows
+
+If you are using **pgAdmin installed directly on Windows** instead of the Docker pgAdmin container, then `postgres` will usually **not** resolve.
+
+In that case, click:
+
+- `Add New Server`
+
+In the **General** tab:
+
+- Name: `DarwinLingua Local Postgres`
+
+In the **Connection** tab use:
+
+- Host name/address: `localhost`
+  or `127.0.0.1`
+- Port: `5432`
+- Maintenance database: `postgres`
+- Username: `postgres`
+- Password: the `DARWINLINGUA_POSTGRES_SUPER_PASSWORD` value from `.env`
+
+Then save.
+
+### 5.3 Which Host Value Should You Use?
+
+Use:
+
+- `postgres` only when you are using the **pgAdmin container** opened through `http://localhost:5050`
+- `localhost` or `127.0.0.1` when you are using **pgAdmin installed on Windows**
+
+If you see an error like:
+
+```text
+failed to resolve host 'postgres': [Errno -2] Name does not resolve
+```
+
+that usually means you are **not** using the pgAdmin container from Docker Compose, or that the pgAdmin container is not running.
+
+### 5.4 Quick Checks if Connection Fails
+
+First confirm that both containers are running:
+
+```powershell
+docker compose --env-file tools/Server/Postgres/.env -f tools/Server/Postgres/docker-compose.yml ps
+```
+
+You should see at least:
+
+- `darwinlingua-postgres`
+- `darwinlingua-pgadmin`
+
+Then verify PostgreSQL itself is reachable:
+
+```powershell
+docker exec -it darwinlingua-postgres psql -U postgres -d postgres -c "SELECT version();"
+```
+
+If that works, PostgreSQL is fine and the problem is usually just the **host name used in pgAdmin**.
+
+### 5.5 Recommended Choice
+
+For this repository, the easiest setup is:
+
+1. run the provided Docker Compose
+2. open pgAdmin at `http://localhost:5050`
+3. click `Add New Server`
+4. use `postgres` as the host
+
+If you prefer your own pgAdmin installation on Windows, use:
+
+- host: `localhost`
 
 ---
 
