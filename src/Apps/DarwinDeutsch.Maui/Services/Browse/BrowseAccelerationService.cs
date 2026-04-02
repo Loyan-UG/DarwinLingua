@@ -76,35 +76,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
             warmupCancellationSource = _warmupCancellationSource;
         }
 
-        _ = Task.Run(async () =>
-        {
-            try
-            {
-                await Task.Delay(InitialWarmupDelay, warmupCancellationSource.Token).ConfigureAwait(false);
-                await RunWarmupAsync(prioritizeEssentialSlicesOnly: true, warmupCancellationSource.Token).ConfigureAwait(false);
-                await Task.Delay(ExtendedWarmupDelay, warmupCancellationSource.Token).ConfigureAwait(false);
-                await RunWarmupAsync(prioritizeEssentialSlicesOnly: false, warmupCancellationSource.Token).ConfigureAwait(false);
-            }
-            catch (OperationCanceledException) when (warmupCancellationSource.IsCancellationRequested)
-            {
-                _logger.LogDebug("Browse warm-up was cancelled.");
-            }
-            catch (Exception exception)
-            {
-                _logger.LogDebug(exception, "Browse warm-up failed.");
-            }
-            finally
-            {
-                lock (_warmupStateLock)
-                {
-                    if (ReferenceEquals(_warmupCancellationSource, warmupCancellationSource))
-                    {
-                        _warmupCancellationSource.Dispose();
-                        _warmupCancellationSource = null;
-                    }
-                }
-            }
-        });
+        _ = RunScheduledWarmupAsync(warmupCancellationSource);
     }
 
     /// <inheritdoc />
@@ -121,6 +93,36 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         _wordDetailCacheService.ResetCache();
         _wordSearchCacheService.ResetCache();
         Interlocked.Exchange(ref _warmupScheduled, 0);
+    }
+
+    private async Task RunScheduledWarmupAsync(CancellationTokenSource warmupCancellationSource)
+    {
+        try
+        {
+            await Task.Delay(InitialWarmupDelay, warmupCancellationSource.Token).ConfigureAwait(false);
+            await RunWarmupAsync(prioritizeEssentialSlicesOnly: true, warmupCancellationSource.Token).ConfigureAwait(false);
+            await Task.Delay(ExtendedWarmupDelay, warmupCancellationSource.Token).ConfigureAwait(false);
+            await RunWarmupAsync(prioritizeEssentialSlicesOnly: false, warmupCancellationSource.Token).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (warmupCancellationSource.IsCancellationRequested)
+        {
+            _logger.LogDebug("Browse warm-up was cancelled.");
+        }
+        catch (Exception exception)
+        {
+            _logger.LogDebug(exception, "Browse warm-up failed.");
+        }
+        finally
+        {
+            lock (_warmupStateLock)
+            {
+                if (ReferenceEquals(_warmupCancellationSource, warmupCancellationSource))
+                {
+                    _warmupCancellationSource.Dispose();
+                    _warmupCancellationSource = null;
+                }
+            }
+        }
     }
 
     private async Task RunWarmupAsync(bool prioritizeEssentialSlicesOnly, CancellationToken cancellationToken)

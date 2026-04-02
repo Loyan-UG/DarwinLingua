@@ -350,27 +350,29 @@ public partial class SearchWordsPage : ContentPage
             return;
         }
 
-        _ = Task.Run(async () =>
+        _ = PrefetchResultsAsync(prefetchCandidates, profile);
+    }
+
+    private async Task PrefetchResultsAsync(IReadOnlyList<WordListItemModel> prefetchCandidates, UserLearningProfileModel profile)
+    {
+        foreach (WordListItemModel candidate in prefetchCandidates)
         {
-            foreach (WordListItemModel candidate in prefetchCandidates)
+            try
             {
-                try
-                {
-                    await _wordDetailCacheService
-                        .PrefetchWordDetailsAsync(
-                            candidate.PublicId,
-                            profile.PreferredMeaningLanguage1,
-                            profile.PreferredMeaningLanguage2,
-                            profile.UiLanguageCode,
-                            CancellationToken.None)
-                        .ConfigureAwait(false);
-                }
-                catch (Exception exception)
-                {
-                    _logger.LogDebug(exception, "Search result prefetch failed for word {WordPublicId}.", candidate.PublicId);
-                }
+                await _wordDetailCacheService
+                    .PrefetchWordDetailsAsync(
+                        candidate.PublicId,
+                        profile.PreferredMeaningLanguage1,
+                        profile.PreferredMeaningLanguage2,
+                        profile.UiLanguageCode,
+                        CancellationToken.None)
+                    .ConfigureAwait(false);
             }
-        });
+            catch (Exception exception)
+            {
+                _logger.LogDebug(exception, "Search result prefetch failed for word {WordPublicId}.", candidate.PublicId);
+            }
+        }
     }
 
     /// <summary>

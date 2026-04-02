@@ -283,11 +283,22 @@ public partial class TopicWordsPage : ContentPage
             return;
         }
 
-        _ = Task.Run(() => _topicBrowseStateService.GetWordsPageAsync(
+        _ = PrefetchNextPageAsync();
+    }
+
+    private async Task PrefetchNextPageAsync()
+    {
+        try
+        {
+            await _topicBrowseStateService.GetWordsPageAsync(
             TopicKey,
             _loadedWordCount,
             PageSize,
-            CancellationToken.None));
+            CancellationToken.None).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private void SetLoadingState(bool isLoading)
