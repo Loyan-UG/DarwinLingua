@@ -88,7 +88,14 @@ public partial class SearchWordsPage : ContentPage
     private async void OnSearchButtonPressed(object? sender, EventArgs e)
     {
         CancelDebounceRequest();
-        await SearchAsync().ConfigureAwait(true);
+
+        try
+        {
+            await SearchAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -104,8 +111,15 @@ public partial class SearchWordsPage : ContentPage
         WordsCollectionView.SelectedItem = null;
 
         string wordPublicId = Uri.EscapeDataString(selectedWord.PublicId.ToString());
-        await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
-            .ConfigureAwait(true);
+
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -218,26 +232,27 @@ public partial class SearchWordsPage : ContentPage
 
         _debounceCancellationTokenSource = new CancellationTokenSource();
         CancellationToken cancellationToken = _debounceCancellationTokenSource.Token;
+        _ = RunDebouncedSearchAsync(cancellationToken);
+    }
 
-        _ = Task.Run(async () =>
+    private async Task RunDebouncedSearchAsync(CancellationToken cancellationToken)
+    {
+        try
         {
-            try
+            await Task.Delay(SearchDebounceDelay, cancellationToken).ConfigureAwait(false);
+            await MainThread.InvokeOnMainThreadAsync(async () =>
             {
-                await Task.Delay(SearchDebounceDelay, cancellationToken).ConfigureAwait(false);
-                await MainThread.InvokeOnMainThreadAsync(async () =>
+                if (cancellationToken.IsCancellationRequested)
                 {
-                    if (cancellationToken.IsCancellationRequested)
-                    {
-                        return;
-                    }
+                    return;
+                }
 
-                    await SearchAsync().ConfigureAwait(true);
-                }).ConfigureAwait(false);
-            }
-            catch (OperationCanceledException)
-            {
-            }
-        }, cancellationToken);
+                await SearchAsync().ConfigureAwait(true);
+            }).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
