@@ -44,6 +44,10 @@ public partial class WordDetailPage : ContentPage
     private CancellationTokenSource? _speechCancellationTokenSource;
     private CancellationTokenSource? _refreshCancellationTokenSource;
     private Guid? _lastTrackedWordPublicId;
+    private Guid? _loadedWordPublicId;
+    private string _loadedPrimaryMeaningLanguageCode = string.Empty;
+    private string _loadedSecondaryMeaningLanguageCode = string.Empty;
+    private string _loadedUiLanguageCode = string.Empty;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordDetailPage"/> class.
@@ -156,29 +160,6 @@ public partial class WordDetailPage : ContentPage
         ShowWordListButtonBottom.Text = AppStrings.WordDetailWordListButton;
         NextWordButtonTop.Text = AppStrings.WordDetailNextWordButton;
         NextWordButtonBottom.Text = AppStrings.WordDetailNextWordButton;
-        SensesContainer.Children.Clear();
-        UsageLabelsFlexLayout.Children.Clear();
-        ContextLabelsFlexLayout.Children.Clear();
-        GrammarNotesStackLayout.Children.Clear();
-        CollocationsStackLayout.Children.Clear();
-        WordFamiliesStackLayout.Children.Clear();
-        SynonymsStackLayout.Children.Clear();
-        AntonymsStackLayout.Children.Clear();
-        UsageLabelsBorder.IsVisible = false;
-        ContextLabelsBorder.IsVisible = false;
-        GrammarNotesBorder.IsVisible = false;
-        CollocationsBorder.IsVisible = false;
-        WordFamiliesBorder.IsVisible = false;
-        LexicalRelationsBorder.IsVisible = false;
-        SynonymsSectionStackLayout.IsVisible = false;
-        AntonymsSectionStackLayout.IsVisible = false;
-        SpeakWordButton.IsVisible = false;
-        FavoriteButton.IsVisible = false;
-        KnownButton.IsVisible = false;
-        DifficultButton.IsVisible = false;
-        CefrNavigationTopGrid.IsVisible = false;
-        CefrNavigationBottomGrid.IsVisible = false;
-        LearningStateSectionView.SectionValue = string.Empty;
         ClearAudioStatus();
 
         if (!Guid.TryParse(WordPublicId, out Guid publicId))
@@ -191,6 +172,21 @@ public partial class WordDetailPage : ContentPage
         UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(true);
+
+        if (IsLoadedDetailContext(publicId, profile))
+        {
+            await RefreshInteractiveStateAsync(publicId, cancellationToken).ConfigureAwait(true);
+            await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
+
+            if (!string.IsNullOrWhiteSpace(CefrLevel))
+            {
+                _ = Task.Run(() => _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None));
+            }
+
+            ScheduleWordDetailPrefetch(profile);
+            _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
+            return;
+        }
 
         WordDetailModel? word = await _wordDetailCacheService
             .GetWordDetailsAsync(
@@ -208,30 +204,19 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        Task<bool> favoriteTask = _userFavoriteWordService
-            .IsFavoriteAsync(publicId, cancellationToken);
-        Task<UserWordStateModel?> userWordStateTask = _lastTrackedWordPublicId == publicId
-            ? _userWordStateService.GetWordStateAsync(publicId, cancellationToken)
-            : TrackWordViewedAsync(publicId, cancellationToken);
-
-        await Task.WhenAll(favoriteTask, userWordStateTask).ConfigureAwait(true);
-
-        _isFavorite = favoriteTask.Result;
-        _userWordState = userWordStateTask.Result;
-        _lastTrackedWordPublicId = publicId;
+        PrepareForWordRender();
+        await RefreshInteractiveStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
         Title = BuildHeadline(word);
         HeadlineLabel.Text = BuildHeadline(word);
         ConfigureSpeakWordButton();
         SpeakWordButton.IsVisible = true;
         MetadataLabel.Text = LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel);
-        ApplyFavoriteButtonState();
-        FavoriteButton.IsVisible = true;
-        ApplyUserWordState();
         TopicsSectionView.SectionValue = word.Topics.Count == 0
             ? AppStrings.WordDetailNoTopics
             : string.Join(", ", word.Topics);
         EmptyStateLabel.IsVisible = false;
+        RememberLoadedDetailContext(publicId, profile);
 
         await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
@@ -294,6 +279,7 @@ public partial class WordDetailPage : ContentPage
         TopicsSectionView.SectionValue = string.Empty;
         ClearAudioStatus();
         EmptyStateLabel.IsVisible = true;
+        ClearLoadedDetailContext();
     }
 
     /// <summary>
@@ -983,6 +969,24 @@ public partial class WordDetailPage : ContentPage
         return userWordState;
     }
 
+    private async Task RefreshInteractiveStateAsync(Guid publicId, CancellationToken cancellationToken)
+    {
+        Task<bool> favoriteTask = _userFavoriteWordService
+            .IsFavoriteAsync(publicId, cancellationToken);
+        Task<UserWordStateModel?> userWordStateTask = _lastTrackedWordPublicId == publicId
+            ? _userWordStateService.GetWordStateAsync(publicId, cancellationToken)
+            : TrackWordViewedAsync(publicId, cancellationToken);
+
+        await Task.WhenAll(favoriteTask, userWordStateTask).ConfigureAwait(true);
+
+        _isFavorite = favoriteTask.Result;
+        _userWordState = userWordStateTask.Result;
+        _lastTrackedWordPublicId = publicId;
+        ApplyFavoriteButtonState();
+        FavoriteButton.IsVisible = true;
+        ApplyUserWordState();
+    }
+
     private void ScheduleWordDetailPrefetch(UserLearningProfileModel profile)
     {
         if (_cefrBrowseNavigationState is null)
@@ -1016,6 +1020,58 @@ public partial class WordDetailPage : ContentPage
                 }
             });
         }
+    }
+
+    private bool IsLoadedDetailContext(Guid publicId, UserLearningProfileModel profile)
+    {
+        return _loadedWordPublicId == publicId &&
+               string.Equals(_loadedPrimaryMeaningLanguageCode, profile.PreferredMeaningLanguage1, StringComparison.OrdinalIgnoreCase) &&
+               string.Equals(_loadedSecondaryMeaningLanguageCode, profile.PreferredMeaningLanguage2 ?? string.Empty, StringComparison.OrdinalIgnoreCase) &&
+               string.Equals(_loadedUiLanguageCode, profile.UiLanguageCode, StringComparison.OrdinalIgnoreCase) &&
+               !EmptyStateLabel.IsVisible;
+    }
+
+    private void RememberLoadedDetailContext(Guid publicId, UserLearningProfileModel profile)
+    {
+        _loadedWordPublicId = publicId;
+        _loadedPrimaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
+        _loadedSecondaryMeaningLanguageCode = profile.PreferredMeaningLanguage2 ?? string.Empty;
+        _loadedUiLanguageCode = profile.UiLanguageCode;
+    }
+
+    private void ClearLoadedDetailContext()
+    {
+        _loadedWordPublicId = null;
+        _loadedPrimaryMeaningLanguageCode = string.Empty;
+        _loadedSecondaryMeaningLanguageCode = string.Empty;
+        _loadedUiLanguageCode = string.Empty;
+    }
+
+    private void PrepareForWordRender()
+    {
+        SensesContainer.Children.Clear();
+        UsageLabelsFlexLayout.Children.Clear();
+        ContextLabelsFlexLayout.Children.Clear();
+        GrammarNotesStackLayout.Children.Clear();
+        CollocationsStackLayout.Children.Clear();
+        WordFamiliesStackLayout.Children.Clear();
+        SynonymsStackLayout.Children.Clear();
+        AntonymsStackLayout.Children.Clear();
+        UsageLabelsBorder.IsVisible = false;
+        ContextLabelsBorder.IsVisible = false;
+        GrammarNotesBorder.IsVisible = false;
+        CollocationsBorder.IsVisible = false;
+        WordFamiliesBorder.IsVisible = false;
+        LexicalRelationsBorder.IsVisible = false;
+        SynonymsSectionStackLayout.IsVisible = false;
+        AntonymsSectionStackLayout.IsVisible = false;
+        SpeakWordButton.IsVisible = false;
+        FavoriteButton.IsVisible = false;
+        KnownButton.IsVisible = false;
+        DifficultButton.IsVisible = false;
+        CefrNavigationTopGrid.IsVisible = false;
+        CefrNavigationBottomGrid.IsVisible = false;
+        LearningStateSectionView.SectionValue = string.Empty;
     }
 
     private void ResetRefreshRequest()
