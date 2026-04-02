@@ -22,6 +22,17 @@ internal sealed class ActiveLearningProfileCacheService : IActiveLearningProfile
     }
 
     /// <inheritdoc />
+    public async Task<UserLearningProfileModel> EnsureLocalProfileExistsAsync(string requestedUiLanguageCode, CancellationToken cancellationToken)
+    {
+        UserLearningProfileModel profile = await _userLearningProfileService
+            .EnsureLocalProfileExistsAsync(requestedUiLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
+
+        _cachedProfile = profile;
+        return profile;
+    }
+
+    /// <inheritdoc />
     public async Task<UserLearningProfileModel> GetCurrentProfileAsync(CancellationToken cancellationToken)
     {
         if (_cachedProfile is not null)

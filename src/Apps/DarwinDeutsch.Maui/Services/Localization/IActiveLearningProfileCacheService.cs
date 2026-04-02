@@ -8,6 +8,11 @@ namespace DarwinDeutsch.Maui.Services.Localization;
 public interface IActiveLearningProfileCacheService
 {
     /// <summary>
+    /// Ensures a local learning profile exists and refreshes the session cache.
+    /// </summary>
+    Task<UserLearningProfileModel> EnsureLocalProfileExistsAsync(string requestedUiLanguageCode, CancellationToken cancellationToken);
+
+    /// <summary>
     /// Returns the current learning profile, using session cache when available.
     /// </summary>
     Task<UserLearningProfileModel> GetCurrentProfileAsync(CancellationToken cancellationToken);

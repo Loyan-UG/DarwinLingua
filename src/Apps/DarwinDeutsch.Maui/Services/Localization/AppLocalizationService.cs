@@ -1,6 +1,5 @@
 using System.Globalization;
 using DarwinDeutsch.Maui.Resources.Strings;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 
 namespace DarwinDeutsch.Maui.Services.Localization;
@@ -11,17 +10,17 @@ namespace DarwinDeutsch.Maui.Services.Localization;
 internal sealed class AppLocalizationService : IAppLocalizationService
 {
     private static readonly string[] SupportedCultureNames = ["en", "de"];
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AppLocalizationService"/> class.
     /// </summary>
-    /// <param name="userLearningProfileService">The learning profile service used to persist UI language selection.</param>
-    public AppLocalizationService(IUserLearningProfileService userLearningProfileService)
+    /// <param name="activeLearningProfileCacheService">The cache-aware learning profile service used to persist UI language selection.</param>
+    public AppLocalizationService(IActiveLearningProfileCacheService activeLearningProfileCacheService)
     {
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
 
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
     }
 
     /// <inheritdoc />
@@ -44,7 +43,7 @@ internal sealed class AppLocalizationService : IAppLocalizationService
     public async Task InitializeAsync(CancellationToken cancellationToken)
     {
         string requestedCultureName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .EnsureLocalProfileExistsAsync(requestedCultureName, cancellationToken)
             .ConfigureAwait(false);
         CultureInfo selectedCulture = ResolveSupportedCulture(new CultureInfo(profile.UiLanguageCode));
@@ -58,7 +57,7 @@ internal sealed class AppLocalizationService : IAppLocalizationService
         ArgumentException.ThrowIfNullOrWhiteSpace(cultureName);
 
         CultureInfo selectedCulture = ResolveSupportedCulture(new CultureInfo(cultureName));
-        await _userLearningProfileService
+        await _activeLearningProfileCacheService
             .UpdateUiLanguagePreferenceAsync(selectedCulture.TwoLetterISOLanguageName, cancellationToken)
             .ConfigureAwait(false);
 
