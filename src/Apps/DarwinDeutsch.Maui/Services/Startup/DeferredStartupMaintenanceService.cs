@@ -58,7 +58,6 @@ internal sealed class DeferredStartupMaintenanceService : IDeferredStartupMainte
         }
 
         Stopwatch stopwatch = Stopwatch.StartNew();
-
         try
         {
             await Task.Delay(InitialDelay).ConfigureAwait(false);
@@ -87,8 +86,6 @@ internal sealed class DeferredStartupMaintenanceService : IDeferredStartupMainte
                     seedUpdateResult.ImportedWords,
                     stopwatch.ElapsedMilliseconds);
             }
-
-            _browseAccelerationService.ScheduleInitialWarmup();
             _performanceTelemetryService.Record(
                 "startup.maintenance",
                 stopwatch.Elapsed,
@@ -102,6 +99,7 @@ internal sealed class DeferredStartupMaintenanceService : IDeferredStartupMainte
         }
         finally
         {
+            _browseAccelerationService.ScheduleInitialWarmup();
             _gate.Release();
         }
     }

@@ -81,7 +81,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("AddSingleton<StartupPage>()", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ICefrBrowseStateService", mauiProgramSource, StringComparison.Ordinal);
-        Assert.Contains("Task.Run", startupInitializationServiceSource, StringComparison.Ordinal);
+        Assert.Contains("InitializeCoreAsync(cancellationToken)", startupInitializationServiceSource, StringComparison.Ordinal);
         Assert.Contains("EnsureSeedDatabaseAsync", startupInitializationServiceSource, StringComparison.Ordinal);
         Assert.Contains("InitializeAsync", startupInitializationServiceSource, StringComparison.Ordinal);
         Assert.DoesNotContain("ApplySeedUpdateAsync", startupInitializationServiceSource, StringComparison.Ordinal);

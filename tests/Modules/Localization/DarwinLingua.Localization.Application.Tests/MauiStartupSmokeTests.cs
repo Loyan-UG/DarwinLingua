@@ -38,7 +38,7 @@ public sealed class MauiStartupSmokeTests
         Assert.Contains("_databaseInitializer.InitializeAsync(cancellationToken)", startupServiceSource, StringComparison.Ordinal);
         Assert.Contains("IAppLocalizationService", startupServiceSource, StringComparison.Ordinal);
         Assert.Contains("_appLocalizationService.InitializeAsync(cancellationToken)", startupServiceSource, StringComparison.Ordinal);
-        Assert.Contains("Task.Run", startupServiceSource, StringComparison.Ordinal);
+        Assert.Contains("InitializeCoreAsync(cancellationToken)", startupServiceSource, StringComparison.Ordinal);
         Assert.Contains("ScheduleInitialCheck", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
         Assert.Contains("ScheduleResumeCheck", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
         Assert.Contains("ApplyFullUpdateAsync", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);

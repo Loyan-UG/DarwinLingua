@@ -60,10 +60,7 @@ internal sealed class AppStartupInitializationService : IAppStartupInitializatio
                 return AppStartupInitializationResult.Success;
             }
 
-            return await Task.Run(
-                    async () => await InitializeCoreAsync(cancellationToken).ConfigureAwait(false),
-                    cancellationToken)
-                .ConfigureAwait(false);
+            return await InitializeCoreAsync(cancellationToken).ConfigureAwait(false);
         }
         finally
         {
