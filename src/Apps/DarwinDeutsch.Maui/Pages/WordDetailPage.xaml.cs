@@ -8,6 +8,7 @@ using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
@@ -34,6 +35,7 @@ public partial class WordDetailPage : ContentPage
     private readonly IUserWordStateService _userWordStateService;
     private readonly ISpeechPlaybackService _speechPlaybackService;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
+    private readonly ILogger<WordDetailPage> _logger;
     private string _wordPublicId = string.Empty;
     private string _cefrLevel = string.Empty;
     private bool _isFavorite;
@@ -53,7 +55,8 @@ public partial class WordDetailPage : ContentPage
         IUserFavoriteWordService userFavoriteWordService,
         IUserWordStateService userWordStateService,
         ISpeechPlaybackService speechPlaybackService,
-        IPerformanceTelemetryService performanceTelemetryService)
+        IPerformanceTelemetryService performanceTelemetryService,
+        ILogger<WordDetailPage> logger)
     {
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
@@ -62,6 +65,7 @@ public partial class WordDetailPage : ContentPage
         ArgumentNullException.ThrowIfNull(userWordStateService);
         ArgumentNullException.ThrowIfNull(speechPlaybackService);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
+        ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
 
@@ -72,6 +76,7 @@ public partial class WordDetailPage : ContentPage
         _userWordStateService = userWordStateService;
         _speechPlaybackService = speechPlaybackService;
         _performanceTelemetryService = performanceTelemetryService;
+        _logger = logger;
     }
 
     /// <summary>
@@ -913,8 +918,19 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        WordPublicId = previousWordPublicId.ToString("D");
-        await RefreshAsync().ConfigureAwait(true);
+        try
+        {
+            WordPublicId = previousWordPublicId.ToString("D");
+            await RefreshAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Failed to navigate to previous word {WordPublicId}.", previousWordPublicId);
+            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
+        }
     }
 
     private async void OnNextWordButtonClicked(object? sender, EventArgs e)
@@ -924,8 +940,19 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        WordPublicId = nextWordPublicId.ToString("D");
-        await RefreshAsync().ConfigureAwait(true);
+        try
+        {
+            WordPublicId = nextWordPublicId.ToString("D");
+            await RefreshAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Failed to navigate to next word {WordPublicId}.", nextWordPublicId);
+            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
+        }
     }
 
     private async void OnShowWordListButtonClicked(object? sender, EventArgs e)
@@ -965,12 +992,23 @@ public partial class WordDetailPage : ContentPage
 
         foreach (Guid candidateId in candidateIds.Where(id => id != Guid.Empty).Distinct())
         {
-            _ = Task.Run(() => _wordDetailCacheService.PrefetchWordDetailsAsync(
-                candidateId,
-                profile.PreferredMeaningLanguage1,
-                profile.PreferredMeaningLanguage2,
-                profile.UiLanguageCode,
-                CancellationToken.None));
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await _wordDetailCacheService.PrefetchWordDetailsAsync(
+                            candidateId,
+                            profile.PreferredMeaningLanguage1,
+                            profile.PreferredMeaningLanguage2,
+                            profile.UiLanguageCode,
+                            CancellationToken.None)
+                        .ConfigureAwait(false);
+                }
+                catch (Exception exception)
+                {
+                    _logger.LogDebug(exception, "Word detail prefetch failed for word {WordPublicId}.", candidateId);
+                }
+            });
         }
     }
 
