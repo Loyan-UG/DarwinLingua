@@ -252,6 +252,7 @@ internal sealed class RemoteContentUpdateService(
                 () => ImportIntoTemporaryDatabaseAsync(tempJsonPath, tempDatabasePath, cancellationToken),
                 cancellationToken,
                 remotePackage.WordCount).ConfigureAwait(false);
+            TryDeleteFile(tempJsonPath);
 
             await ExecuteTimedPhaseAsync(
                 $"remote-update.apply.replace:{scope.ScopeKey}",
@@ -482,7 +483,13 @@ internal sealed class RemoteContentUpdateService(
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
 
-        await using FileStream targetStream = File.Create(targetPath);
+        await using FileStream targetStream = new(
+            targetPath,
+            FileMode.Create,
+            FileAccess.Write,
+            FileShare.None,
+            bufferSize: 81920,
+            options: FileOptions.Asynchronous | FileOptions.SequentialScan);
         await using Stream sourceStream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
         await sourceStream.CopyToAsync(targetStream, cancellationToken).ConfigureAwait(false);
     }
@@ -611,6 +618,16 @@ internal sealed class RemoteContentUpdateService(
         }
 
         try { Directory.Delete(path, recursive: true); } catch (IOException) { } catch (UnauthorizedAccessException) { }
+    }
+
+    private static void TryDeleteFile(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+        {
+            return;
+        }
+
+        try { File.Delete(path); } catch (IOException) { } catch (UnauthorizedAccessException) { }
     }
 
     private static DateTimeOffset? GetLastSuccessfulUpdateAtUtc(RemoteUpdateScope scope)
