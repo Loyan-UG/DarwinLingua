@@ -240,16 +240,17 @@ internal sealed class RemoteContentUpdateService(
             await DownloadPackageAsync(scope, remotePackage.PackageId, tempJsonPath, cancellationToken).ConfigureAwait(false);
             await ImportIntoTemporaryDatabaseAsync(tempJsonPath, tempDatabasePath, cancellationToken).ConfigureAwait(false);
 
-            int importedWords = scope.ReplaceMode switch
+            await (scope.ReplaceMode switch
             {
-                ReplaceMode.FullDatabase => await ReplaceAllContentTablesAsync(databasePath, tempDatabasePath, cancellationToken).ConfigureAwait(false),
-                ReplaceMode.CefrLevel => await ReplaceCefrLevelContentAsync(databasePath, tempDatabasePath, scope.CefrLevel, cancellationToken).ConfigureAwait(false),
+                ReplaceMode.FullDatabase => ReplaceAllContentTablesAsync(databasePath, tempDatabasePath, cancellationToken),
+                ReplaceMode.CefrLevel => ReplaceCefrLevelContentAsync(databasePath, tempDatabasePath, scope.CefrLevel, cancellationToken),
                 _ => throw new InvalidOperationException($"The update scope '{scope.ScopeKey}' is not supported.")
-            };
+            }).ConfigureAwait(false);
 
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistScopeReceipts(scope, manifest, remotePackage, appliedAtUtc);
             InvalidateManifestCache();
+            int importedWords = remotePackage.WordCount;
             RemoteContentUpdateResult appliedResult = new(true, true, remotePackage.PackageId, remotePackage.Version, importedWords, appliedAtUtc, null);
             RecordHistoryEntry(scope, appliedResult);
             logger.LogInformation(
@@ -445,38 +446,39 @@ internal sealed class RemoteContentUpdateService(
         }
     }
 
-    private static async Task<int> ReplaceAllContentTablesAsync(string localDatabasePath, string tempDatabasePath, CancellationToken cancellationToken)
+    private static async Task ReplaceAllContentTablesAsync(string localDatabasePath, string tempDatabasePath, CancellationToken cancellationToken)
     {
         await using SqliteConnection localConnection = new($"Data Source={localDatabasePath}");
         await localConnection.OpenAsync(cancellationToken).ConfigureAwait(false);
         await using DbTransaction transaction = await localConnection.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
 
         await ExecuteNonQueryAsync(localConnection, transaction, "ATTACH DATABASE $tempPath AS remote;", cancellationToken, CreateParameter("$tempPath", tempDatabasePath)).ConfigureAwait(false);
-        int importedWords = await ExecuteScalarIntAsync(localConnection, transaction, "SELECT COUNT(*) FROM remote.WordEntries;", cancellationToken).ConfigureAwait(false);
         await ExecuteNonQueryAsync(localConnection, transaction, FullReplaceScript, cancellationToken).ConfigureAwait(false);
         await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE remote;", cancellationToken).ConfigureAwait(false);
         await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
-        return importedWords;
     }
 
-    private static async Task<int> ReplaceCefrLevelContentAsync(string localDatabasePath, string tempDatabasePath, string cefrLevel, CancellationToken cancellationToken)
+    private static async Task ReplaceCefrLevelContentAsync(string localDatabasePath, string tempDatabasePath, string cefrLevel, CancellationToken cancellationToken)
     {
         await using SqliteConnection localConnection = new($"Data Source={localDatabasePath}");
         await localConnection.OpenAsync(cancellationToken).ConfigureAwait(false);
         await using DbTransaction transaction = await localConnection.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
 
         await ExecuteNonQueryAsync(localConnection, transaction, "ATTACH DATABASE $tempPath AS remote;", cancellationToken, CreateParameter("$tempPath", tempDatabasePath)).ConfigureAwait(false);
-        int importedWords = await ExecuteScalarIntAsync(localConnection, transaction, "SELECT COUNT(*) FROM remote.WordEntries;", cancellationToken).ConfigureAwait(false);
         await ExecuteNonQueryAsync(localConnection, transaction, CefrReplaceScript, cancellationToken, CreateParameter("$cefrLevel", cefrLevel.ToUpperInvariant())).ConfigureAwait(false);
         await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE remote;", cancellationToken).ConfigureAwait(false);
         await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
-        return importedWords;
     }
 
     private static async Task<string> GetLocalPackageIdAsync(string databasePath, RemoteUpdateScope scope, CancellationToken cancellationToken)
     {
         if (scope == RemoteUpdateScope.FullDatabase)
         {
+            if (!File.Exists(databasePath))
+            {
+                return string.Empty;
+            }
+
             string persistedPackageId = GetLastAppliedPackageId(scope);
             if (!string.IsNullOrWhiteSpace(persistedPackageId))
             {
