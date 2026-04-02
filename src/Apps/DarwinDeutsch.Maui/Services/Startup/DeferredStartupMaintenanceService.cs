@@ -47,7 +47,7 @@ internal sealed class DeferredStartupMaintenanceService : IDeferredStartupMainte
             return;
         }
 
-        _ = Task.Run(RunAsync);
+        _ = RunAsync();
     }
 
     private async Task RunAsync()
