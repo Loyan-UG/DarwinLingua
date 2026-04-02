@@ -12,9 +12,21 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
 {
     private const string LastBackgroundCheckAtPreferenceKey = "remote-content-background-last-check-at-utc";
     private const string LastPromptedRemotePackageIdPreferenceKey = "remote-content-background-last-prompted-package-id";
+    private const string LastBackgroundFailureAtPreferenceKey = "remote-content-background-last-failure-at-utc";
+    private const string ConsecutiveBackgroundFailureCountPreferenceKey = "remote-content-background-consecutive-failure-count";
+    private const string LastFailedApplyPackageIdPreferenceKey = "remote-content-background-last-failed-apply-package-id";
+    private const string LastFailedApplyAtPreferenceKey = "remote-content-background-last-failed-apply-at-utc";
     private static readonly TimeSpan InitialDelay = TimeSpan.FromSeconds(3);
     private static readonly TimeSpan ResumeDelay = TimeSpan.FromSeconds(2);
     private static readonly TimeSpan MinimumCheckInterval = TimeSpan.FromMinutes(30);
+    private static readonly TimeSpan FailedApplyPromptCooldown = TimeSpan.FromMinutes(30);
+    private static readonly TimeSpan[] FailureBackoffSchedule =
+    [
+        TimeSpan.FromMinutes(2),
+        TimeSpan.FromMinutes(5),
+        TimeSpan.FromMinutes(10),
+        TimeSpan.FromMinutes(20)
+    ];
 
     private readonly IRemoteContentUpdateService _remoteContentUpdateService;
     private readonly IBrowseAccelerationService _browseAccelerationService;
@@ -66,6 +78,11 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                 return;
             }
 
+            if (!force && IsWithinFailureBackoffWindow())
+            {
+                return;
+            }
+
             if (!force && !ShouldRunCheckNow())
             {
                 return;
@@ -94,6 +111,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                     .ConfigureAwait(false);
 
                 PersistLastBackgroundCheckAt(DateTimeOffset.UtcNow);
+                ResetBackgroundFailureState();
 
                 if (!status.IsRemoteConfigured || !status.IsServerReachable || !status.IsUpdateAvailable)
                 {
@@ -111,6 +129,11 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                     return;
                 }
 
+                if (IsWithinFailedApplyCooldown(status.RemotePackageId))
+                {
+                    return;
+                }
+
                 await PromptAndApplyUpdateAsync(window, databasePath, status).ConfigureAwait(false);
             }
             finally
@@ -120,6 +143,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
         }
         catch (Exception exception)
         {
+            PersistBackgroundFailure(DateTimeOffset.UtcNow);
             _logger.LogWarning(exception, "Background remote update check failed.");
         }
     }
@@ -157,11 +181,17 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
         if (result.IsSuccess && result.AppliedChanges)
         {
             Preferences.Default.Set(LastPromptedRemotePackageIdPreferenceKey, status.RemotePackageId);
+            ClearFailedApplyState();
             _browseAccelerationService.ResetCaches();
+        }
+        else if (result.IsSuccess)
+        {
+            ClearFailedApplyState();
         }
         else if (!result.IsSuccess)
         {
             Preferences.Default.Remove(LastPromptedRemotePackageIdPreferenceKey);
+            PersistFailedApply(status.RemotePackageId, DateTimeOffset.UtcNow);
         }
 
         await MainThread.InvokeOnMainThreadAsync(() => ShowApplyResultAsync(promptPage, result)).ConfigureAwait(false);
@@ -233,5 +263,67 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     private static void PersistLastBackgroundCheckAt(DateTimeOffset occurredAtUtc)
     {
         Preferences.Default.Set(LastBackgroundCheckAtPreferenceKey, occurredAtUtc.ToString("O"));
+    }
+
+    private static bool IsWithinFailureBackoffWindow()
+    {
+        int consecutiveFailures = Preferences.Default.Get(ConsecutiveBackgroundFailureCountPreferenceKey, 0);
+        if (consecutiveFailures <= 0)
+        {
+            return false;
+        }
+
+        string? rawValue = Preferences.Default.Get<string?>(LastBackgroundFailureAtPreferenceKey, null);
+        if (!DateTimeOffset.TryParse(rawValue, out DateTimeOffset lastFailureAtUtc))
+        {
+            return false;
+        }
+
+        int backoffIndex = Math.Min(consecutiveFailures, FailureBackoffSchedule.Length) - 1;
+        TimeSpan cooldown = FailureBackoffSchedule[backoffIndex];
+        return DateTimeOffset.UtcNow - lastFailureAtUtc < cooldown;
+    }
+
+    private static void PersistBackgroundFailure(DateTimeOffset occurredAtUtc)
+    {
+        Preferences.Default.Set(LastBackgroundFailureAtPreferenceKey, occurredAtUtc.ToString("O"));
+        int consecutiveFailures = Preferences.Default.Get(ConsecutiveBackgroundFailureCountPreferenceKey, 0);
+        Preferences.Default.Set(ConsecutiveBackgroundFailureCountPreferenceKey, consecutiveFailures + 1);
+    }
+
+    private static void ResetBackgroundFailureState()
+    {
+        Preferences.Default.Remove(LastBackgroundFailureAtPreferenceKey);
+        Preferences.Default.Remove(ConsecutiveBackgroundFailureCountPreferenceKey);
+    }
+
+    private static bool IsWithinFailedApplyCooldown(string remotePackageId)
+    {
+        if (string.IsNullOrWhiteSpace(remotePackageId))
+        {
+            return false;
+        }
+
+        string failedPackageId = Preferences.Default.Get(LastFailedApplyPackageIdPreferenceKey, string.Empty);
+        if (!string.Equals(failedPackageId, remotePackageId, StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        string? rawValue = Preferences.Default.Get<string?>(LastFailedApplyAtPreferenceKey, null);
+        return DateTimeOffset.TryParse(rawValue, out DateTimeOffset lastFailedApplyAtUtc) &&
+               DateTimeOffset.UtcNow - lastFailedApplyAtUtc < FailedApplyPromptCooldown;
+    }
+
+    private static void PersistFailedApply(string remotePackageId, DateTimeOffset occurredAtUtc)
+    {
+        Preferences.Default.Set(LastFailedApplyPackageIdPreferenceKey, remotePackageId);
+        Preferences.Default.Set(LastFailedApplyAtPreferenceKey, occurredAtUtc.ToString("O"));
+    }
+
+    private static void ClearFailedApplyState()
+    {
+        Preferences.Default.Remove(LastFailedApplyPackageIdPreferenceKey);
+        Preferences.Default.Remove(LastFailedApplyAtPreferenceKey);
     }
 }
