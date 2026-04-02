@@ -181,7 +181,7 @@ public partial class WordDetailPage : ContentPage
 
             if (!string.IsNullOrWhiteSpace(CefrLevel))
             {
-                _ = Task.Run(() => _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None));
+                _ = PrefetchNavigationAsync(publicId);
             }
 
             ScheduleWordDetailPrefetch(profile);
@@ -235,7 +235,7 @@ public partial class WordDetailPage : ContentPage
 
         if (!string.IsNullOrWhiteSpace(CefrLevel))
         {
-            _ = Task.Run(() => _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None));
+            _ = PrefetchNavigationAsync(publicId);
         }
 
         ScheduleWordDetailPrefetch(profile);
@@ -334,11 +334,17 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        _isFavorite = await _userFavoriteWordService
-            .ToggleFavoriteAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            _isFavorite = await _userFavoriteWordService
+                .ToggleFavoriteAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None)
+                .ConfigureAwait(true);
 
-        ApplyFavoriteButtonState();
+            ApplyFavoriteButtonState();
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -351,11 +357,17 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        _userWordState = _userWordState?.IsKnown == true
-            ? await _userWordStateService.ClearWordKnownStateAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true)
-            : await _userWordStateService.MarkWordKnownAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true);
+        try
+        {
+            _userWordState = _userWordState?.IsKnown == true
+                ? await _userWordStateService.ClearWordKnownStateAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true)
+                : await _userWordStateService.MarkWordKnownAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true);
 
-        ApplyUserWordState();
+            ApplyUserWordState();
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -368,11 +380,17 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        _userWordState = _userWordState?.IsDifficult == true
-            ? await _userWordStateService.ClearWordDifficultStateAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true)
-            : await _userWordStateService.MarkWordDifficultAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true);
+        try
+        {
+            _userWordState = _userWordState?.IsDifficult == true
+                ? await _userWordStateService.ClearWordDifficultStateAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true)
+                : await _userWordStateService.MarkWordDifficultAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None).ConfigureAwait(true);
 
-        ApplyUserWordState();
+            ApplyUserWordState();
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -387,7 +405,13 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        await SpeakGermanTextAsync(headline).ConfigureAwait(true);
+        try
+        {
+            await SpeakGermanTextAsync(headline).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -986,8 +1010,14 @@ public partial class WordDetailPage : ContentPage
         }
 
         string escapedCefrLevel = Uri.EscapeDataString(CefrLevel);
-        await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
-            .ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async Task<UserWordStateModel?> TrackWordViewedAsync(Guid publicId, CancellationToken cancellationToken)
@@ -1033,23 +1063,37 @@ public partial class WordDetailPage : ContentPage
 
         foreach (Guid candidateId in candidateIds.Where(id => id != Guid.Empty).Distinct())
         {
-            _ = Task.Run(async () =>
-            {
-                try
-                {
-                    await _wordDetailCacheService.PrefetchWordDetailsAsync(
-                            candidateId,
-                            profile.PreferredMeaningLanguage1,
-                            profile.PreferredMeaningLanguage2,
-                            profile.UiLanguageCode,
-                            CancellationToken.None)
-                        .ConfigureAwait(false);
-                }
-                catch (Exception exception)
-                {
-                    _logger.LogDebug(exception, "Word detail prefetch failed for word {WordPublicId}.", candidateId);
-                }
-            });
+            _ = PrefetchWordDetailAsync(candidateId, profile);
+        }
+    }
+
+    private async Task PrefetchNavigationAsync(Guid publicId)
+    {
+        try
+        {
+            await _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None)
+                .ConfigureAwait(false);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    private async Task PrefetchWordDetailAsync(Guid candidateId, UserLearningProfileModel profile)
+    {
+        try
+        {
+            await _wordDetailCacheService.PrefetchWordDetailsAsync(
+                    candidateId,
+                    profile.PreferredMeaningLanguage1,
+                    profile.PreferredMeaningLanguage2,
+                    profile.UiLanguageCode,
+                    CancellationToken.None)
+                .ConfigureAwait(false);
+        }
+        catch (Exception exception)
+        {
+            _logger.LogDebug(exception, "Word detail prefetch failed for word {WordPublicId}.", candidateId);
         }
     }
 

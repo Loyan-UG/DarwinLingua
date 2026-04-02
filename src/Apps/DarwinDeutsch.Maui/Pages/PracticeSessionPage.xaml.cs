@@ -463,22 +463,46 @@ public partial class PracticeSessionPage : ContentPage
 
     private async void OnIncorrectButtonClicked(object? sender, EventArgs e)
     {
-        await SubmitOutcomeAsync(PracticeAttemptOutcome.Incorrect).ConfigureAwait(true);
+        try
+        {
+            await SubmitOutcomeAsync(PracticeAttemptOutcome.Incorrect).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async void OnHardButtonClicked(object? sender, EventArgs e)
     {
-        await SubmitOutcomeAsync(PracticeAttemptOutcome.Hard).ConfigureAwait(true);
+        try
+        {
+            await SubmitOutcomeAsync(PracticeAttemptOutcome.Hard).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async void OnCorrectButtonClicked(object? sender, EventArgs e)
     {
-        await SubmitOutcomeAsync(PracticeAttemptOutcome.Correct).ConfigureAwait(true);
+        try
+        {
+            await SubmitOutcomeAsync(PracticeAttemptOutcome.Correct).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async void OnEasyButtonClicked(object? sender, EventArgs e)
     {
-        await SubmitOutcomeAsync(PracticeAttemptOutcome.Easy).ConfigureAwait(true);
+        try
+        {
+            await SubmitOutcomeAsync(PracticeAttemptOutcome.Easy).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private void OnNextButtonClicked(object? sender, EventArgs e)
@@ -494,7 +518,13 @@ public partial class PracticeSessionPage : ContentPage
 
     private async void OnReturnToPracticeButtonClicked(object? sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//practice").ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync("//practice").ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private void ResetSessionRequest()
