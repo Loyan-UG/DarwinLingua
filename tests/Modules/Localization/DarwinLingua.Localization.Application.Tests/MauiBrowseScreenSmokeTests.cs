@@ -43,6 +43,9 @@ public sealed class MauiBrowseScreenSmokeTests
         string startupInitializationServiceSource = File.ReadAllText(startupInitializationServicePath);
         string backgroundRemoteUpdateCoordinatorSource = File.ReadAllText(backgroundRemoteUpdateCoordinatorPath);
         string seedProvisioningServiceSource = File.ReadAllText(seedProvisioningServicePath);
+        string deferredStartupMaintenanceServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Startup/DeferredStartupMaintenanceService.cs");
+        Assert.True(File.Exists(deferredStartupMaintenanceServicePath), $"Deferred startup maintenance service file not found: {deferredStartupMaintenanceServicePath}");
+        string deferredStartupMaintenanceServiceSource = File.ReadAllText(deferredStartupMaintenanceServicePath);
 
         Assert.Contains("CefrQuickFilterView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("LogoPlaceholderLabel", sourceCode, StringComparison.Ordinal);
@@ -67,18 +70,23 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("GetWelcomePage()", appSource, StringComparison.Ordinal);
         Assert.Contains("OnStartupCompleted", appSource, StringComparison.Ordinal);
         Assert.Contains("EnsureScheduled", appSource, StringComparison.Ordinal);
+        Assert.Contains("Schedule()", appSource, StringComparison.Ordinal);
         Assert.Contains("ScheduleInitialCheck", appSource, StringComparison.Ordinal);
         Assert.Contains("OnWindowResumed", appSource, StringComparison.Ordinal);
         Assert.Contains("ShouldShowWelcomeExperience", appSource, StringComparison.Ordinal);
         Assert.Contains("IAppStartupInitializationService", mauiProgramSource, StringComparison.Ordinal);
+        Assert.Contains("IDeferredStartupMaintenanceService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("IBackgroundRemoteUpdateCoordinator", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("IPlatformBackgroundUpdateScheduler", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("AddSingleton<StartupPage>()", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("ICefrBrowseStateService", mauiProgramSource, StringComparison.Ordinal);
         Assert.Contains("Task.Run", startupInitializationServiceSource, StringComparison.Ordinal);
-        Assert.Contains("ApplySeedUpdateAsync", startupInitializationServiceSource, StringComparison.Ordinal);
+        Assert.Contains("EnsureSeedDatabaseAsync", startupInitializationServiceSource, StringComparison.Ordinal);
         Assert.Contains("InitializeAsync", startupInitializationServiceSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("ApplySeedUpdateAsync", startupInitializationServiceSource, StringComparison.Ordinal);
+        Assert.Contains("ApplySeedUpdateAsync", deferredStartupMaintenanceServiceSource, StringComparison.Ordinal);
+        Assert.Contains("ScheduleInitialWarmup", deferredStartupMaintenanceServiceSource, StringComparison.Ordinal);
         Assert.Contains("ScheduleResumeCheck", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
         Assert.Contains("DisplayAlert", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
         Assert.Contains("ApplyFullUpdateAsync", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);

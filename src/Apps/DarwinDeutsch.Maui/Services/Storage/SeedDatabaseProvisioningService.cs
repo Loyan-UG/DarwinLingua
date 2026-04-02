@@ -48,10 +48,6 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             return;
         }
 
-        if (!Preferences.Default.ContainsKey(SeedSignaturePreferenceKey))
-        {
-            Preferences.Default.Set(SeedSignaturePreferenceKey, seedAssetSnapshot.Signature);
-        }
     }
 
     /// <inheritdoc />

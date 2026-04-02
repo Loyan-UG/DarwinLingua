@@ -1,6 +1,6 @@
 using DarwinDeutsch.Maui.Pages;
-using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Onboarding;
+using DarwinDeutsch.Maui.Services.Startup;
 using DarwinDeutsch.Maui.Services.Updates;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,9 +13,6 @@ public partial class App : Application
 {
     private readonly IServiceProvider _serviceProvider;
     private readonly IAppOnboardingService _appOnboardingService;
-    private readonly IBrowseAccelerationService _browseAccelerationService;
-    private readonly IBackgroundRemoteUpdateCoordinator _backgroundRemoteUpdateCoordinator;
-    private readonly IPlatformBackgroundUpdateScheduler _platformBackgroundUpdateScheduler;
     private AppShell? _appShell;
     private StartupPage? _startupPage;
     private WelcomePage? _welcomePage;
@@ -27,24 +24,15 @@ public partial class App : Application
     /// <param name="appOnboardingService">The service that tracks onboarding completion.</param>
     public App(
         IServiceProvider serviceProvider,
-        IAppOnboardingService appOnboardingService,
-        IBrowseAccelerationService browseAccelerationService,
-        IBackgroundRemoteUpdateCoordinator backgroundRemoteUpdateCoordinator,
-        IPlatformBackgroundUpdateScheduler platformBackgroundUpdateScheduler)
+        IAppOnboardingService appOnboardingService)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
         ArgumentNullException.ThrowIfNull(appOnboardingService);
-        ArgumentNullException.ThrowIfNull(browseAccelerationService);
-        ArgumentNullException.ThrowIfNull(backgroundRemoteUpdateCoordinator);
-        ArgumentNullException.ThrowIfNull(platformBackgroundUpdateScheduler);
 
         InitializeComponent();
 
         _serviceProvider = serviceProvider;
         _appOnboardingService = appOnboardingService;
-        _browseAccelerationService = browseAccelerationService;
-        _backgroundRemoteUpdateCoordinator = backgroundRemoteUpdateCoordinator;
-        _platformBackgroundUpdateScheduler = platformBackgroundUpdateScheduler;
     }
 
     /// <summary>
@@ -72,9 +60,9 @@ public partial class App : Application
             ? GetWelcomePage()
             : GetAppShell();
 
-        _platformBackgroundUpdateScheduler.EnsureScheduled();
-        _browseAccelerationService.ScheduleInitialWarmup();
-        _backgroundRemoteUpdateCoordinator.ScheduleInitialCheck(activeWindow);
+        _serviceProvider.GetRequiredService<IPlatformBackgroundUpdateScheduler>().EnsureScheduled();
+        _serviceProvider.GetRequiredService<IDeferredStartupMaintenanceService>().Schedule();
+        _serviceProvider.GetRequiredService<IBackgroundRemoteUpdateCoordinator>().ScheduleInitialCheck(activeWindow);
     }
 
     private void OnWelcomeStartRequested(object? sender, EventArgs e)
@@ -121,7 +109,7 @@ public partial class App : Application
     {
         if (sender is Window window)
         {
-            _backgroundRemoteUpdateCoordinator.ScheduleResumeCheck(window);
+            _serviceProvider.GetRequiredService<IBackgroundRemoteUpdateCoordinator>().ScheduleResumeCheck(window);
         }
     }
 }

@@ -73,6 +73,7 @@ public static class MauiProgram
             .AddSingleton<IAppOnboardingService, AppOnboardingService>()
             .AddSingleton<ISeedDatabaseProvisioningService, SeedDatabaseProvisioningService>()
             .AddSingleton<IAppStartupInitializationService, AppStartupInitializationService>()
+            .AddSingleton<IDeferredStartupMaintenanceService, DeferredStartupMaintenanceService>()
             .AddSingleton(new RemoteContentUpdateOptions
             {
                 BaseUrl = GetDefaultRemoteContentBaseUrl(),
