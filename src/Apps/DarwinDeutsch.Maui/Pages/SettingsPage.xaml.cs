@@ -432,12 +432,38 @@ public partial class SettingsPage : ContentPage
                         AppStrings.SettingsContentUpdatesDismissButton)
                     .ConfigureAwait(true);
             }
-
-            await RefreshUpdateSectionsAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
+        catch (Exception exception)
+        {
+            await DisplayAlertAsync(
+                    AppStrings.SettingsContentUpdatesFailedTitle,
+                    string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, exception.Message),
+                    AppStrings.SettingsContentUpdatesDismissButton)
+                .ConfigureAwait(true);
         }
         finally
         {
             _isApplyingSeedUpdate = false;
+        }
+
+        try
+        {
+            await RefreshUpdateSectionsAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception exception)
+        {
+            await DisplayAlertAsync(
+                    AppStrings.SettingsContentUpdatesFailedTitle,
+                    string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, exception.Message),
+                    AppStrings.SettingsContentUpdatesDismissButton)
+                .ConfigureAwait(true);
         }
     }
 
@@ -512,12 +538,38 @@ public partial class SettingsPage : ContentPage
                         AppStrings.SettingsContentUpdatesDismissButton)
                     .ConfigureAwait(true);
             }
-
-            await RefreshUpdateSectionsAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
+        catch (Exception exception)
+        {
+            await DisplayAlertAsync(
+                    AppStrings.SettingsRemoteContentUpdatesFailedTitle,
+                    string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, exception.Message),
+                    AppStrings.SettingsContentUpdatesDismissButton)
+                .ConfigureAwait(true);
         }
         finally
         {
             _isApplyingRemoteUpdate = false;
+        }
+
+        try
+        {
+            await RefreshUpdateSectionsAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception exception)
+        {
+            await DisplayAlertAsync(
+                    AppStrings.SettingsRemoteContentUpdatesFailedTitle,
+                    string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, exception.Message),
+                    AppStrings.SettingsContentUpdatesDismissButton)
+                .ConfigureAwait(true);
         }
     }
 
