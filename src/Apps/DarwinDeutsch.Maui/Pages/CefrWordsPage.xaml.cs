@@ -104,7 +104,7 @@ public partial class CefrWordsPage : ContentPage
 
         if (showLoadingState)
         {
-            ShowLoadingState();
+            ShowLoadingState(_visibleWords.Count > 0);
         }
 
         try
@@ -138,7 +138,7 @@ public partial class CefrWordsPage : ContentPage
         }
         finally
         {
-            LoadingStateLabel.IsVisible = false;
+            SetLoadingState(false);
         }
     }
 
@@ -189,15 +189,24 @@ public partial class CefrWordsPage : ContentPage
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
+        SetLoadingState(false);
     }
 
     /// <summary>
     /// Shows the loading state while CEFR words are being loaded.
     /// </summary>
-    private void ShowLoadingState()
+    private void ShowLoadingState(bool hasExistingWords)
     {
-        LoadingStateLabel.IsVisible = true;
+        SetLoadingState(true);
         ErrorStateLabel.IsVisible = false;
+
+        if (hasExistingWords)
+        {
+            EmptyStateLabel.IsVisible = false;
+            WordsCollectionView.IsVisible = true;
+            return;
+        }
+
         EmptyStateLabel.IsVisible = false;
         WordsCollectionView.IsVisible = false;
     }
@@ -213,6 +222,7 @@ public partial class CefrWordsPage : ContentPage
         WordsCollectionView.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         ErrorStateLabel.IsVisible = true;
+        SetLoadingState(false);
     }
 
     /// <summary>
@@ -252,7 +262,8 @@ public partial class CefrWordsPage : ContentPage
         }
         catch
         {
-            _hasMoreWords = false;
+            LoadingStateLabel.Text = AppStrings.CefrWordsPageLoadError;
+            SetLoadingState(true);
         }
         finally
         {
@@ -301,6 +312,12 @@ public partial class CefrWordsPage : ContentPage
             _loadedWordCount,
             PageSize,
             CancellationToken.None));
+    }
+
+    private void SetLoadingState(bool isLoading)
+    {
+        LoadingStateLayout.IsVisible = isLoading;
+        LoadingActivityIndicator.IsRunning = isLoading;
     }
 
     /// <summary>

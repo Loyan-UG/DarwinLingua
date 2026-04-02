@@ -111,7 +111,7 @@ public partial class TopicWordsPage : ContentPage
 
         if (showLoadingState)
         {
-            ShowLoadingState();
+            ShowLoadingState(_visibleWords.Count > 0);
         }
 
         try
@@ -145,7 +145,7 @@ public partial class TopicWordsPage : ContentPage
         }
         finally
         {
-            LoadingStateLabel.IsVisible = false;
+            SetLoadingState(false);
         }
     }
 
@@ -165,15 +165,24 @@ public partial class TopicWordsPage : ContentPage
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
+        SetLoadingState(false);
     }
 
     /// <summary>
     /// Shows the loading state while topic words are being loaded.
     /// </summary>
-    private void ShowLoadingState()
+    private void ShowLoadingState(bool hasExistingWords)
     {
-        LoadingStateLabel.IsVisible = true;
+        SetLoadingState(true);
         ErrorStateLabel.IsVisible = false;
+
+        if (hasExistingWords)
+        {
+            EmptyStateLabel.IsVisible = false;
+            WordsCollectionView.IsVisible = true;
+            return;
+        }
+
         EmptyStateLabel.IsVisible = false;
         WordsCollectionView.IsVisible = false;
     }
@@ -189,6 +198,7 @@ public partial class TopicWordsPage : ContentPage
         WordsCollectionView.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         ErrorStateLabel.IsVisible = true;
+        SetLoadingState(false);
     }
 
     /// <summary>
@@ -228,7 +238,8 @@ public partial class TopicWordsPage : ContentPage
         }
         catch
         {
-            _hasMoreWords = false;
+            LoadingStateLabel.Text = AppStrings.TopicWordsPageLoadError;
+            SetLoadingState(true);
         }
         finally
         {
@@ -277,6 +288,12 @@ public partial class TopicWordsPage : ContentPage
             _loadedWordCount,
             PageSize,
             CancellationToken.None));
+    }
+
+    private void SetLoadingState(bool isLoading)
+    {
+        LoadingStateLayout.IsVisible = isLoading;
+        LoadingActivityIndicator.IsRunning = isLoading;
     }
 
     /// <summary>

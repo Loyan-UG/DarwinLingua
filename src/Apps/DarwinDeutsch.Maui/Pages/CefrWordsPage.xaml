@@ -20,12 +20,19 @@
                                       Grid.Row="2"
                                       LevelSelected="OnCefrLevelSelected" />
 
-        <Label x:Name="EmptyStateLabel"
-               Grid.Row="3"
-               Style="{DynamicResource Body}"
-               IsVisible="False" />
+        <HorizontalStackLayout x:Name="LoadingStateLayout"
+                               Grid.Row="3"
+                               Spacing="8"
+                               IsVisible="False">
+            <ActivityIndicator x:Name="LoadingActivityIndicator"
+                               WidthRequest="18"
+                               HeightRequest="18"
+                               IsRunning="False" />
+            <Label x:Name="LoadingStateLabel"
+                   Style="{DynamicResource Body}" />
+        </HorizontalStackLayout>
 
-        <Label x:Name="LoadingStateLabel"
+        <Label x:Name="EmptyStateLabel"
                Grid.Row="4"
                Style="{DynamicResource Body}"
                IsVisible="False" />
