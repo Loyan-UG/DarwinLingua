@@ -230,21 +230,23 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
                 """,
                 cancellationToken).ConfigureAwait(false);
 
-            int importedWords = await ExecuteScalarIntAsync(
-                localConnection,
-                transaction,
-                """
-                SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
-                FROM seed.ContentPackageEntries AS seedEntries
-                INNER JOIN seed.ContentPackages AS seedPackages
-                    ON seedPackages.Id = seedEntries.ContentPackageId
-                WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
-                  AND NOT EXISTS (
-                      SELECT 1
-                      FROM ContentPackages AS localPackages
-                      WHERE localPackages.PackageId = seedPackages.PackageId);
-                """,
-                cancellationToken).ConfigureAwait(false);
+            int importedWords = importedPackages > 0
+                ? await ExecuteScalarIntAsync(
+                    localConnection,
+                    transaction,
+                    """
+                    SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
+                    FROM seed.ContentPackageEntries AS seedEntries
+                    INNER JOIN seed.ContentPackages AS seedPackages
+                        ON seedPackages.Id = seedEntries.ContentPackageId
+                    WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
+                      AND NOT EXISTS (
+                          SELECT 1
+                          FROM ContentPackages AS localPackages
+                          WHERE localPackages.PackageId = seedPackages.PackageId);
+                    """,
+                    cancellationToken).ConfigureAwait(false)
+                : 0;
 
             if (importedPackages > 0)
             {
@@ -388,21 +390,23 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             """,
             cancellationToken).ConfigureAwait(false);
 
-        int pendingWords = await ExecuteScalarIntAsync(
-            localConnection,
-            transaction,
-            """
-            SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
-            FROM seed.ContentPackageEntries AS seedEntries
-            INNER JOIN seed.ContentPackages AS seedPackages
-                ON seedPackages.Id = seedEntries.ContentPackageId
-            WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
-              AND NOT EXISTS (
-                  SELECT 1
-                  FROM ContentPackages AS localPackages
-                  WHERE localPackages.PackageId = seedPackages.PackageId);
-            """,
-            cancellationToken).ConfigureAwait(false);
+        int pendingWords = pendingPackages > 0
+            ? await ExecuteScalarIntAsync(
+                localConnection,
+                transaction,
+                """
+                SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
+                FROM seed.ContentPackageEntries AS seedEntries
+                INNER JOIN seed.ContentPackages AS seedPackages
+                    ON seedPackages.Id = seedEntries.ContentPackageId
+                WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
+                  AND NOT EXISTS (
+                      SELECT 1
+                      FROM ContentPackages AS localPackages
+                      WHERE localPackages.PackageId = seedPackages.PackageId);
+                """,
+                cancellationToken).ConfigureAwait(false)
+            : 0;
 
         await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE seed;", cancellationToken).ConfigureAwait(false);
         await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
