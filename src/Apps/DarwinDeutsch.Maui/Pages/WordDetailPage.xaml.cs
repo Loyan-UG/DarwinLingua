@@ -228,23 +228,29 @@ public partial class WordDetailPage : ContentPage
         ApplyFavoriteButtonState();
         FavoriteButton.IsVisible = true;
         ApplyUserWordState();
+        TopicsSectionView.SectionValue = word.Topics.Count == 0
+            ? AppStrings.WordDetailNoTopics
+            : string.Join(", ", word.Topics);
+        EmptyStateLabel.IsVisible = false;
+
+        await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
+
+        // Yield once so the headline and primary actions can render before heavier sections are materialized.
+        await Task.Yield();
+        cancellationToken.ThrowIfCancellationRequested();
+
         ApplyWordLabels(UsageLabelsFlexLayout, UsageLabelsBorder, word.UsageLabels);
         ApplyWordLabels(ContextLabelsFlexLayout, ContextLabelsBorder, word.ContextLabels);
         ApplyGrammarNotes(word.GrammarNotes);
         ApplyCollocations(word.Collocations);
         ApplyWordFamilies(word.WordFamilies);
         ApplyLexicalRelations(word.Synonyms, word.Antonyms);
-        TopicsSectionView.SectionValue = word.Topics.Count == 0
-            ? AppStrings.WordDetailNoTopics
-            : string.Join(", ", word.Topics);
-        EmptyStateLabel.IsVisible = false;
 
         foreach (WordSenseDetailModel sense in word.Senses)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             SensesContainer.Children.Add(BuildSenseView(sense));
         }
-
-        await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
         if (!string.IsNullOrWhiteSpace(CefrLevel))
         {
