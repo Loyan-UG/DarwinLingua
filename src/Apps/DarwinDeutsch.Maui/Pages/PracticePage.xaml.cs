@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Resources.Strings;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
@@ -20,6 +21,7 @@ public partial class PracticePage : ContentPage
     private readonly IPracticeLearningProgressSnapshotService _practiceLearningProgressSnapshotService;
     private readonly IPracticeRecentActivityService _practiceRecentActivityService;
     private readonly IPracticeReviewSessionService _practiceReviewSessionService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ILogger<PracticePage> _logger;
     private CancellationTokenSource? _refreshCancellationTokenSource;
 
@@ -29,6 +31,7 @@ public partial class PracticePage : ContentPage
         IPracticeLearningProgressSnapshotService practiceLearningProgressSnapshotService,
         IPracticeRecentActivityService practiceRecentActivityService,
         IPracticeReviewSessionService practiceReviewSessionService,
+        IPerformanceTelemetryService performanceTelemetryService,
         ILogger<PracticePage> logger)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
@@ -36,6 +39,7 @@ public partial class PracticePage : ContentPage
         ArgumentNullException.ThrowIfNull(practiceLearningProgressSnapshotService);
         ArgumentNullException.ThrowIfNull(practiceRecentActivityService);
         ArgumentNullException.ThrowIfNull(practiceReviewSessionService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
         ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
@@ -45,6 +49,7 @@ public partial class PracticePage : ContentPage
         _practiceLearningProgressSnapshotService = practiceLearningProgressSnapshotService;
         _practiceRecentActivityService = practiceRecentActivityService;
         _practiceReviewSessionService = practiceReviewSessionService;
+        _performanceTelemetryService = performanceTelemetryService;
         _logger = logger;
 
         _appLocalizationService.CultureChanged += OnCultureChanged;
@@ -158,15 +163,18 @@ public partial class PracticePage : ContentPage
                 snapshot.DueNowCount,
                 recentActivityTask.Result.Items.Count,
                 reviewPreviewTask.Result.Items.Count);
+            _performanceTelemetryService.Record("practice.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, recentActivityTask.Result.Items.Count + reviewPreviewTask.Result.Items.Count);
         }
         catch (OperationCanceledException)
         {
             _logger.LogDebug("Practice overview refresh cancelled after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             throw;
         }
         catch
         {
             _logger.LogWarning("Practice overview refresh failed after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             DueNowSectionView.SectionValue = AppStrings.CommonStateError;
             SuccessRateSectionView.SectionValue = AppStrings.CommonStateError;
             MasteredSectionView.SectionValue = AppStrings.CommonStateError;

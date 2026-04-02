@@ -1,6 +1,8 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Browse;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -11,6 +13,7 @@ public partial class HomePage : ContentPage
 {
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private bool _isNavigatingToCefr;
 
     /// <summary>
@@ -19,15 +22,18 @@ public partial class HomePage : ContentPage
     /// <param name="appLocalizationService">The service that manages UI localization.</param>
     public HomePage(
         IAppLocalizationService appLocalizationService,
-        ICefrBrowseStateService cefrBrowseStateService)
+        ICefrBrowseStateService cefrBrowseStateService,
+        IPerformanceTelemetryService performanceTelemetryService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
 
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
         _cefrBrowseStateService = cefrBrowseStateService;
+        _performanceTelemetryService = performanceTelemetryService;
 
         _appLocalizationService.CultureChanged += OnCultureChanged;
 
@@ -108,6 +114,7 @@ public partial class HomePage : ContentPage
 
         _isNavigatingToCefr = true;
         SetCefrNavigationBusyState(true);
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         try
         {
@@ -127,6 +134,13 @@ public partial class HomePage : ContentPage
             await Shell.Current.GoToAsync(
                     $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}")
                 .ConfigureAwait(true);
+
+            _performanceTelemetryService.Record("home.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
+        }
+        catch
+        {
+            _performanceTelemetryService.Record("home.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
+            throw;
         }
         finally
         {

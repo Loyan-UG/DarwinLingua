@@ -1,5 +1,6 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Browse;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
@@ -20,6 +21,7 @@ public partial class SearchWordsPage : ContentPage
     private readonly IWordQueryService _wordQueryService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ILogger<SearchWordsPage> _logger;
     private CancellationTokenSource? _searchCancellationTokenSource;
     private CancellationTokenSource? _debounceCancellationTokenSource;
@@ -33,11 +35,13 @@ public partial class SearchWordsPage : ContentPage
         IWordQueryService wordQueryService,
         IWordDetailCacheService wordDetailCacheService,
         IUserLearningProfileService userLearningProfileService,
+        IPerformanceTelemetryService performanceTelemetryService,
         ILogger<SearchWordsPage> logger)
     {
         ArgumentNullException.ThrowIfNull(wordQueryService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
         ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
@@ -45,6 +49,7 @@ public partial class SearchWordsPage : ContentPage
         _wordQueryService = wordQueryService;
         _wordDetailCacheService = wordDetailCacheService;
         _userLearningProfileService = userLearningProfileService;
+        _performanceTelemetryService = performanceTelemetryService;
         _logger = logger;
 
         ApplyLocalizedText();
@@ -167,6 +172,7 @@ public partial class SearchWordsPage : ContentPage
                 normalizedQuery,
                 words.Count,
                 stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("search.words", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, words.Count);
             _lastCompletedQuery = normalizedQuery;
 
             SearchWordItemViewModel[] results = words
@@ -185,11 +191,13 @@ public partial class SearchWordsPage : ContentPage
         catch (OperationCanceledException)
         {
             _logger.LogDebug("Search cancelled after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("search.words", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             return;
         }
         catch
         {
             _logger.LogWarning("Search failed after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("search.words", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             ShowErrorState();
         }
         finally

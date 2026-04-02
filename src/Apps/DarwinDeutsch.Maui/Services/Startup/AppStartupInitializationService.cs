@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Storage;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using Microsoft.Extensions.Logging;
@@ -12,6 +13,7 @@ namespace DarwinDeutsch.Maui.Services.Startup;
 internal sealed class AppStartupInitializationService : IAppStartupInitializationService
 {
     private readonly ILogger<AppStartupInitializationService> _logger;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
     private readonly IDatabaseInitializer _databaseInitializer;
     private readonly IAppLocalizationService _appLocalizationService;
@@ -23,16 +25,19 @@ internal sealed class AppStartupInitializationService : IAppStartupInitializatio
     /// </summary>
     public AppStartupInitializationService(
         ILogger<AppStartupInitializationService> logger,
+        IPerformanceTelemetryService performanceTelemetryService,
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
         IDatabaseInitializer databaseInitializer,
         IAppLocalizationService appLocalizationService)
     {
         ArgumentNullException.ThrowIfNull(logger);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
         ArgumentNullException.ThrowIfNull(databaseInitializer);
         ArgumentNullException.ThrowIfNull(appLocalizationService);
 
         _logger = logger;
+        _performanceTelemetryService = performanceTelemetryService;
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
         _databaseInitializer = databaseInitializer;
         _appLocalizationService = appLocalizationService;
@@ -94,16 +99,19 @@ internal sealed class AppStartupInitializationService : IAppStartupInitializatio
             _logger.LogInformation("Startup applied packaged seed updates in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
 
             _logger.LogInformation("Startup initialization completed in {ElapsedMs} ms.", startupStopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("startup.initialize", startupStopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
             _isInitialized = true;
             return AppStartupInitializationResult.Success;
         }
         catch (OperationCanceledException)
         {
+            _performanceTelemetryService.Record("startup.initialize", startupStopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             throw;
         }
         catch (Exception exception)
         {
             _logger.LogError(exception, "Startup initialization failed after {ElapsedMs} ms.", startupStopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("startup.initialize", startupStopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             return new AppStartupInitializationResult(false, exception.Message);
         }
     }

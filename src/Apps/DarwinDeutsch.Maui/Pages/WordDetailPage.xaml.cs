@@ -2,11 +2,13 @@ using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Audio;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Browse.Models;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -31,6 +33,7 @@ public partial class WordDetailPage : ContentPage
     private readonly IUserFavoriteWordService _userFavoriteWordService;
     private readonly IUserWordStateService _userWordStateService;
     private readonly ISpeechPlaybackService _speechPlaybackService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private string _wordPublicId = string.Empty;
     private string _cefrLevel = string.Empty;
     private bool _isFavorite;
@@ -49,7 +52,8 @@ public partial class WordDetailPage : ContentPage
         IUserLearningProfileService userLearningProfileService,
         IUserFavoriteWordService userFavoriteWordService,
         IUserWordStateService userWordStateService,
-        ISpeechPlaybackService speechPlaybackService)
+        ISpeechPlaybackService speechPlaybackService,
+        IPerformanceTelemetryService performanceTelemetryService)
     {
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
@@ -57,6 +61,7 @@ public partial class WordDetailPage : ContentPage
         ArgumentNullException.ThrowIfNull(userFavoriteWordService);
         ArgumentNullException.ThrowIfNull(userWordStateService);
         ArgumentNullException.ThrowIfNull(speechPlaybackService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
 
         InitializeComponent();
 
@@ -66,6 +71,7 @@ public partial class WordDetailPage : ContentPage
         _userFavoriteWordService = userFavoriteWordService;
         _userWordStateService = userWordStateService;
         _speechPlaybackService = speechPlaybackService;
+        _performanceTelemetryService = performanceTelemetryService;
     }
 
     /// <summary>
@@ -125,6 +131,7 @@ public partial class WordDetailPage : ContentPage
     {
         ResetRefreshRequest();
         CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         Title = AppStrings.WordDetailTitle;
         TopicsSectionView.SectionTitle = AppStrings.WordDetailTopicsLabel;
@@ -172,6 +179,7 @@ public partial class WordDetailPage : ContentPage
         if (!Guid.TryParse(WordPublicId, out Guid publicId))
         {
             ShowNotFoundState();
+            _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             return;
         }
 
@@ -191,6 +199,7 @@ public partial class WordDetailPage : ContentPage
         if (word is null)
         {
             ShowNotFoundState();
+            _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             return;
         }
 
@@ -238,6 +247,7 @@ public partial class WordDetailPage : ContentPage
         }
 
         ScheduleWordDetailPrefetch(profile);
+        _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, word.Senses.Count);
     }
 
     /// <summary>

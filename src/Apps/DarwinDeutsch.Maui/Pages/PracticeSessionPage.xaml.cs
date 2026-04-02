@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Resources.Strings;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
@@ -23,6 +24,7 @@ public partial class PracticeSessionPage : ContentPage
     private readonly IPracticeReviewSessionService _practiceReviewSessionService;
     private readonly IPracticeFlashcardAnswerService _practiceFlashcardAnswerService;
     private readonly IPracticeQuizAnswerService _practiceQuizAnswerService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ILogger<PracticeSessionPage> _logger;
     private readonly List<PracticeAttemptOutcome> _submittedOutcomes = [];
     private IReadOnlyList<PracticeReviewSessionItemModel> _sessionItems = [];
@@ -40,6 +42,7 @@ public partial class PracticeSessionPage : ContentPage
         IPracticeReviewSessionService practiceReviewSessionService,
         IPracticeFlashcardAnswerService practiceFlashcardAnswerService,
         IPracticeQuizAnswerService practiceQuizAnswerService,
+        IPerformanceTelemetryService performanceTelemetryService,
         ILogger<PracticeSessionPage> logger)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
@@ -47,6 +50,7 @@ public partial class PracticeSessionPage : ContentPage
         ArgumentNullException.ThrowIfNull(practiceReviewSessionService);
         ArgumentNullException.ThrowIfNull(practiceFlashcardAnswerService);
         ArgumentNullException.ThrowIfNull(practiceQuizAnswerService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
         ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
@@ -56,6 +60,7 @@ public partial class PracticeSessionPage : ContentPage
         _practiceReviewSessionService = practiceReviewSessionService;
         _practiceFlashcardAnswerService = practiceFlashcardAnswerService;
         _practiceQuizAnswerService = practiceQuizAnswerService;
+        _performanceTelemetryService = performanceTelemetryService;
         _logger = logger;
 
         _appLocalizationService.CultureChanged += OnCultureChanged;
@@ -178,15 +183,18 @@ public partial class PracticeSessionPage : ContentPage
                 IsQuizMode ? "quiz" : "flashcard",
                 _sessionItems.Count,
                 stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.session-load", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, _sessionItems.Count);
         }
         catch (OperationCanceledException)
         {
             _logger.LogDebug("Practice session load cancelled after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.session-load", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             throw;
         }
         catch
         {
             _logger.LogWarning("Practice session load failed after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.session-load", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             SessionStateLabel.Text = AppStrings.CommonStateError;
             SessionProgressLabel.Text = string.Empty;
             PromptCardBorder.IsVisible = false;
@@ -333,15 +341,18 @@ public partial class PracticeSessionPage : ContentPage
                 _currentIndex + 1,
                 _sessionItems.Count,
                 stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.session-submit", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, _currentIndex + 1);
         }
         catch (OperationCanceledException)
         {
             _logger.LogDebug("Practice session outcome submission cancelled after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.session-submit", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             return;
         }
         catch
         {
             _logger.LogWarning("Practice session outcome submission failed after {ElapsedMs} ms.", stopwatch.ElapsedMilliseconds);
+            _performanceTelemetryService.Record("practice.session-submit", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             FeedbackBodyLabel.Text = AppStrings.CommonStateError;
             FeedbackBorder.IsVisible = true;
             OutcomeButtonsGrid.IsVisible = false;

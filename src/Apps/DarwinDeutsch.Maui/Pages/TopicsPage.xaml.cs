@@ -1,7 +1,9 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Browse;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Models;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -13,6 +15,7 @@ public partial class TopicsPage : ContentPage
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly ITopicCatalogCacheService _topicCatalogCacheService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private CancellationTokenSource? _topicsRefreshCancellationTokenSource;
 
     /// <summary>
@@ -21,17 +24,20 @@ public partial class TopicsPage : ContentPage
     public TopicsPage(
         IAppLocalizationService appLocalizationService,
         ICefrBrowseStateService cefrBrowseStateService,
-        ITopicCatalogCacheService topicCatalogCacheService)
+        ITopicCatalogCacheService topicCatalogCacheService,
+        IPerformanceTelemetryService performanceTelemetryService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
         ArgumentNullException.ThrowIfNull(topicCatalogCacheService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
 
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
         _cefrBrowseStateService = cefrBrowseStateService;
         _topicCatalogCacheService = topicCatalogCacheService;
+        _performanceTelemetryService = performanceTelemetryService;
 
         _appLocalizationService.CultureChanged += OnCultureChanged;
 
@@ -110,6 +116,7 @@ public partial class TopicsPage : ContentPage
     {
         ResetTopicsRefreshRequest();
         CancellationToken cancellationToken = _topicsRefreshCancellationTokenSource!.Token;
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         if (showLoadingState)
         {
@@ -128,9 +135,11 @@ public partial class TopicsPage : ContentPage
             EmptyStateLabel.IsVisible = topics.Count == 0;
             TopicsCollectionView.IsVisible = topics.Count > 0;
             ErrorStateLabel.IsVisible = false;
+            _performanceTelemetryService.Record("topics.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, topics.Count);
         }
         catch (OperationCanceledException)
         {
+            _performanceTelemetryService.Record("topics.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             return;
         }
         catch
@@ -139,6 +148,7 @@ public partial class TopicsPage : ContentPage
             TopicsCollectionView.IsVisible = false;
             EmptyStateLabel.IsVisible = false;
             ErrorStateLabel.IsVisible = true;
+            _performanceTelemetryService.Record("topics.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
         }
         finally
         {

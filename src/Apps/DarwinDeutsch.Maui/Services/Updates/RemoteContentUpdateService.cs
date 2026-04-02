@@ -14,12 +14,14 @@ using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Services.Updates;
 
 internal sealed class RemoteContentUpdateService(
     HttpClient httpClient,
     RemoteContentUpdateOptions options,
+    IPerformanceTelemetryService performanceTelemetryService,
     ILogger<RemoteContentUpdateService> logger) : IRemoteContentUpdateService
 {
     private const string UpdateHistoryPreferenceKey = "remote-content-update-history-v1";
@@ -129,6 +131,7 @@ internal sealed class RemoteContentUpdateService(
                 stopwatch.ElapsedMilliseconds,
                 updateAvailable,
                 remotePackage.PackageId);
+            performanceTelemetryService.Record($"remote-update.status:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, updateAvailable ? remotePackage.WordCount : 0);
             return new RemoteContentUpdateStatus(
                 scope.ScopeKey,
                 scope.ContentAreaKey,
@@ -153,6 +156,7 @@ internal sealed class RemoteContentUpdateService(
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
         {
             logger.LogDebug("Remote update status for scope '{ScopeKey}' cancelled after {ElapsedMs} ms.", scope.ScopeKey, stopwatch.ElapsedMilliseconds);
+            performanceTelemetryService.Record($"remote-update.status:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             throw;
         }
         catch (Exception exception) when (exception is HttpRequestException or TaskCanceledException or InvalidOperationException)
@@ -163,6 +167,7 @@ internal sealed class RemoteContentUpdateService(
                 "Remote update status for scope '{ScopeKey}' failed after {ElapsedMs} ms.",
                 scope.ScopeKey,
                 stopwatch.ElapsedMilliseconds);
+            performanceTelemetryService.Record($"remote-update.status:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
 
             return new RemoteContentUpdateStatus(
                 scope.ScopeKey,
@@ -217,6 +222,7 @@ internal sealed class RemoteContentUpdateService(
                 PersistLastFailure(scope, string.Empty);
                 RemoteContentUpdateResult currentResult = new(true, false, remotePackage.PackageId, remotePackage.Version, 0, GetLastSuccessfulUpdateAtUtc(scope), null);
                 RecordHistoryEntry(scope, currentResult);
+                performanceTelemetryService.Record($"remote-update.apply:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
                 return currentResult;
             }
 
@@ -241,11 +247,13 @@ internal sealed class RemoteContentUpdateService(
                 appliedResult.AppliedChanges,
                 importedWords,
                 remotePackage.PackageId);
+            performanceTelemetryService.Record($"remote-update.apply:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, importedWords);
             return appliedResult;
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
         {
             logger.LogDebug("Remote update apply for scope '{ScopeKey}' cancelled after {ElapsedMs} ms.", scope.ScopeKey, stopwatch.ElapsedMilliseconds);
+            performanceTelemetryService.Record($"remote-update.apply:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
             throw;
         }
         catch (Exception exception) when (exception is HttpRequestException or TaskCanceledException or IOException or UnauthorizedAccessException or SqliteException or InvalidOperationException)
@@ -258,6 +266,7 @@ internal sealed class RemoteContentUpdateService(
                 "Remote update apply for scope '{ScopeKey}' failed after {ElapsedMs} ms.",
                 scope.ScopeKey,
                 stopwatch.ElapsedMilliseconds);
+            performanceTelemetryService.Record($"remote-update.apply:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             return failedResult;
         }
         finally
