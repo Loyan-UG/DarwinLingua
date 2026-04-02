@@ -34,6 +34,7 @@ internal sealed class RemoteContentUpdateService(
     private static readonly object ManifestCacheGate = new();
     private static readonly Dictionary<string, CachedManifestEntry> ManifestCache = [];
     private static readonly Dictionary<string, Task<RemoteContentManifestModel?>> InFlightManifestRequests = [];
+    private readonly SemaphoreSlim _applyGate = new(1, 1);
 
     public Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> GetRecentUpdateHistoryAsync(CancellationToken cancellationToken)
     {
@@ -204,14 +205,16 @@ internal sealed class RemoteContentUpdateService(
             return new RemoteContentUpdateResult(false, false, string.Empty, string.Empty, 0, null, "Remote content updates are not configured.");
         }
 
-        string tempDirectory = Path.Combine(Path.GetTempPath(), "darwinlingua-remote-update", Guid.NewGuid().ToString("N"));
-        string tempJsonPath = Path.Combine(tempDirectory, "scope-update.json");
-        string tempDatabasePath = Path.Combine(tempDirectory, "remote-update.db");
-        Directory.CreateDirectory(tempDirectory);
+        await _applyGate.WaitAsync(cancellationToken).ConfigureAwait(false);
         Stopwatch stopwatch = Stopwatch.StartNew();
+        string tempDirectory = Path.Combine(Path.GetTempPath(), "darwinlingua-remote-update", Guid.NewGuid().ToString("N"));
 
         try
         {
+            string tempJsonPath = Path.Combine(tempDirectory, "scope-update.json");
+            string tempDatabasePath = Path.Combine(tempDirectory, "remote-update.db");
+            Directory.CreateDirectory(tempDirectory);
+
             RemoteContentManifestModel? manifest = await GetManifestAsync(scope.BuildManifestUri(options), cancellationToken).ConfigureAwait(false);
             RemoteContentPackageModel remotePackage = SelectLatestPackage(manifest, scope)
                 ?? throw new InvalidOperationException("The remote manifest does not contain a compatible package for this update scope.");
@@ -273,6 +276,7 @@ internal sealed class RemoteContentUpdateService(
         finally
         {
             TryDeleteDirectory(tempDirectory);
+            _applyGate.Release();
         }
     }
 
@@ -558,10 +562,13 @@ internal sealed class RemoteContentUpdateService(
 
     private static void PersistScopeReceipts(RemoteUpdateScope appliedScope, RemoteContentManifestModel? manifest, RemoteContentPackageModel appliedPackage, DateTimeOffset appliedAtUtc)
     {
-        IReadOnlyList<RemoteContentPackageModel> packagesToPersist = manifest?.Packages
-            .Where(package => ShouldPersistPackageReceipt(appliedScope, package))
-            .ToArray()
-            ?? [appliedPackage];
+        IReadOnlyList<RemoteContentPackageModel> packagesToPersist =
+            appliedScope == RemoteUpdateScope.FullDatabase
+                ? manifest?.Packages
+                    .Where(package => ShouldPersistPackageReceipt(appliedScope, package))
+                    .ToArray()
+                    ?? [appliedPackage]
+                : [appliedPackage];
 
         foreach (RemoteContentPackageModel package in packagesToPersist)
         {
