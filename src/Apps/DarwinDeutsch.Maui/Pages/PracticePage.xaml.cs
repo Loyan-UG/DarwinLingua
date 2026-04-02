@@ -1,7 +1,6 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Practice.Application.Abstractions;
 using DarwinLingua.Practice.Application.Models;
@@ -17,7 +16,7 @@ namespace DarwinDeutsch.Maui.Pages;
 public partial class PracticePage : ContentPage
 {
     private readonly IAppLocalizationService _appLocalizationService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IPracticeLearningProgressSnapshotService _practiceLearningProgressSnapshotService;
     private readonly IPracticeRecentActivityService _practiceRecentActivityService;
     private readonly IPracticeReviewSessionService _practiceReviewSessionService;
@@ -27,7 +26,7 @@ public partial class PracticePage : ContentPage
 
     public PracticePage(
         IAppLocalizationService appLocalizationService,
-        IUserLearningProfileService userLearningProfileService,
+        IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IPracticeLearningProgressSnapshotService practiceLearningProgressSnapshotService,
         IPracticeRecentActivityService practiceRecentActivityService,
         IPracticeReviewSessionService practiceReviewSessionService,
@@ -35,7 +34,7 @@ public partial class PracticePage : ContentPage
         ILogger<PracticePage> logger)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(practiceLearningProgressSnapshotService);
         ArgumentNullException.ThrowIfNull(practiceRecentActivityService);
         ArgumentNullException.ThrowIfNull(practiceReviewSessionService);
@@ -45,7 +44,7 @@ public partial class PracticePage : ContentPage
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _practiceLearningProgressSnapshotService = practiceLearningProgressSnapshotService;
         _practiceRecentActivityService = practiceRecentActivityService;
         _practiceReviewSessionService = practiceReviewSessionService;
@@ -137,7 +136,7 @@ public partial class PracticePage : ContentPage
 
         try
         {
-            Task<UserLearningProfileModel> profileTask = _userLearningProfileService
+            Task<UserLearningProfileModel> profileTask = _activeLearningProfileCacheService
                 .GetCurrentProfileAsync(cancellationToken);
             Task<PracticeLearningProgressSnapshotModel> snapshotTask = _practiceLearningProgressSnapshotService
                 .GetSnapshotAsync(cancellationToken);

@@ -4,7 +4,6 @@ using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Storage;
 using DarwinDeutsch.Maui.Services.Updates;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Localization.Application.Abstractions;
 using DarwinLingua.Localization.Application.Models;
@@ -22,7 +21,7 @@ public partial class SettingsPage : ContentPage
     private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly IRemoteContentUpdateService _remoteContentUpdateService;
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly ILanguageQueryService _languageQueryService;
     private CancellationTokenSource? _pageStateCancellationTokenSource;
     private bool _isUpdatingSelection;
@@ -33,21 +32,24 @@ public partial class SettingsPage : ContentPage
     /// Initializes a new instance of the <see cref="SettingsPage"/> class.
     /// </summary>
     /// <param name="appLocalizationService">The service that manages UI localization.</param>
-    /// <param name="userLearningProfileService">The service that manages the persisted learning profile.</param>
+    /// <param name="browseAccelerationService">The service that manages browse warm-up and cache invalidation.</param>
+    /// <param name="remoteContentUpdateService">The service that applies remote content updates.</param>
+    /// <param name="seedDatabaseProvisioningService">The service that provisions and merges packaged seed content.</param>
+    /// <param name="activeLearningProfileCacheService">The service that caches the active learning profile for the current session.</param>
     /// <param name="languageQueryService">The service that loads active language reference data.</param>
     public SettingsPage(
         IAppLocalizationService appLocalizationService,
         IBrowseAccelerationService browseAccelerationService,
         IRemoteContentUpdateService remoteContentUpdateService,
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
-        IUserLearningProfileService userLearningProfileService,
+        IActiveLearningProfileCacheService activeLearningProfileCacheService,
         ILanguageQueryService languageQueryService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(browseAccelerationService);
         ArgumentNullException.ThrowIfNull(remoteContentUpdateService);
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(languageQueryService);
 
         InitializeComponent();
@@ -56,7 +58,7 @@ public partial class SettingsPage : ContentPage
         _browseAccelerationService = browseAccelerationService;
         _remoteContentUpdateService = remoteContentUpdateService;
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _languageQueryService = languageQueryService;
         _appLocalizationService.CultureChanged += OnCultureChanged;
 
@@ -185,7 +187,7 @@ public partial class SettingsPage : ContentPage
             .Where(language => language.SupportsMeanings)
             .OrderBy(language => language.EnglishName)
             .ToArray();
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(true);
 
@@ -501,7 +503,7 @@ public partial class SettingsPage : ContentPage
             secondaryMeaningLanguage = null;
         }
 
-        await _userLearningProfileService
+        await _activeLearningProfileCacheService
             .UpdateMeaningLanguagePreferencesAsync(
                 selectedLanguage.LanguageCode!,
                 secondaryMeaningLanguage,
@@ -526,7 +528,7 @@ public partial class SettingsPage : ContentPage
             return;
         }
 
-        await _userLearningProfileService
+        await _activeLearningProfileCacheService
             .UpdateMeaningLanguagePreferencesAsync(
                 primaryMeaningLanguage.LanguageCode!,
                 selectedLanguage.LanguageCode,

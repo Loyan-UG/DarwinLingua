@@ -1,5 +1,4 @@
 using DarwinDeutsch.Maui.Services.Localization;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Abstractions;
 using Microsoft.Extensions.Logging;
 
@@ -16,7 +15,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     private readonly ITopicCatalogCacheService _topicCatalogCacheService;
     private readonly ITopicBrowseStateService _topicBrowseStateService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ILogger<BrowseAccelerationService> _logger;
     private readonly SemaphoreSlim _warmupGate = new(1, 1);
@@ -30,7 +29,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         ITopicCatalogCacheService topicCatalogCacheService,
         ITopicBrowseStateService topicBrowseStateService,
         IWordDetailCacheService wordDetailCacheService,
-        IUserLearningProfileService userLearningProfileService,
+        IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IAppLocalizationService appLocalizationService,
         ILogger<BrowseAccelerationService> logger)
     {
@@ -38,7 +37,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         ArgumentNullException.ThrowIfNull(topicCatalogCacheService);
         ArgumentNullException.ThrowIfNull(topicBrowseStateService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(logger);
 
@@ -46,7 +45,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         _topicCatalogCacheService = topicCatalogCacheService;
         _topicBrowseStateService = topicBrowseStateService;
         _wordDetailCacheService = wordDetailCacheService;
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _appLocalizationService = appLocalizationService;
         _logger = logger;
     }
@@ -92,7 +91,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
 
         try
         {
-            DarwinLingua.Learning.Application.Models.UserLearningProfileModel profile = await _userLearningProfileService
+            DarwinLingua.Learning.Application.Models.UserLearningProfileModel profile = await _activeLearningProfileCacheService
                 .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(false);
 

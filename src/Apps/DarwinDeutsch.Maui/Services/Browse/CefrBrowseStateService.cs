@@ -1,7 +1,7 @@
 using DarwinDeutsch.Maui.Services.Browse.Models;
+using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using System.Collections.Concurrent;
 
@@ -21,20 +21,20 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     private readonly ConcurrentDictionary<string, NavigationSliceCacheEntry> _navigationCache = new(StringComparer.OrdinalIgnoreCase);
     private readonly ConcurrentDictionary<string, SemaphoreSlim> _navigationGates = new(StringComparer.OrdinalIgnoreCase);
     private readonly IWordQueryService _wordQueryService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CefrBrowseStateService"/> class.
     /// </summary>
     public CefrBrowseStateService(
         IWordQueryService wordQueryService,
-        IUserLearningProfileService userLearningProfileService)
+        IActiveLearningProfileCacheService activeLearningProfileCacheService)
     {
         ArgumentNullException.ThrowIfNull(wordQueryService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
 
         _wordQueryService = wordQueryService;
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
     }
 
     /// <inheritdoc />
@@ -42,7 +42,7 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
 
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -87,7 +87,7 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
             throw new ArgumentOutOfRangeException(nameof(take));
         }
 
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -131,7 +131,7 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
 
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -172,7 +172,7 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
 
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -190,7 +190,7 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cefrLevel);
 
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(false);
 

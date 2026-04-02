@@ -42,15 +42,22 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        IQueryable<Guid> matchingTopicIds = dbContext.Topics
+        Guid? matchingTopicId = await dbContext.Topics
             .AsNoTracking()
             .Where(topic => topic.Key == normalizedTopicKey)
-            .Select(topic => topic.Id);
+            .Select(topic => (Guid?)topic.Id)
+            .SingleOrDefaultAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        if (!matchingTopicId.HasValue)
+        {
+            return [];
+        }
 
         List<WordBrowseProjection> words = await dbContext.WordEntries
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active)
-            .Where(word => word.Topics.Any(topic => matchingTopicIds.Contains(topic.TopicId)))
+            .Where(word => word.Topics.Any(topic => topic.TopicId == matchingTopicId.Value))
             .OrderBy(word => word.NormalizedLemma)
             .Select(word => new WordBrowseProjection(
                 word.PublicId,
@@ -105,15 +112,22 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        IQueryable<Guid> matchingTopicIds = dbContext.Topics
+        Guid? matchingTopicId = await dbContext.Topics
             .AsNoTracking()
             .Where(topic => topic.Key == normalizedTopicKey)
-            .Select(topic => topic.Id);
+            .Select(topic => (Guid?)topic.Id)
+            .SingleOrDefaultAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        if (!matchingTopicId.HasValue)
+        {
+            return [];
+        }
 
         List<WordBrowseProjection> words = await dbContext.WordEntries
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active)
-            .Where(word => word.Topics.Any(topic => matchingTopicIds.Contains(topic.TopicId)))
+            .Where(word => word.Topics.Any(topic => topic.TopicId == matchingTopicId.Value))
             .OrderBy(word => word.NormalizedLemma)
             .Skip(skip)
             .Take(take)
@@ -320,6 +334,7 @@ internal sealed class WordEntryRepository : IWordEntryRepository
 
         return dbContext.WordEntries
             .AsNoTracking()
+            .AsSplitQuery()
             .Include(word => word.Senses)
                 .ThenInclude(sense => sense.Translations)
             .Include(word => word.Senses)

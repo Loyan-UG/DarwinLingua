@@ -29,7 +29,7 @@ public partial class WordDetailPage : ContentPage
     private static readonly Color ActiveActionTextColor = Color.FromArgb("#12495B");
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IUserFavoriteWordService _userFavoriteWordService;
     private readonly IUserWordStateService _userWordStateService;
     private readonly ISpeechPlaybackService _speechPlaybackService;
@@ -49,7 +49,7 @@ public partial class WordDetailPage : ContentPage
     public WordDetailPage(
         IWordDetailCacheService wordDetailCacheService,
         ICefrBrowseStateService cefrBrowseStateService,
-        IUserLearningProfileService userLearningProfileService,
+        IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IUserFavoriteWordService userFavoriteWordService,
         IUserWordStateService userWordStateService,
         ISpeechPlaybackService speechPlaybackService,
@@ -57,7 +57,7 @@ public partial class WordDetailPage : ContentPage
     {
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(userFavoriteWordService);
         ArgumentNullException.ThrowIfNull(userWordStateService);
         ArgumentNullException.ThrowIfNull(speechPlaybackService);
@@ -67,7 +67,7 @@ public partial class WordDetailPage : ContentPage
 
         _wordDetailCacheService = wordDetailCacheService;
         _cefrBrowseStateService = cefrBrowseStateService;
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _userFavoriteWordService = userFavoriteWordService;
         _userWordStateService = userWordStateService;
         _speechPlaybackService = speechPlaybackService;
@@ -183,7 +183,7 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        UserLearningProfileModel profile = await _userLearningProfileService
+        UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(true);
 

@@ -1,7 +1,6 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Practice.Application.Abstractions;
 using DarwinLingua.Practice.Application.Models;
@@ -20,7 +19,7 @@ public partial class PracticeSessionPage : ContentPage
     private const int SessionItemCount = 10;
 
     private readonly IAppLocalizationService _appLocalizationService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IPracticeReviewSessionService _practiceReviewSessionService;
     private readonly IPracticeFlashcardAnswerService _practiceFlashcardAnswerService;
     private readonly IPracticeQuizAnswerService _practiceQuizAnswerService;
@@ -38,7 +37,7 @@ public partial class PracticeSessionPage : ContentPage
 
     public PracticeSessionPage(
         IAppLocalizationService appLocalizationService,
-        IUserLearningProfileService userLearningProfileService,
+        IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IPracticeReviewSessionService practiceReviewSessionService,
         IPracticeFlashcardAnswerService practiceFlashcardAnswerService,
         IPracticeQuizAnswerService practiceQuizAnswerService,
@@ -46,7 +45,7 @@ public partial class PracticeSessionPage : ContentPage
         ILogger<PracticeSessionPage> logger)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(practiceReviewSessionService);
         ArgumentNullException.ThrowIfNull(practiceFlashcardAnswerService);
         ArgumentNullException.ThrowIfNull(practiceQuizAnswerService);
@@ -56,7 +55,7 @@ public partial class PracticeSessionPage : ContentPage
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _practiceReviewSessionService = practiceReviewSessionService;
         _practiceFlashcardAnswerService = practiceFlashcardAnswerService;
         _practiceQuizAnswerService = practiceQuizAnswerService;
@@ -162,7 +161,7 @@ public partial class PracticeSessionPage : ContentPage
         {
             SetLoadingState();
 
-            UserLearningProfileModel profile = await _userLearningProfileService
+            UserLearningProfileModel profile = await _activeLearningProfileCacheService
                 .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
             PracticeReviewSessionModel session = await _practiceReviewSessionService

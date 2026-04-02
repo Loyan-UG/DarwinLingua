@@ -4,7 +4,6 @@ using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -20,7 +19,7 @@ public partial class SearchWordsPage : ContentPage
     private const int PrefetchResultCount = 4;
     private readonly IWordQueryService _wordQueryService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
-    private readonly IUserLearningProfileService _userLearningProfileService;
+    private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ILogger<SearchWordsPage> _logger;
     private CancellationTokenSource? _searchCancellationTokenSource;
@@ -34,13 +33,13 @@ public partial class SearchWordsPage : ContentPage
     public SearchWordsPage(
         IWordQueryService wordQueryService,
         IWordDetailCacheService wordDetailCacheService,
-        IUserLearningProfileService userLearningProfileService,
+        IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IPerformanceTelemetryService performanceTelemetryService,
         ILogger<SearchWordsPage> logger)
     {
         ArgumentNullException.ThrowIfNull(wordQueryService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
-        ArgumentNullException.ThrowIfNull(userLearningProfileService);
+        ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
         ArgumentNullException.ThrowIfNull(logger);
 
@@ -48,7 +47,7 @@ public partial class SearchWordsPage : ContentPage
 
         _wordQueryService = wordQueryService;
         _wordDetailCacheService = wordDetailCacheService;
-        _userLearningProfileService = userLearningProfileService;
+        _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _performanceTelemetryService = performanceTelemetryService;
         _logger = logger;
 
@@ -157,7 +156,7 @@ public partial class SearchWordsPage : ContentPage
                 return;
             }
 
-            UserLearningProfileModel profile = await _userLearningProfileService
+            UserLearningProfileModel profile = await _activeLearningProfileCacheService
                 .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
 
