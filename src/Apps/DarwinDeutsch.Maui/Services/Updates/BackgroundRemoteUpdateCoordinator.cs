@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Resources.Strings;
+using DarwinDeutsch.Maui.Pages;
 using DarwinDeutsch.Maui.Services.Browse;
 using Microsoft.Extensions.Logging;
 
@@ -41,7 +42,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     public void ScheduleInitialCheck(Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
-        _ = RunDeferredCheckAsync(window, InitialDelay, force: true);
+        _ = RunDeferredCheckAsync(window, InitialDelay, force: false);
     }
 
     /// <inheritdoc />
@@ -60,6 +61,11 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                 await Task.Delay(delay).ConfigureAwait(false);
             }
 
+            if (!HasInternetConnectivity())
+            {
+                return;
+            }
+
             if (!force && !ShouldRunCheckNow())
             {
                 return;
@@ -73,6 +79,11 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
             try
             {
                 if (!force && !ShouldRunCheckNow())
+                {
+                    return;
+                }
+
+                if (!HasInternetConnectivity())
                 {
                     return;
                 }
@@ -116,7 +127,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     private async Task PromptAndApplyUpdateAsync(Window window, string databasePath, RemoteContentUpdateStatus status)
     {
         Page? promptPage = await MainThread.InvokeOnMainThreadAsync(() => ResolvePromptPage(window)).ConfigureAwait(false);
-        if (promptPage is null)
+        if (promptPage is null || !CanShowPrompt(promptPage) || IsMeteredConnection())
         {
             return;
         }
@@ -196,6 +207,17 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
 
         return shell.CurrentPage;
     }
+
+    private static bool CanShowPrompt(Page promptPage) =>
+        promptPage is not StartupPage &&
+        promptPage is not WelcomePage &&
+        promptPage is not SettingsPage;
+
+    private static bool HasInternetConnectivity() =>
+        Connectivity.Current.NetworkAccess == NetworkAccess.Internet;
+
+    private static bool IsMeteredConnection() =>
+        Connectivity.Current.ConnectionProfiles.Contains(ConnectionProfile.Cellular);
 
     private static bool ShouldRunCheckNow()
     {
