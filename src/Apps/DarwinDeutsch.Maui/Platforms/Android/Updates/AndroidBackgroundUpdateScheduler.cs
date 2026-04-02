@@ -13,6 +13,7 @@ internal sealed class AndroidBackgroundUpdateScheduler(ILogger<AndroidBackground
     : Services.Updates.IPlatformBackgroundUpdateScheduler
 {
     private const int ProbeIntervalHours = 6;
+    private const int BackoffDelayMinutes = 30;
 
     /// <inheritdoc />
     public void EnsureScheduled()
@@ -20,13 +21,15 @@ internal sealed class AndroidBackgroundUpdateScheduler(ILogger<AndroidBackground
         try
         {
             Constraints constraints = new Constraints.Builder()
-                .SetRequiredNetworkType(NetworkType.Connected!)
+                .SetRequiredNetworkType(NetworkType.Unmetered!)
+                .SetRequiresBatteryNotLow(true)
                 .Build();
 
             PeriodicWorkRequest request = new PeriodicWorkRequest.Builder(
                     JavaClass.FromType(typeof(RemoteContentUpdateProbeWorker)),
                     ProbeIntervalHours,
                     JavaTimeUnit.Hours!)
+                .SetBackoffCriteria(BackoffPolicy.Linear!, BackoffDelayMinutes, JavaTimeUnit.Minutes!)
                 .SetConstraints(constraints)
                 .Build();
 
@@ -34,11 +37,11 @@ internal sealed class AndroidBackgroundUpdateScheduler(ILogger<AndroidBackground
                 .GetInstance(global::Android.App.Application.Context)
                 .EnqueueUniquePeriodicWork(
                     RemoteContentUpdateProbeWorker.UniqueWorkName,
-                    ExistingPeriodicWorkPolicy.Keep!,
+                    ExistingPeriodicWorkPolicy.Update!,
                     request);
 
             logger.LogInformation(
-                "Scheduled Android background remote update probe via WorkManager every {IntervalHours} hours.",
+                "Scheduled Android background remote update probe via WorkManager every {IntervalHours} hours with unmetered-network and battery-not-low constraints.",
                 ProbeIntervalHours);
         }
         catch (Exception exception)
