@@ -479,7 +479,7 @@ internal sealed class RemoteContentUpdateService(
     private async Task DownloadPackageAsync(RemoteUpdateScope scope, string packageId, string targetPath, CancellationToken cancellationToken)
     {
         using HttpResponseMessage response = await httpClient
-            .GetAsync(scope.BuildDownloadUri(options, packageId), cancellationToken)
+            .GetAsync(scope.BuildDownloadUri(options, packageId), HttpCompletionOption.ResponseHeadersRead, cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
 
