@@ -93,10 +93,24 @@ internal sealed class AppStartupInitializationService : IAppStartupInitializatio
             _logger.LogInformation("Startup initialized localization in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
 
             stepStopwatch.Restart();
-            await _seedDatabaseProvisioningService
+            SeedDatabaseUpdateResult seedUpdateResult = await _seedDatabaseProvisioningService
                 .ApplySeedUpdateAsync(databasePath, cancellationToken)
                 .ConfigureAwait(false);
             _logger.LogInformation("Startup applied packaged seed updates in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
+
+            if (!seedUpdateResult.IsSuccess)
+            {
+                string errorMessage = string.IsNullOrWhiteSpace(seedUpdateResult.ErrorMessage)
+                    ? "Packaged seed update failed during startup."
+                    : seedUpdateResult.ErrorMessage;
+
+                _logger.LogError(
+                    "Startup packaged seed update reported failure after {ElapsedMs} ms: {ErrorMessage}",
+                    stepStopwatch.ElapsedMilliseconds,
+                    errorMessage);
+                _performanceTelemetryService.Record("startup.initialize", startupStopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
+                return new AppStartupInitializationResult(false, errorMessage);
+            }
 
             _logger.LogInformation("Startup initialization completed in {ElapsedMs} ms.", startupStopwatch.ElapsedMilliseconds);
             _performanceTelemetryService.Record("startup.initialize", startupStopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
