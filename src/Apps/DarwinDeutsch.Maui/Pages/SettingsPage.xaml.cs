@@ -181,15 +181,16 @@ public partial class SettingsPage : ContentPage
         ApplyStaticLocalizedText();
 
         IReadOnlyList<UiLanguageOption> supportedUiLanguages = _appLocalizationService.GetSupportedLanguages();
-        IReadOnlyList<SupportedLanguageModel> supportedMeaningLanguages = (await _languageQueryService
-                .GetActiveLanguagesAsync(cancellationToken)
-                .ConfigureAwait(true))
-            .Where(language => language.SupportsMeanings)
-            .OrderBy(language => language.EnglishName)
-            .ToArray();
-        UserLearningProfileModel profile = await _activeLearningProfileCacheService
-            .GetCurrentProfileAsync(cancellationToken)
-            .ConfigureAwait(true);
+        Task<IReadOnlyList<SupportedLanguageModel>> supportedMeaningLanguagesTask = LoadSupportedMeaningLanguagesAsync(cancellationToken);
+        Task<UserLearningProfileModel> profileTask = _activeLearningProfileCacheService
+            .GetCurrentProfileAsync(cancellationToken);
+        Task<SeedDatabaseUpdateStatus> seedStatusTask = _seedDatabaseProvisioningService.GetUpdateStatusAsync(GetLocalDatabasePath(), cancellationToken);
+
+        await Task.WhenAll(supportedMeaningLanguagesTask, profileTask, seedStatusTask).ConfigureAwait(true);
+
+        IReadOnlyList<SupportedLanguageModel> supportedMeaningLanguages = await supportedMeaningLanguagesTask.ConfigureAwait(true);
+        UserLearningProfileModel profile = await profileTask.ConfigureAwait(true);
+        SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await seedStatusTask.ConfigureAwait(true);
 
         List<MeaningLanguageOption> primaryMeaningOptions = supportedMeaningLanguages
             .Select(CreateMeaningLanguageOption)
@@ -200,60 +201,105 @@ public partial class SettingsPage : ContentPage
 
         _isUpdatingSelection = true;
 
-        LanguagePicker.ItemsSource = supportedUiLanguages.ToList();
-        LanguagePicker.SelectedItem = supportedUiLanguages.Single(option => string.Equals(
-            option.CultureName,
-            profile.UiLanguageCode,
-            StringComparison.OrdinalIgnoreCase));
+        try
+        {
+            LanguagePicker.ItemsSource = supportedUiLanguages.ToList();
+            LanguagePicker.SelectedItem = supportedUiLanguages.Single(option => string.Equals(
+                option.CultureName,
+                profile.UiLanguageCode,
+                StringComparison.OrdinalIgnoreCase));
 
-        PrimaryMeaningLanguagePicker.ItemsSource = primaryMeaningOptions;
-        PrimaryMeaningLanguagePicker.SelectedItem = primaryMeaningOptions.Single(option => string.Equals(
-            option.LanguageCode,
-            profile.PreferredMeaningLanguage1,
-            StringComparison.OrdinalIgnoreCase));
+            PrimaryMeaningLanguagePicker.ItemsSource = primaryMeaningOptions;
+            PrimaryMeaningLanguagePicker.SelectedItem = primaryMeaningOptions.Single(option => string.Equals(
+                option.LanguageCode,
+                profile.PreferredMeaningLanguage1,
+                StringComparison.OrdinalIgnoreCase));
 
-        SecondaryMeaningLanguagePicker.ItemsSource = secondaryMeaningOptions;
-        SecondaryMeaningLanguagePicker.SelectedItem = secondaryMeaningOptions.Single(option => string.Equals(
-            option.LanguageCode ?? string.Empty,
-            profile.PreferredMeaningLanguage2 ?? string.Empty,
-            StringComparison.OrdinalIgnoreCase));
+            SecondaryMeaningLanguagePicker.ItemsSource = secondaryMeaningOptions;
+            SecondaryMeaningLanguagePicker.SelectedItem = secondaryMeaningOptions.Single(option => string.Equals(
+                option.LanguageCode ?? string.Empty,
+                profile.PreferredMeaningLanguage2 ?? string.Empty,
+                StringComparison.OrdinalIgnoreCase));
 
-        CurrentLanguageSectionView.SectionValue = supportedUiLanguages
-            .Single(option => string.Equals(option.CultureName, profile.UiLanguageCode, StringComparison.OrdinalIgnoreCase))
-            .DisplayName;
-        MeaningLanguagesSectionView.SectionValue = BuildMeaningLanguageSummary(
-            supportedMeaningLanguages,
-            profile.PreferredMeaningLanguage1,
-            profile.PreferredMeaningLanguage2);
-        SupportedLanguagesSectionView.SectionValue = supportedMeaningLanguages.Count == 0
-            ? AppStrings.HomeNoLanguages
-            : string.Join(Environment.NewLine, supportedMeaningLanguages.Select(language => $"{language.NativeName} ({language.Code})"));
-        CurrentFeaturesSectionView.SectionValue = AppStrings.WelcomeCurrentFeaturesBody;
-        FutureFeaturesSectionView.SectionValue = AppStrings.WelcomeFutureFeaturesBody;
+            CurrentLanguageSectionView.SectionValue = supportedUiLanguages
+                .Single(option => string.Equals(option.CultureName, profile.UiLanguageCode, StringComparison.OrdinalIgnoreCase))
+                .DisplayName;
+            MeaningLanguagesSectionView.SectionValue = BuildMeaningLanguageSummary(
+                supportedMeaningLanguages,
+                profile.PreferredMeaningLanguage1,
+                profile.PreferredMeaningLanguage2);
+            SupportedLanguagesSectionView.SectionValue = supportedMeaningLanguages.Count == 0
+                ? AppStrings.HomeNoLanguages
+                : string.Join(Environment.NewLine, supportedMeaningLanguages.Select(language => $"{language.NativeName} ({language.Code})"));
+            CurrentFeaturesSectionView.SectionValue = AppStrings.WelcomeCurrentFeaturesBody;
+            FutureFeaturesSectionView.SectionValue = AppStrings.WelcomeFutureFeaturesBody;
 
-        string localDatabasePath = GetLocalDatabasePath();
-        Task<SeedDatabaseUpdateStatus> seedStatusTask = _seedDatabaseProvisioningService.GetUpdateStatusAsync(localDatabasePath, cancellationToken);
-        Task<RemoteContentUpdateStatus> catalogAreaStatusTask = _remoteContentUpdateService.GetAreaUpdateStatusAsync(localDatabasePath, "catalog", cancellationToken);
+            ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
+            ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
+            ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, GetLocalDatabasePath());
+            ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
+            ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
+                ? AppStrings.SettingsContentUpdatesApplyButton
+                : AppStrings.SettingsContentUpdatesAppliedButton;
+
+            ApplyRemoteLoadingState();
+            await Task.Yield();
+            cancellationToken.ThrowIfCancellationRequested();
+            await LoadAndApplyRemoteUpdateSectionsAsync(GetLocalDatabasePath(), cancellationToken).ConfigureAwait(true);
+        }
+        finally
+        {
+            _isUpdatingSelection = false;
+        }
+    }
+
+    private async Task<IReadOnlyList<SupportedLanguageModel>> LoadSupportedMeaningLanguagesAsync(CancellationToken cancellationToken)
+    {
+        return (await _languageQueryService
+                .GetActiveLanguagesAsync(cancellationToken)
+                .ConfigureAwait(true))
+            .Where(language => language.SupportsMeanings)
+            .OrderBy(language => language.EnglishName)
+            .ToArray();
+    }
+
+    private void ApplyRemoteLoadingState()
+    {
+        string loadingText = AppStrings.CommonStateLoading;
+
+        RemoteContentUpdateStatusSectionView.SectionValue = loadingText;
+        RemoteContentUpdateDetailsSectionView.SectionValue = loadingText;
+        RemoteContentUpdateDiagnosticsSectionView.SectionValue = loadingText;
+        RemoteContentUpdateHistorySectionView.SectionValue = loadingText;
+        CatalogAreaUpdateSectionView.SectionValue = loadingText;
+        CefrA1UpdateSectionView.SectionValue = loadingText;
+        CefrA2UpdateSectionView.SectionValue = loadingText;
+        CefrB1UpdateSectionView.SectionValue = loadingText;
+        CefrB2UpdateSectionView.SectionValue = loadingText;
+        CefrC1UpdateSectionView.SectionValue = loadingText;
+        CefrC2UpdateSectionView.SectionValue = loadingText;
+
+        ApplyRemoteUpdateButton.IsEnabled = false;
+        ApplyCatalogAreaUpdateButton.IsEnabled = false;
+        ApplyCefrA1UpdateButton.IsEnabled = false;
+        ApplyCefrA2UpdateButton.IsEnabled = false;
+        ApplyCefrB1UpdateButton.IsEnabled = false;
+        ApplyCefrB2UpdateButton.IsEnabled = false;
+        ApplyCefrC1UpdateButton.IsEnabled = false;
+        ApplyCefrC2UpdateButton.IsEnabled = false;
+    }
+
+    private async Task LoadAndApplyRemoteUpdateSectionsAsync(string localDatabasePath, CancellationToken cancellationToken)
+    {
         Task<RemoteContentUpdateStatus> remoteContentStatusTask = _remoteContentUpdateService.GetUpdateStatusAsync(localDatabasePath, cancellationToken);
+        Task<RemoteContentUpdateStatus> catalogAreaStatusTask = _remoteContentUpdateService.GetAreaUpdateStatusAsync(localDatabasePath, "catalog", cancellationToken);
         Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> remoteUpdateHistoryTask = _remoteContentUpdateService.GetRecentUpdateHistoryAsync(cancellationToken);
-        Task<Dictionary<string, RemoteContentUpdateStatus>> cefrUpdateStatusesTask = LoadCefrUpdateStatusesAsync(localDatabasePath, cancellationToken);
 
-        await Task.WhenAll(seedStatusTask, catalogAreaStatusTask, remoteContentStatusTask, remoteUpdateHistoryTask, cefrUpdateStatusesTask)
-            .ConfigureAwait(true);
+        await Task.WhenAll(remoteContentStatusTask, catalogAreaStatusTask, remoteUpdateHistoryTask).ConfigureAwait(true);
 
-        SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await seedStatusTask.ConfigureAwait(true);
-        RemoteContentUpdateStatus catalogAreaUpdateStatus = await catalogAreaStatusTask.ConfigureAwait(true);
         RemoteContentUpdateStatus remoteContentUpdateStatus = await remoteContentStatusTask.ConfigureAwait(true);
+        RemoteContentUpdateStatus catalogAreaUpdateStatus = await catalogAreaStatusTask.ConfigureAwait(true);
         IReadOnlyList<RemoteContentUpdateHistoryEntry> remoteUpdateHistory = await remoteUpdateHistoryTask.ConfigureAwait(true);
-        Dictionary<string, RemoteContentUpdateStatus> cefrUpdateStatuses = await cefrUpdateStatusesTask.ConfigureAwait(true);
-
-        ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
-        ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
-        ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, localDatabasePath);
-        ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
-        ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
-            ? AppStrings.SettingsContentUpdatesApplyButton
-            : AppStrings.SettingsContentUpdatesAppliedButton;
 
         RemoteContentUpdateStatusSectionView.SectionValue = BuildRemoteContentUpdateStatus(remoteContentUpdateStatus);
         RemoteContentUpdateDetailsSectionView.SectionValue = BuildRemoteContentUpdateDetails(remoteContentUpdateStatus);
@@ -268,14 +314,16 @@ public partial class SettingsPage : ContentPage
         ApplyCatalogAreaUpdateButton.IsEnabled = catalogAreaUpdateStatus.IsRemoteConfigured && catalogAreaUpdateStatus.IsServerReachable && catalogAreaUpdateStatus.IsUpdateAvailable && !_isApplyingRemoteUpdate;
         ApplyCatalogAreaUpdateButton.Text = BuildRemoteScopeButtonText(catalogAreaUpdateStatus, AppStrings.SettingsRemoteCatalogAreaTitle);
 
+        await Task.Yield();
+        cancellationToken.ThrowIfCancellationRequested();
+
+        Dictionary<string, RemoteContentUpdateStatus> cefrUpdateStatuses = await LoadCefrUpdateStatusesAsync(localDatabasePath, cancellationToken).ConfigureAwait(true);
         BindCefrUpdateSection(CefrA1UpdateSectionView, ApplyCefrA1UpdateButton, "A1", cefrUpdateStatuses["A1"]);
         BindCefrUpdateSection(CefrA2UpdateSectionView, ApplyCefrA2UpdateButton, "A2", cefrUpdateStatuses["A2"]);
         BindCefrUpdateSection(CefrB1UpdateSectionView, ApplyCefrB1UpdateButton, "B1", cefrUpdateStatuses["B1"]);
         BindCefrUpdateSection(CefrB2UpdateSectionView, ApplyCefrB2UpdateButton, "B2", cefrUpdateStatuses["B2"]);
         BindCefrUpdateSection(CefrC1UpdateSectionView, ApplyCefrC1UpdateButton, "C1", cefrUpdateStatuses["C1"]);
         BindCefrUpdateSection(CefrC2UpdateSectionView, ApplyCefrC2UpdateButton, "C2", cefrUpdateStatuses["C2"]);
-
-        _isUpdatingSelection = false;
     }
 
     private async void OnApplyRemoteUpdateButtonClicked(object? sender, EventArgs e)
