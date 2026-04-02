@@ -832,7 +832,95 @@ internal sealed class RemoteContentUpdateService(
             CreatedAtUtc = excluded.CreatedAtUtc,
             UpdatedAtUtc = excluded.UpdatedAtUtc;
 
+        DELETE FROM ExampleTranslations
+        WHERE ExampleSentenceId IN (
+            SELECT es.Id
+            FROM ExampleSentences AS es
+            INNER JOIN WordSenses AS ws ON ws.Id = es.WordSenseId
+            INNER JOIN WordEntries AS we ON we.Id = ws.WordEntryId
+            WHERE we.PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM ExampleSentences
+        WHERE WordSenseId IN (
+            SELECT ws.Id
+            FROM WordSenses AS ws
+            INNER JOIN WordEntries AS we ON we.Id = ws.WordEntryId
+            WHERE we.PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM SenseTranslations
+        WHERE WordSenseId IN (
+            SELECT ws.Id
+            FROM WordSenses AS ws
+            INNER JOIN WordEntries AS we ON we.Id = ws.WordEntryId
+            WHERE we.PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM WordTopics
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM WordLabels
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM WordGrammarNotes
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM WordCollocations
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM WordFamilyMembers
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM WordRelations
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM ContentPackageEntries
+        WHERE ImportedWordEntryPublicId IN (
+            SELECT PublicId
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
+        DELETE FROM WordSenses
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
         DELETE FROM WordEntries WHERE PrimaryCefrLevel = $cefrLevel;
+
+        DELETE FROM ContentPackages
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM ContentPackageEntries AS entries
+            WHERE entries.ContentPackageId = ContentPackages.Id
+        );
 
         INSERT INTO WordEntries SELECT * FROM remote.WordEntries;
         INSERT INTO WordSenses SELECT * FROM remote.WordSenses;

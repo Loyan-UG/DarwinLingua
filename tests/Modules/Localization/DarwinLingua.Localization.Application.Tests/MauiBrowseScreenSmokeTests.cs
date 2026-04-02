@@ -317,6 +317,29 @@ public sealed class MauiBrowseScreenSmokeTests
     }
 
     /// <summary>
+    /// Verifies that CEFR-scoped remote updates clean out dependent rows before reinserting content.
+    /// </summary>
+    [Fact]
+    public void RemoteContentUpdateService_ShouldDeleteDependentRowsBeforeCefrReplace()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string remoteUpdateServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Updates/RemoteContentUpdateService.cs");
+
+        Assert.True(File.Exists(remoteUpdateServicePath), $"Remote content update service file not found: {remoteUpdateServicePath}");
+
+        string source = File.ReadAllText(remoteUpdateServicePath);
+
+        Assert.Contains("DELETE FROM ExampleTranslations", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM ExampleSentences", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM SenseTranslations", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM WordTopics", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM WordSenses", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM ContentPackageEntries", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM ContentPackages", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM WordEntries WHERE PrimaryCefrLevel = $cefrLevel", source, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// Resolves the repository root path by walking parent directories.
     /// </summary>
     private static string ResolveRepositoryRoot()
