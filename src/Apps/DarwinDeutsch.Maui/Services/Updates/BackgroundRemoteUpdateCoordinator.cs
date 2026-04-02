@@ -133,10 +133,9 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                 AppStrings.BackgroundRemoteUpdateLaterButton))
             .ConfigureAwait(false);
 
-        Preferences.Default.Set(LastPromptedRemotePackageIdPreferenceKey, status.RemotePackageId);
-
         if (!shouldApplyNow)
         {
+            Preferences.Default.Set(LastPromptedRemotePackageIdPreferenceKey, status.RemotePackageId);
             return;
         }
 
@@ -146,7 +145,12 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
 
         if (result.IsSuccess && result.AppliedChanges)
         {
+            Preferences.Default.Set(LastPromptedRemotePackageIdPreferenceKey, status.RemotePackageId);
             _browseAccelerationService.ResetCaches();
+        }
+        else if (!result.IsSuccess)
+        {
+            Preferences.Default.Remove(LastPromptedRemotePackageIdPreferenceKey);
         }
 
         await MainThread.InvokeOnMainThreadAsync(() => ShowApplyResultAsync(promptPage, result)).ConfigureAwait(false);
