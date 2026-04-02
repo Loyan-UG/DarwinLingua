@@ -602,6 +602,11 @@ internal sealed class RemoteContentUpdateService(
         public static RemoteUpdateScope ForArea(string areaKey)
         {
             string normalizedAreaKey = areaKey.Trim().ToLowerInvariant();
+            if (!string.Equals(normalizedAreaKey, "catalog", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new InvalidOperationException($"The content area '{areaKey}' is not supported for local mobile updates yet.");
+            }
+
             return new RemoteUpdateScope($"{normalizedAreaKey}-full", normalizedAreaKey, "full", $"full-{normalizedAreaKey}", ReplaceMode.FullDatabase, string.Empty);
         }
 
