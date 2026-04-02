@@ -18,6 +18,8 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     private const string LastFailedApplyAtPreferenceKey = "remote-content-background-last-failed-apply-at-utc";
     private static readonly TimeSpan InitialDelay = TimeSpan.FromSeconds(3);
     private static readonly TimeSpan ResumeDelay = TimeSpan.FromSeconds(2);
+    private static readonly TimeSpan PendingCheckCoalescingWindow = TimeSpan.FromSeconds(5);
+    private static readonly TimeSpan ResumeAfterStartupSuppressionWindow = TimeSpan.FromSeconds(20);
     private static readonly TimeSpan MinimumCheckInterval = TimeSpan.FromMinutes(30);
     private static readonly TimeSpan FailedApplyPromptCooldown = TimeSpan.FromMinutes(30);
     private static readonly TimeSpan[] FailureBackoffSchedule =
@@ -32,6 +34,10 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly ILogger<BackgroundRemoteUpdateCoordinator> _logger;
     private readonly SemaphoreSlim _gate = new(1, 1);
+    private readonly object _scheduleStateLock = new();
+
+    private ScheduledCheckState? _scheduledCheck;
+    private DateTimeOffset? _lastInitialCheckScheduledAtUtc;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BackgroundRemoteUpdateCoordinator"/> class.
@@ -54,17 +60,50 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     public void ScheduleInitialCheck(Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
-        _ = RunDeferredCheckAsync(window, InitialDelay, force: false);
+        ScheduleCheck(window, InitialDelay, force: false, CheckScheduleReason.Initial);
     }
 
     /// <inheritdoc />
     public void ScheduleResumeCheck(Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
-        _ = RunDeferredCheckAsync(window, ResumeDelay, force: false);
+        ScheduleCheck(window, ResumeDelay, force: false, CheckScheduleReason.Resume);
     }
 
-    private async Task RunDeferredCheckAsync(Window window, TimeSpan delay, bool force)
+    private void ScheduleCheck(Window window, TimeSpan delay, bool force, CheckScheduleReason reason)
+    {
+        DateTimeOffset nowUtc = DateTimeOffset.UtcNow;
+        DateTimeOffset dueAtUtc = nowUtc.Add(delay);
+        long scheduledCheckId;
+
+        lock (_scheduleStateLock)
+        {
+            if (reason is CheckScheduleReason.Resume &&
+                _lastInitialCheckScheduledAtUtc is DateTimeOffset lastInitialCheckScheduledAtUtc &&
+                nowUtc - lastInitialCheckScheduledAtUtc < ResumeAfterStartupSuppressionWindow)
+            {
+                return;
+            }
+
+            if (_scheduledCheck is { } scheduledCheck &&
+                scheduledCheck.DueAtUtc <= dueAtUtc.Add(PendingCheckCoalescingWindow))
+            {
+                return;
+            }
+
+            scheduledCheckId = (_scheduledCheck?.Id ?? 0L) + 1L;
+            _scheduledCheck = new ScheduledCheckState(scheduledCheckId, dueAtUtc);
+
+            if (reason is CheckScheduleReason.Initial)
+            {
+                _lastInitialCheckScheduledAtUtc = nowUtc;
+            }
+        }
+
+        _ = RunDeferredCheckAsync(window, delay, force, scheduledCheckId);
+    }
+
+    private async Task RunDeferredCheckAsync(Window window, TimeSpan delay, bool force, long scheduledCheckId)
     {
         try
         {
@@ -72,6 +111,8 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
             {
                 await Task.Delay(delay).ConfigureAwait(false);
             }
+
+            ClearScheduledCheck(scheduledCheckId);
 
             if (!HasInternetConnectivity())
             {
@@ -143,8 +184,20 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
         }
         catch (Exception exception)
         {
+            ClearScheduledCheck(scheduledCheckId);
             PersistBackgroundFailure(DateTimeOffset.UtcNow);
             _logger.LogWarning(exception, "Background remote update check failed.");
+        }
+    }
+
+    private void ClearScheduledCheck(long scheduledCheckId)
+    {
+        lock (_scheduleStateLock)
+        {
+            if (_scheduledCheck?.Id == scheduledCheckId)
+            {
+                _scheduledCheck = null;
+            }
         }
     }
 
@@ -325,5 +378,13 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     {
         Preferences.Default.Remove(LastFailedApplyPackageIdPreferenceKey);
         Preferences.Default.Remove(LastFailedApplyAtPreferenceKey);
+    }
+
+    private sealed record ScheduledCheckState(long Id, DateTimeOffset DueAtUtc);
+
+    private enum CheckScheduleReason
+    {
+        Initial,
+        Resume
     }
 }
