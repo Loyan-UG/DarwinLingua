@@ -54,35 +54,25 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             return [];
         }
 
-        List<WordBrowseProjection> words = await dbContext.WordEntries
+        List<WordBrowseRow> words = await dbContext.WordEntries
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active)
             .Where(word => word.Topics.Any(topic => topic.TopicId == matchingTopicId.Value))
             .OrderBy(word => word.NormalizedLemma)
-            .Select(word => new WordBrowseProjection(
+            .Select(word => new WordBrowseRow(
+                word.Id,
                 word.PublicId,
                 word.Lemma,
                 word.Article,
                 word.PluralForm,
                 word.PartOfSpeech,
                 word.PrimaryCefrLevel,
-                word.NormalizedLemma,
-                word.Senses
-                    .Where(sense => sense.IsPrimarySense)
-                    .SelectMany(sense => sense.Translations
-                        .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
-                        .OrderByDescending(translation => translation.IsPrimary)
-                        .ThenBy(translation => translation.TranslationText)
-                        .Select(translation => translation.TranslationText)
-                        .Take(1))
-                    .FirstOrDefault(),
-                false))
+                word.NormalizedLemma))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return words
-            .Select(MapToBrowseModel)
-            .ToArray();
+        return await MapToBrowseModelsAsync(dbContext, words, resolvedMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
     }
 
     /// <inheritdoc />
@@ -124,37 +114,27 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             return [];
         }
 
-        List<WordBrowseProjection> words = await dbContext.WordEntries
+        List<WordBrowseRow> words = await dbContext.WordEntries
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active)
             .Where(word => word.Topics.Any(topic => topic.TopicId == matchingTopicId.Value))
             .OrderBy(word => word.NormalizedLemma)
             .Skip(skip)
             .Take(take)
-            .Select(word => new WordBrowseProjection(
+            .Select(word => new WordBrowseRow(
+                word.Id,
                 word.PublicId,
                 word.Lemma,
                 word.Article,
                 word.PluralForm,
                 word.PartOfSpeech,
                 word.PrimaryCefrLevel,
-                word.NormalizedLemma,
-                word.Senses
-                    .Where(sense => sense.IsPrimarySense)
-                    .SelectMany(sense => sense.Translations
-                        .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
-                        .OrderByDescending(translation => translation.IsPrimary)
-                        .ThenBy(translation => translation.TranslationText)
-                        .Select(translation => translation.TranslationText)
-                        .Take(1))
-                    .FirstOrDefault(),
-                false))
+                word.NormalizedLemma))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return words
-            .Select(MapToBrowseModel)
-            .ToArray();
+        return await MapToBrowseModelsAsync(dbContext, words, resolvedMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
     }
 
     /// <inheritdoc />
@@ -186,34 +166,24 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        List<WordBrowseProjection> words = await dbContext.WordEntries
+        List<WordBrowseRow> words = await dbContext.WordEntries
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active && word.PrimaryCefrLevel == cefrLevel)
             .OrderBy(word => word.NormalizedLemma)
-            .Select(word => new WordBrowseProjection(
+            .Select(word => new WordBrowseRow(
+                word.Id,
                 word.PublicId,
                 word.Lemma,
                 word.Article,
                 word.PluralForm,
                 word.PartOfSpeech,
                 word.PrimaryCefrLevel,
-                word.NormalizedLemma,
-                word.Senses
-                    .Where(sense => sense.IsPrimarySense)
-                    .SelectMany(sense => sense.Translations
-                        .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
-                        .OrderByDescending(translation => translation.IsPrimary)
-                        .ThenBy(translation => translation.TranslationText)
-                        .Select(translation => translation.TranslationText)
-                        .Take(1))
-                    .FirstOrDefault(),
-                false))
+                word.NormalizedLemma))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return words
-            .Select(MapToBrowseModel)
-            .ToArray();
+        return await MapToBrowseModelsAsync(dbContext, words, resolvedMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
     }
 
     /// <inheritdoc />
@@ -240,36 +210,26 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        List<WordBrowseProjection> words = await dbContext.WordEntries
+        List<WordBrowseRow> words = await dbContext.WordEntries
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active && word.PrimaryCefrLevel == cefrLevel)
             .OrderBy(word => word.NormalizedLemma)
             .Skip(skip)
             .Take(take)
-            .Select(word => new WordBrowseProjection(
+            .Select(word => new WordBrowseRow(
+                word.Id,
                 word.PublicId,
                 word.Lemma,
                 word.Article,
                 word.PluralForm,
                 word.PartOfSpeech,
                 word.PrimaryCefrLevel,
-                word.NormalizedLemma,
-                word.Senses
-                    .Where(sense => sense.IsPrimarySense)
-                    .SelectMany(sense => sense.Translations
-                        .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
-                        .OrderByDescending(translation => translation.IsPrimary)
-                        .ThenBy(translation => translation.TranslationText)
-                        .Select(translation => translation.TranslationText)
-                        .Take(1))
-                    .FirstOrDefault(),
-                false))
+                word.NormalizedLemma))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return words
-            .Select(MapToBrowseModel)
-            .ToArray();
+        return await MapToBrowseModelsAsync(dbContext, words, resolvedMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
     }
 
     /// <inheritdoc />
@@ -291,36 +251,53 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active);
 
-        List<WordBrowseProjection> prefixMatches = await activeWords
+        List<WordBrowseRow> prefixMatches = await activeWords
             .Where(word => EF.Functions.Like(word.NormalizedLemma, prefixPattern))
             .OrderBy(word => word.NormalizedLemma)
-            .Select(word => CreateBrowseProjection(word, resolvedMeaningLanguageCode, true))
+            .Select(word => new WordBrowseRow(
+                word.Id,
+                word.PublicId,
+                word.Lemma,
+                word.Article,
+                word.PluralForm,
+                word.PartOfSpeech,
+                word.PrimaryCefrLevel,
+                word.NormalizedLemma))
             .Take(SearchResultLimit)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
         if (prefixMatches.Count >= SearchResultLimit)
         {
-            return prefixMatches
-                .Select(MapToBrowseModel)
-                .ToArray();
+            return await MapToBrowseModelsAsync(dbContext, prefixMatches, resolvedMeaningLanguageCode, cancellationToken)
+                .ConfigureAwait(false);
         }
 
         int remainingCount = SearchResultLimit - prefixMatches.Count;
 
-        List<WordBrowseProjection> containsMatches = await activeWords
+        List<WordBrowseRow> containsMatches = await activeWords
             .Where(word => !EF.Functions.Like(word.NormalizedLemma, prefixPattern))
             .Where(word => EF.Functions.Like(word.NormalizedLemma, containsPattern))
             .OrderBy(word => word.NormalizedLemma)
-            .Select(word => CreateBrowseProjection(word, resolvedMeaningLanguageCode, false))
+            .Select(word => new WordBrowseRow(
+                word.Id,
+                word.PublicId,
+                word.Lemma,
+                word.Article,
+                word.PluralForm,
+                word.PartOfSpeech,
+                word.PrimaryCefrLevel,
+                word.NormalizedLemma))
             .Take(remainingCount)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return prefixMatches
-            .Concat(containsMatches)
-            .Select(MapToBrowseModel)
-            .ToArray();
+        return await MapToBrowseModelsAsync(
+                dbContext,
+                prefixMatches.Concat(containsMatches).ToArray(),
+                resolvedMeaningLanguageCode,
+                cancellationToken)
+            .ConfigureAwait(false);
     }
 
     /// <summary>
@@ -348,51 +325,75 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .Include(word => word.Labels);
     }
 
-    private sealed record WordBrowseProjection(
+    private static async Task<IReadOnlyList<WordListItemModel>> MapToBrowseModelsAsync(
+        DarwinLinguaDbContext dbContext,
+        IReadOnlyList<WordBrowseRow> rows,
+        LanguageCode meaningLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        if (rows.Count == 0)
+        {
+            return [];
+        }
+
+        Dictionary<Guid, string?> meaningsByWordEntryId = await LoadPrimaryMeaningsAsync(
+                dbContext,
+                rows.Select(row => row.WordEntryId).ToArray(),
+                meaningLanguageCode,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        return rows
+            .Select(row => new WordListItemModel(
+                row.PublicId,
+                row.Lemma,
+                row.Article,
+                row.PluralForm,
+                row.PartOfSpeech.ToString(),
+                row.CefrLevel.ToString(),
+                meaningsByWordEntryId.GetValueOrDefault(row.WordEntryId)))
+            .ToArray();
+    }
+
+    private static async Task<Dictionary<Guid, string?>> LoadPrimaryMeaningsAsync(
+        DarwinLinguaDbContext dbContext,
+        Guid[] wordEntryIds,
+        LanguageCode meaningLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        List<PrimaryMeaningRow> meanings = await dbContext.WordSenses
+            .AsNoTracking()
+            .Where(sense => sense.IsPrimarySense && wordEntryIds.Contains(sense.WordEntryId))
+            .SelectMany(
+                sense => sense.Translations
+                    .Where(translation => translation.LanguageCode == meaningLanguageCode)
+                    .Select(translation => new PrimaryMeaningRow(
+                        sense.WordEntryId,
+                        translation.TranslationText,
+                        translation.IsPrimary)))
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return meanings
+            .GroupBy(row => row.WordEntryId)
+            .ToDictionary(
+                group => group.Key,
+                group => group
+                    .OrderByDescending(row => row.IsPrimary)
+                    .ThenBy(row => row.TranslationText, StringComparer.Ordinal)
+                    .Select(row => row.TranslationText)
+                    .FirstOrDefault());
+    }
+
+    private sealed record WordBrowseRow(
+        Guid WordEntryId,
         Guid PublicId,
         string Lemma,
         string? Article,
         string? PluralForm,
         PartOfSpeech PartOfSpeech,
         CefrLevel CefrLevel,
-        string NormalizedLemma,
-        string? PrimaryMeaning,
-        bool IsPrefixMatch);
+        string NormalizedLemma);
 
-    private static WordBrowseProjection CreateBrowseProjection(
-        WordEntry word,
-        LanguageCode resolvedMeaningLanguageCode,
-        bool isPrefixMatch)
-    {
-        return new WordBrowseProjection(
-            word.PublicId,
-            word.Lemma,
-            word.Article,
-            word.PluralForm,
-            word.PartOfSpeech,
-            word.PrimaryCefrLevel,
-            word.NormalizedLemma,
-            word.Senses
-                .Where(sense => sense.IsPrimarySense)
-                .SelectMany(sense => sense.Translations
-                    .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
-                    .OrderByDescending(translation => translation.IsPrimary)
-                    .ThenBy(translation => translation.TranslationText)
-                    .Select(translation => translation.TranslationText)
-                    .Take(1))
-                .FirstOrDefault(),
-            isPrefixMatch);
-    }
-
-    private static WordListItemModel MapToBrowseModel(WordBrowseProjection word)
-    {
-        return new WordListItemModel(
-            word.PublicId,
-            word.Lemma,
-            word.Article,
-            word.PluralForm,
-            word.PartOfSpeech.ToString(),
-            word.CefrLevel.ToString(),
-            word.PrimaryMeaning);
-    }
+    private sealed record PrimaryMeaningRow(Guid WordEntryId, string TranslationText, bool IsPrimary);
 }
