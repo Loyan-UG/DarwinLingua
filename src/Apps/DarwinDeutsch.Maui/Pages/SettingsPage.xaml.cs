@@ -4,6 +4,9 @@ using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Storage;
 using DarwinDeutsch.Maui.Services.Updates;
+#if ANDROID
+using DarwinDeutsch.Maui.Platforms.Android.Updates;
+#endif
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Localization.Application.Abstractions;
 using DarwinLingua.Localization.Application.Models;
@@ -795,8 +798,8 @@ public partial class SettingsPage : ContentPage
             ? AppStrings.SettingsRemoteContentUpdatesNoFailureValue
             : remoteContentUpdateStatus.LastFailureMessage;
 
-        return string.Join(
-            Environment.NewLine,
+        List<string> diagnosticsLines =
+        [
             string.Format(AppStrings.SettingsRemoteContentUpdatesScopeFormat, scopeKey),
             string.Format(AppStrings.SettingsRemoteContentUpdatesContentAreaFormat, contentArea),
             string.Format(AppStrings.SettingsRemoteContentUpdatesSliceFormat, sliceKey),
@@ -811,8 +814,47 @@ public partial class SettingsPage : ContentPage
             string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteSchemaVersionFormat, remoteSchemaVersion),
             string.Format(AppStrings.SettingsRemoteContentUpdatesManifestGeneratedAtFormat, remoteManifestGeneratedAt),
             string.Format(AppStrings.SettingsRemoteContentUpdatesLastUpdatedAtFormat, lastUpdatedAt),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesLastFailureFormat, lastFailure));
+            string.Format(AppStrings.SettingsRemoteContentUpdatesLastFailureFormat, lastFailure),
+        ];
+
+#if ANDROID
+        diagnosticsLines.AddRange(BuildAndroidWorkerDiagnostics());
+#endif
+
+        return string.Join(
+            Environment.NewLine,
+            diagnosticsLines);
     }
+
+#if ANDROID
+    private static IEnumerable<string> BuildAndroidWorkerDiagnostics()
+    {
+        string workerLastProbeAt = Preferences.Default.Get<string?>(RemoteContentUpdateProbeWorker.LastWorkerProbeAtPreferenceKey, null)
+            is string rawProbeAt && DateTimeOffset.TryParse(rawProbeAt, out DateTimeOffset parsedProbeAt)
+                ? parsedProbeAt.ToLocalTime().ToString("g")
+                : AppStrings.SettingsContentUpdatesNeverAppliedValue;
+        string workerOutcome = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerOutcomePreferenceKey, AppStrings.SettingsContentUpdatesUnknownSignatureValue);
+        string workerPendingPackage = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerPendingPackageIdPreferenceKey, string.Empty);
+        string workerFailure = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerFailureMessagePreferenceKey, string.Empty);
+        bool workerServerReachable = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerServerReachablePreferenceKey, false);
+        bool workerUpdateAvailable = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerUpdateAvailablePreferenceKey, false);
+
+        yield return $"Android worker last probe: {workerLastProbeAt}";
+        yield return $"Android worker outcome: {workerOutcome}";
+        yield return $"Android worker reachable: {workerServerReachable}";
+        yield return $"Android worker update available: {workerUpdateAvailable}";
+
+        if (!string.IsNullOrWhiteSpace(workerPendingPackage))
+        {
+            yield return $"Android worker pending package: {workerPendingPackage}";
+        }
+
+        if (!string.IsNullOrWhiteSpace(workerFailure))
+        {
+            yield return $"Android worker failure: {workerFailure}";
+        }
+    }
+#endif
 
     private static string BuildRemoteContentUpdateHistory(IReadOnlyList<RemoteContentUpdateHistoryEntry> historyEntries)
     {

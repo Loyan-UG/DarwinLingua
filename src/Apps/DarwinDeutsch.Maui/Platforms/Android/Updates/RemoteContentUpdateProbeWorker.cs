@@ -17,9 +17,12 @@ public sealed class RemoteContentUpdateProbeWorker(Context context, WorkerParame
     /// </summary>
     public const string UniqueWorkName = "darwinlingua-remote-content-probe";
 
-    private const string LastWorkerProbeAtPreferenceKey = "remote-content-background-worker-last-probe-at-utc";
-    private const string LastWorkerPendingPackageIdPreferenceKey = "remote-content-background-worker-last-pending-package-id";
-    private const string LastWorkerFailureMessagePreferenceKey = "remote-content-background-worker-last-failure-message";
+    internal const string LastWorkerProbeAtPreferenceKey = "remote-content-background-worker-last-probe-at-utc";
+    internal const string LastWorkerPendingPackageIdPreferenceKey = "remote-content-background-worker-last-pending-package-id";
+    internal const string LastWorkerFailureMessagePreferenceKey = "remote-content-background-worker-last-failure-message";
+    internal const string LastWorkerOutcomePreferenceKey = "remote-content-background-worker-last-outcome";
+    internal const string LastWorkerServerReachablePreferenceKey = "remote-content-background-worker-last-server-reachable";
+    internal const string LastWorkerUpdateAvailablePreferenceKey = "remote-content-background-worker-last-update-available";
 
     /// <inheritdoc />
     public override Result DoWork()
@@ -27,6 +30,7 @@ public sealed class RemoteContentUpdateProbeWorker(Context context, WorkerParame
         IServiceProvider? serviceProvider = MainApplication.Services;
         if (serviceProvider is null)
         {
+            PersistFailure("Service provider unavailable.");
             return Result.InvokeRetry()!;
         }
 
@@ -43,6 +47,7 @@ public sealed class RemoteContentUpdateProbeWorker(Context context, WorkerParame
             string? filesDirectoryPath = appContext.FilesDir?.AbsolutePath;
             if (string.IsNullOrWhiteSpace(filesDirectoryPath))
             {
+                PersistFailure("App files directory unavailable.");
                 return Result.InvokeRetry()!;
             }
 
@@ -53,6 +58,8 @@ public sealed class RemoteContentUpdateProbeWorker(Context context, WorkerParame
                 .GetResult();
 
             Preferences.Default.Set(LastWorkerProbeAtPreferenceKey, DateTimeOffset.UtcNow.ToString("O"));
+            Preferences.Default.Set(LastWorkerServerReachablePreferenceKey, status.IsServerReachable);
+            Preferences.Default.Set(LastWorkerUpdateAvailablePreferenceKey, status.IsUpdateAvailable);
 
             if (status.IsRemoteConfigured && status.IsServerReachable && status.IsUpdateAvailable && !string.IsNullOrWhiteSpace(status.RemotePackageId))
             {
@@ -63,6 +70,7 @@ public sealed class RemoteContentUpdateProbeWorker(Context context, WorkerParame
                 Preferences.Default.Remove(LastWorkerPendingPackageIdPreferenceKey);
             }
 
+            Preferences.Default.Set(LastWorkerOutcomePreferenceKey, status.IsServerReachable ? "success" : "unreachable");
             Preferences.Default.Remove(LastWorkerFailureMessagePreferenceKey);
 
             logger.LogInformation(
@@ -75,14 +83,20 @@ public sealed class RemoteContentUpdateProbeWorker(Context context, WorkerParame
         }
         catch (OperationCanceledException exception)
         {
-            Preferences.Default.Set(LastWorkerFailureMessagePreferenceKey, exception.Message);
+            PersistFailure(exception.Message, "timeout");
             return Result.InvokeRetry()!;
         }
         catch (Exception exception)
         {
-            Preferences.Default.Set(LastWorkerFailureMessagePreferenceKey, exception.Message);
+            PersistFailure(exception.Message, "failed");
             logger.LogWarning(exception, "Android background remote update probe failed.");
             return Result.InvokeRetry()!;
         }
+    }
+
+    private static void PersistFailure(string? message, string outcome = "failed")
+    {
+        Preferences.Default.Set(LastWorkerOutcomePreferenceKey, outcome);
+        Preferences.Default.Set(LastWorkerFailureMessagePreferenceKey, string.IsNullOrWhiteSpace(message) ? "Unknown error." : message);
     }
 }
