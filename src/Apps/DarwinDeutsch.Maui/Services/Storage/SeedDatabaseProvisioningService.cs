@@ -83,8 +83,8 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             seedAssetSnapshot.Stream.Position = 0;
             await seedAssetSnapshot.Stream.CopyToAsync(localDatabaseStream, cancellationToken).ConfigureAwait(false);
 
-            int importedPackages = await CountRowsAsync(databasePath, "ContentPackages", cancellationToken).ConfigureAwait(false);
-            int importedWords = await CountRowsAsync(databasePath, "WordEntries", cancellationToken).ConfigureAwait(false);
+            int importedPackages = seedAssetSnapshot.PackageCount;
+            int importedWords = seedAssetSnapshot.WordCount;
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistAppliedSeedMetadata(seedAssetSnapshot.Signature, appliedAtUtc, importedPackages, importedWords);
         }
@@ -103,14 +103,11 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         string? appliedSignature = Preferences.Default.Get<string?>(SeedSignaturePreferenceKey, null);
         if (!File.Exists(databasePath))
         {
-            int seedPackages = await CountRowsInStreamAsync(seedAssetSnapshot.Stream, "ContentPackages", cancellationToken).ConfigureAwait(false);
-            int seedWords = await CountRowsInStreamAsync(seedAssetSnapshot.Stream, "WordEntries", cancellationToken).ConfigureAwait(false);
-
             return new SeedDatabaseUpdateStatus(
                 true,
                 true,
-                seedPackages,
-                seedWords,
+                seedAssetSnapshot.PackageCount,
+                seedAssetSnapshot.WordCount,
                 seedAssetSnapshot.Signature,
                 GetAppliedSeedSignature(),
                 GetLastAppliedAtUtc(),
@@ -178,8 +175,8 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         {
             await EnsureSeedDatabaseCoreAsync(databasePath, cancellationToken).ConfigureAwait(false);
 
-            int importedPackages = await CountRowsAsync(databasePath, "ContentPackages", cancellationToken).ConfigureAwait(false);
-            int importedWords = await CountRowsAsync(databasePath, "WordEntries", cancellationToken).ConfigureAwait(false);
+            int importedPackages = seedAssetSnapshot.PackageCount;
+            int importedWords = seedAssetSnapshot.WordCount;
             DateTimeOffset appliedAtUtc = GetLastAppliedAtUtc() ?? DateTimeOffset.UtcNow;
 
             return new SeedDatabaseUpdateResult(true, true, importedPackages, importedWords, seedAssetSnapshot.Signature, appliedAtUtc, null);
@@ -311,7 +308,8 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             memoryStream.Position = 0;
             byte[] seedBytes = memoryStream.ToArray();
             string signature = Convert.ToHexString(SHA256.HashData(seedBytes)).ToLowerInvariant();
-            _cachedSeedAsset = new SeedAssetCacheEntry(seedBytes, signature);
+            (int packageCount, int wordCount) = await CountRowsInBytesAsync(seedBytes, cancellationToken).ConfigureAwait(false);
+            _cachedSeedAsset = new SeedAssetCacheEntry(seedBytes, signature, packageCount, wordCount);
             return _cachedSeedAsset.CreateSnapshot();
         }
         catch (FileNotFoundException)
@@ -336,24 +334,24 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             cancellationToken).ConfigureAwait(false);
     }
 
-    private static async Task<int> CountRowsInStreamAsync(
-        MemoryStream seedStream,
-        string tableName,
+    private static async Task<(int PackageCount, int WordCount)> CountRowsInBytesAsync(
+        byte[] seedBytes,
         CancellationToken cancellationToken)
     {
-        ArgumentNullException.ThrowIfNull(seedStream);
+        ArgumentNullException.ThrowIfNull(seedBytes);
 
         string temporarySeedPath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-seed-count-{Guid.NewGuid():N}.db");
 
         try
         {
-            seedStream.Position = 0;
             await using (FileStream tempSeedStream = File.Create(temporarySeedPath))
             {
-                await seedStream.CopyToAsync(tempSeedStream, cancellationToken).ConfigureAwait(false);
+                await tempSeedStream.WriteAsync(seedBytes, cancellationToken).ConfigureAwait(false);
             }
 
-            return await CountRowsAsync(temporarySeedPath, tableName, cancellationToken).ConfigureAwait(false);
+            int packageCount = await CountRowsAsync(temporarySeedPath, "ContentPackages", cancellationToken).ConfigureAwait(false);
+            int wordCount = await CountRowsAsync(temporarySeedPath, "WordEntries", cancellationToken).ConfigureAwait(false);
+            return (packageCount, wordCount);
         }
         finally
         {
@@ -715,15 +713,21 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
 
     private sealed class SeedAssetSnapshot : IAsyncDisposable
     {
-        public SeedAssetSnapshot(MemoryStream stream, string signature)
+        public SeedAssetSnapshot(MemoryStream stream, string signature, int packageCount, int wordCount)
         {
             Stream = stream;
             Signature = signature;
+            PackageCount = packageCount;
+            WordCount = wordCount;
         }
 
         public MemoryStream Stream { get; }
 
         public string Signature { get; }
+
+        public int PackageCount { get; }
+
+        public int WordCount { get; }
 
         public ValueTask DisposeAsync()
         {
@@ -734,21 +738,27 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
 
     private sealed class SeedAssetCacheEntry
     {
-        public SeedAssetCacheEntry(byte[] bytes, string signature)
+        public SeedAssetCacheEntry(byte[] bytes, string signature, int packageCount, int wordCount)
         {
             Bytes = bytes;
             Signature = signature;
+            PackageCount = packageCount;
+            WordCount = wordCount;
         }
 
         public byte[] Bytes { get; }
 
         public string Signature { get; }
 
+        public int PackageCount { get; }
+
+        public int WordCount { get; }
+
         public SeedAssetSnapshot CreateSnapshot()
         {
             MemoryStream memoryStream = new(Bytes, writable: false);
             memoryStream.Position = 0;
-            return new SeedAssetSnapshot(memoryStream, Signature);
+            return new SeedAssetSnapshot(memoryStream, Signature, PackageCount, WordCount);
         }
     }
 }
