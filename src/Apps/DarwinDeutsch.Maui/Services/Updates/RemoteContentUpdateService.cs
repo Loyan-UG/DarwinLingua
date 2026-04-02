@@ -215,7 +215,11 @@ internal sealed class RemoteContentUpdateService(
 
         try
         {
+            Stopwatch manifestStopwatch = Stopwatch.StartNew();
             RemoteContentManifestModel? manifest = await GetManifestAsync(scope.BuildManifestUri(options), cancellationToken).ConfigureAwait(false);
+            manifestStopwatch.Stop();
+            performanceTelemetryService.Record($"remote-update.apply.manifest:{scope.ScopeKey}", manifestStopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
+
             RemoteContentPackageModel remotePackage = SelectLatestPackage(manifest, scope)
                 ?? throw new InvalidOperationException("The remote manifest does not contain a compatible package for this update scope.");
 
@@ -237,15 +241,25 @@ internal sealed class RemoteContentUpdateService(
             string tempDatabasePath = Path.Combine(tempDirectory, "remote-update.db");
             Directory.CreateDirectory(tempDirectory);
 
+            Stopwatch downloadStopwatch = Stopwatch.StartNew();
             await DownloadPackageAsync(scope, remotePackage.PackageId, tempJsonPath, cancellationToken).ConfigureAwait(false);
-            await ImportIntoTemporaryDatabaseAsync(tempJsonPath, tempDatabasePath, cancellationToken).ConfigureAwait(false);
+            downloadStopwatch.Stop();
+            performanceTelemetryService.Record($"remote-update.apply.download:{scope.ScopeKey}", downloadStopwatch.Elapsed, PerformanceTelemetryOutcome.Success, remotePackage.WordCount);
 
+            Stopwatch importStopwatch = Stopwatch.StartNew();
+            await ImportIntoTemporaryDatabaseAsync(tempJsonPath, tempDatabasePath, cancellationToken).ConfigureAwait(false);
+            importStopwatch.Stop();
+            performanceTelemetryService.Record($"remote-update.apply.temp-import:{scope.ScopeKey}", importStopwatch.Elapsed, PerformanceTelemetryOutcome.Success, remotePackage.WordCount);
+
+            Stopwatch replaceStopwatch = Stopwatch.StartNew();
             await (scope.ReplaceMode switch
             {
                 ReplaceMode.FullDatabase => ReplaceAllContentTablesAsync(databasePath, tempDatabasePath, cancellationToken),
                 ReplaceMode.CefrLevel => ReplaceCefrLevelContentAsync(databasePath, tempDatabasePath, scope.CefrLevel, cancellationToken),
                 _ => throw new InvalidOperationException($"The update scope '{scope.ScopeKey}' is not supported.")
             }).ConfigureAwait(false);
+            replaceStopwatch.Stop();
+            performanceTelemetryService.Record($"remote-update.apply.replace:{scope.ScopeKey}", replaceStopwatch.Elapsed, PerformanceTelemetryOutcome.Success, remotePackage.WordCount);
 
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistScopeReceipts(scope, manifest, remotePackage, appliedAtUtc);
