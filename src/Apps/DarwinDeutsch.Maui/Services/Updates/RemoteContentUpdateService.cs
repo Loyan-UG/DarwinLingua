@@ -30,6 +30,10 @@ internal sealed class RemoteContentUpdateService(
     private const string LegacyLastRemotePackageVersionPreferenceKey = "remote-content-last-package-version";
     private const string LegacyLastRemoteSuccessAtPreferenceKey = "remote-content-last-success-at-utc";
     private const string LegacyLastRemoteFailureMessagePreferenceKey = "remote-content-last-failure-message";
+    private static readonly TimeSpan ManifestCacheLifetime = TimeSpan.FromSeconds(20);
+    private static readonly object ManifestCacheGate = new();
+    private static readonly Dictionary<string, CachedManifestEntry> ManifestCache = [];
+    private static readonly Dictionary<string, Task<RemoteContentManifestModel?>> InFlightManifestRequests = [];
 
     public Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> GetRecentUpdateHistoryAsync(CancellationToken cancellationToken)
     {
@@ -69,9 +73,7 @@ internal sealed class RemoteContentUpdateService(
 
         try
         {
-            RemoteContentManifestModel? manifest = await httpClient
-                .GetFromJsonAsync<RemoteContentManifestModel>(scope.BuildManifestUri(options), cancellationToken)
-                .ConfigureAwait(false);
+            RemoteContentManifestModel? manifest = await GetManifestAsync(scope.BuildManifestUri(options), cancellationToken).ConfigureAwait(false);
 
             RemoteContentPackageModel? remotePackage = SelectLatestPackage(manifest, scope);
             if (remotePackage is null)
@@ -210,9 +212,7 @@ internal sealed class RemoteContentUpdateService(
 
         try
         {
-            RemoteContentManifestModel? manifest = await httpClient
-                .GetFromJsonAsync<RemoteContentManifestModel>(scope.BuildManifestUri(options), cancellationToken)
-                .ConfigureAwait(false);
+            RemoteContentManifestModel? manifest = await GetManifestAsync(scope.BuildManifestUri(options), cancellationToken).ConfigureAwait(false);
             RemoteContentPackageModel remotePackage = SelectLatestPackage(manifest, scope)
                 ?? throw new InvalidOperationException("The remote manifest does not contain a compatible package for this update scope.");
 
@@ -238,6 +238,7 @@ internal sealed class RemoteContentUpdateService(
 
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistScopeReceipts(scope, manifest, remotePackage, appliedAtUtc);
+            InvalidateManifestCache();
             RemoteContentUpdateResult appliedResult = new(true, true, remotePackage.PackageId, remotePackage.Version, importedWords, appliedAtUtc, null);
             RecordHistoryEntry(scope, appliedResult);
             logger.LogInformation(
@@ -276,6 +277,67 @@ internal sealed class RemoteContentUpdateService(
     }
 
     private bool IsConfigured() => !string.IsNullOrWhiteSpace(options.BaseUrl);
+
+    private async Task<RemoteContentManifestModel?> GetManifestAsync(string requestUri, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        CachedManifestEntry? cachedEntry;
+        Task<RemoteContentManifestModel?>? inFlightRequest;
+
+        lock (ManifestCacheGate)
+        {
+            if (ManifestCache.TryGetValue(requestUri, out cachedEntry) &&
+                DateTimeOffset.UtcNow - cachedEntry.FetchedAtUtc <= ManifestCacheLifetime)
+            {
+                return cachedEntry.Manifest;
+            }
+
+            if (!InFlightManifestRequests.TryGetValue(requestUri, out inFlightRequest))
+            {
+                inFlightRequest = FetchManifestCoreAsync(requestUri);
+                InFlightManifestRequests[requestUri] = inFlightRequest;
+            }
+        }
+
+        return await AwaitManifestRequestAsync(requestUri, inFlightRequest!).ConfigureAwait(false);
+    }
+
+    private async Task<RemoteContentManifestModel?> AwaitManifestRequestAsync(string requestUri, Task<RemoteContentManifestModel?> requestTask)
+    {
+        try
+        {
+            RemoteContentManifestModel? manifest = await requestTask.ConfigureAwait(false);
+
+            lock (ManifestCacheGate)
+            {
+                ManifestCache[requestUri] = new CachedManifestEntry(manifest, DateTimeOffset.UtcNow);
+                InFlightManifestRequests.Remove(requestUri);
+            }
+
+            return manifest;
+        }
+        catch
+        {
+            lock (ManifestCacheGate)
+            {
+                InFlightManifestRequests.Remove(requestUri);
+            }
+
+            throw;
+        }
+    }
+
+    private Task<RemoteContentManifestModel?> FetchManifestCoreAsync(string requestUri) =>
+        httpClient.GetFromJsonAsync<RemoteContentManifestModel>(requestUri, CancellationToken.None);
+
+    private static void InvalidateManifestCache()
+    {
+        lock (ManifestCacheGate)
+        {
+            ManifestCache.Clear();
+            InFlightManifestRequests.Clear();
+        }
+    }
 
     private static RemoteContentUpdateStatus CreateUnavailableStatus(RemoteUpdateScope scope) =>
         new(
@@ -644,6 +706,8 @@ internal sealed class RemoteContentUpdateService(
             return $"{baseUrl}/api/mobile/content/packages/{Uri.EscapeDataString(packageId)}/download?clientProductKey={clientProductKey}&clientSchemaVersion={remoteOptions.ClientSchemaVersion}";
         }
     }
+
+    private sealed record CachedManifestEntry(RemoteContentManifestModel? Manifest, DateTimeOffset FetchedAtUtc);
 
     private const string FullReplaceScript =
         """
