@@ -145,15 +145,18 @@ public partial class PracticePage : ContentPage
 
             UserLearningProfileModel profile = profileTask.Result;
             PracticeLearningProgressSnapshotModel snapshot = snapshotTask.Result;
+            ApplySnapshot(snapshot);
 
             Task<PracticeRecentActivityModel> recentActivityTask = _practiceRecentActivityService
                 .GetRecentActivityAsync(profile.PreferredMeaningLanguage1, 6, cancellationToken);
             Task<PracticeReviewSessionModel> reviewPreviewTask = _practiceReviewSessionService
                 .StartAsync(profile.PreferredMeaningLanguage1, 5, cancellationToken);
 
+            await Task.Yield();
+            cancellationToken.ThrowIfCancellationRequested();
+
             await Task.WhenAll(recentActivityTask, reviewPreviewTask).ConfigureAwait(true);
 
-            ApplySnapshot(snapshot);
             ApplyRecentActivity(recentActivityTask.Result);
             ApplyReviewPreview(reviewPreviewTask.Result);
             _logger.LogInformation(
@@ -334,10 +337,10 @@ public partial class PracticePage : ContentPage
         _refreshCancellationTokenSource = new CancellationTokenSource();
         ReviewSessionStateLabel.Text = AppStrings.CommonStateLoading;
         ReviewSessionStateLabel.IsVisible = true;
-        ReviewSessionCollectionView.IsVisible = false;
+        ReviewSessionCollectionView.IsVisible = HasExistingItems(ReviewSessionCollectionView);
         RecentActivityStateLabel.Text = AppStrings.CommonStateLoading;
         RecentActivityStateLabel.IsVisible = true;
-        RecentActivityCollectionView.IsVisible = false;
+        RecentActivityCollectionView.IsVisible = HasExistingItems(RecentActivityCollectionView);
     }
 
     private void CancelRefreshRequest()
@@ -351,4 +354,8 @@ public partial class PracticePage : ContentPage
         _refreshCancellationTokenSource.Dispose();
         _refreshCancellationTokenSource = null;
     }
+
+    private static bool HasExistingItems(CollectionView collectionView) =>
+        collectionView.ItemsSource is System.Collections.IEnumerable existingItems &&
+        existingItems.GetEnumerator().MoveNext();
 }
