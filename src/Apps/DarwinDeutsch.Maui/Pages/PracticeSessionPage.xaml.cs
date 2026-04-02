@@ -354,10 +354,11 @@ public partial class PracticeSessionPage : ContentPage
             _performanceTelemetryService.Record("practice.session-submit", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             FeedbackBodyLabel.Text = AppStrings.CommonStateError;
             FeedbackBorder.IsVisible = true;
-            OutcomeButtonsGrid.IsVisible = false;
+            OutcomeButtonsGrid.IsVisible = true;
+            OutcomeButtonsGrid.IsEnabled = true;
             RevealButton.IsVisible = false;
             NextButton.IsVisible = false;
-            FinishButton.IsVisible = true;
+            FinishButton.IsVisible = false;
         }
         finally
         {
