@@ -250,14 +250,26 @@ public partial class PracticePage : ContentPage
 
     private async void OnStartFlashcardsActionInvoked(object? sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync($"{nameof(PracticeSessionPage)}?mode=flashcard")
-            .ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(PracticeSessionPage)}?mode=flashcard")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async void OnStartQuizActionInvoked(object? sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync($"{nameof(PracticeSessionPage)}?mode=quiz")
-            .ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(PracticeSessionPage)}?mode=quiz")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async void OnRefreshPracticeActionInvoked(object? sender, EventArgs e)
@@ -281,8 +293,14 @@ public partial class PracticePage : ContentPage
 
         ReviewSessionCollectionView.SelectedItem = null;
         string wordPublicId = Uri.EscapeDataString(selectedWord.PublicId.ToString());
-        await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
-            .ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async void OnRecentActivitySelectionChanged(object? sender, SelectionChangedEventArgs e)
@@ -294,8 +312,14 @@ public partial class PracticePage : ContentPage
 
         RecentActivityCollectionView.SelectedItem = null;
         string wordPublicId = Uri.EscapeDataString(selectedWord.PublicId.ToString());
-        await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
-            .ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private static string BuildReviewSessionMetadata(PracticeReviewSessionItemModel item)

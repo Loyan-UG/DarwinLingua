@@ -12,6 +12,7 @@ public partial class FavoritesPage : ContentPage
 {
     private readonly IUserFavoriteWordService _userFavoriteWordService;
     private readonly IUserLearningProfileService _userLearningProfileService;
+    private CancellationTokenSource? _refreshCancellationTokenSource;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FavoritesPage"/> class.
@@ -36,7 +37,19 @@ public partial class FavoritesPage : ContentPage
     {
         base.OnAppearing();
 
-        await RefreshAsync().ConfigureAwait(true);
+        try
+        {
+            await RefreshAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelRefreshRequest();
+        base.OnDisappearing();
     }
 
     /// <summary>
@@ -44,6 +57,9 @@ public partial class FavoritesPage : ContentPage
     /// </summary>
     private async Task RefreshAsync()
     {
+        ResetRefreshRequest();
+        CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
+
         Title = AppStrings.FavoritesPageTitle;
         HeadlineLabel.Text = AppStrings.FavoritesPageHeadline;
         DescriptionLabel.Text = AppStrings.FavoritesPageDescription;
@@ -56,11 +72,11 @@ public partial class FavoritesPage : ContentPage
         try
         {
             UserLearningProfileModel profile = await _userLearningProfileService
-                .GetCurrentProfileAsync(CancellationToken.None)
+                .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
 
             IReadOnlyList<FavoriteWordListItemModel> favoriteWords = await _userFavoriteWordService
-                .GetFavoriteWordsAsync(profile.PreferredMeaningLanguage1, CancellationToken.None)
+                .GetFavoriteWordsAsync(profile.PreferredMeaningLanguage1, cancellationToken)
                 .ConfigureAwait(true);
 
             FavoritesCollectionView.ItemsSource = favoriteWords
@@ -75,6 +91,10 @@ public partial class FavoritesPage : ContentPage
             FavoritesCollectionView.IsVisible = favoriteWords.Count > 0;
             ErrorStateLabel.IsVisible = false;
         }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
         catch
         {
             FavoritesCollectionView.ItemsSource = Array.Empty<FavoriteWordItemViewModel>();
@@ -86,6 +106,24 @@ public partial class FavoritesPage : ContentPage
         {
             LoadingStateLabel.IsVisible = false;
         }
+    }
+
+    private void ResetRefreshRequest()
+    {
+        CancelRefreshRequest();
+        _refreshCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelRefreshRequest()
+    {
+        if (_refreshCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _refreshCancellationTokenSource.Cancel();
+        _refreshCancellationTokenSource.Dispose();
+        _refreshCancellationTokenSource = null;
     }
 
     /// <summary>
@@ -112,8 +150,14 @@ public partial class FavoritesPage : ContentPage
         FavoritesCollectionView.SelectedItem = null;
 
         string wordPublicId = Uri.EscapeDataString(selectedWord.PublicId.ToString());
-        await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
-            .ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(WordDetailPage)}?wordPublicId={wordPublicId}")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
