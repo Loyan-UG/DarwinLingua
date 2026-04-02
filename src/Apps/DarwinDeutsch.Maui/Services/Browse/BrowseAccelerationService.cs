@@ -15,6 +15,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     private readonly ITopicCatalogCacheService _topicCatalogCacheService;
     private readonly ITopicBrowseStateService _topicBrowseStateService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
+    private readonly IWordSearchCacheService _wordSearchCacheService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ILogger<BrowseAccelerationService> _logger;
@@ -29,6 +30,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         ITopicCatalogCacheService topicCatalogCacheService,
         ITopicBrowseStateService topicBrowseStateService,
         IWordDetailCacheService wordDetailCacheService,
+        IWordSearchCacheService wordSearchCacheService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IAppLocalizationService appLocalizationService,
         ILogger<BrowseAccelerationService> logger)
@@ -37,6 +39,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         ArgumentNullException.ThrowIfNull(topicCatalogCacheService);
         ArgumentNullException.ThrowIfNull(topicBrowseStateService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
+        ArgumentNullException.ThrowIfNull(wordSearchCacheService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(logger);
@@ -45,6 +48,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         _topicCatalogCacheService = topicCatalogCacheService;
         _topicBrowseStateService = topicBrowseStateService;
         _wordDetailCacheService = wordDetailCacheService;
+        _wordSearchCacheService = wordSearchCacheService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _appLocalizationService = appLocalizationService;
         _logger = logger;
@@ -79,6 +83,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         _topicCatalogCacheService.ResetCache();
         _topicBrowseStateService.ResetCache();
         _wordDetailCacheService.ResetCache();
+        _wordSearchCacheService.ResetCache();
         Interlocked.Exchange(ref _warmupScheduled, 0);
     }
 

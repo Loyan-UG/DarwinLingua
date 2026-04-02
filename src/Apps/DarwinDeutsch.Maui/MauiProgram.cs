@@ -66,6 +66,7 @@ public static class MauiProgram
             .AddSingleton<ITopicCatalogCacheService, TopicCatalogCacheService>()
             .AddSingleton<ITopicBrowseStateService, TopicBrowseStateService>()
             .AddSingleton<IWordDetailCacheService, WordDetailCacheService>()
+            .AddSingleton<IWordSearchCacheService, WordSearchCacheService>()
             .AddSingleton<IBrowseAccelerationService, BrowseAccelerationService>()
             .AddSingleton<IAppLocalizationService, AppLocalizationService>()
             .AddSingleton<IActiveLearningProfileCacheService, ActiveLearningProfileCacheService>()

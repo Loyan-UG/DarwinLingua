@@ -2,7 +2,6 @@ using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
-using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Models;
 using Microsoft.Extensions.Logging;
@@ -17,7 +16,7 @@ public partial class SearchWordsPage : ContentPage
 {
     private static readonly TimeSpan SearchDebounceDelay = TimeSpan.FromMilliseconds(280);
     private const int PrefetchResultCount = 4;
-    private readonly IWordQueryService _wordQueryService;
+    private readonly IWordSearchCacheService _wordSearchCacheService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
@@ -31,13 +30,13 @@ public partial class SearchWordsPage : ContentPage
     /// Initializes a new instance of the <see cref="SearchWordsPage"/> class.
     /// </summary>
     public SearchWordsPage(
-        IWordQueryService wordQueryService,
+        IWordSearchCacheService wordSearchCacheService,
         IWordDetailCacheService wordDetailCacheService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IPerformanceTelemetryService performanceTelemetryService,
         ILogger<SearchWordsPage> logger)
     {
-        ArgumentNullException.ThrowIfNull(wordQueryService);
+        ArgumentNullException.ThrowIfNull(wordSearchCacheService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
@@ -45,7 +44,7 @@ public partial class SearchWordsPage : ContentPage
 
         InitializeComponent();
 
-        _wordQueryService = wordQueryService;
+        _wordSearchCacheService = wordSearchCacheService;
         _wordDetailCacheService = wordDetailCacheService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _performanceTelemetryService = performanceTelemetryService;
@@ -162,8 +161,8 @@ public partial class SearchWordsPage : ContentPage
 
             ShowLoadingState();
 
-            IReadOnlyList<WordListItemModel> words = await _wordQueryService
-                .SearchWordsAsync(normalizedQuery, profile.PreferredMeaningLanguage1, cancellationToken)
+            IReadOnlyList<WordListItemModel> words = await _wordSearchCacheService
+                .SearchAsync(normalizedQuery, profile.PreferredMeaningLanguage1, cancellationToken)
                 .ConfigureAwait(true);
 
             _logger.LogInformation(
