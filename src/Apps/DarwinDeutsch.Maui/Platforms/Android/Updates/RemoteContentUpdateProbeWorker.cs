@@ -96,7 +96,11 @@ public sealed class RemoteContentUpdateProbeWorker(Context context, WorkerParame
 
     private static void PersistFailure(string? message, string outcome = "failed")
     {
+        Preferences.Default.Set(LastWorkerProbeAtPreferenceKey, DateTimeOffset.UtcNow.ToString("O"));
         Preferences.Default.Set(LastWorkerOutcomePreferenceKey, outcome);
+        Preferences.Default.Set(LastWorkerServerReachablePreferenceKey, false);
+        Preferences.Default.Set(LastWorkerUpdateAvailablePreferenceKey, false);
+        Preferences.Default.Remove(LastWorkerPendingPackageIdPreferenceKey);
         Preferences.Default.Set(LastWorkerFailureMessagePreferenceKey, string.IsNullOrWhiteSpace(message) ? "Unknown error." : message);
     }
 }
