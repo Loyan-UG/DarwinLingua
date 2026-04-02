@@ -1,8 +1,10 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Browse;
+using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Models;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -14,23 +16,29 @@ public partial class CefrWordsPage : ContentPage
 {
     private const int PageSize = 24;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ObservableCollection<CefrWordItemViewModel> _visibleWords = [];
+    private CancellationTokenSource? _refreshCancellationTokenSource;
     private int _loadedWordCount;
     private bool _hasMoreWords;
     private bool _isLoadingMore;
+    private string _loadedCefrLevel = string.Empty;
     private string _cefrLevel = string.Empty;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CefrWordsPage"/> class.
     /// </summary>
     public CefrWordsPage(
-        ICefrBrowseStateService cefrBrowseStateService)
+        ICefrBrowseStateService cefrBrowseStateService,
+        IPerformanceTelemetryService performanceTelemetryService)
     {
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
 
         InitializeComponent();
 
         _cefrBrowseStateService = cefrBrowseStateService;
+        _performanceTelemetryService = performanceTelemetryService;
         WordsCollectionView.ItemsSource = _visibleWords;
     }
 
@@ -50,14 +58,31 @@ public partial class CefrWordsPage : ContentPage
     {
         base.OnAppearing();
 
-        await RefreshAsync().ConfigureAwait(true);
+        await RefreshAsync(showLoadingState: _visibleWords.Count == 0, force: false).ConfigureAwait(true);
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelRefreshRequest();
+        base.OnDisappearing();
     }
 
     /// <summary>
     /// Loads the lexical entries for the selected CEFR level.
     /// </summary>
-    private async Task RefreshAsync()
+    private async Task RefreshAsync(bool showLoadingState, bool force)
     {
+        if (!force &&
+            !string.IsNullOrWhiteSpace(CefrLevel) &&
+            string.Equals(_loadedCefrLevel, CefrLevel, StringComparison.OrdinalIgnoreCase) &&
+            _visibleWords.Count > 0)
+        {
+            return;
+        }
+
+        ResetRefreshRequest();
+        CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
+        Stopwatch stopwatch = Stopwatch.StartNew();
         string resolvedCefrLevel = string.IsNullOrWhiteSpace(CefrLevel) ? AppStrings.CefrWordsPageTitle : CefrLevel;
         Title = resolvedCefrLevel;
         HeadlineLabel.Text = string.IsNullOrWhiteSpace(CefrLevel)
@@ -73,15 +98,21 @@ public partial class CefrWordsPage : ContentPage
         if (string.IsNullOrWhiteSpace(CefrLevel))
         {
             ShowWords([]);
+            _loadedCefrLevel = string.Empty;
             return;
         }
 
-        ShowLoadingState();
+        if (showLoadingState)
+        {
+            ShowLoadingState();
+        }
 
         try
         {
+            await Task.Yield();
+
             IReadOnlyList<WordListItemModel> firstPage = await _cefrBrowseStateService
-                .GetWordsPageAsync(CefrLevel, skip: 0, take: PageSize, CancellationToken.None)
+                .GetWordsPageAsync(CefrLevel, skip: 0, take: PageSize, cancellationToken)
                 .ConfigureAwait(true);
 
             ShowWords(firstPage
@@ -91,16 +122,19 @@ public partial class CefrWordsPage : ContentPage
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
                 .ToArray());
+            _loadedCefrLevel = CefrLevel;
 
             ScheduleNextPagePrefetch();
+            _performanceTelemetryService.Record("cefr.list.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, firstPage.Count);
         }
         catch (OperationCanceledException)
         {
-            ShowWords([]);
+            _performanceTelemetryService.Record("cefr.list.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
         }
         catch
         {
             ShowErrorState();
+            _performanceTelemetryService.Record("cefr.list.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
         }
         finally
         {
@@ -127,7 +161,7 @@ public partial class CefrWordsPage : ContentPage
 
         if (startingWordPublicId is null)
         {
-            await RefreshAsync().ConfigureAwait(true);
+            await RefreshAsync(showLoadingState: _visibleWords.Count == 0, force: true).ConfigureAwait(true);
             return;
         }
 
@@ -224,6 +258,24 @@ public partial class CefrWordsPage : ContentPage
         {
             _isLoadingMore = false;
         }
+    }
+
+    private void ResetRefreshRequest()
+    {
+        CancelRefreshRequest();
+        _refreshCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelRefreshRequest()
+    {
+        if (_refreshCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _refreshCancellationTokenSource.Cancel();
+        _refreshCancellationTokenSource.Dispose();
+        _refreshCancellationTokenSource = null;
     }
 
     /// <summary>

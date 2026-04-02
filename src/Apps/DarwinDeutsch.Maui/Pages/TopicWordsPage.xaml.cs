@@ -1,8 +1,10 @@
 using DarwinDeutsch.Maui.Resources.Strings;
-using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Browse;
+using DarwinDeutsch.Maui.Services.Diagnostics;
+using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Catalog.Application.Models;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -15,10 +17,13 @@ public partial class TopicWordsPage : ContentPage
 {
     private const int PageSize = 24;
     private readonly ITopicBrowseStateService _topicBrowseStateService;
+    private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ObservableCollection<TopicWordItemViewModel> _visibleWords = [];
+    private CancellationTokenSource? _refreshCancellationTokenSource;
     private int _loadedWordCount;
     private bool _hasMoreWords;
     private bool _isLoadingMore;
+    private string _loadedTopicKey = string.Empty;
     private string _topicKey = string.Empty;
     private string _topicTitle = string.Empty;
 
@@ -26,13 +31,16 @@ public partial class TopicWordsPage : ContentPage
     /// Initializes a new instance of the <see cref="TopicWordsPage"/> class.
     /// </summary>
     public TopicWordsPage(
-        ITopicBrowseStateService topicBrowseStateService)
+        ITopicBrowseStateService topicBrowseStateService,
+        IPerformanceTelemetryService performanceTelemetryService)
     {
         ArgumentNullException.ThrowIfNull(topicBrowseStateService);
+        ArgumentNullException.ThrowIfNull(performanceTelemetryService);
 
         InitializeComponent();
 
         _topicBrowseStateService = topicBrowseStateService;
+        _performanceTelemetryService = performanceTelemetryService;
         WordsCollectionView.ItemsSource = _visibleWords;
     }
 
@@ -61,14 +69,31 @@ public partial class TopicWordsPage : ContentPage
     {
         base.OnAppearing();
 
-        await RefreshAsync().ConfigureAwait(true);
+        await RefreshAsync(showLoadingState: _visibleWords.Count == 0, force: false).ConfigureAwait(true);
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelRefreshRequest();
+        base.OnDisappearing();
     }
 
     /// <summary>
     /// Loads the current topic words using the user's preferred meaning language.
     /// </summary>
-    private async Task RefreshAsync()
+    private async Task RefreshAsync(bool showLoadingState, bool force)
     {
+        if (!force &&
+            !string.IsNullOrWhiteSpace(TopicKey) &&
+            string.Equals(_loadedTopicKey, TopicKey, StringComparison.OrdinalIgnoreCase) &&
+            _visibleWords.Count > 0)
+        {
+            return;
+        }
+
+        ResetRefreshRequest();
+        CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
+        Stopwatch stopwatch = Stopwatch.StartNew();
         string resolvedTopicTitle = string.IsNullOrWhiteSpace(TopicTitle) ? AppStrings.TopicWordsPageTitle : TopicTitle;
         Title = resolvedTopicTitle;
         HeadlineLabel.Text = string.Format(AppStrings.TopicWordsPageHeadlineFormat, resolvedTopicTitle);
@@ -80,15 +105,21 @@ public partial class TopicWordsPage : ContentPage
         if (string.IsNullOrWhiteSpace(TopicKey))
         {
             ShowWords(Array.Empty<TopicWordItemViewModel>());
+            _loadedTopicKey = string.Empty;
             return;
         }
 
-        ShowLoadingState();
+        if (showLoadingState)
+        {
+            ShowLoadingState();
+        }
 
         try
         {
+            await Task.Yield();
+
             IReadOnlyList<WordListItemModel> firstPage = await _topicBrowseStateService
-                .GetWordsPageAsync(TopicKey, skip: 0, take: PageSize, CancellationToken.None)
+                .GetWordsPageAsync(TopicKey, skip: 0, take: PageSize, cancellationToken)
                 .ConfigureAwait(true);
 
             ShowWords(firstPage
@@ -98,16 +129,19 @@ public partial class TopicWordsPage : ContentPage
                     word.PrimaryMeaning ?? AppStrings.TopicWordsPageMeaningUnavailable,
                     LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel)))
                 .ToArray());
+            _loadedTopicKey = TopicKey;
 
             ScheduleNextPagePrefetch();
+            _performanceTelemetryService.Record("topic.list.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, firstPage.Count);
         }
         catch (OperationCanceledException)
         {
-            ShowLoadingState();
+            _performanceTelemetryService.Record("topic.list.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
         }
         catch
         {
             ShowErrorState();
+            _performanceTelemetryService.Record("topic.list.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
         }
         finally
         {
@@ -200,6 +234,24 @@ public partial class TopicWordsPage : ContentPage
         {
             _isLoadingMore = false;
         }
+    }
+
+    private void ResetRefreshRequest()
+    {
+        CancelRefreshRequest();
+        _refreshCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelRefreshRequest()
+    {
+        if (_refreshCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _refreshCancellationTokenSource.Cancel();
+        _refreshCancellationTokenSource.Dispose();
+        _refreshCancellationTokenSource = null;
     }
 
     /// <summary>

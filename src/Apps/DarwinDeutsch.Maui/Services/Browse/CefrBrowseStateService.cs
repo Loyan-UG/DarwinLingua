@@ -18,6 +18,7 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     private const int NavigationPrefetchTargetSize = 24;
     private const int MaxNavigationCacheSize = 96;
     private readonly ConcurrentDictionary<string, IReadOnlyList<WordListItemModel>> _pageCache = new(StringComparer.OrdinalIgnoreCase);
+    private readonly ConcurrentDictionary<string, Task<IReadOnlyList<WordListItemModel>>> _inFlightPageRequests = new(StringComparer.OrdinalIgnoreCase);
     private readonly ConcurrentDictionary<string, NavigationSliceCacheEntry> _navigationCache = new(StringComparer.OrdinalIgnoreCase);
     private readonly ConcurrentDictionary<string, SemaphoreSlim> _navigationGates = new(StringComparer.OrdinalIgnoreCase);
     private readonly IWordQueryService _wordQueryService;
@@ -97,12 +98,22 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
             return cachedWords;
         }
 
-        IReadOnlyList<WordListItemModel> words = await _wordQueryService
-            .GetWordsByCefrPageAsync(cefrLevel, profile.PreferredMeaningLanguage1, skip, take, cancellationToken)
-            .ConfigureAwait(false);
+        Task<IReadOnlyList<WordListItemModel>> loadTask = _inFlightPageRequests.GetOrAdd(
+            pageCacheKey,
+            _ => LoadWordsPageAsync(cefrLevel, profile.PreferredMeaningLanguage1, skip, take, pageCacheKey, CancellationToken.None));
 
-        _pageCache[pageCacheKey] = words;
-        return words;
+        try
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            return await loadTask.WaitAsync(cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            if (loadTask.IsCompleted)
+            {
+                _inFlightPageRequests.TryRemove(pageCacheKey, out _);
+            }
+        }
     }
 
     /// <inheritdoc />
@@ -227,6 +238,7 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
     public void ResetCache()
     {
         _pageCache.Clear();
+        _inFlightPageRequests.Clear();
         _navigationCache.Clear();
     }
 
@@ -352,6 +364,29 @@ internal sealed class CefrBrowseStateService : ICefrBrowseStateService
         finally
         {
             gate.Release();
+        }
+    }
+
+    private async Task<IReadOnlyList<WordListItemModel>> LoadWordsPageAsync(
+        string cefrLevel,
+        string meaningLanguageCode,
+        int skip,
+        int take,
+        string pageCacheKey,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            IReadOnlyList<WordListItemModel> words = await _wordQueryService
+                .GetWordsByCefrPageAsync(cefrLevel, meaningLanguageCode, skip, take, cancellationToken)
+                .ConfigureAwait(false);
+
+            _pageCache[pageCacheKey] = words;
+            return words;
+        }
+        finally
+        {
+            _inFlightPageRequests.TryRemove(pageCacheKey, out _);
         }
     }
 
