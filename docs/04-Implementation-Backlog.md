@@ -396,6 +396,27 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] define analytics boundaries
 - [x] define monetization boundaries
 
+### 32. Web Platform Planning and Architecture
+
+- [x] define the ASP.NET Core MVC web-platform architecture
+- [x] define the learner-facing root site vs `Areas/Admin` split
+- [x] define the Bootstrap-based UI direction
+- [x] define the installable PWA baseline
+- [x] define the first user-account boundary for web learners
+- [x] define the shared-backend reuse rules between Web API, MVC web, and mobile
+- [x] define the first ordered implementation slices for the future web project
+
+### 33. Web Platform Implementation Placeholder
+
+- [ ] add `DarwinLingua.Web` MVC host to the solution
+- [ ] add the Bootstrap-based shared layout and navigation shell
+- [ ] add `manifest.webmanifest`, icons, and service worker baseline
+- [ ] add ASP.NET Core Identity with learner registration and sign-in
+- [ ] add learner-facing browse/search/detail pages
+- [ ] add learner favorites and recent-activity persistence on the web
+- [ ] add `Areas/Admin` with authorization boundary and operator shell
+- [ ] add first admin pages for content batch inspection and publish history
+
 ---
 
 ## Backlog Maintenance Rule

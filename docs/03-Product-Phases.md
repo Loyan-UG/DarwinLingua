@@ -137,11 +137,17 @@ Expand to a broader platform and turn shared content into a server-managed distr
 
 - central server database for shared content
 - Web API for mobile content manifests and package downloads
+- ASP.NET Core MVC website
+- learner-facing root web experience
+- `Admin` area inside the MVC website for operational workflows
+- installable PWA-capable web shell
+- Bootstrap-based responsive UI
+- ASP.NET Core Identity-based registration and sign-in
+- persisted user state for favorites, recent activity, and user-specific web preferences
 - mobile content update controls for:
   - full database update
   - content-area update
   - CEFR-level word updates
-- website
 - shared backend
 - content admin panel
 - user account and sync
@@ -155,6 +161,9 @@ Expand to a broader platform and turn shared content into a server-managed distr
 - the team updates shared content in one central place
 - mobile apps can refresh local SQLite content from the Web API without losing local user state
 - full, area, and CEFR-slice updates are supported cleanly
+- the website can be installed like an app where browser/platform support allows it
+- learners can sign up and keep basic personal state on the web
+- admin workflows remain clearly separated from learner-facing pages
 - content can be managed efficiently
 - code reuse remains strong
 - the system scales without architectural redesign

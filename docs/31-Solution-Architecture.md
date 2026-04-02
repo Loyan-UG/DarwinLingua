@@ -151,6 +151,12 @@ Future server/web hosts are planned but not yet implemented:
 - `DarwinLingua.Admin`
 - `DarwinLingua.Web`
 
+Recommended first web delivery shape:
+
+- implement `DarwinLingua.Web` first
+- keep the first admin experience inside `Areas/Admin` in the same MVC host
+- split `DarwinLingua.Admin` into a dedicated host later only if the admin product outgrows the shared-host model
+
 These hosts compose application and infrastructure services for a specific runtime and UX.
 
 ---
@@ -234,6 +240,12 @@ Operational support files for the future server path may live under:
 - `tools/Server/Postgres`
 - `tools/Server/Config`
 
+Future web-host support files may live under:
+
+- `src/Apps/DarwinLingua.Web/wwwroot`
+- `src/Apps/DarwinLingua.Web/Areas/Admin`
+- `src/Apps/DarwinLingua.Web/Pwa`
+
 ---
 
 ## 3.4 Bounded-Context Modules
@@ -278,6 +290,8 @@ Future server-side bounded contexts expected to appear when Phase 5 starts are:
 
 - `Publishing`
 - `Distribution`
+
+The future web host is expected to consume those server-side workflows rather than replacing them.
 
 Those placeholders should stay deferred until real scope justifies them.
 
@@ -437,6 +451,17 @@ Typical ImportTool contents:
 - reporting/output formatting
 - host startup wiring
 
+Typical MVC web-host contents:
+
+- controllers
+- views
+- layouts
+- area routing
+- identity wiring
+- cookie/auth policies
+- Bootstrap-based composition
+- PWA manifest and service-worker registration
+
 ---
 
 # 7. Persistence Strategy
@@ -520,6 +545,12 @@ The current Phase 5 backend foundation now mirrors that rule on the server side:
 - the `DarwinLingua.WebApi` host exposes mobile manifest endpoints
 - PostgreSQL-backed distribution metadata lives behind a dedicated persistence layer
 - the host still avoids exposing raw tables directly
+
+The future `DarwinLingua.Web` host should follow the same rule:
+
+- it is a server-rendered product host
+- it should use application services and persistence modules directly on the server side
+- it should not use mobile package endpoints for normal MVC page rendering
 
 ---
 

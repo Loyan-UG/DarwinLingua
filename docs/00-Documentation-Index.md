@@ -50,6 +50,7 @@ All project documentation should remain in English.
 - `33-Offline-Strategy.md`
 - `36-Server-Content-Distribution.md`
 - `37-Shared-Content-Server-Domain.md`
+- `38-Web-Platform-Architecture.md`
 - `35-Engineering-Standards.md`
 
 ### Runbooks and Handoffs
@@ -90,20 +91,20 @@ If you are new to the project, read the documents in this order:
 7. `33-Offline-Strategy.md`
 8. `36-Server-Content-Distribution.md`
 9. `37-Shared-Content-Server-Domain.md`
-10. `11-Content-Strategy.md`
-11. `12-Content-Package-Format.md`
-12. `14-Import-Rules.md`
-13. `22-Domain-Model.md`
-14. `25-Phase-1-Domain-Cut.md`
-15. `26-Bounded-Contexts.md`
-16. `35-Engineering-Standards.md`
-17. `34-Import-Workflow.md`
-18. `49-Local-Postgres-Setup.md`
-19. `51-Local-Server-Bootstrap.md`
-20. `04-Implementation-Backlog.md`
-21. `42-Continuation-Handoff.md`
-22. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
-23. `51-Local-Server-Bootstrap.md`
+10. `38-Web-Platform-Architecture.md`
+11. `11-Content-Strategy.md`
+12. `12-Content-Package-Format.md`
+13. `14-Import-Rules.md`
+14. `22-Domain-Model.md`
+15. `25-Phase-1-Domain-Cut.md`
+16. `26-Bounded-Contexts.md`
+17. `35-Engineering-Standards.md`
+18. `34-Import-Workflow.md`
+19. `49-Local-Postgres-Setup.md`
+20. `51-Local-Server-Bootstrap.md`
+21. `04-Implementation-Backlog.md`
+22. `42-Continuation-Handoff.md`
+23. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
 24. `53-Manual-System-Test-Runbook.md`
 25. `52-Future-Platform-Expansion.md`
 
@@ -135,6 +136,7 @@ If you are new to the project, read the documents in this order:
 - `33-Offline-Strategy.md` defines the local-first runtime behavior.
 - `36-Server-Content-Distribution.md` defines the future server-authored content-update architecture.
 - `37-Shared-Content-Server-Domain.md` defines the multi-product server-side domain and publishing model.
+- `38-Web-Platform-Architecture.md` defines the future ASP.NET Core MVC web host, PWA baseline, Identity boundary, and `Admin` area direction.
 
 ### Reference vs Runbooks
 
