@@ -71,7 +71,13 @@ public partial class StartupPage : ContentPage
 
     private async void OnRetryButtonClicked(object? sender, EventArgs e)
     {
-        await RunInitializationAsync().ConfigureAwait(true);
+        try
+        {
+            await RunInitializationAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async Task RunInitializationAsync()
@@ -98,9 +104,14 @@ public partial class StartupPage : ContentPage
 
             ApplyFailureState(result.ErrorMessage);
         }
+        catch (OperationCanceledException)
+        {
+            return;
+        }
         finally
         {
             _isInitializing = false;
+            RetryButton.IsEnabled = true;
         }
     }
 
@@ -128,6 +139,7 @@ public partial class StartupPage : ContentPage
         ErrorLabel.IsVisible = false;
         ErrorLabel.Text = string.Empty;
         RetryButton.IsVisible = false;
+        RetryButton.IsEnabled = false;
         HeadlineLabel.Text = AppStrings.StartupLoadingHeadline;
         DescriptionLabel.Text = AppStrings.StartupLoadingDescription;
     }
@@ -143,5 +155,6 @@ public partial class StartupPage : ContentPage
             : string.Format(AppStrings.StartupFailedDetailsFormat, errorMessage);
         ErrorLabel.IsVisible = true;
         RetryButton.IsVisible = true;
+        RetryButton.IsEnabled = true;
     }
 }

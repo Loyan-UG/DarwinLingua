@@ -14,6 +14,7 @@ public partial class WelcomePage : ContentPage
 
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ILanguageQueryService _languageQueryService;
+    private CancellationTokenSource? _refreshCancellationTokenSource;
     private bool _isUpdatingSelection;
 
     /// <summary>
@@ -47,7 +48,19 @@ public partial class WelcomePage : ContentPage
     {
         base.OnAppearing();
 
-        await RefreshAsync().ConfigureAwait(true);
+        try
+        {
+            await RefreshAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    protected override void OnDisappearing()
+    {
+        CancelRefreshRequest();
+        base.OnDisappearing();
     }
 
     /// <summary>
@@ -67,7 +80,13 @@ public partial class WelcomePage : ContentPage
     {
         MainThread.BeginInvokeOnMainThread(async () =>
         {
-            await RefreshAsync().ConfigureAwait(true);
+            try
+            {
+                await RefreshAsync().ConfigureAwait(true);
+            }
+            catch (OperationCanceledException)
+            {
+            }
         });
     }
 
@@ -88,11 +107,14 @@ public partial class WelcomePage : ContentPage
 
     private async Task RefreshAsync()
     {
+        ResetRefreshRequest();
+        CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
+
         ApplyStaticLocalizedText();
 
         IReadOnlyList<UiLanguageOption> supportedUiLanguages = _appLocalizationService.GetSupportedLanguages();
         IReadOnlyList<SupportedLanguageModel> activeLanguages = await _languageQueryService
-            .GetActiveLanguagesAsync(CancellationToken.None)
+            .GetActiveLanguagesAsync(cancellationToken)
             .ConfigureAwait(true);
 
         IReadOnlyList<SupportedLanguageModel> orderedLanguages = activeLanguages
@@ -143,14 +165,38 @@ public partial class WelcomePage : ContentPage
             return;
         }
 
-        await _appLocalizationService
-            .SetCultureAsync(selectedLanguage.CultureName, CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            await _appLocalizationService
+                .SetCultureAsync(selectedLanguage.CultureName, CancellationToken.None)
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private void OnStartButtonClicked(object? sender, EventArgs e)
     {
         StartRequested?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void ResetRefreshRequest()
+    {
+        CancelRefreshRequest();
+        _refreshCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelRefreshRequest()
+    {
+        if (_refreshCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _refreshCancellationTokenSource.Cancel();
+        _refreshCancellationTokenSource.Dispose();
+        _refreshCancellationTokenSource = null;
     }
 
     private static string BuildLanguageList(IReadOnlyList<SupportedLanguageModel> languages)
