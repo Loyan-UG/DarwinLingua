@@ -196,7 +196,69 @@ docker exec -it darwinlingua-postgres psql -U postgres -d postgres -c "SELECT ve
 
 If that works, PostgreSQL is fine and the problem is usually just the **host name used in pgAdmin**.
 
-### 5.5 Recommended Choice
+### 5.5 If pgAdmin Still Cannot Resolve `postgres`
+
+One common cause is that you have an **old pgAdmin container** running outside this Docker Compose stack.
+
+In that case:
+
+- PostgreSQL may be running on the Compose network `postgres_default`
+- but pgAdmin may be running on plain Docker `bridge`
+
+Then pgAdmin cannot resolve the hostname `postgres`, even though PostgreSQL itself is healthy.
+
+Check the running containers:
+
+```powershell
+docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"
+```
+
+Then check the Compose stack:
+
+```powershell
+docker compose --env-file tools/Server/Postgres/.env -f tools/Server/Postgres/docker-compose.yml ps -a
+```
+
+You should see both:
+
+- `darwinlingua-postgres`
+- `darwinlingua-pgadmin`
+
+If `darwinlingua-pgadmin` is missing from the Compose output, or if `docker compose up -d pgadmin` reports a container-name conflict, remove the old pgAdmin container and recreate the Compose one:
+
+```powershell
+docker rm -f darwinlingua-pgadmin
+docker compose --env-file tools/Server/Postgres/.env -f tools/Server/Postgres/docker-compose.yml up -d pgadmin
+```
+
+After that, verify again:
+
+```powershell
+docker compose --env-file tools/Server/Postgres/.env -f tools/Server/Postgres/docker-compose.yml ps -a
+```
+
+Expected result:
+
+- `darwinlingua-postgres` and `darwinlingua-pgadmin` are both listed
+- both are on the same Compose stack
+- the pgAdmin web UI at `http://localhost:5050` can use `postgres` as the host
+
+If you want to confirm the Docker network explicitly:
+
+```powershell
+docker inspect darwinlingua-postgres
+docker inspect darwinlingua-pgadmin
+```
+
+Both should show:
+
+- `NetworkMode: postgres_default`
+
+and both should be attached to:
+
+- `postgres_default`
+
+### 5.6 Recommended Choice
 
 For this repository, the easiest setup is:
 
