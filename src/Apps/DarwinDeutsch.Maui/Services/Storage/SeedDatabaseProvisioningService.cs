@@ -16,10 +16,52 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
     private const string SeedLastAppliedPackageCountPreferenceKey = "seed-database-last-applied-package-count";
     private const string SeedLastAppliedWordCountPreferenceKey = "seed-database-last-applied-word-count";
     private readonly SemaphoreSlim _seedAssetCacheGate = new(1, 1);
+    private readonly SemaphoreSlim _seedOperationGate = new(1, 1);
     private SeedAssetCacheEntry? _cachedSeedAsset;
 
     /// <inheritdoc />
     public async Task EnsureSeedDatabaseAsync(string databasePath, CancellationToken cancellationToken)
+    {
+        await _seedOperationGate.WaitAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            await EnsureSeedDatabaseCoreAsync(databasePath, cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            _seedOperationGate.Release();
+        }
+    }
+
+    /// <inheritdoc />
+    public async Task<SeedDatabaseUpdateStatus> GetUpdateStatusAsync(string databasePath, CancellationToken cancellationToken)
+    {
+        await _seedOperationGate.WaitAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            return await GetUpdateStatusCoreAsync(databasePath, cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            _seedOperationGate.Release();
+        }
+    }
+
+    /// <inheritdoc />
+    public async Task<SeedDatabaseUpdateResult> ApplySeedUpdateAsync(string databasePath, CancellationToken cancellationToken)
+    {
+        await _seedOperationGate.WaitAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            return await ApplySeedUpdateCoreAsync(databasePath, cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            _seedOperationGate.Release();
+        }
+    }
+
+    private async Task EnsureSeedDatabaseCoreAsync(string databasePath, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
 
@@ -45,13 +87,10 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             int importedWords = await CountRowsAsync(databasePath, "WordEntries", cancellationToken).ConfigureAwait(false);
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistAppliedSeedMetadata(seedAssetSnapshot.Signature, appliedAtUtc, importedPackages, importedWords);
-            return;
         }
-
     }
 
-    /// <inheritdoc />
-    public async Task<SeedDatabaseUpdateStatus> GetUpdateStatusAsync(string databasePath, CancellationToken cancellationToken)
+    private async Task<SeedDatabaseUpdateStatus> GetUpdateStatusCoreAsync(string databasePath, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
 
@@ -125,8 +164,7 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         }
     }
 
-    /// <inheritdoc />
-    public async Task<SeedDatabaseUpdateResult> ApplySeedUpdateAsync(string databasePath, CancellationToken cancellationToken)
+    private async Task<SeedDatabaseUpdateResult> ApplySeedUpdateCoreAsync(string databasePath, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
 
@@ -138,7 +176,7 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
 
         if (!File.Exists(databasePath))
         {
-            await EnsureSeedDatabaseAsync(databasePath, cancellationToken).ConfigureAwait(false);
+            await EnsureSeedDatabaseCoreAsync(databasePath, cancellationToken).ConfigureAwait(false);
 
             int importedPackages = await CountRowsAsync(databasePath, "ContentPackages", cancellationToken).ConfigureAwait(false);
             int importedWords = await CountRowsAsync(databasePath, "WordEntries", cancellationToken).ConfigureAwait(false);
