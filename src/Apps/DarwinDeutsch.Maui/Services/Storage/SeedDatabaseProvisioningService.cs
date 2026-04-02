@@ -15,6 +15,8 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
     private const string SeedLastAppliedAtPreferenceKey = "seed-database-last-applied-at-utc";
     private const string SeedLastAppliedPackageCountPreferenceKey = "seed-database-last-applied-package-count";
     private const string SeedLastAppliedWordCountPreferenceKey = "seed-database-last-applied-word-count";
+    private readonly SemaphoreSlim _seedAssetCacheGate = new(1, 1);
+    private SeedAssetCacheEntry? _cachedSeedAsset;
 
     /// <inheritdoc />
     public async Task EnsureSeedDatabaseAsync(string databasePath, CancellationToken cancellationToken)
@@ -243,10 +245,24 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         }
     }
 
-    private static async Task<SeedAssetSnapshot?> LoadSeedAssetSnapshotAsync(CancellationToken cancellationToken)
+    private async Task<SeedAssetSnapshot?> LoadSeedAssetSnapshotAsync(CancellationToken cancellationToken)
     {
+        SeedAssetCacheEntry? cachedSeedAsset = _cachedSeedAsset;
+        if (cachedSeedAsset is not null)
+        {
+            return cachedSeedAsset.CreateSnapshot();
+        }
+
+        await _seedAssetCacheGate.WaitAsync(cancellationToken).ConfigureAwait(false);
+
         try
         {
+            cachedSeedAsset = _cachedSeedAsset;
+            if (cachedSeedAsset is not null)
+            {
+                return cachedSeedAsset.CreateSnapshot();
+            }
+
             Stream packagedSeedStream = await FileSystem.Current
                 .OpenAppPackageFileAsync(SeedDatabaseAssetName)
                 .WaitAsync(cancellationToken)
@@ -259,14 +275,18 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             }
 
             memoryStream.Position = 0;
-            string signature = Convert.ToHexString(SHA256.HashData(memoryStream.ToArray())).ToLowerInvariant();
-            memoryStream.Position = 0;
-
-            return new SeedAssetSnapshot(memoryStream, signature);
+            byte[] seedBytes = memoryStream.ToArray();
+            string signature = Convert.ToHexString(SHA256.HashData(seedBytes)).ToLowerInvariant();
+            _cachedSeedAsset = new SeedAssetCacheEntry(seedBytes, signature);
+            return _cachedSeedAsset.CreateSnapshot();
         }
         catch (FileNotFoundException)
         {
             return null;
+        }
+        finally
+        {
+            _seedAssetCacheGate.Release();
         }
     }
 
@@ -675,6 +695,26 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         {
             Stream.Dispose();
             return ValueTask.CompletedTask;
+        }
+    }
+
+    private sealed class SeedAssetCacheEntry
+    {
+        public SeedAssetCacheEntry(byte[] bytes, string signature)
+        {
+            Bytes = bytes;
+            Signature = signature;
+        }
+
+        public byte[] Bytes { get; }
+
+        public string Signature { get; }
+
+        public SeedAssetSnapshot CreateSnapshot()
+        {
+            MemoryStream memoryStream = new(Bytes, writable: false);
+            memoryStream.Position = 0;
+            return new SeedAssetSnapshot(memoryStream, Signature);
         }
     }
 }
