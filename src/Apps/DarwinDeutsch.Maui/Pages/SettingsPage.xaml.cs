@@ -402,7 +402,7 @@ public partial class SettingsPage : ContentPage
                     .ConfigureAwait(true);
             }
 
-            await RebuildPageStateAsync().ConfigureAwait(true);
+            await RefreshUpdateSectionsAsync().ConfigureAwait(true);
         }
         finally
         {
@@ -482,12 +482,33 @@ public partial class SettingsPage : ContentPage
                     .ConfigureAwait(true);
             }
 
-            await RebuildPageStateAsync().ConfigureAwait(true);
+            await RefreshUpdateSectionsAsync().ConfigureAwait(true);
         }
         finally
         {
             _isApplyingRemoteUpdate = false;
         }
+    }
+
+    private async Task RefreshUpdateSectionsAsync()
+    {
+        string localDatabasePath = GetLocalDatabasePath();
+        CancellationToken cancellationToken = _pageStateCancellationTokenSource?.Token ?? CancellationToken.None;
+
+        SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await _seedDatabaseProvisioningService
+            .GetUpdateStatusAsync(localDatabasePath, cancellationToken)
+            .ConfigureAwait(true);
+
+        ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
+        ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
+        ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, localDatabasePath);
+        ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
+        ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
+            ? AppStrings.SettingsContentUpdatesApplyButton
+            : AppStrings.SettingsContentUpdatesAppliedButton;
+
+        ApplyRemoteLoadingState();
+        await LoadAndApplyRemoteUpdateSectionsAsync(localDatabasePath, cancellationToken).ConfigureAwait(true);
     }
 
     private static string BuildMeaningLanguageSummary(
