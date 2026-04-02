@@ -272,8 +272,6 @@ public partial class SettingsPage : ContentPage
 
         RemoteContentUpdateStatusSectionView.SectionValue = loadingText;
         RemoteContentUpdateDetailsSectionView.SectionValue = loadingText;
-        RemoteContentUpdateDiagnosticsSectionView.SectionValue = loadingText;
-        RemoteContentUpdateHistorySectionView.SectionValue = loadingText;
         CatalogAreaUpdateSectionView.SectionValue = loadingText;
         CefrA1UpdateSectionView.SectionValue = loadingText;
         CefrA2UpdateSectionView.SectionValue = loadingText;
@@ -281,6 +279,8 @@ public partial class SettingsPage : ContentPage
         CefrB2UpdateSectionView.SectionValue = loadingText;
         CefrC1UpdateSectionView.SectionValue = loadingText;
         CefrC2UpdateSectionView.SectionValue = loadingText;
+        RemoteContentUpdateDiagnosticsSectionView.SectionValue = loadingText;
+        RemoteContentUpdateHistorySectionView.SectionValue = loadingText;
 
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
@@ -296,18 +296,14 @@ public partial class SettingsPage : ContentPage
     {
         Task<RemoteContentUpdateStatus> remoteContentStatusTask = _remoteContentUpdateService.GetUpdateStatusAsync(localDatabasePath, cancellationToken);
         Task<RemoteContentUpdateStatus> catalogAreaStatusTask = _remoteContentUpdateService.GetAreaUpdateStatusAsync(localDatabasePath, "catalog", cancellationToken);
-        Task<IReadOnlyList<RemoteContentUpdateHistoryEntry>> remoteUpdateHistoryTask = _remoteContentUpdateService.GetRecentUpdateHistoryAsync(cancellationToken);
 
-        await Task.WhenAll(remoteContentStatusTask, catalogAreaStatusTask, remoteUpdateHistoryTask).ConfigureAwait(true);
+        await Task.WhenAll(remoteContentStatusTask, catalogAreaStatusTask).ConfigureAwait(true);
 
         RemoteContentUpdateStatus remoteContentUpdateStatus = await remoteContentStatusTask.ConfigureAwait(true);
         RemoteContentUpdateStatus catalogAreaUpdateStatus = await catalogAreaStatusTask.ConfigureAwait(true);
-        IReadOnlyList<RemoteContentUpdateHistoryEntry> remoteUpdateHistory = await remoteUpdateHistoryTask.ConfigureAwait(true);
 
         RemoteContentUpdateStatusSectionView.SectionValue = BuildRemoteContentUpdateStatus(remoteContentUpdateStatus);
         RemoteContentUpdateDetailsSectionView.SectionValue = BuildRemoteContentUpdateDetails(remoteContentUpdateStatus);
-        RemoteContentUpdateDiagnosticsSectionView.SectionValue = BuildRemoteContentUpdateDiagnostics(remoteContentUpdateStatus);
-        RemoteContentUpdateHistorySectionView.SectionValue = BuildRemoteContentUpdateHistory(remoteUpdateHistory);
         ApplyRemoteUpdateButton.IsEnabled = remoteContentUpdateStatus.IsRemoteConfigured && remoteContentUpdateStatus.IsServerReachable && !_isApplyingRemoteUpdate;
         ApplyRemoteUpdateButton.Text = remoteContentUpdateStatus.IsUpdateAvailable
             ? AppStrings.SettingsRemoteContentUpdatesApplyButton
@@ -333,6 +329,16 @@ public partial class SettingsPage : ContentPage
         BindCefrUpdateSection(CefrB2UpdateSectionView, ApplyCefrB2UpdateButton, "B2", cefrUpdateStatuses["B2"]);
         BindCefrUpdateSection(CefrC1UpdateSectionView, ApplyCefrC1UpdateButton, "C1", cefrUpdateStatuses["C1"]);
         BindCefrUpdateSection(CefrC2UpdateSectionView, ApplyCefrC2UpdateButton, "C2", cefrUpdateStatuses["C2"]);
+
+        await Task.Yield();
+        cancellationToken.ThrowIfCancellationRequested();
+
+        IReadOnlyList<RemoteContentUpdateHistoryEntry> remoteUpdateHistory = await _remoteContentUpdateService
+            .GetRecentUpdateHistoryAsync(cancellationToken)
+            .ConfigureAwait(true);
+
+        RemoteContentUpdateDiagnosticsSectionView.SectionValue = BuildRemoteContentUpdateDiagnostics(remoteContentUpdateStatus);
+        RemoteContentUpdateHistorySectionView.SectionValue = BuildRemoteContentUpdateHistory(remoteUpdateHistory);
     }
 
     private void ApplyUnavailableCefrUpdateSections(RemoteContentUpdateStatus baseStatus)
