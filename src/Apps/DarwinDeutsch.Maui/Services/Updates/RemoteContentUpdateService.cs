@@ -303,7 +303,7 @@ internal sealed class RemoteContentUpdateService(
 
             if (!InFlightManifestRequests.TryGetValue(requestUri, out inFlightRequest))
             {
-                inFlightRequest = FetchManifestCoreAsync(requestUri);
+                inFlightRequest = FetchAndCacheManifestAsync(requestUri);
                 InFlightManifestRequests[requestUri] = inFlightRequest;
             }
         }
@@ -315,10 +315,13 @@ internal sealed class RemoteContentUpdateService(
         string requestUri,
         Task<RemoteContentManifestModel?> requestTask,
         CancellationToken cancellationToken)
+        => await requestTask.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+    private async Task<RemoteContentManifestModel?> FetchAndCacheManifestAsync(string requestUri)
     {
         try
         {
-            RemoteContentManifestModel? manifest = await requestTask.WaitAsync(cancellationToken).ConfigureAwait(false);
+            RemoteContentManifestModel? manifest = await FetchManifestCoreAsync(requestUri).ConfigureAwait(false);
 
             lock (ManifestCacheGate)
             {
