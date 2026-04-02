@@ -207,14 +207,10 @@ internal sealed class RemoteContentUpdateService(
 
         await _applyGate.WaitAsync(cancellationToken).ConfigureAwait(false);
         Stopwatch stopwatch = Stopwatch.StartNew();
-        string tempDirectory = Path.Combine(Path.GetTempPath(), "darwinlingua-remote-update", Guid.NewGuid().ToString("N"));
+        string? tempDirectory = null;
 
         try
         {
-            string tempJsonPath = Path.Combine(tempDirectory, "scope-update.json");
-            string tempDatabasePath = Path.Combine(tempDirectory, "remote-update.db");
-            Directory.CreateDirectory(tempDirectory);
-
             RemoteContentManifestModel? manifest = await GetManifestAsync(scope.BuildManifestUri(options), cancellationToken).ConfigureAwait(false);
             RemoteContentPackageModel remotePackage = SelectLatestPackage(manifest, scope)
                 ?? throw new InvalidOperationException("The remote manifest does not contain a compatible package for this update scope.");
@@ -228,6 +224,11 @@ internal sealed class RemoteContentUpdateService(
                 performanceTelemetryService.Record($"remote-update.apply:{scope.ScopeKey}", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
                 return currentResult;
             }
+
+            tempDirectory = Path.Combine(Path.GetTempPath(), "darwinlingua-remote-update", Guid.NewGuid().ToString("N"));
+            string tempJsonPath = Path.Combine(tempDirectory, "scope-update.json");
+            string tempDatabasePath = Path.Combine(tempDirectory, "remote-update.db");
+            Directory.CreateDirectory(tempDirectory);
 
             await DownloadPackageAsync(scope, remotePackage.PackageId, tempJsonPath, cancellationToken).ConfigureAwait(false);
             await ImportIntoTemporaryDatabaseAsync(tempJsonPath, tempDatabasePath, cancellationToken).ConfigureAwait(false);
@@ -275,7 +276,11 @@ internal sealed class RemoteContentUpdateService(
         }
         finally
         {
-            TryDeleteDirectory(tempDirectory);
+            if (!string.IsNullOrWhiteSpace(tempDirectory))
+            {
+                TryDeleteDirectory(tempDirectory);
+            }
+
             _applyGate.Release();
         }
     }
@@ -303,14 +308,17 @@ internal sealed class RemoteContentUpdateService(
             }
         }
 
-        return await AwaitManifestRequestAsync(requestUri, inFlightRequest!).ConfigureAwait(false);
+        return await AwaitManifestRequestAsync(requestUri, inFlightRequest!, cancellationToken).ConfigureAwait(false);
     }
 
-    private async Task<RemoteContentManifestModel?> AwaitManifestRequestAsync(string requestUri, Task<RemoteContentManifestModel?> requestTask)
+    private async Task<RemoteContentManifestModel?> AwaitManifestRequestAsync(
+        string requestUri,
+        Task<RemoteContentManifestModel?> requestTask,
+        CancellationToken cancellationToken)
     {
         try
         {
-            RemoteContentManifestModel? manifest = await requestTask.ConfigureAwait(false);
+            RemoteContentManifestModel? manifest = await requestTask.WaitAsync(cancellationToken).ConfigureAwait(false);
 
             lock (ManifestCacheGate)
             {
