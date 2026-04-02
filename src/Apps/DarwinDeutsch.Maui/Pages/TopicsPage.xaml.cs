@@ -52,7 +52,13 @@ public partial class TopicsPage : ContentPage
         base.OnAppearing();
 
         ApplyLocalizedText();
-        await RefreshTopicsAsync(showLoadingState: TopicsCollectionView.ItemsSource is null).ConfigureAwait(true);
+        try
+        {
+            await RefreshTopicsAsync(showLoadingState: TopicsCollectionView.ItemsSource is null).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     protected override void OnDisappearing()
@@ -84,7 +90,13 @@ public partial class TopicsPage : ContentPage
 
         MainThread.BeginInvokeOnMainThread(async () =>
         {
-            await RefreshTopicsAsync(showLoadingState: false).ConfigureAwait(true);
+            try
+            {
+                await RefreshTopicsAsync(showLoadingState: false).ConfigureAwait(true);
+            }
+            catch (OperationCanceledException)
+            {
+            }
         });
     }
 
@@ -211,21 +223,27 @@ public partial class TopicsPage : ContentPage
         }
 
         string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
-        Guid? startingWordPublicId = await _cefrBrowseStateService
-            .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
-            .ConfigureAwait(true);
-
-        if (startingWordPublicId is null)
+        try
         {
-            await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+            Guid? startingWordPublicId = await _cefrBrowseStateService
+                .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
                 .ConfigureAwait(true);
-            return;
-        }
 
-        string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
-        await Shell.Current.GoToAsync(
-                $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}")
-            .ConfigureAwait(true);
+            if (startingWordPublicId is null)
+            {
+                await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+                    .ConfigureAwait(true);
+                return;
+            }
+
+            string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
+            await Shell.Current.GoToAsync(
+                    $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -233,7 +251,13 @@ public partial class TopicsPage : ContentPage
     /// </summary>
     private async void OnSearchActionInvoked(object? sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(SearchWordsPage)).ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync(nameof(SearchWordsPage)).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -241,7 +265,13 @@ public partial class TopicsPage : ContentPage
     /// </summary>
     private async void OnFavoritesActionInvoked(object? sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//favorites").ConfigureAwait(true);
+        try
+        {
+            await Shell.Current.GoToAsync("//favorites").ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     /// <summary>
@@ -258,8 +288,15 @@ public partial class TopicsPage : ContentPage
 
         string topicKey = Uri.EscapeDataString(selectedTopic.Key);
         string topicTitle = Uri.EscapeDataString(selectedTopic.DisplayName);
-        await Shell.Current
-            .GoToAsync($"{nameof(TopicWordsPage)}?topicKey={topicKey}&topicTitle={topicTitle}")
-            .ConfigureAwait(true);
+
+        try
+        {
+            await Shell.Current
+                .GoToAsync($"{nameof(TopicWordsPage)}?topicKey={topicKey}&topicTitle={topicTitle}")
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 }
