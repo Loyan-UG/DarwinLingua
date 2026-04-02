@@ -65,28 +65,27 @@ internal sealed class TopicRepository : ITopicRepository
             .Select(topic => new TopicDisplayNameProjection(
                 topic.Id,
                 topic.Key,
-                topic.SortOrder,
                 topic.Localizations
-                    .Where(localization =>
-                        localization.LanguageCode == preferredLanguageCode ||
-                        localization.LanguageCode == fallbackLanguageCode)
-                    .Select(localization => new TopicLocalizationProjection(localization.LanguageCode, localization.DisplayName))
-                    .ToArray()))
+                    .Where(localization => localization.LanguageCode == preferredLanguageCode)
+                    .Select(localization => localization.DisplayName)
+                    .FirstOrDefault(),
+                topic.Localizations
+                    .Where(localization => localization.LanguageCode == fallbackLanguageCode)
+                    .Select(localization => localization.DisplayName)
+                    .FirstOrDefault()))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
         return topics.ToDictionary(
             topic => topic.Id,
-            topic => topic.Localizations.FirstOrDefault(localization => localization.LanguageCode == preferredLanguageCode)?.DisplayName
-                ?? topic.Localizations.FirstOrDefault(localization => localization.LanguageCode == fallbackLanguageCode)?.DisplayName
+            topic => topic.PreferredDisplayName
+                ?? topic.FallbackDisplayName
                 ?? topic.Key);
     }
 
     private sealed record TopicDisplayNameProjection(
         Guid Id,
         string Key,
-        int SortOrder,
-        IReadOnlyList<TopicLocalizationProjection> Localizations);
-
-    private sealed record TopicLocalizationProjection(LanguageCode LanguageCode, string DisplayName);
+        string? PreferredDisplayName,
+        string? FallbackDisplayName);
 }
