@@ -127,7 +127,11 @@ internal sealed class RemoteContentUpdateService(
                 localSchemaVersion = remotePackage.SchemaVersion;
             }
 
-            bool updateAvailable = !string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase);
+            bool updateAvailable = !IsLocalReceiptEquivalent(
+                remotePackage,
+                localPackageId,
+                localChecksum,
+                localSchemaVersion);
             logger.LogInformation(
                 "Remote update status for scope '{ScopeKey}' loaded in {ElapsedMs} ms. UpdateAvailable={UpdateAvailable}, RemotePackageId={RemotePackageId}.",
                 scope.ScopeKey,
@@ -216,7 +220,10 @@ internal sealed class RemoteContentUpdateService(
                 ?? throw new InvalidOperationException("The remote manifest does not contain a compatible package for this update scope.");
 
             string localPackageId = await GetLocalPackageIdAsync(databasePath, scope, cancellationToken).ConfigureAwait(false);
-            if (string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase))
+            string localChecksum = GetLastAppliedChecksum(scope);
+            int localSchemaVersion = GetLastAppliedSchemaVersion(scope);
+
+            if (IsLocalReceiptEquivalent(remotePackage, localPackageId, localChecksum, localSchemaVersion))
             {
                 PersistLastFailure(scope, string.Empty);
                 RemoteContentUpdateResult currentResult = new(true, false, remotePackage.PackageId, remotePackage.Version, 0, GetLastSuccessfulUpdateAtUtc(scope), null);
@@ -382,6 +389,22 @@ internal sealed class RemoteContentUpdateService(
             .OrderByDescending(package => package.CreatedAtUtc)
             .ThenBy(package => package.PackageId, StringComparer.OrdinalIgnoreCase)
             .FirstOrDefault();
+
+    private static bool IsLocalReceiptEquivalent(
+        RemoteContentPackageModel remotePackage,
+        string localPackageId,
+        string localChecksum,
+        int localSchemaVersion)
+    {
+        if (string.Equals(localPackageId, remotePackage.PackageId, StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+
+        return !string.IsNullOrWhiteSpace(localChecksum) &&
+            string.Equals(localChecksum, remotePackage.Checksum, StringComparison.OrdinalIgnoreCase) &&
+            localSchemaVersion == remotePackage.SchemaVersion;
+    }
 
     private async Task DownloadPackageAsync(RemoteUpdateScope scope, string packageId, string targetPath, CancellationToken cancellationToken)
     {
