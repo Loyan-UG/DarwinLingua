@@ -159,7 +159,7 @@ public partial class SearchWordsPage : ContentPage
                 .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
 
-            ShowLoadingState();
+            ShowLoadingState(_lastResults.Count > 0);
 
             IReadOnlyList<WordListItemModel> words = await _wordSearchCacheService
                 .SearchAsync(normalizedQuery, profile.PreferredMeaningLanguage1, cancellationToken)
@@ -200,7 +200,7 @@ public partial class SearchWordsPage : ContentPage
         }
         finally
         {
-            LoadingStateLabel.IsVisible = false;
+            SetLoadingState(false);
         }
     }
 
@@ -285,17 +285,32 @@ public partial class SearchWordsPage : ContentPage
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = words.Count == 0;
         WordsCollectionView.IsVisible = words.Count > 0;
+        SetLoadingState(false);
     }
 
     /// <summary>
     /// Shows the loading state while the query is being executed.
     /// </summary>
-    private void ShowLoadingState()
+    private void ShowLoadingState(bool hasExistingResults)
     {
-        LoadingStateLabel.IsVisible = true;
+        SetLoadingState(true);
         ErrorStateLabel.IsVisible = false;
+
+        if (hasExistingResults)
+        {
+            EmptyStateLabel.IsVisible = false;
+            WordsCollectionView.IsVisible = true;
+            return;
+        }
+
         EmptyStateLabel.IsVisible = false;
         WordsCollectionView.IsVisible = false;
+    }
+
+    private void SetLoadingState(bool isLoading)
+    {
+        LoadingStateLayout.IsVisible = isLoading;
+        LoadingActivityIndicator.IsRunning = isLoading;
     }
 
     /// <summary>

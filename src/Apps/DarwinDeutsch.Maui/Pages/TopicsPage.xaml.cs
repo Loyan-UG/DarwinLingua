@@ -120,7 +120,7 @@ public partial class TopicsPage : ContentPage
 
         if (showLoadingState)
         {
-            ShowLoadingState();
+            ShowLoadingState(TopicsCollectionView.ItemsSource is not null);
         }
 
         try
@@ -152,19 +152,33 @@ public partial class TopicsPage : ContentPage
         }
         finally
         {
-            LoadingStateLabel.IsVisible = false;
+            SetLoadingState(false);
         }
     }
 
     /// <summary>
     /// Shows the loading state while topic data is being fetched.
     /// </summary>
-    private void ShowLoadingState()
+    private void ShowLoadingState(bool hasExistingTopics)
     {
-        LoadingStateLabel.IsVisible = true;
+        SetLoadingState(true);
         ErrorStateLabel.IsVisible = false;
+
+        if (hasExistingTopics)
+        {
+            EmptyStateLabel.IsVisible = false;
+            TopicsCollectionView.IsVisible = true;
+            return;
+        }
+
         EmptyStateLabel.IsVisible = false;
         TopicsCollectionView.IsVisible = false;
+    }
+
+    private void SetLoadingState(bool isLoading)
+    {
+        LoadingStateLayout.IsVisible = isLoading;
+        LoadingActivityIndicator.IsRunning = isLoading;
     }
 
     private void ResetTopicsRefreshRequest()
