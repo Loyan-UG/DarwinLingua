@@ -10,6 +10,7 @@ namespace DarwinDeutsch.Maui;
 public partial class AppShell : Shell
 {
     private readonly IAppLocalizationService _appLocalizationService;
+    private readonly IServiceProvider _serviceProvider;
     private readonly ShellContent _homeContent;
     private readonly ShellContent _practiceContent;
     private readonly ShellContent _browseContent;
@@ -20,55 +21,47 @@ public partial class AppShell : Shell
     /// Initializes a new instance of the <see cref="AppShell"/> class.
     /// </summary>
     /// <param name="appLocalizationService">The service that manages UI localization.</param>
-    /// <param name="homePage">The home page instance.</param>
-    /// <param name="settingsPage">The settings page instance.</param>
+    /// <param name="serviceProvider">The service provider used to resolve tab pages lazily.</param>
     public AppShell(
         IAppLocalizationService appLocalizationService,
-        HomePage homePage,
-        PracticePage practicePage,
-        TopicsPage topicsPage,
-        FavoritesPage favoritesPage,
-        SettingsPage settingsPage)
+        IServiceProvider serviceProvider)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
-        ArgumentNullException.ThrowIfNull(homePage);
-        ArgumentNullException.ThrowIfNull(practicePage);
-        ArgumentNullException.ThrowIfNull(topicsPage);
-        ArgumentNullException.ThrowIfNull(favoritesPage);
-        ArgumentNullException.ThrowIfNull(settingsPage);
+        ArgumentNullException.ThrowIfNull(serviceProvider);
 
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
+        _serviceProvider = serviceProvider;
 
         _homeContent = new ShellContent
         {
             Route = "home",
-            Content = homePage,
+            ContentTemplate = CreatePageTemplate<HomePage>(),
         };
 
         _practiceContent = new ShellContent
         {
             Route = "practice",
-            Content = practicePage,
+            ContentTemplate = CreatePageTemplate<PracticePage>(),
         };
 
         _browseContent = new ShellContent
         {
             Route = "browse",
-            Content = topicsPage,
+            ContentTemplate = CreatePageTemplate<TopicsPage>(),
         };
 
         _favoritesContent = new ShellContent
         {
             Route = "favorites",
-            Content = favoritesPage,
+            ContentTemplate = CreatePageTemplate<FavoritesPage>(),
         };
 
         _settingsContent = new ShellContent
         {
             Route = "settings",
-            Content = settingsPage,
+            ContentTemplate = CreatePageTemplate<SettingsPage>(),
         };
 
         Routing.RegisterRoute(nameof(TopicWordsPage), typeof(TopicWordsPage));
@@ -94,6 +87,10 @@ public partial class AppShell : Shell
 
         ApplyLocalizedShellText();
     }
+
+    private DataTemplate CreatePageTemplate<TPage>()
+        where TPage : Page
+        => new(() => _serviceProvider.GetRequiredService<TPage>());
 
     /// <summary>
     /// Updates shell titles after the active culture changes.
