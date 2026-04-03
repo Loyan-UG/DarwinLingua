@@ -18,7 +18,7 @@ internal sealed class SpeechPlaybackService : ISpeechPlaybackService
     {
         try
         {
-            await GetCachedLocalesAsync(cancellationToken).ConfigureAwait(false);
+            await ResolveLocaleAsync("de", cancellationToken).ConfigureAwait(false);
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
         {

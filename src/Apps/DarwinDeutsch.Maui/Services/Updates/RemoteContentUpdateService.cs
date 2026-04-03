@@ -389,13 +389,35 @@ internal sealed class RemoteContentUpdateService(
             }
         }
 
-        return await AwaitManifestRequestAsync(inFlightRequest!, cancellationToken).ConfigureAwait(false);
+        return await AwaitManifestRequestAsync(cacheKey, inFlightRequest!, timeoutSeconds, cancellationToken).ConfigureAwait(false);
     }
 
     private async Task<RemoteContentManifestModel?> AwaitManifestRequestAsync(
+        string cacheKey,
         Task<RemoteContentManifestModel?> requestTask,
+        int timeoutSeconds,
         CancellationToken cancellationToken)
-        => await requestTask.WaitAsync(cancellationToken).ConfigureAwait(false);
+    {
+        try
+        {
+            return await requestTask
+                .WaitAsync(TimeSpan.FromSeconds(Math.Max(1, timeoutSeconds)), cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (TimeoutException exception)
+        {
+            lock (ManifestCacheGate)
+            {
+                if (InFlightManifestRequests.TryGetValue(cacheKey, out Task<RemoteContentManifestModel?>? currentRequest) &&
+                    ReferenceEquals(currentRequest, requestTask))
+                {
+                    InFlightManifestRequests.Remove(cacheKey);
+                }
+            }
+
+            throw new TaskCanceledException($"Remote manifest request timed out after {timeoutSeconds} seconds.", exception, cancellationToken);
+        }
+    }
 
     private async Task<RemoteContentManifestModel?> FetchAndCacheManifestAsync(string cacheKey, string requestUri, int timeoutSeconds)
     {

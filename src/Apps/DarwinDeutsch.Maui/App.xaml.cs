@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Pages;
+using DarwinDeutsch.Maui.Services.Audio;
 using DarwinDeutsch.Maui.Services.Onboarding;
 using DarwinDeutsch.Maui.Services.Startup;
 using DarwinDeutsch.Maui.Services.Updates;
@@ -63,6 +64,7 @@ public partial class App : Application
         _serviceProvider.GetRequiredService<IPlatformBackgroundUpdateScheduler>().EnsureScheduled();
         _serviceProvider.GetRequiredService<IDeferredStartupMaintenanceService>().Schedule();
         _serviceProvider.GetRequiredService<IBackgroundRemoteUpdateCoordinator>().ScheduleInitialCheck(activeWindow);
+        _ = WarmUpSpeechAsync();
     }
 
     private void OnWelcomeStartRequested(object? sender, EventArgs e)
@@ -110,6 +112,20 @@ public partial class App : Application
         if (sender is Window window)
         {
             _serviceProvider.GetRequiredService<IBackgroundRemoteUpdateCoordinator>().ScheduleResumeCheck(window);
+        }
+    }
+
+    private async Task WarmUpSpeechAsync()
+    {
+        try
+        {
+            await _serviceProvider
+                .GetRequiredService<ISpeechPlaybackService>()
+                .WarmUpAsync(CancellationToken.None)
+                .ConfigureAwait(false);
+        }
+        catch (OperationCanceledException)
+        {
         }
     }
 }

@@ -79,7 +79,7 @@ public static class MauiProgram
                 BaseUrl = GetDefaultRemoteContentBaseUrl(),
                 ClientProductKey = "darwin-deutsch",
                 ClientSchemaVersion = 1,
-                StatusRequestTimeoutSeconds = 2,
+                StatusRequestTimeoutSeconds = 1,
                 ManifestRequestTimeoutSeconds = 4,
             })
             .AddSingleton(_ => new HttpClient

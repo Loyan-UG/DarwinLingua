@@ -23,7 +23,7 @@ public sealed class RemoteContentUpdateOptions
     /// <summary>
     /// Gets or sets the timeout in seconds for remote status checks.
     /// </summary>
-    public int StatusRequestTimeoutSeconds { get; set; } = 2;
+    public int StatusRequestTimeoutSeconds { get; set; } = 1;
 
     /// <summary>
     /// Gets or sets the timeout in seconds for remote manifest requests.
