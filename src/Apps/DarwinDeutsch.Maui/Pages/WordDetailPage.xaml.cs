@@ -855,6 +855,7 @@ public partial class WordDetailPage : ContentPage
 
         ClearAudioStatus();
         ResetSpeechRequest();
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         SpeechPlaybackResult result = await _speechPlaybackService
             .SpeakAsync(text, "de", _speechCancellationTokenSource!.Token)
@@ -862,9 +863,14 @@ public partial class WordDetailPage : ContentPage
 
         if (result.IsSuccess || result.Status == SpeechPlaybackStatus.Cancelled)
         {
+            _performanceTelemetryService.Record(
+                "speech.playback",
+                stopwatch.Elapsed,
+                result.Status == SpeechPlaybackStatus.Cancelled ? PerformanceTelemetryOutcome.Cancelled : PerformanceTelemetryOutcome.Success);
             return;
         }
 
+        _performanceTelemetryService.Record("speech.playback", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
         AudioStatusLabel.Text = result.Status switch
         {
             SpeechPlaybackStatus.Unsupported => AppStrings.WordDetailAudioNotSupported,

@@ -1,5 +1,4 @@
 using System.Data.Common;
-using System.Net.Http.Json;
 using System.Text.Json;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
@@ -74,7 +73,10 @@ internal sealed class RemoteContentUpdateService(
 
         try
         {
-            RemoteContentManifestModel? manifest = await GetManifestAsync(scope.BuildManifestUri(options), cancellationToken).ConfigureAwait(false);
+            RemoteContentManifestModel? manifest = await GetManifestAsync(
+                scope.BuildManifestUri(options),
+                options.StatusRequestTimeoutSeconds,
+                cancellationToken).ConfigureAwait(false);
 
             RemoteContentPackageModel? remotePackage = SelectLatestPackage(manifest, scope);
             if (remotePackage is null)
@@ -217,7 +219,7 @@ internal sealed class RemoteContentUpdateService(
         {
             RemoteContentManifestModel? manifest = await ExecuteTimedPhaseAsync(
                 $"remote-update.apply.manifest:{scope.ScopeKey}",
-                () => GetManifestAsync(scope.BuildManifestUri(options), cancellationToken),
+                () => GetManifestAsync(scope.BuildManifestUri(options), options.ManifestRequestTimeoutSeconds, cancellationToken),
                 cancellationToken).ConfigureAwait(false);
 
             RemoteContentPackageModel remotePackage = SelectLatestPackage(manifest, scope)
@@ -364,46 +366,47 @@ internal sealed class RemoteContentUpdateService(
         }
     }
 
-    private async Task<RemoteContentManifestModel?> GetManifestAsync(string requestUri, CancellationToken cancellationToken)
+    private async Task<RemoteContentManifestModel?> GetManifestAsync(string requestUri, int timeoutSeconds, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
+        timeoutSeconds = Math.Max(1, timeoutSeconds);
+        string cacheKey = $"{timeoutSeconds}|{requestUri}";
         CachedManifestEntry? cachedEntry;
         Task<RemoteContentManifestModel?>? inFlightRequest;
 
         lock (ManifestCacheGate)
         {
-            if (ManifestCache.TryGetValue(requestUri, out cachedEntry) &&
+            if (ManifestCache.TryGetValue(cacheKey, out cachedEntry) &&
                 DateTimeOffset.UtcNow - cachedEntry.FetchedAtUtc <= ManifestCacheLifetime)
             {
                 return cachedEntry.Manifest;
             }
 
-            if (!InFlightManifestRequests.TryGetValue(requestUri, out inFlightRequest))
+            if (!InFlightManifestRequests.TryGetValue(cacheKey, out inFlightRequest))
             {
-                inFlightRequest = FetchAndCacheManifestAsync(requestUri);
-                InFlightManifestRequests[requestUri] = inFlightRequest;
+                inFlightRequest = FetchAndCacheManifestAsync(cacheKey, requestUri, timeoutSeconds);
+                InFlightManifestRequests[cacheKey] = inFlightRequest;
             }
         }
 
-        return await AwaitManifestRequestAsync(requestUri, inFlightRequest!, cancellationToken).ConfigureAwait(false);
+        return await AwaitManifestRequestAsync(inFlightRequest!, cancellationToken).ConfigureAwait(false);
     }
 
     private async Task<RemoteContentManifestModel?> AwaitManifestRequestAsync(
-        string requestUri,
         Task<RemoteContentManifestModel?> requestTask,
         CancellationToken cancellationToken)
         => await requestTask.WaitAsync(cancellationToken).ConfigureAwait(false);
 
-    private async Task<RemoteContentManifestModel?> FetchAndCacheManifestAsync(string requestUri)
+    private async Task<RemoteContentManifestModel?> FetchAndCacheManifestAsync(string cacheKey, string requestUri, int timeoutSeconds)
     {
         try
         {
-            RemoteContentManifestModel? manifest = await FetchManifestCoreAsync(requestUri).ConfigureAwait(false);
+            RemoteContentManifestModel? manifest = await FetchManifestCoreAsync(requestUri, timeoutSeconds).ConfigureAwait(false);
 
             lock (ManifestCacheGate)
             {
-                ManifestCache[requestUri] = new CachedManifestEntry(manifest, DateTimeOffset.UtcNow);
-                InFlightManifestRequests.Remove(requestUri);
+                ManifestCache[cacheKey] = new CachedManifestEntry(manifest, DateTimeOffset.UtcNow);
+                InFlightManifestRequests.Remove(cacheKey);
             }
 
             return manifest;
@@ -412,18 +415,26 @@ internal sealed class RemoteContentUpdateService(
         {
             lock (ManifestCacheGate)
             {
-                InFlightManifestRequests.Remove(requestUri);
+                InFlightManifestRequests.Remove(cacheKey);
             }
 
             throw;
         }
     }
 
-    private async Task<RemoteContentManifestModel?> FetchManifestCoreAsync(string requestUri)
+    private async Task<RemoteContentManifestModel?> FetchManifestCoreAsync(string requestUri, int timeoutSeconds)
     {
-        using CancellationTokenSource timeoutCancellationTokenSource = new(TimeSpan.FromSeconds(Math.Max(1, options.ManifestRequestTimeoutSeconds)));
-        return await httpClient
-            .GetFromJsonAsync<RemoteContentManifestModel>(requestUri, timeoutCancellationTokenSource.Token)
+        using CancellationTokenSource timeoutCancellationTokenSource = new(TimeSpan.FromSeconds(Math.Max(1, timeoutSeconds)));
+        using HttpRequestMessage request = new(HttpMethod.Get, requestUri);
+        using HttpResponseMessage response = await httpClient
+            .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, timeoutCancellationTokenSource.Token)
+            .ConfigureAwait(false);
+        response.EnsureSuccessStatusCode();
+        await using Stream responseStream = await response.Content
+            .ReadAsStreamAsync(timeoutCancellationTokenSource.Token)
+            .ConfigureAwait(false);
+        return await JsonSerializer
+            .DeserializeAsync<RemoteContentManifestModel>(responseStream, cancellationToken: timeoutCancellationTokenSource.Token)
             .ConfigureAwait(false);
     }
 

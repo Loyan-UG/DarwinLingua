@@ -21,6 +21,11 @@ public sealed class RemoteContentUpdateOptions
     public int ClientSchemaVersion { get; set; } = 1;
 
     /// <summary>
+    /// Gets or sets the timeout in seconds for remote status checks.
+    /// </summary>
+    public int StatusRequestTimeoutSeconds { get; set; } = 2;
+
+    /// <summary>
     /// Gets or sets the timeout in seconds for remote manifest requests.
     /// </summary>
     public int ManifestRequestTimeoutSeconds { get; set; } = 4;

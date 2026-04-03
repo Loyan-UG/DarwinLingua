@@ -1,5 +1,6 @@
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Media;
+using System.Collections.Concurrent;
 
 namespace DarwinDeutsch.Maui.Services.Audio;
 
@@ -8,6 +9,27 @@ namespace DarwinDeutsch.Maui.Services.Audio;
 /// </summary>
 internal sealed class SpeechPlaybackService : ISpeechPlaybackService
 {
+    private readonly SemaphoreSlim _localeGate = new(1, 1);
+    private readonly ConcurrentDictionary<string, Locale?> _resolvedLocales = new(StringComparer.OrdinalIgnoreCase);
+    private Locale[]? _cachedLocales;
+
+    /// <inheritdoc />
+    public async Task WarmUpAsync(CancellationToken cancellationToken)
+    {
+        try
+        {
+            await GetCachedLocalesAsync(cancellationToken).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
+        catch
+        {
+            // Warm-up is opportunistic. Playback still resolves voices lazily if this fails.
+        }
+    }
+
     /// <inheritdoc />
     public async Task<SpeechPlaybackResult> SpeakAsync(string text, string languageCode, CancellationToken cancellationToken)
     {
@@ -21,10 +43,7 @@ internal sealed class SpeechPlaybackService : ISpeechPlaybackService
 
         try
         {
-            IEnumerable<Locale> locales = await TextToSpeech.Default
-                .GetLocalesAsync()
-                .ConfigureAwait(false);
-            Locale? locale = ResolveLocale(locales, normalizedLanguageCode);
+            Locale? locale = await ResolveLocaleAsync(normalizedLanguageCode, cancellationToken).ConfigureAwait(false);
 
             if (locale is null)
             {
@@ -62,6 +81,48 @@ internal sealed class SpeechPlaybackService : ISpeechPlaybackService
         {
             return new SpeechPlaybackResult(SpeechPlaybackStatus.Failed);
         }
+    }
+
+    private async Task<Locale[]?> GetCachedLocalesAsync(CancellationToken cancellationToken)
+    {
+        Locale[]? cachedLocales = Volatile.Read(ref _cachedLocales);
+        if (cachedLocales is not null)
+        {
+            return cachedLocales;
+        }
+
+        await _localeGate.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+        try
+        {
+            cachedLocales = _cachedLocales;
+            if (cachedLocales is not null)
+            {
+                return cachedLocales;
+            }
+
+            cachedLocales = (await TextToSpeech.Default.GetLocalesAsync().ConfigureAwait(false)).ToArray();
+            Volatile.Write(ref _cachedLocales, cachedLocales);
+            _resolvedLocales.Clear();
+            return cachedLocales;
+        }
+        finally
+        {
+            _localeGate.Release();
+        }
+    }
+
+    private async Task<Locale?> ResolveLocaleAsync(string languageCode, CancellationToken cancellationToken)
+    {
+        if (_resolvedLocales.TryGetValue(languageCode, out Locale? cachedLocale))
+        {
+            return cachedLocale;
+        }
+
+        Locale[]? locales = await GetCachedLocalesAsync(cancellationToken).ConfigureAwait(false);
+        Locale? resolvedLocale = locales is null ? null : ResolveLocale(locales, languageCode);
+        _resolvedLocales[languageCode] = resolvedLocale;
+        return resolvedLocale;
     }
 
     /// <summary>

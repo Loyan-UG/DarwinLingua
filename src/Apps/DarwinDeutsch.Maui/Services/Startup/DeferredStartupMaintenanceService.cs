@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using DarwinDeutsch.Maui.Services.Audio;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Storage;
@@ -13,6 +14,7 @@ internal sealed class DeferredStartupMaintenanceService : IDeferredStartupMainte
 {
     private static readonly TimeSpan InitialDelay = TimeSpan.FromSeconds(1);
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
+    private readonly ISpeechPlaybackService _speechPlaybackService;
     private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ILogger<DeferredStartupMaintenanceService> _logger;
@@ -24,16 +26,19 @@ internal sealed class DeferredStartupMaintenanceService : IDeferredStartupMainte
     /// </summary>
     public DeferredStartupMaintenanceService(
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
+        ISpeechPlaybackService speechPlaybackService,
         IBrowseAccelerationService browseAccelerationService,
         IPerformanceTelemetryService performanceTelemetryService,
         ILogger<DeferredStartupMaintenanceService> logger)
     {
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
+        ArgumentNullException.ThrowIfNull(speechPlaybackService);
         ArgumentNullException.ThrowIfNull(browseAccelerationService);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
         ArgumentNullException.ThrowIfNull(logger);
 
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
+        _speechPlaybackService = speechPlaybackService;
         _browseAccelerationService = browseAccelerationService;
         _performanceTelemetryService = performanceTelemetryService;
         _logger = logger;
@@ -100,7 +105,19 @@ internal sealed class DeferredStartupMaintenanceService : IDeferredStartupMainte
         finally
         {
             _browseAccelerationService.ScheduleInitialWarmup();
+            _ = WarmUpSpeechAsync();
             _gate.Release();
+        }
+    }
+
+    private async Task WarmUpSpeechAsync()
+    {
+        try
+        {
+            await _speechPlaybackService.WarmUpAsync(CancellationToken.None).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException)
+        {
         }
     }
 }

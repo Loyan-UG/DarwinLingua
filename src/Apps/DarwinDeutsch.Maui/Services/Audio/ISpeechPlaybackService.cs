@@ -6,6 +6,13 @@ namespace DarwinDeutsch.Maui.Services.Audio;
 public interface ISpeechPlaybackService
 {
     /// <summary>
+    /// Preloads platform text-to-speech capabilities so the first playback starts faster.
+    /// </summary>
+    /// <param name="cancellationToken">The cancellation token for the warm-up request.</param>
+    /// <returns>A task that completes when the warm-up attempt finishes.</returns>
+    Task WarmUpAsync(CancellationToken cancellationToken);
+
+    /// <summary>
     /// Attempts to speak the supplied text using a voice compatible with the requested language.
     /// </summary>
     /// <param name="text">The text to pronounce.</param>
