@@ -1043,6 +1043,61 @@ public static class AppStrings
     public static string SettingsAppInfoSectionLabel => GetRequiredString(nameof(SettingsAppInfoSectionLabel));
 
     /// <summary>
+    /// Gets the localized summary shown in the compact settings about section.
+    /// </summary>
+    public static string SettingsAboutSummary => GetRequiredString(nameof(SettingsAboutSummary));
+
+    /// <summary>
+    /// Gets the localized button caption that opens the about page.
+    /// </summary>
+    public static string SettingsAboutButton => GetRequiredString(nameof(SettingsAboutButton));
+
+    /// <summary>
+    /// Gets the localized title for the about page.
+    /// </summary>
+    public static string AboutTitle => GetRequiredString(nameof(AboutTitle));
+
+    /// <summary>
+    /// Gets the localized headline for the about page.
+    /// </summary>
+    public static string AboutHeadline => GetRequiredString(nameof(AboutHeadline));
+
+    /// <summary>
+    /// Gets the localized summary for the about page.
+    /// </summary>
+    public static string AboutSummary => GetRequiredString(nameof(AboutSummary));
+
+    /// <summary>
+    /// Gets the localized heading for the feature summary on the about page.
+    /// </summary>
+    public static string AboutFeaturesTitle => GetRequiredString(nameof(AboutFeaturesTitle));
+
+    /// <summary>
+    /// Gets the localized feature summary body on the about page.
+    /// </summary>
+    public static string AboutFeaturesBody => GetRequiredString(nameof(AboutFeaturesBody));
+
+    /// <summary>
+    /// Gets the localized developer heading on the about page.
+    /// </summary>
+    public static string AboutDeveloperTitle => GetRequiredString(nameof(AboutDeveloperTitle));
+
+    /// <summary>
+    /// Gets the localized developer name on the about page.
+    /// </summary>
+    public static string AboutDeveloperValue => GetRequiredString(nameof(AboutDeveloperValue));
+
+    /// <summary>
+    /// Gets the localized caption for the GitHub button on the about page.
+    /// </summary>
+    public static string AboutGitHubButton => GetRequiredString(nameof(AboutGitHubButton));
+
+    /// <summary>
+    /// Gets the localized contact-button format for the about page.
+    /// </summary>
+    public static string AboutContactButtonFormat => GetRequiredString(nameof(AboutContactButtonFormat));
+
+    /// <summary>
     /// Gets the localized picker title for the UI language selector.
     /// </summary>
     public static string SettingsUiLanguageLabel => GetRequiredString(nameof(SettingsUiLanguageLabel));

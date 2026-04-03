@@ -94,35 +94,33 @@ public sealed class MauiBrowseScreenSmokeTests
     }
 
     /// <summary>
-    /// Verifies that the settings screen hosts the app-information content removed from home.
+    /// Verifies that the settings screen stays compact and links to a dedicated about page.
     /// </summary>
     [Fact]
-    public void SettingsPage_ShouldExposeAppInformationSections()
+    public void SettingsPage_ShouldExposeCompactUpdateSectionsAndAboutEntry()
     {
         string repositoryRoot = ResolveRepositoryRoot();
         string settingsPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/SettingsPage.xaml");
         string settingsCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/SettingsPage.xaml.cs");
+        string aboutPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/AboutPage.xaml");
+        string aboutCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/AboutPage.xaml.cs");
 
         Assert.True(File.Exists(settingsPagePath), $"Settings page XAML file not found: {settingsPagePath}");
         Assert.True(File.Exists(settingsCodeBehindPath), $"Settings page code-behind file not found: {settingsCodeBehindPath}");
+        Assert.True(File.Exists(aboutPagePath), $"About page XAML file not found: {aboutPagePath}");
+        Assert.True(File.Exists(aboutCodeBehindPath), $"About page code-behind file not found: {aboutCodeBehindPath}");
 
         string xamlSource = File.ReadAllText(settingsPagePath);
         string codeBehindSource = File.ReadAllText(settingsCodeBehindPath);
+        string aboutXamlSource = File.ReadAllText(aboutPagePath);
+        string aboutCodeBehindSource = File.ReadAllText(aboutCodeBehindPath);
 
-        Assert.Contains("AppInfoSectionLabel", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("CurrentLanguageSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("MeaningLanguagesSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("SupportedLanguagesSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("CurrentFeaturesSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("FutureFeaturesSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContentUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("RemoteContentUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("PackagedSeedUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ApplyRemoteUpdateButton", xamlSource, StringComparison.Ordinal);
         Assert.Contains("RemoteContentUpdateStatusSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("RemoteContentUpdateDetailsSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("RemoteContentUpdateDiagnosticsSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("RemoteContentUpdateHistorySectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("ApplyRemoteUpdateButton", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CatalogAreaUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CatalogAreaUpdateSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ApplyCatalogAreaUpdateButton", xamlSource, StringComparison.Ordinal);
@@ -133,11 +131,13 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplyCefrC2UpdateButton", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContentUpdateStatusSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContentUpdateDetailsSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("ContentUpdateDiagnosticsSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ApplySeedUpdateButton", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("AboutSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("AboutSummaryLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("OpenAboutButton", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SettingsAppInfoSectionLabel", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("WelcomeCurrentFeaturesBody", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("WelcomeFutureFeaturesBody", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsAboutSummary", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("OnOpenAboutButtonClicked", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("IRemoteContentUpdateService", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnApplyRemoteUpdateButtonClicked", codeBehindSource, StringComparison.Ordinal);
@@ -146,19 +146,20 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("GetAreaUpdateStatusAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("GetCefrUpdateStatusAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildRemoteContentUpdateStatus", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("BuildRemoteContentUpdateDiagnostics", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("BuildRemoteContentUpdateHistory", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("GetRecentUpdateHistoryAsync", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("SettingsRemoteContentUpdatesScopeFormat", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("SettingsRemoteContentUpdatesRemoteChecksumFormat", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("SettingsRemoteContentUpdatesManifestGeneratedAtFormat", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildRemoteScopeSummary", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnApplySeedUpdateButtonClicked", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildContentUpdateDetails", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("BuildContentUpdateDiagnostics", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("SettingsContentUpdatesDiagnosticsLabel", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("CancelPageStateRequest", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("LoadCefrUpdateStatusesAsync(localDatabasePath, cancellationToken)", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("AboutHeadline", aboutCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("AboutGitHubButton", aboutCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("AboutContactButtonFormat", aboutCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("OnOpenGitHubButtonClicked", aboutCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("OnContactButtonClicked", aboutCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("FeaturesSectionLabel", aboutXamlSource, StringComparison.Ordinal);
+        Assert.Contains("DeveloperSectionLabel", aboutXamlSource, StringComparison.Ordinal);
+        Assert.Contains("OpenGitHubButton", aboutXamlSource, StringComparison.Ordinal);
+        Assert.Contains("ContactButton", aboutXamlSource, StringComparison.Ordinal);
     }
 
     /// <summary>

@@ -419,8 +419,13 @@ internal sealed class RemoteContentUpdateService(
         }
     }
 
-    private Task<RemoteContentManifestModel?> FetchManifestCoreAsync(string requestUri) =>
-        httpClient.GetFromJsonAsync<RemoteContentManifestModel>(requestUri, CancellationToken.None);
+    private async Task<RemoteContentManifestModel?> FetchManifestCoreAsync(string requestUri)
+    {
+        using CancellationTokenSource timeoutCancellationTokenSource = new(TimeSpan.FromSeconds(Math.Max(1, options.ManifestRequestTimeoutSeconds)));
+        return await httpClient
+            .GetFromJsonAsync<RemoteContentManifestModel>(requestUri, timeoutCancellationTokenSource.Token)
+            .ConfigureAwait(false);
+    }
 
     private static void InvalidateManifestCache()
     {

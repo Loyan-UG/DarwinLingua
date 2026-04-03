@@ -4,9 +4,6 @@ using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Storage;
 using DarwinDeutsch.Maui.Services.Updates;
-#if ANDROID
-using DarwinDeutsch.Maui.Platforms.Android.Updates;
-#endif
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Localization.Application.Abstractions;
 using DarwinLingua.Localization.Application.Models;
@@ -134,15 +131,12 @@ public partial class SettingsPage : ContentPage
         Title = AppStrings.SettingsTabTitle;
         HeadlineLabel.Text = AppStrings.SettingsHeadline;
         DescriptionLabel.Text = AppStrings.SettingsDescription;
-        AppInfoSectionLabel.Text = AppStrings.SettingsAppInfoSectionLabel;
+        AboutSectionLabel.Text = AppStrings.SettingsAppInfoSectionLabel;
+        AboutSummaryLabel.Text = AppStrings.SettingsAboutSummary;
+        OpenAboutButton.Text = AppStrings.SettingsAboutButton;
         LanguagePickerCaptionLabel.Text = AppStrings.SettingsUiLanguageLabel;
         PrimaryMeaningLanguageCaptionLabel.Text = AppStrings.SettingsPrimaryMeaningLanguageLabel;
         SecondaryMeaningLanguageCaptionLabel.Text = AppStrings.SettingsSecondaryMeaningLanguageLabel;
-        CurrentLanguageSectionView.SectionTitle = AppStrings.HomeCurrentUiLanguageLabel;
-        MeaningLanguagesSectionView.SectionTitle = AppStrings.HomeMeaningLanguagesLabel;
-        SupportedLanguagesSectionView.SectionTitle = AppStrings.HomeSupportedLanguagesLabel;
-        CurrentFeaturesSectionView.SectionTitle = AppStrings.WelcomeCurrentFeaturesTitle;
-        FutureFeaturesSectionView.SectionTitle = AppStrings.WelcomeFutureFeaturesTitle;
         ContentUpdatesSectionLabel.Text = AppStrings.SettingsContentUpdatesSectionLabel;
         RemoteContentUpdatesSectionLabel.Text = AppStrings.SettingsRemoteContentUpdatesSectionLabel;
         CatalogAreaUpdatesSectionLabel.Text = AppStrings.SettingsRemoteCatalogAreaSectionLabel;
@@ -150,11 +144,8 @@ public partial class SettingsPage : ContentPage
         PackagedSeedUpdatesSectionLabel.Text = AppStrings.SettingsPackagedSeedUpdatesSectionLabel;
         ContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
         ContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
-        ContentUpdateDiagnosticsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDiagnosticsLabel;
         RemoteContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
         RemoteContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
-        RemoteContentUpdateDiagnosticsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDiagnosticsLabel;
-        RemoteContentUpdateHistorySectionView.SectionTitle = AppStrings.SettingsRemoteContentUpdatesHistoryLabel;
         CatalogAreaUpdateSectionView.SectionTitle = AppStrings.SettingsRemoteCatalogAreaTitle;
         CefrA1UpdateSectionView.SectionTitle = "A1";
         CefrA2UpdateSectionView.SectionTitle = "A2";
@@ -224,22 +215,8 @@ public partial class SettingsPage : ContentPage
                 profile.PreferredMeaningLanguage2 ?? string.Empty,
                 StringComparison.OrdinalIgnoreCase));
 
-            CurrentLanguageSectionView.SectionValue = supportedUiLanguages
-                .Single(option => string.Equals(option.CultureName, profile.UiLanguageCode, StringComparison.OrdinalIgnoreCase))
-                .DisplayName;
-            MeaningLanguagesSectionView.SectionValue = BuildMeaningLanguageSummary(
-                supportedMeaningLanguages,
-                profile.PreferredMeaningLanguage1,
-                profile.PreferredMeaningLanguage2);
-            SupportedLanguagesSectionView.SectionValue = supportedMeaningLanguages.Count == 0
-                ? AppStrings.HomeNoLanguages
-                : string.Join(Environment.NewLine, supportedMeaningLanguages.Select(language => $"{language.NativeName} ({language.Code})"));
-            CurrentFeaturesSectionView.SectionValue = AppStrings.WelcomeCurrentFeaturesBody;
-            FutureFeaturesSectionView.SectionValue = AppStrings.WelcomeFutureFeaturesBody;
-
             ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
             ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
-            ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, GetLocalDatabasePath());
             ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
             ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
                 ? AppStrings.SettingsContentUpdatesApplyButton
@@ -279,9 +256,6 @@ public partial class SettingsPage : ContentPage
         CefrB2UpdateSectionView.SectionValue = loadingText;
         CefrC1UpdateSectionView.SectionValue = loadingText;
         CefrC2UpdateSectionView.SectionValue = loadingText;
-        RemoteContentUpdateDiagnosticsSectionView.SectionValue = loadingText;
-        RemoteContentUpdateHistorySectionView.SectionValue = loadingText;
-
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
         ApplyCefrA1UpdateButton.IsEnabled = false;
@@ -330,15 +304,6 @@ public partial class SettingsPage : ContentPage
         BindCefrUpdateSection(CefrC1UpdateSectionView, ApplyCefrC1UpdateButton, "C1", cefrUpdateStatuses["C1"]);
         BindCefrUpdateSection(CefrC2UpdateSectionView, ApplyCefrC2UpdateButton, "C2", cefrUpdateStatuses["C2"]);
 
-        await Task.Yield();
-        cancellationToken.ThrowIfCancellationRequested();
-
-        IReadOnlyList<RemoteContentUpdateHistoryEntry> remoteUpdateHistory = await _remoteContentUpdateService
-            .GetRecentUpdateHistoryAsync(cancellationToken)
-            .ConfigureAwait(true);
-
-        RemoteContentUpdateDiagnosticsSectionView.SectionValue = BuildRemoteContentUpdateDiagnostics(remoteContentUpdateStatus);
-        RemoteContentUpdateHistorySectionView.SectionValue = BuildRemoteContentUpdateHistory(remoteUpdateHistory);
     }
 
     private void ApplyUnavailableCefrUpdateSections(RemoteContentUpdateStatus baseStatus)
@@ -584,7 +549,6 @@ public partial class SettingsPage : ContentPage
 
         ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
         ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
-        ContentUpdateDiagnosticsSectionView.SectionValue = BuildContentUpdateDiagnostics(seedDatabaseUpdateStatus, localDatabasePath);
         ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
         ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
             ? AppStrings.SettingsContentUpdatesApplyButton
@@ -592,6 +556,17 @@ public partial class SettingsPage : ContentPage
 
         ApplyRemoteLoadingState();
         await LoadAndApplyRemoteUpdateSectionsAsync(localDatabasePath, cancellationToken).ConfigureAwait(true);
+    }
+
+    private async void OnOpenAboutButtonClicked(object? sender, EventArgs e)
+    {
+        try
+        {
+            await Shell.Current.GoToAsync(nameof(AboutPage)).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private static string BuildMeaningLanguageSummary(
@@ -779,46 +754,6 @@ public partial class SettingsPage : ContentPage
             : AppStrings.SettingsContentUpdatesCurrentDetails;
     }
 
-    private static string BuildContentUpdateDiagnostics(SeedDatabaseUpdateStatus seedDatabaseUpdateStatus, string databasePath)
-    {
-        ArgumentNullException.ThrowIfNull(seedDatabaseUpdateStatus);
-        ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
-
-        if (!seedDatabaseUpdateStatus.IsSeedAvailable)
-        {
-            return AppStrings.SettingsContentUpdatesUnavailableDiagnostics;
-        }
-
-        string seedSignature = BuildSignatureDisplay(seedDatabaseUpdateStatus.SeedSignature);
-        string appliedSignature = BuildSignatureDisplay(seedDatabaseUpdateStatus.AppliedSignature);
-        string lastAppliedAt = seedDatabaseUpdateStatus.LastAppliedAtUtc?.ToLocalTime().ToString("g")
-            ?? AppStrings.SettingsContentUpdatesNeverAppliedValue;
-        string lastAppliedSummary = string.Format(
-            AppStrings.SettingsContentUpdatesLastAppliedSummaryFormat,
-            seedDatabaseUpdateStatus.LastAppliedPackageCount,
-            seedDatabaseUpdateStatus.LastAppliedWordCount);
-
-        return string.Join(
-            Environment.NewLine,
-            string.Format(AppStrings.SettingsContentUpdatesDatabasePathFormat, databasePath),
-            string.Format(AppStrings.SettingsContentUpdatesSeedSignatureFormat, seedSignature),
-            string.Format(AppStrings.SettingsContentUpdatesAppliedSignatureFormat, appliedSignature),
-            string.Format(AppStrings.SettingsContentUpdatesLastAppliedAtFormat, lastAppliedAt),
-            lastAppliedSummary);
-    }
-
-    private static string BuildSignatureDisplay(string? signature)
-    {
-        if (string.IsNullOrWhiteSpace(signature))
-        {
-            return AppStrings.SettingsContentUpdatesUnknownSignatureValue;
-        }
-
-        return signature.Length <= 12
-            ? signature
-            : signature[..12];
-    }
-
     private static string BuildRemoteContentUpdateStatus(RemoteContentUpdateStatus remoteContentUpdateStatus)
     {
         ArgumentNullException.ThrowIfNull(remoteContentUpdateStatus);
@@ -862,168 +797,6 @@ public partial class SettingsPage : ContentPage
                 string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalVersion)
                     ? AppStrings.SettingsContentUpdatesNeverAppliedValue
                     : remoteContentUpdateStatus.LocalVersion);
-    }
-
-    private static string BuildRemoteContentUpdateDiagnostics(RemoteContentUpdateStatus remoteContentUpdateStatus)
-    {
-        ArgumentNullException.ThrowIfNull(remoteContentUpdateStatus);
-
-        string scopeKey = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.ScopeKey)
-            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
-            : remoteContentUpdateStatus.ScopeKey;
-        string contentArea = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.ContentAreaKey)
-            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
-            : remoteContentUpdateStatus.ContentAreaKey;
-        string sliceKey = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.SliceKey)
-            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
-            : remoteContentUpdateStatus.SliceKey;
-        string packageType = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.PackageType)
-            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
-            : remoteContentUpdateStatus.PackageType;
-        string localPackage = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalPackageId)
-            ? AppStrings.SettingsContentUpdatesNeverAppliedValue
-            : remoteContentUpdateStatus.LocalPackageId;
-        string remotePackage = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.RemotePackageId)
-            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
-            : remoteContentUpdateStatus.RemotePackageId;
-        string localChecksum = BuildSignatureDisplay(remoteContentUpdateStatus.LocalChecksum);
-        string remoteChecksum = BuildSignatureDisplay(remoteContentUpdateStatus.RemoteChecksum);
-        string localSchemaVersion = remoteContentUpdateStatus.LocalSchemaVersion <= 0
-            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
-            : remoteContentUpdateStatus.LocalSchemaVersion.ToString(System.Globalization.CultureInfo.InvariantCulture);
-        string remoteSchemaVersion = remoteContentUpdateStatus.RemoteSchemaVersion <= 0
-            ? AppStrings.SettingsContentUpdatesUnknownSignatureValue
-            : remoteContentUpdateStatus.RemoteSchemaVersion.ToString(System.Globalization.CultureInfo.InvariantCulture);
-        string remoteManifestGeneratedAt = remoteContentUpdateStatus.RemoteManifestGeneratedAtUtc?.ToLocalTime().ToString("g")
-            ?? AppStrings.SettingsContentUpdatesUnknownSignatureValue;
-        string lastUpdatedAt = remoteContentUpdateStatus.LastSuccessfulUpdateAtUtc?.ToLocalTime().ToString("g")
-            ?? AppStrings.SettingsContentUpdatesNeverAppliedValue;
-        string lastFailure = string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LastFailureMessage)
-            ? AppStrings.SettingsRemoteContentUpdatesNoFailureValue
-            : remoteContentUpdateStatus.LastFailureMessage;
-
-        List<string> diagnosticsLines =
-        [
-            string.Format(AppStrings.SettingsRemoteContentUpdatesScopeFormat, scopeKey),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesContentAreaFormat, contentArea),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesSliceFormat, sliceKey),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesPackageTypeFormat, packageType),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalPackageFormat, localPackage),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesRemotePackageFormat, remotePackage),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalChecksumFormat, localChecksum),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteChecksumFormat, remoteChecksum),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalVersionFormat, string.IsNullOrWhiteSpace(remoteContentUpdateStatus.LocalVersion) ? AppStrings.SettingsContentUpdatesNeverAppliedValue : remoteContentUpdateStatus.LocalVersion),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteVersionFormat, string.IsNullOrWhiteSpace(remoteContentUpdateStatus.RemoteVersion) ? AppStrings.SettingsContentUpdatesUnknownSignatureValue : remoteContentUpdateStatus.RemoteVersion),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesLocalSchemaVersionFormat, localSchemaVersion),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesRemoteSchemaVersionFormat, remoteSchemaVersion),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesManifestGeneratedAtFormat, remoteManifestGeneratedAt),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesLastUpdatedAtFormat, lastUpdatedAt),
-            string.Format(AppStrings.SettingsRemoteContentUpdatesLastFailureFormat, lastFailure),
-        ];
-
-#if ANDROID
-        diagnosticsLines.AddRange(BuildAndroidWorkerDiagnostics());
-#endif
-
-        return string.Join(
-            Environment.NewLine,
-            diagnosticsLines);
-    }
-
-#if ANDROID
-    private static IEnumerable<string> BuildAndroidWorkerDiagnostics()
-    {
-        string workerLastProbeAt = Preferences.Default.Get<string?>(RemoteContentUpdateProbeWorker.LastWorkerProbeAtPreferenceKey, null)
-            is string rawProbeAt && DateTimeOffset.TryParse(rawProbeAt, out DateTimeOffset parsedProbeAt)
-                ? parsedProbeAt.ToLocalTime().ToString("g")
-                : AppStrings.SettingsContentUpdatesNeverAppliedValue;
-        string workerOutcome = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerOutcomePreferenceKey, AppStrings.SettingsContentUpdatesUnknownSignatureValue);
-        string workerPendingPackage = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerPendingPackageIdPreferenceKey, string.Empty);
-        string workerFailure = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerFailureMessagePreferenceKey, string.Empty);
-        bool workerServerReachable = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerServerReachablePreferenceKey, false);
-        bool workerUpdateAvailable = Preferences.Default.Get(RemoteContentUpdateProbeWorker.LastWorkerUpdateAvailablePreferenceKey, false);
-
-        yield return $"Android worker last probe: {workerLastProbeAt}";
-        yield return $"Android worker outcome: {workerOutcome}";
-        yield return $"Android worker reachable: {workerServerReachable}";
-        yield return $"Android worker update available: {workerUpdateAvailable}";
-
-        if (!string.IsNullOrWhiteSpace(workerPendingPackage))
-        {
-            yield return $"Android worker pending package: {workerPendingPackage}";
-        }
-
-        if (!string.IsNullOrWhiteSpace(workerFailure))
-        {
-            yield return $"Android worker failure: {workerFailure}";
-        }
-    }
-#endif
-
-    private static string BuildRemoteContentUpdateHistory(IReadOnlyList<RemoteContentUpdateHistoryEntry> historyEntries)
-    {
-        ArgumentNullException.ThrowIfNull(historyEntries);
-
-        if (historyEntries.Count == 0)
-        {
-            return AppStrings.SettingsRemoteContentUpdatesHistoryEmpty;
-        }
-
-        return string.Join(
-            Environment.NewLine,
-            historyEntries
-                .Take(5)
-                .Select(BuildRemoteContentUpdateHistoryLine));
-    }
-
-    private static string BuildRemoteContentUpdateHistoryLine(RemoteContentUpdateHistoryEntry entry)
-    {
-        string occurredAt = entry.OccurredAtUtc.ToLocalTime().ToString("g");
-        string scopeName = BuildRemoteScopeDisplayName(entry.ScopeKey);
-
-        if (!entry.IsSuccess)
-        {
-            return string.Format(
-                AppStrings.SettingsRemoteContentUpdatesHistoryFailedFormat,
-                occurredAt,
-                scopeName,
-                string.IsNullOrWhiteSpace(entry.ErrorMessage) ? AppStrings.SettingsRemoteContentUpdatesUnavailableStatus : entry.ErrorMessage);
-        }
-
-        if (!entry.AppliedChanges)
-        {
-            return string.Format(
-                AppStrings.SettingsRemoteContentUpdatesHistoryCurrentFormat,
-                occurredAt,
-                scopeName);
-        }
-
-        return string.Format(
-            AppStrings.SettingsRemoteContentUpdatesHistoryAppliedFormat,
-            occurredAt,
-            scopeName,
-            string.IsNullOrWhiteSpace(entry.Version) ? AppStrings.SettingsContentUpdatesUnknownSignatureValue : entry.Version,
-            entry.ImportedWords);
-    }
-
-    private static string BuildRemoteScopeDisplayName(string scopeKey)
-    {
-        if (string.Equals(scopeKey, "all-full", StringComparison.OrdinalIgnoreCase))
-        {
-            return AppStrings.SettingsRemoteFullDatabaseTitle;
-        }
-
-        if (string.Equals(scopeKey, "catalog-full", StringComparison.OrdinalIgnoreCase))
-        {
-            return AppStrings.SettingsRemoteCatalogAreaTitle;
-        }
-
-        if (scopeKey.StartsWith("catalog-cefr-", StringComparison.OrdinalIgnoreCase))
-        {
-            return scopeKey["catalog-cefr-".Length..].ToUpperInvariant();
-        }
-
-        return scopeKey;
     }
 
     private static string BuildRemoteScopeSummary(RemoteContentUpdateStatus remoteContentUpdateStatus)

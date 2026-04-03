@@ -23,70 +23,22 @@
             <Border Padding="20"
                     StrokeShape="RoundRectangle 4"
                     BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="18">
-                    <VerticalStackLayout Spacing="8">
-                        <Label x:Name="LanguagePickerCaptionLabel"
-                               Style="{DynamicResource Caption}" />
-                        <Picker x:Name="LanguagePicker"
-                                ItemDisplayBinding="{Binding DisplayName}"
-                                SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />
-                    </VerticalStackLayout>
-
-                    <VerticalStackLayout Spacing="8">
-                        <Label x:Name="PrimaryMeaningLanguageCaptionLabel"
-                               Style="{DynamicResource Caption}" />
-                        <Picker x:Name="PrimaryMeaningLanguagePicker"
-                                ItemDisplayBinding="{Binding DisplayName}"
-                                SelectedIndexChanged="OnPrimaryMeaningLanguagePickerSelectedIndexChanged" />
-                    </VerticalStackLayout>
-
-                    <VerticalStackLayout Spacing="8">
-                        <Label x:Name="SecondaryMeaningLanguageCaptionLabel"
-                               Style="{DynamicResource Caption}" />
-                        <Picker x:Name="SecondaryMeaningLanguagePicker"
-                                ItemDisplayBinding="{Binding DisplayName}"
-                                SelectedIndexChanged="OnSecondaryMeaningLanguagePickerSelectedIndexChanged" />
-                    </VerticalStackLayout>
-                </VerticalStackLayout>
-            </Border>
-
-            <Label x:Name="AppInfoSectionLabel"
-                   Style="{DynamicResource Title2}" />
-
-            <Border Padding="20"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
                 <VerticalStackLayout Spacing="16">
-                    <controls:DetailSectionView x:Name="CurrentLanguageSectionView" />
-                    <controls:DetailSectionView x:Name="MeaningLanguagesSectionView" />
-                    <controls:DetailSectionView x:Name="SupportedLanguagesSectionView" />
-                    <controls:DetailSectionView x:Name="CurrentFeaturesSectionView" />
-                    <controls:DetailSectionView x:Name="FutureFeaturesSectionView" />
-                </VerticalStackLayout>
-            </Border>
+                    <Label x:Name="ContentUpdatesSectionLabel"
+                           Style="{DynamicResource Title2}" />
 
-            <Label x:Name="ContentUpdatesSectionLabel"
-                   Style="{DynamicResource Title2}" />
-
-            <Border Padding="20"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="16">
                     <Label x:Name="RemoteContentUpdatesSectionLabel"
                            Style="{DynamicResource Caption}" />
-                    <controls:DetailSectionView x:Name="RemoteContentUpdateStatusSectionView" />
-                    <controls:DetailSectionView x:Name="RemoteContentUpdateDetailsSectionView" />
-                    <controls:DetailSectionView x:Name="RemoteContentUpdateDiagnosticsSectionView" />
-                    <controls:DetailSectionView x:Name="RemoteContentUpdateHistorySectionView" />
-
                     <Button x:Name="ApplyRemoteUpdateButton"
                             Clicked="OnApplyRemoteUpdateButtonClicked" />
+                    <controls:DetailSectionView x:Name="RemoteContentUpdateStatusSectionView" />
+                    <controls:DetailSectionView x:Name="RemoteContentUpdateDetailsSectionView" />
 
                     <Label x:Name="CatalogAreaUpdatesSectionLabel"
                            Style="{DynamicResource Caption}" />
-                    <controls:DetailSectionView x:Name="CatalogAreaUpdateSectionView" />
                     <Button x:Name="ApplyCatalogAreaUpdateButton"
                             Clicked="OnApplyCatalogAreaUpdateButtonClicked" />
+                    <controls:DetailSectionView x:Name="CatalogAreaUpdateSectionView" />
 
                     <Label x:Name="CefrLevelUpdatesSectionLabel"
                            Style="{DynamicResource Caption}" />
@@ -115,18 +67,57 @@
                             CommandParameter="C2"
                             Clicked="OnApplyCefrLevelUpdateButtonClicked" />
 
-                    <BoxView HeightRequest="1"
-                             Margin="0,4,0,0"
-                             BackgroundColor="{AppThemeBinding Light=#D9E2EC, Dark=#243447}" />
-
                     <Label x:Name="PackagedSeedUpdatesSectionLabel"
                            Style="{DynamicResource Caption}" />
-                    <controls:DetailSectionView x:Name="ContentUpdateStatusSectionView" />
-                    <controls:DetailSectionView x:Name="ContentUpdateDetailsSectionView" />
-                    <controls:DetailSectionView x:Name="ContentUpdateDiagnosticsSectionView" />
-
                     <Button x:Name="ApplySeedUpdateButton"
                             Clicked="OnApplySeedUpdateButtonClicked" />
+                    <controls:DetailSectionView x:Name="ContentUpdateStatusSectionView" />
+                    <controls:DetailSectionView x:Name="ContentUpdateDetailsSectionView" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="20"
+                    StrokeShape="RoundRectangle 4"
+                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                <VerticalStackLayout Spacing="18">
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="LanguagePickerCaptionLabel"
+                               Style="{DynamicResource Caption}" />
+                        <Picker x:Name="LanguagePicker"
+                                ItemDisplayBinding="{Binding DisplayName}"
+                                SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="PrimaryMeaningLanguageCaptionLabel"
+                               Style="{DynamicResource Caption}" />
+                        <Picker x:Name="PrimaryMeaningLanguagePicker"
+                                ItemDisplayBinding="{Binding DisplayName}"
+                                SelectedIndexChanged="OnPrimaryMeaningLanguagePickerSelectedIndexChanged" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="SecondaryMeaningLanguageCaptionLabel"
+                               Style="{DynamicResource Caption}" />
+                        <Picker x:Name="SecondaryMeaningLanguagePicker"
+                                ItemDisplayBinding="{Binding DisplayName}"
+                                SelectedIndexChanged="OnSecondaryMeaningLanguagePickerSelectedIndexChanged" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label x:Name="AboutSectionLabel"
+                   Style="{DynamicResource Title2}" />
+
+            <Border Padding="20"
+                    StrokeShape="RoundRectangle 4"
+                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="AboutSummaryLabel"
+                           Style="{DynamicResource Body}"
+                           LineBreakMode="WordWrap" />
+                    <Button x:Name="OpenAboutButton"
+                            Clicked="OnOpenAboutButtonClicked" />
                 </VerticalStackLayout>
             </Border>
         </VerticalStackLayout>

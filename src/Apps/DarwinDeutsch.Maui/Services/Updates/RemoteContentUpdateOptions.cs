@@ -19,4 +19,9 @@ public sealed class RemoteContentUpdateOptions
     /// Gets or sets the current mobile schema version.
     /// </summary>
     public int ClientSchemaVersion { get; set; } = 1;
+
+    /// <summary>
+    /// Gets or sets the timeout in seconds for remote manifest requests.
+    /// </summary>
+    public int ManifestRequestTimeoutSeconds { get; set; } = 4;
 }

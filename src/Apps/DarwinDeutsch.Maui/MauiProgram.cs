@@ -79,6 +79,7 @@ public static class MauiProgram
                 BaseUrl = GetDefaultRemoteContentBaseUrl(),
                 ClientProductKey = "darwin-deutsch",
                 ClientSchemaVersion = 1,
+                ManifestRequestTimeoutSeconds = 4,
             })
             .AddSingleton(_ => new HttpClient
             {
@@ -94,6 +95,7 @@ public static class MauiProgram
             .AddSingleton<StartupPage>()
             .AddSingleton<AppShell>()
             .AddSingleton<WelcomePage>()
+            .AddTransient<AboutPage>()
             .AddSingleton<HomePage>()
             .AddSingleton<PracticePage>()
             .AddTransient<PracticeSessionPage>()
