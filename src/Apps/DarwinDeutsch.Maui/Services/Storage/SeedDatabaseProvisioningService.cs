@@ -71,6 +71,15 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             Directory.CreateDirectory(databaseDirectory);
         }
 
+        if (!File.Exists(databasePath))
+        {
+            bool copied = await TryCopyPackagedSeedDatabaseDirectlyAsync(databasePath, cancellationToken).ConfigureAwait(false);
+            if (copied)
+            {
+                return;
+            }
+        }
+
         await using SeedAssetSnapshot? seedAssetSnapshot = await LoadSeedAssetSnapshotAsync(cancellationToken).ConfigureAwait(false);
         if (seedAssetSnapshot is null)
         {
@@ -87,6 +96,25 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
             int importedWords = seedAssetSnapshot.WordCount;
             DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
             PersistAppliedSeedMetadata(seedAssetSnapshot.Signature, appliedAtUtc, importedPackages, importedWords);
+        }
+    }
+
+    private static async Task<bool> TryCopyPackagedSeedDatabaseDirectlyAsync(string databasePath, CancellationToken cancellationToken)
+    {
+        try
+        {
+            await using Stream packagedSeedStream = await FileSystem.Current
+                .OpenAppPackageFileAsync(SeedDatabaseAssetName)
+                .WaitAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            await using FileStream localDatabaseStream = File.Create(databasePath);
+            await packagedSeedStream.CopyToAsync(localDatabaseStream, cancellationToken).ConfigureAwait(false);
+            return true;
+        }
+        catch (FileNotFoundException)
+        {
+            return false;
         }
     }
 
