@@ -10,6 +10,9 @@ namespace DarwinDeutsch.Maui.Services.Storage;
 /// </summary>
 internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisioningService
 {
+    private static readonly TimeSpan BusyRetryDelay = TimeSpan.FromMilliseconds(120);
+    private const int BusyRetryCount = 3;
+    private const int BusyTimeoutMilliseconds = 5000;
     private const string SeedDatabaseAssetName = "darwin-lingua.seed.db";
     private const string SeedSignaturePreferenceKey = "seed-database-applied-signature";
     private const string SeedLastAppliedAtPreferenceKey = "seed-database-last-applied-at-utc";
@@ -233,68 +236,79 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
                 await seedAssetSnapshot.Stream.CopyToAsync(tempSeedStream, cancellationToken).ConfigureAwait(false);
             }
 
-            await using SqliteConnection localConnection = new($"Data Source={databasePath}");
-            await localConnection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            await using SqliteConnection localConnection = CreateSeedMaintenanceConnection(databasePath);
+            await OpenSeedConnectionAsync(localConnection, cancellationToken).ConfigureAwait(false);
 
-            await using DbTransaction transaction = await localConnection.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
+            bool seedAttached = false;
+            try
+            {
+                await ExecuteNonQueryAsync(
+                    localConnection,
+                    null,
+                    "ATTACH DATABASE $seedPath AS seed;",
+                    cancellationToken,
+                    CreateParameter("$seedPath", temporarySeedPath)).ConfigureAwait(false);
+                seedAttached = true;
 
-            await ExecuteNonQueryAsync(
-                localConnection,
-                transaction,
-                "ATTACH DATABASE $seedPath AS seed;",
-                cancellationToken,
-                CreateParameter("$seedPath", temporarySeedPath)).ConfigureAwait(false);
+                await using DbTransaction transaction = await localConnection.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
 
-            int importedPackages = await ExecuteScalarIntAsync(
-                localConnection,
-                transaction,
-                """
-                SELECT COUNT(*)
-                FROM seed.ContentPackages AS seedPackages
-                WHERE NOT EXISTS (
-                    SELECT 1
-                    FROM ContentPackages AS localPackages
-                    WHERE localPackages.PackageId = seedPackages.PackageId);
-                """,
-                cancellationToken).ConfigureAwait(false);
-
-            int importedWords = importedPackages > 0
-                ? await ExecuteScalarIntAsync(
+                int importedPackages = await ExecuteScalarIntAsync(
                     localConnection,
                     transaction,
                     """
-                    SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
-                    FROM seed.ContentPackageEntries AS seedEntries
-                    INNER JOIN seed.ContentPackages AS seedPackages
-                        ON seedPackages.Id = seedEntries.ContentPackageId
-                    WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
-                      AND NOT EXISTS (
-                          SELECT 1
-                          FROM ContentPackages AS localPackages
-                          WHERE localPackages.PackageId = seedPackages.PackageId);
+                    SELECT COUNT(*)
+                    FROM seed.ContentPackages AS seedPackages
+                    WHERE NOT EXISTS (
+                        SELECT 1
+                        FROM ContentPackages AS localPackages
+                        WHERE localPackages.PackageId = seedPackages.PackageId);
                     """,
-                    cancellationToken).ConfigureAwait(false)
-                : 0;
+                    cancellationToken).ConfigureAwait(false);
 
-            if (importedPackages > 0)
-            {
-                await ExecuteNonQueryAsync(localConnection, transaction, CreateSeedMergeScript(), cancellationToken).ConfigureAwait(false);
+                int importedWords = importedPackages > 0
+                    ? await ExecuteScalarIntAsync(
+                        localConnection,
+                        transaction,
+                        """
+                        SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
+                        FROM seed.ContentPackageEntries AS seedEntries
+                        INNER JOIN seed.ContentPackages AS seedPackages
+                            ON seedPackages.Id = seedEntries.ContentPackageId
+                        WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
+                          AND NOT EXISTS (
+                              SELECT 1
+                              FROM ContentPackages AS localPackages
+                              WHERE localPackages.PackageId = seedPackages.PackageId);
+                        """,
+                        cancellationToken).ConfigureAwait(false)
+                    : 0;
+
+                if (importedPackages > 0)
+                {
+                    await ExecuteNonQueryAsync(localConnection, transaction, CreateSeedMergeScript(), cancellationToken).ConfigureAwait(false);
+                }
+
+                await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+
+                DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
+                PersistAppliedSeedMetadata(seedAssetSnapshot.Signature, appliedAtUtc, importedPackages, importedWords);
+
+                return new SeedDatabaseUpdateResult(
+                    true,
+                    importedPackages > 0,
+                    importedPackages,
+                    importedWords,
+                    seedAssetSnapshot.Signature,
+                    appliedAtUtc,
+                    null);
             }
-
-            await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE seed;", cancellationToken).ConfigureAwait(false);
-            await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
-
-            DateTimeOffset appliedAtUtc = DateTimeOffset.UtcNow;
-            PersistAppliedSeedMetadata(seedAssetSnapshot.Signature, appliedAtUtc, importedPackages, importedWords);
-
-            return new SeedDatabaseUpdateResult(
-                true,
-                importedPackages > 0,
-                importedPackages,
-                importedWords,
-                seedAssetSnapshot.Signature,
-                appliedAtUtc,
-                null);
+            finally
+            {
+                if (seedAttached)
+                {
+                    await TryDetachSeedAsync(localConnection, cancellationToken).ConfigureAwait(false);
+                }
+            }
         }
         catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or SqliteException)
         {
@@ -354,8 +368,8 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
 
     private static async Task<int> CountRowsAsync(string databasePath, string tableName, CancellationToken cancellationToken)
     {
-        await using SqliteConnection connection = new($"Data Source={databasePath}");
-        await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        await using SqliteConnection connection = CreateSeedMaintenanceConnection(databasePath);
+        await OpenSeedConnectionAsync(connection, cancellationToken).ConfigureAwait(false);
 
         return await ExecuteScalarIntAsync(
             connection,
@@ -394,52 +408,60 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         string seedPath,
         CancellationToken cancellationToken)
     {
-        await using SqliteConnection localConnection = new($"Data Source={databasePath}");
-        await localConnection.OpenAsync(cancellationToken).ConfigureAwait(false);
-        await using DbTransaction transaction = await localConnection.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
+        await using SqliteConnection localConnection = CreateSeedMaintenanceConnection(databasePath);
+        await OpenSeedConnectionAsync(localConnection, cancellationToken).ConfigureAwait(false);
 
-        await ExecuteNonQueryAsync(
-            localConnection,
-            transaction,
-            "ATTACH DATABASE $seedPath AS seed;",
-            cancellationToken,
-            CreateParameter("$seedPath", seedPath)).ConfigureAwait(false);
-
-        int pendingPackages = await ExecuteScalarIntAsync(
-            localConnection,
-            transaction,
-            """
-            SELECT COUNT(*)
-            FROM seed.ContentPackages AS seedPackages
-            WHERE NOT EXISTS (
-                SELECT 1
-                FROM ContentPackages AS localPackages
-                WHERE localPackages.PackageId = seedPackages.PackageId);
-            """,
-            cancellationToken).ConfigureAwait(false);
-
-        int pendingWords = pendingPackages > 0
-            ? await ExecuteScalarIntAsync(
+        bool seedAttached = false;
+        try
+        {
+            await ExecuteNonQueryAsync(
                 localConnection,
-                transaction,
+                null,
+                "ATTACH DATABASE $seedPath AS seed;",
+                cancellationToken,
+                CreateParameter("$seedPath", seedPath)).ConfigureAwait(false);
+            seedAttached = true;
+
+            int pendingPackages = await ExecuteScalarIntAsync(
+                localConnection,
+                null,
                 """
-                SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
-                FROM seed.ContentPackageEntries AS seedEntries
-                INNER JOIN seed.ContentPackages AS seedPackages
-                    ON seedPackages.Id = seedEntries.ContentPackageId
-                WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
-                  AND NOT EXISTS (
-                      SELECT 1
-                      FROM ContentPackages AS localPackages
-                      WHERE localPackages.PackageId = seedPackages.PackageId);
+                SELECT COUNT(*)
+                FROM seed.ContentPackages AS seedPackages
+                WHERE NOT EXISTS (
+                    SELECT 1
+                    FROM ContentPackages AS localPackages
+                    WHERE localPackages.PackageId = seedPackages.PackageId);
                 """,
-                cancellationToken).ConfigureAwait(false)
-            : 0;
+                cancellationToken).ConfigureAwait(false);
 
-        await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE seed;", cancellationToken).ConfigureAwait(false);
-        await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+            int pendingWords = pendingPackages > 0
+                ? await ExecuteScalarIntAsync(
+                    localConnection,
+                    null,
+                    """
+                    SELECT COUNT(DISTINCT seedEntries.ImportedWordEntryPublicId)
+                    FROM seed.ContentPackageEntries AS seedEntries
+                    INNER JOIN seed.ContentPackages AS seedPackages
+                        ON seedPackages.Id = seedEntries.ContentPackageId
+                    WHERE seedEntries.ImportedWordEntryPublicId IS NOT NULL
+                      AND NOT EXISTS (
+                          SELECT 1
+                          FROM ContentPackages AS localPackages
+                          WHERE localPackages.PackageId = seedPackages.PackageId);
+                    """,
+                    cancellationToken).ConfigureAwait(false)
+                : 0;
 
-        return (pendingPackages, pendingWords);
+            return (pendingPackages, pendingWords);
+        }
+        finally
+        {
+            if (seedAttached)
+            {
+                await TryDetachSeedAsync(localConnection, cancellationToken).ConfigureAwait(false);
+            }
+        }
     }
 
     private static async Task ExecuteNonQueryAsync(
@@ -449,11 +471,17 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         CancellationToken cancellationToken,
         params SqliteParameter[] parameters)
     {
-        await using DbCommand command = connection.CreateCommand();
-        command.Transaction = transaction;
-        command.CommandText = commandText;
-        command.Parameters.AddRange(parameters);
-        await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        await ExecuteWithBusyRetryAsync(
+            async () =>
+            {
+                await using DbCommand command = connection.CreateCommand();
+                command.Transaction = transaction;
+                command.CommandText = commandText;
+                command.Parameters.AddRange(parameters);
+                await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+                return 0;
+            },
+            cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task<int> ExecuteScalarIntAsync(
@@ -463,18 +491,81 @@ internal sealed class SeedDatabaseProvisioningService : ISeedDatabaseProvisionin
         CancellationToken cancellationToken,
         params SqliteParameter[] parameters)
     {
-        await using DbCommand command = connection.CreateCommand();
-        command.Transaction = transaction;
-        command.CommandText = commandText;
-        command.Parameters.AddRange(parameters);
-
-        object? result = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+        object? result = await ExecuteWithBusyRetryAsync(
+            async () =>
+            {
+                await using DbCommand command = connection.CreateCommand();
+                command.Transaction = transaction;
+                command.CommandText = commandText;
+                command.Parameters.AddRange(parameters);
+                return await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+            },
+            cancellationToken).ConfigureAwait(false);
         return Convert.ToInt32(result);
     }
 
     private static SqliteParameter CreateParameter(string name, object value)
     {
         return new SqliteParameter(name, value);
+    }
+
+    private static SqliteConnection CreateSeedMaintenanceConnection(string databasePath)
+    {
+        SqliteConnectionStringBuilder builder = new()
+        {
+            DataSource = databasePath,
+            Pooling = false,
+            DefaultTimeout = BusyTimeoutMilliseconds / 1000,
+            Mode = SqliteOpenMode.ReadWriteCreate,
+        };
+
+        return new SqliteConnection(builder.ToString());
+    }
+
+    private static async Task OpenSeedConnectionAsync(SqliteConnection connection, CancellationToken cancellationToken)
+    {
+        await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        await ExecuteNonQueryAsync(connection, null, $"PRAGMA busy_timeout = {BusyTimeoutMilliseconds};", cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task TryDetachSeedAsync(SqliteConnection connection, CancellationToken cancellationToken)
+    {
+        try
+        {
+            await ExecuteNonQueryAsync(connection, null, "DETACH DATABASE seed;", cancellationToken).ConfigureAwait(false);
+        }
+        catch (SqliteException exception) when (IsRetriableBusyException(exception))
+        {
+        }
+        catch (InvalidOperationException)
+        {
+        }
+    }
+
+    private static async Task<T> ExecuteWithBusyRetryAsync<T>(Func<Task<T>> operation, CancellationToken cancellationToken)
+    {
+        for (int attempt = 0; ; attempt++)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            try
+            {
+                return await operation().ConfigureAwait(false);
+            }
+            catch (SqliteException exception) when (attempt < BusyRetryCount && IsRetriableBusyException(exception))
+            {
+                await Task.Delay(BusyRetryDelay, cancellationToken).ConfigureAwait(false);
+            }
+        }
+    }
+
+    private static bool IsRetriableBusyException(SqliteException exception)
+    {
+        return exception.SqliteErrorCode == 5
+            || exception.SqliteErrorCode == 6
+            || exception.Message.Contains("already in use", StringComparison.OrdinalIgnoreCase)
+            || exception.Message.Contains("database is locked", StringComparison.OrdinalIgnoreCase)
+            || exception.Message.Contains("database is busy", StringComparison.OrdinalIgnoreCase);
     }
 
     private static void PersistAppliedSeedMetadata(string signature, DateTimeOffset appliedAtUtc, int packageCount, int wordCount)
