@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.PracticePage">
     <ScrollView>
         <VerticalStackLayout Padding="24"
@@ -73,57 +74,77 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border Padding="20"
-                    Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                    StrokeShape="RoundRectangle 4"
-                    StrokeThickness="1"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="12">
-                    <Label x:Name="ReviewSessionSectionLabel"
-                           Style="{DynamicResource Title2}" />
-                    <Label x:Name="ReviewSessionStateLabel"
-                           Style="{DynamicResource Body}"
-                           IsVisible="False" />
-                    <CollectionView x:Name="ReviewSessionCollectionView"
-                                    IsVisible="False"
-                                    SelectionMode="Single"
-                                    SelectionChanged="OnReviewSessionSelectionChanged">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <controls:WordListItemView Lemma="{Binding Lemma}"
-                                                           PrimaryMeaning="{Binding PrimaryMeaning}"
-                                                           MetadataLine="{Binding MetadataLine}" />
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </VerticalStackLayout>
-            </Border>
+            <expander:SfExpander IsExpanded="True"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="ReviewSessionSectionLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
+                            StrokeShape="RoundRectangle 4"
+                            StrokeThickness="1"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout Spacing="12">
+                            <Label x:Name="ReviewSessionStateLabel"
+                                   Style="{DynamicResource Body}"
+                                   IsVisible="False" />
+                            <CollectionView x:Name="ReviewSessionCollectionView"
+                                            IsVisible="False"
+                                            SelectionMode="Single"
+                                            SelectionChanged="OnReviewSessionSelectionChanged">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <controls:WordListItemView Lemma="{Binding Lemma}"
+                                                                   PrimaryMeaning="{Binding PrimaryMeaning}"
+                                                                   MetadataLine="{Binding MetadataLine}" />
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
 
-            <Border Padding="20"
-                    Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                    StrokeShape="RoundRectangle 4"
-                    StrokeThickness="1"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="12">
-                    <Label x:Name="RecentActivitySectionLabel"
-                           Style="{DynamicResource Title2}" />
-                    <Label x:Name="RecentActivityStateLabel"
-                           Style="{DynamicResource Body}"
-                           IsVisible="False" />
-                    <CollectionView x:Name="RecentActivityCollectionView"
-                                    IsVisible="False"
-                                    SelectionMode="Single"
-                                    SelectionChanged="OnRecentActivitySelectionChanged">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <controls:WordListItemView Lemma="{Binding Lemma}"
-                                                           PrimaryMeaning="{Binding PrimaryMeaning}"
-                                                           MetadataLine="{Binding MetadataLine}" />
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </VerticalStackLayout>
-            </Border>
+            <expander:SfExpander IsExpanded="False"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="RecentActivitySectionLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
+                            StrokeShape="RoundRectangle 4"
+                            StrokeThickness="1"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout Spacing="12">
+                            <Label x:Name="RecentActivityStateLabel"
+                                   Style="{DynamicResource Body}"
+                                   IsVisible="False" />
+                            <CollectionView x:Name="RecentActivityCollectionView"
+                                            IsVisible="False"
+                                            SelectionMode="Single"
+                                            SelectionChanged="OnRecentActivitySelectionChanged">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <controls:WordListItemView Lemma="{Binding Lemma}"
+                                                                   PrimaryMeaning="{Binding PrimaryMeaning}"
+                                                                   MetadataLine="{Binding MetadataLine}" />
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -225,6 +225,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("StatusBadgeLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ProgressSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ActionsSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SfExpander", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ReviewSessionCollectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("RecentActivityCollectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("IPracticeLearningProgressSnapshotService", codeBehindSource, StringComparison.Ordinal);
