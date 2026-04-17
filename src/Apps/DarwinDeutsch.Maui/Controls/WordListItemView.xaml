@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.WordListItemView">
-    <Border Margin="0,0,0,10"
-            Padding="16"
-            Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-            StrokeShape="RoundRectangle 4"
-            StrokeThickness="1"
-            BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
-        <VerticalStackLayout Spacing="8">
+    <cards:SfCardView Margin="0,0,0,10"
+                      BorderColor="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
+                      BorderWidth="1"
+                      CornerRadius="4">
+        <VerticalStackLayout Padding="16"
+                             Spacing="8"
+                             BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
             <Label x:Name="LemmaLabel"
                    Style="{DynamicResource Title2}"
                    TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
@@ -23,5 +24,5 @@
                        Style="{DynamicResource Caption}" />
             </Border>
         </VerticalStackLayout>
-    </Border>
+    </cards:SfCardView>
 </ContentView>
