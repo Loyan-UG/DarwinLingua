@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.SettingsPage">
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="18">
@@ -21,46 +22,55 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border Padding="20"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="16">
-                    <Label x:Name="ContentUpdatesSectionLabel"
-                           Style="{DynamicResource Title2}" />
+            <expander:SfExpander IsExpanded="True"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="ContentUpdatesSectionLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            StrokeShape="RoundRectangle 4"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout Spacing="16">
+                            <Label x:Name="RemoteContentUpdatesSectionLabel"
+                                   Style="{DynamicResource Caption}" />
+                            <Button x:Name="ApplyRemoteUpdateButton"
+                                    Clicked="OnApplyRemoteUpdateButtonClicked" />
+                            <controls:DetailSectionView x:Name="RemoteContentUpdateStatusSectionView" />
+                            <controls:DetailSectionView x:Name="RemoteContentUpdateDetailsSectionView" />
 
-                    <Label x:Name="RemoteContentUpdatesSectionLabel"
-                           Style="{DynamicResource Caption}" />
-                    <Button x:Name="ApplyRemoteUpdateButton"
-                            Clicked="OnApplyRemoteUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="RemoteContentUpdateStatusSectionView" />
-                    <controls:DetailSectionView x:Name="RemoteContentUpdateDetailsSectionView" />
+                            <Label x:Name="CatalogAreaUpdatesSectionLabel"
+                                   Style="{DynamicResource Caption}" />
+                            <Button x:Name="ApplyCatalogAreaUpdateButton"
+                                    Clicked="OnApplyCatalogAreaUpdateButtonClicked" />
+                            <controls:DetailSectionView x:Name="CatalogAreaUpdateSectionView" />
 
-                    <Label x:Name="CatalogAreaUpdatesSectionLabel"
-                           Style="{DynamicResource Caption}" />
-                    <Button x:Name="ApplyCatalogAreaUpdateButton"
-                            Clicked="OnApplyCatalogAreaUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="CatalogAreaUpdateSectionView" />
+                            <Label x:Name="CefrLevelUpdatesSectionLabel"
+                                   Style="{DynamicResource Caption}" />
+                            <chips:SfChipGroup x:Name="CefrLevelChipGroup"
+                                               ChoiceMode="Single"
+                                               DisplayMemberPath="Level"
+                                               SelectionChanged="OnCefrLevelChipGroupSelectionChanged"
+                                               SelectedChipBackground="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}"
+                                               SelectedChipTextColor="{AppThemeBinding Light=White, Dark=#10212B}" />
+                            <controls:DetailSectionView x:Name="SelectedCefrUpdateSectionView" />
+                            <Button x:Name="ApplySelectedCefrLevelUpdateButton"
+                                    Clicked="OnApplySelectedCefrLevelUpdateButtonClicked" />
 
-                    <Label x:Name="CefrLevelUpdatesSectionLabel"
-                           Style="{DynamicResource Caption}" />
-                    <chips:SfChipGroup x:Name="CefrLevelChipGroup"
-                                       ChoiceMode="Single"
-                                       DisplayMemberPath="Level"
-                                       SelectionChanged="OnCefrLevelChipGroupSelectionChanged"
-                                       SelectedChipBackground="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}"
-                                       SelectedChipTextColor="{AppThemeBinding Light=White, Dark=#10212B}" />
-                    <controls:DetailSectionView x:Name="SelectedCefrUpdateSectionView" />
-                    <Button x:Name="ApplySelectedCefrLevelUpdateButton"
-                            Clicked="OnApplySelectedCefrLevelUpdateButtonClicked" />
-
-                    <Label x:Name="PackagedSeedUpdatesSectionLabel"
-                           Style="{DynamicResource Caption}" />
-                    <Button x:Name="ApplySeedUpdateButton"
-                            Clicked="OnApplySeedUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="ContentUpdateStatusSectionView" />
-                    <controls:DetailSectionView x:Name="ContentUpdateDetailsSectionView" />
-                </VerticalStackLayout>
-            </Border>
+                            <Label x:Name="PackagedSeedUpdatesSectionLabel"
+                                   Style="{DynamicResource Caption}" />
+                            <Button x:Name="ApplySeedUpdateButton"
+                                    Clicked="OnApplySeedUpdateButtonClicked" />
+                            <controls:DetailSectionView x:Name="ContentUpdateStatusSectionView" />
+                            <controls:DetailSectionView x:Name="ContentUpdateDetailsSectionView" />
+                        </VerticalStackLayout>
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
 
             <Border Padding="20"
                     StrokeShape="RoundRectangle 4"
@@ -92,20 +102,29 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Label x:Name="AboutSectionLabel"
-                   Style="{DynamicResource Title2}" />
-
-            <Border Padding="20"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="12">
-                    <Label x:Name="AboutSummaryLabel"
-                           Style="{DynamicResource Body}"
-                           LineBreakMode="WordWrap" />
-                    <Button x:Name="OpenAboutButton"
-                            Clicked="OnOpenAboutButtonClicked" />
-                </VerticalStackLayout>
-            </Border>
+            <expander:SfExpander IsExpanded="False"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="AboutSectionLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            StrokeShape="RoundRectangle 4"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout Spacing="12">
+                            <Label x:Name="AboutSummaryLabel"
+                                   Style="{DynamicResource Body}"
+                                   LineBreakMode="WordWrap" />
+                            <Button x:Name="OpenAboutButton"
+                                    Clicked="OnOpenAboutButtonClicked" />
+                        </VerticalStackLayout>
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
