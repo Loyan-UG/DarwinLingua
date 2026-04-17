@@ -73,6 +73,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("RunInitializationAsync", startupCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("StartupCompleted", startupCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("LanguagePicker", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("AppHeroPanelBorderStyle", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("AppSectionCardBorderStyle", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("CurrentFeaturesBodyLabel", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("LearnWithLanguagesBodyLabel", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("InterfaceLanguagesBodyLabel", welcomeSource, StringComparison.Ordinal);
@@ -171,6 +173,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("AboutContactButtonFormat", aboutCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnOpenGitHubButtonClicked", aboutCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnContactButtonClicked", aboutCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("AppHeroPanelBorderStyle", aboutXamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppSectionCardBorderStyle", aboutXamlSource, StringComparison.Ordinal);
         Assert.Contains("FeaturesSectionLabel", aboutXamlSource, StringComparison.Ordinal);
         Assert.Contains("DeveloperSectionLabel", aboutXamlSource, StringComparison.Ordinal);
         Assert.Contains("OpenGitHubButton", aboutXamlSource, StringComparison.Ordinal);

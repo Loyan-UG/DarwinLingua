@@ -6,17 +6,19 @@
     <ScrollView>
         <VerticalStackLayout Padding="24,28,24,40"
                              Spacing="20">
-            <VerticalStackLayout Spacing="8">
-                <Label x:Name="HeadlineLabel"
-                       Style="{DynamicResource Title1}" />
-                <Label x:Name="SummaryLabel"
-                       Style="{DynamicResource Body}"
-                       LineBreakMode="WordWrap" />
-            </VerticalStackLayout>
+            <Border Padding="24"
+                    Style="{StaticResource AppHeroPanelBorderStyle}">
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="HeadlineLabel"
+                           Style="{DynamicResource Title1}" />
+                    <Label x:Name="SummaryLabel"
+                           Style="{DynamicResource Body}"
+                           LineBreakMode="WordWrap" />
+                </VerticalStackLayout>
+            </Border>
 
             <Border Padding="20"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                    Style="{StaticResource AppSectionCardBorderStyle}">
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="FeaturesSectionLabel"
                            Style="{DynamicResource Title3}" />
@@ -27,8 +29,7 @@
             </Border>
 
             <Border Padding="20"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                    Style="{StaticResource AppSectionCardBorderStyle}">
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="DeveloperSectionLabel"
                            Style="{DynamicResource Title3}" />
