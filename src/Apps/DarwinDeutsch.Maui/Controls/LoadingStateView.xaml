@@ -10,12 +10,13 @@
                            WidthRequest="18"
                            HeightRequest="18"
                            IsActive="False"
-                           Fill="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}"
-                           WaveColor="{AppThemeBinding Light=#FFFCF8, Dark=#355062}">
+                           Style="{StaticResource SyncfusionInlineShimmerStyle}">
             <shimmer:SfShimmer.CustomView>
-                <Border StrokeThickness="0"
+                <Border Style="{StaticResource AppStatusBadgeBorderStyle}"
+                        Padding="0"
                         StrokeShape="RoundRectangle 9"
-                        BackgroundColor="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}" />
+                        WidthRequest="18"
+                        HeightRequest="18" />
             </shimmer:SfShimmer.CustomView>
         </shimmer:SfShimmer>
 

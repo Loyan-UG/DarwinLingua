@@ -14,7 +14,7 @@
                     <Border Grid.Column="0"
                             Padding="12"
                             StrokeShape="RoundRectangle 4"
-                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#1F2B36}">
+                            Style="{StaticResource AppInsetPanelBorderStyle}">
                         <Grid>
                             <Label x:Name="LogoPlaceholderLabel"
                                    Style="{DynamicResource Caption}"

@@ -8,13 +8,10 @@
         <Grid Padding="16"
               ColumnDefinitions="Auto,*"
               ColumnSpacing="14"
-              BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
+              BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
             <Border Grid.Column="0"
-                    Padding="10,6"
                     VerticalOptions="Start"
-                    StrokeThickness="0"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#E6F3EF, Dark=#22313B}">
+                    Style="{StaticResource AppAccentBadgeBorderStyle}">
                 <Label x:Name="TopicKeyLabel"
                        FontAttributes="Bold"
                        FontSize="12"

@@ -7,17 +7,13 @@
                       Style="{StaticResource SyncfusionCardShellStyle}">
         <VerticalStackLayout Padding="16"
                              Spacing="8"
-                             BackgroundColor="{AppThemeBinding Light=White, Dark=#111923}">
+                             BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
             <Label x:Name="LemmaLabel"
                    Style="{DynamicResource Title2}"
                    TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
             <Label x:Name="PrimaryMeaningLabel"
                    Style="{DynamicResource Body}" />
-            <Border Padding="10,6"
-                    HorizontalOptions="Start"
-                    StrokeThickness="0"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#EEF4F3, Dark=#202E37}">
+            <Border Style="{StaticResource AppMetadataBadgeBorderStyle}">
                 <Label x:Name="MetadataLineLabel"
                        Style="{DynamicResource Caption}" />
             </Border>

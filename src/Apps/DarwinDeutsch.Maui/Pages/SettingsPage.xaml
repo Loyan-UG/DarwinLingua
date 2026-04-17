@@ -48,11 +48,10 @@
                             <Label x:Name="CefrLevelUpdatesSectionLabel"
                                    Style="{DynamicResource Caption}" />
                             <chips:SfChipGroup x:Name="CefrLevelChipGroup"
+                                               Style="{StaticResource SyncfusionChipGroupSelectionStyle}"
                                                ChoiceMode="Single"
                                                DisplayMemberPath="Level"
-                                               SelectionChanged="OnCefrLevelChipGroupSelectionChanged"
-                                               SelectedChipBackground="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}"
-                                               SelectedChipTextColor="{AppThemeBinding Light=White, Dark=#10212B}" />
+                                               SelectionChanged="OnCefrLevelChipGroupSelectionChanged" />
                             <controls:DetailSectionView x:Name="SelectedCefrUpdateSectionView" />
                             <Button x:Name="ApplySelectedCefrLevelUpdateButton"
                                     Clicked="OnApplySelectedCefrLevelUpdateButtonClicked" />

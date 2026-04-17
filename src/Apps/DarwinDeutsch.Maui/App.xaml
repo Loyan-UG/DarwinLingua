@@ -4,7 +4,9 @@
              xmlns:local="clr-namespace:DarwinDeutsch.Maui"
              xmlns:cards="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -54,6 +56,25 @@
                 <Setter Property="StrokeShape" Value="RoundRectangle 4" />
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFF8EC, Dark=#22313B}" />
             </Style>
+            <Style x:Key="AppInsetPanelBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFCF8, Dark=#1F2B36}" />
+            </Style>
+            <Style x:Key="AppAccentBadgeBorderStyle" TargetType="Border">
+                <Setter Property="Padding" Value="10,6" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#E6F3EF, Dark=#22313B}" />
+            </Style>
+            <Style x:Key="AppMetadataBadgeBorderStyle" TargetType="Border">
+                <Setter Property="Padding" Value="10,6" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#EEF4F3, Dark=#202E37}" />
+            </Style>
             <Style x:Key="SyncfusionCardShellStyle" TargetType="cards:SfCardView">
                 <Setter Property="BorderColor" Value="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}" />
                 <Setter Property="BorderWidth" Value="1" />
@@ -63,9 +84,17 @@
                 <Setter Property="CornerRadius" Value="4" />
                 <Setter Property="HeightRequest" Value="44" />
             </Style>
+            <Style x:Key="SyncfusionChipGroupSelectionStyle" TargetType="chips:SfChipGroup">
+                <Setter Property="SelectedChipBackground" Value="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}" />
+                <Setter Property="SelectedChipTextColor" Value="{AppThemeBinding Light=White, Dark=#10212B}" />
+            </Style>
             <Style x:Key="SyncfusionSectionExpanderStyle" TargetType="expander:SfExpander">
                 <Setter Property="HeaderBackground" Value="{AppThemeBinding Light=#FFFCF8, Dark=#111923}" />
                 <Setter Property="HeaderIconColor" Value="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}" />
+            </Style>
+            <Style x:Key="SyncfusionInlineShimmerStyle" TargetType="shimmer:SfShimmer">
+                <Setter Property="Fill" Value="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}" />
+                <Setter Property="WaveColor" Value="{AppThemeBinding Light=#FFFCF8, Dark=#355062}" />
             </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
