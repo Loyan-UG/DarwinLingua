@@ -182,6 +182,7 @@ public sealed class MauiBrowseScreenSmokeTests
         string codeBehindSource = File.ReadAllText(topicsCodeBehindPath);
 
         Assert.Contains("CefrQuickFilterView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SfExpander", xamlSource, StringComparison.Ordinal);
         Assert.Contains("StatusBadgeLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ShortcutsSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("TopicsSectionLabel", xamlSource, StringComparison.Ordinal);

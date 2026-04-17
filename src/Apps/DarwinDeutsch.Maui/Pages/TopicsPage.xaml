@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.TopicsPage">
     <Grid Padding="24"
           RowDefinitions="Auto,Auto,*"
@@ -32,25 +33,35 @@
             </VerticalStackLayout>
         </Border>
 
-        <Border Grid.Row="1"
-                Padding="20"
-                Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                StrokeShape="RoundRectangle 4"
-                StrokeThickness="1"
-                BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-            <VerticalStackLayout Spacing="12">
-                <Label x:Name="ShortcutsSectionLabel"
-                       Style="{DynamicResource Title2}" />
-                <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
-                                              LevelSelected="OnCefrLevelSelected" />
+        <expander:SfExpander Grid.Row="1"
+                             IsExpanded="False"
+                             HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                             HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+            <expander:SfExpander.Header>
+                <Grid Padding="20">
+                    <Label x:Name="ShortcutsSectionLabel"
+                           Style="{DynamicResource Title2}" />
+                </Grid>
+            </expander:SfExpander.Header>
+            <expander:SfExpander.Content>
+                <Border Padding="20"
+                        Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
+                        StrokeShape="RoundRectangle 4"
+                        StrokeThickness="1"
+                        BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                    <VerticalStackLayout Spacing="12">
+                        <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
+                                                      LevelSelected="OnCefrLevelSelected" />
 
-                <controls:ActionBlockView x:Name="SearchActionBlockView"
-                                          ActionInvoked="OnSearchActionInvoked" />
+                        <controls:ActionBlockView x:Name="SearchActionBlockView"
+                                                  ActionInvoked="OnSearchActionInvoked" />
 
-                <controls:ActionBlockView x:Name="FavoritesActionBlockView"
-                                          ActionInvoked="OnFavoritesActionInvoked" />
-            </VerticalStackLayout>
-        </Border>
+                        <controls:ActionBlockView x:Name="FavoritesActionBlockView"
+                                                  ActionInvoked="OnFavoritesActionInvoked" />
+                    </VerticalStackLayout>
+                </Border>
+            </expander:SfExpander.Content>
+        </expander:SfExpander>
 
         <Border Grid.Row="2"
                 Padding="20"
