@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.HomePage">
     <ScrollView>
         <VerticalStackLayout Padding="24"
@@ -38,46 +39,55 @@
                 </Grid>
             </Border>
 
-            <Label x:Name="ExploreSectionLabel"
-                   Style="{DynamicResource Title2}" />
+            <expander:SfExpander IsExpanded="True"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="ExploreSectionLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
+                            StrokeShape="RoundRectangle 4"
+                            StrokeThickness="1"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout Spacing="16">
+                            <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
+                                                          LevelSelected="OnCefrLevelSelected" />
 
-            <Border Padding="20"
-                    Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                    StrokeShape="RoundRectangle 4"
-                    StrokeThickness="1"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-                <VerticalStackLayout Spacing="16">
-                    <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
-                                                  LevelSelected="OnCefrLevelSelected" />
+                            <HorizontalStackLayout x:Name="CefrNavigationStatusLayout"
+                                                   Spacing="10"
+                                                   IsVisible="False">
+                                <ActivityIndicator x:Name="CefrNavigationActivityIndicator"
+                                                   WidthRequest="18"
+                                                   HeightRequest="18"
+                                                   IsRunning="False"
+                                                   VerticalOptions="Center" />
+                                <Label x:Name="CefrNavigationStatusLabel"
+                                       Style="{DynamicResource Body}"
+                                       VerticalOptions="Center" />
+                            </HorizontalStackLayout>
 
-                    <HorizontalStackLayout x:Name="CefrNavigationStatusLayout"
-                                           Spacing="10"
-                                           IsVisible="False">
-                        <ActivityIndicator x:Name="CefrNavigationActivityIndicator"
-                                           WidthRequest="18"
-                                           HeightRequest="18"
-                                           IsRunning="False"
-                                           VerticalOptions="Center" />
-                        <Label x:Name="CefrNavigationStatusLabel"
-                               Style="{DynamicResource Body}"
-                               VerticalOptions="Center" />
-                    </HorizontalStackLayout>
+                            <VerticalStackLayout Spacing="12">
+                                <controls:ActionBlockView x:Name="PracticeActionBlockView"
+                                                          ActionInvoked="OnPracticeActionInvoked" />
 
-                    <VerticalStackLayout Spacing="12">
-                        <controls:ActionBlockView x:Name="PracticeActionBlockView"
-                                                  ActionInvoked="OnPracticeActionInvoked" />
+                                <controls:ActionBlockView x:Name="SearchActionBlockView"
+                                                          ActionInvoked="OnSearchActionInvoked" />
 
-                        <controls:ActionBlockView x:Name="SearchActionBlockView"
-                                                  ActionInvoked="OnSearchActionInvoked" />
+                                <controls:ActionBlockView x:Name="BrowseTopicsActionBlockView"
+                                                          ActionInvoked="OnBrowseTopicsActionInvoked" />
 
-                        <controls:ActionBlockView x:Name="BrowseTopicsActionBlockView"
-                                                  ActionInvoked="OnBrowseTopicsActionInvoked" />
-
-                        <controls:ActionBlockView x:Name="FavoritesActionBlockView"
-                                                  ActionInvoked="OnFavoritesActionInvoked" />
-                    </VerticalStackLayout>
-                </VerticalStackLayout>
-            </Border>
+                                <controls:ActionBlockView x:Name="FavoritesActionBlockView"
+                                                          ActionInvoked="OnFavoritesActionInvoked" />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
 
         </VerticalStackLayout>
     </ScrollView>

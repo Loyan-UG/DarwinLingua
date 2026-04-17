@@ -52,6 +52,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("AppNameLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("AppSubtitleLabel", sourceCode, StringComparison.Ordinal);
         Assert.Contains("ExploreSectionLabel", sourceCode, StringComparison.Ordinal);
+        Assert.Contains("SfExpander", sourceCode, StringComparison.Ordinal);
         Assert.Contains("PracticeActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("SearchActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("BrowseTopicsActionBlockView", sourceCode, StringComparison.Ordinal);
