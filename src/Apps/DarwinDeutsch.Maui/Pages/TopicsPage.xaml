@@ -9,15 +9,9 @@
           RowSpacing="18">
         <Border Grid.Row="0"
                 Padding="24"
-                StrokeThickness="0"
-                StrokeShape="RoundRectangle 4"
-                BackgroundColor="{AppThemeBinding Light=#E8F3F1, Dark=#16212B}">
+                Style="{StaticResource AppHeroPanelBorderStyle}">
             <VerticalStackLayout Spacing="10">
-                <Border Padding="10,6"
-                        HorizontalOptions="Start"
-                        StrokeThickness="0"
-                        StrokeShape="RoundRectangle 4"
-                        BackgroundColor="{AppThemeBinding Light=#FFF8EC, Dark=#22313B}">
+                <Border Style="{StaticResource AppStatusBadgeBorderStyle}">
                     <Label x:Name="StatusBadgeLabel"
                            Style="{DynamicResource Caption}" />
                 </Border>
@@ -44,10 +38,7 @@
             </expander:SfExpander.Header>
             <expander:SfExpander.Content>
                 <Border Padding="20"
-                        Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                        StrokeShape="RoundRectangle 4"
-                        StrokeThickness="1"
-                        BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        Style="{StaticResource AppSectionCardBorderStyle}">
                     <VerticalStackLayout Spacing="12">
                         <controls:CefrQuickFilterView x:Name="CefrQuickFilterView"
                                                       LevelSelected="OnCefrLevelSelected" />
@@ -64,10 +55,7 @@
 
         <Border Grid.Row="2"
                 Padding="20"
-                Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                StrokeShape="RoundRectangle 4"
-                StrokeThickness="1"
-                BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                Style="{StaticResource AppSectionCardBorderStyle}">
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
                   RowSpacing="12">
                 <Label x:Name="TopicsSectionLabel"

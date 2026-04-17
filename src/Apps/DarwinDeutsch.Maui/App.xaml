@@ -36,6 +36,24 @@
             <Color x:Key="ColorSurfaceDark">#16212B</Color>
             <Color x:Key="ColorCardStrokeLight">#D8E0E5</Color>
             <Color x:Key="ColorCardStrokeDark">#2B3945</Color>
+            <Style x:Key="AppHeroPanelBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#E8F3F1, Dark=#16212B}" />
+            </Style>
+            <Style x:Key="AppSectionCardBorderStyle" TargetType="Border">
+                <Setter Property="Stroke" Value="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFCF8, Dark=#111923}" />
+            </Style>
+            <Style x:Key="AppStatusBadgeBorderStyle" TargetType="Border">
+                <Setter Property="Padding" Value="10,6" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFF8EC, Dark=#22313B}" />
+            </Style>
             <Style x:Key="SyncfusionCardShellStyle" TargetType="cards:SfCardView">
                 <Setter Property="BorderColor" Value="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}" />
                 <Setter Property="BorderWidth" Value="1" />

@@ -8,9 +8,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="18">
             <Border Padding="24"
-                    StrokeThickness="0"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#E8F3F1, Dark=#16212B}">
+                    Style="{StaticResource AppHeroPanelBorderStyle}">
                 <VerticalStackLayout Spacing="10">
                     <Label x:Name="HeadlineLabel"
                            Style="{DynamicResource Headline}"
@@ -32,8 +30,7 @@
                 </expander:SfExpander.Header>
                 <expander:SfExpander.Content>
                     <Border Padding="20"
-                            StrokeShape="RoundRectangle 4"
-                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                            Style="{StaticResource AppSectionCardBorderStyle}">
                         <VerticalStackLayout Spacing="16">
                             <Label x:Name="RemoteContentUpdatesSectionLabel"
                                    Style="{DynamicResource Caption}" />
@@ -72,8 +69,7 @@
             </expander:SfExpander>
 
             <Border Padding="20"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                    Style="{StaticResource AppSectionCardBorderStyle}">
                 <VerticalStackLayout Spacing="18">
                     <VerticalStackLayout Spacing="8">
                         <Label x:Name="LanguagePickerCaptionLabel"
@@ -111,8 +107,7 @@
                 </expander:SfExpander.Header>
                 <expander:SfExpander.Content>
                     <Border Padding="20"
-                            StrokeShape="RoundRectangle 4"
-                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                            Style="{StaticResource AppSectionCardBorderStyle}">
                         <VerticalStackLayout Spacing="12">
                             <Label x:Name="AboutSummaryLabel"
                                    Style="{DynamicResource Body}"
