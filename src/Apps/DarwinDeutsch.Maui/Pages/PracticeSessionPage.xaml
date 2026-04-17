@@ -25,11 +25,10 @@
                     <Label x:Name="SessionProgressLabel"
                            Style="{DynamicResource Caption}" />
                     <progress:SfLinearProgressBar x:Name="SessionProgressBar"
+                                                  Style="{StaticResource SyncfusionSessionProgressStyle}"
                                                   Minimum="0"
                                                   Maximum="1"
-                                                  Progress="0"
-                                                  TrackFill="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
-                                                  ProgressFill="{AppThemeBinding Light=#1A6B5B, Dark=#7FD1BF}" />
+                                                  Progress="0" />
                     <Label x:Name="SessionStateLabel"
                            Style="{DynamicResource Body}" />
                 </VerticalStackLayout>
@@ -95,7 +94,7 @@
 
             <Border x:Name="FeedbackBorder"
                     Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFF7ED, Dark=#2A2218}"
+                    Style="{StaticResource AppWarningPanelBorderStyle}"
                     IsVisible="False">
                 <VerticalStackLayout Spacing="8">
                     <Label x:Name="FeedbackHeadlineLabel"

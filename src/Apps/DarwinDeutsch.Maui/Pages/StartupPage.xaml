@@ -4,10 +4,7 @@
              x:Class="DarwinDeutsch.Maui.Pages.StartupPage">
     <Grid Padding="24">
         <Border Padding="24"
-                StrokeThickness="0"
-                StrokeShape="RoundRectangle 4"
-                BackgroundColor="{AppThemeBinding Light=#F6FAFD, Dark=#101923}"
-                VerticalOptions="Center">
+                Style="{StaticResource AppStartupPanelBorderStyle}">
             <VerticalStackLayout Spacing="16">
                 <ActivityIndicator x:Name="StartupIndicator"
                                    IsRunning="True"
@@ -25,8 +22,7 @@
 
                 <Label x:Name="ErrorLabel"
                        IsVisible="False"
-                       Style="{DynamicResource Caption}"
-                       TextColor="{AppThemeBinding Light=#A53A2B, Dark=#FFB7AD}" />
+                       Style="{StaticResource AppStartupErrorLabelStyle}" />
 
                 <Button x:Name="RetryButton"
                         IsVisible="False"

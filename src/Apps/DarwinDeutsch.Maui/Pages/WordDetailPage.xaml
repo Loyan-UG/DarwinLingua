@@ -74,11 +74,7 @@
                     <Label x:Name="UsageLabelsHeadingLabel"
                            Style="{DynamicResource Title2}" />
                     <chips:SfChipGroup x:Name="UsageLabelsChipGroup"
-                                       ChipBackground="{AppThemeBinding Light=#DFF3EE, Dark=#214038}"
-                                       ChipCornerRadius="16"
-                                       ChipFontAttributes="Bold"
-                                       ChipStrokeThickness="0"
-                                       ChipTextColor="{AppThemeBinding Light=#0F5F55, Dark=#F6FFFC}">
+                                       Style="{StaticResource SyncfusionLexicalChipGroupStyle}">
                         <chips:SfChipGroup.ChipLayout>
                             <FlexLayout Wrap="Wrap"
                                         Direction="Row"
@@ -102,11 +98,7 @@
                     <Label x:Name="ContextLabelsHeadingLabel"
                            Style="{DynamicResource Title2}" />
                     <chips:SfChipGroup x:Name="ContextLabelsChipGroup"
-                                       ChipBackground="{AppThemeBinding Light=#DFF3EE, Dark=#214038}"
-                                       ChipCornerRadius="16"
-                                       ChipFontAttributes="Bold"
-                                       ChipStrokeThickness="0"
-                                       ChipTextColor="{AppThemeBinding Light=#0F5F55, Dark=#F6FFFC}">
+                                       Style="{StaticResource SyncfusionLexicalChipGroupStyle}">
                         <chips:SfChipGroup.ChipLayout>
                             <FlexLayout Wrap="Wrap"
                                         Direction="Row"

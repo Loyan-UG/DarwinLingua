@@ -5,9 +5,7 @@
              xmlns:toolkitCard="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.ActionBlockView">
     <toolkitCard:SfCardView Style="{StaticResource SyncfusionCardShellStyle}">
-        <VerticalStackLayout Spacing="14"
-                             Padding="18"
-                             BackgroundColor="{AppThemeBinding Light=#FFFDF9, Dark=#10161E}">
+        <VerticalStackLayout Style="{StaticResource AppActionBlockContentLayoutStyle}">
             <Label x:Name="CaptionLabel"
                    Style="{DynamicResource Title2}"
                    TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />

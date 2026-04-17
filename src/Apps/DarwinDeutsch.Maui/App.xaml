@@ -6,6 +6,7 @@
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:progress="clr-namespace:Syncfusion.Maui.Toolkit.ProgressBar;assembly=Syncfusion.Maui.Toolkit"
              xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.App">
     <Application.Resources>
@@ -75,6 +76,26 @@
                 <Setter Property="StrokeShape" Value="RoundRectangle 4" />
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#EEF4F3, Dark=#202E37}" />
             </Style>
+            <Style x:Key="AppWarningPanelBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFF7ED, Dark=#2A2218}" />
+            </Style>
+            <Style x:Key="AppStartupPanelBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#F6FAFD, Dark=#101923}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="AppStartupErrorLabelStyle" TargetType="Label">
+                <Setter Property="Style" Value="{DynamicResource Caption}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#A53A2B, Dark=#FFB7AD}" />
+            </Style>
+            <Style x:Key="AppActionBlockContentLayoutStyle" TargetType="VerticalStackLayout">
+                <Setter Property="Spacing" Value="14" />
+                <Setter Property="Padding" Value="18" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFDF9, Dark=#10161E}" />
+            </Style>
             <Style x:Key="SyncfusionCardShellStyle" TargetType="cards:SfCardView">
                 <Setter Property="BorderColor" Value="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}" />
                 <Setter Property="BorderWidth" Value="1" />
@@ -88,9 +109,20 @@
                 <Setter Property="SelectedChipBackground" Value="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}" />
                 <Setter Property="SelectedChipTextColor" Value="{AppThemeBinding Light=White, Dark=#10212B}" />
             </Style>
+            <Style x:Key="SyncfusionLexicalChipGroupStyle" TargetType="chips:SfChipGroup">
+                <Setter Property="ChipBackground" Value="{AppThemeBinding Light=#DFF3EE, Dark=#214038}" />
+                <Setter Property="ChipCornerRadius" Value="16" />
+                <Setter Property="ChipFontAttributes" Value="Bold" />
+                <Setter Property="ChipStrokeThickness" Value="0" />
+                <Setter Property="ChipTextColor" Value="{AppThemeBinding Light=#0F5F55, Dark=#F6FFFC}" />
+            </Style>
             <Style x:Key="SyncfusionSectionExpanderStyle" TargetType="expander:SfExpander">
                 <Setter Property="HeaderBackground" Value="{AppThemeBinding Light=#FFFCF8, Dark=#111923}" />
                 <Setter Property="HeaderIconColor" Value="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}" />
+            </Style>
+            <Style x:Key="SyncfusionSessionProgressStyle" TargetType="progress:SfLinearProgressBar">
+                <Setter Property="TrackFill" Value="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}" />
+                <Setter Property="ProgressFill" Value="{AppThemeBinding Light=#1A6B5B, Dark=#7FD1BF}" />
             </Style>
             <Style x:Key="SyncfusionInlineShimmerStyle" TargetType="shimmer:SfShimmer">
                 <Setter Property="Fill" Value="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}" />
