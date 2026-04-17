@@ -234,10 +234,13 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("Task.WhenAll", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OutcomeButtonsGrid", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("SummaryBorder", practiceSessionXamlSource, StringComparison.Ordinal);
+        Assert.Contains("SessionProgressBar", practiceSessionXamlSource, StringComparison.Ordinal);
+        Assert.Contains("SfLinearProgressBar", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("IPracticeFlashcardAnswerService", practiceSessionCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("IPracticeQuizAnswerService", practiceSessionCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("CancelSessionRequest", practiceSessionCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("_isSubmittingOutcome", practiceSessionCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CalculateSessionProgress()", practiceSessionCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("\"practice\"", shellSource, StringComparison.Ordinal);
         Assert.Contains("PracticeSessionPage", shellSource, StringComparison.Ordinal);
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:progress="clr-namespace:Syncfusion.Maui.Toolkit.ProgressBar;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.PracticeSessionPage">
     <ScrollView>
         <VerticalStackLayout Padding="24"
@@ -25,6 +26,12 @@
                 <VerticalStackLayout Spacing="8">
                     <Label x:Name="SessionProgressLabel"
                            Style="{DynamicResource Caption}" />
+                    <progress:SfLinearProgressBar x:Name="SessionProgressBar"
+                                                  Minimum="0"
+                                                  Maximum="1"
+                                                  Progress="0"
+                                                  TrackFill="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                                  ProgressFill="{AppThemeBinding Light=#1A6B5B, Dark=#7FD1BF}" />
                     <Label x:Name="SessionStateLabel"
                            Style="{DynamicResource Body}" />
                 </VerticalStackLayout>

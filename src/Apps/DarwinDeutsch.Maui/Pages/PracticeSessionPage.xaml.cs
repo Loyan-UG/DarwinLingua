@@ -206,6 +206,7 @@ public partial class PracticeSessionPage : ContentPage
     private void SetLoadingState()
     {
         SessionProgressLabel.Text = string.Empty;
+        SessionProgressBar.Progress = 0d;
         SessionStateLabel.Text = AppStrings.CommonStateLoading;
         PromptCardBorder.IsVisible = false;
         PrimaryActionsLayout.IsVisible = false;
@@ -218,6 +219,7 @@ public partial class PracticeSessionPage : ContentPage
         if (_sessionItems.Count == 0)
         {
             SessionProgressLabel.Text = string.Empty;
+            SessionProgressBar.Progress = 0d;
             SessionStateLabel.Text = AppStrings.PracticeSessionEmpty;
             PromptCardBorder.IsVisible = false;
             PrimaryActionsLayout.IsVisible = false;
@@ -238,6 +240,7 @@ public partial class PracticeSessionPage : ContentPage
             AppStrings.PracticeSessionProgressFormat,
             _currentIndex + 1,
             _sessionItems.Count);
+        SessionProgressBar.Progress = CalculateSessionProgress();
         SessionStateLabel.Text = IsQuizMode
             ? AppStrings.PracticeQuizPromptHint
             : AppStrings.PracticeFlashcardPromptHint;
@@ -282,6 +285,7 @@ public partial class PracticeSessionPage : ContentPage
         int easyCount = _submittedOutcomes.Count(static outcome => outcome == PracticeAttemptOutcome.Easy);
 
         SessionProgressLabel.Text = AppStrings.PracticeSessionSummaryState;
+        SessionProgressBar.Progress = 1d;
         SessionStateLabel.Text = IsQuizMode
             ? AppStrings.PracticeQuizSessionComplete
             : AppStrings.PracticeFlashcardSessionComplete;
@@ -452,6 +456,16 @@ public partial class PracticeSessionPage : ContentPage
             PracticeAttemptOutcome.Easy => AppStrings.PracticePageOutcomeEasy,
             _ => outcome.ToString(),
         };
+    }
+
+    private double CalculateSessionProgress()
+    {
+        if (_sessionItems.Count == 0)
+        {
+            return 0d;
+        }
+
+        return Math.Clamp((double)(_currentIndex + 1) / _sessionItems.Count, 0d, 1d);
     }
 
     private void OnRevealButtonClicked(object? sender, EventArgs e)
