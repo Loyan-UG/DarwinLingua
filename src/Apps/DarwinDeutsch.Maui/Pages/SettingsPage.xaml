@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.SettingsPage">
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="18">
@@ -42,30 +43,15 @@
 
                     <Label x:Name="CefrLevelUpdatesSectionLabel"
                            Style="{DynamicResource Caption}" />
-                    <controls:DetailSectionView x:Name="CefrA1UpdateSectionView" />
-                    <Button x:Name="ApplyCefrA1UpdateButton"
-                            CommandParameter="A1"
-                            Clicked="OnApplyCefrLevelUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="CefrA2UpdateSectionView" />
-                    <Button x:Name="ApplyCefrA2UpdateButton"
-                            CommandParameter="A2"
-                            Clicked="OnApplyCefrLevelUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="CefrB1UpdateSectionView" />
-                    <Button x:Name="ApplyCefrB1UpdateButton"
-                            CommandParameter="B1"
-                            Clicked="OnApplyCefrLevelUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="CefrB2UpdateSectionView" />
-                    <Button x:Name="ApplyCefrB2UpdateButton"
-                            CommandParameter="B2"
-                            Clicked="OnApplyCefrLevelUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="CefrC1UpdateSectionView" />
-                    <Button x:Name="ApplyCefrC1UpdateButton"
-                            CommandParameter="C1"
-                            Clicked="OnApplyCefrLevelUpdateButtonClicked" />
-                    <controls:DetailSectionView x:Name="CefrC2UpdateSectionView" />
-                    <Button x:Name="ApplyCefrC2UpdateButton"
-                            CommandParameter="C2"
-                            Clicked="OnApplyCefrLevelUpdateButtonClicked" />
+                    <chips:SfChipGroup x:Name="CefrLevelChipGroup"
+                                       ChoiceMode="Single"
+                                       DisplayMemberPath="Level"
+                                       SelectionChanged="OnCefrLevelChipGroupSelectionChanged"
+                                       SelectedChipBackground="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}"
+                                       SelectedChipTextColor="{AppThemeBinding Light=White, Dark=#10212B}" />
+                    <controls:DetailSectionView x:Name="SelectedCefrUpdateSectionView" />
+                    <Button x:Name="ApplySelectedCefrLevelUpdateButton"
+                            Clicked="OnApplySelectedCefrLevelUpdateButtonClicked" />
 
                     <Label x:Name="PackagedSeedUpdatesSectionLabel"
                            Style="{DynamicResource Caption}" />

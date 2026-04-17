@@ -23,10 +23,12 @@ public partial class SettingsPage : ContentPage
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly ILanguageQueryService _languageQueryService;
+    private readonly Dictionary<string, RemoteContentUpdateStatus> _cefrUpdateStatuses = new(StringComparer.OrdinalIgnoreCase);
     private CancellationTokenSource? _pageStateCancellationTokenSource;
     private bool _isUpdatingSelection;
     private bool _isApplyingRemoteUpdate;
     private bool _isApplyingSeedUpdate;
+    private string _selectedCefrLevel = "A1";
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SettingsPage"/> class.
@@ -61,6 +63,9 @@ public partial class SettingsPage : ContentPage
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _languageQueryService = languageQueryService;
         _appLocalizationService.CultureChanged += OnCultureChanged;
+        CefrLevelChipGroup.ItemsSource = CefrLevels.Select(static level => new CefrLevelChipItem(level)).ToArray();
+        CefrLevelChipGroup.SelectedItem = ((IEnumerable<CefrLevelChipItem>)CefrLevelChipGroup.ItemsSource)
+            .First(item => string.Equals(item.Level, _selectedCefrLevel, StringComparison.OrdinalIgnoreCase));
 
         ApplyStaticLocalizedText();
     }
@@ -147,20 +152,10 @@ public partial class SettingsPage : ContentPage
         RemoteContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
         RemoteContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
         CatalogAreaUpdateSectionView.SectionTitle = AppStrings.SettingsRemoteCatalogAreaTitle;
-        CefrA1UpdateSectionView.SectionTitle = "A1";
-        CefrA2UpdateSectionView.SectionTitle = "A2";
-        CefrB1UpdateSectionView.SectionTitle = "B1";
-        CefrB2UpdateSectionView.SectionTitle = "B2";
-        CefrC1UpdateSectionView.SectionTitle = "C1";
-        CefrC2UpdateSectionView.SectionTitle = "C2";
+        SelectedCefrUpdateSectionView.SectionTitle = _selectedCefrLevel;
         ApplyRemoteUpdateButton.Text = AppStrings.SettingsRemoteContentUpdatesApplyButton;
         ApplyCatalogAreaUpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, AppStrings.SettingsRemoteCatalogAreaTitle);
-        ApplyCefrA1UpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, "A1");
-        ApplyCefrA2UpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, "A2");
-        ApplyCefrB1UpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, "B1");
-        ApplyCefrB2UpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, "B2");
-        ApplyCefrC1UpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, "C1");
-        ApplyCefrC2UpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, "C2");
+        ApplySelectedCefrLevelUpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, _selectedCefrLevel);
         ApplySeedUpdateButton.Text = AppStrings.SettingsContentUpdatesApplyButton;
     }
 
@@ -250,20 +245,10 @@ public partial class SettingsPage : ContentPage
         RemoteContentUpdateStatusSectionView.SectionValue = loadingText;
         RemoteContentUpdateDetailsSectionView.SectionValue = loadingText;
         CatalogAreaUpdateSectionView.SectionValue = loadingText;
-        CefrA1UpdateSectionView.SectionValue = loadingText;
-        CefrA2UpdateSectionView.SectionValue = loadingText;
-        CefrB1UpdateSectionView.SectionValue = loadingText;
-        CefrB2UpdateSectionView.SectionValue = loadingText;
-        CefrC1UpdateSectionView.SectionValue = loadingText;
-        CefrC2UpdateSectionView.SectionValue = loadingText;
+        SelectedCefrUpdateSectionView.SectionValue = loadingText;
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
-        ApplyCefrA1UpdateButton.IsEnabled = false;
-        ApplyCefrA2UpdateButton.IsEnabled = false;
-        ApplyCefrB1UpdateButton.IsEnabled = false;
-        ApplyCefrB2UpdateButton.IsEnabled = false;
-        ApplyCefrC1UpdateButton.IsEnabled = false;
-        ApplyCefrC2UpdateButton.IsEnabled = false;
+        ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
     }
 
     private async Task LoadAndApplyRemoteUpdateSectionsAsync(string localDatabasePath, CancellationToken cancellationToken)
@@ -297,13 +282,7 @@ public partial class SettingsPage : ContentPage
         cancellationToken.ThrowIfCancellationRequested();
 
         Dictionary<string, RemoteContentUpdateStatus> cefrUpdateStatuses = await LoadCefrUpdateStatusesAsync(localDatabasePath, cancellationToken).ConfigureAwait(true);
-        BindCefrUpdateSection(CefrA1UpdateSectionView, ApplyCefrA1UpdateButton, "A1", cefrUpdateStatuses["A1"]);
-        BindCefrUpdateSection(CefrA2UpdateSectionView, ApplyCefrA2UpdateButton, "A2", cefrUpdateStatuses["A2"]);
-        BindCefrUpdateSection(CefrB1UpdateSectionView, ApplyCefrB1UpdateButton, "B1", cefrUpdateStatuses["B1"]);
-        BindCefrUpdateSection(CefrB2UpdateSectionView, ApplyCefrB2UpdateButton, "B2", cefrUpdateStatuses["B2"]);
-        BindCefrUpdateSection(CefrC1UpdateSectionView, ApplyCefrC1UpdateButton, "C1", cefrUpdateStatuses["C1"]);
-        BindCefrUpdateSection(CefrC2UpdateSectionView, ApplyCefrC2UpdateButton, "C2", cefrUpdateStatuses["C2"]);
-
+        ApplyCefrUpdateStatuses(cefrUpdateStatuses);
     }
 
     private void ApplyUnavailableCefrUpdateSections(RemoteContentUpdateStatus baseStatus)
@@ -317,12 +296,9 @@ public partial class SettingsPage : ContentPage
             PendingWordCount = 0,
         };
 
-        BindCefrUpdateSection(CefrA1UpdateSectionView, ApplyCefrA1UpdateButton, "A1", unavailableStatus);
-        BindCefrUpdateSection(CefrA2UpdateSectionView, ApplyCefrA2UpdateButton, "A2", unavailableStatus);
-        BindCefrUpdateSection(CefrB1UpdateSectionView, ApplyCefrB1UpdateButton, "B1", unavailableStatus);
-        BindCefrUpdateSection(CefrB2UpdateSectionView, ApplyCefrB2UpdateButton, "B2", unavailableStatus);
-        BindCefrUpdateSection(CefrC1UpdateSectionView, ApplyCefrC1UpdateButton, "C1", unavailableStatus);
-        BindCefrUpdateSection(CefrC2UpdateSectionView, ApplyCefrC2UpdateButton, "C2", unavailableStatus);
+        Dictionary<string, RemoteContentUpdateStatus> unavailableStatuses = CefrLevels
+            .ToDictionary(static level => level, _ => unavailableStatus, StringComparer.OrdinalIgnoreCase);
+        ApplyCefrUpdateStatuses(unavailableStatuses);
     }
 
     private async void OnApplyRemoteUpdateButtonClicked(object? sender, EventArgs e)
@@ -341,16 +317,16 @@ public partial class SettingsPage : ContentPage
             .ConfigureAwait(true);
     }
 
-    private async void OnApplyCefrLevelUpdateButtonClicked(object? sender, EventArgs e)
+    private async void OnApplySelectedCefrLevelUpdateButtonClicked(object? sender, EventArgs e)
     {
-        if (sender is not Button button || button.CommandParameter is not string cefrLevel || string.IsNullOrWhiteSpace(cefrLevel))
+        if (string.IsNullOrWhiteSpace(_selectedCefrLevel))
         {
             return;
         }
 
         await ApplyScopedRemoteUpdateAsync(
-                cefrLevel,
-                () => _remoteContentUpdateService.ApplyCefrUpdateAsync(GetLocalDatabasePath(), cefrLevel, CancellationToken.None))
+                _selectedCefrLevel,
+                () => _remoteContentUpdateService.ApplyCefrUpdateAsync(GetLocalDatabasePath(), _selectedCefrLevel, CancellationToken.None))
             .ConfigureAwait(true);
     }
 
@@ -443,15 +419,33 @@ public partial class SettingsPage : ContentPage
             .ToDictionary();
     }
 
-    private void BindCefrUpdateSection(
-        DetailSectionView detailSectionView,
-        Button button,
-        string cefrLevel,
-        RemoteContentUpdateStatus status)
+    private void ApplyCefrUpdateStatuses(IReadOnlyDictionary<string, RemoteContentUpdateStatus> cefrUpdateStatuses)
     {
-        detailSectionView.SectionValue = BuildRemoteScopeSummary(status);
-        button.IsEnabled = status.IsRemoteConfigured && status.IsServerReachable && status.IsUpdateAvailable && !_isApplyingRemoteUpdate;
-        button.Text = BuildRemoteScopeButtonText(status, cefrLevel);
+        _cefrUpdateStatuses.Clear();
+
+        foreach ((string cefrLevel, RemoteContentUpdateStatus status) in cefrUpdateStatuses)
+        {
+            _cefrUpdateStatuses[cefrLevel] = status;
+        }
+
+        BindSelectedCefrUpdateSection();
+    }
+
+    private void BindSelectedCefrUpdateSection()
+    {
+        SelectedCefrUpdateSectionView.SectionTitle = _selectedCefrLevel;
+
+        if (!_cefrUpdateStatuses.TryGetValue(_selectedCefrLevel, out RemoteContentUpdateStatus? status))
+        {
+            SelectedCefrUpdateSectionView.SectionValue = AppStrings.CommonStateLoading;
+            ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
+            ApplySelectedCefrLevelUpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, _selectedCefrLevel);
+            return;
+        }
+
+        SelectedCefrUpdateSectionView.SectionValue = BuildRemoteScopeSummary(status);
+        ApplySelectedCefrLevelUpdateButton.IsEnabled = status.IsRemoteConfigured && status.IsServerReachable && status.IsUpdateAvailable && !_isApplyingRemoteUpdate;
+        ApplySelectedCefrLevelUpdateButton.Text = BuildRemoteScopeButtonText(status, _selectedCefrLevel);
     }
 
     private async Task ApplyScopedRemoteUpdateAsync(
@@ -466,12 +460,7 @@ public partial class SettingsPage : ContentPage
         _isApplyingRemoteUpdate = true;
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
-        ApplyCefrA1UpdateButton.IsEnabled = false;
-        ApplyCefrA2UpdateButton.IsEnabled = false;
-        ApplyCefrB1UpdateButton.IsEnabled = false;
-        ApplyCefrB2UpdateButton.IsEnabled = false;
-        ApplyCefrC1UpdateButton.IsEnabled = false;
-        ApplyCefrC2UpdateButton.IsEnabled = false;
+        ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
 
         try
         {
@@ -567,6 +556,24 @@ public partial class SettingsPage : ContentPage
         catch (OperationCanceledException)
         {
         }
+    }
+
+    private void OnCefrLevelChipGroupSelectionChanged(object? sender, Syncfusion.Maui.Toolkit.Chips.SelectionChangedEventArgs e)
+    {
+        string? selectedLevel = e.AddedItem switch
+        {
+            CefrLevelChipItem chipItem => chipItem.Level,
+            string level => level,
+            _ => null,
+        };
+
+        if (string.IsNullOrWhiteSpace(selectedLevel))
+        {
+            return;
+        }
+
+        _selectedCefrLevel = selectedLevel;
+        BindSelectedCefrUpdateSection();
     }
 
     private static string BuildMeaningLanguageSummary(
@@ -826,4 +833,9 @@ public partial class SettingsPage : ContentPage
     /// Represents a picker option for meaning-language selection.
     /// </summary>
     private sealed record MeaningLanguageOption(string? LanguageCode, string DisplayName);
+
+    /// <summary>
+    /// Represents a chip option for CEFR update selection.
+    /// </summary>
+    private sealed record CefrLevelChipItem(string Level);
 }
