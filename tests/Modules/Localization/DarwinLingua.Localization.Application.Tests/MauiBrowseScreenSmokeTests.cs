@@ -274,6 +274,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("UsageLabelsChipGroup", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContextLabelsChipGroup", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SfChipGroup", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SfExpander", xamlSource, StringComparison.Ordinal);
         Assert.Contains("GrammarNotesStackLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CollocationsStackLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("WordFamiliesStackLayout", xamlSource, StringComparison.Ordinal);

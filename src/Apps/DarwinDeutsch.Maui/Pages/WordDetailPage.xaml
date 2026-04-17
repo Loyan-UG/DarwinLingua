@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.WordDetailPage">
     <ScrollView>
@@ -123,67 +124,105 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border x:Name="GrammarNotesBorder"
-                    Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
-                    IsVisible="False">
-                <VerticalStackLayout Spacing="12">
-                    <Label x:Name="GrammarNotesHeadingLabel"
-                           Style="{DynamicResource Title2}" />
-                    <VerticalStackLayout x:Name="GrammarNotesStackLayout"
-                                         Spacing="10" />
-                </VerticalStackLayout>
-            </Border>
+            <expander:SfExpander x:Name="GrammarNotesBorder"
+                                 IsExpanded="False"
+                                 IsVisible="False"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="GrammarNotesHeadingLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            StrokeShape="RoundRectangle 4"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout x:Name="GrammarNotesStackLayout"
+                                             Spacing="10" />
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
 
-            <Border x:Name="CollocationsBorder"
-                    Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
-                    IsVisible="False">
-                <VerticalStackLayout Spacing="12">
-                    <Label x:Name="CollocationsHeadingLabel"
-                           Style="{DynamicResource Title2}" />
-                    <VerticalStackLayout x:Name="CollocationsStackLayout"
-                                         Spacing="10" />
-                </VerticalStackLayout>
-            </Border>
+            <expander:SfExpander x:Name="CollocationsBorder"
+                                 IsExpanded="False"
+                                 IsVisible="False"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="CollocationsHeadingLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            StrokeShape="RoundRectangle 4"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout x:Name="CollocationsStackLayout"
+                                             Spacing="10" />
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
 
-            <Border x:Name="WordFamiliesBorder"
-                    Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
-                    IsVisible="False">
-                <VerticalStackLayout Spacing="12">
-                    <Label x:Name="WordFamiliesHeadingLabel"
-                           Style="{DynamicResource Title2}" />
-                    <VerticalStackLayout x:Name="WordFamiliesStackLayout"
-                                         Spacing="10" />
-                </VerticalStackLayout>
-            </Border>
+            <expander:SfExpander x:Name="WordFamiliesBorder"
+                                 IsExpanded="False"
+                                 IsVisible="False"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="WordFamiliesHeadingLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            StrokeShape="RoundRectangle 4"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout x:Name="WordFamiliesStackLayout"
+                                             Spacing="10" />
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
 
-            <Border x:Name="LexicalRelationsBorder"
-                    Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
-                    IsVisible="False">
-                <VerticalStackLayout Spacing="14">
-                    <Label x:Name="LexicalRelationsHeadingLabel"
-                           Style="{DynamicResource Title2}" />
-                    <VerticalStackLayout x:Name="SynonymsSectionStackLayout"
-                                         Spacing="10"
-                                         IsVisible="False">
-                        <Label x:Name="SynonymsHeadingLabel"
-                               Style="{DynamicResource Body}" />
-                        <VerticalStackLayout x:Name="SynonymsStackLayout"
-                                             Spacing="8" />
-                    </VerticalStackLayout>
-                    <VerticalStackLayout x:Name="AntonymsSectionStackLayout"
-                                         Spacing="10"
-                                         IsVisible="False">
-                        <Label x:Name="AntonymsHeadingLabel"
-                               Style="{DynamicResource Body}" />
-                        <VerticalStackLayout x:Name="AntonymsStackLayout"
-                                             Spacing="8" />
-                    </VerticalStackLayout>
-                </VerticalStackLayout>
-            </Border>
+            <expander:SfExpander x:Name="LexicalRelationsBorder"
+                                 IsExpanded="False"
+                                 IsVisible="False"
+                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="LexicalRelationsHeadingLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            StrokeShape="RoundRectangle 4"
+                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                        <VerticalStackLayout Spacing="14">
+                            <VerticalStackLayout x:Name="SynonymsSectionStackLayout"
+                                                 Spacing="10"
+                                                 IsVisible="False">
+                                <Label x:Name="SynonymsHeadingLabel"
+                                       Style="{DynamicResource Body}" />
+                                <VerticalStackLayout x:Name="SynonymsStackLayout"
+                                                     Spacing="8" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout x:Name="AntonymsSectionStackLayout"
+                                                 Spacing="10"
+                                                 IsVisible="False">
+                                <Label x:Name="AntonymsHeadingLabel"
+                                       Style="{DynamicResource Body}" />
+                                <VerticalStackLayout x:Name="AntonymsStackLayout"
+                                                     Spacing="8" />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
 
             <Border Padding="20"
                     BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
