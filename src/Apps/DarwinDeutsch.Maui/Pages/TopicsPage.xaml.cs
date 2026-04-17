@@ -222,23 +222,28 @@ public partial class TopicsPage : ContentPage
         }
 
         string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
+        string navigationRoute = $"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}";
         try
         {
-            Guid? startingWordPublicId = await _cefrBrowseStateService
-                .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
-                .ConfigureAwait(true);
-
-            if (startingWordPublicId is null)
+            try
             {
-                await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+                Guid? startingWordPublicId = await _cefrBrowseStateService
+                    .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
                     .ConfigureAwait(true);
-                return;
+
+                if (startingWordPublicId is not null)
+                {
+                    string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
+                    navigationRoute =
+                        $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}";
+                }
+            }
+            catch
+            {
+                // Fall back to the CEFR list when the preferred starting word cannot be resolved.
             }
 
-            string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
-            await Shell.Current.GoToAsync(
-                    $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}")
-                .ConfigureAwait(true);
+            await Shell.Current.GoToAsync(navigationRoute).ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {

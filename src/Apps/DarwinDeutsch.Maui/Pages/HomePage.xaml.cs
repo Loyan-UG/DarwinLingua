@@ -120,25 +120,30 @@ public partial class HomePage : ContentPage
         _isNavigatingToCefr = true;
         SetCefrNavigationBusyState(true);
         Stopwatch stopwatch = Stopwatch.StartNew();
+        string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
+        string navigationRoute = $"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}";
 
         try
         {
-            Guid? startingWordPublicId = await _cefrBrowseStateService
-                .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
-                .ConfigureAwait(true);
-
-            string escapedCefrLevel = Uri.EscapeDataString(cefrLevel);
-            if (startingWordPublicId is null)
+            try
             {
-                await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+                Guid? startingWordPublicId = await _cefrBrowseStateService
+                    .GetStartingWordPublicIdAsync(cefrLevel, CancellationToken.None)
                     .ConfigureAwait(true);
-                return;
+
+                if (startingWordPublicId is not null)
+                {
+                    string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
+                    navigationRoute =
+                        $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}";
+                }
+            }
+            catch (Exception exception)
+            {
+                _logger.LogWarning(exception, "Home CEFR starting-word resolution failed for level '{CefrLevel}'. Falling back to list view.", cefrLevel);
             }
 
-            string escapedWordPublicId = Uri.EscapeDataString(startingWordPublicId.Value.ToString("D"));
-            await Shell.Current.GoToAsync(
-                    $"{nameof(WordDetailPage)}?wordPublicId={escapedWordPublicId}&cefrLevel={escapedCefrLevel}")
-                .ConfigureAwait(true);
+            await Shell.Current.GoToAsync(navigationRoute).ConfigureAwait(true);
 
             _performanceTelemetryService.Record("home.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
         }
@@ -149,7 +154,7 @@ public partial class HomePage : ContentPage
         catch (Exception exception)
         {
             _performanceTelemetryService.Record("home.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
-            _logger.LogWarning(exception, "Home CEFR navigation failed for level '{CefrLevel}'.", cefrLevel);
+            _logger.LogWarning(exception, "Home CEFR navigation failed for level '{CefrLevel}' using route '{Route}'.", cefrLevel, navigationRoute);
             CefrNavigationStatusLabel.Text = AppStrings.CommonStateError;
             CefrNavigationStatusLayout.IsVisible = true;
         }

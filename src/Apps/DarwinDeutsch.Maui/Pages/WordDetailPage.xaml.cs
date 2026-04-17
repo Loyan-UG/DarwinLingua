@@ -219,6 +219,7 @@ public partial class WordDetailPage : ContentPage
             : string.Join(", ", word.Topics);
         EmptyStateLabel.IsVisible = false;
         RememberLoadedDetailContext(publicId, profile);
+        ScheduleAutoSpeakWord(HeadlineLabel.Text ?? string.Empty);
 
         await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
@@ -408,7 +409,7 @@ public partial class WordDetailPage : ContentPage
 
         try
         {
-            await SpeakGermanTextAsync(headline).ConfigureAwait(true);
+            await SpeakGermanTextAsync(headline, showFailureStatus: true).ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {
@@ -535,7 +536,7 @@ public partial class WordDetailPage : ContentPage
         };
         SemanticProperties.SetDescription(button, AppStrings.WordDetailSpeakExampleButton);
 
-        button.Clicked += async (_, _) => await SpeakGermanTextAsync(spokenText).ConfigureAwait(true);
+        button.Clicked += async (_, _) => await SpeakGermanTextAsync(spokenText, showFailureStatus: true).ConfigureAwait(true);
 
         return button;
     }
@@ -827,7 +828,32 @@ public partial class WordDetailPage : ContentPage
     /// Attempts to pronounce German content and surfaces any non-success outcome as a localized UI message.
     /// </summary>
     /// <param name="text">The German text to pronounce.</param>
-    private async Task SpeakGermanTextAsync(string text)
+    private void ScheduleAutoSpeakWord(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return;
+        }
+
+        _ = AutoSpeakWordAsync(text);
+    }
+
+    private async Task AutoSpeakWordAsync(string text)
+    {
+        try
+        {
+            await SpeakGermanTextAsync(text, showFailureStatus: false).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception exception)
+        {
+            _logger.LogDebug(exception, "Automatic speech playback failed for word detail '{Text}'.", text);
+        }
+    }
+
+    private async Task SpeakGermanTextAsync(string text, bool showFailureStatus)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(text);
 
@@ -842,13 +868,22 @@ public partial class WordDetailPage : ContentPage
         if (result.IsSuccess || result.Status == SpeechPlaybackStatus.Cancelled)
         {
             _performanceTelemetryService.Record(
-                "speech.playback",
+                showFailureStatus ? "speech.playback" : "speech.playback.auto",
                 stopwatch.Elapsed,
                 result.Status == SpeechPlaybackStatus.Cancelled ? PerformanceTelemetryOutcome.Cancelled : PerformanceTelemetryOutcome.Success);
             return;
         }
 
-        _performanceTelemetryService.Record("speech.playback", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
+        _performanceTelemetryService.Record(
+            showFailureStatus ? "speech.playback" : "speech.playback.auto",
+            stopwatch.Elapsed,
+            PerformanceTelemetryOutcome.Failed);
+
+        if (!showFailureStatus)
+        {
+            return;
+        }
+
         AudioStatusLabel.Text = result.Status switch
         {
             SpeechPlaybackStatus.Unsupported => AppStrings.WordDetailAudioNotSupported,
