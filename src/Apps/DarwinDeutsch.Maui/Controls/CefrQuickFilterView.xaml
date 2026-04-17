@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:segmentedControl="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.CefrQuickFilterView">
     <VerticalStackLayout Spacing="12">
         <Label x:Name="CaptionLabel"
                Style="{DynamicResource Caption}" />
-        <Grid ColumnDefinitions="*,*,*"
-              RowDefinitions="Auto,Auto"
-              ColumnSpacing="10"
-              RowSpacing="10">
-            <Button x:Name="A1Button" Grid.Row="0" Grid.Column="0" Text="A1" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="A2Button" Grid.Row="0" Grid.Column="1" Text="A2" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="B1Button" Grid.Row="0" Grid.Column="2" Text="B1" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="B2Button" Grid.Row="1" Grid.Column="0" Text="B2" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="C1Button" Grid.Row="1" Grid.Column="1" Text="C1" Clicked="OnCefrButtonClicked" />
-            <Button x:Name="C2Button" Grid.Row="1" Grid.Column="2" Text="C2" Clicked="OnCefrButtonClicked" />
-        </Grid>
+        <segmentedControl:SfSegmentedControl x:Name="SegmentedControl"
+                                             HeightRequest="58"
+                                             SelectionMode="Single"
+                                             SelectionChanged="OnSegmentedControlSelectionChanged">
+            <segmentedControl:SfSegmentedControl.SelectionIndicatorSettings>
+                <segmentedControl:SelectionIndicatorSettings SelectionIndicatorPlacement="Fill"
+                                                             Background="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}" />
+            </segmentedControl:SfSegmentedControl.SelectionIndicatorSettings>
+        </segmentedControl:SfSegmentedControl>
     </VerticalStackLayout>
 </ContentView>

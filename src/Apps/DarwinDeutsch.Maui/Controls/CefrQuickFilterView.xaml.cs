@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Windows.Input;
+using Syncfusion.Maui.Toolkit.SegmentedControl;
 
 namespace DarwinDeutsch.Maui.Controls;
 
@@ -8,16 +9,7 @@ namespace DarwinDeutsch.Maui.Controls;
 /// </summary>
 public partial class CefrQuickFilterView : ContentView
 {
-    private static readonly IReadOnlyDictionary<string, CefrButtonPalette> ButtonPalettes =
-        new Dictionary<string, CefrButtonPalette>(StringComparer.OrdinalIgnoreCase)
-        {
-            ["A1"] = new(Colors.White, Color.FromArgb("#2B7FFF"), Color.FromArgb("#E4F0FF")),
-            ["A2"] = new(Colors.White, Color.FromArgb("#1FA3A3"), Color.FromArgb("#DCF7F4")),
-            ["B1"] = new(Colors.White, Color.FromArgb("#2F9D57"), Color.FromArgb("#E1F6E7")),
-            ["B2"] = new(Colors.White, Color.FromArgb("#D0A019"), Color.FromArgb("#FFF5D7")),
-            ["C1"] = new(Colors.White, Color.FromArgb("#E07A1F"), Color.FromArgb("#FFE8D3")),
-            ["C2"] = new(Colors.White, Color.FromArgb("#D64545"), Color.FromArgb("#FFE0E0")),
-        };
+    private static readonly string[] Levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
     /// <summary>
     /// Backing bindable property for <see cref="Caption"/>.
@@ -59,6 +51,7 @@ public partial class CefrQuickFilterView : ContentView
     public CefrQuickFilterView()
     {
         InitializeComponent();
+        SegmentedControl.ItemsSource = Levels;
         ApplySelectedState();
     }
 
@@ -97,14 +90,22 @@ public partial class CefrQuickFilterView : ContentView
     /// <summary>
     /// Handles quick-filter button taps.
     /// </summary>
-    private void OnCefrButtonClicked(object? sender, EventArgs e)
+    private void OnSegmentedControlSelectionChanged(
+        object? sender,
+        Syncfusion.Maui.Toolkit.SegmentedControl.SelectionChangedEventArgs e)
     {
-        if (sender is not Button button || string.IsNullOrWhiteSpace(button.Text))
+        if (e.NewValue is null)
         {
             return;
         }
 
-        SelectedLevel = button.Text;
+        string? selectedLevel = e.NewValue.ToString();
+        if (string.IsNullOrWhiteSpace(selectedLevel))
+        {
+            return;
+        }
+
+        SelectedLevel = selectedLevel;
 
         if (LevelSelectedCommand?.CanExecute(SelectedLevel) == true)
         {
@@ -119,68 +120,18 @@ public partial class CefrQuickFilterView : ContentView
     /// </summary>
     private void ApplySelectedState()
     {
-        foreach (Button button in GetCefrButtons())
+        int selectedIndex = Array.FindIndex(
+            Levels,
+            level => string.Equals(level, SelectedLevel, StringComparison.OrdinalIgnoreCase));
+
+        if (selectedIndex < 0)
         {
-            ApplyButtonSelection(button);
-        }
-    }
-
-    /// <summary>
-    /// Applies selection colors to a single CEFR button.
-    /// </summary>
-    private void ApplyButtonSelection(Button button)
-    {
-        bool isSelected = string.Equals(button.Text, SelectedLevel, StringComparison.OrdinalIgnoreCase);
-        CefrButtonPalette palette = ResolvePalette(button.Text);
-
-        button.FontSize = 19;
-        button.FontAttributes = FontAttributes.Bold;
-        button.HeightRequest = 58;
-        button.Padding = new Thickness(0);
-        button.BorderWidth = 1;
-        button.BorderColor = palette.AccentColor;
-        button.BackgroundColor = isSelected ? palette.AccentColor : palette.SurfaceColor;
-        button.TextColor = isSelected ? palette.SelectedTextColor : palette.AccentColor;
-    }
-
-    private static CefrButtonPalette ResolvePalette(string? level)
-    {
-        if (!string.IsNullOrWhiteSpace(level) && ButtonPalettes.TryGetValue(level, out CefrButtonPalette? palette))
-        {
-            return palette;
+            return;
         }
 
-        return new CefrButtonPalette(Colors.White, ResolveAppColor("Primary", Colors.DarkSlateBlue), ResolveAppColor("Secondary", Colors.LightGray));
-    }
-
-    /// <summary>
-    /// Resolves an application-scoped color with a safe fallback for early initialization timing.
-    /// </summary>
-    private static Color ResolveAppColor(string resourceKey, Color fallbackColor)
-    {
-        ArgumentException.ThrowIfNullOrWhiteSpace(resourceKey);
-
-        if (Application.Current?.Resources.TryGetValue(resourceKey, out object? color) == true &&
-            color is Color resolvedColor)
+        if (SegmentedControl.SelectedIndex != selectedIndex)
         {
-            return resolvedColor;
+            SegmentedControl.SelectedIndex = selectedIndex;
         }
-
-        return fallbackColor;
     }
-
-    /// <summary>
-    /// Returns the fixed CEFR buttons used by the control.
-    /// </summary>
-    private IEnumerable<Button> GetCefrButtons()
-    {
-        yield return A1Button;
-        yield return A2Button;
-        yield return B1Button;
-        yield return B2Button;
-        yield return C1Button;
-        yield return C2Button;
-    }
-
-    private sealed record CefrButtonPalette(Color SelectedTextColor, Color AccentColor, Color SurfaceColor);
 }
