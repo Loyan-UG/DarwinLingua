@@ -322,19 +322,27 @@ public sealed class MauiBrowseScreenSmokeTests
     public void SearchWordsPage_ShouldExposeSearchAndResultsPanels()
     {
         string repositoryRoot = ResolveRepositoryRoot();
+        string favoritesPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/FavoritesPage.xaml");
         string cefrPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/CefrWordsPage.xaml");
         string searchPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/SearchWordsPage.xaml");
         string searchCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/SearchWordsPage.xaml.cs");
 
+        Assert.True(File.Exists(favoritesPagePath), $"Favorites page XAML file not found: {favoritesPagePath}");
         Assert.True(File.Exists(cefrPagePath), $"CEFR page XAML file not found: {cefrPagePath}");
         Assert.True(File.Exists(searchPagePath), $"Search page XAML file not found: {searchPagePath}");
         Assert.True(File.Exists(searchCodeBehindPath), $"Search page code-behind file not found: {searchCodeBehindPath}");
 
+        string favoritesXamlSource = File.ReadAllText(favoritesPagePath);
         string cefrXamlSource = File.ReadAllText(cefrPagePath);
         string xamlSource = File.ReadAllText(searchPagePath);
         string codeBehindSource = File.ReadAllText(searchCodeBehindPath);
 
+        Assert.Contains("AppHeroPanelBorderStyle", favoritesXamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppSectionCardBorderStyle", favoritesXamlSource, StringComparison.Ordinal);
         Assert.Contains("RemainingItemsThresholdReached", cefrXamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppHeroPanelBorderStyle", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppStatusBadgeBorderStyle", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppSectionCardBorderStyle", xamlSource, StringComparison.Ordinal);
         Assert.Contains("StatusBadgeLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SearchSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SearchHintLabel", xamlSource, StringComparison.Ordinal);
