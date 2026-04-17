@@ -9,6 +9,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Toolkit.Chips;
 using System.Diagnostics;
 
 namespace DarwinDeutsch.Maui.Pages;
@@ -225,8 +226,8 @@ public partial class WordDetailPage : ContentPage
         await Task.Yield();
         cancellationToken.ThrowIfCancellationRequested();
 
-        ApplyWordLabels(UsageLabelsFlexLayout, UsageLabelsBorder, word.UsageLabels);
-        ApplyWordLabels(ContextLabelsFlexLayout, ContextLabelsBorder, word.ContextLabels);
+        ApplyWordLabels(UsageLabelsChipGroup, UsageLabelsBorder, word.UsageLabels);
+        ApplyWordLabels(ContextLabelsChipGroup, ContextLabelsBorder, word.ContextLabels);
         ApplyGrammarNotes(word.GrammarNotes);
         ApplyCollocations(word.Collocations);
         ApplyWordFamilies(word.WordFamilies);
@@ -291,8 +292,8 @@ public partial class WordDetailPage : ContentPage
         DifficultButton.IsVisible = false;
         CefrNavigationTopGrid.IsVisible = false;
         CefrNavigationBottomGrid.IsVisible = false;
-        UsageLabelsFlexLayout.Children.Clear();
-        ContextLabelsFlexLayout.Children.Clear();
+        UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
+        ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();
         CollocationsStackLayout.Children.Clear();
         WordFamiliesStackLayout.Children.Clear();
@@ -569,46 +570,23 @@ public partial class WordDetailPage : ContentPage
     /// <summary>
     /// Renders the supplied lexical labels as wrapped chips.
     /// </summary>
-    private static void ApplyWordLabels(FlexLayout container, Border hostBorder, IReadOnlyList<string> labelKeys)
+    private static void ApplyWordLabels(SfChipGroup container, Border hostBorder, IReadOnlyList<string> labelKeys)
     {
         ArgumentNullException.ThrowIfNull(container);
         ArgumentNullException.ThrowIfNull(hostBorder);
         ArgumentNullException.ThrowIfNull(labelKeys);
 
-        container.Children.Clear();
+        container.ItemsSource = Array.Empty<string>();
         hostBorder.IsVisible = labelKeys.Count > 0;
 
-        foreach (string labelKey in labelKeys)
+        if (labelKeys.Count == 0)
         {
-            container.Children.Add(BuildWordLabelChip(labelKey));
+            return;
         }
-    }
 
-    /// <summary>
-    /// Creates one wrapped metadata chip for a lexical label key.
-    /// </summary>
-    private static View BuildWordLabelChip(string labelKey)
-    {
-        ArgumentException.ThrowIfNullOrWhiteSpace(labelKey);
-
-        return new Border
-        {
-            Padding = new Thickness(12, 7),
-            Margin = new Thickness(0, 0, 8, 8),
-            StrokeThickness = 0,
-            BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
-                ? Color.FromArgb("#214038")
-                : Color.FromArgb("#DFF3EE"),
-            Content = new Label
-            {
-                Text = LexiconTagDisplayText.GetDisplayName(labelKey),
-                TextColor = Application.Current?.RequestedTheme == AppTheme.Dark
-                    ? Color.FromArgb("#F6FFFC")
-                    : Color.FromArgb("#0F5F55"),
-                FontSize = 13,
-                FontAttributes = FontAttributes.Bold,
-            },
-        };
+        container.ItemsSource = labelKeys
+            .Select(LexiconTagDisplayText.GetDisplayName)
+            .ToList();
     }
 
     /// <summary>
@@ -1131,8 +1109,8 @@ public partial class WordDetailPage : ContentPage
     private void PrepareForWordRender()
     {
         SensesContainer.Children.Clear();
-        UsageLabelsFlexLayout.Children.Clear();
-        ContextLabelsFlexLayout.Children.Clear();
+        UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
+        ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();
         CollocationsStackLayout.Children.Clear();
         WordFamiliesStackLayout.Children.Clear();

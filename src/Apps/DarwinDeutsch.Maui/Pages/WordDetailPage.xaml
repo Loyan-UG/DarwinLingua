@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.WordDetailPage">
     <ScrollView>
@@ -73,12 +74,24 @@
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="UsageLabelsHeadingLabel"
                            Style="{DynamicResource Title2}" />
-                    <FlexLayout x:Name="UsageLabelsFlexLayout"
-                                Wrap="Wrap"
-                                Direction="Row"
-                                JustifyContent="Start"
-                                AlignItems="Start"
-                                BindableLayout.ItemsSource="{x:Null}" />
+                    <chips:SfChipGroup x:Name="UsageLabelsChipGroup"
+                                       ChipBackground="{AppThemeBinding Light=#DFF3EE, Dark=#214038}"
+                                       ChipCornerRadius="16"
+                                       ChipFontAttributes="Bold"
+                                       ChipStrokeThickness="0"
+                                       ChipTextColor="{AppThemeBinding Light=#0F5F55, Dark=#F6FFFC}">
+                        <chips:SfChipGroup.ChipLayout>
+                            <FlexLayout Wrap="Wrap"
+                                        Direction="Row"
+                                        JustifyContent="Start"
+                                        AlignItems="Start" />
+                        </chips:SfChipGroup.ChipLayout>
+                        <chips:SfChipGroup.ItemTemplate>
+                            <DataTemplate>
+                                <chips:SfChip Text="{Binding .}" />
+                            </DataTemplate>
+                        </chips:SfChipGroup.ItemTemplate>
+                    </chips:SfChipGroup>
                 </VerticalStackLayout>
             </Border>
 
@@ -89,12 +102,24 @@
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="ContextLabelsHeadingLabel"
                            Style="{DynamicResource Title2}" />
-                    <FlexLayout x:Name="ContextLabelsFlexLayout"
-                                Wrap="Wrap"
-                                Direction="Row"
-                                JustifyContent="Start"
-                                AlignItems="Start"
-                                BindableLayout.ItemsSource="{x:Null}" />
+                    <chips:SfChipGroup x:Name="ContextLabelsChipGroup"
+                                       ChipBackground="{AppThemeBinding Light=#DFF3EE, Dark=#214038}"
+                                       ChipCornerRadius="16"
+                                       ChipFontAttributes="Bold"
+                                       ChipStrokeThickness="0"
+                                       ChipTextColor="{AppThemeBinding Light=#0F5F55, Dark=#F6FFFC}">
+                        <chips:SfChipGroup.ChipLayout>
+                            <FlexLayout Wrap="Wrap"
+                                        Direction="Row"
+                                        JustifyContent="Start"
+                                        AlignItems="Start" />
+                        </chips:SfChipGroup.ChipLayout>
+                        <chips:SfChipGroup.ItemTemplate>
+                            <DataTemplate>
+                                <chips:SfChip Text="{Binding .}" />
+                            </DataTemplate>
+                        </chips:SfChipGroup.ItemTemplate>
+                    </chips:SfChipGroup>
                 </VerticalStackLayout>
             </Border>
 
