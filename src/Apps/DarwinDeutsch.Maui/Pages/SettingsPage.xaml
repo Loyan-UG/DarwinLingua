@@ -23,8 +23,7 @@
             </Border>
 
             <expander:SfExpander IsExpanded="True"
-                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
-                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                                 Style="{StaticResource SyncfusionSectionExpanderStyle}">
                 <expander:SfExpander.Header>
                     <Grid Padding="20">
                         <Label x:Name="ContentUpdatesSectionLabel"
@@ -103,8 +102,7 @@
             </Border>
 
             <expander:SfExpander IsExpanded="False"
-                                 HeaderBackground="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
-                                 HeaderIconColor="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}">
+                                 Style="{StaticResource SyncfusionSectionExpanderStyle}">
                 <expander:SfExpander.Header>
                     <Grid Padding="20">
                         <Label x:Name="AboutSectionLabel"

@@ -12,6 +12,7 @@ public sealed class MauiBrowseScreenSmokeTests
     public void HomePage_ShouldExposeDashboardBrowseSections()
     {
         string repositoryRoot = ResolveRepositoryRoot();
+        string appXamlPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/App.xaml");
         string homePagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/HomePage.xaml");
         string actionBlockViewPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Controls/ActionBlockView.xaml");
         string startupPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/StartupPage.xaml");
@@ -24,6 +25,7 @@ public sealed class MauiBrowseScreenSmokeTests
         string seedProvisioningServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Storage/SeedDatabaseProvisioningService.cs");
         string seedDatabaseAssetPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Resources/Raw/darwin-lingua.seed.db");
 
+        Assert.True(File.Exists(appXamlPath), $"App XAML file not found: {appXamlPath}");
         Assert.True(File.Exists(homePagePath), $"Home page XAML file not found: {homePagePath}");
         Assert.True(File.Exists(actionBlockViewPath), $"Action block view XAML file not found: {actionBlockViewPath}");
         Assert.True(File.Exists(startupPagePath), $"Startup page XAML file not found: {startupPagePath}");
@@ -36,6 +38,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.True(File.Exists(seedProvisioningServicePath), $"Seed provisioning service file not found: {seedProvisioningServicePath}");
         Assert.True(File.Exists(seedDatabaseAssetPath), $"Seed database asset file not found: {seedDatabaseAssetPath}");
 
+        string appXamlSource = File.ReadAllText(appXamlPath);
         string sourceCode = File.ReadAllText(homePagePath);
         string actionBlockViewSource = File.ReadAllText(actionBlockViewPath);
         string startupSource = File.ReadAllText(startupPagePath);
@@ -62,6 +65,9 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("FavoritesActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("SfCardView", actionBlockViewSource, StringComparison.Ordinal);
         Assert.Contains("SfButton", actionBlockViewSource, StringComparison.Ordinal);
+        Assert.Contains("SyncfusionCardShellStyle", appXamlSource, StringComparison.Ordinal);
+        Assert.Contains("SyncfusionPrimaryButtonStyle", appXamlSource, StringComparison.Ordinal);
+        Assert.Contains("SyncfusionSectionExpanderStyle", appXamlSource, StringComparison.Ordinal);
         Assert.Contains("ActivityIndicator", startupSource, StringComparison.Ordinal);
         Assert.Contains("RetryButton", startupSource, StringComparison.Ordinal);
         Assert.Contains("RunInitializationAsync", startupCodeBehindSource, StringComparison.Ordinal);

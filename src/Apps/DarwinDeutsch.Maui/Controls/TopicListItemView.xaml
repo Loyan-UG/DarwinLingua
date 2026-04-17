@@ -4,9 +4,7 @@
              xmlns:cards="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.TopicListItemView">
     <cards:SfCardView Margin="0,0,0,10"
-                      BorderColor="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                      BorderWidth="1"
-                      CornerRadius="4">
+                      Style="{StaticResource SyncfusionCardShellStyle}">
         <Grid Padding="16"
               ColumnDefinitions="Auto,*"
               ColumnSpacing="14"

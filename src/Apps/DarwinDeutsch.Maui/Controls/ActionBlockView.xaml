@@ -4,9 +4,7 @@
              xmlns:toolkitButton="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              xmlns:toolkitCard="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.ActionBlockView">
-    <toolkitCard:SfCardView CornerRadius="4"
-                            BorderColor="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-                            BorderWidth="1">
+    <toolkitCard:SfCardView Style="{StaticResource SyncfusionCardShellStyle}">
         <VerticalStackLayout Spacing="14"
                              Padding="18"
                              BackgroundColor="{AppThemeBinding Light=#FFFDF9, Dark=#10161E}">
@@ -14,8 +12,7 @@
                    Style="{DynamicResource Title2}"
                    TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
             <toolkitButton:SfButton x:Name="ActionButton"
-                                    CornerRadius="4"
-                                    HeightRequest="44"
+                                    Style="{StaticResource SyncfusionPrimaryButtonStyle}"
                                     Clicked="OnActionButtonClicked" />
         </VerticalStackLayout>
     </toolkitCard:SfCardView>
