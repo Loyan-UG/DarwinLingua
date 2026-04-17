@@ -64,17 +64,8 @@
                        Grid.Row="0"
                        Style="{DynamicResource Title2}" />
 
-                <HorizontalStackLayout x:Name="LoadingStateLayout"
-                                       Grid.Row="1"
-                                       Spacing="8"
-                                       IsVisible="False">
-                    <ActivityIndicator x:Name="LoadingActivityIndicator"
-                                       WidthRequest="18"
-                                       HeightRequest="18"
-                                       IsRunning="False" />
-                    <Label x:Name="LoadingStateLabel"
-                           Style="{DynamicResource Body}" />
-                </HorizontalStackLayout>
+                <controls:LoadingStateView x:Name="LoadingStateView"
+                                           Grid.Row="1" />
 
                 <Label x:Name="ErrorStateLabel"
                        Grid.Row="2"

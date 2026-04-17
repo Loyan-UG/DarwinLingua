@@ -64,7 +64,7 @@ public partial class FavoritesPage : ContentPage
         HeadlineLabel.Text = AppStrings.FavoritesPageHeadline;
         DescriptionLabel.Text = AppStrings.FavoritesPageDescription;
         EmptyStateLabel.Text = AppStrings.FavoritesPageEmpty;
-        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        LoadingStateView.Message = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.CommonStateError;
 
         ShowLoadingState();
@@ -104,7 +104,7 @@ public partial class FavoritesPage : ContentPage
         }
         finally
         {
-            LoadingStateLabel.IsVisible = false;
+            LoadingStateView.IsLoading = false;
         }
     }
 
@@ -131,7 +131,7 @@ public partial class FavoritesPage : ContentPage
     /// </summary>
     private void ShowLoadingState()
     {
-        LoadingStateLabel.IsVisible = true;
+        LoadingStateView.IsLoading = true;
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
         FavoritesCollectionView.IsVisible = false;

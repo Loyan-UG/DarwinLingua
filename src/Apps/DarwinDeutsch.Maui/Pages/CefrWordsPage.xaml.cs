@@ -98,7 +98,7 @@ public partial class CefrWordsPage : ContentPage
         CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
         CefrQuickFilterView.SelectedLevel = CefrLevel;
         EmptyStateLabel.Text = AppStrings.CefrWordsPageEmpty;
-        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        LoadingStateView.Message = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.CefrWordsPageLoadError;
 
         if (string.IsNullOrWhiteSpace(CefrLevel))
@@ -273,7 +273,7 @@ public partial class CefrWordsPage : ContentPage
         }
         catch
         {
-            LoadingStateLabel.Text = AppStrings.CefrWordsPageLoadError;
+            LoadingStateView.Message = AppStrings.CefrWordsPageLoadError;
             SetLoadingState(true);
         }
         finally
@@ -344,8 +344,7 @@ public partial class CefrWordsPage : ContentPage
 
     private void SetLoadingState(bool isLoading)
     {
-        LoadingStateLayout.IsVisible = isLoading;
-        LoadingActivityIndicator.IsRunning = isLoading;
+        LoadingStateView.IsLoading = isLoading;
     }
 
     /// <summary>

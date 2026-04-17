@@ -136,7 +136,7 @@ public partial class SearchWordsPage : ContentPage
         ResultsSectionLabel.Text = AppStrings.SearchWordsPageResultsLabel;
         SearchBarControl.Placeholder = AppStrings.SearchWordsPagePlaceholder;
         EmptyStateLabel.Text = AppStrings.SearchWordsPageEmpty;
-        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        LoadingStateView.Message = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.SearchWordsPageLoadError;
     }
 
@@ -324,8 +324,7 @@ public partial class SearchWordsPage : ContentPage
 
     private void SetLoadingState(bool isLoading)
     {
-        LoadingStateLayout.IsVisible = isLoading;
-        LoadingActivityIndicator.IsRunning = isLoading;
+        LoadingStateView.IsLoading = isLoading;
     }
 
     /// <summary>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="DarwinDeutsch.Maui.Controls.LoadingStateView">
+    <HorizontalStackLayout x:Name="LoadingLayout"
+                           Spacing="8"
+                           IsVisible="False">
+        <shimmer:SfShimmer x:Name="LoadingShimmer"
+                           WidthRequest="18"
+                           HeightRequest="18"
+                           IsActive="False"
+                           Fill="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}"
+                           WaveColor="{AppThemeBinding Light=#FFFCF8, Dark=#355062}">
+            <shimmer:SfShimmer.CustomView>
+                <Border StrokeThickness="0"
+                        StrokeShape="RoundRectangle 9"
+                        BackgroundColor="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}" />
+            </shimmer:SfShimmer.CustomView>
+        </shimmer:SfShimmer>
+
+        <Label x:Name="MessageLabel"
+               Style="{DynamicResource Body}" />
+    </HorizontalStackLayout>
+</ContentView>

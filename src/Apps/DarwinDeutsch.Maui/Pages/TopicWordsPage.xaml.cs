@@ -99,7 +99,7 @@ public partial class TopicWordsPage : ContentPage
         HeadlineLabel.Text = string.Format(AppStrings.TopicWordsPageHeadlineFormat, resolvedTopicTitle);
         DescriptionLabel.Text = AppStrings.TopicWordsPageDescription;
         EmptyStateLabel.Text = AppStrings.TopicWordsPageEmpty;
-        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        LoadingStateView.Message = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.TopicWordsPageLoadError;
 
         if (string.IsNullOrWhiteSpace(TopicKey))
@@ -238,7 +238,7 @@ public partial class TopicWordsPage : ContentPage
         }
         catch
         {
-            LoadingStateLabel.Text = AppStrings.TopicWordsPageLoadError;
+            LoadingStateView.Message = AppStrings.TopicWordsPageLoadError;
             SetLoadingState(true);
         }
         finally
@@ -303,8 +303,7 @@ public partial class TopicWordsPage : ContentPage
 
     private void SetLoadingState(bool isLoading)
     {
-        LoadingStateLayout.IsVisible = isLoading;
-        LoadingActivityIndicator.IsRunning = isLoading;
+        LoadingStateView.IsLoading = isLoading;
     }
 
     /// <summary>

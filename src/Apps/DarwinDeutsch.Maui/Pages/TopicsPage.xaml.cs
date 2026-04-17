@@ -117,7 +117,7 @@ public partial class TopicsPage : ContentPage
         FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
         FavoritesActionBlockView.ButtonText = AppStrings.HomeFavoritesButton;
         EmptyStateLabel.Text = AppStrings.TopicsPageEmpty;
-        LoadingStateLabel.Text = AppStrings.CommonStateLoading;
+        LoadingStateView.Message = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.CommonStateError;
     }
 
@@ -189,8 +189,7 @@ public partial class TopicsPage : ContentPage
 
     private void SetLoadingState(bool isLoading)
     {
-        LoadingStateLayout.IsVisible = isLoading;
-        LoadingActivityIndicator.IsRunning = isLoading;
+        LoadingStateView.IsLoading = isLoading;
     }
 
     private void ResetTopicsRefreshRequest()

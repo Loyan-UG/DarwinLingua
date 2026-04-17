@@ -16,17 +16,8 @@
                Style="{DynamicResource Body}"
                LineBreakMode="WordWrap" />
 
-        <HorizontalStackLayout x:Name="LoadingStateLayout"
-                               Grid.Row="2"
-                               Spacing="8"
-                               IsVisible="False">
-            <ActivityIndicator x:Name="LoadingActivityIndicator"
-                               WidthRequest="18"
-                               HeightRequest="18"
-                               IsRunning="False" />
-            <Label x:Name="LoadingStateLabel"
-                   Style="{DynamicResource Body}" />
-        </HorizontalStackLayout>
+        <controls:LoadingStateView x:Name="LoadingStateView"
+                                   Grid.Row="2" />
 
         <Label x:Name="EmptyStateLabel"
                Grid.Row="3"
