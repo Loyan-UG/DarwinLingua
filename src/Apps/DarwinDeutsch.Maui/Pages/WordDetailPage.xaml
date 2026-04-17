@@ -8,9 +8,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="18">
             <Border Padding="22"
-                    StrokeThickness="0"
-                    StrokeShape="RoundRectangle 4"
-                    BackgroundColor="{AppThemeBinding Light=#E8F3F1, Dark=#16212B}">
+                    Style="{StaticResource AppHeroPanelBorderStyle}">
                 <VerticalStackLayout Spacing="14">
                     <Label x:Name="HeadlineLabel"
                            Style="{DynamicResource Headline}"
@@ -52,7 +50,7 @@
                    IsVisible="False" />
 
             <Border Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                    Style="{StaticResource AppSectionCardBorderStyle}">
                 <controls:DetailSectionView x:Name="LearningStateSectionView" />
             </Border>
 
@@ -70,7 +68,7 @@
 
             <Border x:Name="UsageLabelsBorder"
                     Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                    Style="{StaticResource AppSectionCardBorderStyle}"
                     IsVisible="False">
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="UsageLabelsHeadingLabel"
@@ -98,7 +96,7 @@
 
             <Border x:Name="ContextLabelsBorder"
                     Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}"
+                    Style="{StaticResource AppSectionCardBorderStyle}"
                     IsVisible="False">
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="ContextLabelsHeadingLabel"
@@ -136,8 +134,7 @@
                 </expander:SfExpander.Header>
                 <expander:SfExpander.Content>
                     <Border Padding="20"
-                            StrokeShape="RoundRectangle 4"
-                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                            Style="{StaticResource AppSectionCardBorderStyle}">
                         <VerticalStackLayout x:Name="GrammarNotesStackLayout"
                                              Spacing="10" />
                     </Border>
@@ -156,8 +153,7 @@
                 </expander:SfExpander.Header>
                 <expander:SfExpander.Content>
                     <Border Padding="20"
-                            StrokeShape="RoundRectangle 4"
-                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                            Style="{StaticResource AppSectionCardBorderStyle}">
                         <VerticalStackLayout x:Name="CollocationsStackLayout"
                                              Spacing="10" />
                     </Border>
@@ -176,8 +172,7 @@
                 </expander:SfExpander.Header>
                 <expander:SfExpander.Content>
                     <Border Padding="20"
-                            StrokeShape="RoundRectangle 4"
-                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                            Style="{StaticResource AppSectionCardBorderStyle}">
                         <VerticalStackLayout x:Name="WordFamiliesStackLayout"
                                              Spacing="10" />
                     </Border>
@@ -196,8 +191,7 @@
                 </expander:SfExpander.Header>
                 <expander:SfExpander.Content>
                     <Border Padding="20"
-                            StrokeShape="RoundRectangle 4"
-                            BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                            Style="{StaticResource AppSectionCardBorderStyle}">
                         <VerticalStackLayout Spacing="14">
                             <VerticalStackLayout x:Name="SynonymsSectionStackLayout"
                                                  Spacing="10"
@@ -221,7 +215,7 @@
             </expander:SfExpander>
 
             <Border Padding="20"
-                    BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                    Style="{StaticResource AppSectionCardBorderStyle}">
                 <controls:DetailSectionView x:Name="TopicsSectionView" />
             </Border>
 

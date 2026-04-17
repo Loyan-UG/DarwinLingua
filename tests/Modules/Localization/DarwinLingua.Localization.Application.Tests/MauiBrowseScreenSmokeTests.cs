@@ -252,6 +252,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("Task.WhenAll", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OutcomeButtonsGrid", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("SummaryBorder", practiceSessionXamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppHeroPanelBorderStyle", practiceSessionXamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppSectionCardBorderStyle", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("SessionProgressBar", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("SfLinearProgressBar", practiceSessionXamlSource, StringComparison.Ordinal);
         Assert.Contains("IPracticeFlashcardAnswerService", practiceSessionCodeBehindSource, StringComparison.Ordinal);
@@ -280,6 +282,8 @@ public sealed class MauiBrowseScreenSmokeTests
         string codeBehindSource = File.ReadAllText(wordDetailCodeBehindPath);
 
         Assert.Contains("UsageLabelsBorder", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppHeroPanelBorderStyle", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("AppSectionCardBorderStyle", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CefrNavigationTopGrid", xamlSource, StringComparison.Ordinal);
         Assert.Contains("PreviousWordButtonTop", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ShowWordListButtonTop", xamlSource, StringComparison.Ordinal);
