@@ -2,13 +2,14 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkitButton="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:toolkitCard="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.ActionBlockView">
-    <Border Padding="18"
-            Stroke="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
-            StrokeShape="RoundRectangle 4"
-            StrokeThickness="1"
-            BackgroundColor="{AppThemeBinding Light=#FFFDF9, Dark=#10161E}">
-        <VerticalStackLayout Spacing="14">
+    <toolkitCard:SfCardView CornerRadius="4"
+                            BorderColor="{AppThemeBinding Light=#D8E0E5, Dark=#2B3945}"
+                            BorderWidth="1">
+        <VerticalStackLayout Spacing="14"
+                             Padding="18"
+                             BackgroundColor="{AppThemeBinding Light=#FFFDF9, Dark=#10161E}">
             <Label x:Name="CaptionLabel"
                    Style="{DynamicResource Title2}"
                    TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
@@ -17,5 +18,5 @@
                                     HeightRequest="44"
                                     Clicked="OnActionButtonClicked" />
         </VerticalStackLayout>
-    </Border>
+    </toolkitCard:SfCardView>
 </ContentView>
