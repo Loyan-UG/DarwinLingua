@@ -21,7 +21,8 @@
                                       LevelSelected="OnCefrLevelSelected" />
 
         <controls:LoadingStateView x:Name="LoadingStateView"
-                                   Grid.Row="3" />
+                                   Grid.Row="3"
+                                   LoadingMode="ListSkeleton" />
 
         <Label x:Name="EmptyStateLabel"
                Grid.Row="4"

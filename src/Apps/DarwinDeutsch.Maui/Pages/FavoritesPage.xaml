@@ -26,7 +26,8 @@
             <Grid RowDefinitions="Auto,Auto,Auto,*"
                   RowSpacing="12">
                 <controls:LoadingStateView x:Name="LoadingStateView"
-                                           Grid.Row="0" />
+                                           Grid.Row="0"
+                                           LoadingMode="ListSkeleton" />
 
                 <Label x:Name="ErrorStateLabel"
                        Grid.Row="1"

@@ -6,6 +6,16 @@ namespace DarwinDeutsch.Maui.Controls;
 public partial class LoadingStateView : ContentView
 {
     /// <summary>
+    /// Backing bindable property for <see cref="LoadingMode"/>.
+    /// </summary>
+    public static readonly BindableProperty LoadingModeProperty = BindableProperty.Create(
+        nameof(LoadingMode),
+        typeof(LoadingStateViewMode),
+        typeof(LoadingStateView),
+        LoadingStateViewMode.Inline,
+        propertyChanged: static (bindable, _, _) => ((LoadingStateView)bindable).ApplyState());
+
+    /// <summary>
     /// Backing bindable property for <see cref="Message"/>.
     /// </summary>
     public static readonly BindableProperty MessageProperty = BindableProperty.Create(
@@ -29,9 +39,8 @@ public partial class LoadingStateView : ContentView
         propertyChanged: static (bindable, _, newValue) =>
         {
             LoadingStateView view = (LoadingStateView)bindable;
-            bool isLoading = (bool)newValue;
-            view.LoadingLayout.IsVisible = isLoading;
-            view.LoadingShimmer.IsActive = isLoading;
+            _ = (bool)newValue;
+            view.ApplyState();
         });
 
     /// <summary>
@@ -52,6 +61,15 @@ public partial class LoadingStateView : ContentView
     }
 
     /// <summary>
+    /// Gets or sets the visual loading mode to render.
+    /// </summary>
+    public LoadingStateViewMode LoadingMode
+    {
+        get => (LoadingStateViewMode)GetValue(LoadingModeProperty);
+        set => SetValue(LoadingModeProperty, value);
+    }
+
+    /// <summary>
     /// Gets or sets a value indicating whether the loading state is active.
     /// </summary>
     public bool IsLoading
@@ -59,4 +77,34 @@ public partial class LoadingStateView : ContentView
         get => (bool)GetValue(IsLoadingProperty);
         set => SetValue(IsLoadingProperty, value);
     }
+
+    private void ApplyState()
+    {
+        bool isLoading = IsLoading;
+        RootLayout.IsVisible = isLoading;
+
+        bool isInline = LoadingMode == LoadingStateViewMode.Inline;
+        InlineLoadingLayout.IsVisible = isLoading && isInline;
+        InlineLoadingShimmer.IsActive = isLoading && isInline;
+
+        bool isListSkeleton = LoadingMode == LoadingStateViewMode.ListSkeleton;
+        ListSkeletonLayout.IsVisible = isLoading && isListSkeleton;
+        ListSkeletonShimmer.IsActive = isLoading && isListSkeleton;
+    }
+}
+
+/// <summary>
+/// Defines the visual mode used by <see cref="LoadingStateView"/>.
+/// </summary>
+public enum LoadingStateViewMode
+{
+    /// <summary>
+    /// Uses the compact inline loading indicator with a short message.
+    /// </summary>
+    Inline,
+
+    /// <summary>
+    /// Uses a repeated list skeleton suited for browse and search pages.
+    /// </summary>
+    ListSkeleton,
 }

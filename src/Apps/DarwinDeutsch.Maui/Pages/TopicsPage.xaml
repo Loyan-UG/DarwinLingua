@@ -63,7 +63,8 @@
                        Style="{DynamicResource Title2}" />
 
                 <controls:LoadingStateView x:Name="LoadingStateView"
-                                           Grid.Row="1" />
+                                           Grid.Row="1"
+                                           LoadingMode="ListSkeleton" />
 
                 <Label x:Name="ErrorStateLabel"
                        Grid.Row="2"

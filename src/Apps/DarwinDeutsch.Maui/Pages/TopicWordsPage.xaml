@@ -17,7 +17,8 @@
                LineBreakMode="WordWrap" />
 
         <controls:LoadingStateView x:Name="LoadingStateView"
-                                   Grid.Row="2" />
+                                   Grid.Row="2"
+                                   LoadingMode="ListSkeleton" />
 
         <Label x:Name="EmptyStateLabel"
                Grid.Row="3"

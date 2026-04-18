@@ -3,24 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.LoadingStateView">
-    <HorizontalStackLayout x:Name="LoadingLayout"
-                           Spacing="8"
-                           IsVisible="False">
-        <shimmer:SfShimmer x:Name="LoadingShimmer"
-                           WidthRequest="18"
-                           HeightRequest="18"
-                           IsActive="False"
-                           Style="{StaticResource SyncfusionInlineShimmerStyle}">
-            <shimmer:SfShimmer.CustomView>
-                <Border Style="{StaticResource AppStatusBadgeBorderStyle}"
-                        Padding="0"
-                        StrokeShape="RoundRectangle 9"
-                        WidthRequest="18"
-                        HeightRequest="18" />
-            </shimmer:SfShimmer.CustomView>
-        </shimmer:SfShimmer>
+    <Grid x:Name="RootLayout"
+          IsVisible="False">
+        <HorizontalStackLayout x:Name="InlineLoadingLayout"
+                               Spacing="8"
+                               IsVisible="False">
+            <shimmer:SfShimmer x:Name="InlineLoadingShimmer"
+                               WidthRequest="18"
+                               HeightRequest="18"
+                               IsActive="False"
+                               Style="{StaticResource SyncfusionInlineShimmerStyle}">
+                <shimmer:SfShimmer.CustomView>
+                    <Border Style="{StaticResource AppStatusBadgeBorderStyle}"
+                            Padding="0"
+                            StrokeShape="RoundRectangle 9"
+                            WidthRequest="18"
+                            HeightRequest="18" />
+                </shimmer:SfShimmer.CustomView>
+            </shimmer:SfShimmer>
 
-        <Label x:Name="MessageLabel"
-               Style="{DynamicResource Body}" />
-    </HorizontalStackLayout>
+            <Label x:Name="MessageLabel"
+                   Style="{DynamicResource Body}" />
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout x:Name="ListSkeletonLayout"
+                             Spacing="10"
+                             IsVisible="False">
+            <shimmer:SfShimmer x:Name="ListSkeletonShimmer"
+                               HeightRequest="212"
+                               IsActive="False"
+                               RepeatCount="3"
+                               Type="Article"
+                               Style="{StaticResource SyncfusionInlineShimmerStyle}" />
+        </VerticalStackLayout>
+    </Grid>
 </ContentView>
