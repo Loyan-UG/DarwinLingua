@@ -6,6 +6,7 @@ using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Onboarding;
 using DarwinDeutsch.Maui.Services.Storage;
 using DarwinDeutsch.Maui.Services.Startup;
+using DarwinDeutsch.Maui.Services.UI;
 using DarwinDeutsch.Maui.Services.Updates;
 #if ANDROID
 using DarwinDeutsch.Maui.Platforms.Android.Updates;
@@ -73,6 +74,7 @@ public static class MauiProgram
             .AddSingleton<IAppLocalizationService, AppLocalizationService>()
             .AddSingleton<IActiveLearningProfileCacheService, ActiveLearningProfileCacheService>()
             .AddSingleton<IAppOnboardingService, AppOnboardingService>()
+            .AddSingleton<IPopupDialogService, SyncfusionPopupDialogService>()
             .AddSingleton<ISeedDatabaseProvisioningService, SeedDatabaseProvisioningService>()
             .AddSingleton<IAppStartupInitializationService, AppStartupInitializationService>()
             .AddSingleton<IDeferredStartupMaintenanceService, DeferredStartupMaintenanceService>()

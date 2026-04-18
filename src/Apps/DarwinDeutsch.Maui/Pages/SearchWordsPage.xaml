@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.SearchWordsPage">
     <Grid Padding="24"
           RowDefinitions="Auto,Auto,*"
@@ -30,11 +31,14 @@
             <VerticalStackLayout Spacing="12">
                 <Label x:Name="SearchSectionLabel"
                        Style="{DynamicResource Title2}" />
-                <SearchBar x:Name="SearchBarControl"
-                           TextChanged="OnSearchBarTextChanged"
-                           SearchButtonPressed="OnSearchButtonPressed" />
-                <Label x:Name="SearchHintLabel"
-                       Style="{DynamicResource Body}" />
+                <inputLayout:SfTextInputLayout x:Name="SearchInputLayout"
+                                               Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                    <Entry x:Name="SearchEntry"
+                           ClearButtonVisibility="WhileEditing"
+                           ReturnType="Search"
+                           TextChanged="OnSearchEntryTextChanged"
+                           Completed="OnSearchEntryCompleted" />
+                </inputLayout:SfTextInputLayout>
             </VerticalStackLayout>
         </Border>
 

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.WelcomePage">
     <ScrollView>
         <VerticalStackLayout Padding="24"
@@ -9,13 +10,12 @@
             <Border Padding="24"
                     Style="{StaticResource AppHeroPanelBorderStyle}">
                 <VerticalStackLayout Spacing="16">
-                    <VerticalStackLayout Spacing="8">
-                        <Label x:Name="LanguageQuestionLabel"
-                               Style="{DynamicResource Caption}" />
+                    <inputLayout:SfTextInputLayout x:Name="LanguageInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
                         <Picker x:Name="LanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />
-                    </VerticalStackLayout>
+                    </inputLayout:SfTextInputLayout>
 
                     <VerticalStackLayout Spacing="10">
                         <Label x:Name="HeadlineLabel"

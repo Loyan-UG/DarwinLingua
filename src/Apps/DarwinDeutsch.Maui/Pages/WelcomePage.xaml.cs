@@ -93,7 +93,7 @@ public partial class WelcomePage : ContentPage
     private void ApplyStaticLocalizedText()
     {
         Title = AppStrings.AppTitle;
-        LanguageQuestionLabel.Text = AppStrings.WelcomeLanguageQuestion;
+        LanguageInputLayout.Hint = AppStrings.WelcomeLanguageQuestion;
         HeadlineLabel.Text = AppStrings.WelcomeHeadline;
         DescriptionLabel.Text = AppStrings.WelcomeDescription;
         CurrentFeaturesLabel.Text = AppStrings.WelcomeCurrentFeaturesTitle;

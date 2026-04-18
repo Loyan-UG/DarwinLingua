@@ -7,6 +7,7 @@
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              xmlns:progress="clr-namespace:Syncfusion.Maui.Toolkit.ProgressBar;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
              xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.App">
     <Application.Resources>
@@ -105,6 +106,53 @@
                 <Setter Property="CornerRadius" Value="4" />
                 <Setter Property="HeightRequest" Value="44" />
             </Style>
+            <Style x:Key="SyncfusionIconActionButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="WidthRequest" Value="48" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="BackgroundColor" Value="#155E75" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="SyncfusionFavoriteToggleButtonStyle"
+                   BasedOn="{StaticResource SyncfusionIconActionButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Style.Triggers>
+                    <Trigger TargetType="buttons:SfButton" Property="IsChecked" Value="True">
+                        <Setter Property="BackgroundColor" Value="#D6EEF6" />
+                        <Setter Property="TextColor" Value="#12495B" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="SyncfusionKnownToggleButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="BackgroundColor" Value="#155E63" />
+                <Setter Property="TextColor" Value="White" />
+                <Style.Triggers>
+                    <Trigger TargetType="buttons:SfButton" Property="IsChecked" Value="True">
+                        <Setter Property="BackgroundColor" Value="#DDF2EB" />
+                        <Setter Property="TextColor" Value="#12495B" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="SyncfusionDifficultToggleButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="BackgroundColor" Value="#A9581A" />
+                <Setter Property="TextColor" Value="White" />
+                <Style.Triggers>
+                    <Trigger TargetType="buttons:SfButton" Property="IsChecked" Value="True">
+                        <Setter Property="BackgroundColor" Value="#F8E7D7" />
+                        <Setter Property="TextColor" Value="#12495B" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
             <Style x:Key="SyncfusionChipGroupSelectionStyle" TargetType="chips:SfChipGroup">
                 <Setter Property="SelectedChipBackground" Value="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}" />
                 <Setter Property="SelectedChipTextColor" Value="{AppThemeBinding Light=White, Dark=#10212B}" />
@@ -127,6 +175,17 @@
             <Style x:Key="SyncfusionInlineShimmerStyle" TargetType="shimmer:SfShimmer">
                 <Setter Property="Fill" Value="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}" />
                 <Setter Property="WaveColor" Value="{AppThemeBinding Light=#FFFCF8, Dark=#355062}" />
+            </Style>
+            <Style x:Key="SyncfusionTextInputLayoutStyle" TargetType="inputLayout:SfTextInputLayout">
+                <Setter Property="ContainerType" Value="Outlined" />
+                <Setter Property="EnableFloating" Value="True" />
+                <Setter Property="EnableHintAnimation" Value="True" />
+                <Setter Property="ReserveSpaceForAssistiveLabels" Value="True" />
+                <Setter Property="OutlineCornerRadius" Value="12" />
+                <Setter Property="FocusedStrokeThickness" Value="2" />
+                <Setter Property="UnfocusedStrokeThickness" Value="1" />
+                <Setter Property="Stroke" Value="{AppThemeBinding Light=#C8D5DB, Dark=#3A4B57}" />
+                <Setter Property="ContainerBackground" Value="{AppThemeBinding Light=#FFFCF8, Dark=#16212B}" />
             </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />

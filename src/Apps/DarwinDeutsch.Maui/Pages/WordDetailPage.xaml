@@ -22,13 +22,12 @@
 
                     <HorizontalStackLayout Spacing="10">
                         <buttons:SfButton x:Name="SpeakWordButton"
-                                          Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                          Style="{StaticResource SyncfusionIconActionButtonStyle}"
                                           Clicked="OnSpeakWordButtonClicked"
-                                          HeightRequest="40"
-                                          WidthRequest="48"
                                           IsVisible="False" />
                         <buttons:SfButton x:Name="FavoriteButton"
-                                          Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                          Style="{StaticResource SyncfusionFavoriteToggleButtonStyle}"
+                                          IsCheckable="True"
                                           Clicked="OnFavoriteButtonClicked" />
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
@@ -63,10 +62,12 @@
             <Grid ColumnDefinitions="*,*"
                   ColumnSpacing="12">
                 <buttons:SfButton x:Name="KnownButton"
-                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Style="{StaticResource SyncfusionKnownToggleButtonStyle}"
+                                  IsCheckable="True"
                                   Clicked="OnKnownButtonClicked" />
                 <buttons:SfButton x:Name="DifficultButton"
-                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Style="{StaticResource SyncfusionDifficultToggleButtonStyle}"
+                                  IsCheckable="True"
                                   Grid.Column="1"
                                   Clicked="OnDifficultButtonClicked" />
             </Grid>

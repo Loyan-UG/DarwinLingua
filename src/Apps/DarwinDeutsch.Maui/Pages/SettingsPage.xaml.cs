@@ -3,6 +3,7 @@ using DarwinDeutsch.Maui.Controls;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Storage;
+using DarwinDeutsch.Maui.Services.UI;
 using DarwinDeutsch.Maui.Services.Updates;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Localization.Application.Abstractions;
@@ -23,6 +24,7 @@ public partial class SettingsPage : ContentPage
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly ILanguageQueryService _languageQueryService;
+    private readonly IPopupDialogService _popupDialogService;
     private readonly Dictionary<string, RemoteContentUpdateStatus> _cefrUpdateStatuses = new(StringComparer.OrdinalIgnoreCase);
     private CancellationTokenSource? _pageStateCancellationTokenSource;
     private bool _isUpdatingSelection;
@@ -45,7 +47,8 @@ public partial class SettingsPage : ContentPage
         IRemoteContentUpdateService remoteContentUpdateService,
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
-        ILanguageQueryService languageQueryService)
+        ILanguageQueryService languageQueryService,
+        IPopupDialogService popupDialogService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(browseAccelerationService);
@@ -53,6 +56,7 @@ public partial class SettingsPage : ContentPage
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(languageQueryService);
+        ArgumentNullException.ThrowIfNull(popupDialogService);
 
         InitializeComponent();
 
@@ -62,6 +66,7 @@ public partial class SettingsPage : ContentPage
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _languageQueryService = languageQueryService;
+        _popupDialogService = popupDialogService;
         _appLocalizationService.CultureChanged += OnCultureChanged;
         CefrLevelChipGroup.ItemsSource = CefrLevels.Select(static level => new CefrLevelChipItem(level)).ToArray();
         CefrLevelChipGroup.SelectedItem = ((IEnumerable<CefrLevelChipItem>)CefrLevelChipGroup.ItemsSource)
@@ -147,9 +152,9 @@ public partial class SettingsPage : ContentPage
         AboutSectionLabel.Text = AppStrings.SettingsAppInfoSectionLabel;
         AboutSummaryLabel.Text = AppStrings.SettingsAboutSummary;
         OpenAboutButton.Text = AppStrings.SettingsAboutButton;
-        LanguagePickerCaptionLabel.Text = AppStrings.SettingsUiLanguageLabel;
-        PrimaryMeaningLanguageCaptionLabel.Text = AppStrings.SettingsPrimaryMeaningLanguageLabel;
-        SecondaryMeaningLanguageCaptionLabel.Text = AppStrings.SettingsSecondaryMeaningLanguageLabel;
+        LanguageInputLayout.Hint = AppStrings.SettingsUiLanguageLabel;
+        PrimaryMeaningLanguageInputLayout.Hint = AppStrings.SettingsPrimaryMeaningLanguageLabel;
+        SecondaryMeaningLanguageInputLayout.Hint = AppStrings.SettingsSecondaryMeaningLanguageLabel;
         ContentUpdatesSectionLabel.Text = AppStrings.SettingsContentUpdatesSectionLabel;
         RemoteContentUpdatesSectionLabel.Text = AppStrings.SettingsRemoteContentUpdatesSectionLabel;
         CatalogAreaUpdatesSectionLabel.Text = AppStrings.SettingsRemoteCatalogAreaSectionLabel;
@@ -374,7 +379,7 @@ public partial class SettingsPage : ContentPage
 
             if (!result.IsSuccess)
             {
-                await DisplayAlertAsync(
+                await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsContentUpdatesFailedTitle,
                         string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, result.ErrorMessage ?? AppStrings.SettingsContentUpdatesUnavailableStatus),
                         AppStrings.SettingsContentUpdatesDismissButton)
@@ -384,7 +389,7 @@ public partial class SettingsPage : ContentPage
             {
                 _browseAccelerationService.ResetCaches();
 
-                await DisplayAlertAsync(
+                await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsContentUpdatesCompletedTitle,
                         string.Format(AppStrings.SettingsContentUpdatesCompletedMessageFormat, result.ImportedPackages, result.ImportedWords),
                         AppStrings.SettingsContentUpdatesDismissButton)
@@ -392,7 +397,7 @@ public partial class SettingsPage : ContentPage
             }
             else
             {
-                await DisplayAlertAsync(
+                await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsContentUpdatesUpToDateTitle,
                         AppStrings.SettingsContentUpdatesUpToDateMessage,
                         AppStrings.SettingsContentUpdatesDismissButton)
@@ -405,7 +410,7 @@ public partial class SettingsPage : ContentPage
         }
         catch (Exception exception)
         {
-            await DisplayAlertAsync(
+            await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, exception.Message),
                     AppStrings.SettingsContentUpdatesDismissButton)
@@ -425,7 +430,7 @@ public partial class SettingsPage : ContentPage
         }
         catch (Exception exception)
         {
-            await DisplayAlertAsync(
+            await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, exception.Message),
                     AppStrings.SettingsContentUpdatesDismissButton)
@@ -493,7 +498,7 @@ public partial class SettingsPage : ContentPage
 
             if (!result.IsSuccess)
             {
-                await DisplayAlertAsync(
+                await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsRemoteContentUpdatesFailedTitle,
                         string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, result.ErrorMessage ?? AppStrings.SettingsRemoteContentUpdatesUnavailableStatus),
                         AppStrings.SettingsContentUpdatesDismissButton)
@@ -503,7 +508,7 @@ public partial class SettingsPage : ContentPage
             {
                 _browseAccelerationService.ResetCaches();
 
-                await DisplayAlertAsync(
+                await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsRemoteContentUpdatesCompletedTitle,
                         string.Format(AppStrings.SettingsRemoteContentScopeCompletedMessageFormat, scopeDisplayName, result.AppliedVersion, result.ImportedWords),
                         AppStrings.SettingsContentUpdatesDismissButton)
@@ -511,7 +516,7 @@ public partial class SettingsPage : ContentPage
             }
             else
             {
-                await DisplayAlertAsync(
+                await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsRemoteContentUpdatesUpToDateTitle,
                         string.Format(AppStrings.SettingsRemoteContentScopeUpToDateMessageFormat, scopeDisplayName),
                         AppStrings.SettingsContentUpdatesDismissButton)
@@ -524,7 +529,7 @@ public partial class SettingsPage : ContentPage
         }
         catch (Exception exception)
         {
-            await DisplayAlertAsync(
+            await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsRemoteContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, exception.Message),
                     AppStrings.SettingsContentUpdatesDismissButton)
@@ -544,7 +549,7 @@ public partial class SettingsPage : ContentPage
         }
         catch (Exception exception)
         {
-            await DisplayAlertAsync(
+            await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsRemoteContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, exception.Message),
                     AppStrings.SettingsContentUpdatesDismissButton)

@@ -23,14 +23,6 @@ namespace DarwinDeutsch.Maui.Pages;
 public partial class WordDetailPage : ContentPage
 {
     private const int DeferredSenseBatchSize = 2;
-    private static readonly Color InactiveActionBackgroundColor = Color.FromArgb("#155E75");
-    private static readonly Color ActiveActionBackgroundColor = Color.FromArgb("#D6EEF6");
-    private static readonly Color InactiveKnownBackgroundColor = Color.FromArgb("#155E63");
-    private static readonly Color ActiveKnownBackgroundColor = Color.FromArgb("#DDF2EB");
-    private static readonly Color InactiveDifficultBackgroundColor = Color.FromArgb("#A9581A");
-    private static readonly Color ActiveDifficultBackgroundColor = Color.FromArgb("#F8E7D7");
-    private static readonly Color InactiveActionTextColor = Colors.White;
-    private static readonly Color ActiveActionTextColor = Color.FromArgb("#12495B");
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
@@ -546,13 +538,8 @@ public partial class WordDetailPage : ContentPage
         SfButton button = new()
         {
             Text = "\U0001F50A",
-            Style = ResolveAppStyle("SyncfusionPrimaryButtonStyle"),
+            Style = ResolveAppStyle("SyncfusionIconActionButtonStyle"),
             WidthRequest = 44,
-            HeightRequest = 40,
-            FontSize = 18,
-            Padding = new Thickness(0),
-            BackgroundColor = InactiveActionBackgroundColor,
-            TextColor = InactiveActionTextColor,
         };
         SemanticProperties.SetDescription(button, AppStrings.WordDetailSpeakExampleButton);
 
@@ -847,16 +834,14 @@ public partial class WordDetailPage : ContentPage
             : AppStrings.WordDetailMarkKnownButton;
         KnownButton.IsVisible = true;
         KnownButton.IsEnabled = true;
-        KnownButton.BackgroundColor = _userWordState.IsKnown ? ActiveKnownBackgroundColor : InactiveKnownBackgroundColor;
-        KnownButton.TextColor = _userWordState.IsKnown ? ActiveActionTextColor : InactiveActionTextColor;
+        KnownButton.IsChecked = _userWordState.IsKnown;
 
         DifficultButton.Text = _userWordState.IsDifficult
             ? AppStrings.WordDetailClearDifficultButton
             : AppStrings.WordDetailMarkDifficultButton;
         DifficultButton.IsVisible = true;
         DifficultButton.IsEnabled = true;
-        DifficultButton.BackgroundColor = _userWordState.IsDifficult ? ActiveDifficultBackgroundColor : InactiveDifficultBackgroundColor;
-        DifficultButton.TextColor = _userWordState.IsDifficult ? ActiveActionTextColor : InactiveActionTextColor;
+        DifficultButton.IsChecked = _userWordState.IsDifficult;
     }
 
     /// <summary>
@@ -964,22 +949,13 @@ public partial class WordDetailPage : ContentPage
     private void ConfigureSpeakWordButton()
     {
         SpeakWordButton.Text = "\U0001F50A";
-        SpeakWordButton.FontSize = 18;
-        SpeakWordButton.Padding = new Thickness(0);
-        SpeakWordButton.BackgroundColor = InactiveActionBackgroundColor;
-        SpeakWordButton.TextColor = InactiveActionTextColor;
         SemanticProperties.SetDescription(SpeakWordButton, AppStrings.WordDetailSpeakWordButton);
     }
 
     private void ApplyFavoriteButtonState()
     {
         FavoriteButton.Text = _isFavorite ? "\u2665" : "\u2661";
-        FavoriteButton.WidthRequest = 48;
-        FavoriteButton.HeightRequest = 40;
-        FavoriteButton.FontSize = 20;
-        FavoriteButton.Padding = new Thickness(0);
-        FavoriteButton.BackgroundColor = _isFavorite ? ActiveActionBackgroundColor : InactiveActionBackgroundColor;
-        FavoriteButton.TextColor = _isFavorite ? ActiveActionTextColor : InactiveActionTextColor;
+        FavoriteButton.IsChecked = _isFavorite;
         SemanticProperties.SetDescription(
             FavoriteButton,
             _isFavorite ? AppStrings.WordDetailRemoveFavoriteButton : AppStrings.WordDetailAddFavoriteButton);

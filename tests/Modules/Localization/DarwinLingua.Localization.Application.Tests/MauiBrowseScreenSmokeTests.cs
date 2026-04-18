@@ -102,7 +102,9 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplySeedUpdateAsync", deferredStartupMaintenanceServiceSource, StringComparison.Ordinal);
         Assert.Contains("ScheduleInitialWarmup", deferredStartupMaintenanceServiceSource, StringComparison.Ordinal);
         Assert.Contains("ScheduleResumeCheck", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
-        Assert.Contains("DisplayAlert", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
+        Assert.Contains("IPopupDialogService", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
+        Assert.Contains("ShowConfirmationAsync", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
+        Assert.Contains("ShowMessageAsync", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
         Assert.Contains("ApplyFullUpdateAsync", backgroundRemoteUpdateCoordinatorSource, StringComparison.Ordinal);
         Assert.Contains("darwin-lingua.seed.db", seedProvisioningServiceSource, StringComparison.Ordinal);
     }
@@ -345,12 +347,15 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("AppSectionCardBorderStyle", xamlSource, StringComparison.Ordinal);
         Assert.Contains("StatusBadgeLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SearchSectionLabel", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("SearchHintLabel", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SearchInputLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ResultsSectionLabel", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("SearchBarControl", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SfTextInputLayout", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SearchEntry", xamlSource, StringComparison.Ordinal);
         Assert.Contains("WordsCollectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SearchWordsPageSearchHint", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SearchWordsPageResultsLabel", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SearchInputLayout.Hint", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SearchInputLayout.HelperText", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("CancelSearchRequest", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("GetCurrentProfileAsync(cancellationToken)", codeBehindSource, StringComparison.Ordinal);
     }

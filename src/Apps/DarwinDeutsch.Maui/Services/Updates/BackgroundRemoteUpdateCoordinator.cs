@@ -1,6 +1,7 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Pages;
 using DarwinDeutsch.Maui.Services.Browse;
+using DarwinDeutsch.Maui.Services.UI;
 using Microsoft.Extensions.Logging;
 
 namespace DarwinDeutsch.Maui.Services.Updates;
@@ -32,6 +33,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
 
     private readonly IRemoteContentUpdateService _remoteContentUpdateService;
     private readonly IBrowseAccelerationService _browseAccelerationService;
+    private readonly IPopupDialogService _popupDialogService;
     private readonly ILogger<BackgroundRemoteUpdateCoordinator> _logger;
     private readonly SemaphoreSlim _gate = new(1, 1);
     private readonly object _scheduleStateLock = new();
@@ -45,14 +47,17 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
     public BackgroundRemoteUpdateCoordinator(
         IRemoteContentUpdateService remoteContentUpdateService,
         IBrowseAccelerationService browseAccelerationService,
+        IPopupDialogService popupDialogService,
         ILogger<BackgroundRemoteUpdateCoordinator> logger)
     {
         ArgumentNullException.ThrowIfNull(remoteContentUpdateService);
         ArgumentNullException.ThrowIfNull(browseAccelerationService);
+        ArgumentNullException.ThrowIfNull(popupDialogService);
         ArgumentNullException.ThrowIfNull(logger);
 
         _remoteContentUpdateService = remoteContentUpdateService;
         _browseAccelerationService = browseAccelerationService;
+        _popupDialogService = popupDialogService;
         _logger = logger;
     }
 
@@ -209,7 +214,8 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
             return;
         }
 
-        bool shouldApplyNow = await MainThread.InvokeOnMainThreadAsync(() => promptPage.DisplayAlertAsync(
+        bool shouldApplyNow = await _popupDialogService
+            .ShowConfirmationAsync(
                 AppStrings.BackgroundRemoteUpdatePromptTitle,
                 string.Format(
                     AppStrings.BackgroundRemoteUpdatePromptMessageFormat,
@@ -218,7 +224,7 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                         : status.RemoteVersion,
                     status.PendingWordCount),
                 AppStrings.BackgroundRemoteUpdateApplyNowButton,
-                AppStrings.BackgroundRemoteUpdateLaterButton))
+                AppStrings.BackgroundRemoteUpdateLaterButton)
             .ConfigureAwait(false);
 
         if (!shouldApplyNow)
@@ -247,38 +253,38 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
             PersistFailedApply(status.RemotePackageId, DateTimeOffset.UtcNow);
         }
 
-        await MainThread.InvokeOnMainThreadAsync(() => ShowApplyResultAsync(promptPage, result)).ConfigureAwait(false);
+        await ShowApplyResultAsync(result).ConfigureAwait(false);
     }
 
-    private static async Task ShowApplyResultAsync(Page promptPage, RemoteContentUpdateResult result)
+    private async Task ShowApplyResultAsync(RemoteContentUpdateResult result)
     {
         if (!result.IsSuccess)
         {
-            await promptPage.DisplayAlertAsync(
+            await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsRemoteContentUpdatesFailedTitle,
                     string.Format(
                         AppStrings.SettingsRemoteContentUpdatesFailedMessageFormat,
                         result.ErrorMessage ?? AppStrings.SettingsRemoteContentUpdatesUnavailableStatus),
                     AppStrings.SettingsContentUpdatesDismissButton)
-                .ConfigureAwait(true);
+                .ConfigureAwait(false);
             return;
         }
 
         if (result.AppliedChanges)
         {
-            await promptPage.DisplayAlertAsync(
+            await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsRemoteContentUpdatesCompletedTitle,
                     string.Format(AppStrings.SettingsRemoteContentUpdatesCompletedMessageFormat, result.AppliedVersion, result.ImportedWords),
                     AppStrings.SettingsContentUpdatesDismissButton)
-                .ConfigureAwait(true);
+                .ConfigureAwait(false);
             return;
         }
 
-        await promptPage.DisplayAlertAsync(
+        await _popupDialogService.ShowMessageAsync(
                 AppStrings.SettingsRemoteContentUpdatesUpToDateTitle,
                 AppStrings.SettingsRemoteContentUpdatesUpToDateMessage,
                 AppStrings.SettingsContentUpdatesDismissButton)
-            .ConfigureAwait(true);
+            .ConfigureAwait(false);
     }
 
     private static Page? ResolvePromptPage(Window window)

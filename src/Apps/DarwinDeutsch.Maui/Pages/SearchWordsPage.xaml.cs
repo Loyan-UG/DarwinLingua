@@ -77,7 +77,7 @@ public partial class SearchWordsPage : ContentPage
     /// <summary>
     /// Starts a debounced search when the query text changes.
     /// </summary>
-    private void OnSearchBarTextChanged(object? sender, TextChangedEventArgs e)
+    private void OnSearchEntryTextChanged(object? sender, TextChangedEventArgs e)
     {
         ScheduleDebouncedSearch(e.NewTextValue);
     }
@@ -85,7 +85,7 @@ public partial class SearchWordsPage : ContentPage
     /// <summary>
     /// Executes the search when the user submits the search bar.
     /// </summary>
-    private async void OnSearchButtonPressed(object? sender, EventArgs e)
+    private async void OnSearchEntryCompleted(object? sender, EventArgs e)
     {
         CancelDebounceRequest();
 
@@ -132,9 +132,9 @@ public partial class SearchWordsPage : ContentPage
         HeadlineLabel.Text = AppStrings.SearchWordsPageHeadline;
         DescriptionLabel.Text = AppStrings.SearchWordsPageDescription;
         SearchSectionLabel.Text = AppStrings.SearchWordsPageSearchSectionLabel;
-        SearchHintLabel.Text = AppStrings.SearchWordsPageSearchHint;
+        SearchInputLayout.Hint = AppStrings.SearchWordsPagePlaceholder;
+        SearchInputLayout.HelperText = AppStrings.SearchWordsPageSearchHint;
         ResultsSectionLabel.Text = AppStrings.SearchWordsPageResultsLabel;
-        SearchBarControl.Placeholder = AppStrings.SearchWordsPagePlaceholder;
         EmptyStateLabel.Text = AppStrings.SearchWordsPageEmpty;
         LoadingStateView.Message = AppStrings.CommonStateLoading;
         ErrorStateLabel.Text = AppStrings.SearchWordsPageLoadError;
@@ -151,7 +151,7 @@ public partial class SearchWordsPage : ContentPage
 
         try
         {
-            string query = SearchBarControl.Text ?? string.Empty;
+            string query = SearchEntry.Text ?? string.Empty;
             string normalizedQuery = query.Trim();
 
             if (string.IsNullOrWhiteSpace(normalizedQuery))

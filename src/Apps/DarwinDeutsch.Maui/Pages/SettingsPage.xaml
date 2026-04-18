@@ -5,6 +5,7 @@
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.SettingsPage">
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="18">
@@ -75,29 +76,26 @@
             <Border Padding="20"
                     Style="{StaticResource AppSectionCardBorderStyle}">
                 <VerticalStackLayout Spacing="18">
-                    <VerticalStackLayout Spacing="8">
-                        <Label x:Name="LanguagePickerCaptionLabel"
-                               Style="{DynamicResource Caption}" />
+                    <inputLayout:SfTextInputLayout x:Name="LanguageInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
                         <Picker x:Name="LanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />
-                    </VerticalStackLayout>
+                    </inputLayout:SfTextInputLayout>
 
-                    <VerticalStackLayout Spacing="8">
-                        <Label x:Name="PrimaryMeaningLanguageCaptionLabel"
-                               Style="{DynamicResource Caption}" />
+                    <inputLayout:SfTextInputLayout x:Name="PrimaryMeaningLanguageInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
                         <Picker x:Name="PrimaryMeaningLanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnPrimaryMeaningLanguagePickerSelectedIndexChanged" />
-                    </VerticalStackLayout>
+                    </inputLayout:SfTextInputLayout>
 
-                    <VerticalStackLayout Spacing="8">
-                        <Label x:Name="SecondaryMeaningLanguageCaptionLabel"
-                               Style="{DynamicResource Caption}" />
+                    <inputLayout:SfTextInputLayout x:Name="SecondaryMeaningLanguageInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
                         <Picker x:Name="SecondaryMeaningLanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnSecondaryMeaningLanguagePickerSelectedIndexChanged" />
-                    </VerticalStackLayout>
+                    </inputLayout:SfTextInputLayout>
                 </VerticalStackLayout>
             </Border>
 
