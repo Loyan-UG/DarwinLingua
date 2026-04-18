@@ -137,6 +137,8 @@ public partial class WordDetailPage : ContentPage
         ResetRefreshRequest();
         CancellationToken cancellationToken = _refreshCancellationTokenSource!.Token;
         Stopwatch stopwatch = Stopwatch.StartNew();
+        bool shouldShowSkeleton = _loadedWordPublicId is null || !ContentStackLayout.IsVisible || _isNavigatingBetweenWords;
+        SetLoadingState(shouldShowSkeleton);
 
         Title = AppStrings.WordDetailTitle;
         TopicsSectionView.SectionTitle = AppStrings.WordDetailTopicsLabel;
@@ -161,6 +163,7 @@ public partial class WordDetailPage : ContentPage
         if (!Guid.TryParse(WordPublicId, out Guid publicId))
         {
             ShowNotFoundState();
+            SetLoadingState(false);
             _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             return;
         }
@@ -180,6 +183,7 @@ public partial class WordDetailPage : ContentPage
             }
 
             ScheduleWordDetailPrefetch(profile);
+            SetLoadingState(false);
             _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
             return;
         }
@@ -196,6 +200,7 @@ public partial class WordDetailPage : ContentPage
         if (word is null)
         {
             ShowNotFoundState();
+            SetLoadingState(false);
             _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
             return;
         }
@@ -235,6 +240,7 @@ public partial class WordDetailPage : ContentPage
         }
 
         ScheduleWordDetailPrefetch(profile);
+        SetLoadingState(false);
         _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, word.Senses.Count);
     }
 
@@ -278,6 +284,7 @@ public partial class WordDetailPage : ContentPage
     /// </summary>
     private void ShowNotFoundState()
     {
+        SetLoadingState(false);
         Title = AppStrings.WordDetailTitle;
         HeadlineLabel.Text = AppStrings.WordDetailTitle;
         SpeakWordButton.IsVisible = false;
@@ -318,6 +325,12 @@ public partial class WordDetailPage : ContentPage
 
         ShowNotFoundState();
         EmptyStateLabel.Text = message;
+    }
+
+    private void SetLoadingState(bool isLoading)
+    {
+        LoadingStateView.IsLoading = isLoading;
+        ContentStackLayout.IsVisible = !isLoading;
     }
 
     /// <summary>

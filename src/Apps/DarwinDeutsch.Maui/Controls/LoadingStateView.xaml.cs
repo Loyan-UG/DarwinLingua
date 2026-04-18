@@ -90,6 +90,10 @@ public partial class LoadingStateView : ContentView
         bool isListSkeleton = LoadingMode == LoadingStateViewMode.ListSkeleton;
         ListSkeletonLayout.IsVisible = isLoading && isListSkeleton;
         ListSkeletonShimmer.IsActive = isLoading && isListSkeleton;
+
+        bool isDetailSkeleton = LoadingMode == LoadingStateViewMode.DetailSkeleton;
+        DetailSkeletonLayout.IsVisible = isLoading && isDetailSkeleton;
+        DetailSkeletonShimmer.IsActive = isLoading && isDetailSkeleton;
     }
 }
 
@@ -107,4 +111,9 @@ public enum LoadingStateViewMode
     /// Uses a repeated list skeleton suited for browse and search pages.
     /// </summary>
     ListSkeleton,
+
+    /// <summary>
+    /// Uses a richer detail-page skeleton suited for lexical detail screens.
+    /// </summary>
+    DetailSkeleton,
 }

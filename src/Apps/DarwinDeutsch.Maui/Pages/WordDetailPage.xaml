@@ -14,6 +14,12 @@
                                     Swiped="OnDetailSwipeRight" />
         </ScrollView.GestureRecognizers>
         <VerticalStackLayout Padding="24" Spacing="18">
+            <controls:LoadingStateView x:Name="LoadingStateView"
+                                       LoadingMode="DetailSkeleton"
+                                       Message="Loading word details..." />
+
+            <VerticalStackLayout x:Name="ContentStackLayout"
+                                 Spacing="18">
             <Border Padding="22"
                     Style="{StaticResource AppHeroPanelBorderStyle}">
                 <VerticalStackLayout Spacing="14">
@@ -246,6 +252,7 @@
                                   Grid.Column="2"
                                   Clicked="OnNextWordButtonClicked" />
             </Grid>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
