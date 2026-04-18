@@ -78,6 +78,11 @@
                 <VerticalStackLayout Spacing="18">
                     <inputLayout:SfTextInputLayout x:Name="LanguageInputLayout"
                                                    Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Label Text="🌐"
+                                   FontSize="16"
+                                   VerticalTextAlignment="Center" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
                         <Picker x:Name="LanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />
@@ -85,6 +90,11 @@
 
                     <inputLayout:SfTextInputLayout x:Name="PrimaryMeaningLanguageInputLayout"
                                                    Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Label Text="①"
+                                   FontSize="16"
+                                   VerticalTextAlignment="Center" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
                         <Picker x:Name="PrimaryMeaningLanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnPrimaryMeaningLanguagePickerSelectedIndexChanged" />
@@ -92,6 +102,11 @@
 
                     <inputLayout:SfTextInputLayout x:Name="SecondaryMeaningLanguageInputLayout"
                                                    Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Label Text="②"
+                                   FontSize="16"
+                                   VerticalTextAlignment="Center" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
                         <Picker x:Name="SecondaryMeaningLanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnSecondaryMeaningLanguagePickerSelectedIndexChanged" />

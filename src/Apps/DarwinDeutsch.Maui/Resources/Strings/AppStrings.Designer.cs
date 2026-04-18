@@ -33,6 +33,16 @@ public static class AppStrings
     public static string WelcomeLanguageQuestion => GetRequiredString(nameof(WelcomeLanguageQuestion));
 
     /// <summary>
+    /// Gets the localized helper text for the welcome language selector.
+    /// </summary>
+    public static string WelcomeLanguageHelper => GetRequiredString(nameof(WelcomeLanguageHelper));
+
+    /// <summary>
+    /// Gets the localized error shown when the welcome language selector cannot save the change.
+    /// </summary>
+    public static string WelcomeLanguageSelectionFailed => GetRequiredString(nameof(WelcomeLanguageSelectionFailed));
+
+    /// <summary>
     /// Gets the localized headline for the welcome experience.
     /// </summary>
     public static string WelcomeHeadline => GetRequiredString(nameof(WelcomeHeadline));
@@ -1108,14 +1118,34 @@ public static class AppStrings
     public static string SettingsUiLanguageLabel => GetRequiredString(nameof(SettingsUiLanguageLabel));
 
     /// <summary>
+    /// Gets the localized helper text for the UI language selector.
+    /// </summary>
+    public static string SettingsUiLanguageHelper => GetRequiredString(nameof(SettingsUiLanguageHelper));
+
+    /// <summary>
     /// Gets the localized picker title for the primary meaning language selector.
     /// </summary>
     public static string SettingsPrimaryMeaningLanguageLabel => GetRequiredString(nameof(SettingsPrimaryMeaningLanguageLabel));
 
     /// <summary>
+    /// Gets the localized helper text for the primary meaning language selector.
+    /// </summary>
+    public static string SettingsPrimaryMeaningLanguageHelper => GetRequiredString(nameof(SettingsPrimaryMeaningLanguageHelper));
+
+    /// <summary>
     /// Gets the localized picker title for the secondary meaning language selector.
     /// </summary>
     public static string SettingsSecondaryMeaningLanguageLabel => GetRequiredString(nameof(SettingsSecondaryMeaningLanguageLabel));
+
+    /// <summary>
+    /// Gets the localized helper text for the secondary meaning language selector.
+    /// </summary>
+    public static string SettingsSecondaryMeaningLanguageHelper => GetRequiredString(nameof(SettingsSecondaryMeaningLanguageHelper));
+
+    /// <summary>
+    /// Gets the localized error shown when a language preference cannot be saved.
+    /// </summary>
+    public static string SettingsLanguageSelectionFailed => GetRequiredString(nameof(SettingsLanguageSelectionFailed));
 
     /// <summary>
     /// Gets the localized display text for the empty secondary meaning-language option.

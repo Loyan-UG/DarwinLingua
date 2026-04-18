@@ -94,6 +94,9 @@ public partial class WelcomePage : ContentPage
     {
         Title = AppStrings.AppTitle;
         LanguageInputLayout.Hint = AppStrings.WelcomeLanguageQuestion;
+        LanguageInputLayout.HelperText = AppStrings.WelcomeLanguageHelper;
+        LanguageInputLayout.ErrorText = AppStrings.WelcomeLanguageSelectionFailed;
+        LanguageInputLayout.HasError = false;
         HeadlineLabel.Text = AppStrings.WelcomeHeadline;
         DescriptionLabel.Text = AppStrings.WelcomeDescription;
         CurrentFeaturesLabel.Text = AppStrings.WelcomeCurrentFeaturesTitle;
@@ -139,6 +142,7 @@ public partial class WelcomePage : ContentPage
             .ToArray();
 
         _isUpdatingSelection = true;
+        LanguageInputLayout.HasError = false;
         LanguagePicker.ItemsSource = supportedUiLanguages.ToList();
         LanguagePicker.SelectedItem = supportedUiLanguages.FirstOrDefault(option => string.Equals(
             option.CultureName,
@@ -167,12 +171,17 @@ public partial class WelcomePage : ContentPage
 
         try
         {
+            LanguageInputLayout.HasError = false;
             await _appLocalizationService
                 .SetCultureAsync(selectedLanguage.CultureName, CancellationToken.None)
                 .ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {
+        }
+        catch (Exception)
+        {
+            LanguageInputLayout.HasError = true;
         }
     }
 

@@ -21,6 +21,12 @@
   <data name="WelcomeLanguageQuestion" xml:space="preserve">
     <value>Welche Sprache soll die App verwenden?</value>
   </data>
+  <data name="WelcomeLanguageHelper" xml:space="preserve">
+    <value>Wähle die Oberflächensprache für dieses Gerät.</value>
+  </data>
+  <data name="WelcomeLanguageSelectionFailed" xml:space="preserve">
+    <value>Die App-Sprache konnte gerade nicht aktualisiert werden.</value>
+  </data>
   <data name="WelcomeHeadline" xml:space="preserve">
     <value>Willkommen bei Darwin Deutsch</value>
   </data>
@@ -596,11 +602,23 @@
   <data name="SettingsUiLanguageLabel" xml:space="preserve">
     <value>UI-Sprache</value>
   </data>
+  <data name="SettingsUiLanguageHelper" xml:space="preserve">
+    <value>Änderungen werden sofort in der gesamten Oberfläche angewendet.</value>
+  </data>
   <data name="SettingsPrimaryMeaningLanguageLabel" xml:space="preserve">
     <value>Primäre Bedeutungssprache</value>
   </data>
+  <data name="SettingsPrimaryMeaningLanguageHelper" xml:space="preserve">
+    <value>Wird zuerst für Bedeutungen und Übersetzungen in Wortdetails verwendet.</value>
+  </data>
   <data name="SettingsSecondaryMeaningLanguageLabel" xml:space="preserve">
     <value>Sekundäre Bedeutungssprache</value>
+  </data>
+  <data name="SettingsSecondaryMeaningLanguageHelper" xml:space="preserve">
+    <value>Optionale Rückfallsprache für zusätzlichen Bedeutungskontext.</value>
+  </data>
+  <data name="SettingsLanguageSelectionFailed" xml:space="preserve">
+    <value>Die Spracheinstellung konnte gerade nicht gespeichert werden.</value>
   </data>
   <data name="SettingsSecondaryMeaningLanguageNone" xml:space="preserve">
     <value>Keine zweite Sprache</value>

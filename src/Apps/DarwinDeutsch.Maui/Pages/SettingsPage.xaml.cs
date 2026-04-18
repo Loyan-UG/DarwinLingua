@@ -154,8 +154,17 @@ public partial class SettingsPage : ContentPage
         AboutSummaryLabel.Text = AppStrings.SettingsAboutSummary;
         OpenAboutButton.Text = AppStrings.SettingsAboutButton;
         LanguageInputLayout.Hint = AppStrings.SettingsUiLanguageLabel;
+        LanguageInputLayout.HelperText = AppStrings.SettingsUiLanguageHelper;
+        LanguageInputLayout.ErrorText = AppStrings.SettingsLanguageSelectionFailed;
+        LanguageInputLayout.HasError = false;
         PrimaryMeaningLanguageInputLayout.Hint = AppStrings.SettingsPrimaryMeaningLanguageLabel;
+        PrimaryMeaningLanguageInputLayout.HelperText = AppStrings.SettingsPrimaryMeaningLanguageHelper;
+        PrimaryMeaningLanguageInputLayout.ErrorText = AppStrings.SettingsLanguageSelectionFailed;
+        PrimaryMeaningLanguageInputLayout.HasError = false;
         SecondaryMeaningLanguageInputLayout.Hint = AppStrings.SettingsSecondaryMeaningLanguageLabel;
+        SecondaryMeaningLanguageInputLayout.HelperText = AppStrings.SettingsSecondaryMeaningLanguageHelper;
+        SecondaryMeaningLanguageInputLayout.ErrorText = AppStrings.SettingsLanguageSelectionFailed;
+        SecondaryMeaningLanguageInputLayout.HasError = false;
         ContentUpdatesSectionLabel.Text = AppStrings.SettingsContentUpdatesSectionLabel;
         RemoteContentUpdatesSectionLabel.Text = AppStrings.SettingsRemoteContentUpdatesSectionLabel;
         CatalogAreaUpdatesSectionLabel.Text = AppStrings.SettingsRemoteCatalogAreaSectionLabel;
@@ -203,6 +212,9 @@ public partial class SettingsPage : ContentPage
             profile.PreferredMeaningLanguage1);
 
         _isUpdatingSelection = true;
+        LanguageInputLayout.HasError = false;
+        PrimaryMeaningLanguageInputLayout.HasError = false;
+        SecondaryMeaningLanguageInputLayout.HasError = false;
 
         try
         {
@@ -681,9 +693,20 @@ public partial class SettingsPage : ContentPage
             return;
         }
 
-        await _appLocalizationService
-            .SetCultureAsync(selectedLanguage.CultureName, CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            LanguageInputLayout.HasError = false;
+            await _appLocalizationService
+                .SetCultureAsync(selectedLanguage.CultureName, CancellationToken.None)
+                .ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception)
+        {
+            LanguageInputLayout.HasError = true;
+        }
     }
 
     /// <summary>
@@ -703,14 +726,27 @@ public partial class SettingsPage : ContentPage
             secondaryMeaningLanguage = null;
         }
 
-        await _activeLearningProfileCacheService
-            .UpdateMeaningLanguagePreferencesAsync(
-                selectedLanguage.LanguageCode!,
-                secondaryMeaningLanguage,
-                CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            PrimaryMeaningLanguageInputLayout.HasError = false;
+            SecondaryMeaningLanguageInputLayout.HasError = false;
 
-        await RebuildPageStateAsync().ConfigureAwait(true);
+            await _activeLearningProfileCacheService
+                .UpdateMeaningLanguagePreferencesAsync(
+                    selectedLanguage.LanguageCode!,
+                    secondaryMeaningLanguage,
+                    CancellationToken.None)
+                .ConfigureAwait(true);
+
+            await RebuildPageStateAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception)
+        {
+            PrimaryMeaningLanguageInputLayout.HasError = true;
+        }
     }
 
     /// <summary>
@@ -728,14 +764,26 @@ public partial class SettingsPage : ContentPage
             return;
         }
 
-        await _activeLearningProfileCacheService
-            .UpdateMeaningLanguagePreferencesAsync(
-                primaryMeaningLanguage.LanguageCode!,
-                selectedLanguage.LanguageCode,
-                CancellationToken.None)
-            .ConfigureAwait(true);
+        try
+        {
+            SecondaryMeaningLanguageInputLayout.HasError = false;
 
-        await RebuildPageStateAsync().ConfigureAwait(true);
+            await _activeLearningProfileCacheService
+                .UpdateMeaningLanguagePreferencesAsync(
+                    primaryMeaningLanguage.LanguageCode!,
+                    selectedLanguage.LanguageCode,
+                    CancellationToken.None)
+                .ConfigureAwait(true);
+
+            await RebuildPageStateAsync().ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception)
+        {
+            SecondaryMeaningLanguageInputLayout.HasError = true;
+        }
     }
 
     /// <summary>

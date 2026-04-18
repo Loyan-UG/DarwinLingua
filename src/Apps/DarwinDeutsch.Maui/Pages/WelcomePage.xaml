@@ -12,6 +12,11 @@
                 <VerticalStackLayout Spacing="16">
                     <inputLayout:SfTextInputLayout x:Name="LanguageInputLayout"
                                                    Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Label Text="🌐"
+                                   FontSize="16"
+                                   VerticalTextAlignment="Center" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
                         <Picker x:Name="LanguagePicker"
                                 ItemDisplayBinding="{Binding DisplayName}"
                                 SelectedIndexChanged="OnLanguagePickerSelectedIndexChanged" />

@@ -73,6 +73,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("RunInitializationAsync", startupCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("StartupCompleted", startupCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("LanguagePicker", welcomeSource, StringComparison.Ordinal);
+        Assert.Contains("LeadingView", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("AppHeroPanelBorderStyle", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("AppSectionCardBorderStyle", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("CurrentFeaturesBodyLabel", welcomeSource, StringComparison.Ordinal);
@@ -153,6 +154,10 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("OpenAboutButton", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SettingsAppInfoSectionLabel", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SettingsAboutSummary", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsUiLanguageHelper", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsPrimaryMeaningLanguageHelper", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsSecondaryMeaningLanguageHelper", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("SettingsLanguageSelectionFailed", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("OnOpenAboutButtonClicked", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ISeedDatabaseProvisioningService", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("IRemoteContentUpdateService", codeBehindSource, StringComparison.Ordinal);
