@@ -61,7 +61,7 @@
             <VerticalStackLayout x:Name="PrimaryActionsLayout"
                                  Spacing="12">
                 <buttons:SfButton x:Name="RevealButton"
-                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Style="{StaticResource SyncfusionInfoButtonStyle}"
                                   Clicked="OnRevealButtonClicked" />
                 <Grid x:Name="OutcomeButtonsGrid"
                       IsVisible="False"
@@ -70,17 +70,17 @@
                       RowDefinitions="Auto,Auto"
                       RowSpacing="12">
                     <buttons:SfButton x:Name="IncorrectButton"
-                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Style="{StaticResource SyncfusionDangerButtonStyle}"
                                       Grid.Row="0"
                                       Grid.Column="0"
                                       Clicked="OnIncorrectButtonClicked" />
                     <buttons:SfButton x:Name="HardButton"
-                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Style="{StaticResource SyncfusionWarningButtonStyle}"
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Clicked="OnHardButtonClicked" />
                     <buttons:SfButton x:Name="CorrectButton"
-                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Style="{StaticResource SyncfusionSuccessButtonStyle}"
                                       Grid.Row="1"
                                       Grid.Column="0"
                                       Clicked="OnCorrectButtonClicked" />
@@ -95,7 +95,7 @@
                                   IsVisible="False"
                                   Clicked="OnNextButtonClicked" />
                 <buttons:SfButton x:Name="FinishButton"
-                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Style="{StaticResource SyncfusionWarningButtonStyle}"
                                   IsVisible="False"
                                   Clicked="OnFinishButtonClicked" />
             </VerticalStackLayout>
@@ -122,7 +122,7 @@
                     <Label x:Name="SummaryBodyLabel"
                            Style="{DynamicResource Body}" />
                     <buttons:SfButton x:Name="ReturnToPracticeButton"
-                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Style="{StaticResource SyncfusionSecondaryOutlineButtonStyle}"
                                       Clicked="OnReturnToPracticeButtonClicked" />
                 </VerticalStackLayout>
             </Border>

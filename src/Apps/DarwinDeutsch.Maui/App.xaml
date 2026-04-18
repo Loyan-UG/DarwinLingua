@@ -154,6 +154,42 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
+            <Style x:Key="SyncfusionInfoButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="BackgroundColor" Value="#155E75" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="SyncfusionSuccessButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="BackgroundColor" Value="#1A6B5B" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="SyncfusionWarningButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="BackgroundColor" Value="#A9581A" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="SyncfusionDangerButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="BackgroundColor" Value="#9F2D23" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="SyncfusionSecondaryOutlineButtonStyle"
+                   BasedOn="{StaticResource SyncfusionPrimaryButtonStyle}"
+                   TargetType="buttons:SfButton">
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Stroke" Value="{AppThemeBinding Light=#C8D5DB, Dark=#3A4B57}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFCF8, Dark=#16212B}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#172633, Dark=#F8FBFC}" />
+            </Style>
             <Style x:Key="SyncfusionChipGroupSelectionStyle" TargetType="chips:SfChipGroup">
                 <Setter Property="SelectedChipBackground" Value="{AppThemeBinding Light=#10212B, Dark=#E8F3F1}" />
                 <Setter Property="SelectedChipTextColor" Value="{AppThemeBinding Light=White, Dark=#10212B}" />

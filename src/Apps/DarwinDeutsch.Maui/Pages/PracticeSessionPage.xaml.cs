@@ -33,6 +33,7 @@ public partial class PracticeSessionPage : ContentPage
     private bool _isSubmittingOutcome;
     private bool _isSessionLoaded;
     private DateTime _currentItemShownAtUtc;
+    private PracticeAttemptOutcome? _pendingOutcome;
     private CancellationTokenSource? _sessionCancellationTokenSource;
 
     public PracticeSessionPage(
@@ -137,10 +138,6 @@ public partial class PracticeSessionPage : ContentPage
             ? AppStrings.PracticeQuizPageDescription
             : AppStrings.PracticeFlashcardPageDescription;
         RevealButton.Text = AppStrings.PracticeSessionRevealButton;
-        IncorrectButton.Text = AppStrings.PracticePageOutcomeIncorrect;
-        HardButton.Text = AppStrings.PracticePageOutcomeHard;
-        CorrectButton.Text = AppStrings.PracticePageOutcomeCorrect;
-        EasyButton.Text = AppStrings.PracticePageOutcomeEasy;
         NextButton.Text = AppStrings.PracticeSessionNextButton;
         FinishButton.Text = AppStrings.PracticeSessionFinishButton;
         FeedbackHeadlineLabel.Text = AppStrings.PracticeSessionFeedbackHeadline;
@@ -149,6 +146,7 @@ public partial class PracticeSessionPage : ContentPage
         Title = IsQuizMode
             ? AppStrings.PracticeQuizPageTitle
             : AppStrings.PracticeFlashcardPageTitle;
+        ApplyActionButtonState();
     }
 
     private async Task LoadSessionAsync()
@@ -173,6 +171,7 @@ public partial class PracticeSessionPage : ContentPage
             _currentIndex = 0;
             _isAnswerRevealed = false;
             _isSubmittingOutcome = false;
+            _pendingOutcome = null;
             _isSessionLoaded = true;
             _currentItemShownAtUtc = DateTime.UtcNow;
 
@@ -314,6 +313,7 @@ public partial class PracticeSessionPage : ContentPage
         }
 
         _isSubmittingOutcome = true;
+        _pendingOutcome = outcome;
         ApplyActionButtonState();
         Stopwatch stopwatch = Stopwatch.StartNew();
 
@@ -373,6 +373,7 @@ public partial class PracticeSessionPage : ContentPage
         finally
         {
             _isSubmittingOutcome = false;
+            _pendingOutcome = null;
             ApplyActionButtonState();
         }
     }
@@ -417,6 +418,7 @@ public partial class PracticeSessionPage : ContentPage
     {
         _currentIndex++;
         _isAnswerRevealed = false;
+        _pendingOutcome = null;
         _currentItemShownAtUtc = DateTime.UtcNow;
         FeedbackBorder.IsVisible = false;
         NextButton.IsVisible = false;
@@ -427,6 +429,14 @@ public partial class PracticeSessionPage : ContentPage
     private void ApplyActionButtonState()
     {
         bool isBusy = _isSubmittingOutcome;
+        IncorrectButton.Text = BuildOutcomeButtonText(PracticeAttemptOutcome.Incorrect);
+        HardButton.Text = BuildOutcomeButtonText(PracticeAttemptOutcome.Hard);
+        CorrectButton.Text = BuildOutcomeButtonText(PracticeAttemptOutcome.Correct);
+        EasyButton.Text = BuildOutcomeButtonText(PracticeAttemptOutcome.Easy);
+        RevealButton.Text = AppStrings.PracticeSessionRevealButton;
+        NextButton.Text = AppStrings.PracticeSessionNextButton;
+        FinishButton.Text = AppStrings.PracticeSessionFinishButton;
+        ReturnToPracticeButton.Text = AppStrings.PracticeSessionReturnButton;
 
         RevealButton.IsEnabled = !isBusy && RevealButton.IsVisible;
         IncorrectButton.IsEnabled = !isBusy && OutcomeButtonsGrid.IsVisible;
@@ -436,6 +446,14 @@ public partial class PracticeSessionPage : ContentPage
         NextButton.IsEnabled = !isBusy && NextButton.IsVisible;
         FinishButton.IsEnabled = !isBusy && FinishButton.IsVisible;
         ReturnToPracticeButton.IsEnabled = !isBusy && SummaryBorder.IsVisible;
+    }
+
+    private string BuildOutcomeButtonText(PracticeAttemptOutcome outcome)
+    {
+        string baseText = GetOutcomeLabel(outcome);
+        return _isSubmittingOutcome && _pendingOutcome == outcome
+            ? $"{baseText} · {AppStrings.CommonStateLoading}"
+            : baseText;
     }
 
     private static string BuildItemMetadata(PracticeReviewSessionItemModel item)
