@@ -203,6 +203,8 @@ public sealed class MauiBrowseScreenSmokeTests
 
         string xamlSource = File.ReadAllText(topicsPagePath);
         string codeBehindSource = File.ReadAllText(topicsCodeBehindPath);
+        string topicListItemViewPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Controls/TopicListItemView.xaml");
+        string topicListItemViewSource = File.ReadAllText(topicListItemViewPath);
 
         Assert.Contains("CefrQuickFilterView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SfExpander", xamlSource, StringComparison.Ordinal);
@@ -212,6 +214,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("SearchActionBlockView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("FavoritesActionBlockView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("TopicListItemView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SfEffectsView", topicListItemViewSource, StringComparison.Ordinal);
         Assert.Contains("nameof(CefrWordsPage)", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("GetStartingWordPublicIdAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("nameof(SearchWordsPage)", codeBehindSource, StringComparison.Ordinal);
@@ -351,6 +354,8 @@ public sealed class MauiBrowseScreenSmokeTests
         string cefrXamlSource = File.ReadAllText(cefrPagePath);
         string xamlSource = File.ReadAllText(searchPagePath);
         string codeBehindSource = File.ReadAllText(searchCodeBehindPath);
+        string wordListItemViewPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Controls/WordListItemView.xaml");
+        string wordListItemViewSource = File.ReadAllText(wordListItemViewPath);
 
         Assert.Contains("AppHeroPanelBorderStyle", favoritesXamlSource, StringComparison.Ordinal);
         Assert.Contains("AppSectionCardBorderStyle", favoritesXamlSource, StringComparison.Ordinal);
@@ -365,6 +370,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("SfTextInputLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("SearchEntry", xamlSource, StringComparison.Ordinal);
         Assert.Contains("WordsCollectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SfEffectsView", wordListItemViewSource, StringComparison.Ordinal);
         Assert.Contains("SearchWordsPageSearchHint", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SearchWordsPageResultsLabel", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("SearchInputLayout.Hint", codeBehindSource, StringComparison.Ordinal);

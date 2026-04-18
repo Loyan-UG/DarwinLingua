@@ -2,21 +2,24 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cards="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:effects="clr-namespace:Syncfusion.Maui.Toolkit.EffectsView;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.WordListItemView">
-    <cards:SfCardView Margin="0,0,0,10"
-                      Style="{StaticResource SyncfusionCardShellStyle}">
-        <VerticalStackLayout Padding="16"
-                             Spacing="8"
-                             BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-            <Label x:Name="LemmaLabel"
-                   Style="{DynamicResource Title2}"
-                   TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
-            <Label x:Name="PrimaryMeaningLabel"
-                   Style="{DynamicResource Body}" />
-            <Border Style="{StaticResource AppMetadataBadgeBorderStyle}">
-                <Label x:Name="MetadataLineLabel"
-                       Style="{DynamicResource Caption}" />
-            </Border>
-        </VerticalStackLayout>
-    </cards:SfCardView>
+    <effects:SfEffectsView Style="{StaticResource SyncfusionTouchSurfaceEffectStyle}">
+        <cards:SfCardView Margin="0,0,0,10"
+                          Style="{StaticResource SyncfusionCardShellStyle}">
+            <VerticalStackLayout Padding="16"
+                                 Spacing="8"
+                                 BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                <Label x:Name="LemmaLabel"
+                       Style="{DynamicResource Title2}"
+                       TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
+                <Label x:Name="PrimaryMeaningLabel"
+                       Style="{DynamicResource Body}" />
+                <Border Style="{StaticResource AppMetadataBadgeBorderStyle}">
+                    <Label x:Name="MetadataLineLabel"
+                           Style="{DynamicResource Caption}" />
+                </Border>
+            </VerticalStackLayout>
+        </cards:SfCardView>
+    </effects:SfEffectsView>
 </ContentView>

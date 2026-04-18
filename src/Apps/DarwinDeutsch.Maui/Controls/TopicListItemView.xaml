@@ -2,28 +2,31 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cards="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:effects="clr-namespace:Syncfusion.Maui.Toolkit.EffectsView;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.TopicListItemView">
-    <cards:SfCardView Margin="0,0,0,10"
-                      Style="{StaticResource SyncfusionCardShellStyle}">
-        <Grid Padding="16"
-              ColumnDefinitions="Auto,*"
-              ColumnSpacing="14"
-              BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
-            <Border Grid.Column="0"
-                    VerticalOptions="Start"
-                    Style="{StaticResource AppAccentBadgeBorderStyle}">
-                <Label x:Name="TopicKeyLabel"
-                       FontAttributes="Bold"
-                       FontSize="12"
-                       TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
-            </Border>
+    <effects:SfEffectsView Style="{StaticResource SyncfusionTouchSurfaceEffectStyle}">
+        <cards:SfCardView Margin="0,0,0,10"
+                          Style="{StaticResource SyncfusionCardShellStyle}">
+            <Grid Padding="16"
+                  ColumnDefinitions="Auto,*"
+                  ColumnSpacing="14"
+                  BackgroundColor="{AppThemeBinding Light=#FFFCF8, Dark=#111923}">
+                <Border Grid.Column="0"
+                        VerticalOptions="Start"
+                        Style="{StaticResource AppAccentBadgeBorderStyle}">
+                    <Label x:Name="TopicKeyLabel"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
+                </Border>
 
-            <VerticalStackLayout Grid.Column="1"
-                                 Spacing="6">
-                <Label x:Name="DisplayNameLabel"
-                       Style="{DynamicResource Title2}"
-                       TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
-            </VerticalStackLayout>
-        </Grid>
-    </cards:SfCardView>
+                <VerticalStackLayout Grid.Column="1"
+                                     Spacing="6">
+                    <Label x:Name="DisplayNameLabel"
+                           Style="{DynamicResource Title2}"
+                           TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
+                </VerticalStackLayout>
+            </Grid>
+        </cards:SfCardView>
+    </effects:SfEffectsView>
 </ContentView>
