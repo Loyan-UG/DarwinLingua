@@ -528,6 +528,7 @@ public partial class WordDetailPage : ContentPage
         SfButton button = new()
         {
             Text = "\U0001F50A",
+            Style = ResolveAppStyle("SyncfusionPrimaryButtonStyle"),
             WidthRequest = 44,
             HeightRequest = 40,
             FontSize = 18,
@@ -558,6 +559,21 @@ public partial class WordDetailPage : ContentPage
     /// Resolves an application-scoped text style while tolerating early resource-initialization timing.
     /// </summary>
     private static Style? ResolveAppTextStyle(string resourceKey)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(resourceKey);
+
+        if (Application.Current?.Resources.TryGetValue(resourceKey, out object? style) == true)
+        {
+            return style as Style;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Resolves an application-scoped style while tolerating early resource-initialization timing.
+    /// </summary>
+    private static Style? ResolveAppStyle(string resourceKey)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(resourceKey);
 
