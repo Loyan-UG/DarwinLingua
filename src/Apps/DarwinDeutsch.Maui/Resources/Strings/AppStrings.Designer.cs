@@ -138,6 +138,11 @@ public static class AppStrings
     public static string StartupRetryButton => GetRequiredString(nameof(StartupRetryButton));
 
     /// <summary>
+    /// Gets the localized secondary action shown on the startup failure popup.
+    /// </summary>
+    public static string StartupStayOnPageButton => GetRequiredString(nameof(StartupStayOnPageButton));
+
+    /// <summary>
     /// Gets the localized title for the deferred remote-update prompt.
     /// </summary>
     public static string BackgroundRemoteUpdatePromptTitle => GetRequiredString(nameof(BackgroundRemoteUpdatePromptTitle));

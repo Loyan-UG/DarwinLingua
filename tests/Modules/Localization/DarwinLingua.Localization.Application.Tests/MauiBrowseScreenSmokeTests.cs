@@ -72,6 +72,9 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("RetryButton", startupSource, StringComparison.Ordinal);
         Assert.Contains("RunInitializationAsync", startupCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("StartupCompleted", startupCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("IPopupDialogService", startupCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("ShowFailurePopupAsync", startupCodeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("StartupStayOnPageButton", startupCodeBehindSource, StringComparison.Ordinal);
         Assert.Contains("LanguagePicker", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("LeadingView", welcomeSource, StringComparison.Ordinal);
         Assert.Contains("AppHeroPanelBorderStyle", welcomeSource, StringComparison.Ordinal);
