@@ -8,6 +8,7 @@ using DarwinDeutsch.Maui.Services.Updates;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Localization.Application.Abstractions;
 using DarwinLingua.Localization.Application.Models;
+using Syncfusion.Maui.Toolkit.Buttons;
 
 namespace DarwinDeutsch.Maui.Pages;
 
@@ -166,10 +167,10 @@ public partial class SettingsPage : ContentPage
         RemoteContentUpdateDetailsSectionView.SectionTitle = AppStrings.SettingsContentUpdatesDetailsLabel;
         CatalogAreaUpdateSectionView.SectionTitle = AppStrings.SettingsRemoteCatalogAreaTitle;
         SelectedCefrUpdateSectionView.SectionTitle = _selectedCefrLevel;
-        ApplyRemoteUpdateButton.Text = AppStrings.SettingsRemoteContentUpdatesApplyButton;
-        ApplyCatalogAreaUpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, AppStrings.SettingsRemoteCatalogAreaTitle);
-        ApplySelectedCefrLevelUpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, _selectedCefrLevel);
-        ApplySeedUpdateButton.Text = AppStrings.SettingsContentUpdatesApplyButton;
+        SetButtonPresentation(ApplyRemoteUpdateButton, AppStrings.SettingsRemoteContentUpdatesApplyButton);
+        SetButtonPresentation(ApplyCatalogAreaUpdateButton, string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, AppStrings.SettingsRemoteCatalogAreaTitle));
+        SetButtonPresentation(ApplySelectedCefrLevelUpdateButton, string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, _selectedCefrLevel));
+        SetButtonPresentation(ApplySeedUpdateButton, AppStrings.SettingsContentUpdatesApplyButton);
     }
 
     /// <summary>
@@ -226,9 +227,11 @@ public partial class SettingsPage : ContentPage
             ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
             ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
             ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
-            ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
-                ? AppStrings.SettingsContentUpdatesApplyButton
-                : AppStrings.SettingsContentUpdatesAppliedButton;
+            SetButtonPresentation(
+                ApplySeedUpdateButton,
+                seedDatabaseUpdateStatus.IsUpdateAvailable
+                    ? AppStrings.SettingsContentUpdatesApplyButton
+                    : AppStrings.SettingsContentUpdatesAppliedButton);
 
             ApplyRemoteLoadingState();
             await Task.Yield();
@@ -294,13 +297,17 @@ public partial class SettingsPage : ContentPage
         RemoteContentUpdateStatusSectionView.SectionValue = BuildRemoteContentUpdateStatus(remoteContentUpdateStatus);
         RemoteContentUpdateDetailsSectionView.SectionValue = BuildRemoteContentUpdateDetails(remoteContentUpdateStatus);
         ApplyRemoteUpdateButton.IsEnabled = remoteContentUpdateStatus.IsRemoteConfigured && remoteContentUpdateStatus.IsServerReachable && !_isApplyingRemoteUpdate;
-        ApplyRemoteUpdateButton.Text = remoteContentUpdateStatus.IsUpdateAvailable
-            ? AppStrings.SettingsRemoteContentUpdatesApplyButton
-            : AppStrings.SettingsRemoteContentUpdatesAppliedButton;
+        SetButtonPresentation(
+            ApplyRemoteUpdateButton,
+            remoteContentUpdateStatus.IsUpdateAvailable
+                ? AppStrings.SettingsRemoteContentUpdatesApplyButton
+                : AppStrings.SettingsRemoteContentUpdatesAppliedButton);
 
         CatalogAreaUpdateSectionView.SectionValue = BuildRemoteScopeSummary(catalogAreaUpdateStatus);
         ApplyCatalogAreaUpdateButton.IsEnabled = catalogAreaUpdateStatus.IsRemoteConfigured && catalogAreaUpdateStatus.IsServerReachable && catalogAreaUpdateStatus.IsUpdateAvailable && !_isApplyingRemoteUpdate;
-        ApplyCatalogAreaUpdateButton.Text = BuildRemoteScopeButtonText(catalogAreaUpdateStatus, AppStrings.SettingsRemoteCatalogAreaTitle);
+        SetButtonPresentation(
+            ApplyCatalogAreaUpdateButton,
+            BuildRemoteScopeButtonText(catalogAreaUpdateStatus, AppStrings.SettingsRemoteCatalogAreaTitle));
 
         if (!catalogAreaUpdateStatus.IsRemoteConfigured || !catalogAreaUpdateStatus.IsServerReachable)
         {
@@ -335,7 +342,9 @@ public partial class SettingsPage : ContentPage
     {
         await ApplyScopedRemoteUpdateAsync(
                 AppStrings.SettingsRemoteFullDatabaseTitle,
-                () => _remoteContentUpdateService.ApplyFullUpdateAsync(GetLocalDatabasePath(), CancellationToken.None))
+                () => _remoteContentUpdateService.ApplyFullUpdateAsync(GetLocalDatabasePath(), CancellationToken.None),
+                ApplyRemoteUpdateButton,
+                AppStrings.SettingsRemoteContentUpdatesApplyingButton)
             .ConfigureAwait(true);
     }
 
@@ -343,7 +352,9 @@ public partial class SettingsPage : ContentPage
     {
         await ApplyScopedRemoteUpdateAsync(
                 AppStrings.SettingsRemoteCatalogAreaTitle,
-                () => _remoteContentUpdateService.ApplyAreaUpdateAsync(GetLocalDatabasePath(), "catalog", CancellationToken.None))
+                () => _remoteContentUpdateService.ApplyAreaUpdateAsync(GetLocalDatabasePath(), "catalog", CancellationToken.None),
+                ApplyCatalogAreaUpdateButton,
+                string.Format(AppStrings.SettingsRemoteContentScopeApplyingButtonFormat, AppStrings.SettingsRemoteCatalogAreaTitle))
             .ConfigureAwait(true);
     }
 
@@ -356,7 +367,9 @@ public partial class SettingsPage : ContentPage
 
         await ApplyScopedRemoteUpdateAsync(
                 _selectedCefrLevel,
-                () => _remoteContentUpdateService.ApplyCefrUpdateAsync(GetLocalDatabasePath(), _selectedCefrLevel, CancellationToken.None))
+                () => _remoteContentUpdateService.ApplyCefrUpdateAsync(GetLocalDatabasePath(), _selectedCefrLevel, CancellationToken.None),
+                ApplySelectedCefrLevelUpdateButton,
+                string.Format(AppStrings.SettingsRemoteContentScopeApplyingButtonFormat, _selectedCefrLevel))
             .ConfigureAwait(true);
     }
 
@@ -369,7 +382,7 @@ public partial class SettingsPage : ContentPage
 
         _isApplyingSeedUpdate = true;
         ApplySeedUpdateButton.IsEnabled = false;
-        ApplySeedUpdateButton.Text = AppStrings.SettingsContentUpdatesApplyingButton;
+        SetButtonPresentation(ApplySeedUpdateButton, AppStrings.SettingsContentUpdatesApplyingButton);
 
         try
         {
@@ -469,18 +482,24 @@ public partial class SettingsPage : ContentPage
         {
             SelectedCefrUpdateSectionView.SectionValue = AppStrings.CommonStateLoading;
             ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
-            ApplySelectedCefrLevelUpdateButton.Text = string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, _selectedCefrLevel);
+            SetButtonPresentation(
+                ApplySelectedCefrLevelUpdateButton,
+                string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, _selectedCefrLevel));
             return;
         }
 
         SelectedCefrUpdateSectionView.SectionValue = BuildRemoteScopeSummary(status);
         ApplySelectedCefrLevelUpdateButton.IsEnabled = status.IsRemoteConfigured && status.IsServerReachable && status.IsUpdateAvailable && !_isApplyingRemoteUpdate;
-        ApplySelectedCefrLevelUpdateButton.Text = BuildRemoteScopeButtonText(status, _selectedCefrLevel);
+        SetButtonPresentation(
+            ApplySelectedCefrLevelUpdateButton,
+            BuildRemoteScopeButtonText(status, _selectedCefrLevel));
     }
 
     private async Task ApplyScopedRemoteUpdateAsync(
         string scopeDisplayName,
-        Func<Task<RemoteContentUpdateResult>> applyAction)
+        Func<Task<RemoteContentUpdateResult>> applyAction,
+        SfButton targetButton,
+        string busyButtonText)
     {
         if (_isApplyingRemoteUpdate)
         {
@@ -491,6 +510,7 @@ public partial class SettingsPage : ContentPage
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
         ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
+        SetButtonPresentation(targetButton, busyButtonText);
 
         try
         {
@@ -538,6 +558,7 @@ public partial class SettingsPage : ContentPage
         finally
         {
             _isApplyingRemoteUpdate = false;
+            SetButtonPresentation(targetButton, busyButtonText);
         }
 
         try
@@ -569,9 +590,11 @@ public partial class SettingsPage : ContentPage
         ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
         ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
         ApplySeedUpdateButton.IsEnabled = seedDatabaseUpdateStatus.IsSeedAvailable && !_isApplyingSeedUpdate;
-        ApplySeedUpdateButton.Text = seedDatabaseUpdateStatus.IsUpdateAvailable
-            ? AppStrings.SettingsContentUpdatesApplyButton
-            : AppStrings.SettingsContentUpdatesAppliedButton;
+        SetButtonPresentation(
+            ApplySeedUpdateButton,
+            seedDatabaseUpdateStatus.IsUpdateAvailable
+                ? AppStrings.SettingsContentUpdatesApplyButton
+                : AppStrings.SettingsContentUpdatesAppliedButton);
 
         ApplyRemoteLoadingState();
         await LoadAndApplyRemoteUpdateSectionsAsync(localDatabasePath, cancellationToken).ConfigureAwait(true);
@@ -868,4 +891,9 @@ public partial class SettingsPage : ContentPage
     /// Represents a chip option for CEFR update selection.
     /// </summary>
     private sealed record CefrLevelChipItem(string Level);
+
+    private static void SetButtonPresentation(SfButton button, string text)
+    {
+        button.Text = text;
+    }
 }

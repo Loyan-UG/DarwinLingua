@@ -212,6 +212,7 @@ public partial class PracticeSessionPage : ContentPage
         PrimaryActionsLayout.IsVisible = false;
         FeedbackBorder.IsVisible = false;
         SummaryBorder.IsVisible = false;
+        ApplyActionButtonState();
     }
 
     private void RenderCurrentState()
@@ -225,6 +226,7 @@ public partial class PracticeSessionPage : ContentPage
             PrimaryActionsLayout.IsVisible = false;
             FeedbackBorder.IsVisible = false;
             SummaryBorder.IsVisible = false;
+            ApplyActionButtonState();
             return;
         }
 
@@ -275,6 +277,8 @@ public partial class PracticeSessionPage : ContentPage
             NextButton.IsVisible = false;
             FinishButton.IsVisible = false;
         }
+
+        ApplyActionButtonState();
     }
 
     private void RenderSummaryState()
@@ -299,6 +303,7 @@ public partial class PracticeSessionPage : ContentPage
             correctCount + easyCount,
             hardCount,
             incorrectCount);
+        ApplyActionButtonState();
     }
 
     private async Task SubmitOutcomeAsync(PracticeAttemptOutcome outcome)
@@ -309,7 +314,7 @@ public partial class PracticeSessionPage : ContentPage
         }
 
         _isSubmittingOutcome = true;
-        OutcomeButtonsGrid.IsEnabled = false;
+        ApplyActionButtonState();
         Stopwatch stopwatch = Stopwatch.StartNew();
 
         PracticeReviewSessionItemModel currentItem = _sessionItems[_currentIndex];
@@ -337,6 +342,7 @@ public partial class PracticeSessionPage : ContentPage
             RevealButton.IsVisible = false;
             NextButton.IsVisible = _currentIndex < _sessionItems.Count - 1;
             FinishButton.IsVisible = _currentIndex >= _sessionItems.Count - 1;
+            ApplyActionButtonState();
             _logger.LogInformation(
                 "Practice session '{Mode}' submitted outcome '{Outcome}' for item {ItemIndex}/{ItemCount} in {ElapsedMs} ms.",
                 IsQuizMode ? "quiz" : "flashcard",
@@ -359,15 +365,15 @@ public partial class PracticeSessionPage : ContentPage
             FeedbackBodyLabel.Text = AppStrings.CommonStateError;
             FeedbackBorder.IsVisible = true;
             OutcomeButtonsGrid.IsVisible = true;
-            OutcomeButtonsGrid.IsEnabled = true;
             RevealButton.IsVisible = false;
             NextButton.IsVisible = false;
             FinishButton.IsVisible = false;
+            ApplyActionButtonState();
         }
         finally
         {
             _isSubmittingOutcome = false;
-            OutcomeButtonsGrid.IsEnabled = true;
+            ApplyActionButtonState();
         }
     }
 
@@ -415,8 +421,21 @@ public partial class PracticeSessionPage : ContentPage
         FeedbackBorder.IsVisible = false;
         NextButton.IsVisible = false;
         FinishButton.IsVisible = false;
-        OutcomeButtonsGrid.IsEnabled = true;
         RenderCurrentState();
+    }
+
+    private void ApplyActionButtonState()
+    {
+        bool isBusy = _isSubmittingOutcome;
+
+        RevealButton.IsEnabled = !isBusy && RevealButton.IsVisible;
+        IncorrectButton.IsEnabled = !isBusy && OutcomeButtonsGrid.IsVisible;
+        HardButton.IsEnabled = !isBusy && OutcomeButtonsGrid.IsVisible;
+        CorrectButton.IsEnabled = !isBusy && OutcomeButtonsGrid.IsVisible;
+        EasyButton.IsEnabled = !isBusy && OutcomeButtonsGrid.IsVisible;
+        NextButton.IsEnabled = !isBusy && NextButton.IsVisible;
+        FinishButton.IsEnabled = !isBusy && FinishButton.IsVisible;
+        ReturnToPracticeButton.IsEnabled = !isBusy && SummaryBorder.IsVisible;
     }
 
     private static string BuildItemMetadata(PracticeReviewSessionItemModel item)
