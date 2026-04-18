@@ -27,7 +27,7 @@
                   RowSpacing="12">
                 <controls:LoadingStateView x:Name="LoadingStateView"
                                            Grid.Row="0"
-                                           LoadingMode="ListSkeleton" />
+                                           LoadingMode="WordCardsSkeleton" />
 
                 <Label x:Name="ErrorStateLabel"
                        Grid.Row="1"

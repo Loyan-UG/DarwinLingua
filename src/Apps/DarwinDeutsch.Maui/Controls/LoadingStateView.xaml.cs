@@ -91,6 +91,14 @@ public partial class LoadingStateView : ContentView
         ListSkeletonLayout.IsVisible = isLoading && isListSkeleton;
         ListSkeletonShimmer.IsActive = isLoading && isListSkeleton;
 
+        bool isWordCardsSkeleton = LoadingMode == LoadingStateViewMode.WordCardsSkeleton;
+        WordCardsSkeletonLayout.IsVisible = isLoading && isWordCardsSkeleton;
+        WordCardsSkeletonShimmer.IsActive = isLoading && isWordCardsSkeleton;
+
+        bool isTopicCardsSkeleton = LoadingMode == LoadingStateViewMode.TopicCardsSkeleton;
+        TopicCardsSkeletonLayout.IsVisible = isLoading && isTopicCardsSkeleton;
+        TopicCardsSkeletonShimmer.IsActive = isLoading && isTopicCardsSkeleton;
+
         bool isDetailSkeleton = LoadingMode == LoadingStateViewMode.DetailSkeleton;
         DetailSkeletonLayout.IsVisible = isLoading && isDetailSkeleton;
         DetailSkeletonShimmer.IsActive = isLoading && isDetailSkeleton;
@@ -111,6 +119,16 @@ public enum LoadingStateViewMode
     /// Uses a repeated list skeleton suited for browse and search pages.
     /// </summary>
     ListSkeleton,
+
+    /// <summary>
+    /// Uses repeated word-card skeletons suited for lexical list results.
+    /// </summary>
+    WordCardsSkeleton,
+
+    /// <summary>
+    /// Uses repeated topic-card skeletons suited for topic catalog results.
+    /// </summary>
+    TopicCardsSkeleton,
 
     /// <summary>
     /// Uses a richer detail-page skeleton suited for lexical detail screens.

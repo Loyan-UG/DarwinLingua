@@ -37,6 +37,114 @@
                                Style="{StaticResource SyncfusionInlineShimmerStyle}" />
         </VerticalStackLayout>
 
+        <VerticalStackLayout x:Name="WordCardsSkeletonLayout"
+                             Spacing="10"
+                             IsVisible="False">
+            <shimmer:SfShimmer x:Name="WordCardsSkeletonShimmer"
+                               HeightRequest="320"
+                               IsActive="False"
+                               Style="{StaticResource SyncfusionInlineShimmerStyle}">
+                <shimmer:SfShimmer.CustomView>
+                    <VerticalStackLayout Spacing="10">
+                        <Border Style="{StaticResource AppSectionCardBorderStyle}"
+                                Padding="16">
+                            <VerticalStackLayout Spacing="10">
+                                <Border HeightRequest="20"
+                                        WidthRequest="130"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                                <Border HeightRequest="16"
+                                        WidthRequest="220"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                                <Border HeightRequest="28"
+                                        WidthRequest="90"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border Style="{StaticResource AppSectionCardBorderStyle}"
+                                Padding="16">
+                            <VerticalStackLayout Spacing="10">
+                                <Border HeightRequest="20"
+                                        WidthRequest="160"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                                <Border HeightRequest="16"
+                                        WidthRequest="200"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                                <Border HeightRequest="28"
+                                        WidthRequest="110"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+                </shimmer:SfShimmer.CustomView>
+            </shimmer:SfShimmer>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout x:Name="TopicCardsSkeletonLayout"
+                             Spacing="10"
+                             IsVisible="False">
+            <shimmer:SfShimmer x:Name="TopicCardsSkeletonShimmer"
+                               HeightRequest="260"
+                               IsActive="False"
+                               Style="{StaticResource SyncfusionInlineShimmerStyle}">
+                <shimmer:SfShimmer.CustomView>
+                    <VerticalStackLayout Spacing="10">
+                        <Border Style="{StaticResource AppSectionCardBorderStyle}"
+                                Padding="16">
+                            <Grid ColumnDefinitions="Auto,*"
+                                  ColumnSpacing="14">
+                                <Border HeightRequest="28"
+                                        WidthRequest="54"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="8">
+                                    <Border HeightRequest="20"
+                                            WidthRequest="180"
+                                            StrokeThickness="0"
+                                            BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                            StrokeShape="RoundRectangle 4" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+
+                        <Border Style="{StaticResource AppSectionCardBorderStyle}"
+                                Padding="16">
+                            <Grid ColumnDefinitions="Auto,*"
+                                  ColumnSpacing="14">
+                                <Border HeightRequest="28"
+                                        WidthRequest="48"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                        StrokeShape="RoundRectangle 4" />
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="8">
+                                    <Border HeightRequest="20"
+                                            WidthRequest="210"
+                                            StrokeThickness="0"
+                                            BackgroundColor="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}"
+                                            StrokeShape="RoundRectangle 4" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+                </shimmer:SfShimmer.CustomView>
+            </shimmer:SfShimmer>
+        </VerticalStackLayout>
+
         <VerticalStackLayout x:Name="DetailSkeletonLayout"
                              Spacing="18"
                              IsVisible="False">
