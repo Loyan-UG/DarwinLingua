@@ -608,6 +608,11 @@ public static class AppStrings
     public static string WordDetailLoadFailed => GetRequiredString(nameof(WordDetailLoadFailed));
 
     /// <summary>
+    /// Gets the localized swipe hint shown when CEFR navigation is available on the word-detail page.
+    /// </summary>
+    public static string WordDetailSwipeHint => GetRequiredString(nameof(WordDetailSwipeHint));
+
+    /// <summary>
     /// Gets the localized title for the CEFR browse page.
     /// </summary>
     public static string CefrWordsPageTitle => GetRequiredString(nameof(CefrWordsPageTitle));

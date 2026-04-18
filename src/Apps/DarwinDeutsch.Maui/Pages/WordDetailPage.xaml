@@ -62,6 +62,15 @@
                                   Clicked="OnNextWordButtonClicked" />
             </Grid>
 
+            <Border x:Name="SwipeHintBorder"
+                    Padding="10,6"
+                    HorizontalOptions="Start"
+                    IsVisible="False"
+                    Style="{StaticResource AppMetadataBadgeBorderStyle}">
+                <Label x:Name="SwipeHintLabel"
+                       Style="{DynamicResource Caption}" />
+            </Border>
+
             <Label x:Name="AudioStatusLabel"
                    Style="{DynamicResource Caption}"
                    IsVisible="False" />

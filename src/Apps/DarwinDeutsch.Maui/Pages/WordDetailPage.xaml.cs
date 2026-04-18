@@ -23,6 +23,7 @@ namespace DarwinDeutsch.Maui.Pages;
 public partial class WordDetailPage : ContentPage
 {
     private const int DeferredSenseBatchSize = 2;
+    private static bool _hasShownSwipeHintThisSession;
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
@@ -38,6 +39,7 @@ public partial class WordDetailPage : ContentPage
     private CefrBrowseNavigationState? _cefrBrowseNavigationState;
     private CancellationTokenSource? _speechCancellationTokenSource;
     private CancellationTokenSource? _refreshCancellationTokenSource;
+    private CancellationTokenSource? _swipeHintCancellationTokenSource;
     private Guid? _lastTrackedWordPublicId;
     private Guid? _loadedWordPublicId;
     private string _loadedPrimaryMeaningLanguageCode = string.Empty;
@@ -125,6 +127,7 @@ public partial class WordDetailPage : ContentPage
     {
         CancelSpeechRequest();
         CancelRefreshRequest();
+        CancelSwipeHintRequest();
 
         base.OnDisappearing();
     }
@@ -159,6 +162,7 @@ public partial class WordDetailPage : ContentPage
         NextWordButtonTop.Text = AppStrings.WordDetailNextWordButton;
         NextWordButtonBottom.Text = AppStrings.WordDetailNextWordButton;
         ClearAudioStatus();
+        SwipeHintLabel.Text = AppStrings.WordDetailSwipeHint;
 
         if (!Guid.TryParse(WordPublicId, out Guid publicId))
         {
@@ -982,6 +986,7 @@ public partial class WordDetailPage : ContentPage
             _cefrBrowseNavigationState = null;
             CefrNavigationTopGrid.IsVisible = false;
             CefrNavigationBottomGrid.IsVisible = false;
+            HideSwipeHint();
             return;
         }
 
@@ -993,6 +998,15 @@ public partial class WordDetailPage : ContentPage
         bool isVisible = _cefrBrowseNavigationState.TotalCount > 0;
         CefrNavigationTopGrid.IsVisible = isVisible;
         CefrNavigationBottomGrid.IsVisible = isVisible;
+        if (isVisible)
+        {
+            ShowSwipeHintOncePerSession();
+        }
+        else
+        {
+            HideSwipeHint();
+        }
+
         ApplyNavigationButtonState();
     }
 
@@ -1035,6 +1049,8 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
+        HideSwipeHint();
+
         try
         {
             await NavigateToAdjacentWordAsync(nextWordPublicId, "next").ConfigureAwait(true);
@@ -1051,6 +1067,8 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
+        HideSwipeHint();
+
         try
         {
             await NavigateToAdjacentWordAsync(previousWordPublicId, "previous").ConfigureAwait(true);
@@ -1066,6 +1084,8 @@ public partial class WordDetailPage : ContentPage
         {
             return;
         }
+
+        HideSwipeHint();
 
         string escapedCefrLevel = Uri.EscapeDataString(CefrLevel);
         try
@@ -1187,6 +1207,7 @@ public partial class WordDetailPage : ContentPage
 
     private void PrepareForWordRender()
     {
+        HideSwipeHint();
         SensesContainer.Children.Clear();
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
@@ -1241,6 +1262,7 @@ public partial class WordDetailPage : ContentPage
 
         Stopwatch stopwatch = Stopwatch.StartNew();
         _isNavigatingBetweenWords = true;
+        HideSwipeHint();
         ApplyNavigationButtonState();
 
         try
@@ -1277,5 +1299,55 @@ public partial class WordDetailPage : ContentPage
         _refreshCancellationTokenSource.Cancel();
         _refreshCancellationTokenSource.Dispose();
         _refreshCancellationTokenSource = null;
+    }
+
+    private void ShowSwipeHintOncePerSession()
+    {
+        if (_hasShownSwipeHintThisSession)
+        {
+            return;
+        }
+
+        _hasShownSwipeHintThisSession = true;
+        ResetSwipeHintRequest();
+        SwipeHintBorder.IsVisible = true;
+        _ = HideSwipeHintAsync(_swipeHintCancellationTokenSource!.Token);
+    }
+
+    private async Task HideSwipeHintAsync(CancellationToken cancellationToken)
+    {
+        try
+        {
+            await Task.Delay(TimeSpan.FromSeconds(3.5), cancellationToken).ConfigureAwait(true);
+            cancellationToken.ThrowIfCancellationRequested();
+            SwipeHintBorder.IsVisible = false;
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    private void HideSwipeHint()
+    {
+        CancelSwipeHintRequest();
+        SwipeHintBorder.IsVisible = false;
+    }
+
+    private void ResetSwipeHintRequest()
+    {
+        CancelSwipeHintRequest();
+        _swipeHintCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void CancelSwipeHintRequest()
+    {
+        if (_swipeHintCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _swipeHintCancellationTokenSource.Cancel();
+        _swipeHintCancellationTokenSource.Dispose();
+        _swipeHintCancellationTokenSource = null;
     }
 }
