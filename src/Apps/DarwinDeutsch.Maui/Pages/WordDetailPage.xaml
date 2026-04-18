@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
@@ -20,13 +21,15 @@
                            Style="{DynamicResource Body}" />
 
                     <HorizontalStackLayout Spacing="10">
-                        <Button x:Name="SpeakWordButton"
-                                Clicked="OnSpeakWordButtonClicked"
-                                HeightRequest="40"
-                                WidthRequest="48"
-                                IsVisible="False" />
-                        <Button x:Name="FavoriteButton"
-                                Clicked="OnFavoriteButtonClicked" />
+                        <buttons:SfButton x:Name="SpeakWordButton"
+                                          Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                          Clicked="OnSpeakWordButtonClicked"
+                                          HeightRequest="40"
+                                          WidthRequest="48"
+                                          IsVisible="False" />
+                        <buttons:SfButton x:Name="FavoriteButton"
+                                          Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                          Clicked="OnFavoriteButtonClicked" />
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </Border>
@@ -35,14 +38,17 @@
                   ColumnDefinitions="*,*,*"
                   ColumnSpacing="10"
                   IsVisible="False">
-                <Button x:Name="PreviousWordButtonTop"
-                        Clicked="OnPreviousWordButtonClicked" />
-                <Button x:Name="ShowWordListButtonTop"
-                        Grid.Column="1"
-                        Clicked="OnShowWordListButtonClicked" />
-                <Button x:Name="NextWordButtonTop"
-                        Grid.Column="2"
-                        Clicked="OnNextWordButtonClicked" />
+                <buttons:SfButton x:Name="PreviousWordButtonTop"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Clicked="OnPreviousWordButtonClicked" />
+                <buttons:SfButton x:Name="ShowWordListButtonTop"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Grid.Column="1"
+                                  Clicked="OnShowWordListButtonClicked" />
+                <buttons:SfButton x:Name="NextWordButtonTop"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Grid.Column="2"
+                                  Clicked="OnNextWordButtonClicked" />
             </Grid>
 
             <Label x:Name="AudioStatusLabel"
@@ -56,11 +62,13 @@
 
             <Grid ColumnDefinitions="*,*"
                   ColumnSpacing="12">
-                <Button x:Name="KnownButton"
-                        Clicked="OnKnownButtonClicked" />
-                <Button x:Name="DifficultButton"
-                        Grid.Column="1"
-                        Clicked="OnDifficultButtonClicked" />
+                <buttons:SfButton x:Name="KnownButton"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Clicked="OnKnownButtonClicked" />
+                <buttons:SfButton x:Name="DifficultButton"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Grid.Column="1"
+                                  Clicked="OnDifficultButtonClicked" />
             </Grid>
 
             <VerticalStackLayout x:Name="SensesContainer"
@@ -219,14 +227,17 @@
                   ColumnDefinitions="*,*,*"
                   ColumnSpacing="10"
                   IsVisible="False">
-                <Button x:Name="PreviousWordButtonBottom"
-                        Clicked="OnPreviousWordButtonClicked" />
-                <Button x:Name="ShowWordListButtonBottom"
-                        Grid.Column="1"
-                        Clicked="OnShowWordListButtonClicked" />
-                <Button x:Name="NextWordButtonBottom"
-                        Grid.Column="2"
-                        Clicked="OnNextWordButtonClicked" />
+                <buttons:SfButton x:Name="PreviousWordButtonBottom"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Clicked="OnPreviousWordButtonClicked" />
+                <buttons:SfButton x:Name="ShowWordListButtonBottom"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Grid.Column="1"
+                                  Clicked="OnShowWordListButtonClicked" />
+                <buttons:SfButton x:Name="NextWordButtonBottom"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Grid.Column="2"
+                                  Clicked="OnNextWordButtonClicked" />
             </Grid>
         </VerticalStackLayout>
     </ScrollView>

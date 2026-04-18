@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
@@ -34,15 +35,17 @@
                         <VerticalStackLayout Spacing="16">
                             <Label x:Name="RemoteContentUpdatesSectionLabel"
                                    Style="{DynamicResource Caption}" />
-                            <Button x:Name="ApplyRemoteUpdateButton"
-                                    Clicked="OnApplyRemoteUpdateButtonClicked" />
+                            <buttons:SfButton x:Name="ApplyRemoteUpdateButton"
+                                              Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                              Clicked="OnApplyRemoteUpdateButtonClicked" />
                             <controls:DetailSectionView x:Name="RemoteContentUpdateStatusSectionView" />
                             <controls:DetailSectionView x:Name="RemoteContentUpdateDetailsSectionView" />
 
                             <Label x:Name="CatalogAreaUpdatesSectionLabel"
                                    Style="{DynamicResource Caption}" />
-                            <Button x:Name="ApplyCatalogAreaUpdateButton"
-                                    Clicked="OnApplyCatalogAreaUpdateButtonClicked" />
+                            <buttons:SfButton x:Name="ApplyCatalogAreaUpdateButton"
+                                              Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                              Clicked="OnApplyCatalogAreaUpdateButtonClicked" />
                             <controls:DetailSectionView x:Name="CatalogAreaUpdateSectionView" />
 
                             <Label x:Name="CefrLevelUpdatesSectionLabel"
@@ -53,13 +56,15 @@
                                                DisplayMemberPath="Level"
                                                SelectionChanged="OnCefrLevelChipGroupSelectionChanged" />
                             <controls:DetailSectionView x:Name="SelectedCefrUpdateSectionView" />
-                            <Button x:Name="ApplySelectedCefrLevelUpdateButton"
-                                    Clicked="OnApplySelectedCefrLevelUpdateButtonClicked" />
+                            <buttons:SfButton x:Name="ApplySelectedCefrLevelUpdateButton"
+                                              Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                              Clicked="OnApplySelectedCefrLevelUpdateButtonClicked" />
 
                             <Label x:Name="PackagedSeedUpdatesSectionLabel"
                                    Style="{DynamicResource Caption}" />
-                            <Button x:Name="ApplySeedUpdateButton"
-                                    Clicked="OnApplySeedUpdateButtonClicked" />
+                            <buttons:SfButton x:Name="ApplySeedUpdateButton"
+                                              Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                              Clicked="OnApplySeedUpdateButtonClicked" />
                             <controls:DetailSectionView x:Name="ContentUpdateStatusSectionView" />
                             <controls:DetailSectionView x:Name="ContentUpdateDetailsSectionView" />
                         </VerticalStackLayout>
@@ -111,8 +116,9 @@
                             <Label x:Name="AboutSummaryLabel"
                                    Style="{DynamicResource Body}"
                                    LineBreakMode="WordWrap" />
-                            <Button x:Name="OpenAboutButton"
-                                    Clicked="OnOpenAboutButtonClicked" />
+                            <buttons:SfButton x:Name="OpenAboutButton"
+                                              Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                              Clicked="OnOpenAboutButtonClicked" />
                         </VerticalStackLayout>
                     </Border>
                 </expander:SfExpander.Content>

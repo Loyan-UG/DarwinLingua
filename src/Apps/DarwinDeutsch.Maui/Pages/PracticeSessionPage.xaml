@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              xmlns:progress="clr-namespace:Syncfusion.Maui.Toolkit.ProgressBar;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.PracticeSessionPage">
     <ScrollView>
@@ -59,37 +60,44 @@
 
             <VerticalStackLayout x:Name="PrimaryActionsLayout"
                                  Spacing="12">
-                <Button x:Name="RevealButton"
-                        Clicked="OnRevealButtonClicked" />
+                <buttons:SfButton x:Name="RevealButton"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  Clicked="OnRevealButtonClicked" />
                 <Grid x:Name="OutcomeButtonsGrid"
                       IsVisible="False"
                       ColumnDefinitions="*,*"
                       ColumnSpacing="12"
                       RowDefinitions="Auto,Auto"
                       RowSpacing="12">
-                    <Button x:Name="IncorrectButton"
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Clicked="OnIncorrectButtonClicked" />
-                    <Button x:Name="HardButton"
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Clicked="OnHardButtonClicked" />
-                    <Button x:Name="CorrectButton"
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Clicked="OnCorrectButtonClicked" />
-                    <Button x:Name="EasyButton"
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Clicked="OnEasyButtonClicked" />
+                    <buttons:SfButton x:Name="IncorrectButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Grid.Row="0"
+                                      Grid.Column="0"
+                                      Clicked="OnIncorrectButtonClicked" />
+                    <buttons:SfButton x:Name="HardButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Grid.Row="0"
+                                      Grid.Column="1"
+                                      Clicked="OnHardButtonClicked" />
+                    <buttons:SfButton x:Name="CorrectButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Grid.Row="1"
+                                      Grid.Column="0"
+                                      Clicked="OnCorrectButtonClicked" />
+                    <buttons:SfButton x:Name="EasyButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Grid.Row="1"
+                                      Grid.Column="1"
+                                      Clicked="OnEasyButtonClicked" />
                 </Grid>
-                <Button x:Name="NextButton"
-                        IsVisible="False"
-                        Clicked="OnNextButtonClicked" />
-                <Button x:Name="FinishButton"
-                        IsVisible="False"
-                        Clicked="OnFinishButtonClicked" />
+                <buttons:SfButton x:Name="NextButton"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  IsVisible="False"
+                                  Clicked="OnNextButtonClicked" />
+                <buttons:SfButton x:Name="FinishButton"
+                                  Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                  IsVisible="False"
+                                  Clicked="OnFinishButtonClicked" />
             </VerticalStackLayout>
 
             <Border x:Name="FeedbackBorder"
@@ -113,8 +121,9 @@
                            Style="{DynamicResource Title2}" />
                     <Label x:Name="SummaryBodyLabel"
                            Style="{DynamicResource Body}" />
-                    <Button x:Name="ReturnToPracticeButton"
-                            Clicked="OnReturnToPracticeButtonClicked" />
+                    <buttons:SfButton x:Name="ReturnToPracticeButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Clicked="OnReturnToPracticeButtonClicked" />
                 </VerticalStackLayout>
             </Border>
         </VerticalStackLayout>

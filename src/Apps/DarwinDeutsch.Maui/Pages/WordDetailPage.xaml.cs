@@ -9,6 +9,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Toolkit.Buttons;
 using Syncfusion.Maui.Toolkit.Chips;
 using System.Diagnostics;
 
@@ -478,7 +479,7 @@ public partial class WordDetailPage : ContentPage
                 Text = example.GermanText,
                 Style = ResolveAppTextStyle("Body"),
             };
-            Button speakExampleButton = BuildSpeechButton(example.GermanText);
+            SfButton speakExampleButton = BuildSpeechButton(example.GermanText);
 
             exampleHeaderLayout.Add(exampleTextLabel);
             exampleHeaderLayout.Add(speakExampleButton, 1, 0);
@@ -520,11 +521,11 @@ public partial class WordDetailPage : ContentPage
     /// </summary>
     /// <param name="spokenText">The German text to pronounce.</param>
     /// <returns>A configured button instance.</returns>
-    private Button BuildSpeechButton(string spokenText)
+    private SfButton BuildSpeechButton(string spokenText)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(spokenText);
 
-        Button button = new()
+        SfButton button = new()
         {
             Text = "\U0001F50A",
             WidthRequest = 44,

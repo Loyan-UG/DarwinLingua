@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.AboutPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
     <ScrollView>
@@ -35,10 +36,12 @@
                            Style="{DynamicResource Title3}" />
                     <Label x:Name="DeveloperValueLabel"
                            Style="{DynamicResource Body}" />
-                    <Button x:Name="OpenGitHubButton"
-                            Clicked="OnOpenGitHubButtonClicked" />
-                    <Button x:Name="ContactButton"
-                            Clicked="OnContactButtonClicked" />
+                    <buttons:SfButton x:Name="OpenGitHubButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Clicked="OnOpenGitHubButtonClicked" />
+                    <buttons:SfButton x:Name="ContactButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Clicked="OnContactButtonClicked" />
                 </VerticalStackLayout>
             </Border>
         </VerticalStackLayout>

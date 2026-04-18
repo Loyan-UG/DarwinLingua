@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Pages.WelcomePage">
     <ScrollView>
         <VerticalStackLayout Padding="24"
@@ -59,10 +60,11 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Button x:Name="StartButton"
-                    Clicked="OnStartButtonClicked"
-                    HorizontalOptions="Fill"
-                    Margin="0,4,0,8" />
+            <buttons:SfButton x:Name="StartButton"
+                              Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                              Clicked="OnStartButtonClicked"
+                              HorizontalOptions="Fill"
+                              Margin="0,4,0,8" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
