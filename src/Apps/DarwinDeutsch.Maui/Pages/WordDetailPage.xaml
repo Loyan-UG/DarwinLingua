@@ -23,25 +23,52 @@
             <Border Padding="22"
                     Style="{StaticResource AppHeroPanelBorderStyle}">
                 <VerticalStackLayout Spacing="14">
-                    <Label x:Name="HeadlineLabel"
-                           Style="{DynamicResource Headline}"
-                           HorizontalOptions="Start"
-                           HorizontalTextAlignment="Start"
-                           SemanticProperties.HeadingLevel="Level1" />
+                    <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto"
+                          ColumnSpacing="8">
+                        <VerticalStackLayout Spacing="8">
+                            <Label x:Name="HeadlineLabel"
+                                   Style="{DynamicResource Headline}"
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   SemanticProperties.HeadingLevel="Level1" />
 
-                    <Label x:Name="MetadataLabel"
-                           Style="{DynamicResource Body}" />
+                            <Label x:Name="MetadataLabel"
+                                   Style="{DynamicResource Body}" />
+                        </VerticalStackLayout>
 
-                    <HorizontalStackLayout Spacing="10">
                         <buttons:SfButton x:Name="SpeakWordButton"
+                                          Grid.Column="1"
                                           Style="{StaticResource SyncfusionIconActionButtonStyle}"
                                           Clicked="OnSpeakWordButtonClicked"
                                           IsVisible="False" />
                         <buttons:SfButton x:Name="FavoriteButton"
+                                          Grid.Column="2"
                                           Style="{StaticResource SyncfusionFavoriteToggleButtonStyle}"
                                           IsCheckable="True"
                                           Clicked="OnFavoriteButtonClicked" />
-                    </HorizontalStackLayout>
+                        <buttons:SfButton x:Name="KnownButton"
+                                          Grid.Column="3"
+                                          Style="{StaticResource SyncfusionCompactKnownToggleButtonStyle}"
+                                          IsCheckable="True"
+                                          Clicked="OnKnownButtonClicked" />
+                        <buttons:SfButton x:Name="DifficultButton"
+                                          Grid.Column="4"
+                                          Style="{StaticResource SyncfusionCompactDifficultToggleButtonStyle}"
+                                          IsCheckable="True"
+                                          Clicked="OnDifficultButtonClicked" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border x:Name="ExamplesBorder"
+                    Padding="20"
+                    Style="{StaticResource AppSectionCardBorderStyle}"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="ExamplesHeadingLabel"
+                           Style="{DynamicResource Title2}" />
+                    <VerticalStackLayout x:Name="ExamplesStackLayout"
+                                         Spacing="12" />
                 </VerticalStackLayout>
             </Border>
 
@@ -62,42 +89,6 @@
                                   Clicked="OnNextWordButtonClicked" />
             </Grid>
 
-            <Border x:Name="SwipeHintBorder"
-                    Padding="10,6"
-                    HorizontalOptions="Start"
-                    IsVisible="False"
-                    Style="{StaticResource AppMetadataBadgeBorderStyle}">
-                <Label x:Name="SwipeHintLabel"
-                       Style="{DynamicResource Caption}" />
-            </Border>
-
-            <Grid x:Name="SwipeAffordanceGrid"
-                  ColumnDefinitions="Auto,*,Auto"
-                  ColumnSpacing="10"
-                  IsVisible="False"
-                  VerticalOptions="Center">
-                <Border x:Name="SwipePreviousHintBorder"
-                        Padding="10,6"
-                        Style="{StaticResource AppMetadataBadgeBorderStyle}">
-                    <Label x:Name="SwipePreviousHintLabel"
-                           Style="{DynamicResource Caption}" />
-                </Border>
-
-                <Label x:Name="SwipeAffordanceLabel"
-                       Grid.Column="1"
-                       HorizontalOptions="Center"
-                       HorizontalTextAlignment="Center"
-                       Style="{DynamicResource Caption}" />
-
-                <Border x:Name="SwipeNextHintBorder"
-                        Grid.Column="2"
-                        Padding="10,6"
-                        Style="{StaticResource AppMetadataBadgeBorderStyle}">
-                    <Label x:Name="SwipeNextHintLabel"
-                           Style="{DynamicResource Caption}" />
-                </Border>
-            </Grid>
-
             <Label x:Name="AudioStatusLabel"
                    Style="{DynamicResource Caption}"
                    IsVisible="False" />
@@ -106,19 +97,6 @@
                     Style="{StaticResource AppSectionCardBorderStyle}">
                 <controls:DetailSectionView x:Name="LearningStateSectionView" />
             </Border>
-
-            <Grid ColumnDefinitions="*,*"
-                  ColumnSpacing="12">
-                <buttons:SfButton x:Name="KnownButton"
-                                  Style="{StaticResource SyncfusionKnownToggleButtonStyle}"
-                                  IsCheckable="True"
-                                  Clicked="OnKnownButtonClicked" />
-                <buttons:SfButton x:Name="DifficultButton"
-                                  Style="{StaticResource SyncfusionDifficultToggleButtonStyle}"
-                                  IsCheckable="True"
-                                  Grid.Column="1"
-                                  Clicked="OnDifficultButtonClicked" />
-            </Grid>
 
             <VerticalStackLayout x:Name="SensesContainer"
                                  Spacing="16" />

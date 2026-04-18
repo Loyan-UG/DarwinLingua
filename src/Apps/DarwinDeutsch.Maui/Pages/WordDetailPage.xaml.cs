@@ -23,7 +23,6 @@ namespace DarwinDeutsch.Maui.Pages;
 public partial class WordDetailPage : ContentPage
 {
     private const int DeferredSenseBatchSize = 2;
-    private static bool _hasShownSwipeHintThisSession;
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
@@ -39,7 +38,6 @@ public partial class WordDetailPage : ContentPage
     private CefrBrowseNavigationState? _cefrBrowseNavigationState;
     private CancellationTokenSource? _speechCancellationTokenSource;
     private CancellationTokenSource? _refreshCancellationTokenSource;
-    private CancellationTokenSource? _swipeHintCancellationTokenSource;
     private Guid? _lastTrackedWordPublicId;
     private Guid? _loadedWordPublicId;
     private string _loadedPrimaryMeaningLanguageCode = string.Empty;
@@ -127,7 +125,6 @@ public partial class WordDetailPage : ContentPage
     {
         CancelSpeechRequest();
         CancelRefreshRequest();
-        CancelSwipeHintRequest();
 
         base.OnDisappearing();
     }
@@ -146,6 +143,7 @@ public partial class WordDetailPage : ContentPage
         Title = AppStrings.WordDetailTitle;
         TopicsSectionView.SectionTitle = AppStrings.WordDetailTopicsLabel;
         LearningStateSectionView.SectionTitle = AppStrings.WordDetailLearningStateLabel;
+        ExamplesHeadingLabel.Text = AppStrings.WordDetailExamplesLabel;
         UsageLabelsHeadingLabel.Text = AppStrings.WordDetailUsageLabelsLabel;
         ContextLabelsHeadingLabel.Text = AppStrings.WordDetailContextLabelsLabel;
         GrammarNotesHeadingLabel.Text = AppStrings.WordDetailGrammarNotesLabel;
@@ -161,11 +159,7 @@ public partial class WordDetailPage : ContentPage
         ShowWordListButtonBottom.Text = AppStrings.WordDetailWordListButton;
         NextWordButtonTop.Text = AppStrings.WordDetailNextWordButton;
         NextWordButtonBottom.Text = AppStrings.WordDetailNextWordButton;
-        SwipeAffordanceLabel.Text = AppStrings.WordDetailSwipeHint;
-        SwipePreviousHintLabel.Text = $"\u2190 {AppStrings.WordDetailPreviousWordButton}";
-        SwipeNextHintLabel.Text = $"{AppStrings.WordDetailNextWordButton} \u2192";
         ClearAudioStatus();
-        SwipeHintLabel.Text = AppStrings.WordDetailSwipeHint;
 
         if (!Guid.TryParse(WordPublicId, out Guid publicId))
         {
@@ -233,6 +227,7 @@ public partial class WordDetailPage : ContentPage
         await Task.Yield();
         cancellationToken.ThrowIfCancellationRequested();
 
+        ApplyExamples(word.Senses);
         ApplyWordLabels(UsageLabelsChipGroup, UsageLabelsBorder, word.UsageLabels);
         ApplyWordLabels(ContextLabelsChipGroup, ContextLabelsBorder, word.ContextLabels);
         ApplyGrammarNotes(word.GrammarNotes);
@@ -301,7 +296,8 @@ public partial class WordDetailPage : ContentPage
         DifficultButton.IsVisible = false;
         CefrNavigationTopGrid.IsVisible = false;
         CefrNavigationBottomGrid.IsVisible = false;
-        SwipeAffordanceGrid.IsVisible = false;
+        ExamplesBorder.IsVisible = false;
+        ExamplesStackLayout.Children.Clear();
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();
@@ -488,56 +484,6 @@ public partial class WordDetailPage : ContentPage
             });
         }
 
-        foreach (ExampleSentenceDetailModel example in sense.Examples)
-        {
-            VerticalStackLayout exampleLayout = new()
-            {
-                Spacing = 2,
-                Margin = new Thickness(8, 0, 0, 0),
-            };
-
-            Grid exampleHeaderLayout = new()
-            {
-                ColumnDefinitions =
-                {
-                    new ColumnDefinition(GridLength.Star),
-                    new ColumnDefinition(GridLength.Auto),
-                },
-                ColumnSpacing = 12,
-            };
-
-            Label exampleTextLabel = new()
-            {
-                Text = example.GermanText,
-                Style = ResolveAppTextStyle("Body"),
-            };
-            SfButton speakExampleButton = BuildSpeechButton(example.GermanText);
-
-            exampleHeaderLayout.Add(exampleTextLabel);
-            exampleHeaderLayout.Add(speakExampleButton, 1, 0);
-            exampleLayout.Children.Add(exampleHeaderLayout);
-
-            if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
-            {
-                exampleLayout.Children.Add(new Label
-                {
-                    Text = example.PrimaryMeaning,
-                    Style = ResolveAppTextStyle("Body"),
-                });
-            }
-
-            if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
-            {
-                exampleLayout.Children.Add(new Label
-                {
-                    Text = example.SecondaryMeaning,
-                    Style = ResolveAppTextStyle("Body"),
-                });
-            }
-
-            senseLayout.Children.Add(exampleLayout);
-        }
-
         return new Border
         {
             Padding = 16,
@@ -622,16 +568,20 @@ public partial class WordDetailPage : ContentPage
         ArgumentNullException.ThrowIfNull(labelKeys);
 
         container.ItemsSource = Array.Empty<string>();
-        hostBorder.IsVisible = labelKeys.Count > 0;
+        string[] displayLabels = labelKeys
+            .Where(static key => !string.IsNullOrWhiteSpace(key))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .Select(LexiconTagDisplayText.GetDisplayName)
+            .ToArray();
 
-        if (labelKeys.Count == 0)
+        hostBorder.IsVisible = displayLabels.Length > 0;
+
+        if (displayLabels.Length == 0)
         {
             return;
         }
 
-        container.ItemsSource = labelKeys
-            .Select(LexiconTagDisplayText.GetDisplayName)
-            .ToList();
+        container.ItemsSource = displayLabels;
     }
 
     /// <summary>
@@ -851,19 +801,21 @@ public partial class WordDetailPage : ContentPage
 
         LearningStateSectionView.SectionValue = string.Format(AppStrings.WordDetailViewCountFormat, _userWordState.ViewCount);
 
-        KnownButton.Text = _userWordState.IsKnown
-            ? AppStrings.WordDetailClearKnownButton
-            : AppStrings.WordDetailMarkKnownButton;
+        KnownButton.Text = AppStrings.WordDetailKnownShortButton;
         KnownButton.IsVisible = true;
         KnownButton.IsEnabled = true;
         KnownButton.IsChecked = _userWordState.IsKnown;
+        SemanticProperties.SetDescription(
+            KnownButton,
+            _userWordState.IsKnown ? AppStrings.WordDetailClearKnownButton : AppStrings.WordDetailMarkKnownButton);
 
-        DifficultButton.Text = _userWordState.IsDifficult
-            ? AppStrings.WordDetailClearDifficultButton
-            : AppStrings.WordDetailMarkDifficultButton;
+        DifficultButton.Text = AppStrings.WordDetailHardShortButton;
         DifficultButton.IsVisible = true;
         DifficultButton.IsEnabled = true;
         DifficultButton.IsChecked = _userWordState.IsDifficult;
+        SemanticProperties.SetDescription(
+            DifficultButton,
+            _userWordState.IsDifficult ? AppStrings.WordDetailClearDifficultButton : AppStrings.WordDetailMarkDifficultButton);
     }
 
     /// <summary>
@@ -990,8 +942,6 @@ public partial class WordDetailPage : ContentPage
             _cefrBrowseNavigationState = null;
             CefrNavigationTopGrid.IsVisible = false;
             CefrNavigationBottomGrid.IsVisible = false;
-            SwipeAffordanceGrid.IsVisible = false;
-            HideSwipeHint();
             return;
         }
 
@@ -1003,16 +953,6 @@ public partial class WordDetailPage : ContentPage
         bool isVisible = _cefrBrowseNavigationState.TotalCount > 0;
         CefrNavigationTopGrid.IsVisible = isVisible;
         CefrNavigationBottomGrid.IsVisible = isVisible;
-        SwipeAffordanceGrid.IsVisible = isVisible;
-        if (isVisible)
-        {
-            ShowSwipeHintOncePerSession();
-        }
-        else
-        {
-            HideSwipeHint();
-        }
-
         ApplyNavigationButtonState();
     }
 
@@ -1055,8 +995,6 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        HideSwipeHint();
-
         try
         {
             await NavigateToAdjacentWordAsync(nextWordPublicId, "next").ConfigureAwait(true);
@@ -1072,8 +1010,6 @@ public partial class WordDetailPage : ContentPage
         {
             return;
         }
-
-        HideSwipeHint();
 
         try
         {
@@ -1091,12 +1027,10 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        HideSwipeHint();
-
         string escapedCefrLevel = Uri.EscapeDataString(CefrLevel);
         try
         {
-            await Shell.Current.GoToAsync($"{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+            await Shell.Current.GoToAsync($"//browse/{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
                 .ConfigureAwait(true);
         }
         catch (OperationCanceledException)
@@ -1213,8 +1147,8 @@ public partial class WordDetailPage : ContentPage
 
     private void PrepareForWordRender()
     {
-        HideSwipeHint();
         SensesContainer.Children.Clear();
+        ExamplesStackLayout.Children.Clear();
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();
@@ -1228,6 +1162,7 @@ public partial class WordDetailPage : ContentPage
         CollocationsBorder.IsVisible = false;
         WordFamiliesBorder.IsVisible = false;
         LexicalRelationsBorder.IsVisible = false;
+        ExamplesBorder.IsVisible = false;
         SynonymsSectionStackLayout.IsVisible = false;
         AntonymsSectionStackLayout.IsVisible = false;
         SpeakWordButton.IsVisible = false;
@@ -1257,12 +1192,6 @@ public partial class WordDetailPage : ContentPage
         NextWordButtonBottom.IsEnabled = hasNext;
         ShowWordListButtonTop.IsEnabled = canShowList;
         ShowWordListButtonBottom.IsEnabled = canShowList;
-
-        SwipePreviousHintBorder.Opacity = hasPrevious ? 1d : 0.45d;
-        SwipePreviousHintLabel.Opacity = hasPrevious ? 1d : 0.65d;
-        SwipeNextHintBorder.Opacity = hasNext ? 1d : 0.45d;
-        SwipeNextHintLabel.Opacity = hasNext ? 1d : 0.65d;
-        SwipeAffordanceLabel.Opacity = canShowList ? 0.82d : 0.6d;
     }
 
     private async Task NavigateToAdjacentWordAsync(Guid targetWordPublicId, string direction)
@@ -1274,7 +1203,6 @@ public partial class WordDetailPage : ContentPage
 
         Stopwatch stopwatch = Stopwatch.StartNew();
         _isNavigatingBetweenWords = true;
-        HideSwipeHint();
         ApplyNavigationButtonState();
 
         try
@@ -1313,53 +1241,87 @@ public partial class WordDetailPage : ContentPage
         _refreshCancellationTokenSource = null;
     }
 
-    private void ShowSwipeHintOncePerSession()
+    private void ApplyExamples(IReadOnlyList<WordSenseDetailModel> senses)
     {
-        if (_hasShownSwipeHintThisSession)
-        {
-            return;
-        }
+        ArgumentNullException.ThrowIfNull(senses);
 
-        _hasShownSwipeHintThisSession = true;
-        ResetSwipeHintRequest();
-        SwipeHintBorder.IsVisible = true;
-        _ = HideSwipeHintAsync(_swipeHintCancellationTokenSource!.Token);
+        ExamplesStackLayout.Children.Clear();
+
+        ExampleSentenceDetailModel[] examples = senses
+            .SelectMany(static sense => sense.Examples)
+            .GroupBy(example => new
+            {
+                German = example.GermanText.Trim(),
+                Primary = example.PrimaryMeaning?.Trim() ?? string.Empty,
+                Secondary = example.SecondaryMeaning?.Trim() ?? string.Empty,
+            })
+            .Select(group => group.First())
+            .ToArray();
+
+        ExamplesBorder.IsVisible = examples.Length > 0;
+
+        foreach (ExampleSentenceDetailModel example in examples)
+        {
+            ExamplesStackLayout.Children.Add(BuildExampleView(example));
+        }
     }
 
-    private async Task HideSwipeHintAsync(CancellationToken cancellationToken)
+    private View BuildExampleView(ExampleSentenceDetailModel example)
     {
-        try
+        ArgumentNullException.ThrowIfNull(example);
+
+        VerticalStackLayout exampleLayout = new()
         {
-            await Task.Delay(TimeSpan.FromSeconds(3.5), cancellationToken).ConfigureAwait(true);
-            cancellationToken.ThrowIfCancellationRequested();
-            SwipeHintBorder.IsVisible = false;
-        }
-        catch (OperationCanceledException)
+            Spacing = 6,
+        };
+
+        Grid exampleHeaderLayout = new()
         {
-        }
-    }
+            ColumnDefinitions =
+            {
+                new ColumnDefinition(GridLength.Star),
+                new ColumnDefinition(GridLength.Auto),
+            },
+            ColumnSpacing = 12,
+        };
 
-    private void HideSwipeHint()
-    {
-        CancelSwipeHintRequest();
-        SwipeHintBorder.IsVisible = false;
-    }
-
-    private void ResetSwipeHintRequest()
-    {
-        CancelSwipeHintRequest();
-        _swipeHintCancellationTokenSource = new CancellationTokenSource();
-    }
-
-    private void CancelSwipeHintRequest()
-    {
-        if (_swipeHintCancellationTokenSource is null)
+        Label exampleTextLabel = new()
         {
-            return;
+            Text = example.GermanText,
+            Style = ResolveAppTextStyle("Body"),
+        };
+
+        SfButton speakExampleButton = BuildSpeechButton(example.GermanText);
+        exampleHeaderLayout.Add(exampleTextLabel);
+        exampleHeaderLayout.Add(speakExampleButton, 1, 0);
+        exampleLayout.Children.Add(exampleHeaderLayout);
+
+        if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
+        {
+            exampleLayout.Children.Add(new Label
+            {
+                Text = example.PrimaryMeaning,
+                Style = ResolveAppTextStyle("Body"),
+            });
         }
 
-        _swipeHintCancellationTokenSource.Cancel();
-        _swipeHintCancellationTokenSource.Dispose();
-        _swipeHintCancellationTokenSource = null;
+        if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
+        {
+            exampleLayout.Children.Add(new Label
+            {
+                Text = example.SecondaryMeaning,
+                Style = ResolveAppTextStyle("Body"),
+            });
+        }
+
+        return new Border
+        {
+            Padding = new Thickness(14, 12),
+            StrokeThickness = 0,
+            BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                ? Color.FromArgb("#1B2732")
+                : Color.FromArgb("#FFFDF9"),
+            Content = exampleLayout,
+        };
     }
 }

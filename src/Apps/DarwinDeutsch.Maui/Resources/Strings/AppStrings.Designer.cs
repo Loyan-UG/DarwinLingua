@@ -373,6 +373,11 @@ public static class AppStrings
     public static string WordDetailSpeakExampleButton => GetRequiredString(nameof(WordDetailSpeakExampleButton));
 
     /// <summary>
+    /// Gets the localized label for the examples section on the word-detail page.
+    /// </summary>
+    public static string WordDetailExamplesLabel => GetRequiredString(nameof(WordDetailExamplesLabel));
+
+    /// <summary>
     /// Gets the localized caption for opening the previous word inside the current CEFR level.
     /// </summary>
     public static string WordDetailPreviousWordButton => GetRequiredString(nameof(WordDetailPreviousWordButton));
@@ -423,6 +428,11 @@ public static class AppStrings
     public static string WordDetailMarkKnownButton => GetRequiredString(nameof(WordDetailMarkKnownButton));
 
     /// <summary>
+    /// Gets the localized compact caption for the known toggle on the word-detail page.
+    /// </summary>
+    public static string WordDetailKnownShortButton => GetRequiredString(nameof(WordDetailKnownShortButton));
+
+    /// <summary>
     /// Gets the localized caption for clearing the known marker from the current word.
     /// </summary>
     public static string WordDetailClearKnownButton => GetRequiredString(nameof(WordDetailClearKnownButton));
@@ -431,6 +441,11 @@ public static class AppStrings
     /// Gets the localized caption for marking the current word as difficult.
     /// </summary>
     public static string WordDetailMarkDifficultButton => GetRequiredString(nameof(WordDetailMarkDifficultButton));
+
+    /// <summary>
+    /// Gets the localized compact caption for the difficult toggle on the word-detail page.
+    /// </summary>
+    public static string WordDetailHardShortButton => GetRequiredString(nameof(WordDetailHardShortButton));
 
     /// <summary>
     /// Gets the localized caption for clearing the difficult marker from the current word.

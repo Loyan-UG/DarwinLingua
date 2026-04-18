@@ -310,6 +310,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("SwipeGestureRecognizer", xamlSource, StringComparison.Ordinal);
         Assert.Contains("OnDetailSwipeLeft", xamlSource, StringComparison.Ordinal);
         Assert.Contains("OnDetailSwipeRight", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ExamplesBorder", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ExamplesStackLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContextLabelsBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("GrammarNotesBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CollocationsBorder", xamlSource, StringComparison.Ordinal);
@@ -330,6 +332,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplyCollocations", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyWordFamilies", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyLexicalRelations", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("ApplyExamples", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("BuildExampleView", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyCefrNavigationStateAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyNavigationButtonState", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("NavigateToAdjacentWordAsync", codeBehindSource, StringComparison.Ordinal);
