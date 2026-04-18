@@ -94,18 +94,13 @@ public partial class CefrQuickFilterView : ContentView
         object? sender,
         Syncfusion.Maui.Toolkit.SegmentedControl.SelectionChangedEventArgs e)
     {
-        if (e.NewValue is null)
+        int? newIndex = e.NewIndex;
+        if (!newIndex.HasValue || newIndex.Value < 0 || newIndex.Value >= Levels.Length)
         {
             return;
         }
 
-        string? selectedLevel = e.NewValue.ToString();
-        if (string.IsNullOrWhiteSpace(selectedLevel))
-        {
-            return;
-        }
-
-        SelectedLevel = selectedLevel;
+        SelectedLevel = Levels[newIndex.Value];
 
         if (LevelSelectedCommand?.CanExecute(SelectedLevel) == true)
         {
