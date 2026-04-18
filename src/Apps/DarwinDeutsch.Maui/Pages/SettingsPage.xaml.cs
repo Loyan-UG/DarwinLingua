@@ -85,6 +85,10 @@ public partial class SettingsPage : ContentPage
         {
             return;
         }
+        catch (Exception)
+        {
+            ApplyPageLoadFailureState();
+        }
     }
 
     protected override void OnDisappearing()
@@ -124,6 +128,10 @@ public partial class SettingsPage : ContentPage
             catch (OperationCanceledException)
             {
                 return;
+            }
+            catch (Exception)
+            {
+                ApplyPageLoadFailureState();
             }
         });
     }
@@ -249,6 +257,23 @@ public partial class SettingsPage : ContentPage
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
         ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
+    }
+
+    private void ApplyPageLoadFailureState()
+    {
+        string errorText = AppStrings.CommonStateError;
+
+        ContentUpdateStatusSectionView.SectionValue = errorText;
+        ContentUpdateDetailsSectionView.SectionValue = errorText;
+        RemoteContentUpdateStatusSectionView.SectionValue = errorText;
+        RemoteContentUpdateDetailsSectionView.SectionValue = errorText;
+        CatalogAreaUpdateSectionView.SectionValue = errorText;
+        SelectedCefrUpdateSectionView.SectionValue = errorText;
+
+        ApplyRemoteUpdateButton.IsEnabled = false;
+        ApplyCatalogAreaUpdateButton.IsEnabled = false;
+        ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
+        ApplySeedUpdateButton.IsEnabled = false;
     }
 
     private async Task LoadAndApplyRemoteUpdateSectionsAsync(string localDatabasePath, CancellationToken cancellationToken)

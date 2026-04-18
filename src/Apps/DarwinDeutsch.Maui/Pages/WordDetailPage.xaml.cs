@@ -348,6 +348,10 @@ public partial class WordDetailPage : ContentPage
         catch (OperationCanceledException)
         {
         }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Failed to toggle favorite state for word {WordPublicId}.", publicId);
+        }
     }
 
     /// <summary>
@@ -370,6 +374,10 @@ public partial class WordDetailPage : ContentPage
         }
         catch (OperationCanceledException)
         {
+        }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Failed to update known state for word {WordPublicId}.", publicId);
         }
     }
 
@@ -394,6 +402,10 @@ public partial class WordDetailPage : ContentPage
         catch (OperationCanceledException)
         {
         }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Failed to update difficult state for word {WordPublicId}.", publicId);
+        }
     }
 
     /// <summary>
@@ -414,6 +426,12 @@ public partial class WordDetailPage : ContentPage
         }
         catch (OperationCanceledException)
         {
+        }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Manual speech playback failed for word detail '{Text}'.", headline);
+            AudioStatusLabel.Text = AppStrings.WordDetailAudioFailed;
+            AudioStatusLabel.IsVisible = true;
         }
     }
 
@@ -1053,6 +1071,11 @@ public partial class WordDetailPage : ContentPage
         }
         catch (OperationCanceledException)
         {
+        }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Failed to navigate back to CEFR list for level {CefrLevel}.", CefrLevel);
+            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
         }
     }
 
