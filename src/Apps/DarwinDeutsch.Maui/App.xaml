@@ -8,6 +8,7 @@
              xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              xmlns:progress="clr-namespace:Syncfusion.Maui.Toolkit.ProgressBar;assembly=Syncfusion.Maui.Toolkit"
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:effects="clr-namespace:Syncfusion.Maui.Toolkit.EffectsView;assembly=Syncfusion.Maui.Toolkit"
              xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.App">
     <Application.Resources>
@@ -171,6 +172,13 @@
             <Style x:Key="SyncfusionSessionProgressStyle" TargetType="progress:SfLinearProgressBar">
                 <Setter Property="TrackFill" Value="{AppThemeBinding Light=#E3ECE9, Dark=#23313D}" />
                 <Setter Property="ProgressFill" Value="{AppThemeBinding Light=#1A6B5B, Dark=#7FD1BF}" />
+            </Style>
+            <Style x:Key="SyncfusionTouchSurfaceEffectStyle" TargetType="effects:SfEffectsView">
+                <Setter Property="TouchDownEffects" Value="Highlight" />
+                <Setter Property="TouchUpEffects" Value="None" />
+                <Setter Property="AutoResetEffects" Value="Highlight" />
+                <Setter Property="HighlightBackground" Value="{AppThemeBinding Light=#EAF3F0, Dark=#1C2833}" />
+                <Setter Property="ShouldIgnoreTouches" Value="True" />
             </Style>
             <Style x:Key="SyncfusionInlineShimmerStyle" TargetType="shimmer:SfShimmer">
                 <Setter Property="Fill" Value="{AppThemeBinding Light=#DDE8E5, Dark=#22313B}" />

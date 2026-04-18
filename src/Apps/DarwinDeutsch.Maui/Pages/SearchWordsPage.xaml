@@ -32,7 +32,14 @@
                 <Label x:Name="SearchSectionLabel"
                        Style="{DynamicResource Title2}" />
                 <inputLayout:SfTextInputLayout x:Name="SearchInputLayout"
-                                               Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                                               Style="{StaticResource SyncfusionTextInputLayoutStyle}"
+                                               ShowLeadingView="True">
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Label FontSize="18"
+                               Text="&#x1F50D;"
+                               TextColor="{AppThemeBinding Light=#5B6B79, Dark=#9FB0BE}"
+                               VerticalTextAlignment="Center" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
                     <Entry x:Name="SearchEntry"
                            ClearButtonVisibility="WhileEditing"
                            ReturnType="Search"

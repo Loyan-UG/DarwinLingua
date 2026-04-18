@@ -3,15 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkitButton="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              xmlns:toolkitCard="clr-namespace:Syncfusion.Maui.Toolkit.Cards;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:effects="clr-namespace:Syncfusion.Maui.Toolkit.EffectsView;assembly=Syncfusion.Maui.Toolkit"
              x:Class="DarwinDeutsch.Maui.Controls.ActionBlockView">
-    <toolkitCard:SfCardView Style="{StaticResource SyncfusionCardShellStyle}">
-        <VerticalStackLayout Style="{StaticResource AppActionBlockContentLayoutStyle}">
-            <Label x:Name="CaptionLabel"
-                   Style="{DynamicResource Title2}"
-                   TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
-            <toolkitButton:SfButton x:Name="ActionButton"
-                                    Style="{StaticResource SyncfusionPrimaryButtonStyle}"
-                                    Clicked="OnActionButtonClicked" />
-        </VerticalStackLayout>
-    </toolkitCard:SfCardView>
+    <effects:SfEffectsView Style="{StaticResource SyncfusionTouchSurfaceEffectStyle}">
+        <toolkitCard:SfCardView Style="{StaticResource SyncfusionCardShellStyle}">
+            <VerticalStackLayout Style="{StaticResource AppActionBlockContentLayoutStyle}">
+                <Label x:Name="CaptionLabel"
+                       Style="{DynamicResource Title2}"
+                       TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
+                <toolkitButton:SfButton x:Name="ActionButton"
+                                        Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                        Clicked="OnActionButtonClicked" />
+            </VerticalStackLayout>
+        </toolkitCard:SfCardView>
+    </effects:SfEffectsView>
 </ContentView>
