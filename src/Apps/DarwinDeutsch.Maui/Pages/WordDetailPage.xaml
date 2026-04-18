@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:accordion="clr-namespace:Syncfusion.Maui.Toolkit.Accordion;assembly=Syncfusion.Maui.Toolkit"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
-             xmlns:expander="clr-namespace:Syncfusion.Maui.Toolkit.Expander;assembly=Syncfusion.Maui.Toolkit"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.WordDetailPage">
     <ScrollView>
@@ -171,97 +171,99 @@
                 </VerticalStackLayout>
             </Border>
 
-            <expander:SfExpander x:Name="GrammarNotesBorder"
-                                 IsExpanded="False"
-                                 IsVisible="False"
-                                 Style="{StaticResource SyncfusionSectionExpanderStyle}">
-                <expander:SfExpander.Header>
-                    <Grid Padding="20">
-                        <Label x:Name="GrammarNotesHeadingLabel"
-                               Style="{DynamicResource Title2}" />
-                    </Grid>
-                </expander:SfExpander.Header>
-                <expander:SfExpander.Content>
-                    <Border Padding="20"
-                            Style="{StaticResource AppSectionCardBorderStyle}">
-                        <VerticalStackLayout x:Name="GrammarNotesStackLayout"
-                                             Spacing="10" />
-                    </Border>
-                </expander:SfExpander.Content>
-            </expander:SfExpander>
+            <accordion:SfAccordion ExpandMode="SingleOrNone"
+                                   ItemSpacing="10"
+                                   AnimationDuration="140">
+                <accordion:SfAccordion.Items>
+                    <accordion:AccordionItem x:Name="GrammarNotesBorder"
+                                             IsExpanded="False"
+                                             IsVisible="False">
+                        <accordion:AccordionItem.Header>
+                            <Grid Padding="20">
+                                <Label x:Name="GrammarNotesHeadingLabel"
+                                       Style="{DynamicResource Title2}" />
+                            </Grid>
+                        </accordion:AccordionItem.Header>
+                        <accordion:AccordionItem.Content>
+                            <Border Padding="20"
+                                    Style="{StaticResource AppSectionCardBorderStyle}">
+                                <VerticalStackLayout x:Name="GrammarNotesStackLayout"
+                                                     Spacing="10" />
+                            </Border>
+                        </accordion:AccordionItem.Content>
+                    </accordion:AccordionItem>
 
-            <expander:SfExpander x:Name="CollocationsBorder"
-                                 IsExpanded="False"
-                                 IsVisible="False"
-                                 Style="{StaticResource SyncfusionSectionExpanderStyle}">
-                <expander:SfExpander.Header>
-                    <Grid Padding="20">
-                        <Label x:Name="CollocationsHeadingLabel"
-                               Style="{DynamicResource Title2}" />
-                    </Grid>
-                </expander:SfExpander.Header>
-                <expander:SfExpander.Content>
-                    <Border Padding="20"
-                            Style="{StaticResource AppSectionCardBorderStyle}">
-                        <VerticalStackLayout x:Name="CollocationsStackLayout"
-                                             Spacing="10" />
-                    </Border>
-                </expander:SfExpander.Content>
-            </expander:SfExpander>
+                    <accordion:AccordionItem x:Name="CollocationsBorder"
+                                             IsExpanded="False"
+                                             IsVisible="False">
+                        <accordion:AccordionItem.Header>
+                            <Grid Padding="20">
+                                <Label x:Name="CollocationsHeadingLabel"
+                                       Style="{DynamicResource Title2}" />
+                            </Grid>
+                        </accordion:AccordionItem.Header>
+                        <accordion:AccordionItem.Content>
+                            <Border Padding="20"
+                                    Style="{StaticResource AppSectionCardBorderStyle}">
+                                <VerticalStackLayout x:Name="CollocationsStackLayout"
+                                                     Spacing="10" />
+                            </Border>
+                        </accordion:AccordionItem.Content>
+                    </accordion:AccordionItem>
 
-            <expander:SfExpander x:Name="WordFamiliesBorder"
-                                 IsExpanded="False"
-                                 IsVisible="False"
-                                 Style="{StaticResource SyncfusionSectionExpanderStyle}">
-                <expander:SfExpander.Header>
-                    <Grid Padding="20">
-                        <Label x:Name="WordFamiliesHeadingLabel"
-                               Style="{DynamicResource Title2}" />
-                    </Grid>
-                </expander:SfExpander.Header>
-                <expander:SfExpander.Content>
-                    <Border Padding="20"
-                            Style="{StaticResource AppSectionCardBorderStyle}">
-                        <VerticalStackLayout x:Name="WordFamiliesStackLayout"
-                                             Spacing="10" />
-                    </Border>
-                </expander:SfExpander.Content>
-            </expander:SfExpander>
+                    <accordion:AccordionItem x:Name="WordFamiliesBorder"
+                                             IsExpanded="False"
+                                             IsVisible="False">
+                        <accordion:AccordionItem.Header>
+                            <Grid Padding="20">
+                                <Label x:Name="WordFamiliesHeadingLabel"
+                                       Style="{DynamicResource Title2}" />
+                            </Grid>
+                        </accordion:AccordionItem.Header>
+                        <accordion:AccordionItem.Content>
+                            <Border Padding="20"
+                                    Style="{StaticResource AppSectionCardBorderStyle}">
+                                <VerticalStackLayout x:Name="WordFamiliesStackLayout"
+                                                     Spacing="10" />
+                            </Border>
+                        </accordion:AccordionItem.Content>
+                    </accordion:AccordionItem>
 
-            <expander:SfExpander x:Name="LexicalRelationsBorder"
-                                 IsExpanded="False"
-                                 IsVisible="False"
-                                 Style="{StaticResource SyncfusionSectionExpanderStyle}">
-                <expander:SfExpander.Header>
-                    <Grid Padding="20">
-                        <Label x:Name="LexicalRelationsHeadingLabel"
-                               Style="{DynamicResource Title2}" />
-                    </Grid>
-                </expander:SfExpander.Header>
-                <expander:SfExpander.Content>
-                    <Border Padding="20"
-                            Style="{StaticResource AppSectionCardBorderStyle}">
-                        <VerticalStackLayout Spacing="14">
-                            <VerticalStackLayout x:Name="SynonymsSectionStackLayout"
-                                                 Spacing="10"
-                                                 IsVisible="False">
-                                <Label x:Name="SynonymsHeadingLabel"
-                                       Style="{DynamicResource Body}" />
-                                <VerticalStackLayout x:Name="SynonymsStackLayout"
-                                                     Spacing="8" />
-                            </VerticalStackLayout>
-                            <VerticalStackLayout x:Name="AntonymsSectionStackLayout"
-                                                 Spacing="10"
-                                                 IsVisible="False">
-                                <Label x:Name="AntonymsHeadingLabel"
-                                       Style="{DynamicResource Body}" />
-                                <VerticalStackLayout x:Name="AntonymsStackLayout"
-                                                     Spacing="8" />
-                            </VerticalStackLayout>
-                        </VerticalStackLayout>
-                    </Border>
-                </expander:SfExpander.Content>
-            </expander:SfExpander>
+                    <accordion:AccordionItem x:Name="LexicalRelationsBorder"
+                                             IsExpanded="False"
+                                             IsVisible="False">
+                        <accordion:AccordionItem.Header>
+                            <Grid Padding="20">
+                                <Label x:Name="LexicalRelationsHeadingLabel"
+                                       Style="{DynamicResource Title2}" />
+                            </Grid>
+                        </accordion:AccordionItem.Header>
+                        <accordion:AccordionItem.Content>
+                            <Border Padding="20"
+                                    Style="{StaticResource AppSectionCardBorderStyle}">
+                                <VerticalStackLayout Spacing="14">
+                                    <VerticalStackLayout x:Name="SynonymsSectionStackLayout"
+                                                         Spacing="10"
+                                                         IsVisible="False">
+                                        <Label x:Name="SynonymsHeadingLabel"
+                                               Style="{DynamicResource Body}" />
+                                        <VerticalStackLayout x:Name="SynonymsStackLayout"
+                                                             Spacing="8" />
+                                    </VerticalStackLayout>
+                                    <VerticalStackLayout x:Name="AntonymsSectionStackLayout"
+                                                         Spacing="10"
+                                                         IsVisible="False">
+                                        <Label x:Name="AntonymsHeadingLabel"
+                                               Style="{DynamicResource Body}" />
+                                        <VerticalStackLayout x:Name="AntonymsStackLayout"
+                                                             Spacing="8" />
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </accordion:AccordionItem.Content>
+                    </accordion:AccordionItem>
+                </accordion:SfAccordion.Items>
+            </accordion:SfAccordion>
 
             <Border Padding="20"
                     Style="{StaticResource AppSectionCardBorderStyle}">
