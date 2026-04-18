@@ -8,7 +8,12 @@ public interface IPopupDialogService
     /// <summary>
     /// Shows a single-action informational popup.
     /// </summary>
-    Task ShowMessageAsync(string title, string message, string acceptText, CancellationToken cancellationToken = default);
+    Task ShowMessageAsync(
+        string title,
+        string message,
+        string acceptText,
+        PopupDialogKind kind = PopupDialogKind.Info,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Shows a two-action confirmation popup and returns <c>true</c> when the accept action was chosen.
@@ -18,5 +23,6 @@ public interface IPopupDialogService
         string message,
         string acceptText,
         string declineText,
+        PopupDialogKind kind = PopupDialogKind.Warning,
         CancellationToken cancellationToken = default);
 }

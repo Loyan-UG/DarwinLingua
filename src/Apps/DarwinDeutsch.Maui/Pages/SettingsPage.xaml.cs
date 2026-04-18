@@ -395,7 +395,8 @@ public partial class SettingsPage : ContentPage
                 await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsContentUpdatesFailedTitle,
                         string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, result.ErrorMessage ?? AppStrings.SettingsContentUpdatesUnavailableStatus),
-                        AppStrings.SettingsContentUpdatesDismissButton)
+                        AppStrings.SettingsContentUpdatesDismissButton,
+                        PopupDialogKind.Error)
                     .ConfigureAwait(true);
             }
             else if (result.AppliedChanges)
@@ -405,7 +406,8 @@ public partial class SettingsPage : ContentPage
                 await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsContentUpdatesCompletedTitle,
                         string.Format(AppStrings.SettingsContentUpdatesCompletedMessageFormat, result.ImportedPackages, result.ImportedWords),
-                        AppStrings.SettingsContentUpdatesDismissButton)
+                        AppStrings.SettingsContentUpdatesDismissButton,
+                        PopupDialogKind.Success)
                     .ConfigureAwait(true);
             }
             else
@@ -413,7 +415,8 @@ public partial class SettingsPage : ContentPage
                 await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsContentUpdatesUpToDateTitle,
                         AppStrings.SettingsContentUpdatesUpToDateMessage,
-                        AppStrings.SettingsContentUpdatesDismissButton)
+                        AppStrings.SettingsContentUpdatesDismissButton,
+                        PopupDialogKind.Info)
                     .ConfigureAwait(true);
             }
         }
@@ -426,7 +429,8 @@ public partial class SettingsPage : ContentPage
             await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, exception.Message),
-                    AppStrings.SettingsContentUpdatesDismissButton)
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    PopupDialogKind.Error)
                 .ConfigureAwait(true);
         }
         finally
@@ -446,7 +450,8 @@ public partial class SettingsPage : ContentPage
             await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsContentUpdatesFailedMessageFormat, exception.Message),
-                    AppStrings.SettingsContentUpdatesDismissButton)
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    PopupDialogKind.Error)
                 .ConfigureAwait(true);
         }
     }
@@ -521,7 +526,8 @@ public partial class SettingsPage : ContentPage
                 await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsRemoteContentUpdatesFailedTitle,
                         string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, result.ErrorMessage ?? AppStrings.SettingsRemoteContentUpdatesUnavailableStatus),
-                        AppStrings.SettingsContentUpdatesDismissButton)
+                        AppStrings.SettingsContentUpdatesDismissButton,
+                        PopupDialogKind.Error)
                     .ConfigureAwait(true);
             }
             else if (result.AppliedChanges)
@@ -531,7 +537,8 @@ public partial class SettingsPage : ContentPage
                 await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsRemoteContentUpdatesCompletedTitle,
                         string.Format(AppStrings.SettingsRemoteContentScopeCompletedMessageFormat, scopeDisplayName, result.AppliedVersion, result.ImportedWords),
-                        AppStrings.SettingsContentUpdatesDismissButton)
+                        AppStrings.SettingsContentUpdatesDismissButton,
+                        PopupDialogKind.Success)
                     .ConfigureAwait(true);
             }
             else
@@ -539,7 +546,8 @@ public partial class SettingsPage : ContentPage
                 await _popupDialogService.ShowMessageAsync(
                         AppStrings.SettingsRemoteContentUpdatesUpToDateTitle,
                         string.Format(AppStrings.SettingsRemoteContentScopeUpToDateMessageFormat, scopeDisplayName),
-                        AppStrings.SettingsContentUpdatesDismissButton)
+                        AppStrings.SettingsContentUpdatesDismissButton,
+                        PopupDialogKind.Info)
                     .ConfigureAwait(true);
             }
         }
@@ -552,7 +560,8 @@ public partial class SettingsPage : ContentPage
             await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsRemoteContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, exception.Message),
-                    AppStrings.SettingsContentUpdatesDismissButton)
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    PopupDialogKind.Error)
                 .ConfigureAwait(true);
         }
         finally
@@ -573,7 +582,8 @@ public partial class SettingsPage : ContentPage
             await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsRemoteContentUpdatesFailedTitle,
                     string.Format(AppStrings.SettingsRemoteContentScopeFailedMessageFormat, scopeDisplayName, exception.Message),
-                    AppStrings.SettingsContentUpdatesDismissButton)
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    PopupDialogKind.Error)
                 .ConfigureAwait(true);
         }
     }

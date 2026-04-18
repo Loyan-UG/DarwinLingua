@@ -224,7 +224,8 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                         : status.RemoteVersion,
                     status.PendingWordCount),
                 AppStrings.BackgroundRemoteUpdateApplyNowButton,
-                AppStrings.BackgroundRemoteUpdateLaterButton)
+                AppStrings.BackgroundRemoteUpdateLaterButton,
+                PopupDialogKind.Warning)
             .ConfigureAwait(false);
 
         if (!shouldApplyNow)
@@ -265,7 +266,8 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
                     string.Format(
                         AppStrings.SettingsRemoteContentUpdatesFailedMessageFormat,
                         result.ErrorMessage ?? AppStrings.SettingsRemoteContentUpdatesUnavailableStatus),
-                    AppStrings.SettingsContentUpdatesDismissButton)
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    PopupDialogKind.Error)
                 .ConfigureAwait(false);
             return;
         }
@@ -275,7 +277,8 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
             await _popupDialogService.ShowMessageAsync(
                     AppStrings.SettingsRemoteContentUpdatesCompletedTitle,
                     string.Format(AppStrings.SettingsRemoteContentUpdatesCompletedMessageFormat, result.AppliedVersion, result.ImportedWords),
-                    AppStrings.SettingsContentUpdatesDismissButton)
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    PopupDialogKind.Success)
                 .ConfigureAwait(false);
             return;
         }
@@ -283,7 +286,8 @@ internal sealed class BackgroundRemoteUpdateCoordinator : IBackgroundRemoteUpdat
         await _popupDialogService.ShowMessageAsync(
                 AppStrings.SettingsRemoteContentUpdatesUpToDateTitle,
                 AppStrings.SettingsRemoteContentUpdatesUpToDateMessage,
-                AppStrings.SettingsContentUpdatesDismissButton)
+                AppStrings.SettingsContentUpdatesDismissButton,
+                PopupDialogKind.Info)
             .ConfigureAwait(false);
     }
 
