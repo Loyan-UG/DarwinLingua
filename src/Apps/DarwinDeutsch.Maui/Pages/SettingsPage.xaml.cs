@@ -388,6 +388,11 @@ public partial class SettingsPage : ContentPage
 
     private async void OnApplyRemoteUpdateButtonClicked(object? sender, EventArgs e)
     {
+        if (!await ConfirmRemoteUpdateAsync(AppStrings.SettingsRemoteFullDatabaseTitle).ConfigureAwait(true))
+        {
+            return;
+        }
+
         await ApplyScopedRemoteUpdateAsync(
                 AppStrings.SettingsRemoteFullDatabaseTitle,
                 () => _remoteContentUpdateService.ApplyFullUpdateAsync(GetLocalDatabasePath(), CancellationToken.None),
@@ -398,6 +403,11 @@ public partial class SettingsPage : ContentPage
 
     private async void OnApplyCatalogAreaUpdateButtonClicked(object? sender, EventArgs e)
     {
+        if (!await ConfirmRemoteUpdateAsync(AppStrings.SettingsRemoteCatalogAreaTitle).ConfigureAwait(true))
+        {
+            return;
+        }
+
         await ApplyScopedRemoteUpdateAsync(
                 AppStrings.SettingsRemoteCatalogAreaTitle,
                 () => _remoteContentUpdateService.ApplyAreaUpdateAsync(GetLocalDatabasePath(), "catalog", CancellationToken.None),
@@ -413,6 +423,11 @@ public partial class SettingsPage : ContentPage
             return;
         }
 
+        if (!await ConfirmRemoteUpdateAsync(_selectedCefrLevel).ConfigureAwait(true))
+        {
+            return;
+        }
+
         await ApplyScopedRemoteUpdateAsync(
                 _selectedCefrLevel,
                 () => _remoteContentUpdateService.ApplyCefrUpdateAsync(GetLocalDatabasePath(), _selectedCefrLevel, CancellationToken.None),
@@ -424,6 +439,11 @@ public partial class SettingsPage : ContentPage
     private async void OnApplySeedUpdateButtonClicked(object? sender, EventArgs e)
     {
         if (_isApplyingSeedUpdate)
+        {
+            return;
+        }
+
+        if (!await ConfirmSeedUpdateAsync().ConfigureAwait(true))
         {
             return;
         }
@@ -861,6 +881,28 @@ public partial class SettingsPage : ContentPage
             .Select(CreateMeaningLanguageOption));
 
         return options;
+    }
+
+    private Task<bool> ConfirmSeedUpdateAsync()
+    {
+        return _popupDialogService.ShowConfirmationAsync(
+            AppStrings.SettingsContentUpdatesConfirmationTitle,
+            AppStrings.SettingsContentUpdatesConfirmationMessage,
+            AppStrings.BackgroundRemoteUpdateApplyNowButton,
+            AppStrings.BackgroundRemoteUpdateLaterButton,
+            PopupDialogKind.Warning);
+    }
+
+    private Task<bool> ConfirmRemoteUpdateAsync(string scopeDisplayName)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(scopeDisplayName);
+
+        return _popupDialogService.ShowConfirmationAsync(
+            AppStrings.SettingsRemoteContentUpdatesConfirmationTitle,
+            string.Format(AppStrings.SettingsRemoteContentScopeConfirmationMessageFormat, scopeDisplayName),
+            AppStrings.BackgroundRemoteUpdateApplyNowButton,
+            AppStrings.BackgroundRemoteUpdateLaterButton,
+            PopupDialogKind.Warning);
     }
 
     private static string GetLocalDatabasePath()

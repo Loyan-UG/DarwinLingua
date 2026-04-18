@@ -638,6 +638,12 @@
   <data name="SettingsContentUpdatesApplyButton" xml:space="preserve">
     <value>Apply Content Update</value>
   </data>
+  <data name="SettingsContentUpdatesConfirmationTitle" xml:space="preserve">
+    <value>Apply bundled update?</value>
+  </data>
+  <data name="SettingsContentUpdatesConfirmationMessage" xml:space="preserve">
+    <value>This merges the packaged seed content into the local database on this device. Continue now?</value>
+  </data>
   <data name="SettingsContentUpdatesAppliedButton" xml:space="preserve">
     <value>Already Up to Date</value>
   </data>
@@ -724,6 +730,12 @@
   </data>
   <data name="SettingsRemoteContentUpdatesApplyButton" xml:space="preserve">
     <value>Update All Content</value>
+  </data>
+  <data name="SettingsRemoteContentUpdatesConfirmationTitle" xml:space="preserve">
+    <value>Apply server update?</value>
+  </data>
+  <data name="SettingsRemoteContentScopeConfirmationMessageFormat" xml:space="preserve">
+    <value>This refreshes the local {0} content on this device from the configured server package. Continue now?</value>
   </data>
   <data name="SettingsRemoteContentUpdatesAppliedButton" xml:space="preserve">
     <value>Already Using Latest Server Content</value>

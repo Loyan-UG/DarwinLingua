@@ -1178,6 +1178,16 @@ public static class AppStrings
     public static string SettingsContentUpdatesApplyButton => GetRequiredString(nameof(SettingsContentUpdatesApplyButton));
 
     /// <summary>
+    /// Gets the localized confirmation title shown before a packaged seed update is applied.
+    /// </summary>
+    public static string SettingsContentUpdatesConfirmationTitle => GetRequiredString(nameof(SettingsContentUpdatesConfirmationTitle));
+
+    /// <summary>
+    /// Gets the localized confirmation message shown before a packaged seed update is applied.
+    /// </summary>
+    public static string SettingsContentUpdatesConfirmationMessage => GetRequiredString(nameof(SettingsContentUpdatesConfirmationMessage));
+
+    /// <summary>
     /// Gets the localized caption shown when packaged content is already current.
     /// </summary>
     public static string SettingsContentUpdatesAppliedButton => GetRequiredString(nameof(SettingsContentUpdatesAppliedButton));
@@ -1331,6 +1341,16 @@ public static class AppStrings
     /// Gets the localized button label shown while a remote content update is running.
     /// </summary>
     public static string SettingsRemoteContentUpdatesApplyingButton => GetRequiredString(nameof(SettingsRemoteContentUpdatesApplyingButton));
+
+    /// <summary>
+    /// Gets the localized confirmation title shown before a remote update is applied.
+    /// </summary>
+    public static string SettingsRemoteContentUpdatesConfirmationTitle => GetRequiredString(nameof(SettingsRemoteContentUpdatesConfirmationTitle));
+
+    /// <summary>
+    /// Gets the localized confirmation message shown before a scoped remote update is applied.
+    /// </summary>
+    public static string SettingsRemoteContentScopeConfirmationMessageFormat => GetRequiredString(nameof(SettingsRemoteContentScopeConfirmationMessageFormat));
 
     /// <summary>
     /// Gets the localized status shown when a remote content update is available.
