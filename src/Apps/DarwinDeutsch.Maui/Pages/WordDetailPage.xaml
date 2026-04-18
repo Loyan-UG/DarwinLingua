@@ -7,6 +7,12 @@
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
              x:Class="DarwinDeutsch.Maui.Pages.WordDetailPage">
     <ScrollView>
+        <ScrollView.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left"
+                                    Swiped="OnDetailSwipeLeft" />
+            <SwipeGestureRecognizer Direction="Right"
+                                    Swiped="OnDetailSwipeRight" />
+        </ScrollView.GestureRecognizers>
         <VerticalStackLayout Padding="24" Spacing="18">
             <Border Padding="22"
                     Style="{StaticResource AppHeroPanelBorderStyle}">

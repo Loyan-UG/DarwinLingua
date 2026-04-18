@@ -43,6 +43,7 @@ public partial class WordDetailPage : ContentPage
     private string _loadedPrimaryMeaningLanguageCode = string.Empty;
     private string _loadedSecondaryMeaningLanguageCode = string.Empty;
     private string _loadedUiLanguageCode = string.Empty;
+    private bool _isNavigatingBetweenWords;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WordDetailPage"/> class.
@@ -979,13 +980,7 @@ public partial class WordDetailPage : ContentPage
         bool isVisible = _cefrBrowseNavigationState.TotalCount > 0;
         CefrNavigationTopGrid.IsVisible = isVisible;
         CefrNavigationBottomGrid.IsVisible = isVisible;
-
-        bool hasPrevious = _cefrBrowseNavigationState.PreviousWordPublicId.HasValue;
-        bool hasNext = _cefrBrowseNavigationState.NextWordPublicId.HasValue;
-        PreviousWordButtonTop.IsEnabled = hasPrevious;
-        PreviousWordButtonBottom.IsEnabled = hasPrevious;
-        NextWordButtonTop.IsEnabled = hasNext;
-        NextWordButtonBottom.IsEnabled = hasNext;
+        ApplyNavigationButtonState();
     }
 
     private async void OnPreviousWordButtonClicked(object? sender, EventArgs e)
@@ -997,16 +992,10 @@ public partial class WordDetailPage : ContentPage
 
         try
         {
-            WordPublicId = previousWordPublicId.ToString("D");
-            await RefreshAsync().ConfigureAwait(true);
+            await NavigateToAdjacentWordAsync(previousWordPublicId, "previous").ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {
-        }
-        catch (Exception exception)
-        {
-            _logger.LogWarning(exception, "Failed to navigate to previous word {WordPublicId}.", previousWordPublicId);
-            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
         }
     }
 
@@ -1019,16 +1008,42 @@ public partial class WordDetailPage : ContentPage
 
         try
         {
-            WordPublicId = nextWordPublicId.ToString("D");
-            await RefreshAsync().ConfigureAwait(true);
+            await NavigateToAdjacentWordAsync(nextWordPublicId, "next").ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {
         }
-        catch (Exception exception)
+    }
+
+    private async void OnDetailSwipeLeft(object? sender, SwipedEventArgs e)
+    {
+        if (_cefrBrowseNavigationState?.NextWordPublicId is not Guid nextWordPublicId)
         {
-            _logger.LogWarning(exception, "Failed to navigate to next word {WordPublicId}.", nextWordPublicId);
-            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
+            return;
+        }
+
+        try
+        {
+            await NavigateToAdjacentWordAsync(nextWordPublicId, "next").ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    private async void OnDetailSwipeRight(object? sender, SwipedEventArgs e)
+    {
+        if (_cefrBrowseNavigationState?.PreviousWordPublicId is not Guid previousWordPublicId)
+        {
+            return;
+        }
+
+        try
+        {
+            await NavigateToAdjacentWordAsync(previousWordPublicId, "previous").ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
         }
     }
 
@@ -1188,6 +1203,55 @@ public partial class WordDetailPage : ContentPage
     {
         CancelRefreshRequest();
         _refreshCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    private void ApplyNavigationButtonState()
+    {
+        bool hasPrevious = !_isNavigatingBetweenWords && _cefrBrowseNavigationState?.PreviousWordPublicId.HasValue == true;
+        bool hasNext = !_isNavigatingBetweenWords && _cefrBrowseNavigationState?.NextWordPublicId.HasValue == true;
+        bool canShowList = !_isNavigatingBetweenWords && !string.IsNullOrWhiteSpace(CefrLevel);
+
+        PreviousWordButtonTop.IsEnabled = hasPrevious;
+        PreviousWordButtonBottom.IsEnabled = hasPrevious;
+        NextWordButtonTop.IsEnabled = hasNext;
+        NextWordButtonBottom.IsEnabled = hasNext;
+        ShowWordListButtonTop.IsEnabled = canShowList;
+        ShowWordListButtonBottom.IsEnabled = canShowList;
+    }
+
+    private async Task NavigateToAdjacentWordAsync(Guid targetWordPublicId, string direction)
+    {
+        if (_isNavigatingBetweenWords)
+        {
+            return;
+        }
+
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        _isNavigatingBetweenWords = true;
+        ApplyNavigationButtonState();
+
+        try
+        {
+            WordPublicId = targetWordPublicId.ToString("D");
+            await RefreshAsync().ConfigureAwait(true);
+            _performanceTelemetryService.Record("word-detail.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
+        }
+        catch (OperationCanceledException)
+        {
+            _performanceTelemetryService.Record("word-detail.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Cancelled);
+            throw;
+        }
+        catch (Exception exception)
+        {
+            _logger.LogWarning(exception, "Failed to navigate to {Direction} word {WordPublicId}.", direction, targetWordPublicId);
+            _performanceTelemetryService.Record("word-detail.cefr-navigation", stopwatch.Elapsed, PerformanceTelemetryOutcome.Failed);
+            ShowLoadFailureState(AppStrings.WordDetailLoadFailed);
+        }
+        finally
+        {
+            _isNavigatingBetweenWords = false;
+            ApplyNavigationButtonState();
+        }
     }
 
     private void CancelRefreshRequest()
