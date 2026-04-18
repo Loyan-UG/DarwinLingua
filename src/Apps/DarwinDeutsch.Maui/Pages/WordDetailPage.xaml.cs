@@ -161,6 +161,9 @@ public partial class WordDetailPage : ContentPage
         ShowWordListButtonBottom.Text = AppStrings.WordDetailWordListButton;
         NextWordButtonTop.Text = AppStrings.WordDetailNextWordButton;
         NextWordButtonBottom.Text = AppStrings.WordDetailNextWordButton;
+        SwipeAffordanceLabel.Text = AppStrings.WordDetailSwipeHint;
+        SwipePreviousHintLabel.Text = $"\u2190 {AppStrings.WordDetailPreviousWordButton}";
+        SwipeNextHintLabel.Text = $"{AppStrings.WordDetailNextWordButton} \u2192";
         ClearAudioStatus();
         SwipeHintLabel.Text = AppStrings.WordDetailSwipeHint;
 
@@ -298,6 +301,7 @@ public partial class WordDetailPage : ContentPage
         DifficultButton.IsVisible = false;
         CefrNavigationTopGrid.IsVisible = false;
         CefrNavigationBottomGrid.IsVisible = false;
+        SwipeAffordanceGrid.IsVisible = false;
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();
@@ -986,6 +990,7 @@ public partial class WordDetailPage : ContentPage
             _cefrBrowseNavigationState = null;
             CefrNavigationTopGrid.IsVisible = false;
             CefrNavigationBottomGrid.IsVisible = false;
+            SwipeAffordanceGrid.IsVisible = false;
             HideSwipeHint();
             return;
         }
@@ -998,6 +1003,7 @@ public partial class WordDetailPage : ContentPage
         bool isVisible = _cefrBrowseNavigationState.TotalCount > 0;
         CefrNavigationTopGrid.IsVisible = isVisible;
         CefrNavigationBottomGrid.IsVisible = isVisible;
+        SwipeAffordanceGrid.IsVisible = isVisible;
         if (isVisible)
         {
             ShowSwipeHintOncePerSession();
@@ -1251,6 +1257,12 @@ public partial class WordDetailPage : ContentPage
         NextWordButtonBottom.IsEnabled = hasNext;
         ShowWordListButtonTop.IsEnabled = canShowList;
         ShowWordListButtonBottom.IsEnabled = canShowList;
+
+        SwipePreviousHintBorder.Opacity = hasPrevious ? 1d : 0.45d;
+        SwipePreviousHintLabel.Opacity = hasPrevious ? 1d : 0.65d;
+        SwipeNextHintBorder.Opacity = hasNext ? 1d : 0.45d;
+        SwipeNextHintLabel.Opacity = hasNext ? 1d : 0.65d;
+        SwipeAffordanceLabel.Opacity = canShowList ? 0.82d : 0.6d;
     }
 
     private async Task NavigateToAdjacentWordAsync(Guid targetWordPublicId, string direction)

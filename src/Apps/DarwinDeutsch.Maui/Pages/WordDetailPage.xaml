@@ -71,6 +71,33 @@
                        Style="{DynamicResource Caption}" />
             </Border>
 
+            <Grid x:Name="SwipeAffordanceGrid"
+                  ColumnDefinitions="Auto,*,Auto"
+                  ColumnSpacing="10"
+                  IsVisible="False"
+                  VerticalOptions="Center">
+                <Border x:Name="SwipePreviousHintBorder"
+                        Padding="10,6"
+                        Style="{StaticResource AppMetadataBadgeBorderStyle}">
+                    <Label x:Name="SwipePreviousHintLabel"
+                           Style="{DynamicResource Caption}" />
+                </Border>
+
+                <Label x:Name="SwipeAffordanceLabel"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{DynamicResource Caption}" />
+
+                <Border x:Name="SwipeNextHintBorder"
+                        Grid.Column="2"
+                        Padding="10,6"
+                        Style="{StaticResource AppMetadataBadgeBorderStyle}">
+                    <Label x:Name="SwipeNextHintLabel"
+                           Style="{DynamicResource Caption}" />
+                </Border>
+            </Grid>
+
             <Label x:Name="AudioStatusLabel"
                    Style="{DynamicResource Caption}"
                    IsVisible="False" />
