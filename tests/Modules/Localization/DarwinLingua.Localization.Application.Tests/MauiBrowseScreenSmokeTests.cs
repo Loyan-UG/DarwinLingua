@@ -68,9 +68,9 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("FavoritesActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("SfCardView", actionBlockViewSource, StringComparison.Ordinal);
         Assert.Contains("SfButton", actionBlockViewSource, StringComparison.Ordinal);
-        Assert.Contains("OnShellNavigating", shellSource, StringComparison.Ordinal);
         Assert.Contains("OnShellNavigated", shellSource, StringComparison.Ordinal);
         Assert.Contains("ShouldNormalizeHomeSelection", shellSource, StringComparison.Ordinal);
+        Assert.Contains("IsHomeContentSelected", shellSource, StringComparison.Ordinal);
         Assert.Contains("GoToAsync(\"//home\"", shellSource, StringComparison.Ordinal);
         Assert.Contains("SyncfusionCardShellStyle", appXamlSource, StringComparison.Ordinal);
         Assert.Contains("SyncfusionPrimaryButtonStyle", appXamlSource, StringComparison.Ordinal);
@@ -327,8 +327,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ExamplesStackLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("WordFormsBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("LexicalFormsStackLayout", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("PronunciationIpaSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("SyllableBreakSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("WordFormMetaStackLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContextLabelsBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("GrammarNotesBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CollocationsBorder", xamlSource, StringComparison.Ordinal);
@@ -352,7 +351,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplyExamples", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildExampleView", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyWordForms", codeBehindSource, StringComparison.Ordinal);
-        Assert.Contains("CreateDetailSection", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CreateInlineDetailRow", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplySecondaryHeadline", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("CancelAutoSpeakDelay", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyCefrNavigationStateAsync", codeBehindSource, StringComparison.Ordinal);
@@ -430,6 +429,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("DELETE FROM ExampleSentences", source, StringComparison.Ordinal);
         Assert.Contains("DELETE FROM SenseTranslations", source, StringComparison.Ordinal);
         Assert.Contains("DELETE FROM WordTopics", source, StringComparison.Ordinal);
+        Assert.Contains("DELETE FROM WordLexicalForms", source, StringComparison.Ordinal);
         Assert.Contains("DELETE FROM WordSenses", source, StringComparison.Ordinal);
         Assert.Contains("DELETE FROM ContentPackageEntries", source, StringComparison.Ordinal);
         Assert.Contains("DELETE FROM ContentPackages", source, StringComparison.Ordinal);

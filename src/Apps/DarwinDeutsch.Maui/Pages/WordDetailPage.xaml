@@ -72,8 +72,6 @@
                     Style="{StaticResource AppSectionCardBorderStyle}"
                     IsVisible="False">
                 <VerticalStackLayout Spacing="12">
-                    <Label x:Name="ExamplesHeadingLabel"
-                           Style="{DynamicResource Title2}" />
                     <VerticalStackLayout x:Name="ExamplesStackLayout"
                                          Spacing="12" />
                 </VerticalStackLayout>
@@ -84,12 +82,11 @@
                     Style="{StaticResource AppSectionCardBorderStyle}"
                     IsVisible="False">
                 <VerticalStackLayout Spacing="12">
-                    <Label x:Name="WordFormsHeadingLabel"
-                           Style="{DynamicResource Title2}" />
                     <VerticalStackLayout x:Name="LexicalFormsStackLayout"
                                          Spacing="12" />
-                    <controls:DetailSectionView x:Name="PronunciationIpaSectionView" />
-                    <controls:DetailSectionView x:Name="SyllableBreakSectionView" />
+                    <VerticalStackLayout x:Name="WordFormMetaStackLayout"
+                                         Spacing="8"
+                                         IsVisible="False" />
                 </VerticalStackLayout>
             </Border>
 

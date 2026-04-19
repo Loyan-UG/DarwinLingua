@@ -25,6 +25,7 @@ using DarwinLingua.Practice.Infrastructure.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Toolkit.Hosting;
+using System.Net.Security;
 
 namespace DarwinDeutsch.Maui;
 
@@ -50,6 +51,7 @@ public static class MauiProgram
             });
 
         string databasePath = Path.Combine(FileSystem.Current.AppDataDirectory, "darwin-lingua.db");
+        RemoteContentUpdateOptions remoteContentUpdateOptions = CreateRemoteContentUpdateOptions();
 
         builder.Services
             .AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath)
@@ -78,18 +80,8 @@ public static class MauiProgram
             .AddSingleton<ISeedDatabaseProvisioningService, SeedDatabaseProvisioningService>()
             .AddSingleton<IAppStartupInitializationService, AppStartupInitializationService>()
             .AddSingleton<IDeferredStartupMaintenanceService, DeferredStartupMaintenanceService>()
-            .AddSingleton(new RemoteContentUpdateOptions
-            {
-                BaseUrl = GetDefaultRemoteContentBaseUrl(),
-                ClientProductKey = "darwin-deutsch",
-                ClientSchemaVersion = 1,
-                StatusRequestTimeoutSeconds = 1,
-                ManifestRequestTimeoutSeconds = 4,
-            })
-            .AddSingleton(_ => new HttpClient
-            {
-                Timeout = TimeSpan.FromSeconds(10),
-            })
+            .AddSingleton(remoteContentUpdateOptions)
+            .AddSingleton(_ => CreateRemoteUpdateHttpClient(remoteContentUpdateOptions))
             .AddSingleton<IRemoteContentUpdateService, RemoteContentUpdateService>()
             .AddSingleton<IBackgroundRemoteUpdateCoordinator, BackgroundRemoteUpdateCoordinator>()
 #if ANDROID
@@ -121,10 +113,61 @@ public static class MauiProgram
 
     private static string GetDefaultRemoteContentBaseUrl()
     {
-#if ANDROID
-        return "http://10.0.2.2:5099";
-#else
-        return "http://localhost:5099";
-#endif
+        return "https://gently-purifier-amnesty.ngrok-free.dev";
+    }
+
+    private static RemoteContentUpdateOptions CreateRemoteContentUpdateOptions()
+    {
+        return new RemoteContentUpdateOptions
+        {
+            BaseUrl = GetDefaultRemoteContentBaseUrl(),
+            IgnoreTlsCertificateErrors = true,
+            BrowserWarningBypassHeaderName = "ngrok-skip-browser-warning",
+            BrowserWarningBypassHeaderValue = "1",
+            ClientProductKey = "darwin-deutsch",
+            ClientSchemaVersion = 1,
+            StatusRequestTimeoutSeconds = 1,
+            ManifestRequestTimeoutSeconds = 4,
+        };
+    }
+
+    private static HttpClient CreateRemoteUpdateHttpClient(RemoteContentUpdateOptions options)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+
+        string configuredHost = string.Empty;
+        if (Uri.TryCreate(options.BaseUrl, UriKind.Absolute, out Uri? baseUri))
+        {
+            configuredHost = baseUri.Host;
+        }
+
+        HttpClientHandler handler = new()
+        {
+            ServerCertificateCustomValidationCallback = (requestMessage, _, _, sslPolicyErrors) =>
+            {
+                if (sslPolicyErrors == SslPolicyErrors.None)
+                {
+                    return true;
+                }
+
+                return options.IgnoreTlsCertificateErrors &&
+                       !string.IsNullOrWhiteSpace(configuredHost) &&
+                       string.Equals(requestMessage?.RequestUri?.Host, configuredHost, StringComparison.OrdinalIgnoreCase);
+            },
+        };
+
+        HttpClient client = new(handler)
+        {
+            Timeout = TimeSpan.FromSeconds(10),
+        };
+
+        if (!string.IsNullOrWhiteSpace(options.BrowserWarningBypassHeaderName))
+        {
+            client.DefaultRequestHeaders.TryAddWithoutValidation(
+                options.BrowserWarningBypassHeaderName,
+                string.IsNullOrWhiteSpace(options.BrowserWarningBypassHeaderValue) ? "1" : options.BrowserWarningBypassHeaderValue);
+        }
+
+        return client;
     }
 }

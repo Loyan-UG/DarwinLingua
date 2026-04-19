@@ -34,7 +34,6 @@ public partial class AppShell : Shell
 
         _appLocalizationService = appLocalizationService;
         _serviceProvider = serviceProvider;
-        Navigating += OnShellNavigating;
         Navigated += OnShellNavigated;
 
         _homeContent = new ShellContent
@@ -114,7 +113,6 @@ public partial class AppShell : Shell
         if (args.NewHandler is null)
         {
             _appLocalizationService.CultureChanged -= OnCultureChanged;
-            Navigating -= OnShellNavigating;
             Navigated -= OnShellNavigated;
         }
 
@@ -134,27 +132,6 @@ public partial class AppShell : Shell
         _settingsContent.Title = AppStrings.SettingsTabTitle;
     }
 
-    private async void OnShellNavigating(object? sender, ShellNavigatingEventArgs e)
-    {
-        if (_isNormalizingHomeSelection)
-        {
-            return;
-        }
-
-        if (e.Source is not (ShellNavigationSource.ShellItemChanged or ShellNavigationSource.ShellSectionChanged))
-        {
-            return;
-        }
-
-        if (!ShouldNormalizeHomeSelection(e.Target.Location.OriginalString))
-        {
-            return;
-        }
-
-        e.Cancel();
-        await NormalizeHomeSelectionAsync().ConfigureAwait(true);
-    }
-
     private async void OnShellNavigated(object? sender, ShellNavigatedEventArgs e)
     {
         if (_isNormalizingHomeSelection)
@@ -167,7 +144,7 @@ public partial class AppShell : Shell
             return;
         }
 
-        if (!ShouldNormalizeHomeSelection(CurrentState.Location.OriginalString))
+        if (!ShouldNormalizeHomeSelection())
         {
             return;
         }
@@ -175,8 +152,14 @@ public partial class AppShell : Shell
         await NormalizeHomeSelectionAsync().ConfigureAwait(true);
     }
 
-    private static bool ShouldNormalizeHomeSelection(string location)
+    private bool ShouldNormalizeHomeSelection()
     {
+        if (!IsHomeContentSelected())
+        {
+            return false;
+        }
+
+        string location = CurrentState.Location.OriginalString;
         if (string.IsNullOrWhiteSpace(location))
         {
             return false;
@@ -190,6 +173,14 @@ public partial class AppShell : Shell
         return location.StartsWith("//home/", StringComparison.OrdinalIgnoreCase)
             || location.Contains("/home/", StringComparison.OrdinalIgnoreCase)
             || location.EndsWith("/home", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private bool IsHomeContentSelected()
+    {
+        return string.Equals(
+            CurrentItem?.CurrentItem?.CurrentItem?.Route,
+            _homeContent.Route,
+            StringComparison.OrdinalIgnoreCase);
     }
 
     private async Task NormalizeHomeSelectionAsync()

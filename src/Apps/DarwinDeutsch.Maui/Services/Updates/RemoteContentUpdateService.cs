@@ -447,7 +447,7 @@ internal sealed class RemoteContentUpdateService(
     private async Task<RemoteContentManifestModel?> FetchManifestCoreAsync(string requestUri, int timeoutSeconds)
     {
         using CancellationTokenSource timeoutCancellationTokenSource = new(TimeSpan.FromSeconds(Math.Max(1, timeoutSeconds)));
-        using HttpRequestMessage request = new(HttpMethod.Get, requestUri);
+        using HttpRequestMessage request = CreateGetRequest(requestUri);
         using HttpResponseMessage response = await httpClient
             .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, timeoutCancellationTokenSource.Token)
             .ConfigureAwait(false);
@@ -516,8 +516,9 @@ internal sealed class RemoteContentUpdateService(
 
     private async Task DownloadPackageAsync(RemoteUpdateScope scope, string packageId, string targetPath, CancellationToken cancellationToken)
     {
+        using HttpRequestMessage request = CreateGetRequest(scope.BuildDownloadUri(options, packageId));
         using HttpResponseMessage response = await httpClient
-            .GetAsync(scope.BuildDownloadUri(options, packageId), HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+            .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
 
@@ -530,6 +531,20 @@ internal sealed class RemoteContentUpdateService(
             options: FileOptions.Asynchronous | FileOptions.SequentialScan);
         await using Stream sourceStream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
         await sourceStream.CopyToAsync(targetStream, cancellationToken).ConfigureAwait(false);
+    }
+
+    private HttpRequestMessage CreateGetRequest(string requestUri)
+    {
+        HttpRequestMessage request = new(HttpMethod.Get, requestUri);
+
+        if (!string.IsNullOrWhiteSpace(options.BrowserWarningBypassHeaderName))
+        {
+            request.Headers.TryAddWithoutValidation(
+                options.BrowserWarningBypassHeaderName,
+                string.IsNullOrWhiteSpace(options.BrowserWarningBypassHeaderValue) ? "1" : options.BrowserWarningBypassHeaderValue);
+        }
+
+        return request;
     }
 
     private static async Task ImportIntoTemporaryDatabaseAsync(string jsonPath, string tempDatabasePath, CancellationToken cancellationToken)
@@ -891,6 +906,7 @@ internal sealed class RemoteContentUpdateService(
         DELETE FROM WordSenses;
         DELETE FROM WordTopics;
         DELETE FROM WordLabels;
+        DELETE FROM WordLexicalForms;
         DELETE FROM WordGrammarNotes;
         DELETE FROM WordCollocations;
         DELETE FROM WordFamilyMembers;
@@ -912,6 +928,7 @@ internal sealed class RemoteContentUpdateService(
         INSERT INTO ExampleTranslations SELECT * FROM remote.ExampleTranslations;
         INSERT INTO WordTopics SELECT * FROM remote.WordTopics;
         INSERT INTO WordLabels SELECT * FROM remote.WordLabels;
+        INSERT INTO WordLexicalForms SELECT * FROM remote.WordLexicalForms;
         INSERT INTO WordGrammarNotes SELECT * FROM remote.WordGrammarNotes;
         INSERT INTO WordCollocations SELECT * FROM remote.WordCollocations;
         INSERT INTO WordFamilyMembers SELECT * FROM remote.WordFamilyMembers;
@@ -994,6 +1011,13 @@ internal sealed class RemoteContentUpdateService(
             WHERE PrimaryCefrLevel = $cefrLevel
         );
 
+        DELETE FROM WordLexicalForms
+        WHERE WordEntryId IN (
+            SELECT Id
+            FROM WordEntries
+            WHERE PrimaryCefrLevel = $cefrLevel
+        );
+
         DELETE FROM WordGrammarNotes
         WHERE WordEntryId IN (
             SELECT Id
@@ -1052,6 +1076,7 @@ internal sealed class RemoteContentUpdateService(
         INSERT INTO ExampleTranslations SELECT * FROM remote.ExampleTranslations;
         INSERT INTO WordTopics SELECT * FROM remote.WordTopics;
         INSERT INTO WordLabels SELECT * FROM remote.WordLabels;
+        INSERT INTO WordLexicalForms SELECT * FROM remote.WordLexicalForms;
         INSERT INTO WordGrammarNotes SELECT * FROM remote.WordGrammarNotes;
         INSERT INTO WordCollocations SELECT * FROM remote.WordCollocations;
         INSERT INTO WordFamilyMembers SELECT * FROM remote.WordFamilyMembers;
