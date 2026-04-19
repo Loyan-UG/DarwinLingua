@@ -5,6 +5,7 @@
              xmlns:accordion="clr-namespace:Syncfusion.Maui.Toolkit.Accordion;assembly=Syncfusion.Maui.Toolkit"
              xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             Shell.NavBarIsVisible="False"
              x:Class="DarwinDeutsch.Maui.Pages.WordDetailPage">
     <ScrollView>
         <ScrollView.GestureRecognizers>
@@ -23,14 +24,20 @@
             <Border Padding="22"
                     Style="{StaticResource AppHeroPanelBorderStyle}">
                 <VerticalStackLayout Spacing="14">
+                    <Label x:Name="LemmaLabel"
+                           Style="{DynamicResource Headline}"
+                           HorizontalOptions="Start"
+                           HorizontalTextAlignment="Start"
+                           SemanticProperties.HeadingLevel="Level1" />
+
                     <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto"
                           ColumnSpacing="8">
                         <VerticalStackLayout Spacing="8">
                             <Label x:Name="HeadlineLabel"
-                                   Style="{DynamicResource Headline}"
+                                   Style="{DynamicResource Title2}"
                                    HorizontalOptions="Start"
                                    HorizontalTextAlignment="Start"
-                                   SemanticProperties.HeadingLevel="Level1" />
+                                   IsVisible="False" />
 
                             <Label x:Name="MetadataLabel"
                                    Style="{DynamicResource Body}" />

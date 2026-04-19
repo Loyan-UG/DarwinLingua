@@ -65,6 +65,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("FavoritesActionBlockView", sourceCode, StringComparison.Ordinal);
         Assert.Contains("SfCardView", actionBlockViewSource, StringComparison.Ordinal);
         Assert.Contains("SfButton", actionBlockViewSource, StringComparison.Ordinal);
+        Assert.Contains("OnShellNavigating", shellSource, StringComparison.Ordinal);
+        Assert.Contains("GoToAsync(\"//home\"", shellSource, StringComparison.Ordinal);
         Assert.Contains("SyncfusionCardShellStyle", appXamlSource, StringComparison.Ordinal);
         Assert.Contains("SyncfusionPrimaryButtonStyle", appXamlSource, StringComparison.Ordinal);
         Assert.Contains("SyncfusionSectionExpanderStyle", appXamlSource, StringComparison.Ordinal);
@@ -301,8 +303,10 @@ public sealed class MauiBrowseScreenSmokeTests
         string codeBehindSource = File.ReadAllText(wordDetailCodeBehindPath);
 
         Assert.Contains("UsageLabelsBorder", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("Shell.NavBarIsVisible=\"False\"", xamlSource, StringComparison.Ordinal);
         Assert.Contains("AppHeroPanelBorderStyle", xamlSource, StringComparison.Ordinal);
         Assert.Contains("AppSectionCardBorderStyle", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("LemmaLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CefrNavigationTopGrid", xamlSource, StringComparison.Ordinal);
         Assert.Contains("PreviousWordButtonTop", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ShowWordListButtonTop", xamlSource, StringComparison.Ordinal);
@@ -334,6 +338,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplyLexicalRelations", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyExamples", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildExampleView", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("ApplySecondaryHeadline", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CancelAutoSpeakDelay", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyCefrNavigationStateAsync", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyNavigationButtonState", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("NavigateToAdjacentWordAsync", codeBehindSource, StringComparison.Ordinal);

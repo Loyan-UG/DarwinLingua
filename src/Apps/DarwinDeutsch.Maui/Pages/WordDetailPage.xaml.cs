@@ -37,6 +37,7 @@ public partial class WordDetailPage : ContentPage
     private UserWordStateModel? _userWordState;
     private CefrBrowseNavigationState? _cefrBrowseNavigationState;
     private CancellationTokenSource? _speechCancellationTokenSource;
+    private CancellationTokenSource? _autoSpeakDelayCancellationTokenSource;
     private CancellationTokenSource? _refreshCancellationTokenSource;
     private Guid? _lastTrackedWordPublicId;
     private Guid? _loadedWordPublicId;
@@ -124,6 +125,7 @@ public partial class WordDetailPage : ContentPage
     protected override void OnDisappearing()
     {
         CancelSpeechRequest();
+        CancelAutoSpeakDelay();
         CancelRefreshRequest();
 
         base.OnDisappearing();
@@ -209,8 +211,9 @@ public partial class WordDetailPage : ContentPage
         PrepareForWordRender();
         await RefreshInteractiveStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
-        Title = BuildHeadline(word);
-        HeadlineLabel.Text = BuildHeadline(word);
+        Title = BuildDisplayTitle(word);
+        LemmaLabel.Text = word.Lemma;
+        ApplySecondaryHeadline(word);
         ConfigureSpeakWordButton();
         SpeakWordButton.IsVisible = true;
         MetadataLabel.Text = LexiconDisplayText.FormatMetadata(word.PartOfSpeech, word.CefrLevel);
@@ -219,7 +222,6 @@ public partial class WordDetailPage : ContentPage
             : string.Join(", ", word.Topics);
         EmptyStateLabel.IsVisible = false;
         RememberLoadedDetailContext(publicId, profile);
-        ScheduleAutoSpeakWord(HeadlineLabel.Text ?? string.Empty);
 
         await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
@@ -243,6 +245,7 @@ public partial class WordDetailPage : ContentPage
 
         ScheduleWordDetailPrefetch(profile);
         SetLoadingState(false);
+        ScheduleAutoSpeakWord(word.Lemma);
         _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, word.Senses.Count);
     }
 
@@ -288,7 +291,9 @@ public partial class WordDetailPage : ContentPage
     {
         SetLoadingState(false);
         Title = AppStrings.WordDetailTitle;
+        LemmaLabel.Text = AppStrings.WordDetailTitle;
         HeadlineLabel.Text = AppStrings.WordDetailTitle;
+        HeadlineLabel.IsVisible = false;
         SpeakWordButton.IsVisible = false;
         MetadataLabel.Text = string.Empty;
         FavoriteButton.IsVisible = false;
@@ -423,7 +428,7 @@ public partial class WordDetailPage : ContentPage
     /// </summary>
     private async void OnSpeakWordButtonClicked(object? sender, EventArgs e)
     {
-        string headline = HeadlineLabel.Text ?? string.Empty;
+        string headline = LemmaLabel.Text ?? string.Empty;
 
         if (string.IsNullOrWhiteSpace(headline))
         {
@@ -517,15 +522,30 @@ public partial class WordDetailPage : ContentPage
     }
 
     /// <summary>
-    /// Builds the page headline for the current lexical entry.
+    /// Builds the page title for the current lexical entry.
     /// </summary>
-    private static string BuildHeadline(WordDetailModel word)
+    private static string BuildDisplayTitle(WordDetailModel word)
     {
         ArgumentNullException.ThrowIfNull(word);
 
         return string.IsNullOrWhiteSpace(word.Article)
             ? word.Lemma
             : $"{word.Article} {word.Lemma}";
+    }
+
+    /// <summary>
+    /// Applies a compact secondary headline under the main lemma when useful.
+    /// </summary>
+    private void ApplySecondaryHeadline(WordDetailModel word)
+    {
+        ArgumentNullException.ThrowIfNull(word);
+
+        string secondaryHeadline = string.IsNullOrWhiteSpace(word.Article)
+            ? string.Empty
+            : word.Article;
+
+        HeadlineLabel.Text = secondaryHeadline;
+        HeadlineLabel.IsVisible = !string.IsNullOrWhiteSpace(secondaryHeadline);
     }
 
     /// <summary>
@@ -824,18 +844,29 @@ public partial class WordDetailPage : ContentPage
     /// <param name="text">The German text to pronounce.</param>
     private void ScheduleAutoSpeakWord(string text)
     {
+        CancelAutoSpeakDelay();
+
         if (string.IsNullOrWhiteSpace(text))
         {
             return;
         }
 
-        _ = AutoSpeakWordAsync(text);
+        _autoSpeakDelayCancellationTokenSource = new CancellationTokenSource();
+        _ = AutoSpeakWordAsync(text, _autoSpeakDelayCancellationTokenSource.Token);
     }
 
-    private async Task AutoSpeakWordAsync(string text)
+    private async Task AutoSpeakWordAsync(string text, CancellationToken cancellationToken)
     {
         try
         {
+            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(true);
+            cancellationToken.ThrowIfCancellationRequested();
+
+            if (!ContentStackLayout.IsVisible)
+            {
+                return;
+            }
+
             await SpeakGermanTextAsync(text, showFailureStatus: false).ConfigureAwait(true);
         }
         catch (OperationCanceledException)
@@ -918,6 +949,18 @@ public partial class WordDetailPage : ContentPage
         _speechCancellationTokenSource.Cancel();
         _speechCancellationTokenSource.Dispose();
         _speechCancellationTokenSource = null;
+    }
+
+    private void CancelAutoSpeakDelay()
+    {
+        if (_autoSpeakDelayCancellationTokenSource is null)
+        {
+            return;
+        }
+
+        _autoSpeakDelayCancellationTokenSource.Cancel();
+        _autoSpeakDelayCancellationTokenSource.Dispose();
+        _autoSpeakDelayCancellationTokenSource = null;
     }
 
     private void ConfigureSpeakWordButton()
@@ -1147,6 +1190,7 @@ public partial class WordDetailPage : ContentPage
 
     private void PrepareForWordRender()
     {
+        CancelAutoSpeakDelay();
         SensesContainer.Children.Clear();
         ExamplesStackLayout.Children.Clear();
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
@@ -1169,6 +1213,9 @@ public partial class WordDetailPage : ContentPage
         FavoriteButton.IsVisible = false;
         KnownButton.IsVisible = false;
         DifficultButton.IsVisible = false;
+        LemmaLabel.Text = string.Empty;
+        HeadlineLabel.Text = string.Empty;
+        HeadlineLabel.IsVisible = false;
         CefrNavigationTopGrid.IsVisible = false;
         CefrNavigationBottomGrid.IsVisible = false;
         LearningStateSectionView.SectionValue = string.Empty;

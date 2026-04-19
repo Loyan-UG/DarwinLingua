@@ -11,6 +11,7 @@ public partial class AppShell : Shell
 {
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly IServiceProvider _serviceProvider;
+    private bool _isNormalizingHomeSelection;
     private readonly ShellContent _homeContent;
     private readonly ShellContent _practiceContent;
     private readonly ShellContent _browseContent;
@@ -33,6 +34,7 @@ public partial class AppShell : Shell
 
         _appLocalizationService = appLocalizationService;
         _serviceProvider = serviceProvider;
+        Navigating += OnShellNavigating;
 
         _homeContent = new ShellContent
         {
@@ -111,6 +113,7 @@ public partial class AppShell : Shell
         if (args.NewHandler is null)
         {
             _appLocalizationService.CultureChanged -= OnCultureChanged;
+            Navigating -= OnShellNavigating;
         }
 
         base.OnHandlerChanging(args);
@@ -127,5 +130,37 @@ public partial class AppShell : Shell
         _browseContent.Title = AppStrings.BrowseTabTitle;
         _favoritesContent.Title = AppStrings.FavoritesTabTitle;
         _settingsContent.Title = AppStrings.SettingsTabTitle;
+    }
+
+    private async void OnShellNavigating(object? sender, ShellNavigatingEventArgs e)
+    {
+        if (_isNormalizingHomeSelection)
+        {
+            return;
+        }
+
+        if (e.Source is not (ShellNavigationSource.ShellItemChanged or ShellNavigationSource.ShellSectionChanged))
+        {
+            return;
+        }
+
+        string targetLocation = e.Target.Location.OriginalString;
+        if (!targetLocation.StartsWith("//home", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(targetLocation, "//home", StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        e.Cancel();
+        _isNormalizingHomeSelection = true;
+
+        try
+        {
+            await GoToAsync("//home", false);
+        }
+        finally
+        {
+            _isNormalizingHomeSelection = false;
+        }
     }
 }
