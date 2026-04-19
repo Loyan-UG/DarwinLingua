@@ -1,4 +1,5 @@
 using System.Data.Common;
+using System.Net;
 using System.Text.Json;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
@@ -451,13 +452,24 @@ internal sealed class RemoteContentUpdateService(
         using HttpResponseMessage response = await httpClient
             .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, timeoutCancellationTokenSource.Token)
             .ConfigureAwait(false);
-        response.EnsureSuccessStatusCode();
+        await EnsureSuccessStatusCodeAsync(response, "manifest", timeoutCancellationTokenSource.Token).ConfigureAwait(false);
+        await EnsureExpectedManifestContentTypeAsync(response, timeoutCancellationTokenSource.Token).ConfigureAwait(false);
         await using Stream responseStream = await response.Content
             .ReadAsStreamAsync(timeoutCancellationTokenSource.Token)
             .ConfigureAwait(false);
-        return await JsonSerializer
-            .DeserializeAsync<RemoteContentManifestModel>(responseStream, cancellationToken: timeoutCancellationTokenSource.Token)
-            .ConfigureAwait(false);
+
+        try
+        {
+            return await JsonSerializer
+                .DeserializeAsync<RemoteContentManifestModel>(responseStream, cancellationToken: timeoutCancellationTokenSource.Token)
+                .ConfigureAwait(false);
+        }
+        catch (JsonException exception)
+        {
+            throw new InvalidOperationException(
+                "The remote update manifest response was not valid JSON. Verify the ngrok tunnel points to DarwinLingua.WebApi and is not returning an HTML page.",
+                exception);
+        }
     }
 
     private static void InvalidateManifestCache()
@@ -520,7 +532,8 @@ internal sealed class RemoteContentUpdateService(
         using HttpResponseMessage response = await httpClient
             .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
             .ConfigureAwait(false);
-        response.EnsureSuccessStatusCode();
+        await EnsureSuccessStatusCodeAsync(response, "package", cancellationToken).ConfigureAwait(false);
+        await EnsureExpectedPackageContentTypeAsync(response, cancellationToken).ConfigureAwait(false);
 
         await using FileStream targetStream = new(
             targetPath,
@@ -531,6 +544,85 @@ internal sealed class RemoteContentUpdateService(
             options: FileOptions.Asynchronous | FileOptions.SequentialScan);
         await using Stream sourceStream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
         await sourceStream.CopyToAsync(targetStream, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureSuccessStatusCodeAsync(HttpResponseMessage response, string responseKind, CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(response);
+        ArgumentException.ThrowIfNullOrWhiteSpace(responseKind);
+
+        if (response.IsSuccessStatusCode)
+        {
+            return;
+        }
+
+        string bodyPreview = await ReadResponsePreviewAsync(response, cancellationToken).ConfigureAwait(false);
+        string message = BuildRemoteResponseErrorMessage(response, responseKind, bodyPreview);
+        throw new InvalidOperationException(message);
+    }
+
+    private static async Task EnsureExpectedManifestContentTypeAsync(HttpResponseMessage response, CancellationToken cancellationToken)
+    {
+        string? mediaType = response.Content.Headers.ContentType?.MediaType;
+        if (string.IsNullOrWhiteSpace(mediaType) ||
+            mediaType.Contains("json", StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        string bodyPreview = await ReadResponsePreviewAsync(response, cancellationToken).ConfigureAwait(false);
+        throw new InvalidOperationException(
+            $"The remote update manifest endpoint returned '{mediaType}' instead of JSON. Verify the ngrok tunnel points to DarwinLingua.WebApi. Response preview: {bodyPreview}");
+    }
+
+    private static async Task EnsureExpectedPackageContentTypeAsync(HttpResponseMessage response, CancellationToken cancellationToken)
+    {
+        string? mediaType = response.Content.Headers.ContentType?.MediaType;
+        if (string.IsNullOrWhiteSpace(mediaType) ||
+            mediaType.Contains("json", StringComparison.OrdinalIgnoreCase) ||
+            mediaType.Contains("octet-stream", StringComparison.OrdinalIgnoreCase) ||
+            mediaType.Contains("text/plain", StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        string bodyPreview = await ReadResponsePreviewAsync(response, cancellationToken).ConfigureAwait(false);
+        throw new InvalidOperationException(
+            $"The remote update package endpoint returned '{mediaType}' instead of a package payload. Verify the ngrok tunnel and package publication state. Response preview: {bodyPreview}");
+    }
+
+    private static string BuildRemoteResponseErrorMessage(HttpResponseMessage response, string responseKind, string bodyPreview)
+    {
+        HttpStatusCode statusCode = response.StatusCode;
+        return statusCode switch
+        {
+            HttpStatusCode.NotFound => $"The remote update {responseKind} endpoint returned 404 Not Found. Verify the ngrok tunnel is online and forwarding to DarwinLingua.WebApi.",
+            HttpStatusCode.Conflict => $"The remote update {responseKind} request was rejected because the published package is not compatible with this app schema. Details: {bodyPreview}",
+            HttpStatusCode.BadRequest => $"The remote update {responseKind} request was rejected as invalid. Details: {bodyPreview}",
+            HttpStatusCode.Forbidden or HttpStatusCode.Unauthorized => $"The remote update {responseKind} request was denied by the server. Details: {bodyPreview}",
+            _ => $"The remote update {responseKind} request failed with HTTP {(int)statusCode} ({response.ReasonPhrase}). Details: {bodyPreview}",
+        };
+    }
+
+    private static async Task<string> ReadResponsePreviewAsync(HttpResponseMessage response, CancellationToken cancellationToken)
+    {
+        string content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+        if (string.IsNullOrWhiteSpace(content))
+        {
+            return "No response body was returned.";
+        }
+
+        string singleLine = content
+            .Replace("\r", " ", StringComparison.Ordinal)
+            .Replace("\n", " ", StringComparison.Ordinal)
+            .Trim();
+
+        if (singleLine.Length > 240)
+        {
+            singleLine = singleLine[..240];
+        }
+
+        return singleLine;
     }
 
     private HttpRequestMessage CreateGetRequest(string requestUri)
