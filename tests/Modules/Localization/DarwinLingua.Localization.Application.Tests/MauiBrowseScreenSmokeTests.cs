@@ -18,6 +18,7 @@ public sealed class MauiBrowseScreenSmokeTests
         string startupPagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/StartupPage.xaml");
         string startupPageCodeBehindPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/StartupPage.xaml.cs");
         string welcomePagePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Pages/WelcomePage.xaml");
+        string shellPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/AppShell.xaml.cs");
         string appPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/App.xaml.cs");
         string mauiProgramPath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/MauiProgram.cs");
         string startupInitializationServicePath = Path.Combine(repositoryRoot, "src/Apps/DarwinDeutsch.Maui/Services/Startup/AppStartupInitializationService.cs");
@@ -31,6 +32,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.True(File.Exists(startupPagePath), $"Startup page XAML file not found: {startupPagePath}");
         Assert.True(File.Exists(startupPageCodeBehindPath), $"Startup page code-behind file not found: {startupPageCodeBehindPath}");
         Assert.True(File.Exists(welcomePagePath), $"Welcome page XAML file not found: {welcomePagePath}");
+        Assert.True(File.Exists(shellPath), $"App shell code-behind file not found: {shellPath}");
         Assert.True(File.Exists(appPath), $"App code-behind file not found: {appPath}");
         Assert.True(File.Exists(mauiProgramPath), $"Maui program file not found: {mauiProgramPath}");
         Assert.True(File.Exists(startupInitializationServicePath), $"Startup initialization service file not found: {startupInitializationServicePath}");
@@ -44,6 +46,7 @@ public sealed class MauiBrowseScreenSmokeTests
         string startupSource = File.ReadAllText(startupPagePath);
         string startupCodeBehindSource = File.ReadAllText(startupPageCodeBehindPath);
         string welcomeSource = File.ReadAllText(welcomePagePath);
+        string shellSource = File.ReadAllText(shellPath);
         string appSource = File.ReadAllText(appPath);
         string mauiProgramSource = File.ReadAllText(mauiProgramPath);
         string startupInitializationServiceSource = File.ReadAllText(startupInitializationServicePath);
@@ -323,10 +326,9 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ExamplesBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ExamplesStackLayout", xamlSource, StringComparison.Ordinal);
         Assert.Contains("WordFormsBorder", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("PartOfSpeechSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("ArticleSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("PluralFormSectionView", xamlSource, StringComparison.Ordinal);
-        Assert.Contains("InfinitiveFormSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("LexicalFormsStackLayout", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("PronunciationIpaSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("SyllableBreakSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContextLabelsBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("GrammarNotesBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CollocationsBorder", xamlSource, StringComparison.Ordinal);
@@ -350,6 +352,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplyExamples", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildExampleView", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyWordForms", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("CreateDetailSection", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplySecondaryHeadline", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("CancelAutoSpeakDelay", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyCefrNavigationStateAsync", codeBehindSource, StringComparison.Ordinal);

@@ -125,13 +125,34 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
                     .ToArray()))
             .ToArray();
 
+        IReadOnlyList<WordLexicalFormDetailModel> lexicalForms = word.LexicalForms.Count > 0
+            ? word.LexicalForms
+                .OrderByDescending(form => form.IsPrimary)
+                .ThenBy(form => form.SortOrder)
+                .Select(form => new WordLexicalFormDetailModel(
+                    form.PartOfSpeech.ToString(),
+                    form.Article,
+                    form.PluralForm,
+                    form.InfinitiveForm,
+                    form.IsPrimary))
+                .ToArray()
+            : [new WordLexicalFormDetailModel(
+                word.PartOfSpeech.ToString(),
+                word.Article,
+                word.PluralForm,
+                word.InfinitiveForm,
+                true)];
+
         return new WordDetailModel(
             word.PublicId,
             word.Lemma,
             word.Article,
             word.PluralForm,
             word.InfinitiveForm,
+            word.PronunciationIpa,
+            word.SyllableBreak,
             word.PartOfSpeech.ToString(),
+            lexicalForms,
             word.PrimaryCefrLevel.ToString(),
             usageLabels,
             contextLabels,

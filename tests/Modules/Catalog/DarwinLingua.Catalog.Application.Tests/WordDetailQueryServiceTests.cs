@@ -37,6 +37,7 @@ public sealed class WordDetailQueryServiceTests
             DateTime.UtcNow,
             article: "die",
             pluralForm: "Kassen");
+        word.AddLexicalForm(Guid.NewGuid(), PartOfSpeech.Verb, false, DateTime.UtcNow, infinitiveForm: "kassieren");
 
         WordSense sense = word.AddSense(
             Guid.NewGuid(),
@@ -83,6 +84,9 @@ public sealed class WordDetailQueryServiceTests
         Assert.NotNull(result);
         Assert.Equal("Kasse", result!.Lemma);
         Assert.Equal("die", result.Article);
+        Assert.Equal(2, result.LexicalForms.Count);
+        Assert.Contains(result.LexicalForms, form => form.PartOfSpeech == "Noun" && form.IsPrimary && form.Article == "die");
+        Assert.Contains(result.LexicalForms, form => form.PartOfSpeech == "Verb" && !form.IsPrimary && form.InfinitiveForm == "kassieren");
         Assert.Contains("formal", result.UsageLabels);
         Assert.Contains("spoken", result.UsageLabels);
         Assert.Equal(2, result.UsageLabels.Count);

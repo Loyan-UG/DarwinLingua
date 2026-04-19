@@ -156,7 +156,6 @@ internal sealed class ContentImportService : IContentImportService
         string normalizedLemma = NormalizeText(entry.Word).ToLowerInvariant();
         string normalizedLanguage = NormalizeText(entry.Language).ToLowerInvariant();
         string normalizedCefrLevelText = NormalizeText(entry.CefrLevel).ToUpperInvariant();
-        string normalizedPartOfSpeechText = NormalizeText(entry.PartOfSpeech);
         string[] normalizedTopicKeys = entry.Topics
             .Where(topic => !string.IsNullOrWhiteSpace(topic))
             .Select(topic => NormalizeText(topic).ToLowerInvariant())
@@ -184,11 +183,6 @@ internal sealed class ContentImportService : IContentImportService
             entryErrors.Add("Entry CEFR level is invalid.");
         }
 
-        if (!Enum.TryParse(normalizedPartOfSpeechText, true, out PartOfSpeech partOfSpeech))
-        {
-            entryErrors.Add("Entry part of speech is invalid.");
-        }
-
         if (normalizedTopicKeys.Length == 0)
         {
             entryErrors.Add("Entry topics must contain at least one topic key.");
@@ -206,6 +200,12 @@ internal sealed class ContentImportService : IContentImportService
 
         Dictionary<LanguageCode, string> meaningTranslations = ValidateMeaningTranslations(entry.Meanings, meaningLanguages, entryErrors);
         List<(string GermanText, Dictionary<LanguageCode, string> Translations)> examples = ValidateExamples(entry.Examples, meaningLanguages, entryErrors);
+        NormalizedLexicalForm[] lexicalForms = ValidateLexicalForms(entry, entryErrors);
+        NormalizedLexicalForm? primaryLexicalForm = lexicalForms
+            .OrderByDescending(form => form.IsPrimary)
+            .ThenBy(form => form.SortOrder)
+            .FirstOrDefault();
+        string normalizedPartOfSpeechText = primaryLexicalForm?.PartOfSpeech.ToString() ?? string.Empty;
 
         foreach (string topicKey in normalizedTopicKeys)
         {
@@ -235,10 +235,10 @@ internal sealed class ContentImportService : IContentImportService
 
         if (importedWords.Any(word =>
                 word.NormalizedLemma == normalizedLemma &&
-                word.PartOfSpeech == partOfSpeech &&
+                word.PartOfSpeech == primaryLexicalForm!.PartOfSpeech &&
                 word.PrimaryCefrLevel == cefrLevel) ||
             await _contentImportRepository
-                .WordExistsAsync(normalizedLemma, partOfSpeech, cefrLevel, cancellationToken)
+                .WordExistsAsync(normalizedLemma, primaryLexicalForm!.PartOfSpeech, cefrLevel, cancellationToken)
                 .ConfigureAwait(false))
         {
             string warningMessage = $"Duplicate entry skipped for lemma '{rawLemma}'.";
@@ -263,12 +263,27 @@ internal sealed class ContentImportService : IContentImportService
             NormalizeText(entry.Word),
             LanguageCode.From("de"),
             cefrLevel,
-            partOfSpeech,
+            primaryLexicalForm!.PartOfSpeech,
             PublicationStatus.Active,
             contentPackage.SourceType,
             DateTime.UtcNow,
-            article: NormalizeOptionalText(entry.Article),
-            pluralForm: NormalizeOptionalText(entry.Plural));
+            article: primaryLexicalForm.Article,
+            pluralForm: primaryLexicalForm.PluralForm,
+            infinitiveForm: primaryLexicalForm.InfinitiveForm,
+            pronunciationIpa: NormalizeOptionalText(entry.PronunciationIpa),
+            syllableBreak: NormalizeOptionalText(entry.SyllableBreak));
+
+        foreach (NormalizedLexicalForm lexicalForm in lexicalForms.Where(form => !form.IsPrimary))
+        {
+            wordEntry.AddLexicalForm(
+                Guid.NewGuid(),
+                lexicalForm.PartOfSpeech,
+                false,
+                DateTime.UtcNow,
+                lexicalForm.Article,
+                lexicalForm.PluralForm,
+                lexicalForm.InfinitiveForm);
+        }
 
         WordSense sense = wordEntry.AddSense(
             Guid.NewGuid(),
@@ -477,6 +492,111 @@ internal sealed class ContentImportService : IContentImportService
             "externalcurated" => ContentSourceType.ExternalCurated,
             _ => ContentSourceType.Hybrid,
         };
+    }
+
+    private static NormalizedLexicalForm[] ValidateLexicalForms(
+        ParsedContentEntryModel entry,
+        ICollection<string> entryErrors)
+    {
+        ArgumentNullException.ThrowIfNull(entry);
+        ArgumentNullException.ThrowIfNull(entryErrors);
+
+        List<NormalizedLexicalForm> normalizedForms = [];
+
+        if (entry.LexicalForms.Count == 0)
+        {
+            string normalizedPartOfSpeechText = NormalizeText(entry.PartOfSpeech);
+
+            if (!Enum.TryParse(normalizedPartOfSpeechText, true, out PartOfSpeech legacyPartOfSpeech))
+            {
+                entryErrors.Add("Entry part of speech is invalid.");
+                return [];
+            }
+
+            return
+            [
+                new NormalizedLexicalForm(
+                    legacyPartOfSpeech,
+                    NormalizeOptionalText(entry.Article),
+                    NormalizeOptionalText(entry.Plural),
+                    NormalizeOptionalText(entry.Infinitive),
+                    true,
+                    1),
+            ];
+        }
+
+        int explicitPrimaryCount = entry.LexicalForms.Count(form => form.IsPrimary);
+        if (explicitPrimaryCount > 1)
+        {
+            entryErrors.Add("Entry lexicalForms can contain at most one primary item.");
+        }
+
+        for (int index = 0; index < entry.LexicalForms.Count; index++)
+        {
+            ParsedContentLexicalFormModel form = entry.LexicalForms[index];
+            string normalizedPartOfSpeechText = NormalizeText(form.PartOfSpeech);
+
+            if (!Enum.TryParse(normalizedPartOfSpeechText, true, out PartOfSpeech partOfSpeech))
+            {
+                entryErrors.Add($"Entry lexicalForms[{index + 1}] partOfSpeech is invalid.");
+                continue;
+            }
+
+            if (normalizedForms.Any(existingForm => existingForm.PartOfSpeech == partOfSpeech))
+            {
+                entryErrors.Add($"Entry lexicalForms contains duplicate partOfSpeech '{normalizedPartOfSpeechText}'.");
+                continue;
+            }
+
+            bool isPrimary = explicitPrimaryCount == 0 ? index == 0 : form.IsPrimary;
+
+            normalizedForms.Add(new NormalizedLexicalForm(
+                partOfSpeech,
+                NormalizeOptionalText(form.Article),
+                NormalizeOptionalText(form.Plural),
+                NormalizeOptionalText(form.Infinitive),
+                isPrimary,
+                index + 1));
+        }
+
+        if (normalizedForms.Count == 0)
+        {
+            entryErrors.Add("Entry lexicalForms must contain at least one valid item.");
+            return [];
+        }
+
+        NormalizedLexicalForm primaryForm = normalizedForms
+            .OrderByDescending(form => form.IsPrimary)
+            .ThenBy(form => form.SortOrder)
+            .First();
+
+        if (!string.IsNullOrWhiteSpace(entry.PartOfSpeech) &&
+            !string.Equals(primaryForm.PartOfSpeech.ToString(), NormalizeText(entry.PartOfSpeech), StringComparison.OrdinalIgnoreCase))
+        {
+            entryErrors.Add("Entry partOfSpeech must match the primary lexical form when lexicalForms is provided.");
+        }
+
+        if (!OptionalTextEquals(entry.Article, primaryForm.Article))
+        {
+            entryErrors.Add("Entry article must match the primary lexical form when lexicalForms is provided.");
+        }
+
+        if (!OptionalTextEquals(entry.Plural, primaryForm.PluralForm))
+        {
+            entryErrors.Add("Entry plural must match the primary lexical form when lexicalForms is provided.");
+        }
+
+        if (!OptionalTextEquals(entry.Infinitive, primaryForm.InfinitiveForm))
+        {
+            entryErrors.Add("Entry infinitive must match the primary lexical form when lexicalForms is provided.");
+        }
+
+        return normalizedForms.ToArray();
+    }
+
+    private static bool OptionalTextEquals(string? left, string? right)
+    {
+        return string.Equals(NormalizeOptionalText(left), NormalizeOptionalText(right), StringComparison.Ordinal);
     }
 
     private static string NormalizeText(string? value)
@@ -754,4 +874,12 @@ internal sealed class ContentImportService : IContentImportService
             issues,
             Array.Empty<string>());
     }
+
+    private sealed record NormalizedLexicalForm(
+        PartOfSpeech PartOfSpeech,
+        string? Article,
+        string? PluralForm,
+        string? InfinitiveForm,
+        bool IsPrimary,
+        int SortOrder);
 }

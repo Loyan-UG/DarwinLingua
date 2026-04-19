@@ -76,6 +76,17 @@ The intended workflow is:
 
 This keeps content production flexible but the data entry path disciplined.
 
+### AI Prompting Guidance
+
+When an AI is asked to generate Darwin Lingua content packages, instruct it to:
+
+1. always emit valid JSON
+2. always emit `lexicalForms`
+3. mark the main learner-facing role as primary
+4. keep top-level lexical fields aligned with the primary lexical form
+5. include `pronunciationIpa` and `syllableBreak` when reliable
+6. never invent unknown topic keys or unsupported language codes
+
 ---
 
 # 3. Phase 1 Import Scope
@@ -140,7 +151,7 @@ Each entry should contain at minimum:
 - word
 - language
 - cefrLevel
-- partOfSpeech
+- one lexical role through `partOfSpeech` or `lexicalForms`
 - topics
 - meanings
 - examples
@@ -152,11 +163,15 @@ Optional metadata may also be present.
 The current Phase 1 implementation maps each imported entry to:
 
 - one `WordEntry`
+- one primary lexical form on the root entry
+- zero or more additional lexical forms in child rows
 - one primary `WordSense`
 - one set of sense translations
 - one ordered set of example sentences under that sense
 
 Multi-sense import packages can be introduced later, but they are not part of the current import contract.
+
+Multi-part-of-speech packages are now supported through `lexicalForms`.
 
 ---
 

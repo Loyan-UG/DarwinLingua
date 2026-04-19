@@ -1608,6 +1608,21 @@ public static class AppStrings
     public static string SettingsContentUpdatesDismissButton => GetRequiredString(nameof(SettingsContentUpdatesDismissButton));
 
     /// <summary>
+    /// Gets the localized detail label for IPA pronunciation.
+    /// </summary>
+    public static string WordDetailPronunciationIpaLabel => GetRequiredString(nameof(WordDetailPronunciationIpaLabel));
+
+    /// <summary>
+    /// Gets the localized detail label for syllable breaks.
+    /// </summary>
+    public static string WordDetailSyllableBreakLabel => GetRequiredString(nameof(WordDetailSyllableBreakLabel));
+
+    /// <summary>
+    /// Gets the localized marker shown for the primary lexical form.
+    /// </summary>
+    public static string WordDetailPrimaryLexicalFormLabel => GetRequiredString(nameof(WordDetailPrimaryLexicalFormLabel));
+
+    /// <summary>
     /// Gets the localized display label for English.
     /// </summary>
     public static string LanguageOptionEnglish => GetRequiredString(nameof(LanguageOptionEnglish));

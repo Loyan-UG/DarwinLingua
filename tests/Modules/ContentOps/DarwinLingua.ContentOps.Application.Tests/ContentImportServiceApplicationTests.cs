@@ -110,11 +110,21 @@ public sealed class ContentImportServiceApplicationTests
             "de",
             "A1",
             "Noun",
+            [],
+            [topicKey],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [new ParsedContentMeaningModel("en", "bread")],
+            [new ParsedContentExampleModel("Ich kaufe Brot.", [new ParsedContentMeaningModel("en", "I buy bread.")])],
             "der",
             "Brote",
-            [topicKey],
-            [new ParsedContentMeaningModel("en", "bread")],
-            [new ParsedContentExampleModel("Ich kaufe Brot.", [new ParsedContentMeaningModel("en", "I buy bread.")])]);
+            null,
+            null,
+            null);
     }
 
     private sealed class ThrowingFileReader : IContentImportFileReader

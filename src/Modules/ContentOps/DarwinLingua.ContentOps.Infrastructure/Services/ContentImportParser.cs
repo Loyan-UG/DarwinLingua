@@ -60,6 +60,12 @@ internal sealed class ContentImportParser : IContentImportParser
             entry.Language ?? string.Empty,
             entry.CefrLevel ?? string.Empty,
             entry.PartOfSpeech ?? string.Empty,
+            (entry.LexicalForms ?? []).Select(form => new ParsedContentLexicalFormModel(
+                form.PartOfSpeech ?? string.Empty,
+                form.Article,
+                form.Plural,
+                form.Infinitive,
+                form.IsPrimary ?? false)).ToArray(),
             (entry.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
             (entry.UsageLabels ?? []).Select(label => label ?? string.Empty).ToArray(),
             (entry.ContextLabels ?? []).Select(label => label ?? string.Empty).ToArray(),
@@ -84,7 +90,10 @@ internal sealed class ContentImportParser : IContentImportParser
                     translation.Language ?? string.Empty,
                     translation.Text ?? string.Empty)).ToArray())).ToArray(),
             entry.Article,
-            entry.Plural);
+            entry.Plural,
+            entry.Infinitive,
+            entry.PronunciationIpa,
+            entry.SyllableBreak);
     }
 
     private sealed class ContentPackageDocument
@@ -116,6 +125,14 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public string? Plural { get; set; }
 
+        public string? Infinitive { get; set; }
+
+        public string? PronunciationIpa { get; set; }
+
+        public string? SyllableBreak { get; set; }
+
+        public ContentLexicalFormDocument[]? LexicalForms { get; set; }
+
         public string?[]? Topics { get; set; }
 
         public string?[]? UsageLabels { get; set; }
@@ -133,6 +150,19 @@ internal sealed class ContentImportParser : IContentImportParser
         public ContentMeaningDocument[]? Meanings { get; set; }
 
         public ContentExampleDocument[]? Examples { get; set; }
+    }
+
+    private sealed class ContentLexicalFormDocument
+    {
+        public string? PartOfSpeech { get; set; }
+
+        public string? Article { get; set; }
+
+        public string? Plural { get; set; }
+
+        public string? Infinitive { get; set; }
+
+        public bool? IsPrimary { get; set; }
     }
 
     private sealed class ContentMeaningDocument

@@ -219,6 +219,61 @@ public sealed class ContentImportServiceTests
     }
 
     /// <summary>
+    /// Verifies that lexicalForms import populates additional lexical roles while preserving the primary role.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldImportMultipleLexicalForms()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            await File.WriteAllTextAsync(packagePath, CreatePackageWithMultipleLexicalFormsJson("a1-shopping-multi-lexical-forms"));
+
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult result = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
+
+            Assert.True(result.IsSuccess);
+            Assert.Equal(1, result.ImportedEntries);
+
+            IWordQueryService wordQueryService = serviceProvider.GetRequiredService<IWordQueryService>();
+            DarwinLingua.Catalog.Application.Models.WordListItemModel importedWord = Assert.Single(await wordQueryService
+                .GetWordsByTopicAsync("shopping", "en", CancellationToken.None));
+
+            IWordDetailQueryService detailQueryService = serviceProvider.GetRequiredService<IWordDetailQueryService>();
+            DarwinLingua.Catalog.Application.Models.WordDetailModel? detail = await detailQueryService
+                .GetWordDetailsAsync(importedWord.PublicId, "en", null, "en", CancellationToken.None);
+
+            Assert.NotNull(detail);
+            Assert.Equal(2, detail!.LexicalForms.Count);
+            Assert.Contains(detail.LexicalForms, form => form.PartOfSpeech == "Noun" && form.IsPrimary && form.Article == "die");
+            Assert.Contains(detail.LexicalForms, form => form.PartOfSpeech == "Verb" && !form.IsPrimary && form.InfinitiveForm == "Kasse machen");
+            Assert.Equal("/ˈkasə/", detail.PronunciationIpa);
+            Assert.Equal("Kas-se", detail.SyllableBreak);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(packagePath))
+            {
+                File.Delete(packagePath);
+            }
+        }
+    }
+
+    /// <summary>
     /// Verifies that the Phase 1 sample package imports successfully into a freshly initialized database.
     /// </summary>
     [Fact]
@@ -443,6 +498,61 @@ public sealed class ContentImportServiceTests
                   "topics": ["missing-topic"],
                   "meanings": [],
                   "examples": []
+                }
+              ]
+            }
+            """;
+    }
+
+    private static string CreatePackageWithMultipleLexicalFormsJson(string packageId)
+    {
+        return $$"""
+            {
+              "packageVersion": "1.0",
+              "packageId": "{{packageId}}",
+              "packageName": "A1 Shopping Multi Lexical Forms Test",
+              "source": "Hybrid",
+              "defaultMeaningLanguages": ["en"],
+              "entries": [
+                {
+                  "word": "Kasse",
+                  "language": "de",
+                  "cefrLevel": "A1",
+                  "partOfSpeech": "Noun",
+                  "article": "die",
+                  "plural": "Kassen",
+                  "pronunciationIpa": "/ˈkasə/",
+                  "syllableBreak": "Kas-se",
+                  "lexicalForms": [
+                    {
+                      "partOfSpeech": "Noun",
+                      "article": "die",
+                      "plural": "Kassen",
+                      "isPrimary": true
+                    },
+                    {
+                      "partOfSpeech": "Verb",
+                      "infinitive": "Kasse machen"
+                    }
+                  ],
+                  "topics": ["shopping"],
+                  "meanings": [
+                    {
+                      "language": "en",
+                      "text": "checkout"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "baseText": "Ich gehe zur Kasse.",
+                      "translations": [
+                        {
+                          "language": "en",
+                          "text": "I am going to the checkout."
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

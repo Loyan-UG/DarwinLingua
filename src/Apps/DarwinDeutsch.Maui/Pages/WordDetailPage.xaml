@@ -86,10 +86,10 @@
                 <VerticalStackLayout Spacing="12">
                     <Label x:Name="WordFormsHeadingLabel"
                            Style="{DynamicResource Title2}" />
-                    <controls:DetailSectionView x:Name="PartOfSpeechSectionView" />
-                    <controls:DetailSectionView x:Name="ArticleSectionView" />
-                    <controls:DetailSectionView x:Name="PluralFormSectionView" />
-                    <controls:DetailSectionView x:Name="InfinitiveFormSectionView" />
+                    <VerticalStackLayout x:Name="LexicalFormsStackLayout"
+                                         Spacing="12" />
+                    <controls:DetailSectionView x:Name="PronunciationIpaSectionView" />
+                    <controls:DetailSectionView x:Name="SyllableBreakSectionView" />
                 </VerticalStackLayout>
             </Border>
 

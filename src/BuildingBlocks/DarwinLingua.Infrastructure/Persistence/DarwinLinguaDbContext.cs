@@ -44,6 +44,11 @@ public sealed class DarwinLinguaDbContext : DbContext
     public DbSet<WordSense> WordSenses => Set<WordSense>();
 
     /// <summary>
+    /// Gets the lexical-form data set.
+    /// </summary>
+    public DbSet<WordLexicalForm> WordLexicalForms => Set<WordLexicalForm>();
+
+    /// <summary>
     /// Gets the sense-translation data set.
     /// </summary>
     public DbSet<SenseTranslation> SenseTranslations => Set<SenseTranslation>();
@@ -140,6 +145,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new TopicConfiguration());
         modelBuilder.ApplyConfiguration(new TopicLocalizationConfiguration());
         modelBuilder.ApplyConfiguration(new WordEntryConfiguration());
+        modelBuilder.ApplyConfiguration(new WordLexicalFormConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollocationConfiguration());
         modelBuilder.ApplyConfiguration(new WordFamilyMemberConfiguration());
         modelBuilder.ApplyConfiguration(new WordRelationConfiguration());

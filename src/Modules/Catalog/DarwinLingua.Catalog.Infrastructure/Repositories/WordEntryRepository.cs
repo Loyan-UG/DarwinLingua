@@ -320,6 +320,7 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .Include(word => word.Senses.Where(sense => sense.PublicationStatus == PublicationStatus.Active))
                 .ThenInclude(sense => sense.Examples)
                     .ThenInclude(example => example.Translations)
+            .Include(word => word.LexicalForms)
             .Include(word => word.Topics)
             .Include(word => word.Collocations)
             .Include(word => word.FamilyMembers)

@@ -51,7 +51,7 @@ The first version must use a conservative duplicate rule.
 Recommended duplicate identity:
 
 - normalized German word
-- part of speech
+- primary lexical-form part of speech
 - primary CEFR level
 
 This is acceptable for Phase 1 even though it is not a perfect long-term linguistic identity model.
@@ -84,7 +84,10 @@ A duplicate is a handled outcome, not a fatal import error.
 - `word` is required
 - `language` must be `de` in Phase 1
 - `cefrLevel` must be valid
-- `partOfSpeech` must be valid
+- `partOfSpeech` must be valid when `lexicalForms` is omitted
+- `lexicalForms` must contain at least one valid item when present
+- duplicate `partOfSpeech` values inside `lexicalForms` are not allowed
+- top-level lexical fields must match the primary lexical form when both shapes are present
 - `topics` must not be empty
 - `meanings` must not be empty
 - `examples` must not be empty
@@ -117,6 +120,7 @@ Recommended normalization actions:
 
 - trim word text
 - generate or verify normalized lemma
+- normalize lexical-form ordering and primary selection
 - normalize topic keys
 - normalize language-code casing
 - trim meanings
@@ -183,6 +187,14 @@ These are useful later but not required for the first implementation:
 The first version should support only:
 
 - import with duplicate skip behavior
+
+### Canonical Authoring Guidance
+
+For new human-authored or AI-authored files:
+
+- prefer `lexicalForms` even for single-role words
+- include `pronunciationIpa` when reliable
+- include `syllableBreak` when it materially helps learner readability or TTS quality
 
 ---
 

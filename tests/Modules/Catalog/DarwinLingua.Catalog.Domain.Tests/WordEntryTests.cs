@@ -277,6 +277,42 @@ public sealed class WordEntryTests
     }
 
     /// <summary>
+    /// Verifies that a word entry can carry multiple lexical forms while preserving one primary form.
+    /// </summary>
+    [Fact]
+    public void AddLexicalForm_ShouldAddSecondaryLexicalForm()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordLexicalForm verbForm = word.AddLexicalForm(
+            Guid.NewGuid(),
+            PartOfSpeech.Verb,
+            false,
+            DateTime.UtcNow,
+            infinitiveForm: "bahnhöfen");
+
+        Assert.Equal(2, word.LexicalForms.Count);
+        Assert.Equal(PartOfSpeech.Verb, verbForm.PartOfSpeech);
+        Assert.False(verbForm.IsPrimary);
+        Assert.Equal(PartOfSpeech.Noun, word.GetPrimaryLexicalForm()!.PartOfSpeech);
+    }
+
+    /// <summary>
+    /// Verifies that duplicate lexical-form parts of speech are rejected within the same entry.
+    /// </summary>
+    [Fact]
+    public void AddLexicalForm_ShouldRejectDuplicatePartOfSpeech()
+    {
+        WordEntry word = CreateWordEntry();
+
+        Assert.Throws<DomainRuleException>(() => word.AddLexicalForm(
+            Guid.NewGuid(),
+            PartOfSpeech.Noun,
+            false,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
     /// Verifies that duplicate lexical labels are rejected within the same label kind.
     /// </summary>
     [Fact]

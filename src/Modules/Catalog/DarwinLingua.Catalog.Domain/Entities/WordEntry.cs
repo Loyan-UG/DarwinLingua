@@ -11,6 +11,7 @@ namespace DarwinLingua.Catalog.Domain.Entities;
 /// </summary>
 public sealed partial class WordEntry
 {
+    private readonly List<WordLexicalForm> _lexicalForms = [];
     private readonly List<WordSense> _senses = [];
     private readonly List<WordTopic> _topics = [];
     private readonly List<WordLabel> _labels = [];
@@ -73,6 +74,15 @@ public sealed partial class WordEntry
         SourceReference = NormalizeOptionalText(sourceReference);
         CreatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
         UpdatedAtUtc = CreatedAtUtc;
+
+        AddLexicalForm(
+            Guid.NewGuid(),
+            partOfSpeech,
+            true,
+            CreatedAtUtc,
+            article,
+            pluralForm,
+            infinitiveForm);
     }
 
     /// <summary>
@@ -161,6 +171,11 @@ public sealed partial class WordEntry
     public DateTime UpdatedAtUtc { get; private set; }
 
     /// <summary>
+    /// Gets the lexical-role variants attached to the entry.
+    /// </summary>
+    public IReadOnlyCollection<WordLexicalForm> LexicalForms => _lexicalForms.AsReadOnly();
+
+    /// <summary>
     /// Gets the senses that belong to the lexical entry.
     /// </summary>
     public IReadOnlyCollection<WordSense> Senses => _senses.AsReadOnly();
@@ -194,6 +209,58 @@ public sealed partial class WordEntry
     /// Gets the lexical relations attached to the entry.
     /// </summary>
     public IReadOnlyCollection<WordRelation> Relations => _relations.AsReadOnly();
+
+    /// <summary>
+    /// Adds a lexical-role variant to the entry.
+    /// </summary>
+    public WordLexicalForm AddLexicalForm(
+        Guid id,
+        PartOfSpeech partOfSpeech,
+        bool isPrimary,
+        DateTime createdAtUtc,
+        string? article = null,
+        string? pluralForm = null,
+        string? infinitiveForm = null)
+    {
+        if (_lexicalForms.Any(existingForm => existingForm.Id == id))
+        {
+            throw new DomainRuleException("Duplicate lexical-form identifiers are not allowed within the same word entry.");
+        }
+
+        if (_lexicalForms.Any(existingForm => existingForm.PartOfSpeech == partOfSpeech))
+        {
+            throw new DomainRuleException("Duplicate lexical-form part of speech is not allowed within the same word entry.");
+        }
+
+        if (isPrimary)
+        {
+            foreach (WordLexicalForm existingForm in _lexicalForms.Where(existingForm => existingForm.IsPrimary))
+            {
+                existingForm.SetPrimary(false, createdAtUtc);
+            }
+        }
+
+        WordLexicalForm lexicalForm = new(
+            id,
+            Id,
+            partOfSpeech,
+            _lexicalForms.Count + 1,
+            isPrimary,
+            createdAtUtc,
+            article,
+            pluralForm,
+            infinitiveForm);
+
+        _lexicalForms.Add(lexicalForm);
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+
+        if (isPrimary)
+        {
+            ApplyPrimaryLexicalForm(lexicalForm);
+        }
+
+        return lexicalForm;
+    }
 
     /// <summary>
     /// Adds a sense to the lexical entry.
@@ -473,6 +540,27 @@ public sealed partial class WordEntry
             .OrderByDescending(sense => sense.IsPrimarySense)
             .ThenBy(sense => sense.SenseOrder)
             .FirstOrDefault();
+    }
+
+    /// <summary>
+    /// Resolves the primary lexical form when one exists, otherwise falls back to the first ordered form.
+    /// </summary>
+    public WordLexicalForm? GetPrimaryLexicalForm()
+    {
+        return _lexicalForms
+            .OrderByDescending(form => form.IsPrimary)
+            .ThenBy(form => form.SortOrder)
+            .FirstOrDefault();
+    }
+
+    private void ApplyPrimaryLexicalForm(WordLexicalForm lexicalForm)
+    {
+        ArgumentNullException.ThrowIfNull(lexicalForm);
+
+        PartOfSpeech = lexicalForm.PartOfSpeech;
+        Article = lexicalForm.Article;
+        PluralForm = lexicalForm.PluralForm;
+        InfinitiveForm = lexicalForm.InfinitiveForm;
     }
 
     private static string NormalizeRequiredText(string value, string parameterName)

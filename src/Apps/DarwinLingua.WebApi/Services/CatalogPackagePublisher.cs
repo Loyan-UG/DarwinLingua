@@ -68,6 +68,7 @@ public sealed class CatalogPackagePublisher(
                 .ThenInclude(sense => sense.Examples)
                     .ThenInclude(example => example.Translations)
             .Include(word => word.Topics)
+            .Include(word => word.LexicalForms)
             .Include(word => word.Labels)
             .Include(word => word.GrammarNotes)
             .Include(word => word.Collocations)
@@ -285,6 +286,18 @@ public sealed class CatalogPackagePublisher(
             word.LanguageCode.Value,
             word.PrimaryCefrLevel.ToString(),
             word.PartOfSpeech.ToString(),
+            word.LexicalForms.Count == 0
+                ? [new ExportedLexicalForm(word.PartOfSpeech.ToString(), word.Article, word.PluralForm, word.InfinitiveForm, true)]
+                : word.LexicalForms
+                    .OrderByDescending(form => form.IsPrimary)
+                    .ThenBy(form => form.SortOrder)
+                    .Select(form => new ExportedLexicalForm(
+                        form.PartOfSpeech.ToString(),
+                        form.Article,
+                        form.PluralForm,
+                        form.InfinitiveForm,
+                        form.IsPrimary))
+                    .ToArray(),
             word.Article,
             word.PluralForm,
             word.InfinitiveForm,
@@ -379,6 +392,7 @@ public sealed class CatalogPackagePublisher(
         string Language,
         string CefrLevel,
         string PartOfSpeech,
+        IReadOnlyList<ExportedLexicalForm> LexicalForms,
         string? Article,
         string? Plural,
         string? Infinitive,
@@ -395,6 +409,13 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<ExportedExample> Examples);
 
     private sealed record ExportedMeaning(string Language, string Text);
+
+    private sealed record ExportedLexicalForm(
+        string PartOfSpeech,
+        string? Article,
+        string? Plural,
+        string? Infinitive,
+        bool IsPrimary);
 
     private sealed record ExportedExample(string BaseText, IReadOnlyList<ExportedMeaning> Translations);
 

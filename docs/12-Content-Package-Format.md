@@ -73,6 +73,7 @@ Each vocabulary entry should contain:
 - normalization-friendly fields
 - CEFR information
 - part-of-speech information
+- optional lexical-form blocks for multi-role words
 - topic keys
 - meaning translations
 - example sentences
@@ -82,7 +83,7 @@ Each vocabulary entry should contain:
 - `word`
 - `language`
 - `cefrLevel`
-- `partOfSpeech`
+- either `partOfSpeech` or `lexicalForms`
 - `topics`
 - `meanings`
 - `examples`
@@ -92,6 +93,10 @@ Each vocabulary entry should contain:
 - `normalizedWord`
 - `article`
 - `plural`
+- `infinitive`
+- `pronunciationIpa`
+- `syllableBreak`
+- `lexicalForms`
 - `usageLabels`
 - `contextLabels`
 - `grammarNotes`
@@ -110,6 +115,31 @@ Each meaning item should contain:
 - `text`
 
 Duplicate meaning languages inside the same entry are not allowed.
+
+---
+
+## 5.1 Lexical Form Structure
+
+Use `lexicalForms` when one lemma can appear in more than one lexical role.
+
+Each item may contain:
+
+- `partOfSpeech` required
+- `article` optional
+- `plural` optional
+- `infinitive` optional
+- `isPrimary` optional
+
+Rules:
+
+- if `lexicalForms` is omitted, the importer uses the top-level lexical fields
+- if `lexicalForms` is present, it must contain at least one valid item
+- each `partOfSpeech` may appear only once inside one entry
+- at most one item may declare `isPrimary = true`
+- if no item declares `isPrimary = true`, the first item becomes primary
+- if top-level lexical fields are also present, they must match the primary lexical form
+
+For AI-generated files, prefer always writing `lexicalForms`, even for single-role words.
 
 ---
 
@@ -164,6 +194,12 @@ See:
 - `13-Entry-Structure.json`
 
 That file should remain a realistic example of one vocabulary entry.
+
+For new JSON packages, the recommended canonical shape is:
+
+- top-level lexical fields for compatibility
+- `lexicalForms` as the explicit lexical-role structure
+- `pronunciationIpa` and `syllableBreak` when known
 
 ---
 

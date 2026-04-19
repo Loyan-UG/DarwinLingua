@@ -147,10 +147,8 @@ public partial class WordDetailPage : ContentPage
         LearningStateSectionView.SectionTitle = AppStrings.WordDetailLearningStateLabel;
         ExamplesHeadingLabel.Text = AppStrings.WordDetailExamplesLabel;
         WordFormsHeadingLabel.Text = AppStrings.WordDetailFormsLabel;
-        PartOfSpeechSectionView.SectionTitle = AppStrings.WordDetailPartOfSpeechLabel;
-        ArticleSectionView.SectionTitle = AppStrings.WordDetailArticleLabel;
-        PluralFormSectionView.SectionTitle = AppStrings.WordDetailPluralFormLabel;
-        InfinitiveFormSectionView.SectionTitle = AppStrings.WordDetailInfinitiveFormLabel;
+        PronunciationIpaSectionView.SectionTitle = AppStrings.WordDetailPronunciationIpaLabel;
+        SyllableBreakSectionView.SectionTitle = AppStrings.WordDetailSyllableBreakLabel;
         UsageLabelsHeadingLabel.Text = AppStrings.WordDetailUsageLabelsLabel;
         ContextLabelsHeadingLabel.Text = AppStrings.WordDetailContextLabelsLabel;
         GrammarNotesHeadingLabel.Text = AppStrings.WordDetailGrammarNotesLabel;
@@ -310,10 +308,11 @@ public partial class WordDetailPage : ContentPage
         ExamplesBorder.IsVisible = false;
         ExamplesStackLayout.Children.Clear();
         WordFormsBorder.IsVisible = false;
-        PartOfSpeechSectionView.SectionValue = string.Empty;
-        ArticleSectionView.SectionValue = string.Empty;
-        PluralFormSectionView.SectionValue = string.Empty;
-        InfinitiveFormSectionView.SectionValue = string.Empty;
+        LexicalFormsStackLayout.Children.Clear();
+        PronunciationIpaSectionView.SectionValue = string.Empty;
+        PronunciationIpaSectionView.IsVisible = false;
+        SyllableBreakSectionView.SectionValue = string.Empty;
+        SyllableBreakSectionView.IsVisible = false;
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();
@@ -622,24 +621,72 @@ public partial class WordDetailPage : ContentPage
     {
         ArgumentNullException.ThrowIfNull(word);
 
-        bool hasPartOfSpeech = !string.IsNullOrWhiteSpace(word.PartOfSpeech);
-        bool hasArticle = !string.IsNullOrWhiteSpace(word.Article);
-        bool hasPluralForm = !string.IsNullOrWhiteSpace(word.PluralForm);
-        bool hasInfinitiveForm = !string.IsNullOrWhiteSpace(word.InfinitiveForm);
+        LexicalFormsStackLayout.Children.Clear();
 
-        PartOfSpeechSectionView.SectionValue = hasPartOfSpeech ? word.PartOfSpeech : string.Empty;
-        PartOfSpeechSectionView.IsVisible = hasPartOfSpeech;
+        foreach (WordLexicalFormDetailModel lexicalForm in word.LexicalForms)
+        {
+            VerticalStackLayout sectionLayout = new()
+            {
+                Spacing = 10,
+            };
 
-        ArticleSectionView.SectionValue = hasArticle ? word.Article! : string.Empty;
-        ArticleSectionView.IsVisible = hasArticle;
+            string partOfSpeechLabel = LexiconDisplayText.GetPartOfSpeechDisplayName(lexicalForm.PartOfSpeech);
+            sectionLayout.Children.Add(new Label
+            {
+                Text = lexicalForm.IsPrimary
+                    ? $"{partOfSpeechLabel} • {AppStrings.WordDetailPrimaryLexicalFormLabel}"
+                    : partOfSpeechLabel,
+                Style = ResolveAppTextStyle("Body"),
+                FontAttributes = FontAttributes.Bold,
+            });
 
-        PluralFormSectionView.SectionValue = hasPluralForm ? word.PluralForm! : string.Empty;
-        PluralFormSectionView.IsVisible = hasPluralForm;
+            sectionLayout.Children.Add(CreateDetailSection(AppStrings.WordDetailPartOfSpeechLabel, partOfSpeechLabel));
 
-        InfinitiveFormSectionView.SectionValue = hasInfinitiveForm ? word.InfinitiveForm! : string.Empty;
-        InfinitiveFormSectionView.IsVisible = hasInfinitiveForm;
+            if (!string.IsNullOrWhiteSpace(lexicalForm.Article))
+            {
+                sectionLayout.Children.Add(CreateDetailSection(AppStrings.WordDetailArticleLabel, lexicalForm.Article!));
+            }
 
-        WordFormsBorder.IsVisible = hasPartOfSpeech || hasArticle || hasPluralForm || hasInfinitiveForm;
+            if (!string.IsNullOrWhiteSpace(lexicalForm.PluralForm))
+            {
+                sectionLayout.Children.Add(CreateDetailSection(AppStrings.WordDetailPluralFormLabel, lexicalForm.PluralForm!));
+            }
+
+            if (!string.IsNullOrWhiteSpace(lexicalForm.InfinitiveForm))
+            {
+                sectionLayout.Children.Add(CreateDetailSection(AppStrings.WordDetailInfinitiveFormLabel, lexicalForm.InfinitiveForm!));
+            }
+
+            LexicalFormsStackLayout.Children.Add(new Border
+            {
+                Padding = new Thickness(14, 12),
+                StrokeThickness = 0,
+                BackgroundColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                    ? Color.FromArgb("#1B2732")
+                    : Color.FromArgb("#FFFDF9"),
+                Content = sectionLayout,
+            });
+        }
+
+        bool hasPronunciationIpa = !string.IsNullOrWhiteSpace(word.PronunciationIpa);
+        bool hasSyllableBreak = !string.IsNullOrWhiteSpace(word.SyllableBreak);
+
+        PronunciationIpaSectionView.SectionValue = hasPronunciationIpa ? word.PronunciationIpa! : string.Empty;
+        PronunciationIpaSectionView.IsVisible = hasPronunciationIpa;
+
+        SyllableBreakSectionView.SectionValue = hasSyllableBreak ? word.SyllableBreak! : string.Empty;
+        SyllableBreakSectionView.IsVisible = hasSyllableBreak;
+
+        WordFormsBorder.IsVisible = word.LexicalForms.Count > 0 || hasPronunciationIpa || hasSyllableBreak;
+    }
+
+    private static DarwinDeutsch.Maui.Controls.DetailSectionView CreateDetailSection(string title, string value)
+    {
+        return new DarwinDeutsch.Maui.Controls.DetailSectionView
+        {
+            SectionTitle = title,
+            SectionValue = value,
+        };
     }
 
     /// <summary>
@@ -1232,14 +1279,11 @@ public partial class WordDetailPage : ContentPage
         SensesContainer.Children.Clear();
         ExamplesStackLayout.Children.Clear();
         WordFormsBorder.IsVisible = false;
-        PartOfSpeechSectionView.SectionValue = string.Empty;
-        ArticleSectionView.SectionValue = string.Empty;
-        PluralFormSectionView.SectionValue = string.Empty;
-        InfinitiveFormSectionView.SectionValue = string.Empty;
-        PartOfSpeechSectionView.IsVisible = false;
-        ArticleSectionView.IsVisible = false;
-        PluralFormSectionView.IsVisible = false;
-        InfinitiveFormSectionView.IsVisible = false;
+        LexicalFormsStackLayout.Children.Clear();
+        PronunciationIpaSectionView.SectionValue = string.Empty;
+        PronunciationIpaSectionView.IsVisible = false;
+        SyllableBreakSectionView.SectionValue = string.Empty;
+        SyllableBreakSectionView.IsVisible = false;
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();

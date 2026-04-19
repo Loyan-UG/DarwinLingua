@@ -8,6 +8,7 @@ public sealed record ParsedContentEntryModel(
     string Language,
     string CefrLevel,
     string PartOfSpeech,
+    IReadOnlyList<ParsedContentLexicalFormModel> LexicalForms,
     IReadOnlyList<string> Topics,
     IReadOnlyList<string> UsageLabels,
     IReadOnlyList<string> ContextLabels,
@@ -18,4 +19,7 @@ public sealed record ParsedContentEntryModel(
     IReadOnlyList<ParsedContentMeaningModel> Meanings,
     IReadOnlyList<ParsedContentExampleModel> Examples,
     string? Article,
-    string? Plural);
+    string? Plural,
+    string? Infinitive,
+    string? PronunciationIpa,
+    string? SyllableBreak);
