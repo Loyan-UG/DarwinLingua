@@ -66,6 +66,8 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("SfCardView", actionBlockViewSource, StringComparison.Ordinal);
         Assert.Contains("SfButton", actionBlockViewSource, StringComparison.Ordinal);
         Assert.Contains("OnShellNavigating", shellSource, StringComparison.Ordinal);
+        Assert.Contains("OnShellNavigated", shellSource, StringComparison.Ordinal);
+        Assert.Contains("ShouldNormalizeHomeSelection", shellSource, StringComparison.Ordinal);
         Assert.Contains("GoToAsync(\"//home\"", shellSource, StringComparison.Ordinal);
         Assert.Contains("SyncfusionCardShellStyle", appXamlSource, StringComparison.Ordinal);
         Assert.Contains("SyncfusionPrimaryButtonStyle", appXamlSource, StringComparison.Ordinal);
@@ -138,6 +140,10 @@ public sealed class MauiBrowseScreenSmokeTests
         string aboutCodeBehindSource = File.ReadAllText(aboutCodeBehindPath);
 
         Assert.Contains("ContentUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
+        Assert.True(
+            xamlSource.IndexOf("LanguageInputLayout", StringComparison.Ordinal) <
+            xamlSource.IndexOf("ContentUpdatesSectionLabel", StringComparison.Ordinal),
+            "Language settings should appear before content updates in the settings layout.");
         Assert.Contains("RemoteContentUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("PackagedSeedUpdatesSectionLabel", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ApplyRemoteUpdateButton", xamlSource, StringComparison.Ordinal);
@@ -316,6 +322,11 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("OnDetailSwipeRight", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ExamplesBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ExamplesStackLayout", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("WordFormsBorder", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("PartOfSpeechSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("ArticleSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("PluralFormSectionView", xamlSource, StringComparison.Ordinal);
+        Assert.Contains("InfinitiveFormSectionView", xamlSource, StringComparison.Ordinal);
         Assert.Contains("ContextLabelsBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("GrammarNotesBorder", xamlSource, StringComparison.Ordinal);
         Assert.Contains("CollocationsBorder", xamlSource, StringComparison.Ordinal);
@@ -338,6 +349,7 @@ public sealed class MauiBrowseScreenSmokeTests
         Assert.Contains("ApplyLexicalRelations", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyExamples", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("BuildExampleView", codeBehindSource, StringComparison.Ordinal);
+        Assert.Contains("ApplyWordForms", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplySecondaryHeadline", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("CancelAutoSpeakDelay", codeBehindSource, StringComparison.Ordinal);
         Assert.Contains("ApplyCefrNavigationStateAsync", codeBehindSource, StringComparison.Ordinal);

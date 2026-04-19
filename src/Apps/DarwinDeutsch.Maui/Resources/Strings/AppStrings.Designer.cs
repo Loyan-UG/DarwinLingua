@@ -378,6 +378,11 @@ public static class AppStrings
     public static string WordDetailExamplesLabel => GetRequiredString(nameof(WordDetailExamplesLabel));
 
     /// <summary>
+    /// Gets the localized label for the word-forms section on the word-detail page.
+    /// </summary>
+    public static string WordDetailFormsLabel => GetRequiredString(nameof(WordDetailFormsLabel));
+
+    /// <summary>
     /// Gets the localized caption for opening the previous word inside the current CEFR level.
     /// </summary>
     public static string WordDetailPreviousWordButton => GetRequiredString(nameof(WordDetailPreviousWordButton));
@@ -471,6 +476,26 @@ public static class AppStrings
     /// Gets the localized label for the topic section on the word-detail page.
     /// </summary>
     public static string WordDetailTopicsLabel => GetRequiredString(nameof(WordDetailTopicsLabel));
+
+    /// <summary>
+    /// Gets the localized label for the part-of-speech field on the word-detail page.
+    /// </summary>
+    public static string WordDetailPartOfSpeechLabel => GetRequiredString(nameof(WordDetailPartOfSpeechLabel));
+
+    /// <summary>
+    /// Gets the localized label for the article field on the word-detail page.
+    /// </summary>
+    public static string WordDetailArticleLabel => GetRequiredString(nameof(WordDetailArticleLabel));
+
+    /// <summary>
+    /// Gets the localized label for the plural-form field on the word-detail page.
+    /// </summary>
+    public static string WordDetailPluralFormLabel => GetRequiredString(nameof(WordDetailPluralFormLabel));
+
+    /// <summary>
+    /// Gets the localized label for the infinitive-form field on the word-detail page.
+    /// </summary>
+    public static string WordDetailInfinitiveFormLabel => GetRequiredString(nameof(WordDetailInfinitiveFormLabel));
 
     /// <summary>
     /// Gets the localized label for the usage-label section on the word-detail page.

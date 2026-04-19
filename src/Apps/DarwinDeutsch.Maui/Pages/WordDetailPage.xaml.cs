@@ -146,6 +146,11 @@ public partial class WordDetailPage : ContentPage
         TopicsSectionView.SectionTitle = AppStrings.WordDetailTopicsLabel;
         LearningStateSectionView.SectionTitle = AppStrings.WordDetailLearningStateLabel;
         ExamplesHeadingLabel.Text = AppStrings.WordDetailExamplesLabel;
+        WordFormsHeadingLabel.Text = AppStrings.WordDetailFormsLabel;
+        PartOfSpeechSectionView.SectionTitle = AppStrings.WordDetailPartOfSpeechLabel;
+        ArticleSectionView.SectionTitle = AppStrings.WordDetailArticleLabel;
+        PluralFormSectionView.SectionTitle = AppStrings.WordDetailPluralFormLabel;
+        InfinitiveFormSectionView.SectionTitle = AppStrings.WordDetailInfinitiveFormLabel;
         UsageLabelsHeadingLabel.Text = AppStrings.WordDetailUsageLabelsLabel;
         ContextLabelsHeadingLabel.Text = AppStrings.WordDetailContextLabelsLabel;
         GrammarNotesHeadingLabel.Text = AppStrings.WordDetailGrammarNotesLabel;
@@ -230,6 +235,7 @@ public partial class WordDetailPage : ContentPage
         cancellationToken.ThrowIfCancellationRequested();
 
         ApplyExamples(word.Senses);
+        ApplyWordForms(word);
         ApplyWordLabels(UsageLabelsChipGroup, UsageLabelsBorder, word.UsageLabels);
         ApplyWordLabels(ContextLabelsChipGroup, ContextLabelsBorder, word.ContextLabels);
         ApplyGrammarNotes(word.GrammarNotes);
@@ -303,6 +309,11 @@ public partial class WordDetailPage : ContentPage
         CefrNavigationBottomGrid.IsVisible = false;
         ExamplesBorder.IsVisible = false;
         ExamplesStackLayout.Children.Clear();
+        WordFormsBorder.IsVisible = false;
+        PartOfSpeechSectionView.SectionValue = string.Empty;
+        ArticleSectionView.SectionValue = string.Empty;
+        PluralFormSectionView.SectionValue = string.Empty;
+        InfinitiveFormSectionView.SectionValue = string.Empty;
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();
@@ -602,6 +613,33 @@ public partial class WordDetailPage : ContentPage
         }
 
         container.ItemsSource = displayLabels;
+    }
+
+    /// <summary>
+    /// Renders the morphological and lexical-form fields that are currently available for the word entry.
+    /// </summary>
+    private void ApplyWordForms(WordDetailModel word)
+    {
+        ArgumentNullException.ThrowIfNull(word);
+
+        bool hasPartOfSpeech = !string.IsNullOrWhiteSpace(word.PartOfSpeech);
+        bool hasArticle = !string.IsNullOrWhiteSpace(word.Article);
+        bool hasPluralForm = !string.IsNullOrWhiteSpace(word.PluralForm);
+        bool hasInfinitiveForm = !string.IsNullOrWhiteSpace(word.InfinitiveForm);
+
+        PartOfSpeechSectionView.SectionValue = hasPartOfSpeech ? word.PartOfSpeech : string.Empty;
+        PartOfSpeechSectionView.IsVisible = hasPartOfSpeech;
+
+        ArticleSectionView.SectionValue = hasArticle ? word.Article! : string.Empty;
+        ArticleSectionView.IsVisible = hasArticle;
+
+        PluralFormSectionView.SectionValue = hasPluralForm ? word.PluralForm! : string.Empty;
+        PluralFormSectionView.IsVisible = hasPluralForm;
+
+        InfinitiveFormSectionView.SectionValue = hasInfinitiveForm ? word.InfinitiveForm! : string.Empty;
+        InfinitiveFormSectionView.IsVisible = hasInfinitiveForm;
+
+        WordFormsBorder.IsVisible = hasPartOfSpeech || hasArticle || hasPluralForm || hasInfinitiveForm;
     }
 
     /// <summary>
@@ -1193,6 +1231,15 @@ public partial class WordDetailPage : ContentPage
         CancelAutoSpeakDelay();
         SensesContainer.Children.Clear();
         ExamplesStackLayout.Children.Clear();
+        WordFormsBorder.IsVisible = false;
+        PartOfSpeechSectionView.SectionValue = string.Empty;
+        ArticleSectionView.SectionValue = string.Empty;
+        PluralFormSectionView.SectionValue = string.Empty;
+        InfinitiveFormSectionView.SectionValue = string.Empty;
+        PartOfSpeechSectionView.IsVisible = false;
+        ArticleSectionView.IsVisible = false;
+        PluralFormSectionView.IsVisible = false;
+        InfinitiveFormSectionView.IsVisible = false;
         UsageLabelsChipGroup.ItemsSource = Array.Empty<string>();
         ContextLabelsChipGroup.ItemsSource = Array.Empty<string>();
         GrammarNotesStackLayout.Children.Clear();

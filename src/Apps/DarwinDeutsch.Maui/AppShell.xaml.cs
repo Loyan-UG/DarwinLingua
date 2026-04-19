@@ -35,6 +35,7 @@ public partial class AppShell : Shell
         _appLocalizationService = appLocalizationService;
         _serviceProvider = serviceProvider;
         Navigating += OnShellNavigating;
+        Navigated += OnShellNavigated;
 
         _homeContent = new ShellContent
         {
@@ -114,6 +115,7 @@ public partial class AppShell : Shell
         {
             _appLocalizationService.CultureChanged -= OnCultureChanged;
             Navigating -= OnShellNavigating;
+            Navigated -= OnShellNavigated;
         }
 
         base.OnHandlerChanging(args);
@@ -144,14 +146,54 @@ public partial class AppShell : Shell
             return;
         }
 
-        string targetLocation = e.Target.Location.OriginalString;
-        if (!targetLocation.StartsWith("//home", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(targetLocation, "//home", StringComparison.OrdinalIgnoreCase))
+        if (!ShouldNormalizeHomeSelection(e.Target.Location.OriginalString))
         {
             return;
         }
 
         e.Cancel();
+        await NormalizeHomeSelectionAsync().ConfigureAwait(true);
+    }
+
+    private async void OnShellNavigated(object? sender, ShellNavigatedEventArgs e)
+    {
+        if (_isNormalizingHomeSelection)
+        {
+            return;
+        }
+
+        if (e.Source is not (ShellNavigationSource.ShellItemChanged or ShellNavigationSource.ShellSectionChanged))
+        {
+            return;
+        }
+
+        if (!ShouldNormalizeHomeSelection(CurrentState.Location.OriginalString))
+        {
+            return;
+        }
+
+        await NormalizeHomeSelectionAsync().ConfigureAwait(true);
+    }
+
+    private static bool ShouldNormalizeHomeSelection(string location)
+    {
+        if (string.IsNullOrWhiteSpace(location))
+        {
+            return false;
+        }
+
+        if (string.Equals(location, "//home", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        return location.StartsWith("//home/", StringComparison.OrdinalIgnoreCase)
+            || location.Contains("/home/", StringComparison.OrdinalIgnoreCase)
+            || location.EndsWith("/home", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private async Task NormalizeHomeSelectionAsync()
+    {
         _isNormalizingHomeSelection = true;
 
         try
