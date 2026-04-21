@@ -7,7 +7,7 @@ namespace DarwinLingua.Web.Controllers;
 
 public class HomeController : Controller
 {
-    [OutputCache]
+    [OutputCache(PolicyName = "LandingPage")]
     public IActionResult Index()
     {
         return View();

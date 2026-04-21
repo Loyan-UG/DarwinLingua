@@ -1,0 +1,17 @@
+@model DarwinLingua.Catalog.Application.Models.WordListItemModel
+
+<article class="panel stack-md">
+    <div class="eyebrow">@Model.CefrLevel · @Model.PartOfSpeech</div>
+    <h3 class="headline-sm">@Model.Lemma</h3>
+    @if (!string.IsNullOrWhiteSpace(Model.Article) || !string.IsNullOrWhiteSpace(Model.PluralForm))
+    {
+        <p>@string.Join(" · ", new[] { Model.Article, Model.PluralForm }.Where(static value => !string.IsNullOrWhiteSpace(value)))</p>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.PrimaryMeaning))
+    {
+        <p class="body-lg">@Model.PrimaryMeaning</p>
+    }
+    <div class="action-row">
+        <a class="button button--secondary" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Open word</a>
+    </div>
+</article>

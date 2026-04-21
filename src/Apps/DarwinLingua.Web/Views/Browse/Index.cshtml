@@ -1,0 +1,38 @@
+@model DarwinLingua.Web.Models.BrowseIndexViewModel
+@{
+    ViewData["Title"] = "Browse";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Browse</span>
+    <h1 class="headline-md">Explore the catalog by topic or CEFR level.</h1>
+    <p class="body-lg">Primary meaning language: <code>@Model.MeaningLanguageCode</code></p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">CEFR levels</h2>
+        <div class="chip-grid">
+            @foreach (string level in Model.CefrLevels)
+            {
+                <a class="chip-link" asp-action="Cefr" asp-route-id="@level">@level</a>
+            }
+        </div>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Topics</h2>
+        @if (Model.Topics.Count == 0)
+        {
+            <p class="body-lg">No topics are available yet.</p>
+        }
+        else
+        {
+            <div class="chip-grid">
+                @foreach (var topic in Model.Topics)
+                {
+                    <a class="chip-link" asp-action="Topic" asp-route-id="@topic.Key">@topic.DisplayName</a>
+                }
+            </div>
+        }
+    </article>
+</section>

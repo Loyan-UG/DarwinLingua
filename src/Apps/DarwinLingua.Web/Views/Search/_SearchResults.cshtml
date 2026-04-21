@@ -1,0 +1,25 @@
+@model DarwinLingua.Web.Models.SearchPageViewModel
+
+@if (string.IsNullOrWhiteSpace(Model.Query))
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Start searching</h2>
+        <p class="body-lg">Type a German lemma to search the catalog.</p>
+    </section>
+}
+else if (Model.Results.Count == 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">No matches</h2>
+        <p class="body-lg">No words matched <code>@Model.Query</code>.</p>
+    </section>
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var word in Model.Results)
+        {
+            <partial name="_WordCard" model="word" />
+        }
+    </section>
+}

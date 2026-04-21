@@ -51,27 +51,27 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add area route for `Admin`
 - [ ] add route naming conventions for learner pages
 - [ ] add route naming conventions for admin pages
-- [ ] add cache/output-caching policy per page type
-- [ ] add security headers and CSP baseline suitable for `htmx`
+- [x] add cache/output-caching policy per page type
+- [x] add security headers and CSP baseline suitable for `htmx`
 
 ## 4. Learner-Facing Pages
 
-- [ ] landing page
-- [ ] browse by CEFR page
-- [ ] browse by topic page
-- [ ] search page
-- [ ] word detail page
-- [ ] favorites page
+- [x] landing page
+- [x] browse by CEFR page
+- [x] browse by topic page
+- [x] search page
+- [x] word detail page
+- [x] favorites page
 - [ ] recent activity page
-- [ ] account settings page
-- [ ] install-app guidance page
+- [x] account settings page
+- [x] install-app guidance page
 
 ## 5. htmx Interaction Slices
 
-- [ ] live search results with debounced `htmx` requests
+- [x] live search results with debounced `htmx` requests
 - [ ] favorite toggle without full page reload
 - [ ] recent-activity panel refresh
-- [ ] CEFR word list pagination / load-more
+- [x] CEFR word list pagination / load-more
 - [ ] topic-filter chips with partial updates
 - [ ] inline admin table filtering
 - [ ] publish-history reload panel
@@ -90,14 +90,14 @@ This backlog is intentionally ordered so the project can grow without collapsing
 
 ## 7. Shared Backend Integration
 
-- [ ] wire the web host to shared application modules
-- [ ] define read-side queries for:
-- [ ] browse by CEFR
-- [ ] browse by topic
-- [ ] search
-- [ ] word detail
+- [x] wire the web host to shared application modules
+- [x] define read-side queries for:
+- [x] browse by CEFR
+- [x] browse by topic
+- [x] search
+- [x] word detail
 - [ ] recent activity
-- [ ] favorite words
+- [x] favorite words
 - [ ] keep MVC rendering on server-side application services, not mobile package endpoints
 
 ## 8. User State
@@ -105,9 +105,9 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [ ] persist favorite words for authenticated web users
 - [ ] persist last viewed words
 - [ ] persist recent activity
-- [ ] persist preferred meaning languages
-- [ ] persist UI language preference when applicable
-- [ ] define anonymous-user fallback behavior
+- [x] persist preferred meaning languages
+- [x] persist UI language preference when applicable
+- [x] define anonymous-user fallback behavior
 
 ## 9. Admin Area
 
@@ -126,13 +126,13 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [ ] add output caching for high-read browse/detail pages
 - [ ] add compression and asset caching review
 - [ ] add image and icon optimization
-- [ ] add pagination / incremental rendering for large lists
+- [x] add pagination / incremental rendering for large lists
 - [ ] add UX telemetry for slow page loads and failed async actions
 - [ ] validate install prompt flow on Android and desktop Chromium
 
 ## 11. Validation
 
-- [ ] add smoke tests for web host routing and area registration
+- [x] add smoke tests for web host routing and area registration
 - [ ] add UI structure tests for learner shell
 - [ ] add UI structure tests for admin shell
 - [ ] add manual validation worksheet for PWA installability

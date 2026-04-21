@@ -4,25 +4,27 @@
 
 <section class="hero">
     <div class="hero__content">
-        <span class="eyebrow">Learner-First Web Foundation</span>
-        <h1 class="headline-xl">Darwin Lingua is now ready for a proper MVC + Tailwind + htmx web build.</h1>
+        <span class="eyebrow">Learner web</span>
+        <h1 class="headline-xl">Darwin Lingua now has a real MVC learner surface, not just a shell.</h1>
         <p class="body-lg">
-            This host is the first implementation slice of the approved web architecture: one ASP.NET Core MVC app,
-            one learner-facing root site, one <code>Areas/Admin</code> surface, and an installable PWA baseline.
+            The current slice already exposes catalog browse, debounced search, word detail, favorites,
+            local preference management, install guidance, and the admin-area baseline inside one ASP.NET Core MVC host.
         </p>
         <div class="action-row">
-            <a class="button button--primary" asp-action="Install">Install app</a>
-            <a class="button button--secondary" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Open admin area</a>
+            <a class="button button--primary" asp-controller="Browse" asp-action="Index">Browse words</a>
+            <a class="button button--secondary" asp-controller="Search" asp-action="Index">Search words</a>
+            <a class="button button--secondary" asp-action="Install">Install app</a>
         </div>
     </div>
     <div class="hero__aside panel panel--accent stack-md">
         <p class="eyebrow">Current slice</p>
         <ul class="feature-list">
             <li>Responsive root layout</li>
+            <li>Browse by topic and CEFR</li>
+            <li>Debounced search with htmx</li>
+            <li>Word detail, favorites, and word-state tracking</li>
             <li>PWA manifest and service worker</li>
             <li>Admin route baseline</li>
-            <li>Tailwind-ready project files</li>
-            <li>htmx integrated for progressive enhancement</li>
         </ul>
     </div>
 </section>
@@ -30,17 +32,17 @@
 <section id="roadmap" class="grid-two-col">
     <article class="panel stack-md">
         <span class="eyebrow">Learner experience</span>
-        <h2 class="headline-md">What the root site will provide</h2>
+        <h2 class="headline-md">Available now</h2>
         <ul class="feature-list">
             <li>Browse by CEFR and topic</li>
             <li>Search and word detail flows</li>
-            <li>Favorites and recent activity</li>
-            <li>Account settings and install guidance</li>
+            <li>Favorites and word-state markers</li>
+            <li>Settings and install guidance</li>
         </ul>
     </article>
     <article class="panel stack-md">
         <span class="eyebrow">Operator experience</span>
-        <h2 class="headline-md">What the admin area will provide</h2>
+        <h2 class="headline-md">Next operator slice</h2>
         <ul class="feature-list">
             <li>Draft inspection</li>
             <li>Publish and rollback actions</li>
@@ -57,4 +59,23 @@
         The web host stays server-rendered for SEO, accessibility, and operational simplicity. Tailwind gives better UI control
         than Bootstrap, and <code>htmx</code> gives us fast targeted interactions without splitting the frontend into a separate SPA.
     </p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <span class="eyebrow">Data source</span>
+        <h2 class="headline-md">Catalog data is external by design</h2>
+        <p>
+            The web host can start with local SQLite fallback, but real learner content requires a populated shared catalog database.
+            If browse and search pages are empty, configure <code>ConnectionStrings__SharedCatalog</code> or <code>ConnectionStrings__SharedCatalogAdmin</code>.
+        </p>
+    </article>
+    <article class="panel stack-md">
+        <span class="eyebrow">Architecture note</span>
+        <h2 class="headline-md">Identity is intentionally deferred</h2>
+        <p>
+            This slice uses the current local profile abstraction so learner pages can be built now. Proper multi-user web identity
+            will replace the local-only profile path in the next major slice.
+        </p>
+    </article>
 </section>

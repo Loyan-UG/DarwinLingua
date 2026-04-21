@@ -1,0 +1,34 @@
+using DarwinLingua.Catalog.Application.Abstractions;
+using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Models;
+using DarwinLingua.Web.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace DarwinLingua.Web.Controllers;
+
+public sealed class SearchController(
+    IWordQueryService wordQueryService,
+    IWebLearningProfileAccessor learningProfileAccessor) : Controller
+{
+    public async Task<IActionResult> Index(string? q, CancellationToken cancellationToken)
+    {
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
+        string query = q?.Trim() ?? string.Empty;
+        IReadOnlyList<WordListItemModel> results = string.IsNullOrWhiteSpace(query)
+            ? []
+            : await wordQueryService.SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+
+        return View(new SearchPageViewModel(query, results, profile.PreferredMeaningLanguage1));
+    }
+
+    public async Task<IActionResult> Results(string? q, CancellationToken cancellationToken)
+    {
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
+        string query = q?.Trim() ?? string.Empty;
+        IReadOnlyList<WordListItemModel> results = string.IsNullOrWhiteSpace(query)
+            ? []
+            : await wordQueryService.SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+
+        return PartialView("_SearchResults", new SearchPageViewModel(query, results, profile.PreferredMeaningLanguage1));
+    }
+}

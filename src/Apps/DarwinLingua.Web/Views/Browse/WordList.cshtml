@@ -1,0 +1,50 @@
+@model DarwinLingua.Web.Models.WordBrowsePageViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Browse words</span>
+    <h1 class="headline-md">@Model.Title</h1>
+    <p class="body-lg">@Model.Description</p>
+</section>
+
+@if (Model.Words.Count == 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">No words available</h2>
+        <p class="body-lg">This slice does not currently have words for the selected filter.</p>
+    </section>
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var word in Model.Words)
+        {
+            <partial name="_WordCard" model="word" />
+        }
+    </section>
+
+    <section class="panel stack-md">
+        <div class="action-row">
+            @if (Model.Skip > 0)
+            {
+                <a class="button button--secondary"
+                   asp-action="@(Model.TopicKey is not null ? "Topic" : "Cefr")"
+                   asp-route-id="@(Model.TopicKey ?? Model.CefrLevel)"
+                   asp-route-skip="@(Math.Max(0, Model.Skip - Model.Take))">
+                    Previous
+                </a>
+            }
+            @if (Model.HasMore)
+            {
+                <a class="button button--primary"
+                   asp-action="@(Model.TopicKey is not null ? "Topic" : "Cefr")"
+                   asp-route-id="@(Model.TopicKey ?? Model.CefrLevel)"
+                   asp-route-skip="@(Model.Skip + Model.Take)">
+                    Next page
+                </a>
+            }
+        </div>
+    </section>
+}

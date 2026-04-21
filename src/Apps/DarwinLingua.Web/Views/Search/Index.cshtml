@@ -1,0 +1,30 @@
+@model DarwinLingua.Web.Models.SearchPageViewModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Search</span>
+    <h1 class="headline-md">Search German lemmas</h1>
+    <p class="body-lg">The results panel is progressively enhanced with <code>htmx</code>.</p>
+
+    <form class="search-form" method="get" asp-action="Index">
+        <input
+            class="search-input"
+            type="search"
+            name="q"
+            value="@Model.Query"
+            placeholder="Type a German lemma"
+            hx-get="@Url.Action("Results", "Search")"
+            hx-trigger="keyup changed delay:250ms, search"
+            hx-target="#search-results"
+            hx-indicator="#search-indicator"
+            autocomplete="off" />
+        <button type="submit" class="button button--primary">Search</button>
+    </form>
+    <div id="search-indicator" class="eyebrow htmx-indicator">Updating results…</div>
+</section>
+
+<div id="search-results">
+    <partial name="_SearchResults" model="Model" />
+</div>

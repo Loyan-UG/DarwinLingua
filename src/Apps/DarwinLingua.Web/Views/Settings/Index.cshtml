@@ -1,0 +1,45 @@
+@model DarwinLingua.Web.Models.SettingsPageViewModel
+@{
+    ViewData["Title"] = "Settings";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Settings</span>
+    <h1 class="headline-md">Language preferences</h1>
+    <p class="body-lg">This slice still uses the local learning profile abstraction. Web identity-backed account preferences will replace it in the next phase.</p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+
+    <form class="stack-lg" method="post" asp-action="Update">
+        @Html.AntiForgeryToken()
+        <div class="form-grid">
+            <label class="field">
+                <span>UI language</span>
+                <select asp-for="Input.UiLanguageCode" asp-items="Model.UiLanguageOptions"></select>
+                <span asp-validation-for="Input.UiLanguageCode" class="validation-message"></span>
+            </label>
+
+            <label class="field">
+                <span>Primary meaning language</span>
+                <select asp-for="Input.PrimaryMeaningLanguageCode" asp-items="Model.MeaningLanguageOptions"></select>
+                <span asp-validation-for="Input.PrimaryMeaningLanguageCode" class="validation-message"></span>
+            </label>
+
+            <label class="field">
+                <span>Secondary meaning language</span>
+                <select asp-for="Input.SecondaryMeaningLanguageCode" asp-items="Model.SecondaryMeaningLanguageOptions"></select>
+            </label>
+        </div>
+
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Save preferences</button>
+        </div>
+    </form>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

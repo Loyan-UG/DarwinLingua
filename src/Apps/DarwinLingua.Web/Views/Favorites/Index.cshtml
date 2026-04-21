@@ -1,0 +1,27 @@
+@model DarwinLingua.Web.Models.FavoritesPageViewModel
+@{
+    ViewData["Title"] = "Favorites";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Favorites</span>
+    <h1 class="headline-md">Saved favorite words</h1>
+    <p class="body-lg">Primary meaning language: <code>@Model.MeaningLanguageCode</code></p>
+</section>
+
+@if (Model.Words.Count == 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Nothing saved yet</h2>
+        <p class="body-lg">Open a word detail page and save a few favorites to build this list.</p>
+    </section>
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var word in Model.Words)
+        {
+            <partial name="_FavoriteWordCard" model="word" />
+        }
+    </section>
+}

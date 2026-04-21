@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\DarwinLingua.Infrastructure\DarwinLingua.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Catalog\DarwinLingua.Catalog.Application\DarwinLingua.Catalog.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Catalog\DarwinLingua.Catalog.Infrastructure\DarwinLingua.Catalog.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Learning\DarwinLingua.Learning.Application\DarwinLingua.Learning.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Learning\DarwinLingua.Learning.Infrastructure\DarwinLingua.Learning.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Localization\DarwinLingua.Localization.Application\DarwinLingua.Localization.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Localization\DarwinLingua.Localization.Infrastructure\DarwinLingua.Localization.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
