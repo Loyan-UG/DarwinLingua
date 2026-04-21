@@ -1,0 +1,12 @@
+@model DarwinLingua.Web.Models.RecentActivityPageViewModel
+@{
+    ViewData["Title"] = "Recent";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Recent activity</span>
+    <h1 class="headline-md">Recently viewed words</h1>
+    <p class="body-lg">This page is driven by the lightweight word-state data already recorded when a learner opens a word detail page.</p>
+</section>
+
+<partial name="_RecentActivityPanel" model="Model" />

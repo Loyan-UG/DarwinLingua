@@ -1,0 +1,30 @@
+@model DarwinLingua.Web.Models.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Diagnostics";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Diagnostics</span>
+    <h1 class="headline-md">Operational diagnostics baseline</h1>
+    <p class="body-lg">The diagnostics area will later expose import traces, publication audits, and package validation results. For now it provides live summary metrics from the shared store.</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Content health</h2>
+        <ul class="feature-list">
+            <li>Active learner words: @Model.ActiveWordCount</li>
+            <li>Draft rows awaiting publication: @Model.DraftWordCount</li>
+            <li>Failed import packages: @Model.FailedPackageCount</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Next diagnostics slice</h2>
+        <ul class="feature-list">
+            <li>Package manifest inspection</li>
+            <li>Import warning drill-down</li>
+            <li>Publish-history audit trail</li>
+            <li>Rollback validation support</li>
+        </ul>
+    </article>
+</section>

@@ -1,88 +1,32 @@
 @model DarwinLingua.Web.Models.WordDetailPageViewModel
 @{
-    ViewData["Title"] = Model.Word.Lemma;
-    string requestPath = $"{Context.Request.Path}{Context.Request.QueryString}";
+    ViewData["Title"] = Model.Content.Word.Lemma;
     string summaryLine = string.Join(" · ", new[]
     {
-        Model.Word.Article,
-        Model.Word.PluralForm,
-        Model.Word.InfinitiveForm,
-        Model.Word.PronunciationIpa,
-        Model.Word.SyllableBreak
+        Model.Content.Word.Article,
+        Model.Content.Word.PluralForm,
+        Model.Content.Word.InfinitiveForm,
+        Model.Content.Word.PronunciationIpa,
+        Model.Content.Word.SyllableBreak
     }.Where(static value => !string.IsNullOrWhiteSpace(value)));
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">@Model.Word.CefrLevel · @Model.Word.PartOfSpeech</span>
-    <h1 class="headline-md">@Model.Word.Lemma</h1>
+    <span class="eyebrow">@Model.Content.Word.CefrLevel · @Model.Content.Word.PartOfSpeech</span>
+    <h1 class="headline-md">@Model.Content.Word.Lemma</h1>
     @if (!string.IsNullOrWhiteSpace(summaryLine))
     {
         <p class="body-lg">@summaryLine</p>
     }
-
-    <div class="meta-grid">
-        <div class="meta-chip">
-            <strong>Viewed</strong>
-            <span>@Model.WordState.ViewCount times</span>
-        </div>
-        @if (Model.WordState.LastViewedAtUtc is DateTime lastViewedAtUtc)
-        {
-            <div class="meta-chip">
-                <strong>Last viewed</strong>
-                <span>@lastViewedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</span>
-            </div>
-        }
-        @if (Model.WordState.IsKnown)
-        {
-            <div class="meta-chip">
-                <strong>Status</strong>
-                <span>Known</span>
-            </div>
-        }
-        @if (Model.WordState.IsDifficult)
-        {
-            <div class="meta-chip">
-                <strong>Focus</strong>
-                <span>Difficult</span>
-            </div>
-        }
-    </div>
-
-    <div class="action-row">
-        <form method="post" asp-action="ToggleFavorite" class="inline-form">
-            @Html.AntiForgeryToken()
-            <input type="hidden" name="id" value="@Model.Word.PublicId" />
-            <input type="hidden" name="returnUrl" value="@requestPath" />
-            <button type="submit" class="button @(Model.IsFavorite ? "button--primary" : "button--secondary")">
-                @(Model.IsFavorite ? "Favorited" : "Add to favorites")
-            </button>
-        </form>
-        <form method="post" asp-action="ToggleKnown" class="inline-form">
-            @Html.AntiForgeryToken()
-            <input type="hidden" name="id" value="@Model.Word.PublicId" />
-            <input type="hidden" name="returnUrl" value="@requestPath" />
-            <button type="submit" class="button @(Model.WordState.IsKnown ? "button--primary" : "button--secondary")">
-                @(Model.WordState.IsKnown ? "Known" : "Mark known")
-            </button>
-        </form>
-        <form method="post" asp-action="ToggleDifficult" class="inline-form">
-            @Html.AntiForgeryToken()
-            <input type="hidden" name="id" value="@Model.Word.PublicId" />
-            <input type="hidden" name="returnUrl" value="@requestPath" />
-            <button type="submit" class="button @(Model.WordState.IsDifficult ? "button--primary" : "button--secondary")">
-                @(Model.WordState.IsDifficult ? "Difficult" : "Mark difficult")
-            </button>
-        </form>
-        <a class="button button--secondary" asp-controller="Favorites" asp-action="Index">Favorites</a>
-    </div>
+    <partial name="_InteractionPanel" model="Model.Content.Interaction" />
 </section>
 
-@if (Model.Word.LexicalForms.Count > 0)
+@if (Model.Content.Word.LexicalForms.Count > 0)
 {
     <section class="panel stack-md">
         <h2 class="headline-sm">Word forms</h2>
         <div class="stack-md">
-            @foreach (var form in Model.Word.LexicalForms)
+            @foreach (var form in Model.Content.Word.LexicalForms)
             {
                 <div class="detail-row">
                     <strong>@form.PartOfSpeech@(form.IsPrimary ? " · primary" : string.Empty)</strong>
@@ -93,12 +37,12 @@
     </section>
 }
 
-@if (Model.Word.Senses.Count > 0)
+@if (Model.Content.Word.Senses.Count > 0)
 {
     <section class="panel stack-md">
         <h2 class="headline-sm">Meanings and examples</h2>
         <div class="stack-md">
-            @foreach (var sense in Model.Word.Senses)
+            @foreach (var sense in Model.Content.Word.Senses)
             {
                 <article class="panel stack-md">
                     @if (!string.IsNullOrWhiteSpace(sense.ShortDefinitionDe))
@@ -138,31 +82,31 @@
     </section>
 }
 
-@if (Model.Word.UsageLabels.Count > 0 || Model.Word.ContextLabels.Count > 0 || Model.Word.GrammarNotes.Count > 0)
+@if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0 || Model.Content.Word.GrammarNotes.Count > 0)
 {
     <section class="grid-two-col">
-        @if (Model.Word.UsageLabels.Count > 0 || Model.Word.ContextLabels.Count > 0)
+        @if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0)
         {
             <article class="panel stack-md">
                 <h2 class="headline-sm">Labels</h2>
                 <div class="chip-grid">
-                    @foreach (string usageLabel in Model.Word.UsageLabels)
+                    @foreach (string usageLabel in Model.Content.Word.UsageLabels)
                     {
                         <span class="chip-link chip-link--static">@usageLabel</span>
                     }
-                    @foreach (string contextLabel in Model.Word.ContextLabels)
+                    @foreach (string contextLabel in Model.Content.Word.ContextLabels)
                     {
                         <span class="chip-link chip-link--static">@contextLabel</span>
                     }
                 </div>
             </article>
         }
-        @if (Model.Word.GrammarNotes.Count > 0)
+        @if (Model.Content.Word.GrammarNotes.Count > 0)
         {
             <article class="panel stack-md">
                 <h2 class="headline-sm">Grammar notes</h2>
                 <ul class="feature-list">
-                    @foreach (string grammarNote in Model.Word.GrammarNotes)
+                    @foreach (string grammarNote in Model.Content.Word.GrammarNotes)
                     {
                         <li>@grammarNote</li>
                     }
@@ -172,15 +116,15 @@
     </section>
 }
 
-@if (Model.Word.Collocations.Count > 0 || Model.Word.WordFamilies.Count > 0)
+@if (Model.Content.Word.Collocations.Count > 0 || Model.Content.Word.WordFamilies.Count > 0)
 {
     <section class="grid-two-col">
-        @if (Model.Word.Collocations.Count > 0)
+        @if (Model.Content.Word.Collocations.Count > 0)
         {
             <article class="panel stack-md">
                 <h2 class="headline-sm">Collocations</h2>
                 <ul class="feature-list">
-                    @foreach (var collocation in Model.Word.Collocations)
+                    @foreach (var collocation in Model.Content.Word.Collocations)
                     {
                         <li>
                             <strong>@collocation.Text</strong>
@@ -193,12 +137,12 @@
                 </ul>
             </article>
         }
-        @if (Model.Word.WordFamilies.Count > 0)
+        @if (Model.Content.Word.WordFamilies.Count > 0)
         {
             <article class="panel stack-md">
                 <h2 class="headline-sm">Word family</h2>
                 <ul class="feature-list">
-                    @foreach (var familyMember in Model.Word.WordFamilies)
+                    @foreach (var familyMember in Model.Content.Word.WordFamilies)
                     {
                         <li>
                             <strong>@familyMember.Lemma</strong>
@@ -215,15 +159,15 @@
     </section>
 }
 
-@if (Model.Word.Synonyms.Count > 0 || Model.Word.Antonyms.Count > 0)
+@if (Model.Content.Word.Synonyms.Count > 0 || Model.Content.Word.Antonyms.Count > 0)
 {
     <section class="grid-two-col">
-        @if (Model.Word.Synonyms.Count > 0)
+        @if (Model.Content.Word.Synonyms.Count > 0)
         {
             <article class="panel stack-md">
                 <h2 class="headline-sm">Synonyms</h2>
                 <ul class="feature-list">
-                    @foreach (var synonym in Model.Word.Synonyms)
+                    @foreach (var synonym in Model.Content.Word.Synonyms)
                     {
                         <li>
                             <strong>@synonym.Lemma</strong>
@@ -236,12 +180,12 @@
                 </ul>
             </article>
         }
-        @if (Model.Word.Antonyms.Count > 0)
+        @if (Model.Content.Word.Antonyms.Count > 0)
         {
             <article class="panel stack-md">
                 <h2 class="headline-sm">Antonyms</h2>
                 <ul class="feature-list">
-                    @foreach (var antonym in Model.Word.Antonyms)
+                    @foreach (var antonym in Model.Content.Word.Antonyms)
                     {
                         <li>
                             <strong>@antonym.Lemma</strong>
@@ -257,12 +201,12 @@
     </section>
 }
 
-@if (Model.Word.Topics.Count > 0)
+@if (Model.Content.Word.Topics.Count > 0)
 {
     <section class="panel stack-md">
         <h2 class="headline-sm">Topics</h2>
         <div class="chip-grid">
-            @foreach (string topic in Model.Word.Topics)
+            @foreach (string topic in Model.Content.Word.Topics)
             {
                 <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topic">@topic</a>
             }

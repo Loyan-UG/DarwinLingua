@@ -1,0 +1,48 @@
+@model DarwinLingua.Web.Models.RecentActivityPageViewModel
+
+@if (Model.Items.Count == 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">No recent activity yet</h2>
+        <p class="body-lg">Open a few word detail pages and they will appear here.</p>
+    </section>
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var item in Model.Items)
+        {
+            <article class="panel stack-md">
+                <div class="eyebrow">@item.CefrLevel · @item.PartOfSpeech</div>
+                <h3 class="headline-sm">@item.Lemma</h3>
+                @if (!string.IsNullOrWhiteSpace(item.Article) || !string.IsNullOrWhiteSpace(item.PluralForm))
+                {
+                    <p>@string.Join(" · ", new[] { item.Article, item.PluralForm }.Where(static value => !string.IsNullOrWhiteSpace(value)))</p>
+                }
+                <div class="meta-grid">
+                    <div class="meta-chip">
+                        <strong>Views</strong>
+                        <span>@item.ViewCount</span>
+                    </div>
+                    <div class="meta-chip">
+                        <strong>Last viewed</strong>
+                        <span>@item.LastViewedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</span>
+                    </div>
+                </div>
+                <div class="chip-grid">
+                    @if (item.IsKnown)
+                    {
+                        <span class="chip-link chip-link--static">Known</span>
+                    }
+                    @if (item.IsDifficult)
+                    {
+                        <span class="chip-link chip-link--static">Difficult</span>
+                    }
+                </div>
+                <div class="action-row">
+                    <a class="button button--secondary" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">Open word</a>
+                </div>
+            </article>
+        }
+    </section>
+}

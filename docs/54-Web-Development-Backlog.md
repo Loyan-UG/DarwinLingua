@@ -62,15 +62,15 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] search page
 - [x] word detail page
 - [x] favorites page
-- [ ] recent activity page
+- [x] recent activity page
 - [x] account settings page
 - [x] install-app guidance page
 
 ## 5. htmx Interaction Slices
 
 - [x] live search results with debounced `htmx` requests
-- [ ] favorite toggle without full page reload
-- [ ] recent-activity panel refresh
+- [x] favorite toggle without full page reload
+- [x] recent-activity panel refresh
 - [x] CEFR word list pagination / load-more
 - [ ] topic-filter chips with partial updates
 - [ ] inline admin table filtering
@@ -96,7 +96,7 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] browse by topic
 - [x] search
 - [x] word detail
-- [ ] recent activity
+- [x] recent activity
 - [x] favorite words
 - [ ] keep MVC rendering on server-side application services, not mobile package endpoints
 
@@ -112,13 +112,13 @@ This backlog is intentionally ordered so the project can grow without collapsing
 ## 9. Admin Area
 
 - [x] add `Areas/Admin` shell placeholder
-- [ ] add admin layout and nav shell
+- [x] add admin layout and nav shell
 - [ ] add content import dashboard
 - [ ] add draft batch inspection
-- [ ] add publish action screen
+- [x] add publish action screen
 - [ ] add rollback action screen
 - [ ] add publication history and audit view
-- [ ] add package/manifest diagnostics view
+- [x] add package/manifest diagnostics view
 
 ## 10. Performance and UX
 
@@ -133,11 +133,11 @@ This backlog is intentionally ordered so the project can grow without collapsing
 ## 11. Validation
 
 - [x] add smoke tests for web host routing and area registration
-- [ ] add UI structure tests for learner shell
-- [ ] add UI structure tests for admin shell
-- [ ] add manual validation worksheet for PWA installability
+- [x] add UI structure tests for learner shell
+- [x] add UI structure tests for admin shell
+- [x] add manual validation worksheet for PWA installability
 - [ ] add manual validation worksheet for auth flows
-- [ ] add manual validation worksheet for browse/search/detail flows
+- [x] add manual validation worksheet for browse/search/detail flows
 
 ## 12. Release Readiness
 

@@ -79,3 +79,20 @@
         </p>
     </article>
 </section>
+
+<section class="panel stack-lg">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">Recent activity</span>
+            <h2 class="headline-md">Recently viewed words</h2>
+        </div>
+        <a class="button button--secondary" asp-controller="Recent" asp-action="Index">Open history</a>
+    </div>
+    <div
+        hx-get="@Url.Action("Panel", "Recent")"
+        hx-trigger="load"
+        hx-target="this"
+        hx-swap="innerHTML">
+        <p class="body-lg">Loading recent activity…</p>
+    </div>
+</section>

@@ -34,13 +34,7 @@ public sealed class WordsController(
 
         var wordState = await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
-        return View(new WordDetailPageViewModel(
-            word,
-            isFavorite,
-            wordState,
-            profile.PreferredMeaningLanguage1,
-            profile.PreferredMeaningLanguage2,
-            profile.UiLanguageCode));
+        return View(CreatePageViewModel(word, isFavorite, wordState, profile));
     }
 
     [HttpPost]
@@ -50,6 +44,11 @@ public sealed class WordsController(
         if (id != Guid.Empty)
         {
             await userFavoriteWordService.ToggleFavoriteAsync(id, cancellationToken);
+        }
+
+        if (Request.Headers.ContainsKey("HX-Request"))
+        {
+            return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken);
         }
 
         if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
@@ -78,6 +77,11 @@ public sealed class WordsController(
             }
         }
 
+        if (Request.Headers.ContainsKey("HX-Request"))
+        {
+            return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken);
+        }
+
         if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
         {
             return Redirect(returnUrl);
@@ -104,11 +108,49 @@ public sealed class WordsController(
             }
         }
 
+        if (Request.Headers.ContainsKey("HX-Request"))
+        {
+            return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken);
+        }
+
         if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
         {
             return Redirect(returnUrl);
         }
 
         return RedirectToAction(nameof(Detail), new { id });
+    }
+
+    private WordDetailPageViewModel CreatePageViewModel(
+        DarwinLingua.Catalog.Application.Models.WordDetailModel word,
+        bool isFavorite,
+        DarwinLingua.Learning.Application.Models.UserWordStateModel wordState,
+        DarwinLingua.Learning.Application.Models.UserLearningProfileModel profile)
+    {
+        string returnUrl = Url.Action(nameof(Detail), "Words", new { id = word.PublicId }) ?? $"/Words/Detail/{word.PublicId}";
+
+        return new WordDetailPageViewModel(
+            new WordDetailContentViewModel(
+                word,
+                new WordInteractionPanelViewModel(word.PublicId, isFavorite, wordState, returnUrl)),
+            profile.PreferredMeaningLanguage1,
+            profile.PreferredMeaningLanguage2,
+            profile.UiLanguageCode);
+    }
+
+    private async Task<PartialViewResult> RenderInteractionPanelAsync(Guid id, string? returnUrl, CancellationToken cancellationToken)
+    {
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
+        var wordState = await userWordStateService.GetWordStateAsync(id, cancellationToken)
+            ?? await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
+        bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
+
+        string resolvedReturnUrl = !string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl)
+            ? returnUrl
+            : Url.Action(nameof(Detail), "Words", new { id }) ?? $"/Words/Detail/{id}";
+
+        return PartialView(
+            "_InteractionPanel",
+            new WordInteractionPanelViewModel(id, isFavorite, wordState, resolvedReturnUrl));
     }
 }

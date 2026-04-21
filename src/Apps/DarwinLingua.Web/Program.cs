@@ -27,6 +27,8 @@ builder.Services.AddOutputCache(options =>
         .SetVaryByQuery("id", "skip"));
 });
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
+builder.Services.AddScoped<IWebActivityQueryService, WebActivityQueryService>();
+builder.Services.AddScoped<IWebAdminDashboardQueryService, WebAdminDashboardQueryService>();
 
 string? sharedCatalogConnectionString = builder.Configuration.GetConnectionString("SharedCatalogAdmin")
     ?? builder.Configuration.GetConnectionString("SharedCatalog");

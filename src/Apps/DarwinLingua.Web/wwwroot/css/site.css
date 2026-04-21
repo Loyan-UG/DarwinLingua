@@ -78,7 +78,8 @@ code {
 .shell-nav,
 .shell-footer__inner,
 .action-row,
-.grid-two-col {
+.grid-two-col,
+.grid-three-col {
   display: flex;
   gap: 1rem;
 }
@@ -285,6 +286,14 @@ code {
   flex: 1 1 320px;
 }
 
+.grid-three-col {
+  flex-wrap: wrap;
+}
+
+.grid-three-col > * {
+  flex: 1 1 240px;
+}
+
 .feature-list {
   margin: 0;
   padding-left: 1.1rem;
@@ -321,6 +330,22 @@ code {
 
 .chip-link--static {
   cursor: default;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-body .brand-mark__icon {
+  background: linear-gradient(135deg, #f59e0b, #fb7185);
+}
+
+.admin-header {
+  background: rgba(23, 10, 5, 0.72);
 }
 
 .meta-grid {

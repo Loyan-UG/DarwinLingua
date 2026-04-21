@@ -1,0 +1,29 @@
+@model DarwinLingua.Web.Models.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Publishing";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Publishing</span>
+    <h1 class="headline-md">Publishing status baseline</h1>
+    <p class="body-lg">This is the current operator-facing slice for publish and rollback workflows. The data below comes from the shared database and gives the admin surface a real foundation.</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Catalog readiness</h2>
+        <ul class="feature-list">
+            <li>Active words: @Model.ActiveWordCount</li>
+            <li>Draft words: @Model.DraftWordCount</li>
+            <li>Topics: @Model.TotalTopicCount</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Package operations</h2>
+        <ul class="feature-list">
+            <li>Imported packages: @Model.ImportedPackageCount</li>
+            <li>Failed packages: @Model.FailedPackageCount</li>
+            <li>Last import: @(Model.LastImportAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "No imports yet")</li>
+        </ul>
+    </article>
+</section>

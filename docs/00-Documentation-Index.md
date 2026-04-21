@@ -68,6 +68,9 @@ All project documentation should remain in English.
 - `51-Local-Server-Bootstrap.md`
 - `52-Future-Platform-Expansion.md`
 - `53-Manual-System-Test-Runbook.md`
+- `54-Web-Development-Backlog.md`
+- `55-Web-Browse-Search-Detail-Validation-Worksheet.md`
+- `56-Web-Pwa-Install-Validation-Worksheet.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -106,7 +109,10 @@ If you are new to the project, read the documents in this order:
 22. `42-Continuation-Handoff.md`
 23. `50-Phase-5-Remote-Update-Validation-Worksheet.md`
 24. `53-Manual-System-Test-Runbook.md`
-25. `52-Future-Platform-Expansion.md`
+25. `54-Web-Development-Backlog.md`
+26. `55-Web-Browse-Search-Detail-Validation-Worksheet.md`
+27. `56-Web-Pwa-Install-Validation-Worksheet.md`
+28. `52-Future-Platform-Expansion.md`
 
 ---
 

@@ -1,15 +1,30 @@
+@model DarwinLingua.Web.Models.AdminDashboardViewModel
 @{
     ViewData["Title"] = "Admin";
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Admin Area</span>
-    <h1 class="headline-md">Operator shell baseline is now in place.</h1>
-    <p class="body-lg">
-        This is the first <code>Areas/Admin</code> placeholder for Darwin Lingua. The next slices will add authorization,
-        draft inspection, publish history, rollback controls, and package diagnostics without mixing those concepts
-        into the learner-facing root site.
-    </p>
+    <span class="eyebrow">Admin overview</span>
+    <h1 class="headline-md">Operator shell is now backed by live catalog metrics.</h1>
+    <p class="body-lg">This area remains operational and content-focused. Learner-facing browse and account flows stay in the root site, while import, publishing, rollback, and diagnostics grow here.</p>
+</section>
+
+<section class="grid-three-col">
+    <article class="panel stack-md">
+        <span class="eyebrow">Active</span>
+        <h2 class="headline-md">@Model.ActiveWordCount</h2>
+        <p class="body-lg">Published learner-visible words.</p>
+    </article>
+    <article class="panel stack-md">
+        <span class="eyebrow">Draft</span>
+        <h2 class="headline-md">@Model.DraftWordCount</h2>
+        <p class="body-lg">Words still outside the active learner catalog.</p>
+    </article>
+    <article class="panel stack-md">
+        <span class="eyebrow">Packages</span>
+        <h2 class="headline-md">@Model.ImportedPackageCount</h2>
+        <p class="body-lg">Imported content packages recorded so far.</p>
+    </article>
 </section>
 
 <section class="grid-two-col">
@@ -23,10 +38,11 @@
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Boundary rule</h2>
-        <p class="body-lg">
-            The admin area stays operational and content-focused. Learner-facing navigation, browse flows, and account
-            surfaces remain in the root site.
-        </p>
+        <h2 class="headline-sm">Current operational snapshot</h2>
+        <ul class="feature-list">
+            <li>Topics: @Model.TotalTopicCount</li>
+            <li>Failed imports: @Model.FailedPackageCount</li>
+            <li>Last import: @(Model.LastImportAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "No imports yet")</li>
+        </ul>
     </article>
 </section>
