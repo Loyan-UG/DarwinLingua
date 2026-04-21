@@ -71,6 +71,11 @@ All project documentation should remain in English.
 - `54-Web-Development-Backlog.md`
 - `55-Web-Browse-Search-Detail-Validation-Worksheet.md`
 - `56-Web-Pwa-Install-Validation-Worksheet.md`
+- `57-Web-Auth-Validation-Worksheet.md`
+- `58-Web-Deployment-Runbook.md`
+- `59-Web-Asset-Build-Pipeline.md`
+- `60-Web-Operations-Notes.md`
+- `61-Web-Release-Checklist.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -112,7 +117,12 @@ If you are new to the project, read the documents in this order:
 25. `54-Web-Development-Backlog.md`
 26. `55-Web-Browse-Search-Detail-Validation-Worksheet.md`
 27. `56-Web-Pwa-Install-Validation-Worksheet.md`
-28. `52-Future-Platform-Expansion.md`
+28. `57-Web-Auth-Validation-Worksheet.md`
+29. `58-Web-Deployment-Runbook.md`
+30. `59-Web-Asset-Build-Pipeline.md`
+31. `60-Web-Operations-Notes.md`
+32. `61-Web-Release-Checklist.md`
+33. `52-Future-Platform-Expansion.md`
 
 ---
 

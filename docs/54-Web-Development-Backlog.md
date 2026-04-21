@@ -136,17 +136,17 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add UI structure tests for learner shell
 - [x] add UI structure tests for admin shell
 - [x] add manual validation worksheet for PWA installability
-- [ ] add manual validation worksheet for auth flows
+- [x] add manual validation worksheet for auth flows
 - [x] add manual validation worksheet for browse/search/detail flows
 
 ## 12. Release Readiness
 
 - [ ] environment-specific configuration for PostgreSQL and auth secrets
-- [ ] deployment notes
-- [ ] asset build pipeline notes for Tailwind
-- [ ] production logging and diagnostics notes
-- [ ] release checklist for learner web
-- [ ] release checklist for admin web
+- [x] deployment notes
+- [x] asset build pipeline notes for Tailwind
+- [x] production logging and diagnostics notes
+- [x] release checklist for learner web
+- [x] release checklist for admin web
 
 ---
 
