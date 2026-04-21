@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Darwin Lingua</title>
+    <meta name="description" content="Darwin Lingua learner web app with installable PWA baseline, responsive browse flows, and future account-based personalization." />
+    <meta name="theme-color" content="#0f172a" />
+    <script type="importmap"></script>
+    <link rel="manifest" href="~/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="~/icons/icon-192.svg" />
+    <link rel="apple-touch-icon" href="~/icons/icon-192.svg" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DarwinLingua.Web.styles.css" asp-append-version="true" />
+</head>
+<body class="app-body">
+    <div class="shell-backdrop" aria-hidden="true"></div>
+    <header class="shell-header">
+        <div class="shell-container shell-nav">
+            <a class="brand-mark" asp-area="" asp-controller="Home" asp-action="Index">
+                <span class="brand-mark__icon">DL</span>
+                <span class="brand-mark__text">
+                    <strong>Darwin Lingua</strong>
+                    <span>Learner Web</span>
+                </span>
+            </a>
+            <nav class="shell-links" aria-label="Primary">
+                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a href="#roadmap">Roadmap</a>
+                <a asp-area="" asp-controller="Home" asp-action="Install">Install</a>
+                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+            </nav>
+        </div>
+    </header>
+    <div class="shell-container">
+        <div id="install-banner" class="install-banner" hidden>
+            <div>
+                <strong>Install Darwin Lingua</strong>
+                <p>Add this site to your device for an app-like learner experience.</p>
+            </div>
+            <button id="install-button" type="button" class="button button--primary">Install</button>
+        </div>
+        <main role="main" class="shell-main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="shell-footer">
+        <div class="shell-container shell-footer__inner">
+            <div>
+                <strong>Darwin Lingua</strong>
+                <p>Server-rendered learner web with a PWA-capable shell and progressive enhancement.</p>
+            </div>
+            <div class="shell-footer__actions">
+                <a asp-area="" asp-controller="Home" asp-action="Install">Install guide</a>
+                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

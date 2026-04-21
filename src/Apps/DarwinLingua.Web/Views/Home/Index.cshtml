@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero">
+    <div class="hero__content">
+        <span class="eyebrow">Learner-First Web Foundation</span>
+        <h1 class="headline-xl">Darwin Lingua is now ready for a proper MVC + Tailwind + htmx web build.</h1>
+        <p class="body-lg">
+            This host is the first implementation slice of the approved web architecture: one ASP.NET Core MVC app,
+            one learner-facing root site, one <code>Areas/Admin</code> surface, and an installable PWA baseline.
+        </p>
+        <div class="action-row">
+            <a class="button button--primary" asp-action="Install">Install app</a>
+            <a class="button button--secondary" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Open admin area</a>
+        </div>
+    </div>
+    <div class="hero__aside panel panel--accent stack-md">
+        <p class="eyebrow">Current slice</p>
+        <ul class="feature-list">
+            <li>Responsive root layout</li>
+            <li>PWA manifest and service worker</li>
+            <li>Admin route baseline</li>
+            <li>Tailwind-ready project files</li>
+            <li>htmx integrated for progressive enhancement</li>
+        </ul>
+    </div>
+</section>
+
+<section id="roadmap" class="grid-two-col">
+    <article class="panel stack-md">
+        <span class="eyebrow">Learner experience</span>
+        <h2 class="headline-md">What the root site will provide</h2>
+        <ul class="feature-list">
+            <li>Browse by CEFR and topic</li>
+            <li>Search and word detail flows</li>
+            <li>Favorites and recent activity</li>
+            <li>Account settings and install guidance</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <span class="eyebrow">Operator experience</span>
+        <h2 class="headline-md">What the admin area will provide</h2>
+        <ul class="feature-list">
+            <li>Draft inspection</li>
+            <li>Publish and rollback actions</li>
+            <li>Package history and diagnostics</li>
+            <li>Later moderation and review tooling</li>
+        </ul>
+    </article>
+ </section>
+
+<section class="panel stack-md">
+    <span class="eyebrow">Architecture</span>
+    <h2 class="headline-md">Why this stack was chosen</h2>
+    <p>
+        The web host stays server-rendered for SEO, accessibility, and operational simplicity. Tailwind gives better UI control
+        than Bootstrap, and <code>htmx</code> gives us fast targeted interactions without splitting the frontend into a separate SPA.
+    </p>
+</section>

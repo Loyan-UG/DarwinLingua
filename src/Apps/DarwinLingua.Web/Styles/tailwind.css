@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  This file is intentionally present even though Tailwind is not compiled in the current Codex environment.
+  Once Node tooling is available on the target machine, run:
+
+  npm install
+  npm run build:css
+*/

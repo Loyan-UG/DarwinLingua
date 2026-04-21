@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the recommended architecture for the future ASP.NET Core web platform of Darwin Lingua.
+This document defines the recommended architecture for the ASP.NET Core web platform of Darwin Lingua.
 
 It covers:
 
@@ -13,9 +13,7 @@ It covers:
 - shared-backend reuse rules
 - the initial web backlog slices
 
-This document is planning guidance only.
-
-No web implementation has started yet.
+This document remains architecture guidance, but the initial web host baseline can now be implemented directly from it.
 
 ---
 
@@ -39,7 +37,8 @@ The recommended stack is:
 
 - `ASP.NET Core MVC`
 - `Razor Views`
-- `Bootstrap 5`
+- `Tailwind CSS`
+- `htmx`
 - `ASP.NET Core Identity`
 - `Entity Framework Core`
 - `PostgreSQL`
@@ -52,6 +51,8 @@ This stack is the best fit because it:
 - matches the current `.NET` platform and team direction
 - works well with server-rendered content-heavy pages
 - keeps complexity lower than introducing a JavaScript SPA too early
+- gives better control over the learner-facing visual language than Bootstrap-first styling
+- enables partial-page interactivity with `htmx` without introducing a full SPA runtime
 - supports clean Area separation for admin workflows
 - supports cookie-based authentication and user accounts cleanly
 - provides a practical path to installable web-app behavior without changing the whole frontend model
@@ -247,10 +248,11 @@ src/
 Key host responsibilities:
 
 - MVC routing
-- layout and Bootstrap-based UI composition
+- layout and Tailwind-based UI composition
 - Identity wiring
 - cookie/auth policies
 - PWA manifest and service-worker registration
+- `htmx` partial-response orchestration where progressive enhancement is needed
 - server-rendered page orchestration
 
 Not host responsibilities:
@@ -265,20 +267,20 @@ Not host responsibilities:
 
 The first web UI should use:
 
-- `Bootstrap 5`
+- `Tailwind CSS`
 - server-rendered Razor views
-- limited progressive enhancement with small JavaScript helpers only where needed
+- `htmx` for partial updates, live search, toggles, modal flows, and targeted refreshes
+- limited JavaScript helpers only where `htmx` and native browser APIs are not enough
 
 This gives:
 
 - faster delivery
-- lower complexity
+- lower complexity than a React/Next.js split stack
 - better consistency with admin workflows
 - easier SEO and accessibility for content pages
+- better UX control than Bootstrap-first composition
 
 ### Design Rule
-
-Bootstrap should be a baseline, not the whole design language.
 
 The site should still have:
 
@@ -286,6 +288,19 @@ The site should still have:
 - product-specific branding
 - consistent responsive layouts
 - clear admin vs learner visual separation
+
+### Interaction Rule
+
+`htmx` should be the first-choice enhancement layer for:
+
+- type-ahead search results
+- favorite toggles
+- recent-activity refreshes
+- admin table filters
+- publish-history reloads
+- lightweight dialogs and confirmation flows
+
+Do not introduce React or a full SPA state layer unless a later workflow proves `htmx` is insufficient.
 
 ---
 
@@ -332,13 +347,14 @@ This is enough for the first implementation.
 The first recommended web implementation order is:
 
 1. create `DarwinLingua.Web` MVC host
-2. add Bootstrap-based shared layout and root navigation
-3. add PWA manifest, icons, and service-worker baseline
-4. add ASP.NET Core Identity with registration and sign-in
-5. add root learner pages for browse/search/detail
-6. add authenticated favorites and recent activity
-7. add `Areas/Admin` shell and authorization boundary
-8. add admin content batch inspection and publish-history views
+2. add Tailwind-ready design tokens, shared layout, and root navigation
+3. add `htmx` baseline and partial-render conventions
+4. add PWA manifest, icons, and service-worker baseline
+5. add ASP.NET Core Identity with registration and sign-in
+6. add root learner pages for browse/search/detail
+7. add authenticated favorites and recent activity
+8. add `Areas/Admin` shell and authorization boundary
+9. add admin content batch inspection and publish-history views
 
 This order keeps the architecture clean and avoids starting with admin-only workflows.
 
@@ -364,7 +380,8 @@ Those can come later if the product proves the need.
 The correct next-step web architecture for Darwin Lingua is:
 
 - one ASP.NET Core MVC host
-- Bootstrap-based responsive UI
+- Tailwind-based responsive UI
+- `htmx`-driven progressive enhancement
 - root learner-facing site plus `Areas/Admin`
 - installable PWA baseline
 - ASP.NET Core Identity for user accounts

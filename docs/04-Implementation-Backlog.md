@@ -400,7 +400,7 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 
 - [x] define the ASP.NET Core MVC web-platform architecture
 - [x] define the learner-facing root site vs `Areas/Admin` split
-- [x] define the Bootstrap-based UI direction
+- [x] define the Tailwind + `htmx` UI direction
 - [x] define the installable PWA baseline
 - [x] define the first user-account boundary for web learners
 - [x] define the shared-backend reuse rules between Web API, MVC web, and mobile
@@ -408,9 +408,11 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 
 ### 33. Web Platform Implementation Placeholder
 
-- [ ] add `DarwinLingua.Web` MVC host to the solution
-- [ ] add the Bootstrap-based shared layout and navigation shell
-- [ ] add `manifest.webmanifest`, icons, and service worker baseline
+- [x] add `DarwinLingua.Web` MVC host to the solution
+- [x] add the first learner-facing shared layout and navigation shell
+- [x] add `manifest.webmanifest`, icons, and service worker baseline
+- [x] add the first `Areas/Admin` dashboard shell
+- [x] add `htmx` and Tailwind-ready frontend baseline files
 - [ ] add ASP.NET Core Identity with learner registration and sign-in
 - [ ] add learner-facing browse/search/detail pages
 - [ ] add learner favorites and recent-activity persistence on the web
