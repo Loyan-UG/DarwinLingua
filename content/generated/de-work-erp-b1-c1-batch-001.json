@@ -3,7 +3,10 @@
   "packageId": "de-work-erp-b1-c1-20260422-01",
   "packageName": "German Work ERP B1-C1 Batch 001",
   "source": "AiAssisted",
-  "defaultMeaningLanguages": ["en", "fa"],
+  "defaultMeaningLanguages": [
+    "en",
+    "fa"
+  ],
   "entries": [
     {
       "word": "Aufgabe",
@@ -11,23 +14,60 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Aufgaben", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Aufgaben",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Aufgaben",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["common"],
-      "contextLabels": ["erp", "project-work"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "common"
+      ],
+      "contextLabels": [
+        "erp",
+        "project-work"
+      ],
       "meanings": [
-        { "language": "en", "text": "task" },
-        { "language": "fa", "text": "وظیفه، کار" }
+        {
+          "language": "en",
+          "text": "task"
+        },
+        {
+          "language": "fa",
+          "text": "وظیفه، کار"
+        }
       ],
       "examples": [
         {
           "baseText": "Meine Aufgabe heute ist die Prüfung der offenen Rechnungen im ERP-System.",
           "translations": [
-            { "language": "en", "text": "My task today is checking the open invoices in the ERP system." },
-            { "language": "fa", "text": "وظیفه من امروز بررسی فاکتورهای باز در سیستم ERP است." }
+            {
+              "language": "en",
+              "text": "My task today is checking the open invoices in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "وظیفه من امروز بررسی فاکتورهای باز در سیستم ERP است."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Aufgabe hilft dem Team, Daten und Prozesse im System sauber abzubilden.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The task helps the team model data and processes cleanly in the system."
+            },
+            {
+              "language": "fa",
+              "text": "وظیفه به تیم کمک می‌کند داده‌ها و فرایندها را در سیستم به‌صورت منظم پیاده کند."
+            }
           ]
         }
       ]
@@ -38,23 +78,61 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "das", "plural": "Angebote", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "das",
+          "plural": "Angebote",
+          "isPrimary": true
+        }
       ],
       "article": "das",
       "plural": "Angebote",
-      "topics": ["work-and-jobs", "shopping"],
-      "usageLabels": ["business"],
-      "contextLabels": ["sales", "crm"],
+      "topics": [
+        "work-and-jobs",
+        "shopping"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "sales",
+        "crm"
+      ],
       "meanings": [
-        { "language": "en", "text": "quotation; offer" },
-        { "language": "fa", "text": "پیشنهاد قیمت، آفر" }
+        {
+          "language": "en",
+          "text": "quotation; offer"
+        },
+        {
+          "language": "fa",
+          "text": "پیشنهاد قیمت، آفر"
+        }
       ],
       "examples": [
         {
           "baseText": "Der Kunde wartet noch auf unser Angebot für das neue CRM-Modul.",
           "translations": [
-            { "language": "en", "text": "The customer is still waiting for our quotation for the new CRM module." },
-            { "language": "fa", "text": "مشتری هنوز منتظر پیشنهاد قیمت ما برای ماژول جدید CRM است." }
+            {
+              "language": "en",
+              "text": "The customer is still waiting for our quotation for the new CRM module."
+            },
+            {
+              "language": "fa",
+              "text": "مشتری هنوز منتظر پیشنهاد قیمت ما برای ماژول جدید CRM است."
+            }
+          ]
+        },
+        {
+          "baseText": "Das Angebot bleibt auch im nächsten Sprint für CRM und Angebotserstellung relevant.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The quotation remains relevant for CRM work and quotation preparation in the next sprint as well."
+            },
+            {
+              "language": "fa",
+              "text": "پیشنهاد قیمت در اسپرینت بعدی هم برای کارهای CRM و آماده‌سازی پیشنهاد قیمت مهم باقی می‌ماند."
+            }
           ]
         }
       ]
@@ -65,23 +143,61 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "der", "plural": "Kunden", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "der",
+          "plural": "Kunden",
+          "isPrimary": true
+        }
       ],
       "article": "der",
       "plural": "Kunden",
-      "topics": ["work-and-jobs", "shopping"],
-      "usageLabels": ["business"],
-      "contextLabels": ["crm", "customer-support"],
+      "topics": [
+        "work-and-jobs",
+        "shopping"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "crm",
+        "customer-support"
+      ],
       "meanings": [
-        { "language": "en", "text": "customer; client" },
-        { "language": "fa", "text": "مشتری" }
+        {
+          "language": "en",
+          "text": "customer; client"
+        },
+        {
+          "language": "fa",
+          "text": "مشتری"
+        }
       ],
       "examples": [
         {
           "baseText": "Der Kunde hat um eine kurze Demo für die Lagerverwaltung gebeten.",
           "translations": [
-            { "language": "en", "text": "The customer asked for a short demo of the warehouse management module." },
-            { "language": "fa", "text": "مشتری یک دمو کوتاه برای ماژول انبارداری درخواست کرده است." }
+            {
+              "language": "en",
+              "text": "The customer asked for a short demo of the warehouse management module."
+            },
+            {
+              "language": "fa",
+              "text": "مشتری یک دمو کوتاه برای ماژول انبارداری درخواست کرده است."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Kunde bleibt auch im nächsten Sprint für CRM und Angebotserstellung relevant.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The customer remains relevant for CRM work and quotation preparation in the next sprint as well."
+            },
+            {
+              "language": "fa",
+              "text": "مشتری در اسپرینت بعدی هم برای کارهای CRM و آماده‌سازی پیشنهاد قیمت مهم باقی می‌ماند."
+            }
           ]
         }
       ]
@@ -92,23 +208,61 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Rechnungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Rechnungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Rechnungen",
-      "topics": ["work-and-jobs", "shopping"],
-      "usageLabels": ["business"],
-      "contextLabels": ["finance", "sales"],
+      "topics": [
+        "work-and-jobs",
+        "shopping"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "finance",
+        "sales"
+      ],
       "meanings": [
-        { "language": "en", "text": "invoice" },
-        { "language": "fa", "text": "فاکتور" }
+        {
+          "language": "en",
+          "text": "invoice"
+        },
+        {
+          "language": "fa",
+          "text": "فاکتور"
+        }
       ],
       "examples": [
         {
           "baseText": "Die Rechnung wurde gestern automatisch aus dem System erzeugt.",
           "translations": [
-            { "language": "en", "text": "The invoice was generated automatically from the system yesterday." },
-            { "language": "fa", "text": "فاکتور دیروز به صورت خودکار از سیستم ایجاد شد." }
+            {
+              "language": "en",
+              "text": "The invoice was generated automatically from the system yesterday."
+            },
+            {
+              "language": "fa",
+              "text": "فاکتور دیروز به صورت خودکار از سیستم ایجاد شد."
+            }
+          ]
+        },
+        {
+          "baseText": "Im heutigen Kundentermin war die Rechnung eines der wichtigsten Themen für das Vertriebsteam.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In today's customer meeting, the invoice was one of the most important topics for the sales team."
+            },
+            {
+              "language": "fa",
+              "text": "در جلسه امروز با مشتری، فاکتور یکی از مهم‌ترین موضوعات برای تیم فروش بود."
+            }
           ]
         }
       ]
@@ -119,23 +273,61 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "der", "plural": "Lieferanten", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "der",
+          "plural": "Lieferanten",
+          "isPrimary": true
+        }
       ],
       "article": "der",
       "plural": "Lieferanten",
-      "topics": ["work-and-jobs", "shopping"],
-      "usageLabels": ["business"],
-      "contextLabels": ["procurement", "erp"],
+      "topics": [
+        "work-and-jobs",
+        "shopping"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "procurement",
+        "erp"
+      ],
       "meanings": [
-        { "language": "en", "text": "supplier" },
-        { "language": "fa", "text": "تأمین‌کننده" }
+        {
+          "language": "en",
+          "text": "supplier"
+        },
+        {
+          "language": "fa",
+          "text": "تأمین‌کننده"
+        }
       ],
       "examples": [
         {
           "baseText": "Wir haben den neuen Lieferanten bereits im Einkaufssystem angelegt.",
           "translations": [
-            { "language": "en", "text": "We have already created the new supplier in the purchasing system." },
-            { "language": "fa", "text": "ما تأمین‌کننده جدید را قبلاً در سیستم خرید ثبت کرده‌ایم." }
+            {
+              "language": "en",
+              "text": "We have already created the new supplier in the purchasing system."
+            },
+            {
+              "language": "fa",
+              "text": "ما تأمین‌کننده جدید را قبلاً در سیستم خرید ثبت کرده‌ایم."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Beschaffungsprozess wurde der Lieferant heute direkt im System aktualisiert.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the procurement process, the supplier was updated directly in the system today."
+            },
+            {
+              "language": "fa",
+              "text": "در فرایند تأمین، امروز تأمین‌کننده مستقیماً در سیستم به‌روز شد."
+            }
           ]
         }
       ]
@@ -146,23 +338,60 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Besprechungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Besprechungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Besprechungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["meeting", "teamwork"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "meeting",
+        "teamwork"
+      ],
       "meanings": [
-        { "language": "en", "text": "meeting" },
-        { "language": "fa", "text": "جلسه" }
+        {
+          "language": "en",
+          "text": "meeting"
+        },
+        {
+          "language": "fa",
+          "text": "جلسه"
+        }
       ],
       "examples": [
         {
           "baseText": "In der Besprechung mit dem Kunden klären wir die offenen Anforderungen.",
           "translations": [
-            { "language": "en", "text": "In the meeting with the customer, we clarify the open requirements." },
-            { "language": "fa", "text": "در جلسه با مشتری، نیازمندی‌های باز را روشن می‌کنیم." }
+            {
+              "language": "en",
+              "text": "In the meeting with the customer, we clarify the open requirements."
+            },
+            {
+              "language": "fa",
+              "text": "در جلسه با مشتری، نیازمندی‌های باز را روشن می‌کنیم."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Besprechung erleichtert dem Team die Planung der nächsten Schritte.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The meeting makes it easier for the team to plan the next steps."
+            },
+            {
+              "language": "fa",
+              "text": "جلسه برنامه‌ریزی مراحل بعدی را برای تیم آسان‌تر می‌کند."
+            }
           ]
         }
       ]
@@ -173,22 +402,58 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "speichern", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "speichern",
+          "isPrimary": true
+        }
       ],
       "infinitive": "speichern",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["common"],
-      "contextLabels": ["software", "erp"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "common"
+      ],
+      "contextLabels": [
+        "software",
+        "erp"
+      ],
       "meanings": [
-        { "language": "en", "text": "to save; to store" },
-        { "language": "fa", "text": "ذخیره کردن" }
+        {
+          "language": "en",
+          "text": "to save; to store"
+        },
+        {
+          "language": "fa",
+          "text": "ذخیره کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Vergiss nicht, die Änderungen vor dem Schließen des Formulars zu speichern.",
           "translations": [
-            { "language": "en", "text": "Do not forget to save the changes before closing the form." },
-            { "language": "fa", "text": "فراموش نکن قبل از بستن فرم، تغییرات را ذخیره کنی." }
+            {
+              "language": "en",
+              "text": "Do not forget to save the changes before closing the form."
+            },
+            {
+              "language": "fa",
+              "text": "فراموش نکن قبل از بستن فرم، تغییرات را ذخیره کنی."
+            }
+          ]
+        },
+        {
+          "baseText": "Bei der ERP-Einführung wollen wir die Prozesse so früh wie möglich speichern.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "During the ERP rollout, we want to to save the processes as early as possible."
+            },
+            {
+              "language": "fa",
+              "text": "در راه‌اندازی ERP می‌خواهیم فرایندها را تا حد ممکن زودتر ذخیره کردن."
+            }
           ]
         }
       ]
@@ -199,22 +464,58 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "prüfen", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "prüfen",
+          "isPrimary": true
+        }
       ],
       "infinitive": "prüfen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["common"],
-      "contextLabels": ["quality", "technical-discussion"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "common"
+      ],
+      "contextLabels": [
+        "quality",
+        "technical-discussion"
+      ],
       "meanings": [
-        { "language": "en", "text": "to check; to verify" },
-        { "language": "fa", "text": "بررسی کردن" }
+        {
+          "language": "en",
+          "text": "to check; to verify"
+        },
+        {
+          "language": "fa",
+          "text": "بررسی کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Bitte prüfen Sie, ob die Daten aus dem Altsystem vollständig importiert wurden.",
           "translations": [
-            { "language": "en", "text": "Please check whether the data was imported completely from the legacy system." },
-            { "language": "fa", "text": "لطفاً بررسی کنید آیا داده‌ها به طور کامل از سیستم قدیمی وارد شده‌اند یا نه." }
+            {
+              "language": "en",
+              "text": "Please check whether the data was imported completely from the legacy system."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً بررسی کنید آیا داده‌ها به طور کامل از سیستم قدیمی وارد شده‌اند یا نه."
+            }
+          ]
+        },
+        {
+          "baseText": "Damit der Ablauf stabil bleibt, sollten wir die Verantwortung klar prüfen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "To keep the workflow stable, we should to check responsibilities clearly."
+            },
+            {
+              "language": "fa",
+              "text": "برای اینکه روند کار پایدار بماند، باید مسئولیت‌ها را شفاف بررسی کردن."
+            }
           ]
         }
       ]
@@ -225,22 +526,58 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "freigeben", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "freigeben",
+          "isPrimary": true
+        }
       ],
       "infinitive": "freigeben",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["approval", "workflow"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "approval",
+        "workflow"
+      ],
       "meanings": [
-        { "language": "en", "text": "to approve; to release" },
-        { "language": "fa", "text": "تأیید کردن، آزاد کردن" }
+        {
+          "language": "en",
+          "text": "to approve; to release"
+        },
+        {
+          "language": "fa",
+          "text": "تأیید کردن، آزاد کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Der Abteilungsleiter muss die Bestellung zuerst freigeben.",
           "translations": [
-            { "language": "en", "text": "The department manager must approve the order first." },
-            { "language": "fa", "text": "مدیر بخش باید ابتدا سفارش را تأیید کند." }
+            {
+              "language": "en",
+              "text": "The department manager must approve the order first."
+            },
+            {
+              "language": "fa",
+              "text": "مدیر بخش باید ابتدا سفارش را تأیید کند."
+            }
+          ]
+        },
+        {
+          "baseText": "Damit der Ablauf stabil bleibt, sollten wir die Verantwortung klar freigeben.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "To keep the workflow stable, we should to approve responsibilities clearly."
+            },
+            {
+              "language": "fa",
+              "text": "برای اینکه روند کار پایدار بماند، باید مسئولیت‌ها را شفاف تأیید کردن."
+            }
           ]
         }
       ]
@@ -251,21 +588,56 @@
       "cefrLevel": "B1",
       "partOfSpeech": "Adjective",
       "lexicalForms": [
-        { "partOfSpeech": "Adjective", "isPrimary": true }
+        {
+          "partOfSpeech": "Adjective",
+          "isPrimary": true
+        }
       ],
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["teamwork", "support"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "teamwork",
+        "support"
+      ],
       "meanings": [
-        { "language": "en", "text": "responsible; in charge" },
-        { "language": "fa", "text": "مسئول" }
+        {
+          "language": "en",
+          "text": "responsible; in charge"
+        },
+        {
+          "language": "fa",
+          "text": "مسئول"
+        }
       ],
       "examples": [
         {
           "baseText": "Für dieses Modul ist unser Support-Team zuständig.",
           "translations": [
-            { "language": "en", "text": "Our support team is responsible for this module." },
-            { "language": "fa", "text": "تیم پشتیبانی ما مسئول این ماژول است." }
+            {
+              "language": "en",
+              "text": "Our support team is responsible for this module."
+            },
+            {
+              "language": "fa",
+              "text": "تیم پشتیبانی ما مسئول این ماژول است."
+            }
+          ]
+        },
+        {
+          "baseText": "Für die Zusammenarbeit im Team müssen Rollen und Erwartungen zuständig sein.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "For teamwork, roles and expectations must be responsible."
+            },
+            {
+              "language": "fa",
+              "text": "برای همکاری در تیم، نقش‌ها و انتظارها باید مسئول باشند."
+            }
           ]
         }
       ]
@@ -276,23 +648,60 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Anforderungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Anforderungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Anforderungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["software", "project-work"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "software",
+        "project-work"
+      ],
       "meanings": [
-        { "language": "en", "text": "requirement" },
-        { "language": "fa", "text": "نیازمندی" }
+        {
+          "language": "en",
+          "text": "requirement"
+        },
+        {
+          "language": "fa",
+          "text": "نیازمندی"
+        }
       ],
       "examples": [
         {
           "baseText": "Wir dokumentieren jede neue Anforderung direkt im Ticketsystem.",
           "translations": [
-            { "language": "en", "text": "We document every new requirement directly in the ticket system." },
-            { "language": "fa", "text": "ما هر نیازمندی جدید را مستقیماً در سیستم تیکت مستند می‌کنیم." }
+            {
+              "language": "en",
+              "text": "We document every new requirement directly in the ticket system."
+            },
+            {
+              "language": "fa",
+              "text": "ما هر نیازمندی جدید را مستقیماً در سیستم تیکت مستند می‌کنیم."
+            }
+          ]
+        },
+        {
+          "baseText": "Im technischen Review wurde die Anforderung als kritischer Punkt für die Implementierung genannt.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the technical review, the requirement was mentioned as a critical point for the implementation."
+            },
+            {
+              "language": "fa",
+              "text": "در بازبینی فنی، نیازمندی به عنوان یک نکته حساس برای پیاده‌سازی مطرح شد."
+            }
           ]
         }
       ]
@@ -303,23 +712,60 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Schnittstellen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Schnittstellen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Schnittstellen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["software", "integration"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "software",
+        "integration"
+      ],
       "meanings": [
-        { "language": "en", "text": "interface; integration endpoint" },
-        { "language": "fa", "text": "رابط، اینترفیس" }
+        {
+          "language": "en",
+          "text": "interface; integration endpoint"
+        },
+        {
+          "language": "fa",
+          "text": "رابط، اینترفیس"
+        }
       ],
       "examples": [
         {
           "baseText": "Die Schnittstelle zum Webshop liefert die Bestellungen alle fünf Minuten.",
           "translations": [
-            { "language": "en", "text": "The interface to the webshop delivers the orders every five minutes." },
-            { "language": "fa", "text": "رابط وب‌شاپ هر پنج دقیقه سفارش‌ها را دریافت می‌کند." }
+            {
+              "language": "en",
+              "text": "The interface to the webshop delivers the orders every five minutes."
+            },
+            {
+              "language": "fa",
+              "text": "رابط وب‌شاپ هر پنج دقیقه سفارش‌ها را دریافت می‌کند."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Schnittstelle hilft dem Team, Daten und Prozesse im System sauber abzubilden.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The interface helps the team model data and processes cleanly in the system."
+            },
+            {
+              "language": "fa",
+              "text": "رابط به تیم کمک می‌کند داده‌ها و فرایندها را در سیستم به‌صورت منظم پیاده کند."
+            }
           ]
         }
       ]
@@ -330,23 +776,60 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Auswertungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Auswertungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Auswertungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["reporting", "finance"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "reporting",
+        "finance"
+      ],
       "meanings": [
-        { "language": "en", "text": "analysis; report evaluation" },
-        { "language": "fa", "text": "تحلیل، گزارش تحلیلی" }
+        {
+          "language": "en",
+          "text": "analysis; report evaluation"
+        },
+        {
+          "language": "fa",
+          "text": "تحلیل، گزارش تحلیلی"
+        }
       ],
       "examples": [
         {
           "baseText": "Die monatliche Auswertung zeigt einen deutlichen Anstieg beim Umsatz.",
           "translations": [
-            { "language": "en", "text": "The monthly analysis shows a clear increase in revenue." },
-            { "language": "fa", "text": "تحلیل ماهانه افزایش واضحی در فروش نشان می‌دهد." }
+            {
+              "language": "en",
+              "text": "The monthly analysis shows a clear increase in revenue."
+            },
+            {
+              "language": "fa",
+              "text": "تحلیل ماهانه افزایش واضحی در فروش نشان می‌دهد."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Auswertung ist für den Monatsabschluss im ERP besonders wichtig.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The analysis is especially important for the month-end closing in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "تحلیل برای بستن حساب‌های پایان ماه در ERP اهمیت ویژه‌ای دارد."
+            }
           ]
         }
       ]
@@ -357,23 +840,60 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Genehmigungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Genehmigungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Genehmigungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["approval", "workflow"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "approval",
+        "workflow"
+      ],
       "meanings": [
-        { "language": "en", "text": "approval; authorization" },
-        { "language": "fa", "text": "تأیید، مجوز" }
+        {
+          "language": "en",
+          "text": "approval; authorization"
+        },
+        {
+          "language": "fa",
+          "text": "تأیید، مجوز"
+        }
       ],
       "examples": [
         {
           "baseText": "Ohne Genehmigung kann die Zahlung im System nicht gebucht werden.",
           "translations": [
-            { "language": "en", "text": "Without approval, the payment cannot be posted in the system." },
-            { "language": "fa", "text": "بدون تأیید، پرداخت در سیستم قابل ثبت نیست." }
+            {
+              "language": "en",
+              "text": "Without approval, the payment cannot be posted in the system."
+            },
+            {
+              "language": "fa",
+              "text": "بدون تأیید، پرداخت در سیستم قابل ثبت نیست."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Genehmigung ist für die Zusammenarbeit im aktuellen Projekt besonders wichtig.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The approval is especially important for collaboration in the current project."
+            },
+            {
+              "language": "fa",
+              "text": "تأیید برای همکاری در پروژه فعلی اهمیت ویژه‌ای دارد."
+            }
           ]
         }
       ]
@@ -384,23 +904,61 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "der", "plural": "Lagerbestände", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "der",
+          "plural": "Lagerbestände",
+          "isPrimary": true
+        }
       ],
       "article": "der",
       "plural": "Lagerbestände",
-      "topics": ["work-and-jobs", "shopping"],
-      "usageLabels": ["business"],
-      "contextLabels": ["warehouse", "inventory"],
+      "topics": [
+        "work-and-jobs",
+        "shopping"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "warehouse",
+        "inventory"
+      ],
       "meanings": [
-        { "language": "en", "text": "inventory stock; warehouse stock level" },
-        { "language": "fa", "text": "موجودی انبار" }
+        {
+          "language": "en",
+          "text": "inventory stock; warehouse stock level"
+        },
+        {
+          "language": "fa",
+          "text": "موجودی انبار"
+        }
       ],
       "examples": [
         {
           "baseText": "Der Lagerbestand wird nach jeder Buchung automatisch aktualisiert.",
           "translations": [
-            { "language": "en", "text": "The inventory stock is updated automatically after each posting." },
-            { "language": "fa", "text": "موجودی انبار بعد از هر ثبت به صورت خودکار به‌روزرسانی می‌شود." }
+            {
+              "language": "en",
+              "text": "The inventory stock is updated automatically after each posting."
+            },
+            {
+              "language": "fa",
+              "text": "موجودی انبار بعد از هر ثبت به صورت خودکار به‌روزرسانی می‌شود."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Beschaffungsprozess wurde der Lagerbestand heute direkt im System aktualisiert.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the procurement process, the inventory stock was updated directly in the system today."
+            },
+            {
+              "language": "fa",
+              "text": "در فرایند تأمین، امروز موجودی انبار مستقیماً در سیستم به‌روز شد."
+            }
           ]
         }
       ]
@@ -411,23 +969,61 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Beschaffungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Beschaffungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Beschaffungen",
-      "topics": ["work-and-jobs", "shopping"],
-      "usageLabels": ["business"],
-      "contextLabels": ["procurement", "erp"],
+      "topics": [
+        "work-and-jobs",
+        "shopping"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "procurement",
+        "erp"
+      ],
       "meanings": [
-        { "language": "en", "text": "procurement" },
-        { "language": "fa", "text": "تدارکات، تأمین" }
+        {
+          "language": "en",
+          "text": "procurement"
+        },
+        {
+          "language": "fa",
+          "text": "تدارکات، تأمین"
+        }
       ],
       "examples": [
         {
           "baseText": "Für die Beschaffung kleiner Teile nutzen wir einen vereinfachten Workflow.",
           "translations": [
-            { "language": "en", "text": "We use a simplified workflow for procuring small parts." },
-            { "language": "fa", "text": "برای تأمین قطعات کوچک از یک گردش‌کار ساده‌شده استفاده می‌کنیم." }
+            {
+              "language": "en",
+              "text": "We use a simplified workflow for procuring small parts."
+            },
+            {
+              "language": "fa",
+              "text": "برای تأمین قطعات کوچک از یک گردش‌کار ساده‌شده استفاده می‌کنیم."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Beschaffung ist für den täglichen Ablauf im Lager besonders wichtig.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The procurement is especially important for the daily workflow in the warehouse."
+            },
+            {
+              "language": "fa",
+              "text": "تدارکات برای روند روزانه در انبار اهمیت ویژه‌ای دارد."
+            }
           ]
         }
       ]
@@ -438,22 +1034,58 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "verarbeiten", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "verarbeiten",
+          "isPrimary": true
+        }
       ],
       "infinitive": "verarbeiten",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["software", "data-processing"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "software",
+        "data-processing"
+      ],
       "meanings": [
-        { "language": "en", "text": "to process" },
-        { "language": "fa", "text": "پردازش کردن" }
+        {
+          "language": "en",
+          "text": "to process"
+        },
+        {
+          "language": "fa",
+          "text": "پردازش کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Das System kann pro Stunde mehrere tausend Datensätze verarbeiten.",
           "translations": [
-            { "language": "en", "text": "The system can process several thousand data records per hour." },
-            { "language": "fa", "text": "سیستم می‌تواند در هر ساعت چند هزار رکورد داده را پردازش کند." }
+            {
+              "language": "en",
+              "text": "The system can process several thousand data records per hour."
+            },
+            {
+              "language": "fa",
+              "text": "سیستم می‌تواند در هر ساعت چند هزار رکورد داده را پردازش کند."
+            }
+          ]
+        },
+        {
+          "baseText": "Im technischen Team müssen wir Fehler schnell verarbeiten, damit der Kunde weiterarbeiten kann.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the technical team, we need to to process issues quickly so the customer can continue working."
+            },
+            {
+              "language": "fa",
+              "text": "در تیم فنی باید خطاها را سریع پردازش کردن تا مشتری بتواند به کارش ادامه دهد."
+            }
           ]
         }
       ]
@@ -464,22 +1096,58 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "abstimmen", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "abstimmen",
+          "isPrimary": true
+        }
       ],
       "infinitive": "abstimmen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["teamwork", "meeting"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "teamwork",
+        "meeting"
+      ],
       "meanings": [
-        { "language": "en", "text": "to coordinate; to align" },
-        { "language": "fa", "text": "هماهنگ کردن" }
+        {
+          "language": "en",
+          "text": "to coordinate; to align"
+        },
+        {
+          "language": "fa",
+          "text": "هماهنگ کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Wir müssen die neue Preislogik noch mit dem Vertrieb abstimmen.",
           "translations": [
-            { "language": "en", "text": "We still need to align the new pricing logic with the sales team." },
-            { "language": "fa", "text": "ما هنوز باید منطق جدید قیمت‌گذاری را با تیم فروش هماهنگ کنیم." }
+            {
+              "language": "en",
+              "text": "We still need to align the new pricing logic with the sales team."
+            },
+            {
+              "language": "fa",
+              "text": "ما هنوز باید منطق جدید قیمت‌گذاری را با تیم فروش هماهنگ کنیم."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Projekt müssen wir die nächsten Schritte gemeinsam abstimmen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the project, we need to to coordinate the next steps together."
+            },
+            {
+              "language": "fa",
+              "text": "در پروژه باید مراحل بعدی را با هم هماهنگ کردن."
+            }
           ]
         }
       ]
@@ -490,22 +1158,58 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "priorisieren", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "priorisieren",
+          "isPrimary": true
+        }
       ],
       "infinitive": "priorisieren",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["project-work", "support"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "project-work",
+        "support"
+      ],
       "meanings": [
-        { "language": "en", "text": "to prioritize" },
-        { "language": "fa", "text": "اولویت‌بندی کردن" }
+        {
+          "language": "en",
+          "text": "to prioritize"
+        },
+        {
+          "language": "fa",
+          "text": "اولویت‌بندی کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Das Team priorisiert derzeit Fehler mit direktem Einfluss auf die Buchhaltung.",
           "translations": [
-            { "language": "en", "text": "The team is currently prioritizing bugs with a direct impact on accounting." },
-            { "language": "fa", "text": "تیم در حال حاضر خطاهایی را که مستقیماً روی حسابداری اثر دارند اولویت‌بندی می‌کند." }
+            {
+              "language": "en",
+              "text": "The team is currently prioritizing bugs with a direct impact on accounting."
+            },
+            {
+              "language": "fa",
+              "text": "تیم در حال حاضر خطاهایی را که مستقیماً روی حسابداری اثر دارند اولویت‌بندی می‌کند."
+            }
+          ]
+        },
+        {
+          "baseText": "Damit der Ablauf stabil bleibt, sollten wir die Verantwortung klar priorisieren.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "To keep the workflow stable, we should to prioritize responsibilities clearly."
+            },
+            {
+              "language": "fa",
+              "text": "برای اینکه روند کار پایدار بماند، باید مسئولیت‌ها را شفاف اولویت‌بندی کردن."
+            }
           ]
         }
       ]
@@ -516,21 +1220,56 @@
       "cefrLevel": "B2",
       "partOfSpeech": "Adjective",
       "lexicalForms": [
-        { "partOfSpeech": "Adjective", "isPrimary": true }
+        {
+          "partOfSpeech": "Adjective",
+          "isPrimary": true
+        }
       ],
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["audit", "reporting"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "audit",
+        "reporting"
+      ],
       "meanings": [
-        { "language": "en", "text": "traceable; understandable" },
-        { "language": "fa", "text": "قابل پیگیری، قابل فهم" }
+        {
+          "language": "en",
+          "text": "traceable; understandable"
+        },
+        {
+          "language": "fa",
+          "text": "قابل پیگیری، قابل فهم"
+        }
       ],
       "examples": [
         {
           "baseText": "Jede Änderung am Beleg muss im System nachvollziehbar sein.",
           "translations": [
-            { "language": "en", "text": "Every change to the document must be traceable in the system." },
-            { "language": "fa", "text": "هر تغییری روی سند باید در سیستم قابل پیگیری باشد." }
+            {
+              "language": "en",
+              "text": "Every change to the document must be traceable in the system."
+            },
+            {
+              "language": "fa",
+              "text": "هر تغییری روی سند باید در سیستم قابل پیگیری باشد."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Bericht müssen alle Zahlen nachvollziehbar und gut begründet sein.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the report, all figures must be traceable and well justified."
+            },
+            {
+              "language": "fa",
+              "text": "در گزارش، همه اعداد باید قابل پیگیری و خوب مستند باشند."
+            }
           ]
         }
       ]
@@ -541,23 +1280,60 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Implementierungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Implementierungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Implementierungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["software", "project-work"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "software",
+        "project-work"
+      ],
       "meanings": [
-        { "language": "en", "text": "implementation" },
-        { "language": "fa", "text": "پیاده‌سازی" }
+        {
+          "language": "en",
+          "text": "implementation"
+        },
+        {
+          "language": "fa",
+          "text": "پیاده‌سازی"
+        }
       ],
       "examples": [
         {
           "baseText": "Die Implementierung der neuen Schnittstelle dauert länger als geplant.",
           "translations": [
-            { "language": "en", "text": "The implementation of the new interface is taking longer than planned." },
-            { "language": "fa", "text": "پیاده‌سازی رابط جدید بیشتر از برنامه زمان می‌برد." }
+            {
+              "language": "en",
+              "text": "The implementation of the new interface is taking longer than planned."
+            },
+            {
+              "language": "fa",
+              "text": "پیاده‌سازی رابط جدید بیشتر از برنامه زمان می‌برد."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Implementierung hilft dem Team, Daten und Prozesse im System sauber abzubilden.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The implementation helps the team model data and processes cleanly in the system."
+            },
+            {
+              "language": "fa",
+              "text": "پیاده‌سازی به تیم کمک می‌کند داده‌ها و فرایندها را در سیستم به‌صورت منظم پیاده کند."
+            }
           ]
         }
       ]
@@ -568,23 +1344,60 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Fehlermeldungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Fehlermeldungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Fehlermeldungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["support", "software"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "support",
+        "software"
+      ],
       "meanings": [
-        { "language": "en", "text": "error message" },
-        { "language": "fa", "text": "پیام خطا" }
+        {
+          "language": "en",
+          "text": "error message"
+        },
+        {
+          "language": "fa",
+          "text": "پیام خطا"
+        }
       ],
       "examples": [
         {
           "baseText": "Bitte senden Sie uns einen Screenshot der genauen Fehlermeldung.",
           "translations": [
-            { "language": "en", "text": "Please send us a screenshot of the exact error message." },
-            { "language": "fa", "text": "لطفاً یک اسکرین‌شات از پیام خطای دقیق برای ما بفرستید." }
+            {
+              "language": "en",
+              "text": "Please send us a screenshot of the exact error message."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً یک اسکرین‌شات از پیام خطای دقیق برای ما بفرستید."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Fehlermeldung hilft dem Team, Daten und Prozesse im System sauber abzubilden.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The error message helps the team model data and processes cleanly in the system."
+            },
+            {
+              "language": "fa",
+              "text": "پیام خطا به تیم کمک می‌کند داده‌ها و فرایندها را در سیستم به‌صورت منظم پیاده کند."
+            }
           ]
         }
       ]
@@ -595,23 +1408,60 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Berechtigungen", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Berechtigungen",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Berechtigungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["security", "erp"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "security",
+        "erp"
+      ],
       "meanings": [
-        { "language": "en", "text": "permission; authorization right" },
-        { "language": "fa", "text": "مجوز دسترسی" }
+        {
+          "language": "en",
+          "text": "permission; authorization right"
+        },
+        {
+          "language": "fa",
+          "text": "مجوز دسترسی"
+        }
       ],
       "examples": [
         {
           "baseText": "Ohne die richtige Berechtigung können Benutzer keine Preise ändern.",
           "translations": [
-            { "language": "en", "text": "Without the correct permission, users cannot change prices." },
-            { "language": "fa", "text": "بدون مجوز صحیح، کاربران نمی‌توانند قیمت‌ها را تغییر دهند." }
+            {
+              "language": "en",
+              "text": "Without the correct permission, users cannot change prices."
+            },
+            {
+              "language": "fa",
+              "text": "بدون مجوز صحیح، کاربران نمی‌توانند قیمت‌ها را تغییر دهند."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Berechtigung ist für die Einführung des neuen ERP-Moduls besonders wichtig.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The permission is especially important for rolling out the new ERP module."
+            },
+            {
+              "language": "fa",
+              "text": "مجوز دسترسی برای راه‌اندازی ماژول جدید ERP اهمیت ویژه‌ای دارد."
+            }
           ]
         }
       ]
@@ -622,23 +1472,60 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Verfügbarkeiten", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Verfügbarkeiten",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Verfügbarkeiten",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["system-operations", "warehouse"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "system-operations",
+        "warehouse"
+      ],
       "meanings": [
-        { "language": "en", "text": "availability" },
-        { "language": "fa", "text": "دسترس‌پذیری، موجود بودن" }
+        {
+          "language": "en",
+          "text": "availability"
+        },
+        {
+          "language": "fa",
+          "text": "دسترس‌پذیری، موجود بودن"
+        }
       ],
       "examples": [
         {
           "baseText": "Die hohe Verfügbarkeit des Systems ist für den laufenden Betrieb entscheidend.",
           "translations": [
-            { "language": "en", "text": "The high availability of the system is crucial for ongoing operations." },
-            { "language": "fa", "text": "دسترس‌پذیری بالای سیستم برای عملیات جاری حیاتی است." }
+            {
+              "language": "en",
+              "text": "The high availability of the system is crucial for ongoing operations."
+            },
+            {
+              "language": "fa",
+              "text": "دسترس‌پذیری بالای سیستم برای عملیات جاری حیاتی است."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Verfügbarkeit spielt bei Lieferung, Bestand und Einkauf eine wichtige Rolle.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The availability plays an important role in delivery, inventory, and purchasing."
+            },
+            {
+              "language": "fa",
+              "text": "دسترس‌پذیری در تحویل، موجودی و خرید نقش مهمی دارد."
+            }
           ]
         }
       ]
@@ -649,23 +1536,60 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Noun",
       "lexicalForms": [
-        { "partOfSpeech": "Noun", "article": "die", "plural": "Rückverfolgbarkeiten", "isPrimary": true }
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "plural": "Rückverfolgbarkeiten",
+          "isPrimary": true
+        }
       ],
       "article": "die",
       "plural": "Rückverfolgbarkeiten",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["audit", "warehouse"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "audit",
+        "warehouse"
+      ],
       "meanings": [
-        { "language": "en", "text": "traceability" },
-        { "language": "fa", "text": "قابلیت ردیابی" }
+        {
+          "language": "en",
+          "text": "traceability"
+        },
+        {
+          "language": "fa",
+          "text": "قابلیت ردیابی"
+        }
       ],
       "examples": [
         {
           "baseText": "Für bestimmte Branchen ist die Rückverfolgbarkeit jeder Charge Pflicht.",
           "translations": [
-            { "language": "en", "text": "For certain industries, traceability of every batch is mandatory." },
-            { "language": "fa", "text": "برای بعضی صنایع، قابلیت ردیابی هر بچ الزامی است." }
+            {
+              "language": "en",
+              "text": "For certain industries, traceability of every batch is mandatory."
+            },
+            {
+              "language": "fa",
+              "text": "برای بعضی صنایع، قابلیت ردیابی هر بچ الزامی است."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Finanzprozess wurde die Rückverfolgbarkeit heute nochmals mit dem Controlling abgestimmt.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the finance process, the traceability was coordinated once again with controlling today."
+            },
+            {
+              "language": "fa",
+              "text": "در فرایند مالی، امروز قابلیت ردیابی یک بار دیگر با واحد کنترل مالی هماهنگ شد."
+            }
           ]
         }
       ]
@@ -676,22 +1600,58 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "eskalieren", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "eskalieren",
+          "isPrimary": true
+        }
       ],
       "infinitive": "eskalieren",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["support", "management"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "support",
+        "management"
+      ],
       "meanings": [
-        { "language": "en", "text": "to escalate" },
-        { "language": "fa", "text": "ارجاع دادن به سطح بالاتر، تشدید شدن" }
+        {
+          "language": "en",
+          "text": "to escalate"
+        },
+        {
+          "language": "fa",
+          "text": "ارجاع دادن به سطح بالاتر، تشدید شدن"
+        }
       ],
       "examples": [
         {
           "baseText": "Wenn der Fehler die Produktion blockiert, müssen wir ihn sofort eskalieren.",
           "translations": [
-            { "language": "en", "text": "If the bug blocks production, we must escalate it immediately." },
-            { "language": "fa", "text": "اگر خطا تولید را متوقف کند، باید فوراً آن را به سطح بالاتر ارجاع دهیم." }
+            {
+              "language": "en",
+              "text": "If the bug blocks production, we must escalate it immediately."
+            },
+            {
+              "language": "fa",
+              "text": "اگر خطا تولید را متوقف کند، باید فوراً آن را به سطح بالاتر ارجاع دهیم."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Projekt müssen wir die nächsten Schritte gemeinsam eskalieren.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the project, we need to to escalate the next steps together."
+            },
+            {
+              "language": "fa",
+              "text": "در پروژه باید مراحل بعدی را با هم ارجاع دادن به سطح بالاتر."
+            }
           ]
         }
       ]
@@ -702,22 +1662,58 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "konsolidieren", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "konsolidieren",
+          "isPrimary": true
+        }
       ],
       "infinitive": "konsolidieren",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["business"],
-      "contextLabels": ["reporting", "finance"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business"
+      ],
+      "contextLabels": [
+        "reporting",
+        "finance"
+      ],
       "meanings": [
-        { "language": "en", "text": "to consolidate" },
-        { "language": "fa", "text": "تجمیع کردن" }
+        {
+          "language": "en",
+          "text": "to consolidate"
+        },
+        {
+          "language": "fa",
+          "text": "تجمیع کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Am Monatsende konsolidiert das System die Zahlen aus allen Niederlassungen.",
           "translations": [
-            { "language": "en", "text": "At the end of the month, the system consolidates the figures from all branches." },
-            { "language": "fa", "text": "در پایان ماه، سیستم اعداد همه شعب را تجمیع می‌کند." }
+            {
+              "language": "en",
+              "text": "At the end of the month, the system consolidates the figures from all branches."
+            },
+            {
+              "language": "fa",
+              "text": "در پایان ماه، سیستم اعداد همه شعب را تجمیع می‌کند."
+            }
+          ]
+        },
+        {
+          "baseText": "Vor dem Monatsabschluss müssen wir die offenen Buchungen sauber konsolidieren.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Before month-end closing, we need to to consolidate the open postings properly."
+            },
+            {
+              "language": "fa",
+              "text": "قبل از بستن حساب‌های ماه، باید ثبت‌های باز را به‌درستی تجمیع کردن."
+            }
           ]
         }
       ]
@@ -728,22 +1724,58 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Verb",
       "lexicalForms": [
-        { "partOfSpeech": "Verb", "infinitive": "optimieren", "isPrimary": true }
+        {
+          "partOfSpeech": "Verb",
+          "infinitive": "optimieren",
+          "isPrimary": true
+        }
       ],
       "infinitive": "optimieren",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["performance", "software"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "performance",
+        "software"
+      ],
       "meanings": [
-        { "language": "en", "text": "to optimize" },
-        { "language": "fa", "text": "بهینه‌سازی کردن" }
+        {
+          "language": "en",
+          "text": "to optimize"
+        },
+        {
+          "language": "fa",
+          "text": "بهینه‌سازی کردن"
+        }
       ],
       "examples": [
         {
           "baseText": "Wir müssen die Abfrage optimieren, damit die Kundenliste schneller lädt.",
           "translations": [
-            { "language": "en", "text": "We need to optimize the query so that the customer list loads faster." },
-            { "language": "fa", "text": "باید کوئری را بهینه کنیم تا لیست مشتریان سریع‌تر بارگذاری شود." }
+            {
+              "language": "en",
+              "text": "We need to optimize the query so that the customer list loads faster."
+            },
+            {
+              "language": "fa",
+              "text": "باید کوئری را بهینه کنیم تا لیست مشتریان سریع‌تر بارگذاری شود."
+            }
+          ]
+        },
+        {
+          "baseText": "Bei der ERP-Einführung wollen wir die Prozesse so früh wie möglich optimieren.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "During the ERP rollout, we want to to optimize the processes as early as possible."
+            },
+            {
+              "language": "fa",
+              "text": "در راه‌اندازی ERP می‌خواهیم فرایندها را تا حد ممکن زودتر بهینه‌سازی کردن."
+            }
           ]
         }
       ]
@@ -754,21 +1786,56 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Adjective",
       "lexicalForms": [
-        { "partOfSpeech": "Adjective", "isPrimary": true }
+        {
+          "partOfSpeech": "Adjective",
+          "isPrimary": true
+        }
       ],
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["architecture", "software"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "architecture",
+        "software"
+      ],
       "meanings": [
-        { "language": "en", "text": "scalable" },
-        { "language": "fa", "text": "مقیاس‌پذیر" }
+        {
+          "language": "en",
+          "text": "scalable"
+        },
+        {
+          "language": "fa",
+          "text": "مقیاس‌پذیر"
+        }
       ],
       "examples": [
         {
           "baseText": "Die neue Architektur soll skalierbar und leicht wartbar sein.",
           "translations": [
-            { "language": "en", "text": "The new architecture should be scalable and easy to maintain." },
-            { "language": "fa", "text": "معماری جدید باید مقیاس‌پذیر و نگه‌داری آن آسان باشد." }
+            {
+              "language": "en",
+              "text": "The new architecture should be scalable and easy to maintain."
+            },
+            {
+              "language": "fa",
+              "text": "معماری جدید باید مقیاس‌پذیر و نگه‌داری آن آسان باشد."
+            }
+          ]
+        },
+        {
+          "baseText": "Die neue ERP-Lösung muss skalierbar sein, bevor wir sie produktiv einsetzen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The new ERP solution must be scalable before we use it in production."
+            },
+            {
+              "language": "fa",
+              "text": "راه‌حل جدید ERP باید مقیاس‌پذیر باشد قبل از اینکه آن را در محیط واقعی استفاده کنیم."
+            }
           ]
         }
       ]
@@ -779,21 +1846,56 @@
       "cefrLevel": "C1",
       "partOfSpeech": "Adjective",
       "lexicalForms": [
-        { "partOfSpeech": "Adjective", "isPrimary": true }
+        {
+          "partOfSpeech": "Adjective",
+          "isPrimary": true
+        }
       ],
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["technical"],
-      "contextLabels": ["architecture", "software"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "technical"
+      ],
+      "contextLabels": [
+        "architecture",
+        "software"
+      ],
       "meanings": [
-        { "language": "en", "text": "maintainable" },
-        { "language": "fa", "text": "قابل نگه‌داری" }
+        {
+          "language": "en",
+          "text": "maintainable"
+        },
+        {
+          "language": "fa",
+          "text": "قابل نگه‌داری"
+        }
       ],
       "examples": [
         {
           "baseText": "Unser Ziel ist ein wartbarer Code, den auch neue Kollegen schnell verstehen können.",
           "translations": [
-            { "language": "en", "text": "Our goal is maintainable code that new colleagues can understand quickly as well." },
-            { "language": "fa", "text": "هدف ما کدی قابل نگه‌داری است که همکاران جدید هم بتوانند سریع آن را بفهمند." }
+            {
+              "language": "en",
+              "text": "Our goal is maintainable code that new colleagues can understand quickly as well."
+            },
+            {
+              "language": "fa",
+              "text": "هدف ما کدی قابل نگه‌داری است که همکاران جدید هم بتوانند سریع آن را بفهمند."
+            }
+          ]
+        },
+        {
+          "baseText": "Im technischen Review zeigte sich, ob die Implementierung wirklich wartbar genug ist.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The technical review showed whether the implementation is really maintainable enough."
+            },
+            {
+              "language": "fa",
+              "text": "در بازبینی فنی مشخص شد که آیا پیاده‌سازی واقعاً به اندازه کافی قابل نگه‌داری هست یا نه."
+            }
           ]
         }
       ]

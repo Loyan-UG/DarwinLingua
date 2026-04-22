@@ -11,8 +11,15 @@
     }.Where(static value => !string.IsNullOrWhiteSpace(value)));
 }
 
-<section class="panel stack-lg">
-    <span class="eyebrow">@Model.Content.Word.CefrLevel · @Model.Content.Word.PartOfSpeech</span>
+<section class="panel stack-lg" data-word-detail-page data-word-id="@Model.Content.Word.PublicId" data-word-lemma="@Model.Content.Word.Lemma">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Content.Word.CefrLevel · @Model.Content.Word.PartOfSpeech</span>
+        <div class="detail-toolbar__actions">
+            <button type="button" class="button button--secondary button--compact" data-speak-text="@Model.Content.Word.Lemma" data-speak-lang="de-DE">Speak word</button>
+            <button type="button" class="button button--secondary button--compact" data-word-nav="prev" disabled>Previous</button>
+            <button type="button" class="button button--secondary button--compact" data-word-nav="next" disabled>Next</button>
+        </div>
+    </div>
     <h1 class="headline-md">@Model.Content.Word.Lemma</h1>
     @if (!string.IsNullOrWhiteSpace(summaryLine))
     {
@@ -63,7 +70,10 @@
                             @foreach (var example in sense.Examples)
                             {
                                 <li>
-                                    <strong>@example.GermanText</strong>
+                                    <div class="detail-example">
+                                        <strong>@example.GermanText</strong>
+                                        <button type="button" class="button button--secondary button--compact" data-speak-text="@example.GermanText" data-speak-lang="de-DE">Speak</button>
+                                    </div>
                                     @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
                                     {
                                         <div>@example.PrimaryMeaning</div>

@@ -9,10 +9,10 @@
 }
 else
 {
-    <section class="grid-two-col">
+    <section class="grid-two-col" data-word-list-container>
         @foreach (var item in Model.Items)
         {
-            <article class="panel stack-md">
+            <article class="panel stack-md" data-word-card data-word-id="@item.PublicId">
                 <div class="eyebrow">@item.CefrLevel · @item.PartOfSpeech</div>
                 <h3 class="headline-sm">@item.Lemma</h3>
                 @if (!string.IsNullOrWhiteSpace(item.Article) || !string.IsNullOrWhiteSpace(item.PluralForm))
@@ -40,7 +40,7 @@ else
                     }
                 </div>
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">Open word</a>
+                    <a class="button button--secondary" data-word-link data-word-id="@item.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">Open word</a>
                 </div>
             </article>
         }

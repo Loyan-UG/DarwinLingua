@@ -1,3 +1,5 @@
+using DarwinLingua.Infrastructure.DependencyInjection;
+using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.DependencyInjection;
 using DarwinLingua.Learning.Infrastructure.DependencyInjection;
@@ -41,6 +43,8 @@ builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();
 builder.Services.AddScoped<IWebIdentityBootstrapper, WebIdentityBootstrapper>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
 string? webIdentityConnectionString = builder.Configuration.GetConnectionString("WebIdentity");
+string appDataDirectory = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
+string webLearningDatabasePath = Path.Combine(appDataDirectory, "darwin-lingua.web.db");
 
 if (!string.IsNullOrWhiteSpace(webIdentityConnectionString))
 {
@@ -49,14 +53,14 @@ if (!string.IsNullOrWhiteSpace(webIdentityConnectionString))
 }
 else
 {
-    string identityDirectory = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
-    string identityDatabasePath = Path.Combine(identityDirectory, "darwin-lingua.web-identity.db");
+    string identityDatabasePath = Path.Combine(appDataDirectory, "darwin-lingua.web-identity.db");
 
     builder.Services.AddDbContext<WebIdentityDbContext>(options =>
         options.UseSqlite($"Data Source={identityDatabasePath}"));
 }
 
 builder.Services
+    .AddDarwinLinguaInfrastructure(options => options.DatabasePath = webLearningDatabasePath)
     .AddLearningApplication()
     .AddLearningInfrastructure()
     .AddLocalizationApplication()
@@ -86,8 +90,10 @@ var app = builder.Build();
 
 await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 {
+    IDatabaseInitializer databaseInitializer = bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IWebIdentityBootstrapper identityBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IWebIdentityBootstrapper>();
 
+    await databaseInitializer.InitializeAsync(CancellationToken.None);
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
 }
 

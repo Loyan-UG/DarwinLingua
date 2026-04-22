@@ -16,7 +16,7 @@ else if (Model.Results.Count == 0)
 }
 else
 {
-    <section class="grid-two-col">
+    <section class="grid-two-col" data-word-list-container>
         @foreach (var word in Model.Results)
         {
             <partial name="_WordCard" model="word" />

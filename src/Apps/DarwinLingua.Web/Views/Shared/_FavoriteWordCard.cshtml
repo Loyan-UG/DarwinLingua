@@ -1,6 +1,6 @@
 @model DarwinLingua.Learning.Application.Models.FavoriteWordListItemModel
 
-<article class="panel stack-md">
+<article class="panel stack-md" data-word-card data-word-id="@Model.PublicId">
     <div class="eyebrow">@Model.CefrLevel · @Model.PartOfSpeech</div>
     <h3 class="headline-sm">@Model.Lemma</h3>
     @if (!string.IsNullOrWhiteSpace(Model.Article))
@@ -12,6 +12,6 @@
         <p class="body-lg">@Model.PrimaryMeaning</p>
     }
     <div class="action-row">
-        <a class="button button--secondary" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Open word</a>
+        <a class="button button--secondary" data-word-link data-word-id="@Model.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Open word</a>
     </div>
 </article>

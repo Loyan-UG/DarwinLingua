@@ -1,6 +1,6 @@
 @model DarwinLingua.Catalog.Application.Models.WordListItemModel
 
-<article class="panel stack-md">
+<article class="panel stack-md" data-word-card data-word-id="@Model.PublicId">
     <div class="action-row">
         <partial name="_CefrBadge" model='new DarwinLingua.Web.Models.CefrBadgeViewModel(Model.CefrLevel)' />
         <span class="eyebrow">@Model.PartOfSpeech</span>
@@ -15,6 +15,6 @@
         <p class="body-lg">@Model.PrimaryMeaning</p>
     }
     <div class="action-row">
-        <a class="button button--secondary" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Open word</a>
+        <a class="button button--secondary" data-word-link data-word-id="@Model.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Open word</a>
     </div>
 </article>

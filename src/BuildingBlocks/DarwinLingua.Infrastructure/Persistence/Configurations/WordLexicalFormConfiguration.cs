@@ -60,6 +60,6 @@ internal sealed class WordLexicalFormConfiguration : IEntityTypeConfiguration<Wo
         builder.HasIndex(form => form.WordEntryId)
             .HasDatabaseName("IX_WordLexicalForms_PrimaryPerWordEntry")
             .IsUnique()
-            .HasFilter("\"IsPrimary\" = 1");
+            .HasFilter("\"IsPrimary\"");
     }
 }

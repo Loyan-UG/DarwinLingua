@@ -88,7 +88,7 @@ Recommended minimum conventions for AI batches:
 - for nouns, keep top-level `article` and `plural` equal to the primary lexical form
 - for verbs, keep top-level `infinitive` equal to the primary lexical form
 - include at least `en` and `fa` meaning translations
-- include at least one example with both `en` and `fa` translations
+- include at least two domain-relevant examples with both `en` and `fa` translations
 - keep examples domain-relevant when possible
 
 ## Recommended Package Template
@@ -185,7 +185,8 @@ Before importing a batch, ensure:
 - `partOfSpeech` matches the primary item in `lexicalForms`
 - topics are valid
 - meanings do not repeat the same language
-- examples contain at least one valid translation
+- each entry has at least `2` examples
+- each example contains at least one valid translation
 - labels are kebab-case
 - no duplicate lemma + primary part-of-speech + CEFR combination is generated within the same batch
 
@@ -198,9 +199,29 @@ When asking an AI to generate the next batch, specify:
 - use CEFR levels only from `B1`, `B2`, and `C1`
 - use topic `work-and-jobs`, and optionally `shopping` where appropriate
 - include meanings in `en` and `fa`
-- include one domain-relevant example with `en` and `fa` translations
+- include two domain-relevant examples with `en` and `fa` translations
 - use canonical import JSON only
 - avoid duplicates against already-generated batches
+
+## Repair Tool
+
+When existing generated batches need to be normalized to the minimum-example rule, use:
+
+```powershell
+dotnet run --project D:\_Projects\DarwinLingua\tools\ContentUtilities\DarwinLingua.ContentTools\DarwinLingua.ContentTools.csproj -- --content-path D:\_Projects\DarwinLingua\content\generated --minimum-examples 2
+```
+
+If the secondary examples need to be regenerated from scratch while preserving the first example in every entry, use:
+
+```powershell
+dotnet run --project D:\_Projects\DarwinLingua\tools\ContentUtilities\DarwinLingua.ContentTools\DarwinLingua.ContentTools.csproj -- --content-path D:\_Projects\DarwinLingua\content\generated --minimum-examples 2 --rewrite-secondary-examples
+```
+
+Current normalization rule for the repair tool:
+
+- preserve the first example that was originally curated/generated
+- regenerate only the secondary examples
+- keep the secondary examples aligned with `partOfSpeech`, `contextLabels`, and the entry `meanings`
 
 ## Current Progress
 
