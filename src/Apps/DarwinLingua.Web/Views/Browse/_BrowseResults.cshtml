@@ -1,0 +1,21 @@
+@model DarwinLingua.Web.Models.WordBrowsePageViewModel
+
+@if (Model.Words.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words available", "This slice does not currently have words for the selected filter.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <span class="eyebrow">Browse words</span>
+        <h2 class="headline-sm">@Model.Title</h2>
+        <p class="body-lg">@Model.Description</p>
+    </section>
+
+    <section class="grid-two-col">
+        @foreach (var word in Model.Words)
+        {
+            <partial name="_WordCard" model="word" />
+        }
+    </section>
+}

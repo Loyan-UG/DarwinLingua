@@ -1,0 +1,32 @@
+@model DarwinLingua.Web.Models.AdminDraftWordsPageViewModel
+
+@if (Model.Words.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No draft words found", "The current filter did not match any draft lexical entries.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Lemma</th>
+                    <th>Part of speech</th>
+                    <th>CEFR</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Words)
+                {
+                    <tr>
+                        <td><a asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">@item.Lemma</a></td>
+                        <td>@item.PartOfSpeech</td>
+                        <td>@item.CefrLevel</td>
+                        <td>@item.PublicationStatus</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+}

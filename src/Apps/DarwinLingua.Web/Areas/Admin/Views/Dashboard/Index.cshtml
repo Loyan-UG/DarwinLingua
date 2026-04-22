@@ -4,27 +4,13 @@
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Admin overview</span>
-    <h1 class="headline-md">Operator shell is now backed by live catalog metrics.</h1>
-    <p class="body-lg">This area remains operational and content-focused. Learner-facing browse and account flows stay in the root site, while import, publishing, rollback, and diagnostics grow here.</p>
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Admin overview", "Operator shell is now backed by live catalog metrics.", "This area remains operational and content-focused. Learner-facing browse and account flows stay in the root site, while import, publishing, rollback, and diagnostics grow here.")' />
 </section>
 
 <section class="grid-three-col">
-    <article class="panel stack-md">
-        <span class="eyebrow">Active</span>
-        <h2 class="headline-md">@Model.ActiveWordCount</h2>
-        <p class="body-lg">Published learner-visible words.</p>
-    </article>
-    <article class="panel stack-md">
-        <span class="eyebrow">Draft</span>
-        <h2 class="headline-md">@Model.DraftWordCount</h2>
-        <p class="body-lg">Words still outside the active learner catalog.</p>
-    </article>
-    <article class="panel stack-md">
-        <span class="eyebrow">Packages</span>
-        <h2 class="headline-md">@Model.ImportedPackageCount</h2>
-        <p class="body-lg">Imported content packages recorded so far.</p>
-    </article>
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Active", Model.ActiveWordCount.ToString(), "Published learner-visible words.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Draft", Model.DraftWordCount.ToString(), "Words still outside the active learner catalog.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Packages", Model.ImportedPackageCount.ToString(), "Imported content packages recorded so far.")' />
 </section>
 
 <section class="grid-two-col">

@@ -2,10 +2,12 @@ const shellCacheName = "darwin-lingua-shell-v1";
 const shellAssets = [
     "/",
     "/manifest.webmanifest",
-    "/css/site.css",
+    "/css/tailwind.generated.css",
     "/js/site.js",
+    "/icons/favicon.svg",
     "/icons/icon-192.svg",
-    "/icons/icon-512.svg"
+    "/icons/icon-512.svg",
+    "/icons/icon-maskable.svg"
 ];
 
 self.addEventListener("install", (event) => {

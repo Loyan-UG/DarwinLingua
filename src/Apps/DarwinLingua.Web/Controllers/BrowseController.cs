@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.OutputCaching;
 
 namespace DarwinLingua.Web.Controllers;
 
+[Route("browse")]
 public sealed class BrowseController(
     ITopicQueryService topicQueryService,
     IWordQueryService wordQueryService,
@@ -14,6 +15,7 @@ public sealed class BrowseController(
 {
     private const int PageSize = 24;
 
+    [HttpGet("", Name = "Browse_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
@@ -30,6 +32,7 @@ public sealed class BrowseController(
         return View(viewModel);
     }
 
+    [HttpGet("topic/{id}", Name = "Browse_Topic")]
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Topic(string id, int skip = 0, CancellationToken cancellationToken = default)
     {
@@ -53,9 +56,15 @@ public sealed class BrowseController(
             PageSize,
             words.Count > PageSize);
 
+        if (Request.Headers.ContainsKey("HX-Request"))
+        {
+            return PartialView("_BrowseResults", viewModel);
+        }
+
         return View("WordList", viewModel);
     }
 
+    [HttpGet("cefr/{id}", Name = "Browse_Cefr")]
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Cefr(string id, int skip = 0, CancellationToken cancellationToken = default)
     {
@@ -78,6 +87,11 @@ public sealed class BrowseController(
             skip,
             PageSize,
             words.Count > PageSize);
+
+        if (Request.Headers.ContainsKey("HX-Request"))
+        {
+            return PartialView("_BrowseResults", viewModel);
+        }
 
         return View("WordList", viewModel);
     }

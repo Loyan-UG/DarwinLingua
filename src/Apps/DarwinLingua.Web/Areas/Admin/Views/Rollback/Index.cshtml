@@ -1,0 +1,17 @@
+@model DarwinLingua.Web.Models.AdminRollbackPageViewModel
+@{
+    ViewData["Title"] = "Rollback";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Rollback", "Rollback action baseline", "This screen defines the confirmation pattern before destructive admin rollback actions are wired to real commands.")' />
+    <ul class="feature-list">
+        <li>Draft words currently present: @Model.DraftWordCount</li>
+        <li>Imported packages tracked: @Model.ImportedPackageCount</li>
+    </ul>
+    <div class="action-row">
+        <button type="button" class="button button--secondary" data-modal-open="rollback-confirmation">Open confirmation modal</button>
+    </div>
+</section>
+
+<partial name="~/Views/Shared/_ConfirmActionModal.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("Confirm rollback baseline", Model.WarningMessage, "warning")' />

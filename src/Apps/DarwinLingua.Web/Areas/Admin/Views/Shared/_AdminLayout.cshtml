@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Darwin Lingua Admin</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/tailwind.generated.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DarwinLingua.Web.styles.css" asp-append-version="true" />
 </head>
 <body class="app-body admin-body">
@@ -20,7 +20,11 @@
             </a>
             <nav class="shell-links" aria-label="Admin">
                 <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Overview</a>
+                <a asp-area="Admin" asp-controller="Imports" asp-action="Index">Imports</a>
+                <a asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a>
                 <a asp-area="Admin" asp-controller="Publishing" asp-action="Index">Publishing</a>
+                <a asp-area="Admin" asp-controller="History" asp-action="Index">History</a>
+                <a asp-area="Admin" asp-controller="Rollback" asp-action="Index">Rollback</a>
                 <a asp-area="Admin" asp-controller="Diagnostics" asp-action="Index">Diagnostics</a>
                 <a asp-area="" asp-controller="Home" asp-action="Index">Learner site</a>
             </nav>

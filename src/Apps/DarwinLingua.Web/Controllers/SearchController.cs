@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DarwinLingua.Web.Controllers;
 
+[Route("search")]
 public sealed class SearchController(
     IWordQueryService wordQueryService,
     IWebLearningProfileAccessor learningProfileAccessor) : Controller
 {
+    [HttpGet("", Name = "Search_Index")]
     public async Task<IActionResult> Index(string? q, CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
@@ -21,6 +23,7 @@ public sealed class SearchController(
         return View(new SearchPageViewModel(query, results, profile.PreferredMeaningLanguage1));
     }
 
+    [HttpGet("results", Name = "Search_Results")]
     public async Task<IActionResult> Results(string? q, CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);

@@ -8,7 +8,8 @@ public sealed record SettingsPageViewModel(
     IReadOnlyList<SelectListItem> UiLanguageOptions,
     IReadOnlyList<SelectListItem> MeaningLanguageOptions,
     IReadOnlyList<SelectListItem> SecondaryMeaningLanguageOptions,
-    string? StatusMessage);
+    string? StatusMessage,
+    bool IsAuthenticated = false);
 
 public sealed class SettingsUpdateInputModel
 {

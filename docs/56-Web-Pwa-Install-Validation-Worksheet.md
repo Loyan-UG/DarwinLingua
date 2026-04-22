@@ -6,6 +6,11 @@ This worksheet validates the installability and app-like behavior of the learner
 
 Use it on Android Chrome and desktop Chromium-class browsers after the learner shell is already validated.
 
+Latest local validation evidence can be captured in:
+
+- `artifacts/installability-report.json` for desktop Chromium and mobile-form-factor Chromium inspection
+- `artifacts/installability-report-android.json` for Android Chrome via emulator + remote DevTools
+
 ---
 
 ## Build Under Test

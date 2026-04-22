@@ -1,0 +1,45 @@
+@model DarwinLingua.Web.Models.AccountPageViewModel
+@{
+    ViewData["Title"] = "Account";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Account</span>
+    <h1 class="headline-md">@Model.DisplayName</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.Email))
+    {
+        <p class="body-lg">@Model.Email</p>
+    }
+    <div class="chip-grid">
+        @foreach (string role in Model.Roles)
+        {
+            <span class="chip-link chip-link--static">@role</span>
+        }
+    </div>
+    <div class="action-row">
+        <a class="button button--primary" asp-controller="Settings" asp-action="Index">Preferences</a>
+        <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Manage/Index">Manage account</a>
+        <form method="post" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" class="inline-form">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="button button--secondary">Sign out</button>
+        </form>
+    </div>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Profile</h2>
+        <ul class="feature-list">
+            <li>UI language: @Model.Profile.UiLanguageCode</li>
+            <li>Primary meaning language: @Model.Profile.PreferredMeaningLanguage1</li>
+            <li>Secondary meaning language: @(Model.Profile.PreferredMeaningLanguage2 ?? "None")</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Security</h2>
+        <ul class="feature-list">
+            <li>Identity UI is enabled for sign-in, registration, and password reset flows.</li>
+            <li>Operator and Admin roles gate the admin area through authorization policies.</li>
+        </ul>
+    </article>
+</section>

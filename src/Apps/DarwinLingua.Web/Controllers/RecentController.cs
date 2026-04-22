@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DarwinLingua.Web.Controllers;
 
+[Route("recent")]
 public sealed class RecentController(
     IWebActivityQueryService activityQueryService,
     IWebLearningProfileAccessor learningProfileAccessor) : Controller
 {
+    [HttpGet("", Name = "Recent_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
@@ -17,6 +19,7 @@ public sealed class RecentController(
         return View(new RecentActivityPageViewModel(items));
     }
 
+    [HttpGet("panel", Name = "Recent_Panel")]
     public async Task<IActionResult> Panel(CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);

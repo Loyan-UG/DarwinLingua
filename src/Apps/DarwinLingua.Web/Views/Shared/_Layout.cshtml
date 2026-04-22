@@ -7,22 +7,17 @@
     <meta name="description" content="Darwin Lingua learner web app with installable PWA baseline, responsive browse flows, and future account-based personalization." />
     <meta name="theme-color" content="#0f172a" />
     <link rel="manifest" href="~/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="~/icons/favicon.svg" />
     <link rel="icon" type="image/svg+xml" href="~/icons/icon-192.svg" />
     <link rel="apple-touch-icon" href="~/icons/icon-192.svg" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/tailwind.generated.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DarwinLingua.Web.styles.css" asp-append-version="true" />
 </head>
 <body class="app-body">
     <div class="shell-backdrop" aria-hidden="true"></div>
     <header class="shell-header">
         <div class="shell-container shell-nav">
-            <a class="brand-mark" asp-area="" asp-controller="Home" asp-action="Index">
-                <span class="brand-mark__icon">DL</span>
-                <span class="brand-mark__text">
-                    <strong>Darwin Lingua</strong>
-                    <span>Learner Web</span>
-                </span>
-            </a>
+            <partial name="_AppHeader" />
             <nav class="shell-links" aria-label="Primary">
                 <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <a asp-area="" asp-controller="Browse" asp-action="Index">Browse</a>
@@ -32,10 +27,24 @@
                 <a asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
                 <a asp-area="" asp-controller="Home" asp-action="Install">Install</a>
                 <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
+                    <form method="post" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" class="inline-form">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="nav-button">Sign out</button>
+                    </form>
+                }
+                else
+                {
+                    <a asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+                    <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+                }
             </nav>
         </div>
     </header>
     <div class="shell-container">
+        <partial name="_MobileNav" />
         <div id="install-banner" class="install-banner" hidden>
             <div>
                 <strong>Install Darwin Lingua</strong>
@@ -55,6 +64,10 @@
                 <p>Server-rendered learner web with a PWA-capable shell, real catalog browse flows, and progressive enhancement.</p>
             </div>
             <div class="shell-footer__actions">
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
+                }
                 <a asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
                 <a asp-area="" asp-controller="Home" asp-action="Install">Install guide</a>
                 <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>

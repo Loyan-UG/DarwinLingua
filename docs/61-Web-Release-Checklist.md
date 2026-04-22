@@ -45,6 +45,7 @@ Use it for both the learner-facing root site and the admin area.
 - [ ] manifest is delivered
 - [ ] service worker registers
 - [ ] install flow validated on target browsers
+- Validation evidence may be attached from `artifacts/installability-report.json` and `artifacts/installability-report-android.json`
 
 ---
 

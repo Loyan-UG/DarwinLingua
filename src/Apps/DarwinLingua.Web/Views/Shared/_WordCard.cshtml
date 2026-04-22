@@ -1,7 +1,10 @@
 @model DarwinLingua.Catalog.Application.Models.WordListItemModel
 
 <article class="panel stack-md">
-    <div class="eyebrow">@Model.CefrLevel · @Model.PartOfSpeech</div>
+    <div class="action-row">
+        <partial name="_CefrBadge" model='new DarwinLingua.Web.Models.CefrBadgeViewModel(Model.CefrLevel)' />
+        <span class="eyebrow">@Model.PartOfSpeech</span>
+    </div>
     <h3 class="headline-sm">@Model.Lemma</h3>
     @if (!string.IsNullOrWhiteSpace(Model.Article) || !string.IsNullOrWhiteSpace(Model.PluralForm))
     {

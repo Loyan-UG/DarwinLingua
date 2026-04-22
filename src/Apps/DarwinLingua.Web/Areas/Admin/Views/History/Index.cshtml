@@ -1,0 +1,25 @@
+@model DarwinLingua.Web.Models.AdminHistoryPageViewModel
+@{
+    ViewData["Title"] = "History";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("History", "Publication and import history", "Reload the recent package history without leaving the current admin page.")' />
+    <form class="search-form" method="get" asp-action="Index">
+        <input class="search-input"
+               type="search"
+               name="status"
+               value="@Model.StatusFilter"
+               placeholder="Filter by status"
+               hx-get="@Url.Action("Panel", "History", new { area = "Admin" })"
+               hx-trigger="keyup changed delay:250ms, search"
+               hx-target="#history-panel"
+               hx-indicator="#history-indicator" />
+        <button type="submit" class="button button--secondary">Filter</button>
+    </form>
+    <div id="history-indicator" class="eyebrow htmx-indicator">Refreshing history…</div>
+</section>
+
+<div id="history-panel">
+    <partial name="_HistoryPanel" model="Model" />
+</div>

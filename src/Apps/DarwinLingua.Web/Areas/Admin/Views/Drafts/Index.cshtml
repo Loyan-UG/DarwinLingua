@@ -1,0 +1,25 @@
+@model DarwinLingua.Web.Models.AdminDraftWordsPageViewModel
+@{
+    ViewData["Title"] = "Drafts";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Drafts", "Draft batch inspection", "Inspect draft lexical entries inline before publish workflows are added.")' />
+    <form class="search-form" method="get" asp-action="Index">
+        <input class="search-input"
+               type="search"
+               name="q"
+               value="@Model.Query"
+               placeholder="Filter draft lemma"
+               hx-get="@Url.Action("Table", "Drafts", new { area = "Admin" })"
+               hx-trigger="keyup changed delay:250ms, search"
+               hx-target="#drafts-table"
+               hx-indicator="#drafts-indicator" />
+        <button type="submit" class="button button--secondary">Filter</button>
+    </form>
+    <div id="drafts-indicator" class="eyebrow htmx-indicator">Updating drafts…</div>
+</section>
+
+<div id="drafts-table">
+    <partial name="_DraftsTable" model="Model" />
+</div>

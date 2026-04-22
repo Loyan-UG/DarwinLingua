@@ -1,0 +1,37 @@
+@model DarwinLingua.Web.Models.AdminImportsPageViewModel
+
+@if (Model.Packages.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No packages found", "No content packages matched the current filter.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Package</th>
+                    <th>Status</th>
+                    <th>Entries</th>
+                    <th>Warnings</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Packages)
+                {
+                    <tr>
+                        <td>
+                            <strong>@item.PackageName</strong>
+                            <div>@item.PackageId · @item.PackageVersion</div>
+                        </td>
+                        <td>@item.Status</td>
+                        <td>@item.InsertedEntries / @item.TotalEntries</td>
+                        <td>@item.WarningCount (@item.InvalidEntries invalid)</td>
+                        <td>@item.CreatedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+}

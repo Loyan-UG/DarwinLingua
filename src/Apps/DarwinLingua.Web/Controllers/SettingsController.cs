@@ -2,16 +2,18 @@ using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Localization.Application.Abstractions;
 using DarwinLingua.Localization.Application.Models;
 using DarwinLingua.Web.Models;
+using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DarwinLingua.Web.Controllers;
 
+[Route("settings")]
 public sealed class SettingsController(
-    IUserLearningProfileService userLearningProfileService,
+    IWebUserPreferenceService webUserPreferenceService,
     ILanguageQueryService languageQueryService) : Controller
 {
-    [HttpGet]
+    [HttpGet("", Name = "Settings_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         SettingsPageViewModel viewModel = await BuildViewModelAsync(
@@ -21,7 +23,7 @@ public sealed class SettingsController(
         return View(viewModel);
     }
 
-    [HttpPost]
+    [HttpPost("update", Name = "Settings_Update")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(SettingsUpdateInputModel input, CancellationToken cancellationToken)
     {
@@ -31,8 +33,6 @@ public sealed class SettingsController(
             return View("Index", invalidViewModel);
         }
 
-        await userLearningProfileService.UpdateUiLanguagePreferenceAsync(input.UiLanguageCode, cancellationToken);
-
         string? secondaryMeaningLanguageCode = string.Equals(
             input.PrimaryMeaningLanguageCode,
             input.SecondaryMeaningLanguageCode,
@@ -40,7 +40,8 @@ public sealed class SettingsController(
             ? null
             : input.SecondaryMeaningLanguageCode;
 
-        await userLearningProfileService.UpdateMeaningLanguagePreferencesAsync(
+        await webUserPreferenceService.UpdatePreferencesAsync(
+            input.UiLanguageCode,
             input.PrimaryMeaningLanguageCode,
             secondaryMeaningLanguageCode,
             cancellationToken);
@@ -54,7 +55,7 @@ public sealed class SettingsController(
         CancellationToken cancellationToken,
         SettingsUpdateInputModel? input = null)
     {
-        var profile = await userLearningProfileService.GetCurrentProfileAsync(cancellationToken);
+        var profile = await webUserPreferenceService.GetProfileAsync(cancellationToken);
         IReadOnlyList<SupportedLanguageModel> languages = await languageQueryService.GetActiveLanguagesAsync(cancellationToken);
 
         SettingsUpdateInputModel formInput = input ?? new SettingsUpdateInputModel
@@ -97,6 +98,7 @@ public sealed class SettingsController(
             uiLanguageOptions,
             meaningLanguageOptions,
             secondaryMeaningOptions,
-            statusMessage);
+            statusMessage,
+            User.Identity?.IsAuthenticated == true);
     }
 }

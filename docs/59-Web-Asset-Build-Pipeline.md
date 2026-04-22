@@ -2,32 +2,28 @@
 
 ## Purpose
 
-This document defines the intended asset pipeline for `DarwinLingua.Web`.
-
-At the moment, the repository contains a CSS fallback plus Tailwind-ready config files. The final production direction remains Tailwind-driven once Node tooling is available in the active build environment.
+This document defines the active asset pipeline for `DarwinLingua.Web`.
 
 ---
 
 ## Current State
 
-- `wwwroot/css/site.css` is the live fallback stylesheet
-- `package.json` exists
-- `tailwind.config.js` exists
-- `postcss.config.js` exists
-- `Styles/tailwind.css` exists as the future Tailwind input
-
-The current Codex environment does not expose working Node/npm execution, so the Tailwind output is not yet the authoritative production stylesheet.
+- `Styles/tailwind.css` is the source stylesheet
+- `wwwroot/css/tailwind.generated.css` is the generated runtime stylesheet
+- `package.json` contains the executable Tailwind build scripts
+- `tailwind.config.js` and `postcss.config.js` remain part of the build input
+- the MVC layouts now reference the generated Tailwind output directly
 
 ---
 
-## Intended Final Pipeline
+## Active Pipeline
 
 1. install Node/npm in the CI or local build environment
 2. restore frontend dependencies with `npm install`
 3. compile Tailwind from `Styles/tailwind.css`
 4. emit the built stylesheet into `wwwroot/css/`
 5. include the generated asset in the publish output
-6. keep the fallback stylesheet only until the generated pipeline is proven stable
+6. serve the generated asset from the MVC layouts and service worker shell cache
 
 ---
 
@@ -50,4 +46,4 @@ The web build job should eventually include:
 4. run solution tests
 5. publish the web host
 
-Until Node is available, document that the fallback stylesheet is the deployed source of truth.
+The generated stylesheet should be rebuilt whenever `Styles/tailwind.css` changes.

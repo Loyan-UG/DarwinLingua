@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DarwinLingua.Web.Controllers;
 
+[Route("favorites")]
 public sealed class FavoritesController(
-    IUserFavoriteWordService userFavoriteWordService,
+    IWebFavoriteWordService userFavoriteWordService,
     IWebLearningProfileAccessor learningProfileAccessor) : Controller
 {
+    [HttpGet("", Name = "Favorites_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);

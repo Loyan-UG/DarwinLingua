@@ -6,7 +6,7 @@
 <section class="panel stack-lg">
     <span class="eyebrow">Settings</span>
     <h1 class="headline-md">Language preferences</h1>
-    <p class="body-lg">This slice still uses the local learning profile abstraction. Web identity-backed account preferences will replace it in the next phase.</p>
+    <p class="body-lg">Language preferences are stored per web actor. Signed-in users keep them in their account context, and guests keep them through a durable guest cookie actor.</p>
 
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {

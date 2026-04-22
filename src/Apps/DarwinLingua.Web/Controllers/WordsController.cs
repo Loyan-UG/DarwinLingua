@@ -1,17 +1,18 @@
 using DarwinLingua.Catalog.Application.Abstractions;
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DarwinLingua.Web.Controllers;
 
+[Route("words")]
 public sealed class WordsController(
     IWordDetailQueryService wordDetailQueryService,
-    IUserFavoriteWordService userFavoriteWordService,
-    IUserWordStateService userWordStateService,
+    IWebFavoriteWordService userFavoriteWordService,
+    IWebUserWordStateService userWordStateService,
     IWebLearningProfileAccessor learningProfileAccessor) : Controller
 {
+    [HttpGet("{id:guid}", Name = "Words_Detail")]
     public async Task<IActionResult> Detail(Guid id, CancellationToken cancellationToken)
     {
         if (id == Guid.Empty)
@@ -37,8 +38,9 @@ public sealed class WordsController(
         return View(CreatePageViewModel(word, isFavorite, wordState, profile));
     }
 
-    [HttpPost]
+    [HttpPost(Name = "Words_ToggleFavorite")]
     [ValidateAntiForgeryToken]
+    [Route("toggle-favorite")]
     public async Task<IActionResult> ToggleFavorite(Guid id, string? returnUrl, CancellationToken cancellationToken)
     {
         if (id != Guid.Empty)
@@ -59,8 +61,9 @@ public sealed class WordsController(
         return RedirectToAction(nameof(Detail), new { id });
     }
 
-    [HttpPost]
+    [HttpPost(Name = "Words_ToggleKnown")]
     [ValidateAntiForgeryToken]
+    [Route("toggle-known")]
     public async Task<IActionResult> ToggleKnown(Guid id, string? returnUrl, CancellationToken cancellationToken)
     {
         if (id != Guid.Empty)
@@ -90,8 +93,9 @@ public sealed class WordsController(
         return RedirectToAction(nameof(Detail), new { id });
     }
 
-    [HttpPost]
+    [HttpPost(Name = "Words_ToggleDifficult")]
     [ValidateAntiForgeryToken]
+    [Route("toggle-difficult")]
     public async Task<IActionResult> ToggleDifficult(Guid id, string? returnUrl, CancellationToken cancellationToken)
     {
         if (id != Guid.Empty)

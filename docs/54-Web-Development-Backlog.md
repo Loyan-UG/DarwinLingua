@@ -28,29 +28,29 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add PWA manifest, service worker, and install prompt baseline
 - [x] add `htmx` baseline script integration
 - [x] add Tailwind-ready project structure and config placeholders
-- [ ] replace temporary CSS fallback with compiled Tailwind output once Node tooling is available in the active environment
+- [x] replace temporary CSS fallback with compiled Tailwind output once working Node/npm tooling is available in the active environment
 
 ## 2. Frontend System
 
 - [x] define shared design tokens for color, spacing, radius, elevation, and typography
 - [x] define learner shell vs admin shell visual separation
-- [ ] add reusable Razor partials / view components for:
-- [ ] app header
-- [ ] mobile nav
-- [ ] section heading
-- [ ] metric card
-- [ ] word card
-- [ ] CEFR badge
-- [ ] favorite toggle
-- [ ] async status / empty state / failure state
-- [ ] add accessibility review checklist for focus order, landmarks, contrast, and keyboard interaction
+- [x] add reusable Razor partials / view components for:
+- [x] app header
+- [x] mobile nav
+- [x] section heading
+- [x] metric card
+- [x] word card
+- [x] CEFR badge
+- [x] favorite toggle
+- [x] async status / empty state / failure state
+- [x] add accessibility review checklist for focus order, landmarks, contrast, and keyboard interaction
 
 ## 3. Routing and Host Composition
 
 - [x] add default MVC route
 - [x] add area route for `Admin`
-- [ ] add route naming conventions for learner pages
-- [ ] add route naming conventions for admin pages
+- [x] add route naming conventions for learner pages
+- [x] add route naming conventions for admin pages
 - [x] add cache/output-caching policy per page type
 - [x] add security headers and CSP baseline suitable for `htmx`
 
@@ -72,21 +72,21 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] favorite toggle without full page reload
 - [x] recent-activity panel refresh
 - [x] CEFR word list pagination / load-more
-- [ ] topic-filter chips with partial updates
-- [ ] inline admin table filtering
-- [ ] publish-history reload panel
-- [ ] confirmation modal pattern for admin actions
+- [x] topic-filter chips with partial updates
+- [x] inline admin table filtering
+- [x] publish-history reload panel
+- [x] confirmation modal pattern for admin actions
 
 ## 6. Authentication and Identity
 
-- [ ] add `ASP.NET Core Identity`
-- [ ] add registration
-- [ ] add sign-in / sign-out
-- [ ] add forgot-password / reset-password baseline
-- [ ] add learner role seeding
-- [ ] add operator/admin role seeding
-- [ ] add authorization policies for `Operator` and `Admin`
-- [ ] add account-management pages
+- [x] add `ASP.NET Core Identity`
+- [x] add registration
+- [x] add sign-in / sign-out
+- [x] add forgot-password / reset-password baseline
+- [x] add learner role seeding
+- [x] add operator/admin role seeding
+- [x] add authorization policies for `Operator` and `Admin`
+- [x] add account-management pages
 
 ## 7. Shared Backend Integration
 
@@ -98,13 +98,13 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] word detail
 - [x] recent activity
 - [x] favorite words
-- [ ] keep MVC rendering on server-side application services, not mobile package endpoints
+- [x] keep MVC rendering on server-side application services, not mobile package endpoints
 
 ## 8. User State
 
-- [ ] persist favorite words for authenticated web users
-- [ ] persist last viewed words
-- [ ] persist recent activity
+- [x] persist favorite words for authenticated web users
+- [x] persist last viewed words
+- [x] persist recent activity
 - [x] persist preferred meaning languages
 - [x] persist UI language preference when applicable
 - [x] define anonymous-user fallback behavior
@@ -113,22 +113,22 @@ This backlog is intentionally ordered so the project can grow without collapsing
 
 - [x] add `Areas/Admin` shell placeholder
 - [x] add admin layout and nav shell
-- [ ] add content import dashboard
-- [ ] add draft batch inspection
+- [x] add content import dashboard
+- [x] add draft batch inspection
 - [x] add publish action screen
-- [ ] add rollback action screen
-- [ ] add publication history and audit view
+- [x] add rollback action screen
+- [x] add publication history and audit view
 - [x] add package/manifest diagnostics view
 
 ## 10. Performance and UX
 
 - [x] keep the first slice server-rendered and lightweight
-- [ ] add output caching for high-read browse/detail pages
-- [ ] add compression and asset caching review
-- [ ] add image and icon optimization
+- [x] add caching for high-read browse/detail pages without leaking personalized learner state
+- [x] add compression and asset caching review
+- [x] add image and icon optimization
 - [x] add pagination / incremental rendering for large lists
-- [ ] add UX telemetry for slow page loads and failed async actions
-- [ ] validate install prompt flow on Android and desktop Chromium
+- [x] add UX telemetry for slow page loads and failed async actions
+- [x] validate install prompt flow on Android and desktop Chromium on real target browsers/devices
 
 ## 11. Validation
 
@@ -141,7 +141,7 @@ This backlog is intentionally ordered so the project can grow without collapsing
 
 ## 12. Release Readiness
 
-- [ ] environment-specific configuration for PostgreSQL and auth secrets
+- [x] environment-specific configuration for PostgreSQL and auth secrets
 - [x] deployment notes
 - [x] asset build pipeline notes for Tailwind
 - [x] production logging and diagnostics notes

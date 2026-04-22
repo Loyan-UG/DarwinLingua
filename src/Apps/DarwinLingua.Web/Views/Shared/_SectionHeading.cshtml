@@ -1,0 +1,12 @@
+@model DarwinLingua.Web.Models.SectionHeadingViewModel
+
+<div class="section-heading">
+    <div class="stack-md">
+        <span class="eyebrow">@Model.Eyebrow</span>
+        <h2 class="headline-md">@Model.Title</h2>
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p class="body-lg">@Model.Description</p>
+        }
+    </div>
+</div>

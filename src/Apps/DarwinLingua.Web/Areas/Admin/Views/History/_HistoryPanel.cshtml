@@ -1,0 +1,32 @@
+@model DarwinLingua.Web.Models.AdminHistoryPageViewModel
+
+@if (Model.Items.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No history available", "No package history matched the active filter.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Package</th>
+                    <th>Status</th>
+                    <th>Entries</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.PackageId · @item.PackageVersion</td>
+                        <td>@item.Status</td>
+                        <td>@item.InsertedEntries / @item.TotalEntries (@item.InvalidEntries invalid)</td>
+                        <td>@item.CreatedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+}

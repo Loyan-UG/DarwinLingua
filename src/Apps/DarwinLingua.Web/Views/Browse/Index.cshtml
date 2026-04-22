@@ -4,9 +4,7 @@
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Browse</span>
-    <h1 class="headline-md">Explore the catalog by topic or CEFR level.</h1>
-    <p class="body-lg">Primary meaning language: <code>@Model.MeaningLanguageCode</code></p>
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Browse", "Explore the catalog by topic or CEFR level.", $"Primary meaning language: {Model.MeaningLanguageCode}")' />
 </section>
 
 <section class="grid-two-col">
@@ -15,7 +13,12 @@
         <div class="chip-grid">
             @foreach (string level in Model.CefrLevels)
             {
-                <a class="chip-link" asp-action="Cefr" asp-route-id="@level">@level</a>
+                <a class="chip-link"
+                   asp-action="Cefr"
+                   asp-route-id="@level"
+                   hx-get="@Url.Action("Cefr", "Browse", new { id = level })"
+                   hx-target="#browse-results"
+                   hx-swap="innerHTML">@level</a>
             }
         </div>
     </article>
@@ -30,9 +33,18 @@
             <div class="chip-grid">
                 @foreach (var topic in Model.Topics)
                 {
-                    <a class="chip-link" asp-action="Topic" asp-route-id="@topic.Key">@topic.DisplayName</a>
+                    <a class="chip-link"
+                       asp-action="Topic"
+                       asp-route-id="@topic.Key"
+                       hx-get="@Url.Action("Topic", "Browse", new { id = topic.Key })"
+                       hx-target="#browse-results"
+                       hx-swap="innerHTML">@topic.DisplayName</a>
                 }
             </div>
         }
     </article>
 </section>
+
+<div id="browse-results">
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("Choose a filter", "Select a CEFR level or topic to load words inline.")' />
+</div>

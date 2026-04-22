@@ -1,0 +1,25 @@
+@model DarwinLingua.Web.Models.AdminImportsPageViewModel
+@{
+    ViewData["Title"] = "Imports";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Imports", "Content import dashboard", "Filter package imports inline and inspect their current processing status.")' />
+    <form class="search-form" method="get" asp-action="Index">
+        <input class="search-input"
+               type="search"
+               name="status"
+               value="@Model.StatusFilter"
+               placeholder="Filter by status"
+               hx-get="@Url.Action("Table", "Imports", new { area = "Admin" })"
+               hx-trigger="keyup changed delay:250ms, search"
+               hx-target="#imports-table"
+               hx-indicator="#imports-indicator" />
+        <button type="submit" class="button button--secondary">Filter</button>
+    </form>
+    <div id="imports-indicator" class="eyebrow htmx-indicator">Updating imports…</div>
+</section>
+
+<div id="imports-table">
+    <partial name="_ImportsTable" model="Model" />
+</div>

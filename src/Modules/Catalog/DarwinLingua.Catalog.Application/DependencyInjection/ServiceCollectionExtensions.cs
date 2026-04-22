@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Caching.Memory;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Services;
 
@@ -18,8 +19,10 @@ public static class ServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(services);
 
+        services.AddMemoryCache();
         services.AddScoped<ITopicQueryService, TopicQueryService>();
-        services.AddScoped<IWordDetailQueryService, WordDetailQueryService>();
+        services.AddScoped<WordDetailQueryService>();
+        services.AddScoped<IWordDetailQueryService, CachedWordDetailQueryService>();
         services.AddScoped<IWordQueryService, WordQueryService>();
 
         return services;

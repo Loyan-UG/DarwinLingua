@@ -76,6 +76,7 @@ All project documentation should remain in English.
 - `59-Web-Asset-Build-Pipeline.md`
 - `60-Web-Operations-Notes.md`
 - `61-Web-Release-Checklist.md`
+- `62-Web-Accessibility-Checklist.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -122,7 +123,8 @@ If you are new to the project, read the documents in this order:
 30. `59-Web-Asset-Build-Pipeline.md`
 31. `60-Web-Operations-Notes.md`
 32. `61-Web-Release-Checklist.md`
-33. `52-Future-Platform-Expansion.md`
+33. `62-Web-Accessibility-Checklist.md`
+34. `52-Future-Platform-Expansion.md`
 
 ---
 

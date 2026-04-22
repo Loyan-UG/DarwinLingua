@@ -24,10 +24,20 @@ Set these values per environment:
 
 - `ConnectionStrings__SharedCatalog`
 - `ConnectionStrings__SharedCatalogAdmin` when admin and learner read paths intentionally diverge
+- `ConnectionStrings__WebIdentity`
 - `ASPNETCORE_ENVIRONMENT`
 - logging overrides as needed for production
 
-When Identity is introduced, add the required identity/auth-secret configuration in the same environment-specific system instead of hard-coding it in repository files.
+For Identity bootstrap and authorization, keep these out of repository-tracked production files:
+
+- `IdentityBootstrap__SeedAdminEmail`
+- `IdentityBootstrap__SeedAdminPassword`
+
+Environment rule:
+
+- local development may use local appsettings overrides or user secrets
+- shared development/staging/production must use platform environment variables or secret storage
+- do not commit live PostgreSQL credentials or seed-admin credentials into `appsettings.json`
 
 ---
 
@@ -36,7 +46,7 @@ When Identity is introduced, add the required identity/auth-secret configuration
 1. Build the solution on the intended release commit.
 2. Run `dotnet test DarwinLingua.slnx -c Debug -m:1` or the release-appropriate equivalent in CI.
 3. Publish `src/Apps/DarwinLingua.Web`.
-4. Provide production connection strings through the deployment platform.
+4. Provide production connection strings and Identity bootstrap secrets through the deployment platform.
 5. Start the host and verify it completes startup initialization.
 6. Verify learner routes and admin routes respond successfully.
 7. Run the learner-web and PWA validation worksheets.

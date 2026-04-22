@@ -8,8 +8,8 @@ public interface IWebLearningProfileAccessor
     Task<UserLearningProfileModel> GetProfileAsync(CancellationToken cancellationToken);
 }
 
-internal sealed class WebLearningProfileAccessor(IUserLearningProfileService userLearningProfileService) : IWebLearningProfileAccessor
+internal sealed class WebLearningProfileAccessor(IWebUserPreferenceService webUserPreferenceService) : IWebLearningProfileAccessor
 {
     public Task<UserLearningProfileModel> GetProfileAsync(CancellationToken cancellationToken) =>
-        userLearningProfileService.GetCurrentProfileAsync(cancellationToken);
+        webUserPreferenceService.GetProfileAsync(cancellationToken);
 }
