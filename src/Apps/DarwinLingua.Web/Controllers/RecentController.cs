@@ -14,7 +14,7 @@ public sealed class RecentController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         IReadOnlyList<RecentWordActivityItemViewModel> items = await activityQueryService
-            .GetRecentWordActivityAsync(profile.UserId, 24, cancellationToken);
+            .GetRecentWordActivityAsync(profile.UserId, profile.PreferredMeaningLanguage1, 24, cancellationToken);
 
         return View(new RecentActivityPageViewModel(items));
     }
@@ -24,7 +24,7 @@ public sealed class RecentController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         IReadOnlyList<RecentWordActivityItemViewModel> items = await activityQueryService
-            .GetRecentWordActivityAsync(profile.UserId, 6, cancellationToken);
+            .GetRecentWordActivityAsync(profile.UserId, profile.PreferredMeaningLanguage1, 6, cancellationToken);
 
         return PartialView("_RecentActivityPanel", new RecentActivityPageViewModel(items));
     }

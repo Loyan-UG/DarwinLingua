@@ -1,5 +1,3 @@
-using DarwinLingua.Infrastructure.Persistence;
-using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Models;
 using Microsoft.EntityFrameworkCore;
@@ -10,16 +8,18 @@ public interface IWebActivityQueryService
 {
     Task<IReadOnlyList<RecentWordActivityItemViewModel>> GetRecentWordActivityAsync(
         string actorId,
+        string meaningLanguageCode,
         int take,
         CancellationToken cancellationToken);
 }
 
 internal sealed class WebActivityQueryService(
     WebIdentityDbContext identityDbContext,
-    IDbContextFactory<DarwinLinguaDbContext> catalogDbContextFactory) : IWebActivityQueryService
+    IWebCatalogApiClient catalogApiClient) : IWebActivityQueryService
 {
     public async Task<IReadOnlyList<RecentWordActivityItemViewModel>> GetRecentWordActivityAsync(
         string actorId,
+        string meaningLanguageCode,
         int take,
         CancellationToken cancellationToken)
     {
@@ -46,30 +46,17 @@ internal sealed class WebActivityQueryService(
 
         Guid[] wordIds = recentStates.Select(item => item.WordPublicId).ToArray();
 
-        await using DarwinLinguaDbContext catalogDbContext = await catalogDbContextFactory
-            .CreateDbContextAsync(cancellationToken)
+        IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordListItemModel> words = await catalogApiClient
+            .GetWordsByIdsAsync(wordIds, meaningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
 
-        CatalogWordProjection[] words = await catalogDbContext.WordEntries
-            .AsNoTracking()
-            .Where(word => wordIds.Contains(word.PublicId) && word.PublicationStatus == PublicationStatus.Active)
-            .Select(word => new CatalogWordProjection(
-                word.PublicId,
-                word.Lemma,
-                word.Article,
-                word.PluralForm,
-                word.PartOfSpeech.ToString(),
-                word.PrimaryCefrLevel.ToString()))
-            .ToArrayAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        Dictionary<Guid, CatalogWordProjection> wordMap = words.ToDictionary(item => item.PublicId);
+        Dictionary<Guid, DarwinLingua.Catalog.Application.Models.WordListItemModel> wordMap = words.ToDictionary(item => item.PublicId);
 
         return recentStates
             .Where(state => wordMap.ContainsKey(state.WordPublicId))
             .Select(state =>
             {
-                CatalogWordProjection word = wordMap[state.WordPublicId];
+                DarwinLingua.Catalog.Application.Models.WordListItemModel word = wordMap[state.WordPublicId];
 
                 return new RecentWordActivityItemViewModel(
                     word.PublicId,
@@ -92,12 +79,4 @@ internal sealed class WebActivityQueryService(
         bool IsKnown,
         bool IsDifficult,
         DateTime LastViewedAtUtc);
-
-    private sealed record CatalogWordProjection(
-        Guid PublicId,
-        string Lemma,
-        string? Article,
-        string? PluralForm,
-        string PartOfSpeech,
-        string CefrLevel);
 }

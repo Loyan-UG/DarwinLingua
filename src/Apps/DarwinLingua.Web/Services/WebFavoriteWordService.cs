@@ -1,6 +1,4 @@
-using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.Learning.Application.Models;
-using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.Web.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +18,7 @@ public interface IWebFavoriteWordService
 internal sealed class WebFavoriteWordService(
     IWebActorContextAccessor actorContextAccessor,
     WebIdentityDbContext identityDbContext,
-    IDbContextFactory<DarwinLinguaDbContext> catalogDbContextFactory) : IWebFavoriteWordService
+    IWebCatalogApiClient catalogApiClient) : IWebFavoriteWordService
 {
     public async Task<bool> IsFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken)
     {
@@ -77,31 +75,11 @@ internal sealed class WebFavoriteWordService(
             return [];
         }
 
-        await using DarwinLinguaDbContext catalogDbContext = await catalogDbContextFactory
-            .CreateDbContextAsync(cancellationToken)
+        IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordListItemModel> projections = await catalogApiClient
+            .GetWordsByIdsAsync(favoriteWordIds, meaningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
 
-        LanguageAwareFavoriteProjection[] projections = await (
-            from word in catalogDbContext.WordEntries.AsNoTracking()
-            where favoriteWordIds.Contains(word.PublicId) && word.PublicationStatus == PublicationStatus.Active
-            select new LanguageAwareFavoriteProjection(
-                word.PublicId,
-                word.Lemma,
-                word.Article,
-                word.PartOfSpeech.ToString(),
-                word.PrimaryCefrLevel.ToString(),
-                word.Senses
-                    .OrderByDescending(sense => sense.IsPrimarySense)
-                    .ThenBy(sense => sense.SenseOrder)
-                    .SelectMany(sense => sense.Translations)
-                    .Where(translation => translation.LanguageCode.Value == meaningLanguageCode)
-                    .OrderByDescending(translation => translation.IsPrimary)
-                    .Select(translation => translation.TranslationText)
-                    .FirstOrDefault()))
-            .ToArrayAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        Dictionary<Guid, LanguageAwareFavoriteProjection> map = projections.ToDictionary(item => item.PublicId);
+        Dictionary<Guid, DarwinLingua.Catalog.Application.Models.WordListItemModel> map = projections.ToDictionary(item => item.PublicId);
 
         return favoriteWordIds
             .Where(map.ContainsKey)
@@ -115,12 +93,4 @@ internal sealed class WebFavoriteWordService(
                 item.PrimaryMeaning))
             .ToArray();
     }
-
-    private sealed record LanguageAwareFavoriteProjection(
-        Guid PublicId,
-        string Lemma,
-        string? Article,
-        string PartOfSpeech,
-        string CefrLevel,
-        string? PrimaryMeaning);
 }

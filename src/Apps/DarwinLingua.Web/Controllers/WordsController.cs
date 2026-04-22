@@ -1,4 +1,3 @@
-using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,7 @@ namespace DarwinLingua.Web.Controllers;
 
 [Route("words")]
 public sealed class WordsController(
-    IWordDetailQueryService wordDetailQueryService,
+    IWebCatalogApiClient catalogApiClient,
     IWebFavoriteWordService userFavoriteWordService,
     IWebUserWordStateService userWordStateService,
     IWebLearningProfileAccessor learningProfileAccessor) : Controller
@@ -21,7 +20,7 @@ public sealed class WordsController(
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        var word = await wordDetailQueryService.GetWordDetailsAsync(
+        var word = await catalogApiClient.GetWordDetailsAsync(
             id,
             profile.PreferredMeaningLanguage1,
             profile.PreferredMeaningLanguage2,

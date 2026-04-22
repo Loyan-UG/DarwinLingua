@@ -59,6 +59,8 @@ builder.Services.AddScoped<ICatalogPackageRollbackService, CatalogPackageRollbac
 builder.Services.AddScoped<IContentPublicationAuditService, ContentPublicationAuditService>();
 builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseService>();
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
+builder.Services.AddScoped<IWebsiteCatalogQueryService, WebsiteCatalogQueryService>();
+builder.Services.AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>();
 
 WebApplication app = builder.Build();
 
@@ -72,6 +74,83 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
     await databaseInitializer.InitializeAsync(CancellationToken.None);
     await bootstrapper.InitializeAsync(CancellationToken.None);
 }
+
+app.MapGet(
+    "/api/catalog/topics",
+    async (string uiLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetTopicsAsync(uiLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/words/topic/{topicKey}",
+    async (string topicKey, string meaningLanguageCode, int skip, int take, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetWordsByTopicPageAsync(topicKey, meaningLanguageCode, skip, take, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/words/cefr/{level}",
+    async (string level, string meaningLanguageCode, int skip, int take, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetWordsByCefrPageAsync(level, meaningLanguageCode, skip, take, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/words/search",
+    async (string q, string meaningLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.SearchWordsAsync(q, meaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/words/{publicId:guid}",
+    async (Guid publicId, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, string uiLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetWordDetailsAsync(publicId, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, uiLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/words/by-ids",
+    async (CatalogWordLookupRequest request, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetWordsByIdsAsync(request.WordIds, request.MeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/dashboard",
+    async (IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetDashboardAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/imports",
+    async (string? status, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetImportsAsync(status, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/draft-words",
+    async (string? q, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetDraftWordsAsync(q, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/history-view",
+    async (string? status, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetHistoryAsync(status, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/rollback-preview",
+    async (IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetRollbackPreviewAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
 
 app.MapGet(
     "/api/mobile/content/manifest",

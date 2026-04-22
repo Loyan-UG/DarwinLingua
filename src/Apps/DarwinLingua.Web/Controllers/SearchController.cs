@@ -1,4 +1,3 @@
-using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
@@ -8,7 +7,7 @@ namespace DarwinLingua.Web.Controllers;
 
 [Route("search")]
 public sealed class SearchController(
-    IWordQueryService wordQueryService,
+    IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor) : Controller
 {
     [HttpGet("", Name = "Search_Index")]
@@ -18,7 +17,7 @@ public sealed class SearchController(
         string query = q?.Trim() ?? string.Empty;
         IReadOnlyList<WordListItemModel> results = string.IsNullOrWhiteSpace(query)
             ? []
-            : await wordQueryService.SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+            : await catalogApiClient.SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
 
         return View(new SearchPageViewModel(query, results, profile.PreferredMeaningLanguage1));
     }
@@ -30,7 +29,7 @@ public sealed class SearchController(
         string query = q?.Trim() ?? string.Empty;
         IReadOnlyList<WordListItemModel> results = string.IsNullOrWhiteSpace(query)
             ? []
-            : await wordQueryService.SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+            : await catalogApiClient.SearchWordsAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
 
         return PartialView("_SearchResults", new SearchPageViewModel(query, results, profile.PreferredMeaningLanguage1));
     }

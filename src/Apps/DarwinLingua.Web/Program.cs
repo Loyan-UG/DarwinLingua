@@ -1,8 +1,3 @@
-using DarwinLingua.Catalog.Application.DependencyInjection;
-using DarwinLingua.Catalog.Application.Abstractions;
-using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
-using DarwinLingua.Infrastructure.DependencyInjection;
-using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.DependencyInjection;
 using DarwinLingua.Learning.Infrastructure.DependencyInjection;
@@ -44,9 +39,7 @@ builder.Services.AddScoped<IWebUserPreferenceService, WebUserPreferenceService>(
 builder.Services.AddScoped<IWebFavoriteWordService, WebFavoriteWordService>();
 builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();
 builder.Services.AddScoped<IWebIdentityBootstrapper, WebIdentityBootstrapper>();
-
-string? sharedCatalogConnectionString = builder.Configuration.GetConnectionString("SharedCatalogAdmin")
-    ?? builder.Configuration.GetConnectionString("SharedCatalog");
+builder.Services.AddWebCatalogApiClient(builder.Configuration);
 string? webIdentityConnectionString = builder.Configuration.GetConnectionString("WebIdentity");
 
 if (!string.IsNullOrWhiteSpace(webIdentityConnectionString))
@@ -63,21 +56,7 @@ else
         options.UseSqlite($"Data Source={identityDatabasePath}"));
 }
 
-if (!string.IsNullOrWhiteSpace(sharedCatalogConnectionString))
-{
-    builder.Services.AddDarwinLinguaInfrastructureForPostgres(sharedCatalogConnectionString);
-}
-else
-{
-    string databaseDirectory = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
-    string databasePath = Path.Combine(databaseDirectory, "darwin-lingua.web.db");
-
-    builder.Services.AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath);
-}
-
 builder.Services
-    .AddCatalogApplication()
-    .AddCatalogInfrastructure()
     .AddLearningApplication()
     .AddLearningInfrastructure()
     .AddLocalizationApplication()
@@ -107,10 +86,8 @@ var app = builder.Build();
 
 await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 {
-    IDatabaseInitializer databaseInitializer = bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IWebIdentityBootstrapper identityBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IWebIdentityBootstrapper>();
 
-    await databaseInitializer.InitializeAsync(CancellationToken.None);
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
 }
 

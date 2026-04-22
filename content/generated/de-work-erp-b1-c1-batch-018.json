@@ -1,0 +1,399 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-work-erp-b1-c1-20260422-18",
+  "packageName": "German Work ERP B1-C1 Batch 018",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Engpass",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "plural": "Engpässe", "isPrimary": true }],
+      "article": "der",
+      "plural": "Engpässe",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "architecture"],
+      "meanings": [
+        { "language": "en", "text": "bottleneck" },
+        { "language": "fa", "text": "گلوگاه" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der größte Engpass liegt aktuell im Datenimport und nicht im Frontend.",
+          "translations": [
+            { "language": "en", "text": "The biggest bottleneck is currently in the data import and not in the frontend." },
+            { "language": "fa", "text": "بزرگ‌ترین گلوگاه در حال حاضر در وارد کردن داده است، نه در فرانت‌اند." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Zwischenspeicher",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "plural": "Zwischenspeicher", "isPrimary": true }],
+      "article": "der",
+      "plural": "Zwischenspeicher",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "software"],
+      "meanings": [
+        { "language": "en", "text": "cache; buffer" },
+        { "language": "fa", "text": "کش، حافظه میانی" }
+      ],
+      "examples": [
+        {
+          "baseText": "Mit einem lokalen Zwischenspeicher reagiert die App deutlich schneller.",
+          "translations": [
+            { "language": "en", "text": "With a local cache, the app responds much faster." },
+            { "language": "fa", "text": "با یک کش محلی، اپلیکیشن خیلی سریع‌تر پاسخ می‌دهد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Verarbeitungszeit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Verarbeitungszeiten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Verarbeitungszeiten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "reporting"],
+      "meanings": [
+        { "language": "en", "text": "processing time" },
+        { "language": "fa", "text": "زمان پردازش" }
+      ],
+      "examples": [
+        {
+          "baseText": "Nach der Optimierung sind die Verarbeitungszeiten im Hintergrundjob halb so lang.",
+          "translations": [
+            { "language": "en", "text": "After the optimization, the processing times in the background job are half as long." },
+            { "language": "fa", "text": "بعد از بهینه‌سازی، زمان‌های پردازش در job پس‌زمینه نصف شده‌اند." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Datenmenge",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Datenmengen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Datenmengen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["performance", "database"],
+      "meanings": [
+        { "language": "en", "text": "data volume" },
+        { "language": "fa", "text": "حجم داده" }
+      ],
+      "examples": [
+        {
+          "baseText": "Bei großen Datenmengen brauchen wir eine andere Paging-Strategie.",
+          "translations": [
+            { "language": "en", "text": "For large data volumes, we need a different paging strategy." },
+            { "language": "fa", "text": "برای حجم‌های زیاد داده به یک استراتژی paging متفاوت نیاز داریم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Abfrageplan",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "plural": "Abfragepläne", "isPrimary": true }],
+      "article": "der",
+      "plural": "Abfragepläne",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["database", "performance"],
+      "meanings": [
+        { "language": "en", "text": "query plan" },
+        { "language": "fa", "text": "پلن کوئری" }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Abfrageplan sehen wir sofort, warum der Index nicht verwendet wird.",
+          "translations": [
+            { "language": "en", "text": "In the query plan, we can immediately see why the index is not being used." },
+            { "language": "fa", "text": "در پلن کوئری فوراً می‌بینیم چرا از ایندکس استفاده نمی‌شود." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Parallelisierung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Parallelisierungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Parallelisierungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "architecture"],
+      "meanings": [
+        { "language": "en", "text": "parallelization" },
+        { "language": "fa", "text": "موازی‌سازی" }
+      ],
+      "examples": [
+        {
+          "baseText": "Mit sinnvoller Parallelisierung verkürzen wir die Startzeit des Systems deutlich.",
+          "translations": [
+            { "language": "en", "text": "With sensible parallelization, we significantly reduce the system startup time." },
+            { "language": "fa", "text": "با موازی‌سازی درست، زمان شروع سیستم را به‌طور محسوسی کاهش می‌دهیم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Ausführungsreihenfolge",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Ausführungsreihenfolgen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Ausführungsreihenfolgen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["architecture", "software"],
+      "meanings": [
+        { "language": "en", "text": "execution order" },
+        { "language": "fa", "text": "ترتیب اجرا" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die falsche Ausführungsreihenfolge verursacht unnötige Sperren in der Datenbank.",
+          "translations": [
+            { "language": "en", "text": "The wrong execution order causes unnecessary locks in the database." },
+            { "language": "fa", "text": "ترتیب اجرای اشتباه باعث lockهای غیرضروری در دیتابیس می‌شود." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Spitzenlast",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Spitzenlasten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Spitzenlasten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "operations"],
+      "meanings": [
+        { "language": "en", "text": "peak load" },
+        { "language": "fa", "text": "بار اوج" }
+      ],
+      "examples": [
+        {
+          "baseText": "Am Monatsende steigt die Spitzenlast im Finanzmodul stark an.",
+          "translations": [
+            { "language": "en", "text": "At the end of the month, peak load rises sharply in the finance module." },
+            { "language": "fa", "text": "در پایان ماه، بار اوج در ماژول مالی به‌شدت افزایش می‌یابد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "puffern",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "puffern", "isPrimary": true }],
+      "infinitive": "puffern",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "software"],
+      "meanings": [
+        { "language": "en", "text": "to buffer" },
+        { "language": "fa", "text": "بافر کردن" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir sollten die Ergebnisse für kurze Zeit puffern, statt sie ständig neu zu laden.",
+          "translations": [
+            { "language": "en", "text": "We should buffer the results for a short time instead of constantly reloading them." },
+            { "language": "fa", "text": "باید نتایج را برای مدت کوتاهی buffer کنیم، به‌جای اینکه مدام دوباره بارگذاری‌شان کنیم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "drosseln",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "drosseln", "isPrimary": true }],
+      "infinitive": "drosseln",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "operations"],
+      "meanings": [
+        { "language": "en", "text": "to throttle" },
+        { "language": "fa", "text": "محدود کردن نرخ" }
+      ],
+      "examples": [
+        {
+          "baseText": "Bei sehr hoher Last müssen wir bestimmte Hintergrundaufgaben gezielt drosseln.",
+          "translations": [
+            { "language": "en", "text": "Under very high load, we need to deliberately throttle certain background tasks." },
+            { "language": "fa", "text": "در بار بسیار زیاد، باید بعضی کارهای پس‌زمینه را عمداً محدود کنیم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "entschärfen",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "entschärfen", "isPrimary": true }],
+      "infinitive": "entschärfen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "support"],
+      "meanings": [
+        { "language": "en", "text": "to mitigate; to defuse" },
+        { "language": "fa", "text": "کم‌خطر کردن، تخفیف دادن" }
+      ],
+      "examples": [
+        {
+          "baseText": "Mit einem zusätzlichen Index konnten wir das Performance-Problem deutlich entschärfen.",
+          "translations": [
+            { "language": "en", "text": "With an additional index, we were able to significantly mitigate the performance problem." },
+            { "language": "fa", "text": "با یک ایندکس اضافه توانستیم مشکل پرفورمنس را تا حد زیادی کاهش دهیم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "skalieren",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "skalieren", "isPrimary": true }],
+      "infinitive": "skalieren",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["architecture", "operations"],
+      "meanings": [
+        { "language": "en", "text": "to scale" },
+        { "language": "fa", "text": "مقیاس‌پذیر کردن" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Architektur muss horizontal skalieren können, wenn weitere Mandanten hinzukommen.",
+          "translations": [
+            { "language": "en", "text": "The architecture must be able to scale horizontally when additional tenants are added." },
+            { "language": "fa", "text": "معماری باید بتواند با اضافه شدن tenantهای بیشتر به‌صورت افقی مقیاس پیدا کند." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "messbar",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "lexicalForms": [{ "partOfSpeech": "Adjective", "isPrimary": true }],
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "quality"],
+      "meanings": [
+        { "language": "en", "text": "measurable" },
+        { "language": "fa", "text": "قابل اندازه‌گیری" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Verbesserung muss nicht nur sichtbar, sondern auch messbar sein.",
+          "translations": [
+            { "language": "en", "text": "The improvement must not only be visible but also measurable." },
+            { "language": "fa", "text": "بهبود باید نه‌فقط قابل مشاهده، بلکه قابل اندازه‌گیری هم باشد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "reaktionsschnell",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Adjective",
+      "lexicalForms": [{ "partOfSpeech": "Adjective", "isPrimary": true }],
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "user-experience"],
+      "meanings": [
+        { "language": "en", "text": "responsive; quick to react" },
+        { "language": "fa", "text": "سریع‌الپاسخ" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Benutzeroberfläche wirkt deutlich reaktionsschneller als in der vorherigen Version.",
+          "translations": [
+            { "language": "en", "text": "The user interface feels much more responsive than in the previous version." },
+            { "language": "fa", "text": "رابط کاربری نسبت به نسخه قبلی خیلی سریع‌الپاسخ‌تر به نظر می‌رسد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "ressourcenschonend",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Adjective",
+      "lexicalForms": [{ "partOfSpeech": "Adjective", "isPrimary": true }],
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "architecture"],
+      "meanings": [
+        { "language": "en", "text": "resource-efficient" },
+        { "language": "fa", "text": "بهینه از نظر مصرف منابع" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der neue Importprozess ist deutlich ressourcenschonender als die alte Variante.",
+          "translations": [
+            { "language": "en", "text": "The new import process is much more resource-efficient than the old variant." },
+            { "language": "fa", "text": "فرایند جدید import نسبت به نسخه قبلی از نظر مصرف منابع بسیار بهینه‌تر است." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Latenz",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Latenzen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Latenzen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["performance", "network"],
+      "meanings": [
+        { "language": "en", "text": "latency" },
+        { "language": "fa", "text": "تأخیر" }
+      ],
+      "examples": [
+        {
+          "baseText": "Bei hoher Latenz fühlt sich selbst eine leichte Aktion träge an.",
+          "translations": [
+            { "language": "en", "text": "With high latency, even a simple action feels sluggish." },
+            { "language": "fa", "text": "با تأخیر زیاد، حتی یک عمل ساده هم کند به نظر می‌رسد." }
+          ]
+        }
+      ]
+    }
+  ]
+}

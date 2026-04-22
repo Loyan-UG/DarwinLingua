@@ -1,4 +1,3 @@
-using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
@@ -9,8 +8,7 @@ namespace DarwinLingua.Web.Controllers;
 
 [Route("browse")]
 public sealed class BrowseController(
-    ITopicQueryService topicQueryService,
-    IWordQueryService wordQueryService,
+    IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor) : Controller
 {
     private const int PageSize = 24;
@@ -20,7 +18,7 @@ public sealed class BrowseController(
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        IReadOnlyList<TopicListItemModel> topics = await topicQueryService
+        IReadOnlyList<TopicListItemModel> topics = await catalogApiClient
             .GetTopicsAsync(profile.UiLanguageCode, cancellationToken);
 
         BrowseIndexViewModel viewModel = new(
@@ -42,7 +40,7 @@ public sealed class BrowseController(
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        IReadOnlyList<WordListItemModel> words = await wordQueryService
+        IReadOnlyList<WordListItemModel> words = await catalogApiClient
             .GetWordsByTopicPageAsync(id, profile.PreferredMeaningLanguage1, skip, PageSize + 1, cancellationToken);
 
         WordBrowsePageViewModel viewModel = new(
@@ -74,7 +72,7 @@ public sealed class BrowseController(
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        IReadOnlyList<WordListItemModel> words = await wordQueryService
+        IReadOnlyList<WordListItemModel> words = await catalogApiClient
             .GetWordsByCefrPageAsync(id, profile.PreferredMeaningLanguage1, skip, PageSize + 1, cancellationToken);
 
         WordBrowsePageViewModel viewModel = new(

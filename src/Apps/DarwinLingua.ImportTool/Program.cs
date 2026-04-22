@@ -1,3 +1,4 @@
+using System.Text.Json;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
@@ -18,44 +19,34 @@ using Microsoft.Extensions.Logging;
 
 namespace DarwinLingua.ImportTool;
 
-/// <summary>
-/// Bootstraps the Darwin Lingua import tool host.
-/// </summary>
 internal static class Program
 {
     private const string DefaultContentRoot = @"D:\_Projects\DarwinLingua.Content";
     private const string SeedDatabaseRelativePath = @"src\Apps\DarwinDeutsch.Maui\Resources\Raw\darwin-lingua.seed.db";
+    private const string WebApiSettingsRelativePath = @"src\Apps\DarwinLingua.WebApi\appsettings.Development.json";
+    private const string SharedCatalogConnectionStringEnvironmentVariable = "DARWINLINGUA_SHARED_CATALOG_ADMIN";
 
-    /// <summary>
-    /// Creates the import host and validates the current dependency wiring.
-    /// </summary>
-    /// <param name="args">The command-line arguments passed to the process.</param>
-    /// <returns>A task that completes when the host bootstrap finishes.</returns>
     private static async Task Main(string[] args)
     {
         ArgumentNullException.ThrowIfNull(args);
 
         try
         {
-            string databasePath = ResolveSeedDatabasePath();
+            ImportExecutionOptions executionOptions = ResolveExecutionOptions(args);
 
             HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
             ConfigureLogging(builder);
-            RegisterModules(builder.Services, databasePath);
+            RegisterModules(builder.Services, executionOptions);
 
             using IHost host = builder.Build();
 
             IDatabaseInitializer databaseInitializer = host.Services.GetRequiredService<IDatabaseInitializer>();
             await databaseInitializer.InitializeAsync(CancellationToken.None).ConfigureAwait(false);
 
-            Console.WriteLine("Darwin Lingua Import Tool");
-            Console.WriteLine($"Seed database: {databasePath}");
-            Console.WriteLine("Note: this tool updates the packaged seed database. New app installs copy this seed on first launch.");
-            Console.WriteLine("Already-installed apps keep their existing local database until the app is reinstalled or its app data is cleared.");
-            Console.WriteLine();
+            PrintBanner(executionOptions);
 
-            ImportSessionInput sessionInput = ResolveSessionInput(args);
+            ImportSessionInput sessionInput = ResolveSessionInput(executionOptions.PathArguments);
             if (sessionInput.IsInteractive)
             {
                 sessionInput = RunInteractiveSession(sessionInput);
@@ -73,7 +64,7 @@ internal static class Program
             Console.WriteLine($"JSON files found: {sessionInput.JsonFilePaths.Count}");
             Console.WriteLine();
 
-            if (!ConfirmImport())
+            if (!executionOptions.SkipConfirmation && !ConfirmImport())
             {
                 Console.WriteLine("Import cancelled.");
                 await host.StopAsync().ConfigureAwait(false);
@@ -90,16 +81,12 @@ internal static class Program
 
             await host.StopAsync().ConfigureAwait(false);
         }
-        catch (Exception exception) when (exception is DirectoryNotFoundException or IOException or UnauthorizedAccessException)
+        catch (Exception exception) when (exception is DirectoryNotFoundException or IOException or UnauthorizedAccessException or InvalidOperationException)
         {
             Console.Error.WriteLine($"Import failed: {exception.Message}");
         }
     }
 
-    /// <summary>
-    /// Configures logging for the import tool host.
-    /// </summary>
-    /// <param name="builder">The host builder being configured.</param>
     private static void ConfigureLogging(HostApplicationBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
@@ -116,18 +103,21 @@ internal static class Program
         builder.Logging.AddFilter("DarwinLingua.ImportTool", LogLevel.Information);
     }
 
-    /// <summary>
-    /// Registers the current application and infrastructure modules used by the import tool.
-    /// </summary>
-    /// <param name="services">The service collection being configured.</param>
-    /// <param name="databasePath">The SQLite database path targeted by the import tool.</param>
-    private static void RegisterModules(IServiceCollection services, string databasePath)
+    private static void RegisterModules(IServiceCollection services, ImportExecutionOptions executionOptions)
     {
         ArgumentNullException.ThrowIfNull(services);
-        ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
+        ArgumentNullException.ThrowIfNull(executionOptions);
+
+        if (executionOptions.Target == ImportTarget.Seed)
+        {
+            services.AddDarwinLinguaInfrastructure(options => options.DatabasePath = executionOptions.ConnectionOrPath);
+        }
+        else
+        {
+            services.AddDarwinLinguaInfrastructureForPostgres(executionOptions.ConnectionOrPath);
+        }
 
         services
-            .AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath)
             .AddCatalogApplication()
             .AddCatalogInfrastructure()
             .AddContentOpsApplication()
@@ -140,6 +130,67 @@ internal static class Program
             .AddPracticeInfrastructure();
     }
 
+    private static ImportExecutionOptions ResolveExecutionOptions(string[] args)
+    {
+        ImportTarget target = ImportTarget.Seed;
+        string? explicitConnectionString = null;
+        bool skipConfirmation = false;
+        List<string> pathArguments = [];
+
+        for (int index = 0; index < args.Length; index++)
+        {
+            string argument = args[index];
+
+            if (string.Equals(argument, "--target", StringComparison.OrdinalIgnoreCase))
+            {
+                index++;
+                if (index >= args.Length)
+                {
+                    throw new InvalidOperationException("The --target option requires a value of 'seed' or 'shared'.");
+                }
+
+                target = ParseTarget(args[index]);
+                continue;
+            }
+
+            if (string.Equals(argument, "--connection", StringComparison.OrdinalIgnoreCase))
+            {
+                index++;
+                if (index >= args.Length)
+                {
+                    throw new InvalidOperationException("The --connection option requires a PostgreSQL connection string value.");
+                }
+
+                explicitConnectionString = args[index];
+                continue;
+            }
+
+            if (string.Equals(argument, "--yes", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(argument, "-y", StringComparison.OrdinalIgnoreCase))
+            {
+                skipConfirmation = true;
+                continue;
+            }
+
+            pathArguments.Add(argument);
+        }
+
+        return target switch
+        {
+            ImportTarget.Seed => new ImportExecutionOptions(
+                target,
+                ResolveSeedDatabasePath(),
+                skipConfirmation,
+                pathArguments),
+            ImportTarget.Shared => new ImportExecutionOptions(
+                target,
+                ResolveSharedCatalogConnectionString(explicitConnectionString),
+                skipConfirmation,
+                pathArguments),
+            _ => throw new InvalidOperationException($"Unsupported import target '{target}'."),
+        };
+    }
+
     private static string ResolveSeedDatabasePath()
     {
         string repositoryRoot = ResolveRepositoryRoot();
@@ -149,6 +200,46 @@ internal static class Program
 
         Directory.CreateDirectory(databaseDirectory);
         return databasePath;
+    }
+
+    private static string ResolveSharedCatalogConnectionString(string? explicitConnectionString)
+    {
+        if (!string.IsNullOrWhiteSpace(explicitConnectionString))
+        {
+            return explicitConnectionString.Trim();
+        }
+
+        string? environmentValue = Environment.GetEnvironmentVariable(SharedCatalogConnectionStringEnvironmentVariable);
+        if (!string.IsNullOrWhiteSpace(environmentValue))
+        {
+            return environmentValue.Trim();
+        }
+
+        string repositoryRoot = ResolveRepositoryRoot();
+        string settingsPath = Path.Combine(repositoryRoot, WebApiSettingsRelativePath);
+
+        if (!File.Exists(settingsPath))
+        {
+            throw new InvalidOperationException(
+                $"The shared catalog connection string could not be resolved because '{settingsPath}' was not found.");
+        }
+
+        using FileStream stream = File.OpenRead(settingsPath);
+        using JsonDocument document = JsonDocument.Parse(stream);
+
+        if (document.RootElement.TryGetProperty("ConnectionStrings", out JsonElement connectionStrings) &&
+            connectionStrings.TryGetProperty("SharedCatalogAdmin", out JsonElement sharedCatalogAdmin) &&
+            sharedCatalogAdmin.ValueKind == JsonValueKind.String)
+        {
+            string? value = sharedCatalogAdmin.GetString();
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                return value.Trim();
+            }
+        }
+
+        throw new InvalidOperationException(
+            $"The shared catalog connection string could not be resolved. Set {SharedCatalogConnectionStringEnvironmentVariable}, use --connection, or populate SharedCatalogAdmin in '{settingsPath}'.");
     }
 
     private static string ResolveRepositoryRoot()
@@ -166,12 +257,12 @@ internal static class Program
             currentDirectory = currentDirectory.Parent;
         }
 
-        throw new DirectoryNotFoundException("Unable to resolve the repository root for the packaged seed database.");
+        throw new DirectoryNotFoundException("Unable to resolve the repository root.");
     }
 
-    private static ImportSessionInput ResolveSessionInput(string[] args)
+    private static ImportSessionInput ResolveSessionInput(IReadOnlyList<string> pathArguments)
     {
-        if (args.Length == 0)
+        if (pathArguments.Count == 0)
         {
             return new ImportSessionInput(
                 true,
@@ -180,7 +271,12 @@ internal static class Program
                 []);
         }
 
-        string candidatePath = Path.GetFullPath(args[0]);
+        if (pathArguments.Count > 1)
+        {
+            throw new InvalidOperationException("Only one file or directory path can be provided.");
+        }
+
+        string candidatePath = Path.GetFullPath(pathArguments[0]);
 
         if (File.Exists(candidatePath))
         {
@@ -324,6 +420,26 @@ internal static class Program
         return summary;
     }
 
+    private static void PrintBanner(ImportExecutionOptions executionOptions)
+    {
+        Console.WriteLine("Darwin Lingua Import Tool");
+        Console.WriteLine($"Target: {executionOptions.Target}");
+
+        if (executionOptions.Target == ImportTarget.Seed)
+        {
+            Console.WriteLine($"Seed database: {executionOptions.ConnectionOrPath}");
+            Console.WriteLine("Note: this target updates the packaged MAUI seed database.");
+            Console.WriteLine("New app installs copy this seed on first launch.");
+        }
+        else
+        {
+            Console.WriteLine("Target database: shared PostgreSQL catalog");
+            Console.WriteLine("Note: this target updates the shared server-side content database used by WebApi.");
+        }
+
+        Console.WriteLine();
+    }
+
     private static void PrintSummary(BatchImportSummary summary)
     {
         ArgumentNullException.ThrowIfNull(summary);
@@ -347,6 +463,18 @@ internal static class Program
                 Console.WriteLine($"- {failedFileSummary}");
             }
         }
+    }
+
+    private static ImportTarget ParseTarget(string value)
+    {
+        string normalized = value.Trim().ToLowerInvariant();
+
+        return normalized switch
+        {
+            "seed" => ImportTarget.Seed,
+            "shared" => ImportTarget.Shared,
+            _ => throw new InvalidOperationException("The --target value must be 'seed' or 'shared'."),
+        };
     }
 
     private sealed record ImportSessionInput(
@@ -374,5 +502,17 @@ internal static class Program
         public int WarningCount { get; set; }
 
         public List<string> FailedFileSummaries { get; } = [];
+    }
+
+    private sealed record ImportExecutionOptions(
+        ImportTarget Target,
+        string ConnectionOrPath,
+        bool SkipConfirmation,
+        IReadOnlyList<string> PathArguments);
+
+    private enum ImportTarget
+    {
+        Seed,
+        Shared
     }
 }

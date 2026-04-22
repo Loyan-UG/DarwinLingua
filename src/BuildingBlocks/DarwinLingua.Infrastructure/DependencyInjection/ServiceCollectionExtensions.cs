@@ -45,6 +45,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton(new SqliteDatabaseOptions
         {
             DatabasePath = databasePath,
+            SeedDatabasePath = string.IsNullOrWhiteSpace(sqliteDatabaseOptions.SeedDatabasePath)
+                ? null
+                : Path.GetFullPath(sqliteDatabaseOptions.SeedDatabasePath),
         });
 
         services.AddDbContextFactory<DarwinLinguaDbContext>(options =>

@@ -1,0 +1,499 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-work-erp-b1-c1-20260422-10",
+  "packageName": "German Work ERP B1-C1 Batch 010",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Kommissionierung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Kommissionierungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Kommissionierungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "erp"],
+      "meanings": [
+        { "language": "en", "text": "order picking" },
+        { "language": "fa", "text": "جمع‌آوری سفارش" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Kommissionierung beginnt automatisch nach der Freigabe des Auftrags.",
+          "translations": [
+            { "language": "en", "text": "Order picking starts automatically after the release of the order." },
+            { "language": "fa", "text": "جمع‌آوری سفارش پس از تأیید سفارش به‌صورت خودکار شروع می‌شود." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Umlagerung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Umlagerungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Umlagerungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "erp"],
+      "meanings": [
+        { "language": "en", "text": "stock transfer; relocation" },
+        { "language": "fa", "text": "انتقال انبار" }
+      ],
+      "examples": [
+        {
+          "baseText": "Für die Inventur wurden alle offenen Umlagerungen gesperrt.",
+          "translations": [
+            { "language": "en", "text": "For the inventory count, all open stock transfers were blocked." },
+            { "language": "fa", "text": "برای انبارگردانی، همه انتقال‌های باز انبار مسدود شدند." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Lagerbewegung",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Lagerbewegungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Lagerbewegungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "reporting"],
+      "meanings": [
+        { "language": "en", "text": "inventory movement" },
+        { "language": "fa", "text": "گردش انبار" }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Bericht sehen wir alle Lagerbewegungen des heutigen Tages.",
+          "translations": [
+            { "language": "en", "text": "In the report, we can see all inventory movements of today." },
+            { "language": "fa", "text": "در گزارش، همه گردش‌های انبار امروز را می‌بینیم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Bestandskorrektur",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Bestandskorrekturen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Bestandskorrekturen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["warehouse", "audit"],
+      "meanings": [
+        { "language": "en", "text": "inventory adjustment" },
+        { "language": "fa", "text": "اصلاح موجودی" }
+      ],
+      "examples": [
+        {
+          "baseText": "Jede Bestandskorrektur braucht einen dokumentierten Grund.",
+          "translations": [
+            { "language": "en", "text": "Each inventory adjustment needs a documented reason." },
+            { "language": "fa", "text": "هر اصلاح موجودی به یک دلیل مستند نیاز دارد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Chargennummer",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Chargennummern", "isPrimary": true }],
+      "article": "die",
+      "plural": "Chargennummern",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["warehouse", "quality"],
+      "meanings": [
+        { "language": "en", "text": "batch number" },
+        { "language": "fa", "text": "شماره بچ" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Chargennummer muss auf dem Lieferschein sichtbar sein.",
+          "translations": [
+            { "language": "en", "text": "The batch number must be visible on the delivery note." },
+            { "language": "fa", "text": "شماره بچ باید روی برگه تحویل قابل مشاهده باشد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Seriennummer",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Seriennummern", "isPrimary": true }],
+      "article": "die",
+      "plural": "Seriennummern",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "support"],
+      "meanings": [
+        { "language": "en", "text": "serial number" },
+        { "language": "fa", "text": "شماره سریال" }
+      ],
+      "examples": [
+        {
+          "baseText": "Für den Supportfall brauchen wir die Seriennummer des Geräts.",
+          "translations": [
+            { "language": "en", "text": "For the support case, we need the serial number of the device." },
+            { "language": "fa", "text": "برای مورد پشتیبانی به شماره سریال دستگاه نیاز داریم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Nachschub",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "plural": "Nachschübe", "isPrimary": true }],
+      "article": "der",
+      "plural": "Nachschübe",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["warehouse", "procurement"],
+      "meanings": [
+        { "language": "en", "text": "replenishment" },
+        { "language": "fa", "text": "تأمین مجدد" }
+      ],
+      "examples": [
+        {
+          "baseText": "Für den schnellen Artikel ist neuer Nachschub bereits eingeplant.",
+          "translations": [
+            { "language": "en", "text": "For the fast-moving item, new replenishment has already been planned." },
+            { "language": "fa", "text": "برای کالای پرفروش، تأمین مجدد از قبل برنامه‌ریزی شده است." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Inventurdifferenz",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Inventurdifferenzen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Inventurdifferenzen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["warehouse", "audit"],
+      "meanings": [
+        { "language": "en", "text": "inventory discrepancy" },
+        { "language": "fa", "text": "اختلاف انبارگردانی" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Inventurdifferenz muss vor dem Monatsabschluss geklärt werden.",
+          "translations": [
+            { "language": "en", "text": "The inventory discrepancy must be clarified before month-end closing." },
+            { "language": "fa", "text": "اختلاف انبارگردانی باید قبل از بستن ماه روشن شود." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "scannen",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "scannen", "isPrimary": true }],
+      "infinitive": "scannen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["warehouse", "software"],
+      "meanings": [
+        { "language": "en", "text": "to scan" },
+        { "language": "fa", "text": "اسکن کردن" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Mitarbeitenden scannen jeden Artikel direkt beim Warenausgang.",
+          "translations": [
+            { "language": "en", "text": "The employees scan each item directly at goods issue." },
+            { "language": "fa", "text": "کارمندان هر کالا را مستقیماً هنگام خروج کالا اسکن می‌کنند." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "verpacken",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "verpacken", "isPrimary": true }],
+      "infinitive": "verpacken",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["warehouse", "delivery"],
+      "meanings": [
+        { "language": "en", "text": "to pack; to package" },
+        { "language": "fa", "text": "بسته‌بندی کردن" }
+      ],
+      "examples": [
+        {
+          "baseText": "Empfindliche Geräte müssen besonders sorgfältig verpackt werden.",
+          "translations": [
+            { "language": "en", "text": "Sensitive devices must be packed particularly carefully." },
+            { "language": "fa", "text": "دستگاه‌های حساس باید با دقت ویژه بسته‌بندی شوند." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "umlagern",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "umlagern", "isPrimary": true }],
+      "infinitive": "umlagern",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "erp"],
+      "meanings": [
+        { "language": "en", "text": "to transfer stock; to relocate" },
+        { "language": "fa", "text": "منتقل کردن در انبار" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir müssen die Ware heute noch in das Hauptlager umlagern.",
+          "translations": [
+            { "language": "en", "text": "We still need to transfer the goods to the main warehouse today." },
+            { "language": "fa", "text": "باید کالا را امروز به انبار اصلی منتقل کنیم." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "erfassen",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Verb",
+      "lexicalForms": [{ "partOfSpeech": "Verb", "infinitive": "erfassen", "isPrimary": true }],
+      "infinitive": "erfassen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["erp", "data-entry"],
+      "meanings": [
+        { "language": "en", "text": "to record; to capture" },
+        { "language": "fa", "text": "ثبت کردن، وارد کردن" }
+      ],
+      "examples": [
+        {
+          "baseText": "Neue Lagerorte lassen sich direkt im System erfassen.",
+          "translations": [
+            { "language": "en", "text": "New storage locations can be recorded directly in the system." },
+            { "language": "fa", "text": "محل‌های جدید انبار را می‌توان مستقیماً در سیستم ثبت کرد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "nachvollziehbar",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "lexicalForms": [{ "partOfSpeech": "Adjective", "isPrimary": true }],
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["technical"],
+      "contextLabels": ["audit", "warehouse"],
+      "meanings": [
+        { "language": "en", "text": "traceable; understandable" },
+        { "language": "fa", "text": "قابل پیگیری، قابل فهم" }
+      ],
+      "examples": [
+        {
+          "baseText": "Jede Lagerbewegung muss im Audit vollständig nachvollziehbar sein.",
+          "translations": [
+            { "language": "en", "text": "Every inventory movement must be fully traceable in the audit." },
+            { "language": "fa", "text": "هر گردش انبار باید در حسابرسی کاملاً قابل پیگیری باشد." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "beschädigt",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Adjective",
+      "lexicalForms": [{ "partOfSpeech": "Adjective", "isPrimary": true }],
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["warehouse", "customer-support"],
+      "meanings": [
+        { "language": "en", "text": "damaged" },
+        { "language": "fa", "text": "آسیب‌دیده" }
+      ],
+      "examples": [
+        {
+          "baseText": "Beschädigte Ware wird automatisch in eine Sperrzone gebucht.",
+          "translations": [
+            { "language": "en", "text": "Damaged goods are automatically posted to a blocked zone." },
+            { "language": "fa", "text": "کالای آسیب‌دیده به‌صورت خودکار در منطقه مسدود ثبت می‌شود." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "versandbereit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "lexicalForms": [{ "partOfSpeech": "Adjective", "isPrimary": true }],
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "delivery"],
+      "meanings": [
+        { "language": "en", "text": "ready for shipment" },
+        { "language": "fa", "text": "آماده ارسال" }
+      ],
+      "examples": [
+        {
+          "baseText": "Sobald alle Positionen geprüft sind, ist der Auftrag versandbereit.",
+          "translations": [
+            { "language": "en", "text": "As soon as all line items are checked, the order is ready for shipment." },
+            { "language": "fa", "text": "به محض اینکه همه آیتم‌ها بررسی شوند، سفارش آماده ارسال است." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Packliste",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Packlisten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Packlisten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["warehouse", "delivery"],
+      "meanings": [
+        { "language": "en", "text": "packing list" },
+        { "language": "fa", "text": "لیست بسته‌بندی" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Packliste wird zusammen mit dem Lieferschein gedruckt.",
+          "translations": [
+            { "language": "en", "text": "The packing list is printed together with the delivery note." },
+            { "language": "fa", "text": "لیست بسته‌بندی همراه با برگه تحویل چاپ می‌شود." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Versandetikett",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "plural": "Versandetiketten", "isPrimary": true }],
+      "article": "das",
+      "plural": "Versandetiketten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["common"],
+      "contextLabels": ["warehouse", "delivery"],
+      "meanings": [
+        { "language": "en", "text": "shipping label" },
+        { "language": "fa", "text": "برچسب ارسال" }
+      ],
+      "examples": [
+        {
+          "baseText": "Ohne Versandetikett kann das Paket nicht abgeholt werden.",
+          "translations": [
+            { "language": "en", "text": "Without a shipping label, the parcel cannot be collected." },
+            { "language": "fa", "text": "بدون برچسب ارسال، بسته قابل تحویل به پیک نیست." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Lagerzone",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Lagerzonen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Lagerzonen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "erp"],
+      "meanings": [
+        { "language": "en", "text": "warehouse zone" },
+        { "language": "fa", "text": "زون انبار" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Lagerzone für Gefahrgut ist separat abgesichert.",
+          "translations": [
+            { "language": "en", "text": "The warehouse zone for hazardous goods is secured separately." },
+            { "language": "fa", "text": "زون انبار برای کالای خطرناک جداگانه ایمن‌سازی شده است." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Entnahmeliste",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "plural": "Entnahmelisten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Entnahmelisten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "erp"],
+      "meanings": [
+        { "language": "en", "text": "pick list" },
+        { "language": "fa", "text": "لیست برداشت" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Entnahmeliste wird auf dem Scanner des Lagerteams angezeigt.",
+          "translations": [
+            { "language": "en", "text": "The pick list is shown on the warehouse team's scanner." },
+            { "language": "fa", "text": "لیست برداشت روی اسکنر تیم انبار نمایش داده می‌شود." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "Mindestbestand",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "plural": "Mindestbestände", "isPrimary": true }],
+      "article": "der",
+      "plural": "Mindestbestände",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["warehouse", "procurement"],
+      "meanings": [
+        { "language": "en", "text": "minimum stock level" },
+        { "language": "fa", "text": "حداقل موجودی" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wenn der Mindestbestand unterschritten wird, erstellt das System einen Vorschlag.",
+          "translations": [
+            { "language": "en", "text": "When the minimum stock level is undershot, the system creates a proposal." },
+            { "language": "fa", "text": "وقتی حداقل موجودی نقض شود، سیستم یک پیشنهاد ایجاد می‌کند." }
+          ]
+        }
+      ]
+    }
+  ]
+}
