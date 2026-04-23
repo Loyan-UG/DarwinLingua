@@ -11,6 +11,15 @@ public interface IWebCatalogApiClient
 {
     Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<WordCollectionListItemModel>> GetCollectionsAsync(
+        string meaningLanguageCode,
+        CancellationToken cancellationToken);
+
+    Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(
+        string slug,
+        string meaningLanguageCode,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -58,6 +67,21 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
     public Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<TopicListItemModel>>(
             BuildPath("/api/catalog/topics", [new("uiLanguageCode", uiLanguageCode)]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<WordCollectionListItemModel>> GetCollectionsAsync(
+        string meaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<WordCollectionListItemModel>>(
+            BuildPath("/api/catalog/collections", [new("meaningLanguageCode", meaningLanguageCode)]),
+            cancellationToken);
+
+    public Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(
+        string slug,
+        string meaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<WordCollectionDetailModel>(
+            BuildPath($"/api/catalog/collections/{Uri.EscapeDataString(slug)}", [new("meaningLanguageCode", meaningLanguageCode)]),
             cancellationToken);
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(

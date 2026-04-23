@@ -99,6 +99,16 @@ public sealed class DarwinLinguaDbContext : DbContext
     public DbSet<WordRelation> WordRelations => Set<WordRelation>();
 
     /// <summary>
+    /// Gets curated word collections such as study lists and book playlists.
+    /// </summary>
+    public DbSet<WordCollection> WordCollections => Set<WordCollection>();
+
+    /// <summary>
+    /// Gets the words linked into curated collections.
+    /// </summary>
+    public DbSet<WordCollectionEntry> WordCollectionEntries => Set<WordCollectionEntry>();
+
+    /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
     public DbSet<UserLearningProfile> UserLearningProfiles => Set<UserLearningProfile>();
@@ -149,6 +159,8 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new WordCollocationConfiguration());
         modelBuilder.ApplyConfiguration(new WordFamilyMemberConfiguration());
         modelBuilder.ApplyConfiguration(new WordRelationConfiguration());
+        modelBuilder.ApplyConfiguration(new WordCollectionConfiguration());
+        modelBuilder.ApplyConfiguration(new WordCollectionEntryConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

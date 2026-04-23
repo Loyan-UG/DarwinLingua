@@ -87,13 +87,49 @@ internal sealed class ContentImportRepository : IContentImportRepository
             .ConfigureAwait(false);
     }
 
+    public async Task<IReadOnlyList<WordEntry>> GetActiveWordsByNormalizedLemmasAsync(
+        IReadOnlyCollection<string> normalizedLemmas,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(normalizedLemmas);
+
+        if (normalizedLemmas.Count == 0)
+        {
+            return [];
+        }
+
+        string[] normalizedLemmaArray = normalizedLemmas
+            .Where(value => !string.IsNullOrWhiteSpace(value))
+            .Select(value => value.Trim().ToLowerInvariant())
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        if (normalizedLemmaArray.Length == 0)
+        {
+            return [];
+        }
+
+        await using DarwinLinguaDbContext dbContext = await _dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return await dbContext.WordEntries
+            .AsNoTracking()
+            .Where(word => word.PublicationStatus == SharedKernel.Content.PublicationStatus.Active)
+            .Where(word => normalizedLemmaArray.Contains(word.NormalizedLemma))
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+    }
+
     public async Task PersistImportAsync(
         ContentPackage contentPackage,
         IReadOnlyList<WordEntry> importedWords,
+        IReadOnlyList<WordCollection> importedCollections,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(contentPackage);
         ArgumentNullException.ThrowIfNull(importedWords);
+        ArgumentNullException.ThrowIfNull(importedCollections);
 
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -108,6 +144,44 @@ internal sealed class ContentImportRepository : IContentImportRepository
         dbContext.Add(contentPackage);
 
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        if (importedCollections.Count > 0)
+        {
+            List<WordCollection> existingCollections = await dbContext.WordCollections
+                .Include(collection => collection.Entries)
+                .Where(collection => importedCollections.Select(item => item.Slug).Contains(collection.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            foreach (WordCollection importedCollection in importedCollections)
+            {
+                WordCollection? existingCollection = existingCollections
+                    .SingleOrDefault(collection => string.Equals(collection.Slug, importedCollection.Slug, StringComparison.OrdinalIgnoreCase));
+
+                if (existingCollection is null)
+                {
+                    dbContext.WordCollections.Add(importedCollection);
+                    continue;
+                }
+
+                existingCollection.UpdateMetadata(
+                    importedCollection.Name,
+                    importedCollection.Description,
+                    importedCollection.ImageUrl,
+                    importedCollection.PublicationStatus,
+                    importedCollection.SortOrder,
+                    importedCollection.UpdatedAtUtc);
+
+                existingCollection.ReplaceEntries(
+                    importedCollection.Entries
+                        .Select(entry => (entry.WordEntryId, entry.SortOrder))
+                        .ToArray(),
+                    importedCollection.UpdatedAtUtc);
+            }
+
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
         await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
     }
 }

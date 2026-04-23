@@ -114,6 +114,8 @@ public partial class TopicsPage : ContentPage
         CefrQuickFilterView.Caption = AppStrings.HomeCefrBrowseLabel;
         SearchActionBlockView.Caption = AppStrings.HomeSearchLabel;
         SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;
+        CollectionsActionBlockView.Caption = AppStrings.HomeCollectionsLabel;
+        CollectionsActionBlockView.ButtonText = AppStrings.HomeCollectionsButton;
         FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
         FavoritesActionBlockView.ButtonText = AppStrings.HomeFavoritesButton;
         EmptyStateLabel.Text = AppStrings.TopicsPageEmpty;
@@ -272,6 +274,17 @@ public partial class TopicsPage : ContentPage
         try
         {
             await Shell.Current.GoToAsync("//favorites").ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    private async void OnCollectionsActionInvoked(object? sender, EventArgs e)
+    {
+        try
+        {
+            await Shell.Current.GoToAsync(nameof(CollectionsPage)).ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {

@@ -22,7 +22,9 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<ITopicRepository, TopicRepository>();
         services.AddScoped<IWordEntryRepository, WordEntryRepository>();
+        services.AddScoped<IWordCollectionRepository, WordCollectionRepository>();
         services.AddSingleton<IDatabaseSeeder, CatalogReferenceDataSeeder>();
+        services.AddSingleton<IDatabaseSeeder, CatalogWordCollectionSeeder>();
 
         return services;
     }

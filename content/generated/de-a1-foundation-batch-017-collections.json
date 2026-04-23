@@ -1,0 +1,44 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-a1-foundation-20260423-17-collections",
+  "packageName": "German A1 Foundation Batch 017 Collection Repair",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Brot",
+      "language": "de",
+      "cefrLevel": "A1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{"partOfSpeech":"Noun","article":"das","plural":"Brote","isPrimary":true}],
+      "article": "das",
+      "plural": "Brote",
+      "topics": ["everyday-life", "shopping"],
+      "usageLabels": ["daily-life"],
+      "contextLabels": ["food"],
+      "meanings": [{"language":"en","text":"bread"},{"language":"fa","text":"نان"}],
+      "examples": [
+        {"baseText":"Ich kaufe Brot.","translations":[{"language":"en","text":"I buy bread."},{"language":"fa","text":"من نان می‌خرم."}]},
+        {"baseText":"Das Brot ist frisch.","translations":[{"language":"en","text":"The bread is fresh."},{"language":"fa","text":"نان تازه است."}]}
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "a1-home-kitchen-and-food",
+      "name": "A1 Home, Kitchen, and Food",
+      "description": "A1 words for rooms, kitchen items, meals, groceries, and simple office break conversations.",
+      "image": "collections/a1-home-kitchen-and-food.png",
+      "sortOrder": 150,
+      "wordKeys": ["Dusche","Bett","Wand","Boden","Decke","Steckdose","Glas","Teller","Gabel","Messer","Löffel","Milch","Saft","Brot","Butter","Käse","Ei","Suppe","Salat","Reis","Nudel","Fleisch","Fisch","Gemüse","Obst","Apfel","Banane","Orange","Kartoffel","Tomate"]
+    },
+    {
+      "slug": "a1-health-appointments-and-body",
+      "name": "A1 Health, Appointments, and Body",
+      "description": "A1 words for doctor visits, pharmacy situations, body parts, simple symptoms, and workplace sick-day conversations.",
+      "image": "collections/a1-health-appointments-and-body.png",
+      "sortOrder": 160,
+      "wordKeys": ["Arzt","Ärztin","Apotheke","Medikament","Tablette","Rezept","Praxis","Krankenhaus","Schmerz","Kopf","Auge","Ohr","Nase","Mund","Zahn","Hand","Arm","Bein","Fuß","Rücken","Bauch","Fieber","Husten","Schnupfen","müde","krank","gesund","untersuchen","fühlen","fallen"]
+    }
+  ]
+}

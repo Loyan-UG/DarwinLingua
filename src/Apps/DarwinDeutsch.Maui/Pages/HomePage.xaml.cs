@@ -96,6 +96,8 @@ public partial class HomePage : ContentPage
         SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;
         BrowseTopicsActionBlockView.Caption = AppStrings.HomeBrowseTopicsLabel;
         BrowseTopicsActionBlockView.ButtonText = AppStrings.HomeBrowseTopicsButton;
+        CollectionsActionBlockView.Caption = AppStrings.HomeCollectionsLabel;
+        CollectionsActionBlockView.ButtonText = AppStrings.HomeCollectionsButton;
         FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
         FavoritesActionBlockView.ButtonText = AppStrings.HomeFavoritesButton;
         CefrNavigationStatusLabel.Text = AppStrings.CommonStateLoading;
@@ -195,6 +197,11 @@ public partial class HomePage : ContentPage
     private async void OnBrowseTopicsActionInvoked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//browse").ConfigureAwait(true);
+    }
+
+    private async void OnCollectionsActionInvoked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(CollectionsPage)).ConfigureAwait(true);
     }
 
     /// <summary>

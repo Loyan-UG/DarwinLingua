@@ -221,19 +221,26 @@ function configureWordSpeech(detailElement) {
         return;
     }
 
-    const speakButtons = detailElement.querySelectorAll("[data-speak-text]");
-    speakButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            speakText(button.getAttribute("data-speak-text"), button.getAttribute("data-speak-lang") || "de-DE");
-        });
-    });
-
     const lemma = detailElement.getAttribute("data-word-lemma");
     if (lemma && canUseSpeechSynthesis()) {
         window.setTimeout(() => {
             speakText(lemma, "de-DE");
         }, 1000);
     }
+}
+
+function configureGlobalSpeech(rootElement) {
+    const root = rootElement || document;
+    root.querySelectorAll("[data-speak-text]").forEach((button) => {
+        if (button.dataset.speechBound === "true") {
+            return;
+        }
+
+        button.dataset.speechBound = "true";
+        button.addEventListener("click", () => {
+            speakText(button.getAttribute("data-speak-text"), button.getAttribute("data-speak-lang") || "de-DE");
+        });
+    });
 }
 
 window.addEventListener("beforeinstallprompt", (event) => {
@@ -331,9 +338,15 @@ document.addEventListener("DOMContentLoaded", () => {
         captureWordNavigationContext(trigger);
     });
 
+    document.body.addEventListener("htmx:afterSwap", (event) => {
+        configureGlobalSpeech(event.target);
+    });
+
     const wordDetailPage = document.querySelector("[data-word-detail-page]");
     if (wordDetailPage) {
         configureWordNavigation(wordDetailPage);
         configureWordSpeech(wordDetailPage);
     }
+
+    configureGlobalSpeech(document);
 });

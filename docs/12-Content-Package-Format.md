@@ -49,6 +49,7 @@ Each package must contain:
 - package metadata
 - default meaning-language metadata
 - an array of vocabulary entries
+- an optional array of curated collections
 
 ### 3.1 Required Package Fields
 
@@ -61,6 +62,7 @@ Each package must contain:
 
 - `source`
 - `defaultMeaningLanguages`
+- `collections`
 - `notes`
 
 ---
@@ -172,6 +174,56 @@ File naming should be readable and stable, but the real identity is the `package
 
 ---
 
+## 7.1 Collection Structure
+
+Packages may include an optional top-level `collections` array.
+
+Each collection may contain:
+
+- `slug` required
+- `name` required
+- `description` optional
+- `imageUrl` optional
+- `sortOrder` optional
+- `words` required
+
+Each `words` item may contain:
+
+- `word` required
+- `partOfSpeech` optional but strongly recommended
+- `cefrLevel` optional but recommended for ambiguous lemmas
+
+Rules:
+
+- `slug` must use lowercase kebab-case
+- collection slugs must be unique inside one package
+- each collection must contain at least one word reference
+- each word reference should resolve to exactly one active word after the current package import is considered
+- if a lemma can map to more than one word, add `partOfSpeech` or `cefrLevel`
+- collection import is curation-oriented, so an existing collection may be updated predictably by `slug`
+
+Example:
+
+```json
+{
+  "collections": [
+    {
+      "slug": "book-a-unit-03",
+      "name": "Book A Unit 03",
+      "description": "Vocabulary for the third unit of Book A.",
+      "imageUrl": "/images/collections/book-a-unit-03.svg",
+      "sortOrder": 30,
+      "words": [
+        { "word": "Aufgabe", "partOfSpeech": "Noun", "cefrLevel": "B1" },
+        { "word": "Anforderung", "partOfSpeech": "Noun", "cefrLevel": "B2" }
+      ]
+    }
+  ]
+}
+```
+
+---
+
 ## 8. Root JSON Shape
 
 ```json
@@ -181,7 +233,8 @@ File naming should be readable and stable, but the real identity is the `package
   "packageName": "A1 Travel Starter Pack",
   "source": "Hybrid",
   "defaultMeaningLanguages": ["fa", "en"],
-  "entries": []
+  "entries": [],
+  "collections": []
 }
 ```
 
@@ -210,6 +263,8 @@ For new JSON packages, the recommended canonical shape is:
 - The package format must not silently coerce invalid values.
 - The package format is import-oriented, not edit-oriented.
 - Merge/update semantics are not part of the Phase 1 package contract.
+- Curated collection membership is the exception:
+  collections may be updated predictably by `slug` because they are ordered study artifacts, not lexical-source records.
 
 ---
 

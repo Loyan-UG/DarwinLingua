@@ -273,6 +273,16 @@ public static class AppStrings
     public static string HomeBrowseTopicsButton => GetRequiredString(nameof(HomeBrowseTopicsButton));
 
     /// <summary>
+    /// Gets the localized label for the collections quick action section.
+    /// </summary>
+    public static string HomeCollectionsLabel => GetRequiredString(nameof(HomeCollectionsLabel));
+
+    /// <summary>
+    /// Gets the localized caption for the collections quick action button.
+    /// </summary>
+    public static string HomeCollectionsButton => GetRequiredString(nameof(HomeCollectionsButton));
+
+    /// <summary>
     /// Gets the localized label for the favorites quick action section.
     /// </summary>
     public static string HomeFavoritesLabel => GetRequiredString(nameof(HomeFavoritesLabel));
@@ -351,6 +361,51 @@ public static class AppStrings
     /// Gets the localized error state for the topic-words page.
     /// </summary>
     public static string TopicWordsPageLoadError => GetRequiredString(nameof(TopicWordsPageLoadError));
+
+    /// <summary>
+    /// Gets the localized title for the collections page.
+    /// </summary>
+    public static string CollectionsPageTitle => GetRequiredString(nameof(CollectionsPageTitle));
+
+    /// <summary>
+    /// Gets the localized headline for the collections page.
+    /// </summary>
+    public static string CollectionsPageHeadline => GetRequiredString(nameof(CollectionsPageHeadline));
+
+    /// <summary>
+    /// Gets the localized description for the collections page.
+    /// </summary>
+    public static string CollectionsPageDescription => GetRequiredString(nameof(CollectionsPageDescription));
+
+    /// <summary>
+    /// Gets the localized empty-state message for the collections page.
+    /// </summary>
+    public static string CollectionsPageEmpty => GetRequiredString(nameof(CollectionsPageEmpty));
+
+    /// <summary>
+    /// Gets the localized summary format shown on collection cards.
+    /// </summary>
+    public static string CollectionsPageCardSummaryFormat => GetRequiredString(nameof(CollectionsPageCardSummaryFormat));
+
+    /// <summary>
+    /// Gets the localized title for the collection-words page.
+    /// </summary>
+    public static string CollectionsWordsPageTitle => GetRequiredString(nameof(CollectionsWordsPageTitle));
+
+    /// <summary>
+    /// Gets the localized description for the collection-words page.
+    /// </summary>
+    public static string CollectionsWordsPageDescription => GetRequiredString(nameof(CollectionsWordsPageDescription));
+
+    /// <summary>
+    /// Gets the localized empty-state message for the collection-words page.
+    /// </summary>
+    public static string CollectionsWordsPageEmpty => GetRequiredString(nameof(CollectionsWordsPageEmpty));
+
+    /// <summary>
+    /// Gets the localized error-state message for the collection-words page.
+    /// </summary>
+    public static string CollectionsWordsPageLoadError => GetRequiredString(nameof(CollectionsWordsPageLoadError));
 
     /// <summary>
     /// Gets the localized default title for the word-detail page.

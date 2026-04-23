@@ -83,6 +83,20 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
+    "/api/catalog/collections",
+    async (string meaningLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetCollectionsAsync(meaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/collections/{slug}",
+    async (string slug, string meaningLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetCollectionBySlugAsync(slug, meaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
     "/api/catalog/words/topic/{topicKey}",
     async (string topicKey, string meaningLanguageCode, int skip, int take, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
@@ -187,6 +201,30 @@ app.MapPost(
 
         return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
     });
+
+app.MapPost(
+    "/api/admin/content/catalog/stage",
+    async (AdminStageCatalogRequest request, ICatalogPackagePublisher packagePublisher, ServerContentDbContext dbContext, CancellationToken cancellationToken) =>
+        await ResolveMutationRequestAsync(
+                async () =>
+                {
+                    string clientProductKey = await ResolveClientProductKeyAsync(request.ClientProductKey, dbContext, cancellationToken)
+                        .ConfigureAwait(false);
+
+                    CatalogPackagePublicationResult result = await packagePublisher
+                        .StageDraftAsync(clientProductKey, cancellationToken)
+                        .ConfigureAwait(false);
+
+                    return new AdminStageCatalogResponse(
+                        true,
+                        result.ClientProductKey,
+                        result.PublicationBatchId,
+                        result.Version,
+                        result.PackageIds,
+                        []);
+                },
+                response => response.IsSuccess)
+            .ConfigureAwait(false));
 
 app.MapPost(
     "/api/admin/content/catalog/publish",
@@ -395,6 +433,41 @@ static async Task<IResult> ResolveMutationRequestAsync<T>(Func<Task<T>> resolver
             message = exception.Message,
         });
     }
+}
+
+static async Task<string> ResolveClientProductKeyAsync(
+    string? clientProductKey,
+    ServerContentDbContext dbContext,
+    CancellationToken cancellationToken)
+{
+    if (!string.IsNullOrWhiteSpace(clientProductKey))
+    {
+        string requestedClientProductKey = clientProductKey.Trim();
+        bool exists = await dbContext.ClientProducts
+            .AnyAsync(product => product.Key == requestedClientProductKey && product.IsActive, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (!exists)
+        {
+            throw new KeyNotFoundException($"No active client product was found for '{requestedClientProductKey}'.");
+        }
+
+        return requestedClientProductKey;
+    }
+
+    List<string> activeProductKeys = await dbContext.ClientProducts
+        .Where(product => product.IsActive)
+        .OrderBy(product => product.Key)
+        .Select(product => product.Key)
+        .ToListAsync(cancellationToken)
+        .ConfigureAwait(false);
+
+    return activeProductKeys.Count switch
+    {
+        1 => activeProductKeys[0],
+        0 => throw new InvalidOperationException("No active client product is configured."),
+        _ => throw new InvalidOperationException("A client product key is required when multiple active products are configured."),
+    };
 }
 
 public partial class Program;

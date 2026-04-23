@@ -1,0 +1,28 @@
+@model DarwinLingua.Web.Models.WordCollectionIndexPageViewModel
+@{
+    ViewData["Title"] = "Collections";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Collections</span>
+    <h1 class="headline-md">Curated study playlists</h1>
+    <p class="body-lg">
+        Use collections to group words by textbook, customer project, subject area, or a specific learning path.
+        Each collection can combine workplace, ERP, technical, and general German vocabulary in one focused list.
+    </p>
+    <p class="body-lg">Primary meaning language: <code>@Model.MeaningLanguageCode</code></p>
+</section>
+
+@if (Model.Collections.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No collections available", "Seed or import curated collections into the shared catalog to make them available here.")' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var collection in Model.Collections)
+        {
+            <partial name="~/Views/Shared/_WordCollectionCard.cshtml" model="collection" />
+        }
+    </section>
+}

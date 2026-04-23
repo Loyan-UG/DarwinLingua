@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             x:Class="DarwinDeutsch.Maui.Pages.CollectionWordsPage">
+    <Grid Padding="24"
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto,*"
+          RowSpacing="12">
+        <Label x:Name="HeadlineLabel"
+               Grid.Row="0"
+               Style="{DynamicResource Headline}"
+               SemanticProperties.HeadingLevel="Level1" />
+
+        <Label x:Name="DescriptionLabel"
+               Grid.Row="1"
+               Style="{DynamicResource Body}"
+               LineBreakMode="WordWrap" />
+
+        <controls:LoadingStateView x:Name="LoadingStateView"
+                                   Grid.Row="2"
+                                   LoadingMode="WordCardsSkeleton" />
+
+        <Label x:Name="EmptyStateLabel"
+               Grid.Row="3"
+               Style="{DynamicResource Body}"
+               IsVisible="False" />
+
+        <Label x:Name="ErrorStateLabel"
+               Grid.Row="4"
+               Style="{DynamicResource Body}"
+               IsVisible="False" />
+
+        <CollectionView x:Name="WordsCollectionView"
+                        Grid.Row="5"
+                        SelectionMode="Single"
+                        SelectionChanged="OnWordsSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <controls:WordListItemView Lemma="{Binding Lemma}"
+                                               PrimaryMeaning="{Binding PrimaryMeaning}"
+                                               MetadataLine="{Binding MetadataLine}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

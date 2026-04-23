@@ -189,6 +189,81 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.ToTable("TopicLocalizations", (string)null);
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordCollection", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(4000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(1024)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PublicationStatus")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Slug")
+                        .IsUnique();
+
+                    b.ToTable("WordCollections", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordCollectionEntry", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("WordCollectionId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("WordEntryId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WordEntryId");
+
+                    b.HasIndex("WordCollectionId", "SortOrder")
+                        .IsUnique();
+
+                    b.HasIndex("WordCollectionId", "WordEntryId")
+                        .IsUnique();
+
+                    b.ToTable("WordCollectionEntries", (string)null);
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordCollocation", b =>
                 {
                     b.Property<Guid>("Id")
@@ -462,7 +537,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.HasIndex("WordEntryId")
                         .IsUnique()
                         .HasDatabaseName("IX_WordLexicalForms_PrimaryPerWordEntry")
-                        .HasFilter("\"IsPrimary\" = 1");
+                        .HasFilter("\"IsPrimary\"");
 
                     b.HasIndex("WordEntryId", "PartOfSpeech")
                         .IsUnique();
@@ -991,6 +1066,23 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordCollectionEntry", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.WordCollection", null)
+                        .WithMany("Entries")
+                        .HasForeignKey("WordCollectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.WordEntry", "WordEntry")
+                        .WithMany()
+                        .HasForeignKey("WordEntryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("WordEntry");
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordCollocation", b =>
                 {
                     b.HasOne("DarwinLingua.Catalog.Domain.Entities.WordEntry", null)
@@ -1086,6 +1178,11 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.Topic", b =>
                 {
                     b.Navigation("Localizations");
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordCollection", b =>
+                {
+                    b.Navigation("Entries");
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordEntry", b =>

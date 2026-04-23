@@ -81,6 +81,16 @@ public sealed class CatalogPackagePublisher(
             .Where(word => word.LanguageCode.Value == product.LearningLanguageCode)
             .ToList();
 
+        List<WordCollection> activeCollections = await catalogDbContext.WordCollections
+            .AsNoTracking()
+            .Where(collection => collection.PublicationStatus == PublicationStatus.Active)
+            .Include(collection => collection.Entries)
+                .ThenInclude(entry => entry.WordEntry)
+            .OrderBy(collection => collection.SortOrder)
+            .ThenBy(collection => collection.Name)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
         DateTimeOffset now = DateTimeOffset.UtcNow;
         string version = now.ToString("yyyy.MM.dd.HHmmss.fff");
         string versionToken = now.ToString("yyyyMMddHHmmssfff");
@@ -106,6 +116,7 @@ public sealed class CatalogPackagePublisher(
                 product.LearningLanguageCode,
                 defaultMeaningLanguages,
                 definition.Words,
+                activeCollections,
                 topicKeys);
 
             string json = JsonSerializer.Serialize(packagePayload, SerializerOptions);
@@ -198,8 +209,13 @@ public sealed class CatalogPackagePublisher(
         string learningLanguageCode,
         IReadOnlyList<string> defaultMeaningLanguages,
         IReadOnlyList<WordEntry> words,
+        IReadOnlyList<WordCollection> activeCollections,
         IReadOnlyDictionary<Guid, string> topicKeys)
     {
+        IReadOnlyList<ExportedContentCollection> collections = ShouldExportCollections(packageType)
+            ? CreateCollections(activeCollections, words)
+            : [];
+
         return new ExportedContentPackage(
             "1.0",
             packageId,
@@ -210,7 +226,47 @@ public sealed class CatalogPackagePublisher(
             sliceKey,
             learningLanguageCode,
             defaultMeaningLanguages,
+            collections,
             words.Select(word => CreateEntry(word, topicKeys)).ToArray());
+    }
+
+    private static bool ShouldExportCollections(string packageType)
+    {
+        return string.Equals(packageType, "full-database", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(packageType, "full-catalog", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static IReadOnlyList<ExportedContentCollection> CreateCollections(
+        IReadOnlyList<WordCollection> activeCollections,
+        IReadOnlyList<WordEntry> words)
+    {
+        HashSet<Guid> exportedWordIds = words
+            .Select(word => word.Id)
+            .ToHashSet();
+
+        return activeCollections
+            .Select(collection => new
+            {
+                Collection = collection,
+                Entries = collection.Entries
+                    .Where(entry => entry.WordEntry is not null && exportedWordIds.Contains(entry.WordEntryId))
+                    .OrderBy(entry => entry.SortOrder)
+                    .ToArray(),
+            })
+            .Where(item => item.Entries.Length > 0)
+            .Select(item => new ExportedContentCollection(
+                item.Collection.Slug,
+                item.Collection.Name,
+                item.Collection.Description,
+                item.Collection.ImageUrl,
+                item.Collection.SortOrder,
+                item.Entries
+                    .Select(entry => new ExportedContentCollectionWordReference(
+                        entry.WordEntry!.Lemma,
+                        entry.WordEntry.PartOfSpeech.ToString(),
+                        entry.WordEntry.PrimaryCefrLevel.ToString()))
+                    .ToArray()))
+            .ToArray();
     }
 
     private static ExportedContentEntry CreateEntry(WordEntry word, IReadOnlyDictionary<Guid, string> topicKeys)
@@ -385,7 +441,21 @@ public sealed class CatalogPackagePublisher(
         string SliceKey,
         string LearningLanguageCode,
         IReadOnlyList<string> DefaultMeaningLanguages,
+        IReadOnlyList<ExportedContentCollection> Collections,
         IReadOnlyList<ExportedContentEntry> Entries);
+
+    private sealed record ExportedContentCollection(
+        string Slug,
+        string Name,
+        string? Description,
+        string? ImageUrl,
+        int SortOrder,
+        IReadOnlyList<ExportedContentCollectionWordReference> Words);
+
+    private sealed record ExportedContentCollectionWordReference(
+        string Word,
+        string? PartOfSpeech,
+        string? CefrLevel);
 
     private sealed record ExportedContentEntry(
         string Word,

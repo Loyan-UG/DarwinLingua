@@ -24,6 +24,7 @@ The current Phase 1 import pipeline only accepts:
 - entry language: `de`
 - meaning languages that already exist in the reference data
 - topic keys that already exist in the database
+- optional root-level `collections`
 
 Supported meaning languages currently include:
 
@@ -90,6 +91,7 @@ Recommended minimum conventions for AI batches:
 - include at least `en` and `fa` meaning translations
 - include at least two domain-relevant examples with both `en` and `fa` translations
 - keep examples domain-relevant when possible
+- when the batch belongs to a book or curated path, include a root-level `collections` array
 
 ## Recommended Package Template
 
@@ -100,7 +102,8 @@ Recommended minimum conventions for AI batches:
   "packageName": "German Work ERP B1-C1 Batch 00X",
   "source": "AiAssisted",
   "defaultMeaningLanguages": ["en", "fa"],
-  "entries": []
+  "entries": [],
+  "collections": []
 }
 ```
 
@@ -189,6 +192,8 @@ Before importing a batch, ensure:
 - each example contains at least one valid translation
 - labels are kebab-case
 - no duplicate lemma + primary part-of-speech + CEFR combination is generated within the same batch
+- collection slugs are kebab-case
+- collection word references resolve to exactly one word; when in doubt include `partOfSpeech` and `cefrLevel`
 
 ## Recommended AI Prompting Rules
 
@@ -202,6 +207,37 @@ When asking an AI to generate the next batch, specify:
 - include two domain-relevant examples with `en` and `fa` translations
 - use canonical import JSON only
 - avoid duplicates against already-generated batches
+- if the batch belongs to a book, unit, or study path, generate one or more root-level `collections`
+- each collection word reference should include `word`, `partOfSpeech`, and `cefrLevel`
+
+## Collection Authoring Pattern
+
+Use collections for:
+
+- textbook units
+- role-based playlists such as `backend-developer-core`
+- customer-project packs
+- revision lists
+
+Recommended shape:
+
+```json
+{
+  "collections": [
+    {
+      "slug": "erp-rollout-book-a",
+      "name": "ERP Rollout Book A",
+      "description": "A curated list for rollout planning and ERP project communication.",
+      "imageUrl": "/images/collections/project-meetings-b2.svg",
+      "sortOrder": 60,
+      "words": [
+        { "word": "Aufgabe", "partOfSpeech": "Noun", "cefrLevel": "B1" },
+        { "word": "Anforderung", "partOfSpeech": "Noun", "cefrLevel": "B2" }
+      ]
+    }
+  ]
+}
+```
 
 ## Repair Tool
 

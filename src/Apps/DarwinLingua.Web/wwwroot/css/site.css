@@ -506,6 +506,52 @@ code {
   justify-content: flex-end;
 }
 
+.collection-card,
+.collection-hero {
+  overflow: hidden;
+}
+
+.collection-card__image-link,
+.collection-card__image {
+  display: block;
+}
+
+.collection-card__image,
+.collection-hero__image {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.collection-card__image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.collection-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+}
+
+.collection-hero__image {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.collection-hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.collection-card__meta {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .button--compact {
   min-height: 2.4rem;
   padding: 0 0.8rem;
@@ -522,6 +568,10 @@ code {
 
 @media (max-width: 900px) {
   .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-hero {
     grid-template-columns: 1fr;
   }
 }

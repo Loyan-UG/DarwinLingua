@@ -48,7 +48,8 @@ internal sealed class ContentImportParser : IContentImportParser
             document.PackageName ?? string.Empty,
             document.Source,
             (document.DefaultMeaningLanguages ?? []).Select(language => language ?? string.Empty).ToArray(),
-            document.Entries.Select(Map).ToArray());
+            document.Entries.Select(Map).ToArray(),
+            (document.Collections ?? []).Select(Map).ToArray());
 
         return Task.FromResult(parsedPackage);
     }
@@ -96,6 +97,31 @@ internal sealed class ContentImportParser : IContentImportParser
             entry.SyllableBreak);
     }
 
+    private static ParsedContentCollectionModel Map(ContentCollectionDocument collection)
+    {
+        ParsedContentCollectionWordReferenceModel[] explicitWords = (collection.Words ?? [])
+            .Select(word => new ParsedContentCollectionWordReferenceModel(
+                word.Word ?? string.Empty,
+                word.PartOfSpeech,
+                word.CefrLevel))
+            .ToArray();
+
+        ParsedContentCollectionWordReferenceModel[] wordKeyReferences = (collection.WordKeys ?? [])
+            .Select(wordKey => new ParsedContentCollectionWordReferenceModel(
+                wordKey ?? string.Empty,
+                null,
+                null))
+            .ToArray();
+
+        return new ParsedContentCollectionModel(
+            collection.Slug ?? string.Empty,
+            collection.Name ?? string.Empty,
+            collection.Description,
+            collection.ImageUrl ?? collection.Image,
+            collection.SortOrder ?? 0,
+            explicitWords.Concat(wordKeyReferences).ToArray());
+    }
+
     private sealed class ContentPackageDocument
     {
         public string? PackageVersion { get; set; }
@@ -109,6 +135,8 @@ internal sealed class ContentImportParser : IContentImportParser
         public string?[]? DefaultMeaningLanguages { get; set; }
 
         public ContentEntryDocument[]? Entries { get; set; }
+
+        public ContentCollectionDocument[]? Collections { get; set; }
     }
 
     private sealed class ContentEntryDocument
@@ -202,5 +230,33 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? BaseText { get; set; }
 
         public ContentMeaningDocument[]? Translations { get; set; }
+    }
+
+    private sealed class ContentCollectionDocument
+    {
+        public string? Slug { get; set; }
+
+        public string? Name { get; set; }
+
+        public string? Description { get; set; }
+
+        public string? ImageUrl { get; set; }
+
+        public string? Image { get; set; }
+
+        public int? SortOrder { get; set; }
+
+        public ContentCollectionWordReferenceDocument[]? Words { get; set; }
+
+        public string?[]? WordKeys { get; set; }
+    }
+
+    private sealed class ContentCollectionWordReferenceDocument
+    {
+        public string? Word { get; set; }
+
+        public string? PartOfSpeech { get; set; }
+
+        public string? CefrLevel { get; set; }
     }
 }

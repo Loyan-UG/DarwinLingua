@@ -1,0 +1,40 @@
+@model DarwinLingua.Catalog.Application.Models.WordCollectionListItemModel
+
+<article class="panel collection-card stack-md">
+    @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+    {
+        <a class="collection-card__image-link" asp-controller="Collections" asp-action="Detail" asp-route-slug="@Model.Slug" aria-label="@Model.Name">
+            <img class="collection-card__image" src="@Model.ImageUrl" alt="@Model.Name" loading="lazy" />
+        </a>
+    }
+    <div class="action-row collection-card__meta">
+        <div class="chip-grid">
+            @foreach (string level in Model.CefrLevels)
+            {
+                <span class="chip-link chip-link--static">@level</span>
+            }
+        </div>
+        <span class="eyebrow">@Model.WordCount words</span>
+    </div>
+    <div class="stack-md">
+        <h3 class="headline-sm">
+            <a asp-controller="Collections" asp-action="Detail" asp-route-slug="@Model.Slug">@Model.Name</a>
+        </h3>
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p class="body-lg">@Model.Description</p>
+        }
+        @if (Model.PreviewWords.Count > 0)
+        {
+            <div class="chip-grid">
+                @foreach (string previewWord in Model.PreviewWords)
+                {
+                    <span class="chip-link chip-link--static">@previewWord</span>
+                }
+            </div>
+        }
+    </div>
+    <div class="action-row">
+        <a class="button button--primary" asp-controller="Collections" asp-action="Detail" asp-route-slug="@Model.Slug">Open collection</a>
+    </div>
+</article>

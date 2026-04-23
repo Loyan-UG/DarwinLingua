@@ -40,6 +40,7 @@ The first import implementation must:
 - detect duplicates conservatively
 - skip duplicates
 - insert valid content
+- resolve optional curated collections
 - produce an import summary
 
 ---
@@ -78,6 +79,7 @@ A duplicate is a handled outcome, not a fatal import error.
 - `entries` is required
 - `entries` must not be empty
 - `packageId` must be unique in the local database
+- collection slugs must be unique inside one package when `collections` is present
 
 ### 4.2 Entry-Level Validation
 
@@ -109,6 +111,7 @@ A duplicate is a handled outcome, not a fatal import error.
 - topic keys must already exist
 - language codes must already exist
 - unsupported or inactive language codes must be rejected
+- collection word references must resolve to exactly one active word after the current import batch is considered
 
 ---
 
@@ -137,6 +140,7 @@ Normalization logic must be centralized. It must not be duplicated in unrelated 
 - duplicate entries must not create partial records
 - import must be traceable to a package identity
 - import should be transactional at a sensible level
+- collection metadata and entry replacement should be atomic
 
 ---
 
@@ -153,6 +157,9 @@ The Phase 1 import pipeline must not:
 - re-import an existing `packageId`
 
 If the data is bad, the system should show it as bad data and reject that entry.
+
+Word-entry merge/update remains forbidden.
+Curated collections may be upserted by `slug` because they are curation artifacts, not source lexical records.
 
 ---
 
@@ -195,6 +202,8 @@ For new human-authored or AI-authored files:
 - prefer `lexicalForms` even for single-role words
 - include `pronunciationIpa` when reliable
 - include `syllableBreak` when it materially helps learner readability or TTS quality
+- include `collections` when the package belongs to a book, course path, revision list, or curated study playlist
+- prefer specifying both `partOfSpeech` and `cefrLevel` in collection word references
 
 ---
 

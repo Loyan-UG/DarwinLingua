@@ -1,3 +1,4 @@
+@model DarwinLingua.Web.Models.HomePageViewModel
 @{
     ViewData["Title"] = "Home";
 }
@@ -5,52 +6,79 @@
 <section class="hero">
     <div class="hero__content">
         <span class="eyebrow">Learner web</span>
-        <h1 class="headline-xl">Darwin Lingua now has a real MVC learner surface, not just a shell.</h1>
+        <h1 class="headline-xl">Learn German with curated workplace vocabulary, not random word dumps.</h1>
         <p class="body-lg">
-            The current slice already exposes catalog browse, debounced search, word detail, favorites,
-            local preference management, install guidance, and the admin-area baseline inside one ASP.NET Core MVC host.
+            The learner web app now exposes browse, search, favorites, recent activity, installable PWA support,
+            automatic pronunciation on the word page, and curated collections for focused study paths such as ERP,
+            CRM, warehouse, and project communication.
         </p>
         <div class="action-row">
             <a class="button button--primary" asp-controller="Browse" asp-action="Index">Browse words</a>
+            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Open collections</a>
             <a class="button button--secondary" asp-controller="Search" asp-action="Index">Search words</a>
             <a class="button button--secondary" asp-action="Install">Install app</a>
         </div>
     </div>
     <div class="hero__aside panel panel--accent stack-md">
-        <p class="eyebrow">Current slice</p>
+        <p class="eyebrow">What is already live</p>
         <ul class="feature-list">
-            <li>Responsive root layout</li>
             <li>Browse by topic and CEFR</li>
-            <li>Debounced search with htmx</li>
-            <li>Word detail, favorites, and word-state tracking</li>
-            <li>PWA manifest and service worker</li>
-            <li>Admin route baseline</li>
+            <li>Search with targeted updates</li>
+            <li>Curated learner collections</li>
+            <li>Word detail with speech and examples</li>
+            <li>Favorites and recent activity</li>
+            <li>Installable PWA shell</li>
         </ul>
     </div>
+</section>
+
+<section class="panel stack-lg">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">Collections</span>
+            <h2 class="headline-md">Featured study playlists</h2>
+        </div>
+        <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Browse all collections</a>
+    </div>
+
+    @if (Model.FeaturedCollections.Count == 0)
+    {
+        <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No collections available", "Start the shared catalog service and seed the catalog to load curated collections.")' />
+    }
+    else
+    {
+        <section class="grid-two-col">
+            @foreach (var collection in Model.FeaturedCollections)
+            {
+                <partial name="~/Views/Shared/_WordCollectionCard.cshtml" model="collection" />
+            }
+        </section>
+    }
 </section>
 
 <section id="roadmap" class="grid-two-col">
     <article class="panel stack-md">
         <span class="eyebrow">Learner experience</span>
-        <h2 class="headline-md">Available now</h2>
+        <h2 class="headline-md">Designed for focused practice</h2>
         <ul class="feature-list">
             <li>Browse by CEFR and topic</li>
             <li>Search and word detail flows</li>
+            <li>Playlist-like collections for books and subjects</li>
             <li>Favorites and word-state markers</li>
             <li>Settings and install guidance</li>
         </ul>
     </article>
     <article class="panel stack-md">
         <span class="eyebrow">Operator experience</span>
-        <h2 class="headline-md">Next operator slice</h2>
+        <h2 class="headline-md">Catalog remains centralized</h2>
         <ul class="feature-list">
-            <li>Draft inspection</li>
-            <li>Publish and rollback actions</li>
-            <li>Package history and diagnostics</li>
-            <li>Later moderation and review tooling</li>
+            <li>Web reads published words from the shared Web API</li>
+            <li>Mobile updates against the same server-side catalog</li>
+            <li>Curated collections are seeded in the shared catalog</li>
+            <li>Admin tooling can later manage them centrally</li>
         </ul>
     </article>
- </section>
+</section>
 
 <section class="panel stack-md">
     <span class="eyebrow">Architecture</span>
@@ -64,18 +92,18 @@
 <section class="grid-two-col">
     <article class="panel stack-md">
         <span class="eyebrow">Data source</span>
-        <h2 class="headline-md">Catalog data is external by design</h2>
+        <h2 class="headline-md">Catalog data is shared by design</h2>
         <p>
-            The web host can start with local SQLite fallback, but real learner content requires a populated shared catalog database.
-            If browse and search pages are empty, configure <code>ConnectionStrings__SharedCatalog</code> or <code>ConnectionStrings__SharedCatalogAdmin</code>.
+            The website is intended to read published catalog data from the same shared server-side database that the Web API exposes to mobile clients.
+            If browse, search, or collection pages are empty, check the shared catalog connection and make sure the import and seeding path has run.
         </p>
     </article>
     <article class="panel stack-md">
         <span class="eyebrow">Architecture note</span>
-        <h2 class="headline-md">Identity is intentionally deferred</h2>
+        <h2 class="headline-md">Identity is isolated from catalog content</h2>
         <p>
-            This slice uses the current local profile abstraction so learner pages can be built now. Proper multi-user web identity
-            will replace the local-only profile path in the next major slice.
+            The shared catalog stays server-owned, while learner-specific preferences and identity remain a separate concern. That avoids
+            splitting the vocabulary source of truth across multiple systems.
         </p>
     </article>
 </section>

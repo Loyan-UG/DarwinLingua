@@ -234,7 +234,74 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
     {
         ArgumentNullException.ThrowIfNull(dbContext);
 
-        if (await TableExistsAsync(dbContext, "WordLexicalForms", cancellationToken).ConfigureAwait(false))
+        if (!await TableExistsAsync(dbContext, "WordLexicalForms", cancellationToken).ConfigureAwait(false))
+        {
+            if (dbContext.Database.IsSqlite())
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    CREATE TABLE IF NOT EXISTS WordLexicalForms (
+                        Id TEXT NOT NULL PRIMARY KEY,
+                        WordEntryId TEXT NOT NULL,
+                        PartOfSpeech TEXT NOT NULL,
+                        Article TEXT NULL,
+                        PluralForm TEXT NULL,
+                        InfinitiveForm TEXT NULL,
+                        SortOrder INTEGER NOT NULL,
+                        IsPrimary INTEGER NOT NULL,
+                        CreatedAtUtc TEXT NOT NULL,
+                        UpdatedAtUtc TEXT NOT NULL,
+                        CONSTRAINT FK_WordLexicalForms_WordEntries_WordEntryId
+                            FOREIGN KEY (WordEntryId) REFERENCES WordEntries (Id) ON DELETE CASCADE
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS IX_WordLexicalForms_WordEntryId_PartOfSpeech
+                        ON WordLexicalForms (WordEntryId, PartOfSpeech);
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS IX_WordLexicalForms_WordEntryId_SortOrder
+                        ON WordLexicalForms (WordEntryId, SortOrder);
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS IX_WordLexicalForms_PrimaryPerWordEntry
+                        ON WordLexicalForms (WordEntryId)
+                        WHERE IsPrimary = 1;
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    CREATE TABLE IF NOT EXISTS "WordLexicalForms" (
+                        "Id" uuid NOT NULL,
+                        "WordEntryId" uuid NOT NULL,
+                        "PartOfSpeech" character varying(32) NOT NULL,
+                        "Article" character varying(32),
+                        "PluralForm" character varying(256),
+                        "InfinitiveForm" character varying(256),
+                        "SortOrder" integer NOT NULL,
+                        "IsPrimary" boolean NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_WordLexicalForms" PRIMARY KEY ("Id"),
+                        CONSTRAINT "FK_WordLexicalForms_WordEntries_WordEntryId"
+                            FOREIGN KEY ("WordEntryId") REFERENCES "WordEntries" ("Id") ON DELETE CASCADE
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordLexicalForms_WordEntryId_PartOfSpeech"
+                        ON "WordLexicalForms" ("WordEntryId", "PartOfSpeech");
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordLexicalForms_WordEntryId_SortOrder"
+                        ON "WordLexicalForms" ("WordEntryId", "SortOrder");
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordLexicalForms_PrimaryPerWordEntry"
+                        ON "WordLexicalForms" ("WordEntryId")
+                        WHERE "IsPrimary" = TRUE;
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        if (await TableExistsAsync(dbContext, "WordCollections", cancellationToken).ConfigureAwait(false))
         {
             return;
         }
@@ -243,30 +310,38 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         {
             await dbContext.Database.ExecuteSqlRawAsync(
                 """
-                CREATE TABLE IF NOT EXISTS WordLexicalForms (
+                CREATE TABLE IF NOT EXISTS WordCollections (
                     Id TEXT NOT NULL PRIMARY KEY,
-                    WordEntryId TEXT NOT NULL,
-                    PartOfSpeech TEXT NOT NULL,
-                    Article TEXT NULL,
-                    PluralForm TEXT NULL,
-                    InfinitiveForm TEXT NULL,
+                    Slug TEXT NOT NULL,
+                    Name TEXT NOT NULL,
+                    Description TEXT NULL,
+                    ImageUrl TEXT NULL,
+                    PublicationStatus TEXT NOT NULL,
                     SortOrder INTEGER NOT NULL,
-                    IsPrimary INTEGER NOT NULL,
                     CreatedAtUtc TEXT NOT NULL,
-                    UpdatedAtUtc TEXT NOT NULL,
-                    CONSTRAINT FK_WordLexicalForms_WordEntries_WordEntryId
+                    UpdatedAtUtc TEXT NOT NULL
+                );
+
+                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollections_Slug
+                    ON WordCollections (Slug);
+
+                CREATE TABLE IF NOT EXISTS WordCollectionEntries (
+                    Id TEXT NOT NULL PRIMARY KEY,
+                    WordCollectionId TEXT NOT NULL,
+                    WordEntryId TEXT NOT NULL,
+                    SortOrder INTEGER NOT NULL,
+                    CreatedAtUtc TEXT NOT NULL,
+                    CONSTRAINT FK_WordCollectionEntries_WordCollections_WordCollectionId
+                        FOREIGN KEY (WordCollectionId) REFERENCES WordCollections (Id) ON DELETE CASCADE,
+                    CONSTRAINT FK_WordCollectionEntries_WordEntries_WordEntryId
                         FOREIGN KEY (WordEntryId) REFERENCES WordEntries (Id) ON DELETE CASCADE
                 );
 
-                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordLexicalForms_WordEntryId_PartOfSpeech
-                    ON WordLexicalForms (WordEntryId, PartOfSpeech);
+                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollectionEntries_WordCollectionId_SortOrder
+                    ON WordCollectionEntries (WordCollectionId, SortOrder);
 
-                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordLexicalForms_WordEntryId_SortOrder
-                    ON WordLexicalForms (WordEntryId, SortOrder);
-
-                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordLexicalForms_PrimaryPerWordEntry
-                    ON WordLexicalForms (WordEntryId)
-                    WHERE IsPrimary = 1;
+                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollectionEntries_WordCollectionId_WordEntryId
+                    ON WordCollectionEntries (WordCollectionId, WordEntryId);
                 """,
                 cancellationToken).ConfigureAwait(false);
 
@@ -275,31 +350,40 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
 
         await dbContext.Database.ExecuteSqlRawAsync(
             """
-            CREATE TABLE IF NOT EXISTS "WordLexicalForms" (
+            CREATE TABLE IF NOT EXISTS "WordCollections" (
                 "Id" uuid NOT NULL,
-                "WordEntryId" uuid NOT NULL,
-                "PartOfSpeech" character varying(32) NOT NULL,
-                "Article" character varying(32),
-                "PluralForm" character varying(256),
-                "InfinitiveForm" character varying(256),
+                "Slug" character varying(128) NOT NULL,
+                "Name" character varying(256) NOT NULL,
+                "Description" character varying(4000),
+                "ImageUrl" character varying(1024),
+                "PublicationStatus" character varying(32) NOT NULL,
                 "SortOrder" integer NOT NULL,
-                "IsPrimary" boolean NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "UpdatedAtUtc" timestamp with time zone NOT NULL,
-                CONSTRAINT "PK_WordLexicalForms" PRIMARY KEY ("Id"),
-                CONSTRAINT "FK_WordLexicalForms_WordEntries_WordEntryId"
+                CONSTRAINT "PK_WordCollections" PRIMARY KEY ("Id")
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollections_Slug"
+                ON "WordCollections" ("Slug");
+
+            CREATE TABLE IF NOT EXISTS "WordCollectionEntries" (
+                "Id" uuid NOT NULL,
+                "WordCollectionId" uuid NOT NULL,
+                "WordEntryId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_WordCollectionEntries" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_WordCollectionEntries_WordCollections_WordCollectionId"
+                    FOREIGN KEY ("WordCollectionId") REFERENCES "WordCollections" ("Id") ON DELETE CASCADE,
+                CONSTRAINT "FK_WordCollectionEntries_WordEntries_WordEntryId"
                     FOREIGN KEY ("WordEntryId") REFERENCES "WordEntries" ("Id") ON DELETE CASCADE
             );
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordLexicalForms_WordEntryId_PartOfSpeech"
-                ON "WordLexicalForms" ("WordEntryId", "PartOfSpeech");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollectionEntries_WordCollectionId_SortOrder"
+                ON "WordCollectionEntries" ("WordCollectionId", "SortOrder");
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordLexicalForms_WordEntryId_SortOrder"
-                ON "WordLexicalForms" ("WordEntryId", "SortOrder");
-
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordLexicalForms_PrimaryPerWordEntry"
-                ON "WordLexicalForms" ("WordEntryId")
-                WHERE "IsPrimary" = TRUE;
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollectionEntries_WordCollectionId_WordEntryId"
+                ON "WordCollectionEntries" ("WordCollectionId", "WordEntryId");
             """,
             cancellationToken).ConfigureAwait(false);
     }

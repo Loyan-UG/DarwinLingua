@@ -1,0 +1,51 @@
+@model DarwinLingua.Web.Models.WordCollectionDetailPageViewModel
+@{
+    ViewData["Title"] = Model.Collection.Name;
+}
+
+<section class="panel collection-hero stack-lg">
+    @if (!string.IsNullOrWhiteSpace(Model.Collection.ImageUrl))
+    {
+        <img class="collection-hero__image" src="@Model.Collection.ImageUrl" alt="@Model.Collection.Name" loading="eager" />
+    }
+    <div class="collection-hero__content stack-md">
+        <div class="action-row collection-card__meta">
+            <div class="chip-grid">
+                @foreach (string level in Model.Collection.CefrLevels)
+                {
+                    <span class="chip-link chip-link--static">@level</span>
+                }
+            </div>
+            <span class="eyebrow">@Model.Collection.WordCount words</span>
+        </div>
+        <h1 class="headline-md">@Model.Collection.Name</h1>
+        @if (!string.IsNullOrWhiteSpace(Model.Collection.Description))
+        {
+            <p class="body-lg">@Model.Collection.Description</p>
+        }
+        <div class="action-row">
+            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Back to collections</a>
+            <a class="button button--secondary" asp-controller="Browse" asp-action="Index">Browse catalog</a>
+        </div>
+    </div>
+</section>
+
+@if (Model.Collection.Words.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words in this collection", "Add mapped words to the collection seed or content source to show them here.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <span class="eyebrow">Collection words</span>
+        <h2 class="headline-sm">Practice this set</h2>
+        <p class="body-lg">Open any word to hear automatic pronunciation, review meanings, and move through the collection with keyboard arrows or swipe.</p>
+    </section>
+
+    <section class="grid-two-col" data-word-list-container>
+        @foreach (var word in Model.Collection.Words)
+        {
+            <partial name="~/Views/Shared/_WordCard.cshtml" model="word" />
+        }
+    </section>
+}

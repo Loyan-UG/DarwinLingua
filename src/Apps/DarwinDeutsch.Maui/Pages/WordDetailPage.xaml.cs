@@ -20,11 +20,13 @@ namespace DarwinDeutsch.Maui.Pages;
 /// </summary>
 [QueryProperty(nameof(WordPublicId), "wordPublicId")]
 [QueryProperty(nameof(CefrLevel), "cefrLevel")]
+[QueryProperty(nameof(CollectionSlug), "collectionSlug")]
 public partial class WordDetailPage : ContentPage
 {
     private const int DeferredSenseBatchSize = 2;
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
+    private readonly IWordCollectionBrowseStateService _wordCollectionBrowseStateService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IUserFavoriteWordService _userFavoriteWordService;
     private readonly IUserWordStateService _userWordStateService;
@@ -33,6 +35,7 @@ public partial class WordDetailPage : ContentPage
     private readonly ILogger<WordDetailPage> _logger;
     private string _wordPublicId = string.Empty;
     private string _cefrLevel = string.Empty;
+    private string _collectionSlug = string.Empty;
     private bool _isFavorite;
     private UserWordStateModel? _userWordState;
     private CefrBrowseNavigationState? _cefrBrowseNavigationState;
@@ -52,6 +55,7 @@ public partial class WordDetailPage : ContentPage
     public WordDetailPage(
         IWordDetailCacheService wordDetailCacheService,
         ICefrBrowseStateService cefrBrowseStateService,
+        IWordCollectionBrowseStateService wordCollectionBrowseStateService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IUserFavoriteWordService userFavoriteWordService,
         IUserWordStateService userWordStateService,
@@ -61,6 +65,7 @@ public partial class WordDetailPage : ContentPage
     {
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
+        ArgumentNullException.ThrowIfNull(wordCollectionBrowseStateService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(userFavoriteWordService);
         ArgumentNullException.ThrowIfNull(userWordStateService);
@@ -72,6 +77,7 @@ public partial class WordDetailPage : ContentPage
 
         _wordDetailCacheService = wordDetailCacheService;
         _cefrBrowseStateService = cefrBrowseStateService;
+        _wordCollectionBrowseStateService = wordCollectionBrowseStateService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _userFavoriteWordService = userFavoriteWordService;
         _userWordStateService = userWordStateService;
@@ -96,6 +102,15 @@ public partial class WordDetailPage : ContentPage
     {
         get => _cefrLevel;
         set => _cefrLevel = Uri.UnescapeDataString(value ?? string.Empty);
+    }
+
+    /// <summary>
+    /// Gets or sets the optional collection slug that enables previous/next navigation inside one collection.
+    /// </summary>
+    public string CollectionSlug
+    {
+        get => _collectionSlug;
+        set => _collectionSlug = Uri.UnescapeDataString(value ?? string.Empty);
     }
 
     /// <summary>
@@ -179,7 +194,7 @@ public partial class WordDetailPage : ContentPage
             await RefreshInteractiveStateAsync(publicId, cancellationToken).ConfigureAwait(true);
             await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
-            if (!string.IsNullOrWhiteSpace(CefrLevel))
+            if (HasNavigationContext())
             {
                 _ = PrefetchNavigationAsync(publicId);
             }
@@ -238,7 +253,7 @@ public partial class WordDetailPage : ContentPage
         ApplyLexicalRelations(word.Synonyms, word.Antonyms);
         await RenderSensesAsync(word.Senses, cancellationToken).ConfigureAwait(true);
 
-        if (!string.IsNullOrWhiteSpace(CefrLevel))
+        if (HasNavigationContext())
         {
             _ = PrefetchNavigationAsync(publicId);
         }
@@ -1088,7 +1103,7 @@ public partial class WordDetailPage : ContentPage
 
     private async Task ApplyCefrNavigationStateAsync(Guid currentWordPublicId, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(CefrLevel))
+        if (!HasNavigationContext())
         {
             _cefrBrowseNavigationState = null;
             CefrNavigationTopGrid.IsVisible = false;
@@ -1096,10 +1111,19 @@ public partial class WordDetailPage : ContentPage
             return;
         }
 
-        _cefrBrowseStateService.RememberLastViewedWord(CefrLevel, currentWordPublicId);
-        _cefrBrowseNavigationState = await _cefrBrowseStateService
-            .GetNavigationStateAsync(CefrLevel, currentWordPublicId, cancellationToken)
-            .ConfigureAwait(true);
+        if (!string.IsNullOrWhiteSpace(CollectionSlug))
+        {
+            _cefrBrowseNavigationState = await _wordCollectionBrowseStateService
+                .GetNavigationStateAsync(CollectionSlug, currentWordPublicId, cancellationToken)
+                .ConfigureAwait(true);
+        }
+        else
+        {
+            _cefrBrowseStateService.RememberLastViewedWord(CefrLevel, currentWordPublicId);
+            _cefrBrowseNavigationState = await _cefrBrowseStateService
+                .GetNavigationStateAsync(CefrLevel, currentWordPublicId, cancellationToken)
+                .ConfigureAwait(true);
+        }
 
         bool isVisible = _cefrBrowseNavigationState.TotalCount > 0;
         CefrNavigationTopGrid.IsVisible = isVisible;
@@ -1173,16 +1197,25 @@ public partial class WordDetailPage : ContentPage
 
     private async void OnShowWordListButtonClicked(object? sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(CefrLevel))
+        if (!HasNavigationContext())
         {
             return;
         }
 
-        string escapedCefrLevel = Uri.EscapeDataString(CefrLevel);
         try
         {
-            await Shell.Current.GoToAsync($"//browse/{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
-                .ConfigureAwait(true);
+            if (!string.IsNullOrWhiteSpace(CollectionSlug))
+            {
+                string escapedCollectionSlug = Uri.EscapeDataString(CollectionSlug);
+                await Shell.Current.GoToAsync($"{nameof(CollectionWordsPage)}?collectionSlug={escapedCollectionSlug}")
+                    .ConfigureAwait(true);
+            }
+            else
+            {
+                string escapedCefrLevel = Uri.EscapeDataString(CefrLevel);
+                await Shell.Current.GoToAsync($"//browse/{nameof(CefrWordsPage)}?cefrLevel={escapedCefrLevel}")
+                    .ConfigureAwait(true);
+            }
         }
         catch (OperationCanceledException)
         {
@@ -1245,13 +1278,25 @@ public partial class WordDetailPage : ContentPage
     {
         try
         {
-            await _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None)
-                .ConfigureAwait(false);
+            if (!string.IsNullOrWhiteSpace(CollectionSlug))
+            {
+                await _wordCollectionBrowseStateService
+                    .PrefetchCollectionAsync(CollectionSlug, CancellationToken.None)
+                    .ConfigureAwait(false);
+            }
+            else if (!string.IsNullOrWhiteSpace(CefrLevel))
+            {
+                await _cefrBrowseStateService.PrefetchNavigationAsync(CefrLevel, publicId, CancellationToken.None)
+                    .ConfigureAwait(false);
+            }
         }
         catch (OperationCanceledException)
         {
         }
     }
+
+    private bool HasNavigationContext() =>
+        !string.IsNullOrWhiteSpace(CollectionSlug) || !string.IsNullOrWhiteSpace(CefrLevel);
 
     private async Task PrefetchWordDetailAsync(Guid candidateId, UserLearningProfileModel profile)
     {

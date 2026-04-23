@@ -46,6 +46,9 @@
                         <controls:ActionBlockView x:Name="SearchActionBlockView"
                                                   ActionInvoked="OnSearchActionInvoked" />
 
+                        <controls:ActionBlockView x:Name="CollectionsActionBlockView"
+                                                  ActionInvoked="OnCollectionsActionInvoked" />
+
                         <controls:ActionBlockView x:Name="FavoritesActionBlockView"
                                                   ActionInvoked="OnFavoritesActionInvoked" />
                     </VerticalStackLayout>

@@ -1003,6 +1003,8 @@ internal sealed class RemoteContentUpdateService(
         DELETE FROM WordCollocations;
         DELETE FROM WordFamilyMembers;
         DELETE FROM WordRelations;
+        DELETE FROM WordCollectionEntries;
+        DELETE FROM WordCollections;
         DELETE FROM ContentPackageEntries;
         DELETE FROM ContentPackages;
         DELETE FROM WordEntries;
@@ -1025,6 +1027,8 @@ internal sealed class RemoteContentUpdateService(
         INSERT INTO WordCollocations SELECT * FROM remote.WordCollocations;
         INSERT INTO WordFamilyMembers SELECT * FROM remote.WordFamilyMembers;
         INSERT INTO WordRelations SELECT * FROM remote.WordRelations;
+        INSERT INTO WordCollections SELECT * FROM remote.WordCollections;
+        INSERT INTO WordCollectionEntries SELECT * FROM remote.WordCollectionEntries;
         INSERT INTO ContentPackages SELECT * FROM remote.ContentPackages;
         INSERT INTO ContentPackageEntries SELECT * FROM remote.ContentPackageEntries;
 

@@ -274,6 +274,56 @@ public sealed class ContentImportServiceTests
     }
 
     /// <summary>
+    /// Verifies that the compact collection wordKeys format is accepted for AI-generated content packages.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldImportCollectionWordKeys()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            await File.WriteAllTextAsync(packagePath, CreatePackageWithCollectionWordKeysJson("a1-shopping-collection-word-keys"));
+
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult result = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
+
+            Assert.True(result.IsSuccess);
+            Assert.Equal(2, result.ImportedEntries);
+
+            IWordCollectionQueryService collectionQueryService = serviceProvider.GetRequiredService<IWordCollectionQueryService>();
+            DarwinLingua.Catalog.Application.Models.WordCollectionDetailModel? collection = await collectionQueryService
+                .GetPublishedCollectionBySlugAsync("a1-shopping-word-keys", "en", CancellationToken.None);
+
+            Assert.NotNull(collection);
+            Assert.Equal("collections/a1-shopping-word-keys.png", collection!.ImageUrl);
+            Assert.Equal(2, collection.Words.Count);
+            Assert.Contains(collection.Words, word => word.Lemma == "Brot");
+            Assert.Contains(collection.Words, word => word.Lemma == "Milch");
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(packagePath))
+            {
+                File.Delete(packagePath);
+            }
+        }
+    }
+
+    /// <summary>
     /// Verifies that the Phase 1 sample package imports successfully into a freshly initialized database.
     /// </summary>
     [Fact]
@@ -553,6 +603,81 @@ public sealed class ContentImportServiceTests
                       ]
                     }
                   ]
+                }
+              ]
+            }
+            """;
+    }
+
+    private static string CreatePackageWithCollectionWordKeysJson(string packageId)
+    {
+        return $$"""
+            {
+              "packageVersion": "1.0",
+              "packageId": "{{packageId}}",
+              "packageName": "A1 Shopping Collection Word Keys Test",
+              "source": "Hybrid",
+              "defaultMeaningLanguages": ["en"],
+              "entries": [
+                {
+                  "word": "Brot",
+                  "language": "de",
+                  "cefrLevel": "A1",
+                  "partOfSpeech": "Noun",
+                  "article": "das",
+                  "plural": "Brote",
+                  "topics": ["shopping"],
+                  "meanings": [
+                    {
+                      "language": "en",
+                      "text": "bread"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "baseText": "Ich kaufe Brot.",
+                      "translations": [
+                        {
+                          "language": "en",
+                          "text": "I buy bread."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "word": "Milch",
+                  "language": "de",
+                  "cefrLevel": "A1",
+                  "partOfSpeech": "Noun",
+                  "article": "die",
+                  "topics": ["shopping"],
+                  "meanings": [
+                    {
+                      "language": "en",
+                      "text": "milk"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "baseText": "Ich trinke Milch.",
+                      "translations": [
+                        {
+                          "language": "en",
+                          "text": "I drink milk."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "collections": [
+                {
+                  "slug": "a1-shopping-word-keys",
+                  "name": "A1 Shopping Word Keys",
+                  "description": "Compact collection reference test.",
+                  "image": "collections/a1-shopping-word-keys.png",
+                  "wordKeys": ["Brot", "Milch"]
                 }
               ]
             }

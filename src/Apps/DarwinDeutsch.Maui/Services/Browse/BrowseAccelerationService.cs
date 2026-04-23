@@ -13,11 +13,13 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     private static readonly string[] PriorityCefrLevels = ["A1", "A2"];
     private const int PriorityTopicWarmupLimit = 4;
     private const int TopicWarmupLimit = 12;
+    private const int CollectionWarmupLimit = 3;
     private static readonly TimeSpan InitialWarmupDelay = TimeSpan.FromSeconds(2);
     private static readonly TimeSpan ExtendedWarmupDelay = TimeSpan.FromSeconds(6);
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly ITopicCatalogCacheService _topicCatalogCacheService;
     private readonly ITopicBrowseStateService _topicBrowseStateService;
+    private readonly IWordCollectionBrowseStateService _wordCollectionBrowseStateService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly IWordSearchCacheService _wordSearchCacheService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
@@ -35,6 +37,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         ICefrBrowseStateService cefrBrowseStateService,
         ITopicCatalogCacheService topicCatalogCacheService,
         ITopicBrowseStateService topicBrowseStateService,
+        IWordCollectionBrowseStateService wordCollectionBrowseStateService,
         IWordDetailCacheService wordDetailCacheService,
         IWordSearchCacheService wordSearchCacheService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
@@ -44,6 +47,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
         ArgumentNullException.ThrowIfNull(topicCatalogCacheService);
         ArgumentNullException.ThrowIfNull(topicBrowseStateService);
+        ArgumentNullException.ThrowIfNull(wordCollectionBrowseStateService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(wordSearchCacheService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
@@ -53,6 +57,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         _cefrBrowseStateService = cefrBrowseStateService;
         _topicCatalogCacheService = topicCatalogCacheService;
         _topicBrowseStateService = topicBrowseStateService;
+        _wordCollectionBrowseStateService = wordCollectionBrowseStateService;
         _wordDetailCacheService = wordDetailCacheService;
         _wordSearchCacheService = wordSearchCacheService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
@@ -90,6 +95,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         _cefrBrowseStateService.ResetCache();
         _topicCatalogCacheService.ResetCache();
         _topicBrowseStateService.ResetCache();
+        _wordCollectionBrowseStateService.ResetCache();
         _wordDetailCacheService.ResetCache();
         _wordSearchCacheService.ResetCache();
         Interlocked.Exchange(ref _warmupScheduled, 0);
@@ -188,6 +194,18 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
                             profile.UiLanguageCode,
                             cancellationToken)
                         .ConfigureAwait(false);
+                }
+            }
+
+            if (!prioritizeEssentialSlicesOnly)
+            {
+                IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordCollectionListItemModel> collections = await _wordCollectionBrowseStateService
+                    .GetCollectionsAsync(cancellationToken)
+                    .ConfigureAwait(false);
+
+                foreach (string collectionSlug in collections.Take(CollectionWarmupLimit).Select(collection => collection.Slug))
+                {
+                    await _wordCollectionBrowseStateService.PrefetchCollectionAsync(collectionSlug, cancellationToken).ConfigureAwait(false);
                 }
             }
 

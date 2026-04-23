@@ -10,6 +10,15 @@ public interface IWebsiteCatalogQueryService
 {
     Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<WordCollectionListItemModel>> GetCollectionsAsync(
+        string meaningLanguageCode,
+        CancellationToken cancellationToken);
+
+    Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(
+        string slug,
+        string meaningLanguageCode,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -44,12 +53,24 @@ public interface IWebsiteCatalogQueryService
 
 internal sealed class WebsiteCatalogQueryService(
     ITopicQueryService topicQueryService,
+    IWordCollectionQueryService wordCollectionQueryService,
     IWordQueryService wordQueryService,
     IWordDetailQueryService wordDetailQueryService,
     IDbContextFactory<DarwinLinguaDbContext> dbContextFactory) : IWebsiteCatalogQueryService
 {
     public Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken) =>
         topicQueryService.GetTopicsAsync(uiLanguageCode, cancellationToken);
+
+    public Task<IReadOnlyList<WordCollectionListItemModel>> GetCollectionsAsync(
+        string meaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        wordCollectionQueryService.GetPublishedCollectionsAsync(meaningLanguageCode, cancellationToken);
+
+    public Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(
+        string slug,
+        string meaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        wordCollectionQueryService.GetPublishedCollectionBySlugAsync(slug, meaningLanguageCode, cancellationToken);
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,

@@ -181,8 +181,8 @@ public sealed class WebPlatformSmokeTests
         Assert.Contains("tailwind.generated.css", layoutSource, StringComparison.Ordinal);
         Assert.Contains("htmx.org", layoutSource, StringComparison.Ordinal);
         Assert.Contains("install-banner", layoutSource, StringComparison.Ordinal);
-        Assert.Contains("Darwin Lingua now has a real MVC learner surface", homeViewSource, StringComparison.Ordinal);
-        Assert.Contains("ConnectionStrings__SharedCatalog", homeViewSource, StringComparison.Ordinal);
+        Assert.Contains("curated workplace vocabulary", homeViewSource, StringComparison.Ordinal);
+        Assert.Contains("Featured study playlists", homeViewSource, StringComparison.Ordinal);
         Assert.Contains("Installable Web App", installViewSource, StringComparison.Ordinal);
         Assert.Contains("GetWordsByTopicPageAsync", browseControllerSource, StringComparison.Ordinal);
         Assert.Contains("Browse_Index", browseControllerSource, StringComparison.Ordinal);

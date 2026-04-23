@@ -4,6 +4,7 @@ using DarwinLingua.ContentOps.Application.Models;
 using DarwinLingua.ContentOps.Domain.Entities;
 using DarwinLingua.ContentOps.Domain.Enums;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Exceptions;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
@@ -103,6 +104,7 @@ internal sealed class ContentImportService : IContentImportService
         contentPackage.MarkProcessing(DateTime.UtcNow);
 
         List<WordEntry> importedWords = [];
+        List<WordCollection> importedCollections = [];
 
         for (int entryIndex = 0; entryIndex < parsedPackage.Entries.Count; entryIndex++)
         {
@@ -118,10 +120,17 @@ internal sealed class ContentImportService : IContentImportService
                 cancellationToken).ConfigureAwait(false);
         }
 
+        await ProcessCollectionsAsync(
+            parsedPackage.Collections,
+            importedWords,
+            importedCollections,
+            issues,
+            cancellationToken).ConfigureAwait(false);
+
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedWords, cancellationToken)
+            .PersistImportAsync(contentPackage, importedWords, importedCollections, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -138,6 +147,163 @@ internal sealed class ContentImportService : IContentImportService
             importedWords
                 .Select(word => word.Lemma)
                 .ToArray());
+    }
+
+    private async Task ProcessCollectionsAsync(
+        IReadOnlyList<ParsedContentCollectionModel> collections,
+        IReadOnlyList<WordEntry> importedWords,
+        ICollection<WordCollection> importedCollections,
+        ICollection<ImportIssueModel> issues,
+        CancellationToken cancellationToken)
+    {
+        if (collections.Count == 0)
+        {
+            return;
+        }
+
+        string[] normalizedLemmas = collections
+            .SelectMany(collection => collection.Words)
+            .Select(reference => NormalizeText(reference.Word).ToLowerInvariant())
+            .Where(value => !string.IsNullOrWhiteSpace(value))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        IReadOnlyList<WordEntry> existingWords = await _contentImportRepository
+            .GetActiveWordsByNormalizedLemmasAsync(normalizedLemmas, cancellationToken)
+            .ConfigureAwait(false);
+
+        List<WordEntry> resolvableWords = importedWords
+            .Concat(existingWords)
+            .GroupBy(
+                word => (word.NormalizedLemma, word.PartOfSpeech, word.PrimaryCefrLevel),
+                EqualityComparer<(string, PartOfSpeech, CefrLevel)>.Default)
+            .Select(group => group.First())
+            .ToList();
+
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        for (int index = 0; index < collections.Count; index++)
+        {
+            ParsedContentCollectionModel collection = collections[index];
+            List<string> errors = [];
+
+            string normalizedSlug = NormalizeCollectionSlug(collection.Slug, errors);
+            string normalizedName = NormalizeText(collection.Name);
+            string? normalizedDescription = NormalizeOptionalText(collection.Description);
+            string? normalizedImageUrl = NormalizeOptionalText(collection.ImageUrl);
+            int sortOrder = collection.SortOrder < 0 ? 0 : collection.SortOrder;
+
+            if (string.IsNullOrWhiteSpace(normalizedName))
+            {
+                errors.Add("Collection name is required.");
+            }
+
+            if (collection.Words.Count == 0)
+            {
+                errors.Add("Collection words must contain at least one item.");
+            }
+
+            if (errors.Count > 0)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Collection {index + 1}: {string.Join(" ", errors)}"));
+                continue;
+            }
+
+            List<(Guid WordEntryId, int SortOrder)> collectionEntries = [];
+            HashSet<(string Word, string? PartOfSpeech, string? CefrLevel)> uniqueness = [];
+
+            for (int wordIndex = 0; wordIndex < collection.Words.Count; wordIndex++)
+            {
+                ParsedContentCollectionWordReferenceModel wordReference = collection.Words[wordIndex];
+
+                string normalizedWord = NormalizeText(wordReference.Word).ToLowerInvariant();
+                string? normalizedPartOfSpeech = NormalizeOptionalText(wordReference.PartOfSpeech);
+                string? normalizedCefrLevel = NormalizeOptionalText(wordReference.CefrLevel)?.ToUpperInvariant();
+
+                if (string.IsNullOrWhiteSpace(normalizedWord))
+                {
+                    errors.Add($"Collection word {wordIndex + 1} is missing a word value.");
+                    continue;
+                }
+
+                if (normalizedPartOfSpeech is not null &&
+                    !Enum.TryParse(normalizedPartOfSpeech, true, out PartOfSpeech partOfSpeech))
+                {
+                    errors.Add($"Collection word '{wordReference.Word}' has an invalid partOfSpeech value.");
+                    continue;
+                }
+
+                PartOfSpeech? requestedPartOfSpeech = normalizedPartOfSpeech is null
+                    ? null
+                    : Enum.Parse<PartOfSpeech>(normalizedPartOfSpeech, true);
+
+                CefrLevel? requestedCefrLevel = null;
+                if (normalizedCefrLevel is not null)
+                {
+                    if (!Enum.TryParse(normalizedCefrLevel, true, out CefrLevel cefrLevel))
+                    {
+                        errors.Add($"Collection word '{wordReference.Word}' has an invalid cefrLevel value.");
+                        continue;
+                    }
+
+                    requestedCefrLevel = cefrLevel;
+                }
+
+                if (!uniqueness.Add((normalizedWord, requestedPartOfSpeech?.ToString(), requestedCefrLevel?.ToString())))
+                {
+                    errors.Add($"Collection '{normalizedSlug}' contains a duplicate word reference for '{wordReference.Word}'.");
+                    continue;
+                }
+
+                List<WordEntry> matches = resolvableWords
+                    .Where(word => string.Equals(word.NormalizedLemma, normalizedWord, StringComparison.Ordinal))
+                    .Where(word => !requestedPartOfSpeech.HasValue || word.PartOfSpeech == requestedPartOfSpeech.Value)
+                    .Where(word => !requestedCefrLevel.HasValue || word.PrimaryCefrLevel == requestedCefrLevel.Value)
+                    .OrderBy(word => word.PrimaryCefrLevel)
+                    .ThenBy(word => word.PartOfSpeech)
+                    .ToList();
+
+                if (matches.Count == 0)
+                {
+                    errors.Add($"Collection '{normalizedSlug}' references '{wordReference.Word}', but no matching active word exists.");
+                    continue;
+                }
+
+                if (matches.Count > 1)
+                {
+                    errors.Add($"Collection '{normalizedSlug}' references '{wordReference.Word}' ambiguously. Add partOfSpeech or cefrLevel.");
+                    continue;
+                }
+
+                collectionEntries.Add((matches[0].Id, wordIndex + 1));
+            }
+
+            if (errors.Count > 0)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Collection '{normalizedSlug}': {string.Join(" ", errors)}"));
+                continue;
+            }
+
+            try
+            {
+                WordCollection importedCollection = new(
+                    Guid.NewGuid(),
+                    normalizedSlug,
+                    normalizedName,
+                    normalizedDescription,
+                    normalizedImageUrl,
+                    PublicationStatus.Active,
+                    sortOrder,
+                    timestampUtc);
+
+                importedCollection.ReplaceEntries(collectionEntries, timestampUtc);
+                importedCollections.Add(importedCollection);
+            }
+            catch (DomainRuleException exception)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Collection '{normalizedSlug}': {exception.Message}"));
+            }
+        }
     }
 
     private async Task ProcessEntryAsync(
@@ -403,6 +569,24 @@ internal sealed class ContentImportService : IContentImportService
         {
             issues.Add(new ImportIssueModel(null, "Error", "The package must contain at least one entry."));
         }
+
+        HashSet<string> collectionSlugs = [];
+        for (int index = 0; index < parsedPackage.Collections.Count; index++)
+        {
+            ParsedContentCollectionModel collection = parsedPackage.Collections[index];
+            string normalizedSlug = NormalizeText(collection.Slug).ToLowerInvariant();
+
+            if (string.IsNullOrWhiteSpace(normalizedSlug))
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Collection {index + 1} slug is required."));
+                continue;
+            }
+
+            if (!collectionSlugs.Add(normalizedSlug))
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Duplicate collection slug '{normalizedSlug}' is not allowed inside one package."));
+            }
+        }
     }
 
     private static Dictionary<LanguageCode, string> ValidateMeaningTranslations(
@@ -602,6 +786,29 @@ internal sealed class ContentImportService : IContentImportService
     private static string NormalizeText(string? value)
     {
         return string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
+    }
+
+    private static string NormalizeCollectionSlug(string? value, ICollection<string> errors)
+    {
+        string normalized = NormalizeText(value).ToLowerInvariant();
+
+        if (string.IsNullOrWhiteSpace(normalized))
+        {
+            errors.Add("Collection slug is required.");
+            return string.Empty;
+        }
+
+        bool isValid = normalized.All(character =>
+            (character >= 'a' && character <= 'z') ||
+            (character >= '0' && character <= '9') ||
+            character == '-');
+
+        if (!isValid || normalized.StartsWith("-", StringComparison.Ordinal) || normalized.EndsWith("-", StringComparison.Ordinal))
+        {
+            errors.Add("Collection slug must use lowercase kebab-case.");
+        }
+
+        return normalized;
     }
 
     private static string[] ValidateLabelKeys(

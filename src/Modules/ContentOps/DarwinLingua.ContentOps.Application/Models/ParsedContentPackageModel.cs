@@ -9,4 +9,5 @@ public sealed record ParsedContentPackageModel(
     string PackageName,
     string? Source,
     IReadOnlyList<string> DefaultMeaningLanguages,
-    IReadOnlyList<ParsedContentEntryModel> Entries);
+    IReadOnlyList<ParsedContentEntryModel> Entries,
+    IReadOnlyList<ParsedContentCollectionModel> Collections);

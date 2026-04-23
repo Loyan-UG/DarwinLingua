@@ -35,10 +35,18 @@ public interface IContentImportRepository
         CancellationToken cancellationToken);
 
     /// <summary>
+    /// Loads active word entries for the specified normalized lemmas so collection references can be resolved.
+    /// </summary>
+    Task<IReadOnlyList<WordEntry>> GetActiveWordsByNormalizedLemmasAsync(
+        IReadOnlyCollection<string> normalizedLemmas,
+        CancellationToken cancellationToken);
+
+    /// <summary>
     /// Persists the completed package audit rows and any imported lexical aggregates in one operation.
     /// </summary>
     Task PersistImportAsync(
         ContentPackage contentPackage,
         IReadOnlyList<WordEntry> importedWords,
+        IReadOnlyList<WordCollection> importedCollections,
         CancellationToken cancellationToken);
 }
