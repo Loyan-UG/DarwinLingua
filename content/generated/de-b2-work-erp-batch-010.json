@@ -1,0 +1,164 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-work-erp-20260424-010",
+  "packageName": "German B2 Work and ERP Batch 010",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Bereitstellungsreife",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Bereitstellungsreife", "plural": "Bereitstellungsreifen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Bereitstellungsreifen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["deployment", "readiness"],
+      "meanings": [{ "language": "en", "text": "deployment readiness" }, { "language": "fa", "text": "آمادگی استقرار" }],
+      "examples": [
+        { "baseText": "Die Bereitstellungsreife wurde erst bestaetigt, nachdem Datenmigration, Freigaben und Rueckfalloptionen gemeinsam bewertet worden waren.", "translations": [{ "language": "en", "text": "Deployment readiness was confirmed only after data migration, approvals, and fallback options had been assessed together." }, { "language": "fa", "text": "آمادگی استقرار فقط بعد از آن تایید شد که migration داده، تاییدها و گزینه های بازگشت با هم ارزیابی شدند." }] },
+        { "baseText": "Fehlende Bereitstellungsreife wird oft zu spaet erkannt, wenn sich Teams nur auf technische Teilaspekte konzentrieren.", "translations": [{ "language": "en", "text": "Missing deployment readiness is often recognized too late when teams focus only on technical sub-aspects." }, { "language": "fa", "text": "نبود آمادگی استقرار اغلب خیلی دیر شناخته می شود، وقتی تیم ها فقط روی بخش های فنی جزئی تمرکز می کنند." }] }
+      ]
+    },
+    {
+      "word": "Fehlerbegrenzung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Fehlerbegrenzung", "plural": "Fehlerbegrenzungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Fehlerbegrenzungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["error", "containment"],
+      "meanings": [{ "language": "en", "text": "error containment" }, { "language": "fa", "text": "مهار خطا" }],
+      "examples": [
+        { "baseText": "Die Fehlerbegrenzung war erfolgreich, weil betroffene Buchungskreise isoliert und automatische Folgeprozesse sofort gestoppt wurden.", "translations": [{ "language": "en", "text": "Error containment was successful because affected posting groups were isolated and automatic downstream processes were stopped immediately." }, { "language": "fa", "text": "مهار خطا موفق بود چون محدوده های ثبت درگیر ایزوله شدند و فرایندهای خودکار بعدی فوراً متوقف شدند." }] },
+        { "baseText": "Ohne wirksame Fehlerbegrenzung breiten sich selbst kleine Stammdatenfehler schnell ueber mehrere Module aus.", "translations": [{ "language": "en", "text": "Without effective error containment, even small master data errors quickly spread across several modules." }, { "language": "fa", "text": "بدون مهار موثر خطا، حتی خطاهای کوچک در داده های پایه هم به سرعت در چند ماژول پخش می شوند." }] }
+      ]
+    },
+    {
+      "word": "Pruefpunktlogik",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Pruefpunktlogik", "plural": "Pruefpunktlogiken", "isPrimary": true }],
+      "article": "die",
+      "plural": "Pruefpunktlogiken",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["governance", "checkpoint"],
+      "meanings": [{ "language": "en", "text": "checkpoint logic" }, { "language": "fa", "text": "منطق checkpoint" }],
+      "examples": [
+        { "baseText": "Die Pruefpunktlogik wurde ueberarbeitet, damit vor jeder Freigabe klar war, welche Nachweise zwingend vorliegen mussten.", "translations": [{ "language": "en", "text": "The checkpoint logic was revised so that it was clear before every approval which proofs had to be available." }, { "language": "fa", "text": "منطق checkpoint بازنگری شد تا پیش از هر تایید روشن باشد که چه شواهدی باید حتماً موجود باشند." }] },
+        { "baseText": "Eine schwache Pruefpunktlogik macht Governance formal sichtbar, aber operativ wirkungslos.", "translations": [{ "language": "en", "text": "Weak checkpoint logic makes governance formally visible but operationally ineffective." }, { "language": "fa", "text": "یک منطق ضعیف برای checkpoint، راهبری را از نظر ظاهری قابل مشاهده می کند اما از نظر عملیاتی بی اثر می سازد." }] }
+      ]
+    },
+    {
+      "word": "Wiederherstellungsfenster",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Wiederherstellungsfenster", "plural": "Wiederherstellungsfenster", "isPrimary": true }],
+      "article": "das",
+      "plural": "Wiederherstellungsfenster",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["recovery", "service"],
+      "meanings": [{ "language": "en", "text": "recovery window" }, { "language": "fa", "text": "بازه بازیابی" }],
+      "examples": [
+        { "baseText": "Das Wiederherstellungsfenster war kuerzer als erwartet, weil mehrere Teams gleichzeitig auf dieselben Supportressourcen zugreifen mussten.", "translations": [{ "language": "en", "text": "The recovery window was shorter than expected because several teams had to use the same support resources at the same time." }, { "language": "fa", "text": "بازه بازیابی کوتاه تر از انتظار بود چون چند تیم هم زمان باید از یک منابع پشتیبانی مشترک استفاده می کردند." }] },
+        { "baseText": "Wer das Wiederherstellungsfenster falsch einschaetzt, unterschätzt meist auch die Folgen eines gescheiterten Starts.", "translations": [{ "language": "en", "text": "Anyone who misjudges the recovery window usually also underestimates the consequences of a failed launch." }, { "language": "fa", "text": "کسی که بازه بازیابی را اشتباه برآورد کند، معمولاً پیامدهای یک شروع ناموفق را هم دست کم می گیرد." }] }
+      ]
+    },
+    {
+      "word": "Freigabekriterium",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Freigabekriterium", "plural": "Freigabekriterien", "isPrimary": true }],
+      "article": "das",
+      "plural": "Freigabekriterien",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["release", "decision"],
+      "meanings": [{ "language": "en", "text": "approval criterion" }, { "language": "fa", "text": "معیار تایید" }],
+      "examples": [
+        { "baseText": "Ein zentrales Freigabekriterium war, dass kritische Geschaeftsprozesse im Test nicht nur technisch, sondern auch fachlich abgenommen wurden.", "translations": [{ "language": "en", "text": "A central approval criterion was that critical business processes were accepted in testing not only technically but also from the business side." }, { "language": "fa", "text": "یک معیار اصلی تایید این بود که فرایندهای حیاتی کسب و کار در تست نه فقط فنی بلکه از سمت کسب و کار هم پذیرش شوند." }] },
+        { "baseText": "Unklare Freigabekriterien fuehren fast immer zu Diskussionen ueber Zeitplan statt ueber Risiko und Wirkung.", "translations": [{ "language": "en", "text": "Unclear approval criteria almost always lead to discussions about schedule instead of risk and impact." }, { "language": "fa", "text": "معیارهای مبهم تایید تقریباً همیشه بحث را از ریسک و اثرگذاری به سمت زمان بندی می برند." }] }
+      ]
+    },
+    {
+      "word": "Absicherungsniveau",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Absicherungsniveau", "plural": "Absicherungsniveaus", "isPrimary": true }],
+      "article": "das",
+      "plural": "Absicherungsniveaus",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["safeguard", "quality"],
+      "meanings": [{ "language": "en", "text": "level of safeguarding" }, { "language": "fa", "text": "سطح پوشش حفاظتی" }],
+      "examples": [
+        { "baseText": "Das Absicherungsniveau war fuer den Rollout zu niedrig, weil mehrere Sonderfaelle weder dokumentiert noch getestet waren.", "translations": [{ "language": "en", "text": "The level of safeguarding was too low for the rollout because several edge cases were neither documented nor tested." }, { "language": "fa", "text": "سطح پوشش حفاظتی برای rollout خیلی پایین بود چون چند حالت خاص نه مستند شده بودند و نه تست شده بودند." }] },
+        { "baseText": "Ein realistisches Absicherungsniveau entsteht nur, wenn Fachbereich, Support und Technik dieselben Risikobilder teilen.", "translations": [{ "language": "en", "text": "A realistic level of safeguarding arises only when business, support, and technical teams share the same risk picture." }, { "language": "fa", "text": "یک سطح واقع بینانه از پوشش حفاظتی فقط وقتی شکل می گیرد که بخش کسب و کار، پشتیبانی و تیم فنی یک تصویر مشترک از ریسک داشته باشند." }] }
+      ]
+    },
+    {
+      "word": "Eskalationsschwelle",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Eskalationsschwelle", "plural": "Eskalationsschwellen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Eskalationsschwellen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["escalation", "threshold"],
+      "meanings": [{ "language": "en", "text": "escalation threshold" }, { "language": "fa", "text": "آستانه escalation" }],
+      "examples": [
+        { "baseText": "Die Eskalationsschwelle wurde bewusst niedriger gesetzt, damit wiederkehrende Integrationsfehler frueher sichtbar gemacht werden konnten.", "translations": [{ "language": "en", "text": "The escalation threshold was deliberately set lower so that recurring integration errors could be made visible earlier." }, { "language": "fa", "text": "آستانه escalation عمداً پایین تر تعیین شد تا خطاهای تکرارشونده integration زودتر آشکار شوند." }] },
+        { "baseText": "Eine zu hohe Eskalationsschwelle sorgt dafuer, dass Probleme erst gemeldet werden, wenn der operative Schaden schon eingetreten ist.", "translations": [{ "language": "en", "text": "An escalation threshold that is too high ensures that problems are reported only after operational damage has already occurred." }, { "language": "fa", "text": "یک آستانه خیلی بالا برای escalation باعث می شود مشکلات تازه زمانی گزارش شوند که آسیب عملیاتی قبلاً رخ داده باشد." }] }
+      ]
+    },
+    {
+      "word": "Nachweisqualitaet",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Nachweisqualitaet", "plural": "Nachweisqualitaeten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Nachweisqualitaeten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["evidence", "quality"],
+      "meanings": [{ "language": "en", "text": "quality of evidence" }, { "language": "fa", "text": "کیفیت شواهد" }],
+      "examples": [
+        { "baseText": "Die Nachweisqualitaet war entscheidend, weil die Lenkungsrunde nur auf belastbarer Grundlage ueber den Start entscheiden wollte.", "translations": [{ "language": "en", "text": "The quality of evidence was decisive because the steering group wanted to decide on the launch only on a solid basis." }, { "language": "fa", "text": "کیفیت شواهد تعیین کننده بود چون جلسه راهبری می خواست فقط بر پایه ای قابل اتکا درباره شروع تصمیم بگیرد." }] },
+        { "baseText": "Geringe Nachweisqualitaet erzeugt scheinbare Sicherheit, obwohl die kritischen Risiken nur oberflaechlich betrachtet wurden.", "translations": [{ "language": "en", "text": "Low quality of evidence creates apparent safety even though the critical risks were examined only superficially." }, { "language": "fa", "text": "کیفیت پایین شواهد، امنیت ظاهری ایجاد می کند، با اینکه ریسک های حیاتی فقط سطحی بررسی شده اند." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "b2-work-erp-batch-010",
+      "name": "B2 Work ERP Batch 010",
+      "description": "B2 vocabulary for deployment readiness, error containment, governance checkpoints, and service recovery.",
+      "image": "collections/b2-work-erp-batch-010.png",
+      "sortOrder": 3010,
+      "wordKeys": [
+        "Bereitstellungsreife",
+        "Fehlerbegrenzung",
+        "Pruefpunktlogik",
+        "Wiederherstellungsfenster",
+        "Freigabekriterium",
+        "Absicherungsniveau",
+        "Eskalationsschwelle",
+        "Nachweisqualitaet"
+      ]
+    }
+  ]
+}

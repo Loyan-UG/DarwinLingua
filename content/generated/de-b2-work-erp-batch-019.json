@@ -1,0 +1,164 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-work-erp-20260424-019",
+  "packageName": "German B2 Work and ERP Batch 019",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Rueckfalllenkung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Rueckfalllenkung", "plural": "Rueckfalllenkungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Rueckfalllenkungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["rollback", "governance"],
+      "meanings": [{ "language": "en", "text": "rollback governance" }, { "language": "fa", "text": "راهبری بازگشت" }],
+      "examples": [
+        { "baseText": "Die Rueckfalllenkung stellte sicher, dass Datenstand, Schnittstellenstatus und Benutzerrechte in derselben Reihenfolge zurueckgesetzt wurden.", "translations": [{ "language": "en", "text": "Rollback governance ensured that data status, interface state, and user rights were reset in the same order." }, { "language": "fa", "text": "راهبری بازگشت تضمین کرد که وضعیت داده، وضعیت interface و دسترسی‌های کاربر در همان ترتیب بازگردانده شوند." }] },
+        { "baseText": "Ohne klare Rueckfalllenkung werden Ruecknahmeprozesse schnell technisch moeglich, aber organisatorisch chaotisch.", "translations": [{ "language": "en", "text": "Without clear rollback governance, rollback processes quickly become technically possible but organizationally chaotic." }, { "language": "fa", "text": "بدون راهبری روشن بازگشت، فرایندهای بازگردانی خیلی زود از نظر فنی ممکن اما از نظر سازمانی آشفته می‌شوند." }] }
+      ]
+    },
+    {
+      "word": "Stoerungsnachweis",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Stoerungsnachweis", "plural": "Stoerungsnachweise", "isPrimary": true }],
+      "article": "der",
+      "plural": "Stoerungsnachweise",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["incident", "evidence"],
+      "meanings": [{ "language": "en", "text": "incident evidence" }, { "language": "fa", "text": "شواهد اختلال" }],
+      "examples": [
+        { "baseText": "Der Stoerungsnachweis bestand aus Logauszuegen, Nutzerberichten und einer zeitlichen Zuordnung der betroffenen Prozessschritte.", "translations": [{ "language": "en", "text": "The incident evidence consisted of log extracts, user reports, and a chronological mapping of the affected process steps." }, { "language": "fa", "text": "شواهد اختلال از بخش‌هایی از log، گزارش‌های کاربران و یک تطبیق زمانی از گام‌های فرایندی درگیر تشکیل شده بود." }] },
+        { "baseText": "Fehlender Stoerungsnachweis fuehrt oft dazu, dass Hypothesen laenger diskutiert werden als belastbare Fakten.", "translations": [{ "language": "en", "text": "Missing incident evidence often leads to hypotheses being discussed longer than reliable facts." }, { "language": "fa", "text": "نبود شواهد اختلال اغلب باعث می‌شود فرضیه‌ها بیشتر از واقعیت‌های قابل اتکا مورد بحث قرار بگیرند." }] }
+      ]
+    },
+    {
+      "word": "Rolloutsteuerung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Rolloutsteuerung", "plural": "Rolloutsteuerungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Rolloutsteuerungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["rollout", "control"],
+      "meanings": [{ "language": "en", "text": "rollout control" }, { "language": "fa", "text": "کنترل rollout" }],
+      "examples": [
+        { "baseText": "Die Rolloutsteuerung sorgte dafuer, dass Freigaben, Pilotfeedback und Restpunkte vor jedem weiteren Schritt synchronisiert wurden.", "translations": [{ "language": "en", "text": "Rollout control ensured that approvals, pilot feedback, and open points were synchronized before each further step." }, { "language": "fa", "text": "کنترل rollout باعث شد تاییدها، بازخورد پایلوت و موارد باز پیش از هر گام بعدی با هم هماهنگ شوند." }] },
+        { "baseText": "Schwache Rolloutsteuerung fuehrt haeufig dazu, dass lokale Erfolge den Blick auf globale Risiken verdecken.", "translations": [{ "language": "en", "text": "Weak rollout control often causes local successes to obscure the view of global risks." }, { "language": "fa", "text": "کنترل ضعیف rollout اغلب باعث می‌شود موفقیت‌های محلی دید نسبت به ریسک‌های کلی را بپوشانند." }] }
+      ]
+    },
+    {
+      "word": "Betriebsrueckkehr",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Betriebsrueckkehr", "plural": "Betriebsrueckkehren", "isPrimary": true }],
+      "article": "die",
+      "plural": "Betriebsrueckkehren",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["operations", "recovery"],
+      "meanings": [{ "language": "en", "text": "return to operations" }, { "language": "fa", "text": "بازگشت به عملیات" }],
+      "examples": [
+        { "baseText": "Die Betriebsrueckkehr wurde in Stufen geplant, damit Kernfunktionen zuerst stabil und nachgelagerte Prozesse erst spaeter wieder freigegeben wurden.", "translations": [{ "language": "en", "text": "The return to operations was planned in stages so that core functions were stabilized first and downstream processes were released only later." }, { "language": "fa", "text": "بازگشت به عملیات به‌صورت مرحله‌ای برنامه‌ریزی شد تا ابتدا قابلیت‌های اصلی پایدار شوند و فرایندهای بعدی بعدتر آزاد شوند." }] },
+        { "baseText": "Eine zu schnelle Betriebsrueckkehr fuehrt oft dazu, dass alte Fehlerbilder unter neuer Last wieder sichtbar werden.", "translations": [{ "language": "en", "text": "A return to operations that is too fast often causes old error patterns to reappear under new load." }, { "language": "fa", "text": "بازگشت خیلی سریع به عملیات اغلب باعث می‌شود الگوهای خطای قبلی زیر بار جدید دوباره ظاهر شوند." }] }
+      ]
+    },
+    {
+      "word": "Pruefstand",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Pruefstand", "plural": "Pruefstaende", "isPrimary": true }],
+      "article": "der",
+      "plural": "Pruefstaende",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["validation", "test-state"],
+      "meanings": [{ "language": "en", "text": "validation state" }, { "language": "fa", "text": "وضعیت بررسی" }],
+      "examples": [
+        { "baseText": "Der aktuelle Pruefstand zeigte, dass die Kernprozesse belastbar waren, waehrend Randfaelle noch gezielte Nachtests benoetigten.", "translations": [{ "language": "en", "text": "The current validation state showed that core processes were resilient while edge cases still required targeted retesting." }, { "language": "fa", "text": "وضعیت فعلی بررسی نشان داد که فرایندهای اصلی قابل اتکا هستند، در حالی که موارد حاشیه‌ای هنوز به تست مجدد هدفمند نیاز دارند." }] },
+        { "baseText": "Ein falsch kommunizierter Pruefstand erzeugt im Management schnell ein zu optimistisches Lagebild.", "translations": [{ "language": "en", "text": "A wrongly communicated validation state quickly creates an overly optimistic situation picture in management." }, { "language": "fa", "text": "یک وضعیت بررسی که اشتباه گزارش شود، سریعاً در مدیریت یک تصویر بیش از حد خوش‌بینانه ایجاد می‌کند." }] }
+      ]
+    },
+    {
+      "word": "Entlastungspfad",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Entlastungspfad", "plural": "Entlastungspfade", "isPrimary": true }],
+      "article": "der",
+      "plural": "Entlastungspfade",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["operations", "relief"],
+      "meanings": [{ "language": "en", "text": "relief path" }, { "language": "fa", "text": "مسیر کاهش فشار" }],
+      "examples": [
+        { "baseText": "Der Entlastungspfad sah vor, zuerst nichtkritische Jobs zu verschieben und dann manuelle Uebergangsregeln zu aktivieren.", "translations": [{ "language": "en", "text": "The relief path provided first for postponing non-critical jobs and then activating manual interim rules." }, { "language": "fa", "text": "مسیر کاهش فشار پیش‌بینی می‌کرد که ابتدا jobهای غیرحیاتی به تعویق بیفتند و سپس قواعد موقت دستی فعال شوند." }] },
+        { "baseText": "Ohne klaren Entlastungspfad verliert ein Team in Stoerungslagen schnell Zeit mit spontanen Einzelmassnahmen.", "translations": [{ "language": "en", "text": "Without a clear relief path, a team quickly loses time on spontaneous individual measures during disruption situations." }, { "language": "fa", "text": "بدون یک مسیر روشن برای کاهش فشار، تیم در وضعیت‌های اختلال خیلی زود وقت را صرف اقدام‌های فردی و ناگهانی می‌کند." }] }
+      ]
+    },
+    {
+      "word": "Entscheidungsfreigabe",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Entscheidungsfreigabe", "plural": "Entscheidungsfreigaben", "isPrimary": true }],
+      "article": "die",
+      "plural": "Entscheidungsfreigaben",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["decision", "approval"],
+      "meanings": [{ "language": "en", "text": "decision approval" }, { "language": "fa", "text": "تایید تصمیم" }],
+      "examples": [
+        { "baseText": "Die Entscheidungsfreigabe wurde erst erteilt, nachdem Auswirkungen auf Buchhaltung, Lager und CRM gemeinsam bewertet worden waren.", "translations": [{ "language": "en", "text": "Decision approval was granted only after impacts on accounting, warehouse, and CRM had been assessed together." }, { "language": "fa", "text": "تایید تصمیم فقط پس از آن صادر شد که اثرات بر حسابداری، انبار و CRM به‌صورت مشترک ارزیابی شده بودند." }] },
+        { "baseText": "Eine zu fruehe Entscheidungsfreigabe verlagert Unsicherheiten oft direkt in den Betrieb.", "translations": [{ "language": "en", "text": "Decision approval that comes too early often shifts uncertainties directly into operations." }, { "language": "fa", "text": "تایید تصمیم اگر خیلی زود داده شود، اغلب عدم‌قطعیت‌ها را مستقیم به داخل عملیات منتقل می‌کند." }] }
+      ]
+    },
+    {
+      "word": "Stabilisierungsreserve",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Stabilisierungsreserve", "plural": "Stabilisierungsreserven", "isPrimary": true }],
+      "article": "die",
+      "plural": "Stabilisierungsreserven",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["stability", "buffer"],
+      "meanings": [{ "language": "en", "text": "stabilization reserve" }, { "language": "fa", "text": "ذخیره پایدارسازی" }],
+      "examples": [
+        { "baseText": "Die Stabilisierungsreserve war im Plan bewusst vorgesehen, damit nach dem Start genug Zeit fuer Beobachtung und Korrektur blieb.", "translations": [{ "language": "en", "text": "The stabilization reserve was deliberately included in the plan so that enough time remained after launch for observation and correction." }, { "language": "fa", "text": "ذخیره پایدارسازی عمداً در برنامه در نظر گرفته شد تا بعد از شروع، زمان کافی برای مشاهده و اصلاح باقی بماند." }] },
+        { "baseText": "Fehlt die Stabilisierungsreserve, werden Restprobleme oft unter Zeitdruck in den Regelbetrieb gedrueckt.", "translations": [{ "language": "en", "text": "If the stabilization reserve is missing, residual problems are often pushed into regular operations under time pressure." }, { "language": "fa", "text": "اگر ذخیره پایدارسازی وجود نداشته باشد، مشکلات باقی‌مانده اغلب زیر فشار زمانی به عملیات عادی منتقل می‌شوند." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "b2-work-erp-batch-019",
+      "name": "B2 Work ERP Batch 019",
+      "description": "B2 vocabulary for rollback governance, incident evidence, rollout control, and operational recovery.",
+      "image": "collections/b2-work-erp-batch-019.png",
+      "sortOrder": 3019,
+      "wordKeys": [
+        "Rueckfalllenkung",
+        "Stoerungsnachweis",
+        "Rolloutsteuerung",
+        "Betriebsrueckkehr",
+        "Pruefstand",
+        "Entlastungspfad",
+        "Entscheidungsfreigabe",
+        "Stabilisierungsreserve"
+      ]
+    }
+  ]
+}

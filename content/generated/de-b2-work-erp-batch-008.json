@@ -1,0 +1,164 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-work-erp-20260424-008",
+  "packageName": "German B2 Work and ERP Batch 008",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Diagnosekette",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Diagnosekette", "plural": "Diagnoseketten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Diagnoseketten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["diagnosis", "analysis"],
+      "meanings": [{ "language": "en", "text": "diagnostic chain" }, { "language": "fa", "text": "زنجیره تشخیص" }],
+      "examples": [
+        { "baseText": "Die Diagnosekette wurde sauber dokumentiert, damit das Team die Ursache des Fehlers vom Symptom bis zur Datenquelle nachvollziehen konnte.", "translations": [{ "language": "en", "text": "The diagnostic chain was documented clearly so that the team could trace the cause of the error from the symptom to the data source." }, { "language": "fa", "text": "زنجیره تشخیص به شکل روشن مستند شد تا تیم بتواند علت خطا را از نشانه تا منبع داده دنبال کند." }] },
+        { "baseText": "Ohne eine belastbare Diagnosekette werden in kritischen Releases oft nur die sichtbaren Folgen behandelt.", "translations": [{ "language": "en", "text": "Without a reliable diagnostic chain, critical releases often address only the visible consequences." }, { "language": "fa", "text": "بدون یک زنجیره تشخیص قابل اتکا، در releaseهای حساس معمولاً فقط پیامدهای قابل مشاهده رسیدگی می‌شوند." }] }
+      ]
+    },
+    {
+      "word": "Freigabesicherheit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Freigabesicherheit", "plural": "Freigabesicherheiten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Freigabesicherheiten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["release", "assurance"],
+      "meanings": [{ "language": "en", "text": "release assurance" }, { "language": "fa", "text": "اطمینان از release" }],
+      "examples": [
+        { "baseText": "Die Freigabesicherheit stieg erst, nachdem alle offenen Abhaengigkeiten zwischen Schnittstellen, Tests und Datenmigration sichtbar gemacht wurden.", "translations": [{ "language": "en", "text": "Release assurance increased only after all open dependencies between interfaces, tests, and data migration were made visible." }, { "language": "fa", "text": "اطمینان از release فقط بعد از آن بیشتر شد که همه وابستگی های باز بین interfaceها، تست ها و migration داده آشکار شدند." }] },
+        { "baseText": "Bei geringer Freigabesicherheit sollte kein produktiver Termin bestaetigt werden, nur weil der Zeitplan unter Druck steht.", "translations": [{ "language": "en", "text": "When release assurance is low, no production date should be confirmed just because the schedule is under pressure." }, { "language": "fa", "text": "وقتی اطمینان از release پایین است، نباید فقط به خاطر فشار زمان بندی، تاریخ عملیاتی تایید شود." }] }
+      ]
+    },
+    {
+      "word": "Eskalationsweg",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Eskalationsweg", "plural": "Eskalationswege", "isPrimary": true }],
+      "article": "der",
+      "plural": "Eskalationswege",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["escalation", "governance"],
+      "meanings": [{ "language": "en", "text": "escalation path" }, { "language": "fa", "text": "مسیر escalation" }],
+      "examples": [
+        { "baseText": "Der Eskalationsweg wurde vor dem Go-live neu festgelegt, damit operative Stoerungen nicht erst ueber mehrere Zwischenstufen gemeldet werden mussten.", "translations": [{ "language": "en", "text": "The escalation path was redefined before go-live so that operational disruptions no longer had to be reported through several intermediate levels." }, { "language": "fa", "text": "مسیر escalation پیش از go-live دوباره تعریف شد تا اختلال های عملیاتی مجبور نباشند از چند سطح میانی عبور کنند." }] },
+        { "baseText": "Ein unklarer Eskalationsweg fuehrt haeufig dazu, dass dringende Themen zwar bekannt sind, aber zu spaet entschieden werden.", "translations": [{ "language": "en", "text": "An unclear escalation path often leads to urgent issues being known but decided too late." }, { "language": "fa", "text": "یک مسیر escalation نامشخص اغلب باعث می شود موضوع های فوری شناخته شده باشند اما خیلی دیر درباره آنها تصمیم گرفته شود." }] }
+      ]
+    },
+    {
+      "word": "Umsetzungsrobustheit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Umsetzungsrobustheit", "plural": "Umsetzungsrobustheiten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Umsetzungsrobustheiten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["implementation", "stability"],
+      "meanings": [{ "language": "en", "text": "implementation robustness" }, { "language": "fa", "text": "استحکام اجرا" }],
+      "examples": [
+        { "baseText": "Die Umsetzungsrobustheit wurde im Workshop gezielt bewertet, weil mehrere Sonderfaelle im ERP-Prozess nicht sauber abgesichert waren.", "translations": [{ "language": "en", "text": "Implementation robustness was assessed deliberately in the workshop because several edge cases in the ERP process were not properly secured." }, { "language": "fa", "text": "استحکام اجرا در workshop به طور هدفمند ارزیابی شد چون چند حالت خاص در فرایند ERP به شکل درست پوشش داده نشده بود." }] },
+        { "baseText": "Hohe Umsetzungsrobustheit zeigt sich meistens daran, dass auch unter Zeitdruck keine stillen Folgefehler entstehen.", "translations": [{ "language": "en", "text": "High implementation robustness is usually visible when no silent downstream errors arise even under time pressure." }, { "language": "fa", "text": "استحکام بالای اجرا معمولاً زمانی دیده می شود که حتی زیر فشار زمانی هم خطاهای پنهان بعدی ایجاد نشوند." }] }
+      ]
+    },
+    {
+      "word": "Fehlerisolation",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Fehlerisolation", "plural": "Fehlerisolationen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Fehlerisolationen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["diagnosis", "troubleshooting"],
+      "meanings": [{ "language": "en", "text": "fault isolation" }, { "language": "fa", "text": "ایزوله سازی خطا" }],
+      "examples": [
+        { "baseText": "Die Fehlerisolation gelang erst, nachdem Eingabedaten, Schnittstellenantworten und Buchungsregeln getrennt betrachtet wurden.", "translations": [{ "language": "en", "text": "Fault isolation succeeded only after input data, interface responses, and posting rules were examined separately." }, { "language": "fa", "text": "ایزوله سازی خطا فقط زمانی موفق شد که داده های ورودی، پاسخ های interface و قواعد ثبت جداگانه بررسی شدند." }] },
+        { "baseText": "Saubere Fehlerisolation verkuerzt nicht nur die Analysezeit, sondern verhindert auch ueberfluessige Eingriffe in stabile Bereiche.", "translations": [{ "language": "en", "text": "Clean fault isolation not only shortens analysis time but also prevents unnecessary interventions in stable areas." }, { "language": "fa", "text": "ایزوله سازی درست خطا فقط زمان تحلیل را کم نمی کند، بلکه از مداخله های اضافی در بخش های پایدار هم جلوگیری می کند." }] }
+      ]
+    },
+    {
+      "word": "Freigabedisziplin",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Freigabedisziplin", "plural": "Freigabedisziplinen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Freigabedisziplinen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["release", "governance"],
+      "meanings": [{ "language": "en", "text": "release discipline" }, { "language": "fa", "text": "انضباط release" }],
+      "examples": [
+        { "baseText": "Die Freigabedisziplin litt darunter, dass Fachbereich und Technik mit unterschiedlichen Definitionen von fertig arbeiteten.", "translations": [{ "language": "en", "text": "Release discipline suffered because business and technical teams worked with different definitions of done." }, { "language": "fa", "text": "انضباط release از این جهت آسیب دید که بخش کسب و کار و تیم فنی با تعریف های متفاوتی از done کار می کردند." }] },
+        { "baseText": "Ohne klare Freigabedisziplin wird jede Auslieferung zur Verhandlung statt zu einem reproduzierbaren Prozess.", "translations": [{ "language": "en", "text": "Without clear release discipline, every delivery turns into a negotiation instead of a reproducible process." }, { "language": "fa", "text": "بدون انضباط روشن برای release، هر تحویل به جای یک فرایند تکرارپذیر به یک مذاکره تبدیل می شود." }] }
+      ]
+    },
+    {
+      "word": "Entscheidungsverdichtung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Entscheidungsverdichtung", "plural": "Entscheidungsverdichtungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Entscheidungsverdichtungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["decision", "governance"],
+      "meanings": [{ "language": "en", "text": "decision consolidation" }, { "language": "fa", "text": "تجمیع تصمیم" }],
+      "examples": [
+        { "baseText": "Die Entscheidungsverdichtung half dem Lenkungskreis, aus vielen Einzelfragen ein handhabbares Bild fuer die Freigabe zu machen.", "translations": [{ "language": "en", "text": "Decision consolidation helped the steering committee turn many individual questions into a manageable picture for approval." }, { "language": "fa", "text": "تجمیع تصمیم به کمیته راهبری کمک کرد تا از تعداد زیادی پرسش جزئی، یک تصویر قابل مدیریت برای تایید بسازد." }] },
+        { "baseText": "Fehlende Entscheidungsverdichtung fuehrt oft dazu, dass Gremien ueber Details sprechen, aber keine Richtung festlegen.", "translations": [{ "language": "en", "text": "Lack of decision consolidation often leads committees to discuss details without setting a direction." }, { "language": "fa", "text": "نبود تجمیع تصمیم اغلب باعث می شود کمیته ها درباره جزئیات حرف بزنند اما جهت مشخص نکنند." }] }
+      ]
+    },
+    {
+      "word": "Betriebszuverlaessigkeit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Betriebszuverlaessigkeit", "plural": "Betriebszuverlaessigkeiten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Betriebszuverlaessigkeiten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["operations", "reliability"],
+      "meanings": [{ "language": "en", "text": "operational reliability" }, { "language": "fa", "text": "قابلیت اتکای عملیاتی" }],
+      "examples": [
+        { "baseText": "Die Betriebszuverlaessigkeit war fuer den Kunden wichtiger als die Anzahl neuer Funktionen, weil Ausfallzeiten direkte Umsatzfolgen hatten.", "translations": [{ "language": "en", "text": "Operational reliability was more important to the customer than the number of new features because downtime had direct revenue consequences." }, { "language": "fa", "text": "قابلیت اتکای عملیاتی برای مشتری از تعداد قابلیت های جدید مهم تر بود چون downtime پیامد مستقیم درآمدی داشت." }] },
+        { "baseText": "Wer die Betriebszuverlaessigkeit verbessern will, muss nicht nur Fehler beheben, sondern auch Uebergaben und Kontrollpunkte staerken.", "translations": [{ "language": "en", "text": "Anyone who wants to improve operational reliability must not only fix errors but also strengthen handovers and control points." }, { "language": "fa", "text": "کسی که می خواهد قابلیت اتکای عملیاتی را بهتر کند، نباید فقط خطاها را رفع کند، بلکه باید handoverها و نقاط کنترل را هم تقویت کند." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "b2-work-erp-batch-008",
+      "name": "B2 Work ERP Batch 008",
+      "description": "B2 vocabulary for issue diagnosis, release assurance, escalation governance, and implementation reliability.",
+      "image": "collections/b2-work-erp-batch-008.png",
+      "sortOrder": 3008,
+      "wordKeys": [
+        "Diagnosekette",
+        "Freigabesicherheit",
+        "Eskalationsweg",
+        "Umsetzungsrobustheit",
+        "Fehlerisolation",
+        "Freigabedisziplin",
+        "Entscheidungsverdichtung",
+        "Betriebszuverlaessigkeit"
+      ]
+    }
+  ]
+}
