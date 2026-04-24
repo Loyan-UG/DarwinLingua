@@ -113,6 +113,23 @@ internal sealed class CatalogWordCollectionSeeder(IDbContextFactory<DarwinLingua
                 continue;
             }
 
+            bool metadataChanged =
+                !string.Equals(existingCollection.Name, seedDefinition.Name, StringComparison.Ordinal) ||
+                !string.Equals(existingCollection.Description, seedDefinition.Description, StringComparison.Ordinal) ||
+                !string.Equals(existingCollection.ImageUrl, seedDefinition.ImageUrl, StringComparison.Ordinal) ||
+                existingCollection.PublicationStatus != PublicationStatus.Active ||
+                existingCollection.SortOrder != seedDefinition.SortOrder;
+
+            bool entriesChanged = existingCollection.Entries
+                .OrderBy(entry => entry.SortOrder)
+                .Select(entry => (entry.WordEntryId, entry.SortOrder))
+                .SequenceEqual(resolvedWords);
+
+            if (!metadataChanged && entriesChanged)
+            {
+                continue;
+            }
+
             existingCollection.UpdateMetadata(
                 seedDefinition.Name,
                 seedDefinition.Description,
