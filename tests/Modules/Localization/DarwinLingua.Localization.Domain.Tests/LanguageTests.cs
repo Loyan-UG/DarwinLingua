@@ -141,4 +141,57 @@ public sealed class LanguageTests
         language.Deactivate();
         Assert.False(language.IsActive);
     }
+
+    /// <summary>
+    /// Verifies that an empty native name is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyNativeName()
+    {
+        Assert.Throws<DomainRuleException>(() =>
+            new Language(
+                Guid.NewGuid(),
+                LanguageCode.From("de"),
+                "German",
+                "   ",
+                isActive: true,
+                supportsUserInterface: true,
+                supportsMeanings: false));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="Language.UpdateNames"/> rejects an empty English name.
+    /// </summary>
+    [Fact]
+    public void UpdateNames_ShouldRejectEmptyEnglishName()
+    {
+        Language language = new(
+            Guid.NewGuid(),
+            LanguageCode.From("de"),
+            "German",
+            "Deutsch",
+            isActive: true,
+            supportsUserInterface: true,
+            supportsMeanings: false);
+
+        Assert.Throws<DomainRuleException>(() => language.UpdateNames("   ", "Deutsch"));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="Language.UpdateNames"/> rejects an empty native name.
+    /// </summary>
+    [Fact]
+    public void UpdateNames_ShouldRejectEmptyNativeName()
+    {
+        Language language = new(
+            Guid.NewGuid(),
+            LanguageCode.From("de"),
+            "German",
+            "Deutsch",
+            isActive: true,
+            supportsUserInterface: true,
+            supportsMeanings: false);
+
+        Assert.Throws<DomainRuleException>(() => language.UpdateNames("German", "   "));
+    }
 }

@@ -121,4 +121,76 @@ public sealed class UserLearningProfileTests
         Assert.Equal(LanguageCode.From("tr"), profile.PreferredMeaningLanguage2);
         Assert.Equal(updatedAt, profile.UpdatedAtUtc);
     }
+
+    /// <summary>
+    /// Verifies that a null secondary meaning language is accepted and stored as null.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldAcceptNullSecondaryMeaningLanguage()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("de"),
+            DateTime.UtcNow);
+
+        Assert.Null(profile.PreferredMeaningLanguage2);
+    }
+
+    /// <summary>
+    /// Verifies that updating meaning-language preferences clears the secondary language when null is provided.
+    /// </summary>
+    [Fact]
+    public void UpdateMeaningLanguagePreferences_ShouldClearSecondaryLanguageWhenNull()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            LanguageCode.From("de"),
+            LanguageCode.From("en"),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        profile.UpdateMeaningLanguagePreferences(
+            LanguageCode.From("tr"),
+            preferredMeaningLanguage2: null,
+            DateTime.UtcNow);
+
+        Assert.Equal(LanguageCode.From("tr"), profile.PreferredMeaningLanguage1);
+        Assert.Null(profile.PreferredMeaningLanguage2);
+    }
+
+    /// <summary>
+    /// Verifies that the user identifier is trimmed on construction.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldTrimUserId()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "  local-installation-user  ",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("en"),
+            DateTime.UtcNow);
+
+        Assert.Equal("local-installation-user", profile.UserId);
+    }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) creation timestamp is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectDefaultCreatedAtUtc()
+    {
+        Assert.Throws<DomainRuleException>(() => new UserLearningProfile(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("en"),
+            default));
+    }
 }

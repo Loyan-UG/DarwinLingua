@@ -82,6 +82,160 @@ public sealed class UserLearningProfileServiceTests
     }
 
     /// <summary>
+    /// Verifies that a valid meaning-language update is persisted.
+    /// </summary>
+    [Fact]
+    public async Task UpdateMeaningLanguagePreferencesAsync_ShouldPersistValidPrimaryLanguage()
+    {
+        InMemoryUserLearningProfileRepository repository = new();
+        FakeLearningPreferenceLanguageValidator validator = new(
+            supportedUiLanguages: ["en"],
+            supportedMeaningLanguages: ["en", "de"]);
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserLearningProfileRepository>(repository);
+        services.AddSingleton<ILearningPreferenceLanguageValidator>(validator);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserLearningProfileService service = serviceProvider.GetRequiredService<IUserLearningProfileService>();
+
+        await service.EnsureLocalProfileExistsAsync("en", CancellationToken.None);
+
+        UserLearningProfileModel updated = await service.UpdateMeaningLanguagePreferencesAsync(
+            "de",
+            preferredMeaningLanguage2: null,
+            CancellationToken.None);
+
+        Assert.Equal("de", updated.PreferredMeaningLanguage1);
+        Assert.Null(updated.PreferredMeaningLanguage2);
+    }
+
+    /// <summary>
+    /// Verifies that an unsupported secondary meaning language is rejected.
+    /// </summary>
+    [Fact]
+    public async Task UpdateMeaningLanguagePreferencesAsync_ShouldRejectUnsupportedSecondaryLanguage()
+    {
+        InMemoryUserLearningProfileRepository repository = new();
+        FakeLearningPreferenceLanguageValidator validator = new(
+            supportedUiLanguages: ["en"],
+            supportedMeaningLanguages: ["en", "de"]);
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserLearningProfileRepository>(repository);
+        services.AddSingleton<ILearningPreferenceLanguageValidator>(validator);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserLearningProfileService service = serviceProvider.GetRequiredService<IUserLearningProfileService>();
+
+        await service.EnsureLocalProfileExistsAsync("en", CancellationToken.None);
+
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.UpdateMeaningLanguagePreferencesAsync(
+            "en",
+            preferredMeaningLanguage2: "tr",
+            CancellationToken.None));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="IUserLearningProfileService.GetCurrentProfileAsync"/> returns the existing profile.
+    /// </summary>
+    [Fact]
+    public async Task GetCurrentProfileAsync_ShouldReturnExistingProfile()
+    {
+        InMemoryUserLearningProfileRepository repository = new();
+        FakeLearningPreferenceLanguageValidator validator = new(
+            supportedUiLanguages: ["en", "de"],
+            supportedMeaningLanguages: ["en"]);
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserLearningProfileRepository>(repository);
+        services.AddSingleton<ILearningPreferenceLanguageValidator>(validator);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserLearningProfileService service = serviceProvider.GetRequiredService<IUserLearningProfileService>();
+
+        UserLearningProfileModel created = await service.EnsureLocalProfileExistsAsync("de", CancellationToken.None);
+        UserLearningProfileModel fetched = await service.GetCurrentProfileAsync(CancellationToken.None);
+
+        Assert.Equal(created.UserId, fetched.UserId);
+        Assert.Equal(created.UiLanguageCode, fetched.UiLanguageCode);
+        Assert.Equal(created.PreferredMeaningLanguage1, fetched.PreferredMeaningLanguage1);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="IUserLearningProfileService.GetCurrentProfileAsync"/> auto-creates the profile when missing.
+    /// </summary>
+    [Fact]
+    public async Task GetCurrentProfileAsync_ShouldAutoCreateProfileWhenMissing()
+    {
+        InMemoryUserLearningProfileRepository repository = new();
+        FakeLearningPreferenceLanguageValidator validator = new(
+            supportedUiLanguages: ["en"],
+            supportedMeaningLanguages: ["en"]);
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserLearningProfileRepository>(repository);
+        services.AddSingleton<ILearningPreferenceLanguageValidator>(validator);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserLearningProfileService service = serviceProvider.GetRequiredService<IUserLearningProfileService>();
+
+        UserLearningProfileModel profile = await service.GetCurrentProfileAsync(CancellationToken.None);
+
+        Assert.Equal("local-installation-user", profile.UserId);
+        Assert.Equal("en", profile.PreferredMeaningLanguage1);
+    }
+
+    /// <summary>
+    /// Verifies that a supported UI language preference update is persisted.
+    /// </summary>
+    [Fact]
+    public async Task UpdateUiLanguagePreferenceAsync_ShouldPersistSupportedLanguage()
+    {
+        InMemoryUserLearningProfileRepository repository = new();
+        FakeLearningPreferenceLanguageValidator validator = new(
+            supportedUiLanguages: ["en", "de"],
+            supportedMeaningLanguages: ["en"]);
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserLearningProfileRepository>(repository);
+        services.AddSingleton<ILearningPreferenceLanguageValidator>(validator);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserLearningProfileService service = serviceProvider.GetRequiredService<IUserLearningProfileService>();
+
+        await service.EnsureLocalProfileExistsAsync("en", CancellationToken.None);
+
+        UserLearningProfileModel updated = await service.UpdateUiLanguagePreferenceAsync("de", CancellationToken.None);
+
+        Assert.Equal("de", updated.UiLanguageCode);
+    }
+
+    /// <summary>
+    /// Verifies that an unsupported UI language preference update is rejected.
+    /// </summary>
+    [Fact]
+    public async Task UpdateUiLanguagePreferenceAsync_ShouldRejectUnsupportedLanguage()
+    {
+        InMemoryUserLearningProfileRepository repository = new();
+        FakeLearningPreferenceLanguageValidator validator = new(
+            supportedUiLanguages: ["en"],
+            supportedMeaningLanguages: ["en"]);
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserLearningProfileRepository>(repository);
+        services.AddSingleton<ILearningPreferenceLanguageValidator>(validator);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserLearningProfileService service = serviceProvider.GetRequiredService<IUserLearningProfileService>();
+
+        await service.EnsureLocalProfileExistsAsync("en", CancellationToken.None);
+
+        await Assert.ThrowsAsync<DomainRuleException>(() =>
+            service.UpdateUiLanguagePreferenceAsync("tr", CancellationToken.None));
+    }
+
+    /// <summary>
     /// Stores an in-memory profile for application tests.
     /// </summary>
     private sealed class InMemoryUserLearningProfileRepository : IUserLearningProfileRepository
