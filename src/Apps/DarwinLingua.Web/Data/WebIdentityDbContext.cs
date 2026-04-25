@@ -1,11 +1,11 @@
+using DarwinLingua.Identity;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DarwinLingua.Web.Data;
 
 public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> options)
-    : IdentityDbContext<WebApplicationUser, IdentityRole, string>(options)
+    : DarwinLinguaIdentityDbContext(options)
 {
     public DbSet<WebUserPreference> UserPreferences => Set<WebUserPreference>();
 

@@ -3,6 +3,7 @@ using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
 using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
+using DarwinLingua.Identity;
 using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
@@ -10,8 +11,11 @@ using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
 using DarwinLingua.WebApi.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Security.Claims;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +30,7 @@ builder.Services
     .Validate(options => options.HasAtLeastOneActiveProduct(), "At least one active client product must be configured.")
     .Validate(options => options.HasValidPackages(), "Packages must reference active client products and valid areas.")
     .ValidateOnStart();
+builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
 
 string serverContentConnectionString = builder.Configuration.GetConnectionString("ServerContentAdmin")
     ?? builder.Configuration.GetConnectionString("ServerContent")
@@ -33,11 +38,34 @@ string serverContentConnectionString = builder.Configuration.GetConnectionString
 string sharedCatalogConnectionString = builder.Configuration.GetConnectionString("SharedCatalogAdmin")
     ?? builder.Configuration.GetConnectionString("SharedCatalog")
     ?? serverContentConnectionString;
+string identityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")
+    ?? builder.Configuration.GetConnectionString("Identity")
+    ?? serverContentConnectionString;
 
 builder.Services.AddDbContext<ServerContentDbContext>(options =>
 {
     options.UseNpgsql(serverContentConnectionString);
 });
+builder.Services.AddDbContext<WebApiIdentityDbContext>(options =>
+{
+    options.UseNpgsql(identityConnectionString);
+});
+
+builder.Services
+    .AddIdentityApiEndpoints<DarwinLinguaIdentityUser>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequiredLength = 8;
+    })
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<WebApiIdentityDbContext>()
+    .AddDefaultTokenProviders();
+builder.Services.AddScoped<IUserClaimsPrincipalFactory<DarwinLinguaIdentityUser>, DefaultLearnerRoleClaimsPrincipalFactory>();
+builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebApiIdentityDbContext>>();
+builder.Services.AddAuthorization();
 
 builder.Services
     .AddDarwinLinguaInfrastructureForPostgres(sharedCatalogConnectionString)
@@ -70,10 +98,33 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
         bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IServerContentDatabaseBootstrapper bootstrapper =
         bootstrapScope.ServiceProvider.GetRequiredService<IServerContentDatabaseBootstrapper>();
+    IDarwinLinguaIdentityBootstrapper identityBootstrapper =
+        bootstrapScope.ServiceProvider.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
 
     await databaseInitializer.InitializeAsync(CancellationToken.None);
     await bootstrapper.InitializeAsync(CancellationToken.None);
+    await identityBootstrapper.InitializeAsync(CancellationToken.None);
 }
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+RouteGroupBuilder authGroup = app.MapGroup("/api/auth");
+authGroup.MapIdentityApi<DarwinLinguaIdentityUser>();
+authGroup.MapGet(
+        "/me",
+        [Authorize] async (ClaimsPrincipal principal, UserManager<DarwinLinguaIdentityUser> userManager) =>
+        {
+            DarwinLinguaIdentityUser? user = await userManager.GetUserAsync(principal).ConfigureAwait(false);
+            if (user is null)
+            {
+                return Results.Unauthorized();
+            }
+
+            IList<string> roles = await userManager.GetRolesAsync(user).ConfigureAwait(false);
+            return Results.Ok(new AuthenticatedUserResponse(user.Id, user.Email, true, roles.OrderBy(static role => role).ToArray()));
+        })
+    .RequireAuthorization();
 
 app.MapGet(
     "/api/catalog/topics",

@@ -28,6 +28,8 @@ Do not mark the related backlog items complete until this worksheet has been exe
 - [ ] identity tables exist
 - [ ] test learner account is available
 - [ ] test operator/admin account is available
+- [ ] seeded learner test account is available
+- [ ] seeded system admin account is available
 - [ ] email/reset-token flow is configured or replaced with the intended non-production process
 
 ---
@@ -38,6 +40,7 @@ Do not mark the related backlog items complete until this worksheet has been exe
 - [ ] verify validation messages render correctly
 - [ ] verify duplicate-email behavior
 - [ ] verify the new account receives the expected default role
+- [ ] verify the new learner receives the expected initial entitlement state
 - Result:
 - Notes:
 
@@ -69,6 +72,8 @@ Do not mark the related backlog items complete until this worksheet has been exe
 - [ ] verify learner account cannot access admin routes
 - [ ] verify operator/admin account can access admin routes
 - [ ] verify role-protected actions return the expected response when forbidden
+- [ ] verify seeded learner test account cannot reach admin routes
+- [ ] verify seeded system admin account can reach `Admin` routes immediately after bootstrap
 - Result:
 - Notes:
 
@@ -79,12 +84,24 @@ Do not mark the related backlog items complete until this worksheet has been exe
 - [ ] open account settings
 - [ ] verify profile and language preferences persist correctly
 - [ ] verify session remains stable after profile changes
+- [ ] verify account bootstrap does not overwrite guest learner state unexpectedly
+- [ ] verify premium-gated features render the expected locked or unlocked state
 - Result:
 - Notes:
 
 ---
 
-## F. Sign-Off
+## F. Cross-Platform Readiness
+
+- [ ] verify the chosen identity boundary is usable by both web and mobile clients
+- [ ] verify the non-production learner test account can authenticate from both delivery surfaces once mobile auth is wired
+- [ ] verify entitlement checks are enforced server-side rather than only in the web UI
+- Result:
+- Notes:
+
+---
+
+## G. Sign-Off
 
 - Known issues accepted:
 - Follow-up tasks filed:

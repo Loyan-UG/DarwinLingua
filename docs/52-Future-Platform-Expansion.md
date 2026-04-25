@@ -69,6 +69,13 @@ The web learner application should reuse the same manifest, package, and version
 
 Accounts and sync should remain outside the current content-distribution implementation.
 
+The next approved direction is:
+
+- one shared account system for web and mobile learners
+- role-based authorization for administrative access
+- entitlement-based feature gating for monetized learner features
+- seeded non-production test accounts for validation and demos
+
 First synced data when introduced:
 
 - favorites
@@ -89,6 +96,8 @@ Rules:
 - user state stays record-based
 - conflict handling must be explicit per state type
 - offline-first clients must still function without sign-in
+- roles must not be reused as premium-feature flags
+- entitlement evaluation must remain server-owned
 
 ---
 
@@ -116,5 +125,18 @@ Planned boundaries:
 - package-access policy by product and tier
 - premium practice or curated content packs
 - no monetization logic inside lexical query or import workflows
+
+Recommended first rollout shape:
+
+- free catalog browsing and word viewing remain available
+- trial or premium entitlements unlock selected learner-state and convenience features
+- pricing, trial duration, and final premium feature scope remain product decisions outside this document
+
+Required engineering rules:
+
+- feature gates must be enforceable on both web and mobile
+- a missing client-side gate must not grant access if the server denies entitlement
+- seeded non-production learner and admin accounts must exist for validation
+- entitlement changes must be auditable
 
 Any future monetization layer should consume identity, entitlement state, and published content metadata rather than mutating publishing behavior itself.

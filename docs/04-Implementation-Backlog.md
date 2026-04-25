@@ -413,11 +413,30 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] add `manifest.webmanifest`, icons, and service worker baseline
 - [x] add the first `Areas/Admin` dashboard shell
 - [x] add `htmx` and Tailwind-ready frontend baseline files
-- [ ] add ASP.NET Core Identity with learner registration and sign-in
-- [ ] add learner-facing browse/search/detail pages
-- [ ] add learner favorites and recent-activity persistence on the web
-- [ ] add `Areas/Admin` with authorization boundary and operator shell
-- [ ] add first admin pages for content batch inspection and publish history
+- [x] add ASP.NET Core Identity with learner registration and sign-in
+- [x] add learner-facing browse/search/detail pages
+- [x] add learner favorites and recent-activity persistence on the web
+- [x] add `Areas/Admin` with authorization boundary and operator shell
+- [x] add first admin pages for content batch inspection and publish history
+
+### 34. Shared Account, Role, And Seed Foundation
+
+- [x] define the shared account boundary for web and mobile
+- [x] keep web on cookies while defining token-based mobile sign-in against the same identity system
+- [x] assign the default `Learner` role on successful learner registration
+- [ ] seed a non-production system admin account
+- [ ] seed a non-production learner test account
+- [ ] move seed-account credentials to environment-backed local secrets
+- [x] validate clean-start role creation and seed-account bootstrap
+
+### 35. Monetization And Entitlement Foundation
+
+- [ ] define entitlements as a separate model from roles
+- [ ] define baseline entitlement states for `Free`, `Trial`, and `Premium`
+- [ ] define the first server-owned premium feature gating boundary shared by web and mobile
+- [ ] keep core catalog browse and word viewing permanently outside premium enforcement unless product policy changes later
+- [ ] add backlog placeholders for premium-capable features such as favorites, dual-meaning-language mode, and future advanced practice flows
+- [ ] define audit and diagnostics requirements for entitlement changes and trial expiration
 
 ---
 

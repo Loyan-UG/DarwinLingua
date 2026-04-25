@@ -10,6 +10,7 @@ It covers:
 - the MVC and Area structure
 - installable web-app direction
 - authentication and user-account boundaries
+- shared identity and entitlement direction across web and mobile
 - shared-backend reuse rules
 - the initial web backlog slices
 
@@ -27,6 +28,7 @@ The web platform should:
 - remain compatible with the existing Web API and PostgreSQL direction
 - support installability on desktop and mobile like an app where supported
 - support authenticated user state such as favorites and recent activity
+- prepare for subscription-aware feature gating without coupling pricing decisions into content delivery
 - keep content ownership and user-state ownership clearly separated
 
 ---
@@ -201,6 +203,13 @@ Authenticated web users should later be able to persist:
 - selected meaning languages
 - selected UI language where relevant
 
+Authenticated mobile users should later be able to use the same account boundary for:
+
+- favorites sync
+- learner-preference sync
+- premium feature entitlement checks
+- future subscription and trial enforcement
+
 ### Boundary Rule
 
 Content state and user state must remain separate.
@@ -214,6 +223,61 @@ This is the same separation already used in the MAUI architecture and should rem
 
 ---
 
+## 7.1 Shared Identity And Entitlement Direction
+
+Identity can no longer be treated as a web-only concern.
+
+The recommended platform direction is:
+
+- one shared account system for web and mobile
+- web uses cookie-based authentication
+- mobile uses token-based authentication against the same identity boundary
+- roles remain server-owned
+- paid/free access is expressed through entitlements, not hard-coded UI flags
+
+Recommended first roles:
+
+- `Learner`
+- `Operator`
+- `Admin`
+
+Recommended first seeded accounts in non-production environments:
+
+- one seeded system admin account
+- one seeded learner test account
+
+Recommended first entitlement model:
+
+- `Free`
+- `Trial`
+- `Premium`
+
+These entitlement names are placeholders for architecture only.
+
+They define the shape of the access model without locking pricing, trial duration, or final premium feature scope.
+
+### Rule
+
+Authorization answers:
+
+- who the actor is
+- which role the actor has
+- whether the actor may access an administrative surface
+
+Entitlements answer:
+
+- which learner-facing premium features are enabled
+- whether a trial is active or expired
+- whether a subscription-backed feature should be unlocked
+
+Do not collapse roles and entitlements into one concept.
+
+Roles protect system boundaries.
+
+Entitlements protect commercial feature boundaries.
+
+---
+
 ## 8. Data and Module Boundaries
 
 The future server-side web platform should keep these responsibilities:
@@ -223,6 +287,7 @@ The future server-side web platform should keep these responsibilities:
 - `Learning`: user-specific favorites and state
 - `Localization`: UI-language rules where shared
 - `Practice`: later learner practice workflows
+- `Identity`: shared authentication, account lifecycle, roles, and entitlement access checks
 - `Publishing` / `Distribution`: server-side published-content lifecycle
 
 The web host should compose these modules, not bypass them.
@@ -340,6 +405,23 @@ Recommended roles:
 
 This is enough for the first implementation.
 
+### Commercial Access Rule
+
+The first monetization-capable implementation should assume:
+
+- some learner features will remain permanently free
+- some learner features will later require an active trial or paid entitlement
+- feature gates must be enforceable on both web and mobile
+- the server must remain the source of truth for entitlement state
+
+Examples of likely gated areas:
+
+- favorites
+- dual-meaning-language mode
+- future advanced practice features
+
+These examples are architectural placeholders only and may change when product policy is finalized.
+
 ---
 
 ## 13. Initial Web Backlog Slices
@@ -351,10 +433,12 @@ The first recommended web implementation order is:
 3. add `htmx` baseline and partial-render conventions
 4. add PWA manifest, icons, and service-worker baseline
 5. add ASP.NET Core Identity with registration and sign-in
-6. add root learner pages for browse/search/detail
-7. add authenticated favorites and recent activity
-8. add `Areas/Admin` shell and authorization boundary
-9. add admin content batch inspection and publish-history views
+6. add seeded local non-production users and default learner-role assignment
+7. add shared entitlement foundation for premium feature checks
+8. add root learner pages for browse/search/detail
+9. add authenticated favorites and recent activity
+10. add `Areas/Admin` shell and authorization boundary
+11. add admin content batch inspection and publish-history views
 
 This order keeps the architecture clean and avoids starting with admin-only workflows.
 
@@ -366,10 +450,15 @@ The first web slice should not try to deliver:
 
 - a JavaScript SPA rewrite
 - browser-side full offline database sync
-- payment/subscription systems
 - advanced moderation workflows
 - multi-tenant product separation
 - real-time collaboration
+
+The first monetization-capable slice still should not try to deliver:
+
+- final pricing policy
+- a production billing-provider lock-in before entitlement boundaries are stable
+- feature gating hidden only in the client UI without server-side enforcement
 
 Those can come later if the product proves the need.
 

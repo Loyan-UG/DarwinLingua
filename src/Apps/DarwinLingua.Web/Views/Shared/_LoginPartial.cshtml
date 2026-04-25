@@ -1,7 +1,7 @@
-@using DarwinLingua.Web.Data
+@using DarwinLingua.Identity
 @using Microsoft.AspNetCore.Identity
-@inject SignInManager<WebApplicationUser> SignInManager
-@inject UserManager<WebApplicationUser> UserManager
+@inject SignInManager<DarwinLinguaIdentityUser> SignInManager
+@inject UserManager<DarwinLinguaIdentityUser> UserManager
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))

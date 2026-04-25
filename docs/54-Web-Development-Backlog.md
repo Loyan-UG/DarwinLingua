@@ -83,10 +83,38 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add registration
 - [x] add sign-in / sign-out
 - [x] add forgot-password / reset-password baseline
+- [x] assign `Learner` as the default role for newly registered learner accounts
 - [x] add learner role seeding
 - [x] add operator/admin role seeding
 - [x] add authorization policies for `Operator` and `Admin`
 - [x] add account-management pages
+- [ ] add seeded non-production system admin account from environment-backed secrets
+- [ ] add seeded non-production learner test account from environment-backed secrets
+- [x] define a startup failure rule when required seed-account secrets are missing in local/dev bootstrap modes
+- [x] add a shared auth contract for future mobile sign-in against the same account system
+
+## 6.1 Cross-Platform Account Foundation
+
+- [x] define the shared identity boundary used by both `DarwinLingua.Web` and `DarwinDeutsch.Maui`
+- [x] keep cookie auth for web and add token-based auth planning for mobile against the same identity store
+- [x] define the account API surface needed by mobile for register, sign-in, sign-out, refresh, and profile bootstrap
+- [ ] define how anonymous learner state upgrades into authenticated learner state without data loss
+- [ ] define device/session management expectations for low-friction learner sign-in
+
+## 6.2 Entitlements and Monetization Foundation
+
+- [ ] define the first entitlement model separate from roles
+- [ ] define baseline entitlements such as `Free`, `Trial`, and `Premium` without locking final pricing
+- [ ] add server-side entitlement checks for learner-facing premium features
+- [ ] add web-side feature-gate presentation patterns for locked premium features
+- [ ] define trial bootstrap rules for newly registered learners
+- [ ] define subscription-state persistence and expiration handling
+- [ ] define audit and diagnostics for entitlement changes
+- [ ] ensure feature gating never blocks permanently free catalog browsing
+- [ ] define the first premium-capable features as backlog placeholders:
+- [ ] favorites
+- [ ] dual-meaning-language mode
+- [ ] future advanced practice capabilities
 
 ## 7. Shared Backend Integration
 
@@ -108,6 +136,7 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] persist preferred meaning languages
 - [x] persist UI language preference when applicable
 - [x] define anonymous-user fallback behavior
+- [ ] define authenticated-user upgrade flow for guest favorites/history where migration is worth keeping
 
 ## 9. Admin Area
 
@@ -138,6 +167,11 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add manual validation worksheet for PWA installability
 - [x] add manual validation worksheet for auth flows
 - [x] add manual validation worksheet for browse/search/detail flows
+- [ ] validate seeded admin login on a clean local environment
+- [ ] validate seeded learner test login on a clean local environment
+- [ ] validate default `Learner` role assignment after registration
+- [ ] validate premium/free feature gating behavior with both learner and admin accounts
+- [ ] validate web/mobile auth compatibility against the same server identity boundary
 
 ## 12. Release Readiness
 

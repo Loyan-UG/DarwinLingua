@@ -1,4 +1,5 @@
 using DarwinLingua.Infrastructure.DependencyInjection;
+using DarwinLingua.Identity;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.DependencyInjection;
@@ -31,7 +32,7 @@ builder.Services.AddOutputCache(options =>
         .SetVaryByQuery("id", "skip"));
 });
 builder.Services.Configure<MemoryCacheOptions>(options => options.SizeLimit = 512);
-builder.Services.Configure<WebIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
+builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
 builder.Services.AddScoped<IWebActivityQueryService, WebActivityQueryService>();
@@ -40,9 +41,11 @@ builder.Services.AddScoped<IWebAdminOperationsQueryService, WebAdminOperationsQu
 builder.Services.AddScoped<IWebUserPreferenceService, WebUserPreferenceService>();
 builder.Services.AddScoped<IWebFavoriteWordService, WebFavoriteWordService>();
 builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();
-builder.Services.AddScoped<IWebIdentityBootstrapper, WebIdentityBootstrapper>();
+builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebIdentityDbContext>>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
-string? webIdentityConnectionString = builder.Configuration.GetConnectionString("WebIdentity");
+string? webIdentityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")
+    ?? builder.Configuration.GetConnectionString("Identity")
+    ?? builder.Configuration.GetConnectionString("WebIdentity");
 string appDataDirectory = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
 string webLearningDatabasePath = Path.Combine(appDataDirectory, "darwin-lingua.web.db");
 
@@ -67,7 +70,7 @@ builder.Services
     .AddLocalizationInfrastructure();
 
 builder.Services
-    .AddDefaultIdentity<WebApplicationUser>(options =>
+    .AddDefaultIdentity<DarwinLinguaIdentityUser>(options =>
     {
         options.SignIn.RequireConfirmedAccount = false;
         options.Password.RequireDigit = true;
@@ -79,6 +82,7 @@ builder.Services
     .AddEntityFrameworkStores<WebIdentityDbContext>()
     .AddDefaultTokenProviders()
     .AddDefaultUI();
+builder.Services.AddScoped<IUserClaimsPrincipalFactory<DarwinLinguaIdentityUser>, DefaultLearnerRoleClaimsPrincipalFactory>();
 
 builder.Services.AddAuthorization(options =>
 {
@@ -91,7 +95,7 @@ var app = builder.Build();
 await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 {
     IDatabaseInitializer databaseInitializer = bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
-    IWebIdentityBootstrapper identityBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IWebIdentityBootstrapper>();
+    IDarwinLinguaIdentityBootstrapper identityBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
 
     await databaseInitializer.InitializeAsync(CancellationToken.None);
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
