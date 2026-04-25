@@ -64,4 +64,81 @@ public sealed class LanguageTests
         Assert.Equal("German", language.EnglishName);
         Assert.Equal("Deutsch", language.NativeName);
     }
+
+    /// <summary>
+    /// Verifies that an empty identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() =>
+            new Language(
+                Guid.Empty,
+                LanguageCode.From("en"),
+                "English",
+                "English",
+                isActive: true,
+                supportsUserInterface: true,
+                supportsMeanings: false));
+    }
+
+    /// <summary>
+    /// Verifies that an empty English name is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyEnglishName()
+    {
+        Assert.Throws<DomainRuleException>(() =>
+            new Language(
+                Guid.NewGuid(),
+                LanguageCode.From("en"),
+                "   ",
+                "English",
+                isActive: true,
+                supportsUserInterface: true,
+                supportsMeanings: false));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="Language.UpdateCapabilities"/> accepts changes when at least one capability remains.
+    /// </summary>
+    [Fact]
+    public void UpdateCapabilities_ShouldSucceedWhenAtLeastOneCapabilityIsEnabled()
+    {
+        Language language = new(
+            Guid.NewGuid(),
+            LanguageCode.From("en"),
+            "English",
+            "English",
+            isActive: true,
+            supportsUserInterface: true,
+            supportsMeanings: true);
+
+        language.UpdateCapabilities(supportsUserInterface: false, supportsMeanings: true);
+
+        Assert.False(language.SupportsUserInterface);
+        Assert.True(language.SupportsMeanings);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="Language.Activate"/> and <see cref="Language.Deactivate"/> toggle the active state.
+    /// </summary>
+    [Fact]
+    public void ActivateAndDeactivate_ShouldToggleIsActive()
+    {
+        Language language = new(
+            Guid.NewGuid(),
+            LanguageCode.From("de"),
+            "German",
+            "Deutsch",
+            isActive: false,
+            supportsUserInterface: true,
+            supportsMeanings: false);
+
+        language.Activate();
+        Assert.True(language.IsActive);
+
+        language.Deactivate();
+        Assert.False(language.IsActive);
+    }
 }

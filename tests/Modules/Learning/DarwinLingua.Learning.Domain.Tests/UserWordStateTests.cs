@@ -22,6 +22,55 @@ public sealed class UserWordStateTests
     }
 
     /// <summary>
+    /// Verifies that an empty internal identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new UserWordState(
+            Guid.Empty,
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a blank user identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyUserId()
+    {
+        Assert.Throws<DomainRuleException>(() => new UserWordState(
+            Guid.NewGuid(),
+            "   ",
+            Guid.NewGuid(),
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that the first view sets <see cref="UserWordState.FirstViewedAtUtc"/> and that subsequent
+    /// views do not change it while still updating <see cref="UserWordState.LastViewedAtUtc"/>.
+    /// </summary>
+    [Fact]
+    public void TrackViewed_FirstViewSetsFirstViewedAndSubsequentViewsDoNotChangeIt()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-10));
+
+        DateTime firstView = DateTime.UtcNow.AddMinutes(-3);
+        DateTime secondView = DateTime.UtcNow;
+
+        userWordState.TrackViewed(firstView);
+        userWordState.TrackViewed(secondView);
+
+        Assert.Equal(firstView, userWordState.FirstViewedAtUtc);
+        Assert.Equal(secondView, userWordState.LastViewedAtUtc);
+    }
+
+    /// <summary>
     /// Verifies that tracking views sets first/last timestamps and increments counters.
     /// </summary>
     [Fact]

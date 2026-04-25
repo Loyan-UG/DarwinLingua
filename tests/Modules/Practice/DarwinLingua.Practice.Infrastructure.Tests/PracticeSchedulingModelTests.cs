@@ -59,4 +59,145 @@ public sealed class PracticeSchedulingModelTests
             DateTime.UtcNow,
             responseMilliseconds: 0));
     }
+
+    /// <summary>
+    /// Verifies that a null response-duration value is allowed.
+    /// </summary>
+    [Fact]
+    public void PracticeAttempt_ShouldAllowNullResponseMilliseconds()
+    {
+        PracticeAttempt attempt = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            PracticeSessionType.Flashcard,
+            PracticeAttemptOutcome.Correct,
+            DateTime.UtcNow,
+            responseMilliseconds: null);
+
+        Assert.Null(attempt.ResponseMilliseconds);
+    }
+
+    /// <summary>
+    /// Verifies that an empty attempt identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void PracticeAttempt_ShouldRejectEmptyIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new PracticeAttempt(
+            Guid.Empty,
+            "local-installation-user",
+            Guid.NewGuid(),
+            PracticeSessionType.Review,
+            PracticeAttemptOutcome.Correct,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that an empty lexical-entry identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void PracticeAttempt_ShouldRejectEmptyWordEntryPublicId()
+    {
+        Assert.Throws<DomainRuleException>(() => new PracticeAttempt(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.Empty,
+            PracticeSessionType.Review,
+            PracticeAttemptOutcome.Correct,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a blank user identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void PracticeAttempt_ShouldRejectEmptyUserId()
+    {
+        Assert.Throws<DomainRuleException>(() => new PracticeAttempt(
+            Guid.NewGuid(),
+            "   ",
+            Guid.NewGuid(),
+            PracticeSessionType.Review,
+            PracticeAttemptOutcome.Correct,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that an empty review-state identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_ShouldRejectEmptyIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new PracticeReviewState(
+            Guid.Empty,
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that an empty lexical-entry identifier is rejected in review state.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_ShouldRejectEmptyWordEntryPublicId()
+    {
+        Assert.Throws<DomainRuleException>(() => new PracticeReviewState(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.Empty,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a blank user identifier is rejected in review state.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_ShouldRejectEmptyUserId()
+    {
+        Assert.Throws<DomainRuleException>(() => new PracticeReviewState(
+            Guid.NewGuid(),
+            "   ",
+            Guid.NewGuid(),
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="PracticeReviewState.SetDueAt"/> persists the due date and updates the timestamp.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_SetDueAt_ShouldPersistDueDateAndTimestamp()
+    {
+        PracticeReviewState reviewState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        DateTime dueAt = DateTime.UtcNow.AddDays(1);
+        DateTime updatedAt = DateTime.UtcNow;
+
+        reviewState.SetDueAt(dueAt, updatedAt);
+
+        Assert.Equal(dueAt, reviewState.DueAtUtc);
+        Assert.Equal(updatedAt, reviewState.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="PracticeReviewState.SetDueAt"/> with a null value clears the due date.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_SetDueAt_ShouldClearDueDateWhenNull()
+    {
+        PracticeReviewState reviewState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        reviewState.SetDueAt(DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddMinutes(-3));
+        reviewState.SetDueAt(null, DateTime.UtcNow);
+
+        Assert.Null(reviewState.DueAtUtc);
+    }
 }

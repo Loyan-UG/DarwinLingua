@@ -27,4 +27,24 @@ public sealed class LanguageCodeTests
     {
         Assert.Throws<DomainRuleException>(() => LanguageCode.From("english"));
     }
+
+    /// <summary>
+    /// Verifies that an empty or whitespace-only value is rejected.
+    /// </summary>
+    [Fact]
+    public void From_ShouldRejectEmptyOrWhitespaceValue()
+    {
+        Assert.Throws<DomainRuleException>(() => LanguageCode.From("   "));
+    }
+
+    /// <summary>
+    /// Verifies that a valid BCP 47 subtag (e.g. "zh-hans") is accepted and normalized.
+    /// </summary>
+    [Fact]
+    public void From_ShouldAcceptValidSubtag()
+    {
+        LanguageCode code = LanguageCode.From("ZH-Hans");
+
+        Assert.Equal("zh-hans", code.Value);
+    }
 }
