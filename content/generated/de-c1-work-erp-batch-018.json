@@ -1,0 +1,167 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c1-work-erp-20260425-018",
+  "packageName": "German C1 Work ERP Batch 018",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Abnahmeprotokollierung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Abnahmeprotokollierung", "plural": "Abnahmeprotokollierungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Abnahmeprotokollierungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["acceptance", "audit"],
+      "meanings": [{ "language": "en", "text": "acceptance logging" }, { "language": "fa", "text": "ثبت جزئیات پذیرش" }],
+      "examples": [
+        { "baseText": "Die Abnahmeprotokollierung zeigt, welche Fachtests bestanden wurden und welche Punkte unter Vorbehalt akzeptiert sind.", "translations": [{ "language": "en", "text": "Acceptance logging shows which business tests passed and which points were accepted with reservations." }, { "language": "fa", "text": "ثبت جزئیات پذیرش نشان می‌دهد کدام تست‌های تخصصی قبول شده‌اند و کدام موارد با شرط پذیرفته شده‌اند." }] },
+        { "baseText": "Ohne Abnahmeprotokollierung kann spaeter niemand nachvollziehen, warum ein offener Fehler trotzdem freigegeben wurde.", "translations": [{ "language": "en", "text": "Without acceptance logging, nobody can later trace why an open defect was approved anyway." }, { "language": "fa", "text": "بدون ثبت جزئیات پذیرش، بعداً کسی نمی‌تواند ردیابی کند چرا یک خطای باز با این حال تایید شده است." }] }
+      ]
+    },
+    {
+      "word": "Betriebskennzahl",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Betriebskennzahl", "plural": "Betriebskennzahlen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Betriebskennzahlen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["operations", "kpi"],
+      "meanings": [{ "language": "en", "text": "operational metric" }, { "language": "fa", "text": "شاخص عملیاتی" }],
+      "examples": [
+        { "baseText": "Eine wichtige Betriebskennzahl ist die durchschnittliche Antwortzeit bei der Auftragserfassung.", "translations": [{ "language": "en", "text": "An important operational metric is the average response time during order entry." }, { "language": "fa", "text": "یک شاخص عملیاتی مهم میانگین زمان پاسخ هنگام ثبت سفارش است." }] },
+        { "baseText": "Betriebskennzahlen muessen mit realen Prozessen verknuepft sein, sonst bleiben sie fuer Fachbereiche abstrakt.", "translations": [{ "language": "en", "text": "Operational metrics must be linked to real processes, otherwise they remain abstract for business departments." }, { "language": "fa", "text": "شاخص‌های عملیاتی باید به فرآیندهای واقعی وصل باشند، وگرنه برای واحدهای تخصصی انتزاعی می‌مانند." }] }
+      ]
+    },
+    {
+      "word": "Datenverantwortlicher",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Datenverantwortlicher", "plural": "Datenverantwortliche", "isPrimary": true }],
+      "article": "der",
+      "plural": "Datenverantwortliche",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["data", "ownership"],
+      "meanings": [{ "language": "en", "text": "data owner" }, { "language": "fa", "text": "مالک داده" }],
+      "examples": [
+        { "baseText": "Der Datenverantwortliche entscheidet, welche Kundendaten bereinigt, archiviert oder gesperrt werden.", "translations": [{ "language": "en", "text": "The data owner decides which customer data is cleaned, archived, or blocked." }, { "language": "fa", "text": "مالک داده تصمیم می‌گیرد کدام داده مشتری پاک‌سازی، آرشیو یا مسدود شود." }] },
+        { "baseText": "Wenn kein Datenverantwortlicher benannt ist, bleiben Qualitaetsprobleme in Stammdaten oft dauerhaft bestehen.", "translations": [{ "language": "en", "text": "If no data owner is named, quality problems in master data often persist permanently." }, { "language": "fa", "text": "اگر مالک داده مشخص نباشد، مشکلات کیفیت در داده پایه اغلب دائمی باقی می‌مانند." }] }
+      ]
+    },
+    {
+      "word": "Einfuehrungsrisiko",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Einfuehrungsrisiko", "plural": "Einfuehrungsrisiken", "isPrimary": true }],
+      "article": "das",
+      "plural": "Einfuehrungsrisiken",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["rollout", "risk"],
+      "meanings": [{ "language": "en", "text": "implementation risk" }, { "language": "fa", "text": "ریسک پیاده‌سازی" }],
+      "examples": [
+        { "baseText": "Das Einfuehrungsrisiko steigt, wenn Schulungen, Datenmigration und Prozessabnahme in dieselbe Woche fallen.", "translations": [{ "language": "en", "text": "Implementation risk increases when training, data migration, and process acceptance fall in the same week." }, { "language": "fa", "text": "ریسک پیاده‌سازی وقتی بالا می‌رود که آموزش، migration داده و پذیرش فرآیند در یک هفته قرار بگیرند." }] },
+        { "baseText": "Ein realistischer Rolloutplan reduziert Einfuehrungsrisiken, ohne kritische Tests zu kuerzen.", "translations": [{ "language": "en", "text": "A realistic rollout plan reduces implementation risks without shortening critical tests." }, { "language": "fa", "text": "برنامه rollout واقع‌بینانه ریسک‌های پیاده‌سازی را بدون کوتاه کردن تست‌های بحرانی کاهش می‌دهد." }] }
+      ]
+    },
+    {
+      "word": "Fehlerweiterleitung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Fehlerweiterleitung", "plural": "Fehlerweiterleitungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Fehlerweiterleitungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["support", "operations"],
+      "meanings": [{ "language": "en", "text": "error routing" }, { "language": "fa", "text": "ارجاع خطا" }],
+      "examples": [
+        { "baseText": "Die Fehlerweiterleitung muss erkennen, ob ein Problem aus der Schnittstelle, dem Prozess oder den Stammdaten kommt.", "translations": [{ "language": "en", "text": "Error routing must detect whether a problem comes from the interface, the process, or master data." }, { "language": "fa", "text": "ارجاع خطا باید تشخیص دهد مشکل از interface، فرآیند یا داده پایه می‌آید." }] },
+        { "baseText": "Schlechte Fehlerweiterleitung verlaengert Stoerungen, weil Tickets mehrfach zwischen Teams verschoben werden.", "translations": [{ "language": "en", "text": "Poor error routing prolongs incidents because tickets are moved between teams several times." }, { "language": "fa", "text": "ارجاع ضعیف خطا اختلال‌ها را طولانی می‌کند چون ticketها چند بار بین تیم‌ها جابه‌جا می‌شوند." }] }
+      ]
+    },
+    {
+      "word": "Leistungszusage",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Leistungszusage", "plural": "Leistungszusagen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Leistungszusagen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["service", "contract"],
+      "meanings": [{ "language": "en", "text": "service commitment" }, { "language": "fa", "text": "تعهد سطح خدمت" }],
+      "examples": [
+        { "baseText": "Die Leistungszusage fuer kritische Stoerungen umfasst Reaktionszeit, Bearbeitungszeit und Eskalation.", "translations": [{ "language": "en", "text": "The service commitment for critical incidents includes response time, processing time, and escalation." }, { "language": "fa", "text": "تعهد سطح خدمت برای اختلال‌های بحرانی شامل زمان پاسخ، زمان رسیدگی و escalation است." }] },
+        { "baseText": "Eine unrealistische Leistungszusage erzeugt Kundenerwartungen, die der Support im Alltag nicht erfuellen kann.", "translations": [{ "language": "en", "text": "An unrealistic service commitment creates customer expectations that support cannot meet in daily operations." }, { "language": "fa", "text": "تعهد سطح خدمت غیرواقعی انتظارهایی برای مشتری ایجاد می‌کند که پشتیبانی در کار روزانه نمی‌تواند برآورده کند." }] }
+      ]
+    },
+    {
+      "word": "Preisbildungslogik",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Preisbildungslogik", "plural": "Preisbildungslogiken", "isPrimary": true }],
+      "article": "die",
+      "plural": "Preisbildungslogiken",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["pricing", "sales"],
+      "meanings": [{ "language": "en", "text": "pricing logic" }, { "language": "fa", "text": "منطق قیمت‌گذاری" }],
+      "examples": [
+        { "baseText": "Die Preisbildungslogik muss Rabatte, Kundengruppen und Staffelpreise konsistent verarbeiten.", "translations": [{ "language": "en", "text": "The pricing logic must process discounts, customer groups, and tiered prices consistently." }, { "language": "fa", "text": "منطق قیمت‌گذاری باید تخفیف‌ها، گروه‌های مشتری و قیمت‌های پلکانی را سازگار پردازش کند." }] },
+        { "baseText": "Eine undokumentierte Preisbildungslogik fuehrt schnell zu falschen Angeboten und Streit mit dem Kunden.", "translations": [{ "language": "en", "text": "Undocumented pricing logic quickly leads to incorrect offers and disputes with the customer." }, { "language": "fa", "text": "منطق قیمت‌گذاری مستندنشده سریعاً به پیشنهادهای اشتباه و اختلاف با مشتری منجر می‌شود." }] }
+      ]
+    },
+    {
+      "word": "Rolloutsteuerung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Rolloutsteuerung", "plural": "Rolloutsteuerungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Rolloutsteuerungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["rollout", "governance"],
+      "meanings": [{ "language": "en", "text": "rollout control" }, { "language": "fa", "text": "کنترل rollout" }],
+      "examples": [
+        { "baseText": "Die Rolloutsteuerung legt fest, welche Standorte zuerst umgestellt werden und welche Kriterien dafuer gelten.", "translations": [{ "language": "en", "text": "Rollout control defines which locations are transitioned first and which criteria apply." }, { "language": "fa", "text": "کنترل rollout مشخص می‌کند کدام شعب اول منتقل شوند و چه معیارهایی برای آن معتبر است." }] },
+        { "baseText": "Ohne zentrale Rolloutsteuerung entstehen unterschiedliche Systemstaende, die Support und Reporting erschweren.", "translations": [{ "language": "en", "text": "Without central rollout control, different system versions emerge and make support and reporting harder." }, { "language": "fa", "text": "بدون کنترل مرکزی rollout نسخه‌های متفاوت سیستم ایجاد می‌شود و پشتیبانی و گزارش‌گیری سخت‌تر می‌شود." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "c1-work-erp-batch-018",
+      "name": "C1 Work ERP Batch 018",
+      "description": "C1 German vocabulary for acceptance logging, operational metrics, data ownership, implementation risk, error routing, service commitments, pricing logic, and rollout control.",
+      "image": "work-erp-c1-018.png",
+      "language": "de",
+      "cefrLevel": "C1",
+      "topics": ["work-and-jobs"],
+      "sortOrder": 4018,
+      "wordKeys": [
+        "Abnahmeprotokollierung",
+        "Betriebskennzahl",
+        "Datenverantwortlicher",
+        "Einfuehrungsrisiko",
+        "Fehlerweiterleitung",
+        "Leistungszusage",
+        "Preisbildungslogik",
+        "Rolloutsteuerung"
+      ]
+    }
+  ]
+}

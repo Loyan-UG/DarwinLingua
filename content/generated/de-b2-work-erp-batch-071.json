@@ -1,0 +1,167 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-work-erp-20260424-071",
+  "packageName": "German B2 Work and ERP Batch 071",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Mandantenwechselpruefung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Mandantenwechselpruefung", "plural": "Mandantenwechselpruefungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Mandantenwechselpruefungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["tenant", "testing"],
+      "meanings": [{ "language": "en", "text": "tenant switch check" }, { "language": "fa", "text": "بررسی تغییر tenant" }],
+      "examples": [
+        { "baseText": "Die Mandantenwechselpruefung stellt sicher, dass Benutzer keine Daten aus einem falschen Mandanten sehen.", "translations": [{ "language": "en", "text": "The tenant switch check ensures that users do not see data from the wrong tenant." }, { "language": "fa", "text": "بررسی تغییر tenant مطمئن می‌کند کاربران داده‌های tenant اشتباه را نبینند." }] },
+        { "baseText": "Vor dem Release wurde die Mandantenwechselpruefung fuer Vertrieb, Einkauf und Buchhaltung wiederholt.", "translations": [{ "language": "en", "text": "Before the release, the tenant switch check was repeated for sales, purchasing, and accounting." }, { "language": "fa", "text": "قبل از release، بررسی تغییر tenant برای فروش، خرید و حسابداری تکرار شد." }] }
+      ]
+    },
+    {
+      "word": "Belegnummernkreis",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Belegnummernkreis", "plural": "Belegnummernkreise", "isPrimary": true }],
+      "article": "der",
+      "plural": "Belegnummernkreise",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["documents", "configuration"],
+      "meanings": [{ "language": "en", "text": "document number range" }, { "language": "fa", "text": "محدوده شماره سند" }],
+      "examples": [
+        { "baseText": "Der Belegnummernkreis muss je Firma eindeutig sein, damit Rechnungen korrekt nachverfolgt werden koennen.", "translations": [{ "language": "en", "text": "The document number range must be unique per company so invoices can be traced correctly." }, { "language": "fa", "text": "محدوده شماره سند باید برای هر شرکت یکتا باشد تا فاکتورها درست قابل پیگیری باشند." }] },
+        { "baseText": "Ein falsch eingestellter Belegnummernkreis fuehrte im Testsystem zu doppelten Gutschriften.", "translations": [{ "language": "en", "text": "An incorrectly configured document number range caused duplicate credit notes in the test system." }, { "language": "fa", "text": "یک محدوده شماره سند اشتباه تنظیم‌شده در سیستم تست باعث credit noteهای تکراری شد." }] }
+      ]
+    },
+    {
+      "word": "Rabattstaffelpruefung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Rabattstaffelpruefung", "plural": "Rabattstaffelpruefungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Rabattstaffelpruefungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["pricing", "sales"],
+      "meanings": [{ "language": "en", "text": "discount scale check" }, { "language": "fa", "text": "بررسی پلکان تخفیف" }],
+      "examples": [
+        { "baseText": "Die Rabattstaffelpruefung verhindert, dass ein Kunde bei kleinen Mengen einen Grosskundenrabatt erhaelt.", "translations": [{ "language": "en", "text": "The discount scale check prevents a customer from receiving a major customer discount for small quantities." }, { "language": "fa", "text": "بررسی پلکان تخفیف مانع می‌شود مشتری برای مقدار کم تخفیف مشتری عمده دریافت کند." }] },
+        { "baseText": "Nach der Preismigration wurde die Rabattstaffelpruefung mit mehreren Beispielauftraegen validiert.", "translations": [{ "language": "en", "text": "After the price migration, the discount scale check was validated with several sample orders." }, { "language": "fa", "text": "پس از migration قیمت، بررسی پلکان تخفیف با چند سفارش نمونه اعتبارسنجی شد." }] }
+      ]
+    },
+    {
+      "word": "Lieferterminzusage",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Lieferterminzusage", "plural": "Lieferterminzusagen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Lieferterminzusagen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["delivery", "customer"],
+      "meanings": [{ "language": "en", "text": "delivery date commitment" }, { "language": "fa", "text": "تعهد تاریخ تحویل" }],
+      "examples": [
+        { "baseText": "Die Lieferterminzusage darf erst erfolgen, wenn Bestand und Produktionskapazitaet geprueft wurden.", "translations": [{ "language": "en", "text": "The delivery date commitment may be made only after stock and production capacity have been checked." }, { "language": "fa", "text": "تعهد تاریخ تحویل فقط پس از بررسی موجودی و ظرفیت تولید باید انجام شود." }] },
+        { "baseText": "Eine unrealistische Lieferterminzusage fuehrt spaeter zu Eskalationen im Kundenprojekt.", "translations": [{ "language": "en", "text": "An unrealistic delivery date commitment later leads to escalations in the customer project." }, { "language": "fa", "text": "تعهد تاریخ تحویل غیرواقع‌بینانه بعداً در پروژه مشتری باعث escalation می‌شود." }] }
+      ]
+    },
+    {
+      "word": "Pruefprotokollablage",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Pruefprotokollablage", "plural": "Pruefprotokollablagen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Pruefprotokollablagen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["quality", "documentation"],
+      "meanings": [{ "language": "en", "text": "test protocol storage" }, { "language": "fa", "text": "محل نگهداری گزارش تست" }],
+      "examples": [
+        { "baseText": "Die Pruefprotokollablage wurde im Projektportal verlinkt, damit der Kunde die Abnahme nachvollziehen kann.", "translations": [{ "language": "en", "text": "The test protocol storage was linked in the project portal so the customer can trace acceptance." }, { "language": "fa", "text": "محل نگهداری گزارش تست در پورتال پروژه لینک شد تا مشتری بتواند پذیرش را پیگیری کند." }] },
+        { "baseText": "Ohne zentrale Pruefprotokollablage gehen wichtige Nachweise zwischen Tickets und E-Mails verloren.", "translations": [{ "language": "en", "text": "Without central test protocol storage, important evidence is lost between tickets and emails." }, { "language": "fa", "text": "بدون محل مرکزی نگهداری گزارش تست، شواهد مهم بین ticketها و ایمیل‌ها گم می‌شوند." }] }
+      ]
+    },
+    {
+      "word": "Arbeitszeitkorrekturantrag",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Arbeitszeitkorrekturantrag", "plural": "Arbeitszeitkorrekturantraege", "isPrimary": true }],
+      "article": "der",
+      "plural": "Arbeitszeitkorrekturantraege",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["time-attendance", "hr"],
+      "meanings": [{ "language": "en", "text": "working time correction request" }, { "language": "fa", "text": "درخواست اصلاح زمان کاری" }],
+      "examples": [
+        { "baseText": "Der Arbeitszeitkorrekturantrag wurde genehmigt, weil der Mitarbeiter am Terminal nicht ausstempeln konnte.", "translations": [{ "language": "en", "text": "The working time correction request was approved because the employee could not clock out at the terminal." }, { "language": "fa", "text": "درخواست اصلاح زمان کاری تایید شد چون کارمند نتوانست در ترمینال خروج ثبت کند." }] },
+        { "baseText": "Im HR-Modul muss jeder Arbeitszeitkorrekturantrag einen Grund und eine Fuehrungskraftfreigabe enthalten.", "translations": [{ "language": "en", "text": "In the HR module, every working time correction request must include a reason and manager approval." }, { "language": "fa", "text": "در ماژول HR، هر درخواست اصلاح زمان کاری باید دلیل و تایید مدیر داشته باشد." }] }
+      ]
+    },
+    {
+      "word": "Kalkulationsgrundlage",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Kalkulationsgrundlage", "plural": "Kalkulationsgrundlagen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Kalkulationsgrundlagen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["controlling", "pricing"],
+      "meanings": [{ "language": "en", "text": "calculation basis" }, { "language": "fa", "text": "مبنای محاسبه" }],
+      "examples": [
+        { "baseText": "Die Kalkulationsgrundlage wurde angepasst, weil neue Materialpreise in das ERP-System importiert wurden.", "translations": [{ "language": "en", "text": "The calculation basis was adjusted because new material prices were imported into the ERP system." }, { "language": "fa", "text": "مبنای محاسبه اصلاح شد چون قیمت‌های جدید مواد وارد سیستم ERP شدند." }] },
+        { "baseText": "Eine transparente Kalkulationsgrundlage erleichtert die Diskussion mit dem Kunden ueber den Angebotspreis.", "translations": [{ "language": "en", "text": "A transparent calculation basis makes it easier to discuss the quotation price with the customer." }, { "language": "fa", "text": "مبنای محاسبه شفاف بحث با مشتری درباره قیمت پیشنهاد را آسان‌تر می‌کند." }] }
+      ]
+    },
+    {
+      "word": "Statusuebergangsregel",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Statusuebergangsregel", "plural": "Statusuebergangsregeln", "isPrimary": true }],
+      "article": "die",
+      "plural": "Statusuebergangsregeln",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["workflow", "configuration"],
+      "meanings": [{ "language": "en", "text": "status transition rule" }, { "language": "fa", "text": "قاعده انتقال وضعیت" }],
+      "examples": [
+        { "baseText": "Die Statusuebergangsregel erlaubt den Wechsel auf geliefert nur nach gebuchtem Warenausgang.", "translations": [{ "language": "en", "text": "The status transition rule allows switching to delivered only after goods issue has been posted." }, { "language": "fa", "text": "قاعده انتقال وضعیت فقط پس از ثبت خروج کالا اجازه تغییر به تحویل‌شده را می‌دهد." }] },
+        { "baseText": "Bei komplexen Workflows verhindert eine klare Statusuebergangsregel widerspruechliche Prozesszustaende.", "translations": [{ "language": "en", "text": "In complex workflows, a clear status transition rule prevents contradictory process states." }, { "language": "fa", "text": "در workflowهای پیچیده، قاعده انتقال وضعیت روشن از حالت‌های متناقض فرآیند جلوگیری می‌کند." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "b2-work-erp-batch-071",
+      "name": "B2 Work ERP Batch 071",
+      "description": "B2 German vocabulary for tenant checks, document numbering, discounts, delivery commitments, protocol storage, HR corrections, pricing calculation, and workflow status rules.",
+      "image": "work-erp-b2-071.png",
+      "language": "de",
+      "cefrLevel": "B2",
+      "topics": ["work-and-jobs"],
+      "sortOrder": 3071,
+      "wordKeys": [
+        "Mandantenwechselpruefung",
+        "Belegnummernkreis",
+        "Rabattstaffelpruefung",
+        "Lieferterminzusage",
+        "Pruefprotokollablage",
+        "Arbeitszeitkorrekturantrag",
+        "Kalkulationsgrundlage",
+        "Statusuebergangsregel"
+      ]
+    }
+  ]
+}

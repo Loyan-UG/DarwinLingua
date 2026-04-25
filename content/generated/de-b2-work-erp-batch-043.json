@@ -1,0 +1,164 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-work-erp-20260424-043",
+  "packageName": "German B2 Work and ERP Batch 043",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Bereitstellungspruefpfad",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Bereitstellungspruefpfad", "plural": "Bereitstellungspruefpfade", "isPrimary": true }],
+      "article": "der",
+      "plural": "Bereitstellungspruefpfade",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["deployment", "verification"],
+      "meanings": [{ "language": "en", "text": "deployment verification path" }, { "language": "fa", "text": "مسير بررسي استقرار" }],
+      "examples": [
+        { "baseText": "Der Bereitstellungspruefpfad zeigte, in welcher Reihenfolge technische Checks, Fachtests und Freigaben vor dem ERP-Go-live durchlaufen werden mussten.", "translations": [{ "language": "en", "text": "The deployment verification path showed in which order technical checks, business tests, and approvals had to be completed before ERP go-live." }, { "language": "fa", "text": "مسير بررسي استقرار نشان داد که بررسي هاي فني، تست هاي کسب و کاري و تاييدها پيش از ERP go-live بايد با چه ترتيبي انجام شوند." }] },
+        { "baseText": "Ohne klaren Bereitstellungspruefpfad gehen in der letzten Phase oft genau die Nachweise verloren, die fuer eine belastbare Entscheidung noetig sind.", "translations": [{ "language": "en", "text": "Without a clear deployment verification path, exactly the evidence needed for a reliable decision is often lost in the final phase." }, { "language": "fa", "text": "بدون يک مسير روشن براي بررسي استقرار، درست همان شواهدي که براي يک تصميم قابل اتکا لازم هستند، اغلب در مرحله آخر از دست مي روند." }] }
+      ]
+    },
+    {
+      "word": "Stoerungslenkungsrahmen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Stoerungslenkungsrahmen", "plural": "Stoerungslenkungsrahmen", "isPrimary": true }],
+      "article": "der",
+      "plural": "Stoerungslenkungsrahmen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["incident", "governance"],
+      "meanings": [{ "language": "en", "text": "incident steering framework" }, { "language": "fa", "text": "چارچوب راهبري اختلال" }],
+      "examples": [
+        { "baseText": "Der Stoerungslenkungsrahmen legte fest, wer einen kritischen Incident priorisieren, eskalieren oder in einen Rueckfallpfad ueberfuehren durfte.", "translations": [{ "language": "en", "text": "The incident steering framework defined who was allowed to prioritize, escalate, or move a critical incident into a fallback path." }, { "language": "fa", "text": "چارچوب راهبري اختلال مشخص کرد چه کسي مي تواند يک incident بحراني را اولويت بندي، escalation يا وارد مسير بازگشت کند." }] },
+        { "baseText": "Fehlt ein belastbarer Stoerungslenkungsrahmen, reagieren Teams oft gleichzeitig, aber nicht in dieselbe Richtung.", "translations": [{ "language": "en", "text": "If a reliable incident steering framework is missing, teams often react at the same time but not in the same direction." }, { "language": "fa", "text": "اگر يک چارچوب قابل اتکا براي راهبري اختلال وجود نداشته باشد، تيم ها اغلب هم زمان واکنش نشان مي دهند اما نه در يک جهت." }] }
+      ]
+    },
+    {
+      "word": "Rueckfalltaktung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Rueckfalltaktung", "plural": "Rueckfalltaktungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Rueckfalltaktungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["fallback", "timing"],
+      "meanings": [{ "language": "en", "text": "fallback timing cadence" }, { "language": "fa", "text": "ريتم زمان بندي بازگشت" }],
+      "examples": [
+        { "baseText": "Die Rueckfalltaktung bestimmte, in welchen Abstaenden Systeme kontrolliert heruntergefahren und Daten nach dem Rueckweg erneut geprueft wurden.", "translations": [{ "language": "en", "text": "The fallback timing cadence determined at which intervals systems were shut down in a controlled way and data was rechecked after rollback." }, { "language": "fa", "text": "ريتم زمان بندي بازگشت مشخص کرد که سيستم ها در چه فاصله هايي به شکل کنترل شده پايين آورده شوند و داده ها پس از rollback دوباره بررسي شوند." }] },
+        { "baseText": "Ohne abgestimmte Rueckfalltaktung kollidieren Support, Monitoring und Fachpruefung schnell miteinander.", "translations": [{ "language": "en", "text": "Without coordinated fallback timing cadence, support, monitoring, and business validation quickly collide with one another." }, { "language": "fa", "text": "بدون يک ريتم هماهنگ براي زمان بندي بازگشت، پشتيباني، monitoring و بررسي کسب و کاري خيلي سريع با هم تداخل پيدا مي کنند." }] }
+      ]
+    },
+    {
+      "word": "Betriebsaufsichtslage",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Betriebsaufsichtslage", "plural": "Betriebsaufsichtslagen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Betriebsaufsichtslagen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["operations", "oversight"],
+      "meanings": [{ "language": "en", "text": "operational oversight situation" }, { "language": "fa", "text": "وضعيت نظارت عملياتي" }],
+      "examples": [
+        { "baseText": "Die Betriebsaufsichtslage fasste Supportlast, Fehlertrends und offene Risiken in einem gemeinsamen Bild fuer das Tagesreview zusammen.", "translations": [{ "language": "en", "text": "The operational oversight situation summarized support load, error trends, and open risks into one shared picture for the daily review." }, { "language": "fa", "text": "وضعيت نظارت عملياتي، بار پشتيباني، روند خطاها و ريسک هاي باز را در يک تصوير مشترک براي بازبيني روزانه خلاصه کرد." }] },
+        { "baseText": "Eine unscharfe Betriebsaufsichtslage fuehrt dazu, dass dieselbe Stoerung in verschiedenen Gremien unterschiedlich bewertet wird.", "translations": [{ "language": "en", "text": "An unclear operational oversight situation leads the same disruption to be assessed differently in different committees." }, { "language": "fa", "text": "يک وضعيت مبهم براي نظارت عملياتي باعث مي شود همان اختلال در کميته هاي مختلف به شکل متفاوت ارزيابي شود." }] }
+      ]
+    },
+    {
+      "word": "Freigabeabsicherungsgrad",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Freigabeabsicherungsgrad", "plural": "Freigabeabsicherungsgrade", "isPrimary": true }],
+      "article": "der",
+      "plural": "Freigabeabsicherungsgrade",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["approval", "assurance"],
+      "meanings": [{ "language": "en", "text": "approval assurance level" }, { "language": "fa", "text": "سطح اطمينان تاييد" }],
+      "examples": [
+        { "baseText": "Der Freigabeabsicherungsgrad machte sichtbar, wie tragfaehig die vorhandenen Tests, Rueckfallwege und Fachabnahmen wirklich waren.", "translations": [{ "language": "en", "text": "The approval assurance level made visible how reliable the available tests, fallback paths, and business acceptances really were." }, { "language": "fa", "text": "سطح اطمينان تاييد آشکار کرد که تست ها، مسيرهاي بازگشت و پذيرش هاي کسب و کاري موجود واقعا تا چه حد قابل اتکا هستند." }] },
+        { "baseText": "Ist der Freigabeabsicherungsgrad nur gefuehlt hoch, wird ein Start oft trotz verdeckter Risiken freigegeben.", "translations": [{ "language": "en", "text": "If the approval assurance level only feels high, a launch is often approved despite hidden risks." }, { "language": "fa", "text": "اگر سطح اطمينان تاييد فقط به صورت ذهني بالا به نظر برسد، شروع اغلب با وجود ريسک هاي پنهان تاييد مي شود." }] }
+      ]
+    },
+    {
+      "word": "Vorfallsteuerintervall",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Vorfallsteuerintervall", "plural": "Vorfallsteuerintervalle", "isPrimary": true }],
+      "article": "das",
+      "plural": "Vorfallsteuerintervalle",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["incident", "control"],
+      "meanings": [{ "language": "en", "text": "incident control interval" }, { "language": "fa", "text": "بازه کنترل رخداد" }],
+      "examples": [
+        { "baseText": "Das Vorfallsteuerintervall legte fest, nach wie vielen Minuten Lagebild, Eskalationsstatus und naechste Handlung neu bewertet werden mussten.", "translations": [{ "language": "en", "text": "The incident control interval defined after how many minutes the status view, escalation status, and next action had to be reassessed." }, { "language": "fa", "text": "بازه کنترل رخداد مشخص کرد که پس از چند دقيقه بايد تصوير وضعيت، وضعيت escalation و اقدام بعدي دوباره ارزيابي شوند." }] },
+        { "baseText": "Ein zu langes Vorfallsteuerintervall beruhigt nur scheinbar, waehrend das Problem im Hintergrund weiter waechst.", "translations": [{ "language": "en", "text": "An incident control interval that is too long only appears calming while the problem continues to grow in the background." }, { "language": "fa", "text": "يک بازه بيش از حد طولاني براي کنترل رخداد فقط ظاهرا آرامش ايجاد مي کند، در حالي که مشکل در پس زمينه به رشد ادامه مي دهد." }] }
+      ]
+    },
+    {
+      "word": "Wiederanlaufbewertungspfad",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Wiederanlaufbewertungspfad", "plural": "Wiederanlaufbewertungspfade", "isPrimary": true }],
+      "article": "der",
+      "plural": "Wiederanlaufbewertungspfade",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["restart", "evaluation"],
+      "meanings": [{ "language": "en", "text": "restart evaluation path" }, { "language": "fa", "text": "مسير ارزيابي راه اندازي مجدد" }],
+      "examples": [
+        { "baseText": "Der Wiederanlaufbewertungspfad pruefte nach dem Neustart zuerst Kernprozesse und erst danach Reporting, Benachrichtigungen und Nebenfunktionen.", "translations": [{ "language": "en", "text": "The restart evaluation path checked core processes first after restart and only afterwards reporting, notifications, and peripheral functions." }, { "language": "fa", "text": "مسير ارزيابي راه اندازي مجدد پس از restart ابتدا فرايندهاي اصلي و فقط بعد از آن reporting، اعلان ها و قابليت هاي جانبي را بررسي کرد." }] },
+        { "baseText": "Ohne einen sauberen Wiederanlaufbewertungspfad wird Funktionsfaehigkeit oft zu frueh angenommen.", "translations": [{ "language": "en", "text": "Without a clean restart evaluation path, functionality is often assumed too early." }, { "language": "fa", "text": "بدون يک مسير درست براي ارزيابي راه اندازي مجدد، کارکرد درست سيستم اغلب خيلي زود فرض مي شود." }] }
+      ]
+    },
+    {
+      "word": "Puffersteuerreserve",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Puffersteuerreserve", "plural": "Puffersteuerreserven", "isPrimary": true }],
+      "article": "die",
+      "plural": "Puffersteuerreserven",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["buffer", "reserve"],
+      "meanings": [{ "language": "en", "text": "buffer steering reserve" }, { "language": "fa", "text": "ذخيره راهبري حاشيه" }],
+      "examples": [
+        { "baseText": "Die Puffersteuerreserve gab dem Team nach dem Release genug Spielraum fuer Nachtests, Supportspitzen und kurze Nachsteuerungen.", "translations": [{ "language": "en", "text": "The buffer steering reserve gave the team enough room after the release for retests, support peaks, and short follow-up adjustments." }, { "language": "fa", "text": "ذخيره راهبري حاشيه پس از release به تيم فضاي کافي براي تست هاي مجدد، اوج هاي پشتيباني و تنظيم هاي کوتاه بعدي داد." }] },
+        { "baseText": "Fehlt eine echte Puffersteuerreserve, wird jeder kleine Zusatzaufwand sofort zu einem Terminproblem.", "translations": [{ "language": "en", "text": "If a real buffer steering reserve is missing, every small extra effort immediately becomes a scheduling problem." }, { "language": "fa", "text": "اگر يک ذخيره واقعي براي راهبري حاشيه وجود نداشته باشد، هر تلاش اضافي کوچک بلافاصله به يک مشکل زمان بندي تبديل مي شود." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "b2-work-erp-batch-043",
+      "name": "B2 Work ERP Batch 043",
+      "description": "B2 vocabulary for deployment verification paths, incident steering framework, fallback timing, and operational oversight.",
+      "image": "collections/b2-work-erp-batch-043.png",
+      "sortOrder": 3043,
+      "wordKeys": [
+        "Bereitstellungspruefpfad",
+        "Stoerungslenkungsrahmen",
+        "Rueckfalltaktung",
+        "Betriebsaufsichtslage",
+        "Freigabeabsicherungsgrad",
+        "Vorfallsteuerintervall",
+        "Wiederanlaufbewertungspfad",
+        "Puffersteuerreserve"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c1-work-erp-20260425-002",
+  "packageName": "German C1 Work ERP Batch 002",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Mandantenfaehigkeit",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Mandantenfaehigkeit", "plural": "Mandantenfaehigkeiten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Mandantenfaehigkeiten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["architecture", "tenant"],
+      "meanings": [{ "language": "en", "text": "multi-tenancy capability" }, { "language": "fa", "text": "قابلیت چند tenant بودن" }],
+      "examples": [
+        { "baseText": "Die Mandantenfaehigkeit muss Datenisolation, Berechtigungen und kundenspezifische Einstellungen sauber trennen.", "translations": [{ "language": "en", "text": "Multi-tenancy capability must cleanly separate data isolation, permissions, and customer-specific settings." }, { "language": "fa", "text": "قابلیت چند tenant بودن باید جداسازی داده، دسترسی‌ها و تنظیمات اختصاصی مشتری را تمیز جدا کند." }] },
+        { "baseText": "Ohne belastbare Mandantenfaehigkeit wird ein ERP-System bei mehreren Kunden schwer wartbar.", "translations": [{ "language": "en", "text": "Without reliable multi-tenancy capability, an ERP system becomes difficult to maintain across multiple customers." }, { "language": "fa", "text": "بدون قابلیت چند tenant بودن قابل اتکا، نگهداری سیستم ERP برای چند مشتری دشوار می‌شود." }] }
+      ]
+    },
+    {
+      "word": "Schnittstellenorchestrierung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Schnittstellenorchestrierung", "plural": "Schnittstellenorchestrierungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Schnittstellenorchestrierungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["integration", "architecture"],
+      "meanings": [{ "language": "en", "text": "interface orchestration" }, { "language": "fa", "text": "هماهنگ‌سازی رابط‌ها" }],
+      "examples": [
+        { "baseText": "Die Schnittstellenorchestrierung steuert, in welcher Reihenfolge Auftraege, Lieferungen und Rechnungen uebertragen werden.", "translations": [{ "language": "en", "text": "Interface orchestration controls the sequence in which orders, deliveries, and invoices are transferred." }, { "language": "fa", "text": "هماهنگ‌سازی رابط‌ها کنترل می‌کند سفارش‌ها، تحویل‌ها و فاکتورها با چه ترتیبی منتقل شوند." }] },
+        { "baseText": "Fehlt eine klare Schnittstellenorchestrierung, entstehen bei Fehlern schnell doppelte oder unvollstaendige Buchungen.", "translations": [{ "language": "en", "text": "If clear interface orchestration is missing, errors quickly create duplicate or incomplete postings." }, { "language": "fa", "text": "اگر هماهنگ‌سازی روشن رابط‌ها وجود نداشته باشد، خطاها سریعاً ثبت‌های تکراری یا ناقص ایجاد می‌کنند." }] }
+      ]
+    },
+    {
+      "word": "Ausfallsicherheitskonzept",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Ausfallsicherheitskonzept", "plural": "Ausfallsicherheitskonzepte", "isPrimary": true }],
+      "article": "das",
+      "plural": "Ausfallsicherheitskonzepte",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["operations", "resilience"],
+      "meanings": [{ "language": "en", "text": "fault tolerance concept" }, { "language": "fa", "text": "مفهوم تحمل خرابی" }],
+      "examples": [
+        { "baseText": "Das Ausfallsicherheitskonzept umfasst Wiederanlaufzeiten, Datenverlustgrenzen und Verantwortlichkeiten.", "translations": [{ "language": "en", "text": "The fault tolerance concept includes recovery times, data loss limits, and responsibilities." }, { "language": "fa", "text": "مفهوم تحمل خرابی شامل زمان‌های بازیابی، حدهای از دست رفتن داده و مسئولیت‌ها است." }] },
+        { "baseText": "Bei kritischen ERP-Prozessen reicht ein Backup ohne Ausfallsicherheitskonzept nicht aus.", "translations": [{ "language": "en", "text": "For critical ERP processes, a backup without a fault tolerance concept is not sufficient." }, { "language": "fa", "text": "برای فرآیندهای حساس ERP، backup بدون مفهوم تحمل خرابی کافی نیست." }] }
+      ]
+    },
+    {
+      "word": "Complianceanforderung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Complianceanforderung", "plural": "Complianceanforderungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Complianceanforderungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["compliance", "audit"],
+      "meanings": [{ "language": "en", "text": "compliance requirement" }, { "language": "fa", "text": "الزام compliance" }],
+      "examples": [
+        { "baseText": "Die Complianceanforderung verlangt nachvollziehbare Freigaben fuer Preis- und Berechtigungsaenderungen.", "translations": [{ "language": "en", "text": "The compliance requirement demands traceable approvals for price and permission changes." }, { "language": "fa", "text": "الزام compliance تاییدهای قابل پیگیری برای تغییر قیمت و دسترسی می‌خواهد." }] },
+        { "baseText": "Jede Complianceanforderung muss in Prozesse, Rollen und technische Kontrollen uebersetzt werden.", "translations": [{ "language": "en", "text": "Every compliance requirement must be translated into processes, roles, and technical controls." }, { "language": "fa", "text": "هر الزام compliance باید به فرآیندها، نقش‌ها و کنترل‌های فنی تبدیل شود." }] }
+      ]
+    },
+    {
+      "word": "Kostenstellenlogik",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Kostenstellenlogik", "plural": "Kostenstellenlogiken", "isPrimary": true }],
+      "article": "die",
+      "plural": "Kostenstellenlogiken",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["controlling", "accounting"],
+      "meanings": [{ "language": "en", "text": "cost center logic" }, { "language": "fa", "text": "منطق مرکز هزینه" }],
+      "examples": [
+        { "baseText": "Die Kostenstellenlogik bestimmt, wie Projektstunden, Servicekosten und interne Leistungen verteilt werden.", "translations": [{ "language": "en", "text": "Cost center logic determines how project hours, service costs, and internal services are allocated." }, { "language": "fa", "text": "منطق مرکز هزینه تعیین می‌کند ساعت‌های پروژه، هزینه‌های خدمات و خدمات داخلی چگونه تخصیص یابند." }] },
+        { "baseText": "Eine inkonsistente Kostenstellenlogik macht Deckungsbeitraege zwischen Abteilungen kaum vergleichbar.", "translations": [{ "language": "en", "text": "Inconsistent cost center logic makes contribution margins across departments barely comparable." }, { "language": "fa", "text": "منطق ناهماهنگ مرکز هزینه مقایسه حاشیه پوشش بین بخش‌ها را تقریباً ناممکن می‌کند." }] }
+      ]
+    },
+    {
+      "word": "Rollenberechtigungskonzept",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Rollenberechtigungskonzept", "plural": "Rollenberechtigungskonzepte", "isPrimary": true }],
+      "article": "das",
+      "plural": "Rollenberechtigungskonzepte",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["security", "roles"],
+      "meanings": [{ "language": "en", "text": "role permission concept" }, { "language": "fa", "text": "مفهوم دسترسی نقش‌ها" }],
+      "examples": [
+        { "baseText": "Das Rollenberechtigungskonzept trennt operative Taetigkeiten von Kontroll- und Freigabefunktionen.", "translations": [{ "language": "en", "text": "The role permission concept separates operational activities from control and approval functions." }, { "language": "fa", "text": "مفهوم دسترسی نقش‌ها فعالیت‌های عملیاتی را از کنترل و تایید جدا می‌کند." }] },
+        { "baseText": "Ohne Rollenberechtigungskonzept wachsen Ausnahmen schneller als die eigentlichen Standardrollen.", "translations": [{ "language": "en", "text": "Without a role permission concept, exceptions grow faster than the actual standard roles." }, { "language": "fa", "text": "بدون مفهوم دسترسی نقش‌ها، استثناها سریع‌تر از نقش‌های استاندارد واقعی رشد می‌کنند." }] }
+      ]
+    },
+    {
+      "word": "Datenkonsistenzpruefung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Datenkonsistenzpruefung", "plural": "Datenkonsistenzpruefungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Datenkonsistenzpruefungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["data-quality", "validation"],
+      "meanings": [{ "language": "en", "text": "data consistency check" }, { "language": "fa", "text": "بررسی سازگاری داده" }],
+      "examples": [
+        { "baseText": "Die Datenkonsistenzpruefung vergleicht Kunden, offene Posten und Vertragsdaten zwischen Modulen.", "translations": [{ "language": "en", "text": "The data consistency check compares customers, open items, and contract data between modules." }, { "language": "fa", "text": "بررسی سازگاری داده مشتریان، اقلام باز و داده‌های قرارداد را بین ماژول‌ها مقایسه می‌کند." }] },
+        { "baseText": "Vor jeder Migration sollte die Datenkonsistenzpruefung automatisiert und wiederholbar sein.", "translations": [{ "language": "en", "text": "Before every migration, the data consistency check should be automated and repeatable." }, { "language": "fa", "text": "قبل از هر migration، بررسی سازگاری داده باید خودکار و تکرارپذیر باشد." }] }
+      ]
+    },
+    {
+      "word": "Produktivsetzungsszenario",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Produktivsetzungsszenario", "plural": "Produktivsetzungsszenarien", "isPrimary": true }],
+      "article": "das",
+      "plural": "Produktivsetzungsszenarien",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["release", "deployment"],
+      "meanings": [{ "language": "en", "text": "go-live scenario" }, { "language": "fa", "text": "سناریوی عملیاتی‌سازی" }],
+      "examples": [
+        { "baseText": "Das Produktivsetzungsszenario beschreibt Datenuebernahme, Kommunikationsschritte und Rueckfalloptionen.", "translations": [{ "language": "en", "text": "The go-live scenario describes data transfer, communication steps, and fallback options." }, { "language": "fa", "text": "سناریوی عملیاتی‌سازی انتقال داده، گام‌های ارتباطی و گزینه‌های بازگشت را توضیح می‌دهد." }] },
+        { "baseText": "Ein realistisches Produktivsetzungsszenario prueft nicht nur Technik, sondern auch Fachbereich und Support.", "translations": [{ "language": "en", "text": "A realistic go-live scenario tests not only technology but also business departments and support." }, { "language": "fa", "text": "سناریوی عملیاتی‌سازی واقع‌بینانه فقط تکنولوژی را تست نمی‌کند، بلکه بخش کسب‌وکار و پشتیبانی را هم بررسی می‌کند." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "c1-work-erp-batch-002",
+      "name": "C1 Work ERP Batch 002",
+      "description": "C1 German vocabulary for multi-tenancy, interface orchestration, resilience, compliance, cost center logic, role permissions, data consistency, and go-live scenarios.",
+      "image": "work-erp-c1-002.png",
+      "language": "de",
+      "cefrLevel": "C1",
+      "topics": ["work-and-jobs"],
+      "sortOrder": 4002,
+      "wordKeys": [
+        "Mandantenfaehigkeit",
+        "Schnittstellenorchestrierung",
+        "Ausfallsicherheitskonzept",
+        "Complianceanforderung",
+        "Kostenstellenlogik",
+        "Rollenberechtigungskonzept",
+        "Datenkonsistenzpruefung",
+        "Produktivsetzungsszenario"
+      ]
+    }
+  ]
+}
