@@ -1,0 +1,167 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c1-work-erp-20260425-033-r1",
+  "packageName": "German C1 Work ERP Batch 033",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [
+    {
+      "word": "Anforderungsherkunft",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Anforderungsherkunft", "plural": "Anforderungsherkuenfte", "isPrimary": true }],
+      "article": "die",
+      "plural": "Anforderungsherkuenfte",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["requirements", "traceability"],
+      "meanings": [{ "language": "en", "text": "requirement origin" }, { "language": "fa", "text": "منشأ نیازمندی" }],
+      "examples": [
+        { "baseText": "Die Anforderungsherkunft zeigt, ob eine Funktion aus Vertrag, Workshop oder Supportfall entstanden ist.", "translations": [{ "language": "en", "text": "Requirement origin shows whether a feature came from a contract, workshop, or support case." }, { "language": "fa", "text": "منشأ نیازمندی نشان می‌دهد یک قابلیت از قرارداد، workshop یا مورد پشتیبانی آمده است." }] },
+        { "baseText": "Ohne dokumentierte Anforderungsherkunft lassen sich Prioritaeten spaeter schwer verteidigen.", "translations": [{ "language": "en", "text": "Without documented requirement origin, priorities are hard to defend later." }, { "language": "fa", "text": "بدون منشأ مستند نیازمندی، دفاع از اولویت‌ها بعداً دشوار است." }] }
+      ]
+    },
+    {
+      "word": "Betriebsbelastung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Betriebsbelastung", "plural": "Betriebsbelastungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Betriebsbelastungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["operations", "capacity"],
+      "meanings": [{ "language": "en", "text": "operational load" }, { "language": "fa", "text": "بار عملیاتی" }],
+      "examples": [
+        { "baseText": "Die Betriebsbelastung steigt, wenn mehrere Kunden gleichzeitig grosse Datenimporte ausfuehren.", "translations": [{ "language": "en", "text": "Operational load increases when several customers run large data imports at the same time." }, { "language": "fa", "text": "بار عملیاتی وقتی افزایش می‌یابد که چند مشتری همزمان importهای بزرگ داده اجرا کنند." }] },
+        { "baseText": "Vor dem Rollout muss die erwartete Betriebsbelastung mit Monitoring und Infrastruktur abgeglichen werden.", "translations": [{ "language": "en", "text": "Before rollout, expected operational load must be aligned with monitoring and infrastructure." }, { "language": "fa", "text": "قبل از rollout باید بار عملیاتی مورد انتظار با monitoring و زیرساخت هماهنگ شود." }] }
+      ]
+    },
+    {
+      "word": "Datenzugriffsprotokoll",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "das", "singular": "Datenzugriffsprotokoll", "plural": "Datenzugriffsprotokolle", "isPrimary": true }],
+      "article": "das",
+      "plural": "Datenzugriffsprotokolle",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["security", "audit"],
+      "meanings": [{ "language": "en", "text": "data access log" }, { "language": "fa", "text": "لاگ دسترسی به داده" }],
+      "examples": [
+        { "baseText": "Das Datenzugriffsprotokoll dokumentiert, wer sensible Kundendaten angesehen oder exportiert hat.", "translations": [{ "language": "en", "text": "The data access log documents who viewed or exported sensitive customer data." }, { "language": "fa", "text": "لاگ دسترسی به داده مستند می‌کند چه کسی داده حساس مشتری را دیده یا export کرده است." }] },
+        { "baseText": "Bei Datenschutzpruefungen ist ein vollstaendiges Datenzugriffsprotokoll oft entscheidend.", "translations": [{ "language": "en", "text": "In data protection audits, a complete data access log is often decisive." }, { "language": "fa", "text": "در بررسی‌های حفاظت داده، لاگ کامل دسترسی به داده اغلب تعیین‌کننده است." }] }
+      ]
+    },
+    {
+      "word": "Einfuehrungsengpass",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "der", "singular": "Einfuehrungsengpass", "plural": "Einfuehrungsengpaesse", "isPrimary": true }],
+      "article": "der",
+      "plural": "Einfuehrungsengpaesse",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["rollout", "risk"],
+      "meanings": [{ "language": "en", "text": "implementation bottleneck" }, { "language": "fa", "text": "گلوگاه پیاده‌سازی" }],
+      "examples": [
+        { "baseText": "Der Einfuehrungsengpass liegt nicht in der Technik, sondern in fehlenden Key-User-Kapazitaeten.", "translations": [{ "language": "en", "text": "The implementation bottleneck is not in technology but in missing key user capacity." }, { "language": "fa", "text": "گلوگاه پیاده‌سازی در فناوری نیست، بلکه در کمبود ظرفیت key userهاست." }] },
+        { "baseText": "Ein frueh erkannter Einfuehrungsengpass kann durch Phasenplanung oder zusaetzliche Schulungen entschaerft werden.", "translations": [{ "language": "en", "text": "An implementation bottleneck identified early can be reduced through phased planning or additional training." }, { "language": "fa", "text": "گلوگاه پیاده‌سازی اگر زود تشخیص داده شود با برنامه‌ریزی فازی یا آموزش اضافه قابل کاهش است." }] }
+      ]
+    },
+    {
+      "word": "Freigabeabhaengigkeit",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Freigabeabhaengigkeit", "plural": "Freigabeabhaengigkeiten", "isPrimary": true }],
+      "article": "die",
+      "plural": "Freigabeabhaengigkeiten",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["approval", "dependency"],
+      "meanings": [{ "language": "en", "text": "approval dependency" }, { "language": "fa", "text": "وابستگی تایید" }],
+      "examples": [
+        { "baseText": "Die Freigabeabhaengigkeit zwischen Einkauf und Controlling muss im Workflow sichtbar sein.", "translations": [{ "language": "en", "text": "The approval dependency between purchasing and controlling must be visible in the workflow." }, { "language": "fa", "text": "وابستگی تایید بین خرید و کنترلینگ باید در workflow قابل مشاهده باشد." }] },
+        { "baseText": "Unklare Freigabeabhaengigkeiten verursachen Wartezeiten, obwohl alle fachlichen Informationen vorhanden sind.", "translations": [{ "language": "en", "text": "Unclear approval dependencies cause waiting times even though all business information is available." }, { "language": "fa", "text": "وابستگی‌های تایید نامشخص باعث انتظار می‌شوند، حتی وقتی همه اطلاعات تخصصی موجود است." }] }
+      ]
+    },
+    {
+      "word": "Korrekturpriorisierung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Korrekturpriorisierung", "plural": "Korrekturpriorisierungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Korrekturpriorisierungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["quality", "planning"],
+      "meanings": [{ "language": "en", "text": "correction prioritization" }, { "language": "fa", "text": "اولویت‌بندی اصلاحات" }],
+      "examples": [
+        { "baseText": "Die Korrekturpriorisierung richtet sich nach Kundenauswirkung, Betriebsrisiko und gesetzlicher Relevanz.", "translations": [{ "language": "en", "text": "Correction prioritization is based on customer impact, operational risk, and legal relevance." }, { "language": "fa", "text": "اولویت‌بندی اصلاحات براساس اثر بر مشتری، ریسک عملیاتی و اهمیت قانونی انجام می‌شود." }] },
+        { "baseText": "Ohne Korrekturpriorisierung arbeiten Teams oft an sichtbaren, aber fachlich weniger kritischen Fehlern.", "translations": [{ "language": "en", "text": "Without correction prioritization, teams often work on visible but less business-critical defects." }, { "language": "fa", "text": "بدون اولویت‌بندی اصلاحات، تیم‌ها اغلب روی خطاهای قابل مشاهده اما کم‌اهمیت‌تر از نظر تخصصی کار می‌کنند." }] }
+      ]
+    },
+    {
+      "word": "Prozessleistungsgrenze",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Prozessleistungsgrenze", "plural": "Prozessleistungsgrenzen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Prozessleistungsgrenzen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["process", "capacity"],
+      "meanings": [{ "language": "en", "text": "process performance limit" }, { "language": "fa", "text": "حد عملکرد فرآیند" }],
+      "examples": [
+        { "baseText": "Die Prozessleistungsgrenze wird erreicht, wenn zu viele Lieferungen gleichzeitig kommissioniert werden.", "translations": [{ "language": "en", "text": "The process performance limit is reached when too many deliveries are picked at the same time." }, { "language": "fa", "text": "حد عملکرد فرآیند وقتی می‌رسد که تحویل‌های زیادی همزمان picking شوند." }] },
+        { "baseText": "Eine bekannte Prozessleistungsgrenze hilft, Automatisierung und Personalplanung realistischer zu bewerten.", "translations": [{ "language": "en", "text": "A known process performance limit helps evaluate automation and workforce planning more realistically." }, { "language": "fa", "text": "حد عملکرد فرآیند شناخته‌شده کمک می‌کند خودکارسازی و برنامه‌ریزی نیرو واقع‌بینانه‌تر ارزیابی شود." }] }
+      ]
+    },
+    {
+      "word": "Vertragsrisikobewertung",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [{ "partOfSpeech": "Noun", "article": "die", "singular": "Vertragsrisikobewertung", "plural": "Vertragsrisikobewertungen", "isPrimary": true }],
+      "article": "die",
+      "plural": "Vertragsrisikobewertungen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["business"],
+      "contextLabels": ["contract", "risk"],
+      "meanings": [{ "language": "en", "text": "contract risk assessment" }, { "language": "fa", "text": "ارزیابی ریسک قرارداد" }],
+      "examples": [
+        { "baseText": "Die Vertragsrisikobewertung prueft Haftung, Leistungsumfang und Reaktionszeiten vor Vertragsabschluss.", "translations": [{ "language": "en", "text": "The contract risk assessment checks liability, scope of service, and response times before contract signing." }, { "language": "fa", "text": "ارزیابی ریسک قرارداد قبل از امضای قرارداد مسئولیت، محدوده خدمت و زمان پاسخ را بررسی می‌کند." }] },
+        { "baseText": "Ohne Vertragsrisikobewertung koennen Servicezusagen entstehen, die operativ kaum haltbar sind.", "translations": [{ "language": "en", "text": "Without contract risk assessment, service commitments can arise that are barely operationally sustainable." }, { "language": "fa", "text": "بدون ارزیابی ریسک قرارداد، تعهدهای خدمتی ایجاد می‌شوند که از نظر عملیاتی به‌سختی قابل حفظ هستند." }] }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "c1-work-erp-batch-033",
+      "name": "C1 Work ERP Batch 033",
+      "description": "C1 German vocabulary for requirement origin, operational load, data access logs, implementation bottlenecks, approval dependencies, correction prioritization, process performance limits, and contract risk assessment.",
+      "image": "work-erp-c1-033.png",
+      "language": "de",
+      "cefrLevel": "C1",
+      "topics": ["work-and-jobs"],
+      "sortOrder": 4033,
+      "wordKeys": [
+        "Anforderungsherkunft",
+        "Betriebsbelastung",
+        "Datenzugriffsprotokoll",
+        "Einfuehrungsengpass",
+        "Freigabeabhaengigkeit",
+        "Korrekturpriorisierung",
+        "Prozessleistungsgrenze",
+        "Vertragsrisikobewertung"
+      ]
+    }
+  ]
+}
