@@ -200,4 +200,109 @@ public sealed class PracticeSchedulingModelTests
 
         Assert.Null(reviewState.DueAtUtc);
     }
+
+    /// <summary>
+    /// Verifies that consecutive successes accumulate before being reset by a failure.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_RecordAttempt_ShouldAccumulateConsecutiveSuccessesBeforeFailure()
+    {
+        PracticeReviewState reviewState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-10));
+
+        DateTime t1 = DateTime.UtcNow.AddMinutes(-6);
+        DateTime t2 = DateTime.UtcNow.AddMinutes(-4);
+        DateTime t3 = DateTime.UtcNow.AddMinutes(-2);
+
+        reviewState.RecordAttempt(PracticeSessionType.Flashcard, PracticeAttemptOutcome.Easy, t1, t1.AddDays(3));
+        reviewState.RecordAttempt(PracticeSessionType.Quiz, PracticeAttemptOutcome.Correct, t2, t2.AddDays(3));
+
+        Assert.Equal(2, reviewState.ConsecutiveSuccessCount);
+        Assert.Equal(0, reviewState.ConsecutiveFailureCount);
+
+        reviewState.RecordAttempt(PracticeSessionType.Flashcard, PracticeAttemptOutcome.Incorrect, t3, t3.AddMinutes(10));
+
+        Assert.Equal(0, reviewState.ConsecutiveSuccessCount);
+        Assert.Equal(1, reviewState.ConsecutiveFailureCount);
+        Assert.Equal(3, reviewState.TotalAttemptCount);
+    }
+
+    /// <summary>
+    /// Verifies that a local-time datetime is normalized to UTC in <see cref="PracticeReviewState"/>.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_ShouldNormalizeLocalTimeToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        PracticeReviewState reviewState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, reviewState.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that a positive response-duration value is accepted.
+    /// </summary>
+    [Fact]
+    public void PracticeAttempt_ShouldAcceptPositiveResponseMilliseconds()
+    {
+        PracticeAttempt attempt = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            PracticeSessionType.Quiz,
+            PracticeAttemptOutcome.Correct,
+            DateTime.UtcNow,
+            responseMilliseconds: 1500);
+
+        Assert.Equal(1500, attempt.ResponseMilliseconds);
+    }
+
+    /// <summary>
+    /// Verifies that a local-time attempted-at datetime is normalized to UTC in <see cref="PracticeAttempt"/>.
+    /// </summary>
+    [Fact]
+    public void PracticeAttempt_ShouldNormalizeLocalTimeToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        PracticeAttempt attempt = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            PracticeSessionType.Flashcard,
+            PracticeAttemptOutcome.Hard,
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, attempt.AttemptedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that the initial construction state has zero attempt counters.
+    /// </summary>
+    [Fact]
+    public void PracticeReviewState_NewInstance_ShouldHaveZeroCounters()
+    {
+        PracticeReviewState reviewState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Equal(0, reviewState.TotalAttemptCount);
+        Assert.Equal(0, reviewState.ConsecutiveSuccessCount);
+        Assert.Equal(0, reviewState.ConsecutiveFailureCount);
+        Assert.Null(reviewState.DueAtUtc);
+        Assert.Null(reviewState.LastAttemptedAtUtc);
+        Assert.Null(reviewState.LastSuccessfulAttemptedAtUtc);
+        Assert.Null(reviewState.LastOutcome);
+        Assert.Null(reviewState.LastSessionType);
+    }
 }

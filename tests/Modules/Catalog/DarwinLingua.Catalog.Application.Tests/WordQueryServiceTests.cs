@@ -157,6 +157,99 @@ public sealed class WordQueryServiceTests
         Assert.Equal("Bahnhof", result.Lemma);
     }
 
+    /// <summary>
+    /// Verifies that a whitespace-only search query returns an empty result without calling the repository.
+    /// </summary>
+    [Fact]
+    public async Task SearchWordsAsync_ShouldReturnEmptyForWhitespaceOnlyQuery()
+    {
+        ServiceCollection services = new();
+        services.AddCatalogApplication();
+        services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
+            topicWords: [],
+            topicPageWords: [],
+            cefrWords: [],
+            cefrPageWords: [],
+            searchWords:
+            [
+                new WordListItemModel(Guid.NewGuid(), "Bahnhof", "der", null, "Noun", "A1", "station"),
+            ]));
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IWordQueryService queryService = serviceProvider.GetRequiredService<IWordQueryService>();
+
+        IReadOnlyList<WordListItemModel> words = await queryService
+            .SearchWordsAsync("   ", "en", CancellationToken.None);
+
+        Assert.Empty(words);
+    }
+
+    /// <summary>
+    /// Verifies that a blank topic key is rejected by the topic query.
+    /// </summary>
+    [Fact]
+    public async Task GetWordsByTopicAsync_ShouldRejectBlankTopicKey()
+    {
+        ServiceCollection services = new();
+        services.AddCatalogApplication();
+        services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
+            topicWords: [],
+            topicPageWords: [],
+            cefrWords: [],
+            cefrPageWords: [],
+            searchWords: []));
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IWordQueryService queryService = serviceProvider.GetRequiredService<IWordQueryService>();
+
+        await Assert.ThrowsAsync<ArgumentException>(() =>
+            queryService.GetWordsByTopicAsync("   ", "en", CancellationToken.None));
+    }
+
+    /// <summary>
+    /// Verifies that a negative skip value is rejected by the paged topic query.
+    /// </summary>
+    [Fact]
+    public async Task GetWordsByTopicPageAsync_ShouldRejectNegativeSkip()
+    {
+        ServiceCollection services = new();
+        services.AddCatalogApplication();
+        services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
+            topicWords: [],
+            topicPageWords: [],
+            cefrWords: [],
+            cefrPageWords: [],
+            searchWords: []));
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IWordQueryService queryService = serviceProvider.GetRequiredService<IWordQueryService>();
+
+        await Assert.ThrowsAsync<ArgumentOutOfRangeException>(() =>
+            queryService.GetWordsByTopicPageAsync("travel", "en", -1, 24, CancellationToken.None));
+    }
+
+    /// <summary>
+    /// Verifies that a non-positive take value is rejected by the paged topic query.
+    /// </summary>
+    [Fact]
+    public async Task GetWordsByTopicPageAsync_ShouldRejectNonPositiveTake()
+    {
+        ServiceCollection services = new();
+        services.AddCatalogApplication();
+        services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(
+            topicWords: [],
+            topicPageWords: [],
+            cefrWords: [],
+            cefrPageWords: [],
+            searchWords: []));
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IWordQueryService queryService = serviceProvider.GetRequiredService<IWordQueryService>();
+
+        await Assert.ThrowsAsync<ArgumentOutOfRangeException>(() =>
+            queryService.GetWordsByTopicPageAsync("travel", "en", 0, 0, CancellationToken.None));
+    }
+
     private sealed class FakeWordEntryRepository(
         IReadOnlyList<WordListItemModel> topicWords,
         IReadOnlyList<WordListItemModel> topicPageWords,

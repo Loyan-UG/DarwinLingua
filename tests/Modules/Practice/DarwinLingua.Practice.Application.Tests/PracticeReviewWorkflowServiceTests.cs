@@ -62,6 +62,71 @@ public sealed class PracticeReviewWorkflowServiceTests
         Assert.Same(reader.ReviewSession, session);
     }
 
+    /// <summary>
+    /// Verifies that the overview workflow normalizes the meaning language and returns the reader payload.
+    /// </summary>
+    [Fact]
+    public async Task GetOverviewAsync_ShouldNormalizeLanguageAndReturnReaderPayload()
+    {
+        FakePracticeOverviewReader reader = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(reader);
+
+        IPracticeOverviewService service = serviceProvider.GetRequiredService<IPracticeOverviewService>();
+        PracticeOverviewModel overview = await service.GetOverviewAsync("EN", CancellationToken.None);
+
+        Assert.Equal("en", reader.LastMeaningLanguageCode);
+        Assert.Same(reader.Overview, overview);
+    }
+
+    /// <summary>
+    /// Verifies that the recent-activity workflow rejects non-positive max item counts.
+    /// </summary>
+    [Fact]
+    public async Task GetRecentActivityAsync_ShouldRejectNonPositiveMaxItemCount()
+    {
+        FakePracticeOverviewReader reader = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(reader);
+
+        IPracticeRecentActivityService service = serviceProvider.GetRequiredService<IPracticeRecentActivityService>();
+
+        await Assert.ThrowsAsync<ArgumentOutOfRangeException>(() => service.GetRecentActivityAsync(
+            "en",
+            0,
+            CancellationToken.None));
+    }
+
+    /// <summary>
+    /// Verifies that the recent-activity workflow normalizes the language and forwards the max item count.
+    /// </summary>
+    [Fact]
+    public async Task GetRecentActivityAsync_ShouldNormalizeLanguageAndReturnReaderPayload()
+    {
+        FakePracticeOverviewReader reader = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(reader);
+
+        IPracticeRecentActivityService service = serviceProvider.GetRequiredService<IPracticeRecentActivityService>();
+        PracticeRecentActivityModel activity = await service.GetRecentActivityAsync("EN", 5, CancellationToken.None);
+
+        Assert.Equal("en", reader.LastMeaningLanguageCode);
+        Assert.Same(reader.RecentActivity, activity);
+    }
+
+    /// <summary>
+    /// Verifies that the snapshot workflow delegates to the reader and returns its result.
+    /// </summary>
+    [Fact]
+    public async Task GetSnapshotAsync_ShouldForwardToReaderAndReturnPayload()
+    {
+        FakePracticeOverviewReader reader = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(reader);
+
+        IPracticeLearningProgressSnapshotService service =
+            serviceProvider.GetRequiredService<IPracticeLearningProgressSnapshotService>();
+        PracticeLearningProgressSnapshotModel snapshot = await service.GetSnapshotAsync(CancellationToken.None);
+
+        Assert.Same(reader.Snapshot, snapshot);
+    }
+
     private static ServiceProvider BuildServiceProvider(FakePracticeOverviewReader reader)
     {
         ArgumentNullException.ThrowIfNull(reader);
