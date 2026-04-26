@@ -92,4 +92,21 @@ public sealed class UserFavoriteWordTests
             Guid.NewGuid(),
             default));
     }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) creation timestamp is converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        UserFavoriteWord favoriteWord = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, favoriteWord.CreatedAtUtc.Kind);
+    }
 }

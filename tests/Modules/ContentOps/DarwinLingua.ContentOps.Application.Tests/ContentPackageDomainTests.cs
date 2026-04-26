@@ -413,6 +413,113 @@ public sealed class ContentPackageDomainTests
         Assert.Equal(1, package.InvalidEntries);
     }
 
+    /// <summary>
+    /// Verifies that a blank input file name is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyInputFileName()
+    {
+        Assert.Throws<DomainRuleException>(() => new ContentPackage(
+            Guid.NewGuid(),
+            "my-package",
+            "1.0",
+            "My Package",
+            ContentSourceType.Manual,
+            "   ",
+            10,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) creation timestamp is converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        ContentPackage package = new(
+            Guid.NewGuid(),
+            "my-package",
+            "1.0",
+            "My Package",
+            ContentSourceType.Manual,
+            "input.json",
+            5,
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, package.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that adding a failed entry with a warning message increments both
+    /// <see cref="ContentPackage.InvalidEntries"/> and <see cref="ContentPackage.WarningCount"/>.
+    /// </summary>
+    [Fact]
+    public void AddEntry_FailedStatusWithWarning_ShouldIncrementBothInvalidAndWarningCounts()
+    {
+        ContentPackage package = CreatePackage();
+
+        package.AddEntry(
+            Guid.NewGuid(),
+            "crash-word",
+            "crash-word",
+            null,
+            null,
+            ContentPackageEntryStatus.Failed,
+            "Unexpected error occurred.",
+            "Partial data written.",
+            null,
+            DateTime.UtcNow);
+
+        Assert.Equal(1, package.InvalidEntries);
+        Assert.Equal(1, package.WarningCount);
+    }
+
+    /// <summary>
+    /// Verifies that adding an entry updates the <see cref="ContentPackage.UpdatedAtUtc"/> timestamp.
+    /// </summary>
+    [Fact]
+    public void AddEntry_ShouldUpdateUpdatedAtUtcTimestamp()
+    {
+        ContentPackage package = CreatePackage();
+        DateTime entryCreatedAt = DateTime.UtcNow.AddSeconds(2);
+
+        package.AddEntry(
+            Guid.NewGuid(),
+            "Brot",
+            "brot",
+            "A1",
+            "Noun",
+            ContentPackageEntryStatus.Imported,
+            null,
+            null,
+            Guid.NewGuid(),
+            entryCreatedAt);
+
+        Assert.Equal(entryCreatedAt, package.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that zero total entries is accepted (empty package).
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldAcceptZeroTotalEntries()
+    {
+        ContentPackage package = new(
+            Guid.NewGuid(),
+            "empty-package",
+            "1.0",
+            "Empty Package",
+            ContentSourceType.Manual,
+            "empty.json",
+            0,
+            DateTime.UtcNow);
+
+        Assert.Equal(0, package.TotalEntries);
+        Assert.Equal(ContentPackageStatus.Pending, package.Status);
+    }
+
     private static ContentPackage CreatePackage()
     {
         return new ContentPackage(

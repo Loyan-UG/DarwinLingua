@@ -154,4 +154,50 @@ public sealed class TopicTests
         Assert.Throws<DomainRuleException>(() =>
             new Topic(Guid.NewGuid(), "   ", 0, true, DateTime.UtcNow));
     }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) creation timestamp is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectDefaultCreatedAtUtc()
+    {
+        Assert.Throws<DomainRuleException>(() =>
+            new Topic(Guid.NewGuid(), "shopping", 0, true, default));
+    }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) creation timestamp is converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        Topic topic = new(Guid.NewGuid(), "shopping", 0, true, localTime);
+
+        Assert.Equal(DateTimeKind.Utc, topic.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="Topic.AddOrUpdateLocalization"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void AddOrUpdateLocalization_ShouldRejectDefaultTimestamp()
+    {
+        Topic topic = new(Guid.NewGuid(), "shopping", 0, true, DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() =>
+            topic.AddOrUpdateLocalization(Guid.NewGuid(), LanguageCode.From("en"), "Shopping", default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="Topic.UpdateSortOrder"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void UpdateSortOrder_ShouldRejectDefaultUpdatedAtUtc()
+    {
+        Topic topic = new(Guid.NewGuid(), "shopping", 0, true, DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => topic.UpdateSortOrder(5, default));
+    }
 }

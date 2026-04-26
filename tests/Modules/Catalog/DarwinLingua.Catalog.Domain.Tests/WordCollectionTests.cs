@@ -300,4 +300,84 @@ public sealed class WordCollectionTests
 
         Assert.Throws<ArgumentNullException>(() => collection.ReplaceEntries(null!, DateTime.UtcNow));
     }
+
+    /// <summary>
+    /// Verifies that <see cref="WordCollection.UpdateMetadata"/> rejects an empty name.
+    /// </summary>
+    [Fact]
+    public void UpdateMetadata_ShouldRejectEmptyName()
+    {
+        WordCollection collection = CreateWordCollection();
+
+        Assert.Throws<DomainRuleException>(() => collection.UpdateMetadata(
+            "   ",
+            null,
+            null,
+            PublicationStatus.Active,
+            0,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordCollection.UpdateMetadata"/> rejects a negative sort order.
+    /// </summary>
+    [Fact]
+    public void UpdateMetadata_ShouldRejectNegativeSortOrder()
+    {
+        WordCollection collection = CreateWordCollection();
+
+        Assert.Throws<DomainRuleException>(() => collection.UpdateMetadata(
+            "Updated Name",
+            null,
+            null,
+            PublicationStatus.Active,
+            -1,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordCollection.UpdateMetadata"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void UpdateMetadata_ShouldRejectDefaultUpdatedAtUtc()
+    {
+        WordCollection collection = CreateWordCollection();
+
+        Assert.Throws<DomainRuleException>(() => collection.UpdateMetadata(
+            "Updated Name",
+            null,
+            null,
+            PublicationStatus.Active,
+            0,
+            default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordCollection.AddWord"/> rejects a default creation timestamp.
+    /// </summary>
+    [Fact]
+    public void AddWord_ShouldRejectDefaultCreatedAtUtc()
+    {
+        WordCollection collection = CreateWordCollection();
+
+        Assert.Throws<DomainRuleException>(() => collection.AddWord(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            0,
+            default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordCollection.ReplaceEntries"/> rejects a default updated timestamp.
+    /// </summary>
+    [Fact]
+    public void ReplaceEntries_ShouldRejectDefaultUpdatedAtUtc()
+    {
+        WordCollection collection = CreateWordCollection();
+        Guid wordId = Guid.NewGuid();
+
+        Assert.Throws<DomainRuleException>(() => collection.ReplaceEntries(
+            [(wordId, 1)],
+            default));
+    }
 }
