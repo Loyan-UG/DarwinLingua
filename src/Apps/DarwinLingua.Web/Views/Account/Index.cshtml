@@ -36,6 +36,21 @@
         </ul>
     </article>
     <article class="panel stack-md">
+        <h2 class="headline-sm">Plan</h2>
+        <ul class="feature-list">
+            <li>Current tier: @Model.Entitlement.Tier</li>
+            @if (Model.Entitlement.TrialEndsAtUtc is not null)
+            {
+                <li>Trial ends: @Model.Entitlement.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+            }
+            @if (Model.Entitlement.PremiumEndsAtUtc is not null)
+            {
+                <li>Premium ends: @Model.Entitlement.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+            }
+            <li>Enabled features: @string.Join(", ", Model.Entitlement.EnabledFeatures)</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
         <h2 class="headline-sm">Security</h2>
         <ul class="feature-list">
             <li>Identity UI is enabled for sign-in, registration, and password reset flows.</li>

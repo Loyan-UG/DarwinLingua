@@ -74,6 +74,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(WordDetailPage), typeof(WordDetailPage));
         Routing.RegisterRoute(nameof(PracticeSessionPage), typeof(PracticeSessionPage));
         Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
+        Routing.RegisterRoute(nameof(AccountPage), typeof(AccountPage));
 
         Items.Add(new TabBar
         {

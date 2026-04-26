@@ -1698,6 +1698,166 @@ public static class AppStrings
     public static string CommonStateError => GetRequiredString(nameof(CommonStateError));
 
     /// <summary>
+    /// Gets the localized account page title.
+    /// </summary>
+    public static string AccountTitle => GetRequiredString(nameof(AccountTitle));
+
+    /// <summary>
+    /// Gets the localized account page headline.
+    /// </summary>
+    public static string AccountHeadline => GetRequiredString(nameof(AccountHeadline));
+
+    /// <summary>
+    /// Gets the localized account page description.
+    /// </summary>
+    public static string AccountDescription => GetRequiredString(nameof(AccountDescription));
+
+    /// <summary>
+    /// Gets the localized current-session section label.
+    /// </summary>
+    public static string AccountSessionSectionLabel => GetRequiredString(nameof(AccountSessionSectionLabel));
+
+    /// <summary>
+    /// Gets the localized sign-in section label.
+    /// </summary>
+    public static string AccountSignInSectionLabel => GetRequiredString(nameof(AccountSignInSectionLabel));
+
+    /// <summary>
+    /// Gets the localized register section label.
+    /// </summary>
+    public static string AccountRegisterSectionLabel => GetRequiredString(nameof(AccountRegisterSectionLabel));
+
+    /// <summary>
+    /// Gets the localized email field label.
+    /// </summary>
+    public static string AccountEmailLabel => GetRequiredString(nameof(AccountEmailLabel));
+
+    /// <summary>
+    /// Gets the localized password field label.
+    /// </summary>
+    public static string AccountPasswordLabel => GetRequiredString(nameof(AccountPasswordLabel));
+
+    /// <summary>
+    /// Gets the localized confirm-password field label.
+    /// </summary>
+    public static string AccountConfirmPasswordLabel => GetRequiredString(nameof(AccountConfirmPasswordLabel));
+
+    /// <summary>
+    /// Gets the localized sign-in button label.
+    /// </summary>
+    public static string AccountSignInButton => GetRequiredString(nameof(AccountSignInButton));
+
+    /// <summary>
+    /// Gets the localized register button label.
+    /// </summary>
+    public static string AccountRegisterButton => GetRequiredString(nameof(AccountRegisterButton));
+
+    /// <summary>
+    /// Gets the localized refresh-session button label.
+    /// </summary>
+    public static string AccountRefreshButton => GetRequiredString(nameof(AccountRefreshButton));
+
+    /// <summary>
+    /// Gets the localized sign-out button label.
+    /// </summary>
+    public static string AccountSignOutButton => GetRequiredString(nameof(AccountSignOutButton));
+
+    /// <summary>
+    /// Gets the localized signed-out session summary.
+    /// </summary>
+    public static string AccountSignedOutSummary => GetRequiredString(nameof(AccountSignedOutSummary));
+
+    /// <summary>
+    /// Gets the localized signed-in session summary format.
+    /// </summary>
+    public static string AccountSignedInSummaryFormat => GetRequiredString(nameof(AccountSignedInSummaryFormat));
+
+    /// <summary>
+    /// Gets the localized sign-in success title.
+    /// </summary>
+    public static string AccountSignInSuccessTitle => GetRequiredString(nameof(AccountSignInSuccessTitle));
+
+    /// <summary>
+    /// Gets the localized sign-in success message format.
+    /// </summary>
+    public static string AccountSignInSuccessMessageFormat => GetRequiredString(nameof(AccountSignInSuccessMessageFormat));
+
+    /// <summary>
+    /// Gets the localized sign-in failure title.
+    /// </summary>
+    public static string AccountSignInFailedTitle => GetRequiredString(nameof(AccountSignInFailedTitle));
+
+    /// <summary>
+    /// Gets the localized sign-in failure message format.
+    /// </summary>
+    public static string AccountSignInFailedMessageFormat => GetRequiredString(nameof(AccountSignInFailedMessageFormat));
+
+    /// <summary>
+    /// Gets the localized register failure title.
+    /// </summary>
+    public static string AccountRegisterFailedTitle => GetRequiredString(nameof(AccountRegisterFailedTitle));
+
+    /// <summary>
+    /// Gets the localized password-mismatch message.
+    /// </summary>
+    public static string AccountPasswordMismatchMessage => GetRequiredString(nameof(AccountPasswordMismatchMessage));
+
+    /// <summary>
+    /// Gets the localized register success title.
+    /// </summary>
+    public static string AccountRegisterSuccessTitle => GetRequiredString(nameof(AccountRegisterSuccessTitle));
+
+    /// <summary>
+    /// Gets the localized register success message format.
+    /// </summary>
+    public static string AccountRegisterSuccessMessageFormat => GetRequiredString(nameof(AccountRegisterSuccessMessageFormat));
+
+    /// <summary>
+    /// Gets the localized register failure message format.
+    /// </summary>
+    public static string AccountRegisterFailedMessageFormat => GetRequiredString(nameof(AccountRegisterFailedMessageFormat));
+
+    /// <summary>
+    /// Gets the localized refresh failure title.
+    /// </summary>
+    public static string AccountRefreshFailedTitle => GetRequiredString(nameof(AccountRefreshFailedTitle));
+
+    /// <summary>
+    /// Gets the localized refresh failure message format.
+    /// </summary>
+    public static string AccountRefreshFailedMessageFormat => GetRequiredString(nameof(AccountRefreshFailedMessageFormat));
+
+    /// <summary>
+    /// Gets the localized validation failure title.
+    /// </summary>
+    public static string AccountValidationFailedTitle => GetRequiredString(nameof(AccountValidationFailedTitle));
+
+    /// <summary>
+    /// Gets the localized credentials-required message.
+    /// </summary>
+    public static string AccountCredentialsRequiredMessage => GetRequiredString(nameof(AccountCredentialsRequiredMessage));
+
+    /// <summary>
+    /// Gets the localized settings account-section label.
+    /// </summary>
+    public static string SettingsAccountSectionLabel => GetRequiredString(nameof(SettingsAccountSectionLabel));
+
+    /// <summary>
+    /// Gets the localized signed-out settings account summary.
+    /// </summary>
+    public static string SettingsAccountSummarySignedOut => GetRequiredString(nameof(SettingsAccountSummarySignedOut));
+
+    /// <summary>
+    /// Gets the localized signed-in settings account summary format.
+    /// </summary>
+    public static string SettingsAccountSummarySignedInFormat => GetRequiredString(nameof(SettingsAccountSummarySignedInFormat));
+
+    /// <summary>
+    /// Gets the localized settings account button label.
+    /// </summary>
+    public static string SettingsAccountButton => GetRequiredString(nameof(SettingsAccountButton));
+
+    /// <summary>
     /// Gets a required localized string by key.
     /// </summary>
     /// <param name="name">The resource key name.</param>

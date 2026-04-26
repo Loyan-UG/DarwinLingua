@@ -68,7 +68,10 @@ public sealed class DarwinLinguaIdentityBootstrapper<TContext>(
         if (missing.Count > 0)
         {
             throw new InvalidOperationException(
-                $"Identity seed accounts are required for environment '{hostEnvironment.EnvironmentName}', but these settings are missing: {string.Join(", ", missing)}.");
+                $"Identity seed accounts are required for environment '{hostEnvironment.EnvironmentName}', but these settings are missing: {string.Join(", ", missing)}. " +
+                $"You can provide them via configuration or environment variables such as " +
+                $"'{DarwinLinguaIdentityEnvironmentVariables.SeedAdminEmail}', '{DarwinLinguaIdentityEnvironmentVariables.SeedAdminPassword}', " +
+                $"'{DarwinLinguaIdentityEnvironmentVariables.SeedLearnerEmail}', and '{DarwinLinguaIdentityEnvironmentVariables.SeedLearnerPassword}'.");
         }
     }
 

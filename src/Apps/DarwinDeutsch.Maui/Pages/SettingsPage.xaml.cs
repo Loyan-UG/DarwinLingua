@@ -1,5 +1,6 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Controls;
+using DarwinDeutsch.Maui.Services.Auth;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Storage;
@@ -20,6 +21,7 @@ public partial class SettingsPage : ContentPage
     private static readonly string[] CefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
     private readonly IAppLocalizationService _appLocalizationService;
+    private readonly IMobileAuthService _mobileAuthService;
     private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly IRemoteContentUpdateService _remoteContentUpdateService;
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
@@ -61,6 +63,7 @@ public partial class SettingsPage : ContentPage
     /// <param name="languageQueryService">The service that loads active language reference data.</param>
     public SettingsPage(
         IAppLocalizationService appLocalizationService,
+        IMobileAuthService mobileAuthService,
         IBrowseAccelerationService browseAccelerationService,
         IRemoteContentUpdateService remoteContentUpdateService,
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
@@ -69,6 +72,7 @@ public partial class SettingsPage : ContentPage
         IPopupDialogService popupDialogService)
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
+        ArgumentNullException.ThrowIfNull(mobileAuthService);
         ArgumentNullException.ThrowIfNull(browseAccelerationService);
         ArgumentNullException.ThrowIfNull(remoteContentUpdateService);
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
@@ -79,6 +83,7 @@ public partial class SettingsPage : ContentPage
         InitializeComponent();
 
         _appLocalizationService = appLocalizationService;
+        _mobileAuthService = mobileAuthService;
         _browseAccelerationService = browseAccelerationService;
         _remoteContentUpdateService = remoteContentUpdateService;
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
@@ -167,6 +172,9 @@ public partial class SettingsPage : ContentPage
         Title = AppStrings.SettingsTabTitle;
         HeadlineLabel.Text = AppStrings.SettingsHeadline;
         DescriptionLabel.Text = AppStrings.SettingsDescription;
+        AccountSectionLabel.Text = AppStrings.SettingsAccountSectionLabel;
+        AccountSummaryLabel.Text = AppStrings.SettingsAccountSummarySignedOut;
+        OpenAccountButton.Text = AppStrings.SettingsAccountButton;
         AboutSectionLabel.Text = AppStrings.SettingsAppInfoSectionLabel;
         AboutSummaryLabel.Text = AppStrings.SettingsAboutSummary;
         OpenAboutButton.Text = AppStrings.SettingsAboutButton;
@@ -213,12 +221,14 @@ public partial class SettingsPage : ContentPage
         Task<IReadOnlyList<SupportedLanguageModel>> supportedMeaningLanguagesTask = LoadSupportedMeaningLanguagesAsync(cancellationToken);
         Task<UserLearningProfileModel> profileTask = _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken);
+        Task<MobileAuthSession?> mobileAuthSessionTask = _mobileAuthService.GetCurrentSessionAsync(cancellationToken);
         Task<SeedDatabaseUpdateStatus> seedStatusTask = _seedDatabaseProvisioningService.GetUpdateStatusAsync(GetLocalDatabasePath(), cancellationToken);
 
-        await Task.WhenAll(supportedMeaningLanguagesTask, profileTask, seedStatusTask).ConfigureAwait(true);
+        await Task.WhenAll(supportedMeaningLanguagesTask, profileTask, mobileAuthSessionTask, seedStatusTask).ConfigureAwait(true);
 
         IReadOnlyList<SupportedLanguageModel> supportedMeaningLanguages = await supportedMeaningLanguagesTask.ConfigureAwait(true);
         UserLearningProfileModel profile = await profileTask.ConfigureAwait(true);
+        MobileAuthSession? mobileAuthSession = await mobileAuthSessionTask.ConfigureAwait(true);
         SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await seedStatusTask.ConfigureAwait(true);
 
         List<MeaningLanguageOption> primaryMeaningOptions = supportedMeaningLanguages
@@ -252,6 +262,10 @@ public partial class SettingsPage : ContentPage
                 option.LanguageCode ?? string.Empty,
                 profile.PreferredMeaningLanguage2 ?? string.Empty,
                 StringComparison.OrdinalIgnoreCase));
+
+            AccountSummaryLabel.Text = mobileAuthSession is null
+                ? AppStrings.SettingsAccountSummarySignedOut
+                : string.Format(AppStrings.SettingsAccountSummarySignedInFormat, mobileAuthSession.Email);
 
             ContentUpdateStatusSectionView.SectionValue = BuildContentUpdateStatus(seedDatabaseUpdateStatus);
             ContentUpdateDetailsSectionView.SectionValue = BuildContentUpdateDetails(seedDatabaseUpdateStatus);
@@ -692,6 +706,17 @@ public partial class SettingsPage : ContentPage
         try
         {
             await Shell.Current.GoToAsync(nameof(AboutPage)).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    private async void OnOpenAccountButtonClicked(object? sender, EventArgs e)
+    {
+        try
+        {
+            await Shell.Current.GoToAsync(nameof(AccountPage)).ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {

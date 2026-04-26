@@ -103,18 +103,18 @@ This backlog is intentionally ordered so the project can grow without collapsing
 
 ## 6.2 Entitlements and Monetization Foundation
 
-- [ ] define the first entitlement model separate from roles
-- [ ] define baseline entitlements such as `Free`, `Trial`, and `Premium` without locking final pricing
+- [x] define the first entitlement model separate from roles
+- [x] define baseline entitlements such as `Free`, `Trial`, and `Premium` without locking final pricing
 - [ ] add server-side entitlement checks for learner-facing premium features
 - [ ] add web-side feature-gate presentation patterns for locked premium features
-- [ ] define trial bootstrap rules for newly registered learners
+- [x] define trial bootstrap rules for newly registered learners
 - [ ] define subscription-state persistence and expiration handling
 - [ ] define audit and diagnostics for entitlement changes
-- [ ] ensure feature gating never blocks permanently free catalog browsing
-- [ ] define the first premium-capable features as backlog placeholders:
-- [ ] favorites
-- [ ] dual-meaning-language mode
-- [ ] future advanced practice capabilities
+- [x] ensure feature gating never blocks permanently free catalog browsing
+- [x] define the first premium-capable features as backlog placeholders:
+- [x] favorites
+- [x] dual-meaning-language mode
+- [x] future advanced practice capabilities
 
 ## 7. Shared Backend Integration
 

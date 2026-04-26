@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="DarwinDeutsch.Maui.Pages.AccountPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="18">
+            <Border Padding="24"
+                    Style="{StaticResource AppHeroPanelBorderStyle}">
+                <VerticalStackLayout Spacing="10">
+                    <Label x:Name="HeadlineLabel"
+                           Style="{DynamicResource Headline}"
+                           SemanticProperties.HeadingLevel="Level1" />
+                    <Label x:Name="DescriptionLabel"
+                           Style="{DynamicResource Body}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="20"
+                    Style="{StaticResource AppSectionCardBorderStyle}">
+                <VerticalStackLayout Spacing="14">
+                    <Label x:Name="SessionSectionLabel"
+                           Style="{DynamicResource Title2}" />
+                    <Label x:Name="SessionSummaryLabel"
+                           Style="{DynamicResource Body}" />
+                    <buttons:SfButton x:Name="RefreshSessionButton"
+                                      Style="{StaticResource SyncfusionInfoButtonStyle}"
+                                      Clicked="OnRefreshSessionButtonClicked" />
+                    <buttons:SfButton x:Name="SignOutButton"
+                                      Style="{StaticResource SyncfusionWarningButtonStyle}"
+                                      Clicked="OnSignOutButtonClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="20"
+                    Style="{StaticResource AppSectionCardBorderStyle}">
+                <VerticalStackLayout Spacing="14">
+                    <Label x:Name="SignInSectionLabel"
+                           Style="{DynamicResource Title2}" />
+                    <inputLayout:SfTextInputLayout x:Name="EmailInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <Entry x:Name="EmailEntry"
+                               Keyboard="Email" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout x:Name="PasswordInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <Entry x:Name="PasswordEntry"
+                               IsPassword="True" />
+                    </inputLayout:SfTextInputLayout>
+                    <buttons:SfButton x:Name="SignInButton"
+                                      Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                      Clicked="OnSignInButtonClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="20"
+                    Style="{StaticResource AppSectionCardBorderStyle}">
+                <VerticalStackLayout Spacing="14">
+                    <Label x:Name="RegisterSectionLabel"
+                           Style="{DynamicResource Title2}" />
+                    <inputLayout:SfTextInputLayout x:Name="RegisterEmailInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <Entry x:Name="RegisterEmailEntry"
+                               Keyboard="Email" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout x:Name="RegisterPasswordInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <Entry x:Name="RegisterPasswordEntry"
+                               IsPassword="True" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout x:Name="RegisterConfirmPasswordInputLayout"
+                                                   Style="{StaticResource SyncfusionTextInputLayoutStyle}">
+                        <Entry x:Name="RegisterConfirmPasswordEntry"
+                               IsPassword="True" />
+                    </inputLayout:SfTextInputLayout>
+                    <buttons:SfButton x:Name="RegisterButton"
+                                      Style="{StaticResource SyncfusionSuccessButtonStyle}"
+                                      Clicked="OnRegisterButtonClicked" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

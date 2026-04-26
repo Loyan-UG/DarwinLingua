@@ -63,6 +63,29 @@
                 </VerticalStackLayout>
             </Border>
 
+            <expander:SfExpander IsExpanded="False"
+                                 Style="{StaticResource SyncfusionSectionExpanderStyle}">
+                <expander:SfExpander.Header>
+                    <Grid Padding="20">
+                        <Label x:Name="AccountSectionLabel"
+                               Style="{DynamicResource Title2}" />
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Border Padding="20"
+                            Style="{StaticResource AppSectionCardBorderStyle}">
+                        <VerticalStackLayout Spacing="12">
+                            <Label x:Name="AccountSummaryLabel"
+                                   Style="{DynamicResource Body}"
+                                   LineBreakMode="WordWrap" />
+                            <buttons:SfButton x:Name="OpenAccountButton"
+                                              Style="{StaticResource SyncfusionInfoButtonStyle}"
+                                              Clicked="OnOpenAccountButtonClicked" />
+                        </VerticalStackLayout>
+                    </Border>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
+
             <expander:SfExpander IsExpanded="True"
                                  Style="{StaticResource SyncfusionSectionExpanderStyle}">
                 <expander:SfExpander.Header>

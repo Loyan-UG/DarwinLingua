@@ -26,6 +26,12 @@ Do not mark the related backlog items complete until this worksheet has been exe
 - [ ] web host starts successfully
 - [ ] database migrations have been applied
 - [ ] identity tables exist
+- [ ] one of these seed-secret sources is configured for the active non-production environment:
+- [ ] `IdentityBootstrap:*` values in local configuration
+- [ ] `DARWINLINGUA_IDENTITY_SEED_ADMIN_EMAIL`
+- [ ] `DARWINLINGUA_IDENTITY_SEED_ADMIN_PASSWORD`
+- [ ] `DARWINLINGUA_IDENTITY_SEED_LEARNER_EMAIL`
+- [ ] `DARWINLINGUA_IDENTITY_SEED_LEARNER_PASSWORD`
 - [ ] test learner account is available
 - [ ] test operator/admin account is available
 - [ ] seeded learner test account is available

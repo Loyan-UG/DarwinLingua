@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Pages;
+using DarwinDeutsch.Maui.Services.Auth;
 using DarwinDeutsch.Maui.Services.Audio;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Diagnostics;
@@ -52,6 +53,7 @@ public static class MauiProgram
 
         string databasePath = Path.Combine(FileSystem.Current.AppDataDirectory, "darwin-lingua.db");
         RemoteContentUpdateOptions remoteContentUpdateOptions = CreateRemoteContentUpdateOptions();
+        MobileAuthOptions mobileAuthOptions = CreateMobileAuthOptions(remoteContentUpdateOptions);
 
         builder.Services
             .AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath)
@@ -84,6 +86,10 @@ public static class MauiProgram
             .AddSingleton(remoteContentUpdateOptions)
             .AddSingleton(_ => CreateRemoteUpdateHttpClient(remoteContentUpdateOptions))
             .AddSingleton<IRemoteContentUpdateService, RemoteContentUpdateService>()
+            .AddSingleton(mobileAuthOptions)
+            .AddSingleton(_ => CreateMobileAuthHttpClient(mobileAuthOptions))
+            .AddSingleton<IMobileAuthSessionStore, SecureStorageMobileAuthSessionStore>()
+            .AddSingleton<IMobileAuthService, MobileAuthService>()
             .AddSingleton<IBackgroundRemoteUpdateCoordinator, BackgroundRemoteUpdateCoordinator>()
 #if ANDROID
             .AddSingleton<IPlatformBackgroundUpdateScheduler, AndroidBackgroundUpdateScheduler>()
@@ -105,6 +111,7 @@ public static class MauiProgram
             .AddTransient<CefrWordsPage>()
             .AddTransient<SearchWordsPage>()
             .AddTransient<WordDetailPage>()
+            .AddTransient<AccountPage>()
             .AddSingleton<SettingsPage>();
 
 #if DEBUG
@@ -162,6 +169,62 @@ public static class MauiProgram
         HttpClient client = new(handler)
         {
             Timeout = TimeSpan.FromSeconds(10),
+        };
+
+        if (!string.IsNullOrWhiteSpace(options.BrowserWarningBypassHeaderName))
+        {
+            client.DefaultRequestHeaders.TryAddWithoutValidation(
+                options.BrowserWarningBypassHeaderName,
+                string.IsNullOrWhiteSpace(options.BrowserWarningBypassHeaderValue) ? "1" : options.BrowserWarningBypassHeaderValue);
+        }
+
+        return client;
+    }
+
+    private static MobileAuthOptions CreateMobileAuthOptions(RemoteContentUpdateOptions remoteOptions)
+    {
+        ArgumentNullException.ThrowIfNull(remoteOptions);
+
+        return new MobileAuthOptions
+        {
+            BaseUrl = remoteOptions.BaseUrl,
+            IgnoreTlsCertificateErrors = remoteOptions.IgnoreTlsCertificateErrors,
+            BrowserWarningBypassHeaderName = remoteOptions.BrowserWarningBypassHeaderName,
+            BrowserWarningBypassHeaderValue = remoteOptions.BrowserWarningBypassHeaderValue,
+        };
+    }
+
+    private static HttpClient CreateMobileAuthHttpClient(MobileAuthOptions options)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+
+        string configuredHost = string.Empty;
+        if (Uri.TryCreate(options.BaseUrl, UriKind.Absolute, out Uri? baseUri))
+        {
+            configuredHost = baseUri.Host;
+        }
+
+        HttpClientHandler handler = new()
+        {
+            ServerCertificateCustomValidationCallback = (requestMessage, _, _, sslPolicyErrors) =>
+            {
+                if (sslPolicyErrors == SslPolicyErrors.None)
+                {
+                    return true;
+                }
+
+                return options.IgnoreTlsCertificateErrors &&
+                       !string.IsNullOrWhiteSpace(configuredHost) &&
+                       string.Equals(requestMessage?.RequestUri?.Host, configuredHost, StringComparison.OrdinalIgnoreCase);
+            },
+        };
+
+        HttpClient client = new(handler)
+        {
+            Timeout = TimeSpan.FromSeconds(15),
+            BaseAddress = Uri.TryCreate(options.BaseUrl, UriKind.Absolute, out Uri? authBaseUri)
+                ? authBaseUri
+                : null,
         };
 
         if (!string.IsNullOrWhiteSpace(options.BrowserWarningBypassHeaderName))

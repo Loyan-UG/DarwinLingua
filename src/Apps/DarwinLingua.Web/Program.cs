@@ -33,6 +33,9 @@ builder.Services.AddOutputCache(options =>
 });
 builder.Services.Configure<MemoryCacheOptions>(options => options.SizeLimit = 512);
 builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
+builder.Services.Configure<DarwinLinguaEntitlementOptions>(builder.Configuration.GetSection("Entitlements"));
+builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaIdentityBootstrapOptions>, DarwinLinguaIdentityBootstrapOptionsPostConfigure>();
+builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaEntitlementOptions>, DarwinLinguaEntitlementOptionsPostConfigure>();
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
 builder.Services.AddScoped<IWebActivityQueryService, WebActivityQueryService>();
@@ -42,6 +45,7 @@ builder.Services.AddScoped<IWebUserPreferenceService, WebUserPreferenceService>(
 builder.Services.AddScoped<IWebFavoriteWordService, WebFavoriteWordService>();
 builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();
 builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebIdentityDbContext>>();
+builder.Services.AddScoped<IUserEntitlementService, UserEntitlementService<WebIdentityDbContext>>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
 string? webIdentityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")
     ?? builder.Configuration.GetConnectionString("Identity")

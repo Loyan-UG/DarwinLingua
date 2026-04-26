@@ -31,6 +31,9 @@ builder.Services
     .Validate(options => options.HasValidPackages(), "Packages must reference active client products and valid areas.")
     .ValidateOnStart();
 builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
+builder.Services.Configure<DarwinLinguaEntitlementOptions>(builder.Configuration.GetSection("Entitlements"));
+builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaIdentityBootstrapOptions>, DarwinLinguaIdentityBootstrapOptionsPostConfigure>();
+builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaEntitlementOptions>, DarwinLinguaEntitlementOptionsPostConfigure>();
 
 string serverContentConnectionString = builder.Configuration.GetConnectionString("ServerContentAdmin")
     ?? builder.Configuration.GetConnectionString("ServerContent")
@@ -65,6 +68,7 @@ builder.Services
     .AddDefaultTokenProviders();
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<DarwinLinguaIdentityUser>, DefaultLearnerRoleClaimsPrincipalFactory>();
 builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebApiIdentityDbContext>>();
+builder.Services.AddScoped<IUserEntitlementService, UserEntitlementService<WebApiIdentityDbContext>>();
 builder.Services.AddAuthorization();
 
 builder.Services
@@ -113,7 +117,11 @@ RouteGroupBuilder authGroup = app.MapGroup("/api/auth");
 authGroup.MapIdentityApi<DarwinLinguaIdentityUser>();
 authGroup.MapGet(
         "/me",
-        [Authorize] async (ClaimsPrincipal principal, UserManager<DarwinLinguaIdentityUser> userManager) =>
+        [Authorize] async (
+            ClaimsPrincipal principal,
+            UserManager<DarwinLinguaIdentityUser> userManager,
+            IUserEntitlementService userEntitlementService,
+            CancellationToken cancellationToken) =>
         {
             DarwinLinguaIdentityUser? user = await userManager.GetUserAsync(principal).ConfigureAwait(false);
             if (user is null)
@@ -122,7 +130,19 @@ authGroup.MapGet(
             }
 
             IList<string> roles = await userManager.GetRolesAsync(user).ConfigureAwait(false);
-            return Results.Ok(new AuthenticatedUserResponse(user.Id, user.Email, true, roles.OrderBy(static role => role).ToArray()));
+            UserEntitlementSnapshot entitlement = await userEntitlementService
+                .GetCurrentAsync(user.Id, cancellationToken)
+                .ConfigureAwait(false);
+
+            return Results.Ok(new AuthenticatedUserResponse(
+                user.Id,
+                user.Email,
+                true,
+                roles.OrderBy(static role => role).ToArray(),
+                entitlement.Tier,
+                entitlement.TrialEndsAtUtc,
+                entitlement.PremiumEndsAtUtc,
+                entitlement.EnabledFeatures));
         })
     .RequireAuthorization();
 
