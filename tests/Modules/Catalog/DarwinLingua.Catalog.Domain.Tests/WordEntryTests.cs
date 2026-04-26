@@ -409,6 +409,251 @@ public sealed class WordEntryTests
             DateTime.UtcNow));
     }
 
+    /// <summary>
+    /// Verifies that a valid word entry is created and that property values match the constructor arguments.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldCreateWordEntryWithExpectedProperties()
+    {
+        Guid id = Guid.NewGuid();
+        Guid publicId = Guid.NewGuid();
+        DateTime createdAt = DateTime.UtcNow;
+
+        WordEntry word = new(
+            id,
+            publicId,
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            createdAt,
+            article: "der");
+
+        Assert.Equal(id, word.Id);
+        Assert.Equal(publicId, word.PublicId);
+        Assert.Equal("Bahnhof", word.Lemma);
+        Assert.Equal("bahnhof", word.NormalizedLemma);
+        Assert.Equal(LanguageCode.From("de"), word.LanguageCode);
+        Assert.Equal(CefrLevel.A1, word.PrimaryCefrLevel);
+        Assert.Equal(PartOfSpeech.Noun, word.PartOfSpeech);
+        Assert.Equal(PublicationStatus.Active, word.PublicationStatus);
+        Assert.Equal("der", word.Article);
+        Assert.Equal(createdAt, word.CreatedAtUtc);
+        Assert.Single(word.LexicalForms);
+    }
+
+    /// <summary>
+    /// Verifies that an empty internal identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.Empty,
+            Guid.NewGuid(),
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that an empty public identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyPublicIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.NewGuid(),
+            Guid.Empty,
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a blank lemma is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyLemma()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "   ",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) creation timestamp is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectDefaultCreatedAtUtc()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimarySense"/> returns null when no senses have been added.
+    /// </summary>
+    [Fact]
+    public void GetPrimarySense_ShouldReturnNullWhenNoSensesExist()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordSense? result = word.GetPrimarySense();
+
+        Assert.Null(result);
+    }
+
+    /// <summary>
+    /// Verifies that a successfully added sense has the expected property values.
+    /// </summary>
+    [Fact]
+    public void AddSense_ShouldAddSenseWithExpectedValues()
+    {
+        WordEntry word = CreateWordEntry();
+        Guid senseId = Guid.NewGuid();
+
+        WordSense sense = word.AddSense(senseId, 1, true, PublicationStatus.Active, DateTime.UtcNow);
+
+        Assert.Equal(senseId, sense.Id);
+        Assert.Equal(1, sense.SenseOrder);
+        Assert.True(sense.IsPrimarySense);
+        Assert.Single(word.Senses);
+    }
+
+    /// <summary>
+    /// Verifies that a grammar note is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddGrammarNote_ShouldAddNoteSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordGrammarNote note = word.AddGrammarNote(
+            Guid.NewGuid(),
+            "Often used with the definite article.",
+            DateTime.UtcNow);
+
+        Assert.Equal("Often used with the definite article.", note.Text);
+        Assert.Single(word.GrammarNotes);
+    }
+
+    /// <summary>
+    /// Verifies that a collocation is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddCollocation_ShouldAddCollocationSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordCollocation collocation = word.AddCollocation(
+            Guid.NewGuid(),
+            "Brot kaufen",
+            "to buy bread",
+            DateTime.UtcNow);
+
+        Assert.Equal("Brot kaufen", collocation.Text);
+        Assert.Equal("to buy bread", collocation.Meaning);
+        Assert.Single(word.Collocations);
+    }
+
+    /// <summary>
+    /// Verifies that a word-family member is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddFamilyMember_ShouldAddFamilyMemberSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordFamilyMember member = word.AddFamilyMember(
+            Guid.NewGuid(),
+            "Bäcker",
+            "Profession",
+            "person who bakes bread",
+            DateTime.UtcNow);
+
+        Assert.Equal("Bäcker", member.Lemma);
+        Assert.Equal("Profession", member.RelationLabel);
+        Assert.Single(word.FamilyMembers);
+    }
+
+    /// <summary>
+    /// Verifies that a lexical relation is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddRelation_ShouldAddRelationSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordRelation relation = word.AddRelation(
+            Guid.NewGuid(),
+            WordRelationKind.Synonym,
+            "Haltestelle",
+            null,
+            DateTime.UtcNow);
+
+        Assert.Equal("Haltestelle", relation.Lemma);
+        Assert.Equal(WordRelationKind.Synonym, relation.Kind);
+        Assert.Single(word.Relations);
+    }
+
+    /// <summary>
+    /// Verifies that the same lemma can appear under different relation kinds.
+    /// </summary>
+    [Fact]
+    public void AddRelation_ShouldAllowSameLemmaAcrossDifferentKinds()
+    {
+        WordEntry word = CreateWordEntry();
+        word.AddRelation(Guid.NewGuid(), WordRelationKind.Synonym, "Haltestelle", null, DateTime.UtcNow);
+
+        WordRelation antonymRelation = word.AddRelation(
+            Guid.NewGuid(),
+            WordRelationKind.Antonym,
+            "Haltestelle",
+            null,
+            DateTime.UtcNow);
+
+        Assert.Equal(2, word.Relations.Count);
+        Assert.Equal(WordRelationKind.Antonym, antonymRelation.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that an empty topic identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void AddTopic_ShouldRejectEmptyTopicId()
+    {
+        WordEntry word = CreateWordEntry();
+
+        Assert.Throws<DomainRuleException>(() =>
+            word.AddTopic(Guid.NewGuid(), Guid.Empty, true, DateTime.UtcNow));
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(

@@ -125,4 +125,33 @@ public sealed class TopicTests
         Assert.NotNull(result);
         Assert.Equal("Shopping", result.DisplayName);
     }
+
+    /// <summary>
+    /// Verifies that a valid topic is created with the expected property values.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldCreateTopicWithExpectedProperties()
+    {
+        Guid id = Guid.NewGuid();
+        DateTime createdAt = DateTime.UtcNow;
+
+        Topic topic = new(id, "food-and-drink", 5, false, createdAt);
+
+        Assert.Equal(id, topic.Id);
+        Assert.Equal("food-and-drink", topic.Key);
+        Assert.Equal(5, topic.SortOrder);
+        Assert.False(topic.IsSystem);
+        Assert.Equal(createdAt, topic.CreatedAtUtc);
+        Assert.Empty(topic.Localizations);
+    }
+
+    /// <summary>
+    /// Verifies that an empty topic key is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyKey()
+    {
+        Assert.Throws<DomainRuleException>(() =>
+            new Topic(Guid.NewGuid(), "   ", 0, true, DateTime.UtcNow));
+    }
 }

@@ -47,4 +47,47 @@ public sealed class LanguageCodeTests
 
         Assert.Equal("zh-hans", code.Value);
     }
+
+    /// <summary>
+    /// Verifies that two <see cref="LanguageCode"/> instances with the same value are equal.
+    /// </summary>
+    [Fact]
+    public void From_ShouldSupportValueEquality()
+    {
+        LanguageCode first = LanguageCode.From("en");
+        LanguageCode second = LanguageCode.From("EN");
+
+        Assert.Equal(first, second);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="LanguageCode.ToString"/> returns the normalized value.
+    /// </summary>
+    [Fact]
+    public void ToString_ShouldReturnNormalizedValue()
+    {
+        LanguageCode code = LanguageCode.From("DE");
+
+        Assert.Equal("de", code.ToString());
+    }
+
+    /// <summary>
+    /// Verifies that a minimal two-letter code is accepted.
+    /// </summary>
+    [Fact]
+    public void From_ShouldAcceptTwoLetterCode()
+    {
+        LanguageCode code = LanguageCode.From("de");
+
+        Assert.Equal("de", code.Value);
+    }
+
+    /// <summary>
+    /// Verifies that a single-letter string is rejected.
+    /// </summary>
+    [Fact]
+    public void From_ShouldRejectSingleLetterValue()
+    {
+        Assert.Throws<DomainRuleException>(() => LanguageCode.From("e"));
+    }
 }

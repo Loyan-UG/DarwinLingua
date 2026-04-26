@@ -251,4 +251,53 @@ public sealed class WordCollectionTests
             0,
             DateTime.UtcNow);
     }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) creation timestamp is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectDefaultCreatedAtUtc()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordCollection(
+            Guid.NewGuid(),
+            "my-pack",
+            "My Pack",
+            null,
+            null,
+            PublicationStatus.Active,
+            0,
+            default));
+    }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) creation timestamp is converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 10, 0, 0, DateTimeKind.Local);
+
+        WordCollection collection = new(
+            Guid.NewGuid(),
+            "my-pack",
+            "My Pack",
+            null,
+            null,
+            PublicationStatus.Active,
+            0,
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, collection.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordCollection.ReplaceEntries"/> throws when <paramref name="words"/> is null.
+    /// </summary>
+    [Fact]
+    public void ReplaceEntries_ShouldThrowWhenWordsIsNull()
+    {
+        WordCollection collection = CreateWordCollection();
+
+        Assert.Throws<ArgumentNullException>(() => collection.ReplaceEntries(null!, DateTime.UtcNow));
+    }
 }
