@@ -654,6 +654,136 @@ public sealed class WordEntryTests
             word.AddTopic(Guid.NewGuid(), Guid.Empty, true, DateTime.UtcNow));
     }
 
+    /// <summary>
+    /// Verifies that adding a primary secondary lexical form demotes the previously primary form.
+    /// </summary>
+    [Fact]
+    public void AddLexicalForm_ShouldSwitchPrimaryFormWhenNewPrimaryIsAdded()
+    {
+        WordEntry word = CreateWordEntry();
+        WordLexicalForm originalPrimary = word.GetPrimaryLexicalForm()!;
+        Assert.Equal(PartOfSpeech.Noun, originalPrimary.PartOfSpeech);
+        Assert.True(originalPrimary.IsPrimary);
+
+        WordLexicalForm newPrimary = word.AddLexicalForm(
+            Guid.NewGuid(),
+            PartOfSpeech.Verb,
+            true,
+            DateTime.UtcNow,
+            infinitiveForm: "bahnhöfen");
+
+        Assert.False(originalPrimary.IsPrimary);
+        Assert.True(newPrimary.IsPrimary);
+        Assert.Single(word.LexicalForms, form => form.IsPrimary);
+    }
+
+    /// <summary>
+    /// Verifies that promoting a lexical form to primary updates the word-entry-level PartOfSpeech attribute.
+    /// </summary>
+    [Fact]
+    public void AddLexicalForm_ShouldApplyNewPrimaryFormAttributesToWordEntry()
+    {
+        WordEntry word = CreateWordEntry();
+        Assert.Equal(PartOfSpeech.Noun, word.PartOfSpeech);
+
+        word.AddLexicalForm(
+            Guid.NewGuid(),
+            PartOfSpeech.Verb,
+            true,
+            DateTime.UtcNow,
+            infinitiveForm: "bahnhöfen");
+
+        Assert.Equal(PartOfSpeech.Verb, word.PartOfSpeech);
+        Assert.Equal("bahnhöfen", word.InfinitiveForm);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimarySense"/> returns the sense with the lowest sense order
+    /// when no sense has the primary flag set.
+    /// </summary>
+    [Fact]
+    public void GetPrimarySense_ShouldReturnFirstByOrderWhenNoPrimaryFlagSet()
+    {
+        WordEntry word = CreateWordEntry();
+        WordSense sense2 = word.AddSense(Guid.NewGuid(), 2, false, PublicationStatus.Active, DateTime.UtcNow);
+        WordSense sense1 = word.AddSense(Guid.NewGuid(), 1, false, PublicationStatus.Active, DateTime.UtcNow);
+
+        WordSense? result = word.GetPrimarySense();
+
+        Assert.NotNull(result);
+        Assert.Same(sense1, result);
+        Assert.False(sense2.IsPrimarySense);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimaryLexicalForm"/> returns the form with the lowest sort order
+    /// when no form has the primary flag set, which in practice is the only form.
+    /// </summary>
+    [Fact]
+    public void GetPrimaryLexicalForm_ShouldReturnNounFormWhenOnlyOneFormExists()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordLexicalForm? result = word.GetPrimaryLexicalForm();
+
+        Assert.NotNull(result);
+        Assert.Equal(PartOfSpeech.Noun, result!.PartOfSpeech);
+        Assert.True(result.IsPrimary);
+    }
+
+    /// <summary>
+    /// Verifies that the same family-member lemma can be added under a different relation label.
+    /// </summary>
+    [Fact]
+    public void AddFamilyMember_ShouldAllowSameLemmaWithDifferentRelationLabel()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordFamilyMember agent = word.AddFamilyMember(Guid.NewGuid(), "Bäcker", "Profession", "person who bakes", DateTime.UtcNow);
+        WordFamilyMember derived = word.AddFamilyMember(Guid.NewGuid(), "Bäcker", "DerivedNoun", null, DateTime.UtcNow);
+
+        Assert.Equal(2, word.FamilyMembers.Count);
+        Assert.Equal("Profession", agent.RelationLabel);
+        Assert.Equal("DerivedNoun", derived.RelationLabel);
+    }
+
+    /// <summary>
+    /// Verifies that a non-UTC creation timestamp is converted to UTC on construction.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtTimestampToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 10, 0, 0, DateTimeKind.Local);
+
+        WordEntry word = new(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, word.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimarySense"/> returns the single primary sense correctly.
+    /// </summary>
+    [Fact]
+    public void GetPrimarySense_ShouldReturnPrimarySenseWhenSet()
+    {
+        WordEntry word = CreateWordEntry();
+        WordSense primarySense = word.AddSense(Guid.NewGuid(), 1, true, PublicationStatus.Active, DateTime.UtcNow);
+        word.AddSense(Guid.NewGuid(), 2, false, PublicationStatus.Active, DateTime.UtcNow);
+
+        WordSense? result = word.GetPrimarySense();
+
+        Assert.Same(primarySense, result);
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(
