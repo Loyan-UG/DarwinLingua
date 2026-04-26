@@ -269,6 +269,87 @@ public sealed class PracticeReviewStateTests
         Assert.Null(state.DueAtUtc);
     }
 
+    /// <summary>
+    /// Verifies that a default (uninitialized) attempt timestamp is rejected by <see cref="PracticeReviewState.RecordAttempt"/>.
+    /// </summary>
+    [Fact]
+    public void RecordAttempt_ShouldRejectDefaultAttemptedAtUtc()
+    {
+        PracticeReviewState state = CreateReviewState();
+
+        Assert.Throws<DomainRuleException>(() =>
+            state.RecordAttempt(PracticeSessionType.Flashcard, PracticeAttemptOutcome.Correct, default, null));
+    }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) updated timestamp is rejected by <see cref="PracticeReviewState.SetDueAt"/>.
+    /// </summary>
+    [Fact]
+    public void SetDueAt_ShouldRejectDefaultUpdatedAtUtc()
+    {
+        PracticeReviewState state = CreateReviewState();
+
+        Assert.Throws<DomainRuleException>(() => state.SetDueAt(null, default));
+    }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) attempt timestamp passed to <see cref="PracticeReviewState.RecordAttempt"/>
+    /// is converted to UTC before being stored.
+    /// </summary>
+    [Fact]
+    public void RecordAttempt_ShouldConvertLocalTimestampToUtc()
+    {
+        PracticeReviewState state = CreateReviewState();
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        state.RecordAttempt(PracticeSessionType.Flashcard, PracticeAttemptOutcome.Correct, localTime, null);
+
+        Assert.Equal(DateTimeKind.Utc, state.LastAttemptedAtUtc!.Value.Kind);
+        Assert.Equal(DateTimeKind.Utc, state.UpdatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) updated timestamp passed to <see cref="PracticeReviewState.SetDueAt"/>
+    /// is converted to UTC before being stored.
+    /// </summary>
+    [Fact]
+    public void SetDueAt_ShouldConvertLocalUpdatedAtToUtc()
+    {
+        PracticeReviewState state = CreateReviewState();
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        state.SetDueAt(null, localTime);
+
+        Assert.Equal(DateTimeKind.Utc, state.UpdatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="PracticeReviewState.RecordAttempt"/> with a null due date
+    /// leaves <see cref="PracticeReviewState.DueAtUtc"/> as null.
+    /// </summary>
+    [Fact]
+    public void RecordAttempt_NullDueAtUtc_ShouldLeaveDueAtUtcNull()
+    {
+        PracticeReviewState state = CreateReviewState();
+
+        state.RecordAttempt(PracticeSessionType.Flashcard, PracticeAttemptOutcome.Correct, DateTime.UtcNow, null);
+
+        Assert.Null(state.DueAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) creation timestamp is converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        PracticeReviewState state = new(Guid.NewGuid(), "local-installation-user", Guid.NewGuid(), localTime);
+
+        Assert.Equal(DateTimeKind.Utc, state.CreatedAtUtc.Kind);
+    }
+
     private static PracticeReviewState CreateReviewState()
     {
         return new PracticeReviewState(

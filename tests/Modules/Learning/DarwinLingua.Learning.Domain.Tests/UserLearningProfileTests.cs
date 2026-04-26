@@ -193,4 +193,82 @@ public sealed class UserLearningProfileTests
             LanguageCode.From("en"),
             default));
     }
+
+    /// <summary>
+    /// Verifies that a valid profile is created with the expected initial property values.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldCreateProfileWithExpectedProperties()
+    {
+        Guid id = Guid.NewGuid();
+        DateTime createdAt = DateTime.UtcNow;
+        LanguageCode primary = LanguageCode.From("en");
+        LanguageCode secondary = LanguageCode.From("de");
+        LanguageCode ui = LanguageCode.From("en");
+
+        UserLearningProfile profile = new(id, "local-installation-user", primary, secondary, ui, createdAt);
+
+        Assert.Equal(id, profile.Id);
+        Assert.Equal("local-installation-user", profile.UserId);
+        Assert.Equal(primary, profile.PreferredMeaningLanguage1);
+        Assert.Equal(secondary, profile.PreferredMeaningLanguage2);
+        Assert.Equal(ui, profile.UiLanguageCode);
+        Assert.Equal(createdAt, profile.CreatedAtUtc);
+        Assert.Equal(createdAt, profile.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) creation timestamp is converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("de"),
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, profile.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserLearningProfile.UpdateUiLanguage"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void UpdateUiLanguage_ShouldRejectDefaultUpdatedAtUtc()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("en"),
+            DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() =>
+            profile.UpdateUiLanguage(LanguageCode.From("de"), default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserLearningProfile.UpdateMeaningLanguagePreferences"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void UpdateMeaningLanguagePreferences_ShouldRejectDefaultUpdatedAtUtc()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("en"),
+            DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() =>
+            profile.UpdateMeaningLanguagePreferences(LanguageCode.From("de"), null, default));
+    }
 }

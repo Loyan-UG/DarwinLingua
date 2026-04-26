@@ -247,4 +247,110 @@ public sealed class UserWordStateTests
         Assert.False(userWordState.IsDifficult);
         Assert.Equal(clearedAt, userWordState.UpdatedAtUtc);
     }
+
+    /// <summary>
+    /// Verifies that a local (non-UTC) creation timestamp is converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+
+        UserWordState userWordState = new(Guid.NewGuid(), "local-installation-user", Guid.NewGuid(), localTime);
+
+        Assert.Equal(DateTimeKind.Utc, userWordState.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.TrackViewed"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void TrackViewed_ShouldRejectDefaultTimestamp()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => userWordState.TrackViewed(default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.MarkKnown"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void MarkKnown_ShouldRejectDefaultTimestamp()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => userWordState.MarkKnown(default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.ClearKnown"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void ClearKnown_ShouldRejectDefaultTimestamp()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => userWordState.ClearKnown(default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.MarkDifficult"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void MarkDifficult_ShouldRejectDefaultTimestamp()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => userWordState.MarkDifficult(default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.ClearDifficult"/> rejects a default timestamp.
+    /// </summary>
+    [Fact]
+    public void ClearDifficult_ShouldRejectDefaultTimestamp()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Throws<DomainRuleException>(() => userWordState.ClearDifficult(default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.TrackViewed"/> converts a local timestamp to UTC.
+    /// </summary>
+    [Fact]
+    public void TrackViewed_ShouldConvertLocalTimestampToUtc()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        DateTime localTime = new(2025, 6, 1, 12, 0, 0, DateTimeKind.Local);
+        userWordState.TrackViewed(localTime);
+
+        Assert.Equal(DateTimeKind.Utc, userWordState.LastViewedAtUtc!.Value.Kind);
+    }
 }

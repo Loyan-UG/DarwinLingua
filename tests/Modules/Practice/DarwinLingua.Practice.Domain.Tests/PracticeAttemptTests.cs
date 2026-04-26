@@ -189,4 +189,46 @@ public sealed class PracticeAttemptTests
 
         Assert.Equal(DateTimeKind.Utc, attempt.AttemptedAtUtc.Kind);
     }
+
+    /// <summary>
+    /// Verifies that local (non-UTC) optional due-at timestamps are converted to UTC.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalOptionalDueAtTimestampsToUtc()
+    {
+        DateTime localDueBefore = new(2025, 5, 31, 9, 0, 0, DateTimeKind.Local);
+        DateTime localDueAfter = new(2025, 6, 4, 9, 0, 0, DateTimeKind.Local);
+
+        PracticeAttempt attempt = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            PracticeSessionType.Flashcard,
+            PracticeAttemptOutcome.Correct,
+            DateTime.UtcNow,
+            localDueBefore,
+            localDueAfter);
+
+        Assert.Equal(DateTimeKind.Utc, attempt.DueAtUtcBeforeAttempt!.Value.Kind);
+        Assert.Equal(DateTimeKind.Utc, attempt.DueAtUtcAfterAttempt!.Value.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="PracticeAttempt.CreatedAtUtc"/> is set to the same value as the attempt timestamp.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldSetCreatedAtUtcToAttemptTimestamp()
+    {
+        DateTime attemptedAt = new(2025, 6, 1, 10, 0, 0, DateTimeKind.Utc);
+
+        PracticeAttempt attempt = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            PracticeSessionType.Quiz,
+            PracticeAttemptOutcome.Correct,
+            attemptedAt);
+
+        Assert.Equal(attemptedAt, attempt.CreatedAtUtc);
+    }
 }
