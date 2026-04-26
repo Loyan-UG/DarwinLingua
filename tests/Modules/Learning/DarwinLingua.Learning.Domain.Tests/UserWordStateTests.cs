@@ -205,4 +205,46 @@ public sealed class UserWordStateTests
             Guid.NewGuid(),
             default));
     }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.ClearKnown"/> sets <see cref="UserWordState.IsKnown"/> to false.
+    /// </summary>
+    [Fact]
+    public void ClearKnown_ShouldSetIsKnownFalse()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        userWordState.MarkKnown(DateTime.UtcNow.AddMinutes(-2));
+
+        DateTime clearedAt = DateTime.UtcNow;
+        userWordState.ClearKnown(clearedAt);
+
+        Assert.False(userWordState.IsKnown);
+        Assert.Equal(clearedAt, userWordState.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.ClearDifficult"/> sets <see cref="UserWordState.IsDifficult"/> to false.
+    /// </summary>
+    [Fact]
+    public void ClearDifficult_ShouldSetIsDifficultFalse()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        userWordState.MarkDifficult(DateTime.UtcNow.AddMinutes(-2));
+
+        DateTime clearedAt = DateTime.UtcNow;
+        userWordState.ClearDifficult(clearedAt);
+
+        Assert.False(userWordState.IsDifficult);
+        Assert.Equal(clearedAt, userWordState.UpdatedAtUtc);
+    }
 }

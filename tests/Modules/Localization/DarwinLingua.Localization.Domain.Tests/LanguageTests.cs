@@ -194,4 +194,31 @@ public sealed class LanguageTests
 
         Assert.Throws<DomainRuleException>(() => language.UpdateNames("German", "   "));
     }
+
+    /// <summary>
+    /// Verifies that a valid language is created with the expected property values.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldCreateLanguageWithExpectedProperties()
+    {
+        Guid id = Guid.NewGuid();
+        LanguageCode code = LanguageCode.From("de");
+
+        Language language = new(
+            id,
+            code,
+            "German",
+            "Deutsch",
+            isActive: true,
+            supportsUserInterface: true,
+            supportsMeanings: true);
+
+        Assert.Equal(id, language.Id);
+        Assert.Equal(code, language.Code);
+        Assert.Equal("German", language.EnglishName);
+        Assert.Equal("Deutsch", language.NativeName);
+        Assert.True(language.IsActive);
+        Assert.True(language.SupportsUserInterface);
+        Assert.True(language.SupportsMeanings);
+    }
 }

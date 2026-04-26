@@ -79,4 +79,17 @@ public sealed class UserFavoriteWordTests
 
         Assert.Equal("local-installation-user", favoriteWord.UserId);
     }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) creation timestamp is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectDefaultCreatedAtUtc()
+    {
+        Assert.Throws<DomainRuleException>(() => new UserFavoriteWord(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            default));
+    }
 }
