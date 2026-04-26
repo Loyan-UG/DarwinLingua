@@ -102,6 +102,12 @@ public partial class AccountPage : ContentPage
         SessionSummaryLabel.Text = session is null
             ? AppStrings.AccountSignedOutSummary
             : string.Format(AppStrings.AccountSignedInSummaryFormat, session.Email, string.Join(", ", session.Roles));
+        PlanSummaryLabel.Text = session is null
+            ? AppStrings.AccountPlanSignedOutSummary
+            : string.Format(
+                AppStrings.AccountPlanSummaryFormat,
+                session.EntitlementTier,
+                string.Join(", ", session.EnabledFeatures));
 
         SignOutButton.IsEnabled = session is not null;
         RefreshSessionButton.IsEnabled = true;

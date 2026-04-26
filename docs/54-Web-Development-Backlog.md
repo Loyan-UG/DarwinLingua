@@ -105,11 +105,11 @@ This backlog is intentionally ordered so the project can grow without collapsing
 
 - [x] define the first entitlement model separate from roles
 - [x] define baseline entitlements such as `Free`, `Trial`, and `Premium` without locking final pricing
-- [ ] add server-side entitlement checks for learner-facing premium features
-- [ ] add web-side feature-gate presentation patterns for locked premium features
+- [x] add server-side entitlement checks for learner-facing premium features
+- [x] add web-side feature-gate presentation patterns for locked premium features
 - [x] define trial bootstrap rules for newly registered learners
 - [ ] define subscription-state persistence and expiration handling
-- [ ] define audit and diagnostics for entitlement changes
+- [x] define audit and diagnostics for entitlement changes
 - [x] ensure feature gating never blocks permanently free catalog browsing
 - [x] define the first premium-capable features as backlog placeholders:
 - [x] favorites

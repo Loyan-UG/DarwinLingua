@@ -433,10 +433,10 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 
 - [x] define entitlements as a separate model from roles
 - [x] define baseline entitlement states for `Free`, `Trial`, and `Premium`
-- [ ] define the first server-owned premium feature gating boundary shared by web and mobile
+- [x] define the first server-owned premium feature gating boundary shared by web and mobile
 - [x] keep core catalog browse and word viewing permanently outside premium enforcement unless product policy changes later
 - [x] add backlog placeholders for premium-capable features such as favorites, dual-meaning-language mode, and future advanced practice flows
-- [ ] define audit and diagnostics requirements for entitlement changes and trial expiration
+- [x] define audit and diagnostics requirements for entitlement changes and trial expiration
 
 ---
 

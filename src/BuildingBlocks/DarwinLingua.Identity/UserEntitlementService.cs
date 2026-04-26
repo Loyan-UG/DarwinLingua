@@ -8,6 +8,13 @@ public sealed class UserEntitlementService<TContext>(
     IOptions<DarwinLinguaEntitlementOptions> options) : IUserEntitlementService
     where TContext : DarwinLinguaIdentityDbContext
 {
+    private const string InitialTrialEventType = "initial-trial";
+    private const string InitialFreeEventType = "initial-free";
+    private const string TierChangedEventType = "tier-changed";
+    private const string TrialExpiredEventType = "trial-expired";
+    private const string PremiumExpiredEventType = "premium-expired";
+    private const string InvalidTierNormalizedEventType = "invalid-tier-normalized";
+
     private static readonly string[] FreeFeatures =
     [
         DarwinLinguaFeatureKeys.BrowseCatalog,
@@ -39,11 +46,24 @@ public sealed class UserEntitlementService<TContext>(
         {
             state = CreateInitialState(userId, nowUtc);
             dbContext.UserEntitlementStates.Add(state);
+            AddAuditEvent(
+                state,
+                null,
+                state.Tier,
+                null,
+                state.TrialEndsAtUtc,
+                null,
+                state.PremiumEndsAtUtc,
+                "system",
+                string.Equals(state.Tier, DarwinLinguaEntitlementTiers.Trial, StringComparison.Ordinal)
+                    ? InitialTrialEventType
+                    : InitialFreeEventType,
+                nowUtc);
             requiresSave = true;
         }
         else
         {
-            requiresSave = NormalizeState(state, nowUtc);
+            requiresSave = NormalizeState(state, nowUtc, addAuditEvent: true);
         }
 
         if (requiresSave)
@@ -60,6 +80,38 @@ public sealed class UserEntitlementService<TContext>(
 
         UserEntitlementSnapshot snapshot = await GetCurrentAsync(userId, cancellationToken).ConfigureAwait(false);
         return snapshot.EnabledFeatures.Contains(featureKey, StringComparer.OrdinalIgnoreCase);
+    }
+
+    public async Task<IReadOnlyList<UserEntitlementAuditEventModel>> GetRecentAuditEventsAsync(
+        string userId,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(userId);
+
+        int boundedTake = Math.Clamp(take, 1, 100);
+        UserEntitlementAuditEvent[] auditEvents = await dbContext.UserEntitlementAuditEvents
+            .AsNoTracking()
+            .Where(auditEvent => auditEvent.UserId == userId)
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return auditEvents
+            .OrderByDescending(auditEvent => auditEvent.CreatedAtUtc)
+            .Take(boundedTake)
+            .Select(auditEvent => new UserEntitlementAuditEventModel(
+                auditEvent.Id,
+                auditEvent.UserId,
+                auditEvent.EventType,
+                auditEvent.PreviousTier,
+                auditEvent.NewTier,
+                auditEvent.PreviousTrialEndsAtUtc,
+                auditEvent.NewTrialEndsAtUtc,
+                auditEvent.PreviousPremiumEndsAtUtc,
+                auditEvent.NewPremiumEndsAtUtc,
+                auditEvent.UpdatedBy,
+                auditEvent.CreatedAtUtc))
+            .ToArray();
     }
 
     public async Task<UserEntitlementSnapshot> SetTierAsync(
@@ -90,9 +142,14 @@ public sealed class UserEntitlementService<TContext>(
             dbContext.UserEntitlementStates.Add(state);
         }
 
+        string? previousTier = state.Tier;
+        DateTimeOffset? previousTrialEndsAtUtc = state.TrialEndsAtUtc;
+        DateTimeOffset? previousPremiumEndsAtUtc = state.PremiumEndsAtUtc;
+        string normalizedUpdatedBy = string.IsNullOrWhiteSpace(updatedBy) ? "system" : updatedBy.Trim();
+
         state.Tier = normalizedTier;
         state.UpdatedAtUtc = nowUtc;
-        state.LastUpdatedBy = string.IsNullOrWhiteSpace(updatedBy) ? "system" : updatedBy.Trim();
+        state.LastUpdatedBy = normalizedUpdatedBy;
 
         if (string.Equals(normalizedTier, DarwinLinguaEntitlementTiers.Trial, StringComparison.Ordinal))
         {
@@ -112,7 +169,19 @@ public sealed class UserEntitlementService<TContext>(
             state.PremiumEndsAtUtc = null;
         }
 
-        NormalizeState(state, nowUtc);
+        AddAuditEvent(
+            state,
+            previousTier,
+            state.Tier,
+            previousTrialEndsAtUtc,
+            state.TrialEndsAtUtc,
+            previousPremiumEndsAtUtc,
+            state.PremiumEndsAtUtc,
+            normalizedUpdatedBy,
+            TierChangedEventType,
+            nowUtc);
+
+        NormalizeState(state, nowUtc, addAuditEvent: true);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         return BuildSnapshot(state);
     }
@@ -141,7 +210,7 @@ public sealed class UserEntitlementService<TContext>(
         return state;
     }
 
-    private static bool NormalizeState(UserEntitlementState state, DateTimeOffset nowUtc)
+    private bool NormalizeState(UserEntitlementState state, DateTimeOffset nowUtc, bool addAuditEvent)
     {
         bool changed = false;
 
@@ -149,9 +218,27 @@ public sealed class UserEntitlementService<TContext>(
             state.TrialEndsAtUtc is not null &&
             state.TrialEndsAtUtc <= nowUtc)
         {
+            string previousTier = state.Tier;
+            DateTimeOffset? previousTrialEndsAtUtc = state.TrialEndsAtUtc;
+            DateTimeOffset? previousPremiumEndsAtUtc = state.PremiumEndsAtUtc;
             state.Tier = DarwinLinguaEntitlementTiers.Free;
             state.UpdatedAtUtc = nowUtc;
             state.LastUpdatedBy = "system";
+            if (addAuditEvent)
+            {
+                AddAuditEvent(
+                    state,
+                    previousTier,
+                    state.Tier,
+                    previousTrialEndsAtUtc,
+                    state.TrialEndsAtUtc,
+                    previousPremiumEndsAtUtc,
+                    state.PremiumEndsAtUtc,
+                    "system",
+                    TrialExpiredEventType,
+                    nowUtc);
+            }
+
             changed = true;
         }
 
@@ -159,23 +246,87 @@ public sealed class UserEntitlementService<TContext>(
             state.PremiumEndsAtUtc is not null &&
             state.PremiumEndsAtUtc <= nowUtc)
         {
+            string previousTier = state.Tier;
+            DateTimeOffset? previousTrialEndsAtUtc = state.TrialEndsAtUtc;
+            DateTimeOffset? previousPremiumEndsAtUtc = state.PremiumEndsAtUtc;
             state.Tier = DarwinLinguaEntitlementTiers.Free;
             state.PremiumStartedAtUtc = null;
             state.PremiumEndsAtUtc = null;
             state.UpdatedAtUtc = nowUtc;
             state.LastUpdatedBy = "system";
+            if (addAuditEvent)
+            {
+                AddAuditEvent(
+                    state,
+                    previousTier,
+                    state.Tier,
+                    previousTrialEndsAtUtc,
+                    state.TrialEndsAtUtc,
+                    previousPremiumEndsAtUtc,
+                    state.PremiumEndsAtUtc,
+                    "system",
+                    PremiumExpiredEventType,
+                    nowUtc);
+            }
+
             changed = true;
         }
 
         if (!DarwinLinguaEntitlementTiers.All.Contains(state.Tier, StringComparer.OrdinalIgnoreCase))
         {
+            string previousTier = state.Tier;
+            DateTimeOffset? previousTrialEndsAtUtc = state.TrialEndsAtUtc;
+            DateTimeOffset? previousPremiumEndsAtUtc = state.PremiumEndsAtUtc;
             state.Tier = DarwinLinguaEntitlementTiers.Free;
             state.UpdatedAtUtc = nowUtc;
             state.LastUpdatedBy = "system";
+            if (addAuditEvent)
+            {
+                AddAuditEvent(
+                    state,
+                    previousTier,
+                    state.Tier,
+                    previousTrialEndsAtUtc,
+                    state.TrialEndsAtUtc,
+                    previousPremiumEndsAtUtc,
+                    state.PremiumEndsAtUtc,
+                    "system",
+                    InvalidTierNormalizedEventType,
+                    nowUtc);
+            }
+
             changed = true;
         }
 
         return changed;
+    }
+
+    private void AddAuditEvent(
+        UserEntitlementState state,
+        string? previousTier,
+        string newTier,
+        DateTimeOffset? previousTrialEndsAtUtc,
+        DateTimeOffset? newTrialEndsAtUtc,
+        DateTimeOffset? previousPremiumEndsAtUtc,
+        DateTimeOffset? newPremiumEndsAtUtc,
+        string updatedBy,
+        string eventType,
+        DateTimeOffset createdAtUtc)
+    {
+        dbContext.UserEntitlementAuditEvents.Add(new UserEntitlementAuditEvent
+        {
+            Id = Guid.NewGuid(),
+            UserId = state.UserId,
+            EventType = eventType,
+            PreviousTier = previousTier,
+            NewTier = newTier,
+            PreviousTrialEndsAtUtc = previousTrialEndsAtUtc,
+            NewTrialEndsAtUtc = newTrialEndsAtUtc,
+            PreviousPremiumEndsAtUtc = previousPremiumEndsAtUtc,
+            NewPremiumEndsAtUtc = newPremiumEndsAtUtc,
+            UpdatedBy = string.IsNullOrWhiteSpace(updatedBy) ? "system" : updatedBy.Trim(),
+            CreatedAtUtc = createdAtUtc,
+        });
     }
 
     private static UserEntitlementSnapshot BuildSnapshot(UserEntitlementState state)

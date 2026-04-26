@@ -30,7 +30,11 @@
 
             <label class="field">
                 <span>Secondary meaning language</span>
-                <select asp-for="Input.SecondaryMeaningLanguageCode" asp-items="Model.SecondaryMeaningLanguageOptions"></select>
+                <select asp-for="Input.SecondaryMeaningLanguageCode" asp-items="Model.SecondaryMeaningLanguageOptions" disabled="@(!Model.CanUseDualMeaningLanguage)"></select>
+                @if (!Model.CanUseDualMeaningLanguage && !string.IsNullOrWhiteSpace(Model.DualMeaningLanguageLockedMessage))
+                {
+                    <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Account" asp-action="Index">View plan</a></span>
+                }
             </label>
         </div>
 

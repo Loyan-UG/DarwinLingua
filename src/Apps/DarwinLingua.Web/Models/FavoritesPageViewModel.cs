@@ -4,4 +4,6 @@ namespace DarwinLingua.Web.Models;
 
 public sealed record FavoritesPageViewModel(
     IReadOnlyList<FavoriteWordListItemModel> Words,
-    string MeaningLanguageCode);
+    string MeaningLanguageCode,
+    bool IsLocked,
+    string? LockedMessage);

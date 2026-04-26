@@ -9,7 +9,15 @@
     <p class="body-lg">Primary meaning language: <code>@Model.MeaningLanguageCode</code></p>
 </section>
 
-@if (Model.Words.Count == 0)
+@if (Model.IsLocked)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Favorites are locked</h2>
+        <p class="body-lg">@Model.LockedMessage</p>
+        <a class="button button--primary" asp-controller="Account" asp-action="Index">Open account</a>
+    </section>
+}
+else if (Model.Words.Count == 0)
 {
     <section class="panel stack-md">
         <h2 class="headline-sm">Nothing saved yet</h2>

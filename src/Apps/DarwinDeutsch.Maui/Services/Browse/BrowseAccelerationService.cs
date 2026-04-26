@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Services.Localization;
+using DarwinDeutsch.Maui.Services.Auth;
 using DarwinLingua.Catalog.Application.Abstractions;
 using Microsoft.Extensions.Logging;
 
@@ -23,6 +24,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly IWordSearchCacheService _wordSearchCacheService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
+    private readonly IMobileEntitledFeatureAccessService _featureAccessService;
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly ILogger<BrowseAccelerationService> _logger;
     private readonly SemaphoreSlim _warmupGate = new(1, 1);
@@ -41,6 +43,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         IWordDetailCacheService wordDetailCacheService,
         IWordSearchCacheService wordSearchCacheService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
+        IMobileEntitledFeatureAccessService featureAccessService,
         IAppLocalizationService appLocalizationService,
         ILogger<BrowseAccelerationService> logger)
     {
@@ -51,6 +54,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(wordSearchCacheService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
+        ArgumentNullException.ThrowIfNull(featureAccessService);
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(logger);
 
@@ -61,6 +65,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
         _wordDetailCacheService = wordDetailCacheService;
         _wordSearchCacheService = wordSearchCacheService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
+        _featureAccessService = featureAccessService;
         _appLocalizationService = appLocalizationService;
         _logger = logger;
     }
@@ -143,6 +148,9 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
             DarwinLingua.Learning.Application.Models.UserLearningProfileModel profile = await _activeLearningProfileCacheService
                 .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(false);
+            string? effectiveSecondaryMeaningLanguageCode = await _featureAccessService
+                .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
+                .ConfigureAwait(false);
 
             IEnumerable<string> cefrLevelsToWarm = prioritizeEssentialSlicesOnly
                 ? PriorityCefrLevels
@@ -161,7 +169,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
                         .PrefetchWordDetailsAsync(
                             initialSlice[0].PublicId,
                             profile.PreferredMeaningLanguage1,
-                            profile.PreferredMeaningLanguage2,
+                            effectiveSecondaryMeaningLanguageCode,
                             profile.UiLanguageCode,
                             cancellationToken)
                         .ConfigureAwait(false);
@@ -190,7 +198,7 @@ internal sealed class BrowseAccelerationService : IBrowseAccelerationService
                         .PrefetchWordDetailsAsync(
                             initialSlice[0].PublicId,
                             profile.PreferredMeaningLanguage1,
-                            profile.PreferredMeaningLanguage2,
+                            effectiveSecondaryMeaningLanguageCode,
                             profile.UiLanguageCode,
                             cancellationToken)
                         .ConfigureAwait(false);

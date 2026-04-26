@@ -8,4 +8,5 @@ public sealed record AccountPageViewModel(
     string? Email,
     IReadOnlyList<string> Roles,
     UserLearningProfileModel Profile,
-    UserEntitlementSnapshot Entitlement);
+    UserEntitlementSnapshot Entitlement,
+    IReadOnlyList<UserEntitlementAuditEventModel> EntitlementAuditEvents);

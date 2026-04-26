@@ -9,6 +9,8 @@ public sealed record SettingsPageViewModel(
     IReadOnlyList<SelectListItem> MeaningLanguageOptions,
     IReadOnlyList<SelectListItem> SecondaryMeaningLanguageOptions,
     string? StatusMessage,
+    bool CanUseDualMeaningLanguage,
+    string? DualMeaningLanguageLockedMessage,
     bool IsAuthenticated = false);
 
 public sealed class SettingsUpdateInputModel

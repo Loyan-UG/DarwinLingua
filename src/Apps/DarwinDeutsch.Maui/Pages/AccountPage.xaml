@@ -24,6 +24,8 @@
                            Style="{DynamicResource Title2}" />
                     <Label x:Name="SessionSummaryLabel"
                            Style="{DynamicResource Body}" />
+                    <Label x:Name="PlanSummaryLabel"
+                           Style="{DynamicResource Body}" />
                     <buttons:SfButton x:Name="RefreshSessionButton"
                                       Style="{StaticResource SyncfusionInfoButtonStyle}"
                                       Clicked="OnRefreshSessionButtonClicked" />

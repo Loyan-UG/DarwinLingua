@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Resources.Strings;
+using DarwinDeutsch.Maui.Services.Auth;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Diagnostics;
 using DarwinDeutsch.Maui.Services.Localization;
@@ -19,6 +20,7 @@ public partial class SearchWordsPage : ContentPage
     private readonly IWordSearchCacheService _wordSearchCacheService;
     private readonly IWordDetailCacheService _wordDetailCacheService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
+    private readonly IMobileEntitledFeatureAccessService _featureAccessService;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ILogger<SearchWordsPage> _logger;
     private CancellationTokenSource? _searchCancellationTokenSource;
@@ -33,12 +35,14 @@ public partial class SearchWordsPage : ContentPage
         IWordSearchCacheService wordSearchCacheService,
         IWordDetailCacheService wordDetailCacheService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
+        IMobileEntitledFeatureAccessService featureAccessService,
         IPerformanceTelemetryService performanceTelemetryService,
         ILogger<SearchWordsPage> logger)
     {
         ArgumentNullException.ThrowIfNull(wordSearchCacheService);
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
+        ArgumentNullException.ThrowIfNull(featureAccessService);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
         ArgumentNullException.ThrowIfNull(logger);
 
@@ -47,6 +51,7 @@ public partial class SearchWordsPage : ContentPage
         _wordSearchCacheService = wordSearchCacheService;
         _wordDetailCacheService = wordDetailCacheService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
+        _featureAccessService = featureAccessService;
         _performanceTelemetryService = performanceTelemetryService;
         _logger = logger;
 
@@ -172,6 +177,9 @@ public partial class SearchWordsPage : ContentPage
             UserLearningProfileModel profile = await _activeLearningProfileCacheService
                 .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
+            string? effectiveSecondaryMeaningLanguageCode = await _featureAccessService
+                .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
+                .ConfigureAwait(true);
 
             ShowLoadingState(_lastResults.Count > 0);
 
@@ -198,7 +206,7 @@ public partial class SearchWordsPage : ContentPage
             _lastResults = results;
             ShowResults(results);
 
-            ScheduleResultPrefetch(words, profile);
+            ScheduleResultPrefetch(words, profile, effectiveSecondaryMeaningLanguageCode);
         }
         catch (OperationCanceledException)
         {
@@ -338,7 +346,7 @@ public partial class SearchWordsPage : ContentPage
         ErrorStateLabel.IsVisible = true;
     }
 
-    private void ScheduleResultPrefetch(IReadOnlyList<WordListItemModel> words, UserLearningProfileModel profile)
+    private void ScheduleResultPrefetch(IReadOnlyList<WordListItemModel> words, UserLearningProfileModel profile, string? effectiveSecondaryMeaningLanguageCode)
     {
         IReadOnlyList<WordListItemModel> prefetchCandidates = words
             .Take(PrefetchResultCount)
@@ -349,10 +357,10 @@ public partial class SearchWordsPage : ContentPage
             return;
         }
 
-        _ = PrefetchResultsAsync(prefetchCandidates, profile);
+        _ = PrefetchResultsAsync(prefetchCandidates, profile, effectiveSecondaryMeaningLanguageCode);
     }
 
-    private async Task PrefetchResultsAsync(IReadOnlyList<WordListItemModel> prefetchCandidates, UserLearningProfileModel profile)
+    private async Task PrefetchResultsAsync(IReadOnlyList<WordListItemModel> prefetchCandidates, UserLearningProfileModel profile, string? effectiveSecondaryMeaningLanguageCode)
     {
         foreach (WordListItemModel candidate in prefetchCandidates)
         {
@@ -362,7 +370,7 @@ public partial class SearchWordsPage : ContentPage
                     .PrefetchWordDetailsAsync(
                         candidate.PublicId,
                         profile.PreferredMeaningLanguage1,
-                        profile.PreferredMeaningLanguage2,
+                        effectiveSecondaryMeaningLanguageCode,
                         profile.UiLanguageCode,
                         CancellationToken.None)
                     .ConfigureAwait(false);

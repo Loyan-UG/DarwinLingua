@@ -9,7 +9,8 @@ public sealed class WordsController(
     IWebCatalogApiClient catalogApiClient,
     IWebFavoriteWordService userFavoriteWordService,
     IWebUserWordStateService userWordStateService,
-    IWebLearningProfileAccessor learningProfileAccessor) : Controller
+    IWebLearningProfileAccessor learningProfileAccessor,
+    IWebEntitledFeatureAccessService featureAccessService) : Controller
 {
     [HttpGet("{id:guid}", Name = "Words_Detail")]
     public async Task<IActionResult> Detail(Guid id, CancellationToken cancellationToken)
@@ -20,10 +21,13 @@ public sealed class WordsController(
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
+        string? effectiveSecondaryMeaningLanguageCode = await featureAccessService
+            .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
+            .ConfigureAwait(false);
         var word = await catalogApiClient.GetWordDetailsAsync(
             id,
             profile.PreferredMeaningLanguage1,
-            profile.PreferredMeaningLanguage2,
+            effectiveSecondaryMeaningLanguageCode,
             profile.UiLanguageCode,
             cancellationToken);
 
@@ -34,7 +38,8 @@ public sealed class WordsController(
 
         var wordState = await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
-        return View(CreatePageViewModel(word, isFavorite, wordState, profile));
+        bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
+        return View(CreatePageViewModel(word, isFavorite, wordState, profile, effectiveSecondaryMeaningLanguageCode, canUseFavorites, canUseFavorites ? null : "Favorites require an active trial or premium plan."));
     }
 
     [HttpPost(Name = "Words_ToggleFavorite")]
@@ -44,7 +49,19 @@ public sealed class WordsController(
     {
         if (id != Guid.Empty)
         {
-            await userFavoriteWordService.ToggleFavoriteAsync(id, cancellationToken);
+            try
+            {
+                await userFavoriteWordService.ToggleFavoriteAsync(id, cancellationToken);
+            }
+            catch (DarwinLingua.Identity.FeatureAccessDeniedException)
+            {
+                if (Request.Headers.ContainsKey("HX-Request"))
+                {
+                    return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken, "Favorites require an active trial or premium plan.");
+                }
+
+                return RedirectToAction("Index", "Favorites");
+            }
         }
 
         if (Request.Headers.ContainsKey("HX-Request"))
@@ -128,25 +145,29 @@ public sealed class WordsController(
         DarwinLingua.Catalog.Application.Models.WordDetailModel word,
         bool isFavorite,
         DarwinLingua.Learning.Application.Models.UserWordStateModel wordState,
-        DarwinLingua.Learning.Application.Models.UserLearningProfileModel profile)
+        DarwinLingua.Learning.Application.Models.UserLearningProfileModel profile,
+        string? effectiveSecondaryMeaningLanguageCode,
+        bool canUseFavorites,
+        string? favoriteLockedMessage)
     {
         string returnUrl = Url.Action(nameof(Detail), "Words", new { id = word.PublicId }) ?? $"/Words/Detail/{word.PublicId}";
 
         return new WordDetailPageViewModel(
             new WordDetailContentViewModel(
                 word,
-                new WordInteractionPanelViewModel(word.PublicId, isFavorite, wordState, returnUrl)),
+                new WordInteractionPanelViewModel(word.PublicId, isFavorite, wordState, returnUrl, canUseFavorites, favoriteLockedMessage)),
             profile.PreferredMeaningLanguage1,
-            profile.PreferredMeaningLanguage2,
+            effectiveSecondaryMeaningLanguageCode,
             profile.UiLanguageCode);
     }
 
-    private async Task<PartialViewResult> RenderInteractionPanelAsync(Guid id, string? returnUrl, CancellationToken cancellationToken)
+    private async Task<PartialViewResult> RenderInteractionPanelAsync(Guid id, string? returnUrl, CancellationToken cancellationToken, string? favoriteLockedMessage = null)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         var wordState = await userWordStateService.GetWordStateAsync(id, cancellationToken)
             ?? await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
+        bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
 
         string resolvedReturnUrl = !string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl)
             ? returnUrl
@@ -154,6 +175,12 @@ public sealed class WordsController(
 
         return PartialView(
             "_InteractionPanel",
-            new WordInteractionPanelViewModel(id, isFavorite, wordState, resolvedReturnUrl));
+            new WordInteractionPanelViewModel(
+                id,
+                isFavorite,
+                wordState,
+                resolvedReturnUrl,
+                canUseFavorites,
+                canUseFavorites ? null : favoriteLockedMessage ?? "Favorites require an active trial or premium plan."));
     }
 }

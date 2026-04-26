@@ -1,6 +1,14 @@
 @model DarwinLingua.Web.Models.WordInteractionPanelViewModel
 
 <div id="word-interaction-panel" class="stack-lg">
+    @if (!string.IsNullOrWhiteSpace(Model.FavoriteLockedMessage))
+    {
+        <div class="panel panel--muted">
+            <strong>Favorites locked</strong>
+            <p>@Model.FavoriteLockedMessage</p>
+        </div>
+    }
+
     <div class="meta-grid">
         <div class="meta-chip">
             <strong>Viewed</strong>

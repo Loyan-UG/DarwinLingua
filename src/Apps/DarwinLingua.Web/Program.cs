@@ -41,6 +41,7 @@ builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccess
 builder.Services.AddScoped<IWebActivityQueryService, WebActivityQueryService>();
 builder.Services.AddScoped<IWebAdminDashboardQueryService, WebAdminDashboardQueryService>();
 builder.Services.AddScoped<IWebAdminOperationsQueryService, WebAdminOperationsQueryService>();
+builder.Services.AddScoped<IWebEntitledFeatureAccessService, WebEntitledFeatureAccessService>();
 builder.Services.AddScoped<IWebUserPreferenceService, WebUserPreferenceService>();
 builder.Services.AddScoped<IWebFavoriteWordService, WebFavoriteWordService>();
 builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();

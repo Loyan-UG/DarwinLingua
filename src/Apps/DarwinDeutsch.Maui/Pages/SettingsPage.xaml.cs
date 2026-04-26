@@ -22,6 +22,7 @@ public partial class SettingsPage : ContentPage
 
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly IMobileAuthService _mobileAuthService;
+    private readonly IMobileEntitledFeatureAccessService _featureAccessService;
     private readonly IBrowseAccelerationService _browseAccelerationService;
     private readonly IRemoteContentUpdateService _remoteContentUpdateService;
     private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
@@ -64,6 +65,7 @@ public partial class SettingsPage : ContentPage
     public SettingsPage(
         IAppLocalizationService appLocalizationService,
         IMobileAuthService mobileAuthService,
+        IMobileEntitledFeatureAccessService featureAccessService,
         IBrowseAccelerationService browseAccelerationService,
         IRemoteContentUpdateService remoteContentUpdateService,
         ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
@@ -73,6 +75,7 @@ public partial class SettingsPage : ContentPage
     {
         ArgumentNullException.ThrowIfNull(appLocalizationService);
         ArgumentNullException.ThrowIfNull(mobileAuthService);
+        ArgumentNullException.ThrowIfNull(featureAccessService);
         ArgumentNullException.ThrowIfNull(browseAccelerationService);
         ArgumentNullException.ThrowIfNull(remoteContentUpdateService);
         ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
@@ -84,6 +87,7 @@ public partial class SettingsPage : ContentPage
 
         _appLocalizationService = appLocalizationService;
         _mobileAuthService = mobileAuthService;
+        _featureAccessService = featureAccessService;
         _browseAccelerationService = browseAccelerationService;
         _remoteContentUpdateService = remoteContentUpdateService;
         _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
@@ -229,6 +233,7 @@ public partial class SettingsPage : ContentPage
         IReadOnlyList<SupportedLanguageModel> supportedMeaningLanguages = await supportedMeaningLanguagesTask.ConfigureAwait(true);
         UserLearningProfileModel profile = await profileTask.ConfigureAwait(true);
         MobileAuthSession? mobileAuthSession = await mobileAuthSessionTask.ConfigureAwait(true);
+        bool canUseDualMeaningLanguage = mobileAuthSession?.EnabledFeatures.Contains("dual-meaning-language", StringComparer.OrdinalIgnoreCase) == true;
         SeedDatabaseUpdateStatus seedDatabaseUpdateStatus = await seedStatusTask.ConfigureAwait(true);
 
         List<MeaningLanguageOption> primaryMeaningOptions = supportedMeaningLanguages
@@ -260,8 +265,12 @@ public partial class SettingsPage : ContentPage
             SecondaryMeaningLanguagePicker.ItemsSource = secondaryMeaningOptions;
             SecondaryMeaningLanguagePicker.SelectedItem = secondaryMeaningOptions.Single(option => string.Equals(
                 option.LanguageCode ?? string.Empty,
-                profile.PreferredMeaningLanguage2 ?? string.Empty,
+                canUseDualMeaningLanguage ? profile.PreferredMeaningLanguage2 ?? string.Empty : string.Empty,
                 StringComparison.OrdinalIgnoreCase));
+            SecondaryMeaningLanguagePicker.IsEnabled = canUseDualMeaningLanguage;
+            SecondaryMeaningLanguageInputLayout.HelperText = canUseDualMeaningLanguage
+                ? AppStrings.SettingsSecondaryMeaningLanguageHelper
+                : AppStrings.DualMeaningLanguageLockedMessage;
 
             AccountSummaryLabel.Text = mobileAuthSession is null
                 ? AppStrings.SettingsAccountSummarySignedOut
@@ -810,6 +819,10 @@ public partial class SettingsPage : ContentPage
         }
 
         string? secondaryMeaningLanguage = (SecondaryMeaningLanguagePicker.SelectedItem as MeaningLanguageOption)?.LanguageCode;
+        if (!await _featureAccessService.CanUseDualMeaningLanguageAsync(CancellationToken.None).ConfigureAwait(true))
+        {
+            secondaryMeaningLanguage = null;
+        }
 
         if (string.Equals(selectedLanguage.LanguageCode, secondaryMeaningLanguage, StringComparison.OrdinalIgnoreCase))
         {
@@ -851,6 +864,18 @@ public partial class SettingsPage : ContentPage
 
         if (PrimaryMeaningLanguagePicker.SelectedItem is not MeaningLanguageOption primaryMeaningLanguage)
         {
+            return;
+        }
+
+        if (!await _featureAccessService.CanUseDualMeaningLanguageAsync(CancellationToken.None).ConfigureAwait(true))
+        {
+            SecondaryMeaningLanguagePicker.SelectedItem = ((IEnumerable<MeaningLanguageOption>)SecondaryMeaningLanguagePicker.ItemsSource).FirstOrDefault(option => option.LanguageCode is null);
+            await _popupDialogService.ShowMessageAsync(
+                    AppStrings.DualMeaningLanguageLockedTitle,
+                    AppStrings.DualMeaningLanguageLockedMessage,
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    PopupDialogKind.Info)
+                .ConfigureAwait(true);
             return;
         }
 

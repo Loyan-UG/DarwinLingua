@@ -1,4 +1,5 @@
 using DarwinDeutsch.Maui.Resources.Strings;
+using DarwinDeutsch.Maui.Services.Auth;
 using DarwinDeutsch.Maui.Services.Localization;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
@@ -10,6 +11,7 @@ namespace DarwinDeutsch.Maui.Pages;
 /// </summary>
 public partial class FavoritesPage : ContentPage
 {
+    private readonly IMobileEntitledFeatureAccessService _featureAccessService;
     private readonly IUserFavoriteWordService _userFavoriteWordService;
     private readonly IUserLearningProfileService _userLearningProfileService;
     private CancellationTokenSource? _refreshCancellationTokenSource;
@@ -18,14 +20,17 @@ public partial class FavoritesPage : ContentPage
     /// Initializes a new instance of the <see cref="FavoritesPage"/> class.
     /// </summary>
     public FavoritesPage(
+        IMobileEntitledFeatureAccessService featureAccessService,
         IUserFavoriteWordService userFavoriteWordService,
         IUserLearningProfileService userLearningProfileService)
     {
+        ArgumentNullException.ThrowIfNull(featureAccessService);
         ArgumentNullException.ThrowIfNull(userFavoriteWordService);
         ArgumentNullException.ThrowIfNull(userLearningProfileService);
 
         InitializeComponent();
 
+        _featureAccessService = featureAccessService;
         _userFavoriteWordService = userFavoriteWordService;
         _userLearningProfileService = userLearningProfileService;
     }
@@ -71,6 +76,12 @@ public partial class FavoritesPage : ContentPage
 
         try
         {
+            if (!await _featureAccessService.CanUseFavoritesAsync(cancellationToken).ConfigureAwait(true))
+            {
+                ShowFavoritesLockedState();
+                return;
+            }
+
             UserLearningProfileModel profile = await _userLearningProfileService
                 .GetCurrentProfileAsync(cancellationToken)
                 .ConfigureAwait(true);
@@ -134,6 +145,15 @@ public partial class FavoritesPage : ContentPage
         LoadingStateView.IsLoading = true;
         ErrorStateLabel.IsVisible = false;
         EmptyStateLabel.IsVisible = false;
+        FavoritesCollectionView.IsVisible = false;
+    }
+
+    private void ShowFavoritesLockedState()
+    {
+        LoadingStateView.IsLoading = false;
+        ErrorStateLabel.IsVisible = false;
+        EmptyStateLabel.IsVisible = true;
+        EmptyStateLabel.Text = AppStrings.FavoritesLockedMessage;
         FavoritesCollectionView.IsVisible = false;
     }
 

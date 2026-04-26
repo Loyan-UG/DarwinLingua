@@ -25,12 +25,15 @@ public sealed class AccountController(
         string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
             ?? throw new InvalidOperationException("The authenticated user does not have a stable identifier.");
         UserEntitlementSnapshot entitlement = await userEntitlementService.GetCurrentAsync(userId, cancellationToken);
+        IReadOnlyList<UserEntitlementAuditEventModel> entitlementAuditEvents = await userEntitlementService
+            .GetRecentAuditEventsAsync(userId, 5, cancellationToken);
 
         return View(new AccountPageViewModel(
             User.Identity?.Name ?? User.FindFirstValue(ClaimTypes.Email) ?? "Authenticated user",
             User.FindFirstValue(ClaimTypes.Email),
             roles,
             profile,
-            entitlement));
+            entitlement,
+            entitlementAuditEvents));
     }
 }

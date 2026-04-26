@@ -1773,6 +1773,16 @@ public static class AppStrings
     public static string AccountSignedInSummaryFormat => GetRequiredString(nameof(AccountSignedInSummaryFormat));
 
     /// <summary>
+    /// Gets the localized plan summary shown when signed out.
+    /// </summary>
+    public static string AccountPlanSignedOutSummary => GetRequiredString(nameof(AccountPlanSignedOutSummary));
+
+    /// <summary>
+    /// Gets the localized signed-in plan summary format.
+    /// </summary>
+    public static string AccountPlanSummaryFormat => GetRequiredString(nameof(AccountPlanSummaryFormat));
+
+    /// <summary>
     /// Gets the localized sign-in success title.
     /// </summary>
     public static string AccountSignInSuccessTitle => GetRequiredString(nameof(AccountSignInSuccessTitle));
@@ -1856,6 +1866,31 @@ public static class AppStrings
     /// Gets the localized settings account button label.
     /// </summary>
     public static string SettingsAccountButton => GetRequiredString(nameof(SettingsAccountButton));
+
+    /// <summary>
+    /// Gets the localized favorites-locked title.
+    /// </summary>
+    public static string FavoritesLockedTitle => GetRequiredString(nameof(FavoritesLockedTitle));
+
+    /// <summary>
+    /// Gets the localized favorites-locked message.
+    /// </summary>
+    public static string FavoritesLockedMessage => GetRequiredString(nameof(FavoritesLockedMessage));
+
+    /// <summary>
+    /// Gets the localized accessibility description for a locked favorites button.
+    /// </summary>
+    public static string FavoritesLockedButtonDescription => GetRequiredString(nameof(FavoritesLockedButtonDescription));
+
+    /// <summary>
+    /// Gets the localized title shown when second meaning language access is locked.
+    /// </summary>
+    public static string DualMeaningLanguageLockedTitle => GetRequiredString(nameof(DualMeaningLanguageLockedTitle));
+
+    /// <summary>
+    /// Gets the localized message shown when second meaning language access is locked.
+    /// </summary>
+    public static string DualMeaningLanguageLockedMessage => GetRequiredString(nameof(DualMeaningLanguageLockedMessage));
 
     /// <summary>
     /// Gets a required localized string by key.

@@ -18,10 +18,16 @@ public interface IWebFavoriteWordService
 internal sealed class WebFavoriteWordService(
     IWebActorContextAccessor actorContextAccessor,
     WebIdentityDbContext identityDbContext,
-    IWebCatalogApiClient catalogApiClient) : IWebFavoriteWordService
+    IWebCatalogApiClient catalogApiClient,
+    IWebEntitledFeatureAccessService featureAccessService) : IWebFavoriteWordService
 {
     public async Task<bool> IsFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken)
     {
+        if (!await featureAccessService.CanUseFavoritesAsync(cancellationToken).ConfigureAwait(false))
+        {
+            return false;
+        }
+
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
 
         return await identityDbContext.UserFavoriteWords
@@ -32,6 +38,8 @@ internal sealed class WebFavoriteWordService(
 
     public async Task ToggleFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken)
     {
+        await featureAccessService.EnsureCanUseFavoritesAsync(cancellationToken).ConfigureAwait(false);
+
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
 
         WebUserFavoriteWord? existing = await identityDbContext.UserFavoriteWords
@@ -60,6 +68,8 @@ internal sealed class WebFavoriteWordService(
         string meaningLanguageCode,
         CancellationToken cancellationToken)
     {
+        await featureAccessService.EnsureCanUseFavoritesAsync(cancellationToken).ConfigureAwait(false);
+
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
 
         Guid[] favoriteWordIds = await identityDbContext.UserFavoriteWords

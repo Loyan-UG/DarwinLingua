@@ -16,6 +16,7 @@ public sealed class DarwinLinguaIdentityBootstrapper<TContext>(
     public async Task InitializeAsync(CancellationToken cancellationToken)
     {
         await dbContext.Database.EnsureCreatedAsync(cancellationToken).ConfigureAwait(false);
+        await EnsureEntitlementAuditTableAsync(cancellationToken).ConfigureAwait(false);
 
         foreach (string role in DarwinLinguaRoles.All)
         {
@@ -72,6 +73,73 @@ public sealed class DarwinLinguaIdentityBootstrapper<TContext>(
                 $"You can provide them via configuration or environment variables such as " +
                 $"'{DarwinLinguaIdentityEnvironmentVariables.SeedAdminEmail}', '{DarwinLinguaIdentityEnvironmentVariables.SeedAdminPassword}', " +
                 $"'{DarwinLinguaIdentityEnvironmentVariables.SeedLearnerEmail}', and '{DarwinLinguaIdentityEnvironmentVariables.SeedLearnerPassword}'.");
+        }
+    }
+
+    private async Task EnsureEntitlementAuditTableAsync(CancellationToken cancellationToken)
+    {
+        string providerName = dbContext.Database.ProviderName ?? string.Empty;
+
+        if (providerName.Contains("Sqlite", StringComparison.OrdinalIgnoreCase))
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(
+                """
+                CREATE TABLE IF NOT EXISTS "UserEntitlementAuditEvents" (
+                    "Id" TEXT NOT NULL CONSTRAINT "PK_UserEntitlementAuditEvents" PRIMARY KEY,
+                    "UserId" TEXT NOT NULL,
+                    "EventType" TEXT NOT NULL,
+                    "PreviousTier" TEXT NULL,
+                    "NewTier" TEXT NOT NULL,
+                    "PreviousTrialEndsAtUtc" TEXT NULL,
+                    "NewTrialEndsAtUtc" TEXT NULL,
+                    "PreviousPremiumEndsAtUtc" TEXT NULL,
+                    "NewPremiumEndsAtUtc" TEXT NULL,
+                    "UpdatedBy" TEXT NOT NULL,
+                    "CreatedAtUtc" TEXT NOT NULL
+                );
+                """,
+                cancellationToken)
+                .ConfigureAwait(false);
+
+            await dbContext.Database.ExecuteSqlRawAsync(
+                """
+                CREATE INDEX IF NOT EXISTS "IX_UserEntitlementAuditEvents_UserId_CreatedAtUtc"
+                ON "UserEntitlementAuditEvents" ("UserId", "CreatedAtUtc");
+                """,
+                cancellationToken)
+                .ConfigureAwait(false);
+
+            return;
+        }
+
+        if (providerName.Contains("Npgsql", StringComparison.OrdinalIgnoreCase))
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(
+                """
+                CREATE TABLE IF NOT EXISTS "UserEntitlementAuditEvents" (
+                    "Id" uuid NOT NULL CONSTRAINT "PK_UserEntitlementAuditEvents" PRIMARY KEY,
+                    "UserId" character varying(450) NOT NULL,
+                    "EventType" character varying(64) NOT NULL,
+                    "PreviousTier" character varying(32) NULL,
+                    "NewTier" character varying(32) NOT NULL,
+                    "PreviousTrialEndsAtUtc" timestamp with time zone NULL,
+                    "NewTrialEndsAtUtc" timestamp with time zone NULL,
+                    "PreviousPremiumEndsAtUtc" timestamp with time zone NULL,
+                    "NewPremiumEndsAtUtc" timestamp with time zone NULL,
+                    "UpdatedBy" character varying(256) NOT NULL,
+                    "CreatedAtUtc" timestamp with time zone NOT NULL
+                );
+                """,
+                cancellationToken)
+                .ConfigureAwait(false);
+
+            await dbContext.Database.ExecuteSqlRawAsync(
+                """
+                CREATE INDEX IF NOT EXISTS "IX_UserEntitlementAuditEvents_UserId_CreatedAtUtc"
+                ON "UserEntitlementAuditEvents" ("UserId", "CreatedAtUtc");
+                """,
+                cancellationToken)
+                .ConfigureAwait(false);
         }
     }
 

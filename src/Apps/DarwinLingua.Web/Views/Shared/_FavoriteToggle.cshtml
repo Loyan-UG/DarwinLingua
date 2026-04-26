@@ -1,15 +1,22 @@
 @model DarwinLingua.Web.Models.WordInteractionPanelViewModel
 
-<form method="post" asp-action="ToggleFavorite" class="inline-form">
-    @Html.AntiForgeryToken()
-    <input type="hidden" name="id" value="@Model.WordPublicId" />
-    <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
-    <button
-        type="submit"
-        class="button @(Model.IsFavorite ? "button--primary" : "button--secondary")"
-        hx-post="@Url.Action("ToggleFavorite", "Words")"
-        hx-target="#word-interaction-panel"
-        hx-swap="outerHTML">
-        @(Model.IsFavorite ? "Favorited" : "Add to favorites")
-    </button>
-</form>
+@if (Model.CanUseFavorites)
+{
+    <form method="post" asp-action="ToggleFavorite" class="inline-form">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.WordPublicId" />
+        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+        <button
+            type="submit"
+            class="button @(Model.IsFavorite ? "button--primary" : "button--secondary")"
+            hx-post="@Url.Action("ToggleFavorite", "Words")"
+            hx-target="#word-interaction-panel"
+            hx-swap="outerHTML">
+            @(Model.IsFavorite ? "Favorited" : "Add to favorites")
+        </button>
+    </form>
+}
+else
+{
+    <a class="button button--secondary" asp-controller="Account" asp-action="Index">Unlock favorites</a>
+}

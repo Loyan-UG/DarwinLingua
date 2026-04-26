@@ -57,4 +57,20 @@
             <li>Operator and Admin roles gate the admin area through authorization policies.</li>
         </ul>
     </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Plan history</h2>
+        @if (Model.EntitlementAuditEvents.Count == 0)
+        {
+            <p class="body-sm">No plan events have been recorded yet.</p>
+        }
+        else
+        {
+            <ul class="feature-list">
+                @foreach (var auditEvent in Model.EntitlementAuditEvents)
+                {
+                    <li>@auditEvent.CreatedAtUtc.UtcDateTime.ToString("u"): @auditEvent.EventType (@(auditEvent.PreviousTier ?? "none") -> @auditEvent.NewTier)</li>
+                }
+            </ul>
+        }
+    </article>
 </section>

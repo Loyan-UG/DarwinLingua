@@ -11,8 +11,11 @@ namespace DarwinLingua.Web.Controllers;
 [Route("settings")]
 public sealed class SettingsController(
     IWebUserPreferenceService webUserPreferenceService,
-    ILanguageQueryService languageQueryService) : Controller
+    ILanguageQueryService languageQueryService,
+    IWebEntitledFeatureAccessService featureAccessService) : Controller
 {
+    private const string DualMeaningLanguageLockedMessage = "A trial or premium plan is required to enable a second meaning language.";
+
     [HttpGet("", Name = "Settings_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
@@ -40,6 +43,10 @@ public sealed class SettingsController(
             ? null
             : input.SecondaryMeaningLanguageCode;
 
+        secondaryMeaningLanguageCode = await featureAccessService
+            .ResolveSecondaryMeaningLanguageAsync(secondaryMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
+
         await webUserPreferenceService.UpdatePreferencesAsync(
             input.UiLanguageCode,
             input.PrimaryMeaningLanguageCode,
@@ -56,13 +63,19 @@ public sealed class SettingsController(
         SettingsUpdateInputModel? input = null)
     {
         var profile = await webUserPreferenceService.GetProfileAsync(cancellationToken);
+        bool canUseDualMeaningLanguage = await featureAccessService
+            .CanUseDualMeaningLanguageAsync(cancellationToken)
+            .ConfigureAwait(false);
+        string? effectiveSecondaryMeaningLanguageCode = canUseDualMeaningLanguage
+            ? profile.PreferredMeaningLanguage2
+            : null;
         IReadOnlyList<SupportedLanguageModel> languages = await languageQueryService.GetActiveLanguagesAsync(cancellationToken);
 
         SettingsUpdateInputModel formInput = input ?? new SettingsUpdateInputModel
         {
             UiLanguageCode = profile.UiLanguageCode,
             PrimaryMeaningLanguageCode = profile.PreferredMeaningLanguage1,
-            SecondaryMeaningLanguageCode = profile.PreferredMeaningLanguage2
+            SecondaryMeaningLanguageCode = effectiveSecondaryMeaningLanguageCode
         };
 
         IReadOnlyList<SelectListItem> uiLanguageOptions = languages
@@ -99,6 +112,8 @@ public sealed class SettingsController(
             meaningLanguageOptions,
             secondaryMeaningOptions,
             statusMessage,
+            canUseDualMeaningLanguage,
+            canUseDualMeaningLanguage ? null : DualMeaningLanguageLockedMessage,
             User.Identity?.IsAuthenticated == true);
     }
 }

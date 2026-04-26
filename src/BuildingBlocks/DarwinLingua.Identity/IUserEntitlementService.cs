@@ -12,4 +12,9 @@ public interface IUserEntitlementService
         DateTimeOffset? expiresAtUtc,
         string? updatedBy,
         CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<UserEntitlementAuditEventModel>> GetRecentAuditEventsAsync(
+        string userId,
+        int take,
+        CancellationToken cancellationToken);
 }

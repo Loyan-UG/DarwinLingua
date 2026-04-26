@@ -1,5 +1,6 @@
 using DarwinDeutsch.Maui.Resources.Strings;
 using DarwinDeutsch.Maui.Services.Audio;
+using DarwinDeutsch.Maui.Services.Auth;
 using DarwinDeutsch.Maui.Services.Browse;
 using DarwinDeutsch.Maui.Services.Browse.Models;
 using DarwinDeutsch.Maui.Services.Diagnostics;
@@ -28,15 +29,18 @@ public partial class WordDetailPage : ContentPage
     private readonly ICefrBrowseStateService _cefrBrowseStateService;
     private readonly IWordCollectionBrowseStateService _wordCollectionBrowseStateService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
+    private readonly IMobileEntitledFeatureAccessService _featureAccessService;
     private readonly IUserFavoriteWordService _userFavoriteWordService;
     private readonly IUserWordStateService _userWordStateService;
     private readonly ISpeechPlaybackService _speechPlaybackService;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
     private readonly ILogger<WordDetailPage> _logger;
+    private readonly DarwinDeutsch.Maui.Services.UI.IPopupDialogService _popupDialogService;
     private string _wordPublicId = string.Empty;
     private string _cefrLevel = string.Empty;
     private string _collectionSlug = string.Empty;
     private bool _isFavorite;
+    private bool _canUseFavorites;
     private UserWordStateModel? _userWordState;
     private CefrBrowseNavigationState? _cefrBrowseNavigationState;
     private CancellationTokenSource? _speechCancellationTokenSource;
@@ -57,20 +61,24 @@ public partial class WordDetailPage : ContentPage
         ICefrBrowseStateService cefrBrowseStateService,
         IWordCollectionBrowseStateService wordCollectionBrowseStateService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
+        IMobileEntitledFeatureAccessService featureAccessService,
         IUserFavoriteWordService userFavoriteWordService,
         IUserWordStateService userWordStateService,
         ISpeechPlaybackService speechPlaybackService,
         IPerformanceTelemetryService performanceTelemetryService,
+        DarwinDeutsch.Maui.Services.UI.IPopupDialogService popupDialogService,
         ILogger<WordDetailPage> logger)
     {
         ArgumentNullException.ThrowIfNull(wordDetailCacheService);
         ArgumentNullException.ThrowIfNull(cefrBrowseStateService);
         ArgumentNullException.ThrowIfNull(wordCollectionBrowseStateService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
+        ArgumentNullException.ThrowIfNull(featureAccessService);
         ArgumentNullException.ThrowIfNull(userFavoriteWordService);
         ArgumentNullException.ThrowIfNull(userWordStateService);
         ArgumentNullException.ThrowIfNull(speechPlaybackService);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
+        ArgumentNullException.ThrowIfNull(popupDialogService);
         ArgumentNullException.ThrowIfNull(logger);
 
         InitializeComponent();
@@ -79,10 +87,12 @@ public partial class WordDetailPage : ContentPage
         _cefrBrowseStateService = cefrBrowseStateService;
         _wordCollectionBrowseStateService = wordCollectionBrowseStateService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
+        _featureAccessService = featureAccessService;
         _userFavoriteWordService = userFavoriteWordService;
         _userWordStateService = userWordStateService;
         _speechPlaybackService = speechPlaybackService;
         _performanceTelemetryService = performanceTelemetryService;
+        _popupDialogService = popupDialogService;
         _logger = logger;
     }
 
@@ -188,8 +198,11 @@ public partial class WordDetailPage : ContentPage
         UserLearningProfileModel profile = await _activeLearningProfileCacheService
             .GetCurrentProfileAsync(cancellationToken)
             .ConfigureAwait(true);
+        string? effectiveSecondaryMeaningLanguageCode = await _featureAccessService
+            .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
+            .ConfigureAwait(true);
 
-        if (IsLoadedDetailContext(publicId, profile))
+        if (IsLoadedDetailContext(publicId, profile, effectiveSecondaryMeaningLanguageCode))
         {
             await RefreshInteractiveStateAsync(publicId, cancellationToken).ConfigureAwait(true);
             await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
@@ -199,7 +212,7 @@ public partial class WordDetailPage : ContentPage
                 _ = PrefetchNavigationAsync(publicId);
             }
 
-            ScheduleWordDetailPrefetch(profile);
+            ScheduleWordDetailPrefetch(profile, effectiveSecondaryMeaningLanguageCode);
             SetLoadingState(false);
             _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success);
             return;
@@ -209,7 +222,7 @@ public partial class WordDetailPage : ContentPage
             .GetWordDetailsAsync(
                 publicId,
                 profile.PreferredMeaningLanguage1,
-                profile.PreferredMeaningLanguage2,
+                effectiveSecondaryMeaningLanguageCode,
                 profile.UiLanguageCode,
                 cancellationToken)
             .ConfigureAwait(true);
@@ -235,7 +248,7 @@ public partial class WordDetailPage : ContentPage
             ? AppStrings.WordDetailNoTopics
             : string.Join(", ", word.Topics);
         EmptyStateLabel.IsVisible = false;
-        RememberLoadedDetailContext(publicId, profile);
+        RememberLoadedDetailContext(publicId, profile, effectiveSecondaryMeaningLanguageCode);
 
         await ApplyCefrNavigationStateAsync(publicId, cancellationToken).ConfigureAwait(true);
 
@@ -258,7 +271,7 @@ public partial class WordDetailPage : ContentPage
             _ = PrefetchNavigationAsync(publicId);
         }
 
-        ScheduleWordDetailPrefetch(profile);
+        ScheduleWordDetailPrefetch(profile, effectiveSecondaryMeaningLanguageCode);
         SetLoadingState(false);
         ScheduleAutoSpeakWord(word.Lemma);
         _performanceTelemetryService.Record("word-detail.refresh", stopwatch.Elapsed, PerformanceTelemetryOutcome.Success, word.Senses.Count);
@@ -373,6 +386,9 @@ public partial class WordDetailPage : ContentPage
 
         try
         {
+            await _featureAccessService.EnsureCanUseFavoritesAsync(_refreshCancellationTokenSource?.Token ?? CancellationToken.None)
+                .ConfigureAwait(true);
+
             _isFavorite = await _userFavoriteWordService
                 .ToggleFavoriteAsync(publicId, _refreshCancellationTokenSource?.Token ?? CancellationToken.None)
                 .ConfigureAwait(true);
@@ -381,6 +397,15 @@ public partial class WordDetailPage : ContentPage
         }
         catch (OperationCanceledException)
         {
+        }
+        catch (InvalidOperationException)
+        {
+            await _popupDialogService.ShowMessageAsync(
+                    AppStrings.FavoritesLockedTitle,
+                    AppStrings.FavoritesLockedMessage,
+                    AppStrings.SettingsContentUpdatesDismissButton,
+                    DarwinDeutsch.Maui.Services.UI.PopupDialogKind.Info)
+                .ConfigureAwait(true);
         }
         catch (Exception exception)
         {
@@ -1094,11 +1119,16 @@ public partial class WordDetailPage : ContentPage
 
     private void ApplyFavoriteButtonState()
     {
-        FavoriteButton.Text = _isFavorite ? "\u2665" : "\u2661";
+        FavoriteButton.Text = _canUseFavorites
+            ? _isFavorite ? "\u2665" : "\u2661"
+            : "\U0001F512";
         FavoriteButton.IsChecked = _isFavorite;
+        FavoriteButton.IsEnabled = true;
         SemanticProperties.SetDescription(
             FavoriteButton,
-            _isFavorite ? AppStrings.WordDetailRemoveFavoriteButton : AppStrings.WordDetailAddFavoriteButton);
+            _canUseFavorites
+                ? _isFavorite ? AppStrings.WordDetailRemoveFavoriteButton : AppStrings.WordDetailAddFavoriteButton
+                : AppStrings.FavoritesLockedButtonDescription);
     }
 
     private async Task ApplyCefrNavigationStateAsync(Guid currentWordPublicId, CancellationToken cancellationToken)
@@ -1239,15 +1269,17 @@ public partial class WordDetailPage : ContentPage
 
     private async Task RefreshInteractiveStateAsync(Guid publicId, CancellationToken cancellationToken)
     {
-        Task<bool> favoriteTask = _userFavoriteWordService
-            .IsFavoriteAsync(publicId, cancellationToken);
+        Task<bool> favoriteAccessTask = _featureAccessService.CanUseFavoritesAsync(cancellationToken);
         Task<UserWordStateModel?> userWordStateTask = _lastTrackedWordPublicId == publicId
             ? _userWordStateService.GetWordStateAsync(publicId, cancellationToken)
             : TrackWordViewedAsync(publicId, cancellationToken);
 
-        await Task.WhenAll(favoriteTask, userWordStateTask).ConfigureAwait(true);
+        await Task.WhenAll(favoriteAccessTask, userWordStateTask).ConfigureAwait(true);
 
-        _isFavorite = favoriteTask.Result;
+        _canUseFavorites = favoriteAccessTask.Result;
+        _isFavorite = _canUseFavorites
+            ? await _userFavoriteWordService.IsFavoriteAsync(publicId, cancellationToken).ConfigureAwait(true)
+            : false;
         _userWordState = userWordStateTask.Result;
         _lastTrackedWordPublicId = publicId;
         ApplyFavoriteButtonState();
@@ -1255,7 +1287,7 @@ public partial class WordDetailPage : ContentPage
         ApplyUserWordState();
     }
 
-    private void ScheduleWordDetailPrefetch(UserLearningProfileModel profile)
+    private void ScheduleWordDetailPrefetch(UserLearningProfileModel profile, string? effectiveSecondaryMeaningLanguageCode)
     {
         if (_cefrBrowseNavigationState is null)
         {
@@ -1270,7 +1302,7 @@ public partial class WordDetailPage : ContentPage
 
         foreach (Guid candidateId in candidateIds.Where(id => id != Guid.Empty).Distinct())
         {
-            _ = PrefetchWordDetailAsync(candidateId, profile);
+            _ = PrefetchWordDetailAsync(candidateId, profile, effectiveSecondaryMeaningLanguageCode);
         }
     }
 
@@ -1298,14 +1330,14 @@ public partial class WordDetailPage : ContentPage
     private bool HasNavigationContext() =>
         !string.IsNullOrWhiteSpace(CollectionSlug) || !string.IsNullOrWhiteSpace(CefrLevel);
 
-    private async Task PrefetchWordDetailAsync(Guid candidateId, UserLearningProfileModel profile)
+    private async Task PrefetchWordDetailAsync(Guid candidateId, UserLearningProfileModel profile, string? effectiveSecondaryMeaningLanguageCode)
     {
         try
         {
             await _wordDetailCacheService.PrefetchWordDetailsAsync(
                     candidateId,
                     profile.PreferredMeaningLanguage1,
-                    profile.PreferredMeaningLanguage2,
+                    effectiveSecondaryMeaningLanguageCode,
                     profile.UiLanguageCode,
                     CancellationToken.None)
                 .ConfigureAwait(false);
@@ -1316,20 +1348,20 @@ public partial class WordDetailPage : ContentPage
         }
     }
 
-    private bool IsLoadedDetailContext(Guid publicId, UserLearningProfileModel profile)
+    private bool IsLoadedDetailContext(Guid publicId, UserLearningProfileModel profile, string? effectiveSecondaryMeaningLanguageCode)
     {
         return _loadedWordPublicId == publicId &&
                string.Equals(_loadedPrimaryMeaningLanguageCode, profile.PreferredMeaningLanguage1, StringComparison.OrdinalIgnoreCase) &&
-               string.Equals(_loadedSecondaryMeaningLanguageCode, profile.PreferredMeaningLanguage2 ?? string.Empty, StringComparison.OrdinalIgnoreCase) &&
+               string.Equals(_loadedSecondaryMeaningLanguageCode, effectiveSecondaryMeaningLanguageCode ?? string.Empty, StringComparison.OrdinalIgnoreCase) &&
                string.Equals(_loadedUiLanguageCode, profile.UiLanguageCode, StringComparison.OrdinalIgnoreCase) &&
                !EmptyStateLabel.IsVisible;
     }
 
-    private void RememberLoadedDetailContext(Guid publicId, UserLearningProfileModel profile)
+    private void RememberLoadedDetailContext(Guid publicId, UserLearningProfileModel profile, string? effectiveSecondaryMeaningLanguageCode)
     {
         _loadedWordPublicId = publicId;
         _loadedPrimaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
-        _loadedSecondaryMeaningLanguageCode = profile.PreferredMeaningLanguage2 ?? string.Empty;
+        _loadedSecondaryMeaningLanguageCode = effectiveSecondaryMeaningLanguageCode ?? string.Empty;
         _loadedUiLanguageCode = profile.UiLanguageCode;
     }
 

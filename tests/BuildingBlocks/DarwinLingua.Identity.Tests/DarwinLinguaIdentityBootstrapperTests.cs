@@ -48,12 +48,15 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
 
             UserEntitlementSnapshot adminEntitlement = await entitlementService.GetCurrentAsync(admin.Id, CancellationToken.None);
             UserEntitlementSnapshot learnerEntitlement = await entitlementService.GetCurrentAsync(learner.Id, CancellationToken.None);
+            IReadOnlyList<UserEntitlementAuditEventModel> learnerAuditEvents = await entitlementService
+                .GetRecentAuditEventsAsync(learner.Id, 10, CancellationToken.None);
 
             Assert.Equal(DarwinLinguaEntitlementTiers.Trial, adminEntitlement.Tier);
             Assert.Equal(DarwinLinguaEntitlementTiers.Trial, learnerEntitlement.Tier);
             Assert.Contains(DarwinLinguaFeatureKeys.BrowseCatalog, learnerEntitlement.EnabledFeatures);
             Assert.Contains(DarwinLinguaFeatureKeys.Favorites, learnerEntitlement.EnabledFeatures);
             Assert.NotNull(learnerEntitlement.TrialEndsAtUtc);
+            Assert.Contains(learnerAuditEvents, auditEvent => auditEvent.EventType == "initial-trial");
         }
         finally
         {
@@ -128,6 +131,62 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
             SetEnvironmentVariable(DarwinLinguaIdentityEnvironmentVariables.SeedLearnerEmail, null);
             SetEnvironmentVariable(DarwinLinguaIdentityEnvironmentVariables.SeedLearnerPassword, null);
             SetEnvironmentVariable(DarwinLinguaIdentityEnvironmentVariables.NewUserTrialDays, null);
+        }
+    }
+
+    [Fact]
+    public async Task SetTierAsync_RecordsAuditEventsForManualChangesAndExpiration()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.db");
+
+        try
+        {
+            await using ServiceProvider services = BuildServices(
+                databasePath,
+                new DarwinLinguaIdentityBootstrapOptions(),
+                new DarwinLinguaEntitlementOptions
+                {
+                    NewUserTrialDays = 0,
+                });
+
+            IDarwinLinguaIdentityBootstrapper bootstrapper = services.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+
+            UserManager<DarwinLinguaIdentityUser> userManager = services.GetRequiredService<UserManager<DarwinLinguaIdentityUser>>();
+            DarwinLinguaIdentityUser user = new()
+            {
+                UserName = "audit@example.local",
+                Email = "audit@example.local",
+                EmailConfirmed = true,
+            };
+
+            IdentityResult createResult = await userManager.CreateAsync(user, "Audit123!");
+            Assert.True(createResult.Succeeded, string.Join("; ", createResult.Errors.Select(error => error.Description)));
+
+            IUserEntitlementService entitlementService = services.GetRequiredService<IUserEntitlementService>();
+            UserEntitlementSnapshot initialSnapshot = await entitlementService.GetCurrentAsync(user.Id, CancellationToken.None);
+            DateTimeOffset expiredAtUtc = DateTimeOffset.UtcNow.AddSeconds(-1);
+
+            UserEntitlementSnapshot premiumSnapshot = await entitlementService.SetTierAsync(
+                user.Id,
+                DarwinLinguaEntitlementTiers.Premium,
+                expiredAtUtc,
+                "test-admin",
+                CancellationToken.None);
+            UserEntitlementSnapshot normalizedSnapshot = await entitlementService.GetCurrentAsync(user.Id, CancellationToken.None);
+            IReadOnlyList<UserEntitlementAuditEventModel> auditEvents = await entitlementService
+                .GetRecentAuditEventsAsync(user.Id, 10, CancellationToken.None);
+
+            Assert.Equal(DarwinLinguaEntitlementTiers.Free, initialSnapshot.Tier);
+            Assert.Equal(DarwinLinguaEntitlementTiers.Free, premiumSnapshot.Tier);
+            Assert.Equal(DarwinLinguaEntitlementTiers.Free, normalizedSnapshot.Tier);
+            Assert.Contains(auditEvents, auditEvent => auditEvent.EventType == "initial-free");
+            Assert.Contains(auditEvents, auditEvent => auditEvent.EventType == "tier-changed" && auditEvent.UpdatedBy == "test-admin");
+            Assert.Contains(auditEvents, auditEvent => auditEvent.EventType == "premium-expired");
+        }
+        finally
+        {
+            TryDeleteFile(databasePath);
         }
     }
 

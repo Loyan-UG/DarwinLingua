@@ -90,6 +90,7 @@ public static class MauiProgram
             .AddSingleton(_ => CreateMobileAuthHttpClient(mobileAuthOptions))
             .AddSingleton<IMobileAuthSessionStore, SecureStorageMobileAuthSessionStore>()
             .AddSingleton<IMobileAuthService, MobileAuthService>()
+            .AddSingleton<IMobileEntitledFeatureAccessService, MobileEntitledFeatureAccessService>()
             .AddSingleton<IBackgroundRemoteUpdateCoordinator, BackgroundRemoteUpdateCoordinator>()
 #if ANDROID
             .AddSingleton<IPlatformBackgroundUpdateScheduler, AndroidBackgroundUpdateScheduler>()

@@ -7,7 +7,9 @@ public sealed record WordInteractionPanelViewModel(
     Guid WordPublicId,
     bool IsFavorite,
     UserWordStateModel WordState,
-    string ReturnUrl);
+    string ReturnUrl,
+    bool CanUseFavorites,
+    string? FavoriteLockedMessage);
 
 public sealed record WordDetailContentViewModel(
     WordDetailModel Word,
