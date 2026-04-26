@@ -88,8 +88,8 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add operator/admin role seeding
 - [x] add authorization policies for `Operator` and `Admin`
 - [x] add account-management pages
-- [ ] add seeded non-production system admin account from environment-backed secrets
-- [ ] add seeded non-production learner test account from environment-backed secrets
+- [x] add seeded non-production system admin account from environment-backed secrets
+- [x] add seeded non-production learner test account from environment-backed secrets
 - [x] define a startup failure rule when required seed-account secrets are missing in local/dev bootstrap modes
 - [x] add a shared auth contract for future mobile sign-in against the same account system
 
@@ -108,8 +108,10 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add server-side entitlement checks for learner-facing premium features
 - [x] add web-side feature-gate presentation patterns for locked premium features
 - [x] define trial bootstrap rules for newly registered learners
-- [ ] define subscription-state persistence and expiration handling
+- [x] define subscription-state persistence and expiration handling
 - [x] define audit and diagnostics for entitlement changes
+- [x] add an admin users surface for entitlement inspection and tier changes
+- [x] add Web API admin endpoints for entitlement inspection and tier changes
 - [x] ensure feature gating never blocks permanently free catalog browsing
 - [x] define the first premium-capable features as backlog placeholders:
 - [x] favorites

@@ -424,9 +424,9 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] define the shared account boundary for web and mobile
 - [x] keep web on cookies while defining token-based mobile sign-in against the same identity system
 - [x] assign the default `Learner` role on successful learner registration
-- [ ] seed a non-production system admin account
-- [ ] seed a non-production learner test account
-- [ ] move seed-account credentials to environment-backed local secrets
+- [x] seed a non-production system admin account
+- [x] seed a non-production learner test account
+- [x] move seed-account credentials to environment-backed local secrets
 - [x] validate clean-start role creation and seed-account bootstrap
 
 ### 35. Monetization And Entitlement Foundation
@@ -437,6 +437,8 @@ Phase 5 focuses on server-backed content distribution and platform expansion.
 - [x] keep core catalog browse and word viewing permanently outside premium enforcement unless product policy changes later
 - [x] add backlog placeholders for premium-capable features such as favorites, dual-meaning-language mode, and future advanced practice flows
 - [x] define audit and diagnostics requirements for entitlement changes and trial expiration
+- [x] add an admin surface for entitlement inspection and tier changes
+- [x] add Web API admin endpoints for entitlement inspection and tier changes
 
 ---
 

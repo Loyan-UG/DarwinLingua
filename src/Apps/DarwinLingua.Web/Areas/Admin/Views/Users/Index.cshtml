@@ -1,0 +1,93 @@
+@using DarwinLingua.Identity
+@model DarwinLingua.Web.Models.AdminUsersPageViewModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Users", "Learner accounts and plans", "Inspect account roles, active entitlement state, and recent plan changes.")' />
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+@if (Model.Users.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No users found", "Identity bootstrap has not created or registered any users yet.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Roles</th>
+                    <th>Plan</th>
+                    <th>Features</th>
+                    <th>Recent events</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users)
+                {
+                    string? expiryValue = (user.PremiumEndsAtUtc ?? user.TrialEndsAtUtc)?.UtcDateTime.ToString("u");
+                    <tr>
+                        <td>@user.Email</td>
+                        <td>@string.Join(", ", user.Roles)</td>
+                        <td>
+                            <strong>@user.EntitlementTier</strong>
+                            @if (user.TrialEndsAtUtc is not null)
+                            {
+                                <span>Trial: @user.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</span>
+                            }
+                            @if (user.PremiumEndsAtUtc is not null)
+                            {
+                                <span>Premium: @user.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</span>
+                            }
+                        </td>
+                        <td>@string.Join(", ", user.EnabledFeatures)</td>
+                        <td>
+                            @if (user.RecentEntitlementEvents.Count == 0)
+                            {
+                                <span>None</span>
+                            }
+                            else
+                            {
+                                <ul class="feature-list">
+                                    @foreach (var auditEvent in user.RecentEntitlementEvents)
+                                    {
+                                        <li>@auditEvent.EventType: @(auditEvent.PreviousTier ?? "none") -> @auditEvent.NewTier</li>
+                                    }
+                                </ul>
+                            }
+                        </td>
+                        <td>
+                            <form class="inline-form" method="post" asp-action="UpdateEntitlement">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="UserId" value="@user.UserId" />
+                                <select name="Tier">
+                                    @foreach (string tier in DarwinLinguaEntitlementTiers.All)
+                                    {
+                                        <option value="@tier" selected="@string.Equals(tier, user.EntitlementTier, StringComparison.OrdinalIgnoreCase)">@tier</option>
+                                    }
+                                </select>
+                                <input type="text"
+                                       name="ExpiresAtUtc"
+                                       value="@expiryValue"
+                                       placeholder="Expiry UTC" />
+                                <button type="submit" class="button button--secondary">Apply</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+}

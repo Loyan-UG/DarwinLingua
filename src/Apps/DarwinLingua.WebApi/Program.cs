@@ -69,7 +69,10 @@ builder.Services
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<DarwinLinguaIdentityUser>, DefaultLearnerRoleClaimsPrincipalFactory>();
 builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebApiIdentityDbContext>>();
 builder.Services.AddScoped<IUserEntitlementService, UserEntitlementService<WebApiIdentityDbContext>>();
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole(DarwinLinguaRoles.Admin));
+});
 
 builder.Services
     .AddDarwinLinguaInfrastructureForPostgres(sharedCatalogConnectionString)
@@ -145,6 +148,101 @@ authGroup.MapGet(
                 entitlement.EnabledFeatures));
         })
     .RequireAuthorization();
+
+RouteGroupBuilder adminIdentityGroup = app.MapGroup("/api/admin/identity")
+    .RequireAuthorization("Admin");
+adminIdentityGroup.MapGet(
+    "/users",
+    async (
+        UserManager<DarwinLinguaIdentityUser> userManager,
+        IUserEntitlementService userEntitlementService,
+        CancellationToken cancellationToken) =>
+    {
+        DarwinLinguaIdentityUser[] users = await userManager.Users
+            .OrderBy(user => user.Email)
+            .Take(200)
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<AdminIdentityUserResponse> response = new(users.Length);
+        foreach (DarwinLinguaIdentityUser user in users)
+        {
+            IList<string> roles = await userManager.GetRolesAsync(user).ConfigureAwait(false);
+            UserEntitlementSnapshot entitlement = await userEntitlementService
+                .GetCurrentAsync(user.Id, cancellationToken)
+                .ConfigureAwait(false);
+            IReadOnlyList<UserEntitlementAuditEventModel> auditEvents = await userEntitlementService
+                .GetRecentAuditEventsAsync(user.Id, 3, cancellationToken)
+                .ConfigureAwait(false);
+
+            response.Add(new AdminIdentityUserResponse(
+                user.Id,
+                user.Email,
+                roles.OrderBy(static role => role).ToArray(),
+                entitlement.Tier,
+                entitlement.TrialEndsAtUtc,
+                entitlement.PremiumEndsAtUtc,
+                entitlement.EnabledFeatures,
+                auditEvents
+                    .Select(static auditEvent => new AdminIdentityEntitlementAuditEventResponse(
+                        auditEvent.EventType,
+                        auditEvent.PreviousTier,
+                        auditEvent.NewTier,
+                        auditEvent.UpdatedBy,
+                        auditEvent.CreatedAtUtc))
+                    .ToArray()));
+        }
+
+        return Results.Ok(response);
+    });
+adminIdentityGroup.MapPost(
+    "/users/{userId}/entitlement",
+    async (
+        string userId,
+        AdminUpdateUserEntitlementRequest request,
+        ClaimsPrincipal principal,
+        UserManager<DarwinLinguaIdentityUser> userManager,
+        IUserEntitlementService userEntitlementService,
+        CancellationToken cancellationToken) =>
+    {
+        if (!DarwinLinguaEntitlementTiers.All.Contains(request.Tier, StringComparer.OrdinalIgnoreCase))
+        {
+            return Results.BadRequest(new
+            {
+                code = "unsupported_entitlement_tier",
+                message = $"'{request.Tier}' is not a supported entitlement tier.",
+            });
+        }
+
+        DarwinLinguaIdentityUser? user = await userManager.FindByIdAsync(userId).ConfigureAwait(false);
+        if (user is null)
+        {
+            return Results.NotFound(new
+            {
+                code = "user_not_found",
+                message = "The selected user could not be found.",
+            });
+        }
+
+        string updatedBy = principal.FindFirstValue(ClaimTypes.Email)
+            ?? principal.Identity?.Name
+            ?? principal.FindFirstValue(ClaimTypes.NameIdentifier)
+            ?? "admin-api";
+
+        UserEntitlementSnapshot entitlement = await userEntitlementService
+            .SetTierAsync(user.Id, request.Tier, request.ExpiresAtUtc, updatedBy, cancellationToken)
+            .ConfigureAwait(false);
+
+        return Results.Ok(new AuthenticatedUserResponse(
+            user.Id,
+            user.Email,
+            true,
+            (await userManager.GetRolesAsync(user).ConfigureAwait(false)).OrderBy(static role => role).ToArray(),
+            entitlement.Tier,
+            entitlement.TrialEndsAtUtc,
+            entitlement.PremiumEndsAtUtc,
+            entitlement.EnabledFeatures));
+    });
 
 app.MapGet(
     "/api/catalog/topics",
