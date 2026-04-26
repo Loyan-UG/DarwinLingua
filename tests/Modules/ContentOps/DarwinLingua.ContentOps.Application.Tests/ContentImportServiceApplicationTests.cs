@@ -71,7 +71,8 @@ public sealed class ContentImportServiceApplicationTests
             "Duplicate Package",
             "Hybrid",
             ["en"],
-            [CreateValidEntry("Brot", "shopping")]);
+            [CreateValidEntry("Brot", "shopping")],
+            []);
 
         await using ServiceProvider serviceProvider = BuildServiceProvider(
             new StubFileReader("ignored"),
@@ -194,9 +195,18 @@ public sealed class ContentImportServiceApplicationTests
             return Task.FromResult(false);
         }
 
+        public Task<IReadOnlyList<WordEntry>> GetActiveWordsByNormalizedLemmasAsync(
+            IReadOnlyCollection<string> normalizedLemmas,
+            CancellationToken cancellationToken)
+        {
+            IReadOnlyList<WordEntry> empty = [];
+            return Task.FromResult(empty);
+        }
+
         public Task PersistImportAsync(
             ContentPackage contentPackage,
             IReadOnlyList<WordEntry> importedWords,
+            IReadOnlyList<WordCollection> importedCollections,
             CancellationToken cancellationToken)
         {
             return Task.CompletedTask;

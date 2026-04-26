@@ -22,6 +22,55 @@ public sealed class UserWordStateTests
     }
 
     /// <summary>
+    /// Verifies that an empty internal identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new UserWordState(
+            Guid.Empty,
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a blank user identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyUserId()
+    {
+        Assert.Throws<DomainRuleException>(() => new UserWordState(
+            Guid.NewGuid(),
+            "   ",
+            Guid.NewGuid(),
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that the first view sets <see cref="UserWordState.FirstViewedAtUtc"/> and that subsequent
+    /// views do not change it while still updating <see cref="UserWordState.LastViewedAtUtc"/>.
+    /// </summary>
+    [Fact]
+    public void TrackViewed_FirstViewSetsFirstViewedAndSubsequentViewsDoNotChangeIt()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-10));
+
+        DateTime firstView = DateTime.UtcNow.AddMinutes(-3);
+        DateTime secondView = DateTime.UtcNow;
+
+        userWordState.TrackViewed(firstView);
+        userWordState.TrackViewed(secondView);
+
+        Assert.Equal(firstView, userWordState.FirstViewedAtUtc);
+        Assert.Equal(secondView, userWordState.LastViewedAtUtc);
+    }
+
+    /// <summary>
     /// Verifies that tracking views sets first/last timestamps and increments counters.
     /// </summary>
     [Fact]
@@ -70,5 +119,132 @@ public sealed class UserWordStateTests
         Assert.False(userWordState.IsKnown);
         Assert.False(userWordState.IsDifficult);
         Assert.Equal(clearDifficultAt, userWordState.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that a newly created <see cref="UserWordState"/> has zero view count and no markers set.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldHaveZeroViewCountAndNoMarkersSet()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Equal(0, userWordState.ViewCount);
+        Assert.False(userWordState.IsKnown);
+        Assert.False(userWordState.IsDifficult);
+        Assert.Null(userWordState.FirstViewedAtUtc);
+        Assert.Null(userWordState.LastViewedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.MarkKnown"/> sets <see cref="UserWordState.IsKnown"/> to true.
+    /// </summary>
+    [Fact]
+    public void MarkKnown_ShouldSetIsKnownTrue()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        DateTime markedAt = DateTime.UtcNow;
+        userWordState.MarkKnown(markedAt);
+
+        Assert.True(userWordState.IsKnown);
+        Assert.Equal(markedAt, userWordState.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.MarkDifficult"/> sets <see cref="UserWordState.IsDifficult"/> to true.
+    /// </summary>
+    [Fact]
+    public void MarkDifficult_ShouldSetIsDifficultTrue()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        DateTime markedAt = DateTime.UtcNow;
+        userWordState.MarkDifficult(markedAt);
+
+        Assert.True(userWordState.IsDifficult);
+        Assert.Equal(markedAt, userWordState.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that the user identifier is trimmed on construction.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldTrimUserId()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "  local-installation-user  ",
+            Guid.NewGuid(),
+            DateTime.UtcNow);
+
+        Assert.Equal("local-installation-user", userWordState.UserId);
+    }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) creation timestamp is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectDefaultCreatedAtUtc()
+    {
+        Assert.Throws<DomainRuleException>(() => new UserWordState(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.ClearKnown"/> sets <see cref="UserWordState.IsKnown"/> to false.
+    /// </summary>
+    [Fact]
+    public void ClearKnown_ShouldSetIsKnownFalse()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        userWordState.MarkKnown(DateTime.UtcNow.AddMinutes(-2));
+
+        DateTime clearedAt = DateTime.UtcNow;
+        userWordState.ClearKnown(clearedAt);
+
+        Assert.False(userWordState.IsKnown);
+        Assert.Equal(clearedAt, userWordState.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="UserWordState.ClearDifficult"/> sets <see cref="UserWordState.IsDifficult"/> to false.
+    /// </summary>
+    [Fact]
+    public void ClearDifficult_ShouldSetIsDifficultFalse()
+    {
+        UserWordState userWordState = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            Guid.NewGuid(),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        userWordState.MarkDifficult(DateTime.UtcNow.AddMinutes(-2));
+
+        DateTime clearedAt = DateTime.UtcNow;
+        userWordState.ClearDifficult(clearedAt);
+
+        Assert.False(userWordState.IsDifficult);
+        Assert.Equal(clearedAt, userWordState.UpdatedAtUtc);
     }
 }

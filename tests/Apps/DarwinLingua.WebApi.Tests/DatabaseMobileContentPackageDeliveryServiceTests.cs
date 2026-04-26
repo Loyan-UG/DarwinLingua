@@ -23,26 +23,38 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
             .UseSqlite(connection)
             .Options;
 
-        ServerContentOptions options = CreateOptions();
-        TestWebHostEnvironment environment = new()
-        {
-            ContentRootPath = "D:\\_Projects\\DarwinLingua",
-        };
+        string tempRoot = Path.Combine(Path.GetTempPath(), $"darwin-lingue-delivery-tests-{Guid.NewGuid():N}");
+        string packageDir = Path.Combine(tempRoot, "assets", "ServerContent", "PublishedPackages", "darwin-deutsch");
+        Directory.CreateDirectory(packageDir);
+        File.WriteAllText(Path.Combine(packageDir, "darwin-deutsch-all-full-v1.json"), "{}");
 
-        await using (ServerContentDbContext seedContext = new(dbOptions))
+        try
         {
-            ServerContentDatabaseBootstrapper bootstrapper = new(seedContext, Options.Create(options));
-            await bootstrapper.InitializeAsync(CancellationToken.None);
+            ServerContentOptions options = CreateOptions();
+            TestWebHostEnvironment environment = new()
+            {
+                ContentRootPath = tempRoot,
+            };
+
+            await using (ServerContentDbContext seedContext = new(dbOptions))
+            {
+                ServerContentDatabaseBootstrapper bootstrapper = new(seedContext, Options.Create(options));
+                await bootstrapper.InitializeAsync(CancellationToken.None);
+            }
+
+            await using (ServerContentDbContext queryContext = new(dbOptions))
+            {
+                DatabaseMobileContentPackageDeliveryService service = new(queryContext, Options.Create(options), environment);
+
+                var descriptor = service.GetLatestFullPackage("darwin-deutsch", clientSchemaVersion: 1);
+
+                Assert.Equal("darwin-deutsch-all-full-v1", descriptor.PackageId);
+                Assert.True(File.Exists(descriptor.FilePath));
+            }
         }
-
-        await using (ServerContentDbContext queryContext = new(dbOptions))
+        finally
         {
-            DatabaseMobileContentPackageDeliveryService service = new(queryContext, Options.Create(options), environment);
-
-            var descriptor = service.GetLatestFullPackage("darwin-deutsch", clientSchemaVersion: 1);
-
-            Assert.Equal("darwin-deutsch-all-full-v1", descriptor.PackageId);
-            Assert.True(File.Exists(descriptor.FilePath));
+            Directory.Delete(tempRoot, recursive: true);
         }
     }
 

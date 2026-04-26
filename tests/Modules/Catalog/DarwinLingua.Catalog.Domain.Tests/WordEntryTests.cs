@@ -409,6 +409,381 @@ public sealed class WordEntryTests
             DateTime.UtcNow));
     }
 
+    /// <summary>
+    /// Verifies that a valid word entry is created and that property values match the constructor arguments.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldCreateWordEntryWithExpectedProperties()
+    {
+        Guid id = Guid.NewGuid();
+        Guid publicId = Guid.NewGuid();
+        DateTime createdAt = DateTime.UtcNow;
+
+        WordEntry word = new(
+            id,
+            publicId,
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            createdAt,
+            article: "der");
+
+        Assert.Equal(id, word.Id);
+        Assert.Equal(publicId, word.PublicId);
+        Assert.Equal("Bahnhof", word.Lemma);
+        Assert.Equal("bahnhof", word.NormalizedLemma);
+        Assert.Equal(LanguageCode.From("de"), word.LanguageCode);
+        Assert.Equal(CefrLevel.A1, word.PrimaryCefrLevel);
+        Assert.Equal(PartOfSpeech.Noun, word.PartOfSpeech);
+        Assert.Equal(PublicationStatus.Active, word.PublicationStatus);
+        Assert.Equal("der", word.Article);
+        Assert.Equal(createdAt, word.CreatedAtUtc);
+        Assert.Single(word.LexicalForms);
+    }
+
+    /// <summary>
+    /// Verifies that an empty internal identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.Empty,
+            Guid.NewGuid(),
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that an empty public identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyPublicIdentifier()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.NewGuid(),
+            Guid.Empty,
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a blank lemma is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectEmptyLemma()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "   ",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that a default (uninitialized) creation timestamp is rejected.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldRejectDefaultCreatedAtUtc()
+    {
+        Assert.Throws<DomainRuleException>(() => new WordEntry(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            default));
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimarySense"/> returns null when no senses have been added.
+    /// </summary>
+    [Fact]
+    public void GetPrimarySense_ShouldReturnNullWhenNoSensesExist()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordSense? result = word.GetPrimarySense();
+
+        Assert.Null(result);
+    }
+
+    /// <summary>
+    /// Verifies that a successfully added sense has the expected property values.
+    /// </summary>
+    [Fact]
+    public void AddSense_ShouldAddSenseWithExpectedValues()
+    {
+        WordEntry word = CreateWordEntry();
+        Guid senseId = Guid.NewGuid();
+
+        WordSense sense = word.AddSense(senseId, 1, true, PublicationStatus.Active, DateTime.UtcNow);
+
+        Assert.Equal(senseId, sense.Id);
+        Assert.Equal(1, sense.SenseOrder);
+        Assert.True(sense.IsPrimarySense);
+        Assert.Single(word.Senses);
+    }
+
+    /// <summary>
+    /// Verifies that a grammar note is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddGrammarNote_ShouldAddNoteSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordGrammarNote note = word.AddGrammarNote(
+            Guid.NewGuid(),
+            "Often used with the definite article.",
+            DateTime.UtcNow);
+
+        Assert.Equal("Often used with the definite article.", note.Text);
+        Assert.Single(word.GrammarNotes);
+    }
+
+    /// <summary>
+    /// Verifies that a collocation is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddCollocation_ShouldAddCollocationSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordCollocation collocation = word.AddCollocation(
+            Guid.NewGuid(),
+            "Brot kaufen",
+            "to buy bread",
+            DateTime.UtcNow);
+
+        Assert.Equal("Brot kaufen", collocation.Text);
+        Assert.Equal("to buy bread", collocation.Meaning);
+        Assert.Single(word.Collocations);
+    }
+
+    /// <summary>
+    /// Verifies that a word-family member is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddFamilyMember_ShouldAddFamilyMemberSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordFamilyMember member = word.AddFamilyMember(
+            Guid.NewGuid(),
+            "Bäcker",
+            "Profession",
+            "person who bakes bread",
+            DateTime.UtcNow);
+
+        Assert.Equal("Bäcker", member.Lemma);
+        Assert.Equal("Profession", member.RelationLabel);
+        Assert.Single(word.FamilyMembers);
+    }
+
+    /// <summary>
+    /// Verifies that a lexical relation is added to the entry.
+    /// </summary>
+    [Fact]
+    public void AddRelation_ShouldAddRelationSuccessfully()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordRelation relation = word.AddRelation(
+            Guid.NewGuid(),
+            WordRelationKind.Synonym,
+            "Haltestelle",
+            null,
+            DateTime.UtcNow);
+
+        Assert.Equal("Haltestelle", relation.Lemma);
+        Assert.Equal(WordRelationKind.Synonym, relation.Kind);
+        Assert.Single(word.Relations);
+    }
+
+    /// <summary>
+    /// Verifies that the same lemma can appear under different relation kinds.
+    /// </summary>
+    [Fact]
+    public void AddRelation_ShouldAllowSameLemmaAcrossDifferentKinds()
+    {
+        WordEntry word = CreateWordEntry();
+        word.AddRelation(Guid.NewGuid(), WordRelationKind.Synonym, "Haltestelle", null, DateTime.UtcNow);
+
+        WordRelation antonymRelation = word.AddRelation(
+            Guid.NewGuid(),
+            WordRelationKind.Antonym,
+            "Haltestelle",
+            null,
+            DateTime.UtcNow);
+
+        Assert.Equal(2, word.Relations.Count);
+        Assert.Equal(WordRelationKind.Antonym, antonymRelation.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that an empty topic identifier is rejected.
+    /// </summary>
+    [Fact]
+    public void AddTopic_ShouldRejectEmptyTopicId()
+    {
+        WordEntry word = CreateWordEntry();
+
+        Assert.Throws<DomainRuleException>(() =>
+            word.AddTopic(Guid.NewGuid(), Guid.Empty, true, DateTime.UtcNow));
+    }
+
+    /// <summary>
+    /// Verifies that adding a primary secondary lexical form demotes the previously primary form.
+    /// </summary>
+    [Fact]
+    public void AddLexicalForm_ShouldSwitchPrimaryFormWhenNewPrimaryIsAdded()
+    {
+        WordEntry word = CreateWordEntry();
+        WordLexicalForm originalPrimary = word.GetPrimaryLexicalForm()!;
+        Assert.Equal(PartOfSpeech.Noun, originalPrimary.PartOfSpeech);
+        Assert.True(originalPrimary.IsPrimary);
+
+        WordLexicalForm newPrimary = word.AddLexicalForm(
+            Guid.NewGuid(),
+            PartOfSpeech.Verb,
+            true,
+            DateTime.UtcNow,
+            infinitiveForm: "bahnhöfen");
+
+        Assert.False(originalPrimary.IsPrimary);
+        Assert.True(newPrimary.IsPrimary);
+        Assert.Single(word.LexicalForms, form => form.IsPrimary);
+    }
+
+    /// <summary>
+    /// Verifies that promoting a lexical form to primary updates the word-entry-level PartOfSpeech attribute.
+    /// </summary>
+    [Fact]
+    public void AddLexicalForm_ShouldApplyNewPrimaryFormAttributesToWordEntry()
+    {
+        WordEntry word = CreateWordEntry();
+        Assert.Equal(PartOfSpeech.Noun, word.PartOfSpeech);
+
+        word.AddLexicalForm(
+            Guid.NewGuid(),
+            PartOfSpeech.Verb,
+            true,
+            DateTime.UtcNow,
+            infinitiveForm: "bahnhöfen");
+
+        Assert.Equal(PartOfSpeech.Verb, word.PartOfSpeech);
+        Assert.Equal("bahnhöfen", word.InfinitiveForm);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimarySense"/> returns the sense with the lowest sense order
+    /// when no sense has the primary flag set.
+    /// </summary>
+    [Fact]
+    public void GetPrimarySense_ShouldReturnFirstByOrderWhenNoPrimaryFlagSet()
+    {
+        WordEntry word = CreateWordEntry();
+        WordSense sense2 = word.AddSense(Guid.NewGuid(), 2, false, PublicationStatus.Active, DateTime.UtcNow);
+        WordSense sense1 = word.AddSense(Guid.NewGuid(), 1, false, PublicationStatus.Active, DateTime.UtcNow);
+
+        WordSense? result = word.GetPrimarySense();
+
+        Assert.NotNull(result);
+        Assert.Same(sense1, result);
+        Assert.False(sense2.IsPrimarySense);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimaryLexicalForm"/> returns the form with the lowest sort order
+    /// when no form has the primary flag set, which in practice is the only form.
+    /// </summary>
+    [Fact]
+    public void GetPrimaryLexicalForm_ShouldReturnNounFormWhenOnlyOneFormExists()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordLexicalForm? result = word.GetPrimaryLexicalForm();
+
+        Assert.NotNull(result);
+        Assert.Equal(PartOfSpeech.Noun, result!.PartOfSpeech);
+        Assert.True(result.IsPrimary);
+    }
+
+    /// <summary>
+    /// Verifies that the same family-member lemma can be added under a different relation label.
+    /// </summary>
+    [Fact]
+    public void AddFamilyMember_ShouldAllowSameLemmaWithDifferentRelationLabel()
+    {
+        WordEntry word = CreateWordEntry();
+
+        WordFamilyMember agent = word.AddFamilyMember(Guid.NewGuid(), "Bäcker", "Profession", "person who bakes", DateTime.UtcNow);
+        WordFamilyMember derived = word.AddFamilyMember(Guid.NewGuid(), "Bäcker", "DerivedNoun", null, DateTime.UtcNow);
+
+        Assert.Equal(2, word.FamilyMembers.Count);
+        Assert.Equal("Profession", agent.RelationLabel);
+        Assert.Equal("DerivedNoun", derived.RelationLabel);
+    }
+
+    /// <summary>
+    /// Verifies that a non-UTC creation timestamp is converted to UTC on construction.
+    /// </summary>
+    [Fact]
+    public void Constructor_ShouldConvertLocalCreatedAtTimestampToUtc()
+    {
+        DateTime localTime = new(2025, 6, 1, 10, 0, 0, DateTimeKind.Local);
+
+        WordEntry word = new(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "Bahnhof",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            localTime);
+
+        Assert.Equal(DateTimeKind.Utc, word.CreatedAtUtc.Kind);
+    }
+
+    /// <summary>
+    /// Verifies that <see cref="WordEntry.GetPrimarySense"/> returns the single primary sense correctly.
+    /// </summary>
+    [Fact]
+    public void GetPrimarySense_ShouldReturnPrimarySenseWhenSet()
+    {
+        WordEntry word = CreateWordEntry();
+        WordSense primarySense = word.AddSense(Guid.NewGuid(), 1, true, PublicationStatus.Active, DateTime.UtcNow);
+        word.AddSense(Guid.NewGuid(), 2, false, PublicationStatus.Active, DateTime.UtcNow);
+
+        WordSense? result = word.GetPrimarySense();
+
+        Assert.Same(primarySense, result);
+    }
+
     private static WordEntry CreateWordEntry()
     {
         return new WordEntry(
