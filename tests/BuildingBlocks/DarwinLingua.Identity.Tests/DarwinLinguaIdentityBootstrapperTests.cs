@@ -65,6 +65,45 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
     }
 
     [Fact]
+    public async Task InitializeAsync_CreatesIdentityTablesWhenDatabaseAlreadyHasOtherTables()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.db");
+
+        try
+        {
+            await using ServiceProvider services = BuildServices(
+                databasePath,
+                new DarwinLinguaIdentityBootstrapOptions
+                {
+                    SeedAdminEmail = "admin@example.local",
+                    SeedAdminPassword = "Admin123!",
+                },
+                new DarwinLinguaEntitlementOptions());
+
+            TestIdentityDbContext dbContext = services.GetRequiredService<TestIdentityDbContext>();
+            await dbContext.Database.ExecuteSqlRawAsync(
+                """
+                CREATE TABLE "ExistingCatalogTable" (
+                    "Id" TEXT NOT NULL CONSTRAINT "PK_ExistingCatalogTable" PRIMARY KEY
+                );
+                """);
+
+            IDarwinLinguaIdentityBootstrapper bootstrapper = services.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+
+            RoleManager<IdentityRole> roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            UserManager<DarwinLinguaIdentityUser> userManager = services.GetRequiredService<UserManager<DarwinLinguaIdentityUser>>();
+
+            Assert.True(await roleManager.RoleExistsAsync(DarwinLinguaRoles.Admin));
+            Assert.NotNull(await userManager.FindByEmailAsync("admin@example.local"));
+        }
+        finally
+        {
+            TryDeleteFile(databasePath);
+        }
+    }
+
+    [Fact]
     public async Task InitializeAsync_ThrowsWhenRequiredSeedAccountsAreMissing()
     {
         string databasePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.db");
