@@ -83,6 +83,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Apps/DarwinLingua.WebApi.Tests/DarwinLingua.WebApi.Tests.csproj" />
+    <Project Path="tests/BuildingBlocks/DarwinLingua.Identity.Tests/DarwinLingua.Identity.Tests.csproj" />
     <Project Path="tests/Modules/Catalog/DarwinLingua.Catalog.Application.Tests/DarwinLingua.Catalog.Application.Tests.csproj" />
     <Project Path="tests/Modules/Catalog/DarwinLingua.Catalog.Domain.Tests/DarwinLingua.Catalog.Domain.Tests.csproj">
       <Build Solution="Debug|*" Project="false" />
@@ -105,8 +106,5 @@
       <Build Solution="Debug|*" Project="false" />
     </Project>
     <Project Path="tests/Modules/Practice/DarwinLingua.Practice.Infrastructure.Tests/DarwinLingua.Practice.Infrastructure.Tests.csproj" />
-  </Folder>
-  <Folder Name="/tests/BuildingBlocks/">
-    <Project Path="tests/BuildingBlocks/DarwinLingua.Identity.Tests/DarwinLingua.Identity.Tests.csproj" />
   </Folder>
 </Solution>
