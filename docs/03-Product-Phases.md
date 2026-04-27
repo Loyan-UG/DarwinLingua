@@ -168,3 +168,52 @@ Expand to a broader platform and turn shared content into a server-managed distr
 - code reuse remains strong
 - the system scales without architectural redesign
 - future admin/web/account/analytics/monetization work can start from explicit shared-boundary documents
+
+---
+
+## Phase 6 - Practical Conversation, Community, and Organizer Platform
+
+### Goals
+
+Turn Darwin Lingua into a practical German-in-Germany platform, not only a vocabulary and review app.
+
+This phase adds scenario-based learning, conversation preparation, event discovery, safe learner profiles, and B2B organizer tooling.
+
+### Features
+
+- real-life scenario lessons for situations such as doctor visits, school, kindergarten, offices, housing, workplace, job interviews, and conversation cafes
+- conversation starter packs by situation, CEFR level, tone, and goal
+- dual meaning-language learning as a first-class product mode, such as:
+  - German + English + Persian
+  - German + English + Arabic
+  - German + English + Turkish
+  - German + English + Ukrainian
+  - German + English + Russian
+- scripted roleplay preparation without requiring AI in the first version
+- local and online conversation event directory
+- event preparation packs linked to vocabulary, scenarios, starter phrases, and roleplay prompts
+- organizer profiles for conversation cafes, clubs, teachers, libraries, associations, and integration groups
+- organizer dashboard for event/profile management
+- RSVP and attendance basics without becoming a full event-ticketing platform
+- minimal learner profiles for conversation practice
+- request-based partner matching without unrestricted open chat in the MVP
+- report, block, verification, listing review, and moderation workflows
+- learner premium feature flags
+- B2B organizer plan flags
+
+### Success Criteria
+
+- learners can prepare for real-life German conversations through structured scenario lessons
+- learners can view German learning content with one or two selected meaning languages consistently
+- learners can discover conversation events by city, level, language, online/offline mode, and price type
+- event pages can show preparation packs that help users practice before attending
+- organizers can have public profiles and publish/manage events through controlled workflows
+- no public matching feature is released without report, block, moderation, and privacy controls
+- unrestricted user-to-user chat is not part of the first social MVP
+- monetization does not block the core learning value
+- B2B organizer tooling can become a sustainable revenue path without compromising learner trust
+
+### Reference Documents
+
+- `63-Market-Product-And-Organizer-Strategy.md`
+- `64-Conversation-And-Organizer-Implementation-Backlog.md`
