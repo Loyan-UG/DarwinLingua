@@ -90,4 +90,26 @@ public sealed class LanguageCodeTests
     {
         Assert.Throws<DomainRuleException>(() => LanguageCode.From("e"));
     }
+
+    /// <summary>
+    /// Verifies that a three-letter ISO 639-2 code is accepted and normalized.
+    /// </summary>
+    [Fact]
+    public void From_ShouldAcceptThreeLetterCode()
+    {
+        LanguageCode code = LanguageCode.From("deu");
+
+        Assert.Equal("deu", code.Value);
+    }
+
+    /// <summary>
+    /// Verifies that a subtag containing numeric characters is accepted and normalized.
+    /// </summary>
+    [Fact]
+    public void From_ShouldAcceptNumericSubtag()
+    {
+        LanguageCode code = LanguageCode.From("es-419");
+
+        Assert.Equal("es-419", code.Value);
+    }
 }

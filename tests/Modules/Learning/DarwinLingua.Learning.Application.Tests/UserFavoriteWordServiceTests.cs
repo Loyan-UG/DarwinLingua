@@ -79,6 +79,47 @@ public sealed class UserFavoriteWordServiceTests
     }
 
     /// <summary>
+    /// Verifies that IsFavoriteAsync returns false when the word has not been favorited.
+    /// </summary>
+    [Fact]
+    public async Task IsFavoriteAsync_ShouldReturnFalseWhenWordIsNotFavorited()
+    {
+        Guid wordPublicId = Guid.NewGuid();
+        InMemoryUserFavoriteWordRepository repository = new();
+        FakeUserFavoriteWordCatalogReader catalogReader = new(new HashSet<Guid> { wordPublicId });
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserFavoriteWordRepository>(repository);
+        services.AddSingleton<IUserFavoriteWordCatalogReader>(catalogReader);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserFavoriteWordService service = serviceProvider.GetRequiredService<IUserFavoriteWordService>();
+
+        bool result = await service.IsFavoriteAsync(wordPublicId, CancellationToken.None);
+
+        Assert.False(result);
+    }
+
+    /// <summary>
+    /// Verifies that IsFavoriteAsync rejects an empty word public identifier.
+    /// </summary>
+    [Fact]
+    public async Task IsFavoriteAsync_ShouldRejectEmptyWordPublicId()
+    {
+        InMemoryUserFavoriteWordRepository repository = new();
+        FakeUserFavoriteWordCatalogReader catalogReader = new(new HashSet<Guid>());
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserFavoriteWordRepository>(repository);
+        services.AddSingleton<IUserFavoriteWordCatalogReader>(catalogReader);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserFavoriteWordService service = serviceProvider.GetRequiredService<IUserFavoriteWordService>();
+
+        await Assert.ThrowsAsync<ArgumentException>(() => service.IsFavoriteAsync(Guid.Empty, CancellationToken.None));
+    }
+
+    /// <summary>
     /// Verifies that the favorite query returns the lexical data supplied by the catalog reader.
     /// </summary>
     [Fact]
