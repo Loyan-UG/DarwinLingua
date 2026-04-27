@@ -25,6 +25,8 @@ All project documentation should remain in English.
 - `03-Product-Phases.md`
 - `04-Implementation-Backlog.md`
 - `21-Early-Product-Decisions.md`
+- `63-Market-Product-And-Organizer-Strategy.md`
+- `64-Conversation-And-Organizer-Implementation-Backlog.md`
 
 ### Content and Import
 
@@ -124,7 +126,9 @@ If you are new to the project, read the documents in this order:
 31. `60-Web-Operations-Notes.md`
 32. `61-Web-Release-Checklist.md`
 33. `62-Web-Accessibility-Checklist.md`
-34. `52-Future-Platform-Expansion.md`
+34. `63-Market-Product-And-Organizer-Strategy.md`
+35. `64-Conversation-And-Organizer-Implementation-Backlog.md`
+36. `52-Future-Platform-Expansion.md`
 
 ---
 
@@ -138,7 +142,13 @@ If you are new to the project, read the documents in this order:
 ### Phases vs Backlog
 
 - `03-Product-Phases.md` defines the high-level product phases.
-- `04-Implementation-Backlog.md` defines executable work planning, with detailed Phase 1 tasks.
+- `04-Implementation-Backlog.md` defines executable work planning, with detailed Phase 1 tasks and high-level later-phase workstreams.
+- `64-Conversation-And-Organizer-Implementation-Backlog.md` defines the executable backlog for scenario learning, conversation events, organizer tooling, safe profiles, and partner matching.
+
+### Product Strategy vs Execution
+
+- `63-Market-Product-And-Organizer-Strategy.md` records the product positioning, market assumptions, monetization direction, and B2B organizer strategy.
+- `64-Conversation-And-Organizer-Implementation-Backlog.md` turns that strategy into implementation-ready work items.
 
 ### Rules vs Workflow
 
@@ -179,6 +189,7 @@ Examples:
 - `01-Product-Vision.md`
 - `32-Storage-Strategy.md`
 - `35-Engineering-Standards.md`
+- `63-Market-Product-And-Organizer-Strategy.md`
 
 ---
 
@@ -199,5 +210,7 @@ The documentation set is intentionally split into:
 - a smaller core reading path
 - stable reference documents
 - execution runbooks
+- market/product strategy documents
+- implementation backlogs
 
 If future cleanup is needed, prefer consolidating overlapping runbooks before touching the core architecture/domain docs.
