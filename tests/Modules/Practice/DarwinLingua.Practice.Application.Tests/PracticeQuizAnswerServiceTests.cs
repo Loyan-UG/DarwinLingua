@@ -96,6 +96,70 @@ public sealed class PracticeQuizAnswerServiceTests
             CancellationToken.None));
     }
 
+    /// <summary>
+    /// Verifies that an incorrect quiz answer is scheduled with the short first-failure interval.
+    /// </summary>
+    [Fact]
+    public async Task SubmitAsync_IncorrectOutcome_ShouldScheduleShortFailureInterval()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-practice-app-quiz-incorrect-{Guid.NewGuid():N}.db");
+        await using ServiceProvider serviceProvider = BuildServiceProvider(databasePath);
+
+        IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+        await databaseInitializer.EnsureDatabaseSchemaAsync(CancellationToken.None);
+
+        Guid wordPublicId = Guid.NewGuid();
+        await SeedTrackedWordAsync(serviceProvider, wordPublicId, isActive: true);
+
+        IPracticeQuizAnswerService service = serviceProvider.GetRequiredService<IPracticeQuizAnswerService>();
+        DateTime attemptedAtUtc = DateTime.UtcNow.AddMinutes(-5);
+
+        PracticeQuizAnswerResultModel result = await service.SubmitAsync(
+            new PracticeQuizAnswerRequestModel(
+                wordPublicId,
+                PracticeAttemptOutcome.Incorrect,
+                ResponseMilliseconds: null,
+                AttemptedAtUtc: attemptedAtUtc),
+            CancellationToken.None);
+
+        Assert.Equal(PracticeAttemptOutcome.Incorrect, result.Outcome);
+        Assert.Equal(attemptedAtUtc.AddMinutes(10), result.DueAtUtcAfterAttempt);
+        Assert.Equal(0, result.ConsecutiveSuccessCount);
+        Assert.Equal(1, result.ConsecutiveFailureCount);
+    }
+
+    /// <summary>
+    /// Verifies that a correct quiz answer is scheduled with the initial one-day interval.
+    /// </summary>
+    [Fact]
+    public async Task SubmitAsync_CorrectOutcome_ShouldScheduleOneDayInterval()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-practice-app-quiz-correct-{Guid.NewGuid():N}.db");
+        await using ServiceProvider serviceProvider = BuildServiceProvider(databasePath);
+
+        IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+        await databaseInitializer.EnsureDatabaseSchemaAsync(CancellationToken.None);
+
+        Guid wordPublicId = Guid.NewGuid();
+        await SeedTrackedWordAsync(serviceProvider, wordPublicId, isActive: true);
+
+        IPracticeQuizAnswerService service = serviceProvider.GetRequiredService<IPracticeQuizAnswerService>();
+        DateTime attemptedAtUtc = DateTime.UtcNow.AddMinutes(-10);
+
+        PracticeQuizAnswerResultModel result = await service.SubmitAsync(
+            new PracticeQuizAnswerRequestModel(
+                wordPublicId,
+                PracticeAttemptOutcome.Correct,
+                ResponseMilliseconds: 500,
+                AttemptedAtUtc: attemptedAtUtc),
+            CancellationToken.None);
+
+        Assert.Equal(PracticeAttemptOutcome.Correct, result.Outcome);
+        Assert.Equal(attemptedAtUtc.AddDays(1), result.DueAtUtcAfterAttempt);
+        Assert.Equal(1, result.ConsecutiveSuccessCount);
+        Assert.Equal(0, result.ConsecutiveFailureCount);
+    }
+
     private static ServiceProvider BuildServiceProvider(string databasePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);

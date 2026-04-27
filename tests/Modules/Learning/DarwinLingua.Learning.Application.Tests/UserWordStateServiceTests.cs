@@ -131,6 +131,73 @@ public sealed class UserWordStateServiceTests
     }
 
     /// <summary>
+    /// Verifies that GetWordStateAsync returns null when no state has been created for the word.
+    /// </summary>
+    [Fact]
+    public async Task GetWordStateAsync_ShouldReturnNullWhenStateDoesNotExist()
+    {
+        Guid wordPublicId = Guid.NewGuid();
+        InMemoryUserWordStateRepository repository = new();
+        FakeUserWordStateCatalogReader catalogReader = new(new HashSet<Guid> { wordPublicId });
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserWordStateRepository>(repository);
+        services.AddSingleton<IUserWordStateCatalogReader>(catalogReader);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserWordStateService service = serviceProvider.GetRequiredService<IUserWordStateService>();
+
+        UserWordStateModel? result = await service.GetWordStateAsync(wordPublicId, CancellationToken.None);
+
+        Assert.Null(result);
+    }
+
+    /// <summary>
+    /// Verifies that GetWordStateAsync returns the current model when state exists for the word.
+    /// </summary>
+    [Fact]
+    public async Task GetWordStateAsync_ShouldReturnModelWhenStateExists()
+    {
+        Guid wordPublicId = Guid.NewGuid();
+        InMemoryUserWordStateRepository repository = new();
+        FakeUserWordStateCatalogReader catalogReader = new(new HashSet<Guid> { wordPublicId });
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserWordStateRepository>(repository);
+        services.AddSingleton<IUserWordStateCatalogReader>(catalogReader);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserWordStateService service = serviceProvider.GetRequiredService<IUserWordStateService>();
+
+        await service.TrackWordViewedAsync(wordPublicId, CancellationToken.None);
+
+        UserWordStateModel? result = await service.GetWordStateAsync(wordPublicId, CancellationToken.None);
+
+        Assert.NotNull(result);
+        Assert.Equal(wordPublicId, result.WordEntryPublicId);
+        Assert.Equal(1, result.ViewCount);
+    }
+
+    /// <summary>
+    /// Verifies that GetWordStateAsync rejects an empty word public identifier.
+    /// </summary>
+    [Fact]
+    public async Task GetWordStateAsync_ShouldRejectEmptyWordPublicId()
+    {
+        InMemoryUserWordStateRepository repository = new();
+        FakeUserWordStateCatalogReader catalogReader = new(new HashSet<Guid>());
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserWordStateRepository>(repository);
+        services.AddSingleton<IUserWordStateCatalogReader>(catalogReader);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserWordStateService service = serviceProvider.GetRequiredService<IUserWordStateService>();
+
+        await Assert.ThrowsAsync<ArgumentException>(() => service.GetWordStateAsync(Guid.Empty, CancellationToken.None));
+    }
+
+    /// <summary>
     /// Verifies that non-existent words cannot be tracked in user word state.
     /// </summary>
     [Fact]

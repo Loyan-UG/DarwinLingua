@@ -160,6 +160,29 @@ public sealed class PracticeFlashcardAnswerServiceTests
             CancellationToken.None));
     }
 
+    /// <summary>
+    /// Verifies that a flashcard answer with an empty word public identifier is rejected.
+    /// </summary>
+    [Fact]
+    public async Task SubmitAsync_ShouldRejectEmptyWordPublicId()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-practice-app-flashcard-empty-guid-{Guid.NewGuid():N}.db");
+        await using ServiceProvider serviceProvider = BuildServiceProvider(databasePath);
+
+        IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+        await databaseInitializer.EnsureDatabaseSchemaAsync(CancellationToken.None);
+
+        IPracticeFlashcardAnswerService service = serviceProvider.GetRequiredService<IPracticeFlashcardAnswerService>();
+
+        await Assert.ThrowsAsync<ArgumentException>(() => service.SubmitAsync(
+            new PracticeFlashcardAnswerRequestModel(
+                Guid.Empty,
+                PracticeAttemptOutcome.Correct,
+                ResponseMilliseconds: 500,
+                AttemptedAtUtc: DateTime.UtcNow.AddMinutes(-3)),
+            CancellationToken.None));
+    }
+
     private static ServiceProvider BuildServiceProvider(string databasePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
