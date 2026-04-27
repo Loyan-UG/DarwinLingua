@@ -35,14 +35,20 @@ builder.Services.Configure<DarwinLinguaEntitlementOptions>(builder.Configuration
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaIdentityBootstrapOptions>, DarwinLinguaIdentityBootstrapOptionsPostConfigure>();
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaEntitlementOptions>, DarwinLinguaEntitlementOptionsPostConfigure>();
 
-string serverContentConnectionString = builder.Configuration.GetConnectionString("ServerContentAdmin")
-    ?? builder.Configuration.GetConnectionString("ServerContent")
-    ?? throw new InvalidOperationException("A ServerContent or ServerContentAdmin connection string must be configured.");
-string sharedCatalogConnectionString = builder.Configuration.GetConnectionString("SharedCatalogAdmin")
-    ?? builder.Configuration.GetConnectionString("SharedCatalog")
+string serverContentConnectionString = GetRequiredConnectionString(
+    builder.Configuration,
+    "A ServerContent or ServerContentAdmin connection string must be configured.",
+    "ServerContentAdmin",
+    "ServerContent");
+string sharedCatalogConnectionString = GetOptionalConnectionString(
+        builder.Configuration,
+        "SharedCatalogAdmin",
+        "SharedCatalog")
     ?? serverContentConnectionString;
-string identityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")
-    ?? builder.Configuration.GetConnectionString("Identity")
+string identityConnectionString = GetOptionalConnectionString(
+        builder.Configuration,
+        "IdentityAdmin",
+        "Identity")
     ?? serverContentConnectionString;
 
 builder.Services.AddDbContext<ServerContentDbContext>(options =>
@@ -637,6 +643,26 @@ static async Task<string> ResolveClientProductKeyAsync(
         0 => throw new InvalidOperationException("No active client product is configured."),
         _ => throw new InvalidOperationException("A client product key is required when multiple active products are configured."),
     };
+}
+
+static string GetRequiredConnectionString(IConfiguration configuration, string errorMessage, params string[] names)
+{
+    return GetOptionalConnectionString(configuration, names)
+        ?? throw new InvalidOperationException(errorMessage);
+}
+
+static string? GetOptionalConnectionString(IConfiguration configuration, params string[] names)
+{
+    foreach (string name in names)
+    {
+        string? connectionString = configuration.GetConnectionString(name);
+        if (!string.IsNullOrWhiteSpace(connectionString))
+        {
+            return connectionString;
+        }
+    }
+
+    return null;
 }
 
 public partial class Program;
