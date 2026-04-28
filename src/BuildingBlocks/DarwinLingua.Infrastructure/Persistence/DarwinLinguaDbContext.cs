@@ -146,6 +146,8 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<OrganizerProfileHelperLanguage> OrganizerProfileHelperLanguages => Set<OrganizerProfileHelperLanguage>();
 
+    public DbSet<OrganizerClaimRequest> OrganizerClaimRequests => Set<OrganizerClaimRequest>();
+
     /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
@@ -229,6 +231,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new OrganizerProfileConfiguration());
         modelBuilder.ApplyConfiguration(new OrganizerProfileSupportedLevelConfiguration());
         modelBuilder.ApplyConfiguration(new OrganizerProfileHelperLanguageConfiguration());
+        modelBuilder.ApplyConfiguration(new OrganizerClaimRequestConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

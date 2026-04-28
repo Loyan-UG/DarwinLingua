@@ -106,6 +106,7 @@ builder.Services.AddScoped<IWebsiteCatalogQueryService, WebsiteCatalogQueryServi
 builder.Services.AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>();
 builder.Services.AddScoped<IConversationEventAdminService, ConversationEventAdminService>();
 builder.Services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
+builder.Services.AddScoped<IOrganizerClaimRequestService, OrganizerClaimRequestService>();
 
 WebApplication app = builder.Build();
 
@@ -386,6 +387,17 @@ app.MapGet(
                 async () => await organizerProfileQueryService.GetPublishedOrganizerProfileBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
+app.MapPost(
+    "/api/catalog/organizer-profiles/{slug}/claim",
+    async (
+        string slug,
+        SubmitOrganizerClaimRequest request,
+        IOrganizerClaimRequestService organizerClaimRequestService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerClaimRequestService.SubmitAsync(slug, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
 app.MapGet(
     "/api/catalog/words/topic/{topicKey}",
     async (string topicKey, string meaningLanguageCode, int skip, int take, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
@@ -474,6 +486,13 @@ app.MapPost(
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await organizerProfileAdminService.SaveAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/organizer-claim-requests",
+    async (IOrganizerClaimRequestService organizerClaimRequestService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerClaimRequestService.GetRecentAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

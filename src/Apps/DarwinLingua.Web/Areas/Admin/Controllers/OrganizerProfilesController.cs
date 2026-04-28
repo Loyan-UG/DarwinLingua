@@ -73,8 +73,11 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
         IReadOnlyList<OrganizerProfileListItemModel> profiles = await catalogApiClient
             .GetOrganizerProfilesAsync(cancellationToken)
             .ConfigureAwait(false);
+        IReadOnlyList<OrganizerClaimRequestModel> claimRequests = await catalogApiClient
+            .GetAdminOrganizerClaimRequestsAsync(cancellationToken)
+            .ConfigureAwait(false);
 
-        return new AdminOrganizerProfilesPageViewModel(profiles, input, statusMessage, errorMessage);
+        return new AdminOrganizerProfilesPageViewModel(profiles, claimRequests, input, statusMessage, errorMessage);
     }
 
     private static string[] SplitCsv(string? value) =>

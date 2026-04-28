@@ -11,6 +11,14 @@
         </div>
     </div>
     <h1 class="headline-md">@Model.Profile.DisplayName</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
     <p class="body-lg">@Model.Profile.Description</p>
     <dl class="detail-list">
         <div>
@@ -47,6 +55,13 @@
     {
         <div class="detail-toolbar__actions">
             <a class="button button--primary button--compact" href="@Model.Profile.WebsiteUrl" rel="noopener noreferrer" target="_blank">Website</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">Claim profile</a>
+        </div>
+    }
+    else
+    {
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">Claim profile</a>
         </div>
     }
 </section>

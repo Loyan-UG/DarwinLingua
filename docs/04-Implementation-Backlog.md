@@ -779,7 +779,8 @@ Create public pages for clubs, teachers, cafes, organizations, and other languag
   - Progress: conversation events now support an optional `OrganizerProfileSlug`; public event detail and admin event tables link to the organizer page when present.
 - [x] add admin-managed organizer creation first
   - Progress: Web Admin can create/replace reviewed organizer profiles through WebApi before organizer self-service is enabled.
-- [ ] add organizer claim workflow placeholder
+- [x] add organizer claim workflow placeholder
+  - Progress: Web organizer pages now expose a claim-request form; WebApi persists submitted claim requests for admin review, and Web Admin lists recent requests without granting self-service ownership yet.
 - [x] add verified organizer badge rules
   - Progress: reviewed/verified organizer statuses are displayed as public organizer badges; stricter verification workflow remains in the moderation backlog.
 - [x] add tests for organizer visibility and event linking

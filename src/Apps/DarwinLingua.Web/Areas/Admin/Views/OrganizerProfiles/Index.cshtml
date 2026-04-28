@@ -81,6 +81,46 @@
 </section>
 
 <section class="panel stack-md">
+    <h2 class="headline-sm">Claim requests</h2>
+    @if (Model.ClaimRequests.Count == 0)
+    {
+        <p>No organizer claim requests yet.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Organizer</th>
+                    <th>Requester</th>
+                    <th>Relationship</th>
+                    <th>Status</th>
+                    <th>Submitted</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ClaimRequests)
+                {
+                    <tr>
+                        <td>
+                            <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
+                        </td>
+                        <td>
+                            <strong>@item.RequesterName</strong>
+                            <div>@item.RequesterEmail</div>
+                            <div>@item.EvidenceText</div>
+                        </td>
+                        <td>@item.RelationshipToOrganizer</td>
+                        <td>@item.Status</td>
+                        <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>
+
+<section class="panel stack-md">
     <h2 class="headline-sm">Published organizers</h2>
     @if (Model.Profiles.Count == 0)
     {

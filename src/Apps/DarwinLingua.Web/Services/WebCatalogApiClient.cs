@@ -64,6 +64,12 @@ public interface IWebCatalogApiClient
         string slug,
         CancellationToken cancellationToken);
 
+    Task<OrganizerClaimRequestModel> SubmitOrganizerClaimRequestAsync(
+        string organizerProfileSlug,
+        SubmitOrganizerClaimRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -112,6 +118,9 @@ public interface IWebCatalogApiClient
     Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(
         AdminSaveOrganizerProfileRequest request,
         CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<OrganizerClaimRequestModel>> GetAdminOrganizerClaimRequestsAsync(CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
 }
 
 internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogApiClient
@@ -238,6 +247,15 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         CancellationToken cancellationToken) =>
         GetAsync<OrganizerProfileDetailModel>(
             $"/api/catalog/organizer-profiles/{Uri.EscapeDataString(slug)}",
+            cancellationToken);
+
+    public Task<OrganizerClaimRequestModel> SubmitOrganizerClaimRequestAsync(
+        string organizerProfileSlug,
+        SubmitOrganizerClaimRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<SubmitOrganizerClaimRequest, OrganizerClaimRequestModel>(
+            $"/api/catalog/organizer-profiles/{Uri.EscapeDataString(organizerProfileSlug)}/claim",
+            request,
             cancellationToken);
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
@@ -412,6 +430,11 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         PostRequiredAsync<AdminSaveOrganizerProfileRequest, OrganizerProfileDetailModel>(
             "/api/admin/catalog/organizer-profiles",
             request,
+            cancellationToken);
+
+    public Task<IReadOnlyList<OrganizerClaimRequestModel>> GetAdminOrganizerClaimRequestsAsync(CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<OrganizerClaimRequestModel>>(
+            "/api/admin/catalog/organizer-claim-requests",
             cancellationToken);
 
     private async Task<T?> GetAsync<T>(string relativeUri, CancellationToken cancellationToken)
@@ -609,3 +632,19 @@ public sealed record AdminSaveOrganizerProfileRequest(
     string VerificationStatus,
     string PlanKey,
     int HistoricalEventCount);
+
+public sealed record SubmitOrganizerClaimRequest(
+    string RequesterName,
+    string RequesterEmail,
+    string RelationshipToOrganizer,
+    string EvidenceText);
+
+public sealed record OrganizerClaimRequestModel(
+    Guid Id,
+    string OrganizerProfileSlug,
+    string RequesterName,
+    string RequesterEmail,
+    string RelationshipToOrganizer,
+    string EvidenceText,
+    string Status,
+    DateTime CreatedAtUtc);

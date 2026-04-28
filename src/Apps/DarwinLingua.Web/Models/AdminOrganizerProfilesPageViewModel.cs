@@ -1,10 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Services;
 
 namespace DarwinLingua.Web.Models;
 
 public sealed record AdminOrganizerProfilesPageViewModel(
     IReadOnlyList<OrganizerProfileListItemModel> Profiles,
+    IReadOnlyList<OrganizerClaimRequestModel> ClaimRequests,
     AdminOrganizerProfileInputModel Input,
     string? StatusMessage,
     string? ErrorMessage);

@@ -1,0 +1,48 @@
+@model DarwinLingua.Web.Models.OrganizerProfileClaimPageViewModel
+@{
+    ViewData["Title"] = $"Claim {Model.Profile.DisplayName}";
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Profile.OrganizerType · @Model.Profile.VerificationStatus</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Profile.Slug">Organizer page</a>
+        </div>
+    </div>
+    <h1 class="headline-md">Claim @Model.Profile.DisplayName</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Request review</h2>
+    <form method="post" class="form-grid">
+        @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Name</span>
+            <input name="RequesterName" value="@Model.Input.RequesterName" />
+        </label>
+        <label class="field">
+            <span>Email</span>
+            <input name="RequesterEmail" value="@Model.Input.RequesterEmail" type="email" />
+        </label>
+        <label class="field">
+            <span>Relationship</span>
+            <input name="RelationshipToOrganizer" value="@Model.Input.RelationshipToOrganizer" placeholder="owner, staff, teacher, volunteer" />
+        </label>
+        <label class="field field--wide">
+            <span>Evidence</span>
+            <textarea name="EvidenceText" rows="6">@Model.Input.EvidenceText</textarea>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Submit claim</button>
+        </div>
+    </form>
+</section>
