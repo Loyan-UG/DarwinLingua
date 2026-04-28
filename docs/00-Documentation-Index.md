@@ -81,6 +81,8 @@ All project documentation should remain in English.
 - `65-Safety-And-Moderation-Requirements.md`
 - `66-Dual-Meaning-Language-UX-Rules.md`
 - `67-Scenario-Content-Package-Contract.md`
+- `68-Conversation-Starter-Content-Package-Contract.md`
+- `69-Event-Preparation-Pack-Content-Package-Contract.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -133,6 +135,8 @@ If you are new to the project, read the documents in this order:
 36. `65-Safety-And-Moderation-Requirements.md`
 37. `66-Dual-Meaning-Language-UX-Rules.md`
 38. `67-Scenario-Content-Package-Contract.md`
+39. `68-Conversation-Starter-Content-Package-Contract.md`
+40. `69-Event-Preparation-Pack-Content-Package-Contract.md`
 
 ---
 
@@ -155,6 +159,8 @@ If you are new to the project, read the documents in this order:
 - `65-Safety-And-Moderation-Requirements.md` defines the release gate for public profiles, matching, organizer listings, report/block, and moderation workflows.
 - `66-Dual-Meaning-Language-UX-Rules.md` defines presentation rules for primary and secondary meaning languages across compact and expanded learning surfaces.
 - `67-Scenario-Content-Package-Contract.md` defines the Phase 6 JSON contract for scenario lessons, dialogue turns, useful phrases, questions, answers, CEFR/topic rules, and validation rules.
+- `68-Conversation-Starter-Content-Package-Contract.md` defines the Phase 6 JSON contract for conversation starter packs, starter phrases, filters, scenario integration, dual-language behavior, and validation rules.
+- `69-Event-Preparation-Pack-Content-Package-Contract.md` defines the Phase 6 JSON contract for event preparation packs, links to scenarios, vocabulary, starter packs, and preparation prompts.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Rules vs Workflow

@@ -1,0 +1,91 @@
+@model DarwinLingua.Web.Models.ConversationStarterDetailPageViewModel
+@{
+    ViewData["Title"] = Model.StarterPack.Title;
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.StarterPack.CefrLevel · @Model.StarterPack.Situation · @Model.StarterPack.Tone</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Index">All starters</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@Model.StarterPack.Title</h1>
+    <p class="body-lg">@Model.StarterPack.Description</p>
+    <p class="body-lg">@Model.StarterPack.ConversationGoal</p>
+    @if (Model.StarterPack.TopicKeys.Count > 0)
+    {
+        <div class="chip-grid">
+            @foreach (string topicKey in Model.StarterPack.TopicKeys)
+            {
+                <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+            }
+        </div>
+    }
+</section>
+
+@if (Model.StarterPack.Phrases.Count > 0)
+{
+    <section class="grid-two-col">
+        @foreach (var phrase in Model.StarterPack.Phrases)
+        {
+            <article class="panel stack-md">
+                <div class="action-row collection-card__meta">
+                    <span class="eyebrow">@phrase.Function</span>
+                    @if (!string.IsNullOrWhiteSpace(phrase.Register))
+                    {
+                        <span>@phrase.Register</span>
+                    }
+                </div>
+                <div class="detail-example">
+                    <strong>@phrase.BaseText</strong>
+                    <button type="button" class="button button--secondary button--compact" data-speak-text="@phrase.BaseText" data-speak-lang="de-DE">Speak</button>
+                </div>
+                @if (!string.IsNullOrWhiteSpace(phrase.PrimaryMeaning))
+                {
+                    <div class="meaning-block meaning-block--primary">
+                        <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                        <div>@phrase.PrimaryMeaning</div>
+                    </div>
+                }
+                @if (!string.IsNullOrWhiteSpace(phrase.SecondaryMeaning))
+                {
+                    <div class="meaning-block">
+                        <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                        <div>@phrase.SecondaryMeaning</div>
+                    </div>
+                }
+                @if (phrase.AlternativeBaseTexts.Count > 0)
+                {
+                    <ul class="feature-list">
+                        @foreach (string alternative in phrase.AlternativeBaseTexts)
+                        {
+                            <li>@alternative</li>
+                        }
+                    </ul>
+                }
+                @if (!string.IsNullOrWhiteSpace(phrase.UsageNote))
+                {
+                    <p>@phrase.UsageNote</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(phrase.CommonMistake))
+                {
+                    <p>@phrase.CommonMistake</p>
+                }
+            </article>
+        }
+    </section>
+}
+
+@if (Model.StarterPack.LinkedScenarioSlugs.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Related scenarios</h2>
+        <div class="chip-grid">
+            @foreach (string scenarioSlug in Model.StarterPack.LinkedScenarioSlugs)
+            {
+                <a class="chip-link" asp-controller="Scenarios" asp-action="Detail" asp-route-slug="@scenarioSlug">@scenarioSlug</a>
+            }
+        </div>
+    </section>
+}

@@ -95,6 +95,8 @@ internal sealed class ContentImportService : IContentImportService
             meaningLanguages);
 
         ValidateScenarios(parsedPackage.Scenarios, topicsByKey, meaningLanguages, issues);
+        ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
+        ValidateEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, issues);
 
         if (issues.Any(issue => issue.EntryIndex is null && string.Equals(issue.Severity, "Error", StringComparison.Ordinal)))
         {
@@ -116,6 +118,8 @@ internal sealed class ContentImportService : IContentImportService
         List<WordEntry> importedWords = [];
         List<WordCollection> importedCollections = [];
         List<ScenarioLesson> importedScenarios = [];
+        List<ConversationStarterPack> importedConversationStarterPacks = [];
+        List<EventPreparationPack> importedEventPreparationPacks = [];
 
         for (int entryIndex = 0; entryIndex < parsedPackage.Entries.Count; entryIndex++)
         {
@@ -140,11 +144,13 @@ internal sealed class ContentImportService : IContentImportService
             cancellationToken).ConfigureAwait(false);
 
         ProcessScenarios(parsedPackage.Scenarios, topicsByKey, importedScenarios);
+        ProcessConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, importedConversationStarterPacks);
+        ProcessEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, importedEventPreparationPacks);
 
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedWords, importedCollections, importedScenarios, cancellationToken)
+            .PersistImportAsync(contentPackage, importedWords, importedCollections, importedScenarios, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -248,6 +254,204 @@ internal sealed class ContentImportService : IContentImportService
             }
 
             importedScenarios.Add(lesson);
+        }
+    }
+
+    private static void ProcessConversationStarterPacks(
+        IReadOnlyList<ParsedConversationStarterPackModel> starterPacks,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<ConversationStarterPack> importedStarterPacks)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedConversationStarterPackModel starterPack in starterPacks)
+        {
+            ConversationStarterPack pack = new(
+                Guid.NewGuid(),
+                NormalizeText(starterPack.Slug),
+                NormalizeText(starterPack.Title),
+                NormalizeText(starterPack.Description),
+                Enum.Parse<CefrLevel>(NormalizeText(starterPack.CefrLevel), true),
+                NormalizeText(starterPack.Category),
+                NormalizeText(starterPack.Situation),
+                NormalizeText(starterPack.Tone),
+                NormalizeText(starterPack.ConversationGoal),
+                PublicationStatus.Active,
+                starterPack.SortOrder < 0 ? 0 : starterPack.SortOrder,
+                timestampUtc);
+
+            string[] topicKeys = starterPack.Topics
+                .Select(topic => NormalizeText(topic).ToLowerInvariant())
+                .Where(topic => !string.IsNullOrWhiteSpace(topic))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
+            {
+                pack.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            string[] scenarioSlugs = starterPack.LinkedScenarioSlugs
+                .Select(slug => NormalizeText(slug).ToLowerInvariant())
+                .Where(slug => !string.IsNullOrWhiteSpace(slug))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int scenarioIndex = 0; scenarioIndex < scenarioSlugs.Length; scenarioIndex++)
+            {
+                pack.AddLinkedScenario(Guid.NewGuid(), scenarioSlugs[scenarioIndex], scenarioIndex + 1, timestampUtc);
+            }
+
+            string[] eventPreparationPackSlugs = starterPack.LinkedEventPreparationPackSlugs
+                .Select(slug => NormalizeText(slug).ToLowerInvariant())
+                .Where(slug => !string.IsNullOrWhiteSpace(slug))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int eventPackIndex = 0; eventPackIndex < eventPreparationPackSlugs.Length; eventPackIndex++)
+            {
+                pack.AddLinkedEventPreparationPack(Guid.NewGuid(), eventPreparationPackSlugs[eventPackIndex], eventPackIndex + 1, timestampUtc);
+            }
+
+            for (int phraseIndex = 0; phraseIndex < starterPack.Phrases.Count; phraseIndex++)
+            {
+                ParsedConversationStarterPhraseModel parsedPhrase = starterPack.Phrases[phraseIndex];
+                ConversationStarterPhrase phrase = pack.AddPhrase(
+                    Guid.NewGuid(),
+                    parsedPhrase.SortOrder <= 0 ? phraseIndex + 1 : parsedPhrase.SortOrder,
+                    parsedPhrase.BaseText,
+                    parsedPhrase.Function,
+                    parsedPhrase.UsageNote,
+                    parsedPhrase.Register,
+                    parsedPhrase.CommonMistake,
+                    timestampUtc);
+
+                AddConversationStarterTranslations(phrase.AddTranslation, parsedPhrase.Translations, timestampUtc);
+
+                for (int alternativeIndex = 0; alternativeIndex < parsedPhrase.AlternativeBaseTexts.Count; alternativeIndex++)
+                {
+                    phrase.AddAlternativeBaseText(
+                        Guid.NewGuid(),
+                        alternativeIndex + 1,
+                        parsedPhrase.AlternativeBaseTexts[alternativeIndex],
+                        timestampUtc);
+                }
+            }
+
+            importedStarterPacks.Add(pack);
+        }
+    }
+
+    private static void AddConversationStarterTranslations(
+        Action<Guid, LanguageCode, string, DateTime> addTranslation,
+        IReadOnlyList<ParsedContentMeaningModel> translations,
+        DateTime timestampUtc)
+    {
+        foreach (ParsedContentMeaningModel translation in translations)
+        {
+            addTranslation(
+                Guid.NewGuid(),
+                LanguageCode.From(NormalizeText(translation.Language).ToLowerInvariant()),
+                NormalizeText(translation.Text),
+                timestampUtc);
+        }
+    }
+
+    private static void ProcessEventPreparationPacks(
+        IReadOnlyList<ParsedEventPreparationPackModel> eventPreparationPacks,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<EventPreparationPack> importedEventPreparationPacks)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedEventPreparationPackModel parsedPack in eventPreparationPacks)
+        {
+            EventPreparationPack pack = new(
+                Guid.NewGuid(),
+                NormalizeText(parsedPack.Slug),
+                NormalizeText(parsedPack.Title),
+                NormalizeText(parsedPack.Description),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedPack.CefrLevel), true),
+                NormalizeText(parsedPack.Category),
+                NormalizeText(parsedPack.EventType),
+                PublicationStatus.Active,
+                parsedPack.SortOrder < 0 ? 0 : parsedPack.SortOrder,
+                timestampUtc);
+
+            string[] topicKeys = parsedPack.Topics
+                .Select(topic => NormalizeText(topic).ToLowerInvariant())
+                .Where(topic => !string.IsNullOrWhiteSpace(topic))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
+            {
+                pack.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            string[] scenarioSlugs = parsedPack.LinkedScenarioSlugs
+                .Select(slug => NormalizeText(slug).ToLowerInvariant())
+                .Where(slug => !string.IsNullOrWhiteSpace(slug))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int scenarioIndex = 0; scenarioIndex < scenarioSlugs.Length; scenarioIndex++)
+            {
+                pack.AddLinkedScenario(Guid.NewGuid(), scenarioSlugs[scenarioIndex], scenarioIndex + 1, timestampUtc);
+            }
+
+            string[] starterPackSlugs = parsedPack.LinkedConversationStarterPackSlugs
+                .Select(slug => NormalizeText(slug).ToLowerInvariant())
+                .Where(slug => !string.IsNullOrWhiteSpace(slug))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int starterPackIndex = 0; starterPackIndex < starterPackSlugs.Length; starterPackIndex++)
+            {
+                pack.AddLinkedConversationStarterPack(Guid.NewGuid(), starterPackSlugs[starterPackIndex], starterPackIndex + 1, timestampUtc);
+            }
+
+            for (int vocabularyIndex = 0; vocabularyIndex < parsedPack.LinkedVocabulary.Count; vocabularyIndex++)
+            {
+                ParsedEventPreparationVocabularyReferenceModel reference = parsedPack.LinkedVocabulary[vocabularyIndex];
+                PartOfSpeech? partOfSpeech = NormalizeOptionalText(reference.PartOfSpeech) is { } normalizedPartOfSpeech
+                    ? Enum.Parse<PartOfSpeech>(normalizedPartOfSpeech, true)
+                    : null;
+                CefrLevel? cefrLevel = NormalizeOptionalText(reference.CefrLevel) is { } normalizedCefrLevel
+                    ? Enum.Parse<CefrLevel>(normalizedCefrLevel, true)
+                    : null;
+
+                pack.AddLinkedVocabulary(
+                    Guid.NewGuid(),
+                    NormalizeText(reference.Word),
+                    partOfSpeech,
+                    cefrLevel,
+                    vocabularyIndex + 1,
+                    timestampUtc);
+            }
+
+            AddEventPreparationPrompts(pack, "opening", parsedPack.OpeningPrompts, timestampUtc);
+            AddEventPreparationPrompts(pack, "roleplay", parsedPack.RoleplayPrompts, timestampUtc);
+            AddEventPreparationPrompts(pack, "review", parsedPack.ReviewPrompts, timestampUtc);
+
+            importedEventPreparationPacks.Add(pack);
+        }
+    }
+
+    private static void AddEventPreparationPrompts(
+        EventPreparationPack pack,
+        string promptType,
+        IReadOnlyList<string> prompts,
+        DateTime timestampUtc)
+    {
+        for (int promptIndex = 0; promptIndex < prompts.Count; promptIndex++)
+        {
+            pack.AddPrompt(
+                Guid.NewGuid(),
+                promptType,
+                promptIndex + 1,
+                NormalizeText(prompts[promptIndex]),
+                timestampUtc);
         }
     }
 
@@ -922,6 +1126,270 @@ internal sealed class ContentImportService : IContentImportService
         foreach (string translationError in translationErrors)
         {
             errors.Add($"{fieldName}: {translationError}");
+        }
+    }
+
+    private static void ValidateConversationStarterPacks(
+        IReadOnlyList<ParsedConversationStarterPackModel> packs,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> slugs = [];
+
+        for (int index = 0; index < packs.Count; index++)
+        {
+            ParsedConversationStarterPackModel pack = packs[index];
+            List<string> errors = [];
+            string slug = NormalizeText(pack.Slug).ToLowerInvariant();
+
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add("Conversation starter pack slug is required and must use lowercase kebab-case.");
+            }
+            else if (!slugs.Add(slug))
+            {
+                errors.Add($"Duplicate conversation starter pack slug '{slug}' is not allowed inside one package.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(pack.Title)))
+            {
+                errors.Add("Conversation starter pack title is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(pack.Description)))
+            {
+                errors.Add("Conversation starter pack description is required.");
+            }
+
+            if (!Enum.TryParse(NormalizeText(pack.CefrLevel), true, out CefrLevel _))
+            {
+                errors.Add("Conversation starter pack CEFR level is invalid.");
+            }
+
+            ValidateConversationStarterKebabField(pack.Category, "category", errors);
+            ValidateConversationStarterKebabField(pack.Situation, "situation", errors);
+            ValidateConversationStarterKebabField(pack.Tone, "tone", errors);
+            ValidateConversationStarterKebabField(pack.ConversationGoal, "conversationGoal", errors);
+
+            string[] topicKeys = pack.Topics
+                .Select(topic => NormalizeText(topic).ToLowerInvariant())
+                .Where(topic => !string.IsNullOrWhiteSpace(topic))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            if (topicKeys.Length == 0)
+            {
+                errors.Add("Conversation starter pack topics must contain at least one topic key.");
+            }
+
+            foreach (string topicKey in topicKeys)
+            {
+                if (!topicsByKey.ContainsKey(topicKey))
+                {
+                    errors.Add($"Conversation starter pack references unknown topic key '{topicKey}'.");
+                }
+            }
+
+            foreach (string linkedScenarioSlug in pack.LinkedScenarioSlugs.Select(slug => NormalizeText(slug).ToLowerInvariant()))
+            {
+                if (!ValidateKebabKey(linkedScenarioSlug))
+                {
+                    errors.Add("Conversation starter pack linkedScenarioSlugs must use lowercase kebab-case.");
+                }
+            }
+
+            foreach (string linkedEventPreparationPackSlug in pack.LinkedEventPreparationPackSlugs.Select(slug => NormalizeText(slug).ToLowerInvariant()))
+            {
+                if (!ValidateKebabKey(linkedEventPreparationPackSlug))
+                {
+                    errors.Add("Conversation starter pack linkedEventPreparationPackSlugs must use lowercase kebab-case.");
+                }
+            }
+
+            if (pack.Phrases.Count == 0)
+            {
+                errors.Add("Conversation starter pack phrases must contain at least one item.");
+            }
+
+            for (int phraseIndex = 0; phraseIndex < pack.Phrases.Count; phraseIndex++)
+            {
+                ParsedConversationStarterPhraseModel phrase = pack.Phrases[phraseIndex];
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(phrase.BaseText)))
+                {
+                    errors.Add($"Conversation starter pack phrases[{phraseIndex + 1}] baseText is required.");
+                }
+
+                string function = NormalizeText(phrase.Function).ToLowerInvariant();
+                if (!ValidateKebabKey(function))
+                {
+                    errors.Add($"Conversation starter pack phrases[{phraseIndex + 1}] function is required and must use lowercase kebab-case.");
+                }
+
+                string? register = NormalizeOptionalText(phrase.Register)?.ToLowerInvariant();
+                if (register is not null && !ValidateKebabKey(register))
+                {
+                    errors.Add($"Conversation starter pack phrases[{phraseIndex + 1}] register must use lowercase kebab-case.");
+                }
+
+                foreach (string alternative in phrase.AlternativeBaseTexts)
+                {
+                    if (string.IsNullOrWhiteSpace(NormalizeText(alternative)))
+                    {
+                        errors.Add($"Conversation starter pack phrases[{phraseIndex + 1}] alternativeBaseTexts cannot contain empty items.");
+                    }
+                }
+
+                ValidateScenarioTranslations(
+                    phrase.Translations,
+                    meaningLanguages,
+                    $"Conversation starter pack phrases[{phraseIndex + 1}] translations",
+                    errors);
+            }
+
+            if (errors.Count > 0)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Conversation starter pack {index + 1} '{slug}': {string.Join(" ", errors)}"));
+            }
+        }
+    }
+
+    private static void ValidateConversationStarterKebabField(string value, string fieldName, ICollection<string> errors)
+    {
+        if (!ValidateKebabKey(NormalizeText(value).ToLowerInvariant()))
+        {
+            errors.Add($"Conversation starter pack {fieldName} is required and must use lowercase kebab-case.");
+        }
+    }
+
+    private static void ValidateEventPreparationPacks(
+        IReadOnlyList<ParsedEventPreparationPackModel> packs,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> slugs = [];
+
+        for (int index = 0; index < packs.Count; index++)
+        {
+            ParsedEventPreparationPackModel pack = packs[index];
+            List<string> errors = [];
+            string slug = NormalizeText(pack.Slug).ToLowerInvariant();
+
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add("Event preparation pack slug is required and must use lowercase kebab-case.");
+            }
+            else if (!slugs.Add(slug))
+            {
+                errors.Add($"Duplicate event preparation pack slug '{slug}' is not allowed inside one package.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(pack.Title)))
+            {
+                errors.Add("Event preparation pack title is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(pack.Description)))
+            {
+                errors.Add("Event preparation pack description is required.");
+            }
+
+            if (!Enum.TryParse(NormalizeText(pack.CefrLevel), true, out CefrLevel _))
+            {
+                errors.Add("Event preparation pack CEFR level is invalid.");
+            }
+
+            ValidateEventPreparationKebabField(pack.Category, "category", errors);
+            ValidateEventPreparationKebabField(pack.EventType, "eventType", errors);
+
+            string[] topicKeys = pack.Topics
+                .Select(topic => NormalizeText(topic).ToLowerInvariant())
+                .Where(topic => !string.IsNullOrWhiteSpace(topic))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            if (topicKeys.Length == 0)
+            {
+                errors.Add("Event preparation pack topics must contain at least one topic key.");
+            }
+
+            foreach (string topicKey in topicKeys)
+            {
+                if (!topicsByKey.ContainsKey(topicKey))
+                {
+                    errors.Add($"Event preparation pack references unknown topic key '{topicKey}'.");
+                }
+            }
+
+            ValidateKebabReferences(pack.LinkedScenarioSlugs, "linkedScenarioSlugs", "Event preparation pack", errors);
+            ValidateKebabReferences(pack.LinkedConversationStarterPackSlugs, "linkedConversationStarterPackSlugs", "Event preparation pack", errors);
+            ValidatePromptList(pack.OpeningPrompts, "openingPrompts", errors);
+            ValidatePromptList(pack.RoleplayPrompts, "roleplayPrompts", errors);
+            ValidatePromptList(pack.ReviewPrompts, "reviewPrompts", errors);
+
+            for (int referenceIndex = 0; referenceIndex < pack.LinkedVocabulary.Count; referenceIndex++)
+            {
+                ParsedEventPreparationVocabularyReferenceModel reference = pack.LinkedVocabulary[referenceIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(reference.Word)))
+                {
+                    errors.Add($"Event preparation pack linkedVocabulary[{referenceIndex + 1}] word is required.");
+                }
+
+                string? partOfSpeech = NormalizeOptionalText(reference.PartOfSpeech);
+                if (partOfSpeech is not null && !Enum.TryParse(partOfSpeech, true, out PartOfSpeech _))
+                {
+                    errors.Add($"Event preparation pack linkedVocabulary[{referenceIndex + 1}] partOfSpeech is invalid.");
+                }
+
+                string? cefrLevel = NormalizeOptionalText(reference.CefrLevel);
+                if (cefrLevel is not null && !Enum.TryParse(cefrLevel, true, out CefrLevel _))
+                {
+                    errors.Add($"Event preparation pack linkedVocabulary[{referenceIndex + 1}] cefrLevel is invalid.");
+                }
+            }
+
+            if (errors.Count > 0)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Event preparation pack {index + 1} '{slug}': {string.Join(" ", errors)}"));
+            }
+        }
+    }
+
+    private static void ValidateEventPreparationKebabField(string value, string fieldName, ICollection<string> errors)
+    {
+        if (!ValidateKebabKey(NormalizeText(value).ToLowerInvariant()))
+        {
+            errors.Add($"Event preparation pack {fieldName} is required and must use lowercase kebab-case.");
+        }
+    }
+
+    private static void ValidateKebabReferences(
+        IReadOnlyList<string> references,
+        string fieldName,
+        string ownerLabel,
+        ICollection<string> errors)
+    {
+        foreach (string reference in references.Select(value => NormalizeText(value).ToLowerInvariant()))
+        {
+            if (!ValidateKebabKey(reference))
+            {
+                errors.Add($"{ownerLabel} {fieldName} must use lowercase kebab-case.");
+            }
+        }
+    }
+
+    private static void ValidatePromptList(
+        IReadOnlyList<string> prompts,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        foreach (string prompt in prompts)
+        {
+            if (string.IsNullOrWhiteSpace(NormalizeText(prompt)))
+            {
+                errors.Add($"Event preparation pack {fieldName} cannot contain empty items.");
+            }
         }
     }
 

@@ -28,6 +28,20 @@ public interface IWebCatalogApiClient
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(
+        ConversationStarterListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForScenarioAsync(
+        string scenarioSlug,
+        CancellationToken cancellationToken);
+
+    Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -105,6 +119,42 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         GetAsync<ScenarioLessonDetailModel>(
             BuildPath(
                 $"/api/catalog/scenarios/{Uri.EscapeDataString(slug)}",
+                [
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
+                    new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
+                ]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(
+        ConversationStarterListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ConversationStarterPackListItemModel>>(
+            BuildPath(
+                "/api/catalog/conversation-starters",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("situation", filter.Situation),
+                    new("tone", filter.Tone),
+                    new("conversationGoal", filter.ConversationGoal),
+                    new("topicKey", filter.TopicKey)
+                ]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForScenarioAsync(
+        string scenarioSlug,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ConversationStarterPackListItemModel>>(
+            $"/api/catalog/scenarios/{Uri.EscapeDataString(scenarioSlug)}/conversation-starters",
+            cancellationToken);
+
+    public Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<ConversationStarterPackDetailModel>(
+            BuildPath(
+                $"/api/catalog/conversation-starters/{Uri.EscapeDataString(slug)}",
                 [
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
                     new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)

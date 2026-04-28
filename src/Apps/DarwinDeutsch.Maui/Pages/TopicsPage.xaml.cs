@@ -118,6 +118,8 @@ public partial class TopicsPage : ContentPage
         CollectionsActionBlockView.ButtonText = AppStrings.HomeCollectionsButton;
         ScenariosActionBlockView.Caption = "Practical scenarios";
         ScenariosActionBlockView.ButtonText = "Open scenarios";
+        ConversationStartersActionBlockView.Caption = "Conversation starters";
+        ConversationStartersActionBlockView.ButtonText = "Open starters";
         FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
         FavoritesActionBlockView.ButtonText = AppStrings.HomeFavoritesButton;
         EmptyStateLabel.Text = AppStrings.TopicsPageEmpty;
@@ -298,6 +300,17 @@ public partial class TopicsPage : ContentPage
         try
         {
             await Shell.Current.GoToAsync(nameof(ScenariosPage)).ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    private async void OnConversationStartersActionInvoked(object? sender, EventArgs e)
+    {
+        try
+        {
+            await Shell.Current.GoToAsync(nameof(ConversationStartersPage)).ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {

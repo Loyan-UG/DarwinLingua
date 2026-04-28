@@ -607,5 +607,188 @@
         }
       ]
     }
+  ],
+  "conversationStarterPacks": [
+    {
+      "slug": "a1-cafe-first-meeting-starters",
+      "title": "Cafe First Meeting Starters",
+      "description": "Simple friendly openers for a first short conversation in a cafe.",
+      "cefrLevel": "A1",
+      "category": "first-meetings",
+      "situation": "cafe",
+      "tone": "friendly",
+      "conversationGoal": "introduction",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 10,
+      "linkedScenarioSlugs": [
+        "a1-buy-bread-at-bakery"
+      ],
+      "linkedEventPreparationPackSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Hallo, ich heiße Sara.",
+          "function": "opening",
+          "register": "neutral",
+          "usageNote": "Use this as a simple first introduction.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": [
+            "Guten Tag, ich heiße Sara."
+          ],
+          "commonMistake": "Do not omit ich in a full sentence.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Hello, my name is Sara."
+            },
+            {
+              "language": "fa",
+              "text": "سلام، اسم من سارا است."
+            }
+          ]
+        },
+        {
+          "baseText": "Und wie heißen Sie?",
+          "function": "follow-up-question",
+          "register": "formal",
+          "usageNote": "Use Sie with adults or people you do not know well.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": [
+            "Wie heißen Sie?"
+          ],
+          "translations": [
+            {
+              "language": "en",
+              "text": "And what is your name?"
+            },
+            {
+              "language": "fa",
+              "text": "و اسم شما چیست؟"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-workplace-small-talk-starters",
+      "title": "Workplace Small Talk Starters",
+      "description": "Friendly A2 phrases for opening a short conversation at work.",
+      "cefrLevel": "A2",
+      "category": "workplace-small-talk",
+      "situation": "work",
+      "tone": "friendly",
+      "conversationGoal": "continuing-conversation",
+      "topics": [
+        "work-and-jobs"
+      ],
+      "sortOrder": 20,
+      "linkedScenarioSlugs": [
+        "a2-call-in-sick-at-work"
+      ],
+      "linkedEventPreparationPackSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Wie war dein Wochenende?",
+          "function": "opening",
+          "register": "informal",
+          "usageNote": "Use with colleagues you address with du.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": [
+            "Wie war Ihr Wochenende?"
+          ],
+          "translations": [
+            {
+              "language": "en",
+              "text": "How was your weekend?"
+            },
+            {
+              "language": "fa",
+              "text": "آخر هفته‌ات چطور بود؟"
+            }
+          ]
+        },
+        {
+          "baseText": "Hast du heute viel zu tun?",
+          "function": "follow-up-question",
+          "register": "informal",
+          "usageNote": "Use for light workplace small talk.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": [
+            "Haben Sie heute viel zu tun?"
+          ],
+          "translations": [
+            {
+              "language": "en",
+              "text": "Do you have a lot to do today?"
+            },
+            {
+              "language": "fa",
+              "text": "امروز کار زیادی داری؟"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-online-practice-meeting-starters",
+      "title": "Online Practice Meeting Starters",
+      "description": "Useful starters for joining an online German practice session.",
+      "cefrLevel": "A2",
+      "category": "online-practice",
+      "situation": "online-meeting",
+      "tone": "friendly",
+      "conversationGoal": "asking-questions",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 30,
+      "linkedScenarioSlugs": [
+        "a2-reschedule-delivery-time"
+      ],
+      "linkedEventPreparationPackSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Kannst du mich gut hören?",
+          "function": "clarification",
+          "register": "informal",
+          "usageNote": "Use at the start of an online call.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": [
+            "Können Sie mich gut hören?"
+          ],
+          "translations": [
+            {
+              "language": "en",
+              "text": "Can you hear me well?"
+            },
+            {
+              "language": "fa",
+              "text": "صدای من را خوب می‌شنوی؟"
+            }
+          ]
+        },
+        {
+          "baseText": "Kannst du das bitte wiederholen?",
+          "function": "clarification",
+          "register": "informal",
+          "usageNote": "Use when audio or meaning is unclear.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": [
+            "Können Sie das bitte wiederholen?"
+          ],
+          "translations": [
+            {
+              "language": "en",
+              "text": "Can you please repeat that?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانی لطفاً آن را تکرار کنی؟"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

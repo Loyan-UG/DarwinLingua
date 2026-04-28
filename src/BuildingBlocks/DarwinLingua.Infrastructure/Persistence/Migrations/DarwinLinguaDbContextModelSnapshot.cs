@@ -17,6 +17,479 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.6");
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterLinkedEventPreparationPack", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ConversationStarterPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EventPreparationPackSlug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationStarterPackId", "EventPreparationPackSlug")
+                        .IsUnique();
+
+                    b.ToTable("ConversationStarterLinkedEventPreparationPacks", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterLinkedScenario", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ConversationStarterPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ScenarioSlug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationStarterPackId", "ScenarioSlug")
+                        .IsUnique();
+
+                    b.ToTable("ConversationStarterLinkedScenarios", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CefrLevel")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ConversationGoal")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PublicationStatus")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Situation")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tone")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Slug")
+                        .IsUnique();
+
+                    b.HasIndex("CefrLevel", "Situation", "Tone", "ConversationGoal");
+
+                    b.ToTable("ConversationStarterPacks", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPackTopic", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ConversationStarterPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsPrimary")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("TopicId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationStarterPackId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_ConversationStarterPackTopics_PrimaryPerPack")
+                        .HasFilter("\"IsPrimary\"");
+
+                    b.HasIndex("TopicId");
+
+                    b.HasIndex("ConversationStarterPackId", "TopicId")
+                        .IsUnique();
+
+                    b.ToTable("ConversationStarterPackTopics", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BaseText")
+                        .IsRequired()
+                        .HasMaxLength(1024)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CommonMistake")
+                        .HasMaxLength(1024)
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ConversationStarterPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Function")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Register")
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UsageNote")
+                        .HasMaxLength(1024)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationStarterPackId", "SortOrder")
+                        .IsUnique();
+
+                    b.ToTable("ConversationStarterPhrases", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhraseAlternative", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BaseText")
+                        .IsRequired()
+                        .HasMaxLength(1024)
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ConversationStarterPhraseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationStarterPhraseId", "SortOrder")
+                        .IsUnique();
+
+                    b.ToTable("ConversationStarterPhraseAlternatives", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhraseTranslation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ConversationStarterPhraseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LanguageCode")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationStarterPhraseId", "LanguageCode")
+                        .IsUnique();
+
+                    b.ToTable("ConversationStarterPhraseTranslations", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationLinkedConversationStarterPack", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ConversationStarterPackSlug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("EventPreparationPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventPreparationPackId", "ConversationStarterPackSlug")
+                        .IsUnique();
+
+                    b.ToTable("EventPreparationLinkedConversationStarterPacks", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationLinkedScenario", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("EventPreparationPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ScenarioSlug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventPreparationPackId", "ScenarioSlug")
+                        .IsUnique();
+
+                    b.ToTable("EventPreparationLinkedScenarios", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationPack", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CefrLevel")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EventType")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PublicationStatus")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Slug")
+                        .IsUnique();
+
+                    b.HasIndex("CefrLevel", "Category", "EventType");
+
+                    b.ToTable("EventPreparationPacks", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationPackTopic", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("EventPreparationPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsPrimary")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("TopicId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventPreparationPackId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_EventPreparationPackTopics_PrimaryPerPack")
+                        .HasFilter("\"IsPrimary\"");
+
+                    b.HasIndex("TopicId");
+
+                    b.HasIndex("EventPreparationPackId", "TopicId")
+                        .IsUnique();
+
+                    b.ToTable("EventPreparationPackTopics", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationPrompt", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("EventPreparationPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PromptType")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventPreparationPackId", "PromptType", "SortOrder")
+                        .IsUnique();
+
+                    b.ToTable("EventPreparationPrompts", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationVocabularyReference", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CefrLevel")
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("EventPreparationPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PartOfSpeech")
+                        .HasMaxLength(32)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Word")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventPreparationPackId", "SortOrder")
+                        .IsUnique();
+
+                    b.ToTable("EventPreparationVocabularyReferences", (string)null);
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ExampleSentence", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1383,6 +1856,117 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.ToTable("PracticeReviewStates", (string)null);
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterLinkedEventPreparationPack", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack", null)
+                        .WithMany("LinkedEventPreparationPacks")
+                        .HasForeignKey("ConversationStarterPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterLinkedScenario", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack", null)
+                        .WithMany("LinkedScenarios")
+                        .HasForeignKey("ConversationStarterPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPackTopic", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack", null)
+                        .WithMany("Topics")
+                        .HasForeignKey("ConversationStarterPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.Topic", null)
+                        .WithMany()
+                        .HasForeignKey("TopicId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack", null)
+                        .WithMany("Phrases")
+                        .HasForeignKey("ConversationStarterPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhraseAlternative", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase", null)
+                        .WithMany("AlternativeBaseTexts")
+                        .HasForeignKey("ConversationStarterPhraseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhraseTranslation", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase", null)
+                        .WithMany("Translations")
+                        .HasForeignKey("ConversationStarterPhraseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationLinkedConversationStarterPack", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.EventPreparationPack", null)
+                        .WithMany("LinkedConversationStarterPacks")
+                        .HasForeignKey("EventPreparationPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationLinkedScenario", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.EventPreparationPack", null)
+                        .WithMany("LinkedScenarios")
+                        .HasForeignKey("EventPreparationPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationPackTopic", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.EventPreparationPack", null)
+                        .WithMany("Topics")
+                        .HasForeignKey("EventPreparationPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.Topic", null)
+                        .WithMany()
+                        .HasForeignKey("TopicId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationPrompt", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.EventPreparationPack", null)
+                        .WithMany("Prompts")
+                        .HasForeignKey("EventPreparationPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationVocabularyReference", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.EventPreparationPack", null)
+                        .WithMany("LinkedVocabulary")
+                        .HasForeignKey("EventPreparationPackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ExampleSentence", b =>
                 {
                     b.HasOne("DarwinLingua.Catalog.Domain.Entities.WordSense", null)
@@ -1608,6 +2192,37 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasForeignKey("ContentPackageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack", b =>
+                {
+                    b.Navigation("LinkedEventPreparationPacks");
+
+                    b.Navigation("LinkedScenarios");
+
+                    b.Navigation("Phrases");
+
+                    b.Navigation("Topics");
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase", b =>
+                {
+                    b.Navigation("AlternativeBaseTexts");
+
+                    b.Navigation("Translations");
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationPack", b =>
+                {
+                    b.Navigation("LinkedConversationStarterPacks");
+
+                    b.Navigation("LinkedScenarios");
+
+                    b.Navigation("LinkedVocabulary");
+
+                    b.Navigation("Prompts");
+
+                    b.Navigation("Topics");
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ExampleSentence", b =>

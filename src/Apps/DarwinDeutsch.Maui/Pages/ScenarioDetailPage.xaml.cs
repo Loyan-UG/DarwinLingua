@@ -16,9 +16,11 @@ namespace DarwinDeutsch.Maui.Pages;
 public partial class ScenarioDetailPage : ContentPage
 {
     private readonly IScenarioLessonQueryService _scenarioLessonQueryService;
+    private readonly IConversationStarterQueryService _conversationStarterQueryService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IMobileEntitledFeatureAccessService _featureAccessService;
     private readonly ISpeechPlaybackService _speechPlaybackService;
+    private readonly ObservableCollection<ScenarioStarterPackItemViewModel> _starterPacks = [];
     private readonly ObservableCollection<ScenarioTextItemViewModel> _dialogueTurns = [];
     private readonly ObservableCollection<ScenarioPhraseItemViewModel> _phrases = [];
     private readonly ObservableCollection<ScenarioQuestionItemViewModel> _questions = [];
@@ -28,21 +30,25 @@ public partial class ScenarioDetailPage : ContentPage
 
     public ScenarioDetailPage(
         IScenarioLessonQueryService scenarioLessonQueryService,
+        IConversationStarterQueryService conversationStarterQueryService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IMobileEntitledFeatureAccessService featureAccessService,
         ISpeechPlaybackService speechPlaybackService)
     {
         ArgumentNullException.ThrowIfNull(scenarioLessonQueryService);
+        ArgumentNullException.ThrowIfNull(conversationStarterQueryService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(featureAccessService);
         ArgumentNullException.ThrowIfNull(speechPlaybackService);
 
         InitializeComponent();
         _scenarioLessonQueryService = scenarioLessonQueryService;
+        _conversationStarterQueryService = conversationStarterQueryService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _featureAccessService = featureAccessService;
         _speechPlaybackService = speechPlaybackService;
 
+        StarterPacksCollectionView.ItemsSource = _starterPacks;
         DialogueTurnsCollectionView.ItemsSource = _dialogueTurns;
         PhrasesCollectionView.ItemsSource = _phrases;
         QuestionsCollectionView.ItemsSource = _questions;
@@ -107,11 +113,20 @@ public partial class ScenarioDetailPage : ContentPage
                 cancellationToken)
             .ConfigureAwait(true);
 
-        ShowScenario(scenario);
+        IReadOnlyList<ConversationStarterPackListItemModel> relatedStarterPacks = scenario is null
+            ? []
+            : await _conversationStarterQueryService
+                .GetPublishedStarterPacksForScenarioAsync(ScenarioSlug, cancellationToken)
+                .ConfigureAwait(true);
+
+        ShowScenario(scenario, relatedStarterPacks);
     }
 
-    private void ShowScenario(ScenarioLessonDetailModel? scenario)
+    private void ShowScenario(
+        ScenarioLessonDetailModel? scenario,
+        IReadOnlyList<ConversationStarterPackListItemModel>? relatedStarterPacks = null)
     {
+        _starterPacks.Clear();
         _dialogueTurns.Clear();
         _phrases.Clear();
         _questions.Clear();
@@ -121,6 +136,7 @@ public partial class ScenarioDetailPage : ContentPage
             LoadingStateView.IsLoading = false;
             ContentScrollView.IsVisible = true;
             EmptyStateLabel.IsVisible = true;
+            StarterPacksSection.IsVisible = false;
             DialogueSection.IsVisible = false;
             PhrasesSection.IsVisible = false;
             QuestionsSection.IsVisible = false;
@@ -132,6 +148,15 @@ public partial class ScenarioDetailPage : ContentPage
         HeadlineLabel.Text = scenario.Title;
         DescriptionLabel.Text = scenario.Description;
         GoalLabel.Text = scenario.LearnerGoal;
+
+        foreach (ConversationStarterPackListItemModel starterPack in relatedStarterPacks ?? [])
+        {
+            _starterPacks.Add(new ScenarioStarterPackItemViewModel(
+                starterPack.Slug,
+                starterPack.Title,
+                starterPack.Description,
+                $"{starterPack.CefrLevel} • {starterPack.Situation} • {starterPack.Tone}"));
+        }
 
         foreach (ScenarioDialogueTurnModel turn in scenario.DialogueTurns)
         {
@@ -167,12 +192,32 @@ public partial class ScenarioDetailPage : ContentPage
                 string.Join(Environment.NewLine, question.Answers.Select(BuildAnswerLine))));
         }
 
+        StarterPacksSection.IsVisible = _starterPacks.Count > 0;
         DialogueSection.IsVisible = _dialogueTurns.Count > 0;
         PhrasesSection.IsVisible = _phrases.Count > 0;
         QuestionsSection.IsVisible = _questions.Count > 0;
         EmptyStateLabel.IsVisible = false;
         ContentScrollView.IsVisible = true;
         LoadingStateView.IsLoading = false;
+    }
+
+    private async void OnStarterPacksSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.FirstOrDefault() is not ScenarioStarterPackItemViewModel selectedStarterPack)
+        {
+            return;
+        }
+
+        StarterPacksCollectionView.SelectedItem = null;
+        string escapedSlug = Uri.EscapeDataString(selectedStarterPack.Slug);
+
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(ConversationStarterDetailPage)}?starterPackSlug={escapedSlug}").ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
     private async void OnSpeakItemClicked(object? sender, EventArgs e)
@@ -254,6 +299,12 @@ public partial class ScenarioDetailPage : ContentPage
         bool HasPrimaryMeaning,
         string SecondaryMeaning,
         bool HasSecondaryMeaning);
+
+    private sealed record ScenarioStarterPackItemViewModel(
+        string Slug,
+        string Title,
+        string Description,
+        string MetadataLine);
 
     private sealed record ScenarioPhraseItemViewModel(
         string BaseText,

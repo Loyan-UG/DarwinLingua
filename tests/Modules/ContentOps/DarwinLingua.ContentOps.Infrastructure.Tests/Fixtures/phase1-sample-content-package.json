@@ -457,5 +457,36 @@
         }
       ]
     }
+  ],
+  "conversationStarterPacks": [
+    {
+      "slug": "a1-bakery-order-starters",
+      "title": "Bakery Order Starters",
+      "description": "Simple openers for ordering politely in a bakery.",
+      "cefrLevel": "A1",
+      "category": "shopping-and-food",
+      "situation": "cafe",
+      "tone": "friendly",
+      "conversationGoal": "asking-questions",
+      "topics": ["shopping"],
+      "sortOrder": 10,
+      "linkedScenarioSlugs": ["a1-buy-bread-test"],
+      "linkedEventPreparationPackSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Guten Tag, ich möchte ein Brot.",
+          "function": "opening",
+          "register": "neutral",
+          "usageNote": "Use as a polite first line at the counter.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": ["Hallo, ich möchte ein Brot."],
+          "commonMistake": "Use möchte for a polite request.",
+          "translations": [
+            { "language": "en", "text": "Hello, I would like one bread." },
+            { "language": "fa", "text": "سلام، من یک نان می‌خواهم." }
+          ]
+        }
+      ]
+    }
   ]
 }

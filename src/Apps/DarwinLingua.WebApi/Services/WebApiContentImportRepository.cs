@@ -112,12 +112,16 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
         IReadOnlyList<ScenarioLesson> importedScenarios,
+        IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
+        IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(contentPackage);
         ArgumentNullException.ThrowIfNull(importedWords);
         ArgumentNullException.ThrowIfNull(importedCollections);
         ArgumentNullException.ThrowIfNull(importedScenarios);
+        ArgumentNullException.ThrowIfNull(importedConversationStarterPacks);
+        ArgumentNullException.ThrowIfNull(importedEventPreparationPacks);
 
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         await using Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
@@ -188,6 +192,50 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
             }
 
             dbContext.ScenarioLessons.AddRange(importedScenarios);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedConversationStarterPacks.Count > 0)
+        {
+            string[] importedSlugs = importedConversationStarterPacks
+                .Select(item => item.Slug)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            List<ConversationStarterPack> existingStarterPacks = await dbContext.ConversationStarterPacks
+                .Where(pack => importedSlugs.Contains(pack.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            if (existingStarterPacks.Count > 0)
+            {
+                dbContext.ConversationStarterPacks.RemoveRange(existingStarterPacks);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.ConversationStarterPacks.AddRange(importedConversationStarterPacks);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedEventPreparationPacks.Count > 0)
+        {
+            string[] importedSlugs = importedEventPreparationPacks
+                .Select(item => item.Slug)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            List<EventPreparationPack> existingEventPreparationPacks = await dbContext.EventPreparationPacks
+                .Where(pack => importedSlugs.Contains(pack.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            if (existingEventPreparationPacks.Count > 0)
+            {
+                dbContext.EventPreparationPacks.RemoveRange(existingEventPreparationPacks);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.EventPreparationPacks.AddRange(importedEventPreparationPacks);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 

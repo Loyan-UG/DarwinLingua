@@ -96,6 +96,7 @@ public sealed class ServerCatalogImportServiceTests
                              .CreateDbContextAsync())
             {
                 Assert.Equal(12, await catalogDbContext.WordEntries.CountAsync());
+                Assert.Single(await catalogDbContext.ConversationStarterPacks.ToListAsync());
                 Assert.Single(await catalogDbContext.ContentPackages.ToListAsync());
             }
 
@@ -113,10 +114,15 @@ public sealed class ServerCatalogImportServiceTests
             JsonElement fullCatalogScenarios = fullCatalogJson.RootElement.GetProperty("Scenarios");
             Assert.Equal(1, fullCatalogScenarios.GetArrayLength());
             Assert.Equal("a1-buy-bread-test", fullCatalogScenarios[0].GetProperty("Slug").GetString());
+            JsonElement fullCatalogStarterPacks = fullCatalogJson.RootElement.GetProperty("ConversationStarterPacks");
+            Assert.Equal(1, fullCatalogStarterPacks.GetArrayLength());
+            Assert.Equal("a1-bakery-order-starters", fullCatalogStarterPacks[0].GetProperty("Slug").GetString());
+            Assert.Equal("a1-buy-bread-test", fullCatalogStarterPacks[0].GetProperty("LinkedScenarioSlugs")[0].GetString());
 
             string a1CatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.StagedPackageIds.Single(packageId => packageId.Contains("catalog-a1", StringComparison.Ordinal)));
             using JsonDocument a1CatalogJson = JsonDocument.Parse(await File.ReadAllTextAsync($"{a1CatalogPath}.json"));
             Assert.Equal(1, a1CatalogJson.RootElement.GetProperty("Scenarios").GetArrayLength());
+            Assert.Equal(1, a1CatalogJson.RootElement.GetProperty("ConversationStarterPacks").GetArrayLength());
 
             await using (AsyncServiceScope publishScope = serviceProvider.CreateAsyncScope())
             {

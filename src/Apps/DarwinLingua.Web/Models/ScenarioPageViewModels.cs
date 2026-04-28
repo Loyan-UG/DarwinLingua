@@ -7,5 +7,6 @@ public sealed record ScenarioIndexPageViewModel(
 
 public sealed record ScenarioDetailPageViewModel(
     ScenarioLessonDetailModel Scenario,
+    IReadOnlyList<ConversationStarterPackListItemModel> RelatedStarterPacks,
     string PrimaryMeaningLanguageCode,
     string? SecondaryMeaningLanguageCode);

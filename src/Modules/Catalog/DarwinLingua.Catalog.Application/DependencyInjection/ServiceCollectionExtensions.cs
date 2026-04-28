@@ -23,6 +23,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ITopicQueryService, TopicQueryService>();
         services.AddScoped<IWordCollectionQueryService, WordCollectionQueryService>();
         services.AddScoped<IScenarioLessonQueryService, ScenarioLessonQueryService>();
+        services.AddScoped<IConversationStarterQueryService, ConversationStarterQueryService>();
+        services.AddScoped<IEventPreparationQueryService, EventPreparationQueryService>();
         services.AddScoped<WordDetailQueryService>();
         services.AddScoped<IWordDetailQueryService, CachedWordDetailQueryService>();
         services.AddScoped<IWordQueryService, WordQueryService>();

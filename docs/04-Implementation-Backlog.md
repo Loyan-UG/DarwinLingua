@@ -529,7 +529,7 @@ Examples:
 - [x] review the existing meaning-language preference model and confirm it supports exactly one or two active meaning languages cleanly
 - [x] define UI rules for primary and secondary meaning languages
 - [x] add compact and expanded translation display modes where needed
-- [ ] ensure word details, examples, scenario lessons, and conversation starters can display two meaning languages consistently
+- [x] ensure word details, examples, scenario lessons, and conversation starters can display two meaning languages consistently
 - [x] add validation rules for missing translations in one of the selected meaning languages
 - [x] add fallback rules when the secondary meaning language is unavailable
 - [x] add tests for dual-language selection and rendering decisions
@@ -611,15 +611,18 @@ Help learners start and continue real conversations.
 
 #### Backlog
 
-- [ ] define `ConversationStarterPack` content contract
-- [ ] define `ConversationStarterPhrase` content contract
-- [ ] define starter categories and filters
-- [ ] support starter packs inside scenario lessons
-- [ ] support standalone starter packs
-- [ ] add mobile browsing and detail UI for starter packs
+- [x] define `ConversationStarterPack` content contract
+- [x] define `ConversationStarterPhrase` content contract
+- [x] define starter categories and filters
+- [x] support starter packs inside scenario lessons
+- [x] support standalone starter packs
+  - Progress: content contract, parser model support, import-boundary validation, persistence, catalog queries, WebApi endpoints, web/mobile UI, and mobile package export for `conversationStarterPacks` are implemented.
+- [x] add mobile browsing and detail UI for starter packs
 - [ ] connect starter packs to event preparation packs
+  - Progress: starter packs already accept and persist `linkedEventPreparationPackSlugs`; event-preparation packs now accept reciprocal `linkedConversationStarterPackSlugs` at the content-contract/parser/validation boundary. Keep open until event-preparation packs are persisted and queryable.
 - [ ] add tests for starter filtering and dual-language rendering
-- [ ] add sample starter packs for conversation cafes, workplace small talk, and first meetings
+  - Progress: parser contract, invalid-contract validation, persistence, query filtering, scenario-link query coverage, dual-language query coverage, and web/mobile rendering implementation exist; keep open until explicit UI rendering tests are implemented.
+- [x] add sample starter packs for conversation cafes, workplace small talk, and first meetings
 
 ---
 
@@ -716,14 +719,18 @@ Each event can have:
 
 #### Backlog
 
-- [ ] define `EventPreparationPack` content model
-- [ ] allow preparation packs to link to existing scenario lessons
-- [ ] allow preparation packs to link to vocabulary entries
-- [ ] allow preparation packs to link to conversation starter packs
+- [x] define `EventPreparationPack` content package contract and parsed import model
+- [x] allow preparation packs to link to existing scenario lessons at the content-contract/parser/validation boundary
+- [x] allow preparation packs to link to vocabulary entries at the content-contract/parser/validation boundary
+- [x] allow preparation packs to link to conversation starter packs at the content-contract/parser/validation boundary
+- [x] persist `EventPreparationPack` catalog records
+- [x] query `EventPreparationPack` catalog records
+- [x] expose read-only WebApi endpoints for event preparation packs
 - [ ] show preparation packs on event detail screens
 - [ ] add `Prepare for this event` action
 - [ ] track preparation-pack completion if useful
 - [ ] add tests for event-to-pack mapping
+  - Progress: parser coverage, invalid-contract application validation, EF persistence, migration coverage, positive import persistence tests, query filtering, scenario-link query, and detail query tests exist. UI mapping tests remain open until web/mobile screens are added.
 
 ---
 

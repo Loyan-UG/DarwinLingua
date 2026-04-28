@@ -24,6 +24,26 @@
     }
 </section>
 
+@if (Model.RelatedStarterPacks.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Conversation starters</h2>
+        <div class="grid-two-col">
+            @foreach (var starterPack in Model.RelatedStarterPacks)
+            {
+                <article class="panel stack-md">
+                    <span class="eyebrow">@starterPack.CefrLevel · @starterPack.Situation · @starterPack.Tone</span>
+                    <h3 class="headline-sm">
+                        <a asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
+                    </h3>
+                    <p>@starterPack.Description</p>
+                    <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">Open starters</a>
+                </article>
+            }
+        </div>
+    </section>
+}
+
 @if (Model.Scenario.DialogueTurns.Count > 0)
 {
     <section class="panel stack-md">

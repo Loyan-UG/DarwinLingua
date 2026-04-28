@@ -16,4 +16,14 @@ public sealed record ParsedContentPackageModel(
     /// Gets parsed scenario lessons included in the package.
     /// </summary>
     public IReadOnlyList<ParsedScenarioLessonModel> Scenarios { get; init; } = [];
+
+    /// <summary>
+    /// Gets parsed conversation starter packs included in the package.
+    /// </summary>
+    public IReadOnlyList<ParsedConversationStarterPackModel> ConversationStarterPacks { get; init; } = [];
+
+    /// <summary>
+    /// Gets parsed event preparation packs included in the package.
+    /// </summary>
+    public IReadOnlyList<ParsedEventPreparationPackModel> EventPreparationPacks { get; init; } = [];
 }

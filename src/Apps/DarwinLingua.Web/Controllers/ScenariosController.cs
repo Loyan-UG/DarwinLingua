@@ -50,8 +50,13 @@ public sealed class ScenariosController(
             return NotFound();
         }
 
+        IReadOnlyList<ConversationStarterPackListItemModel> relatedStarterPacks = await catalogApiClient
+            .GetConversationStarterPacksForScenarioAsync(slug, cancellationToken)
+            .ConfigureAwait(false);
+
         return View(new ScenarioDetailPageViewModel(
             scenario,
+            relatedStarterPacks,
             profile.PreferredMeaningLanguage1,
             effectiveSecondaryMeaningLanguageCode));
     }

@@ -1,5 +1,6 @@
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.DependencyInjection;
+using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -284,6 +285,65 @@ app.MapGet(
     async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, IScenarioLessonQueryService scenarioQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await scenarioQueryService.GetPublishedScenarioBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/conversation-starters",
+    async (
+        string? cefrLevel,
+        string? situation,
+        string? tone,
+        string? conversationGoal,
+        string? topicKey,
+        IConversationStarterQueryService conversationStarterQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationStarterQueryService.GetPublishedStarterPacksAsync(
+                    new ConversationStarterListFilterModel(cefrLevel, situation, tone, conversationGoal, topicKey),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/scenarios/{slug}/conversation-starters",
+    async (string slug, IConversationStarterQueryService conversationStarterQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationStarterQueryService.GetPublishedStarterPacksForScenarioAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/conversation-starters/{slug}",
+    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, IConversationStarterQueryService conversationStarterQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationStarterQueryService.GetPublishedStarterPackBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/event-preparation-packs",
+    async (
+        string? cefrLevel,
+        string? category,
+        string? eventType,
+        string? topicKey,
+        IEventPreparationQueryService eventPreparationQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksAsync(
+                    new EventPreparationListFilterModel(cefrLevel, category, eventType, topicKey),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/scenarios/{slug}/event-preparation-packs",
+    async (string slug, IEventPreparationQueryService eventPreparationQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksForScenarioAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/event-preparation-packs/{slug}",
+    async (string slug, IEventPreparationQueryService eventPreparationQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await eventPreparationQueryService.GetPublishedEventPreparationPackBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

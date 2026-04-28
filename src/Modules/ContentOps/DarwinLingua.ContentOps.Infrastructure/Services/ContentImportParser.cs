@@ -52,6 +52,8 @@ internal sealed class ContentImportParser : IContentImportParser
             (document.Collections ?? []).Select(Map).ToArray())
         {
             Scenarios = (document.Scenarios ?? []).Select(Map).ToArray(),
+            ConversationStarterPacks = (document.ConversationStarterPacks ?? []).Select(Map).ToArray(),
+            EventPreparationPacks = (document.EventPreparationPacks ?? []).Select(Map).ToArray(),
         };
 
         return Task.FromResult(parsedPackage);
@@ -154,6 +156,54 @@ internal sealed class ContentImportParser : IContentImportParser
                     answer.Feedback)).ToArray())).ToArray());
     }
 
+    private static ParsedConversationStarterPackModel Map(ConversationStarterPackDocument pack)
+    {
+        return new ParsedConversationStarterPackModel(
+            pack.Slug ?? string.Empty,
+            pack.Title ?? string.Empty,
+            pack.Description ?? string.Empty,
+            pack.CefrLevel ?? string.Empty,
+            pack.Category ?? string.Empty,
+            pack.Situation ?? string.Empty,
+            pack.Tone ?? string.Empty,
+            pack.ConversationGoal ?? string.Empty,
+            (pack.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            pack.SortOrder ?? 0,
+            (pack.LinkedScenarioSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (pack.LinkedEventPreparationPackSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (pack.Phrases ?? []).Select(phrase => new ParsedConversationStarterPhraseModel(
+                phrase.BaseText ?? string.Empty,
+                phrase.Function ?? string.Empty,
+                MapTranslations(phrase.Translations),
+                phrase.UsageNote,
+                phrase.Register,
+                phrase.SortOrder ?? 0,
+            (phrase.AlternativeBaseTexts ?? []).Select(text => text ?? string.Empty).ToArray(),
+            phrase.CommonMistake)).ToArray());
+    }
+
+    private static ParsedEventPreparationPackModel Map(EventPreparationPackDocument pack)
+    {
+        return new ParsedEventPreparationPackModel(
+            pack.Slug ?? string.Empty,
+            pack.Title ?? string.Empty,
+            pack.Description ?? string.Empty,
+            pack.CefrLevel ?? string.Empty,
+            pack.Category ?? string.Empty,
+            pack.EventType ?? string.Empty,
+            (pack.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            pack.SortOrder ?? 0,
+            (pack.LinkedScenarioSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (pack.LinkedVocabulary ?? []).Select(reference => new ParsedEventPreparationVocabularyReferenceModel(
+                reference.Word ?? string.Empty,
+                reference.PartOfSpeech,
+                reference.CefrLevel)).ToArray(),
+            (pack.LinkedConversationStarterPackSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (pack.OpeningPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray(),
+            (pack.RoleplayPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray(),
+            (pack.ReviewPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray());
+    }
+
     private static ParsedContentMeaningModel[] MapTranslations(ContentMeaningDocument[]? translations)
     {
         return (translations ?? [])
@@ -180,6 +230,10 @@ internal sealed class ContentImportParser : IContentImportParser
         public ContentCollectionDocument[]? Collections { get; set; }
 
         public ScenarioLessonDocument[]? Scenarios { get; set; }
+
+        public ConversationStarterPackDocument[]? ConversationStarterPacks { get; set; }
+
+        public EventPreparationPackDocument[]? EventPreparationPacks { get; set; }
     }
 
     private sealed class ContentEntryDocument
@@ -364,5 +418,93 @@ internal sealed class ContentImportParser : IContentImportParser
         public bool? IsCorrect { get; set; }
 
         public string? Feedback { get; set; }
+    }
+
+    private sealed class ConversationStarterPackDocument
+    {
+        public string? Slug { get; set; }
+
+        public string? Title { get; set; }
+
+        public string? Description { get; set; }
+
+        public string? CefrLevel { get; set; }
+
+        public string? Category { get; set; }
+
+        public string? Situation { get; set; }
+
+        public string? Tone { get; set; }
+
+        public string? ConversationGoal { get; set; }
+
+        public string?[]? Topics { get; set; }
+
+        public int? SortOrder { get; set; }
+
+        public string?[]? LinkedScenarioSlugs { get; set; }
+
+        public string?[]? LinkedEventPreparationPackSlugs { get; set; }
+
+        public ConversationStarterPhraseDocument[]? Phrases { get; set; }
+    }
+
+    private sealed class ConversationStarterPhraseDocument
+    {
+        public string? BaseText { get; set; }
+
+        public string? Function { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+
+        public string? UsageNote { get; set; }
+
+        public string? Register { get; set; }
+
+        public int? SortOrder { get; set; }
+
+        public string?[]? AlternativeBaseTexts { get; set; }
+
+        public string? CommonMistake { get; set; }
+    }
+
+    private sealed class EventPreparationPackDocument
+    {
+        public string? Slug { get; set; }
+
+        public string? Title { get; set; }
+
+        public string? Description { get; set; }
+
+        public string? CefrLevel { get; set; }
+
+        public string? Category { get; set; }
+
+        public string? EventType { get; set; }
+
+        public string?[]? Topics { get; set; }
+
+        public int? SortOrder { get; set; }
+
+        public string?[]? LinkedScenarioSlugs { get; set; }
+
+        public EventPreparationVocabularyReferenceDocument[]? LinkedVocabulary { get; set; }
+
+        public string?[]? LinkedConversationStarterPackSlugs { get; set; }
+
+        public string?[]? OpeningPrompts { get; set; }
+
+        public string?[]? RoleplayPrompts { get; set; }
+
+        public string?[]? ReviewPrompts { get; set; }
+    }
+
+    private sealed class EventPreparationVocabularyReferenceDocument
+    {
+        public string? Word { get; set; }
+
+        public string? PartOfSpeech { get; set; }
+
+        public string? CefrLevel { get; set; }
     }
 }

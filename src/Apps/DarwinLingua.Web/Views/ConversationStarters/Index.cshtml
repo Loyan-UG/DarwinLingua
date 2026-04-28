@@ -1,0 +1,78 @@
+@model DarwinLingua.Web.Models.ConversationStarterIndexPageViewModel
+@{
+    ViewData["Title"] = "Conversation Starters";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Conversation starters</span>
+    <h1 class="headline-md">Openers for real conversations</h1>
+    <p class="body-lg">Practice short German phrases by situation, tone, goal, and topic.</p>
+</section>
+
+<section class="panel stack-md">
+    <form class="filter-bar" method="get">
+        <label>
+            <span>CEFR</span>
+            <select name="cefrLevel">
+                <option value="">All</option>
+                @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
+                {
+                    <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                }
+            </select>
+        </label>
+        <label>
+            <span>Situation</span>
+            <input name="situation" value="@Model.Filter.Situation" placeholder="cafe" />
+        </label>
+        <label>
+            <span>Tone</span>
+            <input name="tone" value="@Model.Filter.Tone" placeholder="friendly" />
+        </label>
+        <label>
+            <span>Goal</span>
+            <input name="conversationGoal" value="@Model.Filter.ConversationGoal" placeholder="introduction" />
+        </label>
+        <label>
+            <span>Topic</span>
+            <input name="topicKey" value="@Model.Filter.TopicKey" placeholder="everyday-life" />
+        </label>
+        <button class="button button--secondary" type="submit">Filter</button>
+    </form>
+</section>
+
+@if (Model.StarterPacks.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No starter packs available", "Import conversation starter packs into the shared catalog to make them available here.")' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var starterPack in Model.StarterPacks)
+        {
+            <article class="panel stack-md">
+                <div class="action-row collection-card__meta">
+                    <span class="eyebrow">@starterPack.CefrLevel · @starterPack.Situation · @starterPack.Tone</span>
+                    <span>@starterPack.TopicKeys.Count topics</span>
+                </div>
+                <h2 class="headline-sm">
+                    <a asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
+                </h2>
+                <p>@starterPack.Description</p>
+                <p class="body-lg">@starterPack.ConversationGoal</p>
+                @if (starterPack.TopicKeys.Count > 0)
+                {
+                    <div class="chip-grid">
+                        @foreach (string topicKey in starterPack.TopicKeys)
+                        {
+                            <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+                        }
+                    </div>
+                }
+                <div class="action-row">
+                    <a class="button button--secondary" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">Open starters</a>
+                </div>
+            </article>
+        }
+    </section>
+}

@@ -71,6 +71,8 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(CollectionWordsPage), typeof(CollectionWordsPage));
         Routing.RegisterRoute(nameof(ScenariosPage), typeof(ScenariosPage));
         Routing.RegisterRoute(nameof(ScenarioDetailPage), typeof(ScenarioDetailPage));
+        Routing.RegisterRoute(nameof(ConversationStartersPage), typeof(ConversationStartersPage));
+        Routing.RegisterRoute(nameof(ConversationStarterDetailPage), typeof(ConversationStarterDetailPage));
         Routing.RegisterRoute(nameof(CefrWordsPage), typeof(CefrWordsPage));
         Routing.RegisterRoute(nameof(SearchWordsPage), typeof(SearchWordsPage));
         Routing.RegisterRoute(nameof(WordDetailPage), typeof(WordDetailPage));

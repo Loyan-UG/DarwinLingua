@@ -120,6 +120,18 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<ScenarioAnswer> ScenarioAnswers => Set<ScenarioAnswer>();
 
+    public DbSet<ConversationStarterPack> ConversationStarterPacks => Set<ConversationStarterPack>();
+
+    public DbSet<ConversationStarterPackTopic> ConversationStarterPackTopics => Set<ConversationStarterPackTopic>();
+
+    public DbSet<ConversationStarterPhrase> ConversationStarterPhrases => Set<ConversationStarterPhrase>();
+
+    public DbSet<EventPreparationPack> EventPreparationPacks => Set<EventPreparationPack>();
+
+    public DbSet<EventPreparationPackTopic> EventPreparationPackTopics => Set<EventPreparationPackTopic>();
+
+    public DbSet<EventPreparationPrompt> EventPreparationPrompts => Set<EventPreparationPrompt>();
+
     /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
@@ -183,6 +195,19 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ScenarioQuestionTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new ScenarioAnswerConfiguration());
         modelBuilder.ApplyConfiguration(new ScenarioAnswerTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterPackConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterPackTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterLinkedScenarioConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterLinkedEventPreparationPackConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterPhraseConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterPhraseTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterPhraseAlternativeConfiguration());
+        modelBuilder.ApplyConfiguration(new EventPreparationPackConfiguration());
+        modelBuilder.ApplyConfiguration(new EventPreparationPackTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new EventPreparationLinkedScenarioConfiguration());
+        modelBuilder.ApplyConfiguration(new EventPreparationLinkedConversationStarterPackConfiguration());
+        modelBuilder.ApplyConfiguration(new EventPreparationVocabularyReferenceConfiguration());
+        modelBuilder.ApplyConfiguration(new EventPreparationPromptConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

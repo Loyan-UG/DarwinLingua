@@ -401,6 +401,175 @@ public sealed class ContentImportServiceTests
     }
 
     /// <summary>
+    /// Verifies that valid conversation starter packs are persisted and queryable with dual meaning-language fallback.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldPersistConversationStarterPacks()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            await File.WriteAllTextAsync(packagePath, CreatePackageWithConversationStarterJson("a1-starter-import-test"));
+
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult result = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
+
+            Assert.True(result.IsSuccess);
+            Assert.Equal(1, result.ImportedEntries);
+
+            await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
+                .GetRequiredService<Microsoft.EntityFrameworkCore.IDbContextFactory<DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext>>()
+                .CreateDbContext();
+
+            DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack pack = Assert.Single(dbContext.ConversationStarterPacks
+                .Include(starter => starter.Topics)
+                .Include(starter => starter.LinkedScenarios)
+                .Include(starter => starter.LinkedEventPreparationPacks)
+                .Include(starter => starter.Phrases).ThenInclude(phrase => phrase.Translations)
+                .Include(starter => starter.Phrases).ThenInclude(phrase => phrase.AlternativeBaseTexts));
+
+            Assert.Equal("a1-cafe-first-meeting", pack.Slug);
+            Assert.Single(pack.Topics);
+            Assert.Equal("doctor-appointment-a1", Assert.Single(pack.LinkedScenarios).ScenarioSlug);
+            DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase phrase = Assert.Single(pack.Phrases);
+            Assert.Equal("opening", phrase.Function);
+            Assert.Equal("Hallo, ich heisse Sara.", Assert.Single(phrase.AlternativeBaseTexts).BaseText);
+            Assert.Equal(2, phrase.Translations.Count);
+
+            IConversationStarterQueryService queryService = serviceProvider.GetRequiredService<IConversationStarterQueryService>();
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel> starterPacks =
+                await queryService.GetPublishedStarterPacksAsync(
+                    new DarwinLingua.Catalog.Application.Models.ConversationStarterListFilterModel("A1", "cafe", "friendly", "introduction", "everyday-life"),
+                    CancellationToken.None);
+
+            DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel listItem = Assert.Single(starterPacks);
+            Assert.Equal("a1-cafe-first-meeting", listItem.Slug);
+            Assert.Equal(["doctor-appointment-a1"], listItem.LinkedScenarioSlugs);
+
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel> scenarioStarterPacks =
+                await queryService.GetPublishedStarterPacksForScenarioAsync("doctor-appointment-a1", CancellationToken.None);
+            Assert.Equal("a1-cafe-first-meeting", Assert.Single(scenarioStarterPacks).Slug);
+
+            DarwinLingua.Catalog.Application.Models.ConversationStarterPackDetailModel? detail =
+                await queryService.GetPublishedStarterPackBySlugAsync(
+                    "a1-cafe-first-meeting",
+                    "fa",
+                    "en",
+                    CancellationToken.None);
+
+            Assert.NotNull(detail);
+            DarwinLingua.Catalog.Application.Models.ConversationStarterPhraseModel detailPhrase = Assert.Single(detail!.Phrases);
+            Assert.Equal("سلام، اسم من سارا است.", detailPhrase.PrimaryMeaning);
+            Assert.Equal("Hello, my name is Sara.", detailPhrase.SecondaryMeaning);
+            Assert.Equal(["Hallo, ich heisse Sara."], detailPhrase.AlternativeBaseTexts);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(packagePath))
+            {
+                File.Delete(packagePath);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Verifies that valid event preparation packs are persisted with links and prompt groups.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldPersistEventPreparationPacks()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            await File.WriteAllTextAsync(packagePath, CreatePackageWithEventPreparationJson("a1-event-preparation-import-test"));
+
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult result = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
+
+            Assert.True(result.IsSuccess);
+            Assert.Equal(1, result.ImportedEntries);
+
+            await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
+                .GetRequiredService<Microsoft.EntityFrameworkCore.IDbContextFactory<DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext>>()
+                .CreateDbContext();
+
+            DarwinLingua.Catalog.Domain.Entities.EventPreparationPack pack = Assert.Single(dbContext.EventPreparationPacks
+                .Include(item => item.Topics)
+                .Include(item => item.LinkedScenarios)
+                .Include(item => item.LinkedConversationStarterPacks)
+                .Include(item => item.LinkedVocabulary)
+                .Include(item => item.Prompts));
+
+            Assert.Equal("a1-first-cafe-event", pack.Slug);
+            Assert.Single(pack.Topics);
+            Assert.Equal("cafe-first-meeting-a1", Assert.Single(pack.LinkedScenarios).ScenarioSlug);
+            Assert.Equal("a1-cafe-first-meeting", Assert.Single(pack.LinkedConversationStarterPacks).ConversationStarterPackSlug);
+            Assert.Equal("Name", Assert.Single(pack.LinkedVocabulary).Word);
+            Assert.Equal(3, pack.Prompts.Count);
+            Assert.Contains(pack.Prompts, prompt => prompt.PromptType == "opening" && prompt.Text == "Say your name and ask for the other person's name.");
+            Assert.Contains(pack.Prompts, prompt => prompt.PromptType == "roleplay" && prompt.Text == "Start a two-minute cafe introduction.");
+            Assert.Contains(pack.Prompts, prompt => prompt.PromptType == "review" && prompt.Text == "Write one phrase you want to reuse.");
+
+            IEventPreparationQueryService queryService = serviceProvider.GetRequiredService<IEventPreparationQueryService>();
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel> eventPreparationPacks =
+                await queryService.GetPublishedEventPreparationPacksAsync(
+                    new DarwinLingua.Catalog.Application.Models.EventPreparationListFilterModel("A1", "social-event", "conversation-cafe", "everyday-life"),
+                    CancellationToken.None);
+
+            DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel listItem = Assert.Single(eventPreparationPacks);
+            Assert.Equal("a1-first-cafe-event", listItem.Slug);
+            Assert.Equal(["cafe-first-meeting-a1"], listItem.LinkedScenarioSlugs);
+            Assert.Equal(["a1-cafe-first-meeting"], listItem.LinkedConversationStarterPackSlugs);
+
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel> scenarioPreparationPacks =
+                await queryService.GetPublishedEventPreparationPacksForScenarioAsync("cafe-first-meeting-a1", CancellationToken.None);
+            Assert.Equal("a1-first-cafe-event", Assert.Single(scenarioPreparationPacks).Slug);
+
+            DarwinLingua.Catalog.Application.Models.EventPreparationPackDetailModel? detail =
+                await queryService.GetPublishedEventPreparationPackBySlugAsync("a1-first-cafe-event", CancellationToken.None);
+
+            Assert.NotNull(detail);
+            Assert.Equal("Name", Assert.Single(detail!.LinkedVocabulary).Word);
+            Assert.Equal(3, detail.Prompts.Count);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(packagePath))
+            {
+                File.Delete(packagePath);
+            }
+        }
+    }
+
+    /// <summary>
     /// Verifies that the Phase 1 sample package imports successfully into a freshly initialized database.
     /// </summary>
     [Fact]
@@ -850,6 +1019,127 @@ public sealed class ContentImportServiceTests
                       ]
                     }
                   ]
+                }
+              ]
+            }
+            """;
+    }
+
+    private static string CreatePackageWithConversationStarterJson(string packageId)
+    {
+        return $$"""
+            {
+              "packageVersion": "1.0",
+              "packageId": "{{packageId}}",
+              "packageName": "A1 Conversation Starter Import Test",
+              "source": "Hybrid",
+              "defaultMeaningLanguages": ["en", "fa"],
+              "entries": [
+                {
+                  "word": "Name",
+                  "language": "de",
+                  "cefrLevel": "A1",
+                  "partOfSpeech": "Noun",
+                  "article": "der",
+                  "topics": ["everyday-life"],
+                  "meanings": [
+                    { "language": "en", "text": "name" },
+                    { "language": "fa", "text": "اسم" }
+                  ],
+                  "examples": [
+                    {
+                      "baseText": "Mein Name ist Sara.",
+                      "translations": [
+                        { "language": "en", "text": "My name is Sara." },
+                        { "language": "fa", "text": "اسم من سارا است." }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "conversationStarterPacks": [
+                {
+                  "slug": "a1-cafe-first-meeting",
+                  "title": "Cafe First Meeting",
+                  "description": "Simple phrases for starting a friendly first conversation in a cafe.",
+                  "cefrLevel": "A1",
+                  "category": "first-meetings",
+                  "situation": "cafe",
+                  "tone": "friendly",
+                  "conversationGoal": "introduction",
+                  "topics": ["everyday-life"],
+                  "sortOrder": 1,
+                  "linkedScenarioSlugs": ["doctor-appointment-a1"],
+                  "linkedEventPreparationPackSlugs": ["a1-first-cafe-event"],
+                  "phrases": [
+                    {
+                      "baseText": "Hallo, ich heisse Sara.",
+                      "function": "opening",
+                      "register": "neutral",
+                      "usageNote": "Use this as a simple first introduction.",
+                      "sortOrder": 1,
+                      "alternativeBaseTexts": ["Hallo, ich heisse Sara."],
+                      "commonMistake": "Do not omit ich in a full sentence.",
+                      "translations": [
+                        { "language": "en", "text": "Hello, my name is Sara." },
+                        { "language": "fa", "text": "سلام، اسم من سارا است." }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            """;
+    }
+
+    private static string CreatePackageWithEventPreparationJson(string packageId)
+    {
+        return $$"""
+            {
+              "packageVersion": "1.0",
+              "packageId": "{{packageId}}",
+              "packageName": "A1 Event Preparation Import Test",
+              "source": "Hybrid",
+              "defaultMeaningLanguages": ["en"],
+              "entries": [
+                {
+                  "word": "Name",
+                  "language": "de",
+                  "cefrLevel": "A1",
+                  "partOfSpeech": "Noun",
+                  "article": "der",
+                  "topics": ["everyday-life"],
+                  "meanings": [
+                    { "language": "en", "text": "name" }
+                  ],
+                  "examples": [
+                    {
+                      "baseText": "Mein Name ist Sara.",
+                      "translations": [
+                        { "language": "en", "text": "My name is Sara." }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "eventPreparationPacks": [
+                {
+                  "slug": "a1-first-cafe-event",
+                  "title": "First Cafe Event",
+                  "description": "Prepare for a short first conversation at a cafe event.",
+                  "cefrLevel": "A1",
+                  "category": "social-event",
+                  "eventType": "conversation-cafe",
+                  "topics": ["everyday-life"],
+                  "sortOrder": 1,
+                  "linkedScenarioSlugs": ["cafe-first-meeting-a1"],
+                  "linkedVocabulary": [
+                    { "word": "Name", "partOfSpeech": "Noun", "cefrLevel": "A1" }
+                  ],
+                  "linkedConversationStarterPackSlugs": ["a1-cafe-first-meeting"],
+                  "openingPrompts": ["Say your name and ask for the other person's name."],
+                  "roleplayPrompts": ["Start a two-minute cafe introduction."],
+                  "reviewPrompts": ["Write one phrase you want to reuse."]
                 }
               ]
             }

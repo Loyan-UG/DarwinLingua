@@ -590,6 +590,132 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     /// <summary>
+    /// Verifies that conversation starter packs are validated at import boundaries before persistence support is added.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenConversationStarterContractIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = new(
+            "1.0",
+            "starter-invalid-package",
+            "Starter Invalid Package",
+            "Hybrid",
+            ["en"],
+            [CreateValidEntry("Brot", "shopping")],
+            [])
+        {
+            ConversationStarterPacks =
+            [
+                new ParsedConversationStarterPackModel(
+                    "bad starter",
+                    "Bad Starter",
+                    "Invalid starter content.",
+                    "A1",
+                    "first-meetings",
+                    "cafe",
+                    "friendly",
+                    "introduction",
+                    ["missing-topic"],
+                    1,
+                    ["bad scenario"],
+                    [],
+                    [
+                        new ParsedConversationStarterPhraseModel(
+                            "Hallo.",
+                            "opening phrase",
+                            [new ParsedContentMeaningModel("en", "Hello.")],
+                            null,
+                            "neutral",
+                            1,
+                            [],
+                            null)
+                    ])
+            ],
+        };
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("starter-invalid.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Equal("Failed", result.Status);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("Conversation starter pack", StringComparison.Ordinal) &&
+            issue.Message.Contains("kebab-case", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("missing-topic", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that event preparation packs are validated at import boundaries before persistence support is added.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenEventPreparationContractIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = new(
+            "1.0",
+            "event-preparation-invalid-package",
+            "Event Preparation Invalid Package",
+            "Hybrid",
+            ["en"],
+            [CreateValidEntry("Brot", "shopping")],
+            [])
+        {
+            EventPreparationPacks =
+            [
+                new ParsedEventPreparationPackModel(
+                    "bad event",
+                    "",
+                    "",
+                    "Z9",
+                    "social event",
+                    "",
+                    ["missing-topic"],
+                    1,
+                    ["bad scenario"],
+                    [new ParsedEventPreparationVocabularyReferenceModel("", "UnknownPart", "Z9")],
+                    ["bad starter"],
+                    [""],
+                    [""],
+                    [""])
+            ],
+        };
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("event-preparation-invalid.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Equal("Failed", result.Status);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("Event preparation pack", StringComparison.Ordinal) &&
+            issue.Message.Contains("kebab-case", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("missing-topic", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("linkedVocabulary", StringComparison.Ordinal));
+    }
+
+    /// <summary>
     /// Verifies that a collection whose words all resolve from the newly imported entries is created successfully.
     /// </summary>
     [Fact]
@@ -893,6 +1019,8 @@ public sealed class ContentImportServiceApplicationTests
             IReadOnlyList<WordEntry> importedWords,
             IReadOnlyList<WordCollection> importedCollections,
             IReadOnlyList<ScenarioLesson> importedScenarios,
+            IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
+            IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
             CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
