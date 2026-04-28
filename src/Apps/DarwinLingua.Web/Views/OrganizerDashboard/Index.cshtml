@@ -40,17 +40,26 @@ else
                     </div>
                     <div>
                         <dt>Plan</dt>
-                        <dd>@item.Profile.PlanKey</dd>
+                        <dd>@item.Plan.PlanKey · @item.Analytics.ActiveEventCount/@item.Plan.ActiveEventLimit active events</dd>
                     </div>
-                    <div>
-                        <dt>Mode</dt>
-                        <dd>@item.Analytics.OnlineEventCount online · @item.Analytics.InPersonEventCount in person</dd>
-                    </div>
-                    <div>
-                        <dt>Capacity</dt>
-                        <dd>@(item.Analytics.TotalCapacity == 0 ? "Not set" : item.Analytics.TotalCapacity.ToString())</dd>
-                    </div>
+                    @if (item.CanUseAnalytics)
+                    {
+                        <div>
+                            <dt>Mode</dt>
+                            <dd>@item.Analytics.OnlineEventCount online · @item.Analytics.InPersonEventCount in person</dd>
+                        </div>
+                        <div>
+                            <dt>Capacity</dt>
+                            <dd>@(item.Analytics.TotalCapacity == 0 ? "Not set" : item.Analytics.TotalCapacity.ToString())</dd>
+                        </div>
+                    }
                 </dl>
+                <div class="chip-grid">
+                    @foreach (string feature in item.Plan.EnabledFeatures)
+                    {
+                        <span class="chip-link chip-link--static">@feature</span>
+                    }
+                </div>
                 <div class="chip-grid">
                     @foreach (string level in item.Profile.SupportedLearnerLevels)
                     {
@@ -63,7 +72,14 @@ else
                 </div>
                 <div class="detail-toolbar__actions">
                     <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="EditProfile" asp-route-slug="@item.Profile.Slug">Edit profile</a>
-                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="NewEvent" asp-route-profileSlug="@item.Profile.Slug">New event</a>
+                    @if (item.CanCreateMoreActiveEvents)
+                    {
+                        <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="NewEvent" asp-route-profileSlug="@item.Profile.Slug">New event</a>
+                    }
+                    else
+                    {
+                        <span class="button button--secondary button--compact">Event limit reached</span>
+                    }
                 </div>
                 @if (item.Events.Count > 0)
                 {
@@ -101,7 +117,7 @@ else
                                     }
                                 </div>
                             </div>
-                            @if (eventRsvps is { Count: > 0 })
+                            @if (item.CanUseRsvpManagement && eventRsvps is { Count: > 0 })
                             {
                                 <ul class="feature-list">
                                     @foreach (var rsvp in eventRsvps)

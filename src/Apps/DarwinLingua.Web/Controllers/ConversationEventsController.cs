@@ -9,7 +9,8 @@ namespace DarwinLingua.Web.Controllers;
 [Route("conversation-events")]
 public sealed class ConversationEventsController(
     IWebCatalogApiClient catalogApiClient,
-    IWebEntitledFeatureAccessService featureAccessService) : Controller
+    IWebEntitledFeatureAccessService featureAccessService,
+    IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "ConversationEvents_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
@@ -47,6 +48,8 @@ public sealed class ConversationEventsController(
         {
             return NotFound();
         }
+
+        analyticsService?.Record(WebProductAnalyticsEvents.EventViewed, $"event:{conversationEvent.Slug}");
 
         IReadOnlyList<EventPreparationPackListItemModel> preparationPacks = [];
         if (await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
@@ -114,6 +117,7 @@ public sealed class ConversationEventsController(
                 .ConfigureAwait(false);
 
             TempData["StatusMessage"] = $"RSVP saved as {rsvp.Status}.";
+            analyticsService?.Record(WebProductAnalyticsEvents.EventRsvpSubmitted, $"event:{slug}:{rsvp.Status}");
         }
         catch (InvalidOperationException exception)
         {

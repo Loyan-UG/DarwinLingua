@@ -3,6 +3,7 @@ using System;
 using DarwinLingua.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DarwinLingua.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(DarwinLinguaDbContext))]
-    partial class DarwinLinguaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260428193155_AddPartnerRequests")]
+    partial class AddPartnerRequests
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.6");
@@ -868,71 +871,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.ToTable("LearnerConversationProfiles", (string)null);
                 });
 
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ListingReview", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ListingKey")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ListingType")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ListingType", "ListingKey", "Status");
-
-                    b.ToTable("ListingReviews", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ModerationDecisionAudit", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DecidedBy")
-                        .IsRequired()
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DecisionNote")
-                        .HasMaxLength(1000)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DecisionStatus")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("UserReportId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserReportId", "CreatedAtUtc");
-
-                    b.ToTable("ModerationDecisionAudits", (string)null);
-                });
-
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerClaimRequest", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1144,39 +1082,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("OrganizerProfileSupportedLevels", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerVerification", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("OrganizerProfileSlug")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RequestedByEmail")
-                        .IsRequired()
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrganizerProfileSlug", "Status");
-
-                    b.ToTable("OrganizerVerifications", (string)null);
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.PartnerRequest", b =>
@@ -1682,106 +1587,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("TopicLocalizations", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.UserBlock", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("BlockedEmail")
-                        .IsRequired()
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("BlockerEmail")
-                        .IsRequired()
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Reason")
-                        .HasMaxLength(500)
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("SourcePartnerRequestId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BlockedEmail");
-
-                    b.HasIndex("BlockerEmail", "BlockedEmail")
-                        .IsUnique();
-
-                    b.ToTable("UserBlocks", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.UserReport", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("DecidedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DecidedBy")
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DecisionNote")
-                        .HasMaxLength(1000)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Details")
-                        .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Reason")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ReportedUserEmail")
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ReporterEmail")
-                        .IsRequired()
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TargetKey")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TargetType")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Status", "CreatedAtUtc");
-
-                    b.HasIndex("TargetType", "TargetKey");
-
-                    b.ToTable("UserReports", (string)null);
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.WordCollection", b =>

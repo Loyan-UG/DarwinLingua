@@ -10,7 +10,8 @@ public sealed class WordsController(
     IWebFavoriteWordService userFavoriteWordService,
     IWebUserWordStateService userWordStateService,
     IWebLearningProfileAccessor learningProfileAccessor,
-    IWebEntitledFeatureAccessService featureAccessService) : Controller
+    IWebEntitledFeatureAccessService featureAccessService,
+    IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("{id:guid}", Name = "Words_Detail")]
     public async Task<IActionResult> Detail(Guid id, CancellationToken cancellationToken)
@@ -51,10 +52,16 @@ public sealed class WordsController(
         {
             try
             {
+                bool wasFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
                 await userFavoriteWordService.ToggleFavoriteAsync(id, cancellationToken);
+                if (!wasFavorite)
+                {
+                    analyticsService?.Record(WebProductAnalyticsEvents.FavoriteSaved);
+                }
             }
             catch (DarwinLingua.Identity.FeatureAccessDeniedException)
             {
+                analyticsService?.Record(WebProductAnalyticsEvents.PremiumFeatureDenied, "feature:favorites");
                 if (Request.Headers.ContainsKey("HX-Request"))
                 {
                     return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken, "Favorites require an active trial or premium plan.");

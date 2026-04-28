@@ -22,6 +22,11 @@ public sealed class UserEntitlementService<TContext>(
         DarwinLinguaFeatureKeys.ViewWordDetails,
         DarwinLinguaFeatureKeys.UseCollections,
         DarwinLinguaFeatureKeys.UseTopics,
+        DarwinLinguaFeatureKeys.ScenarioLessons,
+        DarwinLinguaFeatureKeys.ConversationStarters,
+        DarwinLinguaFeatureKeys.ConversationEvents,
+        DarwinLinguaFeatureKeys.EventRsvp,
+        DarwinLinguaFeatureKeys.LearnerProfiles,
     ];
 
     private static readonly string[] PaidFeatures =
@@ -29,7 +34,9 @@ public sealed class UserEntitlementService<TContext>(
         DarwinLinguaFeatureKeys.Favorites,
         DarwinLinguaFeatureKeys.DualMeaningLanguage,
         DarwinLinguaFeatureKeys.AdvancedPractice,
+        DarwinLinguaFeatureKeys.AdvancedScenarioPacks,
         DarwinLinguaFeatureKeys.EventPreparationPacks,
+        DarwinLinguaFeatureKeys.PartnerMatching,
     ];
 
     public async Task<UserEntitlementSnapshot> GetCurrentAsync(string userId, CancellationToken cancellationToken)

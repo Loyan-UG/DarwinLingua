@@ -10,7 +10,8 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class ConversationStartersController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
-    IWebEntitledFeatureAccessService featureAccessService) : Controller
+    IWebEntitledFeatureAccessService featureAccessService,
+    IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "ConversationStarters_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
@@ -31,7 +32,7 @@ public sealed class ConversationStartersController(
     }
 
     [HttpGet("{slug}", Name = "ConversationStarters_Detail")]
-    [OutputCache(PolicyName = "CatalogBrowse")]
+    [OutputCache(NoStore = true)]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(slug))
@@ -56,6 +57,8 @@ public sealed class ConversationStartersController(
         {
             return NotFound();
         }
+
+        analyticsService?.Record(WebProductAnalyticsEvents.ConversationStarterViewed, $"starter:{starterPack.Slug}");
 
         return View(new ConversationStarterDetailPageViewModel(
             starterPack,

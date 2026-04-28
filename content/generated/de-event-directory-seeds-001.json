@@ -1,0 +1,457 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-event-directory-seeds-20260428-001",
+  "packageName": "German Event Directory Seed Pack 001",
+  "source": "ManualResearch",
+  "verifiedAtUtc": "2026-04-28T00:00:00Z",
+  "usageNote": "Operational seed data for the Web/Admin event directory. This file is not consumed by the current content importer; records mirror AdminSaveOrganizerProfileRequest and AdminSaveConversationEventRequest shapes for later manual entry or a future event-directory import command.",
+  "sourceReferences": [
+    {
+      "key": "parlundo-language-cafe-berlin",
+      "url": "https://parlundo.com/",
+      "reviewNote": "Public page states that the free Language Cafe is hosted in Berlin-Schoeneberg and takes place every second Wednesday from 17:00 to 20:00."
+    },
+    {
+      "key": "hamburg-welcome-center-talk-groups",
+      "url": "https://welcome.hamburg.com/living-in-hamburg/learning-german/talk-groups-18572",
+      "reviewNote": "Hamburg Welcome Center page lists free German talk groups, including Dialog in Deutsch at public libraries and online groups."
+    },
+    {
+      "key": "university-hamburg-piasta-language-cafes",
+      "url": "https://www.uni-hamburg.de/en/piasta/sprachen-erleben/sprachcafe.html",
+      "reviewNote": "University of Hamburg page lists German language cafes with weekly meetups during the lecture period."
+    },
+    {
+      "key": "dialogcafe-muenchen",
+      "url": "https://dialogcafe-muenchen.de/",
+      "reviewNote": "Dialogcafe Munich page describes free weekly online and in-person German conversation meetings."
+    },
+    {
+      "key": "muenchner-stadtbibliothek-sprachcafe",
+      "url": "https://www.muenchner-stadtbibliothek.de/sprachcafe",
+      "reviewNote": "Munich public library page lists Sprachcafe Deutsch events for German learners."
+    },
+    {
+      "key": "bamf-integration-courses",
+      "url": "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/InhaltAblauf/inhaltablauf-node.html",
+      "reviewNote": "BAMF page explains integration course content, language course topics, and orientation course topics."
+    },
+    {
+      "key": "hilokal-german-conversation",
+      "url": "https://www.hilokal.com/speak/German",
+      "reviewNote": "Hilokal page describes free online German speaking practice and live audio rooms."
+    }
+  ],
+  "organizerProfiles": [
+    {
+      "slug": "parlundo-language-cafe",
+      "displayName": "parlundo Language Cafe",
+      "organizerType": "community-group",
+      "description": "Privately organized Berlin language cafe for relaxed language practice with conversation tables and advance registration.",
+      "cityRegion": "Berlin",
+      "isOnlineAvailable": false,
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "helperLanguageCodes": [
+        "en",
+        "de"
+      ],
+      "websiteUrl": "https://parlundo.com/",
+      "publicContactMethod": "Use the registration form or source page.",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 0
+    },
+    {
+      "slug": "buecherhallen-hamburg-dialog-in-deutsch",
+      "displayName": "Buecherhallen Hamburg - Dialog in Deutsch",
+      "organizerType": "public-library",
+      "description": "Hamburg public-library German conversation groups guided by volunteer facilitators, with in-person and online groups.",
+      "cityRegion": "Hamburg",
+      "isOnlineAvailable": true,
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "helperLanguageCodes": [
+        "de"
+      ],
+      "websiteUrl": "https://welcome.hamburg.com/living-in-hamburg/learning-german/talk-groups-18572",
+      "publicContactMethod": "Check the source page for current groups and online participation details.",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 0
+    },
+    {
+      "slug": "university-hamburg-piasta",
+      "displayName": "University of Hamburg PIASTA",
+      "organizerType": "university",
+      "description": "University of Hamburg language cafe program with volunteer-led weekly language practice during the lecture period.",
+      "cityRegion": "Hamburg",
+      "isOnlineAvailable": false,
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "helperLanguageCodes": [
+        "de",
+        "en"
+      ],
+      "websiteUrl": "https://www.uni-hamburg.de/en/piasta/sprachen-erleben/sprachcafe.html",
+      "publicContactMethod": "Use UHH Join and the source page for registration details.",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 0
+    },
+    {
+      "slug": "dialogcafe-muenchen",
+      "displayName": "Dialogcafe Muenchen",
+      "organizerType": "community-group",
+      "description": "Munich German conversation project with free weekly online and in-person meetings at several district culture centers.",
+      "cityRegion": "Munich",
+      "isOnlineAvailable": true,
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "helperLanguageCodes": [
+        "de"
+      ],
+      "websiteUrl": "https://dialogcafe-muenchen.de/",
+      "publicContactMethod": "Check the source page for current locations, online access, and questions.",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 0
+    },
+    {
+      "slug": "muenchner-stadtbibliothek",
+      "displayName": "Muenchner Stadtbibliothek",
+      "organizerType": "public-library",
+      "description": "Munich public library language cafe program with German conversation circles for learners.",
+      "cityRegion": "Munich",
+      "isOnlineAvailable": false,
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "helperLanguageCodes": [
+        "de"
+      ],
+      "websiteUrl": "https://www.muenchner-stadtbibliothek.de/sprachcafe",
+      "publicContactMethod": "Check the source page for current dates and branches.",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 0
+    },
+    {
+      "slug": "bamf-integration-courses",
+      "displayName": "BAMF Integration Courses",
+      "organizerType": "public-agency",
+      "description": "Official German federal information about integration courses, language-course topics, orientation-course topics, and course procedure.",
+      "cityRegion": "Germany",
+      "isOnlineAvailable": true,
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "helperLanguageCodes": [
+        "de",
+        "en"
+      ],
+      "websiteUrl": "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/InhaltAblauf/inhaltablauf-node.html",
+      "publicContactMethod": "Use BAMF official website and regional office guidance.",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 0
+    },
+    {
+      "slug": "hilokal-german-speaking",
+      "displayName": "Hilokal German Speaking",
+      "organizerType": "online-platform",
+      "description": "Online platform for free German conversation practice with live audio rooms and learner communities.",
+      "cityRegion": "Online",
+      "isOnlineAvailable": true,
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "helperLanguageCodes": [
+        "en",
+        "de"
+      ],
+      "websiteUrl": "https://www.hilokal.com/speak/German",
+      "publicContactMethod": "Use the platform signup and current room listings.",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 0
+    }
+  ],
+  "conversationEvents": [
+    {
+      "slug": "berlin-parlundo-language-cafe",
+      "name": "parlundo Language Cafe Berlin",
+      "description": "Free Berlin language cafe for relaxed language practice. Suitable for learners who want low-pressure conversation and meeting people while practicing German or other languages.",
+      "city": "Berlin",
+      "countryRegion": "DE",
+      "approximateLocation": "Berlin-Schoeneberg",
+      "isOnline": false,
+      "category": "conversation-cafe",
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "helperLanguageCodes": [
+        "en",
+        "de"
+      ],
+      "organizerName": "parlundo Language Cafe",
+      "organizerProfileSlug": "parlundo-language-cafe",
+      "externalLink": "https://parlundo.com/",
+      "contactMethod": "Register via the source page.",
+      "scheduleText": "Every second Wednesday of the month, 17:00-20:00; check source page before attending.",
+      "recurrenceRule": "FREQ=MONTHLY;INTERVAL=1",
+      "capacity": null,
+      "priceType": "free",
+      "verificationStatus": "reviewed",
+      "sourceName": "parlundo",
+      "sourceUrl": "https://parlundo.com/",
+      "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
+      "linkedEventPreparationPackSlugs": [
+        "a1-cafe-first-meeting-prep"
+      ]
+    },
+    {
+      "slug": "hamburg-dialog-in-deutsch",
+      "name": "Dialog in Deutsch - Hamburg Talk Groups",
+      "description": "Free German conversation groups at Hamburg public libraries, guided by volunteer facilitators. Online groups are also listed by the organizer.",
+      "city": "Hamburg",
+      "countryRegion": "DE",
+      "approximateLocation": "Buecherhallen Hamburg and online",
+      "isOnline": false,
+      "category": "conversation-cafe",
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "helperLanguageCodes": [
+        "de"
+      ],
+      "organizerName": "Buecherhallen Hamburg - Dialog in Deutsch",
+      "organizerProfileSlug": "buecherhallen-hamburg-dialog-in-deutsch",
+      "externalLink": "https://welcome.hamburg.com/living-in-hamburg/learning-german/talk-groups-18572",
+      "contactMethod": "Check the Hamburg Welcome Center source page for current group links and online participation details.",
+      "scheduleText": "Many groups in many libraries every week; check current group list before attending.",
+      "recurrenceRule": "FREQ=WEEKLY;INTERVAL=1",
+      "capacity": null,
+      "priceType": "free",
+      "verificationStatus": "reviewed",
+      "sourceName": "Hamburg Welcome Center",
+      "sourceUrl": "https://welcome.hamburg.com/living-in-hamburg/learning-german/talk-groups-18572",
+      "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
+      "linkedEventPreparationPackSlugs": [
+        "a1-cafe-first-meeting-prep",
+        "a2-online-practice-meeting-prep"
+      ]
+    },
+    {
+      "slug": "hamburg-uhh-piasta-language-cafes",
+      "name": "PIASTA Language Cafes - German",
+      "description": "University of Hamburg language cafes where learners can drop in, speak outside class, and join volunteer-led conversation tables during the lecture period.",
+      "city": "Hamburg",
+      "countryRegion": "DE",
+      "approximateLocation": "University of Hamburg",
+      "isOnline": false,
+      "category": "language-club",
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "helperLanguageCodes": [
+        "de",
+        "en"
+      ],
+      "organizerName": "University of Hamburg PIASTA",
+      "organizerProfileSlug": "university-hamburg-piasta",
+      "externalLink": "https://www.uni-hamburg.de/en/piasta/sprachen-erleben/sprachcafe.html",
+      "contactMethod": "Register through UHH Join during the semester.",
+      "scheduleText": "Weekly during lecture period from the third week; dates are listed in UHH Join.",
+      "recurrenceRule": "FREQ=WEEKLY;INTERVAL=1",
+      "capacity": null,
+      "priceType": "free",
+      "verificationStatus": "reviewed",
+      "sourceName": "University of Hamburg PIASTA",
+      "sourceUrl": "https://www.uni-hamburg.de/en/piasta/sprachen-erleben/sprachcafe.html",
+      "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
+      "linkedEventPreparationPackSlugs": [
+        "a1-cafe-first-meeting-prep"
+      ]
+    },
+    {
+      "slug": "munich-dialogcafe",
+      "name": "Dialogcafe Muenchen",
+      "description": "Free weekly German conversation meetings for everyone who wants to speak German, learn new words, meet people, and get to know Munich.",
+      "city": "Munich",
+      "countryRegion": "DE",
+      "approximateLocation": "Multiple district culture centers and online",
+      "isOnline": false,
+      "category": "conversation-cafe",
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "helperLanguageCodes": [
+        "de"
+      ],
+      "organizerName": "Dialogcafe Muenchen",
+      "organizerProfileSlug": "dialogcafe-muenchen",
+      "externalLink": "https://dialogcafe-muenchen.de/",
+      "contactMethod": "Check the source page for current locations, online access, and questions.",
+      "scheduleText": "Weekly online and in person; check source page for current locations and times.",
+      "recurrenceRule": "FREQ=WEEKLY;INTERVAL=1",
+      "capacity": null,
+      "priceType": "free",
+      "verificationStatus": "reviewed",
+      "sourceName": "Dialogcafe Muenchen",
+      "sourceUrl": "https://dialogcafe-muenchen.de/",
+      "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
+      "linkedEventPreparationPackSlugs": [
+        "a1-cafe-first-meeting-prep",
+        "a2-online-practice-meeting-prep"
+      ]
+    },
+    {
+      "slug": "munich-stadtbibliothek-sprachcafe-deutsch",
+      "name": "Muenchner Stadtbibliothek Sprachcafe Deutsch",
+      "description": "German conversation circles in Munich public library branches for learners who want to practice in an informal setting.",
+      "city": "Munich",
+      "countryRegion": "DE",
+      "approximateLocation": "Muenchner Stadtbibliothek branches",
+      "isOnline": false,
+      "category": "conversation-cafe",
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "helperLanguageCodes": [
+        "de"
+      ],
+      "organizerName": "Muenchner Stadtbibliothek",
+      "organizerProfileSlug": "muenchner-stadtbibliothek",
+      "externalLink": "https://www.muenchner-stadtbibliothek.de/sprachcafe",
+      "contactMethod": "Check the source page for current branch dates.",
+      "scheduleText": "Recurring branch events; check source page for current dates and times.",
+      "recurrenceRule": "FREQ=WEEKLY;INTERVAL=1",
+      "capacity": null,
+      "priceType": "free",
+      "verificationStatus": "reviewed",
+      "sourceName": "Muenchner Stadtbibliothek",
+      "sourceUrl": "https://www.muenchner-stadtbibliothek.de/sprachcafe",
+      "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
+      "linkedEventPreparationPackSlugs": [
+        "a1-cafe-first-meeting-prep"
+      ]
+    },
+    {
+      "slug": "online-hilokal-german-conversation",
+      "name": "Hilokal German Conversation Practice",
+      "description": "Online German conversation practice with live and scheduled audio tables, learner levels, and learner controls such as blocking and reporting.",
+      "city": null,
+      "countryRegion": "Online",
+      "approximateLocation": "Online",
+      "isOnline": true,
+      "category": "online-meeting",
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "helperLanguageCodes": [
+        "en",
+        "de"
+      ],
+      "organizerName": "Hilokal German Speaking",
+      "organizerProfileSlug": "hilokal-german-speaking",
+      "externalLink": "https://www.hilokal.com/speak/German",
+      "contactMethod": "Use the platform signup and current room listings.",
+      "scheduleText": "Live and scheduled online audio tables; check platform for current sessions.",
+      "recurrenceRule": null,
+      "capacity": null,
+      "priceType": "free",
+      "verificationStatus": "reviewed",
+      "sourceName": "Hilokal",
+      "sourceUrl": "https://www.hilokal.com/speak/German",
+      "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
+      "linkedEventPreparationPackSlugs": [
+        "a2-online-practice-meeting-prep"
+      ]
+    },
+    {
+      "slug": "bamf-integration-course-information",
+      "name": "BAMF Integration Course Information",
+      "description": "Official information resource for newcomers about German integration courses, language-course topics, orientation-course topics, and course procedure.",
+      "city": null,
+      "countryRegion": "DE",
+      "approximateLocation": "Germany-wide official information resource",
+      "isOnline": true,
+      "category": "support-resource",
+      "supportedLearnerLevels": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "helperLanguageCodes": [
+        "de",
+        "en"
+      ],
+      "organizerName": "BAMF Integration Courses",
+      "organizerProfileSlug": "bamf-integration-courses",
+      "externalLink": "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/InhaltAblauf/inhaltablauf-node.html",
+      "contactMethod": "Use BAMF official website and regional office guidance.",
+      "scheduleText": "Self-paced information resource; course schedules depend on local providers.",
+      "recurrenceRule": null,
+      "capacity": null,
+      "priceType": "unknown",
+      "verificationStatus": "reviewed",
+      "sourceName": "BAMF",
+      "sourceUrl": "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/InhaltAblauf/inhaltablauf-node.html",
+      "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
+      "linkedEventPreparationPackSlugs": []
+    }
+  ]
+}

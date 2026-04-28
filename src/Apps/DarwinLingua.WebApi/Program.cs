@@ -110,6 +110,8 @@ builder.Services.AddScoped<IOrganizerClaimRequestService, OrganizerClaimRequestS
 builder.Services.AddScoped<IOrganizerProfileOwnerService, OrganizerProfileOwnerService>();
 builder.Services.AddScoped<IEventRsvpService, EventRsvpService>();
 builder.Services.AddScoped<ILearnerConversationProfileService, LearnerConversationProfileService>();
+builder.Services.AddScoped<IPartnerMatchingService, PartnerMatchingService>();
+builder.Services.AddScoped<IModerationService, ModerationService>();
 
 WebApplication app = builder.Build();
 
@@ -474,6 +476,69 @@ app.MapGet(
                 async () => await learnerProfileService.GetPublicProfilesAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
+app.MapPost(
+    "/api/catalog/partner-matches/search",
+    async (
+        string ownerEmail,
+        PartnerMatchSearchRequest request,
+        IPartnerMatchingService partnerMatchingService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await partnerMatchingService.SearchAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/partner-requests",
+    async (
+        string ownerEmail,
+        SubmitPartnerRequestRequest request,
+        IPartnerMatchingService partnerMatchingService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await partnerMatchingService.SubmitRequestAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/partner-requests",
+    async (string ownerEmail, IPartnerMatchingService partnerMatchingService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await partnerMatchingService.GetRequestsAsync(ownerEmail, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/partner-requests/{requestId:guid}/state",
+    async (
+        string ownerEmail,
+        Guid requestId,
+        PartnerRequestStateUpdateRequest request,
+        IPartnerMatchingService partnerMatchingService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await partnerMatchingService.UpdateRequestStateAsync(ownerEmail, requestId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/moderation/reports",
+    async (
+        string reporterEmail,
+        SubmitUserReportRequest request,
+        IModerationService moderationService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await moderationService.SubmitReportAsync(reporterEmail, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/moderation/blocks",
+    async (
+        string blockerEmail,
+        BlockUserRequest request,
+        IModerationService moderationService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await moderationService.BlockUserAsync(blockerEmail, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
 app.MapGet(
     "/api/catalog/words/topic/{topicKey}",
     async (string topicKey, string meaningLanguageCode, int skip, int take, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
@@ -614,6 +679,31 @@ app.MapPost(
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await organizerProfileOwnerService.AssignAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/moderation/reports",
+    async (string? status, IModerationService moderationService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await moderationService.GetReportsAsync(status, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/moderation/reports/{reportId:guid}/decision",
+    async (
+        Guid reportId,
+        ModerationDecisionRequest request,
+        IModerationService moderationService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await moderationService.DecideReportAsync(reportId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/moderation/audits",
+    async (IModerationService moderationService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await moderationService.GetDecisionAuditsAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

@@ -10,7 +10,8 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class ScenariosController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
-    IWebEntitledFeatureAccessService featureAccessService) : Controller
+    IWebEntitledFeatureAccessService featureAccessService,
+    IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "Scenarios_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
@@ -49,6 +50,8 @@ public sealed class ScenariosController(
         {
             return NotFound();
         }
+
+        analyticsService?.Record(WebProductAnalyticsEvents.ScenarioViewed, $"scenario:{scenario.Slug}");
 
         IReadOnlyList<ConversationStarterPackListItemModel> relatedStarterPacks = await catalogApiClient
             .GetConversationStarterPacksForScenarioAsync(slug, cancellationToken)

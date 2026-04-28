@@ -85,6 +85,26 @@
             <span class="button button--secondary button--compact">@Model.Event.ContactMethod</span>
         }
     </div>
+    <form method="post" asp-controller="Moderation" asp-action="Report" class="stack-sm">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="TargetType" value="conversation-event" />
+        <input type="hidden" name="TargetKey" value="@Model.Event.Slug" />
+        <input type="hidden" name="ReturnUrl" value="@($"{Context.Request.Path}{Context.Request.QueryString}")" />
+        <label class="form-field">
+            <span>Report this event</span>
+            <select name="Reason">
+                <option value="inaccurate-listing">Inaccurate listing</option>
+                <option value="spam">Spam</option>
+                <option value="unsafe-contact">Unsafe contact</option>
+                <option value="other">Other</option>
+            </select>
+        </label>
+        <label class="form-field">
+            <span>Report details</span>
+            <textarea name="Details" rows="2" maxlength="2000"></textarea>
+        </label>
+        <button type="submit" class="button button--secondary button--compact">Submit report</button>
+    </form>
 </section>
 
 <section class="panel stack-md">

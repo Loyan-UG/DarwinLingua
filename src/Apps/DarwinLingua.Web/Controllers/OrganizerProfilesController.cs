@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace DarwinLingua.Web.Controllers;
 
 [Route("organizers")]
-public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiClient) : Controller
+public sealed class OrganizerProfilesController(
+    IWebCatalogApiClient catalogApiClient,
+    IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "OrganizerProfiles_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
@@ -27,10 +29,7 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
 
         return profile is null
             ? NotFound()
-            : View(new OrganizerProfileDetailPageViewModel(
-                profile,
-                TempData["StatusMessage"] as string,
-                TempData["ErrorMessage"] as string));
+            : RenderDetail(profile);
     }
 
     [HttpGet("{slug}/claim", Name = "OrganizerProfiles_Claim")]
@@ -96,5 +95,15 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
         {
             return View("Claim", new OrganizerProfileClaimPageViewModel(profile, input, null, exception.Message));
         }
+    }
+
+    private ViewResult RenderDetail(OrganizerProfileDetailModel profile)
+    {
+        analyticsService?.Record(WebProductAnalyticsEvents.OrganizerProfileViewed, $"organizer:{profile.Slug}");
+
+        return View(new OrganizerProfileDetailPageViewModel(
+            profile,
+            TempData["StatusMessage"] as string,
+            TempData["ErrorMessage"] as string));
     }
 }

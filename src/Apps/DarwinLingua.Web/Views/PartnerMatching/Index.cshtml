@@ -1,0 +1,228 @@
+@model DarwinLingua.Web.Models.PartnerMatchingPageViewModel
+@{
+    ViewData["Title"] = "Partners";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Practice partners</span>
+    <h1 class="headline-md">Find conversation partners</h1>
+    <p class="body-lg">Send request-based introductions without open chat. Contact details appear only after a request is accepted.</p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="alert alert-success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-lg">
+    <form method="get" asp-action="Index" class="stack-md">
+        <div class="grid-two-col">
+            <label class="form-field">
+                <span>City or region</span>
+                <input asp-for="Search.CityRegion" name="CityRegion" />
+            </label>
+            <label class="form-field">
+                <span>Interaction</span>
+                <select asp-for="Search.InteractionPreference" name="InteractionPreference">
+                    <option value="">Any</option>
+                    <option value="both">Online and in-person</option>
+                    <option value="online">Online</option>
+                    <option value="in-person">In-person</option>
+                </select>
+            </label>
+            <label class="form-field">
+                <span>German level</span>
+                <select asp-for="Search.GermanLevel" name="GermanLevel">
+                    <option value="">Any</option>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                </select>
+            </label>
+            <label class="form-field">
+                <span>Helper language</span>
+                <input asp-for="Search.HelperLanguageCode" name="HelperLanguageCode" placeholder="en" />
+            </label>
+        </div>
+        <label class="form-field">
+            <span>Goal keyword</span>
+            <input asp-for="Search.GoalKeyword" name="GoalKeyword" />
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Search</button>
+            <a class="button button--secondary" asp-controller="LearnerConversationProfiles" asp-action="Edit">Edit my profile</a>
+        </div>
+    </form>
+</section>
+
+<section class="stack-lg">
+    <div class="section-heading">
+        <span class="eyebrow">Matches</span>
+        <h2 class="headline-sm">@Model.Matches.Count profiles</h2>
+    </div>
+    @if (Model.Matches.Count == 0)
+    {
+        <article class="panel stack-sm">
+            <p class="body-sm">No matching profiles were found.</p>
+        </article>
+    }
+    else
+    {
+        <div class="card-grid">
+            @foreach (var profile in Model.Matches)
+            {
+                <article class="panel stack-md">
+                    <div>
+                        <h3 class="headline-sm">@profile.DisplayName</h3>
+                        <p class="body-sm">@profile.CityRegion</p>
+                    </div>
+                    <div class="chip-grid">
+                        <span class="chip-link chip-link--static">@profile.GermanLevel</span>
+                        <span class="chip-link chip-link--static">@profile.InteractionPreference</span>
+                        <span class="chip-link chip-link--static">@profile.Visibility</span>
+                    </div>
+                    <p class="body-sm">@profile.ConversationGoals</p>
+                    <p class="body-sm">Helper languages: @string.Join(", ", profile.HelperLanguageCodes)</p>
+                    <form method="post" asp-action="RequestPartner" class="stack-sm">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="TargetLearnerProfileId" value="@profile.ProfileId" />
+                        <label class="form-field">
+                            <span>Opener</span>
+                            <select name="OpenerTemplateKey">
+                                <option value="practice-goals">Compare practice goals</option>
+                                <option value="same-city">Same city practice</option>
+                                <option value="online-practice">Online practice</option>
+                                <option value="event-follow-up">Event follow-up</option>
+                            </select>
+                        </label>
+                        <label class="form-field">
+                            <span>Short note</span>
+                            <textarea name="Note" rows="3" maxlength="500"></textarea>
+                        </label>
+                        <button type="submit" class="button button--secondary">Send request</button>
+                    </form>
+                    <form method="post" asp-controller="Moderation" asp-action="Report" class="stack-sm">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="TargetType" value="learner-profile" />
+                        <input type="hidden" name="TargetKey" value="@profile.ProfileId" />
+                        <input type="hidden" name="ReturnUrl" value="@($"{Context.Request.Path}{Context.Request.QueryString}")" />
+                        <label class="form-field">
+                            <span>Report reason</span>
+                            <select name="Reason">
+                                <option value="spam">Spam</option>
+                                <option value="harassment">Harassment</option>
+                                <option value="unsafe-contact">Unsafe contact</option>
+                                <option value="impersonation">Impersonation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </label>
+                        <label class="form-field">
+                            <span>Report details</span>
+                            <textarea name="Details" rows="2" maxlength="2000"></textarea>
+                        </label>
+                        <button type="submit" class="button button--secondary">Report profile</button>
+                    </form>
+                    <form method="post" asp-controller="Moderation" asp-action="Block" class="inline-form">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="TargetLearnerProfileId" value="@profile.ProfileId" />
+                        <input type="hidden" name="ReturnUrl" value="@($"{Context.Request.Path}{Context.Request.QueryString}")" />
+                        <button type="submit" class="button button--secondary">Block profile</button>
+                    </form>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<section class="panel stack-lg">
+    <div class="section-heading">
+        <span class="eyebrow">Requests</span>
+        <h2 class="headline-sm">@Model.Requests.Count recent requests</h2>
+    </div>
+    @if (Model.Requests.Count == 0)
+    {
+        <p class="body-sm">No partner requests yet.</p>
+    }
+    else
+    {
+        <div class="stack-md">
+            @foreach (var request in Model.Requests)
+            {
+                <article class="panel stack-sm">
+                    <div class="grid-two-col">
+                        <div>
+                            <h3 class="headline-sm">@request.OtherDisplayName</h3>
+                            <p class="body-sm">@request.Direction · @request.Status · @request.OtherCityRegion</p>
+                            <p class="body-sm">Opener: @request.OpenerTemplateKey</p>
+                            @if (!string.IsNullOrWhiteSpace(request.Note))
+                            {
+                                <p class="body-sm">@request.Note</p>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(request.ContactEmail))
+                            {
+                                <p class="body-sm">Contact: @request.ContactEmail</p>
+                            }
+                            <form method="post" asp-controller="Moderation" asp-action="Report" class="stack-sm">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="TargetType" value="partner-request" />
+                                <input type="hidden" name="TargetKey" value="@request.Id" />
+                                <input type="hidden" name="ReportedUserEmail" value="@request.ContactEmail" />
+                                <input type="hidden" name="ReturnUrl" value="@($"{Context.Request.Path}{Context.Request.QueryString}")" />
+                                <label class="form-field">
+                                    <span>Report reason</span>
+                                    <select name="Reason">
+                                        <option value="spam">Spam</option>
+                                        <option value="harassment">Harassment</option>
+                                        <option value="unsafe-contact">Unsafe contact</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </label>
+                                <label class="form-field">
+                                    <span>Report details</span>
+                                    <textarea name="Details" rows="2" maxlength="2000"></textarea>
+                                </label>
+                                <button type="submit" class="button button--secondary">Report request</button>
+                            </form>
+                            @if (!string.IsNullOrWhiteSpace(request.ContactEmail))
+                            {
+                                <form method="post" asp-controller="Moderation" asp-action="Block" class="inline-form">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="BlockedEmail" value="@request.ContactEmail" />
+                                    <input type="hidden" name="SourcePartnerRequestId" value="@request.Id" />
+                                    <input type="hidden" name="ReturnUrl" value="@($"{Context.Request.Path}{Context.Request.QueryString}")" />
+                                    <button type="submit" class="button button--secondary">Block learner</button>
+                                </form>
+                            }
+                        </div>
+                        <div class="stack-sm">
+                            <span class="body-sm">Expires: @request.ExpiresAtUtc.ToString("u")</span>
+                            @if (request.Status == "pending" && request.Direction == "incoming")
+                            {
+                                <form method="post" asp-action="UpdateState" asp-route-requestId="@request.Id" class="action-row">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" name="actionName" value="accept" class="button button--primary">Accept</button>
+                                    <button type="submit" name="actionName" value="decline" class="button button--secondary">Decline</button>
+                                    <button type="submit" name="actionName" value="block" class="button button--secondary">Block</button>
+                                </form>
+                            }
+                            @if (request.Status == "pending" && request.Direction == "outgoing")
+                            {
+                                <form method="post" asp-action="UpdateState" asp-route-requestId="@request.Id" class="inline-form">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" name="actionName" value="cancel" class="button button--secondary">Cancel</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>

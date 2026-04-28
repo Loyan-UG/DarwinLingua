@@ -156,6 +156,16 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<PartnerRequest> PartnerRequests => Set<PartnerRequest>();
 
+    public DbSet<UserReport> UserReports => Set<UserReport>();
+
+    public DbSet<UserBlock> UserBlocks => Set<UserBlock>();
+
+    public DbSet<ModerationDecisionAudit> ModerationDecisionAudits => Set<ModerationDecisionAudit>();
+
+    public DbSet<OrganizerVerification> OrganizerVerifications => Set<OrganizerVerification>();
+
+    public DbSet<ListingReview> ListingReviews => Set<ListingReview>();
+
     /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
@@ -244,6 +254,11 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new EventRsvpConfiguration());
         modelBuilder.ApplyConfiguration(new LearnerConversationProfileConfiguration());
         modelBuilder.ApplyConfiguration(new PartnerRequestConfiguration());
+        modelBuilder.ApplyConfiguration(new UserReportConfiguration());
+        modelBuilder.ApplyConfiguration(new UserBlockConfiguration());
+        modelBuilder.ApplyConfiguration(new ModerationDecisionAuditConfiguration());
+        modelBuilder.ApplyConfiguration(new OrganizerVerificationConfiguration());
+        modelBuilder.ApplyConfiguration(new ListingReviewConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

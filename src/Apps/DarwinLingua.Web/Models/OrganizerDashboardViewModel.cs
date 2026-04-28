@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Identity;
 using DarwinLingua.Web.Services;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,9 +15,16 @@ public sealed record OrganizerDashboardProfileViewModel(
     IReadOnlyList<OrganizerManagedConversationEventModel> Events,
     IReadOnlyDictionary<string, EventRsvpSummaryModel> RsvpSummaries,
     IReadOnlyDictionary<string, IReadOnlyList<EventRsvpModel>> EventRsvps,
+    DarwinLinguaOrganizerPlanSnapshot Plan,
     OrganizerDashboardAnalyticsViewModel Analytics)
 {
     public int ActiveEventCount => Analytics.ActiveEventCount;
+
+    public bool CanCreateMoreActiveEvents => ActiveEventCount < Plan.ActiveEventLimit;
+
+    public bool CanUseRsvpManagement => Plan.EnabledFeatures.Contains(DarwinLinguaFeatureKeys.OrganizerRsvpManagement, StringComparer.Ordinal);
+
+    public bool CanUseAnalytics => Plan.EnabledFeatures.Contains(DarwinLinguaFeatureKeys.OrganizerAnalytics, StringComparer.Ordinal);
 }
 
 public sealed record OrganizerDashboardAnalyticsViewModel(

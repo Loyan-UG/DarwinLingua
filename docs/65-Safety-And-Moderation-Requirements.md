@@ -190,3 +190,140 @@ Recommended order:
 7. public event and profile surfaces
 
 This order keeps the safety foundation ahead of public social features.
+
+---
+
+## 10. Moderation Runbook
+
+This runbook is for the first Web moderation surface. It assumes reports, blocks, moderation decisions, and decision audits are available from Web Admin.
+
+### Queue Triage
+
+1. Open Web Admin > Moderation.
+2. Review new reports before previously reviewed reports.
+3. Check the target type and target key before reading free-text details.
+4. Do not copy report details into public notes, support replies, analytics, or issue trackers unless a separate privacy review approves the destination.
+5. Treat duplicate reports as supporting context, not as automatic proof of abuse.
+
+### Immediate Safety Actions
+
+Use a fast action when the report suggests harassment, unsafe contact reveal, impersonation, spam, or a listing that could mislead learners:
+
+- hide learner profile
+- restrict partner requests
+- hide listing
+- archive listing
+- suspend organizer publishing
+
+When evidence is unclear, prefer a reversible visibility restriction while an operator reviews source pages, profile history, partner-request state, and prior reports.
+
+### Blocks
+
+User blocks are user safety controls, not moderation decisions by themselves.
+
+Operational rules:
+
+- keep blocks private
+- do not notify the blocked learner from the MVP workflow
+- do not reveal blocker identity through admin-facing notes copied into user-facing messages
+- check whether existing pending partner requests should be cancelled or suppressed
+- escalate repeated blocks against the same account to manual moderation review
+
+### Event And Organizer Reports
+
+For event and organizer reports:
+
+1. Open the public source URL, if available.
+2. Compare event name, organizer, schedule, price, location, and verification timestamp.
+3. If the listing is stale, misleading, or unverifiable, set the listing to hidden or archive it.
+4. If the source is valid but schedule details changed, update the listing and `LastVerifiedAtUtc`.
+5. If organizer ownership is disputed, pause organizer self-service edits until the claim is reviewed.
+
+### Decision Logging
+
+Every decision should record:
+
+- decision action
+- target type and target key
+- operator actor
+- reason category
+- short internal rationale
+- timestamp
+
+Do not store unnecessary personal data in the rationale. Use target keys and report identifiers instead of copying email addresses or free-text report content.
+
+### Escalation
+
+Escalate to a project owner before:
+
+- permanently deleting moderation records
+- publishing public explanations about a user or organizer
+- changing access to an organizer profile with disputed ownership
+- exporting report, block, RSVP, or contact data
+- adding any direct messaging or public-comment feature
+
+---
+
+## 11. Privacy Review Checklist
+
+Before releasing public learner profiles, partner matching, RSVP, organizer listings, or analytics beyond aggregate counters, complete this review.
+
+### Data Inventory
+
+Confirm the feature inventory for:
+
+- learner display name
+- city or region
+- learner goals and interests
+- email or contact reveal state
+- partner request note
+- report details
+- block relationships
+- RSVP participant name and email
+- organizer public contact method
+- event source URLs and verification dates
+- analytics counters
+
+### Public Exposure Review
+
+The public Web surface must not expose:
+
+- learner email before accepted partner-request consent
+- exact learner address
+- private profile text for disabled, private, or request-only profiles
+- attendee names or attendee emails
+- report details
+- block relationships
+- moderation rationale
+
+### Admin Exposure Review
+
+Admin views should expose only operationally necessary data.
+
+Required checks:
+
+- report details are visible only to Admin/Operator roles
+- RSVP attendee data is visible only where organizer RSVP management is entitled and authorized
+- analytics remains aggregate-only
+- moderation audit history does not include avoidable copied personal data
+- source verification metadata is visible for event/listing review
+
+### Retention And Removal
+
+Required checks:
+
+- learner profile anonymization clears public profile fields
+- disabling a learner profile removes it from public discovery
+- blocks and moderation decisions remain operational records unless a project owner approves deletion
+- event listings can be hidden or archived without deleting source metadata
+- exported files are not part of the MVP unless a separate operational need is approved
+
+### Release Decision
+
+The release reviewer should mark one of:
+
+- approved for private/internal pilot
+- approved for public MVP
+- blocked pending fixes
+
+Record the decision date, reviewer, scope, and any required follow-up in the release checklist.

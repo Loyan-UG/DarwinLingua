@@ -1,0 +1,79 @@
+@model DarwinLingua.Web.Models.AdminAnalyticsPageViewModel
+@{
+    ViewData["Title"] = "Analytics";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Admin</span>
+    <h1 class="headline-md">Analytics summary</h1>
+    <p class="body-lg">Aggregated Web product counters only. No user email, IP address, free-text note, or contact detail is stored in this summary.</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">By event</h2>
+        @if (Model.TotalsByEvent.Count == 0)
+        {
+            <p class="body-sm">No product analytics have been recorded yet.</p>
+        }
+        else
+        {
+            <ul class="feature-list">
+                @foreach (var item in Model.TotalsByEvent.OrderBy(item => item.Key))
+                {
+                    <li>@item.Key: @item.Value</li>
+                }
+            </ul>
+        }
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">By area</h2>
+        @if (Model.TotalsByArea.Count == 0)
+        {
+            <p class="body-sm">No product analytics have been recorded yet.</p>
+        }
+        else
+        {
+            <ul class="feature-list">
+                @foreach (var item in Model.TotalsByArea.OrderBy(item => item.Key))
+                {
+                    <li>@item.Key: @item.Value</li>
+                }
+            </ul>
+        }
+    </article>
+</section>
+
+<section class="panel stack-lg">
+    <h2 class="headline-sm">Counters</h2>
+    @if (Model.Items.Count == 0)
+    {
+        <p class="body-sm">No counters have been recorded yet.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Scope</th>
+                    <th>Count</th>
+                    <th>First seen</th>
+                    <th>Last seen</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.EventName</td>
+                        <td>@item.ScopeKey</td>
+                        <td>@item.Count</td>
+                        <td>@item.FirstSeenAtUtc.ToString("u")</td>
+                        <td>@item.LastSeenAtUtc.ToString("u")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>

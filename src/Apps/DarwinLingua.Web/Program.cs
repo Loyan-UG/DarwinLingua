@@ -19,6 +19,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<IWebPerformanceTelemetryService, WebPerformanceTelemetryService>();
+builder.Services.AddSingleton<IWebProductAnalyticsService, WebProductAnalyticsService>();
 builder.Services.AddResponseCompression(options =>
 {
     options.EnableForHttps = true;

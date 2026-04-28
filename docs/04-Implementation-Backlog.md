@@ -892,7 +892,8 @@ Create a minimal learner profile suitable for conversation practice and event pa
 - [x] implement profile deletion or anonymization flow
   - Progress: signed-in Web learners can delete their profile through an anonymization flow that clears public/private profile content and marks the profile disabled.
 - [ ] add tests for public/private projection
-- [ ] add privacy review before release
+- [x] add privacy review before release
+  - Progress: `65-Safety-And-Moderation-Requirements.md` now includes a Phase 6 privacy review checklist covering public exposure, admin exposure, retention/removal, and release decision states.
 
 ---
 
@@ -918,14 +919,22 @@ Use request-based matching, not unrestricted open chat.
 
 #### Backlog
 
-- [ ] define `PartnerRequest` model
-- [ ] define match search query model
-- [ ] define request states: pending, accepted, declined, cancelled, blocked, expired
-- [ ] add rate limits for new users
-- [ ] add predefined opener templates
-- [ ] add accept/decline flow
-- [ ] avoid unrestricted direct messaging in MVP
-- [ ] reveal contact details only after mutual consent if this feature is added
+- [x] define `PartnerRequest` model
+  - Progress: WebApi now persists request-based partner introductions between learner profiles without creating an open chat model.
+- [x] define match search query model
+  - Progress: Web matching search supports city/region, interaction preference, German level, helper language, and goal keyword filters.
+- [x] define request states: pending, accepted, declined, cancelled, blocked, expired
+  - Progress: WebApi partner requests support the full MVP state set and expire pending requests after their expiry timestamp.
+- [x] add rate limits for new users
+  - Progress: WebApi limits learners to five new partner requests per 24-hour window and blocks duplicate pending requests to the same profile.
+- [x] add predefined opener templates
+  - Progress: Web request forms use predefined opener templates: practice goals, same city, online practice, and event follow-up.
+- [x] add accept/decline flow
+  - Progress: Web learners can accept, decline, block, or cancel partner requests from the Partners page.
+- [x] avoid unrestricted direct messaging in MVP
+  - Progress: Web MVP has no direct messaging; requests carry only a short bounded note and a predefined opener template.
+- [x] reveal contact details only after mutual consent if this feature is added
+  - Progress: WebApi returns the other learner email only when a partner request has been accepted.
 - [ ] add tests for request-state transitions and rate limits
 
 ---
@@ -949,16 +958,25 @@ Make social and organizer features safe enough to release publicly.
 
 #### Backlog
 
-- [ ] define `UserReport` model
-- [ ] define `UserBlock` model
-- [ ] define `OrganizerVerification` model
-- [ ] define `ListingReview` workflow
-- [ ] implement report action from profile, event, and organizer pages
-- [ ] implement block action from profile and partner-request flows
-- [ ] implement admin moderation queue
-- [ ] implement moderation decision audit log
+- [x] define `UserReport` model
+  - Progress: WebApi now persists user reports with target type/key, optional reported user email, reason, details, status, and decision metadata.
+- [x] define `UserBlock` model
+  - Progress: WebApi now persists learner blocks and suppresses blocked users from partner search and partner request creation in both directions.
+- [x] define `OrganizerVerification` model
+  - Progress: domain and EF persistence model exist for organizer verification status tracking.
+- [x] define `ListingReview` workflow
+  - Progress: domain and EF persistence model exist for listing review status tracking for events and organizer profiles.
+- [x] implement report action from profile, event, and organizer pages
+  - Progress: Web learners can report learner profiles from partner matching, conversation events from event detail, and organizer profiles from organizer detail.
+- [x] implement block action from profile and partner-request flows
+  - Progress: Web learners can block learner profiles without exposing email, and blocking from partner-request flows creates a block record.
+- [x] implement admin moderation queue
+  - Progress: Web Admin includes a moderation queue for report review and status filtering.
+- [x] implement moderation decision audit log
+  - Progress: WebApi records moderation decision audits whenever an admin decision is saved.
 - [ ] add tests for block visibility and request suppression
-- [ ] add operational runbook for moderation
+- [x] add operational runbook for moderation
+  - Progress: `65-Safety-And-Moderation-Requirements.md` now includes a Web moderation runbook for report triage, blocks, event/organizer reports, decision logging, and escalation.
 
 ---
 
@@ -983,15 +1001,20 @@ Make social and organizer features safe enough to release publicly.
 
 #### Backlog
 
-- [ ] define entitlement keys for scenario and conversation features
-- [ ] define entitlement keys for organizer features
+- [x] define entitlement keys for scenario and conversation features
+  - Progress: Identity feature keys now explicitly cover scenario lessons, conversation starters, conversation events, event RSVP, learner profiles, partner matching, advanced scenario packs, and event preparation packs.
+- [x] define entitlement keys for organizer features
+  - Progress: Identity feature keys now explicitly cover organizer dashboard, profile management, event management, RSVP management, analytics, recurring events, featured placement, multiple admins, and branded profiles.
 - [x] keep core catalog browse and basic scenario access outside strict premium enforcement
   - Progress: scenario detail remains accessible while event-preparation pack links are hidden when the learner lacks the paid feature.
-- [ ] add feature gates for advanced scenario packs if needed
+- [x] add feature gates for advanced scenario packs if needed
+  - Progress: Web entitlement access service now exposes an advanced-scenario-pack gate for future advanced scenario surfaces; no current Web route consumes it yet.
 - [x] add feature gates for preparation packs if needed
   - Progress: `event-preparation-packs` is a paid entitlement feature for Trial/Premium users; Web and MAUI hide scenario-linked packs for users without access and block direct preparation-pack detail access.
-- [ ] add organizer plan flags without payment integration first
-- [ ] add admin entitlement management for organizer plans
+- [x] add organizer plan flags without payment integration first
+  - Progress: Organizer plan keys are resolved into plan feature flags and active-event limits without payment integration; the Web organizer dashboard displays enabled plan features and enforces active-event limits.
+- [x] add admin entitlement management for organizer plans
+  - Progress: Admin organizer profile management already controls organizer `PlanKey`; the Web organizer dashboard now consumes that plan key through the organizer plan policy.
 - [ ] add tests for feature-gate behavior
   - Progress: entitlement seed coverage plus web scenario and direct detail gate coverage exist for preparation packs; keep open until broader WebApi/Web/MAUI feature-gate behavior is covered.
 
@@ -1015,11 +1038,16 @@ Make social and organizer features safe enough to release publicly.
 
 #### Backlog
 
-- [ ] define analytics event names and payloads
-- [ ] avoid collecting unnecessary personal data
-- [ ] implement privacy-safe analytics boundaries
-- [ ] add admin summary views for organizer/event analytics
-- [ ] add export only where operationally necessary
+- [x] define analytics event names and payloads
+  - Progress: Web product analytics now records named aggregate counters for scenario views, starter usage, saved favorites, event views/RSVPs, preparation-pack usage, organizer profile views, partner requests, report/block actions, and premium feature denials.
+- [x] avoid collecting unnecessary personal data
+  - Progress: counters store only event name, sanitized scope key, count, and first/last seen timestamps; no email, IP address, free-text note, contact detail, or user identifier is stored.
+- [x] implement privacy-safe analytics boundaries
+  - Progress: scope keys are normalized to a short ASCII allow-list and Web instrumentation uses content/feature scopes instead of learner-owned identifiers.
+- [x] add admin summary views for organizer/event analytics
+  - Progress: Web Admin includes an aggregated analytics summary grouped by event and product area with detailed counters for operator review.
+- [x] add export only where operationally necessary
+  - Progress: no export was added for the MVP because the operational need is summary review only.
 
 ---
 
@@ -1027,31 +1055,34 @@ Make social and organizer features safe enough to release publicly.
 
 #### First Scenario Packs
 
-- [ ] First language-practice meeting
-- [ ] Introducing yourself in simple German
-- [ ] Asking someone to speak slowly
-- [ ] Asking for correction politely
-- [ ] Talking to a doctor
-- [ ] Writing to kindergarten or school
-- [ ] Calling an office for an appointment
-- [ ] Talking to a landlord
-- [ ] Workplace small talk
-- [ ] Job interview basics
+- [x] First language-practice meeting
+- [x] Introducing yourself in simple German
+- [x] Asking someone to speak slowly
+- [x] Asking for correction politely
+- [x] Talking to a doctor
+- [x] Writing to kindergarten or school
+- [x] Calling an office for an appointment
+- [x] Talking to a landlord
+- [x] Workplace small talk
+- [x] Job interview basics
+  - Progress: `de-a1-a2-practical-scenarios-001.json` now contains 14 A1/A2 practical scenarios, including all first scenario priorities, with German base text plus English and Persian translations.
 
 #### First Conversation Starter Packs
 
-- [ ] Conversation cafe starters
-- [ ] Workplace lunch starters
-- [ ] School/kindergarten parent starters
-- [ ] Neighbor small talk starters
-- [ ] Online practice meeting starters
+- [x] Conversation cafe starters
+- [x] Workplace lunch starters
+- [x] School/kindergarten parent starters
+- [x] Neighbor small talk starters
+- [x] Online practice meeting starters
+  - Progress: `de-a1-a2-practical-scenarios-001.json` now contains 5 conversation starter packs with linked scenarios and linked preparation packs.
 
 #### First Event Directory Seeds
 
-- [ ] manually add a small set of public conversation cafes in selected cities
-- [ ] manually add online German practice groups where allowed
-- [ ] manually add integration-oriented support resources where appropriate
-- [ ] define update/verification date per listing
+- [x] manually add a small set of public conversation cafes in selected cities
+- [x] manually add online German practice groups where allowed
+- [x] manually add integration-oriented support resources where appropriate
+- [x] define update/verification date per listing
+  - Progress: `de-event-directory-seeds-001.json` now provides operational Web/Admin seed data for 7 organizer profiles and 7 reviewed directory listings across Berlin, Hamburg, Munich, online German practice, and official integration-course information. Each event listing includes source URL and `lastVerifiedAtUtc`.
 
 ---
 

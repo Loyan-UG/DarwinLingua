@@ -1,0 +1,94 @@
+@model DarwinLingua.Web.Models.AdminModerationPageViewModel
+@{
+    ViewData["Title"] = "Moderation";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Admin</span>
+    <h1 class="headline-md">Moderation queue</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+    <form method="get" asp-action="Index" class="action-row">
+        <select name="status">
+            <option value="">All</option>
+            <option value="pending" selected="@(Model.StatusFilter == "pending")">Pending</option>
+            <option value="reviewed" selected="@(Model.StatusFilter == "reviewed")">Reviewed</option>
+            <option value="dismissed" selected="@(Model.StatusFilter == "dismissed")">Dismissed</option>
+            <option value="action-taken" selected="@(Model.StatusFilter == "action-taken")">Action taken</option>
+        </select>
+        <button type="submit" class="button button--secondary">Filter</button>
+    </form>
+</section>
+
+<section class="panel stack-lg">
+    <h2 class="headline-sm">Reports</h2>
+    @if (Model.Reports.Count == 0)
+    {
+        <p class="body-sm">No reports match the selected filter.</p>
+    }
+    else
+    {
+        <div class="stack-md">
+            @foreach (var report in Model.Reports)
+            {
+                <article class="panel stack-md">
+                    <div class="grid-two-col">
+                        <div>
+                            <h3 class="headline-sm">@report.TargetType: @report.TargetKey</h3>
+                            <p class="body-sm">Status: @report.Status · Reason: @report.Reason</p>
+                            <p class="body-sm">Reporter: @report.ReporterEmail</p>
+                            @if (!string.IsNullOrWhiteSpace(report.ReportedUserEmail))
+                            {
+                                <p class="body-sm">Reported user: @report.ReportedUserEmail</p>
+                            }
+                            <p class="body-sm">@report.Details</p>
+                            @if (!string.IsNullOrWhiteSpace(report.DecisionNote))
+                            {
+                                <p class="body-sm">Decision: @report.DecisionNote</p>
+                            }
+                        </div>
+                        <form method="post" asp-action="Decide" asp-route-reportId="@report.Id" class="stack-sm">
+                            @Html.AntiForgeryToken()
+                            <label class="form-field">
+                                <span>Status</span>
+                                <select name="Status">
+                                    <option value="reviewed">Reviewed</option>
+                                    <option value="dismissed">Dismissed</option>
+                                    <option value="action-taken">Action taken</option>
+                                </select>
+                            </label>
+                            <label class="form-field">
+                                <span>Decision note</span>
+                                <textarea name="DecisionNote" rows="3" maxlength="1000"></textarea>
+                            </label>
+                            <button type="submit" class="button button--primary">Save decision</button>
+                        </form>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<section class="panel stack-lg">
+    <h2 class="headline-sm">Decision audit</h2>
+    @if (Model.Audits.Count == 0)
+    {
+        <p class="body-sm">No moderation decisions have been recorded yet.</p>
+    }
+    else
+    {
+        <div class="stack-sm">
+            @foreach (var audit in Model.Audits)
+            {
+                <p class="body-sm">@audit.CreatedAtUtc.ToString("u") · @audit.DecisionStatus · @audit.DecidedBy · @audit.UserReportId</p>
+            }
+        </div>
+    }
+</section>

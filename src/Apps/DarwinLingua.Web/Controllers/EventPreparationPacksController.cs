@@ -9,7 +9,8 @@ namespace DarwinLingua.Web.Controllers;
 [Route("event-preparation-packs")]
 public sealed class EventPreparationPacksController(
     IWebCatalogApiClient catalogApiClient,
-    IWebEntitledFeatureAccessService featureAccessService) : Controller
+    IWebEntitledFeatureAccessService featureAccessService,
+    IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("{slug}", Name = "EventPreparationPacks_Detail")]
     [OutputCache(NoStore = true)]
@@ -22,6 +23,7 @@ public sealed class EventPreparationPacksController(
 
         if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
         {
+            analyticsService?.Record(WebProductAnalyticsEvents.PremiumFeatureDenied, "feature:event-preparation-packs");
             return Forbid();
         }
 
@@ -33,6 +35,8 @@ public sealed class EventPreparationPacksController(
         {
             return NotFound();
         }
+
+        analyticsService?.Record(WebProductAnalyticsEvents.EventPreparationPackViewed, $"pack:{preparationPack.Slug}");
 
         return View(new EventPreparationDetailPageViewModel(preparationPack));
     }

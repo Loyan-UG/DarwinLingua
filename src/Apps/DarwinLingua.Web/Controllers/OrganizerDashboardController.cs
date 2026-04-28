@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Identity;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -52,6 +53,7 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
                     events,
                     rsvpSummaries,
                     eventRsvps,
+                    DarwinLinguaOrganizerPlanPolicy.Resolve(profile.PlanKey),
                     CreateAnalytics(events)));
             }
         }
@@ -136,6 +138,11 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
             return Forbid();
         }
 
+        if (!await CanCreateMoreActiveEventsAsync(profile, cancellationToken).ConfigureAwait(false))
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
         return View("EditEvent", new OrganizerEventEditPageViewModel(
             profile,
             null,
@@ -190,6 +197,17 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
             return Forbid();
         }
 
+        DarwinLinguaOrganizerPlanSnapshot plan = DarwinLinguaOrganizerPlanPolicy.Resolve(profile.PlanKey);
+        IReadOnlyList<OrganizerManagedConversationEventModel> events = await catalogApiClient
+            .GetAdminConversationEventsByOrganizerAsync(profile.Slug, cancellationToken)
+            .ConfigureAwait(false);
+        int activeEventCount = events.Count(item => string.Equals(item.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase));
+        if (activeEventCount >= plan.ActiveEventLimit)
+        {
+            TempData["ErrorMessage"] = $"The {plan.PlanKey} organizer plan allows {plan.ActiveEventLimit} active event(s).";
+            return RedirectToAction(nameof(Index));
+        }
+
         return await SaveEventAsync(profile, null, input, isNew: true, cancellationToken).ConfigureAwait(false);
     }
 
@@ -239,6 +257,13 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
 
         try
         {
+            if (string.Equals(publicationStatus, "Active", StringComparison.OrdinalIgnoreCase) &&
+                !string.Equals(conversationEvent.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase) &&
+                !await CanCreateMoreActiveEventsAsync(profile, cancellationToken).ConfigureAwait(false))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
             OrganizerManagedConversationEventModel updatedEvent = await catalogApiClient
                 .SetAdminConversationEventPublicationStatusAsync(
                     eventSlug,
@@ -329,6 +354,24 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
             .ConfigureAwait(false);
 
         return events.SingleOrDefault(item => string.Equals(item.Slug, eventSlug, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private async Task<bool> CanCreateMoreActiveEventsAsync(
+        OrganizerProfileDetailModel profile,
+        CancellationToken cancellationToken)
+    {
+        DarwinLinguaOrganizerPlanSnapshot plan = DarwinLinguaOrganizerPlanPolicy.Resolve(profile.PlanKey);
+        IReadOnlyList<OrganizerManagedConversationEventModel> events = await catalogApiClient
+            .GetAdminConversationEventsByOrganizerAsync(profile.Slug, cancellationToken)
+            .ConfigureAwait(false);
+        int activeEventCount = events.Count(item => string.Equals(item.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase));
+        if (activeEventCount < plan.ActiveEventLimit)
+        {
+            return true;
+        }
+
+        TempData["ErrorMessage"] = $"The {plan.PlanKey} organizer plan allows {plan.ActiveEventLimit} active event(s).";
+        return false;
     }
 
     private async Task<IActionResult> SaveEventAsync(

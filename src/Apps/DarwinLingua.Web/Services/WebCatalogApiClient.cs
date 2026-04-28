@@ -117,6 +117,57 @@ public interface IWebCatalogApiClient
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
+    Task<IReadOnlyList<PartnerMatchProfileModel>> SearchPartnerMatchesAsync(
+        string ownerEmail,
+        PartnerMatchSearchRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<PartnerRequestModel> SubmitPartnerRequestAsync(
+        string ownerEmail,
+        SubmitPartnerRequestRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<IReadOnlyList<PartnerRequestModel>> GetPartnerRequestsAsync(
+        string ownerEmail,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<PartnerRequestModel> UpdatePartnerRequestStateAsync(
+        string ownerEmail,
+        Guid requestId,
+        PartnerRequestStateUpdateRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<UserReportModel> SubmitUserReportAsync(
+        string reporterEmail,
+        SubmitUserReportRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<UserBlockModel> BlockUserAsync(
+        string blockerEmail,
+        BlockUserRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<IReadOnlyList<UserReportModel>> GetAdminUserReportsAsync(
+        string? status,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<IReadOnlyList<ModerationDecisionAuditModel>> GetAdminModerationDecisionAuditsAsync(
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<UserReportModel> DecideAdminUserReportAsync(
+        Guid reportId,
+        ModerationDecisionRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -393,6 +444,81 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         using HttpResponseMessage response = await httpClient.DeleteAsync(relativeUri, cancellationToken).ConfigureAwait(false);
         await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
     }
+
+    public Task<IReadOnlyList<PartnerMatchProfileModel>> SearchPartnerMatchesAsync(
+        string ownerEmail,
+        PartnerMatchSearchRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<PartnerMatchSearchRequest, IReadOnlyList<PartnerMatchProfileModel>>(
+            BuildPath("/api/catalog/partner-matches/search", [new("ownerEmail", ownerEmail)]),
+            request,
+            cancellationToken);
+
+    public Task<PartnerRequestModel> SubmitPartnerRequestAsync(
+        string ownerEmail,
+        SubmitPartnerRequestRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<SubmitPartnerRequestRequest, PartnerRequestModel>(
+            BuildPath("/api/catalog/partner-requests", [new("ownerEmail", ownerEmail)]),
+            request,
+            cancellationToken);
+
+    public Task<IReadOnlyList<PartnerRequestModel>> GetPartnerRequestsAsync(
+        string ownerEmail,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<PartnerRequestModel>>(
+            BuildPath("/api/catalog/partner-requests", [new("ownerEmail", ownerEmail)]),
+            cancellationToken);
+
+    public Task<PartnerRequestModel> UpdatePartnerRequestStateAsync(
+        string ownerEmail,
+        Guid requestId,
+        PartnerRequestStateUpdateRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<PartnerRequestStateUpdateRequest, PartnerRequestModel>(
+            BuildPath($"/api/catalog/partner-requests/{requestId:D}/state", [new("ownerEmail", ownerEmail)]),
+            request,
+            cancellationToken);
+
+    public Task<UserReportModel> SubmitUserReportAsync(
+        string reporterEmail,
+        SubmitUserReportRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<SubmitUserReportRequest, UserReportModel>(
+            BuildPath("/api/catalog/moderation/reports", [new("reporterEmail", reporterEmail)]),
+            request,
+            cancellationToken);
+
+    public Task<UserBlockModel> BlockUserAsync(
+        string blockerEmail,
+        BlockUserRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<BlockUserRequest, UserBlockModel>(
+            BuildPath("/api/catalog/moderation/blocks", [new("blockerEmail", blockerEmail)]),
+            request,
+            cancellationToken);
+
+    public Task<IReadOnlyList<UserReportModel>> GetAdminUserReportsAsync(
+        string? status,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<UserReportModel>>(
+            BuildPath("/api/admin/catalog/moderation/reports", [new("status", status)]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<ModerationDecisionAuditModel>> GetAdminModerationDecisionAuditsAsync(
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ModerationDecisionAuditModel>>(
+            "/api/admin/catalog/moderation/audits",
+            cancellationToken);
+
+    public Task<UserReportModel> DecideAdminUserReportAsync(
+        Guid reportId,
+        ModerationDecisionRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<ModerationDecisionRequest, UserReportModel>(
+            $"/api/admin/catalog/moderation/reports/{reportId:D}/decision",
+            request,
+            cancellationToken);
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
@@ -921,3 +1047,92 @@ public sealed record LearnerConversationProfilePublicModel(
     string GermanLevel,
     IReadOnlyList<string> HelperLanguageCodes,
     string ConversationGoals);
+
+public sealed record PartnerMatchSearchRequest(
+    string? CityRegion,
+    string? InteractionPreference,
+    string? GermanLevel,
+    string? HelperLanguageCode,
+    string? GoalKeyword);
+
+public sealed record PartnerMatchProfileModel(
+    Guid ProfileId,
+    string DisplayName,
+    string? CityRegion,
+    string InteractionPreference,
+    string GermanLevel,
+    IReadOnlyList<string> HelperLanguageCodes,
+    string ConversationGoals,
+    string Visibility);
+
+public sealed record SubmitPartnerRequestRequest(
+    Guid TargetLearnerProfileId,
+    string OpenerTemplateKey,
+    string? Note);
+
+public sealed record PartnerRequestStateUpdateRequest(
+    string Action);
+
+public sealed record PartnerRequestModel(
+    Guid Id,
+    string Direction,
+    Guid TargetLearnerProfileId,
+    string OtherDisplayName,
+    string? OtherCityRegion,
+    string OpenerTemplateKey,
+    string? Note,
+    string Status,
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc,
+    DateTime ExpiresAtUtc,
+    DateTime? RespondedAtUtc,
+    string? ContactEmail);
+
+public sealed record SubmitUserReportRequest(
+    string TargetType,
+    string TargetKey,
+    string? ReportedUserEmail,
+    string Reason,
+    string Details);
+
+public sealed record BlockUserRequest(
+    string? BlockedEmail,
+    string? Reason,
+    Guid? SourcePartnerRequestId,
+    Guid? TargetLearnerProfileId = null);
+
+public sealed record ModerationDecisionRequest(
+    string Status,
+    string? DecisionNote,
+    string DecidedBy);
+
+public sealed record UserReportModel(
+    Guid Id,
+    string ReporterEmail,
+    string TargetType,
+    string TargetKey,
+    string? ReportedUserEmail,
+    string Reason,
+    string Details,
+    string Status,
+    string? DecisionNote,
+    string? DecidedBy,
+    DateTime? DecidedAtUtc,
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc);
+
+public sealed record UserBlockModel(
+    Guid Id,
+    string BlockerEmail,
+    string BlockedEmail,
+    string? Reason,
+    Guid? SourcePartnerRequestId,
+    DateTime CreatedAtUtc);
+
+public sealed record ModerationDecisionAuditModel(
+    Guid Id,
+    Guid UserReportId,
+    string DecisionStatus,
+    string DecidedBy,
+    string? DecisionNote,
+    DateTime CreatedAtUtc);

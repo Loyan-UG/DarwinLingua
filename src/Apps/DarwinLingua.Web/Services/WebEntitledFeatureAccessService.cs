@@ -14,6 +14,22 @@ public interface IWebEntitledFeatureAccessService
 
     Task EnsureCanUseEventPreparationPacksAsync(CancellationToken cancellationToken);
 
+    Task<bool> CanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken) =>
+        Task.FromResult(false);
+
+    Task EnsureCanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken) =>
+        throw new FeatureAccessDeniedException(
+            DarwinLinguaFeatureKeys.AdvancedScenarioPacks,
+            "Advanced scenario packs require an authenticated account with an active trial or premium entitlement.");
+
+    Task<bool> CanUsePartnerMatchingAsync(CancellationToken cancellationToken) =>
+        Task.FromResult(false);
+
+    Task EnsureCanUsePartnerMatchingAsync(CancellationToken cancellationToken) =>
+        throw new FeatureAccessDeniedException(
+            DarwinLinguaFeatureKeys.PartnerMatching,
+            "Partner matching requires an authenticated account with an active trial or premium entitlement.");
+
     Task<string?> ResolveSecondaryMeaningLanguageAsync(string? requestedSecondaryMeaningLanguageCode, CancellationToken cancellationToken);
 }
 
@@ -58,6 +74,40 @@ internal sealed class WebEntitledFeatureAccessService(
         throw new FeatureAccessDeniedException(
             DarwinLinguaFeatureKeys.EventPreparationPacks,
             "Preparation packs require an authenticated account with an active trial or premium entitlement.");
+    }
+
+    public async Task<bool> CanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken)
+    {
+        return await HasFeatureAsync(DarwinLinguaFeatureKeys.AdvancedScenarioPacks, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task EnsureCanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken)
+    {
+        if (await CanUseAdvancedScenarioPacksAsync(cancellationToken).ConfigureAwait(false))
+        {
+            return;
+        }
+
+        throw new FeatureAccessDeniedException(
+            DarwinLinguaFeatureKeys.AdvancedScenarioPacks,
+            "Advanced scenario packs require an authenticated account with an active trial or premium entitlement.");
+    }
+
+    public async Task<bool> CanUsePartnerMatchingAsync(CancellationToken cancellationToken)
+    {
+        return await HasFeatureAsync(DarwinLinguaFeatureKeys.PartnerMatching, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task EnsureCanUsePartnerMatchingAsync(CancellationToken cancellationToken)
+    {
+        if (await CanUsePartnerMatchingAsync(cancellationToken).ConfigureAwait(false))
+        {
+            return;
+        }
+
+        throw new FeatureAccessDeniedException(
+            DarwinLinguaFeatureKeys.PartnerMatching,
+            "Partner matching requires an authenticated account with an active trial or premium entitlement.");
     }
 
     public async Task<string?> ResolveSecondaryMeaningLanguageAsync(string? requestedSecondaryMeaningLanguageCode, CancellationToken cancellationToken)
