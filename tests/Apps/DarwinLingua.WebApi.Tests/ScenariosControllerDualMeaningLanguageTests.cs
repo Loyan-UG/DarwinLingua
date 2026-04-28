@@ -48,6 +48,23 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
         Assert.Null(viewModel.SecondaryMeaningLanguageCode);
     }
 
+    [Fact]
+    public async Task Detail_ShouldNotLoadPreparationPacks_WhenFeatureIsUnavailable()
+    {
+        CapturingCatalogApiClient catalogApiClient = new(CreateScenario());
+        ScenariosController controller = new(
+            catalogApiClient,
+            new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
+            new StaticFeatureAccessService(null, canUseEventPreparationPacks: false));
+
+        IActionResult actionResult = await controller.Detail("at-the-pharmacy", CancellationToken.None);
+
+        ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
+        ScenarioDetailPageViewModel viewModel = Assert.IsType<ScenarioDetailPageViewModel>(viewResult.Model);
+        Assert.Empty(viewModel.RelatedEventPreparationPacks);
+        Assert.False(catalogApiClient.EventPreparationPacksWereRequested);
+    }
+
     private static ScenarioLessonDetailModel CreateScenario() =>
         new(
             "at-the-pharmacy",
@@ -68,6 +85,8 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
         public string? PrimaryMeaningLanguageCode { get; private set; }
 
         public string? SecondaryMeaningLanguageCode { get; private set; }
+
+        public bool EventPreparationPacksWereRequested { get; private set; }
 
         public Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
 
@@ -95,6 +114,14 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
 
         public Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
+        public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(string scenarioSlug, CancellationToken cancellationToken)
+        {
+            EventPreparationPacksWereRequested = true;
+            return Task.FromResult<IReadOnlyList<EventPreparationPackListItemModel>>([]);
+        }
+
+        public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
         public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(string topicKey, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
 
         public Task<IReadOnlyList<WordListItemModel>> GetWordsByCefrPageAsync(string cefrLevel, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
@@ -121,13 +148,19 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
         public Task<UserLearningProfileModel> GetProfileAsync(CancellationToken cancellationToken) => Task.FromResult(profile);
     }
 
-    private sealed class StaticFeatureAccessService(string? resolvedSecondaryLanguage) : IWebEntitledFeatureAccessService
+    private sealed class StaticFeatureAccessService(
+        string? resolvedSecondaryLanguage,
+        bool canUseEventPreparationPacks = true) : IWebEntitledFeatureAccessService
     {
         public Task<bool> CanUseFavoritesAsync(CancellationToken cancellationToken) => Task.FromResult(true);
 
         public Task EnsureCanUseFavoritesAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
         public Task<bool> CanUseDualMeaningLanguageAsync(CancellationToken cancellationToken) => Task.FromResult(resolvedSecondaryLanguage is not null);
+
+        public Task<bool> CanUseEventPreparationPacksAsync(CancellationToken cancellationToken) => Task.FromResult(canUseEventPreparationPacks);
+
+        public Task EnsureCanUseEventPreparationPacksAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
         public Task<string?> ResolveSecondaryMeaningLanguageAsync(string? requestedSecondaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             Task.FromResult(resolvedSecondaryLanguage);

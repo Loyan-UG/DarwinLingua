@@ -24,7 +24,7 @@ public sealed class ScenariosController(
     }
 
     [HttpGet("{slug}", Name = "Scenarios_Detail")]
-    [OutputCache(PolicyName = "CatalogBrowse")]
+    [OutputCache(NoStore = true)]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(slug))
@@ -54,9 +54,17 @@ public sealed class ScenariosController(
             .GetConversationStarterPacksForScenarioAsync(slug, cancellationToken)
             .ConfigureAwait(false);
 
+        IReadOnlyList<EventPreparationPackListItemModel> relatedEventPreparationPacks =
+            await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false)
+                ? await catalogApiClient
+                    .GetEventPreparationPacksForScenarioAsync(slug, cancellationToken)
+                    .ConfigureAwait(false)
+                : [];
+
         return View(new ScenarioDetailPageViewModel(
             scenario,
             relatedStarterPacks,
+            relatedEventPreparationPacks,
             profile.PreferredMeaningLanguage1,
             effectiveSecondaryMeaningLanguageCode));
     }

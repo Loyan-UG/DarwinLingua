@@ -618,8 +618,8 @@ Help learners start and continue real conversations.
 - [x] support standalone starter packs
   - Progress: content contract, parser model support, import-boundary validation, persistence, catalog queries, WebApi endpoints, web/mobile UI, and mobile package export for `conversationStarterPacks` are implemented.
 - [x] add mobile browsing and detail UI for starter packs
-- [ ] connect starter packs to event preparation packs
-  - Progress: starter packs already accept and persist `linkedEventPreparationPackSlugs`; event-preparation packs now accept reciprocal `linkedConversationStarterPackSlugs` at the content-contract/parser/validation boundary. Keep open until event-preparation packs are persisted and queryable.
+- [x] connect starter packs to event preparation packs
+  - Progress: starter packs accept/persist `linkedEventPreparationPackSlugs`; event-preparation packs accept/persist/query reciprocal `linkedConversationStarterPackSlugs`; scenario detail surfaces related preparation packs in web and mobile.
 - [ ] add tests for starter filtering and dual-language rendering
   - Progress: parser contract, invalid-contract validation, persistence, query filtering, scenario-link query coverage, dual-language query coverage, and web/mobile rendering implementation exist; keep open until explicit UI rendering tests are implemented.
 - [x] add sample starter packs for conversation cafes, workplace small talk, and first meetings
@@ -726,8 +726,12 @@ Each event can have:
 - [x] persist `EventPreparationPack` catalog records
 - [x] query `EventPreparationPack` catalog records
 - [x] expose read-only WebApi endpoints for event preparation packs
+- [x] show preparation packs on scenario detail screens
+- [x] add web/mobile preparation-pack detail screens
+- [x] export event preparation packs in full and CEFR mobile catalog packages
 - [ ] show preparation packs on event detail screens
-- [ ] add `Prepare for this event` action
+- [x] add `Prepare for this event` action
+  - Progress: scenario detail now presents entitled preparation-pack links as `Prepare for this event`.
 - [ ] track preparation-pack completion if useful
 - [ ] add tests for event-to-pack mapping
   - Progress: parser coverage, invalid-contract application validation, EF persistence, migration coverage, positive import persistence tests, query filtering, scenario-link query, and detail query tests exist. UI mapping tests remain open until web/mobile screens are added.
@@ -947,12 +951,15 @@ Make social and organizer features safe enough to release publicly.
 
 - [ ] define entitlement keys for scenario and conversation features
 - [ ] define entitlement keys for organizer features
-- [ ] keep core catalog browse and basic scenario access outside strict premium enforcement
+- [x] keep core catalog browse and basic scenario access outside strict premium enforcement
+  - Progress: scenario detail remains accessible while event-preparation pack links are hidden when the learner lacks the paid feature.
 - [ ] add feature gates for advanced scenario packs if needed
-- [ ] add feature gates for preparation packs if needed
+- [x] add feature gates for preparation packs if needed
+  - Progress: `event-preparation-packs` is a paid entitlement feature for Trial/Premium users; Web and MAUI hide scenario-linked packs for users without access and block direct preparation-pack detail access.
 - [ ] add organizer plan flags without payment integration first
 - [ ] add admin entitlement management for organizer plans
 - [ ] add tests for feature-gate behavior
+  - Progress: entitlement seed coverage plus web scenario and direct detail gate coverage exist for preparation packs; keep open until broader WebApi/Web/MAUI feature-gate behavior is covered.
 
 ---
 

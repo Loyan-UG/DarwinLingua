@@ -29,6 +29,7 @@ public sealed class UserEntitlementService<TContext>(
         DarwinLinguaFeatureKeys.Favorites,
         DarwinLinguaFeatureKeys.DualMeaningLanguage,
         DarwinLinguaFeatureKeys.AdvancedPractice,
+        DarwinLinguaFeatureKeys.EventPreparationPacks,
     ];
 
     public async Task<UserEntitlementSnapshot> GetCurrentAsync(string userId, CancellationToken cancellationToken)

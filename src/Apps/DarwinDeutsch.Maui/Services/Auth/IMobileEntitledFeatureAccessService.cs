@@ -8,5 +8,9 @@ public interface IMobileEntitledFeatureAccessService
 
     Task<bool> CanUseDualMeaningLanguageAsync(CancellationToken cancellationToken);
 
+    Task<bool> CanUseEventPreparationPacksAsync(CancellationToken cancellationToken);
+
+    Task EnsureCanUseEventPreparationPacksAsync(CancellationToken cancellationToken);
+
     Task<string?> ResolveSecondaryMeaningLanguageAsync(string? requestedSecondaryMeaningLanguageCode, CancellationToken cancellationToken);
 }

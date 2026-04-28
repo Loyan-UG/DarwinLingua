@@ -55,6 +55,7 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
             Assert.Equal(DarwinLinguaEntitlementTiers.Trial, learnerEntitlement.Tier);
             Assert.Contains(DarwinLinguaFeatureKeys.BrowseCatalog, learnerEntitlement.EnabledFeatures);
             Assert.Contains(DarwinLinguaFeatureKeys.Favorites, learnerEntitlement.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.EventPreparationPacks, learnerEntitlement.EnabledFeatures);
             Assert.NotNull(learnerEntitlement.TrialEndsAtUtc);
             Assert.Contains(learnerAuditEvents, auditEvent => auditEvent.EventType == "initial-trial");
         }

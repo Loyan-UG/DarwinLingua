@@ -1,0 +1,76 @@
+@model DarwinLingua.Web.Models.EventPreparationDetailPageViewModel
+@{
+    ViewData["Title"] = Model.PreparationPack.Title;
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.PreparationPack.CefrLevel · @Model.PreparationPack.EventType · @Model.PreparationPack.Category</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@Model.PreparationPack.Title</h1>
+    <p class="body-lg">@Model.PreparationPack.Description</p>
+    @if (Model.PreparationPack.TopicKeys.Count > 0)
+    {
+        <div class="chip-grid">
+            @foreach (string topicKey in Model.PreparationPack.TopicKeys)
+            {
+                <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+            }
+        </div>
+    }
+</section>
+
+@if (Model.PreparationPack.Prompts.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Preparation prompts</h2>
+        <div class="grid-two-col">
+            @foreach (var prompt in Model.PreparationPack.Prompts)
+            {
+                <article class="panel stack-md">
+                    <span class="eyebrow">@prompt.PromptType</span>
+                    <p>@prompt.Text</p>
+                </article>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.PreparationPack.LinkedVocabulary.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Linked vocabulary</h2>
+        <ul class="feature-list">
+            @foreach (var reference in Model.PreparationPack.LinkedVocabulary)
+            {
+                <li>
+                    <strong>@reference.Word</strong>
+                    @if (!string.IsNullOrWhiteSpace(reference.PartOfSpeech) || !string.IsNullOrWhiteSpace(reference.CefrLevel))
+                    {
+                        <span> · @reference.PartOfSpeech @reference.CefrLevel</span>
+                    }
+                </li>
+            }
+        </ul>
+    </section>
+}
+
+@if (Model.PreparationPack.LinkedScenarioSlugs.Count > 0 || Model.PreparationPack.LinkedConversationStarterPackSlugs.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Related practice</h2>
+        <div class="chip-grid">
+            @foreach (string scenarioSlug in Model.PreparationPack.LinkedScenarioSlugs)
+            {
+                <a class="chip-link" asp-controller="Scenarios" asp-action="Detail" asp-route-slug="@scenarioSlug">@scenarioSlug</a>
+            }
+            @foreach (string starterPackSlug in Model.PreparationPack.LinkedConversationStarterPackSlugs)
+            {
+                <a class="chip-link" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPackSlug">@starterPackSlug</a>
+            }
+        </div>
+    </section>
+}

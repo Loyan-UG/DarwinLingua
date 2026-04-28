@@ -17,10 +17,12 @@ public partial class ScenarioDetailPage : ContentPage
 {
     private readonly IScenarioLessonQueryService _scenarioLessonQueryService;
     private readonly IConversationStarterQueryService _conversationStarterQueryService;
+    private readonly IEventPreparationQueryService _eventPreparationQueryService;
     private readonly IActiveLearningProfileCacheService _activeLearningProfileCacheService;
     private readonly IMobileEntitledFeatureAccessService _featureAccessService;
     private readonly ISpeechPlaybackService _speechPlaybackService;
     private readonly ObservableCollection<ScenarioStarterPackItemViewModel> _starterPacks = [];
+    private readonly ObservableCollection<ScenarioEventPreparationPackItemViewModel> _eventPreparationPacks = [];
     private readonly ObservableCollection<ScenarioTextItemViewModel> _dialogueTurns = [];
     private readonly ObservableCollection<ScenarioPhraseItemViewModel> _phrases = [];
     private readonly ObservableCollection<ScenarioQuestionItemViewModel> _questions = [];
@@ -31,12 +33,14 @@ public partial class ScenarioDetailPage : ContentPage
     public ScenarioDetailPage(
         IScenarioLessonQueryService scenarioLessonQueryService,
         IConversationStarterQueryService conversationStarterQueryService,
+        IEventPreparationQueryService eventPreparationQueryService,
         IActiveLearningProfileCacheService activeLearningProfileCacheService,
         IMobileEntitledFeatureAccessService featureAccessService,
         ISpeechPlaybackService speechPlaybackService)
     {
         ArgumentNullException.ThrowIfNull(scenarioLessonQueryService);
         ArgumentNullException.ThrowIfNull(conversationStarterQueryService);
+        ArgumentNullException.ThrowIfNull(eventPreparationQueryService);
         ArgumentNullException.ThrowIfNull(activeLearningProfileCacheService);
         ArgumentNullException.ThrowIfNull(featureAccessService);
         ArgumentNullException.ThrowIfNull(speechPlaybackService);
@@ -44,11 +48,13 @@ public partial class ScenarioDetailPage : ContentPage
         InitializeComponent();
         _scenarioLessonQueryService = scenarioLessonQueryService;
         _conversationStarterQueryService = conversationStarterQueryService;
+        _eventPreparationQueryService = eventPreparationQueryService;
         _activeLearningProfileCacheService = activeLearningProfileCacheService;
         _featureAccessService = featureAccessService;
         _speechPlaybackService = speechPlaybackService;
 
         StarterPacksCollectionView.ItemsSource = _starterPacks;
+        EventPreparationPacksCollectionView.ItemsSource = _eventPreparationPacks;
         DialogueTurnsCollectionView.ItemsSource = _dialogueTurns;
         PhrasesCollectionView.ItemsSource = _phrases;
         QuestionsCollectionView.ItemsSource = _questions;
@@ -119,14 +125,23 @@ public partial class ScenarioDetailPage : ContentPage
                 .GetPublishedStarterPacksForScenarioAsync(ScenarioSlug, cancellationToken)
                 .ConfigureAwait(true);
 
-        ShowScenario(scenario, relatedStarterPacks);
+        IReadOnlyList<EventPreparationPackListItemModel> relatedEventPreparationPacks =
+            scenario is null || !await _featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(true)
+                ? []
+                : await _eventPreparationQueryService
+                    .GetPublishedEventPreparationPacksForScenarioAsync(ScenarioSlug, cancellationToken)
+                    .ConfigureAwait(true);
+
+        ShowScenario(scenario, relatedStarterPacks, relatedEventPreparationPacks);
     }
 
     private void ShowScenario(
         ScenarioLessonDetailModel? scenario,
-        IReadOnlyList<ConversationStarterPackListItemModel>? relatedStarterPacks = null)
+        IReadOnlyList<ConversationStarterPackListItemModel>? relatedStarterPacks = null,
+        IReadOnlyList<EventPreparationPackListItemModel>? relatedEventPreparationPacks = null)
     {
         _starterPacks.Clear();
+        _eventPreparationPacks.Clear();
         _dialogueTurns.Clear();
         _phrases.Clear();
         _questions.Clear();
@@ -137,6 +152,7 @@ public partial class ScenarioDetailPage : ContentPage
             ContentScrollView.IsVisible = true;
             EmptyStateLabel.IsVisible = true;
             StarterPacksSection.IsVisible = false;
+            EventPreparationPacksSection.IsVisible = false;
             DialogueSection.IsVisible = false;
             PhrasesSection.IsVisible = false;
             QuestionsSection.IsVisible = false;
@@ -156,6 +172,19 @@ public partial class ScenarioDetailPage : ContentPage
                 starterPack.Title,
                 starterPack.Description,
                 $"{starterPack.CefrLevel} • {starterPack.Situation} • {starterPack.Tone}"));
+        }
+
+        foreach (EventPreparationPackListItemModel preparationPack in relatedEventPreparationPacks ?? [])
+        {
+            _eventPreparationPacks.Add(new ScenarioEventPreparationPackItemViewModel(
+                preparationPack.Slug,
+                preparationPack.Title,
+                preparationPack.Description,
+                $"{preparationPack.CefrLevel} • {preparationPack.EventType} • {preparationPack.Category}",
+                preparationPack.LinkedConversationStarterPackSlugs.Count == 0
+                    ? string.Empty
+                    : $"Starter packs: {string.Join(", ", preparationPack.LinkedConversationStarterPackSlugs)}",
+                preparationPack.LinkedConversationStarterPackSlugs.Count > 0));
         }
 
         foreach (ScenarioDialogueTurnModel turn in scenario.DialogueTurns)
@@ -193,6 +222,7 @@ public partial class ScenarioDetailPage : ContentPage
         }
 
         StarterPacksSection.IsVisible = _starterPacks.Count > 0;
+        EventPreparationPacksSection.IsVisible = _eventPreparationPacks.Count > 0;
         DialogueSection.IsVisible = _dialogueTurns.Count > 0;
         PhrasesSection.IsVisible = _phrases.Count > 0;
         QuestionsSection.IsVisible = _questions.Count > 0;
@@ -214,6 +244,25 @@ public partial class ScenarioDetailPage : ContentPage
         try
         {
             await Shell.Current.GoToAsync($"{nameof(ConversationStarterDetailPage)}?starterPackSlug={escapedSlug}").ConfigureAwait(true);
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    private async void OnEventPreparationPacksSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.FirstOrDefault() is not ScenarioEventPreparationPackItemViewModel selectedPreparationPack)
+        {
+            return;
+        }
+
+        EventPreparationPacksCollectionView.SelectedItem = null;
+        string escapedSlug = Uri.EscapeDataString(selectedPreparationPack.Slug);
+
+        try
+        {
+            await Shell.Current.GoToAsync($"{nameof(EventPreparationPackDetailPage)}?preparationPackSlug={escapedSlug}").ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {
@@ -305,6 +354,14 @@ public partial class ScenarioDetailPage : ContentPage
         string Title,
         string Description,
         string MetadataLine);
+
+    private sealed record ScenarioEventPreparationPackItemViewModel(
+        string Slug,
+        string Title,
+        string Description,
+        string MetadataLine,
+        string LinkedStarterPacksLine,
+        bool HasLinkedStarterPacks);
 
     private sealed record ScenarioPhraseItemViewModel(
         string BaseText,

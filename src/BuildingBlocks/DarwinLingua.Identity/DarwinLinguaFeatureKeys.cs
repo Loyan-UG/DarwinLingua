@@ -10,4 +10,5 @@ public static class DarwinLinguaFeatureKeys
     public const string Favorites = "favorites";
     public const string DualMeaningLanguage = "dual-meaning-language";
     public const string AdvancedPractice = "advanced-practice";
+    public const string EventPreparationPacks = "event-preparation-packs";
 }

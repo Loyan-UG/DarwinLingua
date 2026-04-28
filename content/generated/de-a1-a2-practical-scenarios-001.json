@@ -625,7 +625,9 @@
       "linkedScenarioSlugs": [
         "a1-buy-bread-at-bakery"
       ],
-      "linkedEventPreparationPackSlugs": [],
+      "linkedEventPreparationPackSlugs": [
+        "a1-cafe-first-meeting-prep"
+      ],
       "phrases": [
         {
           "baseText": "Hallo, ich heiße Sara.",
@@ -686,7 +688,9 @@
       "linkedScenarioSlugs": [
         "a2-call-in-sick-at-work"
       ],
-      "linkedEventPreparationPackSlugs": [],
+      "linkedEventPreparationPackSlugs": [
+        "a2-workplace-small-talk-prep"
+      ],
       "phrases": [
         {
           "baseText": "Wie war dein Wochenende?",
@@ -746,7 +750,9 @@
       "linkedScenarioSlugs": [
         "a2-reschedule-delivery-time"
       ],
-      "linkedEventPreparationPackSlugs": [],
+      "linkedEventPreparationPackSlugs": [
+        "a2-online-practice-meeting-prep"
+      ],
       "phrases": [
         {
           "baseText": "Kannst du mich gut hören?",
@@ -788,6 +794,122 @@
             }
           ]
         }
+      ]
+    }
+  ],
+  "eventPreparationPacks": [
+    {
+      "slug": "a1-cafe-first-meeting-prep",
+      "title": "Cafe First Meeting Preparation",
+      "description": "Prepare a simple first introduction and one polite follow-up question before a cafe practice meetup.",
+      "cefrLevel": "A1",
+      "category": "first-meetings",
+      "eventType": "conversation-cafe",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 10,
+      "linkedScenarioSlugs": [
+        "a1-buy-bread-at-bakery"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Name",
+          "partOfSpeech": "Noun",
+          "cefrLevel": "A1"
+        },
+        {
+          "word": "Brot",
+          "partOfSpeech": "Noun",
+          "cefrLevel": "A1"
+        }
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "a1-cafe-first-meeting-starters"
+      ],
+      "openingPrompts": [
+        "Say your name and ask for the other person's name.",
+        "Order one simple item before you introduce yourself."
+      ],
+      "roleplayPrompts": [
+        "Practice a two-minute cafe introduction with one follow-up question."
+      ],
+      "reviewPrompts": [
+        "Write one phrase you want to reuse at the next meetup."
+      ]
+    },
+    {
+      "slug": "a2-workplace-small-talk-prep",
+      "title": "Workplace Small Talk Preparation",
+      "description": "Prepare friendly A2 small-talk questions for colleagues before a short workplace conversation.",
+      "cefrLevel": "A2",
+      "category": "workplace-small-talk",
+      "eventType": "workplace-practice",
+      "topics": [
+        "work-and-jobs"
+      ],
+      "sortOrder": 20,
+      "linkedScenarioSlugs": [
+        "a2-call-in-sick-at-work"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "krank",
+          "partOfSpeech": "Adjective",
+          "cefrLevel": "A2"
+        },
+        {
+          "word": "Wochenende",
+          "partOfSpeech": "Noun",
+          "cefrLevel": "A2"
+        }
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "a2-workplace-small-talk-starters"
+      ],
+      "openingPrompts": [
+        "Ask a friendly question about the weekend.",
+        "Ask whether your colleague has a busy day."
+      ],
+      "roleplayPrompts": [
+        "Practice a short office kitchen conversation with two follow-up questions."
+      ],
+      "reviewPrompts": [
+        "Note which question sounded natural and which one felt difficult."
+      ]
+    },
+    {
+      "slug": "a2-online-practice-meeting-prep",
+      "title": "Online Practice Meeting Preparation",
+      "description": "Prepare clarification phrases and check-in questions for an online German practice session.",
+      "cefrLevel": "A2",
+      "category": "online-practice",
+      "eventType": "online-meeting",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 30,
+      "linkedScenarioSlugs": [
+        "a2-reschedule-delivery-time"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "wiederholen",
+          "partOfSpeech": "Verb",
+          "cefrLevel": "A2"
+        }
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "a2-online-practice-meeting-starters"
+      ],
+      "openingPrompts": [
+        "Check whether the other person can hear you well."
+      ],
+      "roleplayPrompts": [
+        "Practice asking someone to repeat a sentence during a video call."
+      ],
+      "reviewPrompts": [
+        "Write one clarification phrase you used successfully."
       ]
     }
   ]

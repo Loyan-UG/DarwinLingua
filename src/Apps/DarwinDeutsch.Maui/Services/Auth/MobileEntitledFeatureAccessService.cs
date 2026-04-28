@@ -5,6 +5,7 @@ internal sealed class MobileEntitledFeatureAccessService(
 {
     private const string FavoritesFeatureKey = "favorites";
     private const string DualMeaningLanguageFeatureKey = "dual-meaning-language";
+    private const string EventPreparationPacksFeatureKey = "event-preparation-packs";
 
     public async Task<bool> CanUseFavoritesAsync(CancellationToken cancellationToken)
     {
@@ -29,13 +30,22 @@ internal sealed class MobileEntitledFeatureAccessService(
 
     public async Task<bool> CanUseDualMeaningLanguageAsync(CancellationToken cancellationToken)
     {
-        MobileAuthSession? session = await mobileAuthService.GetCurrentSessionAsync(cancellationToken).ConfigureAwait(false);
-        if (session is null)
+        return await HasFeatureAsync(DualMeaningLanguageFeatureKey, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<bool> CanUseEventPreparationPacksAsync(CancellationToken cancellationToken)
+    {
+        return await HasFeatureAsync(EventPreparationPacksFeatureKey, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task EnsureCanUseEventPreparationPacksAsync(CancellationToken cancellationToken)
+    {
+        if (await CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
         {
-            return false;
+            return;
         }
 
-        return session.EnabledFeatures.Contains(DualMeaningLanguageFeatureKey, StringComparer.OrdinalIgnoreCase);
+        throw new InvalidOperationException("Preparation packs require an authenticated account with an active trial or premium entitlement.");
     }
 
     public async Task<string?> ResolveSecondaryMeaningLanguageAsync(string? requestedSecondaryMeaningLanguageCode, CancellationToken cancellationToken)
@@ -48,5 +58,16 @@ internal sealed class MobileEntitledFeatureAccessService(
         return await CanUseDualMeaningLanguageAsync(cancellationToken).ConfigureAwait(false)
             ? requestedSecondaryMeaningLanguageCode
             : null;
+    }
+
+    private async Task<bool> HasFeatureAsync(string featureKey, CancellationToken cancellationToken)
+    {
+        MobileAuthSession? session = await mobileAuthService.GetCurrentSessionAsync(cancellationToken).ConfigureAwait(false);
+        if (session is null)
+        {
+            return false;
+        }
+
+        return session.EnabledFeatures.Contains(featureKey, StringComparer.OrdinalIgnoreCase);
     }
 }

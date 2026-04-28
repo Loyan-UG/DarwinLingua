@@ -42,6 +42,14 @@ public interface IWebCatalogApiClient
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(
+        string scenarioSlug,
+        CancellationToken cancellationToken);
+
+    Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -159,6 +167,20 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
                     new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
                 ]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(
+        string scenarioSlug,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<EventPreparationPackListItemModel>>(
+            $"/api/catalog/scenarios/{Uri.EscapeDataString(scenarioSlug)}/event-preparation-packs",
+            cancellationToken);
+
+    public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<EventPreparationPackDetailModel>(
+            $"/api/catalog/event-preparation-packs/{Uri.EscapeDataString(slug)}",
             cancellationToken);
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(

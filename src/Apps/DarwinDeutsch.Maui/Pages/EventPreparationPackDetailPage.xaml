@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DarwinDeutsch.Maui.Controls"
+             x:Class="DarwinDeutsch.Maui.Pages.EventPreparationPackDetailPage">
+    <Grid Padding="24"
+          RowDefinitions="Auto,*"
+          RowSpacing="12">
+        <controls:LoadingStateView x:Name="LoadingStateView"
+                                   Grid.Row="0"
+                                   LoadingMode="DetailSkeleton" />
+
+        <ScrollView Grid.Row="1"
+                    x:Name="ContentScrollView"
+                    IsVisible="False">
+            <VerticalStackLayout Spacing="14">
+                <Border Padding="20"
+                        Style="{StaticResource AppHeroPanelBorderStyle}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label x:Name="MetadataLabel"
+                               Style="{DynamicResource Caption}" />
+                        <Label x:Name="HeadlineLabel"
+                               Style="{DynamicResource Headline}"
+                               SemanticProperties.HeadingLevel="Level1" />
+                        <Label x:Name="DescriptionLabel"
+                               Style="{DynamicResource Body}"
+                               LineBreakMode="WordWrap" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label x:Name="EmptyStateLabel"
+                       Style="{DynamicResource Body}"
+                       IsVisible="False" />
+
+                <Border x:Name="PromptsSection"
+                        Padding="16"
+                        Style="{StaticResource AppSectionCardBorderStyle}">
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Preparation prompts"
+                               Style="{DynamicResource Title2}" />
+                        <CollectionView x:Name="PromptsCollectionView"
+                                        SelectionMode="None">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="0,0,0,10"
+                                            Padding="14"
+                                            Style="{StaticResource AppSectionCardBorderStyle}">
+                                        <VerticalStackLayout Spacing="7">
+                                            <Label Text="{Binding PromptType}"
+                                                   Style="{DynamicResource Caption}" />
+                                            <Label Text="{Binding Text}"
+                                                   Style="{DynamicResource Body}"
+                                                   LineBreakMode="WordWrap" />
+                                        </VerticalStackLayout>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border x:Name="VocabularySection"
+                        Padding="16"
+                        Style="{StaticResource AppSectionCardBorderStyle}">
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Linked vocabulary"
+                               Style="{DynamicResource Title2}" />
+                        <CollectionView x:Name="VocabularyCollectionView"
+                                        SelectionMode="None">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="0,0,0,10"
+                                            Padding="14"
+                                            Style="{StaticResource AppSectionCardBorderStyle}">
+                                        <VerticalStackLayout Spacing="7">
+                                            <Label Text="{Binding Word}"
+                                                   Style="{DynamicResource Title2}" />
+                                            <Label Text="{Binding MetadataLine}"
+                                                   Style="{DynamicResource Caption}" />
+                                        </VerticalStackLayout>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

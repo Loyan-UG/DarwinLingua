@@ -124,13 +124,32 @@ public sealed class CatalogPackagePublisher(
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        List<EventPreparationPack> activeEventPreparationPacks = await catalogDbContext.EventPreparationPacks
+            .AsNoTracking()
+            .Where(pack => pack.PublicationStatus == PublicationStatus.Active)
+            .Include(pack => pack.Topics)
+            .Include(pack => pack.LinkedScenarios)
+            .Include(pack => pack.LinkedConversationStarterPacks)
+            .Include(pack => pack.LinkedVocabulary)
+            .Include(pack => pack.Prompts)
+            .OrderBy(pack => pack.SortOrder)
+            .ThenBy(pack => pack.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
         DateTimeOffset now = DateTimeOffset.UtcNow;
         string version = now.ToString("yyyy.MM.dd.HHmmss.fff");
         string versionToken = now.ToString("yyyyMMddHHmmssfff");
         string outputRootPath = ResolveOutputRootPath();
 
         string publicationBatchId = $"{product.Key}-{versionToken}";
-        List<PackagePublicationDefinition> definitions = BuildDefinitions(product.Key, versionToken, words, activeScenarios, activeConversationStarterPacks);
+        List<PackagePublicationDefinition> definitions = BuildDefinitions(
+            product.Key,
+            versionToken,
+            words,
+            activeScenarios,
+            activeConversationStarterPacks,
+            activeEventPreparationPacks);
         List<string> publishedPackageIds = [];
 
         foreach (PackagePublicationDefinition definition in definitions)
@@ -151,6 +170,7 @@ public sealed class CatalogPackagePublisher(
                 definition.Words,
                 definition.Scenarios,
                 definition.ConversationStarterPacks,
+                definition.EventPreparationPacks,
                 activeCollections,
                 topicKeys);
 
@@ -195,7 +215,8 @@ public sealed class CatalogPackagePublisher(
         string versionToken,
         IReadOnlyList<WordEntry> words,
         IReadOnlyList<ScenarioLesson> scenarios,
-        IReadOnlyList<ConversationStarterPack> conversationStarterPacks)
+        IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
+        IReadOnlyList<EventPreparationPack> eventPreparationPacks)
     {
         List<PackagePublicationDefinition> definitions =
         [
@@ -207,7 +228,8 @@ public sealed class CatalogPackagePublisher(
                 "full",
                 words,
                 scenarios,
-                conversationStarterPacks),
+                conversationStarterPacks,
+                eventPreparationPacks),
             new(
                 $"{clientProductKey}-catalog-full-{versionToken}",
                 "Darwin Lingua Catalog",
@@ -216,7 +238,8 @@ public sealed class CatalogPackagePublisher(
                 "full",
                 words,
                 scenarios,
-                conversationStarterPacks),
+                conversationStarterPacks,
+                eventPreparationPacks),
         ];
 
         foreach (IGrouping<string, WordEntry> group in words
@@ -241,6 +264,9 @@ public sealed class CatalogPackagePublisher(
                     .ToArray(),
                 conversationStarterPacks
                     .Where(pack => string.Equals(pack.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
+                    .ToArray(),
+                eventPreparationPacks
+                    .Where(pack => string.Equals(pack.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
                     .ToArray()));
         }
 
@@ -258,6 +284,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<WordEntry> words,
         IReadOnlyList<ScenarioLesson> scenarios,
         IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
+        IReadOnlyList<EventPreparationPack> eventPreparationPacks,
         IReadOnlyList<WordCollection> activeCollections,
         IReadOnlyDictionary<Guid, string> topicKeys)
     {
@@ -278,6 +305,7 @@ public sealed class CatalogPackagePublisher(
             collections,
             scenarios.Select(scenario => CreateScenario(scenario, topicKeys)).ToArray(),
             conversationStarterPacks.Select(pack => CreateConversationStarterPack(pack, topicKeys)).ToArray(),
+            eventPreparationPacks.Select(pack => CreateEventPreparationPack(pack, topicKeys)).ToArray(),
             words.Select(word => CreateEntry(word, topicKeys)).ToArray());
     }
 
@@ -510,6 +538,55 @@ public sealed class CatalogPackagePublisher(
                 .ToArray());
     }
 
+    private static ExportedEventPreparationPack CreateEventPreparationPack(
+        EventPreparationPack pack,
+        IReadOnlyDictionary<Guid, string> topicKeys)
+    {
+        return new ExportedEventPreparationPack(
+            pack.Slug,
+            pack.Title,
+            pack.Description,
+            pack.CefrLevel.ToString(),
+            pack.Category,
+            pack.EventType,
+            pack.Topics
+                .OrderByDescending(topic => topic.IsPrimary)
+                .ThenBy(topic => topic.TopicId)
+                .Select(topic => topicKeys[topic.TopicId])
+                .ToArray(),
+            pack.SortOrder,
+            pack.LinkedScenarios
+                .OrderBy(link => link.SortOrder)
+                .Select(link => link.ScenarioSlug)
+                .ToArray(),
+            pack.LinkedVocabulary
+                .OrderBy(reference => reference.SortOrder)
+                .Select(reference => new ExportedEventPreparationVocabularyReference(
+                    reference.Word,
+                    reference.PartOfSpeech?.ToString(),
+                    reference.CefrLevel?.ToString()))
+                .ToArray(),
+            pack.LinkedConversationStarterPacks
+                .OrderBy(link => link.SortOrder)
+                .Select(link => link.ConversationStarterPackSlug)
+                .ToArray(),
+            pack.Prompts
+                .Where(prompt => prompt.PromptType == "opening")
+                .OrderBy(prompt => prompt.SortOrder)
+                .Select(prompt => prompt.Text)
+                .ToArray(),
+            pack.Prompts
+                .Where(prompt => prompt.PromptType == "roleplay")
+                .OrderBy(prompt => prompt.SortOrder)
+                .Select(prompt => prompt.Text)
+                .ToArray(),
+            pack.Prompts
+                .Where(prompt => prompt.PromptType == "review")
+                .OrderBy(prompt => prompt.SortOrder)
+                .Select(prompt => prompt.Text)
+                .ToArray());
+    }
+
     private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<ScenarioTranslationBase> translations)
     {
         return translations
@@ -591,7 +668,8 @@ public sealed class CatalogPackagePublisher(
         string SliceKey,
         IReadOnlyList<WordEntry> Words,
         IReadOnlyList<ScenarioLesson> Scenarios,
-        IReadOnlyList<ConversationStarterPack> ConversationStarterPacks);
+        IReadOnlyList<ConversationStarterPack> ConversationStarterPacks,
+        IReadOnlyList<EventPreparationPack> EventPreparationPacks);
 
     private sealed record ExportedContentPackage(
         string PackageVersion,
@@ -606,6 +684,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<ExportedContentCollection> Collections,
         IReadOnlyList<ExportedScenarioLesson> Scenarios,
         IReadOnlyList<ExportedConversationStarterPack> ConversationStarterPacks,
+        IReadOnlyList<ExportedEventPreparationPack> EventPreparationPacks,
         IReadOnlyList<ExportedContentEntry> Entries);
 
     private sealed record ExportedContentCollection(
@@ -717,4 +796,25 @@ public sealed class CatalogPackagePublisher(
         int SortOrder,
         IReadOnlyList<string> AlternativeBaseTexts,
         string? CommonMistake);
+
+    private sealed record ExportedEventPreparationPack(
+        string Slug,
+        string Title,
+        string Description,
+        string CefrLevel,
+        string Category,
+        string EventType,
+        IReadOnlyList<string> Topics,
+        int SortOrder,
+        IReadOnlyList<string> LinkedScenarioSlugs,
+        IReadOnlyList<ExportedEventPreparationVocabularyReference> LinkedVocabulary,
+        IReadOnlyList<string> LinkedConversationStarterPackSlugs,
+        IReadOnlyList<string> OpeningPrompts,
+        IReadOnlyList<string> RoleplayPrompts,
+        IReadOnlyList<string> ReviewPrompts);
+
+    private sealed record ExportedEventPreparationVocabularyReference(
+        string Word,
+        string? PartOfSpeech,
+        string? CefrLevel);
 }

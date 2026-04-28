@@ -44,6 +44,35 @@
     </section>
 }
 
+@if (Model.RelatedEventPreparationPacks.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Preparation packs</h2>
+        <div class="grid-two-col">
+            @foreach (var preparationPack in Model.RelatedEventPreparationPacks)
+            {
+                <article class="panel stack-md">
+                    <span class="eyebrow">@preparationPack.CefrLevel · @preparationPack.EventType · @preparationPack.Category</span>
+                    <h3 class="headline-sm">
+                        <a asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
+                    </h3>
+                    <p>@preparationPack.Description</p>
+                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">Prepare for this event</a>
+                    @if (preparationPack.LinkedConversationStarterPackSlugs.Count > 0)
+                    {
+                        <div class="chip-grid">
+                            @foreach (string starterPackSlug in preparationPack.LinkedConversationStarterPackSlugs)
+                            {
+                                <a class="chip-link" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPackSlug">@starterPackSlug</a>
+                            }
+                        </div>
+                    }
+                </article>
+            }
+        </div>
+    </section>
+}
+
 @if (Model.Scenario.DialogueTurns.Count > 0)
 {
     <section class="panel stack-md">

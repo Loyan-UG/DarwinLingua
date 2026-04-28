@@ -471,7 +471,7 @@
       "topics": ["shopping"],
       "sortOrder": 10,
       "linkedScenarioSlugs": ["a1-buy-bread-test"],
-      "linkedEventPreparationPackSlugs": [],
+      "linkedEventPreparationPackSlugs": ["a1-bakery-visit-prep"],
       "phrases": [
         {
           "baseText": "Guten Tag, ich möchte ein Brot.",
@@ -487,6 +487,26 @@
           ]
         }
       ]
+    }
+  ],
+  "eventPreparationPacks": [
+    {
+      "slug": "a1-bakery-visit-prep",
+      "title": "Bakery Visit Preparation",
+      "description": "Prepare to order bread and ask one simple follow-up question.",
+      "cefrLevel": "A1",
+      "category": "shopping-and-food",
+      "eventType": "conversation-cafe",
+      "topics": ["shopping"],
+      "sortOrder": 10,
+      "linkedScenarioSlugs": ["a1-buy-bread-test"],
+      "linkedVocabulary": [
+        { "word": "Brot", "partOfSpeech": "Noun", "cefrLevel": "A1" }
+      ],
+      "linkedConversationStarterPackSlugs": ["a1-bakery-order-starters"],
+      "openingPrompts": ["Say hello and ask for one bread."],
+      "roleplayPrompts": ["Practice ordering bread at a counter."],
+      "reviewPrompts": ["Write the phrase you used to order politely."]
     }
   ]
 }
