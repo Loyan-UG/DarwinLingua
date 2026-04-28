@@ -148,6 +148,14 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<OrganizerClaimRequest> OrganizerClaimRequests => Set<OrganizerClaimRequest>();
 
+    public DbSet<OrganizerProfileOwner> OrganizerProfileOwners => Set<OrganizerProfileOwner>();
+
+    public DbSet<EventRsvp> EventRsvps => Set<EventRsvp>();
+
+    public DbSet<LearnerConversationProfile> LearnerConversationProfiles => Set<LearnerConversationProfile>();
+
+    public DbSet<PartnerRequest> PartnerRequests => Set<PartnerRequest>();
+
     /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
@@ -232,6 +240,10 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new OrganizerProfileSupportedLevelConfiguration());
         modelBuilder.ApplyConfiguration(new OrganizerProfileHelperLanguageConfiguration());
         modelBuilder.ApplyConfiguration(new OrganizerClaimRequestConfiguration());
+        modelBuilder.ApplyConfiguration(new OrganizerProfileOwnerConfiguration());
+        modelBuilder.ApplyConfiguration(new EventRsvpConfiguration());
+        modelBuilder.ApplyConfiguration(new LearnerConversationProfileConfiguration());
+        modelBuilder.ApplyConfiguration(new PartnerRequestConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

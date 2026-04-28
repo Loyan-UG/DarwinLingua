@@ -91,6 +91,10 @@ public sealed partial class ConversationEvent
 
     public string ScheduleText { get; private set; } = string.Empty;
 
+    public string? RecurrenceRule { get; private set; }
+
+    public int? Capacity { get; private set; }
+
     public string PriceType { get; private set; } = string.Empty;
 
     public string VerificationStatus { get; private set; } = string.Empty;
@@ -122,6 +126,25 @@ public sealed partial class ConversationEvent
         LastVerifiedAtUtc = lastVerifiedAtUtc.HasValue
             ? NormalizeUtc(lastVerifiedAtUtc.Value, nameof(lastVerifiedAtUtc))
             : null;
+    }
+
+    public void SetOperationalDetails(string? recurrenceRule, int? capacity, DateTime updatedAtUtc)
+    {
+        RecurrenceRule = NormalizeOptionalText(recurrenceRule, 256);
+        Capacity = capacity switch
+        {
+            null => null,
+            <= 0 => throw new DomainRuleException("Conversation event capacity must be greater than zero when specified."),
+            > 10000 => throw new DomainRuleException("Conversation event capacity cannot exceed 10000."),
+            _ => capacity,
+        };
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
+    public void SetPublicationStatus(PublicationStatus publicationStatus, DateTime updatedAtUtc)
+    {
+        PublicationStatus = publicationStatus;
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 
     public void AddSupportedLevel(Guid id, CefrLevel cefrLevel, int sortOrder, DateTime createdAtUtc)

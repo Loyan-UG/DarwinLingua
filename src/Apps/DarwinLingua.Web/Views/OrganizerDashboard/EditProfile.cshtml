@@ -1,0 +1,72 @@
+@model DarwinLingua.Web.Models.OrganizerProfileEditPageViewModel
+@{
+    ViewData["Title"] = $"Edit {Model.Profile.DisplayName}";
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Profile.VerificationStatus · @Model.Profile.PlanKey</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="Index">Dashboard</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Profile.Slug">Public page</a>
+        </div>
+    </div>
+    <h1 class="headline-md">Edit @Model.Profile.DisplayName</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Public profile</h2>
+    <form method="post" class="form-grid">
+        @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Name</span>
+            <input name="DisplayName" value="@Model.Input.DisplayName" />
+        </label>
+        <label class="field">
+            <span>Type</span>
+            <input name="OrganizerType" value="@Model.Input.OrganizerType" placeholder="club" />
+        </label>
+        <label class="field field--wide">
+            <span>Description</span>
+            <textarea name="Description" rows="6">@Model.Input.Description</textarea>
+        </label>
+        <label class="field">
+            <span>City or region</span>
+            <input name="CityRegion" value="@Model.Input.CityRegion" />
+        </label>
+        <label class="field">
+            <span>Supported levels</span>
+            <input name="SupportedLearnerLevels" value="@Model.Input.SupportedLearnerLevels" placeholder="A1,A2" />
+        </label>
+        <label class="field">
+            <span>Helper languages</span>
+            <input name="HelperLanguageCodes" value="@Model.Input.HelperLanguageCodes" placeholder="en,fa" />
+        </label>
+        <label class="field">
+            <span>Website</span>
+            <input name="WebsiteUrl" value="@Model.Input.WebsiteUrl" />
+        </label>
+        <label class="field">
+            <span>Public contact</span>
+            <input name="PublicContactMethod" value="@Model.Input.PublicContactMethod" />
+        </label>
+        <label class="field">
+            <span>Online available</span>
+            <select name="IsOnlineAvailable">
+                <option value="false" selected="@(!Model.Input.IsOnlineAvailable)">No</option>
+                <option value="true" selected="@Model.Input.IsOnlineAvailable">Yes</option>
+            </select>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Save profile</button>
+        </div>
+    </form>
+</section>

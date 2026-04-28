@@ -24,6 +24,8 @@ internal sealed class ConversationEventConfiguration : IEntityTypeConfiguration<
         builder.Property(conversationEvent => conversationEvent.ExternalLink).HasMaxLength(1024);
         builder.Property(conversationEvent => conversationEvent.ContactMethod).HasMaxLength(512);
         builder.Property(conversationEvent => conversationEvent.ScheduleText).HasMaxLength(1000).IsRequired();
+        builder.Property(conversationEvent => conversationEvent.RecurrenceRule).HasMaxLength(256);
+        builder.Property(conversationEvent => conversationEvent.Capacity);
         builder.Property(conversationEvent => conversationEvent.PriceType).HasMaxLength(64).IsRequired();
         builder.Property(conversationEvent => conversationEvent.VerificationStatus).HasMaxLength(64).IsRequired();
         builder.Property(conversationEvent => conversationEvent.SourceName).HasMaxLength(256);

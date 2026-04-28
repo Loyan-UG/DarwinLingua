@@ -807,14 +807,22 @@ Allow approved organizers to manage their own profile and events.
 
 #### Backlog
 
-- [ ] define organizer account ownership rules
-- [ ] define organizer admin role or entitlement boundary
-- [ ] implement organizer dashboard authorization
-- [ ] implement profile edit workflow
-- [ ] implement event create/edit workflow
-- [ ] implement event activation/deactivation workflow
-- [ ] implement recurring-event support after one-off events work
-- [ ] implement basic organizer analytics
+- [x] define organizer account ownership rules
+  - Progress: Web MVP uses explicit `OrganizerProfileOwner` assignments from reviewed organizer profile slug to owner email; admins assign owners after claim review.
+- [x] define organizer admin role or entitlement boundary
+  - Progress: Identity now includes an `Organizer` role; Web Admin can add/remove roles for users, and operator/admin roles keep override access.
+- [x] implement organizer dashboard authorization
+  - Progress: Web organizer dashboard is protected by the `Organizer` policy and only displays profiles assigned to the signed-in email.
+- [x] implement profile edit workflow
+  - Progress: assigned organizers can edit their owned public profile fields from the Web organizer dashboard while verification status, plan, and historical counts stay admin-controlled.
+- [x] implement event create/edit workflow
+  - Progress: assigned organizers can create new events and edit linked active events for owned profiles from the Web organizer dashboard; events remain tied to the owned `OrganizerProfileSlug`.
+- [x] implement event activation/deactivation workflow
+  - Progress: assigned organizers can archive and reactivate owned events from the Web organizer dashboard; archived events are hidden from the public directory but remain visible in the managed event list.
+- [x] implement recurring-event support after one-off events work
+  - Progress: Web/Admin and organizer event forms now support an optional recurrence rule and capacity field; public event detail displays those operational details without enabling RSVP yet.
+- [x] implement basic organizer analytics
+  - Progress: the Web organizer dashboard shows per-profile active/archived event counts, online/in-person counts, and total configured capacity from existing event data.
 - [ ] add tests for authorization and ownership rules
 
 ---
@@ -827,14 +835,19 @@ Let learners express interest or reserve a spot without building a full event-ti
 
 #### Backlog
 
-- [ ] define `EventRsvp` model
-- [ ] support RSVP states: interested, going, cancelled, attended, no-show
-- [ ] define capacity and waitlist rules
-- [ ] add `I am interested` or `Join` action on event detail
-- [ ] show remaining capacity where appropriate
-- [ ] expose attendee count without exposing private attendee details publicly
-- [ ] show attendee list only to authorized organizers/admins
-- [ ] add post-event attendance confirmation
+- [x] define `EventRsvp` model
+- [x] support RSVP states: interested, going, cancelled, attended, no-show
+- [x] define capacity and waitlist rules
+  - Progress: Web MVP uses configured event capacity and computes remaining capacity from `going` RSVPs; waitlist behavior remains deferred until capacity overflow needs an explicit user workflow.
+- [x] add `I am interested` or `Join` action on event detail
+  - Progress: public event detail supports saving `interested`, `going`, and `cancelled` RSVP states.
+- [x] show remaining capacity where appropriate
+- [x] expose attendee count without exposing private attendee details publicly
+  - Progress: public event detail shows aggregate interested/going counts and remaining capacity only.
+- [x] show attendee list only to authorized organizers/admins
+  - Progress: assigned organizer dashboard shows RSVP participant details for owned events; public event pages do not expose attendee identities.
+- [x] add post-event attendance confirmation
+  - Progress: assigned organizers can update RSVP rows for owned events to `attended` or `no-show` from the Web organizer dashboard.
 - [ ] add tests for capacity, cancellation, and organizer visibility
 
 ---
@@ -866,12 +879,18 @@ Create a minimal learner profile suitable for conversation practice and event pa
 
 #### Backlog
 
-- [ ] define learner profile model
-- [ ] define profile visibility states
-- [ ] define public profile projection separate from private profile data
-- [ ] implement profile create/edit screen
-- [ ] implement profile enable/disable toggle
-- [ ] implement profile deletion or anonymization flow
+- [x] define learner profile model
+  - Progress: WebApi now persists `LearnerConversationProfile` with display name, city/region, interaction preference, German level, helper languages, goals, availability, visibility, and adult confirmation.
+- [x] define profile visibility states
+  - Progress: Web MVP supports `private`, `request-only`, `public`, and `disabled`; re-enabling a disabled profile returns it to `private`.
+- [x] define public profile projection separate from private profile data
+  - Progress: WebApi exposes a public projection that omits owner email, availability notes, timestamps, and internal identifiers.
+- [x] implement profile create/edit screen
+  - Progress: signed-in Web learners can create and edit their conversation profile from the account area.
+- [x] implement profile enable/disable toggle
+  - Progress: signed-in Web learners can disable their profile or re-enable it as private.
+- [x] implement profile deletion or anonymization flow
+  - Progress: signed-in Web learners can delete their profile through an anonymization flow that clears public/private profile content and marks the profile disabled.
 - [ ] add tests for public/private projection
 - [ ] add privacy review before release
 

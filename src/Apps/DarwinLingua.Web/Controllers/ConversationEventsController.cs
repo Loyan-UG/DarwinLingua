@@ -76,6 +76,50 @@ public sealed class ConversationEventsController(
             preparationPacks = packs;
         }
 
-        return View(new ConversationEventDetailPageViewModel(conversationEvent, preparationPacks));
+        EventRsvpSummaryModel rsvpSummary = await catalogApiClient
+            .GetEventRsvpSummaryAsync(slug, cancellationToken)
+            .ConfigureAwait(false);
+
+        return View(new ConversationEventDetailPageViewModel(
+            conversationEvent,
+            preparationPacks,
+            rsvpSummary,
+            new EventRsvpInputModel
+            {
+                ParticipantEmail = User.Identity?.Name ?? string.Empty,
+            },
+            TempData["StatusMessage"] as string,
+            TempData["ErrorMessage"] as string));
+    }
+
+    [HttpPost("{slug}/rsvp", Name = "ConversationEvents_Rsvp")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Rsvp(
+        string slug,
+        EventRsvpInputModel input,
+        CancellationToken cancellationToken)
+    {
+        if (!ModelState.IsValid)
+        {
+            TempData["ErrorMessage"] = "Required RSVP fields are missing or invalid.";
+            return RedirectToAction(nameof(Detail), new { slug });
+        }
+
+        try
+        {
+            EventRsvpModel rsvp = await catalogApiClient.SubmitEventRsvpAsync(
+                    slug,
+                    new SubmitEventRsvpRequest(input.ParticipantName, input.ParticipantEmail, input.Status),
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            TempData["StatusMessage"] = $"RSVP saved as {rsvp.Status}.";
+        }
+        catch (InvalidOperationException exception)
+        {
+            TempData["ErrorMessage"] = exception.Message;
+        }
+
+        return RedirectToAction(nameof(Detail), new { slug });
     }
 }

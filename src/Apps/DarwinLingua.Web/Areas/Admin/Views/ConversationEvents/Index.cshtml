@@ -76,6 +76,14 @@
             <input name="ScheduleText" value="@Model.Input.ScheduleText" />
         </label>
         <label class="field">
+            <span>Recurrence rule</span>
+            <input name="RecurrenceRule" value="@Model.Input.RecurrenceRule" placeholder="weekly:tuesday:18:00" />
+        </label>
+        <label class="field">
+            <span>Capacity</span>
+            <input name="Capacity" value="@Model.Input.Capacity" type="number" min="1" />
+        </label>
+        <label class="field">
             <span>Price type</span>
             <input name="PriceType" value="@Model.Input.PriceType" placeholder="free" />
         </label>

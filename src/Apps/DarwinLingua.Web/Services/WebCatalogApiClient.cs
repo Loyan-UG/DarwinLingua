@@ -58,6 +58,22 @@ public interface IWebCatalogApiClient
         string slug,
         CancellationToken cancellationToken);
 
+    Task<EventRsvpSummaryModel> GetEventRsvpSummaryAsync(
+        string eventSlug,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<EventRsvpModel> SubmitEventRsvpAsync(
+        string eventSlug,
+        SubmitEventRsvpRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<IReadOnlyList<EventRsvpModel>> GetAdminEventRsvpsAsync(
+        string eventSlug,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
     Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken);
 
     Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(
@@ -67,6 +83,37 @@ public interface IWebCatalogApiClient
     Task<OrganizerClaimRequestModel> SubmitOrganizerClaimRequestAsync(
         string organizerProfileSlug,
         SubmitOrganizerClaimRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<IReadOnlyList<OrganizerProfileOwnerModel>> GetOrganizerProfileOwnersByEmailAsync(
+        string ownerEmail,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<LearnerConversationProfileModel?> GetLearnerConversationProfileAsync(
+        string ownerEmail,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<IReadOnlyList<LearnerConversationProfilePublicModel>> GetPublicLearnerConversationProfilesAsync(
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<LearnerConversationProfileModel> SaveLearnerConversationProfileAsync(
+        string ownerEmail,
+        SaveLearnerConversationProfileRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<LearnerConversationProfileModel> SetLearnerConversationProfileEnabledAsync(
+        string ownerEmail,
+        LearnerConversationProfileVisibilityRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task DeleteLearnerConversationProfileAsync(
+        string ownerEmail,
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
@@ -115,11 +162,30 @@ public interface IWebCatalogApiClient
         AdminSaveConversationEventRequest request,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<OrganizerManagedConversationEventModel>> GetAdminConversationEventsByOrganizerAsync(
+        string organizerProfileSlug,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<OrganizerManagedConversationEventModel> SetAdminConversationEventPublicationStatusAsync(
+        string slug,
+        AdminSetConversationEventPublicationStatusRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
     Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(
         AdminSaveOrganizerProfileRequest request,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<OrganizerClaimRequestModel>> GetAdminOrganizerClaimRequestsAsync(CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<IReadOnlyList<OrganizerProfileOwnerModel>> GetAdminOrganizerProfileOwnersAsync(CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<OrganizerProfileOwnerModel> AssignAdminOrganizerProfileOwnerAsync(
+        AssignOrganizerProfileOwnerRequest request,
+        CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 }
 
@@ -237,6 +303,29 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
             $"/api/catalog/conversation-events/{Uri.EscapeDataString(slug)}",
             cancellationToken);
 
+    public Task<EventRsvpSummaryModel> GetEventRsvpSummaryAsync(
+        string eventSlug,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<EventRsvpSummaryModel>(
+            $"/api/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvp-summary",
+            cancellationToken);
+
+    public Task<EventRsvpModel> SubmitEventRsvpAsync(
+        string eventSlug,
+        SubmitEventRsvpRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<SubmitEventRsvpRequest, EventRsvpModel>(
+            $"/api/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps",
+            request,
+            cancellationToken);
+
+    public Task<IReadOnlyList<EventRsvpModel>> GetAdminEventRsvpsAsync(
+        string eventSlug,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<EventRsvpModel>>(
+            $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps",
+            cancellationToken);
+
     public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<OrganizerProfileListItemModel>>(
             "/api/catalog/organizer-profiles",
@@ -257,6 +346,53 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
             $"/api/catalog/organizer-profiles/{Uri.EscapeDataString(organizerProfileSlug)}/claim",
             request,
             cancellationToken);
+
+    public Task<IReadOnlyList<OrganizerProfileOwnerModel>> GetOrganizerProfileOwnersByEmailAsync(
+        string ownerEmail,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<OrganizerProfileOwnerModel>>(
+            BuildPath("/api/catalog/organizer-profile-owners/by-email", [new("ownerEmail", ownerEmail)]),
+            cancellationToken);
+
+    public Task<LearnerConversationProfileModel?> GetLearnerConversationProfileAsync(
+        string ownerEmail,
+        CancellationToken cancellationToken) =>
+        GetAsync<LearnerConversationProfileModel>(
+            BuildPath("/api/catalog/learner-conversation-profiles/me", [new("ownerEmail", ownerEmail)]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<LearnerConversationProfilePublicModel>> GetPublicLearnerConversationProfilesAsync(
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<LearnerConversationProfilePublicModel>>(
+            "/api/catalog/learner-conversation-profiles/public",
+            cancellationToken);
+
+    public Task<LearnerConversationProfileModel> SaveLearnerConversationProfileAsync(
+        string ownerEmail,
+        SaveLearnerConversationProfileRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<SaveLearnerConversationProfileRequest, LearnerConversationProfileModel>(
+            BuildPath("/api/catalog/learner-conversation-profiles/me", [new("ownerEmail", ownerEmail)]),
+            request,
+            cancellationToken);
+
+    public Task<LearnerConversationProfileModel> SetLearnerConversationProfileEnabledAsync(
+        string ownerEmail,
+        LearnerConversationProfileVisibilityRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<LearnerConversationProfileVisibilityRequest, LearnerConversationProfileModel>(
+            BuildPath("/api/catalog/learner-conversation-profiles/me/enabled", [new("ownerEmail", ownerEmail)]),
+            request,
+            cancellationToken);
+
+    public async Task DeleteLearnerConversationProfileAsync(
+        string ownerEmail,
+        CancellationToken cancellationToken)
+    {
+        string relativeUri = BuildPath("/api/catalog/learner-conversation-profiles/me", [new("ownerEmail", ownerEmail)]);
+        using HttpResponseMessage response = await httpClient.DeleteAsync(relativeUri, cancellationToken).ConfigureAwait(false);
+        await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
+    }
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
@@ -424,6 +560,22 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
             request,
             cancellationToken);
 
+    public Task<IReadOnlyList<OrganizerManagedConversationEventModel>> GetAdminConversationEventsByOrganizerAsync(
+        string organizerProfileSlug,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<OrganizerManagedConversationEventModel>>(
+            $"/api/admin/catalog/conversation-events/by-organizer/{Uri.EscapeDataString(organizerProfileSlug)}",
+            cancellationToken);
+
+    public Task<OrganizerManagedConversationEventModel> SetAdminConversationEventPublicationStatusAsync(
+        string slug,
+        AdminSetConversationEventPublicationStatusRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminSetConversationEventPublicationStatusRequest, OrganizerManagedConversationEventModel>(
+            $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(slug)}/publication-status",
+            request,
+            cancellationToken);
+
     public Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(
         AdminSaveOrganizerProfileRequest request,
         CancellationToken cancellationToken) =>
@@ -435,6 +587,19 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
     public Task<IReadOnlyList<OrganizerClaimRequestModel>> GetAdminOrganizerClaimRequestsAsync(CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<OrganizerClaimRequestModel>>(
             "/api/admin/catalog/organizer-claim-requests",
+            cancellationToken);
+
+    public Task<IReadOnlyList<OrganizerProfileOwnerModel>> GetAdminOrganizerProfileOwnersAsync(CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<OrganizerProfileOwnerModel>>(
+            "/api/admin/catalog/organizer-profile-owners",
+            cancellationToken);
+
+    public Task<OrganizerProfileOwnerModel> AssignAdminOrganizerProfileOwnerAsync(
+        AssignOrganizerProfileOwnerRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<AssignOrganizerProfileOwnerRequest, OrganizerProfileOwnerModel>(
+            "/api/admin/catalog/organizer-profile-owners",
+            request,
             cancellationToken);
 
     private async Task<T?> GetAsync<T>(string relativeUri, CancellationToken cancellationToken)
@@ -616,7 +781,66 @@ public sealed record AdminSaveConversationEventRequest(
     string? SourceName,
     string? SourceUrl,
     DateTime? LastVerifiedAtUtc,
-    IReadOnlyList<string> LinkedEventPreparationPackSlugs);
+    IReadOnlyList<string> LinkedEventPreparationPackSlugs)
+{
+    public string? RecurrenceRule { get; init; }
+
+    public int? Capacity { get; init; }
+}
+
+public sealed record AdminSetConversationEventPublicationStatusRequest(
+    string PublicationStatus);
+
+public sealed record OrganizerManagedConversationEventModel(
+    string Slug,
+    string Name,
+    string Description,
+    string? City,
+    string CountryRegion,
+    string? ApproximateLocation,
+    bool IsOnline,
+    string Category,
+    IReadOnlyList<string> SupportedLearnerLevels,
+    IReadOnlyList<string> HelperLanguageCodes,
+    string OrganizerName,
+    string? OrganizerProfileSlug,
+    string? ExternalLink,
+    string? ContactMethod,
+    string ScheduleText,
+    string PriceType,
+    string VerificationStatus,
+    string PublicationStatus,
+    string? SourceName,
+    string? SourceUrl,
+    DateTime? LastVerifiedAtUtc,
+    IReadOnlyList<string> LinkedEventPreparationPackSlugs)
+{
+    public string? RecurrenceRule { get; init; }
+
+    public int? Capacity { get; init; }
+}
+
+public sealed record SubmitEventRsvpRequest(
+    string ParticipantName,
+    string ParticipantEmail,
+    string Status);
+
+public sealed record EventRsvpModel(
+    Guid Id,
+    string ConversationEventSlug,
+    string ParticipantName,
+    string ParticipantEmail,
+    string Status,
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc);
+
+public sealed record EventRsvpSummaryModel(
+    string ConversationEventSlug,
+    int InterestedCount,
+    int GoingCount,
+    int CancelledCount,
+    int Capacity,
+    int? RemainingCapacity);
 
 public sealed record AdminSaveOrganizerProfileRequest(
     string Slug,
@@ -648,3 +872,52 @@ public sealed record OrganizerClaimRequestModel(
     string EvidenceText,
     string Status,
     DateTime CreatedAtUtc);
+
+public sealed record AssignOrganizerProfileOwnerRequest(
+    string OrganizerProfileSlug,
+    string OwnerEmail,
+    string AssignedBy);
+
+public sealed record OrganizerProfileOwnerModel(
+    Guid Id,
+    string OrganizerProfileSlug,
+    string OwnerEmail,
+    string AssignedBy,
+    DateTime CreatedAtUtc);
+
+public sealed record SaveLearnerConversationProfileRequest(
+    string DisplayName,
+    string? CityRegion,
+    string InteractionPreference,
+    string GermanLevel,
+    IReadOnlyList<string> HelperLanguageCodes,
+    string ConversationGoals,
+    string? AvailabilityNotes,
+    string Visibility,
+    bool HasConfirmedAdult);
+
+public sealed record LearnerConversationProfileVisibilityRequest(
+    bool IsEnabled);
+
+public sealed record LearnerConversationProfileModel(
+    Guid Id,
+    string OwnerEmail,
+    string DisplayName,
+    string? CityRegion,
+    string InteractionPreference,
+    string GermanLevel,
+    IReadOnlyList<string> HelperLanguageCodes,
+    string ConversationGoals,
+    string? AvailabilityNotes,
+    string Visibility,
+    bool HasConfirmedAdult,
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc);
+
+public sealed record LearnerConversationProfilePublicModel(
+    string DisplayName,
+    string? CityRegion,
+    string InteractionPreference,
+    string GermanLevel,
+    IReadOnlyList<string> HelperLanguageCodes,
+    string ConversationGoals);

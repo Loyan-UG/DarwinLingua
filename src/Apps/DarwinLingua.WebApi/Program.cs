@@ -107,6 +107,9 @@ builder.Services.AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>(
 builder.Services.AddScoped<IConversationEventAdminService, ConversationEventAdminService>();
 builder.Services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
 builder.Services.AddScoped<IOrganizerClaimRequestService, OrganizerClaimRequestService>();
+builder.Services.AddScoped<IOrganizerProfileOwnerService, OrganizerProfileOwnerService>();
+builder.Services.AddScoped<IEventRsvpService, EventRsvpService>();
+builder.Services.AddScoped<ILearnerConversationProfileService, LearnerConversationProfileService>();
 
 WebApplication app = builder.Build();
 
@@ -374,6 +377,24 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
+    "/api/catalog/conversation-events/{slug}/rsvp-summary",
+    async (string slug, IEventRsvpService eventRsvpService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await eventRsvpService.GetSummaryAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/conversation-events/{slug}/rsvps",
+    async (
+        string slug,
+        SubmitEventRsvpRequest request,
+        IEventRsvpService eventRsvpService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await eventRsvpService.SubmitAsync(slug, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
     "/api/catalog/organizer-profiles",
     async (IOrganizerProfileQueryService organizerProfileQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
@@ -396,6 +417,61 @@ app.MapPost(
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await organizerClaimRequestService.SubmitAsync(slug, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/learner-conversation-profiles/me",
+    async (string ownerEmail, ILearnerConversationProfileService learnerProfileService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await learnerProfileService.GetPrivateAsync(ownerEmail, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/learner-conversation-profiles/me",
+    async (
+        string ownerEmail,
+        SaveLearnerConversationProfileRequest request,
+        ILearnerConversationProfileService learnerProfileService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await learnerProfileService.SaveAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/catalog/learner-conversation-profiles/me/enabled",
+    async (
+        string ownerEmail,
+        LearnerConversationProfileVisibilityRequest request,
+        ILearnerConversationProfileService learnerProfileService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await learnerProfileService.SetEnabledAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapDelete(
+    "/api/catalog/learner-conversation-profiles/me",
+    async (string ownerEmail, ILearnerConversationProfileService learnerProfileService, CancellationToken cancellationToken) =>
+    {
+        try
+        {
+            await learnerProfileService.AnonymizeAsync(ownerEmail, cancellationToken).ConfigureAwait(false);
+            return Results.NoContent();
+        }
+        catch (InvalidOperationException exception)
+        {
+            return Results.BadRequest(new
+            {
+                code = "invalid_request",
+                message = exception.Message,
+            });
+        }
+    });
+
+app.MapGet(
+    "/api/catalog/learner-conversation-profiles/public",
+    async (ILearnerConversationProfileService learnerProfileService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await learnerProfileService.GetPublicProfilesAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -478,6 +554,34 @@ app.MapPost(
                 async () => await conversationEventAdminService.SaveAsync(request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
+app.MapGet(
+    "/api/admin/catalog/conversation-events/by-organizer/{organizerProfileSlug}",
+    async (
+        string organizerProfileSlug,
+        IConversationEventAdminService conversationEventAdminService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationEventAdminService.GetByOrganizerProfileSlugAsync(organizerProfileSlug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/conversation-events/{slug}/publication-status",
+    async (
+        string slug,
+        AdminSetConversationEventPublicationStatusRequest request,
+        IConversationEventAdminService conversationEventAdminService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationEventAdminService.SetPublicationStatusAsync(slug, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/conversation-events/{slug}/rsvps",
+    async (string slug, IEventRsvpService eventRsvpService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await eventRsvpService.GetByEventAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
 app.MapPost(
     "/api/admin/catalog/organizer-profiles",
     async (
@@ -493,6 +597,30 @@ app.MapGet(
     async (IOrganizerClaimRequestService organizerClaimRequestService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await organizerClaimRequestService.GetRecentAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/organizer-profile-owners",
+    async (IOrganizerProfileOwnerService organizerProfileOwnerService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerProfileOwnerService.GetRecentAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/organizer-profile-owners",
+    async (
+        AssignOrganizerProfileOwnerRequest request,
+        IOrganizerProfileOwnerService organizerProfileOwnerService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerProfileOwnerService.AssignAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/organizer-profile-owners/by-email",
+    async (string ownerEmail, IOrganizerProfileOwnerService organizerProfileOwnerService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerProfileOwnerService.GetByOwnerEmailAsync(ownerEmail, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

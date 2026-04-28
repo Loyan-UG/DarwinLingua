@@ -94,6 +94,7 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Operator", policy => policy.RequireRole("Operator", "Admin"));
     options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("Organizer", policy => policy.RequireRole(DarwinLinguaRoles.Organizer, DarwinLinguaRoles.Operator, DarwinLinguaRoles.Admin));
 });
 
 var app = builder.Build();

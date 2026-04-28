@@ -11,6 +11,14 @@
         </div>
     </div>
     <h1 class="headline-md">@Model.Event.Name</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
     <p class="body-lg">@Model.Event.Description</p>
     <dl class="detail-list">
         <div>
@@ -30,10 +38,24 @@
             <dt>Schedule</dt>
             <dd>@Model.Event.ScheduleText</dd>
         </div>
+        @if (!string.IsNullOrWhiteSpace(Model.Event.RecurrenceRule))
+        {
+            <div>
+                <dt>Recurrence</dt>
+                <dd>@Model.Event.RecurrenceRule</dd>
+            </div>
+        }
         <div>
             <dt>Location</dt>
             <dd>@(Model.Event.IsOnline ? "Online" : Model.Event.ApproximateLocation ?? Model.Event.City ?? Model.Event.CountryRegion)</dd>
         </div>
+        @if (Model.Event.Capacity.HasValue)
+        {
+            <div>
+                <dt>Capacity</dt>
+                <dd>@Model.Event.Capacity.Value seats</dd>
+            </div>
+        }
         <div>
             <dt>Price</dt>
             <dd>@Model.Event.PriceType</dd>
@@ -63,6 +85,49 @@
             <span class="button button--secondary button--compact">@Model.Event.ContactMethod</span>
         }
     </div>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">RSVP</h2>
+    <dl class="detail-list">
+        <div>
+            <dt>Interested</dt>
+            <dd>@Model.RsvpSummary.InterestedCount</dd>
+        </div>
+        <div>
+            <dt>Going</dt>
+            <dd>@Model.RsvpSummary.GoingCount</dd>
+        </div>
+        @if (Model.RsvpSummary.RemainingCapacity.HasValue)
+        {
+            <div>
+                <dt>Remaining</dt>
+                <dd>@Model.RsvpSummary.RemainingCapacity.Value of @Model.RsvpSummary.Capacity</dd>
+            </div>
+        }
+    </dl>
+    <form method="post" asp-action="Rsvp" asp-route-slug="@Model.Event.Slug" class="form-grid">
+        @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Name</span>
+            <input name="ParticipantName" value="@Model.Input.ParticipantName" />
+        </label>
+        <label class="field">
+            <span>Email</span>
+            <input name="ParticipantEmail" value="@Model.Input.ParticipantEmail" type="email" />
+        </label>
+        <label class="field">
+            <span>Status</span>
+            <select name="Status">
+                <option value="interested" selected="@(Model.Input.Status == "interested")">Interested</option>
+                <option value="going" selected="@(Model.Input.Status == "going")">Going</option>
+                <option value="cancelled" selected="@(Model.Input.Status == "cancelled")">Cancel</option>
+            </select>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Save RSVP</button>
+        </div>
+    </form>
 </section>
 
 @if (Model.PreparationPacks.Count > 0)

@@ -71,7 +71,11 @@ public sealed class ConversationEventsController(IWebCatalogApiClient catalogApi
             input.SourceName,
             input.SourceUrl,
             lastVerifiedAtUtc,
-            SplitCsv(input.LinkedEventPreparationPackSlugs));
+            SplitCsv(input.LinkedEventPreparationPackSlugs))
+        {
+            RecurrenceRule = input.RecurrenceRule,
+            Capacity = input.Capacity,
+        };
 
         try
         {

@@ -49,6 +49,10 @@ public sealed class AdminConversationEventInputModel
     [Required]
     public string ScheduleText { get; set; } = string.Empty;
 
+    public string? RecurrenceRule { get; set; }
+
+    public int? Capacity { get; set; }
+
     [Required]
     public string PriceType { get; set; } = "free";
 

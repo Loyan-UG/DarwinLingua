@@ -1,0 +1,107 @@
+@model DarwinLingua.Web.Models.OrganizerEventEditPageViewModel
+@{
+    ViewData["Title"] = Model.IsNew ? $"New event for {Model.Profile.DisplayName}" : $"Edit {Model.Input.Name}";
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Profile.DisplayName · @Model.Profile.PlanKey</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="Index">Dashboard</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Profile.Slug">Organizer page</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@(Model.IsNew ? "New event" : "Edit event")</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Event listing</h2>
+    <form method="post" class="form-grid">
+        @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Slug</span>
+            @if (Model.IsNew)
+            {
+                <input name="Slug" value="@Model.Input.Slug" placeholder="berlin-cafe-a1" />
+            }
+            else
+            {
+                <input name="Slug" value="@Model.Input.Slug" readonly />
+            }
+        </label>
+        <label class="field">
+            <span>Name</span>
+            <input name="Name" value="@Model.Input.Name" />
+        </label>
+        <label class="field field--wide">
+            <span>Description</span>
+            <textarea name="Description" rows="6">@Model.Input.Description</textarea>
+        </label>
+        <label class="field">
+            <span>City</span>
+            <input name="City" value="@Model.Input.City" />
+        </label>
+        <label class="field">
+            <span>Country or region</span>
+            <input name="CountryRegion" value="@Model.Input.CountryRegion" />
+        </label>
+        <label class="field">
+            <span>Approximate location</span>
+            <input name="ApproximateLocation" value="@Model.Input.ApproximateLocation" />
+        </label>
+        <label class="field">
+            <span>Category</span>
+            <input name="Category" value="@Model.Input.Category" placeholder="conversation-cafe" />
+        </label>
+        <label class="field">
+            <span>Supported levels</span>
+            <input name="SupportedLearnerLevels" value="@Model.Input.SupportedLearnerLevels" placeholder="A1,A2" />
+        </label>
+        <label class="field">
+            <span>Helper languages</span>
+            <input name="HelperLanguageCodes" value="@Model.Input.HelperLanguageCodes" placeholder="en,fa" />
+        </label>
+        <label class="field">
+            <span>External link</span>
+            <input name="ExternalLink" value="@Model.Input.ExternalLink" />
+        </label>
+        <label class="field">
+            <span>Contact method</span>
+            <input name="ContactMethod" value="@Model.Input.ContactMethod" />
+        </label>
+        <label class="field">
+            <span>Schedule</span>
+            <input name="ScheduleText" value="@Model.Input.ScheduleText" />
+        </label>
+        <label class="field">
+            <span>Recurrence rule</span>
+            <input name="RecurrenceRule" value="@Model.Input.RecurrenceRule" placeholder="weekly:tuesday:18:00" />
+        </label>
+        <label class="field">
+            <span>Capacity</span>
+            <input name="Capacity" value="@Model.Input.Capacity" type="number" min="1" />
+        </label>
+        <label class="field">
+            <span>Price type</span>
+            <input name="PriceType" value="@Model.Input.PriceType" placeholder="free" />
+        </label>
+        <label class="field">
+            <span>Preparation pack slugs</span>
+            <input name="LinkedEventPreparationPackSlugs" value="@Model.Input.LinkedEventPreparationPackSlugs" placeholder="a1-cafe-first-meeting-prep" />
+        </label>
+        <label class="field">
+            <span>Online</span>
+            <select name="IsOnline">
+                <option value="false" selected="@(!Model.Input.IsOnline)">In person</option>
+                <option value="true" selected="@Model.Input.IsOnline">Online</option>
+            </select>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Save event</button>
+        </div>
+    </form>
+</section>

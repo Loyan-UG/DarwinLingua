@@ -34,3 +34,14 @@ public sealed class AdminUpdateUserEntitlementInputModel
 
     public string? ExpiresAtUtc { get; init; }
 }
+
+public sealed class AdminUpdateUserRoleInputModel
+{
+    [Required]
+    public string UserId { get; init; } = string.Empty;
+
+    [Required]
+    public string Role { get; init; } = string.Empty;
+
+    public bool IsEnabled { get; init; }
+}

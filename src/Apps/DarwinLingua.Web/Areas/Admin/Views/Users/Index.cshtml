@@ -31,7 +31,8 @@ else
                     <th>Plan</th>
                     <th>Features</th>
                     <th>Recent events</th>
-                    <th>Update</th>
+                    <th>Plan update</th>
+                    <th>Role update</th>
                 </tr>
             </thead>
             <tbody>
@@ -82,6 +83,23 @@ else
                                        name="ExpiresAtUtc"
                                        value="@expiryValue"
                                        placeholder="Expiry UTC" />
+                                <button type="submit" class="button button--secondary">Apply</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form class="inline-form" method="post" asp-action="UpdateRole">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="UserId" value="@user.UserId" />
+                                <select name="Role">
+                                    @foreach (string role in DarwinLinguaRoles.All)
+                                    {
+                                        <option value="@role">@role</option>
+                                    }
+                                </select>
+                                <select name="IsEnabled">
+                                    <option value="true">Add</option>
+                                    <option value="false">Remove</option>
+                                </select>
                                 <button type="submit" class="button button--secondary">Apply</button>
                             </form>
                         </td>

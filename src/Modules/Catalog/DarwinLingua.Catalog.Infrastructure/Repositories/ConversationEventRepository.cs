@@ -116,7 +116,11 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
                 conversationEvent.SourceName,
                 conversationEvent.SourceUrl,
                 conversationEvent.LastVerifiedAtUtc,
-                ResolvePreparationPackSlugs(conversationEvent));
+                ResolvePreparationPackSlugs(conversationEvent))
+            {
+                RecurrenceRule = conversationEvent.RecurrenceRule,
+                Capacity = conversationEvent.Capacity,
+            };
     }
 
     private static ConversationEventListItemModel CreateListItem(ConversationEvent conversationEvent) =>

@@ -16,6 +16,7 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
     {
         AdminOrganizerProfilesPageViewModel viewModel = await BuildViewModelAsync(
             new AdminOrganizerProfileInputModel(),
+            new AdminOrganizerProfileOwnerInputModel(),
             TempData["StatusMessage"] as string,
             TempData["ErrorMessage"] as string,
             cancellationToken);
@@ -31,7 +32,12 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
     {
         if (!ModelState.IsValid)
         {
-            return View("Index", await BuildViewModelAsync(input, null, "Required organizer profile fields are missing.", cancellationToken));
+            return View("Index", await BuildViewModelAsync(
+                input,
+                new AdminOrganizerProfileOwnerInputModel(),
+                null,
+                "Required organizer profile fields are missing.",
+                cancellationToken));
         }
 
         AdminSaveOrganizerProfileRequest request = new(
@@ -60,12 +66,56 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
         }
         catch (InvalidOperationException exception)
         {
-            return View("Index", await BuildViewModelAsync(input, null, exception.Message, cancellationToken));
+            return View("Index", await BuildViewModelAsync(
+                input,
+                new AdminOrganizerProfileOwnerInputModel(),
+                null,
+                exception.Message,
+                cancellationToken));
+        }
+    }
+
+    [HttpPost("owners", Name = "Admin_OrganizerProfiles_AssignOwner")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> AssignOwner(
+        AdminOrganizerProfileOwnerInputModel input,
+        CancellationToken cancellationToken)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View("Index", await BuildViewModelAsync(
+                new AdminOrganizerProfileInputModel(),
+                input,
+                null,
+                "Required owner assignment fields are missing.",
+                cancellationToken));
+        }
+
+        string assignedBy = User.Identity?.Name ?? "web-admin";
+        try
+        {
+            OrganizerProfileOwnerModel owner = await catalogApiClient.AssignAdminOrganizerProfileOwnerAsync(
+                    new AssignOrganizerProfileOwnerRequest(input.OrganizerProfileSlug, input.OwnerEmail, assignedBy),
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            TempData["StatusMessage"] = $"Assigned {owner.OwnerEmail} to {owner.OrganizerProfileSlug}.";
+            return RedirectToAction(nameof(Index));
+        }
+        catch (InvalidOperationException exception)
+        {
+            return View("Index", await BuildViewModelAsync(
+                new AdminOrganizerProfileInputModel(),
+                input,
+                null,
+                exception.Message,
+                cancellationToken));
         }
     }
 
     private async Task<AdminOrganizerProfilesPageViewModel> BuildViewModelAsync(
         AdminOrganizerProfileInputModel input,
+        AdminOrganizerProfileOwnerInputModel ownerInput,
         string? statusMessage,
         string? errorMessage,
         CancellationToken cancellationToken)
@@ -76,8 +126,11 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
         IReadOnlyList<OrganizerClaimRequestModel> claimRequests = await catalogApiClient
             .GetAdminOrganizerClaimRequestsAsync(cancellationToken)
             .ConfigureAwait(false);
+        IReadOnlyList<OrganizerProfileOwnerModel> owners = await catalogApiClient
+            .GetAdminOrganizerProfileOwnersAsync(cancellationToken)
+            .ConfigureAwait(false);
 
-        return new AdminOrganizerProfilesPageViewModel(profiles, claimRequests, input, statusMessage, errorMessage);
+        return new AdminOrganizerProfilesPageViewModel(profiles, claimRequests, owners, input, ownerInput, statusMessage, errorMessage);
     }
 
     private static string[] SplitCsv(string? value) =>

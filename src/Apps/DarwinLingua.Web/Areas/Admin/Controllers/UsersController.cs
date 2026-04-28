@@ -84,6 +84,48 @@ public sealed class UsersController(
         return RedirectToAction(nameof(Index));
     }
 
+    [HttpPost("role", Name = "Admin_Users_UpdateRole")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> UpdateRole(AdminUpdateUserRoleInputModel input)
+    {
+        if (!ModelState.IsValid)
+        {
+            TempData["ErrorMessage"] = "The role update request was incomplete.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        if (!DarwinLinguaRoles.All.Contains(input.Role, StringComparer.Ordinal))
+        {
+            TempData["ErrorMessage"] = $"'{input.Role}' is not a supported role.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        DarwinLinguaIdentityUser? user = await userManager.FindByIdAsync(input.UserId);
+        if (user is null)
+        {
+            TempData["ErrorMessage"] = "The selected user could not be found.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        bool alreadyInRole = await userManager.IsInRoleAsync(user, input.Role);
+        IdentityResult result = input.IsEnabled switch
+        {
+            true when !alreadyInRole => await userManager.AddToRoleAsync(user, input.Role),
+            false when alreadyInRole => await userManager.RemoveFromRoleAsync(user, input.Role),
+            _ => IdentityResult.Success,
+        };
+
+        if (!result.Succeeded)
+        {
+            TempData["ErrorMessage"] = string.Join(" ", result.Errors.Select(error => error.Description));
+            return RedirectToAction(nameof(Index));
+        }
+
+        string action = input.IsEnabled ? "added" : "removed";
+        TempData["StatusMessage"] = $"{action} {input.Role} for {user.Email ?? user.UserName ?? user.Id}.";
+        return RedirectToAction(nameof(Index));
+    }
+
     private async Task<AdminUsersPageViewModel> BuildViewModelAsync(
         string? statusMessage,
         string? errorMessage,

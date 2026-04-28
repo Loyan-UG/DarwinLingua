@@ -46,4 +46,9 @@ public sealed record ConversationEventDetailModel(
     string? SourceName,
     string? SourceUrl,
     DateTime? LastVerifiedAtUtc,
-    IReadOnlyList<string> LinkedEventPreparationPackSlugs);
+    IReadOnlyList<string> LinkedEventPreparationPackSlugs)
+{
+    public string? RecurrenceRule { get; init; }
+
+    public int? Capacity { get; init; }
+}

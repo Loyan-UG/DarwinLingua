@@ -32,6 +32,65 @@ public sealed class ConversationEventAdminService(
         }
     }
 
+    public async Task<IReadOnlyList<OrganizerManagedConversationEventModel>> GetByOrganizerProfileSlugAsync(
+        string organizerProfileSlug,
+        CancellationToken cancellationToken)
+    {
+        string normalizedSlug = ConversationEvent.NormalizeKey(organizerProfileSlug, "Organizer profile slug");
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        ConversationEvent[] events = await dbContext.ConversationEvents
+            .AsNoTracking()
+            .AsSplitQuery()
+            .Include(item => item.SupportedLevels)
+            .Include(item => item.HelperLanguages)
+            .Include(item => item.PreparationPackLinks)
+            .Where(item => item.OrganizerProfileSlug == normalizedSlug)
+            .OrderBy(item => item.PublicationStatus)
+            .ThenBy(item => item.SortOrder)
+            .ThenBy(item => item.Name)
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return events.Select(CreateManagedModel).ToArray();
+    }
+
+    public async Task<OrganizerManagedConversationEventModel> SetPublicationStatusAsync(
+        string slug,
+        AdminSetConversationEventPublicationStatusRequest request,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(slug);
+        ArgumentNullException.ThrowIfNull(request);
+
+        if (!Enum.TryParse(request.PublicationStatus, true, out PublicationStatus publicationStatus))
+        {
+            throw new InvalidOperationException($"'{request.PublicationStatus}' is not a supported publication status.");
+        }
+
+        string normalizedSlug = ConversationEvent.NormalizeKey(slug, "Conversation event slug");
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        ConversationEvent conversationEvent = await dbContext.ConversationEvents
+            .Include(item => item.SupportedLevels)
+            .Include(item => item.HelperLanguages)
+            .Include(item => item.PreparationPackLinks)
+            .SingleOrDefaultAsync(item => item.Slug == normalizedSlug, cancellationToken)
+            .ConfigureAwait(false)
+            ?? throw new KeyNotFoundException($"No conversation event was found for '{normalizedSlug}'.");
+
+        conversationEvent.SetPublicationStatus(publicationStatus, DateTime.UtcNow);
+        await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        return CreateManagedModel(conversationEvent);
+    }
+
     private async Task<ConversationEventDetailModel> SaveCoreAsync(
         AdminSaveConversationEventRequest request,
         CancellationToken cancellationToken)
@@ -64,6 +123,7 @@ public sealed class ConversationEventAdminService(
             nowUtc);
 
         conversationEvent.SetSourceMetadata(request.SourceName, request.SourceUrl, request.LastVerifiedAtUtc);
+        conversationEvent.SetOperationalDetails(request.RecurrenceRule, request.Capacity, nowUtc);
 
         for (int index = 0; index < levels.Length; index++)
         {
@@ -135,6 +195,35 @@ public sealed class ConversationEventAdminService(
             .Select(value => ConversationEvent.NormalizeKey(value, label))
             .Distinct(StringComparer.Ordinal)
             .ToArray();
+
+    private static OrganizerManagedConversationEventModel CreateManagedModel(ConversationEvent conversationEvent) =>
+        new(
+            conversationEvent.Slug,
+            conversationEvent.Name,
+            conversationEvent.Description,
+            conversationEvent.City,
+            conversationEvent.CountryRegion,
+            conversationEvent.ApproximateLocation,
+            conversationEvent.IsOnline,
+            conversationEvent.Category,
+            conversationEvent.SupportedLevels.OrderBy(level => level.SortOrder).Select(level => level.CefrLevel.ToString()).ToArray(),
+            conversationEvent.HelperLanguages.OrderBy(language => language.SortOrder).Select(language => language.LanguageCode).ToArray(),
+            conversationEvent.OrganizerName,
+            conversationEvent.OrganizerProfileSlug,
+            conversationEvent.ExternalLink,
+            conversationEvent.ContactMethod,
+            conversationEvent.ScheduleText,
+            conversationEvent.PriceType,
+            conversationEvent.VerificationStatus,
+            conversationEvent.PublicationStatus.ToString(),
+            conversationEvent.SourceName,
+            conversationEvent.SourceUrl,
+            conversationEvent.LastVerifiedAtUtc,
+            conversationEvent.PreparationPackLinks.OrderBy(link => link.SortOrder).Select(link => link.PreparationPackSlug).ToArray())
+        {
+            RecurrenceRule = conversationEvent.RecurrenceRule,
+            Capacity = conversationEvent.Capacity,
+        };
 
     private static void ValidateVerificationFreshness(
         string verificationStatus,

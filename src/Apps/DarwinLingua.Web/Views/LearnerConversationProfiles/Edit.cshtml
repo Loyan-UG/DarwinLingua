@@ -1,0 +1,125 @@
+@model DarwinLingua.Web.Models.LearnerConversationProfilePageViewModel
+@{
+    ViewData["Title"] = "Learner profile";
+    bool hasProfile = Model.SavedProfile is not null;
+    bool isDisabled = string.Equals(Model.SavedProfile?.Visibility, "disabled", StringComparison.Ordinal);
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Conversation profile</span>
+    <h1 class="headline-md">Learner profile</h1>
+    <p class="body-lg">Control what other learners can see before partner matching is enabled.</p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="alert alert-success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger">@Model.ErrorMessage</div>
+    }
+
+    @if (hasProfile)
+    {
+        <div class="chip-grid">
+            <span class="chip-link chip-link--static">Visibility: @Model.SavedProfile!.Visibility</span>
+            <span class="chip-link chip-link--static">Updated: @Model.SavedProfile.UpdatedAtUtc.ToString("u")</span>
+        </div>
+    }
+</section>
+
+<section class="panel stack-lg">
+    <form method="post" asp-action="Save" class="stack-md">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+        <label class="form-field">
+            <span>Display name</span>
+            <input asp-for="Input.DisplayName" />
+            <span asp-validation-for="Input.DisplayName"></span>
+        </label>
+
+        <label class="form-field">
+            <span>City or region</span>
+            <input asp-for="Input.CityRegion" />
+            <span asp-validation-for="Input.CityRegion"></span>
+        </label>
+
+        <label class="form-field">
+            <span>Interaction preference</span>
+            <select asp-for="Input.InteractionPreference">
+                <option value="both">Online and in-person</option>
+                <option value="online">Online</option>
+                <option value="in-person">In-person</option>
+            </select>
+        </label>
+
+        <label class="form-field">
+            <span>German level</span>
+            <select asp-for="Input.GermanLevel">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+            </select>
+        </label>
+
+        <label class="form-field">
+            <span>Helper languages</span>
+            <input asp-for="Input.HelperLanguageCodesText" placeholder="en, fa, ar" />
+            <span asp-validation-for="Input.HelperLanguageCodesText"></span>
+        </label>
+
+        <label class="form-field">
+            <span>Conversation goals</span>
+            <textarea asp-for="Input.ConversationGoals" rows="5"></textarea>
+            <span asp-validation-for="Input.ConversationGoals"></span>
+        </label>
+
+        <label class="form-field">
+            <span>Availability notes</span>
+            <textarea asp-for="Input.AvailabilityNotes" rows="4"></textarea>
+            <span asp-validation-for="Input.AvailabilityNotes"></span>
+        </label>
+
+        <label class="form-field">
+            <span>Visibility</span>
+            <select asp-for="Input.Visibility">
+                <option value="private">Private</option>
+                <option value="request-only">Request-only</option>
+                <option value="public">Public</option>
+                <option value="disabled">Disabled</option>
+            </select>
+        </label>
+
+        <label class="checkbox-row">
+            <input asp-for="Input.HasConfirmedAdult" />
+            <span>I confirm this learner profile is for an adult learner.</span>
+        </label>
+
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Save profile</button>
+            <a class="button button--secondary" asp-controller="Account" asp-action="Index">Account</a>
+        </div>
+    </form>
+</section>
+
+@if (hasProfile)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Profile controls</h2>
+        <div class="action-row">
+            <form method="post" asp-action="SetEnabled" class="inline-form">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="isEnabled" value="@isDisabled.ToString().ToLowerInvariant()" />
+                <button type="submit" class="button button--secondary">@(isDisabled ? "Enable as private" : "Disable")</button>
+            </form>
+            <form method="post" asp-action="Delete" class="inline-form">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="button button--secondary">Delete profile</button>
+            </form>
+        </div>
+    </section>
+}

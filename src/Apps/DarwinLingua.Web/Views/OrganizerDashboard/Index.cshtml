@@ -1,0 +1,134 @@
+@model DarwinLingua.Web.Models.OrganizerDashboardViewModel
+@{
+    ViewData["Title"] = "Organizer dashboard";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Organizer dashboard", "Owned profiles", "Manage reviewed organizer listings assigned to your account.")' />
+    @if (!string.IsNullOrWhiteSpace(TempData["StatusMessage"] as string))
+    {
+        <div class="status-banner status-banner--success">@TempData["StatusMessage"]</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(TempData["ErrorMessage"] as string))
+    {
+        <div class="status-banner status-banner--error">@TempData["ErrorMessage"]</div>
+    }
+</section>
+
+@if (Model.Profiles.Count == 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">No assigned profiles</h2>
+        <p>No organizer profiles are assigned to @Model.OwnerEmail yet.</p>
+    </section>
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var item in Model.Profiles)
+        {
+            <article class="panel stack-md">
+                <span class="eyebrow">@item.Profile.OrganizerType · @item.Profile.VerificationStatus</span>
+                <h2 class="headline-sm">
+                    <a asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Profile.Slug">@item.Profile.DisplayName</a>
+                </h2>
+                <p>@item.Profile.Description</p>
+                <dl class="detail-list">
+                    <div>
+                        <dt>Events</dt>
+                        <dd>@item.Analytics.ActiveEventCount active · @item.Analytics.ArchivedEventCount archived</dd>
+                    </div>
+                    <div>
+                        <dt>Plan</dt>
+                        <dd>@item.Profile.PlanKey</dd>
+                    </div>
+                    <div>
+                        <dt>Mode</dt>
+                        <dd>@item.Analytics.OnlineEventCount online · @item.Analytics.InPersonEventCount in person</dd>
+                    </div>
+                    <div>
+                        <dt>Capacity</dt>
+                        <dd>@(item.Analytics.TotalCapacity == 0 ? "Not set" : item.Analytics.TotalCapacity.ToString())</dd>
+                    </div>
+                </dl>
+                <div class="chip-grid">
+                    @foreach (string level in item.Profile.SupportedLearnerLevels)
+                    {
+                        <span class="chip-link">@level</span>
+                    }
+                    @foreach (string languageCode in item.Profile.HelperLanguageCodes)
+                    {
+                        <span class="chip-link">@languageCode</span>
+                    }
+                </div>
+                <div class="detail-toolbar__actions">
+                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="EditProfile" asp-route-slug="@item.Profile.Slug">Edit profile</a>
+                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="NewEvent" asp-route-profileSlug="@item.Profile.Slug">New event</a>
+                </div>
+                @if (item.Events.Count > 0)
+                {
+                    <div class="stack-sm">
+                        <h3 class="headline-sm">Events</h3>
+                        @foreach (var conversationEvent in item.Events)
+                        {
+                            item.RsvpSummaries.TryGetValue(conversationEvent.Slug, out var rsvpSummary);
+                            item.EventRsvps.TryGetValue(conversationEvent.Slug, out var eventRsvps);
+                            <div class="detail-toolbar">
+                                <span>
+                                    @conversationEvent.Name · @conversationEvent.PublicationStatus
+                                    @if (rsvpSummary is not null)
+                                    {
+                                        <span> · @rsvpSummary.GoingCount going · @rsvpSummary.InterestedCount interested</span>
+                                    }
+                                </span>
+                                <div class="detail-toolbar__actions">
+                                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="EditEvent" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug">Edit event</a>
+                                    @if (string.Equals(conversationEvent.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        <form method="post" asp-controller="OrganizerDashboard" asp-action="SetEventPublicationStatus" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug" class="inline-form">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="PublicationStatus" value="Archived" />
+                                            <button type="submit" class="button button--secondary button--compact">Deactivate</button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <form method="post" asp-controller="OrganizerDashboard" asp-action="SetEventPublicationStatus" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug" class="inline-form">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="PublicationStatus" value="Active" />
+                                            <button type="submit" class="button button--secondary button--compact">Activate</button>
+                                        </form>
+                                    }
+                                </div>
+                            </div>
+                            @if (eventRsvps is { Count: > 0 })
+                            {
+                                <ul class="feature-list">
+                                    @foreach (var rsvp in eventRsvps)
+                                    {
+                                        <li>
+                                            <span>@rsvp.ParticipantName · @rsvp.ParticipantEmail · @rsvp.Status</span>
+                                            <form method="post" asp-controller="OrganizerDashboard" asp-action="SetRsvpStatus" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug" asp-route-rsvpId="@rsvp.Id" class="inline-form">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="ParticipantName" value="@rsvp.ParticipantName" />
+                                                <input type="hidden" name="ParticipantEmail" value="@rsvp.ParticipantEmail" />
+                                                <select name="Status">
+                                                    <option value="going" selected="@(rsvp.Status == "going")">Going</option>
+                                                    <option value="interested" selected="@(rsvp.Status == "interested")">Interested</option>
+                                                    <option value="cancelled" selected="@(rsvp.Status == "cancelled")">Cancelled</option>
+                                                    <option value="attended" selected="@(rsvp.Status == "attended")">Attended</option>
+                                                    <option value="no-show" selected="@(rsvp.Status == "no-show")">No-show</option>
+                                                </select>
+                                                <button type="submit" class="button button--secondary button--compact">Update</button>
+                                            </form>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        }
+                    </div>
+                }
+            </article>
+        }
+    </section>
+}

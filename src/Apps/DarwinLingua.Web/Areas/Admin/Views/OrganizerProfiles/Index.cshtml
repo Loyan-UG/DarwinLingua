@@ -81,6 +81,58 @@
 </section>
 
 <section class="panel stack-md">
+    <h2 class="headline-sm">Assign owner</h2>
+    <form method="post" asp-action="AssignOwner" class="form-grid">
+        @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Organizer profile slug</span>
+            <input name="OrganizerProfileSlug" value="@Model.OwnerInput.OrganizerProfileSlug" placeholder="berlin-language-club" />
+        </label>
+        <label class="field">
+            <span>Owner email</span>
+            <input name="OwnerEmail" value="@Model.OwnerInput.OwnerEmail" type="email" />
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Assign owner</button>
+        </div>
+    </form>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Assigned owners</h2>
+    @if (Model.Owners.Count == 0)
+    {
+        <p>No organizer owners assigned yet.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Organizer</th>
+                    <th>Owner</th>
+                    <th>Assigned by</th>
+                    <th>Assigned</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Owners)
+                {
+                    <tr>
+                        <td>
+                            <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
+                        </td>
+                        <td>@item.OwnerEmail</td>
+                        <td>@item.AssignedBy</td>
+                        <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>
+
+<section class="panel stack-md">
     <h2 class="headline-sm">Claim requests</h2>
     @if (Model.ClaimRequests.Count == 0)
     {

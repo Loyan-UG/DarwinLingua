@@ -7,7 +7,9 @@ namespace DarwinLingua.Web.Models;
 public sealed record AdminOrganizerProfilesPageViewModel(
     IReadOnlyList<OrganizerProfileListItemModel> Profiles,
     IReadOnlyList<OrganizerClaimRequestModel> ClaimRequests,
+    IReadOnlyList<OrganizerProfileOwnerModel> Owners,
     AdminOrganizerProfileInputModel Input,
+    AdminOrganizerProfileOwnerInputModel OwnerInput,
     string? StatusMessage,
     string? ErrorMessage);
 
@@ -45,4 +47,14 @@ public sealed class AdminOrganizerProfileInputModel
     public string PlanKey { get; set; } = "free-organizer";
 
     public int HistoricalEventCount { get; set; }
+}
+
+public sealed class AdminOrganizerProfileOwnerInputModel
+{
+    [Required]
+    public string OrganizerProfileSlug { get; set; } = string.Empty;
+
+    [Required]
+    [EmailAddress]
+    public string OwnerEmail { get; set; } = string.Empty;
 }
