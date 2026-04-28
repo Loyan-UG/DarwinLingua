@@ -1,0 +1,46 @@
+@model DarwinLingua.Web.Models.OrganizerProfileIndexPageViewModel
+@{
+    ViewData["Title"] = "Organizers";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Organizers", "Conversation hosts", "Find clubs, teachers, cafes, and organizations that host German practice opportunities.")' />
+</section>
+
+<section class="grid-two-col">
+    @if (Model.Profiles.Count == 0)
+    {
+        <article class="panel stack-md">
+            <h2 class="headline-sm">No organizers yet</h2>
+            <p>Organizer profiles will appear here after they are reviewed.</p>
+        </article>
+    }
+    else
+    {
+        @foreach (var profile in Model.Profiles)
+        {
+            <article class="panel stack-md">
+                <span class="eyebrow">@profile.OrganizerType · @(profile.IsOnlineAvailable ? "Online available" : profile.CityRegion)</span>
+                <h2 class="headline-sm">
+                    <a asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@profile.Slug">@profile.DisplayName</a>
+                </h2>
+                <p>@profile.Description</p>
+                <div class="chip-grid">
+                    @foreach (string level in profile.SupportedLearnerLevels)
+                    {
+                        <span class="chip-link">@level</span>
+                    }
+                    @foreach (string languageCode in profile.HelperLanguageCodes)
+                    {
+                        <span class="chip-link">@languageCode</span>
+                    }
+                    @if (profile.VerificationStatus is "verified" or "reviewed")
+                    {
+                        <span class="chip-link">@profile.VerificationStatus</span>
+                    }
+                </div>
+                <p>@profile.ActiveEventCount active events · @profile.HistoricalEventCount historical events</p>
+            </article>
+        }
+    }
+</section>

@@ -683,18 +683,25 @@ Let learners find conversation cafes, clubs, online meetings, language events, a
 
 #### Backlog
 
-- [ ] define `ResourceDirectory` and `ConversationEvent` boundaries
-- [ ] define event category list
-- [ ] define city/location model without exposing precise private user locations
-- [ ] implement read-only event directory model
-- [ ] implement event list query with filters by city, level, language, online/offline, and price type
-- [ ] implement event detail query
+- [x] define `ResourceDirectory` and `ConversationEvent` boundaries
+  - Progress: Web MVP uses `ConversationEvent` catalog records with separate supported-level, helper-language, and preparation-pack link collections; a future ResourceDirectory module can split this boundary when organizer self-service starts.
+- [x] define event category list
+  - Progress: event taxonomy now constrains categories, price types, and verification states in the domain model.
+- [x] define city/location model without exposing precise private user locations
+  - Progress: events store `City`, `CountryRegion`, `ApproximateLocation`, and `IsOnline`; no precise user or attendee location is stored.
+- [x] implement read-only event directory model
+  - Progress: `ConversationEvent` domain/EF mapping/migration is implemented for reviewed published listings.
+- [x] implement event list query with filters by city, level, language, online/offline, and price type
+- [x] implement event detail query
 - [ ] add mobile event directory screens
-- [ ] add web event directory pages
-- [ ] support external registration links
-- [ ] support manual admin-managed event creation first
-- [ ] add validation for stale event data
-- [ ] add tests for filtering and visibility rules
+- [x] add web event directory pages
+- [x] support external registration links
+- [x] support manual admin-managed event creation first
+  - Progress: Web Admin can create/replace reviewed conversation events through WebApi while organizer self-service stays deferred.
+- [x] add validation for stale event data
+  - Progress: reviewed/verified admin-created events require a last-verified timestamp within the last 180 days.
+- [x] add tests for filtering and visibility rules
+  - Progress: repository tests cover published visibility, filters, detail materialization, and preparation-pack links.
 
 ---
 
@@ -729,7 +736,8 @@ Each event can have:
 - [x] show preparation packs on scenario detail screens
 - [x] add web/mobile preparation-pack detail screens
 - [x] export event preparation packs in full and CEFR mobile catalog packages
-- [ ] show preparation packs on event detail screens
+- [x] show preparation packs on web event detail screens
+  - Progress: Web event detail now surfaces entitled linked preparation packs; mobile parity is intentionally deferred until the Web backlog is complete.
 - [x] add `Prepare for this event` action
   - Progress: scenario detail now presents entitled preparation-pack links as `Prepare for this event`.
 - [ ] track preparation-pack completion if useful
@@ -762,14 +770,20 @@ Create public pages for clubs, teachers, cafes, organizations, and other languag
 
 #### Backlog
 
-- [ ] define `OrganizerProfile` domain model
-- [ ] define organizer type list: teacher, cafe, club, association, school, company, library, other
-- [ ] implement read-only organizer profile pages
-- [ ] link events to organizer profiles
-- [ ] add admin-managed organizer creation first
+- [x] define `OrganizerProfile` domain model
+  - Progress: Web MVP stores organizer profiles with supported levels, helper languages, verification status, plan key, public contact fields, and historical event counts.
+- [x] define organizer type list: teacher, cafe, club, association, school, company, library, other
+- [x] implement read-only organizer profile pages
+  - Progress: Web-only public organizer list/detail pages are implemented; mobile parity is intentionally deferred until the Web backlog is complete.
+- [x] link events to organizer profiles
+  - Progress: conversation events now support an optional `OrganizerProfileSlug`; public event detail and admin event tables link to the organizer page when present.
+- [x] add admin-managed organizer creation first
+  - Progress: Web Admin can create/replace reviewed organizer profiles through WebApi before organizer self-service is enabled.
 - [ ] add organizer claim workflow placeholder
-- [ ] add verified organizer badge rules
-- [ ] add tests for organizer visibility and event linking
+- [x] add verified organizer badge rules
+  - Progress: reviewed/verified organizer statuses are displayed as public organizer badges; stricter verification workflow remains in the moderation backlog.
+- [x] add tests for organizer visibility and event linking
+  - Progress: repository tests cover published organizer visibility, active event counts, and event linking; WebApi tests cover admin creation and invalid organizer type rejection.
 
 ---
 

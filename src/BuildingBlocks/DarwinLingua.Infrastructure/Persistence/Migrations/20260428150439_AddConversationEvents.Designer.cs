@@ -3,6 +3,7 @@ using System;
 using DarwinLingua.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DarwinLingua.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(DarwinLinguaDbContext))]
-    partial class DarwinLinguaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260428150439_AddConversationEvents")]
+    partial class AddConversationEvents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.6");
@@ -72,10 +75,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("OrganizerProfileSlug")
-                        .HasMaxLength(128)
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("PriceType")
                         .IsRequired()
                         .HasMaxLength(64)
@@ -116,8 +115,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OrganizerProfileSlug");
 
                     b.HasIndex("Slug")
                         .IsUnique();
@@ -751,136 +748,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("ExampleTranslations", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerProfile", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CityRegion")
-                        .HasMaxLength(128)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(4000)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("HistoricalEventCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("IsOnlineAvailable")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("OrganizerType")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PlanKey")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PublicContactMethod")
-                        .HasMaxLength(512)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PublicationStatus")
-                        .IsRequired()
-                        .HasMaxLength(32)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("VerificationStatus")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("WebsiteUrl")
-                        .HasMaxLength(1024)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Slug")
-                        .IsUnique();
-
-                    b.HasIndex("CityRegion", "PublicationStatus");
-
-                    b.HasIndex("OrganizerType", "PublicationStatus");
-
-                    b.ToTable("OrganizerProfiles", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerProfileHelperLanguage", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LanguageCode")
-                        .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("OrganizerProfileId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrganizerProfileId", "LanguageCode")
-                        .IsUnique();
-
-                    b.ToTable("OrganizerProfileHelperLanguages", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerProfileSupportedLevel", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CefrLevel")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("OrganizerProfileId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrganizerProfileId", "CefrLevel")
-                        .IsUnique();
-
-                    b.ToTable("OrganizerProfileSupportedLevels", (string)null);
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ScenarioAnswer", b =>
@@ -2335,24 +2202,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerProfileHelperLanguage", b =>
-                {
-                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.OrganizerProfile", null)
-                        .WithMany("HelperLanguages")
-                        .HasForeignKey("OrganizerProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerProfileSupportedLevel", b =>
-                {
-                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.OrganizerProfile", null)
-                        .WithMany("SupportedLevels")
-                        .HasForeignKey("OrganizerProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ScenarioAnswer", b =>
                 {
                     b.HasOne("DarwinLingua.Catalog.Domain.Entities.ScenarioQuestion", null)
@@ -2605,13 +2454,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ExampleSentence", b =>
                 {
                     b.Navigation("Translations");
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.OrganizerProfile", b =>
-                {
-                    b.Navigation("HelperLanguages");
-
-                    b.Navigation("SupportedLevels");
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.ScenarioAnswer", b =>

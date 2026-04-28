@@ -50,6 +50,20 @@ public interface IWebCatalogApiClient
         string slug,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(
+        ConversationEventListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken);
+
+    Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -90,6 +104,14 @@ public interface IWebCatalogApiClient
     Task<AdminHistoryPageViewModel> GetAdminHistoryAsync(string? statusFilter, CancellationToken cancellationToken);
 
     Task<AdminRollbackPageViewModel> GetAdminRollbackPreviewAsync(CancellationToken cancellationToken);
+
+    Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
+        AdminSaveConversationEventRequest request,
+        CancellationToken cancellationToken);
+
+    Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(
+        AdminSaveOrganizerProfileRequest request,
+        CancellationToken cancellationToken);
 }
 
 internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogApiClient
@@ -181,6 +203,41 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         CancellationToken cancellationToken) =>
         GetAsync<EventPreparationPackDetailModel>(
             $"/api/catalog/event-preparation-packs/{Uri.EscapeDataString(slug)}",
+            cancellationToken);
+
+    public Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(
+        ConversationEventListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ConversationEventListItemModel>>(
+            BuildPath(
+                "/api/catalog/conversation-events",
+                [
+                    new("city", filter.City),
+                    new("cefrLevel", filter.CefrLevel),
+                    new("helperLanguageCode", filter.HelperLanguageCode),
+                    new("isOnline", filter.IsOnline?.ToString()),
+                    new("priceType", filter.PriceType),
+                    new("category", filter.Category)
+                ]),
+            cancellationToken);
+
+    public Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<ConversationEventDetailModel>(
+            $"/api/catalog/conversation-events/{Uri.EscapeDataString(slug)}",
+            cancellationToken);
+
+    public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<OrganizerProfileListItemModel>>(
+            "/api/catalog/organizer-profiles",
+            cancellationToken);
+
+    public Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<OrganizerProfileDetailModel>(
+            $"/api/catalog/organizer-profiles/{Uri.EscapeDataString(slug)}",
             cancellationToken);
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
@@ -341,6 +398,22 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
             response.WarningMessage);
     }
 
+    public Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
+        AdminSaveConversationEventRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminSaveConversationEventRequest, ConversationEventDetailModel>(
+            "/api/admin/catalog/conversation-events",
+            request,
+            cancellationToken);
+
+    public Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(
+        AdminSaveOrganizerProfileRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminSaveOrganizerProfileRequest, OrganizerProfileDetailModel>(
+            "/api/admin/catalog/organizer-profiles",
+            request,
+            cancellationToken);
+
     private async Task<T?> GetAsync<T>(string relativeUri, CancellationToken cancellationToken)
     {
         using HttpResponseMessage response = await httpClient.GetAsync(relativeUri, cancellationToken).ConfigureAwait(false);
@@ -498,3 +571,41 @@ internal sealed record AdminCatalogRollbackPreviewResponse(
     int DraftWordCount,
     int ImportedPackageCount,
     string WarningMessage);
+
+public sealed record AdminSaveConversationEventRequest(
+    string Slug,
+    string Name,
+    string Description,
+    string? City,
+    string CountryRegion,
+    string? ApproximateLocation,
+    bool IsOnline,
+    string Category,
+    IReadOnlyList<string> SupportedLearnerLevels,
+    IReadOnlyList<string> HelperLanguageCodes,
+    string OrganizerName,
+    string? OrganizerProfileSlug,
+    string? ExternalLink,
+    string? ContactMethod,
+    string ScheduleText,
+    string PriceType,
+    string VerificationStatus,
+    string? SourceName,
+    string? SourceUrl,
+    DateTime? LastVerifiedAtUtc,
+    IReadOnlyList<string> LinkedEventPreparationPackSlugs);
+
+public sealed record AdminSaveOrganizerProfileRequest(
+    string Slug,
+    string DisplayName,
+    string OrganizerType,
+    string Description,
+    string? CityRegion,
+    bool IsOnlineAvailable,
+    IReadOnlyList<string> SupportedLearnerLevels,
+    IReadOnlyList<string> HelperLanguageCodes,
+    string? WebsiteUrl,
+    string? PublicContactMethod,
+    string VerificationStatus,
+    string PlanKey,
+    int HistoricalEventCount);

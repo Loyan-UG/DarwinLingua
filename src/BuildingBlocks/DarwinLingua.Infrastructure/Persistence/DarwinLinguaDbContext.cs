@@ -132,6 +132,20 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<EventPreparationPrompt> EventPreparationPrompts => Set<EventPreparationPrompt>();
 
+    public DbSet<ConversationEvent> ConversationEvents => Set<ConversationEvent>();
+
+    public DbSet<ConversationEventLevel> ConversationEventLevels => Set<ConversationEventLevel>();
+
+    public DbSet<ConversationEventHelperLanguage> ConversationEventHelperLanguages => Set<ConversationEventHelperLanguage>();
+
+    public DbSet<ConversationEventPreparationPackLink> ConversationEventPreparationPackLinks => Set<ConversationEventPreparationPackLink>();
+
+    public DbSet<OrganizerProfile> OrganizerProfiles => Set<OrganizerProfile>();
+
+    public DbSet<OrganizerProfileSupportedLevel> OrganizerProfileSupportedLevels => Set<OrganizerProfileSupportedLevel>();
+
+    public DbSet<OrganizerProfileHelperLanguage> OrganizerProfileHelperLanguages => Set<OrganizerProfileHelperLanguage>();
+
     /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
@@ -208,6 +222,13 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new EventPreparationLinkedConversationStarterPackConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationVocabularyReferenceConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationPromptConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationEventConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationEventLevelConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationEventHelperLanguageConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationEventPreparationPackLinkConfiguration());
+        modelBuilder.ApplyConfiguration(new OrganizerProfileConfiguration());
+        modelBuilder.ApplyConfiguration(new OrganizerProfileSupportedLevelConfiguration());
+        modelBuilder.ApplyConfiguration(new OrganizerProfileHelperLanguageConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

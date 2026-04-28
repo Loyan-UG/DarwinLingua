@@ -1,0 +1,107 @@
+@model DarwinLingua.Web.Models.ConversationEventDetailPageViewModel
+@{
+    ViewData["Title"] = Model.Event.Name;
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Event.Category · @(Model.Event.IsOnline ? "Online" : Model.Event.City ?? Model.Event.CountryRegion)</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Index">All events</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@Model.Event.Name</h1>
+    <p class="body-lg">@Model.Event.Description</p>
+    <dl class="detail-list">
+        <div>
+            <dt>Organizer</dt>
+            <dd>
+                @if (!string.IsNullOrWhiteSpace(Model.Event.OrganizerProfileSlug))
+                {
+                    <a asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Event.OrganizerProfileSlug">@Model.Event.OrganizerName</a>
+                }
+                else
+                {
+                    @Model.Event.OrganizerName
+                }
+            </dd>
+        </div>
+        <div>
+            <dt>Schedule</dt>
+            <dd>@Model.Event.ScheduleText</dd>
+        </div>
+        <div>
+            <dt>Location</dt>
+            <dd>@(Model.Event.IsOnline ? "Online" : Model.Event.ApproximateLocation ?? Model.Event.City ?? Model.Event.CountryRegion)</dd>
+        </div>
+        <div>
+            <dt>Price</dt>
+            <dd>@Model.Event.PriceType</dd>
+        </div>
+        <div>
+            <dt>Verification</dt>
+            <dd>@Model.Event.VerificationStatus</dd>
+        </div>
+    </dl>
+    <div class="chip-grid">
+        @foreach (string level in Model.Event.SupportedLearnerLevels)
+        {
+            <span class="chip-link">@level</span>
+        }
+        @foreach (string languageCode in Model.Event.HelperLanguageCodes)
+        {
+            <span class="chip-link">@languageCode</span>
+        }
+    </div>
+    <div class="detail-toolbar__actions">
+        @if (!string.IsNullOrWhiteSpace(Model.Event.ExternalLink))
+        {
+            <a class="button button--primary button--compact" href="@Model.Event.ExternalLink" rel="noopener noreferrer" target="_blank">External registration</a>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Event.ContactMethod))
+        {
+            <span class="button button--secondary button--compact">@Model.Event.ContactMethod</span>
+        }
+    </div>
+</section>
+
+@if (Model.PreparationPacks.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Prepare for this event</h2>
+        <div class="grid-two-col">
+            @foreach (var preparationPack in Model.PreparationPacks)
+            {
+                <article class="panel stack-md">
+                    <span class="eyebrow">@preparationPack.CefrLevel · @preparationPack.EventType · @preparationPack.Category</span>
+                    <h3 class="headline-sm">
+                        <a asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
+                    </h3>
+                    <p>@preparationPack.Description</p>
+                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">Prepare for this event</a>
+                </article>
+            }
+        </div>
+    </section>
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.Event.SourceName) || Model.Event.LastVerifiedAtUtc.HasValue)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Listing source</h2>
+        <p>
+            @if (!string.IsNullOrWhiteSpace(Model.Event.SourceUrl))
+            {
+                <a href="@Model.Event.SourceUrl" rel="noopener noreferrer" target="_blank">@Model.Event.SourceName</a>
+            }
+            else
+            {
+                @Model.Event.SourceName
+            }
+            @if (Model.Event.LastVerifiedAtUtc.HasValue)
+            {
+                <span> · verified @Model.Event.LastVerifiedAtUtc.Value.ToString("yyyy-MM-dd")</span>
+            }
+        </p>
+    </section>
+}

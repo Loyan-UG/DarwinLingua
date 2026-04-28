@@ -22,6 +22,8 @@ public sealed class CatalogInfrastructureRegistrationTests
 
         Assert.Contains(services, descriptor => descriptor.ServiceType == typeof(ITopicRepository));
         Assert.Contains(services, descriptor => descriptor.ServiceType == typeof(IWordEntryRepository));
+        Assert.Contains(services, descriptor => descriptor.ServiceType == typeof(IConversationEventRepository));
+        Assert.Contains(services, descriptor => descriptor.ServiceType == typeof(IOrganizerProfileRepository));
         Assert.Contains(services, descriptor => descriptor.ServiceType == typeof(IDatabaseSeeder));
     }
 }

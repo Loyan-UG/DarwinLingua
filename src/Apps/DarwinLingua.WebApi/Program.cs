@@ -104,6 +104,8 @@ builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseS
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 builder.Services.AddScoped<IWebsiteCatalogQueryService, WebsiteCatalogQueryService>();
 builder.Services.AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>();
+builder.Services.AddScoped<IConversationEventAdminService, ConversationEventAdminService>();
+builder.Services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
 
 WebApplication app = builder.Build();
 
@@ -347,6 +349,44 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
+    "/api/catalog/conversation-events",
+    async (
+        string? city,
+        string? cefrLevel,
+        string? helperLanguageCode,
+        bool? isOnline,
+        string? priceType,
+        string? category,
+        IConversationEventQueryService conversationEventQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationEventQueryService.GetPublishedEventsAsync(
+                    new ConversationEventListFilterModel(city, cefrLevel, helperLanguageCode, isOnline, priceType, category),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/conversation-events/{slug}",
+    async (string slug, IConversationEventQueryService conversationEventQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationEventQueryService.GetPublishedEventBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/organizer-profiles",
+    async (IOrganizerProfileQueryService organizerProfileQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerProfileQueryService.GetPublishedOrganizerProfilesAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/organizer-profiles/{slug}",
+    async (string slug, IOrganizerProfileQueryService organizerProfileQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerProfileQueryService.GetPublishedOrganizerProfileBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
     "/api/catalog/words/topic/{topicKey}",
     async (string topicKey, string meaningLanguageCode, int skip, int take, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
@@ -414,6 +454,26 @@ app.MapGet(
     async (IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await adminQueryService.GetRollbackPreviewAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/conversation-events",
+    async (
+        AdminSaveConversationEventRequest request,
+        IConversationEventAdminService conversationEventAdminService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await conversationEventAdminService.SaveAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/organizer-profiles",
+    async (
+        AdminSaveOrganizerProfileRequest request,
+        IOrganizerProfileAdminService organizerProfileAdminService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerProfileAdminService.SaveAsync(request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

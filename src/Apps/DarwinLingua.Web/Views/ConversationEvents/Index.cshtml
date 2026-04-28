@@ -1,0 +1,93 @@
+@model DarwinLingua.Web.Models.ConversationEventIndexPageViewModel
+@{
+    ViewData["Title"] = "Conversation events";
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">Event directory</span>
+    </div>
+    <h1 class="headline-md">Conversation events</h1>
+    <form method="get" class="filter-bar">
+        <label>
+            <span>City</span>
+            <input name="city" value="@Model.Filter.City" />
+        </label>
+        <label>
+            <span>Level</span>
+            <input name="cefrLevel" value="@Model.Filter.CefrLevel" placeholder="A1" />
+        </label>
+        <label>
+            <span>Helper language</span>
+            <input name="helperLanguageCode" value="@Model.Filter.HelperLanguageCode" placeholder="en" />
+        </label>
+        <label>
+            <span>Price</span>
+            <input name="priceType" value="@Model.Filter.PriceType" placeholder="free" />
+        </label>
+        <label>
+            <span>Category</span>
+            <input name="category" value="@Model.Filter.Category" placeholder="conversation-cafe" />
+        </label>
+        <label>
+            <span>Mode</span>
+            <select name="isOnline">
+                <option value="">Any</option>
+                <option value="false" selected="@(Model.Filter.IsOnline == false)">In person</option>
+                <option value="true" selected="@(Model.Filter.IsOnline == true)">Online</option>
+            </select>
+        </label>
+        <button class="button button--primary button--compact" type="submit">Filter</button>
+    </form>
+</section>
+
+@if (Model.Events.Count == 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">No events found</h2>
+        <p>Try a broader filter or add reviewed events through the server catalog.</p>
+    </section>
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var conversationEvent in Model.Events)
+        {
+            <article class="panel stack-md">
+                <span class="eyebrow">@conversationEvent.Category · @(conversationEvent.IsOnline ? "Online" : conversationEvent.City ?? conversationEvent.CountryRegion)</span>
+                <h2 class="headline-sm">
+                    <a asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@conversationEvent.Slug">@conversationEvent.Name</a>
+                </h2>
+                <p>@conversationEvent.Description</p>
+                <dl class="detail-list">
+                    <div>
+                        <dt>Organizer</dt>
+                        <dd>@conversationEvent.OrganizerName</dd>
+                    </div>
+                    <div>
+                        <dt>Schedule</dt>
+                        <dd>@conversationEvent.ScheduleText</dd>
+                    </div>
+                    <div>
+                        <dt>Price</dt>
+                        <dd>@conversationEvent.PriceType</dd>
+                    </div>
+                </dl>
+                @if (conversationEvent.SupportedLearnerLevels.Count > 0 || conversationEvent.HelperLanguageCodes.Count > 0)
+                {
+                    <div class="chip-grid">
+                        @foreach (string level in conversationEvent.SupportedLearnerLevels)
+                        {
+                            <span class="chip-link">@level</span>
+                        }
+                        @foreach (string languageCode in conversationEvent.HelperLanguageCodes)
+                        {
+                            <span class="chip-link">@languageCode</span>
+                        }
+                    </div>
+                }
+                <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@conversationEvent.Slug">Open event</a>
+            </article>
+        }
+    </section>
+}

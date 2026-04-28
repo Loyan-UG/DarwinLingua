@@ -1,0 +1,160 @@
+@model DarwinLingua.Web.Models.AdminConversationEventsPageViewModel
+@{
+    ViewData["Title"] = "Conversation events";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Conversation events", "Manual reviewed listings", "Create or replace public event-directory entries without enabling organizer self-service yet.")' />
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Create or replace event</h2>
+    <form method="post" class="form-grid">
+        @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Slug</span>
+            <input name="Slug" value="@Model.Input.Slug" placeholder="berlin-cafe-a1" />
+        </label>
+        <label class="field">
+            <span>Name</span>
+            <input name="Name" value="@Model.Input.Name" />
+        </label>
+        <label class="field">
+            <span>Description</span>
+            <input name="Description" value="@Model.Input.Description" />
+        </label>
+        <label class="field">
+            <span>City</span>
+            <input name="City" value="@Model.Input.City" />
+        </label>
+        <label class="field">
+            <span>Country or region</span>
+            <input name="CountryRegion" value="@Model.Input.CountryRegion" />
+        </label>
+        <label class="field">
+            <span>Approximate location</span>
+            <input name="ApproximateLocation" value="@Model.Input.ApproximateLocation" />
+        </label>
+        <label class="field">
+            <span>Category</span>
+            <input name="Category" value="@Model.Input.Category" placeholder="conversation-cafe" />
+        </label>
+        <label class="field">
+            <span>Supported levels</span>
+            <input name="SupportedLearnerLevels" value="@Model.Input.SupportedLearnerLevels" placeholder="A1,A2" />
+        </label>
+        <label class="field">
+            <span>Helper languages</span>
+            <input name="HelperLanguageCodes" value="@Model.Input.HelperLanguageCodes" placeholder="en,fa" />
+        </label>
+        <label class="field">
+            <span>Organizer</span>
+            <input name="OrganizerName" value="@Model.Input.OrganizerName" />
+        </label>
+        <label class="field">
+            <span>Organizer profile slug</span>
+            <input name="OrganizerProfileSlug" value="@Model.Input.OrganizerProfileSlug" placeholder="berlin-language-club" />
+        </label>
+        <label class="field">
+            <span>External link</span>
+            <input name="ExternalLink" value="@Model.Input.ExternalLink" />
+        </label>
+        <label class="field">
+            <span>Contact method</span>
+            <input name="ContactMethod" value="@Model.Input.ContactMethod" />
+        </label>
+        <label class="field">
+            <span>Schedule</span>
+            <input name="ScheduleText" value="@Model.Input.ScheduleText" />
+        </label>
+        <label class="field">
+            <span>Price type</span>
+            <input name="PriceType" value="@Model.Input.PriceType" placeholder="free" />
+        </label>
+        <label class="field">
+            <span>Verification status</span>
+            <input name="VerificationStatus" value="@Model.Input.VerificationStatus" placeholder="reviewed" />
+        </label>
+        <label class="field">
+            <span>Source name</span>
+            <input name="SourceName" value="@Model.Input.SourceName" />
+        </label>
+        <label class="field">
+            <span>Source URL</span>
+            <input name="SourceUrl" value="@Model.Input.SourceUrl" />
+        </label>
+        <label class="field">
+            <span>Last verified UTC</span>
+            <input name="LastVerifiedAtUtc" value="@Model.Input.LastVerifiedAtUtc" placeholder="2026-04-28 12:00Z" />
+        </label>
+        <label class="field">
+            <span>Preparation pack slugs</span>
+            <input name="LinkedEventPreparationPackSlugs" value="@Model.Input.LinkedEventPreparationPackSlugs" placeholder="a1-cafe-first-meeting-prep" />
+        </label>
+        <label class="field">
+            <span>Online</span>
+            <select name="IsOnline">
+                <option value="false" selected="@(!Model.Input.IsOnline)">In person</option>
+                <option value="true" selected="@Model.Input.IsOnline">Online</option>
+            </select>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Save event</button>
+        </div>
+    </form>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Published events</h2>
+    @if (Model.Events.Count == 0)
+    {
+        <p>No published conversation events yet.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Mode</th>
+                    <th>Levels</th>
+                    <th>Organizer</th>
+                    <th>Preparation</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Events)
+                {
+                    <tr>
+                        <td>
+                            <strong>@item.Name</strong>
+                            <div>@item.Slug</div>
+                            <a asp-area="" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
+                        </td>
+                        <td>@(item.IsOnline ? "Online" : item.City ?? item.CountryRegion)</td>
+                        <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
+                        <td>
+                            @if (!string.IsNullOrWhiteSpace(item.OrganizerProfileSlug))
+                            {
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerName</a>
+                            }
+                            else
+                            {
+                                @item.OrganizerName
+                            }
+                        </td>
+                        <td>@string.Join(", ", item.LinkedEventPreparationPackSlugs)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>

@@ -1,0 +1,119 @@
+@model DarwinLingua.Web.Models.AdminOrganizerProfilesPageViewModel
+@{
+    ViewData["Title"] = "Organizer profiles";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Organizer profiles", "Manual reviewed profiles", "Create or replace public organizer pages before enabling organizer self-service.")' />
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Create or replace organizer</h2>
+    <form method="post" class="form-grid">
+        @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Slug</span>
+            <input name="Slug" value="@Model.Input.Slug" placeholder="berlin-language-club" />
+        </label>
+        <label class="field">
+            <span>Name</span>
+            <input name="DisplayName" value="@Model.Input.DisplayName" />
+        </label>
+        <label class="field">
+            <span>Type</span>
+            <input name="OrganizerType" value="@Model.Input.OrganizerType" placeholder="club" />
+        </label>
+        <label class="field">
+            <span>Description</span>
+            <input name="Description" value="@Model.Input.Description" />
+        </label>
+        <label class="field">
+            <span>City or region</span>
+            <input name="CityRegion" value="@Model.Input.CityRegion" />
+        </label>
+        <label class="field">
+            <span>Supported levels</span>
+            <input name="SupportedLearnerLevels" value="@Model.Input.SupportedLearnerLevels" placeholder="A1,A2" />
+        </label>
+        <label class="field">
+            <span>Helper languages</span>
+            <input name="HelperLanguageCodes" value="@Model.Input.HelperLanguageCodes" placeholder="en,fa" />
+        </label>
+        <label class="field">
+            <span>Website</span>
+            <input name="WebsiteUrl" value="@Model.Input.WebsiteUrl" />
+        </label>
+        <label class="field">
+            <span>Public contact</span>
+            <input name="PublicContactMethod" value="@Model.Input.PublicContactMethod" />
+        </label>
+        <label class="field">
+            <span>Verification status</span>
+            <input name="VerificationStatus" value="@Model.Input.VerificationStatus" placeholder="reviewed" />
+        </label>
+        <label class="field">
+            <span>Plan</span>
+            <input name="PlanKey" value="@Model.Input.PlanKey" placeholder="free-organizer" />
+        </label>
+        <label class="field">
+            <span>Historical event count</span>
+            <input name="HistoricalEventCount" value="@Model.Input.HistoricalEventCount" type="number" min="0" />
+        </label>
+        <label class="field">
+            <span>Online available</span>
+            <select name="IsOnlineAvailable">
+                <option value="false" selected="@(!Model.Input.IsOnlineAvailable)">No</option>
+                <option value="true" selected="@Model.Input.IsOnlineAvailable">Yes</option>
+            </select>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--primary">Save organizer</button>
+        </div>
+    </form>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Published organizers</h2>
+    @if (Model.Profiles.Count == 0)
+    {
+        <p>No published organizer profiles yet.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Organizer</th>
+                    <th>Type</th>
+                    <th>Levels</th>
+                    <th>Events</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Profiles)
+                {
+                    <tr>
+                        <td>
+                            <strong>@item.DisplayName</strong>
+                            <div>@item.Slug</div>
+                            <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
+                        </td>
+                        <td>@item.OrganizerType</td>
+                        <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
+                        <td>@item.ActiveEventCount active · @item.HistoricalEventCount historical</td>
+                        <td>@item.VerificationStatus</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>
