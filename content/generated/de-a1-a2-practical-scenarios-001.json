@@ -1,0 +1,611 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-a1-a2-practical-scenarios-20260428-001",
+  "packageName": "German A1/A2 Practical Scenario Pack 001",
+  "source": "AiAssisted",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa"
+  ],
+  "entries": [
+    {
+      "word": "Hilfe",
+      "language": "de",
+      "cefrLevel": "A1",
+      "partOfSpeech": "Noun",
+      "lexicalForms": [
+        {
+          "partOfSpeech": "Noun",
+          "article": "die",
+          "isPrimary": true
+        }
+      ],
+      "article": "die",
+      "topics": [
+        "everyday-life"
+      ],
+      "usageLabels": [
+        "daily-life"
+      ],
+      "contextLabels": [
+        "support"
+      ],
+      "meanings": [
+        {
+          "language": "en",
+          "text": "help"
+        },
+        {
+          "language": "fa",
+          "text": "کمک"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Ich brauche Hilfe.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I need help."
+            },
+            {
+              "language": "fa",
+              "text": "من کمک لازم دارم."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "slug": "a1-buy-bread-at-bakery",
+      "title": "Buy Bread at a Bakery",
+      "description": "A short A1 exchange for buying bread and paying politely.",
+      "learnerGoal": "Ask for one item, understand the price, and say thank you.",
+      "cefrLevel": "A1",
+      "category": "shopping-and-food",
+      "topics": [
+        "shopping",
+        "everyday-life"
+      ],
+      "sortOrder": 10,
+      "dialogueTurns": [
+        {
+          "speakerRole": "seller",
+          "baseText": "Guten Morgen. Was möchten Sie?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. What would you like?"
+            },
+            {
+              "language": "fa",
+              "text": "صبح به خیر. چه چیزی میل دارید؟"
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Ich möchte ein Brot, bitte.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "fa",
+              "text": "یک نان می‌خواهم، لطفاً."
+            }
+          ]
+        },
+        {
+          "speakerRole": "seller",
+          "baseText": "Das macht drei Euro.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That is three euros."
+            },
+            {
+              "language": "fa",
+              "text": "می‌شود سه یورو."
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Danke schön. Auf Wiedersehen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you. Goodbye."
+            },
+            {
+              "language": "fa",
+              "text": "خیلی ممنون. خداحافظ."
+            }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Ich möchte ... bitte.",
+          "usageNote": "Use this polite pattern when ordering one item.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I would like ... please."
+            },
+            {
+              "language": "fa",
+              "text": "... می‌خواهم، لطفاً."
+            }
+          ]
+        },
+        {
+          "baseText": "Was kostet das?",
+          "usageNote": "Use this when you need the price.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "How much does that cost?"
+            },
+            {
+              "language": "fa",
+              "text": "قیمتش چقدر است؟"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Was kauft die Person?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "fa",
+              "text": "آن شخص چه چیزی می‌خرد؟"
+            }
+          ],
+          "answers": [
+            {
+              "text": "Ein Brot.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "One bread."
+                },
+                {
+                  "language": "fa",
+                  "text": "یک نان."
+                }
+              ]
+            },
+            {
+              "text": "Eine Fahrkarte.",
+              "isCorrect": false,
+              "feedback": "That belongs to transport.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "A ticket."
+                },
+                {
+                  "language": "fa",
+                  "text": "یک بلیت."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-ask-for-help-at-pharmacy",
+      "title": "Ask for Help at a Pharmacy",
+      "description": "A simple pharmacy conversation for explaining a basic need.",
+      "learnerGoal": "Say that you need help and ask for something for a headache.",
+      "cefrLevel": "A1",
+      "category": "doctor-and-healthcare",
+      "topics": [
+        "appointments-and-health",
+        "everyday-life"
+      ],
+      "sortOrder": 20,
+      "dialogueTurns": [
+        {
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich brauche Hilfe.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Hello. I need help."
+            },
+            {
+              "language": "fa",
+              "text": "سلام. من کمک لازم دارم."
+            }
+          ]
+        },
+        {
+          "speakerRole": "pharmacist",
+          "baseText": "Was fehlt Ihnen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "What is wrong?"
+            },
+            {
+              "language": "fa",
+              "text": "مشکل شما چیست؟"
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Ich habe Kopfschmerzen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I have a headache."
+            },
+            {
+              "language": "fa",
+              "text": "من سردرد دارم."
+            }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Ich brauche Hilfe.",
+          "usageNote": "Use when you need support in a shop, office, or pharmacy.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I need help."
+            },
+            {
+              "language": "fa",
+              "text": "من کمک لازم دارم."
+            }
+          ]
+        },
+        {
+          "baseText": "Ich habe Kopfschmerzen.",
+          "usageNote": "Use for a simple symptom.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I have a headache."
+            },
+            {
+              "language": "fa",
+              "text": "من سردرد دارم."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Was sagt die Person?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "What does the person say?"
+            },
+            {
+              "language": "fa",
+              "text": "آن شخص چه می‌گوید؟"
+            }
+          ],
+          "answers": [
+            {
+              "text": "Ich brauche Hilfe.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "I need help."
+                },
+                {
+                  "language": "fa",
+                  "text": "من کمک لازم دارم."
+                }
+              ]
+            },
+            {
+              "text": "Ich kaufe Brot.",
+              "isCorrect": false,
+              "feedback": "This means buying bread.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "I buy bread."
+                },
+                {
+                  "language": "fa",
+                  "text": "من نان می‌خرم."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-call-in-sick-at-work",
+      "title": "Call in Sick at Work",
+      "description": "An A2 workplace call for saying you are sick and asking what to send.",
+      "learnerGoal": "Inform a colleague or manager that you are sick and ask about the next step.",
+      "cefrLevel": "A2",
+      "category": "workplace-communication",
+      "topics": [
+        "work-and-jobs",
+        "appointments-and-health"
+      ],
+      "sortOrder": 30,
+      "dialogueTurns": [
+        {
+          "speakerRole": "learner",
+          "baseText": "Guten Morgen. Ich bin heute krank und kann nicht ins Büro kommen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. I am sick today and cannot come to the office."
+            },
+            {
+              "language": "fa",
+              "text": "صبح به خیر. امروز مریض هستم و نمی‌توانم به دفتر بیایم."
+            }
+          ]
+        },
+        {
+          "speakerRole": "manager",
+          "baseText": "Danke für die Information. Schicken Sie bitte eine kurze Nachricht an das Team.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thanks for the information. Please send a short message to the team."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون از اطلاع‌رسانی. لطفاً یک پیام کوتاه برای تیم بفرستید."
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Muss ich eine Bescheinigung senden?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Do I need to send a certificate?"
+            },
+            {
+              "language": "fa",
+              "text": "آیا باید گواهی ارسال کنم؟"
+            }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Ich bin heute krank.",
+          "usageNote": "Use this short sentence when informing work or school.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I am sick today."
+            },
+            {
+              "language": "fa",
+              "text": "امروز مریض هستم."
+            }
+          ]
+        },
+        {
+          "baseText": "Muss ich eine Bescheinigung senden?",
+          "usageNote": "Use when asking about a required document.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Do I need to send a certificate?"
+            },
+            {
+              "language": "fa",
+              "text": "آیا باید گواهی ارسال کنم؟"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Warum kommt die Person nicht ins Büro?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Why is the person not coming to the office?"
+            },
+            {
+              "language": "fa",
+              "text": "چرا آن شخص به دفتر نمی‌آید؟"
+            }
+          ],
+          "answers": [
+            {
+              "text": "Die Person ist krank.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "The person is sick."
+                },
+                {
+                  "language": "fa",
+                  "text": "آن شخص مریض است."
+                }
+              ]
+            },
+            {
+              "text": "Die Person kauft Brot.",
+              "isCorrect": false,
+              "feedback": "This is a shopping situation.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "The person is buying bread."
+                },
+                {
+                  "language": "fa",
+                  "text": "آن شخص نان می‌خرد."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-reschedule-delivery-time",
+      "title": "Reschedule a Delivery Time",
+      "description": "An A2 logistics call for changing a pickup or delivery appointment.",
+      "learnerGoal": "Explain that a time does not work and suggest a new time.",
+      "cefrLevel": "A2",
+      "category": "workplace-logistics",
+      "topics": [
+        "work-and-jobs"
+      ],
+      "sortOrder": 40,
+      "dialogueTurns": [
+        {
+          "speakerRole": "service-agent",
+          "baseText": "Der Abholtermin ist morgen um acht Uhr.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The pickup appointment is tomorrow at eight."
+            },
+            {
+              "language": "fa",
+              "text": "زمان تحویل گرفتن فردا ساعت هشت است."
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Um acht Uhr passt es leider nicht. Geht es um zehn Uhr?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Eight o'clock unfortunately does not work. Is ten o'clock possible?"
+            },
+            {
+              "language": "fa",
+              "text": "ساعت هشت متأسفانه مناسب نیست. ساعت ده ممکن است؟"
+            }
+          ]
+        },
+        {
+          "speakerRole": "service-agent",
+          "baseText": "Ja, ich ändere den Termin auf zehn Uhr.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yes, I will change the appointment to ten o'clock."
+            },
+            {
+              "language": "fa",
+              "text": "بله، زمان را به ساعت ده تغییر می‌دهم."
+            }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Das passt leider nicht.",
+          "usageNote": "Use this polite sentence when a proposed time does not work.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That unfortunately does not work."
+            },
+            {
+              "language": "fa",
+              "text": "این متأسفانه مناسب نیست."
+            }
+          ]
+        },
+        {
+          "baseText": "Geht es um zehn Uhr?",
+          "usageNote": "Use to suggest another time.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Is ten o'clock possible?"
+            },
+            {
+              "language": "fa",
+              "text": "ساعت ده ممکن است؟"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Welche neue Zeit schlägt die Person vor?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Which new time does the person suggest?"
+            },
+            {
+              "language": "fa",
+              "text": "آن شخص چه زمان جدیدی پیشنهاد می‌دهد؟"
+            }
+          ],
+          "answers": [
+            {
+              "text": "Zehn Uhr.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Ten o'clock."
+                },
+                {
+                  "language": "fa",
+                  "text": "ساعت ده."
+                }
+              ]
+            },
+            {
+              "text": "Acht Uhr.",
+              "isCorrect": false,
+              "feedback": "Eight o'clock was the original time.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Eight o'clock."
+                },
+                {
+                  "language": "fa",
+                  "text": "ساعت هشت."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

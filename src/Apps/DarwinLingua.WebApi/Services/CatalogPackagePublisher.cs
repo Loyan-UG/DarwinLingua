@@ -91,13 +91,31 @@ public sealed class CatalogPackagePublisher(
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        List<ScenarioLesson> activeScenarios = await catalogDbContext.ScenarioLessons
+            .AsNoTracking()
+            .Where(scenario => scenario.PublicationStatus == PublicationStatus.Active)
+            .Include(scenario => scenario.Topics)
+            .Include(scenario => scenario.DialogueTurns)
+                .ThenInclude(turn => turn.Translations)
+            .Include(scenario => scenario.UsefulPhrases)
+                .ThenInclude(phrase => phrase.Translations)
+            .Include(scenario => scenario.Questions)
+                .ThenInclude(question => question.Translations)
+            .Include(scenario => scenario.Questions)
+                .ThenInclude(question => question.Answers)
+                    .ThenInclude(answer => answer.Translations)
+            .OrderBy(scenario => scenario.SortOrder)
+            .ThenBy(scenario => scenario.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
         DateTimeOffset now = DateTimeOffset.UtcNow;
         string version = now.ToString("yyyy.MM.dd.HHmmss.fff");
         string versionToken = now.ToString("yyyyMMddHHmmssfff");
         string outputRootPath = ResolveOutputRootPath();
 
         string publicationBatchId = $"{product.Key}-{versionToken}";
-        List<PackagePublicationDefinition> definitions = BuildDefinitions(product.Key, versionToken, words);
+        List<PackagePublicationDefinition> definitions = BuildDefinitions(product.Key, versionToken, words, activeScenarios);
         List<string> publishedPackageIds = [];
 
         foreach (PackagePublicationDefinition definition in definitions)
@@ -116,6 +134,7 @@ public sealed class CatalogPackagePublisher(
                 product.LearningLanguageCode,
                 defaultMeaningLanguages,
                 definition.Words,
+                definition.Scenarios,
                 activeCollections,
                 topicKeys);
 
@@ -158,7 +177,8 @@ public sealed class CatalogPackagePublisher(
     private static List<PackagePublicationDefinition> BuildDefinitions(
         string clientProductKey,
         string versionToken,
-        IReadOnlyList<WordEntry> words)
+        IReadOnlyList<WordEntry> words,
+        IReadOnlyList<ScenarioLesson> scenarios)
     {
         List<PackagePublicationDefinition> definitions =
         [
@@ -168,14 +188,16 @@ public sealed class CatalogPackagePublisher(
                 "full-database",
                 "all",
                 "full",
-                words),
+                words,
+                scenarios),
             new(
                 $"{clientProductKey}-catalog-full-{versionToken}",
                 "Darwin Lingua Catalog",
                 "full-catalog",
                 "catalog",
                 "full",
-                words),
+                words,
+                scenarios),
         ];
 
         foreach (IGrouping<string, WordEntry> group in words
@@ -194,7 +216,10 @@ public sealed class CatalogPackagePublisher(
                 "catalog-cefr",
                 "catalog",
                 $"cefr:{group.Key}",
-                levelWords));
+                levelWords,
+                scenarios
+                    .Where(scenario => string.Equals(scenario.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
+                    .ToArray()));
         }
 
         return definitions;
@@ -209,6 +234,7 @@ public sealed class CatalogPackagePublisher(
         string learningLanguageCode,
         IReadOnlyList<string> defaultMeaningLanguages,
         IReadOnlyList<WordEntry> words,
+        IReadOnlyList<ScenarioLesson> scenarios,
         IReadOnlyList<WordCollection> activeCollections,
         IReadOnlyDictionary<Guid, string> topicKeys)
     {
@@ -227,6 +253,7 @@ public sealed class CatalogPackagePublisher(
             learningLanguageCode,
             defaultMeaningLanguages,
             collections,
+            scenarios.Select(scenario => CreateScenario(scenario, topicKeys)).ToArray(),
             words.Select(word => CreateEntry(word, topicKeys)).ToArray());
     }
 
@@ -370,6 +397,61 @@ public sealed class CatalogPackagePublisher(
             examples);
     }
 
+    private static ExportedScenarioLesson CreateScenario(ScenarioLesson scenario, IReadOnlyDictionary<Guid, string> topicKeys)
+    {
+        return new ExportedScenarioLesson(
+            scenario.Slug,
+            scenario.Title,
+            scenario.Description,
+            scenario.LearnerGoal,
+            scenario.CefrLevel.ToString(),
+            scenario.Category,
+            scenario.Topics
+                .OrderByDescending(topic => topic.IsPrimary)
+                .ThenBy(topic => topic.TopicId)
+                .Select(topic => topicKeys[topic.TopicId])
+                .ToArray(),
+            scenario.SortOrder,
+            scenario.DialogueTurns
+                .OrderBy(turn => turn.SortOrder)
+                .Select(turn => new ExportedScenarioDialogueTurn(
+                    turn.SpeakerRole,
+                    turn.BaseText,
+                    CreateTranslations(turn.Translations)))
+                .ToArray(),
+            scenario.UsefulPhrases
+                .OrderBy(phrase => phrase.SortOrder)
+                .Select(phrase => new ExportedScenarioPhrase(
+                    phrase.BaseText,
+                    phrase.UsageNote,
+                    CreateTranslations(phrase.Translations)))
+                .ToArray(),
+            scenario.Questions
+                .OrderBy(question => question.SortOrder)
+                .Select(question => new ExportedScenarioQuestion(
+                    question.Prompt,
+                    CreateTranslations(question.Translations),
+                    question.Answers
+                        .OrderBy(answer => answer.SortOrder)
+                        .Select(answer => new ExportedScenarioAnswer(
+                            answer.Text,
+                            answer.IsCorrect,
+                            answer.Feedback,
+                            CreateTranslations(answer.Translations)))
+                        .ToArray()))
+                .ToArray());
+    }
+
+    private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<ScenarioTranslationBase> translations)
+    {
+        return translations
+            .OrderBy(translation => translation.LanguageCode.Value, StringComparer.Ordinal)
+            .Select(translation => new ExportedMeaning(
+                translation.LanguageCode.Value,
+                translation.Text))
+            .ToArray();
+    }
+
     private static string ComputeSha256(string content)
     {
         byte[] bytes = Encoding.UTF8.GetBytes(content);
@@ -429,7 +511,8 @@ public sealed class CatalogPackagePublisher(
         string PackageType,
         string ContentAreaKey,
         string SliceKey,
-        IReadOnlyList<WordEntry> Words);
+        IReadOnlyList<WordEntry> Words,
+        IReadOnlyList<ScenarioLesson> Scenarios);
 
     private sealed record ExportedContentPackage(
         string PackageVersion,
@@ -442,6 +525,7 @@ public sealed class CatalogPackagePublisher(
         string LearningLanguageCode,
         IReadOnlyList<string> DefaultMeaningLanguages,
         IReadOnlyList<ExportedContentCollection> Collections,
+        IReadOnlyList<ExportedScenarioLesson> Scenarios,
         IReadOnlyList<ExportedContentEntry> Entries);
 
     private sealed record ExportedContentCollection(
@@ -494,4 +578,38 @@ public sealed class CatalogPackagePublisher(
     private sealed record ExportedWordFamilyMember(string Lemma, string RelationLabel, string? Note);
 
     private sealed record ExportedWordRelation(string Kind, string Lemma, string? Note);
+
+    private sealed record ExportedScenarioLesson(
+        string Slug,
+        string Title,
+        string Description,
+        string LearnerGoal,
+        string CefrLevel,
+        string Category,
+        IReadOnlyList<string> Topics,
+        int SortOrder,
+        IReadOnlyList<ExportedScenarioDialogueTurn> DialogueTurns,
+        IReadOnlyList<ExportedScenarioPhrase> UsefulPhrases,
+        IReadOnlyList<ExportedScenarioQuestion> Questions);
+
+    private sealed record ExportedScenarioDialogueTurn(
+        string SpeakerRole,
+        string BaseText,
+        IReadOnlyList<ExportedMeaning> Translations);
+
+    private sealed record ExportedScenarioPhrase(
+        string BaseText,
+        string? UsageNote,
+        IReadOnlyList<ExportedMeaning> Translations);
+
+    private sealed record ExportedScenarioQuestion(
+        string Prompt,
+        IReadOnlyList<ExportedMeaning> Translations,
+        IReadOnlyList<ExportedScenarioAnswer> Answers);
+
+    private sealed record ExportedScenarioAnswer(
+        string Text,
+        bool IsCorrect,
+        string? Feedback,
+        IReadOnlyList<ExportedMeaning> Translations);
 }

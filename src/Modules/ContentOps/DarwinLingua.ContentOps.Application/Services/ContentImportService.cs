@@ -115,6 +115,7 @@ internal sealed class ContentImportService : IContentImportService
 
         List<WordEntry> importedWords = [];
         List<WordCollection> importedCollections = [];
+        List<ScenarioLesson> importedScenarios = [];
 
         for (int entryIndex = 0; entryIndex < parsedPackage.Entries.Count; entryIndex++)
         {
@@ -138,10 +139,12 @@ internal sealed class ContentImportService : IContentImportService
             issues,
             cancellationToken).ConfigureAwait(false);
 
+        ProcessScenarios(parsedPackage.Scenarios, topicsByKey, importedScenarios);
+
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedWords, importedCollections, cancellationToken)
+            .PersistImportAsync(contentPackage, importedWords, importedCollections, importedScenarios, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -158,6 +161,109 @@ internal sealed class ContentImportService : IContentImportService
             importedWords
                 .Select(word => word.Lemma)
                 .ToArray());
+    }
+
+    private static void ProcessScenarios(
+        IReadOnlyList<ParsedScenarioLessonModel> scenarios,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<ScenarioLesson> importedScenarios)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedScenarioLessonModel scenario in scenarios)
+        {
+            ScenarioLesson lesson = new(
+                Guid.NewGuid(),
+                NormalizeText(scenario.Slug),
+                NormalizeText(scenario.Title),
+                NormalizeText(scenario.Description),
+                NormalizeText(scenario.LearnerGoal),
+                Enum.Parse<CefrLevel>(NormalizeText(scenario.CefrLevel), true),
+                NormalizeText(scenario.Category),
+                PublicationStatus.Active,
+                scenario.SortOrder < 0 ? 0 : scenario.SortOrder,
+                timestampUtc);
+
+            string[] topicKeys = scenario.Topics
+                .Select(topic => NormalizeText(topic).ToLowerInvariant())
+                .Where(topic => !string.IsNullOrWhiteSpace(topic))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
+            {
+                lesson.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            for (int turnIndex = 0; turnIndex < scenario.DialogueTurns.Count; turnIndex++)
+            {
+                ParsedScenarioDialogueTurnModel parsedTurn = scenario.DialogueTurns[turnIndex];
+                ScenarioDialogueTurn turn = lesson.AddDialogueTurn(
+                    Guid.NewGuid(),
+                    turnIndex + 1,
+                    parsedTurn.SpeakerRole,
+                    parsedTurn.BaseText,
+                    timestampUtc);
+
+                AddScenarioTranslations(turn.AddTranslation, parsedTurn.Translations, timestampUtc);
+            }
+
+            for (int phraseIndex = 0; phraseIndex < scenario.UsefulPhrases.Count; phraseIndex++)
+            {
+                ParsedScenarioPhraseModel parsedPhrase = scenario.UsefulPhrases[phraseIndex];
+                ScenarioPhrase phrase = lesson.AddUsefulPhrase(
+                    Guid.NewGuid(),
+                    phraseIndex + 1,
+                    parsedPhrase.BaseText,
+                    parsedPhrase.UsageNote,
+                    timestampUtc);
+
+                AddScenarioTranslations(phrase.AddTranslation, parsedPhrase.Translations, timestampUtc);
+            }
+
+            for (int questionIndex = 0; questionIndex < scenario.Questions.Count; questionIndex++)
+            {
+                ParsedScenarioQuestionModel parsedQuestion = scenario.Questions[questionIndex];
+                ScenarioQuestion question = lesson.AddQuestion(
+                    Guid.NewGuid(),
+                    questionIndex + 1,
+                    parsedQuestion.Prompt,
+                    timestampUtc);
+
+                AddScenarioTranslations(question.AddTranslation, parsedQuestion.Translations, timestampUtc);
+
+                for (int answerIndex = 0; answerIndex < parsedQuestion.Answers.Count; answerIndex++)
+                {
+                    ParsedScenarioAnswerModel parsedAnswer = parsedQuestion.Answers[answerIndex];
+                    ScenarioAnswer answer = question.AddAnswer(
+                        Guid.NewGuid(),
+                        answerIndex + 1,
+                        parsedAnswer.Text,
+                        parsedAnswer.IsCorrect,
+                        parsedAnswer.Feedback,
+                        timestampUtc);
+
+                    AddScenarioTranslations(answer.AddTranslation, parsedAnswer.Translations, timestampUtc);
+                }
+            }
+
+            importedScenarios.Add(lesson);
+        }
+    }
+
+    private static void AddScenarioTranslations(
+        Action<Guid, LanguageCode, string, DateTime> addTranslation,
+        IReadOnlyList<ParsedContentMeaningModel> translations,
+        DateTime timestampUtc)
+    {
+        foreach (ParsedContentMeaningModel translation in translations)
+        {
+            addTranslation(
+                Guid.NewGuid(),
+                LanguageCode.From(NormalizeText(translation.Language).ToLowerInvariant()),
+                NormalizeText(translation.Text),
+                timestampUtc);
+        }
     }
 
     private async Task ProcessCollectionsAsync(

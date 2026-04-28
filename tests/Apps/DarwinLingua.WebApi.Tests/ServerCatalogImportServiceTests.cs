@@ -17,6 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using System.Text.Json;
 using Xunit;
 
 namespace DarwinLingua.WebApi.Tests;
@@ -108,6 +109,14 @@ public sealed class ServerCatalogImportServiceTests
 
             string fullCatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.StagedPackageIds.Single(packageId => packageId.Contains("catalog-full", StringComparison.Ordinal)));
             Assert.True(File.Exists($"{fullCatalogPath}.json"));
+            using JsonDocument fullCatalogJson = JsonDocument.Parse(await File.ReadAllTextAsync($"{fullCatalogPath}.json"));
+            JsonElement fullCatalogScenarios = fullCatalogJson.RootElement.GetProperty("Scenarios");
+            Assert.Equal(1, fullCatalogScenarios.GetArrayLength());
+            Assert.Equal("a1-buy-bread-test", fullCatalogScenarios[0].GetProperty("Slug").GetString());
+
+            string a1CatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.StagedPackageIds.Single(packageId => packageId.Contains("catalog-a1", StringComparison.Ordinal)));
+            using JsonDocument a1CatalogJson = JsonDocument.Parse(await File.ReadAllTextAsync($"{a1CatalogPath}.json"));
+            Assert.Equal(1, a1CatalogJson.RootElement.GetProperty("Scenarios").GetArrayLength());
 
             await using (AsyncServiceScope publishScope = serviceProvider.CreateAsyncScope())
             {

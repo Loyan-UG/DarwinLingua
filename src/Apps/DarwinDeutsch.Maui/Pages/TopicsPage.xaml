@@ -49,6 +49,9 @@
                         <controls:ActionBlockView x:Name="CollectionsActionBlockView"
                                                   ActionInvoked="OnCollectionsActionInvoked" />
 
+                        <controls:ActionBlockView x:Name="ScenariosActionBlockView"
+                                                  ActionInvoked="OnScenariosActionInvoked" />
+
                         <controls:ActionBlockView x:Name="FavoritesActionBlockView"
                                                   ActionInvoked="OnFavoritesActionInvoked" />
                     </VerticalStackLayout>

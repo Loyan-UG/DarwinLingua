@@ -109,6 +109,8 @@ public static class MauiProgram
             .AddTransient<TopicWordsPage>()
             .AddTransient<CollectionsPage>()
             .AddTransient<CollectionWordsPage>()
+            .AddTransient<ScenariosPage>()
+            .AddTransient<ScenarioDetailPage>()
             .AddTransient<CefrWordsPage>()
             .AddTransient<SearchWordsPage>()
             .AddTransient<WordDetailPage>()

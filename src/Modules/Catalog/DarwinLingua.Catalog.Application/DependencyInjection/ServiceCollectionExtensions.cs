@@ -22,6 +22,7 @@ public static class ServiceCollectionExtensions
         services.AddMemoryCache();
         services.AddScoped<ITopicQueryService, TopicQueryService>();
         services.AddScoped<IWordCollectionQueryService, WordCollectionQueryService>();
+        services.AddScoped<IScenarioLessonQueryService, ScenarioLessonQueryService>();
         services.AddScoped<WordDetailQueryService>();
         services.AddScoped<IWordDetailQueryService, CachedWordDetailQueryService>();
         services.AddScoped<IWordQueryService, WordQueryService>();

@@ -20,6 +20,14 @@ public interface IWebCatalogApiClient
         string meaningLanguageCode,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken);
+
+    Task<ScenarioLessonDetailModel?> GetScenarioBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(
         string topicKey,
         string meaningLanguageCode,
@@ -82,6 +90,25 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         CancellationToken cancellationToken) =>
         GetAsync<WordCollectionDetailModel>(
             BuildPath($"/api/catalog/collections/{Uri.EscapeDataString(slug)}", [new("meaningLanguageCode", meaningLanguageCode)]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ScenarioLessonListItemModel>>(
+            "/api/catalog/scenarios",
+            cancellationToken);
+
+    public Task<ScenarioLessonDetailModel?> GetScenarioBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<ScenarioLessonDetailModel>(
+            BuildPath(
+                $"/api/catalog/scenarios/{Uri.EscapeDataString(slug)}",
+                [
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
+                    new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(

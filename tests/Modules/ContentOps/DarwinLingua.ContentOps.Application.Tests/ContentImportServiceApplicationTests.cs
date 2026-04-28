@@ -892,6 +892,7 @@ public sealed class ContentImportServiceApplicationTests
             ContentPackage contentPackage,
             IReadOnlyList<WordEntry> importedWords,
             IReadOnlyList<WordCollection> importedCollections,
+            IReadOnlyList<ScenarioLesson> importedScenarios,
             CancellationToken cancellationToken)
         {
             return Task.CompletedTask;

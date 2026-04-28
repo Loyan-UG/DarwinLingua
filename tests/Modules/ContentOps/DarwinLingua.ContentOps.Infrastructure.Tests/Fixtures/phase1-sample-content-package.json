@@ -388,5 +388,74 @@
         }
       ]
     }
+  ],
+  "scenarios": [
+    {
+      "slug": "a1-buy-bread-test",
+      "title": "Buy Bread",
+      "description": "A simple bakery scenario used by package export tests.",
+      "learnerGoal": "Ask for bread and understand the price.",
+      "cefrLevel": "A1",
+      "category": "shopping-and-food",
+      "topics": ["shopping"],
+      "sortOrder": 10,
+      "dialogueTurns": [
+        {
+          "speakerRole": "seller",
+          "baseText": "Was möchten Sie?",
+          "translations": [
+            { "language": "en", "text": "What would you like?" },
+            { "language": "fa", "text": "چه چیزی می‌خواهید؟" }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Ich möchte ein Brot, bitte.",
+          "translations": [
+            { "language": "en", "text": "I would like one bread, please." },
+            { "language": "fa", "text": "یک نان می‌خواهم، لطفاً." }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Ich möchte ein Brot, bitte.",
+          "usageNote": "Use for a polite bakery order.",
+          "translations": [
+            { "language": "en", "text": "I would like one bread, please." },
+            { "language": "fa", "text": "یک نان می‌خواهم، لطفاً." }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Was kauft die Person?",
+          "translations": [
+            { "language": "en", "text": "What does the person buy?" },
+            { "language": "fa", "text": "آن شخص چه چیزی می‌خرد؟" }
+          ],
+          "answers": [
+            {
+              "text": "Ein Brot.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                { "language": "en", "text": "One bread." },
+                { "language": "fa", "text": "یک نان." }
+              ]
+            },
+            {
+              "text": "Ein Wasser.",
+              "isCorrect": false,
+              "feedback": "That is a drink, not bread.",
+              "translations": [
+                { "language": "en", "text": "One water." },
+                { "language": "fa", "text": "یک آب." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

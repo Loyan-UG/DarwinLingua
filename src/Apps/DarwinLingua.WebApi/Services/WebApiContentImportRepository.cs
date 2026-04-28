@@ -111,11 +111,13 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         ContentPackage contentPackage,
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
+        IReadOnlyList<ScenarioLesson> importedScenarios,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(contentPackage);
         ArgumentNullException.ThrowIfNull(importedWords);
         ArgumentNullException.ThrowIfNull(importedCollections);
+        ArgumentNullException.ThrowIfNull(importedScenarios);
 
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         await using Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
@@ -164,6 +166,28 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                     importedCollection.UpdatedAtUtc);
             }
 
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedScenarios.Count > 0)
+        {
+            string[] importedSlugs = importedScenarios
+                .Select(item => item.Slug)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            List<ScenarioLesson> existingScenarios = await dbContext.ScenarioLessons
+                .Where(scenario => importedSlugs.Contains(scenario.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            if (existingScenarios.Count > 0)
+            {
+                dbContext.ScenarioLessons.RemoveRange(existingScenarios);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.ScenarioLessons.AddRange(importedScenarios);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 

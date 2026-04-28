@@ -48,5 +48,6 @@ public interface IContentImportRepository
         ContentPackage contentPackage,
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
+        IReadOnlyList<ScenarioLesson> importedScenarios,
         CancellationToken cancellationToken);
 }

@@ -1,3 +1,4 @@
+using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
@@ -269,6 +270,20 @@ app.MapGet(
     async (string slug, string meaningLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await catalogQueryService.GetCollectionBySlugAsync(slug, meaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/scenarios",
+    async (IScenarioLessonQueryService scenarioQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenarioQueryService.GetPublishedScenariosAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/scenarios/{slug}",
+    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, IScenarioLessonQueryService scenarioQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenarioQueryService.GetPublishedScenarioBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

@@ -9,6 +9,7 @@ using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Localization.Application.DependencyInjection;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinLingua.ContentOps.Infrastructure.Tests;
@@ -308,6 +309,82 @@ public sealed class ContentImportServiceTests
             Assert.Equal(2, collection.Words.Count);
             Assert.Contains(collection.Words, word => word.Lemma == "Brot");
             Assert.Contains(collection.Words, word => word.Lemma == "Milch");
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(packagePath))
+            {
+                File.Delete(packagePath);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Verifies that valid scenario lessons from a content package are persisted with their nested content.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldPersistScenarioLessons()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            await File.WriteAllTextAsync(packagePath, CreatePackageWithScenarioJson("a1-scenario-import-test"));
+
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult result = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
+
+            Assert.True(result.IsSuccess);
+            Assert.Equal(1, result.ImportedEntries);
+
+            await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
+                .GetRequiredService<Microsoft.EntityFrameworkCore.IDbContextFactory<DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext>>()
+                .CreateDbContext();
+
+            DarwinLingua.Catalog.Domain.Entities.ScenarioLesson lesson = Assert.Single(dbContext.ScenarioLessons
+                .Include(scenario => scenario.Topics)
+                .Include(scenario => scenario.DialogueTurns).ThenInclude(turn => turn.Translations)
+                .Include(scenario => scenario.UsefulPhrases).ThenInclude(phrase => phrase.Translations)
+                .Include(scenario => scenario.Questions).ThenInclude(question => question.Translations)
+                .Include(scenario => scenario.Questions).ThenInclude(question => question.Answers).ThenInclude(answer => answer.Translations));
+
+            Assert.Equal("doctor-appointment-a1", lesson.Slug);
+            Assert.Single(lesson.Topics);
+            Assert.Single(lesson.DialogueTurns);
+            Assert.Single(lesson.UsefulPhrases);
+            DarwinLingua.Catalog.Domain.Entities.ScenarioQuestion question = Assert.Single(lesson.Questions);
+            Assert.Equal(2, question.Answers.Count);
+            Assert.Contains(question.Answers, answer => answer.IsCorrect);
+
+            IScenarioLessonQueryService scenarioLessonQueryService = serviceProvider.GetRequiredService<IScenarioLessonQueryService>();
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.ScenarioLessonListItemModel> scenarios =
+                await scenarioLessonQueryService.GetPublishedScenariosAsync(CancellationToken.None);
+            DarwinLingua.Catalog.Application.Models.ScenarioLessonListItemModel scenarioListItem = Assert.Single(scenarios);
+            Assert.Equal("doctor-appointment-a1", scenarioListItem.Slug);
+
+            DarwinLingua.Catalog.Application.Models.ScenarioLessonDetailModel? scenarioDetail =
+                await scenarioLessonQueryService.GetPublishedScenarioBySlugAsync(
+                    "doctor-appointment-a1",
+                    "fa",
+                    "en",
+                    CancellationToken.None);
+
+            Assert.NotNull(scenarioDetail);
+            Assert.Equal("I need an appointment.", Assert.Single(scenarioDetail!.DialogueTurns).PrimaryMeaning);
+            Assert.Equal("I need an appointment.", Assert.Single(scenarioDetail.DialogueTurns).SecondaryMeaning);
         }
         finally
         {
@@ -683,6 +760,96 @@ public sealed class ContentImportServiceTests
                   "description": "Compact collection reference test.",
                   "image": "collections/a1-shopping-word-keys.png",
                   "wordKeys": ["Brot", "Milch"]
+                }
+              ]
+            }
+            """;
+    }
+
+    private static string CreatePackageWithScenarioJson(string packageId)
+    {
+        return $$"""
+            {
+              "packageVersion": "1.0",
+              "packageId": "{{packageId}}",
+              "packageName": "A1 Scenario Import Test",
+              "source": "Hybrid",
+              "defaultMeaningLanguages": ["en"],
+              "entries": [
+                {
+                  "word": "Termin",
+                  "language": "de",
+                  "cefrLevel": "A1",
+                  "partOfSpeech": "Noun",
+                  "article": "der",
+                  "topics": ["appointments-and-health"],
+                  "meanings": [
+                    { "language": "en", "text": "appointment" }
+                  ],
+                  "examples": [
+                    {
+                      "baseText": "Ich brauche einen Termin.",
+                      "translations": [
+                        { "language": "en", "text": "I need an appointment." }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "scenarios": [
+                {
+                  "slug": "doctor-appointment-a1",
+                  "title": "Doctor Appointment",
+                  "description": "Prepare for a simple appointment conversation.",
+                  "learnerGoal": "Ask for an appointment.",
+                  "cefrLevel": "A1",
+                  "category": "doctor-and-healthcare",
+                  "topics": ["appointments-and-health"],
+                  "sortOrder": 1,
+                  "dialogueTurns": [
+                    {
+                      "speakerRole": "learner",
+                      "baseText": "Ich brauche einen Termin.",
+                      "translations": [
+                        { "language": "en", "text": "I need an appointment." }
+                      ]
+                    }
+                  ],
+                  "usefulPhrases": [
+                    {
+                      "baseText": "Können Sie das bitte wiederholen?",
+                      "usageNote": "Use when you did not understand.",
+                      "translations": [
+                        { "language": "en", "text": "Could you please repeat that?" }
+                      ]
+                    }
+                  ],
+                  "questions": [
+                    {
+                      "prompt": "Was braucht die Person?",
+                      "translations": [
+                        { "language": "en", "text": "What does the person need?" }
+                      ],
+                      "answers": [
+                        {
+                          "text": "Einen Termin.",
+                          "isCorrect": true,
+                          "feedback": "Correct.",
+                          "translations": [
+                            { "language": "en", "text": "An appointment." }
+                          ]
+                        },
+                        {
+                          "text": "Ein Brot.",
+                          "isCorrect": false,
+                          "feedback": "This belongs to shopping.",
+                          "translations": [
+                            { "language": "en", "text": "A bread." }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

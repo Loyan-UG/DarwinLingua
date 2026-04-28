@@ -1,0 +1,46 @@
+@model DarwinLingua.Web.Models.ScenarioIndexPageViewModel
+@{
+    ViewData["Title"] = "Scenarios";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Scenarios</span>
+    <h1 class="headline-md">Practical German situations</h1>
+    <p class="body-lg">Practice dialogue, useful phrases, and quick checks for real-life tasks.</p>
+</section>
+
+@if (Model.Scenarios.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No scenarios available", "Import scenario lessons into the shared catalog to make them available here.")' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var scenario in Model.Scenarios)
+        {
+            <article class="panel stack-md">
+                <div class="action-row collection-card__meta">
+                    <span class="eyebrow">@scenario.CefrLevel · @scenario.Category</span>
+                    <span>@scenario.TopicKeys.Count topics</span>
+                </div>
+                <h2 class="headline-sm">
+                    <a asp-controller="Scenarios" asp-action="Detail" asp-route-slug="@scenario.Slug">@scenario.Title</a>
+                </h2>
+                <p>@scenario.Description</p>
+                <p class="body-lg">@scenario.LearnerGoal</p>
+                @if (scenario.TopicKeys.Count > 0)
+                {
+                    <div class="chip-grid">
+                        @foreach (string topicKey in scenario.TopicKeys)
+                        {
+                            <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+                        }
+                    </div>
+                }
+                <div class="action-row">
+                    <a class="button button--secondary" asp-controller="Scenarios" asp-action="Detail" asp-route-slug="@scenario.Slug">Open scenario</a>
+                </div>
+            </article>
+        }
+    </section>
+}

@@ -108,6 +108,18 @@ public sealed class DarwinLinguaDbContext : DbContext
     /// </summary>
     public DbSet<WordCollectionEntry> WordCollectionEntries => Set<WordCollectionEntry>();
 
+    public DbSet<ScenarioLesson> ScenarioLessons => Set<ScenarioLesson>();
+
+    public DbSet<ScenarioLessonTopic> ScenarioLessonTopics => Set<ScenarioLessonTopic>();
+
+    public DbSet<ScenarioDialogueTurn> ScenarioDialogueTurns => Set<ScenarioDialogueTurn>();
+
+    public DbSet<ScenarioPhrase> ScenarioPhrases => Set<ScenarioPhrase>();
+
+    public DbSet<ScenarioQuestion> ScenarioQuestions => Set<ScenarioQuestion>();
+
+    public DbSet<ScenarioAnswer> ScenarioAnswers => Set<ScenarioAnswer>();
+
     /// <summary>
     /// Gets the local user learning profiles.
     /// </summary>
@@ -161,6 +173,16 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new WordRelationConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollectionConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollectionEntryConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioLessonConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioLessonTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioDialogueTurnConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioDialogueTurnTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioPhraseConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioPhraseTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioQuestionConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioQuestionTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioAnswerConfiguration());
+        modelBuilder.ApplyConfiguration(new ScenarioAnswerTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());

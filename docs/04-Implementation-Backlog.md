@@ -584,13 +584,14 @@ Each scenario should support:
 - [x] define `ScenarioQuestion` and `ScenarioAnswer` content contract
 - [x] define scenario CEFR-level and topic mapping rules
 - [x] define import validation rules for scenario content
-- [ ] implement scenario import pipeline support
-- [ ] persist scenario lessons in the shared content model
-- [ ] expose scenario lessons through application queries
-- [ ] add scenario list and detail screens in MAUI
-- [ ] add scenario list and detail pages in the web app when appropriate
+- [x] implement scenario import pipeline support
+- [x] persist scenario lessons in the shared content model
+- [x] expose scenario lessons through application queries
+- [x] add scenario list and detail screens in MAUI
+- [x] add scenario list and detail pages in the web app when appropriate
 - [ ] add tests for scenario import, persistence, query, and rendering
-- [ ] add initial sample scenarios for A1/A2 learners
+  - Progress: import, persistence, application query, mobile package export, Web API build, and web controller language-selection tests are covered; keep open until Razor/page rendering is explicitly tested.
+- [x] add initial sample scenarios for A1/A2 learners
 
 ---
 
