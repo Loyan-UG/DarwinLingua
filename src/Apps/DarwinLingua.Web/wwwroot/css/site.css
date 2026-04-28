@@ -254,6 +254,29 @@ code {
   max-width: 66ch;
 }
 
+.meaning-line--compact {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.meaning-block {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.meaning-block--primary {
+  font-weight: 700;
+}
+
+.meaning-block__label {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .button {
   display: inline-flex;
   align-items: center;

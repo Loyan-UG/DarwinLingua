@@ -10,6 +10,8 @@ namespace DarwinLingua.Catalog.Application.Services;
 /// </summary>
 internal sealed class WordDetailQueryService : IWordDetailQueryService
 {
+    private static readonly LanguageCode EnglishFallbackLanguage = LanguageCode.From("en");
+
     private readonly IWordEntryRepository _wordEntryRepository;
     private readonly ITopicRepository _topicRepository;
 
@@ -113,14 +115,14 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             .ThenBy(sense => sense.SenseOrder)
             .Select(sense => new WordSenseDetailModel(
                 sense.ShortDefinitionDe,
-                ResolveSenseTranslation(sense, primaryMeaningLanguage),
+                ResolveSenseTranslation(sense, primaryMeaningLanguage, EnglishFallbackLanguage),
                 secondaryMeaningLanguage is null ? null : ResolveSenseTranslation(sense, secondaryMeaningLanguage.Value),
                 sense.Examples
                     .OrderByDescending(example => example.IsPrimaryExample)
                     .ThenBy(example => example.SentenceOrder)
                     .Select(example => new ExampleSentenceDetailModel(
                         example.GermanText,
-                        ResolveExampleTranslation(example, primaryMeaningLanguage),
+                        ResolveExampleTranslation(example, primaryMeaningLanguage, EnglishFallbackLanguage),
                         secondaryMeaningLanguage is null ? null : ResolveExampleTranslation(example, secondaryMeaningLanguage.Value)))
                     .ToArray()))
             .ToArray();
@@ -165,22 +167,51 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             senses);
     }
 
-    private static string? ResolveSenseTranslation(WordSense sense, LanguageCode languageCode)
+    private static string? ResolveSenseTranslation(
+        WordSense sense,
+        LanguageCode languageCode,
+        LanguageCode? fallbackLanguageCode = null)
     {
-        return sense.Translations
+        string? translation = sense.Translations
             .Where(translation => translation.LanguageCode == languageCode)
             .OrderByDescending(translation => translation.IsPrimary)
             .ThenBy(translation => translation.TranslationText)
             .Select(translation => translation.TranslationText)
             .FirstOrDefault();
+
+        if (!string.IsNullOrWhiteSpace(translation) || fallbackLanguageCode is null || fallbackLanguageCode.Value == languageCode)
+        {
+            return translation;
+        }
+
+        return sense.Translations
+            .Where(candidate => candidate.LanguageCode == fallbackLanguageCode.Value)
+            .OrderByDescending(candidate => candidate.IsPrimary)
+            .ThenBy(candidate => candidate.TranslationText)
+            .Select(candidate => candidate.TranslationText)
+            .FirstOrDefault();
     }
 
-    private static string? ResolveExampleTranslation(ExampleSentence example, LanguageCode languageCode)
+    private static string? ResolveExampleTranslation(
+        ExampleSentence example,
+        LanguageCode languageCode,
+        LanguageCode? fallbackLanguageCode = null)
     {
-        return example.Translations
+        string? translation = example.Translations
             .Where(translation => translation.LanguageCode == languageCode)
             .OrderBy(translation => translation.TranslationText)
             .Select(translation => translation.TranslationText)
+            .FirstOrDefault();
+
+        if (!string.IsNullOrWhiteSpace(translation) || fallbackLanguageCode is null || fallbackLanguageCode.Value == languageCode)
+        {
+            return translation;
+        }
+
+        return example.Translations
+            .Where(candidate => candidate.LanguageCode == fallbackLanguageCode.Value)
+            .OrderBy(candidate => candidate.TranslationText)
+            .Select(candidate => candidate.TranslationText)
             .FirstOrDefault();
     }
 }

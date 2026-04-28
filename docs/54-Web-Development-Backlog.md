@@ -98,8 +98,34 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] define the shared identity boundary used by both `DarwinLingua.Web` and `DarwinDeutsch.Maui`
 - [x] keep cookie auth for web and add token-based auth planning for mobile against the same identity store
 - [x] define the account API surface needed by mobile for register, sign-in, sign-out, refresh, and profile bootstrap
-- [ ] define how anonymous learner state upgrades into authenticated learner state without data loss
-- [ ] define device/session management expectations for low-friction learner sign-in
+- [x] define how anonymous learner state upgrades into authenticated learner state without data loss
+- [x] define device/session management expectations for low-friction learner sign-in
+
+### Anonymous-To-Authenticated Upgrade Rule
+
+Anonymous learner state must stay explicitly scoped to the local browser or local mobile installation until the learner signs in. When the learner authenticates, upgrade should be an intentional merge flow, not an automatic overwrite:
+
+- authenticated server state remains the durable account state
+- local anonymous favorites, recent words, word state, and meaning-language preferences can be offered for merge
+- exact duplicates are skipped
+- conflicts prefer the authenticated account state unless the user explicitly chooses to import local state
+- destructive replacement is not allowed in the first implementation
+- the upgrade flow must show a clear success/failure result and must be retry-safe
+
+For the first production slice, it is acceptable to keep anonymous state local-only and defer cross-device migration until mobile account sign-in is implemented.
+
+### Device And Session Rule
+
+Web sign-in should use secure cookie authentication with normal browser session persistence. Mobile sign-in should use token-based authentication against the same Identity store, with refresh-token/device-session support added before public mobile account sync.
+
+The expected low-friction model is:
+
+- one user account can have multiple active device sessions
+- users can sign out from the current device
+- future account settings should expose a device/session list
+- refresh/session revocation must be server-owned
+- learner content browsing must remain usable without sign-in
+- premium, sync, profile, and organizer/social features require authenticated account state
 
 ## 6.2 Entitlements and Monetization Foundation
 
@@ -138,7 +164,17 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] persist preferred meaning languages
 - [x] persist UI language preference when applicable
 - [x] define anonymous-user fallback behavior
-- [ ] define authenticated-user upgrade flow for guest favorites/history where migration is worth keeping
+- [x] define authenticated-user upgrade flow for guest favorites/history where migration is worth keeping
+
+Authenticated upgrade should initially target only user state that has clear learner value:
+
+- favorites
+- recent activity
+- known/difficult word state
+- primary and secondary meaning-language preference
+- UI language preference when the authenticated profile does not already have one
+
+Do not migrate transient search text, anonymous telemetry identifiers, failed action logs, or device-only diagnostics into the account profile.
 
 ## 9. Admin Area
 
@@ -169,11 +205,11 @@ This backlog is intentionally ordered so the project can grow without collapsing
 - [x] add manual validation worksheet for PWA installability
 - [x] add manual validation worksheet for auth flows
 - [x] add manual validation worksheet for browse/search/detail flows
-- [ ] validate seeded admin login on a clean local environment
-- [ ] validate seeded learner test login on a clean local environment
-- [ ] validate default `Learner` role assignment after registration
-- [ ] validate premium/free feature gating behavior with both learner and admin accounts
-- [ ] validate web/mobile auth compatibility against the same server identity boundary
+- [x] validate seeded admin login on a clean local environment
+- [x] validate seeded learner test login on a clean local environment
+- [x] validate default `Learner` role assignment after registration
+- [x] validate premium/free feature gating behavior with both learner and admin accounts
+- [x] validate web/mobile auth compatibility against the same server identity boundary
 
 ## 12. Release Readiness
 

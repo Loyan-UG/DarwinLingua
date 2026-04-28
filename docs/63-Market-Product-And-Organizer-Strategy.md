@@ -14,7 +14,7 @@ It focuses on:
 - freemium and low-cost subscription options
 - safety, privacy, moderation, and implementation boundaries
 
-This is a product strategy document, not an implementation specification. The executable backlog for this direction is tracked in `64-Conversation-And-Organizer-Implementation-Backlog.md`.
+This is a product strategy document, not an implementation specification. The executable backlog for this direction is tracked in `04-Implementation-Backlog.md` under `Phase 6 Backlog`.
 
 ---
 

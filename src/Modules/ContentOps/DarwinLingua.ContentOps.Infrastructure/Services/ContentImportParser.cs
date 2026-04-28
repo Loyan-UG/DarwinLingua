@@ -49,7 +49,10 @@ internal sealed class ContentImportParser : IContentImportParser
             document.Source,
             (document.DefaultMeaningLanguages ?? []).Select(language => language ?? string.Empty).ToArray(),
             document.Entries.Select(Map).ToArray(),
-            (document.Collections ?? []).Select(Map).ToArray());
+            (document.Collections ?? []).Select(Map).ToArray())
+        {
+            Scenarios = (document.Scenarios ?? []).Select(Map).ToArray(),
+        };
 
         return Task.FromResult(parsedPackage);
     }
@@ -122,6 +125,44 @@ internal sealed class ContentImportParser : IContentImportParser
             explicitWords.Concat(wordKeyReferences).ToArray());
     }
 
+    private static ParsedScenarioLessonModel Map(ScenarioLessonDocument scenario)
+    {
+        return new ParsedScenarioLessonModel(
+            scenario.Slug ?? string.Empty,
+            scenario.Title ?? string.Empty,
+            scenario.Description ?? string.Empty,
+            scenario.LearnerGoal ?? string.Empty,
+            scenario.CefrLevel ?? string.Empty,
+            scenario.Category ?? string.Empty,
+            (scenario.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            scenario.SortOrder ?? 0,
+            (scenario.DialogueTurns ?? []).Select(turn => new ParsedScenarioDialogueTurnModel(
+                turn.SpeakerRole ?? string.Empty,
+                turn.BaseText ?? string.Empty,
+                MapTranslations(turn.Translations))).ToArray(),
+            (scenario.UsefulPhrases ?? []).Select(phrase => new ParsedScenarioPhraseModel(
+                phrase.BaseText ?? string.Empty,
+                MapTranslations(phrase.Translations),
+                phrase.UsageNote)).ToArray(),
+            (scenario.Questions ?? []).Select(question => new ParsedScenarioQuestionModel(
+                question.Prompt ?? string.Empty,
+                MapTranslations(question.Translations),
+                (question.Answers ?? []).Select(answer => new ParsedScenarioAnswerModel(
+                    answer.Text ?? string.Empty,
+                    MapTranslations(answer.Translations),
+                    answer.IsCorrect ?? false,
+                    answer.Feedback)).ToArray())).ToArray());
+    }
+
+    private static ParsedContentMeaningModel[] MapTranslations(ContentMeaningDocument[]? translations)
+    {
+        return (translations ?? [])
+            .Select(translation => new ParsedContentMeaningModel(
+                translation.Language ?? string.Empty,
+                translation.Text ?? string.Empty))
+            .ToArray();
+    }
+
     private sealed class ContentPackageDocument
     {
         public string? PackageVersion { get; set; }
@@ -137,6 +178,8 @@ internal sealed class ContentImportParser : IContentImportParser
         public ContentEntryDocument[]? Entries { get; set; }
 
         public ContentCollectionDocument[]? Collections { get; set; }
+
+        public ScenarioLessonDocument[]? Scenarios { get; set; }
     }
 
     private sealed class ContentEntryDocument
@@ -258,5 +301,68 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? PartOfSpeech { get; set; }
 
         public string? CefrLevel { get; set; }
+    }
+
+    private sealed class ScenarioLessonDocument
+    {
+        public string? Slug { get; set; }
+
+        public string? Title { get; set; }
+
+        public string? Description { get; set; }
+
+        public string? LearnerGoal { get; set; }
+
+        public string? CefrLevel { get; set; }
+
+        public string? Category { get; set; }
+
+        public string?[]? Topics { get; set; }
+
+        public int? SortOrder { get; set; }
+
+        public ScenarioDialogueTurnDocument[]? DialogueTurns { get; set; }
+
+        public ScenarioPhraseDocument[]? UsefulPhrases { get; set; }
+
+        public ScenarioQuestionDocument[]? Questions { get; set; }
+    }
+
+    private sealed class ScenarioDialogueTurnDocument
+    {
+        public string? SpeakerRole { get; set; }
+
+        public string? BaseText { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+    }
+
+    private sealed class ScenarioPhraseDocument
+    {
+        public string? BaseText { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+
+        public string? UsageNote { get; set; }
+    }
+
+    private sealed class ScenarioQuestionDocument
+    {
+        public string? Prompt { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+
+        public ScenarioAnswerDocument[]? Answers { get; set; }
+    }
+
+    private sealed class ScenarioAnswerDocument
+    {
+        public string? Text { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+
+        public bool? IsCorrect { get; set; }
+
+        public string? Feedback { get; set; }
     }
 }

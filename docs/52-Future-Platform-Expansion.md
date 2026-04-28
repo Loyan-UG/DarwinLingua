@@ -140,3 +140,41 @@ Required engineering rules:
 - entitlement changes must be auditable
 
 Any future monetization layer should consume identity, entitlement state, and published content metadata rather than mutating publishing behavior itself.
+
+### Phase 6 Learner And Organizer Entitlement Boundaries
+
+Phase 6 may add learner premium features and organizer plan flags, but monetization must not block core learning value.
+
+Free learners should retain access to:
+
+- core catalog browse and search
+- basic word details
+- basic scenario lessons
+- basic conversation starters
+- public event discovery
+
+Premium learner entitlements may cover:
+
+- advanced scenario packs
+- expanded event preparation packs
+- advanced practice and roleplay preparation
+- convenience features such as larger saved collections
+- optional analytics and progress insights
+
+Organizer plan flags may cover:
+
+- public organizer profile publishing
+- self-service event publishing
+- number of active events
+- RSVP and attendee-management features
+- featured listing eligibility
+- organizer analytics
+
+Shared engineering rules:
+
+- roles decide operational authority
+- entitlements decide paid or plan-based access
+- pricing policy remains outside the domain model
+- entitlement changes must be auditable
+- organizer plans must not bypass listing review, verification, abuse reporting, or moderation requirements
+- missing entitlement checks should fail closed for premium or organizer-only actions

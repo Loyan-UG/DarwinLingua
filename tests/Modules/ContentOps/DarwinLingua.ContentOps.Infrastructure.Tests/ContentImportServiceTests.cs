@@ -347,11 +347,16 @@ public sealed class ContentImportServiceTests
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
             Assert.True(result.IsSuccess);
-            Assert.Equal("Completed", result.Status);
+            Assert.Equal("CompletedWithWarnings", result.Status);
             Assert.Equal(12, result.TotalEntries);
             Assert.Equal(12, result.ImportedEntries);
             Assert.Equal(0, result.SkippedDuplicateEntries);
             Assert.Equal(0, result.InvalidEntries);
+            Assert.Equal(12, result.WarningCount);
+            Assert.Contains(result.Issues, issue =>
+                issue.Severity == "Warning" &&
+                issue.Message.Contains("example", StringComparison.Ordinal) &&
+                issue.Message.Contains("fa", StringComparison.Ordinal));
             Assert.Equal(12, result.ImportedLemmas.Count);
             Assert.Contains("Brot", result.ImportedLemmas);
             Assert.Contains("Unabdingbarkeit", result.ImportedLemmas);

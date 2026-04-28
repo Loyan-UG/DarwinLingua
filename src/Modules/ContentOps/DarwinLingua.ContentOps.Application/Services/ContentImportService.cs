@@ -90,6 +90,16 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlySet<LanguageCode> meaningLanguages = await _contentImportRepository
             .GetActiveMeaningLanguagesAsync(cancellationToken)
             .ConfigureAwait(false);
+        LanguageCode[] expectedMeaningLanguages = ResolveExpectedMeaningLanguages(
+            parsedPackage.DefaultMeaningLanguages,
+            meaningLanguages);
+
+        ValidateScenarios(parsedPackage.Scenarios, topicsByKey, meaningLanguages, issues);
+
+        if (issues.Any(issue => issue.EntryIndex is null && string.Equals(issue.Severity, "Error", StringComparison.Ordinal)))
+        {
+            return CreateFatalFailureResult(parsedPackage.PackageId, issues, parsedPackage.PackageName, parsedPackage.Entries.Count);
+        }
 
         ContentPackage contentPackage = new(
             Guid.NewGuid(),
@@ -114,6 +124,7 @@ internal sealed class ContentImportService : IContentImportService
                 entry,
                 topicsByKey,
                 meaningLanguages,
+                expectedMeaningLanguages,
                 contentPackage,
                 importedWords,
                 issues,
@@ -311,6 +322,7 @@ internal sealed class ContentImportService : IContentImportService
         ParsedContentEntryModel entry,
         IReadOnlyDictionary<string, Topic> topicsByKey,
         IReadOnlySet<LanguageCode> meaningLanguages,
+        IReadOnlyList<LanguageCode> expectedMeaningLanguages,
         ContentPackage contentPackage,
         ICollection<WordEntry> importedWords,
         ICollection<ImportIssueModel> issues,
@@ -421,6 +433,17 @@ internal sealed class ContentImportService : IContentImportService
                 null,
                 DateTime.UtcNow);
             return;
+        }
+
+        string[] coverageWarnings = BuildTranslationCoverageWarnings(
+            rawLemma,
+            meaningTranslations,
+            examples,
+            expectedMeaningLanguages);
+
+        foreach (string coverageWarning in coverageWarnings)
+        {
+            issues.Add(new ImportIssueModel(entryIndex + 1, "Warning", coverageWarning));
         }
 
         WordEntry wordEntry = new(
@@ -539,9 +562,278 @@ internal sealed class ContentImportService : IContentImportService
             normalizedPartOfSpeechText,
             ContentPackageEntryStatus.Imported,
             null,
-            null,
+            coverageWarnings.Length == 0 ? null : string.Join(" ", coverageWarnings),
             wordEntry.PublicId,
             DateTime.UtcNow);
+    }
+
+    private static LanguageCode[] ResolveExpectedMeaningLanguages(
+        IReadOnlyList<string> defaultMeaningLanguages,
+        IReadOnlySet<LanguageCode> activeMeaningLanguages)
+    {
+        return defaultMeaningLanguages
+            .Select(language => NormalizeText(language).ToLowerInvariant())
+            .Where(language => !string.IsNullOrWhiteSpace(language))
+            .Select(LanguageCode.From)
+            .Where(activeMeaningLanguages.Contains)
+            .Distinct()
+            .ToArray();
+    }
+
+    private static string[] BuildTranslationCoverageWarnings(
+        string rawLemma,
+        IReadOnlyDictionary<LanguageCode, string> meaningTranslations,
+        IReadOnlyList<(string GermanText, Dictionary<LanguageCode, string> Translations)> examples,
+        IReadOnlyList<LanguageCode> expectedMeaningLanguages)
+    {
+        if (expectedMeaningLanguages.Count < 2)
+        {
+            return [];
+        }
+
+        List<string> warnings = [];
+        string lemma = NormalizeText(rawLemma);
+
+        LanguageCode[] missingMeaningLanguages = expectedMeaningLanguages
+            .Where(languageCode => !meaningTranslations.ContainsKey(languageCode))
+            .ToArray();
+
+        if (missingMeaningLanguages.Length > 0)
+        {
+            warnings.Add(
+                $"Entry '{lemma}' is missing meaning translations for: {FormatLanguageList(missingMeaningLanguages)}.");
+        }
+
+        foreach ((string germanText, Dictionary<LanguageCode, string> translations) in examples)
+        {
+            LanguageCode[] missingExampleLanguages = expectedMeaningLanguages
+                .Where(languageCode => !translations.ContainsKey(languageCode))
+                .ToArray();
+
+            if (missingExampleLanguages.Length > 0)
+            {
+                warnings.Add(
+                    $"Entry '{lemma}' example '{germanText}' is missing translations for: {FormatLanguageList(missingExampleLanguages)}.");
+            }
+        }
+
+        return warnings.ToArray();
+    }
+
+    private static string FormatLanguageList(IEnumerable<LanguageCode> languageCodes)
+    {
+        return string.Join(", ", languageCodes.Select(languageCode => languageCode.Value));
+    }
+
+    private static void ValidateScenarios(
+        IReadOnlyList<ParsedScenarioLessonModel> scenarios,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> slugs = [];
+
+        for (int index = 0; index < scenarios.Count; index++)
+        {
+            ParsedScenarioLessonModel scenario = scenarios[index];
+            List<string> errors = [];
+            string slug = NormalizeText(scenario.Slug).ToLowerInvariant();
+
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add("Scenario slug is required and must use lowercase kebab-case.");
+            }
+            else if (!slugs.Add(slug))
+            {
+                errors.Add($"Duplicate scenario slug '{slug}' is not allowed inside one package.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(scenario.Title)))
+            {
+                errors.Add("Scenario title is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(scenario.Description)))
+            {
+                errors.Add("Scenario description is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(scenario.LearnerGoal)))
+            {
+                errors.Add("Scenario learnerGoal is required.");
+            }
+
+            if (!Enum.TryParse(NormalizeText(scenario.CefrLevel), true, out CefrLevel _))
+            {
+                errors.Add("Scenario CEFR level is invalid.");
+            }
+
+            string category = NormalizeText(scenario.Category).ToLowerInvariant();
+            if (!ValidateKebabKey(category))
+            {
+                errors.Add("Scenario category is required and must use lowercase kebab-case.");
+            }
+
+            string[] topicKeys = scenario.Topics
+                .Select(topic => NormalizeText(topic).ToLowerInvariant())
+                .Where(topic => !string.IsNullOrWhiteSpace(topic))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            if (topicKeys.Length == 0)
+            {
+                errors.Add("Scenario topics must contain at least one topic key.");
+            }
+
+            foreach (string topicKey in topicKeys)
+            {
+                if (!topicsByKey.ContainsKey(topicKey))
+                {
+                    errors.Add($"Scenario references unknown topic key '{topicKey}'.");
+                }
+            }
+
+            if (scenario.DialogueTurns.Count == 0)
+            {
+                errors.Add("Scenario dialogueTurns must contain at least one item.");
+            }
+
+            for (int turnIndex = 0; turnIndex < scenario.DialogueTurns.Count; turnIndex++)
+            {
+                ParsedScenarioDialogueTurnModel turn = scenario.DialogueTurns[turnIndex];
+                string speakerRole = NormalizeText(turn.SpeakerRole).ToLowerInvariant();
+
+                if (!ValidateKebabKey(speakerRole))
+                {
+                    errors.Add($"Scenario dialogueTurns[{turnIndex + 1}] speakerRole is required and must use lowercase kebab-case.");
+                }
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(turn.BaseText)))
+                {
+                    errors.Add($"Scenario dialogueTurns[{turnIndex + 1}] baseText is required.");
+                }
+
+                ValidateScenarioTranslations(
+                    turn.Translations,
+                    meaningLanguages,
+                    $"Scenario dialogueTurns[{turnIndex + 1}] translations",
+                    errors);
+            }
+
+            if (scenario.UsefulPhrases.Count == 0)
+            {
+                errors.Add("Scenario usefulPhrases must contain at least one item.");
+            }
+
+            for (int phraseIndex = 0; phraseIndex < scenario.UsefulPhrases.Count; phraseIndex++)
+            {
+                ParsedScenarioPhraseModel phrase = scenario.UsefulPhrases[phraseIndex];
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(phrase.BaseText)))
+                {
+                    errors.Add($"Scenario usefulPhrases[{phraseIndex + 1}] baseText is required.");
+                }
+
+                ValidateScenarioTranslations(
+                    phrase.Translations,
+                    meaningLanguages,
+                    $"Scenario usefulPhrases[{phraseIndex + 1}] translations",
+                    errors);
+            }
+
+            if (scenario.Questions.Count == 0)
+            {
+                errors.Add("Scenario questions must contain at least one item.");
+            }
+
+            for (int questionIndex = 0; questionIndex < scenario.Questions.Count; questionIndex++)
+            {
+                ParsedScenarioQuestionModel question = scenario.Questions[questionIndex];
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(question.Prompt)))
+                {
+                    errors.Add($"Scenario questions[{questionIndex + 1}] prompt is required.");
+                }
+
+                ValidateScenarioTranslations(
+                    question.Translations,
+                    meaningLanguages,
+                    $"Scenario questions[{questionIndex + 1}] translations",
+                    errors);
+
+                if (question.Answers.Count < 2)
+                {
+                    errors.Add($"Scenario questions[{questionIndex + 1}] must contain at least two answers.");
+                }
+
+                int correctAnswerCount = question.Answers.Count(answer => answer.IsCorrect);
+                if (correctAnswerCount != 1)
+                {
+                    errors.Add($"Scenario questions[{questionIndex + 1}] must contain exactly one correct answer.");
+                }
+
+                for (int answerIndex = 0; answerIndex < question.Answers.Count; answerIndex++)
+                {
+                    ParsedScenarioAnswerModel answer = question.Answers[answerIndex];
+
+                    if (string.IsNullOrWhiteSpace(NormalizeText(answer.Text)))
+                    {
+                        errors.Add($"Scenario questions[{questionIndex + 1}] answers[{answerIndex + 1}] text is required.");
+                    }
+
+                    ValidateScenarioTranslations(
+                        answer.Translations,
+                        meaningLanguages,
+                        $"Scenario questions[{questionIndex + 1}] answers[{answerIndex + 1}] translations",
+                        errors);
+                }
+            }
+
+            if (errors.Count > 0)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Scenario {index + 1} '{slug}': {string.Join(" ", errors)}"));
+            }
+        }
+    }
+
+    private static void ValidateScenarioTranslations(
+        IReadOnlyList<ParsedContentMeaningModel> translations,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        List<string> translationErrors = [];
+        Dictionary<LanguageCode, string> normalizedTranslations = ValidateMeaningTranslations(
+            translations,
+            meaningLanguages,
+            translationErrors);
+
+        if (normalizedTranslations.Count == 0)
+        {
+            errors.Add($"{fieldName} must contain at least one valid translation.");
+        }
+
+        foreach (string translationError in translationErrors)
+        {
+            errors.Add($"{fieldName}: {translationError}");
+        }
+    }
+
+    private static bool ValidateKebabKey(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return false;
+        }
+
+        bool isValid = value.All(character =>
+            (character >= 'a' && character <= 'z') ||
+            (character >= '0' && character <= '9') ||
+            character == '-');
+
+        return isValid &&
+            !value.StartsWith("-", StringComparison.Ordinal) &&
+            !value.EndsWith("-", StringComparison.Ordinal);
     }
 
     private static void ValidatePackage(ParsedContentPackageModel parsedPackage, ICollection<ImportIssueModel> issues)

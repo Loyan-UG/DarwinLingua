@@ -26,7 +26,6 @@ All project documentation should remain in English.
 - `04-Implementation-Backlog.md`
 - `21-Early-Product-Decisions.md`
 - `63-Market-Product-And-Organizer-Strategy.md`
-- `64-Conversation-And-Organizer-Implementation-Backlog.md`
 
 ### Content and Import
 
@@ -79,6 +78,9 @@ All project documentation should remain in English.
 - `60-Web-Operations-Notes.md`
 - `61-Web-Release-Checklist.md`
 - `62-Web-Accessibility-Checklist.md`
+- `65-Safety-And-Moderation-Requirements.md`
+- `66-Dual-Meaning-Language-UX-Rules.md`
+- `67-Scenario-Content-Package-Contract.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -127,8 +129,10 @@ If you are new to the project, read the documents in this order:
 32. `61-Web-Release-Checklist.md`
 33. `62-Web-Accessibility-Checklist.md`
 34. `63-Market-Product-And-Organizer-Strategy.md`
-35. `64-Conversation-And-Organizer-Implementation-Backlog.md`
-36. `52-Future-Platform-Expansion.md`
+35. `52-Future-Platform-Expansion.md`
+36. `65-Safety-And-Moderation-Requirements.md`
+37. `66-Dual-Meaning-Language-UX-Rules.md`
+38. `67-Scenario-Content-Package-Contract.md`
 
 ---
 
@@ -142,13 +146,16 @@ If you are new to the project, read the documents in this order:
 ### Phases vs Backlog
 
 - `03-Product-Phases.md` defines the high-level product phases.
-- `04-Implementation-Backlog.md` defines executable work planning, with detailed Phase 1 tasks and high-level later-phase workstreams.
-- `64-Conversation-And-Organizer-Implementation-Backlog.md` defines the executable backlog for scenario learning, conversation events, organizer tooling, safe profiles, and partner matching.
+- `04-Implementation-Backlog.md` defines executable work planning, with detailed Phase 1 tasks, later-phase workstreams, and the merged Phase 6 backlog for scenario learning, conversation events, organizer tooling, safe profiles, and partner matching.
+- `64-Conversation-And-Organizer-Implementation-Backlog.md` is now only a compatibility pointer to the merged Phase 6 section in `04-Implementation-Backlog.md`.
 
 ### Product Strategy vs Execution
 
 - `63-Market-Product-And-Organizer-Strategy.md` records the product positioning, market assumptions, monetization direction, and B2B organizer strategy.
-- `64-Conversation-And-Organizer-Implementation-Backlog.md` turns that strategy into implementation-ready work items.
+- `65-Safety-And-Moderation-Requirements.md` defines the release gate for public profiles, matching, organizer listings, report/block, and moderation workflows.
+- `66-Dual-Meaning-Language-UX-Rules.md` defines presentation rules for primary and secondary meaning languages across compact and expanded learning surfaces.
+- `67-Scenario-Content-Package-Contract.md` defines the Phase 6 JSON contract for scenario lessons, dialogue turns, useful phrases, questions, answers, CEFR/topic rules, and validation rules.
+- `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Rules vs Workflow
 

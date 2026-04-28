@@ -256,7 +256,10 @@ public partial class WordDetailPage : ContentPage
         await Task.Yield();
         cancellationToken.ThrowIfCancellationRequested();
 
-        ApplyExamples(word.Senses);
+        ApplyExamples(
+            word.Senses,
+            profile.PreferredMeaningLanguage1,
+            effectiveSecondaryMeaningLanguageCode);
         ApplyWordForms(word);
         ApplyWordLabels(UsageLabelsChipGroup, UsageLabelsBorder, word.UsageLabels);
         ApplyWordLabels(ContextLabelsChipGroup, ContextLabelsBorder, word.ContextLabels);
@@ -264,7 +267,12 @@ public partial class WordDetailPage : ContentPage
         ApplyCollocations(word.Collocations);
         ApplyWordFamilies(word.WordFamilies);
         ApplyLexicalRelations(word.Synonyms, word.Antonyms);
-        await RenderSensesAsync(word.Senses, cancellationToken).ConfigureAwait(true);
+        await RenderSensesAsync(
+                word.Senses,
+                profile.PreferredMeaningLanguage1,
+                effectiveSecondaryMeaningLanguageCode,
+                cancellationToken)
+            .ConfigureAwait(true);
 
         if (HasNavigationContext())
         {
@@ -280,7 +288,11 @@ public partial class WordDetailPage : ContentPage
     /// <summary>
     /// Renders the first sense immediately and hydrates the rest in small UI-friendly batches.
     /// </summary>
-    private async Task RenderSensesAsync(IReadOnlyList<WordSenseDetailModel> senses, CancellationToken cancellationToken)
+    private async Task RenderSensesAsync(
+        IReadOnlyList<WordSenseDetailModel> senses,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(senses);
 
@@ -290,7 +302,7 @@ public partial class WordDetailPage : ContentPage
         }
 
         cancellationToken.ThrowIfCancellationRequested();
-        SensesContainer.Children.Add(BuildSenseView(senses[0]));
+        SensesContainer.Children.Add(BuildSenseView(senses[0], primaryMeaningLanguageCode, secondaryMeaningLanguageCode));
 
         if (senses.Count == 1)
         {
@@ -307,7 +319,7 @@ public partial class WordDetailPage : ContentPage
             for (int batchIndex = index; batchIndex < batchEnd; batchIndex++)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                SensesContainer.Children.Add(BuildSenseView(senses[batchIndex]));
+                SensesContainer.Children.Add(BuildSenseView(senses[batchIndex], primaryMeaningLanguageCode, secondaryMeaningLanguageCode));
             }
         }
     }
@@ -497,7 +509,10 @@ public partial class WordDetailPage : ContentPage
     /// <summary>
     /// Builds the visual block for a single sense.
     /// </summary>
-    private View BuildSenseView(WordSenseDetailModel sense)
+    private View BuildSenseView(
+        WordSenseDetailModel sense,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode)
     {
         ArgumentNullException.ThrowIfNull(sense);
 
@@ -517,20 +532,12 @@ public partial class WordDetailPage : ContentPage
 
         if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning))
         {
-            senseLayout.Children.Add(new Label
-            {
-                Text = sense.PrimaryMeaning,
-                Style = ResolveAppTextStyle("Body"),
-            });
+            senseLayout.Children.Add(BuildMeaningBlock(primaryMeaningLanguageCode, sense.PrimaryMeaning, emphasize: true));
         }
 
         if (!string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
         {
-            senseLayout.Children.Add(new Label
-            {
-                Text = sense.SecondaryMeaning,
-                Style = ResolveAppTextStyle("Body"),
-            });
+            senseLayout.Children.Add(BuildMeaningBlock(secondaryMeaningLanguageCode, sense.SecondaryMeaning, emphasize: false));
         }
 
         return new Border
@@ -1477,7 +1484,10 @@ public partial class WordDetailPage : ContentPage
         _refreshCancellationTokenSource = null;
     }
 
-    private void ApplyExamples(IReadOnlyList<WordSenseDetailModel> senses)
+    private void ApplyExamples(
+        IReadOnlyList<WordSenseDetailModel> senses,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode)
     {
         ArgumentNullException.ThrowIfNull(senses);
 
@@ -1498,11 +1508,14 @@ public partial class WordDetailPage : ContentPage
 
         foreach (ExampleSentenceDetailModel example in examples)
         {
-            ExamplesStackLayout.Children.Add(BuildExampleView(example));
+            ExamplesStackLayout.Children.Add(BuildExampleView(example, primaryMeaningLanguageCode, secondaryMeaningLanguageCode));
         }
     }
 
-    private View BuildExampleView(ExampleSentenceDetailModel example)
+    private View BuildExampleView(
+        ExampleSentenceDetailModel example,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode)
     {
         ArgumentNullException.ThrowIfNull(example);
 
@@ -1534,20 +1547,12 @@ public partial class WordDetailPage : ContentPage
 
         if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
         {
-            exampleLayout.Children.Add(new Label
-            {
-                Text = example.PrimaryMeaning,
-                Style = ResolveAppTextStyle("Body"),
-            });
+            exampleLayout.Children.Add(BuildMeaningBlock(primaryMeaningLanguageCode, example.PrimaryMeaning, emphasize: true));
         }
 
         if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
         {
-            exampleLayout.Children.Add(new Label
-            {
-                Text = example.SecondaryMeaning,
-                Style = ResolveAppTextStyle("Body"),
-            });
+            exampleLayout.Children.Add(BuildMeaningBlock(secondaryMeaningLanguageCode, example.SecondaryMeaning, emphasize: false));
         }
 
         return new Border
@@ -1559,5 +1564,38 @@ public partial class WordDetailPage : ContentPage
                 : Color.FromArgb("#FFFDF9"),
             Content = exampleLayout,
         };
+    }
+
+    private View BuildMeaningBlock(string? languageCode, string meaningText, bool emphasize)
+    {
+        string normalizedLanguageCode = string.IsNullOrWhiteSpace(languageCode)
+            ? string.Empty
+            : languageCode.Trim().ToUpperInvariant();
+
+        VerticalStackLayout meaningLayout = new()
+        {
+            Spacing = 2,
+        };
+
+        if (!string.IsNullOrWhiteSpace(normalizedLanguageCode))
+        {
+            meaningLayout.Children.Add(new Label
+            {
+                Text = normalizedLanguageCode,
+                Style = ResolveAppTextStyle("Caption"),
+                TextColor = Application.Current?.RequestedTheme == AppTheme.Dark
+                    ? Color.FromArgb("#9AD8B8")
+                    : Color.FromArgb("#23764B"),
+            });
+        }
+
+        meaningLayout.Children.Add(new Label
+        {
+            Text = meaningText,
+            Style = ResolveAppTextStyle("Body"),
+            FontAttributes = emphasize ? FontAttributes.Bold : FontAttributes.None,
+        });
+
+        return meaningLayout;
     }
 }

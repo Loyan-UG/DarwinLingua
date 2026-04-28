@@ -9,6 +9,8 @@ namespace DarwinLingua.Catalog.Infrastructure.Repositories;
 
 internal sealed class WordCollectionRepository(IDbContextFactory<DarwinLinguaDbContext> dbContextFactory) : IWordCollectionRepository
 {
+    private static readonly LanguageCode EnglishFallbackLanguage = LanguageCode.From("en");
+
     public async Task<IReadOnlyList<WordCollectionListItemModel>> GetPublishedCollectionsAsync(
         string meaningLanguageCode,
         CancellationToken cancellationToken)
@@ -183,12 +185,17 @@ internal sealed class WordCollectionRepository(IDbContextFactory<DarwinLinguaDbC
             .Select(sense => sense.SenseId)
             .ToArray();
 
+        LanguageCode[] candidateLanguageCodes = resolvedMeaningLanguageCode == EnglishFallbackLanguage
+            ? [resolvedMeaningLanguageCode]
+            : [resolvedMeaningLanguageCode, EnglishFallbackLanguage];
+
         List<CollectionPrimaryMeaningTranslationRow> translations = await dbContext.SenseTranslations
             .AsNoTracking()
-            .Where(translation => translation.LanguageCode == resolvedMeaningLanguageCode)
+            .Where(translation => candidateLanguageCodes.Contains(translation.LanguageCode))
             .Where(translation => senseIds.Contains(translation.WordSenseId))
             .Select(translation => new CollectionPrimaryMeaningTranslationRow(
                 translation.WordSenseId,
+                translation.LanguageCode,
                 translation.TranslationText,
                 translation.IsPrimary))
             .ToListAsync(cancellationToken)
@@ -203,6 +210,7 @@ internal sealed class WordCollectionRepository(IDbContextFactory<DarwinLinguaDbC
                     sense.WordEntryId,
                     sense.IsPrimarySense,
                     sense.SenseOrder,
+                    translation.LanguageCode,
                     translation.IsPrimary,
                     translation.TranslationText))
             .ToList();
@@ -214,6 +222,7 @@ internal sealed class WordCollectionRepository(IDbContextFactory<DarwinLinguaDbC
                 group => group
                     .OrderByDescending(item => item.IsPrimarySense)
                     .ThenBy(item => item.SenseOrder)
+                    .ThenBy(item => item.LanguageCode == resolvedMeaningLanguageCode ? 0 : 1)
                     .ThenByDescending(item => item.IsPrimary)
                     .Select(item => (string?)item.TranslationText)
                     .FirstOrDefault());
@@ -244,6 +253,7 @@ internal sealed class WordCollectionRepository(IDbContextFactory<DarwinLinguaDbC
 
     private sealed record CollectionPrimaryMeaningTranslationRow(
         Guid WordSenseId,
+        LanguageCode LanguageCode,
         string TranslationText,
         bool IsPrimary);
 
@@ -251,6 +261,7 @@ internal sealed class WordCollectionRepository(IDbContextFactory<DarwinLinguaDbC
         Guid WordEntryId,
         bool IsPrimarySense,
         int SenseOrder,
+        LanguageCode LanguageCode,
         bool IsPrimary,
         string TranslationText);
 }

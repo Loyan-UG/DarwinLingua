@@ -107,6 +107,65 @@ public sealed class WordDetailQueryServiceTests
         Assert.Equal("من در صندوق پرداخت می‌کنم.", exampleResult.SecondaryMeaning);
     }
 
+    /// <summary>
+    /// Verifies that missing primary translations fall back to English while missing secondary translations remain omitted.
+    /// </summary>
+    [Fact]
+    public async Task GetWordDetailsAsync_ShouldFallbackPrimaryMeaningToEnglishAndOmitMissingSecondary()
+    {
+        WordEntry word = new(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "Termin",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow,
+            article: "der");
+
+        WordSense sense = word.AddSense(
+            Guid.NewGuid(),
+            1,
+            true,
+            PublicationStatus.Active,
+            DateTime.UtcNow,
+            shortDefinitionDe: "vereinbarte Zeit");
+        sense.AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "appointment", true, DateTime.UtcNow);
+        ExampleSentence example = sense.AddExample(
+            Guid.NewGuid(),
+            1,
+            "Ich habe einen Termin.",
+            true,
+            DateTime.UtcNow);
+        example.AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "I have an appointment.", DateTime.UtcNow);
+
+        ServiceCollection services = new();
+        services.AddCatalogApplication();
+        services.AddSingleton<IWordEntryRepository>(new FakeWordEntryRepository(word));
+        services.AddSingleton<ITopicRepository>(new FakeTopicRepository([]));
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IWordDetailQueryService queryService = serviceProvider.GetRequiredService<IWordDetailQueryService>();
+
+        WordDetailModel? result = await queryService.GetWordDetailsAsync(
+            word.PublicId,
+            "fa",
+            "tr",
+            "en",
+            CancellationToken.None);
+
+        Assert.NotNull(result);
+        WordSenseDetailModel senseResult = Assert.Single(result!.Senses);
+        Assert.Equal("appointment", senseResult.PrimaryMeaning);
+        Assert.Null(senseResult.SecondaryMeaning);
+
+        ExampleSentenceDetailModel exampleResult = Assert.Single(senseResult.Examples);
+        Assert.Equal("I have an appointment.", exampleResult.PrimaryMeaning);
+        Assert.Null(exampleResult.SecondaryMeaning);
+    }
+
     private sealed class FakeWordEntryRepository(WordEntry word) : IWordEntryRepository
     {
         public Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicKeyAsync(

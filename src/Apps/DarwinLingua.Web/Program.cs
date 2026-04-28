@@ -45,6 +45,7 @@ builder.Services.AddScoped<IWebEntitledFeatureAccessService, WebEntitledFeatureA
 builder.Services.AddScoped<IWebUserPreferenceService, WebUserPreferenceService>();
 builder.Services.AddScoped<IWebFavoriteWordService, WebFavoriteWordService>();
 builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();
+builder.Services.AddScoped<IWebUserStateDatabaseBootstrapper, WebUserStateDatabaseBootstrapper>();
 builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebIdentityDbContext>>();
 builder.Services.AddScoped<IUserEntitlementService, UserEntitlementService<WebIdentityDbContext>>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
@@ -101,9 +102,11 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 {
     IDatabaseInitializer databaseInitializer = bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IDarwinLinguaIdentityBootstrapper identityBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
+    IWebUserStateDatabaseBootstrapper webUserStateBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IWebUserStateDatabaseBootstrapper>();
 
     await databaseInitializer.InitializeAsync(CancellationToken.None);
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
+    await webUserStateBootstrapper.InitializeAsync(CancellationToken.None);
 }
 
 if (!app.Environment.IsDevelopment())

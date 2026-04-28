@@ -58,11 +58,17 @@
                     }
                     @if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning))
                     {
-                        <p class="body-lg">@sense.PrimaryMeaning</p>
+                        <div class="meaning-block meaning-block--primary">
+                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                            <p class="body-lg">@sense.PrimaryMeaning</p>
+                        </div>
                     }
                     @if (!string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
                     {
-                        <p>@sense.SecondaryMeaning</p>
+                        <div class="meaning-block">
+                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                            <p>@sense.SecondaryMeaning</p>
+                        </div>
                     }
                     @if (sense.Examples.Count > 0)
                     {
@@ -76,11 +82,17 @@
                                     </div>
                                     @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
                                     {
-                                        <div>@example.PrimaryMeaning</div>
+                                        <div class="meaning-block meaning-block--primary">
+                                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                            <div>@example.PrimaryMeaning</div>
+                                        </div>
                                     }
                                     @if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
                                     {
-                                        <div>@example.SecondaryMeaning</div>
+                                        <div class="meaning-block">
+                                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                            <div>@example.SecondaryMeaning</div>
+                                        </div>
                                     }
                                 </li>
                             }

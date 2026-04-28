@@ -140,6 +140,44 @@ public sealed class UserLearningProfileTests
     }
 
     /// <summary>
+    /// Verifies that active meaning languages contain only the required primary language when no secondary language is selected.
+    /// </summary>
+    [Fact]
+    public void GetActiveMeaningLanguages_ShouldReturnExactlyOneLanguageWhenSecondaryIsNull()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("de"),
+            DateTime.UtcNow);
+
+        IReadOnlyList<LanguageCode> activeMeaningLanguages = profile.GetActiveMeaningLanguages();
+
+        Assert.Equal([LanguageCode.From("en")], activeMeaningLanguages);
+    }
+
+    /// <summary>
+    /// Verifies that active meaning languages contain primary and secondary languages in display order.
+    /// </summary>
+    [Fact]
+    public void GetActiveMeaningLanguages_ShouldReturnExactlyTwoLanguagesWhenSecondaryIsSelected()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            LanguageCode.From("fa"),
+            LanguageCode.From("de"),
+            DateTime.UtcNow);
+
+        IReadOnlyList<LanguageCode> activeMeaningLanguages = profile.GetActiveMeaningLanguages();
+
+        Assert.Equal([LanguageCode.From("en"), LanguageCode.From("fa")], activeMeaningLanguages);
+    }
+
+    /// <summary>
     /// Verifies that updating meaning-language preferences clears the secondary language when null is provided.
     /// </summary>
     [Fact]

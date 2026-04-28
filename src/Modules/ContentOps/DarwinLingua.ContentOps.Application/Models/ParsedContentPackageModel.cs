@@ -10,4 +10,10 @@ public sealed record ParsedContentPackageModel(
     string? Source,
     IReadOnlyList<string> DefaultMeaningLanguages,
     IReadOnlyList<ParsedContentEntryModel> Entries,
-    IReadOnlyList<ParsedContentCollectionModel> Collections);
+    IReadOnlyList<ParsedContentCollectionModel> Collections)
+{
+    /// <summary>
+    /// Gets parsed scenario lessons included in the package.
+    /// </summary>
+    public IReadOnlyList<ParsedScenarioLessonModel> Scenarios { get; init; } = [];
+}

@@ -126,6 +126,46 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     /// <summary>
+    /// Verifies that dual meaning-language packages surface incomplete translation coverage without blocking import.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldWarn_WhenDualLanguageCoverageIsIncomplete()
+    {
+        ParsedContentPackageModel parsedPackage = new(
+            "1.0",
+            "test-package",
+            "Test Package",
+            "Manual",
+            ["en", "fa"],
+            [CreateValidEntry("Brot", "shopping")],
+            []);
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository(meaningLanguages: new HashSet<LanguageCode> { LanguageCode.From("en"), LanguageCode.From("fa") }));
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("test.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal("CompletedWithWarnings", result.Status);
+        Assert.Equal(1, result.ImportedEntries);
+        Assert.Equal(1, result.WarningCount);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Warning" &&
+            issue.Message.Contains("meaning translations", StringComparison.Ordinal) &&
+            issue.Message.Contains("fa", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Warning" &&
+            issue.Message.Contains("example", StringComparison.Ordinal) &&
+            issue.Message.Contains("fa", StringComparison.Ordinal));
+    }
+
+    /// <summary>
     /// Verifies that an entry is skipped when the word already exists in the repository.
     /// </summary>
     [Fact]
@@ -491,6 +531,65 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     /// <summary>
+    /// Verifies that scenario lessons are validated at import boundaries before persistence support is added.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenScenarioContractIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = new(
+            "1.0",
+            "scenario-invalid-package",
+            "Scenario Invalid Package",
+            "Hybrid",
+            ["en"],
+            [CreateValidEntry("Brot", "shopping")],
+            [])
+        {
+            Scenarios =
+            [
+                new ParsedScenarioLessonModel(
+                    "doctor scenario",
+                    "Doctor Scenario",
+                    "Prepare for a doctor appointment.",
+                    "Ask for an appointment.",
+                    "A1",
+                    "doctor-and-healthcare",
+                    ["missing-topic"],
+                    1,
+                    [],
+                    [],
+                    [
+                        new ParsedScenarioQuestionModel(
+                            "Was braucht die Person?",
+                            [new ParsedContentMeaningModel("en", "What does the person need?")],
+                            [new ParsedScenarioAnswerModel("Einen Termin.", [new ParsedContentMeaningModel("en", "An appointment.")], true, null)])
+                    ])
+            ],
+        };
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("scenario-invalid.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Equal("Failed", result.Status);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("Scenario", StringComparison.Ordinal) &&
+            issue.Message.Contains("kebab-case", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("missing-topic", StringComparison.Ordinal));
+    }
+
+    /// <summary>
     /// Verifies that a collection whose words all resolve from the newly imported entries is created successfully.
     /// </summary>
     [Fact]
@@ -745,7 +844,8 @@ public sealed class ContentImportServiceApplicationTests
     private sealed class FakeRepository(
         bool packageExists = false,
         bool wordExists = false,
-        IReadOnlyList<WordEntry>? existingWords = null) : IContentImportRepository
+        IReadOnlyList<WordEntry>? existingWords = null,
+        IReadOnlySet<LanguageCode>? meaningLanguages = null) : IContentImportRepository
     {
         public Task<IReadOnlyDictionary<string, Topic>> GetActiveTopicsByKeyAsync(CancellationToken cancellationToken)
         {
@@ -762,7 +862,7 @@ public sealed class ContentImportServiceApplicationTests
 
         public Task<IReadOnlySet<LanguageCode>> GetActiveMeaningLanguagesAsync(CancellationToken cancellationToken)
         {
-            IReadOnlySet<LanguageCode> languages = new HashSet<LanguageCode> { LanguageCode.From("en") };
+            IReadOnlySet<LanguageCode> languages = meaningLanguages ?? new HashSet<LanguageCode> { LanguageCode.From("en") };
             return Task.FromResult(languages);
         }
 

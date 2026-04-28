@@ -76,6 +76,16 @@ public sealed class UserLearningProfile
     public DateTime UpdatedAtUtc { get; private set; }
 
     /// <summary>
+    /// Gets the active meaning languages in display order.
+    /// </summary>
+    public IReadOnlyList<LanguageCode> GetActiveMeaningLanguages()
+    {
+        return PreferredMeaningLanguage2 is null
+            ? [PreferredMeaningLanguage1]
+            : [PreferredMeaningLanguage1, PreferredMeaningLanguage2.Value];
+    }
+
+    /// <summary>
     /// Updates the persisted meaning-language preferences.
     /// </summary>
     public void UpdateMeaningLanguagePreferences(

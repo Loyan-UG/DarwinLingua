@@ -53,6 +53,7 @@ public sealed class UserLearningProfileServiceTests
         Assert.Equal("de", profile.UiLanguageCode);
         Assert.Equal("en", profile.PreferredMeaningLanguage1);
         Assert.Null(profile.PreferredMeaningLanguage2);
+        Assert.Equal(["en"], profile.ActiveMeaningLanguages);
     }
 
     /// <summary>
@@ -108,6 +109,35 @@ public sealed class UserLearningProfileServiceTests
 
         Assert.Equal("de", updated.PreferredMeaningLanguage1);
         Assert.Null(updated.PreferredMeaningLanguage2);
+        Assert.Equal(["de"], updated.ActiveMeaningLanguages);
+    }
+
+    /// <summary>
+    /// Verifies that two active meaning languages are exposed in primary/secondary display order.
+    /// </summary>
+    [Fact]
+    public async Task UpdateMeaningLanguagePreferencesAsync_ShouldExposeTwoActiveMeaningLanguages()
+    {
+        InMemoryUserLearningProfileRepository repository = new();
+        FakeLearningPreferenceLanguageValidator validator = new(
+            supportedUiLanguages: ["en"],
+            supportedMeaningLanguages: ["en", "fa"]);
+        ServiceCollection services = new();
+        services.AddLearningApplication();
+        services.AddSingleton<IUserLearningProfileRepository>(repository);
+        services.AddSingleton<ILearningPreferenceLanguageValidator>(validator);
+
+        await using ServiceProvider serviceProvider = services.BuildServiceProvider();
+        IUserLearningProfileService service = serviceProvider.GetRequiredService<IUserLearningProfileService>();
+
+        await service.EnsureLocalProfileExistsAsync("en", CancellationToken.None);
+
+        UserLearningProfileModel updated = await service.UpdateMeaningLanguagePreferencesAsync(
+            "en",
+            preferredMeaningLanguage2: "fa",
+            CancellationToken.None);
+
+        Assert.Equal(["en", "fa"], updated.ActiveMeaningLanguages);
     }
 
     /// <summary>

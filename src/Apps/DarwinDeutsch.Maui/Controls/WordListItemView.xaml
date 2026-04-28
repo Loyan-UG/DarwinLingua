@@ -14,7 +14,9 @@
                        Style="{DynamicResource Title2}"
                        TextColor="{AppThemeBinding Light=#10212B, Dark=White}" />
                 <Label x:Name="PrimaryMeaningLabel"
-                       Style="{DynamicResource Body}" />
+                       Style="{DynamicResource Body}"
+                       MaxLines="2"
+                       LineBreakMode="TailTruncation" />
                 <Border Style="{StaticResource AppMetadataBadgeBorderStyle}">
                     <Label x:Name="MetadataLineLabel"
                            Style="{DynamicResource Caption}" />

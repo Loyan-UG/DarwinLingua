@@ -51,6 +51,10 @@ The product should be divided into the following bounded contexts:
 - Content Operations
 - Publishing and Distribution
 - Resource Discovery
+- Scenario Learning
+- Events and Organizers
+- Profiles and Matching
+- Moderation
 - Localization Support
 
 These are conceptual domain boundaries.
@@ -505,6 +509,154 @@ Not allowed:
 
 ---
 
+# 8A. Scenario Learning Context
+
+## 8A.1 Purpose
+
+The Scenario Learning context owns practical German-in-context learning experiences.
+
+## 8A.2 Responsibilities
+
+This context is responsible for:
+
+- scenario lessons
+- conversation starter packs
+- scripted roleplay preparation
+- event preparation packs
+- CEFR- and situation-aware learning paths
+
+## 8A.3 Core Concepts
+
+- ScenarioLesson
+- ScenarioStep
+- ScenarioPhrase
+- ConversationStarterPack
+- RoleplayScript
+- EventPreparationPack
+
+## 8A.4 Dependency Rule
+
+Scenario Learning may reference Content Catalog words, examples, topics, and context labels.
+
+### Direction
+
+- Scenario Learning -> Content Catalog
+- Scenario Learning -> Localization Support
+
+But:
+
+- Content Catalog -X-> Scenario Learning
+
+---
+
+# 8B. Events and Organizers Context
+
+## 8B.1 Purpose
+
+The Events and Organizers context owns public event discovery and organizer-facing publishing workflows.
+
+## 8B.2 Responsibilities
+
+This context is responsible for:
+
+- local and online conversation event listings
+- organizer profiles
+- organizer verification state
+- RSVP and attendance basics
+- controlled organizer self-service workflows
+
+## 8B.3 Core Concepts
+
+- EventListing
+- OrganizerProfile
+- EventRsvp
+- OrganizerPlan
+- OrganizerVerification
+
+## 8B.4 Dependency Rule
+
+Events and Organizers may reference Scenario Learning preparation packs and Localization Support.
+
+### Direction
+
+- Events and Organizers -> Scenario Learning
+- Events and Organizers -> Localization Support
+- Events and Organizers -> Moderation
+
+But:
+
+- Scenario Learning -X-> Events and Organizers
+
+---
+
+# 8C. Profiles and Matching Context
+
+## 8C.1 Purpose
+
+The Profiles and Matching context owns safe learner discovery for conversation practice.
+
+## 8C.2 Responsibilities
+
+This context is responsible for:
+
+- minimal learner profiles
+- profile visibility controls
+- request-based conversation partner matching
+- consent-based contact reveal
+
+## 8C.3 Core Concepts
+
+- LearnerProfile
+- PartnerRequest
+- ProfileVisibility
+- ContactRevealPolicy
+
+## 8C.4 MVP Boundary
+
+Unrestricted open chat is not part of the first matching MVP.
+
+## 8C.5 Dependency Rule
+
+Profiles and Matching depends on Identity for stable user IDs and on Moderation for report/block enforcement.
+
+### Direction
+
+- Profiles and Matching -> Moderation
+- Profiles and Matching -> Localization Support
+
+---
+
+# 8D. Moderation Context
+
+## 8D.1 Purpose
+
+The Moderation context owns abuse handling and release safety for public social and organizer surfaces.
+
+## 8D.2 Responsibilities
+
+This context is responsible for:
+
+- user reports
+- user blocks
+- organizer review
+- listing review
+- moderation decisions
+- audit trail for safety actions
+
+## 8D.3 Core Concepts
+
+- UserReport
+- UserBlock
+- OrganizerReview
+- ListingReview
+- ModerationDecision
+
+## 8D.4 Release Rule
+
+Public profiles, matching, organizer self-service listings, and user-generated public content must not ship without report, block, review, and moderation decision workflows.
+
+---
+
 # 9. Context Dependency Summary
 
 ## 9.1 Main Dependency Graph
@@ -519,6 +671,13 @@ Recommended dependency direction:
 - Content Operations -> Content Catalog
 - Content Operations -> Localization Support
 - Resource Discovery -> Localization Support
+- Scenario Learning -> Content Catalog
+- Scenario Learning -> Localization Support
+- Events and Organizers -> Scenario Learning
+- Events and Organizers -> Localization Support
+- Events and Organizers -> Moderation
+- Profiles and Matching -> Moderation
+- Profiles and Matching -> Localization Support
 
 ## 9.2 Dependency Rule
 
@@ -535,6 +694,10 @@ The most changeable are:
 - Content Operations
 - Publishing and Distribution
 - Resource Discovery UI behavior
+- Scenario Learning authoring
+- Events and organizer workflows
+- Profiles and matching workflows
+- Moderation operations
 - Admin workflows
 
 ---
@@ -570,6 +733,10 @@ The following contexts should remain design-level only in Phase 1:
 
 - Practice
 - Resource Discovery
+- Scenario Learning
+- Events and Organizers
+- Profiles and Matching
+- Moderation
 
 ### Rule
 
@@ -621,6 +788,10 @@ Recommended application-layer grouping later:
 - publishing/distribution features
 - Practice features
 - Resource discovery features
+- Scenario learning features
+- Events and organizer features
+- Profiles and matching features
+- Moderation features
 
 ### Rule
 
@@ -710,6 +881,38 @@ This is normal and healthy.
 - city
 - service
 - verified
+
+## 16.6 Scenario Learning Language
+
+- scenario
+- starter
+- phrase
+- roleplay
+- preparation pack
+
+## 16.7 Events and Organizers Language
+
+- event
+- organizer
+- RSVP
+- attendee
+- verification
+
+## 16.8 Profiles and Matching Language
+
+- profile
+- visibility
+- request
+- consent
+- contact reveal
+
+## 16.9 Moderation Language
+
+- report
+- block
+- review
+- decision
+- audit trail
 
 ### Rule
 
@@ -811,6 +1014,10 @@ Darwin Deutsch should be treated as a modular monolith with clear bounded contex
 
 - Practice
 - Resource Discovery
+- Scenario Learning
+- Events and Organizers
+- Profiles and Matching
+- Moderation
 
 This boundary is critical.
 

@@ -9,7 +9,7 @@
     }
     @if (!string.IsNullOrWhiteSpace(Model.PrimaryMeaning))
     {
-        <p class="body-lg">@Model.PrimaryMeaning</p>
+        <p class="body-lg meaning-line meaning-line--compact">@Model.PrimaryMeaning</p>
     }
     <div class="action-row">
         <button type="button" class="button button--secondary button--compact" data-speak-text="@Model.Lemma" data-speak-lang="de-DE">Speak</button>

@@ -44,6 +44,9 @@ It is composed of several conceptual areas:
 - User Learning Data
 - Practice and Review
 - Resource Discovery
+- Scenario Learning
+- Events and Organizers
+- Profiles, Matching, and Moderation
 - Import and Content Operations
 
 The first production phase will mostly use the Content Catalog and part of the User Learning Data.
@@ -108,7 +111,54 @@ Responsible for:
 
 Mainly phase 4.
 
-## 2.5 Content Operations Context
+## 2.5 Scenario Learning Context
+
+Responsible for:
+
+- practical scenario lessons
+- conversation starter packs
+- scripted roleplay preparation
+- event preparation packs that reference learning content
+- CEFR- and situation-aware practical conversation material
+
+Mainly phase 6.
+
+## 2.6 Events and Organizers Context
+
+Responsible for:
+
+- local and online conversation events
+- organizer profiles
+- organizer verification state
+- RSVP and attendance basics
+- organizer-facing management workflows
+
+Mainly phase 6.
+
+## 2.7 Profiles and Matching Context
+
+Responsible for:
+
+- minimal learner profiles
+- profile visibility state
+- request-based conversation partner matching
+- consent-based contact reveal
+
+Mainly phase 6. This context must not include unrestricted open chat in the first social MVP.
+
+## 2.8 Moderation Context
+
+Responsible for:
+
+- user reports
+- user blocks
+- organizer and listing review
+- moderation queues
+- moderation decisions and audit trail
+
+Mainly phase 6, and required before public profiles or matching can ship.
+
+## 2.9 Content Operations Context
 
 Responsible for:
 
@@ -1279,6 +1329,155 @@ The following should support localization through domain entities or translation
 
 ---
 
+# 11A. Phase 6 Conversation, Event, and Social Domain
+
+These concepts are planned for Phase 6. They are documented here to preserve domain clarity before implementation.
+
+## 11A.1 Aggregate Root: ScenarioLesson
+
+Represents a practical lesson for a real German situation.
+
+### Recommended Fields
+
+- Id
+- PublicId
+- Slug
+- Title
+- ShortDescription
+- SituationKey
+- PrimaryCefrLevel
+- MinCefrLevel
+- MaxCefrLevel
+- PrimaryTopicId
+- PublicationStatus
+- CreatedAtUtc
+- UpdatedAtUtc
+- RowVersion
+
+### Child Concepts
+
+- ScenarioStep
+- ScenarioPhrase
+- ScenarioVocabularyLink
+- ScenarioLocalization
+
+Scenario lessons may reference content catalog words, but they must not own word meanings.
+
+## 11A.2 Aggregate Root: EventListing
+
+Represents a conversation event or related language-practice event.
+
+### Recommended Fields
+
+- Id
+- PublicId
+- OrganizerId
+- Title
+- Slug
+- Description
+- EventMode
+- StartsAtUtc
+- EndsAtUtc
+- TimeZoneId
+- City
+- CountryCode
+- AddressId
+- MeetingUrl
+- MinCefrLevel
+- MaxCefrLevel
+- PriceType
+- Capacity
+- PublicationStatus
+- VerificationStatus
+- CreatedAtUtc
+- UpdatedAtUtc
+- RowVersion
+
+## 11A.3 Aggregate Root: OrganizerProfile
+
+Represents a public organizer identity for conversation cafes, clubs, teachers, libraries, associations, integration groups, or company language programs.
+
+### Recommended Fields
+
+- Id
+- PublicId
+- DisplayName
+- Slug
+- OrganizerType
+- Description
+- WebsiteUrl
+- ContactEmail
+- VerificationStatus
+- PlanKey
+- CreatedAtUtc
+- UpdatedAtUtc
+- RowVersion
+
+## 11A.4 Aggregate Root: LearnerProfile
+
+Represents the minimal public or semi-public learner profile used for safe conversation practice discovery.
+
+### Recommended Fields
+
+- Id
+- UserId
+- DisplayName
+- City
+- CurrentCefrLevel
+- TargetPracticeMode
+- Visibility
+- ContactRevealPolicy
+- CreatedAtUtc
+- UpdatedAtUtc
+- RowVersion
+
+Profiles must default to private or limited visibility until explicit user consent is captured.
+
+## 11A.5 Aggregate Root: PartnerRequest
+
+Represents a request-based conversation partner flow.
+
+### Recommended Fields
+
+- Id
+- PublicId
+- RequesterUserId
+- RecipientUserId
+- RequestState
+- MessageTemplateKey
+- CreatedAtUtc
+- RespondedAtUtc
+- ExpiresAtUtc
+- RowVersion
+
+Request states should include pending, accepted, declined, cancelled, expired, and blocked.
+
+## 11A.6 Moderation Concepts
+
+### UserReport
+
+Captures reports against profiles, events, organizers, partner requests, or other public surfaces.
+
+### UserBlock
+
+Prevents further matching or profile interaction between two users.
+
+### OrganizerReview
+
+Tracks verification and review decisions for organizer profiles.
+
+### ListingReview
+
+Tracks review decisions for public event listings.
+
+### ModerationDecision
+
+Stores admin action, reason, actor, target, and timestamp for auditability.
+
+Moderation concepts should be available before public profiles, matching, or organizer self-service listings are released.
+
+---
+
 # 12. Identity and User Boundary
 
 The domain should not tightly couple itself to a specific identity provider.
@@ -1444,6 +1643,20 @@ If you want to design broadly from the start, these are the most likely long-ter
 - Address
 - SupportResourceAddress
 - SupportResourceTag
+- ScenarioLesson
+- ScenarioStep
+- ScenarioPhrase
+- ScenarioVocabularyLink
+- EventListing
+- EventPreparationPack
+- OrganizerProfile
+- LearnerProfile
+- PartnerRequest
+- UserReport
+- UserBlock
+- OrganizerReview
+- ListingReview
+- ModerationDecision
 
 ---
 

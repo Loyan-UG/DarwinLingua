@@ -216,4 +216,4 @@ This phase adds scenario-based learning, conversation preparation, event discove
 ### Reference Documents
 
 - `63-Market-Product-And-Organizer-Strategy.md`
-- `64-Conversation-And-Organizer-Implementation-Backlog.md`
+- `04-Implementation-Backlog.md` (`Phase 6 Backlog`)

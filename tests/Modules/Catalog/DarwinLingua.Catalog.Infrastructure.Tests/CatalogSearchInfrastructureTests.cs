@@ -114,6 +114,48 @@ public sealed class CatalogSearchInfrastructureTests
     }
 
     /// <summary>
+    /// Verifies that browse/search summaries fall back to English when the requested primary meaning language is missing.
+    /// </summary>
+    [Fact]
+    public async Task SearchActiveByLemmaAsync_ShouldFallbackPrimaryMeaningToEnglish()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-catalog-search-fallback-{Guid.NewGuid():N}.db");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                dbContext.WordEntries.Add(CreateWord("Termin", "appointment"));
+                await dbContext.SaveChangesAsync(CancellationToken.None);
+            }
+
+            IWordEntryRepository repository = serviceProvider.GetRequiredService<IWordEntryRepository>();
+            IReadOnlyList<WordListItemModel> words = await repository.SearchActiveByLemmaAsync("termin", "fa", CancellationToken.None);
+
+            WordListItemModel word = Assert.Single(words);
+            Assert.Equal("appointment", word.PrimaryMeaning);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            TryDeleteFile(databasePath);
+        }
+    }
+
+    /// <summary>
     /// Verifies that inactive lexical entries are not materialized through the detail repository path.
     /// </summary>
     [Fact]

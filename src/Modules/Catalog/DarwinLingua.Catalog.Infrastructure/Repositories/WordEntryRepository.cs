@@ -15,6 +15,8 @@ namespace DarwinLingua.Catalog.Infrastructure.Repositories;
 internal sealed class WordEntryRepository : IWordEntryRepository
 {
     private const int SearchResultLimit = 50;
+    private static readonly LanguageCode EnglishFallbackLanguage = LanguageCode.From("en");
+
     private readonly IDbContextFactory<DarwinLinguaDbContext> _dbContextFactory;
 
     /// <summary>
@@ -382,12 +384,17 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .Select(sense => sense.SenseId)
             .ToArray();
 
+        LanguageCode[] candidateLanguageCodes = meaningLanguageCode == EnglishFallbackLanguage
+            ? [meaningLanguageCode]
+            : [meaningLanguageCode, EnglishFallbackLanguage];
+
         List<PrimaryMeaningTranslationRow> translations = await dbContext.SenseTranslations
             .AsNoTracking()
-            .Where(translation => translation.LanguageCode == meaningLanguageCode)
+            .Where(translation => candidateLanguageCodes.Contains(translation.LanguageCode))
             .Where(translation => primarySenseIds.Contains(translation.WordSenseId))
             .Select(translation => new PrimaryMeaningTranslationRow(
                 translation.WordSenseId,
+                translation.LanguageCode,
                 translation.TranslationText,
                 translation.IsPrimary))
             .ToListAsync(cancellationToken)
@@ -401,6 +408,7 @@ internal sealed class WordEntryRepository : IWordEntryRepository
                 sense => sense.SenseId,
                 (translation, sense) => new PrimaryMeaningRow(
                     sense.WordEntryId,
+                    translation.LanguageCode,
                     translation.TranslationText,
                     translation.IsPrimary))
             .ToList();
@@ -410,7 +418,8 @@ internal sealed class WordEntryRepository : IWordEntryRepository
             .ToDictionary(
                 group => group.Key,
                 group => group
-                    .OrderByDescending(row => row.IsPrimary)
+                    .OrderBy(row => row.LanguageCode == meaningLanguageCode ? 0 : 1)
+                    .ThenByDescending(row => row.IsPrimary)
                     .ThenBy(row => row.TranslationText, StringComparer.Ordinal)
                     .Select(row => row.TranslationText)
                     .FirstOrDefault());
@@ -428,7 +437,7 @@ internal sealed class WordEntryRepository : IWordEntryRepository
 
     private sealed record PrimarySenseRow(Guid SenseId, Guid WordEntryId);
 
-    private sealed record PrimaryMeaningTranslationRow(Guid WordSenseId, string TranslationText, bool IsPrimary);
+    private sealed record PrimaryMeaningTranslationRow(Guid WordSenseId, LanguageCode LanguageCode, string TranslationText, bool IsPrimary);
 
-    private sealed record PrimaryMeaningRow(Guid WordEntryId, string TranslationText, bool IsPrimary);
+    private sealed record PrimaryMeaningRow(Guid WordEntryId, LanguageCode LanguageCode, string TranslationText, bool IsPrimary);
 }
