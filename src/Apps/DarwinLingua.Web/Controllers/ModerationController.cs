@@ -9,6 +9,7 @@ namespace DarwinLingua.Web.Controllers;
 [Route("moderation")]
 public sealed class ModerationController(
     IWebCatalogApiClient catalogApiClient,
+    ICommunityNotificationEmailService notificationEmailService,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpPost("reports", Name = "Moderation_Report")]
@@ -35,6 +36,17 @@ public sealed class ModerationController(
                         input.Details),
                     cancellationToken)
                 .ConfigureAwait(false);
+            if (IsHighSeverityReason(input.Reason))
+            {
+                await notificationEmailService.SendAdminHighSeverityReportAsync(
+                        input.Reason,
+                        input.TargetType,
+                        input.TargetKey,
+                        ResolveCulture(),
+                        HttpContext.TraceIdentifier,
+                        cancellationToken)
+                    .ConfigureAwait(false);
+            }
 
             TempData["StatusMessage"] = "Report submitted for moderation review.";
             analyticsService?.Record(WebProductAnalyticsEvents.UserReported, $"target:{input.TargetType}");
@@ -85,4 +97,15 @@ public sealed class ModerationController(
 
     private string GetOwnerEmail() =>
         WebUserIdentity.GetRequiredEmail(User, "The authenticated learner does not have an email address.");
+
+    private string ResolveCulture() =>
+        Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()
+            ?.RequestCulture.UICulture.Name
+        ?? Request.Headers.AcceptLanguage.ToString()
+        ?? "en";
+
+    private static bool IsHighSeverityReason(string reason) =>
+        string.Equals(reason, "harassment", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(reason, "unsafe-contact", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(reason, "impersonation", StringComparison.OrdinalIgnoreCase);
 }

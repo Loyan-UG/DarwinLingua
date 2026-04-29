@@ -712,6 +712,17 @@ app.MapGet(
                 async () => await organizerClaimRequestService.GetRecentAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
+app.MapPost(
+    "/api/admin/catalog/organizer-claim-requests/{claimRequestId:guid}/status",
+    async (
+        Guid claimRequestId,
+        OrganizerClaimDecisionRequest request,
+        IOrganizerClaimRequestService organizerClaimRequestService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await organizerClaimRequestService.SetStatusAsync(claimRequestId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
 app.MapGet(
     "/api/admin/catalog/organizer-profile-owners",
     async (IOrganizerProfileOwnerService organizerProfileOwnerService, CancellationToken cancellationToken) =>

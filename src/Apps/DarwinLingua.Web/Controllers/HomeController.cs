@@ -31,6 +31,12 @@ public class HomeController(
         return View();
     }
 
+    [HttpGet("privacy", Name = "Home_Privacy")]
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+
     [HttpGet("error", Name = "Home_Error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

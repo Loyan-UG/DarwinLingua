@@ -10,6 +10,7 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class ConversationEventsController(
     IWebCatalogApiClient catalogApiClient,
     IWebEntitledFeatureAccessService featureAccessService,
+    ICommunityNotificationEmailService notificationEmailService,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "ConversationEvents_Index")]
@@ -115,6 +116,17 @@ public sealed class ConversationEventsController(
                     new SubmitEventRsvpRequest(input.ParticipantName, input.ParticipantEmail, input.Status),
                     cancellationToken)
                 .ConfigureAwait(false);
+            ConversationEventDetailModel? conversationEvent = await catalogApiClient
+                .GetConversationEventBySlugAsync(slug, cancellationToken)
+                .ConfigureAwait(false);
+            await notificationEmailService.SendEventRsvpConfirmationAsync(
+                    rsvp.ParticipantEmail,
+                    conversationEvent?.Name ?? slug,
+                    rsvp.Status,
+                    ResolveCulture(),
+                    HttpContext.TraceIdentifier,
+                    cancellationToken)
+                .ConfigureAwait(false);
 
             TempData["StatusMessage"] = $"RSVP saved as {rsvp.Status}.";
             analyticsService?.Record(WebProductAnalyticsEvents.EventRsvpSubmitted, $"event:{slug}:{rsvp.Status}");
@@ -126,4 +138,10 @@ public sealed class ConversationEventsController(
 
         return RedirectToAction(nameof(Detail), new { slug });
     }
+
+    private string ResolveCulture() =>
+        Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()
+            ?.RequestCulture.UICulture.Name
+        ?? Request.Headers.AcceptLanguage.ToString()
+        ?? "en";
 }

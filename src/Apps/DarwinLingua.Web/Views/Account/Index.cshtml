@@ -20,6 +20,7 @@
         <a class="button button--primary" asp-controller="Settings" asp-action="Index">Preferences</a>
         <a class="button button--secondary" asp-controller="LearnerConversationProfiles" asp-action="Edit">Learner profile</a>
         <a class="button button--secondary" asp-controller="PartnerMatching" asp-action="Index">Partners</a>
+        <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Manage/Email">Change email</a>
         <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Manage/Index">Manage account</a>
         <form method="post" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" class="inline-form">
             @Html.AntiForgeryToken()

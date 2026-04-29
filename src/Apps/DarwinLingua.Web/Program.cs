@@ -35,8 +35,27 @@ builder.Services.AddOutputCache(options =>
 builder.Services.Configure<MemoryCacheOptions>(options => options.SizeLimit = 512);
 builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
 builder.Services.Configure<DarwinLinguaEntitlementOptions>(builder.Configuration.GetSection("Entitlements"));
+builder.Services.AddOptions<TransactionalEmailOptions>()
+    .Bind(builder.Configuration.GetSection(TransactionalEmailOptions.SectionName))
+    .ValidateOnStart();
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaIdentityBootstrapOptions>, DarwinLinguaIdentityBootstrapOptionsPostConfigure>();
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaEntitlementOptions>, DarwinLinguaEntitlementOptionsPostConfigure>();
+builder.Services.AddSingleton<Microsoft.Extensions.Options.IValidateOptions<TransactionalEmailOptions>, TransactionalEmailOptionsValidator>();
+builder.Services.Configure<EmailConfirmationTokenProviderOptions>(options =>
+{
+    int hours = builder.Configuration.GetValue("TransactionalEmail:EmailConfirmationTokenHours", 24);
+    options.TokenLifespan = TimeSpan.FromHours(hours);
+});
+builder.Services.Configure<PasswordResetTokenProviderOptions>(options =>
+{
+    int minutes = builder.Configuration.GetValue("TransactionalEmail:PasswordResetTokenMinutes", 60);
+    options.TokenLifespan = TimeSpan.FromMinutes(minutes);
+});
+builder.Services.Configure<EmailChangeTokenProviderOptions>(options =>
+{
+    int minutes = builder.Configuration.GetValue("TransactionalEmail:EmailChangeTokenMinutes", 60);
+    options.TokenLifespan = TimeSpan.FromMinutes(minutes);
+});
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
 builder.Services.AddScoped<IWebActivityQueryService, WebActivityQueryService>();
@@ -49,6 +68,12 @@ builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();
 builder.Services.AddScoped<IWebUserStateDatabaseBootstrapper, WebUserStateDatabaseBootstrapper>();
 builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebIdentityDbContext>>();
 builder.Services.AddScoped<IUserEntitlementService, UserEntitlementService<WebIdentityDbContext>>();
+builder.Services.AddScoped<IEmailTemplateRenderer, TransactionalEmailTemplateRenderer>();
+builder.Services.AddScoped<ITransactionalEmailSender, TransactionalEmailSender>();
+builder.Services.AddScoped<IEmailDeliveryLogRepository, EmailDeliveryLogRepository>();
+builder.Services.AddScoped<IAccountEmailService, AccountEmailService>();
+builder.Services.AddScoped<ICommunityNotificationEmailService, CommunityNotificationEmailService>();
+builder.Services.AddSingleton<IAccountEmailRateLimiter, AccountEmailRateLimiter>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
 string? webIdentityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")
     ?? builder.Configuration.GetConnectionString("Identity")
@@ -79,15 +104,21 @@ builder.Services
 builder.Services
     .AddDefaultIdentity<DarwinLinguaIdentityUser>(options =>
     {
-        options.SignIn.RequireConfirmedAccount = false;
+        options.SignIn.RequireConfirmedAccount = true;
         options.Password.RequireDigit = true;
         options.Password.RequireLowercase = true;
         options.Password.RequireUppercase = true;
         options.Password.RequiredLength = 8;
+        options.Tokens.EmailConfirmationTokenProvider = DarwinLinguaIdentityTokenProviders.EmailConfirmation;
+        options.Tokens.PasswordResetTokenProvider = DarwinLinguaIdentityTokenProviders.PasswordReset;
+        options.Tokens.ChangeEmailTokenProvider = DarwinLinguaIdentityTokenProviders.EmailChange;
     })
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<WebIdentityDbContext>()
     .AddDefaultTokenProviders()
+    .AddTokenProvider<EmailConfirmationTokenProvider>(DarwinLinguaIdentityTokenProviders.EmailConfirmation)
+    .AddTokenProvider<PasswordResetTokenProvider>(DarwinLinguaIdentityTokenProviders.PasswordReset)
+    .AddTokenProvider<EmailChangeTokenProvider>(DarwinLinguaIdentityTokenProviders.EmailChange)
     .AddDefaultUI();
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<DarwinLinguaIdentityUser>, DefaultLearnerRoleClaimsPrincipalFactory>();
 

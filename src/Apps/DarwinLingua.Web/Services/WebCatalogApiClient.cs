@@ -242,6 +242,12 @@ public interface IWebCatalogApiClient
     Task<IReadOnlyList<OrganizerClaimRequestModel>> GetAdminOrganizerClaimRequestsAsync(CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
+    Task<OrganizerClaimRequestModel> SetAdminOrganizerClaimRequestStatusAsync(
+        Guid claimRequestId,
+        OrganizerClaimDecisionRequest request,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
     Task<IReadOnlyList<OrganizerProfileOwnerModel>> GetAdminOrganizerProfileOwnersAsync(CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
@@ -755,6 +761,15 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
             "/api/admin/catalog/organizer-claim-requests",
             cancellationToken);
 
+    public Task<OrganizerClaimRequestModel> SetAdminOrganizerClaimRequestStatusAsync(
+        Guid claimRequestId,
+        OrganizerClaimDecisionRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<OrganizerClaimDecisionRequest, OrganizerClaimRequestModel>(
+            $"/api/admin/catalog/organizer-claim-requests/{claimRequestId:D}/status",
+            request,
+            cancellationToken);
+
     public Task<IReadOnlyList<OrganizerProfileOwnerModel>> GetAdminOrganizerProfileOwnersAsync(CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<OrganizerProfileOwnerModel>>(
             "/api/admin/catalog/organizer-profile-owners",
@@ -1134,7 +1149,11 @@ public sealed record OrganizerClaimRequestModel(
     string RelationshipToOrganizer,
     string EvidenceText,
     string Status,
-    DateTime CreatedAtUtc);
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc);
+
+public sealed record OrganizerClaimDecisionRequest(
+    string Status);
 
 public sealed record AssignOrganizerProfileOwnerRequest(
     string OrganizerProfileSlug,

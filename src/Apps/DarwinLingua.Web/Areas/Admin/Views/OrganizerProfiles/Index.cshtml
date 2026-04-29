@@ -148,6 +148,7 @@
                     <th>Relationship</th>
                     <th>Status</th>
                     <th>Submitted</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -165,6 +166,32 @@
                         <td>@item.RelationshipToOrganizer</td>
                         <td>@item.Status</td>
                         <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                        <td>
+                            <div class="action-row">
+                                @if (item.Status is "submitted" or "reviewing")
+                                {
+                                    <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="Status" value="reviewing" />
+                                        <button type="submit" class="button button--secondary">Reviewing</button>
+                                    </form>
+                                    <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="Status" value="approved" />
+                                        <button type="submit" class="button button--primary">Approve</button>
+                                    </form>
+                                    <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="Status" value="rejected" />
+                                        <button type="submit" class="button button--secondary">Reject</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <span>Decision sent</span>
+                                }
+                            </div>
+                        </td>
                     </tr>
                 }
             </tbody>

@@ -8,6 +8,7 @@ namespace DarwinLingua.Web.Controllers;
 [Route("organizers")]
 public sealed class OrganizerProfilesController(
     IWebCatalogApiClient catalogApiClient,
+    ICommunityNotificationEmailService notificationEmailService,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "OrganizerProfiles_Index")]
@@ -88,6 +89,21 @@ public sealed class OrganizerProfilesController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
+            await notificationEmailService.SendOrganizerClaimSubmittedAsync(
+                    input.RequesterEmail,
+                    profile.DisplayName,
+                    ResolveCulture(),
+                    HttpContext.TraceIdentifier,
+                    cancellationToken)
+                .ConfigureAwait(false);
+            await notificationEmailService.SendAdminNewOrganizerClaimAsync(
+                    profile.DisplayName,
+                    input.RequesterName,
+                    ResolveCulture(),
+                    HttpContext.TraceIdentifier,
+                    cancellationToken)
+                .ConfigureAwait(false);
+
             TempData["StatusMessage"] = "Claim request submitted for review.";
             return RedirectToAction(nameof(Detail), new { slug });
         }
@@ -106,4 +122,10 @@ public sealed class OrganizerProfilesController(
             TempData["StatusMessage"] as string,
             TempData["ErrorMessage"] as string));
     }
+
+    private string ResolveCulture() =>
+        Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()
+            ?.RequestCulture.UICulture.Name
+        ?? Request.Headers.AcceptLanguage.ToString()
+        ?? "en";
 }

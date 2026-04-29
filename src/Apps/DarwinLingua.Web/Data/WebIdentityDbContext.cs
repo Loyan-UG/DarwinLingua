@@ -13,6 +13,8 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
 
     public DbSet<WebUserWordState> UserWordStates => Set<WebUserWordState>();
 
+    public DbSet<WebEmailDeliveryLog> EmailDeliveryLogs => Set<WebEmailDeliveryLog>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
@@ -45,6 +47,26 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
             entity.Property(wordState => wordState.ActorId).HasMaxLength(128).IsRequired();
             entity.HasIndex(wordState => new { wordState.ActorId, wordState.WordPublicId }).IsUnique();
             entity.HasIndex(wordState => new { wordState.ActorId, wordState.LastViewedAtUtc });
+        });
+
+        builder.Entity<WebEmailDeliveryLog>(entity =>
+        {
+            entity.ToTable("WebEmailDeliveryLogs");
+            entity.HasKey(log => log.Id);
+            entity.Property(log => log.ScenarioKey).HasMaxLength(128).IsRequired();
+            entity.Property(log => log.RecipientEmailHash).HasMaxLength(128).IsRequired();
+            entity.Property(log => log.RecipientUserId).HasMaxLength(450);
+            entity.Property(log => log.TemplateKey).HasMaxLength(128).IsRequired();
+            entity.Property(log => log.Culture).HasMaxLength(16).IsRequired();
+            entity.Property(log => log.Subject).HasMaxLength(256).IsRequired();
+            entity.Property(log => log.ProviderName).HasMaxLength(64).IsRequired();
+            entity.Property(log => log.ProviderMessageId).HasMaxLength(256);
+            entity.Property(log => log.Status).HasConversion<string>().HasMaxLength(32).IsRequired();
+            entity.Property(log => log.FailureCode).HasMaxLength(128);
+            entity.Property(log => log.FailureMessageSummary).HasMaxLength(512);
+            entity.Property(log => log.CorrelationId).HasMaxLength(128);
+            entity.HasIndex(log => new { log.CreatedAtUtc, log.Status });
+            entity.HasIndex(log => new { log.ScenarioKey, log.CreatedAtUtc });
         });
     }
 }

@@ -1,0 +1,106 @@
+@model DarwinLingua.Web.Models.AdminEmailDiagnosticsPageViewModel
+@{
+    ViewData["Title"] = "Email diagnostics";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Diagnostics</span>
+    <h1 class="headline-md">Transactional email delivery</h1>
+    <p class="body-lg">Recent account email delivery attempts are listed without reset tokens, confirmation tokens, or full recovery URLs.</p>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <form method="get" class="filter-bar">
+        <label>
+            Status
+            <select name="status">
+                <option value="">All</option>
+                @foreach (string status in new[] { "Queued", "Sent", "Failed", "Skipped", "Suppressed" })
+                {
+                    <option value="@status" selected="@(string.Equals(Model.Status, status, StringComparison.OrdinalIgnoreCase))">@status</option>
+                }
+            </select>
+        </label>
+        <label>
+            Scenario
+            <input name="scenario" value="@Model.Scenario" placeholder="Account.PasswordReset" />
+        </label>
+        <label>
+            From UTC
+            <input name="fromUtc" value="@Model.FromUtc" placeholder="2026-04-29T00:00:00Z" />
+        </label>
+        <label>
+            To UTC
+            <input name="toUtc" value="@Model.ToUtc" placeholder="2026-04-30T00:00:00Z" />
+        </label>
+        <label>
+            Recipient hash prefix
+            <input name="recipientHashPrefix" value="@Model.RecipientHashPrefix" placeholder="A1B2C3" />
+        </label>
+        <label>
+            Limit
+            <input name="take" value="@Model.Take" type="number" min="1" max="200" />
+        </label>
+        <button type="submit" class="button button--primary">Filter</button>
+        <a class="button button--secondary" asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">Clear</a>
+    </form>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Retention</h2>
+    <p class="body-sm">Delivery logs are retained for @Model.RetentionDays days. Cleanup removes only entries older than that retention window.</p>
+    <form method="post" asp-action="Cleanup" class="inline-form">
+        @Html.AntiForgeryToken()
+        <button type="submit" class="button button--secondary">Clean up old delivery logs</button>
+    </form>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Recent delivery attempts</h2>
+    @if (Model.Logs.Count == 0)
+    {
+        <p class="body-sm">No transactional email delivery attempts have been recorded yet.</p>
+    }
+    else
+    {
+        <div class="table-scroll">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Created</th>
+                        <th>Status</th>
+                        <th>Scenario</th>
+                        <th>Culture</th>
+                        <th>Provider</th>
+                        <th>Recipient hash</th>
+                        <th>Subject</th>
+                        <th>Failure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var log in Model.Logs)
+                    {
+                        <tr>
+                            <td>@log.CreatedAtUtc.UtcDateTime.ToString("u")</td>
+                            <td>@log.Status</td>
+                            <td>@log.ScenarioKey</td>
+                            <td>@log.Culture</td>
+                            <td>@log.ProviderName</td>
+                            <td><code>@log.RecipientEmailHash[..Math.Min(12, log.RecipientEmailHash.Length)]</code></td>
+                            <td>@log.Subject</td>
+                            <td>@(log.FailureCode ?? "none")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

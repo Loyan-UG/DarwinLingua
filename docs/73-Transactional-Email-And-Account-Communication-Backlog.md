@@ -108,12 +108,12 @@ Email flows must feel reliable, clear, and safe. A learner should never be stuck
 
 ### Account Lifecycle Emails
 
-- [ ] registration email confirmation
-- [ ] resend email confirmation
-- [ ] password reset request
-- [ ] password reset success notification
-- [ ] email address change confirmation for the new address
-- [ ] email address changed notification to the old address
+- [x] registration email confirmation
+- [x] resend email confirmation
+- [x] password reset request
+- [x] password reset success notification
+- [x] email address change confirmation for the new address
+- [x] email address changed notification to the old address
 - [ ] account locked or suspicious login notification if lockout is enabled
 - [ ] account deleted/deactivated confirmation if account deletion exists
 
@@ -126,20 +126,20 @@ Email flows must feel reliable, clear, and safe. A learner should never be stuck
 
 ### Organizer and Community Emails
 
-- [ ] organizer claim submitted notification to the claimant
-- [ ] organizer claim approved notification
-- [ ] organizer claim rejected notification
+- [x] organizer claim submitted notification to the claimant
+- [x] organizer claim approved notification
+- [x] organizer claim rejected notification
 - [ ] organizer profile ownership changed notification
-- [ ] event RSVP confirmation notification if RSVP is enabled
+- [x] event RSVP confirmation notification if RSVP is enabled
 - [ ] event cancellation/update notification if event management is enabled
 - [ ] partner request received notification if matching is enabled
-- [ ] partner request accepted notification if matching is enabled
+- [x] partner request accepted notification if matching is enabled
 - [ ] moderation/report outcome notification where appropriate
 
 ### Admin/Operator Emails
 
-- [ ] new organizer claim admin notification
-- [ ] high-severity user report admin notification
+- [x] new organizer claim admin notification
+- [x] high-severity user report admin notification
 - [ ] repeated email delivery failure admin notification
 - [ ] publish/import failure admin notification placeholder if useful
 - [ ] payment/subscription failure admin notification placeholder if payment is added later
@@ -154,16 +154,16 @@ Transactional email must be provider-independent and testable. Do not couple bus
 
 ### Required Abstractions
 
-- [ ] define `IEmailSender` or equivalent application abstraction
-- [ ] define `IEmailTemplateRenderer` or equivalent template abstraction
-- [ ] define `IEmailMessageFactory` or equivalent scenario-specific message factory
-- [ ] define `IEmailDeliveryLogRepository` or equivalent persistence boundary
-- [ ] define email provider options and validation
-- [ ] define environment-specific behavior for development, staging, and production
+- [x] define `IEmailSender` or equivalent application abstraction
+- [x] define `IEmailTemplateRenderer` or equivalent template abstraction
+- [x] define `IEmailMessageFactory` or equivalent scenario-specific message factory
+- [x] define `IEmailDeliveryLogRepository` or equivalent persistence boundary
+- [x] define email provider options and validation
+- [x] define environment-specific behavior for development, staging, and production
 - [ ] define background sending boundary if synchronous sending becomes unreliable
 - [ ] define retry policy and non-retryable failure handling
-- [ ] define cancellation-token support for all email operations
-- [ ] define correlation/request id storage for diagnostics
+- [x] define cancellation-token support for all email operations
+- [x] define correlation/request id storage for diagnostics
 
 ### Provider Strategy
 
@@ -207,15 +207,15 @@ Suggested fields:
 
 ### Backlog
 
-- [ ] define email delivery status enum
-- [ ] define email scenario keys
-- [ ] define email delivery log entity
-- [ ] define EF Core mapping and migration
-- [ ] define retention policy for delivery logs
-- [ ] avoid storing sensitive token values in logs
-- [ ] avoid logging full reset/confirmation URLs
-- [ ] define cleanup job or manual cleanup endpoint for old logs
-- [ ] add admin diagnostics page for recent email delivery status
+- [x] define email delivery status enum
+- [x] define email scenario keys
+- [x] define email delivery log entity
+- [-] define EF Core mapping and migration
+- [x] define retention policy for delivery logs
+- [x] avoid storing sensitive token values in logs
+- [x] avoid logging full reset/confirmation URLs
+- [x] define cleanup job or manual cleanup endpoint for old logs
+- [x] add admin diagnostics page for recent email delivery status
 
 ---
 
@@ -227,16 +227,16 @@ Email tokens are security-sensitive. They must be short-lived, single-purpose, a
 
 ### Backlog
 
-- [ ] use ASP.NET Core Identity token providers for confirmation and password reset unless a stronger reason exists
-- [ ] configure token lifetimes explicitly
-- [ ] define token lifetime for email confirmation
-- [ ] define token lifetime for password reset
-- [ ] define token lifetime for email change
-- [ ] ensure tokens are URL-safe and encoded correctly
-- [ ] ensure reset/confirmation URLs are generated from configured public base URL, not from unsafe request headers alone
-- [ ] protect against user enumeration in reset and resend flows
-- [ ] rate-limit password reset requests
-- [ ] rate-limit confirmation resend requests
+- [x] use ASP.NET Core Identity token providers for confirmation and password reset unless a stronger reason exists
+- [x] configure token lifetimes explicitly
+- [x] define token lifetime for email confirmation
+- [x] define token lifetime for password reset
+- [x] define token lifetime for email change
+- [x] ensure tokens are URL-safe and encoded correctly
+- [x] ensure reset/confirmation URLs are generated from configured public base URL, not from unsafe request headers alone
+- [x] protect against user enumeration in reset and resend flows
+- [x] rate-limit password reset requests
+- [x] rate-limit confirmation resend requests
 - [ ] invalidate or make old flows harmless after email/password changes where applicable
 - [ ] add tests for expired, invalid, reused, malformed, and wrong-purpose tokens
 
@@ -269,30 +269,30 @@ Later, email body content may support the user's selected UI language and possib
 
 ### Template Requirements
 
-- [ ] define template keys for every transactional scenario
-- [ ] implement localized subject lines
-- [ ] implement localized plain-text bodies
-- [ ] implement localized HTML bodies if HTML email is used
-- [ ] keep templates outside controllers and handlers
-- [ ] include product name and support contact
-- [ ] include clear expiration text for token emails
-- [ ] include fallback copyable URL when using button-style HTML emails
-- [ ] avoid unnecessary personal data in email bodies
+- [-] define template keys for every transactional scenario
+- [x] implement localized subject lines
+- [x] implement localized plain-text bodies
+- [x] implement localized HTML bodies if HTML email is used
+- [x] keep templates outside controllers and handlers
+- [x] include product name and support contact
+- [x] include clear expiration text for token emails
+- [x] include fallback copyable URL when using button-style HTML emails
+- [x] avoid unnecessary personal data in email bodies
 - [ ] test missing-localization fallback behavior
 - [ ] add template rendering tests for English and German
 
 ### Minimum Templates For Release
 
-- [ ] `Account.EmailConfirmation`
-- [ ] `Account.PasswordReset`
-- [ ] `Account.PasswordResetCompleted`
-- [ ] `Account.EmailChangeConfirmation`
-- [ ] `Account.EmailChangedNotification`
-- [ ] `Organizer.ClaimSubmitted`
-- [ ] `Organizer.ClaimApproved`
-- [ ] `Organizer.ClaimRejected`
-- [ ] `Admin.NewOrganizerClaim`
-- [ ] `Moderation.HighSeverityReport`
+- [x] `Account.EmailConfirmation`
+- [x] `Account.PasswordReset`
+- [x] `Account.PasswordResetCompleted`
+- [x] `Account.EmailChangeConfirmation`
+- [x] `Account.EmailChangedNotification`
+- [x] `Organizer.ClaimSubmitted`
+- [x] `Organizer.ClaimApproved`
+- [x] `Organizer.ClaimRejected`
+- [x] `Admin.NewOrganizerClaim`
+- [x] `Moderation.HighSeverityReport`
 
 ---
 
@@ -300,31 +300,31 @@ Later, email body content may support the user's selected UI language and possib
 
 ### Registration and Confirmation
 
-- [ ] send confirmation email immediately after successful registration
-- [ ] show a `Check your email` page after registration
-- [ ] add `Resend confirmation email` page/action
-- [ ] add confirmation callback endpoint/page
-- [ ] show success page after valid confirmation
-- [ ] show expired/invalid token page with resend option
-- [ ] block or limit protected features for unconfirmed users according to product policy
+- [x] send confirmation email immediately after successful registration
+- [x] show a `Check your email` page after registration
+- [x] add `Resend confirmation email` page/action
+- [x] add confirmation callback endpoint/page
+- [x] show success page after valid confirmation
+- [x] show expired/invalid token page with resend option
+- [x] block or limit protected features for unconfirmed users according to product policy
 - [ ] add tests for confirmed and unconfirmed login behavior
 
 ### Password Reset
 
-- [ ] add `Forgot password` page
-- [ ] add password reset request handler
-- [ ] send password reset email with neutral success response
-- [ ] add reset password page
-- [ ] validate reset token and update password
-- [ ] send password reset success notification
-- [ ] show success page after reset
+- [x] add `Forgot password` page
+- [x] add password reset request handler
+- [x] send password reset email with neutral success response
+- [x] add reset password page
+- [x] validate reset token and update password
+- [x] send password reset success notification
+- [x] show success page after reset
 - [ ] add tests for non-existing email, invalid token, expired token, and successful reset
 
 ### Email Change
 
-- [ ] add change-email screen if account profile editing exists
-- [ ] send confirmation to new email address
-- [ ] notify old email address after successful change
+- [x] add change-email screen if account profile editing exists
+- [x] send confirmation to new email address
+- [x] notify old email address after successful change
 - [ ] require re-authentication for email change if necessary
 - [ ] add tests for change-email token validation and old-email notification
 
@@ -357,22 +357,22 @@ For the first release, use web-hosted confirmation and password-reset pages from
 
 ### Admin Email Diagnostics
 
-- [ ] add admin page for recent transactional email deliveries
-- [ ] filter by status, scenario, date range, and recipient/user where privacy policy allows
-- [ ] show provider message id when available
-- [ ] show safe failure summary without leaking tokens or sensitive URLs
+- [x] add admin page for recent transactional email deliveries
+- [x] filter by status, scenario, date range, and recipient/user where privacy policy allows
+- [x] show provider message id when available
+- [x] show safe failure summary without leaking tokens or sensitive URLs
 - [ ] allow manual resend for safe scenarios such as confirmation email
 - [ ] do not allow manual resend of expired reset tokens; generate a new token instead
 
 ### Operational Configuration
 
-- [ ] add production email provider settings
-- [ ] add staging email provider settings
-- [ ] add local development email sink settings
-- [ ] validate required email settings at startup in production
-- [ ] document DNS requirements: SPF, DKIM, DMARC, bounce handling
-- [ ] document sender identity: from address, reply-to address, support address
-- [ ] document provider limits and cost assumptions
+- [x] add production email provider settings
+- [x] add staging email provider settings
+- [x] add local development email sink settings
+- [x] validate required email settings at startup in production
+- [x] document DNS requirements: SPF, DKIM, DMARC, bounce handling
+- [x] document sender identity: from address, reply-to address, support address
+- [x] document provider limits and cost assumptions
 
 ---
 
@@ -380,15 +380,15 @@ For the first release, use web-hosted confirmation and password-reset pages from
 
 ### Required Pages
 
-- [ ] registration success / check email
-- [ ] confirmation success
-- [ ] confirmation failed or expired
-- [ ] resend confirmation
-- [ ] forgot password
-- [ ] reset password
-- [ ] reset password success
-- [ ] change email confirmation sent
-- [ ] email changed success
+- [x] registration success / check email
+- [x] confirmation success
+- [x] confirmation failed or expired
+- [x] resend confirmation
+- [x] forgot password
+- [x] reset password
+- [x] reset password success
+- [x] change email confirmation sent
+- [x] email changed success
 - [ ] unconfirmed account gate page
 
 ### UX Rules
@@ -443,15 +443,15 @@ For the first release, use web-hosted confirmation and password-reset pages from
 
 ## 12. Security, Privacy, and Compliance Checklist
 
-- [ ] no reset or confirmation token is logged
-- [ ] no full magic link is logged
-- [ ] reset and resend endpoints are rate-limited
-- [ ] password reset response is account-enumeration safe
-- [ ] email confirmation resend response is account-enumeration safe where applicable
-- [ ] email delivery logs have a retention policy
-- [ ] unsubscribe links are not required for transactional security emails, but marketing emails must not be mixed into this channel
-- [ ] privacy policy mentions transactional emails and provider processing where required
-- [ ] data processing agreement with production email provider is reviewed before launch
+- [x] no reset or confirmation token is logged
+- [x] no full magic link is logged
+- [x] reset and resend endpoints are rate-limited
+- [x] password reset response is account-enumeration safe
+- [x] email confirmation resend response is account-enumeration safe where applicable
+- [x] email delivery logs have a retention policy
+- [x] unsubscribe links are not required for transactional security emails, but marketing emails must not be mixed into this channel
+- [x] privacy policy mentions transactional emails and provider processing where required
+- [-] data processing agreement with production email provider is reviewed before launch
 - [ ] sender domain is verified with SPF, DKIM, and DMARC before production release
 
 ---

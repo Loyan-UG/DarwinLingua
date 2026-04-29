@@ -14,4 +14,8 @@ public sealed record OrganizerClaimRequestResponse(
     string RelationshipToOrganizer,
     string EvidenceText,
     string Status,
-    DateTime CreatedAtUtc);
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc);
+
+public sealed record OrganizerClaimDecisionRequest(
+    string Status);

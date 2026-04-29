@@ -52,6 +52,12 @@ public sealed class OrganizerClaimRequest
 
     public DateTime UpdatedAtUtc { get; private set; }
 
+    public void SetStatus(string status, DateTime updatedAtUtc)
+    {
+        Status = NormalizeStatus(status);
+        UpdatedAtUtc = ConversationEvent.NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     public static string NormalizeStatus(string status)
     {
         string normalized = ConversationEvent.NormalizeKey(status, "Organizer claim status");

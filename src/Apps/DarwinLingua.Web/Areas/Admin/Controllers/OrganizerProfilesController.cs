@@ -9,7 +9,9 @@ namespace DarwinLingua.Web.Areas.Admin.Controllers;
 [Area("Admin")]
 [Authorize(Policy = "Operator")]
 [Route("admin/organizer-profiles")]
-public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiClient) : Controller
+public sealed class OrganizerProfilesController(
+    IWebCatalogApiClient catalogApiClient,
+    ICommunityNotificationEmailService notificationEmailService) : Controller
 {
     [HttpGet("", Name = "Admin_OrganizerProfiles")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
@@ -115,6 +117,55 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
         }
     }
 
+    [HttpPost("claims/{claimRequestId:guid}/status", Name = "Admin_OrganizerProfiles_SetClaimStatus")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> SetClaimStatus(
+        Guid claimRequestId,
+        AdminOrganizerClaimDecisionInputModel input,
+        CancellationToken cancellationToken)
+    {
+        if (!ModelState.IsValid)
+        {
+            TempData["ErrorMessage"] = "Required claim decision fields are missing.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        try
+        {
+            OrganizerClaimRequestModel claimRequest = await catalogApiClient
+                .SetAdminOrganizerClaimRequestStatusAsync(
+                    claimRequestId,
+                    new OrganizerClaimDecisionRequest(input.Status),
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            if (string.Equals(claimRequest.Status, "approved", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(claimRequest.Status, "rejected", StringComparison.OrdinalIgnoreCase))
+            {
+                OrganizerProfileListItemModel? profile = (await catalogApiClient
+                        .GetOrganizerProfilesAsync(cancellationToken)
+                        .ConfigureAwait(false))
+                    .FirstOrDefault(profile => string.Equals(profile.Slug, claimRequest.OrganizerProfileSlug, StringComparison.OrdinalIgnoreCase));
+                await notificationEmailService.SendOrganizerClaimDecisionAsync(
+                        claimRequest.RequesterEmail,
+                        profile?.DisplayName ?? claimRequest.OrganizerProfileSlug,
+                        claimRequest.Status,
+                        ResolveCulture(),
+                        HttpContext.TraceIdentifier,
+                        cancellationToken)
+                    .ConfigureAwait(false);
+            }
+
+            TempData["StatusMessage"] = $"Claim request marked {claimRequest.Status}.";
+            return RedirectToAction(nameof(Index));
+        }
+        catch (InvalidOperationException exception)
+        {
+            TempData["ErrorMessage"] = exception.Message;
+            return RedirectToAction(nameof(Index));
+        }
+    }
+
     private async Task<AdminOrganizerProfilesPageViewModel> BuildViewModelAsync(
         AdminOrganizerProfileInputModel input,
         AdminOrganizerProfileOwnerInputModel ownerInput,
@@ -142,4 +193,10 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
         string.IsNullOrWhiteSpace(value)
             ? []
             : value.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+    private string ResolveCulture() =>
+        Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()
+            ?.RequestCulture.UICulture.Name
+        ?? Request.Headers.AcceptLanguage.ToString()
+        ?? "en";
 }

@@ -25,6 +25,9 @@ Prioritize visibility into:
 - htmx POST failures for learner state changes
 - service worker registration or manifest delivery failures
 - admin-route authorization failures after Identity is added
+- transactional email delivery failures
+- repeated SMTP/provider failures
+- unusually high password-reset or resend-confirmation volume
 
 ---
 
@@ -68,6 +71,31 @@ This telemetry should stay proportional and privacy-aware. Avoid collecting unne
 
 ---
 
+## Transactional Email Operations
+
+Operational rules:
+
+- Use the local file sink only for development.
+- Use SMTP mode for staging and production.
+- Keep SMTP credentials in platform secret storage, not repository-tracked files.
+- Keep `TransactionalEmail:PublicBaseUrl` aligned with the public HTTPS origin for each environment.
+- Review `admin/email-diagnostics` during account-flow validation and after provider incidents.
+- Treat repeated `Failed` delivery logs as an operational incident when account recovery is affected.
+- Use the diagnostics cleanup action to remove logs older than `TransactionalEmail:DeliveryLogRetentionDays`.
+- Do not mix marketing email with transactional account email.
+
+Provider readiness checklist:
+
+- sender domain SPF verified
+- sender domain DKIM verified
+- sender domain DMARC configured
+- bounce/return-path handling configured
+- provider rate limits reviewed
+- provider cost assumptions reviewed
+- provider processing/DPA reviewed before production launch
+
+---
+
 ## Incident Triage Checklist
 
 When the web host misbehaves:
@@ -78,3 +106,5 @@ When the web host misbehaves:
 4. confirm CSP/security headers are not blocking first-party assets
 5. confirm static asset versions match the deployed build
 6. confirm service worker cache is not serving stale shell assets
+7. confirm transactional email diagnostics for `Failed` or repeated `Queued` delivery attempts
+8. confirm SMTP/provider credentials and sender-domain DNS when account recovery emails fail

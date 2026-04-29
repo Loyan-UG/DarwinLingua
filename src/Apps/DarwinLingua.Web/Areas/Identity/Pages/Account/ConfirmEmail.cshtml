@@ -1,0 +1,27 @@
+@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = Model.Succeeded ? "Email confirmed" : "Email confirmation failed";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Account email</span>
+    @if (Model.Succeeded)
+    {
+        <h1 class="headline-md">Email confirmed</h1>
+        <p class="body-lg">Your Darwin Lingua account is ready to use.</p>
+        <div class="action-row">
+            <a class="button button--primary" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+            <a class="button button--secondary" asp-area="" asp-controller="Browse" asp-action="Index">Browse</a>
+        </div>
+    }
+    else
+    {
+        <h1 class="headline-md">This confirmation link cannot be used</h1>
+        <p class="body-lg">The link may be expired, already used, or malformed.</p>
+        <div class="action-row">
+            <a class="button button--primary" asp-area="Identity" asp-page="/Account/ResendEmailConfirmation">Send a new link</a>
+            <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+        </div>
+    }
+</section>

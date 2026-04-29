@@ -71,6 +71,39 @@ public sealed class OrganizerClaimRequestService(IDbContextFactory<DarwinLinguaD
         return claimRequests.Select(CreateResponse).ToArray();
     }
 
+    public async Task<OrganizerClaimRequestResponse> SetStatusAsync(
+        Guid claimRequestId,
+        OrganizerClaimDecisionRequest request,
+        CancellationToken cancellationToken)
+    {
+        if (claimRequestId == Guid.Empty)
+        {
+            throw new InvalidOperationException("Organizer claim request identifier cannot be empty.");
+        }
+
+        ArgumentNullException.ThrowIfNull(request);
+
+        try
+        {
+            await using DarwinLinguaDbContext dbContext = await dbContextFactory
+                .CreateDbContextAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            OrganizerClaimRequest claimRequest = await dbContext.OrganizerClaimRequests
+                .SingleOrDefaultAsync(item => item.Id == claimRequestId, cancellationToken)
+                .ConfigureAwait(false)
+                ?? throw new KeyNotFoundException("The selected organizer claim request could not be found.");
+
+            claimRequest.SetStatus(request.Status, DateTime.UtcNow);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            return CreateResponse(claimRequest);
+        }
+        catch (DomainRuleException exception)
+        {
+            throw new InvalidOperationException(exception.Message, exception);
+        }
+    }
+
     private static OrganizerClaimRequestResponse CreateResponse(OrganizerClaimRequest claimRequest) =>
         new(
             claimRequest.Id,
@@ -80,5 +113,6 @@ public sealed class OrganizerClaimRequestService(IDbContextFactory<DarwinLinguaD
             claimRequest.RelationshipToOrganizer,
             claimRequest.EvidenceText,
             claimRequest.Status,
-            claimRequest.CreatedAtUtc);
+            claimRequest.CreatedAtUtc,
+            claimRequest.UpdatedAtUtc);
 }

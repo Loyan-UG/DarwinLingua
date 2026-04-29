@@ -10,4 +10,9 @@ public interface IOrganizerClaimRequestService
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<OrganizerClaimRequestResponse>> GetRecentAsync(CancellationToken cancellationToken);
+
+    Task<OrganizerClaimRequestResponse> SetStatusAsync(
+        Guid claimRequestId,
+        OrganizerClaimDecisionRequest request,
+        CancellationToken cancellationToken);
 }

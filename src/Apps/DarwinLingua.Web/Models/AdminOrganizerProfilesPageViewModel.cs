@@ -58,3 +58,9 @@ public sealed class AdminOrganizerProfileOwnerInputModel
     [EmailAddress]
     public string OwnerEmail { get; set; } = string.Empty;
 }
+
+public sealed class AdminOrganizerClaimDecisionInputModel
+{
+    [Required]
+    public string Status { get; set; } = string.Empty;
+}

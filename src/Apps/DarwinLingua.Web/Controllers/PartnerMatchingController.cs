@@ -11,6 +11,7 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class PartnerMatchingController(
     IWebCatalogApiClient catalogApiClient,
     IWebEntitledFeatureAccessService featureAccessService,
+    ICommunityNotificationEmailService notificationEmailService,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "PartnerMatching_Index")]
@@ -102,6 +103,16 @@ public sealed class PartnerMatchingController(
             if (string.Equals(request.Status, "accepted", StringComparison.OrdinalIgnoreCase))
             {
                 analyticsService?.Record(WebProductAnalyticsEvents.PartnerRequestAccepted);
+                if (!string.IsNullOrWhiteSpace(request.ContactEmail))
+                {
+                    await notificationEmailService.SendPartnerRequestAcceptedAsync(
+                            request.ContactEmail,
+                            request.OtherDisplayName,
+                            ResolveCulture(),
+                            HttpContext.TraceIdentifier,
+                            cancellationToken)
+                        .ConfigureAwait(false);
+                }
             }
         }
         catch (InvalidOperationException exception)
@@ -114,6 +125,12 @@ public sealed class PartnerMatchingController(
 
     private string GetOwnerEmail() =>
         WebUserIdentity.GetRequiredEmail(User, "The authenticated learner does not have an email address.");
+
+    private string ResolveCulture() =>
+        Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()
+            ?.RequestCulture.UICulture.Name
+        ?? Request.Headers.AcceptLanguage.ToString()
+        ?? "en";
 
     private static PartnerMatchSearchRequest ToRequest(PartnerMatchSearchInputModel search) =>
         new(
