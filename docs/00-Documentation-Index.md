@@ -86,6 +86,7 @@ All project documentation should remain in English.
 - `70-Roleplay-Content-Package-Contract.md`
 - `71-Web-Test-Backlog.md`
 - `72-Web-Seed-Coverage-And-Admin-Reports.md`
+- `73-Transactional-Email-And-Account-Communication-Backlog.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -143,6 +144,7 @@ If you are new to the project, read the documents in this order:
 41. `70-Roleplay-Content-Package-Contract.md`
 42. `71-Web-Test-Backlog.md`
 43. `72-Web-Seed-Coverage-And-Admin-Reports.md`
+44. `73-Transactional-Email-And-Account-Communication-Backlog.md`
 
 ---
 
@@ -170,6 +172,7 @@ If you are new to the project, read the documents in this order:
 - `70-Roleplay-Content-Package-Contract.md` defines the Phase 6 scripted roleplay contract, role labels, turn sequence model, answer choices, static feedback, and AI boundary.
 - `71-Web-Test-Backlog.md` defines the remaining Web automated and manual validation backlog owned by the separate test-development workflow.
 - `72-Web-Seed-Coverage-And-Admin-Reports.md` records Web seed coverage, admin report scope, and the operational-seed follow-up.
+- `73-Transactional-Email-And-Account-Communication-Backlog.md` defines the release-critical transactional email, account recovery, email confirmation, provider, diagnostics, localization, and security backlog.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Rules vs Workflow
