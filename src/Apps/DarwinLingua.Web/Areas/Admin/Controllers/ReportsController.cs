@@ -19,13 +19,13 @@ public sealed class ReportsController(
     [HttpGet("", Name = "Admin_Reports_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        AdminSystemReportResponse report = await catalogApiClient
-            .GetAdminSystemReportAsync(cancellationToken)
-            .ConfigureAwait(false);
+        Task<AdminSystemReportResponse> reportTask = catalogApiClient.GetAdminSystemReportAsync(cancellationToken);
+        Task<int> identityUserCountTask = userManager.Users.CountAsync(cancellationToken);
 
-        int identityUserCount = await userManager.Users
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
+        await Task.WhenAll(reportTask, identityUserCountTask).ConfigureAwait(false);
+
+        AdminSystemReportResponse report = await reportTask.ConfigureAwait(false);
+        int identityUserCount = await identityUserCountTask.ConfigureAwait(false);
 
         return View(new AdminSystemReportPageViewModel(
             report.GeneratedAtUtc,

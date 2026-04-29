@@ -253,6 +253,8 @@ public interface IWebCatalogApiClient
 
 internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogApiClient
 {
+    private const string ActorEmailHeaderName = "X-DarwinLingua-Actor-Email";
+
     public Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<TopicListItemModel>>(
             BuildPath("/api/catalog/topics", [new("uiLanguageCode", uiLanguageCode)]),
@@ -423,14 +425,16 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         string ownerEmail,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<OrganizerProfileOwnerModel>>(
-            BuildPath("/api/catalog/organizer-profile-owners/by-email", [new("ownerEmail", ownerEmail)]),
+            "/api/catalog/organizer-profile-owners/by-email",
+            ownerEmail,
             cancellationToken);
 
     public Task<LearnerConversationProfileModel?> GetLearnerConversationProfileAsync(
         string ownerEmail,
         CancellationToken cancellationToken) =>
         GetAsync<LearnerConversationProfileModel>(
-            BuildPath("/api/catalog/learner-conversation-profiles/me", [new("ownerEmail", ownerEmail)]),
+            "/api/catalog/learner-conversation-profiles/me",
+            ownerEmail,
             cancellationToken);
 
     public Task<IReadOnlyList<LearnerConversationProfilePublicModel>> GetPublicLearnerConversationProfilesAsync(
@@ -444,7 +448,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         SaveLearnerConversationProfileRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<SaveLearnerConversationProfileRequest, LearnerConversationProfileModel>(
-            BuildPath("/api/catalog/learner-conversation-profiles/me", [new("ownerEmail", ownerEmail)]),
+            "/api/catalog/learner-conversation-profiles/me",
+            ownerEmail,
             request,
             cancellationToken);
 
@@ -453,7 +458,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         LearnerConversationProfileVisibilityRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<LearnerConversationProfileVisibilityRequest, LearnerConversationProfileModel>(
-            BuildPath("/api/catalog/learner-conversation-profiles/me/enabled", [new("ownerEmail", ownerEmail)]),
+            "/api/catalog/learner-conversation-profiles/me/enabled",
+            ownerEmail,
             request,
             cancellationToken);
 
@@ -461,8 +467,10 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         string ownerEmail,
         CancellationToken cancellationToken)
     {
-        string relativeUri = BuildPath("/api/catalog/learner-conversation-profiles/me", [new("ownerEmail", ownerEmail)]);
-        using HttpResponseMessage response = await httpClient.DeleteAsync(relativeUri, cancellationToken).ConfigureAwait(false);
+        const string relativeUri = "/api/catalog/learner-conversation-profiles/me";
+        using HttpRequestMessage request = new(HttpMethod.Delete, relativeUri);
+        AddActorEmailHeader(request, ownerEmail);
+        using HttpResponseMessage response = await httpClient.SendAsync(request, cancellationToken).ConfigureAwait(false);
         await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
     }
 
@@ -471,7 +479,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         PartnerMatchSearchRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<PartnerMatchSearchRequest, IReadOnlyList<PartnerMatchProfileModel>>(
-            BuildPath("/api/catalog/partner-matches/search", [new("ownerEmail", ownerEmail)]),
+            "/api/catalog/partner-matches/search",
+            ownerEmail,
             request,
             cancellationToken);
 
@@ -480,7 +489,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         SubmitPartnerRequestRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<SubmitPartnerRequestRequest, PartnerRequestModel>(
-            BuildPath("/api/catalog/partner-requests", [new("ownerEmail", ownerEmail)]),
+            "/api/catalog/partner-requests",
+            ownerEmail,
             request,
             cancellationToken);
 
@@ -488,7 +498,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         string ownerEmail,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<PartnerRequestModel>>(
-            BuildPath("/api/catalog/partner-requests", [new("ownerEmail", ownerEmail)]),
+            "/api/catalog/partner-requests",
+            ownerEmail,
             cancellationToken);
 
     public Task<PartnerRequestModel> UpdatePartnerRequestStateAsync(
@@ -497,7 +508,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         PartnerRequestStateUpdateRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<PartnerRequestStateUpdateRequest, PartnerRequestModel>(
-            BuildPath($"/api/catalog/partner-requests/{requestId:D}/state", [new("ownerEmail", ownerEmail)]),
+            $"/api/catalog/partner-requests/{requestId:D}/state",
+            ownerEmail,
             request,
             cancellationToken);
 
@@ -506,7 +518,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         SubmitUserReportRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<SubmitUserReportRequest, UserReportModel>(
-            BuildPath("/api/catalog/moderation/reports", [new("reporterEmail", reporterEmail)]),
+            "/api/catalog/moderation/reports",
+            reporterEmail,
             request,
             cancellationToken);
 
@@ -515,7 +528,8 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         BlockUserRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<BlockUserRequest, UserBlockModel>(
-            BuildPath("/api/catalog/moderation/blocks", [new("blockerEmail", blockerEmail)]),
+            "/api/catalog/moderation/blocks",
+            blockerEmail,
             request,
             cancellationToken);
 
@@ -756,7 +770,17 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
 
     private async Task<T?> GetAsync<T>(string relativeUri, CancellationToken cancellationToken)
     {
-        using HttpResponseMessage response = await httpClient.GetAsync(relativeUri, cancellationToken).ConfigureAwait(false);
+        return await GetAsync<T>(relativeUri, actorEmail: null, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task<T?> GetAsync<T>(
+        string relativeUri,
+        string? actorEmail,
+        CancellationToken cancellationToken)
+    {
+        using HttpRequestMessage request = new(HttpMethod.Get, relativeUri);
+        AddActorEmailHeader(request, actorEmail);
+        using HttpResponseMessage response = await httpClient.SendAsync(request, cancellationToken).ConfigureAwait(false);
 
         if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
         {
@@ -779,16 +803,50 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         return response ?? throw new InvalidOperationException($"The Web API returned an empty payload for '{relativeUri}'.");
     }
 
+    private async Task<T> GetRequiredAsync<T>(
+        string relativeUri,
+        string actorEmail,
+        CancellationToken cancellationToken)
+    {
+        T? response = await GetAsync<T>(relativeUri, actorEmail, cancellationToken).ConfigureAwait(false);
+        return response ?? throw new InvalidOperationException($"The Web API returned an empty payload for '{relativeUri}'.");
+    }
+
     private async Task<TResponse> PostRequiredAsync<TRequest, TResponse>(
         string relativeUri,
         TRequest request,
         CancellationToken cancellationToken)
     {
-        using HttpResponseMessage response = await httpClient.PostAsJsonAsync(relativeUri, request, cancellationToken).ConfigureAwait(false);
+        return await PostRequiredAsync<TRequest, TResponse>(
+                relativeUri,
+                actorEmail: null,
+                request,
+                cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    private async Task<TResponse> PostRequiredAsync<TRequest, TResponse>(
+        string relativeUri,
+        string? actorEmail,
+        TRequest request,
+        CancellationToken cancellationToken)
+    {
+        using HttpRequestMessage httpRequest = new(HttpMethod.Post, relativeUri);
+        AddActorEmailHeader(httpRequest, actorEmail);
+        httpRequest.Content = JsonContent.Create(request, options: JsonSerializerOptions.Web);
+        using HttpResponseMessage response = await httpClient.SendAsync(httpRequest, cancellationToken).ConfigureAwait(false);
         await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
 
         TResponse? payload = await response.Content.ReadFromJsonAsync<TResponse>(cancellationToken).ConfigureAwait(false);
         return payload ?? throw new InvalidOperationException($"The Web API returned an empty payload for '{relativeUri}'.");
+    }
+
+    private static void AddActorEmailHeader(HttpRequestMessage request, string? actorEmail)
+    {
+        if (!string.IsNullOrWhiteSpace(actorEmail))
+        {
+            request.Headers.TryAddWithoutValidation(ActorEmailHeaderName, actorEmail);
+        }
     }
 
     private static async Task EnsureSuccessAsync(

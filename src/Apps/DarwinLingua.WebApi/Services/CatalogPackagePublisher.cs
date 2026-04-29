@@ -33,6 +33,7 @@ public sealed class CatalogPackagePublisher(
         ArgumentException.ThrowIfNullOrWhiteSpace(clientProductKey);
 
         ClientProductEntity product = await serverContentDbContext.ClientProducts
+            .AsSplitQuery()
             .Include(existingProduct => existingProduct.ContentStreams)
             .ThenInclude(stream => stream.PublishedPackages)
             .SingleOrDefaultAsync(
@@ -61,6 +62,7 @@ public sealed class CatalogPackagePublisher(
 
         List<WordEntry> words = (await catalogDbContext.WordEntries
             .AsNoTracking()
+            .AsSplitQuery()
             .Where(word => word.PublicationStatus == PublicationStatus.Active)
             .Include(word => word.Senses)
                 .ThenInclude(sense => sense.Translations)
@@ -93,6 +95,7 @@ public sealed class CatalogPackagePublisher(
 
         List<ScenarioLesson> activeScenarios = await catalogDbContext.ScenarioLessons
             .AsNoTracking()
+            .AsSplitQuery()
             .Where(scenario => scenario.PublicationStatus == PublicationStatus.Active)
             .Include(scenario => scenario.Topics)
             .Include(scenario => scenario.DialogueTurns)
@@ -111,6 +114,7 @@ public sealed class CatalogPackagePublisher(
 
         List<ConversationStarterPack> activeConversationStarterPacks = await catalogDbContext.ConversationStarterPacks
             .AsNoTracking()
+            .AsSplitQuery()
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active)
             .Include(pack => pack.Topics)
             .Include(pack => pack.LinkedScenarios)
@@ -126,6 +130,7 @@ public sealed class CatalogPackagePublisher(
 
         List<EventPreparationPack> activeEventPreparationPacks = await catalogDbContext.EventPreparationPacks
             .AsNoTracking()
+            .AsSplitQuery()
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active)
             .Include(pack => pack.Topics)
             .Include(pack => pack.LinkedScenarios)

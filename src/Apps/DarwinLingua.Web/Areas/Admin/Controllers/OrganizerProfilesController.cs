@@ -91,7 +91,9 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
                 cancellationToken));
         }
 
-        string assignedBy = User.Identity?.Name ?? "web-admin";
+        string assignedBy = WebUserIdentity.TryGetEmail(User)
+            ?? User.Identity?.Name
+            ?? "web-admin";
         try
         {
             OrganizerProfileOwnerModel owner = await catalogApiClient.AssignAdminOrganizerProfileOwnerAsync(
@@ -120,17 +122,20 @@ public sealed class OrganizerProfilesController(IWebCatalogApiClient catalogApiC
         string? errorMessage,
         CancellationToken cancellationToken)
     {
-        IReadOnlyList<OrganizerProfileListItemModel> profiles = await catalogApiClient
-            .GetOrganizerProfilesAsync(cancellationToken)
-            .ConfigureAwait(false);
-        IReadOnlyList<OrganizerClaimRequestModel> claimRequests = await catalogApiClient
-            .GetAdminOrganizerClaimRequestsAsync(cancellationToken)
-            .ConfigureAwait(false);
-        IReadOnlyList<OrganizerProfileOwnerModel> owners = await catalogApiClient
-            .GetAdminOrganizerProfileOwnersAsync(cancellationToken)
-            .ConfigureAwait(false);
+        Task<IReadOnlyList<OrganizerProfileListItemModel>> profilesTask = catalogApiClient.GetOrganizerProfilesAsync(cancellationToken);
+        Task<IReadOnlyList<OrganizerClaimRequestModel>> claimRequestsTask = catalogApiClient.GetAdminOrganizerClaimRequestsAsync(cancellationToken);
+        Task<IReadOnlyList<OrganizerProfileOwnerModel>> ownersTask = catalogApiClient.GetAdminOrganizerProfileOwnersAsync(cancellationToken);
 
-        return new AdminOrganizerProfilesPageViewModel(profiles, claimRequests, owners, input, ownerInput, statusMessage, errorMessage);
+        await Task.WhenAll(profilesTask, claimRequestsTask, ownersTask).ConfigureAwait(false);
+
+        return new AdminOrganizerProfilesPageViewModel(
+            await profilesTask.ConfigureAwait(false),
+            await claimRequestsTask.ConfigureAwait(false),
+            await ownersTask.ConfigureAwait(false),
+            input,
+            ownerInput,
+            statusMessage,
+            errorMessage);
     }
 
     private static string[] SplitCsv(string? value) =>

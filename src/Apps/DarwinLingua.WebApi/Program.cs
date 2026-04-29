@@ -1,6 +1,7 @@
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -9,6 +10,7 @@ using DarwinLingua.Identity;
 using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
+using DarwinLingua.SharedKernel.Exceptions;
 using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
@@ -179,30 +181,40 @@ adminIdentityGroup.MapGet(
     "/users",
     async (
         UserManager<DarwinLinguaIdentityUser> userManager,
+        WebApiIdentityDbContext identityDbContext,
         IUserEntitlementService userEntitlementService,
         CancellationToken cancellationToken) =>
     {
         DarwinLinguaIdentityUser[] users = await userManager.Users
+            .AsNoTracking()
             .OrderBy(user => user.Email)
             .Take(200)
             .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+        string[] userIds = users
+            .Select(static user => user.Id)
+            .ToArray();
+        Dictionary<string, string[]> rolesByUserId = await LoadRolesByUserIdAsync(identityDbContext, userIds, cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyDictionary<string, UserEntitlementSnapshot> entitlementsByUserId = await userEntitlementService
+            .GetCurrentManyAsync(userIds, cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyDictionary<string, IReadOnlyList<UserEntitlementAuditEventModel>> auditEventsByUserId = await userEntitlementService
+            .GetRecentAuditEventsManyAsync(userIds, 3, cancellationToken)
             .ConfigureAwait(false);
 
         List<AdminIdentityUserResponse> response = new(users.Length);
         foreach (DarwinLinguaIdentityUser user in users)
         {
-            IList<string> roles = await userManager.GetRolesAsync(user).ConfigureAwait(false);
-            UserEntitlementSnapshot entitlement = await userEntitlementService
-                .GetCurrentAsync(user.Id, cancellationToken)
-                .ConfigureAwait(false);
-            IReadOnlyList<UserEntitlementAuditEventModel> auditEvents = await userEntitlementService
-                .GetRecentAuditEventsAsync(user.Id, 3, cancellationToken)
-                .ConfigureAwait(false);
+            UserEntitlementSnapshot entitlement = entitlementsByUserId[user.Id];
+            IReadOnlyList<UserEntitlementAuditEventModel> auditEvents = auditEventsByUserId.TryGetValue(user.Id, out IReadOnlyList<UserEntitlementAuditEventModel>? events)
+                ? events
+                : [];
 
             response.Add(new AdminIdentityUserResponse(
                 user.Id,
                 user.Email,
-                roles.OrderBy(static role => role).ToArray(),
+                rolesByUserId.TryGetValue(user.Id, out string[]? roles) ? roles : [],
                 entitlement.Tier,
                 entitlement.TrialEndsAtUtc,
                 entitlement.PremiumEndsAtUtc,
@@ -248,7 +260,7 @@ adminIdentityGroup.MapPost(
             });
         }
 
-        string updatedBy = principal.FindFirstValue(ClaimTypes.Email)
+        string updatedBy = TryGetPrincipalEmail(principal)
             ?? principal.Identity?.Name
             ?? principal.FindFirstValue(ClaimTypes.NameIdentifier)
             ?? "admin-api";
@@ -431,41 +443,49 @@ app.MapPost(
 
 app.MapGet(
     "/api/catalog/learner-conversation-profiles/me",
-    async (string ownerEmail, ILearnerConversationProfileService learnerProfileService, CancellationToken cancellationToken) =>
+    async (HttpRequest httpRequest, ILearnerConversationProfileService learnerProfileService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await learnerProfileService.GetPrivateAsync(ownerEmail, cancellationToken).ConfigureAwait(false))
+                async () => await learnerProfileService.GetPrivateAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/catalog/learner-conversation-profiles/me",
     async (
-        string ownerEmail,
+        HttpRequest httpRequest,
         SaveLearnerConversationProfileRequest request,
         ILearnerConversationProfileService learnerProfileService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await learnerProfileService.SaveAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+                async () => await learnerProfileService.SaveAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/catalog/learner-conversation-profiles/me/enabled",
     async (
-        string ownerEmail,
+        HttpRequest httpRequest,
         LearnerConversationProfileVisibilityRequest request,
         ILearnerConversationProfileService learnerProfileService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await learnerProfileService.SetEnabledAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+                async () => await learnerProfileService.SetEnabledAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapDelete(
     "/api/catalog/learner-conversation-profiles/me",
-    async (string ownerEmail, ILearnerConversationProfileService learnerProfileService, CancellationToken cancellationToken) =>
+    async (HttpRequest httpRequest, ILearnerConversationProfileService learnerProfileService, CancellationToken cancellationToken) =>
     {
         try
         {
-            await learnerProfileService.AnonymizeAsync(ownerEmail, cancellationToken).ConfigureAwait(false);
+            await learnerProfileService.AnonymizeAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), cancellationToken).ConfigureAwait(false);
             return Results.NoContent();
+        }
+        catch (DomainRuleException exception)
+        {
+            return Results.BadRequest(new
+            {
+                code = "invalid_request",
+                message = exception.Message,
+            });
         }
         catch (InvalidOperationException exception)
         {
@@ -487,64 +507,64 @@ app.MapGet(
 app.MapPost(
     "/api/catalog/partner-matches/search",
     async (
-        string ownerEmail,
+        HttpRequest httpRequest,
         PartnerMatchSearchRequest request,
         IPartnerMatchingService partnerMatchingService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await partnerMatchingService.SearchAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+                async () => await partnerMatchingService.SearchAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/catalog/partner-requests",
     async (
-        string ownerEmail,
+        HttpRequest httpRequest,
         SubmitPartnerRequestRequest request,
         IPartnerMatchingService partnerMatchingService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await partnerMatchingService.SubmitRequestAsync(ownerEmail, request, cancellationToken).ConfigureAwait(false))
+                async () => await partnerMatchingService.SubmitRequestAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/partner-requests",
-    async (string ownerEmail, IPartnerMatchingService partnerMatchingService, CancellationToken cancellationToken) =>
+    async (HttpRequest httpRequest, IPartnerMatchingService partnerMatchingService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await partnerMatchingService.GetRequestsAsync(ownerEmail, cancellationToken).ConfigureAwait(false))
+                async () => await partnerMatchingService.GetRequestsAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/catalog/partner-requests/{requestId:guid}/state",
     async (
-        string ownerEmail,
+        HttpRequest httpRequest,
         Guid requestId,
         PartnerRequestStateUpdateRequest request,
         IPartnerMatchingService partnerMatchingService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await partnerMatchingService.UpdateRequestStateAsync(ownerEmail, requestId, request, cancellationToken).ConfigureAwait(false))
+                async () => await partnerMatchingService.UpdateRequestStateAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), requestId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/catalog/moderation/reports",
     async (
-        string reporterEmail,
+        HttpRequest httpRequest,
         SubmitUserReportRequest request,
         IModerationService moderationService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await moderationService.SubmitReportAsync(reporterEmail, request, cancellationToken).ConfigureAwait(false))
+                async () => await moderationService.SubmitReportAsync(GetNormalizedEmailParameter(httpRequest, "reporterEmail"), request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/catalog/moderation/blocks",
     async (
-        string blockerEmail,
+        HttpRequest httpRequest,
         BlockUserRequest request,
         IModerationService moderationService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await moderationService.BlockUserAsync(blockerEmail, request, cancellationToken).ConfigureAwait(false))
+                async () => await moderationService.BlockUserAsync(GetNormalizedEmailParameter(httpRequest, "blockerEmail"), request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -736,9 +756,9 @@ app.MapGet(
 
 app.MapGet(
     "/api/catalog/organizer-profile-owners/by-email",
-    async (string ownerEmail, IOrganizerProfileOwnerService organizerProfileOwnerService, CancellationToken cancellationToken) =>
+    async (HttpRequest httpRequest, IOrganizerProfileOwnerService organizerProfileOwnerService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await organizerProfileOwnerService.GetByOwnerEmailAsync(ownerEmail, cancellationToken).ConfigureAwait(false))
+                async () => await organizerProfileOwnerService.GetByOwnerEmailAsync(GetNormalizedEmailParameter(httpRequest, "ownerEmail"), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -927,6 +947,14 @@ static IResult ResolvePackageDownload(Func<ContentPackageDownloadDescriptor> res
             message = exception.Message,
         });
     }
+    catch (DomainRuleException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
+            message = exception.Message,
+        });
+    }
     catch (InvalidOperationException exception)
     {
         return Results.BadRequest(new
@@ -948,6 +976,14 @@ static IResult ResolveQueryRequest<T>(Func<T> resolver)
         return Results.NotFound(new
         {
             code = "resource_not_found",
+            message = exception.Message,
+        });
+    }
+    catch (DomainRuleException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
             message = exception.Message,
         });
     }
@@ -975,6 +1011,14 @@ static async Task<IResult> ResolveQueryRequestAsync<T>(Func<Task<T>> resolver)
             message = exception.Message,
         });
     }
+    catch (DomainRuleException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
+            message = exception.Message,
+        });
+    }
     catch (InvalidOperationException exception)
     {
         return Results.BadRequest(new
@@ -997,6 +1041,14 @@ static async Task<IResult> ResolveMutationRequestAsync<T>(Func<Task<T>> resolver
         return Results.NotFound(new
         {
             code = "resource_not_found",
+            message = exception.Message,
+        });
+    }
+    catch (DomainRuleException exception)
+    {
+        return Results.BadRequest(new
+        {
+            code = "invalid_request",
             message = exception.Message,
         });
     }
@@ -1102,6 +1154,73 @@ static async Task EnforceAdminApiAccessAsync(HttpContext context, RequestDelegat
     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
     await context.Response.WriteAsync("Admin API credentials are required.", context.RequestAborted)
         .ConfigureAwait(false);
+}
+
+static async Task<Dictionary<string, string[]>> LoadRolesByUserIdAsync(
+    WebApiIdentityDbContext identityDbContext,
+    IReadOnlyCollection<string> userIds,
+    CancellationToken cancellationToken)
+{
+    if (userIds.Count == 0)
+    {
+        return [];
+    }
+
+    var roleRows = await identityDbContext.UserRoles
+        .AsNoTracking()
+        .Where(userRole => userIds.Contains(userRole.UserId))
+        .Join(
+            identityDbContext.Roles.AsNoTracking(),
+            userRole => userRole.RoleId,
+            role => role.Id,
+            (userRole, role) => new { userRole.UserId, role.Name })
+        .ToArrayAsync(cancellationToken)
+        .ConfigureAwait(false);
+
+    return roleRows
+        .GroupBy(static row => row.UserId, StringComparer.Ordinal)
+        .ToDictionary(
+            static group => group.Key,
+            static group => group
+                .Select(static row => row.Name)
+                .Where(static roleName => !string.IsNullOrWhiteSpace(roleName))
+                .Select(static roleName => roleName!)
+                .OrderBy(static roleName => roleName)
+                .ToArray(),
+            StringComparer.Ordinal);
+}
+
+static string? TryGetPrincipalEmail(ClaimsPrincipal principal)
+{
+    string? candidate = principal.FindFirstValue(ClaimTypes.Email)
+        ?? principal.Identity?.Name;
+
+    return !string.IsNullOrWhiteSpace(candidate) && candidate.Contains('@', StringComparison.Ordinal)
+        ? candidate
+        : null;
+}
+
+static string GetNormalizedEmailParameter(HttpRequest request, string queryParameterName)
+{
+    string? value = request.Headers["X-DarwinLingua-Actor-Email"].FirstOrDefault();
+    if (string.IsNullOrWhiteSpace(value))
+    {
+        value = request.Query[queryParameterName].FirstOrDefault();
+    }
+
+    return NormalizeEmailParameter(value ?? string.Empty, queryParameterName);
+}
+
+static string NormalizeEmailParameter(string value, string parameterName)
+{
+    try
+    {
+        return LearnerConversationProfile.NormalizeEmail(value);
+    }
+    catch (DomainRuleException exception)
+    {
+        throw new DomainRuleException($"{parameterName} is invalid. {exception.Message}");
+    }
 }
 
 static bool IsProtectedApiPath(PathString path, string method) =>

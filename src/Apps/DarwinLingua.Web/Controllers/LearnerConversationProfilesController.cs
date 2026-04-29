@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -117,9 +116,7 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
     }
 
     private string GetOwnerEmail() =>
-        User.FindFirstValue(ClaimTypes.Email)
-        ?? User.Identity?.Name
-        ?? throw new InvalidOperationException("The authenticated learner does not have an email address.");
+        WebUserIdentity.GetRequiredEmail(User, "The authenticated learner does not have an email address.");
 
     private static LearnerConversationProfileInputModel CreateInput(
         LearnerConversationProfileModel? profile,

@@ -89,7 +89,7 @@ public sealed class ConversationEventsController(
             rsvpSummary,
             new EventRsvpInputModel
             {
-                ParticipantEmail = User.Identity?.Name ?? string.Empty,
+                ParticipantEmail = WebUserIdentity.TryGetEmail(User) ?? string.Empty,
             },
             TempData["StatusMessage"] as string,
             TempData["ErrorMessage"] as string));

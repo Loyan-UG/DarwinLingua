@@ -1,7 +1,9 @@
 using System.Globalization;
 using System.Security.Claims;
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Models;
+using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +16,7 @@ namespace DarwinLingua.Web.Areas.Admin.Controllers;
 [Route("admin/users")]
 public sealed class UsersController(
     UserManager<DarwinLinguaIdentityUser> userManager,
+    WebIdentityDbContext identityDbContext,
     IUserEntitlementService userEntitlementService) : Controller
 {
     [HttpGet("", Name = "Admin_Users")]
@@ -68,7 +71,7 @@ public sealed class UsersController(
             return RedirectToAction(nameof(Index));
         }
 
-        string updatedBy = User.FindFirstValue(ClaimTypes.Email)
+        string updatedBy = WebUserIdentity.TryGetEmail(User)
             ?? User.Identity?.Name
             ?? User.FindFirstValue(ClaimTypes.NameIdentifier)
             ?? "admin";
@@ -132,23 +135,34 @@ public sealed class UsersController(
         CancellationToken cancellationToken)
     {
         DarwinLinguaIdentityUser[] users = await userManager.Users
+            .AsNoTracking()
             .OrderBy(user => user.Email)
             .Take(200)
             .ToArrayAsync(cancellationToken);
+        string[] userIds = users
+            .Select(static user => user.Id)
+            .ToArray();
+        Dictionary<string, string[]> rolesByUserId = await LoadRolesByUserIdAsync(userIds, cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyDictionary<string, UserEntitlementSnapshot> entitlementsByUserId = await userEntitlementService
+            .GetCurrentManyAsync(userIds, cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyDictionary<string, IReadOnlyList<UserEntitlementAuditEventModel>> auditEventsByUserId = await userEntitlementService
+            .GetRecentAuditEventsManyAsync(userIds, 3, cancellationToken)
+            .ConfigureAwait(false);
 
         List<AdminUserListItemViewModel> items = new(users.Length);
         foreach (DarwinLinguaIdentityUser user in users)
         {
-            IList<string> roles = await userManager.GetRolesAsync(user);
-            UserEntitlementSnapshot entitlement = await userEntitlementService
-                .GetCurrentAsync(user.Id, cancellationToken);
-            IReadOnlyList<UserEntitlementAuditEventModel> auditEvents = await userEntitlementService
-                .GetRecentAuditEventsAsync(user.Id, 3, cancellationToken);
+            UserEntitlementSnapshot entitlement = entitlementsByUserId[user.Id];
+            IReadOnlyList<UserEntitlementAuditEventModel> auditEvents = auditEventsByUserId.TryGetValue(user.Id, out IReadOnlyList<UserEntitlementAuditEventModel>? events)
+                ? events
+                : [];
 
             items.Add(new AdminUserListItemViewModel(
                 user.Id,
                 user.Email ?? user.UserName ?? user.Id,
-                roles.OrderBy(static role => role).ToArray(),
+                rolesByUserId.TryGetValue(user.Id, out string[]? roles) ? roles : [],
                 entitlement.Tier,
                 entitlement.TrialEndsAtUtc,
                 entitlement.PremiumEndsAtUtc,
@@ -164,5 +178,38 @@ public sealed class UsersController(
         }
 
         return new AdminUsersPageViewModel(items, statusMessage, errorMessage);
+    }
+
+    private async Task<Dictionary<string, string[]>> LoadRolesByUserIdAsync(
+        IReadOnlyCollection<string> userIds,
+        CancellationToken cancellationToken)
+    {
+        if (userIds.Count == 0)
+        {
+            return [];
+        }
+
+        var roleRows = await identityDbContext.UserRoles
+            .AsNoTracking()
+            .Where(userRole => userIds.Contains(userRole.UserId))
+            .Join(
+                identityDbContext.Roles.AsNoTracking(),
+                userRole => userRole.RoleId,
+                role => role.Id,
+                (userRole, role) => new { userRole.UserId, role.Name })
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return roleRows
+            .GroupBy(static row => row.UserId, StringComparer.Ordinal)
+            .ToDictionary(
+                static group => group.Key,
+                static group => group
+                    .Select(static row => row.Name)
+                    .Where(static roleName => !string.IsNullOrWhiteSpace(roleName))
+                    .Select(static roleName => roleName!)
+                    .OrderBy(static roleName => roleName)
+                    .ToArray(),
+                StringComparer.Ordinal);
     }
 }

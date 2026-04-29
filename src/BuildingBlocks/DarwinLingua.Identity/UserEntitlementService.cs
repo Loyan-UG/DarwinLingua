@@ -82,6 +82,70 @@ public sealed class UserEntitlementService<TContext>(
         return BuildSnapshot(state);
     }
 
+    public async Task<IReadOnlyDictionary<string, UserEntitlementSnapshot>> GetCurrentManyAsync(
+        IReadOnlyCollection<string> userIds,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(userIds);
+
+        string[] normalizedUserIds = userIds
+            .Where(static userId => !string.IsNullOrWhiteSpace(userId))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+        if (normalizedUserIds.Length == 0)
+        {
+            return new Dictionary<string, UserEntitlementSnapshot>(StringComparer.Ordinal);
+        }
+
+        UserEntitlementState[] existingStates = await dbContext.UserEntitlementStates
+            .Where(state => normalizedUserIds.Contains(state.UserId))
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        Dictionary<string, UserEntitlementState> statesByUserId = existingStates
+            .ToDictionary(static state => state.UserId, StringComparer.Ordinal);
+        DateTimeOffset nowUtc = DateTimeOffset.UtcNow;
+        bool requiresSave = false;
+
+        foreach (string userId in normalizedUserIds)
+        {
+            if (!statesByUserId.TryGetValue(userId, out UserEntitlementState? state))
+            {
+                state = CreateInitialState(userId, nowUtc);
+                dbContext.UserEntitlementStates.Add(state);
+                AddAuditEvent(
+                    state,
+                    null,
+                    state.Tier,
+                    null,
+                    state.TrialEndsAtUtc,
+                    null,
+                    state.PremiumEndsAtUtc,
+                    "system",
+                    string.Equals(state.Tier, DarwinLinguaEntitlementTiers.Trial, StringComparison.Ordinal)
+                        ? InitialTrialEventType
+                        : InitialFreeEventType,
+                    nowUtc);
+                statesByUserId[userId] = state;
+                requiresSave = true;
+            }
+            else if (NormalizeState(state, nowUtc, addAuditEvent: true))
+            {
+                requiresSave = true;
+            }
+        }
+
+        if (requiresSave)
+        {
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        return normalizedUserIds.ToDictionary(
+            static userId => userId,
+            userId => BuildSnapshot(statesByUserId[userId]),
+            StringComparer.Ordinal);
+    }
+
     public async Task<bool> HasFeatureAsync(string userId, string featureKey, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(featureKey);
@@ -120,6 +184,59 @@ public sealed class UserEntitlementService<TContext>(
                 auditEvent.UpdatedBy,
                 auditEvent.CreatedAtUtc))
             .ToArray();
+    }
+
+    public async Task<IReadOnlyDictionary<string, IReadOnlyList<UserEntitlementAuditEventModel>>> GetRecentAuditEventsManyAsync(
+        IReadOnlyCollection<string> userIds,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(userIds);
+
+        string[] normalizedUserIds = userIds
+            .Where(static userId => !string.IsNullOrWhiteSpace(userId))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+        if (normalizedUserIds.Length == 0)
+        {
+            return new Dictionary<string, IReadOnlyList<UserEntitlementAuditEventModel>>(StringComparer.Ordinal);
+        }
+
+        int boundedTake = Math.Clamp(take, 1, 100);
+        UserEntitlementAuditEvent[] auditEvents = await dbContext.UserEntitlementAuditEvents
+            .AsNoTracking()
+            .Where(auditEvent => normalizedUserIds.Contains(auditEvent.UserId))
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        Dictionary<string, IReadOnlyList<UserEntitlementAuditEventModel>> eventsByUserId = auditEvents
+            .GroupBy(static auditEvent => auditEvent.UserId, StringComparer.Ordinal)
+            .ToDictionary(
+                static group => group.Key,
+                group => (IReadOnlyList<UserEntitlementAuditEventModel>)group
+                    .OrderByDescending(static auditEvent => auditEvent.CreatedAtUtc)
+                    .Take(boundedTake)
+                    .Select(static auditEvent => new UserEntitlementAuditEventModel(
+                        auditEvent.Id,
+                        auditEvent.UserId,
+                        auditEvent.EventType,
+                        auditEvent.PreviousTier,
+                        auditEvent.NewTier,
+                        auditEvent.PreviousTrialEndsAtUtc,
+                        auditEvent.NewTrialEndsAtUtc,
+                        auditEvent.PreviousPremiumEndsAtUtc,
+                        auditEvent.NewPremiumEndsAtUtc,
+                        auditEvent.UpdatedBy,
+                        auditEvent.CreatedAtUtc))
+                    .ToArray(),
+                StringComparer.Ordinal);
+
+        foreach (string userId in normalizedUserIds)
+        {
+            eventsByUserId.TryAdd(userId, []);
+        }
+
+        return eventsByUserId;
     }
 
     public async Task<UserEntitlementSnapshot> SetTierAsync(

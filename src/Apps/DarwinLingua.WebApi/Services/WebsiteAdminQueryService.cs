@@ -26,19 +26,20 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
 {
     public async Task<AdminCatalogDashboardResponse> GetDashboardAsync(CancellationToken cancellationToken)
     {
-        await using DarwinLinguaDbContext dbContext = await dbContextFactory
-            .CreateDbContextAsync(cancellationToken)
-            .ConfigureAwait(false);
+        Task<WordEntrySummary> wordSummaryTask = QueryAsync(GetWordEntrySummaryAsync, cancellationToken);
+        Task<int> topicCountTask = QueryAsync(
+            static async (dbContext, token) => await dbContext.Topics
+                .AsNoTracking()
+                .CountAsync(token)
+                .ConfigureAwait(false),
+            cancellationToken);
+        Task<ContentPackageSummary> packageSummaryTask = QueryAsync(GetContentPackageSummaryAsync, cancellationToken);
 
-        WordEntrySummary wordSummary = await GetWordEntrySummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
+        await Task.WhenAll(wordSummaryTask, topicCountTask, packageSummaryTask).ConfigureAwait(false);
 
-        int topicCount = await dbContext.Topics.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        ContentPackageSummary packageSummary = await GetContentPackageSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
+        WordEntrySummary wordSummary = await wordSummaryTask.ConfigureAwait(false);
+        int topicCount = await topicCountTask.ConfigureAwait(false);
+        ContentPackageSummary packageSummary = await packageSummaryTask.ConfigureAwait(false);
 
         return new AdminCatalogDashboardResponse(
             wordSummary.ActiveCount,
@@ -51,109 +52,36 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
 
     public async Task<AdminSystemReportResponse> GetSystemReportAsync(CancellationToken cancellationToken)
     {
-        await using DarwinLinguaDbContext dbContext = await dbContextFactory
-            .CreateDbContextAsync(cancellationToken)
-            .ConfigureAwait(false);
+        Task<AdminCatalogSystemReportResponse> catalogTask = GetCatalogSystemReportAsync(cancellationToken);
+        Task<AdminSocialSystemReportResponse> socialTask = GetSocialSystemReportAsync(cancellationToken);
+        Task<AdminModerationSystemReportResponse> moderationTask = GetModerationSystemReportAsync(cancellationToken);
+        Task<AdminOperationsSystemReportResponse> operationsTask = GetOperationsSystemReportAsync(cancellationToken);
 
-        WordEntrySummary wordSummary = await GetWordEntrySummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
-
-        int topicCount = await dbContext.Topics.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        int scenarioLessonCount = await dbContext.ScenarioLessons.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        int conversationStarterPackCount = await dbContext.ConversationStarterPacks.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        int eventPreparationPackCount = await dbContext.EventPreparationPacks.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        OrganizerProfileSummary organizerProfileSummary = await GetOrganizerProfileSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
-
-        ConversationEventSummary conversationEventSummary = await GetConversationEventSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
-
-        int eventRsvpCount = await dbContext.EventRsvps.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        OrganizerClaimRequestSummary organizerClaimRequestSummary = await GetOrganizerClaimRequestSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
-
-        int organizerProfileOwnerCount = await dbContext.OrganizerProfileOwners.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        LearnerConversationProfileSummary learnerConversationProfileSummary = await GetLearnerConversationProfileSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
-
-        PartnerRequestSummary partnerRequestSummary = await GetPartnerRequestSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
-
-        UserReportSummary userReportSummary = await GetUserReportSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
-
-        int userBlockCount = await dbContext.UserBlocks.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        int moderationDecisionAuditCount = await dbContext.ModerationDecisionAudits.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        ContentPackageSummary packageSummary = await GetContentPackageSummaryAsync(dbContext, cancellationToken)
-            .ConfigureAwait(false);
+        await Task.WhenAll(catalogTask, socialTask, moderationTask, operationsTask).ConfigureAwait(false);
 
         return new AdminSystemReportResponse(
             DateTime.UtcNow,
-            new AdminCatalogSystemReportResponse(
-                wordSummary.ActiveCount,
-                wordSummary.DraftCount,
-                topicCount,
-                scenarioLessonCount,
-                conversationStarterPackCount,
-                eventPreparationPackCount),
-            new AdminSocialSystemReportResponse(
-                organizerProfileSummary.TotalCount,
-                conversationEventSummary.TotalCount,
-                conversationEventSummary.OnlineCount,
-                eventRsvpCount,
-                organizerClaimRequestSummary.TotalCount,
-                organizerClaimRequestSummary.PendingCount,
-                organizerProfileOwnerCount,
-                learnerConversationProfileSummary.TotalCount,
-                learnerConversationProfileSummary.PublicCount,
-                partnerRequestSummary.TotalCount,
-                partnerRequestSummary.PendingCount),
-            new AdminModerationSystemReportResponse(
-                userReportSummary.TotalCount,
-                userReportSummary.PendingCount,
-                userBlockCount,
-                moderationDecisionAuditCount),
-            new AdminOperationsSystemReportResponse(
-                packageSummary.ImportedCount,
-                packageSummary.FailedCount,
-                packageSummary.LastImportAtUtc));
+            await catalogTask.ConfigureAwait(false),
+            await socialTask.ConfigureAwait(false),
+            await moderationTask.ConfigureAwait(false),
+            await operationsTask.ConfigureAwait(false));
     }
 
     public async Task<AdminCatalogImportsResponse> GetImportsAsync(string? statusFilter, CancellationToken cancellationToken)
     {
         string? normalizedStatusFilter = NormalizeFilter(statusFilter);
+        if (!TryParseContentPackageStatusFilter(normalizedStatusFilter, out ContentPackageStatus? parsedStatusFilter))
+        {
+            return new AdminCatalogImportsResponse(normalizedStatusFilter, []);
+        }
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
 
         IQueryable<ContentOps.Domain.Entities.ContentPackage> query = dbContext.ContentPackages.AsNoTracking();
 
-        if (!string.IsNullOrWhiteSpace(normalizedStatusFilter))
+        if (parsedStatusFilter is not null)
         {
-            query = query.Where(package => package.Status.ToString() == normalizedStatusFilter);
+            query = query.Where(package => package.Status == parsedStatusFilter);
         }
 
         AdminCatalogImportItemResponse[] packages = await query
@@ -210,14 +138,18 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
     public async Task<AdminCatalogHistoryViewResponse> GetHistoryAsync(string? statusFilter, CancellationToken cancellationToken)
     {
         string? normalizedStatusFilter = NormalizeFilter(statusFilter);
+        if (!TryParseContentPackageStatusFilter(normalizedStatusFilter, out ContentPackageStatus? parsedStatusFilter))
+        {
+            return new AdminCatalogHistoryViewResponse(normalizedStatusFilter, []);
+        }
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
 
         IQueryable<ContentOps.Domain.Entities.ContentPackage> query = dbContext.ContentPackages.AsNoTracking();
 
-        if (!string.IsNullOrWhiteSpace(normalizedStatusFilter))
+        if (parsedStatusFilter is not null)
         {
-            query = query.Where(package => package.Status.ToString() == normalizedStatusFilter);
+            query = query.Where(package => package.Status == parsedStatusFilter);
         }
 
         AdminCatalogHistoryItemResponse[] items = await query
@@ -239,24 +171,177 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
 
     public async Task<AdminCatalogRollbackPreviewResponse> GetRollbackPreviewAsync(CancellationToken cancellationToken)
     {
-        await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
+        Task<int> draftWordCountTask = QueryAsync(
+            static async (dbContext, token) => await dbContext.WordEntries
+                .AsNoTracking()
+                .CountAsync(word => word.PublicationStatus == PublicationStatus.Draft, token)
+                .ConfigureAwait(false),
+            cancellationToken);
+        Task<int> importedPackageCountTask = QueryAsync(
+            static async (dbContext, token) => await dbContext.ContentPackages
+                .AsNoTracking()
+                .CountAsync(token)
+                .ConfigureAwait(false),
+            cancellationToken);
 
-        int draftWordCount = await dbContext.WordEntries.AsNoTracking()
-            .CountAsync(word => word.PublicationStatus == PublicationStatus.Draft, cancellationToken)
-            .ConfigureAwait(false);
-
-        int importedPackageCount = await dbContext.ContentPackages.AsNoTracking()
-            .CountAsync(cancellationToken)
-            .ConfigureAwait(false);
+        await Task.WhenAll(draftWordCountTask, importedPackageCountTask).ConfigureAwait(false);
 
         return new AdminCatalogRollbackPreviewResponse(
-            draftWordCount,
-            importedPackageCount,
+            await draftWordCountTask.ConfigureAwait(false),
+            await importedPackageCountTask.ConfigureAwait(false),
             "Rollback actions are intentionally gated behind an explicit confirmation step. This screen is the approved modal baseline before destructive operations are implemented.");
     }
 
     private static string? NormalizeFilter(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private static bool TryParseContentPackageStatusFilter(
+        string? statusFilter,
+        out ContentPackageStatus? parsedStatusFilter)
+    {
+        if (string.IsNullOrWhiteSpace(statusFilter))
+        {
+            parsedStatusFilter = null;
+            return true;
+        }
+
+        if (Enum.TryParse(statusFilter, ignoreCase: true, out ContentPackageStatus status) &&
+            Enum.IsDefined(status))
+        {
+            parsedStatusFilter = status;
+            return true;
+        }
+
+        parsedStatusFilter = null;
+        return false;
+    }
+
+    private async Task<T> QueryAsync<T>(
+        Func<DarwinLinguaDbContext, CancellationToken, Task<T>> query,
+        CancellationToken cancellationToken)
+    {
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return await query(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task<AdminCatalogSystemReportResponse> GetCatalogSystemReportAsync(CancellationToken cancellationToken)
+    {
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        WordEntrySummary wordSummary = await GetWordEntrySummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        int topicCount = await dbContext.Topics.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        int scenarioLessonCount = await dbContext.ScenarioLessons.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        int conversationStarterPackCount = await dbContext.ConversationStarterPacks.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        int eventPreparationPackCount = await dbContext.EventPreparationPacks.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return new AdminCatalogSystemReportResponse(
+            wordSummary.ActiveCount,
+            wordSummary.DraftCount,
+            topicCount,
+            scenarioLessonCount,
+            conversationStarterPackCount,
+            eventPreparationPackCount);
+    }
+
+    private async Task<AdminSocialSystemReportResponse> GetSocialSystemReportAsync(CancellationToken cancellationToken)
+    {
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        OrganizerProfileSummary organizerProfileSummary = await GetOrganizerProfileSummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        ConversationEventSummary conversationEventSummary = await GetConversationEventSummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        int eventRsvpCount = await dbContext.EventRsvps.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        OrganizerClaimRequestSummary organizerClaimRequestSummary = await GetOrganizerClaimRequestSummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        int organizerProfileOwnerCount = await dbContext.OrganizerProfileOwners.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        LearnerConversationProfileSummary learnerConversationProfileSummary = await GetLearnerConversationProfileSummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        PartnerRequestSummary partnerRequestSummary = await GetPartnerRequestSummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        return new AdminSocialSystemReportResponse(
+            organizerProfileSummary.TotalCount,
+            conversationEventSummary.TotalCount,
+            conversationEventSummary.OnlineCount,
+            eventRsvpCount,
+            organizerClaimRequestSummary.TotalCount,
+            organizerClaimRequestSummary.PendingCount,
+            organizerProfileOwnerCount,
+            learnerConversationProfileSummary.TotalCount,
+            learnerConversationProfileSummary.PublicCount,
+            partnerRequestSummary.TotalCount,
+            partnerRequestSummary.PendingCount);
+    }
+
+    private async Task<AdminModerationSystemReportResponse> GetModerationSystemReportAsync(CancellationToken cancellationToken)
+    {
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        UserReportSummary userReportSummary = await GetUserReportSummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        int userBlockCount = await dbContext.UserBlocks.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        int moderationDecisionAuditCount = await dbContext.ModerationDecisionAudits.AsNoTracking()
+            .CountAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return new AdminModerationSystemReportResponse(
+            userReportSummary.TotalCount,
+            userReportSummary.PendingCount,
+            userBlockCount,
+            moderationDecisionAuditCount);
+    }
+
+    private async Task<AdminOperationsSystemReportResponse> GetOperationsSystemReportAsync(CancellationToken cancellationToken)
+    {
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        ContentPackageSummary packageSummary = await GetContentPackageSummaryAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+
+        return new AdminOperationsSystemReportResponse(
+            packageSummary.ImportedCount,
+            packageSummary.FailedCount,
+            packageSummary.LastImportAtUtc);
+    }
 
     private static async Task<WordEntrySummary> GetWordEntrySummaryAsync(
         DarwinLinguaDbContext dbContext,

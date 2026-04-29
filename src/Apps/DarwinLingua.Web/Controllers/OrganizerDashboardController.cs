@@ -11,10 +11,13 @@ namespace DarwinLingua.Web.Controllers;
 [Route("organizer")]
 public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApiClient) : Controller
 {
+    private const int DashboardProfileLoadConcurrency = 4;
+    private const int DashboardEventLoadConcurrency = 8;
+
     [HttpGet("", Name = "OrganizerDashboard_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        string? ownerEmail = User.Identity?.Name;
+        string? ownerEmail = GetCurrentOwnerEmail();
         if (string.IsNullOrWhiteSpace(ownerEmail))
         {
             return Challenge();
@@ -24,39 +27,12 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
             .GetOrganizerProfileOwnersByEmailAsync(ownerEmail, cancellationToken)
             .ConfigureAwait(false);
 
-        List<OrganizerDashboardProfileViewModel> profiles = new(ownerships.Count);
-        foreach (OrganizerProfileOwnerModel ownership in ownerships)
-        {
-            OrganizerProfileDetailModel? profile = await catalogApiClient
-                .GetOrganizerProfileBySlugAsync(ownership.OrganizerProfileSlug, cancellationToken)
-                .ConfigureAwait(false);
-
-            if (profile is not null)
-            {
-                IReadOnlyList<OrganizerManagedConversationEventModel> events = await catalogApiClient
-                    .GetAdminConversationEventsByOrganizerAsync(profile.Slug, cancellationToken)
-                    .ConfigureAwait(false);
-                Dictionary<string, EventRsvpSummaryModel> rsvpSummaries = [];
-                Dictionary<string, IReadOnlyList<EventRsvpModel>> eventRsvps = [];
-                foreach (OrganizerManagedConversationEventModel conversationEvent in events)
-                {
-                    rsvpSummaries[conversationEvent.Slug] = await catalogApiClient
-                        .GetEventRsvpSummaryAsync(conversationEvent.Slug, cancellationToken)
-                        .ConfigureAwait(false);
-                    eventRsvps[conversationEvent.Slug] = await catalogApiClient
-                        .GetAdminEventRsvpsAsync(conversationEvent.Slug, cancellationToken)
-                        .ConfigureAwait(false);
-                }
-
-                profiles.Add(new OrganizerDashboardProfileViewModel(
-                    profile,
-                    events,
-                    rsvpSummaries,
-                    eventRsvps,
-                    DarwinLinguaOrganizerPlanPolicy.Resolve(profile.PlanKey),
-                    CreateAnalytics(events)));
-            }
-        }
+        OrganizerDashboardProfileViewModel?[] loadedProfiles = await LoadDashboardProfilesAsync(ownerships, cancellationToken)
+            .ConfigureAwait(false);
+        List<OrganizerDashboardProfileViewModel> profiles = loadedProfiles
+            .Where(static profile => profile is not null)
+            .Select(static profile => profile!)
+            .ToList();
 
         return View(new OrganizerDashboardViewModel(ownerEmail, ownerships, profiles));
     }
@@ -325,7 +301,7 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         string slug,
         CancellationToken cancellationToken)
     {
-        string? ownerEmail = User.Identity?.Name;
+        string? ownerEmail = GetCurrentOwnerEmail();
         if (string.IsNullOrWhiteSpace(ownerEmail))
         {
             return null;
@@ -341,6 +317,95 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         }
 
         return await catalogApiClient.GetOrganizerProfileBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task<OrganizerDashboardProfileViewModel?[]> LoadDashboardProfilesAsync(
+        IReadOnlyList<OrganizerProfileOwnerModel> ownerships,
+        CancellationToken cancellationToken)
+    {
+        using SemaphoreSlim gate = new(DashboardProfileLoadConcurrency);
+        Task<OrganizerDashboardProfileViewModel?>[] tasks = ownerships
+            .Select(ownership => LoadDashboardProfileWithGateAsync(ownership.OrganizerProfileSlug, gate, cancellationToken))
+            .ToArray();
+
+        return await Task.WhenAll(tasks).ConfigureAwait(false);
+    }
+
+    private async Task<OrganizerDashboardProfileViewModel?> LoadDashboardProfileWithGateAsync(
+        string organizerProfileSlug,
+        SemaphoreSlim gate,
+        CancellationToken cancellationToken)
+    {
+        await gate.WaitAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            return await LoadDashboardProfileAsync(organizerProfileSlug, cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            gate.Release();
+        }
+    }
+
+    private async Task<OrganizerDashboardProfileViewModel?> LoadDashboardProfileAsync(
+        string organizerProfileSlug,
+        CancellationToken cancellationToken)
+    {
+        OrganizerProfileDetailModel? profile = await catalogApiClient
+            .GetOrganizerProfileBySlugAsync(organizerProfileSlug, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (profile is null)
+        {
+            return null;
+        }
+
+        IReadOnlyList<OrganizerManagedConversationEventModel> events = await catalogApiClient
+            .GetAdminConversationEventsByOrganizerAsync(profile.Slug, cancellationToken)
+            .ConfigureAwait(false);
+
+        using SemaphoreSlim eventGate = new(DashboardEventLoadConcurrency);
+        Task<KeyValuePair<string, DashboardEventRsvpData>>[] rsvpTasks = events
+            .Select(conversationEvent => LoadEventRsvpDataAsync(conversationEvent.Slug, eventGate, cancellationToken))
+            .ToArray();
+        KeyValuePair<string, DashboardEventRsvpData>[] rsvpRows = await Task.WhenAll(rsvpTasks).ConfigureAwait(false);
+
+        Dictionary<string, EventRsvpSummaryModel> rsvpSummaries = rsvpRows
+            .ToDictionary(static item => item.Key, static item => item.Value.Summary, StringComparer.OrdinalIgnoreCase);
+        Dictionary<string, IReadOnlyList<EventRsvpModel>> eventRsvps = rsvpRows
+            .ToDictionary(static item => item.Key, static item => item.Value.Rsvps, StringComparer.OrdinalIgnoreCase);
+
+        return new OrganizerDashboardProfileViewModel(
+            profile,
+            events,
+            rsvpSummaries,
+            eventRsvps,
+            DarwinLinguaOrganizerPlanPolicy.Resolve(profile.PlanKey),
+            CreateAnalytics(events));
+    }
+
+    private async Task<KeyValuePair<string, DashboardEventRsvpData>> LoadEventRsvpDataAsync(
+        string eventSlug,
+        SemaphoreSlim gate,
+        CancellationToken cancellationToken)
+    {
+        await gate.WaitAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            Task<EventRsvpSummaryModel> summaryTask = catalogApiClient.GetEventRsvpSummaryAsync(eventSlug, cancellationToken);
+            Task<IReadOnlyList<EventRsvpModel>> rsvpsTask = catalogApiClient.GetAdminEventRsvpsAsync(eventSlug, cancellationToken);
+            await Task.WhenAll(summaryTask, rsvpsTask).ConfigureAwait(false);
+
+            return new(
+                eventSlug,
+                new DashboardEventRsvpData(
+                    await summaryTask.ConfigureAwait(false),
+                    await rsvpsTask.ConfigureAwait(false)));
+        }
+        finally
+        {
+            gate.Release();
+        }
     }
 
     private async Task<OrganizerManagedConversationEventModel?> LoadOwnedEventAsync(
@@ -482,4 +547,13 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         string.IsNullOrWhiteSpace(value)
             ? []
             : value.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+    private sealed record DashboardEventRsvpData(
+        EventRsvpSummaryModel Summary,
+        IReadOnlyList<EventRsvpModel> Rsvps);
+
+    private string? GetCurrentOwnerEmail()
+    {
+        return WebUserIdentity.TryGetEmail(User);
+    }
 }

@@ -45,7 +45,7 @@ public sealed class OrganizerProfilesController(
                 profile,
                 new OrganizerClaimInputModel
                 {
-                    RequesterEmail = User.Identity?.Name ?? string.Empty,
+                    RequesterEmail = WebUserIdentity.TryGetEmail(User) ?? string.Empty,
                 },
                 TempData["StatusMessage"] as string,
                 TempData["ErrorMessage"] as string));

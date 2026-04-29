@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using DarwinLingua.Identity;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
@@ -114,9 +113,7 @@ public sealed class PartnerMatchingController(
     }
 
     private string GetOwnerEmail() =>
-        User.FindFirstValue(ClaimTypes.Email)
-        ?? User.Identity?.Name
-        ?? throw new InvalidOperationException("The authenticated learner does not have an email address.");
+        WebUserIdentity.GetRequiredEmail(User, "The authenticated learner does not have an email address.");
 
     private static PartnerMatchSearchRequest ToRequest(PartnerMatchSearchInputModel search) =>
         new(

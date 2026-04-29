@@ -23,12 +23,13 @@ public sealed class PartnerMatchingService(IDbContextFactory<DarwinLinguaDbConte
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        string[] suppressedEmails = await GetSuppressedEmailsAsync(dbContext, normalizedEmail, cancellationToken).ConfigureAwait(false);
         IQueryable<LearnerConversationProfile> query = dbContext.LearnerConversationProfiles
             .AsNoTracking()
             .Where(profile =>
                 profile.OwnerEmail != normalizedEmail &&
-                !suppressedEmails.Contains(profile.OwnerEmail) &&
+                !dbContext.UserBlocks.AsNoTracking().Any(block =>
+                    (block.BlockerEmail == normalizedEmail && block.BlockedEmail == profile.OwnerEmail) ||
+                    (block.BlockerEmail == profile.OwnerEmail && block.BlockedEmail == normalizedEmail)) &&
                 profile.HasConfirmedAdult &&
                 (profile.Visibility == "public" || profile.Visibility == "request-only"));
 
@@ -411,23 +412,6 @@ public sealed class PartnerMatchingService(IDbContextFactory<DarwinLinguaDbConte
                 request.RespondedAtUtc,
                 contactEmail);
         }).ToArray();
-    }
-
-    private static async Task<string[]> GetSuppressedEmailsAsync(
-        DarwinLinguaDbContext dbContext,
-        string ownerEmail,
-        CancellationToken cancellationToken)
-    {
-        UserBlock[] blocks = await dbContext.UserBlocks
-            .AsNoTracking()
-            .Where(block => block.BlockerEmail == ownerEmail || block.BlockedEmail == ownerEmail)
-            .ToArrayAsync(cancellationToken)
-            .ConfigureAwait(false);
-
-        return blocks
-            .Select(block => block.BlockerEmail == ownerEmail ? block.BlockedEmail : block.BlockerEmail)
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
     }
 
     private static PartnerMatchProfileResponse ToMatchProfile(LearnerConversationProfile profile) =>

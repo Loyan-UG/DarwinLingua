@@ -4,6 +4,10 @@ public interface IUserEntitlementService
 {
     Task<UserEntitlementSnapshot> GetCurrentAsync(string userId, CancellationToken cancellationToken);
 
+    Task<IReadOnlyDictionary<string, UserEntitlementSnapshot>> GetCurrentManyAsync(
+        IReadOnlyCollection<string> userIds,
+        CancellationToken cancellationToken);
+
     Task<bool> HasFeatureAsync(string userId, string featureKey, CancellationToken cancellationToken);
 
     Task<UserEntitlementSnapshot> SetTierAsync(
@@ -15,6 +19,11 @@ public interface IUserEntitlementService
 
     Task<IReadOnlyList<UserEntitlementAuditEventModel>> GetRecentAuditEventsAsync(
         string userId,
+        int take,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyDictionary<string, IReadOnlyList<UserEntitlementAuditEventModel>>> GetRecentAuditEventsManyAsync(
+        IReadOnlyCollection<string> userIds,
         int take,
         CancellationToken cancellationToken);
 }

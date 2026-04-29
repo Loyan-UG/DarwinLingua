@@ -105,6 +105,11 @@ public sealed class ModerationService(IDbContextFactory<DarwinLinguaDbContext> d
         if (!string.IsNullOrWhiteSpace(status))
         {
             string normalizedStatus = ConversationEvent.NormalizeKey(status, "User report status");
+            if (!UserReportStatuses.All.Contains(normalizedStatus))
+            {
+                throw new InvalidOperationException("User report status is not supported.");
+            }
+
             query = query.Where(report => report.Status == normalizedStatus);
         }
 

@@ -27,6 +27,7 @@ public sealed class ServerContentDatabaseBootstrapper(
 
         DateTimeOffset now = DateTimeOffset.UtcNow;
         Dictionary<string, ClientProductEntity> productsByKey = await dbContext.ClientProducts
+            .AsSplitQuery()
             .Include(product => product.ContentStreams)
             .ThenInclude(stream => stream.PublishedPackages)
             .ToDictionaryAsync(product => product.Key, StringComparer.OrdinalIgnoreCase, cancellationToken)

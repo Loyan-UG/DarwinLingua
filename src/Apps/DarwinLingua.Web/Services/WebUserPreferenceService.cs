@@ -36,6 +36,11 @@ internal sealed class WebUserPreferenceService(
             return Map(actor.ActorId, preference);
         }
 
+        if (!actor.IsAuthenticated)
+        {
+            return CreateDefaultProfile(actor.ActorId);
+        }
+
         WebUserPreference createdPreference = new()
         {
             Id = Guid.NewGuid(),
@@ -127,4 +132,11 @@ internal sealed class WebUserPreferenceService(
             preference.PrimaryMeaningLanguageCode,
             preference.SecondaryMeaningLanguageCode,
             preference.UiLanguageCode);
+
+    private static UserLearningProfileModel CreateDefaultProfile(string actorId) =>
+        new(
+            actorId,
+            "en",
+            null,
+            "en");
 }

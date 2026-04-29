@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -14,17 +13,17 @@ public sealed class ModerationController(IWebCatalogApiClient catalogApiClient) 
     [HttpGet("", Name = "Admin_Moderation_Index")]
     public async Task<IActionResult> Index(string? status, CancellationToken cancellationToken)
     {
-        IReadOnlyList<UserReportModel> reports = await catalogApiClient
-            .GetAdminUserReportsAsync(status, cancellationToken)
-            .ConfigureAwait(false);
-        IReadOnlyList<ModerationDecisionAuditModel> audits = await catalogApiClient
-            .GetAdminModerationDecisionAuditsAsync(cancellationToken)
-            .ConfigureAwait(false);
+        Task<IReadOnlyList<UserReportModel>> reportsTask = catalogApiClient
+            .GetAdminUserReportsAsync(status, cancellationToken);
+        Task<IReadOnlyList<ModerationDecisionAuditModel>> auditsTask = catalogApiClient
+            .GetAdminModerationDecisionAuditsAsync(cancellationToken);
+
+        await Task.WhenAll(reportsTask, auditsTask).ConfigureAwait(false);
 
         return View(new AdminModerationPageViewModel(
             status,
-            reports,
-            audits,
+            await reportsTask.ConfigureAwait(false),
+            await auditsTask.ConfigureAwait(false),
             TempData["StatusMessage"] as string,
             TempData["ErrorMessage"] as string));
     }
@@ -60,13 +59,6 @@ public sealed class ModerationController(IWebCatalogApiClient catalogApiClient) 
         return RedirectToAction(nameof(Index));
     }
 
-    private string GetAdminEmail()
-    {
-        string? candidate = User.FindFirstValue(ClaimTypes.Email)
-            ?? User.Identity?.Name;
-
-        return !string.IsNullOrWhiteSpace(candidate) && candidate.Contains('@', StringComparison.Ordinal)
-            ? candidate
-            : "admin@local";
-    }
+    private string GetAdminEmail() =>
+        WebUserIdentity.TryGetEmail(User) ?? "admin@local";
 }

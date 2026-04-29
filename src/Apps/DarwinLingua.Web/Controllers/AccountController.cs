@@ -27,10 +27,11 @@ public sealed class AccountController(
         UserEntitlementSnapshot entitlement = await userEntitlementService.GetCurrentAsync(userId, cancellationToken);
         IReadOnlyList<UserEntitlementAuditEventModel> entitlementAuditEvents = await userEntitlementService
             .GetRecentAuditEventsAsync(userId, 5, cancellationToken);
+        string? email = WebUserIdentity.TryGetEmail(User);
 
         return View(new AccountPageViewModel(
-            User.Identity?.Name ?? User.FindFirstValue(ClaimTypes.Email) ?? "Authenticated user",
-            User.FindFirstValue(ClaimTypes.Email),
+            email ?? User.Identity?.Name ?? "Authenticated user",
+            email,
             roles,
             profile,
             entitlement,
