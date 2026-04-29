@@ -4,6 +4,16 @@
 
 This backlog is the execution checklist for `DarwinLingua.Web`.
 
+Current status: Web feature development is complete for the current backlog. Remaining work is tracked as test automation, manual validation, or mobile parity outside this Web implementation backlog.
+
+Related remaining-test backlog:
+
+- `71-Web-Test-Backlog.md`
+
+Related seed/report coverage:
+
+- `72-Web-Seed-Coverage-And-Admin-Reports.md`
+
 The approved web stack is:
 
 - `ASP.NET Core MVC`

@@ -301,89 +301,725 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             }
         }
 
-        if (await TableExistsAsync(dbContext, "WordCollections", cancellationToken).ConfigureAwait(false))
+        if (!await TableExistsAsync(dbContext, "WordCollections", cancellationToken).ConfigureAwait(false))
         {
-            return;
+            if (dbContext.Database.IsSqlite())
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    CREATE TABLE IF NOT EXISTS WordCollections (
+                        Id TEXT NOT NULL PRIMARY KEY,
+                        Slug TEXT NOT NULL,
+                        Name TEXT NOT NULL,
+                        Description TEXT NULL,
+                        ImageUrl TEXT NULL,
+                        PublicationStatus TEXT NOT NULL,
+                        SortOrder INTEGER NOT NULL,
+                        CreatedAtUtc TEXT NOT NULL,
+                        UpdatedAtUtc TEXT NOT NULL
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollections_Slug
+                        ON WordCollections (Slug);
+
+                    CREATE TABLE IF NOT EXISTS WordCollectionEntries (
+                        Id TEXT NOT NULL PRIMARY KEY,
+                        WordCollectionId TEXT NOT NULL,
+                        WordEntryId TEXT NOT NULL,
+                        SortOrder INTEGER NOT NULL,
+                        CreatedAtUtc TEXT NOT NULL,
+                        CONSTRAINT FK_WordCollectionEntries_WordCollections_WordCollectionId
+                            FOREIGN KEY (WordCollectionId) REFERENCES WordCollections (Id) ON DELETE CASCADE,
+                        CONSTRAINT FK_WordCollectionEntries_WordEntries_WordEntryId
+                            FOREIGN KEY (WordEntryId) REFERENCES WordEntries (Id) ON DELETE CASCADE
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollectionEntries_WordCollectionId_SortOrder
+                        ON WordCollectionEntries (WordCollectionId, SortOrder);
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollectionEntries_WordCollectionId_WordEntryId
+                        ON WordCollectionEntries (WordCollectionId, WordEntryId);
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    CREATE TABLE IF NOT EXISTS "WordCollections" (
+                        "Id" uuid NOT NULL,
+                        "Slug" character varying(128) NOT NULL,
+                        "Name" character varying(256) NOT NULL,
+                        "Description" character varying(4000),
+                        "ImageUrl" character varying(1024),
+                        "PublicationStatus" character varying(32) NOT NULL,
+                        "SortOrder" integer NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_WordCollections" PRIMARY KEY ("Id")
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollections_Slug"
+                        ON "WordCollections" ("Slug");
+
+                    CREATE TABLE IF NOT EXISTS "WordCollectionEntries" (
+                        "Id" uuid NOT NULL,
+                        "WordCollectionId" uuid NOT NULL,
+                        "WordEntryId" uuid NOT NULL,
+                        "SortOrder" integer NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_WordCollectionEntries" PRIMARY KEY ("Id"),
+                        CONSTRAINT "FK_WordCollectionEntries_WordCollections_WordCollectionId"
+                            FOREIGN KEY ("WordCollectionId") REFERENCES "WordCollections" ("Id") ON DELETE CASCADE,
+                        CONSTRAINT "FK_WordCollectionEntries_WordEntries_WordEntryId"
+                            FOREIGN KEY ("WordEntryId") REFERENCES "WordEntries" ("Id") ON DELETE CASCADE
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollectionEntries_WordCollectionId_SortOrder"
+                        ON "WordCollectionEntries" ("WordCollectionId", "SortOrder");
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollectionEntries_WordCollectionId_WordEntryId"
+                        ON "WordCollectionEntries" ("WordCollectionId", "WordEntryId");
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
         }
+
+        await EnsurePhase6CatalogSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsurePhase6OperationalSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsurePhase6CatalogSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
 
         if (dbContext.Database.IsSqlite())
         {
-            await dbContext.Database.ExecuteSqlRawAsync(
-                """
-                CREATE TABLE IF NOT EXISTS WordCollections (
-                    Id TEXT NOT NULL PRIMARY KEY,
-                    Slug TEXT NOT NULL,
-                    Name TEXT NOT NULL,
-                    Description TEXT NULL,
-                    ImageUrl TEXT NULL,
-                    PublicationStatus TEXT NOT NULL,
-                    SortOrder INTEGER NOT NULL,
-                    CreatedAtUtc TEXT NOT NULL,
-                    UpdatedAtUtc TEXT NOT NULL
-                );
-
-                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollections_Slug
-                    ON WordCollections (Slug);
-
-                CREATE TABLE IF NOT EXISTS WordCollectionEntries (
-                    Id TEXT NOT NULL PRIMARY KEY,
-                    WordCollectionId TEXT NOT NULL,
-                    WordEntryId TEXT NOT NULL,
-                    SortOrder INTEGER NOT NULL,
-                    CreatedAtUtc TEXT NOT NULL,
-                    CONSTRAINT FK_WordCollectionEntries_WordCollections_WordCollectionId
-                        FOREIGN KEY (WordCollectionId) REFERENCES WordCollections (Id) ON DELETE CASCADE,
-                    CONSTRAINT FK_WordCollectionEntries_WordEntries_WordEntryId
-                        FOREIGN KEY (WordEntryId) REFERENCES WordEntries (Id) ON DELETE CASCADE
-                );
-
-                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollectionEntries_WordCollectionId_SortOrder
-                    ON WordCollectionEntries (WordCollectionId, SortOrder);
-
-                CREATE UNIQUE INDEX IF NOT EXISTS IX_WordCollectionEntries_WordCollectionId_WordEntryId
-                    ON WordCollectionEntries (WordCollectionId, WordEntryId);
-                """,
-                cancellationToken).ConfigureAwait(false);
-
             return;
         }
 
         await dbContext.Database.ExecuteSqlRawAsync(
             """
-            CREATE TABLE IF NOT EXISTS "WordCollections" (
+            CREATE TABLE IF NOT EXISTS "ScenarioLessons" (
                 "Id" uuid NOT NULL,
                 "Slug" character varying(128) NOT NULL,
-                "Name" character varying(256) NOT NULL,
-                "Description" character varying(4000),
-                "ImageUrl" character varying(1024),
+                "Title" character varying(256) NOT NULL,
+                "Description" character varying(4000) NOT NULL,
+                "LearnerGoal" character varying(1024) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "Category" character varying(128) NOT NULL,
                 "PublicationStatus" character varying(32) NOT NULL,
                 "SortOrder" integer NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "UpdatedAtUtc" timestamp with time zone NOT NULL,
-                CONSTRAINT "PK_WordCollections" PRIMARY KEY ("Id")
+                CONSTRAINT "PK_ScenarioLessons" PRIMARY KEY ("Id")
             );
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollections_Slug"
-                ON "WordCollections" ("Slug");
-
-            CREATE TABLE IF NOT EXISTS "WordCollectionEntries" (
+            CREATE TABLE IF NOT EXISTS "ScenarioLessonTopics" (
                 "Id" uuid NOT NULL,
-                "WordCollectionId" uuid NOT NULL,
-                "WordEntryId" uuid NOT NULL,
+                "ScenarioLessonId" uuid NOT NULL,
+                "TopicId" uuid NOT NULL,
+                "IsPrimary" boolean NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioLessonTopics" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioLessonTopics_ScenarioLessons_ScenarioLessonId"
+                    FOREIGN KEY ("ScenarioLessonId") REFERENCES "ScenarioLessons" ("Id") ON DELETE CASCADE,
+                CONSTRAINT "FK_ScenarioLessonTopics_Topics_TopicId"
+                    FOREIGN KEY ("TopicId") REFERENCES "Topics" ("Id") ON DELETE RESTRICT
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioDialogueTurns" (
+                "Id" uuid NOT NULL,
+                "ScenarioLessonId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "SpeakerRole" character varying(64) NOT NULL,
+                "BaseText" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioDialogueTurns" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioDialogueTurns_ScenarioLessons_ScenarioLessonId"
+                    FOREIGN KEY ("ScenarioLessonId") REFERENCES "ScenarioLessons" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioPhrases" (
+                "Id" uuid NOT NULL,
+                "ScenarioLessonId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "BaseText" character varying(1024) NOT NULL,
+                "UsageNote" character varying(1024),
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioPhrases" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioPhrases_ScenarioLessons_ScenarioLessonId"
+                    FOREIGN KEY ("ScenarioLessonId") REFERENCES "ScenarioLessons" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioQuestions" (
+                "Id" uuid NOT NULL,
+                "ScenarioLessonId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "Prompt" character varying(1024) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioQuestions" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioQuestions_ScenarioLessons_ScenarioLessonId"
+                    FOREIGN KEY ("ScenarioLessonId") REFERENCES "ScenarioLessons" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioAnswers" (
+                "Id" uuid NOT NULL,
+                "ScenarioQuestionId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "Text" character varying(1024) NOT NULL,
+                "IsCorrect" boolean NOT NULL,
+                "Feedback" character varying(1024),
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioAnswers" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioAnswers_ScenarioQuestions_ScenarioQuestionId"
+                    FOREIGN KEY ("ScenarioQuestionId") REFERENCES "ScenarioQuestions" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioDialogueTurnTranslations" (
+                "Id" uuid NOT NULL,
+                "OwnerId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioDialogueTurnTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioDialogueTurnTranslations_ScenarioDialogueTurns_OwnerId"
+                    FOREIGN KEY ("OwnerId") REFERENCES "ScenarioDialogueTurns" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioPhraseTranslations" (
+                "Id" uuid NOT NULL,
+                "OwnerId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioPhraseTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioPhraseTranslations_ScenarioPhrases_OwnerId"
+                    FOREIGN KEY ("OwnerId") REFERENCES "ScenarioPhrases" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioQuestionTranslations" (
+                "Id" uuid NOT NULL,
+                "OwnerId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioQuestionTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioQuestionTranslations_ScenarioQuestions_OwnerId"
+                    FOREIGN KEY ("OwnerId") REFERENCES "ScenarioQuestions" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ScenarioAnswerTranslations" (
+                "Id" uuid NOT NULL,
+                "OwnerId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ScenarioAnswerTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ScenarioAnswerTranslations_ScenarioAnswers_OwnerId"
+                    FOREIGN KEY ("OwnerId") REFERENCES "ScenarioAnswers" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioLessons_Slug" ON "ScenarioLessons" ("Slug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioLessonTopics_PrimaryPerLesson" ON "ScenarioLessonTopics" ("ScenarioLessonId") WHERE "IsPrimary" = TRUE;
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioLessonTopics_ScenarioLessonId_TopicId" ON "ScenarioLessonTopics" ("ScenarioLessonId", "TopicId");
+            CREATE INDEX IF NOT EXISTS "IX_ScenarioLessonTopics_TopicId" ON "ScenarioLessonTopics" ("TopicId");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioDialogueTurns_ScenarioLessonId_SortOrder" ON "ScenarioDialogueTurns" ("ScenarioLessonId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioDialogueTurnTranslations_OwnerId_LanguageCode" ON "ScenarioDialogueTurnTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioPhrases_ScenarioLessonId_SortOrder" ON "ScenarioPhrases" ("ScenarioLessonId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioPhraseTranslations_OwnerId_LanguageCode" ON "ScenarioPhraseTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioQuestions_ScenarioLessonId_SortOrder" ON "ScenarioQuestions" ("ScenarioLessonId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioQuestionTranslations_OwnerId_LanguageCode" ON "ScenarioQuestionTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioAnswers_ScenarioQuestionId_SortOrder" ON "ScenarioAnswers" ("ScenarioQuestionId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ScenarioAnswerTranslations_OwnerId_LanguageCode" ON "ScenarioAnswerTranslations" ("OwnerId", "LanguageCode");
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await EnsurePhase6StarterSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsurePhase6EventPreparationSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsurePhase6StarterSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "ConversationStarterPacks" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "Description" character varying(4000) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "Category" character varying(128) NOT NULL,
+                "Situation" character varying(128) NOT NULL,
+                "Tone" character varying(128) NOT NULL,
+                "ConversationGoal" character varying(128) NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
                 "SortOrder" integer NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
-                CONSTRAINT "PK_WordCollectionEntries" PRIMARY KEY ("Id"),
-                CONSTRAINT "FK_WordCollectionEntries_WordCollections_WordCollectionId"
-                    FOREIGN KEY ("WordCollectionId") REFERENCES "WordCollections" ("Id") ON DELETE CASCADE,
-                CONSTRAINT "FK_WordCollectionEntries_WordEntries_WordEntryId"
-                    FOREIGN KEY ("WordEntryId") REFERENCES "WordEntries" ("Id") ON DELETE CASCADE
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationStarterPacks" PRIMARY KEY ("Id")
             );
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollectionEntries_WordCollectionId_SortOrder"
-                ON "WordCollectionEntries" ("WordCollectionId", "SortOrder");
+            CREATE TABLE IF NOT EXISTS "ConversationStarterPackTopics" (
+                "Id" uuid NOT NULL,
+                "ConversationStarterPackId" uuid NOT NULL,
+                "TopicId" uuid NOT NULL,
+                "IsPrimary" boolean NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationStarterPackTopics" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ConversationStarterPackTopics_ConversationStarterPacks_ConversationStarterPackId"
+                    FOREIGN KEY ("ConversationStarterPackId") REFERENCES "ConversationStarterPacks" ("Id") ON DELETE CASCADE,
+                CONSTRAINT "FK_ConversationStarterPackTopics_Topics_TopicId"
+                    FOREIGN KEY ("TopicId") REFERENCES "Topics" ("Id") ON DELETE RESTRICT
+            );
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollectionEntries_WordCollectionId_WordEntryId"
-                ON "WordCollectionEntries" ("WordCollectionId", "WordEntryId");
+            CREATE TABLE IF NOT EXISTS "ConversationStarterLinkedScenarios" (
+                "Id" uuid NOT NULL,
+                "ConversationStarterPackId" uuid NOT NULL,
+                "ScenarioSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationStarterLinkedScenarios" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ConversationStarterLinkedScenarios_ConversationStarterPacks_ConversationStarterPackId"
+                    FOREIGN KEY ("ConversationStarterPackId") REFERENCES "ConversationStarterPacks" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ConversationStarterLinkedEventPreparationPacks" (
+                "Id" uuid NOT NULL,
+                "ConversationStarterPackId" uuid NOT NULL,
+                "EventPreparationPackSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationStarterLinkedEventPreparationPacks" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ConversationStarterLinkedEventPreparationPacks_ConversationStarterPacks_ConversationStarterPackId"
+                    FOREIGN KEY ("ConversationStarterPackId") REFERENCES "ConversationStarterPacks" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ConversationStarterPhrases" (
+                "Id" uuid NOT NULL,
+                "ConversationStarterPackId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "BaseText" character varying(1024) NOT NULL,
+                "Function" character varying(128) NOT NULL,
+                "UsageNote" character varying(1024),
+                "Register" character varying(64),
+                "CommonMistake" character varying(1024),
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationStarterPhrases" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ConversationStarterPhrases_ConversationStarterPacks_ConversationStarterPackId"
+                    FOREIGN KEY ("ConversationStarterPackId") REFERENCES "ConversationStarterPacks" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ConversationStarterPhraseAlternatives" (
+                "Id" uuid NOT NULL,
+                "ConversationStarterPhraseId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "BaseText" character varying(1024) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationStarterPhraseAlternatives" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ConversationStarterPhraseAlternatives_ConversationStarterPhrases_ConversationStarterPhraseId"
+                    FOREIGN KEY ("ConversationStarterPhraseId") REFERENCES "ConversationStarterPhrases" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ConversationStarterPhraseTranslations" (
+                "Id" uuid NOT NULL,
+                "ConversationStarterPhraseId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationStarterPhraseTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ConversationStarterPhraseTranslations_ConversationStarterPhrases_ConversationStarterPhraseId"
+                    FOREIGN KEY ("ConversationStarterPhraseId") REFERENCES "ConversationStarterPhrases" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPacks_Slug" ON "ConversationStarterPacks" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationStarterPacks_CefrLevel_Situation_Tone_ConversationGoal" ON "ConversationStarterPacks" ("CefrLevel", "Situation", "Tone", "ConversationGoal");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPackTopics_PrimaryPerPack" ON "ConversationStarterPackTopics" ("ConversationStarterPackId") WHERE "IsPrimary" = TRUE;
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPackTopics_ConversationStarterPackId_TopicId" ON "ConversationStarterPackTopics" ("ConversationStarterPackId", "TopicId");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationStarterPackTopics_TopicId" ON "ConversationStarterPackTopics" ("TopicId");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterLinkedScenarios_ConversationStarterPackId_ScenarioSlug" ON "ConversationStarterLinkedScenarios" ("ConversationStarterPackId", "ScenarioSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterLinkedEventPreparationPacks_ConversationStarterPackId_EventPreparationPackSlug" ON "ConversationStarterLinkedEventPreparationPacks" ("ConversationStarterPackId", "EventPreparationPackSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPhrases_ConversationStarterPackId_SortOrder" ON "ConversationStarterPhrases" ("ConversationStarterPackId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPhraseAlternatives_ConversationStarterPhraseId_SortOrder" ON "ConversationStarterPhraseAlternatives" ("ConversationStarterPhraseId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPhraseTranslations_ConversationStarterPhraseId_LanguageCode" ON "ConversationStarterPhraseTranslations" ("ConversationStarterPhraseId", "LanguageCode");
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsurePhase6EventPreparationSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "EventPreparationPacks" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "Description" character varying(4000) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "Category" character varying(128) NOT NULL,
+                "EventType" character varying(128) NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_EventPreparationPacks" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "EventPreparationPackTopics" (
+                "Id" uuid NOT NULL,
+                "EventPreparationPackId" uuid NOT NULL,
+                "TopicId" uuid NOT NULL,
+                "IsPrimary" boolean NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_EventPreparationPackTopics" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_EventPreparationPackTopics_EventPreparationPacks_EventPreparationPackId"
+                    FOREIGN KEY ("EventPreparationPackId") REFERENCES "EventPreparationPacks" ("Id") ON DELETE CASCADE,
+                CONSTRAINT "FK_EventPreparationPackTopics_Topics_TopicId"
+                    FOREIGN KEY ("TopicId") REFERENCES "Topics" ("Id") ON DELETE RESTRICT
+            );
+
+            CREATE TABLE IF NOT EXISTS "EventPreparationLinkedScenarios" (
+                "Id" uuid NOT NULL,
+                "EventPreparationPackId" uuid NOT NULL,
+                "ScenarioSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_EventPreparationLinkedScenarios" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_EventPreparationLinkedScenarios_EventPreparationPacks_EventPreparationPackId"
+                    FOREIGN KEY ("EventPreparationPackId") REFERENCES "EventPreparationPacks" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "EventPreparationLinkedConversationStarterPacks" (
+                "Id" uuid NOT NULL,
+                "EventPreparationPackId" uuid NOT NULL,
+                "ConversationStarterPackSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_EventPreparationLinkedConversationStarterPacks" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_EventPreparationLinkedConversationStarterPacks_EventPreparationPacks_EventPreparationPackId"
+                    FOREIGN KEY ("EventPreparationPackId") REFERENCES "EventPreparationPacks" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "EventPreparationPrompts" (
+                "Id" uuid NOT NULL,
+                "EventPreparationPackId" uuid NOT NULL,
+                "PromptType" character varying(64) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_EventPreparationPrompts" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_EventPreparationPrompts_EventPreparationPacks_EventPreparationPackId"
+                    FOREIGN KEY ("EventPreparationPackId") REFERENCES "EventPreparationPacks" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "EventPreparationVocabularyReferences" (
+                "Id" uuid NOT NULL,
+                "EventPreparationPackId" uuid NOT NULL,
+                "Word" character varying(256) NOT NULL,
+                "PartOfSpeech" character varying(32),
+                "CefrLevel" character varying(8),
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_EventPreparationVocabularyReferences" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_EventPreparationVocabularyReferences_EventPreparationPacks_EventPreparationPackId"
+                    FOREIGN KEY ("EventPreparationPackId") REFERENCES "EventPreparationPacks" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationPacks_Slug" ON "EventPreparationPacks" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_EventPreparationPacks_CefrLevel_Category_EventType" ON "EventPreparationPacks" ("CefrLevel", "Category", "EventType");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationPackTopics_PrimaryPerPack" ON "EventPreparationPackTopics" ("EventPreparationPackId") WHERE "IsPrimary" = TRUE;
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationPackTopics_EventPreparationPackId_TopicId" ON "EventPreparationPackTopics" ("EventPreparationPackId", "TopicId");
+            CREATE INDEX IF NOT EXISTS "IX_EventPreparationPackTopics_TopicId" ON "EventPreparationPackTopics" ("TopicId");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationLinkedScenarios_EventPreparationPackId_ScenarioSlug" ON "EventPreparationLinkedScenarios" ("EventPreparationPackId", "ScenarioSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationLinkedConversationStarterPacks_EventPreparationPackId_ConversationStarterPackSlug" ON "EventPreparationLinkedConversationStarterPacks" ("EventPreparationPackId", "ConversationStarterPackSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationPrompts_EventPreparationPackId_PromptType_SortOrder" ON "EventPreparationPrompts" ("EventPreparationPackId", "PromptType", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationVocabularyReferences_EventPreparationPackId_SortOrder" ON "EventPreparationVocabularyReferences" ("EventPreparationPackId", "SortOrder");
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsurePhase6OperationalSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "ConversationEvents" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Name" character varying(256) NOT NULL,
+                "Description" character varying(4000) NOT NULL,
+                "City" character varying(128),
+                "CountryRegion" character varying(128) NOT NULL,
+                "ApproximateLocation" character varying(512),
+                "IsOnline" boolean NOT NULL,
+                "Category" character varying(128) NOT NULL,
+                "OrganizerName" character varying(256) NOT NULL,
+                "OrganizerProfileSlug" character varying(128),
+                "ExternalLink" character varying(1024),
+                "ContactMethod" character varying(512),
+                "ScheduleText" character varying(1000) NOT NULL,
+                "RecurrenceRule" character varying(256),
+                "Capacity" integer,
+                "PriceType" character varying(64) NOT NULL,
+                "VerificationStatus" character varying(64) NOT NULL,
+                "SourceName" character varying(256),
+                "SourceUrl" character varying(1024),
+                "LastVerifiedAtUtc" timestamp with time zone,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationEvents" PRIMARY KEY ("Id")
+            );
+
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "OrganizerProfileSlug" character varying(128);
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "RecurrenceRule" character varying(256);
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "Capacity" integer;
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "SourceName" character varying(256);
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "SourceUrl" character varying(1024);
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "LastVerifiedAtUtc" timestamp with time zone;
+
+            CREATE TABLE IF NOT EXISTS "ConversationEventLevels" (
+                "Id" uuid NOT NULL,
+                "ConversationEventId" uuid NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationEventLevels" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ConversationEventHelperLanguages" (
+                "Id" uuid NOT NULL,
+                "ConversationEventId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationEventHelperLanguages" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ConversationEventPreparationPackLinks" (
+                "Id" uuid NOT NULL,
+                "ConversationEventId" uuid NOT NULL,
+                "PreparationPackSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ConversationEventPreparationPackLinks" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "OrganizerProfiles" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "DisplayName" character varying(256) NOT NULL,
+                "OrganizerType" character varying(64) NOT NULL,
+                "Description" character varying(4000) NOT NULL,
+                "CityRegion" character varying(128),
+                "IsOnlineAvailable" boolean NOT NULL,
+                "WebsiteUrl" character varying(1024),
+                "PublicContactMethod" character varying(512),
+                "VerificationStatus" character varying(64) NOT NULL,
+                "PlanKey" character varying(64) NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "HistoricalEventCount" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_OrganizerProfiles" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "OrganizerProfileSupportedLevels" (
+                "Id" uuid NOT NULL,
+                "OrganizerProfileId" uuid NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_OrganizerProfileSupportedLevels" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "OrganizerProfileHelperLanguages" (
+                "Id" uuid NOT NULL,
+                "OrganizerProfileId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_OrganizerProfileHelperLanguages" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "OrganizerClaimRequests" (
+                "Id" uuid NOT NULL,
+                "OrganizerProfileSlug" character varying(128) NOT NULL,
+                "RequesterName" character varying(256) NOT NULL,
+                "RequesterEmail" character varying(320) NOT NULL,
+                "RelationshipToOrganizer" character varying(256) NOT NULL,
+                "EvidenceText" character varying(4000) NOT NULL,
+                "Status" character varying(64) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_OrganizerClaimRequests" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "OrganizerProfileOwners" (
+                "Id" uuid NOT NULL,
+                "OrganizerProfileSlug" character varying(128) NOT NULL,
+                "OwnerEmail" character varying(320) NOT NULL,
+                "AssignedBy" character varying(320) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_OrganizerProfileOwners" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "EventRsvps" (
+                "Id" uuid NOT NULL,
+                "ConversationEventSlug" character varying(128) NOT NULL,
+                "ParticipantName" character varying(256) NOT NULL,
+                "ParticipantEmail" character varying(320) NOT NULL,
+                "Status" character varying(64) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_EventRsvps" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "LearnerConversationProfiles" (
+                "Id" uuid NOT NULL,
+                "OwnerEmail" character varying(320) NOT NULL,
+                "DisplayName" character varying(128) NOT NULL,
+                "CityRegion" character varying(128),
+                "InteractionPreference" character varying(32) NOT NULL,
+                "GermanLevel" character varying(8) NOT NULL,
+                "HelperLanguageCodes" character varying(256) NOT NULL,
+                "ConversationGoals" character varying(1000) NOT NULL,
+                "AvailabilityNotes" character varying(1000),
+                "Visibility" character varying(32) NOT NULL,
+                "HasConfirmedAdult" boolean NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_LearnerConversationProfiles" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "PartnerRequests" (
+                "Id" uuid NOT NULL,
+                "RequesterEmail" character varying(320) NOT NULL,
+                "TargetLearnerProfileId" uuid NOT NULL,
+                "OpenerTemplateKey" character varying(64) NOT NULL,
+                "Note" character varying(500),
+                "Status" character varying(64) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                "ExpiresAtUtc" timestamp with time zone NOT NULL,
+                "RespondedAtUtc" timestamp with time zone,
+                CONSTRAINT "PK_PartnerRequests" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "UserReports" (
+                "Id" uuid NOT NULL,
+                "ReporterEmail" character varying(320) NOT NULL,
+                "TargetType" character varying(64) NOT NULL,
+                "TargetKey" character varying(256) NOT NULL,
+                "ReportedUserEmail" character varying(320),
+                "Reason" character varying(64) NOT NULL,
+                "Details" character varying(2000) NOT NULL,
+                "Status" character varying(64) NOT NULL,
+                "DecisionNote" character varying(1000),
+                "DecidedBy" character varying(320),
+                "DecidedAtUtc" timestamp with time zone,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_UserReports" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "UserBlocks" (
+                "Id" uuid NOT NULL,
+                "BlockerEmail" character varying(320) NOT NULL,
+                "BlockedEmail" character varying(320) NOT NULL,
+                "Reason" character varying(500),
+                "SourcePartnerRequestId" uuid,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_UserBlocks" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ModerationDecisionAudits" (
+                "Id" uuid NOT NULL,
+                "UserReportId" uuid NOT NULL,
+                "DecisionStatus" character varying(64) NOT NULL,
+                "DecidedBy" character varying(320) NOT NULL,
+                "DecisionNote" character varying(1000),
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ModerationDecisionAudits" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "OrganizerVerifications" (
+                "Id" uuid NOT NULL,
+                "OrganizerProfileSlug" character varying(128) NOT NULL,
+                "Status" character varying(64) NOT NULL,
+                "RequestedByEmail" character varying(320) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_OrganizerVerifications" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ListingReviews" (
+                "Id" uuid NOT NULL,
+                "ListingType" character varying(64) NOT NULL,
+                "ListingKey" character varying(256) NOT NULL,
+                "Status" character varying(64) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ListingReviews" PRIMARY KEY ("Id")
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEvents_Slug" ON "ConversationEvents" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_OrganizerProfileSlug" ON "ConversationEvents" ("OrganizerProfileSlug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_City_IsOnline_PriceType" ON "ConversationEvents" ("City", "IsOnline", "PriceType");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Category_PublicationStatus" ON "ConversationEvents" ("Category", "PublicationStatus");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventLevels_ConversationEventId_CefrLevel" ON "ConversationEventLevels" ("ConversationEventId", "CefrLevel");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventHelperLanguages_ConversationEventId_LanguageCode" ON "ConversationEventHelperLanguages" ("ConversationEventId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventPreparationPackLinks_ConversationEventId_PreparationPackSlug" ON "ConversationEventPreparationPackLinks" ("ConversationEventId", "PreparationPackSlug");
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfiles_Slug" ON "OrganizerProfiles" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_OrganizerProfiles_OrganizerType_PublicationStatus" ON "OrganizerProfiles" ("OrganizerType", "PublicationStatus");
+            CREATE INDEX IF NOT EXISTS "IX_OrganizerProfiles_CityRegion_PublicationStatus" ON "OrganizerProfiles" ("CityRegion", "PublicationStatus");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileSupportedLevels_OrganizerProfileId_CefrLevel" ON "OrganizerProfileSupportedLevels" ("OrganizerProfileId", "CefrLevel");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileHelperLanguages_OrganizerProfileId_LanguageCode" ON "OrganizerProfileHelperLanguages" ("OrganizerProfileId", "LanguageCode");
+            CREATE INDEX IF NOT EXISTS "IX_OrganizerClaimRequests_OrganizerProfileSlug_Status" ON "OrganizerClaimRequests" ("OrganizerProfileSlug", "Status");
+            CREATE INDEX IF NOT EXISTS "IX_OrganizerClaimRequests_RequesterEmail_OrganizerProfileSlug_Status" ON "OrganizerClaimRequests" ("RequesterEmail", "OrganizerProfileSlug", "Status");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileOwners_OrganizerProfileSlug_OwnerEmail" ON "OrganizerProfileOwners" ("OrganizerProfileSlug", "OwnerEmail");
+            CREATE INDEX IF NOT EXISTS "IX_OrganizerProfileOwners_OwnerEmail" ON "OrganizerProfileOwners" ("OwnerEmail");
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventRsvps_ConversationEventSlug_ParticipantEmail" ON "EventRsvps" ("ConversationEventSlug", "ParticipantEmail");
+            CREATE INDEX IF NOT EXISTS "IX_EventRsvps_ConversationEventSlug_Status" ON "EventRsvps" ("ConversationEventSlug", "Status");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_LearnerConversationProfiles_OwnerEmail" ON "LearnerConversationProfiles" ("OwnerEmail");
+            CREATE INDEX IF NOT EXISTS "IX_LearnerConversationProfiles_Visibility_CityRegion_GermanLevel" ON "LearnerConversationProfiles" ("Visibility", "CityRegion", "GermanLevel");
+            CREATE INDEX IF NOT EXISTS "IX_PartnerRequests_RequesterEmail_TargetLearnerProfileId_Status" ON "PartnerRequests" ("RequesterEmail", "TargetLearnerProfileId", "Status");
+            CREATE INDEX IF NOT EXISTS "IX_PartnerRequests_TargetLearnerProfileId_Status" ON "PartnerRequests" ("TargetLearnerProfileId", "Status");
+            CREATE INDEX IF NOT EXISTS "IX_PartnerRequests_RequesterEmail_CreatedAtUtc" ON "PartnerRequests" ("RequesterEmail", "CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_UserReports_Status_CreatedAtUtc" ON "UserReports" ("Status", "CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_UserReports_TargetType_TargetKey" ON "UserReports" ("TargetType", "TargetKey");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_UserBlocks_BlockerEmail_BlockedEmail" ON "UserBlocks" ("BlockerEmail", "BlockedEmail");
+            CREATE INDEX IF NOT EXISTS "IX_UserBlocks_BlockedEmail" ON "UserBlocks" ("BlockedEmail");
+            CREATE INDEX IF NOT EXISTS "IX_ModerationDecisionAudits_UserReportId_CreatedAtUtc" ON "ModerationDecisionAudits" ("UserReportId", "CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_OrganizerVerifications_OrganizerProfileSlug_Status" ON "OrganizerVerifications" ("OrganizerProfileSlug", "Status");
+            CREATE INDEX IF NOT EXISTS "IX_ListingReviews_ListingType_ListingKey_Status" ON "ListingReviews" ("ListingType", "ListingKey", "Status");
             """,
             cancellationToken).ConfigureAwait(false);
     }

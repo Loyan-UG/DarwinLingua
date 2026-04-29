@@ -215,8 +215,11 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 ### 15. Release Readiness
 
 - [ ] validate offline behavior on target platforms
+  - Validation backlog: remaining Web/PWA validation is itemized in `71-Web-Test-Backlog.md` and the Web validation worksheets.
 - [ ] validate English UI
+  - Validation backlog: remaining Web UI validation is itemized in `71-Web-Test-Backlog.md` and the Web validation worksheets.
 - [ ] validate German UI
+  - Validation backlog: remaining Web UI validation is itemized in `71-Web-Test-Backlog.md` and the Web validation worksheets.
 - [x] validate data initialization from clean install
 - [x] validate import of sample content package
 - [x] validate performance on realistic starter datasets
@@ -269,6 +272,7 @@ Phase 2 focuses on turning imported content into repeatable learning behavior wh
 - [x] add infrastructure tests for practice queries and persistence
 - [x] add MAUI smoke tests for practice navigation
 - [ ] validate practice flows on target devices
+  - Validation backlog: remaining target-device validation is itemized in `71-Web-Test-Backlog.md` and the phase validation worksheets.
 - [x] validate performance on realistic early-learning datasets
 
 ---
@@ -317,6 +321,7 @@ Phase 3 focuses on richer lexical intelligence while continuing to prioritize th
 - [x] add domain/application/infrastructure coverage for lexical-label behavior
 - [x] add localization smoke coverage for lexical-label display helpers
 - [ ] validate enhanced word-detail UX on target devices
+  - Validation backlog: remaining target-device validation is itemized in `71-Web-Test-Backlog.md` and the phase validation worksheets.
 
 ---
 
@@ -591,6 +596,7 @@ Each scenario should support:
 - [x] add scenario list and detail pages in the web app when appropriate
 - [ ] add tests for scenario import, persistence, query, and rendering
   - Progress: import, persistence, application query, mobile package export, Web API build, and web controller language-selection tests are covered; keep open until Razor/page rendering is explicitly tested.
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 - [x] add initial sample scenarios for A1/A2 learners
 
 ---
@@ -622,6 +628,7 @@ Help learners start and continue real conversations.
   - Progress: starter packs accept/persist `linkedEventPreparationPackSlugs`; event-preparation packs accept/persist/query reciprocal `linkedConversationStarterPackSlugs`; scenario detail surfaces related preparation packs in web and mobile.
 - [ ] add tests for starter filtering and dual-language rendering
   - Progress: parser contract, invalid-contract validation, persistence, query filtering, scenario-link query coverage, dual-language query coverage, and web/mobile rendering implementation exist; keep open until explicit UI rendering tests are implemented.
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 - [x] add sample starter packs for conversation cafes, workplace small talk, and first meetings
 
 ---
@@ -645,15 +652,24 @@ AI-assisted feedback can be added later behind a premium or pro tier.
 
 #### Backlog
 
-- [ ] define `RoleplayScenario` content contract
-- [ ] define role labels such as learner, doctor, teacher, colleague, organizer, partner
-- [ ] define scripted turn sequence model
-- [ ] define answer-choice model for early MVP
-- [ ] define static feedback model
-- [ ] add roleplay launch from scenario detail
-- [ ] persist basic roleplay attempts if useful
+- [x] define `RoleplayScenario` content contract
+  - Progress: `70-Roleplay-Content-Package-Contract.md` defines the scripted roleplay package and allows Web MVP fallback from scenario dialogue turns.
+- [x] define role labels such as learner, doctor, teacher, colleague, organizer, partner
+  - Progress: the roleplay contract now defines the supported starter role label set.
+- [x] define scripted turn sequence model
+  - Progress: the roleplay contract defines ordered prompt/learner-response turns and validation rules.
+- [x] define answer-choice model for early MVP
+  - Progress: the roleplay contract defines optional authored answer choices with correctness and static feedback.
+- [x] define static feedback model
+  - Progress: the roleplay contract defines deterministic feedback types and the no-AI MVP boundary.
+- [x] add roleplay launch from scenario detail
+  - Progress: Web scenario detail now links to a stateless scripted roleplay page derived from scenario dialogue turns.
+- [x] persist basic roleplay attempts if useful
+  - Progress: not persisted for the Web MVP because no scoring, scheduling, or learner-history behavior depends on attempts yet.
 - [ ] add tests for roleplay sequence behavior
-- [ ] keep AI roleplay feedback out of MVP unless cost and safety boundaries are decided
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
+- [x] keep AI roleplay feedback out of MVP unless cost and safety boundaries are decided
+  - Progress: the contract documents the AI boundary, and the Web MVP uses only scripted model answers and static feedback.
 
 ---
 
@@ -740,9 +756,11 @@ Each event can have:
   - Progress: Web event detail now surfaces entitled linked preparation packs; mobile parity is intentionally deferred until the Web backlog is complete.
 - [x] add `Prepare for this event` action
   - Progress: scenario detail now presents entitled preparation-pack links as `Prepare for this event`.
-- [ ] track preparation-pack completion if useful
+- [x] track preparation-pack completion if useful
+  - Progress: Web preparation-pack detail now exposes a `Mark prepared` action that records aggregate completion KPI events without adding learner-history persistence.
 - [ ] add tests for event-to-pack mapping
   - Progress: parser coverage, invalid-contract application validation, EF persistence, migration coverage, positive import persistence tests, query filtering, scenario-link query, and detail query tests exist. UI mapping tests remain open until web/mobile screens are added.
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 
 ---
 
@@ -824,6 +842,7 @@ Allow approved organizers to manage their own profile and events.
 - [x] implement basic organizer analytics
   - Progress: the Web organizer dashboard shows per-profile active/archived event counts, online/in-person counts, and total configured capacity from existing event data.
 - [ ] add tests for authorization and ownership rules
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 
 ---
 
@@ -849,6 +868,7 @@ Let learners express interest or reserve a spot without building a full event-ti
 - [x] add post-event attendance confirmation
   - Progress: assigned organizers can update RSVP rows for owned events to `attended` or `no-show` from the Web organizer dashboard.
 - [ ] add tests for capacity, cancellation, and organizer visibility
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 
 ---
 
@@ -892,6 +912,7 @@ Create a minimal learner profile suitable for conversation practice and event pa
 - [x] implement profile deletion or anonymization flow
   - Progress: signed-in Web learners can delete their profile through an anonymization flow that clears public/private profile content and marks the profile disabled.
 - [ ] add tests for public/private projection
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 - [x] add privacy review before release
   - Progress: `65-Safety-And-Moderation-Requirements.md` now includes a Phase 6 privacy review checklist covering public exposure, admin exposure, retention/removal, and release decision states.
 
@@ -936,6 +957,7 @@ Use request-based matching, not unrestricted open chat.
 - [x] reveal contact details only after mutual consent if this feature is added
   - Progress: WebApi returns the other learner email only when a partner request has been accepted.
 - [ ] add tests for request-state transitions and rate limits
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 
 ---
 
@@ -975,6 +997,7 @@ Make social and organizer features safe enough to release publicly.
 - [x] implement moderation decision audit log
   - Progress: WebApi records moderation decision audits whenever an admin decision is saved.
 - [ ] add tests for block visibility and request suppression
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 - [x] add operational runbook for moderation
   - Progress: `65-Safety-And-Moderation-Requirements.md` now includes a Web moderation runbook for report triage, blocks, event/organizer reports, decision logging, and escalation.
 
@@ -1017,6 +1040,7 @@ Make social and organizer features safe enough to release publicly.
   - Progress: Admin organizer profile management already controls organizer `PlanKey`; the Web organizer dashboard now consumes that plan key through the organizer plan policy.
 - [ ] add tests for feature-gate behavior
   - Progress: entitlement seed coverage plus web scenario and direct detail gate coverage exist for preparation packs; keep open until broader WebApi/Web/MAUI feature-gate behavior is covered.
+  - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 
 ---
 

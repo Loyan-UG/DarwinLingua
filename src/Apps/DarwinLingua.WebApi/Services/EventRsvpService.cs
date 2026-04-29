@@ -42,6 +42,14 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
                 .ConfigureAwait(false);
 
             DateTime nowUtc = DateTime.UtcNow;
+            await EnsureCapacityAllowsStatusChangeAsync(
+                    dbContext,
+                    normalizedEventSlug,
+                    existingRsvp?.Id,
+                    request.Status,
+                    cancellationToken)
+                .ConfigureAwait(false);
+
             if (existingRsvp is null)
             {
                 existingRsvp = new EventRsvp(
@@ -88,13 +96,15 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
             throw new KeyNotFoundException($"No conversation event was found for '{normalizedEventSlug}'.");
         }
 
-        EventRsvp[] rsvps = await dbContext.EventRsvps
+        EventRsvpStatusCount[] statusCounts = await dbContext.EventRsvps
             .AsNoTracking()
             .Where(item => item.ConversationEventSlug == normalizedEventSlug)
+            .GroupBy(item => item.Status)
+            .Select(group => new EventRsvpStatusCount(group.Key, group.Count()))
             .ToArrayAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        int goingCount = rsvps.Count(item => item.Status == EventRsvpStatuses.Going);
+        int goingCount = GetStatusCount(statusCounts, EventRsvpStatuses.Going);
         int capacity = conversationEvent.Capacity ?? 0;
         int? remainingCapacity = capacity > 0
             ? Math.Max(0, capacity - goingCount)
@@ -102,9 +112,9 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
         return new EventRsvpSummaryResponse(
             normalizedEventSlug,
-            rsvps.Count(item => item.Status == EventRsvpStatuses.Interested),
+            GetStatusCount(statusCounts, EventRsvpStatuses.Interested),
             goingCount,
-            rsvps.Count(item => item.Status == EventRsvpStatuses.Cancelled),
+            GetStatusCount(statusCounts, EventRsvpStatuses.Cancelled),
             capacity,
             remainingCapacity);
     }
@@ -124,10 +134,57 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
             .Where(item => item.ConversationEventSlug == normalizedEventSlug)
             .OrderBy(item => item.Status)
             .ThenBy(item => item.ParticipantName)
+            .Take(500)
             .ToArrayAsync(cancellationToken)
             .ConfigureAwait(false);
 
         return rsvps.Select(CreateResponse).ToArray();
+    }
+
+    public async Task<EventRsvpResponse> SetStatusAsync(
+        string eventSlug,
+        Guid rsvpId,
+        AdminSetEventRsvpStatusRequest request,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(eventSlug);
+        ArgumentNullException.ThrowIfNull(request);
+        if (rsvpId == Guid.Empty)
+        {
+            throw new InvalidOperationException("Event RSVP identifier cannot be empty.");
+        }
+
+        try
+        {
+            string normalizedEventSlug = ConversationEvent.NormalizeKey(eventSlug, "Conversation event slug");
+
+            await using DarwinLinguaDbContext dbContext = await dbContextFactory
+                .CreateDbContextAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            EventRsvp rsvp = await dbContext.EventRsvps
+                .SingleOrDefaultAsync(
+                    item => item.Id == rsvpId && item.ConversationEventSlug == normalizedEventSlug,
+                    cancellationToken)
+                .ConfigureAwait(false)
+                ?? throw new KeyNotFoundException($"No RSVP was found for event '{normalizedEventSlug}'.");
+
+            await EnsureCapacityAllowsStatusChangeAsync(
+                    dbContext,
+                    normalizedEventSlug,
+                    rsvp.Id,
+                    request.Status,
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            rsvp.Update(rsvp.ParticipantName, request.Status, DateTime.UtcNow);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            return CreateResponse(rsvp);
+        }
+        catch (DomainRuleException exception)
+        {
+            throw new InvalidOperationException(exception.Message, exception);
+        }
     }
 
     private static EventRsvpResponse CreateResponse(EventRsvp rsvp) =>
@@ -139,4 +196,49 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
             rsvp.Status,
             rsvp.CreatedAtUtc,
             rsvp.UpdatedAtUtc);
+
+    private static int GetStatusCount(EventRsvpStatusCount[] statusCounts, string status) =>
+        statusCounts.FirstOrDefault(item => item.Status == status)?.Count ?? 0;
+
+    private static async Task EnsureCapacityAllowsStatusChangeAsync(
+        DarwinLinguaDbContext dbContext,
+        string normalizedEventSlug,
+        Guid? currentRsvpId,
+        string requestedStatus,
+        CancellationToken cancellationToken)
+    {
+        string normalizedStatus = EventRsvp.NormalizeStatus(requestedStatus);
+        if (normalizedStatus != EventRsvpStatuses.Going)
+        {
+            return;
+        }
+
+        int? capacity = await dbContext.ConversationEvents
+            .AsNoTracking()
+            .Where(item => item.Slug == normalizedEventSlug)
+            .Select(item => item.Capacity)
+            .SingleOrDefaultAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        if (capacity is null or <= 0)
+        {
+            return;
+        }
+
+        int currentGoingCount = await dbContext.EventRsvps
+            .AsNoTracking()
+            .CountAsync(
+                item => item.ConversationEventSlug == normalizedEventSlug &&
+                    item.Status == EventRsvpStatuses.Going &&
+                    (!currentRsvpId.HasValue || item.Id != currentRsvpId.Value),
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        if (currentGoingCount >= capacity.Value)
+        {
+            throw new InvalidOperationException("This event has reached its RSVP capacity.");
+        }
+    }
+
+    private sealed record EventRsvpStatusCount(string Status, int Count);
 }

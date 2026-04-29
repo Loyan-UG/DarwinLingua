@@ -287,8 +287,6 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         string profileSlug,
         string eventSlug,
         Guid rsvpId,
-        string participantName,
-        string participantEmail,
         string status,
         CancellationToken cancellationToken)
     {
@@ -306,9 +304,10 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
 
         try
         {
-            EventRsvpModel updatedRsvp = await catalogApiClient.SubmitEventRsvpAsync(
+            EventRsvpModel updatedRsvp = await catalogApiClient.SetAdminEventRsvpStatusAsync(
                     eventSlug,
-                    new SubmitEventRsvpRequest(participantName, participantEmail, status),
+                    rsvpId,
+                    new AdminSetEventRsvpStatusRequest(status),
                     cancellationToken)
                 .ConfigureAwait(false);
 

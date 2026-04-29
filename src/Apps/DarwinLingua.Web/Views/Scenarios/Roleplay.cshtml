@@ -1,0 +1,82 @@
+@model DarwinLingua.Web.Models.ScenarioRoleplayPageViewModel
+@{
+    ViewData["Title"] = $"{Model.Scenario.Title} roleplay";
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Scenario.CefrLevel · @Model.Scenario.Category · roleplay</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Detail" asp-route-slug="@Model.Scenario.Slug">Scenario</a>
+            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">All scenarios</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@Model.Scenario.Title</h1>
+    <p class="body-lg">@Model.Scenario.LearnerGoal</p>
+</section>
+
+@if (Model.Steps.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml"
+             model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No roleplay available", "This scenario does not have a learner-response dialogue sequence yet.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <div class="detail-toolbar">
+            <h2 class="headline-sm">Scripted practice</h2>
+            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Roleplay" asp-route-slug="@Model.Scenario.Slug">Replay</a>
+        </div>
+        <div class="stack-md">
+            @foreach (var step in Model.Steps)
+            {
+                <article class="panel stack-md">
+                    <span class="eyebrow">Step @step.SortOrder · @step.PromptRole</span>
+                    <div class="detail-example">
+                        <strong>@step.PromptText</strong>
+                        <button type="button" class="button button--secondary button--compact" data-speak-text="@step.PromptText" data-speak-lang="de-DE">Speak</button>
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(step.PromptPrimaryMeaning))
+                    {
+                        <div class="meaning-block meaning-block--primary">
+                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                            <div>@step.PromptPrimaryMeaning</div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(step.PromptSecondaryMeaning))
+                    {
+                        <div class="meaning-block">
+                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                            <div>@step.PromptSecondaryMeaning</div>
+                        </div>
+                    }
+
+                    <div class="detail-row">
+                        <strong>@step.LearnerRole</strong>
+                        <div class="stack-md">
+                            <div class="detail-example">
+                                <span>@step.ModelAnswerText</span>
+                                <button type="button" class="button button--secondary button--compact" data-speak-text="@step.ModelAnswerText" data-speak-lang="de-DE">Speak</button>
+                            </div>
+                            @if (!string.IsNullOrWhiteSpace(step.ModelAnswerPrimaryMeaning))
+                            {
+                                <div class="meaning-block meaning-block--primary">
+                                    <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                    <div>@step.ModelAnswerPrimaryMeaning</div>
+                                </div>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(step.ModelAnswerSecondaryMeaning))
+                            {
+                                <div class="meaning-block">
+                                    <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                    <div>@step.ModelAnswerSecondaryMeaning</div>
+                                </div>
+                            }
+                            <p>@step.StaticFeedback</p>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    </section>
+}

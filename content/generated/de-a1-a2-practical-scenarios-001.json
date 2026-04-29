@@ -1,7 +1,7 @@
 {
   "packageVersion": "1.0",
-  "packageId": "de-a1-a2-practical-scenarios-20260428-001",
-  "packageName": "German A1/A2 Practical Scenario Pack 001",
+  "packageId": "de-a1-b2-practical-scenarios-20260429-001",
+  "packageName": "German A1-B2 Practical Scenarios Seed Pack 001",
   "source": "AiAssisted",
   "defaultMeaningLanguages": [
     "en",
@@ -2077,6 +2077,302 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "b1-discuss-course-feedback",
+      "title": "Discuss Course Feedback",
+      "description": "A B1 conversation for giving polite feedback after a German course session.",
+      "learnerGoal": "Explain what helped, mention one difficulty, and ask for a practical next step.",
+      "cefrLevel": "B1",
+      "category": "learning-feedback",
+      "topics": [
+        "everyday-life",
+        "work-and-jobs"
+      ],
+      "sortOrder": 210,
+      "dialogueTurns": [
+        {
+          "speakerRole": "teacher",
+          "baseText": "Wie war die Übung heute für Sie?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "How was today's exercise for you?"
+            },
+            {
+              "language": "fa",
+              "text": "تمرین امروز برای شما چطور بود؟"
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Die Dialoge haben mir geholfen, aber die schnellen Antworten waren noch schwierig.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "The dialogues helped me, but the quick answers were still difficult."
+            },
+            {
+              "language": "fa",
+              "text": "گفت‌وگوها به من کمک کردند، اما جواب‌های سریع هنوز سخت بودند."
+            }
+          ]
+        },
+        {
+          "speakerRole": "teacher",
+          "baseText": "Dann üben wir nächste Woche kurze Reaktionen in kleinen Gruppen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Then next week we will practice short reactions in small groups."
+            },
+            {
+              "language": "fa",
+              "text": "پس هفته آینده پاسخ‌های کوتاه را در گروه‌های کوچک تمرین می‌کنیم."
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Das klingt gut. Können Sie mir vorher ein Beispiel schicken?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That sounds good. Could you send me an example beforehand?"
+            },
+            {
+              "language": "fa",
+              "text": "خوب به نظر می‌رسد. می‌توانید قبلش یک مثال برایم بفرستید؟"
+            }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Das hat mir geholfen, weil ...",
+          "usageNote": "Use this to explain useful course activities.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That helped me because ..."
+            },
+            {
+              "language": "fa",
+              "text": "این به من کمک کرد، چون ..."
+            }
+          ]
+        },
+        {
+          "baseText": "Könnten wir das noch einmal üben?",
+          "usageNote": "Use this polite request when you need repetition.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Could we practice that again?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانیم آن را دوباره تمرین کنیم؟"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Was war für die Person schwierig?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "What was difficult for the person?"
+            },
+            {
+              "language": "fa",
+              "text": "چه چیزی برای آن شخص سخت بود؟"
+            }
+          ],
+          "answers": [
+            {
+              "text": "Die schnellen Antworten.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "The quick answers."
+                },
+                {
+                  "language": "fa",
+                  "text": "جواب‌های سریع."
+                }
+              ]
+            },
+            {
+              "text": "Die Anmeldung zum Kurs.",
+              "isCorrect": false,
+              "feedback": "Registration is not discussed.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Course registration."
+                },
+                {
+                  "language": "fa",
+                  "text": "ثبت‌نام دوره."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "b2-negotiate-volunteer-schedule",
+      "title": "Negotiate a Volunteer Schedule",
+      "description": "A B2 exchange for negotiating responsibilities and availability with an event organizer.",
+      "learnerGoal": "Explain constraints, propose a compromise, and confirm responsibilities clearly.",
+      "cefrLevel": "B2",
+      "category": "event-organization",
+      "topics": [
+        "work-and-jobs",
+        "everyday-life"
+      ],
+      "sortOrder": 220,
+      "dialogueTurns": [
+        {
+          "speakerRole": "organizer",
+          "baseText": "Könnten Sie am Samstag die Anmeldung übernehmen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Could you take care of registration on Saturday?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانید روز شنبه مسئول ثبت‌نام باشید؟"
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Grundsätzlich gern, aber ich kann erst ab 14 Uhr da sein.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In principle, gladly, but I can only be there from 2 p.m."
+            },
+            {
+              "language": "fa",
+              "text": "در اصل با کمال میل، اما فقط از ساعت ۱۴ می‌توانم آنجا باشم."
+            }
+          ]
+        },
+        {
+          "speakerRole": "organizer",
+          "baseText": "Dann könnten Sie den zweiten Teil übernehmen und vorher die Namensschilder vorbereiten.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Then you could take over the second part and prepare the name tags beforehand."
+            },
+            {
+              "language": "fa",
+              "text": "پس می‌توانید بخش دوم را بر عهده بگیرید و قبلش برچسب‌های نام را آماده کنید."
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Einverstanden. Ich bereite die Namensschilder vor und bin ab 14 Uhr am Empfang.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Agreed. I will prepare the name tags and be at reception from 2 p.m."
+            },
+            {
+              "language": "fa",
+              "text": "موافقم. برچسب‌های نام را آماده می‌کنم و از ساعت ۱۴ در پذیرش هستم."
+            }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Grundsätzlich gern, aber ...",
+          "usageNote": "Use this to accept with a constraint.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In principle, gladly, but ..."
+            },
+            {
+              "language": "fa",
+              "text": "در اصل با کمال میل، اما ..."
+            }
+          ]
+        },
+        {
+          "baseText": "Einverstanden. Ich übernehme ...",
+          "usageNote": "Use this to confirm an agreed responsibility.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Agreed. I will take care of ..."
+            },
+            {
+              "language": "fa",
+              "text": "موافقم. من مسئولیت ... را بر عهده می‌گیرم."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Ab wann kann die Person am Empfang sein?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "From when can the person be at reception?"
+            },
+            {
+              "language": "fa",
+              "text": "آن شخص از چه زمانی می‌تواند در پذیرش باشد؟"
+            }
+          ],
+          "answers": [
+            {
+              "text": "Ab 14 Uhr.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "From 2 p.m."
+                },
+                {
+                  "language": "fa",
+                  "text": "از ساعت ۱۴."
+                }
+              ]
+            },
+            {
+              "text": "Schon ab 8 Uhr.",
+              "isCorrect": false,
+              "feedback": "The person says they can only be there from 14:00.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Already from 8 a.m."
+                },
+                {
+                  "language": "fa",
+                  "text": "از ساعت ۸ صبح."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "conversationStarterPacks": [
@@ -2383,6 +2679,134 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "b1-course-feedback-starters",
+      "title": "Course Feedback Starters",
+      "description": "B1 phrases for explaining what helped in a course and asking for next steps.",
+      "cefrLevel": "B1",
+      "category": "learning-feedback",
+      "situation": "course-feedback",
+      "tone": "polite",
+      "conversationGoal": "give-feedback",
+      "topics": [
+        "everyday-life",
+        "work-and-jobs"
+      ],
+      "sortOrder": 210,
+      "linkedScenarioSlugs": [
+        "b1-discuss-course-feedback"
+      ],
+      "linkedEventPreparationPackSlugs": [
+        "b1-course-feedback-prep"
+      ],
+      "phrases": [
+        {
+          "baseText": "Das hat mir geholfen, weil ...",
+          "function": "explain-benefit",
+          "register": "neutral",
+          "usageNote": "Use this to connect feedback with a reason.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": [
+            "Besonders hilfreich war für me ..."
+          ],
+          "commonMistake": "Use weil with the conjugated verb at the end of the subordinate clause.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That helped me because ..."
+            },
+            {
+              "language": "fa",
+              "text": "این به من کمک کرد، چون ..."
+            }
+          ]
+        },
+        {
+          "baseText": "Könnten wir das nächste Mal wiederholen?",
+          "function": "request-next-step",
+          "register": "formal",
+          "usageNote": "Use this when asking a teacher or organizer for repetition.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": [
+            "Können wir das noch einmal üben?"
+          ],
+          "translations": [
+            {
+              "language": "en",
+              "text": "Could we repeat that next time?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانیم دفعه بعد آن را تکرار کنیم؟"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "b2-volunteer-schedule-starters",
+      "title": "Volunteer Schedule Negotiation Starters",
+      "description": "B2 phrases for negotiating availability and confirming responsibilities.",
+      "cefrLevel": "B2",
+      "category": "event-organization",
+      "situation": "volunteer-scheduling",
+      "tone": "collaborative",
+      "conversationGoal": "negotiate-responsibility",
+      "topics": [
+        "work-and-jobs",
+        "everyday-life"
+      ],
+      "sortOrder": 220,
+      "linkedScenarioSlugs": [
+        "b2-negotiate-volunteer-schedule"
+      ],
+      "linkedEventPreparationPackSlugs": [
+        "b2-volunteer-schedule-prep"
+      ],
+      "phrases": [
+        {
+          "baseText": "Grundsätzlich gern, aber ich kann erst ab ...",
+          "function": "accept-with-condition",
+          "register": "neutral",
+          "usageNote": "Use this to accept a task while naming a time constraint.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": [
+            "Ich übernehme das gern, allerdings erst ab ..."
+          ],
+          "translations": [
+            {
+              "language": "en",
+              "text": "In principle, gladly, but I can only from ..."
+            },
+            {
+              "language": "fa",
+              "text": "در اصل با کمال میل، اما فقط از ... می‌توانم."
+            }
+          ]
+        },
+        {
+          "baseText": "Einverstanden. Ich kümmere mich um ...",
+          "function": "confirm-task",
+          "register": "neutral",
+          "usageNote": "Use this to close a negotiation and confirm your responsibility.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": [
+            "Abgemacht. Ich übernehme ..."
+          ],
+          "commonMistake": "Do not use sich kümmern without the reflexive pronoun in full sentences.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Agreed. I will take care of ..."
+            },
+            {
+              "language": "fa",
+              "text": "موافقم. من مسئولیت ... را بر عهده می‌گیرم."
+            }
+          ]
+        }
+      ]
     }
   ],
   "eventPreparationPacks": [
@@ -2554,6 +2978,96 @@
       ],
       "reviewPrompts": [
         "Write one sentence that felt easy to say."
+      ]
+    },
+    {
+      "slug": "b1-course-feedback-prep",
+      "title": "Course Feedback Preparation",
+      "description": "Prepare polite feedback for a course, tutoring session, or language-practice meetup.",
+      "cefrLevel": "B1",
+      "category": "learning-feedback",
+      "eventType": "class",
+      "topics": [
+        "everyday-life",
+        "work-and-jobs"
+      ],
+      "sortOrder": 210,
+      "linkedScenarioSlugs": [
+        "b1-discuss-course-feedback"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Rückmeldung",
+          "partOfSpeech": "Noun",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "wiederholen",
+          "partOfSpeech": "Verb",
+          "cefrLevel": "A2"
+        },
+        {
+          "word": "hilfreich",
+          "partOfSpeech": "Adjective",
+          "cefrLevel": "B1"
+        }
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "b1-course-feedback-starters"
+      ],
+      "openingPrompts": [
+        "Name one thing that helped you and one thing that was difficult."
+      ],
+      "roleplayPrompts": [
+        "Give feedback to a teacher and ask for a concrete next exercise."
+      ],
+      "reviewPrompts": [
+        "Write one B1 weil sentence about your learning progress."
+      ]
+    },
+    {
+      "slug": "b2-volunteer-schedule-prep",
+      "title": "Volunteer Schedule Negotiation Preparation",
+      "description": "Prepare for negotiating volunteer tasks, timing, and responsibilities at an event.",
+      "cefrLevel": "B2",
+      "category": "event-organization",
+      "eventType": "workshop",
+      "topics": [
+        "work-and-jobs",
+        "everyday-life"
+      ],
+      "sortOrder": 220,
+      "linkedScenarioSlugs": [
+        "b2-negotiate-volunteer-schedule"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "übernehmen",
+          "partOfSpeech": "Verb",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Einverstanden",
+          "partOfSpeech": "Adverb",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Namensschild",
+          "partOfSpeech": "Noun",
+          "cefrLevel": "B2"
+        }
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "b2-volunteer-schedule-starters"
+      ],
+      "openingPrompts": [
+        "List your available time window and one task you can realistically take."
+      ],
+      "roleplayPrompts": [
+        "Negotiate a volunteer shift and confirm the final responsibility."
+      ],
+      "reviewPrompts": [
+        "Write a final confirmation message to the organizer."
       ]
     }
   ]

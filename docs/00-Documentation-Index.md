@@ -83,6 +83,9 @@ All project documentation should remain in English.
 - `67-Scenario-Content-Package-Contract.md`
 - `68-Conversation-Starter-Content-Package-Contract.md`
 - `69-Event-Preparation-Pack-Content-Package-Contract.md`
+- `70-Roleplay-Content-Package-Contract.md`
+- `71-Web-Test-Backlog.md`
+- `72-Web-Seed-Coverage-And-Admin-Reports.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -137,6 +140,9 @@ If you are new to the project, read the documents in this order:
 38. `67-Scenario-Content-Package-Contract.md`
 39. `68-Conversation-Starter-Content-Package-Contract.md`
 40. `69-Event-Preparation-Pack-Content-Package-Contract.md`
+41. `70-Roleplay-Content-Package-Contract.md`
+42. `71-Web-Test-Backlog.md`
+43. `72-Web-Seed-Coverage-And-Admin-Reports.md`
 
 ---
 
@@ -161,6 +167,9 @@ If you are new to the project, read the documents in this order:
 - `67-Scenario-Content-Package-Contract.md` defines the Phase 6 JSON contract for scenario lessons, dialogue turns, useful phrases, questions, answers, CEFR/topic rules, and validation rules.
 - `68-Conversation-Starter-Content-Package-Contract.md` defines the Phase 6 JSON contract for conversation starter packs, starter phrases, filters, scenario integration, dual-language behavior, and validation rules.
 - `69-Event-Preparation-Pack-Content-Package-Contract.md` defines the Phase 6 JSON contract for event preparation packs, links to scenarios, vocabulary, starter packs, and preparation prompts.
+- `70-Roleplay-Content-Package-Contract.md` defines the Phase 6 scripted roleplay contract, role labels, turn sequence model, answer choices, static feedback, and AI boundary.
+- `71-Web-Test-Backlog.md` defines the remaining Web automated and manual validation backlog owned by the separate test-development workflow.
+- `72-Web-Seed-Coverage-And-Admin-Reports.md` records Web seed coverage, admin report scope, and the operational-seed follow-up.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Rules vs Workflow

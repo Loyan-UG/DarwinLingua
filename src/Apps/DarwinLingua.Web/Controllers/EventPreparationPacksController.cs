@@ -37,7 +37,41 @@ public sealed class EventPreparationPacksController(
         }
 
         analyticsService?.Record(WebProductAnalyticsEvents.EventPreparationPackViewed, $"pack:{preparationPack.Slug}");
+        bool completionRecorded = TempData is not null &&
+            string.Equals(TempData["PreparationPackCompleted"] as string, preparationPack.Slug, StringComparison.Ordinal);
 
-        return View(new EventPreparationDetailPageViewModel(preparationPack));
+        return View(new EventPreparationDetailPageViewModel(
+            preparationPack,
+            completionRecorded));
+    }
+
+    [HttpPost("{slug}/complete", Name = "EventPreparationPacks_Complete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Complete(string slug, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(slug))
+        {
+            return RedirectToAction("Index", "Scenarios");
+        }
+
+        if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
+        {
+            analyticsService?.Record(WebProductAnalyticsEvents.PremiumFeatureDenied, "feature:event-preparation-packs");
+            return Forbid();
+        }
+
+        EventPreparationPackDetailModel? preparationPack = await catalogApiClient
+            .GetEventPreparationPackBySlugAsync(slug, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (preparationPack is null)
+        {
+            return NotFound();
+        }
+
+        analyticsService?.Record(WebProductAnalyticsEvents.EventPreparationPackCompleted, $"pack:{preparationPack.Slug}");
+        TempData["PreparationPackCompleted"] = preparationPack.Slug;
+
+        return RedirectToAction(nameof(Detail), new { slug = preparationPack.Slug });
     }
 }

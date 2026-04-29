@@ -7,11 +7,20 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.PreparationPack.CefrLevel · @Model.PreparationPack.EventType · @Model.PreparationPack.Category</span>
         <div class="detail-toolbar__actions">
+            <form asp-controller="EventPreparationPacks" asp-action="Complete" asp-route-slug="@Model.PreparationPack.Slug" method="post">
+                <button type="submit" class="button button--primary button--compact">Mark prepared</button>
+            </form>
             <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.PreparationPack.Title</h1>
     <p class="body-lg">@Model.PreparationPack.Description</p>
+    @if (Model.CompletionRecorded)
+    {
+        <div class="state-panel state-panel--success">
+            <strong>Preparation recorded.</strong>
+        </div>
+    }
     @if (Model.PreparationPack.TopicKeys.Count > 0)
     {
         <div class="chip-grid">

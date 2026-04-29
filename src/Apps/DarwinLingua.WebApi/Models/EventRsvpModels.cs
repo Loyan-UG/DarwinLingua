@@ -5,6 +5,9 @@ public sealed record SubmitEventRsvpRequest(
     string ParticipantEmail,
     string Status);
 
+public sealed record AdminSetEventRsvpStatusRequest(
+    string Status);
+
 public sealed record EventRsvpResponse(
     Guid Id,
     string ConversationEventSlug,

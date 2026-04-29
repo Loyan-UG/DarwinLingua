@@ -151,6 +151,8 @@ public sealed class PartnerMatchingService(IDbContextFactory<DarwinLinguaDbConte
                 .ConfigureAwait(false)
                 ?? throw new KeyNotFoundException("The selected partner request target profile could not be found.");
 
+            EnsureRequestParticipant(partnerRequest, targetProfile, normalizedEmail);
+
             DateTime nowUtc = DateTime.UtcNow;
             if (partnerRequest.Status == PartnerRequestStatuses.Pending && partnerRequest.ExpiresAtUtc <= nowUtc)
             {
@@ -322,6 +324,19 @@ public sealed class PartnerMatchingService(IDbContextFactory<DarwinLinguaDbConte
             default:
                 throw new InvalidOperationException("Partner request action is not supported.");
         }
+    }
+
+    private static void EnsureRequestParticipant(
+        PartnerRequest partnerRequest,
+        LearnerConversationProfile targetProfile,
+        string ownerEmail)
+    {
+        if (partnerRequest.RequesterEmail == ownerEmail || targetProfile.OwnerEmail == ownerEmail)
+        {
+            return;
+        }
+
+        throw new InvalidOperationException("Only the requester or recipient can update this partner request.");
     }
 
     private static async Task ExpirePendingRequestsAsync(

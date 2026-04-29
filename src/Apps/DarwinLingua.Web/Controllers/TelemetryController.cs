@@ -8,6 +8,9 @@ namespace DarwinLingua.Web.Controllers;
 [Route("telemetry")]
 public sealed class TelemetryController(IWebPerformanceTelemetryService telemetryService) : Controller
 {
+    private const int MaxPagePathLength = 256;
+    private const double MaxDurationMs = 300_000;
+
     private static readonly HashSet<string> AllowedEvents =
     [
         "page.load.slow",
@@ -26,8 +29,55 @@ public sealed class TelemetryController(IWebPerformanceTelemetryService telemetr
             return BadRequest();
         }
 
-        string pagePath = string.IsNullOrWhiteSpace(input.PagePath) ? "/" : input.PagePath.Trim();
-        telemetryService.RecordClientEvent(input.EventName, pagePath, input.DurationMs, input.IsFailure);
+        double? durationMs = NormalizeDuration(input.DurationMs);
+        if (input.DurationMs.HasValue && !durationMs.HasValue)
+        {
+            return BadRequest();
+        }
+
+        string pagePath = NormalizePagePath(input.PagePath);
+        telemetryService.RecordClientEvent(input.EventName, pagePath, durationMs, input.IsFailure);
         return Ok();
+    }
+
+    private static double? NormalizeDuration(double? durationMs)
+    {
+        if (!durationMs.HasValue)
+        {
+            return null;
+        }
+
+        if (!double.IsFinite(durationMs.Value) || durationMs.Value < 0 || durationMs.Value > MaxDurationMs)
+        {
+            return null;
+        }
+
+        return durationMs.Value;
+    }
+
+    private static string NormalizePagePath(string? pagePath)
+    {
+        if (string.IsNullOrWhiteSpace(pagePath))
+        {
+            return "/";
+        }
+
+        string trimmed = pagePath.Trim();
+        Span<char> buffer = stackalloc char[Math.Min(trimmed.Length, MaxPagePathLength)];
+        int length = 0;
+        foreach (char character in trimmed)
+        {
+            if (length >= buffer.Length)
+            {
+                break;
+            }
+
+            if (!char.IsControl(character))
+            {
+                buffer[length++] = character;
+            }
+        }
+
+        return length == 0 ? "/" : new string(buffer[..length]);
     }
 }

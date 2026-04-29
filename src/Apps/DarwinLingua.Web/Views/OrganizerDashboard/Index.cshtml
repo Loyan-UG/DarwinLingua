@@ -126,8 +126,6 @@ else
                                             <span>@rsvp.ParticipantName · @rsvp.ParticipantEmail · @rsvp.Status</span>
                                             <form method="post" asp-controller="OrganizerDashboard" asp-action="SetRsvpStatus" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug" asp-route-rsvpId="@rsvp.Id" class="inline-form">
                                                 @Html.AntiForgeryToken()
-                                                <input type="hidden" name="ParticipantName" value="@rsvp.ParticipantName" />
-                                                <input type="hidden" name="ParticipantEmail" value="@rsvp.ParticipantEmail" />
                                                 <select name="Status">
                                                     <option value="going" selected="@(rsvp.Status == "going")">Going</option>
                                                     <option value="interested" selected="@(rsvp.Status == "interested")">Interested</option>

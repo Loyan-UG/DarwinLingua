@@ -1,5 +1,6 @@
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Web.Configuration;
 using DarwinLingua.Web.Models;
@@ -71,6 +72,13 @@ public interface IWebCatalogApiClient
 
     Task<IReadOnlyList<EventRsvpModel>> GetAdminEventRsvpsAsync(
         string eventSlug,
+        CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
+
+    Task<EventRsvpModel> SetAdminEventRsvpStatusAsync(
+        string eventSlug,
+        Guid rsvpId,
+        AdminSetEventRsvpStatusRequest request,
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
@@ -200,6 +208,9 @@ public interface IWebCatalogApiClient
         CancellationToken cancellationToken);
 
     Task<AdminDashboardViewModel> GetAdminDashboardAsync(CancellationToken cancellationToken);
+
+    Task<AdminSystemReportResponse> GetAdminSystemReportAsync(CancellationToken cancellationToken) =>
+        throw new NotSupportedException();
 
     Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken);
 
@@ -375,6 +386,16 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<EventRsvpModel>>(
             $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps",
+            cancellationToken);
+
+    public Task<EventRsvpModel> SetAdminEventRsvpStatusAsync(
+        string eventSlug,
+        Guid rsvpId,
+        AdminSetEventRsvpStatusRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminSetEventRsvpStatusRequest, EventRsvpModel>(
+            $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps/{rsvpId}/status",
+            request,
             cancellationToken);
 
     public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) =>
@@ -605,6 +626,11 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
             response.LastImportAtUtc);
     }
 
+    public Task<AdminSystemReportResponse> GetAdminSystemReportAsync(CancellationToken cancellationToken) =>
+        GetRequiredAsync<AdminSystemReportResponse>(
+            "/api/admin/catalog/system-report",
+            cancellationToken);
+
     public async Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken)
     {
         AdminCatalogImportsResponse response = await GetRequiredAsync<AdminCatalogImportsResponse>(
@@ -738,7 +764,13 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         }
 
         await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
-        return await response.Content.ReadFromJsonAsync<T>(cancellationToken).ConfigureAwait(false);
+        string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+        if (string.IsNullOrWhiteSpace(body))
+        {
+            return default;
+        }
+
+        return JsonSerializer.Deserialize<T>(body, JsonSerializerOptions.Web);
     }
 
     private async Task<T> GetRequiredAsync<T>(string relativeUri, CancellationToken cancellationToken)
@@ -811,6 +843,11 @@ internal static class WebCatalogApiClientRegistration
             WebApiOptions options = serviceProvider.GetRequiredService<IOptions<WebApiOptions>>().Value;
             client.BaseAddress = new Uri(options.BaseUrl, UriKind.Absolute);
             client.Timeout = TimeSpan.FromSeconds(30);
+
+            if (!string.IsNullOrWhiteSpace(options.AdminApiKey))
+            {
+                client.DefaultRequestHeaders.Add(options.AdminApiHeaderName, options.AdminApiKey);
+            }
         })
         .ConfigurePrimaryHttpMessageHandler(serviceProvider =>
         {
@@ -837,6 +874,45 @@ internal sealed record AdminCatalogDashboardResponse(
     int ActiveWordCount,
     int DraftWordCount,
     int TotalTopicCount,
+    int ImportedPackageCount,
+    int FailedPackageCount,
+    DateTime? LastImportAtUtc);
+
+public sealed record AdminSystemReportResponse(
+    DateTime GeneratedAtUtc,
+    AdminCatalogSystemReportResponse Catalog,
+    AdminSocialSystemReportResponse Social,
+    AdminModerationSystemReportResponse Moderation,
+    AdminOperationsSystemReportResponse Operations);
+
+public sealed record AdminCatalogSystemReportResponse(
+    int ActiveWordCount,
+    int DraftWordCount,
+    int TopicCount,
+    int ScenarioLessonCount,
+    int ConversationStarterPackCount,
+    int EventPreparationPackCount);
+
+public sealed record AdminSocialSystemReportResponse(
+    int OrganizerProfileCount,
+    int ConversationEventCount,
+    int OnlineConversationEventCount,
+    int EventRsvpCount,
+    int OrganizerClaimRequestCount,
+    int PendingOrganizerClaimRequestCount,
+    int OrganizerProfileOwnerCount,
+    int LearnerConversationProfileCount,
+    int PublicLearnerConversationProfileCount,
+    int PartnerRequestCount,
+    int PendingPartnerRequestCount);
+
+public sealed record AdminModerationSystemReportResponse(
+    int UserReportCount,
+    int PendingUserReportCount,
+    int UserBlockCount,
+    int ModerationDecisionAuditCount);
+
+public sealed record AdminOperationsSystemReportResponse(
     int ImportedPackageCount,
     int FailedPackageCount,
     DateTime? LastImportAtUtc);
@@ -949,6 +1025,9 @@ public sealed record OrganizerManagedConversationEventModel(
 public sealed record SubmitEventRsvpRequest(
     string ParticipantName,
     string ParticipantEmail,
+    string Status);
+
+public sealed record AdminSetEventRsvpStatusRequest(
     string Status);
 
 public sealed record EventRsvpModel(

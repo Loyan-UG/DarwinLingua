@@ -1,0 +1,79 @@
+@model DarwinLingua.Web.Models.AdminSystemReportPageViewModel
+@{
+    ViewData["Title"] = "Reports";
+    var sections = new (string Title, IReadOnlyList<DarwinLingua.Web.Models.AdminSystemReportMetricViewModel> Metrics)[]
+    {
+        ("Catalog", Model.CatalogMetrics),
+        ("Social learning", Model.SocialMetrics),
+        ("Moderation", Model.ModerationMetrics),
+        ("Operations", Model.OperationsMetrics),
+    };
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Admin</span>
+    <h1 class="headline-md">System report</h1>
+    <p class="body-lg">Current server-side summary for catalog, social learning, moderation, operations, users, and Web product counters.</p>
+    <p class="body-sm">Generated: @Model.GeneratedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</p>
+</section>
+
+<section class="grid-three-col">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Users", Model.IdentityUserCount.ToString(), "Identity users in the Web admin/user store.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.ModerationMetrics.First(item => item.Label == "Pending reports").Value, "Moderation reports waiting for review.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Events", Model.SocialMetrics.First(item => item.Label == "Events").Value, "Conversation events in the directory.")' />
+</section>
+
+<section class="grid-two-col">
+    @foreach (var metricSection in sections)
+    {
+        <article class="panel stack-md">
+            <h2 class="headline-sm">@metricSection.Title</h2>
+            <table class="data-table">
+                <tbody>
+                    @foreach (var metric in metricSection.Metrics)
+                    {
+                        <tr>
+                            <th>@metric.Label</th>
+                            <td>
+                                <strong>@metric.Value</strong>
+                                <p class="body-sm">@metric.Description</p>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </article>
+    }
+</section>
+
+<section class="panel stack-lg">
+    <h2 class="headline-sm">Top Web analytics counters</h2>
+    @if (Model.AnalyticsItems.Count == 0)
+    {
+        <p class="body-sm">No Web analytics counters have been recorded yet.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Scope</th>
+                    <th>Count</th>
+                    <th>Last seen</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.AnalyticsItems)
+                {
+                    <tr>
+                        <td>@item.EventName</td>
+                        <td>@item.ScopeKey</td>
+                        <td>@item.Count</td>
+                        <td>@item.LastSeenAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>

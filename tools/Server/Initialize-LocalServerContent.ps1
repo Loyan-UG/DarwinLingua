@@ -3,12 +3,18 @@ param(
     [string]$ClientProductKey = "darwin-deutsch",
     [string]$ContentPath = "D:\_Projects\DarwinLingua.Content\A1.json",
     [string]$WebApiProjectPath = "src\Apps\DarwinLingua.WebApi\DarwinLingua.WebApi.csproj",
+    [string]$AdminApiKey = $env:DARWINLINGUA_ADMIN_API_KEY,
     [switch]$StartWebApi,
     [int]$StartupTimeoutSeconds = 60
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+$AdminApiHeaderName = "X-DarwinLingua-Admin-Key"
+
+if ([string]::IsNullOrWhiteSpace($AdminApiKey)) {
+    $AdminApiKey = "local-dev-admin-api-key-change-me"
+}
 
 function Write-Step {
     param([string]$Message)
@@ -73,7 +79,7 @@ function Invoke-JsonRequest {
     )
 
     try {
-        return Invoke-RestMethod -Uri $Uri -Method $Method -ContentType "application/json" -Body $Body
+        return Invoke-RestMethod -Uri $Uri -Method $Method -ContentType "application/json" -Headers @{ $AdminApiHeaderName = $AdminApiKey } -Body $Body
     }
     catch {
         $response = $_.Exception.Response
@@ -81,8 +87,23 @@ function Invoke-JsonRequest {
             throw
         }
 
-        $reader = New-Object System.IO.StreamReader($response.GetResponseStream())
-        $errorBody = $reader.ReadToEnd()
+        $errorBody = $null
+        if (-not [string]::IsNullOrWhiteSpace($_.ErrorDetails.Message)) {
+            $errorBody = $_.ErrorDetails.Message
+        }
+        elseif ($response -is [System.Net.Http.HttpResponseMessage]) {
+            try {
+                $errorBody = $response.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+            }
+            catch {
+                $errorBody = $_.Exception.Message
+            }
+        }
+        elseif ($response.PSObject.Methods["GetResponseStream"]) {
+            $reader = New-Object System.IO.StreamReader($response.GetResponseStream())
+            $errorBody = $reader.ReadToEnd()
+        }
+
         $statusCode = try { [int]$response.StatusCode } catch { 0 }
 
         if (-not [string]::IsNullOrWhiteSpace($errorBody)) {
@@ -123,7 +144,7 @@ $workspaceRoot = (Resolve-Path ".").Path
 $localSettingsPath = Resolve-WebApiSettingsPath -WorkspaceRoot $workspaceRoot
 Write-Step "Using Web API settings file: $localSettingsPath"
 
-$contentFiles = Get-JsonFiles -TargetPath $ContentPath
+$contentFiles = @(Get-JsonFiles -TargetPath $ContentPath)
 $webApiProjectFullPath = Join-Path $workspaceRoot $WebApiProjectPath
 Assert-PathExists -Path $webApiProjectFullPath -Description "Web API project"
 
@@ -132,14 +153,17 @@ $webApiProcess = $null
 try {
     if ($StartWebApi.IsPresent) {
         Write-Step "Starting Web API in a separate process"
-        $startupCommand = '$env:ASPNETCORE_ENVIRONMENT=''Development''; $env:DOTNET_ENVIRONMENT=''Development''; $env:ASPNETCORE_URLS=''{1}''; dotnet run --project "{0}" --no-launch-profile' -f $webApiProjectFullPath, $ApiBaseUrl
-        $webApiProcess = Start-Process powershell `
+        $env:ASPNETCORE_ENVIRONMENT = "Development"
+        $env:DOTNET_ENVIRONMENT = "Development"
+        $env:ASPNETCORE_URLS = $ApiBaseUrl
+        $webApiProcess = Start-Process dotnet `
             -ArgumentList @(
-                "-NoProfile",
-                "-ExecutionPolicy", "Bypass",
-                "-Command", $startupCommand
+                "run",
+                "--project", $webApiProjectFullPath,
+                "--no-launch-profile"
             ) `
             -WorkingDirectory $workspaceRoot `
+            -WindowStyle Hidden `
             -PassThru
     }
 

@@ -11,3 +11,21 @@ public sealed record ScenarioDetailPageViewModel(
     IReadOnlyList<EventPreparationPackListItemModel> RelatedEventPreparationPacks,
     string PrimaryMeaningLanguageCode,
     string? SecondaryMeaningLanguageCode);
+
+public sealed record ScenarioRoleplayPageViewModel(
+    ScenarioLessonDetailModel Scenario,
+    IReadOnlyList<ScenarioRoleplayStepViewModel> Steps,
+    string PrimaryMeaningLanguageCode,
+    string? SecondaryMeaningLanguageCode);
+
+public sealed record ScenarioRoleplayStepViewModel(
+    int SortOrder,
+    string PromptRole,
+    string PromptText,
+    string? PromptPrimaryMeaning,
+    string? PromptSecondaryMeaning,
+    string LearnerRole,
+    string ModelAnswerText,
+    string? ModelAnswerPrimaryMeaning,
+    string? ModelAnswerSecondaryMeaning,
+    string StaticFeedback);

@@ -14,11 +14,13 @@ public static class WebProductAnalyticsEvents
 {
     public const string ScenarioViewed = "scenario.viewed";
     public const string ScenarioCompleted = "scenario.completed";
+    public const string RoleplayViewed = "roleplay.viewed";
     public const string ConversationStarterViewed = "conversation-starter.viewed";
     public const string FavoriteSaved = "favorite.saved";
     public const string EventViewed = "event.viewed";
     public const string EventRsvpSubmitted = "event-rsvp.submitted";
     public const string EventPreparationPackViewed = "event-preparation-pack.viewed";
+    public const string EventPreparationPackCompleted = "event-preparation-pack.completed";
     public const string OrganizerProfileViewed = "organizer-profile.viewed";
     public const string PartnerRequestSent = "partner-request.sent";
     public const string PartnerRequestAccepted = "partner-request.accepted";
@@ -36,6 +38,8 @@ public sealed record WebProductAnalyticsSummaryItem(
 
 internal sealed class WebProductAnalyticsService : IWebProductAnalyticsService
 {
+    private const int MaxCounterKeys = 2_000;
+
     private readonly ConcurrentDictionary<string, Counter> counters = new(StringComparer.Ordinal);
 
     public void Record(string eventName, string? scopeKey = null, int count = 1)
@@ -48,6 +52,11 @@ internal sealed class WebProductAnalyticsService : IWebProductAnalyticsService
         string normalizedEventName = eventName.Trim().ToLowerInvariant();
         string normalizedScopeKey = NormalizeScope(scopeKey);
         string counterKey = $"{normalizedEventName}|{normalizedScopeKey}";
+        if (!counters.ContainsKey(counterKey) && counters.Count >= MaxCounterKeys)
+        {
+            return;
+        }
+
         DateTime nowUtc = DateTime.UtcNow;
 
         Counter counter = counters.GetOrAdd(counterKey, _ => new Counter(normalizedEventName, normalizedScopeKey, nowUtc));
@@ -91,7 +100,7 @@ internal sealed class WebProductAnalyticsService : IWebProductAnalyticsService
     {
         private readonly object gate = new();
         private readonly DateTime firstSeenAtUtc = createdAtUtc;
-        private int count;
+        private long count;
         private DateTime lastSeenAtUtc = createdAtUtc;
 
         public void Increment(int value, DateTime seenAtUtc)
@@ -107,7 +116,12 @@ internal sealed class WebProductAnalyticsService : IWebProductAnalyticsService
         {
             lock (gate)
             {
-                return new WebProductAnalyticsSummaryItem(eventName, scopeKey, count, firstSeenAtUtc, lastSeenAtUtc);
+                return new WebProductAnalyticsSummaryItem(
+                    eventName,
+                    scopeKey,
+                    count > int.MaxValue ? int.MaxValue : (int)count,
+                    firstSeenAtUtc,
+                    lastSeenAtUtc);
             }
         }
     }

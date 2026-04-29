@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +33,11 @@ builder.Services
     .Bind(builder.Configuration.GetSection(ServerContentOptions.SectionName))
     .Validate(options => options.HasAtLeastOneActiveProduct(), "At least one active client product must be configured.")
     .Validate(options => options.HasValidPackages(), "Packages must reference active client products and valid areas.")
+    .ValidateOnStart();
+builder.Services
+    .AddOptions<AdminApiAccessOptions>()
+    .Bind(builder.Configuration.GetSection(AdminApiAccessOptions.SectionName))
+    .Validate(options => !string.IsNullOrWhiteSpace(options.HeaderName), "AdminApi:HeaderName must be configured.")
     .ValidateOnStart();
 builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
 builder.Services.Configure<DarwinLinguaEntitlementOptions>(builder.Configuration.GetSection("Entitlements"));
@@ -130,6 +137,7 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 }
 
 app.UseAuthentication();
+app.Use(EnforceAdminApiAccessAsync);
 app.UseAuthorization();
 
 RouteGroupBuilder authGroup = app.MapGroup("/api/auth");
@@ -582,6 +590,13 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
+    "/api/admin/catalog/system-report",
+    async (IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetSystemReportAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
     "/api/admin/catalog/imports",
     async (string? status, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
@@ -645,6 +660,19 @@ app.MapGet(
     async (string slug, IEventRsvpService eventRsvpService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await eventRsvpService.GetByEventAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/conversation-events/{slug}/rsvps/{rsvpId:guid}/status",
+    async (
+        string slug,
+        Guid rsvpId,
+        AdminSetEventRsvpStatusRequest request,
+        IEventRsvpService eventRsvpService,
+        CancellationToken cancellationToken) =>
+        await ResolveMutationRequestAsync(
+                async () => await eventRsvpService.SetStatusAsync(slug, rsvpId, request, cancellationToken).ConfigureAwait(false),
+                static response => response.Id != Guid.Empty)
             .ConfigureAwait(false));
 
 app.MapPost(
@@ -1035,6 +1063,81 @@ static string? GetOptionalConnectionString(IConfiguration configuration, params 
     }
 
     return null;
+}
+
+static async Task EnforceAdminApiAccessAsync(HttpContext context, RequestDelegate next)
+{
+    if (!IsProtectedApiPath(context.Request.Path, context.Request.Method))
+    {
+        await next(context).ConfigureAwait(false);
+        return;
+    }
+
+    if (context.User.Identity?.IsAuthenticated == true &&
+        context.User.IsInRole(DarwinLinguaRoles.Admin))
+    {
+        await next(context).ConfigureAwait(false);
+        return;
+    }
+
+    AdminApiAccessOptions options = context.RequestServices
+        .GetRequiredService<IOptions<AdminApiAccessOptions>>()
+        .Value;
+
+    if (string.IsNullOrWhiteSpace(options.ApiKey))
+    {
+        context.Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+        await context.Response.WriteAsync("Admin API access is not configured.", context.RequestAborted)
+            .ConfigureAwait(false);
+        return;
+    }
+
+    string? suppliedKey = context.Request.Headers[options.HeaderName].FirstOrDefault();
+    if (IsMatchingSecret(suppliedKey, options.ApiKey))
+    {
+        await next(context).ConfigureAwait(false);
+        return;
+    }
+
+    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+    await context.Response.WriteAsync("Admin API credentials are required.", context.RequestAborted)
+        .ConfigureAwait(false);
+}
+
+static bool IsProtectedApiPath(PathString path, string method) =>
+    path.StartsWithSegments("/api/admin/catalog", StringComparison.OrdinalIgnoreCase) ||
+    path.StartsWithSegments("/api/admin/content/catalog", StringComparison.OrdinalIgnoreCase) ||
+    path.StartsWithSegments("/api/catalog/learner-conversation-profiles/me", StringComparison.OrdinalIgnoreCase) ||
+    path.StartsWithSegments("/api/catalog/partner-matches", StringComparison.OrdinalIgnoreCase) ||
+    path.StartsWithSegments("/api/catalog/partner-requests", StringComparison.OrdinalIgnoreCase) ||
+    path.StartsWithSegments("/api/catalog/moderation", StringComparison.OrdinalIgnoreCase) ||
+    path.StartsWithSegments("/api/catalog/organizer-profile-owners", StringComparison.OrdinalIgnoreCase) ||
+    (HttpMethods.IsPost(method) &&
+        path.StartsWithSegments("/api/catalog/organizer-profiles", StringComparison.OrdinalIgnoreCase)) ||
+    (HttpMethods.IsPost(method) &&
+        path.StartsWithSegments("/api/catalog/conversation-events", StringComparison.OrdinalIgnoreCase));
+
+static bool IsMatchingSecret(string? suppliedSecret, string configuredSecret)
+{
+    if (string.IsNullOrWhiteSpace(suppliedSecret) ||
+        string.IsNullOrWhiteSpace(configuredSecret))
+    {
+        return false;
+    }
+
+    byte[] suppliedBytes = Encoding.UTF8.GetBytes(suppliedSecret);
+    byte[] configuredBytes = Encoding.UTF8.GetBytes(configuredSecret);
+    return suppliedBytes.Length == configuredBytes.Length &&
+        CryptographicOperations.FixedTimeEquals(suppliedBytes, configuredBytes);
+}
+
+public sealed class AdminApiAccessOptions
+{
+    public const string SectionName = "AdminApi";
+
+    public string HeaderName { get; set; } = "X-DarwinLingua-Admin-Key";
+
+    public string ApiKey { get; set; } = string.Empty;
 }
 
 public partial class Program;

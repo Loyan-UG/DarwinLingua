@@ -46,7 +46,7 @@
     {
       "slug": "parlundo-language-cafe",
       "displayName": "parlundo Language Cafe",
-      "organizerType": "community-group",
+      "organizerType": "club",
       "description": "Privately organized Berlin language cafe for relaxed language practice with conversation tables and advance registration.",
       "cityRegion": "Berlin",
       "isOnlineAvailable": false,
@@ -69,7 +69,7 @@
     {
       "slug": "buecherhallen-hamburg-dialog-in-deutsch",
       "displayName": "Buecherhallen Hamburg - Dialog in Deutsch",
-      "organizerType": "public-library",
+      "organizerType": "library",
       "description": "Hamburg public-library German conversation groups guided by volunteer facilitators, with in-person and online groups.",
       "cityRegion": "Hamburg",
       "isOnlineAvailable": true,
@@ -91,7 +91,7 @@
     {
       "slug": "university-hamburg-piasta",
       "displayName": "University of Hamburg PIASTA",
-      "organizerType": "university",
+      "organizerType": "school",
       "description": "University of Hamburg language cafe program with volunteer-led weekly language practice during the lecture period.",
       "cityRegion": "Hamburg",
       "isOnlineAvailable": false,
@@ -115,7 +115,7 @@
     {
       "slug": "dialogcafe-muenchen",
       "displayName": "Dialogcafe Muenchen",
-      "organizerType": "community-group",
+      "organizerType": "club",
       "description": "Munich German conversation project with free weekly online and in-person meetings at several district culture centers.",
       "cityRegion": "Munich",
       "isOnlineAvailable": true,
@@ -139,7 +139,7 @@
     {
       "slug": "muenchner-stadtbibliothek",
       "displayName": "Muenchner Stadtbibliothek",
-      "organizerType": "public-library",
+      "organizerType": "library",
       "description": "Munich public library language cafe program with German conversation circles for learners.",
       "cityRegion": "Munich",
       "isOnlineAvailable": false,
@@ -161,7 +161,7 @@
     {
       "slug": "bamf-integration-courses",
       "displayName": "BAMF Integration Courses",
-      "organizerType": "public-agency",
+      "organizerType": "association",
       "description": "Official German federal information about integration courses, language-course topics, orientation-course topics, and course procedure.",
       "cityRegion": "Germany",
       "isOnlineAvailable": true,
@@ -183,7 +183,7 @@
     {
       "slug": "hilokal-german-speaking",
       "displayName": "Hilokal German Speaking",
-      "organizerType": "online-platform",
+      "organizerType": "company",
       "description": "Online platform for free German conversation practice with live audio rooms and learner communities.",
       "cityRegion": "Online",
       "isOnlineAvailable": true,
@@ -452,6 +452,380 @@
       "sourceUrl": "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/InhaltAblauf/inhaltablauf-node.html",
       "lastVerifiedAtUtc": "2026-04-28T00:00:00Z",
       "linkedEventPreparationPackSlugs": []
+    }
+  ],
+  "organizerProfileOwners": [
+    {
+      "organizerProfileSlug": "parlundo-language-cafe",
+      "ownerEmail": "organizer.berlin@example.test",
+      "assignedBy": "admin@local",
+      "createdAtUtc": "2026-04-28T09:10:00Z"
+    },
+    {
+      "organizerProfileSlug": "dialogcafe-muenchen",
+      "ownerEmail": "organizer.munich@example.test",
+      "assignedBy": "admin@local",
+      "createdAtUtc": "2026-04-28T09:12:00Z"
+    },
+    {
+      "organizerProfileSlug": "buecherhallen-hamburg-dialog-in-deutsch",
+      "ownerEmail": "organizer.hamburg@example.test",
+      "assignedBy": "admin@local",
+      "createdAtUtc": "2026-04-28T09:14:00Z"
+    },
+    {
+      "organizerProfileSlug": "hilokal-german-speaking",
+      "ownerEmail": "organizer.online@example.test",
+      "assignedBy": "admin@local",
+      "createdAtUtc": "2026-04-28T09:16:00Z"
+    }
+  ],
+  "organizerClaimRequests": [
+    {
+      "organizerProfileSlug": "parlundo-language-cafe",
+      "requesterName": "Mara Beispiel",
+      "requesterEmail": "mara.organizer@example.test",
+      "relationshipToOrganizer": "Event coordinator",
+      "evidenceText": "Can verify access to the public event registration page and contact inbox.",
+      "status": "submitted",
+      "createdAtUtc": "2026-04-28T10:00:00Z"
+    },
+    {
+      "organizerProfileSlug": "dialogcafe-muenchen",
+      "requesterName": "Jonas Beispiel",
+      "requesterEmail": "jonas.organizer@example.test",
+      "relationshipToOrganizer": "Volunteer coordinator",
+      "evidenceText": "Listed as a coordinator on the internal volunteer rota.",
+      "status": "reviewing",
+      "createdAtUtc": "2026-04-28T10:10:00Z"
+    },
+    {
+      "organizerProfileSlug": "university-hamburg-piasta",
+      "requesterName": "Lea Beispiel",
+      "requesterEmail": "lea.organizer@example.test",
+      "relationshipToOrganizer": "Program assistant",
+      "evidenceText": "Submitted university program email evidence for review.",
+      "status": "approved",
+      "createdAtUtc": "2026-04-28T10:20:00Z"
+    },
+    {
+      "organizerProfileSlug": "hilokal-german-speaking",
+      "requesterName": "Omar Beispiel",
+      "requesterEmail": "omar.organizer@example.test",
+      "relationshipToOrganizer": "Community host",
+      "evidenceText": "Provided host profile and scheduled room references.",
+      "status": "rejected",
+      "createdAtUtc": "2026-04-28T10:30:00Z"
+    }
+  ],
+  "eventRsvps": [
+    {
+      "conversationEventSlug": "berlin-parlundo-language-cafe",
+      "participantName": "Ava Demo",
+      "participantEmail": "ava.learner@example.test",
+      "status": "going",
+      "createdAtUtc": "2026-04-28T11:00:00Z",
+      "updatedAtUtc": "2026-04-28T11:00:00Z"
+    },
+    {
+      "conversationEventSlug": "berlin-parlundo-language-cafe",
+      "participantName": "Noah Demo",
+      "participantEmail": "noah.learner@example.test",
+      "status": "interested",
+      "createdAtUtc": "2026-04-28T11:05:00Z",
+      "updatedAtUtc": "2026-04-28T11:05:00Z"
+    },
+    {
+      "conversationEventSlug": "hamburg-dialog-in-deutsch",
+      "participantName": "Mina Demo",
+      "participantEmail": "mina.learner@example.test",
+      "status": "going",
+      "createdAtUtc": "2026-04-28T11:10:00Z",
+      "updatedAtUtc": "2026-04-28T11:10:00Z"
+    },
+    {
+      "conversationEventSlug": "hamburg-dialog-in-deutsch",
+      "participantName": "Leo Demo",
+      "participantEmail": "leo.learner@example.test",
+      "status": "cancelled",
+      "createdAtUtc": "2026-04-28T11:15:00Z",
+      "updatedAtUtc": "2026-04-28T12:00:00Z"
+    },
+    {
+      "conversationEventSlug": "munich-dialogcafe",
+      "participantName": "Sara Demo",
+      "participantEmail": "sara.learner@example.test",
+      "status": "interested",
+      "createdAtUtc": "2026-04-28T11:20:00Z",
+      "updatedAtUtc": "2026-04-28T11:20:00Z"
+    },
+    {
+      "conversationEventSlug": "munich-dialogcafe",
+      "participantName": "Ben Demo",
+      "participantEmail": "ben.learner@example.test",
+      "status": "going",
+      "createdAtUtc": "2026-04-28T11:25:00Z",
+      "updatedAtUtc": "2026-04-28T11:25:00Z"
+    },
+    {
+      "conversationEventSlug": "online-hilokal-german-conversation",
+      "participantName": "Yara Demo",
+      "participantEmail": "yara.learner@example.test",
+      "status": "interested",
+      "createdAtUtc": "2026-04-28T11:30:00Z",
+      "updatedAtUtc": "2026-04-28T11:30:00Z"
+    },
+    {
+      "conversationEventSlug": "online-hilokal-german-conversation",
+      "participantName": "Max Demo",
+      "participantEmail": "max.learner@example.test",
+      "status": "going",
+      "createdAtUtc": "2026-04-28T11:35:00Z",
+      "updatedAtUtc": "2026-04-28T11:35:00Z"
+    }
+  ],
+  "learnerConversationProfiles": [
+    {
+      "ownerEmail": "ava.learner@example.test",
+      "displayName": "Ava",
+      "cityRegion": "Berlin",
+      "interactionPreference": "both",
+      "germanLevel": "A1",
+      "helperLanguageCodes": [
+        "en"
+      ],
+      "conversationGoals": "Practice first meetings, cafe ordering, and short introductions.",
+      "availabilityNotes": "Weekday evenings.",
+      "visibility": "public",
+      "hasConfirmedAdult": true
+    },
+    {
+      "ownerEmail": "noah.learner@example.test",
+      "displayName": "Noah",
+      "cityRegion": "Hamburg",
+      "interactionPreference": "in-person",
+      "germanLevel": "A2",
+      "helperLanguageCodes": [
+        "en",
+        "es"
+      ],
+      "conversationGoals": "Build confidence for library conversation groups.",
+      "availabilityNotes": "Saturday mornings.",
+      "visibility": "public",
+      "hasConfirmedAdult": true
+    },
+    {
+      "ownerEmail": "mina.learner@example.test",
+      "displayName": "Mina",
+      "cityRegion": "Munich",
+      "interactionPreference": "both",
+      "germanLevel": "B1",
+      "helperLanguageCodes": [
+        "en",
+        "fa"
+      ],
+      "conversationGoals": "Prepare for community events and workplace small talk.",
+      "availabilityNotes": "Flexible.",
+      "visibility": "request-only",
+      "hasConfirmedAdult": true
+    },
+    {
+      "ownerEmail": "leo.learner@example.test",
+      "displayName": "Leo",
+      "cityRegion": "Online",
+      "interactionPreference": "online",
+      "germanLevel": "A2",
+      "helperLanguageCodes": [
+        "en"
+      ],
+      "conversationGoals": "Practice online meeting introductions and follow-up questions.",
+      "availabilityNotes": "Sunday afternoon.",
+      "visibility": "public",
+      "hasConfirmedAdult": true
+    },
+    {
+      "ownerEmail": "sara.learner@example.test",
+      "displayName": "Sara",
+      "cityRegion": "Cologne",
+      "interactionPreference": "online",
+      "germanLevel": "B2",
+      "helperLanguageCodes": [
+        "en",
+        "ar"
+      ],
+      "conversationGoals": "Longer discussion practice and correction-friendly exchanges.",
+      "availabilityNotes": "Two sessions per week.",
+      "visibility": "public",
+      "hasConfirmedAdult": true
+    },
+    {
+      "ownerEmail": "ben.learner@example.test",
+      "displayName": "Ben",
+      "cityRegion": "Berlin",
+      "interactionPreference": "both",
+      "germanLevel": "B1",
+      "helperLanguageCodes": [
+        "en"
+      ],
+      "conversationGoals": "Roleplay event arrivals, introductions, and exchanging contact details.",
+      "availabilityNotes": "After 18:00.",
+      "visibility": "request-only",
+      "hasConfirmedAdult": true
+    }
+  ],
+  "partnerRequests": [
+    {
+      "requesterEmail": "ava.learner@example.test",
+      "targetLearnerEmail": "noah.learner@example.test",
+      "openerTemplateKey": "same-city",
+      "note": "Would like to practice beginner cafe and library dialogues.",
+      "status": "pending",
+      "createdAtUtc": "2026-04-28T12:10:00Z",
+      "updatedAtUtc": "2026-04-28T12:10:00Z",
+      "expiresAtUtc": "2026-05-05T12:10:00Z"
+    },
+    {
+      "requesterEmail": "noah.learner@example.test",
+      "targetLearnerEmail": "leo.learner@example.test",
+      "openerTemplateKey": "online-practice",
+      "note": "Online A2 practice for short questions.",
+      "status": "accepted",
+      "createdAtUtc": "2026-04-28T12:20:00Z",
+      "updatedAtUtc": "2026-04-28T13:00:00Z",
+      "expiresAtUtc": "2026-05-05T12:20:00Z",
+      "respondedAtUtc": "2026-04-28T13:00:00Z"
+    },
+    {
+      "requesterEmail": "mina.learner@example.test",
+      "targetLearnerEmail": "sara.learner@example.test",
+      "openerTemplateKey": "practice-goals",
+      "note": "Looking for longer B1/B2 conversation practice.",
+      "status": "declined",
+      "createdAtUtc": "2026-04-28T12:30:00Z",
+      "updatedAtUtc": "2026-04-28T13:05:00Z",
+      "expiresAtUtc": "2026-05-05T12:30:00Z",
+      "respondedAtUtc": "2026-04-28T13:05:00Z"
+    },
+    {
+      "requesterEmail": "sara.learner@example.test",
+      "targetLearnerEmail": "ava.learner@example.test",
+      "openerTemplateKey": "event-follow-up",
+      "note": "Can help with introductions before a language cafe.",
+      "status": "cancelled",
+      "createdAtUtc": "2026-04-28T12:40:00Z",
+      "updatedAtUtc": "2026-04-28T12:50:00Z",
+      "expiresAtUtc": "2026-05-05T12:40:00Z"
+    },
+    {
+      "requesterEmail": "ben.learner@example.test",
+      "targetLearnerEmail": "mina.learner@example.test",
+      "openerTemplateKey": "practice-goals",
+      "note": "Blocked after moderation test flow.",
+      "status": "blocked",
+      "createdAtUtc": "2026-04-28T12:45:00Z",
+      "updatedAtUtc": "2026-04-28T13:20:00Z",
+      "expiresAtUtc": "2026-05-05T12:45:00Z"
+    }
+  ],
+  "userReports": [
+    {
+      "reporterEmail": "ava.learner@example.test",
+      "targetType": "partner-request",
+      "targetKey": "partner-request-demo-005",
+      "reportedUserEmail": "ben.learner@example.test",
+      "reason": "spam",
+      "details": "Repeated unsolicited partner request notes.",
+      "status": "pending",
+      "createdAtUtc": "2026-04-28T13:00:00Z",
+      "updatedAtUtc": "2026-04-28T13:00:00Z"
+    },
+    {
+      "reporterEmail": "noah.learner@example.test",
+      "targetType": "learner-profile",
+      "targetKey": "sara.learner@example.test",
+      "reportedUserEmail": "sara.learner@example.test",
+      "reason": "impersonation",
+      "details": "Profile looked duplicated during a demo review.",
+      "status": "reviewed",
+      "decisionNote": "No action needed for demo profile.",
+      "decidedBy": "operator@local",
+      "decidedAtUtc": "2026-04-28T13:30:00Z",
+      "createdAtUtc": "2026-04-28T13:10:00Z",
+      "updatedAtUtc": "2026-04-28T13:30:00Z"
+    },
+    {
+      "reporterEmail": "mina.learner@example.test",
+      "targetType": "conversation-event",
+      "targetKey": "online-hilokal-german-conversation",
+      "reportedUserEmail": null,
+      "reason": "inaccurate-listing",
+      "details": "Schedule text should be reviewed before publication.",
+      "status": "action-taken",
+      "decisionNote": "Operator added verification reminder.",
+      "decidedBy": "operator@local",
+      "decidedAtUtc": "2026-04-28T13:40:00Z",
+      "createdAtUtc": "2026-04-28T13:15:00Z",
+      "updatedAtUtc": "2026-04-28T13:40:00Z"
+    },
+    {
+      "reporterEmail": "leo.learner@example.test",
+      "targetType": "partner-request",
+      "targetKey": "partner-request-demo-003",
+      "reportedUserEmail": "mina.learner@example.test",
+      "reason": "other",
+      "details": "Demo report for dismissed moderation path.",
+      "status": "dismissed",
+      "decisionNote": "Dismissed as duplicate demo report.",
+      "decidedBy": "operator@local",
+      "decidedAtUtc": "2026-04-28T13:45:00Z",
+      "createdAtUtc": "2026-04-28T13:18:00Z",
+      "updatedAtUtc": "2026-04-28T13:45:00Z"
+    }
+  ],
+  "userBlocks": [
+    {
+      "blockerEmail": "ava.learner@example.test",
+      "blockedEmail": "ben.learner@example.test",
+      "reason": "Blocked after spam report demo.",
+      "sourcePartnerRequestKey": "partner-request-demo-005",
+      "createdAtUtc": "2026-04-28T13:22:00Z"
+    },
+    {
+      "blockerEmail": "leo.learner@example.test",
+      "blockedEmail": "mina.learner@example.test",
+      "reason": "Demo block for safety UI validation.",
+      "sourcePartnerRequestKey": "partner-request-demo-003",
+      "createdAtUtc": "2026-04-28T13:24:00Z"
+    },
+    {
+      "blockerEmail": "sara.learner@example.test",
+      "blockedEmail": "ben.learner@example.test",
+      "reason": "Demo block without source request.",
+      "sourcePartnerRequestKey": null,
+      "createdAtUtc": "2026-04-28T13:26:00Z"
+    }
+  ],
+  "moderationDecisionAudits": [
+    {
+      "userReportKey": "user-report-demo-002",
+      "decisionStatus": "reviewed",
+      "decidedBy": "operator@local",
+      "decisionNote": "No action needed for demo profile.",
+      "createdAtUtc": "2026-04-28T13:30:00Z"
+    },
+    {
+      "userReportKey": "user-report-demo-003",
+      "decisionStatus": "action-taken",
+      "decidedBy": "operator@local",
+      "decisionNote": "Operator added verification reminder.",
+      "createdAtUtc": "2026-04-28T13:40:00Z"
+    },
+    {
+      "userReportKey": "user-report-demo-004",
+      "decisionStatus": "dismissed",
+      "decidedBy": "operator@local",
+      "decisionNote": "Dismissed as duplicate demo report.",
+      "createdAtUtc": "2026-04-28T13:45:00Z"
     }
   ]
 }

@@ -16,4 +16,10 @@ public interface IEventRsvpService
     Task<IReadOnlyList<EventRsvpResponse>> GetByEventAsync(
         string eventSlug,
         CancellationToken cancellationToken);
+
+    Task<EventRsvpResponse> SetStatusAsync(
+        string eventSlug,
+        Guid rsvpId,
+        AdminSetEventRsvpStatusRequest request,
+        CancellationToken cancellationToken);
 }
