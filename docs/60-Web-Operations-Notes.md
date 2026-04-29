@@ -76,11 +76,17 @@ This telemetry should stay proportional and privacy-aware. Avoid collecting unne
 Operational rules:
 
 - Use the local file sink only for development.
-- Use SMTP mode for staging and production.
-- Keep SMTP credentials in platform secret storage, not repository-tracked files.
+- Use Brevo API mode for staging and production transactional email.
+- Keep Brevo API keys, webhook secrets, and SMTP fallback credentials in platform secret storage, not repository-tracked files.
 - Keep `TransactionalEmail:PublicBaseUrl` aligned with the public HTTPS origin for each environment.
 - Review `admin/email-diagnostics` during account-flow validation and after provider incidents.
+- Review Brevo dashboard delivery logs and webhook status when provider events stop updating diagnostics.
+- Use the provider message id and provider event filters in `admin/email-diagnostics` to reconcile Brevo dashboard events with internal delivery logs.
+- Permanent Brevo events such as hard bounce, blocked, invalid email, and spam add the hashed recipient to the internal suppression list; later sends are logged as `Suppressed` without calling Brevo.
+- Use manual unsuppress only after support confirms the recipient address is valid and the Brevo dashboard no longer shows a permanent delivery issue.
+- Use manual provider-event recording only for support reconciliation when a Brevo dashboard event did not arrive through webhook; it is not a replacement for webhook configuration.
 - Treat repeated `Failed` delivery logs as an operational incident when account recovery is affected.
+- The hosted email failure monitor sends `Admin.EmailDeliveryFailureAlert` when failures exceed `TransactionalEmail:FailureAlertThreshold` inside `TransactionalEmail:FailureAlertWindowMinutes`; it suppresses repeated alerts for `TransactionalEmail:FailureAlertCooldownMinutes`.
 - Use the diagnostics cleanup action to remove logs older than `TransactionalEmail:DeliveryLogRetentionDays`.
 - Do not mix marketing email with transactional account email.
 

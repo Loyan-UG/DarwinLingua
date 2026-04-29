@@ -103,6 +103,14 @@ public sealed class OrganizerProfilesController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
+            await notificationEmailService.SendOrganizerProfileOwnershipChangedAsync(
+                    owner.OwnerEmail,
+                    owner.OrganizerProfileSlug,
+                    ResolveCulture(),
+                    HttpContext.TraceIdentifier,
+                    cancellationToken)
+                .ConfigureAwait(false);
+
             TempData["StatusMessage"] = $"Assigned {owner.OwnerEmail} to {owner.OrganizerProfileSlug}.";
             return RedirectToAction(nameof(Index));
         }

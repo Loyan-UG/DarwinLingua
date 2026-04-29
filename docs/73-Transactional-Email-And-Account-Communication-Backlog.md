@@ -76,18 +76,18 @@ Email flows must feel reliable, clear, and safe. A learner should never be stuck
 
 ### Backlog
 
-- [ ] define the full list of transactional email scenarios for the first public release
-- [ ] define account-state UX for unconfirmed email users
-- [ ] define clear resend-confirmation behavior
-- [ ] define expired-token UX and recovery path
-- [ ] define invalid-token UX without leaking account existence
-- [ ] define success pages for confirmation, password reset, and email change
-- [ ] define user-facing copy for all email-related screens
-- [ ] define support fallback text for users who cannot receive email
-- [ ] define anti-enumeration wording for password reset and confirmation resend
-- [ ] define what actions require confirmed email
-- [ ] define whether browsing is allowed before confirmation
-- [ ] define whether premium purchase, organizer claim, RSVP, matching, and profile publishing require confirmed email
+- [x] define the full list of transactional email scenarios for the first public release
+- [x] define account-state UX for unconfirmed email users
+- [x] define clear resend-confirmation behavior
+- [x] define expired-token UX and recovery path
+- [x] define invalid-token UX without leaking account existence
+- [x] define success pages for confirmation, password reset, and email change
+- [x] define user-facing copy for all email-related screens
+- [x] define support fallback text for users who cannot receive email
+- [x] define anti-enumeration wording for password reset and confirmation resend
+- [x] define what actions require confirmed email
+- [x] define whether browsing is allowed before confirmation
+- [x] define whether premium purchase, organizer claim, RSVP, matching, and profile publishing require confirmed email
 
 ### Recommended Product Rules
 
@@ -114,12 +114,12 @@ Email flows must feel reliable, clear, and safe. A learner should never be stuck
 - [x] password reset success notification
 - [x] email address change confirmation for the new address
 - [x] email address changed notification to the old address
-- [ ] account locked or suspicious login notification if lockout is enabled
+- [x] account locked or suspicious login notification if lockout is enabled
 - [ ] account deleted/deactivated confirmation if account deletion exists
 
 ### Security and Trust Emails
 
-- [ ] password changed notification
+- [x] password changed notification
 - [ ] new login from unknown device or location placeholder if device tracking is later implemented
 - [ ] two-factor authentication setup placeholder if 2FA is later implemented
 - [ ] recovery code regeneration placeholder if 2FA is later implemented
@@ -129,18 +129,18 @@ Email flows must feel reliable, clear, and safe. A learner should never be stuck
 - [x] organizer claim submitted notification to the claimant
 - [x] organizer claim approved notification
 - [x] organizer claim rejected notification
-- [ ] organizer profile ownership changed notification
+- [x] organizer profile ownership changed notification
 - [x] event RSVP confirmation notification if RSVP is enabled
 - [ ] event cancellation/update notification if event management is enabled
 - [ ] partner request received notification if matching is enabled
 - [x] partner request accepted notification if matching is enabled
-- [ ] moderation/report outcome notification where appropriate
+- [x] moderation/report outcome notification where appropriate
 
 ### Admin/Operator Emails
 
 - [x] new organizer claim admin notification
 - [x] high-severity user report admin notification
-- [ ] repeated email delivery failure admin notification
+- [x] repeated email delivery failure admin notification
 - [ ] publish/import failure admin notification placeholder if useful
 - [ ] payment/subscription failure admin notification placeholder if payment is added later
 
@@ -160,10 +160,12 @@ Transactional email must be provider-independent and testable. Do not couple bus
 - [x] define `IEmailDeliveryLogRepository` or equivalent persistence boundary
 - [x] define email provider options and validation
 - [x] define environment-specific behavior for development, staging, and production
-- [ ] define background sending boundary if synchronous sending becomes unreliable
-- [ ] define retry policy and non-retryable failure handling
+- [-] define background sending boundary if synchronous sending becomes unreliable
+- [x] define retry policy and non-retryable failure handling
 - [x] define cancellation-token support for all email operations
 - [x] define correlation/request id storage for diagnostics
+
+Current boundary: transactional emails are still sent synchronously with retry handling, while a hosted failure monitor watches delivery logs and notifies admins when repeated provider failures exceed the configured threshold. A durable background queue should be added only if request-path sending becomes unreliable under production load.
 
 ### Provider Strategy
 
@@ -172,8 +174,8 @@ The first implementation should support one production provider and one local de
 | Environment | Recommendation |
 |---|---|
 | Development | log-to-file/in-memory sink or local SMTP catcher such as Mailpit/MailHog |
-| Staging | real provider with test domain/subdomain |
-| Production | provider with verified domain, SPF, DKIM, DMARC, bounce handling |
+| Staging | Brevo API mode with test domain/subdomain |
+| Production | Brevo API mode with verified domain, SPF, DKIM, DMARC, bounce handling, and webhook events |
 
 The implementation must not hard-code provider-specific logic into controllers, Razor pages, handlers, or domain entities.
 
@@ -196,6 +198,9 @@ Suggested fields:
 - subject
 - provider name
 - provider message id
+- provider last event
+- provider last event at UTC
+- provider last event reason
 - status: queued, sent, failed, skipped, suppressed
 - failure code
 - failure message summary
@@ -216,6 +221,7 @@ Suggested fields:
 - [x] avoid logging full reset/confirmation URLs
 - [x] define cleanup job or manual cleanup endpoint for old logs
 - [x] add admin diagnostics page for recent email delivery status
+- [x] define internal suppression behavior for permanent provider failures
 
 ---
 
@@ -237,7 +243,7 @@ Email tokens are security-sensitive. They must be short-lived, single-purpose, a
 - [x] protect against user enumeration in reset and resend flows
 - [x] rate-limit password reset requests
 - [x] rate-limit confirmation resend requests
-- [ ] invalidate or make old flows harmless after email/password changes where applicable
+- [x] invalidate or make old flows harmless after email/password changes where applicable
 - [ ] add tests for expired, invalid, reused, malformed, and wrong-purpose tokens
 
 ### Suggested Initial Policy
@@ -325,7 +331,7 @@ Later, email body content may support the user's selected UI language and possib
 - [x] add change-email screen if account profile editing exists
 - [x] send confirmation to new email address
 - [x] notify old email address after successful change
-- [ ] require re-authentication for email change if necessary
+- [x] require re-authentication for email change if necessary
 - [ ] add tests for change-email token validation and old-email notification
 
 ---
@@ -358,11 +364,13 @@ For the first release, use web-hosted confirmation and password-reset pages from
 ### Admin Email Diagnostics
 
 - [x] add admin page for recent transactional email deliveries
+- [x] add admin readiness warnings for transactional email configuration
+- [x] add transactional email summary metrics to the admin system report
 - [x] filter by status, scenario, date range, and recipient/user where privacy policy allows
 - [x] show provider message id when available
 - [x] show safe failure summary without leaking tokens or sensitive URLs
-- [ ] allow manual resend for safe scenarios such as confirmation email
-- [ ] do not allow manual resend of expired reset tokens; generate a new token instead
+- [x] allow manual resend for safe scenarios such as confirmation email
+- [x] do not allow manual resend of expired reset tokens; generate a new token instead
 
 ### Operational Configuration
 
@@ -389,16 +397,16 @@ For the first release, use web-hosted confirmation and password-reset pages from
 - [x] reset password success
 - [x] change email confirmation sent
 - [x] email changed success
-- [ ] unconfirmed account gate page
+- [x] unconfirmed account gate page
 
 ### UX Rules
 
-- [ ] do not reveal whether an email exists during password reset
-- [ ] do not show raw token errors to users
-- [ ] provide clear next step after every account email action
-- [ ] include support fallback text only where useful
-- [ ] keep wording short and localized
-- [ ] keep error states consistent with existing UI components
+- [x] do not reveal whether an email exists during password reset
+- [x] do not show raw token errors to users
+- [x] provide clear next step after every account email action
+- [x] include support fallback text only where useful
+- [x] keep wording short and localized
+- [x] keep error states consistent with existing UI components
 
 ---
 

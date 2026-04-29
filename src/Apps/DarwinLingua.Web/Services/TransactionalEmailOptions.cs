@@ -34,6 +34,14 @@ public sealed class TransactionalEmailOptions
 
     public string SmtpPassword { get; set; } = string.Empty;
 
+    public string BrevoApiBaseUrl { get; set; } = "https://api.brevo.com";
+
+    public string BrevoApiKey { get; set; } = string.Empty;
+
+    public string BrevoWebhookSecret { get; set; } = string.Empty;
+
+    public bool BrevoSandboxMode { get; set; }
+
     public int EmailConfirmationTokenHours { get; set; } = 24;
 
     public int PasswordResetTokenMinutes { get; set; } = 60;
@@ -41,6 +49,20 @@ public sealed class TransactionalEmailOptions
     public int EmailChangeTokenMinutes { get; set; } = 60;
 
     public int DeliveryLogRetentionDays { get; set; } = 90;
+
+    public int MaxSendAttempts { get; set; } = 3;
+
+    public int SendRetryDelayMilliseconds { get; set; } = 500;
+
+    public bool EnableFailureAlerts { get; set; } = true;
+
+    public int FailureAlertThreshold { get; set; } = 3;
+
+    public int FailureAlertWindowMinutes { get; set; } = 15;
+
+    public int FailureAlertCooldownMinutes { get; set; } = 60;
+
+    public int FailureAlertMonitorIntervalMinutes { get; set; } = 5;
 }
 
 public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvironment)
@@ -51,9 +73,9 @@ public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvi
         List<string> failures = [];
         string mode = options.Mode.Trim();
 
-        if (!IsMode(mode, "File") && !IsMode(mode, "Smtp") && !IsMode(mode, "Disabled"))
+        if (!IsMode(mode, "File") && !IsMode(mode, "Smtp") && !IsMode(mode, "BrevoApi") && !IsMode(mode, "Disabled"))
         {
-            failures.Add("TransactionalEmail:Mode must be File, Smtp, or Disabled.");
+            failures.Add("TransactionalEmail:Mode must be File, Smtp, BrevoApi, or Disabled.");
         }
 
         if (string.IsNullOrWhiteSpace(options.FromEmail))
@@ -86,11 +108,52 @@ public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvi
             failures.Add("TransactionalEmail:DeliveryLogRetentionDays must be greater than zero.");
         }
 
+        if (options.MaxSendAttempts <= 0)
+        {
+            failures.Add("TransactionalEmail:MaxSendAttempts must be greater than zero.");
+        }
+
+        if (options.SendRetryDelayMilliseconds < 0)
+        {
+            failures.Add("TransactionalEmail:SendRetryDelayMilliseconds cannot be negative.");
+        }
+
+        if (!string.IsNullOrWhiteSpace(options.BrevoApiBaseUrl) &&
+            !Uri.TryCreate(options.BrevoApiBaseUrl, UriKind.Absolute, out _))
+        {
+            failures.Add("TransactionalEmail:BrevoApiBaseUrl must be an absolute URL.");
+        }
+
+        if (IsMode(mode, "BrevoApi") && string.IsNullOrWhiteSpace(options.BrevoApiKey))
+        {
+            failures.Add("TransactionalEmail:BrevoApiKey is required when Mode is BrevoApi.");
+        }
+
+        if (options.FailureAlertThreshold <= 0)
+        {
+            failures.Add("TransactionalEmail:FailureAlertThreshold must be greater than zero.");
+        }
+
+        if (options.FailureAlertWindowMinutes <= 0)
+        {
+            failures.Add("TransactionalEmail:FailureAlertWindowMinutes must be greater than zero.");
+        }
+
+        if (options.FailureAlertCooldownMinutes <= 0)
+        {
+            failures.Add("TransactionalEmail:FailureAlertCooldownMinutes must be greater than zero.");
+        }
+
+        if (options.FailureAlertMonitorIntervalMinutes <= 0)
+        {
+            failures.Add("TransactionalEmail:FailureAlertMonitorIntervalMinutes must be greater than zero.");
+        }
+
         if (hostEnvironment.IsProduction())
         {
-            if (!IsMode(mode, "Smtp"))
+            if (!IsMode(mode, "Smtp") && !IsMode(mode, "BrevoApi"))
             {
-                failures.Add("TransactionalEmail:Mode must be Smtp in Production.");
+                failures.Add("TransactionalEmail:Mode must be Smtp or BrevoApi in Production.");
             }
 
             if (string.IsNullOrWhiteSpace(options.PublicBaseUrl))
@@ -100,7 +163,15 @@ public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvi
 
             if (string.IsNullOrWhiteSpace(options.SmtpHost))
             {
-                failures.Add("TransactionalEmail:SmtpHost is required in Production.");
+                if (IsMode(mode, "Smtp"))
+                {
+                    failures.Add("TransactionalEmail:SmtpHost is required in Production when Mode is Smtp.");
+                }
+            }
+
+            if (IsMode(mode, "BrevoApi") && string.IsNullOrWhiteSpace(options.BrevoWebhookSecret))
+            {
+                failures.Add("TransactionalEmail:BrevoWebhookSecret is required in Production when Mode is BrevoApi.");
             }
         }
 

@@ -75,6 +75,9 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "Subject" TEXT NOT NULL,
                 "ProviderName" TEXT NOT NULL,
                 "ProviderMessageId" TEXT NULL,
+                "ProviderLastEvent" TEXT NULL,
+                "ProviderLastEventAtUtc" TEXT NULL,
+                "ProviderLastEventReason" TEXT NULL,
                 "Status" TEXT NOT NULL,
                 "FailureCode" TEXT NULL,
                 "FailureMessageSummary" TEXT NULL,
@@ -84,7 +87,30 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "LastAttemptAtUtc" TEXT NULL,
                 "CorrelationId" TEXT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebEmailSuppressions" (
+                "Id" TEXT NOT NULL CONSTRAINT "PK_WebEmailSuppressions" PRIMARY KEY,
+                "RecipientEmailHash" TEXT NOT NULL,
+                "Reason" TEXT NOT NULL,
+                "ProviderName" TEXT NOT NULL,
+                "ProviderMessageId" TEXT NULL,
+                "CreatedAtUtc" TEXT NOT NULL,
+                "LastSeenAtUtc" TEXT NULL
+            );
             """,
+            cancellationToken)
+            .ConfigureAwait(false);
+
+        await TryAddSqliteColumnAsync(
+            """ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN "ProviderLastEvent" TEXT NULL;""",
+            cancellationToken)
+            .ConfigureAwait(false);
+        await TryAddSqliteColumnAsync(
+            """ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN "ProviderLastEventAtUtc" TEXT NULL;""",
+            cancellationToken)
+            .ConfigureAwait(false);
+        await TryAddSqliteColumnAsync(
+            """ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN "ProviderLastEventReason" TEXT NULL;""",
             cancellationToken)
             .ConfigureAwait(false);
 
@@ -102,6 +128,14 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebEmailDeliveryLogs" ("CreatedAtUtc", "Status");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ScenarioKey_CreatedAtUtc"
             ON "WebEmailDeliveryLogs" ("ScenarioKey", "CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderMessageId"
+            ON "WebEmailDeliveryLogs" ("ProviderMessageId");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc"
+            ON "WebEmailDeliveryLogs" ("ProviderLastEvent", "ProviderLastEventAtUtc");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_RecipientEmailHash"
+            ON "WebEmailSuppressions" ("RecipientEmailHash");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_CreatedAtUtc"
+            ON "WebEmailSuppressions" ("CreatedAtUtc");
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -151,6 +185,9 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "Subject" character varying(256) NOT NULL,
                 "ProviderName" character varying(64) NOT NULL,
                 "ProviderMessageId" character varying(256) NULL,
+                "ProviderLastEvent" character varying(64) NULL,
+                "ProviderLastEventAtUtc" timestamp with time zone NULL,
+                "ProviderLastEventReason" character varying(512) NULL,
                 "Status" character varying(32) NOT NULL,
                 "FailureCode" character varying(128) NULL,
                 "FailureMessageSummary" character varying(512) NULL,
@@ -160,6 +197,25 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "LastAttemptAtUtc" timestamp with time zone NULL,
                 "CorrelationId" character varying(128) NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebEmailSuppressions" (
+                "Id" uuid NOT NULL CONSTRAINT "PK_WebEmailSuppressions" PRIMARY KEY,
+                "RecipientEmailHash" character varying(128) NOT NULL,
+                "Reason" character varying(128) NOT NULL,
+                "ProviderName" character varying(64) NOT NULL,
+                "ProviderMessageId" character varying(256) NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "LastSeenAtUtc" timestamp with time zone NULL
+            );
+            """,
+            cancellationToken)
+            .ConfigureAwait(false);
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN IF NOT EXISTS "ProviderLastEvent" character varying(64) NULL;
+            ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN IF NOT EXISTS "ProviderLastEventAtUtc" timestamp with time zone NULL;
+            ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN IF NOT EXISTS "ProviderLastEventReason" character varying(512) NULL;
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -178,8 +234,28 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebEmailDeliveryLogs" ("CreatedAtUtc", "Status");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ScenarioKey_CreatedAtUtc"
             ON "WebEmailDeliveryLogs" ("ScenarioKey", "CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderMessageId"
+            ON "WebEmailDeliveryLogs" ("ProviderMessageId");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc"
+            ON "WebEmailDeliveryLogs" ("ProviderLastEvent", "ProviderLastEventAtUtc");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_RecipientEmailHash"
+            ON "WebEmailSuppressions" ("RecipientEmailHash");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_CreatedAtUtc"
+            ON "WebEmailSuppressions" ("CreatedAtUtc");
             """,
             cancellationToken)
             .ConfigureAwait(false);
+    }
+
+    private async Task TryAddSqliteColumnAsync(string sql, CancellationToken cancellationToken)
+    {
+        try
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(sql, cancellationToken).ConfigureAwait(false);
+        }
+        catch (Exception exception) when (
+            exception.Message.Contains("duplicate column", StringComparison.OrdinalIgnoreCase))
+        {
+        }
     }
 }

@@ -15,6 +15,8 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
 
     public DbSet<WebEmailDeliveryLog> EmailDeliveryLogs => Set<WebEmailDeliveryLog>();
 
+    public DbSet<WebEmailSuppression> EmailSuppressions => Set<WebEmailSuppression>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
@@ -61,12 +63,28 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
             entity.Property(log => log.Subject).HasMaxLength(256).IsRequired();
             entity.Property(log => log.ProviderName).HasMaxLength(64).IsRequired();
             entity.Property(log => log.ProviderMessageId).HasMaxLength(256);
+            entity.Property(log => log.ProviderLastEvent).HasMaxLength(64);
+            entity.Property(log => log.ProviderLastEventReason).HasMaxLength(512);
             entity.Property(log => log.Status).HasConversion<string>().HasMaxLength(32).IsRequired();
             entity.Property(log => log.FailureCode).HasMaxLength(128);
             entity.Property(log => log.FailureMessageSummary).HasMaxLength(512);
             entity.Property(log => log.CorrelationId).HasMaxLength(128);
             entity.HasIndex(log => new { log.CreatedAtUtc, log.Status });
             entity.HasIndex(log => new { log.ScenarioKey, log.CreatedAtUtc });
+            entity.HasIndex(log => log.ProviderMessageId);
+            entity.HasIndex(log => new { log.ProviderLastEvent, log.ProviderLastEventAtUtc });
+        });
+
+        builder.Entity<WebEmailSuppression>(entity =>
+        {
+            entity.ToTable("WebEmailSuppressions");
+            entity.HasKey(suppression => suppression.Id);
+            entity.Property(suppression => suppression.RecipientEmailHash).HasMaxLength(128).IsRequired();
+            entity.Property(suppression => suppression.Reason).HasMaxLength(128).IsRequired();
+            entity.Property(suppression => suppression.ProviderName).HasMaxLength(64).IsRequired();
+            entity.Property(suppression => suppression.ProviderMessageId).HasMaxLength(256);
+            entity.HasIndex(suppression => suppression.RecipientEmailHash).IsUnique();
+            entity.HasIndex(suppression => suppression.CreatedAtUtc);
         });
     }
 }

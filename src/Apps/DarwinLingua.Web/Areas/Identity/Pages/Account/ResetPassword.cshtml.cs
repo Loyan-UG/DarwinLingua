@@ -55,6 +55,7 @@ public sealed class ResetPasswordModel(
         IdentityResult result = await userManager.ResetPasswordAsync(user, token, Input.Password).ConfigureAwait(false);
         if (result.Succeeded)
         {
+            await userManager.UpdateSecurityStampAsync(user).ConfigureAwait(false);
             await accountEmailService.SendPasswordResetCompletedAsync(
                     user,
                     ResolveCulture(),

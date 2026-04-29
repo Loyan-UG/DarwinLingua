@@ -18,6 +18,139 @@
 </section>
 
 <section class="panel stack-md">
+    <h2 class="headline-sm">Readiness</h2>
+    <div class="metric-grid">
+        <article class="metric-card">
+            <span class="metric-card__label">Mode</span>
+            <strong>@Model.Readiness.Mode</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">Public URL</span>
+            <strong>@(string.IsNullOrWhiteSpace(Model.Readiness.PublicBaseUrl) ? "Missing" : "Configured")</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">SMTP host</span>
+            <strong>@(Model.Readiness.HasSmtpHost ? "Configured" : "Missing")</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">Admin recipients</span>
+            <strong>@Model.Readiness.AdminNotificationRecipientCount</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">Failure alerts</span>
+            <strong>@(Model.Readiness.FailureAlertsEnabled ? "Enabled" : "Disabled")</strong>
+        </article>
+    </div>
+    <ul class="feature-list">
+        <li>From: @Model.Readiness.FromEmail</li>
+        <li>Reply-to: @Model.Readiness.ReplyToEmail</li>
+        <li>Support: @Model.Readiness.SupportEmail</li>
+        <li>SMTP credentials: @(Model.Readiness.HasSmtpUserName && Model.Readiness.HasSmtpPassword ? "Configured" : "Incomplete")</li>
+        <li>Brevo API key: @(Model.Readiness.HasBrevoApiKey ? "Configured" : "Missing")</li>
+        <li>Brevo webhook secret: @(Model.Readiness.HasBrevoWebhookSecret ? "Configured" : "Missing")</li>
+        <li>Brevo sandbox mode: @(Model.Readiness.BrevoSandboxMode ? "Enabled" : "Disabled")</li>
+        <li>Failure alert threshold: @Model.Readiness.FailureAlertThreshold failures in @Model.Readiness.FailureAlertWindowMinutes minutes</li>
+        <li>Failure alert cooldown: @Model.Readiness.FailureAlertCooldownMinutes minutes; monitor interval: @Model.Readiness.FailureAlertMonitorIntervalMinutes minutes</li>
+    </ul>
+    @if (Model.Readiness.Warnings.Count == 0)
+    {
+        <p class="body-sm">No configuration warnings detected. DNS and provider DPA still require external verification before production launch.</p>
+    }
+    else
+    {
+        <div class="status-banner status-banner--error">
+            <strong>Readiness warnings</strong>
+            <ul>
+                @foreach (string warning in Model.Readiness.Warnings)
+                {
+                    <li>@warning</li>
+                }
+            </ul>
+        </div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Suppression list</h2>
+    <div class="metric-grid">
+        <article class="metric-card">
+            <span class="metric-card__label">Suppressed recipients</span>
+            <strong>@Model.SuppressionSummary.TotalCount</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">Last suppression</span>
+            <strong>@(Model.SuppressionSummary.LastCreatedAtUtc?.UtcDateTime.ToString("u") ?? "None")</strong>
+        </article>
+    </div>
+    <p class="body-sm">Permanent Brevo events such as hard bounce, blocked, invalid email, and spam add a hashed recipient to the internal suppression list. Raw recipient email addresses are not stored here.</p>
+    @if (!string.IsNullOrWhiteSpace(Model.SuppressionSummary.LastReason))
+    {
+        <p class="body-sm">Last reason: @Model.SuppressionSummary.LastReason</p>
+    }
+    <form method="get" class="filter-bar">
+        <label>
+            Suppression hash prefix
+            <input name="suppressionHashPrefix" value="@Model.SuppressionHashPrefix" placeholder="A1B2C3" />
+        </label>
+        <label>
+            Suppression reason
+            <select name="suppressionReason">
+                <option value="">All</option>
+                @foreach (string reason in new[] { "brevo:hard_bounce", "brevo:blocked", "brevo:invalid", "brevo:invalid_email", "brevo:spam" })
+                {
+                    <option value="@reason" selected="@(string.Equals(Model.SuppressionReason, reason, StringComparison.OrdinalIgnoreCase))">@reason</option>
+                }
+            </select>
+        </label>
+        <input type="hidden" name="status" value="@Model.Status" />
+        <input type="hidden" name="scenario" value="@Model.Scenario" />
+        <input type="hidden" name="fromUtc" value="@Model.FromUtc" />
+        <input type="hidden" name="toUtc" value="@Model.ToUtc" />
+        <input type="hidden" name="recipientHashPrefix" value="@Model.RecipientHashPrefix" />
+        <input type="hidden" name="providerMessageId" value="@Model.ProviderMessageId" />
+        <input type="hidden" name="providerEvent" value="@Model.ProviderEvent" />
+        <input type="hidden" name="take" value="@Model.Take" />
+        <button type="submit" class="button button--primary">Filter suppressions</button>
+    </form>
+    @if (Model.Suppressions.Count > 0)
+    {
+        <div class="table-scroll">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Created</th>
+                        <th>Hash</th>
+                        <th>Reason</th>
+                        <th>Provider</th>
+                        <th>Last seen</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var suppression in Model.Suppressions)
+                    {
+                        <tr>
+                            <td>@suppression.CreatedAtUtc.UtcDateTime.ToString("u")</td>
+                            <td><code>@suppression.RecipientEmailHash[..Math.Min(16, suppression.RecipientEmailHash.Length)]</code></td>
+                            <td>@suppression.Reason</td>
+                            <td>@suppression.ProviderName</td>
+                            <td>@(suppression.LastSeenAtUtc?.UtcDateTime.ToString("u") ?? "none")</td>
+                            <td>
+                                <form method="post" asp-action="RemoveSuppression" class="inline-form">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="recipientEmailHash" value="@suppression.RecipientEmailHash" />
+                                    <button type="submit" class="button button--secondary">Unsuppress</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>
+
+<section class="panel stack-md">
     <form method="get" class="filter-bar">
         <label>
             Status
@@ -46,6 +179,20 @@
             <input name="recipientHashPrefix" value="@Model.RecipientHashPrefix" placeholder="A1B2C3" />
         </label>
         <label>
+            Provider message id
+            <input name="providerMessageId" value="@Model.ProviderMessageId" placeholder="<message-id@domain>" />
+        </label>
+        <label>
+            Provider event
+            <select name="providerEvent">
+                <option value="">All</option>
+                @foreach (string providerEvent in new[] { "request", "sent", "delivered", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam", "opened", "unique_opened", "click", "unsubscribed" })
+                {
+                    <option value="@providerEvent" selected="@(string.Equals(Model.ProviderEvent, providerEvent, StringComparison.OrdinalIgnoreCase))">@providerEvent</option>
+                }
+            </select>
+        </label>
+        <label>
             Limit
             <input name="take" value="@Model.Take" type="number" min="1" max="200" />
         </label>
@@ -60,6 +207,45 @@
     <form method="post" asp-action="Cleanup" class="inline-form">
         @Html.AntiForgeryToken()
         <button type="submit" class="button button--secondary">Clean up old delivery logs</button>
+    </form>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Manual resend</h2>
+    <p class="body-sm">Generate a new confirmation token for an unconfirmed account. Password reset emails are not resent from diagnostics.</p>
+    <form method="post" asp-action="ResendConfirmation" class="filter-bar">
+        @Html.AntiForgeryToken()
+        <label>
+            Account email
+            <input name="email" type="email" autocomplete="off" placeholder="learner@example.com" />
+        </label>
+        <button type="submit" class="button button--primary">Send confirmation</button>
+    </form>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Manual provider event</h2>
+    <p class="body-sm">Record a Brevo/provider event for an existing provider message id. Permanent failure events can create internal suppressions.</p>
+    <form method="post" asp-action="RecordProviderEvent" class="filter-bar">
+        @Html.AntiForgeryToken()
+        <label>
+            Provider message id
+            <input name="providerMessageId" autocomplete="off" placeholder="<message-id@domain>" />
+        </label>
+        <label>
+            Provider event
+            <select name="providerEvent">
+                @foreach (string providerEvent in new[] { "delivered", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam" })
+                {
+                    <option value="@providerEvent">@providerEvent</option>
+                }
+            </select>
+        </label>
+        <label>
+            Reason
+            <input name="reason" autocomplete="off" placeholder="Manual reconciliation or Brevo dashboard reason" />
+        </label>
+        <button type="submit" class="button button--primary">Record event</button>
     </form>
 </section>
 
@@ -80,6 +266,7 @@
                         <th>Scenario</th>
                         <th>Culture</th>
                         <th>Provider</th>
+                        <th>Provider event</th>
                         <th>Recipient hash</th>
                         <th>Subject</th>
                         <th>Failure</th>
@@ -94,6 +281,7 @@
                             <td>@log.ScenarioKey</td>
                             <td>@log.Culture</td>
                             <td>@log.ProviderName</td>
+                            <td>@(log.ProviderLastEvent ?? "none")</td>
                             <td><code>@log.RecipientEmailHash[..Math.Min(12, log.RecipientEmailHash.Length)]</code></td>
                             <td>@log.Subject</td>
                             <td>@(log.FailureCode ?? "none")</td>

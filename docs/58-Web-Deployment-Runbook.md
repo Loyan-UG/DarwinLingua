@@ -35,7 +35,7 @@ For Identity bootstrap and authorization, keep these out of repository-tracked p
 
 Transactional email is release-critical. Set these values per staging and production environment:
 
-- `TransactionalEmail__Mode=Smtp`
+- `TransactionalEmail__Mode=BrevoApi`
 - `TransactionalEmail__PublicBaseUrl`
 - `TransactionalEmail__FromEmail`
 - `TransactionalEmail__FromName`
@@ -47,19 +47,28 @@ Transactional email is release-critical. Set these values per staging and produc
 - `TransactionalEmail__SmtpUseSsl`
 - `TransactionalEmail__SmtpUserName`
 - `TransactionalEmail__SmtpPassword`
+- `TransactionalEmail__BrevoApiBaseUrl=https://api.brevo.com`
+- `TransactionalEmail__BrevoApiKey`
+- `TransactionalEmail__BrevoWebhookSecret`
+- `TransactionalEmail__BrevoSandboxMode=false` for production
 - `TransactionalEmail__EmailConfirmationTokenHours`
 - `TransactionalEmail__PasswordResetTokenMinutes`
 - `TransactionalEmail__EmailChangeTokenMinutes`
 - `TransactionalEmail__DeliveryLogRetentionDays`
+- `TransactionalEmail__EnableFailureAlerts`
+- `TransactionalEmail__FailureAlertThreshold`
+- `TransactionalEmail__FailureAlertWindowMinutes`
+- `TransactionalEmail__FailureAlertCooldownMinutes`
+- `TransactionalEmail__FailureAlertMonitorIntervalMinutes`
 
-Staging must use a real provider and a staging sender domain or subdomain. Production must use the final sender domain with DNS fully verified.
+Staging and production should use Brevo API mode for transactional email. Staging must use a real Brevo sender domain or subdomain. Production must use the final sender domain with DNS fully verified.
 
 Environment rule:
 
 - local development may use local appsettings overrides or user secrets
 - shared development/staging/production must use platform environment variables or secret storage
 - do not commit live PostgreSQL credentials or seed-admin credentials into `appsettings.json`
-- do not commit live SMTP credentials into `appsettings*.json`
+- do not commit live SMTP credentials, Brevo API keys, or webhook secrets into `appsettings*.json`
 
 ---
 
@@ -105,6 +114,8 @@ Before staging or production sign-off, verify:
 - verify `admin/email-diagnostics` shows recent delivery attempts
 - verify no email delivery log stores raw reset/confirmation tokens or full recovery URLs
 - verify a failed email delivery is visible to admins/operators without sensitive token data
+- verify repeated delivery failures trigger an admin alert after the configured threshold and cooldown
+- verify Brevo transactional webhooks use Bearer auth or `X-DarwinLingua-Brevo-Webhook-Secret`, not a production query-string secret
 
 ---
 

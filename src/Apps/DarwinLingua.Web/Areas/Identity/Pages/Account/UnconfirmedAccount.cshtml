@@ -1,0 +1,16 @@
+@page
+@model UnconfirmedAccountModel
+@{
+    ViewData["Title"] = "Confirm your email";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Account email</span>
+    <h1 class="headline-md">Confirm your email</h1>
+    <p class="body-lg">This account needs email confirmation before sign-in can continue.</p>
+    <p class="body-sm">If the confirmation email expired or did not arrive, request a new one.</p>
+    <div class="action-row">
+        <a class="button button--primary" asp-area="Identity" asp-page="/Account/ResendEmailConfirmation">Resend confirmation</a>
+        <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">Back to sign in</a>
+    </div>
+</section>

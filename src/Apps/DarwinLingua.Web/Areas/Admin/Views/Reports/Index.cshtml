@@ -7,6 +7,7 @@
         ("Social learning", Model.SocialMetrics),
         ("Moderation", Model.ModerationMetrics),
         ("Operations", Model.OperationsMetrics),
+        ("Transactional email", Model.EmailMetrics),
     };
 }
 
@@ -20,7 +21,7 @@
 <section class="grid-three-col">
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Users", Model.IdentityUserCount.ToString(), "Identity users in the Web admin/user store.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.ModerationMetrics.First(item => item.Label == "Pending reports").Value, "Moderation reports waiting for review.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Events", Model.SocialMetrics.First(item => item.Label == "Events").Value, "Conversation events in the directory.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Email failures", Model.EmailMetrics.First(item => item.Label == "Failed in 24h").Value, "Transactional email delivery failures in the last 24 hours.")' />
 </section>
 
 <section class="grid-two-col">

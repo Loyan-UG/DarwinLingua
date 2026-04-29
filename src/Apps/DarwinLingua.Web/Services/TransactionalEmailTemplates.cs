@@ -50,6 +50,28 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
                     "Dein {ProductName} Passwort wurde geandert. Wenn du das nicht warst, kontaktiere sofort {SupportEmail}.",
                     "<p>Dein <strong>{ProductName}</strong> Passwort wurde geandert.</p><p>Wenn du das nicht warst, kontaktiere sofort {SupportEmail}.</p>"),
             },
+            [TransactionalEmailScenarios.AccountPasswordChanged] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Your Darwin Lingua password was changed",
+                    "Your {ProductName} password was changed from account settings. If this was not you, contact {SupportEmail} immediately.",
+                    "<p>Your <strong>{ProductName}</strong> password was changed from account settings.</p><p>If this was not you, contact {SupportEmail} immediately.</p>"),
+                ["de"] = new(
+                    "Dein Darwin Lingua Passwort wurde geandert",
+                    "Dein {ProductName} Passwort wurde in den Kontoeinstellungen geandert. Wenn du das nicht warst, kontaktiere sofort {SupportEmail}.",
+                    "<p>Dein <strong>{ProductName}</strong> Passwort wurde in den Kontoeinstellungen geandert.</p><p>Wenn du das nicht warst, kontaktiere sofort {SupportEmail}.</p>"),
+            },
+            [TransactionalEmailScenarios.AccountLocked] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Your Darwin Lingua account was temporarily locked",
+                    "Your {ProductName} account was temporarily locked after repeated failed sign-in attempts. If this was not you, reset your password or contact {SupportEmail}.",
+                    "<p>Your <strong>{ProductName}</strong> account was temporarily locked after repeated failed sign-in attempts.</p><p>If this was not you, reset your password or contact {SupportEmail}.</p>"),
+                ["de"] = new(
+                    "Dein Darwin Lingua Konto wurde vorubergehend gesperrt",
+                    "Dein {ProductName} Konto wurde nach mehreren fehlgeschlagenen Anmeldeversuchen vorubergehend gesperrt. Wenn du das nicht warst, setze dein Passwort zuruck oder kontaktiere {SupportEmail}.",
+                    "<p>Dein <strong>{ProductName}</strong> Konto wurde nach mehreren fehlgeschlagenen Anmeldeversuchen vorubergehend gesperrt.</p><p>Wenn du das nicht warst, setze dein Passwort zuruck oder kontaktiere {SupportEmail}.</p>"),
+            },
             [TransactionalEmailScenarios.AccountEmailChangeConfirmation] = new(StringComparer.OrdinalIgnoreCase)
             {
                 ["en"] = new(
@@ -94,6 +116,17 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
                     "Eine neue Organizer-Anfrage fur {OrganizerName} wurde von {RequesterName} eingereicht. Offne die Admin-Organizer-Warteschlange zur Prufung.",
                     "<p>Eine neue Organizer-Anfrage fur <strong>{OrganizerName}</strong> wurde von <strong>{RequesterName}</strong> eingereicht.</p><p>Offne die Admin-Organizer-Warteschlange zur Prufung.</p>"),
             },
+            [TransactionalEmailScenarios.AdminEmailDeliveryFailureAlert] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Email delivery failures need attention",
+                    "{FailureCount} transactional email deliveries failed in the last {WindowMinutes} minutes. Latest failure: {LastFailureScenarioKey} / {LastFailureCode}. Open admin email diagnostics.",
+                    "<p><strong>{FailureCount}</strong> transactional email deliveries failed in the last <strong>{WindowMinutes}</strong> minutes.</p><p>Latest failure: <strong>{LastFailureScenarioKey}</strong> / <strong>{LastFailureCode}</strong>.</p><p>Open admin email diagnostics.</p>"),
+                ["de"] = new(
+                    "E-Mail-Zustellfehler benotigen Aufmerksamkeit",
+                    "{FailureCount} transaktionale E-Mails sind in den letzten {WindowMinutes} Minuten fehlgeschlagen. Letzter Fehler: {LastFailureScenarioKey} / {LastFailureCode}. Offne die Admin-E-Mail-Diagnose.",
+                    "<p><strong>{FailureCount}</strong> transaktionale E-Mails sind in den letzten <strong>{WindowMinutes}</strong> Minuten fehlgeschlagen.</p><p>Letzter Fehler: <strong>{LastFailureScenarioKey}</strong> / <strong>{LastFailureCode}</strong>.</p><p>Offne die Admin-E-Mail-Diagnose.</p>"),
+            },
             [TransactionalEmailScenarios.OrganizerClaimApproved] = new(StringComparer.OrdinalIgnoreCase)
             {
                 ["en"] = new(
@@ -115,6 +148,17 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
                     "Deine Organizer-Anfrage wurde gepruft",
                     "Deine Anfrage fur {OrganizerName} wurde gepruft und kann derzeit nicht genehmigt werden. Kontaktiere {SupportEmail}, wenn du eine erneute Prufung benotigst.",
                     "<p>Deine Anfrage fur <strong>{OrganizerName}</strong> wurde gepruft und kann derzeit nicht genehmigt werden.</p><p>Kontaktiere {SupportEmail}, wenn du eine erneute Prufung benotigst.</p>"),
+            },
+            [TransactionalEmailScenarios.OrganizerProfileOwnershipChanged] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Organizer profile access updated",
+                    "You were assigned as an owner for organizer profile {OrganizerProfileSlug} in {ProductName}. If this looks wrong, contact {SupportEmail}.",
+                    "<p>You were assigned as an owner for organizer profile <strong>{OrganizerProfileSlug}</strong> in <strong>{ProductName}</strong>.</p><p>If this looks wrong, contact {SupportEmail}.</p>"),
+                ["de"] = new(
+                    "Organizer-Profilzugriff aktualisiert",
+                    "Du wurdest als Owner fur das Organizer-Profil {OrganizerProfileSlug} in {ProductName} eingetragen. Wenn das nicht stimmt, kontaktiere {SupportEmail}.",
+                    "<p>Du wurdest als Owner fur das Organizer-Profil <strong>{OrganizerProfileSlug}</strong> in <strong>{ProductName}</strong> eingetragen.</p><p>Wenn das nicht stimmt, kontaktiere {SupportEmail}.</p>"),
             },
             [TransactionalEmailScenarios.EventRsvpConfirmation] = new(StringComparer.OrdinalIgnoreCase)
             {
@@ -148,6 +192,17 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
                     "Wichtige Meldung zur Prufung",
                     "Eine wichtige Meldung wurde eingereicht. Grund: {Reason}. Ziel: {TargetType}/{TargetKey}. Offne Moderation im Admin-Bereich.",
                     "<p>Eine wichtige Meldung wurde eingereicht.</p><p>Grund: <strong>{Reason}</strong><br />Ziel: <strong>{TargetType}/{TargetKey}</strong></p><p>Offne Moderation im Admin-Bereich.</p>"),
+            },
+            [TransactionalEmailScenarios.ModerationReportOutcome] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Your report was reviewed",
+                    "Your {ProductName} report about {TargetType} was reviewed and is now marked {Status}. Thank you for helping keep the community safe.",
+                    "<p>Your <strong>{ProductName}</strong> report about <strong>{TargetType}</strong> was reviewed and is now marked <strong>{Status}</strong>.</p><p>Thank you for helping keep the community safe.</p>"),
+                ["de"] = new(
+                    "Deine Meldung wurde gepruft",
+                    "Deine {ProductName} Meldung zu {TargetType} wurde gepruft und ist jetzt als {Status} markiert. Danke, dass du die Community sicherer machst.",
+                    "<p>Deine <strong>{ProductName}</strong> Meldung zu <strong>{TargetType}</strong> wurde gepruft und ist jetzt als <strong>{Status}</strong> markiert.</p><p>Danke, dass du die Community sicherer machst.</p>"),
             },
         };
 

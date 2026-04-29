@@ -14,6 +14,7 @@ namespace DarwinLingua.Web.Areas.Admin.Controllers;
 public sealed class ReportsController(
     IWebCatalogApiClient catalogApiClient,
     IWebProductAnalyticsService analyticsService,
+    IEmailDeliveryLogRepository emailDeliveryLogRepository,
     UserManager<DarwinLinguaIdentityUser> userManager) : Controller
 {
     [HttpGet("", Name = "Admin_Reports_Index")]
@@ -21,11 +22,14 @@ public sealed class ReportsController(
     {
         Task<AdminSystemReportResponse> reportTask = catalogApiClient.GetAdminSystemReportAsync(cancellationToken);
         Task<int> identityUserCountTask = userManager.Users.CountAsync(cancellationToken);
+        Task<EmailDeliverySummary> emailSummaryTask = emailDeliveryLogRepository
+            .GetSummarySinceAsync(DateTimeOffset.UtcNow.AddHours(-24), cancellationToken);
 
-        await Task.WhenAll(reportTask, identityUserCountTask).ConfigureAwait(false);
+        await Task.WhenAll(reportTask, identityUserCountTask, emailSummaryTask).ConfigureAwait(false);
 
         AdminSystemReportResponse report = await reportTask.ConfigureAwait(false);
         int identityUserCount = await identityUserCountTask.ConfigureAwait(false);
+        EmailDeliverySummary emailSummary = await emailSummaryTask.ConfigureAwait(false);
 
         return View(new AdminSystemReportPageViewModel(
             report.GeneratedAtUtc,
@@ -34,6 +38,7 @@ public sealed class ReportsController(
             BuildSocialMetrics(report.Social),
             BuildModerationMetrics(report.Moderation),
             BuildOperationsMetrics(report.Operations),
+            BuildEmailMetrics(emailSummary),
             analyticsService.GetSummary()
                 .OrderByDescending(item => item.Count)
                 .ThenBy(item => item.EventName, StringComparer.Ordinal)
@@ -79,5 +84,25 @@ public sealed class ReportsController(
             new("Imported packages", operations.ImportedPackageCount.ToString(), "Content packages recorded in the server catalog history."),
             new("Failed imports", operations.FailedPackageCount.ToString(), "Packages with failed import status."),
             new("Last import", operations.LastImportAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "No imports", "Most recent content package creation time."),
+        ];
+
+    private static IReadOnlyList<AdminSystemReportMetricViewModel> BuildEmailMetrics(EmailDeliverySummary summary) =>
+        [
+            new("Sent in 24h", summary.SentCount.ToString(), "Transactional emails sent in the last 24 hours."),
+            new("Failed in 24h", summary.FailedCount.ToString(), "Transactional email delivery failures in the last 24 hours."),
+            new("Queued in 24h", summary.QueuedCount.ToString(), "Transactional emails still queued in the last 24 hours."),
+            new("Skipped/suppressed in 24h", (summary.SkippedCount + summary.SuppressedCount).ToString(), "Transactional emails skipped or suppressed in the last 24 hours."),
+            new(
+                "Last email failure",
+                summary.LastFailureAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "None",
+                string.IsNullOrWhiteSpace(summary.LastFailureScenarioKey)
+                    ? "No failed delivery has been recorded."
+                    : $"{summary.LastFailureScenarioKey} ({summary.LastFailureCode ?? "no failure code"})."),
+            new(
+                "Last provider event",
+                summary.LastProviderEventAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "None",
+                string.IsNullOrWhiteSpace(summary.LastProviderEvent)
+                    ? "No Brevo/provider webhook event has been recorded."
+                    : $"Last provider event: {summary.LastProviderEvent}."),
         ];
 }

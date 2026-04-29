@@ -58,6 +58,7 @@ builder.Services.Configure<EmailChangeTokenProviderOptions>(options =>
 });
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
+builder.Services.AddHttpClient("BrevoTransactionalEmail");
 builder.Services.AddScoped<IWebActivityQueryService, WebActivityQueryService>();
 builder.Services.AddScoped<IWebAdminDashboardQueryService, WebAdminDashboardQueryService>();
 builder.Services.AddScoped<IWebAdminOperationsQueryService, WebAdminOperationsQueryService>();
@@ -74,6 +75,7 @@ builder.Services.AddScoped<IEmailDeliveryLogRepository, EmailDeliveryLogReposito
 builder.Services.AddScoped<IAccountEmailService, AccountEmailService>();
 builder.Services.AddScoped<ICommunityNotificationEmailService, CommunityNotificationEmailService>();
 builder.Services.AddSingleton<IAccountEmailRateLimiter, AccountEmailRateLimiter>();
+builder.Services.AddHostedService<EmailDeliveryFailureMonitorService>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
 string? webIdentityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")
     ?? builder.Configuration.GetConnectionString("Identity")

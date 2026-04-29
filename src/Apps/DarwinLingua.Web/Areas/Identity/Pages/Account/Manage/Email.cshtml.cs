@@ -59,6 +59,12 @@ public sealed class EmailModel(
             return RedirectToPage();
         }
 
+        if (!await userManager.CheckPasswordAsync(user, Input.CurrentPassword).ConfigureAwait(false))
+        {
+            ModelState.AddModelError(string.Empty, "The current password could not be verified.");
+            return Page();
+        }
+
         bool allowed = rateLimiter.TryConsume(
             "change-email",
             $"{User.Identity?.Name}|{newEmail}",
@@ -108,5 +114,9 @@ public sealed class EmailModel(
         [Required]
         [EmailAddress]
         public string NewEmail { get; set; } = string.Empty;
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string CurrentPassword { get; set; } = string.Empty;
     }
 }

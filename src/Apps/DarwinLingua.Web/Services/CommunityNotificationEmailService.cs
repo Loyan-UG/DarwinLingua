@@ -27,6 +27,13 @@ public interface ICommunityNotificationEmailService
         string? correlationId,
         CancellationToken cancellationToken);
 
+    Task SendOrganizerProfileOwnershipChangedAsync(
+        string ownerEmail,
+        string organizerProfileSlug,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken);
+
     Task SendEventRsvpConfirmationAsync(
         string participantEmail,
         string eventTitle,
@@ -46,6 +53,23 @@ public interface ICommunityNotificationEmailService
         string reason,
         string targetType,
         string targetKey,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken);
+
+    Task SendAdminEmailDeliveryFailureAlertAsync(
+        int failureCount,
+        int windowMinutes,
+        string? lastFailureScenarioKey,
+        string? lastFailureCode,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken);
+
+    Task SendModerationReportOutcomeAsync(
+        string reporterEmail,
+        string targetType,
+        string status,
         string? culture,
         string? correlationId,
         CancellationToken cancellationToken);
@@ -117,6 +141,24 @@ public sealed class CommunityNotificationEmailService(
             cancellationToken);
     }
 
+    public Task SendOrganizerProfileOwnershipChangedAsync(
+        string ownerEmail,
+        string organizerProfileSlug,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken) =>
+        SendToRecipientAsync(
+            ownerEmail,
+            null,
+            TransactionalEmailScenarios.OrganizerProfileOwnershipChanged,
+            culture,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["OrganizerProfileSlug"] = organizerProfileSlug,
+            },
+            correlationId,
+            cancellationToken);
+
     public Task SendEventRsvpConfirmationAsync(
         string participantEmail,
         string eventTitle,
@@ -174,6 +216,47 @@ public sealed class CommunityNotificationEmailService(
             correlationId,
             cancellationToken);
 
+    public Task SendAdminEmailDeliveryFailureAlertAsync(
+        int failureCount,
+        int windowMinutes,
+        string? lastFailureScenarioKey,
+        string? lastFailureCode,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken) =>
+        SendToAdminsAsync(
+            TransactionalEmailScenarios.AdminEmailDeliveryFailureAlert,
+            culture,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["FailureCount"] = failureCount.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                ["WindowMinutes"] = windowMinutes.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                ["LastFailureScenarioKey"] = string.IsNullOrWhiteSpace(lastFailureScenarioKey) ? "unknown" : lastFailureScenarioKey,
+                ["LastFailureCode"] = string.IsNullOrWhiteSpace(lastFailureCode) ? "unknown" : lastFailureCode,
+            },
+            correlationId,
+            cancellationToken);
+
+    public Task SendModerationReportOutcomeAsync(
+        string reporterEmail,
+        string targetType,
+        string status,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken) =>
+        SendToRecipientAsync(
+            reporterEmail,
+            null,
+            TransactionalEmailScenarios.ModerationReportOutcome,
+            culture,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["TargetType"] = targetType,
+                ["Status"] = status,
+            },
+            correlationId,
+            cancellationToken);
+
     private async Task SendToAdminsAsync(
         string scenarioKey,
         string? culture,
@@ -227,12 +310,19 @@ public sealed class CommunityNotificationEmailService(
             template.HtmlBody,
             correlationId);
 
+        if (await deliveryLogRepository.IsSuppressedAsync(message.RecipientEmail, cancellationToken).ConfigureAwait(false))
+        {
+            await deliveryLogRepository
+                .AddSuppressedAsync(message, sender.ProviderName, "recipient-suppressed", cancellationToken)
+                .ConfigureAwait(false);
+            return;
+        }
+
         WebEmailDeliveryLog log = await deliveryLogRepository
             .AddQueuedAsync(message, sender.ProviderName, cancellationToken)
             .ConfigureAwait(false);
 
-        TransactionalEmailSendResult result = await sender
-            .SendAsync(message, cancellationToken)
+        TransactionalEmailSendResult result = await SendWithRetryAsync(message, cancellationToken)
             .ConfigureAwait(false);
 
         if (result.Succeeded)
@@ -247,4 +337,37 @@ public sealed class CommunityNotificationEmailService(
             .MarkFailedAsync(log.Id, result.FailureCode, result.FailureMessageSummary, cancellationToken)
             .ConfigureAwait(false);
     }
+
+    private async Task<TransactionalEmailSendResult> SendWithRetryAsync(
+        TransactionalEmailMessage message,
+        CancellationToken cancellationToken)
+    {
+        int maxAttempts = Math.Max(1, options.Value.MaxSendAttempts);
+        TimeSpan retryDelay = TimeSpan.FromMilliseconds(Math.Max(0, options.Value.SendRetryDelayMilliseconds));
+        TransactionalEmailSendResult? lastResult = null;
+
+        for (int attempt = 1; attempt <= maxAttempts; attempt++)
+        {
+            lastResult = await sender.SendAsync(message, cancellationToken).ConfigureAwait(false);
+            if (lastResult.Succeeded || IsNonRetryable(lastResult.FailureCode) || attempt == maxAttempts)
+            {
+                return lastResult;
+            }
+
+            if (retryDelay > TimeSpan.Zero)
+            {
+                await Task.Delay(retryDelay, cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        return lastResult ?? new TransactionalEmailSendResult(
+            false,
+            sender.ProviderName,
+            null,
+            "send-not-attempted",
+            "No email send attempt was made.");
+    }
+
+    private static bool IsNonRetryable(string? failureCode) =>
+        string.Equals(failureCode, "email-disabled", StringComparison.OrdinalIgnoreCase);
 }

@@ -8,7 +8,9 @@ namespace DarwinLingua.Web.Areas.Admin.Controllers;
 [Area("Admin")]
 [Authorize(Policy = "Operator")]
 [Route("admin/moderation")]
-public sealed class ModerationController(IWebCatalogApiClient catalogApiClient) : Controller
+public sealed class ModerationController(
+    IWebCatalogApiClient catalogApiClient,
+    ICommunityNotificationEmailService notificationEmailService) : Controller
 {
     [HttpGet("", Name = "Admin_Moderation_Index")]
     public async Task<IActionResult> Index(string? status, CancellationToken cancellationToken)
@@ -43,9 +45,18 @@ public sealed class ModerationController(IWebCatalogApiClient catalogApiClient) 
 
         try
         {
-            await catalogApiClient.DecideAdminUserReportAsync(
+            UserReportModel report = await catalogApiClient.DecideAdminUserReportAsync(
                     reportId,
                     new ModerationDecisionRequest(input.Status, input.DecisionNote, GetAdminEmail()),
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            await notificationEmailService.SendModerationReportOutcomeAsync(
+                    report.ReporterEmail,
+                    report.TargetType,
+                    report.Status,
+                    ResolveCulture(),
+                    HttpContext.TraceIdentifier,
                     cancellationToken)
                 .ConfigureAwait(false);
 
@@ -61,4 +72,10 @@ public sealed class ModerationController(IWebCatalogApiClient catalogApiClient) 
 
     private string GetAdminEmail() =>
         WebUserIdentity.TryGetEmail(User) ?? "admin@local";
+
+    private string ResolveCulture() =>
+        Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()
+            ?.RequestCulture.UICulture.Name
+        ?? Request.Headers.AcceptLanguage.ToString()
+        ?? "en";
 }

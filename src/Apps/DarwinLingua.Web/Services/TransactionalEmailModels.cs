@@ -5,15 +5,20 @@ public static class TransactionalEmailScenarios
     public const string AccountEmailConfirmation = "Account.EmailConfirmation";
     public const string AccountPasswordReset = "Account.PasswordReset";
     public const string AccountPasswordResetCompleted = "Account.PasswordResetCompleted";
+    public const string AccountPasswordChanged = "Account.PasswordChanged";
+    public const string AccountLocked = "Account.Locked";
     public const string AccountEmailChangeConfirmation = "Account.EmailChangeConfirmation";
     public const string AccountEmailChangedNotification = "Account.EmailChangedNotification";
     public const string OrganizerClaimSubmitted = "Organizer.ClaimSubmitted";
     public const string OrganizerClaimApproved = "Organizer.ClaimApproved";
     public const string OrganizerClaimRejected = "Organizer.ClaimRejected";
+    public const string OrganizerProfileOwnershipChanged = "Organizer.ProfileOwnershipChanged";
     public const string AdminNewOrganizerClaim = "Admin.NewOrganizerClaim";
+    public const string AdminEmailDeliveryFailureAlert = "Admin.EmailDeliveryFailureAlert";
     public const string EventRsvpConfirmation = "Event.RsvpConfirmation";
     public const string PartnerRequestAccepted = "Partner.RequestAccepted";
     public const string ModerationHighSeverityReport = "Moderation.HighSeverityReport";
+    public const string ModerationReportOutcome = "Moderation.ReportOutcome";
 }
 
 public sealed record RenderedEmailTemplate(

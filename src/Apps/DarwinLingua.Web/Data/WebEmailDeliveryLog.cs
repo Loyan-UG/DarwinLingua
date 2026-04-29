@@ -29,6 +29,12 @@ public sealed class WebEmailDeliveryLog
 
     public string? ProviderMessageId { get; set; }
 
+    public string? ProviderLastEvent { get; set; }
+
+    public DateTimeOffset? ProviderLastEventAtUtc { get; set; }
+
+    public string? ProviderLastEventReason { get; set; }
+
     public WebEmailDeliveryStatus Status { get; set; }
 
     public string? FailureCode { get; set; }

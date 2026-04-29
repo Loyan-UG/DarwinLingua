@@ -52,6 +52,7 @@ public sealed class ConfirmEmailChangeModel(
         }
 
         await userManager.SetUserNameAsync(user, email).ConfigureAwait(false);
+        await userManager.UpdateSecurityStampAsync(user).ConfigureAwait(false);
         await signInManager.RefreshSignInAsync(user).ConfigureAwait(false);
         if (!string.IsNullOrWhiteSpace(oldEmail))
         {
