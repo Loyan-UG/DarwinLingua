@@ -1,0 +1,220 @@
+@model DarwinLingua.Web.Models.AdminBillingDiagnosticsPageViewModel
+@{
+    ViewData["Title"] = "Billing diagnostics";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Diagnostics</span>
+    <h1 class="headline-md">Billing and Stripe events</h1>
+    <p class="body-lg">Stripe customer, subscription, and webhook state for entitlement reconciliation.</p>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Readiness</h2>
+    <div class="metric-grid">
+        <article class="metric-card">
+            <span class="metric-card__label">Stripe</span>
+            <strong>@(Model.Readiness.StripeEnabled ? "Enabled" : "Disabled")</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">Price id</span>
+            <strong>@(Model.Readiness.HasPremiumMonthlyPriceId ? "Configured" : "Missing")</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">Webhook secret</span>
+            <strong>@(Model.Readiness.HasStripeWebhookSecret ? "Configured" : "Missing")</strong>
+        </article>
+        <article class="metric-card">
+            <span class="metric-card__label">Tolerance</span>
+            <strong>@Model.Readiness.WebhookToleranceMinutes min</strong>
+        </article>
+    </div>
+    <ul class="feature-list">
+        <li>Public base URL: @(string.IsNullOrWhiteSpace(Model.Readiness.PublicBaseUrl) ? "Missing" : Model.Readiness.PublicBaseUrl)</li>
+        <li>Stripe API base URL: @Model.Readiness.StripeApiBaseUrl</li>
+        <li>Stripe secret key: @(Model.Readiness.HasStripeSecretKey ? "Configured" : "Missing")</li>
+        <li>Premium plan key: @Model.Readiness.PremiumPlanKey</li>
+    </ul>
+    @if (Model.Readiness.Warnings.Count == 0)
+    {
+        <p class="body-sm">No billing configuration warnings detected. Stripe dashboard settings still require external verification.</p>
+    }
+    else
+    {
+        <div class="status-banner status-banner--error">
+            <strong>Readiness warnings</strong>
+            <ul>
+                @foreach (string warning in Model.Readiness.Warnings)
+                {
+                    <li>@warning</li>
+                }
+            </ul>
+        </div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <form method="get" class="filter-bar">
+        <label>
+            Status
+            <select name="status">
+                <option value="">All</option>
+                @foreach (string status in new[] { "Received", "Processed", "Failed" })
+                {
+                    <option value="@status" selected="@(string.Equals(Model.Status, status, StringComparison.OrdinalIgnoreCase))">@status</option>
+                }
+            </select>
+        </label>
+        <label>
+            Event type
+            <select name="eventType">
+                <option value="">All</option>
+                @foreach (string eventType in new[] { "checkout.session.completed", "customer.subscription.created", "customer.subscription.updated", "customer.subscription.deleted" })
+                {
+                    <option value="@eventType" selected="@(string.Equals(Model.EventType, eventType, StringComparison.OrdinalIgnoreCase))">@eventType</option>
+                }
+            </select>
+        </label>
+        <label>
+            User id
+            <input name="userId" value="@Model.UserId" autocomplete="off" />
+        </label>
+        <label>
+            Customer id
+            <input name="providerCustomerId" value="@Model.ProviderCustomerId" autocomplete="off" />
+        </label>
+        <label>
+            Subscription id
+            <input name="providerSubscriptionId" value="@Model.ProviderSubscriptionId" autocomplete="off" />
+        </label>
+        <label>
+            Limit
+            <input name="take" value="@Model.Take" type="number" min="1" max="200" />
+        </label>
+        <button type="submit" class="button button--primary">Filter</button>
+        <a class="button button--secondary" asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">Clear</a>
+    </form>
+</section>
+
+@if (User.IsInRole("Admin"))
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Manual Stripe reconciliation</h2>
+        <p class="body-sm">Refresh one subscription directly from Stripe when a webhook is delayed, missed, or failed.</p>
+        <form method="post" asp-action="ReconcileStripeSubscription" class="filter-bar">
+            @Html.AntiForgeryToken()
+            <label>
+                Subscription id
+                <input name="providerSubscriptionId" value="@Model.ProviderSubscriptionId" autocomplete="off" placeholder="sub_..." />
+            </label>
+            <button type="submit" class="button button--primary">Reconcile subscription</button>
+        </form>
+    </section>
+}
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Billing profiles</h2>
+    @if (Model.Profiles.Count == 0)
+    {
+        <p class="body-sm">No billing profiles have been recorded yet.</p>
+    }
+    else
+    {
+        <div class="table-scroll">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Updated</th>
+                        <th>User</th>
+                        <th>Provider</th>
+                        <th>Status</th>
+                        <th>Plan</th>
+                        <th>Customer</th>
+                        <th>Subscription</th>
+                        <th>Period end</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var profile in Model.Profiles)
+                    {
+                        <tr>
+                            <td>@profile.UpdatedAtUtc.UtcDateTime.ToString("u")</td>
+                            <td><code>@profile.UserId</code></td>
+                            <td>@profile.ProviderName</td>
+                            <td>@profile.Status</td>
+                            <td>@profile.PlanKey</td>
+                            <td><code>@(profile.ProviderCustomerId ?? "none")</code></td>
+                            <td><code>@(profile.ProviderSubscriptionId ?? "none")</code></td>
+                            <td>@(profile.CurrentPeriodEndsAtUtc?.UtcDateTime.ToString("u") ?? "none")</td>
+                            <td>
+                                @if (User.IsInRole("Admin") && !string.IsNullOrWhiteSpace(profile.ProviderSubscriptionId))
+                                {
+                                    <form method="post" asp-action="ReconcileStripeSubscription" class="inline-form">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="providerSubscriptionId" value="@profile.ProviderSubscriptionId" />
+                                        <button type="submit" class="button button--secondary">Reconcile</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <span class="body-sm">None</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Recent billing events</h2>
+    @if (Model.Events.Count == 0)
+    {
+        <p class="body-sm">No Stripe billing events have been recorded yet.</p>
+    }
+    else
+    {
+        <div class="table-scroll">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Created</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                        <th>Provider event</th>
+                        <th>User</th>
+                        <th>Customer</th>
+                        <th>Subscription</th>
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var billingEvent in Model.Events)
+                    {
+                        <tr>
+                            <td>@billingEvent.CreatedAtUtc.UtcDateTime.ToString("u")</td>
+                            <td>@billingEvent.Status</td>
+                            <td>@billingEvent.EventType</td>
+                            <td><code>@billingEvent.ProviderEventId</code></td>
+                            <td><code>@(billingEvent.UserId ?? "none")</code></td>
+                            <td><code>@(billingEvent.ProviderCustomerId ?? "none")</code></td>
+                            <td><code>@(billingEvent.ProviderSubscriptionId ?? "none")</code></td>
+                            <td>@(billingEvent.ErrorSummary ?? "none")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

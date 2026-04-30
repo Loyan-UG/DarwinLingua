@@ -100,6 +100,13 @@ Remaining release gates:
 
 - [ ] Billing page renders the current entitlement and disables checkout when Stripe is off.
 - [ ] Billing page starts Stripe Checkout only for authenticated users and only when Stripe is enabled.
+- [ ] Billing page shows Stripe Customer Portal management only after a customer id is linked to the account.
+- [ ] Stripe Customer Portal session creation redirects only for the authenticated user's linked Stripe customer.
+- [ ] `/billing/success` fetches the returned Stripe checkout session and immediately syncs entitlement only when the session belongs to the authenticated user.
+- [ ] `/billing/success` only fulfills completed subscription checkout sessions with paid or no-payment-required status and customer/subscription ids.
+- [ ] `/billing/success` falls back to webhook-based activation when Stripe lookup fails or session is not complete.
+- [ ] `checkout.session.completed` webhook rejects non-subscription, unpaid, or incomplete checkout sessions before granting Premium.
+- [ ] Stripe Checkout, Stripe Customer Portal, and Admin reconciliation enforce bounded rate limits with safe user-facing messages.
 - [ ] Stripe Checkout session creation sends the Darwin Lingua user id in session and subscription metadata.
 - [ ] Stripe Checkout failures show a safe user-facing message and do not leak provider response bodies.
 - [ ] Stripe webhook rejects missing, malformed, expired, or invalid signatures.
@@ -109,6 +116,17 @@ Remaining release gates:
 - [ ] Active or trialing Stripe subscription states keep Premium access.
 - [ ] Cancelled, unpaid, or incomplete-expired Stripe subscription states downgrade the user to Free.
 - [ ] Unmapped Stripe subscription events fail closed and are visible in billing-event diagnostics/logs.
+- [ ] Admin Billing Diagnostics renders Stripe readiness without exposing secret values.
+- [ ] Admin Billing Diagnostics filters billing events by status, event type, user id, customer id, and subscription id.
+- [ ] Admin Billing Diagnostics filters billing profiles by user id, customer id, and subscription id.
+- [ ] Admin-only Stripe subscription reconciliation rejects malformed subscription ids.
+- [ ] Admin-only Stripe subscription reconciliation fetches current Stripe subscription state without storing raw provider payloads.
+- [ ] Admin-only Stripe subscription reconciliation updates billing profile and entitlement for active, trialing, past-due, cancelled, unpaid, and expired states.
+- [ ] Billing notification emails render for Premium activation, payment action needed, Premium ended, and Admin reconciliation completed.
+- [ ] Billing notification emails are logged through the transactional email delivery log without storing Stripe raw payloads.
+- [ ] Billing notification emails are idempotent per scenario, user, subscription, and billing status.
+- [ ] Stripe webhook processing sends user billing emails for checkout completion, payment-action-needed states, and Premium-ended states.
+- [ ] Admin reconciliation sends both user billing status email and admin reconciliation-completed email when recipients are configured.
 
 ### Web Runtime And Bootstrap
 

@@ -123,6 +123,16 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "CreatedAtUtc" TEXT NOT NULL,
                 "ProcessedAtUtc" TEXT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebBillingNotifications" (
+                "Id" TEXT NOT NULL CONSTRAINT "PK_WebBillingNotifications" PRIMARY KEY,
+                "NotificationKey" TEXT NOT NULL,
+                "ScenarioKey" TEXT NOT NULL,
+                "UserId" TEXT NULL,
+                "ProviderSubscriptionId" TEXT NULL,
+                "BillingStatus" TEXT NULL,
+                "CreatedAtUtc" TEXT NOT NULL
+            );
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -176,6 +186,10 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebBillingEvents" ("ProviderName", "ProviderEventId");
             CREATE INDEX IF NOT EXISTS "IX_WebBillingEvents_Status_CreatedAtUtc"
             ON "WebBillingEvents" ("Status", "CreatedAtUtc");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebBillingNotifications_NotificationKey"
+            ON "WebBillingNotifications" ("NotificationKey");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingNotifications_CreatedAtUtc"
+            ON "WebBillingNotifications" ("CreatedAtUtc");
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -273,6 +287,16 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "ProcessedAtUtc" timestamp with time zone NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebBillingNotifications" (
+                "Id" uuid NOT NULL CONSTRAINT "PK_WebBillingNotifications" PRIMARY KEY,
+                "NotificationKey" character varying(256) NOT NULL,
+                "ScenarioKey" character varying(128) NOT NULL,
+                "UserId" character varying(450) NULL,
+                "ProviderSubscriptionId" character varying(128) NULL,
+                "BillingStatus" character varying(64) NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL
+            );
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -322,6 +346,10 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebBillingEvents" ("ProviderName", "ProviderEventId");
             CREATE INDEX IF NOT EXISTS "IX_WebBillingEvents_Status_CreatedAtUtc"
             ON "WebBillingEvents" ("Status", "CreatedAtUtc");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebBillingNotifications_NotificationKey"
+            ON "WebBillingNotifications" ("NotificationKey");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingNotifications_CreatedAtUtc"
+            ON "WebBillingNotifications" ("CreatedAtUtc");
             """,
             cancellationToken)
             .ConfigureAwait(false);

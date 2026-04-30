@@ -15,6 +15,10 @@ public static class TransactionalEmailScenarios
     public const string OrganizerProfileOwnershipChanged = "Organizer.ProfileOwnershipChanged";
     public const string AdminNewOrganizerClaim = "Admin.NewOrganizerClaim";
     public const string AdminEmailDeliveryFailureAlert = "Admin.EmailDeliveryFailureAlert";
+    public const string BillingPremiumActivated = "Billing.PremiumActivated";
+    public const string BillingPaymentActionNeeded = "Billing.PaymentActionNeeded";
+    public const string BillingPremiumEnded = "Billing.PremiumEnded";
+    public const string AdminBillingReconciliationCompleted = "Admin.BillingReconciliationCompleted";
     public const string EventRsvpConfirmation = "Event.RsvpConfirmation";
     public const string PartnerRequestAccepted = "Partner.RequestAccepted";
     public const string ModerationHighSeverityReport = "Moderation.HighSeverityReport";

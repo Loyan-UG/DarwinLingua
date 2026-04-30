@@ -21,6 +21,8 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
 
     public DbSet<WebBillingEvent> WebBillingEvents => Set<WebBillingEvent>();
 
+    public DbSet<WebBillingNotification> WebBillingNotifications => Set<WebBillingNotification>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
@@ -128,6 +130,22 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
                 .HasDatabaseName("IX_WebBillingEvents_Provider_EventId");
             entity.HasIndex(billingEvent => new { billingEvent.Status, billingEvent.CreatedAtUtc })
                 .HasDatabaseName("IX_WebBillingEvents_Status_CreatedAtUtc");
+        });
+
+        builder.Entity<WebBillingNotification>(entity =>
+        {
+            entity.ToTable("WebBillingNotifications");
+            entity.HasKey(notification => notification.Id);
+            entity.Property(notification => notification.NotificationKey).HasMaxLength(256).IsRequired();
+            entity.Property(notification => notification.ScenarioKey).HasMaxLength(128).IsRequired();
+            entity.Property(notification => notification.UserId).HasMaxLength(450);
+            entity.Property(notification => notification.ProviderSubscriptionId).HasMaxLength(128);
+            entity.Property(notification => notification.BillingStatus).HasMaxLength(64);
+            entity.HasIndex(notification => notification.NotificationKey)
+                .IsUnique()
+                .HasDatabaseName("IX_WebBillingNotifications_NotificationKey");
+            entity.HasIndex(notification => notification.CreatedAtUtc)
+                .HasDatabaseName("IX_WebBillingNotifications_CreatedAtUtc");
         });
     }
 }

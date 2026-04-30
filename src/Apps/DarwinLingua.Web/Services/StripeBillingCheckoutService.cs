@@ -9,6 +9,8 @@ public sealed class StripeBillingCheckoutService(
     IOptions<BillingOptions> options,
     ILogger<StripeBillingCheckoutService> logger) : IStripeBillingCheckoutService
 {
+    private const string ProviderName = "Stripe";
+
     public async Task<StripeCheckoutSessionResult> CreatePremiumCheckoutSessionAsync(
         string userId,
         string? email,
@@ -78,6 +80,57 @@ public sealed class StripeBillingCheckoutService(
 
         return new StripeCheckoutSessionResult(sessionId, url);
     }
+
+    public async Task<StripeCheckoutSessionResult> CreateCustomerPortalSessionAsync(
+        string customerId,
+        string returnUrl,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(customerId);
+        ArgumentException.ThrowIfNullOrWhiteSpace(returnUrl);
+
+        BillingOptions billingOptions = options.Value;
+        if (!billingOptions.EnableStripe)
+        {
+            throw new InvalidOperationException("Stripe billing is not enabled.");
+        }
+
+        using HttpRequestMessage request = new(HttpMethod.Post, "/v1/billing_portal/sessions");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", billingOptions.StripeSecretKey);
+        request.Headers.Add("Idempotency-Key", $"{ProviderName.ToLowerInvariant()}-portal-{customerId}-{Guid.NewGuid():N}");
+        request.Content = new FormUrlEncodedContent(new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            ["customer"] = customerId,
+            ["return_url"] = returnUrl,
+        });
+
+        HttpClient client = httpClientFactory.CreateClient("StripeBilling");
+        using HttpResponseMessage response = await client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+        string responseBody = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            logger.LogWarning(
+                "Stripe customer portal session creation failed with status {StatusCode}: {BodySummary}",
+                (int)response.StatusCode,
+                Summarize(responseBody));
+            throw new InvalidOperationException("Stripe customer portal session creation failed.");
+        }
+
+        using JsonDocument document = JsonDocument.Parse(responseBody);
+        JsonElement root = document.RootElement;
+        string? sessionId = root.TryGetProperty("id", out JsonElement idElement) ? idElement.GetString() : null;
+        string? url = root.TryGetProperty("url", out JsonElement urlElement) ? urlElement.GetString() : null;
+
+        if (string.IsNullOrWhiteSpace(sessionId) || string.IsNullOrWhiteSpace(url))
+        {
+            logger.LogWarning("Stripe customer portal response did not contain a usable session id and URL.");
+            throw new InvalidOperationException("Stripe customer portal response was incomplete.");
+        }
+
+        return new StripeCheckoutSessionResult(sessionId, url);
+    }
+
 
     private static string Summarize(string value)
     {

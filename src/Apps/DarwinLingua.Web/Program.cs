@@ -106,10 +106,14 @@ builder.Services.AddScoped<ITransactionalEmailSender, TransactionalEmailSender>(
 builder.Services.AddScoped<IEmailDeliveryLogRepository, EmailDeliveryLogRepository>();
 builder.Services.AddScoped<IAccountEmailService, AccountEmailService>();
 builder.Services.AddScoped<ICommunityNotificationEmailService, CommunityNotificationEmailService>();
+builder.Services.AddScoped<IBillingNotificationEmailService, BillingNotificationEmailService>();
 builder.Services.AddScoped<IStripeBillingCheckoutService, StripeBillingCheckoutService>();
 builder.Services.AddScoped<IStripeBillingWebhookHandler, StripeBillingWebhookHandler>();
+builder.Services.AddScoped<IStripeBillingReconciliationService, StripeBillingReconciliationService>();
+builder.Services.AddScoped<IStripeCheckoutFulfillmentService, StripeCheckoutFulfillmentService>();
 builder.Services.AddScoped<StripeWebhookVerifier>();
 builder.Services.AddSingleton<IAccountEmailRateLimiter, AccountEmailRateLimiter>();
+builder.Services.AddSingleton<IBillingOperationRateLimiter, BillingOperationRateLimiter>();
 builder.Services.AddHostedService<EmailDeliveryFailureMonitorService>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
 string? webIdentityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")

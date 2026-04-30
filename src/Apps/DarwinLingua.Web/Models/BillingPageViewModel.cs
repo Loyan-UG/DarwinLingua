@@ -6,4 +6,7 @@ public sealed record BillingPageViewModel(
     UserEntitlementSnapshot Entitlement,
     bool StripeEnabled,
     string PlanKey,
-    bool CanStartCheckout);
+    bool CanStartCheckout,
+    bool CanManageStripeSubscription,
+    string? BillingStatus,
+    DateTimeOffset? CurrentPeriodEndsAtUtc);

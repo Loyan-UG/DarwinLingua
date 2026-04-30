@@ -112,7 +112,7 @@ Before staging or production sign-off, verify:
 6. Start the host and verify it completes startup initialization.
 7. Verify learner routes and admin routes respond successfully.
 8. Verify registration and password-reset emails in the configured provider inbox.
-9. Verify Stripe Checkout and Stripe webhook delivery in staging when `Billing__EnableStripe=true`.
+9. Run `docs/75-Stripe-Billing-Validation-Playbook.md` in staging when `Billing__EnableStripe=true`.
 10. Run the learner-web, auth, transactional-email, billing, and PWA validation worksheets.
 
 ---
@@ -132,9 +132,13 @@ Before staging or production sign-off, verify:
 - verify Brevo transactional webhooks use Bearer auth or `X-DarwinLingua-Brevo-Webhook-Secret`, not a production query-string secret
 - verify `/billing` renders for authenticated users and redirects anonymous users to sign-in
 - verify Stripe Checkout session creation redirects to Stripe when billing is enabled
+- verify Stripe Customer Portal opens for a paid account and returns to `/billing`
 - verify Stripe billing webhooks reject invalid signatures
 - verify verified Stripe checkout/subscription events update Premium entitlements
 - verify cancelled, unpaid, or incomplete-expired Stripe subscription states remove Premium access
+- verify `admin/billing-diagnostics` shows billing readiness and recent Stripe events without exposing secrets
+- verify Admin-only Stripe subscription reconciliation can refresh a known test subscription without storing raw Stripe payloads
+- verify billing notification emails are visible in `admin/email-diagnostics` for Stripe activation, payment attention, Premium-ended, and reconciliation scenarios
 
 ---
 

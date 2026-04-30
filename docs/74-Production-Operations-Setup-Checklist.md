@@ -69,8 +69,16 @@ This checklist covers the server-side setup tasks required before running Darwin
 - [ ] Confirm webhook delivery uses HTTPS and the configured Stripe signing secret.
 - [ ] Confirm `WebBillingProfiles` and `WebBillingEvents` are created during Web bootstrap.
 - [ ] Confirm Stripe Checkout redirects a signed-in learner to Stripe and returns to `/billing/success` or `/billing/cancel`.
+- [ ] Configure Stripe Customer Portal settings for subscription updates, payment method updates, invoices, and cancellation policy.
+- [ ] Confirm `/billing` opens Stripe Customer Portal for a learner with a linked Stripe customer id.
 - [ ] Confirm Stripe webhooks grant Premium only after a verified Stripe event.
 - [ ] Confirm subscription cancellation, unpaid, or incomplete-expired states downgrade the entitlement to Free.
+- [ ] Confirm `admin/billing-diagnostics` shows Stripe readiness, billing profiles, and billing events without exposing secret values.
+- [ ] Confirm Admin-only Stripe subscription reconciliation works for a known test subscription id.
+- [ ] Confirm reconciliation is used only for support recovery when Stripe webhooks are delayed, missed, or failed.
+- [ ] Confirm billing notification emails are sent for Premium activation, payment action needed, Premium ended, and reconciliation completed.
+- [ ] Confirm billing notification emails appear in `admin/email-diagnostics` with provider message ids and no raw Stripe payloads.
+- [ ] Complete `docs/75-Stripe-Billing-Validation-Playbook.md` in staging before enabling live Stripe billing.
 - [ ] Assign an owner for Stripe account access, API key rotation, tax settings, invoices, refunds, chargebacks, and plan upgrades.
 
 ## Public URLs and Account Links

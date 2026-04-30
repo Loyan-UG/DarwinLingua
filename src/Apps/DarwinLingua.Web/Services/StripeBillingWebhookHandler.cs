@@ -1,6 +1,7 @@
 using System.Text.Json;
 using DarwinLingua.Identity;
 using DarwinLingua.Web.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -9,6 +10,8 @@ namespace DarwinLingua.Web.Services;
 public sealed class StripeBillingWebhookHandler(
     WebIdentityDbContext dbContext,
     IUserEntitlementService userEntitlementService,
+    UserManager<DarwinLinguaIdentityUser> userManager,
+    IBillingNotificationEmailService billingNotificationEmailService,
     IOptions<BillingOptions> options,
     ILogger<StripeBillingWebhookHandler> logger) : IStripeBillingWebhookHandler
 {
@@ -110,6 +113,18 @@ public sealed class StripeBillingWebhookHandler(
 
         string? customerId = GetString(session, "customer");
         string? subscriptionId = GetString(session, "subscription");
+        string mode = GetString(session, "mode") ?? string.Empty;
+        string status = GetString(session, "status") ?? string.Empty;
+        string paymentStatus = GetString(session, "payment_status") ?? string.Empty;
+        if (!string.Equals(mode, "subscription", StringComparison.OrdinalIgnoreCase) ||
+            !string.Equals(status, "complete", StringComparison.OrdinalIgnoreCase) ||
+            !IsPaidCheckoutStatus(paymentStatus) ||
+            string.IsNullOrWhiteSpace(customerId) ||
+            string.IsNullOrWhiteSpace(subscriptionId))
+        {
+            throw new InvalidOperationException("Stripe checkout session is not a completed paid subscription checkout.");
+        }
+
         billingEvent.UserId = userId;
         billingEvent.ProviderCustomerId = customerId;
         billingEvent.ProviderSubscriptionId = subscriptionId;
@@ -129,6 +144,17 @@ public sealed class StripeBillingWebhookHandler(
             expiresAtUtc: null,
             updatedBy: $"stripe:{eventId}",
             cancellationToken)
+            .ConfigureAwait(false);
+
+        await SendUserBillingEmailAsync(
+                userId,
+                static (service, email, id, status, subscription, periodEnd, correlationId, ct) =>
+                    service.SendPremiumActivatedAsync(email, id, status, subscription, periodEnd, null, correlationId, ct),
+                "checkout.session.completed",
+                subscriptionId,
+                null,
+                eventId,
+                cancellationToken)
             .ConfigureAwait(false);
     }
 
@@ -186,6 +212,16 @@ public sealed class StripeBillingWebhookHandler(
                 updatedBy: $"stripe:{eventId}",
                 cancellationToken)
                 .ConfigureAwait(false);
+            await SendUserBillingEmailAsync(
+                    userId,
+                    static (service, email, id, billingStatus, subscription, periodEnd, correlationId, ct) =>
+                        service.SendPremiumEndedAsync(email, id, billingStatus, subscription, null, correlationId, ct),
+                    status,
+                    subscriptionId,
+                    currentPeriodEndsAtUtc,
+                    eventId,
+                    cancellationToken)
+                .ConfigureAwait(false);
             return;
         }
 
@@ -197,6 +233,19 @@ public sealed class StripeBillingWebhookHandler(
                 currentPeriodEndsAtUtc,
                 updatedBy: $"stripe:{eventId}",
                 cancellationToken)
+                .ConfigureAwait(false);
+        }
+        else if (IsPaymentActionNeededStatus(status))
+        {
+            await SendUserBillingEmailAsync(
+                    userId,
+                    static (service, email, id, billingStatus, subscription, periodEnd, correlationId, ct) =>
+                        service.SendPaymentActionNeededAsync(email, id, billingStatus, subscription, periodEnd, null, correlationId, ct),
+                    status,
+                    subscriptionId,
+                    currentPeriodEndsAtUtc,
+                    eventId,
+                    cancellationToken)
                 .ConfigureAwait(false);
         }
     }
@@ -241,6 +290,42 @@ public sealed class StripeBillingWebhookHandler(
         string.Equals(status, "canceled", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(status, "incomplete_expired", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(status, "unpaid", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsPaymentActionNeededStatus(string status) =>
+        string.Equals(status, "past_due", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "incomplete", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "paused", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsPaidCheckoutStatus(string paymentStatus) =>
+        string.Equals(paymentStatus, "paid", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(paymentStatus, "no_payment_required", StringComparison.OrdinalIgnoreCase);
+
+    private async Task SendUserBillingEmailAsync(
+        string userId,
+        Func<IBillingNotificationEmailService, string, string, string, string?, DateTimeOffset?, string?, CancellationToken, Task> sendEmail,
+        string billingStatus,
+        string? subscriptionId,
+        DateTimeOffset? currentPeriodEndsAtUtc,
+        string correlationId,
+        CancellationToken cancellationToken)
+    {
+        DarwinLinguaIdentityUser? user = await userManager.FindByIdAsync(userId).ConfigureAwait(false);
+        if (string.IsNullOrWhiteSpace(user?.Email))
+        {
+            return;
+        }
+
+        await sendEmail(
+                billingNotificationEmailService,
+                user.Email,
+                user.Id,
+                billingStatus,
+                subscriptionId,
+                currentPeriodEndsAtUtc,
+                correlationId,
+                cancellationToken)
+            .ConfigureAwait(false);
+    }
 
     private static string? GetString(JsonElement element, string propertyName)
     {

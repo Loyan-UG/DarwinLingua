@@ -127,6 +127,50 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
                     "{FailureCount} transaktionale E-Mails sind in den letzten {WindowMinutes} Minuten fehlgeschlagen. Letzter Fehler: {LastFailureScenarioKey} / {LastFailureCode}. Offne die Admin-E-Mail-Diagnose.",
                     "<p><strong>{FailureCount}</strong> transaktionale E-Mails sind in den letzten <strong>{WindowMinutes}</strong> Minuten fehlgeschlagen.</p><p>Letzter Fehler: <strong>{LastFailureScenarioKey}</strong> / <strong>{LastFailureCode}</strong>.</p><p>Offne die Admin-E-Mail-Diagnose.</p>"),
             },
+            [TransactionalEmailScenarios.BillingPremiumActivated] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Your Darwin Lingua Premium access is active",
+                    "Your {ProductName} Premium access is active. Billing status: {BillingStatus}. Current period end: {CurrentPeriodEnd}.\n\nYou can manage your subscription from Billing in your account.",
+                    "<p>Your <strong>{ProductName}</strong> Premium access is active.</p><p>Billing status: <strong>{BillingStatus}</strong><br />Current period end: <strong>{CurrentPeriodEnd}</strong></p><p>You can manage your subscription from Billing in your account.</p>"),
+                ["de"] = new(
+                    "Dein Darwin Lingua Premium-Zugang ist aktiv",
+                    "Dein {ProductName} Premium-Zugang ist aktiv. Abrechnungsstatus: {BillingStatus}. Aktueller Zeitraum endet: {CurrentPeriodEnd}.\n\nDu kannst dein Abo im Konto unter Billing verwalten.",
+                    "<p>Dein <strong>{ProductName}</strong> Premium-Zugang ist aktiv.</p><p>Abrechnungsstatus: <strong>{BillingStatus}</strong><br />Aktueller Zeitraum endet: <strong>{CurrentPeriodEnd}</strong></p><p>Du kannst dein Abo im Konto unter Billing verwalten.</p>"),
+            },
+            [TransactionalEmailScenarios.BillingPaymentActionNeeded] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Your Darwin Lingua payment needs attention",
+                    "Your {ProductName} billing status is {BillingStatus}. Current period end: {CurrentPeriodEnd}. Please open Billing in your account to update payment details if needed.",
+                    "<p>Your <strong>{ProductName}</strong> billing status is <strong>{BillingStatus}</strong>.</p><p>Current period end: <strong>{CurrentPeriodEnd}</strong></p><p>Please open Billing in your account to update payment details if needed.</p>"),
+                ["de"] = new(
+                    "Deine Darwin Lingua Zahlung braucht Aufmerksamkeit",
+                    "Dein {ProductName} Abrechnungsstatus ist {BillingStatus}. Aktueller Zeitraum endet: {CurrentPeriodEnd}. Offne Billing in deinem Konto, um Zahlungsdaten bei Bedarf zu aktualisieren.",
+                    "<p>Dein <strong>{ProductName}</strong> Abrechnungsstatus ist <strong>{BillingStatus}</strong>.</p><p>Aktueller Zeitraum endet: <strong>{CurrentPeriodEnd}</strong></p><p>Offne Billing in deinem Konto, um Zahlungsdaten bei Bedarf zu aktualisieren.</p>"),
+            },
+            [TransactionalEmailScenarios.BillingPremiumEnded] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Your Darwin Lingua Premium access changed",
+                    "Your {ProductName} Premium access is no longer active. Billing status: {BillingStatus}. You can continue using free learning features and restart Premium from Billing.",
+                    "<p>Your <strong>{ProductName}</strong> Premium access is no longer active.</p><p>Billing status: <strong>{BillingStatus}</strong></p><p>You can continue using free learning features and restart Premium from Billing.</p>"),
+                ["de"] = new(
+                    "Dein Darwin Lingua Premium-Zugang hat sich geandert",
+                    "Dein {ProductName} Premium-Zugang ist nicht mehr aktiv. Abrechnungsstatus: {BillingStatus}. Du kannst die kostenlosen Lernfunktionen weiter nutzen und Premium unter Billing neu starten.",
+                    "<p>Dein <strong>{ProductName}</strong> Premium-Zugang ist nicht mehr aktiv.</p><p>Abrechnungsstatus: <strong>{BillingStatus}</strong></p><p>Du kannst die kostenlosen Lernfunktionen weiter nutzen und Premium unter Billing neu starten.</p>"),
+            },
+            [TransactionalEmailScenarios.AdminBillingReconciliationCompleted] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Stripe subscription reconciliation completed",
+                    "{AdminActor} reconciled Stripe subscription {SubscriptionId}. User: {UserId}. Stripe status: {BillingStatus}. Entitlement: {EntitlementTier}.",
+                    "<p><strong>{AdminActor}</strong> reconciled Stripe subscription <strong>{SubscriptionId}</strong>.</p><p>User: <strong>{UserId}</strong><br />Stripe status: <strong>{BillingStatus}</strong><br />Entitlement: <strong>{EntitlementTier}</strong></p>"),
+                ["de"] = new(
+                    "Stripe-Abo-Abgleich abgeschlossen",
+                    "{AdminActor} hat Stripe-Abo {SubscriptionId} abgeglichen. Nutzer: {UserId}. Stripe-Status: {BillingStatus}. Entitlement: {EntitlementTier}.",
+                    "<p><strong>{AdminActor}</strong> hat Stripe-Abo <strong>{SubscriptionId}</strong> abgeglichen.</p><p>Nutzer: <strong>{UserId}</strong><br />Stripe-Status: <strong>{BillingStatus}</strong><br />Entitlement: <strong>{EntitlementTier}</strong></p>"),
+            },
             [TransactionalEmailScenarios.OrganizerClaimApproved] = new(StringComparer.OrdinalIgnoreCase)
             {
                 ["en"] = new(

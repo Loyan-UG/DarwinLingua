@@ -23,6 +23,14 @@
                 {
                     <li>Premium renews or expires: @Model.Entitlement.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
                 }
+                @if (!string.IsNullOrWhiteSpace(Model.BillingStatus))
+                {
+                    <li>Billing status: @Model.BillingStatus</li>
+                }
+                @if (Model.CurrentPeriodEndsAtUtc is not null)
+                {
+                    <li>Stripe period end: @Model.CurrentPeriodEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+                }
                 <li>Features: @string.Join(", ", Model.Entitlement.EnabledFeatures)</li>
             </ul>
         </article>
@@ -43,6 +51,17 @@
             else
             {
                 <p class="body-sm">Premium access is active.</p>
+                @if (Model.CanManageStripeSubscription)
+                {
+                    <form method="post" asp-controller="Billing" asp-action="OpenStripePortal">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="button button--secondary">Manage in Stripe</button>
+                    </form>
+                }
+                else
+                {
+                    <p class="body-sm">Stripe subscription management will appear after the first verified Stripe customer event.</p>
+                }
             }
         </article>
     </div>
