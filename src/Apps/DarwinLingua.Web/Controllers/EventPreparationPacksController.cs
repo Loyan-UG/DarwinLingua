@@ -16,7 +16,8 @@ public sealed class EventPreparationPacksController(
     [OutputCache(NoStore = true)]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(slug))
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
         {
             return RedirectToAction("Index", "Scenarios");
         }
@@ -28,7 +29,7 @@ public sealed class EventPreparationPacksController(
         }
 
         EventPreparationPackDetailModel? preparationPack = await catalogApiClient
-            .GetEventPreparationPackBySlugAsync(slug, cancellationToken)
+            .GetEventPreparationPackBySlugAsync(normalizedSlug, cancellationToken)
             .ConfigureAwait(false);
 
         if (preparationPack is null)
@@ -49,7 +50,8 @@ public sealed class EventPreparationPacksController(
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Complete(string slug, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(slug))
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
         {
             return RedirectToAction("Index", "Scenarios");
         }
@@ -61,7 +63,7 @@ public sealed class EventPreparationPacksController(
         }
 
         EventPreparationPackDetailModel? preparationPack = await catalogApiClient
-            .GetEventPreparationPackBySlugAsync(slug, cancellationToken)
+            .GetEventPreparationPackBySlugAsync(normalizedSlug, cancellationToken)
             .ConfigureAwait(false);
 
         if (preparationPack is null)

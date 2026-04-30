@@ -68,7 +68,7 @@ Identity users are environment-backed bootstrap records rather than content seed
 
 ## Admin Report Surface
 
-The Web Admin area now includes `/admin/reports`.
+The Web Admin area includes `/admin/reports`, and the `/admin` overview now surfaces the highest-signal catalog, social-learning, and moderation counts.
 
 The page summarizes:
 
@@ -80,6 +80,8 @@ The page summarizes:
 - top in-memory Web product analytics counters
 
 The report data comes from `/api/admin/catalog/system-report` plus the Web Identity store and Web product analytics service.
+
+The `/admin` overview uses the same system-report source for its operational snapshot so the first admin screen is not limited to catalog/import counts.
 
 ## Known Follow-Up
 

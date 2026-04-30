@@ -21,15 +21,11 @@ public sealed class ReportsController(
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         Task<AdminSystemReportResponse> reportTask = catalogApiClient.GetAdminSystemReportAsync(cancellationToken);
-        Task<int> identityUserCountTask = userManager.Users.CountAsync(cancellationToken);
-        Task<EmailDeliverySummary> emailSummaryTask = emailDeliveryLogRepository
-            .GetSummarySinceAsync(DateTimeOffset.UtcNow.AddHours(-24), cancellationToken);
-
-        await Task.WhenAll(reportTask, identityUserCountTask, emailSummaryTask).ConfigureAwait(false);
-
+        int identityUserCount = await userManager.Users.CountAsync(cancellationToken).ConfigureAwait(false);
+        EmailDeliverySummary emailSummary = await emailDeliveryLogRepository
+            .GetSummarySinceAsync(DateTimeOffset.UtcNow.AddHours(-24), cancellationToken)
+            .ConfigureAwait(false);
         AdminSystemReportResponse report = await reportTask.ConfigureAwait(false);
-        int identityUserCount = await identityUserCountTask.ConfigureAwait(false);
-        EmailDeliverySummary emailSummary = await emailSummaryTask.ConfigureAwait(false);
 
         return View(new AdminSystemReportPageViewModel(
             report.GeneratedAtUtc,

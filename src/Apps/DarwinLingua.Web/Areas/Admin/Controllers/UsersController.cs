@@ -42,9 +42,10 @@ public sealed class UsersController(
             return RedirectToAction(nameof(Index));
         }
 
-        if (!DarwinLinguaEntitlementTiers.All.Contains(input.Tier, StringComparer.OrdinalIgnoreCase))
+        string requestedTier = input.Tier.Trim();
+        if (!DarwinLinguaEntitlementTiers.All.Contains(requestedTier, StringComparer.OrdinalIgnoreCase))
         {
-            TempData["ErrorMessage"] = $"'{input.Tier}' is not a supported entitlement tier.";
+            TempData["ErrorMessage"] = "The selected entitlement tier is not supported.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -64,6 +65,21 @@ public sealed class UsersController(
             expiresAtUtc = parsedExpiresAtUtc;
         }
 
+        if (string.Equals(requestedTier, DarwinLinguaEntitlementTiers.Free, StringComparison.OrdinalIgnoreCase) &&
+            expiresAtUtc.HasValue)
+        {
+            TempData["ErrorMessage"] = "Free entitlements must not have an expiration date.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        if (!string.Equals(requestedTier, DarwinLinguaEntitlementTiers.Free, StringComparison.OrdinalIgnoreCase) &&
+            expiresAtUtc.HasValue &&
+            expiresAtUtc.Value <= DateTimeOffset.UtcNow.AddMinutes(-5))
+        {
+            TempData["ErrorMessage"] = "Expiration must be in the future for trial or premium entitlements.";
+            return RedirectToAction(nameof(Index));
+        }
+
         DarwinLinguaIdentityUser? user = await userManager.FindByIdAsync(input.UserId);
         if (user is null)
         {
@@ -78,7 +94,7 @@ public sealed class UsersController(
 
         UserEntitlementSnapshot snapshot = await userEntitlementService.SetTierAsync(
             user.Id,
-            input.Tier,
+            requestedTier,
             expiresAtUtc,
             updatedBy,
             cancellationToken);
@@ -97,9 +113,10 @@ public sealed class UsersController(
             return RedirectToAction(nameof(Index));
         }
 
-        if (!DarwinLinguaRoles.All.Contains(input.Role, StringComparer.Ordinal))
+        string requestedRole = input.Role.Trim();
+        if (!DarwinLinguaRoles.All.Contains(requestedRole, StringComparer.Ordinal))
         {
-            TempData["ErrorMessage"] = $"'{input.Role}' is not a supported role.";
+            TempData["ErrorMessage"] = "The selected role is not supported.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -110,22 +127,31 @@ public sealed class UsersController(
             return RedirectToAction(nameof(Index));
         }
 
-        bool alreadyInRole = await userManager.IsInRoleAsync(user, input.Role);
+        string? currentUserId = userManager.GetUserId(User);
+        if (!input.IsEnabled &&
+            string.Equals(user.Id, currentUserId, StringComparison.Ordinal) &&
+            string.Equals(requestedRole, DarwinLinguaRoles.Admin, StringComparison.Ordinal))
+        {
+            TempData["ErrorMessage"] = "You cannot remove the Admin role from your current account.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        bool alreadyInRole = await userManager.IsInRoleAsync(user, requestedRole);
         IdentityResult result = input.IsEnabled switch
         {
-            true when !alreadyInRole => await userManager.AddToRoleAsync(user, input.Role),
-            false when alreadyInRole => await userManager.RemoveFromRoleAsync(user, input.Role),
+            true when !alreadyInRole => await userManager.AddToRoleAsync(user, requestedRole),
+            false when alreadyInRole => await userManager.RemoveFromRoleAsync(user, requestedRole),
             _ => IdentityResult.Success,
         };
 
         if (!result.Succeeded)
         {
-            TempData["ErrorMessage"] = string.Join(" ", result.Errors.Select(error => error.Description));
+            TempData["ErrorMessage"] = "The role update could not be completed. Review the selected role and user.";
             return RedirectToAction(nameof(Index));
         }
 
         string action = input.IsEnabled ? "added" : "removed";
-        TempData["StatusMessage"] = $"{action} {input.Role} for {user.Email ?? user.UserName ?? user.Id}.";
+        TempData["StatusMessage"] = $"{action} {requestedRole} for {user.Email ?? user.UserName ?? user.Id}.";
         return RedirectToAction(nameof(Index));
     }
 

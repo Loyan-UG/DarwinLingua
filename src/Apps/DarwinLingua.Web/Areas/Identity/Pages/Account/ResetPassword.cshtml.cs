@@ -65,6 +65,12 @@ public sealed class ResetPasswordModel(
             return RedirectToPage("/Account/ResetPasswordConfirmation", new { area = "Identity" });
         }
 
+        if (result.Errors.Any(static error => IsTokenErrorCode(error.Code)))
+        {
+            ModelState.AddModelError(string.Empty, "This reset link cannot be used. Request a new password reset email.");
+            return Page();
+        }
+
         foreach (IdentityError error in result.Errors)
         {
             ModelState.AddModelError(string.Empty, error.Description);
@@ -78,6 +84,10 @@ public sealed class ResetPasswordModel(
             ?.RequestCulture.UICulture.Name
         ?? Request.Headers.AcceptLanguage.ToString()
         ?? "en";
+
+    private static bool IsTokenErrorCode(string? code) =>
+        string.Equals(code, "InvalidToken", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(code, "ExpiredToken", StringComparison.OrdinalIgnoreCase);
 
     public sealed class ResetPasswordInputModel
     {

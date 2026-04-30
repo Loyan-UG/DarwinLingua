@@ -74,7 +74,7 @@ public sealed class LoginModel(
 
         if (result.IsNotAllowed)
         {
-            return RedirectToPage("/Account/UnconfirmedAccount", new { area = "Identity", email });
+            return RedirectToPage("/Account/CheckEmail", new { area = "Identity" });
         }
 
         ModelState.AddModelError(string.Empty, "The sign-in attempt could not be completed.");

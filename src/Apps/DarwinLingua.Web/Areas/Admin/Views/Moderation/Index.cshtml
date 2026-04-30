@@ -37,6 +37,8 @@
         <div class="stack-md">
             @foreach (var report in Model.Reports)
             {
+                bool canDecide = string.Equals(report.Status, "pending", StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(report.Status, "reviewed", StringComparison.OrdinalIgnoreCase);
                 <article class="panel stack-md">
                     <div class="grid-two-col">
                         <div>
@@ -53,22 +55,30 @@
                                 <p class="body-sm">Decision: @report.DecisionNote</p>
                             }
                         </div>
-                        <form method="post" asp-action="Decide" asp-route-reportId="@report.Id" class="stack-sm">
-                            @Html.AntiForgeryToken()
-                            <label class="form-field">
-                                <span>Status</span>
-                                <select name="Status">
-                                    <option value="reviewed">Reviewed</option>
-                                    <option value="dismissed">Dismissed</option>
-                                    <option value="action-taken">Action taken</option>
-                                </select>
-                            </label>
-                            <label class="form-field">
-                                <span>Decision note</span>
-                                <textarea name="DecisionNote" rows="3" maxlength="1000"></textarea>
-                            </label>
-                            <button type="submit" class="button button--primary">Save decision</button>
-                        </form>
+                        @if (canDecide)
+                        {
+                            <form method="post" asp-action="Decide" asp-route-reportId="@report.Id" class="stack-sm">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="returnStatus" value="@Model.StatusFilter" />
+                                <label class="form-field">
+                                    <span>Status</span>
+                                    <select name="Status">
+                                        <option value="reviewed" selected="@(string.Equals(report.Status, "reviewed", StringComparison.OrdinalIgnoreCase))">Reviewed</option>
+                                        <option value="dismissed">Dismissed</option>
+                                        <option value="action-taken">Action taken</option>
+                                    </select>
+                                </label>
+                                <label class="form-field">
+                                    <span>Decision note</span>
+                                    <textarea name="DecisionNote" rows="3" maxlength="1000"></textarea>
+                                </label>
+                                <button type="submit" class="button button--primary">Save decision</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <div class="status-banner status-banner--success">Decision recorded.</div>
+                        }
                     </div>
                 </article>
             }

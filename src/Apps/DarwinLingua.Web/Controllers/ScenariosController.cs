@@ -28,7 +28,8 @@ public sealed class ScenariosController(
     [OutputCache(NoStore = true)]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(slug))
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
         {
             return RedirectToAction(nameof(Index));
         }
@@ -40,7 +41,7 @@ public sealed class ScenariosController(
 
         ScenarioLessonDetailModel? scenario = await catalogApiClient
             .GetScenarioBySlugAsync(
-                slug,
+                normalizedSlug,
                 profile.PreferredMeaningLanguage1,
                 effectiveSecondaryMeaningLanguageCode,
                 cancellationToken)
@@ -53,21 +54,16 @@ public sealed class ScenariosController(
 
         analyticsService?.Record(WebProductAnalyticsEvents.ScenarioViewed, $"scenario:{scenario.Slug}");
 
-        IReadOnlyList<ConversationStarterPackListItemModel> relatedStarterPacks = await catalogApiClient
-            .GetConversationStarterPacksForScenarioAsync(slug, cancellationToken)
-            .ConfigureAwait(false);
-
-        IReadOnlyList<EventPreparationPackListItemModel> relatedEventPreparationPacks =
-            await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false)
-                ? await catalogApiClient
-                    .GetEventPreparationPacksForScenarioAsync(slug, cancellationToken)
-                    .ConfigureAwait(false)
-                : [];
+        Task<IReadOnlyList<ConversationStarterPackListItemModel>> relatedStarterPacksTask = catalogApiClient
+            .GetConversationStarterPacksForScenarioAsync(normalizedSlug, cancellationToken);
+        Task<IReadOnlyList<EventPreparationPackListItemModel>> relatedEventPreparationPacksTask =
+            LoadRelatedEventPreparationPacksAsync(normalizedSlug, cancellationToken);
+        await Task.WhenAll(relatedStarterPacksTask, relatedEventPreparationPacksTask).ConfigureAwait(false);
 
         return View(new ScenarioDetailPageViewModel(
             scenario,
-            relatedStarterPacks,
-            relatedEventPreparationPacks,
+            await relatedStarterPacksTask.ConfigureAwait(false),
+            await relatedEventPreparationPacksTask.ConfigureAwait(false),
             profile.PreferredMeaningLanguage1,
             effectiveSecondaryMeaningLanguageCode));
     }
@@ -76,7 +72,8 @@ public sealed class ScenariosController(
     [OutputCache(NoStore = true)]
     public async Task<IActionResult> Roleplay(string slug, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(slug))
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
         {
             return RedirectToAction(nameof(Index));
         }
@@ -88,7 +85,7 @@ public sealed class ScenariosController(
 
         ScenarioLessonDetailModel? scenario = await catalogApiClient
             .GetScenarioBySlugAsync(
-                slug,
+                normalizedSlug,
                 profile.PreferredMeaningLanguage1,
                 effectiveSecondaryMeaningLanguageCode,
                 cancellationToken)
@@ -146,4 +143,13 @@ public sealed class ScenariosController(
 
     private static bool IsLearnerRole(string speakerRole) =>
         string.Equals(speakerRole, "learner", StringComparison.OrdinalIgnoreCase);
+
+    private async Task<IReadOnlyList<EventPreparationPackListItemModel>> LoadRelatedEventPreparationPacksAsync(
+        string scenarioSlug,
+        CancellationToken cancellationToken)
+    {
+        return await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false)
+            ? await catalogApiClient.GetEventPreparationPacksForScenarioAsync(scenarioSlug, cancellationToken).ConfigureAwait(false)
+            : [];
+    }
 }

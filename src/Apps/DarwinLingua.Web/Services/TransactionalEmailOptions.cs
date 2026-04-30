@@ -42,6 +42,8 @@ public sealed class TransactionalEmailOptions
 
     public bool BrevoSandboxMode { get; set; }
 
+    public bool BrevoAllowQuerySecretFallback { get; set; }
+
     public int EmailConfirmationTokenHours { get; set; } = 24;
 
     public int PasswordResetTokenMinutes { get; set; } = 60;
@@ -129,6 +131,16 @@ public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvi
             failures.Add("TransactionalEmail:BrevoApiKey is required when Mode is BrevoApi.");
         }
 
+        if (IsMode(mode, "BrevoApi") && string.IsNullOrWhiteSpace(options.BrevoWebhookSecret))
+        {
+            failures.Add("TransactionalEmail:BrevoWebhookSecret is required when Mode is BrevoApi.");
+        }
+
+        if (hostEnvironment.IsProduction() && options.BrevoAllowQuerySecretFallback)
+        {
+            failures.Add("TransactionalEmail:BrevoAllowQuerySecretFallback must be false in Production.");
+        }
+
         if (options.FailureAlertThreshold <= 0)
         {
             failures.Add("TransactionalEmail:FailureAlertThreshold must be greater than zero.");
@@ -169,10 +181,6 @@ public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvi
                 }
             }
 
-            if (IsMode(mode, "BrevoApi") && string.IsNullOrWhiteSpace(options.BrevoWebhookSecret))
-            {
-                failures.Add("TransactionalEmail:BrevoWebhookSecret is required in Production when Mode is BrevoApi.");
-            }
         }
 
         return failures.Count == 0

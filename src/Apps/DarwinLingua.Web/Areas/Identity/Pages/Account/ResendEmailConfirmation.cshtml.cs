@@ -27,12 +27,17 @@ public sealed class ResendEmailConfirmationModel(
         }
 
         string email = Input.Email.Trim();
-        bool allowed = rateLimiter.TryConsume(
+        bool ipAllowed = rateLimiter.TryConsume(
+            "resend-confirmation-ip",
+            GetRemoteAddressKey(),
+            20,
+            TimeSpan.FromMinutes(30));
+        bool emailAllowed = rateLimiter.TryConsume(
             "resend-confirmation",
-            $"{HttpContext.Connection.RemoteIpAddress}|{email}",
+            $"{GetRemoteAddressKey()}|{email}",
             5,
             TimeSpan.FromMinutes(30));
-        if (allowed)
+        if (ipAllowed && emailAllowed)
         {
             DarwinLinguaIdentityUser? user = await userManager.FindByEmailAsync(email).ConfigureAwait(false);
             if (user is not null && !await userManager.IsEmailConfirmedAsync(user).ConfigureAwait(false))
@@ -72,6 +77,9 @@ public sealed class ResendEmailConfirmationModel(
             ?.RequestCulture.UICulture.Name
         ?? Request.Headers.AcceptLanguage.ToString()
         ?? "en";
+
+    private string GetRemoteAddressKey() =>
+        HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
 
     public sealed class ResendEmailConfirmationInputModel
     {

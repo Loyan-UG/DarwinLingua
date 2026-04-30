@@ -1,6 +1,8 @@
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using System.Diagnostics;
+using System.Collections;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Web.Configuration;
 using DarwinLingua.Web.Models;
@@ -257,9 +259,12 @@ public interface IWebCatalogApiClient
         throw new NotSupportedException();
 }
 
-internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogApiClient
+internal sealed class WebCatalogApiClient(
+    HttpClient httpClient,
+    IWebPerformanceTelemetryService telemetryService) : IWebCatalogApiClient
 {
     private const string ActorEmailHeaderName = "X-DarwinLingua-Actor-Email";
+    private const int MaxErrorResponseBodyLength = 500;
 
     public Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<TopicListItemModel>>(
@@ -793,23 +798,45 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         string? actorEmail,
         CancellationToken cancellationToken)
     {
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        WebTelemetryOutcome outcome = WebTelemetryOutcome.Success;
+        int itemCount = 0;
         using HttpRequestMessage request = new(HttpMethod.Get, relativeUri);
-        AddActorEmailHeader(request, actorEmail);
-        using HttpResponseMessage response = await httpClient.SendAsync(request, cancellationToken).ConfigureAwait(false);
-
-        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        try
         {
-            return default;
-        }
+            AddActorEmailHeader(request, actorEmail);
+            using HttpResponseMessage response = await httpClient.SendAsync(request, cancellationToken).ConfigureAwait(false);
 
-        await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
-        string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-        if (string.IsNullOrWhiteSpace(body))
+            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                return default;
+            }
+
+            await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
+            string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            if (string.IsNullOrWhiteSpace(body))
+            {
+                return default;
+            }
+
+            T? payload = JsonSerializer.Deserialize<T>(body, JsonSerializerOptions.Web);
+            itemCount = CountItems(payload);
+            return payload;
+        }
+        catch
         {
-            return default;
+            outcome = WebTelemetryOutcome.Failure;
+            throw;
         }
-
-        return JsonSerializer.Deserialize<T>(body, JsonSerializerOptions.Web);
+        finally
+        {
+            stopwatch.Stop();
+            telemetryService.Record(
+                BuildWebApiOperationKey(HttpMethod.Get, relativeUri),
+                stopwatch.Elapsed,
+                outcome,
+                itemCount);
+        }
     }
 
     private async Task<T> GetRequiredAsync<T>(string relativeUri, CancellationToken cancellationToken)
@@ -846,14 +873,35 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         TRequest request,
         CancellationToken cancellationToken)
     {
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        WebTelemetryOutcome outcome = WebTelemetryOutcome.Success;
+        int itemCount = 0;
         using HttpRequestMessage httpRequest = new(HttpMethod.Post, relativeUri);
-        AddActorEmailHeader(httpRequest, actorEmail);
-        httpRequest.Content = JsonContent.Create(request, options: JsonSerializerOptions.Web);
-        using HttpResponseMessage response = await httpClient.SendAsync(httpRequest, cancellationToken).ConfigureAwait(false);
-        await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
+        try
+        {
+            AddActorEmailHeader(httpRequest, actorEmail);
+            httpRequest.Content = JsonContent.Create(request, options: JsonSerializerOptions.Web);
+            using HttpResponseMessage response = await httpClient.SendAsync(httpRequest, cancellationToken).ConfigureAwait(false);
+            await EnsureSuccessAsync(response, relativeUri, cancellationToken).ConfigureAwait(false);
 
-        TResponse? payload = await response.Content.ReadFromJsonAsync<TResponse>(cancellationToken).ConfigureAwait(false);
-        return payload ?? throw new InvalidOperationException($"The Web API returned an empty payload for '{relativeUri}'.");
+            TResponse? payload = await response.Content.ReadFromJsonAsync<TResponse>(cancellationToken).ConfigureAwait(false);
+            itemCount = CountItems(payload);
+            return payload ?? throw new InvalidOperationException($"The Web API returned an empty payload for '{relativeUri}'.");
+        }
+        catch
+        {
+            outcome = WebTelemetryOutcome.Failure;
+            throw;
+        }
+        finally
+        {
+            stopwatch.Stop();
+            telemetryService.Record(
+                BuildWebApiOperationKey(HttpMethod.Post, relativeUri),
+                stopwatch.Elapsed,
+                outcome,
+                itemCount);
+        }
     }
 
     private static void AddActorEmailHeader(HttpRequestMessage request, string? actorEmail)
@@ -875,8 +923,86 @@ internal sealed class WebCatalogApiClient(HttpClient httpClient) : IWebCatalogAp
         }
 
         string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+        string responseSummary = SummarizeErrorResponseBody(body);
         throw new InvalidOperationException(
-            $"The Web API call to '{relativeUri}' failed with status {(int)response.StatusCode}. Response: {body}");
+            $"The Web API call to '{relativeUri}' failed with status {(int)response.StatusCode}. Response: {responseSummary}");
+    }
+
+    private static string SummarizeErrorResponseBody(string body)
+    {
+        if (string.IsNullOrWhiteSpace(body))
+        {
+            return "(empty)";
+        }
+
+        string normalized = body.ReplaceLineEndings(" ").Trim();
+        return normalized.Length <= MaxErrorResponseBodyLength
+            ? normalized
+            : string.Concat(normalized.AsSpan(0, MaxErrorResponseBodyLength), "...");
+    }
+
+    private static int CountItems<T>(T? payload)
+    {
+        if (payload is null)
+        {
+            return 0;
+        }
+
+        if (payload is string)
+        {
+            return 1;
+        }
+
+        return payload is ICollection collection ? collection.Count : 1;
+    }
+
+    private static string BuildWebApiOperationKey(HttpMethod method, string relativeUri) =>
+        $"webapi:{method.Method}:{NormalizePathShape(relativeUri)}".ToLowerInvariant();
+
+    private static string NormalizePathShape(string relativeUri)
+    {
+        string path = relativeUri.Split('?', 2)[0].Trim('/');
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            return "/";
+        }
+
+        string[] segments = path.Split('/', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        for (int index = 0; index < segments.Length; index++)
+        {
+            if (Guid.TryParse(segments[index], out _))
+            {
+                segments[index] = "{guid}";
+                continue;
+            }
+
+            if (ShouldRedactRouteSegment(segments, index))
+            {
+                segments[index] = "{key}";
+            }
+        }
+
+        return string.Concat("/", string.Join('/', segments));
+    }
+
+    private static bool ShouldRedactRouteSegment(string[] segments, int index)
+    {
+        if (index == 0)
+        {
+            return false;
+        }
+
+        string previous = segments[index - 1];
+        return string.Equals(previous, "collections", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "scenarios", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "conversation-starters", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "event-preparation-packs", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "conversation-events", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "organizer-profiles", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "by-organizer", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "organizer-claim-requests", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "partner-requests", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "reports", StringComparison.OrdinalIgnoreCase);
     }
 
     private static string BuildPath(string path, IEnumerable<KeyValuePair<string, string?>> queryParameters)

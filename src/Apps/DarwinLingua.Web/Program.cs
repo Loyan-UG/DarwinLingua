@@ -15,6 +15,11 @@ using Microsoft.Extensions.Caching.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddJsonFile(
+    $"appsettings.{builder.Environment.EnvironmentName}.Local.json",
+    optional: true,
+    reloadOnChange: true);
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddHttpContextAccessor();
@@ -27,10 +32,25 @@ builder.Services.AddResponseCompression(options =>
 builder.Services.AddOutputCache(options =>
 {
     options.AddBasePolicy(policy => policy.Expire(TimeSpan.FromSeconds(60)));
-    options.AddPolicy("LandingPage", policy => policy.Expire(TimeSpan.FromSeconds(30)));
+    options.AddPolicy("LandingPage", policy => policy
+        .Expire(TimeSpan.FromSeconds(30))
+        .SetVaryByHeader("Cookie"));
     options.AddPolicy("CatalogBrowse", policy => policy
         .Expire(TimeSpan.FromMinutes(2))
-        .SetVaryByQuery("id", "skip"));
+        .SetVaryByHeader("Cookie")
+        .SetVaryByQuery(
+            "id",
+            "skip",
+            "city",
+            "cefrLevel",
+            "helperLanguageCode",
+            "isOnline",
+            "priceType",
+            "category",
+            "situation",
+            "tone",
+            "conversationGoal",
+            "topicKey"));
 });
 builder.Services.Configure<MemoryCacheOptions>(options => options.SizeLimit = 512);
 builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
@@ -38,9 +58,13 @@ builder.Services.Configure<DarwinLinguaEntitlementOptions>(builder.Configuration
 builder.Services.AddOptions<TransactionalEmailOptions>()
     .Bind(builder.Configuration.GetSection(TransactionalEmailOptions.SectionName))
     .ValidateOnStart();
+builder.Services.AddOptions<BillingOptions>()
+    .Bind(builder.Configuration.GetSection(BillingOptions.SectionName))
+    .ValidateOnStart();
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaIdentityBootstrapOptions>, DarwinLinguaIdentityBootstrapOptionsPostConfigure>();
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaEntitlementOptions>, DarwinLinguaEntitlementOptionsPostConfigure>();
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IValidateOptions<TransactionalEmailOptions>, TransactionalEmailOptionsValidator>();
+builder.Services.AddSingleton<Microsoft.Extensions.Options.IValidateOptions<BillingOptions>, BillingOptionsValidator>();
 builder.Services.Configure<EmailConfirmationTokenProviderOptions>(options =>
 {
     int hours = builder.Configuration.GetValue("TransactionalEmail:EmailConfirmationTokenHours", 24);
@@ -59,6 +83,14 @@ builder.Services.Configure<EmailChangeTokenProviderOptions>(options =>
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
 builder.Services.AddHttpClient("BrevoTransactionalEmail");
+builder.Services.AddHttpClient("StripeBilling", (serviceProvider, client) =>
+{
+    BillingOptions billingOptions = serviceProvider
+        .GetRequiredService<Microsoft.Extensions.Options.IOptions<BillingOptions>>()
+        .Value;
+    client.BaseAddress = new Uri(billingOptions.StripeApiBaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(20);
+});
 builder.Services.AddScoped<IWebActivityQueryService, WebActivityQueryService>();
 builder.Services.AddScoped<IWebAdminDashboardQueryService, WebAdminDashboardQueryService>();
 builder.Services.AddScoped<IWebAdminOperationsQueryService, WebAdminOperationsQueryService>();
@@ -74,6 +106,9 @@ builder.Services.AddScoped<ITransactionalEmailSender, TransactionalEmailSender>(
 builder.Services.AddScoped<IEmailDeliveryLogRepository, EmailDeliveryLogRepository>();
 builder.Services.AddScoped<IAccountEmailService, AccountEmailService>();
 builder.Services.AddScoped<ICommunityNotificationEmailService, CommunityNotificationEmailService>();
+builder.Services.AddScoped<IStripeBillingCheckoutService, StripeBillingCheckoutService>();
+builder.Services.AddScoped<IStripeBillingWebhookHandler, StripeBillingWebhookHandler>();
+builder.Services.AddScoped<StripeWebhookVerifier>();
 builder.Services.AddSingleton<IAccountEmailRateLimiter, AccountEmailRateLimiter>();
 builder.Services.AddHostedService<EmailDeliveryFailureMonitorService>();
 builder.Services.AddWebCatalogApiClient(builder.Configuration);
@@ -168,7 +203,7 @@ app.Use(async (context, next) =>
         "manifest-src 'self'; " +
         "object-src 'none'; " +
         "base-uri 'self'; " +
-        "form-action 'self'; " +
+        "form-action 'self' https://checkout.stripe.com; " +
         "frame-ancestors 'none'; " +
         "worker-src 'self'";
 

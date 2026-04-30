@@ -30,7 +30,11 @@ public sealed class SettingsController(
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(SettingsUpdateInputModel input, CancellationToken cancellationToken)
     {
-        if (!ModelState.IsValid)
+        IReadOnlyList<SupportedLanguageModel> languages = await languageQueryService
+            .GetActiveLanguagesAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        if (!ModelState.IsValid || !HasSupportedLanguageSelection(input, languages))
         {
             SettingsPageViewModel invalidViewModel = await BuildViewModelAsync(null, cancellationToken, input);
             return View("Index", invalidViewModel);
@@ -41,15 +45,15 @@ public sealed class SettingsController(
             input.SecondaryMeaningLanguageCode,
             StringComparison.OrdinalIgnoreCase)
             ? null
-            : input.SecondaryMeaningLanguageCode;
+            : TrimToNull(input.SecondaryMeaningLanguageCode);
 
         secondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(secondaryMeaningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
 
         await webUserPreferenceService.UpdatePreferencesAsync(
-            input.UiLanguageCode,
-            input.PrimaryMeaningLanguageCode,
+            input.UiLanguageCode.Trim(),
+            input.PrimaryMeaningLanguageCode.Trim(),
             secondaryMeaningLanguageCode,
             cancellationToken);
 
@@ -115,5 +119,33 @@ public sealed class SettingsController(
             canUseDualMeaningLanguage,
             canUseDualMeaningLanguage ? null : DualMeaningLanguageLockedMessage,
             User.Identity?.IsAuthenticated == true);
+    }
+
+    private static bool HasSupportedLanguageSelection(
+        SettingsUpdateInputModel input,
+        IReadOnlyList<SupportedLanguageModel> languages)
+    {
+        bool hasUiLanguage = languages.Any(language =>
+            language.SupportsUserInterface &&
+            string.Equals(language.Code, input.UiLanguageCode, StringComparison.OrdinalIgnoreCase));
+        bool hasPrimaryMeaningLanguage = languages.Any(language =>
+            language.SupportsMeanings &&
+            string.Equals(language.Code, input.PrimaryMeaningLanguageCode, StringComparison.OrdinalIgnoreCase));
+        bool hasSecondaryMeaningLanguage = string.IsNullOrWhiteSpace(input.SecondaryMeaningLanguageCode) ||
+            languages.Any(language =>
+                language.SupportsMeanings &&
+                string.Equals(language.Code, input.SecondaryMeaningLanguageCode, StringComparison.OrdinalIgnoreCase));
+
+        return hasUiLanguage && hasPrimaryMeaningLanguage && hasSecondaryMeaningLanguage;
+    }
+
+    private static string? TrimToNull(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        return value.Trim();
     }
 }

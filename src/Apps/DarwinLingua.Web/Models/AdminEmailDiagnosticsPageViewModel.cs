@@ -47,6 +47,7 @@ public sealed record AdminEmailReadinessViewModel(
     bool HasBrevoApiKey,
     bool HasBrevoWebhookSecret,
     bool BrevoSandboxMode,
+    bool BrevoAllowQuerySecretFallback,
     bool FailureAlertsEnabled,
     int FailureAlertThreshold,
     int FailureAlertWindowMinutes,

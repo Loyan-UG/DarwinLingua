@@ -35,6 +35,12 @@ public sealed class ConfirmEmailChangeModel(
         }
 
         string oldEmail = user.Email ?? string.Empty;
+        if (string.Equals(oldEmail, email, StringComparison.OrdinalIgnoreCase))
+        {
+            Succeeded = true;
+            return Page();
+        }
+
         string token;
         try
         {

@@ -35,7 +35,8 @@ public sealed class ConversationStartersController(
     [OutputCache(NoStore = true)]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(slug))
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
         {
             return RedirectToAction(nameof(Index));
         }
@@ -47,7 +48,7 @@ public sealed class ConversationStartersController(
 
         ConversationStarterPackDetailModel? starterPack = await catalogApiClient
             .GetConversationStarterPackBySlugAsync(
-                slug,
+                normalizedSlug,
                 profile.PreferredMeaningLanguage1,
                 effectiveSecondaryMeaningLanguageCode,
                 cancellationToken)

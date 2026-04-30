@@ -10,6 +10,7 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class ModerationController(
     IWebCatalogApiClient catalogApiClient,
     ICommunityNotificationEmailService notificationEmailService,
+    IAccountEmailRateLimiter rateLimiter,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpPost("reports", Name = "Moderation_Report")]
@@ -24,24 +25,40 @@ public sealed class ModerationController(
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
+        string targetType = input.TargetType.Trim();
+        string? targetKey = NormalizeTargetKey(targetType, input.TargetKey);
+        string reason = input.Reason.Trim();
+        if (!IsAllowedTargetType(targetType) || !IsAllowedReportReason(reason) || targetKey is null)
+        {
+            TempData["ErrorMessage"] = "The selected report target or reason is not supported.";
+            return RedirectToSafeReturn(input.ReturnUrl);
+        }
+
+        string ownerEmail = GetOwnerEmail();
+        if (!rateLimiter.TryConsume("moderation-report", ownerEmail, 10, TimeSpan.FromMinutes(15)))
+        {
+            TempData["ErrorMessage"] = "Too many reports submitted. Please wait a few minutes and try again.";
+            return RedirectToSafeReturn(input.ReturnUrl);
+        }
+
         try
         {
             await catalogApiClient.SubmitUserReportAsync(
-                    GetOwnerEmail(),
+                    ownerEmail,
                     new SubmitUserReportRequest(
-                        input.TargetType,
-                        input.TargetKey,
-                        input.ReportedUserEmail,
-                        input.Reason,
-                        input.Details),
+                        targetType,
+                        targetKey,
+                        TrimToNull(input.ReportedUserEmail),
+                        reason,
+                        input.Details.Trim()),
                     cancellationToken)
                 .ConfigureAwait(false);
-            if (IsHighSeverityReason(input.Reason))
+            if (IsHighSeverityReason(reason))
             {
                 await notificationEmailService.SendAdminHighSeverityReportAsync(
-                        input.Reason,
-                        input.TargetType,
-                        input.TargetKey,
+                        reason,
+                        targetType,
+                        targetKey,
                         ResolveCulture(),
                         HttpContext.TraceIdentifier,
                         cancellationToken)
@@ -49,11 +66,11 @@ public sealed class ModerationController(
             }
 
             TempData["StatusMessage"] = "Report submitted for moderation review.";
-            analyticsService?.Record(WebProductAnalyticsEvents.UserReported, $"target:{input.TargetType}");
+            analyticsService?.Record(WebProductAnalyticsEvents.UserReported, $"target:{targetType}");
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildModerationErrorMessage(exception);
         }
 
         return RedirectToSafeReturn(input.ReturnUrl);
@@ -71,11 +88,36 @@ public sealed class ModerationController(
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
+        if (string.IsNullOrWhiteSpace(input.BlockedEmail) &&
+            !input.SourcePartnerRequestId.HasValue &&
+            !input.TargetLearnerProfileId.HasValue)
+        {
+            TempData["ErrorMessage"] = "A learner email, partner request, or learner profile is required to block.";
+            return RedirectToSafeReturn(input.ReturnUrl);
+        }
+
+        if (input.SourcePartnerRequestId == Guid.Empty || input.TargetLearnerProfileId == Guid.Empty)
+        {
+            TempData["ErrorMessage"] = "The selected block target is not supported.";
+            return RedirectToSafeReturn(input.ReturnUrl);
+        }
+
+        string ownerEmail = GetOwnerEmail();
+        if (!rateLimiter.TryConsume("moderation-block", ownerEmail, 10, TimeSpan.FromMinutes(15)))
+        {
+            TempData["ErrorMessage"] = "Too many block attempts. Please wait a few minutes and try again.";
+            return RedirectToSafeReturn(input.ReturnUrl);
+        }
+
         try
         {
             await catalogApiClient.BlockUserAsync(
-                    GetOwnerEmail(),
-                    new BlockUserRequest(input.BlockedEmail, input.Reason, input.SourcePartnerRequestId, input.TargetLearnerProfileId),
+                    ownerEmail,
+                    new BlockUserRequest(
+                        TrimToNull(input.BlockedEmail),
+                        TrimToNull(input.Reason),
+                        input.SourcePartnerRequestId,
+                        input.TargetLearnerProfileId),
                     cancellationToken)
                 .ConfigureAwait(false);
 
@@ -84,16 +126,19 @@ public sealed class ModerationController(
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildModerationErrorMessage(exception);
         }
 
         return RedirectToSafeReturn(input.ReturnUrl);
     }
 
-    private IActionResult RedirectToSafeReturn(string? returnUrl) =>
-        !string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl)
-            ? LocalRedirect(returnUrl)
+    private IActionResult RedirectToSafeReturn(string? returnUrl)
+    {
+        string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
+        return normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
+            ? LocalRedirect(normalizedReturnUrl)
             : RedirectToAction("Index", "Home");
+    }
 
     private string GetOwnerEmail() =>
         WebUserIdentity.GetRequiredEmail(User, "The authenticated learner does not have an email address.");
@@ -108,4 +153,43 @@ public sealed class ModerationController(
         string.Equals(reason, "harassment", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(reason, "unsafe-contact", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(reason, "impersonation", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedTargetType(string targetType) =>
+        string.Equals(targetType, "conversation-event", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(targetType, "learner-profile", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(targetType, "partner-request", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedReportReason(string reason) =>
+        string.Equals(reason, "inaccurate-listing", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(reason, "spam", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(reason, "harassment", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(reason, "unsafe-contact", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(reason, "impersonation", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(reason, "other", StringComparison.OrdinalIgnoreCase);
+
+    private static string BuildModerationErrorMessage(InvalidOperationException exception) =>
+        exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
+            ? "The selected moderation target is no longer available."
+            : "The moderation request could not be saved right now. Please try again.";
+
+    private static string? TrimToNull(string? value) =>
+        string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private static string? NormalizeTargetKey(string targetType, string targetKey)
+    {
+        if (string.Equals(targetType, "conversation-event", StringComparison.OrdinalIgnoreCase))
+        {
+            return WebRouteInput.NormalizeSlug(targetKey);
+        }
+
+        if (string.Equals(targetType, "learner-profile", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(targetType, "partner-request", StringComparison.OrdinalIgnoreCase))
+        {
+            return Guid.TryParse(targetKey.Trim(), out Guid parsedId) && parsedId != Guid.Empty
+                ? parsedId.ToString("D")
+                : null;
+        }
+
+        return null;
+    }
 }

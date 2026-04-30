@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json.Serialization;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -25,24 +27,27 @@ public sealed class BrevoTransactionalWebhookController(
             return Unauthorized();
         }
 
-        string? providerMessageId = webhookEvent.MessageId ?? webhookEvent.MessageIdAlternative;
-        if (string.IsNullOrWhiteSpace(providerMessageId) || string.IsNullOrWhiteSpace(webhookEvent.Event))
+        string? providerMessageId = NormalizeLength(webhookEvent.MessageId ?? webhookEvent.MessageIdAlternative, 256);
+        string? providerEvent = NormalizeLength(webhookEvent.Event, 64);
+        if (string.IsNullOrWhiteSpace(providerMessageId) ||
+            string.IsNullOrWhiteSpace(providerEvent) ||
+            !IsAllowedProviderEvent(providerEvent))
         {
-            logger.LogInformation("Ignored Brevo webhook event without message id or event name.");
+            logger.LogInformation("Ignored Brevo webhook event without a supported message id or event name.");
             return Accepted();
         }
 
         DateTimeOffset eventAtUtc = ResolveEventTimestamp(webhookEvent);
         bool updated = await deliveryLogRepository.MarkProviderEventAsync(
                 providerMessageId,
-                webhookEvent.Event,
+                providerEvent,
                 eventAtUtc,
-                webhookEvent.Reason ?? webhookEvent.Description ?? webhookEvent.Subject,
+                NormalizeLength(webhookEvent.Reason ?? webhookEvent.Description ?? webhookEvent.Subject, 512),
                 cancellationToken)
             .ConfigureAwait(false);
         if (!updated)
         {
-            logger.LogInformation("Brevo webhook event {Event} did not match an internal delivery log for provider message id {ProviderMessageId}.", webhookEvent.Event, providerMessageId);
+            logger.LogInformation("Brevo webhook event {Event} did not match an internal delivery log for provider message id {ProviderMessageId}.", providerEvent, providerMessageId);
         }
 
         return Ok();
@@ -53,22 +58,37 @@ public sealed class BrevoTransactionalWebhookController(
         string configuredSecret = emailOptions.Value.BrevoWebhookSecret;
         if (string.IsNullOrWhiteSpace(configuredSecret))
         {
-            return true;
+            logger.LogWarning("Rejected Brevo webhook because TransactionalEmail:BrevoWebhookSecret is not configured.");
+            return false;
         }
 
         string? bearerToken = ResolveBearerToken();
-        if (string.Equals(bearerToken, configuredSecret, StringComparison.Ordinal))
+        if (SecretEquals(bearerToken, configuredSecret))
         {
             return true;
         }
 
         if (Request.Headers.TryGetValue("X-DarwinLingua-Brevo-Webhook-Secret", out var headerSecret) &&
-            string.Equals(headerSecret.ToString(), configuredSecret, StringComparison.Ordinal))
+            SecretEquals(headerSecret.ToString(), configuredSecret))
         {
             return true;
         }
 
-        return string.Equals(secret, configuredSecret, StringComparison.Ordinal);
+        return emailOptions.Value.BrevoAllowQuerySecretFallback &&
+            SecretEquals(secret, configuredSecret);
+    }
+
+    private static bool SecretEquals(string? suppliedSecret, string configuredSecret)
+    {
+        if (string.IsNullOrWhiteSpace(suppliedSecret))
+        {
+            return false;
+        }
+
+        byte[] suppliedBytes = Encoding.UTF8.GetBytes(suppliedSecret.Trim());
+        byte[] configuredBytes = Encoding.UTF8.GetBytes(configuredSecret.Trim());
+        return suppliedBytes.Length == configuredBytes.Length &&
+            CryptographicOperations.FixedTimeEquals(suppliedBytes, configuredBytes);
     }
 
     private static DateTimeOffset ResolveEventTimestamp(BrevoTransactionalEmailWebhookEvent webhookEvent)
@@ -105,6 +125,33 @@ public sealed class BrevoTransactionalWebhookController(
             ? authorization[bearerPrefix.Length..].Trim()
             : null;
     }
+
+    private static string? NormalizeLength(string? value, int maxLength)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return trimmed.Length <= maxLength ? trimmed : trimmed[..maxLength];
+    }
+
+    private static bool IsAllowedProviderEvent(string providerEvent) =>
+        string.Equals(providerEvent, "request", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "sent", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "delivered", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "soft_bounce", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "hard_bounce", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "blocked", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "invalid", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "invalid_email", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "error", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "opened", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "unique_opened", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "click", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "unsubscribed", StringComparison.OrdinalIgnoreCase);
 }
 
 public sealed record BrevoTransactionalEmailWebhookEvent(

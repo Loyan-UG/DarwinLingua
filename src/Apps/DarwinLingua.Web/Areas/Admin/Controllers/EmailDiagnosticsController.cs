@@ -1,4 +1,5 @@
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 using DarwinLingua.Identity;
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Models;
@@ -18,7 +19,9 @@ public sealed class EmailDiagnosticsController(
     IEmailDeliveryLogRepository deliveryLogRepository,
     IOptions<TransactionalEmailOptions> emailOptions,
     UserManager<DarwinLinguaIdentityUser> userManager,
-    IAccountEmailService accountEmailService)
+    IAccountEmailService accountEmailService,
+    IAccountEmailRateLimiter rateLimiter,
+    ILogger<EmailDiagnosticsController> logger)
     : Controller
 {
     [HttpGet("", Name = "Admin_EmailDiagnostics")]
@@ -38,17 +41,35 @@ public sealed class EmailDiagnosticsController(
         DateTimeOffset? parsedFromUtc = ParseDateTimeOffset(fromUtc);
         DateTimeOffset? parsedToUtc = ParseDateTimeOffset(toUtc);
         int boundedTake = Math.Clamp(take, 1, 200);
+        string? normalizedStatus = NormalizeAllowedValue(status, IsAllowedDeliveryStatus, 32);
+        string? normalizedScenario = NormalizeLength(scenario, 128);
+        string? normalizedRecipientHashPrefix = NormalizeHexPrefix(recipientHashPrefix, 64);
+        string? normalizedProviderMessageId = NormalizeLength(providerMessageId, 256);
+        string? normalizedProviderEvent = NormalizeAllowedValue(providerEvent, IsAllowedProviderEvent, 64);
+        string? normalizedSuppressionHashPrefix = NormalizeHexPrefix(suppressionHashPrefix, 64);
+        string? normalizedSuppressionReason = NormalizeAllowedValue(suppressionReason, IsAllowedSuppressionReason, 64);
+        string? queryErrorMessage = BuildQueryValidationMessage(
+            status,
+            normalizedStatus,
+            recipientHashPrefix,
+            normalizedRecipientHashPrefix,
+            providerEvent,
+            normalizedProviderEvent,
+            suppressionHashPrefix,
+            normalizedSuppressionHashPrefix,
+            suppressionReason,
+            normalizedSuppressionReason);
 
         IReadOnlyList<WebEmailDeliveryLog> logs = await deliveryLogRepository
             .GetRecentAsync(
                 boundedTake,
-                status,
-                scenario,
+                normalizedStatus,
+                normalizedScenario,
                 parsedFromUtc,
                 parsedToUtc,
-                recipientHashPrefix,
-                providerMessageId,
-                providerEvent,
+                normalizedRecipientHashPrefix,
+                normalizedProviderMessageId,
+                normalizedProviderEvent,
                 cancellationToken)
             .ConfigureAwait(false);
         EmailSuppressionSummary suppressionSummary = await deliveryLogRepository
@@ -56,22 +77,22 @@ public sealed class EmailDiagnosticsController(
             .ConfigureAwait(false);
         IReadOnlyList<WebEmailSuppression> suppressions = await deliveryLogRepository
             .GetSuppressionsAsync(
-                suppressionHashPrefix,
-                suppressionReason,
+                normalizedSuppressionHashPrefix,
+                normalizedSuppressionReason,
                 boundedTake,
                 cancellationToken)
             .ConfigureAwait(false);
 
         AdminEmailDiagnosticsPageViewModel model = new(
-            status,
-            scenario,
+            normalizedStatus,
+            normalizedScenario,
             fromUtc,
             toUtc,
-            recipientHashPrefix,
-            providerMessageId,
-            providerEvent,
-            suppressionHashPrefix,
-            suppressionReason,
+            normalizedRecipientHashPrefix,
+            normalizedProviderMessageId,
+            normalizedProviderEvent,
+            normalizedSuppressionHashPrefix,
+            normalizedSuppressionReason,
             boundedTake,
             emailOptions.Value.DeliveryLogRetentionDays,
             new EmailSuppressionSummaryViewModel(
@@ -79,7 +100,7 @@ public sealed class EmailDiagnosticsController(
                 suppressionSummary.LastCreatedAtUtc,
                 suppressionSummary.LastReason),
             TempData["StatusMessage"] as string,
-            TempData["ErrorMessage"] as string,
+            queryErrorMessage ?? TempData["ErrorMessage"] as string,
             BuildReadiness(),
             logs.Select(static log => new AdminEmailDeliveryLogItemViewModel(
                     log.Id,
@@ -117,19 +138,26 @@ public sealed class EmailDiagnosticsController(
 
     [HttpPost("suppressions/remove", Name = "Admin_EmailDiagnostics_RemoveSuppression")]
     [ValidateAntiForgeryToken]
+    [Authorize(Policy = "Admin")]
     public async Task<IActionResult> RemoveSuppression(
         [FromForm] string? recipientEmailHash,
         CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(recipientEmailHash))
+        string normalizedHash = recipientEmailHash?.Trim().ToUpperInvariant() ?? string.Empty;
+        if (!IsSha256HexHash(normalizedHash))
         {
-            TempData["ErrorMessage"] = "Suppression hash is required.";
+            TempData["ErrorMessage"] = "Suppression hash must be a full SHA-256 hex hash.";
             return RedirectToAction(nameof(Index));
         }
 
         bool removed = await deliveryLogRepository
-            .DeleteSuppressionByHashAsync(recipientEmailHash, cancellationToken)
+            .DeleteSuppressionByHashAsync(normalizedHash, cancellationToken)
             .ConfigureAwait(false);
+        logger.LogInformation(
+            "Admin {AdminEmail} removed email suppression for hash prefix {HashPrefix}. Removed: {Removed}.",
+            GetAdminEmail(),
+            normalizedHash[..Math.Min(12, normalizedHash.Length)],
+            removed);
         TempData[removed ? "StatusMessage" : "ErrorMessage"] = removed
             ? "Suppression removed. Future sends to that hashed recipient are allowed again."
             : "No suppression was found for that hash.";
@@ -145,29 +173,47 @@ public sealed class EmailDiagnosticsController(
         [FromForm] string? reason,
         CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(providerMessageId) || string.IsNullOrWhiteSpace(providerEvent))
+        string normalizedProviderMessageId = providerMessageId?.Trim() ?? string.Empty;
+        string normalizedProviderEvent = providerEvent?.Trim() ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(normalizedProviderMessageId) ||
+            normalizedProviderMessageId.Length > 256 ||
+            string.IsNullOrWhiteSpace(normalizedProviderEvent) ||
+            normalizedProviderEvent.Length > 64)
         {
-            TempData["ErrorMessage"] = "Provider message id and provider event are required.";
+            TempData["ErrorMessage"] = "Provider message id and provider event are required and must fit expected lengths.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        if (!IsAllowedProviderEvent(normalizedProviderEvent))
+        {
+            TempData["ErrorMessage"] = "Provider event is not supported.";
             return RedirectToAction(nameof(Index));
         }
 
         bool updated = await deliveryLogRepository
             .MarkProviderEventAsync(
-                providerMessageId.Trim(),
-                providerEvent.Trim(),
+                normalizedProviderMessageId,
+                normalizedProviderEvent,
                 DateTimeOffset.UtcNow,
-                reason,
+                TrimToNull(reason, 512),
                 cancellationToken)
             .ConfigureAwait(false);
+        logger.LogInformation(
+            "Admin {AdminEmail} manually recorded provider event {ProviderEvent} for provider message id {ProviderMessageId}. Updated: {Updated}.",
+            GetAdminEmail(),
+            normalizedProviderEvent,
+            normalizedProviderMessageId,
+            updated);
 
         TempData[updated ? "StatusMessage" : "ErrorMessage"] = updated
             ? "Provider event recorded for the matching delivery log."
             : "No delivery log matched that provider message id.";
-        return RedirectToAction(nameof(Index), new { providerMessageId });
+        return RedirectToAction(nameof(Index), new { providerMessageId = normalizedProviderMessageId });
     }
 
     [HttpPost("cleanup", Name = "Admin_EmailDiagnostics_Cleanup")]
     [ValidateAntiForgeryToken]
+    [Authorize(Policy = "Admin")]
     public async Task<IActionResult> Cleanup(CancellationToken cancellationToken)
     {
         int retentionDays = emailOptions.Value.DeliveryLogRetentionDays;
@@ -175,6 +221,11 @@ public sealed class EmailDiagnosticsController(
         int deletedCount = await deliveryLogRepository
             .DeleteOlderThanAsync(cutoffUtc, cancellationToken)
             .ConfigureAwait(false);
+        logger.LogInformation(
+            "Admin {AdminEmail} deleted {DeletedCount} email delivery log entries older than {RetentionDays} days.",
+            GetAdminEmail(),
+            deletedCount,
+            retentionDays);
 
         TempData["StatusMessage"] =
             $"Deleted {deletedCount} email delivery log entries older than {retentionDays} days.";
@@ -187,13 +238,14 @@ public sealed class EmailDiagnosticsController(
         [FromForm] string? email,
         CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(email))
+        string normalizedEmail = email?.Trim() ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(normalizedEmail) || !new EmailAddressAttribute().IsValid(normalizedEmail))
         {
-            TempData["ErrorMessage"] = "Email is required.";
+            TempData["ErrorMessage"] = "A valid email is required.";
             return RedirectToAction(nameof(Index));
         }
 
-        DarwinLinguaIdentityUser? user = await userManager.FindByEmailAsync(email.Trim()).ConfigureAwait(false);
+        DarwinLinguaIdentityUser? user = await userManager.FindByEmailAsync(normalizedEmail).ConfigureAwait(false);
         if (user is null)
         {
             TempData["StatusMessage"] = "If an unconfirmed account exists for that email, a new confirmation email has been sent.";
@@ -203,6 +255,12 @@ public sealed class EmailDiagnosticsController(
         if (await userManager.IsEmailConfirmedAsync(user).ConfigureAwait(false))
         {
             TempData["StatusMessage"] = "That account is already confirmed; no confirmation email was sent.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        if (!rateLimiter.TryConsume("admin-resend-confirmation", normalizedEmail, 3, TimeSpan.FromHours(1)))
+        {
+            TempData["ErrorMessage"] = "Too many confirmation resend attempts for that account. Please wait before trying again.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -234,6 +292,96 @@ public sealed class EmailDiagnosticsController(
         return DateTimeOffset.TryParse(value.Trim(), out DateTimeOffset parsed)
             ? parsed.ToUniversalTime()
             : null;
+    }
+
+    private static bool IsSha256HexHash(string value) =>
+        value.Length == 64 && value.All(static character =>
+            (character >= '0' && character <= '9') ||
+            (character >= 'A' && character <= 'F'));
+
+    private static string? NormalizeLength(string? value, int maxLength)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return trimmed.Length <= maxLength ? trimmed : trimmed[..maxLength];
+    }
+
+    private static string? NormalizeHexPrefix(string? value, int maxLength)
+    {
+        string? normalized = NormalizeLength(value, maxLength)?.ToUpperInvariant();
+        return normalized is not null && normalized.All(static character =>
+            (character >= '0' && character <= '9') ||
+            (character >= 'A' && character <= 'F'))
+            ? normalized
+            : null;
+    }
+
+    private static string? NormalizeAllowedValue(string? value, Func<string, bool> isAllowed, int maxLength)
+    {
+        string? normalized = NormalizeLength(value, maxLength);
+        return normalized is not null && isAllowed(normalized)
+            ? normalized
+            : null;
+    }
+
+    private static string? BuildQueryValidationMessage(params object?[] values)
+    {
+        for (int index = 0; index < values.Length; index += 2)
+        {
+            string? original = values[index] as string;
+            string? normalized = values[index + 1] as string;
+            if (!string.IsNullOrWhiteSpace(original) && string.IsNullOrWhiteSpace(normalized))
+            {
+                return "One or more email diagnostic filters were ignored because they were not supported.";
+            }
+        }
+
+        return null;
+    }
+
+    private static bool IsAllowedDeliveryStatus(string status) =>
+        string.Equals(status, "Queued", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "Sent", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "Failed", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "Skipped", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "Suppressed", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedProviderEvent(string providerEvent) =>
+        string.Equals(providerEvent, "request", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "sent", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "delivered", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "soft_bounce", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "hard_bounce", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "blocked", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "invalid", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "invalid_email", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "error", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "opened", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "unique_opened", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "click", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "unsubscribed", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedSuppressionReason(string suppressionReason) =>
+        string.Equals(suppressionReason, "brevo:hard_bounce", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(suppressionReason, "brevo:blocked", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(suppressionReason, "brevo:invalid", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(suppressionReason, "brevo:invalid_email", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(suppressionReason, "brevo:spam", StringComparison.OrdinalIgnoreCase);
+
+    private static string? TrimToNull(string? value, int maxLength)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return trimmed.Length <= maxLength ? trimmed : trimmed[..maxLength];
     }
 
     private AdminEmailReadinessViewModel BuildReadiness()
@@ -284,6 +432,11 @@ public sealed class EmailDiagnosticsController(
             warnings.Add("Brevo sandbox mode is enabled; API calls are validated but no real email is delivered.");
         }
 
+        if (brevoMode && options.BrevoAllowQuerySecretFallback)
+        {
+            warnings.Add("Brevo webhook query-string secret fallback is enabled; use only for local diagnostics.");
+        }
+
         if (options.AdminNotificationEmails.Length == 0)
         {
             warnings.Add("No admin notification recipients are configured.");
@@ -314,6 +467,7 @@ public sealed class EmailDiagnosticsController(
             !string.IsNullOrWhiteSpace(options.BrevoApiKey),
             !string.IsNullOrWhiteSpace(options.BrevoWebhookSecret),
             options.BrevoSandboxMode,
+            options.BrevoAllowQuerySecretFallback,
             options.EnableFailureAlerts,
             options.FailureAlertThreshold,
             options.FailureAlertWindowMinutes,
@@ -347,4 +501,9 @@ public sealed class EmailDiagnosticsController(
             ?.RequestCulture.UICulture.Name
         ?? Request.Headers.AcceptLanguage.ToString()
         ?? "en";
+
+    private string GetAdminEmail() =>
+        WebUserIdentity.TryGetEmail(User)
+        ?? User.Identity?.Name
+        ?? "admin@local";
 }

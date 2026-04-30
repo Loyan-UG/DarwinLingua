@@ -219,7 +219,7 @@ Suggested fields:
 - [x] define retention policy for delivery logs
 - [x] avoid storing sensitive token values in logs
 - [x] avoid logging full reset/confirmation URLs
-- [x] define cleanup job or manual cleanup endpoint for old logs
+- [x] define Admin-only cleanup job or manual cleanup endpoint for old logs
 - [x] add admin diagnostics page for recent email delivery status
 - [x] define internal suppression behavior for permanent provider failures
 
@@ -241,8 +241,10 @@ Email tokens are security-sensitive. They must be short-lived, single-purpose, a
 - [x] ensure tokens are URL-safe and encoded correctly
 - [x] ensure reset/confirmation URLs are generated from configured public base URL, not from unsafe request headers alone
 - [x] protect against user enumeration in reset and resend flows
+- [x] protect against user enumeration in registration for existing email addresses
 - [x] rate-limit password reset requests
 - [x] rate-limit confirmation resend requests
+- [x] rate-limit registration confirmation sending
 - [x] invalidate or make old flows harmless after email/password changes where applicable
 - [ ] add tests for expired, invalid, reused, malformed, and wrong-purpose tokens
 

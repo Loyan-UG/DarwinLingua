@@ -1,0 +1,49 @@
+@model DarwinLingua.Web.Models.BillingPageViewModel
+@{
+    ViewData["Title"] = "Billing";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Billing</span>
+    <h1 class="headline-md">Plan and payment</h1>
+    @if (TempData["BillingStatus"] is string statusMessage)
+    {
+        <p class="body-lg">@statusMessage</p>
+    }
+    <div class="grid-two-col">
+        <article class="panel stack-md">
+            <h2 class="headline-sm">Current plan</h2>
+            <ul class="feature-list">
+                <li>Tier: @Model.Entitlement.Tier</li>
+                @if (Model.Entitlement.TrialEndsAtUtc is not null)
+                {
+                    <li>Trial ends: @Model.Entitlement.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+                }
+                @if (Model.Entitlement.PremiumEndsAtUtc is not null)
+                {
+                    <li>Premium renews or expires: @Model.Entitlement.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+                }
+                <li>Features: @string.Join(", ", Model.Entitlement.EnabledFeatures)</li>
+            </ul>
+        </article>
+        <article class="panel stack-md">
+            <h2 class="headline-sm">Premium monthly</h2>
+            <p class="body-sm">Unlock premium learning tools through Stripe Checkout.</p>
+            @if (!Model.StripeEnabled)
+            {
+                <p class="body-sm">Stripe billing is not enabled in this environment.</p>
+            }
+            else if (Model.CanStartCheckout)
+            {
+                <form method="post" asp-controller="Billing" asp-action="StartStripeCheckout">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="button button--primary">Continue to Stripe</button>
+                </form>
+            }
+            else
+            {
+                <p class="body-sm">Premium access is active.</p>
+            }
+        </article>
+    </div>
+</section>

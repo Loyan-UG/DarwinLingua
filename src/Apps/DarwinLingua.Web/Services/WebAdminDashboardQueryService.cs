@@ -9,6 +9,27 @@ public interface IWebAdminDashboardQueryService
 
 internal sealed class WebAdminDashboardQueryService(IWebCatalogApiClient catalogApiClient) : IWebAdminDashboardQueryService
 {
-    public Task<AdminDashboardViewModel> GetDashboardAsync(CancellationToken cancellationToken) =>
-        catalogApiClient.GetAdminDashboardAsync(cancellationToken);
+    public async Task<AdminDashboardViewModel> GetDashboardAsync(CancellationToken cancellationToken)
+    {
+        AdminSystemReportResponse report = await catalogApiClient
+            .GetAdminSystemReportAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return new AdminDashboardViewModel(
+            report.Catalog.ActiveWordCount,
+            report.Catalog.DraftWordCount,
+            report.Catalog.TopicCount,
+            report.Operations.ImportedPackageCount,
+            report.Operations.FailedPackageCount,
+            report.Operations.LastImportAtUtc,
+            report.Social.OrganizerProfileCount,
+            report.Social.ConversationEventCount,
+            report.Social.EventRsvpCount,
+            report.Social.PendingOrganizerClaimRequestCount,
+            report.Social.LearnerConversationProfileCount,
+            report.Social.PendingPartnerRequestCount,
+            report.Moderation.PendingUserReportCount,
+            report.Moderation.UserBlockCount,
+            report.Moderation.ModerationDecisionAuditCount);
+    }
 }

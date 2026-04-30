@@ -57,11 +57,21 @@
         </label>
         <label class="field">
             <span>Verification status</span>
-            <input name="VerificationStatus" value="@Model.Input.VerificationStatus" placeholder="reviewed" />
+            <select name="VerificationStatus">
+                @foreach (string status in new[] { "reviewed", "verified", "unverified", "stale" })
+                {
+                    <option value="@status" selected="@(string.Equals(Model.Input.VerificationStatus, status, StringComparison.OrdinalIgnoreCase))">@status</option>
+                }
+            </select>
         </label>
         <label class="field">
             <span>Plan</span>
-            <input name="PlanKey" value="@Model.Input.PlanKey" placeholder="free-organizer" />
+            <select name="PlanKey">
+                @foreach (string planKey in new[] { "free-organizer", "community-organizer", "premium-organizer" })
+                {
+                    <option value="@planKey" selected="@(string.Equals(Model.Input.PlanKey, planKey, StringComparison.OrdinalIgnoreCase))">@planKey</option>
+                }
+            </select>
         </label>
         <label class="field">
             <span>Historical event count</span>
@@ -134,6 +144,7 @@
 
 <section class="panel stack-md">
     <h2 class="headline-sm">Claim requests</h2>
+    <p>Approving a claim records the decision and sends the requester email. Assign owner access separately when the requester should manage the organizer profile.</p>
     @if (Model.ClaimRequests.Count == 0)
     {
         <p>No organizer claim requests yet.</p>

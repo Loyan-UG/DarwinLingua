@@ -16,10 +16,13 @@ public sealed record SettingsPageViewModel(
 public sealed class SettingsUpdateInputModel
 {
     [Required]
+    [StringLength(8)]
     public string UiLanguageCode { get; init; } = "en";
 
     [Required]
+    [StringLength(8)]
     public string PrimaryMeaningLanguageCode { get; init; } = "en";
 
+    [StringLength(8)]
     public string? SecondaryMeaningLanguageCode { get; init; }
 }

@@ -12,8 +12,11 @@ public sealed class PartnerMatchingController(
     IWebCatalogApiClient catalogApiClient,
     IWebEntitledFeatureAccessService featureAccessService,
     ICommunityNotificationEmailService notificationEmailService,
+    IAccountEmailRateLimiter rateLimiter,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
+    private const int MaxSearchTextLength = 128;
+
     [HttpGet("", Name = "PartnerMatching_Index")]
     public async Task<IActionResult> Index(
         PartnerMatchSearchInputModel search,
@@ -35,17 +38,16 @@ public sealed class PartnerMatchingController(
         }
 
         string ownerEmail = GetOwnerEmail();
-        IReadOnlyList<PartnerMatchProfileModel> matches = await catalogApiClient
-            .SearchPartnerMatchesAsync(ownerEmail, ToRequest(search), cancellationToken)
-            .ConfigureAwait(false);
-        IReadOnlyList<PartnerRequestModel> requests = await catalogApiClient
-            .GetPartnerRequestsAsync(ownerEmail, cancellationToken)
-            .ConfigureAwait(false);
+        Task<IReadOnlyList<PartnerMatchProfileModel>> matchesTask = catalogApiClient
+            .SearchPartnerMatchesAsync(ownerEmail, ToRequest(search), cancellationToken);
+        Task<IReadOnlyList<PartnerRequestModel>> requestsTask = catalogApiClient
+            .GetPartnerRequestsAsync(ownerEmail, cancellationToken);
+        await Task.WhenAll(matchesTask, requestsTask).ConfigureAwait(false);
 
         return View(new PartnerMatchingPageViewModel(
             search,
-            matches,
-            requests,
+            await matchesTask.ConfigureAwait(false),
+            await requestsTask.ConfigureAwait(false),
             TempData["StatusMessage"] as string,
             TempData["ErrorMessage"] as string));
     }
@@ -62,12 +64,25 @@ public sealed class PartnerMatchingController(
             return RedirectToAction(nameof(Index));
         }
 
+        if (!IsAllowedOpenerTemplateKey(input.OpenerTemplateKey))
+        {
+            TempData["ErrorMessage"] = "The selected opener is not supported.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        string ownerEmail = GetOwnerEmail();
+        if (!rateLimiter.TryConsume("partner-request", ownerEmail, 10, TimeSpan.FromMinutes(15)))
+        {
+            TempData["ErrorMessage"] = "Too many partner requests. Please wait a few minutes and try again.";
+            return RedirectToAction(nameof(Index));
+        }
+
         try
         {
             await featureAccessService.EnsureCanUsePartnerMatchingAsync(cancellationToken).ConfigureAwait(false);
             PartnerRequestModel request = await catalogApiClient.SubmitPartnerRequestAsync(
-                    GetOwnerEmail(),
-                    new SubmitPartnerRequestRequest(input.TargetLearnerProfileId, input.OpenerTemplateKey, input.Note),
+                    ownerEmail,
+                    new SubmitPartnerRequestRequest(input.TargetLearnerProfileId, input.OpenerTemplateKey, input.Note?.Trim()),
                     cancellationToken)
                 .ConfigureAwait(false);
 
@@ -76,7 +91,7 @@ public sealed class PartnerMatchingController(
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildPartnerRequestErrorMessage(exception);
         }
 
         return RedirectToAction(nameof(Index));
@@ -91,6 +106,12 @@ public sealed class PartnerMatchingController(
     {
         try
         {
+            if (!IsAllowedPartnerRequestAction(actionName))
+            {
+                TempData["ErrorMessage"] = "The selected partner request action is not supported.";
+                return RedirectToAction(nameof(Index));
+            }
+
             await featureAccessService.EnsureCanUsePartnerMatchingAsync(cancellationToken).ConfigureAwait(false);
             PartnerRequestModel request = await catalogApiClient.UpdatePartnerRequestStateAsync(
                     GetOwnerEmail(),
@@ -117,7 +138,7 @@ public sealed class PartnerMatchingController(
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildPartnerRequestErrorMessage(exception);
         }
 
         return RedirectToAction(nameof(Index));
@@ -134,9 +155,87 @@ public sealed class PartnerMatchingController(
 
     private static PartnerMatchSearchRequest ToRequest(PartnerMatchSearchInputModel search) =>
         new(
-            search.CityRegion,
-            search.InteractionPreference,
-            search.GermanLevel,
-            search.HelperLanguageCode,
-            search.GoalKeyword);
+            NormalizeSearchText(search.CityRegion),
+            NormalizeInteractionPreference(search.InteractionPreference),
+            NormalizeGermanLevel(search.GermanLevel),
+            NormalizeLanguageCode(search.HelperLanguageCode),
+            NormalizeSearchText(search.GoalKeyword));
+
+    private static bool IsAllowedOpenerTemplateKey(string openerTemplateKey) =>
+        string.Equals(openerTemplateKey, "practice-goals", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(openerTemplateKey, "same-city", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(openerTemplateKey, "online-practice", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(openerTemplateKey, "event-follow-up", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedPartnerRequestAction(string actionName) =>
+        string.Equals(actionName, "accept", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(actionName, "decline", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(actionName, "block", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(actionName, "cancel", StringComparison.OrdinalIgnoreCase);
+
+    private static string BuildPartnerRequestErrorMessage(InvalidOperationException exception) =>
+        exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
+            ? "The selected partner request or learner profile is no longer available."
+            : "The partner request could not be updated right now. Please try again.";
+
+    private static string? NormalizeSearchText(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return trimmed.Length <= MaxSearchTextLength ? trimmed : trimmed[..MaxSearchTextLength];
+    }
+
+    private static string? NormalizeInteractionPreference(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return string.Equals(trimmed, "online", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "in-person", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "both", StringComparison.OrdinalIgnoreCase)
+            ? trimmed
+            : null;
+    }
+
+    private static string? NormalizeGermanLevel(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return string.Equals(trimmed, "A1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "A2", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "B1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "B2", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "C1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "C2", StringComparison.OrdinalIgnoreCase)
+            ? trimmed
+            : null;
+    }
+
+    private static string? NormalizeLanguageCode(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return trimmed.Length is >= 2 and <= 8 &&
+            trimmed.All(static character =>
+                (character >= 'a' && character <= 'z') ||
+                (character >= 'A' && character <= 'Z') ||
+                character == '-')
+            ? trimmed
+            : null;
+    }
 }

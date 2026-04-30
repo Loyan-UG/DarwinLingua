@@ -32,7 +32,9 @@ public sealed class OrganizerProfilesController(
         AdminOrganizerProfileInputModel input,
         CancellationToken cancellationToken)
     {
-        if (!ModelState.IsValid)
+        if (!ModelState.IsValid ||
+            !IsAllowedOrganizerVerificationStatus(input.VerificationStatus) ||
+            !IsAllowedOrganizerPlan(input.PlanKey))
         {
             return View("Index", await BuildViewModelAsync(
                 input,
@@ -42,17 +44,31 @@ public sealed class OrganizerProfilesController(
                 cancellationToken));
         }
 
+        string[] supportedLearnerLevels = SplitCsv(input.SupportedLearnerLevels);
+        string[] helperLanguageCodes = SplitCsv(input.HelperLanguageCodes);
+        if (!HasAllowedCefrLevels(supportedLearnerLevels) || !HasAllowedLanguageCodes(helperLanguageCodes))
+        {
+            return View("Index", await BuildViewModelAsync(
+                input,
+                new AdminOrganizerProfileOwnerInputModel(),
+                null,
+                "Supported levels or helper languages contain unsupported values.",
+                cancellationToken));
+        }
+
+        string slug = input.Slug.Trim();
+        string displayName = input.DisplayName.Trim();
         AdminSaveOrganizerProfileRequest request = new(
-            input.Slug,
-            input.DisplayName,
-            input.OrganizerType,
-            input.Description,
-            input.CityRegion,
+            slug,
+            displayName,
+            input.OrganizerType.Trim(),
+            input.Description.Trim(),
+            TrimToNull(input.CityRegion),
             input.IsOnlineAvailable,
-            SplitCsv(input.SupportedLearnerLevels),
-            SplitCsv(input.HelperLanguageCodes),
-            input.WebsiteUrl,
-            input.PublicContactMethod,
+            supportedLearnerLevels,
+            helperLanguageCodes,
+            TrimToNull(input.WebsiteUrl),
+            TrimToNull(input.PublicContactMethod),
             input.VerificationStatus,
             input.PlanKey,
             input.HistoricalEventCount);
@@ -72,7 +88,7 @@ public sealed class OrganizerProfilesController(
                 input,
                 new AdminOrganizerProfileOwnerInputModel(),
                 null,
-                exception.Message,
+                BuildAdminOperationErrorMessage(exception, "organizer profile"),
                 cancellationToken));
         }
     }
@@ -93,13 +109,15 @@ public sealed class OrganizerProfilesController(
                 cancellationToken));
         }
 
+        string organizerProfileSlug = input.OrganizerProfileSlug.Trim();
+        string ownerEmail = input.OwnerEmail.Trim();
         string assignedBy = WebUserIdentity.TryGetEmail(User)
             ?? User.Identity?.Name
             ?? "web-admin";
         try
         {
             OrganizerProfileOwnerModel owner = await catalogApiClient.AssignAdminOrganizerProfileOwnerAsync(
-                    new AssignOrganizerProfileOwnerRequest(input.OrganizerProfileSlug, input.OwnerEmail, assignedBy),
+                    new AssignOrganizerProfileOwnerRequest(organizerProfileSlug, ownerEmail, assignedBy),
                     cancellationToken)
                 .ConfigureAwait(false);
 
@@ -120,7 +138,7 @@ public sealed class OrganizerProfilesController(
                 new AdminOrganizerProfileInputModel(),
                 input,
                 null,
-                exception.Message,
+                BuildAdminOperationErrorMessage(exception, "owner assignment"),
                 cancellationToken));
         }
     }
@@ -132,7 +150,7 @@ public sealed class OrganizerProfilesController(
         AdminOrganizerClaimDecisionInputModel input,
         CancellationToken cancellationToken)
     {
-        if (!ModelState.IsValid)
+        if (!ModelState.IsValid || !IsAllowedClaimDecisionStatus(input.Status))
         {
             TempData["ErrorMessage"] = "Required claim decision fields are missing.";
             return RedirectToAction(nameof(Index));
@@ -164,12 +182,12 @@ public sealed class OrganizerProfilesController(
                     .ConfigureAwait(false);
             }
 
-            TempData["StatusMessage"] = $"Claim request marked {claimRequest.Status}.";
+            TempData["StatusMessage"] = BuildClaimDecisionStatusMessage(claimRequest.Status);
             return RedirectToAction(nameof(Index));
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildAdminOperationErrorMessage(exception, "claim decision");
             return RedirectToAction(nameof(Index));
         }
     }
@@ -201,6 +219,69 @@ public sealed class OrganizerProfilesController(
         string.IsNullOrWhiteSpace(value)
             ? []
             : value.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+    private static string? TrimToNull(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        return value.Trim();
+    }
+
+    private static string BuildAdminOperationErrorMessage(Exception exception, string operationName) =>
+        exception.Message.Contains("409", StringComparison.OrdinalIgnoreCase)
+            ? $"The {operationName} could not be saved because it conflicts with existing data."
+            : $"The {operationName} could not be completed. Review the fields and try again.";
+
+    private static bool IsAllowedOrganizerVerificationStatus(string status) =>
+        string.Equals(status, "unverified", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "reviewed", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "verified", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "stale", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedOrganizerPlan(string planKey) =>
+        string.Equals(planKey, "free-organizer", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(planKey, "community-organizer", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(planKey, "premium-organizer", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedClaimDecisionStatus(string status) =>
+        string.Equals(status, "reviewing", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "approved", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "rejected", StringComparison.OrdinalIgnoreCase);
+
+    private static bool HasAllowedCefrLevels(IReadOnlyCollection<string> levels) =>
+        levels.Count > 0 && levels.All(static level =>
+            string.Equals(level, "A1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "A2", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "B1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "B2", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "C1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "C2", StringComparison.OrdinalIgnoreCase));
+
+    private static bool HasAllowedLanguageCodes(IReadOnlyCollection<string> languageCodes) =>
+        languageCodes.Count == 0 || languageCodes.All(static code =>
+            code.Length is >= 2 and <= 8 &&
+            code.All(static character =>
+                (character >= 'a' && character <= 'z') ||
+                (character >= 'A' && character <= 'Z') ||
+                character == '-'));
+
+    private static string BuildClaimDecisionStatusMessage(string status)
+    {
+        if (string.Equals(status, "approved", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Claim request approved and notification email queued. Assign the requester as owner separately if ownership should be granted.";
+        }
+
+        if (string.Equals(status, "rejected", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Claim request rejected and notification email queued.";
+        }
+
+        return $"Claim request marked {status}.";
+    }
 
     private string ResolveCulture() =>
         Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()

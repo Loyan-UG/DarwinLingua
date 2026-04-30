@@ -66,7 +66,11 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
             return Forbid();
         }
 
-        if (!ModelState.IsValid)
+        string[] supportedLearnerLevels = SplitCsv(input.SupportedLearnerLevels);
+        string[] helperLanguageCodes = SplitCsv(input.HelperLanguageCodes);
+        if (!ModelState.IsValid ||
+            !HasAllowedCefrLevels(supportedLearnerLevels) ||
+            !HasAllowedLanguageCodes(helperLanguageCodes))
         {
             return View("EditProfile", new OrganizerProfileEditPageViewModel(
                 profile,
@@ -81,15 +85,15 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
                 .SaveAdminOrganizerProfileAsync(
                     new AdminSaveOrganizerProfileRequest(
                         profile.Slug,
-                        input.DisplayName,
-                        input.OrganizerType,
-                        input.Description,
-                        input.CityRegion,
+                        input.DisplayName.Trim(),
+                        input.OrganizerType.Trim(),
+                        input.Description.Trim(),
+                        TrimToNull(input.CityRegion),
                         input.IsOnlineAvailable,
-                        SplitCsv(input.SupportedLearnerLevels),
-                        SplitCsv(input.HelperLanguageCodes),
-                        input.WebsiteUrl,
-                        input.PublicContactMethod,
+                        supportedLearnerLevels,
+                        helperLanguageCodes,
+                        TrimToNull(input.WebsiteUrl),
+                        TrimToNull(input.PublicContactMethod),
                         profile.VerificationStatus,
                         profile.PlanKey,
                         profile.HistoricalEventCount),
@@ -101,7 +105,11 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         }
         catch (InvalidOperationException exception)
         {
-            return View("EditProfile", new OrganizerProfileEditPageViewModel(profile, input, null, exception.Message));
+            return View("EditProfile", new OrganizerProfileEditPageViewModel(
+                profile,
+                input,
+                null,
+                BuildOrganizerOperationErrorMessage(exception, "profile")));
         }
     }
 
@@ -233,6 +241,12 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
 
         try
         {
+            if (!IsAllowedPublicationStatus(publicationStatus))
+            {
+                TempData["ErrorMessage"] = "The selected publication status is not supported.";
+                return RedirectToAction(nameof(Index));
+            }
+
             if (string.Equals(publicationStatus, "Active", StringComparison.OrdinalIgnoreCase) &&
                 !string.Equals(conversationEvent.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase) &&
                 !await CanCreateMoreActiveEventsAsync(profile, cancellationToken).ConfigureAwait(false))
@@ -242,8 +256,8 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
 
             OrganizerManagedConversationEventModel updatedEvent = await catalogApiClient
                 .SetAdminConversationEventPublicationStatusAsync(
-                    eventSlug,
-                    new AdminSetConversationEventPublicationStatusRequest(publicationStatus),
+                    conversationEvent.Slug,
+                    new AdminSetConversationEventPublicationStatusRequest(publicationStatus.Trim()),
                     cancellationToken)
                 .ConfigureAwait(false);
 
@@ -251,7 +265,7 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildOrganizerOperationErrorMessage(exception, "event publication");
         }
 
         return RedirectToAction(nameof(Index));
@@ -280,10 +294,16 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
 
         try
         {
+            if (!IsAllowedRsvpStatus(status))
+            {
+                TempData["ErrorMessage"] = "The selected RSVP status is not supported.";
+                return RedirectToAction(nameof(Index));
+            }
+
             EventRsvpModel updatedRsvp = await catalogApiClient.SetAdminEventRsvpStatusAsync(
-                    eventSlug,
+                    conversationEvent.Slug,
                     rsvpId,
-                    new AdminSetEventRsvpStatusRequest(status),
+                    new AdminSetEventRsvpStatusRequest(status.Trim()),
                     cancellationToken)
                 .ConfigureAwait(false);
 
@@ -291,7 +311,7 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildOrganizerOperationErrorMessage(exception, "RSVP update");
         }
 
         return RedirectToAction(nameof(Index));
@@ -301,6 +321,12 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         string slug,
         CancellationToken cancellationToken)
     {
+        string? normalizedSlug = NormalizeSlug(slug);
+        if (normalizedSlug is null)
+        {
+            return null;
+        }
+
         string? ownerEmail = GetCurrentOwnerEmail();
         if (string.IsNullOrWhiteSpace(ownerEmail))
         {
@@ -311,12 +337,12 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
             .GetOrganizerProfileOwnersByEmailAsync(ownerEmail, cancellationToken)
             .ConfigureAwait(false);
 
-        if (!ownerships.Any(ownership => string.Equals(ownership.OrganizerProfileSlug, slug, StringComparison.OrdinalIgnoreCase)))
+        if (!ownerships.Any(ownership => string.Equals(ownership.OrganizerProfileSlug, normalizedSlug, StringComparison.OrdinalIgnoreCase)))
         {
             return null;
         }
 
-        return await catalogApiClient.GetOrganizerProfileBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
+        return await catalogApiClient.GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken).ConfigureAwait(false);
     }
 
     private async Task<OrganizerDashboardProfileViewModel?[]> LoadDashboardProfilesAsync(
@@ -413,11 +439,18 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         string eventSlug,
         CancellationToken cancellationToken)
     {
+        string? normalizedProfileSlug = NormalizeSlug(profileSlug);
+        string? normalizedEventSlug = NormalizeSlug(eventSlug);
+        if (normalizedProfileSlug is null || normalizedEventSlug is null)
+        {
+            return null;
+        }
+
         IReadOnlyList<OrganizerManagedConversationEventModel> events = await catalogApiClient
-            .GetAdminConversationEventsByOrganizerAsync(profileSlug, cancellationToken)
+            .GetAdminConversationEventsByOrganizerAsync(normalizedProfileSlug, cancellationToken)
             .ConfigureAwait(false);
 
-        return events.SingleOrDefault(item => string.Equals(item.Slug, eventSlug, StringComparison.OrdinalIgnoreCase));
+        return events.SingleOrDefault(item => string.Equals(item.Slug, normalizedEventSlug, StringComparison.OrdinalIgnoreCase));
     }
 
     private async Task<bool> CanCreateMoreActiveEventsAsync(
@@ -445,7 +478,14 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         bool isNew,
         CancellationToken cancellationToken)
     {
-        if (!ModelState.IsValid)
+        string[] supportedLearnerLevels = SplitCsv(input.SupportedLearnerLevels);
+        string[] helperLanguageCodes = SplitCsv(input.HelperLanguageCodes);
+        string[] linkedPreparationPackSlugs = SplitCsv(input.LinkedEventPreparationPackSlugs);
+        if (!ModelState.IsValid ||
+            !IsAllowedPriceType(input.PriceType) ||
+            !HasAllowedCefrLevels(supportedLearnerLevels) ||
+            !HasAllowedLanguageCodes(helperLanguageCodes) ||
+            !HasAllowedSlugs(linkedPreparationPackSlugs))
         {
             return View("EditEvent", new OrganizerEventEditPageViewModel(
                 profile,
@@ -459,29 +499,29 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         try
         {
             AdminSaveConversationEventRequest request = new(
-                        input.Slug,
-                        input.Name,
-                        input.Description,
-                        input.City,
-                        input.CountryRegion,
-                        input.ApproximateLocation,
+                        input.Slug.Trim(),
+                        input.Name.Trim(),
+                        input.Description.Trim(),
+                        TrimToNull(input.City),
+                        input.CountryRegion.Trim(),
+                        TrimToNull(input.ApproximateLocation),
                         input.IsOnline,
-                        input.Category,
-                        SplitCsv(input.SupportedLearnerLevels),
-                        SplitCsv(input.HelperLanguageCodes),
+                        input.Category.Trim(),
+                        supportedLearnerLevels,
+                        helperLanguageCodes,
                         profile.DisplayName,
                         profile.Slug,
-                        input.ExternalLink,
-                        input.ContactMethod,
-                        input.ScheduleText,
+                        TrimToNull(input.ExternalLink),
+                        TrimToNull(input.ContactMethod),
+                        input.ScheduleText.Trim(),
                         input.PriceType,
                         existingEvent?.VerificationStatus ?? "reviewed",
                         "organizer-dashboard",
                         profile.WebsiteUrl,
                         nowUtc,
-                        SplitCsv(input.LinkedEventPreparationPackSlugs))
+                        linkedPreparationPackSlugs)
             {
-                RecurrenceRule = input.RecurrenceRule,
+                RecurrenceRule = TrimToNull(input.RecurrenceRule),
                 Capacity = input.Capacity,
             };
 
@@ -494,7 +534,12 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         }
         catch (InvalidOperationException exception)
         {
-            return View("EditEvent", new OrganizerEventEditPageViewModel(profile, existingEvent, input, isNew, exception.Message));
+            return View("EditEvent", new OrganizerEventEditPageViewModel(
+                profile,
+                existingEvent,
+                input,
+                isNew,
+                BuildOrganizerOperationErrorMessage(exception, "event")));
         }
     }
 
@@ -547,6 +592,98 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         string.IsNullOrWhiteSpace(value)
             ? []
             : value.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+    private static string? TrimToNull(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        return value.Trim();
+    }
+
+    private static bool HasAllowedCefrLevels(IReadOnlyCollection<string> levels) =>
+        levels.Count > 0 && levels.All(static level =>
+            string.Equals(level, "A1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "A2", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "B1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "B2", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "C1", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(level, "C2", StringComparison.OrdinalIgnoreCase));
+
+    private static bool HasAllowedLanguageCodes(IReadOnlyCollection<string> languageCodes) =>
+        languageCodes.Count > 0 && languageCodes.All(static code =>
+            code.Length is >= 2 and <= 8 &&
+            code.All(static character =>
+                (character >= 'a' && character <= 'z') ||
+                (character >= 'A' && character <= 'Z') ||
+                character == '-'));
+
+    private static bool HasAllowedSlugs(IReadOnlyCollection<string> slugs) =>
+        slugs.Count == 0 || slugs.All(IsSlug);
+
+    private static bool IsSlug(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value) || value.Length > 128)
+        {
+            return false;
+        }
+
+        string slug = value.Trim();
+        bool previousWasDash = true;
+        foreach (char character in slug)
+        {
+            bool isAlphaNumeric = (character >= 'a' && character <= 'z') ||
+                (character >= '0' && character <= '9');
+            if (isAlphaNumeric)
+            {
+                previousWasDash = false;
+                continue;
+            }
+
+            if (character != '-' || previousWasDash)
+            {
+                return false;
+            }
+
+            previousWasDash = true;
+        }
+
+        return !previousWasDash;
+    }
+
+    private static string? NormalizeSlug(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        return IsSlug(trimmed) ? trimmed : null;
+    }
+
+    private static bool IsAllowedPriceType(string priceType) =>
+        string.Equals(priceType, "free", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(priceType, "donation", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(priceType, "paid", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(priceType, "unknown", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedPublicationStatus(string status) =>
+        string.Equals(status, "Active", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "Draft", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "Archived", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedRsvpStatus(string status) =>
+        string.Equals(status, "interested", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "going", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(status, "cancelled", StringComparison.OrdinalIgnoreCase);
+
+    private static string BuildOrganizerOperationErrorMessage(Exception exception, string operationName) =>
+        exception.Message.Contains("409", StringComparison.OrdinalIgnoreCase)
+            ? $"The organizer {operationName} could not be saved because it conflicts with existing data."
+            : $"The organizer {operationName} operation could not be completed. Review the fields and try again.";
 
     private sealed record DashboardEventRsvpData(
         EventRsvpSummaryModel Summary,

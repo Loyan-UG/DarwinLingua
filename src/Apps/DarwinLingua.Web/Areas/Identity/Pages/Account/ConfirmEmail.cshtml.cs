@@ -28,6 +28,12 @@ public sealed class ConfirmEmailModel(UserManager<DarwinLinguaIdentityUser> user
             return Page();
         }
 
+        if (await userManager.IsEmailConfirmedAsync(user).ConfigureAwait(false))
+        {
+            Succeeded = true;
+            return Page();
+        }
+
         string token;
         try
         {

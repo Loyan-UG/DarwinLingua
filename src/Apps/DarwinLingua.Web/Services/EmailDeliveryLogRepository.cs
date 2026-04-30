@@ -241,7 +241,8 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
         }
 
         string normalizedEvent = providerEvent.Trim();
-        log.ProviderLastEvent = Truncate(normalizedEvent, 64);
+        string storedProviderEvent = normalizedEvent.ToLowerInvariant();
+        log.ProviderLastEvent = Truncate(storedProviderEvent, 64);
         log.ProviderLastEventAtUtc = providerEventAtUtc.ToUniversalTime();
         log.ProviderLastEventReason = Truncate(reason, 512);
         log.LastAttemptAtUtc = DateTimeOffset.UtcNow;
@@ -328,7 +329,7 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
 
         if (!string.IsNullOrWhiteSpace(providerEvent))
         {
-            string normalizedProviderEvent = providerEvent.Trim();
+            string normalizedProviderEvent = providerEvent.Trim().ToLowerInvariant();
             query = query.Where(log => log.ProviderLastEvent == normalizedProviderEvent);
         }
 
@@ -366,14 +367,18 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
 
         WebEmailDeliveryLog? lastFailure = await dbContext.EmailDeliveryLogs
             .AsNoTracking()
-            .Where(log => log.Status == WebEmailDeliveryStatus.Failed)
+            .Where(log =>
+                log.Status == WebEmailDeliveryStatus.Failed &&
+                log.CreatedAtUtc >= normalizedSinceUtc)
             .OrderByDescending(log => log.LastAttemptAtUtc ?? log.CreatedAtUtc)
             .FirstOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
         WebEmailDeliveryLog? lastProviderEvent = await dbContext.EmailDeliveryLogs
             .AsNoTracking()
-            .Where(log => log.ProviderLastEventAtUtc != null)
+            .Where(log =>
+                log.ProviderLastEventAtUtc != null &&
+                log.CreatedAtUtc >= normalizedSinceUtc)
             .OrderByDescending(log => log.ProviderLastEventAtUtc)
             .FirstOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
@@ -455,7 +460,7 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
 
         if (!string.IsNullOrWhiteSpace(reason))
         {
-            string normalizedReason = reason.Trim();
+            string normalizedReason = reason.Trim().ToLowerInvariant();
             query = query.Where(suppression => suppression.Reason == normalizedReason);
         }
 

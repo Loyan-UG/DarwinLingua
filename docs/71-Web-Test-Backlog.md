@@ -96,6 +96,20 @@ Remaining release gates:
 - [ ] WebApi feature gates reject direct unauthorized calls.
 - [ ] Admin entitlement changes write audit records and update effective access immediately.
 
+### Billing And Payments
+
+- [ ] Billing page renders the current entitlement and disables checkout when Stripe is off.
+- [ ] Billing page starts Stripe Checkout only for authenticated users and only when Stripe is enabled.
+- [ ] Stripe Checkout session creation sends the Darwin Lingua user id in session and subscription metadata.
+- [ ] Stripe Checkout failures show a safe user-facing message and do not leak provider response bodies.
+- [ ] Stripe webhook rejects missing, malformed, expired, or invalid signatures.
+- [ ] Duplicate Stripe webhook event ids are idempotent.
+- [ ] `checkout.session.completed` maps the Stripe session to the correct user and grants Premium.
+- [ ] `customer.subscription.created` and `customer.subscription.updated` persist customer/subscription ids and current period end.
+- [ ] Active or trialing Stripe subscription states keep Premium access.
+- [ ] Cancelled, unpaid, or incomplete-expired Stripe subscription states downgrade the user to Free.
+- [ ] Unmapped Stripe subscription events fail closed and are visible in billing-event diagnostics/logs.
+
 ### Web Runtime And Bootstrap
 
 - [ ] PostgreSQL startup bootstrap retrofits Phase 6 catalog tables on an existing shared database.

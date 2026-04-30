@@ -130,6 +130,10 @@ public sealed class TransactionalEmailSender(
         using HttpRequestMessage request = new(HttpMethod.Post, "/v3/smtp/email");
         request.Headers.TryAddWithoutValidation("api-key", emailOptions.BrevoApiKey);
         request.Headers.TryAddWithoutValidation("accept", "application/json");
+        if (emailOptions.BrevoSandboxMode)
+        {
+            request.Headers.TryAddWithoutValidation("X-Sib-Sandbox", "drop");
+        }
 
         Dictionary<string, string> headers = new(StringComparer.Ordinal)
         {
@@ -137,10 +141,6 @@ public sealed class TransactionalEmailSender(
             ["X-DarwinLingua-Template"] = message.TemplateKey,
             ["X-DarwinLingua-CorrelationId"] = message.CorrelationId ?? string.Empty,
         };
-        if (emailOptions.BrevoSandboxMode)
-        {
-            headers["X-Sib-Sandbox"] = "drop";
-        }
 
         BrevoSendEmailRequest payload = new(
             new BrevoEmailAddress(emailOptions.FromEmail, emailOptions.FromName),
@@ -149,6 +149,7 @@ public sealed class TransactionalEmailSender(
                 ? null
                 : new BrevoEmailAddress(emailOptions.ReplyToEmail, null),
             message.Subject,
+            message.PlainTextBody,
             message.HtmlBody,
             SanitizeBrevoTags(message.ScenarioKey),
             headers);
@@ -230,6 +231,7 @@ public sealed class TransactionalEmailSender(
         IReadOnlyList<BrevoEmailAddress> To,
         BrevoEmailAddress? ReplyTo,
         string Subject,
+        string TextContent,
         string HtmlContent,
         IReadOnlyList<string> Tags,
         IReadOnlyDictionary<string, string> Headers);

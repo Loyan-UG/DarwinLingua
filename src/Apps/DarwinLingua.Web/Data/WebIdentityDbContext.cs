@@ -17,6 +17,10 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
 
     public DbSet<WebEmailSuppression> EmailSuppressions => Set<WebEmailSuppression>();
 
+    public DbSet<WebBillingProfile> WebBillingProfiles => Set<WebBillingProfile>();
+
+    public DbSet<WebBillingEvent> WebBillingEvents => Set<WebBillingEvent>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
@@ -70,9 +74,13 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
             entity.Property(log => log.FailureMessageSummary).HasMaxLength(512);
             entity.Property(log => log.CorrelationId).HasMaxLength(128);
             entity.HasIndex(log => new { log.CreatedAtUtc, log.Status });
+            entity.HasIndex(log => new { log.Status, log.CreatedAtUtc });
             entity.HasIndex(log => new { log.ScenarioKey, log.CreatedAtUtc });
             entity.HasIndex(log => log.ProviderMessageId);
-            entity.HasIndex(log => new { log.ProviderLastEvent, log.ProviderLastEventAtUtc });
+            entity.HasIndex(log => new { log.ProviderLastEvent, log.ProviderLastEventAtUtc })
+                .HasDatabaseName("IX_WebEmailLogs_Event_EventAtUtc");
+            entity.HasIndex(log => log.ProviderLastEventAtUtc)
+                .HasDatabaseName("IX_WebEmailLogs_EventAtUtc");
         });
 
         builder.Entity<WebEmailSuppression>(entity =>
@@ -85,6 +93,41 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
             entity.Property(suppression => suppression.ProviderMessageId).HasMaxLength(256);
             entity.HasIndex(suppression => suppression.RecipientEmailHash).IsUnique();
             entity.HasIndex(suppression => suppression.CreatedAtUtc);
+        });
+
+        builder.Entity<WebBillingProfile>(entity =>
+        {
+            entity.ToTable("WebBillingProfiles");
+            entity.HasKey(profile => profile.UserId);
+            entity.Property(profile => profile.UserId).HasMaxLength(450).IsRequired();
+            entity.Property(profile => profile.ProviderName).HasMaxLength(64).IsRequired();
+            entity.Property(profile => profile.ProviderCustomerId).HasMaxLength(128);
+            entity.Property(profile => profile.ProviderSubscriptionId).HasMaxLength(128);
+            entity.Property(profile => profile.PlanKey).HasMaxLength(128).IsRequired();
+            entity.Property(profile => profile.Status).HasMaxLength(64).IsRequired();
+            entity.HasIndex(profile => new { profile.ProviderName, profile.ProviderCustomerId })
+                .HasDatabaseName("IX_WebBillingProfiles_Provider_Customer");
+            entity.HasIndex(profile => new { profile.ProviderName, profile.ProviderSubscriptionId })
+                .HasDatabaseName("IX_WebBillingProfiles_Provider_Subscription");
+        });
+
+        builder.Entity<WebBillingEvent>(entity =>
+        {
+            entity.ToTable("WebBillingEvents");
+            entity.HasKey(billingEvent => billingEvent.Id);
+            entity.Property(billingEvent => billingEvent.ProviderName).HasMaxLength(64).IsRequired();
+            entity.Property(billingEvent => billingEvent.ProviderEventId).HasMaxLength(128).IsRequired();
+            entity.Property(billingEvent => billingEvent.EventType).HasMaxLength(128).IsRequired();
+            entity.Property(billingEvent => billingEvent.Status).HasMaxLength(64).IsRequired();
+            entity.Property(billingEvent => billingEvent.UserId).HasMaxLength(450);
+            entity.Property(billingEvent => billingEvent.ProviderCustomerId).HasMaxLength(128);
+            entity.Property(billingEvent => billingEvent.ProviderSubscriptionId).HasMaxLength(128);
+            entity.Property(billingEvent => billingEvent.ErrorSummary).HasMaxLength(512);
+            entity.HasIndex(billingEvent => new { billingEvent.ProviderName, billingEvent.ProviderEventId })
+                .IsUnique()
+                .HasDatabaseName("IX_WebBillingEvents_Provider_EventId");
+            entity.HasIndex(billingEvent => new { billingEvent.Status, billingEvent.CreatedAtUtc })
+                .HasDatabaseName("IX_WebBillingEvents_Status_CreatedAtUtc");
         });
     }
 }

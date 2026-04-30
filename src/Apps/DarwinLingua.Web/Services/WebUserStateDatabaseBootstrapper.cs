@@ -97,6 +97,32 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "CreatedAtUtc" TEXT NOT NULL,
                 "LastSeenAtUtc" TEXT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebBillingProfiles" (
+                "UserId" TEXT NOT NULL CONSTRAINT "PK_WebBillingProfiles" PRIMARY KEY,
+                "ProviderName" TEXT NOT NULL,
+                "ProviderCustomerId" TEXT NULL,
+                "ProviderSubscriptionId" TEXT NULL,
+                "PlanKey" TEXT NOT NULL,
+                "Status" TEXT NOT NULL,
+                "CurrentPeriodEndsAtUtc" TEXT NULL,
+                "CreatedAtUtc" TEXT NOT NULL,
+                "UpdatedAtUtc" TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS "WebBillingEvents" (
+                "Id" TEXT NOT NULL CONSTRAINT "PK_WebBillingEvents" PRIMARY KEY,
+                "ProviderName" TEXT NOT NULL,
+                "ProviderEventId" TEXT NOT NULL,
+                "EventType" TEXT NOT NULL,
+                "Status" TEXT NOT NULL,
+                "UserId" TEXT NULL,
+                "ProviderCustomerId" TEXT NULL,
+                "ProviderSubscriptionId" TEXT NULL,
+                "ErrorSummary" TEXT NULL,
+                "CreatedAtUtc" TEXT NOT NULL,
+                "ProcessedAtUtc" TEXT NULL
+            );
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -126,16 +152,30 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebUserWordStates" ("ActorId", "LastViewedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_CreatedAtUtc_Status"
             ON "WebEmailDeliveryLogs" ("CreatedAtUtc", "Status");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_Status_CreatedAtUtc"
+            ON "WebEmailDeliveryLogs" ("Status", "CreatedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ScenarioKey_CreatedAtUtc"
             ON "WebEmailDeliveryLogs" ("ScenarioKey", "CreatedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderMessageId"
             ON "WebEmailDeliveryLogs" ("ProviderMessageId");
-            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc"
+            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc";
+            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEventAtUtc";
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_Event_EventAtUtc"
             ON "WebEmailDeliveryLogs" ("ProviderLastEvent", "ProviderLastEventAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_EventAtUtc"
+            ON "WebEmailDeliveryLogs" ("ProviderLastEventAtUtc");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_RecipientEmailHash"
             ON "WebEmailSuppressions" ("RecipientEmailHash");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_CreatedAtUtc"
             ON "WebEmailSuppressions" ("CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingProfiles_Provider_Customer"
+            ON "WebBillingProfiles" ("ProviderName", "ProviderCustomerId");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingProfiles_Provider_Subscription"
+            ON "WebBillingProfiles" ("ProviderName", "ProviderSubscriptionId");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebBillingEvents_Provider_EventId"
+            ON "WebBillingEvents" ("ProviderName", "ProviderEventId");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingEvents_Status_CreatedAtUtc"
+            ON "WebBillingEvents" ("Status", "CreatedAtUtc");
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -207,6 +247,32 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "LastSeenAtUtc" timestamp with time zone NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebBillingProfiles" (
+                "UserId" character varying(450) NOT NULL CONSTRAINT "PK_WebBillingProfiles" PRIMARY KEY,
+                "ProviderName" character varying(64) NOT NULL,
+                "ProviderCustomerId" character varying(128) NULL,
+                "ProviderSubscriptionId" character varying(128) NULL,
+                "PlanKey" character varying(128) NOT NULL,
+                "Status" character varying(64) NOT NULL,
+                "CurrentPeriodEndsAtUtc" timestamp with time zone NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS "WebBillingEvents" (
+                "Id" uuid NOT NULL CONSTRAINT "PK_WebBillingEvents" PRIMARY KEY,
+                "ProviderName" character varying(64) NOT NULL,
+                "ProviderEventId" character varying(128) NOT NULL,
+                "EventType" character varying(128) NOT NULL,
+                "Status" character varying(64) NOT NULL,
+                "UserId" character varying(450) NULL,
+                "ProviderCustomerId" character varying(128) NULL,
+                "ProviderSubscriptionId" character varying(128) NULL,
+                "ErrorSummary" character varying(512) NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "ProcessedAtUtc" timestamp with time zone NULL
+            );
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -232,16 +298,30 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebUserWordStates" ("ActorId", "LastViewedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_CreatedAtUtc_Status"
             ON "WebEmailDeliveryLogs" ("CreatedAtUtc", "Status");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_Status_CreatedAtUtc"
+            ON "WebEmailDeliveryLogs" ("Status", "CreatedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ScenarioKey_CreatedAtUtc"
             ON "WebEmailDeliveryLogs" ("ScenarioKey", "CreatedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderMessageId"
             ON "WebEmailDeliveryLogs" ("ProviderMessageId");
-            CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc"
+            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc";
+            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEventAtUtc";
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_Event_EventAtUtc"
             ON "WebEmailDeliveryLogs" ("ProviderLastEvent", "ProviderLastEventAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_EventAtUtc"
+            ON "WebEmailDeliveryLogs" ("ProviderLastEventAtUtc");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_RecipientEmailHash"
             ON "WebEmailSuppressions" ("RecipientEmailHash");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailSuppressions_CreatedAtUtc"
             ON "WebEmailSuppressions" ("CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingProfiles_Provider_Customer"
+            ON "WebBillingProfiles" ("ProviderName", "ProviderCustomerId");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingProfiles_Provider_Subscription"
+            ON "WebBillingProfiles" ("ProviderName", "ProviderSubscriptionId");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebBillingEvents_Provider_EventId"
+            ON "WebBillingEvents" ("ProviderName", "ProviderEventId");
+            CREATE INDEX IF NOT EXISTS "IX_WebBillingEvents_Status_CreatedAtUtc"
+            ON "WebBillingEvents" ("Status", "CreatedAtUtc");
             """,
             cancellationToken)
             .ConfigureAwait(false);

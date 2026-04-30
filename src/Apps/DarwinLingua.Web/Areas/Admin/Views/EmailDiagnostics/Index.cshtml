@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.AdminEmailDiagnosticsPageViewModel
 @{
     ViewData["Title"] = "Email diagnostics";
+    bool isAdmin = User.IsInRole("Admin");
 }
 
 <section class="panel stack-lg">
@@ -49,6 +50,7 @@
         <li>Brevo API key: @(Model.Readiness.HasBrevoApiKey ? "Configured" : "Missing")</li>
         <li>Brevo webhook secret: @(Model.Readiness.HasBrevoWebhookSecret ? "Configured" : "Missing")</li>
         <li>Brevo sandbox mode: @(Model.Readiness.BrevoSandboxMode ? "Enabled" : "Disabled")</li>
+        <li>Brevo query-secret fallback: @(Model.Readiness.BrevoAllowQuerySecretFallback ? "Enabled" : "Disabled")</li>
         <li>Failure alert threshold: @Model.Readiness.FailureAlertThreshold failures in @Model.Readiness.FailureAlertWindowMinutes minutes</li>
         <li>Failure alert cooldown: @Model.Readiness.FailureAlertCooldownMinutes minutes; monitor interval: @Model.Readiness.FailureAlertMonitorIntervalMinutes minutes</li>
     </ul>
@@ -136,11 +138,18 @@
                             <td>@suppression.ProviderName</td>
                             <td>@(suppression.LastSeenAtUtc?.UtcDateTime.ToString("u") ?? "none")</td>
                             <td>
-                                <form method="post" asp-action="RemoveSuppression" class="inline-form">
-                                    @Html.AntiForgeryToken()
-                                    <input type="hidden" name="recipientEmailHash" value="@suppression.RecipientEmailHash" />
-                                    <button type="submit" class="button button--secondary">Unsuppress</button>
-                                </form>
+                                @if (isAdmin)
+                                {
+                                    <form method="post" asp-action="RemoveSuppression" class="inline-form">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="recipientEmailHash" value="@suppression.RecipientEmailHash" />
+                                        <button type="submit" class="button button--secondary">Unsuppress</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <span class="body-sm">Admin only</span>
+                                }
                             </td>
                         </tr>
                     }
@@ -204,10 +213,17 @@
 <section class="panel stack-md">
     <h2 class="headline-sm">Retention</h2>
     <p class="body-sm">Delivery logs are retained for @Model.RetentionDays days. Cleanup removes only entries older than that retention window.</p>
-    <form method="post" asp-action="Cleanup" class="inline-form">
-        @Html.AntiForgeryToken()
-        <button type="submit" class="button button--secondary">Clean up old delivery logs</button>
-    </form>
+    @if (isAdmin)
+    {
+        <form method="post" asp-action="Cleanup" class="inline-form">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="button button--secondary">Clean up old delivery logs</button>
+        </form>
+    }
+    else
+    {
+        <p class="body-sm">Cleanup is limited to admins because it deletes operational audit data.</p>
+    }
 </section>
 
 <section class="panel stack-md">
@@ -223,31 +239,34 @@
     </form>
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Manual provider event</h2>
-    <p class="body-sm">Record a Brevo/provider event for an existing provider message id. Permanent failure events can create internal suppressions.</p>
-    <form method="post" asp-action="RecordProviderEvent" class="filter-bar">
-        @Html.AntiForgeryToken()
-        <label>
-            Provider message id
-            <input name="providerMessageId" autocomplete="off" placeholder="<message-id@domain>" />
-        </label>
-        <label>
-            Provider event
-            <select name="providerEvent">
-                @foreach (string providerEvent in new[] { "delivered", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam" })
-                {
-                    <option value="@providerEvent">@providerEvent</option>
-                }
-            </select>
-        </label>
-        <label>
-            Reason
-            <input name="reason" autocomplete="off" placeholder="Manual reconciliation or Brevo dashboard reason" />
-        </label>
-        <button type="submit" class="button button--primary">Record event</button>
-    </form>
-</section>
+@if (isAdmin)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Manual provider event</h2>
+        <div class="status-banner status-banner--error">Admin-only reconciliation tool. Use this only when Brevo dashboard data did not arrive through webhook.</div>
+        <form method="post" asp-action="RecordProviderEvent" class="filter-bar">
+            @Html.AntiForgeryToken()
+            <label>
+                Provider message id
+                <input name="providerMessageId" autocomplete="off" placeholder="<message-id@domain>" />
+            </label>
+            <label>
+                Provider event
+                <select name="providerEvent">
+                    @foreach (string providerEvent in new[] { "delivered", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam" })
+                    {
+                        <option value="@providerEvent">@providerEvent</option>
+                    }
+                </select>
+            </label>
+            <label>
+                Reason
+                <input name="reason" autocomplete="off" placeholder="Manual reconciliation or Brevo dashboard reason" />
+            </label>
+            <button type="submit" class="button button--primary">Record event</button>
+        </form>
+    </section>
+}
 
 <section class="panel stack-md">
     <h2 class="headline-sm">Recent delivery attempts</h2>

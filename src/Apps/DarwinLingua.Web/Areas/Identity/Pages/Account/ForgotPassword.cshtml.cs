@@ -27,12 +27,17 @@ public sealed class ForgotPasswordModel(
         }
 
         string email = Input.Email.Trim();
-        bool allowed = rateLimiter.TryConsume(
+        bool ipAllowed = rateLimiter.TryConsume(
+            "forgot-password-ip",
+            GetRemoteAddressKey(),
+            20,
+            TimeSpan.FromMinutes(30));
+        bool emailAllowed = rateLimiter.TryConsume(
             "forgot-password",
-            $"{HttpContext.Connection.RemoteIpAddress}|{email}",
+            $"{GetRemoteAddressKey()}|{email}",
             5,
             TimeSpan.FromMinutes(30));
-        if (!allowed)
+        if (!ipAllowed || !emailAllowed)
         {
             return RedirectToPage("/Account/ForgotPasswordConfirmation", new { area = "Identity" });
         }
@@ -74,6 +79,9 @@ public sealed class ForgotPasswordModel(
             ?.RequestCulture.UICulture.Name
         ?? Request.Headers.AcceptLanguage.ToString()
         ?? "en";
+
+    private string GetRemoteAddressKey() =>
+        HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
 
     public sealed class ForgotPasswordInputModel
     {

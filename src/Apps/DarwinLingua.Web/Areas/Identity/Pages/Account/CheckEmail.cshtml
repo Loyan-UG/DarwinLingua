@@ -8,9 +8,11 @@
     <span class="eyebrow">Account email</span>
     <h1 class="headline-md">Check your email</h1>
     <p class="body-lg">If the address can receive account email, a Darwin Lingua message has been sent with the next step.</p>
-    <p class="body-sm">The link expires automatically. If it does not arrive, check spam or request a new email.</p>
+    <p class="body-sm">The message may be a confirmation or account recovery email depending on the action requested. Links expire automatically.</p>
+    <p class="body-sm">If it does not arrive, check spam or request a new confirmation email.</p>
     <div class="action-row">
         <a class="button button--primary" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
         <a class="button button--secondary" asp-area="Identity" asp-page="/Account/ResendEmailConfirmation">Resend confirmation</a>
+        <a class="button button--secondary" asp-area="Identity" asp-page="/Account/ForgotPassword">Reset password</a>
     </div>
 </section>

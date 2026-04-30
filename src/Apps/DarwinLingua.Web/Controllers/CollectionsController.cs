@@ -27,14 +27,15 @@ public sealed class CollectionsController(
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(slug))
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
         {
             return RedirectToAction(nameof(Index));
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         var collection = await catalogApiClient
-            .GetCollectionBySlugAsync(slug, profile.PreferredMeaningLanguage1, cancellationToken)
+            .GetCollectionBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1, cancellationToken)
             .ConfigureAwait(false);
 
         if (collection is null)

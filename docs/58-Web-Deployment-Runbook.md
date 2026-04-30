@@ -49,8 +49,9 @@ Transactional email is release-critical. Set these values per staging and produc
 - `TransactionalEmail__SmtpPassword`
 - `TransactionalEmail__BrevoApiBaseUrl=https://api.brevo.com`
 - `TransactionalEmail__BrevoApiKey`
-- `TransactionalEmail__BrevoWebhookSecret`
+- `TransactionalEmail__BrevoWebhookSecret` for every environment that uses `BrevoApi`
 - `TransactionalEmail__BrevoSandboxMode=false` for production
+- `TransactionalEmail__BrevoAllowQuerySecretFallback=false` outside local diagnostics
 - `TransactionalEmail__EmailConfirmationTokenHours`
 - `TransactionalEmail__PasswordResetTokenMinutes`
 - `TransactionalEmail__EmailChangeTokenMinutes`
@@ -63,12 +64,23 @@ Transactional email is release-critical. Set these values per staging and produc
 
 Staging and production should use Brevo API mode for transactional email. Staging must use a real Brevo sender domain or subdomain. Production must use the final sender domain with DNS fully verified.
 
+Stripe billing is required before paid premium launch. Set these values per staging and production environment:
+
+- `Billing__EnableStripe`
+- `Billing__PublicBaseUrl`
+- `Billing__StripeApiBaseUrl=https://api.stripe.com`
+- `Billing__StripeSecretKey`
+- `Billing__StripeWebhookSecret`
+- `Billing__StripePremiumMonthlyPriceId`
+- `Billing__StripeWebhookToleranceMinutes`
+- `Billing__PremiumPlanKey`
+
 Environment rule:
 
 - local development may use local appsettings overrides or user secrets
 - shared development/staging/production must use platform environment variables or secret storage
 - do not commit live PostgreSQL credentials or seed-admin credentials into `appsettings.json`
-- do not commit live SMTP credentials, Brevo API keys, or webhook secrets into `appsettings*.json`
+- do not commit live SMTP credentials, Brevo API keys, Stripe API keys, webhook secrets, or live price ids into `appsettings*.json`
 
 ---
 
@@ -96,11 +108,12 @@ Before staging or production sign-off, verify:
 2. Run `dotnet test DarwinLingua.slnx -c Debug -m:1` or the release-appropriate equivalent in CI.
 3. Publish `src/Apps/DarwinLingua.Web`.
 4. Provide production connection strings and Identity bootstrap secrets through the deployment platform.
-5. Provide transactional email settings and SMTP secrets through the deployment platform.
+5. Provide transactional email, billing, and provider webhook secrets through the deployment platform.
 6. Start the host and verify it completes startup initialization.
 7. Verify learner routes and admin routes respond successfully.
 8. Verify registration and password-reset emails in the configured provider inbox.
-9. Run the learner-web, auth, transactional-email, and PWA validation worksheets.
+9. Verify Stripe Checkout and Stripe webhook delivery in staging when `Billing__EnableStripe=true`.
+10. Run the learner-web, auth, transactional-email, billing, and PWA validation worksheets.
 
 ---
 
@@ -114,8 +127,14 @@ Before staging or production sign-off, verify:
 - verify `admin/email-diagnostics` shows recent delivery attempts
 - verify no email delivery log stores raw reset/confirmation tokens or full recovery URLs
 - verify a failed email delivery is visible to admins/operators without sensitive token data
+- verify email delivery-log cleanup is Admin-only and writes an application log entry
 - verify repeated delivery failures trigger an admin alert after the configured threshold and cooldown
 - verify Brevo transactional webhooks use Bearer auth or `X-DarwinLingua-Brevo-Webhook-Secret`, not a production query-string secret
+- verify `/billing` renders for authenticated users and redirects anonymous users to sign-in
+- verify Stripe Checkout session creation redirects to Stripe when billing is enabled
+- verify Stripe billing webhooks reject invalid signatures
+- verify verified Stripe checkout/subscription events update Premium entitlements
+- verify cancelled, unpaid, or incomplete-expired Stripe subscription states remove Premium access
 
 ---
 

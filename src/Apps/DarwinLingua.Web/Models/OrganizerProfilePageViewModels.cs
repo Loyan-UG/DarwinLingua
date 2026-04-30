@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using DarwinLingua.Catalog.Application.Models;
 
 namespace DarwinLingua.Web.Models;
@@ -18,16 +19,20 @@ public sealed record OrganizerProfileClaimPageViewModel(
 
 public sealed class OrganizerClaimInputModel
 {
-    [System.ComponentModel.DataAnnotations.Required]
+    [Required]
+    [StringLength(128)]
     public string RequesterName { get; set; } = string.Empty;
 
-    [System.ComponentModel.DataAnnotations.Required]
-    [System.ComponentModel.DataAnnotations.EmailAddress]
+    [Required]
+    [EmailAddress]
+    [StringLength(320)]
     public string RequesterEmail { get; set; } = string.Empty;
 
-    [System.ComponentModel.DataAnnotations.Required]
+    [Required]
+    [StringLength(128)]
     public string RelationshipToOrganizer { get; set; } = string.Empty;
 
-    [System.ComponentModel.DataAnnotations.Required]
+    [Required]
+    [StringLength(2000)]
     public string EvidenceText { get; set; } = string.Empty;
 }

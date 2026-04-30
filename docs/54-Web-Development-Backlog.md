@@ -154,6 +154,19 @@ The expected low-friction model is:
 - [x] dual-meaning-language mode
 - [x] future advanced practice capabilities
 
+## 6.3 Web Billing And Stripe Checkout
+
+- [x] add a Web billing surface for authenticated learners
+- [x] add Stripe Checkout session creation for the first premium monthly plan
+- [x] keep Stripe credentials and price ids environment-owned through configuration
+- [x] add a signed Stripe billing webhook endpoint
+- [x] verify Stripe webhook signatures with timestamp tolerance before processing
+- [x] record Stripe billing events idempotently
+- [x] persist Stripe customer/subscription mapping for later subscription reconciliation
+- [x] update learner `Premium` entitlement from Stripe checkout/subscription events
+- [x] downgrade to `Free` for cancelled, unpaid, or expired Stripe subscription states
+- [ ] add PayPal or other direct payment providers after Stripe is stable
+
 ## 7. Shared Backend Integration
 
 - [x] wire the web host to shared application modules

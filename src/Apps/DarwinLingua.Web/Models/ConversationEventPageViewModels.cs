@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using DarwinLingua.Catalog.Application.Models;
 
 namespace DarwinLingua.Web.Models;
@@ -16,13 +17,16 @@ public sealed record ConversationEventDetailPageViewModel(
 
 public sealed class EventRsvpInputModel
 {
-    [System.ComponentModel.DataAnnotations.Required]
+    [Required]
+    [StringLength(128)]
     public string ParticipantName { get; set; } = string.Empty;
 
-    [System.ComponentModel.DataAnnotations.Required]
-    [System.ComponentModel.DataAnnotations.EmailAddress]
+    [Required]
+    [EmailAddress]
+    [StringLength(320)]
     public string ParticipantEmail { get; set; } = string.Empty;
 
-    [System.ComponentModel.DataAnnotations.Required]
+    [Required]
+    [StringLength(32)]
     public string Status { get; set; } = "interested";
 }

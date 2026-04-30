@@ -83,11 +83,16 @@ Operational rules:
 - Review Brevo dashboard delivery logs and webhook status when provider events stop updating diagnostics.
 - Use the provider message id and provider event filters in `admin/email-diagnostics` to reconcile Brevo dashboard events with internal delivery logs.
 - Permanent Brevo events such as hard bounce, blocked, invalid email, and spam add the hashed recipient to the internal suppression list; later sends are logged as `Suppressed` without calling Brevo.
-- Use manual unsuppress only after support confirms the recipient address is valid and the Brevo dashboard no longer shows a permanent delivery issue.
-- Use manual provider-event recording only for support reconciliation when a Brevo dashboard event did not arrive through webhook; it is not a replacement for webhook configuration.
+- Manual unsuppress is Admin-only and should be used only after support confirms the recipient address is valid and the Brevo dashboard no longer shows a permanent delivery issue.
+- Manual provider-event recording is Admin-only and should be used only for support reconciliation when a Brevo dashboard event did not arrive through webhook; it is not a replacement for webhook configuration.
+- Manual suppression/provider-event actions write application log entries with the admin identity and target hash or provider message id.
+- Public account email flows use neutral responses for existing/non-existing emails and combine per-IP with per-email rate limiting for reset/resend/register confirmation sends.
+- Login uses neutral fallback copy for blocked/not-allowed sign-in states; only a correct password for an unconfirmed account routes to the confirmation recovery screen.
+- Password reset keeps non-existing accounts neutral, shows generic unusable-link copy for malformed/invalid/expired tokens, and provides a direct new-link path.
+- Email confirmation and email-change confirmation are idempotent where safe: already-confirmed email and already-applied email-change links show success instead of stranding the user.
 - Treat repeated `Failed` delivery logs as an operational incident when account recovery is affected.
 - The hosted email failure monitor sends `Admin.EmailDeliveryFailureAlert` when failures exceed `TransactionalEmail:FailureAlertThreshold` inside `TransactionalEmail:FailureAlertWindowMinutes`; it suppresses repeated alerts for `TransactionalEmail:FailureAlertCooldownMinutes`.
-- Use the diagnostics cleanup action to remove logs older than `TransactionalEmail:DeliveryLogRetentionDays`.
+- Use the Admin-only diagnostics cleanup action to remove logs older than `TransactionalEmail:DeliveryLogRetentionDays`.
 - Do not mix marketing email with transactional account email.
 
 Provider readiness checklist:

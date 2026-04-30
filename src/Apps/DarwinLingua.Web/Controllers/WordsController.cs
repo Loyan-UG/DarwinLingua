@@ -48,6 +48,11 @@ public sealed class WordsController(
     [Route("toggle-favorite")]
     public async Task<IActionResult> ToggleFavorite(Guid id, string? returnUrl, CancellationToken cancellationToken)
     {
+        if (id == Guid.Empty)
+        {
+            return HandleInvalidWordPost();
+        }
+
         if (id != Guid.Empty)
         {
             try
@@ -76,12 +81,7 @@ public sealed class WordsController(
             return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken);
         }
 
-        if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
-        {
-            return Redirect(returnUrl);
-        }
-
-        return RedirectToAction(nameof(Detail), new { id });
+        return RedirectToSafeWordReturn(id, returnUrl);
     }
 
     [HttpPost(Name = "Words_ToggleKnown")]
@@ -89,6 +89,11 @@ public sealed class WordsController(
     [Route("toggle-known")]
     public async Task<IActionResult> ToggleKnown(Guid id, string? returnUrl, CancellationToken cancellationToken)
     {
+        if (id == Guid.Empty)
+        {
+            return HandleInvalidWordPost();
+        }
+
         if (id != Guid.Empty)
         {
             var state = await userWordStateService.GetWordStateAsync(id, cancellationToken);
@@ -108,12 +113,7 @@ public sealed class WordsController(
             return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken);
         }
 
-        if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
-        {
-            return Redirect(returnUrl);
-        }
-
-        return RedirectToAction(nameof(Detail), new { id });
+        return RedirectToSafeWordReturn(id, returnUrl);
     }
 
     [HttpPost(Name = "Words_ToggleDifficult")]
@@ -121,6 +121,11 @@ public sealed class WordsController(
     [Route("toggle-difficult")]
     public async Task<IActionResult> ToggleDifficult(Guid id, string? returnUrl, CancellationToken cancellationToken)
     {
+        if (id == Guid.Empty)
+        {
+            return HandleInvalidWordPost();
+        }
+
         if (id != Guid.Empty)
         {
             var state = await userWordStateService.GetWordStateAsync(id, cancellationToken);
@@ -140,12 +145,7 @@ public sealed class WordsController(
             return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken);
         }
 
-        if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
-        {
-            return Redirect(returnUrl);
-        }
-
-        return RedirectToAction(nameof(Detail), new { id });
+        return RedirectToSafeWordReturn(id, returnUrl);
     }
 
     private WordDetailPageViewModel CreatePageViewModel(
@@ -176,8 +176,9 @@ public sealed class WordsController(
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
         bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
 
-        string resolvedReturnUrl = !string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl)
-            ? returnUrl
+        string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
+        string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
+            ? normalizedReturnUrl
             : Url.Action(nameof(Detail), "Words", new { id }) ?? $"/Words/Detail/{id}";
 
         return PartialView(
@@ -190,4 +191,20 @@ public sealed class WordsController(
                 canUseFavorites,
                 canUseFavorites ? null : favoriteLockedMessage ?? "Favorites require an active trial or premium plan."));
     }
+
+    private IActionResult RedirectToSafeWordReturn(Guid id, string? returnUrl)
+    {
+        string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
+        if (normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl))
+        {
+            return LocalRedirect(normalizedReturnUrl);
+        }
+
+        return RedirectToAction(nameof(Detail), new { id });
+    }
+
+    private IActionResult HandleInvalidWordPost() =>
+        Request.Headers.ContainsKey("HX-Request")
+            ? BadRequest()
+            : RedirectToAction("Index", "Home");
 }

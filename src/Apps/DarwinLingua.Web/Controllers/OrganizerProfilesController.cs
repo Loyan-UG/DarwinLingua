@@ -2,6 +2,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -9,9 +10,11 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class OrganizerProfilesController(
     IWebCatalogApiClient catalogApiClient,
     ICommunityNotificationEmailService notificationEmailService,
+    IAccountEmailRateLimiter rateLimiter,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "OrganizerProfiles_Index")]
+    [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<OrganizerProfileListItemModel> profiles = await catalogApiClient
@@ -24,8 +27,14 @@ public sealed class OrganizerProfilesController(
     [HttpGet("{slug}", Name = "OrganizerProfiles_Detail")]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
         OrganizerProfileDetailModel? profile = await catalogApiClient
-            .GetOrganizerProfileBySlugAsync(slug, cancellationToken)
+            .GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken)
             .ConfigureAwait(false);
 
         return profile is null
@@ -36,8 +45,14 @@ public sealed class OrganizerProfilesController(
     [HttpGet("{slug}/claim", Name = "OrganizerProfiles_Claim")]
     public async Task<IActionResult> Claim(string slug, CancellationToken cancellationToken)
     {
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
         OrganizerProfileDetailModel? profile = await catalogApiClient
-            .GetOrganizerProfileBySlugAsync(slug, cancellationToken)
+            .GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken)
             .ConfigureAwait(false);
 
         return profile is null
@@ -59,8 +74,14 @@ public sealed class OrganizerProfilesController(
         OrganizerClaimInputModel input,
         CancellationToken cancellationToken)
     {
+        string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        if (normalizedSlug is null)
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
         OrganizerProfileDetailModel? profile = await catalogApiClient
-            .GetOrganizerProfileBySlugAsync(slug, cancellationToken)
+            .GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken)
             .ConfigureAwait(false);
 
         if (profile is null)
@@ -77,20 +98,30 @@ public sealed class OrganizerProfilesController(
                 "Required claim fields are missing or invalid."));
         }
 
+        string requesterEmail = input.RequesterEmail.Trim();
+        if (!rateLimiter.TryConsume("organizer-claim", $"{normalizedSlug}:{requesterEmail}", 3, TimeSpan.FromHours(1)))
+        {
+            return View("Claim", new OrganizerProfileClaimPageViewModel(
+                profile,
+                input,
+                null,
+                "Too many claim attempts. Please wait before submitting again."));
+        }
+
         try
         {
             await catalogApiClient.SubmitOrganizerClaimRequestAsync(
-                    slug,
+                    normalizedSlug,
                     new SubmitOrganizerClaimRequest(
-                        input.RequesterName,
-                        input.RequesterEmail,
-                        input.RelationshipToOrganizer,
-                        input.EvidenceText),
+                        input.RequesterName.Trim(),
+                        requesterEmail,
+                        input.RelationshipToOrganizer.Trim(),
+                        input.EvidenceText.Trim()),
                     cancellationToken)
                 .ConfigureAwait(false);
 
             await notificationEmailService.SendOrganizerClaimSubmittedAsync(
-                    input.RequesterEmail,
+                    requesterEmail,
                     profile.DisplayName,
                     ResolveCulture(),
                     HttpContext.TraceIdentifier,
@@ -105,11 +136,15 @@ public sealed class OrganizerProfilesController(
                 .ConfigureAwait(false);
 
             TempData["StatusMessage"] = "Claim request submitted for review.";
-            return RedirectToAction(nameof(Detail), new { slug });
+            return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
         }
         catch (InvalidOperationException exception)
         {
-            return View("Claim", new OrganizerProfileClaimPageViewModel(profile, input, null, exception.Message));
+            return View("Claim", new OrganizerProfileClaimPageViewModel(
+                profile,
+                input,
+                null,
+                BuildClaimErrorMessage(exception)));
         }
     }
 
@@ -128,4 +163,9 @@ public sealed class OrganizerProfilesController(
             ?.RequestCulture.UICulture.Name
         ?? Request.Headers.AcceptLanguage.ToString()
         ?? "en";
+
+    private static string BuildClaimErrorMessage(InvalidOperationException exception) =>
+        exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
+            ? "This organizer profile is no longer available."
+            : "The claim request could not be submitted right now. Please try again.";
 }

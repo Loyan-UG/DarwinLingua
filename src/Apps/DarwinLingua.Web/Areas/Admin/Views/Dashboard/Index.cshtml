@@ -9,8 +9,8 @@
 
 <section class="grid-three-col">
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Active", Model.ActiveWordCount.ToString(), "Published learner-visible words.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Draft", Model.DraftWordCount.ToString(), "Words still outside the active learner catalog.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Packages", Model.ImportedPackageCount.ToString(), "Imported content packages recorded so far.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Events", Model.ConversationEventCount.ToString(), "Conversation events available in the directory.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.PendingUserReportCount.ToString(), "Moderation reports waiting for review.")' />
 </section>
 
 <section class="grid-two-col">
@@ -26,11 +26,31 @@
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Current operational snapshot</h2>
+        <h2 class="headline-sm">Catalog operations</h2>
         <ul class="feature-list">
+            <li>Draft words: @Model.DraftWordCount</li>
             <li>Topics: @Model.TotalTopicCount</li>
+            <li>Imported packages: @Model.ImportedPackageCount</li>
             <li>Failed imports: @Model.FailedPackageCount</li>
             <li>Last import: @(Model.LastImportAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "No imports yet")</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Social learning</h2>
+        <ul class="feature-list">
+            <li>Organizer profiles: @Model.OrganizerProfileCount</li>
+            <li>Event RSVPs: @Model.EventRsvpCount</li>
+            <li>Pending organizer claims: @Model.PendingOrganizerClaimRequestCount</li>
+            <li>Learner conversation profiles: @Model.LearnerConversationProfileCount</li>
+            <li>Pending partner requests: @Model.PendingPartnerRequestCount</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Moderation</h2>
+        <ul class="feature-list">
+            <li>Pending reports: @Model.PendingUserReportCount</li>
+            <li>User blocks: @Model.UserBlockCount</li>
+            <li>Decision audits: @Model.ModerationDecisionAuditCount</li>
         </ul>
     </article>
 </section>

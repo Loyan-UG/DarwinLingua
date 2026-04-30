@@ -6,6 +6,7 @@ namespace DarwinLingua.Web.Models;
 public sealed class UserReportInputModel
 {
     [Required]
+    [StringLength(64)]
     public string TargetType { get; set; } = string.Empty;
 
     [Required]
@@ -13,9 +14,11 @@ public sealed class UserReportInputModel
     public string TargetKey { get; set; } = string.Empty;
 
     [StringLength(320)]
+    [EmailAddress]
     public string? ReportedUserEmail { get; set; }
 
     [Required]
+    [StringLength(64)]
     public string Reason { get; set; } = "other";
 
     [Required]
@@ -28,6 +31,7 @@ public sealed class UserReportInputModel
 public sealed class UserBlockInputModel
 {
     [StringLength(320)]
+    [EmailAddress]
     public string BlockedEmail { get; set; } = string.Empty;
 
     [StringLength(500)]

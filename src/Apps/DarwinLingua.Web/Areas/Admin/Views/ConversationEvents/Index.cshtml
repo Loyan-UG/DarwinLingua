@@ -85,11 +85,21 @@
         </label>
         <label class="field">
             <span>Price type</span>
-            <input name="PriceType" value="@Model.Input.PriceType" placeholder="free" />
+            <select name="PriceType">
+                @foreach (string priceType in new[] { "free", "donation", "paid", "unknown" })
+                {
+                    <option value="@priceType" selected="@(string.Equals(Model.Input.PriceType, priceType, StringComparison.OrdinalIgnoreCase))">@priceType</option>
+                }
+            </select>
         </label>
         <label class="field">
             <span>Verification status</span>
-            <input name="VerificationStatus" value="@Model.Input.VerificationStatus" placeholder="reviewed" />
+            <select name="VerificationStatus">
+                @foreach (string status in new[] { "reviewed", "verified", "unverified", "stale" })
+                {
+                    <option value="@status" selected="@(string.Equals(Model.Input.VerificationStatus, status, StringComparison.OrdinalIgnoreCase))">@status</option>
+                }
+            </select>
         </label>
         <label class="field">
             <span>Source name</span>

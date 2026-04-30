@@ -31,7 +31,12 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
         CancellationToken cancellationToken)
     {
         string ownerEmail = GetOwnerEmail();
-        if (!ModelState.IsValid)
+        IReadOnlyList<string> helperLanguageCodes = SplitLanguageCodes(input.HelperLanguageCodesText);
+        if (!ModelState.IsValid ||
+            !IsAllowedInteractionPreference(input.InteractionPreference) ||
+            !IsAllowedGermanLevel(input.GermanLevel) ||
+            !IsAllowedVisibility(input.Visibility) ||
+            !HasAllowedLanguageCodes(helperLanguageCodes))
         {
             LearnerConversationProfileModel? existingProfile = await catalogApiClient
                 .GetLearnerConversationProfileAsync(ownerEmail, cancellationToken)
@@ -49,13 +54,13 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
             await catalogApiClient.SaveLearnerConversationProfileAsync(
                     ownerEmail,
                     new SaveLearnerConversationProfileRequest(
-                        input.DisplayName,
-                        input.CityRegion,
+                        input.DisplayName.Trim(),
+                        TrimToNull(input.CityRegion),
                         input.InteractionPreference,
                         input.GermanLevel,
-                        SplitLanguageCodes(input.HelperLanguageCodesText),
-                        input.ConversationGoals,
-                        input.AvailabilityNotes,
+                        helperLanguageCodes,
+                        input.ConversationGoals.Trim(),
+                        TrimToNull(input.AvailabilityNotes),
                         input.Visibility,
                         input.HasConfirmedAdult),
                     cancellationToken)
@@ -65,7 +70,7 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildProfileOperationErrorMessage(exception);
         }
 
         return RedirectToAction(nameof(Edit));
@@ -89,7 +94,7 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildProfileOperationErrorMessage(exception);
         }
 
         return RedirectToAction(nameof(Edit));
@@ -109,7 +114,7 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
         }
         catch (InvalidOperationException exception)
         {
-            TempData["ErrorMessage"] = exception.Message;
+            TempData["ErrorMessage"] = BuildProfileOperationErrorMessage(exception);
         }
 
         return RedirectToAction(nameof(Edit));
@@ -148,4 +153,44 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
         value
             .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
             .ToArray();
+
+    private static string? TrimToNull(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        return value.Trim();
+    }
+
+    private static bool IsAllowedInteractionPreference(string value) =>
+        string.Equals(value, "online", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "in-person", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "both", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedGermanLevel(string value) =>
+        string.Equals(value, "A1", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "A2", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "B1", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "B2", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "C1", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "C2", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAllowedVisibility(string value) =>
+        string.Equals(value, "private", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "public", StringComparison.OrdinalIgnoreCase);
+
+    private static bool HasAllowedLanguageCodes(IReadOnlyCollection<string> languageCodes) =>
+        languageCodes.Count > 0 && languageCodes.All(static code =>
+            code.Length is >= 2 and <= 8 &&
+            code.All(static character =>
+                (character >= 'a' && character <= 'z') ||
+                (character >= 'A' && character <= 'Z') ||
+                character == '-'));
+
+    private static string BuildProfileOperationErrorMessage(Exception exception) =>
+        exception.Message.Contains("409", StringComparison.OrdinalIgnoreCase)
+            ? "The learner profile could not be saved because it conflicts with existing data."
+            : "The learner profile operation could not be completed. Review the fields and try again.";
 }

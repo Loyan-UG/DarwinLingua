@@ -37,6 +37,23 @@ public sealed class RegisterModel(
         }
 
         string email = Input.Email.Trim();
+        if (!rateLimiter.TryConsume("register", $"{GetRemoteAddressKey()}|{email}", 10, TimeSpan.FromMinutes(30)))
+        {
+            return RedirectToPage("/Account/CheckEmail", new { area = "Identity" });
+        }
+
+        DarwinLinguaIdentityUser? existingUser = await userManager.FindByEmailAsync(email).ConfigureAwait(false);
+        if (existingUser is not null)
+        {
+            if (!await userManager.IsEmailConfirmedAsync(existingUser).ConfigureAwait(false) &&
+                rateLimiter.TryConsume("register-confirmation", email, 3, TimeSpan.FromMinutes(30)))
+            {
+                await SendConfirmationAsync(existingUser, ReturnUrl, cancellationToken).ConfigureAwait(false);
+            }
+
+            return RedirectToPage("/Account/CheckEmail", new { area = "Identity" });
+        }
+
         DarwinLinguaIdentityUser user = new()
         {
             UserName = email,
@@ -59,21 +76,29 @@ public sealed class RegisterModel(
 
         if (rateLimiter.TryConsume("register-confirmation", email, 3, TimeSpan.FromMinutes(30)))
         {
-            string code = await userManager.GenerateEmailConfirmationTokenAsync(user).ConfigureAwait(false);
-            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-            string callbackUrl = BuildPublicPageUrl(
-                "/Account/ConfirmEmail",
-                new { area = "Identity", userId = user.Id, code, returnUrl = ReturnUrl });
-            await accountEmailService.SendEmailConfirmationAsync(
-                    user,
-                    callbackUrl,
-                    ResolveCulture(),
-                    HttpContext.TraceIdentifier,
-                    cancellationToken)
-                .ConfigureAwait(false);
+            await SendConfirmationAsync(user, ReturnUrl, cancellationToken).ConfigureAwait(false);
         }
 
         return RedirectToPage("/Account/CheckEmail", new { area = "Identity" });
+    }
+
+    private async Task SendConfirmationAsync(
+        DarwinLinguaIdentityUser user,
+        string? returnUrl,
+        CancellationToken cancellationToken)
+    {
+        string code = await userManager.GenerateEmailConfirmationTokenAsync(user).ConfigureAwait(false);
+        code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+        string callbackUrl = BuildPublicPageUrl(
+            "/Account/ConfirmEmail",
+            new { area = "Identity", userId = user.Id, code, returnUrl });
+        await accountEmailService.SendEmailConfirmationAsync(
+                user,
+                callbackUrl,
+                ResolveCulture(),
+                HttpContext.TraceIdentifier,
+                cancellationToken)
+            .ConfigureAwait(false);
     }
 
     private string BuildPublicPageUrl(string page, object values)
@@ -93,6 +118,9 @@ public sealed class RegisterModel(
             ?.RequestCulture.UICulture.Name
         ?? Request.Headers.AcceptLanguage.ToString()
         ?? "en";
+
+    private string GetRemoteAddressKey() =>
+        HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
 
     public sealed class RegisterInputModel
     {

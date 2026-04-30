@@ -32,6 +32,7 @@ public sealed class PartnerRequestInputModel
     public Guid TargetLearnerProfileId { get; set; }
 
     [Required]
+    [StringLength(64)]
     public string OpenerTemplateKey { get; set; } = "practice-goals";
 
     [StringLength(500)]

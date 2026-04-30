@@ -27,20 +27,25 @@ public sealed record AdminUserEntitlementAuditEventViewModel(
 public sealed class AdminUpdateUserEntitlementInputModel
 {
     [Required]
+    [StringLength(128)]
     public string UserId { get; init; } = string.Empty;
 
     [Required]
+    [StringLength(32)]
     public string Tier { get; init; } = string.Empty;
 
+    [StringLength(64)]
     public string? ExpiresAtUtc { get; init; }
 }
 
 public sealed class AdminUpdateUserRoleInputModel
 {
     [Required]
+    [StringLength(128)]
     public string UserId { get; init; } = string.Empty;
 
     [Required]
+    [StringLength(64)]
     public string Role { get; init; } = string.Empty;
 
     public bool IsEnabled { get; init; }
