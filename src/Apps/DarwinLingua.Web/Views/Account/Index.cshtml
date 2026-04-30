@@ -52,14 +52,19 @@
             {
                 <li>Premium ends: @Model.Entitlement.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
             }
-            <li>Enabled features: @string.Join(", ", Model.Entitlement.EnabledFeatures)</li>
         </ul>
+        <div class="chip-grid">
+            @foreach (var feature in Model.Entitlement.EnabledFeatures)
+            {
+                <span class="chip-link chip-link--static">@feature</span>
+            }
+        </div>
     </article>
     <article class="panel stack-md">
         <h2 class="headline-sm">Security</h2>
         <ul class="feature-list">
-            <li>Identity UI is enabled for sign-in, registration, and password reset flows.</li>
-            <li>Operator and Admin roles gate the admin area through authorization policies.</li>
+            <li>Use a strong password and keep your account email up to date.</li>
+            <li>Administrative tools are only shown to accounts with the right permissions.</li>
         </ul>
     </article>
     <article class="panel stack-md">

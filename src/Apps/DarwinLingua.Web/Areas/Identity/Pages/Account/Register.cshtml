@@ -4,34 +4,43 @@
     ViewData["Title"] = "Register";
 }
 
-<section class="panel stack-lg">
-    <span class="eyebrow">Create account</span>
-    <h1 class="headline-md">Register for Darwin Lingua</h1>
-    <p class="body-lg">Enter your email and choose a password. If the address can be used, Darwin Lingua will send the next account step.</p>
-</section>
+<div class="auth-page">
+    <section class="panel stack-lg auth-intro">
+        <span class="eyebrow">Create account</span>
+        <h1 class="headline-md">Register for Darwin Lingua</h1>
+        <p class="body-lg">Enter your email and choose a password. If the address can be used, Darwin Lingua will send the next account step.</p>
+    </section>
 
-<section class="panel stack-md">
-    <form method="post" class="form-grid">
-        <input type="hidden" asp-for="ReturnUrl" />
-        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-        <label asp-for="Input.Email"></label>
-        <input asp-for="Input.Email" autocomplete="email" />
-        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    <section class="panel stack-md auth-card">
+        <form method="post" class="auth-form">
+            <input type="hidden" asp-for="ReturnUrl" />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
-        <label asp-for="Input.Password"></label>
-        <input asp-for="Input.Password" autocomplete="new-password" />
-        <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <div class="field">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" autocomplete="email" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
 
-        <label asp-for="Input.ConfirmPassword"></label>
-        <input asp-for="Input.ConfirmPassword" autocomplete="new-password" />
-        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            <div class="field">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" autocomplete="new-password" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
 
-        <div class="action-row">
-            <button type="submit" class="button button--primary">Continue</button>
-            <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
-        </div>
-    </form>
-</section>
+            <div class="field">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" autocomplete="new-password" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="action-row auth-actions">
+                <button type="submit" class="button button--primary">Continue</button>
+                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+            </div>
+        </form>
+    </section>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

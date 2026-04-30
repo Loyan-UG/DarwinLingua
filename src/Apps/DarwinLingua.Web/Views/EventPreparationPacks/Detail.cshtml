@@ -8,6 +8,7 @@
         <span class="eyebrow">@Model.PreparationPack.CefrLevel · @Model.PreparationPack.EventType · @Model.PreparationPack.Category</span>
         <div class="detail-toolbar__actions">
             <form asp-controller="EventPreparationPacks" asp-action="Complete" asp-route-slug="@Model.PreparationPack.Slug" method="post">
+                @Html.AntiForgeryToken()
                 <button type="submit" class="button button--primary button--compact">Mark prepared</button>
             </form>
             <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
@@ -17,7 +18,7 @@
     <p class="body-lg">@Model.PreparationPack.Description</p>
     @if (Model.CompletionRecorded)
     {
-        <div class="state-panel state-panel--success">
+        <div class="status-banner status-banner--success">
             <strong>Preparation recorded.</strong>
         </div>
     }
@@ -36,6 +37,7 @@
 {
     <section class="panel stack-md">
         <h2 class="headline-sm">Preparation prompts</h2>
+        <p class="body-lg">Use these prompts to rehearse what you want to say before the event.</p>
         <div class="grid-two-col">
             @foreach (var prompt in Model.PreparationPack.Prompts)
             {
@@ -51,7 +53,7 @@
 @if (Model.PreparationPack.LinkedVocabulary.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Linked vocabulary</h2>
+        <h2 class="headline-sm">Useful vocabulary</h2>
         <ul class="feature-list">
             @foreach (var reference in Model.PreparationPack.LinkedVocabulary)
             {

@@ -4,14 +4,14 @@
     @if (!string.IsNullOrWhiteSpace(Model.FavoriteLockedMessage))
     {
         <div class="panel panel--muted">
-            <strong>Favorites locked</strong>
+            <strong>Favorites need account access</strong>
             <p>@Model.FavoriteLockedMessage</p>
         </div>
     }
 
     <div class="meta-grid">
         <div class="meta-chip">
-            <strong>Viewed</strong>
+            <strong>Views</strong>
             <span>@Model.WordState.ViewCount times</span>
         </div>
         @if (Model.WordState.LastViewedAtUtc is DateTime lastViewedAtUtc)
@@ -65,6 +65,6 @@
                 @(Model.WordState.IsDifficult ? "Difficult" : "Mark difficult")
             </button>
         </form>
-        <a class="button button--secondary" asp-controller="Favorites" asp-action="Index">Favorites</a>
+        <a class="button button--secondary" asp-controller="Favorites" asp-action="Index">Open favorites</a>
     </div>
 </div>

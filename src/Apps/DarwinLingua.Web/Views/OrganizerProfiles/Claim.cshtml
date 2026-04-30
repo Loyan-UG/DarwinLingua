@@ -23,6 +23,7 @@
 
 <section class="panel stack-md">
     <h2 class="headline-sm">Request review</h2>
+    <p class="body-lg">Tell us how you are connected to this organizer so the listing can be assigned safely.</p>
     <form method="post" class="form-grid">
         @Html.AntiForgeryToken()
         <label class="field">
@@ -35,7 +36,7 @@
         </label>
         <label class="field">
             <span>Relationship</span>
-            <input name="RelationshipToOrganizer" value="@Model.Input.RelationshipToOrganizer" placeholder="owner, staff, teacher, volunteer" />
+            <input name="RelationshipToOrganizer" value="@Model.Input.RelationshipToOrganizer" placeholder="Owner, staff, teacher, volunteer" />
         </label>
         <label class="field field--wide">
             <span>Evidence</span>

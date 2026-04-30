@@ -64,7 +64,7 @@
             <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">Claim profile</a>
         </div>
     }
-    <form method="post" asp-controller="Moderation" asp-action="Report" class="stack-sm">
+    <form method="post" asp-controller="Moderation" asp-action="Report" class="panel report-panel stack-sm">
         @Html.AntiForgeryToken()
         <input type="hidden" name="TargetType" value="organizer-profile" />
         <input type="hidden" name="TargetKey" value="@Model.Profile.Slug" />
@@ -83,7 +83,7 @@
             <span>Report details</span>
             <textarea name="Details" rows="2" maxlength="2000"></textarea>
         </label>
-        <button type="submit" class="button button--secondary button--compact">Submit report</button>
+        <button type="submit" class="button button--secondary button--compact">Send report</button>
     </form>
 </section>
 
@@ -91,7 +91,7 @@
     <h2 class="headline-sm">Active events</h2>
     @if (Model.Profile.ActiveEvents.Count == 0)
     {
-        <p>No active events are linked to this organizer yet.</p>
+        <p>This organizer does not have any active events right now.</p>
     }
     else
     {

@@ -25,12 +25,29 @@ public sealed class BillingController(
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         string userId = GetUserId();
-        UserEntitlementSnapshot entitlement = await userEntitlementService.GetCurrentAsync(userId, cancellationToken);
+        UserEntitlementSnapshot entitlement;
+        WebBillingProfile? billingProfile;
         BillingOptions billingOptions = options.Value;
-        WebBillingProfile? billingProfile = await dbContext.WebBillingProfiles
-            .AsNoTracking()
-            .SingleOrDefaultAsync(profile => profile.UserId == userId, cancellationToken)
-            .ConfigureAwait(false);
+
+        try
+        {
+            entitlement = await userEntitlementService.GetCurrentAsync(userId, cancellationToken);
+            billingProfile = await dbContext.WebBillingProfiles
+                .AsNoTracking()
+                .SingleOrDefaultAsync(profile => profile.UserId == userId, cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested)
+        {
+            logger.LogWarning(exception, "Billing profile could not be loaded for user {UserId}.", userId);
+            Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+            return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+            {
+                Title = "Billing is temporarily unavailable",
+                Message = "Your plan information could not be loaded right now. Please try again.",
+                RequestId = HttpContext.TraceIdentifier
+            });
+        }
 
         return View(new BillingPageViewModel(
             entitlement,
@@ -60,10 +77,20 @@ public sealed class BillingController(
             return RedirectToAction(nameof(Index));
         }
 
-        WebBillingProfile? billingProfile = await dbContext.WebBillingProfiles
-            .AsNoTracking()
-            .SingleOrDefaultAsync(profile => profile.UserId == userId, cancellationToken)
-            .ConfigureAwait(false);
+        WebBillingProfile? billingProfile;
+        try
+        {
+            billingProfile = await dbContext.WebBillingProfiles
+                .AsNoTracking()
+                .SingleOrDefaultAsync(profile => profile.UserId == userId, cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested)
+        {
+            logger.LogWarning(exception, "Stripe customer profile could not be loaded for user {UserId}.", userId);
+            TempData["BillingStatus"] = "Subscription management could not be opened. Please try again later.";
+            return RedirectToAction(nameof(Index));
+        }
         if (string.IsNullOrWhiteSpace(billingProfile?.ProviderCustomerId))
         {
             TempData["BillingStatus"] = "No Stripe customer record is linked to this account yet.";

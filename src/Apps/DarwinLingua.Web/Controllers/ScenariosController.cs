@@ -11,15 +11,28 @@ public sealed class ScenariosController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
     IWebEntitledFeatureAccessService featureAccessService,
+    ILogger<ScenariosController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "Scenarios_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        IReadOnlyList<ScenarioLessonListItemModel> scenarios = await catalogApiClient
-            .GetScenariosAsync(cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<ScenarioLessonListItemModel> scenarios;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            scenarios = await catalogApiClient
+                .GetScenariosAsync(catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Scenarios could not be loaded.");
+            scenarios = [];
+        }
 
         return View(new ScenarioIndexPageViewModel(scenarios));
     }
@@ -39,13 +52,25 @@ public sealed class ScenariosController(
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
 
-        ScenarioLessonDetailModel? scenario = await catalogApiClient
-            .GetScenarioBySlugAsync(
-                normalizedSlug,
-                profile.PreferredMeaningLanguage1,
-                effectiveSecondaryMeaningLanguageCode,
-                cancellationToken)
-            .ConfigureAwait(false);
+        ScenarioLessonDetailModel? scenario;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            scenario = await catalogApiClient
+                .GetScenarioBySlugAsync(
+                    normalizedSlug,
+                    profile.PreferredMeaningLanguage1,
+                    effectiveSecondaryMeaningLanguageCode,
+                    catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Scenario detail could not be loaded for {Slug}.", normalizedSlug);
+            return ServiceUnavailableView("Scenario is temporarily unavailable", "This practice scenario could not be loaded right now. Please return to scenarios and try again.");
+        }
 
         if (scenario is null)
         {
@@ -54,16 +79,28 @@ public sealed class ScenariosController(
 
         analyticsService?.Record(WebProductAnalyticsEvents.ScenarioViewed, $"scenario:{scenario.Slug}");
 
-        Task<IReadOnlyList<ConversationStarterPackListItemModel>> relatedStarterPacksTask = catalogApiClient
-            .GetConversationStarterPacksForScenarioAsync(normalizedSlug, cancellationToken);
-        Task<IReadOnlyList<EventPreparationPackListItemModel>> relatedEventPreparationPacksTask =
-            LoadRelatedEventPreparationPacksAsync(normalizedSlug, cancellationToken);
-        await Task.WhenAll(relatedStarterPacksTask, relatedEventPreparationPacksTask).ConfigureAwait(false);
+        IReadOnlyList<ConversationStarterPackListItemModel> relatedStarterPacks = [];
+        IReadOnlyList<EventPreparationPackListItemModel> relatedEventPreparationPacks = [];
+
+        try
+        {
+            Task<IReadOnlyList<ConversationStarterPackListItemModel>> relatedStarterPacksTask = catalogApiClient
+                .GetConversationStarterPacksForScenarioAsync(normalizedSlug, cancellationToken);
+            Task<IReadOnlyList<EventPreparationPackListItemModel>> relatedEventPreparationPacksTask =
+                LoadRelatedEventPreparationPacksAsync(normalizedSlug, cancellationToken);
+            await Task.WhenAll(relatedStarterPacksTask, relatedEventPreparationPacksTask).ConfigureAwait(false);
+            relatedStarterPacks = await relatedStarterPacksTask.ConfigureAwait(false);
+            relatedEventPreparationPacks = await relatedEventPreparationPacksTask.ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Scenario related content could not be loaded for {Slug}.", normalizedSlug);
+        }
 
         return View(new ScenarioDetailPageViewModel(
             scenario,
-            await relatedStarterPacksTask.ConfigureAwait(false),
-            await relatedEventPreparationPacksTask.ConfigureAwait(false),
+            relatedStarterPacks,
+            relatedEventPreparationPacks,
             profile.PreferredMeaningLanguage1,
             effectiveSecondaryMeaningLanguageCode));
     }
@@ -83,13 +120,25 @@ public sealed class ScenariosController(
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
 
-        ScenarioLessonDetailModel? scenario = await catalogApiClient
-            .GetScenarioBySlugAsync(
-                normalizedSlug,
-                profile.PreferredMeaningLanguage1,
-                effectiveSecondaryMeaningLanguageCode,
-                cancellationToken)
-            .ConfigureAwait(false);
+        ScenarioLessonDetailModel? scenario;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            scenario = await catalogApiClient
+                .GetScenarioBySlugAsync(
+                    normalizedSlug,
+                    profile.PreferredMeaningLanguage1,
+                    effectiveSecondaryMeaningLanguageCode,
+                    catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Scenario roleplay could not be loaded for {Slug}.", normalizedSlug);
+            return ServiceUnavailableView("Roleplay is temporarily unavailable", "This guided roleplay could not be loaded right now. Please return to scenarios and try again.");
+        }
 
         if (scenario is null)
         {
@@ -143,6 +192,17 @@ public sealed class ScenariosController(
 
     private static bool IsLearnerRole(string speakerRole) =>
         string.Equals(speakerRole, "learner", StringComparison.OrdinalIgnoreCase);
+
+    private ViewResult ServiceUnavailableView(string title, string message)
+    {
+        Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+        return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+        {
+            Title = title,
+            Message = message,
+            RequestId = HttpContext.TraceIdentifier
+        });
+    }
 
     private async Task<IReadOnlyList<EventPreparationPackListItemModel>> LoadRelatedEventPreparationPacksAsync(
         string scenarioSlug,

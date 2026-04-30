@@ -8,15 +8,15 @@
 <section class="panel stack-lg">
     <span class="eyebrow">Conversation profile</span>
     <h1 class="headline-md">Learner profile</h1>
-    <p class="body-lg">Control what other learners can see before partner matching is enabled.</p>
+    <p class="body-lg">Choose how you appear to other learners when you look for conversation practice.</p>
 
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
-        <div class="alert alert-success">@Model.StatusMessage</div>
+        <div class="alert alert--success">@Model.StatusMessage</div>
     }
     @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
     {
-        <div class="alert alert-danger">@Model.ErrorMessage</div>
+        <div class="alert alert--danger">@Model.ErrorMessage</div>
     }
 
     @if (hasProfile)
@@ -31,7 +31,7 @@
 <section class="panel stack-lg">
     <form method="post" asp-action="Save" class="stack-md">
         @Html.AntiForgeryToken()
-        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="alert alert--danger"></div>
 
         <label class="form-field">
             <span>Display name</span>

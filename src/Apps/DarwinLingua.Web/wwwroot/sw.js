@@ -1,9 +1,6 @@
-const shellCacheName = "darwin-lingua-shell-v1";
+const shellCacheName = "darwin-lingua-shell-v2";
 const shellAssets = [
-    "/",
     "/manifest.webmanifest",
-    "/css/tailwind.generated.css",
-    "/js/site.js",
     "/icons/favicon.svg",
     "/icons/icon-192.svg",
     "/icons/icon-512.svg",
@@ -11,13 +8,16 @@ const shellAssets = [
 ];
 
 self.addEventListener("install", (event) => {
+    self.skipWaiting();
     event.waitUntil(caches.open(shellCacheName).then((cache) => cache.addAll(shellAssets)));
 });
 
 self.addEventListener("activate", (event) => {
     event.waitUntil(
-        caches.keys().then((keys) =>
-            Promise.all(keys.filter((key) => key !== shellCacheName).map((key) => caches.delete(key))))
+        caches.keys()
+            .then((keys) =>
+                Promise.all(keys.filter((key) => key !== shellCacheName).map((key) => caches.delete(key))))
+            .then(() => self.clients.claim())
     );
 });
 
@@ -26,7 +26,20 @@ self.addEventListener("fetch", (event) => {
         return;
     }
 
-    event.respondWith(
-        caches.match(event.request).then((cachedResponse) => cachedResponse ?? fetch(event.request))
-    );
+    if (event.request.mode === "navigate") {
+        event.respondWith(fetch(event.request));
+        return;
+    }
+
+    const requestUrl = new URL(event.request.url);
+    const isSameOrigin = requestUrl.origin === self.location.origin;
+    const isCacheableAsset = isSameOrigin
+        && (requestUrl.pathname.startsWith("/icons/")
+            || requestUrl.pathname === "/manifest.webmanifest");
+
+    if (!isCacheableAsset) {
+        return;
+    }
+
+    event.respondWith(caches.match(event.request).then((cachedResponse) => cachedResponse ?? fetch(event.request)));
 });

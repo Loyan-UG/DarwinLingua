@@ -12,10 +12,10 @@
     <header class="shell-header admin-header">
         <div class="shell-container shell-nav">
             <a class="brand-mark" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
-                <span class="brand-mark__icon">AD</span>
+                <img class="brand-mark__logo" src="~/images/logo.png" alt="" width="48" height="48" />
                 <span class="brand-mark__text">
                     <strong>Darwin Lingua Admin</strong>
-                    <span>Operator surface</span>
+                    <span>Operations</span>
                 </span>
             </a>
             <nav class="shell-links" aria-label="Admin">
@@ -28,11 +28,10 @@
                 <a asp-area="Admin" asp-controller="Moderation" asp-action="Index">Moderation</a>
                 <a asp-area="Admin" asp-controller="Reports" asp-action="Index">Reports</a>
                 <a asp-area="Admin" asp-controller="Analytics" asp-action="Index">Analytics</a>
-                <a asp-area="Admin" asp-controller="History" asp-action="Index">History</a>
-                <a asp-area="Admin" asp-controller="Rollback" asp-action="Index">Rollback</a>
                 <a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a>
                 <a asp-area="Admin" asp-controller="Diagnostics" asp-action="Index">Diagnostics</a>
                 <a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">Email</a>
+                <a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">Billing</a>
                 <a asp-area="" asp-controller="Home" asp-action="Index">Learner site</a>
             </nav>
         </div>
@@ -40,7 +39,7 @@
     <main class="shell-container shell-main">
         @RenderBody()
     </main>
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script src="~/js/htmx.min.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

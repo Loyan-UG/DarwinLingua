@@ -78,14 +78,14 @@
     <div class="detail-toolbar__actions">
         @if (!string.IsNullOrWhiteSpace(Model.Event.ExternalLink))
         {
-            <a class="button button--primary button--compact" href="@Model.Event.ExternalLink" rel="noopener noreferrer" target="_blank">External registration</a>
+            <a class="button button--primary button--compact" href="@Model.Event.ExternalLink" rel="noopener noreferrer" target="_blank">Register</a>
         }
         @if (!string.IsNullOrWhiteSpace(Model.Event.ContactMethod))
         {
             <span class="button button--secondary button--compact">@Model.Event.ContactMethod</span>
         }
     </div>
-    <form method="post" asp-controller="Moderation" asp-action="Report" class="stack-sm">
+    <form method="post" asp-controller="Moderation" asp-action="Report" class="panel report-panel stack-sm">
         @Html.AntiForgeryToken()
         <input type="hidden" name="TargetType" value="conversation-event" />
         <input type="hidden" name="TargetKey" value="@Model.Event.Slug" />
@@ -103,12 +103,13 @@
             <span>Report details</span>
             <textarea name="Details" rows="2" maxlength="2000"></textarea>
         </label>
-        <button type="submit" class="button button--secondary button--compact">Submit report</button>
+        <button type="submit" class="button button--secondary button--compact">Send report</button>
     </form>
 </section>
 
 <section class="panel stack-md">
     <h2 class="headline-sm">RSVP</h2>
+    <p class="body-lg">Save your interest or attendance so the organizer can plan capacity.</p>
     <dl class="detail-list">
         <div>
             <dt>Interested</dt>
@@ -173,7 +174,7 @@
 @if (!string.IsNullOrWhiteSpace(Model.Event.SourceName) || Model.Event.LastVerifiedAtUtc.HasValue)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Listing source</h2>
+        <h2 class="headline-sm">Listing information</h2>
         <p>
             @if (!string.IsNullOrWhiteSpace(Model.Event.SourceUrl))
             {

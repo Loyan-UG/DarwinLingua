@@ -10,6 +10,7 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class EventPreparationPacksController(
     IWebCatalogApiClient catalogApiClient,
     IWebEntitledFeatureAccessService featureAccessService,
+    ILogger<EventPreparationPacksController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("{slug}", Name = "EventPreparationPacks_Detail")]
@@ -28,9 +29,21 @@ public sealed class EventPreparationPacksController(
             return Forbid();
         }
 
-        EventPreparationPackDetailModel? preparationPack = await catalogApiClient
-            .GetEventPreparationPackBySlugAsync(normalizedSlug, cancellationToken)
-            .ConfigureAwait(false);
+        EventPreparationPackDetailModel? preparationPack;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            preparationPack = await catalogApiClient
+                .GetEventPreparationPackBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Event preparation pack could not be loaded for {Slug}.", normalizedSlug);
+            return ServiceUnavailableView("Preparation pack is temporarily unavailable", "This preparation pack could not be loaded right now. Please try again from scenarios or events.");
+        }
 
         if (preparationPack is null)
         {
@@ -62,9 +75,22 @@ public sealed class EventPreparationPacksController(
             return Forbid();
         }
 
-        EventPreparationPackDetailModel? preparationPack = await catalogApiClient
-            .GetEventPreparationPackBySlugAsync(normalizedSlug, cancellationToken)
-            .ConfigureAwait(false);
+        EventPreparationPackDetailModel? preparationPack;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            preparationPack = await catalogApiClient
+                .GetEventPreparationPackBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Event preparation completion could not load pack {Slug}.", normalizedSlug);
+            TempData["ErrorMessage"] = "Preparation progress could not be saved right now. Please try again.";
+            return RedirectToAction("Index", "Scenarios");
+        }
 
         if (preparationPack is null)
         {
@@ -75,5 +101,16 @@ public sealed class EventPreparationPacksController(
         TempData["PreparationPackCompleted"] = preparationPack.Slug;
 
         return RedirectToAction(nameof(Detail), new { slug = preparationPack.Slug });
+    }
+
+    private ViewResult ServiceUnavailableView(string title, string message)
+    {
+        Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+        return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+        {
+            Title = title,
+            Message = message,
+            RequestId = HttpContext.TraceIdentifier
+        });
     }
 }

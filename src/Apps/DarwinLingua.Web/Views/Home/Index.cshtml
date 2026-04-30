@@ -5,45 +5,47 @@
 
 <section class="hero">
     <div class="hero__content">
-        <span class="eyebrow">Learner web</span>
-        <h1 class="headline-xl">Learn German with curated workplace vocabulary, not random word dumps.</h1>
+        <span class="eyebrow">German for real work</span>
+        <h1 class="headline-xl">Build the vocabulary you actually need for meetings, systems, and daily decisions.</h1>
         <p class="body-lg">
-            The learner web app now exposes browse, search, favorites, recent activity, installable PWA support,
-            automatic pronunciation on the word page, and curated collections for focused study paths such as ERP,
-            CRM, warehouse, and project communication.
+            Darwin Lingua turns German study into a focused workflow: curated workplace collections, CEFR-aware browsing,
+            searchable word detail, pronunciation support, favorites, and recent activity in one calm learning space.
         </p>
         <div class="action-row">
-            <a class="button button--primary" asp-controller="Browse" asp-action="Index">Browse words</a>
-            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Open collections</a>
-            <a class="button button--secondary" asp-controller="Search" asp-action="Index">Search words</a>
-            <a class="button button--secondary" asp-action="Install">Install app</a>
+            <a class="button button--primary" asp-controller="Browse" asp-action="Index">Start learning</a>
+            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Explore collections</a>
+            <a class="button button--secondary" asp-controller="Search" asp-action="Index">Search vocabulary</a>
         </div>
     </div>
-    <div class="hero__aside panel panel--accent stack-md">
-        <p class="eyebrow">What is already live</p>
-        <ul class="feature-list">
-            <li>Browse by topic and CEFR</li>
-            <li>Search with targeted updates</li>
-            <li>Curated learner collections</li>
-            <li>Word detail with speech and examples</li>
-            <li>Favorites and recent activity</li>
-            <li>Installable PWA shell</li>
-        </ul>
+    <div class="hero__aside">
+        <div class="hero-preview">
+            <img src="~/images/logo.png" alt="" />
+            <div>
+                <span class="eyebrow">Today&apos;s focus</span>
+                <strong>Project communication</strong>
+                <p>Practice the words, phrases, and examples that show up in planning, reporting, and team coordination.</p>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <span><strong>A1-C1</strong> CEFR levels</span>
+            <span><strong>Workplace</strong> collections</span>
+            <span><strong>Personal</strong> progress</span>
+        </div>
     </div>
 </section>
 
-<section class="panel stack-lg">
+<section class="content-band stack-lg">
     <div class="section-heading">
         <div>
-            <span class="eyebrow">Collections</span>
-            <h2 class="headline-md">Featured study playlists</h2>
+            <span class="eyebrow">Guided study</span>
+            <h2 class="headline-md">Featured collections</h2>
         </div>
         <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Browse all collections</a>
     </div>
 
     @if (Model.FeaturedCollections.Count == 0)
     {
-        <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No collections available", "Start the shared catalog service and seed the catalog to load curated collections.")' />
+        <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("Collections are being prepared", "Curated study paths will appear here as soon as they are available for your account.")' />
     }
     else
     {
@@ -56,63 +58,32 @@
     }
 </section>
 
-<section id="roadmap" class="grid-two-col">
+<section class="grid-three-col">
     <article class="panel stack-md">
-        <span class="eyebrow">Learner experience</span>
-        <h2 class="headline-md">Designed for focused practice</h2>
-        <ul class="feature-list">
-            <li>Browse by CEFR and topic</li>
-            <li>Search and word detail flows</li>
-            <li>Playlist-like collections for books and subjects</li>
-            <li>Favorites and word-state markers</li>
-            <li>Settings and install guidance</li>
-        </ul>
+        <span class="eyebrow">Browse</span>
+        <h2 class="headline-sm">Find the right words fast</h2>
+        <p>Filter by CEFR level, topic, and learning context so every session starts from a useful set of vocabulary.</p>
+        <a class="text-link" asp-controller="Browse" asp-action="Index">Open browse</a>
     </article>
     <article class="panel stack-md">
-        <span class="eyebrow">Operator experience</span>
-        <h2 class="headline-md">Catalog remains centralized</h2>
-        <ul class="feature-list">
-            <li>Web reads published words from the shared Web API</li>
-            <li>Mobile updates against the same server-side catalog</li>
-            <li>Curated collections are seeded in the shared catalog</li>
-            <li>Admin tooling can later manage them centrally</li>
-        </ul>
+        <span class="eyebrow">Practice</span>
+        <h2 class="headline-sm">Keep useful words close</h2>
+        <p>Mark favorites, revisit recent words, hear pronunciation, and keep your practice tied to real examples.</p>
+        <a class="text-link" asp-controller="Favorites" asp-action="Index">View favorites</a>
+    </article>
+    <article class="panel stack-md">
+        <span class="eyebrow">Connect</span>
+        <h2 class="headline-sm">Prepare for conversation</h2>
+        <p>Use starters, scenarios, events, and partner matching to move vocabulary from recognition into speaking.</p>
+        <a class="text-link" asp-controller="Scenarios" asp-action="Index">Open scenarios</a>
     </article>
 </section>
 
-<section class="panel stack-md">
-    <span class="eyebrow">Architecture</span>
-    <h2 class="headline-md">Why this stack was chosen</h2>
-    <p>
-        The web host stays server-rendered for SEO, accessibility, and operational simplicity. Tailwind gives better UI control
-        than Bootstrap, and <code>htmx</code> gives us fast targeted interactions without splitting the frontend into a separate SPA.
-    </p>
-</section>
-
-<section class="grid-two-col">
-    <article class="panel stack-md">
-        <span class="eyebrow">Data source</span>
-        <h2 class="headline-md">Catalog data is shared by design</h2>
-        <p>
-            The website is intended to read published catalog data from the same shared server-side database that the Web API exposes to mobile clients.
-            If browse, search, or collection pages are empty, check the shared catalog connection and make sure the import and seeding path has run.
-        </p>
-    </article>
-    <article class="panel stack-md">
-        <span class="eyebrow">Architecture note</span>
-        <h2 class="headline-md">Identity is isolated from catalog content</h2>
-        <p>
-            The shared catalog stays server-owned, while learner-specific preferences and identity remain a separate concern. That avoids
-            splitting the vocabulary source of truth across multiple systems.
-        </p>
-    </article>
-</section>
-
-<section class="panel stack-lg">
+<section class="content-band stack-lg">
     <div class="section-heading">
         <div>
-            <span class="eyebrow">Recent activity</span>
-            <h2 class="headline-md">Recently viewed words</h2>
+            <span class="eyebrow">Continue</span>
+            <h2 class="headline-md">Pick up where you left off</h2>
         </div>
         <a class="button button--secondary" asp-controller="Recent" asp-action="Index">Open history</a>
     </div>
@@ -121,6 +92,6 @@
         hx-trigger="load"
         hx-target="this"
         hx-swap="innerHTML">
-        <p class="body-lg">Loading recent activity…</p>
+        <p class="body-lg">Loading your recent words...</p>
     </div>
 </section>

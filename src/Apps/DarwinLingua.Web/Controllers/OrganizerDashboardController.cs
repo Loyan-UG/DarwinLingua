@@ -9,7 +9,9 @@ namespace DarwinLingua.Web.Controllers;
 
 [Authorize(Policy = "Organizer")]
 [Route("organizer")]
-public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApiClient) : Controller
+public sealed class OrganizerDashboardController(
+    IWebCatalogApiClient catalogApiClient,
+    ILogger<OrganizerDashboardController> logger) : Controller
 {
     private const int DashboardProfileLoadConcurrency = 4;
     private const int DashboardEventLoadConcurrency = 8;
@@ -23,9 +25,22 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
             return Challenge();
         }
 
-        IReadOnlyList<OrganizerProfileOwnerModel> ownerships = await catalogApiClient
-            .GetOrganizerProfileOwnersByEmailAsync(ownerEmail, cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<OrganizerProfileOwnerModel> ownerships;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            ownerships = await catalogApiClient
+                .GetOrganizerProfileOwnersByEmailAsync(ownerEmail, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Organizer ownerships could not be loaded for {OwnerEmail}.", ownerEmail);
+            TempData["ErrorMessage"] = "Organizer dashboard is temporarily unavailable. Please try again.";
+            return View(new OrganizerDashboardViewModel(ownerEmail, [], []));
+        }
 
         OrganizerDashboardProfileViewModel?[] loadedProfiles = await LoadDashboardProfilesAsync(ownerships, cancellationToken)
             .ConfigureAwait(false);
@@ -110,6 +125,15 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
                 input,
                 null,
                 BuildOrganizerOperationErrorMessage(exception, "profile")));
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Organizer profile could not be saved for {Slug}.", slug);
+            return View("EditProfile", new OrganizerProfileEditPageViewModel(
+                profile,
+                input,
+                null,
+                "The organizer profile could not be saved right now. Please try again."));
         }
     }
 
@@ -267,6 +291,11 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         {
             TempData["ErrorMessage"] = BuildOrganizerOperationErrorMessage(exception, "event publication");
         }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Organizer event publication status could not be updated for {EventSlug}.", eventSlug);
+            TempData["ErrorMessage"] = "The event publication status could not be updated right now. Please try again.";
+        }
 
         return RedirectToAction(nameof(Index));
     }
@@ -312,6 +341,11 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         catch (InvalidOperationException exception)
         {
             TempData["ErrorMessage"] = BuildOrganizerOperationErrorMessage(exception, "RSVP update");
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Organizer RSVP status could not be updated for {EventSlug}/{RsvpId}.", eventSlug, rsvpId);
+            TempData["ErrorMessage"] = "The RSVP status could not be updated right now. Please try again.";
         }
 
         return RedirectToAction(nameof(Index));
@@ -366,6 +400,12 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
         try
         {
             return await LoadDashboardProfileAsync(organizerProfileSlug, cancellationToken).ConfigureAwait(false);
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Organizer dashboard profile could not be loaded for {Slug}.", organizerProfileSlug);
+            TempData["ErrorMessage"] = "Some organizer dashboard data could not be loaded.";
+            return null;
         }
         finally
         {
@@ -427,6 +467,15 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
                 new DashboardEventRsvpData(
                     await summaryTask.ConfigureAwait(false),
                     await rsvpsTask.ConfigureAwait(false)));
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Organizer dashboard RSVP data could not be loaded for {EventSlug}.", eventSlug);
+            return new(
+                eventSlug,
+                new DashboardEventRsvpData(
+                    new EventRsvpSummaryModel(eventSlug, 0, 0, 0, 0, null),
+                    []));
         }
         finally
         {
@@ -540,6 +589,16 @@ public sealed class OrganizerDashboardController(IWebCatalogApiClient catalogApi
                 input,
                 isNew,
                 BuildOrganizerOperationErrorMessage(exception, "event")));
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Organizer event could not be saved for profile {Slug}.", profile.Slug);
+            return View("EditEvent", new OrganizerEventEditPageViewModel(
+                profile,
+                existingEvent,
+                input,
+                isNew,
+                "The organizer event could not be saved right now. Please try again."));
         }
     }
 

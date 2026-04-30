@@ -9,7 +9,8 @@ namespace DarwinLingua.Web.Controllers;
 [Route("browse")]
 public sealed class BrowseController(
     IWebCatalogApiClient catalogApiClient,
-    IWebLearningProfileAccessor learningProfileAccessor) : Controller
+    IWebLearningProfileAccessor learningProfileAccessor,
+    ILogger<BrowseController> logger) : Controller
 {
     private const int PageSize = 24;
 
@@ -18,8 +19,21 @@ public sealed class BrowseController(
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        IReadOnlyList<TopicListItemModel> topics = await catalogApiClient
-            .GetTopicsAsync(profile.UiLanguageCode, cancellationToken);
+        IReadOnlyList<TopicListItemModel> topics;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            topics = await catalogApiClient
+                .GetTopicsAsync(profile.UiLanguageCode, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Browse topics could not be loaded.");
+            topics = [];
+        }
 
         BrowseIndexViewModel viewModel = new(
             topics,

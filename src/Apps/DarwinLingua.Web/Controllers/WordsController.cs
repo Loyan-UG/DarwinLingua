@@ -11,6 +11,7 @@ public sealed class WordsController(
     IWebUserWordStateService userWordStateService,
     IWebLearningProfileAccessor learningProfileAccessor,
     IWebEntitledFeatureAccessService featureAccessService,
+    ILogger<WordsController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("{id:guid}", Name = "Words_Detail")]
@@ -25,12 +26,24 @@ public sealed class WordsController(
         string? effectiveSecondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
-        var word = await catalogApiClient.GetWordDetailsAsync(
-            id,
-            profile.PreferredMeaningLanguage1,
-            effectiveSecondaryMeaningLanguageCode,
-            profile.UiLanguageCode,
-            cancellationToken);
+        DarwinLingua.Catalog.Application.Models.WordDetailModel? word;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            word = await catalogApiClient.GetWordDetailsAsync(
+                id,
+                profile.PreferredMeaningLanguage1,
+                effectiveSecondaryMeaningLanguageCode,
+                profile.UiLanguageCode,
+                catalogTimeout.Token);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Word detail could not be loaded for {WordId}.", id);
+            return ServiceUnavailableView("Word details are temporarily unavailable", "This word could not be loaded right now. Please try again from browse or search.");
+        }
 
         if (word is null)
         {
@@ -207,4 +220,15 @@ public sealed class WordsController(
         Request.Headers.ContainsKey("HX-Request")
             ? BadRequest()
             : RedirectToAction("Index", "Home");
+
+    private ViewResult ServiceUnavailableView(string title, string message)
+    {
+        Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+        return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+        {
+            Title = title,
+            Message = message,
+            RequestId = HttpContext.TraceIdentifier
+        });
+    }
 }

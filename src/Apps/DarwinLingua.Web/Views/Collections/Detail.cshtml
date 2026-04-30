@@ -32,14 +32,14 @@
 
 @if (Model.Collection.Words.Count == 0)
 {
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words in this collection", "Add mapped words to the collection seed or content source to show them here.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("This collection is being prepared", "Words will appear here when the collection is ready for study.")' />
 }
 else
 {
     <section class="panel stack-md">
         <span class="eyebrow">Collection words</span>
         <h2 class="headline-sm">Practice this set</h2>
-        <p class="body-lg">Open any word to hear automatic pronunciation, review meanings, and move through the collection with keyboard arrows or swipe.</p>
+        <p class="body-lg">Open any word to hear pronunciation, review meanings, and continue through the set at your own pace.</p>
     </section>
 
     <section class="grid-two-col" data-word-list-container>

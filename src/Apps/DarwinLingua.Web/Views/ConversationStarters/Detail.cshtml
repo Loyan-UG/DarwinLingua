@@ -39,7 +39,7 @@
                 </div>
                 <div class="detail-example">
                     <strong>@phrase.BaseText</strong>
-                    <button type="button" class="button button--secondary button--compact" data-speak-text="@phrase.BaseText" data-speak-lang="de-DE">Speak</button>
+                    <button type="button" class="button button--secondary button--compact" data-speak-text="@phrase.BaseText" data-speak-lang="de-DE">Hear</button>
                 </div>
                 @if (!string.IsNullOrWhiteSpace(phrase.PrimaryMeaning))
                 {
@@ -70,7 +70,7 @@
                 }
                 @if (!string.IsNullOrWhiteSpace(phrase.CommonMistake))
                 {
-                    <p>@phrase.CommonMistake</p>
+                    <p><strong>Watch out:</strong> @phrase.CommonMistake</p>
                 }
             </article>
         }

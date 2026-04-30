@@ -5,16 +5,17 @@
 
 <section class="panel stack-lg">
     <span class="eyebrow">Billing</span>
-    <h1 class="headline-md">Plan and payment</h1>
+    <h1 class="headline-md">Plan and access</h1>
+    <p class="body-lg">Manage your learning access, premium features, and secure subscription checkout.</p>
     @if (TempData["BillingStatus"] is string statusMessage)
     {
         <p class="body-lg">@statusMessage</p>
     }
     <div class="grid-two-col">
-        <article class="panel stack-md">
+        <article class="panel stack-md plan-card">
             <h2 class="headline-sm">Current plan</h2>
+            <div class="plan-card__tier">@Model.Entitlement.Tier</div>
             <ul class="feature-list">
-                <li>Tier: @Model.Entitlement.Tier</li>
                 @if (Model.Entitlement.TrialEndsAtUtc is not null)
                 {
                     <li>Trial ends: @Model.Entitlement.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
@@ -29,17 +30,22 @@
                 }
                 @if (Model.CurrentPeriodEndsAtUtc is not null)
                 {
-                    <li>Stripe period end: @Model.CurrentPeriodEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+                    <li>Current billing period ends: @Model.CurrentPeriodEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
                 }
-                <li>Features: @string.Join(", ", Model.Entitlement.EnabledFeatures)</li>
             </ul>
+            <div class="chip-grid">
+                @foreach (var feature in Model.Entitlement.EnabledFeatures)
+                {
+                    <span class="chip-link chip-link--static">@feature</span>
+                }
+            </div>
         </article>
-        <article class="panel stack-md">
+        <article class="panel stack-md plan-card plan-card--premium">
             <h2 class="headline-sm">Premium monthly</h2>
-            <p class="body-sm">Unlock premium learning tools through Stripe Checkout.</p>
+            <p class="body-sm">Unlock the full learning toolkit with secure checkout.</p>
             @if (!Model.StripeEnabled)
             {
-                <p class="body-sm">Stripe billing is not enabled in this environment.</p>
+                <p class="body-sm">Online checkout is not available right now. Your current access remains unchanged.</p>
             }
             else if (Model.CanStartCheckout)
             {
@@ -60,7 +66,7 @@
                 }
                 else
                 {
-                    <p class="body-sm">Stripe subscription management will appear after the first verified Stripe customer event.</p>
+                    <p class="body-sm">Subscription management will be available after your premium subscription is linked.</p>
                 }
             }
         </article>

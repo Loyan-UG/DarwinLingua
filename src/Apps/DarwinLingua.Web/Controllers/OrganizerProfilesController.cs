@@ -11,15 +11,28 @@ public sealed class OrganizerProfilesController(
     IWebCatalogApiClient catalogApiClient,
     ICommunityNotificationEmailService notificationEmailService,
     IAccountEmailRateLimiter rateLimiter,
+    ILogger<OrganizerProfilesController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "OrganizerProfiles_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        IReadOnlyList<OrganizerProfileListItemModel> profiles = await catalogApiClient
-            .GetOrganizerProfilesAsync(cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<OrganizerProfileListItemModel> profiles;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            profiles = await catalogApiClient
+                .GetOrganizerProfilesAsync(catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Organizer profiles could not be loaded.");
+            profiles = [];
+        }
 
         return View(new OrganizerProfileIndexPageViewModel(profiles));
     }
@@ -33,9 +46,21 @@ public sealed class OrganizerProfilesController(
             return RedirectToAction(nameof(Index));
         }
 
-        OrganizerProfileDetailModel? profile = await catalogApiClient
-            .GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken)
-            .ConfigureAwait(false);
+        OrganizerProfileDetailModel? profile;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            profile = await catalogApiClient
+                .GetOrganizerProfileBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Organizer profile could not be loaded for {Slug}.", normalizedSlug);
+            return ServiceUnavailableView("Organizer profile is temporarily unavailable", "This organizer profile could not be loaded right now. Please return to organizers and try again.");
+        }
 
         return profile is null
             ? NotFound()
@@ -51,9 +76,21 @@ public sealed class OrganizerProfilesController(
             return RedirectToAction(nameof(Index));
         }
 
-        OrganizerProfileDetailModel? profile = await catalogApiClient
-            .GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken)
-            .ConfigureAwait(false);
+        OrganizerProfileDetailModel? profile;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            profile = await catalogApiClient
+                .GetOrganizerProfileBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Organizer claim page could not load profile {Slug}.", normalizedSlug);
+            return ServiceUnavailableView("Organizer claim is temporarily unavailable", "This organizer profile could not be loaded right now. Please return to organizers and try again.");
+        }
 
         return profile is null
             ? NotFound()
@@ -80,9 +117,22 @@ public sealed class OrganizerProfilesController(
             return RedirectToAction(nameof(Index));
         }
 
-        OrganizerProfileDetailModel? profile = await catalogApiClient
-            .GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken)
-            .ConfigureAwait(false);
+        OrganizerProfileDetailModel? profile;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            profile = await catalogApiClient
+                .GetOrganizerProfileBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Organizer claim submit could not load profile {Slug}.", normalizedSlug);
+            TempData["ErrorMessage"] = "Claim request could not be submitted right now. Please try again.";
+            return RedirectToAction(nameof(Index));
+        }
 
         if (profile is null)
         {
@@ -168,4 +218,15 @@ public sealed class OrganizerProfilesController(
         exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
             ? "This organizer profile is no longer available."
             : "The claim request could not be submitted right now. Please try again.";
+
+    private ViewResult ServiceUnavailableView(string title, string message)
+    {
+        Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+        return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+        {
+            Title = title,
+            Message = message,
+            RequestId = HttpContext.TraceIdentifier
+        });
+    }
 }

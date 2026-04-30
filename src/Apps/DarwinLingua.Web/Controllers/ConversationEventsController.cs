@@ -12,6 +12,7 @@ public sealed class ConversationEventsController(
     IWebEntitledFeatureAccessService featureAccessService,
     ICommunityNotificationEmailService notificationEmailService,
     IAccountEmailRateLimiter rateLimiter,
+    ILogger<ConversationEventsController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     private const int MaxFilterLength = 128;
@@ -34,9 +35,21 @@ public sealed class ConversationEventsController(
             isOnline,
             NormalizePriceType(priceType),
             NormalizeFilter(category));
-        IReadOnlyList<ConversationEventListItemModel> events = await catalogApiClient
-            .GetConversationEventsAsync(filter, cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<ConversationEventListItemModel> events;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            events = await catalogApiClient
+                .GetConversationEventsAsync(filter, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Conversation events could not be loaded.");
+            events = [];
+        }
 
         return View(new ConversationEventIndexPageViewModel(events, filter));
     }
@@ -51,9 +64,21 @@ public sealed class ConversationEventsController(
             return RedirectToAction(nameof(Index));
         }
 
-        ConversationEventDetailModel? conversationEvent = await catalogApiClient
-            .GetConversationEventBySlugAsync(normalizedSlug, cancellationToken)
-            .ConfigureAwait(false);
+        ConversationEventDetailModel? conversationEvent;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            conversationEvent = await catalogApiClient
+                .GetConversationEventBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Conversation event could not be loaded for {Slug}.", normalizedSlug);
+            return ServiceUnavailableView("Event is temporarily unavailable", "This conversation event could not be loaded right now. Please return to events and try again.");
+        }
 
         if (conversationEvent is null)
         {
@@ -62,17 +87,29 @@ public sealed class ConversationEventsController(
 
         analyticsService?.Record(WebProductAnalyticsEvents.EventViewed, $"event:{conversationEvent.Slug}");
 
-        Task<IReadOnlyList<EventPreparationPackListItemModel>> preparationPacksTask = LoadPreparationPacksAsync(
-            conversationEvent.LinkedEventPreparationPackSlugs,
-            cancellationToken);
-        Task<EventRsvpSummaryModel> rsvpSummaryTask = catalogApiClient
-            .GetEventRsvpSummaryAsync(normalizedSlug, cancellationToken);
-        await Task.WhenAll(preparationPacksTask, rsvpSummaryTask).ConfigureAwait(false);
+        IReadOnlyList<EventPreparationPackListItemModel> preparationPacks = [];
+        EventRsvpSummaryModel rsvpSummary = new(normalizedSlug, 0, 0, 0, conversationEvent.Capacity ?? 0, conversationEvent.Capacity);
+
+        try
+        {
+            Task<IReadOnlyList<EventPreparationPackListItemModel>> preparationPacksTask = LoadPreparationPacksAsync(
+                conversationEvent.LinkedEventPreparationPackSlugs,
+                cancellationToken);
+            Task<EventRsvpSummaryModel> rsvpSummaryTask = catalogApiClient
+                .GetEventRsvpSummaryAsync(normalizedSlug, cancellationToken);
+            await Task.WhenAll(preparationPacksTask, rsvpSummaryTask).ConfigureAwait(false);
+            preparationPacks = await preparationPacksTask.ConfigureAwait(false);
+            rsvpSummary = await rsvpSummaryTask.ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Conversation event supporting content could not be loaded for {Slug}.", normalizedSlug);
+        }
 
         return View(new ConversationEventDetailPageViewModel(
             conversationEvent,
-            await preparationPacksTask.ConfigureAwait(false),
-            await rsvpSummaryTask.ConfigureAwait(false),
+            preparationPacks,
+            rsvpSummary,
             new EventRsvpInputModel
             {
                 ParticipantEmail = WebUserIdentity.TryGetEmail(User) ?? string.Empty,
@@ -139,8 +176,24 @@ public sealed class ConversationEventsController(
         {
             TempData["ErrorMessage"] = BuildRsvpErrorMessage(exception);
         }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Event RSVP could not be submitted for {Slug}.", normalizedSlug);
+            TempData["ErrorMessage"] = "The RSVP could not be saved right now. Please try again.";
+        }
 
         return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
+    }
+
+    private ViewResult ServiceUnavailableView(string title, string message)
+    {
+        Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+        return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+        {
+            Title = title,
+            Message = message,
+            RequestId = HttpContext.TraceIdentifier
+        });
     }
 
     private string ResolveCulture() =>

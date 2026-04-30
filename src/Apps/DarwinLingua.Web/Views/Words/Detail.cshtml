@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.WordDetailPageViewModel
 @{
     ViewData["Title"] = Model.Content.Word.Lemma;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    string secondaryMeaningDirection = TextDirection.FromLanguageCode(Model.SecondaryMeaningLanguageCode);
     string summaryLine = string.Join(" · ", new[]
     {
         Model.Content.Word.Article,
@@ -11,13 +13,30 @@
     }.Where(static value => !string.IsNullOrWhiteSpace(value)));
 }
 
-<section class="panel stack-lg" data-word-detail-page data-word-id="@Model.Content.Word.PublicId" data-word-lemma="@Model.Content.Word.Lemma">
+<section class="panel word-detail-hero stack-lg" data-word-detail-page data-word-id="@Model.Content.Word.PublicId" data-word-lemma="@Model.Content.Word.Lemma">
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Content.Word.CefrLevel · @Model.Content.Word.PartOfSpeech</span>
         <div class="detail-toolbar__actions">
-            <button type="button" class="button button--secondary button--compact" data-speak-text="@Model.Content.Word.Lemma" data-speak-lang="de-DE">Speak word</button>
-            <button type="button" class="button button--secondary button--compact" data-word-nav="prev" disabled>Previous</button>
-            <button type="button" class="button button--secondary button--compact" data-word-nav="next" disabled>Next</button>
+            <button type="button" class="icon-button" data-speak-text="@Model.Content.Word.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                    <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                    <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+                </svg>
+                <span class="sr-only">Hear word</span>
+            </button>
+            <button type="button" class="icon-button" data-word-nav="prev" aria-label="Previous word" title="Previous word" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 6 9 12l6 6" />
+                </svg>
+                <span class="sr-only">Previous word</span>
+            </button>
+            <button type="button" class="icon-button" data-word-nav="next" aria-label="Next word" title="Next word" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6" />
+                </svg>
+                <span class="sr-only">Next word</span>
+            </button>
         </div>
     </div>
     <h1 class="headline-md">@Model.Content.Word.Lemma</h1>
@@ -51,23 +70,28 @@
         <div class="stack-md">
             @foreach (var sense in Model.Content.Word.Senses)
             {
-                <article class="panel stack-md">
+                <article class="panel sense-card stack-md">
                     @if (!string.IsNullOrWhiteSpace(sense.ShortDefinitionDe))
                     {
                         <strong>@sense.ShortDefinitionDe</strong>
                     }
-                    @if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning))
+                    @if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning) || !string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
                     {
-                        <div class="meaning-block meaning-block--primary">
-                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
-                            <p class="body-lg">@sense.PrimaryMeaning</p>
-                        </div>
-                    }
-                    @if (!string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
-                    {
-                        <div class="meaning-block">
-                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
-                            <p>@sense.SecondaryMeaning</p>
+                        <div class="meaning-pair">
+                            @if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning))
+                            {
+                                <div class="meaning-block meaning-block--primary" dir="@primaryMeaningDirection">
+                                    <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                    <p class="body-lg">@sense.PrimaryMeaning</p>
+                                </div>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
+                            {
+                                <div class="meaning-block" dir="@secondaryMeaningDirection">
+                                    <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                    <p>@sense.SecondaryMeaning</p>
+                                </div>
+                            }
                         </div>
                     }
                     @if (sense.Examples.Count > 0)
@@ -78,20 +102,32 @@
                                 <li>
                                     <div class="detail-example">
                                         <strong>@example.GermanText</strong>
-                                        <button type="button" class="button button--secondary button--compact" data-speak-text="@example.GermanText" data-speak-lang="de-DE">Speak</button>
+                                        <button type="button" class="icon-button icon-button--sm" data-speak-text="@example.GermanText" data-speak-lang="de-DE" aria-label="Hear example" title="Hear example">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                                                <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                                                <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+                                            </svg>
+                                            <span class="sr-only">Hear example</span>
+                                        </button>
                                     </div>
-                                    @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
+                                    @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning) || !string.IsNullOrWhiteSpace(example.SecondaryMeaning))
                                     {
-                                        <div class="meaning-block meaning-block--primary">
-                                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
-                                            <div>@example.PrimaryMeaning</div>
-                                        </div>
-                                    }
-                                    @if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
-                                    {
-                                        <div class="meaning-block">
-                                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
-                                            <div>@example.SecondaryMeaning</div>
+                                        <div class="meaning-pair">
+                                            @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
+                                            {
+                                                <div class="meaning-block meaning-block--primary" dir="@primaryMeaningDirection">
+                                                    <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                                    <div>@example.PrimaryMeaning</div>
+                                                </div>
+                                            }
+                                            @if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
+                                            {
+                                                <div class="meaning-block" dir="@secondaryMeaningDirection">
+                                                    <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                                    <div>@example.SecondaryMeaning</div>
+                                                </div>
+                                            }
                                         </div>
                                     }
                                 </li>

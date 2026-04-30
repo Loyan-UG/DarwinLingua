@@ -13,6 +13,7 @@ public sealed class PartnerMatchingController(
     IWebEntitledFeatureAccessService featureAccessService,
     ICommunityNotificationEmailService notificationEmailService,
     IAccountEmailRateLimiter rateLimiter,
+    ILogger<PartnerMatchingController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     private const int MaxSearchTextLength = 128;
@@ -38,18 +39,34 @@ public sealed class PartnerMatchingController(
         }
 
         string ownerEmail = GetOwnerEmail();
-        Task<IReadOnlyList<PartnerMatchProfileModel>> matchesTask = catalogApiClient
-            .SearchPartnerMatchesAsync(ownerEmail, ToRequest(search), cancellationToken);
-        Task<IReadOnlyList<PartnerRequestModel>> requestsTask = catalogApiClient
-            .GetPartnerRequestsAsync(ownerEmail, cancellationToken);
-        await Task.WhenAll(matchesTask, requestsTask).ConfigureAwait(false);
+        IReadOnlyList<PartnerMatchProfileModel> matches = [];
+        IReadOnlyList<PartnerRequestModel> requests = [];
+        string? errorMessage = TempData["ErrorMessage"] as string;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            Task<IReadOnlyList<PartnerMatchProfileModel>> matchesTask = catalogApiClient
+                .SearchPartnerMatchesAsync(ownerEmail, ToRequest(search), catalogTimeout.Token);
+            Task<IReadOnlyList<PartnerRequestModel>> requestsTask = catalogApiClient
+                .GetPartnerRequestsAsync(ownerEmail, catalogTimeout.Token);
+            await Task.WhenAll(matchesTask, requestsTask).ConfigureAwait(false);
+            matches = await matchesTask.ConfigureAwait(false);
+            requests = await requestsTask.ConfigureAwait(false);
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Partner matching data could not be loaded for {OwnerEmail}.", ownerEmail);
+            errorMessage ??= "Partner matching is temporarily unavailable. Please try again.";
+        }
 
         return View(new PartnerMatchingPageViewModel(
             search,
-            await matchesTask.ConfigureAwait(false),
-            await requestsTask.ConfigureAwait(false),
+            matches,
+            requests,
             TempData["StatusMessage"] as string,
-            TempData["ErrorMessage"] as string));
+            errorMessage));
     }
 
     [HttpPost("request", Name = "PartnerMatching_Request")]
@@ -93,6 +110,11 @@ public sealed class PartnerMatchingController(
         {
             TempData["ErrorMessage"] = BuildPartnerRequestErrorMessage(exception);
         }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Partner request could not be submitted for {OwnerEmail}.", ownerEmail);
+            TempData["ErrorMessage"] = "The partner request could not be sent right now. Please try again.";
+        }
 
         return RedirectToAction(nameof(Index));
     }
@@ -126,19 +148,31 @@ public sealed class PartnerMatchingController(
                 analyticsService?.Record(WebProductAnalyticsEvents.PartnerRequestAccepted);
                 if (!string.IsNullOrWhiteSpace(request.ContactEmail))
                 {
-                    await notificationEmailService.SendPartnerRequestAcceptedAsync(
-                            request.ContactEmail,
-                            request.OtherDisplayName,
-                            ResolveCulture(),
-                            HttpContext.TraceIdentifier,
-                            cancellationToken)
-                        .ConfigureAwait(false);
+                    try
+                    {
+                        await notificationEmailService.SendPartnerRequestAcceptedAsync(
+                                request.ContactEmail,
+                                request.OtherDisplayName,
+                                ResolveCulture(),
+                                HttpContext.TraceIdentifier,
+                                cancellationToken)
+                            .ConfigureAwait(false);
+                    }
+                    catch (Exception exception) when (!cancellationToken.IsCancellationRequested)
+                    {
+                        logger.LogWarning(exception, "Partner acceptance email could not be sent for request {RequestId}.", requestId);
+                    }
                 }
             }
         }
         catch (InvalidOperationException exception)
         {
             TempData["ErrorMessage"] = BuildPartnerRequestErrorMessage(exception);
+        }
+        catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(exception, "Partner request state could not be updated for {RequestId}.", requestId);
+            TempData["ErrorMessage"] = "The partner request could not be updated right now. Please try again.";
         }
 
         return RedirectToAction(nameof(Index));

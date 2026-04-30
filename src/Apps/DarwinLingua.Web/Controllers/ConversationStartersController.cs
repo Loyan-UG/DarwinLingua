@@ -11,6 +11,7 @@ public sealed class ConversationStartersController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
     IWebEntitledFeatureAccessService featureAccessService,
+    ILogger<ConversationStartersController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "ConversationStarters_Index")]
@@ -24,9 +25,21 @@ public sealed class ConversationStartersController(
         CancellationToken cancellationToken)
     {
         ConversationStarterListFilterModel filter = new(cefrLevel, situation, tone, conversationGoal, topicKey);
-        IReadOnlyList<ConversationStarterPackListItemModel> starterPacks = await catalogApiClient
-            .GetConversationStarterPacksAsync(filter, cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<ConversationStarterPackListItemModel> starterPacks;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            starterPacks = await catalogApiClient
+                .GetConversationStarterPacksAsync(filter, catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Conversation starter packs could not be loaded.");
+            starterPacks = [];
+        }
 
         return View(new ConversationStarterIndexPageViewModel(starterPacks, filter));
     }
@@ -46,13 +59,25 @@ public sealed class ConversationStartersController(
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
 
-        ConversationStarterPackDetailModel? starterPack = await catalogApiClient
-            .GetConversationStarterPackBySlugAsync(
-                normalizedSlug,
-                profile.PreferredMeaningLanguage1,
-                effectiveSecondaryMeaningLanguageCode,
-                cancellationToken)
-            .ConfigureAwait(false);
+        ConversationStarterPackDetailModel? starterPack;
+
+        try
+        {
+            using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            starterPack = await catalogApiClient
+                .GetConversationStarterPackBySlugAsync(
+                    normalizedSlug,
+                    profile.PreferredMeaningLanguage1,
+                    effectiveSecondaryMeaningLanguageCode,
+                    catalogTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Conversation starter pack could not be loaded for {Slug}.", normalizedSlug);
+            return ServiceUnavailableView("Conversation starter is temporarily unavailable", "This starter pack could not be loaded right now. Please return to starters and try again.");
+        }
 
         if (starterPack is null)
         {
@@ -65,5 +90,16 @@ public sealed class ConversationStartersController(
             starterPack,
             profile.PreferredMeaningLanguage1,
             effectiveSecondaryMeaningLanguageCode));
+    }
+
+    private ViewResult ServiceUnavailableView(string title, string message)
+    {
+        Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+        return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+        {
+            Title = title,
+            Message = message,
+            RequestId = HttpContext.TraceIdentifier
+        });
     }
 }

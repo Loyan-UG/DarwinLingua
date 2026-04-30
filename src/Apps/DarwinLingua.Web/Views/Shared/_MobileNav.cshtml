@@ -1,14 +1,23 @@
 <nav class="mobile-nav" aria-label="Mobile">
-    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
     <a asp-area="" asp-controller="Browse" asp-action="Index">Browse</a>
     <a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a>
     <a asp-area="" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
-    <a asp-area="" asp-controller="ConversationStarters" asp-action="Index">Starters</a>
-    <a asp-area="" asp-controller="ConversationEvents" asp-action="Index">Events</a>
-    <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index">Organizers</a>
-    <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">Partners</a>
     <a asp-area="" asp-controller="Search" asp-action="Index">Search</a>
     <a asp-area="" asp-controller="Favorites" asp-action="Index">Favorites</a>
     <a asp-area="" asp-controller="Recent" asp-action="Index">Recent</a>
-    <a asp-area="" asp-controller="OrganizerDashboard" asp-action="Index">Organizer</a>
+    @if (User.Identity?.IsAuthenticated == true)
+    {
+        <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">Partners</a>
+        <a asp-area="" asp-controller="Billing" asp-action="Index">Billing</a>
+        <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+        }
+    }
+    else
+    {
+        <a asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+    }
 </nav>

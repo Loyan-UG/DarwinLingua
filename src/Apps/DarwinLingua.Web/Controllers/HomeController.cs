@@ -8,7 +8,8 @@ namespace DarwinLingua.Web.Controllers;
 
 public class HomeController(
     IWebCatalogApiClient catalogApiClient,
-    IWebLearningProfileAccessor learningProfileAccessor) : Controller
+    IWebLearningProfileAccessor learningProfileAccessor,
+    ILogger<HomeController> logger) : Controller
 {
     [HttpGet("")]
     [OutputCache(PolicyName = "LandingPage")]
@@ -17,9 +18,22 @@ public class HomeController(
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        var collections = await catalogApiClient
-            .GetCollectionsAsync(profile.PreferredMeaningLanguage1, cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordCollectionListItemModel> collections;
+
+        try
+        {
+            using CancellationTokenSource featuredCollectionsTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            featuredCollectionsTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+
+            collections = await catalogApiClient
+                .GetCollectionsAsync(profile.PreferredMeaningLanguage1, featuredCollectionsTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Featured collections could not be loaded for the landing page.");
+            collections = [];
+        }
 
         return View(new HomePageViewModel(collections.Take(3).ToArray()));
     }

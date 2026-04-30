@@ -19,6 +19,10 @@ builder.Configuration.AddJsonFile(
     $"appsettings.{builder.Environment.EnvironmentName}.Local.json",
     optional: true,
     reloadOnChange: true);
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddUserSecrets<Program>(optional: true);
+}
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -199,7 +203,7 @@ app.Use(async (context, next) =>
     context.Response.Headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()";
     context.Response.Headers["Content-Security-Policy"] =
         "default-src 'self'; " +
-        "script-src 'self' https://unpkg.com; " +
+        "script-src 'self'; " +
         "style-src 'self'; " +
         "img-src 'self' data:; " +
         "font-src 'self' data:; " +

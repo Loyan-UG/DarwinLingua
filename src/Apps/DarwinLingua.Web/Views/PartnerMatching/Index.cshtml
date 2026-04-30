@@ -10,11 +10,11 @@
 
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
-        <div class="alert alert-success">@Model.StatusMessage</div>
+        <div class="alert alert--success">@Model.StatusMessage</div>
     }
     @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
     {
-        <div class="alert alert-danger">@Model.ErrorMessage</div>
+        <div class="alert alert--danger">@Model.ErrorMessage</div>
     }
 </section>
 

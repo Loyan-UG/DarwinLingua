@@ -1,6 +1,6 @@
 @model DarwinLingua.Learning.Application.Models.FavoriteWordListItemModel
 
-<article class="panel stack-md" data-word-card data-word-id="@Model.PublicId">
+<article class="panel word-card stack-md" data-word-card data-word-id="@Model.PublicId">
     <div class="eyebrow">@Model.CefrLevel · @Model.PartOfSpeech</div>
     <h3 class="headline-sm">@Model.Lemma</h3>
     @if (!string.IsNullOrWhiteSpace(Model.Article))
@@ -12,7 +12,14 @@
         <p class="body-lg meaning-line meaning-line--compact">@Model.PrimaryMeaning</p>
     }
     <div class="action-row">
-        <button type="button" class="button button--secondary button--compact" data-speak-text="@Model.Lemma" data-speak-lang="de-DE">Speak</button>
-        <a class="button button--secondary" data-word-link data-word-id="@Model.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Open word</a>
+        <button type="button" class="icon-button icon-button--sm" data-speak-text="@Model.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+            </svg>
+            <span class="sr-only">Hear word</span>
+        </button>
+        <a class="button button--secondary" data-word-link data-word-id="@Model.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Details</a>
     </div>
 </article>

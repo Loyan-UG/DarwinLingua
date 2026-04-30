@@ -2,7 +2,7 @@
 
 @if (Model.Words.Count == 0)
 {
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words available", "This slice does not currently have words for the selected filter.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words found", "Try a broader level or topic to continue browsing.")' />
 }
 else
 {

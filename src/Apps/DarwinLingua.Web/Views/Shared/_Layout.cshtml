@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Darwin Lingua</title>
-    <meta name="description" content="Darwin Lingua learner web app with installable PWA baseline, responsive browse flows, and future account-based personalization." />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="Darwin Lingua helps learners build practical German vocabulary for work, conversation, and everyday decisions." />
+    <meta name="theme-color" content="#f6f1e8" />
     <link rel="manifest" href="~/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="~/images/logo.png" />
     <link rel="icon" type="image/svg+xml" href="~/icons/favicon.svg" />
     <link rel="icon" type="image/svg+xml" href="~/icons/icon-192.svg" />
     <link rel="apple-touch-icon" href="~/icons/icon-192.svg" />
@@ -19,22 +20,19 @@
         <div class="shell-container shell-nav">
             <partial name="_AppHeader" />
             <nav class="shell-links" aria-label="Primary">
-                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <a asp-area="" asp-controller="Browse" asp-action="Index">Browse</a>
                 <a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a>
                 <a asp-area="" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
-                <a asp-area="" asp-controller="ConversationStarters" asp-action="Index">Starters</a>
-                <a asp-area="" asp-controller="ConversationEvents" asp-action="Index">Events</a>
-                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index">Organizers</a>
-                <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">Partners</a>
                 <a asp-area="" asp-controller="Search" asp-action="Index">Search</a>
                 <a asp-area="" asp-controller="Favorites" asp-action="Index">Favorites</a>
-                <a asp-area="" asp-controller="Recent" asp-action="Index">Recent</a>
-                <a asp-area="" asp-controller="OrganizerDashboard" asp-action="Index">Organizer</a>
-                <a asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
-                <a asp-area="" asp-controller="Billing" asp-action="Index">Billing</a>
-                <a asp-area="" asp-controller="Home" asp-action="Install">Install</a>
-                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-area="" asp-controller="Billing" asp-action="Index">Billing</a>
+                }
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+                }
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
@@ -69,29 +67,37 @@
         <div class="shell-container shell-footer__inner">
             <div>
                 <strong>Darwin Lingua</strong>
-                <p>Server-rendered learner web with a PWA-capable shell, real catalog browse flows, and progressive enhancement.</p>
+                <p>Copyright &copy; @DateTime.UtcNow.Year Shahram Vafadar. All rights reserved.</p>
             </div>
             <div class="shell-footer__actions">
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
                 }
+                <a asp-area="" asp-controller="Browse" asp-action="Index">Browse</a>
                 <a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a>
                 <a asp-area="" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
                 <a asp-area="" asp-controller="ConversationStarters" asp-action="Index">Starters</a>
                 <a asp-area="" asp-controller="ConversationEvents" asp-action="Index">Events</a>
                 <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index">Organizers</a>
-                <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">Partners</a>
-                <a asp-area="" asp-controller="OrganizerDashboard" asp-action="Index">Organizer dashboard</a>
+                <a asp-area="" asp-controller="Recent" asp-action="Index">Recent</a>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">Partners</a>
+                    <a asp-area="" asp-controller="OrganizerDashboard" asp-action="Index">Organizer dashboard</a>
+                    <a asp-area="" asp-controller="Billing" asp-action="Index">Billing</a>
+                }
                 <a asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
-                <a asp-area="" asp-controller="Billing" asp-action="Index">Billing</a>
                 <a asp-area="" asp-controller="Home" asp-action="Install">Install guide</a>
                 <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
+                }
             </div>
         </div>
     </footer>
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script src="~/js/htmx.min.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
