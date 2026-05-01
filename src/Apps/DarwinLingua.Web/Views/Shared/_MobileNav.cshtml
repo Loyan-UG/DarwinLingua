@@ -8,6 +8,7 @@
     @if (User.Identity?.IsAuthenticated == true)
     {
         <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">Partners</a>
+        <a asp-area="" asp-controller="Settings" asp-action="Index">Languages</a>
         <a asp-area="" asp-controller="Billing" asp-action="Index">Billing</a>
         <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
         @if (User.IsInRole("Admin"))

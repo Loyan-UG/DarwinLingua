@@ -82,7 +82,7 @@ public sealed class WordsController(
                 analyticsService?.Record(WebProductAnalyticsEvents.PremiumFeatureDenied, "feature:favorites");
                 if (Request.Headers.ContainsKey("HX-Request"))
                 {
-                    return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken, "Favorites require an active trial or premium plan.");
+                    return await RenderFavoriteToggleAsync(id, returnUrl, cancellationToken, "Favorites require an active trial or premium plan.");
                 }
 
                 return RedirectToAction("Index", "Favorites");
@@ -91,7 +91,7 @@ public sealed class WordsController(
 
         if (Request.Headers.ContainsKey("HX-Request"))
         {
-            return await RenderInteractionPanelAsync(id, returnUrl, cancellationToken);
+            return await RenderFavoriteToggleAsync(id, returnUrl, cancellationToken);
         }
 
         return RedirectToSafeWordReturn(id, returnUrl);
@@ -196,6 +196,29 @@ public sealed class WordsController(
 
         return PartialView(
             "_InteractionPanel",
+            new WordInteractionPanelViewModel(
+                id,
+                isFavorite,
+                wordState,
+                resolvedReturnUrl,
+                canUseFavorites,
+                canUseFavorites ? null : favoriteLockedMessage ?? "Favorites require an active trial or premium plan."));
+    }
+
+    private async Task<PartialViewResult> RenderFavoriteToggleAsync(Guid id, string? returnUrl, CancellationToken cancellationToken, string? favoriteLockedMessage = null)
+    {
+        var wordState = await userWordStateService.GetWordStateAsync(id, cancellationToken)
+            ?? await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
+        bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
+        bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
+
+        string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
+        string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
+            ? normalizedReturnUrl
+            : Url.Action(nameof(Detail), "Words", new { id }) ?? $"/Words/Detail/{id}";
+
+        return PartialView(
+            "~/Views/Shared/_FavoriteToggle.cshtml",
             new WordInteractionPanelViewModel(
                 id,
                 isFavorite,

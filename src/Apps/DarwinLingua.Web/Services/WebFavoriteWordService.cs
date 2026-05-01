@@ -8,6 +8,10 @@ public interface IWebFavoriteWordService
 {
     Task<bool> IsFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken);
 
+    Task<IReadOnlySet<Guid>> GetFavoriteWordIdsAsync(
+        IReadOnlyCollection<Guid> wordPublicIds,
+        CancellationToken cancellationToken);
+
     Task ToggleFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken);
 
     Task<IReadOnlyList<FavoriteWordListItemModel>> GetFavoriteWordsAsync(
@@ -34,6 +38,37 @@ internal sealed class WebFavoriteWordService(
             .AsNoTracking()
             .AnyAsync(item => item.ActorId == actor.ActorId && item.WordPublicId == wordPublicId, cancellationToken)
             .ConfigureAwait(false);
+    }
+
+    public async Task<IReadOnlySet<Guid>> GetFavoriteWordIdsAsync(
+        IReadOnlyCollection<Guid> wordPublicIds,
+        CancellationToken cancellationToken)
+    {
+        if (wordPublicIds.Count == 0 || !await featureAccessService.CanUseFavoritesAsync(cancellationToken).ConfigureAwait(false))
+        {
+            return new HashSet<Guid>();
+        }
+
+        Guid[] normalizedWordPublicIds = wordPublicIds
+            .Where(id => id != Guid.Empty)
+            .Distinct()
+            .ToArray();
+
+        if (normalizedWordPublicIds.Length == 0)
+        {
+            return new HashSet<Guid>();
+        }
+
+        WebActorContext actor = actorContextAccessor.GetCurrentActor();
+
+        Guid[] favoriteWordIds = await identityDbContext.UserFavoriteWords
+            .AsNoTracking()
+            .Where(item => item.ActorId == actor.ActorId && normalizedWordPublicIds.Contains(item.WordPublicId))
+            .Select(item => item.WordPublicId)
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return favoriteWordIds.ToHashSet();
     }
 
     public async Task ToggleFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken)

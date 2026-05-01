@@ -23,6 +23,8 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
 
     public DbSet<WebBillingNotification> WebBillingNotifications => Set<WebBillingNotification>();
 
+    public DbSet<WebWordSuggestion> WebWordSuggestions => Set<WebWordSuggestion>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
@@ -146,6 +148,28 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
                 .HasDatabaseName("IX_WebBillingNotifications_NotificationKey");
             entity.HasIndex(notification => notification.CreatedAtUtc)
                 .HasDatabaseName("IX_WebBillingNotifications_CreatedAtUtc");
+        });
+
+        builder.Entity<WebWordSuggestion>(entity =>
+        {
+            entity.ToTable("WebWordSuggestions");
+            entity.HasKey(suggestion => suggestion.Id);
+            entity.Property(suggestion => suggestion.SuggestedWord).HasMaxLength(128).IsRequired();
+            entity.Property(suggestion => suggestion.NormalizedSuggestedWord).HasMaxLength(128).IsRequired();
+            entity.Property(suggestion => suggestion.Note).HasMaxLength(1000);
+            entity.Property(suggestion => suggestion.SourceQuery).HasMaxLength(128);
+            entity.Property(suggestion => suggestion.ActorId).HasMaxLength(128).IsRequired();
+            entity.Property(suggestion => suggestion.UserId).HasMaxLength(450);
+            entity.Property(suggestion => suggestion.Email).HasMaxLength(256);
+            entity.Property(suggestion => suggestion.Status).HasConversion<string>().HasMaxLength(32).IsRequired();
+            entity.Property(suggestion => suggestion.AdminNote).HasMaxLength(1000);
+            entity.Property(suggestion => suggestion.DecidedBy).HasMaxLength(256);
+            entity.HasIndex(suggestion => new { suggestion.Status, suggestion.CreatedAtUtc })
+                .HasDatabaseName("IX_WebWordSuggestions_Status_CreatedAtUtc");
+            entity.HasIndex(suggestion => suggestion.NormalizedSuggestedWord)
+                .HasDatabaseName("IX_WebWordSuggestions_NormalizedWord");
+            entity.HasIndex(suggestion => new { suggestion.ActorId, suggestion.NormalizedSuggestedWord })
+                .HasDatabaseName("IX_WebWordSuggestions_Actor_Word");
         });
     }
 }

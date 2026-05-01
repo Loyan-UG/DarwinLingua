@@ -216,11 +216,107 @@ public interface IWebCatalogApiClient
 
     Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken);
 
+    Task<AdminWordsPageViewModel> GetAdminWordsAsync(
+        string? query,
+        string? statusFilter,
+        int skip,
+        int take,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel?> GetAdminWordAsync(Guid publicId, CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> UpdateAdminWordMetadataAsync(
+        Guid publicId,
+        AdminUpdateWordMetadataRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> CreateAdminWordAsync(
+        AdminUpdateWordMetadataRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminBulkWordImportResponse> ImportAdminWordsAsync(
+        AdminBulkWordImportRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> AddAdminWordSenseAsync(
+        Guid publicId,
+        AdminAddWordSenseRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> AddAdminWordSenseTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        AdminAddWordSenseTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> AddAdminWordSenseExampleAsync(
+        Guid publicId,
+        Guid senseId,
+        AdminAddWordSenseExampleRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> UpdateAdminWordSenseTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid translationId,
+        AdminUpdateWordSenseTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> DeleteAdminWordSenseTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid translationId,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> UpdateAdminWordSenseExampleAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminUpdateWordSenseExampleRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> DeleteAdminWordSenseExampleAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> AddAdminWordTopicAsync(
+        Guid publicId,
+        AdminAddWordTopicRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> DeleteAdminWordTopicAsync(
+        Guid publicId,
+        Guid topicId,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> AddAdminWordLabelAsync(
+        Guid publicId,
+        AdminAddWordLabelRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> DeleteAdminWordLabelAsync(
+        Guid publicId,
+        string kind,
+        string key,
+        CancellationToken cancellationToken);
+
     Task<AdminDraftWordsPageViewModel> GetAdminDraftWordsAsync(string? query, CancellationToken cancellationToken);
 
     Task<AdminHistoryPageViewModel> GetAdminHistoryAsync(string? statusFilter, CancellationToken cancellationToken);
 
     Task<AdminRollbackPageViewModel> GetAdminRollbackPreviewAsync(CancellationToken cancellationToken);
+
+    Task<AdminTopicsPageViewModel> GetAdminTopicsAsync(CancellationToken cancellationToken);
+
+    Task<AdminTopicItemViewModel?> GetAdminTopicAsync(Guid topicId, CancellationToken cancellationToken);
+
+    Task<AdminTopicItemViewModel> CreateAdminTopicAsync(AdminSaveTopicRequest request, CancellationToken cancellationToken);
+
+    Task<AdminTopicItemViewModel> UpdateAdminTopicAsync(Guid topicId, AdminSaveTopicRequest request, CancellationToken cancellationToken);
+
+    Task<AdminLabelsPageViewModel> GetAdminLabelsAsync(CancellationToken cancellationToken);
 
     Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
         AdminSaveConversationEventRequest request,
@@ -679,6 +775,584 @@ internal sealed class WebCatalogApiClient(
                 .ToArray());
     }
 
+    public async Task<AdminWordsPageViewModel> GetAdminWordsAsync(
+        string? query,
+        string? statusFilter,
+        int skip,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordsResponse response = await GetRequiredAsync<AdminCatalogWordsResponse>(
+            BuildPath(
+                "/api/admin/catalog/words",
+                [
+                    new("q", query),
+                    new("status", statusFilter),
+                    new("skip", skip.ToString()),
+                    new("take", take.ToString())
+                ]),
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminWordsPageViewModel(
+            response.Query,
+            response.StatusFilter,
+            response.Skip,
+            response.Take,
+            response.TotalCount,
+            response.Words
+                .Select(word => new AdminWordListItemViewModel(
+                    word.PublicId,
+                    word.Lemma,
+                    word.Article,
+                    word.PartOfSpeech,
+                    word.CefrLevel,
+                    word.PublicationStatus,
+                    word.ContentSourceType,
+                    word.SenseCount,
+                    word.TopicCount,
+                    word.UpdatedAtUtc))
+                .ToArray());
+    }
+
+    public async Task<AdminWordDetailViewModel?> GetAdminWordAsync(Guid publicId, CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse? response = await GetAsync<AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}",
+            cancellationToken).ConfigureAwait(false);
+
+        return response is null
+            ? null
+            : new AdminWordDetailViewModel(
+                response.PublicId,
+                response.Lemma,
+                response.NormalizedLemma,
+                response.LanguageCode,
+                response.Article,
+                response.PluralForm,
+                response.InfinitiveForm,
+                response.PronunciationIpa,
+                response.SyllableBreak,
+                response.PartOfSpeech,
+                response.CefrLevel,
+                response.PublicationStatus,
+                response.ContentSourceType,
+                response.SourceReference,
+                response.CreatedAtUtc,
+                response.UpdatedAtUtc,
+                response.LexicalForms
+                    .Select(form => new AdminWordLexicalFormViewModel(
+                        form.PartOfSpeech,
+                        form.Article,
+                        form.PluralForm,
+                        form.InfinitiveForm,
+                        form.IsPrimary,
+                        form.SortOrder))
+                    .ToArray(),
+                response.Senses
+                    .Select(sense => new AdminWordSenseViewModel(
+                        sense.SenseId,
+                        sense.SenseOrder,
+                        sense.IsPrimarySense,
+                        sense.PublicationStatus,
+                        sense.ShortDefinitionDe,
+                        sense.ShortGloss,
+                        sense.Translations
+                            .Select(translation => new AdminWordTranslationViewModel(
+                                translation.TranslationId,
+                                translation.LanguageCode,
+                                translation.TranslationText,
+                                translation.IsPrimary))
+                            .ToArray(),
+                        sense.Examples
+                            .Select(example => new AdminWordExampleViewModel(
+                                example.ExampleId,
+                                example.SentenceOrder,
+                                example.GermanText,
+                                example.IsPrimaryExample,
+                                example.Translations
+                                    .Select(translation => new AdminWordExampleTranslationViewModel(
+                                        translation.LanguageCode,
+                                        translation.TranslationText))
+                                    .ToArray()))
+                            .ToArray()))
+                    .ToArray(),
+                response.Topics
+                    .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
+                    .ToArray(),
+                response.Labels
+                    .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                    .ToArray(),
+                response.GrammarNotes
+                    .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
+                    .ToArray(),
+                response.Collocations
+                    .Select(collocation => new AdminWordCollocationViewModel(
+                        collocation.Text,
+                        collocation.Meaning,
+                        collocation.SortOrder))
+                    .ToArray());
+    }
+
+    public async Task<AdminWordDetailViewModel> UpdateAdminWordMetadataAsync(
+        Guid publicId,
+        AdminUpdateWordMetadataRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminUpdateWordMetadataRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/metadata",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminWordDetailViewModel(
+            response.PublicId,
+            response.Lemma,
+            response.NormalizedLemma,
+            response.LanguageCode,
+            response.Article,
+            response.PluralForm,
+            response.InfinitiveForm,
+            response.PronunciationIpa,
+            response.SyllableBreak,
+            response.PartOfSpeech,
+            response.CefrLevel,
+            response.PublicationStatus,
+            response.ContentSourceType,
+            response.SourceReference,
+            response.CreatedAtUtc,
+            response.UpdatedAtUtc,
+            response.LexicalForms
+                .Select(form => new AdminWordLexicalFormViewModel(
+                    form.PartOfSpeech,
+                    form.Article,
+                    form.PluralForm,
+                    form.InfinitiveForm,
+                    form.IsPrimary,
+                    form.SortOrder))
+                .ToArray(),
+            response.Senses
+                .Select(sense => new AdminWordSenseViewModel(
+                    sense.SenseId,
+                    sense.SenseOrder,
+                    sense.IsPrimarySense,
+                    sense.PublicationStatus,
+                    sense.ShortDefinitionDe,
+                    sense.ShortGloss,
+                    sense.Translations
+                        .Select(translation => new AdminWordTranslationViewModel(
+                            translation.TranslationId,
+                            translation.LanguageCode,
+                            translation.TranslationText,
+                            translation.IsPrimary))
+                        .ToArray(),
+                    sense.Examples
+                        .Select(example => new AdminWordExampleViewModel(
+                            example.ExampleId,
+                            example.SentenceOrder,
+                            example.GermanText,
+                            example.IsPrimaryExample,
+                            example.Translations
+                                .Select(translation => new AdminWordExampleTranslationViewModel(
+                                    translation.LanguageCode,
+                                    translation.TranslationText))
+                                .ToArray()))
+                        .ToArray()))
+                .ToArray(),
+            response.Topics
+                .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
+                .ToArray(),
+            response.Labels
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .ToArray(),
+            response.GrammarNotes
+                .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
+                .ToArray(),
+            response.Collocations
+                .Select(collocation => new AdminWordCollocationViewModel(
+                    collocation.Text,
+                    collocation.Meaning,
+                    collocation.SortOrder))
+                .ToArray());
+    }
+
+    public async Task<AdminWordDetailViewModel> CreateAdminWordAsync(
+        AdminUpdateWordMetadataRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminUpdateWordMetadataRequest, AdminCatalogWordDetailResponse>(
+            "/api/admin/catalog/words",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminWordDetailViewModel(
+            response.PublicId,
+            response.Lemma,
+            response.NormalizedLemma,
+            response.LanguageCode,
+            response.Article,
+            response.PluralForm,
+            response.InfinitiveForm,
+            response.PronunciationIpa,
+            response.SyllableBreak,
+            response.PartOfSpeech,
+            response.CefrLevel,
+            response.PublicationStatus,
+            response.ContentSourceType,
+            response.SourceReference,
+            response.CreatedAtUtc,
+            response.UpdatedAtUtc,
+            response.LexicalForms
+                .Select(form => new AdminWordLexicalFormViewModel(
+                    form.PartOfSpeech,
+                    form.Article,
+                    form.PluralForm,
+                    form.InfinitiveForm,
+                    form.IsPrimary,
+                    form.SortOrder))
+                .ToArray(),
+            response.Senses
+                .Select(sense => new AdminWordSenseViewModel(
+                    sense.SenseId,
+                    sense.SenseOrder,
+                    sense.IsPrimarySense,
+                    sense.PublicationStatus,
+                    sense.ShortDefinitionDe,
+                    sense.ShortGloss,
+                    sense.Translations
+                        .Select(translation => new AdminWordTranslationViewModel(
+                            translation.TranslationId,
+                            translation.LanguageCode,
+                            translation.TranslationText,
+                            translation.IsPrimary))
+                        .ToArray(),
+                    sense.Examples
+                        .Select(example => new AdminWordExampleViewModel(
+                            example.ExampleId,
+                            example.SentenceOrder,
+                            example.GermanText,
+                            example.IsPrimaryExample,
+                            example.Translations
+                                .Select(translation => new AdminWordExampleTranslationViewModel(
+                                    translation.LanguageCode,
+                                    translation.TranslationText))
+                                .ToArray()))
+                        .ToArray()))
+                .ToArray(),
+            response.Topics
+                .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
+                .ToArray(),
+            response.Labels
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .ToArray(),
+            response.GrammarNotes
+                .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
+                .ToArray(),
+            response.Collocations
+                .Select(collocation => new AdminWordCollocationViewModel(
+                    collocation.Text,
+                    collocation.Meaning,
+                    collocation.SortOrder))
+                .ToArray());
+    }
+
+    public Task<AdminBulkWordImportResponse> ImportAdminWordsAsync(
+        AdminBulkWordImportRequest request,
+        CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminBulkWordImportRequest, AdminBulkWordImportResponse>(
+            "/api/admin/catalog/words/import",
+            request,
+            cancellationToken);
+
+    public async Task<AdminWordDetailViewModel> AddAdminWordSenseAsync(
+        Guid publicId,
+        AdminAddWordSenseRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminAddWordSenseRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminWordDetailViewModel(
+            response.PublicId,
+            response.Lemma,
+            response.NormalizedLemma,
+            response.LanguageCode,
+            response.Article,
+            response.PluralForm,
+            response.InfinitiveForm,
+            response.PronunciationIpa,
+            response.SyllableBreak,
+            response.PartOfSpeech,
+            response.CefrLevel,
+            response.PublicationStatus,
+            response.ContentSourceType,
+            response.SourceReference,
+            response.CreatedAtUtc,
+            response.UpdatedAtUtc,
+            response.LexicalForms
+                .Select(form => new AdminWordLexicalFormViewModel(
+                    form.PartOfSpeech,
+                    form.Article,
+                    form.PluralForm,
+                    form.InfinitiveForm,
+                    form.IsPrimary,
+                    form.SortOrder))
+                .ToArray(),
+            response.Senses
+                .Select(sense => new AdminWordSenseViewModel(
+                    sense.SenseId,
+                    sense.SenseOrder,
+                    sense.IsPrimarySense,
+                    sense.PublicationStatus,
+                    sense.ShortDefinitionDe,
+                    sense.ShortGloss,
+                    sense.Translations
+                        .Select(translation => new AdminWordTranslationViewModel(
+                            translation.TranslationId,
+                            translation.LanguageCode,
+                            translation.TranslationText,
+                            translation.IsPrimary))
+                        .ToArray(),
+                    sense.Examples
+                        .Select(example => new AdminWordExampleViewModel(
+                            example.ExampleId,
+                            example.SentenceOrder,
+                            example.GermanText,
+                            example.IsPrimaryExample,
+                            example.Translations
+                                .Select(translation => new AdminWordExampleTranslationViewModel(
+                                    translation.LanguageCode,
+                                    translation.TranslationText))
+                                .ToArray()))
+                        .ToArray()))
+                .ToArray(),
+            response.Topics
+                .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
+                .ToArray(),
+            response.Labels
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .ToArray(),
+            response.GrammarNotes
+                .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
+                .ToArray(),
+            response.Collocations
+                .Select(collocation => new AdminWordCollocationViewModel(
+                    collocation.Text,
+                    collocation.Meaning,
+                    collocation.SortOrder))
+                .ToArray());
+    }
+
+    public async Task<AdminWordDetailViewModel> AddAdminWordSenseTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        AdminAddWordSenseTranslationRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminAddWordSenseTranslationRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/translations",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> AddAdminWordSenseExampleAsync(
+        Guid publicId,
+        Guid senseId,
+        AdminAddWordSenseExampleRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminAddWordSenseExampleRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/examples",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> UpdateAdminWordSenseTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid translationId,
+        AdminUpdateWordSenseTranslationRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminUpdateWordSenseTranslationRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/translations/{translationId:D}",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> DeleteAdminWordSenseTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid translationId,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/translations/{translationId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> UpdateAdminWordSenseExampleAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminUpdateWordSenseExampleRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminUpdateWordSenseExampleRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/examples/{exampleId:D}",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> DeleteAdminWordSenseExampleAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/examples/{exampleId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> AddAdminWordTopicAsync(
+        Guid publicId,
+        AdminAddWordTopicRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminAddWordTopicRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/topics",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> DeleteAdminWordTopicAsync(
+        Guid publicId,
+        Guid topicId,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/topics/{topicId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> AddAdminWordLabelAsync(
+        Guid publicId,
+        AdminAddWordLabelRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminAddWordLabelRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/labels",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> DeleteAdminWordLabelAsync(
+        Guid publicId,
+        string kind,
+        string key,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/labels/{Uri.EscapeDataString(kind)}/{Uri.EscapeDataString(key)}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    private static AdminWordDetailViewModel MapAdminWordDetail(AdminCatalogWordDetailResponse response) =>
+        new(
+            response.PublicId,
+            response.Lemma,
+            response.NormalizedLemma,
+            response.LanguageCode,
+            response.Article,
+            response.PluralForm,
+            response.InfinitiveForm,
+            response.PronunciationIpa,
+            response.SyllableBreak,
+            response.PartOfSpeech,
+            response.CefrLevel,
+            response.PublicationStatus,
+            response.ContentSourceType,
+            response.SourceReference,
+            response.CreatedAtUtc,
+            response.UpdatedAtUtc,
+            response.LexicalForms
+                .Select(form => new AdminWordLexicalFormViewModel(
+                    form.PartOfSpeech,
+                    form.Article,
+                    form.PluralForm,
+                    form.InfinitiveForm,
+                    form.IsPrimary,
+                    form.SortOrder))
+                .ToArray(),
+            response.Senses
+                .Select(sense => new AdminWordSenseViewModel(
+                    sense.SenseId,
+                    sense.SenseOrder,
+                    sense.IsPrimarySense,
+                    sense.PublicationStatus,
+                    sense.ShortDefinitionDe,
+                    sense.ShortGloss,
+                    sense.Translations
+                        .Select(translation => new AdminWordTranslationViewModel(
+                            translation.TranslationId,
+                            translation.LanguageCode,
+                            translation.TranslationText,
+                            translation.IsPrimary))
+                        .ToArray(),
+                    sense.Examples
+                        .Select(example => new AdminWordExampleViewModel(
+                            example.ExampleId,
+                            example.SentenceOrder,
+                            example.GermanText,
+                            example.IsPrimaryExample,
+                            example.Translations
+                                .Select(translation => new AdminWordExampleTranslationViewModel(
+                                    translation.LanguageCode,
+                                    translation.TranslationText))
+                                .ToArray()))
+                        .ToArray()))
+                .ToArray(),
+            response.Topics
+                .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
+                .ToArray(),
+            response.Labels
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .ToArray(),
+            response.GrammarNotes
+                .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
+                .ToArray(),
+            response.Collocations
+                .Select(collocation => new AdminWordCollocationViewModel(
+                    collocation.Text,
+                    collocation.Meaning,
+                    collocation.SortOrder))
+                .ToArray());
+
     public async Task<AdminDraftWordsPageViewModel> GetAdminDraftWordsAsync(string? query, CancellationToken cancellationToken)
     {
         AdminCatalogDraftWordsResponse response = await GetRequiredAsync<AdminCatalogDraftWordsResponse>(
@@ -727,6 +1401,55 @@ internal sealed class WebCatalogApiClient(
             response.DraftWordCount,
             response.ImportedPackageCount,
             response.WarningMessage);
+    }
+
+    public async Task<AdminTopicsPageViewModel> GetAdminTopicsAsync(CancellationToken cancellationToken)
+    {
+        AdminTopicsResponse response = await GetRequiredAsync<AdminTopicsResponse>(
+            "/api/admin/catalog/topics",
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminTopicsPageViewModel(response.Topics.Select(MapAdminTopic).ToArray());
+    }
+
+    public async Task<AdminTopicItemViewModel?> GetAdminTopicAsync(Guid topicId, CancellationToken cancellationToken)
+    {
+        AdminTopicItemResponse? response = await GetAsync<AdminTopicItemResponse>(
+            $"/api/admin/catalog/topics/{topicId:D}",
+            cancellationToken).ConfigureAwait(false);
+
+        return response is null ? null : MapAdminTopic(response);
+    }
+
+    public async Task<AdminTopicItemViewModel> CreateAdminTopicAsync(AdminSaveTopicRequest request, CancellationToken cancellationToken)
+    {
+        AdminTopicItemResponse response = await PostRequiredAsync<AdminSaveTopicRequest, AdminTopicItemResponse>(
+            "/api/admin/catalog/topics",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminTopic(response);
+    }
+
+    public async Task<AdminTopicItemViewModel> UpdateAdminTopicAsync(Guid topicId, AdminSaveTopicRequest request, CancellationToken cancellationToken)
+    {
+        AdminTopicItemResponse response = await PostRequiredAsync<AdminSaveTopicRequest, AdminTopicItemResponse>(
+            $"/api/admin/catalog/topics/{topicId:D}",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminTopic(response);
+    }
+
+    public async Task<AdminLabelsPageViewModel> GetAdminLabelsAsync(CancellationToken cancellationToken)
+    {
+        AdminLabelsResponse response = await GetRequiredAsync<AdminLabelsResponse>(
+            "/api/admin/catalog/labels",
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminLabelsPageViewModel(response.Labels
+            .Select(label => new AdminLabelItemViewModel(label.Kind, label.Key, label.WordCount, label.FirstSortOrder))
+            .ToArray());
     }
 
     public Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
@@ -959,6 +1682,20 @@ internal sealed class WebCatalogApiClient(
     private static string BuildWebApiOperationKey(HttpMethod method, string relativeUri) =>
         $"webapi:{method.Method}:{NormalizePathShape(relativeUri)}".ToLowerInvariant();
 
+    private static AdminTopicItemViewModel MapAdminTopic(AdminTopicItemResponse topic) =>
+        new(
+            topic.TopicId,
+            topic.Key,
+            topic.SortOrder,
+            topic.IsSystem,
+            topic.WordCount,
+            topic.UpdatedAtUtc,
+            topic.Localizations
+                .Select(localization => new AdminTopicLocalizationViewModel(
+                    localization.LanguageCode,
+                    localization.DisplayName))
+                .ToArray());
+
     private static string NormalizePathShape(string relativeUri)
     {
         string path = relativeUri.Split('?', 2)[0].Trim('/');
@@ -1131,6 +1868,131 @@ internal sealed record AdminCatalogImportItemResponse(
     int InvalidEntries,
     int WarningCount,
     DateTime CreatedAtUtc);
+
+internal sealed record AdminCatalogWordsResponse(
+    string? Query,
+    string? StatusFilter,
+    int Skip,
+    int Take,
+    int TotalCount,
+    IReadOnlyList<AdminCatalogWordItemResponse> Words);
+
+internal sealed record AdminCatalogWordItemResponse(
+    Guid PublicId,
+    string Lemma,
+    string? Article,
+    string PartOfSpeech,
+    string CefrLevel,
+    string PublicationStatus,
+    string ContentSourceType,
+    int SenseCount,
+    int TopicCount,
+    DateTime UpdatedAtUtc);
+
+internal sealed record AdminCatalogWordDetailResponse(
+    Guid PublicId,
+    string Lemma,
+    string NormalizedLemma,
+    string LanguageCode,
+    string? Article,
+    string? PluralForm,
+    string? InfinitiveForm,
+    string? PronunciationIpa,
+    string? SyllableBreak,
+    string PartOfSpeech,
+    string CefrLevel,
+    string PublicationStatus,
+    string ContentSourceType,
+    string? SourceReference,
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc,
+    IReadOnlyList<AdminCatalogWordLexicalFormResponse> LexicalForms,
+    IReadOnlyList<AdminCatalogWordSenseResponse> Senses,
+    IReadOnlyList<AdminCatalogWordTopicResponse> Topics,
+    IReadOnlyList<AdminCatalogWordLabelResponse> Labels,
+    IReadOnlyList<AdminCatalogWordTextItemResponse> GrammarNotes,
+    IReadOnlyList<AdminCatalogWordCollocationResponse> Collocations);
+
+internal sealed record AdminCatalogWordLexicalFormResponse(
+    string PartOfSpeech,
+    string? Article,
+    string? PluralForm,
+    string? InfinitiveForm,
+    bool IsPrimary,
+    int SortOrder);
+
+internal sealed record AdminCatalogWordSenseResponse(
+    Guid SenseId,
+    int SenseOrder,
+    bool IsPrimarySense,
+    string PublicationStatus,
+    string? ShortDefinitionDe,
+    string? ShortGloss,
+    IReadOnlyList<AdminCatalogWordTranslationResponse> Translations,
+    IReadOnlyList<AdminCatalogWordExampleResponse> Examples);
+
+internal sealed record AdminCatalogWordTranslationResponse(
+    Guid TranslationId,
+    string LanguageCode,
+    string TranslationText,
+    bool IsPrimary);
+
+internal sealed record AdminCatalogWordExampleResponse(
+    Guid ExampleId,
+    int SentenceOrder,
+    string GermanText,
+    bool IsPrimaryExample,
+    IReadOnlyList<AdminCatalogWordExampleTranslationResponse> Translations);
+
+internal sealed record AdminCatalogWordExampleTranslationResponse(
+    string LanguageCode,
+    string TranslationText);
+
+internal sealed record AdminCatalogWordTopicResponse(
+    Guid TopicId,
+    string Key,
+    bool IsPrimaryTopic);
+
+internal sealed record AdminCatalogWordLabelResponse(
+    string Kind,
+    string Key,
+    int SortOrder);
+
+internal sealed record AdminCatalogWordTextItemResponse(
+    string Text,
+    int SortOrder);
+
+internal sealed record AdminCatalogWordCollocationResponse(
+    string Text,
+    string? Meaning,
+    int SortOrder);
+
+internal sealed record AdminTopicsResponse(
+    IReadOnlyList<AdminTopicItemResponse> Topics);
+
+internal sealed record AdminTopicItemResponse(
+    Guid TopicId,
+    string Key,
+    int SortOrder,
+    bool IsSystem,
+    int WordCount,
+    DateTime UpdatedAtUtc,
+    IReadOnlyList<AdminTopicLocalizationResponse> Localizations);
+
+internal sealed record AdminTopicLocalizationResponse(
+    string LanguageCode,
+    string DisplayName);
+
+internal sealed record AdminLabelsResponse(
+    IReadOnlyList<AdminLabelItemResponse> Labels);
+
+internal sealed record AdminLabelItemResponse(
+    string Kind,
+    string Key,
+    int WordCount,
+    int FirstSortOrder);
+
+internal sealed record AdminEmptyRequest;
 
 internal sealed record AdminCatalogDraftWordsResponse(
     string? Query,

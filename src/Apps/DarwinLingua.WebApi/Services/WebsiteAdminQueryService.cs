@@ -15,6 +15,15 @@ public interface IWebsiteAdminQueryService
 
     Task<AdminCatalogImportsResponse> GetImportsAsync(string? statusFilter, CancellationToken cancellationToken);
 
+    Task<AdminCatalogWordsResponse> GetWordsAsync(
+        string? query,
+        string? statusFilter,
+        int skip,
+        int take,
+        CancellationToken cancellationToken);
+
+    Task<AdminCatalogWordDetailResponse?> GetWordAsync(Guid publicId, CancellationToken cancellationToken);
+
     Task<AdminCatalogDraftWordsResponse> GetDraftWordsAsync(string? query, CancellationToken cancellationToken);
 
     Task<AdminCatalogHistoryViewResponse> GetHistoryAsync(string? statusFilter, CancellationToken cancellationToken);
@@ -102,6 +111,201 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
             .ConfigureAwait(false);
 
         return new AdminCatalogImportsResponse(normalizedStatusFilter, packages);
+    }
+
+    public async Task<AdminCatalogWordsResponse> GetWordsAsync(
+        string? queryText,
+        string? statusFilter,
+        int skip,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        string? normalizedQuery = NormalizeFilter(queryText);
+        string? normalizedStatusFilter = NormalizeFilter(statusFilter);
+        int normalizedSkip = Math.Max(0, skip);
+        int normalizedTake = Math.Clamp(take, 10, 100);
+
+        if (!TryParsePublicationStatusFilter(normalizedStatusFilter, out PublicationStatus? parsedStatusFilter))
+        {
+            return new AdminCatalogWordsResponse(
+                normalizedQuery,
+                normalizedStatusFilter,
+                normalizedSkip,
+                normalizedTake,
+                0,
+                []);
+        }
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
+
+        IQueryable<Catalog.Domain.Entities.WordEntry> query = dbContext.WordEntries.AsNoTracking();
+
+        if (!string.IsNullOrWhiteSpace(normalizedQuery))
+        {
+            string lowered = normalizedQuery.ToLowerInvariant();
+            query = query.Where(word => word.NormalizedLemma.Contains(lowered));
+        }
+
+        if (parsedStatusFilter is not null)
+        {
+            query = query.Where(word => word.PublicationStatus == parsedStatusFilter);
+        }
+
+        int totalCount = await query.CountAsync(cancellationToken).ConfigureAwait(false);
+
+        AdminCatalogWordItemResponse[] words = await query
+            .OrderBy(word => word.NormalizedLemma)
+            .Skip(normalizedSkip)
+            .Take(normalizedTake)
+            .Select(word => new AdminCatalogWordItemResponse(
+                word.PublicId,
+                word.Lemma,
+                word.Article,
+                word.PartOfSpeech.ToString(),
+                word.PrimaryCefrLevel.ToString(),
+                word.PublicationStatus.ToString(),
+                word.ContentSourceType.ToString(),
+                word.Senses.Count,
+                word.Topics.Count,
+                word.UpdatedAtUtc))
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return new AdminCatalogWordsResponse(
+            normalizedQuery,
+            normalizedStatusFilter,
+            normalizedSkip,
+            normalizedTake,
+            totalCount,
+            words);
+    }
+
+    public async Task<AdminCatalogWordDetailResponse?> GetWordAsync(Guid publicId, CancellationToken cancellationToken)
+    {
+        if (publicId == Guid.Empty)
+        {
+            return null;
+        }
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
+
+        Catalog.Domain.Entities.WordEntry? word = await dbContext.WordEntries
+            .AsNoTracking()
+            .AsSplitQuery()
+            .Include(entry => entry.LexicalForms)
+            .Include(entry => entry.Senses)
+                .ThenInclude(sense => sense.Translations)
+            .Include(entry => entry.Senses)
+                .ThenInclude(sense => sense.Examples)
+                    .ThenInclude(example => example.Translations)
+            .Include(entry => entry.Topics)
+            .Include(entry => entry.Labels)
+            .Include(entry => entry.GrammarNotes)
+            .Include(entry => entry.Collocations)
+            .SingleOrDefaultAsync(entry => entry.PublicId == publicId, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (word is null)
+        {
+            return null;
+        }
+
+        Guid[] topicIds = word.Topics.Select(topic => topic.TopicId).Distinct().ToArray();
+        Dictionary<Guid, string> topicKeysById = topicIds.Length == 0
+            ? []
+            : await dbContext.Topics
+                .AsNoTracking()
+                .Where(topic => topicIds.Contains(topic.Id))
+                .ToDictionaryAsync(topic => topic.Id, topic => topic.Key, cancellationToken)
+                .ConfigureAwait(false);
+
+        return new AdminCatalogWordDetailResponse(
+            word.PublicId,
+            word.Lemma,
+            word.NormalizedLemma,
+            word.LanguageCode.Value,
+            word.Article,
+            word.PluralForm,
+            word.InfinitiveForm,
+            word.PronunciationIpa,
+            word.SyllableBreak,
+            word.PartOfSpeech.ToString(),
+            word.PrimaryCefrLevel.ToString(),
+            word.PublicationStatus.ToString(),
+            word.ContentSourceType.ToString(),
+            word.SourceReference,
+            word.CreatedAtUtc,
+            word.UpdatedAtUtc,
+            word.LexicalForms
+                .OrderBy(form => form.SortOrder)
+                .Select(form => new AdminCatalogWordLexicalFormResponse(
+                    form.PartOfSpeech.ToString(),
+                    form.Article,
+                    form.PluralForm,
+                    form.InfinitiveForm,
+                    form.IsPrimary,
+                    form.SortOrder))
+                .ToArray(),
+            word.Senses
+                .OrderBy(sense => sense.SenseOrder)
+                .Select(sense => new AdminCatalogWordSenseResponse(
+                    sense.Id,
+                    sense.SenseOrder,
+                    sense.IsPrimarySense,
+                    sense.PublicationStatus.ToString(),
+                    sense.ShortDefinitionDe,
+                    sense.ShortGloss,
+                    sense.Translations
+                        .OrderByDescending(translation => translation.IsPrimary)
+                        .ThenBy(translation => translation.LanguageCode.Value)
+                        .Select(translation => new AdminCatalogWordTranslationResponse(
+                            translation.Id,
+                            translation.LanguageCode.Value,
+                            translation.TranslationText,
+                            translation.IsPrimary))
+                        .ToArray(),
+                    sense.Examples
+                        .OrderBy(example => example.SentenceOrder)
+                        .Select(example => new AdminCatalogWordExampleResponse(
+                            example.Id,
+                            example.SentenceOrder,
+                            example.GermanText,
+                            example.IsPrimaryExample,
+                            example.Translations
+                                .OrderBy(translation => translation.LanguageCode.Value)
+                                .Select(translation => new AdminCatalogWordExampleTranslationResponse(
+                                    translation.LanguageCode.Value,
+                                    translation.TranslationText))
+                                .ToArray()))
+                        .ToArray()))
+                .ToArray(),
+            word.Topics
+                .OrderByDescending(topic => topic.IsPrimaryTopic)
+                .ThenBy(topic => topicKeysById.GetValueOrDefault(topic.TopicId, topic.TopicId.ToString("D")))
+                .Select(topic => new AdminCatalogWordTopicResponse(
+                    topic.TopicId,
+                    topicKeysById.GetValueOrDefault(topic.TopicId, topic.TopicId.ToString("D")),
+                    topic.IsPrimaryTopic))
+                .ToArray(),
+            word.Labels
+                .OrderBy(label => label.Kind)
+                .ThenBy(label => label.SortOrder)
+                .Select(label => new AdminCatalogWordLabelResponse(
+                    label.Kind.ToString(),
+                    label.Key,
+                    label.SortOrder))
+                .ToArray(),
+            word.GrammarNotes
+                .OrderBy(note => note.SortOrder)
+                .Select(note => new AdminCatalogWordTextItemResponse(note.Text, note.SortOrder))
+                .ToArray(),
+            word.Collocations
+                .OrderBy(collocation => collocation.SortOrder)
+                .Select(collocation => new AdminCatalogWordCollocationResponse(
+                    collocation.Text,
+                    collocation.Meaning,
+                    collocation.SortOrder))
+                .ToArray());
     }
 
     public async Task<AdminCatalogDraftWordsResponse> GetDraftWordsAsync(string? queryText, CancellationToken cancellationToken)
@@ -206,6 +410,27 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
         }
 
         if (Enum.TryParse(statusFilter, ignoreCase: true, out ContentPackageStatus status) &&
+            Enum.IsDefined(status))
+        {
+            parsedStatusFilter = status;
+            return true;
+        }
+
+        parsedStatusFilter = null;
+        return false;
+    }
+
+    private static bool TryParsePublicationStatusFilter(
+        string? statusFilter,
+        out PublicationStatus? parsedStatusFilter)
+    {
+        if (string.IsNullOrWhiteSpace(statusFilter))
+        {
+            parsedStatusFilter = null;
+            return true;
+        }
+
+        if (Enum.TryParse(statusFilter, ignoreCase: true, out PublicationStatus status) &&
             Enum.IsDefined(status))
         {
             parsedStatusFilter = status;

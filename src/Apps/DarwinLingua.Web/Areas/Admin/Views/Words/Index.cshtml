@@ -1,0 +1,45 @@
+@model DarwinLingua.Web.Models.AdminWordsPageViewModel
+@{
+    ViewData["Title"] = "Words";
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Words", "Catalog management", "Review lexical entries across every publication state before editing, creation, and import workflows are attached.")' />
+        <div class="cluster">
+            <a class="button button--secondary" asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a>
+            <a class="button button--secondary" asp-action="Import">Import JSON</a>
+            <a class="button" asp-action="New">New word</a>
+        </div>
+    </div>
+
+    <form class="admin-filter-grid"
+          method="get"
+          asp-action="Index"
+          hx-get="@Url.Action("Table", "Words", new { area = "Admin" })"
+          hx-trigger="submit, keyup changed delay:300ms from:input, change from:select"
+          hx-target="#words-table"
+          hx-indicator="#words-indicator">
+        <label class="form-field">
+            <span>Search</span>
+            <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="Lemma or normalized lemma" />
+        </label>
+        <label class="form-field">
+            <span>Status</span>
+            <select class="form-select" name="status">
+                <option value="" selected="@(string.IsNullOrWhiteSpace(Model.StatusFilter) ? "selected" : null)">All statuses</option>
+                <option value="Active" selected="@(string.Equals(Model.StatusFilter, "Active", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Active</option>
+                <option value="Draft" selected="@(string.Equals(Model.StatusFilter, "Draft", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Draft</option>
+                <option value="Archived" selected="@(string.Equals(Model.StatusFilter, "Archived", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Archived</option>
+                <option value="Deprecated" selected="@(string.Equals(Model.StatusFilter, "Deprecated", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Deprecated</option>
+            </select>
+        </label>
+        <input type="hidden" name="take" value="@Model.Take" />
+        <button type="submit" class="button button--secondary">Filter</button>
+    </form>
+    <div id="words-indicator" class="eyebrow htmx-indicator">Updating words...</div>
+</section>
+
+<div id="words-table">
+    <partial name="_WordsTable" model="Model" />
+</div>

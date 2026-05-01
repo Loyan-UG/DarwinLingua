@@ -27,6 +27,7 @@
                 <a asp-area="" asp-controller="Favorites" asp-action="Index">Favorites</a>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
+                    <a asp-area="" asp-controller="Settings" asp-action="Index">Languages</a>
                     <a asp-area="" asp-controller="Billing" asp-action="Index">Billing</a>
                 }
                 @if (User.IsInRole("Admin"))
@@ -51,6 +52,9 @@
     </header>
     <div class="shell-container">
         <partial name="_MobileNav" />
+        <main role="main" class="shell-main">
+            @RenderBody()
+        </main>
         <div id="install-banner" class="install-banner" hidden>
             <div>
                 <strong>Install Darwin Lingua</strong>
@@ -58,9 +62,6 @@
             </div>
             <button id="install-button" type="button" class="button button--primary">Install</button>
         </div>
-        <main role="main" class="shell-main">
-            @RenderBody()
-        </main>
     </div>
 
     <footer class="shell-footer">
@@ -73,6 +74,7 @@
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
+                    <a asp-area="" asp-controller="Settings" asp-action="Index">Languages</a>
                 }
                 <a asp-area="" asp-controller="Browse" asp-action="Index">Browse</a>
                 <a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a>

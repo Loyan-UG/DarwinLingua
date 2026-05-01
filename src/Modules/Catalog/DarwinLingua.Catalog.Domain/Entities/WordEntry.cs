@@ -210,6 +210,47 @@ public sealed partial class WordEntry
     /// </summary>
     public IReadOnlyCollection<WordRelation> Relations => _relations.AsReadOnly();
 
+    public void UpdateCoreMetadata(
+        string lemma,
+        LanguageCode languageCode,
+        CefrLevel primaryCefrLevel,
+        PartOfSpeech partOfSpeech,
+        PublicationStatus publicationStatus,
+        ContentSourceType contentSourceType,
+        DateTime updatedAtUtc,
+        string? article = null,
+        string? pluralForm = null,
+        string? infinitiveForm = null,
+        string? pronunciationIpa = null,
+        string? syllableBreak = null,
+        string? sourceReference = null)
+    {
+        DateTime normalizedUpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+
+        Lemma = NormalizeRequiredText(lemma, nameof(lemma));
+        NormalizedLemma = NormalizeLemma(Lemma);
+        LanguageCode = languageCode;
+        PrimaryCefrLevel = primaryCefrLevel;
+        PartOfSpeech = partOfSpeech;
+        PublicationStatus = publicationStatus;
+        ContentSourceType = contentSourceType;
+        Article = NormalizeOptionalText(article);
+        PluralForm = NormalizeOptionalText(pluralForm);
+        InfinitiveForm = NormalizeOptionalText(infinitiveForm);
+        PronunciationIpa = NormalizeOptionalText(pronunciationIpa);
+        SyllableBreak = NormalizeOptionalText(syllableBreak);
+        SourceReference = NormalizeOptionalText(sourceReference);
+        UpdatedAtUtc = normalizedUpdatedAtUtc;
+
+        WordLexicalForm? primaryForm = GetPrimaryLexicalForm();
+        primaryForm?.UpdateCoreMetadata(
+            partOfSpeech,
+            Article,
+            PluralForm,
+            InfinitiveForm,
+            normalizedUpdatedAtUtc);
+    }
+
     /// <summary>
     /// Adds a lexical-role variant to the entry.
     /// </summary>

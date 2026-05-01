@@ -9,36 +9,27 @@
         </div>
     }
 
-    <div class="meta-grid">
-        <div class="meta-chip">
-            <strong>Views</strong>
-            <span>@Model.WordState.ViewCount times</span>
+    @if (Model.WordState.IsKnown || Model.WordState.IsDifficult)
+    {
+        <div class="meta-grid">
+            @if (Model.WordState.IsKnown)
+            {
+                <div class="meta-chip">
+                    <strong>Status</strong>
+                    <span>Known</span>
+                </div>
+            }
+            @if (Model.WordState.IsDifficult)
+            {
+                <div class="meta-chip">
+                    <strong>Focus</strong>
+                    <span>Difficult</span>
+                </div>
+            }
         </div>
-        @if (Model.WordState.LastViewedAtUtc is DateTime lastViewedAtUtc)
-        {
-            <div class="meta-chip">
-                <strong>Last viewed</strong>
-                <span>@lastViewedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</span>
-            </div>
-        }
-        @if (Model.WordState.IsKnown)
-        {
-            <div class="meta-chip">
-                <strong>Status</strong>
-                <span>Known</span>
-            </div>
-        }
-        @if (Model.WordState.IsDifficult)
-        {
-            <div class="meta-chip">
-                <strong>Focus</strong>
-                <span>Difficult</span>
-            </div>
-        }
-    </div>
+    }
 
     <div class="action-row">
-        <partial name="~/Views/Shared/_FavoriteToggle.cshtml" model="Model" />
         <form method="post" asp-action="ToggleKnown" class="inline-form">
             @Html.AntiForgeryToken()
             <input type="hidden" name="id" value="@Model.WordPublicId" />

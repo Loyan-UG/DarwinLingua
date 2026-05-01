@@ -6,7 +6,7 @@
 <section class="panel stack-lg">
     <span class="eyebrow">Settings</span>
     <h1 class="headline-md">Language preferences</h1>
-    <p class="body-lg">Choose the interface and meaning languages that make your study sessions easier to read and review.</p>
+    <p class="body-lg">These preferences control the site language and the meanings shown across word pages, lists, scenarios, and practice content.</p>
 
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
@@ -19,27 +19,31 @@
             <label class="field">
                 <span>UI language</span>
                 <select asp-for="Input.UiLanguageCode" asp-items="Model.UiLanguageOptions"></select>
+                <small class="body-sm">Used for interface text where localization is available.</small>
                 <span asp-validation-for="Input.UiLanguageCode" class="validation-message"></span>
             </label>
 
             <label class="field">
                 <span>Primary meaning language</span>
                 <select asp-for="Input.PrimaryMeaningLanguageCode" asp-items="Model.MeaningLanguageOptions"></select>
+                <small class="body-sm">Shown first in word details, search results, and learning cards.</small>
                 <span asp-validation-for="Input.PrimaryMeaningLanguageCode" class="validation-message"></span>
             </label>
 
             <label class="field">
                 <span>Secondary meaning language</span>
                 <select asp-for="Input.SecondaryMeaningLanguageCode" asp-items="Model.SecondaryMeaningLanguageOptions" disabled="@(!Model.CanUseDualMeaningLanguage)"></select>
+                <small class="body-sm">Optional second meaning column for comparison.</small>
                 @if (!Model.CanUseDualMeaningLanguage && !string.IsNullOrWhiteSpace(Model.DualMeaningLanguageLockedMessage))
                 {
-                    <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Account" asp-action="Index">View plan</a></span>
+                    <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Billing" asp-action="Index">View billing</a></span>
                 }
             </label>
         </div>
 
         <div class="action-row">
             <button type="submit" class="button button--primary">Save preferences</button>
+            <a class="button button--secondary" asp-controller="Account" asp-action="Index">Back to account</a>
         </div>
     </form>
 </section>

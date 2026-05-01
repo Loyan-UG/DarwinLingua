@@ -27,6 +27,7 @@ public sealed class BillingController(
         string userId = GetUserId();
         UserEntitlementSnapshot entitlement;
         WebBillingProfile? billingProfile;
+        IReadOnlyList<BillingEventItemViewModel> recentEvents;
         BillingOptions billingOptions = options.Value;
 
         try
@@ -35,6 +36,35 @@ public sealed class BillingController(
             billingProfile = await dbContext.WebBillingProfiles
                 .AsNoTracking()
                 .SingleOrDefaultAsync(profile => profile.UserId == userId, cancellationToken)
+                .ConfigureAwait(false);
+            string? customerId = billingProfile?.ProviderCustomerId;
+            string? subscriptionId = billingProfile?.ProviderSubscriptionId;
+            IQueryable<WebBillingEvent> billingEventQuery = dbContext.WebBillingEvents
+                .AsNoTracking()
+                .Where(billingEvent => billingEvent.UserId == userId);
+            if (!string.IsNullOrWhiteSpace(customerId))
+            {
+                billingEventQuery = billingEventQuery
+                    .Union(dbContext.WebBillingEvents.AsNoTracking().Where(billingEvent => billingEvent.ProviderCustomerId == customerId));
+            }
+
+            if (!string.IsNullOrWhiteSpace(subscriptionId))
+            {
+                billingEventQuery = billingEventQuery
+                    .Union(dbContext.WebBillingEvents.AsNoTracking().Where(billingEvent => billingEvent.ProviderSubscriptionId == subscriptionId));
+            }
+
+            recentEvents = await billingEventQuery
+                .OrderByDescending(billingEvent => billingEvent.CreatedAtUtc)
+                .Take(8)
+                .Select(billingEvent => new BillingEventItemViewModel(
+                    billingEvent.ProviderName,
+                    billingEvent.EventType,
+                    billingEvent.Status,
+                    billingEvent.CreatedAtUtc,
+                    billingEvent.ProcessedAtUtc,
+                    billingEvent.ErrorSummary))
+                .ToArrayAsync(cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested)
@@ -56,7 +86,14 @@ public sealed class BillingController(
             billingOptions.EnableStripe && !string.Equals(entitlement.Tier, DarwinLinguaEntitlementTiers.Premium, StringComparison.Ordinal),
             billingOptions.EnableStripe && !string.IsNullOrWhiteSpace(billingProfile?.ProviderCustomerId),
             billingProfile?.Status,
-            billingProfile?.CurrentPeriodEndsAtUtc));
+            billingProfile?.CurrentPeriodEndsAtUtc,
+            billingOptions.EnableStripe &&
+                !string.IsNullOrWhiteSpace(billingOptions.StripeSecretKey) &&
+                !string.IsNullOrWhiteSpace(billingOptions.StripeWebhookSecret) &&
+                !string.IsNullOrWhiteSpace(billingOptions.StripePremiumMonthlyPriceId),
+            billingProfile?.ProviderCustomerId,
+            billingProfile?.ProviderSubscriptionId,
+            recentEvents));
     }
 
     [HttpPost("stripe/portal", Name = "Billing_StripePortal")]

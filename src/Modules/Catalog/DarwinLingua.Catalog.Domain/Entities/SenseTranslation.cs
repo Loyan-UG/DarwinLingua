@@ -68,6 +68,17 @@ public sealed class SenseTranslation
         UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 
+    /// <summary>
+    /// Updates the translation language and text.
+    /// </summary>
+    internal void Update(LanguageCode languageCode, string translationText, bool isPrimary, DateTime updatedAtUtc)
+    {
+        LanguageCode = languageCode;
+        TranslationText = NormalizeRequiredText(translationText, nameof(translationText));
+        IsPrimary = isPrimary;
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     private static string NormalizeRequiredText(string value, string parameterName)
     {
         if (string.IsNullOrWhiteSpace(value))

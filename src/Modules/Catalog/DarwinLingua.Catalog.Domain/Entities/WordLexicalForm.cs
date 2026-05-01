@@ -82,6 +82,20 @@ public sealed class WordLexicalForm
         UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 
+    internal void UpdateCoreMetadata(
+        PartOfSpeech partOfSpeech,
+        string? article,
+        string? pluralForm,
+        string? infinitiveForm,
+        DateTime updatedAtUtc)
+    {
+        PartOfSpeech = partOfSpeech;
+        Article = NormalizeOptionalText(article);
+        PluralForm = NormalizeOptionalText(pluralForm);
+        InfinitiveForm = NormalizeOptionalText(infinitiveForm);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     private static string? NormalizeOptionalText(string? value)
     {
         return string.IsNullOrWhiteSpace(value) ? null : value.Trim();

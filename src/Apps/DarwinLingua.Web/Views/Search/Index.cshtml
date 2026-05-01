@@ -7,6 +7,14 @@
     <span class="eyebrow">Search</span>
     <h1 class="headline-md">Search German lemmas</h1>
     <p class="body-lg">Find vocabulary quickly by lemma and open the full word detail for meaning, examples, pronunciation, and study actions.</p>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
 
     <form class="search-form" method="get" asp-action="Index">
         <input

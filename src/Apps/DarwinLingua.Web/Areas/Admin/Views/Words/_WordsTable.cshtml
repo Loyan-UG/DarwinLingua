@@ -1,0 +1,114 @@
+@model DarwinLingua.Web.Models.AdminWordsPageViewModel
+
+@{
+    int firstItem = Model.TotalCount == 0 ? 0 : Model.Skip + 1;
+    int lastItem = Math.Min(Model.Skip + Model.Take, Model.TotalCount);
+    int pageWindowStart = Math.Max(1, Model.PageNumber - 2);
+    int pageWindowEnd = Math.Min(Model.TotalPages, pageWindowStart + 4);
+
+    if (pageWindowEnd - pageWindowStart < 4)
+    {
+        pageWindowStart = Math.Max(1, pageWindowEnd - 4);
+    }
+}
+
+@if (Model.Words.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words found", "The current filter did not match any catalog entries.")' />
+}
+else
+{
+    <section class="panel stack-md">
+        <div class="cluster cluster--between">
+            <p class="muted-text">Showing @firstItem-@lastItem of @Model.TotalCount words</p>
+            <p class="eyebrow">Page @Model.PageNumber of @Model.TotalPages</p>
+        </div>
+
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
+                    <tr>
+                        <th>Lemma</th>
+                        <th>Status</th>
+                        <th>CEFR</th>
+                        <th>Part of speech</th>
+                        <th>Source</th>
+                        <th>Senses</th>
+                        <th>Topics</th>
+                        <th>Updated</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Words)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="Admin" asp-controller="Words" asp-action="Details" asp-route-publicId="@item.PublicId">
+                                    @if (!string.IsNullOrWhiteSpace(item.Article))
+                                    {
+                                        <span class="muted-text">@item.Article</span>
+                                    }
+                                    @item.Lemma
+                                </a>
+                            </td>
+                            <td><span class="status-pill">@item.PublicationStatus</span></td>
+                            <td>@item.CefrLevel</td>
+                            <td>@item.PartOfSpeech</td>
+                            <td>@item.ContentSourceType</td>
+                            <td>@item.SenseCount</td>
+                            <td>@item.TopicCount</td>
+                            <td>@item.UpdatedAtUtc.ToString("yyyy-MM-dd")</td>
+                            <td>
+                                <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Details" asp-route-publicId="@item.PublicId">View</a>
+                                <button class="button button--secondary button--compact" type="button" disabled>Edit</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        @if (Model.TotalPages > 1)
+        {
+            <nav class="pagination pagination--admin" aria-label="Words pagination">
+                <a class="button button--secondary button--compact @(Model.HasPreviousPage ? null : "is-disabled")"
+                   asp-action="Index"
+                   asp-route-q="@Model.Query"
+                   asp-route-status="@Model.StatusFilter"
+                   asp-route-skip="0"
+                   asp-route-take="@Model.Take">First</a>
+                <a class="button button--secondary button--compact @(Model.HasPreviousPage ? null : "is-disabled")"
+                   asp-action="Index"
+                   asp-route-q="@Model.Query"
+                   asp-route-status="@Model.StatusFilter"
+                   asp-route-skip="@Model.PreviousSkip"
+                   asp-route-take="@Model.Take">Previous</a>
+
+                @for (int page = pageWindowStart; page <= pageWindowEnd; page++)
+                {
+                    int pageSkip = (page - 1) * Model.Take;
+                    <a class="button button--secondary button--compact @(page == Model.PageNumber ? "is-active" : null)"
+                       asp-action="Index"
+                       asp-route-q="@Model.Query"
+                       asp-route-status="@Model.StatusFilter"
+                       asp-route-skip="@pageSkip"
+                       asp-route-take="@Model.Take">@(page.ToString())</a>
+                }
+
+                <a class="button button--secondary button--compact @(Model.HasNextPage ? null : "is-disabled")"
+                   asp-action="Index"
+                   asp-route-q="@Model.Query"
+                   asp-route-status="@Model.StatusFilter"
+                   asp-route-skip="@Model.NextSkip"
+                   asp-route-take="@Model.Take">Next</a>
+                <a class="button button--secondary button--compact @(Model.HasNextPage ? null : "is-disabled")"
+                   asp-action="Index"
+                   asp-route-q="@Model.Query"
+                   asp-route-status="@Model.StatusFilter"
+                   asp-route-skip="@((Model.TotalPages - 1) * Model.Take)"
+                   asp-route-take="@Model.Take">Last</a>
+            </nav>
+        }
+    </section>
+}

@@ -1,27 +1,37 @@
 @model DarwinLingua.Web.Models.WordInteractionPanelViewModel
+@{
+    string favoriteToggleId = $"favorite-toggle-{Model.WordPublicId:N}";
+}
 
-@if (Model.CanUseFavorites)
-{
-    <form method="post" asp-action="ToggleFavorite" class="inline-form">
-        @Html.AntiForgeryToken()
-        <input type="hidden" name="id" value="@Model.WordPublicId" />
-        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
-        <button
-            type="submit"
-            class="icon-button icon-button--favorite @(Model.IsFavorite ? "is-active" : string.Empty)"
-            aria-label="@(Model.IsFavorite ? "Remove from favorites" : "Add to favorites")"
-            title="@(Model.IsFavorite ? "Remove from favorites" : "Add to favorites")"
-            hx-post="@Url.Action("ToggleFavorite", "Words")"
-            hx-target="#word-interaction-panel"
-            hx-swap="outerHTML">
+<div id="@favoriteToggleId">
+    @if (Model.CanUseFavorites)
+    {
+        <form method="post" asp-controller="Words" asp-action="ToggleFavorite" class="inline-form">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.WordPublicId" />
+            <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+            <button
+                type="submit"
+                class="icon-button icon-button--favorite @(Model.IsFavorite ? "is-active" : string.Empty)"
+                aria-label="@(Model.IsFavorite ? "Remove from favorites" : "Add to favorites")"
+                title="@(Model.IsFavorite ? "Remove from favorites" : "Add to favorites")"
+                hx-post="@Url.Action("ToggleFavorite", "Words")"
+                hx-target="#@favoriteToggleId"
+                hx-swap="outerHTML">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 21s-7.2-4.7-9.6-9.1C0.7 8.7 2.5 5 6.1 5c2 0 3.5 1.1 4.4 2.4C11.4 6.1 12.9 5 14.9 5c3.6 0 5.4 3.7 3.7 6.9C16.2 16.3 12 21 12 21Z" />
+                </svg>
+                <span class="sr-only">@(Model.IsFavorite ? "Favorited" : "Add to favorites")</span>
+            </button>
+        </form>
+    }
+    else
+    {
+        <a class="icon-button icon-button--favorite" asp-controller="Account" asp-action="Index" aria-label="Unlock favorites" title="Unlock favorites">
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 21s-7.2-4.7-9.6-9.1C0.7 8.7 2.5 5 6.1 5c2 0 3.5 1.1 4.4 2.4C11.4 6.1 12.9 5 14.9 5c3.6 0 5.4 3.7 3.7 6.9C16.2 16.3 12 21 12 21Z" />
             </svg>
-            <span class="sr-only">@(Model.IsFavorite ? "Favorited" : "Add to favorites")</span>
-        </button>
-    </form>
-}
-else
-{
-    <a class="button button--secondary" asp-controller="Account" asp-action="Index">Unlock favorites</a>
-}
+            <span class="sr-only">Unlock favorites</span>
+        </a>
+    }
+</div>

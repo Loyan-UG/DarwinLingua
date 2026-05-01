@@ -1,28 +1,46 @@
-@model DarwinLingua.Catalog.Application.Models.WordListItemModel
+@model DarwinLingua.Web.Models.WordBrowseCardViewModel
 
-<article class="panel word-card stack-md" data-word-card data-word-id="@Model.PublicId">
+<article class="panel word-card stack-md" data-word-card data-word-id="@Model.Word.PublicId">
     <div class="action-row">
-        <partial name="_CefrBadge" model='new DarwinLingua.Web.Models.CefrBadgeViewModel(Model.CefrLevel)' />
-        <span class="eyebrow">@Model.PartOfSpeech</span>
+        <partial name="_CefrBadge" model='new DarwinLingua.Web.Models.CefrBadgeViewModel(Model.Word.CefrLevel)' />
+        <span class="eyebrow">@Model.Word.PartOfSpeech</span>
     </div>
-    <h3 class="headline-sm">@Model.Lemma</h3>
-    @if (!string.IsNullOrWhiteSpace(Model.Article) || !string.IsNullOrWhiteSpace(Model.PluralForm))
+    <h3 class="headline-sm">@Model.Word.Lemma</h3>
+    @if (!string.IsNullOrWhiteSpace(Model.Word.Article) || !string.IsNullOrWhiteSpace(Model.Word.PluralForm))
     {
-        <p>@string.Join(" · ", new[] { Model.Article, Model.PluralForm }.Where(static value => !string.IsNullOrWhiteSpace(value)))</p>
+        <p>@string.Join(" · ", new[] { Model.Word.Article, Model.Word.PluralForm }.Where(static value => !string.IsNullOrWhiteSpace(value)))</p>
     }
-    @if (!string.IsNullOrWhiteSpace(Model.PrimaryMeaning))
+    @if (!string.IsNullOrWhiteSpace(Model.Word.PrimaryMeaning) || !string.IsNullOrWhiteSpace(Model.SecondaryMeaning))
     {
-        <p class="body-lg meaning-line meaning-line--compact">@Model.PrimaryMeaning</p>
+        <div class="word-card__meanings">
+            @if (!string.IsNullOrWhiteSpace(Model.Word.PrimaryMeaning))
+            {
+                <div class="word-card__meaning">
+                    <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                    <p class="body-lg meaning-line meaning-line--compact">@Model.Word.PrimaryMeaning</p>
+                </div>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.SecondaryMeaning))
+            {
+                <div class="word-card__meaning">
+                    <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                    <p class="body-lg meaning-line meaning-line--compact">@Model.SecondaryMeaning</p>
+                </div>
+            }
+        </div>
     }
-    <div class="action-row">
-        <button type="button" class="icon-button icon-button--sm" data-speak-text="@Model.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
-                <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
-                <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
-            </svg>
-            <span class="sr-only">Hear word</span>
-        </button>
-        <a class="button button--secondary" data-word-link data-word-id="@Model.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">Details</a>
+    <div class="word-card__actions">
+        <div class="word-card__quick-actions">
+            <button type="button" class="icon-button icon-button--sm" data-speak-text="@Model.Word.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                    <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                    <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+                </svg>
+                <span class="sr-only">Hear word</span>
+            </button>
+            <partial name="_FavoriteToggle" model="Model.Interaction" />
+        </div>
+        <a class="button button--secondary button--compact" data-word-link data-word-id="@Model.Word.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.Word.PublicId">Details</a>
     </div>
 </article>

@@ -17,14 +17,6 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Content.Word.CefrLevel · @Model.Content.Word.PartOfSpeech</span>
         <div class="detail-toolbar__actions">
-            <button type="button" class="icon-button" data-speak-text="@Model.Content.Word.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
-                    <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
-                    <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
-                </svg>
-                <span class="sr-only">Hear word</span>
-            </button>
             <button type="button" class="icon-button" data-word-nav="prev" aria-label="Previous word" title="Previous word" disabled>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M15 6 9 12l6 6" />
@@ -39,108 +31,100 @@
             </button>
         </div>
     </div>
-    <h1 class="headline-md">@Model.Content.Word.Lemma</h1>
-    @if (!string.IsNullOrWhiteSpace(summaryLine))
-    {
-        <p class="body-lg">@summaryLine</p>
-    }
+    <div class="word-detail-main">
+        <div class="word-detail-main__primary stack-lg">
+            <h1 class="headline-md">@Model.Content.Word.Lemma</h1>
+            @if (!string.IsNullOrWhiteSpace(summaryLine))
+            {
+                <p class="body-lg">@summaryLine</p>
+            }
+            <div class="word-primary-actions">
+                <button type="button" class="icon-button" data-speak-text="@Model.Content.Word.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                        <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                        <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+                    </svg>
+                    <span class="sr-only">Hear word</span>
+                </button>
+                <partial name="~/Views/Shared/_FavoriteToggle.cshtml" model="Model.Content.Interaction" />
+            </div>
+        </div>
+        @if (Model.Content.Word.Senses.Any(static sense => !string.IsNullOrWhiteSpace(sense.PrimaryMeaning) || !string.IsNullOrWhiteSpace(sense.SecondaryMeaning)))
+        {
+            <div class="word-hero-meanings">
+                @foreach (var sense in Model.Content.Word.Senses)
+                {
+                    @if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning))
+                    {
+                        <div class="word-hero-meaning" dir="@primaryMeaningDirection">
+                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                            <p>@sense.PrimaryMeaning</p>
+                        </div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
+                    {
+                        <div class="word-hero-meaning" dir="@secondaryMeaningDirection">
+                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                            <p>@sense.SecondaryMeaning</p>
+                        </div>
+                    }
+                }
+            </div>
+        }
+    </div>
     <partial name="_InteractionPanel" model="Model.Content.Interaction" />
 </section>
 
-@if (Model.Content.Word.LexicalForms.Count > 0)
+@if (Model.Content.Word.Senses.Any(static sense => sense.Examples.Count > 0))
 {
-    <section class="panel stack-md">
-        <h2 class="headline-sm">Word forms</h2>
-        <div class="stack-md">
-            @foreach (var form in Model.Content.Word.LexicalForms)
+    <section class="stack-md">
+        @foreach (var sense in Model.Content.Word.Senses)
+        {
+            @foreach (var example in sense.Examples)
             {
-                <div class="detail-row">
-                    <strong>@form.PartOfSpeech@(form.IsPrimary ? " · primary" : string.Empty)</strong>
-                    <span>@string.Join(" · ", new[] { form.Article, form.PluralForm, form.InfinitiveForm }.Where(static value => !string.IsNullOrWhiteSpace(value)))</span>
-                </div>
-            }
-        </div>
-    </section>
-}
-
-@if (Model.Content.Word.Senses.Count > 0)
-{
-    <section class="panel stack-md">
-        <h2 class="headline-sm">Meanings and examples</h2>
-        <div class="stack-md">
-            @foreach (var sense in Model.Content.Word.Senses)
-            {
-                <article class="panel sense-card stack-md">
+                <article class="panel sense-card example-card stack-md">
                     @if (!string.IsNullOrWhiteSpace(sense.ShortDefinitionDe))
                     {
                         <strong>@sense.ShortDefinitionDe</strong>
                     }
-                    @if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning) || !string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
+                    <div class="detail-example">
+                        <button type="button" class="icon-button icon-button--sm" data-speak-text="@example.GermanText" data-speak-lang="de-DE" aria-label="Hear example" title="Hear example">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                                <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                                <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+                            </svg>
+                            <span class="sr-only">Hear example</span>
+                        </button>
+                        <strong>@example.GermanText</strong>
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning) || !string.IsNullOrWhiteSpace(example.SecondaryMeaning))
                     {
                         <div class="meaning-pair">
-                            @if (!string.IsNullOrWhiteSpace(sense.PrimaryMeaning))
+                            @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
                             {
                                 <div class="meaning-block meaning-block--primary" dir="@primaryMeaningDirection">
                                     <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
-                                    <p class="body-lg">@sense.PrimaryMeaning</p>
+                                    <div>@example.PrimaryMeaning</div>
                                 </div>
                             }
-                            @if (!string.IsNullOrWhiteSpace(sense.SecondaryMeaning))
+                            @if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
                             {
                                 <div class="meaning-block" dir="@secondaryMeaningDirection">
                                     <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
-                                    <p>@sense.SecondaryMeaning</p>
+                                    <div>@example.SecondaryMeaning</div>
                                 </div>
                             }
                         </div>
                     }
-                    @if (sense.Examples.Count > 0)
-                    {
-                        <ul class="feature-list">
-                            @foreach (var example in sense.Examples)
-                            {
-                                <li>
-                                    <div class="detail-example">
-                                        <strong>@example.GermanText</strong>
-                                        <button type="button" class="icon-button icon-button--sm" data-speak-text="@example.GermanText" data-speak-lang="de-DE" aria-label="Hear example" title="Hear example">
-                                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
-                                                <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
-                                                <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
-                                            </svg>
-                                            <span class="sr-only">Hear example</span>
-                                        </button>
-                                    </div>
-                                    @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning) || !string.IsNullOrWhiteSpace(example.SecondaryMeaning))
-                                    {
-                                        <div class="meaning-pair">
-                                            @if (!string.IsNullOrWhiteSpace(example.PrimaryMeaning))
-                                            {
-                                                <div class="meaning-block meaning-block--primary" dir="@primaryMeaningDirection">
-                                                    <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
-                                                    <div>@example.PrimaryMeaning</div>
-                                                </div>
-                                            }
-                                            @if (!string.IsNullOrWhiteSpace(example.SecondaryMeaning))
-                                            {
-                                                <div class="meaning-block" dir="@secondaryMeaningDirection">
-                                                    <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
-                                                    <div>@example.SecondaryMeaning</div>
-                                                </div>
-                                            }
-                                        </div>
-                                    }
-                                </li>
-                            }
-                        </ul>
-                    }
                 </article>
             }
-        </div>
+        }
     </section>
 }
 
-@if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0 || Model.Content.Word.GrammarNotes.Count > 0)
+@if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0 || Model.Content.Word.Topics.Count > 0)
 {
     <section class="grid-two-col">
         @if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0)
@@ -159,18 +143,31 @@
                 </div>
             </article>
         }
-        @if (Model.Content.Word.GrammarNotes.Count > 0)
+        @if (Model.Content.Word.Topics.Count > 0)
         {
             <article class="panel stack-md">
-                <h2 class="headline-sm">Grammar notes</h2>
-                <ul class="feature-list">
-                    @foreach (string grammarNote in Model.Content.Word.GrammarNotes)
+                <h2 class="headline-sm">Topics</h2>
+                <div class="chip-grid">
+                    @foreach (string topic in Model.Content.Word.Topics)
                     {
-                        <li>@grammarNote</li>
+                        <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topic">@topic</a>
                     }
-                </ul>
+                </div>
             </article>
         }
+    </section>
+}
+
+@if (Model.Content.Word.GrammarNotes.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">Grammar notes</h2>
+        <ul class="feature-list">
+            @foreach (string grammarNote in Model.Content.Word.GrammarNotes)
+            {
+                <li>@grammarNote</li>
+            }
+        </ul>
     </section>
 }
 
@@ -256,18 +253,5 @@
                 </ul>
             </article>
         }
-    </section>
-}
-
-@if (Model.Content.Word.Topics.Count > 0)
-{
-    <section class="panel stack-md">
-        <h2 class="headline-sm">Topics</h2>
-        <div class="chip-grid">
-            @foreach (string topic in Model.Content.Word.Topics)
-            {
-                <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topic">@topic</a>
-            }
-        </div>
     </section>
 }

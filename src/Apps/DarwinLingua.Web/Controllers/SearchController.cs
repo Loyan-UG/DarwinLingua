@@ -9,6 +9,9 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class SearchController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
+    IWebFavoriteWordService favoriteWordService,
+    IWebEntitledFeatureAccessService featureAccessService,
+    IWebWordSuggestionService wordSuggestionService,
     ILogger<SearchController> logger) : Controller
 {
     private const int MaxSearchQueryLength = 128;
@@ -18,9 +21,31 @@ public sealed class SearchController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         string query = NormalizeQuery(q);
-        IReadOnlyList<WordListItemModel> results = await SearchSafelyAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+        string? secondaryMeaningLanguageCode = await featureAccessService
+            .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyList<WordListItemModel> primaryResults = await SearchSafelyAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+        IReadOnlyList<WordListItemModel> secondaryResults = await SearchSecondarySafelyAsync(
+                query,
+                secondaryMeaningLanguageCode,
+                profile.PreferredMeaningLanguage1,
+                cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyList<WordBrowseCardViewModel> results = await CreateWordCardsAsync(
+                primaryResults,
+                secondaryResults,
+                profile.PreferredMeaningLanguage1,
+                secondaryMeaningLanguageCode,
+                cancellationToken)
+            .ConfigureAwait(false);
 
-        return View(new SearchPageViewModel(query, results, profile.PreferredMeaningLanguage1));
+        return View(new SearchPageViewModel(
+            query,
+            results,
+            profile.PreferredMeaningLanguage1,
+            secondaryMeaningLanguageCode,
+            TempData["StatusMessage"] as string,
+            TempData["ErrorMessage"] as string));
     }
 
     [HttpGet("results", Name = "Search_Results")]
@@ -28,9 +53,97 @@ public sealed class SearchController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         string query = NormalizeQuery(q);
-        IReadOnlyList<WordListItemModel> results = await SearchSafelyAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+        string? secondaryMeaningLanguageCode = await featureAccessService
+            .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyList<WordListItemModel> primaryResults = await SearchSafelyAsync(query, profile.PreferredMeaningLanguage1, cancellationToken);
+        IReadOnlyList<WordListItemModel> secondaryResults = await SearchSecondarySafelyAsync(
+                query,
+                secondaryMeaningLanguageCode,
+                profile.PreferredMeaningLanguage1,
+                cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyList<WordBrowseCardViewModel> results = await CreateWordCardsAsync(
+                primaryResults,
+                secondaryResults,
+                profile.PreferredMeaningLanguage1,
+                secondaryMeaningLanguageCode,
+                cancellationToken)
+            .ConfigureAwait(false);
 
-        return PartialView("_SearchResults", new SearchPageViewModel(query, results, profile.PreferredMeaningLanguage1));
+        return PartialView("_SearchResults", new SearchPageViewModel(
+            query,
+            results,
+            profile.PreferredMeaningLanguage1,
+            secondaryMeaningLanguageCode,
+            null,
+            null));
+    }
+
+    [HttpPost("suggest", Name = "Search_Suggest")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Suggest(WordSuggestionInputModel input, CancellationToken cancellationToken)
+    {
+        string suggestedWord = NormalizeQuery(input.SuggestedWord);
+        if (string.IsNullOrWhiteSpace(suggestedWord))
+        {
+            TempData["ErrorMessage"] = "Please enter a word before sending a suggestion.";
+            return RedirectToAction(nameof(Index), new { q = NormalizeQuery(input.SourceQuery) });
+        }
+
+        await wordSuggestionService
+            .SuggestWordAsync(input with { SuggestedWord = suggestedWord }, cancellationToken)
+            .ConfigureAwait(false);
+
+        TempData["StatusMessage"] = $"Thanks. {suggestedWord} was sent to the content team.";
+        return RedirectToAction(nameof(Index), new { q = suggestedWord });
+    }
+
+    private async Task<IReadOnlyList<WordListItemModel>> SearchSecondarySafelyAsync(
+        string query,
+        string? secondaryMeaningLanguageCode,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(secondaryMeaningLanguageCode)
+            || string.Equals(secondaryMeaningLanguageCode, primaryMeaningLanguageCode, StringComparison.OrdinalIgnoreCase))
+        {
+            return [];
+        }
+
+        return await SearchSafelyAsync(query, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task<IReadOnlyList<WordBrowseCardViewModel>> CreateWordCardsAsync(
+        IReadOnlyList<WordListItemModel> primaryResults,
+        IReadOnlyList<WordListItemModel> secondaryResults,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        Dictionary<Guid, WordListItemModel> secondaryById = secondaryResults.ToDictionary(word => word.PublicId);
+        bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken).ConfigureAwait(false);
+        IReadOnlySet<Guid> favoriteWordIds = canUseFavorites
+            ? await favoriteWordService
+                .GetFavoriteWordIdsAsync(primaryResults.Select(word => word.PublicId).ToArray(), cancellationToken)
+                .ConfigureAwait(false)
+            : new HashSet<Guid>();
+        string returnUrl = Request.PathBase + Request.Path + Request.QueryString;
+
+        return primaryResults
+            .Select(word => new WordBrowseCardViewModel(
+                word,
+                secondaryById.TryGetValue(word.PublicId, out WordListItemModel? secondaryWord) ? secondaryWord.PrimaryMeaning : null,
+                primaryMeaningLanguageCode,
+                secondaryMeaningLanguageCode,
+                new WordInteractionPanelViewModel(
+                    word.PublicId,
+                    favoriteWordIds.Contains(word.PublicId),
+                    new DarwinLingua.Learning.Application.Models.UserWordStateModel(word.PublicId, false, false, null, null, 0),
+                    returnUrl,
+                    canUseFavorites,
+                    canUseFavorites ? null : "Favorites require an active trial or premium plan.")))
+            .ToArray();
     }
 
     private async Task<IReadOnlyList<WordListItemModel>> SearchSafelyAsync(

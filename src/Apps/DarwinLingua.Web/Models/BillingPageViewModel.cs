@@ -9,4 +9,16 @@ public sealed record BillingPageViewModel(
     bool CanStartCheckout,
     bool CanManageStripeSubscription,
     string? BillingStatus,
-    DateTimeOffset? CurrentPeriodEndsAtUtc);
+    DateTimeOffset? CurrentPeriodEndsAtUtc,
+    bool StripeConfigured,
+    string? ProviderCustomerId,
+    string? ProviderSubscriptionId,
+    IReadOnlyList<BillingEventItemViewModel> RecentEvents);
+
+public sealed record BillingEventItemViewModel(
+    string ProviderName,
+    string EventType,
+    string Status,
+    DateTimeOffset CreatedAtUtc,
+    DateTimeOffset? ProcessedAtUtc,
+    string? ErrorSummary);

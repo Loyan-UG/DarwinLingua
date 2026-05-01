@@ -179,7 +179,9 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
 
     private static bool IsAllowedVisibility(string value) =>
         string.Equals(value, "private", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(value, "public", StringComparison.OrdinalIgnoreCase);
+        string.Equals(value, "request-only", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "public", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(value, "disabled", StringComparison.OrdinalIgnoreCase);
 
     private static bool HasAllowedLanguageCodes(IReadOnlyCollection<string> languageCodes) =>
         languageCodes.Count > 0 && languageCodes.All(static code =>

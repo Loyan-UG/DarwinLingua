@@ -101,8 +101,19 @@ public sealed partial class Topic
     }
 
     /// <summary>
-    /// Updates the sort order of the topic.
+    /// Updates the editable topic metadata.
     /// </summary>
+    public void UpdateMetadata(string key, int sortOrder, bool isSystem, DateTime updatedAtUtc)
+    {
+        Key = NormalizeKey(key);
+        SortOrder = NormalizeSortOrder(sortOrder);
+        IsSystem = isSystem;
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
+    /// <summary>
+     /// Updates the sort order of the topic.
+     /// </summary>
     public void UpdateSortOrder(int sortOrder, DateTime updatedAtUtc)
     {
         SortOrder = NormalizeSortOrder(sortOrder);

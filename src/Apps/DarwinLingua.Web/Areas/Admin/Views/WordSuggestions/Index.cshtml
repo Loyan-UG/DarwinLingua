@@ -1,0 +1,107 @@
+@model DarwinLingua.Web.Models.AdminWordSuggestionsPageViewModel
+@using DarwinLingua.Web.Data
+@{
+    ViewData["Title"] = "Word suggestions";
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">Admin</span>
+    <h1 class="headline-md">Word suggestions</h1>
+    <p class="body-lg">Review words learners searched for and suggested for future catalog expansion.</p>
+    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+    {
+        <div class="status-banner status-banner--success">@Model.StatusMessage</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
+    }
+    <form method="get" asp-action="Index" class="action-row">
+        <select name="status">
+            <option value="">All</option>
+            <option value="pending" selected="@(Model.StatusFilter == "pending")">Pending</option>
+            <option value="reviewed" selected="@(Model.StatusFilter == "reviewed")">Reviewed</option>
+            <option value="accepted" selected="@(Model.StatusFilter == "accepted")">Accepted</option>
+            <option value="declined" selected="@(Model.StatusFilter == "declined")">Declined</option>
+        </select>
+        <button type="submit" class="button button--secondary">Filter</button>
+    </form>
+</section>
+
+<section class="panel stack-lg">
+    <h2 class="headline-sm">Suggestions</h2>
+    @if (Model.Suggestions.Count == 0)
+    {
+        <p class="body-sm">No word suggestions match the selected filter.</p>
+    }
+    else
+    {
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Status</th>
+                        <th>Requester</th>
+                        <th>Context</th>
+                        <th>Created</th>
+                        <th>Decision</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var suggestion in Model.Suggestions)
+                    {
+                        <tr>
+                            <td>
+                                <strong>@suggestion.SuggestedWord</strong>
+                                @if (!string.IsNullOrWhiteSpace(suggestion.SourceQuery))
+                                {
+                                    <p class="body-sm">Query: @suggestion.SourceQuery</p>
+                                }
+                            </td>
+                            <td>@suggestion.Status</td>
+                            <td>
+                                <span>@(suggestion.Email ?? suggestion.ActorId)</span>
+                            </td>
+                            <td>
+                                @if (string.IsNullOrWhiteSpace(suggestion.Note))
+                                {
+                                    <span class="body-sm">No note</span>
+                                }
+                                else
+                                {
+                                    <p class="body-sm">@suggestion.Note</p>
+                                }
+                            </td>
+                            <td>@suggestion.CreatedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                            <td>
+                                <form method="post" asp-action="Decide" asp-route-suggestionId="@suggestion.Id" class="stack-sm">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="returnStatus" value="@Model.StatusFilter" />
+                                    <label class="form-field">
+                                        <span>Status</span>
+                                        <select name="Status">
+                                            <option value="pending" selected="@(suggestion.Status == WebWordSuggestionStatus.Pending)">Pending</option>
+                                            <option value="reviewed" selected="@(suggestion.Status == WebWordSuggestionStatus.Reviewed)">Reviewed</option>
+                                            <option value="accepted" selected="@(suggestion.Status == WebWordSuggestionStatus.Accepted)">Accepted</option>
+                                            <option value="declined" selected="@(suggestion.Status == WebWordSuggestionStatus.Declined)">Declined</option>
+                                        </select>
+                                    </label>
+                                    <label class="form-field">
+                                        <span>Admin note</span>
+                                        <textarea name="AdminNote" rows="2" maxlength="1000">@suggestion.AdminNote</textarea>
+                                    </label>
+                                    @if (!string.IsNullOrWhiteSpace(suggestion.DecidedBy) && suggestion.DecidedAtUtc.HasValue)
+                                    {
+                                        <p class="body-sm">Last decision: @suggestion.DecidedBy · @suggestion.DecidedAtUtc.Value.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</p>
+                                    }
+                                    <button type="submit" class="button button--primary button--compact">Save</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

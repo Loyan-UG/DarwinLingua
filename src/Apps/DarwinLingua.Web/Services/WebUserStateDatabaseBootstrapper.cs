@@ -133,6 +133,23 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "BillingStatus" TEXT NULL,
                 "CreatedAtUtc" TEXT NOT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebWordSuggestions" (
+                "Id" TEXT NOT NULL CONSTRAINT "PK_WebWordSuggestions" PRIMARY KEY,
+                "SuggestedWord" TEXT NOT NULL,
+                "NormalizedSuggestedWord" TEXT NOT NULL,
+                "Note" TEXT NULL,
+                "SourceQuery" TEXT NULL,
+                "ActorId" TEXT NOT NULL,
+                "UserId" TEXT NULL,
+                "Email" TEXT NULL,
+                "Status" TEXT NOT NULL,
+                "AdminNote" TEXT NULL,
+                "DecidedBy" TEXT NULL,
+                "CreatedAtUtc" TEXT NOT NULL,
+                "UpdatedAtUtc" TEXT NOT NULL,
+                "DecidedAtUtc" TEXT NULL
+            );
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -190,6 +207,12 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebBillingNotifications" ("NotificationKey");
             CREATE INDEX IF NOT EXISTS "IX_WebBillingNotifications_CreatedAtUtc"
             ON "WebBillingNotifications" ("CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebWordSuggestions_Status_CreatedAtUtc"
+            ON "WebWordSuggestions" ("Status", "CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebWordSuggestions_NormalizedWord"
+            ON "WebWordSuggestions" ("NormalizedSuggestedWord");
+            CREATE INDEX IF NOT EXISTS "IX_WebWordSuggestions_Actor_Word"
+            ON "WebWordSuggestions" ("ActorId", "NormalizedSuggestedWord");
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -297,6 +320,23 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "BillingStatus" character varying(64) NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebWordSuggestions" (
+                "Id" uuid NOT NULL CONSTRAINT "PK_WebWordSuggestions" PRIMARY KEY,
+                "SuggestedWord" character varying(128) NOT NULL,
+                "NormalizedSuggestedWord" character varying(128) NOT NULL,
+                "Note" character varying(1000) NULL,
+                "SourceQuery" character varying(128) NULL,
+                "ActorId" character varying(128) NOT NULL,
+                "UserId" character varying(450) NULL,
+                "Email" character varying(256) NULL,
+                "Status" character varying(32) NOT NULL,
+                "AdminNote" character varying(1000) NULL,
+                "DecidedBy" character varying(256) NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                "DecidedAtUtc" timestamp with time zone NULL
+            );
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -350,6 +390,12 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebBillingNotifications" ("NotificationKey");
             CREATE INDEX IF NOT EXISTS "IX_WebBillingNotifications_CreatedAtUtc"
             ON "WebBillingNotifications" ("CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebWordSuggestions_Status_CreatedAtUtc"
+            ON "WebWordSuggestions" ("Status", "CreatedAtUtc");
+            CREATE INDEX IF NOT EXISTS "IX_WebWordSuggestions_NormalizedWord"
+            ON "WebWordSuggestions" ("NormalizedSuggestedWord");
+            CREATE INDEX IF NOT EXISTS "IX_WebWordSuggestions_Actor_Word"
+            ON "WebWordSuggestions" ("ActorId", "NormalizedSuggestedWord");
             """,
             cancellationToken)
             .ConfigureAwait(false);

@@ -165,6 +165,98 @@ public sealed class WordSense
     }
 
     /// <summary>
+    /// Updates a translation attached to the sense.
+    /// </summary>
+    public bool UpdateTranslation(
+        Guid translationId,
+        LanguageCode languageCode,
+        string translationText,
+        bool isPrimary,
+        DateTime updatedAtUtc)
+    {
+        SenseTranslation? translation = _translations.SingleOrDefault(item => item.Id == translationId);
+        if (translation is null)
+        {
+            return false;
+        }
+
+        if (_translations.Any(existingTranslation =>
+                existingTranslation.Id != translationId &&
+                existingTranslation.LanguageCode == languageCode))
+        {
+            throw new DomainRuleException("Duplicate translation languages are not allowed within the same sense.");
+        }
+
+        if (isPrimary)
+        {
+            foreach (SenseTranslation existingTranslation in _translations.Where(existingTranslation => existingTranslation.IsPrimary))
+            {
+                existingTranslation.SetPrimary(false, updatedAtUtc);
+            }
+        }
+
+        translation.Update(languageCode, translationText, isPrimary, updatedAtUtc);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+        return true;
+    }
+
+    /// <summary>
+    /// Removes a translation from the sense.
+    /// </summary>
+    public SenseTranslation? RemoveTranslation(Guid translationId, DateTime updatedAtUtc)
+    {
+        SenseTranslation? translation = _translations.SingleOrDefault(item => item.Id == translationId);
+        if (translation is null)
+        {
+            return null;
+        }
+
+        _translations.Remove(translation);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+        return translation;
+    }
+
+    /// <summary>
+    /// Updates an example attached to the sense.
+    /// </summary>
+    public bool UpdateExample(Guid exampleId, string germanText, bool isPrimaryExample, DateTime updatedAtUtc)
+    {
+        ExampleSentence? example = _examples.SingleOrDefault(item => item.Id == exampleId);
+        if (example is null)
+        {
+            return false;
+        }
+
+        if (isPrimaryExample)
+        {
+            foreach (ExampleSentence existingExample in _examples.Where(existingExample => existingExample.IsPrimaryExample))
+            {
+                existingExample.SetPrimaryExample(false, updatedAtUtc);
+            }
+        }
+
+        example.Update(germanText, isPrimaryExample, updatedAtUtc);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+        return true;
+    }
+
+    /// <summary>
+    /// Removes an example from the sense.
+    /// </summary>
+    public ExampleSentence? RemoveExample(Guid exampleId, DateTime updatedAtUtc)
+    {
+        ExampleSentence? example = _examples.SingleOrDefault(item => item.Id == exampleId);
+        if (example is null)
+        {
+            return null;
+        }
+
+        _examples.Remove(example);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+        return example;
+    }
+
+    /// <summary>
     /// Updates the primary flag of the sense.
     /// </summary>
     internal void SetPrimarySense(bool isPrimarySense, DateTime updatedAtUtc)

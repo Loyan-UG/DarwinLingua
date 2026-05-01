@@ -9,9 +9,20 @@
 }
 else if (Model.Results.Count == 0)
 {
-    <section class="panel stack-md">
+    <section class="panel stack-lg">
         <h2 class="headline-sm">No matches</h2>
-        <p class="body-lg">No words matched <code>@Model.Query</code>.</p>
+        <p class="body-lg">We could not find <strong>@Model.Query</strong> in Darwin Lingua.</p>
+        <p class="body-sm">Would you like to suggest this word so the content team can review it and add it to the system?</p>
+        <form method="post" asp-action="Suggest" class="stack-md">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="SuggestedWord" value="@Model.Query" />
+            <input type="hidden" name="SourceQuery" value="@Model.Query" />
+            <label class="form-field">
+                <span>Optional note for the content team</span>
+                <textarea name="Note" rows="3" maxlength="1000" placeholder="Optional context, meaning, or example sentence"></textarea>
+            </label>
+            <button type="submit" class="button button--primary">Suggest adding @Model.Query</button>
+        </form>
     </section>
 }
 else

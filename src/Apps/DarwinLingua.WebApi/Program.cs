@@ -113,6 +113,8 @@ builder.Services.AddScoped<ICatalogPackageReleaseService, CatalogPackageReleaseS
 builder.Services.AddScoped<IServerCatalogImportService, ServerCatalogImportService>();
 builder.Services.AddScoped<IWebsiteCatalogQueryService, WebsiteCatalogQueryService>();
 builder.Services.AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>();
+builder.Services.AddScoped<IWordAdminService, WordAdminService>();
+builder.Services.AddScoped<IAdminTaxonomyService, AdminTaxonomyService>();
 builder.Services.AddScoped<IConversationEventAdminService, ConversationEventAdminService>();
 builder.Services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
 builder.Services.AddScoped<IOrganizerClaimRequestService, OrganizerClaimRequestService>();
@@ -621,6 +623,153 @@ app.MapGet(
     async (string? status, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await adminQueryService.GetImportsAsync(status, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/words",
+    async (string? q, string? status, int? skip, int? take, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetWordsAsync(q, status, skip ?? 0, take ?? 50, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words",
+    async (AdminUpdateWordMetadataRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.CreateAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/import",
+    async (AdminBulkWordImportRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.ImportWordsAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/words/{publicId:guid}",
+    async (Guid publicId, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetWordAsync(publicId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/metadata",
+    async (Guid publicId, AdminUpdateWordMetadataRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.UpdateMetadataAsync(publicId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses",
+    async (Guid publicId, AdminAddWordSenseRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.AddSenseAsync(publicId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/translations",
+    async (Guid publicId, Guid senseId, AdminAddWordSenseTranslationRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.AddSenseTranslationAsync(publicId, senseId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/examples",
+    async (Guid publicId, Guid senseId, AdminAddWordSenseExampleRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.AddSenseExampleAsync(publicId, senseId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/translations/{translationId:guid}",
+    async (Guid publicId, Guid senseId, Guid translationId, AdminUpdateWordSenseTranslationRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.UpdateSenseTranslationAsync(publicId, senseId, translationId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/translations/{translationId:guid}/delete",
+    async (Guid publicId, Guid senseId, Guid translationId, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.DeleteSenseTranslationAsync(publicId, senseId, translationId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}",
+    async (Guid publicId, Guid senseId, Guid exampleId, AdminUpdateWordSenseExampleRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.UpdateSenseExampleAsync(publicId, senseId, exampleId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}/delete",
+    async (Guid publicId, Guid senseId, Guid exampleId, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.DeleteSenseExampleAsync(publicId, senseId, exampleId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/topics",
+    async (Guid publicId, AdminAddWordTopicRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.AddTopicAsync(publicId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/topics/{topicId:guid}/delete",
+    async (Guid publicId, Guid topicId, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.DeleteTopicAsync(publicId, topicId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/labels",
+    async (Guid publicId, AdminAddWordLabelRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.AddLabelAsync(publicId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/labels/{kind}/{key}/delete",
+    async (Guid publicId, string kind, string key, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.DeleteLabelAsync(publicId, kind, key, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/topics",
+    async (IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.GetTopicsAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/topics",
+    async (AdminSaveTopicRequest request, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.CreateTopicAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/topics/{topicId:guid}",
+    async (Guid topicId, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.GetTopicAsync(topicId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/topics/{topicId:guid}",
+    async (Guid topicId, AdminSaveTopicRequest request, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.UpdateTopicAsync(topicId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/labels",
+    async (IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.GetLabelsAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

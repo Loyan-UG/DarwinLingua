@@ -1,0 +1,61 @@
+@model DarwinLingua.Web.Models.AdminTopicsPageViewModel
+@{
+    ViewData["Title"] = "Topics";
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Topics", "Catalog taxonomy", "Manage stable topic keys and localized display names used by browse, filtering, and word assignment.")' />
+        <a class="button" asp-action="New">New topic</a>
+    </div>
+    @if (TempData["AdminStatusMessage"] is string statusMessage)
+    {
+        <div class="state-panel state-panel--success">@statusMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <div class="table-scroll">
+        <table class="data-table admin-data-grid">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Display names</th>
+                    <th>Sort</th>
+                    <th>Words</th>
+                    <th>System</th>
+                    <th>Updated</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var topic in Model.Topics)
+                {
+                    <tr>
+                        <td><strong>@topic.Key</strong></td>
+                        <td>
+                            @if (topic.Localizations.Count == 0)
+                            {
+                                <span class="muted">-</span>
+                            }
+                            else
+                            {
+                                <div class="tag-list">
+                                    @foreach (var localization in topic.Localizations)
+                                    {
+                                        <span class="tag">@localization.LanguageCode: @localization.DisplayName</span>
+                                    }
+                                </div>
+                            }
+                        </td>
+                        <td>@topic.SortOrder</td>
+                        <td>@topic.WordCount</td>
+                        <td>@(topic.IsSystem ? "Yes" : "No")</td>
+                        <td>@topic.UpdatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                        <td><a class="button button--compact" asp-action="Edit" asp-route-topicId="@topic.TopicId">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

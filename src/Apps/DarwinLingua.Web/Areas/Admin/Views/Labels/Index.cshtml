@@ -1,0 +1,34 @@
+@model DarwinLingua.Web.Models.AdminLabelsPageViewModel
+@{
+    ViewData["Title"] = "Labels";
+}
+
+<section class="panel stack-lg">
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Labels", "Used label keys", "Review normalized label keys currently attached to words. Full label taxonomy editing will move these into managed reference data later.")' />
+</section>
+
+<section class="panel stack-md">
+    <div class="table-scroll">
+        <table class="data-table admin-data-grid">
+            <thead>
+                <tr>
+                    <th>Kind</th>
+                    <th>Key</th>
+                    <th>Words</th>
+                    <th>First sort</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var label in Model.Labels)
+                {
+                    <tr>
+                        <td>@label.Kind</td>
+                        <td><strong>@label.Key</strong></td>
+                        <td>@label.WordCount</td>
+                        <td>@label.FirstSortOrder</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

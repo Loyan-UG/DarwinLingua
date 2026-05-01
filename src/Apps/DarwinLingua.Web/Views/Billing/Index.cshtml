@@ -9,7 +9,7 @@
     <p class="body-lg">Manage your learning access, premium features, and secure subscription checkout.</p>
     @if (TempData["BillingStatus"] is string statusMessage)
     {
-        <p class="body-lg">@statusMessage</p>
+        <div class="status-banner">@statusMessage</div>
     }
     <div class="grid-two-col">
         <article class="panel stack-md plan-card">
@@ -32,6 +32,10 @@
                 {
                     <li>Current billing period ends: @Model.CurrentPeriodEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
                 }
+                @if (!string.IsNullOrWhiteSpace(Model.ProviderSubscriptionId))
+                {
+                    <li>Stripe subscription: @Model.ProviderSubscriptionId</li>
+                }
             </ul>
             <div class="chip-grid">
                 @foreach (var feature in Model.Entitlement.EnabledFeatures)
@@ -42,10 +46,14 @@
         </article>
         <article class="panel stack-md plan-card plan-card--premium">
             <h2 class="headline-sm">Premium monthly</h2>
-            <p class="body-sm">Unlock the full learning toolkit with secure checkout.</p>
+            <p class="body-sm">Unlock favorites, second meaning language, collections, topics, advanced practice, conversation tools, and premium learning workflows.</p>
             @if (!Model.StripeEnabled)
             {
-                <p class="body-sm">Online checkout is not available right now. Your current access remains unchanged.</p>
+                <div class="alert alert--danger">Online checkout is not enabled in this environment. Your current access remains unchanged.</div>
+            }
+            else if (!Model.StripeConfigured)
+            {
+                <div class="alert alert--danger">Stripe checkout is enabled but not fully configured. A secret key, webhook secret, and monthly price id are required.</div>
             }
             else if (Model.CanStartCheckout)
             {
@@ -71,4 +79,67 @@
             }
         </article>
     </div>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">What Premium adds</h2>
+        <ul class="feature-list">
+            <li>Dual meaning languages on supported learning pages.</li>
+            <li>Favorites, collections, topic browsing, and recent review workflows.</li>
+            <li>Advanced practice, conversation starters, event preparation, and partner tools.</li>
+            <li>Stripe subscription management when a customer record is linked.</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">Billing safety</h2>
+        <ul class="feature-list">
+            <li>Checkout is handled by Stripe; card details are not stored in Darwin Lingua.</li>
+            <li>Subscription changes are applied from Stripe success return and signed webhooks.</li>
+            <li>Payment action, premium activation, and premium end notifications are sent by email.</li>
+        </ul>
+    </article>
+</section>
+
+<section class="panel stack-md">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">Billing activity</span>
+            <h2 class="headline-sm">Recent Stripe events</h2>
+        </div>
+    </div>
+    @if (Model.RecentEvents.Count == 0)
+    {
+        <p class="body-sm">No Stripe billing events have been recorded for this account yet.</p>
+    }
+    else
+    {
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Event</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th>Processed</th>
+                        <th>Issue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.RecentEvents)
+                    {
+                        <tr>
+                            <td>@item.ProviderName</td>
+                            <td>@item.EventType</td>
+                            <td>@item.Status</td>
+                            <td>@item.CreatedAtUtc.UtcDateTime.ToString("u")</td>
+                            <td>@(item.ProcessedAtUtc?.UtcDateTime.ToString("u") ?? "-")</td>
+                            <td>@(item.ErrorSummary ?? "-")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
 </section>

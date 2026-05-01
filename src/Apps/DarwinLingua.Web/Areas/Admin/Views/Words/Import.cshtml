@@ -1,0 +1,117 @@
+@model DarwinLingua.Web.Models.AdminBulkWordImportResponse
+@{
+    ViewData["Title"] = "Import words";
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Import words", "Bulk JSON", "Upload a curated JSON file to create multiple catalog words with senses, translations, and examples.")' />
+        <a class="button button--secondary" asp-action="Index">Back to words</a>
+    </div>
+
+    <form class="stack-md" method="post" enctype="multipart/form-data" asp-action="Import">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="validation-message"></div>
+        <label class="form-field">
+            <span>JSON file</span>
+            <input type="file" name="JsonFile" accept="application/json,.json" required />
+        </label>
+        <button class="button" type="submit">Import JSON</button>
+    </form>
+</section>
+
+@if (Model is not null)
+{
+    <section class="panel stack-md">
+        <div class="admin-detail-grid">
+            <div>
+                <span class="eyebrow">Total</span>
+                <strong>@Model.TotalCount</strong>
+            </div>
+            <div>
+                <span class="eyebrow">Imported</span>
+                <strong>@Model.ImportedCount</strong>
+            </div>
+            <div>
+                <span class="eyebrow">Skipped</span>
+                <strong>@Model.SkippedCount</strong>
+            </div>
+            <div>
+                <span class="eyebrow">Failed</span>
+                <strong>@Model.FailedCount</strong>
+            </div>
+        </div>
+
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
+                    <tr>
+                        <th>Row</th>
+                        <th>Lemma</th>
+                        <th>Status</th>
+                        <th>Message</th>
+                        <th>Word</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>@item.RowNumber</td>
+                            <td>@(item.Lemma ?? "-")</td>
+                            <td><span class="status-pill">@item.Status</span></td>
+                            <td>@item.Message</td>
+                            <td>
+                                @if (item.PublicId is Guid publicId)
+                                {
+                                    <a class="button button--compact" asp-action="Details" asp-route-publicId="@publicId">Open</a>
+                                }
+                                else
+                                {
+                                    <span class="muted">-</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+}
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Expected JSON shape</h2>
+    <pre class="code-sample"><code>{
+  "words": [
+    {
+      "lemma": "die Entscheidung",
+      "languageCode": "de",
+      "article": "die",
+      "partOfSpeech": "Noun",
+      "cefrLevel": "B1",
+      "publicationStatus": "Draft",
+      "contentSourceType": "Manual",
+      "senses": [
+        {
+          "publicationStatus": "Draft",
+          "isPrimarySense": true,
+          "shortDefinitionDe": "Eine Wahl zwischen mehreren Moeglichkeiten.",
+          "translations": [
+            { "languageCode": "en", "translationText": "decision", "isPrimary": true },
+            { "languageCode": "es", "translationText": "decision", "isPrimary": false }
+          ],
+          "examples": [
+            {
+              "germanText": "Wir treffen die Entscheidung morgen.",
+              "isPrimaryExample": true,
+              "translations": [
+                { "languageCode": "en", "translationText": "We will make the decision tomorrow.", "isPrimary": true }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}</code></pre>
+</section>

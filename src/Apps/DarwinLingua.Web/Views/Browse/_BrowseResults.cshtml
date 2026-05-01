@@ -1,4 +1,16 @@
 @model DarwinLingua.Web.Models.WordBrowsePageViewModel
+@{
+    string browseAction = Model.TopicKey is not null ? "Topic" : "Cefr";
+    string? browseRouteId = Model.TopicKey ?? Model.CefrLevel;
+    int currentPage = (Model.Skip / Model.Take) + 1;
+    int lastKnownPage = currentPage + (Model.HasMore ? 1 : 0);
+    int firstPageInWindow = Math.Max(1, currentPage - 2);
+    int lastPageInWindow = Math.Max(lastKnownPage, currentPage + 2);
+    if (!Model.HasMore)
+    {
+        lastPageInWindow = currentPage;
+    }
+}
 
 @if (Model.Words.Count == 0)
 {
@@ -17,5 +29,77 @@ else
         {
             <partial name="_WordCard" model="word" />
         }
+    </section>
+
+    <section class="panel pagination-panel">
+        <div class="pagination">
+            <div class="pagination__summary">
+                Page @currentPage
+            </div>
+            <nav class="pagination__links" aria-label="Word list pages">
+                @if (currentPage > 1)
+                {
+                    <a class="button button--secondary button--compact"
+                       asp-action="@browseAction"
+                       asp-route-id="@browseRouteId"
+                       asp-route-skip="0"
+                       hx-get="@Url.Action(browseAction, "Browse", new { id = browseRouteId, skip = 0 })"
+                       hx-target="#browse-results"
+                       hx-swap="innerHTML">
+                        First
+                    </a>
+                }
+                @if (Model.Skip > 0)
+                {
+                    int previousSkip = Math.Max(0, Model.Skip - Model.Take);
+                    <a class="button button--secondary"
+                       asp-action="@browseAction"
+                       asp-route-id="@browseRouteId"
+                       asp-route-skip="@previousSkip"
+                       hx-get="@Url.Action(browseAction, "Browse", new { id = browseRouteId, skip = previousSkip })"
+                       hx-target="#browse-results"
+                       hx-swap="innerHTML">
+                        Previous
+                    </a>
+                }
+                @if (firstPageInWindow > 1)
+                {
+                    <span class="pagination__ellipsis">...</span>
+                }
+                @for (int pageNumber = firstPageInWindow; pageNumber <= lastPageInWindow; pageNumber++)
+                {
+                    int pageSkip = (pageNumber - 1) * Model.Take;
+                    if (pageNumber == currentPage)
+                    {
+                        <span class="pagination__page is-current" aria-current="page">@pageNumber</span>
+                    }
+                    else
+                    {
+                        <a class="pagination__page"
+                           asp-action="@browseAction"
+                           asp-route-id="@browseRouteId"
+                           asp-route-skip="@pageSkip"
+                           hx-get="@Url.Action(browseAction, "Browse", new { id = browseRouteId, skip = pageSkip })"
+                           hx-target="#browse-results"
+                           hx-swap="innerHTML">
+                            @pageNumber
+                        </a>
+                    }
+                }
+                @if (Model.HasMore)
+                {
+                    int nextSkip = Model.Skip + Model.Take;
+                    <a class="button button--primary"
+                       asp-action="@browseAction"
+                       asp-route-id="@browseRouteId"
+                       asp-route-skip="@nextSkip"
+                       hx-get="@Url.Action(browseAction, "Browse", new { id = browseRouteId, skip = nextSkip })"
+                       hx-target="#browse-results"
+                       hx-swap="innerHTML">
+                        Next
+                    </a>
+                }
+            </nav>
+        </div>
     </section>
 }

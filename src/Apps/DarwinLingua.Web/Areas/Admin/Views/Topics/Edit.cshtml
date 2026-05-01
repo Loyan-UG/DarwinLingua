@@ -1,0 +1,64 @@
+@model DarwinLingua.Web.Models.AdminTopicEditViewModel
+@{
+    ViewData["Title"] = Model.IsNew ? "New topic" : "Edit topic";
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.IsNew ? "New topic" : Model.Key, "Topic editor", "Use lowercase kebab-case keys and localized names for learner-facing topic labels.")' />
+        <a class="button button--secondary" asp-action="Index">Back to topics</a>
+    </div>
+    @if (TempData["AdminStatusMessage"] is string statusMessage)
+    {
+        <div class="state-panel state-panel--success">@statusMessage</div>
+    }
+
+    <form class="stack-md" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="TopicId" />
+        <div asp-validation-summary="ModelOnly" class="validation-message"></div>
+        <div class="form-grid">
+            <label class="form-field">
+                <span>Key</span>
+                <input asp-for="Key" placeholder="work-meetings" />
+                <span asp-validation-for="Key" class="validation-message"></span>
+            </label>
+            <label class="form-field">
+                <span>Sort order</span>
+                <input asp-for="SortOrder" type="number" min="0" />
+                <span asp-validation-for="SortOrder" class="validation-message"></span>
+            </label>
+            <label class="form-field form-field--check">
+                <input asp-for="IsSystem" />
+                <span>System topic</span>
+            </label>
+        </div>
+
+        <div class="admin-two-column">
+            <div class="admin-inline-panel stack-sm">
+                <strong>Primary localization</strong>
+                <label class="form-field">
+                    <span>Language</span>
+                    <input asp-for="PrimaryLanguageCode" placeholder="en" />
+                </label>
+                <label class="form-field">
+                    <span>Display name</span>
+                    <input asp-for="PrimaryDisplayName" />
+                </label>
+            </div>
+            <div class="admin-inline-panel stack-sm">
+                <strong>Secondary localization</strong>
+                <label class="form-field">
+                    <span>Language</span>
+                    <input asp-for="SecondaryLanguageCode" placeholder="fa" />
+                </label>
+                <label class="form-field">
+                    <span>Display name</span>
+                    <input asp-for="SecondaryDisplayName" />
+                </label>
+            </div>
+        </div>
+
+        <button class="button" type="submit">Save topic</button>
+    </form>
+</section>

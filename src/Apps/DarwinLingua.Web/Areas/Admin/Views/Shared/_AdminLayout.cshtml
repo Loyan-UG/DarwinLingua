@@ -9,36 +9,61 @@
 </head>
 <body class="app-body admin-body">
     <div class="shell-backdrop" aria-hidden="true"></div>
-    <header class="shell-header admin-header">
-        <div class="shell-container shell-nav">
-            <a class="brand-mark" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
-                <img class="brand-mark__logo" src="~/images/logo.png" alt="" width="48" height="48" />
-                <span class="brand-mark__text">
-                    <strong>Darwin Lingua Admin</strong>
-                    <span>Operations</span>
+    <div class="admin-shell">
+        <aside class="admin-sidebar" aria-label="Admin navigation">
+            <a class="admin-brand" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+                <img class="admin-brand__logo" src="~/images/logo.png" alt="" width="56" height="56" />
+                <span>
+                    <strong>Darwin Lingua</strong>
+                    <small>Admin console</small>
                 </span>
             </a>
-            <nav class="shell-links" aria-label="Admin">
-                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Overview</a>
-                <a asp-area="Admin" asp-controller="Imports" asp-action="Index">Imports</a>
-                <a asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a>
-                <a asp-area="Admin" asp-controller="Publishing" asp-action="Index">Publishing</a>
-                <a asp-area="Admin" asp-controller="ConversationEvents" asp-action="Index">Events</a>
-                <a asp-area="Admin" asp-controller="OrganizerProfiles" asp-action="Index">Organizers</a>
-                <a asp-area="Admin" asp-controller="Moderation" asp-action="Index">Moderation</a>
-                <a asp-area="Admin" asp-controller="Reports" asp-action="Index">Reports</a>
-                <a asp-area="Admin" asp-controller="Analytics" asp-action="Index">Analytics</a>
-                <a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a>
-                <a asp-area="Admin" asp-controller="Diagnostics" asp-action="Index">Diagnostics</a>
-                <a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">Email</a>
-                <a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">Billing</a>
-                <a asp-area="" asp-controller="Home" asp-action="Index">Learner site</a>
+            <nav class="admin-nav">
+                <details open>
+                    <summary>Overview</summary>
+                    <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                    <a asp-area="Admin" asp-controller="Reports" asp-action="Index">Reports</a>
+                    <a asp-area="Admin" asp-controller="Analytics" asp-action="Index">Analytics</a>
+                </details>
+                <details open>
+                    <summary>Content</summary>
+                    <a asp-area="Admin" asp-controller="Words" asp-action="Index">Words</a>
+                    <a asp-area="Admin" asp-controller="WordSuggestions" asp-action="Index">Word suggestions</a>
+                    <a asp-area="Admin" asp-controller="Topics" asp-action="Index">Topics</a>
+                    <a asp-area="Admin" asp-controller="Labels" asp-action="Index">Labels</a>
+                    <a asp-area="Admin" asp-controller="Imports" asp-action="Index">Imports</a>
+                    <a asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a>
+                    <a asp-area="Admin" asp-controller="Publishing" asp-action="Index">Publishing</a>
+                </details>
+                <details>
+                    <summary>Community</summary>
+                    <a asp-area="Admin" asp-controller="ConversationEvents" asp-action="Index">Events</a>
+                    <a asp-area="Admin" asp-controller="OrganizerProfiles" asp-action="Index">Organizers</a>
+                    <a asp-area="Admin" asp-controller="Moderation" asp-action="Index">Moderation</a>
+                </details>
+                <details>
+                    <summary>System</summary>
+                    <a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a>
+                    <a asp-area="Admin" asp-controller="Diagnostics" asp-action="Index">Diagnostics</a>
+                    <a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">Email</a>
+                    <a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">Billing</a>
+                </details>
             </nav>
+            <a class="admin-sidebar__exit" asp-area="" asp-controller="Home" asp-action="Index">Learner site</a>
+        </aside>
+        <div class="admin-workspace">
+            <header class="admin-topbar">
+                <div>
+                    <span class="eyebrow">Administration</span>
+                    <strong>@(ViewData["Title"] ?? "Admin")</strong>
+                </div>
+                <a class="button button--secondary button--compact" asp-area="" asp-controller="Home" asp-action="Index">Exit admin</a>
+            </header>
+            <main class="admin-main">
+                @RenderBody()
+            </main>
         </div>
-    </header>
-    <main class="shell-container shell-main">
-        @RenderBody()
-    </main>
+    </div>
     <script src="~/js/htmx.min.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

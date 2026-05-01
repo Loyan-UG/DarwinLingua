@@ -7,8 +7,16 @@ public sealed record WordBrowsePageViewModel(
     string Description,
     string? TopicKey,
     string? CefrLevel,
-    IReadOnlyList<WordListItemModel> Words,
-    string MeaningLanguageCode,
+    IReadOnlyList<WordBrowseCardViewModel> Words,
+    string PrimaryMeaningLanguageCode,
+    string? SecondaryMeaningLanguageCode,
     int Skip,
     int Take,
     bool HasMore);
+
+public sealed record WordBrowseCardViewModel(
+    WordListItemModel Word,
+    string? SecondaryMeaning,
+    string PrimaryMeaningLanguageCode,
+    string? SecondaryMeaningLanguageCode,
+    WordInteractionPanelViewModel Interaction);

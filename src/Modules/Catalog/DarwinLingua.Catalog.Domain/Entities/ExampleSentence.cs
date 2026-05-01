@@ -109,6 +109,16 @@ public sealed class ExampleSentence
         UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 
+    /// <summary>
+    /// Updates the example sentence text and primary flag.
+    /// </summary>
+    internal void Update(string germanText, bool isPrimaryExample, DateTime updatedAtUtc)
+    {
+        GermanText = NormalizeRequiredText(germanText, nameof(germanText));
+        IsPrimaryExample = isPrimaryExample;
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     private static string NormalizeRequiredText(string value, string parameterName)
     {
         if (string.IsNullOrWhiteSpace(value))
