@@ -43,6 +43,7 @@ internal sealed class ScenarioLessonTopicConfiguration : IEntityTypeConfiguratio
         builder.Property(topic => topic.IsPrimary).IsRequired();
         builder.Property(topic => topic.CreatedAtUtc).IsRequired();
         builder.HasIndex(topic => new { topic.ScenarioLessonId, topic.TopicId }).IsUnique();
+        builder.HasIndex(topic => topic.TopicId).HasDatabaseName("IX_ScenarioLessonTopics_TopicId");
         builder.HasIndex(topic => topic.ScenarioLessonId).HasDatabaseName("IX_ScenarioLessonTopics_PrimaryPerLesson").IsUnique().HasFilter($"\"{nameof(ScenarioLessonTopic.IsPrimary)}\"");
         builder.HasOne<Topic>().WithMany().HasForeignKey(topic => topic.TopicId).OnDelete(DeleteBehavior.Restrict);
     }

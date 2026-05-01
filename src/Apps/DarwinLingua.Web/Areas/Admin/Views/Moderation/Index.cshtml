@@ -57,7 +57,7 @@
                         </div>
                         @if (canDecide)
                         {
-                            <form method="post" asp-action="Decide" asp-route-reportId="@report.Id" class="stack-sm">
+                            <form method="post" asp-action="Decide" asp-route-reportId="@report.Id" class="stack-sm" data-confirm-submit="Save this moderation decision?">
                                 @Html.AntiForgeryToken()
                                 <input type="hidden" name="returnStatus" value="@Model.StatusFilter" />
                                 <label class="form-field">

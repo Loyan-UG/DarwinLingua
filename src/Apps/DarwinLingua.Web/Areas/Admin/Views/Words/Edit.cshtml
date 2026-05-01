@@ -23,7 +23,7 @@
         }
     </div>
 
-    <form class="admin-edit-form stack-lg" method="post" asp-action="@actionName" asp-route-publicId="@Model.PublicId">
+    <form class="admin-edit-form stack-lg" method="post" asp-action="@actionName" asp-route-publicId="@Model.PublicId" data-confirm-submit="Save this word?">
         @Html.AntiForgeryToken()
         <input type="hidden" asp-for="PublicId" />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>

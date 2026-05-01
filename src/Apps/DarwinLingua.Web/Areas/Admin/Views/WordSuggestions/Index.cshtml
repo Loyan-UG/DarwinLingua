@@ -36,8 +36,8 @@
     }
     else
     {
-        <div class="table-wrap">
-            <table class="data-table">
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
                         <th>Word</th>
@@ -75,7 +75,7 @@
                             </td>
                             <td>@suggestion.CreatedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
                             <td>
-                                <form method="post" asp-action="Decide" asp-route-suggestionId="@suggestion.Id" class="stack-sm">
+                                <form method="post" asp-action="Decide" asp-route-suggestionId="@suggestion.Id" class="stack-sm" data-confirm-submit="Save this word suggestion decision?">
                                     @Html.AntiForgeryToken()
                                     <input type="hidden" name="returnStatus" value="@Model.StatusFilter" />
                                     <label class="form-field">

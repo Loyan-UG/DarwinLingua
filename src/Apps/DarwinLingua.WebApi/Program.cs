@@ -115,6 +115,8 @@ builder.Services.AddScoped<IWebsiteCatalogQueryService, WebsiteCatalogQueryServi
 builder.Services.AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>();
 builder.Services.AddScoped<IWordAdminService, WordAdminService>();
 builder.Services.AddScoped<IAdminTaxonomyService, AdminTaxonomyService>();
+builder.Services.AddScoped<IAdminCollectionsService, AdminCollectionsService>();
+builder.Services.AddScoped<IAdminScenariosService, AdminScenariosService>();
 builder.Services.AddScoped<IConversationEventAdminService, ConversationEventAdminService>();
 builder.Services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
 builder.Services.AddScoped<IOrganizerClaimRequestService, OrganizerClaimRequestService>();
@@ -627,9 +629,9 @@ app.MapGet(
 
 app.MapGet(
     "/api/admin/catalog/words",
-    async (string? q, string? status, int? skip, int? take, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+    async (string? q, string? status, string? sort, int? skip, int? take, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await adminQueryService.GetWordsAsync(q, status, skip ?? 0, take ?? 50, cancellationToken).ConfigureAwait(false))
+                async () => await adminQueryService.GetWordsAsync(q, status, sort, skip ?? 0, take ?? 50, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
@@ -765,11 +767,263 @@ app.MapPost(
                 async () => await taxonomyService.UpdateTopicAsync(topicId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
+app.MapPost(
+    "/api/admin/catalog/topics/{topicId:guid}/merge",
+    async (Guid topicId, AdminMergeTopicRequest request, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.MergeTopicAsync(topicId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
 app.MapGet(
     "/api/admin/catalog/labels",
     async (IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await taxonomyService.GetLabelsAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/labels/{labelId:guid}",
+    async (Guid labelId, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.GetLabelAsync(labelId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/labels",
+    async (AdminSaveLabelRequest request, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.CreateLabelAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/labels/{labelId:guid}",
+    async (Guid labelId, AdminSaveLabelRequest request, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.UpdateLabelAsync(labelId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/labels/{labelId:guid}/rename",
+    async (Guid labelId, AdminSaveLabelRequest request, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.RenameLabelAsync(labelId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/labels/{labelId:guid}/merge",
+    async (Guid labelId, AdminMergeLabelRequest request, IAdminTaxonomyService taxonomyService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await taxonomyService.MergeLabelAsync(labelId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/collections",
+    async (IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.GetCollectionsAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/collections",
+    async (AdminSaveCollectionRequest request, IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.CreateCollectionAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/collections/import",
+    async (AdminBulkCollectionImportRequest request, IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.ImportCollectionsAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/collections/{collectionId:guid}",
+    async (Guid collectionId, IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.GetCollectionAsync(collectionId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/collections/{collectionId:guid}",
+    async (Guid collectionId, AdminSaveCollectionRequest request, IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.UpdateCollectionAsync(collectionId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/collections/{collectionId:guid}/delete",
+    async (Guid collectionId, IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.DeleteCollectionAsync(collectionId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/collections/{collectionId:guid}/words",
+    async (Guid collectionId, AdminAddCollectionWordRequest request, IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.AddWordAsync(collectionId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/collections/{collectionId:guid}/words/{entryId:guid}/delete",
+    async (Guid collectionId, Guid entryId, IAdminCollectionsService collectionsService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await collectionsService.DeleteWordAsync(collectionId, entryId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/scenarios",
+    async (IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.GetScenariosAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios",
+    async (AdminSaveScenarioRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.CreateScenarioAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/import",
+    async (AdminBulkScenarioImportRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.ImportScenariosAsync(request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}",
+    async (Guid scenarioId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.GetScenarioAsync(scenarioId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}",
+    async (Guid scenarioId, AdminSaveScenarioRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.UpdateScenarioAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/delete",
+    async (Guid scenarioId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeleteScenarioAsync(scenarioId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns",
+    async (Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddDialogueTurnAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns/{turnId:guid}/delete",
+    async (Guid scenarioId, Guid turnId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeleteDialogueTurnAsync(scenarioId, turnId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns/{turnId:guid}/translations",
+    async (Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddDialogueTurnTranslationAsync(scenarioId, turnId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns/{turnId:guid}/translations/{translationId:guid}/delete",
+    async (Guid scenarioId, Guid turnId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeleteDialogueTurnTranslationAsync(scenarioId, turnId, translationId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases",
+    async (Guid scenarioId, AdminAddScenarioPhraseRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddPhraseAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases/{phraseId:guid}/delete",
+    async (Guid scenarioId, Guid phraseId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeletePhraseAsync(scenarioId, phraseId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases/{phraseId:guid}/translations",
+    async (Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddPhraseTranslationAsync(scenarioId, phraseId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases/{phraseId:guid}/translations/{translationId:guid}/delete",
+    async (Guid scenarioId, Guid phraseId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeletePhraseTranslationAsync(scenarioId, phraseId, translationId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions",
+    async (Guid scenarioId, AdminAddScenarioQuestionRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddQuestionAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/delete",
+    async (Guid scenarioId, Guid questionId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeleteQuestionAsync(scenarioId, questionId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/translations",
+    async (Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddQuestionTranslationAsync(scenarioId, questionId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/translations/{translationId:guid}/delete",
+    async (Guid scenarioId, Guid questionId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeleteQuestionTranslationAsync(scenarioId, questionId, translationId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers",
+    async (Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddAnswerAsync(scenarioId, questionId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/delete",
+    async (Guid scenarioId, Guid questionId, Guid answerId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeleteAnswerAsync(scenarioId, questionId, answerId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/translations",
+    async (Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.AddAnswerTranslationAsync(scenarioId, questionId, answerId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/translations/{translationId:guid}/delete",
+    async (Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await scenariosService.DeleteAnswerTranslationAsync(scenarioId, questionId, answerId, translationId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

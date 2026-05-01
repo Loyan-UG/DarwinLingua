@@ -1,0 +1,151 @@
+@model DarwinLingua.Web.Models.AdminCollectionDetailViewModel
+@{
+    ViewData["Title"] = Model.Name;
+    var wordPicker = ViewData["AdminWordPicker"] as DarwinLingua.Web.Models.AdminCollectionWordPickerViewModel;
+    var hasAvailableWords = wordPicker?.AvailableWords.Count > 0;
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Name, "Collection detail", "Manage collection metadata and the words included in this pack.")' />
+        <div class="cluster">
+            <a class="button button--secondary" asp-action="Index">Back</a>
+            <a class="button" asp-action="Edit" asp-route-collectionId="@Model.CollectionId">Edit</a>
+        </div>
+    </div>
+    @if (TempData["AdminStatusMessage"] is string statusMessage)
+    {
+        <div class="state-panel state-panel--success">@statusMessage</div>
+    }
+    @if (TempData["AdminErrorMessage"] is string errorMessage)
+    {
+        <div class="state-panel state-panel--warning">@errorMessage</div>
+    }
+
+    <div class="admin-detail-grid">
+        <div><span class="eyebrow">Slug</span><strong>@Model.Slug</strong></div>
+        <div><span class="eyebrow">Status</span><strong>@Model.PublicationStatus</strong></div>
+        <div><span class="eyebrow">Words</span><strong>@Model.Entries.Count</strong></div>
+        <div><span class="eyebrow">Sort</span><strong>@Model.SortOrder</strong></div>
+    </div>
+    <div class="admin-summary-grid">
+        <a href="#collection-words" class="admin-summary-tile">
+            <span class="eyebrow">Assigned words</span>
+            <strong>@Model.Entries.Count</strong>
+        </a>
+        <a href="#collection-add-word" class="admin-summary-tile">
+            <span class="eyebrow">Available to add</span>
+            <strong>@(wordPicker?.AvailableWords.Count ?? 0)</strong>
+        </a>
+        <a href="#collection-danger" class="admin-summary-tile">
+            <span class="eyebrow">Updated</span>
+            <strong>@Model.UpdatedAtUtc.ToString("yyyy-MM-dd")</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Collection detail sections">
+        <a href="#collection-words">Words</a>
+        <a href="#collection-add-word">Add word</a>
+        <a href="#collection-danger">Danger zone</a>
+    </nav>
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+        <p class="muted-copy">@Model.Description</p>
+    }
+</section>
+
+<section id="collection-words" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <div>
+            <h2 class="headline-sm">Words</h2>
+            <p class="muted-copy">Search active words and keep this collection order clean.</p>
+        </div>
+        <span class="status-pill">@Model.Entries.Count total</span>
+    </div>
+
+    <details id="collection-add-word" class="admin-inline-panel stack-sm">
+        <summary>Add word</summary>
+        <form method="post" asp-action="AddWord" asp-route-collectionId="@Model.CollectionId" data-confirm-submit="Add this word to the collection?">
+            @Html.AntiForgeryToken()
+            <div class="admin-inline-form-grid admin-inline-form-grid--collection-word">
+                <label class="form-field">
+                    <span>Search</span>
+                    <input name="q"
+                           type="search"
+                           placeholder="Lemma"
+                           hx-get="@Url.Action("WordOptions", "Collections", new { area = "Admin", collectionId = Model.CollectionId })"
+                           hx-trigger="keyup changed delay:250ms"
+                           hx-target="#collection-word-options"
+                           hx-include="this" />
+                </label>
+                <label class="form-field">
+                    <span>Word</span>
+                    <select id="collection-word-options" name="wordPublicId" required>
+                        @if (wordPicker is not null)
+                        {
+                            <partial name="_WordPickerOptions" model="wordPicker" />
+                        }
+                        else
+                        {
+                            <option value="">Select an active word</option>
+                        }
+                    </select>
+                </label>
+                <label class="form-field">
+                    <span>Sort</span>
+                    <input name="sortOrder" type="number" min="0" value="0" />
+                </label>
+                <button class="button button--compact" type="submit" disabled="@(!hasAvailableWords)">Add</button>
+            </div>
+            <p class="eyebrow">Assigned words are hidden from the picker.</p>
+        </form>
+    </details>
+
+    @if (Model.Entries.Count == 0)
+    {
+        <div class="state-panel">No words assigned.</div>
+    }
+    else
+    {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
+                    <tr><th>Sort</th><th>Lemma</th><th>POS</th><th>CEFR</th><th>Public ID</th><th></th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var entry in Model.Entries)
+                    {
+                        <tr>
+                            <td>@entry.SortOrder</td>
+                            <td>
+                                <strong>@entry.Lemma</strong>
+                                <div class="eyebrow">@entry.WordPublicId</div>
+                            </td>
+                            <td>@entry.PartOfSpeech</td>
+                            <td>@entry.CefrLevel</td>
+                            <td><code>@entry.WordPublicId</code></td>
+                            <td>
+                                <form class="inline-form" method="post" asp-action="DeleteWord" asp-route-collectionId="@Model.CollectionId" asp-route-entryId="@entry.EntryId" data-confirm-submit="Remove this word from the collection?">
+                                    @Html.AntiForgeryToken()
+                                    <button class="button button--secondary button--compact" type="submit">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>
+
+<section id="collection-danger" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <div>
+            <h2 class="headline-sm">Danger zone</h2>
+            <p class="muted-copy">Deleting a collection removes the pack, not the words themselves.</p>
+        </div>
+        <form class="inline-form" method="post" asp-action="Delete" asp-route-collectionId="@Model.CollectionId" data-confirm-submit="Delete this collection? Words remain in the catalog, but the collection will be removed.">
+            @Html.AntiForgeryToken()
+            <button class="button button--secondary button--compact" type="submit">Delete collection</button>
+        </form>
+    </div>
+</section>

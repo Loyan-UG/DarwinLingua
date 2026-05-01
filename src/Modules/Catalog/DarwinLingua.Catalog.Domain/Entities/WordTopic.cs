@@ -68,4 +68,14 @@ public sealed class WordTopic
     {
         IsPrimaryTopic = isPrimaryTopic;
     }
+
+    public void ReassignTopic(Guid topicId)
+    {
+        if (topicId == Guid.Empty)
+        {
+            throw new DomainRuleException("Topic identifier cannot be empty for a topic link.");
+        }
+
+        TopicId = topicId;
+    }
 }

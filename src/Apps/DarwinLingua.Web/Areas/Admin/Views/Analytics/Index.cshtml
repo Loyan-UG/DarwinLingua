@@ -52,28 +52,30 @@
     }
     else
     {
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Scope</th>
-                    <th>Count</th>
-                    <th>First seen</th>
-                    <th>Last seen</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Items)
-                {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td>@item.EventName</td>
-                        <td>@item.ScopeKey</td>
-                        <td>@item.Count</td>
-                        <td>@item.FirstSeenAtUtc.ToString("u")</td>
-                        <td>@item.LastSeenAtUtc.ToString("u")</td>
+                        <th>Event</th>
+                        <th>Scope</th>
+                        <th>Count</th>
+                        <th>First seen</th>
+                        <th>Last seen</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>@item.EventName</td>
+                            <td>@item.ScopeKey</td>
+                            <td>@item.Count</td>
+                            <td>@item.FirstSeenAtUtc.ToString("u")</td>
+                            <td>@item.LastSeenAtUtc.ToString("u")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </section>

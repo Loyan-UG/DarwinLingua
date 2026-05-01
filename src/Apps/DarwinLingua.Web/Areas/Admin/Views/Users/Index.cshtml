@@ -23,89 +23,94 @@
 else
 {
     <section class="panel stack-md">
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>User</th>
-                    <th>Roles</th>
-                    <th>Plan</th>
-                    <th>Features</th>
-                    <th>Recent events</th>
-                    <th>Plan update</th>
-                    <th>Role update</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var user in Model.Users)
-                {
-                    string? expiryValue = (user.PremiumEndsAtUtc ?? user.TrialEndsAtUtc)?.UtcDateTime.ToString("u");
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td>@user.Email</td>
-                        <td>@string.Join(", ", user.Roles)</td>
-                        <td>
-                            <strong>@user.EntitlementTier</strong>
-                            @if (user.TrialEndsAtUtc is not null)
-                            {
-                                <span>Trial: @user.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</span>
-                            }
-                            @if (user.PremiumEndsAtUtc is not null)
-                            {
-                                <span>Premium: @user.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</span>
-                            }
-                        </td>
-                        <td>@string.Join(", ", user.EnabledFeatures)</td>
-                        <td>
-                            @if (user.RecentEntitlementEvents.Count == 0)
-                            {
-                                <span>None</span>
-                            }
-                            else
-                            {
-                                <ul class="feature-list">
-                                    @foreach (var auditEvent in user.RecentEntitlementEvents)
-                                    {
-                                        <li>@auditEvent.EventType: @(auditEvent.PreviousTier ?? "none") -> @auditEvent.NewTier</li>
-                                    }
-                                </ul>
-                            }
-                        </td>
-                        <td>
-                            <form class="inline-form" method="post" asp-action="UpdateEntitlement">
-                                @Html.AntiForgeryToken()
-                                <input type="hidden" name="UserId" value="@user.UserId" />
-                                <select name="Tier">
-                                    @foreach (string tier in DarwinLinguaEntitlementTiers.All)
-                                    {
-                                        <option value="@tier" selected="@string.Equals(tier, user.EntitlementTier, StringComparison.OrdinalIgnoreCase)">@tier</option>
-                                    }
-                                </select>
-                                <input type="text"
-                                       name="ExpiresAtUtc"
-                                       value="@expiryValue"
-                                       placeholder="Expiry UTC" />
-                                <button type="submit" class="button button--secondary">Apply</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form class="inline-form" method="post" asp-action="UpdateRole">
-                                @Html.AntiForgeryToken()
-                                <input type="hidden" name="UserId" value="@user.UserId" />
-                                <select name="Role">
-                                    @foreach (string role in DarwinLinguaRoles.All)
-                                    {
-                                        <option value="@role">@role</option>
-                                    }
-                                </select>
-                                <select name="IsEnabled">
-                                    <option value="true">Add</option>
-                                    <option value="false">Remove</option>
-                                </select>
-                                <button type="submit" class="button button--secondary">Apply</button>
-                            </form>
-                        </td>
+                        <th>User</th>
+                        <th>Roles</th>
+                        <th>Plan</th>
+                        <th>Features</th>
+                        <th>Recent events</th>
+                        <th>Plan update</th>
+                        <th>Role update</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                        string? expiryValue = (user.PremiumEndsAtUtc ?? user.TrialEndsAtUtc)?.UtcDateTime.ToString("u");
+                        <tr>
+                            <td>
+                                <strong>@user.Email</strong>
+                                <div class="eyebrow">@user.UserId</div>
+                            </td>
+                            <td>@string.Join(", ", user.Roles)</td>
+                            <td>
+                                <span class="status-pill">@user.EntitlementTier</span>
+                                @if (user.TrialEndsAtUtc is not null)
+                                {
+                                    <div class="muted-text">Trial: @user.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</div>
+                                }
+                                @if (user.PremiumEndsAtUtc is not null)
+                                {
+                                    <div class="muted-text">Premium: @user.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</div>
+                                }
+                            </td>
+                            <td>@string.Join(", ", user.EnabledFeatures)</td>
+                            <td>
+                                @if (user.RecentEntitlementEvents.Count == 0)
+                                {
+                                    <span class="muted-text">None</span>
+                                }
+                                else
+                                {
+                                    <ul class="feature-list">
+                                        @foreach (var auditEvent in user.RecentEntitlementEvents)
+                                        {
+                                            <li>@auditEvent.EventType: @(auditEvent.PreviousTier ?? "none") -> @auditEvent.NewTier</li>
+                                        }
+                                    </ul>
+                                }
+                            </td>
+                            <td>
+                                <form class="admin-row-form" method="post" asp-action="UpdateEntitlement" data-confirm-submit="Apply this entitlement change to the user account?">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="UserId" value="@user.UserId" />
+                                    <select name="Tier">
+                                        @foreach (string tier in DarwinLinguaEntitlementTiers.All)
+                                        {
+                                            <option value="@tier" selected="@string.Equals(tier, user.EntitlementTier, StringComparison.OrdinalIgnoreCase)">@tier</option>
+                                        }
+                                    </select>
+                                    <input type="text"
+                                           name="ExpiresAtUtc"
+                                           value="@expiryValue"
+                                           placeholder="Expiry UTC" />
+                                    <button type="submit" class="button button--secondary button--compact">Apply</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form class="admin-row-form" method="post" asp-action="UpdateRole" data-confirm-submit="Apply this role change to the user account?">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="UserId" value="@user.UserId" />
+                                    <select name="Role">
+                                        @foreach (string role in DarwinLinguaRoles.All)
+                                        {
+                                            <option value="@role">@role</option>
+                                        }
+                                    </select>
+                                    <select name="IsEnabled">
+                                        <option value="true">Add</option>
+                                        <option value="false">Remove</option>
+                                    </select>
+                                    <button type="submit" class="button button--secondary button--compact">Apply</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </section>
 }

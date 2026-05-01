@@ -26,11 +26,28 @@ public sealed record AdminTopicLocalizationRequest(
     string LanguageCode,
     string DisplayName);
 
+public sealed record AdminMergeTopicRequest(
+    Guid TargetTopicId);
+
 public sealed record AdminLabelsResponse(
     IReadOnlyList<AdminLabelItemResponse> Labels);
 
 public sealed record AdminLabelItemResponse(
+    Guid LabelId,
     string Kind,
     string Key,
+    string DisplayName,
+    int SortOrder,
+    bool IsSystem,
     int WordCount,
-    int FirstSortOrder);
+    DateTime UpdatedAtUtc);
+
+public sealed record AdminSaveLabelRequest(
+    string Kind,
+    string Key,
+    string DisplayName,
+    int SortOrder,
+    bool IsSystem);
+
+public sealed record AdminMergeLabelRequest(
+    Guid TargetLabelId);

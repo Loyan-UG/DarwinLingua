@@ -117,7 +117,7 @@
     @if (Model.Suppressions.Count > 0)
     {
         <div class="table-scroll">
-            <table class="admin-table">
+            <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
                         <th>Created</th>
@@ -140,7 +140,7 @@
                             <td>
                                 @if (isAdmin)
                                 {
-                                    <form method="post" asp-action="RemoveSuppression" class="inline-form">
+                                    <form method="post" asp-action="RemoveSuppression" class="inline-form" data-confirm-submit="Remove this recipient hash from the suppression list? Future transactional email may be attempted again.">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="recipientEmailHash" value="@suppression.RecipientEmailHash" />
                                         <button type="submit" class="button button--secondary">Unsuppress</button>
@@ -215,7 +215,7 @@
     <p class="body-sm">Delivery logs are retained for @Model.RetentionDays days. Cleanup removes only entries older than that retention window.</p>
     @if (isAdmin)
     {
-        <form method="post" asp-action="Cleanup" class="inline-form">
+        <form method="post" asp-action="Cleanup" class="inline-form" data-confirm-submit="Delete old email delivery logs outside the retention window?">
             @Html.AntiForgeryToken()
             <button type="submit" class="button button--secondary">Clean up old delivery logs</button>
         </form>
@@ -229,7 +229,7 @@
 <section class="panel stack-md">
     <h2 class="headline-sm">Manual resend</h2>
     <p class="body-sm">Generate a new confirmation token for an unconfirmed account. Password reset emails are not resent from diagnostics.</p>
-    <form method="post" asp-action="ResendConfirmation" class="filter-bar">
+    <form method="post" asp-action="ResendConfirmation" class="filter-bar" data-confirm-submit="Send a new confirmation email to this account?">
         @Html.AntiForgeryToken()
         <label>
             Account email
@@ -244,7 +244,7 @@
     <section class="panel stack-md">
         <h2 class="headline-sm">Manual provider event</h2>
         <div class="status-banner status-banner--error">Admin-only reconciliation tool. Use this only when Brevo dashboard data did not arrive through webhook.</div>
-        <form method="post" asp-action="RecordProviderEvent" class="filter-bar">
+        <form method="post" asp-action="RecordProviderEvent" class="filter-bar" data-confirm-submit="Record this provider event manually and update delivery state?">
             @Html.AntiForgeryToken()
             <label>
                 Provider message id
@@ -277,7 +277,7 @@
     else
     {
         <div class="table-scroll">
-            <table class="admin-table">
+            <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
                         <th>Created</th>

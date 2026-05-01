@@ -46,6 +46,7 @@ internal sealed class ConversationStarterPackTopicConfiguration : IEntityTypeCon
         builder.Property(topic => topic.IsPrimary).IsRequired();
         builder.Property(topic => topic.CreatedAtUtc).IsRequired();
         builder.HasIndex(topic => new { topic.ConversationStarterPackId, topic.TopicId }).IsUnique();
+        builder.HasIndex(topic => topic.TopicId).HasDatabaseName("IX_ConversationStarterPackTopics_TopicId");
         builder.HasIndex(topic => topic.ConversationStarterPackId).HasDatabaseName("IX_ConversationStarterPackTopics_PrimaryPerPack").IsUnique().HasFilter($"\"{nameof(ConversationStarterPackTopic.IsPrimary)}\"");
         builder.HasOne<Topic>().WithMany().HasForeignKey(topic => topic.TopicId).OnDelete(DeleteBehavior.Restrict);
     }

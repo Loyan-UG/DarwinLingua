@@ -9,11 +9,20 @@
         .OrderBy(topic => topic.SortOrder)
         .ThenBy(topic => topic.Key)
         .ToArray() ?? [];
+    var assignedLabelKeys = Model.Labels
+        .Select(label => $"{label.Kind}::{label.Key}")
+        .ToHashSet(StringComparer.OrdinalIgnoreCase);
+    var unassignedLabels = availableLabels?.Labels
+        .Where(label => !assignedLabelKeys.Contains($"{label.Kind}::{label.Key}"))
+        .OrderBy(label => label.Kind)
+        .ThenBy(label => label.SortOrder)
+        .ThenBy(label => label.DisplayName)
+        .ToArray() ?? [];
 }
 
 <section class="panel stack-lg">
     <div class="cluster cluster--between">
-        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Lemma, "Word detail", "Inspect the complete lexical record before edit workflows are enabled.")' />
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Lemma, "Word detail", "Inspect the complete lexical record, manage taxonomy, and open the edit workflow.")' />
         <div class="cluster">
             <a class="button button--secondary" asp-action="Index">Back to words</a>
             <a class="button" asp-action="Edit" asp-route-publicId="@Model.PublicId">Edit word</a>
@@ -47,6 +56,27 @@
         </div>
     </div>
 
+    <div class="admin-summary-grid">
+        <a href="#word-taxonomy" class="admin-summary-tile">
+            <span class="eyebrow">Topics</span>
+            <strong>@Model.Topics.Count</strong>
+        </a>
+        <a href="#word-taxonomy" class="admin-summary-tile">
+            <span class="eyebrow">Labels</span>
+            <strong>@Model.Labels.Count</strong>
+        </a>
+        <a href="#word-senses" class="admin-summary-tile">
+            <span class="eyebrow">Senses</span>
+            <strong>@Model.Senses.Count</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Word detail sections">
+        <a href="#word-taxonomy">Taxonomy</a>
+        <a href="#word-senses">Senses</a>
+        <a href="#word-assets">Assets</a>
+    </nav>
+
     <dl class="detail-list">
         <div><dt>Public ID</dt><dd>@Model.PublicId</dd></div>
         <div><dt>Normalized lemma</dt><dd>@Model.NormalizedLemma</dd></div>
@@ -61,7 +91,7 @@
     </dl>
 </section>
 
-<section class="admin-two-column">
+<section id="word-taxonomy" class="admin-two-column">
     <div class="panel stack-md">
         <div class="cluster cluster--between">
             <h2 class="headline-sm">Topics</h2>
@@ -76,7 +106,7 @@
             <div class="tag-list">
                 @foreach (var topic in Model.Topics)
                 {
-                    <form class="tag-form" method="post" asp-action="DeleteTopic" asp-route-publicId="@Model.PublicId" asp-route-topicId="@topic.TopicId">
+                    <form class="tag-form" method="post" asp-action="DeleteTopic" asp-route-publicId="@Model.PublicId" asp-route-topicId="@topic.TopicId" data-confirm-submit="Remove this topic from the word?">
                         @Html.AntiForgeryToken()
                         <span class="tag">@topic.Key@(topic.IsPrimaryTopic ? " primary" : null)</span>
                         <button class="tag-remove" type="submit" aria-label="Remove @topic.Key">×</button>
@@ -84,33 +114,35 @@
                 }
             </div>
         }
-        <form class="admin-inline-panel stack-sm" method="post" asp-action="AddTopic" asp-route-publicId="@Model.PublicId">
-            @Html.AntiForgeryToken()
-            <strong>Attach topic</strong>
-            <div class="admin-inline-form-grid admin-inline-form-grid--topic">
-                <label class="form-field">
-                    <span>Topic</span>
-                    <select name="topicId" required>
-                        <option value="">Select topic</option>
-                        @foreach (var topic in unassignedTopics)
-                        {
-                            <option value="@topic.TopicId">@topic.Key (@topic.WordCount words)</option>
-                        }
-                    </select>
-                </label>
-                <label class="form-field form-field--check">
-                    <input type="checkbox" name="isPrimaryTopic" value="true" />
-                    <input type="hidden" name="isPrimaryTopic" value="false" />
-                    <span>Primary</span>
-                </label>
-                <button class="button button--compact" type="submit" disabled="@(unassignedTopics.Length == 0)">Add</button>
-            </div>
-        </form>
+        <details class="admin-inline-panel stack-sm">
+            <summary>Attach topic</summary>
+            <form method="post" asp-action="AddTopic" asp-route-publicId="@Model.PublicId" data-confirm-submit="Add this topic to the word?">
+                @Html.AntiForgeryToken()
+                <div class="admin-inline-form-grid admin-inline-form-grid--topic">
+                    <label class="form-field">
+                        <span>Topic</span>
+                        <select name="topicId" required>
+                            <option value="">Select topic</option>
+                            @foreach (var topic in unassignedTopics)
+                            {
+                                <option value="@topic.TopicId">@topic.Key (@topic.WordCount words)</option>
+                            }
+                        </select>
+                    </label>
+                    <label class="form-field form-field--check">
+                        <input type="checkbox" name="isPrimaryTopic" value="true" />
+                        <input type="hidden" name="isPrimaryTopic" value="false" />
+                        <span>Primary</span>
+                    </label>
+                    <button class="button button--compact" type="submit" disabled="@(unassignedTopics.Length == 0)">Add</button>
+                </div>
+            </form>
+        </details>
     </div>
     <div class="panel stack-md">
         <div class="cluster cluster--between">
             <h2 class="headline-sm">Labels</h2>
-            <a class="button button--secondary button--compact" asp-controller="Labels" asp-action="Index">View labels</a>
+            <a class="button button--secondary button--compact" asp-controller="Labels" asp-action="Index">Manage labels</a>
         </div>
         @if (Model.Labels.Count == 0)
         {
@@ -121,42 +153,37 @@
             <div class="tag-list">
                 @foreach (var label in Model.Labels)
                 {
-                    <form class="tag-form" method="post" asp-action="DeleteLabel" asp-route-publicId="@Model.PublicId" asp-route-kind="@label.Kind" asp-route-key="@label.Key">
+                    <form class="tag-form" method="post" asp-action="DeleteLabel" asp-route-publicId="@Model.PublicId" asp-route-kind="@label.Kind" asp-route-key="@label.Key" data-confirm-submit="Remove this label from the word?">
                         @Html.AntiForgeryToken()
-                        <span class="tag">@label.Kind: @label.Key</span>
-                        <button class="tag-remove" type="submit" aria-label="Remove @label.Kind @label.Key">×</button>
+                        <span class="tag">@label.DisplayName <small>@label.Kind/@label.Key</small></span>
+                        <button class="tag-remove" type="submit" aria-label="Remove @label.DisplayName">×</button>
                     </form>
                 }
             </div>
         }
-        <form class="admin-inline-panel stack-sm" method="post" asp-action="AddLabel" asp-route-publicId="@Model.PublicId">
-            @Html.AntiForgeryToken()
-            <strong>Attach label</strong>
-            <div class="admin-inline-form-grid admin-inline-form-grid--label">
-                <label class="form-field">
-                    <span>Kind</span>
-                    <select name="kind" required>
-                        <option value="Usage">Usage</option>
-                        <option value="Context">Context</option>
-                    </select>
-                </label>
-                <label class="form-field">
-                    <span>Key</span>
-                    <input name="key" maxlength="64" list="admin-label-keys" placeholder="business-meetings" required />
-                    <datalist id="admin-label-keys">
-                        @foreach (var label in availableLabels?.Labels ?? [])
-                        {
-                            <option value="@label.Key">@label.Kind</option>
-                        }
-                    </datalist>
-                </label>
-                <button class="button button--compact" type="submit">Add</button>
-            </div>
-        </form>
+        <details class="admin-inline-panel stack-sm">
+            <summary>Attach label</summary>
+            <form method="post" asp-action="AddLabel" asp-route-publicId="@Model.PublicId" data-confirm-submit="Add this label to the word?">
+                @Html.AntiForgeryToken()
+                <div class="admin-inline-form-grid admin-inline-form-grid--label">
+                    <label class="form-field">
+                        <span>Label</span>
+                        <select name="labelKey" required>
+                            <option value="">Select label</option>
+                            @foreach (var label in unassignedLabels)
+                            {
+                                <option value="@($"{label.Kind}::{label.Key}")">@label.DisplayName (@label.Kind/@label.Key)</option>
+                            }
+                        </select>
+                    </label>
+                    <button class="button button--compact" type="submit" disabled="@(unassignedLabels.Length == 0)">Add</button>
+                </div>
+            </form>
+        </details>
     </div>
 </section>
 
-<section class="panel stack-lg">
+<section id="word-senses" class="panel stack-lg">
     <div class="cluster cluster--between">
         <h2 class="headline-sm">Senses</h2>
         <span class="eyebrow">@Model.Senses.Count total</span>
@@ -182,7 +209,7 @@
                         @foreach (var translation in sense.Translations)
                         {
                             <div class="admin-editable-item">
-                                <form class="admin-editable-item__form" method="post" asp-action="UpdateSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId">
+                                <form class="admin-editable-item__form" method="post" asp-action="UpdateSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="Save this sense translation?">
                                     @Html.AntiForgeryToken()
                                     <label class="form-field">
                                         <span>Language</span>
@@ -199,7 +226,7 @@
                                     </label>
                                     <button class="button button--compact" type="submit">Save</button>
                                 </form>
-                                <form class="inline-form" method="post" asp-action="DeleteSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId">
+                                <form class="inline-form" method="post" asp-action="DeleteSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="Delete this translation?">
                                     @Html.AntiForgeryToken()
                                     <button class="button button--secondary button--compact" type="submit">Delete</button>
                                 </form>
@@ -214,7 +241,7 @@
                         @foreach (var example in sense.Examples)
                         {
                             <div class="admin-example-card">
-                                <form class="admin-editable-item__form admin-editable-item__form--example" method="post" asp-action="UpdateSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId">
+                                <form class="admin-editable-item__form admin-editable-item__form--example" method="post" asp-action="UpdateSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="Save this example?">
                                     @Html.AntiForgeryToken()
                                     <label class="form-field">
                                         <span>German text</span>
@@ -231,7 +258,7 @@
                                 {
                                     <p><span>@translation.LanguageCode</span> @translation.TranslationText</p>
                                 }
-                                <form class="inline-form" method="post" asp-action="DeleteSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId">
+                                <form class="inline-form" method="post" asp-action="DeleteSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="Delete this example and its translations?">
                                     @Html.AntiForgeryToken()
                                     <button class="button button--secondary button--compact" type="submit">Delete example</button>
                                 </form>
@@ -241,7 +268,7 @@
                 }
 
                 <div class="admin-sense-actions">
-                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId">
+                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" data-confirm-submit="Add this sense translation?">
                         @Html.AntiForgeryToken()
                         <strong>Add translation</strong>
                         <div class="admin-inline-form-grid">
@@ -262,7 +289,7 @@
                         </div>
                     </form>
 
-                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId">
+                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" data-confirm-submit="Add this sense example?">
                         @Html.AntiForgeryToken()
                         <strong>Add example</strong>
                         <div class="admin-inline-form-grid admin-inline-form-grid--example">
@@ -291,68 +318,70 @@
         }
     }
 
-    <form class="admin-sense-form stack-md" method="post" asp-action="AddSense" asp-route-publicId="@Model.PublicId">
-        @Html.AntiForgeryToken()
-        <h3 class="headline-sm">Add sense</h3>
-        <div class="form-grid">
-            <label class="form-field">
-                <span>Status</span>
-                <select name="PublicationStatus">
-                    <option value="Draft">Draft</option>
-                    <option value="Active">Active</option>
-                    <option value="Archived">Archived</option>
-                    <option value="Deprecated">Deprecated</option>
-                </select>
-            </label>
-            <label class="form-field form-field--check">
-                <input type="checkbox" name="IsPrimarySense" value="true" />
-                <input type="hidden" name="IsPrimarySense" value="false" />
-                <span>Primary sense</span>
-            </label>
-            <label class="form-field">
-                <span>German definition</span>
-                <input name="ShortDefinitionDe" maxlength="512" />
-            </label>
-            <label class="form-field">
-                <span>Short gloss</span>
-                <input name="ShortGloss" maxlength="512" />
-            </label>
-            <label class="form-field">
-                <span>Translation language</span>
-                <input name="TranslationLanguageCode" maxlength="16" placeholder="en" />
-            </label>
-            <label class="form-field">
-                <span>Translation</span>
-                <input name="TranslationText" maxlength="512" />
-            </label>
-            <label class="form-field form-field--check">
-                <input type="checkbox" name="IsPrimaryTranslation" value="true" checked />
-                <input type="hidden" name="IsPrimaryTranslation" value="false" />
-                <span>Primary translation</span>
-            </label>
-            <label class="form-field field--wide">
-                <span>Example German text</span>
-                <input name="ExampleGermanText" maxlength="2000" />
-            </label>
-            <label class="form-field">
-                <span>Example translation language</span>
-                <input name="ExampleTranslationLanguageCode" maxlength="16" placeholder="en" />
-            </label>
-            <label class="form-field">
-                <span>Example translation</span>
-                <input name="ExampleTranslationText" maxlength="2000" />
-            </label>
-            <label class="form-field form-field--check">
-                <input type="checkbox" name="IsPrimaryExample" value="true" checked />
-                <input type="hidden" name="IsPrimaryExample" value="false" />
-                <span>Primary example</span>
-            </label>
-        </div>
-        <button class="button" type="submit">Add sense</button>
-    </form>
+    <details class="admin-inline-panel admin-sense-form stack-md">
+        <summary>Add sense</summary>
+        <form method="post" asp-action="AddSense" asp-route-publicId="@Model.PublicId" data-confirm-submit="Add this word sense?">
+            @Html.AntiForgeryToken()
+            <div class="form-grid">
+                <label class="form-field">
+                    <span>Status</span>
+                    <select name="PublicationStatus">
+                        <option value="Draft">Draft</option>
+                        <option value="Active">Active</option>
+                        <option value="Archived">Archived</option>
+                        <option value="Deprecated">Deprecated</option>
+                    </select>
+                </label>
+                <label class="form-field form-field--check">
+                    <input type="checkbox" name="IsPrimarySense" value="true" />
+                    <input type="hidden" name="IsPrimarySense" value="false" />
+                    <span>Primary sense</span>
+                </label>
+                <label class="form-field">
+                    <span>German definition</span>
+                    <input name="ShortDefinitionDe" maxlength="512" />
+                </label>
+                <label class="form-field">
+                    <span>Short gloss</span>
+                    <input name="ShortGloss" maxlength="512" />
+                </label>
+                <label class="form-field">
+                    <span>Translation language</span>
+                    <input name="TranslationLanguageCode" maxlength="16" placeholder="en" />
+                </label>
+                <label class="form-field">
+                    <span>Translation</span>
+                    <input name="TranslationText" maxlength="512" />
+                </label>
+                <label class="form-field form-field--check">
+                    <input type="checkbox" name="IsPrimaryTranslation" value="true" checked />
+                    <input type="hidden" name="IsPrimaryTranslation" value="false" />
+                    <span>Primary translation</span>
+                </label>
+                <label class="form-field field--wide">
+                    <span>Example German text</span>
+                    <input name="ExampleGermanText" maxlength="2000" />
+                </label>
+                <label class="form-field">
+                    <span>Example translation language</span>
+                    <input name="ExampleTranslationLanguageCode" maxlength="16" placeholder="en" />
+                </label>
+                <label class="form-field">
+                    <span>Example translation</span>
+                    <input name="ExampleTranslationText" maxlength="2000" />
+                </label>
+                <label class="form-field form-field--check">
+                    <input type="checkbox" name="IsPrimaryExample" value="true" checked />
+                    <input type="hidden" name="IsPrimaryExample" value="false" />
+                    <span>Primary example</span>
+                </label>
+            </div>
+            <button class="button" type="submit">Add sense</button>
+        </form>
+    </details>
 </section>
 
-<section class="admin-two-column">
+<section id="word-assets" class="admin-two-column">
     <div class="panel stack-md">
         <h2 class="headline-sm">Lexical forms</h2>
         @if (Model.LexicalForms.Count == 0)
@@ -361,23 +390,25 @@
         }
         else
         {
-            <table class="data-table">
-                <thead>
-                    <tr><th>POS</th><th>Article</th><th>Plural</th><th>Infinitive</th><th>Primary</th></tr>
-                </thead>
-                <tbody>
-                    @foreach (var form in Model.LexicalForms)
-                    {
-                        <tr>
-                            <td>@form.PartOfSpeech</td>
-                            <td>@(form.Article ?? "-")</td>
-                            <td>@(form.PluralForm ?? "-")</td>
-                            <td>@(form.InfinitiveForm ?? "-")</td>
-                            <td>@(form.IsPrimary ? "Yes" : "No")</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            <div class="table-scroll">
+                <table class="data-table admin-data-grid">
+                    <thead>
+                        <tr><th>POS</th><th>Article</th><th>Plural</th><th>Infinitive</th><th>Primary</th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var form in Model.LexicalForms)
+                        {
+                            <tr>
+                                <td>@form.PartOfSpeech</td>
+                                <td>@(form.Article ?? "-")</td>
+                                <td>@(form.PluralForm ?? "-")</td>
+                                <td>@(form.InfinitiveForm ?? "-")</td>
+                                <td>@(form.IsPrimary ? "Yes" : "No")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         }
     </div>
     <div class="panel stack-md">

@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <form class="admin-filter-grid"
+    <form class="admin-filter-panel admin-filter-panel--compact"
           method="get"
           asp-action="Index"
           hx-get="@Url.Action("Table", "Words", new { area = "Admin" })"
@@ -34,8 +34,18 @@
                 <option value="Deprecated" selected="@(string.Equals(Model.StatusFilter, "Deprecated", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Deprecated</option>
             </select>
         </label>
+        <label class="form-field">
+            <span>Sort</span>
+            <select class="form-select" name="sort">
+                <option value="lemma" selected="@(string.Equals(Model.Sort, "lemma", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Lemma A-Z</option>
+                <option value="updated" selected="@(string.Equals(Model.Sort, "updated", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Recently updated</option>
+                <option value="cefr" selected="@(string.Equals(Model.Sort, "cefr", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">CEFR level</option>
+                <option value="status" selected="@(string.Equals(Model.Sort, "status", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Status</option>
+            </select>
+        </label>
         <input type="hidden" name="take" value="@Model.Take" />
-        <button type="submit" class="button button--secondary">Filter</button>
+        <button type="submit" class="button button--compact">Apply</button>
+        <a class="button button--secondary button--compact" asp-action="Index">Reset</a>
     </form>
     <div id="words-indicator" class="eyebrow htmx-indicator">Updating words...</div>
 </section>

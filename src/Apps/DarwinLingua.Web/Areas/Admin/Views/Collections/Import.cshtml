@@ -1,0 +1,82 @@
+@model DarwinLingua.Web.Models.AdminBulkCollectionImportResponse
+@{
+    ViewData["Title"] = "Import collections";
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Import collections", "Bulk JSON", "Upload curated word collections and their word membership in one operation.")' />
+        <a class="button button--secondary" asp-action="Index">Back to collections</a>
+    </div>
+
+    <form class="stack-md" method="post" enctype="multipart/form-data" asp-action="Import" data-confirm-submit="Import these collections from JSON?">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="validation-message"></div>
+        <label class="form-field">
+            <span>JSON file</span>
+            <input type="file" name="JsonFile" accept="application/json,.json" required />
+        </label>
+        <button class="button" type="submit">Import JSON</button>
+    </form>
+</section>
+
+@if (Model is not null)
+{
+    <section class="panel stack-md">
+        <div class="admin-detail-grid">
+            <div><span class="eyebrow">Total</span><strong>@Model.TotalCount</strong></div>
+            <div><span class="eyebrow">Imported</span><strong>@Model.ImportedCount</strong></div>
+            <div><span class="eyebrow">Skipped</span><strong>@Model.SkippedCount</strong></div>
+            <div><span class="eyebrow">Failed</span><strong>@Model.FailedCount</strong></div>
+        </div>
+
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
+                    <tr><th>Row</th><th>Slug</th><th>Status</th><th>Message</th><th>Collection</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>@item.RowNumber</td>
+                            <td>@(item.Slug ?? "-")</td>
+                            <td><span class="status-pill">@item.Status</span></td>
+                            <td>@item.Message</td>
+                            <td>
+                                @if (item.CollectionId is Guid collectionId)
+                                {
+                                    <a class="button button--compact" asp-action="Details" asp-route-collectionId="@collectionId">Open</a>
+                                }
+                                else
+                                {
+                                    <span class="muted">-</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+}
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">Expected JSON shape</h2>
+    <pre class="code-sample"><code>{
+  "collections": [
+    {
+      "slug": "meeting-basics-a2",
+      "name": "Meeting basics A2",
+      "description": "Core words for simple work meetings.",
+      "imageUrl": null,
+      "publicationStatus": "Published",
+      "sortOrder": 10,
+      "words": [
+        { "wordPublicId": "00000000-0000-0000-0000-000000000000", "sortOrder": 1 },
+        { "wordPublicId": "11111111-1111-1111-1111-111111111111", "sortOrder": 2 }
+      ]
+    }
+  ]
+}</code></pre>
+</section>

@@ -1,6 +1,10 @@
 @model DarwinLingua.Web.Models.AdminTopicsPageViewModel
 @{
     ViewData["Title"] = "Topics";
+    var query = ViewData["AdminTopicQuery"] as string ?? string.Empty;
+    var selectedSystem = ViewData["AdminTopicSystem"] as string ?? string.Empty;
+    var selectedSort = ViewData["AdminTopicSort"] as string ?? "sortOrder";
+    var totalCount = ViewData["AdminTopicTotalCount"] as int? ?? Model.Topics.Count;
 }
 
 <section class="panel stack-lg">
@@ -15,6 +19,34 @@
 </section>
 
 <section class="panel stack-md">
+    <form class="admin-filter-panel admin-filter-panel--compact" method="get">
+        <label class="form-field">
+            <span>Search</span>
+            <input name="q" type="search" value="@query" placeholder="Key or localized name" />
+        </label>
+        <label class="form-field">
+            <span>System</span>
+            <select name="system">
+                <option value="">All topics</option>
+                <option value="true" selected="@(string.Equals(selectedSystem, "true", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">System</option>
+                <option value="false" selected="@(string.Equals(selectedSystem, "false", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Custom</option>
+            </select>
+        </label>
+        <label class="form-field">
+            <span>Sort</span>
+            <select name="sort">
+                <option value="sortOrder" selected="@(selectedSort == "sortOrder" ? "selected" : null)">Sort order</option>
+                <option value="key" selected="@(selectedSort == "key" ? "selected" : null)">Key</option>
+                <option value="updated" selected="@(selectedSort == "updated" ? "selected" : null)">Recently updated</option>
+                <option value="words" selected="@(selectedSort == "words" ? "selected" : null)">Most words</option>
+            </select>
+        </label>
+        <button class="button button--compact" type="submit">Apply</button>
+        <a class="button button--secondary button--compact" asp-action="Index">Reset</a>
+    </form>
+    <div class="cluster cluster--between">
+        <span class="eyebrow">@Model.Topics.Count of @totalCount topics</span>
+    </div>
     <div class="table-scroll">
         <table class="data-table admin-data-grid">
             <thead>
@@ -29,31 +61,42 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var topic in Model.Topics)
+                @if (Model.Topics.Count == 0)
                 {
                     <tr>
-                        <td><strong>@topic.Key</strong></td>
-                        <td>
-                            @if (topic.Localizations.Count == 0)
-                            {
-                                <span class="muted">-</span>
-                            }
-                            else
-                            {
-                                <div class="tag-list">
-                                    @foreach (var localization in topic.Localizations)
-                                    {
-                                        <span class="tag">@localization.LanguageCode: @localization.DisplayName</span>
-                                    }
-                                </div>
-                            }
+                        <td colspan="7">
+                            <div class="state-panel">No topics match the current filters.</div>
                         </td>
-                        <td>@topic.SortOrder</td>
-                        <td>@topic.WordCount</td>
-                        <td>@(topic.IsSystem ? "Yes" : "No")</td>
-                        <td>@topic.UpdatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
-                        <td><a class="button button--compact" asp-action="Edit" asp-route-topicId="@topic.TopicId">Edit</a></td>
                     </tr>
+                }
+                else
+                {
+                    @foreach (var topic in Model.Topics)
+                    {
+                        <tr>
+                            <td><strong>@topic.Key</strong></td>
+                            <td>
+                                @if (topic.Localizations.Count == 0)
+                                {
+                                    <span class="muted">-</span>
+                                }
+                                else
+                                {
+                                    <div class="tag-list">
+                                        @foreach (var localization in topic.Localizations)
+                                        {
+                                            <span class="tag">@localization.LanguageCode: @localization.DisplayName</span>
+                                        }
+                                    </div>
+                                }
+                            </td>
+                            <td>@topic.SortOrder</td>
+                            <td>@topic.WordCount</td>
+                            <td>@(topic.IsSystem ? "Yes" : "No")</td>
+                            <td>@topic.UpdatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                            <td><a class="button button--compact" asp-action="Edit" asp-route-topicId="@topic.TopicId">Edit</a></td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>

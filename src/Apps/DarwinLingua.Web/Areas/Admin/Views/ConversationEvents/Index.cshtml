@@ -17,7 +17,7 @@
 
 <section class="panel stack-md">
     <h2 class="headline-sm">Create or replace event</h2>
-    <form method="post" class="form-grid">
+    <form method="post" class="form-grid" data-confirm-submit="Save this public conversation event listing?">
         @Html.AntiForgeryToken()
         <label class="field">
             <span>Slug</span>
@@ -138,41 +138,43 @@
     }
     else
     {
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Mode</th>
-                    <th>Levels</th>
-                    <th>Organizer</th>
-                    <th>Preparation</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Events)
-                {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td>
-                            <strong>@item.Name</strong>
-                            <div>@item.Slug</div>
-                            <a asp-area="" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
-                        </td>
-                        <td>@(item.IsOnline ? "Online" : item.City ?? item.CountryRegion)</td>
-                        <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
-                        <td>
-                            @if (!string.IsNullOrWhiteSpace(item.OrganizerProfileSlug))
-                            {
-                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerName</a>
-                            }
-                            else
-                            {
-                                @item.OrganizerName
-                            }
-                        </td>
-                        <td>@string.Join(", ", item.LinkedEventPreparationPackSlugs)</td>
+                        <th>Event</th>
+                        <th>Mode</th>
+                        <th>Levels</th>
+                        <th>Organizer</th>
+                        <th>Preparation</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Events)
+                    {
+                        <tr>
+                            <td>
+                                <strong>@item.Name</strong>
+                                <div>@item.Slug</div>
+                                <a asp-area="" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
+                            </td>
+                            <td>@(item.IsOnline ? "Online" : item.City ?? item.CountryRegion)</td>
+                            <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
+                            <td>
+                                @if (!string.IsNullOrWhiteSpace(item.OrganizerProfileSlug))
+                                {
+                                    <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerName</a>
+                                }
+                                else
+                                {
+                                    @item.OrganizerName
+                                }
+                            </td>
+                            <td>@string.Join(", ", item.LinkedEventPreparationPackSlugs)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </section>

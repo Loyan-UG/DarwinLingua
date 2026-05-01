@@ -9,7 +9,7 @@
         <a class="button button--secondary" asp-action="Index">Back to words</a>
     </div>
 
-    <form class="stack-md" method="post" enctype="multipart/form-data" asp-action="Import">
+    <form class="stack-md" method="post" enctype="multipart/form-data" asp-action="Import" data-confirm-submit="Import these words from JSON?">
         @Html.AntiForgeryToken()
         <div asp-validation-summary="ModelOnly" class="validation-message"></div>
         <label class="form-field">

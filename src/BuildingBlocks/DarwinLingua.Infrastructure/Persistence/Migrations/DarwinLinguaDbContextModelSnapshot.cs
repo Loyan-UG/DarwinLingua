@@ -364,7 +364,8 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasDatabaseName("IX_ConversationStarterPackTopics_PrimaryPerPack")
                         .HasFilter("\"IsPrimary\"");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("TopicId")
+                        .HasDatabaseName("IX_ConversationStarterPackTopics_TopicId");
 
                     b.HasIndex("ConversationStarterPackId", "TopicId")
                         .IsUnique();
@@ -615,7 +616,8 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasDatabaseName("IX_EventPreparationPackTopics_PrimaryPerPack")
                         .HasFilter("\"IsPrimary\"");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("TopicId")
+                        .HasDatabaseName("IX_EventPreparationPackTopics_TopicId");
 
                     b.HasIndex("EventPreparationPackId", "TopicId")
                         .IsUnique();
@@ -799,6 +801,46 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("ExampleTranslations", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.LabelDefinition", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsSystem")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Kind")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Kind", "Key")
+                        .IsUnique();
+
+                    b.ToTable("LabelDefinitions", (string)null);
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.LearnerConversationProfile", b =>
@@ -1446,7 +1488,8 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasDatabaseName("IX_ScenarioLessonTopics_PrimaryPerLesson")
                         .HasFilter("\"IsPrimary\"");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("TopicId")
+                        .HasDatabaseName("IX_ScenarioLessonTopics_TopicId");
 
                     b.HasIndex("ScenarioLessonId", "TopicId")
                         .IsUnique();
@@ -2081,6 +2124,9 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Kind", "Key", "WordEntryId")
+                        .HasDatabaseName("IX_WordLabels_Kind_Key_WordEntryId");
+
                     b.HasIndex("WordEntryId", "Kind", "Key")
                         .IsUnique();
 
@@ -2247,7 +2293,8 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("TopicId")
+                        .HasDatabaseName("IX_WordTopics_TopicId");
 
                     b.HasIndex("WordEntryId")
                         .IsUnique()

@@ -18,6 +18,7 @@ public interface IWebsiteAdminQueryService
     Task<AdminCatalogWordsResponse> GetWordsAsync(
         string? query,
         string? statusFilter,
+        string? sort,
         int skip,
         int take,
         CancellationToken cancellationToken);
@@ -116,12 +117,14 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
     public async Task<AdminCatalogWordsResponse> GetWordsAsync(
         string? queryText,
         string? statusFilter,
+        string? sort,
         int skip,
         int take,
         CancellationToken cancellationToken)
     {
         string? normalizedQuery = NormalizeFilter(queryText);
         string? normalizedStatusFilter = NormalizeFilter(statusFilter);
+        string normalizedSort = NormalizeWordSort(sort);
         int normalizedSkip = Math.Max(0, skip);
         int normalizedTake = Math.Clamp(take, 10, 100);
 
@@ -130,6 +133,7 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
             return new AdminCatalogWordsResponse(
                 normalizedQuery,
                 normalizedStatusFilter,
+                normalizedSort,
                 normalizedSkip,
                 normalizedTake,
                 0,
@@ -153,8 +157,15 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
 
         int totalCount = await query.CountAsync(cancellationToken).ConfigureAwait(false);
 
+        query = normalizedSort switch
+        {
+            "updated" => query.OrderByDescending(word => word.UpdatedAtUtc).ThenBy(word => word.NormalizedLemma),
+            "cefr" => query.OrderBy(word => word.PrimaryCefrLevel).ThenBy(word => word.NormalizedLemma),
+            "status" => query.OrderBy(word => word.PublicationStatus).ThenBy(word => word.NormalizedLemma),
+            _ => query.OrderBy(word => word.NormalizedLemma)
+        };
+
         AdminCatalogWordItemResponse[] words = await query
-            .OrderBy(word => word.NormalizedLemma)
             .Skip(normalizedSkip)
             .Take(normalizedTake)
             .Select(word => new AdminCatalogWordItemResponse(
@@ -174,6 +185,7 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
         return new AdminCatalogWordsResponse(
             normalizedQuery,
             normalizedStatusFilter,
+            normalizedSort,
             normalizedSkip,
             normalizedTake,
             totalCount,
@@ -218,6 +230,20 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
                 .Where(topic => topicIds.Contains(topic.Id))
                 .ToDictionaryAsync(topic => topic.Id, topic => topic.Key, cancellationToken)
                 .ConfigureAwait(false);
+
+        WordLabelKind[] labelKinds = word.Labels.Select(label => label.Kind).Distinct().ToArray();
+        LabelDefinition[] labelDefinitions = labelKinds.Length == 0
+            ? []
+            : await dbContext.LabelDefinitions
+            .AsNoTracking()
+            .Where(label => labelKinds.Contains(label.Kind))
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        Dictionary<string, string> labelDisplayNamesByKey = labelDefinitions.ToDictionary(
+            label => CreateLabelLookupKey(label.Kind, label.Key),
+            label => label.DisplayName,
+            StringComparer.Ordinal);
 
         return new AdminCatalogWordDetailResponse(
             word.PublicId,
@@ -293,6 +319,7 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
                 .Select(label => new AdminCatalogWordLabelResponse(
                     label.Kind.ToString(),
                     label.Key,
+                    labelDisplayNamesByKey.GetValueOrDefault(CreateLabelLookupKey(label.Kind, label.Key), HumanizeLabelKey(label.Key)),
                     label.SortOrder))
                 .ToArray(),
             word.GrammarNotes
@@ -307,6 +334,15 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
                     collocation.SortOrder))
                 .ToArray());
     }
+
+    private static string CreateLabelLookupKey(WordLabelKind kind, string key) =>
+        string.Concat(kind.ToString(), "::", key);
+
+    private static string HumanizeLabelKey(string key) =>
+        string.Join(
+            ' ',
+            key.Split('-', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                .Select(static part => part.Length == 0 ? part : string.Concat(char.ToUpperInvariant(part[0]), part[1..])));
 
     public async Task<AdminCatalogDraftWordsResponse> GetDraftWordsAsync(string? queryText, CancellationToken cancellationToken)
     {
@@ -398,6 +434,12 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
 
     private static string? NormalizeFilter(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private static string NormalizeWordSort(string? value)
+    {
+        string? normalized = NormalizeFilter(value)?.ToLowerInvariant();
+        return normalized is "updated" or "cefr" or "status" ? normalized : "lemma";
+    }
 
     private static bool TryParseContentPackageStatusFilter(
         string? statusFilter,

@@ -80,11 +80,68 @@ public sealed record AdminTopicLocalizationRequest(
     string LanguageCode,
     string DisplayName);
 
+public sealed record AdminMergeTopicRequest(
+    Guid TargetTopicId);
+
 public sealed record AdminLabelsPageViewModel(
     IReadOnlyList<AdminLabelItemViewModel> Labels);
 
 public sealed record AdminLabelItemViewModel(
+    Guid LabelId,
     string Kind,
     string Key,
+    string DisplayName,
+    int SortOrder,
+    bool IsSystem,
     int WordCount,
-    int FirstSortOrder);
+    DateTime UpdatedAtUtc);
+
+public sealed class AdminLabelEditViewModel
+{
+    public Guid LabelId { get; set; }
+
+    public bool IsNew => LabelId == Guid.Empty;
+
+    [Required]
+    public string Kind { get; set; } = "Usage";
+
+    [Required]
+    [StringLength(64)]
+    [RegularExpression("^[a-z0-9]+(-[a-z0-9]+)*$")]
+    public string Key { get; set; } = string.Empty;
+
+    [Required]
+    [StringLength(128)]
+    public string DisplayName { get; set; } = string.Empty;
+
+    [Range(0, int.MaxValue)]
+    public int SortOrder { get; set; }
+
+    public bool IsSystem { get; set; }
+
+    public static AdminLabelEditViewModel CreateNew() => new()
+    {
+        LabelId = Guid.Empty,
+        Kind = "Usage",
+    };
+
+    public static AdminLabelEditViewModel FromItem(AdminLabelItemViewModel label) => new()
+    {
+        LabelId = label.LabelId,
+        Kind = label.Kind,
+        Key = label.Key,
+        DisplayName = label.DisplayName,
+        SortOrder = label.SortOrder,
+        IsSystem = label.IsSystem,
+    };
+}
+
+public sealed record AdminSaveLabelRequest(
+    string Kind,
+    string Key,
+    string DisplayName,
+    int SortOrder,
+    bool IsSystem);
+
+public sealed record AdminMergeLabelRequest(
+    Guid TargetLabelId);

@@ -3,6 +3,7 @@ namespace DarwinLingua.Web.Models;
 public sealed record AdminWordsPageViewModel(
     string? Query,
     string? StatusFilter,
+    string Sort,
     int Skip,
     int Take,
     int TotalCount,
@@ -100,6 +101,7 @@ public sealed record AdminWordTopicViewModel(
 public sealed record AdminWordLabelViewModel(
     string Kind,
     string Key,
+    string DisplayName,
     int SortOrder);
 
 public sealed record AdminWordTextItemViewModel(

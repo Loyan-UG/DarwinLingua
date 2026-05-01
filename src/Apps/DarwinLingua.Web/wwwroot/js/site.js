@@ -324,6 +324,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    document.body.addEventListener("submit", (event) => {
+        const form = event.target instanceof HTMLFormElement ? event.target : null;
+        const message = form ? form.getAttribute("data-confirm-submit") : null;
+        if (!message) {
+            return;
+        }
+
+        if (!window.confirm(message)) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
+
     document.body.addEventListener("htmx:responseError", () => {
         sendTelemetry({ eventName: "htmx.response.error", isFailure: true });
     });

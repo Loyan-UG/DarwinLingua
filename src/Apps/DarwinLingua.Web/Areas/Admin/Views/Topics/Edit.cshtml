@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.AdminTopicEditViewModel
 @{
     ViewData["Title"] = Model.IsNew ? "New topic" : "Edit topic";
+    var mergeTargets = ViewData["MergeTargets"] as IReadOnlyList<DarwinLingua.Web.Models.AdminTopicItemViewModel> ?? [];
 }
 
 <section class="panel stack-lg">
@@ -12,8 +13,12 @@
     {
         <div class="state-panel state-panel--success">@statusMessage</div>
     }
+    @if (TempData["AdminErrorMessage"] is string errorMessage)
+    {
+        <div class="state-panel state-panel--warning">@errorMessage</div>
+    }
 
-    <form class="stack-md" method="post">
+    <form class="stack-md" method="post" data-confirm-submit="Save this topic definition?">
         @Html.AntiForgeryToken()
         <input type="hidden" asp-for="TopicId" />
         <div asp-validation-summary="ModelOnly" class="validation-message"></div>
@@ -62,3 +67,26 @@
         <button class="button" type="submit">Save topic</button>
     </form>
 </section>
+
+@if (!Model.IsNew)
+{
+    <section class="panel stack-md">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Merge", "Consolidate duplicate topics", "Move words, scenarios, conversation starters, and event preparation packs from this topic into another topic safely.")' />
+        <form class="admin-inline-panel stack-sm" method="post" asp-action="Merge" asp-route-topicId="@Model.TopicId" data-confirm-submit="Merge this topic into the selected target?">
+            @Html.AntiForgeryToken()
+            <div class="admin-inline-form-grid">
+                <label class="form-field">
+                    <span>Target topic</span>
+                    <select name="targetTopicId" required>
+                        <option value="">Select target topic</option>
+                        @foreach (var topic in mergeTargets)
+                        {
+                            <option value="@topic.TopicId">@topic.Key (@topic.WordCount words)</option>
+                        }
+                    </select>
+                </label>
+                <button class="button button--secondary button--compact" type="submit" disabled="@(mergeTargets.Count == 0)">Merge into target</button>
+            </div>
+        </form>
+    </section>
+}

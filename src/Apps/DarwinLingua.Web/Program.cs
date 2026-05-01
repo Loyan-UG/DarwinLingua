@@ -41,6 +41,7 @@ builder.Services.AddOutputCache(options =>
         .SetVaryByHeader("Cookie"));
     options.AddPolicy("CatalogBrowse", policy => policy
         .Expire(TimeSpan.FromMinutes(2))
+        .Tag("catalog")
         .SetVaryByHeader("Cookie")
         .SetVaryByQuery(
             "id",

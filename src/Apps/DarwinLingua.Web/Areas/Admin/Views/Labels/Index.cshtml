@@ -1,32 +1,103 @@
 @model DarwinLingua.Web.Models.AdminLabelsPageViewModel
 @{
     ViewData["Title"] = "Labels";
+    var query = ViewData["AdminLabelQuery"] as string ?? string.Empty;
+    var selectedKind = ViewData["AdminLabelKind"] as string ?? string.Empty;
+    var selectedSystem = ViewData["AdminLabelSystem"] as string ?? string.Empty;
+    var selectedSort = ViewData["AdminLabelSort"] as string ?? "sortOrder";
+    var kinds = ViewData["AdminLabelKinds"] as string[] ?? [];
+    var totalCount = ViewData["AdminLabelTotalCount"] as int? ?? Model.Labels.Count;
 }
 
 <section class="panel stack-lg">
-    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Labels", "Used label keys", "Review normalized label keys currently attached to words. Full label taxonomy editing will move these into managed reference data later.")' />
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Labels", "Managed label taxonomy", "Maintain normalized usage and context labels for catalog filtering, imports, and admin word editing.")' />
+        <a class="button" asp-action="New">New label</a>
+    </div>
+    @if (TempData["AdminStatusMessage"] is string statusMessage)
+    {
+        <div class="state-panel state-panel--success">@statusMessage</div>
+    }
 </section>
 
 <section class="panel stack-md">
+    <form class="admin-filter-panel" method="get">
+        <label class="form-field">
+            <span>Search</span>
+            <input name="q" type="search" value="@query" placeholder="Display name or key" />
+        </label>
+        <label class="form-field">
+            <span>Kind</span>
+            <select name="kind">
+                <option value="">All kinds</option>
+                @foreach (var kind in kinds)
+                {
+                    <option value="@kind" selected="@(string.Equals(kind, selectedKind, StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@kind</option>
+                }
+            </select>
+        </label>
+        <label class="form-field">
+            <span>System</span>
+            <select name="system">
+                <option value="">All labels</option>
+                <option value="true" selected="@(string.Equals(selectedSystem, "true", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">System</option>
+                <option value="false" selected="@(string.Equals(selectedSystem, "false", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Custom</option>
+            </select>
+        </label>
+        <label class="form-field">
+            <span>Sort</span>
+            <select name="sort">
+                <option value="sortOrder" selected="@(selectedSort == "sortOrder" ? "selected" : null)">Sort order</option>
+                <option value="displayName" selected="@(selectedSort == "displayName" ? "selected" : null)">Display name</option>
+                <option value="kind" selected="@(selectedSort == "kind" ? "selected" : null)">Kind</option>
+                <option value="updated" selected="@(selectedSort == "updated" ? "selected" : null)">Recently updated</option>
+                <option value="words" selected="@(selectedSort == "words" ? "selected" : null)">Most words</option>
+            </select>
+        </label>
+        <button class="button button--compact" type="submit">Apply</button>
+        <a class="button button--secondary button--compact" asp-action="Index">Reset</a>
+    </form>
+    <div class="cluster cluster--between">
+        <span class="eyebrow">@Model.Labels.Count of @totalCount labels</span>
+    </div>
     <div class="table-scroll">
         <table class="data-table admin-data-grid">
             <thead>
                 <tr>
+                    <th>Display name</th>
                     <th>Kind</th>
                     <th>Key</th>
                     <th>Words</th>
-                    <th>First sort</th>
+                    <th>Sort</th>
+                    <th>System</th>
+                    <th>Updated</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var label in Model.Labels)
+                @if (Model.Labels.Count == 0)
                 {
                     <tr>
-                        <td>@label.Kind</td>
-                        <td><strong>@label.Key</strong></td>
-                        <td>@label.WordCount</td>
-                        <td>@label.FirstSortOrder</td>
+                        <td colspan="8">
+                            <div class="state-panel">No labels match the current filters.</div>
+                        </td>
                     </tr>
+                }
+                else
+                {
+                    @foreach (var label in Model.Labels)
+                    {
+                        <tr>
+                            <td><strong>@label.DisplayName</strong></td>
+                            <td>@label.Kind</td>
+                            <td><code>@label.Key</code></td>
+                            <td>@label.WordCount</td>
+                            <td>@label.SortOrder</td>
+                            <td>@(label.IsSystem ? "Yes" : "No")</td>
+                            <td>@label.UpdatedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                            <td><a class="button button--secondary button--sm" asp-action="Edit" asp-route-labelId="@label.LabelId">Edit</a></td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>

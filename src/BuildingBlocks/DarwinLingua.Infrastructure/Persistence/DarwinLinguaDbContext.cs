@@ -78,6 +78,8 @@ public sealed class DarwinLinguaDbContext : DbContext
     /// </summary>
     public DbSet<WordLabel> WordLabels => Set<WordLabel>();
 
+    public DbSet<LabelDefinition> LabelDefinitions => Set<LabelDefinition>();
+
     /// <summary>
     /// Gets the lexical grammar-note data set.
     /// </summary>
@@ -261,6 +263,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ListingReviewConfiguration());
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
+        modelBuilder.ApplyConfiguration(new LabelDefinitionConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());
         modelBuilder.ApplyConfiguration(new SenseTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new ExampleSentenceConfiguration());

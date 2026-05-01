@@ -29,20 +29,22 @@
     {
         <article class="panel stack-md">
             <h2 class="headline-sm">@metricSection.Title</h2>
-            <table class="data-table">
-                <tbody>
-                    @foreach (var metric in metricSection.Metrics)
-                    {
-                        <tr>
-                            <th>@metric.Label</th>
-                            <td>
-                                <strong>@metric.Value</strong>
-                                <p class="body-sm">@metric.Description</p>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            <div class="table-scroll">
+                <table class="data-table admin-data-grid">
+                    <tbody>
+                        @foreach (var metric in metricSection.Metrics)
+                        {
+                            <tr>
+                                <th>@metric.Label</th>
+                                <td>
+                                    <strong>@metric.Value</strong>
+                                    <p class="body-sm">@metric.Description</p>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </article>
     }
 </section>
@@ -55,26 +57,28 @@
     }
     else
     {
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Scope</th>
-                    <th>Count</th>
-                    <th>Last seen</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.AnalyticsItems)
-                {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td>@item.EventName</td>
-                        <td>@item.ScopeKey</td>
-                        <td>@item.Count</td>
-                        <td>@item.LastSeenAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                        <th>Event</th>
+                        <th>Scope</th>
+                        <th>Count</th>
+                        <th>Last seen</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.AnalyticsItems)
+                    {
+                        <tr>
+                            <td>@item.EventName</td>
+                            <td>@item.ScopeKey</td>
+                            <td>@item.Count</td>
+                            <td>@item.LastSeenAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </section>

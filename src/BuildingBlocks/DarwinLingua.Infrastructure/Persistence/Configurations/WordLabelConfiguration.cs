@@ -44,5 +44,8 @@ internal sealed class WordLabelConfiguration : IEntityTypeConfiguration<WordLabe
 
         builder.HasIndex(label => new { label.WordEntryId, label.Kind, label.SortOrder })
             .IsUnique();
+
+        builder.HasIndex(label => new { label.Kind, label.Key, label.WordEntryId })
+            .HasDatabaseName("IX_WordLabels_Kind_Key_WordEntryId");
     }
 }

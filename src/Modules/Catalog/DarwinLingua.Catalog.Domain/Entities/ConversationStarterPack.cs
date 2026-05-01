@@ -215,6 +215,11 @@ public sealed class ConversationStarterPackTopic
     public bool IsPrimary { get; private set; }
 
     public DateTime CreatedAtUtc { get; private set; }
+
+    public void ReassignTopic(Guid topicId)
+    {
+        TopicId = topicId == Guid.Empty ? throw new DomainRuleException("Conversation starter topic identifier cannot be empty.") : topicId;
+    }
 }
 
 public sealed class ConversationStarterLinkedScenario

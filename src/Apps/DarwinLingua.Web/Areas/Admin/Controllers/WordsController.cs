@@ -2,6 +2,7 @@ using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.OutputCaching;
 using System.Text.Json;
 
 namespace DarwinLingua.Web.Areas.Admin.Controllers;
@@ -9,8 +10,11 @@ namespace DarwinLingua.Web.Areas.Admin.Controllers;
 [Area("Admin")]
 [Authorize(Policy = "Operator")]
 [Route("admin/words")]
-public sealed class WordsController(IWebAdminOperationsQueryService operationsQueryService) : Controller
+public sealed class WordsController(
+    IWebAdminOperationsQueryService operationsQueryService,
+    IOutputCacheStore outputCacheStore) : Controller
 {
+    private const string CatalogCacheTag = "catalog";
     private const int DefaultTake = 25;
     private const int MaxQueryLength = 128;
     private const int MaxTake = 100;
@@ -20,22 +24,24 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
     public async Task<IActionResult> Index(
         string? q,
         string? status,
+        string? sort,
         int? skip,
         int? take,
         CancellationToken cancellationToken)
     {
-        return View(await GetPageAsync(q, status, skip, take, cancellationToken));
+        return View(await GetPageAsync(q, status, sort, skip, take, cancellationToken));
     }
 
     [HttpGet("table", Name = "Admin_WordsTable")]
     public async Task<IActionResult> Table(
         string? q,
         string? status,
+        string? sort,
         int? skip,
         int? take,
         CancellationToken cancellationToken)
     {
-        return PartialView("_WordsTable", await GetPageAsync(q, status, skip, take, cancellationToken));
+        return PartialView("_WordsTable", await GetPageAsync(q, status, sort, skip, take, cancellationToken));
     }
 
     [HttpGet("new", Name = "Admin_WordNew")]
@@ -85,6 +91,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
                 .ImportWordsAsync(request, cancellationToken)
                 .ConfigureAwait(false);
 
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return View(result);
         }
         catch (JsonException ex)
@@ -119,6 +126,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
                 .ConfigureAwait(false);
 
             TempData["AdminStatusMessage"] = "Word was created.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Details), new { publicId = word.PublicId });
         }
         catch (DbUpdateException)
@@ -192,6 +200,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
         }
 
         TempData["AdminStatusMessage"] = "Word metadata was updated.";
+        await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         return RedirectToAction(nameof(Details), new { publicId });
     }
 
@@ -220,6 +229,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
             }
 
             TempData["AdminStatusMessage"] = "Sense was added.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Details), new { publicId });
         }
         catch (InvalidOperationException ex)
@@ -264,6 +274,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
             }
 
             TempData["AdminStatusMessage"] = "Translation was added.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Details), new { publicId });
         }
         catch (InvalidOperationException ex)
@@ -309,6 +320,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
             }
 
             TempData["AdminStatusMessage"] = "Example was added.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Details), new { publicId });
         }
         catch (InvalidOperationException ex)
@@ -350,6 +362,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
             }
 
             TempData["AdminStatusMessage"] = "Translation was updated.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Details), new { publicId });
         }
         catch (InvalidOperationException ex)
@@ -377,6 +390,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
         }
 
         TempData["AdminStatusMessage"] = "Translation was deleted.";
+        await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         return RedirectToAction(nameof(Details), new { publicId });
     }
 
@@ -412,6 +426,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
             }
 
             TempData["AdminStatusMessage"] = "Example was updated.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Details), new { publicId });
         }
         catch (InvalidOperationException ex)
@@ -439,6 +454,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
         }
 
         TempData["AdminStatusMessage"] = "Example was deleted.";
+        await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         return RedirectToAction(nameof(Details), new { publicId });
     }
 
@@ -466,6 +482,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
         }
 
         TempData["AdminStatusMessage"] = "Topic was attached to the word.";
+        await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         return RedirectToAction(nameof(Details), new { publicId });
     }
 
@@ -486,6 +503,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
         }
 
         TempData["AdminStatusMessage"] = "Topic was removed from the word.";
+        await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         return RedirectToAction(nameof(Details), new { publicId });
     }
 
@@ -493,13 +511,12 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> AddLabel(
         Guid publicId,
-        string kind,
-        string key,
+        string labelKey,
         CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(kind) || string.IsNullOrWhiteSpace(key))
+        if (!TrySplitLabelKey(labelKey, out string kind, out string key))
         {
-            TempData["AdminErrorMessage"] = "Label kind and key are required.";
+            TempData["AdminErrorMessage"] = "Select a label first.";
             return RedirectToAction(nameof(Details), new { publicId });
         }
 
@@ -515,6 +532,7 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
             }
 
             TempData["AdminStatusMessage"] = "Label was attached to the word.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Details), new { publicId });
         }
         catch (InvalidOperationException ex)
@@ -542,18 +560,24 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
         }
 
         TempData["AdminStatusMessage"] = "Label was removed from the word.";
+        await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         return RedirectToAction(nameof(Details), new { publicId });
     }
+
+    private ValueTask EvictCatalogCacheAsync(CancellationToken cancellationToken) =>
+        outputCacheStore.EvictByTagAsync(CatalogCacheTag, cancellationToken);
 
     private Task<Models.AdminWordsPageViewModel> GetPageAsync(
         string? q,
         string? status,
+        string? sort,
         int? skip,
         int? take,
         CancellationToken cancellationToken) =>
         operationsQueryService.GetWordsAsync(
             NormalizeQuery(q),
             NormalizeStatus(status),
+            NormalizeWordSort(sort),
             Math.Max(0, skip ?? 0),
             Math.Clamp(take ?? DefaultTake, 10, MaxTake),
             cancellationToken);
@@ -572,8 +596,35 @@ public sealed class WordsController(IWebAdminOperationsQueryService operationsQu
     private static string? NormalizeStatus(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();
 
+    private static string NormalizeWordSort(string? value)
+    {
+        string? normalized = NormalizeOptional(value)?.ToLowerInvariant();
+        return normalized is "updated" or "cefr" or "status" ? normalized : "lemma";
+    }
+
     private static string? NormalizeOptional(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private static bool TrySplitLabelKey(string? value, out string kind, out string key)
+    {
+        kind = string.Empty;
+        key = string.Empty;
+
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return false;
+        }
+
+        string[] parts = value.Split("::", 2, StringSplitOptions.TrimEntries);
+        if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]) || string.IsNullOrWhiteSpace(parts[1]))
+        {
+            return false;
+        }
+
+        kind = parts[0];
+        key = parts[1];
+        return true;
+    }
 
     private static Models.AdminUpdateWordMetadataRequest ToMetadataRequest(Models.AdminWordEditViewModel form) =>
         new(

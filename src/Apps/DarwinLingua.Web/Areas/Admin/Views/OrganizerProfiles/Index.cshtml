@@ -17,7 +17,7 @@
 
 <section class="panel stack-md">
     <h2 class="headline-sm">Create or replace organizer</h2>
-    <form method="post" class="form-grid">
+    <form method="post" class="form-grid" data-confirm-submit="Save this public organizer profile?">
         @Html.AntiForgeryToken()
         <label class="field">
             <span>Slug</span>
@@ -92,7 +92,7 @@
 
 <section class="panel stack-md">
     <h2 class="headline-sm">Assign owner</h2>
-    <form method="post" asp-action="AssignOwner" class="form-grid">
+    <form method="post" asp-action="AssignOwner" class="form-grid" data-confirm-submit="Assign this owner email to the organizer profile?">
         @Html.AntiForgeryToken()
         <label class="field">
             <span>Organizer profile slug</span>
@@ -116,29 +116,31 @@
     }
     else
     {
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Organizer</th>
-                    <th>Owner</th>
-                    <th>Assigned by</th>
-                    <th>Assigned</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Owners)
-                {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td>
-                            <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
-                        </td>
-                        <td>@item.OwnerEmail</td>
-                        <td>@item.AssignedBy</td>
-                        <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                        <th>Organizer</th>
+                        <th>Owner</th>
+                        <th>Assigned by</th>
+                        <th>Assigned</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Owners)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
+                            </td>
+                            <td>@item.OwnerEmail</td>
+                            <td>@item.AssignedBy</td>
+                            <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </section>
 
@@ -151,62 +153,64 @@
     }
     else
     {
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Organizer</th>
-                    <th>Requester</th>
-                    <th>Relationship</th>
-                    <th>Status</th>
-                    <th>Submitted</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.ClaimRequests)
-                {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td>
-                            <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
-                        </td>
-                        <td>
-                            <strong>@item.RequesterName</strong>
-                            <div>@item.RequesterEmail</div>
-                            <div>@item.EvidenceText</div>
-                        </td>
-                        <td>@item.RelationshipToOrganizer</td>
-                        <td>@item.Status</td>
-                        <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
-                        <td>
-                            <div class="action-row">
-                                @if (item.Status is "submitted" or "reviewing")
-                                {
-                                    <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form">
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" name="Status" value="reviewing" />
-                                        <button type="submit" class="button button--secondary">Reviewing</button>
-                                    </form>
-                                    <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form">
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" name="Status" value="approved" />
-                                        <button type="submit" class="button button--primary">Approve</button>
-                                    </form>
-                                    <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form">
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" name="Status" value="rejected" />
-                                        <button type="submit" class="button button--secondary">Reject</button>
-                                    </form>
-                                }
-                                else
-                                {
-                                    <span>Decision sent</span>
-                                }
-                            </div>
-                        </td>
+                        <th>Organizer</th>
+                        <th>Requester</th>
+                        <th>Relationship</th>
+                        <th>Status</th>
+                        <th>Submitted</th>
+                        <th>Actions</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ClaimRequests)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
+                            </td>
+                            <td>
+                                <strong>@item.RequesterName</strong>
+                                <div>@item.RequesterEmail</div>
+                                <div>@item.EvidenceText</div>
+                            </td>
+                            <td>@item.RelationshipToOrganizer</td>
+                            <td>@item.Status</td>
+                            <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                            <td>
+                                <div class="action-row">
+                                    @if (item.Status is "submitted" or "reviewing")
+                                    {
+                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="Mark this organizer claim as reviewing?">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="Status" value="reviewing" />
+                                            <button type="submit" class="button button--secondary">Reviewing</button>
+                                        </form>
+                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="Approve this organizer claim and notify the requester?">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="Status" value="approved" />
+                                            <button type="submit" class="button button--primary">Approve</button>
+                                        </form>
+                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="Reject this organizer claim and notify the requester?">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="Status" value="rejected" />
+                                            <button type="submit" class="button button--secondary">Reject</button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <span>Decision sent</span>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </section>
 
@@ -218,32 +222,34 @@
     }
     else
     {
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Organizer</th>
-                    <th>Type</th>
-                    <th>Levels</th>
-                    <th>Events</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Profiles)
-                {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td>
-                            <strong>@item.DisplayName</strong>
-                            <div>@item.Slug</div>
-                            <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
-                        </td>
-                        <td>@item.OrganizerType</td>
-                        <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
-                        <td>@item.ActiveEventCount active · @item.HistoricalEventCount historical</td>
-                        <td>@item.VerificationStatus</td>
+                        <th>Organizer</th>
+                        <th>Type</th>
+                        <th>Levels</th>
+                        <th>Events</th>
+                        <th>Status</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Profiles)
+                    {
+                        <tr>
+                            <td>
+                                <strong>@item.DisplayName</strong>
+                                <div>@item.Slug</div>
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
+                            </td>
+                            <td>@item.OrganizerType</td>
+                            <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
+                            <td>@item.ActiveEventCount active · @item.HistoricalEventCount historical</td>
+                            <td>@item.VerificationStatus</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </section>

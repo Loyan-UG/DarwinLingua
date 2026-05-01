@@ -3,18 +3,58 @@ using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace DarwinLingua.Web.Areas.Admin.Controllers;
 
 [Area("Admin")]
 [Authorize(Policy = "Operator")]
 [Route("admin/topics")]
-public sealed class TopicsController(IWebAdminOperationsQueryService operationsQueryService) : Controller
+public sealed class TopicsController(
+    IWebAdminOperationsQueryService operationsQueryService,
+    IOutputCacheStore outputCacheStore) : Controller
 {
+    private const string CatalogCacheTag = "catalog";
+
     [HttpGet("", Name = "Admin_Topics")]
-    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(
+        string? q,
+        string? system,
+        string? sort,
+        CancellationToken cancellationToken)
     {
-        return View(await operationsQueryService.GetTopicsAsync(cancellationToken).ConfigureAwait(false));
+        AdminTopicsPageViewModel page = await operationsQueryService.GetTopicsAsync(cancellationToken).ConfigureAwait(false);
+        AdminTopicItemViewModel[] allTopics = page.Topics.ToArray();
+        IEnumerable<AdminTopicItemViewModel> topics = allTopics;
+
+        if (!string.IsNullOrWhiteSpace(q))
+        {
+            topics = topics.Where(topic =>
+                topic.Key.Contains(q, StringComparison.OrdinalIgnoreCase) ||
+                topic.Localizations.Any(localization =>
+                    localization.LanguageCode.Contains(q, StringComparison.OrdinalIgnoreCase) ||
+                    localization.DisplayName.Contains(q, StringComparison.OrdinalIgnoreCase)));
+        }
+
+        if (!string.IsNullOrWhiteSpace(system) && bool.TryParse(system, out bool isSystem))
+        {
+            topics = topics.Where(topic => topic.IsSystem == isSystem);
+        }
+
+        topics = sort switch
+        {
+            "key" => topics.OrderBy(topic => topic.Key).ThenBy(topic => topic.SortOrder),
+            "updated" => topics.OrderByDescending(topic => topic.UpdatedAtUtc).ThenBy(topic => topic.Key),
+            "words" => topics.OrderByDescending(topic => topic.WordCount).ThenBy(topic => topic.Key),
+            _ => topics.OrderBy(topic => topic.SortOrder).ThenBy(topic => topic.Key),
+        };
+
+        ViewData["AdminTopicQuery"] = q ?? string.Empty;
+        ViewData["AdminTopicSystem"] = system ?? string.Empty;
+        ViewData["AdminTopicSort"] = string.IsNullOrWhiteSpace(sort) ? "sortOrder" : sort;
+        ViewData["AdminTopicTotalCount"] = allTopics.Length;
+
+        return View(new AdminTopicsPageViewModel(topics.ToArray()));
     }
 
     [HttpGet("new", Name = "Admin_TopicNew")]
@@ -41,6 +81,7 @@ public sealed class TopicsController(IWebAdminOperationsQueryService operationsQ
                 .ConfigureAwait(false);
 
             TempData["AdminStatusMessage"] = "Topic was created.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Edit), new { topicId = topic.TopicId });
         }
         catch (DbUpdateException)
@@ -62,7 +103,13 @@ public sealed class TopicsController(IWebAdminOperationsQueryService operationsQ
             .GetTopicAsync(topicId, cancellationToken)
             .ConfigureAwait(false);
 
-        return topic is null ? NotFound() : View(AdminTopicEditViewModel.FromItem(topic));
+        if (topic is null)
+        {
+            return NotFound();
+        }
+
+        await SetMergeTargetsAsync(topicId, cancellationToken).ConfigureAwait(false);
+        return View(AdminTopicEditViewModel.FromItem(topic));
     }
 
     [HttpPost("{topicId:guid}/edit", Name = "Admin_TopicEditPost")]
@@ -76,6 +123,7 @@ public sealed class TopicsController(IWebAdminOperationsQueryService operationsQ
 
         if (!ModelState.IsValid)
         {
+            await SetMergeTargetsAsync(topicId, cancellationToken).ConfigureAwait(false);
             return View(form);
         }
 
@@ -91,12 +139,46 @@ public sealed class TopicsController(IWebAdminOperationsQueryService operationsQ
             }
 
             TempData["AdminStatusMessage"] = "Topic was updated.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
             return RedirectToAction(nameof(Edit), new { topicId });
         }
         catch (InvalidOperationException ex)
         {
             ModelState.AddModelError(string.Empty, ex.Message);
+            await SetMergeTargetsAsync(topicId, cancellationToken).ConfigureAwait(false);
             return View(form);
+        }
+    }
+
+    [HttpPost("{topicId:guid}/merge", Name = "Admin_TopicMergePost")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Merge(Guid topicId, Guid targetTopicId, CancellationToken cancellationToken)
+    {
+        if (targetTopicId == Guid.Empty)
+        {
+            TempData["AdminErrorMessage"] = "Select a target topic first.";
+            return RedirectToAction(nameof(Edit), new { topicId });
+        }
+
+        try
+        {
+            AdminTopicItemViewModel? target = await operationsQueryService
+                .MergeTopicAsync(topicId, new AdminMergeTopicRequest(targetTopicId), cancellationToken)
+                .ConfigureAwait(false);
+
+            if (target is null)
+            {
+                return NotFound();
+            }
+
+            TempData["AdminStatusMessage"] = "Topic was merged and duplicate links were removed.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
+            return RedirectToAction(nameof(Edit), new { topicId = target.TopicId });
+        }
+        catch (InvalidOperationException ex)
+        {
+            TempData["AdminErrorMessage"] = ex.Message;
+            return RedirectToAction(nameof(Edit), new { topicId });
         }
     }
 
@@ -120,4 +202,20 @@ public sealed class TopicsController(IWebAdminOperationsQueryService operationsQ
             localizations.Add(new AdminTopicLocalizationRequest(languageCode.Trim(), displayName.Trim()));
         }
     }
+
+    private async Task SetMergeTargetsAsync(Guid topicId, CancellationToken cancellationToken)
+    {
+        AdminTopicsPageViewModel topics = await operationsQueryService
+            .GetTopicsAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        ViewData["MergeTargets"] = topics.Topics
+            .Where(topic => topic.TopicId != topicId)
+            .OrderBy(topic => topic.SortOrder)
+            .ThenBy(topic => topic.Key)
+            .ToArray();
+    }
+
+    private ValueTask EvictCatalogCacheAsync(CancellationToken cancellationToken) =>
+        outputCacheStore.EvictByTagAsync(CatalogCacheTag, cancellationToken);
 }

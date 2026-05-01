@@ -77,6 +77,26 @@ public sealed partial class ScenarioLesson
 
     public IReadOnlyCollection<ScenarioQuestion> Questions => _questions.AsReadOnly();
 
+    public void UpdateMetadata(
+        string title,
+        string description,
+        string learnerGoal,
+        CefrLevel cefrLevel,
+        string category,
+        PublicationStatus publicationStatus,
+        int sortOrder,
+        DateTime updatedAtUtc)
+    {
+        Title = NormalizeRequiredText(title, nameof(title), 256);
+        Description = NormalizeRequiredText(description, nameof(description), 4000);
+        LearnerGoal = NormalizeRequiredText(learnerGoal, nameof(learnerGoal), 1024);
+        CefrLevel = cefrLevel;
+        Category = NormalizeKey(category, "Scenario lesson category");
+        PublicationStatus = publicationStatus;
+        SortOrder = NormalizeSortOrder(sortOrder);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     public void AddTopic(Guid id, Guid topicId, bool isPrimary, DateTime createdAtUtc)
     {
         _topics.Add(new ScenarioLessonTopic(id, Id, topicId, isPrimary, createdAtUtc));
@@ -203,6 +223,11 @@ public sealed class ScenarioLessonTopic
     public bool IsPrimary { get; private set; }
 
     public DateTime CreatedAtUtc { get; private set; }
+
+    public void ReassignTopic(Guid topicId)
+    {
+        TopicId = topicId == Guid.Empty ? throw new DomainRuleException("Scenario topic identifier cannot be empty.") : topicId;
+    }
 }
 
 public sealed class ScenarioDialogueTurn

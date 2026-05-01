@@ -79,6 +79,18 @@ public sealed partial class WordLabel
     /// </summary>
     public DateTime CreatedAtUtc { get; private set; }
 
+    public void Reassign(WordLabelKind kind, string key, int sortOrder)
+    {
+        if (sortOrder <= 0)
+        {
+            throw new DomainRuleException("Word label sort order must be greater than zero.");
+        }
+
+        Kind = kind;
+        Key = NormalizeKey(key);
+        SortOrder = sortOrder;
+    }
+
     private static string NormalizeKey(string value)
     {
         if (string.IsNullOrWhiteSpace(value))

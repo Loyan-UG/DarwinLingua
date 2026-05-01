@@ -226,6 +226,63 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             ON WordEntries (PrimaryCefrLevel, NormalizedLemma);
             """,
             cancellationToken).ConfigureAwait(false);
+
+        await ExecuteSqliteIndexIfTableExistsAsync(
+            dbContext,
+            "WordLabels",
+            """
+            CREATE INDEX IF NOT EXISTS IX_WordLabels_Kind_Key_WordEntryId
+            ON WordLabels (Kind, Key, WordEntryId);
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await ExecuteSqliteIndexIfTableExistsAsync(
+            dbContext,
+            "WordTopics",
+            """
+            CREATE INDEX IF NOT EXISTS IX_WordTopics_TopicId
+            ON WordTopics (TopicId);
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await ExecuteSqliteIndexIfTableExistsAsync(
+            dbContext,
+            "ScenarioLessonTopics",
+            """
+            CREATE INDEX IF NOT EXISTS IX_ScenarioLessonTopics_TopicId
+            ON ScenarioLessonTopics (TopicId);
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await ExecuteSqliteIndexIfTableExistsAsync(
+            dbContext,
+            "ConversationStarterPackTopics",
+            """
+            CREATE INDEX IF NOT EXISTS IX_ConversationStarterPackTopics_TopicId
+            ON ConversationStarterPackTopics (TopicId);
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await ExecuteSqliteIndexIfTableExistsAsync(
+            dbContext,
+            "EventPreparationPackTopics",
+            """
+            CREATE INDEX IF NOT EXISTS IX_EventPreparationPackTopics_TopicId
+            ON EventPreparationPackTopics (TopicId);
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task ExecuteSqliteIndexIfTableExistsAsync(
+        DarwinLinguaDbContext dbContext,
+        string tableName,
+        string sql,
+        CancellationToken cancellationToken)
+    {
+        if (await TableExistsAsync(dbContext, tableName, cancellationToken).ConfigureAwait(false))
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(sql, cancellationToken).ConfigureAwait(false);
+        }
     }
 
     private static async Task EnsureRetrofitSchemaAsync(
@@ -380,6 +437,51 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
 
                     CREATE UNIQUE INDEX IF NOT EXISTS "IX_WordCollectionEntries_WordCollectionId_WordEntryId"
                         ON "WordCollectionEntries" ("WordCollectionId", "WordEntryId");
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        if (!await TableExistsAsync(dbContext, "LabelDefinitions", cancellationToken).ConfigureAwait(false))
+        {
+            if (dbContext.Database.IsSqlite())
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    CREATE TABLE IF NOT EXISTS LabelDefinitions (
+                        Id TEXT NOT NULL PRIMARY KEY,
+                        Kind TEXT NOT NULL,
+                        Key TEXT NOT NULL,
+                        DisplayName TEXT NOT NULL,
+                        SortOrder INTEGER NOT NULL,
+                        IsSystem INTEGER NOT NULL,
+                        CreatedAtUtc TEXT NOT NULL,
+                        UpdatedAtUtc TEXT NOT NULL
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS IX_LabelDefinitions_Kind_Key
+                        ON LabelDefinitions (Kind, Key);
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    CREATE TABLE IF NOT EXISTS "LabelDefinitions" (
+                        "Id" uuid NOT NULL,
+                        "Kind" character varying(16) NOT NULL,
+                        "Key" character varying(64) NOT NULL,
+                        "DisplayName" character varying(128) NOT NULL,
+                        "SortOrder" integer NOT NULL,
+                        "IsSystem" boolean NOT NULL,
+                        "CreatedAtUtc" timestamp with time zone NOT NULL,
+                        "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                        CONSTRAINT "PK_LabelDefinitions" PRIMARY KEY ("Id")
+                    );
+
+                    CREATE UNIQUE INDEX IF NOT EXISTS "IX_LabelDefinitions_Kind_Key"
+                        ON "LabelDefinitions" ("Kind", "Key");
                     """,
                     cancellationToken).ConfigureAwait(false);
             }

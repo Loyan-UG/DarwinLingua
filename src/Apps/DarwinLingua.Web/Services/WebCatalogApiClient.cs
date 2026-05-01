@@ -219,6 +219,7 @@ public interface IWebCatalogApiClient
     Task<AdminWordsPageViewModel> GetAdminWordsAsync(
         string? query,
         string? statusFilter,
+        string? sort,
         int skip,
         int take,
         CancellationToken cancellationToken);
@@ -316,7 +317,79 @@ public interface IWebCatalogApiClient
 
     Task<AdminTopicItemViewModel> UpdateAdminTopicAsync(Guid topicId, AdminSaveTopicRequest request, CancellationToken cancellationToken);
 
+    Task<AdminTopicItemViewModel> MergeAdminTopicAsync(Guid topicId, AdminMergeTopicRequest request, CancellationToken cancellationToken);
+
     Task<AdminLabelsPageViewModel> GetAdminLabelsAsync(CancellationToken cancellationToken);
+
+    Task<AdminLabelItemViewModel?> GetAdminLabelAsync(Guid labelId, CancellationToken cancellationToken);
+
+    Task<AdminLabelItemViewModel> CreateAdminLabelAsync(AdminSaveLabelRequest request, CancellationToken cancellationToken);
+
+    Task<AdminLabelItemViewModel> UpdateAdminLabelAsync(Guid labelId, AdminSaveLabelRequest request, CancellationToken cancellationToken);
+
+    Task<AdminLabelItemViewModel> RenameAdminLabelAsync(Guid labelId, AdminSaveLabelRequest request, CancellationToken cancellationToken);
+
+    Task<AdminLabelItemViewModel> MergeAdminLabelAsync(Guid labelId, AdminMergeLabelRequest request, CancellationToken cancellationToken);
+
+    Task<AdminCollectionsPageViewModel> GetAdminCollectionsAsync(CancellationToken cancellationToken);
+
+    Task<AdminCollectionDetailViewModel?> GetAdminCollectionAsync(Guid collectionId, CancellationToken cancellationToken);
+
+    Task<AdminCollectionDetailViewModel> CreateAdminCollectionAsync(AdminSaveCollectionRequest request, CancellationToken cancellationToken);
+
+    Task<AdminCollectionDetailViewModel> UpdateAdminCollectionAsync(Guid collectionId, AdminSaveCollectionRequest request, CancellationToken cancellationToken);
+
+    Task<bool> DeleteAdminCollectionAsync(Guid collectionId, CancellationToken cancellationToken);
+
+    Task<AdminCollectionDetailViewModel> AddAdminCollectionWordAsync(Guid collectionId, AdminAddCollectionWordRequest request, CancellationToken cancellationToken);
+
+    Task<AdminCollectionDetailViewModel> DeleteAdminCollectionWordAsync(Guid collectionId, Guid entryId, CancellationToken cancellationToken);
+
+    Task<AdminBulkCollectionImportResponse> ImportAdminCollectionsAsync(AdminBulkCollectionImportRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenariosPageViewModel> GetAdminScenariosAsync(CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel?> GetAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> CreateAdminScenarioAsync(AdminSaveScenarioRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> UpdateAdminScenarioAsync(Guid scenarioId, AdminSaveScenarioRequest request, CancellationToken cancellationToken);
+
+    Task<bool> DeleteAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken);
+
+    Task<AdminBulkScenarioImportResponse> ImportAdminScenariosAsync(AdminBulkScenarioImportRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnAsync(Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnAsync(Guid scenarioId, Guid turnId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseAsync(Guid scenarioId, AdminAddScenarioPhraseRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseAsync(Guid scenarioId, Guid phraseId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionAsync(Guid scenarioId, AdminAddScenarioQuestionRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionAsync(Guid scenarioId, Guid questionId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, Guid answerId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, Guid translationId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, Guid translationId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, Guid translationId, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+
+    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken);
 
     Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
         AdminSaveConversationEventRequest request,
@@ -778,6 +851,7 @@ internal sealed class WebCatalogApiClient(
     public async Task<AdminWordsPageViewModel> GetAdminWordsAsync(
         string? query,
         string? statusFilter,
+        string? sort,
         int skip,
         int take,
         CancellationToken cancellationToken)
@@ -788,6 +862,7 @@ internal sealed class WebCatalogApiClient(
                 [
                     new("q", query),
                     new("status", statusFilter),
+                    new("sort", sort),
                     new("skip", skip.ToString()),
                     new("take", take.ToString())
                 ]),
@@ -796,6 +871,7 @@ internal sealed class WebCatalogApiClient(
         return new AdminWordsPageViewModel(
             response.Query,
             response.StatusFilter,
+            response.Sort,
             response.Skip,
             response.Take,
             response.TotalCount,
@@ -880,7 +956,7 @@ internal sealed class WebCatalogApiClient(
                     .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
                     .ToArray(),
                 response.Labels
-                    .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                    .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.DisplayName, label.SortOrder))
                     .ToArray(),
                 response.GrammarNotes
                     .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
@@ -961,7 +1037,7 @@ internal sealed class WebCatalogApiClient(
                 .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
                 .ToArray(),
             response.Labels
-                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.DisplayName, label.SortOrder))
                 .ToArray(),
             response.GrammarNotes
                 .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
@@ -1041,7 +1117,7 @@ internal sealed class WebCatalogApiClient(
                 .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
                 .ToArray(),
             response.Labels
-                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.DisplayName, label.SortOrder))
                 .ToArray(),
             response.GrammarNotes
                 .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
@@ -1130,7 +1206,7 @@ internal sealed class WebCatalogApiClient(
                 .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
                 .ToArray(),
             response.Labels
-                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.DisplayName, label.SortOrder))
                 .ToArray(),
             response.GrammarNotes
                 .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
@@ -1341,7 +1417,7 @@ internal sealed class WebCatalogApiClient(
                 .Select(topic => new AdminWordTopicViewModel(topic.TopicId, topic.Key, topic.IsPrimaryTopic))
                 .ToArray(),
             response.Labels
-                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.SortOrder))
+                .Select(label => new AdminWordLabelViewModel(label.Kind, label.Key, label.DisplayName, label.SortOrder))
                 .ToArray(),
             response.GrammarNotes
                 .Select(note => new AdminWordTextItemViewModel(note.Text, note.SortOrder))
@@ -1441,6 +1517,16 @@ internal sealed class WebCatalogApiClient(
         return MapAdminTopic(response);
     }
 
+    public async Task<AdminTopicItemViewModel> MergeAdminTopicAsync(Guid topicId, AdminMergeTopicRequest request, CancellationToken cancellationToken)
+    {
+        AdminTopicItemResponse response = await PostRequiredAsync<AdminMergeTopicRequest, AdminTopicItemResponse>(
+            $"/api/admin/catalog/topics/{topicId:D}/merge",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminTopic(response);
+    }
+
     public async Task<AdminLabelsPageViewModel> GetAdminLabelsAsync(CancellationToken cancellationToken)
     {
         AdminLabelsResponse response = await GetRequiredAsync<AdminLabelsResponse>(
@@ -1448,8 +1534,343 @@ internal sealed class WebCatalogApiClient(
             cancellationToken).ConfigureAwait(false);
 
         return new AdminLabelsPageViewModel(response.Labels
-            .Select(label => new AdminLabelItemViewModel(label.Kind, label.Key, label.WordCount, label.FirstSortOrder))
+            .Select(MapAdminLabel)
             .ToArray());
+    }
+
+    public async Task<AdminLabelItemViewModel?> GetAdminLabelAsync(Guid labelId, CancellationToken cancellationToken)
+    {
+        AdminLabelItemResponse? response = await GetAsync<AdminLabelItemResponse>(
+            $"/api/admin/catalog/labels/{labelId:D}",
+            cancellationToken).ConfigureAwait(false);
+
+        return response is null ? null : MapAdminLabel(response);
+    }
+
+    public async Task<AdminLabelItemViewModel> CreateAdminLabelAsync(AdminSaveLabelRequest request, CancellationToken cancellationToken)
+    {
+        AdminLabelItemResponse response = await PostRequiredAsync<AdminSaveLabelRequest, AdminLabelItemResponse>(
+            "/api/admin/catalog/labels",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminLabel(response);
+    }
+
+    public async Task<AdminLabelItemViewModel> UpdateAdminLabelAsync(Guid labelId, AdminSaveLabelRequest request, CancellationToken cancellationToken)
+    {
+        AdminLabelItemResponse response = await PostRequiredAsync<AdminSaveLabelRequest, AdminLabelItemResponse>(
+            $"/api/admin/catalog/labels/{labelId:D}",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminLabel(response);
+    }
+
+    public async Task<AdminLabelItemViewModel> RenameAdminLabelAsync(Guid labelId, AdminSaveLabelRequest request, CancellationToken cancellationToken)
+    {
+        AdminLabelItemResponse response = await PostRequiredAsync<AdminSaveLabelRequest, AdminLabelItemResponse>(
+            $"/api/admin/catalog/labels/{labelId:D}/rename",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminLabel(response);
+    }
+
+    public async Task<AdminLabelItemViewModel> MergeAdminLabelAsync(Guid labelId, AdminMergeLabelRequest request, CancellationToken cancellationToken)
+    {
+        AdminLabelItemResponse response = await PostRequiredAsync<AdminMergeLabelRequest, AdminLabelItemResponse>(
+            $"/api/admin/catalog/labels/{labelId:D}/merge",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminLabel(response);
+    }
+
+    public async Task<AdminCollectionsPageViewModel> GetAdminCollectionsAsync(CancellationToken cancellationToken)
+    {
+        AdminCollectionsResponse response = await GetRequiredAsync<AdminCollectionsResponse>(
+            "/api/admin/catalog/collections",
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminCollectionsPageViewModel(response.Collections.Select(MapAdminCollectionItem).ToArray());
+    }
+
+    public async Task<AdminCollectionDetailViewModel?> GetAdminCollectionAsync(Guid collectionId, CancellationToken cancellationToken)
+    {
+        AdminCollectionDetailResponse? response = await GetAsync<AdminCollectionDetailResponse>(
+            $"/api/admin/catalog/collections/{collectionId:D}",
+            cancellationToken).ConfigureAwait(false);
+
+        return response is null ? null : MapAdminCollectionDetail(response);
+    }
+
+    public async Task<AdminCollectionDetailViewModel> CreateAdminCollectionAsync(AdminSaveCollectionRequest request, CancellationToken cancellationToken)
+    {
+        AdminCollectionDetailResponse response = await PostRequiredAsync<AdminSaveCollectionRequest, AdminCollectionDetailResponse>(
+            "/api/admin/catalog/collections",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminCollectionDetail(response);
+    }
+
+    public async Task<AdminCollectionDetailViewModel> UpdateAdminCollectionAsync(Guid collectionId, AdminSaveCollectionRequest request, CancellationToken cancellationToken)
+    {
+        AdminCollectionDetailResponse response = await PostRequiredAsync<AdminSaveCollectionRequest, AdminCollectionDetailResponse>(
+            $"/api/admin/catalog/collections/{collectionId:D}",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminCollectionDetail(response);
+    }
+
+    public async Task<bool> DeleteAdminCollectionAsync(Guid collectionId, CancellationToken cancellationToken)
+    {
+        bool response = await PostRequiredAsync<AdminEmptyRequest, bool>(
+            $"/api/admin/catalog/collections/{collectionId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return response;
+    }
+
+    public async Task<AdminCollectionDetailViewModel> AddAdminCollectionWordAsync(Guid collectionId, AdminAddCollectionWordRequest request, CancellationToken cancellationToken)
+    {
+        AdminCollectionDetailResponse response = await PostRequiredAsync<AdminAddCollectionWordRequest, AdminCollectionDetailResponse>(
+            $"/api/admin/catalog/collections/{collectionId:D}/words",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminCollectionDetail(response);
+    }
+
+    public async Task<AdminCollectionDetailViewModel> DeleteAdminCollectionWordAsync(Guid collectionId, Guid entryId, CancellationToken cancellationToken)
+    {
+        AdminCollectionDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminCollectionDetailResponse>(
+            $"/api/admin/catalog/collections/{collectionId:D}/words/{entryId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminCollectionDetail(response);
+    }
+
+    public Task<AdminBulkCollectionImportResponse> ImportAdminCollectionsAsync(AdminBulkCollectionImportRequest request, CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminBulkCollectionImportRequest, AdminBulkCollectionImportResponse>(
+            "/api/admin/catalog/collections/import",
+            request,
+            cancellationToken);
+
+    public async Task<AdminScenariosPageViewModel> GetAdminScenariosAsync(CancellationToken cancellationToken)
+    {
+        AdminScenariosResponse response = await GetRequiredAsync<AdminScenariosResponse>(
+            "/api/admin/catalog/scenarios",
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminScenariosPageViewModel(response.Scenarios.Select(MapAdminScenarioItem).ToArray());
+    }
+
+    public async Task<AdminScenarioDetailViewModel?> GetAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse? response = await GetAsync<AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}",
+            cancellationToken).ConfigureAwait(false);
+
+        return response is null ? null : MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> CreateAdminScenarioAsync(AdminSaveScenarioRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminSaveScenarioRequest, AdminScenarioDetailResponse>(
+            "/api/admin/catalog/scenarios",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> UpdateAdminScenarioAsync(Guid scenarioId, AdminSaveScenarioRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminSaveScenarioRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<bool> DeleteAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken)
+    {
+        return await PostRequiredAsync<AdminEmptyRequest, bool>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    public Task<AdminBulkScenarioImportResponse> ImportAdminScenariosAsync(AdminBulkScenarioImportRequest request, CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminBulkScenarioImportRequest, AdminBulkScenarioImportResponse>(
+            "/api/admin/catalog/scenarios/import",
+            request,
+            cancellationToken);
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnAsync(Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioDialogueTurnRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnAsync(Guid scenarioId, Guid turnId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns/{turnId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseAsync(Guid scenarioId, AdminAddScenarioPhraseRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioPhraseRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseAsync(Guid scenarioId, Guid phraseId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases/{phraseId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionAsync(Guid scenarioId, AdminAddScenarioQuestionRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioQuestionRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionAsync(Guid scenarioId, Guid questionId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioAnswerRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, Guid answerId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers/{answerId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns/{turnId:D}/translations",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, Guid translationId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns/{turnId:D}/translations/{translationId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases/{phraseId:D}/translations",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, Guid translationId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases/{phraseId:D}/translations/{translationId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/translations",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, Guid translationId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/translations/{translationId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers/{answerId:D}/translations",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
+    }
+
+    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken)
+    {
+        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
+            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers/{answerId:D}/translations/{translationId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminScenarioDetail(response);
     }
 
     public Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
@@ -1696,6 +2117,119 @@ internal sealed class WebCatalogApiClient(
                     localization.DisplayName))
                 .ToArray());
 
+    private static AdminLabelItemViewModel MapAdminLabel(AdminLabelItemResponse label) =>
+        new(
+            label.LabelId,
+            label.Kind,
+            label.Key,
+            label.DisplayName,
+            label.SortOrder,
+            label.IsSystem,
+            label.WordCount,
+            label.UpdatedAtUtc);
+
+    private static AdminCollectionItemViewModel MapAdminCollectionItem(AdminCollectionItemResponse collection) =>
+        new(
+            collection.CollectionId,
+            collection.Slug,
+            collection.Name,
+            collection.Description,
+            collection.ImageUrl,
+            collection.PublicationStatus,
+            collection.SortOrder,
+            collection.WordCount,
+            collection.UpdatedAtUtc);
+
+    private static AdminCollectionDetailViewModel MapAdminCollectionDetail(AdminCollectionDetailResponse collection) =>
+        new(
+            collection.CollectionId,
+            collection.Slug,
+            collection.Name,
+            collection.Description,
+            collection.ImageUrl,
+            collection.PublicationStatus,
+            collection.SortOrder,
+            collection.CreatedAtUtc,
+            collection.UpdatedAtUtc,
+            collection.Entries
+                .Select(entry => new AdminCollectionEntryViewModel(
+                    entry.EntryId,
+                    entry.WordPublicId,
+                    entry.Lemma,
+                    entry.PartOfSpeech,
+                    entry.CefrLevel,
+                    entry.SortOrder))
+                .ToArray());
+
+    private static AdminScenarioItemViewModel MapAdminScenarioItem(AdminScenarioItemResponse scenario) =>
+        new(
+            scenario.ScenarioId,
+            scenario.Slug,
+            scenario.Title,
+            scenario.CefrLevel,
+            scenario.Category,
+            scenario.PublicationStatus,
+            scenario.SortOrder,
+            scenario.DialogueTurnCount,
+            scenario.PhraseCount,
+            scenario.QuestionCount,
+            scenario.UpdatedAtUtc);
+
+    private static AdminScenarioDetailViewModel MapAdminScenarioDetail(AdminScenarioDetailResponse scenario) =>
+        new(
+            scenario.ScenarioId,
+            scenario.Slug,
+            scenario.Title,
+            scenario.Description,
+            scenario.LearnerGoal,
+            scenario.CefrLevel,
+            scenario.Category,
+            scenario.PublicationStatus,
+            scenario.SortOrder,
+            scenario.CreatedAtUtc,
+            scenario.UpdatedAtUtc,
+            scenario.DialogueTurns
+                .Select(turn => new AdminScenarioDialogueTurnViewModel(
+                    turn.TurnId,
+                    turn.SortOrder,
+                    turn.SpeakerRole,
+                    turn.BaseText,
+                    MapAdminScenarioTranslations(turn.Translations)))
+                .ToArray(),
+            scenario.UsefulPhrases
+                .Select(phrase => new AdminScenarioPhraseViewModel(
+                    phrase.PhraseId,
+                    phrase.SortOrder,
+                    phrase.BaseText,
+                    phrase.UsageNote,
+                    MapAdminScenarioTranslations(phrase.Translations)))
+                .ToArray(),
+            scenario.Questions
+                .Select(question => new AdminScenarioQuestionViewModel(
+                    question.QuestionId,
+                    question.SortOrder,
+                    question.Prompt,
+                    MapAdminScenarioTranslations(question.Translations),
+                    question.Answers
+                        .Select(answer => new AdminScenarioAnswerViewModel(
+                            answer.AnswerId,
+                            answer.SortOrder,
+                            answer.Text,
+                            answer.IsCorrect,
+                            answer.Feedback,
+                            MapAdminScenarioTranslations(answer.Translations)))
+                        .ToArray()))
+                .ToArray());
+
+    private static AdminScenarioTranslationViewModel[] MapAdminScenarioTranslations(
+        IReadOnlyList<AdminScenarioTranslationResponse> translations) =>
+        translations
+            .Select(translation => new AdminScenarioTranslationViewModel(
+                translation.TranslationId,
+                translation.LanguageCode,
+                translation.Text))
+            .ToArray();
+
     private static string NormalizePathShape(string relativeUri)
     {
         string path = relativeUri.Split('?', 2)[0].Trim('/');
@@ -1872,6 +2406,7 @@ internal sealed record AdminCatalogImportItemResponse(
 internal sealed record AdminCatalogWordsResponse(
     string? Query,
     string? StatusFilter,
+    string Sort,
     int Skip,
     int Take,
     int TotalCount,
@@ -1956,6 +2491,7 @@ internal sealed record AdminCatalogWordTopicResponse(
 internal sealed record AdminCatalogWordLabelResponse(
     string Kind,
     string Key,
+    string DisplayName,
     int SortOrder);
 
 internal sealed record AdminCatalogWordTextItemResponse(
@@ -1987,10 +2523,114 @@ internal sealed record AdminLabelsResponse(
     IReadOnlyList<AdminLabelItemResponse> Labels);
 
 internal sealed record AdminLabelItemResponse(
+    Guid LabelId,
     string Kind,
     string Key,
+    string DisplayName,
+    int SortOrder,
+    bool IsSystem,
     int WordCount,
-    int FirstSortOrder);
+    DateTime UpdatedAtUtc);
+
+internal sealed record AdminCollectionsResponse(
+    IReadOnlyList<AdminCollectionItemResponse> Collections);
+
+internal sealed record AdminCollectionItemResponse(
+    Guid CollectionId,
+    string Slug,
+    string Name,
+    string? Description,
+    string? ImageUrl,
+    string PublicationStatus,
+    int SortOrder,
+    int WordCount,
+    DateTime UpdatedAtUtc);
+
+internal sealed record AdminCollectionDetailResponse(
+    Guid CollectionId,
+    string Slug,
+    string Name,
+    string? Description,
+    string? ImageUrl,
+    string PublicationStatus,
+    int SortOrder,
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc,
+    IReadOnlyList<AdminCollectionEntryResponse> Entries);
+
+internal sealed record AdminCollectionEntryResponse(
+    Guid EntryId,
+    Guid WordPublicId,
+    string Lemma,
+    string PartOfSpeech,
+    string CefrLevel,
+    int SortOrder);
+
+internal sealed record AdminScenariosResponse(
+    IReadOnlyList<AdminScenarioItemResponse> Scenarios);
+
+internal sealed record AdminScenarioItemResponse(
+    Guid ScenarioId,
+    string Slug,
+    string Title,
+    string CefrLevel,
+    string Category,
+    string PublicationStatus,
+    int SortOrder,
+    int DialogueTurnCount,
+    int PhraseCount,
+    int QuestionCount,
+    DateTime UpdatedAtUtc);
+
+internal sealed record AdminScenarioDetailResponse(
+    Guid ScenarioId,
+    string Slug,
+    string Title,
+    string Description,
+    string LearnerGoal,
+    string CefrLevel,
+    string Category,
+    string PublicationStatus,
+    int SortOrder,
+    DateTime CreatedAtUtc,
+    DateTime UpdatedAtUtc,
+    IReadOnlyList<AdminScenarioDialogueTurnResponse> DialogueTurns,
+    IReadOnlyList<AdminScenarioPhraseResponse> UsefulPhrases,
+    IReadOnlyList<AdminScenarioQuestionResponse> Questions);
+
+internal sealed record AdminScenarioDialogueTurnResponse(
+    Guid TurnId,
+    int SortOrder,
+    string SpeakerRole,
+    string BaseText,
+    IReadOnlyList<AdminScenarioTranslationResponse> Translations);
+
+internal sealed record AdminScenarioPhraseResponse(
+    Guid PhraseId,
+    int SortOrder,
+    string BaseText,
+    string? UsageNote,
+    IReadOnlyList<AdminScenarioTranslationResponse> Translations);
+
+internal sealed record AdminScenarioQuestionResponse(
+    Guid QuestionId,
+    int SortOrder,
+    string Prompt,
+    IReadOnlyList<AdminScenarioTranslationResponse> Translations,
+    IReadOnlyList<AdminScenarioAnswerResponse> Answers);
+
+internal sealed record AdminScenarioAnswerResponse(
+    Guid AnswerId,
+    int SortOrder,
+    string Text,
+    bool IsCorrect,
+    string? Feedback,
+    IReadOnlyList<AdminScenarioTranslationResponse> Translations);
+
+internal sealed record AdminScenarioTranslationResponse(
+    Guid TranslationId,
+    string LanguageCode,
+    string Text);
 
 internal sealed record AdminEmptyRequest;
 

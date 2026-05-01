@@ -3,6 +3,7 @@ namespace DarwinLingua.WebApi.Models;
 public sealed record AdminCatalogWordsResponse(
     string? Query,
     string? StatusFilter,
+    string Sort,
     int Skip,
     int Take,
     int TotalCount,
@@ -87,6 +88,7 @@ public sealed record AdminCatalogWordTopicResponse(
 public sealed record AdminCatalogWordLabelResponse(
     string Kind,
     string Key,
+    string DisplayName,
     int SortOrder);
 
 public sealed record AdminCatalogWordTextItemResponse(

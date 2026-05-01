@@ -121,9 +121,26 @@ internal sealed class WebsiteCatalogQueryService(
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return await dbContext.WordEntries
+        Guid[] normalizedWordIds = wordIds
+            .Where(static id => id != Guid.Empty)
+            .Distinct()
+            .ToArray();
+
+        if (normalizedWordIds.Length == 0)
+        {
+            return [];
+        }
+
+        List<Catalog.Domain.Entities.WordEntry> words = await dbContext.WordEntries
             .AsNoTracking()
-            .Where(word => wordIds.Contains(word.PublicId) && word.PublicationStatus == PublicationStatus.Active)
+            .AsSplitQuery()
+            .Include(word => word.Senses)
+                .ThenInclude(sense => sense.Translations)
+            .Where(word => normalizedWordIds.Contains(word.PublicId) && word.PublicationStatus == PublicationStatus.Active)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return words
             .Select(word => new WordListItemModel(
                 word.PublicId,
                 word.Lemma,
@@ -139,7 +156,6 @@ internal sealed class WebsiteCatalogQueryService(
                     .OrderByDescending(translation => translation.IsPrimary)
                     .Select(translation => translation.TranslationText)
                     .FirstOrDefault()))
-            .ToArrayAsync(cancellationToken)
-            .ConfigureAwait(false);
+            .ToArray();
     }
 }

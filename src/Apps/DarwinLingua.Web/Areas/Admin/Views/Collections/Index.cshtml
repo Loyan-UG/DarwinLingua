@@ -1,0 +1,96 @@
+@model DarwinLingua.Web.Models.AdminCollectionsPageViewModel
+@{
+    ViewData["Title"] = "Collections";
+    var query = ViewData["AdminCollectionQuery"] as string ?? string.Empty;
+    var selectedStatus = ViewData["AdminCollectionStatus"] as string ?? string.Empty;
+    var selectedSort = ViewData["AdminCollectionSort"] as string ?? "sortOrder";
+    var statuses = ViewData["AdminCollectionStatuses"] as string[] ?? [];
+    var totalCount = ViewData["AdminCollectionTotalCount"] as int? ?? Model.Collections.Count;
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Collections", "Curated word packs", "Manage published and draft collections used by learners to browse focused word sets.")' />
+        <div class="cluster">
+            <a class="button button--secondary" asp-action="Import">Import JSON</a>
+            <a class="button" asp-action="New">New collection</a>
+        </div>
+    </div>
+    @if (TempData["AdminStatusMessage"] is string statusMessage)
+    {
+        <div class="state-panel state-panel--success">@statusMessage</div>
+    }
+</section>
+
+<section class="panel stack-md">
+    <form class="admin-filter-panel" method="get">
+        <label class="form-field">
+            <span>Search</span>
+            <input name="q" type="search" value="@query" placeholder="Name or slug" />
+        </label>
+        <label class="form-field">
+            <span>Status</span>
+            <select name="status">
+                <option value="">All statuses</option>
+                @foreach (var status in statuses)
+                {
+                    <option value="@status" selected="@(string.Equals(status, selectedStatus, StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@status</option>
+                }
+            </select>
+        </label>
+        <label class="form-field">
+            <span>Sort</span>
+            <select name="sort">
+                <option value="sortOrder" selected="@(selectedSort == "sortOrder" ? "selected" : null)">Sort order</option>
+                <option value="name" selected="@(selectedSort == "name" ? "selected" : null)">Name</option>
+                <option value="updated" selected="@(selectedSort == "updated" ? "selected" : null)">Recently updated</option>
+                <option value="words" selected="@(selectedSort == "words" ? "selected" : null)">Most words</option>
+            </select>
+        </label>
+        <button class="button button--compact" type="submit">Apply</button>
+        <a class="button button--secondary button--compact" asp-action="Index">Reset</a>
+    </form>
+    <div class="cluster cluster--between">
+        <span class="eyebrow">@Model.Collections.Count of @totalCount collections</span>
+    </div>
+    <div class="table-scroll">
+        <table class="data-table admin-data-grid">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Slug</th>
+                    <th>Status</th>
+                    <th>Words</th>
+                    <th>Sort</th>
+                    <th>Updated</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Collections.Count == 0)
+                {
+                    <tr>
+                        <td colspan="7">
+                            <div class="state-panel">No collections match the current filters.</div>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var collection in Model.Collections)
+                    {
+                        <tr>
+                            <td><strong>@collection.Name</strong></td>
+                            <td>@collection.Slug</td>
+                            <td><span class="status-pill">@collection.PublicationStatus</span></td>
+                            <td>@collection.WordCount</td>
+                            <td>@collection.SortOrder</td>
+                            <td>@collection.UpdatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                            <td><a class="button button--compact" asp-action="Details" asp-route-collectionId="@collection.CollectionId">Open</a></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -189,6 +189,11 @@ public sealed class EventPreparationPackTopic
     public bool IsPrimary { get; private set; }
 
     public DateTime CreatedAtUtc { get; private set; }
+
+    public void ReassignTopic(Guid topicId)
+    {
+        TopicId = topicId == Guid.Empty ? throw new DomainRuleException("Event preparation topic identifier cannot be empty.") : topicId;
+    }
 }
 
 public sealed class EventPreparationLinkedScenario

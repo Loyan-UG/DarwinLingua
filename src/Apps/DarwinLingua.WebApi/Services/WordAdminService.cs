@@ -551,6 +551,17 @@ internal sealed class WordAdminService(
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        string normalizedKey = request.Key.Trim().ToLowerInvariant();
+        bool labelExists = await dbContext.LabelDefinitions
+            .AsNoTracking()
+            .AnyAsync(label => label.Kind == kind && label.Key == normalizedKey, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (!labelExists)
+        {
+            throw new InvalidOperationException("Create this label in the label taxonomy before attaching it to a word.");
+        }
+
         WordEntry? word = await dbContext.WordEntries
             .Include(entry => entry.Labels)
             .SingleOrDefaultAsync(entry => entry.PublicId == publicId, cancellationToken)
@@ -563,9 +574,9 @@ internal sealed class WordAdminService(
 
         if (!word.Labels.Any(label =>
                 label.Kind == kind &&
-                string.Equals(label.Key, request.Key.Trim().ToLowerInvariant(), StringComparison.Ordinal)))
+                string.Equals(label.Key, normalizedKey, StringComparison.Ordinal)))
         {
-            word.AddLabel(Guid.NewGuid(), kind, request.Key, DateTime.UtcNow);
+            word.AddLabel(Guid.NewGuid(), kind, normalizedKey, DateTime.UtcNow);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 

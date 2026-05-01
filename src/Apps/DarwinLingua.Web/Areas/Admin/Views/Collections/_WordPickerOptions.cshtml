@@ -1,0 +1,7 @@
+@model DarwinLingua.Web.Models.AdminCollectionWordPickerViewModel
+
+<option value="">Select an active word</option>
+@foreach (var word in Model.AvailableWords)
+{
+    <option value="@word.PublicId">@word.Lemma (@word.CefrLevel, @word.PartOfSpeech)</option>
+}

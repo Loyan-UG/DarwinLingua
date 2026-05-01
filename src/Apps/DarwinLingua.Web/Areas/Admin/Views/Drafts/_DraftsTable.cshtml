@@ -7,26 +7,28 @@
 else
 {
     <section class="panel stack-md">
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Lemma</th>
-                    <th>Part of speech</th>
-                    <th>CEFR</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Words)
-                {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
                     <tr>
-                        <td><a asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">@item.Lemma</a></td>
-                        <td>@item.PartOfSpeech</td>
-                        <td>@item.CefrLevel</td>
-                        <td>@item.PublicationStatus</td>
+                        <th>Lemma</th>
+                        <th>Part of speech</th>
+                        <th>CEFR</th>
+                        <th>Status</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Words)
+                    {
+                        <tr>
+                            <td><a asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">@item.Lemma</a></td>
+                            <td>@item.PartOfSpeech</td>
+                            <td>@item.CefrLevel</td>
+                            <td>@item.PublicationStatus</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </section>
 }

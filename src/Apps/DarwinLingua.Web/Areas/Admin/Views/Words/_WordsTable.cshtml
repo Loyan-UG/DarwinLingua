@@ -61,7 +61,7 @@ else
                             <td>@item.UpdatedAtUtc.ToString("yyyy-MM-dd")</td>
                             <td>
                                 <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Details" asp-route-publicId="@item.PublicId">View</a>
-                                <button class="button button--secondary button--compact" type="button" disabled>Edit</button>
+                                <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Edit" asp-route-publicId="@item.PublicId">Edit</a>
                             </td>
                         </tr>
                     }
@@ -76,12 +76,14 @@ else
                    asp-action="Index"
                    asp-route-q="@Model.Query"
                    asp-route-status="@Model.StatusFilter"
+                   asp-route-sort="@Model.Sort"
                    asp-route-skip="0"
                    asp-route-take="@Model.Take">First</a>
                 <a class="button button--secondary button--compact @(Model.HasPreviousPage ? null : "is-disabled")"
                    asp-action="Index"
                    asp-route-q="@Model.Query"
                    asp-route-status="@Model.StatusFilter"
+                   asp-route-sort="@Model.Sort"
                    asp-route-skip="@Model.PreviousSkip"
                    asp-route-take="@Model.Take">Previous</a>
 
@@ -92,6 +94,7 @@ else
                        asp-action="Index"
                        asp-route-q="@Model.Query"
                        asp-route-status="@Model.StatusFilter"
+                       asp-route-sort="@Model.Sort"
                        asp-route-skip="@pageSkip"
                        asp-route-take="@Model.Take">@(page.ToString())</a>
                 }
@@ -100,12 +103,14 @@ else
                    asp-action="Index"
                    asp-route-q="@Model.Query"
                    asp-route-status="@Model.StatusFilter"
+                   asp-route-sort="@Model.Sort"
                    asp-route-skip="@Model.NextSkip"
                    asp-route-take="@Model.Take">Next</a>
                 <a class="button button--secondary button--compact @(Model.HasNextPage ? null : "is-disabled")"
                    asp-action="Index"
                    asp-route-q="@Model.Query"
                    asp-route-status="@Model.StatusFilter"
+                   asp-route-sort="@Model.Sort"
                    asp-route-skip="@((Model.TotalPages - 1) * Model.Take)"
                    asp-route-take="@Model.Take">Last</a>
             </nav>
