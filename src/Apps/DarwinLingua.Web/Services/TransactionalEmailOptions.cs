@@ -120,10 +120,25 @@ public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvi
             failures.Add("TransactionalEmail:SendRetryDelayMilliseconds cannot be negative.");
         }
 
+        Uri? brevoApiBaseUri = null;
         if (!string.IsNullOrWhiteSpace(options.BrevoApiBaseUrl) &&
-            !Uri.TryCreate(options.BrevoApiBaseUrl, UriKind.Absolute, out _))
+            !Uri.TryCreate(options.BrevoApiBaseUrl, UriKind.Absolute, out brevoApiBaseUri))
         {
             failures.Add("TransactionalEmail:BrevoApiBaseUrl must be an absolute URL.");
+        }
+
+        if (IsMode(mode, "BrevoApi") &&
+            brevoApiBaseUri is not null &&
+            !string.Equals(brevoApiBaseUri.Scheme, Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase))
+        {
+            failures.Add("TransactionalEmail:BrevoApiBaseUrl must use HTTPS when Mode is BrevoApi.");
+        }
+
+        Uri? publicBaseUri = null;
+        if (!string.IsNullOrWhiteSpace(options.PublicBaseUrl) &&
+            !Uri.TryCreate(options.PublicBaseUrl, UriKind.Absolute, out publicBaseUri))
+        {
+            failures.Add("TransactionalEmail:PublicBaseUrl must be an absolute URL when set.");
         }
 
         if (IsMode(mode, "BrevoApi") && string.IsNullOrWhiteSpace(options.BrevoApiKey))
@@ -171,6 +186,11 @@ public sealed class TransactionalEmailOptionsValidator(IHostEnvironment hostEnvi
             if (string.IsNullOrWhiteSpace(options.PublicBaseUrl))
             {
                 failures.Add("TransactionalEmail:PublicBaseUrl is required in Production.");
+            }
+            else if (publicBaseUri is not null &&
+                !string.Equals(publicBaseUri.Scheme, Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase))
+            {
+                failures.Add("TransactionalEmail:PublicBaseUrl must use HTTPS in Production.");
             }
 
             if (string.IsNullOrWhiteSpace(options.SmtpHost))

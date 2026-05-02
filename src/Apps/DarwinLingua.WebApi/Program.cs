@@ -712,6 +712,27 @@ app.MapPost(
             .ConfigureAwait(false));
 
 app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}/translations",
+    async (Guid publicId, Guid senseId, Guid exampleId, AdminAddWordSenseExampleTranslationRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.AddSenseExampleTranslationAsync(publicId, senseId, exampleId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}/translations/{translationId:guid}",
+    async (Guid publicId, Guid senseId, Guid exampleId, Guid translationId, AdminUpdateWordSenseExampleTranslationRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.UpdateSenseExampleTranslationAsync(publicId, senseId, exampleId, translationId, request, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/admin/catalog/words/{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}/translations/{translationId:guid}/delete",
+    async (Guid publicId, Guid senseId, Guid exampleId, Guid translationId, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await wordAdminService.DeleteSenseExampleTranslationAsync(publicId, senseId, exampleId, translationId, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
     "/api/admin/catalog/words/{publicId:guid}/topics",
     async (Guid publicId, AdminAddWordTopicRequest request, IWordAdminService wordAdminService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(

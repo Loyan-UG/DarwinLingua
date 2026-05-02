@@ -3,6 +3,8 @@ using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace DarwinLingua.Catalog.Infrastructure.Seed;
 
@@ -14,20 +16,28 @@ internal sealed class CatalogReferenceDataSeeder : IDatabaseSeeder
     private static readonly TopicSeedDefinition[] SeedDefinitions =
     [
         new(new Guid("6F1464F0-9807-420F-A86E-41731D11A001"), "everyday-life", 10, true,
-            [new(new Guid("6F1464F0-9807-420F-A86E-41731D11B001"), "en", "Everyday Life"),
-             new(new Guid("6F1464F0-9807-420F-A86E-41731D11B002"), "de", "Alltag")]),
+            [new("de", "Alltag"), new("ar", "الحياة اليومية"), new("ckb", "ژیانی ڕۆژانە"), new("en", "Everyday Life"),
+             new("fa", "زندگی روزمره"), new("kmr", "Jiyana rojane"), new("pl", "Zycie codzienne"),
+             new("ro", "Viata de zi cu zi"), new("ru", "Повседневная жизнь"), new("sq", "Jeta e perditshme"),
+             new("tr", "Gunluk yasam")]),
         new(new Guid("6F1464F0-9807-420F-A86E-41731D11A002"), "housing", 20, true,
-            [new(new Guid("6F1464F0-9807-420F-A86E-41731D11B003"), "en", "Housing"),
-             new(new Guid("6F1464F0-9807-420F-A86E-41731D11B004"), "de", "Wohnen")]),
+            [new("de", "Wohnen"), new("ar", "السكن"), new("ckb", "نیشتەجێبوون"), new("en", "Housing"),
+             new("fa", "مسکن"), new("kmr", "Xani u rûniştin"), new("pl", "Mieszkanie"),
+             new("ro", "Locuire"), new("ru", "Жилье"), new("sq", "Banimi"), new("tr", "Konut")]),
         new(new Guid("6F1464F0-9807-420F-A86E-41731D11A003"), "shopping", 30, true,
-            [new(new Guid("6F1464F0-9807-420F-A86E-41731D11B005"), "en", "Shopping"),
-             new(new Guid("6F1464F0-9807-420F-A86E-41731D11B006"), "de", "Einkaufen")]),
+            [new("de", "Einkaufen"), new("ar", "التسوق"), new("ckb", "کڕین"), new("en", "Shopping"),
+             new("fa", "خرید"), new("kmr", "Kirrin"), new("pl", "Zakupy"), new("ro", "Cumparaturi"),
+             new("ru", "Покупки"), new("sq", "Blerje"), new("tr", "Alisveris")]),
         new(new Guid("6F1464F0-9807-420F-A86E-41731D11A004"), "work-and-jobs", 40, true,
-            [new(new Guid("6F1464F0-9807-420F-A86E-41731D11B007"), "en", "Work and Jobs"),
-             new(new Guid("6F1464F0-9807-420F-A86E-41731D11B008"), "de", "Arbeit und Beruf")]),
+            [new("de", "Arbeit und Beruf"), new("ar", "العمل والوظائف"), new("ckb", "کار و پیشە"), new("en", "Work and Jobs"),
+             new("fa", "کار و شغل"), new("kmr", "Kar û pîşe"), new("pl", "Praca i zawody"),
+             new("ro", "Munca si joburi"), new("ru", "Работа и профессии"), new("sq", "Puna dhe vendet e punes"),
+             new("tr", "Is ve meslekler")]),
         new(new Guid("6F1464F0-9807-420F-A86E-41731D11A005"), "appointments-and-health", 50, true,
-            [new(new Guid("6F1464F0-9807-420F-A86E-41731D11B009"), "en", "Appointments and Health"),
-             new(new Guid("6F1464F0-9807-420F-A86E-41731D11B010"), "de", "Termine und Gesundheit")]),
+            [new("de", "Termine und Gesundheit"), new("ar", "المواعيد والصحة"), new("ckb", "کات و تەندروستی"), new("en", "Appointments and Health"),
+             new("fa", "قرارها و سلامت"), new("kmr", "Hevdîtin û tenduristî"), new("pl", "Terminy i zdrowie"),
+             new("ro", "Programari si sanatate"), new("ru", "Встречи и здоровье"), new("sq", "Takime dhe shendet"),
+             new("tr", "Randevular ve saglik")]),
     ];
 
     private readonly IDbContextFactory<DarwinLinguaDbContext> _dbContextFactory;
@@ -72,7 +82,7 @@ internal sealed class CatalogReferenceDataSeeder : IDatabaseSeeder
                 foreach (TopicLocalizationSeedDefinition localization in seedDefinition.Localizations)
                 {
                     newTopic.AddOrUpdateLocalization(
-                        localization.Id,
+                        CreateLocalizationId(seedDefinition.Id, localization.LanguageCode),
                         LanguageCode.From(localization.LanguageCode),
                         localization.DisplayName,
                         timestampUtc);
@@ -87,7 +97,7 @@ internal sealed class CatalogReferenceDataSeeder : IDatabaseSeeder
             foreach (TopicLocalizationSeedDefinition localization in seedDefinition.Localizations)
             {
                 existingTopic.AddOrUpdateLocalization(
-                    localization.Id,
+                    CreateLocalizationId(seedDefinition.Id, localization.LanguageCode),
                     LanguageCode.From(localization.LanguageCode),
                     localization.DisplayName,
                     timestampUtc);
@@ -108,7 +118,12 @@ internal sealed class CatalogReferenceDataSeeder : IDatabaseSeeder
         IReadOnlyList<TopicLocalizationSeedDefinition> Localizations);
 
     private sealed record TopicLocalizationSeedDefinition(
-        Guid Id,
         string LanguageCode,
         string DisplayName);
+
+    private static Guid CreateLocalizationId(Guid topicId, string languageCode)
+    {
+        byte[] bytes = MD5.HashData(Encoding.UTF8.GetBytes($"topic:{topicId:D}:{languageCode.Trim().ToLowerInvariant()}"));
+        return new Guid(bytes);
+    }
 }

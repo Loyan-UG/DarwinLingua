@@ -7,6 +7,7 @@ public sealed record ParsedContentCollectionModel(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<ParsedLocalizedTextModel> Localizations,
     string? ImageUrl,
     int SortOrder,
     IReadOnlyList<ParsedContentCollectionWordReferenceModel> Words);

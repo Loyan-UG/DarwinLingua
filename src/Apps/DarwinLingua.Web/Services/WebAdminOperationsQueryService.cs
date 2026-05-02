@@ -72,6 +72,28 @@ public interface IWebAdminOperationsQueryService
         Guid exampleId,
         CancellationToken cancellationToken);
 
+    Task<AdminWordDetailViewModel> AddWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminAddWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> UpdateWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        AdminUpdateWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> DeleteWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        CancellationToken cancellationToken);
+
     Task<AdminWordDetailViewModel> AddWordTopicAsync(
         Guid publicId,
         AdminAddWordTopicRequest request,
@@ -264,6 +286,31 @@ internal sealed class WebAdminOperationsQueryService(IWebCatalogApiClient catalo
         Guid exampleId,
         CancellationToken cancellationToken) =>
         catalogApiClient.DeleteAdminWordSenseExampleAsync(publicId, senseId, exampleId, cancellationToken);
+
+    public Task<AdminWordDetailViewModel> AddWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminAddWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminWordSenseExampleTranslationAsync(publicId, senseId, exampleId, request, cancellationToken);
+
+    public Task<AdminWordDetailViewModel> UpdateWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        AdminUpdateWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken) =>
+        catalogApiClient.UpdateAdminWordSenseExampleTranslationAsync(publicId, senseId, exampleId, translationId, request, cancellationToken);
+
+    public Task<AdminWordDetailViewModel> DeleteWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminWordSenseExampleTranslationAsync(publicId, senseId, exampleId, translationId, cancellationToken);
 
     public Task<AdminWordDetailViewModel> AddWordTopicAsync(
         Guid publicId,

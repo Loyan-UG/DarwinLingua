@@ -23,7 +23,7 @@ public sealed class BillingOptions
     public string PremiumPlanKey { get; set; } = "premium-monthly";
 }
 
-public sealed class BillingOptionsValidator : IValidateOptions<BillingOptions>
+public sealed class BillingOptionsValidator(IHostEnvironment hostEnvironment) : IValidateOptions<BillingOptions>
 {
     public ValidateOptionsResult Validate(string? name, BillingOptions options)
     {
@@ -51,15 +51,31 @@ public sealed class BillingOptionsValidator : IValidateOptions<BillingOptions>
             failures.Add("Billing:StripePremiumMonthlyPriceId is required when Stripe billing is enabled.");
         }
 
-        if (!Uri.TryCreate(options.StripeApiBaseUrl, UriKind.Absolute, out _))
+        if (!Uri.TryCreate(options.StripeApiBaseUrl, UriKind.Absolute, out Uri? stripeApiBaseUri))
         {
             failures.Add("Billing:StripeApiBaseUrl must be an absolute URL.");
         }
+        else if (!string.Equals(stripeApiBaseUri.Scheme, Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase))
+        {
+            failures.Add("Billing:StripeApiBaseUrl must use HTTPS when Stripe billing is enabled.");
+        }
 
+        Uri? publicBaseUri = null;
         if (!string.IsNullOrWhiteSpace(options.PublicBaseUrl) &&
-            !Uri.TryCreate(options.PublicBaseUrl, UriKind.Absolute, out _))
+            !Uri.TryCreate(options.PublicBaseUrl, UriKind.Absolute, out publicBaseUri))
         {
             failures.Add("Billing:PublicBaseUrl must be an absolute URL when set.");
+        }
+
+        if (hostEnvironment.IsProduction() && string.IsNullOrWhiteSpace(options.PublicBaseUrl))
+        {
+            failures.Add("Billing:PublicBaseUrl is required in Production when Stripe billing is enabled.");
+        }
+        else if (hostEnvironment.IsProduction() &&
+            publicBaseUri is not null &&
+            !string.Equals(publicBaseUri.Scheme, Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase))
+        {
+            failures.Add("Billing:PublicBaseUrl must use HTTPS in Production when Stripe billing is enabled.");
         }
 
         if (options.StripeWebhookToleranceMinutes is < 1 or > 60)

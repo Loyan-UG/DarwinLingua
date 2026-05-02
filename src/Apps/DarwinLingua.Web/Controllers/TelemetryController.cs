@@ -22,6 +22,7 @@ public sealed class TelemetryController(IWebPerformanceTelemetryService telemetr
 
     [HttpPost("client-event", Name = "Telemetry_ClientEvent")]
     [IgnoreAntiforgeryToken]
+    [RequestSizeLimit(8 * 1024)]
     public IActionResult ClientEvent([FromBody] ClientTelemetryEventInputModel input)
     {
         if (input is null || string.IsNullOrWhiteSpace(input.EventName) || !AllowedEvents.Contains(input.EventName))

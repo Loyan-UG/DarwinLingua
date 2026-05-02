@@ -80,6 +80,8 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<LabelDefinition> LabelDefinitions => Set<LabelDefinition>();
 
+    public DbSet<LabelDefinitionLocalization> LabelDefinitionLocalizations => Set<LabelDefinitionLocalization>();
+
     /// <summary>
     /// Gets the lexical grammar-note data set.
     /// </summary>
@@ -104,6 +106,8 @@ public sealed class DarwinLinguaDbContext : DbContext
     /// Gets curated word collections such as study lists and book playlists.
     /// </summary>
     public DbSet<WordCollection> WordCollections => Set<WordCollection>();
+
+    public DbSet<WordCollectionLocalization> WordCollectionLocalizations => Set<WordCollectionLocalization>();
 
     /// <summary>
     /// Gets the words linked into curated collections.
@@ -220,6 +224,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new WordFamilyMemberConfiguration());
         modelBuilder.ApplyConfiguration(new WordRelationConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollectionConfiguration());
+        modelBuilder.ApplyConfiguration(new WordCollectionLocalizationConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollectionEntryConfiguration());
         modelBuilder.ApplyConfiguration(new ScenarioLessonConfiguration());
         modelBuilder.ApplyConfiguration(new ScenarioLessonTopicConfiguration());
@@ -264,6 +269,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new WordGrammarNoteConfiguration());
         modelBuilder.ApplyConfiguration(new WordLabelConfiguration());
         modelBuilder.ApplyConfiguration(new LabelDefinitionConfiguration());
+        modelBuilder.ApplyConfiguration(new LabelDefinitionLocalizationConfiguration());
         modelBuilder.ApplyConfiguration(new WordSenseConfiguration());
         modelBuilder.ApplyConfiguration(new SenseTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new ExampleSentenceConfiguration());

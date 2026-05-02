@@ -8,6 +8,22 @@ Use it for both the learner-facing root site and the admin area.
 
 ---
 
+## Latest Local Evidence
+
+Last updated: 2026-05-01.
+
+- Local `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
+- Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors after stopping the smoke host that was locking output DLLs.
+- Local learner route smoke passed for the main browse, search, collection, scenario, conversation, organizer, install, privacy, and Identity pages.
+- Local authenticated admin route smoke passed for the dashboard, reports, analytics, diagnostics, content operations, catalog management, taxonomy, user, moderation, billing diagnostics, and email diagnostics pages.
+- No unhandled exception signature was found in smoke response bodies or server logs.
+- Local Identity return-url hardening smoke passed for login and registration; external URLs are normalized before rendering hidden form state.
+- Local webhook smoke passed for unsigned Stripe billing webhook rejection, and bounded telemetry payload handling was verified.
+- Brevo and Stripe provider-error paths were reviewed so provider response bodies are not logged or surfaced in diagnostics.
+- Production sign-off still requires the unchecked release gates below, especially automated tests, manual device/browser validation, Brevo DNS/domain verification, and Stripe test-mode/staging validation.
+
+---
+
 ## A. Build And Test
 
 - [ ] release commit selected

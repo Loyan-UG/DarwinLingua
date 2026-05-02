@@ -90,9 +90,20 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlySet<LanguageCode> meaningLanguages = await _contentImportRepository
             .GetActiveMeaningLanguagesAsync(cancellationToken)
             .ConfigureAwait(false);
-        LanguageCode[] expectedMeaningLanguages = ResolveExpectedMeaningLanguages(
-            parsedPackage.DefaultMeaningLanguages,
-            meaningLanguages);
+        IReadOnlyList<string> missingActiveMeaningLanguages = ContentLanguageRequirements.FindMissingMeaningLanguages(
+            meaningLanguages.Select(language => language.Value));
+        if (missingActiveMeaningLanguages.Count > 0)
+        {
+            issues.Add(new ImportIssueModel(
+                null,
+                "Error",
+                $"The database is missing required active meaning languages: {string.Join(", ", missingActiveMeaningLanguages)}."));
+            return CreateFatalFailureResult(parsedPackage.PackageId, issues, parsedPackage.PackageName, parsedPackage.Entries.Count);
+        }
+
+        LanguageCode[] expectedMeaningLanguages = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(LanguageCode.From)
+            .ToArray();
 
         ValidateScenarios(parsedPackage.Scenarios, topicsByKey, meaningLanguages, issues);
         ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
@@ -513,6 +524,10 @@ internal sealed class ContentImportService : IContentImportService
             string? normalizedDescription = NormalizeOptionalText(collection.Description);
             string? normalizedImageUrl = NormalizeOptionalText(collection.ImageUrl);
             int sortOrder = collection.SortOrder < 0 ? 0 : collection.SortOrder;
+            ParsedLocalizedTextModel[] localizations = ValidateLocalizedCollectionText(
+                collection.Localizations,
+                "Collection localizations",
+                errors);
 
             if (string.IsNullOrWhiteSpace(normalizedName))
             {
@@ -618,6 +633,16 @@ internal sealed class ContentImportService : IContentImportService
                     timestampUtc);
 
                 importedCollection.ReplaceEntries(collectionEntries, timestampUtc);
+                foreach (ParsedLocalizedTextModel localization in localizations)
+                {
+                    importedCollection.AddOrUpdateLocalization(
+                        Guid.NewGuid(),
+                        LanguageCode.From(NormalizeText(localization.Language).ToLowerInvariant()),
+                        NormalizeText(localization.Name),
+                        NormalizeOptionalText(localization.Description),
+                        timestampUtc);
+                }
+
                 importedCollections.Add(importedCollection);
             }
             catch (DomainRuleException exception)
@@ -745,17 +770,6 @@ internal sealed class ContentImportService : IContentImportService
             return;
         }
 
-        string[] coverageWarnings = BuildTranslationCoverageWarnings(
-            rawLemma,
-            meaningTranslations,
-            examples,
-            expectedMeaningLanguages);
-
-        foreach (string coverageWarning in coverageWarnings)
-        {
-            issues.Add(new ImportIssueModel(entryIndex + 1, "Warning", coverageWarning));
-        }
-
         WordEntry wordEntry = new(
             Guid.NewGuid(),
             Guid.NewGuid(),
@@ -872,22 +886,9 @@ internal sealed class ContentImportService : IContentImportService
             normalizedPartOfSpeechText,
             ContentPackageEntryStatus.Imported,
             null,
-            coverageWarnings.Length == 0 ? null : string.Join(" ", coverageWarnings),
+            null,
             wordEntry.PublicId,
             DateTime.UtcNow);
-    }
-
-    private static LanguageCode[] ResolveExpectedMeaningLanguages(
-        IReadOnlyList<string> defaultMeaningLanguages,
-        IReadOnlySet<LanguageCode> activeMeaningLanguages)
-    {
-        return defaultMeaningLanguages
-            .Select(language => NormalizeText(language).ToLowerInvariant())
-            .Where(language => !string.IsNullOrWhiteSpace(language))
-            .Select(LanguageCode.From)
-            .Where(activeMeaningLanguages.Contains)
-            .Distinct()
-            .ToArray();
     }
 
     private static string[] BuildTranslationCoverageWarnings(
@@ -1493,7 +1494,74 @@ internal sealed class ContentImportService : IContentImportService
             }
         }
 
+        IReadOnlyList<string> missing = ContentLanguageRequirements.FindMissingMeaningLanguages(
+            translations.Keys.Select(language => language.Value));
+        if (missing.Count > 0)
+        {
+            entryErrors.Add($"Missing required meaning languages: {string.Join(", ", missing)}.");
+        }
+
         return translations;
+    }
+
+    private static ParsedLocalizedTextModel[] ValidateLocalizedCollectionText(
+        IReadOnlyList<ParsedLocalizedTextModel> localizations,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        if (localizations.Count == 0)
+        {
+            errors.Add($"{fieldName} must contain all required languages: {ContentLanguageRequirements.FormatRequiredLocalizationLanguages()}.");
+            return [];
+        }
+
+        List<ParsedLocalizedTextModel> normalized = [];
+        HashSet<string> seenLanguages = new(StringComparer.Ordinal);
+
+        for (int index = 0; index < localizations.Count; index++)
+        {
+            ParsedLocalizedTextModel localization = localizations[index];
+            string language = NormalizeText(localization.Language).ToLowerInvariant();
+            string name = NormalizeText(localization.Name);
+
+            if (string.IsNullOrWhiteSpace(language))
+            {
+                errors.Add($"{fieldName}[{index + 1}] language is required.");
+                continue;
+            }
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                errors.Add($"{fieldName}[{index + 1}] name is required.");
+                continue;
+            }
+
+            try
+            {
+                LanguageCode.From(language);
+            }
+            catch (DomainRuleException exception)
+            {
+                errors.Add($"{fieldName}[{index + 1}] language is invalid: {exception.Message}");
+                continue;
+            }
+
+            if (!seenLanguages.Add(language))
+            {
+                errors.Add($"{fieldName} contains duplicate language '{language}'.");
+                continue;
+            }
+
+            normalized.Add(new ParsedLocalizedTextModel(language, name, NormalizeOptionalText(localization.Description)));
+        }
+
+        IReadOnlyList<string> missing = ContentLanguageRequirements.FindMissingLocalizationLanguages(seenLanguages);
+        if (missing.Count > 0)
+        {
+            errors.Add($"{fieldName} are missing languages: {string.Join(", ", missing)}.");
+        }
+
+        return normalized.ToArray();
     }
 
     private static List<(string GermanText, Dictionary<LanguageCode, string> Translations)> ValidateExamples(

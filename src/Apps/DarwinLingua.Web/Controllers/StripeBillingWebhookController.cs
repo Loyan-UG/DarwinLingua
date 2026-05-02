@@ -14,6 +14,7 @@ public sealed class StripeBillingWebhookController(
 {
     [HttpPost]
     [IgnoreAntiforgeryToken]
+    [RequestSizeLimit(64 * 1024)]
     public async Task<IActionResult> Post(CancellationToken cancellationToken)
     {
         using StreamReader reader = new(Request.Body);

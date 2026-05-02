@@ -8,6 +8,7 @@ public sealed record AdminCollectionItemResponse(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminCollectionLocalizationResponse> Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder,
@@ -19,6 +20,7 @@ public sealed record AdminCollectionDetailResponse(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminCollectionLocalizationResponse> Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder,
@@ -34,13 +36,25 @@ public sealed record AdminCollectionEntryResponse(
     string CefrLevel,
     int SortOrder);
 
+public sealed record AdminCollectionLocalizationResponse(
+    Guid LocalizationId,
+    string LanguageCode,
+    string Name,
+    string? Description);
+
 public sealed record AdminSaveCollectionRequest(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminSaveCollectionLocalizationRequest>? Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder);
+
+public sealed record AdminSaveCollectionLocalizationRequest(
+    string LanguageCode,
+    string Name,
+    string? Description);
 
 public sealed record AdminAddCollectionWordRequest(
     Guid WordPublicId,
@@ -53,6 +67,7 @@ public sealed record AdminBulkCollectionImportItemRequest(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminSaveCollectionLocalizationRequest>? Localizations,
     string? ImageUrl,
     string? PublicationStatus,
     int SortOrder,

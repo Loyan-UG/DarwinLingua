@@ -52,5 +52,13 @@ internal sealed class WordCollectionConfiguration : IEntityTypeConfiguration<Wor
             .WithOne()
             .HasForeignKey(entry => entry.WordCollectionId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasMany(collection => collection.Localizations)
+            .WithOne()
+            .HasForeignKey(localization => localization.WordCollectionId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Navigation(collection => collection.Localizations)
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
     }
 }

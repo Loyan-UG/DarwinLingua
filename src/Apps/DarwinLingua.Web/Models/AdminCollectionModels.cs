@@ -11,6 +11,7 @@ public sealed record AdminCollectionItemViewModel(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminCollectionLocalizationViewModel>? Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder,
@@ -22,6 +23,7 @@ public sealed record AdminCollectionDetailViewModel(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminCollectionLocalizationViewModel>? Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder,
@@ -36,6 +38,12 @@ public sealed record AdminCollectionEntryViewModel(
     string PartOfSpeech,
     string CefrLevel,
     int SortOrder);
+
+public sealed record AdminCollectionLocalizationViewModel(
+    Guid LocalizationId,
+    string LanguageCode,
+    string Name,
+    string? Description);
 
 public sealed class AdminCollectionEditViewModel
 {
@@ -85,9 +93,15 @@ public sealed record AdminSaveCollectionRequest(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminSaveCollectionLocalizationRequest>? Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder);
+
+public sealed record AdminSaveCollectionLocalizationRequest(
+    string LanguageCode,
+    string Name,
+    string? Description);
 
 public sealed record AdminAddCollectionWordRequest(
     Guid WordPublicId,
@@ -118,6 +132,7 @@ public sealed record AdminBulkCollectionImportItemRequest(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminSaveCollectionLocalizationRequest>? Localizations,
     string? ImageUrl,
     string? PublicationStatus,
     int SortOrder,

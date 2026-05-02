@@ -7,15 +7,22 @@
     <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Admin overview", "Operational control center", "Monitor catalog health, publishing, user entitlements, reports, events, billing, and email delivery from one workspace.")' />
 </section>
 
-<section class="grid-three-col">
+<div class="admin-summary-grid">
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Active", Model.ActiveWordCount.ToString(), "Published learner-visible words.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Events", Model.ConversationEventCount.ToString(), "Conversation events available in the directory.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.PendingUserReportCount.ToString(), "Moderation reports waiting for review.")' />
-</section>
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Admin overview sections">
+    <a href="#management">Management</a>
+    <a href="#catalog">Catalog</a>
+    <a href="#social">Social</a>
+    <a href="#moderation">Moderation</a>
+</nav>
 
 <section class="grid-two-col">
     <article class="panel stack-md">
-        <h2 class="headline-sm">Management areas</h2>
+        <h2 id="management" class="headline-sm">Management areas</h2>
         <ul class="feature-list">
             <li><a asp-area="Admin" asp-controller="Imports" asp-action="Index">Imports</a></li>
             <li><a asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a></li>
@@ -28,7 +35,7 @@
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Catalog operations</h2>
+        <h2 id="catalog" class="headline-sm">Catalog operations</h2>
         <ul class="feature-list">
             <li>Draft words: @Model.DraftWordCount</li>
             <li>Topics: @Model.TotalTopicCount</li>
@@ -38,7 +45,7 @@
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Social learning</h2>
+        <h2 id="social" class="headline-sm">Social learning</h2>
         <ul class="feature-list">
             <li>Organizer profiles: @Model.OrganizerProfileCount</li>
             <li>Event RSVPs: @Model.EventRsvpCount</li>
@@ -48,7 +55,7 @@
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Moderation</h2>
+        <h2 id="moderation" class="headline-sm">Moderation</h2>
         <ul class="feature-list">
             <li>Pending reports: @Model.PendingUserReportCount</li>
             <li>User blocks: @Model.UserBlockCount</li>

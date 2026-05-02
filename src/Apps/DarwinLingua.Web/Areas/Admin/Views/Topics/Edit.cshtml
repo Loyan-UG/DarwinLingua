@@ -4,7 +4,22 @@
     var mergeTargets = ViewData["MergeTargets"] as IReadOnlyList<DarwinLingua.Web.Models.AdminTopicItemViewModel> ?? [];
 }
 
-<section class="panel stack-lg">
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Mode", Model.IsNew ? "Create" : "Edit", "Managed topic taxonomy.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Key", string.IsNullOrWhiteSpace(Model.Key) ? "New" : Model.Key, "Stable normalized identifier.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Merge targets", mergeTargets.Count.ToString(), "Available duplicate consolidation targets.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Topic editor sections">
+    <a href="#topic-definition">Definition</a>
+    <a href="#topic-localization">Localization</a>
+    @if (!Model.IsNew)
+    {
+        <a href="#topic-merge">Merge</a>
+    }
+</nav>
+
+<section id="topic-definition" class="panel stack-lg">
     <div class="cluster cluster--between">
         <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.IsNew ? "New topic" : Model.Key, "Topic editor", "Use lowercase kebab-case keys and localized names for learner-facing topic labels.")' />
         <a class="button button--secondary" asp-action="Index">Back to topics</a>
@@ -39,7 +54,7 @@
             </label>
         </div>
 
-        <div class="admin-two-column">
+        <div id="topic-localization" class="admin-two-column">
             <div class="admin-inline-panel stack-sm">
                 <strong>Primary localization</strong>
                 <label class="form-field">
@@ -70,7 +85,7 @@
 
 @if (!Model.IsNew)
 {
-    <section class="panel stack-md">
+    <section id="topic-merge" class="panel stack-md">
         <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Merge", "Consolidate duplicate topics", "Move words, scenarios, conversation starters, and event preparation packs from this topic into another topic safely.")' />
         <form class="admin-inline-panel stack-sm" method="post" asp-action="Merge" asp-route-topicId="@Model.TopicId" data-confirm-submit="Merge this topic into the selected target?">
             @Html.AntiForgeryToken()

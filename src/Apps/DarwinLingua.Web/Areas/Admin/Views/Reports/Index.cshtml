@@ -18,17 +18,25 @@
     <p class="body-sm">Generated: @Model.GeneratedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</p>
 </section>
 
-<section class="grid-three-col">
+<div class="admin-summary-grid">
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Users", Model.IdentityUserCount.ToString(), "Identity users in the Web admin/user store.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.ModerationMetrics.First(item => item.Label == "Pending reports").Value, "Moderation reports waiting for review.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Email failures", Model.EmailMetrics.First(item => item.Label == "Failed in 24h").Value, "Transactional email delivery failures in the last 24 hours.")' />
-</section>
+</div>
+
+<nav class="admin-anchor-nav" aria-label="System report sections">
+    @foreach (var metricSection in sections)
+    {
+        <a href="#@metricSection.Title.ToLowerInvariant().Replace(" ", "-")">@metricSection.Title</a>
+    }
+    <a href="#analytics">Analytics</a>
+</nav>
 
 <section class="grid-two-col">
     @foreach (var metricSection in sections)
     {
         <article class="panel stack-md">
-            <h2 class="headline-sm">@metricSection.Title</h2>
+            <h2 id="@metricSection.Title.ToLowerInvariant().Replace(" ", "-")" class="headline-sm">@metricSection.Title</h2>
             <div class="table-scroll">
                 <table class="data-table admin-data-grid">
                     <tbody>
@@ -50,7 +58,7 @@
 </section>
 
 <section class="panel stack-lg">
-    <h2 class="headline-sm">Top Web analytics counters</h2>
+    <h2 id="analytics" class="headline-sm">Top Web analytics counters</h2>
     @if (Model.AnalyticsItems.Count == 0)
     {
         <p class="body-sm">No Web analytics counters have been recorded yet.</p>

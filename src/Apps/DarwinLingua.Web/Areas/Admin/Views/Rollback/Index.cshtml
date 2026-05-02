@@ -5,10 +5,37 @@
 
 <section class="panel stack-lg">
     <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Rollback", "Protected rollback review", "Use this screen to review catalog state and confirm rollback intent before any destructive operational action.")' />
+    <div class="admin-summary-grid">
+        <a href="#rollback-state" class="admin-summary-tile">
+            <span class="eyebrow">Draft words</span>
+            <strong>@Model.DraftWordCount</strong>
+        </a>
+        <a href="#rollback-state" class="admin-summary-tile">
+            <span class="eyebrow">Imported packages</span>
+            <strong>@Model.ImportedPackageCount</strong>
+        </a>
+        <a href="#rollback-warning" class="admin-summary-tile">
+            <span class="eyebrow">Protection</span>
+            <strong>Review</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Rollback sections">
+        <a href="#rollback-state">State</a>
+        <a href="#rollback-warning">Warning</a>
+    </nav>
+</section>
+
+<section id="rollback-state" class="panel stack-md">
+    <h2 class="headline-sm">Current catalog state</h2>
     <ul class="feature-list">
         <li>Draft words currently present: @Model.DraftWordCount</li>
         <li>Imported packages tracked: @Model.ImportedPackageCount</li>
     </ul>
+</section>
+
+<section id="rollback-warning" class="panel stack-md">
+    <h2 class="headline-sm">Rollback warning</h2>
+    <p class="body-sm">@Model.WarningMessage</p>
     <div class="action-row">
         <button type="button" class="button button--secondary" data-modal-open="rollback-confirmation">Review rollback warning</button>
     </div>

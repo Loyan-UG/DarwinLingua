@@ -2,6 +2,7 @@ using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,6 +35,7 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
 
         AdminCollectionItemResponse[] collections = await dbContext.WordCollections
             .AsNoTracking()
+            .Include(collection => collection.Localizations)
             .OrderBy(collection => collection.SortOrder)
             .ThenBy(collection => collection.Name)
             .Select(collection => new AdminCollectionItemResponse(
@@ -41,6 +43,14 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
                 collection.Slug,
                 collection.Name,
                 collection.Description,
+                collection.Localizations
+                    .OrderBy(localization => localization.LanguageCode.Value)
+                    .Select(localization => new AdminCollectionLocalizationResponse(
+                        localization.Id,
+                        localization.LanguageCode.Value,
+                        localization.Name,
+                        localization.Description))
+                    .ToArray(),
                 collection.ImageUrl,
                 collection.PublicationStatus.ToString(),
                 collection.SortOrder,
@@ -65,6 +75,7 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
             .AsNoTracking()
             .Include(item => item.Entries)
                 .ThenInclude(entry => entry.WordEntry)
+            .Include(item => item.Localizations)
             .SingleOrDefaultAsync(item => item.Id == collectionId, cancellationToken)
             .ConfigureAwait(false);
 
@@ -88,6 +99,7 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
             status,
             request.SortOrder,
             now);
+        ApplyCollectionLocalizations(collection, request.Localizations, now, requireCompleteCoverage: false);
 
         dbContext.WordCollections.Add(collection);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
@@ -111,6 +123,7 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
         WordCollection? collection = await dbContext.WordCollections
             .Include(item => item.Entries)
                 .ThenInclude(entry => entry.WordEntry)
+            .Include(item => item.Localizations)
             .SingleOrDefaultAsync(item => item.Id == collectionId, cancellationToken)
             .ConfigureAwait(false);
 
@@ -120,6 +133,7 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
         }
 
         collection.UpdateMetadata(request.Name, request.Description, request.ImageUrl, status, request.SortOrder, DateTime.UtcNow);
+        ApplyCollectionLocalizations(collection, request.Localizations, DateTime.UtcNow, requireCompleteCoverage: false);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
         return MapDetail(collection);
@@ -232,8 +246,10 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
             try
             {
                 PublicationStatus status = ParseStatus(string.IsNullOrWhiteSpace(item.PublicationStatus) ? "Draft" : item.PublicationStatus);
+                ValidateCompleteLocalizations(item.Localizations, "Collection localizations");
                 WordCollection? collection = await dbContext.WordCollections
                     .Include(existing => existing.Entries)
+                    .Include(existing => existing.Localizations)
                     .SingleOrDefaultAsync(existing => existing.Slug == item.Slug.Trim().ToLowerInvariant(), cancellationToken)
                     .ConfigureAwait(false);
 
@@ -257,6 +273,8 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
                 {
                     collection.UpdateMetadata(item.Name, item.Description, item.ImageUrl, status, item.SortOrder, now);
                 }
+
+                ApplyCollectionLocalizations(collection, item.Localizations, now, requireCompleteCoverage: true);
 
                 IReadOnlyList<AdminBulkCollectionWordImportRequest> words = item.Words ?? [];
                 if (words.Count > 0)
@@ -326,6 +344,7 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
             collection.Slug,
             collection.Name,
             collection.Description,
+            MapLocalizations(collection.Localizations),
             collection.ImageUrl,
             collection.PublicationStatus.ToString(),
             collection.SortOrder,
@@ -341,4 +360,76 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
                     entry.WordEntry?.PrimaryCefrLevel.ToString() ?? "-",
                     entry.SortOrder))
                 .ToArray());
+
+    private static AdminCollectionLocalizationResponse[] MapLocalizations(IEnumerable<WordCollectionLocalization> localizations) =>
+        localizations
+            .OrderBy(localization => localization.LanguageCode.Value)
+            .Select(localization => new AdminCollectionLocalizationResponse(
+                localization.Id,
+                localization.LanguageCode.Value,
+                localization.Name,
+                localization.Description))
+            .ToArray();
+
+    private static void ApplyCollectionLocalizations(
+        WordCollection collection,
+        IReadOnlyList<AdminSaveCollectionLocalizationRequest>? localizations,
+        DateTime now,
+        bool requireCompleteCoverage)
+    {
+        if (localizations is null || localizations.Count == 0)
+        {
+            if (requireCompleteCoverage)
+            {
+                throw new InvalidOperationException(
+                    $"Collection localizations are required for every language: {ContentLanguageRequirements.FormatRequiredLocalizationLanguages()}.");
+            }
+
+            return;
+        }
+
+        if (requireCompleteCoverage)
+        {
+            ValidateCompleteLocalizations(localizations, "Collection localizations");
+        }
+
+        foreach (AdminSaveCollectionLocalizationRequest localization in localizations)
+        {
+            collection.AddOrUpdateLocalization(
+                Guid.NewGuid(),
+                LanguageCode.From(localization.LanguageCode),
+                localization.Name,
+                localization.Description,
+                now);
+        }
+    }
+
+    private static void ValidateCompleteLocalizations(
+        IReadOnlyList<AdminSaveCollectionLocalizationRequest>? localizations,
+        string label)
+    {
+        if (localizations is null || localizations.Count == 0)
+        {
+            throw new InvalidOperationException(
+                $"{label} are required for every language: {ContentLanguageRequirements.FormatRequiredLocalizationLanguages()}.");
+        }
+
+        IReadOnlyList<string> missing = ContentLanguageRequirements.FindMissingLocalizationLanguages(
+            localizations.Select(localization => localization.LanguageCode));
+        if (missing.Count > 0)
+        {
+            throw new InvalidOperationException($"{label} are missing languages: {string.Join(", ", missing)}.");
+        }
+
+        string[] duplicates = localizations
+            .Where(localization => !string.IsNullOrWhiteSpace(localization.LanguageCode))
+            .GroupBy(localization => localization.LanguageCode.Trim().ToLowerInvariant())
+            .Where(group => group.Count() > 1)
+            .Select(group => group.Key)
+            .ToArray();
+        if (duplicates.Length > 0)
+        {
+            throw new InvalidOperationException($"{label} contain duplicate languages: {string.Join(", ", duplicates)}.");
+        }
+    }
 }

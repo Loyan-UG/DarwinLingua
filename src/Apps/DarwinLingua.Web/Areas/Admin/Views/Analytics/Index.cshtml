@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.AdminAnalyticsPageViewModel
 @{
     ViewData["Title"] = "Analytics";
+    var totalEvents = Model.TotalsByEvent.Values.Sum();
+    var trackedAreas = Model.TotalsByArea.Count;
 }
 
 <section class="panel stack-lg">
@@ -9,9 +11,21 @@
     <p class="body-lg">Aggregated Web product counters only. No user email, IP address, free-text note, or contact detail is stored in this summary.</p>
 </section>
 
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Events", totalEvents.ToString(), "Total privacy-preserving Web analytics events.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Areas", trackedAreas.ToString(), "Distinct product areas with counters.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Counters", Model.Items.Count.ToString(), "Stored aggregate counter rows.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Analytics sections">
+    <a href="#events">Events</a>
+    <a href="#areas">Areas</a>
+    <a href="#counters">Counters</a>
+</nav>
+
 <section class="grid-two-col">
     <article class="panel stack-md">
-        <h2 class="headline-sm">By event</h2>
+        <h2 id="events" class="headline-sm">By event</h2>
         @if (Model.TotalsByEvent.Count == 0)
         {
             <p class="body-sm">No product analytics have been recorded yet.</p>
@@ -27,7 +41,7 @@
         }
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">By area</h2>
+        <h2 id="areas" class="headline-sm">By area</h2>
         @if (Model.TotalsByArea.Count == 0)
         {
             <p class="body-sm">No product analytics have been recorded yet.</p>
@@ -45,7 +59,7 @@
 </section>
 
 <section class="panel stack-lg">
-    <h2 class="headline-sm">Counters</h2>
+    <h2 id="counters" class="headline-sm">Counters</h2>
     @if (Model.Items.Count == 0)
     {
         <p class="body-sm">No counters have been recorded yet.</p>

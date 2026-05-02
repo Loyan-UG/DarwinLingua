@@ -122,6 +122,10 @@ internal sealed class ContentImportParser : IContentImportParser
             collection.Slug ?? string.Empty,
             collection.Name ?? string.Empty,
             collection.Description,
+            (collection.Localizations ?? []).Select(localization => new ParsedLocalizedTextModel(
+                localization.Language ?? string.Empty,
+                localization.Name ?? string.Empty,
+                localization.Description)).ToArray(),
             collection.ImageUrl ?? collection.Image,
             collection.SortOrder ?? 0,
             explicitWords.Concat(wordKeyReferences).ToArray());
@@ -337,6 +341,8 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public string? Description { get; set; }
 
+        public LocalizedTextDocument[]? Localizations { get; set; }
+
         public string? ImageUrl { get; set; }
 
         public string? Image { get; set; }
@@ -346,6 +352,15 @@ internal sealed class ContentImportParser : IContentImportParser
         public ContentCollectionWordReferenceDocument[]? Words { get; set; }
 
         public string?[]? WordKeys { get; set; }
+    }
+
+    private sealed class LocalizedTextDocument
+    {
+        public string? Language { get; set; }
+
+        public string? Name { get; set; }
+
+        public string? Description { get; set; }
     }
 
     private sealed class ContentCollectionWordReferenceDocument

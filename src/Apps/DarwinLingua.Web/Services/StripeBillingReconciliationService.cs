@@ -45,10 +45,10 @@ public sealed class StripeBillingReconciliationService(
         if (!response.IsSuccessStatusCode)
         {
             logger.LogWarning(
-                "Stripe subscription reconciliation failed for {SubscriptionId} with status {StatusCode}: {BodySummary}",
+                "Stripe subscription reconciliation failed for {SubscriptionId} with status {StatusCode} ({ReasonPhrase}).",
                 normalizedSubscriptionId,
                 (int)response.StatusCode,
-                Summarize(responseBody));
+                response.ReasonPhrase ?? "no reason phrase");
             throw new InvalidOperationException("Stripe subscription reconciliation failed.");
         }
 
@@ -272,14 +272,4 @@ public sealed class StripeBillingReconciliationService(
         return value.ValueKind == JsonValueKind.String ? value.GetString() : value.ToString();
     }
 
-    private static string Summarize(string value)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            return string.Empty;
-        }
-
-        string collapsed = value.ReplaceLineEndings(" ").Trim();
-        return collapsed.Length <= 512 ? collapsed : collapsed[..512];
-    }
 }

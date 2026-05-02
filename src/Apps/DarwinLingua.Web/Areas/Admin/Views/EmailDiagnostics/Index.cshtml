@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Email diagnostics";
     bool isAdmin = User.IsInRole("Admin");
+    int warningCount = Model.Readiness.Warnings.Count;
+    int failedLogCount = Model.Logs.Count(log => log.Status == DarwinLingua.Web.Data.WebEmailDeliveryStatus.Failed);
 }
 
 <section class="panel stack-lg">
@@ -16,10 +18,41 @@
     {
         <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
     }
+
+    <div class="admin-summary-grid">
+        <a href="#email-readiness" class="admin-summary-tile">
+            <span class="eyebrow">Readiness warnings</span>
+            <strong>@warningCount</strong>
+        </a>
+        <a href="#email-suppressions" class="admin-summary-tile">
+            <span class="eyebrow">Suppressed recipients</span>
+            <strong>@Model.SuppressionSummary.TotalCount</strong>
+        </a>
+        <a href="#email-logs" class="admin-summary-tile">
+            <span class="eyebrow">Failed attempts</span>
+            <strong>@failedLogCount</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Email diagnostics sections">
+        <a href="#email-readiness">Readiness</a>
+        <a href="#email-suppressions">Suppressions</a>
+        <a href="#email-filters">Filters</a>
+        <a href="#email-retention">Retention</a>
+        <a href="#email-resend">Resend</a>
+        @if (isAdmin)
+        {
+            <a href="#email-provider-event">Provider event</a>
+        }
+        <a href="#email-logs">Logs</a>
+    </nav>
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Readiness</h2>
+<section id="email-readiness" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Readiness</h2>
+        <span class="status-pill">@(warningCount == 0 ? "Ready" : $"{warningCount} warning(s)")</span>
+    </div>
     <div class="metric-grid">
         <article class="metric-card">
             <span class="metric-card__label">Mode</span>
@@ -72,8 +105,11 @@
     }
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Suppression list</h2>
+<section id="email-suppressions" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Suppression list</h2>
+        <span class="status-pill">@Model.Suppressions.Count shown</span>
+    </div>
     <div class="metric-grid">
         <article class="metric-card">
             <span class="metric-card__label">Suppressed recipients</span>
@@ -159,7 +195,8 @@
     }
 </section>
 
-<section class="panel stack-md">
+<section id="email-filters" class="panel stack-md">
+    <h2 class="headline-sm">Delivery filters</h2>
     <form method="get" class="filter-bar">
         <label>
             Status
@@ -210,8 +247,11 @@
     </form>
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Retention</h2>
+<section id="email-retention" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Retention</h2>
+        <span class="status-pill">@(isAdmin ? "Admin action" : "Admin only")</span>
+    </div>
     <p class="body-sm">Delivery logs are retained for @Model.RetentionDays days. Cleanup removes only entries older than that retention window.</p>
     @if (isAdmin)
     {
@@ -226,9 +266,9 @@
     }
 </section>
 
-<section class="panel stack-md">
+<section id="email-resend" class="panel stack-md">
     <h2 class="headline-sm">Manual resend</h2>
-    <p class="body-sm">Generate a new confirmation token for an unconfirmed account. Password reset emails are not resent from diagnostics.</p>
+    <p class="body-sm">Generate a new confirmation token for an unconfirmed account. Password reset emails are not resent from diagnostics, and the result message intentionally avoids account enumeration.</p>
     <form method="post" asp-action="ResendConfirmation" class="filter-bar" data-confirm-submit="Send a new confirmation email to this account?">
         @Html.AntiForgeryToken()
         <label>
@@ -241,8 +281,11 @@
 
 @if (isAdmin)
 {
-    <section class="panel stack-md">
-        <h2 class="headline-sm">Manual provider event</h2>
+    <section id="email-provider-event" class="panel stack-md">
+        <div class="cluster cluster--between">
+            <h2 class="headline-sm">Manual provider event</h2>
+            <span class="status-pill">Admin only</span>
+        </div>
         <div class="status-banner status-banner--error">Admin-only reconciliation tool. Use this only when Brevo dashboard data did not arrive through webhook.</div>
         <form method="post" asp-action="RecordProviderEvent" class="filter-bar" data-confirm-submit="Record this provider event manually and update delivery state?">
             @Html.AntiForgeryToken()
@@ -268,8 +311,11 @@
     </section>
 }
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Recent delivery attempts</h2>
+<section id="email-logs" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Recent delivery attempts</h2>
+        <span class="status-pill">@Model.Logs.Count shown</span>
+    </div>
     @if (Model.Logs.Count == 0)
     {
         <p class="body-sm">No transactional email delivery attempts have been recorded yet.</p>

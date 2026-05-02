@@ -55,6 +55,16 @@ public sealed class ExampleTranslation
 
     public DateTime UpdatedAtUtc { get; private set; }
 
+    /// <summary>
+    /// Updates the translation language and text.
+    /// </summary>
+    internal void Update(LanguageCode languageCode, string translationText, DateTime updatedAtUtc)
+    {
+        LanguageCode = languageCode;
+        TranslationText = NormalizeRequiredText(translationText, nameof(translationText));
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     private static string NormalizeRequiredText(string value, string parameterName)
     {
         if (string.IsNullOrWhiteSpace(value))

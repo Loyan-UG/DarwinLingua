@@ -3,7 +3,22 @@
     ViewData["Title"] = "Import scenarios";
 }
 
-<section class="panel stack-lg">
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Import type", "Scenarios", "Bulk practice content.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Format", "JSON", "Complete scenario lessons.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Result", Model is null ? "Pending" : Model.ImportedCount.ToString(), "Imported rows in the latest upload.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Scenario import sections">
+    <a href="#scenario-import-upload">Upload</a>
+    @if (Model is not null)
+    {
+        <a href="#scenario-import-result">Result</a>
+    }
+    <a href="#scenario-import-format">JSON shape</a>
+</nav>
+
+<section id="scenario-import-upload" class="panel stack-lg">
     <div class="cluster cluster--between">
         <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Import scenarios", "Bulk JSON", "Upload complete scenario lessons with dialogue turns, phrases, questions, answers, and translations.")' />
         <a class="button button--secondary" asp-action="Index">Back to scenarios</a>
@@ -22,7 +37,7 @@
 
 @if (Model is not null)
 {
-    <section class="panel stack-md">
+    <section id="scenario-import-result" class="panel stack-md">
         <div class="admin-detail-grid">
             <div><span class="eyebrow">Total</span><strong>@Model.TotalCount</strong></div>
             <div><span class="eyebrow">Imported</span><strong>@Model.ImportedCount</strong></div>
@@ -61,7 +76,7 @@
     </section>
 }
 
-<section class="panel stack-md">
+<section id="scenario-import-format" class="panel stack-md">
     <h2 class="headline-sm">Expected JSON shape</h2>
     <pre class="code-sample"><code>{
   "scenarios": [

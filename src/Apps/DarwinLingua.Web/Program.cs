@@ -87,7 +87,10 @@ builder.Services.Configure<EmailChangeTokenProviderOptions>(options =>
 });
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
-builder.Services.AddHttpClient("BrevoTransactionalEmail");
+builder.Services.AddHttpClient("BrevoTransactionalEmail", client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(20);
+});
 builder.Services.AddHttpClient("StripeBilling", (serviceProvider, client) =>
 {
     BillingOptions billingOptions = serviceProvider

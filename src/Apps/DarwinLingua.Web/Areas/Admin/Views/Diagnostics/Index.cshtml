@@ -9,9 +9,20 @@
     <p class="body-lg">Review live content health, import status, and publishing signals from the shared store before making operational changes.</p>
 </section>
 
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Active words", Model.ActiveWordCount.ToString(), "Published catalog words visible to learners.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Draft rows", Model.DraftWordCount.ToString(), "Rows waiting for publishing review.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Failed imports", Model.FailedPackageCount.ToString(), "Import packages requiring attention.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Diagnostics sections">
+    <a href="#content-health">Content health</a>
+    <a href="#review-checklist">Review checklist</a>
+</nav>
+
 <section class="grid-two-col">
     <article class="panel stack-md">
-        <h2 class="headline-sm">Content health</h2>
+        <h2 id="content-health" class="headline-sm">Content health</h2>
         <ul class="feature-list">
             <li>Active learner words: @Model.ActiveWordCount</li>
             <li>Draft rows awaiting publication: @Model.DraftWordCount</li>
@@ -19,7 +30,7 @@
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Review checklist</h2>
+        <h2 id="review-checklist" class="headline-sm">Review checklist</h2>
         <ul class="feature-list">
             <li>Confirm failed imports before publishing</li>
             <li>Review draft volume after each import</li>

@@ -1,0 +1,204 @@
+@using DarwinLingua.Identity
+@model DarwinLingua.Web.Models.AdminUserDetailViewModel
+@{
+    ViewData["Title"] = Model.Email;
+    string? expiryValue = (Model.PremiumEndsAtUtc ?? Model.TrialEndsAtUtc)?.UtcDateTime.ToString("u");
+}
+
+<section class="panel stack-lg admin-user-detail">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Email, "User profile", "Review account details, entitlement features, roles, and audit history.")' />
+        <a class="button button--secondary" asp-action="Index">Back to users</a>
+    </div>
+
+    @if (TempData["StatusMessage"] is string statusMessage)
+    {
+        <div class="status-banner status-banner--success">@statusMessage</div>
+    }
+    @if (TempData["ErrorMessage"] is string errorMessage)
+    {
+        <div class="status-banner status-banner--error">@errorMessage</div>
+    }
+
+    <div class="admin-summary-grid">
+        <div class="admin-summary-tile">
+            <span class="eyebrow">Plan</span>
+            <strong>@Model.EntitlementTier</strong>
+        </div>
+        <div class="admin-summary-tile">
+            <span class="eyebrow">Roles</span>
+            <strong>@Model.Roles.Count</strong>
+        </div>
+        <div class="admin-summary-tile">
+            <span class="eyebrow">Features</span>
+            <strong>@Model.EnabledFeatures.Count</strong>
+        </div>
+        <div class="admin-summary-tile">
+            <span class="eyebrow">Failed logins</span>
+            <strong>@Model.AccessFailedCount</strong>
+        </div>
+    </div>
+</section>
+
+<section class="admin-two-column">
+    <div class="panel stack-md">
+        <div class="admin-editor-section-header">
+            <h2 class="headline-sm">Account</h2>
+            <span class="status-pill">Identity</span>
+        </div>
+        <form class="stack-md" method="post" asp-action="UpdateAccount" asp-route-userId="@Model.UserId" data-confirm-submit="Save account changes?">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <div class="form-grid">
+                <label class="form-field">
+                    <span>Email</span>
+                    <input name="Email" type="email" maxlength="256" value="@Model.Email" required />
+                </label>
+                <label class="form-field">
+                    <span>User name</span>
+                    <input name="UserName" maxlength="256" value="@(Model.UserName ?? Model.Email)" required />
+                </label>
+                <label class="form-field">
+                    <span>Phone number</span>
+                    <input name="PhoneNumber" maxlength="64" value="@Model.PhoneNumber" />
+                </label>
+                <label class="admin-toggle-field">
+                    <input type="checkbox" name="EmailConfirmed" value="true" checked="@Model.EmailConfirmed" />
+                    <input type="hidden" name="EmailConfirmed" value="false" />
+                    <span>Email confirmed</span>
+                </label>
+                <label class="admin-toggle-field">
+                    <input type="checkbox" name="LockoutEnabled" value="true" checked="@Model.LockoutEnabled" />
+                    <input type="hidden" name="LockoutEnabled" value="false" />
+                    <span>Lockout enabled</span>
+                </label>
+            </div>
+            <button class="button" type="submit">Save account</button>
+        </form>
+
+        <dl class="detail-list">
+            <div><dt>User ID</dt><dd>@Model.UserId</dd></div>
+            <div><dt>Phone confirmed</dt><dd>@(Model.PhoneNumberConfirmed ? "Yes" : "No")</dd></div>
+            <div><dt>Two factor</dt><dd>@(Model.TwoFactorEnabled ? "Enabled" : "Disabled")</dd></div>
+            <div><dt>Lockout end</dt><dd>@(Model.LockoutEnd?.UtcDateTime.ToString("u") ?? "None")</dd></div>
+        </dl>
+    </div>
+
+    <div class="panel stack-md">
+        <div class="admin-editor-section-header">
+            <h2 class="headline-sm">Entitlement</h2>
+            <span class="status-pill">@Model.EntitlementTier</span>
+        </div>
+        <form class="stack-md" method="post" asp-action="UpdateEntitlement" data-confirm-submit="Apply this entitlement change to the user account?">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <div class="form-grid">
+                <label class="form-field">
+                    <span>Tier</span>
+                    <select name="Tier">
+                        @foreach (string tier in DarwinLinguaEntitlementTiers.All)
+                        {
+                            <option value="@tier" selected="@string.Equals(tier, Model.EntitlementTier, StringComparison.OrdinalIgnoreCase)">@tier</option>
+                        }
+                    </select>
+                </label>
+                <label class="form-field">
+                    <span>Expires at UTC</span>
+                    <input type="text" name="ExpiresAtUtc" value="@expiryValue" placeholder="yyyy-MM-dd HH:mm:ssZ" />
+                </label>
+            </div>
+            <button type="submit" class="button">Save entitlement</button>
+        </form>
+
+        <div class="stack-sm">
+            <h3 class="admin-subhead">Enabled features</h3>
+            @if (Model.EnabledFeatures.Count == 0)
+            {
+                <p class="muted-text">No entitlement features are currently enabled.</p>
+            }
+            else
+            {
+                <div class="tag-list">
+                    @foreach (string feature in Model.EnabledFeatures)
+                    {
+                        <span class="tag">@feature</span>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="admin-two-column">
+    <div class="panel stack-md">
+        <div class="admin-editor-section-header">
+            <h2 class="headline-sm">Roles</h2>
+            <span class="status-pill">@Model.Roles.Count assigned</span>
+        </div>
+        @if (Model.Roles.Count == 0)
+        {
+            <p class="muted-text">No roles assigned.</p>
+        }
+        else
+        {
+            <div class="tag-list">
+                @foreach (string role in Model.Roles)
+                {
+                    <span class="tag">@role</span>
+                }
+            </div>
+        }
+        <form class="admin-inline-panel stack-sm" method="post" asp-action="UpdateRole" data-confirm-submit="Apply this role change to the user account?">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <div class="admin-inline-form-grid admin-inline-form-grid--label">
+                <label class="form-field">
+                    <span>Role</span>
+                    <select name="Role">
+                        @foreach (string role in DarwinLinguaRoles.All)
+                        {
+                            <option value="@role">@role</option>
+                        }
+                    </select>
+                </label>
+                <label class="form-field">
+                    <span>Action</span>
+                    <select name="IsEnabled">
+                        <option value="true">Add</option>
+                        <option value="false">Remove</option>
+                    </select>
+                </label>
+                <button type="submit" class="button button--compact">Apply</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="panel stack-md">
+        <h2 class="headline-sm">Entitlement history</h2>
+        @if (Model.RecentEntitlementEvents.Count == 0)
+        {
+            <p class="muted-text">No entitlement events recorded.</p>
+        }
+        else
+        {
+            <div class="table-scroll">
+                <table class="data-table admin-data-grid">
+                    <thead>
+                        <tr><th>Event</th><th>Change</th><th>By</th><th>Created</th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var auditEvent in Model.RecentEntitlementEvents)
+                        {
+                            <tr>
+                                <td>@auditEvent.EventType</td>
+                                <td>@(auditEvent.PreviousTier ?? "none") -> @auditEvent.NewTier</td>
+                                <td>@auditEvent.UpdatedBy</td>
+                                <td>@auditEvent.CreatedAtUtc.UtcDateTime.ToString("yyyy-MM-dd HH:mm") UTC</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</section>

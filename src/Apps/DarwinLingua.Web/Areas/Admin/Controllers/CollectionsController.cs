@@ -295,6 +295,7 @@ public sealed class CollectionsController(
             form.Slug,
             form.Name,
             string.IsNullOrWhiteSpace(form.Description) ? null : form.Description.Trim(),
+            null,
             string.IsNullOrWhiteSpace(form.ImageUrl) ? null : form.ImageUrl.Trim(),
             form.PublicationStatus,
             form.SortOrder);

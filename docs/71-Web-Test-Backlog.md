@@ -23,6 +23,18 @@ Remaining release gates:
 - manual browser/device validation listed in the Web validation worksheets
 - mobile parity work, after Web sign-off
 
+Latest local Web verification:
+
+- 2026-05-01: `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
+- 2026-05-01: `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors after stopping the local smoke host that was locking build outputs.
+- 2026-05-01: local GET smoke passed for the main learner routes: `/`, `/browse`, `/browse/cefr/A1`, `/search`, `/search?q=auto`, unknown-search suggestion state, `/collections`, `/scenarios`, `/conversation-starters`, `/conversation-events`, `/organizers`, `/install`, `/privacy`, and the Identity account pages.
+- 2026-05-01: authenticated admin GET smoke passed for dashboard, reports, analytics, diagnostics, content import/history/draft/publishing/rollback pages, catalog management pages, taxonomy pages, users, moderation, word suggestions, organizer profiles, conversation events, billing diagnostics, and email diagnostics.
+- 2026-05-01: smoke response bodies and server logs were checked for unhandled exception signatures; none were found.
+- 2026-05-01: in-app browser opened `/admin/billing-diagnostics` successfully. Local Stripe readiness warnings were expected because local Stripe billing settings were not enabled/configured.
+- 2026-05-01: local security smoke verified external `returnUrl` values are not rendered back into the Identity login hidden field; the value is normalized to `/`.
+- 2026-05-01: local webhook smoke verified unsigned Stripe billing webhooks return `401`, and client telemetry accepts a bounded valid payload.
+- 2026-05-01: provider-error logging was reviewed for Brevo and Stripe billing paths; external provider response bodies are not logged for email send, checkout, portal, fulfillment, or reconciliation failures.
+
 ## Automated Test Backlog
 
 ### Scenario Learning

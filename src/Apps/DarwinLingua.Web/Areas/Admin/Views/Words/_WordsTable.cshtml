@@ -60,8 +60,8 @@ else
                             <td>@item.TopicCount</td>
                             <td>@item.UpdatedAtUtc.ToString("yyyy-MM-dd")</td>
                             <td>
-                                <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Details" asp-route-publicId="@item.PublicId">View</a>
-                                <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Edit" asp-route-publicId="@item.PublicId">Edit</a>
+                                <a class="button button--secondary button--compact" asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">View</a>
+                                <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Details" asp-route-publicId="@item.PublicId">Edit</a>
                             </td>
                         </tr>
                     }

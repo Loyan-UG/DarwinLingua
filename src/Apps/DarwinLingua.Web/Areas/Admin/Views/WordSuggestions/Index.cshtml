@@ -2,6 +2,8 @@
 @using DarwinLingua.Web.Data
 @{
     ViewData["Title"] = "Word suggestions";
+    int pendingCount = Model.Suggestions.Count(suggestion => suggestion.Status == WebWordSuggestionStatus.Pending);
+    int acceptedCount = Model.Suggestions.Count(suggestion => suggestion.Status == WebWordSuggestionStatus.Accepted);
 }
 
 <section class="panel stack-lg">
@@ -16,7 +18,28 @@
     {
         <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
     }
-    <form method="get" asp-action="Index" class="action-row">
+
+    <div class="admin-summary-grid">
+        <a href="#word-suggestion-list" class="admin-summary-tile">
+            <span class="eyebrow">Suggestions shown</span>
+            <strong>@Model.Suggestions.Count</strong>
+        </a>
+        <a href="#word-suggestion-list" class="admin-summary-tile">
+            <span class="eyebrow">Pending</span>
+            <strong>@pendingCount</strong>
+        </a>
+        <a href="#word-suggestion-list" class="admin-summary-tile">
+            <span class="eyebrow">Accepted</span>
+            <strong>@acceptedCount</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Word suggestion sections">
+        <a href="#word-suggestion-filter">Filter</a>
+        <a href="#word-suggestion-list">Suggestions</a>
+    </nav>
+
+    <form id="word-suggestion-filter" method="get" asp-action="Index" class="action-row">
         <select name="status">
             <option value="">All</option>
             <option value="pending" selected="@(Model.StatusFilter == "pending")">Pending</option>
@@ -28,8 +51,11 @@
     </form>
 </section>
 
-<section class="panel stack-lg">
-    <h2 class="headline-sm">Suggestions</h2>
+<section id="word-suggestion-list" class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Suggestions</h2>
+        <span class="status-pill">@Model.Suggestions.Count shown</span>
+    </div>
     @if (Model.Suggestions.Count == 0)
     {
         <p class="body-sm">No word suggestions match the selected filter.</p>

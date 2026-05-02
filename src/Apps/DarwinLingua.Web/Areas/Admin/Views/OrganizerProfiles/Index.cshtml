@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.AdminOrganizerProfilesPageViewModel
 @{
     ViewData["Title"] = "Organizer profiles";
+    int actionableClaimCount = Model.ClaimRequests.Count(item => item.Status is "submitted" or "reviewing");
 }
 
 <section class="panel stack-lg">
@@ -13,9 +14,32 @@
     {
         <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
     }
+
+    <div class="admin-summary-grid">
+        <a href="#organizer-profiles-list" class="admin-summary-tile">
+            <span class="eyebrow">Profiles</span>
+            <strong>@Model.Profiles.Count</strong>
+        </a>
+        <a href="#organizer-claims" class="admin-summary-tile">
+            <span class="eyebrow">Open claims</span>
+            <strong>@actionableClaimCount</strong>
+        </a>
+        <a href="#organizer-owners" class="admin-summary-tile">
+            <span class="eyebrow">Owners</span>
+            <strong>@Model.Owners.Count</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Organizer profile sections">
+        <a href="#organizer-edit">Create/edit</a>
+        <a href="#organizer-owner-assign">Assign owner</a>
+        <a href="#organizer-owners">Owners</a>
+        <a href="#organizer-claims">Claims</a>
+        <a href="#organizer-profiles-list">Profiles</a>
+    </nav>
 </section>
 
-<section class="panel stack-md">
+<section id="organizer-edit" class="panel stack-md">
     <h2 class="headline-sm">Create or replace organizer</h2>
     <form method="post" class="form-grid" data-confirm-submit="Save this public organizer profile?">
         @Html.AntiForgeryToken()
@@ -90,7 +114,7 @@
     </form>
 </section>
 
-<section class="panel stack-md">
+<section id="organizer-owner-assign" class="panel stack-md">
     <h2 class="headline-sm">Assign owner</h2>
     <form method="post" asp-action="AssignOwner" class="form-grid" data-confirm-submit="Assign this owner email to the organizer profile?">
         @Html.AntiForgeryToken()
@@ -108,8 +132,11 @@
     </form>
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Assigned owners</h2>
+<section id="organizer-owners" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Assigned owners</h2>
+        <span class="status-pill">@Model.Owners.Count shown</span>
+    </div>
     @if (Model.Owners.Count == 0)
     {
         <p>No organizer owners assigned yet.</p>
@@ -144,8 +171,11 @@
     }
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Claim requests</h2>
+<section id="organizer-claims" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Claim requests</h2>
+        <span class="status-pill">@actionableClaimCount actionable</span>
+    </div>
     <p>Approving a claim records the decision and sends the requester email. Assign owner access separately when the requester should manage the organizer profile.</p>
     @if (Model.ClaimRequests.Count == 0)
     {
@@ -214,8 +244,11 @@
     }
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Published organizers</h2>
+<section id="organizer-profiles-list" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Published organizers</h2>
+        <span class="status-pill">@Model.Profiles.Count shown</span>
+    </div>
     @if (Model.Profiles.Count == 0)
     {
         <p>No published organizer profiles yet.</p>

@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.AdminBillingDiagnosticsPageViewModel
 @{
     ViewData["Title"] = "Billing diagnostics";
+    int failedEventCount = Model.Events.Count(billingEvent => string.Equals(billingEvent.Status, "Failed", StringComparison.OrdinalIgnoreCase));
+    int warningCount = Model.Readiness.Warnings.Count;
 }
 
 <section class="panel stack-lg">
@@ -15,10 +17,39 @@
     {
         <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
     }
+
+    <div class="admin-summary-grid">
+        <a href="#billing-readiness" class="admin-summary-tile">
+            <span class="eyebrow">Readiness warnings</span>
+            <strong>@warningCount</strong>
+        </a>
+        <a href="#billing-profiles" class="admin-summary-tile">
+            <span class="eyebrow">Profiles</span>
+            <strong>@Model.Profiles.Count</strong>
+        </a>
+        <a href="#billing-events" class="admin-summary-tile">
+            <span class="eyebrow">Failed events</span>
+            <strong>@failedEventCount</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Billing diagnostics sections">
+        <a href="#billing-readiness">Readiness</a>
+        <a href="#billing-filters">Filters</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="#billing-reconcile">Reconcile</a>
+        }
+        <a href="#billing-profiles">Profiles</a>
+        <a href="#billing-events">Events</a>
+    </nav>
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Readiness</h2>
+<section id="billing-readiness" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Readiness</h2>
+        <span class="status-pill">@(warningCount == 0 ? "Ready" : $"{warningCount} warning(s)")</span>
+    </div>
     <div class="metric-grid">
         <article class="metric-card">
             <span class="metric-card__label">Stripe</span>
@@ -61,7 +92,8 @@
     }
 </section>
 
-<section class="panel stack-md">
+<section id="billing-filters" class="panel stack-md">
+    <h2 class="headline-sm">Filters</h2>
     <form method="get" class="filter-bar">
         <label>
             Status
@@ -106,9 +138,12 @@
 
 @if (User.IsInRole("Admin"))
 {
-    <section class="panel stack-md">
-        <h2 class="headline-sm">Manual Stripe reconciliation</h2>
-        <p class="body-sm">Refresh one subscription directly from Stripe when a webhook is delayed, missed, or failed.</p>
+    <section id="billing-reconcile" class="panel stack-md">
+        <div class="cluster cluster--between">
+            <h2 class="headline-sm">Manual Stripe reconciliation</h2>
+            <span class="status-pill">Admin only</span>
+        </div>
+        <p class="body-sm">Refresh one subscription directly from Stripe when a webhook is delayed, missed, or failed. This calls Stripe and may update local entitlement state.</p>
         <form method="post" asp-action="ReconcileStripeSubscription" class="filter-bar" data-confirm-submit="Refresh this subscription from Stripe and reconcile the local entitlement state?">
             @Html.AntiForgeryToken()
             <label>
@@ -120,8 +155,11 @@
     </section>
 }
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Billing profiles</h2>
+<section id="billing-profiles" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Billing profiles</h2>
+        <span class="status-pill">@Model.Profiles.Count shown</span>
+    </div>
     @if (Model.Profiles.Count == 0)
     {
         <p class="body-sm">No billing profiles have been recorded yet.</p>
@@ -177,8 +215,11 @@
     }
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Recent billing events</h2>
+<section id="billing-events" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Recent billing events</h2>
+        <span class="status-pill">@Model.Events.Count shown</span>
+    </div>
     @if (Model.Events.Count == 0)
     {
         <p class="body-sm">No Stripe billing events have been recorded yet.</p>

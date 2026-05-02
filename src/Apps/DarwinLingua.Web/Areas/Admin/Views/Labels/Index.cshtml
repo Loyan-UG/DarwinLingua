@@ -7,6 +7,8 @@
     var selectedSort = ViewData["AdminLabelSort"] as string ?? "sortOrder";
     var kinds = ViewData["AdminLabelKinds"] as string[] ?? [];
     var totalCount = ViewData["AdminLabelTotalCount"] as int? ?? Model.Labels.Count;
+    int systemCount = Model.Labels.Count(label => label.IsSystem);
+    int wordCount = Model.Labels.Sum(label => label.WordCount);
 }
 
 <section class="panel stack-lg">
@@ -18,10 +20,28 @@
     {
         <div class="state-panel state-panel--success">@statusMessage</div>
     }
+    <div class="admin-summary-grid">
+        <a href="#labels-table" class="admin-summary-tile">
+            <span class="eyebrow">Labels shown</span>
+            <strong>@Model.Labels.Count</strong>
+        </a>
+        <a href="#labels-table" class="admin-summary-tile">
+            <span class="eyebrow">System</span>
+            <strong>@systemCount</strong>
+        </a>
+        <a href="#labels-table" class="admin-summary-tile">
+            <span class="eyebrow">Word links</span>
+            <strong>@wordCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Label taxonomy sections">
+        <a href="#labels-filter">Filter</a>
+        <a href="#labels-table">Labels</a>
+    </nav>
 </section>
 
 <section class="panel stack-md">
-    <form class="admin-filter-panel" method="get">
+    <form id="labels-filter" class="admin-filter-panel" method="get">
         <label class="form-field">
             <span>Search</span>
             <input name="q" type="search" value="@query" placeholder="Display name or key" />
@@ -60,7 +80,7 @@
     <div class="cluster cluster--between">
         <span class="eyebrow">@Model.Labels.Count of @totalCount labels</span>
     </div>
-    <div class="table-scroll">
+    <div id="labels-table" class="table-scroll">
         <table class="data-table admin-data-grid">
             <thead>
                 <tr>

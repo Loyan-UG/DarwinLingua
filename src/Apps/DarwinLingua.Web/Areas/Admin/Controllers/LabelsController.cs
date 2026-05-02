@@ -226,6 +226,7 @@ public sealed class LabelsController(
             form.Kind,
             form.Key,
             form.DisplayName,
+            null,
             form.SortOrder,
             form.IsSystem);
 

@@ -8,7 +8,9 @@ public sealed record WordCollectionIndexPageViewModel(
 
 public sealed record WordCollectionDetailPageViewModel(
     WordCollectionDetailModel Collection,
-    string MeaningLanguageCode);
+    IReadOnlyList<WordBrowseCardViewModel> Words,
+    string PrimaryMeaningLanguageCode,
+    string? SecondaryMeaningLanguageCode);
 
 public sealed record HomePageViewModel(
     IReadOnlyList<WordCollectionListItemModel> FeaturedCollections);

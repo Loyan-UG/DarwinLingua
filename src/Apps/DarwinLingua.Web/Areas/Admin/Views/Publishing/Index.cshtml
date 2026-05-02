@@ -7,10 +7,28 @@
     <span class="eyebrow">Publishing</span>
     <h1 class="headline-md">Publishing status</h1>
     <p class="body-lg">Track catalog readiness, imported packages, failed package counts, and the latest import before releasing content to learners.</p>
+    <div class="admin-summary-grid">
+        <a href="#publishing-catalog" class="admin-summary-tile">
+            <span class="eyebrow">Active words</span>
+            <strong>@Model.ActiveWordCount</strong>
+        </a>
+        <a href="#publishing-catalog" class="admin-summary-tile">
+            <span class="eyebrow">Draft words</span>
+            <strong>@Model.DraftWordCount</strong>
+        </a>
+        <a href="#publishing-packages" class="admin-summary-tile">
+            <span class="eyebrow">Failed packages</span>
+            <strong>@Model.FailedPackageCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Publishing sections">
+        <a href="#publishing-catalog">Catalog</a>
+        <a href="#publishing-packages">Packages</a>
+    </nav>
 </section>
 
 <section class="grid-two-col">
-    <article class="panel stack-md">
+    <article id="publishing-catalog" class="panel stack-md">
         <h2 class="headline-sm">Catalog readiness</h2>
         <ul class="feature-list">
             <li>Active words: @Model.ActiveWordCount</li>
@@ -18,7 +36,7 @@
             <li>Topics: @Model.TotalTopicCount</li>
         </ul>
     </article>
-    <article class="panel stack-md">
+    <article id="publishing-packages" class="panel stack-md">
         <h2 class="headline-sm">Package operations</h2>
         <ul class="feature-list">
             <li>Imported packages: @Model.ImportedPackageCount</li>

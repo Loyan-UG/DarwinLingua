@@ -12,6 +12,18 @@ This checklist covers the server-side setup tasks required before running Darwin
 - [ ] Set `IdentityBootstrap__RequireSeedAccounts` according to the environment.
 - [ ] Set seed account emails/passwords only through secret storage when seed accounts are enabled.
 
+Local development helper:
+
+- Use `scripts/Set-Web-LocalSecrets.ps1 -ConfigureBrevo` to store Brevo settings in ASP.NET Core user-secrets without writing API keys to repository files.
+- Use `scripts/Set-Web-LocalSecrets.ps1 -ConfigureStripe` to store Stripe test-mode settings in ASP.NET Core user-secrets without writing API keys or webhook secrets to repository files.
+- The helper writes directly to the local ASP.NET Core user-secrets JSON file for the Web project, so secret values are not passed to `dotnet` as command-line arguments.
+- Optional non-interactive local setup can read user/process environment variables with `-UseEnvironment`: `DARWINLINGUA_BREVO_API_KEY`, `DARWINLINGUA_BREVO_WEBHOOK_SECRET`, `DARWINLINGUA_STRIPE_SECRET_KEY`, `DARWINLINGUA_STRIPE_WEBHOOK_SECRET`, and `DARWINLINGUA_STRIPE_PRICE_ID`.
+- Set the local public origin with `-PublicBaseUrl`, for example `scripts/Set-Web-LocalSecrets.ps1 -ConfigureBrevo -PublicBaseUrl http://localhost:5192`.
+- Keep `-BrevoSandboxMode $true` until you intentionally want Brevo to deliver real messages from local development.
+- `-BrevoAllowQuerySecretFallback` defaults to `$false`; enable it only for a short local/manual webhook diagnostic when Bearer or custom-header auth cannot be used.
+- Restart `DarwinLingua.Web` after changing user-secrets; options are read at host startup.
+- Keep real API keys out of chat logs, screenshots, terminal transcripts, and checked-in `appsettings*.json` files.
+
 ## Transactional Email With Brevo
 
 - [ ] Create or select the Brevo account for Darwin Lingua transactional email.

@@ -300,6 +300,7 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
                             example.Translations
                                 .OrderBy(translation => translation.LanguageCode.Value)
                                 .Select(translation => new AdminCatalogWordExampleTranslationResponse(
+                                    translation.Id,
                                     translation.LanguageCode.Value,
                                     translation.TranslationText))
                                 .ToArray()))

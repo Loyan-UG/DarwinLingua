@@ -37,17 +37,27 @@ public sealed record AdminLabelItemResponse(
     string Kind,
     string Key,
     string DisplayName,
+    IReadOnlyList<AdminLabelLocalizationResponse> Localizations,
     int SortOrder,
     bool IsSystem,
     int WordCount,
     DateTime UpdatedAtUtc);
 
+public sealed record AdminLabelLocalizationResponse(
+    string LanguageCode,
+    string DisplayName);
+
 public sealed record AdminSaveLabelRequest(
     string Kind,
     string Key,
     string DisplayName,
+    IReadOnlyList<AdminLabelLocalizationRequest>? Localizations,
     int SortOrder,
     bool IsSystem);
+
+public sealed record AdminLabelLocalizationRequest(
+    string LanguageCode,
+    string DisplayName);
 
 public sealed record AdminMergeLabelRequest(
     Guid TargetLabelId);

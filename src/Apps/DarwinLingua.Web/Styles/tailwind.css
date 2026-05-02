@@ -1256,6 +1256,67 @@ code {
   padding: 1rem;
 }
 
+.admin-word-editor {
+  gap: 1.1rem;
+}
+
+.admin-editor-card {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.admin-editor-card--flat {
+  background: rgba(248, 250, 252, 0.86);
+}
+
+.admin-editor-card--nested {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.admin-editor-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.admin-editor-subsection {
+  display: grid;
+  gap: 0.8rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.admin-metadata-grid {
+  align-items: end;
+}
+
+.admin-static-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.admin-user-detail .admin-summary-tile {
+  pointer-events: none;
+}
+
+.table-actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.admin-sense-editor {
+  display: grid;
+  gap: 1rem;
+}
+
 .admin-record-title {
   display: block;
   color: var(--ink-strong);
@@ -1360,6 +1421,49 @@ code {
   align-items: end;
 }
 
+.admin-row-form {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 0.22fr) minmax(12rem, 1fr) auto auto;
+  gap: 0.65rem;
+  align-items: end;
+}
+
+.admin-row-form--example {
+  grid-template-columns: minmax(18rem, 1fr) auto auto;
+}
+
+.admin-translation-editor-grid,
+.admin-example-list,
+.admin-example-translation-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.admin-toggle-field {
+  display: inline-flex;
+  min-height: 2.35rem;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: end;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 760;
+  white-space: nowrap;
+}
+
+.admin-toggle-field input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  flex: 0 0 auto;
+  padding: 0;
+  accent-color: var(--brand);
+}
+
+.admin-toggle-field input[type="hidden"] {
+  display: none;
+}
+
 .admin-editable-item__form--example {
   grid-template-columns: minmax(14rem, 1fr) auto auto;
 }
@@ -1416,6 +1520,10 @@ code {
   grid-template-columns: minmax(14rem, 1fr) minmax(6rem, 0.28fr) minmax(11rem, 0.72fr) auto auto;
 }
 
+.admin-inline-form-grid--example-translation {
+  grid-template-columns: minmax(5.5rem, 0.22fr) minmax(14rem, 1fr) auto;
+}
+
 .admin-inline-form-grid--topic,
 .admin-inline-form-grid--label {
   grid-template-columns: minmax(12rem, 1fr) auto auto;
@@ -1443,15 +1551,25 @@ code {
 
 .form-field--check {
   display: flex;
-  min-height: 2.75rem;
+  min-height: auto;
   align-items: center;
   gap: 0.55rem;
-  padding-top: 1.35rem;
+  padding-top: 0;
 }
 
-.form-field--check input {
+.form-field.form-field--check input[type="checkbox"],
+.form-field--check input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
+  min-height: 1rem;
+  flex: 0 0 auto;
+  padding: 0;
+  accent-color: var(--brand);
+}
+
+.form-field.form-field--check input[type="hidden"],
+.form-field--check input[type="hidden"] {
+  display: none;
 }
 
 .meta-grid {
@@ -1886,8 +2004,10 @@ code {
 
   .admin-inline-form-grid,
   .admin-inline-form-grid--example,
+  .admin-inline-form-grid--example-translation,
   .admin-inline-form-grid--collection-word,
   .admin-row-form,
+  .admin-row-form--example,
   .admin-filter-panel,
   .admin-editable-item__form,
   .admin-editable-item__form--example {

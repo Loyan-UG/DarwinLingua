@@ -10,16 +10,28 @@
     string saveText = Model.IsNew ? "Create word" : "Save changes";
 }
 
-<section class="panel stack-lg">
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Mode", Model.IsNew ? "Create" : "Edit", "Core metadata only.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Status", Model.PublicationStatus, "Learner visibility state.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Level", Model.CefrLevel, "CEFR level for browse filters.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Word editor sections">
+    <a href="#word-metadata">Metadata</a>
+    <a href="#word-forms">Forms</a>
+    <a href="#word-source">Source</a>
+</nav>
+
+<section id="word-metadata" class="panel stack-lg">
     <div class="cluster cluster--between">
-        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(heading, Model.IsNew ? "Create word" : "Edit word metadata", "Manage the core lexical record. Sense, topic, and translation editing are handled in separate focused panels.")' />
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(heading, Model.IsNew ? "Create word" : "Edit metadata", "Update core metadata here. Meanings, examples, topics, labels, forms, and usage assets are managed in the complete word editor.")' />
         @if (Model.IsNew)
         {
             <a class="button button--secondary" asp-action="Index">Cancel</a>
         }
         else
         {
-            <a class="button button--secondary" asp-action="Details" asp-route-publicId="@Model.PublicId">Cancel</a>
+            <a class="button button--secondary" asp-action="Details" asp-route-publicId="@Model.PublicId">Back to complete editor</a>
         }
     </div>
 
@@ -75,7 +87,7 @@
                     }
                 </select>
             </label>
-            <label class="form-field">
+            <label id="word-forms" class="form-field">
                 <span>Article</span>
                 <input asp-for="Article" />
                 <span asp-validation-for="Article" class="validation-message"></span>
@@ -100,7 +112,7 @@
                 <input asp-for="SyllableBreak" />
                 <span asp-validation-for="SyllableBreak" class="validation-message"></span>
             </label>
-            <label class="form-field field--wide">
+            <label id="word-source" class="form-field field--wide">
                 <span>Source reference</span>
                 <input asp-for="SourceReference" />
                 <span asp-validation-for="SourceReference" class="validation-message"></span>
@@ -115,7 +127,7 @@
             }
             else
             {
-                <a class="button button--secondary" asp-action="Details" asp-route-publicId="@Model.PublicId">Cancel</a>
+                <a class="button button--secondary" asp-action="Details" asp-route-publicId="@Model.PublicId">Back to complete editor</a>
             }
         </div>
     </form>

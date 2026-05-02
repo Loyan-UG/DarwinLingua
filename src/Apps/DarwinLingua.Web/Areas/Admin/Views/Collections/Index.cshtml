@@ -6,6 +6,8 @@
     var selectedSort = ViewData["AdminCollectionSort"] as string ?? "sortOrder";
     var statuses = ViewData["AdminCollectionStatuses"] as string[] ?? [];
     var totalCount = ViewData["AdminCollectionTotalCount"] as int? ?? Model.Collections.Count;
+    int activeCount = Model.Collections.Count(collection => string.Equals(collection.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase));
+    int wordCount = Model.Collections.Sum(collection => collection.WordCount);
 }
 
 <section class="panel stack-lg">
@@ -20,10 +22,28 @@
     {
         <div class="state-panel state-panel--success">@statusMessage</div>
     }
+    <div class="admin-summary-grid">
+        <a href="#collections-table" class="admin-summary-tile">
+            <span class="eyebrow">Collections shown</span>
+            <strong>@Model.Collections.Count</strong>
+        </a>
+        <a href="#collections-table" class="admin-summary-tile">
+            <span class="eyebrow">Active</span>
+            <strong>@activeCount</strong>
+        </a>
+        <a href="#collections-table" class="admin-summary-tile">
+            <span class="eyebrow">Word links</span>
+            <strong>@wordCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Collection catalog sections">
+        <a href="#collections-filter">Filter</a>
+        <a href="#collections-table">Collections</a>
+    </nav>
 </section>
 
 <section class="panel stack-md">
-    <form class="admin-filter-panel" method="get">
+    <form id="collections-filter" class="admin-filter-panel" method="get">
         <label class="form-field">
             <span>Search</span>
             <input name="q" type="search" value="@query" placeholder="Name or slug" />
@@ -53,7 +73,7 @@
     <div class="cluster cluster--between">
         <span class="eyebrow">@Model.Collections.Count of @totalCount collections</span>
     </div>
-    <div class="table-scroll">
+    <div id="collections-table" class="table-scroll">
         <table class="data-table admin-data-grid">
             <thead>
                 <tr>

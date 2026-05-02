@@ -61,9 +61,9 @@ public sealed class StripeBillingCheckoutService(
         if (!response.IsSuccessStatusCode)
         {
             logger.LogWarning(
-                "Stripe checkout session creation failed with status {StatusCode}: {BodySummary}",
+                "Stripe checkout session creation failed with status {StatusCode} ({ReasonPhrase}).",
                 (int)response.StatusCode,
-                Summarize(responseBody));
+                response.ReasonPhrase ?? "no reason phrase");
             throw new InvalidOperationException("Stripe checkout session creation failed.");
         }
 
@@ -78,7 +78,7 @@ public sealed class StripeBillingCheckoutService(
             throw new InvalidOperationException("Stripe checkout response was incomplete.");
         }
 
-        return new StripeCheckoutSessionResult(sessionId, url);
+        return new StripeCheckoutSessionResult(sessionId, NormalizeProviderRedirectUrl(url, "checkout"));
     }
 
     public async Task<StripeCheckoutSessionResult> CreateCustomerPortalSessionAsync(
@@ -111,9 +111,9 @@ public sealed class StripeBillingCheckoutService(
         if (!response.IsSuccessStatusCode)
         {
             logger.LogWarning(
-                "Stripe customer portal session creation failed with status {StatusCode}: {BodySummary}",
+                "Stripe customer portal session creation failed with status {StatusCode} ({ReasonPhrase}).",
                 (int)response.StatusCode,
-                Summarize(responseBody));
+                response.ReasonPhrase ?? "no reason phrase");
             throw new InvalidOperationException("Stripe customer portal session creation failed.");
         }
 
@@ -128,18 +128,18 @@ public sealed class StripeBillingCheckoutService(
             throw new InvalidOperationException("Stripe customer portal response was incomplete.");
         }
 
-        return new StripeCheckoutSessionResult(sessionId, url);
+        return new StripeCheckoutSessionResult(sessionId, NormalizeProviderRedirectUrl(url, "customer portal"));
     }
 
-
-    private static string Summarize(string value)
+    private static string NormalizeProviderRedirectUrl(string url, string sessionKind)
     {
-        if (string.IsNullOrWhiteSpace(value))
+        if (!Uri.TryCreate(url, UriKind.Absolute, out Uri? redirectUri) ||
+            !string.Equals(redirectUri.Scheme, Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase))
         {
-            return string.Empty;
+            throw new InvalidOperationException($"Stripe {sessionKind} response did not contain a secure redirect URL.");
         }
 
-        string collapsed = value.ReplaceLineEndings(" ").Trim();
-        return collapsed.Length <= 512 ? collapsed : collapsed[..512];
+        return redirectUri.ToString();
     }
+
 }

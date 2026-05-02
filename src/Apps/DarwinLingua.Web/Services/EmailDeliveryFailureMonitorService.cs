@@ -29,7 +29,14 @@ public sealed class EmailDeliveryFailureMonitorService(
                 logger.LogWarning(exception, "Email delivery failure monitor failed.");
             }
 
-            await Task.Delay(interval, stoppingToken).ConfigureAwait(false);
+            try
+            {
+                await Task.Delay(interval, stoppingToken).ConfigureAwait(false);
+            }
+            catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
+            {
+                return;
+            }
         }
     }
 

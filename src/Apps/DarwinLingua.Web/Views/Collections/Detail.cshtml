@@ -30,7 +30,7 @@
     </div>
 </section>
 
-@if (Model.Collection.Words.Count == 0)
+@if (Model.Words.Count == 0)
 {
     <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("This collection is being prepared", "Words will appear here when the collection is ready for study.")' />
 }
@@ -43,7 +43,7 @@ else
     </section>
 
     <section class="grid-two-col" data-word-list-container>
-        @foreach (var word in Model.Collection.Words)
+        @foreach (var word in Model.Words)
         {
             <partial name="~/Views/Shared/_WordCard.cshtml" model="word" />
         }

@@ -194,6 +194,7 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
 
         LabelDefinition[] labels = await dbContext.LabelDefinitions
             .AsNoTracking()
+            .Include(label => label.Localizations)
             .OrderBy(label => label.Kind)
             .ThenBy(label => label.SortOrder)
             .ThenBy(label => label.Key)
@@ -218,6 +219,7 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
 
         LabelDefinition? label = await dbContext.LabelDefinitions
             .AsNoTracking()
+            .Include(item => item.Localizations)
             .SingleOrDefaultAsync(item => item.Id == labelId, cancellationToken)
             .ConfigureAwait(false);
 
@@ -254,6 +256,7 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
             request.SortOrder,
             request.IsSystem,
             now);
+        ApplyLabelLocalizations(label, request.Localizations, now, requireCompleteCoverage: false);
 
         dbContext.LabelDefinitions.Add(label);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
@@ -275,6 +278,7 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
             .ConfigureAwait(false);
 
         LabelDefinition? label = await dbContext.LabelDefinitions
+            .Include(item => item.Localizations)
             .SingleOrDefaultAsync(item => item.Id == labelId, cancellationToken)
             .ConfigureAwait(false);
 
@@ -290,7 +294,9 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
             throw new InvalidOperationException("Label kind and key cannot be changed while labels are attached to words.");
         }
 
-        label.UpdateMetadata(request.DisplayName, request.SortOrder, request.IsSystem, DateTime.UtcNow);
+        DateTime now = DateTime.UtcNow;
+        label.UpdateMetadata(request.DisplayName, request.SortOrder, request.IsSystem, now);
+        ApplyLabelLocalizations(label, request.Localizations, now, requireCompleteCoverage: false);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
         int wordCount = await dbContext.WordLabels
@@ -319,6 +325,7 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
         await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
 
         LabelDefinition? label = await dbContext.LabelDefinitions
+            .Include(item => item.Localizations)
             .SingleOrDefaultAsync(item => item.Id == labelId, cancellationToken)
             .ConfigureAwait(false);
 
@@ -342,7 +349,9 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
 
         ReassignWordLabels(attachedLabels, newKind, newKey, await LoadMaxSortOrdersByWordAsync(dbContext, newKind, attachedLabels, cancellationToken).ConfigureAwait(false));
 
-        label.Rename(newKind, newKey, request.DisplayName, request.SortOrder, request.IsSystem, DateTime.UtcNow);
+        DateTime now = DateTime.UtcNow;
+        label.Rename(newKind, newKey, request.DisplayName, request.SortOrder, request.IsSystem, now);
+        ApplyLabelLocalizations(label, request.Localizations, now, requireCompleteCoverage: false);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
 
@@ -371,9 +380,11 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
         await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
 
         LabelDefinition? source = await dbContext.LabelDefinitions
+            .Include(item => item.Localizations)
             .SingleOrDefaultAsync(item => item.Id == labelId, cancellationToken)
             .ConfigureAwait(false);
         LabelDefinition? target = await dbContext.LabelDefinitions
+            .Include(item => item.Localizations)
             .SingleOrDefaultAsync(item => item.Id == request.TargetLabelId, cancellationToken)
             .ConfigureAwait(false);
 
@@ -566,10 +577,58 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
             label.Kind.ToString(),
             label.Key,
             label.DisplayName,
+            label.Localizations
+                .OrderBy(localization => localization.LanguageCode.Value)
+                .Select(localization => new AdminLabelLocalizationResponse(
+                    localization.LanguageCode.Value,
+                    localization.DisplayName))
+                .ToArray(),
             label.SortOrder,
             label.IsSystem,
             wordCountsByLabel.GetValueOrDefault(CreateLabelLookupKey(label.Kind, label.Key)),
             label.UpdatedAtUtc);
+
+    private static void ApplyLabelLocalizations(
+        LabelDefinition label,
+        IReadOnlyList<AdminLabelLocalizationRequest>? localizations,
+        DateTime now,
+        bool requireCompleteCoverage)
+    {
+        if (localizations is null || localizations.Count == 0)
+        {
+            if (requireCompleteCoverage)
+            {
+                throw new InvalidOperationException(
+                    $"Label localizations are required for every language: {ContentLanguageRequirements.FormatRequiredLocalizationLanguages()}.");
+            }
+
+            return;
+        }
+
+        if (requireCompleteCoverage)
+        {
+            IReadOnlyList<string> missing = ContentLanguageRequirements.FindMissingLocalizationLanguages(
+                localizations.Select(localization => localization.LanguageCode));
+            if (missing.Count > 0)
+            {
+                throw new InvalidOperationException($"Label localizations are missing languages: {string.Join(", ", missing)}.");
+            }
+        }
+
+        foreach (AdminLabelLocalizationRequest localization in localizations)
+        {
+            if (string.IsNullOrWhiteSpace(localization.LanguageCode) || string.IsNullOrWhiteSpace(localization.DisplayName))
+            {
+                continue;
+            }
+
+            label.AddOrUpdateLocalization(
+                Guid.NewGuid(),
+                LanguageCode.From(localization.LanguageCode),
+                localization.DisplayName,
+                now);
+        }
+    }
 
     private static async Task<Dictionary<string, int>> LoadWordCountsByLabelAsync(
         DarwinLinguaDbContext dbContext,

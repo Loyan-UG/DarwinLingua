@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
 
@@ -10,6 +11,7 @@ namespace DarwinLingua.Catalog.Domain.Entities;
 public sealed partial class WordCollection
 {
     private readonly List<WordCollectionEntry> _entries = [];
+    private readonly List<WordCollectionLocalization> _localizations = [];
 
     private WordCollection()
     {
@@ -60,6 +62,8 @@ public sealed partial class WordCollection
     public DateTime UpdatedAtUtc { get; private set; }
 
     public IReadOnlyCollection<WordCollectionEntry> Entries => _entries.AsReadOnly();
+
+    public IReadOnlyCollection<WordCollectionLocalization> Localizations => _localizations.AsReadOnly();
 
     public void UpdateMetadata(
         string name,
@@ -112,6 +116,48 @@ public sealed partial class WordCollection
 
         _entries.Add(entry);
         UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public void AddOrUpdateLocalization(
+        Guid localizationId,
+        LanguageCode languageCode,
+        string name,
+        string? description,
+        DateTime timestampUtc)
+    {
+        DateTime normalizedTimestamp = NormalizeUtc(timestampUtc, nameof(timestampUtc));
+
+        WordCollectionLocalization? existing = _localizations
+            .SingleOrDefault(localization => localization.LanguageCode == languageCode);
+
+        if (existing is null)
+        {
+            _localizations.Add(new WordCollectionLocalization(
+                localizationId,
+                Id,
+                languageCode,
+                name,
+                description,
+                normalizedTimestamp,
+                normalizedTimestamp));
+        }
+        else
+        {
+            if (localizationId != Guid.Empty && existing.Id != localizationId)
+            {
+                throw new DomainRuleException("Word collection localization identifier does not match the existing language row.");
+            }
+
+            existing.UpdateText(name, description, normalizedTimestamp);
+        }
+
+        if (languageCode.Value == ContentLanguageRequirements.LearningLanguageCode)
+        {
+            Name = NormalizeRequiredText(name, nameof(name));
+            Description = NormalizeOptionalText(description);
+        }
+
+        UpdatedAtUtc = normalizedTimestamp;
     }
 
     public void ReplaceEntries(IEnumerable<(Guid WordEntryId, int SortOrder)> words, DateTime updatedAtUtc)
@@ -182,4 +228,102 @@ public sealed partial class WordCollection
 
     [GeneratedRegex("^[a-z0-9]+(-[a-z0-9]+)*$", RegexOptions.Compiled)]
     private static partial Regex SlugPattern();
+}
+
+public sealed class WordCollectionLocalization
+{
+    private WordCollectionLocalization()
+    {
+    }
+
+    internal WordCollectionLocalization(
+        Guid id,
+        Guid wordCollectionId,
+        LanguageCode languageCode,
+        string name,
+        string? description,
+        DateTime createdAtUtc,
+        DateTime updatedAtUtc)
+    {
+        if (id == Guid.Empty)
+        {
+            throw new DomainRuleException("Word collection localization identifier cannot be empty.");
+        }
+
+        if (wordCollectionId == Guid.Empty)
+        {
+            throw new DomainRuleException("Word collection localization must belong to a collection.");
+        }
+
+        Id = id;
+        WordCollectionId = wordCollectionId;
+        LanguageCode = languageCode;
+        Name = NormalizeName(name);
+        Description = NormalizeDescription(description);
+        CreatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
+    public Guid Id { get; private set; }
+
+    public Guid WordCollectionId { get; private set; }
+
+    public LanguageCode LanguageCode { get; private set; }
+
+    public string Name { get; private set; } = string.Empty;
+
+    public string? Description { get; private set; }
+
+    public DateTime CreatedAtUtc { get; private set; }
+
+    public DateTime UpdatedAtUtc { get; private set; }
+
+    internal void UpdateText(string name, string? description, DateTime updatedAtUtc)
+    {
+        Name = NormalizeName(name);
+        Description = NormalizeDescription(description);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
+    private static string NormalizeName(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            throw new DomainRuleException("Word collection localization name cannot be empty.");
+        }
+
+        string normalized = value.Trim();
+        if (normalized.Length > 256)
+        {
+            throw new DomainRuleException("Word collection localization name cannot exceed 256 characters.");
+        }
+
+        return normalized;
+    }
+
+    private static string? NormalizeDescription(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string normalized = value.Trim();
+        if (normalized.Length > 4000)
+        {
+            throw new DomainRuleException("Word collection localization description cannot exceed 4000 characters.");
+        }
+
+        return normalized;
+    }
+
+    private static DateTime NormalizeUtc(DateTime value, string parameterName)
+    {
+        if (value == default)
+        {
+            throw new DomainRuleException($"{parameterName} cannot be empty.");
+        }
+
+        return value.Kind == DateTimeKind.Utc ? value : value.ToUniversalTime();
+    }
 }

@@ -56,6 +56,28 @@ public interface IWordAdminService
         Guid exampleId,
         CancellationToken cancellationToken);
 
+    Task<AdminCatalogWordDetailResponse?> AddSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminAddWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminCatalogWordDetailResponse?> UpdateSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        AdminUpdateWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminCatalogWordDetailResponse?> DeleteSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        CancellationToken cancellationToken);
+
     Task<AdminCatalogWordDetailResponse?> AddTopicAsync(
         Guid publicId,
         AdminAddWordTopicRequest request,

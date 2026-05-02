@@ -444,6 +444,140 @@ internal sealed class WordAdminService(
         return await adminQueryService.GetWordAsync(publicId, cancellationToken).ConfigureAwait(false);
     }
 
+    public async Task<AdminCatalogWordDetailResponse?> AddSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminAddWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+
+        if (publicId == Guid.Empty || senseId == Guid.Empty || exampleId == Guid.Empty)
+        {
+            return null;
+        }
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        WordEntry? word = await dbContext.WordEntries
+            .Include(entry => entry.Senses)
+                .ThenInclude(sense => sense.Examples)
+                    .ThenInclude(example => example.Translations)
+            .SingleOrDefaultAsync(entry => entry.PublicId == publicId, cancellationToken)
+            .ConfigureAwait(false);
+
+        WordSense? sense = word?.Senses.SingleOrDefault(item => item.Id == senseId);
+        ExampleSentence? example = sense?.Examples.SingleOrDefault(item => item.Id == exampleId);
+        if (word is null || sense is null || example is null)
+        {
+            return null;
+        }
+
+        example.AddTranslation(
+            Guid.NewGuid(),
+            LanguageCode.From(request.LanguageCode),
+            request.TranslationText,
+            DateTime.UtcNow);
+
+        await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        return await adminQueryService.GetWordAsync(publicId, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<AdminCatalogWordDetailResponse?> UpdateSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        AdminUpdateWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+
+        if (publicId == Guid.Empty || senseId == Guid.Empty || exampleId == Guid.Empty || translationId == Guid.Empty)
+        {
+            return null;
+        }
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        WordEntry? word = await dbContext.WordEntries
+            .Include(entry => entry.Senses)
+                .ThenInclude(sense => sense.Examples)
+                    .ThenInclude(example => example.Translations)
+            .SingleOrDefaultAsync(entry => entry.PublicId == publicId, cancellationToken)
+            .ConfigureAwait(false);
+
+        WordSense? sense = word?.Senses.SingleOrDefault(item => item.Id == senseId);
+        ExampleSentence? example = sense?.Examples.SingleOrDefault(item => item.Id == exampleId);
+        if (word is null || sense is null || example is null)
+        {
+            return null;
+        }
+
+        bool updated = example.UpdateTranslation(
+            translationId,
+            LanguageCode.From(request.LanguageCode),
+            request.TranslationText,
+            DateTime.UtcNow);
+
+        if (!updated)
+        {
+            return null;
+        }
+
+        await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        return await adminQueryService.GetWordAsync(publicId, cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<AdminCatalogWordDetailResponse?> DeleteSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        CancellationToken cancellationToken)
+    {
+        if (publicId == Guid.Empty || senseId == Guid.Empty || exampleId == Guid.Empty || translationId == Guid.Empty)
+        {
+            return null;
+        }
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        WordEntry? word = await dbContext.WordEntries
+            .Include(entry => entry.Senses)
+                .ThenInclude(sense => sense.Examples)
+                    .ThenInclude(example => example.Translations)
+            .SingleOrDefaultAsync(entry => entry.PublicId == publicId, cancellationToken)
+            .ConfigureAwait(false);
+
+        WordSense? sense = word?.Senses.SingleOrDefault(item => item.Id == senseId);
+        ExampleSentence? example = sense?.Examples.SingleOrDefault(item => item.Id == exampleId);
+        if (word is null || sense is null || example is null)
+        {
+            return null;
+        }
+
+        ExampleTranslation? removed = example.RemoveTranslation(translationId, DateTime.UtcNow);
+        if (removed is null)
+        {
+            return null;
+        }
+
+        dbContext.ExampleTranslations.Remove(removed);
+        await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        return await adminQueryService.GetWordAsync(publicId, cancellationToken).ConfigureAwait(false);
+    }
+
     public async Task<AdminCatalogWordDetailResponse?> AddTopicAsync(
         Guid publicId,
         AdminAddWordTopicRequest request,
@@ -678,6 +812,8 @@ internal sealed class WordAdminService(
                     DefaultIfBlank(item.ContentSourceType, "Manual"),
                     item.SourceReference));
 
+                ValidateCompleteWordImport(item);
+
                 string normalizedLemma = NormalizeLemmaForLookup(item.Lemma);
                 string importKey = $"{normalizedLemma}|{parsed.PartOfSpeech}|{parsed.CefrLevel}";
                 if (!importKeys.Add(importKey))
@@ -799,17 +935,14 @@ internal sealed class WordAdminService(
                 item.ShortDefinitionDe,
                 item.ShortGloss);
 
-            if (item.Translations is not null)
+            foreach (AdminBulkWordTranslationImportRequest translation in item.Translations ?? [])
             {
-                foreach (AdminBulkWordTranslationImportRequest translation in item.Translations)
-                {
-                    sense.AddTranslation(
-                        Guid.NewGuid(),
-                        LanguageCode.From(translation.LanguageCode),
-                        translation.TranslationText,
-                        translation.IsPrimary,
-                        now);
-                }
+                sense.AddTranslation(
+                    Guid.NewGuid(),
+                    LanguageCode.From(translation.LanguageCode),
+                    translation.TranslationText,
+                    translation.IsPrimary,
+                    now);
             }
 
             if (item.Examples is null)
@@ -827,12 +960,7 @@ internal sealed class WordAdminService(
                     exampleItem.IsPrimaryExample,
                     now);
 
-                if (exampleItem.Translations is null)
-                {
-                    continue;
-                }
-
-                foreach (AdminBulkWordTranslationImportRequest translation in exampleItem.Translations)
+                foreach (AdminBulkWordTranslationImportRequest translation in exampleItem.Translations ?? [])
                 {
                     example.AddTranslation(
                         Guid.NewGuid(),
@@ -841,6 +969,79 @@ internal sealed class WordAdminService(
                         now);
                 }
             }
+        }
+    }
+
+    private static void ValidateCompleteWordImport(AdminBulkWordImportItemRequest item)
+    {
+        if (item.Senses is null || item.Senses.Count == 0)
+        {
+            throw new InvalidOperationException("Each imported word must include at least one sense.");
+        }
+
+        if (!item.Senses.Any(sense => sense.IsPrimarySense))
+        {
+            throw new InvalidOperationException("Each imported word must include one primary sense.");
+        }
+
+        for (int senseIndex = 0; senseIndex < item.Senses.Count; senseIndex++)
+        {
+            AdminBulkWordSenseImportRequest sense = item.Senses[senseIndex];
+            string senseLabel = $"Sense {senseIndex + 1}";
+
+            ValidateCompleteTranslations(sense.Translations, $"{senseLabel} translations");
+
+            if (string.IsNullOrWhiteSpace(sense.ShortDefinitionDe))
+            {
+                throw new InvalidOperationException($"{senseLabel} must include a German short definition.");
+            }
+
+            if (sense.Examples is null || sense.Examples.Count == 0)
+            {
+                throw new InvalidOperationException($"{senseLabel} must include at least one German example sentence.");
+            }
+
+            for (int exampleIndex = 0; exampleIndex < sense.Examples.Count; exampleIndex++)
+            {
+                AdminBulkWordExampleImportRequest example = sense.Examples[exampleIndex];
+                if (string.IsNullOrWhiteSpace(example.GermanText))
+                {
+                    throw new InvalidOperationException($"{senseLabel} example {exampleIndex + 1} must include German text.");
+                }
+
+                ValidateCompleteTranslations(
+                    example.Translations,
+                    $"{senseLabel} example {exampleIndex + 1} translations");
+            }
+        }
+    }
+
+    private static void ValidateCompleteTranslations(
+        IReadOnlyList<AdminBulkWordTranslationImportRequest>? translations,
+        string label)
+    {
+        if (translations is null || translations.Count == 0)
+        {
+            throw new InvalidOperationException(
+                $"{label} are required for every meaning language: {ContentLanguageRequirements.FormatRequiredMeaningLanguages()}.");
+        }
+
+        IReadOnlyList<string> missing = ContentLanguageRequirements.FindMissingMeaningLanguages(
+            translations.Select(translation => translation.LanguageCode));
+        if (missing.Count > 0)
+        {
+            throw new InvalidOperationException($"{label} are missing languages: {string.Join(", ", missing)}.");
+        }
+
+        string[] duplicates = translations
+            .Where(translation => !string.IsNullOrWhiteSpace(translation.LanguageCode))
+            .GroupBy(translation => translation.LanguageCode.Trim().ToLowerInvariant())
+            .Where(group => group.Count() > 1)
+            .Select(group => group.Key)
+            .ToArray();
+        if (duplicates.Length > 0)
+        {
+            throw new InvalidOperationException($"{label} contain duplicate languages: {string.Join(", ", duplicates)}.");
         }
     }
 

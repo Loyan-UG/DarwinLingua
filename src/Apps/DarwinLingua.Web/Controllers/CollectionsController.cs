@@ -10,6 +10,8 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class CollectionsController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
+    IWebEntitledFeatureAccessService featureAccessService,
+    IWebFavoriteWordService favoriteWordService,
     ILogger<CollectionsController> logger) : Controller
 {
     [HttpGet("", Name = "Collections_Index")]
@@ -47,6 +49,9 @@ public sealed class CollectionsController(
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
+        string? secondaryMeaningLanguageCode = await featureAccessService
+            .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
+            .ConfigureAwait(false);
         var collection = await catalogApiClient
             .GetCollectionBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1, cancellationToken)
             .ConfigureAwait(false);
@@ -56,6 +61,82 @@ public sealed class CollectionsController(
             return NotFound();
         }
 
-        return View(new WordCollectionDetailPageViewModel(collection, profile.PreferredMeaningLanguage1));
+        IReadOnlyList<WordBrowseCardViewModel> words = await CreateWordCardsAsync(
+                collection.Words,
+                profile.PreferredMeaningLanguage1,
+                secondaryMeaningLanguageCode,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        return View(new WordCollectionDetailPageViewModel(
+            collection,
+            words,
+            profile.PreferredMeaningLanguage1,
+            secondaryMeaningLanguageCode));
+    }
+
+    private async Task<IReadOnlyList<WordBrowseCardViewModel>> CreateWordCardsAsync(
+        IReadOnlyList<WordListItemModel> words,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        IReadOnlyList<WordListItemModel> secondaryWords = await LoadSecondaryWordsAsync(
+                words,
+                primaryMeaningLanguageCode,
+                secondaryMeaningLanguageCode,
+                cancellationToken)
+            .ConfigureAwait(false);
+        Dictionary<Guid, WordListItemModel> secondaryById = secondaryWords.ToDictionary(word => word.PublicId);
+        bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken).ConfigureAwait(false);
+        IReadOnlySet<Guid> favoriteWordIds = canUseFavorites
+            ? await favoriteWordService
+                .GetFavoriteWordIdsAsync(words.Select(word => word.PublicId).ToArray(), cancellationToken)
+                .ConfigureAwait(false)
+            : new HashSet<Guid>();
+        string returnUrl = Request.PathBase + Request.Path + Request.QueryString;
+
+        return words
+            .Select(word => new WordBrowseCardViewModel(
+                word,
+                secondaryById.TryGetValue(word.PublicId, out WordListItemModel? secondaryWord)
+                    ? secondaryWord.PrimaryMeaning
+                    : null,
+                primaryMeaningLanguageCode,
+                secondaryMeaningLanguageCode,
+                new WordInteractionPanelViewModel(
+                    word.PublicId,
+                    favoriteWordIds.Contains(word.PublicId),
+                    new DarwinLingua.Learning.Application.Models.UserWordStateModel(word.PublicId, false, false, null, null, 0),
+                    returnUrl,
+                    canUseFavorites,
+                    canUseFavorites ? null : "Favorites require an active trial or premium plan.")))
+            .ToArray();
+    }
+
+    private async Task<IReadOnlyList<WordListItemModel>> LoadSecondaryWordsAsync(
+        IReadOnlyList<WordListItemModel> words,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        if (words.Count == 0 ||
+            string.IsNullOrWhiteSpace(secondaryMeaningLanguageCode) ||
+            string.Equals(secondaryMeaningLanguageCode, primaryMeaningLanguageCode, StringComparison.OrdinalIgnoreCase))
+        {
+            return [];
+        }
+
+        try
+        {
+            return await catalogApiClient
+                .GetWordsByIdsAsync(words.Select(word => word.PublicId).ToArray(), secondaryMeaningLanguageCode, cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Collection secondary meanings could not be loaded.");
+            return [];
+        }
     }
 }

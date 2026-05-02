@@ -17,6 +17,7 @@ public sealed class BrevoTransactionalWebhookController(
     ILogger<BrevoTransactionalWebhookController> logger) : ControllerBase
 {
     [HttpPost]
+    [RequestSizeLimit(64 * 1024)]
     public async Task<IActionResult> Receive(
         [FromQuery] string? secret,
         [FromBody] BrevoTransactionalEmailWebhookEvent webhookEvent,

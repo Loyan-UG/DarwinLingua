@@ -282,6 +282,28 @@ public interface IWebCatalogApiClient
         Guid exampleId,
         CancellationToken cancellationToken);
 
+    Task<AdminWordDetailViewModel> AddAdminWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminAddWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> UpdateAdminWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        AdminUpdateWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken);
+
+    Task<AdminWordDetailViewModel> DeleteAdminWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        CancellationToken cancellationToken);
+
     Task<AdminWordDetailViewModel> AddAdminWordTopicAsync(
         Guid publicId,
         AdminAddWordTopicRequest request,
@@ -947,6 +969,7 @@ internal sealed class WebCatalogApiClient(
                                 example.IsPrimaryExample,
                                 example.Translations
                                     .Select(translation => new AdminWordExampleTranslationViewModel(
+                                        translation.TranslationId,
                                         translation.LanguageCode,
                                         translation.TranslationText))
                                     .ToArray()))
@@ -1021,16 +1044,17 @@ internal sealed class WebCatalogApiClient(
                             translation.IsPrimary))
                         .ToArray(),
                     sense.Examples
-                        .Select(example => new AdminWordExampleViewModel(
-                            example.ExampleId,
-                            example.SentenceOrder,
-                            example.GermanText,
-                            example.IsPrimaryExample,
-                            example.Translations
-                                .Select(translation => new AdminWordExampleTranslationViewModel(
-                                    translation.LanguageCode,
-                                    translation.TranslationText))
-                                .ToArray()))
+                            .Select(example => new AdminWordExampleViewModel(
+                                example.ExampleId,
+                                example.SentenceOrder,
+                                example.GermanText,
+                                example.IsPrimaryExample,
+                                example.Translations
+                                    .Select(translation => new AdminWordExampleTranslationViewModel(
+                                        translation.TranslationId,
+                                        translation.LanguageCode,
+                                        translation.TranslationText))
+                                    .ToArray()))
                         .ToArray()))
                 .ToArray(),
             response.Topics
@@ -1101,16 +1125,17 @@ internal sealed class WebCatalogApiClient(
                             translation.IsPrimary))
                         .ToArray(),
                     sense.Examples
-                        .Select(example => new AdminWordExampleViewModel(
-                            example.ExampleId,
-                            example.SentenceOrder,
-                            example.GermanText,
-                            example.IsPrimaryExample,
-                            example.Translations
-                                .Select(translation => new AdminWordExampleTranslationViewModel(
-                                    translation.LanguageCode,
-                                    translation.TranslationText))
-                                .ToArray()))
+                            .Select(example => new AdminWordExampleViewModel(
+                                example.ExampleId,
+                                example.SentenceOrder,
+                                example.GermanText,
+                                example.IsPrimaryExample,
+                                example.Translations
+                                    .Select(translation => new AdminWordExampleTranslationViewModel(
+                                        translation.TranslationId,
+                                        translation.LanguageCode,
+                                        translation.TranslationText))
+                                    .ToArray()))
                         .ToArray()))
                 .ToArray(),
             response.Topics
@@ -1190,16 +1215,17 @@ internal sealed class WebCatalogApiClient(
                             translation.IsPrimary))
                         .ToArray(),
                     sense.Examples
-                        .Select(example => new AdminWordExampleViewModel(
-                            example.ExampleId,
-                            example.SentenceOrder,
-                            example.GermanText,
-                            example.IsPrimaryExample,
-                            example.Translations
-                                .Select(translation => new AdminWordExampleTranslationViewModel(
-                                    translation.LanguageCode,
-                                    translation.TranslationText))
-                                .ToArray()))
+                            .Select(example => new AdminWordExampleViewModel(
+                                example.ExampleId,
+                                example.SentenceOrder,
+                                example.GermanText,
+                                example.IsPrimaryExample,
+                                example.Translations
+                                    .Select(translation => new AdminWordExampleTranslationViewModel(
+                                        translation.TranslationId,
+                                        translation.LanguageCode,
+                                        translation.TranslationText))
+                                    .ToArray()))
                         .ToArray()))
                 .ToArray(),
             response.Topics
@@ -1305,6 +1331,52 @@ internal sealed class WebCatalogApiClient(
         return MapAdminWordDetail(response);
     }
 
+    public async Task<AdminWordDetailViewModel> AddAdminWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        AdminAddWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminAddWordSenseExampleTranslationRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/examples/{exampleId:D}/translations",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> UpdateAdminWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        AdminUpdateWordSenseExampleTranslationRequest request,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminUpdateWordSenseExampleTranslationRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/examples/{exampleId:D}/translations/{translationId:D}",
+            request,
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
+    public async Task<AdminWordDetailViewModel> DeleteAdminWordSenseExampleTranslationAsync(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        CancellationToken cancellationToken)
+    {
+        AdminCatalogWordDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminCatalogWordDetailResponse>(
+            $"/api/admin/catalog/words/{publicId:D}/senses/{senseId:D}/examples/{exampleId:D}/translations/{translationId:D}/delete",
+            new AdminEmptyRequest(),
+            cancellationToken).ConfigureAwait(false);
+
+        return MapAdminWordDetail(response);
+    }
+
     public async Task<AdminWordDetailViewModel> AddAdminWordTopicAsync(
         Guid publicId,
         AdminAddWordTopicRequest request,
@@ -1401,16 +1473,17 @@ internal sealed class WebCatalogApiClient(
                             translation.IsPrimary))
                         .ToArray(),
                     sense.Examples
-                        .Select(example => new AdminWordExampleViewModel(
-                            example.ExampleId,
-                            example.SentenceOrder,
-                            example.GermanText,
-                            example.IsPrimaryExample,
-                            example.Translations
-                                .Select(translation => new AdminWordExampleTranslationViewModel(
-                                    translation.LanguageCode,
-                                    translation.TranslationText))
-                                .ToArray()))
+                            .Select(example => new AdminWordExampleViewModel(
+                                example.ExampleId,
+                                example.SentenceOrder,
+                                example.GermanText,
+                                example.IsPrimaryExample,
+                                example.Translations
+                                    .Select(translation => new AdminWordExampleTranslationViewModel(
+                                        translation.TranslationId,
+                                        translation.LanguageCode,
+                                        translation.TranslationText))
+                                    .ToArray()))
                         .ToArray()))
                 .ToArray(),
             response.Topics
@@ -2123,6 +2196,11 @@ internal sealed class WebCatalogApiClient(
             label.Kind,
             label.Key,
             label.DisplayName,
+            label.Localizations?
+                .Select(localization => new AdminLabelLocalizationViewModel(
+                    localization.LanguageCode,
+                    localization.DisplayName))
+                .ToArray(),
             label.SortOrder,
             label.IsSystem,
             label.WordCount,
@@ -2134,6 +2212,13 @@ internal sealed class WebCatalogApiClient(
             collection.Slug,
             collection.Name,
             collection.Description,
+            collection.Localizations?
+                .Select(localization => new AdminCollectionLocalizationViewModel(
+                    localization.LocalizationId,
+                    localization.LanguageCode,
+                    localization.Name,
+                    localization.Description))
+                .ToArray(),
             collection.ImageUrl,
             collection.PublicationStatus,
             collection.SortOrder,
@@ -2146,6 +2231,13 @@ internal sealed class WebCatalogApiClient(
             collection.Slug,
             collection.Name,
             collection.Description,
+            collection.Localizations?
+                .Select(localization => new AdminCollectionLocalizationViewModel(
+                    localization.LocalizationId,
+                    localization.LanguageCode,
+                    localization.Name,
+                    localization.Description))
+                .ToArray(),
             collection.ImageUrl,
             collection.PublicationStatus,
             collection.SortOrder,
@@ -2480,6 +2572,7 @@ internal sealed record AdminCatalogWordExampleResponse(
     IReadOnlyList<AdminCatalogWordExampleTranslationResponse> Translations);
 
 internal sealed record AdminCatalogWordExampleTranslationResponse(
+    Guid TranslationId,
     string LanguageCode,
     string TranslationText);
 
@@ -2527,10 +2620,15 @@ internal sealed record AdminLabelItemResponse(
     string Kind,
     string Key,
     string DisplayName,
+    IReadOnlyList<AdminLabelLocalizationResponse>? Localizations,
     int SortOrder,
     bool IsSystem,
     int WordCount,
     DateTime UpdatedAtUtc);
+
+internal sealed record AdminLabelLocalizationResponse(
+    string LanguageCode,
+    string DisplayName);
 
 internal sealed record AdminCollectionsResponse(
     IReadOnlyList<AdminCollectionItemResponse> Collections);
@@ -2540,6 +2638,7 @@ internal sealed record AdminCollectionItemResponse(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminCollectionLocalizationResponse>? Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder,
@@ -2551,12 +2650,19 @@ internal sealed record AdminCollectionDetailResponse(
     string Slug,
     string Name,
     string? Description,
+    IReadOnlyList<AdminCollectionLocalizationResponse>? Localizations,
     string? ImageUrl,
     string PublicationStatus,
     int SortOrder,
     DateTime CreatedAtUtc,
     DateTime UpdatedAtUtc,
     IReadOnlyList<AdminCollectionEntryResponse> Entries);
+
+internal sealed record AdminCollectionLocalizationResponse(
+    Guid LocalizationId,
+    string LanguageCode,
+    string Name,
+    string? Description);
 
 internal sealed record AdminCollectionEntryResponse(
     Guid EntryId,

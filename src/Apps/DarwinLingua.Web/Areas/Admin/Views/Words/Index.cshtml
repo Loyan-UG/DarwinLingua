@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.AdminWordsPageViewModel
 @{
     ViewData["Title"] = "Words";
+    int activeCount = Model.Words.Count(word => string.Equals(word.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase));
+    int draftCount = Model.Words.Count(word => string.Equals(word.PublicationStatus, "Draft", StringComparison.OrdinalIgnoreCase));
 }
 
 <section class="panel stack-lg">
@@ -13,7 +15,27 @@
         </div>
     </div>
 
+    <div class="admin-summary-grid">
+        <a href="#words-table" class="admin-summary-tile">
+            <span class="eyebrow">Words shown</span>
+            <strong>@Model.Words.Count</strong>
+        </a>
+        <a href="#words-table" class="admin-summary-tile">
+            <span class="eyebrow">Active</span>
+            <strong>@activeCount</strong>
+        </a>
+        <a href="#words-table" class="admin-summary-tile">
+            <span class="eyebrow">Draft</span>
+            <strong>@draftCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Word catalog sections">
+        <a href="#words-filter">Filter</a>
+        <a href="#words-table">Words</a>
+    </nav>
+
     <form class="admin-filter-panel admin-filter-panel--compact"
+          id="words-filter"
           method="get"
           asp-action="Index"
           hx-get="@Url.Action("Table", "Words", new { area = "Admin" })"

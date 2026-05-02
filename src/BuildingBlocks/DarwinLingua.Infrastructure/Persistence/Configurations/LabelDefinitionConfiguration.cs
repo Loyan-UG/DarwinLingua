@@ -44,5 +44,13 @@ internal sealed class LabelDefinitionConfiguration : IEntityTypeConfiguration<La
 
         builder.HasIndex(label => new { label.Kind, label.Key })
             .IsUnique();
+
+        builder.HasMany(label => label.Localizations)
+            .WithOne()
+            .HasForeignKey(localization => localization.LabelDefinitionId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Navigation(label => label.Localizations)
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
     }
 }

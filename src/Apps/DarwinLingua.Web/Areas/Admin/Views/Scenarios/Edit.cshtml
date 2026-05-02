@@ -6,7 +6,19 @@
     string actionName = Model.IsNew ? "New" : "Edit";
 }
 
-<section class="panel stack-lg">
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Mode", Model.IsNew ? "Create" : "Edit", "Scenario metadata.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Status", Model.PublicationStatus, "Learner visibility state.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Level", Model.CefrLevel, "CEFR level for practice filters.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Scenario editor sections">
+    <a href="#scenario-identity">Identity</a>
+    <a href="#scenario-learning">Learning</a>
+    <a href="#scenario-publishing">Publishing</a>
+</nav>
+
+<section id="scenario-identity" class="panel stack-lg">
     <div class="cluster cluster--between">
         <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.IsNew ? "New scenario" : Model.Title, "Scenario metadata", "Create and maintain scenario lesson metadata.")' />
         <a class="button button--secondary" asp-action="Index">Back</a>
@@ -28,7 +40,7 @@
                 <input asp-for="Title" />
                 <span asp-validation-for="Title" class="validation-message"></span>
             </label>
-            <label class="form-field">
+            <label id="scenario-publishing" class="form-field">
                 <span>CEFR</span>
                 <select asp-for="CefrLevel">
                     @foreach (string level in cefrLevels)
@@ -55,7 +67,7 @@
                 <span>Sort order</span>
                 <input asp-for="SortOrder" type="number" min="0" />
             </label>
-            <label class="form-field field--wide">
+            <label id="scenario-learning" class="form-field field--wide">
                 <span>Learner goal</span>
                 <input asp-for="LearnerGoal" />
                 <span asp-validation-for="LearnerGoal" class="validation-message"></span>

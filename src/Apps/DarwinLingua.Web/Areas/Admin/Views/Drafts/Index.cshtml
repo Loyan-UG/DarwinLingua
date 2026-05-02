@@ -1,11 +1,31 @@
 @model DarwinLingua.Web.Models.AdminDraftWordsPageViewModel
 @{
     ViewData["Title"] = "Drafts";
+    int a1A2Count = Model.Words.Count(word => string.Equals(word.CefrLevel, "A1", StringComparison.OrdinalIgnoreCase) || string.Equals(word.CefrLevel, "A2", StringComparison.OrdinalIgnoreCase));
+    int bPlusCount = Model.Words.Count(word => !string.Equals(word.CefrLevel, "A1", StringComparison.OrdinalIgnoreCase) && !string.Equals(word.CefrLevel, "A2", StringComparison.OrdinalIgnoreCase));
 }
 
 <section class="panel stack-lg">
     <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Drafts", "Draft batch inspection", "Inspect draft lexical entries inline before publish workflows are added.")' />
-    <form class="search-form" method="get" asp-action="Index">
+    <div class="admin-summary-grid">
+        <a href="#drafts-table" class="admin-summary-tile">
+            <span class="eyebrow">Draft words</span>
+            <strong>@Model.Words.Count</strong>
+        </a>
+        <a href="#drafts-table" class="admin-summary-tile">
+            <span class="eyebrow">A1/A2</span>
+            <strong>@a1A2Count</strong>
+        </a>
+        <a href="#drafts-table" class="admin-summary-tile">
+            <span class="eyebrow">B1+</span>
+            <strong>@bPlusCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Draft sections">
+        <a href="#drafts-filter">Filter</a>
+        <a href="#drafts-table">Drafts</a>
+    </nav>
+    <form id="drafts-filter" class="search-form" method="get" asp-action="Index">
         <input class="search-input"
                type="search"
                name="q"

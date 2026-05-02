@@ -140,6 +140,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
 
             List<WordCollection> existingCollections = await dbContext.WordCollections
                 .Include(collection => collection.Entries)
+                .Include(collection => collection.Localizations)
                 .Where(collection => importedSlugs.Contains(collection.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -168,6 +169,16 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                         .Select(entry => (entry.WordEntryId, entry.SortOrder))
                         .ToArray(),
                     importedCollection.UpdatedAtUtc);
+
+                foreach (WordCollectionLocalization localization in importedCollection.Localizations)
+                {
+                    existingCollection.AddOrUpdateLocalization(
+                        Guid.NewGuid(),
+                        localization.LanguageCode,
+                        localization.Name,
+                        localization.Description,
+                        importedCollection.UpdatedAtUtc);
+                }
             }
 
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);

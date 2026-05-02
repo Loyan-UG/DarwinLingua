@@ -1,11 +1,31 @@
 @model DarwinLingua.Web.Models.AdminImportsPageViewModel
 @{
     ViewData["Title"] = "Imports";
+    int warningPackageCount = Model.Packages.Count(package => package.WarningCount > 0 || package.InvalidEntries > 0);
+    int failedPackageCount = Model.Packages.Count(package => string.Equals(package.Status, "Failed", StringComparison.OrdinalIgnoreCase));
 }
 
 <section class="panel stack-lg">
     <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Imports", "Content import dashboard", "Filter package imports inline and inspect their current processing status.")' />
-    <form class="search-form" method="get" asp-action="Index">
+    <div class="admin-summary-grid">
+        <a href="#imports-table" class="admin-summary-tile">
+            <span class="eyebrow">Packages shown</span>
+            <strong>@Model.Packages.Count</strong>
+        </a>
+        <a href="#imports-table" class="admin-summary-tile">
+            <span class="eyebrow">With warnings</span>
+            <strong>@warningPackageCount</strong>
+        </a>
+        <a href="#imports-table" class="admin-summary-tile">
+            <span class="eyebrow">Failed</span>
+            <strong>@failedPackageCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Import sections">
+        <a href="#imports-filter">Filter</a>
+        <a href="#imports-table">Packages</a>
+    </nav>
+    <form id="imports-filter" class="search-form" method="get" asp-action="Index">
         <input class="search-input"
                type="search"
                name="status"

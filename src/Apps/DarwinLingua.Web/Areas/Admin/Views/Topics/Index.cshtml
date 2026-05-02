@@ -5,6 +5,8 @@
     var selectedSystem = ViewData["AdminTopicSystem"] as string ?? string.Empty;
     var selectedSort = ViewData["AdminTopicSort"] as string ?? "sortOrder";
     var totalCount = ViewData["AdminTopicTotalCount"] as int? ?? Model.Topics.Count;
+    int systemCount = Model.Topics.Count(topic => topic.IsSystem);
+    int wordCount = Model.Topics.Sum(topic => topic.WordCount);
 }
 
 <section class="panel stack-lg">
@@ -16,10 +18,28 @@
     {
         <div class="state-panel state-panel--success">@statusMessage</div>
     }
+    <div class="admin-summary-grid">
+        <a href="#topics-table" class="admin-summary-tile">
+            <span class="eyebrow">Topics shown</span>
+            <strong>@Model.Topics.Count</strong>
+        </a>
+        <a href="#topics-table" class="admin-summary-tile">
+            <span class="eyebrow">System</span>
+            <strong>@systemCount</strong>
+        </a>
+        <a href="#topics-table" class="admin-summary-tile">
+            <span class="eyebrow">Word links</span>
+            <strong>@wordCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Topic taxonomy sections">
+        <a href="#topics-filter">Filter</a>
+        <a href="#topics-table">Topics</a>
+    </nav>
 </section>
 
 <section class="panel stack-md">
-    <form class="admin-filter-panel admin-filter-panel--compact" method="get">
+    <form id="topics-filter" class="admin-filter-panel admin-filter-panel--compact" method="get">
         <label class="form-field">
             <span>Search</span>
             <input name="q" type="search" value="@query" placeholder="Key or localized name" />
@@ -47,7 +67,7 @@
     <div class="cluster cluster--between">
         <span class="eyebrow">@Model.Topics.Count of @totalCount topics</span>
     </div>
-    <div class="table-scroll">
+    <div id="topics-table" class="table-scroll">
         <table class="data-table admin-data-grid">
             <thead>
                 <tr>

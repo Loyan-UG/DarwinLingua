@@ -22,13 +22,15 @@ public sealed class LoginModel(
 
     public async Task OnGetAsync(string? returnUrl = null)
     {
-        ReturnUrl = returnUrl ?? Url.Content("~/");
+        ReturnUrl = NormalizeReturnUrl(returnUrl);
+        ModelState.Remove(nameof(ReturnUrl));
         await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme).ConfigureAwait(false);
     }
 
     public async Task<IActionResult> OnPostAsync(CancellationToken cancellationToken)
     {
-        ReturnUrl ??= Url.Content("~/");
+        ReturnUrl = NormalizeReturnUrl(ReturnUrl);
+        ModelState.Remove(nameof(ReturnUrl));
         if (!ModelState.IsValid)
         {
             return Page();
@@ -79,6 +81,14 @@ public sealed class LoginModel(
 
         ModelState.AddModelError(string.Empty, "The sign-in attempt could not be completed.");
         return Page();
+    }
+
+    private string NormalizeReturnUrl(string? returnUrl)
+    {
+        string homeUrl = Url.Content("~/");
+        return !string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl)
+            ? returnUrl
+            : homeUrl;
     }
 
     private string ResolveCulture() =>

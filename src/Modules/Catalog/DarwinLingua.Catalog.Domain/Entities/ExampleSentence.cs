@@ -101,6 +101,49 @@ public sealed class ExampleSentence
     }
 
     /// <summary>
+    /// Updates a translation attached to the example sentence.
+    /// </summary>
+    public bool UpdateTranslation(
+        Guid translationId,
+        LanguageCode languageCode,
+        string translationText,
+        DateTime updatedAtUtc)
+    {
+        ExampleTranslation? translation = _translations.SingleOrDefault(item => item.Id == translationId);
+        if (translation is null)
+        {
+            return false;
+        }
+
+        if (_translations.Any(existingTranslation =>
+                existingTranslation.Id != translationId &&
+                existingTranslation.LanguageCode == languageCode))
+        {
+            throw new DomainRuleException("Duplicate example translation languages are not allowed.");
+        }
+
+        translation.Update(languageCode, translationText, updatedAtUtc);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+        return true;
+    }
+
+    /// <summary>
+    /// Removes a translation from the example sentence.
+    /// </summary>
+    public ExampleTranslation? RemoveTranslation(Guid translationId, DateTime updatedAtUtc)
+    {
+        ExampleTranslation? translation = _translations.SingleOrDefault(item => item.Id == translationId);
+        if (translation is null)
+        {
+            return null;
+        }
+
+        _translations.Remove(translation);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+        return translation;
+    }
+
+    /// <summary>
     /// Updates the primary-example flag.
     /// </summary>
     internal void SetPrimaryExample(bool isPrimaryExample, DateTime updatedAtUtc)

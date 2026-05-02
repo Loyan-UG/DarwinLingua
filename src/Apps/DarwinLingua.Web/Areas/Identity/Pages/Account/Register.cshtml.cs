@@ -25,12 +25,14 @@ public sealed class RegisterModel(
 
     public void OnGet(string? returnUrl = null)
     {
-        ReturnUrl = returnUrl;
+        ReturnUrl = NormalizeReturnUrl(returnUrl);
+        ModelState.Remove(nameof(ReturnUrl));
     }
 
     public async Task<IActionResult> OnPostAsync(CancellationToken cancellationToken)
     {
-        ReturnUrl ??= Url.Content("~/");
+        ReturnUrl = NormalizeReturnUrl(ReturnUrl);
+        ModelState.Remove(nameof(ReturnUrl));
         if (!ModelState.IsValid)
         {
             return Page();
@@ -91,7 +93,7 @@ public sealed class RegisterModel(
         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
         string callbackUrl = BuildPublicPageUrl(
             "/Account/ConfirmEmail",
-            new { area = "Identity", userId = user.Id, code, returnUrl });
+            new { area = "Identity", userId = user.Id, code, returnUrl = NormalizeReturnUrl(returnUrl) });
         await accountEmailService.SendEmailConfirmationAsync(
                 user,
                 callbackUrl,
@@ -121,6 +123,9 @@ public sealed class RegisterModel(
 
     private string GetRemoteAddressKey() =>
         HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+    private string NormalizeReturnUrl(string? returnUrl) =>
+        Url.IsLocalUrl(returnUrl) ? returnUrl : Url.Content("~/");
 
     public sealed class RegisterInputModel
     {

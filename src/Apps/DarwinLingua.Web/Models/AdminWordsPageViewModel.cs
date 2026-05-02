@@ -90,6 +90,7 @@ public sealed record AdminWordExampleViewModel(
     IReadOnlyList<AdminWordExampleTranslationViewModel> Translations);
 
 public sealed record AdminWordExampleTranslationViewModel(
+    Guid TranslationId,
     string LanguageCode,
     string TranslationText);
 

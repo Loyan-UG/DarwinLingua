@@ -3,7 +3,22 @@
     ViewData["Title"] = "Import words";
 }
 
-<section class="panel stack-lg">
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Import type", "Words", "Bulk catalog content.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Format", "JSON", "Curated structured file.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Result", Model is null ? "Pending" : Model.ImportedCount.ToString(), "Imported rows in the latest upload.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Word import sections">
+    <a href="#word-import-upload">Upload</a>
+    @if (Model is not null)
+    {
+        <a href="#word-import-result">Result</a>
+    }
+    <a href="#word-import-format">JSON shape</a>
+</nav>
+
+<section id="word-import-upload" class="panel stack-lg">
     <div class="cluster cluster--between">
         <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Import words", "Bulk JSON", "Upload a curated JSON file to create multiple catalog words with senses, translations, and examples.")' />
         <a class="button button--secondary" asp-action="Index">Back to words</a>
@@ -22,7 +37,7 @@
 
 @if (Model is not null)
 {
-    <section class="panel stack-md">
+    <section id="word-import-result" class="panel stack-md">
         <div class="admin-detail-grid">
             <div>
                 <span class="eyebrow">Total</span>
@@ -79,7 +94,7 @@
     </section>
 }
 
-<section class="panel stack-md">
+<section id="word-import-format" class="panel stack-md">
     <h2 class="headline-sm">Expected JSON shape</h2>
     <pre class="code-sample"><code>{
   "words": [

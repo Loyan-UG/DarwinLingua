@@ -159,7 +159,7 @@ public sealed class TransactionalEmailSender(
         string responseBody = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
         if (!response.IsSuccessStatusCode)
         {
-            throw new InvalidOperationException($"Brevo API returned {(int)response.StatusCode}: {Truncate(responseBody, 512)}");
+            throw new InvalidOperationException($"Brevo API returned {(int)response.StatusCode} ({response.ReasonPhrase ?? "no reason phrase"}).");
         }
 
         BrevoSendEmailResponse? sendResponse = JsonSerializer.Deserialize<BrevoSendEmailResponse>(
@@ -217,9 +217,6 @@ public sealed class TransactionalEmailSender(
                 .Select(static character => char.IsLetterOrDigit(character) ? char.ToLowerInvariant(character) : '-')
                 .ToArray()).Trim('-')
         ];
-
-    private static string Truncate(string value, int maxLength) =>
-        value.Length <= maxLength ? value : value[..maxLength];
 
     private static readonly JsonSerializerOptions BrevoJsonSerializerOptions = new(JsonSerializerDefaults.Web)
     {

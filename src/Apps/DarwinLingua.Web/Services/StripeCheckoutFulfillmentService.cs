@@ -42,10 +42,10 @@ public sealed class StripeCheckoutFulfillmentService(
         if (!response.IsSuccessStatusCode)
         {
             logger.LogWarning(
-                "Stripe checkout session fulfillment failed for {SessionId} with status {StatusCode}: {BodySummary}",
+                "Stripe checkout session fulfillment failed for {SessionId} with status {StatusCode} ({ReasonPhrase}).",
                 normalizedSessionId,
                 (int)response.StatusCode,
-                Summarize(responseBody));
+                response.ReasonPhrase ?? "no reason phrase");
             throw new InvalidOperationException("Stripe checkout session fulfillment failed.");
         }
 
@@ -171,17 +171,6 @@ public sealed class StripeCheckoutFulfillmentService(
         }
 
         return value.ValueKind == JsonValueKind.String ? value.GetString() : value.ToString();
-    }
-
-    private static string Summarize(string value)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            return string.Empty;
-        }
-
-        string collapsed = value.ReplaceLineEndings(" ").Trim();
-        return collapsed.Length <= 512 ? collapsed : collapsed[..512];
     }
 
     private static bool IsPaidCheckoutStatus(string paymentStatus) =>

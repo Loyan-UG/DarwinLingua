@@ -4,7 +4,22 @@
     var mergeTargets = ViewData["MergeTargets"] as IReadOnlyList<DarwinLingua.Web.Models.AdminLabelItemViewModel> ?? [];
 }
 
-<section class="panel stack-lg">
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Mode", Model.IsNew ? "Create" : "Edit", "Managed label taxonomy.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Kind", Model.Kind, "Label grouping.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Merge targets", mergeTargets.Count.ToString(), "Available duplicate consolidation targets.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Label editor sections">
+    <a href="#label-definition">Definition</a>
+    @if (!Model.IsNew)
+    {
+        <a href="#label-rename">Rename</a>
+        <a href="#label-merge">Merge</a>
+    }
+</nav>
+
+<section id="label-definition" class="panel stack-lg">
     <div class="cluster cluster--between">
         <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.IsNew ? "New label" : Model.DisplayName, "Label editor", "Use managed labels to keep word metadata consistent across imports, browse filters, and admin editing.")' />
         <a class="button button--secondary" asp-action="Index">Back to labels</a>
@@ -63,7 +78,7 @@
 @if (!Model.IsNew)
 {
     <section class="admin-two-column">
-        <div class="panel stack-md">
+        <div id="label-rename" class="panel stack-md">
             <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Rename", "Move attached words", "Change the label kind or key and update every attached word label in one operation.")' />
             <form class="stack-md" method="post" asp-action="Rename" asp-route-labelId="@Model.LabelId" data-confirm-submit="Rename this label and update attached words?">
                 @Html.AntiForgeryToken()
@@ -88,7 +103,7 @@
             </form>
         </div>
 
-        <div class="panel stack-md">
+        <div id="label-merge" class="panel stack-md">
             <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Merge", "Consolidate duplicates", "Move this label into another label and remove duplicate word-label links safely.")' />
             <form class="stack-md" method="post" asp-action="Merge" asp-route-labelId="@Model.LabelId" data-confirm-submit="Merge this label into the selected target?">
                 @Html.AntiForgeryToken()

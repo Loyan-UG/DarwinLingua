@@ -609,6 +609,8 @@ internal sealed class AdminScenariosService(IDbContextFactory<DarwinLinguaDbCont
 
             try
             {
+                ValidateCompleteScenarioImport(item);
+
                 string slug = item.Slug.Trim().ToLowerInvariant();
                 ScenarioLesson? existing = await dbContext.ScenarioLessons
                     .SingleOrDefaultAsync(scenario => scenario.Slug == slug, cancellationToken)
@@ -729,6 +731,124 @@ internal sealed class AdminScenariosService(IDbContextFactory<DarwinLinguaDbCont
         }
 
         return status;
+    }
+
+    private static void ValidateCompleteScenarioImport(AdminBulkScenarioImportItemRequest item)
+    {
+        if (string.IsNullOrWhiteSpace(item.Title))
+        {
+            throw new InvalidOperationException("Scenario title is required.");
+        }
+
+        if (string.IsNullOrWhiteSpace(item.Description))
+        {
+            throw new InvalidOperationException("Scenario description is required.");
+        }
+
+        if (string.IsNullOrWhiteSpace(item.LearnerGoal))
+        {
+            throw new InvalidOperationException("Scenario learner goal is required.");
+        }
+
+        if (item.DialogueTurns is null || item.DialogueTurns.Count == 0)
+        {
+            throw new InvalidOperationException("Each scenario must include at least one dialogue turn.");
+        }
+
+        if (item.UsefulPhrases is null || item.UsefulPhrases.Count == 0)
+        {
+            throw new InvalidOperationException("Each scenario must include at least one useful phrase.");
+        }
+
+        if (item.Questions is null || item.Questions.Count == 0)
+        {
+            throw new InvalidOperationException("Each scenario must include at least one practice question.");
+        }
+
+        for (int index = 0; index < item.DialogueTurns.Count; index++)
+        {
+            AdminBulkScenarioDialogueTurnImportRequest turn = item.DialogueTurns[index];
+            if (string.IsNullOrWhiteSpace(turn.BaseText))
+            {
+                throw new InvalidOperationException($"Dialogue turn {index + 1} must include German base text.");
+            }
+
+            ValidateCompleteScenarioTranslations(turn.Translations, $"Dialogue turn {index + 1} translations");
+        }
+
+        for (int index = 0; index < item.UsefulPhrases.Count; index++)
+        {
+            AdminBulkScenarioPhraseImportRequest phrase = item.UsefulPhrases[index];
+            if (string.IsNullOrWhiteSpace(phrase.BaseText))
+            {
+                throw new InvalidOperationException($"Useful phrase {index + 1} must include German base text.");
+            }
+
+            ValidateCompleteScenarioTranslations(phrase.Translations, $"Useful phrase {index + 1} translations");
+        }
+
+        for (int questionIndex = 0; questionIndex < item.Questions.Count; questionIndex++)
+        {
+            AdminBulkScenarioQuestionImportRequest question = item.Questions[questionIndex];
+            if (string.IsNullOrWhiteSpace(question.Prompt))
+            {
+                throw new InvalidOperationException($"Question {questionIndex + 1} must include German prompt text.");
+            }
+
+            ValidateCompleteScenarioTranslations(question.Translations, $"Question {questionIndex + 1} translations");
+
+            if (question.Answers is null || question.Answers.Count == 0)
+            {
+                throw new InvalidOperationException($"Question {questionIndex + 1} must include at least one answer.");
+            }
+
+            if (!question.Answers.Any(answer => answer.IsCorrect))
+            {
+                throw new InvalidOperationException($"Question {questionIndex + 1} must include a correct answer.");
+            }
+
+            for (int answerIndex = 0; answerIndex < question.Answers.Count; answerIndex++)
+            {
+                AdminBulkScenarioAnswerImportRequest answer = question.Answers[answerIndex];
+                if (string.IsNullOrWhiteSpace(answer.Text))
+                {
+                    throw new InvalidOperationException($"Question {questionIndex + 1} answer {answerIndex + 1} must include German text.");
+                }
+
+                ValidateCompleteScenarioTranslations(
+                    answer.Translations,
+                    $"Question {questionIndex + 1} answer {answerIndex + 1} translations");
+            }
+        }
+    }
+
+    private static void ValidateCompleteScenarioTranslations(
+        IReadOnlyList<AdminAddScenarioTranslationRequest>? translations,
+        string label)
+    {
+        if (translations is null || translations.Count == 0)
+        {
+            throw new InvalidOperationException(
+                $"{label} are required for every meaning language: {ContentLanguageRequirements.FormatRequiredMeaningLanguages()}.");
+        }
+
+        IReadOnlyList<string> missing = ContentLanguageRequirements.FindMissingMeaningLanguages(
+            translations.Select(translation => translation.LanguageCode));
+        if (missing.Count > 0)
+        {
+            throw new InvalidOperationException($"{label} are missing languages: {string.Join(", ", missing)}.");
+        }
+
+        string[] duplicates = translations
+            .Where(translation => !string.IsNullOrWhiteSpace(translation.LanguageCode))
+            .GroupBy(translation => translation.LanguageCode.Trim().ToLowerInvariant())
+            .Where(group => group.Count() > 1)
+            .Select(group => group.Key)
+            .ToArray();
+        if (duplicates.Length > 0)
+        {
+            throw new InvalidOperationException($"{label} contain duplicate languages: {string.Join(", ", duplicates)}.");
+        }
     }
 
     private async Task DeleteTranslationAsync<TTranslation>(

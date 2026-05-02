@@ -77,6 +77,7 @@ public sealed record AdminCatalogWordExampleResponse(
     IReadOnlyList<AdminCatalogWordExampleTranslationResponse> Translations);
 
 public sealed record AdminCatalogWordExampleTranslationResponse(
+    Guid TranslationId,
     string LanguageCode,
     string TranslationText);
 

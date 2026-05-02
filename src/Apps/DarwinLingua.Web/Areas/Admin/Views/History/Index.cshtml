@@ -1,11 +1,31 @@
 @model DarwinLingua.Web.Models.AdminHistoryPageViewModel
 @{
     ViewData["Title"] = "History";
+    int invalidEntryCount = Model.Items.Sum(item => item.InvalidEntries);
+    int insertedEntryCount = Model.Items.Sum(item => item.InsertedEntries);
 }
 
 <section class="panel stack-lg">
     <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("History", "Publication and import history", "Reload the recent package history without leaving the current admin page.")' />
-    <form class="search-form" method="get" asp-action="Index">
+    <div class="admin-summary-grid">
+        <a href="#history-panel" class="admin-summary-tile">
+            <span class="eyebrow">History rows</span>
+            <strong>@Model.Items.Count</strong>
+        </a>
+        <a href="#history-panel" class="admin-summary-tile">
+            <span class="eyebrow">Inserted entries</span>
+            <strong>@insertedEntryCount</strong>
+        </a>
+        <a href="#history-panel" class="admin-summary-tile">
+            <span class="eyebrow">Invalid entries</span>
+            <strong>@invalidEntryCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="History sections">
+        <a href="#history-filter">Filter</a>
+        <a href="#history-panel">History</a>
+    </nav>
+    <form id="history-filter" class="search-form" method="get" asp-action="Index">
         <input class="search-input"
                type="search"
                name="status"

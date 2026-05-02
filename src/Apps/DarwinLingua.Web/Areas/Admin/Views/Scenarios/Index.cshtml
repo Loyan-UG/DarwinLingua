@@ -10,6 +10,8 @@
     var cefrLevels = ViewData["AdminScenarioCefrLevels"] as string[] ?? [];
     var categories = ViewData["AdminScenarioCategories"] as string[] ?? [];
     var totalCount = ViewData["AdminScenarioTotalCount"] as int? ?? Model.Scenarios.Count;
+    int activeCount = Model.Scenarios.Count(scenario => string.Equals(scenario.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase));
+    int assetCount = Model.Scenarios.Sum(scenario => scenario.DialogueTurnCount + scenario.PhraseCount + scenario.QuestionCount);
 }
 
 <section class="panel stack-lg">
@@ -24,10 +26,28 @@
     {
         <div class="state-panel state-panel--success">@statusMessage</div>
     }
+    <div class="admin-summary-grid">
+        <a href="#scenarios-table" class="admin-summary-tile">
+            <span class="eyebrow">Scenarios shown</span>
+            <strong>@Model.Scenarios.Count</strong>
+        </a>
+        <a href="#scenarios-table" class="admin-summary-tile">
+            <span class="eyebrow">Active</span>
+            <strong>@activeCount</strong>
+        </a>
+        <a href="#scenarios-table" class="admin-summary-tile">
+            <span class="eyebrow">Content assets</span>
+            <strong>@assetCount</strong>
+        </a>
+    </div>
+    <nav class="admin-anchor-nav" aria-label="Scenario catalog sections">
+        <a href="#scenarios-filter">Filter</a>
+        <a href="#scenarios-table">Scenarios</a>
+    </nav>
 </section>
 
 <section class="panel stack-md">
-    <form class="admin-filter-panel" method="get">
+    <form id="scenarios-filter" class="admin-filter-panel" method="get">
         <label class="form-field">
             <span>Search</span>
             <input name="q" type="search" value="@query" placeholder="Title, slug, category" />
@@ -77,7 +97,7 @@
     <div class="cluster cluster--between">
         <span class="eyebrow">@Model.Scenarios.Count of @totalCount scenarios</span>
     </div>
-    <div class="table-scroll">
+    <div id="scenarios-table" class="table-scroll">
         <table class="data-table admin-data-grid">
             <thead>
                 <tr>

@@ -1,6 +1,10 @@
 @model DarwinLingua.Web.Models.AdminModerationPageViewModel
 @{
     ViewData["Title"] = "Moderation";
+    int pendingCount = Model.Reports.Count(report => string.Equals(report.Status, "pending", StringComparison.OrdinalIgnoreCase));
+    int actionableCount = Model.Reports.Count(report =>
+        string.Equals(report.Status, "pending", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(report.Status, "reviewed", StringComparison.OrdinalIgnoreCase));
 }
 
 <section class="panel stack-lg">
@@ -14,7 +18,29 @@
     {
         <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
     }
-    <form method="get" asp-action="Index" class="action-row">
+
+    <div class="admin-summary-grid">
+        <a href="#moderation-reports" class="admin-summary-tile">
+            <span class="eyebrow">Reports shown</span>
+            <strong>@Model.Reports.Count</strong>
+        </a>
+        <a href="#moderation-reports" class="admin-summary-tile">
+            <span class="eyebrow">Pending</span>
+            <strong>@pendingCount</strong>
+        </a>
+        <a href="#moderation-audit" class="admin-summary-tile">
+            <span class="eyebrow">Audit entries</span>
+            <strong>@Model.Audits.Count</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Moderation sections">
+        <a href="#moderation-filter">Filter</a>
+        <a href="#moderation-reports">Reports</a>
+        <a href="#moderation-audit">Audit</a>
+    </nav>
+
+    <form id="moderation-filter" method="get" asp-action="Index" class="action-row">
         <select name="status">
             <option value="">All</option>
             <option value="pending" selected="@(Model.StatusFilter == "pending")">Pending</option>
@@ -26,8 +52,11 @@
     </form>
 </section>
 
-<section class="panel stack-lg">
-    <h2 class="headline-sm">Reports</h2>
+<section id="moderation-reports" class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Reports</h2>
+        <span class="status-pill">@actionableCount actionable</span>
+    </div>
     @if (Model.Reports.Count == 0)
     {
         <p class="body-sm">No reports match the selected filter.</p>
@@ -77,7 +106,7 @@
                         }
                         else
                         {
-                            <div class="status-banner status-banner--success">Decision recorded.</div>
+                            <div class="status-banner status-banner--success">Decision recorded. Further changes require a new moderation report.</div>
                         }
                     </div>
                 </article>
@@ -86,8 +115,11 @@
     }
 </section>
 
-<section class="panel stack-lg">
-    <h2 class="headline-sm">Decision audit</h2>
+<section id="moderation-audit" class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Decision audit</h2>
+        <span class="status-pill">@Model.Audits.Count entries</span>
+    </div>
     @if (Model.Audits.Count == 0)
     {
         <p class="body-sm">No moderation decisions have been recorded yet.</p>

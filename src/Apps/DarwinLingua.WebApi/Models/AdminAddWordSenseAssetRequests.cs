@@ -19,3 +19,11 @@ public sealed record AdminUpdateWordSenseTranslationRequest(
 public sealed record AdminUpdateWordSenseExampleRequest(
     string GermanText,
     bool IsPrimaryExample);
+
+public sealed record AdminAddWordSenseExampleTranslationRequest(
+    string LanguageCode,
+    string TranslationText);
+
+public sealed record AdminUpdateWordSenseExampleTranslationRequest(
+    string LanguageCode,
+    string TranslationText);

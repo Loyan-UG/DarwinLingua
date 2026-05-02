@@ -458,6 +458,117 @@ public sealed class WordsController(
         return RedirectToAction(nameof(Details), new { publicId });
     }
 
+    [HttpPost("{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}/translations", Name = "Admin_WordAddSenseExampleTranslation")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> AddSenseExampleTranslation(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Models.AdminWordSenseTranslationFormModel form,
+        CancellationToken cancellationToken)
+    {
+        form.SenseId = senseId;
+
+        if (!ModelState.IsValid)
+        {
+            TempData["AdminErrorMessage"] = "The example translation form contains invalid values.";
+            return RedirectToAction(nameof(Details), new { publicId });
+        }
+
+        try
+        {
+            Models.AdminWordDetailViewModel? word = await operationsQueryService
+                .AddWordSenseExampleTranslationAsync(
+                    publicId,
+                    senseId,
+                    exampleId,
+                    new Models.AdminAddWordSenseExampleTranslationRequest(form.LanguageCode, form.TranslationText),
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            if (word is null)
+            {
+                return NotFound();
+            }
+
+            TempData["AdminStatusMessage"] = "Example translation was added.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
+            return RedirectToAction(nameof(Details), new { publicId });
+        }
+        catch (InvalidOperationException ex)
+        {
+            TempData["AdminErrorMessage"] = ex.Message;
+            return RedirectToAction(nameof(Details), new { publicId });
+        }
+    }
+
+    [HttpPost("{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}/translations/{translationId:guid}", Name = "Admin_WordUpdateSenseExampleTranslation")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> UpdateSenseExampleTranslation(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        Models.AdminWordSenseTranslationFormModel form,
+        CancellationToken cancellationToken)
+    {
+        if (!ModelState.IsValid)
+        {
+            TempData["AdminErrorMessage"] = "The example translation form contains invalid values.";
+            return RedirectToAction(nameof(Details), new { publicId });
+        }
+
+        try
+        {
+            Models.AdminWordDetailViewModel? word = await operationsQueryService
+                .UpdateWordSenseExampleTranslationAsync(
+                    publicId,
+                    senseId,
+                    exampleId,
+                    translationId,
+                    new Models.AdminUpdateWordSenseExampleTranslationRequest(form.LanguageCode, form.TranslationText),
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            if (word is null)
+            {
+                return NotFound();
+            }
+
+            TempData["AdminStatusMessage"] = "Example translation was updated.";
+            await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
+            return RedirectToAction(nameof(Details), new { publicId });
+        }
+        catch (InvalidOperationException ex)
+        {
+            TempData["AdminErrorMessage"] = ex.Message;
+            return RedirectToAction(nameof(Details), new { publicId });
+        }
+    }
+
+    [HttpPost("{publicId:guid}/senses/{senseId:guid}/examples/{exampleId:guid}/translations/{translationId:guid}/delete", Name = "Admin_WordDeleteSenseExampleTranslation")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteSenseExampleTranslation(
+        Guid publicId,
+        Guid senseId,
+        Guid exampleId,
+        Guid translationId,
+        CancellationToken cancellationToken)
+    {
+        Models.AdminWordDetailViewModel? word = await operationsQueryService
+            .DeleteWordSenseExampleTranslationAsync(publicId, senseId, exampleId, translationId, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (word is null)
+        {
+            return NotFound();
+        }
+
+        TempData["AdminStatusMessage"] = "Example translation was deleted.";
+        await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
+        return RedirectToAction(nameof(Details), new { publicId });
+    }
+
     [HttpPost("{publicId:guid}/topics", Name = "Admin_WordAddTopic")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> AddTopic(

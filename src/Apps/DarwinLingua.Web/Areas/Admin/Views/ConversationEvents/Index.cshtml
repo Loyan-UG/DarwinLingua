@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.AdminConversationEventsPageViewModel
 @{
     ViewData["Title"] = "Conversation events";
+    int onlineCount = Model.Events.Count(item => item.IsOnline);
+    int withOrganizerProfileCount = Model.Events.Count(item => !string.IsNullOrWhiteSpace(item.OrganizerProfileSlug));
 }
 
 <section class="panel stack-lg">
@@ -13,9 +15,29 @@
     {
         <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
     }
+
+    <div class="admin-summary-grid">
+        <a href="#conversation-events-list" class="admin-summary-tile">
+            <span class="eyebrow">Events</span>
+            <strong>@Model.Events.Count</strong>
+        </a>
+        <a href="#conversation-events-list" class="admin-summary-tile">
+            <span class="eyebrow">Online</span>
+            <strong>@onlineCount</strong>
+        </a>
+        <a href="#conversation-event-edit" class="admin-summary-tile">
+            <span class="eyebrow">With organizer</span>
+            <strong>@withOrganizerProfileCount</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Conversation event sections">
+        <a href="#conversation-event-edit">Create/edit</a>
+        <a href="#conversation-events-list">Published events</a>
+    </nav>
 </section>
 
-<section class="panel stack-md">
+<section id="conversation-event-edit" class="panel stack-md">
     <h2 class="headline-sm">Create or replace event</h2>
     <form method="post" class="form-grid" data-confirm-submit="Save this public conversation event listing?">
         @Html.AntiForgeryToken()
@@ -130,8 +152,11 @@
     </form>
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">Published events</h2>
+<section id="conversation-events-list" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <h2 class="headline-sm">Published events</h2>
+        <span class="status-pill">@Model.Events.Count shown</span>
+    </div>
     @if (Model.Events.Count == 0)
     {
         <p>No published conversation events yet.</p>
