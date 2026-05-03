@@ -1,0 +1,648 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-059-retry",
+  "packageName": "German B1 Generated Batch 059 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "management",
+      "displayName": "Management",
+      "sortOrder": 1080,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Management"
+        },
+        {
+          "language": "ar",
+          "name": "الإدارة"
+        },
+        {
+          "language": "ckb",
+          "name": "بەڕێوەبردن"
+        },
+        {
+          "language": "en",
+          "name": "Management"
+        },
+        {
+          "language": "fa",
+          "name": "مدیریت"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêvebirin"
+        },
+        {
+          "language": "pl",
+          "name": "Zarządzanie"
+        },
+        {
+          "language": "ro",
+          "name": "Management"
+        },
+        {
+          "language": "ru",
+          "name": "Управление"
+        },
+        {
+          "language": "sq",
+          "name": "Menaxhim"
+        },
+        {
+          "language": "tr",
+          "name": "Yönetim"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenservice"
+        },
+        {
+          "language": "ar",
+          "name": "خدمة العملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "خزمەتی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer Service"
+        },
+        {
+          "language": "fa",
+          "name": "خدمات مشتریان"
+        },
+        {
+          "language": "kmr",
+          "name": "Xizmeta xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Obsługa klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Serviciu clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Клиентский сервис"
+        },
+        {
+          "language": "sq",
+          "name": "Shërbim klienti"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteri hizmetleri"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "der Filialleiter",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Filialleiter",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Fi-li-al-lei-ter",
+      "topics": [
+        "work-and-jobs",
+        "management-and-leadership",
+        "sales-and-customers"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "spoken"
+      ],
+      "contextLabels": [
+        "management",
+        "customer-service"
+      ],
+      "grammarNotes": [
+        "masculine noun; singular and plural often have the same form"
+      ],
+      "collocations": [
+        {
+          "text": "mit dem Filialleiter sprechen",
+          "meaning": "to speak with the branch manager"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Filiale",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "leiten",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "مدير الفرع"
+        },
+        {
+          "language": "ckb",
+          "text": "بەڕێوەبەری لق"
+        },
+        {
+          "language": "en",
+          "text": "branch manager"
+        },
+        {
+          "language": "fa",
+          "text": "مدیر شعبه"
+        },
+        {
+          "language": "kmr",
+          "text": "rêveberê şaxê"
+        },
+        {
+          "language": "pl",
+          "text": "kierownik oddziału"
+        },
+        {
+          "language": "ro",
+          "text": "director de filială"
+        },
+        {
+          "language": "ru",
+          "text": "управляющий филиалом"
+        },
+        {
+          "language": "sq",
+          "text": "menaxher dege"
+        },
+        {
+          "language": "tr",
+          "text": "şube müdürü"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Filialleiter bespricht die Verkaufszahlen jeden Montag mit dem Team.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يناقش مدير الفرع أرقام المبيعات كل يوم اثنين مع الفريق."
+            },
+            {
+              "language": "ckb",
+              "text": "بەڕێوەبەری لق هەموو دووشەممە ژمارەکانی فرۆشتن لەگەڵ تیمەکە تاوتوێ دەکات."
+            },
+            {
+              "language": "en",
+              "text": "The branch manager discusses the sales figures with the team every Monday."
+            },
+            {
+              "language": "fa",
+              "text": "مدیر شعبه هر دوشنبه ارقام فروش را با تیم بررسی می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Rêveberê şaxê her duşem hejmarên firotanê bi tîmê re nîqaş dike."
+            },
+            {
+              "language": "pl",
+              "text": "Kierownik oddziału omawia wyniki sprzedaży z zespołem w każdy poniedziałek."
+            },
+            {
+              "language": "ro",
+              "text": "Directorul de filială discută cifrele de vânzări cu echipa în fiecare luni."
+            },
+            {
+              "language": "ru",
+              "text": "Управляющий филиалом каждый понедельник обсуждает с командой показатели продаж."
+            },
+            {
+              "language": "sq",
+              "text": "Menaxheri i degës diskuton shifrat e shitjeve me ekipin çdo të hënë."
+            },
+            {
+              "language": "tr",
+              "text": "Şube müdürü satış rakamlarını her pazartesi ekiple görüşür."
+            }
+          ]
+        },
+        {
+          "baseText": "Bei einer Beschwerde können Sie sich direkt an den Filialleiter wenden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في حال وجود شكوى يمكنك التوجه مباشرة إلى مدير الفرع."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی سکاڵادا دەتوانن ڕاستەوخۆ پەیوەندی بە بەڕێوەبەری لق بکەن."
+            },
+            {
+              "language": "en",
+              "text": "In case of a complaint, you can contact the branch manager directly."
+            },
+            {
+              "language": "fa",
+              "text": "در صورت شکایت می‌توانید مستقیم به مدیر شعبه مراجعه کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Di rewşa gilî de hûn dikarin rasterast serî li rêveberê şaxê bidin."
+            },
+            {
+              "language": "pl",
+              "text": "W przypadku reklamacji można zwrócić się bezpośrednio do kierownika oddziału."
+            },
+            {
+              "language": "ro",
+              "text": "În cazul unei reclamații vă puteți adresa direct directorului de filială."
+            },
+            {
+              "language": "ru",
+              "text": "В случае жалобы вы можете напрямую обратиться к управляющему филиалом."
+            },
+            {
+              "language": "sq",
+              "text": "Në rast ankese mund t’i drejtoheni direkt menaxherit të degës."
+            },
+            {
+              "language": "tr",
+              "text": "Şikayet durumunda doğrudan şube müdürüne başvurabilirsiniz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Filialleiterin",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Filialleiterinnen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Fi-li-al-lei-te-rin",
+      "topics": [
+        "work-and-jobs",
+        "management-and-leadership",
+        "sales-and-customers"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "spoken"
+      ],
+      "contextLabels": [
+        "management",
+        "customer-service"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "die Filialleiterin informieren",
+          "meaning": "to inform the female branch manager"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Filialleiter",
+          "relationLabel": "masculine noun",
+          "note": null
+        },
+        {
+          "lemma": "die Filiale",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "مديرة الفرع"
+        },
+        {
+          "language": "ckb",
+          "text": "بەڕێوەبەری ژنی لق"
+        },
+        {
+          "language": "en",
+          "text": "female branch manager"
+        },
+        {
+          "language": "fa",
+          "text": "مدیر زن شعبه"
+        },
+        {
+          "language": "kmr",
+          "text": "rêvebera şaxê"
+        },
+        {
+          "language": "pl",
+          "text": "kierowniczka oddziału"
+        },
+        {
+          "language": "ro",
+          "text": "directoare de filială"
+        },
+        {
+          "language": "ru",
+          "text": "управляющая филиалом"
+        },
+        {
+          "language": "sq",
+          "text": "menaxhere dege"
+        },
+        {
+          "language": "tr",
+          "text": "kadın şube müdürü"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Filialleiterin organisiert die Einarbeitung der neuen Mitarbeitenden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تنظم مديرة الفرع تدريب الموظفين الجدد."
+            },
+            {
+              "language": "ckb",
+              "text": "بەڕێوەبەری ژنی لق ڕاهێنانی کارمەندانی نوێ ڕێک دەخات."
+            },
+            {
+              "language": "en",
+              "text": "The branch manager organizes the onboarding of the new employees."
+            },
+            {
+              "language": "fa",
+              "text": "مدیر زن شعبه آموزش اولیه کارکنان جدید را سازمان‌دهی می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Rêvebera şaxê hînbûna karmendên nû rêk dixe."
+            },
+            {
+              "language": "pl",
+              "text": "Kierowniczka oddziału organizuje wdrożenie nowych pracowników."
+            },
+            {
+              "language": "ro",
+              "text": "Directoarea de filială organizează integrarea noilor angajați."
+            },
+            {
+              "language": "ru",
+              "text": "Управляющая филиалом организует ввод новых сотрудников в работу."
+            },
+            {
+              "language": "sq",
+              "text": "Menaxherja e degës organizon integrimin e punonjësve të rinj."
+            },
+            {
+              "language": "tr",
+              "text": "Kadın şube müdürü yeni çalışanların işe alışma sürecini organize eder."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Kundin möchte mit der Filialleiterin über den Vertrag sprechen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تريد العميلة التحدث مع مديرة الفرع حول العقد."
+            },
+            {
+              "language": "ckb",
+              "text": "کڕیارە ژنەکە دەیەوێت لەگەڵ بەڕێوەبەری ژنی لق دەربارەی گرێبەستەکە قسە بکات."
+            },
+            {
+              "language": "en",
+              "text": "The customer wants to speak with the branch manager about the contract."
+            },
+            {
+              "language": "fa",
+              "text": "مشتری زن می‌خواهد درباره قرارداد با مدیر شعبه صحبت کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Xerîdara jin dixwaze bi rêvebera şaxê re li ser peymanê biaxive."
+            },
+            {
+              "language": "pl",
+              "text": "Klientka chce porozmawiać z kierowniczką oddziału o umowie."
+            },
+            {
+              "language": "ro",
+              "text": "Clienta dorește să vorbească cu directoarea filialei despre contract."
+            },
+            {
+              "language": "ru",
+              "text": "Клиентка хочет поговорить с управляющей филиалом о договоре."
+            },
+            {
+              "language": "sq",
+              "text": "Klientja dëshiron të flasë me menaxheren e degës për kontratën."
+            },
+            {
+              "language": "tr",
+              "text": "Kadın müşteri sözleşme hakkında kadın şube müdürüyle konuşmak istiyor."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

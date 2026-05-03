@@ -1,0 +1,643 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-055-retry",
+  "packageName": "German B1 Generated Batch 055 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "management",
+      "displayName": "Management",
+      "sortOrder": 1080,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Management"
+        },
+        {
+          "language": "ar",
+          "name": "الإدارة"
+        },
+        {
+          "language": "ckb",
+          "name": "بەڕێوەبردن"
+        },
+        {
+          "language": "en",
+          "name": "Management"
+        },
+        {
+          "language": "fa",
+          "name": "مدیریت"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêvebirin"
+        },
+        {
+          "language": "pl",
+          "name": "Zarządzanie"
+        },
+        {
+          "language": "ro",
+          "name": "Management"
+        },
+        {
+          "language": "ru",
+          "name": "Управление"
+        },
+        {
+          "language": "sq",
+          "name": "Menaxhim"
+        },
+        {
+          "language": "tr",
+          "name": "Yönetim"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Support"
+        },
+        {
+          "language": "ar",
+          "name": "الدعم"
+        },
+        {
+          "language": "ckb",
+          "name": "پاڵپشتی"
+        },
+        {
+          "language": "en",
+          "name": "Support"
+        },
+        {
+          "language": "fa",
+          "name": "پشتیبانی"
+        },
+        {
+          "language": "kmr",
+          "name": "Piştgirî"
+        },
+        {
+          "language": "pl",
+          "name": "Wsparcie"
+        },
+        {
+          "language": "ro",
+          "name": "Suport"
+        },
+        {
+          "language": "ru",
+          "name": "Поддержка"
+        },
+        {
+          "language": "sq",
+          "name": "Mbështetje"
+        },
+        {
+          "language": "tr",
+          "name": "Destek"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "der Experte",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Experten",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Ex-per-te",
+      "topics": [
+        "work-and-jobs",
+        "business-communication",
+        "technology-and-it"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "spoken"
+      ],
+      "contextLabels": [
+        "management",
+        "support"
+      ],
+      "grammarNotes": [
+        "masculine n-noun: der Experte, den Experten, dem Experten"
+      ],
+      "collocations": [
+        {
+          "text": "einen Experten fragen",
+          "meaning": "to ask an expert"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Expertise",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "خبير؛ متخصص"
+        },
+        {
+          "language": "ckb",
+          "text": "شارەزا؛ پسپۆڕ"
+        },
+        {
+          "language": "en",
+          "text": "expert; specialist"
+        },
+        {
+          "language": "fa",
+          "text": "متخصص؛ کارشناس"
+        },
+        {
+          "language": "kmr",
+          "text": "pispor; şareza"
+        },
+        {
+          "language": "pl",
+          "text": "ekspert; specjalista"
+        },
+        {
+          "language": "ro",
+          "text": "expert; specialist"
+        },
+        {
+          "language": "ru",
+          "text": "эксперт; специалист"
+        },
+        {
+          "language": "sq",
+          "text": "ekspert; specialist"
+        },
+        {
+          "language": "tr",
+          "text": "uzman"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Bei diesem Sicherheitsproblem sollten wir einen Experten hinzuziehen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في مشكلة الأمان هذه ينبغي أن نستعين بخبير."
+            },
+            {
+              "language": "ckb",
+              "text": "لەسەر ئەم کێشەی ئاسایشە دەبێت شارەزایەک بانگ بکەین."
+            },
+            {
+              "language": "en",
+              "text": "For this security problem, we should involve an expert."
+            },
+            {
+              "language": "fa",
+              "text": "برای این مشکل امنیتی باید از یک متخصص کمک بگیریم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo vê pirsgirêka ewlehiyê divê em pisporêk tevlî bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Przy tym problemie bezpieczeństwa powinniśmy zaangażować eksperta."
+            },
+            {
+              "language": "ro",
+              "text": "Pentru această problemă de securitate ar trebui să implicăm un expert."
+            },
+            {
+              "language": "ru",
+              "text": "По этой проблеме безопасности нам следует привлечь эксперта."
+            },
+            {
+              "language": "sq",
+              "text": "Për këtë problem sigurie duhet të përfshijmë një ekspert."
+            },
+            {
+              "language": "tr",
+              "text": "Bu güvenlik sorunu için bir uzmanı dahil etmeliyiz."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Experte erklärt den Kundinnen und Kunden die neue Regel einfach und klar.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يشرح الخبير للزبائن القاعدة الجديدة ببساطة ووضوح."
+            },
+            {
+              "language": "ckb",
+              "text": "شارەزاکە یاسای نوێ بە سادەیی و ڕوونی بۆ کڕیاران ڕوون دەکاتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The expert explains the new rule to customers simply and clearly."
+            },
+            {
+              "language": "fa",
+              "text": "کارشناس قانون جدید را ساده و روشن برای مشتریان توضیح می‌دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Pispor rêzika nû bi hêsanî û zelalî ji xerîdaran re şirove dike."
+            },
+            {
+              "language": "pl",
+              "text": "Ekspert wyjaśnia klientom nową zasadę prosto i jasno."
+            },
+            {
+              "language": "ro",
+              "text": "Expertul le explică clienților noua regulă simplu și clar."
+            },
+            {
+              "language": "ru",
+              "text": "Эксперт просто и ясно объясняет клиентам новое правило."
+            },
+            {
+              "language": "sq",
+              "text": "Eksperti ua shpjegon klientëve rregullin e ri thjesht dhe qartë."
+            },
+            {
+              "language": "tr",
+              "text": "Uzman yeni kuralı müşterilere basit ve net şekilde açıklar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Expertin",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Expertinnen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Ex-per-tin",
+      "topics": [
+        "work-and-jobs",
+        "business-communication",
+        "technology-and-it"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "spoken"
+      ],
+      "contextLabels": [
+        "management",
+        "support"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Expertin für Datenschutz",
+          "meaning": "an expert in data protection"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Experte",
+          "relationLabel": "masculine noun",
+          "note": null
+        },
+        {
+          "lemma": "die Expertise",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "خبيرة؛ متخصصة"
+        },
+        {
+          "language": "ckb",
+          "text": "شارەزای ژن؛ پسپۆڕی ژن"
+        },
+        {
+          "language": "en",
+          "text": "female expert; specialist"
+        },
+        {
+          "language": "fa",
+          "text": "متخصص زن؛ کارشناس زن"
+        },
+        {
+          "language": "kmr",
+          "text": "pisporê jin; şarezaya jin"
+        },
+        {
+          "language": "pl",
+          "text": "ekspertka; specjalistka"
+        },
+        {
+          "language": "ro",
+          "text": "expertă; specialistă"
+        },
+        {
+          "language": "ru",
+          "text": "экспертка; специалистка"
+        },
+        {
+          "language": "sq",
+          "text": "eksperte; specialiste"
+        },
+        {
+          "language": "tr",
+          "text": "kadın uzman"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Expertin für Datenschutz prüft den Vertrag vor der Freigabe.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تراجع خبيرة حماية البيانات العقد قبل الموافقة عليه."
+            },
+            {
+              "language": "ckb",
+              "text": "شارەزای ژنی پاراستنی داتا پێش ڕێگەدان گرێبەستەکە دەپشکنێت."
+            },
+            {
+              "language": "en",
+              "text": "The data protection expert checks the contract before approval."
+            },
+            {
+              "language": "fa",
+              "text": "متخصص حفاظت از داده‌ها قبل از تأیید قرارداد را بررسی می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Pisporê parastina daneyan berî pejirandinê peymanê kontrol dike."
+            },
+            {
+              "language": "pl",
+              "text": "Ekspertka ds. ochrony danych sprawdza umowę przed zatwierdzeniem."
+            },
+            {
+              "language": "ro",
+              "text": "Experta în protecția datelor verifică contractul înainte de aprobare."
+            },
+            {
+              "language": "ru",
+              "text": "Эксперт по защите данных проверяет договор перед утверждением."
+            },
+            {
+              "language": "sq",
+              "text": "Ekspertja për mbrojtjen e të dhënave kontrollon kontratën para miratimit."
+            },
+            {
+              "language": "tr",
+              "text": "Veri koruma uzmanı onaydan önce sözleşmeyi kontrol eder."
+            }
+          ]
+        },
+        {
+          "baseText": "In der Schulung beantwortet die Expertin viele praktische Fragen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في التدريب تجيب الخبيرة عن كثير من الأسئلة العملية."
+            },
+            {
+              "language": "ckb",
+              "text": "لە ڕاهێنانەکەدا شارەزای ژن وەڵامی زۆر پرسیاری پراکتیکی دەداتەوە."
+            },
+            {
+              "language": "en",
+              "text": "In the training, the expert answers many practical questions."
+            },
+            {
+              "language": "fa",
+              "text": "در آموزش، متخصص به بسیاری از پرسش‌های عملی پاسخ می‌دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di perwerdeyê de pispor bersiva gelek pirsên praktîkî dide."
+            },
+            {
+              "language": "pl",
+              "text": "Podczas szkolenia ekspertka odpowiada na wiele praktycznych pytań."
+            },
+            {
+              "language": "ro",
+              "text": "În cadrul instruirii, experta răspunde la multe întrebări practice."
+            },
+            {
+              "language": "ru",
+              "text": "На обучении эксперт отвечает на многие практические вопросы."
+            },
+            {
+              "language": "sq",
+              "text": "Në trajnim, ekspertja u përgjigjet shumë pyetjeve praktike."
+            },
+            {
+              "language": "tr",
+              "text": "Eğitimde kadın uzman birçok pratik soruyu yanıtlar."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}
