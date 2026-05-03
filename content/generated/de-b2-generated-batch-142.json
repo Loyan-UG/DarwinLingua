@@ -1,0 +1,78 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-142",
+  "packageName": "German B2 Generated Batch 142",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    { "kind": "Usage", "key": "written", "displayName": "Written", "sortOrder": 50, "localizations": [{"language":"de","name":"Schriftlich"},{"language":"ar","name":"كتابي"},{"language":"ckb","name":"نووسراو"},{"language":"en","name":"Written"},{"language":"fa","name":"نوشتاری"},{"language":"kmr","name":"Nivîskî"},{"language":"pl","name":"Pisemny"},{"language":"ro","name":"Scris"},{"language":"ru","name":"Письменный"},{"language":"sq","name":"I shkruar"},{"language":"tr","name":"Yazılı"}] },
+    { "kind": "Usage", "key": "formal", "displayName": "Formal", "sortOrder": 40, "localizations": [{"language":"de","name":"Formal"},{"language":"ar","name":"رسمي"},{"language":"ckb","name":"فەرهەنگی"},{"language":"en","name":"Formal"},{"language":"fa","name":"رسمی"},{"language":"kmr","name":"Fesadî"},{"language":"pl","name":"Formalny"},{"language":"ro","name":"Formal"},{"language":"ru","name":"Формальный"},{"language":"sq","name":"Formal"},{"language":"tr","name":"Resmi"}] },
+    { "kind": "Usage", "key": "technical", "displayName": "Technical", "sortOrder": 80, "localizations": [{"language":"de","name":"Technisch"},{"language":"ar","name":"تقني"},{"language":"ckb","name":"تەکنیکی"},{"language":"en","name":"Technical"},{"language":"fa","name":"فنی"},{"language":"kmr","name":"Teknîkî"},{"language":"pl","name":"Techniczny"},{"language":"ro","name":"Tehnic"},{"language":"ru","name":"Технический"},{"language":"sq","name":"Teknik"},{"language":"tr","name":"Teknik"}] },
+    { "kind": "Context", "key": "public-services", "displayName": "Public Services", "sortOrder": 1160, "localizations": [{"language":"de","name":"Öffentliche Dienste"},{"language":"ar","name":"الخدمات العامة"},{"language":"ckb","name":"خزمەتگوزارییە گشتییەکان"},{"language":"en","name":"Public Services"},{"language":"fa","name":"خدمات عمومی"},{"language":"kmr","name":"Xizmetên giştî"},{"language":"pl","name":"Usługi publiczne"},{"language":"ro","name":"Servicii publice"},{"language":"ru","name":"Государственные услуги"},{"language":"sq","name":"Shërbime publike"},{"language":"tr","name":"Kamu hizmetleri"}] },
+    { "kind": "Context", "key": "risk", "displayName": "Risk", "sortOrder": 1090, "localizations": [{"language":"de","name":"Risiko"},{"language":"ar","name":"مخاطر"},{"language":"ckb","name":"مەخەلەفە"},{"language":"en","name":"Risk"},{"language":"fa","name":"ریسک"},{"language":"kmr","name":"Rîsk"},{"language":"pl","name":"Ryzyko"},{"language":"ro","name":"Risc"},{"language":"ru","name":"Риск"},{"language":"sq","name":"Rrezik"},{"language":"tr","name":"Risk"}] }
+  ],
+  "entries": [
+    {
+      "word": "die Bodenversiegelung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Bodenversiegelungen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Bo-den-ver-sie-ge-lung",
+      "topics": ["environment-and-sustainability", "housing-and-real-estate", "public-services"],
+      "usageLabels": ["formal", "written", "technical"],
+      "contextLabels": ["public-services", "risk"],
+      "meanings": [
+        { "language": "ar", "text": "ختم التربة؛ تغطية الأرض بسطح غير منفذ" },
+        { "language": "ckb", "text": "داپۆشینی زەوی بە ڕووکاری ناپەڕاو" },
+        { "language": "en", "text": "soil sealing; covering ground with impermeable surfaces" },
+        { "language": "fa", "text": "پوشاندن خاک با سطح نفوذناپذیر؛ مهروموم خاک" },
+        { "language": "kmr", "text": "girtina axê bi rûberên neavderbas" },
+        { "language": "pl", "text": "uszczelnienie gleby; zabudowa nieprzepuszczalna" },
+        { "language": "ro", "text": "sigilarea solului; acoperirea cu suprafețe impermeabile" },
+        { "language": "ru", "text": "запечатывание почвы; покрытие непроницаемой поверхностью" },
+        { "language": "sq", "text": "vulosje e tokës me sipërfaqe të papërshkueshme" },
+        { "language": "tr", "text": "toprak geçirimsizleştirme; zeminin kaplanması" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Stadt will die Bodenversiegelung bei neuen Parkplätzen deutlich reduzieren.",
+          "translations": [
+            { "language": "ar", "text": "تريد المدينة تقليل ختم التربة بوضوح في مواقف السيارات الجديدة." },
+            { "language": "ckb", "text": "شارەوانی دەیەوێت داپۆشینی زەوی لە پارکینگە نوێیەکان بە ڕوونی کەم بکاتەوە." },
+            { "language": "en", "text": "The city wants to significantly reduce soil sealing in new parking areas." },
+            { "language": "fa", "text": "شهرداری می‌خواهد پوشش نفوذناپذیر خاک را در پارکینگ‌های جدید به‌طور محسوسی کاهش دهد." },
+            { "language": "kmr", "text": "Bajar dixwaze girtina axê li parkîngên nû bi awayekî eşkere kêm bike." },
+            { "language": "pl", "text": "Miasto chce wyraźnie zmniejszyć uszczelnienie gleby przy nowych parkingach." },
+            { "language": "ro", "text": "Orașul vrea să reducă semnificativ sigilarea solului la noile parcări." },
+            { "language": "ru", "text": "Город хочет заметно сократить запечатывание почвы на новых парковках." },
+            { "language": "sq", "text": "Qyteti dëshiron të ulë ndjeshëm vulosjen e tokës në parkingjet e reja." },
+            { "language": "tr", "text": "Şehir, yeni otoparklarda toprak geçirimsizleştirmeyi belirgin şekilde azaltmak istiyor." }
+          ]
+        },
+        {
+          "baseText": "Im Umweltbericht wird die Bodenversiegelung als Risiko für Starkregen genannt.",
+          "translations": [
+            { "language": "ar", "text": "يذكر التقرير البيئي ختم التربة كخطر عند الأمطار الغزيرة." },
+            { "language": "ckb", "text": "لە ڕاپۆرتی ژینگەدا داپۆشینی زەوی وەک مەترسی بۆ بارانی زۆر ناودەبرێت." },
+            { "language": "en", "text": "The environmental report identifies soil sealing as a risk during heavy rain." },
+            { "language": "fa", "text": "در گزارش محیط‌زیست، پوشاندن خاک به‌عنوان ریسک هنگام باران شدید ذکر شده است." },
+            { "language": "kmr", "text": "Di rapora jîngehê de girtina axê wek rîskek di barana giran de tê gotin." },
+            { "language": "pl", "text": "W raporcie środowiskowym uszczelnienie gleby wskazano jako ryzyko przy ulewnych deszczach." },
+            { "language": "ro", "text": "Raportul de mediu menționează sigilarea solului ca risc la ploi torențiale." },
+            { "language": "ru", "text": "В экологическом отчете запечатывание почвы названо риском при сильных дождях." },
+            { "language": "sq", "text": "Në raportin mjedisor, vulosja e tokës përmendet si rrezik gjatë reshjeve të forta." },
+            { "language": "tr", "text": "Çevre raporunda toprak geçirimsizleştirme, şiddetli yağmur için risk olarak belirtiliyor." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

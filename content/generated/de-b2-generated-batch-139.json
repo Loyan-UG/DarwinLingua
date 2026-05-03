@@ -1,0 +1,78 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-139",
+  "packageName": "German B2 Generated Batch 139",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    { "kind": "Usage", "key": "written", "displayName": "Written", "sortOrder": 50, "localizations": [{"language":"de","name":"Schriftlich"},{"language":"ar","name":"كتابي"},{"language":"ckb","name":"نووسراو"},{"language":"en","name":"Written"},{"language":"fa","name":"نوشتاری"},{"language":"kmr","name":"Nivîskî"},{"language":"pl","name":"Pisemny"},{"language":"ro","name":"Scris"},{"language":"ru","name":"Письменный"},{"language":"sq","name":"I shkruar"},{"language":"tr","name":"Yazılı"}] },
+    { "kind": "Usage", "key": "formal", "displayName": "Formal", "sortOrder": 40, "localizations": [{"language":"de","name":"Formal"},{"language":"ar","name":"رسمي"},{"language":"ckb","name":"فەرهەنگی"},{"language":"en","name":"Formal"},{"language":"fa","name":"رسمی"},{"language":"kmr","name":"Fesadî"},{"language":"pl","name":"Formalny"},{"language":"ro","name":"Formal"},{"language":"ru","name":"Формальный"},{"language":"sq","name":"Formal"},{"language":"tr","name":"Resmi"}] },
+    { "kind": "Usage", "key": "business", "displayName": "Business", "sortOrder": 60, "localizations": [{"language":"de","name":"Geschäftlich"},{"language":"ar","name":"تجاري"},{"language":"ckb","name":"بازرگانی"},{"language":"en","name":"Business"},{"language":"fa","name":"تجاری"},{"language":"kmr","name":"Bazirganî"},{"language":"pl","name":"Biznesowy"},{"language":"ro","name":"De afaceri"},{"language":"ru","name":"Деловой"},{"language":"sq","name":"Biznesi"},{"language":"tr","name":"İş"}] },
+    { "kind": "Context", "key": "finance", "displayName": "Finance", "sortOrder": 1110, "localizations": [{"language":"de","name":"Finanzen"},{"language":"ar","name":"المالية"},{"language":"ckb","name":"دارایی"},{"language":"en","name":"Finance"},{"language":"fa","name":"مالی"},{"language":"kmr","name":"Dola"},{"language":"pl","name":"Finanse"},{"language":"ro","name":"Finanțe"},{"language":"ru","name":"Финансы"},{"language":"sq","name":"Financë"},{"language":"tr","name":"Finans"}] },
+    { "kind": "Context", "key": "reporting", "displayName": "Reporting", "sortOrder": 1020, "localizations": [{"language":"de","name":"Reporting"},{"language":"ar","name":"التقارير"},{"language":"ckb","name":"ڕاپۆرتکردن"},{"language":"en","name":"Reporting"},{"language":"fa","name":"گزارش‌دهی"},{"language":"kmr","name":"Rapor kirin"},{"language":"pl","name":"Raportowanie"},{"language":"ro","name":"Raportare"},{"language":"ru","name":"Отчетность"},{"language":"sq","name":"Raportim"},{"language":"tr","name":"Raporlama"}] }
+  ],
+  "entries": [
+    {
+      "word": "beziffern",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "beziffern",
+      "pronunciationIpa": null,
+      "syllableBreak": "be-zif-fern",
+      "topics": ["finance-and-accounting", "data-and-reporting", "quality-and-risk"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": ["finance", "reporting"],
+      "meanings": [
+        { "language": "ar", "text": "تحديد رقمياً؛ تقدير مبلغ" },
+        { "language": "ckb", "text": "بە ژمارە دیاریکردن؛ خەملاندنی بڕ" },
+        { "language": "en", "text": "to quantify; to state as an amount" },
+        { "language": "fa", "text": "رقمی تعیین کردن؛ مبلغ را برآورد کردن" },
+        { "language": "kmr", "text": "bi hejmar diyarkirin; nirxek gotin" },
+        { "language": "pl", "text": "oszacować kwotowo; określić liczbowo" },
+        { "language": "ro", "text": "a cuantifica; a exprima ca sumă" },
+        { "language": "ru", "text": "оценивать в цифрах; указывать сумму" },
+        { "language": "sq", "text": "të përcaktojë me shifra; të vlerësojë shumën" },
+        { "language": "tr", "text": "rakamla belirtmek; tutarı belirlemek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Schaden lässt sich erst beziffern, wenn alle Rechnungen vorliegen.",
+          "translations": [
+            { "language": "ar", "text": "لا يمكن تحديد قيمة الضرر إلا بعد توفر جميع الفواتير." },
+            { "language": "ckb", "text": "زیانەکە تەنها کاتێک بە ژمارە دیاری دەکرێت کە هەموو پسوولەکان ئامادە بن." },
+            { "language": "en", "text": "The damage can only be quantified once all invoices are available." },
+            { "language": "fa", "text": "میزان خسارت فقط وقتی قابل برآورد است که همه فاکتورها موجود باشند." },
+            { "language": "kmr", "text": "Ziyan tenê dema hemû faturayên amade bin dikare bi hejmar were diyarkirin." },
+            { "language": "pl", "text": "Szkodę można oszacować dopiero wtedy, gdy dostępne są wszystkie faktury." },
+            { "language": "ro", "text": "Dauna poate fi cuantificată abia după ce sunt disponibile toate facturile." },
+            { "language": "ru", "text": "Ущерб можно оценить только после получения всех счетов." },
+            { "language": "sq", "text": "Dëmi mund të përcaktohet me shifra vetëm pasi të jenë në dispozicion të gjitha faturat." },
+            { "language": "tr", "text": "Zarar ancak tüm faturalar mevcut olduğunda rakamla belirlenebilir." }
+          ]
+        },
+        {
+          "baseText": "Im Quartalsbericht beziffern wir die Einsparung durch die neue Automatisierung auf 18 Prozent.",
+          "translations": [
+            { "language": "ar", "text": "في تقرير الربع نحدد التوفير الناتج عن الأتمتة الجديدة بنسبة 18 في المئة." },
+            { "language": "ckb", "text": "لە ڕاپۆرتی چارەکدا پاشەکەوتی ئۆتۆماتیککردنی نوێ بە ١٨ لەسەد دیاری دەکەین." },
+            { "language": "en", "text": "In the quarterly report, we quantify the savings from the new automation at 18 percent." },
+            { "language": "fa", "text": "در گزارش فصلی، صرفه‌جویی ناشی از اتوماسیون جدید را ۱۸ درصد اعلام می‌کنیم." },
+            { "language": "kmr", "text": "Di rapora çaryekê de em spartina ji otomatîkkirina nû bi 18 sedî diyarkirin." },
+            { "language": "pl", "text": "W raporcie kwartalnym określamy oszczędność z nowej automatyzacji na 18 procent." },
+            { "language": "ro", "text": "În raportul trimestrial cuantificăm economia adusă de noua automatizare la 18 procente." },
+            { "language": "ru", "text": "В квартальном отчете мы оцениваем экономию от новой автоматизации в 18 процентов." },
+            { "language": "sq", "text": "Në raportin tremujor e vlerësojmë kursimin nga automatizimi i ri në 18 për qind." },
+            { "language": "tr", "text": "Çeyrek raporunda yeni otomasyondan gelen tasarrufu yüzde 18 olarak belirtiyoruz." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}
