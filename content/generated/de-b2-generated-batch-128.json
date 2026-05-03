@@ -1,0 +1,517 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-128",
+  "packageName": "German B2 Generated Batch 128",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        { "language": "de", "name": "Schriftlich" },
+        { "language": "ar", "name": "كتابي" },
+        { "language": "ckb", "name": "نووسراو" },
+        { "language": "en", "name": "Written" },
+        { "language": "fa", "name": "نوشتاری" },
+        { "language": "kmr", "name": "Nivîskî" },
+        { "language": "pl", "name": "Pisemny" },
+        { "language": "ro", "name": "Scris" },
+        { "language": "ru", "name": "Письменный" },
+        { "language": "sq", "name": "I shkruar" },
+        { "language": "tr", "name": "Yazılı" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 20,
+      "localizations": [
+        { "language": "de", "name": "Gesprochen" },
+        { "language": "ar", "name": "شفوي" },
+        { "language": "ckb", "name": "ڕاوە" },
+        { "language": "en", "name": "Spoken" },
+        { "language": "fa", "name": "شفاهی" },
+        { "language": "kmr", "name": "Qesdenasî" },
+        { "language": "pl", "name": "Mówiony" },
+        { "language": "ro", "name": "Vorbit" },
+        { "language": "ru", "name": "Устный" },
+        { "language": "sq", "name": "I folur" },
+        { "language": "tr", "name": "Sözlü" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 40,
+      "localizations": [
+        { "language": "de", "name": "Formal" },
+        { "language": "ar", "name": "رسمي" },
+        { "language": "ckb", "name": "فەرهەنگی" },
+        { "language": "en", "name": "Formal" },
+        { "language": "fa", "name": "رسمی" },
+        { "language": "kmr", "name": "Fesadî" },
+        { "language": "pl", "name": "Formalny" },
+        { "language": "ro", "name": "Formal" },
+        { "language": "ru", "name": "Формальный" },
+        { "language": "sq", "name": "Formal" },
+        { "language": "tr", "name": "Resmi" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        { "language": "de", "name": "Geschäftlich" },
+        { "language": "ar", "name": "تجاري" },
+        { "language": "ckb", "name": "بازرگانی" },
+        { "language": "en", "name": "Business" },
+        { "language": "fa", "name": "تجاری" },
+        { "language": "kmr", "name": "Bazirganî" },
+        { "language": "pl", "name": "Biznesowy" },
+        { "language": "ro", "name": "De afaceri" },
+        { "language": "ru", "name": "Деловой" },
+        { "language": "sq", "name": "Biznesi" },
+        { "language": "tr", "name": "İş" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "management",
+      "displayName": "Management",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Management" },
+        { "language": "ar", "name": "الإدارة" },
+        { "language": "ckb", "name": "بەڕێوەبردن" },
+        { "language": "en", "name": "Management" },
+        { "language": "fa", "name": "مدیریت" },
+        { "language": "kmr", "name": "Rêveberî" },
+        { "language": "pl", "name": "Zarządzanie" },
+        { "language": "ro", "name": "Management" },
+        { "language": "ru", "name": "Управление" },
+        { "language": "sq", "name": "Menaxhim" },
+        { "language": "tr", "name": "Yönetim" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "meeting",
+      "displayName": "Meeting",
+      "sortOrder": 1200,
+      "localizations": [
+        { "language": "de", "name": "Meeting" },
+        { "language": "ar", "name": "اجتماع" },
+        { "language": "ckb", "name": "کۆبوونەوە" },
+        { "language": "en", "name": "Meeting" },
+        { "language": "fa", "name": "جلسه" },
+        { "language": "kmr", "name": "Miting" },
+        { "language": "pl", "name": "Spotkanie" },
+        { "language": "ro", "name": "Întâlnire" },
+        { "language": "ru", "name": "Встреча" },
+        { "language": "sq", "name": "Takim" },
+        { "language": "tr", "name": "Toplantı" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "risk",
+      "displayName": "Risk",
+      "sortOrder": 1090,
+      "localizations": [
+        { "language": "de", "name": "Risiko" },
+        { "language": "ar", "name": "مخاطر" },
+        { "language": "ckb", "name": "مەخەلەفە" },
+        { "language": "en", "name": "Risk" },
+        { "language": "fa", "name": "ریسک" },
+        { "language": "kmr", "name": "Rîsk" },
+        { "language": "pl", "name": "Ryzyko" },
+        { "language": "ro", "name": "Risc" },
+        { "language": "ru", "name": "Риск" },
+        { "language": "sq", "name": "Rrezik" },
+        { "language": "tr", "name": "Risk" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Kundenservice" },
+        { "language": "ar", "name": "خدمة العملاء" },
+        { "language": "ckb", "name": "خزمەتی کڕیار" },
+        { "language": "en", "name": "Customer Service" },
+        { "language": "fa", "name": "خدمات مشتریان" },
+        { "language": "kmr", "name": "Xizmeta xerîdar" },
+        { "language": "pl", "name": "Obsługa klienta" },
+        { "language": "ro", "name": "Serviciu clienți" },
+        { "language": "ru", "name": "Клиентский сервис" },
+        { "language": "sq", "name": "Shërbim klienti" },
+        { "language": "tr", "name": "Müşteri hizmetleri" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "it",
+      "displayName": "IT",
+      "sortOrder": 1010,
+      "localizations": [
+        { "language": "de", "name": "IT" },
+        { "language": "ar", "name": "تكنولوجيا المعلومات" },
+        { "language": "ckb", "name": "IT" },
+        { "language": "en", "name": "IT" },
+        { "language": "fa", "name": "فناوری اطلاعات" },
+        { "language": "kmr", "name": "IT" },
+        { "language": "pl", "name": "IT" },
+        { "language": "ro", "name": "IT" },
+        { "language": "ru", "name": "ИТ" },
+        { "language": "sq", "name": "IT" },
+        { "language": "tr", "name": "BT" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "sales",
+      "displayName": "Sales",
+      "sortOrder": 1030,
+      "localizations": [
+        { "language": "de", "name": "Vertrieb" },
+        { "language": "ar", "name": "مبيعات" },
+        { "language": "ckb", "name": "فرۆشتن" },
+        { "language": "en", "name": "Sales" },
+        { "language": "fa", "name": "فروش" },
+        { "language": "kmr", "name": "Firotin" },
+        { "language": "pl", "name": "Sprzedaż" },
+        { "language": "ro", "name": "Vânzări" },
+        { "language": "ru", "name": "Продажи" },
+        { "language": "sq", "name": "Shitje" },
+        { "language": "tr", "name": "Satış" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "anstreichen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anstreichen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-strei-chen",
+      "topics": ["work-and-jobs", "quality-and-risk", "documents-and-administration"],
+      "usageLabels": ["spoken", "written"],
+      "contextLabels": ["management"],
+      "meanings": [
+        { "language": "ar", "text": "to outline; to cover with paint/layer" },
+        { "language": "ckb", "text": "ڕەسمەکە بە گەڕاندنەوە یان گەلا" },
+        { "language": "en", "text": "to mark out; to paint/coating" },
+        { "language": "fa", "text": "طرح‌ریزی کردن یا رنگ زدن/پوشاندن" },
+        { "language": "kmr", "text": "belav kirin an nîşan kirin bi rengan" },
+        { "language": "pl", "text": "zaznaczyć; pokrywać warstwą" },
+        { "language": "ro", "text": "a contura; a vopsi" },
+        { "language": "ru", "text": "обозначить; закрасить" },
+        { "language": "sq", "text": "të shënojë me vijë ose të veshë me bojë" },
+        { "language": "tr", "text": "işaretlemek; bir şeyi boyamak" }
+      ],
+      "examples": [
+        { "baseText": "Bitte tragen Sie die Notiz mit dem roten Marker an, damit sie im Audit sofort auffällt.", "translations": [
+          { "language": "ar", "text": "لطفاً یادداشت را با ماژیک قرمز علامت بزنید تا در حسابرسی فوری دیده شود." },
+          { "language": "ckb", "text": "تکایە تێبینیەکە بە مارکەر سورەیەوە لەبەرەوە بکە تا لە پشکنیندا با لەژێرهە." },
+          { "language": "en", "text": "Please mark the note with a red marker so it stands out immediately in the audit." },
+          { "language": "fa", "text": "لطفاً یادداشت را با ماژیک قرمز برجسته کنید تا در ممیزی فوراً دیده شود." },
+          { "language": "kmr", "text": "Ji kerema xwe re nota bi markerê sor nîşan bike da di auditê de herî zû xuya bibin." },
+          { "language": "pl", "text": "Proszę zaznaczyć notatkę czerwonym markerem, aby była od razu widoczna w audycie." },
+          { "language": "ro", "text": "Te rog marchează nota cu marker roșu, astfel încât să iasă imediat în evidență la audit." },
+          { "language": "ru", "text": "Пожалуйста, отметьте заметку красным маркером, чтобы ее сразу заметили на аудите." },
+          { "language": "sq", "text": "Shënoni shënimin me marker të kuq që të dallohet menjëherë në audit." },
+          { "language": "tr", "text": "Notu denetimde hemen fark edilir hale getirmek için kırmızı işaretli kalemle işaretleyin." }
+        ]},
+        { "baseText": "Wir streichen die alten Schablonen an und stellen erst danach neue Regeln für die Formulare bereit.", "translations": [
+          { "language": "ar", "text": "ما الگوهای قدیمی را حذف می‌کنیم و سپس دستورالعمل‌های جدید برای فرم‌ها می‌دهیم." },
+          { "language": "ckb", "text": "فۆرمە کۆنەکان دەسبڕینەوە و دوایید ڕێساوێکی نوێی فۆرمەکان دەرهێنین." },
+          { "language": "en", "text": "We remove the old templates and only then provide the new rules for the forms." },
+          { "language": "fa", "text": "الگوهای قدیمی را حذف می‌کنیم و فقط بعد از آن دستورالعمل‌های جدید فرم‌ها را منتشر می‌کنیم." },
+          { "language": "kmr", "text": "Me şablonên kevn jêdixweşînin û paşê rêbazên nû yên forma dagirin." },
+          { "language": "pl", "text": "Usuwamy stare szablony i dopiero potem udostępniamy nowe zasady formularzy." },
+          { "language": "ro", "text": "Eliminăm șabloanele vechi și apoi punem la dispoziție regulile noi pentru formulare." },
+          { "language": "ru", "text": "Мы удаляем старые шаблоны, и только потом выкладываем новые правила для форм." },
+          { "language": "sq", "text": "Heqim shabllonet e vjetra dhe vetëm atëherë vendosim rregullat e reja për formularët." },
+          { "language": "tr", "text": "Eski şablonları kaldırıyoruz ve ancak ardından formlar için yeni kuralları yayımlıyoruz." }
+        ]}
+      ]
+    },
+    {
+      "word": "antreffen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "antreffen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-tref-fen",
+      "topics": ["business-communication", "meetings-and-presentations", "work-and-jobs"],
+      "usageLabels": ["spoken", "business"],
+      "contextLabels": ["meeting"],
+      "meanings": [
+        { "language": "ar", "text": "to meet; to encounter" },
+        { "language": "ckb", "text": "کرداری کەسی دیکەیەک پەیدابوون" },
+        { "language": "en", "text": "to meet someone (in person)" },
+        { "language": "fa", "text": "ملاقات کردن (به‌صورت حضوری)" },
+        { "language": "kmr", "text": "dîtina kesekî bi rûyê rûyî" },
+        { "language": "pl", "text": "spotykać się; napotkać" },
+        { "language": "ro", "text": "a întâlni pe cineva" },
+        { "language": "ru", "text": "встречаться; встретить" },
+        { "language": "sq", "text": "të takosh dikë drejtpërdrejt" },
+        { "language": "tr", "text": "biriyle yüz yüze karşılaşmak" }
+      ],
+      "examples": [
+        { "baseText": "Wir haben den Kunden im Workshop angetroffen und die offenen Punkte direkt abgestimmt.", "translations": [
+          { "language": "ar", "text": "در کارگاه، با مشتری ملاقات کردیم و موارد باز را بلافاصله هماهنگ کردیم." },
+          { "language": "ckb", "text": "لە وۆرکشاپەکەدا کڕیارمان پێکرد و پەیوەندی سەرەکییەکان ڕاستەوخۆ ڕاستەوخۆ دروست کردین." },
+          { "language": "en", "text": "We met the customer in the workshop and aligned the open points immediately." },
+          { "language": "fa", "text": "در کارگاه با مشتری ملاقات کردیم و موارد باز را بلافاصله هماهنگ کردیم." },
+          { "language": "kmr", "text": "Di workshopê de me xerîdar bi rû ber bi rû dît û ser kêliya vekirîyan vegerandin." },
+          { "language": "pl", "text": "Spotkaliśmy klienta na warsztacie i od razu uzgodniliśmy punkty otwarte." },
+          { "language": "ro", "text": "L-am întâlnit pe client în workshop și am aliniat imediat punctele deschise." },
+          { "language": "ru", "text": "Мы встретились с клиентом на воркшопе и сразу согласовали открытые пункты." },
+          { "language": "sq", "text": "E takuam klientin në workshop dhe u bëra një përputhje e menjëhershme e çështjeve të hapura." },
+          { "language": "tr", "text": "Müşteriyi workshopta buluştuk ve açık noktaları hemen hizaladık." }
+        ]},
+        { "baseText": "Wir treffen den Teamleiter vor der Demo, bevor der Kunde die neue Funktion sieht.", "translations": [
+          { "language": "ar", "text": "ما قبل نمایش، مدیر تیم را ملاقات کردیم تا پیش از دیدن قابلیت جدید، هماهنگ شویم." },
+          { "language": "ckb", "text": "پێش نیشاندانی دیمۆ، سەرکردەی تیم لە پێش کڕیارەکەدا لەدەم‌مان کردین." },
+          { "language": "en", "text": "We meet with the team lead before the demo so the client sees a coordinated result." },
+          { "language": "fa", "text": "قبل از ارائه دموی جدید با تیم لید ملاقات می‌کنیم تا مشتری خروجی هماهنگ ببیند." },
+          { "language": "kmr", "text": "Pêşî demo-ya nû em bi serkarê tîmê re têne civîn da xerîdar çêker de bêhejmara bibin." },
+          { "language": "pl", "text": "Spotykamy się z liderem zespołu przed demo, aby klient zobaczył rezultat skoordynowany." },
+          { "language": "ro", "text": "Ne întâlnim cu liderul echipei înainte de demo, ca clientul să vadă un rezultat aliniat." },
+          { "language": "ru", "text": "Встречаемся с лидером команды перед демо, чтобы клиент увидел согласованный результат." },
+          { "language": "sq", "text": "E takojmë liderin e ekipit para demo-s që klienti të shohë një rezultat të koordinuar." },
+          { "language": "tr", "text": "Demo öncesinde ekip lideriyle görüşürüz ki müşteri uyumlu bir sonuç görsün." }
+        ]}
+      ]
+    },
+    {
+      "word": "antreiben",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "antreiben",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-trei-ben",
+      "topics": ["work-and-jobs", "planning-and-projects", "business-communication"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": ["management"],
+      "meanings": [
+        { "language": "ar", "text": "to drive forward; to push on" },
+        { "language": "ckb", "text": "ئەنجامدانی خێراترکردن" },
+        { "language": "en", "text": "to drive a process forward" },
+        { "language": "fa", "text": "پیگیری/شتاب‌دادن (یک فرایند)" },
+        { "language": "kmr", "text": "pêşvekirin; zû kirin" },
+        { "language": "pl", "text": "przyspieszać; forsować" },
+        { "language": "ro", "text": "a impulsiona; a accelera" },
+        { "language": "ru", "text": "активно продвигать" },
+        { "language": "sq", "text": "të nxisë; të shtyjë përpara" },
+        { "language": "tr", "text": "hızlandırmak; bir süreci ilerletmek" }
+      ],
+      "examples": [
+        { "baseText": "Die Release-Pläne werden im Steering Committee stärker angetrieben, seit die Eskalation sichtbar ist.", "translations": [
+          { "language": "ar", "text": "از برنامه‌های انتشار در کمیته رهبری با شفاف شدن مشکل، جدی‌تر پیگیری می‌شوند." },
+          { "language": "ckb", "text": "پلانی ڕەوتکردن تێدایە لە کۆمیتهی رێنماییەوە هەروەها خێرا دەکرێت لەکاتی ئەوەی ئاسایشەکە ڕوونووس بێت." },
+          { "language": "en", "text": "The release plans are now pushed harder in the steering committee since the escalation became visible." },
+          { "language": "fa", "text": "از زمانی که موضوع بالا رفت، برنامه‌های رهاسازی در کمیته راهبری جدی‌تر پیگیری می‌شوند." },
+          { "language": "kmr", "text": "Plana dahatiya release di komîteya rêveberiyê de zêdetir têne pêşkêşandin ji ber ku eskalasyon nîşan bû." },
+          { "language": "pl", "text": "Od momentu widoczności eskalacji, plany wydania są mocniej pchane w komitecie sterującym." },
+          { "language": "ro", "text": "De când escaladarea a devenit clară, planurile de release sunt împinse mai hotărât în comitetul de conducere." },
+          { "language": "ru", "text": "С тех пор как эскалация стала заметной, планы релиза в комитеті управления продвигаются активнее." },
+          { "language": "sq", "text": "Planet e release-it po shtyhen më shumë në komitetin e drejtimit që nga momenti kur eskalimi u bë i dukshëm." },
+          { "language": "tr", "text": "Eskalasyon görünür hale geldikten sonra release planları yürütme komitesinde daha güçlü şekilde ilerletiliyor." }
+        ]},
+        { "baseText": "Bitte treiben Sie den Bug-Fix im Support an, damit der Hotfix heute Abend stabil ist.", "translations": [
+          { "language": "ar", "text": "لطفاً رفع باگ را در پشتیبانی جلو ببرید تا هات‌فیکس تا امشب پایدار باشد." },
+          { "language": "ckb", "text": "تکایە بگەرانی باگەکە لە پشتگیریدا خێرا بکە تا هاتفیکس بە ئاستەنگی ئێستەشویە." },
+          { "language": "en", "text": "Please drive the bug-fix in support forward so the hotfix is stable by this evening." },
+          { "language": "fa", "text": "لطفاً اصلاح باگ را در پشتیبانی جلو ببرید تا هات‌فیکس تا امشب پایدار شود." },
+          { "language": "kmr", "text": "Ji kerema xwe re bug-fixê di piştgiriyê de bi lez bike da ku hotfix êvîro biqewime." },
+          { "language": "pl", "text": "Proszę przyspieszyć poprawkę błędu w supportcie, aby hotfix był stabilny dziś wieczorem." },
+          { "language": "ro", "text": "Vă rugăm accelerați remedierea bug-ului în suport pentru ca hotfixul să fie stabil până în această seară." },
+          { "language": "ru", "text": "Пожалуйста, ускорьте исправление бага в поддержке, чтобы хотфикс был стабильным к вечеру." },
+          { "language": "sq", "text": "Ju lutem nxitojeni rregullimin e bug-it në support që hotfix-i të jetë stabil këtë mbrëmje." },
+          { "language": "tr", "text": "Hata düzeltmesini destekte hızlandırın, böylece hotfix bu akşama stabil olsun." }
+        ]}
+      ]
+    },
+    {
+      "word": "antreten",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "antreten",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-tre-ten",
+      "topics": ["work-and-jobs", "meetings-and-presentations", "documents-and-administration"],
+      "usageLabels": ["spoken", "written", "business"],
+      "contextLabels": ["meeting", "management"],
+      "meanings": [
+        { "language": "ar", "text": "to get involved; to join a process or discussion" },
+        { "language": "ckb", "text": "بەشداربوون لە قۆناغێک" },
+        { "language": "en", "text": "to join in; to participate" },
+        { "language": "fa", "text": "درگیر شدن یا حضور یافتن در فعالیت/جلسه" },
+        { "language": "kmr", "text": "beşdar bûn; tevde bûn" },
+        { "language": "pl", "text": "włączyć się; dołączyć" },
+        { "language": "ro", "text": "a participa; a intra într-o acțiune" },
+        { "language": "ru", "text": "вступать; подключаться" },
+        { "language": "sq", "text": "të marrësh pjesë; të bashkohesh" },
+        { "language": "tr", "text": "katılmak; dahil olmak" }
+      ],
+      "examples": [
+        { "baseText": "Alle Teamleiter sollen an der Retrospektive antreten, auch wenn das Release knapp war.", "translations": [
+          { "language": "ar", "text": "تمام سرپرستان تیم باید در بازنگری مشارکت کنند، حتی اگر زمان لانچ تنگ باشد." },
+          { "language": "ckb", "text": "هەموو سەرپەرشتیارەکانی تیم دەبێت لە وەراوی پاشەوەیدا بەشداری بکەن هەتا کاتێکی لانچ کەمبوو." },
+          { "language": "en", "text": "All team leads should join the retrospective, even if the release schedule was tight." },
+          { "language": "fa", "text": "همه سرگروه‌ها باید در بازنگری شرکت کنند، حتی اگر زمان لانچ محدود بوده است." },
+          { "language": "kmr", "text": "Divê hemû serkarên tîmê di retrospetîvê de beşdar bin her çiqas release nêzîk bû." },
+          { "language": "pl", "text": "Wszyscy liderzy zespołów powinni wziąć udział w retrospektywie, nawet przy napiętym harmonogramie release." },
+          { "language": "ro", "text": "Toți liderii de echipă ar trebui să participe la retrospective, chiar dacă lansarea a fost strâns programată." },
+          { "language": "ru", "text": "Все лидеры команд должны принять участие в ретроспективе, даже если релиз был сжат по срокам." },
+          { "language": "sq", "text": "Të gjithë liderët e ekipeve duhet të marrin pjesë në retrospektivë, edhe kur plani i release-it është i ngushtë." },
+          { "language": "tr", "text": "Tüm takım liderleri, release zamanı dar da olsa, geribildirim toplantısına katılmalıdır." }
+        ]},
+        { "baseText": "Nach dem Meeting trete der Kunde früh auf die Lösung ein und gab sofort freies Feedback.", "translations": [
+          { "language": "ar", "text": "پس از جلسه، مشتری سریعاً به راه‌حل وارد شد و بازخورد آزاد داد." },
+          { "language": "ckb", "text": "دوای کۆبوونەوەکەدا کڕیار بە خێرایەتی وەکو چاره‌سازیەکەدا ئامادە بوو و بازدواخ بۆشدارە." },
+          { "language": "en", "text": "After the meeting, the customer engaged with the solution quickly and gave immediate candid feedback." },
+          { "language": "fa", "text": "بعد از جلسه، مشتری خیلی زود وارد بحث راه‌حل شد و بازخورد صریح داد." },
+          { "language": "kmr", "text": "Piştî civînê xerîdar zû bi çareseriyê ve hat û paşê feedbacka vekirî da." },
+          { "language": "pl", "text": "Po spotkaniu klient szybko włączył się w rozwiązanie i dał od razu otwarty feedback." },
+          { "language": "ro", "text": "După ședință, clientul s-a implicat rapid în soluție și a oferit feedback direct." },
+          { "language": "ru", "text": "После встречи клиент быстро включился в решение и сразу дал честный фидбек." },
+          { "language": "sq", "text": "Pas takimit, klienti u angazhua shpejt në zgjidhje dhe dha menjëherë feedback të hapur." },
+          { "language": "tr", "text": "Toplantıdan sonra müşteri çözüme hızlıca dahil oldu ve hemen doğrudan geri bildirim verdi." }
+        ]}
+      ]
+    },
+    {
+      "word": "antun",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "antun",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-tun",
+      "topics": ["quality-and-risk", "documents-and-administration", "work-and-jobs"],
+      "usageLabels": ["formal", "written"],
+      "contextLabels": ["risk", "management"],
+      "meanings": [
+        { "language": "ar", "text": "to do; to cause (an effect, to make happen)" },
+        { "language": "ckb", "text": "کردن و ئەنجامدان" },
+        { "language": "en", "text": "to do; to perform (an action)" },
+        { "language": "fa", "text": "انجام دادن یا باعث شدن" },
+        { "language": "kmr", "text": "kirin; çalakiyek bi cîh kirin" },
+        { "language": "pl", "text": "robić; sprawiać" },
+        { "language": "ro", "text": "a face; a provoca" },
+        { "language": "ru", "text": "делать; причинять" },
+        { "language": "sq", "text": "të bëjë; të shkaktojë" },
+        { "language": "tr", "text": "yapmak; doğurmak" }
+      ],
+      "examples": [
+        { "baseText": "Was haben wir gestern im Vorfallbericht angetan, als der Service kurzfristig ausfiel?", "translations": [
+          { "language": "ar", "text": "دیروز در گزارش حادثه چه کردیم وقتی سرویس ناگهانی قطع شد؟" },
+          { "language": "ckb", "text": "بڕیارمان لە ڕاپۆرتی کێشەکەی دەرووندا چی بوو کە خزمەتگوزاری خێرا کەوتووە?" },
+          { "language": "en", "text": "What did we do in the incident report when the service dropped unexpectedly?" },
+          { "language": "fa", "text": "در گزارش حادثه دیروز وقتی سرویس به صورت غیرمنتظره افت کرد چه کردیم؟" },
+          { "language": "kmr", "text": "لە ڕاپۆرتەی کێشەکە چی kirî ku servîs xelas bû?" },
+          { "language": "pl", "text": "Co zrobiliśmy w raporcie incydentu, gdy serwis nagle padł?" },
+          { "language": "ro", "text": "Ce am făcut în raportul de incident când serviciul s-a întrerupt brusc?" },
+          { "language": "ru", "text": "Что мы сделали в отчете об инциденте, когда сервис внезапно упал?" },
+          { "language": "sq", "text": "Çfarë bëmë në raportin e incidentit kur shërbimi ra papritur?" },
+          { "language": "tr", "text": "Servis aniden kesildiğinde olay raporunda ne yaptık?" }
+        ]},
+        { "baseText": "Bitte antun Sie keine weiteren Änderungen im produktiven System ohne Change-Request.", "translations": [
+          { "language": "ar", "text": "لطفاً بدون درخواست تغییر هیچ تغییر دیگری در محیط تولید اعمال نکنید." },
+          { "language": "ckb", "text": "تکایە هیچ گۆڕانکاریەکی تر لە سیستەمی کارەباوەستانەدا بەبێ داواکاری گۆڕانکاری مەکە." },
+          { "language": "en", "text": "Please do not make any further changes in the production system without a change request." },
+          { "language": "fa", "text": "لطفاً بدون درخواست تغییر، تغییر دیگری در سیستم تولیدی انجام ندهید." },
+          { "language": "kmr", "text": "Ji kerema xwe re bêyên daxwaza gûhêzê di pergala produksîon de tu guhertinên din nekin." },
+          { "language": "pl", "text": "Proszę nie wprowadzać dalszych zmian w systemie produkcyjnym bez Change Request." },
+          { "language": "ro", "text": "Nu efectuați alte modificări în sistemul de producție fără change request." },
+          { "language": "ru", "text": "Пожалуйста, не вносите никаких изменений в продакшн без заявки на изменение." },
+          { "language": "sq", "text": "Ju lutem mos bëni më tej ndryshime në sistemin prodhues pa kërkesë ndryshimi." },
+          { "language": "tr", "text": "Lütfen change request olmadan üretim sisteminde başka değişiklik yapmayın." }
+        ]}
+      ]
+    },
+    {
+      "word": "anweisen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anweisen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-vai-sen",
+      "topics": ["work-and-jobs", "business-communication", "documents-and-administration"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": ["management", "customer-service"],
+      "meanings": [
+        { "language": "ar", "text": "to instruct; to assign" },
+        { "language": "ckb", "text": "ڕێنمایی کردن" },
+        { "language": "en", "text": "to instruct; to direct" },
+        { "language": "fa", "text": "دستور دادن؛ هدایت کردن" },
+        { "language": "kmr", "text": "rêberî kirin; emelî kirin" },
+        { "language": "pl", "text": "polecać; instruować" },
+        { "language": "ro", "text": "a da instrucțiuni; a îndruma" },
+        { "language": "ru", "text": "инструктировать; поручать" },
+        { "language": "sq", "text": "të udhëzojë; të instruksionojë" },
+        { "language": "tr", "text": "talimat vermek; yönlendirmek" }
+      ],
+      "examples": [
+        { "baseText": "Der Projektleiter hat das Team angewiesen, die offene Kundenanfrage bis Mittag zu schließen.", "translations": [
+          { "language": "ar", "text": "مدیر پروژه به تیم دستور داد درخواست مشتری را تا ظهر حل کند." },
+          { "language": "ckb", "text": "سرکردەی پڕۆژە تیمەکە ڕەوشەت کردەوە تا کڕیارەکە تا نیوەڕووەدا داخلبکات." },
+          { "language": "en", "text": "The project lead instructed the team to close the open customer request by noon." },
+          { "language": "fa", "text": "رهبر پروژه از تیم خواست درخواست مشتری را تا ظهر ببندد." },
+          { "language": "kmr", "text": "Sewirê projeyê tîmê hînkir ku daxwaza xerîdar ya vekirî bi du bûrê re bigire." },
+          { "language": "pl", "text": "Lider projektu polecił zespołowi zamknąć otwarte zapytanie klienta do południa." },
+          { "language": "ro", "text": "Managerul de proiect a instruit echipa să închidă cererea deschisă a clientului până la prânz." },
+          { "language": "ru", "text": "Руководитель проекта распорядился закрыть открытый запрос клиента к обеду." },
+          { "language": "sq", "text": "Drejtori i projektit urdhëroi ekipin ta mbyllë kërkesën e hapur të klientit deri në drekë." },
+          { "language": "tr", "text": "Proje lideri, açık müşteri talebini öğleye kadar kapatmaları için ekibi yönlendirdi." }
+        ]},
+        { "baseText": "Bitte weisen Sie den externen Service-Partner schriftlich an, bis morgen keinen weiteren Release-Freeze einzuplanen.", "translations": [
+          { "language": "ar", "text": "لطفاً شریک سرویس بیرونی را به‌صورت کتبی دستور دهید تا تا فردا فریز دیگری برنامه‌ریزی نکند." },
+          { "language": "ckb", "text": "تکایە بە ڕەسەمی نووسراوی شریکە دەرەکیەکە ڕێنمایی بدە تا تا سبەی هیچ فریزەکی نوێ مەبەشێنێت." },
+          { "language": "en", "text": "Please instruct the external service partner in writing not to schedule another release freeze before tomorrow." },
+          { "language": "fa", "text": "لطفاً به‌صورت کتبی به شریک بیرونی خدمت دستور دهید قبل از فردا فریز جدیدی برنامه‌ریزی نکند." },
+          { "language": "kmr", "text": "Ji kerema xwe re partnerê servîsa derve bi nivîsan re bidestnin ku pêşî sibê fîrza nû yê releaseê neplana bikin." },
+          { "language": "pl", "text": "Proszę formalnie poinstruować partnera zewnętrzny usług, by do jutra nie planował kolejnego release freeze." },
+          { "language": "ro", "text": "Vă rugăm să îl instruiți în scris pe partenerul extern de service să nu programeze un alt freeze de release până mâine." },
+          { "language": "ru", "text": "Пожалуйста, дайте внешнему сервисному партнеру письменные инструкции не планировать новый заморозку релиза до завтра." },
+          { "language": "sq", "text": "Ju lutem udhëzoni partnerin e jashtëm shërbimor me shkrim të mos planifikojë një freeze tjetër deri nesër." },
+          { "language": "tr", "text": "Lütfen dış hizmet ortağını, yarına kadar bir başka release freeze planlamaması için yazılı olarak yönlendirin." }
+        ]}
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

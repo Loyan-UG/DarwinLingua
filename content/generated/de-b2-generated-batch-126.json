@@ -1,0 +1,572 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-126",
+  "packageName": "German B2 Generated Batch 126",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        { "language": "de", "name": "Am Arbeitsplatz" },
+        { "language": "ar", "name": "في مكان العمل" },
+        { "language": "ckb", "name": "لە شوێنی کار" },
+        { "language": "en", "name": "Workplace" },
+        { "language": "fa", "name": "محیط کار" },
+        { "language": "kmr", "name": "Li cihê kar" },
+        { "language": "pl", "name": "W miejscu pracy" },
+        { "language": "ro", "name": "La locul de muncă" },
+        { "language": "ru", "name": "На рабочем месте" },
+        { "language": "sq", "name": "Në vendin e punës" },
+        { "language": "tr", "name": "İş yeri" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 20,
+      "localizations": [
+        { "language": "de", "name": "Gesprochen" },
+        { "language": "ar", "name": "شفوي" },
+        { "language": "ckb", "name": "ڕاوە" },
+        { "language": "en", "name": "Spoken" },
+        { "language": "fa", "name": "شفاهی" },
+        { "language": "kmr", "name": "Qesdenasî" },
+        { "language": "pl", "name": "Mówiony" },
+        { "language": "ro", "name": "Vorbit" },
+        { "language": "ru", "name": "Устный" },
+        { "language": "sq", "name": "I folur" },
+        { "language": "tr", "name": "Sözlü" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        { "language": "de", "name": "Schriftlich" },
+        { "language": "ar", "name": "كتابي" },
+        { "language": "ckb", "name": "نووسراو" },
+        { "language": "en", "name": "Written" },
+        { "language": "fa", "name": "نوشتاری" },
+        { "language": "kmr", "name": "Nivîskî" },
+        { "language": "pl", "name": "Pisemny" },
+        { "language": "ro", "name": "Scris" },
+        { "language": "ru", "name": "Письменный" },
+        { "language": "sq", "name": "I shkruar" },
+        { "language": "tr", "name": "Yazılı" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 40,
+      "localizations": [
+        { "language": "de", "name": "Formal" },
+        { "language": "ar", "name": "رسمي" },
+        { "language": "ckb", "name": "فەرهەنگی" },
+        { "language": "en", "name": "Formal" },
+        { "language": "fa", "name": "رسمی" },
+        { "language": "kmr", "name": "Fesadî" },
+        { "language": "pl", "name": "Formalny" },
+        { "language": "ro", "name": "Formal" },
+        { "language": "ru", "name": "Формальный" },
+        { "language": "sq", "name": "Formal" },
+        { "language": "tr", "name": "Resmi" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        { "language": "de", "name": "Geschäftlich" },
+        { "language": "ar", "name": "تجاري" },
+        { "language": "ckb", "name": "بازرگانی" },
+        { "language": "en", "name": "Business" },
+        { "language": "fa", "name": "تجاری" },
+        { "language": "kmr", "name": "Bazirganî" },
+        { "language": "pl", "name": "Biznesowy" },
+        { "language": "ro", "name": "De afaceri" },
+        { "language": "ru", "name": "Деловой" },
+        { "language": "sq", "name": "Biznesi" },
+        { "language": "tr", "name": "İş" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "logistics",
+      "displayName": "Logistics",
+      "sortOrder": 1140,
+      "localizations": [
+        { "language": "de", "name": "Logistik" },
+        { "language": "ar", "name": "اللوجستيات" },
+        { "language": "ckb", "name": "لوژستیک" },
+        { "language": "en", "name": "Logistics" },
+        { "language": "fa", "name": "لجستیک" },
+        { "language": "kmr", "name": "Logîstîk" },
+        { "language": "pl", "name": "Logistyka" },
+        { "language": "ro", "name": "Logistică" },
+        { "language": "ru", "name": "Логистика" },
+        { "language": "sq", "name": "Logjistikë" },
+        { "language": "tr", "name": "Lojistik" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "finance",
+      "displayName": "Finance",
+      "sortOrder": 1110,
+      "localizations": [
+        { "language": "de", "name": "Finanzen" },
+        { "language": "ar", "name": "المالية" },
+        { "language": "ckb", "name": "دارایی" },
+        { "language": "en", "name": "Finance" },
+        { "language": "fa", "name": "مالی" },
+        { "language": "kmr", "name": "Dola" },
+        { "language": "pl", "name": "Finanse" },
+        { "language": "ro", "name": "Finanțe" },
+        { "language": "ru", "name": "Финансы" },
+        { "language": "sq", "name": "Financë" },
+        { "language": "tr", "name": "Finans" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "sales",
+      "displayName": "Sales",
+      "sortOrder": 1030,
+      "localizations": [
+        { "language": "de", "name": "Vertrieb" },
+        { "language": "ar", "name": "مبيعات" },
+        { "language": "ckb", "name": "فرۆشتن" },
+        { "language": "en", "name": "Sales" },
+        { "language": "fa", "name": "فروش" },
+        { "language": "kmr", "name": "Firotin" },
+        { "language": "pl", "name": "Sprzedaż" },
+        { "language": "ro", "name": "Vânzări" },
+        { "language": "ru", "name": "Продажи" },
+        { "language": "sq", "name": "Shitje" },
+        { "language": "tr", "name": "Satış" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Kundenservice" },
+        { "language": "ar", "name": "خدمة العملاء" },
+        { "language": "ckb", "name": "خزمەتی کڕیار" },
+        { "language": "en", "name": "Customer Service" },
+        { "language": "fa", "name": "خدمات مشتریان" },
+        { "language": "kmr", "name": "Xizmeta xerîdar" },
+        { "language": "pl", "name": "Obsługa klienta" },
+        { "language": "ro", "name": "Serviciu clienți" },
+        { "language": "ru", "name": "Клиентский сервис" },
+        { "language": "sq", "name": "Shërbim klienti" },
+        { "language": "tr", "name": "Müşteri hizmetleri" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "management",
+      "displayName": "Management",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Management" },
+        { "language": "ar", "name": "الإدارة" },
+        { "language": "ckb", "name": "بەڕێوەبردن" },
+        { "language": "en", "name": "Management" },
+        { "language": "fa", "name": "مدیریت" },
+        { "language": "kmr", "name": "Rêveberî" },
+        { "language": "pl", "name": "Zarządzanie" },
+        { "language": "ro", "name": "Management" },
+        { "language": "ru", "name": "Управление" },
+        { "language": "sq", "name": "Menaxhimi" },
+        { "language": "tr", "name": "Yönetim" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "risk",
+      "displayName": "Risk",
+      "sortOrder": 1090,
+      "localizations": [
+        { "language": "de", "name": "Risiko" },
+        { "language": "ar", "name": "مخاطر" },
+        { "language": "ckb", "name": "مەخەلەفە" },
+        { "language": "en", "name": "Risk" },
+        { "language": "fa", "name": "ریسک" },
+        { "language": "kmr", "name": "Rîsk" },
+        { "language": "pl", "name": "Ryzyko" },
+        { "language": "ro", "name": "Risc" },
+        { "language": "ru", "name": "Риск" },
+        { "language": "sq", "name": "Rrezik" },
+        { "language": "tr", "name": "Risk" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "anfahren",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anfahren",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-fah-ren",
+      "topics": ["transport-and-travel", "work-and-jobs"],
+      "usageLabels": ["workplace", "spoken"],
+      "contextLabels": ["logistics"],
+      "meanings": [
+        { "language": "ar", "text": "to drive up to; to approach" },
+        { "language": "ckb", "text": "بە دایرهێنان یان دروستەوە لە شوێنێک" },
+        { "language": "en", "text": "to move in, approach or start moving (a vehicle)" },
+        { "language": "fa", "text": "به جبهه‌ یا مکان خاص حرکت کردن با وسیله نقلیه" },
+        { "language": "kmr", "text": "vegera avê an otobomê bikirin û bênasîn" },
+        { "language": "pl", "text": "zajechać, wjechać, podejść" },
+        { "language": "ro", "text": "a se apropia cu vehiculul; a porni" },
+        { "language": "ru", "text": "подъезжать; начинать движение (транспорт)" },
+        { "language": "sq", "text": "të afrojë me automjet; të fillojë lëvizjen" },
+        { "language": "tr", "text": "bir yere yanaşmak; bir araçla harekete geçmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Gabelstapler soll langsam anfahren, bevor er in die Regalzone einfährt.",
+          "translations": [
+            { "language": "ar", "text": "بالیستە باید قبل از ورود به محدوده قفسه‌ها با سرعت کم حرکت کند." },
+            { "language": "ckb", "text": "فورکیلەفتەکە دەبێت پێش چوونە ناو ناوچەی راکێلەکان بە هەواسی بێت." },
+            { "language": "en", "text": "The forklift must drive in slowly before entering the rack zone." },
+            { "language": "fa", "text": "لیفتراک باید قبل از ورود به منطقه رک‌ها با سرعت کم حرکت کند." },
+            { "language": "kmr", "text": "Forkliftê divê pêşî ku bigere herêma rafan bi hêvî bibe." },
+            { "language": "pl", "text": "Wózek powinien wjechać powoli przed wejściem do strefy regałów." },
+            { "language": "ro", "text": "Stivuitorul trebuie să intre încet înainte de a pătrunde în zona rafturilor." },
+            { "language": "ru", "text": "Вилочный погрузчик должен медленно подъехать перед входом в зону стеллажей." },
+            { "language": "sq", "text": "Forklifi duhet të ngadalësojë dhe të afrohet para se të hyjë në zonën e raftëve." },
+            { "language": "tr", "text": "Forklift, raf bölgesine girmeden önce yavaşça yaklaşmalı." }
+          ]
+        },
+        {
+          "baseText": "Wir haben den LKW erst angefahren, als der Verkehrsweg frei war, dann konnten wir entladen.",
+          "translations": [
+            { "language": "ar", "text": "فقط وقتی مسیر عبور باز بود، کامیون را وارد کردیم و بعد تخلیه کردیم." },
+            { "language": "ckb", "text": "تەنها کە ڕێگای گواستنەوە سەفا بوو، ئۆتۆمەبێل وارد کردە و دواتر دابەزاند." },
+            { "language": "en", "text": "We drove the truck in only when the lane was clear, then we could unload." },
+            { "language": "fa", "text": "ما فقط وقتی مسیر خالی بود کامیون را وارد کردیم و بعد تخلیه کردیم." },
+            { "language": "kmr", "text": "Em tenê dema rêça veşartî vekirbû kirin, firînê hat çûn û paşê dakêşin." },
+            { "language": "pl", "text": "Wprowadziliśmy ciężarówkę dopiero, gdy droga była wolna, potem mogliśmy rozładować." },
+            { "language": "ro", "text": "Am adus camionul abia când culoarul era liber, apoi am putut descărca." },
+            { "language": "ru", "text": "Мы подвезли фуру только когда проезд был свободен, затем могли разгрузить." },
+            { "language": "sq", "text": "Kamionin e futëm vetëm kur korridori u çlirua dhe pastaj mundëm ta shkarkojmë." },
+            { "language": "tr", "text": "Kamyonu yalnızca geçiş yolu açılınca içeri aldık ve ardından boşaltabildik." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anfallen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anfallen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-fal-len",
+      "topics": ["finance-and-accounting", "documents-and-administration"],
+      "usageLabels": ["formal", "written"],
+      "contextLabels": ["finance"],
+      "meanings": [
+        { "language": "ar", "text": "أن ينشأ إضافي" },
+        { "language": "ckb", "text": "زیادبوونی هەزری زیادە" },
+        { "language": "en", "text": "to occur additionally; to accrue" },
+        { "language": "fa", "text": "پدیدار شدن به شکل اضافی یا تحمیل شدن" },
+        { "language": "kmr", "text": "zêde bûn; belav bûn" },
+        { "language": "pl", "text": "występować dodatkowo; nakładać się" },
+        { "language": "ro", "text": "a apărea suplimentar; a se acumula" },
+        { "language": "ru", "text": "возникать дополнительно; начисляться" },
+        { "language": "sq", "text": "të shtohen në mënyrë shtesë" },
+        { "language": "tr", "text": "yanından ortaya çıkmak; ek olarak doğmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Für das Projektmanagement fallen im nächsten Quartal 18 Stunden zusätzliche Abstimmungsaufwände an.",
+          "translations": [
+            { "language": "ar", "text": "برای مدیریت پروژه در فصل بعد، 18 ساعت کار هماهنگی اضافی پیش‌بینی شده است." },
+            { "language": "ckb", "text": "بۆ بەڕێوەبردنی پڕۆژە لە مانگی داهاتوو 18 کاتژمێری ڕێکخستنی زیاد لەخۆ دەگرێت." },
+            { "language": "en", "text": "For project management, an additional 18 hours of coordination effort are due next quarter." },
+            { "language": "fa", "text": "برای مدیریت پروژه در فصل بعد، ۱۸ ساعت تلاش هماهنگی اضافه در نظر گرفته شده است." },
+            { "language": "kmr", "text": "Ji bo rêveberiya projeyê saeta 18ê zêdeyî ya pêvajoyê di beşa paşîn de derxist." },
+            { "language": "pl", "text": "W przyszłym kwartale przy zarządzaniu projektem powstanie dodatkowo 18 godzin pracy koordynacyjnej." },
+            { "language": "ro", "text": "Pentru managementul proiectului, în trimestrul următor apar 18 ore suplimentare de coordonare." },
+            { "language": "ru", "text": "Для управления проектом в следующем квартале возникнет дополнительно 18 часов координационной работы." },
+            { "language": "sq", "text": "Për menaxhimin e projektit në tremujorin e ardhshëm do të bijnë 18 orë koordinimi shtesë." },
+            { "language": "tr", "text": "Proje yönetiminde gelecek çeyrekte ilave olarak 18 saat koordinasyon eforu doğacak." }
+          ]
+        },
+        {
+          "baseText": "Bei der Rechnungsprüfung fallen zusätzliche Genehmigungsschritte an, bevor die Zahlung freigegeben wird.",
+          "translations": [
+            { "language": "ar", "text": "در بررسی صورت‌حساب‌ها، قبل از پرداخت، مراحل تأیید اضافی لازم است." },
+            { "language": "ckb", "text": "لە پشکنینی پسووڵەدا پێویستی بە هەنگاوی پەسەندکردنی زیاتر هەیە پێش ئامادەکردنی پارەدان." },
+            { "language": "en", "text": "Additional approval steps are required before payment is released during invoice review." },
+            { "language": "fa", "text": "در بررسی فاکتورها قبل از آزادسازی پرداخت، مراحل تأیید بیشتری لازم است." },
+            { "language": "kmr", "text": "Di kontrola fatora de pêdivî ye ku pêşî pêşangeha zêde were kirin." },
+            { "language": "pl", "text": "Przy weryfikacji faktur pojawiają się dodatkowe etapy akceptacji przed zwolnieniem płatności." },
+            { "language": "ro", "text": "La verificarea facturilor apar pași suplimentari de aprobare înainte de eliberarea plății." },
+            { "language": "ru", "text": "При проверке счетов добавляются дополнительные шаги согласования до выпуска оплаты." },
+            { "language": "sq", "text": "Tek verifikimi i faturës shtohen hapa shtesë miratimi përpara lëshimit të pagesës." },
+            { "language": "tr", "text": "Fatura incelemesinde ödeme açılmadan önce ek onay adımları gerekir." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "das Angebot",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Angebote",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "An-ge-bot",
+      "topics": ["sales-and-customers", "documents-and-administration", "business-communication"],
+      "usageLabels": ["business", "written", "formal"],
+      "contextLabels": ["sales", "customer-service"],
+      "meanings": [
+        { "language": "ar", "text": "عرض؛ پیشنهاد فروش" },
+        { "language": "ckb", "text": "پێشنیار" },
+        { "language": "en", "text": "offer; quotation" },
+        { "language": "fa", "text": "پیشنهاد؛ قیمت‌نامه" },
+        { "language": "kmr", "text": "pêşniyar; fermanî" },
+        { "language": "pl", "text": "oferta; ofercik" },
+        { "language": "ro", "text": "ofertă; ofertă comercială" },
+        { "language": "ru", "text": "предложение; предложение цен" },
+        { "language": "sq", "text": "ofertë; ofertim" },
+        { "language": "tr", "text": "teklif; fiyat teklifi" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir haben gestern ein aktualisiertes Angebot mit Service-Level-Zielen an den Kunden gesendet.",
+          "translations": [
+            { "language": "ar", "text": "دیروز یک پیشنهاد به‌روزشده با اهداف سطح خدمات برای مشتری ارسال کردیم." },
+            { "language": "ckb", "text": "دوێنێکی پێشنیاری نوێ کراوە بە ئەم کڕیارە ناردەین کە ئامانجی ستانداردی خزمەتگوزاری پێوەردەبێت." },
+            { "language": "en", "text": "We sent an updated offer with service-level targets to the customer yesterday." },
+            { "language": "fa", "text": "دیروز یک پیشنهاد به‌روزشده با اهداف سطح خدمات به مشتری ارسال کردیم." },
+            { "language": "kmr", "text": "Dûvî pêşniyara nûkirî ya bi armancên asta xizmetê bi xerîdar re şand." },
+            { "language": "pl", "text": "Wczoraj wysłaliśmy klientowi zaktualizowaną ofertę z celami poziomu usług." },
+            { "language": "ro", "text": "Ieri am trimis clientului o ofertă actualizată cu obiective de nivel de serviciu." },
+            { "language": "ru", "text": "Вчера мы отправили клиенту обновленную оферту с целевыми уровнями сервиса." },
+            { "language": "sq", "text": "Dje klientit i kemi dërguar një ofertë të përditësuar me qëllime të nivelit të shërbimit." },
+            { "language": "tr", "text": "Dün müşteriye hizmet seviyesi hedeflerini içeren güncellenmiş bir teklif gönderdik." }
+          ]
+        },
+        {
+          "baseText": "Bitte prüfen Sie das Angebot intern, bevor wir es in der Ausschreibung veröffentlichen.",
+          "translations": [
+            { "language": "ar", "text": "لطفاً قبل از انتشار پیشنهاد، آن را در داخل بررسی کنید." },
+            { "language": "ckb", "text": "تکایە پێشەکی پێشنیارەکە لەناوی سازمانەکەدا بپشکنە." },
+            { "language": "en", "text": "Please review the offer internally before we publish it in the tender." },
+            { "language": "fa", "text": "لطفاً قبل از انتشار در مناقصه، پیشنهاد را داخلی بررسی کنید." },
+            { "language": "kmr", "text": "Ji kerema xwe pêşniyara di nav navxweyî de kontrol bikin, paşê bi encamê weşînin." },
+            { "language": "pl", "text": "Proszę sprawdzić ofertę wewnętrznie, zanim opublikujemy ją w zaproszeniu do ofert." },
+            { "language": "ro", "text": "Vă rugăm verificați oferta intern înainte de publicare în licitație." },
+            { "language": "ru", "text": "Пожалуйста, проверьте предложение внутри компании прежде чем публиковать его в тендере." },
+            { "language": "sq", "text": "Ju lutemi kontrolloni ofertën brenda kompanisë para se ta publikoni në ofertë." },
+            { "language": "tr", "text": "Lütfen teklifi ihaleye koymadan önce içte gözden geçirin." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "angehen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "angehen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-ge-hen",
+      "topics": ["work-and-jobs", "management-and-leadership", "planning-and-projects"],
+      "usageLabels": ["business", "workplace", "spoken"],
+      "contextLabels": ["management"],
+      "meanings": [
+        { "language": "ar", "text": "أن يتناول/يتعامل مع" },
+        { "language": "ckb", "text": "دەستپێکردن بە چارەسەرکردن" },
+        { "language": "en", "text": "to tackle; to start" },
+        { "language": "fa", "text": "به کار گرفتن/رسیدن به موضوعی" },
+        { "language": "kmr", "text": "pêşveçûn bi mesele yekê" },
+        { "language": "pl", "text": "zająć się; podjąć temat" },
+        { "language": "ro", "text": "a aborda; a începe" },
+        { "language": "ru", "text": "приступить к; заниматься" },
+        { "language": "sq", "text": "të merret me; të fillojë" },
+        { "language": "tr", "text": "ele almak; işe koyulmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir sollten die offenen Risiken des Sprints zuerst angehen, bevor wir neue Anforderungen aufnehmen.",
+          "translations": [
+            { "language": "ar", "text": "باید ابتدا ریسک‌های باز اسپرینت را بررسی کنیم و بعد نیازهای جدید را بگیریم." },
+            { "language": "ckb", "text": "ئێمە پێش داواکاری نوێدا دەبێت خەڵاتە ڕیسکە کراوەکان دابنێین." },
+            { "language": "en", "text": "We should tackle the open sprint risks first before taking new requirements." },
+            { "language": "fa", "text": "قبل از پذیرفتن درخواست‌های جدید، باید اول ریسک‌های باز اسپرینت را بررسی کنیم." },
+            { "language": "kmr", "text": "Pêşî rîskên vekirî yên sprintê digirin, pêşî ku daxwazên nû bigrin." },
+            { "language": "pl", "text": "Najpierw powinniśmy zająć się otwartymi ryzykami sprintu, zanim weźmiemy nowe wymagania." },
+            { "language": "ro", "text": "Ar trebui să abordăm întâi riscurile deschise ale sprintului, înainte de a lua noi cerințe." },
+            { "language": "ru", "text": "Сначала стоит заняться открытыми рисками спринта, прежде чем брать новые требования." },
+            { "language": "sq", "text": "Së pari duhet t’i marrim rrezikut e hapura të sprintit, para kërkesave të reja." },
+            { "language": "tr", "text": "Yeni talepleri almadan önce önce sprintin açık risklerine odaklanmalıyız." }
+          ]
+        },
+        {
+          "baseText": "Die Serviceabteilung hat das Eskalationsproblem direkt angehen und in zwei Stunden eingegrenzt.",
+          "translations": [
+            { "language": "ar", "text": "بخش خدمات مستقیم مشکل تشدید را پیگیری کرد و طی دو ساعت آن را کنترل نمود." },
+            { "language": "ckb", "text": "بەشی خزمەتگوزاری بە ڕاستی کێشەیەکی ئاسایش کردووە لە دوو کاتژمێردا چارەسەرکرد." },
+            { "language": "en", "text": "The service team handled the escalation issue directly and contained it within two hours." },
+            { "language": "fa", "text": "واحد خدمات مشکل تشدید را مستقیماً پیگیری کرد و در دو ساعت کنترل کرد." },
+            { "language": "kmr", "text": "Tîma piştgiriyê problemê bi rastî girt û di du saetan de kontrol kir." },
+            { "language": "pl", "text": "Dział obsługi podjął bezpośrednio problem eskalacji i ograniczył go w ciągu dwóch godzin." },
+            { "language": "ro", "text": "Departamentul de suport a abordat direct problema de escaladare și a limitat-o în două ore." },
+            { "language": "ru", "text": "Отдел поддержки сразу взялся за проблему эскалации и за два часа локализовал ее." },
+            { "language": "sq", "text": "Ekipi i shërbimit e mori menjëherë rastin e eskalimit dhe e përmbajti brenda dy orëve." },
+            { "language": "tr", "text": "Servis ekibi eskalasyon sorununu doğrudan ele aldı ve iki saat içinde sınırlandırdı." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Angemessenheit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Angemessenheiten",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "An-ge-mes-sen-heit",
+      "topics": ["quality-and-risk", "law-and-compliance", "documents-and-administration"],
+      "usageLabels": ["formal", "written"],
+      "contextLabels": ["risk"],
+      "meanings": [
+        { "language": "ar", "text": "الملاءمة؛ المعقولية" },
+        { "language": "ckb", "text": "گونجاویی گونجاو" },
+        { "language": "en", "text": "appropriateness; reasonableness" },
+        { "language": "fa", "text": "تناسب و منطقی بودن" },
+        { "language": "kmr", "text": "cûreyî; raştevî" },
+        { "language": "pl", "text": "stosowność; rozsądność" },
+        { "language": "ro", "text": "adecvat; rezonabilitate" },
+        { "language": "ru", "text": "соответственность; обоснованность" },
+        { "language": "sq", "text": "përshtatshmëri; arsyetueshmëri" },
+        { "language": "tr", "text": "uygunluk; makuliyet" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Angemessenheit der Überstunden muss im Rahmen der Compliance geprüft werden.",
+          "translations": [
+            { "language": "ar", "text": "مناسبت اضافه‌کار باید در چارچوب انطباق بررسی شود." },
+            { "language": "ckb", "text": "گونجاوی زیادکردنی کاری دەبێت لە کەرتی ئیستەکرنەوەدا بپشکێندرێت." },
+            { "language": "en", "text": "The appropriateness of overtime must be checked as part of compliance." },
+            { "language": "fa", "text": "تناسب اضافه‌کار باید در چارچوب رعایت الزامات بررسی شود." },
+            { "language": "kmr", "text": "Rêjeya saetanên zêde divê li gorî rêjeya compliance têne kontrolkirin." },
+            { "language": "pl", "text": "Stosowność nadgodzin musi być sprawdzona w ramach zgodności." },
+            { "language": "ro", "text": "Adecvarea orelor suplimentare trebuie verificată în cadrul conformității." },
+            { "language": "ru", "text": "Соответствующий характер сверхурочной работы должен проверяться в рамках соответствия." },
+            { "language": "sq", "text": "Përshtatshmëria e orëve shtesë duhet kontrolluar në kuadër të pajtueshmërisë." },
+            { "language": "tr", "text": "Fazla mesainin uygunluğu uygunluk çerçevesinde kontrol edilmelidir." }
+          ]
+        },
+        {
+          "baseText": "Wir haben die Angemessenheit der Datenschutzrichtlinie für externe Partner dokumentiert.",
+          "translations": [
+            { "language": "ar", "text": "تناسب خط‌مشی حفاظت داده‌ها برای شرکای خارجی را مستند کردیم." },
+            { "language": "ckb", "text": "مان لەسەر گونجاویی یاسای پاراستنی داتەکان بۆ هاوکارانی دەرەکی بەرتەری لە کاغەز کرد." },
+            { "language": "en", "text": "We documented the appropriateness of the data protection policy for external partners." },
+            { "language": "fa", "text": "مناسب بودن سیاست حفظ داده‌ها برای شرکای خارجی را ثبت کردیم." },
+            { "language": "kmr", "text": "Em ragihandina xwedîya daneyan ji bo hevkarên derve tomar kir." },
+            { "language": "pl", "text": "Udokumentowaliśmy adekwatność polityki ochrony danych dla partnerów zewnętrznych." },
+            { "language": "ro", "text": "Am documentat adecvarea politicii de protecție a datelor pentru partenerii externi." },
+            { "language": "ru", "text": "Мы зафиксировали обоснованность политики защиты данных для внешних партнеров." },
+            { "language": "sq", "text": "Ne e dokumentuam përshtatshmërinë e politikës së mbrojtjes së të dhënave për partnerët e jashtëm." },
+            { "language": "tr", "text": "Dış ortaklar için veri koruma politikasının uygunluğunu belgeledik." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "angesichts",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Preposition",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "an-ge-sichts",
+      "topics": ["business-communication", "documents-and-administration", "work-and-jobs"],
+      "usageLabels": ["formal", "written"],
+      "contextLabels": ["management"],
+      "meanings": [
+        { "language": "ar", "text": "بالنظر إلى؛ في ضوء" },
+        { "language": "ckb", "text": "لە پێغەیەنی" },
+        { "language": "en", "text": "in view of; considering" },
+        { "language": "fa", "text": "با توجه به" },
+        { "language": "kmr", "text": "li gorî; di bîra" },
+        { "language": "pl", "text": "wobec; biorąc pod uwagę" },
+        { "language": "ro", "text": "în ciuda; având în vedere" },
+        { "language": "ru", "text": "в свете; учитывая" },
+        { "language": "sq", "text": "duke pasur parasysh" },
+        { "language": "tr", "text": "hakkında; nazara alarak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Angesichts der Ausfallquote im letzten Monat haben wir den Schichtplan im Support umgebaut.",
+          "translations": [
+            { "language": "ar", "text": "با توجه به میزان خرابی ماه گذشته، برنامه شیفت پشتیبانی را تغییر دادیم." },
+            { "language": "ckb", "text": "لەگەڵ ڕێژەی شکستی مانگی پێشوو، ئێمە پلانی شەوفەی پشتیوانی نوێ کردەوە." },
+            { "language": "en", "text": "Given last month’s failure rate, we reworked the support shift schedule." },
+            { "language": "fa", "text": "با توجه به نرخ خرابی ماه گذشته، برنامه شیفت پشتیبانی را بازطراحی کردیم." },
+            { "language": "kmr", "text": "Ji ber rêjeya şikestiyê ya meha borî plana şifteya piştgiriya ji nû kir." },
+            { "language": "pl", "text": "Mając na uwadze wskaźnik awarii z zeszłego miesiąca, zmieniliśmy grafik zmian w supportcie." },
+            { "language": "ro", "text": "Având în vedere rata de eșec din luna trecută, am redesenat programul de ture din suport." },
+            { "language": "ru", "text": "Учитывая показатель сбоев прошлого месяца, мы переработали график смен в поддержке." },
+            { "language": "sq", "text": "Duke pasur parasysh normën e dështimeve të muajit të kaluar, rifreskova planin e turneve në support." },
+            { "language": "tr", "text": "Geçen ayki arıza oranı dikkate alınarak destek vardiya planını yeniden düzenledik." }
+          ]
+        },
+        {
+          "baseText": "Angesichts der neuen Sicherheitsvorgaben müssen alle API-Logs sechs Monate länger aufbewahrt werden.",
+          "translations": [
+            { "language": "ar", "text": "با توجه به الزامات امنیتی جدید، همه لاگ‌های API باید شش ماه بیشتر نگهداری شوند." },
+            { "language": "ckb", "text": "لەگەڵ مەرجەیەکی نوێی ئاسایشەوە هەموو API logەکان پێویستە شەش مانگێکی زیاترتریان بپارێزرێت." },
+            { "language": "en", "text": "Considering the new security requirements, all API logs must be retained six months longer." },
+            { "language": "fa", "text": "با توجه به الزامات امنیتی جدید، تمام لاگ‌های API باید شش ماه بیشتر نگهداری شوند." },
+            { "language": "kmr", "text": "Bi bîr û bêtirî xwestinên ewlekarî, hemû logên API pêdivî ye 6 meh zêde dema parastinê." },
+            { "language": "pl", "text": "W świetle nowych wymagań bezpieczeństwa wszystkie logi API trzeba przechowywać o sześć miesięcy dłużej." },
+            { "language": "ro", "text": "Având în vedere cerințele noi de securitate, toate logurile API trebuie păstrate cu șase luni în plus." },
+            { "language": "ru", "text": "С учетом новых требований по безопасности, все API-логи должны храниться на шесть месяцев дольше." },
+            { "language": "sq", "text": "Duke pasur parasysh kërkesat e reja të sigurisë, të gjitha log-et API duhet të ruhen me gjashtë muaj më gjatë." },
+            { "language": "tr", "text": "Yeni güvenlik gereksinimleri nedeniyle tüm API günlükleri altı ay daha uzun saklanmalıdır." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

@@ -1,0 +1,431 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-078",
+  "packageName": "German B2 Generated Batch 078",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        { "language": "de", "name": "Geschäftlich" },
+        { "language": "ar", "name": "تجاري" },
+        { "language": "ckb", "name": "بازرگانی" },
+        { "language": "en", "name": "Business" },
+        { "language": "fa", "name": "تجاری" },
+        { "language": "kmr", "name": "Bazirganî" },
+        { "language": "pl", "name": "Biznesowy" },
+        { "language": "ro", "name": "De afaceri" },
+        { "language": "ru", "name": "Деловой" },
+        { "language": "sq", "name": "Biznesi" },
+        { "language": "tr", "name": "İş" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        { "language": "de", "name": "Formell" },
+        { "language": "ar", "name": "رسمي" },
+        { "language": "ckb", "name": "فەرمی" },
+        { "language": "en", "name": "Formal" },
+        { "language": "fa", "name": "رسمی" },
+        { "language": "kmr", "name": "Fermî" },
+        { "language": "pl", "name": "Formalny" },
+        { "language": "ro", "name": "Formal" },
+        { "language": "ru", "name": "Формальный" },
+        { "language": "sq", "name": "Formal" },
+        { "language": "tr", "name": "Resmi" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        { "language": "de", "name": "Schriftlich" },
+        { "language": "ar", "name": "كتابي" },
+        { "language": "ckb", "name": "نووسراو" },
+        { "language": "en", "name": "Written" },
+        { "language": "fa", "name": "نوشتاری" },
+        { "language": "kmr", "name": "Nivîskî" },
+        { "language": "pl", "name": "Pisemny" },
+        { "language": "ro", "name": "Scris" },
+        { "language": "ru", "name": "Письменный" },
+        { "language": "sq", "name": "I shkruar" },
+        { "language": "tr", "name": "Yazılı" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "der Aufenthaltstitel",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "die Aufenthaltstitel",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "auf-halt-stit-tel",
+      "topics": ["documents-and-administration", "human-resources", "law-and-compliance"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "مدرک/اجازه اقامت" },
+        { "language": "ckb", "text": "بەڵگەی مۆڵەتژییان" },
+        { "language": "en", "text": "residence permit" },
+        { "language": "fa", "text": "اجازه‌نامه اقامت" },
+        { "language": "kmr", "text": "destûra livêşînê" },
+        { "language": "pl", "text": "tytuł pobytu" },
+        { "language": "ro", "text": "autorizație de ședere" },
+        { "language": "ru", "text": "разрешение на пребывание" },
+        { "language": "sq", "text": "të dhëna qeveritare për qëndrimin" },
+        { "language": "tr", "text": "oturma izni" }
+      ],
+      "examples": [
+        {
+          "baseText": "Für die neue Teamentwicklung mussten alle internationalen Mitarbeiter ihren Aufenthaltstitel im HR-Portal aktualisieren.",
+          "translations": [
+            { "language": "ar", "text": "برای توسعه تیم جدید، همه کارکنان بین‌المللی باید مجوز اقامت خود را در پورتال منابع انسانی به‌روزرسانی می‌کردند." },
+            { "language": "ckb", "text": "بۆ گەشتى تیمێکی نوێدا هەموو کارمەندانی نێودەوڵەتی پێویست بوو Aufenthaltstitelیان لە پۆرتاڵی HR نوێ بکەن." },
+            { "language": "en", "text": "For the new team setup, all international employees had to update their residence permit in the HR portal." },
+            { "language": "fa", "text": "برای تشکیل تیم جدید، همه کارکنان بین‌المللی باید اجازه اقامت خود را در پرتال منابع انسانی به‌روزرسانی کنند." },
+            { "language": "kmr", "text": "Ji bo avakirina tîma nû, hemû karûbarên nêzîkûr divê di portalê HR de belgeya dema jiyanê xwe nûve bikin." },
+            { "language": "pl", "text": "Dla nowego składu zespołu wszyscy pracownicy międzynarodowi musieli zaktualizować tytuł pobytu w portalu HR." },
+            { "language": "ro", "text": "Pentru noua constituire a echipei, toți angajații internaționali au trebuit să-și actualizeze titlul de ședere în portalul HR." },
+            { "language": "ru", "text": "Для нового формирования команды всем международным сотрудникам нужно было обновить разрешение на пребывание в HR-портале." },
+            { "language": "sq", "text": "Për ngritjen e ekipit të ri, të gjithë punonjësit ndërkombëtarë duhej të përditësonin titullin e qëndrimit në portalin HR." },
+            { "language": "tr", "text": "Yeni ekip kurulumunda tüm uluslararası çalışanların HR portalında oturma izin belgelerini güncellemesi gerekiyordu." }
+          ]
+        },
+        {
+          "baseText": "Die Zulassungsprüfung im Konsulat wurde verzögert, bis der neue Aufenthaltstitel eingereicht wurde.",
+          "translations": [
+            { "language": "ar", "text": "بررسی مجوز ورود در کنسولگری تا ارائه عنوان اقامت جدید به تأخیر افتاد." },
+            { "language": "ckb", "text": "پشکنینی مۆڵەت لە کۆنسولا تێچووە تا ئەوەی نەرمەکاوی مۆڵەتی نوێ بنێردرێت." },
+            { "language": "en", "text": "The consulate screening was delayed until the new residence permit was submitted." },
+            { "language": "fa", "text": "بررسی کنسولی تا ارائه مجوز اقامت جدید به تعویق افتاد." },
+            { "language": "kmr", "text": "Tekrara konsûlê heta belgeya nû ya jiyanê were şandin dirêj bû." },
+            { "language": "pl", "text": "Weryfikacja w konsulacie została wydłużona do momentu dostarczenia nowego tytułu pobytu." },
+            { "language": "ro", "text": "Controlul consulatului a fost amânat până la depunerea noului titlu de ședere." },
+            { "language": "ru", "text": "Проверка в консульстве была отложена до подачи нового разрешения на пребывание." },
+            { "language": "sq", "text": "Kontrolli në konsullatë u shty më vonë derisa u dorëzua titulli i ri i qëndrimit." },
+            { "language": "tr", "text": "Yeni oturma izni sunulana kadar konsolosluk incelemesi geciktirildi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "auffahren",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "auffahren",
+      "pronunciationIpa": null,
+      "syllableBreak": "auf-fahr-en",
+      "topics": ["transport-and-travel", "work-and-jobs", "business-communication"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "راه‌اندازی/پیکان گرفتن (اتفاقی)؛ به‌راه انداختن" },
+        { "language": "ckb", "text": "دەستپێکردن" },
+        { "language": "en", "text": "to start up; to set in motion" },
+        { "language": "fa", "text": "راه‌اندازی کردن؛ به حرکت درآوردن" },
+        { "language": "kmr", "text": "dest pê kirin; çalak kirin" },
+        { "language": "pl", "text": "uruchamiać; wdrażać" },
+        { "language": "ro", "text": "a porni; a lansa" },
+        { "language": "ru", "text": "запускать; приводить в движение" },
+        { "language": "sq", "text": "të nisë; të vërë në punë" },
+        { "language": "tr", "text": "çalıştırmak; devreye almak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir haben den neuen Testserver gestern um 6 Uhr auffahren lassen, um nachts Lasttests zu fahren.",
+          "translations": [
+            { "language": "ar", "text": "دیروز سرور جدید تست را ساعت ۶ راه‌اندازی کردیم تا تست فشار شبانه اجرا شود." },
+            { "language": "ckb", "text": "ئێمە بەڕێوەبردنی سێڕڤەری تازەی تاقیکردنەوە کەین لە 6ی ئێست وەکو هەواڵەی بارکاری." },
+            { "language": "en", "text": "We started the new test server at 6 PM yesterday to run night load tests." },
+            { "language": "fa", "text": "دیروز ساعت ۶ عصر سرور جدید تست را برای اجرای تست‌های بار شبانه راه‌اندازی کردیم." },
+            { "language": "kmr", "text": "Em serverê testê ya nû di şeve de saet 6ê start kirin da bimeşîne li ser bardanên şevê." },
+            { "language": "pl", "text": "Wczoraj uruchomiliśmy nowy serwer testowy o 18:00, by przeprowadzić nocne testy obciążeniowe." },
+            { "language": "ro", "text": "Ieri am pus în funcțiune noul server de test la ora 18:00 pentru teste de sarcină pe timpul nopții." },
+            { "language": "ru", "text": "Вчера мы запустили новый тестовый сервер в 18:00, чтобы провести ночные нагрузочные тесты." },
+            { "language": "sq", "text": "Dje në orën 18 kemi aktivizuar serverin e ri të testimit për teste ngarkese natën." },
+            { "language": "tr", "text": "Dünya saat 18:00'de yeni test sunucusunu gece yük testleri için çalıştırdık." }
+          ]
+        },
+        {
+          "baseText": "Beim Umbau der Halle mussten die Geräte vor dem ersten Schichtbeginn nicht aufgefahren werden.",
+          "translations": [
+            { "language": "ar", "text": "در بازسازی سالن، دستگاه‌ها قبل از شروع شیفت اول نباید به کار گرفته شوند." },
+            { "language": "ckb", "text": "لە کاتی نوێکردنەوەی هەولەکە، ئامێرەکان پێش یەکەم شێفتمی کار ناکردنەوە." },
+            { "language": "en", "text": "During hall renovation, the machines did not need to be started before the first shift." },
+            { "language": "fa", "text": "در بازسازی سالن، دستگاه‌ها نیازی به راه‌اندازی قبل از شروع شیفت اول نداشتند." },
+            { "language": "kmr", "text": "Di nav çêkirina hallê de amûrên xebatê pêwîstîya pêşî şifta yekem ne heya." },
+            { "language": "pl", "text": "Podczas przebudowy hali maszyny nie musiały być uruchamiane przed początkiem pierwszej zmiany." },
+            { "language": "ro", "text": "În timpul renovării halei, mașinile nu trebuiau pornite înainte de începutul primei ture." },
+            { "language": "ru", "text": "Во время реконструкции hali urządzenia nie musiały запускаться до начала первой смены." },
+            { "language": "sq", "text": "Gjatë rinovimit të halës, pajisjet nuk duheshin të futeshin në punë para fillimit të turnit të parë." },
+            { "language": "tr", "text": "Salonun yenilenmesi sırasında makineler ilk vardiya başlamadan çalıştırılmak zorunda değildi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "auffangen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "auffangen",
+      "pronunciationIpa": null,
+      "syllableBreak": "auf-fang-en",
+      "topics": ["customer-service", "quality-and-risk", "work-and-jobs"],
+      "usageLabels": ["business", "written", "formal"],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "گرفتن/کنترل کردن (ریسک/خطا)" },
+        { "language": "ckb", "text": "ئامادەبوون بۆ وەستاندن" },
+        { "language": "en", "text": "to catch; to intercept; to absorb" },
+        { "language": "fa", "text": "دریافت کردن/گیر انداختن/جبران کردن" },
+        { "language": "kmr", "text": "girtin; berdan" },
+        { "language": "pl", "text": "przechwytywać; amortyzować; przejąć" },
+        { "language": "ro", "text": "a prinde; a acoperi" },
+        { "language": "ru", "text": "перехватывать; сглаживать/смягчать" },
+        { "language": "sq", "text": "të kapë; të përthithë" },
+        { "language": "tr", "text": "yakalamak; telafi etmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Support-Team hat das Defekt-Pattern im Monitoring frühzeitig aufgefangen.",
+          "translations": [
+            { "language": "ar", "text": "تیم پشتیبانی الگوی خطا را در مانیتورینگ به‌موقع گرفت." },
+            { "language": "ckb", "text": "تیمی پشتگیری شێوەیەکی هەڵە لە مانیترەنگدا لە ماوەی کەمدا دەستگرت." },
+            { "language": "en", "text": "The support team intercepted the failure pattern in monitoring early." },
+            { "language": "fa", "text": "تیم پشتیبانی الگوی خرابی را در پایش به‌موقع دریافت و مدیریت کرد." },
+            { "language": "kmr", "text": "Tîma piştgiriyê şablona xerabenin di monitoringê de li ser xeta paşî girt." },
+            { "language": "pl", "text": "Zespół wsparcia wcześnie przechwycił wzorzec awarii w monitoringu." },
+            { "language": "ro", "text": "Echipa de suport a identificat devreme un pattern de defect prin monitorizare." },
+            { "language": "ru", "text": "Команда поддержки вовремя перехватила шаблон ошибки в мониторинге." },
+            { "language": "sq", "text": "Ekipi i mbështetjes e kap me kohë modelin e gabimit gjatë monitorimit." },
+            { "language": "tr", "text": "Destek ekibi, izleme sırasında hata desenini erken yakaladı." }
+          ]
+        },
+        {
+          "baseText": "Die Mannschaft hat am Nachmittag die Rückfragen der Kunden abgefangen, bevor sie eskalierten.",
+          "translations": [
+            { "language": "ar", "text": "تیم در بعدازظهر سوالات پیگیری مشتری را قبل از تبدیل به تشدید، پاسخ داد." },
+            { "language": "ckb", "text": "تیمی ڕۆژانە پەیامەکانی کڕیاران لە دووپێشتر گرت بۆ ئیستاویشکردن." },
+            { "language": "en", "text": "The team handled customer follow-up questions in the afternoon before they escalated." },
+            { "language": "fa", "text": "تیم بعدازظهر پرسش‌های پیگیری مشتری را قبل از اینکه تشدید شوند جذب و مدیریت کرد." },
+            { "language": "kmr", "text": "Ekipa di nîvrojê de pirsên peyveya xerîdar bi xetmê girt, berî ku pêşve bibin." },
+            { "language": "pl", "text": "Zespół przejął pytania uzupełniające klientów po południu, zanim weszły na wyższy poziom eskalacji." },
+            { "language": "ro", "text": "Echipa a preluat întrebările de follow-up ale clienților după-amiază înainte de a se escalada." },
+            { "language": "ru", "text": "Команда перехватила дополнительные вопросы клиентов днем, прежде чем они перешли в этап эскалации." },
+            { "language": "sq", "text": "Ekipi e trajtoi pyetjet e mëtejshme të klientëve pasdite para se të eskalonin." },
+            { "language": "tr", "text": "Takım, müşterilerin takip sorularını büyümeden önce öğleden sonra ele aldı." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "aufblasen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "aufblasen",
+      "pronunciationIpa": null,
+      "syllableBreak": "auf-blas-en",
+      "topics": ["finance-and-accounting", "quality-and-risk", "work-and-jobs"],
+      "usageLabels": ["business", "written", "formal"],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "بزرگ‌نمایی کردن؛ باد کردن/افزایش بیش از حد" },
+        { "language": "ckb", "text": "زیاد کردنی زۆرەیەک/بەروارەکردن" },
+        { "language": "en", "text": "to inflate; to overstate" },
+        { "language": "fa", "text": "بزرگ‌نمایی کردن؛ باد کردن" },
+        { "language": "kmr", "text": "qewimandin; zêdekirin bi zor" },
+        { "language": "pl", "text": "nadymać; wyolbrzymiać" },
+        { "language": "ro", "text": "a umfla; a exagera" },
+        { "language": "ru", "text": "раздувать; преувеличивать" },
+        { "language": "sq", "text": "të fryjë; të mbipërshkruajë" },
+        { "language": "tr", "text": "şişirmek; abartmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir dürfen im Bericht die Ausfallzeiten nicht aufblähen, sondern nur mit belegbaren Zahlen arbeiten.",
+          "translations": [
+            { "language": "ar", "text": "در گزارش نباید زمان توقف را بزرگ‌نمایی کنیم، فقط با اعداد قابل‌بررسی کار کنیم." },
+            { "language": "ckb", "text": "لە ڕاپۆرتدا ناتوانین کاتی خراببوونەکان زیاتربەندی بکه‌ین، بە ژمارە باوەڕپێکراو کاربکەین." },
+            { "language": "en", "text": "In the report we must not inflate downtime figures, only use verifiable numbers." },
+            { "language": "fa", "text": "در گزارش نباید زمان توقف را بزرگ‌نمایی کنیم و فقط با اعداد قابل راستی‌آزمایی کار کنیم." },
+            { "language": "kmr", "text": "Di raporê de naxwazî demên rawestandê bi bilindbûna xeyalî xurt bikin, tenê bi hejmarên piştrast bikar bîn." },
+            { "language": "pl", "text": "W raporcie nie możemy zawyżać czasu przestoju, powinniśmy operować tylko na danych udokumentowanych." },
+            { "language": "ro", "text": "În raport nu avem voie să umfli timpul de întrerupere; trebuie să folosim doar cifre verificabile." },
+            { "language": "ru", "text": "В отчете мы не можем раздувать показатели простоев; используем только проверяемые данные." },
+            { "language": "sq", "text": "Në raport nuk duhet të fryjmë kohët e pauzës, por të punojmë vetëm me shifra të verifikueshme." },
+            { "language": "tr", "text": "Raporlarda duruş sürelerini abartmamalı, sadece doğrulanabilir sayılarla çalışmalıyız." }
+          ]
+        },
+        {
+          "baseText": "Bitte auf die neuen SLA-Grenzwerte achten, damit niemand den Aufwand künstlich aufbläst.",
+          "translations": [
+            { "language": "ar", "text": "لطفا به سقف SLA جدید توجه کنید تا هیچ‌کس تلاش را مصنوعی بزرگ‌نمایی نکند." },
+            { "language": "ckb", "text": "تکایە سەرەکیە نوێی SLA بڕۆ و هەچ کەس ناکەون بڕی هەوڵەکان زیاد بکات." },
+            { "language": "en", "text": "Please stick to the new SLA thresholds so no one artificially inflates effort." },
+            { "language": "fa", "text": "لطفاً به آستانه‌های جدید SLA توجه کنید تا کسی حجم تلاش را به‌صورت غیرواقعی بالا نبرد." },
+            { "language": "kmr", "text": "Ji kerema xwe neyn eynokên nû yên SLA biparêze, ne bibe ku kesêk eforê bi şevket bigehîne." },
+            { "language": "pl", "text": "Proszę pilnować nowych progów SLA, aby nikt nie zawyżał sztucznie nakładu pracy." },
+            { "language": "ro", "text": "Vă rugăm respectați noile praguri SLA, astfel încât nimeni să nu exagereze artificial efortul." },
+            { "language": "ru", "text": "Пожалуйста, соблюдайте новые пороги SLA, чтобы никто искусственно не раздувал объем затраченной работы." },
+            { "language": "sq", "text": "Ju lutemi ndiqni pragjet e reja SLA që askush të mos i fryjë artificialisht punët." },
+            { "language": "tr", "text": "Kimsenin eforu olduğunda abartmaması için yeni SLA eşiklerine uyun." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "aufbrechen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "aufbrechen",
+      "pronunciationIpa": null,
+      "syllableBreak": "auf-brech-en",
+      "topics": ["documents-and-administration", "work-and-jobs", "public-services"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "باز کردن/آغاز کردن یک فرآیند" },
+        { "language": "ckb", "text": "کردنی کەرەسا، دەستپێکردن" },
+        { "language": "en", "text": "to break open; to begin (a process/period)" },
+        { "language": "fa", "text": "باز کردن؛ آغاز کردن" },
+        { "language": "kmr", "text": "vekirin; dest pê kirin" },
+        { "language": "pl", "text": "otwierać; rozpoczynać" },
+        { "language": "ro", "text": "a deschide; a începe" },
+        { "language": "ru", "text": "разбирать/открывать; начинать" },
+        { "language": "sq", "text": "ta hapë; të nisë" },
+        { "language": "tr", "text": "kırmak/açmak; başlatmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der neue Budgetzyklus wurde im Finanzgremium offiziell aufgebrochen.",
+          "translations": [
+            { "language": "ar", "text": "چرخه بودجه جدید به‌صورت رسمی آغاز شد." },
+            { "language": "ckb", "text": "چرخه‌ی نوێی مالی بە شێوەیەکی فەرمی ڕابرد." },
+            { "language": "en", "text": "The new budget cycle was officially kicked off." },
+            { "language": "fa", "text": "چرخه بودجه جدید به صورت رسمی آغاز شد." },
+            { "language": "kmr", "text": "Dewrê budgerta nû bi awayek fermî hate destpê kirin." },
+            { "language": "pl", "text": "Nowy cykl budżetowy został oficjalnie otwarty." },
+            { "language": "ro", "text": "Noul ciclu bugetar a fost demarat oficial." },
+            { "language": "ru", "text": "Новый бюджетный цикл официально начат." },
+            { "language": "sq", "text": "Cikli i ri i buxhetit u nisi në mënyrë zyrtare." },
+            { "language": "tr", "text": "Yeni bütçe döngüsü resmen başlatıldı." }
+          ]
+        },
+        {
+          "baseText": "Wir mussten die versiegelte Verpackung aufbrechen, bevor wir den Vorfall rekonstruieren konnten.",
+          "translations": [
+            { "language": "ar", "text": "برای بازسازی حادثه لازم بود بسته‌بندی مهر و موم‌شده را باز می‌کردیم." },
+            { "language": "ckb", "text": "بۆ درووستکردنی ڕوویدا، دەبێت پاکەی تۆماری گرتووە کەیان کرد." },
+            { "language": "en", "text": "We had to break open the sealed packaging before we could reconstruct the incident." },
+            { "language": "fa", "text": "برای بازسازی حادثه مجبور شدیم بسته‌بندی مهر و موم‌شده را باز کنیم." },
+            { "language": "kmr", "text": "Pêşî ku me bikarbarî çewtiyê vegerîn, pêdivî bû pakêtên qelandî veke." },
+            { "language": "pl", "text": "Musieliśmy otworzyć zaplombowane opakowanie, zanim mogliśmy odtworzyć zdarzenie." },
+            { "language": "ro", "text": "A trebuit să deschidem ambalajul sigilat înainte de a putea reconstrui incidentul." },
+            { "language": "ru", "text": "Перед реконструкцией инцидента нам пришлось вскрыть опломбированную упаковку." },
+            { "language": "sq", "text": "Duhej të hapnim paketimin e mbyllur me vulë para se të mund të rindërtonim ngjarjen." },
+            { "language": "tr", "text": "Olayı yeniden canlandırabilmek için mühürlü ambalajı açmak zorunda kaldık." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "auffinden",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "auffinden",
+      "pronunciationIpa": null,
+      "syllableBreak": "auf-fin-den",
+      "topics": ["documents-and-administration", "work-and-jobs", "technology-and-it"],
+      "usageLabels": ["business", "written", "formal"],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "پیدا کردن/شناسایی کردن" },
+        { "language": "ckb", "text": "دۆزینەوە" },
+        { "language": "en", "text": "to find; to locate" },
+        { "language": "fa", "text": "پیدا کردن؛ ردیابی کردن" },
+        { "language": "kmr", "text": "dîtin; dîtin û dîtkirin" },
+        { "language": "pl", "text": "znaleźć; lokalizować" },
+        { "language": "ro", "text": "a găsi; a identifica" },
+        { "language": "ru", "text": "находить; обнаруживать" },
+        { "language": "sq", "text": "ta gjejë; të lokalizojë" },
+        { "language": "tr", "text": "bulmak; tespit etmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Vertrag wurde im digitalen Archiv nicht auffinden, deshalb haben wir den Scan im Backup gesucht.",
+          "translations": [
+            { "language": "ar", "text": "قرارداد را در بایگانی دیجیتال پیدا نکردیم و به‌همین دلیل اسکن آن را در پشتیبان جستجو کردیم." },
+            { "language": "ckb", "text": "پەیوەندیەکە لە ئارشیفی ئەلیکترۆنییەوە نەدۆزرایەوە، بۆیە لە بەرزەوە ڕیزبووین." },
+            { "language": "en", "text": "The contract could not be found in the digital archive, so we searched the backup scan." },
+            { "language": "fa", "text": "قرارداد در بایگانی دیجیتال پیدا نشد، بنابراین اسکن پشتیبان را جست‌وجو کردیم." },
+            { "language": "kmr", "text": "Peymana di arşîva dijîtal de nayê dîtin, ji ber vêyê skana backupê lêgerî." },
+            { "language": "pl", "text": "Nie mogliśmy znaleźć umowy w archiwum cyfrowym, więc przeszukaliśmy skan z backupu." },
+            { "language": "ro", "text": "Nu am găsit contractul în arhiva digitală, așa că am căutat scanarea din backup." },
+            { "language": "ru", "text": "Договор не удалось найти в цифровом архиве, поэтому мы искали скан в резервной копии." },
+            { "language": "sq", "text": "Marrëveshja nuk u gjet në arkivin dixhital, kështu kërkuam skedën nga backup-i." },
+            { "language": "tr", "text": "Sözleşme dijital arşivde bulunamadı, bu yüzden yedeğe alınmış taramayı aradık." }
+          ]
+        },
+        {
+          "baseText": "Während der Außendienstreise konnte das Team die verlorene Signaturkarte im Gebäude auffinden.",
+          "translations": [
+            { "language": "ar", "text": "در طی سفر میدانی تیم موفق شد کارت امضا از دست رفته را در ساختمان پیدا کند." },
+            { "language": "ckb", "text": "لە کاتی گەشتەوەی بەرمەندەیەکی دەرەکی تیمی توانایەتی کرد بۆ دیتنی کارتە لەدەستچووە لە بینایەتی." },
+            { "language": "en", "text": "During the field trip, the team was able to locate the missing signature card in the building." },
+            { "language": "fa", "text": "در طول سفر میدانی، تیم توانست کارت امضای گم‌شده را در ساختمان پیدا کند." },
+            { "language": "kmr", "text": "Di rêzgirtina derve de tîm bi ser ket gotina kartê nîşankirinê ya wenda di avahiyê de dît." },
+            { "language": "pl", "text": "Podczas wyjazdu terenowego zespół zlokalizował zagubioną kartę podpisu w budynku." },
+            { "language": "ro", "text": "În timpul deplasării pe teren, echipa a reușit să găsească cardul de semnături dispărut în clădire." },
+            { "language": "ru", "text": "Во время выездного визита команда нашла потерянную карточку podpisu в здании." },
+            { "language": "sq", "text": "Gjatë udhëtimit në terren ekipi arriti ta gjejë kartën e humbur të nënshkrimit në ndërtesë." },
+            { "language": "tr", "text": "Saha gezisi sırasında ekip, kayıp imza kartını binada buldu." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

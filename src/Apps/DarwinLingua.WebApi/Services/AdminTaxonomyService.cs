@@ -500,9 +500,14 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
                 continue;
             }
 
+            LanguageCode languageCode = LanguageCode.From(localization.LanguageCode);
+            Guid localizationId = topic.Localizations.Any(item => item.LanguageCode == languageCode)
+                ? Guid.Empty
+                : Guid.NewGuid();
+
             topic.AddOrUpdateLocalization(
-                Guid.NewGuid(),
-                LanguageCode.From(localization.LanguageCode),
+                localizationId,
+                languageCode,
                 localization.DisplayName,
                 now);
         }
@@ -622,9 +627,14 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
                 continue;
             }
 
+            LanguageCode languageCode = LanguageCode.From(localization.LanguageCode);
+            Guid localizationId = label.Localizations.Any(item => item.LanguageCode == languageCode)
+                ? Guid.Empty
+                : Guid.NewGuid();
+
             label.AddOrUpdateLocalization(
-                Guid.NewGuid(),
-                LanguageCode.From(localization.LanguageCode),
+                localizationId,
+                languageCode,
                 localization.DisplayName,
                 now);
         }

@@ -1,0 +1,569 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-019",
+  "packageName": "German B2 Generated Batch 019",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        { "language": "de", "name": "Am Arbeitsplatz" },
+        { "language": "ar", "name": "في مكان العمل" },
+        { "language": "ckb", "name": "لە شوێنی کار" },
+        { "language": "en", "name": "Workplace" },
+        { "language": "fa", "name": "محیط کار" },
+        { "language": "kmr", "name": "Li cihê kar" },
+        { "language": "pl", "name": "W miejscu pracy" },
+        { "language": "ro", "name": "La locul de muncă" },
+        { "language": "ru", "name": "На рабочем месте" },
+        { "language": "sq", "name": "Në vendin e punës" },
+        { "language": "tr", "name": "İş yeri" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        { "language": "de", "name": "Geschäftlich" },
+        { "language": "ar", "name": "تجاري" },
+        { "language": "ckb", "name": "بازرگانی" },
+        { "language": "en", "name": "Business" },
+        { "language": "fa", "name": "تجاری" },
+        { "language": "kmr", "name": "Bazirganî" },
+        { "language": "pl", "name": "Biznesowy" },
+        { "language": "ro", "name": "De afaceri" },
+        { "language": "ru", "name": "Деловой" },
+        { "language": "sq", "name": "Biznesi" },
+        { "language": "tr", "name": "İş" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        { "language": "de", "name": "Schriftlich" },
+        { "language": "ar", "name": "كتابي" },
+        { "language": "ckb", "name": "نووسراو" },
+        { "language": "en", "name": "Written" },
+        { "language": "fa", "name": "نوشتاری" },
+        { "language": "kmr", "name": "Nivîskî" },
+        { "language": "pl", "name": "Pisemny" },
+        { "language": "ro", "name": "Scris" },
+        { "language": "ru", "name": "Письменный" },
+        { "language": "sq", "name": "I shkruar" },
+        { "language": "tr", "name": "Yazılı" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        { "language": "de", "name": "Technisch" },
+        { "language": "ar", "name": "تقني" },
+        { "language": "ckb", "name": "تەکنیکی" },
+        { "language": "en", "name": "Technical" },
+        { "language": "fa", "name": "فنی" },
+        { "language": "kmr", "name": "Teknîkî" },
+        { "language": "pl", "name": "Techniczny" },
+        { "language": "ro", "name": "Tehnic" },
+        { "language": "ru", "name": "Технический" },
+        { "language": "sq", "name": "Teknik" },
+        { "language": "tr", "name": "Teknik" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "it",
+      "displayName": "IT",
+      "sortOrder": 1140,
+      "localizations": [
+        { "language": "de", "name": "IT" },
+        { "language": "ar", "name": "تقنية المعلومات" },
+        { "language": "ckb", "name": "IT" },
+        { "language": "en", "name": "IT" },
+        { "language": "fa", "name": "IT" },
+        { "language": "kmr", "name": "IT" },
+        { "language": "pl", "name": "IT" },
+        { "language": "ro", "name": "IT" },
+        { "language": "ru", "name": "ИТ" },
+        { "language": "sq", "name": "IT" },
+        { "language": "tr", "name": "BT" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        { "language": "de", "name": "Support" },
+        { "language": "ar", "name": "الدعم" },
+        { "language": "ckb", "name": "پاڵپشتی" },
+        { "language": "en", "name": "Support" },
+        { "language": "fa", "name": "پشتیبانی" },
+        { "language": "kmr", "name": "Piştgirî" },
+        { "language": "pl", "name": "Wsparcie" },
+        { "language": "ro", "name": "Suport" },
+        { "language": "ru", "name": "Поддержка" },
+        { "language": "sq", "name": "Mbështetje" },
+        { "language": "tr", "name": "Destek" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "administration",
+      "displayName": "Administration",
+      "sortOrder": 1220,
+      "localizations": [
+        { "language": "de", "name": "Verwaltung" },
+        { "language": "ar", "name": "الإدارة" },
+        { "language": "ckb", "name": "کارگێڕی" },
+        { "language": "en", "name": "Administration" },
+        { "language": "fa", "name": "اداره" },
+        { "language": "kmr", "name": "Rêveberî" },
+        { "language": "pl", "name": "Administracja" },
+        { "language": "ro", "name": "Administrație" },
+        { "language": "ru", "name": "Администрирование" },
+        { "language": "sq", "name": "Administratë" },
+        { "language": "tr", "name": "İdare" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Kundenservice" },
+        { "language": "ar", "name": "خدمة العملاء" },
+        { "language": "ckb", "name": "خزمەتی کڕیار" },
+        { "language": "en", "name": "Customer Service" },
+        { "language": "fa", "name": "خدمات مشتریان" },
+        { "language": "kmr", "name": "Xizmeta xerîdar" },
+        { "language": "pl", "name": "Obsługa klienta" },
+        { "language": "ro", "name": "Serviciu clienți" },
+        { "language": "ru", "name": "Клиентский сервис" },
+        { "language": "sq", "name": "Shërbim klienti" },
+        { "language": "tr", "name": "Müşteri hizmetleri" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "anfahren",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anfahren",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-fah-ren",
+      "topics": ["work-and-jobs", "technology-and-it"],
+      "usageLabels": ["workplace", "technical"],
+      "contextLabels": ["it", "support"],
+      "grammarNotes": ["separable verb", "intransitive in vielen Kontexten"],
+      "collocations": [
+        { "text": "Der Server fährt nicht an", "meaning": "the server fails to start" },
+        { "text": "Die Maschine fährt an", "meaning": "the machine starts"
+        }
+      ],
+      "wordFamilies": [
+        { "lemma": "starten", "relationLabel": "verb", "note": "related synonym in technical context" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "انطلاقة/بدء التشغيل" },
+        { "language": "ckb", "text": "دەستپێکردنەوە، لێدانەوە" },
+        { "language": "en", "text": "to start up; to come into motion" },
+        { "language": "fa", "text": "راه‌اندازی; به حرکت در آمدن" },
+        { "language": "kmr", "text": "destpêk kirin; xebitînê dest pê kirin" },
+        { "language": "pl", "text": "uruchamiać się; rozpoczynać ruch" },
+        { "language": "ro", "text": "a porni; a intra în mișcare" },
+        { "language": "ru", "text": "запускаться; тронуться" },
+        { "language": "sq", "text": "të ndizet; të nisë" },
+        { "language": "tr", "text": "çalışmaya başlamak; harekete geçmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der neue Build-Server fuhr nach dem Patch gestern nicht an, deshalb haben wir zuerst die Netzwerkkonfiguration geprüft.",
+          "translations": [
+            { "language": "ar", "text": "پس از به‌روزرسانی، سرور ساخت قدیمی روشن نشد و ابتدا تنظیمات شبکه را بررسی کردیم." },
+            { "language": "ckb", "text": "دوای لێدانی ڕاوانە، ڕەوشەی بنایەتییەکە ڕوو نەناگەشت، بۆیە یەکەمجار ڕێکخستنی تۆڕەکە پشکنینا." },
+            { "language": "en", "text": "After the patch, the new build server did not start, so we first checked the network configuration." },
+            { "language": "fa", "text": "پس از پچ، سرور ساخت جدید روشن نشد؛ بنابراین ابتدا پیکربندی شبکه را بررسی کردیم." },
+            { "language": "kmr", "text": "Pa pêçandina patchê, servera nû ya buildê neketew, ji ber vê yekê yekemcar pêveka torê kontrol kirin." },
+            { "language": "pl", "text": "Po patchu nowy serwer buildowy nie wystartował, więc najpierw sprawdziliśmy konfigurację sieci." },
+            { "language": "ro", "text": "După patch, noul server de build nu s-a pornit, așa că am verificat mai întâi configurația de rețea." },
+            { "language": "ru", "text": "После обновления новый сервер сборки не запустился, поэтому мы сначала проверили настройки сети." },
+            { "language": "sq", "text": "Pas patch-it, serveri i ri i ndërtimit nuk u ndez, prandaj së pari kontrolluam konfigurimin e rrjetit." },
+            { "language": "tr", "text": "Yama sonrası yeni build sunucusu çalışmaya başlamadı, bu yüzden önce ağ ayarlarını kontrol ettik." }
+          ]
+        },
+        {
+          "baseText": "Am Freitag fuhr der Außendienstbus langsam an die Laderampe an, damit die Lieferung ohne Stopp abgegeben werden konnte.",
+          "translations": [
+            { "language": "ar", "text": "جمعه، اتجهت حافلة المبيعات ببطء نحو منصة التحميل حتى يمكن تسليم الشحنة بدون توقف." },
+            { "language": "ckb", "text": "لە هەینی، ئۆتۆمبێلەکەی بەرەو بنەمای بارەکە هێواش هاتەوە تا دابەشەکە بەبێ وەستاندن وەرگرتن بدرێت." },
+            { "language": "en", "text": "On Friday the field-service van approached the loading bay slowly so the delivery could be dropped off safely." },
+            { "language": "fa", "text": "جمعه، ون خدمات میدانی آرام به سکوی بارگیری رسید تا تحویل بدون توقف انجام شود." },
+            { "language": "kmr", "text": "Di pañjşemê de fîraneya xizmeta zeviyê bi hêdî hate ser berxwaçê barkirinê da barkirinî bi ewle re pêk bête." },
+            { "language": "pl", "text": "W piątek bus serwisowy powoli podjechał pod dok załadunku, aby dostawa mogła zostać oddana bez zatrzymania." },
+            { "language": "ro", "text": "Vineri, furgoneta de service a venit lent la doc de încărcare pentru ca livrarea să poată fi predată fără oprire." },
+            { "language": "ru", "text": "В пятницу выездной фургон медленно подъехал к зоне разгрузки, чтобы доставку можно было передать без остановки." },
+            { "language": "sq", "text": "E premte, kamioni i shërbimit të terrenit u afrua ngadalë në sheshin e ngarkimit që dërgesa të mund të dorëzohej pa bllokuar." },
+            { "language": "tr", "text": "Cuma günü saha servisi aracı, teslimatın aksamaya düşmeden yapılabilmesi için yükleme rampasına yavaşça yanaştı." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anfallen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anfallen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-fal-len",
+      "topics": ["finance-and-accounting", "business-communication", "work-and-jobs"],
+      "usageLabels": ["business", "written", "workplace"],
+      "contextLabels": ["administration", "support"],
+      "grammarNotes": ["intransitive or transitive construction with 'anfallen' + Dativ in impersonal form"],
+      "collocations": [
+        { "text": "Kosten fallen an", "meaning": "costs arise" },
+        { "text": "es fallen zusätzliche Arbeiten an", "meaning": "additional tasks arise"
+        }
+      ],
+      "wordFamilies": [
+        { "lemma": "anfallen (intransitiv)", "relationLabel": "verb", "note": null }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "تتحمل/تحدث (تكلفة أو مهمة)" },
+        { "language": "ckb", "text": "دروستبوون/پەیدا دەبێت" },
+        { "language": "en", "text": "to incur; to arise" },
+        { "language": "fa", "text": "تحمیل شدن؛ بر عهده افتادن" },
+        { "language": "kmr", "text": "hejmartin, pêk anîn; derkevin" },
+        { "language": "pl", "text": "pojawiać się; powstawać" },
+        { "language": "ro", "text": "a apărea; a reieși (cheltuieli)" },
+        { "language": "ru", "text": "возникать; падать (на счёт)" },
+        { "language": "sq", "text": "të krijohen; të ngelen" },
+        { "language": "tr", "text": "doğmak; çıkmak (masraf)" }
+      ],
+      "examples": [
+        {
+          "baseText": "Durch den ungeplanten Ausfall fallen dem Projekt zusätzliche Ausgaben für Ersatzteile an.",
+          "translations": [
+            { "language": "ar", "text": "به‌خاطر خرابی پیش‌بینی‌نشده، هزینه‌های اضافی برای قطعات جایگزین بر پروژه تحمیل می‌شود." },
+            { "language": "ckb", "text": "بۆ سەبەبی شکستی لە نەخۆشیە نییە، دەستکاری زیادەیەک بۆ پێوەردەران پەیوەندیدا دەهێنرێت." },
+            { "language": "en", "text": "Due to the unplanned outage, additional costs for spare parts are incurred by the project." },
+            { "language": "fa", "text": "به‌دلیل خاموشی غیرمنتظره، هزینه‌های اضافی برای قطعات یدکی به پروژه تحمیل می‌شود." },
+            { "language": "kmr", "text": "Ji ber qezayêkî neplaniyê de, xerçên zêde yên li benda parçeyên cîhê li projeyê dibe." },
+            { "language": "pl", "text": "Z powodu nieplanowanego przestoju projektowi obciążają dodatkowe koszty części zamiennych." },
+            { "language": "ro", "text": "Din cauza întreruperii neplanificate, proiectului îi revin cheltuieli suplimentare pentru piese de schimb." },
+            { "language": "ru", "text": "Из-за непредвиденного простоя проекту будут понесены дополнительные расходы на запчасти." },
+            { "language": "sq", "text": "Për shkak të ndërprerjes së papritur, projektit i bien shtesë shpenzimet për pjesë rezervë." },
+            { "language": "tr", "text": "Öngörülmeyen duraklama nedeniyle proje için yedek parça maliyetleri ortaya çıkıyor." }
+          ]
+        },
+        {
+          "baseText": "Im Ticketsystem fallen täglich dreißig neue Support-Fälle an.",
+          "translations": [
+            { "language": "ar", "text": "در سامانه‌ی تیکت، روزانه سی مورد درخواست پشتیبانی جدید ایجاد می‌شود." },
+            { "language": "ckb", "text": "لە سیستەمی تیکتاندەدا هەروەها روزانە سی کەیسێکی نوێی پشتگیری پەیدا دەبێت." },
+            { "language": "en", "text": "Every day, about thirty new support cases arise in the ticketing system." },
+            { "language": "fa", "text": "در سامانه تیکت روزانه حدود سی مورد جدید پشتیبانی ثبت می‌شود." },
+            { "language": "kmr", "text": "Di pergala tîketê de her roj sêdeyekî kesekî nû yên piştgiriyê têne afirandin." },
+            { "language": "pl", "text": "W systemie zgłoszeń codziennie pojawia się około trzydziestu nowych spraw wsparcia." },
+            { "language": "ro", "text": "În sistemul de tichete apar zilnic aproximativ treizeci de cazuri noi de suport." },
+            { "language": "ru", "text": "В системе тикетов ежедневно возникает около тридцати новых обращений в поддержку." },
+            { "language": "sq", "text": "Në sistemin e biletave, çdo ditë shfaqen rreth tridhjetë raste të reja supporti." },
+            { "language": "tr", "text": "Bilet sisteminde her gün yaklaşık otuz yeni destek vakası oluşuyor." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "das Angebot",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "die Angebote",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "An-ge-bot",
+      "topics": ["business-communication", "work-and-jobs", "documents-and-administration"],
+      "usageLabels": ["business", "written", "workplace"],
+      "contextLabels": ["customer-service", "administration"],
+      "grammarNotes": ["neuter noun", "can be singular offer/proposal or quotation"],
+      "collocations": [
+        { "text": "ein Angebot einreichen", "meaning": "to submit an offer" },
+        { "text": "das Angebot annehmen", "meaning": "to accept an offer" }
+      ],
+      "wordFamilies": [
+        { "lemma": "anbieten", "relationLabel": "verb", "note": "related verb form" }
+      ],
+      "relations": [
+        { "kind": "Related", "lemma": "die Angebotsanfrage", "note": "related noun phrase used in sales"
+        }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "عرض؛ پیشنهاد" },
+        { "language": "ckb", "text": "پێشنیار" },
+        { "language": "en", "text": "offer; quotation" },
+        { "language": "fa", "text": "پیشنهاد؛ مزیت" },
+        { "language": "kmr", "text": "pêşniyar; pêşgotin" },
+        { "language": "pl", "text": "oferta; wycena" },
+        { "language": "ro", "text": "ofertă; propunere" },
+        { "language": "ru", "text": "предложение; предложение цены" },
+        { "language": "sq", "text": "ofertë; propozim" },
+        { "language": "tr", "text": "teklif; teklifname" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die IT-Abteilung hat gestern ein neues SaaS-Angebot mit 12-Monats-Paket eingereicht.",
+          "translations": [
+            { "language": "ar", "text": "امروز دپارتمان IT یک پیشنهاد جدید SaaS با بسته 12 ماهه ارائه داد." },
+            { "language": "ckb", "text": "بەشی IT دوایەکێکی نوێی SaaS لەگەڵ گۆڕەی 12 مانگ پێشکەش کرد." },
+            { "language": "en", "text": "The IT department submitted a new SaaS offer with a 12-month package yesterday." },
+            { "language": "fa", "text": "امروز بخش IT یک پیشنهاد جدید SaaS با بسته 12 ماهه ارسال کرد." },
+            { "language": "kmr", "text": "Bölêya IT diroka nû ya SaaS bi paketa 12-meyyane şand." },
+            { "language": "pl", "text": "Dział IT złożył wczoraj nową ofertę SaaS w pakiecie 12-miesięcznym." },
+            { "language": "ro", "text": "Departamentul IT a transmis ieri o nouă ofertă SaaS cu pachet pe 12 luni." },
+            { "language": "ru", "text": "Вчера отдел IT подал новое SaaS-предложение с 12-месячным пакетом." },
+            { "language": "sq", "text": "Drejtoria e IT ka dorëzuar dje një ofertë të re SaaS me paketë 12-mujore." },
+            { "language": "tr", "text": "IT departmanı dün 12 aylık paketli yeni bir SaaS teklifi sundu." }
+          ]
+        },
+        {
+          "baseText": "Das Angebot für zusätzliche Sicherheitslizenzen wurde nach Rücksprache mit dem Kunden angepasst.",
+          "translations": [
+            { "language": "ar", "text": "پیشنهاد مجوزهای امنیتی اضافی بعد از هماهنگی با مشتری اصلاح شد." },
+            { "language": "ckb", "text": "پێشنیاری مۆڵەتە ئاسایشە زیادکراوەکان دوای گفتوگۆ لەگەڵ کڕیارەوە ڕێکخرا." },
+            { "language": "en", "text": "The offer for additional security licenses was adjusted after discussing it with the client." },
+            { "language": "fa", "text": "پیشنهاد مربوط به لایسنس‌های امنیتی اضافی پس از هماهنگی با مشتری اصلاح شد." },
+            { "language": "kmr", "text": "Pêşniyara lîsansên zêdekirina ewlehiyê piştî axaftinê bi xerîdarê re hat guherandin." },
+            { "language": "pl", "text": "Ofertę na dodatkowe licencje bezpieczeństwa dostosowano po konsultacji z klientem." },
+            { "language": "ro", "text": "Oferta pentru licențe de securitate suplimentare a fost ajustată după consultarea cu clientul." },
+            { "language": "ru", "text": "Предложение по дополнительным лицензиям безопасности было скорректировано после согласования с клиентом." },
+            { "language": "sq", "text": "Oferta për licencat shtesë të sigurisë u rregullua pas konsultimit me klientin." },
+            { "language": "tr", "text": "Ek güvenlik lisansları için teklif müşteri ile istişare sonrası güncellendi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "angehen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "angehen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-ge-hen",
+      "topics": ["work-and-jobs", "planning-and-projects", "business-communication"],
+      "usageLabels": ["workplace", "business", "written"],
+      "contextLabels": ["administration", "support"],
+      "grammarNotes": ["often followed by object, e.g. 'ein Problem angehen'", "also used in polite negative constructions"],
+      "collocations": [
+        { "text": "ein Thema angehen", "meaning": "to address a topic" },
+        { "text": "ein Risiko nicht angehen", "meaning": "to avoid taking a risk" }
+      ],
+      "wordFamilies": [
+        { "lemma": "anpacken", "relationLabel": "verb", "note": "near synonym in context of tackling work" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "التعامل مع/البدء بـ" },
+        { "language": "ckb", "text": "دەستپێکردن/ڕووبەڕوو بوون" },
+        { "language": "en", "text": "to tackle; to face" },
+        { "language": "fa", "text": "رسیدگی کردن؛ بر عهده گرفتن" },
+        { "language": "kmr", "text": "bigire / bi qelem pêk bîn" },
+        { "language": "pl", "text": "zająć się; podjąć" },
+        { "language": "ro", "text": "a aborda; a se ocupa de" },
+        { "language": "ru", "text": "взяться за; принимать" },
+        { "language": "sq", "text": "të merresh me; të përballesh me" },
+        { "language": "tr", "text": "üstlenmek; ele almak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir gehen die Rückmeldungen der Entwickler am Montag in einer Retro zusammen mit dem Support-Team an.",
+          "translations": [
+            { "language": "ar", "text": "دوشنبه با تیم توسعه و پشتیبانی بازخوردها را مشترکاً بررسی می‌کنیم." },
+            { "language": "ckb", "text": "هەفتەی داهاتوو لەگەڵ تیمی پەرەپێدان و پشتگیری، لە یەکەیەکی گەورە بانگهێشتەکانی دواکەیەکان دەنگدانی." },
+            { "language": "en", "text": "On Monday we will tackle developer feedback together with the support team." },
+            { "language": "fa", "text": "در دوشنبه، بازخوردهای تیم توسعه را همراه با تیم پشتیبانی بررسی می‌کنیم." },
+            { "language": "kmr", "text": "Duşemê, em bersivên pêşniyarên pêşvebirinê bi hev re bi tima piştgiriyê têkili dikin." },
+            { "language": "pl", "text": "W poniedziałek wspólnie z zespołem wsparcia podejdziemy do feedbacku od deweloperów." },
+            { "language": "ro", "text": "Luni vom aborda feedbackul dezvoltatorilor împreună cu echipa de suport." },
+            { "language": "ru", "text": "В понедельник мы вместе с командой поддержки разберем обратную связь разработчиков." },
+            { "language": "sq", "text": "E hënë e ardhshme do t’i trajtojmë së bashku me ekipin e suportit komentet e zhvilluesve." },
+            { "language": "tr", "text": "Pazartesi günü geliştirici geribildirimlerini destek ekibiyle birlikte ele alacağız." }
+          ]
+        },
+        {
+          "baseText": "Bitte gehen Sie das Missverständnis mit der Lieferadresse nicht auf die leichte Schulter; es betrifft den Kundenvertrag.",
+          "translations": [
+            { "language": "ar", "text": "لطفاً سوءالفهم در مورد آدرس ارسال را جدی بگیرید، چون مربوط به قرارداد مشتری است." },
+            { "language": "ckb", "text": "تکایە نەرخی دژوارەکەی ناونیشانی گەیاندن ڕاست بەکار نهێنی نەبەخشە، چون پەیوەندیدا بە گرەکی کڕیارە." },
+            { "language": "en", "text": "Please don't take the address misunderstanding lightly; it affects the customer contract." },
+            { "language": "fa", "text": "لطفاً سوءتفاهم آدرس ارسال را ساده نگیرید؛ این موضوع مربوط به قرارداد مشتری است." },
+            { "language": "kmr", "text": "Ji kerema xwe re nebiya vê têgihiştina adresa radestkirinê bi hêrişî bîne; têkiliyê bi peymana xerîdarê heye." },
+            { "language": "pl", "text": "Proszę nie bagatelizować nieporozumienia co do adresu dostawy, bo dotyczy to umowy z klientem." },
+            { "language": "ro", "text": "Nu luați cu ușurință neînțelegerea privind adresa de livrare, afectează contractul clientului." },
+            { "language": "ru", "text": "Не отнеситесь легкомысленно к недопониманию по адресу доставки; это касается договора с клиентом." },
+            { "language": "sq", "text": "Ju lutem mos e minimizoni keqkuptimin e adresës së dërgesës; ka lidhje me kontratën e klientit." },
+            { "language": "tr", "text": "Teslimat adresi ile ilgili karışıklığı hafife almayın; müşteri sözleşmesini etkiliyor." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Angemessenheit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "die Angemessenheiten",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "An-ge-mes-sen-heit",
+      "topics": ["documents-and-administration", "finance-and-accounting", "business-communication"],
+      "usageLabels": ["business", "written", "workplace"],
+      "contextLabels": ["administration", "support"],
+      "grammarNotes": ["abstract noun", "feminine noun", "collective plural rarely used"],
+      "collocations": [
+        { "text": "die Angemessenheit prüfen", "meaning": "to check appropriateness" },
+        { "text": "angemessenes Vorgehen", "meaning": "appropriate approach" }
+      ],
+      "wordFamilies": [
+        { "lemma": "angemessen", "relationLabel": "adjective", "note": "related adjective" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "ملاءمة؛ مناسبة" },
+        { "language": "ckb", "text": "گونجاوەیی" },
+        { "language": "en", "text": "appropriateness; reasonableness" },
+        { "language": "fa", "text": "تناسب؛ مناسب بودن" },
+        { "language": "kmr", "text": "rastîbûnî / bi hev re hatibûn" },
+        { "language": "pl", "text": "właściwość; stosowność" },
+        { "language": "ro", "text": "potrivire; adecvare" },
+        { "language": "ru", "text": "соразмерность; уместность" },
+        { "language": "sq", "text": "përshtatshmëri; arsyeshmëri" },
+        { "language": "tr", "text": "uygunluk; ölçülülük" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Angemessenheit der Reaktionszeiten wurde im letzten Audit neu bewertet.",
+          "translations": [
+            { "language": "ar", "text": "خوشایند بودن زمان‌های پاسخ‌گویی در آخرین حسابرسی بازبینی شد." },
+            { "language": "ckb", "text": "گونجاوەی کاتی وەڵامدانەوە لە بازه‌کردنەوەی کۆتاییەوە دووبارە نرخیە." },
+            { "language": "en", "text": "The appropriateness of response times was re-evaluated in the last audit." },
+            { "language": "fa", "text": "مناسب بودن زمان‌های پاسخ‌گویی در آخرین حسابرسی مجدداً ارزیابی شد." },
+            { "language": "kmr", "text": "Li herî dawî ya tehlîlê, di tehlîlkarî de diyarbû ku qasîna bersivdanê ne guncav bûn." },
+            { "language": "pl", "text": "W ostatnim audycie ponownie oceniono stosowność czasów reakcji." },
+            { "language": "ro", "text": "În ultimul audit s-a reevaluat adecvarea timpilor de răspuns." },
+            { "language": "ru", "text": "На последнем аудите была пересмотрена уместность сроков реагирования." },
+            { "language": "sq", "text": "Në auditimin e fundit është rivlerësuar përshtatshmëria kohëve të përgjigjes." },
+            { "language": "tr", "text": "Son denetimde yanıt sürelerinin uygunluğu yeniden değerlendirildi." }
+          ]
+        },
+        {
+          "baseText": "Wir prüfen die Angemessenheit der Pauschale vor Freigabe durch Finance.",
+          "translations": [
+            { "language": "ar", "text": "پیش از تایید مالی، مناسب بودن هزینه ثابت بررسی می‌شود." },
+            { "language": "ckb", "text": "پێش ڕەه‌نگاندنی دارایی، گونجاوی پاشەکە بە لایان فینانس پشکنینە دەکەین." },
+            { "language": "en", "text": "We check the reasonableness of the flat fee before finance approval." },
+            { "language": "fa", "text": "قبل از تأیید مالی، مناسب بودن هزینه ثابت را بررسی می‌کنیم." },
+            { "language": "kmr", "text": "Piştî pejirandina darayî, em rastîbûna parêzana hemî ber çalakiyên finance diazhînînin." },
+            { "language": "pl", "text": "Sprawdzamy stosowność ryczałtu przed zatwierdzeniem przez dział finansowy." },
+            { "language": "ro", "text": "Verificăm adecvarea taxei forfetare înainte de aprobarea de către Finanțe." },
+            { "language": "ru", "text": "Мы проверяем обоснованность фиксированной платы перед утверждением финансовым отделом." },
+            { "language": "sq", "text": "Përpara miratimit nga Finance, ne përshtatshmërinë e tarifës fikse e kontrollojmë." },
+            { "language": "tr", "text": "Finans onayı öncesi toplu ücretin uygunluğunu kontrol ederiz." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "angesichts",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Preposition",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "an-ge-seh-ts",
+      "topics": ["business-communication", "work-and-jobs", "documents-and-administration"],
+      "usageLabels": ["business", "written", "workplace"],
+      "contextLabels": ["administration", "customer-service"],
+      "grammarNotes": ["always used with Genitive in standard style", "formal, often in reports and formal memos"],
+      "collocations": [
+        { "text": "angesichts des Zeitdrucks", "meaning": "in view of time pressure" },
+        { "text": "angesichts der Beschwerden", "meaning": "given the complaints" }
+      ],
+      "wordFamilies": [
+        { "lemma": "der Anschein", "relationLabel": "related noun", "note": null }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "بسبب؛ في ضوء" },
+        { "language": "ckb", "text": "بەبێردەی/ئامادە" },
+        { "language": "en", "text": "in view of; considering" },
+        { "language": "fa", "text": "با توجه به؛ در برابر" },
+        { "language": "kmr", "text": "li benda vê; li dîtina" },
+        { "language": "pl", "text": "wobec; mając na uwadze" },
+        { "language": "ro", "text": "în ciuda?; având în vedere" },
+        { "language": "ru", "text": "ввиду; несмотря на" },
+        { "language": "sq", "text": "për shkak të; në konsideratë të" },
+        { "language": "tr", "text": "hakkında, karşısında; nazaran" }
+      ],
+      "examples": [
+        {
+          "baseText": "Angesichts der vielen Supportanfragen haben wir den Schichtplan für das Wochenende erweitert.",
+          "translations": [
+            { "language": "ar", "text": "در نظر گرفتن تعداد زیاد درخواست‌های پشتیبانی، برنامه شیفت‌ها برای آخر هفته گسترش یافت." },
+            { "language": "ckb", "text": "بەهۆی ژمارەی زۆری داواکاریەکانی پشتگیری، پڕۆفایلی شەتی دۆخی هەفتەی کۆتایەوە فراوان کردین." },
+            { "language": "en", "text": "In view of the many support requests, we expanded the weekend shift schedule." },
+            { "language": "fa", "text": "با توجه به تعداد زیاد درخواست‌های پشتیبانی، برنامه شیفت آخر هفته را گسترش دادیم." },
+            { "language": "kmr", "text": "Ji ber zêdetir xwestinên piştgiriyê, planîya şifteyê ya hêshtê bi xuyakirinê berfirehtkir." },
+            { "language": "pl", "text": "Wobec wielu zgłoszeń supportowych rozszerzyliśmy grafik dyżurów weekendowych." },
+            { "language": "ro", "text": "Având în vedere numărul mare de cereri de suport, am extins programul de ture pentru weekend." },
+            { "language": "ru", "text": "Ввиду большого количества обращений в поддержку мы расширили расписание смен на выходные." },
+            { "language": "sq", "text": "Duke qenë se kishte shumë kërkesa support-i, kemi zgjeruar orarinë e turneve të fundjavës." },
+            { "language": "tr", "text": "Destek talepleri çok fazla olduğu için hafta sonu vardiya planını genişlettik." }
+          ]
+        },
+        {
+          "baseText": "Angesichts der neuen Datenschutzregeln wurde die Kundendatenbank sofort verschlüsselt.",
+          "translations": [
+            { "language": "ar", "text": "در برابر مقررات جدید حریم داده، پایگاه داده مشتری فوراً رمزنگاری شد." },
+            { "language": "ckb", "text": "بەبەردەی یاساکانی نوێی پاراستنی زانیاریەکان، بنکەدراوی زانیاری کڕیاران خێرایشان کۆدی شەفەرییە." },
+            { "language": "en", "text": "In view of the new data-protection rules, the customer database was encrypted immediately." },
+            { "language": "fa", "text": "با توجه به قوانین جدید حفاظت از داده‌ها، پایگاه داده مشتری فوراً رمزگذاری شد." },
+            { "language": "kmr", "text": "Bi bîra yasanên nû yên daneparêzî, danegeha xerîdar bi zû re şifrekirî." },
+            { "language": "pl", "text": "Wobec nowych przepisów o ochronie danych, baza danych klientów została od razu zaszyfrowana." },
+            { "language": "ro", "text": "Având în vedere noile reguli de protecție a datelor, baza de date a clienților a fost criptată imediat." },
+            { "language": "ru", "text": "Ввиду новых правил защиты данных база клиентов была немедленно зашифрована." },
+            { "language": "sq", "text": "Duke pasur parasysh rregullat e reja të privatësisë së të dhënave, baza e klientëve u kriptua menjëherë." },
+            { "language": "tr", "text": "Yeni veri koruma kuralları nedeniyle müşteri veritabanı hemen şifrelenmiş oldu." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

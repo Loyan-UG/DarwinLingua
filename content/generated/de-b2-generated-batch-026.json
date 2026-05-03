@@ -1,0 +1,591 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-026",
+  "packageName": "German B2 Generated Batch 026",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        { "language": "de", "name": "Formell" },
+        { "language": "ar", "name": "رسمي" },
+        { "language": "ckb", "name": "فەرمی" },
+        { "language": "en", "name": "Formal" },
+        { "language": "fa", "name": "رسمی" },
+        { "language": "kmr", "name": "Fermî" },
+        { "language": "pl", "name": "Formalny" },
+        { "language": "ro", "name": "Formal" },
+        { "language": "ru", "name": "Формальный" },
+        { "language": "sq", "name": "Formal" },
+        { "language": "tr", "name": "Resmi" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        { "language": "de", "name": "Schriftlich" },
+        { "language": "ar", "name": "كتابي" },
+        { "language": "ckb", "name": "نووسراو" },
+        { "language": "en", "name": "Written" },
+        { "language": "fa", "name": "نوشتاری" },
+        { "language": "kmr", "name": "Nivîskî" },
+        { "language": "pl", "name": "Pisemny" },
+        { "language": "ro", "name": "Scris" },
+        { "language": "ru", "name": "Письменный" },
+        { "language": "sq", "name": "I shkruar" },
+        { "language": "tr", "name": "Yazılı" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        { "language": "de", "name": "Geschäftlich" },
+        { "language": "ar", "name": "تجاري" },
+        { "language": "ckb", "name": "بازرگانی" },
+        { "language": "en", "name": "Business" },
+        { "language": "fa", "name": "تجاری" },
+        { "language": "kmr", "name": "Bazirganî" },
+        { "language": "pl", "name": "Biznesowy" },
+        { "language": "ro", "name": "De afaceri" },
+        { "language": "ru", "name": "Деловой" },
+        { "language": "sq", "name": "Biznesi" },
+        { "language": "tr", "name": "İş" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        { "language": "de", "name": "Am Arbeitsplatz" },
+        { "language": "ar", "name": "في مكان العمل" },
+        { "language": "ckb", "name": "لە شوێنی کار" },
+        { "language": "en", "name": "Workplace" },
+        { "language": "fa", "name": "محیط کار" },
+        { "language": "kmr", "name": "Li cihê kar" },
+        { "language": "pl", "name": "W miejscu pracy" },
+        { "language": "ro", "name": "La locul de muncă" },
+        { "language": "ru", "name": "На рабочем месте" },
+        { "language": "sq", "name": "Në vendin e punës" },
+        { "language": "tr", "name": "İş yeri" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        { "language": "de", "name": "Technisch" },
+        { "language": "ar", "name": "تقني" },
+        { "language": "ckb", "name": "تەکنیکی" },
+        { "language": "en", "name": "Technical" },
+        { "language": "fa", "name": "فنی" },
+        { "language": "kmr", "name": "Teknîkî" },
+        { "language": "pl", "name": "Techniczny" },
+        { "language": "ro", "name": "Tehnic" },
+        { "language": "ru", "name": "Технический" },
+        { "language": "sq", "name": "Teknik" },
+        { "language": "tr", "name": "Teknik" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "meeting",
+      "displayName": "Meeting",
+      "sortOrder": 140,
+      "localizations": [
+        { "language": "de", "name": "Besprechung" },
+        { "language": "ar", "name": "اجتماع" },
+        { "language": "ckb", "name": "کۆبوونەوە" },
+        { "language": "en", "name": "Meeting" },
+        { "language": "fa", "name": "جلسه" },
+        { "language": "kmr", "name": "Civîn" },
+        { "language": "pl", "name": "Spotkanie" },
+        { "language": "ro", "name": "Ședință" },
+        { "language": "ru", "name": "Встреча" },
+        { "language": "sq", "name": "Takim" },
+        { "language": "tr", "name": "Toplantı" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "planning",
+      "displayName": "Planning",
+      "sortOrder": 190,
+      "localizations": [
+        { "language": "de", "name": "Planung" },
+        { "language": "ar", "name": "تخطيط" },
+        { "language": "ckb", "name": "پلانکردن" },
+        { "language": "en", "name": "Planning" },
+        { "language": "fa", "name": "برنامه‌ریزی" },
+        { "language": "kmr", "name": "Plansazî" },
+        { "language": "pl", "name": "Planowanie" },
+        { "language": "ro", "name": "Planificare" },
+        { "language": "ru", "name": "Планирование" },
+        { "language": "sq", "name": "Planifikim" },
+        { "language": "tr", "name": "Planlama" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "polite",
+      "displayName": "Polite",
+      "sortOrder": 230,
+      "localizations": [
+        { "language": "de", "name": "Höflich" },
+        { "language": "ar", "name": "مهذب" },
+        { "language": "ckb", "name": "بەڕێز" },
+        { "language": "en", "name": "Polite" },
+        { "language": "fa", "name": "مودبانه" },
+        { "language": "kmr", "name": "Bi rêz" },
+        { "language": "pl", "name": "Uprzejmy" },
+        { "language": "ro", "name": "Politicos" },
+        { "language": "ru", "name": "Вежливый" },
+        { "language": "sq", "name": "I sjellshëm" },
+        { "language": "tr", "name": "Kibar" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "it",
+      "displayName": "IT",
+      "sortOrder": 1140,
+      "localizations": [
+        { "language": "de", "name": "IT" },
+        { "language": "ar", "name": "تقنية المعلومات" },
+        { "language": "ckb", "name": "IT" },
+        { "language": "en", "name": "IT" },
+        { "language": "fa", "name": "IT" },
+        { "language": "kmr", "name": "IT" },
+        { "language": "pl", "name": "IT" },
+        { "language": "ro", "name": "IT" },
+        { "language": "ru", "name": "ИТ" },
+        { "language": "sq", "name": "IT" },
+        { "language": "tr", "name": "BT" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        { "language": "de", "name": "Support" },
+        { "language": "ar", "name": "الدعم" },
+        { "language": "ckb", "name": "پاڵپشتی" },
+        { "language": "en", "name": "Support" },
+        { "language": "fa", "name": "پشتیبانی" },
+        { "language": "kmr", "name": "Piştgirî" },
+        { "language": "pl", "name": "Wsparcie" },
+        { "language": "ro", "name": "Suport" },
+        { "language": "ru", "name": "Поддержка" },
+        { "language": "sq", "name": "Mbështetje" },
+        { "language": "tr", "name": "Destek" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Kundenservice" },
+        { "language": "ar", "name": "خدمة العملاء" },
+        { "language": "ckb", "name": "خزمەتی کڕیار" },
+        { "language": "en", "name": "Customer Service" },
+        { "language": "fa", "name": "خدمات مشتریان" },
+        { "language": "kmr", "name": "Xizmeta xerîdar" },
+        { "language": "pl", "name": "Obsługa klienta" },
+        { "language": "ro", "name": "Serviciu clienți" },
+        { "language": "ru", "name": "Клиентский сервис" },
+        { "language": "sq", "name": "Shërbim klienti" },
+        { "language": "tr", "name": "Müşteri hizmetleri" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "administration",
+      "displayName": "Administration",
+      "sortOrder": 1220,
+      "localizations": [
+        { "language": "de", "name": "Verwaltung" },
+        { "language": "ar", "name": "الإدارة" },
+        { "language": "ckb", "name": "کارگێڕی" },
+        { "language": "en", "name": "Administration" },
+        { "language": "fa", "name": "اداره" },
+        { "language": "kmr", "name": "Rêveberî" },
+        { "language": "pl", "name": "Administracja" },
+        { "language": "ro", "name": "Administrație" },
+        { "language": "ru", "name": "Администрирование" },
+        { "language": "sq", "name": "Administratë" },
+        { "language": "tr", "name": "İdare" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "der Ansatz",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "die Ansätze",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "an-satz",
+      "topics": ["work-and-jobs", "documents-and-administration", "planning-and-projects"],
+      "usageLabels": ["formal", "business", "written"],
+      "contextLabels": ["administration", "planning"],
+      "meanings": [
+        { "language": "ar", "text": "نهج؛ رویکرد" },
+        { "language": "ckb", "text": "مروەکا/ڕێڕەو" },
+        { "language": "en", "text": "approach; method" },
+        { "language": "fa", "text": "رویکرد؛ روش" },
+        { "language": "kmr", "text": "hêlaf; rêbaz" },
+        { "language": "pl", "text": "podejście; metoda" },
+        { "language": "ro", "text": "abordare; abordare metodologică" },
+        { "language": "ru", "text": "подход; метод" },
+        { "language": "sq", "text": "qasje; metodë" },
+        { "language": "tr", "text": "yaklaşım; yöntem" }
+      ],
+      "examples": [
+        {
+          "baseText": "Unser aktueller Ansatz im Incident-Handling reduziert die Reaktionszeit deutlich.",
+          "translations": [
+            { "language": "ar", "text": "رویکرد فعلی ما در مدیریت رخداد، زمان واکنش را به‌طور محسوسی کاهش می‌دهد." },
+            { "language": "ckb", "text": "پێشەنگی ئێمە لە هەڵگرتنی کەیسەکان کاتی وەڵامدانەوە زۆر کەمتر کردووە." },
+            { "language": "en", "text": "Our current approach to incident handling significantly reduces response time." },
+            { "language": "fa", "text": "رویکرد فعلی ما در مدیریت رخداد، زمان پاسخ‌گویی را به‌طور قابل توجهی کاهش می‌دهد." },
+            { "language": "kmr", "text": "Rava anasînê me di rêzika incidentan de bi awayekî pir giran dema bersivdane kêm dike." },
+            { "language": "pl", "text": "Nasze obecne podejście do obsługi incydentów znacząco skraca czas reakcji." },
+            { "language": "ro", "text": "Abordarea noastră actuală pentru incident handling reduce semnificativ timpul de reacție." },
+            { "language": "ru", "text": "Наш текущий подход к обработке инцидентов значительно сокращает время реакции." },
+            { "language": "sq", "text": "Qasja jonë aktuale në menaxhimin e incidenteve e ul ndjeshëm kohën e reagimit." },
+            { "language": "tr", "text": "Olay yönetimindeki mevcut yaklaşımımız yanıt süresini belirgin şekilde azaltıyor." }
+          ]
+        },
+        {
+          "baseText": "Vor dem Change Request haben wir den Ansatz mit dem Kunden noch einmal in der Sitzung validiert.",
+          "translations": [
+            { "language": "ar", "text": "قبل درخواست تغییر، این رویکرد را یک بار دیگر در جلسه با مشتری تأیید کردیم." },
+            { "language": "ckb", "text": "پێش داواکاری گۆڕانکاری، مروەکەکەمان دووبارە لە کۆبوونەوەگەی کڕیاردا پشتڕاست کرد." },
+            { "language": "en", "text": "Before the change request, we validated the approach again with the client in the meeting." },
+            { "language": "fa", "text": "قبل از درخواست تغییر، رویکرد را یک‌بار دیگر در جلسه با مشتری تأیید کردیم." },
+            { "language": "kmr", "text": "Berî daxwaza guherînê, em pîvan di civînekî bi xerîdar de paşve test kir." },
+            { "language": "pl", "text": "Przed Change Requestem ponownie zatwierdziliśmy podejście podczas spotkania z klientem." },
+            { "language": "ro", "text": "Înainte de Change Request, am validat din nou abordarea în ședința cu clientul." },
+            { "language": "ru", "text": "Перед Change Request мы снова согласовали подход на встрече с клиентом." },
+            { "language": "sq", "text": "Përpara kërkesës së ndryshimit, ne validuam përsëri qasjen me klientin në seancë." },
+            { "language": "tr", "text": "Değişiklik talebi öncesinde yaklaşımı toplantıda müşteriyle tekrar doğruladık." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anschieben",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschieben",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-schiebe-n",
+      "topics": ["work-and-jobs", "documents-and-administration", "business-communication"],
+      "usageLabels": ["workplace", "formal", "planning"],
+      "contextLabels": ["administration", "support"],
+      "meanings": [
+        { "language": "ar", "text": "تأجيل؛ فشار دادن" },
+        { "language": "ckb", "text": "ئەرکی دوورەکردن یان زووکردن" },
+        { "language": "en", "text": "to push aside; to postpone" },
+        { "language": "fa", "text": "به عقب انداختن؛ هل دادن" },
+        { "language": "kmr", "text": "şoştin; dereng kirin" },
+        { "language": "pl", "text": "odsuwać; przesuwać; odkładać" },
+        { "language": "ro", "text": "a împinge; a amâna" },
+        { "language": "ru", "text": "отодвигать; откладывать" },
+        { "language": "sq", "text": "shtyjë; shtyjë mënjanë" },
+        { "language": "tr", "text": "kaydırmak; ertelemek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir schieben den Low-Priority-Change nicht, wenn er direkten Einfluss auf Kunden hat.",
+          "translations": [
+            { "language": "ar", "text": "تغییر کم‌اولویت را اگر اثر مستقیم روی مشتری داشته باشد عقب نمی‌اندازیم." },
+            { "language": "ckb", "text": "لە کاتی کاری کەم گرنگی ئەگەر کاریگەری ڕاستەوخۆ لەسەر کڕیاردا هەبێت نەگوازێینەدوور." },
+            { "language": "en", "text": "We do not postpone a low-priority change if it has direct customer impact." },
+            { "language": "fa", "text": "تغییر کم‌اولویت را اگر اثر مستقیم روی مشتری داشته باشد عقب نمی‌اندازیم." },
+            { "language": "kmr", "text": "Em guherandina low-priority nakevin derenggeriya heke tevgerîra dirust li ser xerîdarê bide." },
+            { "language": "pl", "text": "Nie odsuwamy na bok zmiany o niskim priorytecie, jeśli ma bezpośredni wpływ na klienta." },
+            { "language": "ro", "text": "Nu amânăm o schimbare cu prioritate mică dacă are impact direct asupra clientului." },
+            { "language": "ru", "text": "Мы не откладываем изменение с низким приоритетом, если оно напрямую влияет на клиента." },
+            { "language": "sq", "text": "Nuk e shtyjmë mënjanë ndryshimin me prioritet të ulët nëse ka ndikim të drejtpërdrejtë te klienti." },
+            { "language": "tr", "text": "Müşteriyi doğrudan etkiliyorsa düşük öncelikli değişikliği ertelemedik." }
+          ]
+        },
+        {
+          "baseText": "Während der Revision haben wir den Rollout-Termin um zwei Tage angeschoben.",
+          "translations": [
+            { "language": "ar", "text": "در طول بازبینی، موعد انتشار را دو روز به تعویق انداختیم." },
+            { "language": "ckb", "text": "لە کاتی پێداچوونەوەدا مانگی رلەییدان دوو ڕۆژ درەنگەکرد." },
+            { "language": "en", "text": "During the review, we pushed the rollout date back by two days." },
+            { "language": "fa", "text": "در زمان بازبینی، زمان انتشار را دو روز عقب انداختیم." },
+            { "language": "kmr", "text": "Di demê revîzyonê de me dîroka rolloutê bi du roj dereng kirin." },
+            { "language": "pl", "text": "Podczas przeglądu przesunęliśmy termin rolloutu o dwa dni." },
+            { "language": "ro", "text": "În timpul reviziei, am amânat termenul de rollout cu două zile." },
+            { "language": "ru", "text": "Во время ревью мы отложили дату релиза на два дня." },
+            { "language": "sq", "text": "Gjatë rishikimit, datën e rollout-it e shtyjmë me dy ditë." },
+            { "language": "tr", "text": "İnceleme sırasında rollout tarihini iki gün geriye aldık." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anschießen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschießen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-schie-ßen",
+      "topics": ["work-and-jobs", "sales-and-customers", "documents-and-administration"],
+      "usageLabels": ["workplace", "formal", "written"],
+      "contextLabels": ["customer-service", "support"],
+      "meanings": [
+        { "language": "ar", "text": "إطلاق النار على" },
+        { "language": "ckb", "text": "تێدانی تیر" },
+        { "language": "en", "text": "to shoot at; to overrun a target" },
+        { "language": "fa", "text": "به کسی شلیک کردن/تاختن" },
+        { "language": "kmr", "text": "elqetîn; pêkirin" },
+        { "language": "pl", "text": "strzelać do; namierzać" },
+        { "language": "ro", "text": "a trage (spre); a viza" },
+        { "language": "ru", "text": "стрелять в; поджигать" },
+        { "language": "sq", "text": "të qëllojë në; të synojë" },
+        { "language": "tr", "text": "ateş etmek; hedeflemek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Vertragstext darf nicht an einzelnen Stellen angeschossen werden, ohne Freigabe des Rechtswesens.",
+          "translations": [
+            { "language": "ar", "text": "متن قرارداد بدون تأیید بخش حقوقی نباید در بخش‌هایی خاص اصلاح یا هدف‌گیری شود." },
+            { "language": "ckb", "text": "دەقەی ڕێککەوتنەکە دەبێت لە بێ وردەکاری مەیەقەییەوە پەیوەندی ناسێنرێت." },
+            { "language": "en", "text": "The contract text must not be edited in selected spots without legal approval." },
+            { "language": "fa", "text": "متن قرارداد نباید در بخش‌هایی خاص بدون تایید حقوقی تغییر داده شود." },
+            { "language": "kmr", "text": "Nivîsa peymana pêwiste ne bi bêkêmasîyê de di cihên diyar de bêyî destûra hüquqê nehatin guhertin." },
+            { "language": "pl", "text": "Tekst umowy nie może być zmieniany w wybranych miejscach bez zgody działu prawnego." },
+            { "language": "ro", "text": "Textul contractului nu trebuie modificat selectiv fără aprobarea departamentului juridic." },
+            { "language": "ru", "text": "Текст контракта нельзя редактировать в отдельных местах без согласования с юристами." },
+            { "language": "sq", "text": "Teksti i kontratës nuk duhet ndryshuar në disa pjesë pa miratimin e departamentit ligjor." },
+            { "language": "tr", "text": "Sözleşme metni, hukuk departmanının onayı olmadan seçilmiş bölümlerde değiştirilemez." }
+          ]
+        },
+        {
+          "baseText": "In der Kundenkommunikation darf kein Teammitglied die Beschwerden einfach anschießen.",
+          "translations": [
+            { "language": "ar", "text": "در ارتباط با مشتری، هیچ عضو تیم نباید بی‌ملاحظه انتقاد کند." },
+            { "language": "ckb", "text": "لە پەیوەندی کڕیاردا هیچ ئەندامێکی تیم بەبێ ماندن لە پەیوەندیدا قورسە بۆ ناساندن نابێت." },
+            { "language": "en", "text": "In customer communication, no team member should respond with abrupt, confrontational language." },
+            { "language": "fa", "text": "در ارتباط با مشتری، هیچ عضو تیمی نباید با لحن تند و تهاجمی پاسخ دهد." },
+            { "language": "kmr", "text": "Di peywendiyên xerîdar de tu endam divê bi peywendîyekî kêm ne bi dilsozî re bersiv nedê." },
+            { "language": "pl", "text": "W komunikacji z klientem żaden członek zespołu nie powinien odpowiadać w konfrontacyjny sposób." },
+            { "language": "ro", "text": "În comunicarea cu clientul, niciun membru nu trebuie să reacționeze agresiv." },
+            { "language": "ru", "text": "В общении с клиентом ни один сотрудник не должен отвечать конфликтно." },
+            { "language": "sq", "text": "Në komunikimin me klientin, asnjë anëtar i ekipit nuk duhet t'i përgjigjet në mënyrë përballuese." },
+            { "language": "tr", "text": "Müşteri iletişiminde hiçbir ekip üyesi agresif bir dille karşılık vermemeli." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anschließen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschließen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-schlie-ßen",
+      "topics": ["technology-and-it", "work-and-jobs", "documents-and-administration"],
+      "usageLabels": ["technical", "workplace", "written"],
+      "contextLabels": ["it", "support"],
+      "meanings": [
+        { "language": "ar", "text": "اتصال؛ پیوستن" },
+        { "language": "ckb", "text": "پەیوەستکردن" },
+        { "language": "en", "text": "to connect; to attach" },
+        { "language": "fa", "text": "وصل کردن؛ متصل کردن" },
+        { "language": "kmr", "text": "girêdan; zêdekirin" },
+        { "language": "pl", "text": "podłączać; łączyć" },
+        { "language": "ro", "text": "a conecta; a atașa" },
+        { "language": "ru", "text": "подключать; присоединять" },
+        { "language": "sq", "text": "lidhur; bashkangjitur" },
+        { "language": "tr", "text": "bağlamak; eklemek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Bitte schließen Sie den neuen Monitoring-Agenten vor dem Deployment an den Log-Server an.",
+          "translations": [
+            { "language": "ar", "text": "لطفاً عامل نظارت جدید را قبل از انتشار به سرور لاگ متصل کنید." },
+            { "language": "ckb", "text": "تکایە Agentی نوێی مانیتورکردن پێش deployکردن بۆ سروەرەی لاگەکە پەیوەند پێ بدە." },
+            { "language": "en", "text": "Please connect the new monitoring agent to the log server before deployment." },
+            { "language": "fa", "text": "لطفاً عامل مانیتورینگ جدید را قبل از استقرار به سرور لاگ متصل کنید." },
+            { "language": "kmr", "text": "Ji kerema xwe pêdivî ye ageneta nû ya monitoringê berî deployê bi servera logê ve biqeverîn." },
+            { "language": "pl", "text": "Proszę podłączyć nowego agenta monitorującego do serwera logów przed wdrożeniem." },
+            { "language": "ro", "text": "Vă rugăm conectați noul agent de monitorizare la serverul de loguri înainte de deployment." },
+            { "language": "ru", "text": "Пожалуйста, подключите нового агента мониторинга к серверу логов перед развертыванием." },
+            { "language": "sq", "text": "Ju lutemi lidhni agjentin e ri të monitorimit me serverin e logjeve para deployment-it." },
+            { "language": "tr", "text": "Lütfen yeni izleme ajanını deployment öncesinde log sunucusuna bağlayın." }
+          ]
+        },
+        {
+          "baseText": "Das Ticket wurde geschlossen und sofort an das Finance-Team angeschlossen.",
+          "translations": [
+            { "language": "ar", "text": "تیکت بسته شد و فوراً به تیم مالی متصل شد." },
+            { "language": "ckb", "text": "تیکەت داخرا و بە دەستت زووەتی پەیوەند کرا بە تیمی داراییەکە." },
+            { "language": "en", "text": "The ticket was closed and immediately routed to the finance team." },
+            { "language": "fa", "text": "تیکت بسته شد و بلافاصله به تیم مالی ارجاع داده شد." },
+            { "language": "kmr", "text": "Tikêt hate girtin û bi awayekê zû re veguhastin ji bo tîmê finansê." },
+            { "language": "pl", "text": "Zgłoszenie zostało zamknięte i natychmiast przekazane do zespołu finansowego." },
+            { "language": "ro", "text": "Tichetul a fost închis și imediat direcționat către echipa financiară." },
+            { "language": "ru", "text": "Тикет был закрыт и сразу передан в финансовую команду." },
+            { "language": "sq", "text": "Bileta u mbyll dhe menjëherë u kalua te ekipi i financës." },
+            { "language": "tr", "text": "Bilet kapatıldı ve hemen finans ekibine yönlendirildi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anschneiden",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschneiden",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-schnei-den",
+      "topics": ["work-and-jobs", "documents-and-administration", "business-communication"],
+      "usageLabels": ["workplace", "formal", "business"],
+      "contextLabels": ["administration", "planning"],
+      "meanings": [
+        { "language": "ar", "text": "قطع/جناح" },
+        { "language": "ckb", "text": "لەبەربردن" },
+        { "language": "en", "text": "to cut; to slice into" },
+        { "language": "fa", "text": "برش دادن؛ کنار زدن" },
+        { "language": "kmr", "text": "bexşandin; qirîn" },
+        { "language": "pl", "text": "naciąć; przyciąć; obciąć" },
+        { "language": "ro", "text": "a tăia; a secționa" },
+        { "language": "ru", "text": "отрезать; приподчеркнуть (метаф.)" },
+        { "language": "sq", "text": "përgatis; preni" },
+        { "language": "tr", "text": "kesmek; dilimlemek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Bitte schneiden Sie den Präsentationsrahmen nicht so stark an, damit alle Abschnitte sichtbar bleiben.",
+          "translations": [
+            { "language": "ar", "text": "لطفاً قاب ارائه را زیاد کوتاه نکنید تا همه بخش‌ها قابل مشاهده بمانند." },
+            { "language": "ckb", "text": "تکایە قابی پێشبینینەکە بەهێڵ مەکەوە بەمەرجی قەبارە کە ھەموو بەشەکانی بنەڕەتی مابیت." },
+            { "language": "en", "text": "Please don't cut the presentation frame too much so all sections remain visible." },
+            { "language": "fa", "text": "لطفاً چارچوب ارائه را زیاد کوتاه نکنید تا همه بخش‌ها قابل مشاهده بمانند." },
+            { "language": "kmr", "text": "Ji kerema xwe ne bêtir rêmaya pêşkêşkirinê qirînin ku hemû parçe mayin." },
+            { "language": "pl", "text": "Proszę nie przycinać tak mocno struktury prezentacji, aby wszystkie sekcje pozostały widoczne." },
+            { "language": "ro", "text": "Vă rugăm să nu tăiați prea mult cadrul prezentării, astfel încât toate secțiunile să rămână vizibile." },
+            { "language": "ru", "text": "Пожалуйста, не обрезайте слайд слишком сильно, чтобы все разделы оставались видимыми." },
+            { "language": "sq", "text": "Ju lutemi mos e prenini shumë kornizën e prezantimit që të mbeten të dukshme të gjitha pjesët." },
+            { "language": "tr", "text": "Tüm bölümler görünür kalsın diye sunum çerçevesini fazla kısaltmayın." }
+          ]
+        },
+        {
+          "baseText": "Wir schneiden den Vertrag an einer klaren Stelle an, um den kritischen Punkt hervorzuheben.",
+          "translations": [
+            { "language": "ar", "text": "قرارداد را در یک نقطه روشن قطع می‌کنیم تا بخش بحرانی برجسته شود." },
+            { "language": "ckb", "text": "ئێمە پەیماننامەکە بە شوێنیەکی روونی دەبخشین تا خاڵی گرنگەکە ڕوون بکرێت." },
+            { "language": "en", "text": "We cut the contract at a clear point to highlight the critical clause." },
+            { "language": "fa", "text": "قرارداد را در نقطه‌ای روشن جدا می‌کنیم تا بند بحرانی برجسته شود." },
+            { "language": "kmr", "text": "Em peymana di cîhekî zû ve qirînin da qismê giring bişopîne." },
+            { "language": "pl", "text": "Przycinamy umowę w wyraźnym punkcie, aby podkreślić kluczowy punkt." },
+            { "language": "ro", "text": "Tăiem contractul într-un punct clar pentru a evidenția clauza critică." },
+            { "language": "ru", "text": "Мы разделяем контракт в четкой точке, чтобы выделить критическое положение." },
+            { "language": "sq", "text": "E ndajmë kontratën në një pikë të qartë për të theksuar pikën kritike." },
+            { "language": "tr", "text": "Sözleşmeyi kritik noktayı vurgulamak için net bir yerde böleriz." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anschreiben",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschreiben",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-schrei-ben",
+      "topics": ["documents-and-administration", "business-communication", "work-and-jobs"],
+      "usageLabels": ["written", "business", "formal"],
+      "contextLabels": ["administration", "customer-service"],
+      "meanings": [
+        { "language": "ar", "text": "ارسال خطي/مکاتبه کرد" },
+        { "language": "ckb", "text": "نامە نووسین" },
+        { "language": "en", "text": "to write to; to address in writing" },
+        { "language": "fa", "text": "نامه نوشتن؛ مکاتبه کردن" },
+        { "language": "kmr", "text": "nivîsandin; navnivîsan" },
+        { "language": "pl", "text": "napisać; korespondować" },
+        { "language": "ro", "text": "a scrie; a adresa" },
+        { "language": "ru", "text": "написать; адресовать письмо" },
+        { "language": "sq", "text": "shkruar; të shkruash dikujt" },
+        { "language": "tr", "text": "yazmak; yazılı olarak hitap etmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Bitte schreiben Sie den Kunden heute noch zur Änderung der Wartungszeit an.",
+          "translations": [
+            { "language": "ar", "text": "لطفاً امروز با مشتری درباره تغییر زمان نگهداری مکاتبه کنید." },
+            { "language": "ckb", "text": "تکایە ئەمڕۆ بۆ کڕیار بنوسە لەگەڵ گۆڕینی کاتی چاککردنەوە." },
+            { "language": "en", "text": "Please write to the customer today about the maintenance window change." },
+            { "language": "fa", "text": "لطفاً امروز درباره تغییر زمان‌بندی نگهداری به مشتری نامه بزنید." },
+            { "language": "kmr", "text": "Ji kerema xwe îro bi xerîdar re di derbarê guherîna demjimêra çalakiyê de navnîs bikin." },
+            { "language": "pl", "text": "Proszę napisać dziś do klienta w sprawie zmiany okna konserwacji." },
+            { "language": "ro", "text": "Vă rugăm să scrieți astăzi clientului despre schimbarea ferestrei de mentenanță." },
+            { "language": "ru", "text": "Пожалуйста, напишите сегодня клиенту об изменении окна обслуживания." },
+            { "language": "sq", "text": "Ju lutemi sot i shkruani klientit për ndryshimin e dritares së mirëmbajtjes." },
+            { "language": "tr", "text": "Lütfen bugün müşteriye bakım penceresi değişikliğiyle ilgili yazın." }
+          ]
+        },
+        {
+          "baseText": "Der Serviceleiter hat alle offenen Anfragen schriftlich angeschrieben und priorisiert.",
+          "translations": [
+            { "language": "ar", "text": "مدیر سرویس همه درخواست‌های باز را به‌صورت کتبی پاسخ و اولویت‌بندی کرد." },
+            { "language": "ckb", "text": "سەرکەوتەری خزمەتگوزاری هەموو داواکاری کراوەکان بە نووسەرەوە ڕیزکرد و بەرپرسەتی کرد." },
+            { "language": "en", "text": "The service lead wrote to all open requests and prioritized them." },
+            { "language": "fa", "text": "مدیر سرویس همه درخواست‌های باز را به‌صورت مکتوب پاسخ داد و اولویت‌بندی کرد." },
+            { "language": "kmr", "text": "Rêberê servîs hemû daxwazên vekirî bi nivîsînin şehî dan û rêz dide." },
+            { "language": "pl", "text": "Kierownik serwisu napisał do wszystkich otwartych zgłoszeń i je priorytetyzował." },
+            { "language": "ro", "text": "Liderul de serviciu a scris tuturor solicitărilor deschise și le-a prioritizat." },
+            { "language": "ru", "text": "Руководитель службы письменно обработал все открытые запросы и расставил им приоритет." },
+            { "language": "sq", "text": "Drejtori i shërbimit ka shkruar të gjitha kërkesat e hapura dhe i ka prioritetizuar." },
+            { "language": "tr", "text": "Servis lideri tüm açık talepleri yazılı olarak iletti ve önceliklendirdi." }
+          ]
+        }
+  ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

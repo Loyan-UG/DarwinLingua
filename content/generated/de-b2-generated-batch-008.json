@@ -1,0 +1,376 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-008",
+  "packageName": "German B2 Generated Batch 008",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        { "language": "de", "name": "Am Arbeitsplatz" },
+        { "language": "ar", "name": "في مكان العمل" },
+        { "language": "ckb", "name": "لە شوێنی کار" },
+        { "language": "en", "name": "Workplace" },
+        { "language": "fa", "name": "محیط کار" },
+        { "language": "kmr", "name": "Li cihê kar" },
+        { "language": "pl", "name": "W miejscu pracy" },
+        { "language": "ro", "name": "La locul de muncă" },
+        { "language": "ru", "name": "На рабочем месте" },
+        { "language": "sq", "name": "Në vendin e punës" },
+        { "language": "tr", "name": "İş yeri" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        { "language": "de", "name": "Support" },
+        { "language": "ar", "name": "الدعم" },
+        { "language": "ckb", "name": "پاڵپشتی" },
+        { "language": "en", "name": "Support" },
+        { "language": "fa", "name": "پشتیبانی" },
+        { "language": "kmr", "name": "Piştgirî" },
+        { "language": "pl", "name": "Wsparcie" },
+        { "language": "ro", "name": "Suport" },
+        { "language": "ru", "name": "Поддержка" },
+        { "language": "sq", "name": "Mbështetje" },
+        { "language": "tr", "name": "Destek" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "abweichen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "ينحرف عن شيء/يختلف" },
+        { "language": "ckb", "text": "لابی" },
+        { "language": "en", "text": "to deviate; to differ" },
+        { "language": "fa", "text": "انحراف داشتن" },
+        { "language": "kmr", "text": "dijî veşartin; cûda bûn" },
+        { "language": "pl", "text": "odbiegać; różnić się" },
+        { "language": "ro", "text": "a devia; a se îndepărta" },
+        { "language": "ru", "text": "отклоняться; отличаться" },
+        { "language": "sq", "text": "devijojnë; ndryshojnë" },
+        { "language": "tr", "text": "sapmak; farklılık göstermek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Incident-Review darf der Wiederherstellungsprozess nicht von der vereinbarten Standardprozedur abweichen.",
+          "translations": [
+            { "language": "ar", "text": "در بازبینی حادثه، فرایند بازیابی نباید از رویه استاندارد توافق‌شده انحراف داشته باشد." },
+            { "language": "ckb", "text": "لە پشکنینی رویداد، پڕۆسەی دووبارەکردنەوە ناتوانێت لە ڕێوشوێنی ستاندارد ڕابەندی کراوە جیا بێت." },
+            { "language": "en", "text": "In the incident review, the recovery process must not deviate from the agreed standard procedure." },
+            { "language": "fa", "text": "در بازبینی حادثه، فرآیند بازیابی نباید از روند استاندارد توافق‌شده انحراف داشته باشد." },
+            { "language": "kmr", "text": "Di pêşveçûna incidentê de, pêvajoya vegerandinê nekarî cûra prosedura standard a di peywirê de têdaye werbigere." },
+            { "language": "pl", "text": "W przeglądzie incydentu proces odzyskiwania nie może odbiegać od uzgodnionej procedury standardowej." },
+            { "language": "ro", "text": "În revizuirea incidentului, procesul de recuperare nu trebuie să se abată de la procedura standard convenită." },
+            { "language": "ru", "text": "При разборе инцидента процесс восстановления не должен отклоняться от согласованной стандартной процедуры." },
+            { "language": "sq", "text": "Në rishikimin e incidentit, procesi i rikuperimit nuk duhet të devijojë nga procedura standarde e dakordësuar." },
+            { "language": "tr", "text": "Olay incelemesinde kurtarma süreci, anlaşılan standart prosedürden sapmamalıdır." }
+          ]
+        },
+        {
+          "baseText": "Die Testdaten in QA dürfen vom Zielprofil nicht abweichen, sonst wird der Compliance-Bericht zurückgewiesen.",
+          "translations": [
+            { "language": "ar", "text": "داده‌های آزمایشی در QA باید از پروفایل هدف انحراف نداشته باشند، در غیر این صورت گزارش انطباق رد می‌شود." },
+            { "language": "ckb", "text": "دادهەکانی تاقیکردنەوە لە QA نایە بەلا ترازەی ئاماژەیەکەوە جیا بێت، دواتر ڕاپۆرتی شوێنی کردوە ڕەت دەکرێت." },
+            { "language": "en", "text": "QA test data must not deviate from the target profile, otherwise the compliance report is rejected." },
+            { "language": "fa", "text": "داده‌های تست QA نباید از پروفایل هدف انحراف داشته باشند، وگرنه گزارش تطابق رد می‌شود." },
+            { "language": "kmr", "text": "Dane testê ya QA neherik e ku ji profîla hedefê nebe; heke cûdahin, rapora compliance tê red kirin." },
+            { "language": "pl", "text": "Dane testowe QA nie mogą odbiegać od profilu docelowego, w przeciwnym razie raport zgodności zostanie odrzucony." },
+            { "language": "ro", "text": "Datele de testare QA nu trebuie să se abată de la profilul țintă, altfel raportul de conformitate este respins." },
+            { "language": "ru", "text": "Тестовые данные QA не должны отклоняться от целевого профиля, иначе отчет по соблюдению требований будет отклонен." },
+            { "language": "sq", "text": "Të dhënat e testimit në QA nuk duhet të devijojnë nga profili i synuar, përndryshe raporti i përputhshmërisë refuzohet." },
+            { "language": "tr", "text": "QA test verileri hedef profilden sapmamalıdır, aksi takdirde uyumluluk raporu reddedilir." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Abweichung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Abweichungen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Ab-wei-chen",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "انحراف؛ تفاوت" },
+        { "language": "ckb", "text": "جیاوازی" },
+        { "language": "en", "text": "deviation; discrepancy" },
+        { "language": "fa", "text": "انحراف؛ اختلاف" },
+        { "language": "kmr", "text": "ceştiyekewtiş; cuda bûn" },
+        { "language": "pl", "text": "odchylenie; rozbieżność" },
+        { "language": "ro", "text": "abatere; discrepanță" },
+        { "language": "ru", "text": "отклонение; расхождение" },
+        { "language": "sq", "text": "shmangie; mospërputhje" },
+        { "language": "tr", "text": "sapma; tutarsızlık" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Abweichung zwischen Budgetplan und tatsächlichen Ausgaben wurde im Finanzdashboard sofort markiert.",
+          "translations": [
+            { "language": "ar", "text": "انحراف بین بودجه و هزینه واقعی فوراً در داشبورد مالی مشخص شد." },
+            { "language": "ckb", "text": "جیاوازی نێوان پلانی بودجە و خەرجەی ڕاستەوخۆ لە داشبۆردی داراییە داگیرانە نیشاندەدرێت." },
+            { "language": "en", "text": "The deviation between the budget plan and actual spending was flagged immediately in the finance dashboard." },
+            { "language": "fa", "text": "اختلاف بین بودجه برنامه‌ریزی‌شده و هزینه واقعی بلافاصله در داشبورد مالی علامت‌گذاری شد." },
+            { "language": "kmr", "text": "Feraqa nav berhejeya buxte û xercên rastîn di dashboardê aborî de di demeke kurt de hat nîşan dan." },
+            { "language": "pl", "text": "Niezgodność pomiędzy planem budżetowym a rzeczywistymi wydatkami została od razu oznaczona w panelu finansowym." },
+            { "language": "ro", "text": "Discrepanța dintre planul bugetar și cheltuielile efective a fost evidențiată imediat în dashboard-ul financiar." },
+            { "language": "ru", "text": "Отклонение между бюджетным планом и фактическими расходами сразу было отмечено в финансовой панели." },
+            { "language": "sq", "text": "Mospërputhja mes buxhetit të planifikuar dhe shpenzimeve faktike u sinjalizua menjëherë në dashboard-in financiar." },
+            { "language": "tr", "text": "Bütçe planı ile fiili harcamalar arasındaki sapma finans panosunda hemen işaretlendi." }
+          ]
+        },
+        {
+          "baseText": "Der Kunde akzeptiert eine 8-prozentige Qualitätsabweichung nicht in der Liefervereinbarung.",
+          "translations": [
+            { "language": "ar", "text": "مشتری در قرارداد تحویل، انحراف ۸ درصدی کیفیت را قبول نمی‌کند." },
+            { "language": "ckb", "text": "کڕیار لە ئاکاری لەبارەی گواستنەوەدا هیچ جیاوازیەکی ٨یەکی خاوەنەکی کالیەتەوە قبوول ناکات." },
+            { "language": "en", "text": "The client does not accept an 8 percent quality deviation in the delivery contract." },
+            { "language": "fa", "text": "مشتری در قرارداد تحویل، انحراف کیفی ۸ درصدی را قبول نمی‌کند." },
+            { "language": "kmr", "text": "Xerîdar di peymana dagirtinê de 8% cuda bûna kaliteyê qebûl nakat." },
+            { "language": "pl", "text": "Klient nie akceptuje 8-procentowej odchyłki jakościowej w umowie dostawy." },
+            { "language": "ro", "text": "Clientul nu acceptă o abatere de 8% a calității în contractul de livrare." },
+            { "language": "ru", "text": "Клиент не принимает отклонение качества в 8 процентов по договору поставки." },
+            { "language": "sq", "text": "Klienti nuk e pranon një mospërputhje cilësore prej 8 për qind në kontratën e dorëzimit." },
+            { "language": "tr", "text": "Müşteri, teslimat sözleşmesinde %8'lik bir kalite sapmasını kabul etmiyor." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abweisen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "يرفض" },
+        { "language": "ckb", "text": "ڕەتکردنەوە" },
+        { "language": "en", "text": "to refuse; to reject" },
+        { "language": "fa", "text": "رد کردن" },
+        { "language": "kmr", "text": "red kirin; ne qebûl kirin" },
+        { "language": "pl", "text": "odmówić; odrzucić" },
+        { "language": "ro", "text": "a respinge; a refuza" },
+        { "language": "ru", "text": "отклонять; отказывать" },
+        { "language": "sq", "text": "të refuzojë; të mos e pranojë" },
+        { "language": "tr", "text": "reddetmek; inkar etmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Service Lead hat den Änderungsantrag abgewiesen, weil keine Kapazität im aktuellen Sprint war.",
+          "translations": [
+            { "language": "ar", "text": "رهبر سرویس درخواست تغییر را رد کرد چون ظرفیت در اسپرینت فعلی وجود نداشت." },
+            { "language": "ckb", "text": "ڕاهێنەری خزمەتگوزاری داواکاری گۆڕانکاری راەتکرد، چونەکی خالێکی ھەبووی لە سپۆڕتدا نەبوو." },
+            { "language": "en", "text": "The service lead rejected the change request because there was no capacity in the current sprint." },
+            { "language": "fa", "text": "مسئول سرویس درخواست تغییر را رد کرد چون در اسپرینت فعلی ظرفیت وجود نداشت." },
+            { "language": "kmr", "text": "Lîderê servîsê daxwaza guhartinê red kir, ji ber ku di sprintê heyî de kapîsitî tune bû." },
+            { "language": "pl", "text": "Lider serwisu odrzucił wniosek o zmianę, ponieważ w bieżącym sprincie nie było zasobów." },
+            { "language": "ro", "text": "Responsabilul de servicii a respins cererea de schimbare, deoarece nu existau resurse în sprintul curent." },
+            { "language": "ru", "text": "Ведущий службы отклонил запрос на изменение, потому что в текущем спринте не было ресурсов." },
+            { "language": "sq", "text": "Udhëheqësi i shërbimit ka refuzuar kërkesën e ndryshimit, sepse nuk kishte kapacitet në sprintin aktual." },
+            { "language": "tr", "text": "Servis lideri, mevcut sprintta kapasite olmadığından değişiklik talebini reddetti." }
+          ]
+        },
+        {
+          "baseText": "Wir haben die Rückerstattungsforderung des Kunden freundlich abgewiesen und ein Alternativpaket angeboten.",
+          "translations": [
+            { "language": "ar", "text": "درخواست بازپرداخت مشتری را به‌طور محترمانه رد کردیم و بسته جایگزین پیشنهاد دادیم." },
+            { "language": "ckb", "text": "داواکاری پێگەشتنەوەی پارەی کڕیار بە باشی ڕەت کردین و پاکێجی جێگرەکان پێشکەش کردین." },
+            { "language": "en", "text": "We politely refused the customer's refund request and offered an alternative package." },
+            { "language": "fa", "text": "درخواست بازپرداخت مشتری را به‌صورت محترمانه رد کردیم و یک پکیج جایگزین ارائه دادیم." },
+            { "language": "kmr", "text": "Daxwaza perevegerînê ya xerîdar bi rihetî red kirin û paketeka din pêşniyarkir." },
+            { "language": "pl", "text": "Grzecznie odrzuciliśmy reklamację o zwrot pieniędzy od klienta i zaproponowaliśmy alternatywny pakiet." },
+            { "language": "ro", "text": "Am refuzat politicos solicitarea de restituire a clientului și am oferit un pachet alternativ." },
+            { "language": "ru", "text": "Мы вежливо отклонили запрос клиента на возврат средств и предложили альтернативный пакет." },
+            { "language": "sq", "text": "Kërkesën për rimbursim të klientit e kemi refuzuar në mënyrë të sjellshme dhe kemi ofruar një paketë alternative." },
+            { "language": "tr", "text": "Müşterinin iade talebini nazikçe reddettik ve alternatif bir paket önerdik." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abwenden",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "يلغي/يمنع" },
+        { "language": "ckb", "text": "ڕێگری کردن" },
+        { "language": "en", "text": "to avert; to prevent" },
+        { "language": "fa", "text": "جلوگیری کردن؛ منصرف کردن" },
+        { "language": "kmr", "text": "rawestandin; berdewam nedâin" },
+        { "language": "pl", "text": "zapobiegać; odwracać od" },
+        { "language": "ro", "text": "a preveni; a deviere" },
+        { "language": "ru", "text": "предотвращать; отворачиваться" },
+        { "language": "sq", "text": "të parandalojë; të shmangë" },
+        { "language": "tr", "text": "önlemek; uzaklaştırmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Incident-Response-Manager hat den Datenabfluss abgewendet, indem er den Zugriff auf den alten API-Key sofort entzogen hat.",
+          "translations": [
+            { "language": "ar", "text": "مدیر پاسخ به حادثه با سلب فوری دسترسی از کلید API قدیمی، نشت داده را جلوگیری کرد." },
+            { "language": "ckb", "text": "بەڕێوبەری وەڵامدانی ڕووداوەکان جلکردنی دەیتاکەیان وەک سەرووک بە شێوەیەکی خێرا دەستگەیشت بۆ کلیلەکانی API کۆنی وەگرت." },
+            { "language": "en", "text": "The incident-response manager averted data leakage by immediately revoking access to the old API key." },
+            { "language": "fa", "text": "مدیر واکنش به حادثه با برداشت فوری دسترسی از کلید API قدیمی از نشت داده جلوگیری کرد." },
+            { "language": "kmr", "text": "Rêvebirê bersivdana incidentan paşveberdana agahiyê bi derxistina herêm dîtina kilîla API ya kevn destnîşan kir." },
+            { "language": "pl", "text": "Menedżer reakcji na incydenty zapobiegł wyciekowi danych, natychmiast cofając dostęp do starego klucza API." },
+            { "language": "ro", "text": "Managerul de răspuns la incidente a prevenit scurgerea de date prin anularea imediată a accesului la vechea cheie API." },
+            { "language": "ru", "text": "Менеджер по инцидент-менеджменту предотвратил утечку данных, немедленно отозвав доступ к старому API-ключу." },
+            { "language": "sq", "text": "Menaxheri i menaxhimit të incidenteve e parevshmoi rrjedhjen e të dhënave duke hequr menjëherë aksesin tek çelësi i vjetër API." },
+            { "language": "tr", "text": "Olay müdahale yöneticisi, eski API anahtarına erişimi derhal iptal ederek veri sızıntısını önledi." }
+          ]
+        },
+        {
+          "baseText": "Wir haben die Eskalation im Support abgewendet, indem wir transparent kommunizierten.",
+          "translations": [
+            { "language": "ar", "text": "با شفافیت ارتباطی، تصعید مسئله در پشتیبانی را از وقوع بازداشتیم." },
+            { "language": "ckb", "text": "بەڕووناوی دیالوگەکی ڕوون، ئه‌زکالەیشنەکەی پشتگیریمان ڕەوانەمان وەردەگرت." },
+            { "language": "en", "text": "We prevented support escalation by communicating transparently." },
+            { "language": "fa", "text": "با ارتباط شفاف، تشدید بحران در پشتیبانی را پیشگیری کردیم." },
+            { "language": "kmr", "text": "Bi ragihîna vekirî em rawestandina escalasiyona piştgiriyê hate berdan." },
+            { "language": "pl", "text": "Udało nam się zapobiec eskalacji w supportcie dzięki przejrzystej komunikacji." },
+            { "language": "ro", "text": "Am prevenit escaladarea în suport printr-o comunicare transparentă." },
+            { "language": "ru", "text": "Мы предотвратили эскалацию в поддержке благодаря прозрачной коммуникации." },
+            { "language": "sq", "text": "Eshmangëm përshkallëzimin në suport falë komunikimit transparent." },
+            { "language": "tr", "text": "Şeffaf iletişimle destek tarafındaki tırmanmayı önledik." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abwerfen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "يلقي/يتخلى عن" },
+        { "language": "ckb", "text": "فڕێدان/لابوونەوە" },
+        { "language": "en", "text": "to throw off; to shed" },
+        { "language": "fa", "text": "پراندن؛ رها کردن" },
+        { "language": "kmr", "text": "jêkirin; berdan" },
+        { "language": "pl", "text": "zrzucać; odrzucać" },
+        { "language": "ro", "text": "a scutura; a arunca" },
+        { "language": "ru", "text": "сбрасывать; отбрасывать" },
+        { "language": "sq", "text": "të hedhë poshtë; të përbuzë" },
+        { "language": "tr", "text": "atma; atarak atmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Monteur hat bei der Gerätewartung die defekte Folie automatisch abgeworfen.",
+          "translations": [
+            { "language": "ar", "text": "تعمیرکار لایه معیوب را در نگهداری دستگاه به‌طور خودکار دور انداخت." },
+            { "language": "ckb", "text": "چاککەرەوە لە کارە تەکنیکیەدا خەراویییەکەی ئاسۆیەکەی بە شێوەیەکی خۆکار لەسەر بەردەوام بوو." },
+            { "language": "en", "text": "During equipment maintenance, the technician automatically discarded the faulty protective liner." },
+            { "language": "fa", "text": "در نگهداری تجهیزات، تکنسین لایه محافظ معیوب را به‌صورت خودکار دور ریخت." },
+            { "language": "kmr", "text": "Di dema parastina amûrê de pêşgîr li ser pêşbaziyek xeraw bi otomatîkî berdest kir." },
+            { "language": "pl", "text": "Podczas konserwacji urządzeń technik automatycznie zrzucił uszkodzoną osłonę." },
+            { "language": "ro", "text": "În timpul mentenanței echipamentelor, tehnicianul a scos automat stratul de protecție defect." },
+            { "language": "ru", "text": "Во время обслуживания оборудования техник автоматически сбросил поврежденную защитную оболочку." },
+            { "language": "sq", "text": "Gjatë mirëmbajtjes së pajisjeve, teknikët automatikisht hodhën mënjanë shtresën mbrojtëse të dëmtuar." },
+            { "language": "tr", "text": "Ekipman bakımı sırasında teknisyen arızalı koruyucu tabakayı otomatik olarak attı." }
+          ]
+        },
+        {
+          "baseText": "Bei der Software-Einführung hat das Legacy-Modul alte Session-Cookies abgeworden.",
+          "translations": [
+            { "language": "ar", "text": "در راه‌اندازی نرم‌افزار، ماژول قدیمی کوکی‌های قدیمی نشست را کنار گذاشت." },
+            { "language": "ckb", "text": "لە دامەزراوەی نەرمەکاڵەدا مۆلکەی بەدوا خەرجی کوکیە جارانەی کۆن دەهێنا." },
+            { "language": "en", "text": "During the software rollout, the legacy module shed old session cookies." },
+            { "language": "fa", "text": "در هنگام استقرار نرم‌افزار، ماژول قدیمی کوکی‌های نشست قدیمی را حذف کرد." },
+            { "language": "kmr", "text": "Di domandina nermalavê de modulê kevn cookieên kevn yên danişînê berdest kir." },
+            { "language": "pl", "text": "Podczas wdrażania oprogramowania moduł legacy odrzucił stare ciasteczka sesji." },
+            { "language": "ro", "text": "În timpul implementării software-ului, modulul vechi a abandonat cookie-urile vechi de sesiune." },
+            { "language": "ru", "text": "При внедрении программного обеспечения устаревший модуль отбросил старые cookie сессии." },
+            { "language": "sq", "text": "Gjatë implementimit të softuerit, moduli i vjetër hapi mënjanë cookie-t e vjetra të seancës." },
+            { "language": "tr", "text": "Yazılım geçişi sırasında eski modül eski oturum çerezlerini attı." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abwiegen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "يزن/يقيس الكمية" },
+        { "language": "ckb", "text": "پێوانەکردن" },
+        { "language": "en", "text": "to weigh" },
+        { "language": "fa", "text": "وزن کردن؛ اندازه‌گیری کردن" },
+        { "language": "kmr", "text": "sahîkdan; hevbirin" },
+        { "language": "pl", "text": "odważyć" },
+        { "language": "ro", "text": "a cântări" },
+        { "language": "ru", "text": "взвешивать" },
+        { "language": "sq", "text": "të peshojë" },
+        { "language": "tr", "text": "ağırlığını tartmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Labor-Workflow werden kritische Pakete vor dem Versand zweimal abgewogen und dann im ERP erfasst.",
+          "translations": [
+            { "language": "ar", "text": "در جریان کاری آزمایشگاه، بسته‌های حساس قبل از ارسال دوبار وزن‌کشی می‌شوند و سپس در ERP ثبت می‌گردند." },
+            { "language": "ckb", "text": "لە کارەی لابۆراتۆریدا پاکەتە گرنگەکان پێش ناردن دووبارە ئێمە پێوان دەکەین و دواتر لە ERP تۆمار دەکرێن." },
+            { "language": "en", "text": "In the lab workflow, critical packages are weighed twice before shipping and then recorded in the ERP." },
+            { "language": "fa", "text": "در فرایند آزمایشگاه، بسته‌های حساس قبل از ارسال دو بار وزن‌کشی می‌شوند و سپس در ERP ثبت می‌گردند." },
+            { "language": "kmr", "text": "Di pêşveçûna laboratwarê de, pakêtên girîng berî şandinê ducarî dihêle û paşê di ERP de têne tomar kirin." },
+            { "language": "pl", "text": "W procesie laboratoryjnym krytyczne paczki są wałkowane dwa razy przed wysyłką, a następnie rejestrowane w ERP." },
+            { "language": "ro", "text": "În fluxul de lucru al laboratorului, pachetele critice sunt cântărite de două ori înainte de expediere și apoi înregistrate în ERP." },
+            { "language": "ru", "text": "В лабораторном процессе критические пакеты взвешиваются дважды перед отправкой, а затем регистрируются в ERP." },
+            { "language": "sq", "text": "Në rrjedhën e laboratorit paketat kritike peshohen dy herë para dërgimit dhe më pas regjistrohen në ERP." },
+            { "language": "tr", "text": "Laboratuvar iş akışında kritik paketler gönderimden önce iki kez tartılır ve ardından ERP'de kaydedilir." }
+          ]
+        },
+        {
+          "baseText": "Das Beschaffungs-Team hat die drei Varianten abgewiegen, bevor es den Anbieter im Rahmen des Budgetprozesses auswählt.",
+          "translations": [
+            { "language": "ar", "text": "تیم تدارکات سه گزینه را قبل از انتخاب تأمین‌کننده در چارچوب فرایند بودجه ارزیابی وزنی کرد." },
+            { "language": "ckb", "text": "تیمەی کڕینەوە سێ جۆرە بە دۆخی پێواندەستی دا پێش دیاریکردنی دابینکەر لە ناوەڕاستی پرۆسەی بودجە." },
+            { "language": "en", "text": "The procurement team weighed three options before selecting the vendor in the budgeting process." },
+            { "language": "fa", "text": "تیم تدارکات سه گزینه را قبل از انتخاب فروشنده در فرآیند بودجه‌ریزی ارزیابی دقیق کرد." },
+            { "language": "kmr", "text": "Tîmê pêşkêşiyê sê vebijêrk berê hilbijartina firoşkarê di pêvajoya budjetê de berhevkir." },
+            { "language": "pl", "text": "Zespół zakupów zważył trzy warianty, zanim w procesie budżetowym wybrał dostawcę." },
+            { "language": "ro", "text": "Echipa de achiziții a cântărit cele trei variante înainte de a selecta furnizorul în procesul de bugetare." },
+            { "language": "ru", "text": "Отдел закупок взвесил три варианта перед выбором поставщика в рамках бюджетного процесса." },
+            { "language": "sq", "text": "Ekipi i prokurimit ka peshur tre variante para se të zgjedhë furnizuesin në procesin e buxhetimit." },
+            { "language": "tr", "text": "Satın alma ekibi, tedarikçi seçmeden önce bütçe süreci içinde üç seçeneği tarttı." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

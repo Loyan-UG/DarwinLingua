@@ -10,6 +10,7 @@ public sealed record ParsedContentPackageModel(
     string? Source,
     IReadOnlyList<string> DefaultMeaningLanguages,
     IReadOnlyList<ParsedContentEntryModel> Entries,
+    IReadOnlyList<ParsedContentLabelDefinitionModel> Labels,
     IReadOnlyList<ParsedContentCollectionModel> Collections)
 {
     /// <summary>

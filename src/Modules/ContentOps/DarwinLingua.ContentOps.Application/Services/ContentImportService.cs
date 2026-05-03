@@ -108,6 +108,7 @@ internal sealed class ContentImportService : IContentImportService
         ValidateScenarios(parsedPackage.Scenarios, topicsByKey, meaningLanguages, issues);
         ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
         ValidateEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, issues);
+        Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = ValidateLabels(parsedPackage.Labels, issues);
 
         if (issues.Any(issue => issue.EntryIndex is null && string.Equals(issue.Severity, "Error", StringComparison.Ordinal)))
         {
@@ -127,10 +128,13 @@ internal sealed class ContentImportService : IContentImportService
         contentPackage.MarkProcessing(DateTime.UtcNow);
 
         List<WordEntry> importedWords = [];
+        List<LabelDefinition> importedLabelDefinitions = [];
         List<WordCollection> importedCollections = [];
         List<ScenarioLesson> importedScenarios = [];
         List<ConversationStarterPack> importedConversationStarterPacks = [];
         List<EventPreparationPack> importedEventPreparationPacks = [];
+
+        ProcessLabelDefinitions(parsedPackage.Labels, importedLabelDefinitions);
 
         for (int entryIndex = 0; entryIndex < parsedPackage.Entries.Count; entryIndex++)
         {
@@ -141,6 +145,7 @@ internal sealed class ContentImportService : IContentImportService
                 topicsByKey,
                 meaningLanguages,
                 expectedMeaningLanguages,
+                allowedLabelsByKind,
                 contentPackage,
                 importedWords,
                 issues,
@@ -161,7 +166,7 @@ internal sealed class ContentImportService : IContentImportService
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedWords, importedCollections, importedScenarios, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
+            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedScenarios, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -481,6 +486,40 @@ internal sealed class ContentImportService : IContentImportService
         }
     }
 
+    private static void ProcessLabelDefinitions(
+        IReadOnlyList<ParsedContentLabelDefinitionModel> labels,
+        ICollection<LabelDefinition> importedLabels)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedContentLabelDefinitionModel label in labels)
+        {
+            WordLabelKind kind = Enum.Parse<WordLabelKind>(NormalizeText(label.Kind), true);
+            string key = NormalizeText(label.Key).ToLowerInvariant();
+            string displayName = NormalizeText(label.DisplayName);
+
+            LabelDefinition importedLabel = new(
+                Guid.NewGuid(),
+                kind,
+                key,
+                displayName,
+                label.SortOrder < 0 ? 0 : label.SortOrder,
+                true,
+                timestampUtc);
+
+            foreach (ParsedLocalizedTextModel localization in label.Localizations)
+            {
+                importedLabel.AddOrUpdateLocalization(
+                    Guid.NewGuid(),
+                    LanguageCode.From(NormalizeText(localization.Language).ToLowerInvariant()),
+                    NormalizeText(localization.Name),
+                    timestampUtc);
+            }
+
+            importedLabels.Add(importedLabel);
+        }
+    }
+
     private async Task ProcessCollectionsAsync(
         IReadOnlyList<ParsedContentCollectionModel> collections,
         IReadOnlyList<WordEntry> importedWords,
@@ -658,6 +697,7 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlyDictionary<string, Topic> topicsByKey,
         IReadOnlySet<LanguageCode> meaningLanguages,
         IReadOnlyList<LanguageCode> expectedMeaningLanguages,
+        IReadOnlyDictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind,
         ContentPackage contentPackage,
         ICollection<WordEntry> importedWords,
         ICollection<ImportIssueModel> issues,
@@ -674,8 +714,8 @@ internal sealed class ContentImportService : IContentImportService
             .Select(topic => NormalizeText(topic).ToLowerInvariant())
             .Distinct(StringComparer.Ordinal)
             .ToArray();
-        string[] usageLabels = ValidateLabelKeys(entry.UsageLabels, "usageLabels", entryErrors);
-        string[] contextLabels = ValidateLabelKeys(entry.ContextLabels, "contextLabels", entryErrors);
+        string[] usageLabels = ValidateLabelKeys(entry.UsageLabels, WordLabelKind.Usage, "usageLabels", allowedLabelsByKind, entryErrors);
+        string[] contextLabels = ValidateLabelKeys(entry.ContextLabels, WordLabelKind.Context, "contextLabels", allowedLabelsByKind, entryErrors);
         string[] grammarNotes = ValidateGrammarNotes(entry.GrammarNotes, entryErrors);
         ParsedContentCollocationModel[] collocations = ValidateCollocations(entry.Collocations, entryErrors);
         ParsedContentWordFamilyMemberModel[] wordFamilies = ValidateWordFamilies(entry.WordFamilies, entryErrors);
@@ -1365,6 +1405,70 @@ internal sealed class ContentImportService : IContentImportService
         }
     }
 
+    private static Dictionary<WordLabelKind, HashSet<string>> ValidateLabels(
+        IReadOnlyList<ParsedContentLabelDefinitionModel> labels,
+        ICollection<ImportIssueModel> issues)
+    {
+        Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = new()
+        {
+            [WordLabelKind.Usage] = new HashSet<string>(StringComparer.Ordinal),
+            [WordLabelKind.Context] = new HashSet<string>(StringComparer.Ordinal),
+        };
+
+        if (labels.Count == 0)
+        {
+            issues.Add(new ImportIssueModel(null, "Error", "The package labels array is required and must define localized label taxonomy before entries reference labels."));
+            return allowedLabelsByKind;
+        }
+
+        HashSet<string> uniqueLabels = new(StringComparer.Ordinal);
+
+        for (int index = 0; index < labels.Count; index++)
+        {
+            ParsedContentLabelDefinitionModel label = labels[index];
+            List<string> errors = [];
+            string key = NormalizeText(label.Key).ToLowerInvariant();
+
+            if (!Enum.TryParse(NormalizeText(label.Kind), true, out WordLabelKind kind) || !Enum.IsDefined(kind))
+            {
+                errors.Add("Label kind is invalid.");
+            }
+
+            if (!ValidateKebabKey(key))
+            {
+                errors.Add("Label key is required and must use lowercase kebab-case.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(label.DisplayName)))
+            {
+                errors.Add("Label displayName is required.");
+            }
+
+            if (errors.Count == 0 && !uniqueLabels.Add($"{kind}::{key}"))
+            {
+                errors.Add($"Duplicate label '{kind}:{key}' is not allowed.");
+            }
+
+            ValidateLocalizedCollectionText(label.Localizations, "Label localizations", errors);
+
+            if (errors.Count > 0)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Label {index + 1} '{key}': {string.Join(" ", errors)}"));
+                continue;
+            }
+
+            if (!allowedLabelsByKind.TryGetValue(kind, out HashSet<string>? labelsForKind))
+            {
+                labelsForKind = new HashSet<string>(StringComparer.Ordinal);
+                allowedLabelsByKind[kind] = labelsForKind;
+            }
+
+            labelsForKind.Add(key);
+        }
+
+        return allowedLabelsByKind;
+    }
+
     private static void ValidateKebabReferences(
         IReadOnlyList<string> references,
         string fieldName,
@@ -1747,7 +1851,9 @@ internal sealed class ContentImportService : IContentImportService
 
     private static string[] ValidateLabelKeys(
         IReadOnlyList<string> labels,
+        WordLabelKind kind,
         string fieldName,
+        IReadOnlyDictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind,
         ICollection<string> entryErrors)
     {
         List<string> normalized = [];
@@ -1782,6 +1888,13 @@ internal sealed class ContentImportService : IContentImportService
             if (normalized.Contains(normalizedLabel, StringComparer.Ordinal))
             {
                 entryErrors.Add($"Duplicate {fieldName} item '{normalizedLabel}' is not allowed.");
+                continue;
+            }
+
+            if (!allowedLabelsByKind.TryGetValue(kind, out HashSet<string>? allowedLabels) ||
+                !allowedLabels.Contains(normalizedLabel))
+            {
+                entryErrors.Add($"Entry {fieldName} item '{normalizedLabel}' must be defined in the package labels taxonomy with complete localizations.");
                 continue;
             }
 

@@ -46,6 +46,7 @@ public interface IContentImportRepository
     /// </summary>
     Task PersistImportAsync(
         ContentPackage contentPackage,
+        IReadOnlyList<LabelDefinition> importedLabelDefinitions,
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
         IReadOnlyList<ScenarioLesson> importedScenarios,

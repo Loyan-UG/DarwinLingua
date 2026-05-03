@@ -49,6 +49,7 @@ internal sealed class ContentImportParser : IContentImportParser
             document.Source,
             (document.DefaultMeaningLanguages ?? []).Select(language => language ?? string.Empty).ToArray(),
             document.Entries.Select(Map).ToArray(),
+            (document.Labels ?? []).Select(Map).ToArray(),
             (document.Collections ?? []).Select(Map).ToArray())
         {
             Scenarios = (document.Scenarios ?? []).Select(Map).ToArray(),
@@ -57,6 +58,19 @@ internal sealed class ContentImportParser : IContentImportParser
         };
 
         return Task.FromResult(parsedPackage);
+    }
+
+    private static ParsedContentLabelDefinitionModel Map(ContentLabelDefinitionDocument label)
+    {
+        return new ParsedContentLabelDefinitionModel(
+            label.Kind ?? string.Empty,
+            label.Key ?? string.Empty,
+            label.DisplayName ?? string.Empty,
+            (label.Localizations ?? []).Select(localization => new ParsedLocalizedTextModel(
+                localization.Language ?? string.Empty,
+                localization.Name ?? string.Empty,
+                localization.Description)).ToArray(),
+            label.SortOrder ?? 0);
     }
 
     private static ParsedContentEntryModel Map(ContentEntryDocument entry)
@@ -231,6 +245,8 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public ContentEntryDocument[]? Entries { get; set; }
 
+        public ContentLabelDefinitionDocument[]? Labels { get; set; }
+
         public ContentCollectionDocument[]? Collections { get; set; }
 
         public ScenarioLessonDocument[]? Scenarios { get; set; }
@@ -352,6 +368,19 @@ internal sealed class ContentImportParser : IContentImportParser
         public ContentCollectionWordReferenceDocument[]? Words { get; set; }
 
         public string?[]? WordKeys { get; set; }
+    }
+
+    private sealed class ContentLabelDefinitionDocument
+    {
+        public string? Kind { get; set; }
+
+        public string? Key { get; set; }
+
+        public string? DisplayName { get; set; }
+
+        public LocalizedTextDocument[]? Localizations { get; set; }
+
+        public int? SortOrder { get; set; }
     }
 
     private sealed class LocalizedTextDocument

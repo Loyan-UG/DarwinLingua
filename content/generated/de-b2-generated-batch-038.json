@@ -1,0 +1,610 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-038",
+  "packageName": "German B2 Generated Batch 038",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {"language":"de","name":"Am Arbeitsplatz"},
+        {"language":"ar","name":"بيئة العمل"},
+        {"language":"ckb","name":"لە شوێنی کار"},
+        {"language":"en","name":"Workplace"},
+        {"language":"fa","name":"محیط کار"},
+        {"language":"kmr","name":"Li cihê kar"},
+        {"language":"pl","name":"Miejsca pracy"},
+        {"language":"ro","name":"La locul de muncă"},
+        {"language":"ru","name":"Рабочее место"},
+        {"language":"sq","name":"Në vendin e punës"},
+        {"language":"tr","name":"İş yeri"}
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {"language":"de","name":"Formell"},
+        {"language":"ar","name":"رسمي"},
+        {"language":"ckb","name":"فەرمی"},
+        {"language":"en","name":"Formal"},
+        {"language":"fa","name":"رسمی"},
+        {"language":"kmr","name":"Fermî"},
+        {"language":"pl","name":"Formalny"},
+        {"language":"ro","name":"Formal"},
+        {"language":"ru","name":"Формальный"},
+        {"language":"sq","name":"Formal"},
+        {"language":"tr","name":"Resmi"}
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {"language":"de","name":"Schriftlich"},
+        {"language":"ar","name":"كتابي"},
+        {"language":"ckb","name":"نووسراو"},
+        {"language":"en","name":"Written"},
+        {"language":"fa","name":"نوشتاری"},
+        {"language":"kmr","name":"Nivîskî"},
+        {"language":"pl","name":"Pisemny"},
+        {"language":"ro","name":"Scris"},
+        {"language":"ru","name":"Письменный"},
+        {"language":"sq","name":"I shkruar"},
+        {"language":"tr","name":"Yazılı"}
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {"language":"de","name":"Geschäftlich"},
+        {"language":"ar","name":"أعمال"},
+        {"language":"ckb","name":"بازرگانی"},
+        {"language":"en","name":"Business"},
+        {"language":"fa","name":"تجاری"},
+        {"language":"kmr","name":"Bazirganî"},
+        {"language":"pl","name":"Biznesowy"},
+        {"language":"ro","name":"Afaceri"},
+        {"language":"ru","name":"Бизнес"},
+        {"language":"sq","name":"Biznes"},
+        {"language":"tr","name":"İş"}
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "polite",
+      "displayName": "Polite",
+      "sortOrder": 230,
+      "localizations": [
+        {"language":"de","name":"Höflich"},
+        {"language":"ar","name":"مهذب"},
+        {"language":"ckb","name":"بەڕێز"},
+        {"language":"en","name":"Polite"},
+        {"language":"fa","name":"مودبانه"},
+        {"language":"kmr","name":"Bi rêz"},
+        {"language":"pl","name":"Uprzejmy"},
+        {"language":"ro","name":"Politicos"},
+        {"language":"ru","name":"Вежливый"},
+        {"language":"sq","name":"I sjellshëm"},
+        {"language":"tr","name":"Nazik"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "management",
+      "displayName": "Management",
+      "sortOrder": 1240,
+      "localizations": [
+        {"language":"de","name":"Management"},
+        {"language":"ar","name":"الإدارة"},
+        {"language":"ckb","name":"بەڕێوبەرایەتی"},
+        {"language":"en","name":"Management"},
+        {"language":"fa","name":"مدیریت"},
+        {"language":"kmr","name":"Rêveberî"},
+        {"language":"pl","name":"Zarządzanie"},
+        {"language":"ro","name":"Management"},
+        {"language":"ru","name":"Менеджмент"},
+        {"language":"sq","name":"Menaxhim"},
+        {"language":"tr","name":"Yönetim"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "documents",
+      "displayName": "Documents",
+      "sortOrder": 1400,
+      "localizations": [
+        {"language":"de","name":"Dokumente"},
+        {"language":"ar","name":"المستندات"},
+        {"language":"ckb","name":"بەڵگەنامەکان"},
+        {"language":"en","name":"Documents"},
+        {"language":"fa","name":"اسناد"},
+        {"language":"kmr","name":"Belgeh"},
+        {"language":"pl","name":"Dokumenty"},
+        {"language":"ro","name":"Documente"},
+        {"language":"ru","name":"Документы"},
+        {"language":"sq","name":"Dokumente"},
+        {"language":"tr","name":"Belgeler"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "legal",
+      "displayName": "Legal",
+      "sortOrder": 1110,
+      "localizations": [
+        {"language":"de","name":"Recht"},
+        {"language":"ar","name":"قانوني"},
+        {"language":"ckb","name":"یاسایی"},
+        {"language":"en","name":"Legal"},
+        {"language":"fa","name":"حقوقی"},
+        {"language":"kmr","name":"Yas"},
+        {"language":"pl","name":"Prawny"},
+        {"language":"ro","name":"Juridic"},
+        {"language":"ru","name":"Юридический"},
+        {"language":"sq","name":"Ligjor"},
+        {"language":"tr","name":"Yasal"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "hr",
+      "displayName": "HR",
+      "sortOrder": 980,
+      "localizations": [
+        {"language":"de","name":"Personal"},
+        {"language":"ar","name":"الموارد البشرية"},
+        {"language":"ckb","name":"سەرچاوە مرۆوان"},
+        {"language":"en","name":"Human Resources"},
+        {"language":"fa","name":"منابع انسانی"},
+        {"language":"kmr","name":"Çavkaniyên mirovî"},
+        {"language":"pl","name":"Zasoby ludzkie"},
+        {"language":"ro","name":"Resurse umane"},
+        {"language":"ru","name":"Кадры"},
+        {"language":"sq","name":"Burime njerëzore"},
+        {"language":"tr","name":"İK"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "finance",
+      "displayName": "Finance",
+      "sortOrder": 1235,
+      "localizations": [
+        {"language":"de","name":"Finanzen"},
+        {"language":"ar","name":"التمويل"},
+        {"language":"ckb","name":"دارایی"},
+        {"language":"en","name":"Finance"},
+        {"language":"fa","name":"مالی"},
+        {"language":"kmr","name":"Aborî"},
+        {"language":"pl","name":"Finanse"},
+        {"language":"ro","name":"Finanțe"},
+        {"language":"ru","name":"Финансы"},
+        {"language":"sq","name":"Financa"},
+        {"language":"tr","name":"Finans"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "sales",
+      "displayName": "Sales",
+      "sortOrder": 1245,
+      "localizations": [
+        {"language":"de","name":"Vertrieb"},
+        {"language":"ar","name":"المبيعات"},
+        {"language":"ckb","name":"فرۆشتن"},
+        {"language":"en","name":"Sales"},
+        {"language":"fa","name":"فروش"},
+        {"language":"kmr","name":"Firotin"},
+        {"language":"pl","name":"Sprzedaż"},
+        {"language":"ro","name":"Vânzări"},
+        {"language":"ru","name":"Продажи"},
+        {"language":"sq","name":"Shitje"},
+        {"language":"tr","name":"Satış"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        {"language":"de","name":"Kundenservice"},
+        {"language":"ar","name":"خدمة العملاء"},
+        {"language":"ckb","name":"خزمەتی کڕیار"},
+        {"language":"en","name":"Customer Service"},
+        {"language":"fa","name":"خدمات مشتریان"},
+        {"language":"kmr","name":"Xizmeta xerîdar"},
+        {"language":"pl","name":"Obsługa klienta"},
+        {"language":"ro","name":"Serviciu clienți"},
+        {"language":"ru","name":"Клиентский сервис"},
+        {"language":"sq","name":"Shërbim klienti"},
+        {"language":"tr","name":"Müşteri hizmetleri"}
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "training",
+      "displayName": "Training",
+      "sortOrder": 1320,
+      "localizations": [
+        {"language":"de","name":"Schulung"},
+        {"language":"ar","name":"تدريب"},
+        {"language":"ckb","name":"ڕاهێنان"},
+        {"language":"en","name":"Training"},
+        {"language":"fa","name":"آموزش"},
+        {"language":"kmr","name":"Perwerdehî"},
+        {"language":"pl","name":"Szkolenie"},
+        {"language":"ro","name":"Instruire"},
+        {"language":"ru","name":"Обучение"},
+        {"language":"sq","name":"Trajnim"},
+        {"language":"tr","name":"Eğitim"}
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "angleichen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "angleichen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-glei-chen",
+      "topics": ["work-and-jobs", "documents-and-administration", "management-and-leadership"],
+      "usageLabels": ["workplace", "formal", "written"],
+      "contextLabels": ["management", "documents"],
+      "meanings": [
+        {"language":"ar","text":"مواءمة/تعديل"},
+        {"language":"ckb","text":"ڕێکخستن"},
+        {"language":"en","text":"to align; to match"},
+        {"language":"fa","text":"هماهنگ کردن؛ تطبیق دادن"},
+        {"language":"kmr","text":"wekhevkirin; hevgerandin"},
+        {"language":"pl","text":"dopasować; zharmonizować"},
+        {"language":"ro","text":"a alinia; a ajusta"},
+        {"language":"ru","text":"согласовывать; приводить в соответствие"},
+        {"language":"sq","text":"përshtatë; barazoj"},
+        {"language":"tr","text":"uyumlaştırmak; dengelemek"}
+      ],
+      "examples": [
+        {
+          "baseText":"Bitte gleichen Sie die Prozesszeit in den drei Piloten mit dem Standard ab, damit wir sie später reporten können.",
+          "translations":[
+            {"language":"ar","text":"لطفاً زمان فرآیند را در سه نسخه آزمایشی با استاندارد مقایسه کنید تا بعداً بتوانیم گزارش کنیم."},
+            {"language":"ckb","text":"تکایە کاتی پرۆسە لە سێ پێڵۆتەکانەوە وەکو ستاندارد ڕاست بکە تا دواتر بتوانین ڕاپۆرت بکەین."},
+            {"language":"en","text":"Please align the process time in the three pilots with the standard so we can report it later."},
+            {"language":"fa","text":"لطفاً زمان‌بندی فرایند را در سه پایلوت با استاندارد همسو کنید تا بعداً بتوانیم گزارش کنیم."},
+            {"language":"kmr","text":"Ji kerema xwe demkira pêvajoyê di sê pilotên de bi standardê re wekhev bikin da ku hûn dîsa raporbikin."},
+            {"language":"pl","text":"Proszę wyrównać czas procesu w trzech pilotażach ze standardem, abyśmy mogli go później odnotować."},
+            {"language":"ro","text":"Vă rog să aliniați durata procesului din cele trei proiecte pilot cu standardul, ca să-l putem raporta ulterior."},
+            {"language":"ru","text":"Согласуйте время процесса в трёх пилотах со стандартом, чтобы мы могли потом сделать отчёт."},
+            {"language":"sq","text":"Ju lutemi barazoni kohën e procesit në tre pilotë me standardin që ta raportojmë më vonë."},
+            {"language":"tr","text":"Lütfen süreç süresini üç pilotta standartla uyumlu hale getirin, böylece daha sonra raporlayabilelim."}
+          ]
+        },
+        {
+          "baseText":"Im Projektmeeting haben wir die Zielkennzahlen mit der Forecast-Version abgeglichen.",
+          "translations":[
+            {"language":"ar","text":"در جلسه پروژه، شاخص‌های هدف را با نسخه پیش‌بینی مقایسه کردیم."},
+            {"language":"ckb","text":"لە کۆبوونی پڕۆژەدا ئاستەنگەکانی ئامانجمان بە وەشانی پێشبینی ڕاست کردەوە."},
+            {"language":"en","text":"In the project meeting, we aligned target KPIs with the forecast version."},
+            {"language":"fa","text":"در جلسه پروژه، شاخص‌های هدف را با نسخه پیش‌بینی هم‌تراز کردیم."},
+            {"language":"kmr","text":"Di civîna projeyê de em KPI-yên armancê bi guhêrîna pêşbîniyê hevkird."},
+            {"language":"pl","text":"Na spotkaniu projektowym zsynchronizowaliśmy cele KPI z wersją forecast."},
+            {"language":"ro","text":"În ședința de proiect am armonizat indicatorii țintă cu versiunea de forecast."},
+            {"language":"ru","text":"На проектной встрече мы сопоставили целевые KPI с версией прогноза."},
+            {"language":"sq","text":"Në takimin e projektit kemi harmonizuar KPI-të e synuara me versionin e forecast-it."},
+            {"language":"tr","text":"Proje toplantısında hedef KPI’ları öngörü versiyonuyla uyumlu hale getirdik."}
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Annahme",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Annahmen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "an-na-hme",
+      "topics": ["work-and-jobs", "business-communication", "documents-and-administration"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": ["legal", "documents", "management"],
+      "meanings": [
+        {"language":"ar","text":"قبول؛ پذیرش"},
+        {"language":"ckb","text":"پەسەندکردن"},
+        {"language":"en","text":"acceptance; assumption"},
+        {"language":"fa","text":"پذیرش؛ فرض"},
+        {"language":"kmr","text":"pejirandin; hemûye"},
+        {"language":"pl","text":"akceptacja; założenie"},
+        {"language":"ro","text":"acceptare; presupunere"},
+        {"language":"ru","text":"приём; допущение"},
+        {"language":"sq","text":"pranim; supozim"},
+        {"language":"tr","text":"kabul; varsayım"}
+      ],
+      "examples": [
+        {
+          "baseText":"Die Annahme des Budgetvorschlags wurde in der Beschlussfassung protokolliert.",
+          "translations":[
+            {"language":"ar","text":"قبول اقتراح بودجه در صورت‌جلسه تصمیم‌گیری ثبت شد."},
+            {"language":"ckb","text":"پەسەندکردنی پێشکەشی بودجە لە رەوانەکەی بڕیاردا تۆمار کرا."},
+            {"language":"en","text":"The acceptance of the budget proposal was recorded in the resolution minutes."},
+            {"language":"fa","text":"پذیرش پیشنهاد بودجه در صورتجلسه تصمیم‌گیری ثبت شد."},
+            {"language":"kmr","text":"Pejirandina pêşniyariya bujetê di protokolê de hate tomarkirin."},
+            {"language":"pl","text":"Akceptacja propozycji budżetu została odnotowana w protokole uchwały."},
+            {"language":"ro","text":"Acceptarea propunerii bugetare a fost înregistrată în procesul-verbal al hotărârii."},
+            {"language":"ru","text":"Принятие бюджетного предложения зафиксировали в протоколе резолюции."},
+            {"language":"sq","text":"Pranimi i propozimit buxhetor u regjistrua në procesverbalin e vendimit."},
+            {"language":"tr","text":"Bütçe önerisinin kabulü karar tutanağına geçti."}
+          ]
+        },
+        {
+          "baseText":"Aus dieser Annahme der Kundenerwartung mussten wir den Service-Level erhöhen.",
+          "translations":[
+            {"language":"ar","text":"بر اساس این فرض در مورد انتظارات مشتری، باید سطح خدمات را بالا ببریم."},
+            {"language":"ckb","text":"لەسەر ئەم پەسەندەی چاودێری کڕیار، پێویست بوو ئاستی خزمەتگوزاریەکە بەرز بکەین."},
+            {"language":"en","text":"From this assumption about customer expectations, we had to raise the service level."},
+            {"language":"fa","text":"بر اساس این فرض درباره انتظارات مشتری، مجبور شدیم سطح سرویس را افزایش دهیم."},
+            {"language":"kmr","text":"Ji vê hemûyeyê li ser hêviyên xerîdar em mecbûr bûn astêxistiyê zêde bikin."},
+            {"language":"pl","text":"Na podstawie tego założenia o oczekiwaniach klienta musieliśmy podnieść poziom usługi."},
+            {"language":"ro","text":"Pornind de la această presupunere despre așteptările clientului, am trebuit să creștem nivelul serviciului."},
+            {"language":"ru","text":"Исходя из этого предположения об ожиданиях клиента, мы подняли уровень сервиса."},
+            {"language":"sq","text":"Nga kjo supozim i pritshmërisë së klientit, duhej ta rrisnim nivelin e shërbimit."},
+            {"language":"tr","text":"Müşteri beklentileriyle ilgili bu varsayımdan dolayı hizmet seviyesini yükseltmek zorunda kaldık."}
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anonym",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "a-no-nym",
+      "topics": ["work-and-jobs", "customer-service", "documents-and-administration"],
+      "usageLabels": ["written", "workplace", "formal"],
+      "contextLabels": ["documents", "hr"],
+      "meanings": [
+        {"language":"ar","text":"بی‌نام؛ ناشناس"},
+        {"language":"ckb","text":"بەبێ ناو"},
+        {"language":"en","text":"anonymous"},
+        {"language":"fa","text":"ناشناس"},
+        {"language":"kmr","text":"bênav"},
+        {"language":"pl","text":"anonimowy"},
+        {"language":"ro","text":"anonim"},
+        {"language":"ru","text":"анонимный"},
+        {"language":"sq","text":"anonim"},
+        {"language":"tr","text":"anonim"}
+      ],
+      "examples": [
+        {
+          "baseText":"Die Personalabteilung hat eine anonyme Rückmeldungsumfrage gestartet, um Konflikte früh zu erkennen.",
+          "translations":[
+            {"language":"ar","text":"بخش منابع انسانی یک نظرسنجی ناشناس راه‌اندازی کرد تا مشکلات را زودتر شناسایی کند."},
+            {"language":"ckb","text":"بەشەی سەرچاوەی مرۆڤ یک پرسەوانیەکی بێناو کردووە بۆ دۆزینەوەی کێشەکان زودتر."},
+            {"language":"en","text":"HR started an anonymous feedback survey to detect issues early."},
+            {"language":"fa","text":"منابع انسانی یک نظرسنجی بازخورد ناشناس برای کشف زودهنگام مسائل راه‌اندازی کرد."},
+            {"language":"kmr","text":"Beşa Çavkaniyên mirovî lêkolîneke feedbackê bê navê dest pê kir da çewtiyên zû bibîne."},
+            {"language":"pl","text":"Dział HR uruchomił anonimową ankietę opinii, aby wcześniej wykrywać problemy."},
+            {"language":"ro","text":"HR a lansat un sondaj anonim de feedback pentru a detecta rapid conflictele."},
+            {"language":"ru","text":"HR запустил анонимный опрос обратной связи, чтобы раньше замечать проблемы."},
+            {"language":"sq","text":"Departamenti HR ka filluar një pyetësor anonim të feedback-ut për të zbuluar herët konflikte."},
+            {"language":"tr","text":"İK, sorunları erken tespit etmek için anonim bir geri bildirim anketi başlattı."}
+          ]
+        },
+        {
+          "baseText":"Bitte speichern Sie das Dokument im anonymen Bereich, wenn die Kundendaten nicht freigegeben sind.",
+          "translations":[
+            {"language":"ar","text":"لطفاً سند را در بخش ناشناس ذخیره کنید اگر داده‌های مشتری تأیید نشده‌اند."},
+            {"language":"ckb","text":"تکایە ئەگەر داتای کڕیار ڕەزامەند نەکراوە، پەیامەکە لە ناو بەشە بێناوەوە خەزن بکە."},
+            {"language":"en","text":"Please save the document in the anonymous area if customer data has not been approved for sharing."},
+            {"language":"fa","text":"اگر داده‌های مشتری برای اشتراک‌گذاری تأیید نشده‌اند، لطفاً سند را در بخش ناشناس ذخیره کنید."},
+            {"language":"kmr","text":"Heke daneyên xerîdar ji bo parvekirinê ne pejirandî ne, belgeyê li deverê bênavê bihewîne."},
+            {"language":"pl","text":"Jeśli dane klienta nie zostały zatwierdzone do udostępnienia, zapisz dokument w obszarze anonimowym."},
+            {"language":"ro","text":"Dacă datele clientului nu sunt aprobate pentru partajare, salvați documentul în zona anonimă."},
+            {"language":"ru","text":"Если данные клиента не одобрены к публикации, сохраните документ в анонимной области."},
+            {"language":"sq","text":"Nëse të dhënat e klientit nuk janë miratuar për ndarje, ruani dokumentin në zonën anonime."},
+            {"language":"tr","text":"Müşteri verileri paylaşım için onaylanmadıysa belgeyi anonim alana kaydedin."}
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anpfeifen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anpfeifen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-pfai-fen",
+      "topics": ["work-and-jobs", "public-services", "sales-and-customers"],
+      "usageLabels": ["workplace", "polite", "formal"],
+      "contextLabels": ["customer-service", "sales"],
+      "meanings": [
+        {"language":"ar","text":"زنگ زدن با سوت/جلب توجه با سوت"},
+        {"language":"ckb","text":"بەدنگی سوتەوانە"},
+        {"language":"en","text":"to whistle to; to signal by whistling"},
+        {"language":"fa","text":"با سوت صدا زدن؛ اشاره دادن با سوت"},
+        {"language":"kmr","text":"bi zîvanê bi siftekî bûrîn"},
+        {"language":"pl","text":"gwizdać; sygnalizować gwizdaniem"},
+        {"language":"ro","text":"a fluiera; a semnala prin fluierat"},
+        {"language":"ru","text":"свистеть; подавать знак свистом"},
+        {"language":"sq","text":"të fishkëllijë; të sinjalizojë me fishkëllim"},
+        {"language":"tr","text":"düdükle işaret etmek; dikkat çekmek"}
+      ],
+      "examples": [
+        {
+          "baseText":"Der Empfangschef pfeift die Kunden zum Servicefenster, sobald dieser Bereich bereit ist.",
+          "translations":[
+            {"language":"ar","text":"مسئول پذیرش با سوت مشتریان را به کانتر خدمات می‌برد وقتی این بخش آماده باشد."},
+            {"language":"ckb","text":"سەرپەرشتیاری وەرگرتن کڕیارەکان بە ناوەکەی خزمەتگوزاری دەخاتە سوتەکە کاتێک ئەو بەشە ئامادەبووە."},
+            {"language":"en","text":"The front desk lead whistles customers to the service window as soon as that area is ready."},
+            {"language":"fa","text":"مسئول پذیرش مشتریان را با سوت به باجه خدمات هدایت می‌کند، وقتی آن بخش آماده است."},
+            {"language":"kmr","text":"Rêberê front deskê xerîdarên diwara xizmetê diguhezîne dema ku ev dever amade bibe."},
+            {"language":"pl","text":"Lider recepcji gwizdnięciem kieruje klientów do okienka obsługi, gdy ta część jest gotowa."},
+            {"language":"ro","text":"Șeful recepției fluieră clienții spre ghișeul de service atunci când această zonă este gata."},
+            {"language":"ru","text":"Начальник ресепшна свистком направляет клиентов к сервисной стойке, когда эта зона готова."},
+            {"language":"sq","text":"Shefi i pritjes e sinjalizon me fishkëllim klientin drejt servisit sapo kjo zonë të jetë gati."},
+            {"language":"tr","text":"Resepsiyon sorumlusu hazır olduğunda müşterileri servis penceresine düdükle yönlendirir."}
+          ]
+        },
+        {
+          "baseText":"Im Kundensupport wurde ein kurzer Signalton an das Team anpfeifen, bevor der Eskalationspfad gestartet wurde.",
+          "translations":[
+            {"language":"ar","text":"در پشتیبانی مشتری قبل از شروع مسیر تشدید، یک صدا/علامت کوتاه به تیم داده شد."},
+            {"language":"ckb","text":"لە پاڕاسەندنی کڕیاران، پێش ئەوەی ڕێڕەوی سەروەری کارەکە دەست پێبکات، بە شتی کورتێک دەنگی سوت بە تیمەکە دا هاتە."},
+            {"language":"en","text":"In customer support, a short signal was whistled to the team before the escalation path was started."},
+            {"language":"fa","text":"در پشتیبانی مشتری، قبل از شروع مسیر بالا‌دستی یک سیگنال کوتاه به تیم داده شد."},
+            {"language":"kmr","text":"Li alîkariya xerîdarê, berî ku rêzekê pêşkeftinê were dest pêkirin, sema kurtî bi siftekî ji tîmê re anpêfî."},
+            {"language":"pl","text":"W supportcie klienta przed uruchomieniem ścieżki eskalacji przekazano krótki sygnał ekipie."},
+            {"language":"ro","text":"În suportul clienților, înainte de a porni traseul de escaladare, s-a dat echipei un semnal scurt."},
+            {"language":"ru","text":"В службе поддержки клиентов перед запуском пути эскалации команде был дан короткий свистовой сигнал."},
+            {"language":"sq","text":"Në supportin e klientit, para se të niset rruga e eskalimit, iu dha ekipit një sinjal i shkurtër me fishkëllim."},
+            {"language":"tr","text":"Müşteri destek ekibine, artırım süreci başlamadan önce ekibe kısa bir işaret sesiyle uyarı verildi."}
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anraten",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anraten",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-ra-ten",
+      "topics": ["work-and-jobs", "business-communication", "management-and-leadership"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": ["management", "training", "hr"],
+      "meanings": [
+        {"language":"ar","text":"توصیه کردن"},
+        {"language":"ckb","text":"ڕاهێنان/ڕێنمایی"},
+        {"language":"en","text":"to recommend"},
+        {"language":"fa","text":"توصیه کردن"},
+        {"language":"kmr","text":"pêşniyar kirin"},
+        {"language":"pl","text":"rekomendować"},
+        {"language":"ro","text":"a recomanda"},
+        {"language":"ru","text":"рекомендовать"},
+        {"language":"sq","text":"të rekomandojë"},
+        {"language":"tr","text":"tavsiye etmek"}
+      ],
+      "examples": [
+        {
+          "baseText":"Der Teamleiter rät an, den monatlichen Security-Patch vor dem Go-Live zu prüfen.",
+          "translations":[
+            {"language":"ar","text":"سرپرست تیم توصیه کرد وصله امنیتی ماهانه را قبل از راه‌اندازی نهایی بررسی کند."},
+            {"language":"ckb","text":"ڕێدبەری تیم پێشنیار کردەوە patch-ە سەلامەتی مانگانە پێش go-live پشکنین بکرێت."},
+            {"language":"en","text":"The team lead recommends checking the monthly security patch before go-live."},
+            {"language":"fa","text":"سرگروه تیم توصیه می‌کند وصله امنیتی ماهانه را قبل از go-live بررسی کند."},
+            {"language":"kmr","text":"Serokê tîm pêşniyar dike ku patch-ê ewlekariyê ya mehane berî go-live kontrol bike."},
+            {"language":"pl","text":"Lider zespołu rekomenduje sprawdzenie miesięcznej łaty bezpieczeństwa przed startem produkcyjnym."},
+            {"language":"ro","text":"Liderul echipei recomandă verificarea patch-ului de securitate lunar înainte de Go-Live."},
+            {"language":"ru","text":"Руководитель команды рекомендует проверить ежемесячный патч безопасности перед вводом в эксплуатацию."},
+            {"language":"sq","text":"Lideri i ekipit rekomandon kontrollin e patch-it mujor të sigurisë para nisjes së Go-Live."},
+            {"language":"tr","text":"Takım lideri, go-live öncesinde aylık güvenlik yamayı kontrol etmenizi önerir."}
+          ]
+        },
+        {
+          "baseText":"Wir raten den neuen Kollegen, den Mentoring-Plan vor dem Onboarding zu lesen.",
+          "translations":[
+            {"language":"ar","text":"به همکاران جدید توصیه می‌کنیم قبل از Onboarding برنامه مربیگری را بخوانند."},
+            {"language":"ckb","text":"مانەوەیەکی نوێ پێشنیوەری پێشەکە پێش onboardingەوە خوێندنەوی پلانی پشتیوانی بکەن."},
+            {"language":"en","text":"We recommend new colleagues read the mentoring plan before onboarding."},
+            {"language":"fa","text":"به همکاران جدید توصیه می‌کنیم قبل از onboarding، برنامه منتورینگ را بخوانند."},
+            {"language":"kmr","text":"Em pêşniyar dikin ku hevalên nû berî onboardingê plana pêşangehê bixwînin."},
+            {"language":"pl","text":"Zalecamy nowym pracownikom przeczytanie planu mentoringu przed onboardingiem."},
+            {"language":"ro","text":"Recomandăm colegilor noi să citească planul de mentorat înainte de onboarding."},
+            {"language":"ru","text":"Мы рекомендуем новым сотрудникам прочитать план менторинга до онбординга."},
+            {"language":"sq","text":"Kolegëve të rinj u rekomandojmë të lexojnë planin e mentorimit para onboardimit."},
+            {"language":"tr","text":"Yeni çalışanlara onboarding’den önce mentorluk planını okumalarını öneriyoruz."}
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Anreizstruktur",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Anreizstrukturen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "an-reiz-struk-tur",
+      "topics": ["finance-and-accounting", "work-and-jobs", "management-and-leadership"],
+      "usageLabels": ["formal", "written", "business"],
+      "contextLabels": ["finance", "hr", "management"],
+      "meanings": [
+        {"language":"ar","text":"ساختار انگیزشی"},
+        {"language":"ckb","text":"ڕێکخەری ڕێکخراوەی تەحمەس"},
+        {"language":"en","text":"incentive structure"},
+        {"language":"fa","text":"ساختار انگیزشی"},
+        {"language":"kmr","text":"avakirina teşwîqê"},
+        {"language":"pl","text":"struktura motywacyjna"},
+        {"language":"ro","text":"structura stimulentelor"},
+        {"language":"ru","text":"система стимулов"},
+        {"language":"sq","text":"struktura e nxitjes"},
+        {"language":"tr","text":"teşvik yapısı"}
+      ],
+      "examples": [
+        {
+          "baseText":"Das HR-Team überprüft die Anreizstruktur jährlich, bevor neue Bonusrunden beschlossen werden.",
+          "translations":[
+            {"language":"ar","text":"تیم منابع انسانی ساختار انگیزشی را هر سال بررسی می‌کند قبل از تأیید دورهای پاداش جدید."},
+            {"language":"ckb","text":"تیمی HR ھەر ساڵیەک ڕێکخەری ڕێکخراوەی تەحمەسەکان پشکنین دەکات پێش دوایەکانی بونسە نوێەکان."},
+            {"language":"en","text":"The HR team reviews the incentive structure annually before new bonus rounds are approved."},
+            {"language":"fa","text":"تیم HR ساختار انگیزشی را سالانه بازبینی می‌کند قبل از تصویب دور جدید پاداش."},
+            {"language":"kmr","text":"Tîma HR her sal re avakirina teşwîqê kontrol dike, berî ku dobiya bonusên nû were pejirandin."},
+            {"language":"pl","text":"Zespół HR co roku przegląda strukturę motywacyjną, zanim zatwierdza nowe rundy bonusowe."},
+            {"language":"ro","text":"Echipa HR revizuiește anual structura stimulentelor înainte de aprobarea noilor runde de bonusuri."},
+            {"language":"ru","text":"Команда HR ежегодно пересматривает систему мотивации, прежде чем утверждаются новые бонусные циклы."},
+            {"language":"sq","text":"Ekipi i HR-s rishikon çdo vit strukturën e nxitjes para miratimit të cikleve të reja të bonusit."},
+            {"language":"tr","text":"İK ekibi, yeni bonus dönemleri onaylanmadan önce teşvik yapısını her yıl gözden geçirir."}
+          ]
+        },
+        {
+          "baseText":"Die neue Anreizstruktur im Vertrieb verknüpft Teamziele mit Umsatzstaffeln in den Quartalsreviews.",
+          "translations":[
+            {"language":"ar","text":"ساختار انگیزشی جدید در فروش، اهداف تیمی را با سطوح فروش در بازبینی‌های فصلی پیوند می‌دهد."},
+            {"language":"ckb","text":"ڕێکخەری ڕێکخراوی ڕێزەکە نوێ لە فرۆشتن ئامانجی تیمت لەگەڵ پلەکانی فرۆشتن لە پشکنینەکانی مانگی فصلیەکانەوە دەبەستێت."},
+            {"language":"en","text":"The new sales incentive structure links team goals with revenue bands in quarterly reviews."},
+            {"language":"fa","text":"ساختار جدید انگیزشی فروش، اهداف تیمی را با سطوح درآمد در بازبینی‌های فصلی پیوند می‌دهد."},
+            {"language":"kmr","text":"Anreizstruktur ya nû ya firotanê hedefên tîmê bi astên hîvîyê di çavkaniyên çewtiyê de têne hevkiran."},
+            {"language":"pl","text":"Nowa struktura motywacyjna w sprzedaży łączy cele zespołowe z progami przychodów w kwartalnych przeglądach."},
+            {"language":"ro","text":"Noua structură de stimulente în vânzări leagă obiectivele echipei de pragurile de venit din revizuirile trimestriale."},
+            {"language":"ru","text":"Новая мотивационная структура в продажах связывает цели команды с порогами дохода в квартальных ревью."},
+            {"language":"sq","text":"Struktura e re e nxitjes në shitje lidhnë objektivat e ekipit me nivelet e të ardhurave në rishikimet tremujore."},
+            {"language":"tr","text":"Satıştaki yeni teşvik yapısı, ekip hedeflerini çeyrek dönem incelemelerinde gelir dilimleriyle birleştiriyor."}
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

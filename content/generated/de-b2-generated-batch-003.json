@@ -1,0 +1,356 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-003",
+  "packageName": "German B2 Generated Batch 003",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "import-workflow-b2-003",
+      "displayName": "Batch import marker",
+      "sortOrder": 1401,
+      "localizations": [
+        { "language": "de", "name": "Batch-Import-Marker" },
+        { "language": "ar", "name": "علامة دفعة الاستيراد" },
+        { "language": "ckb", "name": "نیشانەی باچینگەی هاوردە" },
+        { "language": "en", "name": "Batch import marker" },
+        { "language": "fa", "name": "نشانگر واردسازی گروهی" },
+        { "language": "kmr", "name": "nîşana barkirinê ya lot" },
+        { "language": "pl", "name": "Znacznik importu wsadowego" },
+        { "language": "ro", "name": "Marcaj import lot" },
+        { "language": "ru", "name": "Маркер пакетного импорта" },
+        { "language": "sq", "name": "Shenjë e importit në paket" },
+        { "language": "tr", "name": "Paket içe aktarma işareti" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "abgrenzen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["technology-and-it", "documents-and-administration", "work-and-jobs"],
+      "usageLabels": [],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "يفصل أو يحدد حدود شيء" },
+        { "language": "ckb", "text": "سنووە و سنووردارکردن" },
+        { "language": "en", "text": "to delimit; to define boundaries" },
+        { "language": "fa", "text": "تفکیک یا تعیین مرز" },
+        { "language": "kmr", "text": "sînor danîn; cîhên parastin" },
+        { "language": "pl", "text": "oddzielać; wyznaczać granice" },
+        { "language": "ro", "text": "a delimita; a stabili limite" },
+        { "language": "ru", "text": "разграничивать; отделять" },
+        { "language": "sq", "text": "të ndashë/ të kufizojë" },
+        { "language": "tr", "text": "sınırlandırmak; ayırmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir haben die Verantwortlichkeiten im Architektur-Review klar abgegrenzt, damit Entwicklung, QA und Support nicht doppelt arbeiten.",
+          "translations": [
+            { "language": "ar", "text": "لقد حددنا بوضوح المسؤوليات في مراجعة البنية حتى لا يعمل التطوير وضمان الجودة والدعم على نفس المهام مرتين." },
+            { "language": "ckb", "text": "لە پێداویستیەکی ئارەزوومەندیدا، ئاوەروانەی بەرنامەسازی، QA و پشتگیریمانمان کردەوە بۆ ئەوەی دووبارە کار مەکەن." },
+            { "language": "en", "text": "We clearly defined responsibilities in the architecture review so Development, QA, and Support are not doing duplicate work." },
+            { "language": "fa", "text": "در بازبینی معماری نقش‌ها را دقیق مشخص کردیم تا توسعه، QA و پشتیبانی کار تکراری انجام ندهند." },
+            { "language": "kmr", "text": "Di pejirandina arhitektûrê de pêşkêşkarî, QA û alîkarî bi awayekê zelal bi hev nehatin vêxwendin da ku her wiha yek carî yên xwe nakin." },
+            { "language": "pl", "text": "W przeglądzie architektury wyraźnie określiliśmy odpowiedzialności, aby Development, QA i Support nie wykonywały tej samej pracy podwójnie." },
+            { "language": "ro", "text": "Am delimitat clar responsabilitățile în revizuirea arhitecturală, astfel încât Development, QA și Support să nu lucreze dublu pe aceleași sarcini." },
+            { "language": "ru", "text": "Мы четко разграничили обязанности на ревью архитектуры, чтобы Development, QA и Support не выполняли одну и ту же работу дважды." },
+            { "language": "sq", "text": "Ne përgjegjësitë në shqyrtimin e arkitekturës i kemi përcaktuar qartë në mënyrë që Development, QA dhe Support të mos bëjnë të njëjtën punë dy herë." },
+            { "language": "tr", "text": "Mimarî incelemesinde rolleri net olarak ayrıştırdık; Development, QA ve Support aynı işi iki kez yapmasın diye." }
+          ]
+        },
+        {
+          "baseText": "Bitte grenze in der Spezifikation die API-Lasten strikt ab: intern API-Aufrufe hier, Kundendatenzugriffe dort.",
+          "translations": [
+            { "language": "ar", "text": "يرجى فصل أحمال الـAPI بوضوح في المواصفات: استدعاءات API الداخلية هنا، وصول بيانات العملاء هناك." },
+            { "language": "ckb", "text": "لە وردەکاریەکاندا باری API به‌ڕەنگە جیاوازی بکە: بانگهێشتە داخڵەکان لێرە و دەستڕاگەیشتنی داتا کڕیاران لەوێ." },
+            { "language": "en", "text": "In the spec, please strictly separate API workload: internal API calls here, customer data access there." },
+            { "language": "fa", "text": "در مشخصات، بار API را کاملاً جدا کن: در اینجا فراخوانی‌های API داخلی، و آنجا دسترسی به داده مشتری." },
+            { "language": "kmr", "text": "Di belavkirinê de li gorî spec de barê API bi rêzikê veqetîne: li vir bangêşên API yên hundir, li wir gihîştina datên xerîdar." },
+            { "language": "pl", "text": "W specyfikacji jasno rozgranicz obciążenie API: tutaj wewnętrzne wywołania API, tam dostęp do danych klienta." },
+            { "language": "ro", "text": "În specificație delimitează clar sarcina API: aici apelurile API interne, acolo accesul la datele clienților." },
+            { "language": "ru", "text": "В спецификации четко разделите нагрузку API: внутренние вызовы API здесь, доступ к данным клиентов там." },
+            { "language": "sq", "text": "Në specifikim, ju lutemi ndani qartë ngarkesën e API: këtu thirrjet API të brendshme, atje qasjen në të dhënat e klientit." },
+            { "language": "tr", "text": "Spesifikasyonda API yükünü net olarak ayır: iç API çağrıları burada, müşteri verisi erişimi orada olsun." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Abhängigkeit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "die Abhängigkeiten",
+      "topics": ["technology-and-it", "quality-and-risk", "documents-and-administration"],
+      "usageLabels": [],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "اعتماد أو ارتباط" },
+        { "language": "ckb", "text": "پەیوەستبوون، گرێبوون" },
+        { "language": "en", "text": "dependency" },
+        { "language": "fa", "text": "وابستگی" },
+        { "language": "kmr", "text": "pêwîstî; girêdana alîkariya" },
+        { "language": "pl", "text": "zależność" },
+        { "language": "ro", "text": "dependență" },
+        { "language": "ru", "text": "зависимость" },
+        { "language": "sq", "text": "varësi" },
+        { "language": "tr", "text": "bağımlılık" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die API hängt stark von der Verfügbarkeit des zentralen Auth-Services ab; ohne ihn können Login-Anfragen nicht authentifiziert werden.",
+          "translations": [
+            { "language": "ar", "text": "تعتمد الـAPI بشكل كبير على توفر خدمة المصادقة المركزية؛ بدونها لا يمكن التحقق من طلبات تسجيل الدخول." },
+            { "language": "ckb", "text": "ئەپی API بە زۆری پەیوەندیدارە بە بەردەستبوونی خزمەتی راستەقەندی نێودەوە؛ بەبێهەیە تەواوی داواکارییەکانی چوونەژوورەوە ناتوانرێت پشت‌ڕاست بکرێت." },
+            { "language": "en", "text": "The API depends heavily on the availability of the central authentication service; without it, login requests cannot be authenticated." },
+            { "language": "fa", "text": "این API شدیداً به در دسترس بودن سرویس احراز هویت مرکزی وابسته است؛ بدون آن، درخواست‌های ورود قابل احراز هویت نیستند." },
+            { "language": "kmr", "text": "API gelekî ji berdestbûna xizmeta otantîkasiyona navendî ve girêdayî ye; bê wî danûstendina têketin ne di bêhnirxînin." },
+            { "language": "pl", "text": "API jest silnie zależne od dostępności centralnego serwisu uwierzytelniania; bez niego żądania logowania nie mogą być uwierzytelnione." },
+            { "language": "ro", "text": "API-ul depinde într-o măsură mare de disponibilitatea serviciului central de autentificare; fără el, solicitările de login nu pot fi autentificate." },
+            { "language": "ru", "text": "API сильно зависит от доступности централизованного сервиса аутентификации; без него запросы логина нельзя аутентифицировать." },
+            { "language": "sq", "text": "API varet shumë nga disponueshmëria e shërbimit qendror të autentikimit; pa të, kërkesat e hyrjes nuk mund të autentifikohen." },
+            { "language": "tr", "text": "API, merkezi kimlik doğrulama servisinin kullanılabilirliğine güçlü şekilde bağlıdır; olmadan oturum açma istekleri doğrulanamaz." }
+          ]
+        },
+        {
+          "baseText": "Im Risiko-Assessment haben wir eine harte Abhängigkeit von einem einzelnen CI-Runner dokumentiert.",
+          "translations": [
+            { "language": "ar", "text": "في تقييم المخاطر وثّقنا اعتمادًا كبيرًا على مُشغّل CI واحد." },
+            { "language": "ckb", "text": "لە هەنگاوی پێشبینی مەترسیەکاندا گرنگیەکی تایبەتی بەرەوەکی سەر سەیری یەک کامپیلەری CIو ڕاپۆرتی کرد." },
+            { "language": "en", "text": "In the risk assessment we documented a hard dependency on a single CI runner." },
+            { "language": "fa", "text": "در ارزیابی ریسک، وابستگی شدید به یک runner واحد CI را مستند کردیم." },
+            { "language": "kmr", "text": "Di pêşniyara rizqê de em pêwîstiyek têkildar ya tije a ser yek runner CIyê hatime belgekirin." },
+            { "language": "pl", "text": "W ocenie ryzyka udokumentowaliśmy mocną zależność od pojedynczego runnera CI." },
+            { "language": "ro", "text": "În evaluarea riscurilor am documentat o dependență puternică de un singur runner CI." },
+            { "language": "ru", "text": "В оценке рисков мы зафиксировали жесткую зависимость от единственного CI-runner'а." },
+            { "language": "sq", "text": "Në vlerësimin e rrezikut dokumentuam një varësi të fortë nga vetëm një runner CI." },
+            { "language": "tr", "text": "Risk değerlendirmesinde tek bir CI runner’a olan güçlü bir bağımlılık kaydettik." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abhalten",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["meetings-and-presentations", "work-and-jobs", "work-and-jobs"],
+      "usageLabels": [],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "يعقد (اجتماعًا/جلسة)" },
+        { "language": "ckb", "text": "ڕێکخستنی کۆبوونەوە" },
+        { "language": "en", "text": "to hold (an event/meeting)" },
+        { "language": "fa", "text": "برگزاری کردن؛ جلوه‌دادن" },
+        { "language": "kmr", "text": "pêkanîn; civîn kirin" },
+        { "language": "pl", "text": "odbywać/organizować (spotkanie)" },
+        { "language": "ro", "text": "a organiza; a ține" },
+        { "language": "ru", "text": "проводить (встречу/мероприятие)" },
+        { "language": "sq", "text": "të organizojë (takim)" },
+        { "language": "tr", "text": "düzenlemek; gerçekleştirmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir halten heute um 14:00 ein Incident-Alignment-Meeting mit dem SRE-Team ab.",
+          "translations": [
+            { "language": "ar", "text": "نعقد اليوم اجتماع تنسيق للحوادث مع فريق SRE في الثانية ظهراً." },
+            { "language": "ckb", "text": "ئێمە ئەمڕۆ لە کاتژمێر 14:00 کۆبوونەوەی ڕێکخستنی ڕووداوەکان لەگەڵ تیمی SRE دەڕێژێنین." },
+            { "language": "en", "text": "We are holding an incident alignment meeting with the SRE team today at 2:00 PM." },
+            { "language": "fa", "text": "امروز ساعت 14:00 جلسه هم‌راستاسازی حادثه با تیم SRE برگزار می‌کنیم." },
+            { "language": "kmr", "text": "Em îro di saeta 14:00 de civîneka rêxistina çalakiyên incidentê bi tîma SREyê digrînîn." },
+            { "language": "pl", "text": "Dzisiaj o 14:00 przeprowadzamy spotkanie robocze ds. incydentu z zespołem SRE." },
+            { "language": "ro", "text": "Astăzi la ora 14:00 ținem o ședință de aliniere a incidentului cu echipa SRE." },
+            { "language": "ru", "text": "Сегодня в 14:00 мы проводим встречу по синхронизации инцидента с командой SRE." },
+            { "language": "sq", "text": "Sot në orën 14:00 po mbajmë një mbledhje koordinimi incidenti me ekipin SRE." },
+            { "language": "tr", "text": "Bugün saat 14:00’te SRE ekibiyle bir incident eşgüdüm toplantısı düzenliyoruz." }
+          ]
+        },
+        {
+          "baseText": "Der Teamleiter konnte das Wissenstransfer-Workshop nicht ohne Legal abhalten.",
+          "translations": [
+            { "language": "ar", "text": "قائد الفريق لم يستطع عقد ورشة نقل المعرفة دون موافقة قسم الشؤون القانونية." },
+            { "language": "ckb", "text": "ڕێبرە تیم نەیتوانی بەڕێوەکاری وۆرکشاپی پەیوەندی زانیاریکردن بێ مۆلکەی یاسایی بەرز بکات." },
+            { "language": "en", "text": "The team lead could not hold the knowledge-transfer workshop without Legal’s approval." },
+            { "language": "fa", "text": "رهبر تیم نتوانست کارگاه انتقال دانش را بدون تایید حقوقی برگزار کند." },
+            { "language": "kmr", "text": "Sêwirê tîma nikaribû workshopê veguheztina zanînê bê pejirandina legalê bicîh bide." },
+            { "language": "pl", "text": "Lider zespołu nie mógł przeprowadzić warsztatu transferu wiedzy bez zgody działu prawnego." },
+            { "language": "ro", "text": "Liderul echipei nu a putut organiza atelierul de transfer de cunoștințe fără aprobarea legal." },
+            { "language": "ru", "text": "Руководитель команды не мог провести воркшоп по передаче знаний без согласования с юристами." },
+            { "language": "sq", "text": "Drejtuesi i ekipit nuk mundi ta organizojë workshop-in e transferimit të njohurive pa miratimin e Legal." },
+            { "language": "tr", "text": "Takım lideri, Legal onayı olmadan bilgi transferi atölyesini düzenleyemedi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abhandenkommen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["documents-and-administration", "quality-and-risk", "work-and-jobs"],
+      "usageLabels": [],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "يفقد أو يختفي فجأة" },
+        { "language": "ckb", "text": "لەدەست چوون" },
+        { "language": "en", "text": "to be lost/mislaid" },
+        { "language": "fa", "text": "گم شدن" },
+        { "language": "kmr", "text": "dixwe bibinî, winda bû" },
+        { "language": "pl", "text": "zaginąć; zostać zgubionym" },
+        { "language": "ro", "text": "a se pierde; a dispărea" },
+        { "language": "ru", "text": "быть утерянным; потеряться" },
+        { "language": "sq", "text": "të humbasë; të humbët" },
+        { "language": "tr", "text": "kaybolmak; eksik kalmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Handover-Prozess ist der private SSH-Key kurzfristig abhanden gekommen; deshalb wurde die Bereitstellung angehalten.",
+          "translations": [
+            { "language": "ar", "text": "في عملية التسليم الخاص بالمشروع، المفتاح الخاص SSH فُقد مؤقتًا، لذلك أُوقِف النشر." },
+            { "language": "ckb", "text": "لە پڕۆسەی وەرگرتنەوەی گواستنەوە هەڵەیەک ڕوویدا و کیلی تایبەتی SSH زووەوەی بەردەوام درەوشاوە." },
+            { "language": "en", "text": "In the handover process, the private SSH key briefly went missing, so the deployment was paused." },
+            { "language": "fa", "text": "در فرآیند handover، کلید خصوصی SSH موقتاً گم شد؛ بنابراین استقرار متوقف شد." },
+            { "language": "kmr", "text": "Di dema handover de mifteya taybetî ya SSH carîk winda bû, ji ber vê rehî amadekirin biserneket." },
+            { "language": "pl", "text": "W procesie przekazania klucz prywatny SSH na krótko zaginął, dlatego wdrożenie zostało zatrzymane." },
+            { "language": "ro", "text": "În procesul de handover, cheia privată SSH a dispărut temporar, așa că implementarea a fost oprită." },
+            { "language": "ru", "text": "В процессе передачи объект приватный SSH-ключ временно пропал, поэтому деплоймент был приостановлен." },
+            { "language": "sq", "text": "Në procesin e transferimit, çelësi privat SSH është humbur përkohësisht, ndaj implementimi u pushua." },
+            { "language": "tr", "text": "Devir teslim sürecinde özel SSH anahtarı geçici olarak kayboldu, bu nedenle deployment durduruldu." }
+          ]
+        },
+        {
+          "baseText": "Das unterschriebene NDA ist im Dokumentensystem abhanden gekommen und muss neu hinterlegt werden.",
+          "translations": [
+            { "language": "ar", "text": "اتفاقية السرية الموقعة ضاعت من نظام المستندات ويجب تسجيلها من جديد." },
+            { "language": "ckb", "text": "ئیمەیەکی NDAی مۆھرەکراوی لە سیستەمی بەڵگەکان وەستاند و پێویستە دووبارە باربکرێت." },
+            { "language": "en", "text": "The signed NDA has gone missing in the document system and must be uploaded again." },
+            { "language": "fa", "text": "NDA امضا شده در سامانه اسناد گم شده و باید دوباره بارگذاری شود." },
+            { "language": "kmr", "text": "NDA ya îmzeyî di pergalê belgeyan de wenda bûye û divê nûve bar bibe." },
+            { "language": "pl", "text": "Podpisana umowa NDA zaginęła w systemie dokumentów i musi zostać ponownie wgrana." },
+            { "language": "ro", "text": "NDA-ul semnat a dispărut din sistemul de documente și trebuie reîncărcat." },
+            { "language": "ru", "text": "Подписанное NDA пропало в системе документов и его нужно загрузить заново." },
+            { "language": "sq", "text": "NDA-ja e nënshkruar është humbur në sistemin e dokumenteve dhe duhet të ngarkohet nga e para." },
+            { "language": "tr", "text": "İmzalanmış NDA belge sistemi içinde kayboldu ve tekrar yüklenmesi gerekiyor." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abheben",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["finance-and-accounting", "technology-and-it", "documents-and-administration"],
+      "usageLabels": [],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "يسحب (مبلغًا)" },
+        { "language": "ckb", "text": "دەرکەوتن/لابردن پارە" },
+        { "language": "en", "text": "to withdraw" },
+        { "language": "fa", "text": "برداشتن؛ برداشت کردن" },
+        { "language": "kmr", "text": "dêrveketin; wêrdin" },
+        { "language": "pl", "text": "wypłacać; podnosić" },
+        { "language": "ro", "text": "a retrage" },
+        { "language": "ru", "text": "снимать; забирать" },
+        { "language": "sq", "text": "të tërheqë" },
+        { "language": "tr", "text": "çekmek; geri çekmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Projektleitung hat gestern 10.000 € vom Team-Budget für die Notfall-Lizenz abgehoben.",
+          "translations": [
+            { "language": "ar", "text": "مدير المشروع سحب أمس 10000 يورو من ميزانية الفريق لشراء ترخيص الطوارئ." },
+            { "language": "ckb", "text": "بەڕێوەبردنی پرۆژە دوایین ڕۆژ 10،000 یورو لە بودجەی تیم بۆ مۆڵەتی هاورەیی وەرگرت." },
+            { "language": "en", "text": "The project lead withdrew €10,000 from the team budget for the emergency license." },
+            { "language": "fa", "text": "مدیر پروژه دیروز 10000 یورو از بودجه تیم برای لایسنس اضطراری برداشت." },
+            { "language": "kmr", "text": "Serokê projeyê îro peywirê ji buxçeta tîma bo lîsansê hêvîkê de 10.000 euro jêrî da." },
+            { "language": "pl", "text": "Kierownik projektu wczoraj wypłacił 10 000 € z budżetu zespołu na pilną licencję." },
+            { "language": "ro", "text": "Managerul de proiect a retras ieri 10.000 € din bugetul echipei pentru licența de urgență." },
+            { "language": "ru", "text": "Руководитель проекта вчера снял 10 000 евро из командного бюджета для лицензии аварийного доступа." },
+            { "language": "sq", "text": "Drejtor i projektit ka tërhequr dje 10.000 € nga buxheti i ekipit për licencën emergjente." },
+            { "language": "tr", "text": "Proje lideri acil lisans için takım bütçesinden dün 10.000 € çekti." }
+          ]
+        },
+        {
+          "baseText": "Bitte hebe die alten Zertifikate aus dem HSM ab, damit wir neue Tokens ausrollen können.",
+          "translations": [
+            { "language": "ar", "text": "يرجى سحب الشهادات القديمة من HSM حتى نتمكن من نشر الرموز الجديدة." },
+            { "language": "ckb", "text": "تکایە بڕگەکانی مۆردی کۆن لە HSM دابگرە تا بتوانین توکنە نوێکان راکەینەوە." },
+            { "language": "en", "text": "Please withdraw the old certificates from the HSM so we can roll out new tokens." },
+            { "language": "fa", "text": "لطفاً گواهی‌نامه‌های قدیمی را از HSM بردارید تا بتوانیم توکن‌های جدید را استقرار دهیم." },
+            { "language": "kmr", "text": "Xwedî xwestina ku sertîfîkatên kevn ji HSMyê vegerîne, ta ku tokenên nû bicih bûnin." },
+            { "language": "pl", "text": "Proszę wypłać stare certyfikaty z HSM, abyśmy mogli wdrożyć nowe tokeny." },
+            { "language": "ro", "text": "Vă rugăm să retrageți certificatele vechi din HSM pentru a putea implementa token-uri noi." },
+            { "language": "ru", "text": "Пожалуйста, снимите старые сертификаты из HSM, чтобы мы могли внедрить новые токены." },
+            { "language": "sq", "text": "Ju lutemi hiqni certifikatat e vjetra nga HSM, kështu që mund të implementojmë tokenë të rinj." },
+            { "language": "tr", "text": "Lütfen eski sertifikaları HSM'den geri çekin ki yeni token'ları dağıtabilelim." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "abklingen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["customer-service", "quality-and-risk", "work-and-jobs"],
+      "usageLabels": [],
+      "contextLabels": [],
+      "meanings": [
+        { "language": "ar", "text": "يخفت؛ يخف تدريجيًا" },
+        { "language": "ckb", "text": "بە هێواشی کەمبوون" },
+        { "language": "en", "text": "to fade away; to subside" },
+        { "language": "fa", "text": "رو به کاهش رفتن" },
+        { "language": "kmr", "text": "kevra bûn; hêştekirin" },
+        { "language": "pl", "text": "słabnąć; cichnąć" },
+        { "language": "ro", "text": "a se stinge; a se diminua" },
+        { "language": "ru", "text": "утихать; ослабевать" },
+        { "language": "sq", "text": "të zbehet; të qetësohet" },
+        { "language": "tr", "text": "dinmek; azalmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Nach dem Hotfix sind die Beschwerden über Login-Verzögerungen deutlich abgeklungen.",
+          "translations": [
+            { "language": "ar", "text": "بعد التصحيح السريع، خفتت بكثرة الشكاوى بشأن تأخير تسجيل الدخول." },
+            { "language": "ckb", "text": "دوای خەریکی خێرخەتکە، شکایتەکان دەربارەی دواخستنی چوونەژوورەوە بە شێوەیەکی ڕوون کەمبوون." },
+            { "language": "en", "text": "After the hotfix, complaints about login delay have clearly subsided." },
+            { "language": "fa", "text": "پس از هاتفیکس، شکایت‌ها درباره تاخیر ورود به سیستم به‌طور محسوسی کاهش یافت." },
+            { "language": "kmr", "text": "Piştî hotfixê، îtirazakên li ser daxwaza derbasbûnê bi rûmetî kêm bûn." },
+            { "language": "pl", "text": "Po hotfixie skargi dotyczące opóźnień logowania wyraźnie osłabły." },
+            { "language": "ro", "text": "După hotfix, sesizările legate de întârzierile de autentificare au scăzut clar." },
+            { "language": "ru", "text": "После хотфикса жалобы на задержки входа явно ослабли." },
+            { "language": "sq", "text": "Pas hotfix-it, ankesat për vonesat e hyrjes kanë zbehur dukshëm." },
+            { "language": "tr", "text": "Hotfix sonrası oturum açma gecikmeleriyle ilgili şikayetler belirgin şekilde azaldı." }
+          ]
+        },
+        {
+          "baseText": "Die alarmierenden 429-Fehler am Freitagabend sind nach dem Skalierungs-Update abgeklungen.",
+          "translations": [
+            { "language": "ar", "text": "أخطاء 429 المتزايدة في مساء الجمعة خفت بعد تحديث التوسيع." },
+            { "language": "ckb", "text": "هەڵەکانی 429 لە شەوەی ھەینییەوە بە دوای نوێکردنەوەی زیادکردنی سەروەرەکان کەمبوون." },
+            { "language": "en", "text": "The escalating 429 errors on Friday evening subsided after the scaling update." },
+            { "language": "fa", "text": "خطاهای رو به افزایش 429 در شب پنج‌شنبه بعد از به‌روزرسانی مقیاس‌پذیری فروکش کرد." },
+            { "language": "kmr", "text": "ئەو هەڵە 429 یە ڕابردوونەیی لە شەوەکەی ھەینییەوە دوای نوێکردنی مەقیسەکردن کەم کرابو." },
+            { "language": "pl", "text": "Wzmagające się błędy 429 w piątkowy wieczór osłabły po aktualizacji skalowania." },
+            { "language": "ro", "text": "Erorile 429 care creșteau vineri seara s-au atenuat după actualizarea de scalare." },
+            { "language": "ru", "text": "Возрастающие ошибки 429 в пятничный вечер ослабли после обновления масштабирования." },
+            { "language": "sq", "text": "Gabimet 429 në rritje të premten mbrëma u zbehën pas përditësimit të shkallëzimit." },
+            { "language": "tr", "text": "Cuma akşamındaki artan 429 hataları ölçekleme güncellemesinden sonra azaldı." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}
+
+

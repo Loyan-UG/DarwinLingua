@@ -1,0 +1,515 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-023",
+  "packageName": "German B2 Generated Batch 023",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        { "language": "de", "name": "Am Arbeitsplatz" },
+        { "language": "ar", "name": "في مكان العمل" },
+        { "language": "ckb", "name": "لە شوێنی کار" },
+        { "language": "en", "name": "Workplace" },
+        { "language": "fa", "name": "محیط کار" },
+        { "language": "kmr", "name": "Li cihê kar" },
+        { "language": "pl", "name": "W miejscu pracy" },
+        { "language": "ro", "name": "La locul de muncă" },
+        { "language": "ru", "name": "На рабочем месте" },
+        { "language": "sq", "name": "Në vendin e punës" },
+        { "language": "tr", "name": "İş yeri" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        { "language": "de", "name": "Geschäftlich" },
+        { "language": "ar", "name": "تجاري" },
+        { "language": "ckb", "name": "بازرگانی" },
+        { "language": "en", "name": "Business" },
+        { "language": "fa", "name": "تجاری" },
+        { "language": "kmr", "name": "Bazirganî" },
+        { "language": "pl", "name": "Biznesowy" },
+        { "language": "ro", "name": "De afaceri" },
+        { "language": "ru", "name": "Деловой" },
+        { "language": "sq", "name": "Biznesi" },
+        { "language": "tr", "name": "İş" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        { "language": "de", "name": "Schriftlich" },
+        { "language": "ar", "name": "كتابي" },
+        { "language": "ckb", "name": "نووسراو" },
+        { "language": "en", "name": "Written" },
+        { "language": "fa", "name": "نوشتاری" },
+        { "language": "kmr", "name": "Nivîskî" },
+        { "language": "pl", "name": "Pisemny" },
+        { "language": "ro", "name": "Scris" },
+        { "language": "ru", "name": "Письменный" },
+        { "language": "sq", "name": "I shkruar" },
+        { "language": "tr", "name": "Yazılı" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        { "language": "de", "name": "Technisch" },
+        { "language": "ar", "name": "تقني" },
+        { "language": "ckb", "name": "تەکنیکی" },
+        { "language": "en", "name": "Technical" },
+        { "language": "fa", "name": "فنی" },
+        { "language": "kmr", "name": "Teknîkî" },
+        { "language": "pl", "name": "Techniczny" },
+        { "language": "ro", "name": "Tehnic" },
+        { "language": "ru", "name": "Технический" },
+        { "language": "sq", "name": "Teknik" },
+        { "language": "tr", "name": "Teknik" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "it",
+      "displayName": "IT",
+      "sortOrder": 1140,
+      "localizations": [
+        { "language": "de", "name": "IT" },
+        { "language": "ar", "name": "تقنية المعلومات" },
+        { "language": "ckb", "name": "IT" },
+        { "language": "en", "name": "IT" },
+        { "language": "fa", "name": "IT" },
+        { "language": "kmr", "name": "IT" },
+        { "language": "pl", "name": "IT" },
+        { "language": "ro", "name": "IT" },
+        { "language": "ru", "name": "ИТ" },
+        { "language": "sq", "name": "IT" },
+        { "language": "tr", "name": "BT" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        { "language": "de", "name": "Support" },
+        { "language": "ar", "name": "الدعم" },
+        { "language": "ckb", "name": "پاڵپشتی" },
+        { "language": "en", "name": "Support" },
+        { "language": "fa", "name": "پشتیبانی" },
+        { "language": "kmr", "name": "Piştgirî" },
+        { "language": "pl", "name": "Wsparcie" },
+        { "language": "ro", "name": "Suport" },
+        { "language": "ru", "name": "Поддержка" },
+        { "language": "sq", "name": "Mbështetje" },
+        { "language": "tr", "name": "Destek" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "administration",
+      "displayName": "Administration",
+      "sortOrder": 1220,
+      "localizations": [
+        { "language": "de", "name": "Verwaltung" },
+        { "language": "ar", "name": "الإدارة" },
+        { "language": "ckb", "name": "کارگێڕی" },
+        { "language": "en", "name": "Administration" },
+        { "language": "fa", "name": "اداره" },
+        { "language": "kmr", "name": "Rêveberî" },
+        { "language": "pl", "name": "Administracja" },
+        { "language":  "ro", "name": "Administrație" },
+        { "language": "ru", "name": "Администрирование" },
+        { "language": "sq", "name": "Administratë" },
+        { "language": "tr", "name": "İdare" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Kundenservice" },
+        { "language": "ar", "name": "خدمة العملاء" },
+        { "language": "ckb", "name": "خزمەتی کڕیار" },
+        { "language": "en", "name": "Customer Service" },
+        { "language": "fa", "name": "خدمات مشتریان" },
+        { "language": "kmr", "name": "Xizmeta xerîdar" },
+        { "language": "pl", "name": "Obsługa klienta" },
+        { "language": "ro", "name": "Serviciu clienți" },
+        { "language": "ru", "name": "Клиентский сервис" },
+        { "language": "sq", "name": "Shërbim klienti" },
+        { "language": "tr", "name": "Müşteri hizmetleri" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "anschreien",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschreien",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-schrei-en",
+      "topics": ["work-and-jobs", "sales-and-customers", "business-communication"],
+      "usageLabels": ["workplace", "business", "written"],
+      "contextLabels": ["support", "administration"],
+      "meanings": [
+        { "language": "ar", "text": "يصرخ على/يهاجم بالصراخ" },
+        { "language": "ckb", "text": "لەبەرچووە بە فەرمی بانگكردن" },
+        { "language": "en", "text": "to shout at; to yell" },
+        { "language": "fa", "text": "فریاد زدن به کسی" },
+        { "language": "kmr", "text": "bi bilezî zêde behîstin" },
+        { "language": "pl", "text": "krzyczeć na kogoś; wrzeszczeć" },
+        { "language": "ro", "text": "a striga pe cineva" },
+        { "language": "ru", "text": "кричать на кого-то" },
+        { "language": "sq", "text": "të bërtasë ndaj dikujt" },
+        { "language": "tr", "text": "bağırmak; bağırarak azar etmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Support-Mitarbeiter wurde nicht angeschrien, obwohl der Kunde laut war; wir bleiben sachlich.",
+          "translations": [
+            { "language": "ar", "text": "حتی اگر مشتری صدا بلند کرد، کارمند پشتیبانی را متهم نکردیم و حرفه‌ای ماندیم." },
+            { "language": "ckb", "text": "گەڕان بە کارمەندەکەی پشتگیری نەشد، هەرچەندە کڕیار بانگ کرد." },
+            { "language": "en", "text": "The support agent was not shouted at, even though the customer was loud; we stayed professional." },
+            { "language": "fa", "text": "کارشناس پشتیبانی را سرزنش نکردند، حتی وقتی مشتری صدای بلند داشت؛ حرفه‌ای ماندیم." },
+            { "language": "kmr", "text": "Li ser karîkere piştgiriyê bêra nayê bang kirin, bi balafirêke bilind bû herçiqas meslekî mayî." },
+            { "language": "pl", "text": "Pracownik wsparcia nie został oblany krzykiem, mimo że klient podnosił głos; zachowaliśmy profesjonalizm." },
+            { "language": "ro", "text": "Agentul de suport nu a fost luat la rost, deși clientul era răstit; am rămas profesionali." },
+            { "language": "ru", "text": "Сотрудник поддержки не был заоран, хотя клиент говорил громко; мы оставались профессиональными." },
+            { "language": "sq", "text": "Përfaqësuesi i supportit nuk u bë objekt i britmave, edhe pse klienti ishte i zhurmshëm; u ruajtëm profesionalë." },
+            { "language": "tr", "text": "Müşteri yüksek sesle konuşsa da destek temsilcisi bağırılarak hedef alınmadı; profesyonel kaldık." }
+          ]
+        },
+        {
+          "baseText": "Im Teamchat haben wir klargestellt, dass Anschreien bei eskalierten Fällen nicht mehr akzeptiert wird.",
+          "translations": [
+            { "language": "ar", "text": "در چت تیم روشن شد که فریاد زدن در موارد فراتر دیگر پذیرفتنی نیست." },
+            { "language": "ckb", "text": "لە چەتی تیم داڕشت بۆ ئەوهەی لە کەیسە ڕەنجەکاندا فەرموودنەوە ڕەسمی نەبێت." },
+            { "language": "en", "text": "In the team chat we clarified that shouting is no longer acceptable in escalated cases." },
+            { "language": "fa", "text": "در چت تیم روشن شد که فریاد زدن در موارد بحرانی دیگر قابل قبول نیست." },
+            { "language": "kmr", "text": "Di chatê tîmê de em vekiriye ku bişkoşîn di derbarê rewşên neheq de nayê qebûl kirin." },
+            { "language": "pl", "text": "Na czacie zespołu wyjaśniliśmy, że w przypadku eskalacji krzyczenie nie jest już akceptowalne." },
+            { "language": "ro", "text": "În chatul echipei am clarificat că nu mai este acceptabil să se țipe la cazuri escalate." },
+            { "language": "ru", "text": "В командном чате мы уточнили, что кричать в случаях эскалации больше нельзя." },
+            { "language": "sq", "text": "Në chatin e ekipit e sqaruam që britma në raste escalimi nuk pranohet më." },
+            { "language": "tr", "text": "Takım sohbetinde, eskalasyon durumlarında bağırmanın artık kabul edilmediğini netleştirdik." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anschwellen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschwellen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-schwel-len",
+      "topics": ["technology-and-it", "work-and-jobs", "data-and-reporting"],
+      "usageLabels": ["technical", "workplace", "written"],
+      "contextLabels": ["it", "support"],
+      "meanings": [
+        { "language": "ar", "text": "ينتفخ/يرتفع" },
+        { "language": "ckb", "text": "بەفراوانی گەشەکردن" },
+        { "language": "en", "text": "to swell; to increase" },
+        { "language": "fa", "text": "متورم شدن/افزایش یافتن" },
+        { "language": "kmr", "text": "veqetîn; zêde bûn" },
+        { "language": "pl", "text": "puchnąć; wzrastać" },
+        { "language": "ro", "text": "a se umfla; a crește" },
+        { "language": "ru", "text": "отекать; увеличиваться" },
+        { "language": "sq", "text": "të fryhet; të rritet" },
+        { "language": "tr", "text": "şişmek; artmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Datenverkehr schwillt bei Monatsende oft stark an, deshalb planen wir zusätzliche Knoten.",
+          "translations": [
+            { "language": "ar", "text": "در پایان ماه ترافیک داده‌ها معمولاً زیاد می‌شود، برای همین گره‌های اضافه برنامه‌ریزی می‌کنیم." },
+            { "language": "ckb", "text": "لە کۆتایی مانگ، ترافیکی داتاکان زۆربەی زۆر دروست دەبێت، بۆیە گرهی زیادە پلانی کردووە." },
+            { "language": "en", "text": "Data traffic often rises sharply at month-end, so we plan additional nodes." },
+            { "language": "fa", "text": "ترافیک داده در پایان ماه معمولاً شدیداً افزایش می‌یابد؛ بنابراین گره‌های اضافی برنامه‌ریزی می‌کنیم." },
+            { "language": "kmr", "text": "Gelekî di dawiyê mehê de veguheztina daneyan di her çarçoveyekê de zêde dibe, lê em çarçoveya giran bişopînin." },
+            { "language": "pl", "text": "Na koniec miesiąca ruch danych zwykle mocno rośnie, więc planujemy dodatkowe węzły." },
+            { "language": "ro", "text": "La sfârșitul lunii traficul de date crește adesea mult, așa că planificăm noduri suplimentare." },
+            { "language": "ru", "text": "К концу месяца трафик данных часто сильно растет, поэтому мы планируем дополнительные узлы." },
+            { "language": "sq", "text": "Rrjedha e të dhënave shpesh rritet shumë në fund të muajit, prandaj planifikojmë nyje shtesë." },
+            { "language": "tr", "text": "Ay sonunda veri trafiği sıklıkla artar, bu yüzden ek düğümler planlarız." }
+          ]
+        },
+        {
+          "baseText": "Wenn die Queue anschwellt, schalten wir ein zusätzliches Team für den Incident-Einsatz ein.",
+          "translations": [
+            { "language": "ar", "text": "وقتی صف بالا می‌رود، تیم اضافه‌ای برای عملیات حادثه فعال می‌کنیم." },
+            { "language": "ckb", "text": "کە ڕیزەکە پڕ دەبێت، تیمێکی تر بۆ ئەنجامدانی کەیسە سەری هەڵگرەوە دەکەین." },
+            { "language": "en", "text": "When the queue swells, we bring in an extra team for incident response." },
+            { "language": "fa", "text": "وقتی صف درخواست‌ها زیاد می‌شود، یک تیم اضافی برای پاسخ به حادثه وارد می‌کنیم." },
+            { "language": "kmr", "text": "Dema rêz derdikeve, em tîmê din ji bo răspendeyê ya incidentê têxistin." },
+            { "language": "pl", "text": "Gdy kolejka rośnie, angażujemy dodatkowy zespół do obsługi incydentów." },
+            { "language": "ro", "text": "Când coada se umflă, mobilizăm o echipă suplimentară pentru răspuns la incidente." },
+            { "language": "ru", "text": "Когда очередь разрастается, подключаем дополнительную команду для обработки инцидентов." },
+            { "language": "sq", "text": "Kur radhëzimi rritet, aktivizojmë një ekip shtesë për reagim incidenti." },
+            { "language": "tr", "text": "Sıra yoğunlaştığında, olay müdahalesi için ekstra bir ekip devreye sokarız." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anspringen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anspringen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-spring-en",
+      "topics": ["technology-and-it", "work-and-jobs", "documents-and-administration"],
+      "usageLabels": ["technical", "workplace", "written"],
+      "contextLabels": ["it", "administration"],
+      "meanings": [
+        { "language": "ar", "text": "ينشط/يبدأ التشغيل" },
+        { "language": "ckb", "text": "ڕەوانەبوونەوە/دەستپێکردن" },
+        { "language": "en", "text": "to start up; to spring up" },
+        { "language": "fa", "text": "به‌طور ناگهانی روشن شدن/شروع کردنی" },
+        { "language": "kmr", "text": "dest pê kirin; lêdan bi lew" },
+        { "language": "pl", "text": "uruchamiać się; nagle ruszać" },
+        { "language": "ro", "text": "a porni; a se activa" },
+        { "language": "ru", "text": "запускаться; оживать" },
+        { "language": "sq", "text": "të nisë; të aktivizohet" },
+        { "language": "tr", "text": "çalışmaya başlamak; aniden başlamak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der alte Build-Server springt heute Morgen nicht automatisch an und muss hart neu gestartet werden.",
+          "translations": [
+            { "language": "ar", "text": "سرور ساخت قدیمی امروز به‌صورت خودکار روشن نمی‌شود و باید مجدداً راه‌اندازی سخت انجام شود." },
+            { "language": "ckb", "text": "ڕەنگەی پێشووی build ئەمروو هیچکارە خۆکارانە ئامادە ناکات و دەبێت بەهەست بەدوادا بێتەوە." },
+            { "language": "en", "text": "The old build server did not start automatically this morning and must be restarted manually." },
+            { "language": "fa", "text": "سرور ساخت قدیمی امروز صبح خودکار راه‌اندازی نشد و باید دستی ریست شود." },
+            { "language": "kmr", "text": "Servera kevn a build ê vê sibeh naçawa bixwe ve dest pê nakir, ji ber vê yekê bi destê me hewceyê restart heye." },
+            { "language": "pl", "text": "Dziś rano stary serwer build nie uruchomił się automatycznie i trzeba go ręcznie zrestartować." },
+            { "language": "ro", "text": "Astăzi dimineață serverul de build nu s-a pornit automat și trebuie repornit manual." },
+            { "language": "ru", "text": "Сегодня утром старый сервер сборки не запустился автоматически и его нужно перезапустить вручную." },
+            { "language": "sq", "text": "Sot në mëngjes serveri i vjetër i ndërtimit nuk u ndez automatikisht dhe duhet rindizuar manualisht." },
+            { "language": "tr", "text": "Bu sabah eski build sunucusu otomatik olarak başlamadı ve manuel yeniden başlatılması gerekiyor." }
+          ]
+        },
+        {
+          "baseText": "In der Testphase sprang der neue Auth-Service nach dem Fix im Monitoring sichtbar an.",
+          "translations": [
+            { "language": "ar", "text": "در فاز تست، سرویس احراز هویت جدید بعد از رفع باگ در مانیتورینگ قابل مشاهده روشن شد." },
+            { "language": "ckb", "text": "لە فازە تاقیکردنەوەدا خزمەتگوزاری نوێی پشتڕاستکردنەوە دوای فیکسکراو لە چاودێریەوە دەبینرێت کە کار دەکات." },
+            { "language": "en", "text": "In testing, the new auth service started visibly in monitoring after the fix." },
+            { "language": "fa", "text": "در مرحله تست، پس از رفع اشکال، سرویس احراز هویت جدید در مانیتورینگ به‌وضوح بالا آمد." },
+            { "language": "kmr", "text": "Di derbasbarî testa de, pêşkêşkara nû ya auth piştî rastkirinê di çavdêriyê de diyar dibe." },
+            { "language": "pl", "text": "W fazie testów nowy serwis autoryzacji uruchomił się widocznie w monitoringu po poprawce." },
+            { "language": "ro", "text": "În faza de testare, noul serviciu de autentificare a pornit vizibil în monitoring după fix." },
+            { "language": "ru", "text": "На этапе тестирования после фикса новый сервис авторизации заметно запустился в мониторинге." },
+            { "language": "sq", "text": "Në fazën e testit, shërbimi i ri i autentikimit u aktivizua dukshëm në monitorim pas rregullimit." },
+            { "language": "tr", "text": "Test aşamasında, yeni kimlik doğrulama servisi düzeltmeden sonra izleme ekranında görünür şekilde başlatıldı." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "der Anspruch",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "die Ansprüche",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "an-spruch",
+      "topics": ["business-communication", "documents-and-administration", "work-and-jobs"],
+      "usageLabels": ["written", "business", "workplace"],
+      "contextLabels": ["administration", "support"],
+      "meanings": [
+        { "language": "ar", "text": "مطالبه؛ ادعا" },
+        { "language": "ckb", "text": "داواکاری/پێمان" },
+        { "language": "en", "text": "claim; requirement; standard" },
+        { "language": "fa", "text": "ادعا؛ درخواست؛ معیار" },
+        { "language": "kmr", "text": "daxwaz; pêdivîbûn" },
+        { "language": "pl", "text": "roszczenie; roszczenie; wymóg" },
+        { "language": "ro", "text": "cerință; pretenție; standard" },
+        { "language": "ru", "text": "требование; претензия; стандарт" },
+        { "language": "sq", "text": "kërkesë; pretendim; standard" },
+        { "language": "tr", "text": "talep; iddia; standart" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Vertrag erfüllt alle SLA-Ansprüche aus der Kundenvereinbarung.",
+          "translations": [
+            { "language": "ar", "text": "قرارداد همه‌ی تعهدات SLA را بر اساس توافق مشتری پوشش می‌دهد." },
+            { "language": "ckb", "text": "گرەکیەکە هەموو داواکاریەکانی SLA لە ڕێککەوتنی کڕیارەوە پڕدەکات." },
+            { "language": "en", "text": "The contract fulfills all SLA requirements from the customer agreement." },
+            { "language": "fa", "text": "قرارداد همه‌ی خواسته‌های SLA را طبق توافق مشتری پوشش می‌دهد." },
+            { "language": "kmr", "text": "Peyman hemû pêdiviyên SLA yên peymana xerîdar tê de dike." },
+            { "language": "pl", "text": "Umowa spełnia wszystkie wymagania SLA z umowy klienta." },
+            { "language": "ro", "text": "Contractul îndeplinește toate cerințele SLA din acordul cu clientul." },
+            { "language": "ru", "text": "Договор выполняет все требования SLA из соглашения с клиентом." },
+            { "language": "sq", "text": "Marrëveshja plotëson të gjitha kërkesat e SLA nga marrëveshja e klientit." },
+            { "language": "tr", "text": "Sözleşme, müşteri anlaşmasındaki tüm SLA taleplerini karşılıyor." }
+          ]
+        },
+        {
+          "baseText": "Bitte prüfen Sie, ob der neue Prozess die internen Anspruchsniveaus der Ticketbearbeitung hält.",
+          "translations": [
+            { "language": "ar", "text": "لطفاً بررسی کنید آیا فرایند جدید سطح استاندارد داخلی رسیدگی به تیکت را نگه می‌دارد." },
+            { "language": "ckb", "text": "تکایە پشکنینە هەیە کە پڕۆسەیەکی نوێ ئاستی پێشوازی ناوخۆیی چاودێری تیکەتەکان دەهێنێت." },
+            { "language": "en", "text": "Please check whether the new process meets internal ticket-handling standards." },
+            { "language": "fa", "text": "لطفاً بررسی کنید که آیا فرایند جدید استانداردهای داخلی رسیدگی به تیکت‌ها را حفظ می‌کند." },
+            { "language": "kmr", "text": "Ji kerema xwe re kontrol bike ku pêvajoya nû pîvanên navxweyî ya karûbarê tîketê diparêze." },
+            { "language": "pl", "text": "Sprawdź, czy nowy proces spełnia wewnętrzne standardy obsługi zgłoszeń." },
+            { "language": "ro", "text": "Verificați dacă noul proces respectă nivelurile interne de pretenție la gestionarea tichetelor." },
+            { "language": "ru", "text": "Проверьте, соответствует ли новый процесс внутренним требованиям по обработке тикетов." },
+            { "language": "sq", "text": "Ju lutemi kontrolloni nëse procesi i ri i përmbush nivelet e brendshëm të pretendimeve për trajtimin e tiketëve." },
+            { "language": "tr", "text": "Lütfen yeni sürecin bilet işleme için iç kalite hedeflerini karşılayıp karşılamadığını kontrol edin." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anstehen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anstehen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-stehen",
+      "topics": ["work-and-jobs", "documents-and-administration", "customer-service"],
+      "usageLabels": ["workplace", "business", "written"],
+      "contextLabels": ["customer-service", "administration"],
+      "meanings": [
+        { "language": "ar", "text": "يطول الطابور؛ يتطلب" },
+        { "language": "ckb", "text": "وەستاندن لە پێشەوە/ڕیزدەبوون" },
+        { "language": "en", "text": "to wait in line; to be required" },
+        { "language": "fa", "text": "در صف ایستادن؛ لازم بودن" },
+        { "language": "kmr", "text": "li rêzê bêşdan; pêwist bûn" },
+        { "language": "pl", "text": "stać w kolejce; pozostawać wymaganym" },
+        { "language": "ro", "text": "a sta la coadă; a fi necesar" },
+        { "language": "ru", "text": "стоять в очереди; быть необходимым" },
+        { "language": "sq", "text": "të prisni në radhë; të nevojshëm të jesh" },
+        { "language": "tr", "text": "sıraya girmek; gerekli olmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Vor dem Servicetresen standen heute über 80 Anträge im Anstehen, deshalb schalten wir auf Self-Service um.",
+          "translations": [
+            { "language": "ar", "text": "امروز جلو پیشخوان خدمت بیش از 80 درخواست در صف بود؛ برای همین به خودخدمتی می‌رویم." },
+            { "language": "ckb", "text": "لە پێشەوەی باڵگەکەی خزمەتی کڕیار ٨٠ دانە داواکاری ھەبوون، بۆیە دەكەینە سروشتینی خودخزمەتکردن." },
+            { "language": "en", "text": "More than 80 requests were waiting in line at the service desk, so we switched to self-service." },
+            { "language": "fa", "text": "امروز بیش از ۸۰ درخواست در صف باجه خدمات ایستاده بودند، بنابراین به روش خودخدمت تغییر دادیم." },
+            { "language": "kmr", "text": "Ber pêncereya xizmeta rojane di berê de li ser pêşî 80 xwestin di anstand de bûn, ji ber vê yekê me biçûk kirin ji serwerê xwekar." },
+            { "language": "pl", "text": "Przy infolinii stało dziś ponad 80 zgłoszeń w kolejce, dlatego przeszliśmy na self-service." },
+            { "language": "ro", "text": "La ghișeul de service au așteptat azi peste 80 de cereri, așa că am trecut la soluția self-service." },
+            { "language": "ru", "text": "У сервисной стойки сегодня в очереди стояло более 80 заявок, поэтому мы перешли на самообслуживание." },
+            { "language": "sq", "text": "Para recepsionit të shërbimit sot në pritje ishin më shumë se 80 kërkesa, kështu kaluam në self-service." },
+            { "language": "tr", "text": "Servis bankosunda bugün 80'den fazla talep bekliyordu, bu yüzden self-servise geçtik." }
+          ]
+        },
+        {
+          "baseText": "Die Genehmigung für das Deployment ansteht bis zur Freigabe durch Security.",
+          "translations": [
+            { "language": "ar", "text": "تأیید استقرار تا تایید نهایی امنیتی معلق است." },
+            { "language": "ckb", "text": "پەسەندکردنی دێپلویمنت تا بۆ پاسەداری پاراستنەوەوە دەچێتەوە." },
+            { "language": "en", "text": "The approval for deployment is pending until security gives clearance." },
+            { "language": "fa", "text": "تأیید استقرار تا تأیید امنیتی باقی مانده است." },
+            { "language": "kmr", "text": "Destûra deploykirinê heta destûra ewlehiyê hîna pêwîst e." },
+            { "language": "pl", "text": "Zgoda na wdrożenie oczekuje do czasu zatwierdzenia przez dział bezpieczeństwa." },
+            { "language": "ro", "text": "Aprobarea pentru deployment este în așteptare până la avizul securității." },
+            { "language": "ru", "text": "Согласование деплоя ожидает до получения разрешения от службы безопасности." },
+            { "language": "sq", "text": "Miratimi për deployment është në pritje derisa të miratohet nga Security." },
+            { "language": "tr", "text": "Dağıtım onayı, güvenliğin onayına kadar beklemektedir." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anstoßen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anstoßen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-sto-ßen",
+      "topics": ["business-communication", "work-and-jobs"],
+      "usageLabels": ["workplace", "business", "written"],
+      "contextLabels": ["administration", "support"],
+      "meanings": [
+        { "language": "ar", "text": "بدء النقاش/طرح الفكرة؛ بر هم زدن" },
+        { "language": "ckb", "text": "دەستپێکردن/پێشکەوتنەوە" },
+        { "language": "en", "text": "to initiate; to kick off" },
+        { "language": "fa", "text": "راه انداختن؛ کلید کردن (شروع)" },
+        { "language": "kmr", "text": "dest pê kirin; pêşxistina" },
+        { "language": "pl", "text": "inicjować; rozpocząć" },
+        { "language": "ro", "text": "a iniția; a lansa" },
+        { "language": "ru", "text": "инициировать; запускать" },
+        { "language": "sq", "text": "të nisin; të vënë në qarkullim" },
+        { "language": "tr", "text": "başlatmak; başvuruda bulunmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir stoßen heute den Incident-Review zu einem neuen Prozess an und laden alle Stakeholder ein.",
+          "translations": [
+            { "language": "ar", "text": "امروز بازبینی رخداد را برای یک فرایند جدید شروع می‌کنیم و همه ذی‌نفعان را دعوت می‌کنیم." },
+            { "language": "ckb", "text": "ئێمە ئەمڕۆ بڕیارەکەیەکی نێوەری کەیسەکان دەستپێدەکەین و هەموو بەشداربووان ڕازیدەکەین." },
+            { "language": "en", "text": "We are starting an incident review for a new process today and inviting all stakeholders." },
+            { "language": "fa", "text": "امروز بازنگری incident برای یک فرایند جدید را آغاز می‌کنیم و همه ذی‌نفعان را دعوت می‌کنیم." },
+            { "language": "kmr", "text": "Em îro kontrola incidentê ji bo prosedurek nû dest pê dikin û hemû alîkarên pîştrast dibêjin." },
+            { "language": "pl", "text": "Dziś inicjujemy przegląd incydentu dla nowego procesu i zapraszamy wszystkie strony." },
+            { "language": "ro", "text": "Astăzi inițiem un review de incident pentru un proces nou și invităm toți stakeholderii." },
+            { "language": "ru", "text": "Сегодня мы запускаем разбор инцидента для нового процесса и приглашаем всех заинтересованных." },
+            { "language": "sq", "text": "Sot po e nis një review të incidentit për një proces të ri dhe ftojmë të gjithë pjesëmarrësit." },
+            { "language": "tr", "text": "Bugün yeni bir süreç için incident incelemesini başlatıyor ve tüm paydaşları davet ediyoruz." }
+          ]
+        },
+        {
+          "baseText": "Der Teamleiter stieß mit dem Vorschlag an, die Onboarding-Tests zu automatisieren.",
+          "translations": [
+            { "language": "ar", "text": "مدیر تیم پیشنهاد خودکارسازی تست‌های onboarding را مطرح کرد." },
+            { "language": "ckb", "text": "سەرکردەی تیم خەیاڵی کردەوە بۆ خۆکارکردنی تاقیکردنەوەکانی ورودکردن." },
+            { "language": "en", "text": "The team lead proposed automating onboarding tests." },
+            { "language": "fa", "text": "رهبر تیم پیشنهاد داد تست‌های ورود نیرو را خودکار کنیم." },
+            { "language": "kmr", "text": "Rêberê tîm pêşniyar kir ku testên onboarding bi otomasyon ve têne sepandin." },
+            { "language": "pl", "text": "Lider zespołu zaproponował automatyzację testów wdrożeniowych." },
+            { "language": "ro", "text": "Liderul echipei a propus automatizarea testelor de onboarding." },
+            { "language": "ru", "text": "Руководитель команды предложил автоматизировать onboarding-тесты." },
+            { "language": "sq", "text": "Udhëheqësi i ekipit propozoi të automatizohet testimi i onboarding." },
+            { "language": "tr", "text": "Takım lideri, onboarding testlerini otomatikleştirme önerisi sundu." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

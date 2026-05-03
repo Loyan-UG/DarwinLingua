@@ -1,0 +1,554 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-018",
+  "packageName": "German B2 Generated Batch 018",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        { "language": "de", "name": "Am Arbeitsplatz" },
+        { "language": "ar", "name": "في مكان العمل" },
+        { "language": "ckb", "name": "لە شوێنی کار" },
+        { "language": "en", "name": "Workplace" },
+        { "language": "fa", "name": "محیط کار" },
+        { "language": "kmr", "name": "Li cihê kar" },
+        { "language": "pl", "name": "W miejscu pracy" },
+        { "language": "ro", "name": "La locul de muncă" },
+        { "language": "ru", "name": "На рабочем месте" },
+        { "language": "sq", "name": "Në vendin e punës" },
+        { "language": "tr", "name": "İş yeri" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        { "language": "de", "name": "Technisch" },
+        { "language": "ar", "name": "تقني" },
+        { "language": "ckb", "name": "تەکنیکی" },
+        { "language": "en", "name": "Technical" },
+        { "language": "fa", "name": "فنی" },
+        { "language": "kmr", "name": "Teknîkî" },
+        { "language": "pl", "name": "Techniczny" },
+        { "language": "ro", "name": "Tehnic" },
+        { "language": "ru", "name": "Технический" },
+        { "language": "sq", "name": "Teknik" },
+        { "language": "tr", "name": "Teknik" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        { "language": "de", "name": "Geschäftlich" },
+        { "language": "ar", "name": "تجاري" },
+        { "language": "ckb", "name": "بازرگانی" },
+        { "language": "en", "name": "Business" },
+        { "language": "fa", "name": "تجاری" },
+        { "language": "kmr", "name": "Bazirganî" },
+        { "language": "pl", "name": "Biznesowy" },
+        { "language": "ro", "name": "De afaceri" },
+        { "language": "ru", "name": "Деловой" },
+        { "language": "sq", "name": "Biznesi" },
+        { "language": "tr", "name": "İş" }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        { "language": "de", "name": "Schriftlich" },
+        { "language": "ar", "name": "كتابي" },
+        { "language": "ckb", "name": "نووسراو" },
+        { "language": "en", "name": "Written" },
+        { "language": "fa", "name": "نوشتاری" },
+        { "language": "kmr", "name": "Nivîskî" },
+        { "language": "pl", "name": "Pisemny" },
+        { "language": "ro", "name": "Scris" },
+        { "language": "ru", "name": "Письменный" },
+        { "language": "sq", "name": "I shkruar" },
+        { "language": "tr", "name": "Yazılı" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "it",
+      "displayName": "IT",
+      "sortOrder": 1140,
+      "localizations": [
+        { "language": "de", "name": "IT" },
+        { "language": "ar", "name": "تقنية المعلومات" },
+        { "language": "ckb", "name": "IT" },
+        { "language": "en", "name": "IT" },
+        { "language": "fa", "name": "IT" },
+        { "language": "kmr", "name": "IT" },
+        { "language": "pl", "name": "IT" },
+        { "language": "ro", "name": "IT" },
+        { "language": "ru", "name": "ИТ" },
+        { "language": "sq", "name": "IT" },
+        { "language": "tr", "name": "BT" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        { "language": "de", "name": "Support" },
+        { "language": "ar", "name": "الدعم" },
+        { "language": "ckb", "name": "پاڵپشتی" },
+        { "language": "en", "name": "Support" },
+        { "language": "fa", "name": "پشتیبانی" },
+        { "language": "kmr", "name": "Piştgirî" },
+        { "language": "pl", "name": "Wsparcie" },
+        { "language": "ro", "name": "Suport" },
+        { "language": "ru", "name": "Поддержка" },
+        { "language": "sq", "name": "Mbështetje" },
+        { "language": "tr", "name": "Destek" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "administration",
+      "displayName": "Administration",
+      "sortOrder": 1220,
+      "localizations": [
+        { "language": "de", "name": "Verwaltung" },
+        { "language": "ar", "name": "الإدارة" },
+        { "language": "ckb", "name": "کارگێڕی" },
+        { "language": "en", "name": "Administration" },
+        { "language": "fa", "name": "اداره" },
+        { "language": "kmr", "name": "Rêveberî" },
+        { "language": "pl", "name": "Administracja" },
+        { "language": "ro", "name": "Administrație" },
+        { "language": "ru", "name": "Администрирование" },
+        { "language": "sq", "name": "Administratë" },
+        { "language": "tr", "name": "İdare" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        { "language": "de", "name": "Kundenservice" },
+        { "language": "ar", "name": "خدمة العملاء" },
+        { "language": "ckb", "name": "خزمەتی کڕیار" },
+        { "language": "en", "name": "Customer Service" },
+        { "language": "fa", "name": "خدمات مشتریان" },
+        { "language": "kmr", "name": "Xizmeta xerîdar" },
+        { "language": "pl", "name": "Obsługa klienta" },
+        { "language": "ro", "name": "Serviciu clienți" },
+        { "language": "ru", "name": "Клиентский сервис" },
+        { "language": "sq", "name": "Shërbim klienti" },
+        { "language": "tr", "name": "Müşteri hizmetleri" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "angleichen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "angleichen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-glei-chen",
+      "topics": ["planning-and-projects", "work-and-jobs", "technology-and-it"],
+      "usageLabels": ["workplace", "technical"],
+      "contextLabels": ["it", "support"],
+      "grammarNotes": ["separable verb"],
+      "collocations": [
+        { "text": "die Anforderungen angleichen", "meaning": "to align requirements" },
+        { "language": "de", "text": "die Umgebungen angleichen", "meaning": "to align environments" }
+      ],
+      "wordFamilies": [
+        { "lemma": "anpassen", "relationLabel": "verb", "note": "related meaning" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "مَلاءمة أو تعديل شيء ليتوافق مع شيء آخر" },
+        { "language": "ckb", "text": "گونجاوکردن و یەکسانکردن" },
+        { "language": "en", "text": "to align; to harmonize" },
+        { "language": "fa", "text": "هماهنگ کردن؛ تنظیم کردن" },
+        { "language": "kmr", "text": "wîsandin û hevseng kirin" },
+        { "language": "pl", "text": "wyrównywać; dostosowywać" },
+        { "language": "ro", "text": "a adapta; a armoniza" },
+        { "language": "ru", "text": "согласовывать; уравнивать" },
+        { "language": "sq", "text": "harmonizon; përshtat" },
+        { "language": "tr", "text": "uyumlamak; dengedeştirmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir angleichen die Staging- und Produktivkonfigurationen vor dem Rollout.",
+          "translations": [
+            { "language": "ar", "text": "نقوم بمطابقة إعدادات البيئة التجريبية مع الإنتاج قبل الإطلاق." },
+            { "language": "ckb", "text": "پێش ڕەوانەکردنەوە ئامرازی Staging و بەرهەمییەکەی یەکسان دەکەین." },
+            { "language": "en", "text": "We align staging and production configurations before the rollout." },
+            { "language": "fa", "text": "قبل از رول‌اوت، پیکربندی Staging و تولید را همسو می‌کنیم." },
+            { "language": "kmr", "text": "Pêş rollouthê avakirina configê ya Staging û prodaksiyonê hevdu vê." },
+            { "language": "pl", "text": "Przed rolloutem wyrównujemy konfiguracje środowiska testowego i produkcyjnego." },
+            { "language": "ro", "text": "Înainte de rollout, aliniem configurațiile de testare și producție." },
+            { "language": "ru", "text": "Перед rollout мы выравниваем конфигурации staging и production." },
+            { "language": "sq", "text": "Para rollout-it ne rregullojmë konfigurimet e staging dhe prodhimit." },
+            { "language": "tr", "text": "Rollout'dan önce staging ile production yapılandırmalarını uyumlu hale getiriyoruz." }
+          ]
+        },
+        {
+          "baseText": "Wir müssen die Schichtpläne angleichen, weil das Team im Homeoffice arbeitet.",
+          "translations": [
+            { "language": "ar", "text": "يجب علينا تعديل جداول المناوبات لأن الفريق يعمل من المنزل." },
+            { "language": "ckb", "text": "بەهۆی کارکردنی تیمەکە لە ژوورەوە، پێویستە خشتەکانی شوێنی کارەکان رەوشێوە بکرێت." },
+            { "language": "en", "text": "We need to adjust the shift plans because the team works from home." },
+            { "language": "fa", "text": "به‌دلیل کار از راه دور تیم، باید برنامه‌های شیفت را تنظیم کنیم." },
+            { "language": "kmr", "text": "Ji ber ku tîm ji mala xebit dike, pêdivî ye plana şifteyan lihev bikin." },
+            { "language": "pl", "text": "Musimy dopasować grafiki zmian, ponieważ zespół pracuje zdalnie." },
+            { "language": "ro", "text": "Trebuie să ajustăm programul schimburilor, deoarece echipa lucrează remote." },
+            { "language": "ru", "text": "Нужно выровнять графики смен, потому что команда работает удалённо." },
+            { "language": "sq", "text": "Na duhet t’i përshtasim oraret e turneve, sepse ekipi punon nga shtëpia." },
+            { "language": "tr", "text": "Ekibin uzaktan çalıştığını düşünüp vardiya planlarını uyumlamamız gerekiyor." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Annahme",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "die Annahmen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "An-na-hme",
+      "topics": ["documents-and-administration", "business-communication", "work-and-jobs"],
+      "usageLabels": ["written", "business"],
+      "contextLabels": ["administration", "customer-service"],
+      "grammarNotes": ["abstract noun", "feminine noun"],
+      "collocations": [
+        { "text": "die Annahme treffen", "meaning": "to make a decision/assumption" },
+        { "text": "die Annahme prüfen", "meaning": "to verify an assumption" }
+      ],
+      "wordFamilies": [
+        { "lemma": "annehmen", "relationLabel": "verb", "note": "base verb" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "القبول؛ التسليم" },
+        { "language": "ckb", "text": "پەسەندکردن" },
+        { "language": "en", "text": "assumption; acceptance" },
+        { "language": "fa", "text": "پذیرش؛ فرض" },
+        { "language": "kmr", "text": "qebûlkirin; pêvajoya berê" },
+        { "language": "pl", "text": "zaakceptowanie; przyjęcie; założenie" },
+        { "language": "ro", "text": "acceptare; presupunere" },
+        { "language": "ru", "text": "принятие; допущение" },
+        { "language": "sq", "text": "pranueshmëri; supozim" },
+        { "language": "tr", "text": "kabul; varsayım" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Annahme des neuen Tickets erfolgt erst nach juristischer Prüfung.",
+          "translations": [
+            { "language": "ar", "text": "قبول التذكرة الجديدة يتم بعد المراجعة القانونية فقط." },
+            { "language": "ckb", "text": "پەسەندکردنی تیکەتی نوێ تەنها دوای پشکنینی یاسایی دەبێت." },
+            { "language": "en", "text": "The acceptance of the new ticket happens only after legal review." },
+            { "language": "fa", "text": "پذیرش تیکت جدید فقط بعد از بررسی حقوقی انجام می‌شود." },
+            { "language": "kmr", "text": "Qebûlkirina tîketa nû tenê pa peywendî û kontrola hukukî derdikevin." },
+            { "language": "pl", "text": "Przyjęcie nowego zgłoszenia następuje dopiero po przeglądzie prawnym." },
+            { "language": "ro", "text": "Acceptarea noului tichet are loc doar după verificarea juridică." },
+            { "language": "ru", "text": "Принятие нового тикета происходит только после юридической проверки." },
+            { "language": "sq", "text": "Pranimi i tiketit të ri bëhet vetëm pas kontrollit ligjor." },
+            { "language": "tr", "text": "Yeni biletin kabulü sadece hukuki incelemeden sonra yapılır." }
+          ]
+        },
+        {
+          "baseText": "Wir prüfen in der Sitzung die Annahme, dass die Ausfälle nur in der Nacht passieren.",
+          "translations": [
+            { "language": "ar", "text": "في الاجتماع نتحقق من الافتراض أن الأعطال تحدث فقط ليلاً." },
+            { "language": "ckb", "text": "لە دانشتنەکەدا ئەو پەیوهەکە دەپشکنین کە تێکەڵەکان تەنها لە شەودا ڕوودەدەن." },
+            { "language": "en", "text": "In the meeting, we verify the assumption that failures happen only at night." },
+            { "language": "fa", "text": "در جلسه، فرض راستی‌آزمایی می‌کنیم که خرابی‌ها فقط شب اتفاق می‌افتد." },
+            { "language": "kmr", "text": "Di civînê de em pêşniyarê çareserkirinê diçin ku zehmetkariyên tenê di şevê de derkevin." },
+            { "language": "pl", "text": "Na spotkaniu weryfikujemy założenie, że awarie zdarzają się tylko w nocy." },
+            { "language": "ro", "text": "În ședință verificăm presupunerea că defecțiunile se întâmplă doar noaptea." },
+            { "language": "ru", "text": "На встрече мы проверяем допущение, что сбои происходят только ночью." },
+            { "language": "sq", "text": "Në mbledhje verifikojmë supozimin se defektet ndodhin vetëm natën." },
+            { "language": "tr", "text": "Toplantıda arızaların yalnızca gece olduğunu öne sürülen varsayımı doğruluyoruz." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anonym",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "a-no-nym",
+      "topics": ["documents-and-administration", "technology-and-it", "data-and-reporting"],
+      "usageLabels": ["written", "technical", "workplace"],
+      "contextLabels": ["it", "administration", "support"],
+      "grammarNotes": ["non-inflecting adjective in meaning here", "position: predicative or attributive"],
+      "collocations": [
+        { "text": "anonyme Daten", "meaning": "anonymous data" },
+        { "text": "anonyme Nutzung", "meaning": "anonymous usage" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "مجهول" },
+        { "language": "ckb", "text": "نهێنی/بێناوی" },
+        { "language": "en", "text": "anonymous" },
+        { "language": "fa", "text": "ناشناس" },
+        { "language": "kmr", "text": "bênav" },
+        { "language": "pl", "text": "anonimowy" },
+        { "language": "ro", "text": "anonim" },
+        { "language": "ru", "text": "анонимный" },
+        { "language": "sq", "text": "anonim" },
+        { "language": "tr", "text": "anonim" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir speichern Zugriffsdaten nur anonym, damit Support-Anfragen rückverfolgbar bleiben.",
+          "translations": [
+            { "language": "ar", "text": "نحتفظ ببيانات الدخول بشكل مجهول حتى تظل طلبات الدعم قابلة للتتبع." },
+            { "language": "ckb", "text": "دراوی پارەدراوی تێچوویەکان تەنها بە شێوەیەکی بێناوی هەڵدەگرین تا داواکارییەکانی پشتگیری بپارێزراون." },
+            { "language": "en", "text": "We store access data only anonymously so support requests remain traceable." },
+            { "language": "fa", "text": "داده‌های دسترسی را فقط به‌صورت ناشناس ذخیره می‌کنیم تا درخواست‌های پشتیبانی قابل ردیابی بمانند." },
+            { "language": "kmr", "text": "Daneyên gihîştin tenê bi awayek anonym têne tomarkirin da daxwazên piştgiriyê wêneyên pêşîn bigirin." },
+            { "language": "pl", "text": "Dane dostępu przechowujemy tylko anonimowo, aby zgłoszenia supportu pozostały możliwe do śledzenia." },
+            { "language": "ro", "text": "Stocăm datele de acces doar anonim, astfel încât cererile de suport să poată fi urmărite." },
+            { "language": "ru", "text": "Мы храним данные доступа только анонимно, чтобы обращения в поддержку были отслеживаемы." },
+            { "language": "sq", "text": "Të dhënat e aksesit i ruajmë vetëm në mënyrë anonime që kërkesat e support-it të mbeten të gjurmueshme." },
+            { "language": "tr", "text": "Erişim verilerini yalnızca anonim olarak saklıyoruz ki destek talepleri izlenebilir kalsın." }
+          ]
+        },
+        {
+          "baseText": "Der Geschäftsführer hat anonym eine Rückmeldung zu den Schichtplänen geschickt.",
+          "translations": [
+            { "language": "ar", "text": "أرسل المدير مذكرة مجهولة حول جداول المناوبات." },
+            { "language": "ckb", "text": "سەرپەرشتیاری بە شێوەیەکی بێناو بۆ تەرتیبەکانی شفتەکان راپۆرتی وتووێژی نووسیوە." },
+            { "language": "en", "text": "The manager sent anonymous feedback about the shift schedules." },
+            { "language": "fa", "text": "مدیر یک بازخورد ناشناس درباره برنامه‌های شیفت ارسال کرد." },
+            { "language": "kmr", "text": "Rêveber ji bo plana şifteyan şîroveya anonim şandiye." },
+            { "language": "pl", "text": "Kierownik przesłał anonimową opinię na temat grafiku zmian." },
+            { "language": "ro", "text": "Managerul a trimis anonim un feedback despre programul de schimburi." },
+            { "language": "ru", "text": "Руководитель отправил анонимный отзыв по графику смен." },
+            { "language": "sq", "text": "Menaxheri dërgoi një feedback anonim rreth orareve të turneve." },
+            { "language": "tr", "text": "Müdür vardiya planlarıyla ilgili anonim geri bildirim gönderdi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anpfeifen",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anpfeifen",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-pfef-fen",
+      "topics": ["work-and-jobs", "customer-service"],
+      "usageLabels": ["workplace", "business"],
+      "contextLabels": ["customer-service"],
+      "grammarNotes": ["separable verb", "main verb comes first in many colloquial uses"],
+      "collocations": [
+        { "text": "den Song anpfeifen", "meaning": "to whistle a tune" },
+        { "text": "etwas anpfeifen", "meaning": "to hum/whistle something" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "يشقشققة/يلفظ لحناً" },
+        { "language": "ckb", "text": "بە فیسەڵکردنەوە سەیری هەنگاو" },
+        { "language": "en", "text": "to whistle (a tune)" },
+        { "language": "fa", "text": "زمزمه کردن/زمزمه‌نواختن" },
+        { "language": "kmr", "text": "bisekirin" },
+        { "language": "pl", "text": "gwizdać" },
+        { "language": "ro", "text": "a şuierăi" },
+        { "language": "ru", "text": "свистеть" },
+        { "language": "sq", "text": "fishkëllim" },
+        { "language": "tr", "text": "fısıldamak gibi ıslık çalmak" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Kollege hat die Warnmelodie im Kontrollraum nur kurz angpfeift.",
+          "translations": [
+            { "language": "ar", "text": "زميل العمل رنصص اللحن التحذيري في غرفة المراقبة فقط للحظة." },
+            { "language": "ckb", "text": "هاوکارەکە گەیشتنی ئاگادارکردنەوەیەکەی کۆنترۆڵ ژێرەوە بە کەمترین کاتەوەیەوە پەخشانە." },
+            { "language": "en", "text": "The colleague whistled the warning tune in the control room only briefly." },
+            { "language": "fa", "text": "همکار فقط لحظه‌ای ملودی هشدار را در اتاق کنترل زمزمه کرد." },
+            { "language": "kmr", "text": "Komeselê tenê careke kurt meliya hişyarîyê di kontrolê de anpfeif kir." },
+            { "language": "pl", "text": "Kolega szybko zanucił sygnał ostrzegawczy w sali kontroli." },
+            { "language": "ro", "text": "Colegul a şuierat o clipă melodia de avertizare în sala de control." },
+            { "language": "ru", "text": "Коллега на мгновение свистнул предупреждающий сигнал в комнате контроля." },
+            { "language": "sq", "text": "Shoku i punës ankuptoi vetëm pak melodinë paralajmëruese në dhomën e kontrollit." },
+            { "language": "tr", "text": "Meslektaş kontrol odasında sadece kısa bir süre uyarı melodisini ıslıkla çaldı." }
+          ]
+        },
+        {
+          "baseText": "Der Kunde hat es als unhöflich empfunden, dass der Servicemitarbeiter im Wartebereich etwas anpfeift.",
+          "translations": [
+            { "language": "ar", "text": "العميل اعتبره غير مهذب أن موظف الخدمة أطلق صفيراً خفيفاً في منطقة الانتظار." },
+            { "language": "ckb", "text": "کڕیار ئاندەیدەکەی نەخۆشە ڕەفتارکردنەوەکەی کارمەندەی خزمەتی کڕیارەوە بە لێکدانەوەیەک بوو." },
+            { "language": "en", "text": "The customer felt it was impolite that the service agent whistled in the waiting area." },
+            { "language": "fa", "text": "مشتری احساس کرد اینکه کارمند سرویس در سالن انتظار زمزمه کند، نامناسب است." },
+            { "language": "kmr", "text": "Xerîdar hîs kir ku anpfeifkirina kesek li devera li benda beşê xirab e." },
+            { "language": "pl", "text": "Klient uznał, że niewłaściwie było, że konsultant na poczekalni coś zanucił." },
+            { "language": "ro", "text": "Clientul a considerat nepoliticos că angajatul de suport a șuierat ușor în zonă de așteptare." },
+            { "language": "ru", "text": "Клиент считал неприемлемым, что сотрудник службы поддержки свистел в зоне ожидания." },
+            { "language": "sq", "text": "Klienti e konsideroi të pakëndshme që përfaqësuesi i suportit të fishkëllente në zonën e pritjes." },
+            { "language": "tr", "text": "Müşteri, servis elemanının bekleme alanında ıslık çalmasının kaba bulduğunu söyledi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anraten",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anraten",
+      "pronunciationIpa": null,
+      "syllableBreak": "an-ra-ten",
+      "topics": ["business-communication", "work-and-jobs", "sales-and-customers"],
+      "usageLabels": ["business", "written", "workplace"],
+      "contextLabels": ["customer-service", "support"],
+      "grammarNotes": ["modal-like recommendation verb", "often with accusative object"],
+      "collocations": [
+        { "text": "eine Lösung anraten", "meaning": "to recommend a solution" },
+        { "text": "jemandem anraten", "meaning": "to recommend to someone" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "ينصح بـ/يوصي" },
+        { "language": "ckb", "text": "ڕاستەوخۆ پێشنیارکردن" },
+        { "language": "en", "text": "to recommend" },
+        { "language": "fa", "text": "توصیه کردن" },
+        { "language": "kmr", "text": "peyda kirin / têkelkirin" },
+        { "language": "pl", "text": "zalecać" },
+        { "language": "ro", "text": "a recomanda" },
+        { "language": "ru", "text": "рекомендовать" },
+        { "language": "sq", "text": "të rekomandojë" },
+        { "language": "tr", "text": "önermek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir raten bei Datenmigration klar dazu, zuerst ein Backup-Testlauf zu machen.",
+          "translations": [
+            { "language": "ar", "text": "نحن نوصي عند ترحيل البيانات بإجراء نسخة احتياطية تجريبية أولاً." },
+            { "language": "ckb", "text": "لە کاتی گواستنەوەی داتاکان ئێمە بەشداریم بۆ ئەنجامی بکەین وەها پێشتر تاقیکردنەوە بکەین." },
+            { "language": "en", "text": "During data migration, we strongly recommend running a backup dry run first." },
+            { "language": "fa", "text": "در مهاجرت داده‌ها، به‌شدت توصیه می‌کنیم ابتدا یک اجراي آزمایشی پشتیبان بگیریم." },
+            { "language": "kmr", "text": "Di dema veguherandina daneyê de em banga zor bi dîtinê dikin ku herî berî ku pêştestek bi backup re çêbine." },
+            { "language": "pl", "text": "Przy migracji danych zdecydowanie zalecamy najpierw wykonanie testowego backupu." },
+            { "language": "ro", "text": "La migrarea datelor recomandăm ferm să faceți mai întâi o rulare de backup de test." },
+            { "language": "ru", "text": "При миграции данных мы рекомендуем сначала выполнить пробный бэкап." },
+            { "language": "sq", "text": "Gjatë migrimit të të dhënave rekomandojmë fort të bëhet së pari një provë backup-i." },
+            { "language": "tr", "text": "Veri taşınmasında ilk olarak test amaçlı bir yedekleme çalıştırmanızı şiddetle öneririz." }
+          ]
+        },
+        {
+          "baseText": "Die Support-Dame hat dem Kunden eine kleine Pausenpause und warmes Wasser anraten.",
+          "translations": [
+            { "language": "ar", "text": "موظفة الدعم نصحت العميل بأخذ استراحة قصيرة وشرب ماء دافئ." },
+            { "language": "ckb", "text": "کەرمەنی پشتگیری کارمەندی کڕیارەکە کە یەک پەردەیەکی کورت و ئاو گەرم پێشنیار کرد." },
+            { "language": "en", "text": "The support agent advised the customer to take a short break and drink warm water." },
+            { "language": "fa", "text": "کارشناس پشتیبانی به مشتری توصیه کرد  استراحت کوتاه و نوشیدن آب گرم انجام دهد." },
+            { "language": "kmr", "text": "Xizmetkarê piştgiriyê xerîdarê şîrove kir ku bixwêne hinekî bi dema kin û avê germî bixwe." },
+            { "language": "pl", "text": "Pracownik supportu doradził klientowi krótką przerwę i picie ciepłej wody." },
+            { "language": "ro", "text": "Agentul de suport i-a recomandat clientului o pauză scurtă și apă caldă." },
+            { "language": "ru", "text": "Сотрудник поддержки рекомендовала клиенту сделать короткий перерыв и попить тёплой воды." },
+            { "language": "sq", "text": "Përfaqësuesja e supportit i rekomandoi klientit një pushim të shkurtër dhe ujë të ngrohtë." },
+            { "language": "tr", "text": "Destek elemanı müşteriye kısa bir mola ve ılık su içmeyi önerdi." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Anreizstruktur",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "die Anreizstrukturen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "An-reiz-struk-tur",
+      "topics": ["work-and-jobs", "finance-and-accounting", "business-communication"],
+      "usageLabels": ["business", "written", "workplace"],
+      "contextLabels": ["administration", "customer-service"],
+      "grammarNotes": ["feminine noun", "composite noun", "plural form: die Anreizstrukturen"],
+      "collocations": [
+        { "text": "Anreizstruktur anpassen", "meaning": "to adjust incentive structure" },
+        { "text": "Anreizstruktur verändern", "meaning": "to change incentive structure" }
+      ],
+      "wordFamilies": [
+        { "lemma": "anreizen", "relationLabel": "verb", "note": "related verb form" }
+      ],
+      "meanings": [
+        { "language": "ar", "text": "هيكل التحفيز" },
+        { "language": "ckb", "text": "ڕێکخستنی ئاهەنگ" },
+        { "language": "en", "text": "incentive structure" },
+        { "language": "fa", "text": "ساختار انگیزشی" },
+        { "language": "kmr", "text": "rêzkirina teşwîq" },
+        { "language": "pl", "text": "struktura zachęt" },
+        { "language": "ro", "text": "structura de stimulente" },
+        { "language": "ru", "text": "система стимулов" },
+        { "language": "sq", "text": "struktura e stimulimeve" },
+        { "language": "tr", "text": "teşvik sistemi" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir haben die Anreizstruktur im Support-Team auf Reaktionszeit und Kundenzufriedenheit umgestellt.",
+          "translations": [
+            { "language": "ar", "text": "هيكل التحفيز في فريق الدعم به استناد إلى سرعة الاستجابة ورضا العملاء." },
+            { "language": "ckb", "text": "ئێمە ڕێکخستنی ئاهەنگەی تیمی پشتگیری بە دەوروبەری کاتی وەڵامدانەوە و پەسەنتی کڕیار گۆڕیان." },
+            { "language": "en", "text": "We changed the support team incentive structure to focus on response time and customer satisfaction." },
+            { "language": "fa", "text": "ساختار تشویقی تیم پشتیبانی را روی زمان پاسخ‌گویی و رضایت مشتری متمرکز کردیم." },
+            { "language": "kmr", "text": "Me rêzkirina teşwîqa tima piştgiriyê li ser hinga bersivdanê û razîkirina xerîdar biguherand." },
+            { "language": "pl", "text": "Zmieniśmy strukturę zachęt w zespole wsparcia, skupiając się na czasie reakcji i satysfakcji klienta." },
+            { "language": "ro", "text": "Am schimbat structura de stimulente a echipei de suport, concentrându-ne pe timpul de răspuns și satisfacția clienților." },
+            { "language": "ru", "text": "Мы перестроили систему мотивации команды поддержки, делая акцент на времени ответа и удовлетворенности клиентов." },
+            { "language": "sq", "text": "Ne e ndryshuam strukturën e stimulimeve në ekipin e suportit duke u fokusuar në kohën e përgjigjes dhe kënaqësinë e klientit." },
+            { "language": "tr", "text": "Destek ekibinin teşvik sistemini yanıt süresi ve müşteri memnuniyetine odaklanacak şekilde değiştirdik." }
+          ]
+        },
+        {
+          "baseText": "Die neue Anreizstruktur für das Onboarding verbessert die Einarbeitungsquote deutlich.",
+          "translations": [
+            { "language": "ar", "text": "هيكل التحفيز الجديد لعملية الانضمام، نرخ پذیرش را واضحاً بهتر کرده است." },
+            { "language": "ckb", "text": "ڕێکخستنی نوێی ئاهەنگ بۆ پەڕەیەکی هەڵبژاردنی کارکردن، ڕێژەی چەسپاندن لە فڕۆکەی کارەکە بەرز کەرد." },
+            { "language": "en", "text": "The new onboarding incentive structure clearly improves the onboarding success rate." },
+            { "language": "fa", "text": "ساختار انگیزشی جدید برای ورود نیروها، نرخ موفقیت onboarding را به طور قابل توجهی بهبود می‌دهد." },
+            { "language": "kmr", "text": "Rêzkirina teşwîqa nû ya onboardingê qasîya serketina şûna destpêkê baştir kir." },
+            { "language": "pl", "text": "Nowa struktura zachęt dla onboardingu wyraźnie poprawia wskaźnik adaptacji." },
+            { "language": "ro", "text": "Noua structură de stimulente pentru onboarding îmbunătățește clar rata de integrare." },
+            { "language": "ru", "text": "Новая структура поощрений для онбординга значительно улучшила показатель адаптации." },
+            { "language": "sq", "text": "Struktura e re e stimulimeve për onboardimin përmirëson dukshëm normën e suksesshëm." },
+            { "language": "tr", "text": "Yeni onboarding teşvik sistemi, uyumlanma oranını belirgin şekilde artırıyor." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

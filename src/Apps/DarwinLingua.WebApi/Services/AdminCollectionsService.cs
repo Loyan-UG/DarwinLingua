@@ -395,9 +395,14 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
 
         foreach (AdminSaveCollectionLocalizationRequest localization in localizations)
         {
+            LanguageCode languageCode = LanguageCode.From(localization.LanguageCode);
+            Guid localizationId = collection.Localizations.Any(item => item.LanguageCode == languageCode)
+                ? Guid.Empty
+                : Guid.NewGuid();
+
             collection.AddOrUpdateLocalization(
-                Guid.NewGuid(),
-                LanguageCode.From(localization.LanguageCode),
+                localizationId,
+                languageCode,
                 localization.Name,
                 localization.Description,
                 now);

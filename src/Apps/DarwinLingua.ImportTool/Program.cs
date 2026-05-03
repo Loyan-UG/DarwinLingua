@@ -406,6 +406,11 @@ internal static class Program
                 Console.WriteLine(lemma);
             }
 
+            foreach (ImportIssueModel issue in result.Issues)
+            {
+                summary.IssueSummaries.Add(FormatIssue(jsonFilePath, issue));
+            }
+
             if (result.IsSuccess)
             {
                 summary.SuccessfulFiles++;
@@ -463,6 +468,24 @@ internal static class Program
                 Console.WriteLine($"- {failedFileSummary}");
             }
         }
+
+        if (summary.IssueSummaries.Count > 0)
+        {
+            Console.WriteLine("Issues:");
+            foreach (string issueSummary in summary.IssueSummaries)
+            {
+                Console.WriteLine($"- {issueSummary}");
+            }
+        }
+    }
+
+    private static string FormatIssue(string jsonFilePath, ImportIssueModel issue)
+    {
+        string entryPrefix = issue.EntryIndex.HasValue
+            ? $" entry {issue.EntryIndex.Value}"
+            : string.Empty;
+
+        return $"{Path.GetFileName(jsonFilePath)}{entryPrefix}: {issue.Severity}: {issue.Message}";
     }
 
     private static ImportTarget ParseTarget(string value)
@@ -502,6 +525,8 @@ internal static class Program
         public int WarningCount { get; set; }
 
         public List<string> FailedFileSummaries { get; } = [];
+
+        public List<string> IssueSummaries { get; } = [];
     }
 
     private sealed record ImportExecutionOptions(

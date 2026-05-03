@@ -2,7 +2,6 @@ using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.ContentOps.Application.Abstractions;
 using DarwinLingua.ContentOps.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
-using DarwinLingua.Localization.Domain.Entities;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
@@ -123,6 +122,7 @@ internal sealed class ContentImportRepository : IContentImportRepository
 
     public async Task PersistImportAsync(
         ContentPackage contentPackage,
+        IReadOnlyList<LabelDefinition> importedLabelDefinitions,
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
         IReadOnlyList<ScenarioLesson> importedScenarios,
@@ -131,6 +131,7 @@ internal sealed class ContentImportRepository : IContentImportRepository
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(contentPackage);
+        ArgumentNullException.ThrowIfNull(importedLabelDefinitions);
         ArgumentNullException.ThrowIfNull(importedWords);
         ArgumentNullException.ThrowIfNull(importedCollections);
         ArgumentNullException.ThrowIfNull(importedScenarios);
@@ -146,6 +147,52 @@ internal sealed class ContentImportRepository : IContentImportRepository
             .BeginTransactionAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        if (importedLabelDefinitions.Count > 0)
+        {
+            string[] importedLabelKeys = importedLabelDefinitions
+                .Select(label => label.Key)
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            List<LabelDefinition> existingLabels = await dbContext.LabelDefinitions
+                .Include(label => label.Localizations)
+                .Where(label => importedLabelKeys.Contains(label.Key))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            foreach (LabelDefinition importedLabel in importedLabelDefinitions)
+            {
+                LabelDefinition? existingLabel = existingLabels.SingleOrDefault(label =>
+                    label.Kind == importedLabel.Kind &&
+                    string.Equals(label.Key, importedLabel.Key, StringComparison.Ordinal));
+
+                if (existingLabel is null)
+                {
+                    dbContext.LabelDefinitions.Add(importedLabel);
+                    continue;
+                }
+
+                existingLabel.UpdateMetadata(
+                    importedLabel.DisplayName,
+                    importedLabel.SortOrder,
+                    importedLabel.IsSystem,
+                    importedLabel.UpdatedAtUtc);
+
+                foreach (LabelDefinitionLocalization localization in importedLabel.Localizations)
+                {
+                    Guid localizationId = existingLabel.Localizations.Any(item => item.LanguageCode == localization.LanguageCode)
+                        ? Guid.Empty
+                        : Guid.NewGuid();
+
+                    existingLabel.AddOrUpdateLocalization(
+                        localizationId,
+                        localization.LanguageCode,
+                        localization.DisplayName,
+                        importedLabel.UpdatedAtUtc);
+                }
+            }
+        }
+
         dbContext.AddRange(importedWords);
         dbContext.Add(contentPackage);
 
@@ -155,6 +202,7 @@ internal sealed class ContentImportRepository : IContentImportRepository
         {
             List<WordCollection> existingCollections = await dbContext.WordCollections
                 .Include(collection => collection.Entries)
+                .Include(collection => collection.Localizations)
                 .Where(collection => importedCollections.Select(item => item.Slug).Contains(collection.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -183,6 +231,20 @@ internal sealed class ContentImportRepository : IContentImportRepository
                         .Select(entry => (entry.WordEntryId, entry.SortOrder))
                         .ToArray(),
                     importedCollection.UpdatedAtUtc);
+
+                foreach (WordCollectionLocalization localization in importedCollection.Localizations)
+                {
+                    Guid localizationId = existingCollection.Localizations.Any(item => item.LanguageCode == localization.LanguageCode)
+                        ? Guid.Empty
+                        : Guid.NewGuid();
+
+                    existingCollection.AddOrUpdateLocalization(
+                        localizationId,
+                        localization.LanguageCode,
+                        localization.Name,
+                        localization.Description,
+                        importedCollection.UpdatedAtUtc);
+                }
             }
 
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);

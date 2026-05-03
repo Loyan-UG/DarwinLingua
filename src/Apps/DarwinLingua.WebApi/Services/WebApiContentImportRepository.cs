@@ -109,6 +109,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
 
     public async Task PersistImportAsync(
         ContentPackage contentPackage,
+        IReadOnlyList<LabelDefinition> importedLabelDefinitions,
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
         IReadOnlyList<ScenarioLesson> importedScenarios,
@@ -117,6 +118,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(contentPackage);
+        ArgumentNullException.ThrowIfNull(importedLabelDefinitions);
         ArgumentNullException.ThrowIfNull(importedWords);
         ArgumentNullException.ThrowIfNull(importedCollections);
         ArgumentNullException.ThrowIfNull(importedScenarios);
@@ -125,6 +127,52 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
 
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         await using Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
+
+        if (importedLabelDefinitions.Count > 0)
+        {
+            string[] importedLabelDefinitionKeys = importedLabelDefinitions
+                .Select(label => label.Key)
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            List<LabelDefinition> existingLabels = await dbContext.LabelDefinitions
+                .Include(label => label.Localizations)
+                .Where(label => importedLabelDefinitionKeys.Contains(label.Key))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            foreach (LabelDefinition importedLabel in importedLabelDefinitions)
+            {
+                LabelDefinition? existingLabel = existingLabels.SingleOrDefault(label =>
+                    label.Kind == importedLabel.Kind &&
+                    string.Equals(label.Key, importedLabel.Key, StringComparison.Ordinal));
+
+                if (existingLabel is null)
+                {
+                    dbContext.LabelDefinitions.Add(importedLabel);
+                    continue;
+                }
+
+                existingLabel.UpdateMetadata(
+                    importedLabel.DisplayName,
+                    importedLabel.SortOrder,
+                    importedLabel.IsSystem,
+                    importedLabel.UpdatedAtUtc);
+
+                foreach (LabelDefinitionLocalization localization in importedLabel.Localizations)
+                {
+                    Guid localizationId = existingLabel.Localizations.Any(item => item.LanguageCode == localization.LanguageCode)
+                        ? Guid.Empty
+                        : Guid.NewGuid();
+
+                    existingLabel.AddOrUpdateLocalization(
+                        localizationId,
+                        localization.LanguageCode,
+                        localization.DisplayName,
+                        importedLabel.UpdatedAtUtc);
+                }
+            }
+        }
 
         dbContext.AddRange(importedWords);
         dbContext.Add(contentPackage);
@@ -172,8 +220,12 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
 
                 foreach (WordCollectionLocalization localization in importedCollection.Localizations)
                 {
+                    Guid localizationId = existingCollection.Localizations.Any(item => item.LanguageCode == localization.LanguageCode)
+                        ? Guid.Empty
+                        : Guid.NewGuid();
+
                     existingCollection.AddOrUpdateLocalization(
-                        Guid.NewGuid(),
+                        localizationId,
                         localization.LanguageCode,
                         localization.Name,
                         localization.Description,

@@ -1,0 +1,386 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-010",
+  "packageName": "German B2 Generated Batch 010",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        { "language": "de", "name": "Am Arbeitsplatz" },
+        { "language": "ar", "name": "في مكان العمل" },
+        { "language": "ckb", "name": "لە شوێنی کار" },
+        { "language": "en", "name": "Workplace" },
+        { "language": "fa", "name": "محیط کار" },
+        { "language": "kmr", "name": "Li cihê kar" },
+        { "language": "pl", "name": "W miejscu pracy" },
+        { "language": "ro", "name": "La locul de muncă" },
+        { "language": "ru", "name": "На рабочем месте" },
+        { "language": "sq", "name": "Në vendin e punës" },
+        { "language": "tr", "name": "İş yeri" }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        { "language": "de", "name": "Support" },
+        { "language": "ar", "name": "الدعم" },
+        { "language": "ckb", "name": "پاڵپشتی" },
+        { "language": "en", "name": "Support" },
+        { "language": "fa", "name": "پشتیبانی" },
+        { "language": "kmr", "name": "Piştgirî" },
+        { "language": "pl", "name": "Wsparcie" },
+        { "language": "ro", "name": "Suport" },
+        { "language": "ru", "name": "Поддержка" },
+        { "language": "sq", "name": "Mbështetje" },
+        { "language": "tr", "name": "Destek" }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "die Allokation",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "die Allokationen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Al-lo-ka-ti-on",
+      "topics": ["finance-and-accounting", "work-and-jobs", "documents-and-administration"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "تخصيص/توزیع منابع" },
+        { "language": "ckb", "text": "پەخشکردن" },
+        { "language": "en", "text": "allocation of resources" },
+        { "language": "fa", "text": "تخصیص/توزیع" },
+        { "language": "kmr", "text": "belavkirin" },
+        { "language": "pl", "text": "alokacja; przydział" },
+        { "language": "ro", "text": "alocare; alocarea" },
+        { "language": "ru", "text": "распределение; аллокация" },
+        { "language": "sq", "text": "alokim" },
+        { "language": "tr", "text": "paylaştırma; tahsis" }
+      ],
+      "examples": [
+        {
+          "baseText": "Für das Releasing wurden die QA-Ressourcen pro Team im Sprint neu allokiert.",
+          "translations": [
+            { "language": "ar", "text": "برای انتشار، منابع QA برای هر تیم در اسپرینت مجدداً تخصیص یافت." },
+            { "language": "ckb", "text": "بۆ ڕێکخستنی ریلیزکردنەوە، سەرچاوەکانی QA بۆ هەر تیمێک لە اسپریتەدا نوێ جۆرەکرانە دراوە." },
+            { "language": "en", "text": "For the release, QA resources were reallocated per team in the sprint." },
+            { "language": "fa", "text": "برای ریلیز، منابع QA در هر تیم درون اسپرینت دوباره تخصیص داده شدند." },
+            { "language": "kmr", "text": "Ji bo release-yê, çavkaniyên QA li gorî tîmê di sprintê de ji nû ve hatin belavkirin." },
+            { "language": "pl", "text": "Na potrzeby release'u zasoby QA zostały ponownie alokowane na każdy zespół w sprincie." },
+            { "language": "ro", "text": "Pentru release, resursele QA au fost realocate pe echipe la nivel de sprint." },
+            { "language": "ru", "text": "Для релиза ресурсы QA были снова перераспределены по командам в пределах спринта." },
+            { "language": "sq", "text": "Për release-in, burimet e QA-së janë rialokuar sipas ekipeve brenda sprintit." },
+            { "language": "tr", "text": "Yayın için QA kaynakları sprint içinde her ekibe tekrar tahsis edildi." }
+          ]
+        },
+        {
+          "baseText": "Die Allokation der Stunden wurde mit dem PM auf Basis des Service-Berichts freigegeben.",
+          "translations": [
+            { "language": "ar", "text": "تخصیص ساعات با موافقت مدیر پروژه بر اساس گزارش خدمات تأیید شد." },
+            { "language": "ckb", "text": "ئەرخەوانی کاتەکان لە بنەمای ڕاپۆرتی خزمەتگوزاریەوە لە لایەنی پروژه ڕەزامەندی کرا." },
+            { "language": "en", "text": "The allocation of hours was approved by the PM based on the service report." },
+            { "language": "fa", "text": "تخصیص ساعت‌ها بر اساس گزارش سرویس توسط PM تأیید شد." },
+            { "language": "kmr", "text": "Belavkirina saetan ji aliyê PMê ve bi bingehî rapora servîsê hate pejirandin." },
+            { "language": "pl", "text": "Alokacja godzin została zatwierdzona przez PM na podstawie raportu serwisowego." },
+            { "language": "ro", "text": "Alocarea orelor a fost aprobată de PM pe baza raportului de service." },
+            { "language": "ru", "text": "Распределение часов было утверждено PM на основе отчета по сервису." },
+            { "language": "sq", "text": "Alokimi i orëve u aprovua nga PM-ja në bazë të raportit të shërbimit." },
+            { "language": "tr", "text": "Saat tahsisi, PM tarafından servis raporuna dayanarak onaylandı." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "alternativlos",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "topics": ["work-and-jobs", "management-and-leadership", "contracts-and-negotiation"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "بدون بدیل" },
+        { "language": "ckb", "text": "بێ ئیختیا" },
+        { "language": "en", "text": "without an alternative; inevitable" },
+        { "language": "fa", "text": "بدون گزینهٔ جایگزین" },
+        { "language": "kmr", "text": "bê vebijêrk" },
+        { "language": "pl", "text": "bez alternatywy; nieunikniony" },
+        { "language": "ro", "text": "fără alternativă" },
+        { "language": "ru", "text": "безальтернативный; неизбежный" },
+        { "language": "sq", "text": "pa alternativë" },
+        { "language": "tr", "text": "kaçınılmaz; alternatifsiz" }
+      ],
+      "examples": [
+        {
+          "baseText": "Aufgrund der regulatorischen Frist ist eine manuelle Bearbeitung alternativlos geblieben.",
+          "translations": [
+            { "language": "ar", "text": "به دلیل مهلت مقرراتی، پردازش دستی عملاً بدون جایگزین ماند." },
+            { "language": "ckb", "text": "بەهۆی سنووردانی یاسایی، دانانی دەستکاریکردن بەردەوام بەبێ شتێکی ترەوە بوو." },
+            { "language": "en", "text": "Because of the regulatory deadline, manual processing remained unavoidable." },
+            { "language": "fa", "text": "به دلیل مهلت مقرراتی، پردازش دستی چاره‌ای جز انجامش نمانده است." },
+            { "language": "kmr", "text": "Ji ber rojanekî rêxistnava regûlatîf, celebekirina bi destê manewî jêwîbûnê mezin e." },
+            { "language": "pl", "text": "Ze względu na termin regulacyjny ręczna obsługa pozostała bez alternatywy." },
+            { "language": "ro", "text": "Din cauza termenului de reglementare, prelucrarea manuală a rămas fără alternativă." },
+            { "language": "ru", "text": "Из-за регуляторного срока ручная обработка осталась неизбежной." },
+            { "language": "sq", "text": "Për shkak të afatit rregullator, përpunimi manual ka mbetur pa alternativë." },
+            { "language": "tr", "text": "Regülasyon süresinin nedeniyle manuel işleme kaçınılmaz oldu." }
+          ]
+        },
+        {
+          "baseText": "Nach dem Ausfall des Hauptanbieters war eine Umstellung auf ein anderes Tool vorerst nicht möglich.",
+          "translations": [
+            { "language": "ar", "text": "پس از خرابی فروشنده اصلی، تعویض به ابزار دیگر فعلاً امکان‌پذیر نبود." },
+            { "language": "ckb", "text": "دوای شکستی بازرگانەوەی سەرەکی، گۆڕین بۆ ئامرازێکی تر ئێستا ممکن نەبوو." },
+            { "language": "en", "text": "After the primary vendor failed, switching to another tool was not possible for now." },
+            { "language": "fa", "text": "پس از خرابی فروشنده اصلی، فعلاً تعویض به ابزار دیگر ممکن نبود." },
+            { "language": "kmr", "text": "Piştî xeterneta pêşkêşkara sereke, guherandinê bo amûra din niha ne gengaz bû." },
+            { "language": "pl", "text": "Po awarii dostawcy głównego, przejście na inne narzędzie było tymczasowo niemożliwe." },
+            { "language": "ro", "text": "După căderea furnizorului principal, trecerea la alt instrument nu a fost posibilă deocamdată." },
+            { "language": "ru", "text": "После сбоя основного поставщика переход на другой инструмент временно был невозможен." },
+            { "language": "sq", "text": "Pas dështimit të furnizuesit kryesor, kalimi në një mjet tjetër përkohësisht nuk ishte i mundur." },
+            { "language": "tr", "text": "Ana tedarikçi çöktükten sonra, geçici olarak başka bir araca geçmek mümkün olmadı." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "ambivalent",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "topics": ["business-communication", "customer-service", "work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "متناقض/دوپهلو" },
+        { "language": "ckb", "text": "دووجار" },
+        { "language": "en", "text": "ambivalent; mixed feelings" },
+        { "language": "fa", "text": "دوگانه/دو پهلو" },
+        { "language": "kmr", "text": "dujwar" },
+        { "language": "pl", "text": "ambiwalentny; ikili" },
+        { "language": "ro", "text": "ambivalent; deosebit" },
+        { "language": "ru", "text": "амбивалентный; двоякий" },
+        { "language": "sq", "text": "dykuptimës" },
+        { "language": "tr", "text": "ikircikli; kararsız" }
+      ],
+      "examples": [
+        {
+          "baseText": "Wir haben eine ambivalente Reaktion der Nutzer auf das neue Dashboard bekommen.",
+          "translations": [
+            { "language": "ar", "text": "واکنش کاربران نسبت به داشبورد جدید دوپهلو بود." },
+            { "language": "ckb", "text": "لە ڕووبەری داشبۆردی نوێدا وەڵامی بەکارهێنەران دووه‌مراوەیە." },
+            { "language": "en", "text": "We received an ambivalent reaction to the new dashboard from users." },
+            { "language": "fa", "text": "یک واکنش دوپهلو از کاربران نسبت به داشبورد جدید دریافت کردیم." },
+            { "language": "kmr", "text": "Ji bo dashboarda nû re bersivek ambivalent ji bikarhêneran wergirt." },
+            { "language": "pl", "text": "Otrzymaliśmy ambiwalentną reakcję użytkowników na nowy dashboard." },
+            { "language": "ro", "text": "Am primit o reacție ambivalentă din partea utilizatorilor față de noul dashboard." },
+            { "language": "ru", "text": "Мы получили двоякую реакцию пользователей на новый дашборд." },
+            { "language": "sq", "text": "Për dashboard-in e ri morëm reagim ambivalent nga përdoruesit." },
+            { "language": "tr", "text": "Yeni dashboard için kullanıcılardan ikircikli bir geri bildirim aldık." }
+          ]
+        },
+        {
+          "baseText": "Die E-Mail an den Kunden war fachlich korrekt, wirkte aber in der Wortwahl eher ambivalent.",
+          "translations": [
+            { "language": "ar", "text": "ایمیل به مشتری از نظر فنی درست بود، اما در انتخاب کلمات کمی دوپهلو به نظر می‌رسید." },
+            { "language": "ckb", "text": "ئیمەیڵەکە بۆ کڕیار لە ڕووی فنی ڕاستە، بەڵام لە هەڵبژاردنی وشەکان دووه‌مراوی دیارە." },
+            { "language": "en", "text": "The email to the client was technically correct, but its wording sounded somewhat ambivalent." },
+            { "language": "fa", "text": "ایمیل به مشتری از نظر فنی درست بود، اما در انتخاب واژه‌ها کمی دوپهلو به نظر می‌رسید." },
+            { "language": "kmr", "text": "E-nameya şandin ji bo xerîdar rast bû, lê fermana peyvan têkoşînê bi awayê ambivalent tê dîtin." },
+            { "language": "pl", "text": "Mail do klienta był merytorycznie poprawny, ale w doborze słów brzmiał dość ambiwalentnie." },
+            { "language": "ro", "text": "E-mailul către client a fost corect din punct de vedere tehnic, dar tonul a părut ambivalent." },
+            { "language": "ru", "text": "Письмо клиенту было технически корректным, но по формулировкам звучало несколько двусмысленно." },
+            { "language": "sq", "text": "E-maili për klientin ishte teknikisht i saktë, por formulimi dukej disi ambivalent." },
+            { "language": "tr", "text": "Müşteriye gönderilen e-posta teknik olarak doğruydu ama üslubu biraz ikircikli görünüyordu." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Analyse",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "die Analysen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "A-na-ly-se",
+      "topics": ["data-and-reporting", "quality-and-risk", "work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "تحلیل" },
+        { "language": "ckb", "text": "شیکردنەوە" },
+        { "language": "en", "text": "analysis" },
+        { "language": "fa", "text": "تحلیل" },
+        { "language": "kmr", "text": "analîz" },
+        { "language": "pl", "text": "analiza" },
+        { "language": "ro", "text": "analiză" },
+        { "language": "ru", "text": "анализ" },
+        { "language": "sq", "text": "analizë" },
+        { "language": "tr", "text": "analiz" }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Analyse der Support-Tickets zeigte, dass die meisten Beschwerden von einem Modul abhängen.",
+          "translations": [
+            { "language": "ar", "text": "تحلیل تیکت‌های پشتیبانی نشان داد بیشتر شکایت‌ها به یک ماژول وابسته هستند." },
+            { "language": "ckb", "text": "شیکردنەوەی تیکتەکانی پشتگیری نیشان دا کە زۆربەی شکایتەکان لە یەک مۆدولەوە دەن." },
+            { "language": "en", "text": "The analysis of support tickets showed that most complaints depended on one module." },
+            { "language": "fa", "text": "تحلیل تیکت‌های پشتیبانی نشان داد بیشتر شکایت‌ها وابسته به یک ماژول هستند." },
+            { "language": "kmr", "text": "Analîza tîketên piştgiriyê nîşan da zêdetir şikayetên ji yek modûlekê ne." },
+            { "language": "pl", "text": "Analiza zgłoszeń supportu pokazała, że większość reklamacji dotyczy jednego modułu." },
+            { "language": "ro", "text": "Analiza tichetelor de suport a arătat că majoritatea reclamațiilor depind de un singur modul." },
+            { "language": "ru", "text": "Анализ тикетов поддержки показал, что большинство жалоб зависит от одного модуля." },
+            { "language": "sq", "text": "Analiza e biletave të suportit tregoi se shumica e ankesave varen nga një modul i vetëm." },
+            { "language": "tr", "text": "Destek biletlerinin analizi, şikayetlerin çoğunun tek bir modülden kaynaklandığını gösterdi." }
+          ]
+        },
+        {
+          "baseText": "Im Tagesabschlussmeeting hat das Team die Ursachenanalyse der Eskalation präsentiert.",
+          "translations": [
+            { "language": "ar", "text": "در جلسه جمع‌بندی روز، تیم تحلیل علت‌های ارجاع را ارائه کرد." },
+            { "language": "ckb", "text": "لە کۆبوونەوەی کۆتا ڕۆژەدا تیمەکە ڕاپۆرتی وشکێنەوەی هۆکاری ئاسکەلاشنەکان پێشکەش کرد." },
+            { "language": "en", "text": "In the daily wrap-up meeting, the team presented the root-cause analysis of the escalation." },
+            { "language": "fa", "text": "در جلسه جمع‌بندی روزانه، تیم تحلیل علت ریشه‌ای اَسرع‌سازی را ارائه کرد." },
+            { "language": "kmr", "text": "Di civîna dawîna rojê de tîm ragihandina analîza sedeman a eskalasyona pêşkêş kir." },
+            { "language": "pl", "text": "Na spotkaniu kończącym dzień, zespół zaprezentował analizę przyczyn eskalacji." },
+            { "language": "ro", "text": "În ședința de încheiere a zilei, echipa a prezentat analiza cauzelor escaladării." },
+            { "language": "ru", "text": "На встрече в конце дня команда представила анализ первопричины эскалации." },
+            { "language": "sq", "text": "Në mbledhjen e përmbylljes së ditës, ekipi prezantoi analizën e shkaqeve të eskalimit." },
+            { "language": "tr", "text": "Günün bitiş toplantısında ekip, eskalasyonun kök neden analizini sundu." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "der Anbau",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "die Anbauten",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "An-bau",
+      "topics": ["public-services", "documents-and-administration", "work-and-jobs"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "افزوده/ضمیمه" },
+        { "language": "ckb", "text": "پێوەندی زیادە" },
+        { "language": "en", "text": "annex; extension" },
+        { "language": "fa", "text": "افزودن/ضمیمه" },
+        { "language": "kmr", "text": "pêşxistineyê" },
+        { "language": "pl", "text": "przyłącze; dobudówka" },
+        { "language": "ro", "text": "adăugire; anexă" },
+        { "language": "ru", "text": "пристройка; приращение" },
+        { "language": "sq", "text": "shtim; aneks" },
+        { "language": "tr", "text": "yan ek; eklenti" }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Gebäudeanbau für das neue Rechenzentrum wurde im Quartalsplan als separates CAPEX-Projekt verbucht.",
+          "translations": [
+            { "language": "ar", "text": "اضافه‌ساختمانی برای دیتاسنتر جدید در برنامه فصلی به‌عنوان پروژه مجزا CAPEX ثبت شد." },
+            { "language": "ckb", "text": "پەیوەندی بینایی بۆ داتا سنترە نوێکە لە پلانی کوارتاڵەوە وەک پرۆژەی CAPEXی جیا دەکرێتەوە." },
+            { "language": "en", "text": "The building extension for the new data center was booked as a separate CAPEX project in the quarterly plan." },
+            { "language": "fa", "text": "زائده‌ ساختمانی برای دیتاسنتر جدید در برنامه فصلی به‌عنوان پروژه جداگانه CAPEX ثبت شد." },
+            { "language": "kmr", "text": "Pêşkênên avahiya data centera nû wek projeya CAPEX a cuda di planiçarta de hatin qeyd kirin." },
+            { "language": "pl", "text": "Rozbudowa budynku dla nowego centrum danych została ujęta w kwartalnym planie jako osobny projekt CAPEX." },
+            { "language": "ro", "text": "Anexa clădirii pentru noul data center a fost înregistrată în planul trimestrial ca proiect separat CAPEX." },
+            { "language": "ru", "text": "Пристройка здания под новое ДЦ была учтена в квартальном плане как отдельный CAPEX-проект." },
+            { "language": "sq", "text": "Aneksi i ndërtesës për data centrin e ri u regjistrua në planin tremujor si projekt i veçantë CAPEX." },
+            { "language": "tr", "text": "Yeni veri merkezi için bina ek binası, çeyrek dönem planında ayrı bir CAPEX projesi olarak kaydedildi." }
+          ]
+        },
+        {
+          "baseText": "Der Vertragsschluss beinhält einen Anbau zur Nutzung eines zusätzlichen Testlabors.",
+          "translations": [
+            { "language": "ar", "text": "قرارداد شامل ضمیمه‌ای برای استفاده از یک آزمایشگاه اضافی است." },
+            { "language": "ckb", "text": "پەیمانەکە پێشەکیەکەی هەیە بۆ بەکارهێنانی لەبۆرەی تاقیکردنەوەی زیادە." },
+            { "language": "en", "text": "The contract includes an annex for using an additional test lab." },
+            { "language": "fa", "text": "قرارداد شامل پیوست استفاده از یک آزمایشگاه تست اضافی است." },
+            { "language": "kmr", "text": "Lîsteya peymanê pêveke yekê ji bo bikarhêneriya laboratora testê ya zêde heye." },
+            { "language": "pl", "text": "Umowa zawiera aneks dotyczący użytkowania dodatkowego laboratorium testowego." },
+            { "language": "ro", "text": "Contractul include o anexă pentru utilizarea unui laborator suplimentar de testare." },
+            { "language": "ru", "text": "Договор включает приложение на использование дополнительной тестовой лаборатории." },
+            { "language": "sq", "text": "Kontrata përfshin një aneks për përdorimin e një laboratori shtesë testimi." },
+            { "language": "tr", "text": "Sözleşme, ek bir test laboratuvarı kullanımını içeren bir ek belge içeriyor." }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "anbinden",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "topics": ["technology-and-it", "work-and-jobs", "documents-and-administration"],
+      "usageLabels": ["workplace"],
+      "contextLabels": ["support"],
+      "meanings": [
+        { "language": "ar", "text": "متصل کردن/دنباله‌گذاری کردن" },
+        { "language": "ckb", "text": "گرێدان" },
+        { "language": "en", "text": "to bind; to integrate/attach" },
+        { "language": "fa", "text": "اتصال دادن; پیوند زدن" },
+        { "language": "kmr", "text": "girêdan" },
+        { "language": "pl", "text": "podłączać; łączyć" },
+        { "language": "ro", "text": "a conecta; a atașa" },
+        { "language": "ru", "text": "подключать; прикреплять" },
+        { "language": "sq", "text": "të lidhë; të cuce" },
+        { "language": "tr", "text": "bağlamak; entegre etmek" }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Monitoring-Tool wurde erfolgreich an das Identity-Provider-System angebunden.",
+          "translations": [
+            { "language": "ar", "text": "ابزار مانیتورینگ با موفقیت به سیستم هویت متصل شد." },
+            { "language": "ckb", "text": "ئامرازە نیشاندەری بە سەرکەوتوویی بە سیستەمی دڵنیایی ناسنامە پەیوەست کرا." },
+            { "language": "en", "text": "The monitoring tool was successfully integrated into the identity provider system." },
+            { "language": "fa", "text": "ابزار مانیتورینگ با موفقیت به سیستم ارائه‌دهنده هویت متصل شد." },
+            { "language": "kmr", "text": "Amûra monitorinê bi serkeftinê bi pergala peydakirina nasnameyê hat ve girêdan." },
+            { "language": "pl", "text": "Narzędzie monitorujące zostało pomyślnie podłączone do systemu dostawcy tożsamości." },
+            { "language": "ro", "text": "Instrumentul de monitorizare a fost conectat cu succes la sistemul providerului de identitate." },
+            { "language": "ru", "text": "Инструмент мониторинга был успешно интегрирован в систему поставщика идентификации." },
+            { "language": "sq", "text": "Mjeti i monitorimit u lidh me sukses me sistemin e furnizuesit të identitetit." },
+            { "language": "tr", "text": "İzleme aracı kimlik sağlayıcı sistemine başarıyla entegre edildi." }
+          ]
+        },
+        {
+          "baseText": "Der neue Vertragsanhang wurde an das bestehende Vertragsmanagement im Portal angebunden.",
+          "translations": [
+            { "language": "ar", "text": "پیوست جدید قرارداد به سامانه مدیریت قرارداد فعلی در پورتال پیوست شد." },
+            { "language": "ckb", "text": "پەیوەندی نوێی پەیمان بە سیستەمی بەڕێوەبردنی پەیمانەکەی هەبوونەوە لە پەرتاڵەوە پەیوەندرا." },
+            { "language": "en", "text": "The new contract addendum was linked to the existing contract management in the portal." },
+            { "language": "fa", "text": "پیوست جدید قرارداد به سامانه‌ی مدیریت قرارداد موجود در پورتال وصل شد." },
+            { "language": "kmr", "text": "Pevşandina nû ya peymanê bi rêveberiya peymanê ya heyî ya di portalê de hat ve girêdan." },
+            { "language": "pl", "text": "Nowy aneks do umowy został połączony z istniejącym systemem zarządzania umowami w portalu." },
+            { "language": "ro", "text": "Noul supliment de contract a fost atașat la managementul de contracte existent din portal." },
+            { "language": "ru", "text": "Новый дополнительный договор был прикреплен к существующему управлению контрактами в портале." },
+            { "language": "sq", "text": "Shtesa e re e kontratës u lidh me menaxhimin ekzistues të kontratave në portal." },
+            { "language": "tr", "text": "Yeni ek sözleşme, portaldaki mevcut sözleşme yönetimi sistemine bağlandı." }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}
