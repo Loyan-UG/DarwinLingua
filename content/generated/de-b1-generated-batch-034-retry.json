@@ -1,0 +1,924 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-034-retry",
+  "packageName": "German B1 Generated Batch 034 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "hr",
+      "displayName": "HR",
+      "sortOrder": 1070,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Personalwesen"
+        },
+        {
+          "language": "ar",
+          "name": "الموارد البشرية"
+        },
+        {
+          "language": "ckb",
+          "name": "سەرچاوە مرۆییەکان"
+        },
+        {
+          "language": "en",
+          "name": "HR"
+        },
+        {
+          "language": "fa",
+          "name": "منابع انسانی"
+        },
+        {
+          "language": "kmr",
+          "name": "Çavkaniyên mirovî"
+        },
+        {
+          "language": "pl",
+          "name": "HR"
+        },
+        {
+          "language": "ro",
+          "name": "HR"
+        },
+        {
+          "language": "ru",
+          "name": "HR"
+        },
+        {
+          "language": "sq",
+          "name": "HR"
+        },
+        {
+          "language": "tr",
+          "name": "İK"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "contracts",
+      "displayName": "Contracts",
+      "sortOrder": 1200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Verträge"
+        },
+        {
+          "language": "ar",
+          "name": "العقود"
+        },
+        {
+          "language": "ckb",
+          "name": "گرێبەستەکان"
+        },
+        {
+          "language": "en",
+          "name": "Contracts"
+        },
+        {
+          "language": "fa",
+          "name": "قراردادها"
+        },
+        {
+          "language": "kmr",
+          "name": "Peyman"
+        },
+        {
+          "language": "pl",
+          "name": "Umowy"
+        },
+        {
+          "language": "ro",
+          "name": "Contracte"
+        },
+        {
+          "language": "ru",
+          "name": "Контракты"
+        },
+        {
+          "language": "sq",
+          "name": "Kontrata"
+        },
+        {
+          "language": "tr",
+          "name": "Sözleşmeler"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "compliance",
+      "displayName": "Compliance",
+      "sortOrder": 1180,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Compliance"
+        },
+        {
+          "language": "ar",
+          "name": "الامتثال"
+        },
+        {
+          "language": "ckb",
+          "name": "پابەندبوون"
+        },
+        {
+          "language": "en",
+          "name": "Compliance"
+        },
+        {
+          "language": "fa",
+          "name": "انطباق"
+        },
+        {
+          "language": "kmr",
+          "name": "Lihevhatin"
+        },
+        {
+          "language": "pl",
+          "name": "Zgodność"
+        },
+        {
+          "language": "ro",
+          "name": "Conformitate"
+        },
+        {
+          "language": "ru",
+          "name": "Соответствие"
+        },
+        {
+          "language": "sq",
+          "name": "Pajtueshmëri"
+        },
+        {
+          "language": "tr",
+          "name": "Uyum"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "die Betriebsrätin",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Betriebsrätinnen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Be-triebs-rä-tin",
+      "topics": [
+        "work-and-jobs",
+        "human-resources",
+        "law-and-compliance"
+      ],
+      "usageLabels": [
+        "formal",
+        "business",
+        "spoken"
+      ],
+      "contextLabels": [
+        "hr",
+        "compliance"
+      ],
+      "grammarNotes": [
+        "feminine noun; female member of the works council"
+      ],
+      "collocations": [
+        {
+          "text": "mit der Betriebsrätin sprechen",
+          "meaning": "to speak with the female works council representative"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Betriebsrat",
+          "relationLabel": "masculine/person or body",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "عضوة مجلس العمال"
+        },
+        {
+          "language": "ckb",
+          "text": "ئەندامی ژنی ئەنجومەنی کارمەندان"
+        },
+        {
+          "language": "en",
+          "text": "female works council member"
+        },
+        {
+          "language": "fa",
+          "text": "عضو زن شورای کارکنان"
+        },
+        {
+          "language": "kmr",
+          "text": "endamê jin ê encumena karmendan"
+        },
+        {
+          "language": "pl",
+          "text": "członkini rady zakładowej"
+        },
+        {
+          "language": "ro",
+          "text": "membră a consiliului angajaților"
+        },
+        {
+          "language": "ru",
+          "text": "член производственного совета; представительница работников"
+        },
+        {
+          "language": "sq",
+          "text": "anëtare e këshillit të punonjësve"
+        },
+        {
+          "language": "tr",
+          "text": "kadın işyeri temsilcisi; işçi konseyi üyesi"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Betriebsrätin erklärt den neuen Mitarbeitenden ihre Rechte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تشرح عضوة مجلس العمال حقوقهم للموظفين الجدد."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەندامی ژنی ئەنجومەنی کارمەندان مافەکانیان بۆ کارمەندانی نوێ ڕوون دەکاتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The female works council member explains their rights to the new employees."
+            },
+            {
+              "language": "fa",
+              "text": "عضو زن شورای کارکنان حقوق کارکنان جدید را برایشان توضیح می‌دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Endama jin a encumena karmendan mafên karmendên nû şirove dike."
+            },
+            {
+              "language": "pl",
+              "text": "Członkini rady zakładowej wyjaśnia nowym pracownikom ich prawa."
+            },
+            {
+              "language": "ro",
+              "text": "Membra consiliului angajaților le explică noilor angajați drepturile lor."
+            },
+            {
+              "language": "ru",
+              "text": "Представительница производственного совета объясняет новым сотрудникам их права."
+            },
+            {
+              "language": "sq",
+              "text": "Anëtarja e këshillit të punonjësve u shpjegon punonjësve të rinj të drejtat e tyre."
+            },
+            {
+              "language": "tr",
+              "text": "Kadın işyeri temsilcisi yeni çalışanlara haklarını açıklıyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Bei Konflikten im Team kann man die Betriebsrätin um Rat bitten.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "عند وجود نزاعات في الفريق يمكن طلب المشورة من عضوة مجلس العمال."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی ناکۆکی لە تیمدا دەتوانرێت داوای ڕاوێژ لە ئەندامی ژنی ئەنجومەنی کارمەندان بکرێت."
+            },
+            {
+              "language": "en",
+              "text": "In team conflicts, you can ask the female works council member for advice."
+            },
+            {
+              "language": "fa",
+              "text": "در اختلافات تیمی می‌توان از عضو زن شورای کارکنان مشورت گرفت."
+            },
+            {
+              "language": "kmr",
+              "text": "Di nakokiyên tîmê de mirov dikare ji endama jin a encumenê şîret bixwaze."
+            },
+            {
+              "language": "pl",
+              "text": "W konfliktach w zespole można poprosić członkinię rady zakładowej o radę."
+            },
+            {
+              "language": "ro",
+              "text": "În conflictele din echipă, se poate cere sfatul membrei consiliului angajaților."
+            },
+            {
+              "language": "ru",
+              "text": "При конфликтах в команде можно обратиться за советом к представительнице работников."
+            },
+            {
+              "language": "sq",
+              "text": "Në konfliktet brenda ekipit mund t’i kërkosh këshillë anëtares së këshillit."
+            },
+            {
+              "language": "tr",
+              "text": "Ekip içi çatışmalarda kadın işyeri temsilcisinden tavsiye istenebilir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "der Betriebsrat",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Betriebsräte",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Be-triebs-rat",
+      "topics": [
+        "work-and-jobs",
+        "human-resources",
+        "law-and-compliance"
+      ],
+      "usageLabels": [
+        "formal",
+        "business",
+        "written"
+      ],
+      "contextLabels": [
+        "hr",
+        "compliance"
+      ],
+      "grammarNotes": [
+        "masculine noun; can mean the works council as a body or a male member"
+      ],
+      "collocations": [
+        {
+          "text": "den Betriebsrat informieren",
+          "meaning": "to inform the works council"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Betriebsrätin",
+          "relationLabel": "feminine person",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "مجلس العمال؛ ممثل العمال"
+        },
+        {
+          "language": "ckb",
+          "text": "ئەنجومەنی کارمەندان؛ نوێنەری کارمەندان"
+        },
+        {
+          "language": "en",
+          "text": "works council; employee representative body"
+        },
+        {
+          "language": "fa",
+          "text": "شورای کارکنان؛ نماینده کارکنان"
+        },
+        {
+          "language": "kmr",
+          "text": "encumena karmendan; nûneriya karmendan"
+        },
+        {
+          "language": "pl",
+          "text": "rada zakładowa; przedstawiciel pracowników"
+        },
+        {
+          "language": "ro",
+          "text": "consiliul angajaților; reprezentant al angajaților"
+        },
+        {
+          "language": "ru",
+          "text": "производственный совет; представитель работников"
+        },
+        {
+          "language": "sq",
+          "text": "këshilli i punonjësve; përfaqësues i punonjësve"
+        },
+        {
+          "language": "tr",
+          "text": "işyeri temsilciliği; işçi konseyi"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Betriebsrat muss vor der Änderung der Arbeitszeiten informiert werden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يجب إبلاغ مجلس العمال قبل تغيير أوقات العمل."
+            },
+            {
+              "language": "ckb",
+              "text": "پێویستە پێش گۆڕینی کاتەکانی کار ئەنجومەنی کارمەندان ئاگادار بکرێتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The works council must be informed before the working hours are changed."
+            },
+            {
+              "language": "fa",
+              "text": "قبل از تغییر ساعت‌های کاری باید شورای کارکنان مطلع شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Divê berî guherandina demên karê encumena karmendan were agahdarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Rada zakładowa musi zostać poinformowana przed zmianą godzin pracy."
+            },
+            {
+              "language": "ro",
+              "text": "Consiliul angajaților trebuie informat înainte de modificarea programului de lucru."
+            },
+            {
+              "language": "ru",
+              "text": "Производственный совет должен быть проинформирован до изменения рабочего времени."
+            },
+            {
+              "language": "sq",
+              "text": "Këshilli i punonjësve duhet të informohet para ndryshimit të orarit të punës."
+            },
+            {
+              "language": "tr",
+              "text": "Çalışma saatleri değiştirilmeden önce işçi konseyi bilgilendirilmelidir."
+            }
+          ]
+        },
+        {
+          "baseText": "Viele Beschäftigte wenden sich mit Fragen zum Urlaub an den Betriebsrat.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يتوجه كثير من العاملين بأسئلة حول الإجازة إلى مجلس العمال."
+            },
+            {
+              "language": "ckb",
+              "text": "زۆر کارمەند بە پرسیار دەربارەی پشوویان پەیوەندی بە ئەنجومەنی کارمەندان دەکەن."
+            },
+            {
+              "language": "en",
+              "text": "Many employees contact the works council with questions about vacation."
+            },
+            {
+              "language": "fa",
+              "text": "بسیاری از کارکنان با پرسش‌هایی درباره مرخصی به شورای کارکنان مراجعه می‌کنند."
+            },
+            {
+              "language": "kmr",
+              "text": "Gelek karmend bi pirsên li ser betlaneyê serî li encumena karmendan didin."
+            },
+            {
+              "language": "pl",
+              "text": "Wielu pracowników zwraca się do rady zakładowej z pytaniami o urlop."
+            },
+            {
+              "language": "ro",
+              "text": "Mulți angajați se adresează consiliului angajaților cu întrebări despre concediu."
+            },
+            {
+              "language": "ru",
+              "text": "Многие сотрудники обращаются в производственный совет с вопросами об отпуске."
+            },
+            {
+              "language": "sq",
+              "text": "Shumë punonjës i drejtohen këshillit të punonjësve me pyetje për pushimet."
+            },
+            {
+              "language": "tr",
+              "text": "Birçok çalışan izinle ilgili sorular için işçi konseyine başvuruyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Betriebsvereinbarung",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Betriebsvereinbarungen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Be-triebs-ver-ein-ba-rung",
+      "topics": [
+        "work-and-jobs",
+        "contracts-and-negotiation",
+        "law-and-compliance"
+      ],
+      "usageLabels": [
+        "formal",
+        "business",
+        "written"
+      ],
+      "contextLabels": [
+        "contracts",
+        "hr",
+        "compliance"
+      ],
+      "grammarNotes": [
+        "feminine noun; agreement between employer and works council"
+      ],
+      "collocations": [
+        {
+          "text": "eine Betriebsvereinbarung abschließen",
+          "meaning": "to conclude a company agreement"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Betrieb",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "die Vereinbarung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "اتفاقية عمل داخلية؛ اتفاقية شركة"
+        },
+        {
+          "language": "ckb",
+          "text": "ڕێککەوتنی ناوخۆی دامەزراوە"
+        },
+        {
+          "language": "en",
+          "text": "company agreement; works agreement"
+        },
+        {
+          "language": "fa",
+          "text": "توافق‌نامه داخلی شرکت؛ توافق‌نامه کاری"
+        },
+        {
+          "language": "kmr",
+          "text": "peymana navxweyî ya kargehê"
+        },
+        {
+          "language": "pl",
+          "text": "porozumienie zakładowe"
+        },
+        {
+          "language": "ro",
+          "text": "acord intern al companiei"
+        },
+        {
+          "language": "ru",
+          "text": "производственное соглашение; локальное соглашение"
+        },
+        {
+          "language": "sq",
+          "text": "marrëveshje e brendshme e kompanisë"
+        },
+        {
+          "language": "tr",
+          "text": "işyeri sözleşmesi; şirket içi anlaşma"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die neue Betriebsvereinbarung regelt das Arbeiten im Homeoffice.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تنظم اتفاقية العمل الداخلية الجديدة العمل من المنزل."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕێککەوتنی ناوخۆی نوێ کاری لە ماڵەوە ڕێک دەخات."
+            },
+            {
+              "language": "en",
+              "text": "The new company agreement regulates working from home."
+            },
+            {
+              "language": "fa",
+              "text": "توافق‌نامه داخلی جدید شرکت، کار از خانه را تنظیم می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Peymana navxweyî ya nû xebata ji malê rêk dixe."
+            },
+            {
+              "language": "pl",
+              "text": "Nowe porozumienie zakładowe reguluje pracę z domu."
+            },
+            {
+              "language": "ro",
+              "text": "Noul acord intern reglementează munca de acasă."
+            },
+            {
+              "language": "ru",
+              "text": "Новое производственное соглашение регулирует работу из дома."
+            },
+            {
+              "language": "sq",
+              "text": "Marrëveshja e re e brendshme rregullon punën nga shtëpia."
+            },
+            {
+              "language": "tr",
+              "text": "Yeni işyeri sözleşmesi evden çalışmayı düzenliyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Vor der Einführung der Software wurde eine Betriebsvereinbarung zum Datenschutz geschlossen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "قبل إدخال البرنامج تم إبرام اتفاقية داخلية حول حماية البيانات."
+            },
+            {
+              "language": "ckb",
+              "text": "پێش جێبەجێکردنی نەرمەواڵەکە ڕێککەوتنێکی ناوخۆ دەربارەی پاراستنی داتا کرا."
+            },
+            {
+              "language": "en",
+              "text": "Before the software was introduced, a company agreement on data protection was concluded."
+            },
+            {
+              "language": "fa",
+              "text": "قبل از معرفی نرم‌افزار، یک توافق‌نامه داخلی درباره حفاظت از داده‌ها بسته شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Berî danasîna nermalavê peymaneke navxweyî li ser parastina daneyan hate girêdan."
+            },
+            {
+              "language": "pl",
+              "text": "Przed wprowadzeniem oprogramowania zawarto porozumienie zakładowe dotyczące ochrony danych."
+            },
+            {
+              "language": "ro",
+              "text": "Înainte de introducerea software-ului, s-a încheiat un acord intern privind protecția datelor."
+            },
+            {
+              "language": "ru",
+              "text": "Перед внедрением программного обеспечения было заключено производственное соглашение о защите данных."
+            },
+            {
+              "language": "sq",
+              "text": "Para futjes së softuerit u lidh një marrëveshje e brendshme për mbrojtjen e të dhënave."
+            },
+            {
+              "language": "tr",
+              "text": "Yazılım kullanıma alınmadan önce veri koruma konusunda bir işyeri sözleşmesi yapıldı."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

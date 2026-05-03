@@ -1,0 +1,2173 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b2-generated-batch-224",
+  "packageName": "German B2 Generated Batch 224",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "customer-facing",
+      "displayName": "Customer-facing",
+      "sortOrder": 170,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenorientiert"
+        },
+        {
+          "language": "ar",
+          "name": "موجه للعملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕووی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer-facing"
+        },
+        {
+          "language": "fa",
+          "name": "مربوط به مشتری"
+        },
+        {
+          "language": "kmr",
+          "name": "Ji bo xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Dla klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Pentru clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Для клиентов"
+        },
+        {
+          "language": "sq",
+          "name": "Për klientë"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteriye dönük"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "high-frequency",
+      "displayName": "High-frequency",
+      "sortOrder": 250,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Sehr häufig"
+        },
+        {
+          "language": "ar",
+          "name": "شائع جدًا"
+        },
+        {
+          "language": "ckb",
+          "name": "زۆر باو"
+        },
+        {
+          "language": "en",
+          "name": "High-frequency"
+        },
+        {
+          "language": "fa",
+          "name": "بسیار پرکاربرد"
+        },
+        {
+          "language": "kmr",
+          "name": "Pir bikaranîn"
+        },
+        {
+          "language": "pl",
+          "name": "Bardzo częsty"
+        },
+        {
+          "language": "ro",
+          "name": "Foarte frecvent"
+        },
+        {
+          "language": "ru",
+          "name": "Очень частый"
+        },
+        {
+          "language": "sq",
+          "name": "Shumë i shpeshtë"
+        },
+        {
+          "language": "tr",
+          "name": "Çok yaygın"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "finance",
+      "displayName": "Finance",
+      "sortOrder": 1020,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Finanzen"
+        },
+        {
+          "language": "ar",
+          "name": "المالية"
+        },
+        {
+          "language": "ckb",
+          "name": "دارایی"
+        },
+        {
+          "language": "en",
+          "name": "Finance"
+        },
+        {
+          "language": "fa",
+          "name": "مالی"
+        },
+        {
+          "language": "kmr",
+          "name": "Darayî"
+        },
+        {
+          "language": "pl",
+          "name": "Finanse"
+        },
+        {
+          "language": "ro",
+          "name": "Finanțe"
+        },
+        {
+          "language": "ru",
+          "name": "Финансы"
+        },
+        {
+          "language": "sq",
+          "name": "Financa"
+        },
+        {
+          "language": "tr",
+          "name": "Finans"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "sales",
+      "displayName": "Sales",
+      "sortOrder": 1030,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Vertrieb"
+        },
+        {
+          "language": "ar",
+          "name": "المبيعات"
+        },
+        {
+          "language": "ckb",
+          "name": "فرۆشتن"
+        },
+        {
+          "language": "en",
+          "name": "Sales"
+        },
+        {
+          "language": "fa",
+          "name": "فروش"
+        },
+        {
+          "language": "kmr",
+          "name": "Firotin"
+        },
+        {
+          "language": "pl",
+          "name": "Sprzedaż"
+        },
+        {
+          "language": "ro",
+          "name": "Vânzări"
+        },
+        {
+          "language": "ru",
+          "name": "Продажи"
+        },
+        {
+          "language": "sq",
+          "name": "Shitje"
+        },
+        {
+          "language": "tr",
+          "name": "Satış"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "procurement",
+      "displayName": "Procurement",
+      "sortOrder": 1040,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Einkauf"
+        },
+        {
+          "language": "ar",
+          "name": "المشتريات"
+        },
+        {
+          "language": "ckb",
+          "name": "کڕین"
+        },
+        {
+          "language": "en",
+          "name": "Procurement"
+        },
+        {
+          "language": "fa",
+          "name": "خرید"
+        },
+        {
+          "language": "kmr",
+          "name": "Kirin"
+        },
+        {
+          "language": "pl",
+          "name": "Zakupy"
+        },
+        {
+          "language": "ro",
+          "name": "Achiziții"
+        },
+        {
+          "language": "ru",
+          "name": "Закупки"
+        },
+        {
+          "language": "sq",
+          "name": "Prokurim"
+        },
+        {
+          "language": "tr",
+          "name": "Satın alma"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "logistics",
+      "displayName": "Logistics",
+      "sortOrder": 1060,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Logistik"
+        },
+        {
+          "language": "ar",
+          "name": "اللوجستيات"
+        },
+        {
+          "language": "ckb",
+          "name": "لۆجستیک"
+        },
+        {
+          "language": "en",
+          "name": "Logistics"
+        },
+        {
+          "language": "fa",
+          "name": "لجستیک"
+        },
+        {
+          "language": "kmr",
+          "name": "Lojîstîk"
+        },
+        {
+          "language": "pl",
+          "name": "Logistyka"
+        },
+        {
+          "language": "ro",
+          "name": "Logistică"
+        },
+        {
+          "language": "ru",
+          "name": "Логистика"
+        },
+        {
+          "language": "sq",
+          "name": "Logjistikë"
+        },
+        {
+          "language": "tr",
+          "name": "Lojistik"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "management",
+      "displayName": "Management",
+      "sortOrder": 1080,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Management"
+        },
+        {
+          "language": "ar",
+          "name": "الإدارة"
+        },
+        {
+          "language": "ckb",
+          "name": "بەڕێوەبردن"
+        },
+        {
+          "language": "en",
+          "name": "Management"
+        },
+        {
+          "language": "fa",
+          "name": "مدیریت"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêvebirin"
+        },
+        {
+          "language": "pl",
+          "name": "Zarządzanie"
+        },
+        {
+          "language": "ro",
+          "name": "Management"
+        },
+        {
+          "language": "ru",
+          "name": "Управление"
+        },
+        {
+          "language": "sq",
+          "name": "Menaxhim"
+        },
+        {
+          "language": "tr",
+          "name": "Yönetim"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenservice"
+        },
+        {
+          "language": "ar",
+          "name": "خدمة العملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "خزمەتی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer Service"
+        },
+        {
+          "language": "fa",
+          "name": "خدمات مشتریان"
+        },
+        {
+          "language": "kmr",
+          "name": "Xizmeta xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Obsługa klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Serviciu clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Клиентский сервис"
+        },
+        {
+          "language": "sq",
+          "name": "Shërbim klienti"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteri hizmetleri"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Support"
+        },
+        {
+          "language": "ar",
+          "name": "الدعم"
+        },
+        {
+          "language": "ckb",
+          "name": "پاڵپشتی"
+        },
+        {
+          "language": "en",
+          "name": "Support"
+        },
+        {
+          "language": "fa",
+          "name": "پشتیبانی"
+        },
+        {
+          "language": "kmr",
+          "name": "Piştgirî"
+        },
+        {
+          "language": "pl",
+          "name": "Wsparcie"
+        },
+        {
+          "language": "ro",
+          "name": "Suport"
+        },
+        {
+          "language": "ru",
+          "name": "Поддержка"
+        },
+        {
+          "language": "sq",
+          "name": "Mbështetje"
+        },
+        {
+          "language": "tr",
+          "name": "Destek"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "compliance",
+      "displayName": "Compliance",
+      "sortOrder": 1180,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Compliance"
+        },
+        {
+          "language": "ar",
+          "name": "الامتثال"
+        },
+        {
+          "language": "ckb",
+          "name": "پابەندبوون"
+        },
+        {
+          "language": "en",
+          "name": "Compliance"
+        },
+        {
+          "language": "fa",
+          "name": "انطباق"
+        },
+        {
+          "language": "kmr",
+          "name": "Lihevhatin"
+        },
+        {
+          "language": "pl",
+          "name": "Zgodność"
+        },
+        {
+          "language": "ro",
+          "name": "Conformitate"
+        },
+        {
+          "language": "ru",
+          "name": "Соответствие"
+        },
+        {
+          "language": "sq",
+          "name": "Pajtueshmëri"
+        },
+        {
+          "language": "tr",
+          "name": "Uyum"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "documents",
+      "displayName": "Documents",
+      "sortOrder": 1210,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Dokumente"
+        },
+        {
+          "language": "ar",
+          "name": "الوثائق"
+        },
+        {
+          "language": "ckb",
+          "name": "بەڵگەنامەکان"
+        },
+        {
+          "language": "en",
+          "name": "Documents"
+        },
+        {
+          "language": "fa",
+          "name": "اسناد"
+        },
+        {
+          "language": "kmr",
+          "name": "Belge"
+        },
+        {
+          "language": "pl",
+          "name": "Dokumenty"
+        },
+        {
+          "language": "ro",
+          "name": "Documente"
+        },
+        {
+          "language": "ru",
+          "name": "Документы"
+        },
+        {
+          "language": "sq",
+          "name": "Dokumente"
+        },
+        {
+          "language": "tr",
+          "name": "Belgeler"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "real-estate",
+      "displayName": "Real Estate",
+      "sortOrder": 1260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Immobilien"
+        },
+        {
+          "language": "ar",
+          "name": "العقارات"
+        },
+        {
+          "language": "ckb",
+          "name": "خانووبەرە"
+        },
+        {
+          "language": "en",
+          "name": "Real Estate"
+        },
+        {
+          "language": "fa",
+          "name": "املاک"
+        },
+        {
+          "language": "kmr",
+          "name": "Milk"
+        },
+        {
+          "language": "pl",
+          "name": "Nieruchomości"
+        },
+        {
+          "language": "ro",
+          "name": "Imobiliare"
+        },
+        {
+          "language": "ru",
+          "name": "Недвижимость"
+        },
+        {
+          "language": "sq",
+          "name": "Pasuri të paluajtshme"
+        },
+        {
+          "language": "tr",
+          "name": "Emlak"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "public-services",
+      "displayName": "Public Services",
+      "sortOrder": 1300,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Öffentliche Dienste"
+        },
+        {
+          "language": "ar",
+          "name": "الخدمات العامة"
+        },
+        {
+          "language": "ckb",
+          "name": "خزمەتگوزاری گشتی"
+        },
+        {
+          "language": "en",
+          "name": "Public Services"
+        },
+        {
+          "language": "fa",
+          "name": "خدمات عمومی"
+        },
+        {
+          "language": "kmr",
+          "name": "Xizmetên giştî"
+        },
+        {
+          "language": "pl",
+          "name": "Usługi publiczne"
+        },
+        {
+          "language": "ro",
+          "name": "Servicii publice"
+        },
+        {
+          "language": "ru",
+          "name": "Госуслуги"
+        },
+        {
+          "language": "sq",
+          "name": "Shërbime publike"
+        },
+        {
+          "language": "tr",
+          "name": "Kamu hizmetleri"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "manufacturing",
+      "displayName": "Manufacturing",
+      "sortOrder": 1330,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fertigung"
+        },
+        {
+          "language": "ar",
+          "name": "التصنيع"
+        },
+        {
+          "language": "ckb",
+          "name": "بەرهەمهێنان"
+        },
+        {
+          "language": "en",
+          "name": "Manufacturing"
+        },
+        {
+          "language": "fa",
+          "name": "تولید صنعتی"
+        },
+        {
+          "language": "kmr",
+          "name": "Hilberîn"
+        },
+        {
+          "language": "pl",
+          "name": "Produkcja"
+        },
+        {
+          "language": "ro",
+          "name": "Producție"
+        },
+        {
+          "language": "ru",
+          "name": "Производство"
+        },
+        {
+          "language": "sq",
+          "name": "Prodhim"
+        },
+        {
+          "language": "tr",
+          "name": "İmalat"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "quality",
+      "displayName": "Quality",
+      "sortOrder": 1350,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Qualität"
+        },
+        {
+          "language": "ar",
+          "name": "الجودة"
+        },
+        {
+          "language": "ckb",
+          "name": "کوالیتی"
+        },
+        {
+          "language": "en",
+          "name": "Quality"
+        },
+        {
+          "language": "fa",
+          "name": "کیفیت"
+        },
+        {
+          "language": "kmr",
+          "name": "Kalîte"
+        },
+        {
+          "language": "pl",
+          "name": "Jakość"
+        },
+        {
+          "language": "ro",
+          "name": "Calitate"
+        },
+        {
+          "language": "ru",
+          "name": "Качество"
+        },
+        {
+          "language": "sq",
+          "name": "Cilësi"
+        },
+        {
+          "language": "tr",
+          "name": "Kalite"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "sustainability",
+      "displayName": "Sustainability",
+      "sortOrder": 1390,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Nachhaltigkeit"
+        },
+        {
+          "language": "ar",
+          "name": "الاستدامة"
+        },
+        {
+          "language": "ckb",
+          "name": "بەردەوامی"
+        },
+        {
+          "language": "en",
+          "name": "Sustainability"
+        },
+        {
+          "language": "fa",
+          "name": "پایداری"
+        },
+        {
+          "language": "kmr",
+          "name": "Domdarî"
+        },
+        {
+          "language": "pl",
+          "name": "Zrównoważony rozwój"
+        },
+        {
+          "language": "ro",
+          "name": "Sustenabilitate"
+        },
+        {
+          "language": "ru",
+          "name": "Устойчивость"
+        },
+        {
+          "language": "sq",
+          "name": "Qëndrueshmëri"
+        },
+        {
+          "language": "tr",
+          "name": "Sürdürülebilirlik"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "der Rohstoff",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Rohstoffe",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Roh-stoff",
+      "topics": [
+        "production-and-maintenance",
+        "procurement-and-suppliers",
+        "environment-and-sustainability"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "high-frequency"
+      ],
+      "contextLabels": [
+        "manufacturing",
+        "procurement",
+        "sustainability"
+      ],
+      "grammarNotes": [
+        "masculine noun",
+        "material used as the basis for production"
+      ],
+      "collocations": [
+        {
+          "text": "Rohstoffe einkaufen",
+          "meaning": "to purchase raw materials"
+        },
+        {
+          "text": "knappe Rohstoffe",
+          "meaning": "scarce raw materials"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "roh",
+          "relationLabel": "adjective",
+          "note": null
+        },
+        {
+          "lemma": "der Stoff",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "مادة خام"
+        },
+        {
+          "language": "ckb",
+          "text": "ماددەی خاو"
+        },
+        {
+          "language": "en",
+          "text": "raw material"
+        },
+        {
+          "language": "fa",
+          "text": "ماده خام"
+        },
+        {
+          "language": "kmr",
+          "text": "maddeya xav"
+        },
+        {
+          "language": "pl",
+          "text": "surowiec"
+        },
+        {
+          "language": "ro",
+          "text": "materie primă"
+        },
+        {
+          "language": "ru",
+          "text": "сырье"
+        },
+        {
+          "language": "sq",
+          "text": "lëndë e parë"
+        },
+        {
+          "language": "tr",
+          "text": "ham madde"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Einkauf sucht neue Lieferanten, weil der Rohstoff seit Monaten teurer wird.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يبحث قسم المشتريات عن موردين جدد لأن المادة الخام تزداد تكلفة منذ أشهر."
+            },
+            {
+              "language": "ckb",
+              "text": "بەشی کڕین بەدوای دابینکەری نوێدا دەگەڕێت، چونکە ماددەی خاوەکە چەند مانگە گرانتر دەبێت."
+            },
+            {
+              "language": "en",
+              "text": "Purchasing is looking for new suppliers because the raw material has been getting more expensive for months."
+            },
+            {
+              "language": "fa",
+              "text": "واحد خرید به دنبال تأمین‌کنندگان جدید است، چون ماده خام چند ماه است گران‌تر می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Beşa kirînê li dabînkerên nû digere, ji ber ku maddeya xav ji çend mehan ve biha dibe."
+            },
+            {
+              "language": "pl",
+              "text": "Dział zakupów szuka nowych dostawców, ponieważ surowiec od miesięcy drożeje."
+            },
+            {
+              "language": "ro",
+              "text": "Departamentul de achiziții caută furnizori noi, deoarece materia primă se scumpește de luni întregi."
+            },
+            {
+              "language": "ru",
+              "text": "Отдел закупок ищет новых поставщиков, потому что сырье уже несколько месяцев дорожает."
+            },
+            {
+              "language": "sq",
+              "text": "Departamenti i blerjeve po kërkon furnizues të rinj, sepse lënda e parë po shtrenjtohet prej muajsh."
+            },
+            {
+              "language": "tr",
+              "text": "Satın alma bölümü yeni tedarikçiler arıyor, çünkü ham madde aylardır pahalanıyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Holz ist ein wichtiger Rohstoff, sollte aber aus nachhaltiger Forstwirtschaft stammen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "الخشب مادة خام مهمة، لكنه ينبغي أن يأتي من إدارة غابات مستدامة."
+            },
+            {
+              "language": "ckb",
+              "text": "دار ماددەیەکی خاوی گرنگە، بەڵام دەبێ لە دارستانداری بەردەوامەوە بێت."
+            },
+            {
+              "language": "en",
+              "text": "Wood is an important raw material, but it should come from sustainable forestry."
+            },
+            {
+              "language": "fa",
+              "text": "چوب ماده خام مهمی است، اما باید از جنگلداری پایدار تأمین شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Dar maddeyeke xav a girîng e, lê divê ji daristanvaniya berdewam bê."
+            },
+            {
+              "language": "pl",
+              "text": "Drewno jest ważnym surowcem, ale powinno pochodzić ze zrównoważonej gospodarki leśnej."
+            },
+            {
+              "language": "ro",
+              "text": "Lemnul este o materie primă importantă, dar ar trebui să provină din silvicultură sustenabilă."
+            },
+            {
+              "language": "ru",
+              "text": "Древесина является важным сырьем, но должна поступать из устойчивого лесного хозяйства."
+            },
+            {
+              "language": "sq",
+              "text": "Druri është lëndë e parë e rëndësishme, por duhet të vijë nga pylltari e qëndrueshme."
+            },
+            {
+              "language": "tr",
+              "text": "Ahşap önemli bir ham maddedir, ancak sürdürülebilir ormancılıktan gelmelidir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Rückgabe",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Rückgaben",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Rück-ga-be",
+      "topics": [
+        "shopping-and-services",
+        "sales-and-customers",
+        "documents-and-administration"
+      ],
+      "usageLabels": [
+        "business",
+        "customer-facing",
+        "high-frequency"
+      ],
+      "contextLabels": [
+        "customer-service",
+        "sales",
+        "documents"
+      ],
+      "grammarNotes": [
+        "feminine noun",
+        "means return of goods, documents, keys, or borrowed items"
+      ],
+      "collocations": [
+        {
+          "text": "die Rückgabe bearbeiten",
+          "meaning": "to process a return"
+        },
+        {
+          "text": "Rückgabe ausgeschlossen",
+          "meaning": "returns excluded"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "zurückgeben",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "إرجاع؛ إعادة تسليم"
+        },
+        {
+          "language": "ckb",
+          "text": "گەڕاندنەوە؛ ڕادەستکردنەوە"
+        },
+        {
+          "language": "en",
+          "text": "return; giving back"
+        },
+        {
+          "language": "fa",
+          "text": "بازگرداندن؛ مرجوعی"
+        },
+        {
+          "language": "kmr",
+          "text": "vegerandin; radestkirina paş"
+        },
+        {
+          "language": "pl",
+          "text": "zwrot; oddanie"
+        },
+        {
+          "language": "ro",
+          "text": "returnare; predare înapoi"
+        },
+        {
+          "language": "ru",
+          "text": "возврат; передача обратно"
+        },
+        {
+          "language": "sq",
+          "text": "kthim; dorëzim mbrapsht"
+        },
+        {
+          "language": "tr",
+          "text": "iade; geri verme"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Rückgabe des defekten Geräts wurde im Kundenkonto dokumentiert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم توثيق إرجاع الجهاز المعطل في حساب العميل."
+            },
+            {
+              "language": "ckb",
+              "text": "گەڕاندنەوەی ئامێری تێکچوو لە هەژماری کڕیاردا تۆمار کرا."
+            },
+            {
+              "language": "en",
+              "text": "The return of the defective device was documented in the customer account."
+            },
+            {
+              "language": "fa",
+              "text": "مرجوعی دستگاه خراب در حساب مشتری ثبت شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Vegera amûra xerab di hesabê xerîdar de hate belgekirin."
+            },
+            {
+              "language": "pl",
+              "text": "Zwrot uszkodzonego urządzenia został udokumentowany na koncie klienta."
+            },
+            {
+              "language": "ro",
+              "text": "Returnarea dispozitivului defect a fost documentată în contul clientului."
+            },
+            {
+              "language": "ru",
+              "text": "Возврат неисправного устройства был задокументирован в аккаунте клиента."
+            },
+            {
+              "language": "sq",
+              "text": "Kthimi i pajisjes së dëmtuar u dokumentua në llogarinë e klientit."
+            },
+            {
+              "language": "tr",
+              "text": "Arızalı cihazın iadesi müşteri hesabında belgelendi."
+            }
+          ]
+        },
+        {
+          "baseText": "Bei der Rückgabe der Wohnung müssen alle Schlüssel vollständig abgegeben werden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "عند تسليم الشقة يجب إعادة جميع المفاتيح كاملة."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی گەڕاندنەوەی شوقەکەدا دەبێ هەموو کلیلیەکان بە تەواوی ڕادەست بکرێنەوە."
+            },
+            {
+              "language": "en",
+              "text": "When returning the apartment, all keys must be handed back completely."
+            },
+            {
+              "language": "fa",
+              "text": "هنگام تحویل دادن آپارتمان، همه کلیدها باید کامل تحویل داده شوند."
+            },
+            {
+              "language": "kmr",
+              "text": "Di vegerandina apartmanê de, divê hemû kilît bi tevahî werin radestkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Przy zwrocie mieszkania wszystkie klucze muszą zostać w pełni oddane."
+            },
+            {
+              "language": "ro",
+              "text": "La predarea apartamentului, toate cheile trebuie returnate complet."
+            },
+            {
+              "language": "ru",
+              "text": "При возврате квартиры все ключи должны быть полностью переданы обратно."
+            },
+            {
+              "language": "sq",
+              "text": "Gjatë kthimit të banesës, të gjithë çelësat duhet të dorëzohen të plotë."
+            },
+            {
+              "language": "tr",
+              "text": "Dairenin tesliminde tüm anahtarlar eksiksiz olarak geri verilmelidir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Rückverfolgbarkeit",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Rück-ver-folg-bar-keit",
+      "topics": [
+        "quality-and-risk",
+        "production-and-maintenance",
+        "warehouse-and-logistics"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "contextLabels": [
+        "quality",
+        "logistics",
+        "compliance"
+      ],
+      "grammarNotes": [
+        "feminine noun",
+        "usually used in the singular; ability to trace origin, path, or processing history"
+      ],
+      "collocations": [
+        {
+          "text": "Rückverfolgbarkeit sicherstellen",
+          "meaning": "to ensure traceability"
+        },
+        {
+          "text": "lückenlose Rückverfolgbarkeit",
+          "meaning": "complete traceability"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "rückverfolgbar",
+          "relationLabel": "adjective",
+          "note": null
+        },
+        {
+          "lemma": "verfolgen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "قابلية التتبع؛ إمكانية الرجوع إلى المصدر"
+        },
+        {
+          "language": "ckb",
+          "text": "توانای شوێنکەوتنەوە؛ گەڕانەوە بۆ سەرچاوە"
+        },
+        {
+          "language": "en",
+          "text": "traceability"
+        },
+        {
+          "language": "fa",
+          "text": "قابلیت ردیابی؛ رهگیری‌پذیری"
+        },
+        {
+          "language": "kmr",
+          "text": "şopandina paş; şopandinbarî"
+        },
+        {
+          "language": "pl",
+          "text": "identyfikowalność; możliwość śledzenia"
+        },
+        {
+          "language": "ro",
+          "text": "trasabilitate"
+        },
+        {
+          "language": "ru",
+          "text": "прослеживаемость"
+        },
+        {
+          "language": "sq",
+          "text": "gjurmueshmëri"
+        },
+        {
+          "language": "tr",
+          "text": "izlenebilirlik"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Für Lebensmittel ist Rückverfolgbarkeit wichtig, damit verunreinigte Chargen schnell gefunden werden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "قابلية التتبع مهمة للمواد الغذائية حتى يمكن العثور بسرعة على الدفعات الملوثة."
+            },
+            {
+              "language": "ckb",
+              "text": "بۆ خواردن، توانای شوێنکەوتنەوە گرنگە بۆ ئەوەی بەچە پیسکراوەکان خێرا بدۆزرێنەوە."
+            },
+            {
+              "language": "en",
+              "text": "Traceability is important for food so contaminated batches can be found quickly."
+            },
+            {
+              "language": "fa",
+              "text": "برای مواد غذایی، قابلیت ردیابی مهم است تا سری‌های آلوده سریع پیدا شوند."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo xwarinê, şopandinbarî girîng e da ku partiyên qirêjkirî zû werin dîtin."
+            },
+            {
+              "language": "pl",
+              "text": "W przypadku żywności identyfikowalność jest ważna, aby szybko znaleźć zanieczyszczone partie."
+            },
+            {
+              "language": "ro",
+              "text": "Pentru alimente, trasabilitatea este importantă pentru ca loturile contaminate să fie găsite rapid."
+            },
+            {
+              "language": "ru",
+              "text": "Для продуктов питания прослеживаемость важна, чтобы быстро находить загрязненные партии."
+            },
+            {
+              "language": "sq",
+              "text": "Për ushqimet, gjurmueshmëria është e rëndësishme që seritë e ndotura të gjenden shpejt."
+            },
+            {
+              "language": "tr",
+              "text": "Gıdalarda izlenebilirlik önemlidir, böylece kirlenmiş partiler hızlıca bulunabilir."
+            }
+          ]
+        },
+        {
+          "baseText": "Im ERP-System verbessert eine eindeutige Seriennummer die Rückverfolgbarkeit jedes Ersatzteils.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في نظام ERP يحسن الرقم التسلسلي الواضح قابلية تتبع كل قطعة غيار."
+            },
+            {
+              "language": "ckb",
+              "text": "لە سیستەمی ERPدا ژمارەی سریالی ڕوون توانای شوێنکەوتنەوەی هەر پارچەی یەدەک باشتر دەکات."
+            },
+            {
+              "language": "en",
+              "text": "In the ERP system, a unique serial number improves the traceability of every spare part."
+            },
+            {
+              "language": "fa",
+              "text": "در سیستم ERP، شماره سریال یکتا قابلیت ردیابی هر قطعه یدکی را بهتر می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Di pergala ERP de, hejmareke serial a yekta şopandinbariya her parçeya yedek baştir dike."
+            },
+            {
+              "language": "pl",
+              "text": "W systemie ERP jednoznaczny numer seryjny poprawia identyfikowalność każdej części zamiennej."
+            },
+            {
+              "language": "ro",
+              "text": "În sistemul ERP, un număr de serie unic îmbunătățește trasabilitatea fiecărei piese de schimb."
+            },
+            {
+              "language": "ru",
+              "text": "В ERP-системе уникальный серийный номер улучшает прослеживаемость каждой запасной части."
+            },
+            {
+              "language": "sq",
+              "text": "Në sistemin ERP, një numër serial unik përmirëson gjurmueshmërinë e çdo pjese këmbimi."
+            },
+            {
+              "language": "tr",
+              "text": "ERP sisteminde benzersiz bir seri numarası her yedek parçanın izlenebilirliğini artırır."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "sachlich",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Adjective",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "sach-lich",
+      "topics": [
+        "business-communication",
+        "work-and-jobs",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "high-frequency"
+      ],
+      "contextLabels": [
+        "management",
+        "support",
+        "documents"
+      ],
+      "grammarNotes": [
+        "adjective/adverb",
+        "means factual, objective, and not emotional"
+      ],
+      "collocations": [
+        {
+          "text": "sachlich bleiben",
+          "meaning": "to remain factual"
+        },
+        {
+          "text": "eine sachliche Diskussion",
+          "meaning": "a factual discussion"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Sache",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "Unsachlichkeit",
+          "relationLabel": "opposite noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "موضوعي؛ واقعي؛ غير عاطفي"
+        },
+        {
+          "language": "ckb",
+          "text": "بابەتی؛ بێ هەست و سۆزی زیاد؛ واقع‌بینانە"
+        },
+        {
+          "language": "en",
+          "text": "factual; objective; matter-of-fact"
+        },
+        {
+          "language": "fa",
+          "text": "واقع‌گرایانه؛ بی‌طرف؛ غیر احساسی"
+        },
+        {
+          "language": "kmr",
+          "text": "faktî; objektîf; bêhestî"
+        },
+        {
+          "language": "pl",
+          "text": "rzeczowy; obiektywny; merytoryczny"
+        },
+        {
+          "language": "ro",
+          "text": "obiectiv; factual; calm"
+        },
+        {
+          "language": "ru",
+          "text": "объективный; деловой; фактический"
+        },
+        {
+          "language": "sq",
+          "text": "faktik; objektiv; i qetë"
+        },
+        {
+          "language": "tr",
+          "text": "nesnel; olgusal; sakin"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Auch bei einer Beschwerde sollten wir sachlich bleiben und zuerst die Fakten prüfen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "حتى عند وجود شكوى ينبغي أن نبقى موضوعيين ونفحص الحقائق أولاً."
+            },
+            {
+              "language": "ckb",
+              "text": "تەنانەت لە کاتی سکاڵادا دەبێ بابەتی بمێنینەوە و سەرەتا ڕاستییەکان بپشکنین."
+            },
+            {
+              "language": "en",
+              "text": "Even in a complaint, we should remain factual and first check the facts."
+            },
+            {
+              "language": "fa",
+              "text": "حتی در یک شکایت هم باید واقع‌گرایانه بمانیم و اول واقعیت‌ها را بررسی کنیم."
+            },
+            {
+              "language": "kmr",
+              "text": "Heta di gilîkirinê de jî divê em faktî bimînin û pêşî rastiyan kontrol bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Nawet przy reklamacji powinniśmy pozostać rzeczowi i najpierw sprawdzić fakty."
+            },
+            {
+              "language": "ro",
+              "text": "Chiar și la o reclamație ar trebui să rămânem obiectivi și să verificăm mai întâi faptele."
+            },
+            {
+              "language": "ru",
+              "text": "Даже при жалобе нам следует оставаться объективными и сначала проверить факты."
+            },
+            {
+              "language": "sq",
+              "text": "Edhe gjatë një ankese duhet të mbetemi objektivë dhe fillimisht të kontrollojmë faktet."
+            },
+            {
+              "language": "tr",
+              "text": "Bir şikayette bile nesnel kalmalı ve önce gerçekleri kontrol etmeliyiz."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Arzt erklärte die Diagnose sachlich, aber trotzdem sehr einfühlsam.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "شرح الطبيب التشخيص بموضوعية، لكنه كان مع ذلك متعاطفاً جداً."
+            },
+            {
+              "language": "ckb",
+              "text": "پزیشکەکە دەستنیشانکردنی نەخۆشییەکەی بە شێوەیەکی بابەتی ڕوون کردەوە، بەڵام هێشتا زۆر بە هەست بوو."
+            },
+            {
+              "language": "en",
+              "text": "The doctor explained the diagnosis factually, but still very empathetically."
+            },
+            {
+              "language": "fa",
+              "text": "پزشک تشخیص را واقع‌گرایانه توضیح داد، اما در عین حال بسیار همدلانه بود."
+            },
+            {
+              "language": "kmr",
+              "text": "Bijîşk teşhîsê bi awayekî faktî rave kir, lê dîsa jî pir bi hestyarî."
+            },
+            {
+              "language": "pl",
+              "text": "Lekarz wyjaśnił diagnozę rzeczowo, ale jednocześnie bardzo empatycznie."
+            },
+            {
+              "language": "ro",
+              "text": "Medicul a explicat diagnosticul obiectiv, dar totuși foarte empatic."
+            },
+            {
+              "language": "ru",
+              "text": "Врач объяснил диагноз деловито, но при этом очень сочувственно."
+            },
+            {
+              "language": "sq",
+              "text": "Mjeku e shpjegoi diagnozën në mënyrë faktike, por gjithsesi me shumë empati."
+            },
+            {
+              "language": "tr",
+              "text": "Doktor tanıyı nesnel biçimde, ama yine de çok empatik şekilde açıkladı."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "sanieren",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "sanieren",
+      "pronunciationIpa": null,
+      "syllableBreak": "sa-nie-ren",
+      "topics": [
+        "housing-and-real-estate",
+        "public-services",
+        "finance-and-accounting"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "high-frequency"
+      ],
+      "contextLabels": [
+        "real-estate",
+        "public-services",
+        "finance"
+      ],
+      "grammarNotes": [
+        "regular verb",
+        "means to renovate a building or financially restructure something"
+      ],
+      "collocations": [
+        {
+          "text": "ein Gebäude sanieren",
+          "meaning": "to renovate a building"
+        },
+        {
+          "text": "ein Unternehmen sanieren",
+          "meaning": "to financially restructure a company"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Sanierung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يرمم؛ يجدد؛ يعيد هيكلة مالياً"
+        },
+        {
+          "language": "ckb",
+          "text": "نۆژەن دەکاتەوە؛ چاکسازی دەکات؛ دارایی ڕێکدەخاتەوە"
+        },
+        {
+          "language": "en",
+          "text": "to renovate; to rehabilitate; to financially restructure"
+        },
+        {
+          "language": "fa",
+          "text": "بازسازی کردن؛ نوسازی کردن؛ اصلاح مالی کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "nûjen kirin; tamîr kirin; darayî ji nû ve saz kirin"
+        },
+        {
+          "language": "pl",
+          "text": "remontować; modernizować; sanować finansowo"
+        },
+        {
+          "language": "ro",
+          "text": "a renova; a reabilita; a restructura financiar"
+        },
+        {
+          "language": "ru",
+          "text": "санировать; реконструировать; финансово оздоравливать"
+        },
+        {
+          "language": "sq",
+          "text": "të rinovosh; të rehabilitosh; të ristrukturosh financiarisht"
+        },
+        {
+          "language": "tr",
+          "text": "yenilemek; rehabilite etmek; mali olarak düzeltmek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Stadt will die alte Schule sanieren, statt einen Neubau zu planen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تريد المدينة ترميم المدرسة القديمة بدلاً من التخطيط لبناء جديد."
+            },
+            {
+              "language": "ckb",
+              "text": "شارەکە دەیەوێ قوتابخانە کۆنەکە نۆژەن بکاتەوە نەک پلانی بینای نوێ دابنێت."
+            },
+            {
+              "language": "en",
+              "text": "The city wants to renovate the old school instead of planning a new building."
+            },
+            {
+              "language": "fa",
+              "text": "شهر می‌خواهد مدرسه قدیمی را بازسازی کند، به جای اینکه ساختمان جدیدی برنامه‌ریزی کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Bajar dixwaze dibistana kevn nûjen bike li şûna ku avahiyeke nû plansaz bike."
+            },
+            {
+              "language": "pl",
+              "text": "Miasto chce wyremontować starą szkołę zamiast planować nowy budynek."
+            },
+            {
+              "language": "ro",
+              "text": "Orașul vrea să renoveze vechea școală în loc să planifice o clădire nouă."
+            },
+            {
+              "language": "ru",
+              "text": "Город хочет отремонтировать старую школу вместо планирования нового здания."
+            },
+            {
+              "language": "sq",
+              "text": "Qyteti dëshiron të rinovojë shkollën e vjetër në vend që të planifikojë një ndërtesë të re."
+            },
+            {
+              "language": "tr",
+              "text": "Belediye yeni bina planlamak yerine eski okulu yenilemek istiyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Nach den Verlusten musste die Geschäftsführung den Betrieb sanieren.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بعد الخسائر اضطرت الإدارة إلى إعادة هيكلة الشركة مالياً."
+            },
+            {
+              "language": "ckb",
+              "text": "دوای زیانەکان، بەڕێوەبەرایەتی ناچار بوو کارگەکە داراییانە ڕێکبخاتەوە."
+            },
+            {
+              "language": "en",
+              "text": "After the losses, management had to financially restructure the business."
+            },
+            {
+              "language": "fa",
+              "text": "بعد از زیان‌ها، مدیریت مجبور شد شرکت را از نظر مالی اصلاح کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Piştî ziyanên, rêveberî neçar bû karsaziyê ji aliyê darayî ve ji nû ve saz bike."
+            },
+            {
+              "language": "pl",
+              "text": "Po stratach zarząd musiał przeprowadzić sanację finansową przedsiębiorstwa."
+            },
+            {
+              "language": "ro",
+              "text": "După pierderi, conducerea a trebuit să restructureze financiar compania."
+            },
+            {
+              "language": "ru",
+              "text": "После убытков руководству пришлось финансово оздоровить предприятие."
+            },
+            {
+              "language": "sq",
+              "text": "Pas humbjeve, drejtoria duhej ta ristrukturonte financiarisht biznesin."
+            },
+            {
+              "language": "tr",
+              "text": "Zararlardan sonra yönetim işletmeyi mali olarak düzeltmek zorunda kaldı."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Sanierung",
+      "language": "de",
+      "cefrLevel": "B2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Sanierungen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Sa-nie-rung",
+      "topics": [
+        "housing-and-real-estate",
+        "public-services",
+        "finance-and-accounting"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "written"
+      ],
+      "contextLabels": [
+        "real-estate",
+        "public-services",
+        "finance"
+      ],
+      "grammarNotes": [
+        "feminine noun",
+        "renovation or financial restructuring depending on context"
+      ],
+      "collocations": [
+        {
+          "text": "energetische Sanierung",
+          "meaning": "energy-efficient renovation"
+        },
+        {
+          "text": "Sanierung eines Unternehmens",
+          "meaning": "restructuring of a company"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "sanieren",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "ترميم؛ تجديد؛ إعادة هيكلة مالية"
+        },
+        {
+          "language": "ckb",
+          "text": "نۆژەنکردنەوە؛ چاکسازی؛ ڕێکخستنەوەی دارایی"
+        },
+        {
+          "language": "en",
+          "text": "renovation; rehabilitation; financial restructuring"
+        },
+        {
+          "language": "fa",
+          "text": "بازسازی؛ نوسازی؛ اصلاح مالی"
+        },
+        {
+          "language": "kmr",
+          "text": "nûjenkirin; tamîrkirin; saz kirina darayî"
+        },
+        {
+          "language": "pl",
+          "text": "remont; modernizacja; sanacja finansowa"
+        },
+        {
+          "language": "ro",
+          "text": "renovare; reabilitare; restructurare financiară"
+        },
+        {
+          "language": "ru",
+          "text": "санация; реконструкция; финансовое оздоровление"
+        },
+        {
+          "language": "sq",
+          "text": "rinovim; rehabilitim; ristrukturim financiar"
+        },
+        {
+          "language": "tr",
+          "text": "yenileme; rehabilitasyon; mali iyileştirme"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die energetische Sanierung des Gebäudes soll die Heizkosten deutlich senken.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "من المفترض أن يخفض التجديد الطاقي للمبنى تكاليف التدفئة بشكل واضح."
+            },
+            {
+              "language": "ckb",
+              "text": "نۆژەنکردنەوەی وزەیی بیناکە دەبێ خەرجی گەرمکردنەوە بە ڕوونی کەم بکاتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The energy-efficient renovation of the building is expected to significantly reduce heating costs."
+            },
+            {
+              "language": "fa",
+              "text": "بازسازی انرژی‌محور ساختمان قرار است هزینه‌های گرمایش را به طور قابل توجهی کاهش دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Nûjenkirina enerjiyê ya avahiyê divê lêçûnên germkirinê bi awayekî berbiçav kêm bike."
+            },
+            {
+              "language": "pl",
+              "text": "Energetyczna modernizacja budynku ma wyraźnie obniżyć koszty ogrzewania."
+            },
+            {
+              "language": "ro",
+              "text": "Renovarea energetică a clădirii ar trebui să reducă semnificativ costurile de încălzire."
+            },
+            {
+              "language": "ru",
+              "text": "Энергетическая санация здания должна заметно снизить расходы на отопление."
+            },
+            {
+              "language": "sq",
+              "text": "Rinovimi energjetik i ndërtesës pritet të ulë ndjeshëm kostot e ngrohjes."
+            },
+            {
+              "language": "tr",
+              "text": "Binanın enerji verimli yenilenmesinin ısıtma maliyetlerini belirgin şekilde düşürmesi bekleniyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Sanierung der Firma gelang nur, weil Banken und Eigentümer gemeinsam verhandelten.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "نجحت إعادة هيكلة الشركة فقط لأن البنوك والمالكين تفاوضوا معاً."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕێکخستنەوەی دارایی کۆمپانیاکە تەنها چونکە بانکەکان و خاوەنەکان پێکەوە گفتوگۆیان کرد سەرکەوتوو بوو."
+            },
+            {
+              "language": "en",
+              "text": "The company’s restructuring succeeded only because banks and owners negotiated together."
+            },
+            {
+              "language": "fa",
+              "text": "اصلاح مالی شرکت فقط به این دلیل موفق شد که بانک‌ها و مالکان با هم مذاکره کردند."
+            },
+            {
+              "language": "kmr",
+              "text": "Sazkirina darayî ya şirketê tenê bi wê yekê serket ku bank û xwedî bi hev re danûstandin kirin."
+            },
+            {
+              "language": "pl",
+              "text": "Sanacja firmy udała się tylko dlatego, że banki i właściciele negocjowali wspólnie."
+            },
+            {
+              "language": "ro",
+              "text": "Restructurarea companiei a reușit doar pentru că băncile și proprietarii au negociat împreună."
+            },
+            {
+              "language": "ru",
+              "text": "Санация компании удалась только потому, что банки и владельцы вели переговоры вместе."
+            },
+            {
+              "language": "sq",
+              "text": "Ristrukturimi i kompanisë pati sukses vetëm sepse bankat dhe pronarët negociuan së bashku."
+            },
+            {
+              "language": "tr",
+              "text": "Şirketin mali iyileştirmesi ancak bankalar ve sahipler birlikte müzakere ettiği için başarılı oldu."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

@@ -1,0 +1,515 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-049-retry",
+  "packageName": "German B1 Generated Batch 049 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "customer-service",
+      "displayName": "Customer Service",
+      "sortOrder": 1120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenservice"
+        },
+        {
+          "language": "ar",
+          "name": "خدمة العملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "خزمەتی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer Service"
+        },
+        {
+          "language": "fa",
+          "name": "خدمات مشتریان"
+        },
+        {
+          "language": "kmr",
+          "name": "Xizmeta xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Obsługa klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Serviciu clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Клиентский сервис"
+        },
+        {
+          "language": "sq",
+          "name": "Shërbim klienti"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteri hizmetleri"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Support"
+        },
+        {
+          "language": "ar",
+          "name": "الدعم"
+        },
+        {
+          "language": "ckb",
+          "name": "پاڵپشتی"
+        },
+        {
+          "language": "en",
+          "name": "Support"
+        },
+        {
+          "language": "fa",
+          "name": "پشتیبانی"
+        },
+        {
+          "language": "kmr",
+          "name": "Piştgirî"
+        },
+        {
+          "language": "pl",
+          "name": "Wsparcie"
+        },
+        {
+          "language": "ro",
+          "name": "Suport"
+        },
+        {
+          "language": "ru",
+          "name": "Поддержка"
+        },
+        {
+          "language": "sq",
+          "name": "Mbështetje"
+        },
+        {
+          "language": "tr",
+          "name": "Destek"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "training",
+      "displayName": "Training",
+      "sortOrder": 1320,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schulung"
+        },
+        {
+          "language": "ar",
+          "name": "تدريب"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕاهێنان"
+        },
+        {
+          "language": "en",
+          "name": "Training"
+        },
+        {
+          "language": "fa",
+          "name": "آموزش عملی"
+        },
+        {
+          "language": "kmr",
+          "name": "Perwerdehî"
+        },
+        {
+          "language": "pl",
+          "name": "Szkolenie"
+        },
+        {
+          "language": "ro",
+          "name": "Instruire"
+        },
+        {
+          "language": "ru",
+          "name": "Обучение"
+        },
+        {
+          "language": "sq",
+          "name": "Trajnim"
+        },
+        {
+          "language": "tr",
+          "name": "Eğitim"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "die Empfehlung",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Empfehlungen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Emp-feh-lung",
+      "topics": [
+        "business-communication",
+        "customer-service",
+        "education-and-training"
+      ],
+      "usageLabels": [
+        "formal",
+        "spoken",
+        "written"
+      ],
+      "contextLabels": [
+        "customer-service",
+        "support",
+        "training"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Empfehlung aussprechen",
+          "meaning": "to make a recommendation"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "empfehlen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "توصية؛ نصيحة"
+        },
+        {
+          "language": "ckb",
+          "text": "پێشنیار؛ ڕاسپاردە"
+        },
+        {
+          "language": "en",
+          "text": "recommendation"
+        },
+        {
+          "language": "fa",
+          "text": "توصیه؛ پیشنهاد"
+        },
+        {
+          "language": "kmr",
+          "text": "pêşniyar; şîret"
+        },
+        {
+          "language": "pl",
+          "text": "rekomendacja; zalecenie"
+        },
+        {
+          "language": "ro",
+          "text": "recomandare"
+        },
+        {
+          "language": "ru",
+          "text": "рекомендация"
+        },
+        {
+          "language": "sq",
+          "text": "rekomandim"
+        },
+        {
+          "language": "tr",
+          "text": "öneri; tavsiye"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Haben Sie eine Empfehlung für ein gutes Projektmanagement-Tool?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "هل لديك توصية لأداة جيدة لإدارة المشاريع؟"
+            },
+            {
+              "language": "ckb",
+              "text": "پێشنیارتان هەیە بۆ ئامرازێکی باشی بەڕێوەبردنی پرۆژە؟"
+            },
+            {
+              "language": "en",
+              "text": "Do you have a recommendation for a good project management tool?"
+            },
+            {
+              "language": "fa",
+              "text": "آیا پیشنهادی برای یک ابزار خوب مدیریت پروژه دارید؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ma pêşniyara we ji bo amûrekî baş ê rêveberiya projeyê heye?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy mają Państwo rekomendację dobrego narzędzia do zarządzania projektami?"
+            },
+            {
+              "language": "ro",
+              "text": "Aveți o recomandare pentru un instrument bun de management al proiectelor?"
+            },
+            {
+              "language": "ru",
+              "text": "У вас есть рекомендация хорошего инструмента для управления проектами?"
+            },
+            {
+              "language": "sq",
+              "text": "A keni ndonjë rekomandim për një mjet të mirë menaxhimi projektesh?"
+            },
+            {
+              "language": "tr",
+              "text": "İyi bir proje yönetim aracı için öneriniz var mı?"
+            }
+          ]
+        },
+        {
+          "baseText": "Auf Empfehlung meiner Ärztin mache ich jetzt mehr Pausen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بناءً على توصية طبيبتي آخذ الآن فترات راحة أكثر."
+            },
+            {
+              "language": "ckb",
+              "text": "بەپێی ڕاسپاردەی پزیشکەکەم، ئێستا پشووی زیاتر دەدەم."
+            },
+            {
+              "language": "en",
+              "text": "On my doctor’s recommendation, I now take more breaks."
+            },
+            {
+              "language": "fa",
+              "text": "به توصیه پزشکم، حالا بیشتر استراحت می‌کنم."
+            },
+            {
+              "language": "kmr",
+              "text": "Li gor pêşniyara bijîşka min, ez niha bêhnvedanên zêdetir dikim."
+            },
+            {
+              "language": "pl",
+              "text": "Z zalecenia lekarki robię teraz więcej przerw."
+            },
+            {
+              "language": "ro",
+              "text": "La recomandarea medicului meu, fac acum mai multe pauze."
+            },
+            {
+              "language": "ru",
+              "text": "По рекомендации врача я теперь делаю больше перерывов."
+            },
+            {
+              "language": "sq",
+              "text": "Me rekomandimin e mjekes sime, tani bëj më shumë pushime."
+            },
+            {
+              "language": "tr",
+              "text": "Doktorumun tavsiyesiyle artık daha fazla mola veriyorum."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

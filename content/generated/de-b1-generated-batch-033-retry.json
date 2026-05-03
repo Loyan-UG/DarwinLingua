@@ -1,0 +1,515 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-033-retry",
+  "packageName": "German B1 Generated Batch 033 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "training",
+      "displayName": "Training",
+      "sortOrder": 1320,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schulung"
+        },
+        {
+          "language": "ar",
+          "name": "تدريب"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕاهێنان"
+        },
+        {
+          "language": "en",
+          "name": "Training"
+        },
+        {
+          "language": "fa",
+          "name": "آموزش عملی"
+        },
+        {
+          "language": "kmr",
+          "name": "Perwerdehî"
+        },
+        {
+          "language": "pl",
+          "name": "Szkolenie"
+        },
+        {
+          "language": "ro",
+          "name": "Instruire"
+        },
+        {
+          "language": "ru",
+          "name": "Обучение"
+        },
+        {
+          "language": "sq",
+          "name": "Trajnim"
+        },
+        {
+          "language": "tr",
+          "name": "Eğitim"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "administration",
+      "displayName": "Administration",
+      "sortOrder": 1220,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Verwaltung"
+        },
+        {
+          "language": "ar",
+          "name": "الإدارة"
+        },
+        {
+          "language": "ckb",
+          "name": "کارگێڕی"
+        },
+        {
+          "language": "en",
+          "name": "Administration"
+        },
+        {
+          "language": "fa",
+          "name": "اداره"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêveberî"
+        },
+        {
+          "language": "pl",
+          "name": "Administracja"
+        },
+        {
+          "language": "ro",
+          "name": "Administrație"
+        },
+        {
+          "language": "ru",
+          "name": "Администрирование"
+        },
+        {
+          "language": "sq",
+          "name": "Administratë"
+        },
+        {
+          "language": "tr",
+          "name": "İdare"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "documents",
+      "displayName": "Documents",
+      "sortOrder": 1210,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Dokumente"
+        },
+        {
+          "language": "ar",
+          "name": "الوثائق"
+        },
+        {
+          "language": "ckb",
+          "name": "بەڵگەنامەکان"
+        },
+        {
+          "language": "en",
+          "name": "Documents"
+        },
+        {
+          "language": "fa",
+          "name": "اسناد"
+        },
+        {
+          "language": "kmr",
+          "name": "Belge"
+        },
+        {
+          "language": "pl",
+          "name": "Dokumenty"
+        },
+        {
+          "language": "ro",
+          "name": "Documente"
+        },
+        {
+          "language": "ru",
+          "name": "Документы"
+        },
+        {
+          "language": "sq",
+          "name": "Dokumente"
+        },
+        {
+          "language": "tr",
+          "name": "Belgeler"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "bestehen",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "bestehen",
+      "pronunciationIpa": null,
+      "syllableBreak": "be-ste-hen",
+      "topics": [
+        "education-and-training",
+        "work-and-jobs",
+        "documents-and-administration"
+      ],
+      "usageLabels": [
+        "spoken",
+        "written",
+        "formal"
+      ],
+      "contextLabels": [
+        "training",
+        "administration",
+        "documents"
+      ],
+      "grammarNotes": [
+        "irregular verb; meanings include pass, exist, consist of"
+      ],
+      "collocations": [
+        {
+          "text": "eine Prüfung bestehen",
+          "meaning": "to pass an exam"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Bestand",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "ينجح في؛ يوجد؛ يتكون من"
+        },
+        {
+          "language": "ckb",
+          "text": "دەرچوون؛ بوون؛ پێک هاتن لە"
+        },
+        {
+          "language": "en",
+          "text": "to pass; to exist; to consist of"
+        },
+        {
+          "language": "fa",
+          "text": "قبول شدن؛ وجود داشتن؛ تشکیل شدن از"
+        },
+        {
+          "language": "kmr",
+          "text": "derbas bûn; hebûn; ji tiştekê pêk hatin"
+        },
+        {
+          "language": "pl",
+          "text": "zdać; istnieć; składać się z"
+        },
+        {
+          "language": "ro",
+          "text": "a promova; a exista; a consta din"
+        },
+        {
+          "language": "ru",
+          "text": "сдать; существовать; состоять из"
+        },
+        {
+          "language": "sq",
+          "text": "të kalosh; të ekzistosh; të përbëhesh nga"
+        },
+        {
+          "language": "tr",
+          "text": "geçmek; var olmak; oluşmak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Wenn ich die Prüfung bestehe, kann ich im Sommer mit der Ausbildung anfangen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "إذا نجحت في الامتحان، يمكنني أن أبدأ التدريب المهني في الصيف."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەگەر لە تاقیکردنەوەکە دەرچم، دەتوانم لە هاویندا دەست بە فێربوونی پیشەیی بکەم."
+            },
+            {
+              "language": "en",
+              "text": "If I pass the exam, I can start the vocational training in summer."
+            },
+            {
+              "language": "fa",
+              "text": "اگر در امتحان قبول شوم، می‌توانم تابستان آموزش حرفه‌ای را شروع کنم."
+            },
+            {
+              "language": "kmr",
+              "text": "Heke ez di azmûnê de derbas bibim, ez dikarim havînê dest bi perwerdeya pîşeyî bikim."
+            },
+            {
+              "language": "pl",
+              "text": "Jeśli zdam egzamin, mogę latem rozpocząć szkolenie zawodowe."
+            },
+            {
+              "language": "ro",
+              "text": "Dacă promovez examenul, pot începe formarea profesională vara."
+            },
+            {
+              "language": "ru",
+              "text": "Если я сдам экзамен, летом смогу начать профессиональное обучение."
+            },
+            {
+              "language": "sq",
+              "text": "Nëse e kaloj provimin, mund ta filloj trajnimin profesional në verë."
+            },
+            {
+              "language": "tr",
+              "text": "Sınavı geçersem yazın mesleki eğitime başlayabilirim."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Vertrag besteht aus drei Teilen und zwei Anlagen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يتكون العقد من ثلاثة أجزاء وملحقين."
+            },
+            {
+              "language": "ckb",
+              "text": "گرێبەستەکە لە سێ بەش و دوو پاشکۆ پێک هاتووە."
+            },
+            {
+              "language": "en",
+              "text": "The contract consists of three parts and two attachments."
+            },
+            {
+              "language": "fa",
+              "text": "قرارداد از سه بخش و دو پیوست تشکیل شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Peyman ji sê beşan û du pêvekan pêk tê."
+            },
+            {
+              "language": "pl",
+              "text": "Umowa składa się z trzech części i dwóch załączników."
+            },
+            {
+              "language": "ro",
+              "text": "Contractul constă din trei părți și două anexe."
+            },
+            {
+              "language": "ru",
+              "text": "Договор состоит из трех частей и двух приложений."
+            },
+            {
+              "language": "sq",
+              "text": "Kontrata përbëhet nga tri pjesë dhe dy shtojca."
+            },
+            {
+              "language": "tr",
+              "text": "Sözleşme üç bölümden ve iki ekten oluşuyor."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

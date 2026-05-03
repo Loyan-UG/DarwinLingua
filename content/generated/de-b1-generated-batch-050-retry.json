@@ -1,0 +1,853 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-050-retry",
+  "packageName": "German B1 Generated Batch 050 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "hr",
+      "displayName": "HR",
+      "sortOrder": 1070,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Personalwesen"
+        },
+        {
+          "language": "ar",
+          "name": "الموارد البشرية"
+        },
+        {
+          "language": "ckb",
+          "name": "سەرچاوە مرۆییەکان"
+        },
+        {
+          "language": "en",
+          "name": "HR"
+        },
+        {
+          "language": "fa",
+          "name": "منابع انسانی"
+        },
+        {
+          "language": "kmr",
+          "name": "Çavkaniyên mirovî"
+        },
+        {
+          "language": "pl",
+          "name": "HR"
+        },
+        {
+          "language": "ro",
+          "name": "HR"
+        },
+        {
+          "language": "ru",
+          "name": "HR"
+        },
+        {
+          "language": "sq",
+          "name": "HR"
+        },
+        {
+          "language": "tr",
+          "name": "İK"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "healthcare",
+      "displayName": "Healthcare",
+      "sortOrder": 1230,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesundheitswesen"
+        },
+        {
+          "language": "ar",
+          "name": "الرعاية الصحية"
+        },
+        {
+          "language": "ckb",
+          "name": "تەندروستی"
+        },
+        {
+          "language": "en",
+          "name": "Healthcare"
+        },
+        {
+          "language": "fa",
+          "name": "حوزه سلامت"
+        },
+        {
+          "language": "kmr",
+          "name": "Tenduristî"
+        },
+        {
+          "language": "pl",
+          "name": "Opieka zdrowotna"
+        },
+        {
+          "language": "ro",
+          "name": "Sănătate"
+        },
+        {
+          "language": "ru",
+          "name": "Здравоохранение"
+        },
+        {
+          "language": "sq",
+          "name": "Shëndetësi"
+        },
+        {
+          "language": "tr",
+          "name": "Sağlık"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "administration",
+      "displayName": "Administration",
+      "sortOrder": 1220,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Verwaltung"
+        },
+        {
+          "language": "ar",
+          "name": "الإدارة"
+        },
+        {
+          "language": "ckb",
+          "name": "کارگێڕی"
+        },
+        {
+          "language": "en",
+          "name": "Administration"
+        },
+        {
+          "language": "fa",
+          "name": "اداره"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêveberî"
+        },
+        {
+          "language": "pl",
+          "name": "Administracja"
+        },
+        {
+          "language": "ro",
+          "name": "Administrație"
+        },
+        {
+          "language": "ru",
+          "name": "Администрирование"
+        },
+        {
+          "language": "sq",
+          "name": "Administratë"
+        },
+        {
+          "language": "tr",
+          "name": "İdare"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "documents",
+      "displayName": "Documents",
+      "sortOrder": 1210,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Dokumente"
+        },
+        {
+          "language": "ar",
+          "name": "الوثائق"
+        },
+        {
+          "language": "ckb",
+          "name": "بەڵگەنامەکان"
+        },
+        {
+          "language": "en",
+          "name": "Documents"
+        },
+        {
+          "language": "fa",
+          "name": "اسناد"
+        },
+        {
+          "language": "kmr",
+          "name": "Belge"
+        },
+        {
+          "language": "pl",
+          "name": "Dokumenty"
+        },
+        {
+          "language": "ro",
+          "name": "Documente"
+        },
+        {
+          "language": "ru",
+          "name": "Документы"
+        },
+        {
+          "language": "sq",
+          "name": "Dokumente"
+        },
+        {
+          "language": "tr",
+          "name": "Belgeler"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "contracts",
+      "displayName": "Contracts",
+      "sortOrder": 1200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Verträge"
+        },
+        {
+          "language": "ar",
+          "name": "العقود"
+        },
+        {
+          "language": "ckb",
+          "name": "گرێبەستەکان"
+        },
+        {
+          "language": "en",
+          "name": "Contracts"
+        },
+        {
+          "language": "fa",
+          "name": "قراردادها"
+        },
+        {
+          "language": "kmr",
+          "name": "Peyman"
+        },
+        {
+          "language": "pl",
+          "name": "Umowy"
+        },
+        {
+          "language": "ro",
+          "name": "Contracte"
+        },
+        {
+          "language": "ru",
+          "name": "Контракты"
+        },
+        {
+          "language": "sq",
+          "name": "Kontrata"
+        },
+        {
+          "language": "tr",
+          "name": "Sözleşmeler"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "entlassen",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "entlassen",
+      "pronunciationIpa": null,
+      "syllableBreak": "ent-las-sen",
+      "topics": [
+        "human-resources",
+        "healthcare-and-appointments",
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "spoken"
+      ],
+      "contextLabels": [
+        "hr",
+        "healthcare",
+        "administration"
+      ],
+      "grammarNotes": [
+        "strong verb: entlässt, entließ, hat entlassen; means to dismiss or discharge"
+      ],
+      "collocations": [
+        {
+          "text": "aus dem Krankenhaus entlassen werden",
+          "meaning": "to be discharged from hospital"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Entlassung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يفصل من العمل؛ يخرج من المستشفى"
+        },
+        {
+          "language": "ckb",
+          "text": "دەرکردن؛ ڕەوانەکردنەوە لە نەخۆشخانە"
+        },
+        {
+          "language": "en",
+          "text": "to dismiss; to discharge"
+        },
+        {
+          "language": "fa",
+          "text": "اخراج کردن؛ مرخص کردن از بیمارستان"
+        },
+        {
+          "language": "kmr",
+          "text": "ji kar derxistin; ji nexweşxaneyê derxistin"
+        },
+        {
+          "language": "pl",
+          "text": "zwolnić; wypisać ze szpitala"
+        },
+        {
+          "language": "ro",
+          "text": "a concedia; a externa"
+        },
+        {
+          "language": "ru",
+          "text": "увольнять; выписывать из больницы"
+        },
+        {
+          "language": "sq",
+          "text": "të pushosh nga puna; të nxjerrësh nga spitali"
+        },
+        {
+          "language": "tr",
+          "text": "işten çıkarmak; taburcu etmek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Patient wurde gestern aus dem Krankenhaus entlassen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم إخراج المريض من المستشفى أمس."
+            },
+            {
+              "language": "ckb",
+              "text": "نەخۆشەکە دوێنێ لە نەخۆشخانە ڕەوانەکرایەوە."
+            },
+            {
+              "language": "en",
+              "text": "The patient was discharged from the hospital yesterday."
+            },
+            {
+              "language": "fa",
+              "text": "بیمار دیروز از بیمارستان مرخص شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Nexweş duh ji nexweşxaneyê hate derxistin."
+            },
+            {
+              "language": "pl",
+              "text": "Pacjent został wczoraj wypisany ze szpitala."
+            },
+            {
+              "language": "ro",
+              "text": "Pacientul a fost externat ieri din spital."
+            },
+            {
+              "language": "ru",
+              "text": "Пациента вчера выписали из больницы."
+            },
+            {
+              "language": "sq",
+              "text": "Pacienti u lirua dje nga spitali."
+            },
+            {
+              "language": "tr",
+              "text": "Hasta dün hastaneden taburcu edildi."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Firma will niemanden entlassen, sondern die Arbeitszeiten reduzieren.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لا تريد الشركة فصل أي شخص، بل تقليل ساعات العمل."
+            },
+            {
+              "language": "ckb",
+              "text": "کۆمپانیاکە نایەوێت هیچ کەسێک دەربکات، بەڵکو کاتەکانی کار کەم دەکاتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The company does not want to dismiss anyone, but to reduce working hours."
+            },
+            {
+              "language": "fa",
+              "text": "شرکت نمی‌خواهد کسی را اخراج کند، بلکه می‌خواهد ساعت کاری را کاهش دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Şirket naxwaze tu kesî ji kar derxe, lê demên karê kêm bike."
+            },
+            {
+              "language": "pl",
+              "text": "Firma nie chce nikogo zwalniać, lecz zmniejszyć czas pracy."
+            },
+            {
+              "language": "ro",
+              "text": "Firma nu vrea să concedieze pe nimeni, ci să reducă programul de lucru."
+            },
+            {
+              "language": "ru",
+              "text": "Компания не хочет никого увольнять, а хочет сократить рабочее время."
+            },
+            {
+              "language": "sq",
+              "text": "Kompania nuk do të pushojë askënd, por të ulë orarin e punës."
+            },
+            {
+              "language": "tr",
+              "text": "Şirket kimseyi işten çıkarmak istemiyor, çalışma saatlerini azaltmak istiyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Entscheidungsfrist",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Entscheidungsfristen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Ent-schei-dungs-frist",
+      "topics": [
+        "documents-and-administration",
+        "contracts-and-negotiation",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "business"
+      ],
+      "contextLabels": [
+        "documents",
+        "contracts",
+        "administration"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Entscheidungsfrist verlängern",
+          "meaning": "to extend a decision deadline"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Entscheidung",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "die Frist",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "مهلة اتخاذ القرار"
+        },
+        {
+          "language": "ckb",
+          "text": "ماوەی بڕیاردان"
+        },
+        {
+          "language": "en",
+          "text": "decision deadline; decision period"
+        },
+        {
+          "language": "fa",
+          "text": "مهلت تصمیم‌گیری"
+        },
+        {
+          "language": "kmr",
+          "text": "demê biryardanê"
+        },
+        {
+          "language": "pl",
+          "text": "termin na decyzję"
+        },
+        {
+          "language": "ro",
+          "text": "termen de decizie"
+        },
+        {
+          "language": "ru",
+          "text": "срок принятия решения"
+        },
+        {
+          "language": "sq",
+          "text": "afati i vendimit"
+        },
+        {
+          "language": "tr",
+          "text": "karar süresi"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Entscheidungsfrist für das Angebot endet am Montag.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تنتهي مهلة اتخاذ القرار بشأن العرض يوم الاثنين."
+            },
+            {
+              "language": "ckb",
+              "text": "ماوەی بڕیاردان بۆ پێشنیارەکە ڕۆژی دووشەممە کۆتایی دێت."
+            },
+            {
+              "language": "en",
+              "text": "The decision deadline for the offer ends on Monday."
+            },
+            {
+              "language": "fa",
+              "text": "مهلت تصمیم‌گیری برای پیشنهاد روز دوشنبه تمام می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Demê biryardanê ji bo pêşniyarê roja duşemê diqede."
+            },
+            {
+              "language": "pl",
+              "text": "Termin decyzji dotyczącej oferty kończy się w poniedziałek."
+            },
+            {
+              "language": "ro",
+              "text": "Termenul de decizie pentru ofertă se încheie luni."
+            },
+            {
+              "language": "ru",
+              "text": "Срок принятия решения по предложению истекает в понедельник."
+            },
+            {
+              "language": "sq",
+              "text": "Afati për vendimin mbi ofertën përfundon të hënën."
+            },
+            {
+              "language": "tr",
+              "text": "Teklif için karar süresi pazartesi günü bitiyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Wir bitten um eine kurze Verlängerung der Entscheidungsfrist.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "نطلب تمديدًا قصيرًا لمهلة اتخاذ القرار."
+            },
+            {
+              "language": "ckb",
+              "text": "داوای درێژکردنەوەیەکی کورتی ماوەی بڕیاردان دەکەین."
+            },
+            {
+              "language": "en",
+              "text": "We ask for a short extension of the decision deadline."
+            },
+            {
+              "language": "fa",
+              "text": "درخواست تمدید کوتاه مهلت تصمیم‌گیری را داریم."
+            },
+            {
+              "language": "kmr",
+              "text": "Em daxwaza dirêjkirineke kurt a demê biryardanê dikin."
+            },
+            {
+              "language": "pl",
+              "text": "Prosimy o krótkie przedłużenie terminu decyzji."
+            },
+            {
+              "language": "ro",
+              "text": "Solicităm o scurtă prelungire a termenului de decizie."
+            },
+            {
+              "language": "ru",
+              "text": "Мы просим кратко продлить срок принятия решения."
+            },
+            {
+              "language": "sq",
+              "text": "Kërkojmë një zgjatje të shkurtër të afatit të vendimit."
+            },
+            {
+              "language": "tr",
+              "text": "Karar süresinin kısa süreli uzatılmasını rica ediyoruz."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

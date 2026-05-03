@@ -1,0 +1,515 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-051-retry",
+  "packageName": "German B1 Generated Batch 051 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "hr",
+      "displayName": "HR",
+      "sortOrder": 1070,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Personalwesen"
+        },
+        {
+          "language": "ar",
+          "name": "الموارد البشرية"
+        },
+        {
+          "language": "ckb",
+          "name": "سەرچاوە مرۆییەکان"
+        },
+        {
+          "language": "en",
+          "name": "HR"
+        },
+        {
+          "language": "fa",
+          "name": "منابع انسانی"
+        },
+        {
+          "language": "kmr",
+          "name": "Çavkaniyên mirovî"
+        },
+        {
+          "language": "pl",
+          "name": "HR"
+        },
+        {
+          "language": "ro",
+          "name": "HR"
+        },
+        {
+          "language": "ru",
+          "name": "HR"
+        },
+        {
+          "language": "sq",
+          "name": "HR"
+        },
+        {
+          "language": "tr",
+          "name": "İK"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "training",
+      "displayName": "Training",
+      "sortOrder": 1320,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schulung"
+        },
+        {
+          "language": "ar",
+          "name": "تدريب"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕاهێنان"
+        },
+        {
+          "language": "en",
+          "name": "Training"
+        },
+        {
+          "language": "fa",
+          "name": "آموزش عملی"
+        },
+        {
+          "language": "kmr",
+          "name": "Perwerdehî"
+        },
+        {
+          "language": "pl",
+          "name": "Szkolenie"
+        },
+        {
+          "language": "ro",
+          "name": "Instruire"
+        },
+        {
+          "language": "ru",
+          "name": "Обучение"
+        },
+        {
+          "language": "sq",
+          "name": "Trajnim"
+        },
+        {
+          "language": "tr",
+          "name": "Eğitim"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "management",
+      "displayName": "Management",
+      "sortOrder": 1080,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Management"
+        },
+        {
+          "language": "ar",
+          "name": "الإدارة"
+        },
+        {
+          "language": "ckb",
+          "name": "بەڕێوەبردن"
+        },
+        {
+          "language": "en",
+          "name": "Management"
+        },
+        {
+          "language": "fa",
+          "name": "مدیریت"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêvebirin"
+        },
+        {
+          "language": "pl",
+          "name": "Zarządzanie"
+        },
+        {
+          "language": "ro",
+          "name": "Management"
+        },
+        {
+          "language": "ru",
+          "name": "Управление"
+        },
+        {
+          "language": "sq",
+          "name": "Menaxhim"
+        },
+        {
+          "language": "tr",
+          "name": "Yönetim"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "die Erfahrung",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Erfahrungen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Er-fah-rung",
+      "topics": [
+        "work-and-jobs",
+        "business-communication",
+        "education-and-training"
+      ],
+      "usageLabels": [
+        "business",
+        "spoken",
+        "written"
+      ],
+      "contextLabels": [
+        "hr",
+        "training",
+        "management"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "Erfahrung sammeln",
+          "meaning": "to gain experience"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "erfahren",
+          "relationLabel": "verb/adjective",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "تجربة؛ خبرة"
+        },
+        {
+          "language": "ckb",
+          "text": "ئەزموون"
+        },
+        {
+          "language": "en",
+          "text": "experience"
+        },
+        {
+          "language": "fa",
+          "text": "تجربه؛ سابقه"
+        },
+        {
+          "language": "kmr",
+          "text": "ezmûn"
+        },
+        {
+          "language": "pl",
+          "text": "doświadczenie"
+        },
+        {
+          "language": "ro",
+          "text": "experiență"
+        },
+        {
+          "language": "ru",
+          "text": "опыт"
+        },
+        {
+          "language": "sq",
+          "text": "përvojë"
+        },
+        {
+          "language": "tr",
+          "text": "deneyim; tecrübe"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Für diese Stelle brauchen Sie Erfahrung im Umgang mit Kunden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لهذه الوظيفة تحتاج إلى خبرة في التعامل مع العملاء."
+            },
+            {
+              "language": "ckb",
+              "text": "بۆ ئەم پۆستە پێویستتان بە ئەزموون لە مامەڵەکردن لەگەڵ کڕیاران هەیە."
+            },
+            {
+              "language": "en",
+              "text": "For this position, you need experience in dealing with customers."
+            },
+            {
+              "language": "fa",
+              "text": "برای این موقعیت به تجربه در برخورد با مشتریان نیاز دارید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo vê pozîsyonê hûn hewceyê ezmûna têkiliyê bi xerîdaran re ne."
+            },
+            {
+              "language": "pl",
+              "text": "Na tym stanowisku potrzebne jest doświadczenie w kontakcie z klientami."
+            },
+            {
+              "language": "ro",
+              "text": "Pentru acest post aveți nevoie de experiență în relația cu clienții."
+            },
+            {
+              "language": "ru",
+              "text": "Для этой должности нужен опыт работы с клиентами."
+            },
+            {
+              "language": "sq",
+              "text": "Për këtë pozicion ju duhet përvojë në komunikimin me klientët."
+            },
+            {
+              "language": "tr",
+              "text": "Bu pozisyon için müşterilerle çalışma deneyimine ihtiyacınız var."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Praktikum konnte sie erste Erfahrung im Büro sammeln.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "خلال التدريب العملي تمكنت من اكتساب أول تجربة في المكتب."
+            },
+            {
+              "language": "ckb",
+              "text": "لە پراکتیکدا توانێ ئەزموونی یەکەمی ئۆفیس بەدەست بهێنێت."
+            },
+            {
+              "language": "en",
+              "text": "During the internship, she was able to gain her first office experience."
+            },
+            {
+              "language": "fa",
+              "text": "در کارآموزی توانست اولین تجربه اداری خود را به دست آورد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di stajê de wê karî ezmûna xwe ya yekem a nivîsgehê bi dest bixe."
+            },
+            {
+              "language": "pl",
+              "text": "Podczas praktyki mogła zdobyć pierwsze doświadczenie biurowe."
+            },
+            {
+              "language": "ro",
+              "text": "În timpul stagiului a putut acumula prima experiență de birou."
+            },
+            {
+              "language": "ru",
+              "text": "Во время практики она смогла получить первый офисный опыт."
+            },
+            {
+              "language": "sq",
+              "text": "Gjatë praktikës ajo mundi të fitonte përvojën e parë në zyrë."
+            },
+            {
+              "language": "tr",
+              "text": "Staj sırasında ilk ofis deneyimini kazanabildi."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

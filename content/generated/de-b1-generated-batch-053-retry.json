@@ -1,0 +1,742 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-b1-generated-batch-053-retry",
+  "packageName": "German B1 Generated Batch 053 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "healthcare",
+      "displayName": "Healthcare",
+      "sortOrder": 1230,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesundheitswesen"
+        },
+        {
+          "language": "ar",
+          "name": "الرعاية الصحية"
+        },
+        {
+          "language": "ckb",
+          "name": "تەندروستی"
+        },
+        {
+          "language": "en",
+          "name": "Healthcare"
+        },
+        {
+          "language": "fa",
+          "name": "حوزه سلامت"
+        },
+        {
+          "language": "kmr",
+          "name": "Tenduristî"
+        },
+        {
+          "language": "pl",
+          "name": "Opieka zdrowotna"
+        },
+        {
+          "language": "ro",
+          "name": "Sănătate"
+        },
+        {
+          "language": "ru",
+          "name": "Здравоохранение"
+        },
+        {
+          "language": "sq",
+          "name": "Shëndetësi"
+        },
+        {
+          "language": "tr",
+          "name": "Sağlık"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "appointments",
+      "displayName": "Appointments",
+      "sortOrder": 1240,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Termine"
+        },
+        {
+          "language": "ar",
+          "name": "المواعيد"
+        },
+        {
+          "language": "ckb",
+          "name": "کاتگرتن"
+        },
+        {
+          "language": "en",
+          "name": "Appointments"
+        },
+        {
+          "language": "fa",
+          "name": "قرارها"
+        },
+        {
+          "language": "kmr",
+          "name": "Randevû"
+        },
+        {
+          "language": "pl",
+          "name": "Wizyty"
+        },
+        {
+          "language": "ro",
+          "name": "Programări"
+        },
+        {
+          "language": "ru",
+          "name": "Приемы"
+        },
+        {
+          "language": "sq",
+          "name": "Takime"
+        },
+        {
+          "language": "tr",
+          "name": "Randevular"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "training",
+      "displayName": "Training",
+      "sortOrder": 1320,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schulung"
+        },
+        {
+          "language": "ar",
+          "name": "تدريب"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕاهێنان"
+        },
+        {
+          "language": "en",
+          "name": "Training"
+        },
+        {
+          "language": "fa",
+          "name": "آموزش عملی"
+        },
+        {
+          "language": "kmr",
+          "name": "Perwerdehî"
+        },
+        {
+          "language": "pl",
+          "name": "Szkolenie"
+        },
+        {
+          "language": "ro",
+          "name": "Instruire"
+        },
+        {
+          "language": "ru",
+          "name": "Обучение"
+        },
+        {
+          "language": "sq",
+          "name": "Trajnim"
+        },
+        {
+          "language": "tr",
+          "name": "Eğitim"
+        }
+      ]
+    },
+    {
+      "kind": "Context",
+      "key": "support",
+      "displayName": "Support",
+      "sortOrder": 1130,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Support"
+        },
+        {
+          "language": "ar",
+          "name": "الدعم"
+        },
+        {
+          "language": "ckb",
+          "name": "پاڵپشتی"
+        },
+        {
+          "language": "en",
+          "name": "Support"
+        },
+        {
+          "language": "fa",
+          "name": "پشتیبانی"
+        },
+        {
+          "language": "kmr",
+          "name": "Piştgirî"
+        },
+        {
+          "language": "pl",
+          "name": "Wsparcie"
+        },
+        {
+          "language": "ro",
+          "name": "Suport"
+        },
+        {
+          "language": "ru",
+          "name": "Поддержка"
+        },
+        {
+          "language": "sq",
+          "name": "Mbështetje"
+        },
+        {
+          "language": "tr",
+          "name": "Destek"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "die Ernährung",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Er-näh-rung",
+      "topics": [
+        "healthcare-and-appointments",
+        "everyday-life",
+        "education-and-training"
+      ],
+      "usageLabels": [
+        "formal",
+        "spoken",
+        "written"
+      ],
+      "contextLabels": [
+        "healthcare",
+        "appointments",
+        "training"
+      ],
+      "grammarNotes": [
+        "feminine noun; usually singular"
+      ],
+      "collocations": [
+        {
+          "text": "gesunde Ernährung",
+          "meaning": "healthy nutrition"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "sich ernähren",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "تغذية؛ نظام غذائي"
+        },
+        {
+          "language": "ckb",
+          "text": "خۆراک؛ شێوازی خۆراکخواردن"
+        },
+        {
+          "language": "en",
+          "text": "nutrition; diet"
+        },
+        {
+          "language": "fa",
+          "text": "تغذیه؛ رژیم غذایی"
+        },
+        {
+          "language": "kmr",
+          "text": "xwarin; perwerdeya xwarinê"
+        },
+        {
+          "language": "pl",
+          "text": "odżywianie; dieta"
+        },
+        {
+          "language": "ro",
+          "text": "alimentație; nutriție"
+        },
+        {
+          "language": "ru",
+          "text": "питание; рацион"
+        },
+        {
+          "language": "sq",
+          "text": "ushqyerje; dietë"
+        },
+        {
+          "language": "tr",
+          "text": "beslenme; diyet"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Ärztin empfiehlt mehr Bewegung und eine gesunde Ernährung.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "توصي الطبيبة بمزيد من الحركة وتغذية صحية."
+            },
+            {
+              "language": "ckb",
+              "text": "پزیشکەکە پێشنیاری جووڵەی زیاتر و خۆراکێکی تەندروست دەکات."
+            },
+            {
+              "language": "en",
+              "text": "The doctor recommends more exercise and a healthy diet."
+            },
+            {
+              "language": "fa",
+              "text": "پزشک تحرک بیشتر و تغذیه سالم را توصیه می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Bijîşk tevgerîna zêdetir û xwarineke tendurist pêşniyar dike."
+            },
+            {
+              "language": "pl",
+              "text": "Lekarka zaleca więcej ruchu i zdrowe odżywianie."
+            },
+            {
+              "language": "ro",
+              "text": "Medicul recomandă mai multă mișcare și o alimentație sănătoasă."
+            },
+            {
+              "language": "ru",
+              "text": "Врач рекомендует больше движения и здоровое питание."
+            },
+            {
+              "language": "sq",
+              "text": "Mjekja rekomandon më shumë lëvizje dhe ushqyerje të shëndetshme."
+            },
+            {
+              "language": "tr",
+              "text": "Doktor daha fazla hareket ve sağlıklı beslenme öneriyor."
+            }
+          ]
+        },
+        {
+          "baseText": "In der Kantine gibt es jetzt einen Kurs über Ernährung im Arbeitsalltag.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يوجد الآن في المقصف دورة عن التغذية في يوم العمل."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کانتینەکەدا ئێستا خولێک دەربارەی خۆراک لە ڕۆژانی کاردا هەیە."
+            },
+            {
+              "language": "en",
+              "text": "There is now a course in the cafeteria about nutrition in everyday work life."
+            },
+            {
+              "language": "fa",
+              "text": "در سلف شرکت حالا دوره‌ای درباره تغذیه در روز کاری برگزار می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Li kantînê niha kursek li ser xwarinê di jiyana karê rojane de heye."
+            },
+            {
+              "language": "pl",
+              "text": "W stołówce jest teraz kurs o odżywianiu w codziennej pracy."
+            },
+            {
+              "language": "ro",
+              "text": "La cantină există acum un curs despre alimentație în viața de lucru de zi cu zi."
+            },
+            {
+              "language": "ru",
+              "text": "В столовой теперь есть курс о питании в рабочие будни."
+            },
+            {
+              "language": "sq",
+              "text": "Në mensë tani ka një kurs për ushqyerjen gjatë ditës së punës."
+            },
+            {
+              "language": "tr",
+              "text": "Kantinada artık iş hayatında beslenme hakkında bir kurs var."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "erraten",
+      "language": "de",
+      "cefrLevel": "B1",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "erraten",
+      "pronunciationIpa": null,
+      "syllableBreak": "er-ra-ten",
+      "topics": [
+        "everyday-life",
+        "education-and-training",
+        "social-and-relationships"
+      ],
+      "usageLabels": [
+        "spoken",
+        "written"
+      ],
+      "contextLabels": [
+        "training",
+        "support"
+      ],
+      "grammarNotes": [
+        "strong verb: errät, erriet, hat erraten"
+      ],
+      "collocations": [
+        {
+          "text": "die Antwort erraten",
+          "meaning": "to guess the answer"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "raten",
+          "relationLabel": "base verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يخمّن بشكل صحيح"
+        },
+        {
+          "language": "ckb",
+          "text": "خەمڵاندن و دۆزینەوە"
+        },
+        {
+          "language": "en",
+          "text": "to guess correctly"
+        },
+        {
+          "language": "fa",
+          "text": "حدس زدن؛ درست حدس زدن"
+        },
+        {
+          "language": "kmr",
+          "text": "texmîn kirin; rast gotin"
+        },
+        {
+          "language": "pl",
+          "text": "odgadnąć"
+        },
+        {
+          "language": "ro",
+          "text": "a ghici"
+        },
+        {
+          "language": "ru",
+          "text": "угадать"
+        },
+        {
+          "language": "sq",
+          "text": "ta gjesh me hamendje"
+        },
+        {
+          "language": "tr",
+          "text": "tahmin etmek; bilmek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Kannst du erraten, wer heute Geburtstag hat?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "هل يمكنك أن تخمن من عيد ميلاده اليوم؟"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانیت خەمڵێنیت ئەمڕۆ کێ لەدایکبوونیەتی؟"
+            },
+            {
+              "language": "en",
+              "text": "Can you guess whose birthday it is today?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانی حدس بزنی امروز تولد چه کسی است؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Tu dikarî texmîn bikî îro rojbûna kê ye?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy możesz odgadnąć, kto ma dziś urodziny?"
+            },
+            {
+              "language": "ro",
+              "text": "Poți ghici cine are astăzi ziua de naștere?"
+            },
+            {
+              "language": "ru",
+              "text": "Можешь угадать, у кого сегодня день рождения?"
+            },
+            {
+              "language": "sq",
+              "text": "A mund ta gjesh kush ka ditëlindjen sot?"
+            },
+            {
+              "language": "tr",
+              "text": "Bugün kimin doğum günü olduğunu tahmin edebilir misin?"
+            }
+          ]
+        },
+        {
+          "baseText": "Im Training sollten die Teilnehmenden die richtige Lösung erraten.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في التدريب كان على المشاركين تخمين الحل الصحيح."
+            },
+            {
+              "language": "ckb",
+              "text": "لە ڕاهێنانەکەدا پێویست بوو بەشداران چارەسەری دروست بخەمڵێنن."
+            },
+            {
+              "language": "en",
+              "text": "In the training, the participants were supposed to guess the correct solution."
+            },
+            {
+              "language": "fa",
+              "text": "در آموزش، شرکت‌کنندگان باید راه‌حل درست را حدس می‌زدند."
+            },
+            {
+              "language": "kmr",
+              "text": "Di perwerdeyê de diviya beşdar çareseriya rast texmîn bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Podczas szkolenia uczestnicy mieli odgadnąć właściwe rozwiązanie."
+            },
+            {
+              "language": "ro",
+              "text": "În cadrul instruirii, participanții trebuiau să ghicească soluția corectă."
+            },
+            {
+              "language": "ru",
+              "text": "На тренинге участники должны были угадать правильное решение."
+            },
+            {
+              "language": "sq",
+              "text": "Në trajnim, pjesëmarrësit duhej të gjenin zgjidhjen e saktë."
+            },
+            {
+              "language": "tr",
+              "text": "Eğitimde katılımcıların doğru çözümü tahmin etmesi gerekiyordu."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}
