@@ -1,0 +1,1617 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c1-generated-batch-010-retry",
+  "packageName": "German C1 Generated Batch 010 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "analysis",
+      "displayName": "Analysis",
+      "sortOrder": 200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Analyse"
+        },
+        {
+          "language": "ar",
+          "name": "تحليل"
+        },
+        {
+          "language": "ckb",
+          "name": "شیکردنەوە"
+        },
+        {
+          "language": "en",
+          "name": "Analysis"
+        },
+        {
+          "language": "fa",
+          "name": "تحلیل"
+        },
+        {
+          "language": "kmr",
+          "name": "Analîz"
+        },
+        {
+          "language": "pl",
+          "name": "Analiza"
+        },
+        {
+          "language": "ro",
+          "name": "Analiză"
+        },
+        {
+          "language": "ru",
+          "name": "Анализ"
+        },
+        {
+          "language": "sq",
+          "name": "Analizë"
+        },
+        {
+          "language": "tr",
+          "name": "Analiz"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "advanced",
+      "displayName": "Advanced",
+      "sortOrder": 260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fortgeschritten"
+        },
+        {
+          "language": "ar",
+          "name": "متقدم"
+        },
+        {
+          "language": "ckb",
+          "name": "پێشکەوتوو"
+        },
+        {
+          "language": "en",
+          "name": "Advanced"
+        },
+        {
+          "language": "fa",
+          "name": "پیشرفته"
+        },
+        {
+          "language": "kmr",
+          "name": "Pêşketî"
+        },
+        {
+          "language": "pl",
+          "name": "Zaawansowany"
+        },
+        {
+          "language": "ro",
+          "name": "Avansat"
+        },
+        {
+          "language": "ru",
+          "name": "Продвинутый"
+        },
+        {
+          "language": "sq",
+          "name": "I avancuar"
+        },
+        {
+          "language": "tr",
+          "name": "İleri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "customer-facing",
+      "displayName": "Customer-facing",
+      "sortOrder": 170,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenorientiert"
+        },
+        {
+          "language": "ar",
+          "name": "موجه للعملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕووی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer-facing"
+        },
+        {
+          "language": "fa",
+          "name": "مربوط به مشتری"
+        },
+        {
+          "language": "kmr",
+          "name": "Ji bo xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Dla klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Pentru clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Для клиентов"
+        },
+        {
+          "language": "sq",
+          "name": "Për klientë"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteriye dönük"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "informal",
+      "displayName": "Informal",
+      "sortOrder": 30,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Informell"
+        },
+        {
+          "language": "ar",
+          "name": "غير رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "نافەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Informal"
+        },
+        {
+          "language": "fa",
+          "name": "غیررسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Nefermî"
+        },
+        {
+          "language": "pl",
+          "name": "Nieformalny"
+        },
+        {
+          "language": "ro",
+          "name": "Informal"
+        },
+        {
+          "language": "ru",
+          "name": "Неформальный"
+        },
+        {
+          "language": "sq",
+          "name": "Joformal"
+        },
+        {
+          "language": "tr",
+          "name": "Gayri resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "sensitive",
+      "displayName": "Sensitive",
+      "sortOrder": 240,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Sensibel"
+        },
+        {
+          "language": "ar",
+          "name": "حساس"
+        },
+        {
+          "language": "ckb",
+          "name": "هەستیار"
+        },
+        {
+          "language": "en",
+          "name": "Sensitive"
+        },
+        {
+          "language": "fa",
+          "name": "حساس"
+        },
+        {
+          "language": "kmr",
+          "name": "Hestiyar"
+        },
+        {
+          "language": "pl",
+          "name": "Wrażliwy"
+        },
+        {
+          "language": "ro",
+          "name": "Sensibil"
+        },
+        {
+          "language": "ru",
+          "name": "Деликатный"
+        },
+        {
+          "language": "sq",
+          "name": "I ndjeshëm"
+        },
+        {
+          "language": "tr",
+          "name": "Hassas"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "C1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Anpassungsfähigkeit",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Anpassungsfähigkeiten",
+      "infinitive": null,
+      "syllableBreak": "An-pas-sungs-fä-hig-keit",
+      "topics": [
+        "management-and-leadership",
+        "work-and-jobs",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "business",
+        "formal",
+        "analysis",
+        "advanced"
+      ],
+      "grammarNotes": [
+        "feminine noun; plural is uncommon"
+      ],
+      "collocations": [
+        {
+          "text": "hohe Anpassungsfähigkeit zeigen",
+          "meaning": "to show high adaptability"
+        },
+        {
+          "text": "organisatorische Anpassungsfähigkeit",
+          "meaning": "organizational adaptability"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "anpassen",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "anpassungsfähig",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "القدرة على التكيف"
+        },
+        {
+          "language": "ckb",
+          "text": "توانای خۆگونجاندن"
+        },
+        {
+          "language": "en",
+          "text": "adaptability; ability to adjust"
+        },
+        {
+          "language": "fa",
+          "text": "توانایی سازگاری"
+        },
+        {
+          "language": "kmr",
+          "text": "hêza xwe-guncandinê"
+        },
+        {
+          "language": "pl",
+          "text": "zdolność adaptacji"
+        },
+        {
+          "language": "ro",
+          "text": "capacitate de adaptare"
+        },
+        {
+          "language": "ru",
+          "text": "адаптивность; способность приспосабливаться"
+        },
+        {
+          "language": "sq",
+          "text": "aftësi përshtatjeje"
+        },
+        {
+          "language": "tr",
+          "text": "uyum sağlama yeteneği"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Anpassungsfähigkeit des Teams zeigte sich, als der Kunde kurz vor dem Go-live neue Prioritäten setzte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "ظهرت قدرة الفريق على التكيف عندما حدّد العميل أولويات جديدة قبل الإطلاق بقليل."
+            },
+            {
+              "language": "ckb",
+              "text": "توانای خۆگونجاندنی تیمەکە دیار بوو کاتێک کڕیارەکە کەمێک پێش go-live پێشینەی نوێی دانا."
+            },
+            {
+              "language": "en",
+              "text": "The team’s adaptability became clear when the customer set new priorities shortly before go-live."
+            },
+            {
+              "language": "fa",
+              "text": "توانایی سازگاری تیم وقتی مشخص شد که مشتری کمی پیش از راه‌اندازی اولویت‌های جدید تعیین کرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Hêza xwe-guncandina tîmê xuya bû dema xerîdar berî go-live bi kurtî pêşîneyên nû danî."
+            },
+            {
+              "language": "pl",
+              "text": "Zdolność adaptacji zespołu ujawniła się, gdy klient krótko przed uruchomieniem wyznaczył nowe priorytety."
+            },
+            {
+              "language": "ro",
+              "text": "Capacitatea de adaptare a echipei s-a văzut când clientul a stabilit noi priorități cu puțin înainte de lansare."
+            },
+            {
+              "language": "ru",
+              "text": "Адаптивность команды проявилась, когда клиент незадолго до запуска задал новые приоритеты."
+            },
+            {
+              "language": "sq",
+              "text": "Aftësia e ekipit për t’u përshtatur u pa kur klienti vendosi prioritete të reja pak para lançimit."
+            },
+            {
+              "language": "tr",
+              "text": "Ekibin uyum sağlama yeteneği, müşteri canlıya geçişten kısa süre önce yeni öncelikler belirlediğinde ortaya çıktı."
+            }
+          ]
+        },
+        {
+          "baseText": "In Krisenzeiten entscheidet oft die Anpassungsfähigkeit einer Organisation über ihre Handlungsfähigkeit.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في أوقات الأزمات غالبًا ما تحدد قدرة المنظمة على التكيف قدرتها على التصرف."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی قەیراندا زۆرجار توانای خۆگونجاندنی ڕێکخراوێک بڕیار دەدات لەسەر توانای کارکردنی."
+            },
+            {
+              "language": "en",
+              "text": "In times of crisis, an organization’s adaptability often determines its ability to act."
+            },
+            {
+              "language": "fa",
+              "text": "در زمان بحران، توانایی سازگاری یک سازمان اغلب تعیین می‌کند که چقدر قادر به اقدام است."
+            },
+            {
+              "language": "kmr",
+              "text": "Di demên qeyranê de, hêza xwe-guncandina rêxistinekê pir caran karîna wê ya tevgerê diyar dike."
+            },
+            {
+              "language": "pl",
+              "text": "W czasach kryzysu zdolność adaptacji organizacji często decyduje o jej sprawczości."
+            },
+            {
+              "language": "ro",
+              "text": "În perioade de criză, capacitatea de adaptare a unei organizații îi determină adesea capacitatea de acțiune."
+            },
+            {
+              "language": "ru",
+              "text": "Во времена кризиса адаптивность организации часто определяет ее способность действовать."
+            },
+            {
+              "language": "sq",
+              "text": "Në kohë krize, aftësia e një organizate për t’u përshtatur shpesh përcakton aftësinë e saj për të vepruar."
+            },
+            {
+              "language": "tr",
+              "text": "Kriz dönemlerinde bir kuruluşun uyum sağlama yeteneği çoğu zaman hareket kabiliyetini belirler."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "anpreisen",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anpreisen",
+      "syllableBreak": "an-prei-sen",
+      "topics": [
+        "sales-and-customers",
+        "business-communication",
+        "shopping-and-services"
+      ],
+      "usageLabels": [
+        "business",
+        "customer-facing",
+        "written",
+        "advanced"
+      ],
+      "grammarNotes": [
+        "strong separable verb; often implies promotional praise"
+      ],
+      "collocations": [
+        {
+          "text": "ein Produkt anpreisen",
+          "meaning": "to praise or promote a product"
+        },
+        {
+          "text": "etwas als besonders günstig anpreisen",
+          "meaning": "to advertise something as especially cheap"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "preisen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يروج بإشادة؛ يمتدح للبيع"
+        },
+        {
+          "language": "ckb",
+          "text": "بە ستایشەوە بانگەشەی بۆ دەکات"
+        },
+        {
+          "language": "en",
+          "text": "to promote enthusiastically; to praise for sale"
+        },
+        {
+          "language": "fa",
+          "text": "تبلیغ و تعریف کردن؛ با آب‌وتاب معرفی کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "bi pesindanê reklâm kirin"
+        },
+        {
+          "language": "pl",
+          "text": "zachwalać; reklamować"
+        },
+        {
+          "language": "ro",
+          "text": "a promova elogios; a lăuda comercial"
+        },
+        {
+          "language": "ru",
+          "text": "расхваливать; рекламировать"
+        },
+        {
+          "language": "sq",
+          "text": "ta lavdërosh për shitje; ta reklamosh"
+        },
+        {
+          "language": "tr",
+          "text": "öve öve tanıtmak; pazarlamak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Verkäufer pries die neue Garantie als entscheidenden Vorteil gegenüber der Konkurrenz an.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "روّج البائع للضمان الجديد بوصفه ميزة حاسمة مقارنة بالمنافسين."
+            },
+            {
+              "language": "ckb",
+              "text": "فرۆشیارەکە گەرەنتییە نوێیەکەی وەک سوودێکی چارەنووسساز بەرامبەر ڕکابەران بانگەشە کرد."
+            },
+            {
+              "language": "en",
+              "text": "The salesperson promoted the new warranty as a decisive advantage over the competition."
+            },
+            {
+              "language": "fa",
+              "text": "فروشنده ضمانت جدید را به‌عنوان مزیتی تعیین‌کننده نسبت به رقبا معرفی کرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Firoşkar garantîya nû wek sûdeke biryarder li hember rikaberan pesn kir."
+            },
+            {
+              "language": "pl",
+              "text": "Sprzedawca zachwalał nową gwarancję jako decydującą przewagę nad konkurencją."
+            },
+            {
+              "language": "ro",
+              "text": "Vânzătorul a prezentat noua garanție ca pe un avantaj decisiv față de concurență."
+            },
+            {
+              "language": "ru",
+              "text": "Продавец расхваливал новую гарантию как решающее преимущество перед конкурентами."
+            },
+            {
+              "language": "sq",
+              "text": "Shitësi e reklamoi garancinë e re si avantazh vendimtar ndaj konkurrencës."
+            },
+            {
+              "language": "tr",
+              "text": "Satıcı yeni garantiyi rakiplere karşı belirleyici bir avantaj olarak öne çıkardı."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Broschüre preist das Hotel als ruhigen Rückzugsort für Geschäftsreisende an.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يمدح الكتيب الفندق بوصفه ملاذًا هادئًا للمسافرين بغرض العمل."
+            },
+            {
+              "language": "ckb",
+              "text": "بڕۆشۆرەکە هۆتێلەکە وەک پەناگایەکی ئارام بۆ گەشتیارانی کاری بانگەشە دەکات."
+            },
+            {
+              "language": "en",
+              "text": "The brochure promotes the hotel as a quiet retreat for business travelers."
+            },
+            {
+              "language": "fa",
+              "text": "بروشور هتل را به‌عنوان پناهگاهی آرام برای مسافران کاری معرفی می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Broşûr otelê wek cihê vekişînê yê aram ji bo rêwiyên karî pesn dike."
+            },
+            {
+              "language": "pl",
+              "text": "Broszura zachwala hotel jako spokojne miejsce odpoczynku dla podróżujących służbowo."
+            },
+            {
+              "language": "ro",
+              "text": "Broșura promovează hotelul ca un refugiu liniștit pentru călătorii de afaceri."
+            },
+            {
+              "language": "ru",
+              "text": "Брошюра рекламирует отель как спокойное убежище для деловых путешественников."
+            },
+            {
+              "language": "sq",
+              "text": "Broshura e paraqet hotelin si një vend të qetë për udhëtarët e biznesit."
+            },
+            {
+              "language": "tr",
+              "text": "Broşür oteli iş seyahatindekiler için sakin bir dinlenme yeri olarak tanıtıyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "anreißen",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anreißen",
+      "syllableBreak": "an-rei-ßen",
+      "topics": [
+        "business-communication",
+        "meetings-and-presentations",
+        "production-and-maintenance"
+      ],
+      "usageLabels": [
+        "formal",
+        "technical",
+        "written",
+        "advanced"
+      ],
+      "grammarNotes": [
+        "strong separable verb; can mean to outline briefly or to mark/scratch a surface"
+      ],
+      "collocations": [
+        {
+          "text": "ein Thema kurz anreißen",
+          "meaning": "to briefly touch on a topic"
+        },
+        {
+          "text": "eine Schnittlinie anreißen",
+          "meaning": "to mark a cutting line"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "reißen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يلمح إلى موضوع بإيجاز؛ يعلّم بخط خدش"
+        },
+        {
+          "language": "ckb",
+          "text": "بە کورتی بابەتێک دەست پێدەکات؛ هێڵێک نیشان دەکات"
+        },
+        {
+          "language": "en",
+          "text": "to touch on briefly; to mark by scoring"
+        },
+        {
+          "language": "fa",
+          "text": "مختصر مطرح کردن؛ خط انداختن برای علامت‌گذاری"
+        },
+        {
+          "language": "kmr",
+          "text": "bi kurtî destnîşan kirin; bi xêz nîşan kirin"
+        },
+        {
+          "language": "pl",
+          "text": "zasygnalizować; naciąć/wyznaczyć"
+        },
+        {
+          "language": "ro",
+          "text": "a schița pe scurt; a marca prin zgâriere"
+        },
+        {
+          "language": "ru",
+          "text": "кратко затронуть; разметить царапиной"
+        },
+        {
+          "language": "sq",
+          "text": "ta prekësh shkurt; të shënosh me gërvishtje"
+        },
+        {
+          "language": "tr",
+          "text": "kısaca değinmek; çizerek işaretlemek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Kick-off riss die Projektleiterin die größten Risiken nur kurz an und verwies auf den separaten Workshop.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في اجتماع البداية تطرقت مديرة المشروع إلى أكبر المخاطر بإيجاز فقط وأحالت إلى ورشة عمل منفصلة."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کۆبوونەوەی دەستپێکدا بەڕێوەبەری پڕۆژەکە تەنها بە کورتی باسێکی مەترسییە گەورەکانی کرد و ئاماژەی بە وۆرکشۆپی جیاواز دا."
+            },
+            {
+              "language": "en",
+              "text": "In the kick-off, the project manager only briefly touched on the biggest risks and referred to the separate workshop."
+            },
+            {
+              "language": "fa",
+              "text": "در جلسه آغاز پروژه، مدیر پروژه فقط کوتاه به بزرگ‌ترین ریسک‌ها اشاره کرد و به کارگاه جداگانه ارجاع داد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di kick-offê de rêvebera projeyê tenê bi kurtî behsa xeterên herî mezin kir û bal kişand ser workshopa cuda."
+            },
+            {
+              "language": "pl",
+              "text": "Na spotkaniu startowym kierowniczka projektu tylko krótko zasygnalizowała największe ryzyka i odesłała do osobnego warsztatu."
+            },
+            {
+              "language": "ro",
+              "text": "În ședința de kick-off, managera de proiect a atins doar pe scurt cele mai mari riscuri și a trimis la workshopul separat."
+            },
+            {
+              "language": "ru",
+              "text": "На стартовой встрече руководитель проекта лишь кратко затронула крупнейшие риски и сослалась на отдельный воркшоп."
+            },
+            {
+              "language": "sq",
+              "text": "Në takimin fillestar, menaxherja e projektit i preku vetëm shkurt rreziqet më të mëdha dhe iu referua seminarit të veçantë."
+            },
+            {
+              "language": "tr",
+              "text": "Başlangıç toplantısında proje yöneticisi en büyük risklere yalnızca kısaca değindi ve ayrı çalıştaya yönlendirdi."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Monteur riss die Bohrpunkte auf der Metallplatte sorgfältig an.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "علّم الفني نقاط الحفر على اللوح المعدني بعناية."
+            },
+            {
+              "language": "ckb",
+              "text": "دامەزرێنەرەکە خاڵەکانی کونکردنی لەسەر تەختە مەعدەنییەکە بە وریایی نیشان کرد."
+            },
+            {
+              "language": "en",
+              "text": "The installer carefully marked the drilling points on the metal plate."
+            },
+            {
+              "language": "fa",
+              "text": "نصاب نقاط سوراخ‌کاری را با دقت روی صفحه فلزی علامت زد."
+            },
+            {
+              "language": "kmr",
+              "text": "Montor bi baldarî xalên qul kirinê li ser pelê metalê nîşan kir."
+            },
+            {
+              "language": "pl",
+              "text": "Monter starannie wyznaczył punkty wiercenia na metalowej płycie."
+            },
+            {
+              "language": "ro",
+              "text": "Montatorul a marcat cu grijă punctele de găurire pe placa metalică."
+            },
+            {
+              "language": "ru",
+              "text": "Монтажник тщательно разметил точки сверления на металлической пластине."
+            },
+            {
+              "language": "sq",
+              "text": "Montuesi i shënoi me kujdes pikat e shpimit në pllakën metalike."
+            },
+            {
+              "language": "tr",
+              "text": "Montajcı metal plaka üzerindeki delme noktalarını dikkatlice işaretledi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "anrennen",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anrennen",
+      "syllableBreak": "an-ren-nen",
+      "topics": [
+        "management-and-leadership",
+        "social-and-relationships",
+        "quality-and-risk"
+      ],
+      "usageLabels": [
+        "spoken",
+        "written",
+        "advanced"
+      ],
+      "grammarNotes": [
+        "irregular separable verb; literal or figurative, often gegen etwas anrennen"
+      ],
+      "collocations": [
+        {
+          "text": "gegen Widerstände anrennen",
+          "meaning": "to struggle against resistance"
+        },
+        {
+          "text": "gegen eine Wand anrennen",
+          "meaning": "to run into a wall"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "rennen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يصطدم راكضًا؛ يكافح عبثًا ضد شيء"
+        },
+        {
+          "language": "ckb",
+          "text": "بە ڕاکردن دەکەوێتە سەر؛ بە زەحمەت دژی شتێک هەوڵ دەدات"
+        },
+        {
+          "language": "en",
+          "text": "to run into; to struggle against resistance"
+        },
+        {
+          "language": "fa",
+          "text": "به چیزی برخورد کردن؛ بی‌ثمر مقابله کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "bi lez lê ketin; li dijî astengiyan têkoşîn"
+        },
+        {
+          "language": "pl",
+          "text": "natrzeć; bezskutecznie walczyć z oporem"
+        },
+        {
+          "language": "ro",
+          "text": "a se izbi; a lupta împotriva rezistenței"
+        },
+        {
+          "language": "ru",
+          "text": "налетать; безуспешно бороться"
+        },
+        {
+          "language": "sq",
+          "text": "të përplasesh; të luftosh kundër rezistencës"
+        },
+        {
+          "language": "tr",
+          "text": "çarpıp koşmak; dirençle boğuşmak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Veränderungsteam rannte monatelang gegen interne Widerstände an.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "كافح فريق التغيير لأشهر ضد مقاومة داخلية."
+            },
+            {
+              "language": "ckb",
+              "text": "تیمی گۆڕانکاری مانگانێک دژی بەرگریی ناوخۆیی هەوڵی بەردەوامی دا."
+            },
+            {
+              "language": "en",
+              "text": "The change team struggled for months against internal resistance."
+            },
+            {
+              "language": "fa",
+              "text": "تیم تغییر ماه‌ها با مقاومت داخلی دست‌وپنجه نرم کرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Tîma guherînê bi mehan li dijî berxwedana hundirîn têkoşî."
+            },
+            {
+              "language": "pl",
+              "text": "Zespół ds. zmian przez miesiące bezskutecznie walczył z wewnętrznym oporem."
+            },
+            {
+              "language": "ro",
+              "text": "Echipa de schimbare s-a luptat luni întregi cu rezistența internă."
+            },
+            {
+              "language": "ru",
+              "text": "Команда изменений месяцами билась о внутреннее сопротивление."
+            },
+            {
+              "language": "sq",
+              "text": "Ekipi i ndryshimit luftoi për muaj të tërë kundër rezistencës së brendshme."
+            },
+            {
+              "language": "tr",
+              "text": "Değişim ekibi aylarca iç dirençle boğuştu."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Junge rannte im Flur fast gegen die Glastür an, weil er auf sein Handy sah.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "كاد الصبي أن يصطدم بالباب الزجاجي في الممر لأنه كان ينظر إلى هاتفه."
+            },
+            {
+              "language": "ckb",
+              "text": "کوڕەکە لە کۆڕیدۆرەکەدا نزیک بوو بکەوێتە سەر دەرگای شووشەیی چونکە سەیری مۆبایلەکەی دەکرد."
+            },
+            {
+              "language": "en",
+              "text": "The boy almost ran into the glass door in the hallway because he was looking at his phone."
+            },
+            {
+              "language": "fa",
+              "text": "پسر در راهرو نزدیک بود به در شیشه‌ای بخورد، چون به گوشی‌اش نگاه می‌کرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Kur di korîdorê de hema li deriyê camê ket, ji ber ku li telefona xwe dinêrî."
+            },
+            {
+              "language": "pl",
+              "text": "Chłopiec prawie wbiegł w szklane drzwi na korytarzu, bo patrzył w telefon."
+            },
+            {
+              "language": "ro",
+              "text": "Băiatul aproape s-a izbit de ușa de sticlă de pe hol, pentru că se uita la telefon."
+            },
+            {
+              "language": "ru",
+              "text": "Мальчик в коридоре чуть не врезался в стеклянную дверь, потому что смотрел в телефон."
+            },
+            {
+              "language": "sq",
+              "text": "Djali gati u përplas me derën prej xhami në korridor, sepse po shikonte telefonin."
+            },
+            {
+              "language": "tr",
+              "text": "Çocuk telefona baktığı için koridorda neredeyse cam kapıya çarpıyordu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "anscheißen",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anscheißen",
+      "syllableBreak": "an-schei-ßen",
+      "topics": [
+        "social-and-relationships",
+        "work-and-jobs",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "informal",
+        "spoken",
+        "sensitive"
+      ],
+      "grammarNotes": [
+        "vulgar strong separable verb; avoid in professional communication"
+      ],
+      "collocations": [
+        {
+          "text": "jemanden anscheißen",
+          "meaning": "to bawl someone out in vulgar speech"
+        },
+        {
+          "text": "sich angeschissen fühlen",
+          "meaning": "to feel badly treated or cheated in vulgar speech"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "scheißen",
+          "relationLabel": "verb",
+          "note": "vulgar"
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يوبّخ بفظاظة؛ يخدع أو يسيء المعاملة بتعبير سوقي"
+        },
+        {
+          "language": "ckb",
+          "text": "بە قسەی ڕەق سەرزەنشت دەکات؛ بە شێوەیەکی ناشیاو دەیکاتە قوربانی"
+        },
+        {
+          "language": "en",
+          "text": "to bawl someone out; to treat or cheat someone badly (vulgar)"
+        },
+        {
+          "language": "fa",
+          "text": "با لحن رکیک دعوا کردن؛ بدرفتاری یا فریب دادن به زبان عامیانه رکیک"
+        },
+        {
+          "language": "kmr",
+          "text": "bi gotina qirêj kesek şerm kirin; xirab bi kesek kirin"
+        },
+        {
+          "language": "pl",
+          "text": "ochrzanić wulgarnie; potraktować kogoś podle"
+        },
+        {
+          "language": "ro",
+          "text": "a certa vulgar; a trata sau păcăli urât"
+        },
+        {
+          "language": "ru",
+          "text": "грубо отчитать; подло обойтись"
+        },
+        {
+          "language": "sq",
+          "text": "ta qortosh rëndë; ta trajtosh keq në gjuhë vulgare"
+        },
+        {
+          "language": "tr",
+          "text": "fena halde azarlamak; kötü davranmak (kaba)"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Nach dem Vorfall sagte der Azubi, er sei vor dem ganzen Team angeschissen worden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بعد الحادثة قال المتدرب إنه تعرض لتوبيخ فظ أمام الفريق كله."
+            },
+            {
+              "language": "ckb",
+              "text": "دوای ڕووداوەکە، فێرخوازەکە گوت لەبەردەم هەموو تیمەکە بە قسەی ڕەق سەرزەنشت کراوە."
+            },
+            {
+              "language": "en",
+              "text": "After the incident, the trainee said he had been bawled out in front of the whole team."
+            },
+            {
+              "language": "fa",
+              "text": "بعد از ماجرا، کارآموز گفت جلوی کل تیم با لحن رکیک دعوا شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Piştî bûyerê, şagirtê kar got ku li ber hemû tîmê bi gotinên qirêj hatibû şermkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Po incydencie praktykant powiedział, że został ordynarnie ochrzaniony przy całym zespole."
+            },
+            {
+              "language": "ro",
+              "text": "După incident, ucenicul a spus că fusese certat vulgar în fața întregii echipe."
+            },
+            {
+              "language": "ru",
+              "text": "После инцидента стажер сказал, что его грубо отчитали перед всей командой."
+            },
+            {
+              "language": "sq",
+              "text": "Pas incidentit, praktikanti tha se ishte qortuar rëndë para gjithë ekipit."
+            },
+            {
+              "language": "tr",
+              "text": "Olaydan sonra stajyer, tüm ekibin önünde fena halde azarlandığını söyledi."
+            }
+          ]
+        },
+        {
+          "baseText": "Unter Freunden wird das Wort manchmal benutzt, ist aber im Kundengespräch völlig unangebracht.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بين الأصدقاء تُستخدم الكلمة أحيانًا، لكنها غير مناسبة إطلاقًا في الحديث مع العملاء."
+            },
+            {
+              "language": "ckb",
+              "text": "لە نێوان هاوڕێیاندا ئەم وشەیە هەندێک جار بەکاردێت، بەڵام لە گفتوگۆی کڕیاردا بە تەواوی ناشیاوە."
+            },
+            {
+              "language": "en",
+              "text": "Among friends the word is sometimes used, but it is completely inappropriate in customer conversations."
+            },
+            {
+              "language": "fa",
+              "text": "بین دوستان این واژه گاهی استفاده می‌شود، اما در گفت‌وگو با مشتری کاملاً نامناسب است."
+            },
+            {
+              "language": "kmr",
+              "text": "Di nav hevalan de ev peyv carinan tê bikaranîn, lê di axaftina bi xerîdar re bi tevahî neguncaw e."
+            },
+            {
+              "language": "pl",
+              "text": "Wśród znajomych to słowo bywa używane, ale w rozmowie z klientem jest całkowicie niestosowne."
+            },
+            {
+              "language": "ro",
+              "text": "Între prieteni cuvântul este folosit uneori, dar într-o discuție cu clientul este complet nepotrivit."
+            },
+            {
+              "language": "ru",
+              "text": "Среди друзей это слово иногда используют, но в разговоре с клиентом оно совершенно неуместно."
+            },
+            {
+              "language": "sq",
+              "text": "Mes miqsh kjo fjalë përdoret ndonjëherë, por në bisedë me klientin është krejtësisht e papërshtatshme."
+            },
+            {
+              "language": "tr",
+              "text": "Arkadaşlar arasında bu kelime bazen kullanılır, ancak müşteri görüşmesinde tamamen uygunsuzdur."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "anschlagen",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "anschlagen",
+      "syllableBreak": "an-schla-gen",
+      "topics": [
+        "quality-and-risk",
+        "healthcare-and-appointments",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "formal",
+        "technical",
+        "written",
+        "advanced"
+      ],
+      "grammarNotes": [
+        "strong separable verb; meanings include to strike, post, or take effect"
+      ],
+      "collocations": [
+        {
+          "text": "eine Maßnahme schlägt an",
+          "meaning": "a measure takes effect"
+        },
+        {
+          "text": "einen Hinweis anschlagen",
+          "meaning": "to put up a notice"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "schlagen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يؤثر أو ينجح؛ يعلّق إعلانًا؛ يطرق"
+        },
+        {
+          "language": "ckb",
+          "text": "کاریگەری دەکات؛ ئاگاداری هەڵدەواسێت؛ لێدەدات"
+        },
+        {
+          "language": "en",
+          "text": "to take effect; to post a notice; to strike"
+        },
+        {
+          "language": "fa",
+          "text": "اثر کردن؛ نصب اطلاعیه؛ ضربه زدن"
+        },
+        {
+          "language": "kmr",
+          "text": "bandor kirin; agahdarî daliqandin; lêdan"
+        },
+        {
+          "language": "pl",
+          "text": "zadziałać; wywiesić; uderzyć"
+        },
+        {
+          "language": "ro",
+          "text": "a avea efect; a afișa; a lovi"
+        },
+        {
+          "language": "ru",
+          "text": "сработать; вывесить; ударить"
+        },
+        {
+          "language": "sq",
+          "text": "të japë efekt; të afishosh; të godasësh"
+        },
+        {
+          "language": "tr",
+          "text": "etki etmek; ilan asmak; vurmak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die neue Therapie schlug schneller an, als das Ärzteteam erwartet hatte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "أثّر العلاج الجديد أسرع مما توقعه فريق الأطباء."
+            },
+            {
+              "language": "ckb",
+              "text": "چارەسەری نوێ خێراتر کاریگەری کرد وەک تیمی پزیشکان چاوەڕێیان دەکرد."
+            },
+            {
+              "language": "en",
+              "text": "The new therapy took effect faster than the medical team had expected."
+            },
+            {
+              "language": "fa",
+              "text": "درمان جدید سریع‌تر از انتظار تیم پزشکی اثر کرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Dermankirina nû zûtir bandor kir ji ya tîma bijîşkan hêvî dikir."
+            },
+            {
+              "language": "pl",
+              "text": "Nowa terapia zadziałała szybciej, niż oczekiwał zespół lekarski."
+            },
+            {
+              "language": "ro",
+              "text": "Noua terapie a avut efect mai repede decât se aștepta echipa medicală."
+            },
+            {
+              "language": "ru",
+              "text": "Новая терапия подействовала быстрее, чем ожидала команда врачей."
+            },
+            {
+              "language": "sq",
+              "text": "Terapia e re dha efekt më shpejt nga sa priste ekipi mjekësor."
+            },
+            {
+              "language": "tr",
+              "text": "Yeni tedavi, sağlık ekibinin beklediğinden daha hızlı etki etti."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Hausverwaltung schlug den Hinweis zur Wasserabschaltung gut sichtbar im Eingangsbereich an.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "علّقت إدارة المبنى إشعار قطع المياه في منطقة المدخل بشكل واضح."
+            },
+            {
+              "language": "ckb",
+              "text": "بەڕێوەبەرایەتی خانووەکە ئاگاداری پچڕانی ئاوەکەی بە شێوەیەکی دیار لە ناوچەی دەروازە هەڵواسی."
+            },
+            {
+              "language": "en",
+              "text": "The property management posted the notice about the water shutoff clearly in the entrance area."
+            },
+            {
+              "language": "fa",
+              "text": "مدیریت ساختمان اطلاعیه قطع آب را به‌صورت کاملاً قابل مشاهده در ورودی نصب کرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Rêveberiya avahiyê agahdariya qutbûna avê bi eşkere li qada têketinê daliqand."
+            },
+            {
+              "language": "pl",
+              "text": "Administracja budynku wywiesiła informację o przerwie w dostawie wody w widocznym miejscu przy wejściu."
+            },
+            {
+              "language": "ro",
+              "text": "Administrația clădirii a afișat vizibil anunțul despre oprirea apei în zona de intrare."
+            },
+            {
+              "language": "ru",
+              "text": "Управляющая компания вывесила уведомление об отключении воды на видном месте у входа."
+            },
+            {
+              "language": "sq",
+              "text": "Administrata e ndërtesës e afishoi qartë njoftimin për ndërprerjen e ujit në hyrje."
+            },
+            {
+              "language": "tr",
+              "text": "Bina yönetimi su kesintisi duyurusunu giriş bölümünde görünür şekilde astı."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

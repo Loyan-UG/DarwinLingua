@@ -1,28 +1,89 @@
-const fs=require('fs');const path=require('path');const{execFileSync}=require('child_process');
-const root='D:/_Projects/DarwinLingua',level='A1';
-const sourcePath=path.join(root,'content',`${level}.txt`),taxonomyPath=path.join(root,'content','taxonomy','darwinlingua-taxonomy-v1.json'),generatedDir=path.join(root,'content','generated');
-const batchNo=10,packageId=`de-a1-generated-batch-${String(batchNo).padStart(3,'0')}`,outPath=path.join(generatedDir,`${packageId}.json`),importProject=path.join(root,'src','Apps','DarwinLingua.ImportTool','DarwinLingua.ImportTool.csproj');
-const langs=['ar','ckb','en','fa','kmr','pl','ro','ru','sq','tr'],labelLangs=['de',...langs];
-const expected=['ausruhen','der Ausweis','das Auto','die Autobahn','der Automat','automatisch'];
-const taxonomy=JSON.parse(fs.readFileSync(taxonomyPath,'utf8'));const tokens=fs.readFileSync(sourcePath,'utf8').split(',').map(s=>s.trim()).filter(Boolean);const words=tokens.slice(0,6);
-if(JSON.stringify(words)!==JSON.stringify(expected))throw new Error(`Unexpected first tokens: ${JSON.stringify(words)}`);
-function complete(label){const loc=label.localizations||[];return labelLangs.every(l=>loc.some(x=>x.language===l&&x.name));}
-function getLabel(key){const label=(taxonomy.labels||[]).find(l=>(l.key===key||l.id===key)&&complete(l));if(!label)throw new Error('Missing complete label: '+key);return label;}
-function topic(key){if(!(taxonomy.topics||[]).some(t=>t.key===key||t.id===key))throw new Error('Missing topic: '+key);return key;}
-function tr(ar,ckb,en,fa,kmr,pl,ro,ru,sq,trText){return[{language:'ar',text:ar},{language:'ckb',text:ckb},{language:'en',text:en},{language:'fa',text:fa},{language:'kmr',text:kmr},{language:'pl',text:pl},{language:'ro',text:ro},{language:'ru',text:ru},{language:'sq',text:sq},{language:'tr',text:trText}];}
-function meaning(a){return tr(...a)}function ex(baseText,a){return{baseText,translations:tr(...a)}}
-const usedLabels=['everyday','spoken','written','customer-facing','polite','high-frequency'];
-const entries=[
-{word:'ausruhen',language:'de',cefrLevel:level,partOfSpeech:'Verb',article:null,plural:null,infinitive:'ausruhen',pronunciationIpa:null,syllableBreak:'aus-ru-hen',topics:[topic('everyday-life'),topic('healthcare-and-appointments')],usageLabels:['everyday','spoken','high-frequency'],contextLabels:[],grammarNotes:['reflexive/separable regular verb: ruht sich aus, hat sich ausgeruht'],collocations:[{text:'sich kurz ausruhen',meaning:'to rest briefly'}],wordFamilies:[{lemma:'die Ruhe',relationLabel:'noun',note:null}],relations:[],meanings:meaning(['يستريح','پشوودان؛ حەسانەوە','to rest','استراحت کردن','bêhnvedan; rehet kirin','odpoczywać','a se odihni','отдыхать','të pushosh','dinlenmek']),examples:[ex('Ich ruhe mich nach der Arbeit aus.',['أستريح بعد العمل.','دوای کار پشوودەدەم.','I rest after work.','بعد از کار استراحت می‌کنم.','Ez piştî kar bêhnvedanê dikim.','Odpoczywam po pracy.','Mă odihnesc după muncă.','Я отдыхаю после работы.','Pushoj pas punës.','İşten sonra dinleniyorum.']),ex('Du bist müde, ruh dich bitte aus.',['أنت متعب، استرح من فضلك.','تۆ ماندوویت، تکایە پشووبدە.','You are tired; please rest.','خسته‌ای، لطفاً استراحت کن.','Tu westiyayî, ji kerema xwe bêhna xwe vede.','Jesteś zmęczony, odpocznij proszę.','Ești obosit, te rog odihnește-te.','Ты устал, пожалуйста, отдохни.','Je i lodhur, të lutem pusho.','Yorgunsun, lütfen dinlen.'])]},
-{word:'der Ausweis',language:'de',cefrLevel:level,partOfSpeech:'Noun',article:'der',plural:'Ausweise',infinitive:null,pronunciationIpa:null,syllableBreak:'Aus-weis',topics:[topic('documents-and-administration'),topic('public-services'),topic('everyday-life')],usageLabels:['everyday','spoken','written','customer-facing','polite','high-frequency'],contextLabels:[],grammarNotes:['masculine noun'],collocations:[{text:'den Ausweis zeigen',meaning:'to show the ID'}],wordFamilies:[{lemma:'sich ausweisen',relationLabel:'verb',note:null}],relations:[],meanings:meaning(['بطاقة هوية','ناسنامە','ID card; identity document','کارت شناسایی','nasname','dowód osobisty; dokument','act de identitate','удостоверение личности','kartë identiteti','kimlik; kimlik kartı']),examples:[ex('Bitte zeigen Sie Ihren Ausweis.',['يرجى إظهار بطاقة هويتكم.','تکایە ناسنامەکەتان پیشان بدەن.','Please show your ID.','لطفاً کارت شناسایی خود را نشان دهید.','Ji kerema xwe nasnameya xwe nîşan bidin.','Proszę pokazać dowód.','Vă rog să arătați actul de identitate.','Пожалуйста, покажите удостоверение личности.','Ju lutem tregoni kartën tuaj të identitetit.','Lütfen kimliğinizi gösterin.']),ex('Ich habe meinen Ausweis zu Hause.',['بطاقة هويتي في البيت.','ناسنامەکەم لە ماڵەوەیە.','My ID is at home.','کارت شناسایی‌ام در خانه است.','Nasnameya min li malê ye.','Mam dowód w domu.','Am actul de identitate acasă.','Мое удостоверение дома.','Kartën e identitetit e kam në shtëpi.','Kimliğim evde.'])]},
-{word:'das Auto',language:'de',cefrLevel:level,partOfSpeech:'Noun',article:'das',plural:'Autos',infinitive:null,pronunciationIpa:null,syllableBreak:'Au-to',topics:[topic('transport-and-travel'),topic('everyday-life')],usageLabels:['everyday','spoken','written','high-frequency'],contextLabels:[],grammarNotes:['neuter noun'],collocations:[{text:'mit dem Auto fahren',meaning:'to go by car'}],wordFamilies:[{lemma:'automatisch',relationLabel:'adjective',note:null}],relations:[],meanings:meaning(['سيارة','ئۆتۆمبێل','car','ماشین؛ خودرو','erebe','samochód','mașină','машина; автомобиль','makinë','araba; otomobil']),examples:[ex('Mein Auto ist blau.',['سيارتي زرقاء.','ئۆتۆمبێلەکەم شینە.','My car is blue.','ماشین من آبی است.','Erebeya min şîn e.','Mój samochód jest niebieski.','Mașina mea este albastră.','Моя машина синяя.','Makina ime është blu.','Arabam mavi.']),ex('Wir fahren mit dem Auto zur Arbeit.',['نذهب بالسيارة إلى العمل.','بە ئۆتۆمبێل دەچینە کار.','We drive to work by car.','با ماشین به سر کار می‌رویم.','Em bi erebeyê diçin kar.','Jedziemy samochodem do pracy.','Mergem cu mașina la muncă.','Мы едем на работу на машине.','Shkojmë në punë me makinë.','İşe arabayla gidiyoruz.'])]},
-{word:'die Autobahn',language:'de',cefrLevel:level,partOfSpeech:'Noun',article:'die',plural:'Autobahnen',infinitive:null,pronunciationIpa:null,syllableBreak:'Au-to-bahn',topics:[topic('transport-and-travel'),topic('everyday-life')],usageLabels:['everyday','spoken','written','high-frequency'],contextLabels:[],grammarNotes:['feminine compound noun'],collocations:[{text:'auf der Autobahn fahren',meaning:'to drive on the motorway'}],wordFamilies:[{lemma:'das Auto',relationLabel:'noun',note:null}],relations:[],meanings:meaning(['طريق سريع','ڕێگای خێرا؛ ئۆتۆبان','motorway; highway','اتوبان؛ بزرگراه','otoban; rêya lezê','autostrada','autostradă','автобан; автомагистраль','autostradë','otoban']),examples:[ex('Auf der Autobahn ist viel Verkehr.',['على الطريق السريع حركة مرور كثيرة.','لەسەر ئۆتۆبانەکە هاتوچۆ زۆرە.','There is a lot of traffic on the motorway.','در اتوبان ترافیک زیاد است.','Li ser otobanê gelek trafîk heye.','Na autostradzie jest duży ruch.','Pe autostradă este mult trafic.','На автобане много движения.','Në autostradë ka shumë trafik.','Otobanda çok trafik var.']),ex('Wir fahren heute nicht auf die Autobahn.',['لن نسلك الطريق السريع اليوم.','ئەمڕۆ ناچینە سەر ئۆتۆبان.','We are not driving onto the motorway today.','امروز وارد اتوبان نمی‌شویم.','Em îro naçin ser otobanê.','Dzisiaj nie wjeżdżamy na autostradę.','Astăzi nu intrăm pe autostradă.','Сегодня мы не выезжаем на автобан.','Sot nuk hyjmë në autostradë.','Bugün otobana çıkmıyoruz.'])]},
-{word:'der Automat',language:'de',cefrLevel:level,partOfSpeech:'Noun',article:'der',plural:'Automaten',infinitive:null,pronunciationIpa:null,syllableBreak:'Au-to-mat',topics:[topic('shopping-and-services'),topic('transport-and-travel'),topic('technology-and-it')],usageLabels:['everyday','spoken','written','customer-facing','high-frequency'],contextLabels:[],grammarNotes:['masculine noun'],collocations:[{text:'am Automaten bezahlen',meaning:'to pay at the machine'}],wordFamilies:[{lemma:'automatisch',relationLabel:'adjective',note:null}],relations:[],meanings:meaning(['آلة بيع؛ جهاز آلي','ئامێری ئۆتۆماتیکی','machine; vending machine; ticket machine','دستگاه خودکار؛ دستگاه فروش','amûra otomatîk','automat','automat','автомат','automat','otomat; makine']),examples:[ex('Der Automat nimmt nur Karten.',['الجهاز يقبل البطاقات فقط.','ئامێرەکە تەنها کارت وەردەگرێت.','The machine only takes cards.','دستگاه فقط کارت قبول می‌کند.','Amûr tenê kartan werdigire.','Automat przyjmuje tylko karty.','Automatul acceptă doar carduri.','Автомат принимает только карты.','Automati pranon vetëm karta.','Otomat sadece kart kabul ediyor.']),ex('Ich kaufe das Ticket am Automaten.',['أشتري التذكرة من الجهاز.','بلیتەکە لە ئامێرەکە دەکڕم.','I buy the ticket at the machine.','بلیت را از دستگاه می‌خرم.','Ez bilêtê ji amûrê dikirim.','Kupuję bilet w automacie.','Cumpăr biletul de la automat.','Я покупаю билет в автомате.','E blej biletën në automat.','Bileti otomattan alıyorum.'])]},
-{word:'automatisch',language:'de',cefrLevel:level,partOfSpeech:'Adjective',article:null,plural:null,infinitive:null,pronunciationIpa:null,syllableBreak:'au-to-ma-tisch',topics:[topic('everyday-life'),topic('technology-and-it'),topic('shopping-and-services')],usageLabels:['everyday','spoken','written','customer-facing','high-frequency'],contextLabels:[],grammarNotes:['adjective/adverb'],collocations:[{text:'automatisch öffnen',meaning:'to open automatically'}],wordFamilies:[{lemma:'der Automat',relationLabel:'noun',note:null}],relations:[],meanings:meaning(['تلقائي؛ أوتوماتيكي','خۆکار؛ ئۆتۆماتیکی','automatic; automatically','خودکار؛ اتوماتیک','otomatîk','automatyczny; automatycznie','automat; automatizat','автоматический; автоматически','automatik; automatikisht','otomatik; otomatik olarak']),examples:[ex('Die Tür öffnet automatisch.',['يفتح الباب تلقائياً.','دەرگاکە خۆکار دەکرێتەوە.','The door opens automatically.','در به‌صورت خودکار باز می‌شود.','Derî bi otomatîk vedibe.','Drzwi otwierają się automatycznie.','Ușa se deschide automat.','Дверь открывается автоматически.','Dera hapet automatikisht.','Kapı otomatik açılıyor.']),ex('Das Licht geht automatisch aus.',['ينطفئ الضوء تلقائياً.','ڕووناکییەکە خۆکار دەکوژێتەوە.','The light turns off automatically.','چراغ خودکار خاموش می‌شود.','Ronahî bi otomatîk vedimirê.','Światło wyłącza się automatycznie.','Lumina se stinge automat.','Свет выключается автоматически.','Drita fiket automatikisht.','Işık otomatik olarak kapanıyor.'])]}
+const fs = require('fs');
+const path = require('path');
+const cp = require('child_process');
+const root = 'D:/_Projects/DarwinLingua';
+const level = 'A1';
+const sourcePath = path.join(root, 'content', `${level}.txt`);
+const taxonomyPath = path.join(root, 'content', 'taxonomy', 'darwinlingua-taxonomy-v1.json');
+const generatedDir = path.join(root, 'content', 'generated');
+const batchNo = '111';
+const packageId = `de-a1-generated-batch-${batchNo}`;
+const outPath = path.join(generatedDir, `${packageId}.json`);
+const langs = ['ar','ckb','en','fa','kmr','pl','ro','ru','sq','tr'];
+const usedLabelKeys = ['everyday','spoken','written','customer-facing','polite','high-frequency'];
+const taxonomy = JSON.parse(fs.readFileSync(taxonomyPath, 'utf8'));
+const labels = usedLabelKeys.map(key => {
+  const found = (taxonomy.labels || []).find(l => l.key === key);
+  if (!found) throw new Error(`Missing label: ${key}`);
+  return found;
+});
+const raw = fs.readFileSync(sourcePath, 'utf8');
+const tokens = raw.split(',').map(s => s.trim()).filter(Boolean);
+const words = tokens.slice(0, 6);
+const expected = ['zweimal','zweite','zwischen','zwölf'];
+if (words.length !== 4) throw new Error(`Expected 4 words, found ${words.length}`);
+if (JSON.stringify(words) !== JSON.stringify(expected)) throw new Error(`Unexpected words: ${JSON.stringify(words)}`);
+function meanings(arr){ return langs.map((language,i)=>({language,text:arr[i]})); }
+function translations(arr){ return langs.map((language,i)=>({language,text:arr[i]})); }
+function ex(baseText, arr){ return {baseText, translations: translations(arr)}; }
+const entries = [
+  {
+    word:'zweimal', language:'de', cefrLevel:level, partOfSpeech:'Adverb', article:null, plural:null, infinitive:null, pronunciationIpa:null, syllableBreak:'zwei-mal',
+    topics:['everyday-life','work-and-jobs','education-and-training'], usageLabels:['everyday','spoken','written','high-frequency'], contextLabels:[], grammarNotes:['adverb of frequency'],
+    collocations:[{text:'zweimal pro Woche', meaning:'twice a week'}], wordFamilies:[{lemma:'zwei', relationLabel:'number', note:null}], relations:[],
+    meanings:meanings(['مرتين','دوو جار','twice','دو بار','du caran','dwa razy','de două ori','два раза','dy herë','iki kez']),
+    examples:[
+      ex('Ich gehe zweimal pro Woche schwimmen.', ['أذهب للسباحة مرتين في الأسبوع.','دوو جار لە هەفتەیەکدا دەچم مەلە.','I go swimming twice a week.','من هفته‌ای دو بار شنا می‌روم.','Ez heftê du caran diçim avjeniyê.','Chodzę pływać dwa razy w tygodniu.','Merg la înot de două ori pe săptămână.','Я хожу плавать два раза в неделю.','Shkoj të notoj dy herë në javë.','Haftada iki kez yüzmeye giderim.']),
+      ex('Bitte wiederholen Sie das Wort zweimal.', ['من فضلك كرر الكلمة مرتين.','تکایە وشەکە دوو جار دووبارە بکەرەوە.','Please repeat the word twice.','لطفاً کلمه را دو بار تکرار کنید.','Ji kerema xwe peyvê du caran dubare bikin.','Proszę powtórzyć słowo dwa razy.','Vă rog să repetați cuvântul de două ori.','Пожалуйста, повторите слово два раза.','Ju lutem përsëriteni fjalën dy herë.','Lütfen kelimeyi iki kez tekrarlayın.'])
+    ]
+  },
+  {
+    word:'zweite', language:'de', cefrLevel:level, partOfSpeech:'Adjective', article:null, plural:null, infinitive:null, pronunciationIpa:null, syllableBreak:'zwei-te',
+    topics:['everyday-life','documents-and-administration','education-and-training'], usageLabels:['everyday','spoken','written','high-frequency'], contextLabels:[], grammarNotes:['ordinal number form of zwei'],
+    collocations:[{text:'die zweite Seite', meaning:'the second page'}], wordFamilies:[{lemma:'zwei', relationLabel:'cardinal number', note:null}], relations:[],
+    meanings:meanings(['الثاني','دووەم','second','دوم','duyem','drugi','al doilea','второй','i dytë','ikinci']),
+    examples:[
+      ex('Lesen Sie bitte die zweite Seite.', ['من فضلك اقرأ الصفحة الثانية.','تکایە لاپەڕەی دووەم بخوێنەوە.','Please read the second page.','لطفاً صفحه دوم را بخوانید.','Ji kerema xwe rûpela duyem bixwînin.','Proszę przeczytać drugą stronę.','Vă rog să citiți a doua pagină.','Пожалуйста, прочитайте вторую страницу.','Ju lutem lexoni faqen e dytë.','Lütfen ikinci sayfayı okuyun.']),
+      ex('Der zweite Termin ist morgen.', ['الموعد الثاني غدًا.','کاتی دووەم سبەیە.','The second appointment is tomorrow.','قرار دوم فرداست.','Hevdîtina duyem sibê ye.','Drugi termin jest jutro.','A doua programare este mâine.','Вторая встреча завтра.','Takimi i dytë është nesër.','İkinci randevu yarın.'])
+    ]
+  },
+  {
+    word:'zwischen', language:'de', cefrLevel:level, partOfSpeech:'Adverb', article:null, plural:null, infinitive:null, pronunciationIpa:null, syllableBreak:'zwi-schen',
+    topics:['everyday-life','housing-and-real-estate','transport-and-travel'], usageLabels:['everyday','spoken','written','high-frequency'], contextLabels:[], grammarNotes:['common word for position or time; between'],
+    collocations:[{text:'zwischen dem Tisch und der Tür', meaning:'between the table and the door'}], wordFamilies:[], relations:[],
+    meanings:meanings(['بين','لە نێوان','between','بین؛ میان','di navbera','między','între','между','midis; ndërmjet','arasında']),
+    examples:[
+      ex('Der Stuhl steht zwischen Tisch und Tür.', ['الكرسي بين الطاولة والباب.','کورسییەکە لە نێوان مێز و دەرگادایە.','The chair is between the table and the door.','صندلی بین میز و در است.','Kursî di navbera masê û derî de ye.','Krzesło stoi między stołem a drzwiami.','Scaunul este între masă și ușă.','Стул стоит между столом и дверью.','Karrigia është midis tavolinës dhe derës.','Sandalye masa ile kapı arasında.']),
+      ex('Der Termin ist zwischen neun und zehn Uhr.', ['الموعد بين الساعة التاسعة والعاشرة.','کاتەکە لە نێوان کاتژمێر نۆ و دەدایە.','The appointment is between nine and ten o’clock.','قرار بین ساعت نه و ده است.','Hevdîtin di navbera saet neh û deh de ye.','Termin jest między dziewiątą a dziesiątą.','Programarea este între ora nouă și zece.','Встреча между девятью и десятью часами.','Takimi është midis orës nëntë dhe dhjetë.','Randevu saat dokuz ile on arasında.'])
+    ]
+  },
+  {
+    word:'zwölf', language:'de', cefrLevel:level, partOfSpeech:'Adjective', article:null, plural:null, infinitive:null, pronunciationIpa:null, syllableBreak:'zwölf',
+    topics:['everyday-life','shopping-and-services','documents-and-administration'], usageLabels:['everyday','spoken','written','high-frequency'], contextLabels:[], grammarNotes:['cardinal number'],
+    collocations:[{text:'zwölf Uhr', meaning:'twelve o’clock'}], wordFamilies:[], relations:[],
+    meanings:meanings(['اثنا عشر','دوازدە','twelve','دوازده','dwanzdeh','dwanaście','doisprezece','двенадцать','dymbëdhjetë','on iki']),
+    examples:[
+      ex('Die Pause beginnt um zwölf Uhr.', ['تبدأ الاستراحة في الساعة الثانية عشرة.','پشووکە کاتژمێر دوازدە دەست پێ دەکات.','The break starts at twelve o’clock.','استراحت ساعت دوازده شروع می‌شود.','Bêhnvedan saet dwanzdehê dest pê dike.','Przerwa zaczyna się o dwunastej.','Pauza începe la ora doisprezece.','Перерыв начинается в двенадцать часов.','Pushimi fillon në orën dymbëdhjetë.','Mola saat on ikide başlıyor.']),
+      ex('Das kostet zwölf Euro.', ['هذا يكلف اثني عشر يورو.','ئەمە دوازدە یۆرۆیە.','That costs twelve euros.','این دوازده یورو قیمت دارد.','Ev dwanzdeh euro ye.','To kosztuje dwanaście euro.','Asta costă doisprezece euro.','Это стоит двенадцать евро.','Kjo kushton dymbëdhjetë euro.','Bu on iki avro tutuyor.'])
+    ]
+  }
 ];
-const pkg={packageVersion:'1.0',packageId,packageName:`German ${level} Generated Batch ${String(batchNo).padStart(3,'0')}`,source:'Hybrid',defaultMeaningLanguages:langs,labels:usedLabels.map(getLabel),entries,collections:[],scenarios:[],conversationStarterPacks:[],eventPreparationPacks:[]};
-fs.writeFileSync(outPath,JSON.stringify(pkg,null,2),'utf8');
-let output='';try{output=execFileSync('dotnet',['run','--project',importProject,'--','--target','shared','--yes',outPath],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','pipe']});}catch(e){output=`${e.stdout||''}${e.stderr||''}`;console.log(output);throw new Error('Import command failed');}
-const ok=output.includes('Entries imported: 6')&&output.includes('Entries invalid: 0')&&output.includes('Warnings: 0');let deleted=false,remainingNow=tokens;
-if(ok){const removeSet=new Set(words);remainingNow=tokens.filter(t=>!removeSet.has(t));fs.writeFileSync(sourcePath,remainingNow.join(', '),'utf8');deleted=true;}
-console.log(JSON.stringify({sourcePath,level,words,outPath,importSummary:output.split(/\r?\n/).filter(l=>/Entries imported|Entries invalid|Warnings/.test(l)),deleted,remainingCount:remainingNow.length,first10Remaining:remainingNow.slice(0,10)},null,2));
+const pkg = {packageVersion:'1.0',packageId,packageName:'German A1 Generated Batch 111',source:'Hybrid',defaultMeaningLanguages:langs,labels,entries,collections:[],scenarios:[],conversationStarterPacks:[],eventPreparationPacks:[]};
+fs.writeFileSync(outPath, JSON.stringify(pkg, null, 2), 'utf8');
+const project = path.join(root, 'src', 'Apps', 'DarwinLingua.ImportTool', 'DarwinLingua.ImportTool.csproj');
+let importOutput = ''; let importOk = false;
+try {
+  importOutput = cp.execSync(`dotnet run --project "${project}" -- --target shared --yes "${outPath}"`, {cwd: root, encoding:'utf8', stdio:['ignore','pipe','pipe']});
+  importOk = /Entries imported:\s*4/.test(importOutput) && /Entries invalid:\s*0/.test(importOutput) && /Warnings:\s*0/.test(importOutput);
+} catch(e) { importOutput = ((e.stdout||'') + (e.stderr||'')).toString(); }
+let deleted = false; let remaining = tokens;
+if (importOk) {
+  const remove = new Map(); words.forEach(w => remove.set(w, (remove.get(w)||0)+1));
+  remaining = [];
+  for (const t of tokens) { const c = remove.get(t)||0; if (c>0) remove.set(t,c-1); else remaining.push(t); }
+  const leftovers = [...remove.entries()].filter(([,c]) => c !== 0);
+  if (leftovers.length) throw new Error(`Exact delete failed: ${JSON.stringify(leftovers)}`);
+  fs.writeFileSync(sourcePath, remaining.join(', '), 'utf8');
+  deleted = true;
+}
+console.log(JSON.stringify({sourcePath,words,outPath,importOk,deleted,importResult:{entriesImported:(importOutput.match(/Entries imported:\s*(\d+)/)||[])[1],entriesInvalid:(importOutput.match(/Entries invalid:\s*(\d+)/)||[])[1],warnings:(importOutput.match(/Warnings:\s*(\d+)/)||[])[1]},remainingCount:remaining.length,first10Remaining:remaining.slice(0,10)}, null, 2));
