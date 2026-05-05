@@ -81,6 +81,12 @@ public sealed partial class WordCollection
         UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 
+    public void RenameSlug(string slug, DateTime updatedAtUtc)
+    {
+        Slug = NormalizeSlug(slug);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     public void AddWord(
         Guid entryId,
         Guid wordEntryId,

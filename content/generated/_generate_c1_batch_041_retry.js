@@ -1,0 +1,29 @@
+const fs=require('fs');
+const path=require('path');
+const {execFileSync}=require('child_process');
+const root='D:/_Projects/DarwinLingua';
+const langs=['ar','ckb','en','fa','kmr','pl','ro','ru','sq','tr'];
+const sourceFile=path.join(root,'content/C1.txt');
+const taxonomy=JSON.parse(fs.readFileSync(path.join(root,'content/taxonomy/darwinlingua-taxonomy-v1.json'),'utf8'));
+const labelMap=new Map((taxonomy.labels||[]).map(l=>[l.key,l]));
+const genDir=path.join(root,'content/generated');
+function split(t){return t.split(',').map(s=>s.trim()).filter(Boolean)}
+function join(a){return a.join(', ')}
+const batch=split(fs.readFileSync(sourceFile,'utf8')).slice(0,6);
+const expected=['die Entpolitisierung','die Entscheidungsfindung','die Entscheidungsprämisse','entschwinden','entsinnen','entspringen'];
+if(batch.join('|')!==expected.join('|')) throw new Error(`Unexpected source tokens before retry: ${batch.join(', ')}`);
+const packageId='de-c1-generated-batch-041-retry';
+const outPath=path.join(genDir,`${packageId}.json`);
+function m(ar,ckb,en,fa,kmr,pl,ro,ru,sq,tr){const v={ar,ckb,en,fa,kmr,pl,ro,ru,sq,tr};return langs.map(language=>({language,text:v[language]}));}
+function e(baseText,ar,ckb,en,fa,kmr,pl,ro,ru,sq,tr){return {baseText,translations:m(ar,ckb,en,fa,kmr,pl,ro,ru,sq,tr)}}
+function labels(keys){return keys.map(k=>{const x=labelMap.get(k);if(!x)throw new Error('Missing label '+k);return JSON.parse(JSON.stringify(x));});}
+const entries=[{word:'die Entscheidungsprämisse',language:'de',cefrLevel:'C1',partOfSpeech:'Noun',article:'die',plural:'Entscheidungsprämissen',infinitive:null,pronunciationIpa:null,syllableBreak:'Ent-schei-dungs-prä-mis-se',topics:['management-and-leadership','advanced-analysis','planning-and-projects'],usageLabels:['academic','business','analysis','written','advanced'],contextLabels:[],grammarNotes:['feminine compound noun; plural: die Entscheidungsprämissen'],collocations:[{text:'eine zentrale Entscheidungsprämisse',meaning:'a central decision premise'},{text:'Entscheidungsprämissen offenlegen',meaning:'to disclose decision premises'}],wordFamilies:[{lemma:'die Prämisse',relationLabel:'noun',note:null},{lemma:'entscheiden',relationLabel:'verb',note:null}],relations:[],meanings:m('فرضية قرار؛ شرط أساسي لاتخاذ القرار','پێشگریمانی بڕیار؛ مەرجی بنەڕەتی بۆ بڕیاردان','decision premise; underlying assumption for a decision','پیش‌فرض تصمیم؛ فرض پایه برای تصمیم‌گیری','pêşbîniya biryarê; texmîna bingehîn ji bo biryardanê','przesłanka decyzyjna; założenie decyzji','premisă decizională; ipoteză de bază a deciziei','предпосылка решения; базовое допущение','premisë vendimmarrjeje; supozim bazë për vendim','karar öncülü; karar için temel varsayım'),examples:[e('Eine zentrale Entscheidungsprämisse war, dass die Nachfrage im zweiten Halbjahr stabil bleibt.','كانت إحدى الفرضيات الأساسية للقرار أن الطلب سيبقى مستقرًا في النصف الثاني من العام.','پێشگریمانییەکی سەرەکیی بڕیار ئەوە بوو کە داواکاری لە نیوەی دووەمی ساڵدا جێگیر دەمێنێتەوە.','A central decision premise was that demand would remain stable in the second half of the year.','یکی از پیش‌فرض‌های اصلی تصمیم این بود که تقاضا در نیمه دوم سال ثابت می‌ماند.','Pêşbîniyeke sereke ya biryarê ev bû ku daxwaz di nîvê duyemîn ê salê de stabîl dimîne.','Centralną przesłanką decyzyjną było założenie, że popyt w drugim półroczu pozostanie stabilny.','O premisă decizională centrală a fost că cererea va rămâne stabilă în a doua jumătate a anului.','Ключевой предпосылкой решения было то, что спрос во втором полугодии останется стабильным.','Një premisë qendrore e vendimit ishte që kërkesa të mbetej e qëndrueshme në gjysmën e dytë të vitit.','Temel karar öncülü, talebin yılın ikinci yarısında istikrarlı kalacağıydı.'),e('Wenn sich eine Entscheidungsprämisse ändert, muss auch die Empfehlung neu bewertet werden.','إذا تغيّرت فرضية من فرضيات القرار، فيجب إعادة تقييم التوصية أيضًا.','ئەگەر پێشگریمانییەکی بڕیار بگۆڕێت، پێشنیارەکەش دەبێت جارێکی تر هەڵبسەنگێنرێت.','If a decision premise changes, the recommendation must also be reassessed.','اگر یکی از پیش‌فرض‌های تصمیم تغییر کند، توصیه نیز باید دوباره ارزیابی شود.','Heke pêşbîniyeke biryarê biguhere, divê pêşniyar jî ji nû ve were nirxandin.','Jeśli zmienia się przesłanka decyzyjna, rekomendację trzeba również ocenić ponownie.','Dacă se schimbă o premisă decizională, recomandarea trebuie reevaluată.','Если меняется предпосылка решения, рекомендацию также нужно пересмотреть.','Nëse ndryshon një premisë vendimmarrjeje, edhe rekomandimi duhet rivlerësuar.','Bir karar öncülü değişirse öneri de yeniden değerlendirilmelidir.')]}];
+const used=[...new Set(entries.flatMap(x=>[...x.usageLabels,...x.contextLabels]))];
+const pkg={packageVersion:'1.0',packageId,packageName:'German C1 Generated Batch 041 Retry',source:'Hybrid',defaultMeaningLanguages:langs,labels:labels(used),entries,collections:[],scenarios:[],conversationStarterPacks:[],eventPreparationPacks:[]};
+fs.writeFileSync(outPath,JSON.stringify(pkg,null,2),'utf8');
+const output=execFileSync('dotnet',['run','--project',path.join(root,'src/Apps/DarwinLingua.ImportTool/DarwinLingua.ImportTool.csproj'),'--','--target','shared','--yes',outPath],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','pipe']});
+const imported=/Entries imported:\s*(\d+)/.exec(output)?.[1]||'0';const invalid=/Entries invalid:\s*(\d+)/.exec(output)?.[1]||'0';const warnings=/Warnings:\s*(\d+)/.exec(output)?.[1]||'0';
+let deleted=false;if(imported==='1'&&invalid==='0'&&warnings==='0'){const current=split(fs.readFileSync(sourceFile,'utf8'));fs.writeFileSync(sourceFile,join(current.slice(6)),'utf8');deleted=true;}
+const after=split(fs.readFileSync(sourceFile,'utf8'));
+console.log(JSON.stringify({retryPath:outPath,retryImported:imported,retryInvalid:invalid,retryWarnings:warnings,deleted,remainingCount:after.length,first10Remaining:after.slice(0,10)},null,2));
+

@@ -1,0 +1,1404 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c1-generated-batch-060",
+  "packageName": "German C1 Generated Batch 060",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "advanced",
+      "displayName": "Advanced",
+      "sortOrder": 260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fortgeschritten"
+        },
+        {
+          "language": "ar",
+          "name": "متقدم"
+        },
+        {
+          "language": "ckb",
+          "name": "پێشکەوتوو"
+        },
+        {
+          "language": "en",
+          "name": "Advanced"
+        },
+        {
+          "language": "fa",
+          "name": "پیشرفته"
+        },
+        {
+          "language": "kmr",
+          "name": "Pêşketî"
+        },
+        {
+          "language": "pl",
+          "name": "Zaawansowany"
+        },
+        {
+          "language": "ro",
+          "name": "Avansat"
+        },
+        {
+          "language": "ru",
+          "name": "Продвинутый"
+        },
+        {
+          "language": "sq",
+          "name": "I avancuar"
+        },
+        {
+          "language": "tr",
+          "name": "İleri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "academic",
+      "displayName": "Academic",
+      "sortOrder": 90,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Akademisch"
+        },
+        {
+          "language": "ar",
+          "name": "أكاديمي"
+        },
+        {
+          "language": "ckb",
+          "name": "ئەکادیمی"
+        },
+        {
+          "language": "en",
+          "name": "Academic"
+        },
+        {
+          "language": "fa",
+          "name": "آکادمیک"
+        },
+        {
+          "language": "kmr",
+          "name": "Akademîk"
+        },
+        {
+          "language": "pl",
+          "name": "Akademicki"
+        },
+        {
+          "language": "ro",
+          "name": "Academic"
+        },
+        {
+          "language": "ru",
+          "name": "Академический"
+        },
+        {
+          "language": "sq",
+          "name": "Akademik"
+        },
+        {
+          "language": "tr",
+          "name": "Akademik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "spoken",
+      "displayName": "Spoken",
+      "sortOrder": 40,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Gesprochen"
+        },
+        {
+          "language": "ar",
+          "name": "شفهي"
+        },
+        {
+          "language": "ckb",
+          "name": "زارەکی"
+        },
+        {
+          "language": "en",
+          "name": "Spoken"
+        },
+        {
+          "language": "fa",
+          "name": "گفتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Devkî"
+        },
+        {
+          "language": "pl",
+          "name": "Mówiony"
+        },
+        {
+          "language": "ro",
+          "name": "Vorbit"
+        },
+        {
+          "language": "ru",
+          "name": "Разговорный"
+        },
+        {
+          "language": "sq",
+          "name": "I folur"
+        },
+        {
+          "language": "tr",
+          "name": "Konuşma dili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "analysis",
+      "displayName": "Analysis",
+      "sortOrder": 200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Analyse"
+        },
+        {
+          "language": "ar",
+          "name": "تحليل"
+        },
+        {
+          "language": "ckb",
+          "name": "شیکردنەوە"
+        },
+        {
+          "language": "en",
+          "name": "Analysis"
+        },
+        {
+          "language": "fa",
+          "name": "تحلیل"
+        },
+        {
+          "language": "kmr",
+          "name": "Analîz"
+        },
+        {
+          "language": "pl",
+          "name": "Analiza"
+        },
+        {
+          "language": "ro",
+          "name": "Analiză"
+        },
+        {
+          "language": "ru",
+          "name": "Анализ"
+        },
+        {
+          "language": "sq",
+          "name": "Analizë"
+        },
+        {
+          "language": "tr",
+          "name": "Analiz"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "in Anbetracht",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Adverb",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "in An-be-tracht",
+      "topics": [
+        "business-communication",
+        "documents-and-administration",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "prepositional phrase used with genitive: in Anbetracht der Lage"
+      ],
+      "collocations": [
+        {
+          "text": "in Anbetracht der Risiken",
+          "meaning": "in view of the risks"
+        },
+        {
+          "text": "in Anbetracht der Umstände",
+          "meaning": "given the circumstances"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Anbetracht",
+          "relationLabel": "noun",
+          "note": "only common in fixed phrase"
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "نظرًا إلى؛ بالنظر إلى"
+        },
+        {
+          "language": "ckb",
+          "text": "لەبەرچاوگرتنی؛ بە لەبەرچاوگرتنی"
+        },
+        {
+          "language": "en",
+          "text": "in view of; considering"
+        },
+        {
+          "language": "fa",
+          "text": "با توجه به؛ نظر به"
+        },
+        {
+          "language": "kmr",
+          "text": "li ber çavan girtina; ji ber"
+        },
+        {
+          "language": "pl",
+          "text": "ze względu na; biorąc pod uwagę"
+        },
+        {
+          "language": "ro",
+          "text": "având în vedere; ținând cont de"
+        },
+        {
+          "language": "ru",
+          "text": "с учетом; принимая во внимание"
+        },
+        {
+          "language": "sq",
+          "text": "duke marrë parasysh"
+        },
+        {
+          "language": "tr",
+          "text": "göz önüne alındığında; dikkate alarak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "In Anbetracht der Risiken sollten wir den Rollout um eine Woche verschieben.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "نظرًا إلى المخاطر ينبغي أن نؤجل الإطلاق أسبوعًا."
+            },
+            {
+              "language": "ckb",
+              "text": "لەبەرچاوگرتنی مەترسییەکان، دەبێت rollout ـەکە هەفتەیەک دوا بخەین."
+            },
+            {
+              "language": "en",
+              "text": "In view of the risks, we should postpone the rollout by one week."
+            },
+            {
+              "language": "fa",
+              "text": "با توجه به ریسک‌ها، باید rollout را یک هفته به تعویق بیندازیم."
+            },
+            {
+              "language": "kmr",
+              "text": "Li ber çavan girtina metirsiyan, divê em rolloutê hefteyekê paş bixin."
+            },
+            {
+              "language": "pl",
+              "text": "Ze względu na ryzyka powinniśmy przesunąć wdrożenie o tydzień."
+            },
+            {
+              "language": "ro",
+              "text": "Având în vedere riscurile, ar trebui să amânăm lansarea cu o săptămână."
+            },
+            {
+              "language": "ru",
+              "text": "С учетом рисков нам следует отложить rollout на неделю."
+            },
+            {
+              "language": "sq",
+              "text": "Duke marrë parasysh rreziqet, duhet ta shtyjmë rollout-in me një javë."
+            },
+            {
+              "language": "tr",
+              "text": "Riskler göz önüne alındığında rollout’u bir hafta ertelemeliyiz."
+            }
+          ]
+        },
+        {
+          "baseText": "In Anbetracht der langen Wartezeit bot das Hotel den Gästen ein kostenloses Abendessen an.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بالنظر إلى مدة الانتظار الطويلة عرض الفندق على الضيوف عشاءً مجانيًا."
+            },
+            {
+              "language": "ckb",
+              "text": "لەبەرچاوگرتنی کاتی چاوەڕوانیی درێژ، هوتێلەکە نانی ئێوارەی خۆڕایی پێشکەش بە میوانەکان کرد."
+            },
+            {
+              "language": "en",
+              "text": "Considering the long waiting time, the hotel offered guests a free dinner."
+            },
+            {
+              "language": "fa",
+              "text": "با توجه به زمان انتظار طولانی، هتل به مهمانان شام رایگان پیشنهاد داد."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji ber dema çaverêkirina dirêj, otêlê şîva belaş pêşkêşî mêvanan kir."
+            },
+            {
+              "language": "pl",
+              "text": "Ze względu na długi czas oczekiwania hotel zaoferował gościom bezpłatną kolację."
+            },
+            {
+              "language": "ro",
+              "text": "Având în vedere timpul lung de așteptare, hotelul le-a oferit oaspeților o cină gratuită."
+            },
+            {
+              "language": "ru",
+              "text": "С учетом долгого ожидания отель предложил гостям бесплатный ужин."
+            },
+            {
+              "language": "sq",
+              "text": "Duke marrë parasysh kohën e gjatë të pritjes, hoteli u ofroi mysafirëve darkë falas."
+            },
+            {
+              "language": "tr",
+              "text": "Uzun bekleme süresi dikkate alındığında otel konuklara ücretsiz akşam yemeği sundu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "in Anlehnung an",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Adverb",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "in An-leh-nung an",
+      "topics": [
+        "documents-and-administration",
+        "business-communication",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "academic",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "fixed prepositional phrase used with accusative: in Anlehnung an den Standard"
+      ],
+      "collocations": [
+        {
+          "text": "in Anlehnung an einen Standard",
+          "meaning": "based on a standard"
+        },
+        {
+          "text": "in Anlehnung an ein Modell",
+          "meaning": "following a model"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "anlehnen",
+          "relationLabel": "verb",
+          "note": "to lean on or base on"
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "استنادًا إلى؛ على غرار"
+        },
+        {
+          "language": "ckb",
+          "text": "بە پشتبەستن بە؛ بە شێوەی هاوشێوەی"
+        },
+        {
+          "language": "en",
+          "text": "based on; following; modeled on"
+        },
+        {
+          "language": "fa",
+          "text": "با الهام از؛ بر اساس؛ به پیروی از"
+        },
+        {
+          "language": "kmr",
+          "text": "li gor; bi piştgirîya"
+        },
+        {
+          "language": "pl",
+          "text": "w nawiązaniu do; na podstawie"
+        },
+        {
+          "language": "ro",
+          "text": "în baza; după modelul"
+        },
+        {
+          "language": "ru",
+          "text": "по аналогии с; на основе"
+        },
+        {
+          "language": "sq",
+          "text": "në bazë të; sipas modelit të"
+        },
+        {
+          "language": "tr",
+          "text": "dayanarak; örnek alınarak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Richtlinie wurde in Anlehnung an den europäischen Datenschutzstandard formuliert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "صيغ التوجيه استنادًا إلى معيار حماية البيانات الأوروبي."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕێنماییەکە بە پشتبەستن بە ستانداردی ئەوروپی پاراستنی داتا داڕێژرا."
+            },
+            {
+              "language": "en",
+              "text": "The guideline was formulated based on the European data protection standard."
+            },
+            {
+              "language": "fa",
+              "text": "دستورالعمل بر اساس استاندارد اروپایی حفاظت از داده تدوین شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Rêbername li gor standarda Ewropayî ya parastina daneyan hate formulekirin."
+            },
+            {
+              "language": "pl",
+              "text": "Wytyczną sformułowano w nawiązaniu do europejskiego standardu ochrony danych."
+            },
+            {
+              "language": "ro",
+              "text": "Ghidul a fost formulat în baza standardului european de protecție a datelor."
+            },
+            {
+              "language": "ru",
+              "text": "Руководство было сформулировано на основе европейского стандарта защиты данных."
+            },
+            {
+              "language": "sq",
+              "text": "Udhëzimi u formulua në bazë të standardit evropian të mbrojtjes së të dhënave."
+            },
+            {
+              "language": "tr",
+              "text": "Yönerge Avrupa veri koruma standardı esas alınarak formüle edildi."
+            }
+          ]
+        },
+        {
+          "baseText": "In Anlehnung an frühere Studien unterscheiden wir drei Nutzertypen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "استنادًا إلى دراسات سابقة نميز ثلاثة أنواع من المستخدمين."
+            },
+            {
+              "language": "ckb",
+              "text": "بە پشتبەستن بە توێژینەوە پێشوەکان، سێ جۆری بەکارهێنەر جیا دەکەینەوە."
+            },
+            {
+              "language": "en",
+              "text": "Following earlier studies, we distinguish three types of users."
+            },
+            {
+              "language": "fa",
+              "text": "با الهام از مطالعات پیشین، سه نوع کاربر را از هم جدا می‌کنیم."
+            },
+            {
+              "language": "kmr",
+              "text": "Li gor lêkolînên berê, em sê cure bikarhêner cuda dikin."
+            },
+            {
+              "language": "pl",
+              "text": "W nawiązaniu do wcześniejszych badań wyróżniamy trzy typy użytkowników."
+            },
+            {
+              "language": "ro",
+              "text": "În baza studiilor anterioare, distingem trei tipuri de utilizatori."
+            },
+            {
+              "language": "ru",
+              "text": "По аналогии с предыдущими исследованиями мы выделяем три типа пользователей."
+            },
+            {
+              "language": "sq",
+              "text": "Në bazë të studimeve të mëparshme, dallojmë tri lloje përdoruesish."
+            },
+            {
+              "language": "tr",
+              "text": "Önceki çalışmalara dayanarak üç kullanıcı tipi ayırt ediyoruz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "in diesem Sinne",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Adverb",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "in die-sem Sin-ne",
+      "topics": [
+        "business-communication",
+        "meetings-and-presentations",
+        "documents-and-administration"
+      ],
+      "usageLabels": [
+        "formal",
+        "spoken",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "discourse phrase meaning in this sense or with that in mind"
+      ],
+      "collocations": [
+        {
+          "text": "in diesem Sinne fortfahren",
+          "meaning": "to continue in this spirit"
+        },
+        {
+          "text": "in diesem Sinne verstehen",
+          "meaning": "to understand in this sense"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Sinn",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "بهذا المعنى؛ من هذا المنطلق"
+        },
+        {
+          "language": "ckb",
+          "text": "بەم واتایە؛ بەم شێوەیە"
+        },
+        {
+          "language": "en",
+          "text": "in this sense; with that in mind"
+        },
+        {
+          "language": "fa",
+          "text": "به این معنا؛ از این منظر"
+        },
+        {
+          "language": "kmr",
+          "text": "bi vê wateyê"
+        },
+        {
+          "language": "pl",
+          "text": "w tym sensie"
+        },
+        {
+          "language": "ro",
+          "text": "în acest sens"
+        },
+        {
+          "language": "ru",
+          "text": "в этом смысле"
+        },
+        {
+          "language": "sq",
+          "text": "në këtë kuptim"
+        },
+        {
+          "language": "tr",
+          "text": "bu anlamda; bu doğrultuda"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "In diesem Sinne ist Automatisierung nicht das Ziel, sondern ein Mittel zur Entlastung.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بهذا المعنى ليست الأتمتة هي الهدف، بل وسيلة للتخفيف."
+            },
+            {
+              "language": "ckb",
+              "text": "بەم واتایە ئۆتۆماتیککردن ئامانج نییە، بەڵکو ئامرازێکە بۆ کەمکردنەوەی بار."
+            },
+            {
+              "language": "en",
+              "text": "In this sense, automation is not the goal but a means of relieving workload."
+            },
+            {
+              "language": "fa",
+              "text": "به این معنا، خودکارسازی هدف نیست، بلکه ابزاری برای کاهش فشار کار است."
+            },
+            {
+              "language": "kmr",
+              "text": "Bi vê wateyê, otomatîkkirin ne armanc e, lê amûrek e ji bo kêmkirina barê kar."
+            },
+            {
+              "language": "pl",
+              "text": "W tym sensie automatyzacja nie jest celem, lecz środkiem odciążenia."
+            },
+            {
+              "language": "ro",
+              "text": "În acest sens, automatizarea nu este scopul, ci un mijloc de reducere a sarcinii."
+            },
+            {
+              "language": "ru",
+              "text": "В этом смысле автоматизация не является целью, а средством разгрузки."
+            },
+            {
+              "language": "sq",
+              "text": "Në këtë kuptim, automatizimi nuk është qëllimi, por mjet për lehtësimin e ngarkesës."
+            },
+            {
+              "language": "tr",
+              "text": "Bu anlamda otomasyon amaç değil, yükü azaltmaya yönelik bir araçtır."
+            }
+          ]
+        },
+        {
+          "baseText": "In diesem Sinne danke ich allen, die den schwierigen Übergang mitgetragen haben.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بهذا المعنى أشكر كل من دعم هذا الانتقال الصعب."
+            },
+            {
+              "language": "ckb",
+              "text": "بەم شێوەیە سوپاسی هەموو ئەوانە دەکەم کە گواستنەوەی قورسەکەیان هەڵگرت."
+            },
+            {
+              "language": "en",
+              "text": "With that in mind, I thank everyone who supported the difficult transition."
+            },
+            {
+              "language": "fa",
+              "text": "از این منظر، از همه کسانی که این گذار دشوار را همراهی کردند تشکر می‌کنم."
+            },
+            {
+              "language": "kmr",
+              "text": "Bi vê wateyê ez spasî hemû kesên ku vê derbasbûna dijwar piştgirî kirin dikim."
+            },
+            {
+              "language": "pl",
+              "text": "W tym sensie dziękuję wszystkim, którzy współnieśli trudne przejście."
+            },
+            {
+              "language": "ro",
+              "text": "În acest sens, le mulțumesc tuturor celor care au susținut tranziția dificilă."
+            },
+            {
+              "language": "ru",
+              "text": "В этом смысле я благодарю всех, кто поддержал сложный переход."
+            },
+            {
+              "language": "sq",
+              "text": "Në këtë kuptim falënderoj të gjithë ata që mbështetën kalimin e vështirë."
+            },
+            {
+              "language": "tr",
+              "text": "Bu doğrultuda, zorlu geçişi destekleyen herkese teşekkür ederim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "in letzter Konsequenz",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Adverb",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "in letz-ter Kon-se-quenz",
+      "topics": [
+        "advanced-analysis",
+        "management-and-leadership",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "formal",
+        "analysis",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "fixed phrase meaning ultimately or taken to its final consequence"
+      ],
+      "collocations": [
+        {
+          "text": "in letzter Konsequenz bedeuten",
+          "meaning": "to ultimately mean"
+        },
+        {
+          "text": "in letzter Konsequenz führen zu",
+          "meaning": "to ultimately lead to"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Konsequenz",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "في نهاية المطاف؛ عند أخذ الأمر إلى نتيجته النهائية"
+        },
+        {
+          "language": "ckb",
+          "text": "لە کۆتاییترین ئەنجامدا؛ بە ئەنجامی دواوە"
+        },
+        {
+          "language": "en",
+          "text": "ultimately; in the final consequence"
+        },
+        {
+          "language": "fa",
+          "text": "در نهایت؛ در آخرین پیامد"
+        },
+        {
+          "language": "kmr",
+          "text": "di encama dawî de"
+        },
+        {
+          "language": "pl",
+          "text": "w ostatecznej konsekwencji"
+        },
+        {
+          "language": "ro",
+          "text": "în ultimă consecință"
+        },
+        {
+          "language": "ru",
+          "text": "в конечном итоге"
+        },
+        {
+          "language": "sq",
+          "text": "në pasojën përfundimtare"
+        },
+        {
+          "language": "tr",
+          "text": "sonuçta; nihai olarak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "In letzter Konsequenz bedeutet diese Entscheidung, dass wir ein Produkt einstellen müssen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في نهاية المطاف يعني هذا القرار أننا يجب أن نوقف منتجًا."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کۆتاییترین ئەنجامدا ئەم بڕیارە مانای ئەوەیە کە دەبێت بەرهەمێک ڕابگرین."
+            },
+            {
+              "language": "en",
+              "text": "Ultimately, this decision means that we have to discontinue a product."
+            },
+            {
+              "language": "fa",
+              "text": "در نهایت، این تصمیم به این معناست که باید یک محصول را متوقف کنیم."
+            },
+            {
+              "language": "kmr",
+              "text": "Di encama dawî de ev biryar tê vê wateyê ku divê em hilberekê rawestînin."
+            },
+            {
+              "language": "pl",
+              "text": "W ostatecznej konsekwencji ta decyzja oznacza, że musimy wycofać produkt."
+            },
+            {
+              "language": "ro",
+              "text": "În ultimă consecință, această decizie înseamnă că trebuie să oprim un produs."
+            },
+            {
+              "language": "ru",
+              "text": "В конечном итоге это решение означает, что нам придется снять продукт."
+            },
+            {
+              "language": "sq",
+              "text": "Në pasojën përfundimtare, ky vendim do të thotë se duhet të ndërpresim një produkt."
+            },
+            {
+              "language": "tr",
+              "text": "Sonuçta bu karar bir ürünü sonlandırmamız gerektiği anlamına gelir."
+            }
+          ]
+        },
+        {
+          "baseText": "Wer jede Abweichung toleriert, hebt in letzter Konsequenz die Regel selbst auf.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "من يتسامح مع كل انحراف يلغي في النهاية القاعدة نفسها."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەوەی هەر لادانێک قبوڵ بکات، لە ئەنجامی دواییدا خودی ڕێساکە هەڵدەوەشێنێتەوە."
+            },
+            {
+              "language": "en",
+              "text": "Anyone who tolerates every deviation ultimately abolishes the rule itself."
+            },
+            {
+              "language": "fa",
+              "text": "کسی که هر انحرافی را تحمل کند، در نهایت خود قاعده را از بین می‌برد."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesê her deviationek qebûl bike, di encama dawî de xwe rêgezê betal dike."
+            },
+            {
+              "language": "pl",
+              "text": "Kto toleruje każde odstępstwo, w ostatecznej konsekwencji znosi samą zasadę."
+            },
+            {
+              "language": "ro",
+              "text": "Cine tolerează orice abatere anulează în ultimă consecință regula însăși."
+            },
+            {
+              "language": "ru",
+              "text": "Тот, кто терпит любое отклонение, в конечном итоге отменяет само правило."
+            },
+            {
+              "language": "sq",
+              "text": "Kush toleron çdo devijim, në fund e shfuqizon vetë rregullin."
+            },
+            {
+              "language": "tr",
+              "text": "Her sapmayı tolere eden kişi nihai olarak kuralın kendisini ortadan kaldırır."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "indes",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Adverb",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "in-des",
+      "topics": [
+        "business-communication",
+        "advanced-analysis",
+        "documents-and-administration"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "formal connector meaning however or meanwhile depending on context"
+      ],
+      "collocations": [
+        {
+          "text": "indes bleibt fraglich",
+          "meaning": "however, it remains questionable"
+        },
+        {
+          "text": "indes zeigt sich",
+          "meaning": "however, it becomes apparent"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "indessen",
+          "relationLabel": "adverb",
+          "note": "closely related form"
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "غير أن؛ في هذه الأثناء"
+        },
+        {
+          "language": "ckb",
+          "text": "بەڵام؛ لەو کاتەدا"
+        },
+        {
+          "language": "en",
+          "text": "however; meanwhile"
+        },
+        {
+          "language": "fa",
+          "text": "با این حال؛ در همین حال"
+        },
+        {
+          "language": "kmr",
+          "text": "lêbelê; di vê navberê de"
+        },
+        {
+          "language": "pl",
+          "text": "jednak; tymczasem"
+        },
+        {
+          "language": "ro",
+          "text": "însă; între timp"
+        },
+        {
+          "language": "ru",
+          "text": "однако; тем временем"
+        },
+        {
+          "language": "sq",
+          "text": "megjithatë; ndërkohë"
+        },
+        {
+          "language": "tr",
+          "text": "ancak; bu arada"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Zahlen wirken stabil; indes bleibt die Datenbasis zu schmal für eine sichere Prognose.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تبدو الأرقام مستقرة؛ غير أن قاعدة البيانات لا تزال ضيقة جدًا لتوقع آمن."
+            },
+            {
+              "language": "ckb",
+              "text": "ژمارەکان جێگیر دەردەکەون؛ بەڵام بنەمای داتا زۆر تەسکە بۆ پێشبینییەکی دڵنیا."
+            },
+            {
+              "language": "en",
+              "text": "The figures seem stable; however, the data basis remains too narrow for a reliable forecast."
+            },
+            {
+              "language": "fa",
+              "text": "ارقام پایدار به نظر می‌رسند؛ با این حال پایه داده برای پیش‌بینی مطمئن هنوز بسیار محدود است."
+            },
+            {
+              "language": "kmr",
+              "text": "Hejmar stabîl xuya dikin; lêbelê bingeha daneyan ji bo pêşbîniyeke pêbawer pir teng dimîne."
+            },
+            {
+              "language": "pl",
+              "text": "Liczby wydają się stabilne; jednak baza danych pozostaje zbyt wąska do pewnej prognozy."
+            },
+            {
+              "language": "ro",
+              "text": "Cifrele par stabile; însă baza de date rămâne prea îngustă pentru o prognoză sigură."
+            },
+            {
+              "language": "ru",
+              "text": "Цифры выглядят стабильными; однако база данных остается слишком узкой для надежного прогноза."
+            },
+            {
+              "language": "sq",
+              "text": "Shifrat duken të qëndrueshme; megjithatë baza e të dhënave mbetet shumë e ngushtë për një parashikim të sigurt."
+            },
+            {
+              "language": "tr",
+              "text": "Rakamlar istikrarlı görünüyor; ancak veri temeli güvenilir bir tahmin için hâlâ çok dar."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Vertrag wurde unterzeichnet; indes liefen die technischen Vorbereitungen weiter.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم توقيع العقد؛ وفي هذه الأثناء استمرت التحضيرات التقنية."
+            },
+            {
+              "language": "ckb",
+              "text": "گرێبەستەکە واژۆ کرا؛ لەو کاتەدا ئامادەکارییە تەکنیکییەکان بەردەوام بوون."
+            },
+            {
+              "language": "en",
+              "text": "The contract was signed; meanwhile, the technical preparations continued."
+            },
+            {
+              "language": "fa",
+              "text": "قرارداد امضا شد؛ در همین حال آماده‌سازی‌های فنی ادامه داشت."
+            },
+            {
+              "language": "kmr",
+              "text": "Peyman hate îmzekirin; di vê navberê de amadekariyên teknîkî berdewam bûn."
+            },
+            {
+              "language": "pl",
+              "text": "Umowę podpisano; tymczasem przygotowania techniczne trwały dalej."
+            },
+            {
+              "language": "ro",
+              "text": "Contractul a fost semnat; între timp, pregătirile tehnice au continuat."
+            },
+            {
+              "language": "ru",
+              "text": "Договор был подписан; тем временем техническая подготовка продолжалась."
+            },
+            {
+              "language": "sq",
+              "text": "Kontrata u nënshkrua; ndërkohë përgatitjet teknike vazhduan."
+            },
+            {
+              "language": "tr",
+              "text": "Sözleşme imzalandı; bu arada teknik hazırlıklar sürdü."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "ineinanderlaufen",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "ineinanderlaufen",
+      "pronunciationIpa": null,
+      "syllableBreak": "in-ei-nan-der-lau-fen",
+      "topics": [
+        "planning-and-projects",
+        "business-communication",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "analysis",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "separable compound verb: läuft ineinander, lief ineinander, ist ineinandergelaufen"
+      ],
+      "collocations": [
+        {
+          "text": "Prozesse laufen ineinander",
+          "meaning": "processes merge into each other"
+        },
+        {
+          "text": "Farben laufen ineinander",
+          "meaning": "colors run into each other"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "laufen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يتداخل؛ يمتزج؛ يندمج"
+        },
+        {
+          "language": "ckb",
+          "text": "تێکەڵ دەبێت؛ یەک لە ناو یەک دەڕوات"
+        },
+        {
+          "language": "en",
+          "text": "to merge; to run into each other; to overlap"
+        },
+        {
+          "language": "fa",
+          "text": "در هم ادغام شدن؛ تداخل پیدا کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "tevlihev bûn; li hev ketin"
+        },
+        {
+          "language": "pl",
+          "text": "zlewać się; nachodzić na siebie"
+        },
+        {
+          "language": "ro",
+          "text": "a se contopi; a se suprapune"
+        },
+        {
+          "language": "ru",
+          "text": "сливаться; накладываться"
+        },
+        {
+          "language": "sq",
+          "text": "të ndërthuresh; të shkrihesh në njëri-tjetrin"
+        },
+        {
+          "language": "tr",
+          "text": "iç içe geçmek; birbirine karışmak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "In der Umstellung liefen mehrere Prozesse ineinander, was die Fehleranalyse erschwerte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "أثناء التحول تداخلت عدة عمليات، مما صعّب تحليل الأخطاء."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی گۆڕانکارییەکەدا چەند پرۆسە تێکەڵ بوون، ئەمەش شیکردنەوەی هەڵەکانی قورس کرد."
+            },
+            {
+              "language": "en",
+              "text": "During the transition, several processes overlapped, which made error analysis more difficult."
+            },
+            {
+              "language": "fa",
+              "text": "در زمان تغییر، چند فرایند در هم ادغام شدند و تحلیل خطا را دشوارتر کردند."
+            },
+            {
+              "language": "kmr",
+              "text": "Di guherînê de çend pêvajo tevlihev bûn û analîza xeletiyan dijwartir kir."
+            },
+            {
+              "language": "pl",
+              "text": "Podczas zmiany kilka procesów nałożyło się na siebie, co utrudniło analizę błędów."
+            },
+            {
+              "language": "ro",
+              "text": "În timpul tranziției, mai multe procese s-au suprapus, ceea ce a îngreunat analiza erorilor."
+            },
+            {
+              "language": "ru",
+              "text": "Во время перехода несколько процессов наложились друг на друга, что усложнило анализ ошибок."
+            },
+            {
+              "language": "sq",
+              "text": "Gjatë kalimit, disa procese u ndërthurën, gjë që e vështirësoi analizën e gabimeve."
+            },
+            {
+              "language": "tr",
+              "text": "Geçiş sırasında birkaç süreç iç içe geçti ve hata analizini zorlaştırdı."
+            }
+          ]
+        },
+        {
+          "baseText": "Auf dem nassen Papier liefen die Farben langsam ineinander.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "على الورق المبلل امتزجت الألوان ببطء."
+            },
+            {
+              "language": "ckb",
+              "text": "لەسەر کاغەزی تەڕەکە ڕەنگەکان بەهێواشی تێکەڵ بوون."
+            },
+            {
+              "language": "en",
+              "text": "On the wet paper, the colors slowly ran into each other."
+            },
+            {
+              "language": "fa",
+              "text": "روی کاغذ خیس، رنگ‌ها آرام‌آرام در هم آمیختند."
+            },
+            {
+              "language": "kmr",
+              "text": "Li ser kaxiza şil, reng hêdî hêdî tevlihev bûn."
+            },
+            {
+              "language": "pl",
+              "text": "Na mokrym papierze kolory powoli zlewały się ze sobą."
+            },
+            {
+              "language": "ro",
+              "text": "Pe hârtia umedă, culorile s-au contopit încet."
+            },
+            {
+              "language": "ru",
+              "text": "На мокрой бумаге цвета медленно сливались друг с другом."
+            },
+            {
+              "language": "sq",
+              "text": "Në letrën e lagur, ngjyrat u përzien ngadalë me njëra-tjetrën."
+            },
+            {
+              "language": "tr",
+              "text": "Islak kağıtta renkler yavaşça birbirine karıştı."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

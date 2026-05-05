@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\BuildingBlocks\DarwinLingua.Infrastructure\DarwinLingua.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Catalog\DarwinLingua.Catalog.Application\DarwinLingua.Catalog.Application.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Catalog\DarwinLingua.Catalog.Infrastructure\DarwinLingua.Catalog.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\ContentOps\DarwinLingua.ContentOps.Application\DarwinLingua.ContentOps.Application.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\ContentOps\DarwinLingua.ContentOps.Infrastructure\DarwinLingua.ContentOps.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Learning\DarwinLingua.Learning.Application\DarwinLingua.Learning.Application.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Learning\DarwinLingua.Learning.Infrastructure\DarwinLingua.Learning.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Localization\DarwinLingua.Localization.Application\DarwinLingua.Localization.Application.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Localization\DarwinLingua.Localization.Infrastructure\DarwinLingua.Localization.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Practice\DarwinLingua.Practice.Application\DarwinLingua.Practice.Application.csproj" />
+    <ProjectReference Include="..\..\..\src\Modules\Practice\DarwinLingua.Practice.Infrastructure\DarwinLingua.Practice.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

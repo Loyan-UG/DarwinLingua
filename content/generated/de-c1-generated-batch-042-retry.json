@@ -1,0 +1,653 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c1-generated-batch-042-retry",
+  "packageName": "German C1 Generated Batch 042 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "academic",
+      "displayName": "Academic",
+      "sortOrder": 90,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Akademisch"
+        },
+        {
+          "language": "ar",
+          "name": "أكاديمي"
+        },
+        {
+          "language": "ckb",
+          "name": "ئەکادیمی"
+        },
+        {
+          "language": "en",
+          "name": "Academic"
+        },
+        {
+          "language": "fa",
+          "name": "آکادمیک"
+        },
+        {
+          "language": "kmr",
+          "name": "Akademîk"
+        },
+        {
+          "language": "pl",
+          "name": "Akademicki"
+        },
+        {
+          "language": "ro",
+          "name": "Academic"
+        },
+        {
+          "language": "ru",
+          "name": "Академический"
+        },
+        {
+          "language": "sq",
+          "name": "Akademik"
+        },
+        {
+          "language": "tr",
+          "name": "Akademik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "analysis",
+      "displayName": "Analysis",
+      "sortOrder": 200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Analyse"
+        },
+        {
+          "language": "ar",
+          "name": "تحليل"
+        },
+        {
+          "language": "ckb",
+          "name": "شیکردنەوە"
+        },
+        {
+          "language": "en",
+          "name": "Analysis"
+        },
+        {
+          "language": "fa",
+          "name": "تحلیل"
+        },
+        {
+          "language": "kmr",
+          "name": "Analîz"
+        },
+        {
+          "language": "pl",
+          "name": "Analiza"
+        },
+        {
+          "language": "ro",
+          "name": "Analiză"
+        },
+        {
+          "language": "ru",
+          "name": "Анализ"
+        },
+        {
+          "language": "sq",
+          "name": "Analizë"
+        },
+        {
+          "language": "tr",
+          "name": "Analiz"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "advanced",
+      "displayName": "Advanced",
+      "sortOrder": 260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fortgeschritten"
+        },
+        {
+          "language": "ar",
+          "name": "متقدم"
+        },
+        {
+          "language": "ckb",
+          "name": "پێشکەوتوو"
+        },
+        {
+          "language": "en",
+          "name": "Advanced"
+        },
+        {
+          "language": "fa",
+          "name": "پیشرفته"
+        },
+        {
+          "language": "kmr",
+          "name": "Pêşketî"
+        },
+        {
+          "language": "pl",
+          "name": "Zaawansowany"
+        },
+        {
+          "language": "ro",
+          "name": "Avansat"
+        },
+        {
+          "language": "ru",
+          "name": "Продвинутый"
+        },
+        {
+          "language": "sq",
+          "name": "I avancuar"
+        },
+        {
+          "language": "tr",
+          "name": "İleri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "der Erkenntnisgewinn",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Erkenntnisgewinne",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Er-kennt-nis-ge-winn",
+      "topics": [
+        "advanced-analysis",
+        "education-and-training",
+        "data-and-reporting"
+      ],
+      "usageLabels": [
+        "academic",
+        "analysis",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "masculine compound noun; plural: die Erkenntnisgewinne"
+      ],
+      "collocations": [
+        {
+          "text": "ein hoher Erkenntnisgewinn",
+          "meaning": "a high gain in knowledge"
+        },
+        {
+          "text": "wissenschaftlicher Erkenntnisgewinn",
+          "meaning": "scientific gain in knowledge"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Erkenntnis",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "gewinnen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "اكتساب معرفة؛ فائدة معرفية"
+        },
+        {
+          "language": "ckb",
+          "text": "دەستکەوتنی زانیاری؛ سوودی زانستی"
+        },
+        {
+          "language": "en",
+          "text": "gain in knowledge; insight gained"
+        },
+        {
+          "language": "fa",
+          "text": "دستاورد شناختی؛ افزایش دانش"
+        },
+        {
+          "language": "kmr",
+          "text": "qezenca zanînê; têgihîştina bidesthatî"
+        },
+        {
+          "language": "pl",
+          "text": "przyrost wiedzy; wartość poznawcza"
+        },
+        {
+          "language": "ro",
+          "text": "câștig de cunoaștere; plus de înțelegere"
+        },
+        {
+          "language": "ru",
+          "text": "прирост знаний; полученное понимание"
+        },
+        {
+          "language": "sq",
+          "text": "fitim njohurish; përfitim njohës"
+        },
+        {
+          "language": "tr",
+          "text": "bilgi kazanımı; edinilen içgörü"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Erkenntnisgewinn der Befragung war begrenzt, weil fast nur Bestandskunden teilnahmen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "كان العائد المعرفي من الاستبيان محدودًا لأن المشاركين كانوا تقريبًا من العملاء الحاليين فقط."
+            },
+            {
+              "language": "ckb",
+              "text": "دەستکەوتنی زانیاری لە ڕاپرسییەکە سنووردار بوو چونکە نزیکەی تەنها کڕیارە هەبووەکان بەشدارییان کرد."
+            },
+            {
+              "language": "en",
+              "text": "The knowledge gained from the survey was limited because almost only existing customers took part."
+            },
+            {
+              "language": "fa",
+              "text": "دستاورد شناختی نظرسنجی محدود بود، چون تقریباً فقط مشتریان فعلی شرکت کردند."
+            },
+            {
+              "language": "kmr",
+              "text": "Qezenca zanînê ya rapirsînê sînordar bû ji ber ku hema hema tenê xerîdarên heyî beşdar bûn."
+            },
+            {
+              "language": "pl",
+              "text": "Przyrost wiedzy z ankiety był ograniczony, ponieważ uczestniczyli prawie wyłącznie obecni klienci."
+            },
+            {
+              "language": "ro",
+              "text": "Câștigul de cunoaștere al sondajului a fost limitat, deoarece au participat aproape doar clienți existenți."
+            },
+            {
+              "language": "ru",
+              "text": "Прирост знаний от опроса был ограничен, потому что участвовали почти только существующие клиенты."
+            },
+            {
+              "language": "sq",
+              "text": "Përfitimi njohës nga anketa ishte i kufizuar sepse morën pjesë pothuajse vetëm klientët ekzistues."
+            },
+            {
+              "language": "tr",
+              "text": "Anketten elde edilen bilgi kazanımı sınırlıydı çünkü neredeyse yalnızca mevcut müşteriler katıldı."
+            }
+          ]
+        },
+        {
+          "baseText": "Trotz hoher Kosten brachte das Pilotprojekt einen erheblichen Erkenntnisgewinn für die Produktentwicklung.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "رغم التكاليف العالية حقق المشروع التجريبي فائدة معرفية كبيرة لتطوير المنتج."
+            },
+            {
+              "language": "ckb",
+              "text": "سەرەڕای تێچووی بەرز، پڕۆژەی تاقیکاری دەستکەوتنی زانیارییەکی گرنگی بۆ پەرەپێدانی بەرهەم هێنا."
+            },
+            {
+              "language": "en",
+              "text": "Despite high costs, the pilot project produced significant insights for product development."
+            },
+            {
+              "language": "fa",
+              "text": "با وجود هزینه‌های بالا، پروژه آزمایشی دستاورد شناختی مهمی برای توسعه محصول داشت."
+            },
+            {
+              "language": "kmr",
+              "text": "Tevî lêçûnên bilind, projeya ceribandinê ji bo pêşxistina hilberê têgihîştineke girîng anî."
+            },
+            {
+              "language": "pl",
+              "text": "Mimo wysokich kosztów projekt pilotażowy przyniósł istotną wartość poznawczą dla rozwoju produktu."
+            },
+            {
+              "language": "ro",
+              "text": "În ciuda costurilor ridicate, proiectul pilot a adus un câștig important de cunoaștere pentru dezvoltarea produsului."
+            },
+            {
+              "language": "ru",
+              "text": "Несмотря на высокие затраты, пилотный проект дал значительный прирост знаний для разработки продукта."
+            },
+            {
+              "language": "sq",
+              "text": "Pavarësisht kostove të larta, projekti pilot solli përfitim të rëndësishëm njohës për zhvillimin e produktit."
+            },
+            {
+              "language": "tr",
+              "text": "Yüksek maliyetlere rağmen pilot proje ürün geliştirme için önemli içgörüler sağladı."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Erkenntnisgrenze",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Erkenntnisgrenzen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Er-kennt-nis-gren-ze",
+      "topics": [
+        "advanced-analysis",
+        "education-and-training",
+        "data-and-reporting"
+      ],
+      "usageLabels": [
+        "academic",
+        "formal",
+        "analysis",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine compound noun; plural: die Erkenntnisgrenzen"
+      ],
+      "collocations": [
+        {
+          "text": "methodische Erkenntnisgrenzen",
+          "meaning": "methodological limits of knowledge"
+        },
+        {
+          "text": "Erkenntnisgrenzen offenlegen",
+          "meaning": "to disclose limits of what can be known"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Erkenntnis",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "die Grenze",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "حدود المعرفة؛ حدود ما يمكن معرفته"
+        },
+        {
+          "language": "ckb",
+          "text": "سنووری زانین؛ سنووری ئەوەی دەکرێت بزانرێت"
+        },
+        {
+          "language": "en",
+          "text": "limit of knowledge; boundary of what can be known"
+        },
+        {
+          "language": "fa",
+          "text": "مرز شناخت؛ حد دانستنی‌ها"
+        },
+        {
+          "language": "kmr",
+          "text": "sînorê zanînê; asta tiştên ku dikarin bên zanîn"
+        },
+        {
+          "language": "pl",
+          "text": "granica poznania; ograniczenie wiedzy"
+        },
+        {
+          "language": "ro",
+          "text": "limită a cunoașterii; granița a ceea ce poate fi cunoscut"
+        },
+        {
+          "language": "ru",
+          "text": "граница познания; предел знания"
+        },
+        {
+          "language": "sq",
+          "text": "kufi i njohjes; kufiri i asaj që mund të dihet"
+        },
+        {
+          "language": "tr",
+          "text": "bilginin sınırı; bilinebilir olanın sınırı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Studie benennt ihre Erkenntnisgrenzen ausdrücklich, statt aus schwachen Daten zu starke Schlüsse zu ziehen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تذكر الدراسة حدود معرفتها صراحة بدلًا من استخلاص نتائج قوية جدًا من بيانات ضعيفة."
+            },
+            {
+              "language": "ckb",
+              "text": "توێژینەوەکە بە ڕوونی سنووری زانینی خۆی ناودەبات، لەبری ئەوەی لە داتای لاواز ئەنجامی زۆر بەهێز دەربهێنێت."
+            },
+            {
+              "language": "en",
+              "text": "The study explicitly states its limits of knowledge instead of drawing overly strong conclusions from weak data."
+            },
+            {
+              "language": "fa",
+              "text": "مطالعه مرزهای شناخت خود را صریح بیان می‌کند، نه اینکه از داده‌های ضعیف نتیجه‌گیری‌های بیش از حد قوی بگیرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Lêkolîn bi eşkere sînorên zanîna xwe dibêje, li şûna ku ji daneyên lawaz encamên pir bihêz derxe."
+            },
+            {
+              "language": "pl",
+              "text": "Badanie wyraźnie wskazuje swoje granice poznawcze, zamiast wyciągać zbyt mocne wnioski ze słabych danych."
+            },
+            {
+              "language": "ro",
+              "text": "Studiul își numește explicit limitele de cunoaștere, în loc să tragă concluzii prea puternice din date slabe."
+            },
+            {
+              "language": "ru",
+              "text": "Исследование прямо обозначает свои границы познания, вместо того чтобы делать слишком сильные выводы из слабых данных."
+            },
+            {
+              "language": "sq",
+              "text": "Studimi i përmend qartë kufijtë e njohjes së tij, në vend që të nxjerrë përfundime tepër të forta nga të dhëna të dobëta."
+            },
+            {
+              "language": "tr",
+              "text": "Çalışma, zayıf verilerden aşırı güçlü sonuçlar çıkarmak yerine bilgi sınırlarını açıkça belirtir."
+            }
+          ]
+        },
+        {
+          "baseText": "In der Beratung müssen wir die Erkenntnisgrenze klar markieren, wenn wichtige Marktdaten fehlen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في الاستشارة يجب أن نوضح حدود المعرفة عندما تكون بيانات سوق مهمة مفقودة."
+            },
+            {
+              "language": "ckb",
+              "text": "لە ڕاوێژکاریدا دەبێت سنووری زانین بە ڕوونی دیاری بکەین کاتێک داتای گرنگی بازاڕ کەمە."
+            },
+            {
+              "language": "en",
+              "text": "In consulting, we must clearly mark the limits of knowledge when important market data is missing."
+            },
+            {
+              "language": "fa",
+              "text": "در مشاوره باید وقتی داده‌های مهم بازار وجود ندارد، مرز شناخت را روشن مشخص کنیم."
+            },
+            {
+              "language": "kmr",
+              "text": "Di şêwirmendiyê de divê em sînorê zanînê bi zelalî nîşan bidin dema daneyên girîng ên bazarê kêm in."
+            },
+            {
+              "language": "pl",
+              "text": "W doradztwie musimy jasno zaznaczać granice poznania, gdy brakuje ważnych danych rynkowych."
+            },
+            {
+              "language": "ro",
+              "text": "În consultanță trebuie să marcăm clar limita cunoașterii atunci când lipsesc date importante de piață."
+            },
+            {
+              "language": "ru",
+              "text": "В консалтинге мы должны четко обозначать границу знания, когда отсутствуют важные рыночные данные."
+            },
+            {
+              "language": "sq",
+              "text": "Në këshillim duhet ta shënojmë qartë kufirin e njohjes kur mungojnë të dhëna të rëndësishme të tregut."
+            },
+            {
+              "language": "tr",
+              "text": "Danışmanlıkta önemli piyasa verileri eksik olduğunda bilgi sınırını açıkça belirtmeliyiz."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

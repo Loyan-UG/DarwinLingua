@@ -1,0 +1,647 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c1-generated-batch-049-retry",
+  "packageName": "German C1 Generated Batch 049 Retry",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "analysis",
+      "displayName": "Analysis",
+      "sortOrder": 200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Analyse"
+        },
+        {
+          "language": "ar",
+          "name": "تحليل"
+        },
+        {
+          "language": "ckb",
+          "name": "شیکردنەوە"
+        },
+        {
+          "language": "en",
+          "name": "Analysis"
+        },
+        {
+          "language": "fa",
+          "name": "تحلیل"
+        },
+        {
+          "language": "kmr",
+          "name": "Analîz"
+        },
+        {
+          "language": "pl",
+          "name": "Analiza"
+        },
+        {
+          "language": "ro",
+          "name": "Analiză"
+        },
+        {
+          "language": "ru",
+          "name": "Анализ"
+        },
+        {
+          "language": "sq",
+          "name": "Analizë"
+        },
+        {
+          "language": "tr",
+          "name": "Analiz"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "advanced",
+      "displayName": "Advanced",
+      "sortOrder": 260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fortgeschritten"
+        },
+        {
+          "language": "ar",
+          "name": "متقدم"
+        },
+        {
+          "language": "ckb",
+          "name": "پێشکەوتوو"
+        },
+        {
+          "language": "en",
+          "name": "Advanced"
+        },
+        {
+          "language": "fa",
+          "name": "پیشرفته"
+        },
+        {
+          "language": "kmr",
+          "name": "Pêşketî"
+        },
+        {
+          "language": "pl",
+          "name": "Zaawansowany"
+        },
+        {
+          "language": "ro",
+          "name": "Avansat"
+        },
+        {
+          "language": "ru",
+          "name": "Продвинутый"
+        },
+        {
+          "language": "sq",
+          "name": "I avancuar"
+        },
+        {
+          "language": "tr",
+          "name": "İleri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "academic",
+      "displayName": "Academic",
+      "sortOrder": 90,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Akademisch"
+        },
+        {
+          "language": "ar",
+          "name": "أكاديمي"
+        },
+        {
+          "language": "ckb",
+          "name": "ئەکادیمی"
+        },
+        {
+          "language": "en",
+          "name": "Academic"
+        },
+        {
+          "language": "fa",
+          "name": "آکادمیک"
+        },
+        {
+          "language": "kmr",
+          "name": "Akademîk"
+        },
+        {
+          "language": "pl",
+          "name": "Akademicki"
+        },
+        {
+          "language": "ro",
+          "name": "Academic"
+        },
+        {
+          "language": "ru",
+          "name": "Академический"
+        },
+        {
+          "language": "sq",
+          "name": "Akademik"
+        },
+        {
+          "language": "tr",
+          "name": "Akademik"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "die Finanzierungsstruktur",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Finanzierungsstrukturen",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Fi-nan-zie-rungs-struk-tur",
+      "topics": [
+        "finance-and-accounting",
+        "management-and-leadership",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "business",
+        "analysis",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine compound noun; plural: die Finanzierungsstrukturen"
+      ],
+      "collocations": [
+        {
+          "text": "eine tragfähige Finanzierungsstruktur",
+          "meaning": "a viable financing structure"
+        },
+        {
+          "text": "die Finanzierungsstruktur anpassen",
+          "meaning": "to adjust the financing structure"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Finanzierung",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "finanzieren",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "هيكل التمويل؛ بنية التمويل"
+        },
+        {
+          "language": "ckb",
+          "text": "پێکهاتەی دارایی؛ شێوازی دابینکردنی پارە"
+        },
+        {
+          "language": "en",
+          "text": "financing structure; funding structure"
+        },
+        {
+          "language": "fa",
+          "text": "ساختار تأمین مالی؛ ترکیب منابع مالی"
+        },
+        {
+          "language": "kmr",
+          "text": "avahiya fînansmanê; şêwaza dabînkirina pere"
+        },
+        {
+          "language": "pl",
+          "text": "struktura finansowania"
+        },
+        {
+          "language": "ro",
+          "text": "structură de finanțare"
+        },
+        {
+          "language": "ru",
+          "text": "структура финансирования"
+        },
+        {
+          "language": "sq",
+          "text": "strukturë financimi"
+        },
+        {
+          "language": "tr",
+          "text": "finansman yapısı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Finanzierungsstruktur des Projekts hängt zu stark von kurzfristigen Krediten ab.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يعتمد هيكل تمويل المشروع بشكل مفرط على قروض قصيرة الأجل."
+            },
+            {
+              "language": "ckb",
+              "text": "پێکهاتەی دارایی پڕۆژەکە زۆر پشت بە قەرزی کورتخایەن دەبەستێت."
+            },
+            {
+              "language": "en",
+              "text": "The project’s financing structure depends too heavily on short-term loans."
+            },
+            {
+              "language": "fa",
+              "text": "ساختار تأمین مالی پروژه بیش از حد به وام‌های کوتاه‌مدت وابسته است."
+            },
+            {
+              "language": "kmr",
+              "text": "Avahiya fînansmana projeyê pir zêde girêdayî krediyên demkurt e."
+            },
+            {
+              "language": "pl",
+              "text": "Struktura finansowania projektu zbyt mocno zależy od krótkoterminowych kredytów."
+            },
+            {
+              "language": "ro",
+              "text": "Structura de finanțare a proiectului depinde prea mult de credite pe termen scurt."
+            },
+            {
+              "language": "ru",
+              "text": "Структура финансирования проекта слишком сильно зависит от краткосрочных кредитов."
+            },
+            {
+              "language": "sq",
+              "text": "Struktura e financimit të projektit varet tepër nga kreditë afatshkurtra."
+            },
+            {
+              "language": "tr",
+              "text": "Projenin finansman yapısı kısa vadeli kredilere fazla bağımlı."
+            }
+          ]
+        },
+        {
+          "baseText": "Vor der Expansion müssen wir die Finanzierungsstruktur stabiler aufstellen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "قبل التوسع يجب أن نجعل هيكل التمويل أكثر استقرارًا."
+            },
+            {
+              "language": "ckb",
+              "text": "پێش فراوانبوونەوە دەبێت پێکهاتەی دارایی جێگیرتر ڕێکبخەین."
+            },
+            {
+              "language": "en",
+              "text": "Before expansion, we need to make the financing structure more stable."
+            },
+            {
+              "language": "fa",
+              "text": "پیش از توسعه، باید ساختار تأمین مالی را پایدارتر کنیم."
+            },
+            {
+              "language": "kmr",
+              "text": "Berî firehbûnê divê em avahiya fînansmanê stabîltir bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Przed ekspansją musimy stabilniej ukształtować strukturę finansowania."
+            },
+            {
+              "language": "ro",
+              "text": "Înainte de extindere trebuie să stabilizăm structura de finanțare."
+            },
+            {
+              "language": "ru",
+              "text": "Перед расширением нам нужно сделать структуру финансирования более устойчивой."
+            },
+            {
+              "language": "sq",
+              "text": "Para zgjerimit duhet ta bëjmë strukturën e financimit më të qëndrueshme."
+            },
+            {
+              "language": "tr",
+              "text": "Genişlemeden önce finansman yapısını daha istikrarlı hale getirmeliyiz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Fiskalpolitik",
+      "language": "de",
+      "cefrLevel": "C1",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Fiskalpolitiken",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Fis-kal-po-li-tik",
+      "topics": [
+        "finance-and-accounting",
+        "public-services",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "academic",
+        "analysis",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine noun; plural can refer to different fiscal policy approaches"
+      ],
+      "collocations": [
+        {
+          "text": "expansive Fiskalpolitik",
+          "meaning": "expansionary fiscal policy"
+        },
+        {
+          "text": "restriktive Fiskalpolitik",
+          "meaning": "restrictive fiscal policy"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "fiskalisch",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "السياسة المالية الحكومية"
+        },
+        {
+          "language": "ckb",
+          "text": "سیاسەتی دارایی حکومەت"
+        },
+        {
+          "language": "en",
+          "text": "fiscal policy"
+        },
+        {
+          "language": "fa",
+          "text": "سیاست مالی دولت"
+        },
+        {
+          "language": "kmr",
+          "text": "siyaseta fîskal a hikûmetê"
+        },
+        {
+          "language": "pl",
+          "text": "polityka fiskalna"
+        },
+        {
+          "language": "ro",
+          "text": "politică fiscală"
+        },
+        {
+          "language": "ru",
+          "text": "фискальная политика"
+        },
+        {
+          "language": "sq",
+          "text": "politikë fiskale"
+        },
+        {
+          "language": "tr",
+          "text": "maliye politikası"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Regierung setzt auf eine expansive Fiskalpolitik, um die Konjunktur zu stabilisieren.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تعتمد الحكومة على سياسة مالية توسعية لتثبيت الاقتصاد."
+            },
+            {
+              "language": "ckb",
+              "text": "حکومەت پشت بە سیاسەتی دارایی فراوانکراو دەبەستێت بۆ جێگیرکردنی ئابووری."
+            },
+            {
+              "language": "en",
+              "text": "The government is relying on expansionary fiscal policy to stabilize the economy."
+            },
+            {
+              "language": "fa",
+              "text": "دولت برای تثبیت اقتصاد بر سیاست مالی انبساطی تکیه می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Hikûmet ji bo stabîlkirina aboriyê li siyaseta fîskal a firehkirî dispêre."
+            },
+            {
+              "language": "pl",
+              "text": "Rząd stawia na ekspansywną politykę fiskalną, aby ustabilizować koniunkturę."
+            },
+            {
+              "language": "ro",
+              "text": "Guvernul mizează pe o politică fiscală expansionistă pentru a stabiliza economia."
+            },
+            {
+              "language": "ru",
+              "text": "Правительство делает ставку на экспансионистскую фискальную политику для стабилизации экономики."
+            },
+            {
+              "language": "sq",
+              "text": "Qeveria mbështetet në politikë fiskale ekspansioniste për të stabilizuar ekonominë."
+            },
+            {
+              "language": "tr",
+              "text": "Hükümet ekonomiyi istikrara kavuşturmak için genişleyici maliye politikasına dayanıyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Wirkung der Fiskalpolitik lässt sich erst mit Verzögerung in den Investitionszahlen erkennen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لا يمكن رؤية أثر السياسة المالية في أرقام الاستثمار إلا بعد تأخير."
+            },
+            {
+              "language": "ckb",
+              "text": "کاریگەری سیاسەتی دارایی تەنها بە دواخستنێک لە ژمارەکانی وەبەرهێناندا دەردەکەوێت."
+            },
+            {
+              "language": "en",
+              "text": "The effect of fiscal policy becomes visible in investment figures only with a delay."
+            },
+            {
+              "language": "fa",
+              "text": "اثر سیاست مالی فقط با تأخیر در ارقام سرمایه‌گذاری دیده می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Bandora siyaseta fîskal tenê bi derengî di hejmarên veberhênanê de xuya dibe."
+            },
+            {
+              "language": "pl",
+              "text": "Wpływ polityki fiskalnej widać w danych inwestycyjnych dopiero z opóźnieniem."
+            },
+            {
+              "language": "ro",
+              "text": "Efectul politicii fiscale se vede în cifrele investițiilor doar cu întârziere."
+            },
+            {
+              "language": "ru",
+              "text": "Эффект фискальной политики виден в инвестиционных показателях только с задержкой."
+            },
+            {
+              "language": "sq",
+              "text": "Efekti i politikës fiskale shihet në shifrat e investimeve vetëm me vonesë."
+            },
+            {
+              "language": "tr",
+              "text": "Maliye politikasının etkisi yatırım rakamlarında ancak gecikmeli olarak görülür."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

@@ -1,0 +1,123 @@
+const fs = require('fs');
+const path = require('path');
+const project = 'D:/_Projects/DarwinLingua';
+const src = path.join(project, 'content/B2.txt');
+const taxPath = path.join(project, 'content/taxonomy/darwinlingua-taxonomy-v1.json');
+const out = path.join(project, 'content/generated/de-b2-generated-erp-003-words.json');
+const langs = ['ar','ckb','en','fa','kmr','pl','ro','ru','sq','tr'];
+const expected = ['Aufgabenbemerkung','Auftragsart','Auftragsbestätigung','Auftragsposition','Auftragswert','Ausgangsstatus'];
+const raw = fs.readFileSync(src, 'utf8');
+const tokens = raw.split(',').map(s => s.trim()).filter(Boolean);
+const words = tokens.slice(0, 6);
+if (words.join('|') !== expected.join('|')) throw new Error('Unexpected first tokens: ' + words.join('|'));
+const taxonomy = JSON.parse(fs.readFileSync(taxPath, 'utf8'));
+const labelKeys = new Set(['business','workplace','process','administrative','written','analysis']);
+const labels = (taxonomy.labels || []).filter(l => labelKeys.has(l.key)).map(l => ({
+  kind: l.kind,
+  key: l.key,
+  displayName: l.displayName,
+  sortOrder: l.sortOrder,
+  localizations: l.localizations
+}));
+if (labels.length !== labelKeys.size) throw new Error('Missing labels from taxonomy');
+const entries = [
+  {
+    word: 'Aufgabenbemerkung', language: 'de', cefrLevel: 'B2', partOfSpeech: 'Noun', article: 'die', plural: 'Aufgabenbemerkungen', infinitive: null, pronunciationIpa: null, syllableBreak: 'Auf-ga-ben-be-mer-kung',
+    topics: ['erp-and-business-systems','work-and-jobs','business-communication'], usageLabels: ['business','workplace','written','administrative'], contextLabels: [], grammarNotes: ['feminine compound noun; often used for comments attached to tasks'],
+    collocations: [{ text: 'eine Aufgabenbemerkung hinzufügen', meaning: 'to add a note to a task' }, { text: 'die Aufgabenbemerkung lesen', meaning: 'to read the task note' }], wordFamilies: [{ lemma: 'die Aufgabe', relationLabel: 'base noun', note: null }, { lemma: 'die Bemerkung', relationLabel: 'component noun', note: null }], relations: [],
+    meanings: [
+      {language:'ar',text:'ملاحظة المهمة'}, {language:'ckb',text:'تێبینیی ئەرک'}, {language:'en',text:'task note; task comment'}, {language:'fa',text:'یادداشت وظیفه؛ توضیح کار'}, {language:'kmr',text:'têbîniya erkê'}, {language:'pl',text:'uwaga do zadania'}, {language:'ro',text:'notă la sarcină'}, {language:'ru',text:'примечание к задаче'}, {language:'sq',text:'shënim i detyrës'}, {language:'tr',text:'görev notu'}
+    ],
+    examples: [
+      { baseText: 'Bitte schreibe in die Aufgabenbemerkung, warum der Wareneingang noch nicht gebucht wurde.', translations: [
+        {language:'ar',text:'من فضلك اكتب في ملاحظة المهمة لماذا لم يتم ترحيل استلام البضائع بعد.'}, {language:'ckb',text:'تکایە لە تێبینیی ئەرکەکە بنووسە بۆچی وەرگرتنی کاڵا هێشتا تۆمار نەکراوە.'}, {language:'en',text:'Please write in the task note why the goods receipt has not been posted yet.'}, {language:'fa',text:'لطفاً در یادداشت وظیفه بنویس چرا رسید کالا هنوز ثبت نشده است.'}, {language:'kmr',text:'Ji kerema xwe di têbîniya erkê de binivîse çima wergirtina malan hîn nehatiye tomarkirin.'}, {language:'pl',text:'Proszę wpisz w uwadze do zadania, dlaczego przyjęcie towaru nie zostało jeszcze zaksięgowane.'}, {language:'ro',text:'Te rog scrie în nota sarcinii de ce recepția mărfii nu a fost încă înregistrată.'}, {language:'ru',text:'Пожалуйста, напиши в примечании к задаче, почему поступление товара еще не было проведено.'}, {language:'sq',text:'Të lutem shkruaj në shënimin e detyrës pse pranimi i mallrave ende nuk është regjistruar.'}, {language:'tr',text:'Lütfen görev notuna mal kabulünün neden henüz kaydedilmediğini yaz.'}
+      ]},
+      { baseText: 'In der Aufgabenbemerkung steht, dass der Kunde erst am Montag zurückgerufen werden möchte.', translations: [
+        {language:'ar',text:'تذكر ملاحظة المهمة أن العميل يريد أن يتم الاتصال به يوم الاثنين فقط.'}, {language:'ckb',text:'لە تێبینیی ئەرکەکەدا نووسراوە کە کڕیار دەیەوێت تەنها دووشەممە پەیوەندیی پێوە بکرێت.'}, {language:'en',text:'The task note says that the customer only wants to be called back on Monday.'}, {language:'fa',text:'در یادداشت وظیفه آمده که مشتری می‌خواهد فقط دوشنبه با او تماس گرفته شود.'}, {language:'kmr',text:'Di têbîniya erkê de hatiye nivîsandin ku mişterî dixwaze tenê roja duşemê lê were vegerandin.'}, {language:'pl',text:'W uwadze do zadania jest napisane, że klient chce oddzwonienia dopiero w poniedziałek.'}, {language:'ro',text:'În nota sarcinii scrie că clientul dorește să fie sunat înapoi abia luni.'}, {language:'ru',text:'В примечании к задаче указано, что клиент хочет, чтобы ему перезвонили только в понедельник.'}, {language:'sq',text:'Në shënimin e detyrës thuhet se klienti dëshiron ta telefonojnë vetëm të hënën.'}, {language:'tr',text:'Görev notunda müşterinin ancak pazartesi günü geri aranmak istediği yazıyor.'}
+      ]}
+    ]
+  },
+  {
+    word: 'Auftragsart', language: 'de', cefrLevel: 'B2', partOfSpeech: 'Noun', article: 'die', plural: 'Auftragsarten', infinitive: null, pronunciationIpa: null, syllableBreak: 'Auf-trags-art',
+    topics: ['erp-and-business-systems','sales-and-customers','documents-and-administration'], usageLabels: ['business','workplace','process','administrative'], contextLabels: [], grammarNotes: ['feminine compound noun; used to classify orders'],
+    collocations: [{ text: 'die Auftragsart auswählen', meaning: 'to select the order type' }, { text: 'eine Auftragsart anlegen', meaning: 'to create an order type' }], wordFamilies: [{ lemma: 'der Auftrag', relationLabel: 'base noun', note: null }], relations: [],
+    meanings: [
+      {language:'ar',text:'نوع الطلب'}, {language:'ckb',text:'جۆری داواکاری'}, {language:'en',text:'order type'}, {language:'fa',text:'نوع سفارش'}, {language:'kmr',text:'cureyê fermanê'}, {language:'pl',text:'typ zlecenia; typ zamówienia'}, {language:'ro',text:'tip de comandă'}, {language:'ru',text:'тип заказа'}, {language:'sq',text:'lloji i porosisë'}, {language:'tr',text:'sipariş türü'}
+    ],
+    examples: [
+      { baseText: 'Für kostenlose Ersatzteile musst du im ERP die Auftragsart „Service“ auswählen.', translations: [
+        {language:'ar',text:'بالنسبة لقطع الغيار المجانية، يجب أن تختار في نظام ERP نوع الطلب "خدمة".'}, {language:'ckb',text:'بۆ پارچەی یەدەکی خۆڕایی، پێویستە لە ERP دا جۆری داواکاریی "خزمەتگوزاری" هەڵبژێریت.'}, {language:'en',text:'For free spare parts, you need to select the order type “Service” in the ERP.'}, {language:'fa',text:'برای قطعات یدکی رایگان باید در ERP نوع سفارش «خدمات» را انتخاب کنی.'}, {language:'kmr',text:'Ji bo parçeyên yedek ên belaş divê di ERP de cureyê fermanê "Xizmet" hilbijêrî.'}, {language:'pl',text:'Dla bezpłatnych części zamiennych musisz wybrać w ERP typ zamówienia „Serwis”.'}, {language:'ro',text:'Pentru piesele de schimb gratuite trebuie să alegi în ERP tipul de comandă „Service”.'}, {language:'ru',text:'Для бесплатных запасных частей нужно выбрать в ERP тип заказа «Сервис».'}, {language:'sq',text:'Për pjesët rezervë falas duhet të zgjedhësh në ERP llojin e porosisë “Servis”.'}, {language:'tr',text:'Ücretsiz yedek parçalar için ERP’de “Servis” sipariş türünü seçmelisin.'}
+      ]},
+      { baseText: 'Die falsche Auftragsart kann dazu führen, dass die Rechnung nicht richtig erstellt wird.', translations: [
+        {language:'ar',text:'قد يؤدي نوع الطلب الخاطئ إلى إنشاء الفاتورة بشكل غير صحيح.'}, {language:'ckb',text:'جۆری داواکاریی هەڵە دەتوانێت ببێتە هۆی ئەوەی فاکتورە بە دروستی دروست نەکرێت.'}, {language:'en',text:'The wrong order type can cause the invoice to be created incorrectly.'}, {language:'fa',text:'نوع سفارش اشتباه می‌تواند باعث شود فاکتور درست ایجاد نشود.'}, {language:'kmr',text:'Cureyê fermanê yê şaş dikare bibe sedem ku fatûre rast neyê çêkirin.'}, {language:'pl',text:'Błędny typ zamówienia może spowodować, że faktura zostanie wystawiona nieprawidłowo.'}, {language:'ro',text:'Tipul greșit de comandă poate face ca factura să fie creată incorect.'}, {language:'ru',text:'Неправильный тип заказа может привести к тому, что счет будет создан неверно.'}, {language:'sq',text:'Lloji i gabuar i porosisë mund të bëjë që fatura të krijohet gabim.'}, {language:'tr',text:'Yanlış sipariş türü faturanın hatalı oluşturulmasına neden olabilir.'}
+      ]}
+    ]
+  },
+  {
+    word: 'Auftragsbestätigung', language: 'de', cefrLevel: 'B2', partOfSpeech: 'Noun', article: 'die', plural: 'Auftragsbestätigungen', infinitive: null, pronunciationIpa: null, syllableBreak: 'Auf-trags-be-stä-ti-gung',
+    topics: ['sales-and-customers','erp-and-business-systems','business-communication'], usageLabels: ['business','workplace','written','administrative'], contextLabels: [], grammarNotes: ['feminine compound noun; document confirming an order'],
+    collocations: [{ text: 'eine Auftragsbestätigung senden', meaning: 'to send an order confirmation' }, { text: 'die Auftragsbestätigung prüfen', meaning: 'to check the order confirmation' }], wordFamilies: [{ lemma: 'bestätigen', relationLabel: 'verb', note: null }, { lemma: 'der Auftrag', relationLabel: 'base noun', note: null }], relations: [],
+    meanings: [
+      {language:'ar',text:'تأكيد الطلب'}, {language:'ckb',text:'پشتڕاستکردنەوەی داواکاری'}, {language:'en',text:'order confirmation'}, {language:'fa',text:'تأییدیه سفارش'}, {language:'kmr',text:'piştrastkirina fermanê'}, {language:'pl',text:'potwierdzenie zamówienia'}, {language:'ro',text:'confirmare de comandă'}, {language:'ru',text:'подтверждение заказа'}, {language:'sq',text:'konfirmim porosie'}, {language:'tr',text:'sipariş onayı'}
+    ],
+    examples: [
+      { baseText: 'Die Auftragsbestätigung wurde aus dem ERP an den Kunden geschickt.', translations: [
+        {language:'ar',text:'تم إرسال تأكيد الطلب من نظام ERP إلى العميل.'}, {language:'ckb',text:'پشتڕاستکردنەوەی داواکاری لە ERP ـەوە بۆ کڕیار نێردرا.'}, {language:'en',text:'The order confirmation was sent to the customer from the ERP.'}, {language:'fa',text:'تأییدیه سفارش از ERP برای مشتری ارسال شد.'}, {language:'kmr',text:'Piştrastkirina fermanê ji ERP ji bo mişterî hate şandin.'}, {language:'pl',text:'Potwierdzenie zamówienia zostało wysłane do klienta z ERP.'}, {language:'ro',text:'Confirmarea de comandă a fost trimisă clientului din ERP.'}, {language:'ru',text:'Подтверждение заказа было отправлено клиенту из ERP.'}, {language:'sq',text:'Konfirmimi i porosisë iu dërgua klientit nga ERP-ja.'}, {language:'tr',text:'Sipariş onayı ERP’den müşteriye gönderildi.'}
+      ]},
+      { baseText: 'Bitte vergleichen Sie die Auftragsbestätigung mit unserem Angebot.', translations: [
+        {language:'ar',text:'يرجى مقارنة تأكيد الطلب بعرضنا.'}, {language:'ckb',text:'تکایە پشتڕاستکردنەوەی داواکارییەکە لەگەڵ پێشنیارەکەمان بەراورد بکەن.'}, {language:'en',text:'Please compare the order confirmation with our quotation.'}, {language:'fa',text:'لطفاً تأییدیه سفارش را با پیشنهاد ما مقایسه کنید.'}, {language:'kmr',text:'Ji kerema xwe piştrastkirina fermanê bi pêşniyara me re berawird bikin.'}, {language:'pl',text:'Proszę porównać potwierdzenie zamówienia z naszą ofertą.'}, {language:'ro',text:'Vă rugăm să comparați confirmarea de comandă cu oferta noastră.'}, {language:'ru',text:'Пожалуйста, сравните подтверждение заказа с нашим предложением.'}, {language:'sq',text:'Ju lutemi krahasoni konfirmimin e porosisë me ofertën tonë.'}, {language:'tr',text:'Lütfen sipariş onayını teklifimizle karşılaştırın.'}
+      ]}
+    ]
+  },
+  {
+    word: 'Auftragsposition', language: 'de', cefrLevel: 'B2', partOfSpeech: 'Noun', article: 'die', plural: 'Auftragspositionen', infinitive: null, pronunciationIpa: null, syllableBreak: 'Auf-trags-po-si-ti-on',
+    topics: ['erp-and-business-systems','sales-and-customers','warehouse-and-logistics'], usageLabels: ['business','workplace','process','administrative'], contextLabels: [], grammarNotes: ['feminine compound noun; one line item within an order'],
+    collocations: [{ text: 'eine Auftragsposition ändern', meaning: 'to change an order line item' }, { text: 'eine Auftragsposition stornieren', meaning: 'to cancel an order line item' }], wordFamilies: [{ lemma: 'der Auftrag', relationLabel: 'base noun', note: null }, { lemma: 'die Position', relationLabel: 'component noun', note: null }], relations: [],
+    meanings: [
+      {language:'ar',text:'بند الطلب'}, {language:'ckb',text:'بڕگەی داواکاری'}, {language:'en',text:'order line item'}, {language:'fa',text:'ردیف سفارش؛ آیتم سفارش'}, {language:'kmr',text:'hêla fermanê'}, {language:'pl',text:'pozycja zamówienia'}, {language:'ro',text:'poziție de comandă'}, {language:'ru',text:'позиция заказа'}, {language:'sq',text:'pozicion i porosisë'}, {language:'tr',text:'sipariş kalemi'}
+    ],
+    examples: [
+      { baseText: 'Diese Auftragsposition ist im ERP noch offen, weil die Ware im Lager fehlt.', translations: [
+        {language:'ar',text:'بند الطلب هذا لا يزال مفتوحًا في ERP لأن البضاعة غير موجودة في المستودع.'}, {language:'ckb',text:'ئەم بڕگەی داواکارییە لە ERP دا هێشتا کراوەیە، چونکە کاڵاکە لە کۆگا نییە.'}, {language:'en',text:'This order line item is still open in the ERP because the goods are missing in the warehouse.'}, {language:'fa',text:'این ردیف سفارش در ERP هنوز باز است، چون کالا در انبار موجود نیست.'}, {language:'kmr',text:'Ev hêla fermanê di ERP de hîn vekirî ye, ji ber ku mal li embarê tune ye.'}, {language:'pl',text:'Ta pozycja zamówienia jest w ERP nadal otwarta, ponieważ brakuje towaru w magazynie.'}, {language:'ro',text:'Această poziție de comandă este încă deschisă în ERP, deoarece marfa lipsește din depozit.'}, {language:'ru',text:'Эта позиция заказа все еще открыта в ERP, потому что товара нет на складе.'}, {language:'sq',text:'Ky pozicion i porosisë është ende i hapur në ERP sepse malli mungon në magazinë.'}, {language:'tr',text:'Bu sipariş kalemi ERP’de hâlâ açık, çünkü ürün depoda yok.'}
+      ]},
+      { baseText: 'Der Kunde möchte nur eine Auftragsposition ändern, nicht die ganze Bestellung.', translations: [
+        {language:'ar',text:'يريد العميل تغيير بند واحد فقط من الطلب، وليس الطلب كله.'}, {language:'ckb',text:'کڕیار دەیەوێت تەنها یەک بڕگەی داواکاری بگۆڕێت، نە هەموو داواکارییەکە.'}, {language:'en',text:'The customer wants to change only one order line item, not the whole order.'}, {language:'fa',text:'مشتری می‌خواهد فقط یک ردیف سفارش را تغییر دهد، نه کل سفارش را.'}, {language:'kmr',text:'Mişterî dixwaze tenê yek hêla fermanê biguherîne, ne hemû fermanê.'}, {language:'pl',text:'Klient chce zmienić tylko jedną pozycję zamówienia, a nie całe zamówienie.'}, {language:'ro',text:'Clientul dorește să modifice doar o poziție de comandă, nu întreaga comandă.'}, {language:'ru',text:'Клиент хочет изменить только одну позицию заказа, а не весь заказ.'}, {language:'sq',text:'Klienti dëshiron të ndryshojë vetëm një pozicion të porosisë, jo të gjithë porosinë.'}, {language:'tr',text:'Müşteri tüm siparişi değil, sadece bir sipariş kalemini değiştirmek istiyor.'}
+      ]}
+    ]
+  },
+  {
+    word: 'Auftragswert', language: 'de', cefrLevel: 'B2', partOfSpeech: 'Noun', article: 'der', plural: 'Auftragswerte', infinitive: null, pronunciationIpa: null, syllableBreak: 'Auf-trags-wert',
+    topics: ['sales-and-customers','finance-and-accounting','erp-and-business-systems'], usageLabels: ['business','workplace','analysis','administrative'], contextLabels: [], grammarNotes: ['masculine compound noun; value of an order'],
+    collocations: [{ text: 'den Auftragswert berechnen', meaning: 'to calculate the order value' }, { text: 'ein hoher Auftragswert', meaning: 'a high order value' }], wordFamilies: [{ lemma: 'der Auftrag', relationLabel: 'base noun', note: null }, { lemma: 'der Wert', relationLabel: 'component noun', note: null }], relations: [],
+    meanings: [
+      {language:'ar',text:'قيمة الطلب'}, {language:'ckb',text:'نرخی داواکاری'}, {language:'en',text:'order value'}, {language:'fa',text:'ارزش سفارش'}, {language:'kmr',text:'nirxa fermanê'}, {language:'pl',text:'wartość zamówienia'}, {language:'ro',text:'valoarea comenzii'}, {language:'ru',text:'стоимость заказа'}, {language:'sq',text:'vlera e porosisë'}, {language:'tr',text:'sipariş değeri'}
+    ],
+    examples: [
+      { baseText: 'Der Auftragswert wird im ERP ohne Mehrwertsteuer angezeigt.', translations: [
+        {language:'ar',text:'تُعرض قيمة الطلب في ERP بدون ضريبة القيمة المضافة.'}, {language:'ckb',text:'نرخی داواکاری لە ERP دا بەبێ باجی زیادە نیشان دەدرێت.'}, {language:'en',text:'The order value is shown in the ERP without VAT.'}, {language:'fa',text:'ارزش سفارش در ERP بدون مالیات بر ارزش افزوده نمایش داده می‌شود.'}, {language:'kmr',text:'Nirxa fermanê di ERP de bê baca nirxa zêde tê nîşandan.'}, {language:'pl',text:'Wartość zamówienia jest w ERP pokazana bez podatku VAT.'}, {language:'ro',text:'Valoarea comenzii este afișată în ERP fără TVA.'}, {language:'ru',text:'Стоимость заказа отображается в ERP без НДС.'}, {language:'sq',text:'Vlera e porosisë shfaqet në ERP pa TVSH.'}, {language:'tr',text:'Sipariş değeri ERP’de KDV hariç gösterilir.'}
+      ]},
+      { baseText: 'Bei diesem Auftragswert brauchen wir die Freigabe der Vertriebsleitung.', translations: [
+        {language:'ar',text:'مع قيمة الطلب هذه نحتاج إلى موافقة إدارة المبيعات.'}, {language:'ckb',text:'لەگەڵ ئەم نرخی داواکارییەدا پێویستمان بە پەسەندی بەڕێوەبەرایەتی فرۆشتن هەیە.'}, {language:'en',text:'With this order value, we need approval from sales management.'}, {language:'fa',text:'با این ارزش سفارش، به تأیید مدیریت فروش نیاز داریم.'}, {language:'kmr',text:'Bi vê nirxa fermanê, em hewceyê erêkirina rêveberiya firotanê ne.'}, {language:'pl',text:'Przy tej wartości zamówienia potrzebujemy zatwierdzenia kierownictwa sprzedaży.'}, {language:'ro',text:'La această valoare a comenzii avem nevoie de aprobarea conducerii vânzărilor.'}, {language:'ru',text:'При такой стоимости заказа нам нужно согласование руководства отдела продаж.'}, {language:'sq',text:'Me këtë vlerë porosie na duhet miratimi i drejtimit të shitjeve.'}, {language:'tr',text:'Bu sipariş değerinde satış yönetiminin onayına ihtiyacımız var.'}
+      ]}
+    ]
+  },
+  {
+    word: 'Ausgangsstatus', language: 'de', cefrLevel: 'B2', partOfSpeech: 'Noun', article: 'der', plural: 'Ausgangsstatus', infinitive: null, pronunciationIpa: null, syllableBreak: 'Aus-gangs-sta-tus',
+    topics: ['erp-and-business-systems','warehouse-and-logistics','data-and-reporting'], usageLabels: ['business','workplace','process','analysis'], contextLabels: [], grammarNotes: ['masculine compound noun; plural often unchanged with Status compounds'],
+    collocations: [{ text: 'den Ausgangsstatus prüfen', meaning: 'to check the outbound status' }, { text: 'im Ausgangsstatus bleiben', meaning: 'to remain in the outbound status' }], wordFamilies: [{ lemma: 'der Ausgang', relationLabel: 'component noun', note: null }, { lemma: 'der Status', relationLabel: 'component noun', note: null }], relations: [],
+    meanings: [
+      {language:'ar',text:'حالة الخروج؛ حالة الصادر'}, {language:'ckb',text:'دۆخی دەرچوون'}, {language:'en',text:'outbound status; output status'}, {language:'fa',text:'وضعیت خروج؛ وضعیت ارسال'}, {language:'kmr',text:'rewşa derketinê'}, {language:'pl',text:'status wyjściowy; status wysyłki'}, {language:'ro',text:'stare de ieșire; status de expediere'}, {language:'ru',text:'статус исходящего процесса; статус отгрузки'}, {language:'sq',text:'status i daljes; status i dërgesës'}, {language:'tr',text:'çıkış durumu; sevkiyat durumu'}
+    ],
+    examples: [
+      { baseText: 'Der Ausgangsstatus zeigt im ERP, ob die Lieferung das Lager schon verlassen hat.', translations: [
+        {language:'ar',text:'تُظهر حالة الخروج في ERP ما إذا كانت الشحنة قد غادرت المستودع بالفعل.'}, {language:'ckb',text:'دۆخی دەرچوون لە ERP دا نیشان دەدات ئایا گەیاندنەکە پێشتر کۆگای بەجێهێشتووە یان نا.'}, {language:'en',text:'The outbound status in the ERP shows whether the delivery has already left the warehouse.'}, {language:'fa',text:'وضعیت خروج در ERP نشان می‌دهد آیا تحویل از انبار خارج شده است یا نه.'}, {language:'kmr',text:'Rewşa derketinê di ERP de nîşan dide gelo şandin jixwe ji embarê derketiye yan na.'}, {language:'pl',text:'Status wysyłki w ERP pokazuje, czy dostawa opuściła już magazyn.'}, {language:'ro',text:'Statusul de expediere din ERP arată dacă livrarea a părăsit deja depozitul.'}, {language:'ru',text:'Статус отгрузки в ERP показывает, покинула ли поставка склад.'}, {language:'sq',text:'Statusi i daljes në ERP tregon nëse dërgesa e ka lënë tashmë magazinën.'}, {language:'tr',text:'ERP’deki çıkış durumu teslimatın depodan çıkıp çıkmadığını gösterir.'}
+      ]},
+      { baseText: 'Im Bericht fehlen zwei Ausgangsstatus, deshalb stimmen die Versandzahlen nicht.', translations: [
+        {language:'ar',text:'يفتقد التقرير حالتي خروج، لذلك أرقام الشحن غير صحيحة.'}, {language:'ckb',text:'لە ڕاپۆرتەکەدا دوو دۆخی دەرچوون کەمە، بۆیە ژمارەکانی ناردن ڕاست نین.'}, {language:'en',text:'Two outbound statuses are missing in the report, so the shipping figures are not correct.'}, {language:'fa',text:'در گزارش دو وضعیت خروج کم است، بنابراین ارقام ارسال درست نیستند.'}, {language:'kmr',text:'Di raporê de du rewşên derketinê kêm in, ji ber vê yekê hejmarên şandinê rast nînin.'}, {language:'pl',text:'W raporcie brakuje dwóch statusów wysyłki, dlatego liczby dotyczące wysyłek się nie zgadzają.'}, {language:'ro',text:'În raport lipsesc două statusuri de expediere, de aceea cifrele de livrare nu sunt corecte.'}, {language:'ru',text:'В отчете отсутствуют два статуса отгрузки, поэтому показатели отправки неверны.'}, {language:'sq',text:'Në raport mungojnë dy statuse daljeje, prandaj shifrat e dërgesave nuk janë të sakta.'}, {language:'tr',text:'Raporda iki çıkış durumu eksik, bu yüzden sevkiyat rakamları doğru değil.'}
+      ]}
+    ]
+  }
+];
+const pkg = { packageVersion: '1.0', packageId: 'de-b2-generated-erp-003-words', packageName: 'German B2 Generated ERP Batch 003', source: 'Hybrid', defaultMeaningLanguages: langs, labels, entries, collections: [], scenarios: [], conversationStarterPacks: [], eventPreparationPacks: [] };
+fs.writeFileSync(out, JSON.stringify(pkg, null, 2), 'utf8');
+console.log(out);

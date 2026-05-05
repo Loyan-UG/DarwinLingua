@@ -1,0 +1,1444 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c2-generated-batch-086",
+  "packageName": "German C2 Generated Batch 086",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "informal",
+      "displayName": "Informal",
+      "sortOrder": 30,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Informell"
+        },
+        {
+          "language": "ar",
+          "name": "غير رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "نافەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Informal"
+        },
+        {
+          "language": "fa",
+          "name": "غیررسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Nefermî"
+        },
+        {
+          "language": "pl",
+          "name": "Nieformalny"
+        },
+        {
+          "language": "ro",
+          "name": "Informal"
+        },
+        {
+          "language": "ru",
+          "name": "Неформальный"
+        },
+        {
+          "language": "sq",
+          "name": "Joformal"
+        },
+        {
+          "language": "tr",
+          "name": "Gayri resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "sensitive",
+      "displayName": "Sensitive",
+      "sortOrder": 240,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Sensibel"
+        },
+        {
+          "language": "ar",
+          "name": "حساس"
+        },
+        {
+          "language": "ckb",
+          "name": "هەستیار"
+        },
+        {
+          "language": "en",
+          "name": "Sensitive"
+        },
+        {
+          "language": "fa",
+          "name": "حساس"
+        },
+        {
+          "language": "kmr",
+          "name": "Hestiyar"
+        },
+        {
+          "language": "pl",
+          "name": "Wrażliwy"
+        },
+        {
+          "language": "ro",
+          "name": "Sensibil"
+        },
+        {
+          "language": "ru",
+          "name": "Деликатный"
+        },
+        {
+          "language": "sq",
+          "name": "I ndjeshëm"
+        },
+        {
+          "language": "tr",
+          "name": "Hassas"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "advanced",
+      "displayName": "Advanced",
+      "sortOrder": 260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fortgeschritten"
+        },
+        {
+          "language": "ar",
+          "name": "متقدم"
+        },
+        {
+          "language": "ckb",
+          "name": "پێشکەوتوو"
+        },
+        {
+          "language": "en",
+          "name": "Advanced"
+        },
+        {
+          "language": "fa",
+          "name": "پیشرفته"
+        },
+        {
+          "language": "kmr",
+          "name": "Pêşketî"
+        },
+        {
+          "language": "pl",
+          "name": "Zaawansowany"
+        },
+        {
+          "language": "ro",
+          "name": "Avansat"
+        },
+        {
+          "language": "ru",
+          "name": "Продвинутый"
+        },
+        {
+          "language": "sq",
+          "name": "I avancuar"
+        },
+        {
+          "language": "tr",
+          "name": "İleri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "analysis",
+      "displayName": "Analysis",
+      "sortOrder": 200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Analyse"
+        },
+        {
+          "language": "ar",
+          "name": "تحليل"
+        },
+        {
+          "language": "ckb",
+          "name": "شیکردنەوە"
+        },
+        {
+          "language": "en",
+          "name": "Analysis"
+        },
+        {
+          "language": "fa",
+          "name": "تحلیل"
+        },
+        {
+          "language": "kmr",
+          "name": "Analîz"
+        },
+        {
+          "language": "pl",
+          "name": "Analiza"
+        },
+        {
+          "language": "ro",
+          "name": "Analiză"
+        },
+        {
+          "language": "ru",
+          "name": "Анализ"
+        },
+        {
+          "language": "sq",
+          "name": "Analizë"
+        },
+        {
+          "language": "tr",
+          "name": "Analiz"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "academic",
+      "displayName": "Academic",
+      "sortOrder": 90,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Akademisch"
+        },
+        {
+          "language": "ar",
+          "name": "أكاديمي"
+        },
+        {
+          "language": "ckb",
+          "name": "ئەکادیمی"
+        },
+        {
+          "language": "en",
+          "name": "Academic"
+        },
+        {
+          "language": "fa",
+          "name": "آکادمیک"
+        },
+        {
+          "language": "kmr",
+          "name": "Akademîk"
+        },
+        {
+          "language": "pl",
+          "name": "Akademicki"
+        },
+        {
+          "language": "ro",
+          "name": "Academic"
+        },
+        {
+          "language": "ru",
+          "name": "Академический"
+        },
+        {
+          "language": "sq",
+          "name": "Akademik"
+        },
+        {
+          "language": "tr",
+          "name": "Akademik"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "C2",
+      "article": null,
+      "plural": null,
+      "infinitive": "verdreschen",
+      "pronunciationIpa": null,
+      "syllableBreak": "ver-dre-schen",
+      "contextLabels": [],
+      "grammarNotes": [
+        "colloquial or forceful verb; means to beat someone up or harshly criticize"
+      ],
+      "collocations": [
+        {
+          "text": "jemanden verbal verdreschen",
+          "meaning": "to verbally beat someone up"
+        }
+      ],
+      "wordFamilies": [],
+      "relations": [],
+      "word": "verdreschen",
+      "partOfSpeech": "Verb",
+      "topics": [
+        "social-and-relationships",
+        "culture-and-media",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "informal",
+        "written",
+        "sensitive",
+        "advanced"
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يضرب ضرباً مبرحاً؛ يهاجم بعنف لفظي"
+        },
+        {
+          "language": "ckb",
+          "text": "لێدان بە توندی؛ بە وشە توند هێرشکردن"
+        },
+        {
+          "language": "en",
+          "text": "to beat up; to attack harshly in words"
+        },
+        {
+          "language": "fa",
+          "text": "کتک زدن؛ به‌شدت لفظی کوبیدن"
+        },
+        {
+          "language": "kmr",
+          "text": "bi tundî lêdan; bi gotinan êrîş kirin"
+        },
+        {
+          "language": "pl",
+          "text": "zbić; ostro zaatakować słownie"
+        },
+        {
+          "language": "ro",
+          "text": "a bate; a ataca dur verbal"
+        },
+        {
+          "language": "ru",
+          "text": "поколотить; жестко разнести словами"
+        },
+        {
+          "language": "sq",
+          "text": "rrah keq; sulmoj ashpër me fjalë"
+        },
+        {
+          "language": "tr",
+          "text": "fena dövmek; sözle sertçe saldırmak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Review wurde der Vorschlag nicht sachlich geprüft, sondern regelrecht verdroschen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في المراجعة لم يُفحص الاقتراح بموضوعية، بل هوجم بعنف."
+            },
+            {
+              "language": "ckb",
+              "text": "لە review ـەکەدا پێشنیارەکە بە بابەتی نە پشکنرا، بەڵکو بە تەواوی توند هێرش کرایە سەر."
+            },
+            {
+              "language": "en",
+              "text": "In the review, the proposal was not examined objectively but was downright torn apart."
+            },
+            {
+              "language": "fa",
+              "text": "در بازبینی، پیشنهاد به‌صورت عینی بررسی نشد، بلکه عملاً به‌شدت کوبیده شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di reviewê de pêşniyar ne bi rastî hate kontrolkirin, lê bi tevahî hate şikandin."
+            },
+            {
+              "language": "pl",
+              "text": "Podczas review propozycji nie oceniono rzeczowo, lecz wręcz ją zmiażdżono."
+            },
+            {
+              "language": "ro",
+              "text": "În review, propunerea nu a fost analizată obiectiv, ci a fost pur și simplu desființată."
+            },
+            {
+              "language": "ru",
+              "text": "На ревью предложение не проверили по существу, а буквально разнесли."
+            },
+            {
+              "language": "sq",
+              "text": "Në review, propozimi nuk u shqyrtua në mënyrë faktike, por u sulmua ashpër."
+            },
+            {
+              "language": "tr",
+              "text": "Review sırasında öneri nesnel biçimde incelenmedi, adeta yerden yere vuruldu."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Szene wirkt brutal, weil der Held den Gegner nicht besiegt, sondern ihn fast verdreschen lässt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يبدو المشهد وحشياً لأن البطل لا يهزم الخصم، بل يكاد يتركه يتعرض لضرب مبرح."
+            },
+            {
+              "language": "ckb",
+              "text": "دیمەنەکە دڕندانە دەردەکەوێت، چونکە پاڵەوانەکە نەیارەکە نابەزێنێت، بەڵکو نزیکەی دەیهێڵێت بە توندی لێبدرێت."
+            },
+            {
+              "language": "en",
+              "text": "The scene feels brutal because the hero does not defeat the opponent but nearly lets him be beaten up."
+            },
+            {
+              "language": "fa",
+              "text": "صحنه خشن به نظر می‌رسد، چون قهرمان دشمن را شکست نمی‌دهد، بلکه تقریباً می‌گذارد او را کتک بزنند."
+            },
+            {
+              "language": "kmr",
+              "text": "Dîmen tund xuya dike, ji ber ku leheng dijberê naşîne, lê hema dihêle ku ew bê lêdan."
+            },
+            {
+              "language": "pl",
+              "text": "Scena wydaje się brutalna, bo bohater nie pokonuje przeciwnika, lecz niemal pozwala go pobić."
+            },
+            {
+              "language": "ro",
+              "text": "Scena pare brutală deoarece eroul nu îl învinge pe adversar, ci aproape lasă să fie bătut."
+            },
+            {
+              "language": "ru",
+              "text": "Сцена кажется жестокой, потому что герой не побеждает противника, а почти позволяет его избить."
+            },
+            {
+              "language": "sq",
+              "text": "Skena duket brutale, sepse heroi nuk e mposht kundërshtarin, por pothuajse lejon ta rrahin."
+            },
+            {
+              "language": "tr",
+              "text": "Sahne vahşi görünür, çünkü kahraman rakibini yenmez, neredeyse dövülmesine izin verir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C2",
+      "article": null,
+      "plural": null,
+      "infinitive": "verdrießen",
+      "pronunciationIpa": null,
+      "syllableBreak": "ver-drie-ßen",
+      "contextLabels": [],
+      "grammarNotes": [
+        "elevated verb; often impersonal: es verdrießt jemanden"
+      ],
+      "collocations": [
+        {
+          "text": "es verdrießt jemanden",
+          "meaning": "it annoys or vexes someone"
+        }
+      ],
+      "wordFamilies": [],
+      "relations": [],
+      "word": "verdrießen",
+      "partOfSpeech": "Verb",
+      "topics": [
+        "social-and-relationships",
+        "business-communication",
+        "culture-and-media"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced",
+        "sensitive"
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يضايق؛ يغيظ"
+        },
+        {
+          "language": "ckb",
+          "text": "بێزارکردن؛ ناخۆشکردن"
+        },
+        {
+          "language": "en",
+          "text": "to vex; to annoy; to displease"
+        },
+        {
+          "language": "fa",
+          "text": "آزردن؛ دلخور کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "aciz kirin; xemgîn kirin"
+        },
+        {
+          "language": "pl",
+          "text": "martwić; irytować"
+        },
+        {
+          "language": "ro",
+          "text": "a supăra; a irita"
+        },
+        {
+          "language": "ru",
+          "text": "огорчать; досаждать"
+        },
+        {
+          "language": "sq",
+          "text": "mërzit; bezdis"
+        },
+        {
+          "language": "tr",
+          "text": "canını sıkmak; rahatsız etmek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Es verdrießt den Kunden, wenn dieselbe Information bei jedem Supportkontakt erneut abgefragt wird.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يزعج العميل عندما تُطلب المعلومة نفسها من جديد في كل تواصل مع الدعم."
+            },
+            {
+              "language": "ckb",
+              "text": "کڕیار بێزار دەبێت کاتێک هەمان زانیاری لە هەر پەیوەندییەکی پشتگیریدا دووبارە داوا دەکرێت."
+            },
+            {
+              "language": "en",
+              "text": "It annoys the customer when the same information is requested again at every support contact."
+            },
+            {
+              "language": "fa",
+              "text": "مشتری دلخور می‌شود وقتی همان اطلاعات در هر تماس پشتیبانی دوباره پرسیده می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Xerîdar aciz dibe dema heman agahî di her têkiliya piştgiriyê de dîsa tê xwestin."
+            },
+            {
+              "language": "pl",
+              "text": "Klienta irytuje, gdy przy każdym kontakcie z pomocą ponownie pyta się o te same informacje."
+            },
+            {
+              "language": "ro",
+              "text": "Clientul este iritat când aceeași informație este cerută din nou la fiecare contact cu suportul."
+            },
+            {
+              "language": "ru",
+              "text": "Клиента раздражает, когда при каждом обращении в поддержку снова запрашивают одну и ту же информацию."
+            },
+            {
+              "language": "sq",
+              "text": "Klienti mërzitet kur i njëjti informacion kërkohet përsëri në çdo kontakt me suportin."
+            },
+            {
+              "language": "tr",
+              "text": "Aynı bilgi her destek temasında yeniden istendiğinde müşterinin canı sıkılır."
+            }
+          ]
+        },
+        {
+          "baseText": "Den Erzähler verdrießt weniger die Niederlage als die Gleichgültigkeit, mit der sie hingenommen wird.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "ما يضايق الراوي ليس الهزيمة بقدر اللامبالاة التي تُقبل بها."
+            },
+            {
+              "language": "ckb",
+              "text": "گێڕەرەوەکە کەمتر لە شکست بێزارە، زیاتر لە بێبایەخییەکەی کە پێی قبوڵ دەکرێت."
+            },
+            {
+              "language": "en",
+              "text": "What vexes the narrator is less the defeat than the indifference with which it is accepted."
+            },
+            {
+              "language": "fa",
+              "text": "آنچه راوی را می‌آزارد کمتر شکست است و بیشتر بی‌تفاوتی‌ای که با آن پذیرفته می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Ya vegêr aciz dike kêmtir têkçûn e, zêdetir bêxemîya ku pê tê qebûlkirin e."
+            },
+            {
+              "language": "pl",
+              "text": "Narratora martwi nie tyle porażka, ile obojętność, z jaką zostaje przyjęta."
+            },
+            {
+              "language": "ro",
+              "text": "Pe narator îl supără mai puțin înfrângerea decât indiferența cu care este acceptată."
+            },
+            {
+              "language": "ru",
+              "text": "Рассказчика огорчает не столько поражение, сколько равнодушие, с которым его принимают."
+            },
+            {
+              "language": "sq",
+              "text": "Rrëfimtarin e mërzit më pak humbja sesa indiferenca me të cilën pranohet."
+            },
+            {
+              "language": "tr",
+              "text": "Anlatıcıyı yenilgiden çok, onun kabullenildiği kayıtsızlık rahatsız eder."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C2",
+      "article": null,
+      "plural": null,
+      "infinitive": "verflechten",
+      "pronunciationIpa": null,
+      "syllableBreak": "ver-flech-ten",
+      "contextLabels": [],
+      "grammarNotes": [],
+      "collocations": [
+        {
+          "text": "Prozesse miteinander verflechten",
+          "meaning": "to interweave processes"
+        }
+      ],
+      "wordFamilies": [],
+      "relations": [],
+      "word": "verflechten",
+      "partOfSpeech": "Verb",
+      "topics": [
+        "advanced-analysis",
+        "business-communication",
+        "culture-and-media"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "analysis",
+        "business"
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يشبك؛ ينسج معاً"
+        },
+        {
+          "language": "ckb",
+          "text": "تێکەڵکردن؛ پێکەوە ئاڵاندن"
+        },
+        {
+          "language": "en",
+          "text": "to interweave; to intertwine"
+        },
+        {
+          "language": "fa",
+          "text": "درهم‌تنیدن؛ به هم پیوند دادن"
+        },
+        {
+          "language": "kmr",
+          "text": "tevlihev kirin; pêk ve peçandin"
+        },
+        {
+          "language": "pl",
+          "text": "splatać; przeplatać"
+        },
+        {
+          "language": "ro",
+          "text": "a împleti; a întrețese"
+        },
+        {
+          "language": "ru",
+          "text": "переплетать; связывать"
+        },
+        {
+          "language": "sq",
+          "text": "ndërthur; gërshetoj"
+        },
+        {
+          "language": "tr",
+          "text": "iç içe geçirmek; örmek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die neue Plattform verflicht Vertrieb, Abrechnung und Support so eng, dass Änderungen nur noch gemeinsam geplant werden können.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تربط المنصة الجديدة المبيعات والفوترة والدعم بشكل وثيق إلى حد أن التغييرات لا يمكن التخطيط لها إلا معاً."
+            },
+            {
+              "language": "ckb",
+              "text": "پلاتفۆرمی نوێ فرۆشتن، ژمێریاری و پشتگیری ئەوەندە بە توندی پێکەوە دەئاڵێنێت کە گۆڕانکارییەکان تەنها پێکەوە پلاندادەنرێن."
+            },
+            {
+              "language": "en",
+              "text": "The new platform interweaves sales, billing, and support so tightly that changes can only be planned together."
+            },
+            {
+              "language": "fa",
+              "text": "پلتفرم جدید فروش، صورتحساب و پشتیبانی را چنان در هم می‌تند که تغییرها فقط می‌توانند مشترک برنامه‌ریزی شوند."
+            },
+            {
+              "language": "kmr",
+              "text": "Platforma nû firotan, hesabkirin û piştgiriyê ewqas nêz ve girê dide ku guherîn tenê bi hev re tên plansazkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Nowa platforma tak ściśle splata sprzedaż, rozliczenia i wsparcie, że zmiany można planować tylko wspólnie."
+            },
+            {
+              "language": "ro",
+              "text": "Noua platformă întrețese vânzările, facturarea și suportul atât de strâns încât schimbările pot fi planificate doar împreună."
+            },
+            {
+              "language": "ru",
+              "text": "Новая платформа так тесно переплетает продажи, биллинг и поддержку, что изменения можно планировать только совместно."
+            },
+            {
+              "language": "sq",
+              "text": "Platforma e re ndërthur shitjet, faturimin dhe suportin aq ngushtë sa ndryshimet mund të planifikohen vetëm së bashku."
+            },
+            {
+              "language": "tr",
+              "text": "Yeni platform satış, faturalama ve desteği o kadar sıkı iç içe geçiriyor ki değişiklikler ancak birlikte planlanabiliyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Roman verflicht private Erinnerungen mit politischen Ereignissen, ohne eines dem anderen unterzuordnen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "ينسج الرواية الذكريات الخاصة مع الأحداث السياسية من دون إخضاع أحدهما للآخر."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆمانەکە بیرەوەرییە تایبەتییەکان لەگەڵ ڕووداوە سیاسییەکان تێکەڵ دەکات، بەبێ ئەوەی یەکێکیان بخاتە ژێر ئەوی تر."
+            },
+            {
+              "language": "en",
+              "text": "The novel interweaves private memories with political events without subordinating one to the other."
+            },
+            {
+              "language": "fa",
+              "text": "رمان خاطره‌های خصوصی را با رویدادهای سیاسی در هم می‌تند، بدون آن‌که یکی را تابع دیگری کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Roman bîranînên taybet bi bûyerên siyasî re tevlihev dike bê ku yekê bike binê yê din."
+            },
+            {
+              "language": "pl",
+              "text": "Powieść splata prywatne wspomnienia z wydarzeniami politycznymi, nie podporządkowując jednego drugiemu."
+            },
+            {
+              "language": "ro",
+              "text": "Romanul împletește amintiri private cu evenimente politice fără a subordona una celeilalte."
+            },
+            {
+              "language": "ru",
+              "text": "Роман переплетает личные воспоминания с политическими событиями, не подчиняя одно другому."
+            },
+            {
+              "language": "sq",
+              "text": "Romani ndërthur kujtimet private me ngjarjet politike pa ia nënshtruar njërën tjetrës."
+            },
+            {
+              "language": "tr",
+              "text": "Roman özel anıları siyasi olaylarla iç içe geçirir, birini diğerine tabi kılmadan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C2",
+      "article": "die",
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Ver-geb-lich-keit",
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine abstract noun; normally singular"
+      ],
+      "collocations": [
+        {
+          "text": "die Vergeblichkeit eines Versuchs",
+          "meaning": "the futility of an attempt"
+        }
+      ],
+      "wordFamilies": [],
+      "relations": [],
+      "word": "die Vergeblichkeit",
+      "partOfSpeech": "Noun",
+      "topics": [
+        "advanced-analysis",
+        "social-and-relationships",
+        "culture-and-media"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced",
+        "analysis"
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "عبثية الجهد؛ عدم الجدوى"
+        },
+        {
+          "language": "ckb",
+          "text": "بێسوودی؛ هەوڵی بێئەنجام"
+        },
+        {
+          "language": "en",
+          "text": "futility; fruitlessness"
+        },
+        {
+          "language": "fa",
+          "text": "بیهودگی؛ بی‌ثمری"
+        },
+        {
+          "language": "kmr",
+          "text": "bêsûdî; bêencambûn"
+        },
+        {
+          "language": "pl",
+          "text": "daremność; bezowocność"
+        },
+        {
+          "language": "ro",
+          "text": "zădărnicie; inutilitate"
+        },
+        {
+          "language": "ru",
+          "text": "тщетность; бесплодность"
+        },
+        {
+          "language": "sq",
+          "text": "kotësi; pafrytshmëri"
+        },
+        {
+          "language": "tr",
+          "text": "boşunalık; sonuçsuzluk"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Vergeblichkeit der manuellen Korrekturen wurde deutlich, als die falschen Daten am nächsten Tag wieder importiert wurden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "اتضحت عبثية التصحيحات اليدوية عندما استوردت البيانات الخاطئة مرة أخرى في اليوم التالي."
+            },
+            {
+              "language": "ckb",
+              "text": "بێسوودی چاککردنەوە دەستییەکان ڕوون بوو کاتێک داتای هەڵە ڕۆژی دواتر دووبارە import کرا."
+            },
+            {
+              "language": "en",
+              "text": "The futility of the manual corrections became clear when the wrong data was imported again the next day."
+            },
+            {
+              "language": "fa",
+              "text": "بیهودگی اصلاحات دستی وقتی روشن شد که داده‌های غلط روز بعد دوباره import شدند."
+            },
+            {
+              "language": "kmr",
+              "text": "Bêsûdiya rastkirinên destî zelal bû dema daneyên şaş roja din dîsa import bûn."
+            },
+            {
+              "language": "pl",
+              "text": "Daremność ręcznych korekt stała się jasna, gdy błędne dane następnego dnia ponownie zaimportowano."
+            },
+            {
+              "language": "ro",
+              "text": "Inutilitatea corecturilor manuale a devenit clară când datele greșite au fost importate din nou a doua zi."
+            },
+            {
+              "language": "ru",
+              "text": "Тщетность ручных исправлений стала очевидной, когда неверные данные на следующий день снова импортировали."
+            },
+            {
+              "language": "sq",
+              "text": "Kotësia e korrigjimeve manuale u bë e qartë kur të dhënat e gabuara u importuan sërish ditën tjetër."
+            },
+            {
+              "language": "tr",
+              "text": "Manuel düzeltmelerin boşunalığı, yanlış veriler ertesi gün yeniden import edildiğinde anlaşıldı."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Vergeblichkeit seiner Suche macht die letzten Seiten nicht hoffnungslos, sondern ungewöhnlich ruhig.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لا تجعل عبثية بحثه الصفحات الأخيرة يائسة، بل هادئة على نحو غير مألوف."
+            },
+            {
+              "language": "ckb",
+              "text": "بێسوودی گەڕانەکەی لاپەڕە کۆتاییەکان بێهیوا ناکات، بەڵکو بە شێوەیەکی نائاسایی ئارام دەکات."
+            },
+            {
+              "language": "en",
+              "text": "The futility of his search does not make the final pages hopeless, but unusually calm."
+            },
+            {
+              "language": "fa",
+              "text": "بیهودگی جست‌وجوی او صفحات پایانی را نومیدانه نمی‌کند، بلکه به‌طرزی غیرمعمول آرام می‌سازد."
+            },
+            {
+              "language": "kmr",
+              "text": "Bêsûdiya lêgerîna wî rûpelên dawî bêhêvî nake, lê bi awayekî neasayî aram dike."
+            },
+            {
+              "language": "pl",
+              "text": "Daremność jego poszukiwań nie czyni ostatnich stron beznadziejnymi, lecz niezwykle spokojnymi."
+            },
+            {
+              "language": "ro",
+              "text": "Zădărnicia căutării lui nu face ultimele pagini lipsite de speranță, ci neobișnuit de calme."
+            },
+            {
+              "language": "ru",
+              "text": "Тщетность его поисков делает последние страницы не безнадежными, а необычайно спокойными."
+            },
+            {
+              "language": "sq",
+              "text": "Kotësia e kërkimit të tij nuk i bën faqet e fundit të pashpresa, por jashtëzakonisht të qeta."
+            },
+            {
+              "language": "tr",
+              "text": "Arayışının boşunalığı son sayfaları umutsuz değil, alışılmadık derecede sakin kılar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C2",
+      "article": null,
+      "plural": null,
+      "infinitive": "vergegenwärtigen",
+      "pronunciationIpa": null,
+      "syllableBreak": "ver-ge-gen-wär-ti-gen",
+      "contextLabels": [],
+      "grammarNotes": [],
+      "collocations": [
+        {
+          "text": "sich die Folgen vergegenwärtigen",
+          "meaning": "to make oneself aware of the consequences"
+        }
+      ],
+      "wordFamilies": [],
+      "relations": [],
+      "word": "vergegenwärtigen",
+      "partOfSpeech": "Verb",
+      "topics": [
+        "education-and-training",
+        "advanced-analysis",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "academic",
+        "analysis"
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يستحضر؛ يجعل حاضراً في الذهن"
+        },
+        {
+          "language": "ckb",
+          "text": "لەبەرچاواندن؛ لە هۆشدا ئامادەکردن"
+        },
+        {
+          "language": "en",
+          "text": "to make present to oneself; to realize vividly"
+        },
+        {
+          "language": "fa",
+          "text": "به‌خاطر آوردن؛ در ذهن حاضر کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "di hiş de amade kirin; bi zelalî têgihiştin"
+        },
+        {
+          "language": "pl",
+          "text": "uświadomić sobie; uprzytomnić"
+        },
+        {
+          "language": "ro",
+          "text": "a-și reprezenta clar; a conștientiza"
+        },
+        {
+          "language": "ru",
+          "text": "осознать; представить себе"
+        },
+        {
+          "language": "sq",
+          "text": "sjell në mendje; ndërgjegjësohem"
+        },
+        {
+          "language": "tr",
+          "text": "göz önüne getirmek; iyice kavramak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Bevor wir die Altversion abschalten, müssen wir uns vergegenwärtigen, welche Kunden noch von ihr abhängen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "قبل أن نوقف النسخة القديمة يجب أن نستحضر بوضوح أي عملاء ما زالوا يعتمدون عليها."
+            },
+            {
+              "language": "ckb",
+              "text": "پێش ئەوەی وەشانی کۆن بوەستێنین، دەبێت لەبەرچاومان بێت کام کڕیاران هێشتا پشت بەو دەبەستن."
+            },
+            {
+              "language": "en",
+              "text": "Before we shut down the old version, we must make ourselves aware of which customers still depend on it."
+            },
+            {
+              "language": "fa",
+              "text": "قبل از خاموش کردن نسخه قدیمی، باید روشن در ذهن داشته باشیم کدام مشتریان هنوز به آن وابسته‌اند."
+            },
+            {
+              "language": "kmr",
+              "text": "Berî ku em versiyona kevn bigirin, divê em bi zelalî bibînin ka kîjan xerîdar hîn pê ve girêdayî ne."
+            },
+            {
+              "language": "pl",
+              "text": "Zanim wyłączymy starą wersję, musimy uświadomić sobie, którzy klienci wciąż od niej zależą."
+            },
+            {
+              "language": "ro",
+              "text": "Înainte să oprim versiunea veche, trebuie să ne reprezentăm clar ce clienți mai depind de ea."
+            },
+            {
+              "language": "ru",
+              "text": "Перед отключением старой версии мы должны ясно осознать, какие клиенты все еще от нее зависят."
+            },
+            {
+              "language": "sq",
+              "text": "Para se ta fikim versionin e vjetër, duhet të sjellim qartë në mendje cilët klientë varen ende prej tij."
+            },
+            {
+              "language": "tr",
+              "text": "Eski sürümü kapatmadan önce hangi müşterilerin hâlâ ona bağlı olduğunu göz önüne getirmeliyiz."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Text vergegenwärtigt die Vergangenheit nicht durch Daten, sondern durch Gerüche, Geräusche und brüchige Sätze.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يستحضر النص الماضي لا عبر التواريخ، بل عبر الروائح والأصوات والجمل المتكسرة."
+            },
+            {
+              "language": "ckb",
+              "text": "دەقەکە ڕابردوو نە بە بەروار، بەڵکو بە بۆن، دەنگ و ڕستەی پچڕپچڕ لەبەرچاو دەهێنێت."
+            },
+            {
+              "language": "en",
+              "text": "The text makes the past present not through dates, but through smells, sounds, and fractured sentences."
+            },
+            {
+              "language": "fa",
+              "text": "متن گذشته را نه از راه تاریخ‌ها، بلکه از طریق بوها، صداها و جمله‌های گسسته حاضر می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Nivîs rabirdûyê ne bi tarîxan, lê bi bîn, deng û hevokên şikestî di hiş de amade dike."
+            },
+            {
+              "language": "pl",
+              "text": "Tekst uprzytamnia przeszłość nie przez daty, lecz przez zapachy, dźwięki i kruche zdania."
+            },
+            {
+              "language": "ro",
+              "text": "Textul face trecutul prezent nu prin date, ci prin mirosuri, sunete și propoziții frânte."
+            },
+            {
+              "language": "ru",
+              "text": "Текст делает прошлое настоящим не через даты, а через запахи, звуки и ломкие фразы."
+            },
+            {
+              "language": "sq",
+              "text": "Teksti e bën të tashme të kaluarën jo përmes datave, por përmes erërave, tingujve dhe fjalive të thyera."
+            },
+            {
+              "language": "tr",
+              "text": "Metin geçmişi tarihlerle değil, kokular, sesler ve kırık cümlelerle şimdiye taşır."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "C2",
+      "article": null,
+      "plural": null,
+      "infinitive": "verglimmen",
+      "pronunciationIpa": null,
+      "syllableBreak": "ver-glim-men",
+      "contextLabels": [],
+      "grammarNotes": [],
+      "collocations": [
+        {
+          "text": "langsam verglimmen",
+          "meaning": "to slowly fade or die down like embers"
+        }
+      ],
+      "wordFamilies": [],
+      "relations": [],
+      "word": "verglimmen",
+      "partOfSpeech": "Verb",
+      "topics": [
+        "culture-and-media",
+        "everyday-life",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced",
+        "analysis"
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يخبو؛ ينطفئ تدريجياً"
+        },
+        {
+          "language": "ckb",
+          "text": "هێواش هێواش کوژانەوە؛ کاڵبوونەوە"
+        },
+        {
+          "language": "en",
+          "text": "to fade away; to die down like embers"
+        },
+        {
+          "language": "fa",
+          "text": "رو به خاموشی رفتن؛ کم‌کم فروکش کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "hêdî vemirîn; lawaz bûn"
+        },
+        {
+          "language": "pl",
+          "text": "dogasać; przygasać"
+        },
+        {
+          "language": "ro",
+          "text": "a se stinge treptat"
+        },
+        {
+          "language": "ru",
+          "text": "догорать; угасать"
+        },
+        {
+          "language": "sq",
+          "text": "shuhet ngadalë"
+        },
+        {
+          "language": "tr",
+          "text": "sönüp gitmek; köz gibi azalmak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Nach der großen Ankündigung verglimmte die Initiative, weil niemand Budget und Verantwortung verbindlich übernahm.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بعد الإعلان الكبير خبت المبادرة لأن أحداً لم يتول الميزانية والمسؤولية بشكل ملزم."
+            },
+            {
+              "language": "ckb",
+              "text": "دوای ڕاگەیاندنی گەورە، هەوڵەکە هێواش هێواش کوژایەوە، چونکە کەس بودجە و بەرپرسیاری بە شێوەی پابەند وەرنەگرت."
+            },
+            {
+              "language": "en",
+              "text": "After the big announcement, the initiative faded away because no one bindingly took over budget and responsibility."
+            },
+            {
+              "language": "fa",
+              "text": "پس از اعلام بزرگ، ابتکار عمل کم‌کم خاموش شد، چون هیچ‌کس بودجه و مسئولیت را الزام‌آور بر عهده نگرفت."
+            },
+            {
+              "language": "kmr",
+              "text": "Piştî ragihandina mezin, destpêşxerî hêdî vemirî ji ber ku kesek budce û berpirsiyarî bi girêdan wernagirt."
+            },
+            {
+              "language": "pl",
+              "text": "Po wielkim ogłoszeniu inicjatywa przygasła, ponieważ nikt wiążąco nie przejął budżetu i odpowiedzialności."
+            },
+            {
+              "language": "ro",
+              "text": "După marele anunț, inițiativa s-a stins treptat deoarece nimeni nu și-a asumat ferm bugetul și responsabilitatea."
+            },
+            {
+              "language": "ru",
+              "text": "После громкого объявления инициатива угасла, потому что никто твердо не взял на себя бюджет и ответственность."
+            },
+            {
+              "language": "sq",
+              "text": "Pas njoftimit të madh, nisma u shua ngadalë sepse askush nuk mori detyrueshëm buxhetin dhe përgjegjësinë."
+            },
+            {
+              "language": "tr",
+              "text": "Büyük duyurudan sonra girişim sönüp gitti, çünkü kimse bütçeyi ve sorumluluğu bağlayıcı biçimde üstlenmedi."
+            }
+          ]
+        },
+        {
+          "baseText": "Am Ende verglimmt das Feuer im Ofen, während die Figuren schweigend am Tisch sitzen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في النهاية يخبو النار في الموقد بينما تجلس الشخصيات صامتة حول الطاولة."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کۆتاییدا ئاگرەکە لە تەنووردا هێواش هێواش دەکوژێتەوە، کاتێک کارەکتەرەکان بێدەنگ لەسەر مێزەکە دانیشتوون."
+            },
+            {
+              "language": "en",
+              "text": "At the end, the fire in the stove dies down while the characters sit silently at the table."
+            },
+            {
+              "language": "fa",
+              "text": "در پایان، آتش در بخاری کم‌کم خاموش می‌شود، در حالی که شخصیت‌ها خاموش دور میز نشسته‌اند."
+            },
+            {
+              "language": "kmr",
+              "text": "Di dawiyê de agir di sobeyê de hêdî vemire, dema kesayet bêdeng li ser maseyê rûniştine."
+            },
+            {
+              "language": "pl",
+              "text": "Na końcu ogień w piecu dogasa, podczas gdy postacie milcząco siedzą przy stole."
+            },
+            {
+              "language": "ro",
+              "text": "La final, focul din sobă se stinge treptat, în timp ce personajele stau tăcute la masă."
+            },
+            {
+              "language": "ru",
+              "text": "В конце огонь в печи догорает, пока персонажи молча сидят за столом."
+            },
+            {
+              "language": "sq",
+              "text": "Në fund, zjarri në sobë shuhet ngadalë, ndërsa personazhet rrinë në heshtje rreth tavolinës."
+            },
+            {
+              "language": "tr",
+              "text": "Sonda sobadaki ateş sönüp giderken karakterler masada sessizce oturur."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

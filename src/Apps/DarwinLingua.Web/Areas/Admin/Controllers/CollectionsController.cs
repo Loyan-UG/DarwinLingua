@@ -209,6 +209,11 @@ public sealed class CollectionsController(
             await operationsQueryService.UpdateCollectionAsync(collectionId, ToRequest(form), cancellationToken).ConfigureAwait(false);
             await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         }
+        catch (DbUpdateException)
+        {
+            ModelState.AddModelError(string.Empty, "A collection with this slug already exists.");
+            return View(form);
+        }
         catch (InvalidOperationException ex)
         {
             ModelState.AddModelError(string.Empty, ex.Message);
@@ -231,11 +236,56 @@ public sealed class CollectionsController(
 
     [HttpPost("{collectionId:guid}/words", Name = "Admin_CollectionAddWord")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> AddWord(Guid collectionId, Guid wordPublicId, int sortOrder, CancellationToken cancellationToken)
+    public async Task<IActionResult> AddWord(Guid collectionId, Guid wordPublicId, string? words, int sortOrder, CancellationToken cancellationToken)
     {
+        AdminCollectionDetailViewModel? existingCollection = await operationsQueryService
+            .GetCollectionAsync(collectionId, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (existingCollection is null)
+        {
+            return NotFound();
+        }
+
+        string[] requestedWords = ParseCommaSeparatedWords(words);
+        if (requestedWords.Length > 0)
+        {
+            AdminCollectionBulkAddResult result = await AddWordsByLemmaAsync(existingCollection, requestedWords, cancellationToken)
+                .ConfigureAwait(false);
+
+            if (result.AddedCount > 0)
+            {
+                TempData["AdminStatusMessage"] = $"{result.AddedCount} word(s) were added to the collection.";
+                await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            List<string> notices = [];
+            if (result.AlreadyAssigned.Count > 0)
+            {
+                notices.Add($"Already assigned: {string.Join(", ", result.AlreadyAssigned)}.");
+            }
+
+            if (result.NotFound.Count > 0)
+            {
+                notices.Add($"Not found and not added: {string.Join(", ", result.NotFound)}.");
+            }
+
+            if (notices.Count > 0)
+            {
+                TempData["AdminWarningMessage"] = string.Join(" ", notices);
+            }
+
+            if (result.AddedCount == 0 && notices.Count == 0)
+            {
+                TempData["AdminErrorMessage"] = "No words were added.";
+            }
+
+            return RedirectToAction(nameof(Details), new { collectionId });
+        }
+
         if (wordPublicId == Guid.Empty)
         {
-            TempData["AdminErrorMessage"] = "Word public ID is required.";
+            TempData["AdminErrorMessage"] = "Select a word or enter comma-separated words.";
             return RedirectToAction(nameof(Details), new { collectionId });
         }
 
@@ -252,6 +302,79 @@ public sealed class CollectionsController(
         await EvictCatalogCacheAsync(cancellationToken).ConfigureAwait(false);
         return RedirectToAction(nameof(Details), new { collectionId });
     }
+
+    private async Task<AdminCollectionBulkAddResult> AddWordsByLemmaAsync(
+        AdminCollectionDetailViewModel collection,
+        IReadOnlyList<string> requestedWords,
+        CancellationToken cancellationToken)
+    {
+        HashSet<Guid> assignedWordIds = collection.Entries
+            .Select(entry => entry.WordPublicId)
+            .ToHashSet();
+        List<string> notFound = [];
+        List<string> alreadyAssigned = [];
+        int addedCount = 0;
+
+        foreach (string requestedWord in requestedWords)
+        {
+            AdminWordListItemViewModel? word = await FindActiveWordByLemmaAsync(requestedWord, cancellationToken)
+                .ConfigureAwait(false);
+
+            if (word is null)
+            {
+                notFound.Add(requestedWord);
+                continue;
+            }
+
+            if (assignedWordIds.Contains(word.PublicId))
+            {
+                alreadyAssigned.Add(requestedWord);
+                continue;
+            }
+
+            AdminCollectionDetailViewModel? updatedCollection = await operationsQueryService
+                .AddCollectionWordAsync(collection.CollectionId, new AdminAddCollectionWordRequest(word.PublicId, 0), cancellationToken)
+                .ConfigureAwait(false);
+
+            if (updatedCollection is null)
+            {
+                notFound.Add(requestedWord);
+                continue;
+            }
+
+            assignedWordIds.Add(word.PublicId);
+            addedCount++;
+        }
+
+        return new AdminCollectionBulkAddResult(
+            addedCount,
+            alreadyAssigned.Distinct(StringComparer.OrdinalIgnoreCase).ToArray(),
+            notFound.Distinct(StringComparer.OrdinalIgnoreCase).ToArray());
+    }
+
+    private async Task<AdminWordListItemViewModel?> FindActiveWordByLemmaAsync(string requestedWord, CancellationToken cancellationToken)
+    {
+        AdminWordsPageViewModel words = await operationsQueryService
+            .GetWordsAsync(requestedWord, "Active", "lemma", 0, WordPickerTake, cancellationToken)
+            .ConfigureAwait(false);
+
+        string normalizedRequestedWord = NormalizeWordLookup(requestedWord);
+        return words.Words
+            .Where(word => string.Equals(NormalizeWordLookup(word.Lemma), normalizedRequestedWord, StringComparison.Ordinal))
+            .OrderBy(word => word.CefrLevel)
+            .ThenBy(word => word.PartOfSpeech)
+            .FirstOrDefault();
+    }
+
+    private static string[] ParseCommaSeparatedWords(string? words) =>
+        string.IsNullOrWhiteSpace(words)
+            ? []
+            : words
+                .Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+    private static string NormalizeWordLookup(string value) => value.Trim().ToLowerInvariant();
 
     [HttpPost("{collectionId:guid}/words/{entryId:guid}/delete", Name = "Admin_CollectionDeleteWord")]
     [ValidateAntiForgeryToken]
@@ -299,4 +422,9 @@ public sealed class CollectionsController(
             string.IsNullOrWhiteSpace(form.ImageUrl) ? null : form.ImageUrl.Trim(),
             form.PublicationStatus,
             form.SortOrder);
+
+    private sealed record AdminCollectionBulkAddResult(
+        int AddedCount,
+        IReadOnlyList<string> AlreadyAssigned,
+        IReadOnlyList<string> NotFound);
 }

@@ -124,39 +124,6 @@
     </section>
 }
 
-@if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0 || Model.Content.Word.Topics.Count > 0)
-{
-    <section class="grid-two-col">
-        @if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0)
-        {
-            <article class="panel stack-md">
-                <h2 class="headline-sm">Labels</h2>
-                <div class="chip-grid">
-                    @foreach (string usageLabel in Model.Content.Word.UsageLabels)
-                    {
-                        <span class="chip-link chip-link--static">@usageLabel</span>
-                    }
-                    @foreach (string contextLabel in Model.Content.Word.ContextLabels)
-                    {
-                        <span class="chip-link chip-link--static">@contextLabel</span>
-                    }
-                </div>
-            </article>
-        }
-        @if (Model.Content.Word.Topics.Count > 0)
-        {
-            <article class="panel stack-md">
-                <h2 class="headline-sm">Topics</h2>
-                <div class="chip-grid">
-                    @foreach (string topic in Model.Content.Word.Topics)
-                    {
-                        <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topic">@topic</a>
-                    }
-                </div>
-            </article>
-        }
-    </section>
-}
 
 @if (Model.Content.Word.GrammarNotes.Count > 0)
 {
@@ -251,6 +218,41 @@
                         </li>
                     }
                 </ul>
+            </article>
+        }
+    </section>
+}
+
+
+@if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0 || Model.Content.Word.Topics.Count > 0)
+{
+    <section class="grid-two-col">
+        @if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0)
+        {
+            <article class="panel stack-md">
+                <h2 class="headline-sm">Labels</h2>
+                <div class="chip-grid">
+                    @foreach (string usageLabel in Model.Content.Word.UsageLabels)
+                    {
+                        <span class="chip-link chip-link--static">@usageLabel</span>
+                    }
+                    @foreach (string contextLabel in Model.Content.Word.ContextLabels)
+                    {
+                        <span class="chip-link chip-link--static">@contextLabel</span>
+                    }
+                </div>
+            </article>
+        }
+        @if (Model.Content.Word.Topics.Count > 0)
+        {
+            <article class="panel stack-md">
+                <h2 class="headline-sm">Topics</h2>
+                <div class="chip-grid">
+                    @foreach (string topic in Model.Content.Word.Topics)
+                    {
+                        <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topic">@topic</a>
+                    }
+                </div>
             </article>
         }
     </section>

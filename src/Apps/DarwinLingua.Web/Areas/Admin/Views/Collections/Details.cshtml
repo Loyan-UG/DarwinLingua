@@ -21,6 +21,10 @@
     {
         <div class="state-panel state-panel--warning">@errorMessage</div>
     }
+    @if (TempData["AdminWarningMessage"] is string warningMessage)
+    {
+        <div class="state-panel state-panel--warning">@warningMessage</div>
+    }
 
     <div class="admin-detail-grid">
         <div><span class="eyebrow">Slug</span><strong>@Model.Slug</strong></div>
@@ -66,7 +70,11 @@
         <summary>Add word</summary>
         <form method="post" asp-action="AddWord" asp-route-collectionId="@Model.CollectionId" data-confirm-submit="Add this word to the collection?">
             @Html.AntiForgeryToken()
-            <div class="admin-inline-form-grid admin-inline-form-grid--collection-word">
+            <div class="form-grid">
+                <label class="form-field field--wide">
+                    <span>Words</span>
+                    <textarea name="words" rows="3" placeholder="abbeißen, abbekommen, die Abbildung"></textarea>
+                </label>
                 <label class="form-field">
                     <span>Search</span>
                     <input name="q"
@@ -94,9 +102,9 @@
                     <span>Sort</span>
                     <input name="sortOrder" type="number" min="0" value="0" />
                 </label>
-                <button class="button button--compact" type="submit" disabled="@(!hasAvailableWords)">Add</button>
+                <button class="button button--compact" type="submit">Add</button>
             </div>
-            <p class="eyebrow">Assigned words are hidden from the picker.</p>
+            <p class="eyebrow">Enter comma-separated lemmas to add multiple words, or use the picker for a single active word. Assigned words are hidden from the picker.</p>
         </form>
     </details>
 

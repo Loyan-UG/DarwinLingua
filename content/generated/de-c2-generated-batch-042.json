@@ -1,0 +1,1483 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c2-generated-batch-042",
+  "packageName": "German C2 Generated Batch 042",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "advanced",
+      "displayName": "Advanced",
+      "sortOrder": 260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fortgeschritten"
+        },
+        {
+          "language": "ar",
+          "name": "متقدم"
+        },
+        {
+          "language": "ckb",
+          "name": "پێشکەوتوو"
+        },
+        {
+          "language": "en",
+          "name": "Advanced"
+        },
+        {
+          "language": "fa",
+          "name": "پیشرفته"
+        },
+        {
+          "language": "kmr",
+          "name": "Pêşketî"
+        },
+        {
+          "language": "pl",
+          "name": "Zaawansowany"
+        },
+        {
+          "language": "ro",
+          "name": "Avansat"
+        },
+        {
+          "language": "ru",
+          "name": "Продвинутый"
+        },
+        {
+          "language": "sq",
+          "name": "I avancuar"
+        },
+        {
+          "language": "tr",
+          "name": "İleri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "sensitive",
+      "displayName": "Sensitive",
+      "sortOrder": 240,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Sensibel"
+        },
+        {
+          "language": "ar",
+          "name": "حساس"
+        },
+        {
+          "language": "ckb",
+          "name": "هەستیار"
+        },
+        {
+          "language": "en",
+          "name": "Sensitive"
+        },
+        {
+          "language": "fa",
+          "name": "حساس"
+        },
+        {
+          "language": "kmr",
+          "name": "Hestiyar"
+        },
+        {
+          "language": "pl",
+          "name": "Wrażliwy"
+        },
+        {
+          "language": "ro",
+          "name": "Sensibil"
+        },
+        {
+          "language": "ru",
+          "name": "Деликатный"
+        },
+        {
+          "language": "sq",
+          "name": "I ndjeshëm"
+        },
+        {
+          "language": "tr",
+          "name": "Hassas"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "informal",
+      "displayName": "Informal",
+      "sortOrder": 30,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Informell"
+        },
+        {
+          "language": "ar",
+          "name": "غير رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "نافەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Informal"
+        },
+        {
+          "language": "fa",
+          "name": "غیررسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Nefermî"
+        },
+        {
+          "language": "pl",
+          "name": "Nieformalny"
+        },
+        {
+          "language": "ro",
+          "name": "Informal"
+        },
+        {
+          "language": "ru",
+          "name": "Неформальный"
+        },
+        {
+          "language": "sq",
+          "name": "Joformal"
+        },
+        {
+          "language": "tr",
+          "name": "Gayri resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Am Arbeitsplatz"
+        },
+        {
+          "language": "ar",
+          "name": "في مكان العمل"
+        },
+        {
+          "language": "ckb",
+          "name": "لە شوێنی کار"
+        },
+        {
+          "language": "en",
+          "name": "Workplace"
+        },
+        {
+          "language": "fa",
+          "name": "محیط کار"
+        },
+        {
+          "language": "kmr",
+          "name": "Li cihê kar"
+        },
+        {
+          "language": "pl",
+          "name": "W miejscu pracy"
+        },
+        {
+          "language": "ro",
+          "name": "La locul de muncă"
+        },
+        {
+          "language": "ru",
+          "name": "На рабочем месте"
+        },
+        {
+          "language": "sq",
+          "name": "Në vendin e punës"
+        },
+        {
+          "language": "tr",
+          "name": "İş yeri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "academic",
+      "displayName": "Academic",
+      "sortOrder": 90,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Akademisch"
+        },
+        {
+          "language": "ar",
+          "name": "أكاديمي"
+        },
+        {
+          "language": "ckb",
+          "name": "ئەکادیمی"
+        },
+        {
+          "language": "en",
+          "name": "Academic"
+        },
+        {
+          "language": "fa",
+          "name": "آکادمیک"
+        },
+        {
+          "language": "kmr",
+          "name": "Akademîk"
+        },
+        {
+          "language": "pl",
+          "name": "Akademicki"
+        },
+        {
+          "language": "ro",
+          "name": "Academic"
+        },
+        {
+          "language": "ru",
+          "name": "Академический"
+        },
+        {
+          "language": "sq",
+          "name": "Akademik"
+        },
+        {
+          "language": "tr",
+          "name": "Akademik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "analysis",
+      "displayName": "Analysis",
+      "sortOrder": 200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Analyse"
+        },
+        {
+          "language": "ar",
+          "name": "تحليل"
+        },
+        {
+          "language": "ckb",
+          "name": "شیکردنەوە"
+        },
+        {
+          "language": "en",
+          "name": "Analysis"
+        },
+        {
+          "language": "fa",
+          "name": "تحلیل"
+        },
+        {
+          "language": "kmr",
+          "name": "Analîz"
+        },
+        {
+          "language": "pl",
+          "name": "Analiza"
+        },
+        {
+          "language": "ro",
+          "name": "Analiză"
+        },
+        {
+          "language": "ru",
+          "name": "Анализ"
+        },
+        {
+          "language": "sq",
+          "name": "Analizë"
+        },
+        {
+          "language": "tr",
+          "name": "Analiz"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "hadern",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "hadern",
+      "pronunciationIpa": null,
+      "syllableBreak": "ha-dern",
+      "topics": [
+        "social-and-relationships",
+        "management-and-leadership",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced",
+        "sensitive"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "intransitive verb; commonly used with mit, meaning to struggle inwardly or be dissatisfied with fate or a decision"
+      ],
+      "collocations": [
+        {
+          "text": "mit einer Entscheidung hadern",
+          "meaning": "to struggle inwardly with a decision"
+        }
+      ],
+      "wordFamilies": [],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يصارع داخلياً؛ يتذمر من قدر أو قرار"
+        },
+        {
+          "language": "ckb",
+          "text": "لە ناوخۆدا دەستەویەخە بێت؛ لەگەڵ بڕیارێکدا بەتەنگ بێت"
+        },
+        {
+          "language": "en",
+          "text": "to struggle inwardly; to be at odds with"
+        },
+        {
+          "language": "fa",
+          "text": "درگیر کشمکش درونی بودن؛ با چیزی کنار نیامدن"
+        },
+        {
+          "language": "kmr",
+          "text": "di hundir de têkoşîn kirin; li gel tiştekî li hev nehatin"
+        },
+        {
+          "language": "pl",
+          "text": "zmagać się wewnętrznie; nie godzić się z czymś"
+        },
+        {
+          "language": "ro",
+          "text": "a se frământa; a nu se împăca cu ceva"
+        },
+        {
+          "language": "ru",
+          "text": "мучиться; не мириться с чем-либо"
+        },
+        {
+          "language": "sq",
+          "text": "të përballesh brenda vetes; të mos pajtohesh"
+        },
+        {
+          "language": "tr",
+          "text": "içten içe boğuşmak; kabullenememek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Noch Wochen nach der Reorganisation haderte das Team mit der Art, wie die Entscheidung kommuniziert worden war.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "حتى بعد أسابيع من إعادة التنظيم ظل الفريق يصارع طريقة إبلاغ القرار."
+            },
+            {
+              "language": "ckb",
+              "text": "چەند هەفتە دوای ڕێکخستنەوەکەش، تیمەکە هێشتا لەگەڵ شێوازی ڕاگەیاندنی بڕیارەکەدا بەتەنگ بوو."
+            },
+            {
+              "language": "en",
+              "text": "Weeks after the reorganization, the team was still struggling with the way the decision had been communicated."
+            },
+            {
+              "language": "fa",
+              "text": "هفته‌ها پس از سازمان‌دهی مجدد، تیم هنوز با شیوه اعلام تصمیم کنار نیامده بود."
+            },
+            {
+              "language": "kmr",
+              "text": "Çend hefte piştî rêkxistinê jî, tîm hîn li gel awayê ragihandina biryarê di hundir de têdikoşiya."
+            },
+            {
+              "language": "pl",
+              "text": "Jeszcze tygodnie po reorganizacji zespół nie mógł pogodzić się ze sposobem zakomunikowania decyzji."
+            },
+            {
+              "language": "ro",
+              "text": "La câteva săptămâni după reorganizare, echipa încă se frământa din cauza modului în care fusese comunicată decizia."
+            },
+            {
+              "language": "ru",
+              "text": "Даже спустя недели после реорганизации команда все еще мучилась из-за того, как было сообщено решение."
+            },
+            {
+              "language": "sq",
+              "text": "Edhe javë pas riorganizimit, ekipi ende nuk pajtohej me mënyrën se si ishte komunikuar vendimi."
+            },
+            {
+              "language": "tr",
+              "text": "Yeniden yapılanmadan haftalar sonra ekip, kararın iletilme biçimiyle hâlâ içten içe boğuşuyordu."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Erzählerin hadert nicht mit ihrem Scheitern, sondern mit der Sprache, die es zu glatt erklären will.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لا تصارع الراوية فشلها، بل اللغة التي تريد تفسيره بسلاسة مفرطة."
+            },
+            {
+              "language": "ckb",
+              "text": "گێڕەرەوەکە لەگەڵ شکستەکەیدا بەتەنگ نییە، بەڵکو لەگەڵ ئەو زمانەدا کە دەیەوێت بە زۆر ڕوونی ڕوونی بکاتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The narrator does not struggle with her failure, but with the language that wants to explain it too smoothly."
+            },
+            {
+              "language": "fa",
+              "text": "راوی نه با شکست خود، بلکه با زبانی درگیر است که می‌خواهد آن را بیش از حد صاف و ساده توضیح دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Vebêjer ne bi têkçûna xwe re dişerê, lê bi zimanekî re ku dixwaze wê pir rast û hêsan rave bike."
+            },
+            {
+              "language": "pl",
+              "text": "Narratorka nie zmaga się ze swoją porażką, lecz z językiem, który chce ją zbyt gładko wyjaśnić."
+            },
+            {
+              "language": "ro",
+              "text": "Naratoarea nu se frământă cu eșecul ei, ci cu limbajul care vrea să îl explice prea neted."
+            },
+            {
+              "language": "ru",
+              "text": "Рассказчица мучается не из-за своего поражения, а из-за языка, который хочет слишком гладко его объяснить."
+            },
+            {
+              "language": "sq",
+              "text": "Rrëfimtarja nuk përballet me dështimin e saj, por me gjuhën që dëshiron ta shpjegojë atë tepër lehtë."
+            },
+            {
+              "language": "tr",
+              "text": "Anlatıcı başarısızlığıyla değil, onu fazla pürüzsüz açıklamak isteyen dille boğuşur."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "halsbrecherisch",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Adjective",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "hals-bre-che-risch",
+      "topics": [
+        "quality-and-risk",
+        "planning-and-projects",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "adjective; describes something extremely risky, reckless, or dangerously fast"
+      ],
+      "collocations": [
+        {
+          "text": "ein halsbrecherisches Tempo",
+          "meaning": "a breakneck pace"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Hals",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "brechen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "خطير جداً؛ متهور؛ بسرعة جنونية"
+        },
+        {
+          "language": "ckb",
+          "text": "زۆر مەترسیدار؛ بێ باک؛ بە خێراییەکی توند"
+        },
+        {
+          "language": "en",
+          "text": "breakneck; extremely risky; reckless"
+        },
+        {
+          "language": "fa",
+          "text": "بسیار خطرناک؛ بی‌پروا؛ سرسام‌آور"
+        },
+        {
+          "language": "kmr",
+          "text": "pir metirsîdar; bêhişyar; bi lezê zêde"
+        },
+        {
+          "language": "pl",
+          "text": "karkołomny; ryzykowny"
+        },
+        {
+          "language": "ro",
+          "text": "riscant; imprudent; amețitor"
+        },
+        {
+          "language": "ru",
+          "text": "головокружительно опасный; безрассудный"
+        },
+        {
+          "language": "sq",
+          "text": "tepër i rrezikshëm; i pamatur"
+        },
+        {
+          "language": "tr",
+          "text": "tehlikeli derecede hızlı; gözü kara"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Zeitplan war halsbrecherisch: Für Tests blieb kaum Raum, obwohl mehrere Schnittstellen neu gebaut wurden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "كان الجدول الزمني متهوراً: لم يبقَ تقريباً أي مجال للاختبارات رغم بناء عدة واجهات جديدة."
+            },
+            {
+              "language": "ckb",
+              "text": "خشتەی کاتەکە زۆر مەترسیدار بوو: بۆ تاقیکردنەوەکان نزیکەی هیچ شوێنێک نەما، هەرچەندە چەند ڕووکارێکی نوێ دروست کرابوو."
+            },
+            {
+              "language": "en",
+              "text": "The schedule was breakneck: there was hardly any room left for testing, although several interfaces had been newly built."
+            },
+            {
+              "language": "fa",
+              "text": "برنامه زمانی سرسام‌آور بود: با اینکه چندین رابط تازه ساخته شده بود، تقریباً جایی برای آزمون نمانده بود."
+            },
+            {
+              "language": "kmr",
+              "text": "Plana demê pir metirsîdar bû: ji bo ceribandinê hema tu cih nema, herçend çend navrûyên nû hatibûn çêkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Harmonogram był karkołomny: na testy prawie nie zostało miejsca, choć zbudowano kilka nowych interfejsów."
+            },
+            {
+              "language": "ro",
+              "text": "Calendarul era amețitor: aproape că nu mai rămăsese loc pentru teste, deși fuseseră construite mai multe interfețe noi."
+            },
+            {
+              "language": "ru",
+              "text": "График был головокружительно рискованным: на тесты почти не осталось времени, хотя было создано несколько новых интерфейсов."
+            },
+            {
+              "language": "sq",
+              "text": "Afati ishte marramendës: për testime pothuajse nuk mbeti hapësirë, megjithëse u ndërtuan disa ndërfaqe të reja."
+            },
+            {
+              "language": "tr",
+              "text": "Takvim tehlikeli derecede sıkışıktı: birkaç yeni arayüz yapılmış olmasına rağmen testlere neredeyse hiç yer kalmamıştı."
+            }
+          ]
+        },
+        {
+          "baseText": "Die halsbrecherische Kamerafahrt verstärkt das Gefühl, dass die Figur jede Kontrolle verliert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تعزز حركة الكاميرا المتهورة الإحساس بأن الشخصية تفقد كل سيطرة."
+            },
+            {
+              "language": "ckb",
+              "text": "جووڵەی مەترسیداری کامێرا هەستەکە بەهێزتر دەکات کە کارەکتەرەکە هەموو کۆنترۆڵێک لەدەست دەدات."
+            },
+            {
+              "language": "en",
+              "text": "The breakneck camera movement intensifies the sense that the character is losing all control."
+            },
+            {
+              "language": "fa",
+              "text": "حرکت سرسام‌آور دوربین این حس را تقویت می‌کند که شخصیت هر کنترلی را از دست می‌دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Tevgera kamerayê ya pir metirsîdar hestê xurt dike ku kesayetî hemû kontrolê winda dike."
+            },
+            {
+              "language": "pl",
+              "text": "Karkołomny ruch kamery wzmacnia wrażenie, że postać traci wszelką kontrolę."
+            },
+            {
+              "language": "ro",
+              "text": "Mișcarea amețitoare a camerei intensifică senzația că personajul pierde orice control."
+            },
+            {
+              "language": "ru",
+              "text": "Головокружительное движение камеры усиливает ощущение, что персонаж теряет всякий контроль."
+            },
+            {
+              "language": "sq",
+              "text": "Lëvizja marramendëse e kamerës e forcon ndjesinë se personazhi humb çdo kontroll."
+            },
+            {
+              "language": "tr",
+              "text": "Kameranın baş döndürücü hareketi, karakterin tüm kontrolü kaybettiği duygusunu güçlendirir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Halsstarrigkeit",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Hals-star-rig-keit",
+      "topics": [
+        "management-and-leadership",
+        "social-and-relationships",
+        "quality-and-risk"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "sensitive",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine abstract noun; plural is uncommon"
+      ],
+      "collocations": [
+        {
+          "text": "politische Halsstarrigkeit",
+          "meaning": "political stubbornness"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "halsstarrig",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "عناد شديد؛ تصلّب في الرأي"
+        },
+        {
+          "language": "ckb",
+          "text": "سەرسەختیی زۆر؛ لەسەرخۆڕاگیری"
+        },
+        {
+          "language": "en",
+          "text": "obstinacy; stubbornness"
+        },
+        {
+          "language": "fa",
+          "text": "لجبازی شدید؛ سرسختی"
+        },
+        {
+          "language": "kmr",
+          "text": "serhişkî; xurtgirtin li ser raya xwe"
+        },
+        {
+          "language": "pl",
+          "text": "upór; zatwardziałość"
+        },
+        {
+          "language": "ro",
+          "text": "încăpățânare; obstinație"
+        },
+        {
+          "language": "ru",
+          "text": "упрямство; закоснелость"
+        },
+        {
+          "language": "sq",
+          "text": "kokëfortësi; këmbëngulje e verbër"
+        },
+        {
+          "language": "tr",
+          "text": "inatçılık; dik başlılık"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Halsstarrigkeit der Verhandlungsführer verhinderte eine Lösung, die sachlich längst möglich gewesen wäre.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "حال عناد المفاوضين دون حل كان ممكناً من الناحية الموضوعية منذ زمن."
+            },
+            {
+              "language": "ckb",
+              "text": "سەرسەختی دانوسانکارەکان ڕێگری کرد لە چارەسەرێک کە لە ڕووی بابەتییەوە ماوەیەک بوو دەکرا."
+            },
+            {
+              "language": "en",
+              "text": "The obstinacy of the negotiators prevented a solution that had long been objectively possible."
+            },
+            {
+              "language": "fa",
+              "text": "سرسختی مذاکره‌کنندگان مانع راه‌حلی شد که از نظر واقعی مدت‌ها ممکن بود."
+            },
+            {
+              "language": "kmr",
+              "text": "Serhişkîya danûstandinkaran rê li çareseriyek girt ku ji aliyê rastî ve demeke dirêj gengaz bû."
+            },
+            {
+              "language": "pl",
+              "text": "Upór negocjatorów uniemożliwił rozwiązanie, które rzeczowo od dawna było możliwe."
+            },
+            {
+              "language": "ro",
+              "text": "Încăpățânarea negociatorilor a împiedicat o soluție care, obiectiv, era de mult posibilă."
+            },
+            {
+              "language": "ru",
+              "text": "Упрямство переговорщиков помешало решению, которое по существу давно было возможно."
+            },
+            {
+              "language": "sq",
+              "text": "Kokëfortësia e negociatorëve pengoi një zgjidhje që objektivisht kishte qenë prej kohësh e mundur."
+            },
+            {
+              "language": "tr",
+              "text": "Müzakerecilerin inatçılığı, nesnel olarak çoktan mümkün olan bir çözümü engelledi."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Familienrat wurde seine Halsstarrigkeit nicht als Stärke, sondern als Angst vor Kontrollverlust verstanden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في مجلس العائلة لم يُفهم عناده بوصفه قوة، بل خوفاً من فقدان السيطرة."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کۆبوونەوەی خێزاندا سەرسەختییەکەی وەک هێز تێنەگەیشترا، بەڵکو وەک ترس لە لەدەستدانی کۆنترۆڵ."
+            },
+            {
+              "language": "en",
+              "text": "In the family council, his stubbornness was understood not as strength, but as fear of losing control."
+            },
+            {
+              "language": "fa",
+              "text": "در گفت‌وگوی خانوادگی، لجبازی او نه به‌عنوان قدرت، بلکه به‌عنوان ترس از دست دادن کنترل فهمیده شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di civîna malbatê de serhişkîya wî ne wek hêz, lê wek tirs ji windakirina kontrolê hate fêmkirin."
+            },
+            {
+              "language": "pl",
+              "text": "W naradzie rodzinnej jego upór odczytano nie jako siłę, lecz jako lęk przed utratą kontroli."
+            },
+            {
+              "language": "ro",
+              "text": "În consiliul de familie, încăpățânarea lui a fost înțeleasă nu ca forță, ci ca teamă de pierderea controlului."
+            },
+            {
+              "language": "ru",
+              "text": "На семейном совете его упрямство поняли не как силу, а как страх потерять контроль."
+            },
+            {
+              "language": "sq",
+              "text": "Në këshillin familjar, kokëfortësia e tij u kuptua jo si forcë, por si frikë nga humbja e kontrollit."
+            },
+            {
+              "language": "tr",
+              "text": "Aile toplantısında onun inatçılığı güç değil, kontrolü kaybetme korkusu olarak anlaşıldı."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "hauen",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "hauen",
+      "pronunciationIpa": null,
+      "syllableBreak": "hau-en",
+      "topics": [
+        "business-communication",
+        "social-and-relationships",
+        "culture-and-media"
+      ],
+      "usageLabels": [
+        "informal",
+        "workplace",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "verb; colloquial in many uses, including to hit, chop, or deliver something forcefully"
+      ],
+      "collocations": [
+        {
+          "text": "eine These in den Raum hauen",
+          "meaning": "to throw out a thesis forcefully or bluntly"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Hieb",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يضرب؛ يطرح شيئاً بحدة؛ يقطع بضربة"
+        },
+        {
+          "language": "ckb",
+          "text": "بوەشێنێت؛ بە توندی بڵێت؛ بە ضربە ببڕێت"
+        },
+        {
+          "language": "en",
+          "text": "to hit; to throw out bluntly; to chop"
+        },
+        {
+          "language": "fa",
+          "text": "زدن؛ با شدت مطرح کردن؛ شکافتن"
+        },
+        {
+          "language": "kmr",
+          "text": "lêdan; bi tundî avêtin; birîn"
+        },
+        {
+          "language": "pl",
+          "text": "uderzyć; rzucić coś dosadnie; rąbać"
+        },
+        {
+          "language": "ro",
+          "text": "a lovi; a arunca brutal o idee; a tăia"
+        },
+        {
+          "language": "ru",
+          "text": "ударить; резко бросить мысль; рубить"
+        },
+        {
+          "language": "sq",
+          "text": "të godasësh; të hedhësh troç një ide; të presësh"
+        },
+        {
+          "language": "tr",
+          "text": "vurmak; pat diye ortaya atmak; yarmak"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Er haute die Zahl in die Runde, ohne zu erklären, auf welchen Annahmen die Prognose beruhte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "طرح الرقم بحدة أمام المجموعة من دون أن يشرح على أي افتراضات استندت التوقعات."
+            },
+            {
+              "language": "ckb",
+              "text": "ژمارەکەی بە توندی خستە ناو بازنەکەوە، بێ ئەوەی ڕوون بکاتەوە پێشبینییەکە لەسەر کام پێشگریمانە دامەزراوە."
+            },
+            {
+              "language": "en",
+              "text": "He threw the number into the discussion bluntly without explaining which assumptions the forecast was based on."
+            },
+            {
+              "language": "fa",
+              "text": "او عدد را بی‌مقدمه در جمع انداخت، بی‌آنکه توضیح دهد پیش‌بینی بر چه فرض‌هایی استوار است."
+            },
+            {
+              "language": "kmr",
+              "text": "Wî hejmar bi tundî avêt nav nîqaşê bê ku rave bike pêşbînî li ser kîjan pêşbîniyan hatiye avakirin."
+            },
+            {
+              "language": "pl",
+              "text": "Rzucił tę liczbę w dyskusję bez wyjaśnienia, na jakich założeniach opierała się prognoza."
+            },
+            {
+              "language": "ro",
+              "text": "A aruncat cifra în discuție fără să explice pe ce ipoteze se baza prognoza."
+            },
+            {
+              "language": "ru",
+              "text": "Он резко бросил цифру в обсуждение, не объяснив, на каких предпосылках основан прогноз."
+            },
+            {
+              "language": "sq",
+              "text": "Ai e hodhi shifrën në diskutim pa shpjeguar mbi cilat supozime bazohej parashikimi."
+            },
+            {
+              "language": "tr",
+              "text": "Rakamı, tahminin hangi varsayımlara dayandığını açıklamadan ortaya pat diye attı."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Bildhauer haute die grobe Form aus dem Stein, bevor er die feinen Übergänge ausarbeitete.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "نحت النحات الشكل الخام من الحجر قبل أن ينجز الانتقالات الدقيقة."
+            },
+            {
+              "language": "ckb",
+              "text": "پەیکەرتاشەکە شێوەی گشتییەکەی لە بەردەکە دەرکرد، پێش ئەوەی گواستنەوە وردەکان کار بکات."
+            },
+            {
+              "language": "en",
+              "text": "The sculptor hewed the rough form out of the stone before working out the fine transitions."
+            },
+            {
+              "language": "fa",
+              "text": "مجسمه‌ساز پیش از پرداخت گذارهای ظریف، شکل کلی را از سنگ بیرون تراشید."
+            },
+            {
+              "language": "kmr",
+              "text": "Peykersazê şêweya giştî ji kevirê derxist berî ku derbasbûnên hûr bixebitîne."
+            },
+            {
+              "language": "pl",
+              "text": "Rzeźbiarz wykuł z kamienia ogólną formę, zanim opracował subtelne przejścia."
+            },
+            {
+              "language": "ro",
+              "text": "Sculptorul a cioplit forma brută din piatră înainte de a lucra tranzițiile fine."
+            },
+            {
+              "language": "ru",
+              "text": "Скульптор высек грубую форму из камня, прежде чем проработал тонкие переходы."
+            },
+            {
+              "language": "sq",
+              "text": "Skulptori e nxori formën e ashpër nga guri para se të punonte kalimet e imëta."
+            },
+            {
+              "language": "tr",
+              "text": "Heykeltıraş ince geçişleri işlemeden önce kaba formu taştan yonttu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Hermeneutik",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "Her-me-neu-tik",
+      "topics": [
+        "education-and-training",
+        "culture-and-media",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "academic",
+        "analysis"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine noun; philosophical and methodological theory of interpretation; plural is uncommon"
+      ],
+      "collocations": [
+        {
+          "text": "philosophische Hermeneutik",
+          "meaning": "philosophical hermeneutics"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "hermeneutisch",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "علم التأويل؛ نظرية الفهم والتفسير"
+        },
+        {
+          "language": "ckb",
+          "text": "زانستی لێکدانەوە؛ تیۆری تێگەیشتن"
+        },
+        {
+          "language": "en",
+          "text": "hermeneutics; theory of interpretation"
+        },
+        {
+          "language": "fa",
+          "text": "هرمنوتیک؛ نظریه فهم و تفسیر"
+        },
+        {
+          "language": "kmr",
+          "text": "hermeneutîk; teoriya şîroveyê"
+        },
+        {
+          "language": "pl",
+          "text": "hermeneutyka; teoria interpretacji"
+        },
+        {
+          "language": "ro",
+          "text": "hermeneutică; teoria interpretării"
+        },
+        {
+          "language": "ru",
+          "text": "герменевтика; теория толкования"
+        },
+        {
+          "language": "sq",
+          "text": "hermeneutikë; teori interpretimi"
+        },
+        {
+          "language": "tr",
+          "text": "hermeneutik; yorum kuramı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Hermeneutik der Richtlinie entscheidet darüber, ob sie als starres Verbot oder als begründbare Abwägung gelesen wird.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تحدد هرمنوتيك التوجيه ما إذا كان سيُقرأ كحظر صارم أم كموازنة قابلة للتبرير."
+            },
+            {
+              "language": "ckb",
+              "text": "هەرمەنیوتیکی ڕێنماییەکە بڕیار دەدات کە ئایا وەک قەدەغەیەکی ڕەق بخوێندرێتەوە یان وەک هاوسەنگییەکی پاساوپێدراو."
+            },
+            {
+              "language": "en",
+              "text": "The hermeneutics of the guideline determines whether it is read as a rigid ban or as a justifiable balancing process."
+            },
+            {
+              "language": "fa",
+              "text": "هرمنوتیک دستورالعمل تعیین می‌کند که آن را ممنوعیتی سخت بخوانیم یا سنجشی قابل توجیه."
+            },
+            {
+              "language": "kmr",
+              "text": "Hermeneutîka rêbernameyê biryar dide ka ew wek qedexeyeke hişk tê xwendin an wek hevsengiyeke bi sedem."
+            },
+            {
+              "language": "pl",
+              "text": "Hermeneutyka wytycznej decyduje, czy zostanie ona odczytana jako sztywny zakaz, czy jako uzasadnialne ważenie racji."
+            },
+            {
+              "language": "ro",
+              "text": "Hermeneutica directivei decide dacă aceasta este citită ca interdicție rigidă sau ca o cântărire justificabilă."
+            },
+            {
+              "language": "ru",
+              "text": "Герменевтика директивы определяет, читается ли она как жесткий запрет или как обоснованное взвешивание."
+            },
+            {
+              "language": "sq",
+              "text": "Hermeneutika e udhëzimit përcakton nëse ai lexohet si ndalim i ngurtë apo si balancim i arsyetueshëm."
+            },
+            {
+              "language": "tr",
+              "text": "Yönergenin hermeneutiği, onun katı bir yasak mı yoksa gerekçelendirilebilir bir dengeleme mi olarak okunacağını belirler."
+            }
+          ]
+        },
+        {
+          "baseText": "Im Seminar wurde Hermeneutik nicht als bloße Texttechnik behandelt, sondern als Frage nach den Bedingungen des Verstehens.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في الحلقة الدراسية لم تُعالج الهرمنوتيك كتقنية نصية فحسب، بل كسؤال عن شروط الفهم."
+            },
+            {
+              "language": "ckb",
+              "text": "لە سیمینارەکەدا هەرمەنیوتیک وەک تەکنیکی دەق بە تەنها مامەڵەی لەگەڵ نەکرا، بەڵکو وەک پرسیارێک لەسەر مەرجەکانی تێگەیشتن."
+            },
+            {
+              "language": "en",
+              "text": "In the seminar, hermeneutics was treated not as a mere textual technique, but as a question about the conditions of understanding."
+            },
+            {
+              "language": "fa",
+              "text": "در سمینار، هرمنوتیک نه فقط به‌عنوان تکنیک متن، بلکه به‌عنوان پرسشی درباره شرایط فهم بررسی شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di seminarê de hermeneutîk ne wek tenê teknîka nivîsê, lê wek pirsek li ser şertên têgihiştinê hate birêvebirin."
+            },
+            {
+              "language": "pl",
+              "text": "Na seminarium hermeneutykę potraktowano nie jako zwykłą technikę tekstową, lecz jako pytanie o warunki rozumienia."
+            },
+            {
+              "language": "ro",
+              "text": "La seminar, hermeneutica a fost tratată nu ca simplă tehnică textuală, ci ca întrebare despre condițiile înțelegerii."
+            },
+            {
+              "language": "ru",
+              "text": "На семинаре герменевтику рассматривали не как простую технику работы с текстом, а как вопрос об условиях понимания."
+            },
+            {
+              "language": "sq",
+              "text": "Në seminar, hermeneutika nuk u trajtua si thjesht teknikë tekstuale, por si pyetje mbi kushtet e të kuptuarit."
+            },
+            {
+              "language": "tr",
+              "text": "Seminerde hermeneutik salt bir metin tekniği değil, anlama koşullarına dair bir soru olarak ele alındı."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "hermetisch",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Adjective",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "her-me-tisch",
+      "topics": [
+        "advanced-analysis",
+        "culture-and-media",
+        "technology-and-it"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced",
+        "analysis"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "adjective; can mean airtight, sealed, or intellectually closed and hard to access"
+      ],
+      "collocations": [
+        {
+          "text": "hermetisch abgeschlossen",
+          "meaning": "hermetically sealed or closed off"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Hermetik",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "محكم الإغلاق؛ مغلق على الفهم؛ عصي على النفاذ"
+        },
+        {
+          "language": "ckb",
+          "text": "بە تەواوی داخراو؛ قورس بۆ تێگەیشتن"
+        },
+        {
+          "language": "en",
+          "text": "hermetic; sealed; intellectually closed"
+        },
+        {
+          "language": "fa",
+          "text": "کاملاً بسته؛ دشوارفهم؛ نفوذناپذیر"
+        },
+        {
+          "language": "kmr",
+          "text": "bi tevahî girtî; zehmet ji bo têgihiştinê"
+        },
+        {
+          "language": "pl",
+          "text": "hermetyczny; szczelny; zamknięty"
+        },
+        {
+          "language": "ro",
+          "text": "ermetic; închis; greu accesibil"
+        },
+        {
+          "language": "ru",
+          "text": "герметичный; замкнутый; труднодоступный"
+        },
+        {
+          "language": "sq",
+          "text": "hermetik; i mbyllur; vështirë i kuptueshëm"
+        },
+        {
+          "language": "tr",
+          "text": "hermetik; kapalı; zor anlaşılır"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das System war nach außen hermetisch abgeschottet, doch intern fehlte eine klare Trennung der Rollen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "كان النظام معزولاً بإحكام عن الخارج، لكن داخلياً لم يكن هناك فصل واضح للأدوار."
+            },
+            {
+              "language": "ckb",
+              "text": "سیستەمەکە بۆ دەرەوە بە تەواوی داخراو بوو، بەڵام لە ناوخۆدا جیاکردنەوەی ڕۆڵەکان ڕوون نەبوو."
+            },
+            {
+              "language": "en",
+              "text": "The system was hermetically isolated from the outside, but internally it lacked a clear separation of roles."
+            },
+            {
+              "language": "fa",
+              "text": "سیستم از بیرون کاملاً بسته بود، اما در داخل تفکیک روشنی میان نقش‌ها نداشت."
+            },
+            {
+              "language": "kmr",
+              "text": "Pergal ji derve bi tevahî girtî bû, lê di hundir de cudakirina roleyan zelal nebû."
+            },
+            {
+              "language": "pl",
+              "text": "System był hermetycznie odizolowany od zewnątrz, ale wewnętrznie brakowało jasnego rozdziału ról."
+            },
+            {
+              "language": "ro",
+              "text": "Sistemul era izolat ermetic față de exterior, dar intern îi lipsea o separare clară a rolurilor."
+            },
+            {
+              "language": "ru",
+              "text": "Система была герметично изолирована от внешнего мира, но внутри не хватало четкого разделения ролей."
+            },
+            {
+              "language": "sq",
+              "text": "Sistemi ishte i izoluar hermetikisht nga jashtë, por brenda i mungonte ndarja e qartë e roleve."
+            },
+            {
+              "language": "tr",
+              "text": "Sistem dışarıya karşı hermetik biçimde yalıtılmıştı, ancak içeride roller net ayrılmamıştı."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Gedichtband wirkt zunächst hermetisch, öffnet sich aber, sobald man die wiederkehrenden Bilder verfolgt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تبدو مجموعة القصائد في البداية عصية على الفهم، لكنها تنفتح عندما يتتبع المرء الصور المتكررة."
+            },
+            {
+              "language": "ckb",
+              "text": "کۆمەڵە شیعرەکە لە سەرەتا قورس بۆ تێگەیشتن دەردەکەوێت، بەڵام کاتێک وێنە دووبارەبووەکان شوێن دەکرێن دەکرێتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The poetry collection initially seems hermetic, but opens up once one follows the recurring images."
+            },
+            {
+              "language": "fa",
+              "text": "دفتر شعر ابتدا دشوارفهم به نظر می‌رسد، اما وقتی تصاویر تکرارشونده را دنبال کنیم، گشوده می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Koma helbestan di destpêkê de hermetîk xuya dike, lê dema mirov wêneyên vedigerin bişopîne vedibe."
+            },
+            {
+              "language": "pl",
+              "text": "Tom poetycki początkowo wydaje się hermetyczny, ale otwiera się, gdy śledzi się powracające obrazy."
+            },
+            {
+              "language": "ro",
+              "text": "Volumul de poezie pare la început ermetic, dar se deschide odată ce urmărești imaginile recurente."
+            },
+            {
+              "language": "ru",
+              "text": "Сборник стихов сначала кажется герметичным, но раскрывается, как только прослеживаешь повторяющиеся образы."
+            },
+            {
+              "language": "sq",
+              "text": "Vëllimi poetik fillimisht duket hermetik, por hapet sapo ndiqen imazhet e përsëritura."
+            },
+            {
+              "language": "tr",
+              "text": "Şiir kitabı başta hermetik görünür, ancak yinelenen imgeler izlendiğinde açılır."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

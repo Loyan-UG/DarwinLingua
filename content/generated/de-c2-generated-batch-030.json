@@ -1,0 +1,1386 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-c2-generated-batch-030",
+  "packageName": "German C2 Generated Batch 030",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "sortOrder": 20,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formell"
+        },
+        {
+          "language": "ar",
+          "name": "رسمي"
+        },
+        {
+          "language": "ckb",
+          "name": "فەرمی"
+        },
+        {
+          "language": "en",
+          "name": "Formal"
+        },
+        {
+          "language": "fa",
+          "name": "رسمی"
+        },
+        {
+          "language": "kmr",
+          "name": "Fermî"
+        },
+        {
+          "language": "pl",
+          "name": "Formalny"
+        },
+        {
+          "language": "ro",
+          "name": "Formal"
+        },
+        {
+          "language": "ru",
+          "name": "Формальный"
+        },
+        {
+          "language": "sq",
+          "name": "Formal"
+        },
+        {
+          "language": "tr",
+          "name": "Resmi"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "advanced",
+      "displayName": "Advanced",
+      "sortOrder": 260,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Fortgeschritten"
+        },
+        {
+          "language": "ar",
+          "name": "متقدم"
+        },
+        {
+          "language": "ckb",
+          "name": "پێشکەوتوو"
+        },
+        {
+          "language": "en",
+          "name": "Advanced"
+        },
+        {
+          "language": "fa",
+          "name": "پیشرفته"
+        },
+        {
+          "language": "kmr",
+          "name": "Pêşketî"
+        },
+        {
+          "language": "pl",
+          "name": "Zaawansowany"
+        },
+        {
+          "language": "ro",
+          "name": "Avansat"
+        },
+        {
+          "language": "ru",
+          "name": "Продвинутый"
+        },
+        {
+          "language": "sq",
+          "name": "I avancuar"
+        },
+        {
+          "language": "tr",
+          "name": "İleri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "academic",
+      "displayName": "Academic",
+      "sortOrder": 90,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Akademisch"
+        },
+        {
+          "language": "ar",
+          "name": "أكاديمي"
+        },
+        {
+          "language": "ckb",
+          "name": "ئەکادیمی"
+        },
+        {
+          "language": "en",
+          "name": "Academic"
+        },
+        {
+          "language": "fa",
+          "name": "آکادمیک"
+        },
+        {
+          "language": "kmr",
+          "name": "Akademîk"
+        },
+        {
+          "language": "pl",
+          "name": "Akademicki"
+        },
+        {
+          "language": "ro",
+          "name": "Academic"
+        },
+        {
+          "language": "ru",
+          "name": "Академический"
+        },
+        {
+          "language": "sq",
+          "name": "Akademik"
+        },
+        {
+          "language": "tr",
+          "name": "Akademik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "analysis",
+      "displayName": "Analysis",
+      "sortOrder": 200,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Analyse"
+        },
+        {
+          "language": "ar",
+          "name": "تحليل"
+        },
+        {
+          "language": "ckb",
+          "name": "شیکردنەوە"
+        },
+        {
+          "language": "en",
+          "name": "Analysis"
+        },
+        {
+          "language": "fa",
+          "name": "تحلیل"
+        },
+        {
+          "language": "kmr",
+          "name": "Analîz"
+        },
+        {
+          "language": "pl",
+          "name": "Analiza"
+        },
+        {
+          "language": "ro",
+          "name": "Analiză"
+        },
+        {
+          "language": "ru",
+          "name": "Анализ"
+        },
+        {
+          "language": "sq",
+          "name": "Analizë"
+        },
+        {
+          "language": "tr",
+          "name": "Analiz"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "word": "die Epik",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "E-pik",
+      "topics": [
+        "culture-and-media",
+        "education-and-training",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "academic",
+        "analysis"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine noun; literary genre of narrative prose/verse; normally singular"
+      ],
+      "collocations": [
+        {
+          "text": "moderne Epik",
+          "meaning": "modern narrative literature"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "episch",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "الأدب السردي؛ الملحمة/النثر القصصي"
+        },
+        {
+          "language": "ckb",
+          "text": "ئەدەبی گێڕانەوە؛ ئێپیک"
+        },
+        {
+          "language": "en",
+          "text": "epic/narrative literature; narrative genre"
+        },
+        {
+          "language": "fa",
+          "text": "ادبیات روایی؛ حماسه/نثر داستانی"
+        },
+        {
+          "language": "kmr",
+          "text": "edebiyata vegotinê; epîk"
+        },
+        {
+          "language": "pl",
+          "text": "epika; literatura narracyjna"
+        },
+        {
+          "language": "ro",
+          "text": "epică; literatură narativă"
+        },
+        {
+          "language": "ru",
+          "text": "эпос; повествовательная литература"
+        },
+        {
+          "language": "sq",
+          "text": "epikë; letërsi rrëfimtare"
+        },
+        {
+          "language": "tr",
+          "text": "epik; anlatı edebiyatı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Im Seminar wurde die Epik des 19. Jahrhunderts mit frühen journalistischen Formen verglichen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في الندوة قورنت epika القرن التاسع عشر بأشكال صحفية مبكرة."
+            },
+            {
+              "language": "ckb",
+              "text": "لە سیمینارەکەدا ئێپیکی سەدەی نۆزدە لەگەڵ شێوازە ڕۆژنامەوانییە سەرەتاییەکان بەراورد کرا."
+            },
+            {
+              "language": "en",
+              "text": "In the seminar, nineteenth-century narrative literature was compared with early journalistic forms."
+            },
+            {
+              "language": "fa",
+              "text": "در سمینار، ادبیات روایی قرن نوزدهم با شکل‌های اولیه روزنامه‌نگاری مقایسه شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di semînerê de epîka sedsala nozdehan bi formên rojnamevaniya destpêkê re hate berawirdkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Na seminarium epikę XIX wieku porównano z wczesnymi formami dziennikarskimi."
+            },
+            {
+              "language": "ro",
+              "text": "În seminar, epica secolului al XIX-lea a fost comparată cu forme jurnalistice timpurii."
+            },
+            {
+              "language": "ru",
+              "text": "На семинаре эпос XIX века сравнивали с ранними журналистскими формами."
+            },
+            {
+              "language": "sq",
+              "text": "Në seminar, epika e shekullit XIX u krahasua me forma të hershme gazetareske."
+            },
+            {
+              "language": "tr",
+              "text": "Seminerde 19. yüzyıl anlatı edebiyatı erken gazetecilik biçimleriyle karşılaştırıldı."
+            }
+          ]
+        },
+        {
+          "baseText": "Die neue Epik der Autorin verbindet Familiengeschichte mit politischer Analyse.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تربط السردية الجديدة للكاتبة تاريخ العائلة بالتحليل السياسي."
+            },
+            {
+              "language": "ckb",
+              "text": "ئێپیکی نوێی نووسەرەکە مێژووی خێزان لەگەڵ شیکردنەوەی سیاسی پێکەوە دەبەستێت."
+            },
+            {
+              "language": "en",
+              "text": "The author’s new narrative prose connects family history with political analysis."
+            },
+            {
+              "language": "fa",
+              "text": "روایت تازه نویسنده تاریخ خانواده را با تحلیل سیاسی پیوند می‌دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Epîka nû ya nivîskarê dîroka malbatê bi analîza siyasî ve girê dide."
+            },
+            {
+              "language": "pl",
+              "text": "Nowa epika autorki łączy historię rodzinną z analizą polityczną."
+            },
+            {
+              "language": "ro",
+              "text": "Noua epică a autoarei leagă istoria familiei de analiza politică."
+            },
+            {
+              "language": "ru",
+              "text": "Новая эпика авторки соединяет семейную историю с политическим анализом."
+            },
+            {
+              "language": "sq",
+              "text": "Epika e re e autores lidh historinë familjare me analizën politike."
+            },
+            {
+              "language": "tr",
+              "text": "Yazarın yeni epik anlatısı aile tarihini siyasi analizle birleştirir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "epistemisch",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Adjective",
+      "article": null,
+      "plural": null,
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "e-pis-te-misch",
+      "topics": [
+        "advanced-analysis",
+        "education-and-training",
+        "data-and-reporting"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "academic",
+        "analysis"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "adjective; relating to knowledge, justification, or uncertainty"
+      ],
+      "collocations": [
+        {
+          "text": "epistemische Unsicherheit",
+          "meaning": "uncertainty due to limited knowledge"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Epistemologie",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "معرفي؛ متعلق بالمعرفة"
+        },
+        {
+          "language": "ckb",
+          "text": "زانینناسانە؛ پەیوەندیدار بە زانین"
+        },
+        {
+          "language": "en",
+          "text": "epistemic; related to knowledge"
+        },
+        {
+          "language": "fa",
+          "text": "معرفت‌شناختی؛ مربوط به دانش"
+        },
+        {
+          "language": "kmr",
+          "text": "epîstemîk; têkildarî zanînê"
+        },
+        {
+          "language": "pl",
+          "text": "epistemiczny; poznawczy"
+        },
+        {
+          "language": "ro",
+          "text": "epistemic; legat de cunoaștere"
+        },
+        {
+          "language": "ru",
+          "text": "эпистемический; относящийся к знанию"
+        },
+        {
+          "language": "sq",
+          "text": "epistemik; i lidhur me dijen"
+        },
+        {
+          "language": "tr",
+          "text": "epistemik; bilgiyle ilgili"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Modell unterscheidet zwischen statistischer Streuung und epistemischer Unsicherheit.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يميز النموذج بين التشتت الإحصائي وعدم اليقين المعرفي."
+            },
+            {
+              "language": "ckb",
+              "text": "مۆدێلەکە جیاوازی دەکات لە نێوان بڵاوبوونەوەی ئاماری و نادڵنیایی زانینناسانە."
+            },
+            {
+              "language": "en",
+              "text": "The model distinguishes between statistical variation and epistemic uncertainty."
+            },
+            {
+              "language": "fa",
+              "text": "مدل میان پراکندگی آماری و عدم قطعیت معرفتی تفاوت می‌گذارد."
+            },
+            {
+              "language": "kmr",
+              "text": "Model cihêkirinê dike di navbera belavbûna statîstîkî û nezelaliya epîstemîk de."
+            },
+            {
+              "language": "pl",
+              "text": "Model rozróżnia zmienność statystyczną i niepewność epistemiczną."
+            },
+            {
+              "language": "ro",
+              "text": "Modelul distinge între variația statistică și incertitudinea epistemică."
+            },
+            {
+              "language": "ru",
+              "text": "Модель различает статистический разброс и эпистемическую неопределённость."
+            },
+            {
+              "language": "sq",
+              "text": "Modeli dallon mes shpërndarjes statistikore dhe pasigurisë epistemike."
+            },
+            {
+              "language": "tr",
+              "text": "Model istatistiksel değişkenlik ile epistemik belirsizliği ayırır."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Diskussion hatte eine epistemische Dimension, weil unklar blieb, wer überhaupt über verlässliches Wissen verfügte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "كان للنقاش بعد معرفي، إذ ظل غير واضح من يملك أصلاً معرفة موثوقة."
+            },
+            {
+              "language": "ckb",
+              "text": "گفتوگۆکە ڕەهەندێکی زانینناسانەی هەبوو، چونکە ڕوون نەبوو کێ بە زانیاریی متمانەپێکراو دەستگەیشتووە."
+            },
+            {
+              "language": "en",
+              "text": "The discussion had an epistemic dimension because it remained unclear who actually had reliable knowledge."
+            },
+            {
+              "language": "fa",
+              "text": "بحث بُعدی معرفتی داشت، چون روشن نبود اصلاً چه کسی دانش قابل اعتماد دارد."
+            },
+            {
+              "language": "kmr",
+              "text": "Nîqaş xwedî aliyekî epîstemîk bû, ji ber ku nezelal ma ka kî xwedî zanîna bawerbar e."
+            },
+            {
+              "language": "pl",
+              "text": "Dyskusja miała wymiar epistemiczny, ponieważ nie było jasne, kto w ogóle dysponuje wiarygodną wiedzą."
+            },
+            {
+              "language": "ro",
+              "text": "Discuția avea o dimensiune epistemică, deoarece rămânea neclar cine dispunea de cunoaștere fiabilă."
+            },
+            {
+              "language": "ru",
+              "text": "Дискуссия имела эпистемическое измерение, поскольку оставалось неясным, кто вообще обладает надёжным знанием."
+            },
+            {
+              "language": "sq",
+              "text": "Diskutimi kishte një dimension epistemik, sepse mbeti e paqartë kush kishte në të vërtetë dije të besueshme."
+            },
+            {
+              "language": "tr",
+              "text": "Tartışmanın epistemik bir boyutu vardı, çünkü kimin güvenilir bilgiye sahip olduğu belirsiz kaldı."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "die Epistemologie",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Epistemologien",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "E-pis-te-mo-lo-gie",
+      "topics": [
+        "education-and-training",
+        "advanced-analysis",
+        "culture-and-media"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "academic",
+        "analysis"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "feminine noun; theory of knowledge"
+      ],
+      "collocations": [
+        {
+          "text": "soziale Epistemologie",
+          "meaning": "social epistemology"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "epistemisch",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "نظرية المعرفة؛ الإبستمولوجيا"
+        },
+        {
+          "language": "ckb",
+          "text": "زانینناسی؛ ئیپیستمۆلۆژیا"
+        },
+        {
+          "language": "en",
+          "text": "epistemology; theory of knowledge"
+        },
+        {
+          "language": "fa",
+          "text": "معرفت‌شناسی؛ نظریه دانش"
+        },
+        {
+          "language": "kmr",
+          "text": "epîstemolojî; teorîya zanînê"
+        },
+        {
+          "language": "pl",
+          "text": "epistemologia; teoria poznania"
+        },
+        {
+          "language": "ro",
+          "text": "epistemologie; teoria cunoașterii"
+        },
+        {
+          "language": "ru",
+          "text": "эпистемология; теория познания"
+        },
+        {
+          "language": "sq",
+          "text": "epistemologji; teoria e dijes"
+        },
+        {
+          "language": "tr",
+          "text": "epistemoloji; bilgi kuramı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Epistemologie fragt danach, unter welchen Bedingungen eine Überzeugung als Wissen gelten kann.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تسأل الإبستمولوجيا تحت أي شروط يمكن اعتبار اعتقاد ما معرفة."
+            },
+            {
+              "language": "ckb",
+              "text": "زانینناسی دەپرسی کە لە ژێر چ مەرجێکدا باوەڕێک وەک زانین هەژمار دەکرێت."
+            },
+            {
+              "language": "en",
+              "text": "Epistemology asks under what conditions a belief can count as knowledge."
+            },
+            {
+              "language": "fa",
+              "text": "معرفت‌شناسی می‌پرسد تحت چه شرایطی یک باور می‌تواند دانش محسوب شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Epîstemolojî dipirse di bin kîjan şertan de baweriyek dikare wek zanîn were hesibandin."
+            },
+            {
+              "language": "pl",
+              "text": "Epistemologia pyta, pod jakimi warunkami przekonanie może uchodzić za wiedzę."
+            },
+            {
+              "language": "ro",
+              "text": "Epistemologia întreabă în ce condiții o convingere poate fi considerată cunoaștere."
+            },
+            {
+              "language": "ru",
+              "text": "Эпистемология спрашивает, при каких условиях убеждение может считаться знанием."
+            },
+            {
+              "language": "sq",
+              "text": "Epistemologjia pyet në cilat kushte një bindje mund të quhet dije."
+            },
+            {
+              "language": "tr",
+              "text": "Epistemoloji, bir inancın hangi koşullarda bilgi sayılabileceğini sorar."
+            }
+          ]
+        },
+        {
+          "baseText": "In der KI-Debatte wird Epistemologie praktisch, sobald Systeme Entscheidungen begründen sollen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في نقاش الذكاء الاصطناعي تصبح نظرية المعرفة عملية عندما يُطلب من الأنظمة تبرير قراراتها."
+            },
+            {
+              "language": "ckb",
+              "text": "لە مشتومڕی زیرەکی دەستکرددا زانینناسی کرداری دەبێت کاتێک سیستەمەکان پێویستە بڕیارەکانیان پاساو بدەن."
+            },
+            {
+              "language": "en",
+              "text": "In the AI debate, epistemology becomes practical as soon as systems are expected to justify decisions."
+            },
+            {
+              "language": "fa",
+              "text": "در بحث هوش مصنوعی، معرفت‌شناسی زمانی عملی می‌شود که سیستم‌ها باید تصمیم‌های خود را توجیه کنند."
+            },
+            {
+              "language": "kmr",
+              "text": "Di nîqaşa AI de epîstemolojî dema pergal divê biryarên xwe rastdar bikin, pratîkî dibe."
+            },
+            {
+              "language": "pl",
+              "text": "W debacie o AI epistemologia staje się praktyczna, gdy systemy mają uzasadniać decyzje."
+            },
+            {
+              "language": "ro",
+              "text": "În dezbaterea despre IA, epistemologia devine practică atunci când sistemele trebuie să justifice decizii."
+            },
+            {
+              "language": "ru",
+              "text": "В дискуссии об ИИ эпистемология становится практической, когда системы должны обосновывать решения."
+            },
+            {
+              "language": "sq",
+              "text": "Në debatin për IA, epistemologjia bëhet praktike sapo sistemet duhet të arsyetojnë vendime."
+            },
+            {
+              "language": "tr",
+              "text": "Yapay zekâ tartışmasında sistemlerden kararlarını gerekçelendirmeleri beklendiğinde epistemoloji pratik hale gelir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "das Epitheton",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Epitheta",
+      "infinitive": null,
+      "pronunciationIpa": null,
+      "syllableBreak": "E-pi-the-ton",
+      "topics": [
+        "culture-and-media",
+        "education-and-training",
+        "advanced-analysis"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "academic",
+        "analysis"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "neuter noun; rhetorical/literary term for an epithet or descriptive attribute"
+      ],
+      "collocations": [
+        {
+          "text": "ein schmückendes Epitheton",
+          "meaning": "an ornamental epithet"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "epithetisch",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "نعت بلاغي؛ لقب وصفي"
+        },
+        {
+          "language": "ckb",
+          "text": "سفەتی وەسفی؛ ناونیشانی وەسفکەر"
+        },
+        {
+          "language": "en",
+          "text": "epithet; descriptive attribute"
+        },
+        {
+          "language": "fa",
+          "text": "صفت توصیفی؛ لقب ادبی"
+        },
+        {
+          "language": "kmr",
+          "text": "epîtet; taybetmendiya wesfî"
+        },
+        {
+          "language": "pl",
+          "text": "epitet; określenie opisowe"
+        },
+        {
+          "language": "ro",
+          "text": "epitet; atribut descriptiv"
+        },
+        {
+          "language": "ru",
+          "text": "эпитет; описательное определение"
+        },
+        {
+          "language": "sq",
+          "text": "epitet; përcaktor përshkrues"
+        },
+        {
+          "language": "tr",
+          "text": "epitet; betimleyici sıfat"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Epitheton „listenreich“ verändert die Wahrnehmung der Figur schon vor ihrer ersten Handlung.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يغيّر النعت «واسع الحيلة» تصور الشخصية قبل أول فعل لها."
+            },
+            {
+              "language": "ckb",
+              "text": "سفەتی «پڕفێڵ» پێش یەکەم کرداری کارەکتەرەکە بینینی ئێمەی لێ دەگۆڕێت."
+            },
+            {
+              "language": "en",
+              "text": "The epithet “cunning” changes the perception of the character even before their first action."
+            },
+            {
+              "language": "fa",
+              "text": "صفت «حیله‌گر» پیش از نخستین کنش شخصیت، برداشت ما از او را تغییر می‌دهد."
+            },
+            {
+              "language": "kmr",
+              "text": "Epîteta “hîlekar” berî çalakiya yekem a karakterê têgihiştinê diguherîne."
+            },
+            {
+              "language": "pl",
+              "text": "Epitet „podstępny” zmienia postrzeganie postaci jeszcze przed jej pierwszym działaniem."
+            },
+            {
+              "language": "ro",
+              "text": "Epitetul „viclean” schimbă percepția personajului înainte de prima sa acțiune."
+            },
+            {
+              "language": "ru",
+              "text": "Эпитет «хитроумный» меняет восприятие персонажа ещё до его первого поступка."
+            },
+            {
+              "language": "sq",
+              "text": "Epiteti “dinak” ndryshon perceptimin e personazhit që para veprimit të parë."
+            },
+            {
+              "language": "tr",
+              "text": "“Kurnaz” epiteti, karakterin ilk eyleminden önce algısını değiştirir."
+            }
+          ]
+        },
+        {
+          "baseText": "In der Präsentation wirkte das Epitheton „revolutionär“ überzogen, weil die Neuerung eher inkrementell war.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في العرض بدا الوصف «ثوري» مبالغاً فيه، لأن الابتكار كان أقرب إلى التحسين التدريجي."
+            },
+            {
+              "language": "ckb",
+              "text": "لە پێشکەشکارییەکەدا سفەتی «شۆڕشگێڕانە» زیادەڕۆیی دیار بوو، چونکە نوێکارییەکە زیاتر قۆناغبەقۆناغ بوو."
+            },
+            {
+              "language": "en",
+              "text": "In the presentation, the epithet “revolutionary” seemed exaggerated because the innovation was more incremental."
+            },
+            {
+              "language": "fa",
+              "text": "در ارائه، صفت «انقلابی» اغراق‌آمیز به نظر می‌رسید، چون نوآوری بیشتر تدریجی بود."
+            },
+            {
+              "language": "kmr",
+              "text": "Di pêşkêşkarîyê de epîteta “şoreşger” zêde xuya dikir, ji ber ku nûjenî zêdetir gav-bi-gav bû."
+            },
+            {
+              "language": "pl",
+              "text": "W prezentacji epitet „rewolucyjny” brzmiał przesadnie, bo innowacja była raczej przyrostowa."
+            },
+            {
+              "language": "ro",
+              "text": "În prezentare, epitetul „revoluționar” părea exagerat, deoarece noutatea era mai degrabă incrementală."
+            },
+            {
+              "language": "ru",
+              "text": "В презентации эпитет «революционный» казался преувеличенным, поскольку новшество было скорее постепенным."
+            },
+            {
+              "language": "sq",
+              "text": "Në prezantim, epiteti “revolucionar” dukej i tepruar, sepse risia ishte më shumë graduale."
+            },
+            {
+              "language": "tr",
+              "text": "Sunumda “devrim niteliğinde” epiteti abartılı görünüyordu, çünkü yenilik daha çok kademeliydi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "erahnen",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "erahnen",
+      "pronunciationIpa": null,
+      "syllableBreak": "er-ah-nen",
+      "topics": [
+        "advanced-analysis",
+        "social-and-relationships",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "transitive verb; erahnt, erahnte, hat erahnt; to sense or guess vaguely"
+      ],
+      "collocations": [
+        {
+          "text": "die Tragweite erahnen",
+          "meaning": "to sense the significance"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "ahnen",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "die Ahnung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يتحسس؛ يخمن بشكل غير واضح"
+        },
+        {
+          "language": "ckb",
+          "text": "بە هەست پێشبینی بکات؛ بە ناڕوونی تێبگات"
+        },
+        {
+          "language": "en",
+          "text": "to sense; to vaguely anticipate"
+        },
+        {
+          "language": "fa",
+          "text": "حدس زدن؛ به‌طور مبهم حس کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "hest kirin; bi nezelal pêşbînî kirin"
+        },
+        {
+          "language": "pl",
+          "text": "przeczuwać; domyślać się mgliście"
+        },
+        {
+          "language": "ro",
+          "text": "a intui; a presimți vag"
+        },
+        {
+          "language": "ru",
+          "text": "смутно предчувствовать; догадываться"
+        },
+        {
+          "language": "sq",
+          "text": "të parandjesh; të marrësh me mend vagullt"
+        },
+        {
+          "language": "tr",
+          "text": "sezmek; belirsizce tahmin etmek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Schon im ersten Workshop ließ sich erahnen, wie tief der Konflikt zwischen den Abteilungen reichte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في أول ورشة عمل أمكن بالفعل تحسس مدى عمق النزاع بين الأقسام."
+            },
+            {
+              "language": "ckb",
+              "text": "هەر لە یەکەم وۆرکشۆپدا دەکرا هەست بکرێت ناکۆکی نێوان بەشەکان چەندە قووڵە."
+            },
+            {
+              "language": "en",
+              "text": "Already in the first workshop, one could sense how deep the conflict between the departments ran."
+            },
+            {
+              "language": "fa",
+              "text": "همان کارگاه اول نشان می‌داد که تعارض میان بخش‌ها چقدر عمیق است."
+            },
+            {
+              "language": "kmr",
+              "text": "Jixwe di atolyeya yekem de dikarî hest bikî ku nakokiya navbera beşan çiqas kûr e."
+            },
+            {
+              "language": "pl",
+              "text": "Już podczas pierwszych warsztatów można było przeczuć, jak głęboki jest konflikt między działami."
+            },
+            {
+              "language": "ro",
+              "text": "Încă din primul workshop se putea intui cât de profund era conflictul dintre departamente."
+            },
+            {
+              "language": "ru",
+              "text": "Уже на первом семинаре можно было почувствовать, насколько глубок конфликт между отделами."
+            },
+            {
+              "language": "sq",
+              "text": "Që në punëtorinë e parë mund të parandjehej sa i thellë ishte konflikti midis departamenteve."
+            },
+            {
+              "language": "tr",
+              "text": "Daha ilk çalıştayda departmanlar arasındaki çatışmanın ne kadar derin olduğu sezilebiliyordu."
+            }
+          ]
+        },
+        {
+          "baseText": "Sie erahnte hinter seiner knappen Antwort eine Sorge, die er nicht aussprechen wollte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "استشعرت خلف جوابه المقتضب قلقاً لم يرد أن يصرح به."
+            },
+            {
+              "language": "ckb",
+              "text": "لە پشت وەڵامە کورتەکەی نیگەرانییەکی هەست پێکرد کە نەیدەویست بیڵێت."
+            },
+            {
+              "language": "en",
+              "text": "Behind his brief answer, she sensed a worry he did not want to voice."
+            },
+            {
+              "language": "fa",
+              "text": "او پشت پاسخ کوتاه او نگرانی‌ای را حس کرد که نمی‌خواست بیان کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Li pişt bersiva wî ya kurt, wê xemek hest kir ku wî nexwest bigot."
+            },
+            {
+              "language": "pl",
+              "text": "Za jego krótką odpowiedzią wyczuła niepokój, którego nie chciał wypowiedzieć."
+            },
+            {
+              "language": "ro",
+              "text": "În spatele răspunsului lui scurt, ea a intuit o grijă pe care el nu voia să o exprime."
+            },
+            {
+              "language": "ru",
+              "text": "За его кратким ответом она почувствовала тревогу, которую он не хотел произносить."
+            },
+            {
+              "language": "sq",
+              "text": "Pas përgjigjes së tij të shkurtër, ajo ndjeu një shqetësim që ai nuk donte ta shprehte."
+            },
+            {
+              "language": "tr",
+              "text": "Kısa yanıtının ardında söylemek istemediği bir kaygıyı sezdi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "erbieten",
+      "language": "de",
+      "cefrLevel": "C2",
+      "partOfSpeech": "Verb",
+      "article": null,
+      "plural": null,
+      "infinitive": "erbieten",
+      "pronunciationIpa": null,
+      "syllableBreak": "er-bie-ten",
+      "topics": [
+        "business-communication",
+        "contracts-and-negotiation",
+        "social-and-relationships"
+      ],
+      "usageLabels": [
+        "formal",
+        "written",
+        "advanced",
+        "business"
+      ],
+      "contextLabels": [],
+      "grammarNotes": [
+        "reflexive/formal verb; erbietet sich, erbot sich, hat sich erboten; to offer oneself to do something"
+      ],
+      "collocations": [
+        {
+          "text": "sich zur Vermittlung erbieten",
+          "meaning": "to offer to mediate"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "bieten",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "يعرض نفسه للقيام بشيء؛ يتطوع رسمياً"
+        },
+        {
+          "language": "ckb",
+          "text": "خۆی پێشکەش بکات بۆ کردنی شتێک"
+        },
+        {
+          "language": "en",
+          "text": "to offer oneself; to volunteer formally"
+        },
+        {
+          "language": "fa",
+          "text": "داوطلب شدن؛ پیشنهاد انجام کاری دادن"
+        },
+        {
+          "language": "kmr",
+          "text": "xwe pêşkêş kirin; bi fermî dilxwaz bûn"
+        },
+        {
+          "language": "pl",
+          "text": "ofiarować się; zgłosić gotowość"
+        },
+        {
+          "language": "ro",
+          "text": "a se oferi; a se propune"
+        },
+        {
+          "language": "ru",
+          "text": "вызываться; предлагать свои услуги"
+        },
+        {
+          "language": "sq",
+          "text": "të ofrohesh; të dalësh vullnetar"
+        },
+        {
+          "language": "tr",
+          "text": "gönüllü olmak; kendini teklif etmek"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der frühere Projektleiter erbot sich, zwischen Kunde und Entwicklungsteam zu vermitteln.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "عرض مدير المشروع السابق أن يتوسط بين العميل وفريق التطوير."
+            },
+            {
+              "language": "ckb",
+              "text": "بەڕێوەبەری پێشووی پڕۆژە خۆی پێشکەش کرد بۆ ناوبژیوانی لە نێوان کڕیار و تیمی پەرەپێداندا."
+            },
+            {
+              "language": "en",
+              "text": "The former project manager offered to mediate between the customer and the development team."
+            },
+            {
+              "language": "fa",
+              "text": "مدیر پروژه پیشین پیشنهاد داد میان مشتری و تیم توسعه میانجی‌گری کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Rêveberê berê yê projeyê xwe pêşkêş kir ku di navbera xerîdar û tîma pêşvebirinê de navbeynkar be."
+            },
+            {
+              "language": "pl",
+              "text": "Były kierownik projektu zaoferował, że będzie mediował między klientem a zespołem deweloperskim."
+            },
+            {
+              "language": "ro",
+              "text": "Fostul manager de proiect s-a oferit să medieze între client și echipa de dezvoltare."
+            },
+            {
+              "language": "ru",
+              "text": "Бывший руководитель проекта вызвался посредничать между клиентом и командой разработки."
+            },
+            {
+              "language": "sq",
+              "text": "Ish-menaxheri i projektit u ofrua të ndërmjetësonte mes klientit dhe ekipit të zhvillimit."
+            },
+            {
+              "language": "tr",
+              "text": "Eski proje yöneticisi müşteri ile geliştirme ekibi arasında arabuluculuk yapmayı teklif etti."
+            }
+          ]
+        },
+        {
+          "baseText": "Als niemand das Wort ergriff, erbot sie sich, den Brief im Namen der Gruppe zu verfassen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "عندما لم يتكلم أحد، عرضت أن تكتب الرسالة باسم المجموعة."
+            },
+            {
+              "language": "ckb",
+              "text": "کاتێک کەس قسەی نەکرد، خۆی پێشکەش کرد کە نامەکە بە ناوی گرووپەکە بنووسێت."
+            },
+            {
+              "language": "en",
+              "text": "When no one spoke up, she offered to write the letter on behalf of the group."
+            },
+            {
+              "language": "fa",
+              "text": "وقتی هیچ‌کس سخنی نگفت، او داوطلب شد نامه را از طرف گروه بنویسد."
+            },
+            {
+              "language": "kmr",
+              "text": "Dema tu kes axivî, wê xwe pêşkêş kir ku nameyê bi navê komê binivîse."
+            },
+            {
+              "language": "pl",
+              "text": "Gdy nikt nie zabrał głosu, zaoferowała, że napisze list w imieniu grupy."
+            },
+            {
+              "language": "ro",
+              "text": "Când nimeni nu a luat cuvântul, ea s-a oferit să scrie scrisoarea în numele grupului."
+            },
+            {
+              "language": "ru",
+              "text": "Когда никто не высказался, она вызвалась написать письмо от имени группы."
+            },
+            {
+              "language": "sq",
+              "text": "Kur askush nuk foli, ajo u ofrua ta shkruante letrën në emër të grupit."
+            },
+            {
+              "language": "tr",
+              "text": "Kimse söz almayınca mektubu grup adına yazmayı teklif etti."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

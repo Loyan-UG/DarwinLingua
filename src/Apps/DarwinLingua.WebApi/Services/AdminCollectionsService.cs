@@ -33,11 +33,17 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
     {
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
 
-        AdminCollectionItemResponse[] collections = await dbContext.WordCollections
+        WordCollection[] collectionEntities = await dbContext.WordCollections
             .AsNoTracking()
             .Include(collection => collection.Localizations)
+            .Include(collection => collection.Entries)
+            .AsSplitQuery()
             .OrderBy(collection => collection.SortOrder)
             .ThenBy(collection => collection.Name)
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        AdminCollectionItemResponse[] collections = collectionEntities
             .Select(collection => new AdminCollectionItemResponse(
                 collection.Id,
                 collection.Slug,
@@ -56,8 +62,7 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
                 collection.SortOrder,
                 collection.Entries.Count,
                 collection.UpdatedAtUtc))
-            .ToArrayAsync(cancellationToken)
-            .ConfigureAwait(false);
+            .ToArray();
 
         return new AdminCollectionsResponse(collections);
     }
@@ -132,8 +137,10 @@ internal sealed class AdminCollectionsService(IDbContextFactory<DarwinLinguaDbCo
             return null;
         }
 
-        collection.UpdateMetadata(request.Name, request.Description, request.ImageUrl, status, request.SortOrder, DateTime.UtcNow);
-        ApplyCollectionLocalizations(collection, request.Localizations, DateTime.UtcNow, requireCompleteCoverage: false);
+        DateTime now = DateTime.UtcNow;
+        collection.RenameSlug(request.Slug, now);
+        collection.UpdateMetadata(request.Name, request.Description, request.ImageUrl, status, request.SortOrder, now);
+        ApplyCollectionLocalizations(collection, request.Localizations, now, requireCompleteCoverage: false);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
         return MapDetail(collection);
