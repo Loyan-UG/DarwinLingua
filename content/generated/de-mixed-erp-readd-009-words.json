@@ -1,0 +1,1467 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-mixed-erp-readd-009-words",
+  "packageName": "German ERP Readd Batch 009 Words",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "administrative",
+      "displayName": "Administrative",
+      "sortOrder": 120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ar",
+          "name": "إداري"
+        },
+        {
+          "language": "ckb",
+          "name": "کارگێڕی"
+        },
+        {
+          "language": "en",
+          "name": "Administrative"
+        },
+        {
+          "language": "fa",
+          "name": "اداری"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêveberî"
+        },
+        {
+          "language": "pl",
+          "name": "Administracyjny"
+        },
+        {
+          "language": "ro",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ru",
+          "name": "Административный"
+        },
+        {
+          "language": "sq",
+          "name": "Administrativ"
+        },
+        {
+          "language": "tr",
+          "name": "İdari"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "customer-facing",
+      "displayName": "Customer-facing",
+      "sortOrder": 170,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenorientiert"
+        },
+        {
+          "language": "ar",
+          "name": "موجه للعملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕووی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer-facing"
+        },
+        {
+          "language": "fa",
+          "name": "مربوط به مشتری"
+        },
+        {
+          "language": "kmr",
+          "name": "Ji bo xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Dla klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Pentru clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Для клиентов"
+        },
+        {
+          "language": "sq",
+          "name": "Për klientë"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteriye dönük"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "process",
+      "displayName": "Process-related",
+      "sortOrder": 210,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Prozessbezogen"
+        },
+        {
+          "language": "ar",
+          "name": "متعلق بالعملية"
+        },
+        {
+          "language": "ckb",
+          "name": "پڕۆسەیی"
+        },
+        {
+          "language": "en",
+          "name": "Process-related"
+        },
+        {
+          "language": "fa",
+          "name": "فرایندی"
+        },
+        {
+          "language": "kmr",
+          "name": "Girêdayî pêvajoyê"
+        },
+        {
+          "language": "pl",
+          "name": "Procesowy"
+        },
+        {
+          "language": "ro",
+          "name": "Legat de proces"
+        },
+        {
+          "language": "ru",
+          "name": "Процессный"
+        },
+        {
+          "language": "sq",
+          "name": "I lidhur me procesin"
+        },
+        {
+          "language": "tr",
+          "name": "Süreçle ilgili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Am Arbeitsplatz"
+        },
+        {
+          "language": "ar",
+          "name": "في مكان العمل"
+        },
+        {
+          "language": "ckb",
+          "name": "لە شوێنی کار"
+        },
+        {
+          "language": "en",
+          "name": "Workplace"
+        },
+        {
+          "language": "fa",
+          "name": "محیط کار"
+        },
+        {
+          "language": "kmr",
+          "name": "Li cihê kar"
+        },
+        {
+          "language": "pl",
+          "name": "W miejscu pracy"
+        },
+        {
+          "language": "ro",
+          "name": "La locul de muncă"
+        },
+        {
+          "language": "ru",
+          "name": "На рабочем месте"
+        },
+        {
+          "language": "sq",
+          "name": "Në vendin e punës"
+        },
+        {
+          "language": "tr",
+          "name": "İş yeri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Vorgang",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Vorgänge",
+      "infinitive": null,
+      "syllableBreak": "Vor-gang",
+      "topics": [
+        "documents-and-administration",
+        "erp-and-business-systems",
+        "customer-service"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "process"
+      ],
+      "grammarNotes": [
+        "masculine noun"
+      ],
+      "collocations": [
+        {
+          "text": "einen Vorgang öffnen",
+          "meaning": "to open a case/process"
+        },
+        {
+          "text": "den Vorgang bearbeiten",
+          "meaning": "to process the case"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "vorgehen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "عملية؛ ملف حالة"
+        },
+        {
+          "language": "ckb",
+          "text": "پڕۆسە؛ کەیس"
+        },
+        {
+          "language": "en",
+          "text": "process; case; transaction"
+        },
+        {
+          "language": "fa",
+          "text": "فرآیند؛ پرونده؛ مورد"
+        },
+        {
+          "language": "kmr",
+          "text": "pêvajo; doz"
+        },
+        {
+          "language": "pl",
+          "text": "sprawa; proces"
+        },
+        {
+          "language": "ro",
+          "text": "procedură; caz"
+        },
+        {
+          "language": "ru",
+          "text": "процесс; дело; операция"
+        },
+        {
+          "language": "sq",
+          "text": "proces; rast"
+        },
+        {
+          "language": "tr",
+          "text": "işlem; süreç; dosya"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Vorgang ist im ERP-System noch offen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "العملية ما زالت مفتوحة في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "پڕۆسەکە هێشتا لە سیستەمی ERPدا کراوەیە."
+            },
+            {
+              "language": "en",
+              "text": "The case is still open in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "این مورد هنوز در سیستم ERP باز است."
+            },
+            {
+              "language": "kmr",
+              "text": "Doz hîn di pergala ERP de vekirî ye."
+            },
+            {
+              "language": "pl",
+              "text": "Sprawa jest nadal otwarta w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Cazul este încă deschis în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Дело все еще открыто в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Rasti është ende i hapur në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "İşlem ERP sisteminde hâlâ açık."
+            }
+          ]
+        },
+        {
+          "baseText": "Bitte geben Sie mir die Nummer des Vorgangs.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى إعطائي رقم العملية."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە ژمارەی پڕۆسەکە پێم بدەن."
+            },
+            {
+              "language": "en",
+              "text": "Please give me the case number."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً شماره پرونده را به من بدهید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe jimareya dozê bide min."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę podać mi numer sprawy."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rog să-mi dați numărul cazului."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, дайте мне номер дела."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutem më jepni numrin e rastit."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen bana işlem numarasını verin."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Zahlungsart",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Zahlungsarten",
+      "infinitive": null,
+      "syllableBreak": "Zah-lungs-art",
+      "topics": [
+        "finance-and-accounting",
+        "sales-and-customers",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Zahlungsart auswählen",
+          "meaning": "to select a payment type"
+        },
+        {
+          "text": "Zahlungsart ändern",
+          "meaning": "to change payment type"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Zahlung",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "die Art",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "طريقة الدفع"
+        },
+        {
+          "language": "ckb",
+          "text": "جۆری پارەدان"
+        },
+        {
+          "language": "en",
+          "text": "payment type; payment method"
+        },
+        {
+          "language": "fa",
+          "text": "نوع پرداخت؛ روش پرداخت"
+        },
+        {
+          "language": "kmr",
+          "text": "awayê pere dayînê"
+        },
+        {
+          "language": "pl",
+          "text": "forma płatności"
+        },
+        {
+          "language": "ro",
+          "text": "modalitate de plată"
+        },
+        {
+          "language": "ru",
+          "text": "способ оплаты"
+        },
+        {
+          "language": "sq",
+          "text": "lloj pagese; mënyrë pagese"
+        },
+        {
+          "language": "tr",
+          "text": "ödeme türü; ödeme şekli"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Zahlungsart muss vor der Fakturierung im ERP-System gewählt werden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يجب اختيار طريقة الدفع في نظام تخطيط موارد المؤسسة قبل إصدار الفاتورة."
+            },
+            {
+              "language": "ckb",
+              "text": "جۆری پارەدان پێویستە پێش فاکتورکردن لە سیستەمی ERPدا هەڵبژێردرێت."
+            },
+            {
+              "language": "en",
+              "text": "The payment type must be selected in the ERP system before invoicing."
+            },
+            {
+              "language": "fa",
+              "text": "نوع پرداخت باید قبل از صدور فاکتور در سیستم ERP انتخاب شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Awayê pere dayînê divê berî fatûrekirinê di pergala ERP de were hilbijartin."
+            },
+            {
+              "language": "pl",
+              "text": "Forma płatności musi zostać wybrana w systemie ERP przed fakturowaniem."
+            },
+            {
+              "language": "ro",
+              "text": "Modalitatea de plată trebuie aleasă în sistemul ERP înainte de facturare."
+            },
+            {
+              "language": "ru",
+              "text": "Способ оплаты должен быть выбран в ERP-системе до выставления счета."
+            },
+            {
+              "language": "sq",
+              "text": "Lloji i pagesës duhet zgjedhur në sistemin ERP para faturimit."
+            },
+            {
+              "language": "tr",
+              "text": "Ödeme türü faturalandırmadan önce ERP sisteminde seçilmelidir."
+            }
+          ]
+        },
+        {
+          "baseText": "Welche Zahlungsart möchten Sie verwenden: Karte oder Überweisung?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "ما طريقة الدفع التي تريد استخدامها: بطاقة أم تحويل بنكي؟"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتەوێت کام جۆری پارەدان بەکاربهێنیت: کارت یان گواستنەوەی بانکی؟"
+            },
+            {
+              "language": "en",
+              "text": "Which payment method would you like to use: card or bank transfer?"
+            },
+            {
+              "language": "fa",
+              "text": "از کدام روش پرداخت می‌خواهید استفاده کنید: کارت یا حواله بانکی؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Hûn dixwazin kîjan awayê pere dayînê bikar bînin: kart an veguhastina bankî?"
+            },
+            {
+              "language": "pl",
+              "text": "Jakiej formy płatności chce Pan/Pani użyć: kartą czy przelewem?"
+            },
+            {
+              "language": "ro",
+              "text": "Ce modalitate de plată doriți să folosiți: card sau transfer bancar?"
+            },
+            {
+              "language": "ru",
+              "text": "Какой способ оплаты вы хотите использовать: карту или банковский перевод?"
+            },
+            {
+              "language": "sq",
+              "text": "Cilën mënyrë pagese dëshironi të përdorni: kartë apo transfertë bankare?"
+            },
+            {
+              "language": "tr",
+              "text": "Hangi ödeme yöntemini kullanmak istersiniz: kart mı banka havalesi mi?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Zahlungsmittel",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Zahlungsmittel",
+      "infinitive": null,
+      "syllableBreak": "Zah-lungs-mit-tel",
+      "topics": [
+        "finance-and-accounting",
+        "sales-and-customers",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "neuter noun; plural is usually the same as singular"
+      ],
+      "collocations": [
+        {
+          "text": "ein Zahlungsmittel auswählen",
+          "meaning": "to select a payment instrument"
+        },
+        {
+          "text": "zulässige Zahlungsmittel",
+          "meaning": "accepted payment instruments"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Zahlung",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "das Mittel",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "وسيلة دفع"
+        },
+        {
+          "language": "ckb",
+          "text": "ئامرازی پارەدان"
+        },
+        {
+          "language": "en",
+          "text": "means of payment; payment instrument"
+        },
+        {
+          "language": "fa",
+          "text": "وسیله پرداخت"
+        },
+        {
+          "language": "kmr",
+          "text": "amûra pere dayînê"
+        },
+        {
+          "language": "pl",
+          "text": "środek płatniczy"
+        },
+        {
+          "language": "ro",
+          "text": "mijloc de plată"
+        },
+        {
+          "language": "ru",
+          "text": "платежное средство"
+        },
+        {
+          "language": "sq",
+          "text": "mjet pagese"
+        },
+        {
+          "language": "tr",
+          "text": "ödeme aracı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Zahlungsmittel muss im ERP-System vor der Rechnung hinterlegt sein.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يجب حفظ وسيلة الدفع في نظام تخطيط موارد المؤسسة قبل الفاتورة."
+            },
+            {
+              "language": "ckb",
+              "text": "ئامرازی پارەدان پێویستە پێش فاکتورەکە لە سیستەمی ERPدا تۆمارکرابێت."
+            },
+            {
+              "language": "en",
+              "text": "The payment instrument must be stored in the ERP system before the invoice."
+            },
+            {
+              "language": "fa",
+              "text": "وسیله پرداخت باید قبل از فاکتور در سیستم ERP ثبت شده باشد."
+            },
+            {
+              "language": "kmr",
+              "text": "Amûra pere dayînê divê berî fatûreyê di pergala ERP de hatibe tomarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Środek płatniczy musi być zapisany w systemie ERP przed fakturą."
+            },
+            {
+              "language": "ro",
+              "text": "Mijlocul de plată trebuie salvat în sistemul ERP înainte de factură."
+            },
+            {
+              "language": "ru",
+              "text": "Платежное средство должно быть сохранено в ERP-системе до выставления счета."
+            },
+            {
+              "language": "sq",
+              "text": "Mjeti i pagesës duhet të jetë i ruajtur në sistemin ERP para faturës."
+            },
+            {
+              "language": "tr",
+              "text": "Ödeme aracı faturadan önce ERP sisteminde kayıtlı olmalıdır."
+            }
+          ]
+        },
+        {
+          "baseText": "Karte und Überweisung sind bei uns die häufigsten Zahlungsmittel.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "البطاقة والتحويل البنكي هما أكثر وسائل الدفع استخدامًا لدينا."
+            },
+            {
+              "language": "ckb",
+              "text": "کارت و گواستنەوەی بانکی لەلای ئێمە باوترين ئامرازەکانی پارەدانن."
+            },
+            {
+              "language": "en",
+              "text": "Card and bank transfer are our most common means of payment."
+            },
+            {
+              "language": "fa",
+              "text": "کارت و حواله بانکی رایج‌ترین وسیله‌های پرداخت نزد ما هستند."
+            },
+            {
+              "language": "kmr",
+              "text": "Kart û veguhastina bankî li cem me amûrên pere dayînê yên herî gelemperî ne."
+            },
+            {
+              "language": "pl",
+              "text": "Karta i przelew to u nas najczęstsze środki płatnicze."
+            },
+            {
+              "language": "ro",
+              "text": "Cardul și transferul bancar sunt cele mai frecvente mijloace de plată la noi."
+            },
+            {
+              "language": "ru",
+              "text": "Карта и банковский перевод — самые частые платежные средства у нас."
+            },
+            {
+              "language": "sq",
+              "text": "Karta dhe transferta bankare janë mjetet më të zakonshme të pagesës te ne."
+            },
+            {
+              "language": "tr",
+              "text": "Kart ve banka havalesi bizde en yaygın ödeme araçlarıdır."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Zeitfenster",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Zeitfenster",
+      "infinitive": null,
+      "syllableBreak": "Zeit-fens-ter",
+      "topics": [
+        "warehouse-and-logistics",
+        "planning-and-projects",
+        "customer-service"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "neuter noun; plural is usually the same as singular"
+      ],
+      "collocations": [
+        {
+          "text": "ein Zeitfenster buchen",
+          "meaning": "to book a time slot"
+        },
+        {
+          "text": "das Zeitfenster einhalten",
+          "meaning": "to keep the time window"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Zeit",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "das Fenster",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "نافذة زمنية؛ فترة محددة"
+        },
+        {
+          "language": "ckb",
+          "text": "کاتی دیاریکراو؛ پەنجەرەی کات"
+        },
+        {
+          "language": "en",
+          "text": "time window; time slot"
+        },
+        {
+          "language": "fa",
+          "text": "بازه زمانی؛ پنجره زمانی"
+        },
+        {
+          "language": "kmr",
+          "text": "navbera demê"
+        },
+        {
+          "language": "pl",
+          "text": "okno czasowe"
+        },
+        {
+          "language": "ro",
+          "text": "interval orar"
+        },
+        {
+          "language": "ru",
+          "text": "временное окно"
+        },
+        {
+          "language": "sq",
+          "text": "dritare kohore"
+        },
+        {
+          "language": "tr",
+          "text": "zaman aralığı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Zeitfenster für die Anlieferung ist im ERP-System von 8 bis 10 Uhr gebucht.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم حجز نافذة تسليم البضاعة في نظام تخطيط موارد المؤسسة من الساعة 8 إلى 10."
+            },
+            {
+              "language": "ckb",
+              "text": "کاتی دیاریکراوی گەیاندن لە سیستەمی ERPدا لە 8 تا 10 حجزکراوە."
+            },
+            {
+              "language": "en",
+              "text": "The time window for the delivery is booked in the ERP system from 8 to 10."
+            },
+            {
+              "language": "fa",
+              "text": "بازه زمانی تحویل در سیستم ERP از ساعت ۸ تا ۱۰ رزرو شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Navbera demê ya radestkirinê di pergala ERP de ji 8 heta 10 hatiye veqetandin."
+            },
+            {
+              "language": "pl",
+              "text": "Okno czasowe dla dostawy jest zarezerwowane w systemie ERP od 8 do 10."
+            },
+            {
+              "language": "ro",
+              "text": "Intervalul orar pentru livrare este rezervat în sistemul ERP de la 8 la 10."
+            },
+            {
+              "language": "ru",
+              "text": "Временное окно для поставки забронировано в ERP-системе с 8 до 10."
+            },
+            {
+              "language": "sq",
+              "text": "Dritarja kohore për dorëzimin është rezervuar në sistemin ERP nga ora 8 deri në 10."
+            },
+            {
+              "language": "tr",
+              "text": "Teslimat için zaman aralığı ERP sisteminde 8 ile 10 arası olarak rezerve edildi."
+            }
+          ]
+        },
+        {
+          "baseText": "Passt Ihnen morgen ein Zeitfenster zwischen 14 und 16 Uhr?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "هل يناسبك غدًا وقت بين الساعة 14 و16؟"
+            },
+            {
+              "language": "ckb",
+              "text": "سبەی کاتێکی نێوان 14 و 16 بۆتان گونجاوە؟"
+            },
+            {
+              "language": "en",
+              "text": "Would a time window between 2 and 4 p.m. work for you tomorrow?"
+            },
+            {
+              "language": "fa",
+              "text": "آیا فردا بازه زمانی بین ساعت ۱۴ تا ۱۶ برای شما مناسب است؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ma sibê navbera demê ya di navbera 14 û 16 de ji we re guncan e?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy jutro pasuje Państwu okno czasowe między 14 a 16?"
+            },
+            {
+              "language": "ro",
+              "text": "Vă convine mâine un interval orar între 14 și 16?"
+            },
+            {
+              "language": "ru",
+              "text": "Вам подойдет завтра временное окно с 14 до 16?"
+            },
+            {
+              "language": "sq",
+              "text": "A ju përshtatet nesër një dritare kohore midis orës 14 dhe 16?"
+            },
+            {
+              "language": "tr",
+              "text": "Yarın 14 ile 16 arası bir zaman aralığı size uygun mu?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Zuweisung",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Zuweisungen",
+      "infinitive": null,
+      "syllableBreak": "Zu-wei-sung",
+      "topics": [
+        "erp-and-business-systems",
+        "documents-and-administration",
+        "planning-and-projects"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "process"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Zuweisung ändern",
+          "meaning": "to change an assignment"
+        },
+        {
+          "text": "die Zuweisung prüfen",
+          "meaning": "to check the assignment"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "zuweisen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "تخصيص؛ إسناد"
+        },
+        {
+          "language": "ckb",
+          "text": "تەرخانکردن؛ سپاردن"
+        },
+        {
+          "language": "en",
+          "text": "assignment; allocation"
+        },
+        {
+          "language": "fa",
+          "text": "تخصیص؛ ارجاع"
+        },
+        {
+          "language": "kmr",
+          "text": "veqetandin; erkdarkirin"
+        },
+        {
+          "language": "pl",
+          "text": "przypisanie; przydział"
+        },
+        {
+          "language": "ro",
+          "text": "alocare; atribuire"
+        },
+        {
+          "language": "ru",
+          "text": "назначение; распределение"
+        },
+        {
+          "language": "sq",
+          "text": "caktim; alokim"
+        },
+        {
+          "language": "tr",
+          "text": "atama; tahsis"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Zuweisung des Auftrags an das Lagerteam wurde im ERP-System geändert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم تغيير إسناد الطلب إلى فريق المستودع في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "سپاردنی داواکارییەکە بە تیمی کۆگا لە سیستەمی ERPدا گۆڕدرا."
+            },
+            {
+              "language": "en",
+              "text": "The assignment of the order to the warehouse team was changed in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "تخصیص سفارش به تیم انبار در سیستم ERP تغییر کرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Erkdarkirina fermarişê ji tîma embarê re di pergala ERP de hate guhertin."
+            },
+            {
+              "language": "pl",
+              "text": "Przypisanie zamówienia do zespołu magazynu zostało zmienione w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Alocarea comenzii către echipa din depozit a fost schimbată în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Назначение заказа складской команде было изменено в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Caktimi i porosisë te ekipi i magazinës u ndryshua në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Siparişin depo ekibine atanması ERP sisteminde değiştirildi."
+            }
+          ]
+        },
+        {
+          "baseText": "Ohne klare Zuweisung weiß niemand, wer die Aufgabe übernimmt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "من دون إسناد واضح لا يعرف أحد من يتولى المهمة."
+            },
+            {
+              "language": "ckb",
+              "text": "بێ سپاردنی ڕوون، هیچ کەس نازانێت کێ ئەرکەکە وەردەگرێت."
+            },
+            {
+              "language": "en",
+              "text": "Without a clear assignment, nobody knows who will take over the task."
+            },
+            {
+              "language": "fa",
+              "text": "بدون تخصیص روشن، هیچ‌کس نمی‌داند چه کسی کار را بر عهده می‌گیرد."
+            },
+            {
+              "language": "kmr",
+              "text": "Bê erkdarkirineke zelal, kes nizane ka kî erkê digire."
+            },
+            {
+              "language": "pl",
+              "text": "Bez jasnego przypisania nikt nie wie, kto przejmie zadanie."
+            },
+            {
+              "language": "ro",
+              "text": "Fără o atribuire clară, nimeni nu știe cine preia sarcina."
+            },
+            {
+              "language": "ru",
+              "text": "Без четкого назначения никто не знает, кто возьмет задачу."
+            },
+            {
+              "language": "sq",
+              "text": "Pa një caktim të qartë, askush nuk e di kush e merr detyrën."
+            },
+            {
+              "language": "tr",
+              "text": "Net bir atama olmadan görevi kimin üstleneceğini kimse bilmez."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "A2",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Eigenschaften",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Eigenschaften",
+      "infinitive": null,
+      "syllableBreak": "Ei-gen-schaf-ten",
+      "topics": [
+        "data-and-reporting",
+        "erp-and-business-systems",
+        "technology-and-it"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "plural noun; singular: die Eigenschaft"
+      ],
+      "collocations": [
+        {
+          "text": "Eigenschaften ändern",
+          "meaning": "to change properties"
+        },
+        {
+          "text": "wichtige Eigenschaften",
+          "meaning": "important properties"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Eigenschaft",
+          "relationLabel": "singular",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "خصائص"
+        },
+        {
+          "language": "ckb",
+          "text": "تایبەتمەندییەکان"
+        },
+        {
+          "language": "en",
+          "text": "properties; features"
+        },
+        {
+          "language": "fa",
+          "text": "ویژگی‌ها"
+        },
+        {
+          "language": "kmr",
+          "text": "taybetmendî"
+        },
+        {
+          "language": "pl",
+          "text": "właściwości; cechy"
+        },
+        {
+          "language": "ro",
+          "text": "proprietăți; caracteristici"
+        },
+        {
+          "language": "ru",
+          "text": "свойства; характеристики"
+        },
+        {
+          "language": "sq",
+          "text": "veçori"
+        },
+        {
+          "language": "tr",
+          "text": "özellikler"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Eigenschaften des Artikels stehen im ERP-System.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "خصائص الصنف موجودة في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "تایبەتمەندییەکانی کاڵاکە لە سیستەمی ERPدا هەن."
+            },
+            {
+              "language": "en",
+              "text": "The item properties are in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "ویژگی‌های کالا در سیستم ERP هستند."
+            },
+            {
+              "language": "kmr",
+              "text": "Taybetmendiyên tiştê di pergala ERP de ne."
+            },
+            {
+              "language": "pl",
+              "text": "Właściwości artykułu są w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Proprietățile articolului sunt în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Свойства товара находятся в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Veçoritë e artikullit janë në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Ürünün özellikleri ERP sisteminde yer alıyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Dieses Handy hat viele gute Eigenschaften.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "هذا الهاتف لديه كثير من الخصائص الجيدة."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەم مۆبایلە زۆر تایبەتمەندیی باشی هەیە."
+            },
+            {
+              "language": "en",
+              "text": "This phone has many good features."
+            },
+            {
+              "language": "fa",
+              "text": "این گوشی ویژگی‌های خوب زیادی دارد."
+            },
+            {
+              "language": "kmr",
+              "text": "Ev telefon gelek taybetmendiyên baş hene."
+            },
+            {
+              "language": "pl",
+              "text": "Ten telefon ma wiele dobrych cech."
+            },
+            {
+              "language": "ro",
+              "text": "Acest telefon are multe caracteristici bune."
+            },
+            {
+              "language": "ru",
+              "text": "У этого телефона много хороших характеристик."
+            },
+            {
+              "language": "sq",
+              "text": "Ky telefon ka shumë veçori të mira."
+            },
+            {
+              "language": "tr",
+              "text": "Bu telefonun birçok iyi özelliği var."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

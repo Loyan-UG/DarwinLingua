@@ -1,0 +1,1477 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-mixed-erp-readd-006-words",
+  "packageName": "German ERP Readd Batch 006 Words",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "administrative",
+      "displayName": "Administrative",
+      "sortOrder": 120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ar",
+          "name": "إداري"
+        },
+        {
+          "language": "ckb",
+          "name": "کارگێڕی"
+        },
+        {
+          "language": "en",
+          "name": "Administrative"
+        },
+        {
+          "language": "fa",
+          "name": "اداری"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêveberî"
+        },
+        {
+          "language": "pl",
+          "name": "Administracyjny"
+        },
+        {
+          "language": "ro",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ru",
+          "name": "Административный"
+        },
+        {
+          "language": "sq",
+          "name": "Administrativ"
+        },
+        {
+          "language": "tr",
+          "name": "İdari"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "customer-facing",
+      "displayName": "Customer-facing",
+      "sortOrder": 170,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenorientiert"
+        },
+        {
+          "language": "ar",
+          "name": "موجه للعملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕووی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer-facing"
+        },
+        {
+          "language": "fa",
+          "name": "مربوط به مشتری"
+        },
+        {
+          "language": "kmr",
+          "name": "Ji bo xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Dla klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Pentru clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Для клиентов"
+        },
+        {
+          "language": "sq",
+          "name": "Për klientë"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteriye dönük"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "process",
+      "displayName": "Process-related",
+      "sortOrder": 210,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Prozessbezogen"
+        },
+        {
+          "language": "ar",
+          "name": "متعلق بالعملية"
+        },
+        {
+          "language": "ckb",
+          "name": "پڕۆسەیی"
+        },
+        {
+          "language": "en",
+          "name": "Process-related"
+        },
+        {
+          "language": "fa",
+          "name": "فرایندی"
+        },
+        {
+          "language": "kmr",
+          "name": "Girêdayî pêvajoyê"
+        },
+        {
+          "language": "pl",
+          "name": "Procesowy"
+        },
+        {
+          "language": "ro",
+          "name": "Legat de proces"
+        },
+        {
+          "language": "ru",
+          "name": "Процессный"
+        },
+        {
+          "language": "sq",
+          "name": "I lidhur me procesin"
+        },
+        {
+          "language": "tr",
+          "name": "Süreçle ilgili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Am Arbeitsplatz"
+        },
+        {
+          "language": "ar",
+          "name": "في مكان العمل"
+        },
+        {
+          "language": "ckb",
+          "name": "لە شوێنی کار"
+        },
+        {
+          "language": "en",
+          "name": "Workplace"
+        },
+        {
+          "language": "fa",
+          "name": "محیط کار"
+        },
+        {
+          "language": "kmr",
+          "name": "Li cihê kar"
+        },
+        {
+          "language": "pl",
+          "name": "W miejscu pracy"
+        },
+        {
+          "language": "ro",
+          "name": "La locul de muncă"
+        },
+        {
+          "language": "ru",
+          "name": "На рабочем месте"
+        },
+        {
+          "language": "sq",
+          "name": "Në vendin e punës"
+        },
+        {
+          "language": "tr",
+          "name": "İş yeri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Personenkonto",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Personenkonten",
+      "infinitive": null,
+      "syllableBreak": "Per-so-nen-kon-to",
+      "topics": [
+        "finance-and-accounting",
+        "documents-and-administration",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "administrative"
+      ],
+      "grammarNotes": [
+        "neuter noun"
+      ],
+      "collocations": [
+        {
+          "text": "ein Personenkonto anlegen",
+          "meaning": "to create a personal/customer/vendor account"
+        },
+        {
+          "text": "auf dem Personenkonto buchen",
+          "meaning": "to post to the personal account"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Person",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "das Konto",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "حساب شخصي/عميل أو مورد"
+        },
+        {
+          "language": "ckb",
+          "text": "ئەکاونتی کەس/کڕیار یان دابینکەر"
+        },
+        {
+          "language": "en",
+          "text": "personal account; customer or vendor account"
+        },
+        {
+          "language": "fa",
+          "text": "حساب شخصی/مشتری یا تأمین‌کننده"
+        },
+        {
+          "language": "kmr",
+          "text": "hesabê kesî; hesabê xerîdar an dabînker"
+        },
+        {
+          "language": "pl",
+          "text": "konto osobowe; konto klienta lub dostawcy"
+        },
+        {
+          "language": "ro",
+          "text": "cont personal; cont client sau furnizor"
+        },
+        {
+          "language": "ru",
+          "text": "лицевой счет; счет клиента или поставщика"
+        },
+        {
+          "language": "sq",
+          "text": "llogari personale; llogari klienti ose furnizuesi"
+        },
+        {
+          "language": "tr",
+          "text": "cari hesap; müşteri veya tedarikçi hesabı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Für den neuen Lieferanten wurde ein Personenkonto im ERP-System angelegt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم إنشاء حساب للمورّد الجديد في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "بۆ دابینکەری نوێ ئەکاونتێکی کەسی لە سیستەمی ERPدا دروست کرا."
+            },
+            {
+              "language": "en",
+              "text": "A personal account was created for the new supplier in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "برای تأمین‌کننده جدید یک حساب در سیستم ERP ایجاد شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo dabînkerê nû hesabek kesî di pergala ERP de hate çêkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Dla nowego dostawcy utworzono konto osobowe w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Pentru noul furnizor a fost creat un cont în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Для нового поставщика в ERP-системе был создан лицевой счет."
+            },
+            {
+              "language": "sq",
+              "text": "Për furnizuesin e ri u krijua një llogari në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Yeni tedarikçi için ERP sisteminde bir cari hesap açıldı."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Zahlung ist schon auf dem Personenkonto des Kunden gebucht.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم تسجيل الدفعة بالفعل في حساب العميل."
+            },
+            {
+              "language": "ckb",
+              "text": "پارەدانەکە پێشتر لە ئەکاونتی کڕیارەکەدا تۆمار کراوە."
+            },
+            {
+              "language": "en",
+              "text": "The payment has already been posted to the customer account."
+            },
+            {
+              "language": "fa",
+              "text": "پرداخت قبلاً در حساب مشتری ثبت شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Pere dayîn berê li ser hesabê xerîdar hatiye tomarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Płatność została już zaksięgowana na koncie klienta."
+            },
+            {
+              "language": "ro",
+              "text": "Plata a fost deja înregistrată în contul clientului."
+            },
+            {
+              "language": "ru",
+              "text": "Платеж уже проведен по счету клиента."
+            },
+            {
+              "language": "sq",
+              "text": "Pagesa është regjistruar tashmë në llogarinë e klientit."
+            },
+            {
+              "language": "tr",
+              "text": "Ödeme müşteri hesabına zaten kaydedildi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Preisliste",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Preislisten",
+      "infinitive": null,
+      "syllableBreak": "Preis-lis-te",
+      "topics": [
+        "sales-and-customers",
+        "procurement-and-suppliers",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "written",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Preisliste aktualisieren",
+          "meaning": "to update a price list"
+        },
+        {
+          "text": "die aktuelle Preisliste senden",
+          "meaning": "to send the current price list"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Preis",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "die Liste",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "قائمة أسعار"
+        },
+        {
+          "language": "ckb",
+          "text": "لیستی نرخ"
+        },
+        {
+          "language": "en",
+          "text": "price list"
+        },
+        {
+          "language": "fa",
+          "text": "لیست قیمت"
+        },
+        {
+          "language": "kmr",
+          "text": "lîsteya bihayan"
+        },
+        {
+          "language": "pl",
+          "text": "cennik"
+        },
+        {
+          "language": "ro",
+          "text": "listă de prețuri"
+        },
+        {
+          "language": "ru",
+          "text": "прайс-лист"
+        },
+        {
+          "language": "sq",
+          "text": "listë çmimesh"
+        },
+        {
+          "language": "tr",
+          "text": "fiyat listesi"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die neue Preisliste ist seit heute im ERP-System aktiv.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "قائمة الأسعار الجديدة مفعّلة منذ اليوم في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "لیستی نرخی نوێ لە ئەمڕۆوە لە سیستەمی ERPدا چالاکە."
+            },
+            {
+              "language": "en",
+              "text": "The new price list has been active in the ERP system since today."
+            },
+            {
+              "language": "fa",
+              "text": "لیست قیمت جدید از امروز در سیستم ERP فعال است."
+            },
+            {
+              "language": "kmr",
+              "text": "Lîsteya bihayên nû ji îro ve di pergala ERP de çalak e."
+            },
+            {
+              "language": "pl",
+              "text": "Nowy cennik jest od dziś aktywny w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Noua listă de prețuri este activă de astăzi în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Новый прайс-лист с сегодняшнего дня активен в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Lista e re e çmimeve është aktive në sistemin ERP që nga sot."
+            },
+            {
+              "language": "tr",
+              "text": "Yeni fiyat listesi bugünden itibaren ERP sisteminde aktif."
+            }
+          ]
+        },
+        {
+          "baseText": "Können Sie mir bitte die aktuelle Preisliste schicken?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "هل يمكنك إرسال قائمة الأسعار الحالية إليّ من فضلك؟"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانن تکایە لیستی نرخی ئێستام بۆ بنێرن؟"
+            },
+            {
+              "language": "en",
+              "text": "Could you please send me the current price list?"
+            },
+            {
+              "language": "fa",
+              "text": "ممکن است لطفاً لیست قیمت فعلی را برای من بفرستید؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Hûn dikarin ji kerema xwe lîsteya bihayên niha ji min re bişînin?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy może mi Pan/Pani przesłać aktualny cennik?"
+            },
+            {
+              "language": "ro",
+              "text": "Îmi puteți trimite, vă rog, lista actuală de prețuri?"
+            },
+            {
+              "language": "ru",
+              "text": "Можете, пожалуйста, отправить мне актуальный прайс-лист?"
+            },
+            {
+              "language": "sq",
+              "text": "A mund të më dërgoni ju lutem listën aktuale të çmimeve?"
+            },
+            {
+              "language": "tr",
+              "text": "Bana güncel fiyat listesini gönderebilir misiniz?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Produktion",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Produktionen",
+      "infinitive": null,
+      "syllableBreak": "Pro-duk-ti-on",
+      "topics": [
+        "production-and-maintenance",
+        "planning-and-projects",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace",
+        "process"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "die Produktion planen",
+          "meaning": "to plan production"
+        },
+        {
+          "text": "die Produktion starten",
+          "meaning": "to start production"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "produzieren",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "das Produkt",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "إنتاج"
+        },
+        {
+          "language": "ckb",
+          "text": "بەرهەمهێنان"
+        },
+        {
+          "language": "en",
+          "text": "production"
+        },
+        {
+          "language": "fa",
+          "text": "تولید"
+        },
+        {
+          "language": "kmr",
+          "text": "hilberîn"
+        },
+        {
+          "language": "pl",
+          "text": "produkcja"
+        },
+        {
+          "language": "ro",
+          "text": "producție"
+        },
+        {
+          "language": "ru",
+          "text": "производство"
+        },
+        {
+          "language": "sq",
+          "text": "prodhim"
+        },
+        {
+          "language": "tr",
+          "text": "üretim"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Produktion für den Auftrag ist im ERP-System für Montag geplant.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم تخطيط إنتاج الطلب في نظام تخطيط موارد المؤسسة ليوم الاثنين."
+            },
+            {
+              "language": "ckb",
+              "text": "بەرهەمهێنانی داواکارییەکە لە سیستەمی ERPدا بۆ دووشەممە پلاندانراوە."
+            },
+            {
+              "language": "en",
+              "text": "Production for the order is planned for Monday in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "تولید این سفارش در سیستم ERP برای دوشنبه برنامه‌ریزی شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Hilberîna ji bo fermarişê di pergala ERP de ji bo duşemê hatiye plansazkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Produkcja dla zamówienia jest zaplanowana w systemie ERP na poniedziałek."
+            },
+            {
+              "language": "ro",
+              "text": "Producția pentru comandă este planificată în sistemul ERP pentru luni."
+            },
+            {
+              "language": "ru",
+              "text": "Производство по заказу запланировано в ERP-системе на понедельник."
+            },
+            {
+              "language": "sq",
+              "text": "Prodhimi për porosinë është planifikuar në sistemin ERP për të hënën."
+            },
+            {
+              "language": "tr",
+              "text": "Siparişin üretimi ERP sisteminde pazartesi için planlandı."
+            }
+          ]
+        },
+        {
+          "baseText": "In der Produktion arbeiten heute zwei Teams.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "اليوم يعمل فريقان في الإنتاج."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەمڕۆ دوو تیم لە بەرهەمهێناندا کار دەکەن."
+            },
+            {
+              "language": "en",
+              "text": "Two teams are working in production today."
+            },
+            {
+              "language": "fa",
+              "text": "امروز دو تیم در بخش تولید کار می‌کنند."
+            },
+            {
+              "language": "kmr",
+              "text": "Îro du tîm di hilberînê de dixebitin."
+            },
+            {
+              "language": "pl",
+              "text": "Dziś w produkcji pracują dwa zespoły."
+            },
+            {
+              "language": "ro",
+              "text": "Astăzi lucrează două echipe în producție."
+            },
+            {
+              "language": "ru",
+              "text": "Сегодня на производстве работают две команды."
+            },
+            {
+              "language": "sq",
+              "text": "Sot në prodhim punojnë dy ekipe."
+            },
+            {
+              "language": "tr",
+              "text": "Bugün üretimde iki ekip çalışıyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Relation",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Relationen",
+      "infinitive": null,
+      "syllableBreak": "Re-la-ti-on",
+      "topics": [
+        "data-and-reporting",
+        "technology-and-it",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Relation zwischen Daten",
+          "meaning": "a relation between data"
+        },
+        {
+          "text": "in Relation zu",
+          "meaning": "in relation to"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "relativ",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "علاقة؛ نسبة"
+        },
+        {
+          "language": "ckb",
+          "text": "پەیوەندی؛ ڕێژە"
+        },
+        {
+          "language": "en",
+          "text": "relation; ratio"
+        },
+        {
+          "language": "fa",
+          "text": "رابطه؛ نسبت"
+        },
+        {
+          "language": "kmr",
+          "text": "têkilî; rêje"
+        },
+        {
+          "language": "pl",
+          "text": "relacja; stosunek"
+        },
+        {
+          "language": "ro",
+          "text": "relație; raport"
+        },
+        {
+          "language": "ru",
+          "text": "связь; соотношение"
+        },
+        {
+          "language": "sq",
+          "text": "relacion; raport"
+        },
+        {
+          "language": "tr",
+          "text": "ilişki; oran"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Im ERP-System gibt es eine Relation zwischen Kunde und Auftrag.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في نظام تخطيط موارد المؤسسة توجد علاقة بين العميل والطلب."
+            },
+            {
+              "language": "ckb",
+              "text": "لە سیستەمی ERPدا پەیوەندییەک لە نێوان کڕیار و داواکاری هەیە."
+            },
+            {
+              "language": "en",
+              "text": "In the ERP system, there is a relation between customer and order."
+            },
+            {
+              "language": "fa",
+              "text": "در سیستم ERP بین مشتری و سفارش یک رابطه وجود دارد."
+            },
+            {
+              "language": "kmr",
+              "text": "Di pergala ERP de di navbera xerîdar û fermarişê de têkiliyek heye."
+            },
+            {
+              "language": "pl",
+              "text": "W systemie ERP istnieje relacja między klientem a zamówieniem."
+            },
+            {
+              "language": "ro",
+              "text": "În sistemul ERP există o relație între client și comandă."
+            },
+            {
+              "language": "ru",
+              "text": "В ERP-системе есть связь между клиентом и заказом."
+            },
+            {
+              "language": "sq",
+              "text": "Në sistemin ERP ka një lidhje midis klientit dhe porosisë."
+            },
+            {
+              "language": "tr",
+              "text": "ERP sisteminde müşteri ile sipariş arasında bir ilişki vardır."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Kosten stehen nicht in guter Relation zum Nutzen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "التكاليف ليست في علاقة جيدة مع الفائدة."
+            },
+            {
+              "language": "ckb",
+              "text": "تێچووەکان لەگەڵ سوودەکەدا ڕێژەیەکی باشیان نییە."
+            },
+            {
+              "language": "en",
+              "text": "The costs are not in a good relation to the benefit."
+            },
+            {
+              "language": "fa",
+              "text": "هزینه‌ها نسبت خوبی با فایده ندارند."
+            },
+            {
+              "language": "kmr",
+              "text": "Mesref bi sûdê re di rêjeyeke baş de nînin."
+            },
+            {
+              "language": "pl",
+              "text": "Koszty nie są w dobrej relacji do korzyści."
+            },
+            {
+              "language": "ro",
+              "text": "Costurile nu sunt într-un raport bun cu beneficiul."
+            },
+            {
+              "language": "ru",
+              "text": "Затраты не находятся в хорошем соотношении с пользой."
+            },
+            {
+              "language": "sq",
+              "text": "Kostot nuk janë në raport të mirë me përfitimin."
+            },
+            {
+              "language": "tr",
+              "text": "Maliyetler faydayla iyi bir oranda değil."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Rohmaterial",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Rohmaterialien",
+      "infinitive": null,
+      "syllableBreak": "Roh-ma-te-ri-al",
+      "topics": [
+        "production-and-maintenance",
+        "warehouse-and-logistics",
+        "procurement-and-suppliers"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace",
+        "technical"
+      ],
+      "grammarNotes": [
+        "neuter noun"
+      ],
+      "collocations": [
+        {
+          "text": "Rohmaterial bestellen",
+          "meaning": "to order raw material"
+        },
+        {
+          "text": "Rohmaterial lagern",
+          "meaning": "to store raw material"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "roh",
+          "relationLabel": "adjective",
+          "note": null
+        },
+        {
+          "lemma": "das Material",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "مادة خام"
+        },
+        {
+          "language": "ckb",
+          "text": "ماددەی خاو"
+        },
+        {
+          "language": "en",
+          "text": "raw material"
+        },
+        {
+          "language": "fa",
+          "text": "مواد اولیه"
+        },
+        {
+          "language": "kmr",
+          "text": "maddeya xav"
+        },
+        {
+          "language": "pl",
+          "text": "surowiec"
+        },
+        {
+          "language": "ro",
+          "text": "materie primă"
+        },
+        {
+          "language": "ru",
+          "text": "сырье"
+        },
+        {
+          "language": "sq",
+          "text": "material i papërpunuar"
+        },
+        {
+          "language": "tr",
+          "text": "ham madde"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Rohmaterial ist im ERP-System für die Produktion reserviert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم حجز المادة الخام للإنتاج في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "ماددەی خاو لە سیستەمی ERPدا بۆ بەرهەمهێنان حجزکراوە."
+            },
+            {
+              "language": "en",
+              "text": "The raw material is reserved for production in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "مواد اولیه در سیستم ERP برای تولید رزرو شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Maddeya xav di pergala ERP de ji bo hilberînê hatiye veqetandin."
+            },
+            {
+              "language": "pl",
+              "text": "Surowiec jest zarezerwowany do produkcji w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Materia primă este rezervată pentru producție în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Сырье зарезервировано для производства в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Materiali i papërpunuar është rezervuar për prodhim në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Ham madde ERP sisteminde üretim için rezerve edildi."
+            }
+          ]
+        },
+        {
+          "baseText": "Ohne Rohmaterial kann die Maschine morgen nicht laufen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "من دون مادة خام لا يمكن للآلة أن تعمل غدًا."
+            },
+            {
+              "language": "ckb",
+              "text": "بێ ماددەی خاو مەکینەکە سبەی ناتوانێت کار بکات."
+            },
+            {
+              "language": "en",
+              "text": "Without raw material, the machine cannot run tomorrow."
+            },
+            {
+              "language": "fa",
+              "text": "بدون مواد اولیه، دستگاه فردا نمی‌تواند کار کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Bê maddeya xav, makîne nikare sibê bixebite."
+            },
+            {
+              "language": "pl",
+              "text": "Bez surowca maszyna nie może jutro pracować."
+            },
+            {
+              "language": "ro",
+              "text": "Fără materie primă, mașina nu poate funcționa mâine."
+            },
+            {
+              "language": "ru",
+              "text": "Без сырья станок завтра не сможет работать."
+            },
+            {
+              "language": "sq",
+              "text": "Pa material të papërpunuar, makina nuk mund të punojë nesër."
+            },
+            {
+              "language": "tr",
+              "text": "Ham madde olmadan makine yarın çalışamaz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Sammelrechnung",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Sammelrechnungen",
+      "infinitive": null,
+      "syllableBreak": "Sam-mel-rech-nung",
+      "topics": [
+        "finance-and-accounting",
+        "sales-and-customers",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "written"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Sammelrechnung erstellen",
+          "meaning": "to create a collective invoice"
+        },
+        {
+          "text": "eine Sammelrechnung prüfen",
+          "meaning": "to check a collective invoice"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "sammeln",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "die Rechnung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "فاتورة مجمعة"
+        },
+        {
+          "language": "ckb",
+          "text": "فاکتوری کۆکراوە"
+        },
+        {
+          "language": "en",
+          "text": "collective invoice; consolidated invoice"
+        },
+        {
+          "language": "fa",
+          "text": "فاکتور تجمیعی"
+        },
+        {
+          "language": "kmr",
+          "text": "fatûreya komkirî"
+        },
+        {
+          "language": "pl",
+          "text": "faktura zbiorcza"
+        },
+        {
+          "language": "ro",
+          "text": "factură centralizată"
+        },
+        {
+          "language": "ru",
+          "text": "сводный счет"
+        },
+        {
+          "language": "sq",
+          "text": "faturë e përmbledhur"
+        },
+        {
+          "language": "tr",
+          "text": "toplu fatura"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das ERP-System erstellt am Monatsende eine Sammelrechnung für den Kunden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "ينشئ نظام تخطيط موارد المؤسسة في نهاية الشهر فاتورة مجمعة للعميل."
+            },
+            {
+              "language": "ckb",
+              "text": "سیستەمی ERP لە کۆتایی مانگدا فاکتورێکی کۆکراوە بۆ کڕیارەکە دروست دەکات."
+            },
+            {
+              "language": "en",
+              "text": "At the end of the month, the ERP system creates a consolidated invoice for the customer."
+            },
+            {
+              "language": "fa",
+              "text": "سیستم ERP در پایان ماه برای مشتری یک فاکتور تجمیعی ایجاد می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Pergala ERP di dawiya mehê de ji bo xerîdar fatûreyeke komkirî çêdike."
+            },
+            {
+              "language": "pl",
+              "text": "System ERP tworzy na koniec miesiąca fakturę zbiorczą dla klienta."
+            },
+            {
+              "language": "ro",
+              "text": "Sistemul ERP creează la sfârșitul lunii o factură centralizată pentru client."
+            },
+            {
+              "language": "ru",
+              "text": "В конце месяца ERP-система создает сводный счет для клиента."
+            },
+            {
+              "language": "sq",
+              "text": "Në fund të muajit, sistemi ERP krijon një faturë të përmbledhur për klientin."
+            },
+            {
+              "language": "tr",
+              "text": "ERP sistemi ay sonunda müşteri için toplu fatura oluşturur."
+            }
+          ]
+        },
+        {
+          "baseText": "Bitte schicken Sie uns keine Einzelrechnung, sondern eine Sammelrechnung.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى عدم إرسال فاتورة منفردة إلينا، بل فاتورة مجمعة."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە فاکتوری تاکمان بۆ مەبنێرن، بەڵکو فاکتوری کۆکراوە بنێرن."
+            },
+            {
+              "language": "en",
+              "text": "Please do not send us a single invoice, but a consolidated invoice."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً برای ما فاکتور تکی نفرستید، بلکه فاکتور تجمیعی ارسال کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe fatûreya yekane ji me re neşînin, lê fatûreya komkirî bişînin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę nie wysyłać nam pojedynczej faktury, tylko fakturę zbiorczą."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rugăm să nu ne trimiteți o factură separată, ci o factură centralizată."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, отправьте нам не отдельный счет, а сводный счет."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutemi mos na dërgoni faturë të veçantë, por faturë të përmbledhur."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen bize tek fatura değil, toplu fatura gönderin."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

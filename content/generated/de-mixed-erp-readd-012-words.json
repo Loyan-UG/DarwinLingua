@@ -1,0 +1,1332 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-mixed-erp-readd-012-words",
+  "packageName": "German ERP Readd Batch 012 Words",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "customer-facing",
+      "displayName": "Customer-facing",
+      "sortOrder": 170,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenorientiert"
+        },
+        {
+          "language": "ar",
+          "name": "موجه للعملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕووی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer-facing"
+        },
+        {
+          "language": "fa",
+          "name": "مربوط به مشتری"
+        },
+        {
+          "language": "kmr",
+          "name": "Ji bo xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Dla klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Pentru clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Для клиентов"
+        },
+        {
+          "language": "sq",
+          "name": "Për klientë"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteriye dönük"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Am Arbeitsplatz"
+        },
+        {
+          "language": "ar",
+          "name": "في مكان العمل"
+        },
+        {
+          "language": "ckb",
+          "name": "لە شوێنی کار"
+        },
+        {
+          "language": "en",
+          "name": "Workplace"
+        },
+        {
+          "language": "fa",
+          "name": "محیط کار"
+        },
+        {
+          "language": "kmr",
+          "name": "Li cihê kar"
+        },
+        {
+          "language": "pl",
+          "name": "W miejscu pracy"
+        },
+        {
+          "language": "ro",
+          "name": "La locul de muncă"
+        },
+        {
+          "language": "ru",
+          "name": "На рабочем месте"
+        },
+        {
+          "language": "sq",
+          "name": "Në vendin e punës"
+        },
+        {
+          "language": "tr",
+          "name": "İş yeri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "A2",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Startwert",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Startwerte",
+      "infinitive": null,
+      "syllableBreak": "Start-wert",
+      "topics": [
+        "technology-and-it",
+        "erp-and-business-systems",
+        "data-and-reporting"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "masculine noun"
+      ],
+      "collocations": [
+        {
+          "text": "Startwert eingeben",
+          "meaning": "to enter a start value"
+        },
+        {
+          "text": "Startwert ändern",
+          "meaning": "to change a start value"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "der Start",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "der Wert",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "قيمة البداية"
+        },
+        {
+          "language": "ckb",
+          "text": "بەهای دەستپێک"
+        },
+        {
+          "language": "en",
+          "text": "start value"
+        },
+        {
+          "language": "fa",
+          "text": "مقدار شروع"
+        },
+        {
+          "language": "kmr",
+          "text": "nirxê destpêkê"
+        },
+        {
+          "language": "pl",
+          "text": "wartość początkowa"
+        },
+        {
+          "language": "ro",
+          "text": "valoare inițială"
+        },
+        {
+          "language": "ru",
+          "text": "начальное значение"
+        },
+        {
+          "language": "sq",
+          "text": "vlerë fillestare"
+        },
+        {
+          "language": "tr",
+          "text": "başlangıç değeri"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Bitte geben Sie den Startwert im ERP-System ein.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى إدخال قيمة البداية في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە بەهای دەستپێک لە سیستەمی ERPدا بنووسن."
+            },
+            {
+              "language": "en",
+              "text": "Please enter the start value in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً مقدار شروع را در سیستم ERP وارد کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe nirxê destpêkê di pergala ERP de binivîsin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę wpisać wartość początkową w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rugăm să introduceți valoarea inițială în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, введите начальное значение в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutemi shkruani vlerën fillestare në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen başlangıç değerini ERP sistemine girin."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Startwert ist null.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "قيمة البداية هي صفر."
+            },
+            {
+              "language": "ckb",
+              "text": "بەهای دەستپێک سفرە."
+            },
+            {
+              "language": "en",
+              "text": "The start value is zero."
+            },
+            {
+              "language": "fa",
+              "text": "مقدار شروع صفر است."
+            },
+            {
+              "language": "kmr",
+              "text": "Nirxê destpêkê sifir e."
+            },
+            {
+              "language": "pl",
+              "text": "Wartość początkowa wynosi zero."
+            },
+            {
+              "language": "ro",
+              "text": "Valoarea inițială este zero."
+            },
+            {
+              "language": "ru",
+              "text": "Начальное значение равно нулю."
+            },
+            {
+              "language": "sq",
+              "text": "Vlera fillestare është zero."
+            },
+            {
+              "language": "tr",
+              "text": "Başlangıç değeri sıfır."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "A2",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Status",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Status",
+      "infinitive": null,
+      "syllableBreak": "Sta-tus",
+      "topics": [
+        "erp-and-business-systems",
+        "documents-and-administration",
+        "customer-service"
+      ],
+      "usageLabels": [
+        "business",
+        "written",
+        "technical"
+      ],
+      "grammarNotes": [
+        "masculine noun; plural often same as singular"
+      ],
+      "collocations": [
+        {
+          "text": "Status prüfen",
+          "meaning": "to check status"
+        },
+        {
+          "text": "Status ändern",
+          "meaning": "to change status"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "حالة"
+        },
+        {
+          "language": "ckb",
+          "text": "دۆخ"
+        },
+        {
+          "language": "en",
+          "text": "status"
+        },
+        {
+          "language": "fa",
+          "text": "وضعیت"
+        },
+        {
+          "language": "kmr",
+          "text": "rewş"
+        },
+        {
+          "language": "pl",
+          "text": "status"
+        },
+        {
+          "language": "ro",
+          "text": "stare; status"
+        },
+        {
+          "language": "ru",
+          "text": "статус"
+        },
+        {
+          "language": "sq",
+          "text": "status"
+        },
+        {
+          "language": "tr",
+          "text": "durum"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Status der Bestellung ist im ERP-System offen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "حالة الطلب في نظام تخطيط موارد المؤسسة مفتوحة."
+            },
+            {
+              "language": "ckb",
+              "text": "دۆخی داواکارییەکە لە سیستەمی ERPدا کراوەیە."
+            },
+            {
+              "language": "en",
+              "text": "The status of the order is open in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "وضعیت سفارش در سیستم ERP باز است."
+            },
+            {
+              "language": "kmr",
+              "text": "Rewşa fermarişê di pergala ERP de vekirî ye."
+            },
+            {
+              "language": "pl",
+              "text": "Status zamówienia w systemie ERP jest otwarty."
+            },
+            {
+              "language": "ro",
+              "text": "Statusul comenzii în sistemul ERP este deschis."
+            },
+            {
+              "language": "ru",
+              "text": "Статус заказа в ERP-системе открыт."
+            },
+            {
+              "language": "sq",
+              "text": "Statusi i porosisë në sistemin ERP është i hapur."
+            },
+            {
+              "language": "tr",
+              "text": "Siparişin ERP sistemindeki durumu açık."
+            }
+          ]
+        },
+        {
+          "baseText": "Kannst du den Status kurz prüfen?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "هل يمكنك التحقق من الحالة بسرعة؟"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانیت دۆخەکە بە خێرایی بپشکنیت؟"
+            },
+            {
+              "language": "en",
+              "text": "Can you quickly check the status?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانی سریع وضعیت را بررسی کنی؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Tu dikarî rewşê bi lez kontrol bikî?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy możesz szybko sprawdzić status?"
+            },
+            {
+              "language": "ro",
+              "text": "Poți verifica rapid statusul?"
+            },
+            {
+              "language": "ru",
+              "text": "Можешь быстро проверить статус?"
+            },
+            {
+              "language": "sq",
+              "text": "A mund ta kontrollosh shpejt statusin?"
+            },
+            {
+              "language": "tr",
+              "text": "Durumu hızlıca kontrol edebilir misin?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "A2",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Transport",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Transporte",
+      "infinitive": null,
+      "syllableBreak": "Trans-port",
+      "topics": [
+        "transport-and-travel",
+        "warehouse-and-logistics",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace"
+      ],
+      "grammarNotes": [
+        "masculine noun"
+      ],
+      "collocations": [
+        {
+          "text": "Transport planen",
+          "meaning": "to plan transport"
+        },
+        {
+          "text": "Transport der Ware",
+          "meaning": "transport of the goods"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "transportieren",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "نقل"
+        },
+        {
+          "language": "ckb",
+          "text": "گواستنەوە"
+        },
+        {
+          "language": "en",
+          "text": "transport"
+        },
+        {
+          "language": "fa",
+          "text": "حمل‌ونقل"
+        },
+        {
+          "language": "kmr",
+          "text": "veguhastin"
+        },
+        {
+          "language": "pl",
+          "text": "transport"
+        },
+        {
+          "language": "ro",
+          "text": "transport"
+        },
+        {
+          "language": "ru",
+          "text": "транспортировка"
+        },
+        {
+          "language": "sq",
+          "text": "transport"
+        },
+        {
+          "language": "tr",
+          "text": "taşıma; nakliye"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Transport ist im ERP-System geplant.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم تخطيط النقل في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "گواستنەوەکە لە سیستەمی ERPدا پلاندانراوە."
+            },
+            {
+              "language": "en",
+              "text": "The transport is planned in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "حمل‌ونقل در سیستم ERP برنامه‌ریزی شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Veguhastin di pergala ERP de hatiye plansazkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Transport jest zaplanowany w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Transportul este planificat în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Транспортировка запланирована в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Transporti është planifikuar në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Taşıma ERP sisteminde planlandı."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Transport dauert zwei Tage.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يستغرق النقل يومين."
+            },
+            {
+              "language": "ckb",
+              "text": "گواستنەوەکە دوو ڕۆژ دەخایەنێت."
+            },
+            {
+              "language": "en",
+              "text": "The transport takes two days."
+            },
+            {
+              "language": "fa",
+              "text": "حمل‌ونقل دو روز طول می‌کشد."
+            },
+            {
+              "language": "kmr",
+              "text": "Veguhastin du roj diajo."
+            },
+            {
+              "language": "pl",
+              "text": "Transport trwa dwa dni."
+            },
+            {
+              "language": "ro",
+              "text": "Transportul durează două zile."
+            },
+            {
+              "language": "ru",
+              "text": "Транспортировка занимает два дня."
+            },
+            {
+              "language": "sq",
+              "text": "Transporti zgjat dy ditë."
+            },
+            {
+              "language": "tr",
+              "text": "Taşıma iki gün sürer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "A2",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Verkauf",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Verkäufe",
+      "infinitive": null,
+      "syllableBreak": "Ver-kauf",
+      "topics": [
+        "sales-and-customers",
+        "shopping-and-services",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "masculine noun"
+      ],
+      "collocations": [
+        {
+          "text": "im Verkauf arbeiten",
+          "meaning": "to work in sales"
+        },
+        {
+          "text": "Verkauf buchen",
+          "meaning": "to record a sale"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "verkaufen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "بيع؛ قسم المبيعات"
+        },
+        {
+          "language": "ckb",
+          "text": "فرۆشتن؛ بەشی فرۆشتن"
+        },
+        {
+          "language": "en",
+          "text": "sale; sales department"
+        },
+        {
+          "language": "fa",
+          "text": "فروش؛ بخش فروش"
+        },
+        {
+          "language": "kmr",
+          "text": "firotin"
+        },
+        {
+          "language": "pl",
+          "text": "sprzedaż"
+        },
+        {
+          "language": "ro",
+          "text": "vânzare"
+        },
+        {
+          "language": "ru",
+          "text": "продажа; отдел продаж"
+        },
+        {
+          "language": "sq",
+          "text": "shitje"
+        },
+        {
+          "language": "tr",
+          "text": "satış"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Verkauf wird im ERP-System gebucht.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يتم تسجيل البيع في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "فرۆشتنەکە لە سیستەمی ERPدا تۆمار دەکرێت."
+            },
+            {
+              "language": "en",
+              "text": "The sale is recorded in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "فروش در سیستم ERP ثبت می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Firotin di pergala ERP de tê tomarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Sprzedaż jest księgowana w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Vânzarea este înregistrată în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Продажа проводится в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Shitja regjistrohet në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Satış ERP sisteminde kaydedilir."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Verkauf beginnt morgen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "البيع يبدأ غدًا."
+            },
+            {
+              "language": "ckb",
+              "text": "فرۆشتنەکە سبەی دەست پێدەکات."
+            },
+            {
+              "language": "en",
+              "text": "The sale starts tomorrow."
+            },
+            {
+              "language": "fa",
+              "text": "فروش از فردا شروع می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Firotin sibê dest pê dike."
+            },
+            {
+              "language": "pl",
+              "text": "Sprzedaż zaczyna się jutro."
+            },
+            {
+              "language": "ro",
+              "text": "Vânzarea începe mâine."
+            },
+            {
+              "language": "ru",
+              "text": "Продажа начинается завтра."
+            },
+            {
+              "language": "sq",
+              "text": "Shitja fillon nesër."
+            },
+            {
+              "language": "tr",
+              "text": "Satış yarın başlıyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "A2",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Ware",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Waren",
+      "infinitive": null,
+      "syllableBreak": "Wa-re",
+      "topics": [
+        "warehouse-and-logistics",
+        "sales-and-customers",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "Ware liefern",
+          "meaning": "to deliver goods"
+        },
+        {
+          "text": "Ware prüfen",
+          "meaning": "to check goods"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "بضاعة؛ سلعة"
+        },
+        {
+          "language": "ckb",
+          "text": "کاڵا"
+        },
+        {
+          "language": "en",
+          "text": "goods; merchandise"
+        },
+        {
+          "language": "fa",
+          "text": "کالا؛ جنس"
+        },
+        {
+          "language": "kmr",
+          "text": "mal"
+        },
+        {
+          "language": "pl",
+          "text": "towar"
+        },
+        {
+          "language": "ro",
+          "text": "marfă"
+        },
+        {
+          "language": "ru",
+          "text": "товар"
+        },
+        {
+          "language": "sq",
+          "text": "mall"
+        },
+        {
+          "language": "tr",
+          "text": "mal; ürün"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Ware ist im Lager angekommen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "وصلت البضاعة إلى المستودع."
+            },
+            {
+              "language": "ckb",
+              "text": "کاڵاکە گەیشتە کۆگا."
+            },
+            {
+              "language": "en",
+              "text": "The goods have arrived at the warehouse."
+            },
+            {
+              "language": "fa",
+              "text": "کالا به انبار رسیده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Mal gihîşt embarê."
+            },
+            {
+              "language": "pl",
+              "text": "Towar dotarł do magazynu."
+            },
+            {
+              "language": "ro",
+              "text": "Marfa a ajuns la depozit."
+            },
+            {
+              "language": "ru",
+              "text": "Товар прибыл на склад."
+            },
+            {
+              "language": "sq",
+              "text": "Malli ka mbërritur në depo."
+            },
+            {
+              "language": "tr",
+              "text": "Mal depoya ulaştı."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Ware ist im ERP-System reserviert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "البضاعة محجوزة في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "کاڵاکە لە سیستەمی ERPدا حجزکراوە."
+            },
+            {
+              "language": "en",
+              "text": "The goods are reserved in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "کالا در سیستم ERP رزرو شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Mal di pergala ERP de hatiye veqetandin."
+            },
+            {
+              "language": "pl",
+              "text": "Towar jest zarezerwowany w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Marfa este rezervată în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Товар зарезервирован в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Malli është rezervuar në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Mal ERP sisteminde rezerve edildi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "A2",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Zone",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Zonen",
+      "infinitive": null,
+      "syllableBreak": "Zo-ne",
+      "topics": [
+        "warehouse-and-logistics",
+        "transport-and-travel",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "technical"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "Zone im Lager",
+          "meaning": "zone in the warehouse"
+        },
+        {
+          "text": "eine Zone wählen",
+          "meaning": "to choose a zone"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "منطقة"
+        },
+        {
+          "language": "ckb",
+          "text": "زۆن؛ ناوچە"
+        },
+        {
+          "language": "en",
+          "text": "zone"
+        },
+        {
+          "language": "fa",
+          "text": "منطقه؛ زون"
+        },
+        {
+          "language": "kmr",
+          "text": "zon"
+        },
+        {
+          "language": "pl",
+          "text": "strefa"
+        },
+        {
+          "language": "ro",
+          "text": "zonă"
+        },
+        {
+          "language": "ru",
+          "text": "зона"
+        },
+        {
+          "language": "sq",
+          "text": "zonë"
+        },
+        {
+          "language": "tr",
+          "text": "bölge; zon"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Palette steht in Zone drei.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "توجد الباليت في المنطقة الثالثة."
+            },
+            {
+              "language": "ckb",
+              "text": "پالێتەکە لە زۆنی سێیە."
+            },
+            {
+              "language": "en",
+              "text": "The pallet is in zone three."
+            },
+            {
+              "language": "fa",
+              "text": "پالت در زون سه قرار دارد."
+            },
+            {
+              "language": "kmr",
+              "text": "Palet li zona sê ye."
+            },
+            {
+              "language": "pl",
+              "text": "Paleta stoi w strefie trzeciej."
+            },
+            {
+              "language": "ro",
+              "text": "Paletul este în zona trei."
+            },
+            {
+              "language": "ru",
+              "text": "Палета находится в зоне три."
+            },
+            {
+              "language": "sq",
+              "text": "Paleta është në zonën tre."
+            },
+            {
+              "language": "tr",
+              "text": "Palet üçüncü bölgede."
+            }
+          ]
+        },
+        {
+          "baseText": "Die Zone ist im ERP-System rot markiert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم وضع علامة حمراء على المنطقة في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "زۆنەکە لە سیستەمی ERPدا بە سوور نیشان کراوە."
+            },
+            {
+              "language": "en",
+              "text": "The zone is marked red in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "زون در سیستم ERP با رنگ قرمز مشخص شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Zon di pergala ERP de bi sor hatiye nîşankirin."
+            },
+            {
+              "language": "pl",
+              "text": "Strefa jest oznaczona na czerwono w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Zona este marcată cu roșu în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Зона отмечена красным в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Zona është shënuar me të kuqe në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Bölge ERP sisteminde kırmızı işaretli."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

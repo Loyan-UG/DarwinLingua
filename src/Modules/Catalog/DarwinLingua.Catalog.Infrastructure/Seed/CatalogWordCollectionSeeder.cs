@@ -81,7 +81,8 @@ internal sealed class CatalogWordCollectionSeeder(IDbContextFactory<DarwinLingua
         foreach (CollectionSeedDefinition seedDefinition in SeedDefinitions)
         {
             WordCollection? existingCollection = existingCollections
-                .SingleOrDefault(collection => string.Equals(collection.Slug, seedDefinition.Slug, StringComparison.OrdinalIgnoreCase));
+                .SingleOrDefault(collection => collection.Id == seedDefinition.Id) ??
+                existingCollections.SingleOrDefault(collection => string.Equals(collection.Slug, seedDefinition.Slug, StringComparison.OrdinalIgnoreCase));
 
             List<(Guid WordEntryId, int SortOrder)> resolvedWords = seedDefinition.Lemmas
                 .Select((lemma, index) => activeWordsByLemma.TryGetValue(lemma, out WordEntry? word)
@@ -96,41 +97,14 @@ internal sealed class CatalogWordCollectionSeeder(IDbContextFactory<DarwinLingua
                 continue;
             }
 
-            if (existingCollection is null)
-            {
-                WordCollection newCollection = new(
-                    seedDefinition.Id,
-                    seedDefinition.Slug,
-                    seedDefinition.Name,
-                    seedDefinition.Description,
-                    seedDefinition.ImageUrl,
-                    PublicationStatus.Active,
-                    seedDefinition.SortOrder,
-                    timestampUtc);
-
-                newCollection.ReplaceEntries(resolvedWords, timestampUtc);
-                dbContext.WordCollections.Add(newCollection);
-                continue;
-            }
-
-            bool metadataChanged =
-                !string.Equals(existingCollection.Name, seedDefinition.Name, StringComparison.Ordinal) ||
-                !string.Equals(existingCollection.Description, seedDefinition.Description, StringComparison.Ordinal) ||
-                !string.Equals(existingCollection.ImageUrl, seedDefinition.ImageUrl, StringComparison.Ordinal) ||
-                existingCollection.PublicationStatus != PublicationStatus.Active ||
-                existingCollection.SortOrder != seedDefinition.SortOrder;
-
-            bool entriesChanged = existingCollection.Entries
-                .OrderBy(entry => entry.SortOrder)
-                .Select(entry => (entry.WordEntryId, entry.SortOrder))
-                .SequenceEqual(resolvedWords);
-
-            if (!metadataChanged && entriesChanged)
+            if (existingCollection is not null)
             {
                 continue;
             }
 
-            existingCollection.UpdateMetadata(
+            WordCollection newCollection = new(
+                seedDefinition.Id,
+                seedDefinition.Slug,
                 seedDefinition.Name,
                 seedDefinition.Description,
                 seedDefinition.ImageUrl,
@@ -138,7 +112,8 @@ internal sealed class CatalogWordCollectionSeeder(IDbContextFactory<DarwinLingua
                 seedDefinition.SortOrder,
                 timestampUtc);
 
-            existingCollection.ReplaceEntries(resolvedWords, timestampUtc);
+            newCollection.ReplaceEntries(resolvedWords, timestampUtc);
+            dbContext.WordCollections.Add(newCollection);
         }
 
         if (dbContext.ChangeTracker.HasChanges())

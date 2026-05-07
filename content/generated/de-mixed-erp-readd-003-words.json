@@ -1,0 +1,1391 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-mixed-erp-readd-003-words",
+  "packageName": "German ERP Readd Batch 003 Words",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "administrative",
+      "displayName": "Administrative",
+      "sortOrder": 120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ar",
+          "name": "إداري"
+        },
+        {
+          "language": "ckb",
+          "name": "کارگێڕی"
+        },
+        {
+          "language": "en",
+          "name": "Administrative"
+        },
+        {
+          "language": "fa",
+          "name": "اداری"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêveberî"
+        },
+        {
+          "language": "pl",
+          "name": "Administracyjny"
+        },
+        {
+          "language": "ro",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ru",
+          "name": "Административный"
+        },
+        {
+          "language": "sq",
+          "name": "Administrativ"
+        },
+        {
+          "language": "tr",
+          "name": "İdari"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "customer-facing",
+      "displayName": "Customer-facing",
+      "sortOrder": 170,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenorientiert"
+        },
+        {
+          "language": "ar",
+          "name": "موجه للعملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕووی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer-facing"
+        },
+        {
+          "language": "fa",
+          "name": "مربوط به مشتری"
+        },
+        {
+          "language": "kmr",
+          "name": "Ji bo xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Dla klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Pentru clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Для клиентов"
+        },
+        {
+          "language": "sq",
+          "name": "Për klientë"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteriye dönük"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Am Arbeitsplatz"
+        },
+        {
+          "language": "ar",
+          "name": "في مكان العمل"
+        },
+        {
+          "language": "ckb",
+          "name": "لە شوێنی کار"
+        },
+        {
+          "language": "en",
+          "name": "Workplace"
+        },
+        {
+          "language": "fa",
+          "name": "محیط کار"
+        },
+        {
+          "language": "kmr",
+          "name": "Li cihê kar"
+        },
+        {
+          "language": "pl",
+          "name": "W miejscu pracy"
+        },
+        {
+          "language": "ro",
+          "name": "La locul de muncă"
+        },
+        {
+          "language": "ru",
+          "name": "На рабочем месте"
+        },
+        {
+          "language": "sq",
+          "name": "Në vendin e punës"
+        },
+        {
+          "language": "tr",
+          "name": "İş yeri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Gesamtgewicht",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Gesamtgewichte",
+      "infinitive": null,
+      "syllableBreak": "Ge-samt-ge-wicht",
+      "topics": [
+        "warehouse-and-logistics",
+        "sales-and-customers",
+        "documents-and-administration"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "neuter noun"
+      ],
+      "collocations": [
+        {
+          "text": "das Gesamtgewicht prüfen",
+          "meaning": "to check the total weight"
+        },
+        {
+          "text": "das Gesamtgewicht angeben",
+          "meaning": "to state the total weight"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "gesamt",
+          "relationLabel": "adjective",
+          "note": null
+        },
+        {
+          "lemma": "das Gewicht",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "الوزن الإجمالي"
+        },
+        {
+          "language": "ckb",
+          "text": "کێشی گشتی"
+        },
+        {
+          "language": "en",
+          "text": "total weight"
+        },
+        {
+          "language": "fa",
+          "text": "وزن کل"
+        },
+        {
+          "language": "kmr",
+          "text": "giranahiya giştî"
+        },
+        {
+          "language": "pl",
+          "text": "waga całkowita"
+        },
+        {
+          "language": "ro",
+          "text": "greutate totală"
+        },
+        {
+          "language": "ru",
+          "text": "общий вес"
+        },
+        {
+          "language": "sq",
+          "text": "peshë totale"
+        },
+        {
+          "language": "tr",
+          "text": "toplam ağırlık"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Gesamtgewicht der Lieferung steht im ERP-System und auf dem Lieferschein.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "الوزن الإجمالي للتسليم موجود في نظام تخطيط موارد المؤسسة وعلى مذكرة التسليم."
+            },
+            {
+              "language": "ckb",
+              "text": "کێشی گشتیی گەیاندنەکە لە سیستەمی ERP و لە پسوولەی گەیاندندا نووسراوە."
+            },
+            {
+              "language": "en",
+              "text": "The total weight of the delivery is in the ERP system and on the delivery note."
+            },
+            {
+              "language": "fa",
+              "text": "وزن کل ارسال در سیستم ERP و روی حواله تحویل نوشته شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Giranahiya giştî ya radestkirinê di pergala ERP û ser belgeya radestkirinê de heye."
+            },
+            {
+              "language": "pl",
+              "text": "Waga całkowita dostawy jest w systemie ERP i na dokumencie dostawy."
+            },
+            {
+              "language": "ro",
+              "text": "Greutatea totală a livrării este în sistemul ERP și pe avizul de livrare."
+            },
+            {
+              "language": "ru",
+              "text": "Общий вес поставки указан в ERP-системе и в накладной."
+            },
+            {
+              "language": "sq",
+              "text": "Pesha totale e dërgesës është në sistemin ERP dhe në fletë-dorëzim."
+            },
+            {
+              "language": "tr",
+              "text": "Teslimatın toplam ağırlığı ERP sisteminde ve irsaliyede yer alıyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Bitte prüfen Sie das Gesamtgewicht, bevor der Fahrer losfährt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى التحقق من الوزن الإجمالي قبل أن ينطلق السائق."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە کێشی گشتی بپشکنن پێش ئەوەی شۆفێرەکە بڕوات."
+            },
+            {
+              "language": "en",
+              "text": "Please check the total weight before the driver leaves."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً قبل از حرکت راننده، وزن کل را بررسی کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe berî ku ajokar biçe giranahiya giştî kontrol bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę sprawdzić wagę całkowitą, zanim kierowca odjedzie."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rugăm să verificați greutatea totală înainte ca șoferul să plece."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, проверьте общий вес до выезда водителя."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutemi kontrolloni peshën totale para se shoferi të niset."
+            },
+            {
+              "language": "tr",
+              "text": "Şoför yola çıkmadan önce toplam ağırlığı kontrol edin."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Hersteller",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Hersteller",
+      "infinitive": null,
+      "syllableBreak": "Her-stel-ler",
+      "topics": [
+        "procurement-and-suppliers",
+        "production-and-maintenance",
+        "warehouse-and-logistics"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace"
+      ],
+      "grammarNotes": [
+        "masculine noun; feminine form: die Herstellerin is rare for companies"
+      ],
+      "collocations": [
+        {
+          "text": "den Hersteller kontaktieren",
+          "meaning": "to contact the manufacturer"
+        },
+        {
+          "text": "Angaben des Herstellers",
+          "meaning": "manufacturer information"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "herstellen",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "die Herstellung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "الشركة المصنعة؛ المصنّع"
+        },
+        {
+          "language": "ckb",
+          "text": "بەرهەمهێنەر"
+        },
+        {
+          "language": "en",
+          "text": "manufacturer"
+        },
+        {
+          "language": "fa",
+          "text": "تولیدکننده"
+        },
+        {
+          "language": "kmr",
+          "text": "çêker; hilberîner"
+        },
+        {
+          "language": "pl",
+          "text": "producent"
+        },
+        {
+          "language": "ro",
+          "text": "producător"
+        },
+        {
+          "language": "ru",
+          "text": "производитель"
+        },
+        {
+          "language": "sq",
+          "text": "prodhues"
+        },
+        {
+          "language": "tr",
+          "text": "üretici"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Hersteller hat die neuen Artikelnummern an unser ERP-System gesendet.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "أرسل المصنع أرقام المواد الجديدة إلى نظام تخطيط موارد المؤسسة لدينا."
+            },
+            {
+              "language": "ckb",
+              "text": "بەرهەمهێنەرەکە ژمارە نوێیەکانی کاڵا بۆ سیستەمی ERPی ئێمە نارد."
+            },
+            {
+              "language": "en",
+              "text": "The manufacturer sent the new item numbers to our ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "تولیدکننده شماره‌های کالای جدید را به سیستم ERP ما فرستاد."
+            },
+            {
+              "language": "kmr",
+              "text": "Hilberîner hejmarên nû yên tiştan ji pergala ERP ya me re şand."
+            },
+            {
+              "language": "pl",
+              "text": "Producent wysłał nowe numery artykułów do naszego systemu ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Producătorul a trimis noile coduri de articol către sistemul nostru ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Производитель отправил новые номера товаров в нашу ERP-систему."
+            },
+            {
+              "language": "sq",
+              "text": "Prodhuesi i dërgoi numrat e rinj të artikujve në sistemin tonë ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Üretici yeni ürün numaralarını ERP sistemimize gönderdi."
+            }
+          ]
+        },
+        {
+          "baseText": "Bei einem Defekt wenden Sie sich bitte direkt an den Hersteller.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في حال وجود عطل يرجى التواصل مباشرة مع الشركة المصنعة."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی کێشەدا تکایە ڕاستەوخۆ پەیوەندی بە بەرهەمهێنەرەکە بکەن."
+            },
+            {
+              "language": "en",
+              "text": "If there is a defect, please contact the manufacturer directly."
+            },
+            {
+              "language": "fa",
+              "text": "در صورت خرابی، لطفاً مستقیم با تولیدکننده تماس بگیرید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ger kêmasiyek hebe, ji kerema xwe rasterast bi çêker re têkilî daynin."
+            },
+            {
+              "language": "pl",
+              "text": "W przypadku usterki proszę skontaktować się bezpośrednio z producentem."
+            },
+            {
+              "language": "ro",
+              "text": "În caz de defect, vă rugăm să contactați direct producătorul."
+            },
+            {
+              "language": "ru",
+              "text": "При неисправности, пожалуйста, обращайтесь напрямую к производителю."
+            },
+            {
+              "language": "sq",
+              "text": "Në rast defekti, ju lutemi kontaktoni drejtpërdrejt prodhuesin."
+            },
+            {
+              "language": "tr",
+              "text": "Bir arıza durumunda lütfen doğrudan üreticiyle iletişime geçin."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Journal",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Journale",
+      "infinitive": null,
+      "syllableBreak": "Jour-nal",
+      "topics": [
+        "finance-and-accounting",
+        "documents-and-administration",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "written",
+        "administrative"
+      ],
+      "grammarNotes": [
+        "neuter noun"
+      ],
+      "collocations": [
+        {
+          "text": "das Journal prüfen",
+          "meaning": "to check the journal"
+        },
+        {
+          "text": "ein Journal exportieren",
+          "meaning": "to export a journal"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "دفتر اليومية؛ سجل"
+        },
+        {
+          "language": "ckb",
+          "text": "ژوورنال؛ تۆمار"
+        },
+        {
+          "language": "en",
+          "text": "journal; log"
+        },
+        {
+          "language": "fa",
+          "text": "دفتر روزنامه؛ گزارش ثبت"
+        },
+        {
+          "language": "kmr",
+          "text": "rojnameya hesabê; tomar"
+        },
+        {
+          "language": "pl",
+          "text": "dziennik; rejestr"
+        },
+        {
+          "language": "ro",
+          "text": "jurnal; registru"
+        },
+        {
+          "language": "ru",
+          "text": "журнал; регистр"
+        },
+        {
+          "language": "sq",
+          "text": "ditar; regjistër"
+        },
+        {
+          "language": "tr",
+          "text": "yevmiye defteri; kayıt günlüğü"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Buchungen stehen im Journal des ERP-Systems.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "القيود موجودة في دفتر اليومية في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "تۆمارکردنەکان لە ژوورنالی سیستەمی ERPدا هەن."
+            },
+            {
+              "language": "en",
+              "text": "The postings are in the ERP system journal."
+            },
+            {
+              "language": "fa",
+              "text": "ثبت‌ها در ژورنال سیستم ERP هستند."
+            },
+            {
+              "language": "kmr",
+              "text": "Tomarkirin di journala pergala ERP de ne."
+            },
+            {
+              "language": "pl",
+              "text": "Księgowania są w dzienniku systemu ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Înregistrările sunt în jurnalul sistemului ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Проводки находятся в журнале ERP-системы."
+            },
+            {
+              "language": "sq",
+              "text": "Regjistrimet janë në ditarin e sistemit ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Kayıtlar ERP sisteminin yevmiye defterinde yer alıyor."
+            }
+          ]
+        },
+        {
+          "baseText": "Ich notiere die wichtigsten Punkte in meinem Journal.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "أدوّن أهم النقاط في دفتري."
+            },
+            {
+              "language": "ckb",
+              "text": "گرنگترین خاڵەکان لە ژوورنالەکەمدا دەنوسم."
+            },
+            {
+              "language": "en",
+              "text": "I write the most important points in my journal."
+            },
+            {
+              "language": "fa",
+              "text": "مهم‌ترین نکات را در دفترم یادداشت می‌کنم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ez xalên herî girîng di deftera xwe de dinivîsim."
+            },
+            {
+              "language": "pl",
+              "text": "Zapisuję najważniejsze punkty w swoim dzienniku."
+            },
+            {
+              "language": "ro",
+              "text": "Notez cele mai importante puncte în jurnalul meu."
+            },
+            {
+              "language": "ru",
+              "text": "Я записываю самые важные пункты в своем журнале."
+            },
+            {
+              "language": "sq",
+              "text": "I shënoj pikat më të rëndësishme në ditarin tim."
+            },
+            {
+              "language": "tr",
+              "text": "En önemli noktaları günlüğüme not ediyorum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Kalkulation",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Kalkulationen",
+      "infinitive": null,
+      "syllableBreak": "Kal-ku-la-ti-on",
+      "topics": [
+        "finance-and-accounting",
+        "sales-and-customers",
+        "data-and-reporting"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Kalkulation erstellen",
+          "meaning": "to create a calculation or cost estimate"
+        },
+        {
+          "text": "die Kalkulation prüfen",
+          "meaning": "to check the calculation"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "kalkulieren",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "حساب؛ تقدير تكلفة"
+        },
+        {
+          "language": "ckb",
+          "text": "خەمڵاندنی تێچوو؛ حیسابکردن"
+        },
+        {
+          "language": "en",
+          "text": "calculation; cost estimate"
+        },
+        {
+          "language": "fa",
+          "text": "محاسبه؛ برآورد هزینه"
+        },
+        {
+          "language": "kmr",
+          "text": "hesabkirin; texmîna mesrefê"
+        },
+        {
+          "language": "pl",
+          "text": "kalkulacja; wycena"
+        },
+        {
+          "language": "ro",
+          "text": "calculație; estimare de cost"
+        },
+        {
+          "language": "ru",
+          "text": "калькуляция; расчет"
+        },
+        {
+          "language": "sq",
+          "text": "kalkulim; vlerësim kostoje"
+        },
+        {
+          "language": "tr",
+          "text": "hesaplama; maliyet tahmini"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Kalkulation für den Auftrag ist im ERP-System gespeichert.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم حفظ حساب تكلفة الطلب في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "خەمڵاندنی تێچووی داواکارییەکە لە سیستەمی ERPدا پاشەکەوت کراوە."
+            },
+            {
+              "language": "en",
+              "text": "The cost estimate for the order is saved in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "برآورد هزینه سفارش در سیستم ERP ذخیره شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Texmîna mesrefê ya fermarişê di pergala ERP de hatiye tomarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Kalkulacja dla zamówienia jest zapisana w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Calculația pentru comandă este salvată în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Калькуляция по заказу сохранена в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Kalkulimi për porosinë është ruajtur në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Sipariş için maliyet hesabı ERP sisteminde kayıtlı."
+            }
+          ]
+        },
+        {
+          "baseText": "Vor dem Angebot brauchen wir eine genaue Kalkulation.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "قبل العرض نحتاج إلى حساب دقيق للتكلفة."
+            },
+            {
+              "language": "ckb",
+              "text": "پێش پێشنیارەکە پێویستمان بە خەمڵاندنێکی وردە."
+            },
+            {
+              "language": "en",
+              "text": "Before the offer, we need an exact cost estimate."
+            },
+            {
+              "language": "fa",
+              "text": "قبل از ارائه پیشنهاد، به یک برآورد دقیق نیاز داریم."
+            },
+            {
+              "language": "kmr",
+              "text": "Berî pêşniyarê em hewceyê texmînek rast in."
+            },
+            {
+              "language": "pl",
+              "text": "Przed ofertą potrzebujemy dokładnej kalkulacji."
+            },
+            {
+              "language": "ro",
+              "text": "Înainte de ofertă avem nevoie de o calculație exactă."
+            },
+            {
+              "language": "ru",
+              "text": "Перед предложением нам нужен точный расчет."
+            },
+            {
+              "language": "sq",
+              "text": "Para ofertës na duhet një kalkulim i saktë."
+            },
+            {
+              "language": "tr",
+              "text": "Tekliften önce kesin bir maliyet hesabına ihtiyacımız var."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Kampagne",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Kampagnen",
+      "infinitive": null,
+      "syllableBreak": "Kam-pa-gne",
+      "topics": [
+        "sales-and-customers",
+        "customer-service",
+        "data-and-reporting"
+      ],
+      "usageLabels": [
+        "business",
+        "written",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Kampagne starten",
+          "meaning": "to start a campaign"
+        },
+        {
+          "text": "eine Kampagne auswerten",
+          "meaning": "to evaluate a campaign"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "حملة"
+        },
+        {
+          "language": "ckb",
+          "text": "کەمپەین"
+        },
+        {
+          "language": "en",
+          "text": "campaign"
+        },
+        {
+          "language": "fa",
+          "text": "کمپین"
+        },
+        {
+          "language": "kmr",
+          "text": "kampanya"
+        },
+        {
+          "language": "pl",
+          "text": "kampania"
+        },
+        {
+          "language": "ro",
+          "text": "campanie"
+        },
+        {
+          "language": "ru",
+          "text": "кампания"
+        },
+        {
+          "language": "sq",
+          "text": "fushatë"
+        },
+        {
+          "language": "tr",
+          "text": "kampanya"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die neue Kampagne ist im CRM-Bereich des ERP-Systems angelegt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم إنشاء الحملة الجديدة في قسم إدارة علاقات العملاء في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "کەمپەینی نوێ لە بەشی CRMی سیستەمی ERPدا دروست کراوە."
+            },
+            {
+              "language": "en",
+              "text": "The new campaign is created in the CRM area of the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "کمپین جدید در بخش CRM سیستم ERP ایجاد شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Kampanyaya nû di beşa CRM ya pergala ERP de hatiye çêkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Nowa kampania jest utworzona w obszarze CRM systemu ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Noua campanie este creată în zona CRM a sistemului ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Новая кампания создана в CRM-разделе ERP-системы."
+            },
+            {
+              "language": "sq",
+              "text": "Fushata e re është krijuar në pjesën CRM të sistemit ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Yeni kampanya ERP sisteminin CRM bölümünde oluşturuldu."
+            }
+          ]
+        },
+        {
+          "baseText": "Unsere Kampagne für Stammkunden läuft bis Ende Juni.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "حملتنا للعملاء الدائمين تستمر حتى نهاية يونيو."
+            },
+            {
+              "language": "ckb",
+              "text": "کەمپەینەکەمان بۆ کڕیارانی هەمیشەیی تا کۆتایی حوزەیران بەردەوامە."
+            },
+            {
+              "language": "en",
+              "text": "Our campaign for regular customers runs until the end of June."
+            },
+            {
+              "language": "fa",
+              "text": "کمپین ما برای مشتریان دائمی تا پایان ژوئن ادامه دارد."
+            },
+            {
+              "language": "kmr",
+              "text": "Kampanyaya me ji bo xerîdarên domdar heta dawiya Hezîranê dimeşe."
+            },
+            {
+              "language": "pl",
+              "text": "Nasza kampania dla stałych klientów trwa do końca czerwca."
+            },
+            {
+              "language": "ro",
+              "text": "Campania noastră pentru clienții fideli durează până la sfârșitul lui iunie."
+            },
+            {
+              "language": "ru",
+              "text": "Наша кампания для постоянных клиентов длится до конца июня."
+            },
+            {
+              "language": "sq",
+              "text": "Fushata jonë për klientët e rregullt zgjat deri në fund të qershorit."
+            },
+            {
+              "language": "tr",
+              "text": "Düzenli müşteriler için kampanyamız haziran sonuna kadar sürüyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Kapazität",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Kapazitäten",
+      "infinitive": null,
+      "syllableBreak": "Ka-pa-zi-tät",
+      "topics": [
+        "planning-and-projects",
+        "warehouse-and-logistics",
+        "production-and-maintenance"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "workplace"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "freie Kapazität",
+          "meaning": "available capacity"
+        },
+        {
+          "text": "Kapazität planen",
+          "meaning": "to plan capacity"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "سعة؛ قدرة"
+        },
+        {
+          "language": "ckb",
+          "text": "توانا؛ گنجایش"
+        },
+        {
+          "language": "en",
+          "text": "capacity"
+        },
+        {
+          "language": "fa",
+          "text": "ظرفیت"
+        },
+        {
+          "language": "kmr",
+          "text": "kapasîte; cih"
+        },
+        {
+          "language": "pl",
+          "text": "pojemność; zdolność"
+        },
+        {
+          "language": "ro",
+          "text": "capacitate"
+        },
+        {
+          "language": "ru",
+          "text": "мощность; вместимость"
+        },
+        {
+          "language": "sq",
+          "text": "kapacitet"
+        },
+        {
+          "language": "tr",
+          "text": "kapasite"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Im ERP-System sehen wir die freie Kapazität im Lager.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "في نظام تخطيط موارد المؤسسة نرى السعة المتاحة في المستودع."
+            },
+            {
+              "language": "ckb",
+              "text": "لە سیستەمی ERPدا توانای بەردەست لە کۆگادا دەبینین."
+            },
+            {
+              "language": "en",
+              "text": "In the ERP system, we can see the available capacity in the warehouse."
+            },
+            {
+              "language": "fa",
+              "text": "در سیستم ERP ظرفیت آزاد انبار را می‌بینیم."
+            },
+            {
+              "language": "kmr",
+              "text": "Di pergala ERP de em kapasîteya vala ya embarê dibînin."
+            },
+            {
+              "language": "pl",
+              "text": "W systemie ERP widzimy wolną pojemność w magazynie."
+            },
+            {
+              "language": "ro",
+              "text": "În sistemul ERP vedem capacitatea disponibilă din depozit."
+            },
+            {
+              "language": "ru",
+              "text": "В ERP-системе мы видим свободную вместимость на складе."
+            },
+            {
+              "language": "sq",
+              "text": "Në sistemin ERP shohim kapacitetin e lirë në depo."
+            },
+            {
+              "language": "tr",
+              "text": "ERP sisteminde depodaki boş kapasiteyi görüyoruz."
+            }
+          ]
+        },
+        {
+          "baseText": "Für nächste Woche haben wir keine Kapazität mehr.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "ليس لدينا أي قدرة متاحة للأسبوع القادم."
+            },
+            {
+              "language": "ckb",
+              "text": "بۆ هەفتەی داهاتوو چیتر توانامان نییە."
+            },
+            {
+              "language": "en",
+              "text": "We have no capacity left for next week."
+            },
+            {
+              "language": "fa",
+              "text": "برای هفته آینده دیگر ظرفیتی نداریم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo hefteya bê em êdî kapasîte tune ne."
+            },
+            {
+              "language": "pl",
+              "text": "Na przyszły tydzień nie mamy już wolnych mocy."
+            },
+            {
+              "language": "ro",
+              "text": "Pentru săptămâna viitoare nu mai avem capacitate."
+            },
+            {
+              "language": "ru",
+              "text": "На следующую неделю у нас больше нет свободных мощностей."
+            },
+            {
+              "language": "sq",
+              "text": "Për javën tjetër nuk kemi më kapacitet."
+            },
+            {
+              "language": "tr",
+              "text": "Gelecek hafta için artık kapasitemiz yok."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

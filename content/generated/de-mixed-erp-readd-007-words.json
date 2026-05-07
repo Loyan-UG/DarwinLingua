@@ -1,0 +1,1355 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-mixed-erp-readd-007-words",
+  "packageName": "German ERP Readd Batch 007 Words",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "administrative",
+      "displayName": "Administrative",
+      "sortOrder": 120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ar",
+          "name": "إداري"
+        },
+        {
+          "language": "ckb",
+          "name": "کارگێڕی"
+        },
+        {
+          "language": "en",
+          "name": "Administrative"
+        },
+        {
+          "language": "fa",
+          "name": "اداری"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêveberî"
+        },
+        {
+          "language": "pl",
+          "name": "Administracyjny"
+        },
+        {
+          "language": "ro",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ru",
+          "name": "Административный"
+        },
+        {
+          "language": "sq",
+          "name": "Administrativ"
+        },
+        {
+          "language": "tr",
+          "name": "İdari"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Am Arbeitsplatz"
+        },
+        {
+          "language": "ar",
+          "name": "في مكان العمل"
+        },
+        {
+          "language": "ckb",
+          "name": "لە شوێنی کار"
+        },
+        {
+          "language": "en",
+          "name": "Workplace"
+        },
+        {
+          "language": "fa",
+          "name": "محیط کار"
+        },
+        {
+          "language": "kmr",
+          "name": "Li cihê kar"
+        },
+        {
+          "language": "pl",
+          "name": "W miejscu pracy"
+        },
+        {
+          "language": "ro",
+          "name": "La locul de muncă"
+        },
+        {
+          "language": "ru",
+          "name": "На рабочем месте"
+        },
+        {
+          "language": "sq",
+          "name": "Në vendin e punës"
+        },
+        {
+          "language": "tr",
+          "name": "İş yeri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Spediteur",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Spediteure",
+      "infinitive": null,
+      "syllableBreak": "Spe-di-teur",
+      "topics": [
+        "warehouse-and-logistics",
+        "procurement-and-suppliers",
+        "business-communication"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace"
+      ],
+      "grammarNotes": [
+        "masculine noun; feminine form: die Spediteurin"
+      ],
+      "collocations": [
+        {
+          "text": "den Spediteur beauftragen",
+          "meaning": "to commission the freight forwarder"
+        },
+        {
+          "text": "mit dem Spediteur sprechen",
+          "meaning": "to speak with the freight forwarder"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Spedition",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "شركة شحن؛ وكيل شحن"
+        },
+        {
+          "language": "ckb",
+          "text": "کۆمپانیای گواستنەوە؛ سپێدیتۆر"
+        },
+        {
+          "language": "en",
+          "text": "freight forwarder"
+        },
+        {
+          "language": "fa",
+          "text": "شرکت حمل‌ونقل؛ فورواردر"
+        },
+        {
+          "language": "kmr",
+          "text": "şirketa barkirinê"
+        },
+        {
+          "language": "pl",
+          "text": "spedytor"
+        },
+        {
+          "language": "ro",
+          "text": "expeditor"
+        },
+        {
+          "language": "ru",
+          "text": "экспедитор; транспортная компания"
+        },
+        {
+          "language": "sq",
+          "text": "spedicioner"
+        },
+        {
+          "language": "tr",
+          "text": "nakliyeci; lojistik firması"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Spediteur erhält die Abholadresse direkt aus dem ERP-System.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يحصل وكيل الشحن على عنوان الاستلام مباشرة من نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "سپێدیتۆرەکە ناونیشانی وەرگرتن ڕاستەوخۆ لە سیستەمی ERP وەردەگرێت."
+            },
+            {
+              "language": "en",
+              "text": "The freight forwarder receives the pickup address directly from the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "شرکت حمل‌ونقل آدرس بارگیری را مستقیم از سیستم ERP دریافت می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Şirketa barkirinê navnîşana hildanê rasterast ji pergala ERP werdigire."
+            },
+            {
+              "language": "pl",
+              "text": "Spedytor otrzymuje adres odbioru bezpośrednio z systemu ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Expeditorul primește adresa de ridicare direct din sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Экспедитор получает адрес забора напрямую из ERP-системы."
+            },
+            {
+              "language": "sq",
+              "text": "Spedicioneri e merr adresën e marrjes direkt nga sistemi ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Nakliyeci teslim alma adresini doğrudan ERP sisteminden alır."
+            }
+          ]
+        },
+        {
+          "baseText": "Bitte informieren Sie den Spediteur über die neue Uhrzeit.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى إبلاغ شركة الشحن بالموعد الجديد."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە سپێدیتۆرەکە لە کاتی نوێ ئاگادار بکەنەوە."
+            },
+            {
+              "language": "en",
+              "text": "Please inform the freight forwarder about the new time."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً شرکت حمل‌ونقل را از زمان جدید مطلع کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe şirketa barkirinê ji dema nû agahdar bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę poinformować spedytora o nowej godzinie."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rugăm să informați expeditorul despre noua oră."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, сообщите экспедитору о новом времени."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutemi informoni spedicionerin për orarin e ri."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen nakliyeciyi yeni saat hakkında bilgilendirin."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Storno",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Stornos",
+      "infinitive": null,
+      "syllableBreak": "Stor-no",
+      "topics": [
+        "finance-and-accounting",
+        "documents-and-administration",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "written"
+      ],
+      "grammarNotes": [
+        "neuter noun; business/accounting term"
+      ],
+      "collocations": [
+        {
+          "text": "ein Storno erfassen",
+          "meaning": "to record a cancellation"
+        },
+        {
+          "text": "das Storno prüfen",
+          "meaning": "to check the cancellation"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "stornieren",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "die Stornierung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "إلغاء؛ قيد عكسي"
+        },
+        {
+          "language": "ckb",
+          "text": "هەڵوەشاندنەوە"
+        },
+        {
+          "language": "en",
+          "text": "cancellation; reversal"
+        },
+        {
+          "language": "fa",
+          "text": "لغو؛ برگشت ثبت"
+        },
+        {
+          "language": "kmr",
+          "text": "betalkirin; vegerandin"
+        },
+        {
+          "language": "pl",
+          "text": "anulowanie; storno"
+        },
+        {
+          "language": "ro",
+          "text": "anulare; stornare"
+        },
+        {
+          "language": "ru",
+          "text": "сторно; отмена"
+        },
+        {
+          "language": "sq",
+          "text": "anulim; kthim regjistrimi"
+        },
+        {
+          "language": "tr",
+          "text": "iptal; ters kayıt"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Storno der Rechnung wurde im ERP-System gebucht.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم تسجيل إلغاء الفاتورة في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "هەڵوەشاندنەوەی فاکتورەکە لە سیستەمی ERPدا تۆمار کرا."
+            },
+            {
+              "language": "en",
+              "text": "The cancellation of the invoice was posted in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "لغو فاکتور در سیستم ERP ثبت شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Betalkirina fatûreyê di pergala ERP de hate tomarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Storno faktury zostało zaksięgowane w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Stornarea facturii a fost înregistrată în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Сторно счета было проведено в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Anulimi i faturës u regjistrua në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Faturanın iptali ERP sisteminde kaydedildi."
+            }
+          ]
+        },
+        {
+          "baseText": "Für dieses Storno brauchen wir eine kurze Begründung.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لهذا الإلغاء نحتاج إلى سبب قصير."
+            },
+            {
+              "language": "ckb",
+              "text": "بۆ ئەم هەڵوەشاندنەوەیە پێویستمان بە هۆکارێکی کورتە."
+            },
+            {
+              "language": "en",
+              "text": "For this cancellation, we need a short reason."
+            },
+            {
+              "language": "fa",
+              "text": "برای این لغو به یک دلیل کوتاه نیاز داریم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo vê betalkirinê em hewceyê sedemek kurt in."
+            },
+            {
+              "language": "pl",
+              "text": "Do tego storna potrzebujemy krótkiego uzasadnienia."
+            },
+            {
+              "language": "ro",
+              "text": "Pentru această stornare avem nevoie de o scurtă justificare."
+            },
+            {
+              "language": "ru",
+              "text": "Для этого сторно нам нужно краткое обоснование."
+            },
+            {
+              "language": "sq",
+              "text": "Për këtë anulim na duhet një arsye e shkurtër."
+            },
+            {
+              "language": "tr",
+              "text": "Bu iptal için kısa bir gerekçeye ihtiyacımız var."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Suchkennung",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Suchkennungen",
+      "infinitive": null,
+      "syllableBreak": "Such-ken-nung",
+      "topics": [
+        "erp-and-business-systems",
+        "data-and-reporting",
+        "technology-and-it"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Suchkennung eingeben",
+          "meaning": "to enter a search key"
+        },
+        {
+          "text": "nach Suchkennung suchen",
+          "meaning": "to search by search key"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "suchen",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "die Kennung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "معرّف بحث"
+        },
+        {
+          "language": "ckb",
+          "text": "ناسنامەی گەڕان"
+        },
+        {
+          "language": "en",
+          "text": "search key; search identifier"
+        },
+        {
+          "language": "fa",
+          "text": "شناسه جستجو"
+        },
+        {
+          "language": "kmr",
+          "text": "nasnameya lêgerînê"
+        },
+        {
+          "language": "pl",
+          "text": "identyfikator wyszukiwania"
+        },
+        {
+          "language": "ro",
+          "text": "identificator de căutare"
+        },
+        {
+          "language": "ru",
+          "text": "поисковый идентификатор"
+        },
+        {
+          "language": "sq",
+          "text": "identifikues kërkimi"
+        },
+        {
+          "language": "tr",
+          "text": "arama kodu"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Geben Sie die Suchkennung im ERP-System ein, um den Artikel zu finden.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "أدخل معرّف البحث في نظام تخطيط موارد المؤسسة للعثور على الصنف."
+            },
+            {
+              "language": "ckb",
+              "text": "ناسنامەی گەڕان لە سیستەمی ERPدا بنووسە بۆ دۆزینەوەی کاڵاکە."
+            },
+            {
+              "language": "en",
+              "text": "Enter the search key in the ERP system to find the item."
+            },
+            {
+              "language": "fa",
+              "text": "برای پیدا کردن کالا، شناسه جستجو را در سیستم ERP وارد کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo dîtina tiştê, nasnameya lêgerînê di pergala ERP de binivîse."
+            },
+            {
+              "language": "pl",
+              "text": "Wprowadź identyfikator wyszukiwania w systemie ERP, aby znaleźć artykuł."
+            },
+            {
+              "language": "ro",
+              "text": "Introduceți identificatorul de căutare în sistemul ERP pentru a găsi articolul."
+            },
+            {
+              "language": "ru",
+              "text": "Введите поисковый идентификатор в ERP-системе, чтобы найти товар."
+            },
+            {
+              "language": "sq",
+              "text": "Shkruani identifikuesin e kërkimit në sistemin ERP për të gjetur artikullin."
+            },
+            {
+              "language": "tr",
+              "text": "Ürünü bulmak için ERP sistemine arama kodunu girin."
+            }
+          ]
+        },
+        {
+          "baseText": "Ich kenne die Kundennummer nicht, aber ich habe die Suchkennung.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لا أعرف رقم العميل، لكن لدي معرّف البحث."
+            },
+            {
+              "language": "ckb",
+              "text": "ژمارەی کڕیارەکە نازانم، بەڵام ناسنامەی گەڕانم هەیە."
+            },
+            {
+              "language": "en",
+              "text": "I do not know the customer number, but I have the search key."
+            },
+            {
+              "language": "fa",
+              "text": "شماره مشتری را نمی‌دانم، اما شناسه جستجو را دارم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ez jimareya xerîdar nizanim, lê nasnameya lêgerînê heye."
+            },
+            {
+              "language": "pl",
+              "text": "Nie znam numeru klienta, ale mam identyfikator wyszukiwania."
+            },
+            {
+              "language": "ro",
+              "text": "Nu cunosc numărul clientului, dar am identificatorul de căutare."
+            },
+            {
+              "language": "ru",
+              "text": "Я не знаю номер клиента, но у меня есть поисковый идентификатор."
+            },
+            {
+              "language": "sq",
+              "text": "Nuk e di numrin e klientit, por kam identifikuesin e kërkimit."
+            },
+            {
+              "language": "tr",
+              "text": "Müşteri numarasını bilmiyorum ama arama kodu bende var."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Tätigkeit",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Tätigkeiten",
+      "infinitive": null,
+      "syllableBreak": "Tä-tig-keit",
+      "topics": [
+        "work-and-jobs",
+        "documents-and-administration",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "workplace"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Tätigkeit erfassen",
+          "meaning": "to record an activity"
+        },
+        {
+          "text": "berufliche Tätigkeit",
+          "meaning": "professional activity"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "tätig",
+          "relationLabel": "adjective",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "نشاط؛ عمل"
+        },
+        {
+          "language": "ckb",
+          "text": "چالاکی؛ کار"
+        },
+        {
+          "language": "en",
+          "text": "activity; work"
+        },
+        {
+          "language": "fa",
+          "text": "فعالیت؛ کار"
+        },
+        {
+          "language": "kmr",
+          "text": "çalakî; kar"
+        },
+        {
+          "language": "pl",
+          "text": "czynność; działalność"
+        },
+        {
+          "language": "ro",
+          "text": "activitate"
+        },
+        {
+          "language": "ru",
+          "text": "деятельность; работа"
+        },
+        {
+          "language": "sq",
+          "text": "aktivitet; punë"
+        },
+        {
+          "language": "tr",
+          "text": "faaliyet; iş"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Bitte erfassen Sie jede Tätigkeit im ERP-System unter dem richtigen Projekt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى تسجيل كل نشاط في نظام تخطيط موارد المؤسسة تحت المشروع الصحيح."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە هەر چالاکییەک لە سیستەمی ERPدا لە ژێر پڕۆژەی دروست تۆمار بکەن."
+            },
+            {
+              "language": "en",
+              "text": "Please record each activity in the ERP system under the correct project."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً هر فعالیت را در سیستم ERP زیر پروژه درست ثبت کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe her çalakiyekê di pergala ERP de li bin projeya rast tomar bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę rejestrować każdą czynność w systemie ERP pod właściwym projektem."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rugăm să înregistrați fiecare activitate în sistemul ERP la proiectul corect."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, заносите каждую деятельность в ERP-систему под правильным проектом."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutemi regjistroni çdo aktivitet në sistemin ERP nën projektin e duhur."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen her faaliyeti ERP sisteminde doğru proje altında kaydedin."
+            }
+          ]
+        },
+        {
+          "baseText": "Meine neue Tätigkeit beginnt nächsten Monat.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "نشاطي/عملي الجديد يبدأ الشهر القادم."
+            },
+            {
+              "language": "ckb",
+              "text": "کاری نوێم مانگی داهاتوو دەست پێدەکات."
+            },
+            {
+              "language": "en",
+              "text": "My new job starts next month."
+            },
+            {
+              "language": "fa",
+              "text": "کار جدید من ماه آینده شروع می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Kara min a nû meha bê dest pê dike."
+            },
+            {
+              "language": "pl",
+              "text": "Moja nowa praca zaczyna się w przyszłym miesiącu."
+            },
+            {
+              "language": "ro",
+              "text": "Noua mea activitate începe luna viitoare."
+            },
+            {
+              "language": "ru",
+              "text": "Моя новая работа начинается в следующем месяце."
+            },
+            {
+              "language": "sq",
+              "text": "Puna ime e re fillon muajin tjetër."
+            },
+            {
+              "language": "tr",
+              "text": "Yeni işim gelecek ay başlıyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Tour",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Touren",
+      "infinitive": null,
+      "syllableBreak": "Tour",
+      "topics": [
+        "warehouse-and-logistics",
+        "transport-and-travel",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Tour planen",
+          "meaning": "to plan a route or delivery tour"
+        },
+        {
+          "text": "auf Tour gehen",
+          "meaning": "to go on a route/tour"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "جولة؛ مسار توصيل"
+        },
+        {
+          "language": "ckb",
+          "text": "گەشت؛ ڕێڕەوی گەیاندن"
+        },
+        {
+          "language": "en",
+          "text": "tour; delivery route"
+        },
+        {
+          "language": "fa",
+          "text": "مسیر؛ تور تحویل"
+        },
+        {
+          "language": "kmr",
+          "text": "rêwîtiya radestkirinê; ger"
+        },
+        {
+          "language": "pl",
+          "text": "trasa; kurs"
+        },
+        {
+          "language": "ro",
+          "text": "tură; rută de livrare"
+        },
+        {
+          "language": "ru",
+          "text": "маршрут; рейс"
+        },
+        {
+          "language": "sq",
+          "text": "tur; rrugë shpërndarjeje"
+        },
+        {
+          "language": "tr",
+          "text": "tur; teslimat rotası"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Tour für den Fahrer wurde im ERP-System neu geplant.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تمت إعادة تخطيط جولة السائق في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "گەشتی شۆفێرەکە لە سیستەمی ERPدا دووبارە پلاندانرا."
+            },
+            {
+              "language": "en",
+              "text": "The route for the driver was replanned in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "مسیر راننده در سیستم ERP دوباره برنامه‌ریزی شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Rêya ajokar di pergala ERP de ji nû ve hate plansazkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Trasa kierowcy została ponownie zaplanowana w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Ruta șoferului a fost replanificată în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Маршрут водителя был заново спланирован в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Rruga e shoferit u planifikua përsëri në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Şoförün rotası ERP sisteminde yeniden planlandı."
+            }
+          ]
+        },
+        {
+          "baseText": "Morgen macht unser Team eine Tour durch die Stadt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "غدًا يقوم فريقنا بجولة في المدينة."
+            },
+            {
+              "language": "ckb",
+              "text": "سبەی تیمەکەمان گەشتێک بە ناو شاردا دەکات."
+            },
+            {
+              "language": "en",
+              "text": "Tomorrow our team is taking a tour through the city."
+            },
+            {
+              "language": "fa",
+              "text": "فردا تیم ما یک تور در شهر دارد."
+            },
+            {
+              "language": "kmr",
+              "text": "Sibê tîma me di nav bajêr de gereke dike."
+            },
+            {
+              "language": "pl",
+              "text": "Jutro nasz zespół robi wycieczkę po mieście."
+            },
+            {
+              "language": "ro",
+              "text": "Mâine echipa noastră face un tur prin oraș."
+            },
+            {
+              "language": "ru",
+              "text": "Завтра наша команда совершит тур по городу."
+            },
+            {
+              "language": "sq",
+              "text": "Nesër ekipi ynë bën një tur nëpër qytet."
+            },
+            {
+              "language": "tr",
+              "text": "Yarın ekibimiz şehirde bir tur yapıyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Tourplan",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Tourpläne",
+      "infinitive": null,
+      "syllableBreak": "Tour-plan",
+      "topics": [
+        "warehouse-and-logistics",
+        "planning-and-projects",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace",
+        "written"
+      ],
+      "grammarNotes": [
+        "masculine noun"
+      ],
+      "collocations": [
+        {
+          "text": "den Tourplan ändern",
+          "meaning": "to change the route plan"
+        },
+        {
+          "text": "ein aktueller Tourplan",
+          "meaning": "an up-to-date route plan"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "die Tour",
+          "relationLabel": "noun",
+          "note": null
+        },
+        {
+          "lemma": "der Plan",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "خطة الجولة؛ خطة المسار"
+        },
+        {
+          "language": "ckb",
+          "text": "پلانی گەشت؛ پلانی ڕێڕەو"
+        },
+        {
+          "language": "en",
+          "text": "route plan; tour plan"
+        },
+        {
+          "language": "fa",
+          "text": "برنامه مسیر"
+        },
+        {
+          "language": "kmr",
+          "text": "plana rêyê"
+        },
+        {
+          "language": "pl",
+          "text": "plan trasy"
+        },
+        {
+          "language": "ro",
+          "text": "plan de rută"
+        },
+        {
+          "language": "ru",
+          "text": "план маршрута"
+        },
+        {
+          "language": "sq",
+          "text": "plan rruge"
+        },
+        {
+          "language": "tr",
+          "text": "rota planı"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Tourplan ist im ERP-System für alle Fahrer sichtbar.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "خطة المسار ظاهرة في نظام تخطيط موارد المؤسسة لكل السائقين."
+            },
+            {
+              "language": "ckb",
+              "text": "پلانی گەشت لە سیستەمی ERPدا بۆ هەموو شۆفێرەکان دیارە."
+            },
+            {
+              "language": "en",
+              "text": "The route plan is visible to all drivers in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "برنامه مسیر در سیستم ERP برای همه رانندگان قابل مشاهده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Plana rêyê di pergala ERP de ji bo hemû ajokaran xuya ye."
+            },
+            {
+              "language": "pl",
+              "text": "Plan trasy jest widoczny w systemie ERP dla wszystkich kierowców."
+            },
+            {
+              "language": "ro",
+              "text": "Planul de rută este vizibil în sistemul ERP pentru toți șoferii."
+            },
+            {
+              "language": "ru",
+              "text": "План маршрута виден всем водителям в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Plani i rrugës është i dukshëm në sistemin ERP për të gjithë shoferët."
+            },
+            {
+              "language": "tr",
+              "text": "Rota planı ERP sisteminde tüm şoförler için görünür."
+            }
+          ]
+        },
+        {
+          "baseText": "Bitte schicken Sie mir den neuen Tourplan per E-Mail.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى إرسال خطة المسار الجديدة إليّ عبر البريد الإلكتروني."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە پلانی گەشتی نوێم بۆ بە ئیمەیڵ بنێرن."
+            },
+            {
+              "language": "en",
+              "text": "Please send me the new route plan by email."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً برنامه مسیر جدید را برای من ایمیل کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe plana rêya nû bi e-nameyê ji min re bişînin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę wysłać mi nowy plan trasy e-mailem."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rog să-mi trimiteți noul plan de rută prin e-mail."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, отправьте мне новый план маршрута по электронной почте."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutemi ma dërgoni planin e ri të rrugës me email."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen yeni rota planını bana e-posta ile gönderin."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}

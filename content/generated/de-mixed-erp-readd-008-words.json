@@ -1,0 +1,1451 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "de-mixed-erp-readd-008-words",
+  "packageName": "German ERP Readd Batch 008 Words",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
+  "labels": [
+    {
+      "kind": "Usage",
+      "key": "administrative",
+      "displayName": "Administrative",
+      "sortOrder": 120,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ar",
+          "name": "إداري"
+        },
+        {
+          "language": "ckb",
+          "name": "کارگێڕی"
+        },
+        {
+          "language": "en",
+          "name": "Administrative"
+        },
+        {
+          "language": "fa",
+          "name": "اداری"
+        },
+        {
+          "language": "kmr",
+          "name": "Rêveberî"
+        },
+        {
+          "language": "pl",
+          "name": "Administracyjny"
+        },
+        {
+          "language": "ro",
+          "name": "Administrativ"
+        },
+        {
+          "language": "ru",
+          "name": "Административный"
+        },
+        {
+          "language": "sq",
+          "name": "Administrativ"
+        },
+        {
+          "language": "tr",
+          "name": "İdari"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "business",
+      "displayName": "Business",
+      "sortOrder": 60,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Geschäftlich"
+        },
+        {
+          "language": "ar",
+          "name": "تجاري"
+        },
+        {
+          "language": "ckb",
+          "name": "بازرگانی"
+        },
+        {
+          "language": "en",
+          "name": "Business"
+        },
+        {
+          "language": "fa",
+          "name": "تجاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Bazirganî"
+        },
+        {
+          "language": "pl",
+          "name": "Biznesowy"
+        },
+        {
+          "language": "ro",
+          "name": "De afaceri"
+        },
+        {
+          "language": "ru",
+          "name": "Деловой"
+        },
+        {
+          "language": "sq",
+          "name": "Biznesi"
+        },
+        {
+          "language": "tr",
+          "name": "İş"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "customer-facing",
+      "displayName": "Customer-facing",
+      "sortOrder": 170,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Kundenorientiert"
+        },
+        {
+          "language": "ar",
+          "name": "موجه للعملاء"
+        },
+        {
+          "language": "ckb",
+          "name": "ڕووی کڕیار"
+        },
+        {
+          "language": "en",
+          "name": "Customer-facing"
+        },
+        {
+          "language": "fa",
+          "name": "مربوط به مشتری"
+        },
+        {
+          "language": "kmr",
+          "name": "Ji bo xerîdar"
+        },
+        {
+          "language": "pl",
+          "name": "Dla klienta"
+        },
+        {
+          "language": "ro",
+          "name": "Pentru clienți"
+        },
+        {
+          "language": "ru",
+          "name": "Для клиентов"
+        },
+        {
+          "language": "sq",
+          "name": "Për klientë"
+        },
+        {
+          "language": "tr",
+          "name": "Müşteriye dönük"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "process",
+      "displayName": "Process-related",
+      "sortOrder": 210,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Prozessbezogen"
+        },
+        {
+          "language": "ar",
+          "name": "متعلق بالعملية"
+        },
+        {
+          "language": "ckb",
+          "name": "پڕۆسەیی"
+        },
+        {
+          "language": "en",
+          "name": "Process-related"
+        },
+        {
+          "language": "fa",
+          "name": "فرایندی"
+        },
+        {
+          "language": "kmr",
+          "name": "Girêdayî pêvajoyê"
+        },
+        {
+          "language": "pl",
+          "name": "Procesowy"
+        },
+        {
+          "language": "ro",
+          "name": "Legat de proces"
+        },
+        {
+          "language": "ru",
+          "name": "Процессный"
+        },
+        {
+          "language": "sq",
+          "name": "I lidhur me procesin"
+        },
+        {
+          "language": "tr",
+          "name": "Süreçle ilgili"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "technical",
+      "displayName": "Technical",
+      "sortOrder": 80,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Technisch"
+        },
+        {
+          "language": "ar",
+          "name": "تقني"
+        },
+        {
+          "language": "ckb",
+          "name": "تەکنیکی"
+        },
+        {
+          "language": "en",
+          "name": "Technical"
+        },
+        {
+          "language": "fa",
+          "name": "فنی"
+        },
+        {
+          "language": "kmr",
+          "name": "Teknîkî"
+        },
+        {
+          "language": "pl",
+          "name": "Techniczny"
+        },
+        {
+          "language": "ro",
+          "name": "Tehnic"
+        },
+        {
+          "language": "ru",
+          "name": "Технический"
+        },
+        {
+          "language": "sq",
+          "name": "Teknik"
+        },
+        {
+          "language": "tr",
+          "name": "Teknik"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "workplace",
+      "displayName": "Workplace",
+      "sortOrder": 70,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Am Arbeitsplatz"
+        },
+        {
+          "language": "ar",
+          "name": "في مكان العمل"
+        },
+        {
+          "language": "ckb",
+          "name": "لە شوێنی کار"
+        },
+        {
+          "language": "en",
+          "name": "Workplace"
+        },
+        {
+          "language": "fa",
+          "name": "محیط کار"
+        },
+        {
+          "language": "kmr",
+          "name": "Li cihê kar"
+        },
+        {
+          "language": "pl",
+          "name": "W miejscu pracy"
+        },
+        {
+          "language": "ro",
+          "name": "La locul de muncă"
+        },
+        {
+          "language": "ru",
+          "name": "На рабочем месте"
+        },
+        {
+          "language": "sq",
+          "name": "Në vendin e punës"
+        },
+        {
+          "language": "tr",
+          "name": "İş yeri"
+        }
+      ]
+    },
+    {
+      "kind": "Usage",
+      "key": "written",
+      "displayName": "Written",
+      "sortOrder": 50,
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Schriftlich"
+        },
+        {
+          "language": "ar",
+          "name": "كتابي"
+        },
+        {
+          "language": "ckb",
+          "name": "نووسراو"
+        },
+        {
+          "language": "en",
+          "name": "Written"
+        },
+        {
+          "language": "fa",
+          "name": "نوشتاری"
+        },
+        {
+          "language": "kmr",
+          "name": "Nivîskî"
+        },
+        {
+          "language": "pl",
+          "name": "Pisemny"
+        },
+        {
+          "language": "ro",
+          "name": "Scris"
+        },
+        {
+          "language": "ru",
+          "name": "Письменный"
+        },
+        {
+          "language": "sq",
+          "name": "I shkruar"
+        },
+        {
+          "language": "tr",
+          "name": "Yazılı"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Umlagerung",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Umlagerungen",
+      "infinitive": null,
+      "syllableBreak": "Um-la-ge-rung",
+      "topics": [
+        "warehouse-and-logistics",
+        "erp-and-business-systems",
+        "documents-and-administration"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "process"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Umlagerung buchen",
+          "meaning": "to post a stock transfer"
+        },
+        {
+          "text": "Umlagerung zwischen Lagern",
+          "meaning": "stock transfer between warehouses"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "umlagern",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "نقل مخزون داخلي"
+        },
+        {
+          "language": "ckb",
+          "text": "گواستنەوەی ناوخۆی کۆگا"
+        },
+        {
+          "language": "en",
+          "text": "stock transfer; internal relocation"
+        },
+        {
+          "language": "fa",
+          "text": "انتقال موجودی؛ جابه‌جایی انبار"
+        },
+        {
+          "language": "kmr",
+          "text": "veguhastina stokê"
+        },
+        {
+          "language": "pl",
+          "text": "przesunięcie magazynowe"
+        },
+        {
+          "language": "ro",
+          "text": "transfer de stoc"
+        },
+        {
+          "language": "ru",
+          "text": "перемещение запасов"
+        },
+        {
+          "language": "sq",
+          "text": "transfer stoku"
+        },
+        {
+          "language": "tr",
+          "text": "stok transferi"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Umlagerung von Lager A nach Lager B wurde im ERP-System gebucht.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم تسجيل نقل المخزون من المستودع أ إلى المستودع ب في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "گواستنەوەکە لە کۆگای A بۆ کۆگای B لە سیستەمی ERPدا تۆمار کرا."
+            },
+            {
+              "language": "en",
+              "text": "The stock transfer from warehouse A to warehouse B was posted in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "انتقال موجودی از انبار A به انبار B در سیستم ERP ثبت شد."
+            },
+            {
+              "language": "kmr",
+              "text": "Veguhastina stokê ji embar A bo embar B di pergala ERP de hate tomarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Przesunięcie z magazynu A do magazynu B zostało zaksięgowane w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Transferul de stoc din depozitul A în depozitul B a fost înregistrat în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Перемещение со склада A на склад B было проведено в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Transferi i stokut nga depoja A në depon B u regjistrua në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "A deposundan B deposuna stok transferi ERP sisteminde kaydedildi."
+            }
+          ]
+        },
+        {
+          "baseText": "Für die Umlagerung brauchen wir einen freien Platz im zweiten Lager.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "لنقل المخزون نحتاج إلى مكان فارغ في المستودع الثاني."
+            },
+            {
+              "language": "ckb",
+              "text": "بۆ گواستنەوەکە پێویستمان بە شوێنێکی بەتاڵ لە کۆگای دووەمە."
+            },
+            {
+              "language": "en",
+              "text": "For the stock transfer, we need a free space in the second warehouse."
+            },
+            {
+              "language": "fa",
+              "text": "برای انتقال موجودی به یک جای خالی در انبار دوم نیاز داریم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji bo veguhastina stokê em hewceyê cihê vala di embara duyem de ne."
+            },
+            {
+              "language": "pl",
+              "text": "Do przesunięcia potrzebujemy wolnego miejsca w drugim magazynie."
+            },
+            {
+              "language": "ro",
+              "text": "Pentru transfer avem nevoie de un loc liber în al doilea depozit."
+            },
+            {
+              "language": "ru",
+              "text": "Для перемещения нам нужно свободное место на втором складе."
+            },
+            {
+              "language": "sq",
+              "text": "Për transferin na duhet një vend i lirë në depon e dytë."
+            },
+            {
+              "language": "tr",
+              "text": "Stok transferi için ikinci depoda boş bir yere ihtiyacımız var."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "die Umrechnung",
+      "partOfSpeech": "Noun",
+      "article": "die",
+      "plural": "Umrechnungen",
+      "infinitive": null,
+      "syllableBreak": "Um-rech-nung",
+      "topics": [
+        "finance-and-accounting",
+        "data-and-reporting",
+        "erp-and-business-systems"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "feminine noun"
+      ],
+      "collocations": [
+        {
+          "text": "eine Umrechnung durchführen",
+          "meaning": "to perform a conversion"
+        },
+        {
+          "text": "Umrechnung in Euro",
+          "meaning": "conversion into euros"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "umrechnen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "تحويل؛ إعادة حساب"
+        },
+        {
+          "language": "ckb",
+          "text": "گۆڕینی ژماردن؛ هەژمارکردنەوە"
+        },
+        {
+          "language": "en",
+          "text": "conversion; recalculation"
+        },
+        {
+          "language": "fa",
+          "text": "تبدیل؛ محاسبه مجدد"
+        },
+        {
+          "language": "kmr",
+          "text": "veguherandina hesabê"
+        },
+        {
+          "language": "pl",
+          "text": "przeliczenie"
+        },
+        {
+          "language": "ro",
+          "text": "conversie; recalculare"
+        },
+        {
+          "language": "ru",
+          "text": "пересчет; конвертация"
+        },
+        {
+          "language": "sq",
+          "text": "konvertim; rillogaritje"
+        },
+        {
+          "language": "tr",
+          "text": "dönüştürme; yeniden hesaplama"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Die Umrechnung von Dollar in Euro erfolgt automatisch im ERP-System.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تتم عملية تحويل الدولار إلى اليورو تلقائيًا في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "گۆڕینی دۆلار بۆ یۆرۆ خۆکارانە لە سیستەمی ERPدا دەکرێت."
+            },
+            {
+              "language": "en",
+              "text": "The conversion from dollars to euros happens automatically in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "تبدیل دلار به یورو در سیستم ERP به صورت خودکار انجام می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Veguherandina dolar bo euro di pergala ERP de bixweber pêk tê."
+            },
+            {
+              "language": "pl",
+              "text": "Przeliczenie dolarów na euro odbywa się automatycznie w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Conversia din dolari în euro se face automat în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Пересчет долларов в евро выполняется автоматически в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Konvertimi nga dollarë në euro bëhet automatikisht në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Doların euroya çevrilmesi ERP sisteminde otomatik yapılır."
+            }
+          ]
+        },
+        {
+          "baseText": "Bitte prüfen Sie die Umrechnung der Mengen noch einmal.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يرجى التحقق مرة أخرى من تحويل الكميات."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە جارێکی تر گۆڕینی بڕەکان بپشکنن."
+            },
+            {
+              "language": "en",
+              "text": "Please check the conversion of the quantities again."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً تبدیل مقدارها را دوباره بررسی کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe veguherandina hejmaran careke din kontrol bikin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę jeszcze raz sprawdzić przeliczenie ilości."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rugăm să verificați încă o dată conversia cantităților."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, еще раз проверьте пересчет количеств."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutemi kontrolloni edhe një herë konvertimin e sasive."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen miktarların dönüşümünü tekrar kontrol edin."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Verband",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Verbände",
+      "infinitive": null,
+      "syllableBreak": "Ver-band",
+      "topics": [
+        "business-communication",
+        "law-and-compliance",
+        "customer-service"
+      ],
+      "usageLabels": [
+        "business",
+        "administrative",
+        "written"
+      ],
+      "grammarNotes": [
+        "masculine noun; can mean association or bandage depending on context"
+      ],
+      "collocations": [
+        {
+          "text": "ein Verband von Unternehmen",
+          "meaning": "an association of companies"
+        },
+        {
+          "text": "Mitglied im Verband",
+          "meaning": "member of the association"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "verbinden",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "جمعية؛ اتحاد؛ ضمادة"
+        },
+        {
+          "language": "ckb",
+          "text": "یەکێتی؛ کۆمەڵە؛ پەسار"
+        },
+        {
+          "language": "en",
+          "text": "association; federation; bandage"
+        },
+        {
+          "language": "fa",
+          "text": "انجمن؛ اتحادیه؛ باند زخم"
+        },
+        {
+          "language": "kmr",
+          "text": "yekîtî; komele; pêçan"
+        },
+        {
+          "language": "pl",
+          "text": "związek; stowarzyszenie; opatrunek"
+        },
+        {
+          "language": "ro",
+          "text": "asociație; federație; bandaj"
+        },
+        {
+          "language": "ru",
+          "text": "союз; ассоциация; повязка"
+        },
+        {
+          "language": "sq",
+          "text": "shoqatë; federatë; fashë"
+        },
+        {
+          "language": "tr",
+          "text": "birlik; dernek; bandaj"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Verband ist im ERP-System als Kunde angelegt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم إنشاء الجمعية كعميل في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "یەکێتییەکە لە سیستەمی ERPدا وەک کڕیار دروست کراوە."
+            },
+            {
+              "language": "en",
+              "text": "The association is created as a customer in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "انجمن در سیستم ERP به عنوان مشتری ثبت شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Yekîtî di pergala ERP de wekî xerîdar hatiye çêkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Związek jest utworzony w systemie ERP jako klient."
+            },
+            {
+              "language": "ro",
+              "text": "Asociația este creată în sistemul ERP ca client."
+            },
+            {
+              "language": "ru",
+              "text": "Ассоциация заведена в ERP-системе как клиент."
+            },
+            {
+              "language": "sq",
+              "text": "Shoqata është krijuar në sistemin ERP si klient."
+            },
+            {
+              "language": "tr",
+              "text": "Dernek ERP sisteminde müşteri olarak açıldı."
+            }
+          ]
+        },
+        {
+          "baseText": "Der Verband informiert seine Mitglieder über neue Regeln.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تبلغ الجمعية أعضاءها بالقواعد الجديدة."
+            },
+            {
+              "language": "ckb",
+              "text": "یەکێتییەکە ئەندامەکانی لە یاسا نوێیەکان ئاگادار دەکاتەوە."
+            },
+            {
+              "language": "en",
+              "text": "The association informs its members about new rules."
+            },
+            {
+              "language": "fa",
+              "text": "انجمن اعضای خود را از قوانین جدید مطلع می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Yekîtî endamên xwe ji rêzikên nû agahdar dike."
+            },
+            {
+              "language": "pl",
+              "text": "Związek informuje swoich członków o nowych zasadach."
+            },
+            {
+              "language": "ro",
+              "text": "Asociația își informează membrii despre noile reguli."
+            },
+            {
+              "language": "ru",
+              "text": "Ассоциация информирует своих членов о новых правилах."
+            },
+            {
+              "language": "sq",
+              "text": "Shoqata i informon anëtarët e saj për rregullat e reja."
+            },
+            {
+              "language": "tr",
+              "text": "Birlik üyelerini yeni kurallar hakkında bilgilendirir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Verfall",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": null,
+      "infinitive": null,
+      "syllableBreak": "Ver-fall",
+      "topics": [
+        "warehouse-and-logistics",
+        "finance-and-accounting",
+        "quality-and-risk"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "masculine noun; usually singular"
+      ],
+      "collocations": [
+        {
+          "text": "Verfall von Waren",
+          "meaning": "expiry of goods"
+        },
+        {
+          "text": "kurz vor dem Verfall",
+          "meaning": "shortly before expiry"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "verfallen",
+          "relationLabel": "verb",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "انتهاء الصلاحية؛ تدهور"
+        },
+        {
+          "language": "ckb",
+          "text": "بەسەرچوون؛ داڕمان"
+        },
+        {
+          "language": "en",
+          "text": "expiry; deterioration"
+        },
+        {
+          "language": "fa",
+          "text": "انقضا؛ زوال"
+        },
+        {
+          "language": "kmr",
+          "text": "dawîbûn; xirabûn"
+        },
+        {
+          "language": "pl",
+          "text": "wygaśnięcie; przeterminowanie; upadek"
+        },
+        {
+          "language": "ro",
+          "text": "expirare; degradare"
+        },
+        {
+          "language": "ru",
+          "text": "истечение срока; упадок"
+        },
+        {
+          "language": "sq",
+          "text": "skadim; rënie"
+        },
+        {
+          "language": "tr",
+          "text": "son kullanma; bozulma"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Verfall der Charge wird im ERP-System automatisch angezeigt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يتم عرض انتهاء صلاحية الدفعة تلقائيًا في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "بەسەرچوونی بچەکە خۆکارانە لە سیستەمی ERPدا پیشان دەدرێت."
+            },
+            {
+              "language": "en",
+              "text": "The expiry of the batch is shown automatically in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "انقضای بچ در سیستم ERP به صورت خودکار نمایش داده می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Dawîbûna partiyê di pergala ERP de bixweber tê nîşandan."
+            },
+            {
+              "language": "pl",
+              "text": "Wygaśnięcie partii jest automatycznie pokazywane w systemie ERP."
+            },
+            {
+              "language": "ro",
+              "text": "Expirarea lotului este afișată automat în sistemul ERP."
+            },
+            {
+              "language": "ru",
+              "text": "Истечение срока партии автоматически отображается в ERP-системе."
+            },
+            {
+              "language": "sq",
+              "text": "Skadimi i serisë shfaqet automatikisht në sistemin ERP."
+            },
+            {
+              "language": "tr",
+              "text": "Partinin son kullanma tarihi ERP sisteminde otomatik gösterilir."
+            }
+          ]
+        },
+        {
+          "baseText": "Nach dem Verfall dürfen wir die Ware nicht mehr verkaufen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "بعد انتهاء الصلاحية لا يجوز لنا بيع البضاعة."
+            },
+            {
+              "language": "ckb",
+              "text": "دوای بەسەرچوون نابێت کاڵاکە چیتر بفرۆشین."
+            },
+            {
+              "language": "en",
+              "text": "After expiry, we may no longer sell the goods."
+            },
+            {
+              "language": "fa",
+              "text": "بعد از انقضا دیگر اجازه فروش کالا را نداریم."
+            },
+            {
+              "language": "kmr",
+              "text": "Piştî dawîbûnê em êdî nikarin malê bifiroşin."
+            },
+            {
+              "language": "pl",
+              "text": "Po upływie terminu nie wolno nam już sprzedawać towaru."
+            },
+            {
+              "language": "ro",
+              "text": "După expirare nu mai avem voie să vindem marfa."
+            },
+            {
+              "language": "ru",
+              "text": "После истечения срока мы больше не можем продавать товар."
+            },
+            {
+              "language": "sq",
+              "text": "Pas skadimit nuk mund ta shesim më mallin."
+            },
+            {
+              "language": "tr",
+              "text": "Son kullanma tarihinden sonra ürünü artık satamayız."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "der Vertreter",
+      "partOfSpeech": "Noun",
+      "article": "der",
+      "plural": "Vertreter",
+      "infinitive": null,
+      "syllableBreak": "Ver-tre-ter",
+      "topics": [
+        "sales-and-customers",
+        "business-communication",
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "business",
+        "workplace",
+        "customer-facing"
+      ],
+      "grammarNotes": [
+        "masculine noun; feminine form: die Vertreterin"
+      ],
+      "collocations": [
+        {
+          "text": "ein Vertreter des Kunden",
+          "meaning": "a representative of the customer"
+        },
+        {
+          "text": "den Vertreter kontaktieren",
+          "meaning": "to contact the representative"
+        }
+      ],
+      "wordFamilies": [
+        {
+          "lemma": "vertreten",
+          "relationLabel": "verb",
+          "note": null
+        },
+        {
+          "lemma": "die Vertretung",
+          "relationLabel": "noun",
+          "note": null
+        }
+      ],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "ممثل؛ مندوب"
+        },
+        {
+          "language": "ckb",
+          "text": "نوێنەر"
+        },
+        {
+          "language": "en",
+          "text": "representative"
+        },
+        {
+          "language": "fa",
+          "text": "نماینده"
+        },
+        {
+          "language": "kmr",
+          "text": "nûner"
+        },
+        {
+          "language": "pl",
+          "text": "przedstawiciel"
+        },
+        {
+          "language": "ro",
+          "text": "reprezentant"
+        },
+        {
+          "language": "ru",
+          "text": "представитель"
+        },
+        {
+          "language": "sq",
+          "text": "përfaqësues"
+        },
+        {
+          "language": "tr",
+          "text": "temsilci"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Der Vertreter des Kunden ist im ERP-System als Ansprechpartner hinterlegt.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "تم حفظ ممثل العميل كشخص اتصال في نظام تخطيط موارد المؤسسة."
+            },
+            {
+              "language": "ckb",
+              "text": "نوێنەری کڕیارەکە لە سیستەمی ERPدا وەک کەسی پەیوەندی تۆمارکراوە."
+            },
+            {
+              "language": "en",
+              "text": "The customer representative is stored as a contact person in the ERP system."
+            },
+            {
+              "language": "fa",
+              "text": "نماینده مشتری در سیستم ERP به عنوان شخص تماس ثبت شده است."
+            },
+            {
+              "language": "kmr",
+              "text": "Nûnerê xerîdar di pergala ERP de wekî kesê têkilî hatiye tomarkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Przedstawiciel klienta jest zapisany w systemie ERP jako osoba kontaktowa."
+            },
+            {
+              "language": "ro",
+              "text": "Reprezentantul clientului este salvat în sistemul ERP ca persoană de contact."
+            },
+            {
+              "language": "ru",
+              "text": "Представитель клиента сохранен в ERP-системе как контактное лицо."
+            },
+            {
+              "language": "sq",
+              "text": "Përfaqësuesi i klientit është ruajtur në sistemin ERP si person kontakti."
+            },
+            {
+              "language": "tr",
+              "text": "Müşteri temsilcisi ERP sisteminde irtibat kişisi olarak kayıtlı."
+            }
+          ]
+        },
+        {
+          "baseText": "Unser Vertreter besucht morgen drei Kunden in München.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يزور مندوبنا غدًا ثلاثة عملاء في ميونخ."
+            },
+            {
+              "language": "ckb",
+              "text": "نوێنەرەکەمان سبەی سێ کڕیار لە مونیخ سەردان دەکات."
+            },
+            {
+              "language": "en",
+              "text": "Our representative is visiting three customers in Munich tomorrow."
+            },
+            {
+              "language": "fa",
+              "text": "نماینده ما فردا از سه مشتری در مونیخ بازدید می‌کند."
+            },
+            {
+              "language": "kmr",
+              "text": "Nûnerê me sibê sê xerîdar li Münchenê serdana dike."
+            },
+            {
+              "language": "pl",
+              "text": "Nasz przedstawiciel odwiedzi jutro trzech klientów w Monachium."
+            },
+            {
+              "language": "ro",
+              "text": "Reprezentantul nostru vizitează mâine trei clienți în München."
+            },
+            {
+              "language": "ru",
+              "text": "Наш представитель завтра посетит трех клиентов в Мюнхене."
+            },
+            {
+              "language": "sq",
+              "text": "Përfaqësuesi ynë nesër viziton tre klientë në Mynih."
+            },
+            {
+              "language": "tr",
+              "text": "Temsilcimiz yarın Münih’te üç müşteriyi ziyaret ediyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "de",
+      "cefrLevel": "B1",
+      "pronunciationIpa": null,
+      "contextLabels": [],
+      "relations": [],
+      "word": "das Volumen",
+      "partOfSpeech": "Noun",
+      "article": "das",
+      "plural": "Volumen",
+      "infinitive": null,
+      "syllableBreak": "Vo-lu-men",
+      "topics": [
+        "warehouse-and-logistics",
+        "finance-and-accounting",
+        "data-and-reporting"
+      ],
+      "usageLabels": [
+        "business",
+        "technical",
+        "written"
+      ],
+      "grammarNotes": [
+        "neuter noun; plural often same as singular"
+      ],
+      "collocations": [
+        {
+          "text": "das Volumen berechnen",
+          "meaning": "to calculate the volume"
+        },
+        {
+          "text": "hohes Volumen",
+          "meaning": "high volume"
+        }
+      ],
+      "wordFamilies": [],
+      "meanings": [
+        {
+          "language": "ar",
+          "text": "حجم"
+        },
+        {
+          "language": "ckb",
+          "text": "قەبارە"
+        },
+        {
+          "language": "en",
+          "text": "volume"
+        },
+        {
+          "language": "fa",
+          "text": "حجم"
+        },
+        {
+          "language": "kmr",
+          "text": "qebare"
+        },
+        {
+          "language": "pl",
+          "text": "objętość; wolumen"
+        },
+        {
+          "language": "ro",
+          "text": "volum"
+        },
+        {
+          "language": "ru",
+          "text": "объем"
+        },
+        {
+          "language": "sq",
+          "text": "vëllim"
+        },
+        {
+          "language": "tr",
+          "text": "hacim"
+        }
+      ],
+      "examples": [
+        {
+          "baseText": "Das Volumen der Lieferung wird im ERP-System für den Transport berechnet.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "يتم حساب حجم التسليم في نظام تخطيط موارد المؤسسة من أجل النقل."
+            },
+            {
+              "language": "ckb",
+              "text": "قەبارەی گەیاندنەکە لە سیستەمی ERPدا بۆ گواستنەوە هەژمار دەکرێت."
+            },
+            {
+              "language": "en",
+              "text": "The volume of the delivery is calculated in the ERP system for transport."
+            },
+            {
+              "language": "fa",
+              "text": "حجم ارسال در سیستم ERP برای حمل‌ونقل محاسبه می‌شود."
+            },
+            {
+              "language": "kmr",
+              "text": "Qebareya radestkirinê di pergala ERP de ji bo barkirinê tê hesabkirin."
+            },
+            {
+              "language": "pl",
+              "text": "Objętość dostawy jest obliczana w systemie ERP dla transportu."
+            },
+            {
+              "language": "ro",
+              "text": "Volumul livrării este calculat în sistemul ERP pentru transport."
+            },
+            {
+              "language": "ru",
+              "text": "Объем поставки рассчитывается в ERP-системе для перевозки."
+            },
+            {
+              "language": "sq",
+              "text": "Vëllimi i dërgesës llogaritet në sistemin ERP për transport."
+            },
+            {
+              "language": "tr",
+              "text": "Teslimatın hacmi taşıma için ERP sisteminde hesaplanır."
+            }
+          ]
+        },
+        {
+          "baseText": "Das Volumen des Pakets ist größer als erwartet.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "حجم الطرد أكبر من المتوقع."
+            },
+            {
+              "language": "ckb",
+              "text": "قەبارەی پاکێتەکە لە چاوەڕوانکراو گەورەترە."
+            },
+            {
+              "language": "en",
+              "text": "The volume of the package is larger than expected."
+            },
+            {
+              "language": "fa",
+              "text": "حجم بسته از حد انتظار بزرگ‌تر است."
+            },
+            {
+              "language": "kmr",
+              "text": "Qebareya pakêtê ji ya hêvîkirî mezintir e."
+            },
+            {
+              "language": "pl",
+              "text": "Objętość paczki jest większa niż oczekiwano."
+            },
+            {
+              "language": "ro",
+              "text": "Volumul coletului este mai mare decât se aștepta."
+            },
+            {
+              "language": "ru",
+              "text": "Объем посылки больше, чем ожидалось."
+            },
+            {
+              "language": "sq",
+              "text": "Vëllimi i paketës është më i madh se pritej."
+            },
+            {
+              "language": "tr",
+              "text": "Paketin hacmi beklenenden daha büyük."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "scenarios": [],
+  "conversationStarterPacks": [],
+  "eventPreparationPacks": []
+}
