@@ -14,7 +14,7 @@
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Browse words</span>
+    <span class="eyebrow">@T["Browse words"]</span>
     <h1 class="headline-md">@Model.Title</h1>
     <p class="body-lg">@Model.Description</p>
 </section>
@@ -22,8 +22,8 @@
 @if (Model.Words.Count == 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">No words found</h2>
-        <p class="body-lg">Try a broader level or topic to continue browsing.</p>
+        <h2 class="headline-sm">@T["No words found"]</h2>
+        <p class="body-lg">@T["Try a broader level or topic to continue browsing."]</p>
     </section>
 }
 else
@@ -38,16 +38,16 @@ else
     <section class="panel pagination-panel">
         <div class="pagination">
             <div class="pagination__summary">
-                Page @currentPage
+                @T["Page"] @currentPage
             </div>
-            <nav class="pagination__links" aria-label="Word list pages">
+            <nav class="pagination__links" aria-label="@T["Word list pages"]">
                 @if (currentPage > 1)
                 {
                     <a class="button button--secondary button--compact"
                        asp-action="@browseAction"
                        asp-route-id="@browseRouteId"
                        asp-route-skip="0">
-                        First
+                        @T["First"]
                     </a>
                 }
             @if (Model.Skip > 0)
@@ -56,7 +56,7 @@ else
                    asp-action="@browseAction"
                    asp-route-id="@browseRouteId"
                    asp-route-skip="@(Math.Max(0, Model.Skip - Model.Take))">
-                    Previous
+                    @T["Previous"]
                 </a>
             }
                 @if (firstPageInWindow > 1)
@@ -86,7 +86,7 @@ else
                    asp-action="@browseAction"
                    asp-route-id="@browseRouteId"
                    asp-route-skip="@(Model.Skip + Model.Take)">
-                    Next
+                    @T["Next"]
                 </a>
             }
             </nav>

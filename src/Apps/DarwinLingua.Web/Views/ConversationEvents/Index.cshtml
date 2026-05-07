@@ -1,52 +1,52 @@
 @model DarwinLingua.Web.Models.ConversationEventIndexPageViewModel
 @{
-    ViewData["Title"] = "Conversation events";
+    ViewData["Title"] = T["Conversation events"];
 }
 
 <section class="panel stack-lg">
     <div class="detail-toolbar">
-        <span class="eyebrow">Event directory</span>
+        <span class="eyebrow">@T["Event directory"]</span>
     </div>
-    <h1 class="headline-md">Conversation events</h1>
-    <p class="body-lg">Find online and local opportunities to practice German with other learners and organizers.</p>
+    <h1 class="headline-md">@T["Conversation events"]</h1>
+    <p class="body-lg">@T["Find online and local opportunities to practice German with other learners and organizers."]</p>
     <form method="get" class="filter-bar">
         <label>
-            <span>City</span>
+            <span>@T["City"]</span>
             <input name="city" value="@Model.Filter.City" />
         </label>
         <label>
-            <span>Level</span>
-            <input name="cefrLevel" value="@Model.Filter.CefrLevel" placeholder="A1" />
+            <span>@T["Level"]</span>
+            <input name="cefrLevel" value="@Model.Filter.CefrLevel" placeholder="@T["A1"]" />
         </label>
         <label>
-            <span>Helper language</span>
-            <input name="helperLanguageCode" value="@Model.Filter.HelperLanguageCode" placeholder="en" />
+            <span>@T["Helper language"]</span>
+            <input name="helperLanguageCode" value="@Model.Filter.HelperLanguageCode" placeholder="@T["en"]" />
         </label>
         <label>
-            <span>Price</span>
-            <input name="priceType" value="@Model.Filter.PriceType" placeholder="free" />
+            <span>@T["Price"]</span>
+            <input name="priceType" value="@Model.Filter.PriceType" placeholder="@T["free"]" />
         </label>
         <label>
-            <span>Category</span>
-            <input name="category" value="@Model.Filter.Category" placeholder="conversation-cafe" />
+            <span>@T["Category"]</span>
+            <input name="category" value="@Model.Filter.Category" placeholder="@T["conversation-cafe"]" />
         </label>
         <label>
-            <span>Mode</span>
+            <span>@T["Mode"]</span>
             <select name="isOnline">
-                <option value="">Any</option>
-                <option value="false" selected="@(Model.Filter.IsOnline == false)">In person</option>
-                <option value="true" selected="@(Model.Filter.IsOnline == true)">Online</option>
+                <option value="">@T["Any"]</option>
+                <option value="false" selected="@(Model.Filter.IsOnline == false)">@T["In person"]</option>
+                <option value="true" selected="@(Model.Filter.IsOnline == true)">@T["Online"]</option>
             </select>
         </label>
-        <button class="button button--primary button--compact" type="submit">Filter</button>
+        <button class="button button--primary button--compact" type="submit">@T["Filter"]</button>
     </form>
 </section>
 
 @if (Model.Events.Count == 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">No events found</h2>
-        <p>Try a broader filter or check again when new practice events are available.</p>
+        <h2 class="headline-sm">@T["No events found"]</h2>
+        <p>@T["Try a broader filter or check again when new practice events are available."]</p>
     </section>
 }
 else
@@ -55,22 +55,22 @@ else
         @foreach (var conversationEvent in Model.Events)
         {
             <article class="panel stack-md">
-                <span class="eyebrow">@conversationEvent.Category · @(conversationEvent.IsOnline ? "Online" : conversationEvent.City ?? conversationEvent.CountryRegion)</span>
+                <span class="eyebrow">@conversationEvent.Category · @(conversationEvent.IsOnline ? T["Online"] : conversationEvent.City ?? conversationEvent.CountryRegion)</span>
                 <h2 class="headline-sm">
                     <a asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@conversationEvent.Slug">@conversationEvent.Name</a>
                 </h2>
                 <p>@conversationEvent.Description</p>
                 <dl class="detail-list">
                     <div>
-                        <dt>Organizer</dt>
+                        <dt>@T["Organizer"]</dt>
                         <dd>@conversationEvent.OrganizerName</dd>
                     </div>
                     <div>
-                        <dt>Schedule</dt>
+                        <dt>@T["Schedule"]</dt>
                         <dd>@conversationEvent.ScheduleText</dd>
                     </div>
                     <div>
-                        <dt>Price</dt>
+                        <dt>@T["Price"]</dt>
                         <dd>@conversationEvent.PriceType</dd>
                     </div>
                 </dl>
@@ -87,7 +87,7 @@ else
                         }
                     </div>
                 }
-                <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@conversationEvent.Slug">Open event</a>
+                <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@conversationEvent.Slug">@T["Open event"]</a>
             </article>
         }
     </section>

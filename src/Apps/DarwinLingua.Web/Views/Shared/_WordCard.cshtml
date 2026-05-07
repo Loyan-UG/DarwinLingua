@@ -31,16 +31,19 @@
     }
     <div class="word-card__actions">
         <div class="word-card__quick-actions">
-            <button type="button" class="icon-button icon-button--sm" data-speak-text="@Model.Word.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
+            <button type="button" class="icon-button icon-button--sm" data-speak-text="@Model.Word.Lemma" data-speak-lang="de-DE" aria-label="@T["Hear word"]" title="@T["Hear word"]">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
                     <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
                     <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
                 </svg>
-                <span class="sr-only">Hear word</span>
+                <span class="sr-only">@T["Hear word"]</span>
             </button>
             <partial name="_FavoriteToggle" model="Model.Interaction" />
         </div>
-        <a class="button button--secondary button--compact" data-word-link data-word-id="@Model.Word.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.Word.PublicId">Details</a>
+        @{
+            string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(Model.Word.Lemma, Model.Word.PublicId);
+        }
+        <a class="button button--secondary button--compact" data-word-link data-word-id="@Model.Word.PublicId" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@wordRouteSlug">@T["Details"]</a>
     </div>
 </article>

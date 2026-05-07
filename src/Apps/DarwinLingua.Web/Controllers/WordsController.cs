@@ -1,6 +1,8 @@
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -11,11 +13,26 @@ public sealed class WordsController(
     IWebUserWordStateService userWordStateService,
     IWebLearningProfileAccessor learningProfileAccessor,
     IWebEntitledFeatureAccessService featureAccessService,
+    IStringLocalizer<SharedResource> localizer,
     ILogger<WordsController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
-    [HttpGet("{id:guid}", Name = "Words_Detail")]
-    public async Task<IActionResult> Detail(Guid id, CancellationToken cancellationToken)
+    [HttpGet("{wordSlug}", Name = "Words_Detail")]
+    public async Task<IActionResult> Detail(string wordSlug, CancellationToken cancellationToken)
+    {
+        if (!TryParseWordRouteSlug(wordSlug, out Guid id))
+        {
+            return NotFound();
+        }
+
+        return await DetailByIdAsync(id, wordSlug, cancellationToken).ConfigureAwait(false);
+    }
+
+    [HttpGet("{id:guid}", Name = "Words_Detail_Legacy")]
+    public async Task<IActionResult> DetailLegacy(Guid id, CancellationToken cancellationToken) =>
+        await DetailByIdAsync(id, suppliedWordSlug: null, cancellationToken).ConfigureAwait(false);
+
+    private async Task<IActionResult> DetailByIdAsync(Guid id, string? suppliedWordSlug, CancellationToken cancellationToken)
     {
         if (id == Guid.Empty)
         {
@@ -42,7 +59,9 @@ public sealed class WordsController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Word detail could not be loaded for {WordId}.", id);
-            return ServiceUnavailableView("Word details are temporarily unavailable", "This word could not be loaded right now. Please try again from browse or search.");
+            return ServiceUnavailableView(
+                localizer["Word details are temporarily unavailable"].Value,
+                localizer["This word could not be loaded right now. Please try again from browse or search."].Value);
         }
 
         if (word is null)
@@ -50,10 +69,16 @@ public sealed class WordsController(
             return NotFound();
         }
 
+        string canonicalWordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma, word.PublicId);
+        if (!string.Equals(suppliedWordSlug, canonicalWordSlug, StringComparison.OrdinalIgnoreCase))
+        {
+            return RedirectToActionPermanent(nameof(Detail), "Words", new { wordSlug = canonicalWordSlug });
+        }
+
         var wordState = await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
         bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
-        return View(CreatePageViewModel(word, isFavorite, wordState, profile, effectiveSecondaryMeaningLanguageCode, canUseFavorites, canUseFavorites ? null : "Favorites require an active trial or premium plan."));
+        return View(CreatePageViewModel(word, isFavorite, wordState, profile, effectiveSecondaryMeaningLanguageCode, canUseFavorites, canUseFavorites ? null : localizer["Favorites require an active trial or premium plan."].Value));
     }
 
     [HttpPost(Name = "Words_ToggleFavorite")]
@@ -82,7 +107,7 @@ public sealed class WordsController(
                 analyticsService?.Record(WebProductAnalyticsEvents.PremiumFeatureDenied, "feature:favorites");
                 if (Request.Headers.ContainsKey("HX-Request"))
                 {
-                    return await RenderFavoriteToggleAsync(id, returnUrl, cancellationToken, "Favorites require an active trial or premium plan.");
+                    return await RenderFavoriteToggleAsync(id, returnUrl, cancellationToken, localizer["Favorites require an active trial or premium plan."].Value);
                 }
 
                 return RedirectToAction("Index", "Favorites");
@@ -170,7 +195,8 @@ public sealed class WordsController(
         bool canUseFavorites,
         string? favoriteLockedMessage)
     {
-        string returnUrl = Url.Action(nameof(Detail), "Words", new { id = word.PublicId }) ?? $"/Words/Detail/{word.PublicId}";
+        string wordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma, word.PublicId);
+        string returnUrl = Url.Action(nameof(Detail), "Words", new { wordSlug }) ?? $"/words/{wordSlug}";
 
         return new WordDetailPageViewModel(
             new WordDetailContentViewModel(
@@ -192,7 +218,7 @@ public sealed class WordsController(
         string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
         string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
             ? normalizedReturnUrl
-            : Url.Action(nameof(Detail), "Words", new { id }) ?? $"/Words/Detail/{id}";
+            : Url.Action(nameof(DetailLegacy), "Words", new { id }) ?? $"/words/{id:D}";
 
         return PartialView(
             "_InteractionPanel",
@@ -202,7 +228,7 @@ public sealed class WordsController(
                 wordState,
                 resolvedReturnUrl,
                 canUseFavorites,
-                canUseFavorites ? null : favoriteLockedMessage ?? "Favorites require an active trial or premium plan."));
+                canUseFavorites ? null : favoriteLockedMessage ?? localizer["Favorites require an active trial or premium plan."].Value));
     }
 
     private async Task<PartialViewResult> RenderFavoriteToggleAsync(Guid id, string? returnUrl, CancellationToken cancellationToken, string? favoriteLockedMessage = null)
@@ -215,7 +241,7 @@ public sealed class WordsController(
         string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
         string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
             ? normalizedReturnUrl
-            : Url.Action(nameof(Detail), "Words", new { id }) ?? $"/Words/Detail/{id}";
+            : Url.Action(nameof(DetailLegacy), "Words", new { id }) ?? $"/words/{id:D}";
 
         return PartialView(
             "~/Views/Shared/_FavoriteToggle.cshtml",
@@ -225,7 +251,7 @@ public sealed class WordsController(
                 wordState,
                 resolvedReturnUrl,
                 canUseFavorites,
-                canUseFavorites ? null : favoriteLockedMessage ?? "Favorites require an active trial or premium plan."));
+                canUseFavorites ? null : favoriteLockedMessage ?? localizer["Favorites require an active trial or premium plan."].Value));
     }
 
     private IActionResult RedirectToSafeWordReturn(Guid id, string? returnUrl)
@@ -236,7 +262,24 @@ public sealed class WordsController(
             return LocalRedirect(normalizedReturnUrl);
         }
 
-        return RedirectToAction(nameof(Detail), new { id });
+        return RedirectToAction(nameof(DetailLegacy), new { id });
+    }
+
+    private static bool TryParseWordRouteSlug(string? wordSlug, out Guid id)
+    {
+        id = Guid.Empty;
+        if (string.IsNullOrWhiteSpace(wordSlug) || wordSlug.Length < 36)
+        {
+            return false;
+        }
+
+        string guidCandidate = wordSlug[^36..];
+        if (!Guid.TryParseExact(guidCandidate, "D", out id))
+        {
+            return false;
+        }
+
+        return wordSlug.Length == 36 || wordSlug[^37] == '-';
     }
 
     private IActionResult HandleInvalidWordPost() =>

@@ -7,7 +7,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.StarterPack.CefrLevel · @Model.StarterPack.Situation · @Model.StarterPack.Tone</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Index">All starters</a>
+            <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Index">@T["All starters"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.StarterPack.Title</h1>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="detail-example">
                     <strong>@phrase.BaseText</strong>
-                    <button type="button" class="button button--secondary button--compact" data-speak-text="@phrase.BaseText" data-speak-lang="de-DE">Hear</button>
+                    <button type="button" class="button button--secondary button--compact" data-speak-text="@phrase.BaseText" data-speak-lang="de-DE">@T["Hear"]</button>
                 </div>
                 @if (!string.IsNullOrWhiteSpace(phrase.PrimaryMeaning))
                 {
@@ -70,7 +70,7 @@
                 }
                 @if (!string.IsNullOrWhiteSpace(phrase.CommonMistake))
                 {
-                    <p><strong>Watch out:</strong> @phrase.CommonMistake</p>
+                    <p><strong>@T["Watch out:"]</strong> @phrase.CommonMistake</p>
                 }
             </article>
         }
@@ -80,7 +80,7 @@
 @if (Model.StarterPack.LinkedScenarioSlugs.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Related scenarios</h2>
+        <h2 class="headline-sm">@T["Related scenarios"]</h2>
         <div class="chip-grid">
             @foreach (string scenarioSlug in Model.StarterPack.LinkedScenarioSlugs)
             {

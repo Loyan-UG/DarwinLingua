@@ -1,8 +1,10 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -11,6 +13,7 @@ public sealed class EventPreparationPacksController(
     IWebCatalogApiClient catalogApiClient,
     IWebEntitledFeatureAccessService featureAccessService,
     ILogger<EventPreparationPacksController> logger,
+    IStringLocalizer<SharedResource> localizer,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("{slug}", Name = "EventPreparationPacks_Detail")]
@@ -42,7 +45,9 @@ public sealed class EventPreparationPacksController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Event preparation pack could not be loaded for {Slug}.", normalizedSlug);
-            return ServiceUnavailableView("Preparation pack is temporarily unavailable", "This preparation pack could not be loaded right now. Please try again from scenarios or events.");
+            return ServiceUnavailableView(
+                localizer["Preparation pack is temporarily unavailable"],
+                localizer["This preparation pack could not be loaded right now. Please try again from scenarios or events."]);
         }
 
         if (preparationPack is null)
@@ -88,7 +93,7 @@ public sealed class EventPreparationPacksController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Event preparation completion could not load pack {Slug}.", normalizedSlug);
-            TempData["ErrorMessage"] = "Preparation progress could not be saved right now. Please try again.";
+            TempData["ErrorMessage"] = localizer["Preparation progress could not be saved right now. Please try again."].Value;
             return RedirectToAction("Index", "Scenarios");
         }
 

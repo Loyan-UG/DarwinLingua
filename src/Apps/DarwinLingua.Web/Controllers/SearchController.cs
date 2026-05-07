@@ -1,7 +1,9 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -12,7 +14,8 @@ public sealed class SearchController(
     IWebFavoriteWordService favoriteWordService,
     IWebEntitledFeatureAccessService featureAccessService,
     IWebWordSuggestionService wordSuggestionService,
-    ILogger<SearchController> logger) : Controller
+    ILogger<SearchController> logger,
+    IStringLocalizer<SharedResource> localizer) : Controller
 {
     private const int MaxSearchQueryLength = 128;
 
@@ -87,7 +90,7 @@ public sealed class SearchController(
         string suggestedWord = NormalizeQuery(input.SuggestedWord);
         if (string.IsNullOrWhiteSpace(suggestedWord))
         {
-            TempData["ErrorMessage"] = "Please enter a word before sending a suggestion.";
+            TempData["ErrorMessage"] = localizer["Please enter a word before sending a suggestion."].Value;
             return RedirectToAction(nameof(Index), new { q = NormalizeQuery(input.SourceQuery) });
         }
 
@@ -95,7 +98,7 @@ public sealed class SearchController(
             .SuggestWordAsync(input with { SuggestedWord = suggestedWord }, cancellationToken)
             .ConfigureAwait(false);
 
-        TempData["StatusMessage"] = $"Thanks. {suggestedWord} was sent to the content team.";
+        TempData["StatusMessage"] = localizer["Thanks. {0} was sent to the content team.", suggestedWord].Value;
         return RedirectToAction(nameof(Index), new { q = suggestedWord });
     }
 
@@ -142,7 +145,7 @@ public sealed class SearchController(
                     new DarwinLingua.Learning.Application.Models.UserWordStateModel(word.PublicId, false, false, null, null, 0),
                     returnUrl,
                     canUseFavorites,
-                    canUseFavorites ? null : "Favorites require an active trial or premium plan.")))
+                    canUseFavorites ? null : localizer["Favorites require an active trial or premium plan."].Value)))
             .ToArray();
     }
 

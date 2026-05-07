@@ -4,7 +4,7 @@
     @if (!string.IsNullOrWhiteSpace(Model.FavoriteLockedMessage))
     {
         <div class="panel panel--muted">
-            <strong>Favorites need account access</strong>
+            <strong>@T["Favorites need account access"]</strong>
             <p>@Model.FavoriteLockedMessage</p>
         </div>
     }
@@ -15,15 +15,15 @@
             @if (Model.WordState.IsKnown)
             {
                 <div class="meta-chip">
-                    <strong>Status</strong>
-                    <span>Known</span>
+                    <strong>@T["Status"]</strong>
+                    <span>@T["Known"]</span>
                 </div>
             }
             @if (Model.WordState.IsDifficult)
             {
                 <div class="meta-chip">
-                    <strong>Focus</strong>
-                    <span>Difficult</span>
+                    <strong>@T["Focus"]</strong>
+                    <span>@T["Difficult"]</span>
                 </div>
             }
         </div>
@@ -40,7 +40,7 @@
                 hx-post="@Url.Action("ToggleKnown", "Words")"
                 hx-target="#word-interaction-panel"
                 hx-swap="outerHTML">
-                @(Model.WordState.IsKnown ? "Known" : "Mark known")
+                @(Model.WordState.IsKnown ? T["Known"] : T["Mark known"])
             </button>
         </form>
         <form method="post" asp-action="ToggleDifficult" class="inline-form">
@@ -53,9 +53,9 @@
                 hx-post="@Url.Action("ToggleDifficult", "Words")"
                 hx-target="#word-interaction-panel"
                 hx-swap="outerHTML">
-                @(Model.WordState.IsDifficult ? "Difficult" : "Mark difficult")
+                @(Model.WordState.IsDifficult ? T["Difficult"] : T["Mark difficult"])
             </button>
         </form>
-        <a class="button button--secondary" asp-controller="Favorites" asp-action="Index">Open favorites</a>
+        <a class="button button--secondary" asp-controller="Favorites" asp-action="Index">@T["Open favorites"]</a>
     </div>
 </div>

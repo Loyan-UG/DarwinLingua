@@ -1,12 +1,12 @@
 @model DarwinLingua.Web.Models.RecentActivityPageViewModel
 @{
-    ViewData["Title"] = "Recent";
+    ViewData["Title"] = T["Recent"];
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Recent activity</span>
-    <h1 class="headline-md">Recently viewed words</h1>
-    <p class="body-lg">Return to words you opened recently and continue your study without searching again.</p>
+    <span class="eyebrow">@T["Recent activity"]</span>
+    <h1 class="headline-md">@T["Recently viewed words"]</h1>
+    <p class="body-lg">@T["Return to words you opened recently and continue your study without searching again."]</p>
 </section>
 
 <partial name="_RecentActivityPanel" model="Model" />

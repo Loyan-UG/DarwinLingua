@@ -1,20 +1,20 @@
 @model DarwinLingua.Web.Models.ConversationStarterIndexPageViewModel
 @{
-    ViewData["Title"] = "Conversation Starters";
+    ViewData["Title"] = T["Conversation Starters"];
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Conversation starters</span>
-    <h1 class="headline-md">Openers for real conversations</h1>
-    <p class="body-lg">Practice short German phrases by situation, tone, goal, and topic.</p>
+    <span class="eyebrow">@T["Conversation Starters"]</span>
+    <h1 class="headline-md">@T["Openers for real conversations"]</h1>
+    <p class="body-lg">@T["Practice short German phrases by situation, tone, goal, and topic."]</p>
 </section>
 
 <section class="panel stack-md">
     <form class="filter-bar" method="get">
         <label>
-            <span>CEFR</span>
+            <span>@T["CEFR"]</span>
             <select name="cefrLevel">
-                <option value="">All</option>
+                <option value="">@T["All"]</option>
                 @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
                 {
                     <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
@@ -22,28 +22,28 @@
             </select>
         </label>
         <label>
-            <span>Situation</span>
-            <input name="situation" value="@Model.Filter.Situation" placeholder="cafe" />
+            <span>@T["Situation"]</span>
+            <input name="situation" value="@Model.Filter.Situation" placeholder="@T["cafe"]" />
         </label>
         <label>
-            <span>Tone</span>
-            <input name="tone" value="@Model.Filter.Tone" placeholder="friendly" />
+            <span>@T["Tone"]</span>
+            <input name="tone" value="@Model.Filter.Tone" placeholder="@T["friendly"]" />
         </label>
         <label>
-            <span>Goal</span>
-            <input name="conversationGoal" value="@Model.Filter.ConversationGoal" placeholder="introduction" />
+            <span>@T["Goal"]</span>
+            <input name="conversationGoal" value="@Model.Filter.ConversationGoal" placeholder="@T["introduction"]" />
         </label>
         <label>
-            <span>Topic</span>
-            <input name="topicKey" value="@Model.Filter.TopicKey" placeholder="everyday-life" />
+            <span>@T["Topic"]</span>
+            <input name="topicKey" value="@Model.Filter.TopicKey" placeholder="@T["everyday-life"]" />
         </label>
-        <button class="button button--secondary" type="submit">Filter</button>
+        <button class="button button--secondary" type="submit">@T["Filter"]</button>
     </form>
 </section>
 
 @if (Model.StarterPacks.Count == 0)
 {
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("Conversation starters are being prepared", "Short phrase sets will appear here when they are ready for practice.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Conversation starters are being prepared"].Value, T["Short phrase sets will appear here when they are ready for practice."].Value)' />
 }
 else
 {
@@ -53,7 +53,7 @@ else
             <article class="panel stack-md">
                 <div class="action-row collection-card__meta">
                     <span class="eyebrow">@starterPack.CefrLevel · @starterPack.Situation · @starterPack.Tone</span>
-                    <span>@starterPack.TopicKeys.Count topics</span>
+                    <span>@T["{0} topics", starterPack.TopicKeys.Count]</span>
                 </div>
                 <h2 class="headline-sm">
                     <a asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
@@ -70,7 +70,7 @@ else
                     </div>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">Open starters</a>
+                    <a class="button button--secondary" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
                 </div>
             </article>
         }

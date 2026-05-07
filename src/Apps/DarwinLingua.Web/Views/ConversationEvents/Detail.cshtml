@@ -5,9 +5,9 @@
 
 <section class="panel stack-lg">
     <div class="detail-toolbar">
-        <span class="eyebrow">@Model.Event.Category · @(Model.Event.IsOnline ? "Online" : Model.Event.City ?? Model.Event.CountryRegion)</span>
+        <span class="eyebrow">@Model.Event.Category · @(Model.Event.IsOnline ? T["Online"] : Model.Event.City ?? Model.Event.CountryRegion)</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Index">All events</a>
+            <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Index">@T["All events"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Event.Name</h1>
@@ -22,7 +22,7 @@
     <p class="body-lg">@Model.Event.Description</p>
     <dl class="detail-list">
         <div>
-            <dt>Organizer</dt>
+            <dt>@T["Organizer"]</dt>
             <dd>
                 @if (!string.IsNullOrWhiteSpace(Model.Event.OrganizerProfileSlug))
                 {
@@ -35,33 +35,33 @@
             </dd>
         </div>
         <div>
-            <dt>Schedule</dt>
+            <dt>@T["Schedule"]</dt>
             <dd>@Model.Event.ScheduleText</dd>
         </div>
         @if (!string.IsNullOrWhiteSpace(Model.Event.RecurrenceRule))
         {
             <div>
-                <dt>Recurrence</dt>
+                <dt>@T["Recurrence"]</dt>
                 <dd>@Model.Event.RecurrenceRule</dd>
             </div>
         }
         <div>
-            <dt>Location</dt>
-            <dd>@(Model.Event.IsOnline ? "Online" : Model.Event.ApproximateLocation ?? Model.Event.City ?? Model.Event.CountryRegion)</dd>
+            <dt>@T["Location"]</dt>
+            <dd>@(Model.Event.IsOnline ? T["Online"] : Model.Event.ApproximateLocation ?? Model.Event.City ?? Model.Event.CountryRegion)</dd>
         </div>
         @if (Model.Event.Capacity.HasValue)
         {
             <div>
-                <dt>Capacity</dt>
-                <dd>@Model.Event.Capacity.Value seats</dd>
+                <dt>@T["Capacity"]</dt>
+                <dd>@T["{0} seats", Model.Event.Capacity.Value]</dd>
             </div>
         }
         <div>
-            <dt>Price</dt>
+            <dt>@T["Price"]</dt>
             <dd>@Model.Event.PriceType</dd>
         </div>
         <div>
-            <dt>Verification</dt>
+            <dt>@T["Verification"]</dt>
             <dd>@Model.Event.VerificationStatus</dd>
         </div>
     </dl>
@@ -78,7 +78,7 @@
     <div class="detail-toolbar__actions">
         @if (!string.IsNullOrWhiteSpace(Model.Event.ExternalLink))
         {
-            <a class="button button--primary button--compact" href="@Model.Event.ExternalLink" rel="noopener noreferrer" target="_blank">Register</a>
+            <a class="button button--primary button--compact" href="@Model.Event.ExternalLink" rel="noopener noreferrer" target="_blank">@T["Register"]</a>
         }
         @if (!string.IsNullOrWhiteSpace(Model.Event.ContactMethod))
         {
@@ -91,62 +91,62 @@
         <input type="hidden" name="TargetKey" value="@Model.Event.Slug" />
         <input type="hidden" name="ReturnUrl" value="@($"{Context.Request.Path}{Context.Request.QueryString}")" />
         <label class="form-field">
-            <span>Report this event</span>
+            <span>@T["Report this event"]</span>
             <select name="Reason">
-                <option value="inaccurate-listing">Inaccurate listing</option>
-                <option value="spam">Spam</option>
-                <option value="unsafe-contact">Unsafe contact</option>
-                <option value="other">Other</option>
+                <option value="inaccurate-listing">@T["Inaccurate listing"]</option>
+                <option value="spam">@T["Spam"]</option>
+                <option value="unsafe-contact">@T["Unsafe contact"]</option>
+                <option value="other">@T["Other"]</option>
             </select>
         </label>
         <label class="form-field">
-            <span>Report details</span>
+            <span>@T["Report details"]</span>
             <textarea name="Details" rows="2" maxlength="2000"></textarea>
         </label>
-        <button type="submit" class="button button--secondary button--compact">Send report</button>
+        <button type="submit" class="button button--secondary button--compact">@T["Send report"]</button>
     </form>
 </section>
 
 <section class="panel stack-md">
-    <h2 class="headline-sm">RSVP</h2>
-    <p class="body-lg">Save your interest or attendance so the organizer can plan capacity.</p>
+    <h2 class="headline-sm">@T["RSVP"]</h2>
+    <p class="body-lg">@T["Save your interest or attendance so the organizer can plan capacity."]</p>
     <dl class="detail-list">
         <div>
-            <dt>Interested</dt>
+            <dt>@T["Interested"]</dt>
             <dd>@Model.RsvpSummary.InterestedCount</dd>
         </div>
         <div>
-            <dt>Going</dt>
+            <dt>@T["Going"]</dt>
             <dd>@Model.RsvpSummary.GoingCount</dd>
         </div>
         @if (Model.RsvpSummary.RemainingCapacity.HasValue)
         {
             <div>
-                <dt>Remaining</dt>
-                <dd>@Model.RsvpSummary.RemainingCapacity.Value of @Model.RsvpSummary.Capacity</dd>
+                <dt>@T["Remaining"]</dt>
+                <dd>@T["{0} of {1}", Model.RsvpSummary.RemainingCapacity.Value, Model.RsvpSummary.Capacity]</dd>
             </div>
         }
     </dl>
     <form method="post" asp-action="Rsvp" asp-route-slug="@Model.Event.Slug" class="form-grid">
         @Html.AntiForgeryToken()
         <label class="field">
-            <span>Name</span>
+            <span>@T["Name"]</span>
             <input name="ParticipantName" value="@Model.Input.ParticipantName" />
         </label>
         <label class="field">
-            <span>Email</span>
+            <span>@T["Email"]</span>
             <input name="ParticipantEmail" value="@Model.Input.ParticipantEmail" type="email" />
         </label>
         <label class="field">
-            <span>Status</span>
+            <span>@T["Status"]</span>
             <select name="Status">
-                <option value="interested" selected="@(Model.Input.Status == "interested")">Interested</option>
-                <option value="going" selected="@(Model.Input.Status == "going")">Going</option>
-                <option value="cancelled" selected="@(Model.Input.Status == "cancelled")">Cancel</option>
+                <option value="interested" selected="@(Model.Input.Status == "interested")">@T["Interested"]</option>
+                <option value="going" selected="@(Model.Input.Status == "going")">@T["Going"]</option>
+                <option value="cancelled" selected="@(Model.Input.Status == "cancelled")">@T["Cancel"]</option>
             </select>
         </label>
         <div class="action-row">
-            <button type="submit" class="button button--primary">Save RSVP</button>
+            <button type="submit" class="button button--primary">@T["Save RSVP"]</button>
         </div>
     </form>
 </section>
@@ -154,7 +154,7 @@
 @if (Model.PreparationPacks.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Prepare for this event</h2>
+        <h2 class="headline-sm">@T["Prepare for this event"]</h2>
         <div class="grid-two-col">
             @foreach (var preparationPack in Model.PreparationPacks)
             {
@@ -164,7 +164,7 @@
                         <a asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
                     </h3>
                     <p>@preparationPack.Description</p>
-                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">Prepare for this event</a>
+                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@T["Prepare for this event"]</a>
                 </article>
             }
         </div>
@@ -174,7 +174,7 @@
 @if (!string.IsNullOrWhiteSpace(Model.Event.SourceName) || Model.Event.LastVerifiedAtUtc.HasValue)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Listing information</h2>
+        <h2 class="headline-sm">@T["Listing information"]</h2>
         <p>
             @if (!string.IsNullOrWhiteSpace(Model.Event.SourceUrl))
             {
@@ -186,7 +186,7 @@
             }
             @if (Model.Event.LastVerifiedAtUtc.HasValue)
             {
-                <span> · verified @Model.Event.LastVerifiedAtUtc.Value.ToString("yyyy-MM-dd")</span>
+                <span> · @T["verified {0}", Model.Event.LastVerifiedAtUtc.Value.ToString("yyyy-MM-dd")]</span>
             }
         </p>
     </section>

@@ -3,8 +3,8 @@
 @if (Model.Items.Count == 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">No recent activity yet</h2>
-        <p class="body-lg">Open a few word detail pages and they will appear here.</p>
+        <h2 class="headline-sm">@T["No recent activity yet"]</h2>
+        <p class="body-lg">@T["Open a few word detail pages and they will appear here."]</p>
     </section>
 }
 else
@@ -21,27 +21,30 @@ else
                 }
                 <div class="meta-grid">
                     <div class="meta-chip">
-                        <strong>Views</strong>
+                        <strong>@T["Views"]</strong>
                         <span>@item.ViewCount</span>
                     </div>
                     <div class="meta-chip">
-                        <strong>Last viewed</strong>
+                        <strong>@T["Last viewed"]</strong>
                         <span>@item.LastViewedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</span>
                     </div>
                 </div>
                 <div class="chip-grid">
                     @if (item.IsKnown)
                     {
-                        <span class="chip-link chip-link--static">Known</span>
+                        <span class="chip-link chip-link--static">@T["Known"]</span>
                     }
                     @if (item.IsDifficult)
                     {
-                        <span class="chip-link chip-link--static">Difficult</span>
+                        <span class="chip-link chip-link--static">@T["Difficult"]</span>
                     }
                 </div>
                 <div class="action-row">
-                    <button type="button" class="button button--secondary button--compact" data-speak-text="@item.Lemma" data-speak-lang="de-DE">Hear</button>
-                    <a class="button button--secondary" data-word-link data-word-id="@item.PublicId" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">Open word</a>
+                    <button type="button" class="button button--secondary button--compact" data-speak-text="@item.Lemma" data-speak-lang="de-DE">@T["Hear"]</button>
+                    @{
+                        string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(item.Lemma, item.PublicId);
+                    }
+                    <a class="button button--secondary" data-word-link data-word-id="@item.PublicId" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@wordRouteSlug">@T["Open word"]</a>
                 </div>
             </article>
         }

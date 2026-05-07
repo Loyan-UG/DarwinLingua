@@ -1,7 +1,9 @@
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -11,6 +13,7 @@ public sealed class ModerationController(
     IWebCatalogApiClient catalogApiClient,
     ICommunityNotificationEmailService notificationEmailService,
     IAccountEmailRateLimiter rateLimiter,
+    IStringLocalizer<SharedResource> localizer,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpPost("reports", Name = "Moderation_Report")]
@@ -21,7 +24,7 @@ public sealed class ModerationController(
     {
         if (!ModelState.IsValid)
         {
-            TempData["ErrorMessage"] = "Required report fields are missing or invalid.";
+            TempData["ErrorMessage"] = localizer["Required report fields are missing or invalid."].Value;
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
@@ -30,14 +33,14 @@ public sealed class ModerationController(
         string reason = input.Reason.Trim();
         if (!IsAllowedTargetType(targetType) || !IsAllowedReportReason(reason) || targetKey is null)
         {
-            TempData["ErrorMessage"] = "The selected report target or reason is not supported.";
+            TempData["ErrorMessage"] = localizer["The selected report target or reason is not supported."].Value;
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
         string ownerEmail = GetOwnerEmail();
         if (!rateLimiter.TryConsume("moderation-report", ownerEmail, 10, TimeSpan.FromMinutes(15)))
         {
-            TempData["ErrorMessage"] = "Too many reports submitted. Please wait a few minutes and try again.";
+            TempData["ErrorMessage"] = localizer["Too many reports submitted. Please wait a few minutes and try again."].Value;
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
@@ -65,7 +68,7 @@ public sealed class ModerationController(
                     .ConfigureAwait(false);
             }
 
-            TempData["StatusMessage"] = "Report submitted for moderation review.";
+            TempData["StatusMessage"] = localizer["Report submitted for moderation review."].Value;
             analyticsService?.Record(WebProductAnalyticsEvents.UserReported, $"target:{targetType}");
         }
         catch (InvalidOperationException exception)
@@ -84,7 +87,7 @@ public sealed class ModerationController(
     {
         if (!ModelState.IsValid)
         {
-            TempData["ErrorMessage"] = "Required block fields are missing or invalid.";
+            TempData["ErrorMessage"] = localizer["Required block fields are missing or invalid."].Value;
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
@@ -92,20 +95,20 @@ public sealed class ModerationController(
             !input.SourcePartnerRequestId.HasValue &&
             !input.TargetLearnerProfileId.HasValue)
         {
-            TempData["ErrorMessage"] = "A learner email, partner request, or learner profile is required to block.";
+            TempData["ErrorMessage"] = localizer["A learner email, partner request, or learner profile is required to block."].Value;
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
         if (input.SourcePartnerRequestId == Guid.Empty || input.TargetLearnerProfileId == Guid.Empty)
         {
-            TempData["ErrorMessage"] = "The selected block target is not supported.";
+            TempData["ErrorMessage"] = localizer["The selected block target is not supported."].Value;
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
         string ownerEmail = GetOwnerEmail();
         if (!rateLimiter.TryConsume("moderation-block", ownerEmail, 10, TimeSpan.FromMinutes(15)))
         {
-            TempData["ErrorMessage"] = "Too many block attempts. Please wait a few minutes and try again.";
+            TempData["ErrorMessage"] = localizer["Too many block attempts. Please wait a few minutes and try again."].Value;
             return RedirectToSafeReturn(input.ReturnUrl);
         }
 
@@ -121,7 +124,7 @@ public sealed class ModerationController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = "Learner blocked.";
+            TempData["StatusMessage"] = localizer["Learner blocked."].Value;
             analyticsService?.Record(WebProductAnalyticsEvents.UserBlocked);
         }
         catch (InvalidOperationException exception)
@@ -167,10 +170,10 @@ public sealed class ModerationController(
         string.Equals(reason, "impersonation", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(reason, "other", StringComparison.OrdinalIgnoreCase);
 
-    private static string BuildModerationErrorMessage(InvalidOperationException exception) =>
+    private string BuildModerationErrorMessage(InvalidOperationException exception) =>
         exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
-            ? "The selected moderation target is no longer available."
-            : "The moderation request could not be saved right now. Please try again.";
+            ? localizer["The selected moderation target is no longer available."].Value
+            : localizer["The moderation request could not be saved right now. Please try again."].Value;
 
     private static string? TrimToNull(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();

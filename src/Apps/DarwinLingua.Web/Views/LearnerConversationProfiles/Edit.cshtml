@@ -1,14 +1,14 @@
 @model DarwinLingua.Web.Models.LearnerConversationProfilePageViewModel
 @{
-    ViewData["Title"] = "Learner profile";
+    ViewData["Title"] = T["Learner profile"];
     bool hasProfile = Model.SavedProfile is not null;
     bool isDisabled = string.Equals(Model.SavedProfile?.Visibility, "disabled", StringComparison.Ordinal);
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Conversation profile</span>
-    <h1 class="headline-md">Learner profile</h1>
-    <p class="body-lg">Update your display name, level, languages, goals, availability, and visibility for conversation practice.</p>
+    <span class="eyebrow">@T["Conversation profile"]</span>
+    <h1 class="headline-md">@T["Learner profile"]</h1>
+    <p class="body-lg">@T["Update your display name, level, languages, goals, availability, and visibility for conversation practice."]</p>
 
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
@@ -22,8 +22,8 @@
     @if (hasProfile)
     {
         <div class="chip-grid">
-            <span class="chip-link chip-link--static">Visibility: @Model.SavedProfile!.Visibility</span>
-            <span class="chip-link chip-link--static">Updated: @Model.SavedProfile.UpdatedAtUtc.ToString("u")</span>
+            <span class="chip-link chip-link--static">@T["Visibility"]: @Model.SavedProfile!.Visibility</span>
+            <span class="chip-link chip-link--static">@T["Updated"]: @Model.SavedProfile.UpdatedAtUtc.ToString("u")</span>
         </div>
     }
 </section>
@@ -35,30 +35,30 @@
 
         <div class="form-grid">
             <label class="form-field">
-                <span>Display name</span>
+                <span>@T["Display name"]</span>
                 <input asp-for="Input.DisplayName" autocomplete="name" />
-                <small class="body-sm">This is the name other learners see.</small>
+                <small class="body-sm">@T["This is the name other learners see."]</small>
                 <span asp-validation-for="Input.DisplayName" class="validation-message"></span>
             </label>
 
             <label class="form-field">
-                <span>City or region</span>
+                <span>@T["City or region"]</span>
                 <input asp-for="Input.CityRegion" autocomplete="address-level2" />
-                <small class="body-sm">Used for local conversation matching.</small>
+                <small class="body-sm">@T["Used for local conversation matching."]</small>
                 <span asp-validation-for="Input.CityRegion" class="validation-message"></span>
             </label>
 
             <label class="form-field">
-                <span>Interaction preference</span>
+                <span>@T["Interaction preference"]</span>
                 <select asp-for="Input.InteractionPreference">
-                    <option value="both">Online and in-person</option>
-                    <option value="online">Online</option>
-                    <option value="in-person">In-person</option>
+                    <option value="both">@T["Online and in-person"]</option>
+                    <option value="online">@T["Online"]</option>
+                    <option value="in-person">@T["In-person"]</option>
                 </select>
             </label>
 
             <label class="form-field">
-                <span>German level</span>
+                <span>@T["German level"]</span>
                 <select asp-for="Input.GermanLevel">
                     <option value="A1">A1</option>
                     <option value="A2">A2</option>
@@ -70,31 +70,31 @@
             </label>
 
             <label class="form-field">
-                <span>Helper languages</span>
+                <span>@T["Helper languages"]</span>
                 <input asp-for="Input.HelperLanguageCodesText" placeholder="en, fa, ar" />
-                <small class="body-sm">Comma-separated language codes you can use while practicing.</small>
+                <small class="body-sm">@T["Comma-separated language codes you can use while practicing."]</small>
                 <span asp-validation-for="Input.HelperLanguageCodesText" class="validation-message"></span>
             </label>
 
             <label class="form-field">
-                <span>Visibility</span>
+                <span>@T["Visibility"]</span>
                 <select asp-for="Input.Visibility">
-                    <option value="private">Private</option>
-                    <option value="request-only">Request-only</option>
-                    <option value="public">Public</option>
-                    <option value="disabled">Disabled</option>
+                    <option value="private">@T["Private"]</option>
+                    <option value="request-only">@T["Request-only"]</option>
+                    <option value="public">@T["Public"]</option>
+                    <option value="disabled">@T["Disabled"]</option>
                 </select>
-                <small class="body-sm">Private keeps the profile hidden; request-only allows controlled matching.</small>
+                <small class="body-sm">@T["Private keeps the profile hidden; request-only allows controlled matching."]</small>
             </label>
 
             <label class="form-field field--wide">
-                <span>Conversation goals</span>
+                <span>@T["Conversation goals"]</span>
                 <textarea asp-for="Input.ConversationGoals" rows="5"></textarea>
                 <span asp-validation-for="Input.ConversationGoals" class="validation-message"></span>
             </label>
 
             <label class="form-field field--wide">
-                <span>Availability notes</span>
+                <span>@T["Availability notes"]</span>
                 <textarea asp-for="Input.AvailabilityNotes" rows="4"></textarea>
                 <span asp-validation-for="Input.AvailabilityNotes" class="validation-message"></span>
             </label>
@@ -102,12 +102,12 @@
 
         <label class="checkbox-row">
             <input asp-for="Input.HasConfirmedAdult" />
-            <span>I confirm this learner profile is for an adult learner.</span>
+            <span>@T["I confirm this learner profile is for an adult learner."]</span>
         </label>
 
         <div class="action-row">
-            <button type="submit" class="button button--primary">Save profile</button>
-            <a class="button button--secondary" asp-controller="Account" asp-action="Index">Account</a>
+            <button type="submit" class="button button--primary">@T["Save profile"]</button>
+            <a class="button button--secondary" asp-controller="Account" asp-action="Index">@T["Account"]</a>
         </div>
     </form>
 </section>
@@ -115,16 +115,16 @@
 @if (hasProfile)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Profile controls</h2>
+        <h2 class="headline-sm">@T["Profile controls"]</h2>
         <div class="action-row">
             <form method="post" asp-action="SetEnabled" class="inline-form">
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="isEnabled" value="@isDisabled.ToString().ToLowerInvariant()" />
-                <button type="submit" class="button button--secondary">@(isDisabled ? "Enable as private" : "Disable")</button>
+                <button type="submit" class="button button--secondary">@(isDisabled ? T["Enable as private"] : T["Disable"])</button>
             </form>
             <form method="post" asp-action="Delete" class="inline-form">
                 @Html.AntiForgeryToken()
-                <button type="submit" class="button button--secondary">Delete profile</button>
+                <button type="submit" class="button button--secondary">@T["Delete profile"]</button>
             </form>
         </div>
     </section>

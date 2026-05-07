@@ -185,8 +185,6 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebEmailDeliveryLogs" ("ScenarioKey", "CreatedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderMessageId"
             ON "WebEmailDeliveryLogs" ("ProviderMessageId");
-            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc";
-            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEventAtUtc";
             CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_Event_EventAtUtc"
             ON "WebEmailDeliveryLogs" ("ProviderLastEvent", "ProviderLastEventAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_EventAtUtc"
@@ -368,8 +366,6 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebEmailDeliveryLogs" ("ScenarioKey", "CreatedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_ProviderMessageId"
             ON "WebEmailDeliveryLogs" ("ProviderMessageId");
-            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEvent_ProviderLastEventAtUtc";
-            DROP INDEX IF EXISTS "IX_WebEmailDeliveryLogs_ProviderLastEventAtUtc";
             CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_Event_EventAtUtc"
             ON "WebEmailDeliveryLogs" ("ProviderLastEvent", "ProviderLastEventAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailLogs_EventAtUtc"

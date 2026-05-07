@@ -1,5 +1,6 @@
 let deferredInstallPrompt = null;
 const wordNavigationStorageKey = "darwinlingua.web.word-navigation";
+const manualSpeechRates = [1, 0.75, 0.5];
 
 function sendTelemetry(payload) {
     if (!payload || !payload.eventName) {
@@ -57,7 +58,7 @@ function resolveSpeechVoice(languageCode) {
         ?? null;
 }
 
-function speakText(text, languageCode) {
+function speakText(text, languageCode, rate) {
     if (!canUseSpeechSynthesis()) {
         return;
     }
@@ -71,6 +72,7 @@ function speakText(text, languageCode) {
 
     const utterance = new window.SpeechSynthesisUtterance(normalizedText);
     utterance.lang = languageCode || "de-DE";
+    utterance.rate = Number.isFinite(rate) && rate > 0 ? rate : 1;
 
     const voice = resolveSpeechVoice(utterance.lang);
     if (voice) {
@@ -78,6 +80,33 @@ function speakText(text, languageCode) {
     }
 
     window.speechSynthesis.speak(utterance);
+}
+
+function getNextManualSpeechRate(button) {
+    if (!button) {
+        return 1;
+    }
+
+    const currentIndex = Number.parseInt(button.dataset.speechRateIndex || "0", 10);
+    const normalizedIndex = Number.isInteger(currentIndex) && currentIndex >= 0
+        ? currentIndex % manualSpeechRates.length
+        : 0;
+    const rate = manualSpeechRates[normalizedIndex];
+    button.dataset.speechRateIndex = ((normalizedIndex + 1) % manualSpeechRates.length).toString();
+    return rate;
+}
+
+function isTypingTarget(target) {
+    const element = target instanceof Element ? target : null;
+    if (!element) {
+        return false;
+    }
+
+    const tagName = element.tagName ? element.tagName.toLowerCase() : "";
+    return tagName === "input"
+        || tagName === "textarea"
+        || tagName === "select"
+        || element.isContentEditable;
 }
 
 function getWordListContainer(element) {
@@ -90,9 +119,13 @@ function captureWordNavigationContext(triggerElement) {
         return;
     }
 
-    const ids = Array.from(container.querySelectorAll("[data-word-link][data-word-id]"))
-        .map((element) => element.getAttribute("data-word-id"))
-        .filter((value) => !!value);
+    const entries = Array.from(container.querySelectorAll("[data-word-link][data-word-id]"))
+        .map((element) => ({
+            id: element.getAttribute("data-word-id"),
+            href: element.getAttribute("href")
+        }))
+        .filter((entry) => !!entry.id);
+    const ids = entries.map((entry) => entry.id);
 
     if (ids.length === 0) {
         return;
@@ -100,6 +133,7 @@ function captureWordNavigationContext(triggerElement) {
 
     window.sessionStorage.setItem(wordNavigationStorageKey, JSON.stringify({
         ids,
+        entries,
         sourcePath: `${window.location.pathname}${window.location.search}`
     }));
 }
@@ -152,7 +186,10 @@ function configureWordNavigation(detailElement) {
             return;
         }
 
-        window.location.assign(`/words/${targetId}`);
+        const entry = Array.isArray(context.entries)
+            ? context.entries.find((item) => item && item.id === targetId)
+            : null;
+        window.location.assign(entry && entry.href ? entry.href : `/words/${targetId}`);
     };
 
     if (previousButton) {
@@ -166,8 +203,7 @@ function configureWordNavigation(detailElement) {
     }
 
     document.addEventListener("keydown", (event) => {
-        const targetTagName = event.target && event.target.tagName ? event.target.tagName.toLowerCase() : "";
-        if (targetTagName === "input" || targetTagName === "textarea" || targetTagName === "select") {
+        if (isTypingTarget(event.target)) {
             return;
         }
 
@@ -224,7 +260,7 @@ function configureWordSpeech(detailElement) {
     const lemma = detailElement.getAttribute("data-word-lemma");
     if (lemma && canUseSpeechSynthesis()) {
         window.setTimeout(() => {
-            speakText(lemma, "de-DE");
+            speakText(lemma, "de-DE", 1);
         }, 1000);
     }
 }
@@ -238,8 +274,31 @@ function configureGlobalSpeech(rootElement) {
 
         button.dataset.speechBound = "true";
         button.addEventListener("click", () => {
-            speakText(button.getAttribute("data-speak-text"), button.getAttribute("data-speak-lang") || "de-DE");
+            speakText(
+                button.getAttribute("data-speak-text"),
+                button.getAttribute("data-speak-lang") || "de-DE",
+                getNextManualSpeechRate(button));
         });
+    });
+}
+
+function configureSpeechShortcut() {
+    document.addEventListener("keydown", (event) => {
+        if (!event.ctrlKey || event.altKey || event.metaKey || event.shiftKey || event.code !== "Space") {
+            return;
+        }
+
+        if (isTypingTarget(event.target)) {
+            return;
+        }
+
+        const speechButton = document.querySelector("[data-keyboard-speak-target='true']");
+        if (!speechButton) {
+            return;
+        }
+
+        event.preventDefault();
+        speechButton.click();
     });
 }
 
@@ -365,4 +424,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     configureGlobalSpeech(document);
+    configureSpeechShortcut();
 });

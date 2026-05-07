@@ -1,27 +1,27 @@
 @model DarwinLingua.Web.Models.FavoritesPageViewModel
 @{
-    ViewData["Title"] = "Favorites";
+    ViewData["Title"] = T["Favorites"];
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Favorites</span>
-    <h1 class="headline-md">Saved favorite words</h1>
-    <p class="body-lg">Keep high-value vocabulary close so you can return to it before meetings, practice sessions, or review blocks.</p>
+    <span class="eyebrow">@T["Favorites"]</span>
+    <h1 class="headline-md">@T["Saved favorite words"]</h1>
+    <p class="body-lg">@T["Keep high-value vocabulary close so you can return to it before meetings, practice sessions, or review blocks."]</p>
 </section>
 
 @if (Model.IsLocked)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Favorites are locked</h2>
+        <h2 class="headline-sm">@T["Favorites are locked"]</h2>
         <p class="body-lg">@Model.LockedMessage</p>
-        <a class="button button--primary" asp-controller="Account" asp-action="Index">Open account</a>
+        <a class="button button--primary" asp-controller="Account" asp-action="Index">@T["Open account"]</a>
     </section>
 }
 else if (Model.Words.Count == 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Nothing saved yet</h2>
-        <p class="body-lg">Open a word detail page and save a few favorites to build this list.</p>
+        <h2 class="headline-sm">@T["Nothing saved yet"]</h2>
+        <p class="body-lg">@T["Open a word detail page and save a few favorites to build this list."]</p>
     </section>
 }
 else

@@ -1,10 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Areas.Identity.Pages.Account;
 
@@ -12,7 +14,8 @@ public sealed class LoginModel(
     SignInManager<DarwinLinguaIdentityUser> signInManager,
     UserManager<DarwinLinguaIdentityUser> userManager,
     IAccountEmailService accountEmailService,
-    IAccountEmailRateLimiter rateLimiter) : PageModel
+    IAccountEmailRateLimiter rateLimiter,
+    IStringLocalizer<SharedResource> localizer) : PageModel
 {
     [BindProperty]
     public LoginInputModel Input { get; set; } = new();
@@ -70,7 +73,7 @@ public sealed class LoginModel(
                     .ConfigureAwait(false);
             }
 
-            ModelState.AddModelError(string.Empty, "This account is temporarily locked. Try again later or contact support.");
+            ModelState.AddModelError(string.Empty, localizer["This account is temporarily locked. Try again later or contact support."]);
             return Page();
         }
 
@@ -79,7 +82,7 @@ public sealed class LoginModel(
             return RedirectToPage("/Account/CheckEmail", new { area = "Identity" });
         }
 
-        ModelState.AddModelError(string.Empty, "The sign-in attempt could not be completed.");
+        ModelState.AddModelError(string.Empty, localizer["The sign-in attempt could not be completed."]);
         return Page();
     }
 
@@ -101,12 +104,15 @@ public sealed class LoginModel(
     {
         [Required]
         [EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; } = string.Empty;
 
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; } = string.Empty;
 
+        [Display(Name = "Remember me")]
         public bool RememberMe { get; set; }
     }
 }

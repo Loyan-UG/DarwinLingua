@@ -1,65 +1,65 @@
 @model DarwinLingua.Web.Models.AdminDashboardViewModel
 @{
-    ViewData["Title"] = "Admin";
+    ViewData["Title"] = T["Admin"];
 }
 
 <section class="panel stack-lg">
-    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Admin overview", "Operational control center", "Monitor catalog health, publishing, user entitlements, reports, events, billing, and email delivery from one workspace.")' />
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(T["Admin overview"].Value, T["Operational control center"].Value, T["Monitor catalog health, publishing, user entitlements, reports, events, billing, and email delivery from one workspace."].Value)' />
 </section>
 
 <div class="admin-summary-grid">
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Active", Model.ActiveWordCount.ToString(), "Published learner-visible words.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Events", Model.ConversationEventCount.ToString(), "Conversation events available in the directory.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.PendingUserReportCount.ToString(), "Moderation reports waiting for review.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel(T["Active"].Value, Model.ActiveWordCount.ToString(), T["Published learner-visible words."].Value)' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel(T["Events"].Value, Model.ConversationEventCount.ToString(), T["Conversation events available in the directory."].Value)' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel(T["Open reports"].Value, Model.PendingUserReportCount.ToString(), T["Moderation reports waiting for review."].Value)' />
 </div>
 
-<nav class="admin-anchor-nav" aria-label="Admin overview sections">
-    <a href="#management">Management</a>
-    <a href="#catalog">Catalog</a>
-    <a href="#social">Social</a>
-    <a href="#moderation">Moderation</a>
+<nav class="admin-anchor-nav" aria-label="@T["Admin overview sections"]">
+    <a href="#management">@T["Management"]</a>
+    <a href="#catalog">@T["Catalog"]</a>
+    <a href="#social">@T["Social"]</a>
+    <a href="#moderation">@T["Moderation"]</a>
 </nav>
 
 <section class="grid-two-col">
     <article class="panel stack-md">
-        <h2 id="management" class="headline-sm">Management areas</h2>
+        <h2 id="management" class="headline-sm">@T["Management areas"]</h2>
         <ul class="feature-list">
-            <li><a asp-area="Admin" asp-controller="Imports" asp-action="Index">Imports</a></li>
-            <li><a asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a></li>
-            <li><a asp-area="Admin" asp-controller="Publishing" asp-action="Index">Publishing</a></li>
-            <li><a asp-area="Admin" asp-controller="Reports" asp-action="Index">System report</a></li>
-            <li><a asp-area="Admin" asp-controller="Moderation" asp-action="Index">Moderation</a></li>
-            <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Users and entitlements</a></li>
-            <li><a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">Billing diagnostics</a></li>
-            <li><a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">Email diagnostics</a></li>
+            <li><a asp-area="Admin" asp-controller="Imports" asp-action="Index">@T["Imports"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Drafts" asp-action="Index">@T["Drafts"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Publishing" asp-action="Index">@T["Publishing"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Reports" asp-action="Index">@T["System report"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Moderation" asp-action="Index">@T["Moderation"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">@T["Users and entitlements"]</a></li>
+            <li><a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">@T["Billing diagnostics"]</a></li>
+            <li><a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">@T["Email diagnostics"]</a></li>
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 id="catalog" class="headline-sm">Catalog operations</h2>
+        <h2 id="catalog" class="headline-sm">@T["Catalog operations"]</h2>
         <ul class="feature-list">
-            <li>Draft words: @Model.DraftWordCount</li>
-            <li>Topics: @Model.TotalTopicCount</li>
-            <li>Imported packages: @Model.ImportedPackageCount</li>
-            <li>Failed imports: @Model.FailedPackageCount</li>
-            <li>Last import: @(Model.LastImportAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "No imports yet")</li>
+            <li>@T["Draft words"]: @Model.DraftWordCount</li>
+            <li>@T["Topics"]: @Model.TotalTopicCount</li>
+            <li>@T["Imported packages"]: @Model.ImportedPackageCount</li>
+            <li>@T["Failed imports"]: @Model.FailedPackageCount</li>
+            <li>@T["Last import"]: @(Model.LastImportAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? T["No imports yet"])</li>
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 id="social" class="headline-sm">Social learning</h2>
+        <h2 id="social" class="headline-sm">@T["Social learning"]</h2>
         <ul class="feature-list">
-            <li>Organizer profiles: @Model.OrganizerProfileCount</li>
-            <li>Event RSVPs: @Model.EventRsvpCount</li>
-            <li>Pending organizer claims: @Model.PendingOrganizerClaimRequestCount</li>
-            <li>Learner conversation profiles: @Model.LearnerConversationProfileCount</li>
-            <li>Pending partner requests: @Model.PendingPartnerRequestCount</li>
+            <li>@T["Organizer profiles"]: @Model.OrganizerProfileCount</li>
+            <li>@T["Event RSVPs"]: @Model.EventRsvpCount</li>
+            <li>@T["Pending organizer claims"]: @Model.PendingOrganizerClaimRequestCount</li>
+            <li>@T["Learner conversation profiles"]: @Model.LearnerConversationProfileCount</li>
+            <li>@T["Pending partner requests"]: @Model.PendingPartnerRequestCount</li>
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 id="moderation" class="headline-sm">Moderation</h2>
+        <h2 id="moderation" class="headline-sm">@T["Moderation"]</h2>
         <ul class="feature-list">
-            <li>Pending reports: @Model.PendingUserReportCount</li>
-            <li>User blocks: @Model.UserBlockCount</li>
-            <li>Decision audits: @Model.ModerationDecisionAuditCount</li>
+            <li>@T["Pending reports"]: @Model.PendingUserReportCount</li>
+            <li>@T["User blocks"]: @Model.UserBlockCount</li>
+            <li>@T["Decision audits"]: @Model.ModerationDecisionAuditCount</li>
         </ul>
     </article>
 </section>

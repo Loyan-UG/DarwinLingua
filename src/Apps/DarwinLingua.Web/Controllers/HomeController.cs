@@ -41,7 +41,6 @@ public class HomeController(
     [HttpGet("install", Name = "Home_Install")]
     public IActionResult Install()
     {
-        ViewData["Title"] = "Install";
         return View();
     }
 

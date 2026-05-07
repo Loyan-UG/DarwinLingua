@@ -131,15 +131,18 @@ public sealed class RegisterModel(
     {
         [Required]
         [EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; } = string.Empty;
 
         [Required]
         [StringLength(100, MinimumLength = 8)]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; } = string.Empty;
 
         [DataType(DataType.Password)]
         [Compare(nameof(Password))]
+        [Display(Name = "Confirm password")]
         public string ConfirmPassword { get; set; } = string.Empty;
     }
 }

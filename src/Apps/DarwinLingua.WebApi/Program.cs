@@ -117,6 +117,7 @@ builder.Services.AddScoped<IWordAdminService, WordAdminService>();
 builder.Services.AddScoped<IAdminTaxonomyService, AdminTaxonomyService>();
 builder.Services.AddScoped<IAdminCollectionsService, AdminCollectionsService>();
 builder.Services.AddScoped<IAdminScenariosService, AdminScenariosService>();
+builder.Services.AddScoped<IBaselineScenarioSeeder, BaselineScenarioSeeder>();
 builder.Services.AddScoped<IConversationEventAdminService, ConversationEventAdminService>();
 builder.Services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
 builder.Services.AddScoped<IOrganizerClaimRequestService, OrganizerClaimRequestService>();
@@ -134,10 +135,13 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
         bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IServerContentDatabaseBootstrapper bootstrapper =
         bootstrapScope.ServiceProvider.GetRequiredService<IServerContentDatabaseBootstrapper>();
+    IBaselineScenarioSeeder baselineScenarioSeeder =
+        bootstrapScope.ServiceProvider.GetRequiredService<IBaselineScenarioSeeder>();
     IDarwinLinguaIdentityBootstrapper identityBootstrapper =
         bootstrapScope.ServiceProvider.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
 
     await databaseInitializer.InitializeAsync(CancellationToken.None);
+    await baselineScenarioSeeder.SeedAsync(CancellationToken.None);
     await bootstrapper.InitializeAsync(CancellationToken.None);
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
 }

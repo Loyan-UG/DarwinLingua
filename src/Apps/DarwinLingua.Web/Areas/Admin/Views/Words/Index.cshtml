@@ -1,37 +1,37 @@
 @model DarwinLingua.Web.Models.AdminWordsPageViewModel
 @{
-    ViewData["Title"] = "Words";
+    ViewData["Title"] = T["Words"];
     int activeCount = Model.Words.Count(word => string.Equals(word.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase));
     int draftCount = Model.Words.Count(word => string.Equals(word.PublicationStatus, "Draft", StringComparison.OrdinalIgnoreCase));
 }
 
 <section class="panel stack-lg">
     <div class="cluster cluster--between">
-        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Words", "Catalog management", "Review lexical entries across every publication state before editing, creation, and import workflows are attached.")' />
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(T["Words"].Value, T["Catalog management"].Value, T["Review lexical entries across every publication state before editing, creation, and import workflows are attached."].Value)' />
         <div class="cluster">
-            <a class="button button--secondary" asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a>
-            <a class="button button--secondary" asp-action="Import">Import JSON</a>
-            <a class="button" asp-action="New">New word</a>
+            <a class="button button--secondary" asp-area="Admin" asp-controller="Drafts" asp-action="Index">@T["Drafts"]</a>
+            <a class="button button--secondary" asp-action="Import">@T["Import JSON"]</a>
+            <a class="button" asp-action="New">@T["New word"]</a>
         </div>
     </div>
 
     <div class="admin-summary-grid">
         <a href="#words-table" class="admin-summary-tile">
-            <span class="eyebrow">Words shown</span>
+            <span class="eyebrow">@T["Words shown"]</span>
             <strong>@Model.Words.Count</strong>
         </a>
         <a href="#words-table" class="admin-summary-tile">
-            <span class="eyebrow">Active</span>
+            <span class="eyebrow">@T["Active"]</span>
             <strong>@activeCount</strong>
         </a>
         <a href="#words-table" class="admin-summary-tile">
-            <span class="eyebrow">Draft</span>
+            <span class="eyebrow">@T["Draft"]</span>
             <strong>@draftCount</strong>
         </a>
     </div>
-    <nav class="admin-anchor-nav" aria-label="Word catalog sections">
-        <a href="#words-filter">Filter</a>
-        <a href="#words-table">Words</a>
+    <nav class="admin-anchor-nav" aria-label="@T["Word catalog sections"]">
+        <a href="#words-filter">@T["Filter"]</a>
+        <a href="#words-table">@T["Words"]</a>
     </nav>
 
     <form class="admin-filter-panel admin-filter-panel--compact"
@@ -43,33 +43,33 @@
           hx-target="#words-table"
           hx-indicator="#words-indicator">
         <label class="form-field">
-            <span>Search</span>
-            <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="Lemma or normalized lemma" />
+            <span>@T["Search"]</span>
+            <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Lemma or normalized lemma"]" />
         </label>
         <label class="form-field">
-            <span>Status</span>
+            <span>@T["Status"]</span>
             <select class="form-select" name="status">
-                <option value="" selected="@(string.IsNullOrWhiteSpace(Model.StatusFilter) ? "selected" : null)">All statuses</option>
-                <option value="Active" selected="@(string.Equals(Model.StatusFilter, "Active", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Active</option>
-                <option value="Draft" selected="@(string.Equals(Model.StatusFilter, "Draft", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Draft</option>
-                <option value="Archived" selected="@(string.Equals(Model.StatusFilter, "Archived", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Archived</option>
-                <option value="Deprecated" selected="@(string.Equals(Model.StatusFilter, "Deprecated", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Deprecated</option>
+                <option value="" selected="@(string.IsNullOrWhiteSpace(Model.StatusFilter) ? "selected" : null)">@T["All statuses"]</option>
+                <option value="Active" selected="@(string.Equals(Model.StatusFilter, "Active", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["Active"]</option>
+                <option value="Draft" selected="@(string.Equals(Model.StatusFilter, "Draft", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["Draft"]</option>
+                <option value="Archived" selected="@(string.Equals(Model.StatusFilter, "Archived", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["Archived"]</option>
+                <option value="Deprecated" selected="@(string.Equals(Model.StatusFilter, "Deprecated", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["Deprecated"]</option>
             </select>
         </label>
         <label class="form-field">
-            <span>Sort</span>
+            <span>@T["Sort"]</span>
             <select class="form-select" name="sort">
-                <option value="lemma" selected="@(string.Equals(Model.Sort, "lemma", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Lemma A-Z</option>
-                <option value="updated" selected="@(string.Equals(Model.Sort, "updated", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Recently updated</option>
-                <option value="cefr" selected="@(string.Equals(Model.Sort, "cefr", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">CEFR level</option>
-                <option value="status" selected="@(string.Equals(Model.Sort, "status", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">Status</option>
+                <option value="lemma" selected="@(string.Equals(Model.Sort, "lemma", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["Lemma A-Z"]</option>
+                <option value="updated" selected="@(string.Equals(Model.Sort, "updated", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["Recently updated"]</option>
+                <option value="cefr" selected="@(string.Equals(Model.Sort, "cefr", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["CEFR level"]</option>
+                <option value="status" selected="@(string.Equals(Model.Sort, "status", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@T["Status"]</option>
             </select>
         </label>
         <input type="hidden" name="take" value="@Model.Take" />
-        <button type="submit" class="button button--compact">Apply</button>
-        <a class="button button--secondary button--compact" asp-action="Index">Reset</a>
+        <button type="submit" class="button button--compact">@T["Apply"]</button>
+        <a class="button button--secondary button--compact" asp-action="Index">@T["Reset"]</a>
     </form>
-    <div id="words-indicator" class="eyebrow htmx-indicator">Updating words...</div>
+    <div id="words-indicator" class="eyebrow htmx-indicator">@T["Updating words..."]</div>
 </section>
 
 <div id="words-table">

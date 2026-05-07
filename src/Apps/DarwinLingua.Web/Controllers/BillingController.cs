@@ -1,11 +1,13 @@
 using System.Security.Claims;
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 
 namespace DarwinLingua.Web.Controllers;
@@ -19,7 +21,8 @@ public sealed class BillingController(
     IStripeCheckoutFulfillmentService checkoutFulfillmentService,
     IBillingOperationRateLimiter rateLimiter,
     IOptions<BillingOptions> options,
-    ILogger<BillingController> logger) : Controller
+    ILogger<BillingController> logger,
+    IStringLocalizer<SharedResource> localizer) : Controller
 {
     [HttpGet("", Name = "Billing_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
@@ -73,8 +76,8 @@ public sealed class BillingController(
             Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
             return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
             {
-                Title = "Billing is temporarily unavailable",
-                Message = "Your plan information could not be loaded right now. Please try again.",
+                Title = localizer["Billing is temporarily unavailable"],
+                Message = localizer["Your plan information could not be loaded right now. Please try again."],
                 RequestId = HttpContext.TraceIdentifier
             });
         }
@@ -104,13 +107,13 @@ public sealed class BillingController(
         BillingOptions billingOptions = options.Value;
         if (!billingOptions.EnableStripe)
         {
-            TempData["BillingStatus"] = "Stripe billing is not enabled for this environment.";
+            TempData["BillingStatus"] = localizer["Stripe billing is not enabled for this environment."].Value;
             return RedirectToAction(nameof(Index));
         }
 
         if (!rateLimiter.TryConsume("stripe-portal", userId, 10, TimeSpan.FromMinutes(10)))
         {
-            TempData["BillingStatus"] = "Too many subscription management attempts. Please wait before trying again.";
+            TempData["BillingStatus"] = localizer["Too many subscription management attempts. Please wait before trying again."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -125,12 +128,12 @@ public sealed class BillingController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested)
         {
             logger.LogWarning(exception, "Stripe customer profile could not be loaded for user {UserId}.", userId);
-            TempData["BillingStatus"] = "Subscription management could not be opened. Please try again later.";
+            TempData["BillingStatus"] = localizer["Subscription management could not be opened. Please try again later."].Value;
             return RedirectToAction(nameof(Index));
         }
         if (string.IsNullOrWhiteSpace(billingProfile?.ProviderCustomerId))
         {
-            TempData["BillingStatus"] = "No Stripe customer record is linked to this account yet.";
+            TempData["BillingStatus"] = localizer["No Stripe customer record is linked to this account yet."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -146,7 +149,7 @@ public sealed class BillingController(
         catch (Exception exception)
         {
             logger.LogWarning(exception, "Stripe customer portal could not be started for user {UserId}.", userId);
-            TempData["BillingStatus"] = "Subscription management could not be opened. Please try again later.";
+            TempData["BillingStatus"] = localizer["Subscription management could not be opened. Please try again later."].Value;
             return RedirectToAction(nameof(Index));
         }
     }
@@ -160,13 +163,13 @@ public sealed class BillingController(
         BillingOptions billingOptions = options.Value;
         if (!billingOptions.EnableStripe)
         {
-            TempData["BillingStatus"] = "Stripe billing is not enabled for this environment.";
+            TempData["BillingStatus"] = localizer["Stripe billing is not enabled for this environment."].Value;
             return RedirectToAction(nameof(Index));
         }
 
         if (!rateLimiter.TryConsume("stripe-checkout", userId, 5, TimeSpan.FromMinutes(10)))
         {
-            TempData["BillingStatus"] = "Too many checkout attempts. Please wait before trying again.";
+            TempData["BillingStatus"] = localizer["Too many checkout attempts. Please wait before trying again."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -184,7 +187,7 @@ public sealed class BillingController(
         catch (Exception exception)
         {
             logger.LogWarning(exception, "Stripe checkout could not be started for user {UserId}.", userId);
-            TempData["BillingStatus"] = "Checkout could not be started. Please try again later.";
+            TempData["BillingStatus"] = localizer["Checkout could not be started. Please try again later."].Value;
             return RedirectToAction(nameof(Index));
         }
     }
@@ -197,7 +200,7 @@ public sealed class BillingController(
         BillingOptions billingOptions = options.Value;
         if (!billingOptions.EnableStripe || string.IsNullOrWhiteSpace(sessionId))
         {
-            TempData["BillingStatus"] = "Payment completed. Your premium access will update as soon as Stripe confirms the subscription.";
+            TempData["BillingStatus"] = localizer["Payment completed. Your premium access will update as soon as Stripe confirms the subscription."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -207,13 +210,13 @@ public sealed class BillingController(
                 .FulfillCheckoutSessionAsync(sessionId, GetUserId(), cancellationToken)
                 .ConfigureAwait(false);
             TempData["BillingStatus"] = result.Fulfilled
-                ? "Payment completed. Premium access is active."
-                : "Checkout returned before Stripe marked the session complete. Your premium access will update as soon as Stripe confirms the subscription.";
+                ? localizer["Payment completed. Premium access is active."].Value
+                : localizer["Checkout returned before Stripe marked the session complete. Your premium access will update as soon as Stripe confirms the subscription."].Value;
         }
         catch (Exception exception)
         {
             logger.LogWarning(exception, "Stripe checkout success fulfillment failed for user {UserId}.", GetUserId());
-            TempData["BillingStatus"] = "Payment completed. Your premium access will update as soon as Stripe confirms the subscription.";
+            TempData["BillingStatus"] = localizer["Payment completed. Your premium access will update as soon as Stripe confirms the subscription."].Value;
         }
 
         return RedirectToAction(nameof(Index));
@@ -222,7 +225,7 @@ public sealed class BillingController(
     [HttpGet("cancel", Name = "Billing_Cancel")]
     public IActionResult Cancel()
     {
-        TempData["BillingStatus"] = "Checkout was cancelled. No plan change was made.";
+        TempData["BillingStatus"] = localizer["Checkout was cancelled. No plan change was made."].Value;
         return RedirectToAction(nameof(Index));
     }
 

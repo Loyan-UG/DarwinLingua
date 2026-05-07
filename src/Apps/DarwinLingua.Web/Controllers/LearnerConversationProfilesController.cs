@@ -1,13 +1,17 @@
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
 [Authorize]
 [Route("learner-profile")]
-public sealed class LearnerConversationProfilesController(IWebCatalogApiClient catalogApiClient) : Controller
+public sealed class LearnerConversationProfilesController(
+    IWebCatalogApiClient catalogApiClient,
+    IStringLocalizer<SharedResource> localizer) : Controller
 {
     [HttpGet("", Name = "LearnerConversationProfiles_Edit")]
     public async Task<IActionResult> Edit(CancellationToken cancellationToken)
@@ -46,7 +50,7 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
                 input,
                 existingProfile,
                 null,
-                "Required profile fields are missing or invalid."));
+                localizer["Required profile fields are missing or invalid."].Value));
         }
 
         try
@@ -66,7 +70,7 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = "Learner profile saved.";
+            TempData["StatusMessage"] = localizer["Learner profile saved."].Value;
         }
         catch (InvalidOperationException exception)
         {
@@ -89,8 +93,8 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
                 .ConfigureAwait(false);
 
             TempData["StatusMessage"] = isEnabled
-                ? "Learner profile enabled as private."
-                : "Learner profile disabled.";
+                ? localizer["Learner profile enabled as private."].Value
+                : localizer["Learner profile disabled."].Value;
         }
         catch (InvalidOperationException exception)
         {
@@ -110,7 +114,7 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
                 .DeleteLearnerConversationProfileAsync(GetOwnerEmail(), cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = "Learner profile deleted.";
+            TempData["StatusMessage"] = localizer["Learner profile deleted."].Value;
         }
         catch (InvalidOperationException exception)
         {
@@ -191,8 +195,8 @@ public sealed class LearnerConversationProfilesController(IWebCatalogApiClient c
                 (character >= 'A' && character <= 'Z') ||
                 character == '-'));
 
-    private static string BuildProfileOperationErrorMessage(Exception exception) =>
+    private string BuildProfileOperationErrorMessage(Exception exception) =>
         exception.Message.Contains("409", StringComparison.OrdinalIgnoreCase)
-            ? "The learner profile could not be saved because it conflicts with existing data."
-            : "The learner profile operation could not be completed. Review the fields and try again.";
+            ? localizer["The learner profile could not be saved because it conflicts with existing data."].Value
+            : localizer["The learner profile operation could not be completed. Review the fields and try again."].Value;
 }

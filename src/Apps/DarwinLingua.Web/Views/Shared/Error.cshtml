@@ -11,12 +11,12 @@
     @if (Model.ShowRequestId)
     {
         <p class="status-banner">
-            Reference: <code>@Model.RequestId</code>
+            @T["Reference"]: <code>@Model.RequestId</code>
         </p>
     }
 
     <div class="action-row">
-        <a class="button button--primary" asp-controller="Home" asp-action="Index">Home</a>
-        <a class="button button--secondary" asp-controller="Browse" asp-action="Index">Browse words</a>
+        <a class="button button--primary" asp-controller="Home" asp-action="Index">@T["Home"]</a>
+        <a class="button button--secondary" asp-controller="Browse" asp-action="Index">@T["Browse words"]</a>
     </div>
 </section>

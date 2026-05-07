@@ -14,12 +14,12 @@
 
 @if (Model.Words.Count == 0)
 {
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words found", "Try a broader level or topic to continue browsing.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["No words found"].Value, T["Try a broader level or topic to continue browsing."].Value)' />
 }
 else
 {
     <section class="panel stack-md">
-        <span class="eyebrow">Browse words</span>
+        <span class="eyebrow">@T["Browse words"]</span>
         <h2 class="headline-sm">@Model.Title</h2>
         <p class="body-lg">@Model.Description</p>
     </section>
@@ -34,9 +34,9 @@ else
     <section class="panel pagination-panel">
         <div class="pagination">
             <div class="pagination__summary">
-                Page @currentPage
+                @T["Page {0}", currentPage]
             </div>
-            <nav class="pagination__links" aria-label="Word list pages">
+            <nav class="pagination__links" aria-label="@T["Word list pages"]">
                 @if (currentPage > 1)
                 {
                     <a class="button button--secondary button--compact"
@@ -46,7 +46,7 @@ else
                        hx-get="@Url.Action(browseAction, "Browse", new { id = browseRouteId, skip = 0 })"
                        hx-target="#browse-results"
                        hx-swap="innerHTML">
-                        First
+                        @T["First"]
                     </a>
                 }
                 @if (Model.Skip > 0)
@@ -59,7 +59,7 @@ else
                        hx-get="@Url.Action(browseAction, "Browse", new { id = browseRouteId, skip = previousSkip })"
                        hx-target="#browse-results"
                        hx-swap="innerHTML">
-                        Previous
+                        @T["Previous"]
                     </a>
                 }
                 @if (firstPageInWindow > 1)
@@ -96,7 +96,7 @@ else
                        hx-get="@Url.Action(browseAction, "Browse", new { id = browseRouteId, skip = nextSkip })"
                        hx-target="#browse-results"
                        hx-swap="innerHTML">
-                        Next
+                        @T["Next"]
                     </a>
                 }
             </nav>

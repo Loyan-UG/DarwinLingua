@@ -1,9 +1,11 @@
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -11,6 +13,7 @@ namespace DarwinLingua.Web.Controllers;
 [Route("organizer")]
 public sealed class OrganizerDashboardController(
     IWebCatalogApiClient catalogApiClient,
+    IStringLocalizer<SharedResource> localizer,
     ILogger<OrganizerDashboardController> logger) : Controller
 {
     private const int DashboardProfileLoadConcurrency = 4;
@@ -38,7 +41,7 @@ public sealed class OrganizerDashboardController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Organizer ownerships could not be loaded for {OwnerEmail}.", ownerEmail);
-            TempData["ErrorMessage"] = "Organizer dashboard is temporarily unavailable. Please try again.";
+            TempData["ErrorMessage"] = localizer["Organizer dashboard is temporarily unavailable. Please try again."].Value;
             return View(new OrganizerDashboardViewModel(ownerEmail, [], []));
         }
 
@@ -91,7 +94,7 @@ public sealed class OrganizerDashboardController(
                 profile,
                 input,
                 null,
-                "Required profile fields are missing."));
+                localizer["Required profile fields are missing."].Value));
         }
 
         try
@@ -115,7 +118,7 @@ public sealed class OrganizerDashboardController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = $"Saved {savedProfile.DisplayName}.";
+            TempData["StatusMessage"] = localizer["Saved {0}.", savedProfile.DisplayName].Value;
             return RedirectToAction(nameof(Index));
         }
         catch (InvalidOperationException exception)
@@ -133,7 +136,7 @@ public sealed class OrganizerDashboardController(
                 profile,
                 input,
                 null,
-                "The organizer profile could not be saved right now. Please try again."));
+                localizer["The organizer profile could not be saved right now. Please try again."].Value));
         }
     }
 
@@ -212,7 +215,7 @@ public sealed class OrganizerDashboardController(
         int activeEventCount = events.Count(item => string.Equals(item.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase));
         if (activeEventCount >= plan.ActiveEventLimit)
         {
-            TempData["ErrorMessage"] = $"The {plan.PlanKey} organizer plan allows {plan.ActiveEventLimit} active event(s).";
+            TempData["ErrorMessage"] = localizer["The {0} organizer plan allows {1} active event(s).", plan.PlanKey, plan.ActiveEventLimit].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -267,7 +270,7 @@ public sealed class OrganizerDashboardController(
         {
             if (!IsAllowedPublicationStatus(publicationStatus))
             {
-                TempData["ErrorMessage"] = "The selected publication status is not supported.";
+                TempData["ErrorMessage"] = localizer["The selected publication status is not supported."].Value;
                 return RedirectToAction(nameof(Index));
             }
 
@@ -285,7 +288,7 @@ public sealed class OrganizerDashboardController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = $"Updated {updatedEvent.Name} to {updatedEvent.PublicationStatus}.";
+            TempData["StatusMessage"] = localizer["Updated {0} to {1}.", updatedEvent.Name, updatedEvent.PublicationStatus].Value;
         }
         catch (InvalidOperationException exception)
         {
@@ -294,7 +297,7 @@ public sealed class OrganizerDashboardController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Organizer event publication status could not be updated for {EventSlug}.", eventSlug);
-            TempData["ErrorMessage"] = "The event publication status could not be updated right now. Please try again.";
+            TempData["ErrorMessage"] = localizer["The event publication status could not be updated right now. Please try again."].Value;
         }
 
         return RedirectToAction(nameof(Index));
@@ -325,7 +328,7 @@ public sealed class OrganizerDashboardController(
         {
             if (!IsAllowedRsvpStatus(status))
             {
-                TempData["ErrorMessage"] = "The selected RSVP status is not supported.";
+                TempData["ErrorMessage"] = localizer["The selected RSVP status is not supported."].Value;
                 return RedirectToAction(nameof(Index));
             }
 
@@ -336,7 +339,7 @@ public sealed class OrganizerDashboardController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = $"Updated RSVP {rsvpId} to {updatedRsvp.Status}.";
+            TempData["StatusMessage"] = localizer["Updated RSVP {0} to {1}.", rsvpId, updatedRsvp.Status].Value;
         }
         catch (InvalidOperationException exception)
         {
@@ -345,7 +348,7 @@ public sealed class OrganizerDashboardController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Organizer RSVP status could not be updated for {EventSlug}/{RsvpId}.", eventSlug, rsvpId);
-            TempData["ErrorMessage"] = "The RSVP status could not be updated right now. Please try again.";
+            TempData["ErrorMessage"] = localizer["The RSVP status could not be updated right now. Please try again."].Value;
         }
 
         return RedirectToAction(nameof(Index));
@@ -404,7 +407,7 @@ public sealed class OrganizerDashboardController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Organizer dashboard profile could not be loaded for {Slug}.", organizerProfileSlug);
-            TempData["ErrorMessage"] = "Some organizer dashboard data could not be loaded.";
+            TempData["ErrorMessage"] = localizer["Some organizer dashboard data could not be loaded."].Value;
             return null;
         }
         finally
@@ -516,7 +519,7 @@ public sealed class OrganizerDashboardController(
             return true;
         }
 
-        TempData["ErrorMessage"] = $"The {plan.PlanKey} organizer plan allows {plan.ActiveEventLimit} active event(s).";
+        TempData["ErrorMessage"] = localizer["The {0} organizer plan allows {1} active event(s).", plan.PlanKey, plan.ActiveEventLimit].Value;
         return false;
     }
 
@@ -541,7 +544,7 @@ public sealed class OrganizerDashboardController(
                 existingEvent,
                 input,
                 isNew,
-                "Required event fields are missing."));
+                localizer["Required event fields are missing."].Value));
         }
 
         DateTime nowUtc = DateTime.UtcNow;
@@ -578,7 +581,7 @@ public sealed class OrganizerDashboardController(
                 .SaveAdminConversationEventAsync(request, cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = $"Saved event {savedEvent.Name}.";
+            TempData["StatusMessage"] = localizer["Saved event {0}.", savedEvent.Name].Value;
             return RedirectToAction(nameof(Index));
         }
         catch (InvalidOperationException exception)
@@ -598,7 +601,7 @@ public sealed class OrganizerDashboardController(
                 existingEvent,
                 input,
                 isNew,
-                "The organizer event could not be saved right now. Please try again."));
+                localizer["The organizer event could not be saved right now. Please try again."].Value));
         }
     }
 
@@ -739,10 +742,10 @@ public sealed class OrganizerDashboardController(
         string.Equals(status, "going", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(status, "cancelled", StringComparison.OrdinalIgnoreCase);
 
-    private static string BuildOrganizerOperationErrorMessage(Exception exception, string operationName) =>
+    private string BuildOrganizerOperationErrorMessage(Exception exception, string operationName) =>
         exception.Message.Contains("409", StringComparison.OrdinalIgnoreCase)
-            ? $"The organizer {operationName} could not be saved because it conflicts with existing data."
-            : $"The organizer {operationName} operation could not be completed. Review the fields and try again.";
+            ? localizer["The organizer {0} could not be saved because it conflicts with existing data.", operationName].Value
+            : localizer["The organizer {0} operation could not be completed. Review the fields and try again.", operationName].Value;
 
     private sealed record DashboardEventRsvpData(
         EventRsvpSummaryModel Summary,

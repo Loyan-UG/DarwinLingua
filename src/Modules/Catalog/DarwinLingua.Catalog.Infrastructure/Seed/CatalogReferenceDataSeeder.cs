@@ -92,13 +92,17 @@ internal sealed class CatalogReferenceDataSeeder : IDatabaseSeeder
                 continue;
             }
 
-            existingTopic.UpdateSortOrder(seedDefinition.SortOrder, timestampUtc);
-
             foreach (TopicLocalizationSeedDefinition localization in seedDefinition.Localizations)
             {
+                LanguageCode languageCode = LanguageCode.From(localization.LanguageCode);
+                if (existingTopic.FindLocalization(languageCode) is not null)
+                {
+                    continue;
+                }
+
                 existingTopic.AddOrUpdateLocalization(
-                    CreateLocalizationId(seedDefinition.Id, localization.LanguageCode),
-                    LanguageCode.From(localization.LanguageCode),
+                    CreateLocalizationId(existingTopic.Id, localization.LanguageCode),
+                    languageCode,
                     localization.DisplayName,
                     timestampUtc);
             }

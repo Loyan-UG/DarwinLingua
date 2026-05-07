@@ -1,8 +1,10 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -11,6 +13,7 @@ public sealed class OrganizerProfilesController(
     IWebCatalogApiClient catalogApiClient,
     ICommunityNotificationEmailService notificationEmailService,
     IAccountEmailRateLimiter rateLimiter,
+    IStringLocalizer<SharedResource> localizer,
     ILogger<OrganizerProfilesController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
@@ -59,7 +62,9 @@ public sealed class OrganizerProfilesController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Organizer profile could not be loaded for {Slug}.", normalizedSlug);
-            return ServiceUnavailableView("Organizer profile is temporarily unavailable", "This organizer profile could not be loaded right now. Please return to organizers and try again.");
+            return ServiceUnavailableView(
+                localizer["Organizer profile is temporarily unavailable"].Value,
+                localizer["This organizer profile could not be loaded right now. Please return to organizers and try again."].Value);
         }
 
         return profile is null
@@ -89,7 +94,9 @@ public sealed class OrganizerProfilesController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Organizer claim page could not load profile {Slug}.", normalizedSlug);
-            return ServiceUnavailableView("Organizer claim is temporarily unavailable", "This organizer profile could not be loaded right now. Please return to organizers and try again.");
+            return ServiceUnavailableView(
+                localizer["Organizer claim is temporarily unavailable"].Value,
+                localizer["This organizer profile could not be loaded right now. Please return to organizers and try again."].Value);
         }
 
         return profile is null
@@ -130,7 +137,7 @@ public sealed class OrganizerProfilesController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Organizer claim submit could not load profile {Slug}.", normalizedSlug);
-            TempData["ErrorMessage"] = "Claim request could not be submitted right now. Please try again.";
+            TempData["ErrorMessage"] = localizer["Claim request could not be submitted right now. Please try again."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -145,7 +152,7 @@ public sealed class OrganizerProfilesController(
                 profile,
                 input,
                 null,
-                "Required claim fields are missing or invalid."));
+                localizer["Required claim fields are missing or invalid."].Value));
         }
 
         string requesterEmail = input.RequesterEmail.Trim();
@@ -155,7 +162,7 @@ public sealed class OrganizerProfilesController(
                 profile,
                 input,
                 null,
-                "Too many claim attempts. Please wait before submitting again."));
+                localizer["Too many claim attempts. Please wait before submitting again."].Value));
         }
 
         try
@@ -185,7 +192,7 @@ public sealed class OrganizerProfilesController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = "Claim request submitted for review.";
+            TempData["StatusMessage"] = localizer["Claim request submitted for review."].Value;
             return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
         }
         catch (InvalidOperationException exception)
@@ -214,10 +221,10 @@ public sealed class OrganizerProfilesController(
         ?? Request.Headers.AcceptLanguage.ToString()
         ?? "en";
 
-    private static string BuildClaimErrorMessage(InvalidOperationException exception) =>
+    private string BuildClaimErrorMessage(InvalidOperationException exception) =>
         exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
-            ? "This organizer profile is no longer available."
-            : "The claim request could not be submitted right now. Please try again.";
+            ? localizer["This organizer profile is no longer available."].Value
+            : localizer["The claim request could not be submitted right now. Please try again."].Value;
 
     private ViewResult ServiceUnavailableView(string title, string message)
     {

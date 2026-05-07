@@ -14,7 +14,7 @@
                 <span class="chip-link chip-link--static">@level</span>
             }
         </div>
-        <span class="eyebrow">@Model.WordCount words</span>
+        <span class="eyebrow">@T["{0} words", Model.WordCount]</span>
     </div>
     <div class="stack-md">
         <h3 class="headline-sm">
@@ -35,6 +35,6 @@
         }
     </div>
     <div class="action-row">
-        <a class="button button--primary" asp-controller="Collections" asp-action="Detail" asp-route-slug="@Model.Slug">Open collection</a>
+        <a class="button button--primary" asp-controller="Collections" asp-action="Detail" asp-route-slug="@Model.Slug">@T["Open collection"]</a>
     </div>
 </article>

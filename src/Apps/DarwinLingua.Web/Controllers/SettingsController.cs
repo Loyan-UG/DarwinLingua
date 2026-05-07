@@ -3,8 +3,11 @@ using DarwinLingua.Localization.Application.Abstractions;
 using DarwinLingua.Localization.Application.Models;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
+using DarwinLingua.Web.Localization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -12,10 +15,9 @@ namespace DarwinLingua.Web.Controllers;
 public sealed class SettingsController(
     IWebUserPreferenceService webUserPreferenceService,
     ILanguageQueryService languageQueryService,
-    IWebEntitledFeatureAccessService featureAccessService) : Controller
+    IWebEntitledFeatureAccessService featureAccessService,
+    IStringLocalizer<SharedResource> localizer) : Controller
 {
-    private const string DualMeaningLanguageLockedMessage = "A trial or premium plan is required to enable a second meaning language.";
-
     [HttpGet("", Name = "Settings_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
@@ -57,7 +59,19 @@ public sealed class SettingsController(
             secondaryMeaningLanguageCode,
             cancellationToken);
 
-        TempData["StatusMessage"] = "Language preferences updated.";
+        Response.Cookies.Append(
+            CookieRequestCultureProvider.DefaultCookieName,
+            CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(input.UiLanguageCode.Trim())),
+            new CookieOptions
+            {
+                Expires = DateTimeOffset.UtcNow.AddYears(1),
+                HttpOnly = false,
+                IsEssential = true,
+                SameSite = SameSiteMode.Lax,
+                Secure = Request.IsHttps
+            });
+
+        TempData["StatusMessage"] = localizer["Language preferences updated."].Value;
         return RedirectToAction(nameof(Index));
     }
 
@@ -117,7 +131,7 @@ public sealed class SettingsController(
             secondaryMeaningOptions,
             statusMessage,
             canUseDualMeaningLanguage,
-            canUseDualMeaningLanguage ? null : DualMeaningLanguageLockedMessage,
+            canUseDualMeaningLanguage ? null : localizer["A trial or premium plan is required to enable a second meaning language."].Value,
             User.Identity?.IsAuthenticated == true);
     }
 

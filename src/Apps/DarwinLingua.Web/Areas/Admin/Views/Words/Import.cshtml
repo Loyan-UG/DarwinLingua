@@ -1,37 +1,37 @@
 @model DarwinLingua.Web.Models.AdminBulkWordImportResponse
 @{
-    ViewData["Title"] = "Import words";
+    ViewData["Title"] = T["Import words"];
 }
 
 <div class="admin-summary-grid">
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Import type", "Words", "Bulk catalog content.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Format", "JSON", "Curated structured file.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Result", Model is null ? "Pending" : Model.ImportedCount.ToString(), "Imported rows in the latest upload.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel(T["Import type"].Value, T["Words"].Value, T["Bulk catalog content."].Value)' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel(T["Format"].Value, "JSON", T["Curated structured file."].Value)' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel(T["Result"].Value, Model is null ? T["Pending"].Value : Model.ImportedCount.ToString(), T["Imported rows in the latest upload."].Value)' />
 </div>
 
-<nav class="admin-anchor-nav" aria-label="Word import sections">
-    <a href="#word-import-upload">Upload</a>
+<nav class="admin-anchor-nav" aria-label="@T["Word import sections"]">
+    <a href="#word-import-upload">@T["Upload"]</a>
     @if (Model is not null)
     {
-        <a href="#word-import-result">Result</a>
+        <a href="#word-import-result">@T["Result"]</a>
     }
-    <a href="#word-import-format">JSON shape</a>
+    <a href="#word-import-format">@T["JSON shape"]</a>
 </nav>
 
 <section id="word-import-upload" class="panel stack-lg">
     <div class="cluster cluster--between">
-        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Import words", "Bulk JSON", "Upload a curated JSON file to create multiple catalog words with senses, translations, and examples.")' />
-        <a class="button button--secondary" asp-action="Index">Back to words</a>
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(T["Import words"].Value, T["Bulk JSON"].Value, T["Upload a curated JSON file to create multiple catalog words with senses, translations, and examples."].Value)' />
+        <a class="button button--secondary" asp-action="Index">@T["Back to words"]</a>
     </div>
 
-    <form class="stack-md" method="post" enctype="multipart/form-data" asp-action="Import" data-confirm-submit="Import these words from JSON?">
+    <form class="stack-md" method="post" enctype="multipart/form-data" asp-action="Import" data-confirm-submit="@T["Import these words from JSON?"]">
         @Html.AntiForgeryToken()
         <div asp-validation-summary="ModelOnly" class="validation-message"></div>
         <label class="form-field">
-            <span>JSON file</span>
+            <span>@T["JSON file"]</span>
             <input type="file" name="JsonFile" accept="application/json,.json" required />
         </label>
-        <button class="button" type="submit">Import JSON</button>
+        <button class="button" type="submit">@T["Import JSON"]</button>
     </form>
 </section>
 
@@ -40,19 +40,19 @@
     <section id="word-import-result" class="panel stack-md">
         <div class="admin-detail-grid">
             <div>
-                <span class="eyebrow">Total</span>
+                <span class="eyebrow">@T["Total"]</span>
                 <strong>@Model.TotalCount</strong>
             </div>
             <div>
-                <span class="eyebrow">Imported</span>
+                <span class="eyebrow">@T["Imported"]</span>
                 <strong>@Model.ImportedCount</strong>
             </div>
             <div>
-                <span class="eyebrow">Skipped</span>
+                <span class="eyebrow">@T["Skipped"]</span>
                 <strong>@Model.SkippedCount</strong>
             </div>
             <div>
-                <span class="eyebrow">Failed</span>
+                <span class="eyebrow">@T["Failed"]</span>
                 <strong>@Model.FailedCount</strong>
             </div>
         </div>
@@ -61,11 +61,11 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Row</th>
-                        <th>Lemma</th>
-                        <th>Status</th>
-                        <th>Message</th>
-                        <th>Word</th>
+                        <th>@T["Row"]</th>
+                        <th>@T["Lemma"]</th>
+                        <th>@T["Status"]</th>
+                        <th>@T["Message"]</th>
+                        <th>@T["Word"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,7 +79,7 @@
                             <td>
                                 @if (item.PublicId is Guid publicId)
                                 {
-                                    <a class="button button--compact" asp-action="Details" asp-route-publicId="@publicId">Open</a>
+                                    <a class="button button--compact" asp-action="Details" asp-route-publicId="@publicId">@T["Open"]</a>
                                 }
                                 else
                                 {
@@ -95,7 +95,7 @@
 }
 
 <section id="word-import-format" class="panel stack-md">
-    <h2 class="headline-sm">Expected JSON shape</h2>
+    <h2 class="headline-sm">@T["Expected JSON shape"]</h2>
     <pre class="code-sample"><code>{
   "words": [
     {

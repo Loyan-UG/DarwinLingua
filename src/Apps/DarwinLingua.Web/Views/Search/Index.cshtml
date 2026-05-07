@@ -1,12 +1,12 @@
 @model DarwinLingua.Web.Models.SearchPageViewModel
 @{
-    ViewData["Title"] = "Search";
+    ViewData["Title"] = T["Search"];
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Search</span>
-    <h1 class="headline-md">Search German lemmas</h1>
-    <p class="body-lg">Find vocabulary quickly by lemma and open the full word detail for meaning, examples, pronunciation, and study actions.</p>
+    <span class="eyebrow">@T["Search"]</span>
+    <h1 class="headline-md">@T["Search German lemmas"]</h1>
+    <p class="body-lg">@T["Find vocabulary quickly by lemma and open the full word detail for meaning, examples, pronunciation, and study actions."]</p>
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
         <div class="status-banner status-banner--success">@Model.StatusMessage</div>
@@ -22,15 +22,15 @@
             type="search"
             name="q"
             value="@Model.Query"
-            placeholder="Type a German lemma"
+            placeholder="@T["Type a German lemma"]"
             hx-get="@Url.Action("Results", "Search")"
             hx-trigger="keyup changed delay:250ms, search"
             hx-target="#search-results"
             hx-indicator="#search-indicator"
             autocomplete="off" />
-        <button type="submit" class="button button--primary">Search</button>
+        <button type="submit" class="button button--primary">@T["Search"]</button>
     </form>
-    <div id="search-indicator" class="eyebrow htmx-indicator">Updating results…</div>
+    <div id="search-indicator" class="eyebrow htmx-indicator">@T["Updating results..."]</div>
 </section>
 
 <div id="search-results">

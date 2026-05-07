@@ -1,17 +1,20 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Areas.Identity.Pages.Account;
 
 public sealed class ResetPasswordModel(
     UserManager<DarwinLinguaIdentityUser> userManager,
-    IAccountEmailService accountEmailService) : PageModel
+    IAccountEmailService accountEmailService,
+    IStringLocalizer<SharedResource> localizer) : PageModel
 {
     [BindProperty]
     public ResetPasswordInputModel Input { get; set; } = new();
@@ -20,7 +23,7 @@ public sealed class ResetPasswordModel(
     {
         if (string.IsNullOrWhiteSpace(code))
         {
-            ModelState.AddModelError(string.Empty, "This reset link cannot be used.");
+            ModelState.AddModelError(string.Empty, localizer["This reset link cannot be used."]);
         }
 
         Input.Code = code ?? string.Empty;
@@ -48,7 +51,7 @@ public sealed class ResetPasswordModel(
         }
         catch (FormatException)
         {
-            ModelState.AddModelError(string.Empty, "This reset link cannot be used. Request a new password reset email.");
+            ModelState.AddModelError(string.Empty, localizer["This reset link cannot be used. Request a new password reset email."]);
             return Page();
         }
 
@@ -67,7 +70,7 @@ public sealed class ResetPasswordModel(
 
         if (result.Errors.Any(static error => IsTokenErrorCode(error.Code)))
         {
-            ModelState.AddModelError(string.Empty, "This reset link cannot be used. Request a new password reset email.");
+            ModelState.AddModelError(string.Empty, localizer["This reset link cannot be used. Request a new password reset email."]);
             return Page();
         }
 
@@ -93,18 +96,22 @@ public sealed class ResetPasswordModel(
     {
         [Required]
         [EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; } = string.Empty;
 
         [Required]
         [StringLength(100, MinimumLength = 8)]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; } = string.Empty;
 
         [DataType(DataType.Password)]
         [Compare(nameof(Password))]
+        [Display(Name = "Confirm password")]
         public string ConfirmPassword { get; set; } = string.Empty;
 
         [Required]
+        [Display(Name = "Code")]
         public string Code { get; set; } = string.Empty;
     }
 }

@@ -1,12 +1,14 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 
 namespace DarwinLingua.Web.Areas.Identity.Pages.Account.Manage;
@@ -16,7 +18,8 @@ public sealed class EmailModel(
     UserManager<DarwinLinguaIdentityUser> userManager,
     IAccountEmailService accountEmailService,
     IAccountEmailRateLimiter rateLimiter,
-    IOptions<TransactionalEmailOptions> emailOptions) : PageModel
+    IOptions<TransactionalEmailOptions> emailOptions,
+    IStringLocalizer<SharedResource> localizer) : PageModel
 {
     [BindProperty]
     public EmailInputModel Input { get; set; } = new();
@@ -55,13 +58,13 @@ public sealed class EmailModel(
         string newEmail = Input.NewEmail.Trim();
         if (string.Equals(CurrentEmail, newEmail, StringComparison.OrdinalIgnoreCase))
         {
-            StatusMessage = "This is already your account email.";
+            StatusMessage = localizer["This is already your account email."];
             return RedirectToPage();
         }
 
         if (!await userManager.CheckPasswordAsync(user, Input.CurrentPassword).ConfigureAwait(false))
         {
-            ModelState.AddModelError(string.Empty, "The current password could not be verified.");
+            ModelState.AddModelError(string.Empty, localizer["The current password could not be verified."]);
             return Page();
         }
 
@@ -87,7 +90,7 @@ public sealed class EmailModel(
                 .ConfigureAwait(false);
         }
 
-        StatusMessage = "If the new address can be used, a confirmation email has been sent.";
+        StatusMessage = localizer["If the new address can be used, a confirmation email has been sent."];
         return RedirectToPage();
     }
 
@@ -113,10 +116,12 @@ public sealed class EmailModel(
     {
         [Required]
         [EmailAddress]
+        [Display(Name = "New email")]
         public string NewEmail { get; set; } = string.Empty;
 
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Current password")]
         public string CurrentPassword { get; set; } = string.Empty;
     }
 }

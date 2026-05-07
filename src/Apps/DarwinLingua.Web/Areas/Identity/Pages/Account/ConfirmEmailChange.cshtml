@@ -1,25 +1,25 @@
 @page
 @model ConfirmEmailChangeModel
 @{
-    ViewData["Title"] = Model.Succeeded ? "Email changed" : "Email change failed";
+    ViewData["Title"] = Model.Succeeded ? T["Email changed"] : T["Email change failed"];
 }
 
 <section class="panel stack-lg auth-intro">
-    <span class="eyebrow">Account security</span>
+    <span class="eyebrow">@T["Account security"]</span>
     @if (Model.Succeeded)
     {
-        <h1 class="headline-md">Email changed</h1>
-        <p class="body-lg">Your account email has been updated.</p>
+        <h1 class="headline-md">@T["Email changed"]</h1>
+        <p class="body-lg">@T["Your account email has been updated."]</p>
         <div class="action-row">
-            <a class="button button--primary" asp-area="" asp-controller="Account" asp-action="Index">Account</a>
+            <a class="button button--primary" asp-area="" asp-controller="Account" asp-action="Index">@T["Account"]</a>
         </div>
     }
     else
     {
-        <h1 class="headline-md">This email-change link cannot be used</h1>
-        <p class="body-lg">The link may be expired, already used, or malformed.</p>
+        <h1 class="headline-md">@T["This email-change link cannot be used"]</h1>
+        <p class="body-lg">@T["The link may be expired, already used, or malformed."]</p>
         <div class="action-row">
-            <a class="button button--primary" asp-area="Identity" asp-page="/Account/Manage/Email">Request a new link</a>
+            <a class="button button--primary" asp-area="Identity" asp-page="/Account/Manage/Email">@T["Request a new link"]</a>
         </div>
     }
 </section>

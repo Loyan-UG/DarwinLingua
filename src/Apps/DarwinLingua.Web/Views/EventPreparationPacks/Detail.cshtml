@@ -9,9 +9,9 @@
         <div class="detail-toolbar__actions">
             <form asp-controller="EventPreparationPacks" asp-action="Complete" asp-route-slug="@Model.PreparationPack.Slug" method="post">
                 @Html.AntiForgeryToken()
-                <button type="submit" class="button button--primary button--compact">Mark prepared</button>
+                <button type="submit" class="button button--primary button--compact">@T["Mark prepared"]</button>
             </form>
-            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
+            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">@T["Scenarios"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.PreparationPack.Title</h1>
@@ -19,7 +19,7 @@
     @if (Model.CompletionRecorded)
     {
         <div class="status-banner status-banner--success">
-            <strong>Preparation recorded.</strong>
+            <strong>@T["Preparation recorded."]</strong>
         </div>
     }
     @if (Model.PreparationPack.TopicKeys.Count > 0)
@@ -36,8 +36,8 @@
 @if (Model.PreparationPack.Prompts.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Preparation prompts</h2>
-        <p class="body-lg">Use these prompts to rehearse what you want to say before the event.</p>
+        <h2 class="headline-sm">@T["Preparation prompts"]</h2>
+        <p class="body-lg">@T["Use these prompts to rehearse what you want to say before the event."]</p>
         <div class="grid-two-col">
             @foreach (var prompt in Model.PreparationPack.Prompts)
             {
@@ -53,7 +53,7 @@
 @if (Model.PreparationPack.LinkedVocabulary.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Useful vocabulary</h2>
+        <h2 class="headline-sm">@T["Useful vocabulary"]</h2>
         <ul class="feature-list">
             @foreach (var reference in Model.PreparationPack.LinkedVocabulary)
             {
@@ -72,7 +72,7 @@
 @if (Model.PreparationPack.LinkedScenarioSlugs.Count > 0 || Model.PreparationPack.LinkedConversationStarterPackSlugs.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Related practice</h2>
+        <h2 class="headline-sm">@T["Related practice"]</h2>
         <div class="chip-grid">
             @foreach (string scenarioSlug in Model.PreparationPack.LinkedScenarioSlugs)
             {

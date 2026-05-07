@@ -1,14 +1,14 @@
 @model DarwinLingua.Web.Models.AdminBillingDiagnosticsPageViewModel
 @{
-    ViewData["Title"] = "Billing diagnostics";
+    ViewData["Title"] = T["Billing diagnostics"];
     int failedEventCount = Model.Events.Count(billingEvent => string.Equals(billingEvent.Status, "Failed", StringComparison.OrdinalIgnoreCase));
     int warningCount = Model.Readiness.Warnings.Count;
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Diagnostics</span>
-    <h1 class="headline-md">Billing and Stripe events</h1>
-    <p class="body-lg">Stripe customer, subscription, and webhook state for entitlement reconciliation.</p>
+    <span class="eyebrow">@T["Diagnostics"]</span>
+    <h1 class="headline-md">@T["Billing and Stripe events"]</h1>
+    <p class="body-lg">@T["Stripe customer, subscription, and webhook state for entitlement reconciliation."]</p>
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
         <div class="status-banner status-banner--success">@Model.StatusMessage</div>
@@ -20,68 +20,68 @@
 
     <div class="admin-summary-grid">
         <a href="#billing-readiness" class="admin-summary-tile">
-            <span class="eyebrow">Readiness warnings</span>
+            <span class="eyebrow">@T["Readiness warnings"]</span>
             <strong>@warningCount</strong>
         </a>
         <a href="#billing-profiles" class="admin-summary-tile">
-            <span class="eyebrow">Profiles</span>
+            <span class="eyebrow">@T["Profiles"]</span>
             <strong>@Model.Profiles.Count</strong>
         </a>
         <a href="#billing-events" class="admin-summary-tile">
-            <span class="eyebrow">Failed events</span>
+            <span class="eyebrow">@T["Failed events"]</span>
             <strong>@failedEventCount</strong>
         </a>
     </div>
 
-    <nav class="admin-anchor-nav" aria-label="Billing diagnostics sections">
-        <a href="#billing-readiness">Readiness</a>
-        <a href="#billing-filters">Filters</a>
+    <nav class="admin-anchor-nav" aria-label="@T["Billing diagnostics sections"]">
+        <a href="#billing-readiness">@T["Readiness"]</a>
+        <a href="#billing-filters">@T["Filters"]</a>
         @if (User.IsInRole("Admin"))
         {
-            <a href="#billing-reconcile">Reconcile</a>
+            <a href="#billing-reconcile">@T["Reconcile"]</a>
         }
-        <a href="#billing-profiles">Profiles</a>
-        <a href="#billing-events">Events</a>
+        <a href="#billing-profiles">@T["Profiles"]</a>
+        <a href="#billing-events">@T["Events"]</a>
     </nav>
 </section>
 
 <section id="billing-readiness" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Readiness</h2>
-        <span class="status-pill">@(warningCount == 0 ? "Ready" : $"{warningCount} warning(s)")</span>
+        <h2 class="headline-sm">@T["Readiness"]</h2>
+        <span class="status-pill">@(warningCount == 0 ? T["Ready"] : T["{0} warning(s)", warningCount])</span>
     </div>
     <div class="metric-grid">
         <article class="metric-card">
-            <span class="metric-card__label">Stripe</span>
-            <strong>@(Model.Readiness.StripeEnabled ? "Enabled" : "Disabled")</strong>
+            <span class="metric-card__label">@T["Stripe"]</span>
+            <strong>@(Model.Readiness.StripeEnabled ? T["Enabled"] : T["Disabled"])</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">Price id</span>
-            <strong>@(Model.Readiness.HasPremiumMonthlyPriceId ? "Configured" : "Missing")</strong>
+            <span class="metric-card__label">@T["Price id"]</span>
+            <strong>@(Model.Readiness.HasPremiumMonthlyPriceId ? T["Configured"] : T["Missing"])</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">Webhook secret</span>
-            <strong>@(Model.Readiness.HasStripeWebhookSecret ? "Configured" : "Missing")</strong>
+            <span class="metric-card__label">@T["Webhook secret"]</span>
+            <strong>@(Model.Readiness.HasStripeWebhookSecret ? T["Configured"] : T["Missing"])</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">Tolerance</span>
-            <strong>@Model.Readiness.WebhookToleranceMinutes min</strong>
+            <span class="metric-card__label">@T["Tolerance"]</span>
+            <strong>@T["{0} min", Model.Readiness.WebhookToleranceMinutes]</strong>
         </article>
     </div>
     <ul class="feature-list">
-        <li>Public base URL: @(string.IsNullOrWhiteSpace(Model.Readiness.PublicBaseUrl) ? "Missing" : Model.Readiness.PublicBaseUrl)</li>
-        <li>Stripe API base URL: @Model.Readiness.StripeApiBaseUrl</li>
-        <li>Stripe secret key: @(Model.Readiness.HasStripeSecretKey ? "Configured" : "Missing")</li>
-        <li>Premium plan key: @Model.Readiness.PremiumPlanKey</li>
+        <li>@T["Public base URL"]: @(string.IsNullOrWhiteSpace(Model.Readiness.PublicBaseUrl) ? T["Missing"] : Model.Readiness.PublicBaseUrl)</li>
+        <li>@T["Stripe API base URL"]: @Model.Readiness.StripeApiBaseUrl</li>
+        <li>@T["Stripe secret key"]: @(Model.Readiness.HasStripeSecretKey ? T["Configured"] : T["Missing"])</li>
+        <li>@T["Premium plan key"]: @Model.Readiness.PremiumPlanKey</li>
     </ul>
     @if (Model.Readiness.Warnings.Count == 0)
     {
-        <p class="body-sm">No billing configuration warnings detected. Stripe dashboard settings still require external verification.</p>
+        <p class="body-sm">@T["No billing configuration warnings detected. Stripe dashboard settings still require external verification."]</p>
     }
     else
     {
         <div class="status-banner status-banner--error">
-            <strong>Readiness warnings</strong>
+            <strong>@T["Readiness warnings"]</strong>
             <ul>
                 @foreach (string warning in Model.Readiness.Warnings)
                 {
@@ -93,12 +93,12 @@
 </section>
 
 <section id="billing-filters" class="panel stack-md">
-    <h2 class="headline-sm">Filters</h2>
+    <h2 class="headline-sm">@T["Filters"]</h2>
     <form method="get" class="filter-bar">
         <label>
-            Status
+            @T["Status"]
             <select name="status">
-                <option value="">All</option>
+                <option value="">@T["All"]</option>
                 @foreach (string status in new[] { "Received", "Processed", "Failed" })
                 {
                     <option value="@status" selected="@(string.Equals(Model.Status, status, StringComparison.OrdinalIgnoreCase))">@status</option>
@@ -106,9 +106,9 @@
             </select>
         </label>
         <label>
-            Event type
+            @T["Event type"]
             <select name="eventType">
-                <option value="">All</option>
+                <option value="">@T["All"]</option>
                 @foreach (string eventType in new[] { "checkout.session.completed", "customer.subscription.created", "customer.subscription.updated", "customer.subscription.deleted" })
                 {
                     <option value="@eventType" selected="@(string.Equals(Model.EventType, eventType, StringComparison.OrdinalIgnoreCase))">@eventType</option>
@@ -116,23 +116,23 @@
             </select>
         </label>
         <label>
-            User id
+            @T["User id"]
             <input name="userId" value="@Model.UserId" autocomplete="off" />
         </label>
         <label>
-            Customer id
+            @T["Customer id"]
             <input name="providerCustomerId" value="@Model.ProviderCustomerId" autocomplete="off" />
         </label>
         <label>
-            Subscription id
+            @T["Subscription id"]
             <input name="providerSubscriptionId" value="@Model.ProviderSubscriptionId" autocomplete="off" />
         </label>
         <label>
-            Limit
+            @T["Limit"]
             <input name="take" value="@Model.Take" type="number" min="1" max="200" />
         </label>
-        <button type="submit" class="button button--primary">Filter</button>
-        <a class="button button--secondary" asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">Clear</a>
+        <button type="submit" class="button button--primary">@T["Filter"]</button>
+        <a class="button button--secondary" asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">@T["Clear"]</a>
     </form>
 </section>
 
@@ -140,29 +140,29 @@
 {
     <section id="billing-reconcile" class="panel stack-md">
         <div class="cluster cluster--between">
-            <h2 class="headline-sm">Manual Stripe reconciliation</h2>
-            <span class="status-pill">Admin only</span>
+            <h2 class="headline-sm">@T["Manual Stripe reconciliation"]</h2>
+            <span class="status-pill">@T["Admin only"]</span>
         </div>
-        <p class="body-sm">Refresh one subscription directly from Stripe when a webhook is delayed, missed, or failed. This calls Stripe and may update local entitlement state.</p>
-        <form method="post" asp-action="ReconcileStripeSubscription" class="filter-bar" data-confirm-submit="Refresh this subscription from Stripe and reconcile the local entitlement state?">
+        <p class="body-sm">@T["Refresh one subscription directly from Stripe when a webhook is delayed, missed, or failed. This calls Stripe and may update local entitlement state."]</p>
+        <form method="post" asp-action="ReconcileStripeSubscription" class="filter-bar" data-confirm-submit="@T["Refresh this subscription from Stripe and reconcile the local entitlement state?"]">
             @Html.AntiForgeryToken()
             <label>
-                Subscription id
+                @T["Subscription id"]
                 <input name="providerSubscriptionId" value="@Model.ProviderSubscriptionId" autocomplete="off" placeholder="sub_..." />
             </label>
-            <button type="submit" class="button button--primary">Reconcile subscription</button>
+            <button type="submit" class="button button--primary">@T["Reconcile subscription"]</button>
         </form>
     </section>
 }
 
 <section id="billing-profiles" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Billing profiles</h2>
-        <span class="status-pill">@Model.Profiles.Count shown</span>
+        <h2 class="headline-sm">@T["Billing profiles"]</h2>
+        <span class="status-pill">@T["{0} shown", Model.Profiles.Count]</span>
     </div>
     @if (Model.Profiles.Count == 0)
     {
-        <p class="body-sm">No billing profiles have been recorded yet.</p>
+        <p class="body-sm">@T["No billing profiles have been recorded yet."]</p>
     }
     else
     {
@@ -170,15 +170,15 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Updated</th>
-                        <th>User</th>
-                        <th>Provider</th>
-                        <th>Status</th>
-                        <th>Plan</th>
-                        <th>Customer</th>
-                        <th>Subscription</th>
-                        <th>Period end</th>
-                        <th>Action</th>
+                        <th>@T["Updated"]</th>
+                        <th>@T["User"]</th>
+                        <th>@T["Provider"]</th>
+                        <th>@T["Status"]</th>
+                        <th>@T["Plan"]</th>
+                        <th>@T["Customer"]</th>
+                        <th>@T["Subscription"]</th>
+                        <th>@T["Period end"]</th>
+                        <th>@T["Action"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -190,21 +190,21 @@
                             <td>@profile.ProviderName</td>
                             <td>@profile.Status</td>
                             <td>@profile.PlanKey</td>
-                            <td><code>@(profile.ProviderCustomerId ?? "none")</code></td>
-                            <td><code>@(profile.ProviderSubscriptionId ?? "none")</code></td>
-                            <td>@(profile.CurrentPeriodEndsAtUtc?.UtcDateTime.ToString("u") ?? "none")</td>
+                            <td><code>@(profile.ProviderCustomerId ?? T["none"].Value)</code></td>
+                            <td><code>@(profile.ProviderSubscriptionId ?? T["none"].Value)</code></td>
+                            <td>@(profile.CurrentPeriodEndsAtUtc?.UtcDateTime.ToString("u") ?? T["none"])</td>
                             <td>
                                 @if (User.IsInRole("Admin") && !string.IsNullOrWhiteSpace(profile.ProviderSubscriptionId))
                                 {
-                                    <form method="post" asp-action="ReconcileStripeSubscription" class="inline-form" data-confirm-submit="Refresh this subscription from Stripe and reconcile the local entitlement state?">
+                                    <form method="post" asp-action="ReconcileStripeSubscription" class="inline-form" data-confirm-submit="@T["Refresh this subscription from Stripe and reconcile the local entitlement state?"]">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="providerSubscriptionId" value="@profile.ProviderSubscriptionId" />
-                                        <button type="submit" class="button button--secondary">Reconcile</button>
+                                        <button type="submit" class="button button--secondary">@T["Reconcile"]</button>
                                     </form>
                                 }
                                 else
                                 {
-                                    <span class="body-sm">None</span>
+                                    <span class="body-sm">@T["None"]</span>
                                 }
                             </td>
                         </tr>
@@ -217,12 +217,12 @@
 
 <section id="billing-events" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Recent billing events</h2>
-        <span class="status-pill">@Model.Events.Count shown</span>
+        <h2 class="headline-sm">@T["Recent billing events"]</h2>
+        <span class="status-pill">@T["{0} shown", Model.Events.Count]</span>
     </div>
     @if (Model.Events.Count == 0)
     {
-        <p class="body-sm">No Stripe billing events have been recorded yet.</p>
+        <p class="body-sm">@T["No Stripe billing events have been recorded yet."]</p>
     }
     else
     {
@@ -230,14 +230,14 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Created</th>
-                        <th>Status</th>
-                        <th>Type</th>
-                        <th>Provider event</th>
-                        <th>User</th>
-                        <th>Customer</th>
-                        <th>Subscription</th>
-                        <th>Error</th>
+                        <th>@T["Created"]</th>
+                        <th>@T["Status"]</th>
+                        <th>@T["Type"]</th>
+                        <th>@T["Provider event"]</th>
+                        <th>@T["User"]</th>
+                        <th>@T["Customer"]</th>
+                        <th>@T["Subscription"]</th>
+                        <th>@T["Error"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -248,10 +248,10 @@
                             <td>@billingEvent.Status</td>
                             <td>@billingEvent.EventType</td>
                             <td><code>@billingEvent.ProviderEventId</code></td>
-                            <td><code>@(billingEvent.UserId ?? "none")</code></td>
-                            <td><code>@(billingEvent.ProviderCustomerId ?? "none")</code></td>
-                            <td><code>@(billingEvent.ProviderSubscriptionId ?? "none")</code></td>
-                            <td>@(billingEvent.ErrorSummary ?? "none")</td>
+                            <td><code>@(billingEvent.UserId ?? T["none"].Value)</code></td>
+                            <td><code>@(billingEvent.ProviderCustomerId ?? T["none"].Value)</code></td>
+                            <td><code>@(billingEvent.ProviderSubscriptionId ?? T["none"].Value)</code></td>
+                            <td>@(billingEvent.ErrorSummary ?? T["none"])</td>
                         </tr>
                     }
                 </tbody>

@@ -1,14 +1,14 @@
 @page
 @model EmailModel
 @{
-    ViewData["Title"] = "Change email";
+    ViewData["Title"] = T["Change email"];
 }
 
 <div class="auth-page">
     <section class="panel stack-lg auth-intro">
-        <span class="eyebrow">Account security</span>
-        <h1 class="headline-md">Change email</h1>
-        <p class="body-lg">Current email: <strong>@Model.CurrentEmail</strong></p>
+        <span class="eyebrow">@T["Account security"]</span>
+        <h1 class="headline-md">@T["Change email"]</h1>
+        <p class="body-lg">@T["Current email"]: <strong>@Model.CurrentEmail</strong></p>
     </section>
 
     <section class="panel stack-md auth-card">
@@ -32,8 +32,8 @@
             </div>
 
             <div class="action-row auth-actions">
-                <button type="submit" class="button button--primary">Send confirmation</button>
-                <a class="button button--secondary" asp-area="" asp-controller="Account" asp-action="Index">Back to account</a>
+                <button type="submit" class="button button--primary">@T["Send confirmation"]</button>
+                <a class="button button--secondary" asp-area="" asp-controller="Account" asp-action="Index">@T["Back to account"]</a>
             </div>
         </form>
     </section>

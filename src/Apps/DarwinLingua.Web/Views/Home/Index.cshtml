@@ -1,35 +1,34 @@
 @model DarwinLingua.Web.Models.HomePageViewModel
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = T["Home"];
 }
 
 <section class="hero">
     <div class="hero__content">
-        <span class="eyebrow">German for real work</span>
-        <h1 class="headline-xl">Build the vocabulary you actually need for meetings, systems, and daily decisions.</h1>
+        <span class="eyebrow">@T["German for real work"]</span>
+        <h1 class="headline-xl">@T["Build the vocabulary you actually need for meetings, systems, and daily decisions."]</h1>
         <p class="body-lg">
-            Darwin Lingua turns German study into a focused workflow: curated workplace collections, CEFR-aware browsing,
-            searchable word detail, pronunciation support, favorites, and recent activity in one calm learning space.
+            @T["Darwin Lingua turns German study into a focused workflow: curated workplace collections, CEFR-aware browsing, searchable word detail, pronunciation support, favorites, and recent activity in one calm learning space."]
         </p>
         <div class="action-row">
-            <a class="button button--primary" asp-controller="Browse" asp-action="Index">Start learning</a>
-            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Explore collections</a>
-            <a class="button button--secondary" asp-controller="Search" asp-action="Index">Search vocabulary</a>
+            <a class="button button--primary" asp-controller="Browse" asp-action="Index">@T["Start learning"]</a>
+            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">@T["Explore collections"]</a>
+            <a class="button button--secondary" asp-controller="Search" asp-action="Index">@T["Search vocabulary"]</a>
         </div>
     </div>
     <div class="hero__aside">
         <div class="hero-preview">
             <img src="~/images/logo.png" alt="" />
             <div>
-                <span class="eyebrow">Today&apos;s focus</span>
-                <strong>Project communication</strong>
-                <p>Practice the words, phrases, and examples that show up in planning, reporting, and team coordination.</p>
+                <span class="eyebrow">@T["Today's focus"]</span>
+                <strong>@T["Project communication"]</strong>
+                <p>@T["Practice the words, phrases, and examples that show up in planning, reporting, and team coordination."]</p>
             </div>
         </div>
         <div class="hero-stats">
-            <span><strong>A1-C1</strong> CEFR levels</span>
-            <span><strong>Workplace</strong> collections</span>
-            <span><strong>Personal</strong> progress</span>
+            <span><strong>A1-C1</strong> @T["CEFR levels"]</span>
+            <span><strong>@T["Workplace"]</strong> @T["Collections"]</span>
+            <span><strong>@T["Personal"]</strong> @T["progress"]</span>
         </div>
     </div>
 </section>
@@ -37,15 +36,15 @@
 <section class="content-band stack-lg">
     <div class="section-heading">
         <div>
-            <span class="eyebrow">Guided study</span>
-            <h2 class="headline-md">Featured collections</h2>
+            <span class="eyebrow">@T["Guided study"]</span>
+            <h2 class="headline-md">@T["Featured collections"]</h2>
         </div>
-        <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Browse all collections</a>
+        <a class="button button--secondary" asp-controller="Collections" asp-action="Index">@T["Browse all collections"]</a>
     </div>
 
     @if (Model.FeaturedCollections.Count == 0)
     {
-        <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("Collections are being prepared", "Curated study paths will appear here as soon as they are available for your account.")' />
+        <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Collections are being prepared"].Value, T["Curated study paths will appear here as soon as they are available for your account."].Value)' />
     }
     else
     {
@@ -60,38 +59,38 @@
 
 <section class="grid-three-col">
     <article class="panel stack-md">
-        <span class="eyebrow">Browse</span>
-        <h2 class="headline-sm">Find the right words fast</h2>
-        <p>Filter by CEFR level, topic, and learning context so every session starts from a useful set of vocabulary.</p>
-        <a class="text-link" asp-controller="Browse" asp-action="Index">Open browse</a>
+        <span class="eyebrow">@T["Browse"]</span>
+        <h2 class="headline-sm">@T["Find the right words fast"]</h2>
+        <p>@T["Filter by CEFR level, topic, and learning context so every session starts from a useful set of vocabulary."]</p>
+        <a class="text-link" asp-controller="Browse" asp-action="Index">@T["Open browse"]</a>
     </article>
     <article class="panel stack-md">
-        <span class="eyebrow">Practice</span>
-        <h2 class="headline-sm">Keep useful words close</h2>
-        <p>Mark favorites, revisit recent words, hear pronunciation, and keep your practice tied to real examples.</p>
-        <a class="text-link" asp-controller="Favorites" asp-action="Index">View favorites</a>
+        <span class="eyebrow">@T["Practice"]</span>
+        <h2 class="headline-sm">@T["Keep useful words close"]</h2>
+        <p>@T["Mark favorites, revisit recent words, hear pronunciation, and keep your practice tied to real examples."]</p>
+        <a class="text-link" asp-controller="Favorites" asp-action="Index">@T["View favorites"]</a>
     </article>
     <article class="panel stack-md">
-        <span class="eyebrow">Connect</span>
-        <h2 class="headline-sm">Prepare for conversation</h2>
-        <p>Use starters, scenarios, events, and partner matching to move vocabulary from recognition into speaking.</p>
-        <a class="text-link" asp-controller="Scenarios" asp-action="Index">Open scenarios</a>
+        <span class="eyebrow">@T["Connect"]</span>
+        <h2 class="headline-sm">@T["Prepare for conversation"]</h2>
+        <p>@T["Use starters, scenarios, events, and partner matching to move vocabulary from recognition into speaking."]</p>
+        <a class="text-link" asp-controller="Scenarios" asp-action="Index">@T["Open scenarios"]</a>
     </article>
 </section>
 
 <section class="content-band stack-lg">
     <div class="section-heading">
         <div>
-            <span class="eyebrow">Continue</span>
-            <h2 class="headline-md">Pick up where you left off</h2>
+            <span class="eyebrow">@T["Continue"]</span>
+            <h2 class="headline-md">@T["Pick up where you left off"]</h2>
         </div>
-        <a class="button button--secondary" asp-controller="Recent" asp-action="Index">Open history</a>
+        <a class="button button--secondary" asp-controller="Recent" asp-action="Index">@T["Open history"]</a>
     </div>
     <div
         hx-get="@Url.Action("Panel", "Recent")"
         hx-trigger="load"
         hx-target="this"
         hx-swap="innerHTML">
-        <p class="body-lg">Loading your recent words...</p>
+        <p class="body-lg">@T["Loading your recent words..."]</p>
     </div>
 </section>

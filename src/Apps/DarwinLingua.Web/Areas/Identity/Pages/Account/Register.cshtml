@@ -1,14 +1,14 @@
 @page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = T["Register"];
 }
 
 <div class="auth-page">
     <section class="panel stack-lg auth-intro">
-        <span class="eyebrow">Create account</span>
-        <h1 class="headline-md">Register for Darwin Lingua</h1>
-        <p class="body-lg">Enter your email and choose a password. If the address can be used, Darwin Lingua will send the next account step.</p>
+        <span class="eyebrow">@T["Create account"]</span>
+        <h1 class="headline-md">@T["Register for Darwin Lingua"]</h1>
+        <p class="body-lg">@T["Enter your email and choose a password. If the address can be used, Darwin Lingua will send the next account step."]</p>
     </section>
 
     <section class="panel stack-md auth-card">
@@ -35,8 +35,8 @@
             </div>
 
             <div class="action-row auth-actions">
-                <button type="submit" class="button button--primary">Continue</button>
-                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+                <button type="submit" class="button button--primary">@T["Continue"]</button>
+                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">@T["Sign in"]</a>
             </div>
         </form>
     </section>

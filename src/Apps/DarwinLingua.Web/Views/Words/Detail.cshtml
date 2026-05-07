@@ -17,17 +17,17 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Content.Word.CefrLevel · @Model.Content.Word.PartOfSpeech</span>
         <div class="detail-toolbar__actions">
-            <button type="button" class="icon-button" data-word-nav="prev" aria-label="Previous word" title="Previous word" disabled>
+            <button type="button" class="icon-button" data-word-nav="prev" aria-label="@T["Previous word"]" title="@T["Previous word"]" disabled>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M15 6 9 12l6 6" />
                 </svg>
-                <span class="sr-only">Previous word</span>
+                <span class="sr-only">@T["Previous word"]</span>
             </button>
-            <button type="button" class="icon-button" data-word-nav="next" aria-label="Next word" title="Next word" disabled>
+            <button type="button" class="icon-button" data-word-nav="next" aria-label="@T["Next word"]" title="@T["Next word"]" disabled>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="m9 6 6 6-6 6" />
                 </svg>
-                <span class="sr-only">Next word</span>
+                <span class="sr-only">@T["Next word"]</span>
             </button>
         </div>
     </div>
@@ -39,13 +39,13 @@
                 <p class="body-lg">@summaryLine</p>
             }
             <div class="word-primary-actions">
-                <button type="button" class="icon-button" data-speak-text="@Model.Content.Word.Lemma" data-speak-lang="de-DE" aria-label="Hear word" title="Hear word">
+                <button type="button" class="icon-button" data-speak-text="@Model.Content.Word.Lemma" data-speak-lang="de-DE" data-keyboard-speak-target="true" aria-label="@T["Hear word"]" title="@T["Hear word (Ctrl+Space)"]">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
                         <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
                         <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
                     </svg>
-                    <span class="sr-only">Hear word</span>
+                    <span class="sr-only">@T["Hear word"]</span>
                 </button>
                 <partial name="~/Views/Shared/_FavoriteToggle.cshtml" model="Model.Content.Interaction" />
             </div>
@@ -89,13 +89,13 @@
                         <strong>@sense.ShortDefinitionDe</strong>
                     }
                     <div class="detail-example">
-                        <button type="button" class="icon-button icon-button--sm" data-speak-text="@example.GermanText" data-speak-lang="de-DE" aria-label="Hear example" title="Hear example">
+                        <button type="button" class="icon-button icon-button--sm" data-speak-text="@example.GermanText" data-speak-lang="de-DE" aria-label="@T["Hear example"]" title="@T["Hear example"]">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
                                 <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
                                 <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
                             </svg>
-                            <span class="sr-only">Hear example</span>
+                            <span class="sr-only">@T["Hear example"]</span>
                         </button>
                         <strong>@example.GermanText</strong>
                     </div>
@@ -128,7 +128,7 @@
 @if (Model.Content.Word.GrammarNotes.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Grammar notes</h2>
+        <h2 class="headline-sm">@T["Grammar notes"]</h2>
         <ul class="feature-list">
             @foreach (string grammarNote in Model.Content.Word.GrammarNotes)
             {
@@ -144,7 +144,7 @@
         @if (Model.Content.Word.Collocations.Count > 0)
         {
             <article class="panel stack-md">
-                <h2 class="headline-sm">Collocations</h2>
+                <h2 class="headline-sm">@T["Collocations"]</h2>
                 <ul class="feature-list">
                     @foreach (var collocation in Model.Content.Word.Collocations)
                     {
@@ -162,7 +162,7 @@
         @if (Model.Content.Word.WordFamilies.Count > 0)
         {
             <article class="panel stack-md">
-                <h2 class="headline-sm">Word family</h2>
+                <h2 class="headline-sm">@T["Word family"]</h2>
                 <ul class="feature-list">
                     @foreach (var familyMember in Model.Content.Word.WordFamilies)
                     {
@@ -187,7 +187,7 @@
         @if (Model.Content.Word.Synonyms.Count > 0)
         {
             <article class="panel stack-md">
-                <h2 class="headline-sm">Synonyms</h2>
+                <h2 class="headline-sm">@T["Synonyms"]</h2>
                 <ul class="feature-list">
                     @foreach (var synonym in Model.Content.Word.Synonyms)
                     {
@@ -205,7 +205,7 @@
         @if (Model.Content.Word.Antonyms.Count > 0)
         {
             <article class="panel stack-md">
-                <h2 class="headline-sm">Antonyms</h2>
+                <h2 class="headline-sm">@T["Antonyms"]</h2>
                 <ul class="feature-list">
                     @foreach (var antonym in Model.Content.Word.Antonyms)
                     {
@@ -230,7 +230,7 @@
         @if (Model.Content.Word.UsageLabels.Count > 0 || Model.Content.Word.ContextLabels.Count > 0)
         {
             <article class="panel stack-md">
-                <h2 class="headline-sm">Labels</h2>
+                <h2 class="headline-sm">@T["Labels"]</h2>
                 <div class="chip-grid">
                     @foreach (string usageLabel in Model.Content.Word.UsageLabels)
                     {
@@ -246,7 +246,7 @@
         @if (Model.Content.Word.Topics.Count > 0)
         {
             <article class="panel stack-md">
-                <h2 class="headline-sm">Topics</h2>
+                <h2 class="headline-sm">@T["Topics"]</h2>
                 <div class="chip-grid">
                     @foreach (string topic in Model.Content.Word.Topics)
                     {

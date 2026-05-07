@@ -1,10 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Areas.Identity.Pages.Account.Manage;
 
@@ -12,7 +14,8 @@ namespace DarwinLingua.Web.Areas.Identity.Pages.Account.Manage;
 public sealed class ChangePasswordModel(
     UserManager<DarwinLinguaIdentityUser> userManager,
     SignInManager<DarwinLinguaIdentityUser> signInManager,
-    IAccountEmailService accountEmailService) : PageModel
+    IAccountEmailService accountEmailService,
+    IStringLocalizer<SharedResource> localizer) : PageModel
 {
     [BindProperty]
     public ChangePasswordInputModel Input { get; set; } = new();
@@ -61,7 +64,7 @@ public sealed class ChangePasswordModel(
                 cancellationToken)
             .ConfigureAwait(false);
 
-        StatusMessage = "Your password has been changed.";
+        StatusMessage = localizer["Your password has been changed."];
         return RedirectToPage();
     }
 
@@ -75,16 +78,19 @@ public sealed class ChangePasswordModel(
     {
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Current password")]
         public string CurrentPassword { get; set; } = string.Empty;
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
+        [Display(Name = "New password")]
         public string NewPassword { get; set; } = string.Empty;
 
         [Required]
         [DataType(DataType.Password)]
         [Compare(nameof(NewPassword), ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Confirm password")]
         public string ConfirmPassword { get; set; } = string.Empty;
     }
 }

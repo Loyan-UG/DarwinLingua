@@ -5,9 +5,9 @@
 
 <section class="panel stack-lg">
     <div class="detail-toolbar">
-        <span class="eyebrow">@Model.Profile.OrganizerType · @(Model.Profile.IsOnlineAvailable ? "Online available" : Model.Profile.CityRegion)</span>
+        <span class="eyebrow">@Model.Profile.OrganizerType · @(Model.Profile.IsOnlineAvailable ? T["Online available"] : Model.Profile.CityRegion)</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Index">All organizers</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Index">@T["All organizers"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Profile.DisplayName</h1>
@@ -22,21 +22,21 @@
     <p class="body-lg">@Model.Profile.Description</p>
     <dl class="detail-list">
         <div>
-            <dt>Status</dt>
+            <dt>@T["Status"]</dt>
             <dd>@Model.Profile.VerificationStatus</dd>
         </div>
         <div>
-            <dt>Plan</dt>
+            <dt>@T["Plan"]</dt>
             <dd>@Model.Profile.PlanKey</dd>
         </div>
         <div>
-            <dt>Events</dt>
-            <dd>@Model.Profile.ActiveEvents.Count active · @Model.Profile.HistoricalEventCount historical</dd>
+            <dt>@T["Events"]</dt>
+            <dd>@T["{0} active", Model.Profile.ActiveEvents.Count] · @T["{0} historical", Model.Profile.HistoricalEventCount]</dd>
         </div>
         @if (!string.IsNullOrWhiteSpace(Model.Profile.PublicContactMethod))
         {
             <div>
-                <dt>Contact</dt>
+                <dt>@T["Contact"]</dt>
                 <dd>@Model.Profile.PublicContactMethod</dd>
             </div>
         }
@@ -54,14 +54,14 @@
     @if (!string.IsNullOrWhiteSpace(Model.Profile.WebsiteUrl))
     {
         <div class="detail-toolbar__actions">
-            <a class="button button--primary button--compact" href="@Model.Profile.WebsiteUrl" rel="noopener noreferrer" target="_blank">Website</a>
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">Claim profile</a>
+            <a class="button button--primary button--compact" href="@Model.Profile.WebsiteUrl" rel="noopener noreferrer" target="_blank">@T["Website"]</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">@T["Claim profile"]</a>
         </div>
     }
     else
     {
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">Claim profile</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">@T["Claim profile"]</a>
         </div>
     }
     <form method="post" asp-controller="Moderation" asp-action="Report" class="panel report-panel stack-sm">
@@ -70,28 +70,28 @@
         <input type="hidden" name="TargetKey" value="@Model.Profile.Slug" />
         <input type="hidden" name="ReturnUrl" value="@($"{Context.Request.Path}{Context.Request.QueryString}")" />
         <label class="form-field">
-            <span>Report this organizer</span>
+            <span>@T["Report this organizer"]</span>
             <select name="Reason">
-                <option value="inaccurate-listing">Inaccurate listing</option>
-                <option value="impersonation">Impersonation</option>
-                <option value="spam">Spam</option>
-                <option value="unsafe-contact">Unsafe contact</option>
-                <option value="other">Other</option>
+                <option value="inaccurate-listing">@T["Inaccurate listing"]</option>
+                <option value="impersonation">@T["Impersonation"]</option>
+                <option value="spam">@T["Spam"]</option>
+                <option value="unsafe-contact">@T["Unsafe contact"]</option>
+                <option value="other">@T["Other"]</option>
             </select>
         </label>
         <label class="form-field">
-            <span>Report details</span>
+            <span>@T["Report details"]</span>
             <textarea name="Details" rows="2" maxlength="2000"></textarea>
         </label>
-        <button type="submit" class="button button--secondary button--compact">Send report</button>
+        <button type="submit" class="button button--secondary button--compact">@T["Send report"]</button>
     </form>
 </section>
 
 <section class="panel stack-md">
-    <h2 class="headline-sm">Active events</h2>
+    <h2 class="headline-sm">@T["Active events"]</h2>
     @if (Model.Profile.ActiveEvents.Count == 0)
     {
-        <p>This organizer does not have any active events right now.</p>
+        <p>@T["This organizer does not have any active events right now."]</p>
     }
     else
     {
@@ -99,7 +99,7 @@
             @foreach (var item in Model.Profile.ActiveEvents)
             {
                 <article class="panel stack-md">
-                    <span class="eyebrow">@item.Category · @(item.IsOnline ? "Online" : item.City ?? item.CountryRegion)</span>
+                    <span class="eyebrow">@item.Category · @(item.IsOnline ? T["Online"] : item.City ?? item.CountryRegion)</span>
                     <h3 class="headline-sm">
                         <a asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@item.Slug">@item.Name</a>
                     </h3>

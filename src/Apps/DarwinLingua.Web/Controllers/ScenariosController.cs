@@ -1,8 +1,10 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -11,12 +13,13 @@ public sealed class ScenariosController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
     IWebEntitledFeatureAccessService featureAccessService,
+    IStringLocalizer<SharedResource> localizer,
     ILogger<ScenariosController> logger,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "Scenarios_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
-    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(string? topic, string? q, CancellationToken cancellationToken)
     {
         IReadOnlyList<ScenarioLessonListItemModel> scenarios;
 
@@ -34,7 +37,36 @@ public sealed class ScenariosController(
             scenarios = [];
         }
 
-        return View(new ScenarioIndexPageViewModel(scenarios));
+        string? normalizedTopic = WebRouteInput.NormalizeSlug(topic ?? string.Empty);
+        string? normalizedQuery = string.IsNullOrWhiteSpace(q) ? null : q.Trim();
+        IReadOnlyList<string> topicKeys = scenarios
+            .SelectMany(static scenario => scenario.TopicKeys)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(static topicKey => topicKey)
+            .ToArray();
+
+        IEnumerable<ScenarioLessonListItemModel> filteredScenarios = scenarios;
+        if (!string.IsNullOrWhiteSpace(normalizedTopic))
+        {
+            filteredScenarios = filteredScenarios.Where(scenario =>
+                scenario.TopicKeys.Any(topicKey => topicKey.Equals(normalizedTopic, StringComparison.OrdinalIgnoreCase)));
+        }
+
+        if (!string.IsNullOrWhiteSpace(normalizedQuery))
+        {
+            filteredScenarios = filteredScenarios.Where(scenario =>
+                scenario.Title.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
+                scenario.Description.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
+                scenario.LearnerGoal.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
+                scenario.Category.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
+                scenario.TopicKeys.Any(topicKey => topicKey.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase)));
+        }
+
+        return View(new ScenarioIndexPageViewModel(
+            filteredScenarios.ToArray(),
+            topicKeys,
+            normalizedTopic,
+            normalizedQuery));
     }
 
     [HttpGet("{slug}", Name = "Scenarios_Detail")]
@@ -69,7 +101,9 @@ public sealed class ScenariosController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Scenario detail could not be loaded for {Slug}.", normalizedSlug);
-            return ServiceUnavailableView("Scenario is temporarily unavailable", "This practice scenario could not be loaded right now. Please return to scenarios and try again.");
+            return ServiceUnavailableView(
+                localizer["Scenario is temporarily unavailable"].Value,
+                localizer["This practice scenario could not be loaded right now. Please return to scenarios and try again."].Value);
         }
 
         if (scenario is null)
@@ -137,7 +171,9 @@ public sealed class ScenariosController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Scenario roleplay could not be loaded for {Slug}.", normalizedSlug);
-            return ServiceUnavailableView("Roleplay is temporarily unavailable", "This guided roleplay could not be loaded right now. Please return to scenarios and try again.");
+            return ServiceUnavailableView(
+                localizer["Roleplay is temporarily unavailable"].Value,
+                localizer["This guided roleplay could not be loaded right now. Please return to scenarios and try again."].Value);
         }
 
         if (scenario is null)
@@ -154,7 +190,7 @@ public sealed class ScenariosController(
             effectiveSecondaryMeaningLanguageCode));
     }
 
-    private static IReadOnlyList<ScenarioRoleplayStepViewModel> BuildRoleplaySteps(ScenarioLessonDetailModel scenario)
+    private IReadOnlyList<ScenarioRoleplayStepViewModel> BuildRoleplaySteps(ScenarioLessonDetailModel scenario)
     {
         List<ScenarioRoleplayStepViewModel> steps = [];
         for (int index = 0; index < scenario.DialogueTurns.Count; index++)
@@ -184,7 +220,7 @@ public sealed class ScenariosController(
                 answer.BaseText,
                 answer.PrimaryMeaning,
                 answer.SecondaryMeaning,
-                "Compare your answer with the model answer, then replay the line aloud."));
+                localizer["Compare your answer with the model answer, then replay the line aloud."].Value));
         }
 
         return steps;

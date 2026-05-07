@@ -3,7 +3,10 @@ using DarwinLingua.Catalog.Application.Models;
 namespace DarwinLingua.Web.Models;
 
 public sealed record ScenarioIndexPageViewModel(
-    IReadOnlyList<ScenarioLessonListItemModel> Scenarios);
+    IReadOnlyList<ScenarioLessonListItemModel> Scenarios,
+    IReadOnlyList<string> TopicKeys,
+    string? SelectedTopicKey,
+    string? Query);
 
 public sealed record ScenarioDetailPageViewModel(
     ScenarioLessonDetailModel Scenario,

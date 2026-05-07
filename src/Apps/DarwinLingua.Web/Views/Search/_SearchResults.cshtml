@@ -3,25 +3,25 @@
 @if (string.IsNullOrWhiteSpace(Model.Query))
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Start searching</h2>
-        <p class="body-lg">Type a German lemma to search the catalog.</p>
+        <h2 class="headline-sm">@T["Start searching"]</h2>
+        <p class="body-lg">@T["Type a German lemma to search the catalog."]</p>
     </section>
 }
 else if (Model.Results.Count == 0)
 {
     <section class="panel stack-lg">
-        <h2 class="headline-sm">No matches</h2>
-        <p class="body-lg">We could not find <strong>@Model.Query</strong> in Darwin Lingua.</p>
-        <p class="body-sm">Would you like to suggest this word so the content team can review it and add it to the system?</p>
+        <h2 class="headline-sm">@T["No matches"]</h2>
+        <p class="body-lg">@T["We could not find {0} in Darwin Lingua.", Model.Query]</p>
+        <p class="body-sm">@T["Would you like to suggest this word so the content team can review it and add it to the system?"]</p>
         <form method="post" asp-action="Suggest" class="stack-md">
             @Html.AntiForgeryToken()
             <input type="hidden" name="SuggestedWord" value="@Model.Query" />
             <input type="hidden" name="SourceQuery" value="@Model.Query" />
             <label class="form-field">
-                <span>Optional note for the content team</span>
-                <textarea name="Note" rows="3" maxlength="1000" placeholder="Optional context, meaning, or example sentence"></textarea>
+                <span>@T["Optional note for the content team"]</span>
+                <textarea name="Note" rows="3" maxlength="1000" placeholder="@T["Optional context, meaning, or example sentence"]"></textarea>
             </label>
-            <button type="submit" class="button button--primary">Suggest adding @Model.Query</button>
+            <button type="submit" class="button button--primary">@T["Suggest adding {0}", Model.Query]</button>
         </form>
     </section>
 }

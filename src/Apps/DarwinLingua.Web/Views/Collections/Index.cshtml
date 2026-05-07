@@ -1,19 +1,19 @@
 @model DarwinLingua.Web.Models.WordCollectionIndexPageViewModel
 @{
-    ViewData["Title"] = "Collections";
+    ViewData["Title"] = T["Collections"];
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Collections</span>
-    <h1 class="headline-md">Curated study paths</h1>
+    <span class="eyebrow">@T["Collections"]</span>
+    <h1 class="headline-md">@T["Curated study paths"]</h1>
     <p class="body-lg">
-        Study focused sets built around workplace situations, systems, everyday communication, and practical German topics.
+        @T["Study focused sets built around workplace situations, systems, everyday communication, and practical German topics."]
     </p>
 </section>
 
 @if (Model.Collections.Count == 0)
 {
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("Collections are being prepared", "Curated study paths will appear here as soon as they are available for your account.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Collections are being prepared"].Value, T["Curated study paths will appear here as soon as they are available for your account."].Value)' />
 }
 else
 {

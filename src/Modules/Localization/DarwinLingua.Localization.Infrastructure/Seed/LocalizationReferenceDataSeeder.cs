@@ -147,17 +147,7 @@ internal sealed class LocalizationReferenceDataSeeder : IDatabaseSeeder
                 continue;
             }
 
-            existingLanguage.UpdateNames(seedDefinition.EnglishName, seedDefinition.NativeName);
-            existingLanguage.UpdateCapabilities(seedDefinition.SupportsUserInterface, seedDefinition.SupportsMeanings);
-
-            if (seedDefinition.IsActive)
-            {
-                existingLanguage.Activate();
-            }
-            else
-            {
-                existingLanguage.Deactivate();
-            }
+            continue;
         }
 
         if (dbContext.ChangeTracker.HasChanges())

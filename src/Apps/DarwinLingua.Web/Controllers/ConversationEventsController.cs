@@ -1,8 +1,10 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -13,6 +15,7 @@ public sealed class ConversationEventsController(
     ICommunityNotificationEmailService notificationEmailService,
     IAccountEmailRateLimiter rateLimiter,
     ILogger<ConversationEventsController> logger,
+    IStringLocalizer<SharedResource> localizer,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     private const int MaxFilterLength = 128;
@@ -77,7 +80,9 @@ public sealed class ConversationEventsController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Conversation event could not be loaded for {Slug}.", normalizedSlug);
-            return ServiceUnavailableView("Event is temporarily unavailable", "This conversation event could not be loaded right now. Please return to events and try again.");
+            return ServiceUnavailableView(
+                localizer["Event is temporarily unavailable"],
+                localizer["This conversation event could not be loaded right now. Please return to events and try again."]);
         }
 
         if (conversationEvent is null)
@@ -133,20 +138,20 @@ public sealed class ConversationEventsController(
 
         if (!ModelState.IsValid)
         {
-            TempData["ErrorMessage"] = "Required RSVP fields are missing or invalid.";
+            TempData["ErrorMessage"] = localizer["Required RSVP fields are missing or invalid."].Value;
             return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
         }
 
         if (!IsAllowedRsvpStatus(input.Status))
         {
-            TempData["ErrorMessage"] = "The selected RSVP status is not supported.";
+            TempData["ErrorMessage"] = localizer["The selected RSVP status is not supported."].Value;
             return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
         }
 
         string participantEmail = input.ParticipantEmail.Trim();
         if (!rateLimiter.TryConsume("event-rsvp", $"{normalizedSlug}:{participantEmail}", 5, TimeSpan.FromMinutes(15)))
         {
-            TempData["ErrorMessage"] = "Too many RSVP attempts. Please wait a few minutes and try again.";
+            TempData["ErrorMessage"] = localizer["Too many RSVP attempts. Please wait a few minutes and try again."].Value;
             return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
         }
 
@@ -169,7 +174,7 @@ public sealed class ConversationEventsController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = $"RSVP saved as {rsvp.Status}.";
+            TempData["StatusMessage"] = localizer["RSVP saved as {0}.", rsvp.Status].Value;
             analyticsService?.Record(WebProductAnalyticsEvents.EventRsvpSubmitted, $"event:{normalizedSlug}:{rsvp.Status}");
         }
         catch (InvalidOperationException exception)
@@ -179,7 +184,7 @@ public sealed class ConversationEventsController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Event RSVP could not be submitted for {Slug}.", normalizedSlug);
-            TempData["ErrorMessage"] = "The RSVP could not be saved right now. Please try again.";
+            TempData["ErrorMessage"] = localizer["The RSVP could not be saved right now. Please try again."].Value;
         }
 
         return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
@@ -237,10 +242,10 @@ public sealed class ConversationEventsController(
         string.Equals(status, "going", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(status, "cancelled", StringComparison.OrdinalIgnoreCase);
 
-    private static string BuildRsvpErrorMessage(InvalidOperationException exception) =>
+    private string BuildRsvpErrorMessage(InvalidOperationException exception) =>
         exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
-            ? "This conversation event is no longer available."
-            : "The RSVP could not be saved right now. Please try again.";
+            ? localizer["This conversation event is no longer available."].Value
+            : localizer["The RSVP could not be saved right now. Please try again."].Value;
 
     private static string? NormalizeFilter(string? value)
     {

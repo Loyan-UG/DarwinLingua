@@ -1,40 +1,40 @@
 @model DarwinLingua.Web.Models.BillingPageViewModel
 @{
-    ViewData["Title"] = "Billing";
+    ViewData["Title"] = T["Billing"];
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Billing</span>
-    <h1 class="headline-md">Plan and access</h1>
-    <p class="body-lg">Manage your learning access, premium features, and secure subscription checkout.</p>
+    <span class="eyebrow">@T["Billing"]</span>
+    <h1 class="headline-md">@T["Plan and access"]</h1>
+    <p class="body-lg">@T["Manage your learning access, premium features, and secure subscription checkout."]</p>
     @if (TempData["BillingStatus"] is string statusMessage)
     {
         <div class="status-banner">@statusMessage</div>
     }
     <div class="grid-two-col">
         <article class="panel stack-md plan-card">
-            <h2 class="headline-sm">Current plan</h2>
+            <h2 class="headline-sm">@T["Current plan"]</h2>
             <div class="plan-card__tier">@Model.Entitlement.Tier</div>
             <ul class="feature-list">
                 @if (Model.Entitlement.TrialEndsAtUtc is not null)
                 {
-                    <li>Trial ends: @Model.Entitlement.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+                    <li>@T["Trial ends"]: @Model.Entitlement.TrialEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
                 }
                 @if (Model.Entitlement.PremiumEndsAtUtc is not null)
                 {
-                    <li>Premium renews or expires: @Model.Entitlement.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+                    <li>@T["Premium renews or expires"]: @Model.Entitlement.PremiumEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
                 }
                 @if (!string.IsNullOrWhiteSpace(Model.BillingStatus))
                 {
-                    <li>Billing status: @Model.BillingStatus</li>
+                    <li>@T["Billing status"]: @Model.BillingStatus</li>
                 }
                 @if (Model.CurrentPeriodEndsAtUtc is not null)
                 {
-                    <li>Current billing period ends: @Model.CurrentPeriodEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
+                    <li>@T["Current billing period ends"]: @Model.CurrentPeriodEndsAtUtc.Value.UtcDateTime.ToString("u")</li>
                 }
                 @if (!string.IsNullOrWhiteSpace(Model.ProviderSubscriptionId))
                 {
-                    <li>Stripe subscription: @Model.ProviderSubscriptionId</li>
+                    <li>@T["Stripe subscription"]: @Model.ProviderSubscriptionId</li>
                 }
             </ul>
             <div class="chip-grid">
@@ -45,36 +45,36 @@
             </div>
         </article>
         <article class="panel stack-md plan-card plan-card--premium">
-            <h2 class="headline-sm">Premium monthly</h2>
-            <p class="body-sm">Unlock favorites, second meaning language, collections, topics, advanced practice, conversation tools, and premium learning workflows.</p>
+            <h2 class="headline-sm">@T["Premium monthly"]</h2>
+            <p class="body-sm">@T["Unlock favorites, second meaning language, collections, topics, advanced practice, conversation tools, and premium learning workflows."]</p>
             @if (!Model.StripeEnabled)
             {
-                <div class="alert alert--danger">Online checkout is not enabled in this environment. Your current access remains unchanged.</div>
+                <div class="alert alert--danger">@T["Online checkout is not enabled in this environment. Your current access remains unchanged."]</div>
             }
             else if (!Model.StripeConfigured)
             {
-                <div class="alert alert--danger">Stripe checkout is enabled but not fully configured. A secret key, webhook secret, and monthly price id are required.</div>
+                <div class="alert alert--danger">@T["Stripe checkout is enabled but not fully configured. A secret key, webhook secret, and monthly price id are required."]</div>
             }
             else if (Model.CanStartCheckout)
             {
                 <form method="post" asp-controller="Billing" asp-action="StartStripeCheckout">
                     @Html.AntiForgeryToken()
-                    <button type="submit" class="button button--primary">Continue to Stripe</button>
+                    <button type="submit" class="button button--primary">@T["Continue to Stripe"]</button>
                 </form>
             }
             else
             {
-                <p class="body-sm">Premium access is active.</p>
+                <p class="body-sm">@T["Premium access is active."]</p>
                 @if (Model.CanManageStripeSubscription)
                 {
                     <form method="post" asp-controller="Billing" asp-action="OpenStripePortal">
                         @Html.AntiForgeryToken()
-                        <button type="submit" class="button button--secondary">Manage in Stripe</button>
+                        <button type="submit" class="button button--secondary">@T["Manage in Stripe"]</button>
                     </form>
                 }
                 else
                 {
-                    <p class="body-sm">Subscription management will be available after your premium subscription is linked.</p>
+                    <p class="body-sm">@T["Subscription management will be available after your premium subscription is linked."]</p>
                 }
             }
         </article>
@@ -83,20 +83,20 @@
 
 <section class="grid-two-col">
     <article class="panel stack-md">
-        <h2 class="headline-sm">What Premium adds</h2>
+        <h2 class="headline-sm">@T["What Premium adds"]</h2>
         <ul class="feature-list">
-            <li>Dual meaning languages on supported learning pages.</li>
-            <li>Favorites, collections, topic browsing, and recent review workflows.</li>
-            <li>Advanced practice, conversation starters, event preparation, and partner tools.</li>
-            <li>Stripe subscription management when a customer record is linked.</li>
+            <li>@T["Dual meaning languages on supported learning pages."]</li>
+            <li>@T["Favorites, collections, topic browsing, and recent review workflows."]</li>
+            <li>@T["Advanced practice, conversation starters, event preparation, and partner tools."]</li>
+            <li>@T["Stripe subscription management when a customer record is linked."]</li>
         </ul>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Billing safety</h2>
+        <h2 class="headline-sm">@T["Billing safety"]</h2>
         <ul class="feature-list">
-            <li>Checkout is handled by Stripe; card details are not stored in Darwin Lingua.</li>
-            <li>Subscription changes are applied from Stripe success return and signed webhooks.</li>
-            <li>Payment action, premium activation, and premium end notifications are sent by email.</li>
+            <li>@T["Checkout is handled by Stripe; card details are not stored in Darwin Lingua."]</li>
+            <li>@T["Subscription changes are applied from Stripe success return and signed webhooks."]</li>
+            <li>@T["Payment action, premium activation, and premium end notifications are sent by email."]</li>
         </ul>
     </article>
 </section>
@@ -104,13 +104,13 @@
 <section class="panel stack-md">
     <div class="section-heading">
         <div>
-            <span class="eyebrow">Billing activity</span>
-            <h2 class="headline-sm">Recent Stripe events</h2>
+            <span class="eyebrow">@T["Billing activity"]</span>
+            <h2 class="headline-sm">@T["Recent Stripe events"]</h2>
         </div>
     </div>
     @if (Model.RecentEvents.Count == 0)
     {
-        <p class="body-sm">No Stripe billing events have been recorded for this account yet.</p>
+        <p class="body-sm">@T["No Stripe billing events have been recorded for this account yet."]</p>
     }
     else
     {
@@ -118,12 +118,12 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Provider</th>
-                        <th>Event</th>
-                        <th>Status</th>
-                        <th>Created</th>
-                        <th>Processed</th>
-                        <th>Issue</th>
+                        <th>@T["Provider"]</th>
+                        <th>@T["Event"]</th>
+                        <th>@T["Status"]</th>
+                        <th>@T["Created"]</th>
+                        <th>@T["Processed"]</th>
+                        <th>@T["Issue"]</th>
                     </tr>
                 </thead>
                 <tbody>

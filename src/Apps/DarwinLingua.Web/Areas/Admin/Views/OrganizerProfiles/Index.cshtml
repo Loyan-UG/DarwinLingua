@@ -1,11 +1,11 @@
 @model DarwinLingua.Web.Models.AdminOrganizerProfilesPageViewModel
 @{
-    ViewData["Title"] = "Organizer profiles";
+    ViewData["Title"] = T["Organizer profiles"];
     int actionableClaimCount = Model.ClaimRequests.Count(item => item.Status is "submitted" or "reviewing");
 }
 
 <section class="panel stack-lg">
-    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Organizer profiles", "Manual reviewed profiles", "Create or replace public organizer pages before enabling organizer self-service.")' />
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(T["Organizer profiles"].Value, T["Manual reviewed profiles"].Value, T["Create or replace public organizer pages before enabling organizer self-service."].Value)' />
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
         <div class="status-banner status-banner--success">@Model.StatusMessage</div>
@@ -17,70 +17,70 @@
 
     <div class="admin-summary-grid">
         <a href="#organizer-profiles-list" class="admin-summary-tile">
-            <span class="eyebrow">Profiles</span>
+            <span class="eyebrow">@T["Profiles"]</span>
             <strong>@Model.Profiles.Count</strong>
         </a>
         <a href="#organizer-claims" class="admin-summary-tile">
-            <span class="eyebrow">Open claims</span>
+            <span class="eyebrow">@T["Open claims"]</span>
             <strong>@actionableClaimCount</strong>
         </a>
         <a href="#organizer-owners" class="admin-summary-tile">
-            <span class="eyebrow">Owners</span>
+            <span class="eyebrow">@T["Owners"]</span>
             <strong>@Model.Owners.Count</strong>
         </a>
     </div>
 
-    <nav class="admin-anchor-nav" aria-label="Organizer profile sections">
-        <a href="#organizer-edit">Create/edit</a>
-        <a href="#organizer-owner-assign">Assign owner</a>
-        <a href="#organizer-owners">Owners</a>
-        <a href="#organizer-claims">Claims</a>
-        <a href="#organizer-profiles-list">Profiles</a>
+    <nav class="admin-anchor-nav" aria-label="@T["Organizer profile sections"]">
+        <a href="#organizer-edit">@T["Create/edit"]</a>
+        <a href="#organizer-owner-assign">@T["Assign owner"]</a>
+        <a href="#organizer-owners">@T["Owners"]</a>
+        <a href="#organizer-claims">@T["Claims"]</a>
+        <a href="#organizer-profiles-list">@T["Profiles"]</a>
     </nav>
 </section>
 
 <section id="organizer-edit" class="panel stack-md">
-    <h2 class="headline-sm">Create or replace organizer</h2>
-    <form method="post" class="form-grid" data-confirm-submit="Save this public organizer profile?">
+    <h2 class="headline-sm">@T["Create or replace organizer"]</h2>
+    <form method="post" class="form-grid" data-confirm-submit="@T["Save this public organizer profile?"]">
         @Html.AntiForgeryToken()
         <label class="field">
-            <span>Slug</span>
+            <span>@T["Slug"]</span>
             <input name="Slug" value="@Model.Input.Slug" placeholder="berlin-language-club" />
         </label>
         <label class="field">
-            <span>Name</span>
+            <span>@T["Name"]</span>
             <input name="DisplayName" value="@Model.Input.DisplayName" />
         </label>
         <label class="field">
-            <span>Type</span>
+            <span>@T["Type"]</span>
             <input name="OrganizerType" value="@Model.Input.OrganizerType" placeholder="club" />
         </label>
         <label class="field">
-            <span>Description</span>
+            <span>@T["Description"]</span>
             <input name="Description" value="@Model.Input.Description" />
         </label>
         <label class="field">
-            <span>City or region</span>
+            <span>@T["City or region"]</span>
             <input name="CityRegion" value="@Model.Input.CityRegion" />
         </label>
         <label class="field">
-            <span>Supported levels</span>
+            <span>@T["Supported levels"]</span>
             <input name="SupportedLearnerLevels" value="@Model.Input.SupportedLearnerLevels" placeholder="A1,A2" />
         </label>
         <label class="field">
-            <span>Helper languages</span>
+            <span>@T["Helper languages"]</span>
             <input name="HelperLanguageCodes" value="@Model.Input.HelperLanguageCodes" placeholder="en,fa" />
         </label>
         <label class="field">
-            <span>Website</span>
+            <span>@T["Website"]</span>
             <input name="WebsiteUrl" value="@Model.Input.WebsiteUrl" />
         </label>
         <label class="field">
-            <span>Public contact</span>
+            <span>@T["Public contact"]</span>
             <input name="PublicContactMethod" value="@Model.Input.PublicContactMethod" />
         </label>
         <label class="field">
-            <span>Verification status</span>
+            <span>@T["Verification status"]</span>
             <select name="VerificationStatus">
                 @foreach (string status in new[] { "reviewed", "verified", "unverified", "stale" })
                 {
@@ -89,7 +89,7 @@
             </select>
         </label>
         <label class="field">
-            <span>Plan</span>
+            <span>@T["Plan"]</span>
             <select name="PlanKey">
                 @foreach (string planKey in new[] { "free-organizer", "community-organizer", "premium-organizer" })
                 {
@@ -98,48 +98,48 @@
             </select>
         </label>
         <label class="field">
-            <span>Historical event count</span>
+            <span>@T["Historical event count"]</span>
             <input name="HistoricalEventCount" value="@Model.Input.HistoricalEventCount" type="number" min="0" />
         </label>
         <label class="field">
-            <span>Online available</span>
+            <span>@T["Online available"]</span>
             <select name="IsOnlineAvailable">
-                <option value="false" selected="@(!Model.Input.IsOnlineAvailable)">No</option>
-                <option value="true" selected="@Model.Input.IsOnlineAvailable">Yes</option>
+                <option value="false" selected="@(!Model.Input.IsOnlineAvailable)">@T["No"]</option>
+                <option value="true" selected="@Model.Input.IsOnlineAvailable">@T["Yes"]</option>
             </select>
         </label>
         <div class="action-row">
-            <button type="submit" class="button button--primary">Save organizer</button>
+            <button type="submit" class="button button--primary">@T["Save organizer"]</button>
         </div>
     </form>
 </section>
 
 <section id="organizer-owner-assign" class="panel stack-md">
-    <h2 class="headline-sm">Assign owner</h2>
-    <form method="post" asp-action="AssignOwner" class="form-grid" data-confirm-submit="Assign this owner email to the organizer profile?">
+    <h2 class="headline-sm">@T["Assign owner"]</h2>
+    <form method="post" asp-action="AssignOwner" class="form-grid" data-confirm-submit="@T["Assign this owner email to the organizer profile?"]">
         @Html.AntiForgeryToken()
         <label class="field">
-            <span>Organizer profile slug</span>
+            <span>@T["Organizer profile slug"]</span>
             <input name="OrganizerProfileSlug" value="@Model.OwnerInput.OrganizerProfileSlug" placeholder="berlin-language-club" />
         </label>
         <label class="field">
-            <span>Owner email</span>
+            <span>@T["Owner email"]</span>
             <input name="OwnerEmail" value="@Model.OwnerInput.OwnerEmail" type="email" />
         </label>
         <div class="action-row">
-            <button type="submit" class="button button--primary">Assign owner</button>
+            <button type="submit" class="button button--primary">@T["Assign owner"]</button>
         </div>
     </form>
 </section>
 
 <section id="organizer-owners" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Assigned owners</h2>
-        <span class="status-pill">@Model.Owners.Count shown</span>
+        <h2 class="headline-sm">@T["Assigned owners"]</h2>
+        <span class="status-pill">@T["{0} shown", Model.Owners.Count]</span>
     </div>
     @if (Model.Owners.Count == 0)
     {
-        <p>No organizer owners assigned yet.</p>
+        <p>@T["No organizer owners assigned yet."]</p>
     }
     else
     {
@@ -147,10 +147,10 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Organizer</th>
-                        <th>Owner</th>
-                        <th>Assigned by</th>
-                        <th>Assigned</th>
+                        <th>@T["Organizer"]</th>
+                        <th>@T["Owner"]</th>
+                        <th>@T["Assigned by"]</th>
+                        <th>@T["Assigned"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -173,13 +173,13 @@
 
 <section id="organizer-claims" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Claim requests</h2>
-        <span class="status-pill">@actionableClaimCount actionable</span>
+        <h2 class="headline-sm">@T["Claim requests"]</h2>
+        <span class="status-pill">@T["{0} actionable", actionableClaimCount]</span>
     </div>
-    <p>Approving a claim records the decision and sends the requester email. Assign owner access separately when the requester should manage the organizer profile.</p>
+    <p>@T["Approving a claim records the decision and sends the requester email. Assign owner access separately when the requester should manage the organizer profile."]</p>
     @if (Model.ClaimRequests.Count == 0)
     {
-        <p>No organizer claim requests yet.</p>
+        <p>@T["No organizer claim requests yet."]</p>
     }
     else
     {
@@ -187,12 +187,12 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Organizer</th>
-                        <th>Requester</th>
-                        <th>Relationship</th>
-                        <th>Status</th>
-                        <th>Submitted</th>
-                        <th>Actions</th>
+                        <th>@T["Organizer"]</th>
+                        <th>@T["Requester"]</th>
+                        <th>@T["Relationship"]</th>
+                        <th>@T["Status"]</th>
+                        <th>@T["Submitted"]</th>
+                        <th>@T["Actions"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -214,25 +214,25 @@
                                 <div class="action-row">
                                     @if (item.Status is "submitted" or "reviewing")
                                     {
-                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="Mark this organizer claim as reviewing?">
+                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="@T["Mark this organizer claim as reviewing?"]">
                                             @Html.AntiForgeryToken()
                                             <input type="hidden" name="Status" value="reviewing" />
-                                            <button type="submit" class="button button--secondary">Reviewing</button>
+                                            <button type="submit" class="button button--secondary">@T["Reviewing"]</button>
                                         </form>
-                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="Approve this organizer claim and notify the requester?">
+                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="@T["Approve this organizer claim and notify the requester?"]">
                                             @Html.AntiForgeryToken()
                                             <input type="hidden" name="Status" value="approved" />
-                                            <button type="submit" class="button button--primary">Approve</button>
+                                            <button type="submit" class="button button--primary">@T["Approve"]</button>
                                         </form>
-                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="Reject this organizer claim and notify the requester?">
+                                        <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="@T["Reject this organizer claim and notify the requester?"]">
                                             @Html.AntiForgeryToken()
                                             <input type="hidden" name="Status" value="rejected" />
-                                            <button type="submit" class="button button--secondary">Reject</button>
+                                            <button type="submit" class="button button--secondary">@T["Reject"]</button>
                                         </form>
                                     }
                                     else
                                     {
-                                        <span>Decision sent</span>
+                                        <span>@T["Decision sent"]</span>
                                     }
                                 </div>
                             </td>
@@ -246,12 +246,12 @@
 
 <section id="organizer-profiles-list" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Published organizers</h2>
-        <span class="status-pill">@Model.Profiles.Count shown</span>
+        <h2 class="headline-sm">@T["Published organizers"]</h2>
+        <span class="status-pill">@T["{0} shown", Model.Profiles.Count]</span>
     </div>
     @if (Model.Profiles.Count == 0)
     {
-        <p>No published organizer profiles yet.</p>
+        <p>@T["No published organizer profiles yet."]</p>
     }
     else
     {
@@ -259,11 +259,11 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Organizer</th>
-                        <th>Type</th>
-                        <th>Levels</th>
-                        <th>Events</th>
-                        <th>Status</th>
+                        <th>@T["Organizer"]</th>
+                        <th>@T["Type"]</th>
+                        <th>@T["Levels"]</th>
+                        <th>@T["Events"]</th>
+                        <th>@T["Status"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -273,11 +273,11 @@
                             <td>
                                 <strong>@item.DisplayName</strong>
                                 <div>@item.Slug</div>
-                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Slug">@T["View public page"]</a>
                             </td>
                             <td>@item.OrganizerType</td>
                             <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
-                            <td>@item.ActiveEventCount active · @item.HistoricalEventCount historical</td>
+                            <td>@T["{0} active", item.ActiveEventCount] · @T["{0} historical", item.HistoricalEventCount]</td>
                             <td>@item.VerificationStatus</td>
                         </tr>
                     }

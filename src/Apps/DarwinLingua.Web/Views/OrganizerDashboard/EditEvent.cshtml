@@ -1,17 +1,17 @@
 @model DarwinLingua.Web.Models.OrganizerEventEditPageViewModel
 @{
-    ViewData["Title"] = Model.IsNew ? $"New event for {Model.Profile.DisplayName}" : $"Edit {Model.Input.Name}";
+    ViewData["Title"] = Model.IsNew ? T["New event for {0}", Model.Profile.DisplayName] : T["Edit {0}", Model.Input.Name];
 }
 
 <section class="panel stack-lg">
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Profile.DisplayName · @Model.Profile.PlanKey</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="Index">Dashboard</a>
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Profile.Slug">Organizer page</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="Index">@T["Dashboard"]</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Profile.Slug">@T["Organizer page"]</a>
         </div>
     </div>
-    <h1 class="headline-md">@(Model.IsNew ? "New event" : "Edit event")</h1>
+    <h1 class="headline-md">@(Model.IsNew ? T["New event"] : T["Edit event"])</h1>
     @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
     {
         <div class="status-banner status-banner--error">@Model.ErrorMessage</div>
@@ -19,14 +19,14 @@
 </section>
 
 <section class="panel stack-md">
-    <h2 class="headline-sm">Event listing</h2>
+    <h2 class="headline-sm">@T["Event listing"]</h2>
     <form method="post" class="form-grid">
         @Html.AntiForgeryToken()
         <label class="field">
-            <span>Slug</span>
+            <span>@T["Slug"]</span>
             @if (Model.IsNew)
             {
-                <input name="Slug" value="@Model.Input.Slug" placeholder="berlin-cafe-a1" />
+                <input name="Slug" value="@Model.Input.Slug" placeholder="@T["berlin-cafe-a1"]" />
             }
             else
             {
@@ -34,74 +34,74 @@
             }
         </label>
         <label class="field">
-            <span>Name</span>
+            <span>@T["Name"]</span>
             <input name="Name" value="@Model.Input.Name" />
         </label>
         <label class="field field--wide">
-            <span>Description</span>
+            <span>@T["Description"]</span>
             <textarea name="Description" rows="6">@Model.Input.Description</textarea>
         </label>
         <label class="field">
-            <span>City</span>
+            <span>@T["City"]</span>
             <input name="City" value="@Model.Input.City" />
         </label>
         <label class="field">
-            <span>Country or region</span>
+            <span>@T["Country or region"]</span>
             <input name="CountryRegion" value="@Model.Input.CountryRegion" />
         </label>
         <label class="field">
-            <span>Approximate location</span>
+            <span>@T["Approximate location"]</span>
             <input name="ApproximateLocation" value="@Model.Input.ApproximateLocation" />
         </label>
         <label class="field">
-            <span>Category</span>
-            <input name="Category" value="@Model.Input.Category" placeholder="Conversation cafe" />
+            <span>@T["Category"]</span>
+            <input name="Category" value="@Model.Input.Category" placeholder="@T["Conversation cafe"]" />
         </label>
         <label class="field">
-            <span>Supported levels</span>
-            <input name="SupportedLearnerLevels" value="@Model.Input.SupportedLearnerLevels" placeholder="A1, A2" />
+            <span>@T["Supported levels"]</span>
+            <input name="SupportedLearnerLevels" value="@Model.Input.SupportedLearnerLevels" placeholder="@T["A1, A2"]" />
         </label>
         <label class="field">
-            <span>Helper languages</span>
-            <input name="HelperLanguageCodes" value="@Model.Input.HelperLanguageCodes" placeholder="en, fa" />
+            <span>@T["Helper languages"]</span>
+            <input name="HelperLanguageCodes" value="@Model.Input.HelperLanguageCodes" placeholder="@T["en, fa"]" />
         </label>
         <label class="field">
-            <span>External link</span>
+            <span>@T["External link"]</span>
             <input name="ExternalLink" value="@Model.Input.ExternalLink" />
         </label>
         <label class="field">
-            <span>Contact method</span>
+            <span>@T["Contact method"]</span>
             <input name="ContactMethod" value="@Model.Input.ContactMethod" />
         </label>
         <label class="field">
-            <span>Schedule</span>
+            <span>@T["Schedule"]</span>
             <input name="ScheduleText" value="@Model.Input.ScheduleText" />
         </label>
         <label class="field">
-            <span>Recurrence rule</span>
-            <input name="RecurrenceRule" value="@Model.Input.RecurrenceRule" placeholder="Weekly, Tuesday, 18:00" />
+            <span>@T["Recurrence rule"]</span>
+            <input name="RecurrenceRule" value="@Model.Input.RecurrenceRule" placeholder="@T["Weekly, Tuesday, 18:00"]" />
         </label>
         <label class="field">
-            <span>Capacity</span>
+            <span>@T["Capacity"]</span>
             <input name="Capacity" value="@Model.Input.Capacity" type="number" min="1" />
         </label>
         <label class="field">
-            <span>Price type</span>
-            <input name="PriceType" value="@Model.Input.PriceType" placeholder="Free, paid, donation" />
+            <span>@T["Price type"]</span>
+            <input name="PriceType" value="@Model.Input.PriceType" placeholder="@T["Free, paid, donation"]" />
         </label>
         <label class="field">
-            <span>Preparation pack slugs</span>
-            <input name="LinkedEventPreparationPackSlugs" value="@Model.Input.LinkedEventPreparationPackSlugs" placeholder="a1-cafe-first-meeting-prep" />
+            <span>@T["Preparation pack slugs"]</span>
+            <input name="LinkedEventPreparationPackSlugs" value="@Model.Input.LinkedEventPreparationPackSlugs" placeholder="@T["a1-cafe-first-meeting-prep"]" />
         </label>
         <label class="field">
-            <span>Online</span>
+            <span>@T["Online"]</span>
             <select name="IsOnline">
-                <option value="false" selected="@(!Model.Input.IsOnline)">In person</option>
-                <option value="true" selected="@Model.Input.IsOnline">Online</option>
+                <option value="false" selected="@(!Model.Input.IsOnline)">@T["In person"]</option>
+                <option value="true" selected="@Model.Input.IsOnline">@T["Online"]</option>
             </select>
         </label>
         <div class="action-row">
-            <button type="submit" class="button button--primary">Save event</button>
+            <button type="submit" class="button button--primary">@T["Save event"]</button>
         </div>
     </form>
 </section>

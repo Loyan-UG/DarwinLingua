@@ -1,12 +1,12 @@
 @model DarwinLingua.Web.Models.SettingsPageViewModel
 @{
-    ViewData["Title"] = "Settings";
+    ViewData["Title"] = T["Settings"];
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Settings</span>
-    <h1 class="headline-md">Language preferences</h1>
-    <p class="body-lg">These preferences control the site language and the meanings shown across word pages, lists, scenarios, and practice content.</p>
+    <span class="eyebrow">@T["Settings"]</span>
+    <h1 class="headline-md">@T["Language preferences"]</h1>
+    <p class="body-lg">@T["These preferences control the site language and the meanings shown across word pages, lists, scenarios, and practice content."]</p>
 
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
@@ -17,33 +17,33 @@
         @Html.AntiForgeryToken()
         <div class="form-grid">
             <label class="field">
-                <span>UI language</span>
+                <span>@T["UI language"]</span>
                 <select asp-for="Input.UiLanguageCode" asp-items="Model.UiLanguageOptions"></select>
-                <small class="body-sm">Used for interface text where localization is available.</small>
+                <small class="body-sm">@T["Used for interface text where localization is available."]</small>
                 <span asp-validation-for="Input.UiLanguageCode" class="validation-message"></span>
             </label>
 
             <label class="field">
-                <span>Primary meaning language</span>
+                <span>@T["Primary meaning language"]</span>
                 <select asp-for="Input.PrimaryMeaningLanguageCode" asp-items="Model.MeaningLanguageOptions"></select>
-                <small class="body-sm">Shown first in word details, search results, and learning cards.</small>
+                <small class="body-sm">@T["Shown first in word details, search results, and learning cards."]</small>
                 <span asp-validation-for="Input.PrimaryMeaningLanguageCode" class="validation-message"></span>
             </label>
 
             <label class="field">
-                <span>Secondary meaning language</span>
+                <span>@T["Secondary meaning language"]</span>
                 <select asp-for="Input.SecondaryMeaningLanguageCode" asp-items="Model.SecondaryMeaningLanguageOptions" disabled="@(!Model.CanUseDualMeaningLanguage)"></select>
-                <small class="body-sm">Optional second meaning column for comparison.</small>
+                <small class="body-sm">@T["Optional second meaning column for comparison."]</small>
                 @if (!Model.CanUseDualMeaningLanguage && !string.IsNullOrWhiteSpace(Model.DualMeaningLanguageLockedMessage))
                 {
-                    <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Billing" asp-action="Index">View billing</a></span>
+                    <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Billing" asp-action="Index">@T["View billing"]</a></span>
                 }
             </label>
         </div>
 
         <div class="action-row">
-            <button type="submit" class="button button--primary">Save preferences</button>
-            <a class="button button--secondary" asp-controller="Account" asp-action="Index">Back to account</a>
+            <button type="submit" class="button button--primary">@T["Save preferences"]</button>
+            <a class="button button--secondary" asp-controller="Account" asp-action="Index">@T["Back to account"]</a>
         </div>
     </form>
 </section>

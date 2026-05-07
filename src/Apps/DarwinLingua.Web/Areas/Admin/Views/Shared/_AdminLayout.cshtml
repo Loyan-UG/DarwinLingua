@@ -1,5 +1,10 @@
+@using System.Globalization
+@{
+    string uiLanguageCode = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    string uiDirection = TextDirection.FromLanguageCode(uiLanguageCode);
+}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="@uiLanguageCode" dir="@uiDirection">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,56 +15,56 @@
 <body class="app-body admin-body">
     <div class="shell-backdrop" aria-hidden="true"></div>
     <div class="admin-shell">
-        <aside class="admin-sidebar" aria-label="Admin navigation">
+        <aside class="admin-sidebar" aria-label="@T["Admin navigation"]">
             <a class="admin-brand" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
                 <img class="admin-brand__logo" src="~/images/logo.png" alt="" width="56" height="56" />
                 <span>
                     <strong>Darwin Lingua</strong>
-                    <small>Admin console</small>
+                    <small>@T["Admin console"]</small>
                 </span>
             </a>
             <nav class="admin-nav">
                 <details open>
-                    <summary>Overview</summary>
-                    <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
-                    <a asp-area="Admin" asp-controller="Reports" asp-action="Index">Reports</a>
-                    <a asp-area="Admin" asp-controller="Analytics" asp-action="Index">Analytics</a>
+                    <summary>@T["Overview"]</summary>
+                    <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">@T["Dashboard"]</a>
+                    <a asp-area="Admin" asp-controller="Reports" asp-action="Index">@T["Reports"]</a>
+                    <a asp-area="Admin" asp-controller="Analytics" asp-action="Index">@T["Analytics"]</a>
                 </details>
                 <details open>
-                    <summary>Content</summary>
-                    <a asp-area="Admin" asp-controller="Words" asp-action="Index">Words</a>
-                    <a asp-area="Admin" asp-controller="WordSuggestions" asp-action="Index">Word suggestions</a>
-                    <a asp-area="Admin" asp-controller="Collections" asp-action="Index">Collections</a>
-                    <a asp-area="Admin" asp-controller="Scenarios" asp-action="Index">Scenarios</a>
-                    <a asp-area="Admin" asp-controller="Topics" asp-action="Index">Topics</a>
-                    <a asp-area="Admin" asp-controller="Labels" asp-action="Index">Labels</a>
-                    <a asp-area="Admin" asp-controller="Imports" asp-action="Index">Imports</a>
-                    <a asp-area="Admin" asp-controller="Drafts" asp-action="Index">Drafts</a>
-                    <a asp-area="Admin" asp-controller="Publishing" asp-action="Index">Publishing</a>
+                    <summary>@T["Content"]</summary>
+                    <a asp-area="Admin" asp-controller="Words" asp-action="Index">@T["Words"]</a>
+                    <a asp-area="Admin" asp-controller="WordSuggestions" asp-action="Index">@T["Word suggestions"]</a>
+                    <a asp-area="Admin" asp-controller="Collections" asp-action="Index">@T["Collections"]</a>
+                    <a asp-area="Admin" asp-controller="Scenarios" asp-action="Index">@T["Scenarios"]</a>
+                    <a asp-area="Admin" asp-controller="Topics" asp-action="Index">@T["Topics"]</a>
+                    <a asp-area="Admin" asp-controller="Labels" asp-action="Index">@T["Labels"]</a>
+                    <a asp-area="Admin" asp-controller="Imports" asp-action="Index">@T["Imports"]</a>
+                    <a asp-area="Admin" asp-controller="Drafts" asp-action="Index">@T["Drafts"]</a>
+                    <a asp-area="Admin" asp-controller="Publishing" asp-action="Index">@T["Publishing"]</a>
                 </details>
                 <details>
-                    <summary>Community</summary>
-                    <a asp-area="Admin" asp-controller="ConversationEvents" asp-action="Index">Events</a>
-                    <a asp-area="Admin" asp-controller="OrganizerProfiles" asp-action="Index">Organizers</a>
-                    <a asp-area="Admin" asp-controller="Moderation" asp-action="Index">Moderation</a>
+                    <summary>@T["Community"]</summary>
+                    <a asp-area="Admin" asp-controller="ConversationEvents" asp-action="Index">@T["Events"]</a>
+                    <a asp-area="Admin" asp-controller="OrganizerProfiles" asp-action="Index">@T["Organizers"]</a>
+                    <a asp-area="Admin" asp-controller="Moderation" asp-action="Index">@T["Moderation"]</a>
                 </details>
                 <details>
-                    <summary>System</summary>
-                    <a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a>
-                    <a asp-area="Admin" asp-controller="Diagnostics" asp-action="Index">Diagnostics</a>
-                    <a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">Email</a>
-                    <a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">Billing</a>
+                    <summary>@T["System"]</summary>
+                    <a asp-area="Admin" asp-controller="Users" asp-action="Index">@T["Users"]</a>
+                    <a asp-area="Admin" asp-controller="Diagnostics" asp-action="Index">@T["Diagnostics"]</a>
+                    <a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">@T["Email"]</a>
+                    <a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">@T["Billing"]</a>
                 </details>
             </nav>
-            <a class="admin-sidebar__exit" asp-area="" asp-controller="Home" asp-action="Index">Learner site</a>
+            <a class="admin-sidebar__exit" asp-area="" asp-controller="Home" asp-action="Index">@T["Learner site"]</a>
         </aside>
         <div class="admin-workspace">
             <header class="admin-topbar">
                 <div>
-                    <span class="eyebrow">Administration</span>
-                    <strong>@(ViewData["Title"] ?? "Admin")</strong>
+                    <span class="eyebrow">@T["Administration"]</span>
+                    <strong>@(ViewData["Title"] ?? T["Admin"].Value)</strong>
                 </div>
-                <a class="button button--secondary button--compact" asp-area="" asp-controller="Home" asp-action="Index">Exit admin</a>
+                <a class="button button--secondary button--compact" asp-area="" asp-controller="Home" asp-action="Index">@T["Exit admin"]</a>
             </header>
             <main class="admin-main">
                 @RenderBody()

@@ -14,29 +14,29 @@
 
 @if (Model.Words.Count == 0)
 {
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("No words found", "The current filter did not match any catalog entries.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["No words found"].Value, T["The current filter did not match any catalog entries."].Value)' />
 }
 else
 {
     <section class="panel stack-md">
         <div class="cluster cluster--between">
-            <p class="muted-text">Showing @firstItem-@lastItem of @Model.TotalCount words</p>
-            <p class="eyebrow">Page @Model.PageNumber of @Model.TotalPages</p>
+            <p class="muted-text">@T["Showing {0}-{1} of {2} words", firstItem, lastItem, Model.TotalCount]</p>
+            <p class="eyebrow">@T["Page {0} of {1}", Model.PageNumber, Model.TotalPages]</p>
         </div>
 
         <div class="table-scroll">
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Lemma</th>
-                        <th>Status</th>
-                        <th>CEFR</th>
-                        <th>Part of speech</th>
-                        <th>Source</th>
-                        <th>Senses</th>
-                        <th>Topics</th>
-                        <th>Updated</th>
-                        <th>Actions</th>
+                        <th>@T["Lemma"]</th>
+                        <th>@T["Status"]</th>
+                        <th>@T["CEFR"]</th>
+                        <th>@T["Part of speech"]</th>
+                        <th>@T["Source"]</th>
+                        <th>@T["Senses"]</th>
+                        <th>@T["Topics"]</th>
+                        <th>@T["Updated"]</th>
+                        <th>@T["Actions"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,8 +60,8 @@ else
                             <td>@item.TopicCount</td>
                             <td>@item.UpdatedAtUtc.ToString("yyyy-MM-dd")</td>
                             <td>
-                                <a class="button button--secondary button--compact" asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">View</a>
-                                <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Details" asp-route-publicId="@item.PublicId">Edit</a>
+                                <a class="button button--secondary button--compact" asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">@T["View"]</a>
+                                <a class="button button--secondary button--compact" asp-area="Admin" asp-controller="Words" asp-action="Details" asp-route-publicId="@item.PublicId">@T["Edit"]</a>
                             </td>
                         </tr>
                     }
@@ -71,21 +71,21 @@ else
 
         @if (Model.TotalPages > 1)
         {
-            <nav class="pagination pagination--admin" aria-label="Words pagination">
+            <nav class="pagination pagination--admin" aria-label="@T["Words pagination"]">
                 <a class="button button--secondary button--compact @(Model.HasPreviousPage ? null : "is-disabled")"
                    asp-action="Index"
                    asp-route-q="@Model.Query"
                    asp-route-status="@Model.StatusFilter"
                    asp-route-sort="@Model.Sort"
                    asp-route-skip="0"
-                   asp-route-take="@Model.Take">First</a>
+                   asp-route-take="@Model.Take">@T["First"]</a>
                 <a class="button button--secondary button--compact @(Model.HasPreviousPage ? null : "is-disabled")"
                    asp-action="Index"
                    asp-route-q="@Model.Query"
                    asp-route-status="@Model.StatusFilter"
                    asp-route-sort="@Model.Sort"
                    asp-route-skip="@Model.PreviousSkip"
-                   asp-route-take="@Model.Take">Previous</a>
+                   asp-route-take="@Model.Take">@T["Previous"]</a>
 
                 @for (int page = pageWindowStart; page <= pageWindowEnd; page++)
                 {
@@ -105,14 +105,14 @@ else
                    asp-route-status="@Model.StatusFilter"
                    asp-route-sort="@Model.Sort"
                    asp-route-skip="@Model.NextSkip"
-                   asp-route-take="@Model.Take">Next</a>
+                   asp-route-take="@Model.Take">@T["Next"]</a>
                 <a class="button button--secondary button--compact @(Model.HasNextPage ? null : "is-disabled")"
                    asp-action="Index"
                    asp-route-q="@Model.Query"
                    asp-route-status="@Model.StatusFilter"
                    asp-route-sort="@Model.Sort"
                    asp-route-skip="@((Model.TotalPages - 1) * Model.Take)"
-                   asp-route-take="@Model.Take">Last</a>
+                   asp-route-take="@Model.Take">@T["Last"]</a>
             </nav>
         }
     </section>

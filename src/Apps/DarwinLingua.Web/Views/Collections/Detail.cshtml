@@ -16,7 +16,7 @@
                     <span class="chip-link chip-link--static">@level</span>
                 }
             </div>
-            <span class="eyebrow">@Model.Collection.WordCount words</span>
+            <span class="eyebrow">@T["{0} words", Model.Collection.WordCount]</span>
         </div>
         <h1 class="headline-md">@Model.Collection.Name</h1>
         @if (!string.IsNullOrWhiteSpace(Model.Collection.Description))
@@ -24,22 +24,22 @@
             <p class="body-lg">@Model.Collection.Description</p>
         }
         <div class="action-row">
-            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">Back to collections</a>
-            <a class="button button--secondary" asp-controller="Browse" asp-action="Index">Browse catalog</a>
+            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">@T["Back to collections"]</a>
+            <a class="button button--secondary" asp-controller="Browse" asp-action="Index">@T["Browse catalog"]</a>
         </div>
     </div>
 </section>
 
 @if (Model.Words.Count == 0)
 {
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("This collection is being prepared", "Words will appear here when the collection is ready for study.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["This collection is being prepared"].Value, T["Words will appear here when the collection is ready for study."].Value)' />
 }
 else
 {
     <section class="panel stack-md">
-        <span class="eyebrow">Collection words</span>
-        <h2 class="headline-sm">Practice this set</h2>
-        <p class="body-lg">Open any word to hear pronunciation, review meanings, and continue through the set at your own pace.</p>
+        <span class="eyebrow">@T["Collection words"]</span>
+        <h2 class="headline-sm">@T["Practice this set"]</h2>
+        <p class="body-lg">@T["Open any word to hear pronunciation, review meanings, and continue through the set at your own pace."]</p>
     </section>
 
     <section class="grid-two-col" data-word-list-container>

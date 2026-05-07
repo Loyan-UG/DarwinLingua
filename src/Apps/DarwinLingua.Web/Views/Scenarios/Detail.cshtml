@@ -1,14 +1,18 @@
 @model DarwinLingua.Web.Models.ScenarioDetailPageViewModel
 @{
     ViewData["Title"] = Model.Scenario.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
+        ? "ltr"
+        : TextDirection.FromLanguageCode(Model.SecondaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Scenario.CefrLevel · @Model.Scenario.Category</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--primary button--compact" asp-controller="Scenarios" asp-action="Roleplay" asp-route-slug="@Model.Scenario.Slug">Start roleplay</a>
-            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">All scenarios</a>
+            <a class="button button--primary button--compact" asp-controller="Scenarios" asp-action="Roleplay" asp-route-slug="@Model.Scenario.Slug">@T["Start roleplay"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">@T["All scenarios"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Scenario.Title</h1>
@@ -19,7 +23,7 @@
         <div class="chip-grid">
             @foreach (string topicKey in Model.Scenario.TopicKeys)
             {
-                <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+                <a class="chip-link" asp-controller="Scenarios" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
             }
         </div>
     }
@@ -28,7 +32,7 @@
 @if (Model.RelatedStarterPacks.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Conversation starters</h2>
+        <h2 class="headline-sm">@T["Conversation starters"]</h2>
         <div class="grid-two-col">
             @foreach (var starterPack in Model.RelatedStarterPacks)
             {
@@ -38,7 +42,7 @@
                         <a asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
                     </h3>
                     <p>@starterPack.Description</p>
-                    <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">Open starters</a>
+                    <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
                 </article>
             }
         </div>
@@ -48,7 +52,7 @@
 @if (Model.RelatedEventPreparationPacks.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Preparation packs</h2>
+        <h2 class="headline-sm">@T["Preparation packs"]</h2>
         <div class="grid-two-col">
             @foreach (var preparationPack in Model.RelatedEventPreparationPacks)
             {
@@ -58,7 +62,7 @@
                         <a asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
                     </h3>
                     <p>@preparationPack.Description</p>
-                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">Prepare for this event</a>
+                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@T["Prepare for this event"]</a>
                     @if (preparationPack.LinkedConversationStarterPackSlugs.Count > 0)
                     {
                         <div class="chip-grid">
@@ -76,32 +80,45 @@
 
 @if (Model.Scenario.DialogueTurns.Count > 0)
 {
+    string firstSpeakerRole = Model.Scenario.DialogueTurns[0].SpeakerRole;
     <section class="panel stack-md">
-        <h2 class="headline-sm">Dialogue</h2>
+        <h2 class="headline-sm">@T["Dialogue"]</h2>
         <div class="stack-md">
             @foreach (var turn in Model.Scenario.DialogueTurns)
             {
-                <article class="detail-row">
+                string turnAlignmentClass = string.Equals(turn.SpeakerRole, firstSpeakerRole, StringComparison.OrdinalIgnoreCase)
+                    ? "scenario-dialogue-turn--primary"
+                    : "scenario-dialogue-turn--secondary";
+                <article class="detail-row scenario-dialogue-turn @turnAlignmentClass">
                     <strong>@turn.SpeakerRole</strong>
                     <div class="stack-md">
                         <div class="detail-example">
-                            <span>@turn.BaseText</span>
-                            <button type="button" class="button button--secondary button--compact" data-speak-text="@turn.BaseText" data-speak-lang="de-DE">Hear</button>
+                            <button type="button" class="icon-button icon-button--sm" data-speak-text="@turn.BaseText" data-speak-lang="de-DE" aria-label="@T["Hear sentence"]" title="@T["Hear sentence"]">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                                    <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                                    <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+                                </svg>
+                                <span class="sr-only">@T["Hear sentence"]</span>
+                            </button>
+                            <strong class="scenario-german-text">@turn.BaseText</strong>
                         </div>
-                        @if (!string.IsNullOrWhiteSpace(turn.PrimaryMeaning))
-                        {
-                            <div class="meaning-block meaning-block--primary">
-                                <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
-                                <div>@turn.PrimaryMeaning</div>
-                            </div>
-                        }
-                        @if (!string.IsNullOrWhiteSpace(turn.SecondaryMeaning))
-                        {
-                            <div class="meaning-block">
-                                <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
-                                <div>@turn.SecondaryMeaning</div>
-                            </div>
-                        }
+                        <div class="scenario-translation-list">
+                            @if (!string.IsNullOrWhiteSpace(turn.PrimaryMeaning))
+                            {
+                                <div class="scenario-translation-line" dir="@primaryMeaningDirection">
+                                    <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                    <span>@turn.PrimaryMeaning</span>
+                                </div>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(turn.SecondaryMeaning))
+                            {
+                                <div class="scenario-translation-line" dir="@secondaryMeaningDirection">
+                                    <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                    <span>@turn.SecondaryMeaning</span>
+                                </div>
+                            }
+                        </div>
                     </div>
                 </article>
             }
@@ -112,29 +129,38 @@
 @if (Model.Scenario.UsefulPhrases.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Useful phrases</h2>
+        <h2 class="headline-sm">@T["Useful phrases"]</h2>
         <div class="grid-two-col">
             @foreach (var phrase in Model.Scenario.UsefulPhrases)
             {
                 <article class="panel stack-md">
                     <div class="detail-example">
-                        <strong>@phrase.BaseText</strong>
-                        <button type="button" class="button button--secondary button--compact" data-speak-text="@phrase.BaseText" data-speak-lang="de-DE">Hear</button>
+                        <button type="button" class="icon-button icon-button--sm" data-speak-text="@phrase.BaseText" data-speak-lang="de-DE" aria-label="@T["Hear phrase"]" title="@T["Hear phrase"]">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 9.2v5.6h3.4L12.5 19V5L7.4 9.2H4Z" />
+                                <path d="M16 8.2a5.4 5.4 0 0 1 0 7.6" />
+                                <path d="M18.8 5.4a9.3 9.3 0 0 1 0 13.2" />
+                            </svg>
+                            <span class="sr-only">@T["Hear phrase"]</span>
+                        </button>
+                        <strong class="scenario-german-text">@phrase.BaseText</strong>
                     </div>
-                    @if (!string.IsNullOrWhiteSpace(phrase.PrimaryMeaning))
-                    {
-                        <div class="meaning-block meaning-block--primary">
-                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
-                            <div>@phrase.PrimaryMeaning</div>
-                        </div>
-                    }
-                    @if (!string.IsNullOrWhiteSpace(phrase.SecondaryMeaning))
-                    {
-                        <div class="meaning-block">
-                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
-                            <div>@phrase.SecondaryMeaning</div>
-                        </div>
-                    }
+                    <div class="scenario-translation-list">
+                        @if (!string.IsNullOrWhiteSpace(phrase.PrimaryMeaning))
+                        {
+                            <div class="scenario-translation-line" dir="@primaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                <span>@phrase.PrimaryMeaning</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(phrase.SecondaryMeaning))
+                        {
+                            <div class="scenario-translation-line" dir="@secondaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                <span>@phrase.SecondaryMeaning</span>
+                            </div>
+                        }
+                    </div>
                     @if (!string.IsNullOrWhiteSpace(phrase.UsageNote))
                     {
                         <p>@phrase.UsageNote</p>
@@ -148,39 +174,49 @@
 @if (Model.Scenario.Questions.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">Quick check</h2>
+        <h2 class="headline-sm">@T["Quick check"]</h2>
         <div class="stack-md">
             @foreach (var question in Model.Scenario.Questions)
             {
                 <article class="panel stack-md">
-                    <strong>@question.Prompt</strong>
-                    @if (!string.IsNullOrWhiteSpace(question.PrimaryMeaning))
-                    {
-                        <div class="meaning-block meaning-block--primary">
-                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
-                            <div>@question.PrimaryMeaning</div>
-                        </div>
-                    }
-                    @if (!string.IsNullOrWhiteSpace(question.SecondaryMeaning))
-                    {
-                        <div class="meaning-block">
-                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
-                            <div>@question.SecondaryMeaning</div>
-                        </div>
-                    }
+                    <strong class="scenario-german-text">@question.Prompt</strong>
+                    <div class="scenario-translation-list">
+                        @if (!string.IsNullOrWhiteSpace(question.PrimaryMeaning))
+                        {
+                            <div class="scenario-translation-line" dir="@primaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                <span>@question.PrimaryMeaning</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(question.SecondaryMeaning))
+                        {
+                            <div class="scenario-translation-line" dir="@secondaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                <span>@question.SecondaryMeaning</span>
+                            </div>
+                        }
+                    </div>
                     <ul class="feature-list">
                         @foreach (var answer in question.Answers)
                         {
                             <li>
-                                <strong>@answer.Text@(answer.IsCorrect ? " · correct" : string.Empty)</strong>
-                                @if (!string.IsNullOrWhiteSpace(answer.PrimaryMeaning))
-                                {
-                                    <div>@answer.PrimaryMeaning</div>
-                                }
-                                @if (!string.IsNullOrWhiteSpace(answer.SecondaryMeaning))
-                                {
-                                    <div>@answer.SecondaryMeaning</div>
-                                }
+                                <strong class="scenario-german-text">@answer.Text@(answer.IsCorrect ? $" · {T["correct"]}" : string.Empty)</strong>
+                                <div class="scenario-translation-list">
+                                    @if (!string.IsNullOrWhiteSpace(answer.PrimaryMeaning))
+                                    {
+                                        <div class="scenario-translation-line" dir="@primaryMeaningDirection">
+                                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                            <span>@answer.PrimaryMeaning</span>
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(answer.SecondaryMeaning))
+                                    {
+                                        <div class="scenario-translation-line" dir="@secondaryMeaningDirection">
+                                            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                            <span>@answer.SecondaryMeaning</span>
+                                        </div>
+                                    }
+                                </div>
                                 @if (!string.IsNullOrWhiteSpace(answer.Feedback))
                                 {
                                     <div>@answer.Feedback</div>

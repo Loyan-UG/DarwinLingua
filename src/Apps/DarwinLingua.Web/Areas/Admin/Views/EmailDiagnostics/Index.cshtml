@@ -1,15 +1,15 @@
 @model DarwinLingua.Web.Models.AdminEmailDiagnosticsPageViewModel
 @{
-    ViewData["Title"] = "Email diagnostics";
+    ViewData["Title"] = T["Email diagnostics"];
     bool isAdmin = User.IsInRole("Admin");
     int warningCount = Model.Readiness.Warnings.Count;
     int failedLogCount = Model.Logs.Count(log => log.Status == DarwinLingua.Web.Data.WebEmailDeliveryStatus.Failed);
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">Diagnostics</span>
-    <h1 class="headline-md">Transactional email delivery</h1>
-    <p class="body-lg">Recent account email delivery attempts are listed without reset tokens, confirmation tokens, or full recovery URLs.</p>
+    <span class="eyebrow">@T["Diagnostics"]</span>
+    <h1 class="headline-md">@T["Transactional email delivery"]</h1>
+    <p class="body-lg">@T["Recent account email delivery attempts are listed without reset tokens, confirmation tokens, or full recovery URLs."]</p>
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
         <div class="status-banner status-banner--success">@Model.StatusMessage</div>
@@ -21,80 +21,80 @@
 
     <div class="admin-summary-grid">
         <a href="#email-readiness" class="admin-summary-tile">
-            <span class="eyebrow">Readiness warnings</span>
+            <span class="eyebrow">@T["Readiness warnings"]</span>
             <strong>@warningCount</strong>
         </a>
         <a href="#email-suppressions" class="admin-summary-tile">
-            <span class="eyebrow">Suppressed recipients</span>
+            <span class="eyebrow">@T["Suppressed recipients"]</span>
             <strong>@Model.SuppressionSummary.TotalCount</strong>
         </a>
         <a href="#email-logs" class="admin-summary-tile">
-            <span class="eyebrow">Failed attempts</span>
+            <span class="eyebrow">@T["Failed attempts"]</span>
             <strong>@failedLogCount</strong>
         </a>
     </div>
 
-    <nav class="admin-anchor-nav" aria-label="Email diagnostics sections">
-        <a href="#email-readiness">Readiness</a>
-        <a href="#email-suppressions">Suppressions</a>
-        <a href="#email-filters">Filters</a>
-        <a href="#email-retention">Retention</a>
-        <a href="#email-resend">Resend</a>
+    <nav class="admin-anchor-nav" aria-label="@T["Email diagnostics sections"]">
+        <a href="#email-readiness">@T["Readiness"]</a>
+        <a href="#email-suppressions">@T["Suppressions"]</a>
+        <a href="#email-filters">@T["Filters"]</a>
+        <a href="#email-retention">@T["Retention"]</a>
+        <a href="#email-resend">@T["Resend"]</a>
         @if (isAdmin)
         {
-            <a href="#email-provider-event">Provider event</a>
+            <a href="#email-provider-event">@T["Provider event"]</a>
         }
-        <a href="#email-logs">Logs</a>
+        <a href="#email-logs">@T["Logs"]</a>
     </nav>
 </section>
 
 <section id="email-readiness" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Readiness</h2>
-        <span class="status-pill">@(warningCount == 0 ? "Ready" : $"{warningCount} warning(s)")</span>
+        <h2 class="headline-sm">@T["Readiness"]</h2>
+        <span class="status-pill">@(warningCount == 0 ? T["Ready"] : T["{0} warning(s)", warningCount])</span>
     </div>
     <div class="metric-grid">
         <article class="metric-card">
-            <span class="metric-card__label">Mode</span>
+            <span class="metric-card__label">@T["Mode"]</span>
             <strong>@Model.Readiness.Mode</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">Public URL</span>
-            <strong>@(string.IsNullOrWhiteSpace(Model.Readiness.PublicBaseUrl) ? "Missing" : "Configured")</strong>
+            <span class="metric-card__label">@T["Public URL"]</span>
+            <strong>@(string.IsNullOrWhiteSpace(Model.Readiness.PublicBaseUrl) ? T["Missing"] : T["Configured"])</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">SMTP host</span>
-            <strong>@(Model.Readiness.HasSmtpHost ? "Configured" : "Missing")</strong>
+            <span class="metric-card__label">@T["SMTP host"]</span>
+            <strong>@(Model.Readiness.HasSmtpHost ? T["Configured"] : T["Missing"])</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">Admin recipients</span>
+            <span class="metric-card__label">@T["Admin recipients"]</span>
             <strong>@Model.Readiness.AdminNotificationRecipientCount</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">Failure alerts</span>
-            <strong>@(Model.Readiness.FailureAlertsEnabled ? "Enabled" : "Disabled")</strong>
+            <span class="metric-card__label">@T["Failure alerts"]</span>
+            <strong>@(Model.Readiness.FailureAlertsEnabled ? T["Enabled"] : T["Disabled"])</strong>
         </article>
     </div>
     <ul class="feature-list">
-        <li>From: @Model.Readiness.FromEmail</li>
-        <li>Reply-to: @Model.Readiness.ReplyToEmail</li>
-        <li>Support: @Model.Readiness.SupportEmail</li>
-        <li>SMTP credentials: @(Model.Readiness.HasSmtpUserName && Model.Readiness.HasSmtpPassword ? "Configured" : "Incomplete")</li>
-        <li>Brevo API key: @(Model.Readiness.HasBrevoApiKey ? "Configured" : "Missing")</li>
-        <li>Brevo webhook secret: @(Model.Readiness.HasBrevoWebhookSecret ? "Configured" : "Missing")</li>
-        <li>Brevo sandbox mode: @(Model.Readiness.BrevoSandboxMode ? "Enabled" : "Disabled")</li>
-        <li>Brevo query-secret fallback: @(Model.Readiness.BrevoAllowQuerySecretFallback ? "Enabled" : "Disabled")</li>
-        <li>Failure alert threshold: @Model.Readiness.FailureAlertThreshold failures in @Model.Readiness.FailureAlertWindowMinutes minutes</li>
-        <li>Failure alert cooldown: @Model.Readiness.FailureAlertCooldownMinutes minutes; monitor interval: @Model.Readiness.FailureAlertMonitorIntervalMinutes minutes</li>
+        <li>@T["From"]: @Model.Readiness.FromEmail</li>
+        <li>@T["Reply-to"]: @Model.Readiness.ReplyToEmail</li>
+        <li>@T["Support"]: @Model.Readiness.SupportEmail</li>
+        <li>@T["SMTP credentials"]: @(Model.Readiness.HasSmtpUserName && Model.Readiness.HasSmtpPassword ? T["Configured"] : T["Incomplete"])</li>
+        <li>@T["Brevo API key"]: @(Model.Readiness.HasBrevoApiKey ? T["Configured"] : T["Missing"])</li>
+        <li>@T["Brevo webhook secret"]: @(Model.Readiness.HasBrevoWebhookSecret ? T["Configured"] : T["Missing"])</li>
+        <li>@T["Brevo sandbox mode"]: @(Model.Readiness.BrevoSandboxMode ? T["Enabled"] : T["Disabled"])</li>
+        <li>@T["Brevo query-secret fallback"]: @(Model.Readiness.BrevoAllowQuerySecretFallback ? T["Enabled"] : T["Disabled"])</li>
+        <li>@T["Failure alert threshold"]: @T["{0} failures in {1} minutes", Model.Readiness.FailureAlertThreshold, Model.Readiness.FailureAlertWindowMinutes]</li>
+        <li>@T["Failure alert cooldown"]: @T["{0} minutes; monitor interval: {1} minutes", Model.Readiness.FailureAlertCooldownMinutes, Model.Readiness.FailureAlertMonitorIntervalMinutes]</li>
     </ul>
     @if (Model.Readiness.Warnings.Count == 0)
     {
-        <p class="body-sm">No configuration warnings detected. DNS and provider DPA still require external verification before production launch.</p>
+        <p class="body-sm">@T["No configuration warnings detected. DNS and provider DPA still require external verification before production launch."]</p>
     }
     else
     {
         <div class="status-banner status-banner--error">
-            <strong>Readiness warnings</strong>
+            <strong>@T["Readiness warnings"]</strong>
             <ul>
                 @foreach (string warning in Model.Readiness.Warnings)
                 {
@@ -107,33 +107,33 @@
 
 <section id="email-suppressions" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Suppression list</h2>
-        <span class="status-pill">@Model.Suppressions.Count shown</span>
+        <h2 class="headline-sm">@T["Suppression list"]</h2>
+        <span class="status-pill">@T["{0} shown", Model.Suppressions.Count]</span>
     </div>
     <div class="metric-grid">
         <article class="metric-card">
-            <span class="metric-card__label">Suppressed recipients</span>
+            <span class="metric-card__label">@T["Suppressed recipients"]</span>
             <strong>@Model.SuppressionSummary.TotalCount</strong>
         </article>
         <article class="metric-card">
-            <span class="metric-card__label">Last suppression</span>
-            <strong>@(Model.SuppressionSummary.LastCreatedAtUtc?.UtcDateTime.ToString("u") ?? "None")</strong>
+            <span class="metric-card__label">@T["Last suppression"]</span>
+            <strong>@(Model.SuppressionSummary.LastCreatedAtUtc?.UtcDateTime.ToString("u") ?? T["None"])</strong>
         </article>
     </div>
-    <p class="body-sm">Permanent Brevo events such as hard bounce, blocked, invalid email, and spam add a hashed recipient to the internal suppression list. Raw recipient email addresses are not stored here.</p>
+    <p class="body-sm">@T["Permanent Brevo events such as hard bounce, blocked, invalid email, and spam add a hashed recipient to the internal suppression list. Raw recipient email addresses are not stored here."]</p>
     @if (!string.IsNullOrWhiteSpace(Model.SuppressionSummary.LastReason))
     {
-        <p class="body-sm">Last reason: @Model.SuppressionSummary.LastReason</p>
+        <p class="body-sm">@T["Last reason"]: @Model.SuppressionSummary.LastReason</p>
     }
     <form method="get" class="filter-bar">
         <label>
-            Suppression hash prefix
+            @T["Suppression hash prefix"]
             <input name="suppressionHashPrefix" value="@Model.SuppressionHashPrefix" placeholder="A1B2C3" />
         </label>
         <label>
-            Suppression reason
+            @T["Suppression reason"]
             <select name="suppressionReason">
-                <option value="">All</option>
+                <option value="">@T["All"]</option>
                 @foreach (string reason in new[] { "brevo:hard_bounce", "brevo:blocked", "brevo:invalid", "brevo:invalid_email", "brevo:spam" })
                 {
                     <option value="@reason" selected="@(string.Equals(Model.SuppressionReason, reason, StringComparison.OrdinalIgnoreCase))">@reason</option>
@@ -148,7 +148,7 @@
         <input type="hidden" name="providerMessageId" value="@Model.ProviderMessageId" />
         <input type="hidden" name="providerEvent" value="@Model.ProviderEvent" />
         <input type="hidden" name="take" value="@Model.Take" />
-        <button type="submit" class="button button--primary">Filter suppressions</button>
+        <button type="submit" class="button button--primary">@T["Filter suppressions"]</button>
     </form>
     @if (Model.Suppressions.Count > 0)
     {
@@ -156,12 +156,12 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Created</th>
-                        <th>Hash</th>
-                        <th>Reason</th>
-                        <th>Provider</th>
-                        <th>Last seen</th>
-                        <th>Action</th>
+                        <th>@T["Created"]</th>
+                        <th>@T["Hash"]</th>
+                        <th>@T["Reason"]</th>
+                        <th>@T["Provider"]</th>
+                        <th>@T["Last seen"]</th>
+                        <th>@T["Action"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -172,19 +172,19 @@
                             <td><code>@suppression.RecipientEmailHash[..Math.Min(16, suppression.RecipientEmailHash.Length)]</code></td>
                             <td>@suppression.Reason</td>
                             <td>@suppression.ProviderName</td>
-                            <td>@(suppression.LastSeenAtUtc?.UtcDateTime.ToString("u") ?? "none")</td>
+                            <td>@(suppression.LastSeenAtUtc?.UtcDateTime.ToString("u") ?? T["none"])</td>
                             <td>
                                 @if (isAdmin)
                                 {
-                                    <form method="post" asp-action="RemoveSuppression" class="inline-form" data-confirm-submit="Remove this recipient hash from the suppression list? Future transactional email may be attempted again.">
+                                    <form method="post" asp-action="RemoveSuppression" class="inline-form" data-confirm-submit="@T["Remove this recipient hash from the suppression list? Future transactional email may be attempted again."]">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="recipientEmailHash" value="@suppression.RecipientEmailHash" />
-                                        <button type="submit" class="button button--secondary">Unsuppress</button>
+                                        <button type="submit" class="button button--secondary">@T["Unsuppress"]</button>
                                     </form>
                                 }
                                 else
                                 {
-                                    <span class="body-sm">Admin only</span>
+                                    <span class="body-sm">@T["Admin only"]</span>
                                 }
                             </td>
                         </tr>
@@ -196,12 +196,12 @@
 </section>
 
 <section id="email-filters" class="panel stack-md">
-    <h2 class="headline-sm">Delivery filters</h2>
+    <h2 class="headline-sm">@T["Delivery filters"]</h2>
     <form method="get" class="filter-bar">
         <label>
-            Status
+            @T["Status"]
             <select name="status">
-                <option value="">All</option>
+                <option value="">@T["All"]</option>
                 @foreach (string status in new[] { "Queued", "Sent", "Failed", "Skipped", "Suppressed" })
                 {
                     <option value="@status" selected="@(string.Equals(Model.Status, status, StringComparison.OrdinalIgnoreCase))">@status</option>
@@ -209,29 +209,29 @@
             </select>
         </label>
         <label>
-            Scenario
+            @T["Scenario"]
             <input name="scenario" value="@Model.Scenario" placeholder="Account.PasswordReset" />
         </label>
         <label>
-            From UTC
+            @T["From UTC"]
             <input name="fromUtc" value="@Model.FromUtc" placeholder="2026-04-29T00:00:00Z" />
         </label>
         <label>
-            To UTC
+            @T["To UTC"]
             <input name="toUtc" value="@Model.ToUtc" placeholder="2026-04-30T00:00:00Z" />
         </label>
         <label>
-            Recipient hash prefix
+            @T["Recipient hash prefix"]
             <input name="recipientHashPrefix" value="@Model.RecipientHashPrefix" placeholder="A1B2C3" />
         </label>
         <label>
-            Provider message id
+            @T["Provider message id"]
             <input name="providerMessageId" value="@Model.ProviderMessageId" placeholder="<message-id@domain>" />
         </label>
         <label>
-            Provider event
+            @T["Provider event"]
             <select name="providerEvent">
-                <option value="">All</option>
+                <option value="">@T["All"]</option>
                 @foreach (string providerEvent in new[] { "request", "sent", "delivered", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam", "opened", "unique_opened", "click", "unsubscribed" })
                 {
                     <option value="@providerEvent" selected="@(string.Equals(Model.ProviderEvent, providerEvent, StringComparison.OrdinalIgnoreCase))">@providerEvent</option>
@@ -239,43 +239,43 @@
             </select>
         </label>
         <label>
-            Limit
+            @T["Limit"]
             <input name="take" value="@Model.Take" type="number" min="1" max="200" />
         </label>
-        <button type="submit" class="button button--primary">Filter</button>
-        <a class="button button--secondary" asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">Clear</a>
+        <button type="submit" class="button button--primary">@T["Filter"]</button>
+        <a class="button button--secondary" asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">@T["Clear"]</a>
     </form>
 </section>
 
 <section id="email-retention" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Retention</h2>
-        <span class="status-pill">@(isAdmin ? "Admin action" : "Admin only")</span>
+        <h2 class="headline-sm">@T["Retention"]</h2>
+        <span class="status-pill">@(isAdmin ? T["Admin action"] : T["Admin only"])</span>
     </div>
-    <p class="body-sm">Delivery logs are retained for @Model.RetentionDays days. Cleanup removes only entries older than that retention window.</p>
+    <p class="body-sm">@T["Delivery logs are retained for {0} days. Cleanup removes only entries older than that retention window.", Model.RetentionDays]</p>
     @if (isAdmin)
     {
-        <form method="post" asp-action="Cleanup" class="inline-form" data-confirm-submit="Delete old email delivery logs outside the retention window?">
+        <form method="post" asp-action="Cleanup" class="inline-form" data-confirm-submit="@T["Delete old email delivery logs outside the retention window?"]">
             @Html.AntiForgeryToken()
-            <button type="submit" class="button button--secondary">Clean up old delivery logs</button>
+            <button type="submit" class="button button--secondary">@T["Clean up old delivery logs"]</button>
         </form>
     }
     else
     {
-        <p class="body-sm">Cleanup is limited to admins because it deletes operational audit data.</p>
+        <p class="body-sm">@T["Cleanup is limited to admins because it deletes operational audit data."]</p>
     }
 </section>
 
 <section id="email-resend" class="panel stack-md">
-    <h2 class="headline-sm">Manual resend</h2>
-    <p class="body-sm">Generate a new confirmation token for an unconfirmed account. Password reset emails are not resent from diagnostics, and the result message intentionally avoids account enumeration.</p>
-    <form method="post" asp-action="ResendConfirmation" class="filter-bar" data-confirm-submit="Send a new confirmation email to this account?">
+    <h2 class="headline-sm">@T["Manual resend"]</h2>
+    <p class="body-sm">@T["Generate a new confirmation token for an unconfirmed account. Password reset emails are not resent from diagnostics, and the result message intentionally avoids account enumeration."]</p>
+    <form method="post" asp-action="ResendConfirmation" class="filter-bar" data-confirm-submit="@T["Send a new confirmation email to this account?"]">
         @Html.AntiForgeryToken()
         <label>
-            Account email
+            @T["Account email"]
             <input name="email" type="email" autocomplete="off" placeholder="learner@example.com" />
         </label>
-        <button type="submit" class="button button--primary">Send confirmation</button>
+        <button type="submit" class="button button--primary">@T["Send confirmation"]</button>
     </form>
 </section>
 
@@ -283,18 +283,18 @@
 {
     <section id="email-provider-event" class="panel stack-md">
         <div class="cluster cluster--between">
-            <h2 class="headline-sm">Manual provider event</h2>
-            <span class="status-pill">Admin only</span>
+            <h2 class="headline-sm">@T["Manual provider event"]</h2>
+            <span class="status-pill">@T["Admin only"]</span>
         </div>
-        <div class="status-banner status-banner--error">Admin-only reconciliation tool. Use this only when Brevo dashboard data did not arrive through webhook.</div>
-        <form method="post" asp-action="RecordProviderEvent" class="filter-bar" data-confirm-submit="Record this provider event manually and update delivery state?">
+        <div class="status-banner status-banner--error">@T["Admin-only reconciliation tool. Use this only when Brevo dashboard data did not arrive through webhook."]</div>
+        <form method="post" asp-action="RecordProviderEvent" class="filter-bar" data-confirm-submit="@T["Record this provider event manually and update delivery state?"]">
             @Html.AntiForgeryToken()
             <label>
-                Provider message id
+                @T["Provider message id"]
                 <input name="providerMessageId" autocomplete="off" placeholder="<message-id@domain>" />
             </label>
             <label>
-                Provider event
+                @T["Provider event"]
                 <select name="providerEvent">
                     @foreach (string providerEvent in new[] { "delivered", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam" })
                     {
@@ -303,22 +303,22 @@
                 </select>
             </label>
             <label>
-                Reason
-                <input name="reason" autocomplete="off" placeholder="Manual reconciliation or Brevo dashboard reason" />
+                @T["Reason"]
+                <input name="reason" autocomplete="off" placeholder="@T["Manual reconciliation or Brevo dashboard reason"]" />
             </label>
-            <button type="submit" class="button button--primary">Record event</button>
+            <button type="submit" class="button button--primary">@T["Record event"]</button>
         </form>
     </section>
 }
 
 <section id="email-logs" class="panel stack-md">
     <div class="cluster cluster--between">
-        <h2 class="headline-sm">Recent delivery attempts</h2>
-        <span class="status-pill">@Model.Logs.Count shown</span>
+        <h2 class="headline-sm">@T["Recent delivery attempts"]</h2>
+        <span class="status-pill">@T["{0} shown", Model.Logs.Count]</span>
     </div>
     @if (Model.Logs.Count == 0)
     {
-        <p class="body-sm">No transactional email delivery attempts have been recorded yet.</p>
+        <p class="body-sm">@T["No transactional email delivery attempts have been recorded yet."]</p>
     }
     else
     {
@@ -326,15 +326,15 @@
             <table class="data-table admin-data-grid">
                 <thead>
                     <tr>
-                        <th>Created</th>
-                        <th>Status</th>
-                        <th>Scenario</th>
-                        <th>Culture</th>
-                        <th>Provider</th>
-                        <th>Provider event</th>
-                        <th>Recipient hash</th>
-                        <th>Subject</th>
-                        <th>Failure</th>
+                        <th>@T["Created"]</th>
+                        <th>@T["Status"]</th>
+                        <th>@T["Scenario"]</th>
+                        <th>@T["Culture"]</th>
+                        <th>@T["Provider"]</th>
+                        <th>@T["Provider event"]</th>
+                        <th>@T["Recipient hash"]</th>
+                        <th>@T["Subject"]</th>
+                        <th>@T["Failure"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -346,10 +346,10 @@
                             <td>@log.ScenarioKey</td>
                             <td>@log.Culture</td>
                             <td>@log.ProviderName</td>
-                            <td>@(log.ProviderLastEvent ?? "none")</td>
+                            <td>@(log.ProviderLastEvent ?? T["none"])</td>
                             <td><code>@log.RecipientEmailHash[..Math.Min(12, log.RecipientEmailHash.Length)]</code></td>
                             <td>@log.Subject</td>
-                            <td>@(log.FailureCode ?? "none")</td>
+                            <td>@(log.FailureCode ?? T["none"])</td>
                         </tr>
                     }
                 </tbody>

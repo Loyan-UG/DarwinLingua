@@ -1,8 +1,10 @@
 using DarwinLingua.Identity;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -14,6 +16,7 @@ public sealed class PartnerMatchingController(
     ICommunityNotificationEmailService notificationEmailService,
     IAccountEmailRateLimiter rateLimiter,
     ILogger<PartnerMatchingController> logger,
+    IStringLocalizer<SharedResource> localizer,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     private const int MaxSearchTextLength = 128;
@@ -35,7 +38,7 @@ public sealed class PartnerMatchingController(
                 [],
                 [],
                 null,
-                exception.Message));
+                localizer[exception.Message].Value));
         }
 
         string ownerEmail = GetOwnerEmail();
@@ -58,7 +61,7 @@ public sealed class PartnerMatchingController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Partner matching data could not be loaded for {OwnerEmail}.", ownerEmail);
-            errorMessage ??= "Partner matching is temporarily unavailable. Please try again.";
+            errorMessage ??= localizer["Partner matching is temporarily unavailable. Please try again."].Value;
         }
 
         return View(new PartnerMatchingPageViewModel(
@@ -77,20 +80,20 @@ public sealed class PartnerMatchingController(
     {
         if (!ModelState.IsValid)
         {
-            TempData["ErrorMessage"] = "The partner request is missing required fields.";
+            TempData["ErrorMessage"] = localizer["The partner request is missing required fields."].Value;
             return RedirectToAction(nameof(Index));
         }
 
         if (!IsAllowedOpenerTemplateKey(input.OpenerTemplateKey))
         {
-            TempData["ErrorMessage"] = "The selected opener is not supported.";
+            TempData["ErrorMessage"] = localizer["The selected opener is not supported."].Value;
             return RedirectToAction(nameof(Index));
         }
 
         string ownerEmail = GetOwnerEmail();
         if (!rateLimiter.TryConsume("partner-request", ownerEmail, 10, TimeSpan.FromMinutes(15)))
         {
-            TempData["ErrorMessage"] = "Too many partner requests. Please wait a few minutes and try again.";
+            TempData["ErrorMessage"] = localizer["Too many partner requests. Please wait a few minutes and try again."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -103,7 +106,7 @@ public sealed class PartnerMatchingController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = $"Partner request sent to {request.OtherDisplayName}.";
+            TempData["StatusMessage"] = localizer["Partner request sent to {0}.", request.OtherDisplayName].Value;
             analyticsService?.Record(WebProductAnalyticsEvents.PartnerRequestSent);
         }
         catch (InvalidOperationException exception)
@@ -113,7 +116,7 @@ public sealed class PartnerMatchingController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Partner request could not be submitted for {OwnerEmail}.", ownerEmail);
-            TempData["ErrorMessage"] = "The partner request could not be sent right now. Please try again.";
+            TempData["ErrorMessage"] = localizer["The partner request could not be sent right now. Please try again."].Value;
         }
 
         return RedirectToAction(nameof(Index));
@@ -130,7 +133,7 @@ public sealed class PartnerMatchingController(
         {
             if (!IsAllowedPartnerRequestAction(actionName))
             {
-                TempData["ErrorMessage"] = "The selected partner request action is not supported.";
+                TempData["ErrorMessage"] = localizer["The selected partner request action is not supported."].Value;
                 return RedirectToAction(nameof(Index));
             }
 
@@ -142,7 +145,7 @@ public sealed class PartnerMatchingController(
                     cancellationToken)
                 .ConfigureAwait(false);
 
-            TempData["StatusMessage"] = $"Partner request {request.Status}.";
+            TempData["StatusMessage"] = localizer["Partner request {0}.", request.Status].Value;
             if (string.Equals(request.Status, "accepted", StringComparison.OrdinalIgnoreCase))
             {
                 analyticsService?.Record(WebProductAnalyticsEvents.PartnerRequestAccepted);
@@ -172,7 +175,7 @@ public sealed class PartnerMatchingController(
         catch (Exception exception) when (!cancellationToken.IsCancellationRequested && exception is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(exception, "Partner request state could not be updated for {RequestId}.", requestId);
-            TempData["ErrorMessage"] = "The partner request could not be updated right now. Please try again.";
+            TempData["ErrorMessage"] = localizer["The partner request could not be updated right now. Please try again."].Value;
         }
 
         return RedirectToAction(nameof(Index));
@@ -207,10 +210,10 @@ public sealed class PartnerMatchingController(
         string.Equals(actionName, "block", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(actionName, "cancel", StringComparison.OrdinalIgnoreCase);
 
-    private static string BuildPartnerRequestErrorMessage(InvalidOperationException exception) =>
+    private string BuildPartnerRequestErrorMessage(InvalidOperationException exception) =>
         exception.Message.Contains("404", StringComparison.OrdinalIgnoreCase)
-            ? "The selected partner request or learner profile is no longer available."
-            : "The partner request could not be updated right now. Please try again.";
+            ? localizer["The selected partner request or learner profile is no longer available."].Value
+            : localizer["The partner request could not be updated right now. Please try again."].Value;
 
     private static string? NormalizeSearchText(string? value)
     {

@@ -26,10 +26,10 @@
 
 <section class="panel stack-lg admin-word-editor">
     <div class="cluster cluster--between">
-        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Lemma, "Word editor", "Edit the full admin record. Learner language preferences do not limit the languages shown here.")' />
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Lemma, T["Word editor"].Value, T["Edit the full admin record. Learner language preferences do not limit the languages shown here."].Value)' />
         <div class="cluster">
-            <a class="button button--secondary" asp-action="Index">Back to words</a>
-            <a class="button button--secondary" asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">View learner page</a>
+            <a class="button button--secondary" asp-action="Index">@T["Back to words"]</a>
+            <a class="button button--secondary" asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">@T["View learner page"]</a>
         </div>
     </div>
 
@@ -42,27 +42,27 @@
         <div class="state-panel state-panel--warning">@errorMessage</div>
     }
 
-    <form class="admin-editor-card stack-md" method="post" asp-action="Edit" asp-route-publicId="@Model.PublicId" data-confirm-submit="Save word metadata?">
+    <form class="admin-editor-card stack-md" method="post" asp-action="Edit" asp-route-publicId="@Model.PublicId" data-confirm-submit="@T["Save word metadata?"]">
         @Html.AntiForgeryToken()
         <input type="hidden" name="PublicId" value="@Model.PublicId" />
         <div class="admin-editor-section-header">
             <div>
-                <h2 class="headline-sm">Core metadata</h2>
-                <p class="muted-text">Status, CEFR, source, forms, and pronunciation are editable here.</p>
+                <h2 class="headline-sm">@T["Core metadata"]</h2>
+                <p class="muted-text">@T["Status, CEFR, source, forms, and pronunciation are editable here."]</p>
             </div>
-            <button class="button button--compact" type="submit">Save metadata</button>
+            <button class="button button--compact" type="submit">@T["Save metadata"]</button>
         </div>
         <div class="form-grid admin-metadata-grid">
             <label class="form-field">
-                <span>Lemma</span>
+                <span>@T["Lemma"]</span>
                 <input name="Lemma" maxlength="256" value="@Model.Lemma" required />
             </label>
             <label class="form-field">
-                <span>Language</span>
+                <span>@T["Language"]</span>
                 <input name="LanguageCode" maxlength="16" value="@Model.LanguageCode" required />
             </label>
             <label class="form-field">
-                <span>Status</span>
+                <span>@T["Status"]</span>
                 <select name="PublicationStatus" required>
                     @foreach (var status in statusOptions)
                     {
@@ -71,7 +71,7 @@
                 </select>
             </label>
             <label class="form-field">
-                <span>CEFR</span>
+                <span>@T["CEFR"]</span>
                 <select name="CefrLevel" required>
                     @foreach (var cefr in cefrOptions)
                     {
@@ -80,7 +80,7 @@
                 </select>
             </label>
             <label class="form-field">
-                <span>Part of speech</span>
+                <span>@T["Part of speech"]</span>
                 <select name="PartOfSpeech" required>
                     @foreach (var pos in partOfSpeechOptions)
                     {
@@ -89,7 +89,7 @@
                 </select>
             </label>
             <label class="form-field">
-                <span>Source type</span>
+                <span>@T["Source type"]</span>
                 <select name="ContentSourceType" required>
                     @foreach (var source in sourceOptions)
                     {
@@ -98,88 +98,88 @@
                 </select>
             </label>
             <label class="form-field">
-                <span>Article</span>
+                <span>@T["Article"]</span>
                 <input name="Article" maxlength="32" value="@Model.Article" />
             </label>
             <label class="form-field">
-                <span>Plural form</span>
+                <span>@T["Plural form"]</span>
                 <input name="PluralForm" maxlength="256" value="@Model.PluralForm" />
             </label>
             <label class="form-field">
-                <span>Infinitive form</span>
+                <span>@T["Infinitive form"]</span>
                 <input name="InfinitiveForm" maxlength="256" value="@Model.InfinitiveForm" />
             </label>
             <label class="form-field">
-                <span>Pronunciation IPA</span>
+                <span>@T["Pronunciation IPA"]</span>
                 <input name="PronunciationIpa" maxlength="256" value="@Model.PronunciationIpa" />
             </label>
             <label class="form-field">
-                <span>Syllable break</span>
+                <span>@T["Syllable break"]</span>
                 <input name="SyllableBreak" maxlength="256" value="@Model.SyllableBreak" />
             </label>
             <label class="form-field">
-                <span>Source reference</span>
+                <span>@T["Source reference"]</span>
                 <input name="SourceReference" maxlength="512" value="@Model.SourceReference" />
             </label>
         </div>
         <div class="admin-static-meta">
-            <span>Public ID: @Model.PublicId</span>
-            <span>Normalized: @Model.NormalizedLemma</span>
-            <span>Updated: @Model.UpdatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</span>
+            <span>@T["Public ID"]: @Model.PublicId</span>
+            <span>@T["Normalized"]: @Model.NormalizedLemma</span>
+            <span>@T["Updated"]: @Model.UpdatedAtUtc.ToString("yyyy-MM-dd HH:mm") UTC</span>
         </div>
     </form>
 
     <div class="admin-summary-grid">
-        <a href="#word-taxonomy" class="admin-summary-tile"><span class="eyebrow">Topics</span><strong>@Model.Topics.Count</strong></a>
-        <a href="#word-taxonomy" class="admin-summary-tile"><span class="eyebrow">Labels</span><strong>@Model.Labels.Count</strong></a>
-        <a href="#word-senses" class="admin-summary-tile"><span class="eyebrow">Senses</span><strong>@Model.Senses.Count</strong></a>
+        <a href="#word-taxonomy" class="admin-summary-tile"><span class="eyebrow">@T["Topics"]</span><strong>@Model.Topics.Count</strong></a>
+        <a href="#word-taxonomy" class="admin-summary-tile"><span class="eyebrow">@T["Labels"]</span><strong>@Model.Labels.Count</strong></a>
+        <a href="#word-senses" class="admin-summary-tile"><span class="eyebrow">@T["Senses"]</span><strong>@Model.Senses.Count</strong></a>
     </div>
 </section>
 
 <section id="word-taxonomy" class="admin-two-column">
     <div class="panel stack-md">
         <div class="cluster cluster--between">
-            <h2 class="headline-sm">Topics</h2>
-            <a class="button button--secondary button--compact" asp-controller="Topics" asp-action="Index">Manage topics</a>
+            <h2 class="headline-sm">@T["Topics"]</h2>
+            <a class="button button--secondary button--compact" asp-controller="Topics" asp-action="Index">@T["Manage topics"]</a>
         </div>
         @if (Model.Topics.Count == 0)
         {
-            <p>No topics assigned.</p>
+            <p>@T["No topics assigned."]</p>
         }
         else
         {
             <div class="tag-list">
                 @foreach (var topic in Model.Topics)
                 {
-                    <form class="tag-form" method="post" asp-action="DeleteTopic" asp-route-publicId="@Model.PublicId" asp-route-topicId="@topic.TopicId" data-confirm-submit="Remove this topic from the word?">
+                    <form class="tag-form" method="post" asp-action="DeleteTopic" asp-route-publicId="@Model.PublicId" asp-route-topicId="@topic.TopicId" data-confirm-submit="@T["Remove this topic from the word?"]">
                         @Html.AntiForgeryToken()
-                        <span class="tag">@topic.Key@(topic.IsPrimaryTopic ? " primary" : null)</span>
-                        <button class="tag-remove" type="submit" aria-label="Remove @topic.Key">x</button>
+                        <span class="tag">@topic.Key@(topic.IsPrimaryTopic ? $" {T["primary"]}" : null)</span>
+                        <button class="tag-remove" type="submit" aria-label="@T["Remove {0}", topic.Key]">x</button>
                     </form>
                 }
             </div>
         }
         <details class="admin-inline-panel stack-sm">
-            <summary>Attach topic</summary>
-            <form method="post" asp-action="AddTopic" asp-route-publicId="@Model.PublicId" data-confirm-submit="Add this topic to the word?">
+            <summary>@T["Attach topic"]</summary>
+            <form method="post" asp-action="AddTopic" asp-route-publicId="@Model.PublicId" data-confirm-submit="@T["Add this topic to the word?"]">
                 @Html.AntiForgeryToken()
                 <div class="admin-inline-form-grid admin-inline-form-grid--topic">
                     <label class="form-field">
-                        <span>Topic</span>
+                        <span>@T["Topic"]</span>
                         <select name="topicId" required>
-                            <option value="">Select topic</option>
+                            <option value="">@T["Select topic"]</option>
                             @foreach (var topic in unassignedTopics)
                             {
-                                <option value="@topic.TopicId">@topic.Key (@topic.WordCount words)</option>
+                                <option value="@topic.TopicId">@topic.Key (@T["{0} words", topic.WordCount])</option>
                             }
                         </select>
                     </label>
                     <label class="admin-toggle-field">
                         <input type="checkbox" name="isPrimaryTopic" value="true" />
                         <input type="hidden" name="isPrimaryTopic" value="false" />
-                        <span>Primary topic</span>
+                        <span>@T["Primary topic"]</span>
                     </label>
-                    <button class="button button--compact" type="submit" disabled="@(unassignedTopics.Length == 0)">Add</button>
+                    <button class="button button--compact" type="submit" disabled="@(unassignedTopics.Length == 0)">@T["Add"]</button>
                 </div>
             </form>
         </details>
@@ -187,42 +187,42 @@
 
     <div class="panel stack-md">
         <div class="cluster cluster--between">
-            <h2 class="headline-sm">Labels</h2>
-            <a class="button button--secondary button--compact" asp-controller="Labels" asp-action="Index">Manage labels</a>
+            <h2 class="headline-sm">@T["Labels"]</h2>
+            <a class="button button--secondary button--compact" asp-controller="Labels" asp-action="Index">@T["Manage labels"]</a>
         </div>
         @if (Model.Labels.Count == 0)
         {
-            <p>No labels assigned.</p>
+            <p>@T["No labels assigned."]</p>
         }
         else
         {
             <div class="tag-list">
                 @foreach (var label in Model.Labels)
                 {
-                    <form class="tag-form" method="post" asp-action="DeleteLabel" asp-route-publicId="@Model.PublicId" asp-route-kind="@label.Kind" asp-route-key="@label.Key" data-confirm-submit="Remove this label from the word?">
+                    <form class="tag-form" method="post" asp-action="DeleteLabel" asp-route-publicId="@Model.PublicId" asp-route-kind="@label.Kind" asp-route-key="@label.Key" data-confirm-submit="@T["Remove this label from the word?"]">
                         @Html.AntiForgeryToken()
                         <span class="tag">@label.DisplayName <small>@label.Kind/@label.Key</small></span>
-                        <button class="tag-remove" type="submit" aria-label="Remove @label.DisplayName">x</button>
+                        <button class="tag-remove" type="submit" aria-label="@T["Remove {0}", label.DisplayName]">x</button>
                     </form>
                 }
             </div>
         }
         <details class="admin-inline-panel stack-sm">
-            <summary>Attach label</summary>
-            <form method="post" asp-action="AddLabel" asp-route-publicId="@Model.PublicId" data-confirm-submit="Add this label to the word?">
+            <summary>@T["Attach label"]</summary>
+            <form method="post" asp-action="AddLabel" asp-route-publicId="@Model.PublicId" data-confirm-submit="@T["Add this label to the word?"]">
                 @Html.AntiForgeryToken()
                 <div class="admin-inline-form-grid admin-inline-form-grid--label">
                     <label class="form-field">
-                        <span>Label</span>
+                        <span>@T["Label"]</span>
                         <select name="labelKey" required>
-                            <option value="">Select label</option>
+                            <option value="">@T["Select label"]</option>
                             @foreach (var label in unassignedLabels)
                             {
                                 <option value="@($"{label.Kind}::{label.Key}")">@label.DisplayName (@label.Kind/@label.Key)</option>
                             }
                         </select>
                     </label>
-                    <button class="button button--compact" type="submit" disabled="@(unassignedLabels.Length == 0)">Add</button>
+                    <button class="button button--compact" type="submit" disabled="@(unassignedLabels.Length == 0)">@T["Add"]</button>
                 </div>
             </form>
         </details>
@@ -232,15 +232,15 @@
 <section id="word-senses" class="panel stack-lg">
     <div class="cluster cluster--between">
         <div>
-            <h2 class="headline-sm">Meanings and examples</h2>
-            <p class="muted-text">All stored languages are shown here. The primary switches only choose the default item shown first; they do not hide other languages.</p>
+            <h2 class="headline-sm">@T["Meanings and examples"]</h2>
+            <p class="muted-text">@T["All stored languages are shown here. The primary switches only choose the default item shown first; they do not hide other languages."]</p>
         </div>
-        <span class="eyebrow">@Model.Senses.Count total</span>
+        <span class="eyebrow">@T["{0} total", Model.Senses.Count]</span>
     </div>
 
     @if (Model.Senses.Count == 0)
     {
-        <p>No senses recorded.</p>
+        <p>@T["No senses recorded."]</p>
     }
     else
     {
@@ -249,167 +249,167 @@
             <article class="admin-record-card admin-sense-editor stack-md">
                 <div class="admin-editor-section-header">
                     <div>
-                        <h3 class="headline-sm">Sense @sense.SenseOrder</h3>
-                        <p class="muted-text">@sense.PublicationStatus - @(sense.ShortDefinitionDe ?? sense.ShortGloss ?? "No short definition.")</p>
+                        <h3 class="headline-sm">@T["Sense {0}", sense.SenseOrder]</h3>
+                        <p class="muted-text">@sense.PublicationStatus - @(sense.ShortDefinitionDe ?? sense.ShortGloss ?? T["No short definition."])</p>
                     </div>
                     @if (sense.IsPrimarySense)
                     {
-                        <span class="status-pill">Primary sense</span>
+                        <span class="status-pill">@T["Primary sense"]</span>
                     }
                 </div>
 
                 <div class="admin-editor-subsection">
                     <div class="admin-editor-section-header">
-                        <h4 class="admin-subhead">Meanings in all languages</h4>
-                        <span class="eyebrow">@sense.Translations.Count items</span>
+                        <h4 class="admin-subhead">@T["Meanings in all languages"]</h4>
+                        <span class="eyebrow">@T["{0} items", sense.Translations.Count]</span>
                     </div>
                     <div class="admin-translation-editor-grid">
                         @foreach (var translation in sense.Translations)
                         {
                             <div class="admin-editor-card admin-editor-card--flat">
-                                <form class="admin-row-form" method="post" asp-action="UpdateSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="Save this sense translation?">
+                                <form class="admin-row-form" method="post" asp-action="UpdateSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="@T["Save this sense translation?"]">
                                     @Html.AntiForgeryToken()
                                     <label class="form-field">
-                                        <span>Language</span>
+                                        <span>@T["Language"]</span>
                                         <input name="LanguageCode" maxlength="16" value="@translation.LanguageCode" required />
                                     </label>
                                     <label class="form-field field--wide">
-                                        <span>Meaning</span>
+                                        <span>@T["Meaning"]</span>
                                         <input name="TranslationText" maxlength="512" value="@translation.TranslationText" required />
                                     </label>
                                     <label class="admin-toggle-field">
                                         <input type="checkbox" name="IsPrimary" value="true" checked="@translation.IsPrimary" />
                                         <input type="hidden" name="IsPrimary" value="false" />
-                                        <span>Primary meaning</span>
+                                        <span>@T["Primary meaning"]</span>
                                     </label>
-                                    <button class="button button--compact" type="submit">Save</button>
+                                    <button class="button button--compact" type="submit">@T["Save"]</button>
                                 </form>
-                                <form class="inline-form" method="post" asp-action="DeleteSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="Delete this translation?">
+                                <form class="inline-form" method="post" asp-action="DeleteSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="@T["Delete this translation?"]">
                                     @Html.AntiForgeryToken()
-                                    <button class="button button--secondary button--compact" type="submit">Delete</button>
+                                    <button class="button button--secondary button--compact" type="submit">@T["Delete"]</button>
                                 </form>
                             </div>
                         }
                     </div>
-                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" data-confirm-submit="Add this sense translation?">
+                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" data-confirm-submit="@T["Add this sense translation?"]">
                         @Html.AntiForgeryToken()
-                        <strong>Add meaning</strong>
+                        <strong>@T["Add meaning"]</strong>
                         <div class="admin-inline-form-grid">
                             <label class="form-field">
-                                <span>Language</span>
+                                <span>@T["Language"]</span>
                                 <input name="LanguageCode" maxlength="16" value="en" required />
                             </label>
                             <label class="form-field field--wide">
-                                <span>Meaning</span>
+                                <span>@T["Meaning"]</span>
                                 <input name="TranslationText" maxlength="512" required />
                             </label>
                             <label class="admin-toggle-field">
                                 <input type="checkbox" name="IsPrimary" value="true" />
                                 <input type="hidden" name="IsPrimary" value="false" />
-                                <span>Primary meaning</span>
+                                <span>@T["Primary meaning"]</span>
                             </label>
-                            <button class="button button--compact" type="submit">Add</button>
+                            <button class="button button--compact" type="submit">@T["Add"]</button>
                         </div>
                     </form>
                 </div>
 
                 <div class="admin-editor-subsection">
                     <div class="admin-editor-section-header">
-                        <h4 class="admin-subhead">Examples and translations</h4>
-                        <span class="eyebrow">@sense.Examples.Count items</span>
+                        <h4 class="admin-subhead">@T["Examples and translations"]</h4>
+                        <span class="eyebrow">@T["{0} items", sense.Examples.Count]</span>
                     </div>
                     <div class="admin-example-list">
                         @foreach (var example in sense.Examples)
                         {
                             <div class="admin-example-editor admin-editor-card admin-editor-card--flat">
-                                <form class="admin-row-form admin-row-form--example" method="post" asp-action="UpdateSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="Save this example?">
+                                <form class="admin-row-form admin-row-form--example" method="post" asp-action="UpdateSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="@T["Save this example?"]">
                                     @Html.AntiForgeryToken()
                                     <label class="form-field field--wide">
-                                        <span>German example</span>
+                                        <span>@T["German example"]</span>
                                         <input name="GermanText" maxlength="2000" value="@example.GermanText" required />
                                     </label>
                                     <label class="admin-toggle-field">
                                         <input type="checkbox" name="IsPrimaryExample" value="true" checked="@example.IsPrimaryExample" />
                                         <input type="hidden" name="IsPrimaryExample" value="false" />
-                                        <span>Primary example</span>
+                                        <span>@T["Primary example"]</span>
                                     </label>
-                                    <button class="button button--compact" type="submit">Save example</button>
+                                    <button class="button button--compact" type="submit">@T["Save example"]</button>
                                 </form>
 
                                 <div class="admin-example-translation-list">
                                     @if (example.Translations.Count == 0)
                                     {
-                                        <p class="muted-text">No translations for this example yet.</p>
+                                        <p class="muted-text">@T["No translations for this example yet."]</p>
                                     }
                                     @foreach (var translation in example.Translations)
                                     {
                                         <div class="admin-editor-card admin-editor-card--nested">
-                                            <form class="admin-row-form" method="post" asp-action="UpdateSenseExampleTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="Save this example translation?">
+                                            <form class="admin-row-form" method="post" asp-action="UpdateSenseExampleTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="@T["Save this example translation?"]">
                                                 @Html.AntiForgeryToken()
                                                 <label class="form-field">
-                                                    <span>Language</span>
+                                                    <span>@T["Language"]</span>
                                                     <input name="LanguageCode" maxlength="16" value="@translation.LanguageCode" required />
                                                 </label>
                                                 <label class="form-field field--wide">
-                                                    <span>Example translation</span>
+                                                    <span>@T["Example translation"]</span>
                                                     <input name="TranslationText" maxlength="2000" value="@translation.TranslationText" required />
                                                 </label>
-                                                <button class="button button--compact" type="submit">Save</button>
+                                                <button class="button button--compact" type="submit">@T["Save"]</button>
                                             </form>
-                                            <form class="inline-form" method="post" asp-action="DeleteSenseExampleTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="Delete this example translation?">
+                                            <form class="inline-form" method="post" asp-action="DeleteSenseExampleTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" asp-route-translationId="@translation.TranslationId" data-confirm-submit="@T["Delete this example translation?"]">
                                                 @Html.AntiForgeryToken()
-                                                <button class="button button--secondary button--compact" type="submit">Delete</button>
+                                                <button class="button button--secondary button--compact" type="submit">@T["Delete"]</button>
                                             </form>
                                         </div>
                                     }
                                 </div>
 
-                                <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseExampleTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="Add this example translation?">
+                                <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseExampleTranslation" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="@T["Add this example translation?"]">
                                     @Html.AntiForgeryToken()
-                                    <strong>Add example translation</strong>
+                                    <strong>@T["Add example translation"]</strong>
                                     <div class="admin-inline-form-grid admin-inline-form-grid--example-translation">
                                         <label class="form-field">
-                                            <span>Language</span>
+                                            <span>@T["Language"]</span>
                                             <input name="LanguageCode" maxlength="16" value="en" required />
                                         </label>
                                         <label class="form-field field--wide">
-                                            <span>Translation</span>
+                                            <span>@T["Translation"]</span>
                                             <input name="TranslationText" maxlength="2000" required />
                                         </label>
-                                        <button class="button button--compact" type="submit">Add</button>
+                                        <button class="button button--compact" type="submit">@T["Add"]</button>
                                     </div>
                                 </form>
 
-                                <form class="inline-form" method="post" asp-action="DeleteSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="Delete this example and its translations?">
+                                <form class="inline-form" method="post" asp-action="DeleteSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" asp-route-exampleId="@example.ExampleId" data-confirm-submit="@T["Delete this example and its translations?"]">
                                     @Html.AntiForgeryToken()
-                                    <button class="button button--secondary button--compact" type="submit">Delete example</button>
+                                    <button class="button button--secondary button--compact" type="submit">@T["Delete example"]</button>
                                 </form>
                             </div>
                         }
                     </div>
 
-                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" data-confirm-submit="Add this sense example?">
+                    <form class="admin-inline-panel stack-sm" method="post" asp-action="AddSenseExample" asp-route-publicId="@Model.PublicId" asp-route-senseId="@sense.SenseId" data-confirm-submit="@T["Add this sense example?"]">
                         @Html.AntiForgeryToken()
-                        <strong>Add example</strong>
+                        <strong>@T["Add example"]</strong>
                         <div class="admin-inline-form-grid admin-inline-form-grid--example">
                             <label class="form-field field--wide">
-                                <span>German text</span>
+                                <span>@T["German text"]</span>
                                 <input name="GermanText" maxlength="2000" required />
                             </label>
                             <label class="form-field">
-                                <span>Translation language</span>
+                                <span>@T["Translation language"]</span>
                                 <input name="TranslationLanguageCode" maxlength="16" placeholder="en" />
                             </label>
                             <label class="form-field">
-                                <span>Translation</span>
+                                <span>@T["Translation"]</span>
                                 <input name="TranslationText" maxlength="2000" />
                             </label>
                             <label class="admin-toggle-field">
                                 <input type="checkbox" name="IsPrimaryExample" value="true" />
                                 <input type="hidden" name="IsPrimaryExample" value="false" />
-                                <span>Primary example</span>
+                                <span>@T["Primary example"]</span>
                             </label>
-                            <button class="button button--compact" type="submit">Add</button>
+                            <button class="button button--compact" type="submit">@T["Add"]</button>
                         </div>
                     </form>
                 </div>
@@ -418,12 +418,12 @@
     }
 
     <details class="admin-inline-panel admin-sense-form stack-md">
-        <summary>Add sense</summary>
-        <form method="post" asp-action="AddSense" asp-route-publicId="@Model.PublicId" data-confirm-submit="Add this word sense?">
+        <summary>@T["Add sense"]</summary>
+        <form method="post" asp-action="AddSense" asp-route-publicId="@Model.PublicId" data-confirm-submit="@T["Add this word sense?"]">
             @Html.AntiForgeryToken()
             <div class="form-grid">
                 <label class="form-field">
-                    <span>Status</span>
+                    <span>@T["Status"]</span>
                     <select name="PublicationStatus">
                         @foreach (var status in statusOptions)
                         {
@@ -434,65 +434,65 @@
                 <label class="admin-toggle-field">
                     <input type="checkbox" name="IsPrimarySense" value="true" />
                     <input type="hidden" name="IsPrimarySense" value="false" />
-                    <span>Primary sense</span>
+                    <span>@T["Primary sense"]</span>
                 </label>
                 <label class="form-field">
-                    <span>German definition</span>
+                    <span>@T["German definition"]</span>
                     <input name="ShortDefinitionDe" maxlength="512" />
                 </label>
                 <label class="form-field">
-                    <span>Short gloss</span>
+                    <span>@T["Short gloss"]</span>
                     <input name="ShortGloss" maxlength="512" />
                 </label>
                 <label class="form-field">
-                    <span>Translation language</span>
+                    <span>@T["Translation language"]</span>
                     <input name="TranslationLanguageCode" maxlength="16" placeholder="en" />
                 </label>
                 <label class="form-field">
-                    <span>Translation</span>
+                    <span>@T["Translation"]</span>
                     <input name="TranslationText" maxlength="512" />
                 </label>
                 <label class="admin-toggle-field">
                     <input type="checkbox" name="IsPrimaryTranslation" value="true" checked />
                     <input type="hidden" name="IsPrimaryTranslation" value="false" />
-                    <span>Primary meaning</span>
+                    <span>@T["Primary meaning"]</span>
                 </label>
                 <label class="form-field field--wide">
-                    <span>Example German text</span>
+                    <span>@T["Example German text"]</span>
                     <input name="ExampleGermanText" maxlength="2000" />
                 </label>
                 <label class="form-field">
-                    <span>Example translation language</span>
+                    <span>@T["Example translation language"]</span>
                     <input name="ExampleTranslationLanguageCode" maxlength="16" placeholder="en" />
                 </label>
                 <label class="form-field">
-                    <span>Example translation</span>
+                    <span>@T["Example translation"]</span>
                     <input name="ExampleTranslationText" maxlength="2000" />
                 </label>
                 <label class="admin-toggle-field">
                     <input type="checkbox" name="IsPrimaryExample" value="true" checked />
                     <input type="hidden" name="IsPrimaryExample" value="false" />
-                    <span>Primary example</span>
+                    <span>@T["Primary example"]</span>
                 </label>
             </div>
-            <button class="button" type="submit">Add sense</button>
+            <button class="button" type="submit">@T["Add sense"]</button>
         </form>
     </details>
 </section>
 
 <section id="word-assets" class="admin-two-column">
     <div class="panel stack-md">
-        <h2 class="headline-sm">Lexical forms</h2>
+        <h2 class="headline-sm">@T["Lexical forms"]</h2>
         @if (Model.LexicalForms.Count == 0)
         {
-            <p>No lexical forms recorded.</p>
+            <p>@T["No lexical forms recorded."]</p>
         }
         else
         {
             <div class="table-scroll">
                 <table class="data-table admin-data-grid">
                     <thead>
-                        <tr><th>POS</th><th>Article</th><th>Plural</th><th>Infinitive</th><th>Primary</th></tr>
+                        <tr><th>@T["POS"]</th><th>@T["Article"]</th><th>@T["Plural"]</th><th>@T["Infinitive"]</th><th>@T["Primary"]</th></tr>
                     </thead>
                     <tbody>
                         @foreach (var form in Model.LexicalForms)
@@ -502,7 +502,7 @@
                                 <td>@(form.Article ?? "-")</td>
                                 <td>@(form.PluralForm ?? "-")</td>
                                 <td>@(form.InfinitiveForm ?? "-")</td>
-                                <td>@(form.IsPrimary ? "Yes" : "No")</td>
+                                <td>@(form.IsPrimary ? T["Yes"] : T["No"])</td>
                             </tr>
                         }
                     </tbody>
@@ -511,21 +511,21 @@
         }
     </div>
     <div class="panel stack-md">
-        <h2 class="headline-sm">Usage assets</h2>
+        <h2 class="headline-sm">@T["Usage assets"]</h2>
         @if (Model.GrammarNotes.Count == 0 && Model.Collocations.Count == 0)
         {
-            <p>No grammar notes or collocations recorded.</p>
+            <p>@T["No grammar notes or collocations recorded."]</p>
         }
         else
         {
             <div class="stack-sm">
                 @foreach (var note in Model.GrammarNotes)
                 {
-                    <p><strong>Grammar:</strong> @note.Text</p>
+                    <p><strong>@T["Grammar"]:</strong> @note.Text</p>
                 }
                 @foreach (var collocation in Model.Collocations)
                 {
-                    <p><strong>Collocation:</strong> @collocation.Text @(!string.IsNullOrWhiteSpace(collocation.Meaning) ? $" - {collocation.Meaning}" : null)</p>
+                    <p><strong>@T["Collocation"]:</strong> @collocation.Text @(!string.IsNullOrWhiteSpace(collocation.Meaning) ? $" - {collocation.Meaning}" : null)</p>
                 }
             </div>
         }

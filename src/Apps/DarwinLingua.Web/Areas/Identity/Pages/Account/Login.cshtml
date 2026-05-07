@@ -1,14 +1,14 @@
 @page
 @model LoginModel
 @{
-    ViewData["Title"] = "Sign in";
+    ViewData["Title"] = T["Sign in"];
 }
 
 <div class="auth-page">
     <section class="panel stack-lg auth-intro">
-        <span class="eyebrow">Account</span>
-        <h1 class="headline-md">Sign in</h1>
-        <p class="body-lg">Use your Darwin Lingua account email and password. If sign-in cannot continue, check your account email for the next step.</p>
+        <span class="eyebrow">@T["Account"]</span>
+        <h1 class="headline-md">@T["Sign in"]</h1>
+        <p class="body-lg">@T["Use your Darwin Lingua account email and password. If sign-in cannot continue, check your account email for the next step."]</p>
     </section>
 
     <section class="panel stack-md auth-card">
@@ -30,13 +30,13 @@
 
             <label class="field field--checkbox">
                 <input asp-for="Input.RememberMe" />
-                <span>Remember me</span>
+                <span>@T["Remember me"]</span>
             </label>
 
             <div class="action-row auth-actions">
-                <button type="submit" class="button button--primary">Sign in</button>
-                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/ForgotPassword">Forgot password</a>
-                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                <button type="submit" class="button button--primary">@T["Sign in"]</button>
+                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/ForgotPassword">@T["Forgot password"]</a>
+                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Register">@T["Register"]</a>
             </div>
         </form>
     </section>

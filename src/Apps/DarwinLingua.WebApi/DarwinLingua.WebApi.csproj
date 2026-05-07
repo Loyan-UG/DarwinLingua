@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\Modules\ContentOps\DarwinLingua.ContentOps.Infrastructure\DarwinLingua.ContentOps.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Modules\Localization\DarwinLingua.Localization.Infrastructure\DarwinLingua.Localization.Infrastructure.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="SeedContent\scenarios-baseline-v1.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>

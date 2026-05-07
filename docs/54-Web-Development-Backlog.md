@@ -14,6 +14,10 @@ Related seed/report coverage:
 
 - `72-Web-Seed-Coverage-And-Admin-Reports.md`
 
+Long-term future work, not scheduled for the near-term Web slice:
+
+- complete multilingual localization for the Admin control panel after the learner-facing Web experience is stable
+
 The approved web stack is:
 
 - `ASP.NET Core MVC`
@@ -178,6 +182,28 @@ The expected low-friction model is:
 - [x] recent activity
 - [x] favorite words
 - [x] keep MVC rendering on server-side application services, not mobile package endpoints
+
+## 7.1 Public SEO And Discoverability
+
+- [x] change public word detail URLs from GUID-only routes to canonical lemma-based routes with a stable public id suffix, for example `/words/hallo-{publicId}`
+- [x] keep legacy `/words/{publicId}` URLs working through permanent redirects to the canonical word URL
+- [x] update learner-facing word links in browse/search, favorites, collections, and recent activity to emit canonical word URLs
+- [x] preserve word-list next/previous navigation after the canonical URL change
+- [ ] add canonical link tags, localized metadata, Open Graph/Twitter cards, and structured data for public learner pages
+- [ ] add sitemap generation for words, collections, topics, dialogue practice, and future scenario article pages
+- [ ] add robots policy review before production indexing
+- [ ] add SEO smoke checks for public routes and canonical redirects
+
+## 7.2 Dialogue Practice And Future Scenario Content
+
+- [ ] rename or refactor the current scenario dialogue practice surface to a clearer domain name such as `Dialogues` or `Conversation Dialogues`
+- [ ] keep the existing dialogue-style material, but treat it as dialogue practice rather than the future article/discussion scenario feature
+- [ ] verify dialogue seed/import content strictly requires all required meaning languages: `ar`, `ckb`, `en`, `fa`, `kmr`, `pl`, `ro`, `ru`, `sq`, `tr`
+- [ ] make dialogue import validation reject incomplete translations, missing topics, missing turns, missing useful phrases, and incomplete question/answer translations
+- [ ] decide whether existing baseline dialogue data should be retained, regenerated, or removed before the rename/refactor
+- [ ] add a new scenario feature separate from dialogue practice: topic, article-style German text, discussion questions, and linked discussion vocabulary
+- [ ] require future scenario article text, questions, and vocabulary support to satisfy the full required translation/content rules before import
+- [ ] link each scenario vocabulary item to its canonical word detail URL
 
 ## 8. User State
 

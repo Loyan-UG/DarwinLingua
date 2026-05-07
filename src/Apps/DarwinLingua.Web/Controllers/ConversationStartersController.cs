@@ -1,8 +1,10 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -12,6 +14,7 @@ public sealed class ConversationStartersController(
     IWebLearningProfileAccessor learningProfileAccessor,
     IWebEntitledFeatureAccessService featureAccessService,
     ILogger<ConversationStartersController> logger,
+    IStringLocalizer<SharedResource> localizer,
     IWebProductAnalyticsService? analyticsService = null) : Controller
 {
     [HttpGet("", Name = "ConversationStarters_Index")]
@@ -76,7 +79,9 @@ public sealed class ConversationStartersController(
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Conversation starter pack could not be loaded for {Slug}.", normalizedSlug);
-            return ServiceUnavailableView("Conversation starter is temporarily unavailable", "This starter pack could not be loaded right now. Please return to starters and try again.");
+            return ServiceUnavailableView(
+                localizer["Conversation starter is temporarily unavailable"],
+                localizer["This starter pack could not be loaded right now. Please return to starters and try again."]);
         }
 
         if (starterPack is null)

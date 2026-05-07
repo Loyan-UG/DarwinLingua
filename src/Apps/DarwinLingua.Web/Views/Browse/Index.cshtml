@@ -1,15 +1,15 @@
 @model DarwinLingua.Web.Models.BrowseIndexViewModel
 @{
-    ViewData["Title"] = "Browse";
+    ViewData["Title"] = T["Browse"];
 }
 
 <section class="panel stack-lg">
-    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Browse", "Choose a level or topic", "Start from the vocabulary set that matches today&apos;s goal, then open individual words for examples, pronunciation, and study actions.")' />
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(T["Browse"].Value, T["Choose a level or topic"].Value, T["Start from the vocabulary set that matches today&apos;s goal, then open individual words for examples, pronunciation, and study actions."].Value)' />
 </section>
 
 <section class="grid-two-col">
     <article class="panel stack-md">
-        <h2 class="headline-sm">CEFR levels</h2>
+        <h2 class="headline-sm">@T["CEFR levels"]</h2>
         <div class="chip-grid">
             @foreach (string level in Model.CefrLevels)
             {
@@ -23,10 +23,10 @@
         </div>
     </article>
     <article class="panel stack-md">
-        <h2 class="headline-sm">Topics</h2>
+        <h2 class="headline-sm">@T["Topics"]</h2>
         @if (Model.Topics.Count == 0)
         {
-            <p class="body-lg">Topics will appear here as curated vocabulary becomes available.</p>
+            <p class="body-lg">@T["Topics will appear here as curated vocabulary becomes available."]</p>
         }
         else
         {
@@ -46,5 +46,5 @@
 </section>
 
 <div id="browse-results">
-    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel("Choose a starting point", "Select a CEFR level or topic to preview matching words here.")' />
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Choose a starting point"].Value, T["Select a CEFR level or topic to preview matching words here."].Value)' />
 </div>

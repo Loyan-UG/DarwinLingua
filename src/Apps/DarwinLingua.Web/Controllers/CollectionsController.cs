@@ -1,8 +1,10 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -12,7 +14,8 @@ public sealed class CollectionsController(
     IWebLearningProfileAccessor learningProfileAccessor,
     IWebEntitledFeatureAccessService featureAccessService,
     IWebFavoriteWordService favoriteWordService,
-    ILogger<CollectionsController> logger) : Controller
+    ILogger<CollectionsController> logger,
+    IStringLocalizer<SharedResource> localizer) : Controller
 {
     [HttpGet("", Name = "Collections_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
@@ -110,7 +113,7 @@ public sealed class CollectionsController(
                     new DarwinLingua.Learning.Application.Models.UserWordStateModel(word.PublicId, false, false, null, null, 0),
                     returnUrl,
                     canUseFavorites,
-                    canUseFavorites ? null : "Favorites require an active trial or premium plan.")))
+                    canUseFavorites ? null : localizer["Favorites require an active trial or premium plan."].Value)))
             .ToArray();
     }
 

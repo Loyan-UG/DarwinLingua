@@ -1,14 +1,14 @@
 @page
 @model ResendEmailConfirmationModel
 @{
-    ViewData["Title"] = "Resend confirmation";
+    ViewData["Title"] = T["Resend confirmation"];
 }
 
 <div class="auth-page">
     <section class="panel stack-lg auth-intro">
-        <span class="eyebrow">Account email</span>
-        <h1 class="headline-md">Resend confirmation email</h1>
-        <p class="body-lg">Enter your account email and Darwin Lingua will send another confirmation link if one is needed.</p>
+        <span class="eyebrow">@T["Account email"]</span>
+        <h1 class="headline-md">@T["Resend confirmation email"]</h1>
+        <p class="body-lg">@T["Enter your account email and Darwin Lingua will send another confirmation link if one is needed."]</p>
     </section>
 
     <section class="panel stack-md auth-card">
@@ -22,8 +22,8 @@
             </div>
 
             <div class="action-row auth-actions">
-                <button type="submit" class="button button--primary">Send confirmation</button>
-                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">Back to sign in</a>
+                <button type="submit" class="button button--primary">@T["Send confirmation"]</button>
+                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">@T["Back to sign in"]</a>
             </div>
         </form>
     </section>

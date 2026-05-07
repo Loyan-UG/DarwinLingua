@@ -1,10 +1,10 @@
 @model DarwinLingua.Web.Models.OrganizerDashboardViewModel
 @{
-    ViewData["Title"] = "Organizer dashboard";
+    ViewData["Title"] = T["Organizer dashboard"];
 }
 
 <section class="panel stack-lg">
-    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Organizer dashboard", "Owned profiles", "Manage reviewed organizer listings assigned to your account.")' />
+    <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(T["Organizer dashboard"].Value, T["Owned profiles"].Value, T["Manage reviewed organizer listings assigned to your account."].Value)' />
     @if (!string.IsNullOrWhiteSpace(TempData["StatusMessage"] as string))
     {
         <div class="status-banner status-banner--success">@TempData["StatusMessage"]</div>
@@ -18,8 +18,8 @@
 @if (Model.Profiles.Count == 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">No assigned profiles</h2>
-        <p>No organizer profiles are assigned to @Model.OwnerEmail yet.</p>
+        <h2 class="headline-sm">@T["No assigned profiles"]</h2>
+        <p>@T["No organizer profiles are assigned to {0} yet.", Model.OwnerEmail]</p>
     </section>
 }
 else
@@ -35,22 +35,22 @@ else
                 <p>@item.Profile.Description</p>
                 <dl class="detail-list">
                     <div>
-                        <dt>Events</dt>
-                        <dd>@item.Analytics.ActiveEventCount active · @item.Analytics.ArchivedEventCount archived</dd>
+                        <dt>@T["Events"]</dt>
+                        <dd>@T["{0} active", item.Analytics.ActiveEventCount] · @T["{0} archived", item.Analytics.ArchivedEventCount]</dd>
                     </div>
                     <div>
-                        <dt>Plan</dt>
-                        <dd>@item.Plan.PlanKey · @item.Analytics.ActiveEventCount/@item.Plan.ActiveEventLimit active events</dd>
+                        <dt>@T["Plan"]</dt>
+                        <dd>@item.Plan.PlanKey · @T["{0}/{1} active events", item.Analytics.ActiveEventCount, item.Plan.ActiveEventLimit]</dd>
                     </div>
                     @if (item.CanUseAnalytics)
                     {
                         <div>
-                            <dt>Mode</dt>
-                            <dd>@item.Analytics.OnlineEventCount online · @item.Analytics.InPersonEventCount in person</dd>
+                            <dt>@T["Mode"]</dt>
+                            <dd>@T["{0} online", item.Analytics.OnlineEventCount] · @T["{0} in person", item.Analytics.InPersonEventCount]</dd>
                         </div>
                         <div>
-                            <dt>Capacity</dt>
-                            <dd>@(item.Analytics.TotalCapacity == 0 ? "Not set" : item.Analytics.TotalCapacity.ToString())</dd>
+                            <dt>@T["Capacity"]</dt>
+                            <dd>@(item.Analytics.TotalCapacity == 0 ? T["Not set"] : item.Analytics.TotalCapacity.ToString())</dd>
                         </div>
                     }
                 </dl>
@@ -71,20 +71,20 @@ else
                     }
                 </div>
                 <div class="detail-toolbar__actions">
-                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="EditProfile" asp-route-slug="@item.Profile.Slug">Edit profile</a>
+                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="EditProfile" asp-route-slug="@item.Profile.Slug">@T["Edit profile"]</a>
                     @if (item.CanCreateMoreActiveEvents)
                     {
-                        <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="NewEvent" asp-route-profileSlug="@item.Profile.Slug">New event</a>
+                        <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="NewEvent" asp-route-profileSlug="@item.Profile.Slug">@T["New event"]</a>
                     }
                     else
                     {
-                        <span class="button button--secondary button--compact">Event limit reached</span>
+                        <span class="button button--secondary button--compact">@T["Event limit reached"]</span>
                     }
                 </div>
                 @if (item.Events.Count > 0)
                 {
                     <div class="stack-sm">
-                        <h3 class="headline-sm">Events</h3>
+                        <h3 class="headline-sm">@T["Events"]</h3>
                         @foreach (var conversationEvent in item.Events)
                         {
                             item.RsvpSummaries.TryGetValue(conversationEvent.Slug, out var rsvpSummary);
@@ -94,17 +94,17 @@ else
                                     @conversationEvent.Name · @conversationEvent.PublicationStatus
                                     @if (rsvpSummary is not null)
                                     {
-                                        <span> · @rsvpSummary.GoingCount going · @rsvpSummary.InterestedCount interested</span>
+                                        <span> · @T["{0} going", rsvpSummary.GoingCount] · @T["{0} interested", rsvpSummary.InterestedCount]</span>
                                     }
                                 </span>
                                 <div class="detail-toolbar__actions">
-                                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="EditEvent" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug">Edit event</a>
+                                    <a class="button button--secondary button--compact" asp-controller="OrganizerDashboard" asp-action="EditEvent" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug">@T["Edit event"]</a>
                                     @if (string.Equals(conversationEvent.PublicationStatus, "Active", StringComparison.OrdinalIgnoreCase))
                                     {
                                         <form method="post" asp-controller="OrganizerDashboard" asp-action="SetEventPublicationStatus" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug" class="inline-form">
                                             @Html.AntiForgeryToken()
                                             <input type="hidden" name="PublicationStatus" value="Archived" />
-                                            <button type="submit" class="button button--secondary button--compact">Deactivate</button>
+                                            <button type="submit" class="button button--secondary button--compact">@T["Deactivate"]</button>
                                         </form>
                                     }
                                     else
@@ -112,7 +112,7 @@ else
                                         <form method="post" asp-controller="OrganizerDashboard" asp-action="SetEventPublicationStatus" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug" class="inline-form">
                                             @Html.AntiForgeryToken()
                                             <input type="hidden" name="PublicationStatus" value="Active" />
-                                            <button type="submit" class="button button--secondary button--compact">Activate</button>
+                                            <button type="submit" class="button button--secondary button--compact">@T["Activate"]</button>
                                         </form>
                                     }
                                 </div>
@@ -127,13 +127,13 @@ else
                                             <form method="post" asp-controller="OrganizerDashboard" asp-action="SetRsvpStatus" asp-route-profileSlug="@item.Profile.Slug" asp-route-eventSlug="@conversationEvent.Slug" asp-route-rsvpId="@rsvp.Id" class="inline-form">
                                                 @Html.AntiForgeryToken()
                                                 <select name="Status">
-                                                    <option value="going" selected="@(rsvp.Status == "going")">Going</option>
-                                                    <option value="interested" selected="@(rsvp.Status == "interested")">Interested</option>
-                                                    <option value="cancelled" selected="@(rsvp.Status == "cancelled")">Cancelled</option>
-                                                    <option value="attended" selected="@(rsvp.Status == "attended")">Attended</option>
-                                                    <option value="no-show" selected="@(rsvp.Status == "no-show")">No-show</option>
+                                                    <option value="going" selected="@(rsvp.Status == "going")">@T["Going"]</option>
+                                                    <option value="interested" selected="@(rsvp.Status == "interested")">@T["Interested"]</option>
+                                                    <option value="cancelled" selected="@(rsvp.Status == "cancelled")">@T["Cancelled"]</option>
+                                                    <option value="attended" selected="@(rsvp.Status == "attended")">@T["Attended"]</option>
+                                                    <option value="no-show" selected="@(rsvp.Status == "no-show")">@T["No-show"]</option>
                                                 </select>
-                                                <button type="submit" class="button button--secondary button--compact">Update</button>
+                                                <button type="submit" class="button button--secondary button--compact">@T["Update"]</button>
                                             </form>
                                         </li>
                                     }

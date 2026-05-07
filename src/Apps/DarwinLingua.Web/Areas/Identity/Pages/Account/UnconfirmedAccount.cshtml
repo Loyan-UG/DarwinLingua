@@ -1,16 +1,16 @@
 @page
 @model UnconfirmedAccountModel
 @{
-    ViewData["Title"] = "Confirm your email";
+    ViewData["Title"] = T["Confirm your email"];
 }
 
 <section class="panel stack-lg auth-intro">
-    <span class="eyebrow">Account email</span>
-    <h1 class="headline-md">Confirm your email</h1>
-    <p class="body-lg">This account needs email confirmation before sign-in can continue.</p>
-    <p class="body-sm">If the confirmation email expired or did not arrive, request a new one.</p>
+    <span class="eyebrow">@T["Account email"]</span>
+    <h1 class="headline-md">@T["Confirm your email"]</h1>
+    <p class="body-lg">@T["This account needs email confirmation before sign-in can continue."]</p>
+    <p class="body-sm">@T["If the confirmation email expired or did not arrive, request a new one."]</p>
     <div class="action-row">
-        <a class="button button--primary" asp-area="Identity" asp-page="/Account/ResendEmailConfirmation">Resend confirmation</a>
-        <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">Back to sign in</a>
+        <a class="button button--primary" asp-area="Identity" asp-page="/Account/ResendEmailConfirmation">@T["Resend confirmation"]</a>
+        <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">@T["Back to sign in"]</a>
     </div>
 </section>

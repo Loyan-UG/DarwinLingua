@@ -6,12 +6,16 @@ using DarwinLingua.Learning.Application.DependencyInjection;
 using DarwinLingua.Learning.Infrastructure.DependencyInjection;
 using DarwinLingua.Localization.Application.DependencyInjection;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Data;
+using DarwinLingua.Web.Localization;
 using Microsoft.AspNetCore.ResponseCompression;
 using DarwinLingua.Web.Services;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,8 +28,23 @@ if (builder.Environment.IsDevelopment())
     builder.Configuration.AddUserSecrets<Program>(optional: true);
 }
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services
+    .AddControllersWithViews()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization(options =>
+    {
+        options.DataAnnotationLocalizerProvider = (_, factory) =>
+            factory.Create(typeof(SharedResource));
+    });
+builder.Services
+    .AddRazorPages()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization(options =>
+    {
+        options.DataAnnotationLocalizerProvider = (_, factory) =>
+            factory.Create(typeof(SharedResource));
+    });
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<IWebPerformanceTelemetryService, WebPerformanceTelemetryService>();
 builder.Services.AddSingleton<IWebProductAnalyticsService, WebProductAnalyticsService>();
@@ -55,7 +74,9 @@ builder.Services.AddOutputCache(options =>
             "situation",
             "tone",
             "conversationGoal",
-            "topicKey"));
+            "topicKey",
+            "topic",
+            "q"));
 });
 builder.Services.Configure<MemoryCacheOptions>(options => options.SizeLimit = 512);
 builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
@@ -223,8 +244,43 @@ app.Use(async (context, next) =>
     await next();
 });
 app.UseRouting();
+string[] supportedUiLanguageCodes = ["en", "de"];
+RequestLocalizationOptions localizationOptions = new()
+{
+    DefaultRequestCulture = new RequestCulture("en"),
+    SupportedCultures = supportedUiLanguageCodes.Select(static code => new CultureInfo(code)).ToArray(),
+    SupportedUICultures = supportedUiLanguageCodes.Select(static code => new CultureInfo(code)).ToArray()
+};
+localizationOptions.RequestCultureProviders.Insert(
+    0,
+    new CustomRequestCultureProvider(async context =>
+    {
+        try
+        {
+            if (context.User.Identity?.IsAuthenticated != true)
+            {
+                return null;
+            }
+
+            IWebLearningProfileAccessor profileAccessor = context.RequestServices.GetRequiredService<IWebLearningProfileAccessor>();
+            string? uiLanguageCode = (await profileAccessor.GetProfileAsync(context.RequestAborted).ConfigureAwait(false)).UiLanguageCode;
+
+            if (ContentLanguageRequirements.RequiredLocalizationLanguageCodes.Contains(uiLanguageCode, StringComparer.OrdinalIgnoreCase) &&
+                supportedUiLanguageCodes.Contains(uiLanguageCode, StringComparer.OrdinalIgnoreCase))
+            {
+                return new ProviderCultureResult(uiLanguageCode);
+            }
+        }
+        catch
+        {
+            // Fall back to the standard providers below.
+        }
+
+        return null;
+    }));
 app.UseMiddleware<WebRequestTelemetryMiddleware>();
 app.UseAuthentication();
+app.UseRequestLocalization(localizationOptions);
 app.UseOutputCache();
 app.UseAuthorization();
 
