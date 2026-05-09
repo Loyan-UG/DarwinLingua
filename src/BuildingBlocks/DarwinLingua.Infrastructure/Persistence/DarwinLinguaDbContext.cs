@@ -114,17 +114,27 @@ public sealed class DarwinLinguaDbContext : DbContext
     /// </summary>
     public DbSet<WordCollectionEntry> WordCollectionEntries => Set<WordCollectionEntry>();
 
-    public DbSet<ScenarioLesson> ScenarioLessons => Set<ScenarioLesson>();
+    public DbSet<DialogueLesson> DialogueLessons => Set<DialogueLesson>();
 
-    public DbSet<ScenarioLessonTopic> ScenarioLessonTopics => Set<ScenarioLessonTopic>();
+    public DbSet<DialogueLessonTopic> DialogueLessonTopics => Set<DialogueLessonTopic>();
 
-    public DbSet<ScenarioDialogueTurn> ScenarioDialogueTurns => Set<ScenarioDialogueTurn>();
+    public DbSet<DialogueTurn> DialogueTurns => Set<DialogueTurn>();
 
-    public DbSet<ScenarioPhrase> ScenarioPhrases => Set<ScenarioPhrase>();
+    public DbSet<DialoguePhrase> DialoguePhrases => Set<DialoguePhrase>();
 
-    public DbSet<ScenarioQuestion> ScenarioQuestions => Set<ScenarioQuestion>();
+    public DbSet<DialogueQuestion> DialogueQuestions => Set<DialogueQuestion>();
 
-    public DbSet<ScenarioAnswer> ScenarioAnswers => Set<ScenarioAnswer>();
+    public DbSet<DialogueAnswer> DialogueAnswers => Set<DialogueAnswer>();
+
+    public DbSet<TalkTopic> TalkTopics => Set<TalkTopic>();
+
+    public DbSet<TalkTopicTopic> TalkTopicTopics => Set<TalkTopicTopic>();
+
+    public DbSet<TalkTopicQuestion> TalkTopicQuestions => Set<TalkTopicQuestion>();
+
+    public DbSet<TalkTopicVocabularyItem> TalkTopicVocabularyItems => Set<TalkTopicVocabularyItem>();
+
+    public DbSet<TalkTopicSpeakingGoalLink> TalkTopicSpeakingGoals => Set<TalkTopicSpeakingGoalLink>();
 
     public DbSet<ConversationStarterPack> ConversationStarterPacks => Set<ConversationStarterPack>();
 
@@ -226,26 +236,33 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new WordCollectionConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollectionLocalizationConfiguration());
         modelBuilder.ApplyConfiguration(new WordCollectionEntryConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioLessonConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioLessonTopicConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioDialogueTurnConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioDialogueTurnTranslationConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioPhraseConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioPhraseTranslationConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioQuestionConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioQuestionTranslationConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioAnswerConfiguration());
-        modelBuilder.ApplyConfiguration(new ScenarioAnswerTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueLessonConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueLessonTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueTurnConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueTurnTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new DialoguePhraseConfiguration());
+        modelBuilder.ApplyConfiguration(new DialoguePhraseTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueQuestionConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueQuestionTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueAnswerConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueAnswerTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new TalkTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new TalkTopicTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new TalkTopicArticleTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new TalkTopicQuestionConfiguration());
+        modelBuilder.ApplyConfiguration(new TalkTopicQuestionTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new TalkTopicVocabularyItemConfiguration());
+        modelBuilder.ApplyConfiguration(new TalkTopicSpeakingGoalLinkConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPackConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPackTopicConfiguration());
-        modelBuilder.ApplyConfiguration(new ConversationStarterLinkedScenarioConfiguration());
+        modelBuilder.ApplyConfiguration(new ConversationStarterLinkedDialogueConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterLinkedEventPreparationPackConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPhraseConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPhraseTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPhraseAlternativeConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationPackConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationPackTopicConfiguration());
-        modelBuilder.ApplyConfiguration(new EventPreparationLinkedScenarioConfiguration());
+        modelBuilder.ApplyConfiguration(new EventPreparationLinkedDialogueConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationLinkedConversationStarterPackConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationVocabularyReferenceConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationPromptConfiguration());

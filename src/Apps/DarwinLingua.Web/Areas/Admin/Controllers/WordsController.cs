@@ -131,7 +131,7 @@ public sealed class WordsController(
         }
         catch (DbUpdateException)
         {
-            ModelState.AddModelError(string.Empty, "A word with the same lemma, part of speech, and CEFR level already exists.");
+            ModelState.AddModelError(string.Empty, "A word with this lemma already exists.");
             return View("Edit", form);
         }
         catch (InvalidOperationException ex)
@@ -190,7 +190,7 @@ public sealed class WordsController(
         }
         catch (DbUpdateException)
         {
-            ModelState.AddModelError(string.Empty, "This update conflicts with another word that already has the same lemma, part of speech, and CEFR level.");
+            ModelState.AddModelError(string.Empty, "This update conflicts with another word that already has the same lemma.");
             return View(form);
         }
         catch (InvalidOperationException ex)

@@ -4,16 +4,16 @@
 
 This document defines the Phase 6 contract for scripted roleplay practice.
 
-Roleplay is an MVP practice layer on top of scenario lessons. It must work without AI, without chat, and without learner-generated content being sent to a model.
+Roleplay is an MVP practice layer on top of dialogue practice lessons. It must work without AI, without chat, and without learner-generated content being sent to a model.
 
 ## `RoleplayScenario`
 
-A `RoleplayScenario` is a structured practice flow connected to one `ScenarioLesson`.
+A `RoleplayScenario` is a structured practice flow connected to one `DialogueLesson`.
 
 Required fields:
 
 - `slug`: stable lowercase identifier
-- `scenarioSlug`: existing `ScenarioLesson.slug`
+- `scenarioSlug`: existing `DialogueLesson.slug`
 - `title`: learner-facing title
 - `cefrLevel`: expected `A1`, `A2`, `B1`, `B2`, `C1`, or `C2`
 - `roles`: ordered list of role labels used by the flow
@@ -21,7 +21,7 @@ Required fields:
 - `answerChoices`: optional early-MVP answer choices for learner turns
 - `staticFeedback`: optional feedback blocks shown without AI
 
-The Web MVP may derive a default `RoleplayScenario` from `ScenarioLesson.dialogueTurns` when no dedicated roleplay package exists.
+The Web MVP may derive a default `RoleplayScenario` from `DialogueLesson.dialogueTurns` when no dedicated roleplay package exists.
 
 ## Role Labels
 

@@ -3,7 +3,7 @@ using DarwinLingua.Catalog.Application.Models;
 namespace DarwinLingua.Catalog.Application.Abstractions;
 
 /// <summary>
-/// Provides read-only lexical queries for browse scenarios.
+/// Provides read-only lexical queries for browse dialogues.
 /// </summary>
 public interface IWordQueryService
 {

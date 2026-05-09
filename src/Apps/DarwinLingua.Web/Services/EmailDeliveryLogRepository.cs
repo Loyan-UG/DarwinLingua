@@ -43,7 +43,7 @@ public interface IEmailDeliveryLogRepository
     Task<IReadOnlyList<WebEmailDeliveryLog>> GetRecentAsync(
         int take,
         string? status,
-        string? scenario,
+        string? dialogue,
         DateTimeOffset? fromUtc,
         DateTimeOffset? toUtc,
         string? recipientHashPrefix,
@@ -279,7 +279,7 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
     public async Task<IReadOnlyList<WebEmailDeliveryLog>> GetRecentAsync(
         int take,
         string? status,
-        string? scenario,
+        string? dialogue,
         DateTimeOffset? fromUtc,
         DateTimeOffset? toUtc,
         string? recipientHashPrefix,
@@ -294,9 +294,9 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
             query = query.Where(log => log.Status == parsedStatus);
         }
 
-        if (!string.IsNullOrWhiteSpace(scenario))
+        if (!string.IsNullOrWhiteSpace(dialogue))
         {
-            string normalizedScenario = scenario.Trim();
+            string normalizedScenario = dialogue.Trim();
             query = query.Where(log => log.ScenarioKey == normalizedScenario);
         }
 

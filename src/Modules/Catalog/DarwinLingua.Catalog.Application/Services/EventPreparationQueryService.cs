@@ -10,10 +10,10 @@ internal sealed class EventPreparationQueryService(IEventPreparationRepository e
         CancellationToken cancellationToken) =>
         eventPreparationRepository.GetPublishedEventPreparationPacksAsync(filter, cancellationToken);
 
-    public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetPublishedEventPreparationPacksForScenarioAsync(
-        string scenarioSlug,
+    public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetPublishedEventPreparationPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken) =>
-        eventPreparationRepository.GetPublishedEventPreparationPacksForScenarioAsync(scenarioSlug, cancellationToken);
+        eventPreparationRepository.GetPublishedEventPreparationPacksForDialogueAsync(dialogueSlug, cancellationToken);
 
     public Task<EventPreparationPackDetailModel?> GetPublishedEventPreparationPackBySlugAsync(
         string slug,

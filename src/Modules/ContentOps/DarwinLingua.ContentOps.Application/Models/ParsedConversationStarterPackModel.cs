@@ -11,6 +11,6 @@ public sealed record ParsedConversationStarterPackModel(
     string ConversationGoal,
     IReadOnlyList<string> Topics,
     int SortOrder,
-    IReadOnlyList<string> LinkedScenarioSlugs,
+    IReadOnlyList<string> LinkedDialogueSlugs,
     IReadOnlyList<string> LinkedEventPreparationPackSlugs,
     IReadOnlyList<ParsedConversationStarterPhraseModel> Phrases);

@@ -37,7 +37,7 @@ public sealed class ContentImportParserConversationStarterTests
                   "conversationGoal": "introduction",
                   "topics": ["everyday-life"],
                   "sortOrder": 10,
-                  "linkedScenarioSlugs": ["a1-buy-bread-at-bakery"],
+                  "LinkedDialogueSlugs": ["a1-buy-bread-at-bakery"],
                   "linkedEventPreparationPackSlugs": ["a1-cafe-evening-prep"],
                   "phrases": [
                     {
@@ -68,7 +68,7 @@ public sealed class ContentImportParserConversationStarterTests
         Assert.Equal("friendly", pack.Tone);
         Assert.Equal("introduction", pack.ConversationGoal);
         Assert.Equal(["everyday-life"], pack.Topics);
-        Assert.Equal(["a1-buy-bread-at-bakery"], pack.LinkedScenarioSlugs);
+        Assert.Equal(["a1-buy-bread-at-bakery"], pack.LinkedDialogueSlugs);
         Assert.Equal(["a1-cafe-evening-prep"], pack.LinkedEventPreparationPackSlugs);
 
         ParsedConversationStarterPhraseModel phrase = Assert.Single(pack.Phrases);

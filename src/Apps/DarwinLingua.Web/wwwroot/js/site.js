@@ -189,7 +189,7 @@ function configureWordNavigation(detailElement) {
         const entry = Array.isArray(context.entries)
             ? context.entries.find((item) => item && item.id === targetId)
             : null;
-        window.location.assign(entry && entry.href ? entry.href : `/words/${targetId}`);
+        window.location.assign(entry && entry.href ? entry.href : "/browse");
     };
 
     if (previousButton) {

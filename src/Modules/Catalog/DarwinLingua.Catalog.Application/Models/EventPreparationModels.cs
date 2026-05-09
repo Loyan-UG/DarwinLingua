@@ -14,7 +14,7 @@ public sealed record EventPreparationPackListItemModel(
     string Category,
     string EventType,
     IReadOnlyList<string> TopicKeys,
-    IReadOnlyList<string> LinkedScenarioSlugs,
+    IReadOnlyList<string> LinkedDialogueSlugs,
     IReadOnlyList<string> LinkedConversationStarterPackSlugs);
 
 public sealed record EventPreparationPackDetailModel(
@@ -25,7 +25,7 @@ public sealed record EventPreparationPackDetailModel(
     string Category,
     string EventType,
     IReadOnlyList<string> TopicKeys,
-    IReadOnlyList<string> LinkedScenarioSlugs,
+    IReadOnlyList<string> LinkedDialogueSlugs,
     IReadOnlyList<string> LinkedConversationStarterPackSlugs,
     IReadOnlyList<EventPreparationVocabularyReferenceModel> LinkedVocabulary,
     IReadOnlyList<EventPreparationPromptModel> Prompts);

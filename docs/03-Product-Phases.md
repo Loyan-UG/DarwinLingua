@@ -177,11 +177,12 @@ Expand to a broader platform and turn shared content into a server-managed distr
 
 Turn Darwin Lingua into a practical German-in-Germany platform, not only a vocabulary and review app.
 
-This phase adds scenario-based learning, conversation preparation, event discovery, safe learner profiles, and B2B organizer tooling.
+This phase adds dialogue-based learning, conversation preparation, event discovery, safe learner profiles, and B2B organizer tooling.
 
 ### Features
 
-- real-life scenario lessons for situations such as doctor visits, school, kindergarten, offices, housing, workplace, job interviews, and conversation cafes
+- real-life dialogue practice lessons for situations such as doctor visits, school, kindergarten, offices, housing, workplace, job interviews, and conversation cafes
+- Talk Topics: reading-based materials that help learner groups read a German text, review important vocabulary, and start opinion-focused discussion
 - conversation starter packs by situation, CEFR level, tone, and goal
 - dual meaning-language learning as a first-class product mode, such as:
   - German + English + Persian
@@ -191,7 +192,8 @@ This phase adds scenario-based learning, conversation preparation, event discove
   - German + English + Russian
 - scripted roleplay preparation without requiring AI in the first version
 - local and online conversation event directory
-- event preparation packs linked to vocabulary, scenarios, starter phrases, and roleplay prompts
+- event preparation packs linked to vocabulary, dialogues, starter phrases, and roleplay prompts
+- reusable learning-help content for opinion phrases, polite disagreement, follow-up questions, and language-cafe moderation guidance
 - organizer profiles for conversation cafes, clubs, teachers, libraries, associations, and integration groups
 - organizer dashboard for event/profile management
 - RSVP and attendance basics without becoming a full event-ticketing platform
@@ -203,7 +205,7 @@ This phase adds scenario-based learning, conversation preparation, event discove
 
 ### Success Criteria
 
-- learners can prepare for real-life German conversations through structured scenario lessons
+- learners can prepare for real-life German conversations through structured dialogue practice lessons
 - learners can view German learning content with one or two selected meaning languages consistently
 - learners can discover conversation events by city, level, language, online/offline mode, and price type
 - event pages can show preparation packs that help users practice before attending

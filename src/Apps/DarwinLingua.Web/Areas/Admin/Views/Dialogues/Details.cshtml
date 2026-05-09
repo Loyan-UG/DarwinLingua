@@ -1,0 +1,248 @@
+@model DarwinLingua.Web.Models.AdminDialogueDetailViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Title, "Dialogue detail", "Manage the learner-facing dialogue content, translations, and review questions.")' />
+        <div class="cluster">
+            <a class="button button--secondary" asp-action="Index">Back</a>
+            <a class="button" asp-action="Edit" asp-route-dialogueId="@Model.DialogueId">Edit</a>
+        </div>
+    </div>
+    @if (TempData["AdminStatusMessage"] is string statusMessage)
+    {
+        <div class="state-panel state-panel--success">@statusMessage</div>
+    }
+
+    <div class="admin-detail-grid">
+        <div><span class="eyebrow">Slug</span><strong>@Model.Slug</strong></div>
+        <div><span class="eyebrow">CEFR</span><strong>@Model.CefrLevel</strong></div>
+        <div><span class="eyebrow">Category</span><strong>@Model.Category</strong></div>
+        <div><span class="eyebrow">Status</span><strong>@Model.PublicationStatus</strong></div>
+    </div>
+
+    <div class="admin-summary-grid">
+        <a href="#questions" class="admin-summary-tile">
+            <span class="eyebrow">Questions</span>
+            <strong>@Model.Questions.Count</strong>
+        </a>
+        <a href="#dialogue" class="admin-summary-tile">
+            <span class="eyebrow">Dialogue turns</span>
+            <strong>@Model.DialogueTurns.Count</strong>
+        </a>
+        <a href="#phrases" class="admin-summary-tile">
+            <span class="eyebrow">Useful phrases</span>
+            <strong>@Model.UsefulPhrases.Count</strong>
+        </a>
+    </div>
+
+    <nav class="admin-anchor-nav" aria-label="Dialogue detail sections">
+        <a href="#questions">Questions</a>
+        <a href="#dialogue">Dialogue</a>
+        <a href="#phrases">Phrases</a>
+    </nav>
+
+    <div class="admin-prose">
+        <p><strong>Goal:</strong> @Model.LearnerGoal</p>
+        <p>@Model.Description</p>
+    </div>
+</section>
+
+<section id="questions" class="panel stack-md">
+    <div class="cluster cluster--between">
+        <div>
+            <h2 class="headline-sm">Questions</h2>
+            <p class="muted-copy">Review prompts, answer choices, and their localized text.</p>
+        </div>
+        <span class="status-pill">@Model.Questions.Count total</span>
+    </div>
+    <details class="admin-inline-panel stack-sm">
+        <summary>Add question</summary>
+        <form method="post" asp-action="AddQuestion" asp-route-dialogueId="@Model.DialogueId" data-confirm-submit="Add this dialogue question?">
+            @Html.AntiForgeryToken()
+            <div class="admin-inline-form-grid admin-inline-form-grid--label">
+                <label class="form-field">
+                    <span>Prompt</span>
+                    <input name="prompt" required maxlength="1024" />
+                </label>
+                <label class="form-field">
+                    <span>Sort</span>
+                    <input name="sortOrder" type="number" value="0" min="0" />
+                </label>
+                <button class="button button--compact" type="submit">Add</button>
+            </div>
+        </form>
+    </details>
+
+    @if (Model.Questions.Count == 0)
+    {
+        <div class="state-panel">No questions recorded.</div>
+    }
+    else
+    {
+        <div class="admin-content-list">
+            @foreach (var question in Model.Questions)
+            {
+                <article class="admin-record-card stack-md">
+                    <div class="cluster cluster--between">
+                        <div>
+                            <span class="eyebrow">Question @question.SortOrder</span>
+                            <strong class="admin-record-title">@question.Prompt</strong>
+                        </div>
+                        <form class="inline-form" method="post" asp-action="DeleteQuestion" asp-route-dialogueId="@Model.DialogueId" asp-route-questionId="@question.QuestionId" data-confirm-submit="Remove this question and its answers?">
+                            @Html.AntiForgeryToken()
+                            <button class="button button--secondary button--compact" type="submit">Remove</button>
+                        </form>
+                    </div>
+
+                    <partial name="_TranslationList" model='new DarwinLingua.Web.Models.AdminDialogueTranslationListViewModel(Model.DialogueId, "DeleteQuestionTranslation", "Remove this question translation?", question.Translations, QuestionId: question.QuestionId)' />
+
+                    <partial name="_AddTranslationForm" model='new DarwinLingua.Web.Models.AdminDialogueAddTranslationFormViewModel(Model.DialogueId, "AddQuestionTranslation", "Add question translation", "Text", "Add this question translation?", QuestionId: question.QuestionId)' />
+
+                    <div class="cluster cluster--between">
+                        <h3 class="admin-subhead">Answers</h3>
+                        <span class="eyebrow">@question.Answers.Count choices</span>
+                    </div>
+
+                    @if (question.Answers.Count > 0)
+                    {
+                        <div class="admin-answer-grid">
+                            @foreach (var answer in question.Answers)
+                            {
+                                <article class="admin-answer-card stack-sm">
+                                    <div class="cluster cluster--between">
+                                        <span class="status-pill">@(answer.IsCorrect ? "Correct" : "Distractor")</span>
+                                        <form class="inline-form" method="post" asp-action="DeleteAnswer" asp-route-dialogueId="@Model.DialogueId" asp-route-questionId="@question.QuestionId" asp-route-answerId="@answer.AnswerId" data-confirm-submit="Remove this answer and its translations?">
+                                            @Html.AntiForgeryToken()
+                                            <button class="button button--secondary button--compact" type="submit">Remove</button>
+                                        </form>
+                                    </div>
+                                    <p><strong>@answer.SortOrder.</strong> @answer.Text</p>
+                                    @if (!string.IsNullOrWhiteSpace(answer.Feedback))
+                                    {
+                                        <p class="muted-copy">@answer.Feedback</p>
+                                    }
+                                    <partial name="_TranslationList" model='new DarwinLingua.Web.Models.AdminDialogueTranslationListViewModel(Model.DialogueId, "DeleteAnswerTranslation", "Remove this answer translation?", answer.Translations, QuestionId: question.QuestionId, AnswerId: answer.AnswerId)' />
+                                    <partial name="_AddTranslationForm" model='new DarwinLingua.Web.Models.AdminDialogueAddTranslationFormViewModel(Model.DialogueId, "AddAnswerTranslation", "Add answer translation", "Translation", "Add this answer translation?", QuestionId: question.QuestionId, AnswerId: answer.AnswerId)' />
+                                </article>
+                            }
+                        </div>
+                    }
+
+                    <details class="admin-inline-panel stack-sm">
+                        <summary>Add answer</summary>
+                        <form method="post" asp-action="AddAnswer" asp-route-dialogueId="@Model.DialogueId" asp-route-questionId="@question.QuestionId" data-confirm-submit="Add this answer?">
+                            @Html.AntiForgeryToken()
+                            <div class="admin-inline-form-grid admin-inline-form-grid--example">
+                                <label class="form-field"><span>Text</span><input name="text" required maxlength="1024" /></label>
+                                <label class="form-field"><span>Feedback</span><input name="feedback" maxlength="1024" /></label>
+                                <label class="form-field"><span>Sort</span><input name="sortOrder" type="number" value="0" min="0" /></label>
+                                <label class="form-field form-field--check">
+                                    <input type="checkbox" name="isCorrect" value="true" />
+                                    <input type="hidden" name="isCorrect" value="false" />
+                                    <span>Correct</span>
+                                </label>
+                                <button class="button button--compact" type="submit">Add</button>
+                            </div>
+                        </form>
+                    </details>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<section class="admin-two-column">
+    <div id="dialogue" class="panel stack-md">
+        <div class="cluster cluster--between">
+            <div>
+                <h2 class="headline-sm">Dialogue turns</h2>
+                <p class="muted-copy">Ordered turns used in guided roleplay.</p>
+            </div>
+            <span class="status-pill">@Model.DialogueTurns.Count total</span>
+        </div>
+        <details class="admin-inline-panel stack-sm">
+            <summary>Add dialogue turn</summary>
+            <form method="post" asp-action="AddDialogueTurn" asp-route-dialogueId="@Model.DialogueId" data-confirm-submit="Add this dialogue turn?">
+                @Html.AntiForgeryToken()
+                <div class="admin-inline-form-grid admin-inline-form-grid--example">
+                    <label class="form-field"><span>Text</span><input name="baseText" required maxlength="2000" /></label>
+                    <label class="form-field"><span>Role</span><input name="speakerRole" value="learner" required /></label>
+                    <label class="form-field"><span>Sort</span><input name="sortOrder" type="number" value="0" min="0" /></label>
+                    <button class="button button--compact" type="submit">Add</button>
+                </div>
+            </form>
+        </details>
+        @if (Model.DialogueTurns.Count == 0)
+        {
+            <div class="state-panel">No dialogue turns recorded.</div>
+        }
+        @foreach (var turn in Model.DialogueTurns)
+        {
+            <article class="admin-record-card stack-sm">
+                <div class="cluster cluster--between">
+                    <div>
+                        <span class="eyebrow">Turn @turn.SortOrder</span>
+                        <strong class="admin-record-title">@turn.SpeakerRole</strong>
+                    </div>
+                    <form class="inline-form" method="post" asp-action="DeleteDialogueTurn" asp-route-dialogueId="@Model.DialogueId" asp-route-turnId="@turn.TurnId" data-confirm-submit="Remove this dialogue turn and its translations?">
+                        @Html.AntiForgeryToken()
+                        <button class="button button--secondary button--compact" type="submit">Remove</button>
+                    </form>
+                </div>
+                <p>@turn.BaseText</p>
+                <partial name="_TranslationList" model='new DarwinLingua.Web.Models.AdminDialogueTranslationListViewModel(Model.DialogueId, "DeleteDialogueTurnTranslation", "Remove this dialogue translation?", turn.Translations, TurnId: turn.TurnId)' />
+                <partial name="_AddTranslationForm" model='new DarwinLingua.Web.Models.AdminDialogueAddTranslationFormViewModel(Model.DialogueId, "AddDialogueTurnTranslation", "Add translation", "Translation", "Add this dialogue translation?", TurnId: turn.TurnId)' />
+            </article>
+        }
+    </div>
+
+    <div id="phrases" class="panel stack-md">
+        <div class="cluster cluster--between">
+            <div>
+                <h2 class="headline-sm">Useful phrases</h2>
+                <p class="muted-copy">Reusable phrases attached to this dialogue.</p>
+            </div>
+            <span class="status-pill">@Model.UsefulPhrases.Count total</span>
+        </div>
+        <details class="admin-inline-panel stack-sm">
+            <summary>Add phrase</summary>
+            <form method="post" asp-action="AddPhrase" asp-route-dialogueId="@Model.DialogueId" data-confirm-submit="Add this dialogue phrase?">
+                @Html.AntiForgeryToken()
+                <div class="admin-inline-form-grid admin-inline-form-grid--example">
+                    <label class="form-field"><span>Text</span><input name="baseText" required maxlength="1024" /></label>
+                    <label class="form-field"><span>Note</span><input name="usageNote" maxlength="1024" /></label>
+                    <label class="form-field"><span>Sort</span><input name="sortOrder" type="number" value="0" min="0" /></label>
+                    <button class="button button--compact" type="submit">Add</button>
+                </div>
+            </form>
+        </details>
+        @if (Model.UsefulPhrases.Count == 0)
+        {
+            <div class="state-panel">No useful phrases recorded.</div>
+        }
+        @foreach (var phrase in Model.UsefulPhrases)
+        {
+            <article class="admin-record-card stack-sm">
+                <div class="cluster cluster--between">
+                    <div>
+                        <span class="eyebrow">Phrase @phrase.SortOrder</span>
+                        <strong class="admin-record-title">@phrase.BaseText</strong>
+                    </div>
+                    <form class="inline-form" method="post" asp-action="DeletePhrase" asp-route-dialogueId="@Model.DialogueId" asp-route-phraseId="@phrase.PhraseId" data-confirm-submit="Remove this phrase and its translations?">
+                        @Html.AntiForgeryToken()
+                        <button class="button button--secondary button--compact" type="submit">Remove</button>
+                    </form>
+                </div>
+                @if (!string.IsNullOrWhiteSpace(phrase.UsageNote))
+                {
+                    <p class="muted-copy">@phrase.UsageNote</p>
+                }
+                <partial name="_TranslationList" model='new DarwinLingua.Web.Models.AdminDialogueTranslationListViewModel(Model.DialogueId, "DeletePhraseTranslation", "Remove this phrase translation?", phrase.Translations, PhraseId: phrase.PhraseId)' />
+                <partial name="_AddTranslationForm" model='new DarwinLingua.Web.Models.AdminDialogueAddTranslationFormViewModel(Model.DialogueId, "AddPhraseTranslation", "Add translation", "Translation", "Add this phrase translation?", PhraseId: phrase.PhraseId)' />
+            </article>
+        }
+    </div>
+</section>

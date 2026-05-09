@@ -69,8 +69,8 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(TopicWordsPage), typeof(TopicWordsPage));
         Routing.RegisterRoute(nameof(CollectionsPage), typeof(CollectionsPage));
         Routing.RegisterRoute(nameof(CollectionWordsPage), typeof(CollectionWordsPage));
-        Routing.RegisterRoute(nameof(ScenariosPage), typeof(ScenariosPage));
-        Routing.RegisterRoute(nameof(ScenarioDetailPage), typeof(ScenarioDetailPage));
+        Routing.RegisterRoute(nameof(DialoguesPage), typeof(DialoguesPage));
+        Routing.RegisterRoute(nameof(DialogueDetailPage), typeof(DialogueDetailPage));
         Routing.RegisterRoute(nameof(ConversationStartersPage), typeof(ConversationStartersPage));
         Routing.RegisterRoute(nameof(ConversationStarterDetailPage), typeof(ConversationStarterDetailPage));
         Routing.RegisterRoute(nameof(EventPreparationPackDetailPage), typeof(EventPreparationPackDetailPage));

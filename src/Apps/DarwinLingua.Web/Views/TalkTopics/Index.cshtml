@@ -1,0 +1,74 @@
+@model DarwinLingua.Web.Models.TalkTopicIndexPageViewModel
+@{
+    ViewData["Title"] = T["Talk Topics"];
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Talk Topics"]</span>
+    <h1 class="headline-md">@T["Reading topics for real conversation"]</h1>
+    <p class="body-lg">@T["Read a short German text, review important words, then discuss opinions and ideas together."]</p>
+
+    <form class="search-form" method="get" asp-controller="TalkTopics" asp-action="Index">
+        <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
+            <option value="">@T["All levels"]</option>
+            @foreach (string level in Model.CefrLevels)
+            {
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+            }
+        </select>
+        <select class="search-input" name="contentType" aria-label="@T["Content type"]">
+            <option value="">@T["All content types"]</option>
+            @foreach (string type in Model.ContentTypes)
+            {
+                <option value="@type" selected="@(string.Equals(Model.SelectedContentType, type, StringComparison.OrdinalIgnoreCase))">@T[type]</option>
+            }
+        </select>
+        <select class="search-input" name="topic" aria-label="@T["Topic"]">
+            <option value="">@T["All topics"]</option>
+            @foreach (string topicKey in Model.TopicKeys)
+            {
+                <option value="@topicKey" selected="@(string.Equals(Model.SelectedTopicKey, topicKey, StringComparison.OrdinalIgnoreCase))">@topicKey</option>
+            }
+        </select>
+        <button type="submit" class="button button--secondary">@T["Filter"]</button>
+    </form>
+</section>
+
+@if (Model.TalkTopics.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Talk Topics are being prepared"].Value, T["Reading-based conversation materials will appear here when they are ready."].Value)' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var talkTopic in Model.TalkTopics)
+        {
+            <article class="panel stack-md">
+                <div class="action-row collection-card__meta">
+                    <span class="eyebrow">@talkTopic.CefrLevel · @T[talkTopic.ContentType] · @talkTopic.Category</span>
+                    <span>@T["{0} min read", talkTopic.EstimatedReadingMinutes]</span>
+                </div>
+                <h2 class="headline-sm">
+                    <a asp-controller="TalkTopics" asp-action="Detail" asp-route-slug="@talkTopic.Slug">@talkTopic.Title</a>
+                </h2>
+                <p>@talkTopic.Description</p>
+                @if (talkTopic.IsSensitive)
+                {
+                    <p class="async-state async-state--warning">@T["Sensitive topic"]</p>
+                }
+                @if (talkTopic.TopicKeys.Count > 0)
+                {
+                    <div class="chip-grid">
+                        @foreach (string topicKey in talkTopic.TopicKeys)
+                        {
+                            <a class="chip-link" asp-controller="TalkTopics" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
+                        }
+                    </div>
+                }
+                <div class="action-row">
+                    <a class="button button--secondary" asp-controller="TalkTopics" asp-action="Detail" asp-route-slug="@talkTopic.Slug">@T["Open Talk Topic"]</a>
+                </div>
+            </article>
+        }
+    </section>
+}

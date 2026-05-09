@@ -1,0 +1,87 @@
+@model DarwinLingua.Web.Models.AdminDialogueEditViewModel
+@{
+    ViewData["Title"] = Model.IsNew ? "New dialogue" : $"Edit {Model.Title}";
+    string[] cefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
+    string[] statuses = ["Draft", "Active", "Archived", "Deprecated"];
+    string actionName = Model.IsNew ? "New" : "Edit";
+}
+
+<div class="admin-summary-grid">
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Mode", Model.IsNew ? "Create" : "Edit", "Dialogue metadata.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Status", Model.PublicationStatus, "Learner visibility state.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Level", Model.CefrLevel, "CEFR level for practice filters.")' />
+</div>
+
+<nav class="admin-anchor-nav" aria-label="Dialogue editor sections">
+    <a href="#dialogue-identity">Identity</a>
+    <a href="#dialogue-learning">Learning</a>
+    <a href="#dialogue-publishing">Publishing</a>
+</nav>
+
+<section id="dialogue-identity" class="panel stack-lg">
+    <div class="cluster cluster--between">
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.IsNew ? "New dialogue" : Model.Title, "Dialogue metadata", "Create and maintain dialogue lesson metadata.")' />
+        <a class="button button--secondary" asp-action="Index">Back</a>
+    </div>
+
+    <form class="admin-edit-form stack-lg" method="post" asp-action="@actionName" asp-route-dialogueId="@Model.DialogueId" data-confirm-submit="Save this dialogue?">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="DialogueId" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-grid">
+            <label class="form-field">
+                <span>Slug</span>
+                <input asp-for="Slug" readonly="@(!Model.IsNew)" />
+                <span asp-validation-for="Slug" class="validation-message"></span>
+            </label>
+            <label class="form-field field--wide">
+                <span>Title</span>
+                <input asp-for="Title" />
+                <span asp-validation-for="Title" class="validation-message"></span>
+            </label>
+            <label id="dialogue-publishing" class="form-field">
+                <span>CEFR</span>
+                <select asp-for="CefrLevel">
+                    @foreach (string level in cefrLevels)
+                    {
+                        <option value="@level">@level</option>
+                    }
+                </select>
+            </label>
+            <label class="form-field">
+                <span>Status</span>
+                <select asp-for="PublicationStatus">
+                    @foreach (string status in statuses)
+                    {
+                        <option value="@status">@status</option>
+                    }
+                </select>
+            </label>
+            <label class="form-field">
+                <span>Category</span>
+                <input asp-for="Category" />
+                <span asp-validation-for="Category" class="validation-message"></span>
+            </label>
+            <label class="form-field">
+                <span>Sort order</span>
+                <input asp-for="SortOrder" type="number" min="0" />
+            </label>
+            <label id="dialogue-learning" class="form-field field--wide">
+                <span>Learner goal</span>
+                <input asp-for="LearnerGoal" />
+                <span asp-validation-for="LearnerGoal" class="validation-message"></span>
+            </label>
+            <label class="form-field field--wide">
+                <span>Description</span>
+                <textarea asp-for="Description" rows="4"></textarea>
+                <span asp-validation-for="Description" class="validation-message"></span>
+            </label>
+        </div>
+
+        <div class="cluster">
+            <button class="button" type="submit">Save</button>
+            <a class="button button--secondary" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</section>

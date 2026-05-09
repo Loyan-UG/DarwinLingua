@@ -4,7 +4,7 @@ This document defines the Phase 6 JSON contract for event preparation packs befo
 
 ## Package Shape
 
-Event preparation packs live beside vocabulary entries, collections, scenario lessons, and conversation starter packs:
+Event preparation packs live beside vocabulary entries, collections, dialogue lessons, and conversation starter packs:
 
 ```json
 {
@@ -35,7 +35,7 @@ Required fields:
 Optional fields:
 
 - `sortOrder`: non-negative display order.
-- `linkedScenarioSlugs`: scenario lessons useful for this event.
+- `linkedDialogueSlugs`: dialogue lessons useful for this event.
 - `linkedConversationStarterPackSlugs`: conversation starter packs useful for this event.
 - `linkedVocabulary`: vocabulary references using `word`, optional `partOfSpeech`, and optional `cefrLevel`.
 - `openingPrompts`: short German prompts learners can try at the event.
@@ -47,7 +47,7 @@ Optional fields:
 The importer should reject event preparation content when:
 
 - `slug`, `title`, `description`, `cefrLevel`, `category`, `eventType`, or `topics` is missing.
-- `slug`, `category`, `eventType`, linked scenario slugs, or linked starter slugs are not lowercase kebab-case.
+- `slug`, `category`, `eventType`, linked dialogue slugs, or linked starter slugs are not lowercase kebab-case.
 - `cefrLevel` is not a supported CEFR value.
 - a referenced topic key is unknown.
 - `linkedVocabulary` contains empty `word` values.
@@ -66,7 +66,7 @@ The importer should reject event preparation content when:
   "eventType": "conversation-cafe",
   "topics": ["everyday-life"],
   "sortOrder": 10,
-  "linkedScenarioSlugs": ["a1-buy-bread-at-bakery"],
+  "linkedDialogueSlugs": ["a1-buy-bread-at-bakery"],
   "linkedConversationStarterPackSlugs": ["a1-cafe-first-meeting-starters"],
   "linkedVocabulary": [
     { "word": "Hilfe", "partOfSpeech": "Noun", "cefrLevel": "A1" }

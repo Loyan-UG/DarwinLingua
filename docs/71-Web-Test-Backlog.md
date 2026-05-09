@@ -27,7 +27,7 @@ Latest local Web verification:
 
 - 2026-05-01: `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
 - 2026-05-01: `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors after stopping the local smoke host that was locking build outputs.
-- 2026-05-01: local GET smoke passed for the main learner routes: `/`, `/browse`, `/browse/cefr/A1`, `/search`, `/search?q=auto`, unknown-search suggestion state, `/collections`, `/scenarios`, `/conversation-starters`, `/conversation-events`, `/organizers`, `/install`, `/privacy`, and the Identity account pages.
+- 2026-05-01: local GET smoke passed for the main learner routes: `/`, `/browse`, `/browse/cefr/A1`, `/search`, `/search?q=auto`, unknown-search suggestion state, `/collections`, `/dialogues`, `/conversation-starters`, `/conversation-events`, `/organizers`, `/install`, `/privacy`, and the Identity account pages.
 - 2026-05-01: authenticated admin GET smoke passed for dashboard, reports, analytics, diagnostics, content import/history/draft/publishing/rollback pages, catalog management pages, taxonomy pages, users, moderation, word suggestions, organizer profiles, conversation events, billing diagnostics, and email diagnostics.
 - 2026-05-01: smoke response bodies and server logs were checked for unhandled exception signatures; none were found.
 - 2026-05-01: in-app browser opened `/admin/billing-diagnostics` successfully. Local Stripe readiness warnings were expected because local Stripe billing settings were not enabled/configured.
@@ -37,32 +37,45 @@ Latest local Web verification:
 
 ## Automated Test Backlog
 
-### Scenario Learning
+### Talk Topics
 
-- [ ] Scenario import rejects malformed scenario packages with clear issue messages.
-- [ ] Scenario import persists lesson metadata, topics, dialogue turns, useful phrases, questions, answers, and translations.
-- [ ] Scenario list query returns only published scenarios in stable sort order.
-- [ ] Scenario detail query applies primary and secondary meaning-language selection.
-- [ ] Web scenario detail rendering shows dialogue, useful phrases, quick checks, related starter packs, and related preparation packs.
+- [x] Import parser accepts valid `talkTopics` package contracts.
+- [ ] Import validation rejects too-short German articles by CEFR level.
+- [ ] Import validation rejects invalid content type, question type, and speaking goal values.
+- [ ] Persistence stores article, translations, questions, vocabulary references, speaking goals, content type, and sensitivity fields.
+- [ ] List query filters by CEFR level, category, topic, content type, speaking goal, and sensitivity.
+- [ ] Detail query resolves vocabulary references against the Word Catalog where possible.
+- [ ] WebApi list/detail endpoints return the expected Talk Topic payloads.
+- [ ] Web detail rendering does not fail when a vocabulary `wordSlug` cannot be resolved.
+- [ ] German and English localization keys cover Talk Topics, content types, speaking goals, and sensitivity warnings.
+- [ ] Mobile catalog package export includes Talk Topics where expected.
+
+### Dialogue Learning
+
+- [ ] Dialogue import rejects malformed dialogue packages with clear issue messages.
+- [ ] Dialogue import persists lesson metadata, topics, dialogue turns, useful phrases, questions, answers, and translations.
+- [ ] Dialogue list query returns only published dialogues in stable sort order.
+- [ ] Dialogue detail query applies primary and secondary meaning-language selection.
+- [ ] Web dialogue detail rendering shows dialogue, useful phrases, quick checks, related starter packs, and related preparation packs.
 - [ ] Web roleplay sequence builder skips learner prompts and pairs each non-learner prompt with the next learner model answer.
 - [ ] Web roleplay page renders model answers, static feedback, and no-AI behavior.
-- [ ] Empty or unknown scenario detail payloads return safe 404 behavior instead of Web 500 errors.
+- [ ] Empty or unknown dialogue detail payloads return safe 404 behavior instead of Web 500 errors.
 
 ### Conversation Starters
 
-- [ ] Starter import rejects invalid filters, linked scenario slugs, and invalid dual-language payloads.
+- [ ] Starter import rejects invalid filters, linked dialogue slugs, and invalid dual-language payloads.
 - [ ] Starter list query filters by CEFR level, situation, tone, and conversation goal.
 - [ ] Starter detail query renders primary and optional secondary meaning languages.
-- [ ] Scenario detail query returns related starter packs for linked scenarios.
+- [ ] Dialogue detail query returns related starter packs for linked dialogues.
 - [ ] Web starter detail page renders phrase alternatives, usage notes, register, common mistakes, and dual-language text.
 
 ### Event Preparation Packs
 
-- [ ] Preparation-pack import rejects invalid linked scenarios, vocabulary references, starter links, and prompt types.
-- [ ] Preparation-pack persistence stores prompts, vocabulary references, topic links, scenario links, and starter-pack links.
+- [ ] Preparation-pack import rejects invalid linked dialogues, vocabulary references, starter links, and prompt types.
+- [ ] Preparation-pack persistence stores prompts, vocabulary references, topic links, dialogue links, and starter-pack links.
 - [ ] Event-to-preparation-pack mapping returns only published packs linked to the active event.
 - [ ] Web event detail renders entitled preparation-pack links.
-- [ ] Web preparation-pack detail renders prompts, vocabulary, related scenarios, and related starter packs.
+- [ ] Web preparation-pack detail renders prompts, vocabulary, related dialogues, and related starter packs.
 - [ ] `Mark prepared` records aggregate completion analytics and redirects back to the preparation-pack detail page.
 - [ ] Direct preparation-pack access is forbidden when the learner lacks the entitlement.
 
@@ -97,7 +110,7 @@ Latest local Web verification:
 - [ ] Admin system report endpoint returns catalog, social-learning, moderation, and operations counts from the server database.
 - [ ] Web Admin Reports page combines system report counts, Identity user count, and Web analytics counters.
 - [ ] Admin dashboard links to Reports and the implemented management pages.
-- [ ] Web seed fixtures include multiple records for scenarios, starters, preparation packs, organizers, events, RSVPs, claims, learner profiles, partner requests, reports, blocks, and moderation audits.
+- [ ] Web seed fixtures include multiple records for dialogues, starters, preparation packs, organizers, events, RSVPs, claims, learner profiles, partner requests, reports, blocks, and moderation audits.
 - [ ] Operational seed loading path is validated once a dedicated event-directory/safety seed applier exists.
 
 ### Entitlements And Feature Gates
@@ -166,8 +179,8 @@ Latest local Web verification:
 - [ ] Favorite/unfavorite word.
 - [ ] Recent activity.
 - [ ] Meaning-language preferences.
-- [ ] Scenario list/detail.
-- [ ] Scenario roleplay.
+- [ ] Dialogue list/detail.
+- [ ] Dialogue roleplay.
 - [ ] Conversation starter list/detail.
 - [ ] Event directory list/detail.
 - [ ] Event preparation pack detail and `Mark prepared`.

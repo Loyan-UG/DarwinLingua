@@ -33,6 +33,11 @@ public interface IWordEntryRepository
     Task<WordEntry?> GetByPublicIdAsync(Guid publicId, CancellationToken cancellationToken);
 
     /// <summary>
+    /// Loads a lexical entry aggregate by its public URL slug.
+    /// </summary>
+    Task<WordEntry?> GetBySlugAsync(string slug, CancellationToken cancellationToken);
+
+    /// <summary>
     /// Loads the active lexical entries for the specified CEFR level.
     /// </summary>
     Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrAsync(

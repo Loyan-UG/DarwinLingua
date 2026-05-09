@@ -108,7 +108,7 @@ The following areas are valid later-phase expansion areas, but they are not Phas
 
 ### 4.1 Practical Scenario Learning
 
-Later phases may add structured scenario lessons for real German situations such as:
+Later phases may add structured dialogue practice lessons for real German situations such as:
 
 - doctor visits
 - kindergarten and school communication

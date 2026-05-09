@@ -52,7 +52,8 @@ internal sealed class ContentImportParser : IContentImportParser
             (document.Labels ?? []).Select(Map).ToArray(),
             (document.Collections ?? []).Select(Map).ToArray())
         {
-            Scenarios = (document.Scenarios ?? []).Select(Map).ToArray(),
+            Dialogues = (document.Dialogues ?? []).Select(Map).ToArray(),
+            TalkTopics = (document.TalkTopics ?? []).Select(Map).ToArray(),
             ConversationStarterPacks = (document.ConversationStarterPacks ?? []).Select(Map).ToArray(),
             EventPreparationPacks = (document.EventPreparationPacks ?? []).Select(Map).ToArray(),
         };
@@ -145,29 +146,29 @@ internal sealed class ContentImportParser : IContentImportParser
             explicitWords.Concat(wordKeyReferences).ToArray());
     }
 
-    private static ParsedScenarioLessonModel Map(ScenarioLessonDocument scenario)
+    private static ParsedDialogueLessonModel Map(DialogueLessonDocument dialogue)
     {
-        return new ParsedScenarioLessonModel(
-            scenario.Slug ?? string.Empty,
-            scenario.Title ?? string.Empty,
-            scenario.Description ?? string.Empty,
-            scenario.LearnerGoal ?? string.Empty,
-            scenario.CefrLevel ?? string.Empty,
-            scenario.Category ?? string.Empty,
-            (scenario.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
-            scenario.SortOrder ?? 0,
-            (scenario.DialogueTurns ?? []).Select(turn => new ParsedScenarioDialogueTurnModel(
+        return new ParsedDialogueLessonModel(
+            dialogue.Slug ?? string.Empty,
+            dialogue.Title ?? string.Empty,
+            dialogue.Description ?? string.Empty,
+            dialogue.LearnerGoal ?? string.Empty,
+            dialogue.CefrLevel ?? string.Empty,
+            dialogue.Category ?? string.Empty,
+            (dialogue.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            dialogue.SortOrder ?? 0,
+            (dialogue.DialogueTurns ?? []).Select(turn => new ParsedDialogueTurnModel(
                 turn.SpeakerRole ?? string.Empty,
                 turn.BaseText ?? string.Empty,
                 MapTranslations(turn.Translations))).ToArray(),
-            (scenario.UsefulPhrases ?? []).Select(phrase => new ParsedScenarioPhraseModel(
+            (dialogue.UsefulPhrases ?? []).Select(phrase => new ParsedDialoguePhraseModel(
                 phrase.BaseText ?? string.Empty,
                 MapTranslations(phrase.Translations),
                 phrase.UsageNote)).ToArray(),
-            (scenario.Questions ?? []).Select(question => new ParsedScenarioQuestionModel(
+            (dialogue.Questions ?? []).Select(question => new ParsedDialogueQuestionModel(
                 question.Prompt ?? string.Empty,
                 MapTranslations(question.Translations),
-                (question.Answers ?? []).Select(answer => new ParsedScenarioAnswerModel(
+                (question.Answers ?? []).Select(answer => new ParsedDialogueAnswerModel(
                     answer.Text ?? string.Empty,
                     MapTranslations(answer.Translations),
                     answer.IsCorrect ?? false,
@@ -187,7 +188,7 @@ internal sealed class ContentImportParser : IContentImportParser
             pack.ConversationGoal ?? string.Empty,
             (pack.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
             pack.SortOrder ?? 0,
-            (pack.LinkedScenarioSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (pack.LinkedDialogueSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
             (pack.LinkedEventPreparationPackSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
             (pack.Phrases ?? []).Select(phrase => new ParsedConversationStarterPhraseModel(
                 phrase.BaseText ?? string.Empty,
@@ -198,6 +199,46 @@ internal sealed class ContentImportParser : IContentImportParser
                 phrase.SortOrder ?? 0,
             (phrase.AlternativeBaseTexts ?? []).Select(text => text ?? string.Empty).ToArray(),
             phrase.CommonMistake)).ToArray());
+    }
+
+    private static ParsedTalkTopicModel Map(TalkTopicDocument topic)
+    {
+        TalkTopicArticleDocument article = topic.Article ?? new TalkTopicArticleDocument();
+
+        return new ParsedTalkTopicModel(
+            topic.Slug ?? string.Empty,
+            topic.TopicGroupKey ?? string.Empty,
+            topic.Title ?? string.Empty,
+            topic.Description ?? string.Empty,
+            topic.CefrLevel ?? string.Empty,
+            topic.Category ?? string.Empty,
+            (topic.Topics ?? []).Select(item => item ?? string.Empty).ToArray(),
+            topic.ContentType ?? string.Empty,
+            new ParsedTalkTopicArticleModel(
+                article.BaseText ?? string.Empty,
+                MapTranslations(article.Translations)),
+            (topic.WarmupQuestions ?? []).Select(question => new ParsedTalkTopicQuestionModel(
+                question.Prompt ?? string.Empty,
+                MapTranslations(question.Translations),
+                question.SortOrder ?? 0)).ToArray(),
+            (topic.DiscussionQuestions ?? []).Select(question => new ParsedTalkTopicDiscussionQuestionModel(
+                question.Prompt ?? string.Empty,
+                question.QuestionType ?? string.Empty,
+                MapTranslations(question.Translations),
+                question.SortOrder ?? 0)).ToArray(),
+            (topic.VocabularyItems ?? []).Select(item => new ParsedTalkTopicVocabularyItemModel(
+                item.Lemma ?? string.Empty,
+                item.WordSlug,
+                item.CefrLevel,
+                item.SortOrder ?? 0)).ToArray(),
+            (topic.SpeakingGoals ?? []).Select(goal => goal ?? string.Empty).ToArray(),
+            topic.EstimatedReadingMinutes ?? 0,
+            topic.EstimatedDiscussionMinutes ?? 0,
+            topic.IsSensitive ?? false,
+            topic.SensitivityNote,
+            topic.RecommendedForModeratedGroupsOnly ?? false,
+            topic.SortOrder ?? 0,
+            topic.IsPublished ?? true);
     }
 
     private static ParsedEventPreparationPackModel Map(EventPreparationPackDocument pack)
@@ -211,7 +252,7 @@ internal sealed class ContentImportParser : IContentImportParser
             pack.EventType ?? string.Empty,
             (pack.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
             pack.SortOrder ?? 0,
-            (pack.LinkedScenarioSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (pack.LinkedDialogueSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
             (pack.LinkedVocabulary ?? []).Select(reference => new ParsedEventPreparationVocabularyReferenceModel(
                 reference.Word ?? string.Empty,
                 reference.PartOfSpeech,
@@ -249,7 +290,9 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public ContentCollectionDocument[]? Collections { get; set; }
 
-        public ScenarioLessonDocument[]? Scenarios { get; set; }
+        public DialogueLessonDocument[]? Dialogues { get; set; }
+
+        public TalkTopicDocument[]? TalkTopics { get; set; }
 
         public ConversationStarterPackDocument[]? ConversationStarterPacks { get; set; }
 
@@ -401,7 +444,7 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? CefrLevel { get; set; }
     }
 
-    private sealed class ScenarioLessonDocument
+    private sealed class DialogueLessonDocument
     {
         public string? Slug { get; set; }
 
@@ -419,14 +462,14 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public int? SortOrder { get; set; }
 
-        public ScenarioDialogueTurnDocument[]? DialogueTurns { get; set; }
+        public DialogueTurnDocument[]? DialogueTurns { get; set; }
 
-        public ScenarioPhraseDocument[]? UsefulPhrases { get; set; }
+        public DialoguePhraseDocument[]? UsefulPhrases { get; set; }
 
-        public ScenarioQuestionDocument[]? Questions { get; set; }
+        public DialogueQuestionDocument[]? Questions { get; set; }
     }
 
-    private sealed class ScenarioDialogueTurnDocument
+    private sealed class DialogueTurnDocument
     {
         public string? SpeakerRole { get; set; }
 
@@ -435,7 +478,7 @@ internal sealed class ContentImportParser : IContentImportParser
         public ContentMeaningDocument[]? Translations { get; set; }
     }
 
-    private sealed class ScenarioPhraseDocument
+    private sealed class DialoguePhraseDocument
     {
         public string? BaseText { get; set; }
 
@@ -444,16 +487,16 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? UsageNote { get; set; }
     }
 
-    private sealed class ScenarioQuestionDocument
+    private sealed class DialogueQuestionDocument
     {
         public string? Prompt { get; set; }
 
         public ContentMeaningDocument[]? Translations { get; set; }
 
-        public ScenarioAnswerDocument[]? Answers { get; set; }
+        public DialogueAnswerDocument[]? Answers { get; set; }
     }
 
-    private sealed class ScenarioAnswerDocument
+    private sealed class DialogueAnswerDocument
     {
         public string? Text { get; set; }
 
@@ -462,6 +505,87 @@ internal sealed class ContentImportParser : IContentImportParser
         public bool? IsCorrect { get; set; }
 
         public string? Feedback { get; set; }
+    }
+
+    private sealed class TalkTopicDocument
+    {
+        public string? Slug { get; set; }
+
+        public string? TopicGroupKey { get; set; }
+
+        public string? Title { get; set; }
+
+        public string? Description { get; set; }
+
+        public string? CefrLevel { get; set; }
+
+        public string? Category { get; set; }
+
+        public string?[]? Topics { get; set; }
+
+        public string? ContentType { get; set; }
+
+        public int? EstimatedReadingMinutes { get; set; }
+
+        public int? EstimatedDiscussionMinutes { get; set; }
+
+        public bool? IsSensitive { get; set; }
+
+        public bool? RecommendedForModeratedGroupsOnly { get; set; }
+
+        public string? SensitivityNote { get; set; }
+
+        public TalkTopicArticleDocument? Article { get; set; }
+
+        public TalkTopicQuestionDocument[]? WarmupQuestions { get; set; }
+
+        public TalkTopicDiscussionQuestionDocument[]? DiscussionQuestions { get; set; }
+
+        public TalkTopicVocabularyItemDocument[]? VocabularyItems { get; set; }
+
+        public string?[]? SpeakingGoals { get; set; }
+
+        public int? SortOrder { get; set; }
+
+        public bool? IsPublished { get; set; }
+    }
+
+    private sealed class TalkTopicArticleDocument
+    {
+        public string? BaseText { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+    }
+
+    private sealed class TalkTopicQuestionDocument
+    {
+        public string? Prompt { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class TalkTopicDiscussionQuestionDocument
+    {
+        public string? Prompt { get; set; }
+
+        public string? QuestionType { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class TalkTopicVocabularyItemDocument
+    {
+        public string? Lemma { get; set; }
+
+        public string? WordSlug { get; set; }
+
+        public string? CefrLevel { get; set; }
+
+        public int? SortOrder { get; set; }
     }
 
     private sealed class ConversationStarterPackDocument
@@ -486,7 +610,7 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public int? SortOrder { get; set; }
 
-        public string?[]? LinkedScenarioSlugs { get; set; }
+        public string?[]? LinkedDialogueSlugs { get; set; }
 
         public string?[]? LinkedEventPreparationPackSlugs { get; set; }
 
@@ -530,7 +654,7 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public int? SortOrder { get; set; }
 
-        public string?[]? LinkedScenarioSlugs { get; set; }
+        public string?[]? LinkedDialogueSlugs { get; set; }
 
         public EventPreparationVocabularyReferenceDocument[]? LinkedVocabulary { get; set; }
 

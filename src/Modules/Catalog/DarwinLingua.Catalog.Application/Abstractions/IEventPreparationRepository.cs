@@ -8,8 +8,8 @@ public interface IEventPreparationRepository
         EventPreparationListFilterModel filter,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<EventPreparationPackListItemModel>> GetPublishedEventPreparationPacksForScenarioAsync(
-        string scenarioSlug,
+    Task<IReadOnlyList<EventPreparationPackListItemModel>> GetPublishedEventPreparationPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken);
 
     Task<EventPreparationPackDetailModel?> GetPublishedEventPreparationPackBySlugAsync(

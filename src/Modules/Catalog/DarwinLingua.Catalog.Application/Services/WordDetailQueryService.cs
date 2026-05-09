@@ -167,6 +167,31 @@ internal sealed class WordDetailQueryService : IWordDetailQueryService
             senses);
     }
 
+    /// <inheritdoc />
+    public async Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(slug);
+
+        WordEntry? word = await _wordEntryRepository
+            .GetBySlugAsync(slug, cancellationToken)
+            .ConfigureAwait(false);
+
+        return word is null
+            ? null
+            : await GetWordDetailsAsync(
+                    word.PublicId,
+                    primaryMeaningLanguageCode,
+                    secondaryMeaningLanguageCode,
+                    uiLanguageCode,
+                    cancellationToken)
+                .ConfigureAwait(false);
+    }
+
     private static string? ResolveSenseTranslation(
         WordSense sense,
         LanguageCode languageCode,

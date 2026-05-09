@@ -26,6 +26,15 @@ internal sealed class WordAdminService(
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        string normalizedLemma = NormalizeLemmaForLookup(request.Lemma);
+        bool duplicateExists = await dbContext.WordEntries
+            .AnyAsync(word => word.NormalizedLemma == normalizedLemma, cancellationToken)
+            .ConfigureAwait(false);
+        if (duplicateExists)
+        {
+            throw new InvalidOperationException("A word with this lemma already exists.");
+        }
+
         DateTime now = DateTime.UtcNow;
         WordEntry word = new(
             Guid.NewGuid(),
@@ -77,6 +86,18 @@ internal sealed class WordAdminService(
         if (word is null)
         {
             return null;
+        }
+
+        string normalizedLemma = NormalizeLemmaForLookup(request.Lemma);
+        bool duplicateExists = await dbContext.WordEntries
+            .AnyAsync(
+                entry => entry.PublicId != publicId &&
+                    entry.NormalizedLemma == normalizedLemma,
+                cancellationToken)
+            .ConfigureAwait(false);
+        if (duplicateExists)
+        {
+            throw new InvalidOperationException("A word with this lemma already exists.");
         }
 
         word.UpdateCoreMetadata(
@@ -815,23 +836,20 @@ internal sealed class WordAdminService(
                 ValidateCompleteWordImport(item);
 
                 string normalizedLemma = NormalizeLemmaForLookup(item.Lemma);
-                string importKey = $"{normalizedLemma}|{parsed.PartOfSpeech}|{parsed.CefrLevel}";
-                if (!importKeys.Add(importKey))
+                if (!importKeys.Add(normalizedLemma))
                 {
-                    results.Add(new(rowNumber, item.Lemma, null, "Skipped", "A previous row in this file has the same lemma, part of speech, and CEFR level."));
+                    results.Add(new(rowNumber, item.Lemma, null, "Skipped", "A previous row in this file has the same lemma."));
                     continue;
                 }
 
                 bool exists = await dbContext.WordEntries.AnyAsync(
-                        word => word.NormalizedLemma == normalizedLemma &&
-                            word.PartOfSpeech == parsed.PartOfSpeech &&
-                            word.PrimaryCefrLevel == parsed.CefrLevel,
+                        word => word.NormalizedLemma == normalizedLemma,
                         cancellationToken)
                     .ConfigureAwait(false);
 
                 if (exists)
                 {
-                    results.Add(new(rowNumber, item.Lemma, null, "Skipped", "A matching word already exists."));
+                    results.Add(new(rowNumber, item.Lemma, null, "Skipped", "A word with this lemma already exists."));
                     continue;
                 }
 

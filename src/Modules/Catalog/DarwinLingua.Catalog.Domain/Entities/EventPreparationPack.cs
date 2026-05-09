@@ -8,7 +8,7 @@ namespace DarwinLingua.Catalog.Domain.Entities;
 public sealed partial class EventPreparationPack
 {
     private readonly List<EventPreparationPackTopic> _topics = [];
-    private readonly List<EventPreparationLinkedScenario> _linkedScenarios = [];
+    private readonly List<EventPreparationLinkedDialogue> _linkedDialogues = [];
     private readonly List<EventPreparationLinkedConversationStarterPack> _linkedConversationStarterPacks = [];
     private readonly List<EventPreparationVocabularyReference> _linkedVocabulary = [];
     private readonly List<EventPreparationPrompt> _prompts = [];
@@ -71,7 +71,7 @@ public sealed partial class EventPreparationPack
 
     public IReadOnlyCollection<EventPreparationPackTopic> Topics => _topics.AsReadOnly();
 
-    public IReadOnlyCollection<EventPreparationLinkedScenario> LinkedScenarios => _linkedScenarios.AsReadOnly();
+    public IReadOnlyCollection<EventPreparationLinkedDialogue> LinkedDialogues => _linkedDialogues.AsReadOnly();
 
     public IReadOnlyCollection<EventPreparationLinkedConversationStarterPack> LinkedConversationStarterPacks => _linkedConversationStarterPacks.AsReadOnly();
 
@@ -85,9 +85,9 @@ public sealed partial class EventPreparationPack
         UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
 
-    public void AddLinkedScenario(Guid id, string scenarioSlug, int sortOrder, DateTime createdAtUtc)
+    public void AddLinkedDialogue(Guid id, string dialogueSlug, int sortOrder, DateTime createdAtUtc)
     {
-        _linkedScenarios.Add(new EventPreparationLinkedScenario(id, Id, scenarioSlug, sortOrder, createdAtUtc));
+        _linkedDialogues.Add(new EventPreparationLinkedDialogue(id, Id, dialogueSlug, sortOrder, createdAtUtc));
         UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
 
@@ -196,17 +196,17 @@ public sealed class EventPreparationPackTopic
     }
 }
 
-public sealed class EventPreparationLinkedScenario
+public sealed class EventPreparationLinkedDialogue
 {
-    private EventPreparationLinkedScenario()
+    private EventPreparationLinkedDialogue()
     {
     }
 
-    internal EventPreparationLinkedScenario(Guid id, Guid eventPreparationPackId, string scenarioSlug, int sortOrder, DateTime createdAtUtc)
+    internal EventPreparationLinkedDialogue(Guid id, Guid eventPreparationPackId, string dialogueSlug, int sortOrder, DateTime createdAtUtc)
     {
-        Id = id == Guid.Empty ? throw new DomainRuleException("Event preparation linked scenario identifier cannot be empty.") : id;
-        EventPreparationPackId = eventPreparationPackId == Guid.Empty ? throw new DomainRuleException("Event preparation linked scenario pack identifier cannot be empty.") : eventPreparationPackId;
-        ScenarioSlug = EventPreparationPack.NormalizeKey(scenarioSlug, "Event preparation linked scenario slug");
+        Id = id == Guid.Empty ? throw new DomainRuleException("Event preparation linked dialogue identifier cannot be empty.") : id;
+        EventPreparationPackId = eventPreparationPackId == Guid.Empty ? throw new DomainRuleException("Event preparation linked dialogue pack identifier cannot be empty.") : eventPreparationPackId;
+        DialogueSlug = EventPreparationPack.NormalizeKey(dialogueSlug, "Event preparation linked dialogue slug");
         SortOrder = EventPreparationPack.NormalizeSortOrder(sortOrder);
         CreatedAtUtc = EventPreparationPack.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
@@ -215,7 +215,7 @@ public sealed class EventPreparationLinkedScenario
 
     public Guid EventPreparationPackId { get; private set; }
 
-    public string ScenarioSlug { get; private set; } = string.Empty;
+    public string DialogueSlug { get; private set; } = string.Empty;
 
     public int SortOrder { get; private set; }
 

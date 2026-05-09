@@ -4,7 +4,7 @@ This document defines the Phase 6 JSON contract for conversation starter packs b
 
 ## Package Shape
 
-Conversation starter packs live beside vocabulary entries, collections, and scenario lessons:
+Conversation starter packs live beside vocabulary entries, collections, and dialogue lessons:
 
 ```json
 {
@@ -38,7 +38,7 @@ Required fields:
 Optional fields:
 
 - `sortOrder`: non-negative display order.
-- `linkedScenarioSlugs`: zero or more scenario lessons that can surface this pack.
+- `linkedDialogueSlugs`: zero or more dialogue lessons that can surface this pack.
 - `linkedEventPreparationPackSlugs`: zero or more event preparation packs that can reuse this pack later.
 
 ## ConversationStarterPhrase
@@ -73,18 +73,18 @@ Category values should stay stable and lowercase kebab-case. Learner-facing loca
 
 - Every phrase should include at least the package's default meaning languages.
 - Missing primary meaning-language translations are errors when the language is declared as default.
-- Missing secondary meaning-language translations should be warnings first, matching scenario lesson behavior.
+- Missing secondary meaning-language translations should be warnings first, matching dialogue lesson behavior.
 - UI must show German first, primary meaning second, and secondary meaning third when available.
 - Compact cards may show only German plus primary meaning; detail screens should show both meaning languages when available.
 
-## Scenario Integration Rules
+## Dialogue Integration Rules
 
-Scenario lessons may reference starter packs by slug after starter persistence exists.
+Dialogue lessons may reference starter packs by slug after starter persistence exists.
 
 The first implementation should support:
 
-- starter packs shown on scenario detail
-- scenario lessons shown as related practice from starter detail
+- starter packs shown on dialogue detail
+- dialogue lessons shown as related practice from starter detail
 - starter packs exported in full catalog packages
 - CEFR-slice packages including only packs matching that CEFR level
 
@@ -96,7 +96,7 @@ The importer should reject conversation starter content when:
 - `slug`, `category`, `situation`, `tone`, `conversationGoal`, or phrase `function` is not lowercase kebab-case.
 - `cefrLevel` is not a supported CEFR value.
 - a referenced topic key is unknown.
-- a linked scenario slug does not exist when scenario references are validated.
+- a linked dialogue slug does not exist when dialogue references are validated.
 - a phrase is missing German `baseText`.
 - phrase translations are empty, unsupported, duplicated by language, or missing text.
 - a pack has no valid phrases.
@@ -115,7 +115,7 @@ The importer should reject conversation starter content when:
   "conversationGoal": "introduction",
   "topics": ["everyday-life"],
   "sortOrder": 10,
-  "linkedScenarioSlugs": ["a1-buy-bread-at-bakery"],
+  "linkedDialogueSlugs": ["a1-buy-bread-at-bakery"],
   "phrases": [
     {
       "baseText": "Hallo, ich heiße Sara.",

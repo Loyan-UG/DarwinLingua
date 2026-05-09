@@ -105,7 +105,8 @@ internal sealed class ContentImportService : IContentImportService
             .Select(LanguageCode.From)
             .ToArray();
 
-        ValidateScenarios(parsedPackage.Scenarios, topicsByKey, meaningLanguages, issues);
+        ValidateDialogues(parsedPackage.Dialogues, topicsByKey, meaningLanguages, issues);
+        ValidateTalkTopics(parsedPackage.TalkTopics, topicsByKey, meaningLanguages, issues);
         ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
         ValidateEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, issues);
         Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = ValidateLabels(parsedPackage.Labels, issues);
@@ -130,7 +131,8 @@ internal sealed class ContentImportService : IContentImportService
         List<WordEntry> importedWords = [];
         List<LabelDefinition> importedLabelDefinitions = [];
         List<WordCollection> importedCollections = [];
-        List<ScenarioLesson> importedScenarios = [];
+        List<DialogueLesson> importedDialogues = [];
+        List<TalkTopic> importedTalkTopics = [];
         List<ConversationStarterPack> importedConversationStarterPacks = [];
         List<EventPreparationPack> importedEventPreparationPacks = [];
 
@@ -159,14 +161,15 @@ internal sealed class ContentImportService : IContentImportService
             issues,
             cancellationToken).ConfigureAwait(false);
 
-        ProcessScenarios(parsedPackage.Scenarios, topicsByKey, importedScenarios);
+        ProcessDialogues(parsedPackage.Dialogues, topicsByKey, importedDialogues);
+        ProcessTalkTopics(parsedPackage.TalkTopics, topicsByKey, importedTalkTopics);
         ProcessConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, importedConversationStarterPacks);
         ProcessEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, importedEventPreparationPacks);
 
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedScenarios, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
+            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedDialogues, importedTalkTopics, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -185,28 +188,28 @@ internal sealed class ContentImportService : IContentImportService
                 .ToArray());
     }
 
-    private static void ProcessScenarios(
-        IReadOnlyList<ParsedScenarioLessonModel> scenarios,
+    private static void ProcessDialogues(
+        IReadOnlyList<ParsedDialogueLessonModel> dialogues,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<ScenarioLesson> importedScenarios)
+        ICollection<DialogueLesson> importedDialogues)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
-        foreach (ParsedScenarioLessonModel scenario in scenarios)
+        foreach (ParsedDialogueLessonModel dialogue in dialogues)
         {
-            ScenarioLesson lesson = new(
+            DialogueLesson lesson = new(
                 Guid.NewGuid(),
-                NormalizeText(scenario.Slug),
-                NormalizeText(scenario.Title),
-                NormalizeText(scenario.Description),
-                NormalizeText(scenario.LearnerGoal),
-                Enum.Parse<CefrLevel>(NormalizeText(scenario.CefrLevel), true),
-                NormalizeText(scenario.Category),
+                NormalizeText(dialogue.Slug),
+                NormalizeText(dialogue.Title),
+                NormalizeText(dialogue.Description),
+                NormalizeText(dialogue.LearnerGoal),
+                Enum.Parse<CefrLevel>(NormalizeText(dialogue.CefrLevel), true),
+                NormalizeText(dialogue.Category),
                 PublicationStatus.Active,
-                scenario.SortOrder < 0 ? 0 : scenario.SortOrder,
+                dialogue.SortOrder < 0 ? 0 : dialogue.SortOrder,
                 timestampUtc);
 
-            string[] topicKeys = scenario.Topics
+            string[] topicKeys = dialogue.Topics
                 .Select(topic => NormalizeText(topic).ToLowerInvariant())
                 .Where(topic => !string.IsNullOrWhiteSpace(topic))
                 .Distinct(StringComparer.Ordinal)
@@ -217,47 +220,47 @@ internal sealed class ContentImportService : IContentImportService
                 lesson.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
             }
 
-            for (int turnIndex = 0; turnIndex < scenario.DialogueTurns.Count; turnIndex++)
+            for (int turnIndex = 0; turnIndex < dialogue.DialogueTurns.Count; turnIndex++)
             {
-                ParsedScenarioDialogueTurnModel parsedTurn = scenario.DialogueTurns[turnIndex];
-                ScenarioDialogueTurn turn = lesson.AddDialogueTurn(
+                ParsedDialogueTurnModel parsedTurn = dialogue.DialogueTurns[turnIndex];
+                DialogueTurn turn = lesson.AddDialogueTurn(
                     Guid.NewGuid(),
                     turnIndex + 1,
                     parsedTurn.SpeakerRole,
                     parsedTurn.BaseText,
                     timestampUtc);
 
-                AddScenarioTranslations(turn.AddTranslation, parsedTurn.Translations, timestampUtc);
+                AddDialogueTranslations(turn.AddTranslation, parsedTurn.Translations, timestampUtc);
             }
 
-            for (int phraseIndex = 0; phraseIndex < scenario.UsefulPhrases.Count; phraseIndex++)
+            for (int phraseIndex = 0; phraseIndex < dialogue.UsefulPhrases.Count; phraseIndex++)
             {
-                ParsedScenarioPhraseModel parsedPhrase = scenario.UsefulPhrases[phraseIndex];
-                ScenarioPhrase phrase = lesson.AddUsefulPhrase(
+                ParsedDialoguePhraseModel parsedPhrase = dialogue.UsefulPhrases[phraseIndex];
+                DialoguePhrase phrase = lesson.AddUsefulPhrase(
                     Guid.NewGuid(),
                     phraseIndex + 1,
                     parsedPhrase.BaseText,
                     parsedPhrase.UsageNote,
                     timestampUtc);
 
-                AddScenarioTranslations(phrase.AddTranslation, parsedPhrase.Translations, timestampUtc);
+                AddDialogueTranslations(phrase.AddTranslation, parsedPhrase.Translations, timestampUtc);
             }
 
-            for (int questionIndex = 0; questionIndex < scenario.Questions.Count; questionIndex++)
+            for (int questionIndex = 0; questionIndex < dialogue.Questions.Count; questionIndex++)
             {
-                ParsedScenarioQuestionModel parsedQuestion = scenario.Questions[questionIndex];
-                ScenarioQuestion question = lesson.AddQuestion(
+                ParsedDialogueQuestionModel parsedQuestion = dialogue.Questions[questionIndex];
+                DialogueQuestion question = lesson.AddQuestion(
                     Guid.NewGuid(),
                     questionIndex + 1,
                     parsedQuestion.Prompt,
                     timestampUtc);
 
-                AddScenarioTranslations(question.AddTranslation, parsedQuestion.Translations, timestampUtc);
+                AddDialogueTranslations(question.AddTranslation, parsedQuestion.Translations, timestampUtc);
 
                 for (int answerIndex = 0; answerIndex < parsedQuestion.Answers.Count; answerIndex++)
                 {
-                    ParsedScenarioAnswerModel parsedAnswer = parsedQuestion.Answers[answerIndex];
-                    ScenarioAnswer answer = question.AddAnswer(
+                    ParsedDialogueAnswerModel parsedAnswer = parsedQuestion.Answers[answerIndex];
+                    DialogueAnswer answer = question.AddAnswer(
                         Guid.NewGuid(),
                         answerIndex + 1,
                         parsedAnswer.Text,
@@ -265,11 +268,11 @@ internal sealed class ContentImportService : IContentImportService
                         parsedAnswer.Feedback,
                         timestampUtc);
 
-                    AddScenarioTranslations(answer.AddTranslation, parsedAnswer.Translations, timestampUtc);
+                    AddDialogueTranslations(answer.AddTranslation, parsedAnswer.Translations, timestampUtc);
                 }
             }
 
-            importedScenarios.Add(lesson);
+            importedDialogues.Add(lesson);
         }
     }
 
@@ -307,15 +310,15 @@ internal sealed class ContentImportService : IContentImportService
                 pack.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
             }
 
-            string[] scenarioSlugs = starterPack.LinkedScenarioSlugs
+            string[] dialogueSlugs = starterPack.LinkedDialogueSlugs
                 .Select(slug => NormalizeText(slug).ToLowerInvariant())
                 .Where(slug => !string.IsNullOrWhiteSpace(slug))
                 .Distinct(StringComparer.Ordinal)
                 .ToArray();
 
-            for (int scenarioIndex = 0; scenarioIndex < scenarioSlugs.Length; scenarioIndex++)
+            for (int dialogueIndex = 0; dialogueIndex < dialogueSlugs.Length; dialogueIndex++)
             {
-                pack.AddLinkedScenario(Guid.NewGuid(), scenarioSlugs[scenarioIndex], scenarioIndex + 1, timestampUtc);
+                pack.AddLinkedDialogue(Guid.NewGuid(), dialogueSlugs[dialogueIndex], dialogueIndex + 1, timestampUtc);
             }
 
             string[] eventPreparationPackSlugs = starterPack.LinkedEventPreparationPackSlugs
@@ -355,6 +358,119 @@ internal sealed class ContentImportService : IContentImportService
             }
 
             importedStarterPacks.Add(pack);
+        }
+    }
+
+    private static void ProcessTalkTopics(
+        IReadOnlyList<ParsedTalkTopicModel> talkTopics,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<TalkTopic> importedTalkTopics)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedTalkTopicModel parsedTopic in talkTopics)
+        {
+            TalkTopic topic = new(
+                Guid.NewGuid(),
+                NormalizeText(parsedTopic.Slug),
+                NormalizeText(parsedTopic.TopicGroupKey),
+                NormalizeText(parsedTopic.Title),
+                NormalizeText(parsedTopic.Description),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedTopic.CefrLevel), true),
+                NormalizeText(parsedTopic.Category),
+                ParseTalkTopicContentType(parsedTopic.ContentType),
+                NormalizeText(parsedTopic.Article.BaseText),
+                parsedTopic.EstimatedReadingMinutes <= 0 ? 1 : parsedTopic.EstimatedReadingMinutes,
+                parsedTopic.EstimatedDiscussionMinutes <= 0 ? 1 : parsedTopic.EstimatedDiscussionMinutes,
+                parsedTopic.IsSensitive,
+                parsedTopic.SensitivityNote,
+                parsedTopic.RecommendedForModeratedGroupsOnly,
+                parsedTopic.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedTopic.SortOrder < 0 ? 0 : parsedTopic.SortOrder,
+                timestampUtc);
+
+            string[] topicKeys = parsedTopic.Topics
+                .Select(item => NormalizeText(item).ToLowerInvariant())
+                .Where(item => !string.IsNullOrWhiteSpace(item))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
+            {
+                topic.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            AddTalkTopicTranslations(topic.AddArticleTranslation, parsedTopic.Article.Translations, timestampUtc);
+
+            for (int questionIndex = 0; questionIndex < parsedTopic.WarmupQuestions.Count; questionIndex++)
+            {
+                ParsedTalkTopicQuestionModel parsedQuestion = parsedTopic.WarmupQuestions[questionIndex];
+                TalkTopicQuestion question = topic.AddWarmupQuestion(
+                    Guid.NewGuid(),
+                    parsedQuestion.SortOrder <= 0 ? questionIndex + 1 : parsedQuestion.SortOrder,
+                    parsedQuestion.Prompt,
+                    timestampUtc);
+                AddTalkTopicTranslations(question.AddTranslation, parsedQuestion.Translations, timestampUtc);
+            }
+
+            for (int questionIndex = 0; questionIndex < parsedTopic.DiscussionQuestions.Count; questionIndex++)
+            {
+                ParsedTalkTopicDiscussionQuestionModel parsedQuestion = parsedTopic.DiscussionQuestions[questionIndex];
+                TalkTopicQuestion question = topic.AddDiscussionQuestion(
+                    Guid.NewGuid(),
+                    ParseTalkTopicQuestionType(parsedQuestion.QuestionType),
+                    parsedQuestion.SortOrder <= 0 ? questionIndex + 1 : parsedQuestion.SortOrder,
+                    parsedQuestion.Prompt,
+                    timestampUtc);
+                AddTalkTopicTranslations(question.AddTranslation, parsedQuestion.Translations, timestampUtc);
+            }
+
+            for (int vocabularyIndex = 0; vocabularyIndex < parsedTopic.VocabularyItems.Count; vocabularyIndex++)
+            {
+                ParsedTalkTopicVocabularyItemModel item = parsedTopic.VocabularyItems[vocabularyIndex];
+                CefrLevel? cefrLevel = Enum.TryParse(NormalizeText(item.CefrLevel), true, out CefrLevel parsedCefrLevel)
+                    ? parsedCefrLevel
+                    : null;
+                topic.AddVocabularyItem(
+                    Guid.NewGuid(),
+                    item.Lemma,
+                    NormalizeOptionalText(item.WordSlug),
+                    cefrLevel,
+                    item.SortOrder <= 0 ? vocabularyIndex + 1 : item.SortOrder,
+                    timestampUtc);
+            }
+
+            string[] speakingGoals = parsedTopic.SpeakingGoals
+                .Select(goal => NormalizeText(goal).ToLowerInvariant())
+                .Where(goal => !string.IsNullOrWhiteSpace(goal))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int goalIndex = 0; goalIndex < speakingGoals.Length; goalIndex++)
+            {
+                topic.AddSpeakingGoal(
+                    Guid.NewGuid(),
+                    ParseTalkTopicSpeakingGoal(speakingGoals[goalIndex]),
+                    goalIndex + 1,
+                    timestampUtc);
+            }
+
+            importedTalkTopics.Add(topic);
+        }
+    }
+
+    private static void AddTalkTopicTranslations(
+        Action<Guid, LanguageCode, string, DateTime> addTranslation,
+        IReadOnlyList<ParsedContentMeaningModel> translations,
+        DateTime timestampUtc)
+    {
+        foreach (ParsedContentMeaningModel translation in translations)
+        {
+            addTranslation(
+                Guid.NewGuid(),
+                LanguageCode.From(NormalizeText(translation.Language).ToLowerInvariant()),
+                NormalizeText(translation.Text),
+                timestampUtc);
         }
     }
 
@@ -405,15 +521,15 @@ internal sealed class ContentImportService : IContentImportService
                 pack.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
             }
 
-            string[] scenarioSlugs = parsedPack.LinkedScenarioSlugs
+            string[] dialogueSlugs = parsedPack.LinkedDialogueSlugs
                 .Select(slug => NormalizeText(slug).ToLowerInvariant())
                 .Where(slug => !string.IsNullOrWhiteSpace(slug))
                 .Distinct(StringComparer.Ordinal)
                 .ToArray();
 
-            for (int scenarioIndex = 0; scenarioIndex < scenarioSlugs.Length; scenarioIndex++)
+            for (int dialogueIndex = 0; dialogueIndex < dialogueSlugs.Length; dialogueIndex++)
             {
-                pack.AddLinkedScenario(Guid.NewGuid(), scenarioSlugs[scenarioIndex], scenarioIndex + 1, timestampUtc);
+                pack.AddLinkedDialogue(Guid.NewGuid(), dialogueSlugs[dialogueIndex], dialogueIndex + 1, timestampUtc);
             }
 
             string[] starterPackSlugs = parsedPack.LinkedConversationStarterPackSlugs
@@ -471,7 +587,7 @@ internal sealed class ContentImportService : IContentImportService
         }
     }
 
-    private static void AddScenarioTranslations(
+    private static void AddDialogueTranslations(
         Action<Guid, LanguageCode, string, DateTime> addTranslation,
         IReadOnlyList<ParsedContentMeaningModel> translations,
         DateTime timestampUtc)
@@ -545,9 +661,7 @@ internal sealed class ContentImportService : IContentImportService
 
         List<WordEntry> resolvableWords = importedWords
             .Concat(existingWords)
-            .GroupBy(
-                word => (word.NormalizedLemma, word.PartOfSpeech, word.PrimaryCefrLevel),
-                EqualityComparer<(string, PartOfSpeech, CefrLevel)>.Default)
+            .GroupBy(word => word.NormalizedLemma, StringComparer.Ordinal)
             .Select(group => group.First())
             .ToList();
 
@@ -786,12 +900,9 @@ internal sealed class ContentImportService : IContentImportService
             return;
         }
 
-        if (importedWords.Any(word =>
-                word.NormalizedLemma == normalizedLemma &&
-                word.PartOfSpeech == primaryLexicalForm!.PartOfSpeech &&
-                word.PrimaryCefrLevel == cefrLevel) ||
+        if (importedWords.Any(word => word.NormalizedLemma == normalizedLemma) ||
             await _contentImportRepository
-                .WordExistsAsync(normalizedLemma, primaryLexicalForm!.PartOfSpeech, cefrLevel, cancellationToken)
+                .WordExistsAsync(normalizedLemma, cancellationToken)
                 .ConfigureAwait(false))
         {
             string warningMessage = $"Duplicate entry skipped for lemma '{rawLemma}'.";
@@ -976,56 +1087,56 @@ internal sealed class ContentImportService : IContentImportService
         return string.Join(", ", languageCodes.Select(languageCode => languageCode.Value));
     }
 
-    private static void ValidateScenarios(
-        IReadOnlyList<ParsedScenarioLessonModel> scenarios,
+    private static void ValidateDialogues(
+        IReadOnlyList<ParsedDialogueLessonModel> dialogues,
         IReadOnlyDictionary<string, Topic> topicsByKey,
         IReadOnlySet<LanguageCode> meaningLanguages,
         ICollection<ImportIssueModel> issues)
     {
         HashSet<string> slugs = [];
 
-        for (int index = 0; index < scenarios.Count; index++)
+        for (int index = 0; index < dialogues.Count; index++)
         {
-            ParsedScenarioLessonModel scenario = scenarios[index];
+            ParsedDialogueLessonModel dialogue = dialogues[index];
             List<string> errors = [];
-            string slug = NormalizeText(scenario.Slug).ToLowerInvariant();
+            string slug = NormalizeText(dialogue.Slug).ToLowerInvariant();
 
             if (!ValidateKebabKey(slug))
             {
-                errors.Add("Scenario slug is required and must use lowercase kebab-case.");
+                errors.Add("Dialogue slug is required and must use lowercase kebab-case.");
             }
             else if (!slugs.Add(slug))
             {
-                errors.Add($"Duplicate scenario slug '{slug}' is not allowed inside one package.");
+                errors.Add($"Duplicate dialogue slug '{slug}' is not allowed inside one package.");
             }
 
-            if (string.IsNullOrWhiteSpace(NormalizeText(scenario.Title)))
+            if (string.IsNullOrWhiteSpace(NormalizeText(dialogue.Title)))
             {
-                errors.Add("Scenario title is required.");
+                errors.Add("Dialogue title is required.");
             }
 
-            if (string.IsNullOrWhiteSpace(NormalizeText(scenario.Description)))
+            if (string.IsNullOrWhiteSpace(NormalizeText(dialogue.Description)))
             {
-                errors.Add("Scenario description is required.");
+                errors.Add("Dialogue description is required.");
             }
 
-            if (string.IsNullOrWhiteSpace(NormalizeText(scenario.LearnerGoal)))
+            if (string.IsNullOrWhiteSpace(NormalizeText(dialogue.LearnerGoal)))
             {
-                errors.Add("Scenario learnerGoal is required.");
+                errors.Add("Dialogue learnerGoal is required.");
             }
 
-            if (!Enum.TryParse(NormalizeText(scenario.CefrLevel), true, out CefrLevel _))
+            if (!Enum.TryParse(NormalizeText(dialogue.CefrLevel), true, out CefrLevel _))
             {
-                errors.Add("Scenario CEFR level is invalid.");
+                errors.Add("Dialogue CEFR level is invalid.");
             }
 
-            string category = NormalizeText(scenario.Category).ToLowerInvariant();
+            string category = NormalizeText(dialogue.Category).ToLowerInvariant();
             if (!ValidateKebabKey(category))
             {
-                errors.Add("Scenario category is required and must use lowercase kebab-case.");
+                errors.Add("Dialogue category is required and must use lowercase kebab-case.");
             }
 
-            string[] topicKeys = scenario.Topics
+            string[] topicKeys = dialogue.Topics
                 .Select(topic => NormalizeText(topic).ToLowerInvariant())
                 .Where(topic => !string.IsNullOrWhiteSpace(topic))
                 .Distinct(StringComparer.Ordinal)
@@ -1033,121 +1144,121 @@ internal sealed class ContentImportService : IContentImportService
 
             if (topicKeys.Length == 0)
             {
-                errors.Add("Scenario topics must contain at least one topic key.");
+                errors.Add("Dialogue topics must contain at least one topic key.");
             }
 
             foreach (string topicKey in topicKeys)
             {
                 if (!topicsByKey.ContainsKey(topicKey))
                 {
-                    errors.Add($"Scenario references unknown topic key '{topicKey}'.");
+                    errors.Add($"Dialogue references unknown topic key '{topicKey}'.");
                 }
             }
 
-            if (scenario.DialogueTurns.Count == 0)
+            if (dialogue.DialogueTurns.Count == 0)
             {
-                errors.Add("Scenario dialogueTurns must contain at least one item.");
+                errors.Add("Dialogue dialogueTurns must contain at least one item.");
             }
 
-            for (int turnIndex = 0; turnIndex < scenario.DialogueTurns.Count; turnIndex++)
+            for (int turnIndex = 0; turnIndex < dialogue.DialogueTurns.Count; turnIndex++)
             {
-                ParsedScenarioDialogueTurnModel turn = scenario.DialogueTurns[turnIndex];
+                ParsedDialogueTurnModel turn = dialogue.DialogueTurns[turnIndex];
                 string speakerRole = NormalizeText(turn.SpeakerRole).ToLowerInvariant();
 
                 if (!ValidateKebabKey(speakerRole))
                 {
-                    errors.Add($"Scenario dialogueTurns[{turnIndex + 1}] speakerRole is required and must use lowercase kebab-case.");
+                    errors.Add($"Dialogue dialogueTurns[{turnIndex + 1}] speakerRole is required and must use lowercase kebab-case.");
                 }
 
                 if (string.IsNullOrWhiteSpace(NormalizeText(turn.BaseText)))
                 {
-                    errors.Add($"Scenario dialogueTurns[{turnIndex + 1}] baseText is required.");
+                    errors.Add($"Dialogue dialogueTurns[{turnIndex + 1}] baseText is required.");
                 }
 
-                ValidateScenarioTranslations(
+                ValidateDialogueTranslations(
                     turn.Translations,
                     meaningLanguages,
-                    $"Scenario dialogueTurns[{turnIndex + 1}] translations",
+                    $"Dialogue dialogueTurns[{turnIndex + 1}] translations",
                     errors);
             }
 
-            if (scenario.UsefulPhrases.Count == 0)
+            if (dialogue.UsefulPhrases.Count == 0)
             {
-                errors.Add("Scenario usefulPhrases must contain at least one item.");
+                errors.Add("Dialogue usefulPhrases must contain at least one item.");
             }
 
-            for (int phraseIndex = 0; phraseIndex < scenario.UsefulPhrases.Count; phraseIndex++)
+            for (int phraseIndex = 0; phraseIndex < dialogue.UsefulPhrases.Count; phraseIndex++)
             {
-                ParsedScenarioPhraseModel phrase = scenario.UsefulPhrases[phraseIndex];
+                ParsedDialoguePhraseModel phrase = dialogue.UsefulPhrases[phraseIndex];
 
                 if (string.IsNullOrWhiteSpace(NormalizeText(phrase.BaseText)))
                 {
-                    errors.Add($"Scenario usefulPhrases[{phraseIndex + 1}] baseText is required.");
+                    errors.Add($"Dialogue usefulPhrases[{phraseIndex + 1}] baseText is required.");
                 }
 
-                ValidateScenarioTranslations(
+                ValidateDialogueTranslations(
                     phrase.Translations,
                     meaningLanguages,
-                    $"Scenario usefulPhrases[{phraseIndex + 1}] translations",
+                    $"Dialogue usefulPhrases[{phraseIndex + 1}] translations",
                     errors);
             }
 
-            if (scenario.Questions.Count == 0)
+            if (dialogue.Questions.Count == 0)
             {
-                errors.Add("Scenario questions must contain at least one item.");
+                errors.Add("Dialogue questions must contain at least one item.");
             }
 
-            for (int questionIndex = 0; questionIndex < scenario.Questions.Count; questionIndex++)
+            for (int questionIndex = 0; questionIndex < dialogue.Questions.Count; questionIndex++)
             {
-                ParsedScenarioQuestionModel question = scenario.Questions[questionIndex];
+                ParsedDialogueQuestionModel question = dialogue.Questions[questionIndex];
 
                 if (string.IsNullOrWhiteSpace(NormalizeText(question.Prompt)))
                 {
-                    errors.Add($"Scenario questions[{questionIndex + 1}] prompt is required.");
+                    errors.Add($"Dialogue questions[{questionIndex + 1}] prompt is required.");
                 }
 
-                ValidateScenarioTranslations(
+                ValidateDialogueTranslations(
                     question.Translations,
                     meaningLanguages,
-                    $"Scenario questions[{questionIndex + 1}] translations",
+                    $"Dialogue questions[{questionIndex + 1}] translations",
                     errors);
 
                 if (question.Answers.Count < 2)
                 {
-                    errors.Add($"Scenario questions[{questionIndex + 1}] must contain at least two answers.");
+                    errors.Add($"Dialogue questions[{questionIndex + 1}] must contain at least two answers.");
                 }
 
                 int correctAnswerCount = question.Answers.Count(answer => answer.IsCorrect);
                 if (correctAnswerCount != 1)
                 {
-                    errors.Add($"Scenario questions[{questionIndex + 1}] must contain exactly one correct answer.");
+                    errors.Add($"Dialogue questions[{questionIndex + 1}] must contain exactly one correct answer.");
                 }
 
                 for (int answerIndex = 0; answerIndex < question.Answers.Count; answerIndex++)
                 {
-                    ParsedScenarioAnswerModel answer = question.Answers[answerIndex];
+                    ParsedDialogueAnswerModel answer = question.Answers[answerIndex];
 
                     if (string.IsNullOrWhiteSpace(NormalizeText(answer.Text)))
                     {
-                        errors.Add($"Scenario questions[{questionIndex + 1}] answers[{answerIndex + 1}] text is required.");
+                        errors.Add($"Dialogue questions[{questionIndex + 1}] answers[{answerIndex + 1}] text is required.");
                     }
 
-                    ValidateScenarioTranslations(
+                    ValidateDialogueTranslations(
                         answer.Translations,
                         meaningLanguages,
-                        $"Scenario questions[{questionIndex + 1}] answers[{answerIndex + 1}] translations",
+                        $"Dialogue questions[{questionIndex + 1}] answers[{answerIndex + 1}] translations",
                         errors);
                 }
             }
 
             if (errors.Count > 0)
             {
-                issues.Add(new ImportIssueModel(null, "Error", $"Scenario {index + 1} '{slug}': {string.Join(" ", errors)}"));
+                issues.Add(new ImportIssueModel(null, "Error", $"Dialogue {index + 1} '{slug}': {string.Join(" ", errors)}"));
             }
         }
     }
 
-    private static void ValidateScenarioTranslations(
+    private static void ValidateDialogueTranslations(
         IReadOnlyList<ParsedContentMeaningModel> translations,
         IReadOnlySet<LanguageCode> meaningLanguages,
         string fieldName,
@@ -1232,11 +1343,11 @@ internal sealed class ContentImportService : IContentImportService
                 }
             }
 
-            foreach (string linkedScenarioSlug in pack.LinkedScenarioSlugs.Select(slug => NormalizeText(slug).ToLowerInvariant()))
+            foreach (string linkedDialogueSlug in pack.LinkedDialogueSlugs.Select(slug => NormalizeText(slug).ToLowerInvariant()))
             {
-                if (!ValidateKebabKey(linkedScenarioSlug))
+                if (!ValidateKebabKey(linkedDialogueSlug))
                 {
-                    errors.Add("Conversation starter pack linkedScenarioSlugs must use lowercase kebab-case.");
+                    errors.Add("Conversation starter pack linkedDialogueSlugs must use lowercase kebab-case.");
                 }
             }
 
@@ -1282,7 +1393,7 @@ internal sealed class ContentImportService : IContentImportService
                     }
                 }
 
-                ValidateScenarioTranslations(
+                ValidateDialogueTranslations(
                     phrase.Translations,
                     meaningLanguages,
                     $"Conversation starter pack phrases[{phraseIndex + 1}] translations",
@@ -1363,7 +1474,7 @@ internal sealed class ContentImportService : IContentImportService
                 }
             }
 
-            ValidateKebabReferences(pack.LinkedScenarioSlugs, "linkedScenarioSlugs", "Event preparation pack", errors);
+            ValidateKebabReferences(pack.LinkedDialogueSlugs, "linkedDialogueSlugs", "Event preparation pack", errors);
             ValidateKebabReferences(pack.LinkedConversationStarterPackSlugs, "linkedConversationStarterPackSlugs", "Event preparation pack", errors);
             ValidatePromptList(pack.OpeningPrompts, "openingPrompts", errors);
             ValidatePromptList(pack.RoleplayPrompts, "roleplayPrompts", errors);
@@ -1668,6 +1779,259 @@ internal sealed class ContentImportService : IContentImportService
         return normalized.ToArray();
     }
 
+    private static void ValidateTalkTopics(
+        IReadOnlyList<ParsedTalkTopicModel> talkTopics,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> slugs = [];
+
+        for (int index = 0; index < talkTopics.Count; index++)
+        {
+            ParsedTalkTopicModel topic = talkTopics[index];
+            List<string> errors = [];
+            List<string> warnings = [];
+            string slug = NormalizeText(topic.Slug).ToLowerInvariant();
+
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add("Talk topic slug is required and must use lowercase kebab-case.");
+            }
+            else if (!slugs.Add(slug))
+            {
+                errors.Add($"Duplicate talk topic slug '{slug}' is not allowed inside one package.");
+            }
+
+            if (!ValidateKebabKey(NormalizeText(topic.TopicGroupKey).ToLowerInvariant()))
+            {
+                errors.Add("Talk topic topicGroupKey is required and must use lowercase kebab-case.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(topic.Title)))
+            {
+                errors.Add("Talk topic title is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(topic.Description)))
+            {
+                errors.Add("Talk topic description is required.");
+            }
+
+            if (!Enum.TryParse(NormalizeText(topic.CefrLevel), true, out CefrLevel cefrLevel))
+            {
+                errors.Add("Talk topic CEFR level is invalid.");
+            }
+
+            if (!ValidateKebabKey(NormalizeText(topic.Category).ToLowerInvariant()))
+            {
+                errors.Add("Talk topic category is required and must use lowercase kebab-case.");
+            }
+
+            if (!TryParseTalkTopicContentType(topic.ContentType, out _))
+            {
+                errors.Add($"Talk topic contentType '{NormalizeText(topic.ContentType)}' is not supported.");
+            }
+
+            string[] topicKeys = topic.Topics
+                .Select(item => NormalizeText(item).ToLowerInvariant())
+                .Where(item => !string.IsNullOrWhiteSpace(item))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            if (topicKeys.Length == 0)
+            {
+                errors.Add("Talk topic topics must contain at least one topic key.");
+            }
+
+            foreach (string topicKey in topicKeys)
+            {
+                if (!topicsByKey.ContainsKey(topicKey))
+                {
+                    errors.Add($"Talk topic references unknown topic key '{topicKey}'.");
+                }
+            }
+
+            string articleText = NormalizeText(topic.Article.BaseText);
+            if (string.IsNullOrWhiteSpace(articleText))
+            {
+                errors.Add("Talk topic article.baseText is required.");
+            }
+            else if (Enum.TryParse(NormalizeText(topic.CefrLevel), true, out CefrLevel articleCefrLevel))
+            {
+                int minimumLength = GetMinimumTalkTopicArticleLength(articleCefrLevel);
+                if (articleText.Length < minimumLength)
+                {
+                    errors.Add($"Talk topic article.baseText for {articleCefrLevel} must contain at least {minimumLength} normalized German characters; found {articleText.Length}.");
+                }
+            }
+
+            ValidateOptionalMeaningTranslations(topic.Article.Translations, meaningLanguages, "Talk topic article.translations", errors);
+
+            if (topic.WarmupQuestions.Count == 0)
+            {
+                errors.Add("Talk topic warmupQuestions must contain at least one question.");
+            }
+            else if (topic.WarmupQuestions.Count < 2)
+            {
+                warnings.Add("Talk topic warmupQuestions should contain at least two questions.");
+            }
+
+            ValidateTalkTopicQuestions(topic.WarmupQuestions, meaningLanguages, "Talk topic warmupQuestions", errors);
+
+            if (topic.DiscussionQuestions.Count == 0)
+            {
+                errors.Add("Talk topic discussionQuestions must contain at least one question.");
+            }
+
+            for (int questionIndex = 0; questionIndex < topic.DiscussionQuestions.Count; questionIndex++)
+            {
+                ParsedTalkTopicDiscussionQuestionModel question = topic.DiscussionQuestions[questionIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(question.Prompt)))
+                {
+                    errors.Add($"Talk topic discussionQuestions[{questionIndex + 1}] prompt is required.");
+                }
+
+                if (!TryParseTalkTopicQuestionType(question.QuestionType, out _))
+                {
+                    errors.Add($"Talk topic discussionQuestions[{questionIndex + 1}] questionType is invalid.");
+                }
+
+                ValidateOptionalMeaningTranslations(question.Translations, meaningLanguages, $"Talk topic discussionQuestions[{questionIndex + 1}].translations", errors);
+            }
+
+            if (topic.VocabularyItems.Count == 0)
+            {
+                errors.Add("Talk topic vocabularyItems must contain at least one item.");
+            }
+
+            for (int vocabularyIndex = 0; vocabularyIndex < topic.VocabularyItems.Count; vocabularyIndex++)
+            {
+                ParsedTalkTopicVocabularyItemModel item = topic.VocabularyItems[vocabularyIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(item.Lemma)) && string.IsNullOrWhiteSpace(NormalizeText(item.WordSlug)))
+                {
+                    errors.Add($"Talk topic vocabularyItems[{vocabularyIndex + 1}] must include lemma or wordSlug.");
+                }
+
+                string? normalizedWordSlug = NormalizeOptionalText(item.WordSlug)?.ToLowerInvariant();
+                if (normalizedWordSlug is not null && !ValidateKebabKey(normalizedWordSlug))
+                {
+                    errors.Add($"Talk topic vocabularyItems[{vocabularyIndex + 1}] wordSlug must use lowercase kebab-case.");
+                }
+
+                if (!string.IsNullOrWhiteSpace(item.CefrLevel) && !Enum.TryParse(NormalizeText(item.CefrLevel), true, out CefrLevel _))
+                {
+                    errors.Add($"Talk topic vocabularyItems[{vocabularyIndex + 1}] cefrLevel is invalid.");
+                }
+            }
+
+            string[] speakingGoals = topic.SpeakingGoals
+                .Select(goal => NormalizeText(goal).ToLowerInvariant())
+                .Where(goal => !string.IsNullOrWhiteSpace(goal))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            if (speakingGoals.Length == 0)
+            {
+                errors.Add("Talk topic speakingGoals must contain at least one value.");
+            }
+
+            foreach (string speakingGoal in speakingGoals)
+            {
+                if (!TryParseTalkTopicSpeakingGoal(speakingGoal, out _))
+                {
+                    errors.Add($"Talk topic speakingGoal '{speakingGoal}' is invalid.");
+                }
+            }
+
+            if (topic.EstimatedReadingMinutes <= 0)
+            {
+                errors.Add("Talk topic estimatedReadingMinutes must be greater than zero.");
+            }
+
+            if (topic.EstimatedDiscussionMinutes <= 0)
+            {
+                errors.Add("Talk topic estimatedDiscussionMinutes must be greater than zero.");
+            }
+
+            if (topic.RecommendedForModeratedGroupsOnly && !topic.IsSensitive)
+            {
+                warnings.Add("Talk topic recommendedForModeratedGroupsOnly is true while isSensitive is false.");
+            }
+
+            foreach (string error in errors)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"talkTopics[{index + 1}]: {error}"));
+            }
+
+            foreach (string warning in warnings)
+            {
+                issues.Add(new ImportIssueModel(null, "Warning", $"talkTopics[{index + 1}]: {warning}"));
+            }
+        }
+    }
+
+    private static void ValidateTalkTopicQuestions(
+        IReadOnlyList<ParsedTalkTopicQuestionModel> questions,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        for (int questionIndex = 0; questionIndex < questions.Count; questionIndex++)
+        {
+            ParsedTalkTopicQuestionModel question = questions[questionIndex];
+            if (string.IsNullOrWhiteSpace(NormalizeText(question.Prompt)))
+            {
+                errors.Add($"{fieldName}[{questionIndex + 1}] prompt is required.");
+            }
+
+            ValidateOptionalMeaningTranslations(question.Translations, meaningLanguages, $"{fieldName}[{questionIndex + 1}].translations", errors);
+        }
+    }
+
+    private static void ValidateOptionalMeaningTranslations(
+        IReadOnlyList<ParsedContentMeaningModel> translations,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        HashSet<LanguageCode> seenLanguages = [];
+        for (int index = 0; index < translations.Count; index++)
+        {
+            ParsedContentMeaningModel translation = translations[index];
+            string language = NormalizeText(translation.Language).ToLowerInvariant();
+            string text = NormalizeText(translation.Text);
+
+            if (string.IsNullOrWhiteSpace(language) || string.IsNullOrWhiteSpace(text))
+            {
+                errors.Add($"{fieldName}[{index + 1}] language and text are required when translations are provided.");
+                continue;
+            }
+
+            LanguageCode languageCode;
+            try
+            {
+                languageCode = LanguageCode.From(language);
+            }
+            catch (DomainRuleException exception)
+            {
+                errors.Add($"{fieldName}[{index + 1}] language is invalid: {exception.Message}");
+                continue;
+            }
+
+            if (!meaningLanguages.Contains(languageCode))
+            {
+                errors.Add($"{fieldName}[{index + 1}] language '{language}' is not an active meaning language.");
+                continue;
+            }
+
+            if (!seenLanguages.Add(languageCode))
+            {
+                errors.Add($"{fieldName} contains duplicate language '{language}'.");
+            }
+        }
+    }
+
     private static List<(string GermanText, Dictionary<LanguageCode, string> Translations)> ValidateExamples(
         IReadOnlyList<ParsedContentExampleModel> examples,
         IReadOnlySet<LanguageCode> meaningLanguages,
@@ -1715,6 +2079,89 @@ internal sealed class ContentImportService : IContentImportService
             _ => ContentSourceType.Hybrid,
         };
     }
+
+    private static TalkTopicContentType ParseTalkTopicContentType(string value) =>
+        TryParseTalkTopicContentType(value, out TalkTopicContentType contentType)
+            ? contentType
+            : throw new InvalidOperationException($"Unsupported talk topic content type '{value}'.");
+
+    private static bool TryParseTalkTopicContentType(string value, out TalkTopicContentType contentType)
+    {
+        contentType = value.Trim().ToLowerInvariant() switch
+        {
+            "article" => TalkTopicContentType.Article,
+            "book-summary" => TalkTopicContentType.BookSummary,
+            "movie-summary" => TalkTopicContentType.MovieSummary,
+            "story" => TalkTopicContentType.Story,
+            "fact-sheet" => TalkTopicContentType.FactSheet,
+            "opinion-text" => TalkTopicContentType.OpinionText,
+            "interview" => TalkTopicContentType.Interview,
+            "debate-text" => TalkTopicContentType.DebateText,
+            _ => default,
+        };
+
+        return contentType != default;
+    }
+
+    private static TalkTopicQuestionType ParseTalkTopicQuestionType(string value) =>
+        TryParseTalkTopicQuestionType(value, out TalkTopicQuestionType questionType)
+            ? questionType
+            : throw new InvalidOperationException($"Unsupported talk topic question type '{value}'.");
+
+    private static bool TryParseTalkTopicQuestionType(string value, out TalkTopicQuestionType questionType)
+    {
+        questionType = value.Trim().ToLowerInvariant() switch
+        {
+            "opinion" => TalkTopicQuestionType.Opinion,
+            "personal-experience" => TalkTopicQuestionType.PersonalExperience,
+            "prediction" => TalkTopicQuestionType.Prediction,
+            "comparison" => TalkTopicQuestionType.Comparison,
+            "imagination" => TalkTopicQuestionType.Imagination,
+            "debate" => TalkTopicQuestionType.Debate,
+            "ethics" => TalkTopicQuestionType.Ethics,
+            "comprehension" => TalkTopicQuestionType.Comprehension,
+            _ => default,
+        };
+
+        return questionType != default;
+    }
+
+    private static TalkTopicSpeakingGoal ParseTalkTopicSpeakingGoal(string value) =>
+        TryParseTalkTopicSpeakingGoal(value, out TalkTopicSpeakingGoal speakingGoal)
+            ? speakingGoal
+            : throw new InvalidOperationException($"Unsupported talk topic speaking goal '{value}'.");
+
+    private static bool TryParseTalkTopicSpeakingGoal(string value, out TalkTopicSpeakingGoal speakingGoal)
+    {
+        speakingGoal = value.Trim().ToLowerInvariant() switch
+        {
+            "express-opinion" => TalkTopicSpeakingGoal.ExpressOpinion,
+            "give-reasons" => TalkTopicSpeakingGoal.GiveReasons,
+            "agree-disagree" => TalkTopicSpeakingGoal.AgreeDisagree,
+            "ask-follow-up-questions" => TalkTopicSpeakingGoal.AskFollowUpQuestions,
+            "compare-options" => TalkTopicSpeakingGoal.CompareOptions,
+            "make-predictions" => TalkTopicSpeakingGoal.MakePredictions,
+            "describe-experiences" => TalkTopicSpeakingGoal.DescribeExperiences,
+            "imagine-possibilities" => TalkTopicSpeakingGoal.ImaginePossibilities,
+            "debate-politely" => TalkTopicSpeakingGoal.DebatePolitely,
+            "summarize-position" => TalkTopicSpeakingGoal.SummarizePosition,
+            _ => default,
+        };
+
+        return speakingGoal != default;
+    }
+
+    private static int GetMinimumTalkTopicArticleLength(CefrLevel cefrLevel) =>
+        cefrLevel switch
+        {
+            CefrLevel.A1 => 1000,
+            CefrLevel.A2 => 1500,
+            CefrLevel.B1 => 2000,
+            CefrLevel.B2 => 2500,
+            CefrLevel.C1 => 3000,
+            CefrLevel.C2 => 3500,
+            _ => 2000,
+        };
 
     private static NormalizedLexicalForm[] ValidateLexicalForms(
         ParsedContentEntryModel entry,

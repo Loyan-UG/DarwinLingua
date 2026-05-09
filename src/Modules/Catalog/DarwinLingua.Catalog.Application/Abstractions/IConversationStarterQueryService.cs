@@ -8,8 +8,8 @@ public interface IConversationStarterQueryService
         ConversationStarterListFilterModel filter,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksForScenarioAsync(
-        string scenarioSlug,
+    Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken);
 
     Task<ConversationStarterPackDetailModel?> GetPublishedStarterPackBySlugAsync(

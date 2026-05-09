@@ -21,7 +21,7 @@
             <span class="sr-only">@T["Hear word"]</span>
         </button>
         @{
-            string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(Model.Lemma, Model.PublicId);
+            string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(Model.Lemma);
         }
         <a class="button button--secondary" data-word-link data-word-id="@Model.PublicId" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@wordRouteSlug">@T["Details"]</a>
     </div>

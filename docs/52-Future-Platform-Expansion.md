@@ -149,7 +149,7 @@ Free learners should retain access to:
 
 - core catalog browse and search
 - basic word details
-- basic scenario lessons
+- basic dialogue practice lessons
 - basic conversation starters
 - public event discovery
 

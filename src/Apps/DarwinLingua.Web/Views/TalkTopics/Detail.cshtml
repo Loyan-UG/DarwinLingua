@@ -1,0 +1,176 @@
+@using DarwinLingua.SharedKernel.Lexicon
+@model DarwinLingua.Web.Models.TalkTopicDetailPageViewModel
+@{
+    ViewData["Title"] = Model.TalkTopic.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
+        ? "ltr"
+        : TextDirection.FromLanguageCode(Model.SecondaryMeaningLanguageCode);
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.TalkTopic.CefrLevel · @T[Model.TalkTopic.ContentType] · @Model.TalkTopic.Category</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="TalkTopics" asp-action="Index">@T["All Talk Topics"]</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@Model.TalkTopic.Title</h1>
+    <p class="body-lg">@Model.TalkTopic.Description</p>
+    <div class="chip-grid">
+        <span class="chip-link">@T["{0} min read", Model.TalkTopic.EstimatedReadingMinutes]</span>
+        <span class="chip-link">@T["{0} min discussion", Model.TalkTopic.EstimatedDiscussionMinutes]</span>
+        @foreach (string goal in Model.TalkTopic.SpeakingGoals)
+        {
+            <span class="chip-link">@T[goal]</span>
+        }
+    </div>
+    @if (Model.TalkTopic.IsSensitive)
+    {
+        <div class="async-state async-state--warning">
+            <strong>@T["Sensitive topic"]</strong>
+            <p>@(string.IsNullOrWhiteSpace(Model.TalkTopic.SensitivityNote) ? T["This topic may need a careful and respectful group conversation."].Value : Model.TalkTopic.SensitivityNote)</p>
+            @if (Model.TalkTopic.RecommendedForModeratedGroupsOnly)
+            {
+                <p>@T["Recommended for moderated groups only."]</p>
+            }
+        </div>
+    }
+</section>
+
+@if (Model.TalkTopic.WarmupQuestions.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Warm-up questions"]</h2>
+        <div class="grid-two-col">
+            @foreach (var question in Model.TalkTopic.WarmupQuestions)
+            {
+                <article class="panel stack-md">
+                    <strong class="dialogue-german-text">@question.Prompt</strong>
+                    <div class="dialogue-translation-list">
+                        @if (!string.IsNullOrWhiteSpace(question.PrimaryMeaning))
+                        {
+                            <div class="dialogue-translation-line" dir="@primaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                <span>@question.PrimaryMeaning</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(question.SecondaryMeaning))
+                        {
+                            <div class="dialogue-translation-line" dir="@secondaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                <span>@question.SecondaryMeaning</span>
+                            </div>
+                        }
+                    </div>
+                </article>
+            }
+        </div>
+    </section>
+}
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["German text"]</h2>
+    <article class="talk-topic-article">
+        @foreach (string paragraph in Model.TalkTopic.ArticleBaseText.Split(["\r\n\r\n", "\n\n"], StringSplitOptions.RemoveEmptyEntries))
+        {
+            <p class="body-lg">@paragraph.Trim()</p>
+        }
+    </article>
+    @if (!string.IsNullOrWhiteSpace(Model.TalkTopic.PrimaryArticleTranslation))
+    {
+        <div class="meaning-block" dir="@primaryMeaningDirection">
+            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+            <p>@Model.TalkTopic.PrimaryArticleTranslation</p>
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.TalkTopic.SecondaryArticleTranslation))
+    {
+        <div class="meaning-block" dir="@secondaryMeaningDirection">
+            <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+            <p>@Model.TalkTopic.SecondaryArticleTranslation</p>
+        </div>
+    }
+</section>
+
+@if (Model.TalkTopic.VocabularyItems.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Important words"]</h2>
+        <p class="body-lg">
+            @for (int index = 0; index < Model.TalkTopic.VocabularyItems.Count; index++)
+            {
+                var item = Model.TalkTopic.VocabularyItems[index];
+                string wordSlug = string.IsNullOrWhiteSpace(item.WordSlug) ? LemmaUrlSlug.FromLemma(item.Lemma) : item.WordSlug;
+                if (item.IsResolved || !string.IsNullOrWhiteSpace(item.WordSlug))
+                {
+                    <a asp-controller="Words" asp-action="Detail" asp-route-slug="@wordSlug">@item.Lemma</a>
+                }
+                else
+                {
+                    <span>@item.Lemma</span>
+                }
+                @if (index < Model.TalkTopic.VocabularyItems.Count - 1)
+                {
+                    <span>, </span>
+                }
+            }
+        </p>
+        <div class="stack-sm">
+            @foreach (var item in Model.TalkTopic.VocabularyItems.Where(item => !string.IsNullOrWhiteSpace(item.PrimaryMeaning) || !string.IsNullOrWhiteSpace(item.SecondaryMeaning)))
+            {
+                <div class="detail-row">
+                    <strong>@item.Lemma</strong>
+                    <div class="dialogue-translation-list">
+                        @if (!string.IsNullOrWhiteSpace(item.PrimaryMeaning))
+                        {
+                            <div class="dialogue-translation-line" dir="@primaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                <span>@item.PrimaryMeaning</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(item.SecondaryMeaning))
+                        {
+                            <div class="dialogue-translation-line" dir="@secondaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                <span>@item.SecondaryMeaning</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.TalkTopic.DiscussionQuestions.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Discussion questions"]</h2>
+        <div class="stack-md">
+            @foreach (var question in Model.TalkTopic.DiscussionQuestions)
+            {
+                <article class="panel stack-md">
+                    <span class="eyebrow">@T[question.QuestionType]</span>
+                    <strong class="dialogue-german-text">@question.Prompt</strong>
+                    <div class="dialogue-translation-list">
+                        @if (!string.IsNullOrWhiteSpace(question.PrimaryMeaning))
+                        {
+                            <div class="dialogue-translation-line" dir="@primaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                <span>@question.PrimaryMeaning</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(question.SecondaryMeaning))
+                        {
+                            <div class="dialogue-translation-line" dir="@secondaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                <span>@question.SecondaryMeaning</span>
+                            </div>
+                        }
+                    </div>
+                </article>
+            }
+        </div>
+    </section>
+}

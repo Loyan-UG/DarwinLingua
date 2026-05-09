@@ -9,7 +9,7 @@ namespace DarwinLingua.Catalog.Domain.Entities;
 public sealed partial class ConversationStarterPack
 {
     private readonly List<ConversationStarterPackTopic> _topics = [];
-    private readonly List<ConversationStarterLinkedScenario> _linkedScenarios = [];
+    private readonly List<ConversationStarterLinkedDialogue> _linkedDialogues = [];
     private readonly List<ConversationStarterLinkedEventPreparationPack> _linkedEventPreparationPacks = [];
     private readonly List<ConversationStarterPhrase> _phrases = [];
 
@@ -79,7 +79,7 @@ public sealed partial class ConversationStarterPack
 
     public IReadOnlyCollection<ConversationStarterPackTopic> Topics => _topics.AsReadOnly();
 
-    public IReadOnlyCollection<ConversationStarterLinkedScenario> LinkedScenarios => _linkedScenarios.AsReadOnly();
+    public IReadOnlyCollection<ConversationStarterLinkedDialogue> LinkedDialogues => _linkedDialogues.AsReadOnly();
 
     public IReadOnlyCollection<ConversationStarterLinkedEventPreparationPack> LinkedEventPreparationPacks => _linkedEventPreparationPacks.AsReadOnly();
 
@@ -91,9 +91,9 @@ public sealed partial class ConversationStarterPack
         UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
 
-    public void AddLinkedScenario(Guid id, string scenarioSlug, int sortOrder, DateTime createdAtUtc)
+    public void AddLinkedDialogue(Guid id, string dialogueSlug, int sortOrder, DateTime createdAtUtc)
     {
-        _linkedScenarios.Add(new ConversationStarterLinkedScenario(id, Id, scenarioSlug, sortOrder, createdAtUtc));
+        _linkedDialogues.Add(new ConversationStarterLinkedDialogue(id, Id, dialogueSlug, sortOrder, createdAtUtc));
         UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
 
@@ -222,17 +222,17 @@ public sealed class ConversationStarterPackTopic
     }
 }
 
-public sealed class ConversationStarterLinkedScenario
+public sealed class ConversationStarterLinkedDialogue
 {
-    private ConversationStarterLinkedScenario()
+    private ConversationStarterLinkedDialogue()
     {
     }
 
-    internal ConversationStarterLinkedScenario(Guid id, Guid conversationStarterPackId, string scenarioSlug, int sortOrder, DateTime createdAtUtc)
+    internal ConversationStarterLinkedDialogue(Guid id, Guid conversationStarterPackId, string dialogueSlug, int sortOrder, DateTime createdAtUtc)
     {
-        Id = id == Guid.Empty ? throw new DomainRuleException("Conversation starter linked scenario identifier cannot be empty.") : id;
-        ConversationStarterPackId = conversationStarterPackId == Guid.Empty ? throw new DomainRuleException("Conversation starter linked scenario pack identifier cannot be empty.") : conversationStarterPackId;
-        ScenarioSlug = ConversationStarterPack.NormalizeKey(scenarioSlug, "Conversation starter linked scenario slug");
+        Id = id == Guid.Empty ? throw new DomainRuleException("Conversation starter linked dialogue identifier cannot be empty.") : id;
+        ConversationStarterPackId = conversationStarterPackId == Guid.Empty ? throw new DomainRuleException("Conversation starter linked dialogue pack identifier cannot be empty.") : conversationStarterPackId;
+        DialogueSlug = ConversationStarterPack.NormalizeKey(dialogueSlug, "Conversation starter linked dialogue slug");
         SortOrder = ConversationStarterPack.NormalizeSortOrder(sortOrder);
         CreatedAtUtc = ConversationStarterPack.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
@@ -241,7 +241,7 @@ public sealed class ConversationStarterLinkedScenario
 
     public Guid ConversationStarterPackId { get; private set; }
 
-    public string ScenarioSlug { get; private set; } = string.Empty;
+    public string DialogueSlug { get; private set; } = string.Empty;
 
     public int SortOrder { get; private set; }
 

@@ -44,7 +44,7 @@ internal sealed class ConversationStarterRepository(IDbContextFactory<DarwinLing
             .AsNoTracking()
             .AsSplitQuery()
             .Include(pack => pack.Topics)
-            .Include(pack => pack.LinkedScenarios)
+            .Include(pack => pack.LinkedDialogues)
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active);
 
         if (!string.IsNullOrWhiteSpace(filter.CefrLevel) &&
@@ -92,12 +92,12 @@ internal sealed class ConversationStarterRepository(IDbContextFactory<DarwinLing
             .ToArray();
     }
 
-    public async Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksForScenarioAsync(
-        string scenarioSlug,
+    public async Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(scenarioSlug);
-        string normalizedScenarioSlug = scenarioSlug.Trim().ToLowerInvariant();
+        ArgumentException.ThrowIfNullOrWhiteSpace(dialogueSlug);
+        string normalizedDialogueSlug = dialogueSlug.Trim().ToLowerInvariant();
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -107,9 +107,9 @@ internal sealed class ConversationStarterRepository(IDbContextFactory<DarwinLing
             .AsNoTracking()
             .AsSplitQuery()
             .Include(pack => pack.Topics)
-            .Include(pack => pack.LinkedScenarios)
+            .Include(pack => pack.LinkedDialogues)
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active)
-            .Where(pack => pack.LinkedScenarios.Any(link => link.ScenarioSlug == normalizedScenarioSlug))
+            .Where(pack => pack.LinkedDialogues.Any(link => link.DialogueSlug == normalizedDialogueSlug))
             .OrderBy(pack => pack.SortOrder)
             .ThenBy(pack => pack.Title)
             .ToListAsync(cancellationToken)
@@ -143,7 +143,7 @@ internal sealed class ConversationStarterRepository(IDbContextFactory<DarwinLing
             .AsNoTracking()
             .AsSplitQuery()
             .Include(item => item.Topics)
-            .Include(item => item.LinkedScenarios)
+            .Include(item => item.LinkedDialogues)
             .Include(item => item.LinkedEventPreparationPacks)
             .Include(item => item.Phrases).ThenInclude(phrase => phrase.Translations)
             .Include(item => item.Phrases).ThenInclude(phrase => phrase.AlternativeBaseTexts)
@@ -176,9 +176,9 @@ internal sealed class ConversationStarterRepository(IDbContextFactory<DarwinLing
             pack.Tone,
             pack.ConversationGoal,
             ResolveTopicKeys(pack.Topics, topicKeysById),
-            pack.LinkedScenarios
+            pack.LinkedDialogues
                 .OrderBy(link => link.SortOrder)
-                .Select(link => link.ScenarioSlug)
+                .Select(link => link.DialogueSlug)
                 .ToArray(),
             pack.LinkedEventPreparationPacks
                 .OrderBy(link => link.SortOrder)
@@ -242,9 +242,9 @@ internal sealed class ConversationStarterRepository(IDbContextFactory<DarwinLing
             pack.Tone,
             pack.ConversationGoal,
             ResolveTopicKeys(pack.Topics, topicKeysById),
-            pack.LinkedScenarios
+            pack.LinkedDialogues
                 .OrderBy(link => link.SortOrder)
-                .Select(link => link.ScenarioSlug)
+                .Select(link => link.DialogueSlug)
                 .ToArray());
 
     private static string? ResolvePrimaryMeaning(

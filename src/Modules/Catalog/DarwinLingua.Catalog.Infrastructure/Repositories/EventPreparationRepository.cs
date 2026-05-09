@@ -41,7 +41,7 @@ internal sealed class EventPreparationRepository(IDbContextFactory<DarwinLinguaD
             .AsNoTracking()
             .AsSplitQuery()
             .Include(pack => pack.Topics)
-            .Include(pack => pack.LinkedScenarios)
+            .Include(pack => pack.LinkedDialogues)
             .Include(pack => pack.LinkedConversationStarterPacks)
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active);
 
@@ -84,12 +84,12 @@ internal sealed class EventPreparationRepository(IDbContextFactory<DarwinLinguaD
             .ToArray();
     }
 
-    public async Task<IReadOnlyList<EventPreparationPackListItemModel>> GetPublishedEventPreparationPacksForScenarioAsync(
-        string scenarioSlug,
+    public async Task<IReadOnlyList<EventPreparationPackListItemModel>> GetPublishedEventPreparationPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(scenarioSlug);
-        string normalizedScenarioSlug = scenarioSlug.Trim().ToLowerInvariant();
+        ArgumentException.ThrowIfNullOrWhiteSpace(dialogueSlug);
+        string normalizedDialogueSlug = dialogueSlug.Trim().ToLowerInvariant();
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -99,10 +99,10 @@ internal sealed class EventPreparationRepository(IDbContextFactory<DarwinLinguaD
             .AsNoTracking()
             .AsSplitQuery()
             .Include(pack => pack.Topics)
-            .Include(pack => pack.LinkedScenarios)
+            .Include(pack => pack.LinkedDialogues)
             .Include(pack => pack.LinkedConversationStarterPacks)
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active)
-            .Where(pack => pack.LinkedScenarios.Any(link => link.ScenarioSlug == normalizedScenarioSlug))
+            .Where(pack => pack.LinkedDialogues.Any(link => link.DialogueSlug == normalizedDialogueSlug))
             .OrderBy(pack => pack.SortOrder)
             .ThenBy(pack => pack.Title)
             .ToListAsync(cancellationToken)
@@ -133,7 +133,7 @@ internal sealed class EventPreparationRepository(IDbContextFactory<DarwinLinguaD
             .AsNoTracking()
             .AsSplitQuery()
             .Include(item => item.Topics)
-            .Include(item => item.LinkedScenarios)
+            .Include(item => item.LinkedDialogues)
             .Include(item => item.LinkedConversationStarterPacks)
             .Include(item => item.LinkedVocabulary)
             .Include(item => item.Prompts)
@@ -159,7 +159,7 @@ internal sealed class EventPreparationRepository(IDbContextFactory<DarwinLinguaD
             pack.Category,
             pack.EventType,
             ResolveTopicKeys(pack.Topics, topicKeysById),
-            ResolveLinkedScenarios(pack),
+            ResolveLinkedDialogues(pack),
             ResolveLinkedStarterPacks(pack),
             pack.LinkedVocabulary
                 .OrderBy(reference => reference.SortOrder)
@@ -203,10 +203,10 @@ internal sealed class EventPreparationRepository(IDbContextFactory<DarwinLinguaD
             .Select(topic => topicKeysById[topic.TopicId])
             .ToArray();
 
-    private static string[] ResolveLinkedScenarios(EventPreparationPack pack) =>
-        pack.LinkedScenarios
+    private static string[] ResolveLinkedDialogues(EventPreparationPack pack) =>
+        pack.LinkedDialogues
             .OrderBy(link => link.SortOrder)
-            .Select(link => link.ScenarioSlug)
+            .Select(link => link.DialogueSlug)
             .ToArray();
 
     private static string[] ResolveLinkedStarterPacks(EventPreparationPack pack) =>
@@ -226,6 +226,6 @@ internal sealed class EventPreparationRepository(IDbContextFactory<DarwinLinguaD
             pack.Category,
             pack.EventType,
             ResolveTopicKeys(pack.Topics, topicKeysById),
-            ResolveLinkedScenarios(pack),
+            ResolveLinkedDialogues(pack),
             ResolveLinkedStarterPacks(pack));
 }

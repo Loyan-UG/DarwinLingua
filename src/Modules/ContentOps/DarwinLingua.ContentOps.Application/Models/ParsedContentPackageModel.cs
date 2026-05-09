@@ -14,9 +14,14 @@ public sealed record ParsedContentPackageModel(
     IReadOnlyList<ParsedContentCollectionModel> Collections)
 {
     /// <summary>
-    /// Gets parsed scenario lessons included in the package.
+    /// Gets parsed dialogue lessons included in the package.
     /// </summary>
-    public IReadOnlyList<ParsedScenarioLessonModel> Scenarios { get; init; } = [];
+    public IReadOnlyList<ParsedDialogueLessonModel> Dialogues { get; init; } = [];
+
+    /// <summary>
+    /// Gets parsed talk topics included in the package.
+    /// </summary>
+    public IReadOnlyList<ParsedTalkTopicModel> TalkTopics { get; init; } = [];
 
     /// <summary>
     /// Gets parsed conversation starter packs included in the package.

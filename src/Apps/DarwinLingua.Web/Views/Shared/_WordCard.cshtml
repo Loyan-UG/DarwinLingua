@@ -42,7 +42,7 @@
             <partial name="_FavoriteToggle" model="Model.Interaction" />
         </div>
         @{
-            string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(Model.Word.Lemma, Model.Word.PublicId);
+            string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(Model.Word.Lemma);
         }
         <a class="button button--secondary button--compact" data-word-link data-word-id="@Model.Word.PublicId" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@wordRouteSlug">@T["Details"]</a>
     </div>

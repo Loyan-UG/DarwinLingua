@@ -11,7 +11,7 @@ It applies to:
 - examples
 - favorites and collections
 - practice prompts
-- future scenario lessons
+- future dialogue practice lessons
 - future conversation starters
 - future event preparation packs
 
@@ -45,7 +45,7 @@ When two meaning languages are active, display order is:
 2. primary meaning language
 3. secondary meaning language
 
-This order should stay consistent across mobile, web, scenario lessons, conversation starters, and practice preparation.
+This order should stay consistent across mobile, web, dialogue practice lessons, conversation starters, and practice preparation.
 
 ---
 
@@ -129,7 +129,7 @@ Dual-language support is for comprehension first. It should not accidentally tur
 
 ## 7. Scenario And Conversation Content
 
-Scenario lessons and conversation starters should follow the same rules as word details:
+Dialogue practice lessons and conversation starters should follow the same rules as word details:
 
 - German phrase first
 - primary translation second

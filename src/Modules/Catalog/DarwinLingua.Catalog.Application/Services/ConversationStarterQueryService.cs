@@ -10,10 +10,10 @@ internal sealed class ConversationStarterQueryService(IConversationStarterReposi
         CancellationToken cancellationToken) =>
         conversationStarterRepository.GetPublishedStarterPacksAsync(filter, cancellationToken);
 
-    public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksForScenarioAsync(
-        string scenarioSlug,
+    public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken) =>
-        conversationStarterRepository.GetPublishedStarterPacksForScenarioAsync(scenarioSlug, cancellationToken);
+        conversationStarterRepository.GetPublishedStarterPacksForDialogueAsync(dialogueSlug, cancellationToken);
 
     public Task<ConversationStarterPackDetailModel?> GetPublishedStarterPackBySlugAsync(
         string slug,

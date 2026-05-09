@@ -86,7 +86,7 @@
 @if (!Model.IsNew)
 {
     <section id="topic-merge" class="panel stack-md">
-        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Merge", "Consolidate duplicate topics", "Move words, scenarios, conversation starters, and event preparation packs from this topic into another topic safely.")' />
+        <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel("Merge", "Consolidate duplicate topics", "Move words, dialogues, conversation starters, and event preparation packs from this topic into another topic safely.")' />
         <form class="admin-inline-panel stack-sm" method="post" asp-action="Merge" asp-route-topicId="@Model.TopicId" data-confirm-submit="Merge this topic into the selected target?">
             @Html.AntiForgeryToken()
             <div class="admin-inline-form-grid">

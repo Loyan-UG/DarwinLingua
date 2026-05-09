@@ -185,10 +185,11 @@ The expected low-friction model is:
 
 ## 7.1 Public SEO And Discoverability
 
-- [x] change public word detail URLs from GUID-only routes to canonical lemma-based routes with a stable public id suffix, for example `/words/hallo-{publicId}`
-- [x] keep legacy `/words/{publicId}` URLs working through permanent redirects to the canonical word URL
+- [x] change public word detail URLs from GUID-only routes to canonical lemma-only routes, for example `/words/hallo`
+- [x] remove legacy `/words/{publicId}` compatibility before public launch; old URLs are not preserved because the system is not public yet
 - [x] update learner-facing word links in browse/search, favorites, collections, and recent activity to emit canonical word URLs
 - [x] preserve word-list next/previous navigation after the canonical URL change
+- [x] enforce the catalog rule that a normalized lemma can exist only once; duplicate `achtzehn`, `achtzig`, and `an` rows were cleaned from the local shared DB and new word/import paths now reject duplicate lemmas
 - [ ] add canonical link tags, localized metadata, Open Graph/Twitter cards, and structured data for public learner pages
 - [ ] add sitemap generation for words, collections, topics, dialogue practice, and future scenario article pages
 - [ ] add robots policy review before production indexing
@@ -196,8 +197,8 @@ The expected low-friction model is:
 
 ## 7.2 Dialogue Practice And Future Scenario Content
 
-- [ ] rename or refactor the current scenario dialogue practice surface to a clearer domain name such as `Dialogues` or `Conversation Dialogues`
-- [ ] keep the existing dialogue-style material, but treat it as dialogue practice rather than the future article/discussion scenario feature
+- [x] rename the learner-facing scenario-style practice surface to `Dialogues` with `/dialogues` public routes and `/api/catalog/dialogues` API aliases
+- [x] keep the existing dialogue-style material, but treat it as dialogue practice rather than the future article/discussion scenario feature
 - [ ] verify dialogue seed/import content strictly requires all required meaning languages: `ar`, `ckb`, `en`, `fa`, `kmr`, `pl`, `ro`, `ru`, `sq`, `tr`
 - [ ] make dialogue import validation reject incomplete translations, missing topics, missing turns, missing useful phrases, and incomplete question/answer translations
 - [ ] decide whether existing baseline dialogue data should be retained, regenerated, or removed before the rename/refactor

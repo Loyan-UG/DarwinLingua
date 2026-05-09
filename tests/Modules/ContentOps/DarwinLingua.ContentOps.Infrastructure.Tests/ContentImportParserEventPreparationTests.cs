@@ -35,7 +35,7 @@ public sealed class ContentImportParserEventPreparationTests
                   "eventType": "conversation-cafe",
                   "topics": ["everyday-life"],
                   "sortOrder": 10,
-                  "linkedScenarioSlugs": ["a1-buy-bread-at-bakery"],
+                  "LinkedDialogueSlugs": ["a1-buy-bread-at-bakery"],
                   "linkedConversationStarterPackSlugs": ["a1-cafe-first-meeting-starters"],
                   "linkedVocabulary": [
                     { "word": "Hilfe", "partOfSpeech": "Noun", "cefrLevel": "A1" }
@@ -55,7 +55,7 @@ public sealed class ContentImportParserEventPreparationTests
         Assert.Equal("conversation-cafe", pack.Category);
         Assert.Equal("conversation-cafe", pack.EventType);
         Assert.Equal(["everyday-life"], pack.Topics);
-        Assert.Equal(["a1-buy-bread-at-bakery"], pack.LinkedScenarioSlugs);
+        Assert.Equal(["a1-buy-bread-at-bakery"], pack.LinkedDialogueSlugs);
         Assert.Equal(["a1-cafe-first-meeting-starters"], pack.LinkedConversationStarterPackSlugs);
         Assert.Equal("Hilfe", Assert.Single(pack.LinkedVocabulary).Word);
         Assert.Equal(["Hallo, ich heiße ..."], pack.OpeningPrompts);

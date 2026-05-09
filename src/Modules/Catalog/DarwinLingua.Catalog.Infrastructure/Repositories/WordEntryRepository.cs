@@ -160,6 +160,47 @@ internal sealed class WordEntryRepository : IWordEntryRepository
     }
 
     /// <inheritdoc />
+    public async Task<WordEntry?> GetBySlugAsync(string slug, CancellationToken cancellationToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(slug);
+
+        string canonicalSlug = LemmaUrlSlug.FromLemma(slug);
+        string normalizedLemmaCandidate = LemmaUrlSlug.ToNormalizedLemmaCandidate(canonicalSlug);
+
+        await using DarwinLinguaDbContext dbContext = await _dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        WordEntry? directMatch = await CreateAggregateQuery(dbContext)
+            .SingleOrDefaultAsync(
+                word => word.NormalizedLemma == normalizedLemmaCandidate &&
+                        word.PublicationStatus == PublicationStatus.Active,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        if (directMatch is not null)
+        {
+            return directMatch;
+        }
+
+        List<WordSlugLookupRow> candidates = await dbContext.WordEntries
+            .AsNoTracking()
+            .Where(word => word.PublicationStatus == PublicationStatus.Active)
+            .Select(word => new WordSlugLookupRow(word.PublicId, word.Lemma))
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        Guid? matchingPublicId = candidates
+            .Where(candidate => string.Equals(LemmaUrlSlug.FromLemma(candidate.Lemma), canonicalSlug, StringComparison.OrdinalIgnoreCase))
+            .Select(candidate => (Guid?)candidate.PublicId)
+            .SingleOrDefault();
+
+        return matchingPublicId.HasValue
+            ? await GetByPublicIdAsync(matchingPublicId.Value, cancellationToken).ConfigureAwait(false)
+            : null;
+    }
+
+    /// <inheritdoc />
     public async Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrAsync(
         CefrLevel cefrLevel,
         string meaningLanguageCode,
@@ -434,6 +475,8 @@ internal sealed class WordEntryRepository : IWordEntryRepository
         PartOfSpeech PartOfSpeech,
         CefrLevel CefrLevel,
         string NormalizedLemma);
+
+    private sealed record WordSlugLookupRow(Guid PublicId, string Lemma);
 
     private sealed record PrimarySenseRow(Guid SenseId, Guid WordEntryId);
 

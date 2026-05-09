@@ -116,8 +116,8 @@ public partial class TopicsPage : ContentPage
         SearchActionBlockView.ButtonText = AppStrings.HomeSearchButton;
         CollectionsActionBlockView.Caption = AppStrings.HomeCollectionsLabel;
         CollectionsActionBlockView.ButtonText = AppStrings.HomeCollectionsButton;
-        ScenariosActionBlockView.Caption = "Practical scenarios";
-        ScenariosActionBlockView.ButtonText = "Open scenarios";
+        DialoguesActionBlockView.Caption = "Practical dialogues";
+        DialoguesActionBlockView.ButtonText = "Open dialogues";
         ConversationStartersActionBlockView.Caption = "Conversation starters";
         ConversationStartersActionBlockView.ButtonText = "Open starters";
         FavoritesActionBlockView.Caption = AppStrings.HomeFavoritesLabel;
@@ -295,11 +295,11 @@ public partial class TopicsPage : ContentPage
         }
     }
 
-    private async void OnScenariosActionInvoked(object? sender, EventArgs e)
+    private async void OnDialoguesActionInvoked(object? sender, EventArgs e)
     {
         try
         {
-            await Shell.Current.GoToAsync(nameof(ScenariosPage)).ConfigureAwait(true);
+            await Shell.Current.GoToAsync(nameof(DialoguesPage)).ConfigureAwait(true);
         }
         catch (OperationCanceledException)
         {

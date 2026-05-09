@@ -325,10 +325,10 @@ public sealed class ContentImportServiceTests
     }
 
     /// <summary>
-    /// Verifies that valid scenario lessons from a content package are persisted with their nested content.
+    /// Verifies that valid Dialogue lessons from a content package are persisted with their nested content.
     /// </summary>
     [Fact]
-    public async Task ImportAsync_ShouldPersistScenarioLessons()
+    public async Task ImportAsync_ShouldPersistDialogueLessons()
     {
         string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
         string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
@@ -336,7 +336,7 @@ public sealed class ContentImportServiceTests
 
         try
         {
-            await File.WriteAllTextAsync(packagePath, CreatePackageWithScenarioJson("a1-scenario-import-test"));
+            await File.WriteAllTextAsync(packagePath, CreatePackageWithDialogueJson("a1-Dialogue-import-test"));
 
             serviceProvider = BuildServiceProvider(databasePath);
 
@@ -354,37 +354,37 @@ public sealed class ContentImportServiceTests
                 .GetRequiredService<Microsoft.EntityFrameworkCore.IDbContextFactory<DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext>>()
                 .CreateDbContext();
 
-            DarwinLingua.Catalog.Domain.Entities.ScenarioLesson lesson = Assert.Single(dbContext.ScenarioLessons
-                .Include(scenario => scenario.Topics)
-                .Include(scenario => scenario.DialogueTurns).ThenInclude(turn => turn.Translations)
-                .Include(scenario => scenario.UsefulPhrases).ThenInclude(phrase => phrase.Translations)
-                .Include(scenario => scenario.Questions).ThenInclude(question => question.Translations)
-                .Include(scenario => scenario.Questions).ThenInclude(question => question.Answers).ThenInclude(answer => answer.Translations));
+            DarwinLingua.Catalog.Domain.Entities.DialogueLesson lesson = Assert.Single(dbContext.DialogueLessons
+                .Include(Dialogue => Dialogue.Topics)
+                .Include(Dialogue => Dialogue.DialogueTurns).ThenInclude(turn => turn.Translations)
+                .Include(Dialogue => Dialogue.UsefulPhrases).ThenInclude(phrase => phrase.Translations)
+                .Include(Dialogue => Dialogue.Questions).ThenInclude(question => question.Translations)
+                .Include(Dialogue => Dialogue.Questions).ThenInclude(question => question.Answers).ThenInclude(answer => answer.Translations));
 
             Assert.Equal("doctor-appointment-a1", lesson.Slug);
             Assert.Single(lesson.Topics);
             Assert.Single(lesson.DialogueTurns);
             Assert.Single(lesson.UsefulPhrases);
-            DarwinLingua.Catalog.Domain.Entities.ScenarioQuestion question = Assert.Single(lesson.Questions);
+            DarwinLingua.Catalog.Domain.Entities.DialogueQuestion question = Assert.Single(lesson.Questions);
             Assert.Equal(2, question.Answers.Count);
             Assert.Contains(question.Answers, answer => answer.IsCorrect);
 
-            IScenarioLessonQueryService scenarioLessonQueryService = serviceProvider.GetRequiredService<IScenarioLessonQueryService>();
-            IReadOnlyList<DarwinLingua.Catalog.Application.Models.ScenarioLessonListItemModel> scenarios =
-                await scenarioLessonQueryService.GetPublishedScenariosAsync(CancellationToken.None);
-            DarwinLingua.Catalog.Application.Models.ScenarioLessonListItemModel scenarioListItem = Assert.Single(scenarios);
-            Assert.Equal("doctor-appointment-a1", scenarioListItem.Slug);
+            IDialogueLessonQueryService DialogueLessonQueryService = serviceProvider.GetRequiredService<IDialogueLessonQueryService>();
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.DialogueLessonListItemModel> Dialogues =
+                await DialogueLessonQueryService.GetPublishedDialoguesAsync(CancellationToken.None);
+            DarwinLingua.Catalog.Application.Models.DialogueLessonListItemModel DialogueListItem = Assert.Single(Dialogues);
+            Assert.Equal("doctor-appointment-a1", DialogueListItem.Slug);
 
-            DarwinLingua.Catalog.Application.Models.ScenarioLessonDetailModel? scenarioDetail =
-                await scenarioLessonQueryService.GetPublishedScenarioBySlugAsync(
+            DarwinLingua.Catalog.Application.Models.DialogueLessonDetailModel? DialogueDetail =
+                await DialogueLessonQueryService.GetPublishedDialogueBySlugAsync(
                     "doctor-appointment-a1",
                     "fa",
                     "en",
                     CancellationToken.None);
 
-            Assert.NotNull(scenarioDetail);
-            Assert.Equal("I need an appointment.", Assert.Single(scenarioDetail!.DialogueTurns).PrimaryMeaning);
-            Assert.Equal("I need an appointment.", Assert.Single(scenarioDetail.DialogueTurns).SecondaryMeaning);
+            Assert.NotNull(DialogueDetail);
+            Assert.Equal("I need an appointment.", Assert.Single(DialogueDetail!.DialogueTurns).PrimaryMeaning);
+            Assert.Equal("I need an appointment.", Assert.Single(DialogueDetail.DialogueTurns).SecondaryMeaning);
         }
         finally
         {
@@ -432,14 +432,14 @@ public sealed class ContentImportServiceTests
 
             DarwinLingua.Catalog.Domain.Entities.ConversationStarterPack pack = Assert.Single(dbContext.ConversationStarterPacks
                 .Include(starter => starter.Topics)
-                .Include(starter => starter.LinkedScenarios)
+                .Include(starter => starter.LinkedDialogues)
                 .Include(starter => starter.LinkedEventPreparationPacks)
                 .Include(starter => starter.Phrases).ThenInclude(phrase => phrase.Translations)
                 .Include(starter => starter.Phrases).ThenInclude(phrase => phrase.AlternativeBaseTexts));
 
             Assert.Equal("a1-cafe-first-meeting", pack.Slug);
             Assert.Single(pack.Topics);
-            Assert.Equal("doctor-appointment-a1", Assert.Single(pack.LinkedScenarios).ScenarioSlug);
+            Assert.Equal("doctor-appointment-a1", Assert.Single(pack.LinkedDialogues).DialogueSlug);
             DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase phrase = Assert.Single(pack.Phrases);
             Assert.Equal("opening", phrase.Function);
             Assert.Equal("Hallo, ich heisse Sara.", Assert.Single(phrase.AlternativeBaseTexts).BaseText);
@@ -453,11 +453,11 @@ public sealed class ContentImportServiceTests
 
             DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel listItem = Assert.Single(starterPacks);
             Assert.Equal("a1-cafe-first-meeting", listItem.Slug);
-            Assert.Equal(["doctor-appointment-a1"], listItem.LinkedScenarioSlugs);
+            Assert.Equal(["doctor-appointment-a1"], listItem.LinkedDialogueSlugs);
 
-            IReadOnlyList<DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel> scenarioStarterPacks =
-                await queryService.GetPublishedStarterPacksForScenarioAsync("doctor-appointment-a1", CancellationToken.None);
-            Assert.Equal("a1-cafe-first-meeting", Assert.Single(scenarioStarterPacks).Slug);
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel> DialogueStarterPacks =
+                await queryService.GetPublishedStarterPacksForDialogueAsync("doctor-appointment-a1", CancellationToken.None);
+            Assert.Equal("a1-cafe-first-meeting", Assert.Single(DialogueStarterPacks).Slug);
 
             DarwinLingua.Catalog.Application.Models.ConversationStarterPackDetailModel? detail =
                 await queryService.GetPublishedStarterPackBySlugAsync(
@@ -518,14 +518,14 @@ public sealed class ContentImportServiceTests
 
             DarwinLingua.Catalog.Domain.Entities.EventPreparationPack pack = Assert.Single(dbContext.EventPreparationPacks
                 .Include(item => item.Topics)
-                .Include(item => item.LinkedScenarios)
+                .Include(item => item.LinkedDialogues)
                 .Include(item => item.LinkedConversationStarterPacks)
                 .Include(item => item.LinkedVocabulary)
                 .Include(item => item.Prompts));
 
             Assert.Equal("a1-first-cafe-event", pack.Slug);
             Assert.Single(pack.Topics);
-            Assert.Equal("cafe-first-meeting-a1", Assert.Single(pack.LinkedScenarios).ScenarioSlug);
+            Assert.Equal("cafe-first-meeting-a1", Assert.Single(pack.LinkedDialogues).DialogueSlug);
             Assert.Equal("a1-cafe-first-meeting", Assert.Single(pack.LinkedConversationStarterPacks).ConversationStarterPackSlug);
             Assert.Equal("Name", Assert.Single(pack.LinkedVocabulary).Word);
             Assert.Equal(3, pack.Prompts.Count);
@@ -541,12 +541,12 @@ public sealed class ContentImportServiceTests
 
             DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel listItem = Assert.Single(eventPreparationPacks);
             Assert.Equal("a1-first-cafe-event", listItem.Slug);
-            Assert.Equal(["cafe-first-meeting-a1"], listItem.LinkedScenarioSlugs);
+            Assert.Equal(["cafe-first-meeting-a1"], listItem.LinkedDialogueSlugs);
             Assert.Equal(["a1-cafe-first-meeting"], listItem.LinkedConversationStarterPackSlugs);
 
-            IReadOnlyList<DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel> scenarioPreparationPacks =
-                await queryService.GetPublishedEventPreparationPacksForScenarioAsync("cafe-first-meeting-a1", CancellationToken.None);
-            Assert.Equal("a1-first-cafe-event", Assert.Single(scenarioPreparationPacks).Slug);
+            IReadOnlyList<DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel> DialoguePreparationPacks =
+                await queryService.GetPublishedEventPreparationPacksForDialogueAsync("cafe-first-meeting-a1", CancellationToken.None);
+            Assert.Equal("a1-first-cafe-event", Assert.Single(DialoguePreparationPacks).Slug);
 
             DarwinLingua.Catalog.Application.Models.EventPreparationPackDetailModel? detail =
                 await queryService.GetPublishedEventPreparationPackBySlugAsync("a1-first-cafe-event", CancellationToken.None);
@@ -935,13 +935,13 @@ public sealed class ContentImportServiceTests
             """;
     }
 
-    private static string CreatePackageWithScenarioJson(string packageId)
+    private static string CreatePackageWithDialogueJson(string packageId)
     {
         return $$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
-              "packageName": "A1 Scenario Import Test",
+              "packageName": "A1 Dialogue Import Test",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [
@@ -965,7 +965,7 @@ public sealed class ContentImportServiceTests
                   ]
                 }
               ],
-              "scenarios": [
+              "dialogues": [
                 {
                   "slug": "doctor-appointment-a1",
                   "title": "Doctor Appointment",
@@ -1069,7 +1069,7 @@ public sealed class ContentImportServiceTests
                   "conversationGoal": "introduction",
                   "topics": ["everyday-life"],
                   "sortOrder": 1,
-                  "linkedScenarioSlugs": ["doctor-appointment-a1"],
+                  "LinkedDialogueSlugs": ["doctor-appointment-a1"],
                   "linkedEventPreparationPackSlugs": ["a1-first-cafe-event"],
                   "phrases": [
                     {
@@ -1132,7 +1132,7 @@ public sealed class ContentImportServiceTests
                   "eventType": "conversation-cafe",
                   "topics": ["everyday-life"],
                   "sortOrder": 1,
-                  "linkedScenarioSlugs": ["cafe-first-meeting-a1"],
+                  "LinkedDialogueSlugs": ["cafe-first-meeting-a1"],
                   "linkedVocabulary": [
                     { "word": "Name", "partOfSpeech": "Noun", "cefrLevel": "A1" }
                   ],

@@ -4,7 +4,7 @@ namespace DarwinLingua.Web.Models;
 
 public sealed record AdminEmailDiagnosticsPageViewModel(
     string? Status,
-    string? Scenario,
+    string? Dialogue,
     string? FromUtc,
     string? ToUtc,
     string? RecipientHashPrefix,

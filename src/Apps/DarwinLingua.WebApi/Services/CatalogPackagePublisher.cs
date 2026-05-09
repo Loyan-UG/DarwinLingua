@@ -93,22 +93,22 @@ public sealed class CatalogPackagePublisher(
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        List<ScenarioLesson> activeScenarios = await catalogDbContext.ScenarioLessons
+        List<DialogueLesson> activeDialogues = await catalogDbContext.DialogueLessons
             .AsNoTracking()
             .AsSplitQuery()
-            .Where(scenario => scenario.PublicationStatus == PublicationStatus.Active)
-            .Include(scenario => scenario.Topics)
-            .Include(scenario => scenario.DialogueTurns)
+            .Where(dialogue => dialogue.PublicationStatus == PublicationStatus.Active)
+            .Include(dialogue => dialogue.Topics)
+            .Include(dialogue => dialogue.DialogueTurns)
                 .ThenInclude(turn => turn.Translations)
-            .Include(scenario => scenario.UsefulPhrases)
+            .Include(dialogue => dialogue.UsefulPhrases)
                 .ThenInclude(phrase => phrase.Translations)
-            .Include(scenario => scenario.Questions)
+            .Include(dialogue => dialogue.Questions)
                 .ThenInclude(question => question.Translations)
-            .Include(scenario => scenario.Questions)
+            .Include(dialogue => dialogue.Questions)
                 .ThenInclude(question => question.Answers)
                     .ThenInclude(answer => answer.Translations)
-            .OrderBy(scenario => scenario.SortOrder)
-            .ThenBy(scenario => scenario.Slug)
+            .OrderBy(dialogue => dialogue.SortOrder)
+            .ThenBy(dialogue => dialogue.Slug)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -117,7 +117,7 @@ public sealed class CatalogPackagePublisher(
             .AsSplitQuery()
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active)
             .Include(pack => pack.Topics)
-            .Include(pack => pack.LinkedScenarios)
+            .Include(pack => pack.LinkedDialogues)
             .Include(pack => pack.LinkedEventPreparationPacks)
             .Include(pack => pack.Phrases)
                 .ThenInclude(phrase => phrase.Translations)
@@ -133,7 +133,7 @@ public sealed class CatalogPackagePublisher(
             .AsSplitQuery()
             .Where(pack => pack.PublicationStatus == PublicationStatus.Active)
             .Include(pack => pack.Topics)
-            .Include(pack => pack.LinkedScenarios)
+            .Include(pack => pack.LinkedDialogues)
             .Include(pack => pack.LinkedConversationStarterPacks)
             .Include(pack => pack.LinkedVocabulary)
             .Include(pack => pack.Prompts)
@@ -152,7 +152,7 @@ public sealed class CatalogPackagePublisher(
             product.Key,
             versionToken,
             words,
-            activeScenarios,
+            activeDialogues,
             activeConversationStarterPacks,
             activeEventPreparationPacks);
         List<string> publishedPackageIds = [];
@@ -173,7 +173,7 @@ public sealed class CatalogPackagePublisher(
                 product.LearningLanguageCode,
                 defaultMeaningLanguages,
                 definition.Words,
-                definition.Scenarios,
+                definition.Dialogues,
                 definition.ConversationStarterPacks,
                 definition.EventPreparationPacks,
                 activeCollections,
@@ -219,7 +219,7 @@ public sealed class CatalogPackagePublisher(
         string clientProductKey,
         string versionToken,
         IReadOnlyList<WordEntry> words,
-        IReadOnlyList<ScenarioLesson> scenarios,
+        IReadOnlyList<DialogueLesson> dialogues,
         IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
         IReadOnlyList<EventPreparationPack> eventPreparationPacks)
     {
@@ -232,7 +232,7 @@ public sealed class CatalogPackagePublisher(
                 "all",
                 "full",
                 words,
-                scenarios,
+                dialogues,
                 conversationStarterPacks,
                 eventPreparationPacks),
             new(
@@ -242,7 +242,7 @@ public sealed class CatalogPackagePublisher(
                 "catalog",
                 "full",
                 words,
-                scenarios,
+                dialogues,
                 conversationStarterPacks,
                 eventPreparationPacks),
         ];
@@ -264,8 +264,8 @@ public sealed class CatalogPackagePublisher(
                 "catalog",
                 $"cefr:{group.Key}",
                 levelWords,
-                scenarios
-                    .Where(scenario => string.Equals(scenario.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
+                dialogues
+                    .Where(dialogue => string.Equals(dialogue.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
                     .ToArray(),
                 conversationStarterPacks
                     .Where(pack => string.Equals(pack.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
@@ -287,7 +287,7 @@ public sealed class CatalogPackagePublisher(
         string learningLanguageCode,
         IReadOnlyList<string> defaultMeaningLanguages,
         IReadOnlyList<WordEntry> words,
-        IReadOnlyList<ScenarioLesson> scenarios,
+        IReadOnlyList<DialogueLesson> dialogues,
         IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
         IReadOnlyList<EventPreparationPack> eventPreparationPacks,
         IReadOnlyList<WordCollection> activeCollections,
@@ -308,7 +308,7 @@ public sealed class CatalogPackagePublisher(
             learningLanguageCode,
             defaultMeaningLanguages,
             collections,
-            scenarios.Select(scenario => CreateScenario(scenario, topicKeys)).ToArray(),
+            dialogues.Select(dialogue => CreateDialogue(dialogue, topicKeys)).ToArray(),
             conversationStarterPacks.Select(pack => CreateConversationStarterPack(pack, topicKeys)).ToArray(),
             eventPreparationPacks.Select(pack => CreateEventPreparationPack(pack, topicKeys)).ToArray(),
             words.Select(word => CreateEntry(word, topicKeys)).ToArray());
@@ -454,43 +454,43 @@ public sealed class CatalogPackagePublisher(
             examples);
     }
 
-    private static ExportedScenarioLesson CreateScenario(ScenarioLesson scenario, IReadOnlyDictionary<Guid, string> topicKeys)
+    private static ExportedDialogueLesson CreateDialogue(DialogueLesson dialogue, IReadOnlyDictionary<Guid, string> topicKeys)
     {
-        return new ExportedScenarioLesson(
-            scenario.Slug,
-            scenario.Title,
-            scenario.Description,
-            scenario.LearnerGoal,
-            scenario.CefrLevel.ToString(),
-            scenario.Category,
-            scenario.Topics
+        return new ExportedDialogueLesson(
+            dialogue.Slug,
+            dialogue.Title,
+            dialogue.Description,
+            dialogue.LearnerGoal,
+            dialogue.CefrLevel.ToString(),
+            dialogue.Category,
+            dialogue.Topics
                 .OrderByDescending(topic => topic.IsPrimary)
                 .ThenBy(topic => topic.TopicId)
                 .Select(topic => topicKeys[topic.TopicId])
                 .ToArray(),
-            scenario.SortOrder,
-            scenario.DialogueTurns
+            dialogue.SortOrder,
+            dialogue.DialogueTurns
                 .OrderBy(turn => turn.SortOrder)
-                .Select(turn => new ExportedScenarioDialogueTurn(
+                .Select(turn => new ExportedDialogueTurn(
                     turn.SpeakerRole,
                     turn.BaseText,
                     CreateTranslations(turn.Translations)))
                 .ToArray(),
-            scenario.UsefulPhrases
+            dialogue.UsefulPhrases
                 .OrderBy(phrase => phrase.SortOrder)
-                .Select(phrase => new ExportedScenarioPhrase(
+                .Select(phrase => new ExportedDialoguePhrase(
                     phrase.BaseText,
                     phrase.UsageNote,
                     CreateTranslations(phrase.Translations)))
                 .ToArray(),
-            scenario.Questions
+            dialogue.Questions
                 .OrderBy(question => question.SortOrder)
-                .Select(question => new ExportedScenarioQuestion(
+                .Select(question => new ExportedDialogueQuestion(
                     question.Prompt,
                     CreateTranslations(question.Translations),
                     question.Answers
                         .OrderBy(answer => answer.SortOrder)
-                        .Select(answer => new ExportedScenarioAnswer(
+                        .Select(answer => new ExportedDialogueAnswer(
                             answer.Text,
                             answer.IsCorrect,
                             answer.Feedback,
@@ -518,9 +518,9 @@ public sealed class CatalogPackagePublisher(
                 .Select(topic => topicKeys[topic.TopicId])
                 .ToArray(),
             pack.SortOrder,
-            pack.LinkedScenarios
+            pack.LinkedDialogues
                 .OrderBy(link => link.SortOrder)
-                .Select(link => link.ScenarioSlug)
+                .Select(link => link.DialogueSlug)
                 .ToArray(),
             pack.LinkedEventPreparationPacks
                 .OrderBy(link => link.SortOrder)
@@ -560,9 +560,9 @@ public sealed class CatalogPackagePublisher(
                 .Select(topic => topicKeys[topic.TopicId])
                 .ToArray(),
             pack.SortOrder,
-            pack.LinkedScenarios
+            pack.LinkedDialogues
                 .OrderBy(link => link.SortOrder)
-                .Select(link => link.ScenarioSlug)
+                .Select(link => link.DialogueSlug)
                 .ToArray(),
             pack.LinkedVocabulary
                 .OrderBy(reference => reference.SortOrder)
@@ -592,7 +592,7 @@ public sealed class CatalogPackagePublisher(
                 .ToArray());
     }
 
-    private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<ScenarioTranslationBase> translations)
+    private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<DialogueTranslationBase> translations)
     {
         return translations
             .OrderBy(translation => translation.LanguageCode.Value, StringComparer.Ordinal)
@@ -672,7 +672,7 @@ public sealed class CatalogPackagePublisher(
         string ContentAreaKey,
         string SliceKey,
         IReadOnlyList<WordEntry> Words,
-        IReadOnlyList<ScenarioLesson> Scenarios,
+        IReadOnlyList<DialogueLesson> Dialogues,
         IReadOnlyList<ConversationStarterPack> ConversationStarterPacks,
         IReadOnlyList<EventPreparationPack> EventPreparationPacks);
 
@@ -687,7 +687,7 @@ public sealed class CatalogPackagePublisher(
         string LearningLanguageCode,
         IReadOnlyList<string> DefaultMeaningLanguages,
         IReadOnlyList<ExportedContentCollection> Collections,
-        IReadOnlyList<ExportedScenarioLesson> Scenarios,
+        IReadOnlyList<ExportedDialogueLesson> Dialogues,
         IReadOnlyList<ExportedConversationStarterPack> ConversationStarterPacks,
         IReadOnlyList<ExportedEventPreparationPack> EventPreparationPacks,
         IReadOnlyList<ExportedContentEntry> Entries);
@@ -743,7 +743,7 @@ public sealed class CatalogPackagePublisher(
 
     private sealed record ExportedWordRelation(string Kind, string Lemma, string? Note);
 
-    private sealed record ExportedScenarioLesson(
+    private sealed record ExportedDialogueLesson(
         string Slug,
         string Title,
         string Description,
@@ -752,26 +752,26 @@ public sealed class CatalogPackagePublisher(
         string Category,
         IReadOnlyList<string> Topics,
         int SortOrder,
-        IReadOnlyList<ExportedScenarioDialogueTurn> DialogueTurns,
-        IReadOnlyList<ExportedScenarioPhrase> UsefulPhrases,
-        IReadOnlyList<ExportedScenarioQuestion> Questions);
+        IReadOnlyList<ExportedDialogueTurn> DialogueTurns,
+        IReadOnlyList<ExportedDialoguePhrase> UsefulPhrases,
+        IReadOnlyList<ExportedDialogueQuestion> Questions);
 
-    private sealed record ExportedScenarioDialogueTurn(
+    private sealed record ExportedDialogueTurn(
         string SpeakerRole,
         string BaseText,
         IReadOnlyList<ExportedMeaning> Translations);
 
-    private sealed record ExportedScenarioPhrase(
+    private sealed record ExportedDialoguePhrase(
         string BaseText,
         string? UsageNote,
         IReadOnlyList<ExportedMeaning> Translations);
 
-    private sealed record ExportedScenarioQuestion(
+    private sealed record ExportedDialogueQuestion(
         string Prompt,
         IReadOnlyList<ExportedMeaning> Translations,
-        IReadOnlyList<ExportedScenarioAnswer> Answers);
+        IReadOnlyList<ExportedDialogueAnswer> Answers);
 
-    private sealed record ExportedScenarioAnswer(
+    private sealed record ExportedDialogueAnswer(
         string Text,
         bool IsCorrect,
         string? Feedback,
@@ -788,7 +788,7 @@ public sealed class CatalogPackagePublisher(
         string ConversationGoal,
         IReadOnlyList<string> Topics,
         int SortOrder,
-        IReadOnlyList<string> LinkedScenarioSlugs,
+        IReadOnlyList<string> LinkedDialogueSlugs,
         IReadOnlyList<string> LinkedEventPreparationPackSlugs,
         IReadOnlyList<ExportedConversationStarterPhrase> Phrases);
 
@@ -811,7 +811,7 @@ public sealed class CatalogPackagePublisher(
         string EventType,
         IReadOnlyList<string> Topics,
         int SortOrder,
-        IReadOnlyList<string> LinkedScenarioSlugs,
+        IReadOnlyList<string> LinkedDialogueSlugs,
         IReadOnlyList<ExportedEventPreparationVocabularyReference> LinkedVocabulary,
         IReadOnlyList<string> LinkedConversationStarterPackSlugs,
         IReadOnlyList<string> OpeningPrompts,

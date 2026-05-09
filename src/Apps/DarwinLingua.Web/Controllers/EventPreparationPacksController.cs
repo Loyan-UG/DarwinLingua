@@ -23,7 +23,7 @@ public sealed class EventPreparationPacksController(
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
         if (normalizedSlug is null)
         {
-            return RedirectToAction("Index", "Scenarios");
+            return RedirectToAction("Index", "Dialogues");
         }
 
         if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
@@ -47,7 +47,7 @@ public sealed class EventPreparationPacksController(
             logger.LogWarning(ex, "Event preparation pack could not be loaded for {Slug}.", normalizedSlug);
             return ServiceUnavailableView(
                 localizer["Preparation pack is temporarily unavailable"],
-                localizer["This preparation pack could not be loaded right now. Please try again from scenarios or events."]);
+                localizer["This preparation pack could not be loaded right now. Please try again from dialogues or events."]);
         }
 
         if (preparationPack is null)
@@ -71,7 +71,7 @@ public sealed class EventPreparationPacksController(
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
         if (normalizedSlug is null)
         {
-            return RedirectToAction("Index", "Scenarios");
+            return RedirectToAction("Index", "Dialogues");
         }
 
         if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
@@ -94,7 +94,7 @@ public sealed class EventPreparationPacksController(
         {
             logger.LogWarning(ex, "Event preparation completion could not load pack {Slug}.", normalizedSlug);
             TempData["ErrorMessage"] = localizer["Preparation progress could not be saved right now. Please try again."].Value;
-            return RedirectToAction("Index", "Scenarios");
+            return RedirectToAction("Index", "Dialogues");
         }
 
         if (preparationPack is null)

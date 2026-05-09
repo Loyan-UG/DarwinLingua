@@ -14,13 +14,13 @@ public interface IWebEntitledFeatureAccessService
 
     Task EnsureCanUseEventPreparationPacksAsync(CancellationToken cancellationToken);
 
-    Task<bool> CanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken) =>
+    Task<bool> CanUseAdvancedDialoguePacksAsync(CancellationToken cancellationToken) =>
         Task.FromResult(false);
 
-    Task EnsureCanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken) =>
+    Task EnsureCanUseAdvancedDialoguePacksAsync(CancellationToken cancellationToken) =>
         throw new FeatureAccessDeniedException(
-            DarwinLinguaFeatureKeys.AdvancedScenarioPacks,
-            "Advanced scenario packs require an authenticated account with an active trial or premium entitlement.");
+            DarwinLinguaFeatureKeys.AdvancedDialoguePacks,
+            "Advanced dialogue packs require an authenticated account with an active trial or premium entitlement.");
 
     Task<bool> CanUsePartnerMatchingAsync(CancellationToken cancellationToken) =>
         Task.FromResult(false);
@@ -76,21 +76,21 @@ internal sealed class WebEntitledFeatureAccessService(
             "Preparation packs require an authenticated account with an active trial or premium entitlement.");
     }
 
-    public async Task<bool> CanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken)
+    public async Task<bool> CanUseAdvancedDialoguePacksAsync(CancellationToken cancellationToken)
     {
-        return await HasFeatureAsync(DarwinLinguaFeatureKeys.AdvancedScenarioPacks, cancellationToken).ConfigureAwait(false);
+        return await HasFeatureAsync(DarwinLinguaFeatureKeys.AdvancedDialoguePacks, cancellationToken).ConfigureAwait(false);
     }
 
-    public async Task EnsureCanUseAdvancedScenarioPacksAsync(CancellationToken cancellationToken)
+    public async Task EnsureCanUseAdvancedDialoguePacksAsync(CancellationToken cancellationToken)
     {
-        if (await CanUseAdvancedScenarioPacksAsync(cancellationToken).ConfigureAwait(false))
+        if (await CanUseAdvancedDialoguePacksAsync(cancellationToken).ConfigureAwait(false))
         {
             return;
         }
 
         throw new FeatureAccessDeniedException(
-            DarwinLinguaFeatureKeys.AdvancedScenarioPacks,
-            "Advanced scenario packs require an authenticated account with an active trial or premium entitlement.");
+            DarwinLinguaFeatureKeys.AdvancedDialoguePacks,
+            "Advanced dialogue packs require an authenticated account with an active trial or premium entitlement.");
     }
 
     public async Task<bool> CanUsePartnerMatchingAsync(CancellationToken cancellationToken)

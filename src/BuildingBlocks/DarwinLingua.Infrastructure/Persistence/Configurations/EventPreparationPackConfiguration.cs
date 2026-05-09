@@ -25,7 +25,7 @@ internal sealed class EventPreparationPackConfiguration : IEntityTypeConfigurati
         builder.HasIndex(pack => new { pack.CefrLevel, pack.Category, pack.EventType });
 
         builder.HasMany(pack => pack.Topics).WithOne().HasForeignKey(topic => topic.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);
-        builder.HasMany(pack => pack.LinkedScenarios).WithOne().HasForeignKey(link => link.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);
+        builder.HasMany(pack => pack.LinkedDialogues).WithOne().HasForeignKey(link => link.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(pack => pack.LinkedConversationStarterPacks).WithOne().HasForeignKey(link => link.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(pack => pack.LinkedVocabulary).WithOne().HasForeignKey(reference => reference.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(pack => pack.Prompts).WithOne().HasForeignKey(prompt => prompt.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);
@@ -50,18 +50,18 @@ internal sealed class EventPreparationPackTopicConfiguration : IEntityTypeConfig
     }
 }
 
-internal sealed class EventPreparationLinkedScenarioConfiguration : IEntityTypeConfiguration<EventPreparationLinkedScenario>
+internal sealed class EventPreparationLinkedDialogueConfiguration : IEntityTypeConfiguration<EventPreparationLinkedDialogue>
 {
-    public void Configure(EntityTypeBuilder<EventPreparationLinkedScenario> builder)
+    public void Configure(EntityTypeBuilder<EventPreparationLinkedDialogue> builder)
     {
-        builder.ToTable("EventPreparationLinkedScenarios");
+        builder.ToTable("EventPreparationLinkedDialogues");
         builder.HasKey(link => link.Id);
         builder.Property(link => link.Id).ValueGeneratedNever();
         builder.Property(link => link.EventPreparationPackId).IsRequired();
-        builder.Property(link => link.ScenarioSlug).HasMaxLength(128).IsRequired();
+        builder.Property(link => link.DialogueSlug).HasMaxLength(128).IsRequired();
         builder.Property(link => link.SortOrder).IsRequired();
         builder.Property(link => link.CreatedAtUtc).IsRequired();
-        builder.HasIndex(link => new { link.EventPreparationPackId, link.ScenarioSlug }).IsUnique();
+        builder.HasIndex(link => new { link.EventPreparationPackId, link.DialogueSlug }).IsUnique();
     }
 }
 

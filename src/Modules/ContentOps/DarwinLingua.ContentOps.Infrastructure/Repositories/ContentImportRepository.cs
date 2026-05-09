@@ -66,8 +66,6 @@ internal sealed class ContentImportRepository : IContentImportRepository
 
     public async Task<bool> WordExistsAsync(
         string normalizedLemma,
-        PartOfSpeech partOfSpeech,
-        CefrLevel cefrLevel,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(normalizedLemma);
@@ -79,9 +77,7 @@ internal sealed class ContentImportRepository : IContentImportRepository
         return await dbContext.WordEntries
             .AsNoTracking()
             .AnyAsync(
-                word => word.NormalizedLemma == normalizedLemma &&
-                    word.PartOfSpeech == partOfSpeech &&
-                    word.PrimaryCefrLevel == cefrLevel,
+                word => word.NormalizedLemma == normalizedLemma,
                 cancellationToken)
             .ConfigureAwait(false);
     }
@@ -125,7 +121,8 @@ internal sealed class ContentImportRepository : IContentImportRepository
         IReadOnlyList<LabelDefinition> importedLabelDefinitions,
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
-        IReadOnlyList<ScenarioLesson> importedScenarios,
+        IReadOnlyList<DialogueLesson> importedDialogues,
+        IReadOnlyList<TalkTopic> importedTalkTopics,
         IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
         IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
         CancellationToken cancellationToken)
@@ -134,7 +131,8 @@ internal sealed class ContentImportRepository : IContentImportRepository
         ArgumentNullException.ThrowIfNull(importedLabelDefinitions);
         ArgumentNullException.ThrowIfNull(importedWords);
         ArgumentNullException.ThrowIfNull(importedCollections);
-        ArgumentNullException.ThrowIfNull(importedScenarios);
+        ArgumentNullException.ThrowIfNull(importedDialogues);
+        ArgumentNullException.ThrowIfNull(importedTalkTopics);
         ArgumentNullException.ThrowIfNull(importedConversationStarterPacks);
         ArgumentNullException.ThrowIfNull(importedEventPreparationPacks);
 
@@ -250,21 +248,39 @@ internal sealed class ContentImportRepository : IContentImportRepository
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        if (importedScenarios.Count > 0)
+        if (importedDialogues.Count > 0)
         {
-            string[] importedSlugs = importedScenarios.Select(scenario => scenario.Slug).ToArray();
-            List<ScenarioLesson> existingScenarios = await dbContext.ScenarioLessons
-                .Where(scenario => importedSlugs.Contains(scenario.Slug))
+            string[] importedSlugs = importedDialogues.Select(dialogue => dialogue.Slug).ToArray();
+            List<DialogueLesson> existingDialogues = await dbContext.DialogueLessons
+                .Where(dialogue => importedSlugs.Contains(dialogue.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
 
-            if (existingScenarios.Count > 0)
+            if (existingDialogues.Count > 0)
             {
-                dbContext.ScenarioLessons.RemoveRange(existingScenarios);
+                dbContext.DialogueLessons.RemoveRange(existingDialogues);
                 await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             }
 
-            dbContext.ScenarioLessons.AddRange(importedScenarios);
+            dbContext.DialogueLessons.AddRange(importedDialogues);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedTalkTopics.Count > 0)
+        {
+            string[] importedSlugs = importedTalkTopics.Select(topic => topic.Slug).ToArray();
+            List<TalkTopic> existingTalkTopics = await dbContext.TalkTopics
+                .Where(topic => importedSlugs.Contains(topic.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            if (existingTalkTopics.Count > 0)
+            {
+                dbContext.TalkTopics.RemoveRange(existingTalkTopics);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.TalkTopics.AddRange(importedTalkTopics);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 

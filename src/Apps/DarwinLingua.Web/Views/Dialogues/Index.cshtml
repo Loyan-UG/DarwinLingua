@@ -1,0 +1,71 @@
+@model DarwinLingua.Web.Models.DialogueIndexPageViewModel
+@{
+    ViewData["Title"] = T["Dialogues"];
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Dialogues"]</span>
+    <h1 class="headline-md">@T["Practical German dialogues"]</h1>
+    <p class="body-lg">@T["Practice dialogue, useful phrases, and quick checks for real-life tasks."]</p>
+    @if (Model.TopicKeys.Count > 0)
+    {
+        <div class="chip-grid">
+            <a class="chip-link @(string.IsNullOrWhiteSpace(Model.SelectedTopicKey) ? "is-active" : string.Empty)"
+               asp-controller="Dialogues"
+               asp-action="Index"
+               asp-route-q="@Model.Query">@T["All topics"]</a>
+            @foreach (string topicKey in Model.TopicKeys)
+            {
+                <a class="chip-link @(string.Equals(Model.SelectedTopicKey, topicKey, StringComparison.OrdinalIgnoreCase) ? "is-active" : string.Empty)"
+                   asp-controller="Dialogues"
+                   asp-action="Index"
+                   asp-route-topic="@topicKey"
+                   asp-route-q="@Model.Query">@topicKey</a>
+            }
+        </div>
+    }
+    <form class="search-form" method="get" asp-controller="Dialogues" asp-action="Index">
+        @if (!string.IsNullOrWhiteSpace(Model.SelectedTopicKey))
+        {
+            <input type="hidden" name="topic" value="@Model.SelectedTopicKey" />
+        }
+        <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search dialogues"]" />
+        <button type="submit" class="button button--secondary">@T["Search"]</button>
+    </form>
+</section>
+
+@if (Model.Dialogues.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Dialogues are being prepared"].Value, T["Guided practice dialogues will appear here when they are ready for study."].Value)' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var dialogue in Model.Dialogues)
+        {
+            <article class="panel stack-md">
+                <div class="action-row collection-card__meta">
+                    <span class="eyebrow">@dialogue.CefrLevel · @dialogue.Category</span>
+                    <span>@T["{0} topics", dialogue.TopicKeys.Count]</span>
+                </div>
+                <h2 class="headline-sm">
+                    <a asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogue.Slug">@dialogue.Title</a>
+                </h2>
+                <p>@dialogue.Description</p>
+                <p class="body-lg">@dialogue.LearnerGoal</p>
+                @if (dialogue.TopicKeys.Count > 0)
+                {
+                    <div class="chip-grid">
+                        @foreach (string topicKey in dialogue.TopicKeys)
+                        {
+                            <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
+                        }
+                    </div>
+                }
+                <div class="action-row">
+                    <a class="button button--secondary" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogue.Slug">@T["Open dialogue"]</a>
+                </div>
+            </article>
+        }
+    </section>
+}

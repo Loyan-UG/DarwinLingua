@@ -8,7 +8,8 @@ It focuses on:
 
 - the market opportunity for a practical German-learning product in Germany
 - multilingual and dual-meaning-language learning as a product differentiator
-- scenario-based dialogue learning and conversation starters
+- dialogue-based learning and conversation starters
+- Talk Topics for reading-based group discussion in language cafes and informal speaking sessions
 - safe learner profiles and conversation-partner discovery
 - conversation cafes, clubs, local events, and B2B organizer tools
 - freemium and low-cost subscription options
@@ -30,7 +31,7 @@ The current technical foundation already supports a strong content-first learnin
 
 The next strategic step is to add a higher-level product layer on top of the existing lexical and practice foundation:
 
-1. scenario-based German learning
+1. dialogue-based German learning
 2. conversation starters and topic packs
 3. dual meaning-language learning such as `German + English + Persian`, `German + English + Arabic`, or `German + English + Turkish`
 4. local conversation cafes and event discovery
@@ -70,7 +71,7 @@ Those categories are either saturated, too broad, or operationally expensive.
 
 The recommended wedge is:
 
-> Real-life German scenarios plus safe conversation practice.
+> Real-life German dialogues plus safe conversation practice.
 
 The learner should open the app because they have a concrete situation:
 
@@ -143,20 +144,20 @@ The most relevant early segments are not all German learners worldwide. The rele
 | Foreign workers | Workplace German, emails, calls, social integration | High |
 | Parents with children in Germany | Kita, school, doctor, appointments | High |
 | Language cafe participants | Conversation preparation and follow-up | Very high |
-| Teachers and volunteers | Ready-made practical scenario packs | Medium to high |
+| Teachers and volunteers | Ready-made practical dialogue packs | Medium to high |
 | Organizers and clubs | Event visibility, attendance, participant preparation | High B2B potential |
 
 ---
 
-## Realistic Monthly Active User Scenarios
+## Realistic Monthly Active User dialogues
 
-These numbers are planning scenarios, not guaranteed forecasts.
+These numbers are planning dialogues, not guaranteed forecasts.
 
 | Stage | Product State | Realistic MAU |
 |---|---:|---:|
 | Early MVP | Basic content, limited distribution | 100-500 |
-| Useful first release | Scenarios, vocabulary, practice, search | 500-2,000 |
-| Practical immigrant-focused product | Real-life scenario packs and multilingual support | 2,000-10,000 |
+| Useful first release | dialogues, vocabulary, practice, search | 500-2,000 |
+| Practical immigrant-focused product | Real-life dialogue packs and multilingual support | 2,000-10,000 |
 | Community-enabled product | Profiles, partner requests, events, organizers | 10,000-50,000 |
 | Strong distribution and partnerships | Multilingual depth plus active organizer network | 50,000+ |
 
@@ -167,7 +168,7 @@ A more conservative working target:
 | First 6 months after public release | 500-2,500 MAU |
 | 6-18 months | 2,000-8,000 MAU |
 | 18-36 months | 8,000-25,000 MAU |
-| Strong upside scenario | 25,000-60,000 MAU |
+| Strong upside dialogue | 25,000-60,000 MAU |
 
 The product should not be financially planned around 50,000 MAU from the beginning. That would be unrealistic without strong distribution, partnerships, or paid acquisition.
 
@@ -179,19 +180,19 @@ The product should not be financially planned around 50,000 MAU from the beginni
 |---|---|---|---|
 | Generic language apps | Duolingo, Babbel, Busuu | Strong brand, habit loops, polished apps | Less focused on real-life German in Germany and local conversation practice |
 | Public/free German resources | DW Learn German, public materials | Trustworthy, free, broad | Less personalized, less community-linked, less dual-language focused |
-| Language exchange apps | Tandem, HelloTalk | People matching and chat | Safety, local German scenarios, and structured preparation can be weaker |
+| Language exchange apps | Tandem, HelloTalk | People matching and chat | Safety, local German dialogues, and structured preparation can be weaker |
 | Event platforms | Meetup, Eventbrite, local groups | Event discovery and attendance | Not built for language-learning preparation and follow-up |
 | Language schools and tutors | Local schools, private teachers | Human instruction | Higher cost and less continuous daily self-practice |
 
-The opportunity is not to beat every competitor at their own game. The opportunity is to combine practical scenario learning with safe conversation discovery.
+The opportunity is not to beat every competitor at their own game. The opportunity is to combine practical Dialogue Learning with safe conversation discovery.
 
 ---
 
-## Scenario-Based Learning
+## dialogue-based Learning
 
 ### Core Concept
 
-A `ScenarioLesson` should represent a real situation, not only a vocabulary group.
+A `DialogueLesson` should represent a real situation, not only a vocabulary group.
 
 Examples:
 
@@ -206,7 +207,7 @@ Examples:
 - Making a complaint politely
 - Rescheduling an appointment
 
-### Scenario Content Template
+### dialogue Content Template
 
 | Block | Description |
 |---|---|
@@ -224,9 +225,9 @@ Examples:
 | Roleplay mode | Role A, Role B, success criteria |
 | Follow-up practice | Flashcards, quiz, replay, saved phrases |
 
-### Example Scenario
+### Example dialogue
 
-#### Scenario
+#### dialogue
 
 First meeting for language practice in a cafe.
 
@@ -282,7 +283,7 @@ A low-cost learner subscription can work only with significant MAU. Organizer re
 
 Example:
 
-| Revenue Source | Scenario | Monthly Revenue |
+| Revenue Source | dialogue | Monthly Revenue |
 |---|---:|---:|
 | Learner subscriptions | 10,000 MAU x 3% conversion x 2 EUR | 600 EUR |
 | Organizer Lite | 50 organizers x 9 EUR | 450 EUR |
@@ -395,7 +396,7 @@ Free should include:
 
 - browse and search
 - basic vocabulary details
-- many scenario lessons
+- many dialogue practice lessons
 - limited favorites or saved phrases
 - read-only event directory
 - basic profile
@@ -408,7 +409,7 @@ Suggested starting price: `1.99 EUR/month`.
 Possible benefits:
 
 - unlimited saved phrases
-- more scenario packs
+- more dialogue packs
 - dual-language advanced layout
 - more review history
 - more partner requests
@@ -424,7 +425,7 @@ Possible benefits:
 - AI-assisted roleplay feedback
 - email/message writing practice
 - job interview practice
-- office/doctor/school scenario packs
+- office/doctor/school dialogue packs
 - personalized learning path
 
 ### Organizer Plans
@@ -444,7 +445,7 @@ The current solution direction can support this expansion without a full rewrite
 
 Recommended new bounded contexts or modules:
 
-- `Scenarios`
+- `dialogues`
 - `Profiles`
 - `Matching`
 - `ResourceDirectory`
@@ -475,7 +476,7 @@ flowchart LR
     end
 
     subgraph New Practical Conversation Layer
-        L[Scenario Lessons]
+        L[Dialogue Practice]
         M[Conversation Starters]
         N[Preparation Packs]
     end
@@ -504,9 +505,9 @@ flowchart LR
 gantt
     title Conversation and Organizer MVP Roadmap
     dateFormat  YYYY-MM-DD
-    section Scenario Learning
-    Scenario model and content contract      :a1, 2026-04-27, 10d
-    Scenario rendering in mobile             :a2, after a1, 8d
+    section Dialogue Learning
+    dialogue model and content contract      :a1, 2026-04-27, 10d
+    dialogue rendering in mobile             :a2, after a1, 8d
     Conversation starter packs               :a3, after a1, 8d
     section Directory and Organizer
     ResourceDirectory entities               :b1, 2026-05-06, 8d
@@ -529,7 +530,7 @@ Track only a small number of meaningful metrics at first.
 
 | Metric | Why It Matters |
 |---|---|
-| Scenario completion rate | Shows whether practical lessons are useful |
+| dialogue completion rate | Shows whether practical lessons are useful |
 | 7-day retention | Shows whether learners return after first use |
 | 30-day retention | Shows whether the product becomes a habit |
 | Saved phrases per user | Shows real utility |
@@ -559,7 +560,7 @@ These references should be refreshed before using this document for investor mat
 
 Build this expansion in this order:
 
-1. scenario lessons and conversation starters
+1. dialogue practice lessons and conversation starters
 2. event and club directory
 3. preparation packs for events
 4. organizer profiles

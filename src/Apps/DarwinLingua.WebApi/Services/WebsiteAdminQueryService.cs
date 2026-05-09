@@ -508,7 +508,7 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
             .CountAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        int scenarioLessonCount = await dbContext.ScenarioLessons.AsNoTracking()
+        int dialogueLessonCount = await dbContext.DialogueLessons.AsNoTracking()
             .CountAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -524,7 +524,7 @@ internal sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbC
             wordSummary.ActiveCount,
             wordSummary.DraftCount,
             topicCount,
-            scenarioLessonCount,
+            dialogueLessonCount,
             conversationStarterPackCount,
             eventPreparationPackCount);
     }

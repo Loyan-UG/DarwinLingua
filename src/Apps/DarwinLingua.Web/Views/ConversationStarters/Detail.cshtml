@@ -77,14 +77,14 @@
     </section>
 }
 
-@if (Model.StarterPack.LinkedScenarioSlugs.Count > 0)
+@if (Model.StarterPack.LinkedDialogueSlugs.Count > 0)
 {
     <section class="panel stack-md">
-        <h2 class="headline-sm">@T["Related scenarios"]</h2>
+        <h2 class="headline-sm">@T["Related dialogues"]</h2>
         <div class="chip-grid">
-            @foreach (string scenarioSlug in Model.StarterPack.LinkedScenarioSlugs)
+            @foreach (string dialogueSlug in Model.StarterPack.LinkedDialogueSlugs)
             {
-                <a class="chip-link" asp-controller="Scenarios" asp-action="Detail" asp-route-slug="@scenarioSlug">@scenarioSlug</a>
+                <a class="chip-link" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogueSlug">@dialogueSlug</a>
             }
         </div>
     </section>

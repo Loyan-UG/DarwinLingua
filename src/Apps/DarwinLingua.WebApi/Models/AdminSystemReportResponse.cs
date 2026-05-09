@@ -11,7 +11,7 @@ public sealed record AdminCatalogSystemReportResponse(
     int ActiveWordCount,
     int DraftWordCount,
     int TopicCount,
-    int ScenarioLessonCount,
+    int DialogueLessonCount,
     int ConversationStarterPackCount,
     int EventPreparationPackCount);
 

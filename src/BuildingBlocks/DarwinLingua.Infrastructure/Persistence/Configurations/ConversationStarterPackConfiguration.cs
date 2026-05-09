@@ -28,7 +28,7 @@ internal sealed class ConversationStarterPackConfiguration : IEntityTypeConfigur
         builder.HasIndex(pack => new { pack.CefrLevel, pack.Situation, pack.Tone, pack.ConversationGoal });
 
         builder.HasMany(pack => pack.Topics).WithOne().HasForeignKey(topic => topic.ConversationStarterPackId).OnDelete(DeleteBehavior.Cascade);
-        builder.HasMany(pack => pack.LinkedScenarios).WithOne().HasForeignKey(link => link.ConversationStarterPackId).OnDelete(DeleteBehavior.Cascade);
+        builder.HasMany(pack => pack.LinkedDialogues).WithOne().HasForeignKey(link => link.ConversationStarterPackId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(pack => pack.LinkedEventPreparationPacks).WithOne().HasForeignKey(link => link.ConversationStarterPackId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(pack => pack.Phrases).WithOne().HasForeignKey(phrase => phrase.ConversationStarterPackId).OnDelete(DeleteBehavior.Cascade);
     }
@@ -52,18 +52,18 @@ internal sealed class ConversationStarterPackTopicConfiguration : IEntityTypeCon
     }
 }
 
-internal sealed class ConversationStarterLinkedScenarioConfiguration : IEntityTypeConfiguration<ConversationStarterLinkedScenario>
+internal sealed class ConversationStarterLinkedDialogueConfiguration : IEntityTypeConfiguration<ConversationStarterLinkedDialogue>
 {
-    public void Configure(EntityTypeBuilder<ConversationStarterLinkedScenario> builder)
+    public void Configure(EntityTypeBuilder<ConversationStarterLinkedDialogue> builder)
     {
-        builder.ToTable("ConversationStarterLinkedScenarios");
+        builder.ToTable("ConversationStarterLinkedDialogues");
         builder.HasKey(link => link.Id);
         builder.Property(link => link.Id).ValueGeneratedNever();
         builder.Property(link => link.ConversationStarterPackId).IsRequired();
-        builder.Property(link => link.ScenarioSlug).HasMaxLength(128).IsRequired();
+        builder.Property(link => link.DialogueSlug).HasMaxLength(128).IsRequired();
         builder.Property(link => link.SortOrder).IsRequired();
         builder.Property(link => link.CreatedAtUtc).IsRequired();
-        builder.HasIndex(link => new { link.ConversationStarterPackId, link.ScenarioSlug }).IsUnique();
+        builder.HasIndex(link => new { link.ConversationStarterPackId, link.DialogueSlug }).IsUnique();
     }
 }
 

@@ -169,7 +169,7 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
         }
 
         await MergeWordTopicLinksAsync(dbContext, source.Id, target.Id, cancellationToken).ConfigureAwait(false);
-        await MergeScenarioTopicLinksAsync(dbContext, source.Id, target.Id, cancellationToken).ConfigureAwait(false);
+        await MergeDialogueTopicLinksAsync(dbContext, source.Id, target.Id, cancellationToken).ConfigureAwait(false);
         await MergeConversationStarterTopicLinksAsync(dbContext, source.Id, target.Id, cancellationToken).ConfigureAwait(false);
         await MergeEventPreparationTopicLinksAsync(dbContext, source.Id, target.Id, cancellationToken).ConfigureAwait(false);
 
@@ -520,11 +520,11 @@ internal sealed class AdminTaxonomyService(IDbContextFactory<DarwinLinguaDbConte
         ReassignOrRemoveTopicLinks(sourceLinks, targetOwnerIds, link => link.WordEntryId, link => link.ReassignTopic(targetTopicId), dbContext.WordTopics);
     }
 
-    private static async Task MergeScenarioTopicLinksAsync(DarwinLinguaDbContext dbContext, Guid sourceTopicId, Guid targetTopicId, CancellationToken cancellationToken)
+    private static async Task MergeDialogueTopicLinksAsync(DarwinLinguaDbContext dbContext, Guid sourceTopicId, Guid targetTopicId, CancellationToken cancellationToken)
     {
-        ScenarioLessonTopic[] sourceLinks = await dbContext.ScenarioLessonTopics.Where(link => link.TopicId == sourceTopicId).ToArrayAsync(cancellationToken).ConfigureAwait(false);
-        HashSet<Guid> targetOwnerIds = await dbContext.ScenarioLessonTopics.Where(link => link.TopicId == targetTopicId).Select(link => link.ScenarioLessonId).ToHashSetAsync(cancellationToken).ConfigureAwait(false);
-        ReassignOrRemoveTopicLinks(sourceLinks, targetOwnerIds, link => link.ScenarioLessonId, link => link.ReassignTopic(targetTopicId), dbContext.ScenarioLessonTopics);
+        DialogueLessonTopic[] sourceLinks = await dbContext.DialogueLessonTopics.Where(link => link.TopicId == sourceTopicId).ToArrayAsync(cancellationToken).ConfigureAwait(false);
+        HashSet<Guid> targetOwnerIds = await dbContext.DialogueLessonTopics.Where(link => link.TopicId == targetTopicId).Select(link => link.DialogueLessonId).ToHashSetAsync(cancellationToken).ConfigureAwait(false);
+        ReassignOrRemoveTopicLinks(sourceLinks, targetOwnerIds, link => link.DialogueLessonId, link => link.ReassignTopic(targetTopicId), dbContext.DialogueLessonTopics);
     }
 
     private static async Task MergeConversationStarterTopicLinksAsync(DarwinLinguaDbContext dbContext, Guid sourceTopicId, Guid targetTopicId, CancellationToken cancellationToken)

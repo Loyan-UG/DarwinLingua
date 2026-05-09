@@ -62,7 +62,7 @@ This means the system should eventually combine:
 - Support favorites and personal lists.
 - Allow content growth over time through structured imports.
 - Enable future web platform reuse.
-- Add real-life scenario lessons.
+- Add real-life dialogue practice lessons.
 - Add conversation starter packs.
 - Add preparation packs for conversation events.
 
@@ -140,7 +140,7 @@ The content should not remain only academic. It should support practical context
 
 ### 3. Scenario-Based Learning
 
-The product should eventually support complete scenario lessons, including:
+The product should eventually support complete dialogue practice lessons, including:
 
 - realistic dialogues
 - key vocabulary
@@ -218,7 +218,7 @@ The system should be designed so that future modules can be added without archit
 Examples:
 
 - practice engine
-- scenario lessons
+- dialogue practice lessons
 - conversation starters
 - local support discovery
 - event directory

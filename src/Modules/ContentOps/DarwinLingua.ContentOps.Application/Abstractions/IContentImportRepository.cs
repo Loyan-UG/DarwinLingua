@@ -26,12 +26,10 @@ public interface IContentImportRepository
     Task<bool> PackageExistsAsync(string packageId, CancellationToken cancellationToken);
 
     /// <summary>
-    /// Determines whether a lexical entry already exists using the Phase 1 duplicate identity rule.
+    /// Determines whether a lexical entry already exists for the normalized lemma.
     /// </summary>
     Task<bool> WordExistsAsync(
         string normalizedLemma,
-        PartOfSpeech partOfSpeech,
-        CefrLevel cefrLevel,
         CancellationToken cancellationToken);
 
     /// <summary>
@@ -49,7 +47,8 @@ public interface IContentImportRepository
         IReadOnlyList<LabelDefinition> importedLabelDefinitions,
         IReadOnlyList<WordEntry> importedWords,
         IReadOnlyList<WordCollection> importedCollections,
-        IReadOnlyList<ScenarioLesson> importedScenarios,
+        IReadOnlyList<DialogueLesson> importedDialogues,
+        IReadOnlyList<TalkTopic> importedTalkTopics,
         IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
         IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
         CancellationToken cancellationToken);

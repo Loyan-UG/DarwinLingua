@@ -65,6 +65,56 @@ internal sealed class CachedWordDetailQueryService(
         }
     }
 
+    public async Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        string cacheKey = BuildCacheKey(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, uiLanguageCode);
+
+        if (memoryCache.TryGetValue(cacheKey, out WordDetailModel? cachedModel))
+        {
+            return cachedModel;
+        }
+
+        SemaphoreSlim gate = Gates.GetOrAdd(cacheKey, static _ => new SemaphoreSlim(1, 1));
+        await gate.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+        try
+        {
+            if (memoryCache.TryGetValue(cacheKey, out cachedModel))
+            {
+                return cachedModel;
+            }
+
+            WordDetailModel? loadedModel = await innerService
+                .GetWordDetailsBySlugAsync(
+                    slug,
+                    primaryMeaningLanguageCode,
+                    secondaryMeaningLanguageCode,
+                    uiLanguageCode,
+                    cancellationToken)
+                .ConfigureAwait(false);
+
+            memoryCache.Set(
+                cacheKey,
+                loadedModel,
+                new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = CacheLifetime,
+                    Size = 1
+                });
+
+            return loadedModel;
+        }
+        finally
+        {
+            gate.Release();
+        }
+    }
+
     private static string BuildCacheKey(
         Guid publicId,
         string primaryMeaningLanguageCode,
@@ -73,6 +123,18 @@ internal sealed class CachedWordDetailQueryService(
         string.Join(
             '|',
             publicId.ToString("D"),
+            primaryMeaningLanguageCode.Trim().ToLowerInvariant(),
+            (secondaryMeaningLanguageCode ?? string.Empty).Trim().ToLowerInvariant(),
+            uiLanguageCode.Trim().ToLowerInvariant());
+
+    private static string BuildCacheKey(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode) =>
+        string.Join(
+            '|',
+            slug.Trim().ToLowerInvariant(),
             primaryMeaningLanguageCode.Trim().ToLowerInvariant(),
             (secondaryMeaningLanguageCode ?? string.Empty).Trim().ToLowerInvariant(),
             uiLanguageCode.Trim().ToLowerInvariant());

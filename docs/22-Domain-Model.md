@@ -44,7 +44,8 @@ It is composed of several conceptual areas:
 - User Learning Data
 - Practice and Review
 - Resource Discovery
-- Scenario Learning
+- Dialogue Learning
+- Talk Topics
 - Events and Organizers
 - Profiles, Matching, and Moderation
 - Import and Content Operations
@@ -111,17 +112,23 @@ Responsible for:
 
 Mainly phase 4.
 
-## 2.5 Scenario Learning Context
+## 2.5 Dialogue Learning Context
 
 Responsible for:
 
-- practical scenario lessons
+- practical dialogue practice lessons
 - conversation starter packs
 - scripted roleplay preparation
 - event preparation packs that reference learning content
 - CEFR- and situation-aware practical conversation material
 
 Mainly phase 6.
+
+## 2.5.1 Talk Topics
+
+Talk Topics are reading-based conversation materials for learner groups. A Talk Topic contains a slug, topic group key, title, description, CEFR level, category, topic links, controlled content type, German article body, optional article translations, warm-up questions, discussion questions, vocabulary references, speaking goals, sensitivity metadata, estimated reading/discussion minutes, sort order, and publication state.
+
+Vocabulary in Talk Topics stores references only. Word meanings and examples remain owned by the Word Catalog.
 
 ## 2.6 Events and Organizers Context
 
@@ -1333,7 +1340,7 @@ The following should support localization through domain entities or translation
 
 These concepts are planned for Phase 6. They are documented here to preserve domain clarity before implementation.
 
-## 11A.1 Aggregate Root: ScenarioLesson
+## 11A.1 Aggregate Root: DialogueLesson
 
 Represents a practical lesson for a real German situation.
 
@@ -1357,11 +1364,11 @@ Represents a practical lesson for a real German situation.
 ### Child Concepts
 
 - ScenarioStep
-- ScenarioPhrase
+- DialoguePhrase
 - ScenarioVocabularyLink
 - ScenarioLocalization
 
-Scenario lessons may reference content catalog words, but they must not own word meanings.
+Dialogue practice lessons may reference content catalog words, but they must not own word meanings.
 
 ## 11A.2 Aggregate Root: EventListing
 
@@ -1643,9 +1650,9 @@ If you want to design broadly from the start, these are the most likely long-ter
 - Address
 - SupportResourceAddress
 - SupportResourceTag
-- ScenarioLesson
+- DialogueLesson
 - ScenarioStep
-- ScenarioPhrase
+- DialoguePhrase
 - ScenarioVocabularyLink
 - EventListing
 - EventPreparationPack

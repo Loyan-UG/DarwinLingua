@@ -16,4 +16,14 @@ public interface IWordDetailQueryService
         string? secondaryMeaningLanguageCode,
         string uiLanguageCode,
         CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Loads the detail view model for a lexical entry by its public URL slug.
+    /// </summary>
+    Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode,
+        CancellationToken cancellationToken);
 }

@@ -23,7 +23,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ITopicRepository, TopicRepository>();
         services.AddScoped<IWordEntryRepository, WordEntryRepository>();
         services.AddScoped<IWordCollectionRepository, WordCollectionRepository>();
-        services.AddScoped<IScenarioLessonRepository, ScenarioLessonRepository>();
+        services.AddScoped<IDialogueLessonRepository, DialogueLessonRepository>();
+        services.AddScoped<ITalkTopicRepository, TalkTopicRepository>();
         services.AddScoped<IConversationStarterRepository, ConversationStarterRepository>();
         services.AddScoped<IEventPreparationRepository, EventPreparationRepository>();
         services.AddScoped<IConversationEventRepository, ConversationEventRepository>();

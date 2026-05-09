@@ -17,7 +17,7 @@ public sealed record ConversationStarterPackListItemModel(
     string Tone,
     string ConversationGoal,
     IReadOnlyList<string> TopicKeys,
-    IReadOnlyList<string> LinkedScenarioSlugs);
+    IReadOnlyList<string> LinkedDialogueSlugs);
 
 public sealed record ConversationStarterPackDetailModel(
     string Slug,
@@ -29,7 +29,7 @@ public sealed record ConversationStarterPackDetailModel(
     string Tone,
     string ConversationGoal,
     IReadOnlyList<string> TopicKeys,
-    IReadOnlyList<string> LinkedScenarioSlugs,
+    IReadOnlyList<string> LinkedDialogueSlugs,
     IReadOnlyList<string> LinkedEventPreparationPackSlugs,
     IReadOnlyList<ConversationStarterPhraseModel> Phrases);
 

@@ -47,9 +47,9 @@ public sealed class ReportsController(
             new("Active words", catalog.ActiveWordCount.ToString(), "Published vocabulary rows visible to learners."),
             new("Draft words", catalog.DraftWordCount.ToString(), "Vocabulary rows waiting outside the learner catalog."),
             new("Topics", catalog.TopicCount.ToString(), "Taxonomy topics available for browsing and grouping."),
-            new("Scenarios", catalog.ScenarioLessonCount.ToString(), "Scenario lessons available for guided practice."),
+            new("Dialogues", catalog.DialogueLessonCount.ToString(), "Dialogue lessons available for guided practice."),
             new("Starter packs", catalog.ConversationStarterPackCount.ToString(), "Conversation starter packs available to learners."),
-            new("Preparation packs", catalog.EventPreparationPackCount.ToString(), "Event preparation packs linked to scenarios and events."),
+            new("Preparation packs", catalog.EventPreparationPackCount.ToString(), "Event preparation packs linked to dialogues and events."),
         ];
 
     private static IReadOnlyList<AdminSystemReportMetricViewModel> BuildSocialMetrics(AdminSocialSystemReportResponse social) =>

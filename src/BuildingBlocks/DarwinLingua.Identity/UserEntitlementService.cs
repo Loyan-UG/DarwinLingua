@@ -22,7 +22,7 @@ public sealed class UserEntitlementService<TContext>(
         DarwinLinguaFeatureKeys.ViewWordDetails,
         DarwinLinguaFeatureKeys.UseCollections,
         DarwinLinguaFeatureKeys.UseTopics,
-        DarwinLinguaFeatureKeys.ScenarioLessons,
+        DarwinLinguaFeatureKeys.DialogueLessons,
         DarwinLinguaFeatureKeys.ConversationStarters,
         DarwinLinguaFeatureKeys.ConversationEvents,
         DarwinLinguaFeatureKeys.EventRsvp,
@@ -34,7 +34,7 @@ public sealed class UserEntitlementService<TContext>(
         DarwinLinguaFeatureKeys.Favorites,
         DarwinLinguaFeatureKeys.DualMeaningLanguage,
         DarwinLinguaFeatureKeys.AdvancedPractice,
-        DarwinLinguaFeatureKeys.AdvancedScenarioPacks,
+        DarwinLinguaFeatureKeys.AdvancedDialoguePacks,
         DarwinLinguaFeatureKeys.EventPreparationPacks,
         DarwinLinguaFeatureKeys.PartnerMatching,
     ];

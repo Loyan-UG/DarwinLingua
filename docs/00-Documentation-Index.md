@@ -80,13 +80,14 @@ All project documentation should remain in English.
 - `62-Web-Accessibility-Checklist.md`
 - `65-Safety-And-Moderation-Requirements.md`
 - `66-Dual-Meaning-Language-UX-Rules.md`
-- `67-Scenario-Content-Package-Contract.md`
+- `67-Dialogue-Content-Package-Contract.md`
 - `68-Conversation-Starter-Content-Package-Contract.md`
 - `69-Event-Preparation-Pack-Content-Package-Contract.md`
 - `70-Roleplay-Content-Package-Contract.md`
 - `71-Web-Test-Backlog.md`
 - `72-Web-Seed-Coverage-And-Admin-Reports.md`
 - `73-Transactional-Email-And-Account-Communication-Backlog.md`
+- `74-Talk-Topic-Content-Package-Contract.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -138,7 +139,7 @@ If you are new to the project, read the documents in this order:
 35. `52-Future-Platform-Expansion.md`
 36. `65-Safety-And-Moderation-Requirements.md`
 37. `66-Dual-Meaning-Language-UX-Rules.md`
-38. `67-Scenario-Content-Package-Contract.md`
+38. `67-Dialogue-Content-Package-Contract.md`
 39. `68-Conversation-Starter-Content-Package-Contract.md`
 40. `69-Event-Preparation-Pack-Content-Package-Contract.md`
 41. `70-Roleplay-Content-Package-Contract.md`
@@ -158,7 +159,7 @@ If you are new to the project, read the documents in this order:
 ### Phases vs Backlog
 
 - `03-Product-Phases.md` defines the high-level product phases.
-- `04-Implementation-Backlog.md` defines executable work planning, with detailed Phase 1 tasks, later-phase workstreams, and the merged Phase 6 backlog for scenario learning, conversation events, organizer tooling, safe profiles, and partner matching.
+- `04-Implementation-Backlog.md` defines executable work planning, with detailed Phase 1 tasks, later-phase workstreams, and the merged Phase 6 backlog for dialogue learning, conversation events, organizer tooling, safe profiles, and partner matching.
 - `64-Conversation-And-Organizer-Implementation-Backlog.md` is now only a compatibility pointer to the merged Phase 6 section in `04-Implementation-Backlog.md`.
 
 ### Product Strategy vs Execution
@@ -166,9 +167,9 @@ If you are new to the project, read the documents in this order:
 - `63-Market-Product-And-Organizer-Strategy.md` records the product positioning, market assumptions, monetization direction, and B2B organizer strategy.
 - `65-Safety-And-Moderation-Requirements.md` defines the release gate for public profiles, matching, organizer listings, report/block, and moderation workflows.
 - `66-Dual-Meaning-Language-UX-Rules.md` defines presentation rules for primary and secondary meaning languages across compact and expanded learning surfaces.
-- `67-Scenario-Content-Package-Contract.md` defines the Phase 6 JSON contract for scenario lessons, dialogue turns, useful phrases, questions, answers, CEFR/topic rules, and validation rules.
-- `68-Conversation-Starter-Content-Package-Contract.md` defines the Phase 6 JSON contract for conversation starter packs, starter phrases, filters, scenario integration, dual-language behavior, and validation rules.
-- `69-Event-Preparation-Pack-Content-Package-Contract.md` defines the Phase 6 JSON contract for event preparation packs, links to scenarios, vocabulary, starter packs, and preparation prompts.
+- `67-Dialogue-Content-Package-Contract.md` defines the Phase 6 JSON contract for dialogue lessons, dialogue turns, useful phrases, questions, answers, CEFR/topic rules, and validation rules.
+- `68-Conversation-Starter-Content-Package-Contract.md` defines the Phase 6 JSON contract for conversation starter packs, starter phrases, filters, dialogue integration, dual-language behavior, and validation rules.
+- `69-Event-Preparation-Pack-Content-Package-Contract.md` defines the Phase 6 JSON contract for event preparation packs, links to dialogues, vocabulary, starter packs, and preparation prompts.
 - `70-Roleplay-Content-Package-Contract.md` defines the Phase 6 scripted roleplay contract, role labels, turn sequence model, answer choices, static feedback, and AI boundary.
 - `71-Web-Test-Backlog.md` defines the remaining Web automated and manual validation backlog owned by the separate test-development workflow.
 - `72-Web-Seed-Coverage-And-Admin-Reports.md` records Web seed coverage, admin report scope, and the operational-seed follow-up.

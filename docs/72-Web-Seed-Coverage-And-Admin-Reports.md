@@ -8,8 +8,8 @@ This document records the Web-focused seed coverage and the admin reporting surf
 
 The Web seed set is split by responsibility:
 
-- `content/generated/de-a1-a2-practical-scenarios-001.json`
-  - scenario lessons: 16 across A1, A2, B1, and B2
+- `content/generated/de-a1-a2-practical-dialogues-001.json`
+  - dialogue lessons: 16 across A1, A2, B1, and B2
   - conversation starter packs: 7 across A1, A2, B1, and B2
   - event preparation packs: 7 across A1, A2, B1, and B2
 - `content/generated/de-event-directory-seeds-001.json`
@@ -25,7 +25,7 @@ The Web seed set is split by responsibility:
   - user blocks: 3
   - moderation decision audits: 3
 
-The scenario, starter, and preparation-pack file follows the normal content-import package path.
+The dialogue, starter, and preparation-pack file follows the normal content-import package path.
 
 The event-directory file is an operational seed file. Its records mirror the current Web/Admin request and response shapes and can be applied through:
 
@@ -49,7 +49,7 @@ Each new Web area should keep at least three representative records unless the a
 
 Required areas:
 
-- scenario lessons and roleplay-ready dialogue turns
+- dialogue lessons and roleplay-ready dialogue turns
 - conversation starter packs
 - event preparation packs
 - organizer profiles
@@ -73,7 +73,7 @@ The Web Admin area includes `/admin/reports`, and the `/admin` overview now surf
 The page summarizes:
 
 - Identity user count from the Web Identity store
-- catalog counts for active words, draft words, topics, scenarios, starter packs, and preparation packs
+- catalog counts for active words, draft words, topics, dialogues, starter packs, and preparation packs
 - social-learning counts for organizers, events, online events, RSVPs, claims, owners, learner profiles, public profiles, and partner requests
 - moderation counts for reports, pending reports, blocks, and decision audits
 - operations counts for imported packages, failed imports, and last import time

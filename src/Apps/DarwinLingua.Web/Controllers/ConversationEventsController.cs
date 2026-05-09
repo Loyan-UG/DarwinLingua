@@ -232,7 +232,7 @@ public sealed class ConversationEventsController(
                 pack.Category,
                 pack.EventType,
                 pack.TopicKeys,
-                pack.LinkedScenarioSlugs,
+                pack.LinkedDialogueSlugs,
                 pack.LinkedConversationStarterPackSlugs))
             .ToArray();
     }

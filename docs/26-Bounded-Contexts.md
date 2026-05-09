@@ -51,7 +51,7 @@ The product should be divided into the following bounded contexts:
 - Content Operations
 - Publishing and Distribution
 - Resource Discovery
-- Scenario Learning
+- Dialogue Learning
 - Events and Organizers
 - Profiles and Matching
 - Moderation
@@ -509,17 +509,17 @@ Not allowed:
 
 ---
 
-# 8A. Scenario Learning Context
+# 8A. Dialogue Learning Context
 
 ## 8A.1 Purpose
 
-The Scenario Learning context owns practical German-in-context learning experiences.
+The Dialogue Learning context owns practical German-in-context learning experiences.
 
 ## 8A.2 Responsibilities
 
 This context is responsible for:
 
-- scenario lessons
+- dialogue practice lessons
 - conversation starter packs
 - scripted roleplay preparation
 - event preparation packs
@@ -527,25 +527,25 @@ This context is responsible for:
 
 ## 8A.3 Core Concepts
 
-- ScenarioLesson
-- ScenarioStep
-- ScenarioPhrase
+- DialogueLesson
+- dialoguestep
+- DialoguePhrase
 - ConversationStarterPack
 - RoleplayScript
 - EventPreparationPack
 
 ## 8A.4 Dependency Rule
 
-Scenario Learning may reference Content Catalog words, examples, topics, and context labels.
+Dialogue Learning may reference Content Catalog words, examples, topics, and context labels.
 
 ### Direction
 
-- Scenario Learning -> Content Catalog
-- Scenario Learning -> Localization Support
+- Dialogue Learning -> Content Catalog
+- Dialogue Learning -> Localization Support
 
 But:
 
-- Content Catalog -X-> Scenario Learning
+- Content Catalog -X-> Dialogue Learning
 
 ---
 
@@ -575,17 +575,17 @@ This context is responsible for:
 
 ## 8B.4 Dependency Rule
 
-Events and Organizers may reference Scenario Learning preparation packs and Localization Support.
+Events and Organizers may reference Dialogue Learning preparation packs and Localization Support.
 
 ### Direction
 
-- Events and Organizers -> Scenario Learning
+- Events and Organizers -> Dialogue Learning
 - Events and Organizers -> Localization Support
 - Events and Organizers -> Moderation
 
 But:
 
-- Scenario Learning -X-> Events and Organizers
+- Dialogue Learning -X-> Events and Organizers
 
 ---
 
@@ -671,9 +671,9 @@ Recommended dependency direction:
 - Content Operations -> Content Catalog
 - Content Operations -> Localization Support
 - Resource Discovery -> Localization Support
-- Scenario Learning -> Content Catalog
-- Scenario Learning -> Localization Support
-- Events and Organizers -> Scenario Learning
+- Dialogue Learning -> Content Catalog
+- Dialogue Learning -> Localization Support
+- Events and Organizers -> Dialogue Learning
 - Events and Organizers -> Localization Support
 - Events and Organizers -> Moderation
 - Profiles and Matching -> Moderation
@@ -694,7 +694,7 @@ The most changeable are:
 - Content Operations
 - Publishing and Distribution
 - Resource Discovery UI behavior
-- Scenario Learning authoring
+- Dialogue Learning authoring
 - Events and organizer workflows
 - Profiles and matching workflows
 - Moderation operations
@@ -733,7 +733,7 @@ The following contexts should remain design-level only in Phase 1:
 
 - Practice
 - Resource Discovery
-- Scenario Learning
+- Dialogue Learning
 - Events and Organizers
 - Profiles and Matching
 - Moderation
@@ -788,7 +788,7 @@ Recommended application-layer grouping later:
 - publishing/distribution features
 - Practice features
 - Resource discovery features
-- Scenario learning features
+- Dialogue Learning features
 - Events and organizer features
 - Profiles and matching features
 - Moderation features
@@ -882,9 +882,9 @@ This is normal and healthy.
 - service
 - verified
 
-## 16.6 Scenario Learning Language
+## 16.6 Dialogue Learning Language
 
-- scenario
+- dialogue
 - starter
 - phrase
 - roleplay
@@ -1014,7 +1014,7 @@ Darwin Deutsch should be treated as a modular monolith with clear bounded contex
 
 - Practice
 - Resource Discovery
-- Scenario Learning
+- Dialogue Learning
 - Events and Organizers
 - Profiles and Matching
 - Moderation

@@ -27,7 +27,7 @@ public sealed class EmailDiagnosticsController(
     [HttpGet("", Name = "Admin_EmailDiagnostics")]
     public async Task<IActionResult> Index(
         [FromQuery] string? status,
-        [FromQuery] string? scenario,
+        [FromQuery] string? dialogue,
         [FromQuery] string? fromUtc,
         [FromQuery] string? toUtc,
         [FromQuery] string? recipientHashPrefix,
@@ -42,7 +42,7 @@ public sealed class EmailDiagnosticsController(
         DateTimeOffset? parsedToUtc = ParseDateTimeOffset(toUtc);
         int boundedTake = Math.Clamp(take, 1, 200);
         string? normalizedStatus = NormalizeAllowedValue(status, IsAllowedDeliveryStatus, 32);
-        string? normalizedScenario = NormalizeLength(scenario, 128);
+        string? normalizedScenario = NormalizeLength(dialogue, 128);
         string? normalizedRecipientHashPrefix = NormalizeHexPrefix(recipientHashPrefix, 64);
         string? normalizedProviderMessageId = NormalizeLength(providerMessageId, 256);
         string? normalizedProviderEvent = NormalizeAllowedValue(providerEvent, IsAllowedProviderEvent, 64);

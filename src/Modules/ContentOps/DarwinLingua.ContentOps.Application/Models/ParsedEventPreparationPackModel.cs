@@ -9,7 +9,7 @@ public sealed record ParsedEventPreparationPackModel(
     string EventType,
     IReadOnlyList<string> Topics,
     int SortOrder,
-    IReadOnlyList<string> LinkedScenarioSlugs,
+    IReadOnlyList<string> LinkedDialogueSlugs,
     IReadOnlyList<ParsedEventPreparationVocabularyReferenceModel> LinkedVocabulary,
     IReadOnlyList<string> LinkedConversationStarterPackSlugs,
     IReadOnlyList<string> OpeningPrompts,

@@ -11,7 +11,7 @@
                 @Html.AntiForgeryToken()
                 <button type="submit" class="button button--primary button--compact">@T["Mark prepared"]</button>
             </form>
-            <a class="button button--secondary button--compact" asp-controller="Scenarios" asp-action="Index">@T["Scenarios"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.PreparationPack.Title</h1>
@@ -69,14 +69,14 @@
     </section>
 }
 
-@if (Model.PreparationPack.LinkedScenarioSlugs.Count > 0 || Model.PreparationPack.LinkedConversationStarterPackSlugs.Count > 0)
+@if (Model.PreparationPack.LinkedDialogueSlugs.Count > 0 || Model.PreparationPack.LinkedConversationStarterPackSlugs.Count > 0)
 {
     <section class="panel stack-md">
         <h2 class="headline-sm">@T["Related practice"]</h2>
         <div class="chip-grid">
-            @foreach (string scenarioSlug in Model.PreparationPack.LinkedScenarioSlugs)
+            @foreach (string dialogueSlug in Model.PreparationPack.LinkedDialogueSlugs)
             {
-                <a class="chip-link" asp-controller="Scenarios" asp-action="Detail" asp-route-slug="@scenarioSlug">@scenarioSlug</a>
+                <a class="chip-link" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogueSlug">@dialogueSlug</a>
             }
             @foreach (string starterPackSlug in Model.PreparationPack.LinkedConversationStarterPackSlugs)
             {

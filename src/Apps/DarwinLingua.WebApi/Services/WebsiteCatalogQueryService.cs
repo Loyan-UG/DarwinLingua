@@ -45,6 +45,13 @@ public interface IWebsiteCatalogQueryService
         string uiLanguageCode,
         CancellationToken cancellationToken);
 
+    Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(
         IReadOnlyCollection<Guid> wordIds,
         string meaningLanguageCode,
@@ -102,6 +109,19 @@ internal sealed class WebsiteCatalogQueryService(
         CancellationToken cancellationToken) =>
         wordDetailQueryService.GetWordDetailsAsync(
             publicId,
+            primaryMeaningLanguageCode,
+            secondaryMeaningLanguageCode,
+            uiLanguageCode,
+            cancellationToken);
+
+    public Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode,
+        CancellationToken cancellationToken) =>
+        wordDetailQueryService.GetWordDetailsBySlugAsync(
+            slug,
             primaryMeaningLanguageCode,
             secondaryMeaningLanguageCode,
             uiLanguageCode,

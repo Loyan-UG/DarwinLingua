@@ -159,49 +159,49 @@ public interface IWebAdminOperationsQueryService
 
     Task<AdminBulkCollectionImportResponse> ImportCollectionsAsync(AdminBulkCollectionImportRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenariosPageViewModel> GetScenariosAsync(CancellationToken cancellationToken);
+    Task<AdminDialoguesPageViewModel> GetDialoguesAsync(CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel?> GetScenarioAsync(Guid scenarioId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel?> GetDialogueAsync(Guid dialogueId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> CreateScenarioAsync(AdminSaveScenarioRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> CreateDialogueAsync(AdminSaveDialogueRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> UpdateScenarioAsync(Guid scenarioId, AdminSaveScenarioRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> UpdateDialogueAsync(Guid dialogueId, AdminSaveDialogueRequest request, CancellationToken cancellationToken);
 
-    Task<bool> DeleteScenarioAsync(Guid scenarioId, CancellationToken cancellationToken);
+    Task<bool> DeleteDialogueAsync(Guid dialogueId, CancellationToken cancellationToken);
 
-    Task<AdminBulkScenarioImportResponse> ImportScenariosAsync(AdminBulkScenarioImportRequest request, CancellationToken cancellationToken);
+    Task<AdminBulkDialogueImportResponse> ImportDialoguesAsync(AdminBulkDialogueImportRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioDialogueTurnAsync(Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialogueTurnAsync(Guid dialogueId, AdminAddDialogueTurnRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioDialogueTurnAsync(Guid scenarioId, Guid turnId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialogueTurnAsync(Guid dialogueId, Guid turnId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioPhraseAsync(Guid scenarioId, AdminAddScenarioPhraseRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialoguePhraseAsync(Guid dialogueId, AdminAddDialoguePhraseRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioPhraseAsync(Guid scenarioId, Guid phraseId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialoguePhraseAsync(Guid dialogueId, Guid phraseId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioQuestionAsync(Guid scenarioId, AdminAddScenarioQuestionRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialogueQuestionAsync(Guid dialogueId, AdminAddDialogueQuestionRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioQuestionAsync(Guid scenarioId, Guid questionId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialogueQuestionAsync(Guid dialogueId, Guid questionId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioAnswerAsync(Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialogueAnswerAsync(Guid dialogueId, Guid questionId, AdminAddDialogueAnswerRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioAnswerAsync(Guid scenarioId, Guid questionId, Guid answerId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialogueAnswerAsync(Guid dialogueId, Guid questionId, Guid answerId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, Guid translationId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, Guid translationId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, Guid translationId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken);
 }
 
 internal sealed class WebAdminOperationsQueryService(IWebCatalogApiClient catalogApiClient) : IWebAdminOperationsQueryService
@@ -403,69 +403,69 @@ internal sealed class WebAdminOperationsQueryService(IWebCatalogApiClient catalo
     public Task<AdminBulkCollectionImportResponse> ImportCollectionsAsync(AdminBulkCollectionImportRequest request, CancellationToken cancellationToken) =>
         catalogApiClient.ImportAdminCollectionsAsync(request, cancellationToken);
 
-    public Task<AdminScenariosPageViewModel> GetScenariosAsync(CancellationToken cancellationToken) =>
-        catalogApiClient.GetAdminScenariosAsync(cancellationToken);
+    public Task<AdminDialoguesPageViewModel> GetDialoguesAsync(CancellationToken cancellationToken) =>
+        catalogApiClient.GetAdminDialoguesAsync(cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel?> GetScenarioAsync(Guid scenarioId, CancellationToken cancellationToken) =>
-        catalogApiClient.GetAdminScenarioAsync(scenarioId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel?> GetDialogueAsync(Guid dialogueId, CancellationToken cancellationToken) =>
+        catalogApiClient.GetAdminDialogueAsync(dialogueId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> CreateScenarioAsync(AdminSaveScenarioRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.CreateAdminScenarioAsync(request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> CreateDialogueAsync(AdminSaveDialogueRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.CreateAdminDialogueAsync(request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> UpdateScenarioAsync(Guid scenarioId, AdminSaveScenarioRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.UpdateAdminScenarioAsync(scenarioId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> UpdateDialogueAsync(Guid dialogueId, AdminSaveDialogueRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.UpdateAdminDialogueAsync(dialogueId, request, cancellationToken);
 
-    public Task<bool> DeleteScenarioAsync(Guid scenarioId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioAsync(scenarioId, cancellationToken);
+    public Task<bool> DeleteDialogueAsync(Guid dialogueId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialogueAsync(dialogueId, cancellationToken);
 
-    public Task<AdminBulkScenarioImportResponse> ImportScenariosAsync(AdminBulkScenarioImportRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.ImportAdminScenariosAsync(request, cancellationToken);
+    public Task<AdminBulkDialogueImportResponse> ImportDialoguesAsync(AdminBulkDialogueImportRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.ImportAdminDialoguesAsync(request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioDialogueTurnAsync(Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioDialogueTurnAsync(scenarioId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialogueTurnAsync(Guid dialogueId, AdminAddDialogueTurnRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialogueTurnAsync(dialogueId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioDialogueTurnAsync(Guid scenarioId, Guid turnId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioDialogueTurnAsync(scenarioId, turnId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialogueTurnAsync(Guid dialogueId, Guid turnId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialogueTurnAsync(dialogueId, turnId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioPhraseAsync(Guid scenarioId, AdminAddScenarioPhraseRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioPhraseAsync(scenarioId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialoguePhraseAsync(Guid dialogueId, AdminAddDialoguePhraseRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialoguePhraseAsync(dialogueId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioPhraseAsync(Guid scenarioId, Guid phraseId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioPhraseAsync(scenarioId, phraseId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialoguePhraseAsync(Guid dialogueId, Guid phraseId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialoguePhraseAsync(dialogueId, phraseId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioQuestionAsync(Guid scenarioId, AdminAddScenarioQuestionRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioQuestionAsync(scenarioId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialogueQuestionAsync(Guid dialogueId, AdminAddDialogueQuestionRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialogueQuestionAsync(dialogueId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioQuestionAsync(Guid scenarioId, Guid questionId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioQuestionAsync(scenarioId, questionId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialogueQuestionAsync(Guid dialogueId, Guid questionId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialogueQuestionAsync(dialogueId, questionId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioAnswerAsync(Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioAnswerAsync(scenarioId, questionId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialogueAnswerAsync(Guid dialogueId, Guid questionId, AdminAddDialogueAnswerRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialogueAnswerAsync(dialogueId, questionId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioAnswerAsync(Guid scenarioId, Guid questionId, Guid answerId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioAnswerAsync(scenarioId, questionId, answerId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialogueAnswerAsync(Guid dialogueId, Guid questionId, Guid answerId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialogueAnswerAsync(dialogueId, questionId, answerId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioDialogueTurnTranslationAsync(scenarioId, turnId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialogueTurnTranslationAsync(dialogueId, turnId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, Guid translationId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioDialogueTurnTranslationAsync(scenarioId, turnId, translationId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, Guid translationId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialogueTurnTranslationAsync(dialogueId, turnId, translationId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioPhraseTranslationAsync(scenarioId, phraseId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialoguePhraseTranslationAsync(dialogueId, phraseId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, Guid translationId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioPhraseTranslationAsync(scenarioId, phraseId, translationId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, Guid translationId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialoguePhraseTranslationAsync(dialogueId, phraseId, translationId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioQuestionTranslationAsync(scenarioId, questionId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialogueQuestionTranslationAsync(dialogueId, questionId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, Guid translationId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioQuestionTranslationAsync(scenarioId, questionId, translationId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, Guid translationId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialogueQuestionTranslationAsync(dialogueId, questionId, translationId, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> AddScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken) =>
-        catalogApiClient.AddAdminScenarioAnswerTranslationAsync(scenarioId, questionId, answerId, request, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> AddDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken) =>
+        catalogApiClient.AddAdminDialogueAnswerTranslationAsync(dialogueId, questionId, answerId, request, cancellationToken);
 
-    public Task<AdminScenarioDetailViewModel> DeleteScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken) =>
-        catalogApiClient.DeleteAdminScenarioAnswerTranslationAsync(scenarioId, questionId, answerId, translationId, cancellationToken);
+    public Task<AdminDialogueDetailViewModel> DeleteDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken) =>
+        catalogApiClient.DeleteAdminDialogueAnswerTranslationAsync(dialogueId, questionId, answerId, translationId, cancellationToken);
 }

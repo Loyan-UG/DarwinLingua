@@ -20,21 +20,7 @@ public sealed class WordsController(
     [HttpGet("{wordSlug}", Name = "Words_Detail")]
     public async Task<IActionResult> Detail(string wordSlug, CancellationToken cancellationToken)
     {
-        if (!TryParseWordRouteSlug(wordSlug, out Guid id))
-        {
-            return NotFound();
-        }
-
-        return await DetailByIdAsync(id, wordSlug, cancellationToken).ConfigureAwait(false);
-    }
-
-    [HttpGet("{id:guid}", Name = "Words_Detail_Legacy")]
-    public async Task<IActionResult> DetailLegacy(Guid id, CancellationToken cancellationToken) =>
-        await DetailByIdAsync(id, suppliedWordSlug: null, cancellationToken).ConfigureAwait(false);
-
-    private async Task<IActionResult> DetailByIdAsync(Guid id, string? suppliedWordSlug, CancellationToken cancellationToken)
-    {
-        if (id == Guid.Empty)
+        if (string.IsNullOrWhiteSpace(wordSlug))
         {
             return NotFound();
         }
@@ -49,8 +35,8 @@ public sealed class WordsController(
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
-            word = await catalogApiClient.GetWordDetailsAsync(
-                id,
+            word = await catalogApiClient.GetWordDetailsBySlugAsync(
+                wordSlug,
                 profile.PreferredMeaningLanguage1,
                 effectiveSecondaryMeaningLanguageCode,
                 profile.UiLanguageCode,
@@ -58,7 +44,7 @@ public sealed class WordsController(
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
-            logger.LogWarning(ex, "Word detail could not be loaded for {WordId}.", id);
+            logger.LogWarning(ex, "Word detail could not be loaded for {WordSlug}.", wordSlug);
             return ServiceUnavailableView(
                 localizer["Word details are temporarily unavailable"].Value,
                 localizer["This word could not be loaded right now. Please try again from browse or search."].Value);
@@ -69,14 +55,14 @@ public sealed class WordsController(
             return NotFound();
         }
 
-        string canonicalWordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma, word.PublicId);
-        if (!string.Equals(suppliedWordSlug, canonicalWordSlug, StringComparison.OrdinalIgnoreCase))
+        string canonicalWordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma);
+        if (!string.Equals(wordSlug, canonicalWordSlug, StringComparison.OrdinalIgnoreCase))
         {
             return RedirectToActionPermanent(nameof(Detail), "Words", new { wordSlug = canonicalWordSlug });
         }
 
-        var wordState = await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
-        bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
+        var wordState = await userWordStateService.TrackWordViewedAsync(word.PublicId, cancellationToken);
+        bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(word.PublicId, cancellationToken);
         bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
         return View(CreatePageViewModel(word, isFavorite, wordState, profile, effectiveSecondaryMeaningLanguageCode, canUseFavorites, canUseFavorites ? null : localizer["Favorites require an active trial or premium plan."].Value));
     }
@@ -195,7 +181,7 @@ public sealed class WordsController(
         bool canUseFavorites,
         string? favoriteLockedMessage)
     {
-        string wordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma, word.PublicId);
+        string wordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma);
         string returnUrl = Url.Action(nameof(Detail), "Words", new { wordSlug }) ?? $"/words/{wordSlug}";
 
         return new WordDetailPageViewModel(
@@ -218,7 +204,7 @@ public sealed class WordsController(
         string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
         string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
             ? normalizedReturnUrl
-            : Url.Action(nameof(DetailLegacy), "Words", new { id }) ?? $"/words/{id:D}";
+            : Url.Action("Index", "Browse") ?? "/browse";
 
         return PartialView(
             "_InteractionPanel",
@@ -241,7 +227,7 @@ public sealed class WordsController(
         string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
         string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
             ? normalizedReturnUrl
-            : Url.Action(nameof(DetailLegacy), "Words", new { id }) ?? $"/words/{id:D}";
+            : Url.Action("Index", "Browse") ?? "/browse";
 
         return PartialView(
             "~/Views/Shared/_FavoriteToggle.cshtml",
@@ -262,24 +248,7 @@ public sealed class WordsController(
             return LocalRedirect(normalizedReturnUrl);
         }
 
-        return RedirectToAction(nameof(DetailLegacy), new { id });
-    }
-
-    private static bool TryParseWordRouteSlug(string? wordSlug, out Guid id)
-    {
-        id = Guid.Empty;
-        if (string.IsNullOrWhiteSpace(wordSlug) || wordSlug.Length < 36)
-        {
-            return false;
-        }
-
-        string guidCandidate = wordSlug[^36..];
-        if (!Guid.TryParseExact(guidCandidate, "D", out id))
-        {
-            return false;
-        }
-
-        return wordSlug.Length == 36 || wordSlug[^37] == '-';
+        return RedirectToAction("Index", "Browse");
     }
 
     private IActionResult HandleInvalidWordPost() =>

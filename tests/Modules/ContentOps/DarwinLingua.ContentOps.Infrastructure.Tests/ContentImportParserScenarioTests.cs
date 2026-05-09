@@ -5,10 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinLingua.ContentOps.Infrastructure.Tests;
 
-public sealed class ContentImportParserScenarioTests
+public sealed class ContentImportParserDialogueTests
 {
     [Fact]
-    public async Task ParseAsync_ShouldParseScenarioLessonContracts()
+    public async Task ParseAsync_ShouldParseDialogueLessonContracts()
     {
         await using ServiceProvider serviceProvider = new ServiceCollection()
             .AddContentOpsInfrastructure()
@@ -20,12 +20,12 @@ public sealed class ContentImportParserScenarioTests
             """
             {
               "packageVersion": "1.0",
-              "packageId": "scenario-contract-test",
-              "packageName": "Scenario Contract Test",
+              "packageId": "Dialogue-contract-test",
+              "packageName": "Dialogue Contract Test",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en", "fa"],
               "entries": [],
-              "scenarios": [
+              "dialogues": [
                 {
                   "slug": "doctor-appointment-a1",
                   "title": "Doctor Appointment",
@@ -86,23 +86,23 @@ public sealed class ContentImportParserScenarioTests
             """,
             CancellationToken.None);
 
-        ParsedScenarioLessonModel scenario = Assert.Single(parsedPackage.Scenarios);
-        Assert.Equal("doctor-appointment-a1", scenario.Slug);
-        Assert.Equal("Doctor Appointment", scenario.Title);
-        Assert.Equal("Explain that you need an appointment.", scenario.LearnerGoal);
-        Assert.Equal("A1", scenario.CefrLevel);
-        Assert.Equal("doctor-and-healthcare", scenario.Category);
-        Assert.Equal(["appointments-and-health"], scenario.Topics);
+        ParsedDialogueLessonModel Dialogue = Assert.Single(parsedPackage.Dialogues);
+        Assert.Equal("doctor-appointment-a1", Dialogue.Slug);
+        Assert.Equal("Doctor Appointment", Dialogue.Title);
+        Assert.Equal("Explain that you need an appointment.", Dialogue.LearnerGoal);
+        Assert.Equal("A1", Dialogue.CefrLevel);
+        Assert.Equal("doctor-and-healthcare", Dialogue.Category);
+        Assert.Equal(["appointments-and-health"], Dialogue.Topics);
 
-        ParsedScenarioDialogueTurnModel turn = Assert.Single(scenario.DialogueTurns);
+        ParsedDialogueTurnModel turn = Assert.Single(Dialogue.DialogueTurns);
         Assert.Equal("learner", turn.SpeakerRole);
         Assert.Equal("Ich brauche einen Termin.", turn.BaseText);
         Assert.Contains(turn.Translations, translation => translation.Language == "fa");
 
-        ParsedScenarioPhraseModel phrase = Assert.Single(scenario.UsefulPhrases);
+        ParsedDialoguePhraseModel phrase = Assert.Single(Dialogue.UsefulPhrases);
         Assert.Equal("Use when you did not understand.", phrase.UsageNote);
 
-        ParsedScenarioQuestionModel question = Assert.Single(scenario.Questions);
+        ParsedDialogueQuestionModel question = Assert.Single(Dialogue.Questions);
         Assert.Equal(2, question.Answers.Count);
         Assert.Contains(question.Answers, answer => answer.IsCorrect && answer.Text == "Einen Termin.");
     }

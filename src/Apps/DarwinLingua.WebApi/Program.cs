@@ -116,8 +116,9 @@ builder.Services.AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>(
 builder.Services.AddScoped<IWordAdminService, WordAdminService>();
 builder.Services.AddScoped<IAdminTaxonomyService, AdminTaxonomyService>();
 builder.Services.AddScoped<IAdminCollectionsService, AdminCollectionsService>();
-builder.Services.AddScoped<IAdminScenariosService, AdminScenariosService>();
-builder.Services.AddScoped<IBaselineScenarioSeeder, BaselineScenarioSeeder>();
+builder.Services.AddScoped<IAdminDialoguesService, AdminDialoguesService>();
+builder.Services.AddScoped<IBaselineDialogueSeeder, BaselineDialogueSeeder>();
+builder.Services.AddScoped<IBaselineTalkTopicSeeder, BaselineTalkTopicSeeder>();
 builder.Services.AddScoped<IConversationEventAdminService, ConversationEventAdminService>();
 builder.Services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
 builder.Services.AddScoped<IOrganizerClaimRequestService, OrganizerClaimRequestService>();
@@ -135,13 +136,16 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
         bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IServerContentDatabaseBootstrapper bootstrapper =
         bootstrapScope.ServiceProvider.GetRequiredService<IServerContentDatabaseBootstrapper>();
-    IBaselineScenarioSeeder baselineScenarioSeeder =
-        bootstrapScope.ServiceProvider.GetRequiredService<IBaselineScenarioSeeder>();
+    IBaselineDialogueSeeder baselineDialogueSeeder =
+        bootstrapScope.ServiceProvider.GetRequiredService<IBaselineDialogueSeeder>();
+    IBaselineTalkTopicSeeder baselineTalkTopicSeeder =
+        bootstrapScope.ServiceProvider.GetRequiredService<IBaselineTalkTopicSeeder>();
     IDarwinLinguaIdentityBootstrapper identityBootstrapper =
         bootstrapScope.ServiceProvider.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
 
     await databaseInitializer.InitializeAsync(CancellationToken.None);
-    await baselineScenarioSeeder.SeedAsync(CancellationToken.None);
+    await baselineDialogueSeeder.SeedAsync(CancellationToken.None);
+    await baselineTalkTopicSeeder.SeedAsync(CancellationToken.None);
     await bootstrapper.InitializeAsync(CancellationToken.None);
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
 }
@@ -310,17 +314,50 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/catalog/scenarios",
-    async (IScenarioLessonQueryService scenarioQueryService, CancellationToken cancellationToken) =>
+    "/api/catalog/dialogues",
+    async (IDialogueLessonQueryService dialogueQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenarioQueryService.GetPublishedScenariosAsync(cancellationToken).ConfigureAwait(false))
+                async () => await dialogueQueryService.GetPublishedDialoguesAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/catalog/scenarios/{slug}",
-    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, IScenarioLessonQueryService scenarioQueryService, CancellationToken cancellationToken) =>
+    "/api/catalog/dialogues/{slug}",
+    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, IDialogueLessonQueryService dialogueQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenarioQueryService.GetPublishedScenarioBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+                async () => await dialogueQueryService.GetPublishedDialogueBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/talk-topics",
+    async (
+        string? cefrLevel,
+        string? category,
+        string? topicKey,
+        string? contentType,
+        string? speakingGoal,
+        bool? isSensitive,
+        ITalkTopicQueryService talkTopicQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await talkTopicQueryService.GetPublishedTalkTopicsAsync(
+                    new TalkTopicListFilterModel(cefrLevel, category, topicKey, contentType, speakingGoal, isSensitive),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/talk-topics/{slug}",
+    async (
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        ITalkTopicQueryService talkTopicQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await talkTopicQueryService.GetPublishedTalkTopicBySlugAsync(
+                    slug,
+                    primaryMeaningLanguageCode,
+                    secondaryMeaningLanguageCode,
+                    cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -340,10 +377,10 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/catalog/scenarios/{slug}/conversation-starters",
+    "/api/catalog/dialogues/{slug}/conversation-starters",
     async (string slug, IConversationStarterQueryService conversationStarterQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await conversationStarterQueryService.GetPublishedStarterPacksForScenarioAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await conversationStarterQueryService.GetPublishedStarterPacksForDialogueAsync(slug, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -369,10 +406,10 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/catalog/scenarios/{slug}/event-preparation-packs",
+    "/api/catalog/dialogues/{slug}/event-preparation-packs",
     async (string slug, IEventPreparationQueryService eventPreparationQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksForScenarioAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksForDialogueAsync(slug, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -594,6 +631,13 @@ app.MapGet(
     async (string q, string meaningLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await catalogQueryService.SearchWordsAsync(q, meaningLanguageCode, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/words/by-slug/{slug}",
+    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, string uiLanguageCode, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await catalogQueryService.GetWordDetailsBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, uiLanguageCode, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -898,157 +942,157 @@ app.MapPost(
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/admin/catalog/scenarios",
-    async (IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues",
+    async (IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.GetScenariosAsync(cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.GetDialoguesAsync(cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios",
-    async (AdminSaveScenarioRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues",
+    async (AdminSaveDialogueRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.CreateScenarioAsync(request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.CreateDialogueAsync(request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/import",
-    async (AdminBulkScenarioImportRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/import",
+    async (AdminBulkDialogueImportRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.ImportScenariosAsync(request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.ImportDialoguesAsync(request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}",
-    async (Guid scenarioId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}",
+    async (Guid dialogueId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.GetScenarioAsync(scenarioId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.GetDialogueAsync(dialogueId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}",
-    async (Guid scenarioId, AdminSaveScenarioRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}",
+    async (Guid dialogueId, AdminSaveDialogueRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.UpdateScenarioAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.UpdateDialogueAsync(dialogueId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/delete",
-    async (Guid scenarioId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/delete",
+    async (Guid dialogueId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeleteScenarioAsync(scenarioId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeleteDialogueAsync(dialogueId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns",
-    async (Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/dialogue-turns",
+    async (Guid dialogueId, AdminAddDialogueTurnRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddDialogueTurnAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddDialogueTurnAsync(dialogueId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns/{turnId:guid}/delete",
-    async (Guid scenarioId, Guid turnId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/dialogue-turns/{turnId:guid}/delete",
+    async (Guid dialogueId, Guid turnId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeleteDialogueTurnAsync(scenarioId, turnId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeleteDialogueTurnAsync(dialogueId, turnId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns/{turnId:guid}/translations",
-    async (Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/dialogue-turns/{turnId:guid}/translations",
+    async (Guid dialogueId, Guid turnId, AdminAddDialogueTranslationRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddDialogueTurnTranslationAsync(scenarioId, turnId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddDialogueTurnTranslationAsync(dialogueId, turnId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/dialogue-turns/{turnId:guid}/translations/{translationId:guid}/delete",
-    async (Guid scenarioId, Guid turnId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/dialogue-turns/{turnId:guid}/translations/{translationId:guid}/delete",
+    async (Guid dialogueId, Guid turnId, Guid translationId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeleteDialogueTurnTranslationAsync(scenarioId, turnId, translationId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeleteDialogueTurnTranslationAsync(dialogueId, turnId, translationId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases",
-    async (Guid scenarioId, AdminAddScenarioPhraseRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/phrases",
+    async (Guid dialogueId, AdminAddDialoguePhraseRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddPhraseAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddPhraseAsync(dialogueId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases/{phraseId:guid}/delete",
-    async (Guid scenarioId, Guid phraseId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/phrases/{phraseId:guid}/delete",
+    async (Guid dialogueId, Guid phraseId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeletePhraseAsync(scenarioId, phraseId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeletePhraseAsync(dialogueId, phraseId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases/{phraseId:guid}/translations",
-    async (Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/phrases/{phraseId:guid}/translations",
+    async (Guid dialogueId, Guid phraseId, AdminAddDialogueTranslationRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddPhraseTranslationAsync(scenarioId, phraseId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddPhraseTranslationAsync(dialogueId, phraseId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/phrases/{phraseId:guid}/translations/{translationId:guid}/delete",
-    async (Guid scenarioId, Guid phraseId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/phrases/{phraseId:guid}/translations/{translationId:guid}/delete",
+    async (Guid dialogueId, Guid phraseId, Guid translationId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeletePhraseTranslationAsync(scenarioId, phraseId, translationId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeletePhraseTranslationAsync(dialogueId, phraseId, translationId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions",
-    async (Guid scenarioId, AdminAddScenarioQuestionRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions",
+    async (Guid dialogueId, AdminAddDialogueQuestionRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddQuestionAsync(scenarioId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddQuestionAsync(dialogueId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/delete",
-    async (Guid scenarioId, Guid questionId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions/{questionId:guid}/delete",
+    async (Guid dialogueId, Guid questionId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeleteQuestionAsync(scenarioId, questionId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeleteQuestionAsync(dialogueId, questionId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/translations",
-    async (Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions/{questionId:guid}/translations",
+    async (Guid dialogueId, Guid questionId, AdminAddDialogueTranslationRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddQuestionTranslationAsync(scenarioId, questionId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddQuestionTranslationAsync(dialogueId, questionId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/translations/{translationId:guid}/delete",
-    async (Guid scenarioId, Guid questionId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions/{questionId:guid}/translations/{translationId:guid}/delete",
+    async (Guid dialogueId, Guid questionId, Guid translationId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeleteQuestionTranslationAsync(scenarioId, questionId, translationId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeleteQuestionTranslationAsync(dialogueId, questionId, translationId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers",
-    async (Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions/{questionId:guid}/answers",
+    async (Guid dialogueId, Guid questionId, AdminAddDialogueAnswerRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddAnswerAsync(scenarioId, questionId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddAnswerAsync(dialogueId, questionId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/delete",
-    async (Guid scenarioId, Guid questionId, Guid answerId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/delete",
+    async (Guid dialogueId, Guid questionId, Guid answerId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeleteAnswerAsync(scenarioId, questionId, answerId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeleteAnswerAsync(dialogueId, questionId, answerId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/translations",
-    async (Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/translations",
+    async (Guid dialogueId, Guid questionId, Guid answerId, AdminAddDialogueTranslationRequest request, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.AddAnswerTranslationAsync(scenarioId, questionId, answerId, request, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.AddAnswerTranslationAsync(dialogueId, questionId, answerId, request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
-    "/api/admin/catalog/scenarios/{scenarioId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/translations/{translationId:guid}/delete",
-    async (Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, IAdminScenariosService scenariosService, CancellationToken cancellationToken) =>
+    "/api/admin/catalog/dialogues/{dialogueId:guid}/questions/{questionId:guid}/answers/{answerId:guid}/translations/{translationId:guid}/delete",
+    async (Guid dialogueId, Guid questionId, Guid answerId, Guid translationId, IAdminDialoguesService dialoguesService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await scenariosService.DeleteAnswerTranslationAsync(scenarioId, questionId, answerId, translationId, cancellationToken).ConfigureAwait(false))
+                async () => await dialoguesService.DeleteAnswerTranslationAsync(dialogueId, questionId, answerId, translationId, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

@@ -42,7 +42,7 @@ else
                 <div class="action-row">
                     <button type="button" class="button button--secondary button--compact" data-speak-text="@item.Lemma" data-speak-lang="de-DE">@T["Hear"]</button>
                     @{
-                        string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(item.Lemma, item.PublicId);
+                        string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(item.Lemma);
                     }
                     <a class="button button--secondary" data-word-link data-word-id="@item.PublicId" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@wordRouteSlug">@T["Open word"]</a>
                 </div>

@@ -23,9 +23,19 @@ public interface IWebCatalogApiClient
         string meaningLanguageCode,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken);
+    Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(CancellationToken cancellationToken);
 
-    Task<ScenarioLessonDetailModel?> GetScenarioBySlugAsync(
+    Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<TalkTopicListItemModel>> GetTalkTopicsAsync(
+        TalkTopicListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<TalkTopicDetailModel?> GetTalkTopicBySlugAsync(
         string slug,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
@@ -35,8 +45,8 @@ public interface IWebCatalogApiClient
         ConversationStarterListFilterModel filter,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForScenarioAsync(
-        string scenarioSlug,
+    Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken);
 
     Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(
@@ -45,8 +55,8 @@ public interface IWebCatalogApiClient
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(
-        string scenarioSlug,
+    Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken);
 
     Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
@@ -199,6 +209,13 @@ public interface IWebCatalogApiClient
 
     Task<WordDetailModel?> GetWordDetailsAsync(
         Guid publicId,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode,
+        CancellationToken cancellationToken);
+
+    Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+        string slug,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         string uiLanguageCode,
@@ -369,49 +386,49 @@ public interface IWebCatalogApiClient
 
     Task<AdminBulkCollectionImportResponse> ImportAdminCollectionsAsync(AdminBulkCollectionImportRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenariosPageViewModel> GetAdminScenariosAsync(CancellationToken cancellationToken);
+    Task<AdminDialoguesPageViewModel> GetAdminDialoguesAsync(CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel?> GetAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel?> GetAdminDialogueAsync(Guid dialogueId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> CreateAdminScenarioAsync(AdminSaveScenarioRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> CreateAdminDialogueAsync(AdminSaveDialogueRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> UpdateAdminScenarioAsync(Guid scenarioId, AdminSaveScenarioRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> UpdateAdminDialogueAsync(Guid dialogueId, AdminSaveDialogueRequest request, CancellationToken cancellationToken);
 
-    Task<bool> DeleteAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken);
+    Task<bool> DeleteAdminDialogueAsync(Guid dialogueId, CancellationToken cancellationToken);
 
-    Task<AdminBulkScenarioImportResponse> ImportAdminScenariosAsync(AdminBulkScenarioImportRequest request, CancellationToken cancellationToken);
+    Task<AdminBulkDialogueImportResponse> ImportAdminDialoguesAsync(AdminBulkDialogueImportRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnAsync(Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialogueTurnAsync(Guid dialogueId, AdminAddDialogueTurnRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnAsync(Guid scenarioId, Guid turnId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialogueTurnAsync(Guid dialogueId, Guid turnId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseAsync(Guid scenarioId, AdminAddScenarioPhraseRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialoguePhraseAsync(Guid dialogueId, AdminAddDialoguePhraseRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseAsync(Guid scenarioId, Guid phraseId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialoguePhraseAsync(Guid dialogueId, Guid phraseId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionAsync(Guid scenarioId, AdminAddScenarioQuestionRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialogueQuestionAsync(Guid dialogueId, AdminAddDialogueQuestionRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionAsync(Guid scenarioId, Guid questionId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialogueQuestionAsync(Guid dialogueId, Guid questionId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialogueAnswerAsync(Guid dialogueId, Guid questionId, AdminAddDialogueAnswerRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, Guid answerId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialogueAnswerAsync(Guid dialogueId, Guid questionId, Guid answerId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, Guid translationId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, Guid translationId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, Guid translationId, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> AddAdminDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken);
 
-    Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken);
+    Task<AdminDialogueDetailViewModel> DeleteAdminDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken);
 
     Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
         AdminSaveConversationEventRequest request,
@@ -477,19 +494,49 @@ internal sealed class WebCatalogApiClient(
             BuildPath($"/api/catalog/collections/{Uri.EscapeDataString(slug)}", [new("meaningLanguageCode", meaningLanguageCode)]),
             cancellationToken);
 
-    public Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken) =>
-        GetRequiredAsync<IReadOnlyList<ScenarioLessonListItemModel>>(
-            "/api/catalog/scenarios",
+    public Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<DialogueLessonListItemModel>>(
+            "/api/catalog/dialogues",
             cancellationToken);
 
-    public Task<ScenarioLessonDetailModel?> GetScenarioBySlugAsync(
+    public Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(
         string slug,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<ScenarioLessonDetailModel>(
+        GetAsync<DialogueLessonDetailModel>(
             BuildPath(
-                $"/api/catalog/scenarios/{Uri.EscapeDataString(slug)}",
+                $"/api/catalog/dialogues/{Uri.EscapeDataString(slug)}",
+                [
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
+                    new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
+                ]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<TalkTopicListItemModel>> GetTalkTopicsAsync(
+        TalkTopicListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<TalkTopicListItemModel>>(
+            BuildPath(
+                "/api/catalog/talk-topics",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("category", filter.Category),
+                    new("topicKey", filter.TopicKey),
+                    new("contentType", filter.ContentType),
+                    new("speakingGoal", filter.SpeakingGoal),
+                    new("isSensitive", filter.IsSensitive?.ToString())
+                ]),
+            cancellationToken);
+
+    public Task<TalkTopicDetailModel?> GetTalkTopicBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<TalkTopicDetailModel>(
+            BuildPath(
+                $"/api/catalog/talk-topics/{Uri.EscapeDataString(slug)}",
                 [
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
                     new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
@@ -511,11 +558,11 @@ internal sealed class WebCatalogApiClient(
                 ]),
             cancellationToken);
 
-    public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForScenarioAsync(
-        string scenarioSlug,
+    public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ConversationStarterPackListItemModel>>(
-            $"/api/catalog/scenarios/{Uri.EscapeDataString(scenarioSlug)}/conversation-starters",
+            $"/api/catalog/dialogues/{Uri.EscapeDataString(dialogueSlug)}/conversation-starters",
             cancellationToken);
 
     public Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(
@@ -532,11 +579,11 @@ internal sealed class WebCatalogApiClient(
                 ]),
             cancellationToken);
 
-    public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(
-        string scenarioSlug,
+    public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(
+        string dialogueSlug,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<EventPreparationPackListItemModel>>(
-            $"/api/catalog/scenarios/{Uri.EscapeDataString(scenarioSlug)}/event-preparation-packs",
+            $"/api/catalog/dialogues/{Uri.EscapeDataString(dialogueSlug)}/event-preparation-packs",
             cancellationToken);
 
     public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
@@ -811,6 +858,22 @@ internal sealed class WebCatalogApiClient(
         GetAsync<WordDetailModel>(
             BuildPath(
                 $"/api/catalog/words/{publicId:D}",
+                [
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
+                    new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode),
+                    new("uiLanguageCode", uiLanguageCode)
+                ]),
+            cancellationToken);
+
+    public Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        string uiLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<WordDetailModel>(
+            BuildPath(
+                $"/api/catalog/words/by-slug/{Uri.EscapeDataString(slug)}",
                 [
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
                     new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode),
@@ -1734,216 +1797,216 @@ internal sealed class WebCatalogApiClient(
             request,
             cancellationToken);
 
-    public async Task<AdminScenariosPageViewModel> GetAdminScenariosAsync(CancellationToken cancellationToken)
+    public async Task<AdminDialoguesPageViewModel> GetAdminDialoguesAsync(CancellationToken cancellationToken)
     {
-        AdminScenariosResponse response = await GetRequiredAsync<AdminScenariosResponse>(
-            "/api/admin/catalog/scenarios",
+        AdminDialoguesResponse response = await GetRequiredAsync<AdminDialoguesResponse>(
+            "/api/admin/catalog/dialogues",
             cancellationToken).ConfigureAwait(false);
 
-        return new AdminScenariosPageViewModel(response.Scenarios.Select(MapAdminScenarioItem).ToArray());
+        return new AdminDialoguesPageViewModel(response.Dialogues.Select(MapAdminDialogueItem).ToArray());
     }
 
-    public async Task<AdminScenarioDetailViewModel?> GetAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel?> GetAdminDialogueAsync(Guid dialogueId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse? response = await GetAsync<AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}",
+        AdminDialogueDetailResponse? response = await GetAsync<AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}",
             cancellationToken).ConfigureAwait(false);
 
-        return response is null ? null : MapAdminScenarioDetail(response);
+        return response is null ? null : MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> CreateAdminScenarioAsync(AdminSaveScenarioRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> CreateAdminDialogueAsync(AdminSaveDialogueRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminSaveScenarioRequest, AdminScenarioDetailResponse>(
-            "/api/admin/catalog/scenarios",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminSaveDialogueRequest, AdminDialogueDetailResponse>(
+            "/api/admin/catalog/dialogues",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> UpdateAdminScenarioAsync(Guid scenarioId, AdminSaveScenarioRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> UpdateAdminDialogueAsync(Guid dialogueId, AdminSaveDialogueRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminSaveScenarioRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminSaveDialogueRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<bool> DeleteAdminScenarioAsync(Guid scenarioId, CancellationToken cancellationToken)
+    public async Task<bool> DeleteAdminDialogueAsync(Guid dialogueId, CancellationToken cancellationToken)
     {
         return await PostRequiredAsync<AdminEmptyRequest, bool>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/delete",
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
     }
 
-    public Task<AdminBulkScenarioImportResponse> ImportAdminScenariosAsync(AdminBulkScenarioImportRequest request, CancellationToken cancellationToken) =>
-        PostRequiredAsync<AdminBulkScenarioImportRequest, AdminBulkScenarioImportResponse>(
-            "/api/admin/catalog/scenarios/import",
+    public Task<AdminBulkDialogueImportResponse> ImportAdminDialoguesAsync(AdminBulkDialogueImportRequest request, CancellationToken cancellationToken) =>
+        PostRequiredAsync<AdminBulkDialogueImportRequest, AdminBulkDialogueImportResponse>(
+            "/api/admin/catalog/dialogues/import",
             request,
             cancellationToken);
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnAsync(Guid scenarioId, AdminAddScenarioDialogueTurnRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialogueTurnAsync(Guid dialogueId, AdminAddDialogueTurnRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioDialogueTurnRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialogueTurnRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/dialogue-turns",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnAsync(Guid scenarioId, Guid turnId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialogueTurnAsync(Guid dialogueId, Guid turnId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns/{turnId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/dialogue-turns/{turnId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseAsync(Guid scenarioId, AdminAddScenarioPhraseRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialoguePhraseAsync(Guid dialogueId, AdminAddDialoguePhraseRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioPhraseRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialoguePhraseRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/phrases",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseAsync(Guid scenarioId, Guid phraseId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialoguePhraseAsync(Guid dialogueId, Guid phraseId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases/{phraseId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/phrases/{phraseId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionAsync(Guid scenarioId, AdminAddScenarioQuestionRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialogueQuestionAsync(Guid dialogueId, AdminAddDialogueQuestionRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioQuestionRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialogueQuestionRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionAsync(Guid scenarioId, Guid questionId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialogueQuestionAsync(Guid dialogueId, Guid questionId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions/{questionId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, AdminAddScenarioAnswerRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialogueAnswerAsync(Guid dialogueId, Guid questionId, AdminAddDialogueAnswerRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioAnswerRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialogueAnswerRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions/{questionId:D}/answers",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerAsync(Guid scenarioId, Guid questionId, Guid answerId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialogueAnswerAsync(Guid dialogueId, Guid questionId, Guid answerId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers/{answerId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions/{questionId:D}/answers/{answerId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns/{turnId:D}/translations",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialogueTranslationRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/dialogue-turns/{turnId:D}/translations",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioDialogueTurnTranslationAsync(Guid scenarioId, Guid turnId, Guid translationId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialogueTurnTranslationAsync(Guid dialogueId, Guid turnId, Guid translationId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/dialogue-turns/{turnId:D}/translations/{translationId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/dialogue-turns/{turnId:D}/translations/{translationId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases/{phraseId:D}/translations",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialogueTranslationRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/phrases/{phraseId:D}/translations",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioPhraseTranslationAsync(Guid scenarioId, Guid phraseId, Guid translationId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialoguePhraseTranslationAsync(Guid dialogueId, Guid phraseId, Guid translationId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/phrases/{phraseId:D}/translations/{translationId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/phrases/{phraseId:D}/translations/{translationId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/translations",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialogueTranslationRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions/{questionId:D}/translations",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioQuestionTranslationAsync(Guid scenarioId, Guid questionId, Guid translationId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialogueQuestionTranslationAsync(Guid dialogueId, Guid questionId, Guid translationId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/translations/{translationId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions/{questionId:D}/translations/{translationId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> AddAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, AdminAddScenarioTranslationRequest request, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> AddAdminDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, AdminAddDialogueTranslationRequest request, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminAddScenarioTranslationRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers/{answerId:D}/translations",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminAddDialogueTranslationRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions/{questionId:D}/answers/{answerId:D}/translations",
             request,
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
-    public async Task<AdminScenarioDetailViewModel> DeleteAdminScenarioAnswerTranslationAsync(Guid scenarioId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken)
+    public async Task<AdminDialogueDetailViewModel> DeleteAdminDialogueAnswerTranslationAsync(Guid dialogueId, Guid questionId, Guid answerId, Guid translationId, CancellationToken cancellationToken)
     {
-        AdminScenarioDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminScenarioDetailResponse>(
-            $"/api/admin/catalog/scenarios/{scenarioId:D}/questions/{questionId:D}/answers/{answerId:D}/translations/{translationId:D}/delete",
+        AdminDialogueDetailResponse response = await PostRequiredAsync<AdminEmptyRequest, AdminDialogueDetailResponse>(
+            $"/api/admin/catalog/dialogues/{dialogueId:D}/questions/{questionId:D}/answers/{answerId:D}/translations/{translationId:D}/delete",
             new AdminEmptyRequest(),
             cancellationToken).ConfigureAwait(false);
 
-        return MapAdminScenarioDetail(response);
+        return MapAdminDialogueDetail(response);
     }
 
     public Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(
@@ -2253,70 +2316,70 @@ internal sealed class WebCatalogApiClient(
                     entry.SortOrder))
                 .ToArray());
 
-    private static AdminScenarioItemViewModel MapAdminScenarioItem(AdminScenarioItemResponse scenario) =>
+    private static AdminDialogueItemViewModel MapAdminDialogueItem(AdminDialogueItemResponse dialogue) =>
         new(
-            scenario.ScenarioId,
-            scenario.Slug,
-            scenario.Title,
-            scenario.CefrLevel,
-            scenario.Category,
-            scenario.PublicationStatus,
-            scenario.SortOrder,
-            scenario.DialogueTurnCount,
-            scenario.PhraseCount,
-            scenario.QuestionCount,
-            scenario.UpdatedAtUtc);
+            dialogue.DialogueId,
+            dialogue.Slug,
+            dialogue.Title,
+            dialogue.CefrLevel,
+            dialogue.Category,
+            dialogue.PublicationStatus,
+            dialogue.SortOrder,
+            dialogue.DialogueTurnCount,
+            dialogue.PhraseCount,
+            dialogue.QuestionCount,
+            dialogue.UpdatedAtUtc);
 
-    private static AdminScenarioDetailViewModel MapAdminScenarioDetail(AdminScenarioDetailResponse scenario) =>
+    private static AdminDialogueDetailViewModel MapAdminDialogueDetail(AdminDialogueDetailResponse dialogue) =>
         new(
-            scenario.ScenarioId,
-            scenario.Slug,
-            scenario.Title,
-            scenario.Description,
-            scenario.LearnerGoal,
-            scenario.CefrLevel,
-            scenario.Category,
-            scenario.PublicationStatus,
-            scenario.SortOrder,
-            scenario.CreatedAtUtc,
-            scenario.UpdatedAtUtc,
-            scenario.DialogueTurns
-                .Select(turn => new AdminScenarioDialogueTurnViewModel(
+            dialogue.DialogueId,
+            dialogue.Slug,
+            dialogue.Title,
+            dialogue.Description,
+            dialogue.LearnerGoal,
+            dialogue.CefrLevel,
+            dialogue.Category,
+            dialogue.PublicationStatus,
+            dialogue.SortOrder,
+            dialogue.CreatedAtUtc,
+            dialogue.UpdatedAtUtc,
+            dialogue.DialogueTurns
+                .Select(turn => new AdminDialogueTurnViewModel(
                     turn.TurnId,
                     turn.SortOrder,
                     turn.SpeakerRole,
                     turn.BaseText,
-                    MapAdminScenarioTranslations(turn.Translations)))
+                    MapAdminDialogueTranslations(turn.Translations)))
                 .ToArray(),
-            scenario.UsefulPhrases
-                .Select(phrase => new AdminScenarioPhraseViewModel(
+            dialogue.UsefulPhrases
+                .Select(phrase => new AdminDialoguePhraseViewModel(
                     phrase.PhraseId,
                     phrase.SortOrder,
                     phrase.BaseText,
                     phrase.UsageNote,
-                    MapAdminScenarioTranslations(phrase.Translations)))
+                    MapAdminDialogueTranslations(phrase.Translations)))
                 .ToArray(),
-            scenario.Questions
-                .Select(question => new AdminScenarioQuestionViewModel(
+            dialogue.Questions
+                .Select(question => new AdminDialogueQuestionViewModel(
                     question.QuestionId,
                     question.SortOrder,
                     question.Prompt,
-                    MapAdminScenarioTranslations(question.Translations),
+                    MapAdminDialogueTranslations(question.Translations),
                     question.Answers
-                        .Select(answer => new AdminScenarioAnswerViewModel(
+                        .Select(answer => new AdminDialogueAnswerViewModel(
                             answer.AnswerId,
                             answer.SortOrder,
                             answer.Text,
                             answer.IsCorrect,
                             answer.Feedback,
-                            MapAdminScenarioTranslations(answer.Translations)))
+                            MapAdminDialogueTranslations(answer.Translations)))
                         .ToArray()))
                 .ToArray());
 
-    private static AdminScenarioTranslationViewModel[] MapAdminScenarioTranslations(
-        IReadOnlyList<AdminScenarioTranslationResponse> translations) =>
+    private static AdminDialogueTranslationViewModel[] MapAdminDialogueTranslations(
+        IReadOnlyList<AdminDialogueTranslationResponse> translations) =>
         translations
-            .Select(translation => new AdminScenarioTranslationViewModel(
+            .Select(translation => new AdminDialogueTranslationViewModel(
                 translation.TranslationId,
                 translation.LanguageCode,
                 translation.Text))
@@ -2357,7 +2420,7 @@ internal sealed class WebCatalogApiClient(
 
         string previous = segments[index - 1];
         return string.Equals(previous, "collections", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(previous, "scenarios", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(previous, "dialogues", StringComparison.OrdinalIgnoreCase) ||
             string.Equals(previous, "conversation-starters", StringComparison.OrdinalIgnoreCase) ||
             string.Equals(previous, "event-preparation-packs", StringComparison.OrdinalIgnoreCase) ||
             string.Equals(previous, "conversation-events", StringComparison.OrdinalIgnoreCase) ||
@@ -2451,7 +2514,7 @@ public sealed record AdminCatalogSystemReportResponse(
     int ActiveWordCount,
     int DraftWordCount,
     int TopicCount,
-    int ScenarioLessonCount,
+    int DialogueLessonCount,
     int ConversationStarterPackCount,
     int EventPreparationPackCount);
 
@@ -2672,11 +2735,11 @@ internal sealed record AdminCollectionEntryResponse(
     string CefrLevel,
     int SortOrder);
 
-internal sealed record AdminScenariosResponse(
-    IReadOnlyList<AdminScenarioItemResponse> Scenarios);
+internal sealed record AdminDialoguesResponse(
+    IReadOnlyList<AdminDialogueItemResponse> Dialogues);
 
-internal sealed record AdminScenarioItemResponse(
-    Guid ScenarioId,
+internal sealed record AdminDialogueItemResponse(
+    Guid DialogueId,
     string Slug,
     string Title,
     string CefrLevel,
@@ -2688,8 +2751,8 @@ internal sealed record AdminScenarioItemResponse(
     int QuestionCount,
     DateTime UpdatedAtUtc);
 
-internal sealed record AdminScenarioDetailResponse(
-    Guid ScenarioId,
+internal sealed record AdminDialogueDetailResponse(
+    Guid DialogueId,
     string Slug,
     string Title,
     string Description,
@@ -2700,40 +2763,40 @@ internal sealed record AdminScenarioDetailResponse(
     int SortOrder,
     DateTime CreatedAtUtc,
     DateTime UpdatedAtUtc,
-    IReadOnlyList<AdminScenarioDialogueTurnResponse> DialogueTurns,
-    IReadOnlyList<AdminScenarioPhraseResponse> UsefulPhrases,
-    IReadOnlyList<AdminScenarioQuestionResponse> Questions);
+    IReadOnlyList<AdminDialogueTurnResponse> DialogueTurns,
+    IReadOnlyList<AdminDialoguePhraseResponse> UsefulPhrases,
+    IReadOnlyList<AdminDialogueQuestionResponse> Questions);
 
-internal sealed record AdminScenarioDialogueTurnResponse(
+internal sealed record AdminDialogueTurnResponse(
     Guid TurnId,
     int SortOrder,
     string SpeakerRole,
     string BaseText,
-    IReadOnlyList<AdminScenarioTranslationResponse> Translations);
+    IReadOnlyList<AdminDialogueTranslationResponse> Translations);
 
-internal sealed record AdminScenarioPhraseResponse(
+internal sealed record AdminDialoguePhraseResponse(
     Guid PhraseId,
     int SortOrder,
     string BaseText,
     string? UsageNote,
-    IReadOnlyList<AdminScenarioTranslationResponse> Translations);
+    IReadOnlyList<AdminDialogueTranslationResponse> Translations);
 
-internal sealed record AdminScenarioQuestionResponse(
+internal sealed record AdminDialogueQuestionResponse(
     Guid QuestionId,
     int SortOrder,
     string Prompt,
-    IReadOnlyList<AdminScenarioTranslationResponse> Translations,
-    IReadOnlyList<AdminScenarioAnswerResponse> Answers);
+    IReadOnlyList<AdminDialogueTranslationResponse> Translations,
+    IReadOnlyList<AdminDialogueAnswerResponse> Answers);
 
-internal sealed record AdminScenarioAnswerResponse(
+internal sealed record AdminDialogueAnswerResponse(
     Guid AnswerId,
     int SortOrder,
     string Text,
     bool IsCorrect,
     string? Feedback,
-    IReadOnlyList<AdminScenarioTranslationResponse> Translations);
+    IReadOnlyList<AdminDialogueTranslationResponse> Translations);
 
-internal sealed record AdminScenarioTranslationResponse(
+internal sealed record AdminDialogueTranslationResponse(
     Guid TranslationId,
     string LanguageCode,
     string Text);

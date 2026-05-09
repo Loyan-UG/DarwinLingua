@@ -175,6 +175,9 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] implement `ClearWordKnownState`
 - [x] implement `ClearWordDifficultState`
 - [x] implement `ImportContentPackage`
+- [x] implement Talk Topic import parsing, validation, persistence, query, WebApi read endpoints, and Web learner pages
+- [ ] add mobile Talk Topic parity after the Web flow is signed off
+- [ ] expand automated Talk Topic coverage for persistence, filters, endpoints, rendering, localization, and package export
 
 ### 12. MAUI Screens
 
@@ -490,7 +493,7 @@ Do not delete completed items. Mark them as completed so the implementation hist
 
 This backlog is complete when Darwin Lingua supports a safe and useful practical conversation layer:
 
-- learners can prepare for real German situations using scenario lessons
+- learners can prepare for real German situations using dialogue practice lessons
 - learners can see German content with one or two meaning languages at the same time
 - learners can use conversation starters for specific contexts
 - learners can find local and online conversation events
@@ -534,7 +537,7 @@ Examples:
 - [x] review the existing meaning-language preference model and confirm it supports exactly one or two active meaning languages cleanly
 - [x] define UI rules for primary and secondary meaning languages
 - [x] add compact and expanded translation display modes where needed
-- [x] ensure word details, examples, scenario lessons, and conversation starters can display two meaning languages consistently
+- [x] ensure word details, examples, dialogue practice lessons, and conversation starters can display two meaning languages consistently
 - [x] add validation rules for missing translations in one of the selected meaning languages
 - [x] add fallback rules when the secondary meaning language is unavailable
 - [x] add tests for dual-language selection and rendering decisions
@@ -542,13 +545,13 @@ Examples:
 
 ---
 
-### 3. Scenario-Based Learning
+### 3. Dialogue Practice
 
 #### Goal
 
-Add practical real-life scenario lessons that help learners use German in concrete situations.
+Add practical real-life dialogue practice lessons that help learners use German in concrete situations.
 
-#### Initial Scenario Categories
+#### Initial Dialogue Categories
 
 - doctor and healthcare
 - school and kindergarten
@@ -561,9 +564,9 @@ Add practical real-life scenario lessons that help learners use German in concre
 - social small talk
 - conversation cafes and first meetings
 
-#### Scenario Content Model
+#### Dialogue Practice Content Model
 
-Each scenario should support:
+Each dialogue practice lesson should support:
 
 - title
 - description
@@ -583,21 +586,25 @@ Each scenario should support:
 
 #### Backlog
 
-- [x] define `ScenarioLesson` content contract
-- [x] define `ScenarioDialogueTurn` content contract
-- [x] define `ScenarioPhrase` or `UsefulPhrase` content contract
-- [x] define `ScenarioQuestion` and `ScenarioAnswer` content contract
-- [x] define scenario CEFR-level and topic mapping rules
-- [x] define import validation rules for scenario content
-- [x] implement scenario import pipeline support
-- [x] persist scenario lessons in the shared content model
-- [x] expose scenario lessons through application queries
-- [x] add scenario list and detail screens in MAUI
-- [x] add scenario list and detail pages in the web app when appropriate
-- [ ] add tests for scenario import, persistence, query, and rendering
+- [x] define `DialogueLesson` content contract
+- [x] define `DialogueTurn` content contract
+- [x] define `DialoguePhrase` or `UsefulPhrase` content contract
+- [x] define `DialogueQuestion` and `DialogueAnswer` content contract
+- [x] define dialogue CEFR-level and topic mapping rules
+- [x] define import validation rules for dialogue content
+- [x] implement dialogue import pipeline support
+- [x] persist dialogue lessons in the shared content model
+- [x] expose dialogue lessons through application queries
+- [x] add dialogue list and detail screens in MAUI
+- [x] add dialogue list and detail pages in the web app when appropriate
+- [ ] add tests for dialogue import, persistence, query, and rendering
   - Progress: import, persistence, application query, mobile package export, Web API build, and web controller language-selection tests are covered; keep open until Razor/page rendering is explicitly tested.
   - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
-- [x] add initial sample scenarios for A1/A2 learners
+- [x] add initial sample dialogues for A1/A2 learners
+
+#### Future Scenario Feature
+
+The future `Scenarios` feature is separate from dialogue practice. It should contain a topic, article-style German text, discussion questions for group conversation, and linked vocabulary that points to canonical word detail URLs.
 
 ---
 
@@ -620,7 +627,7 @@ Help learners start and continue real conversations.
 - [x] define `ConversationStarterPack` content contract
 - [x] define `ConversationStarterPhrase` content contract
 - [x] define starter categories and filters
-- [x] support starter packs inside scenario lessons
+- [x] support starter packs inside dialogue practice lessons
 - [x] support standalone starter packs
   - Progress: content contract, parser model support, import-boundary validation, persistence, catalog queries, WebApi endpoints, web/mobile UI, and mobile package export for `conversationStarterPacks` are implemented.
 - [x] add mobile browsing and detail UI for starter packs
@@ -743,7 +750,7 @@ Each event can have:
 #### Backlog
 
 - [x] define `EventPreparationPack` content package contract and parsed import model
-- [x] allow preparation packs to link to existing scenario lessons at the content-contract/parser/validation boundary
+- [x] allow preparation packs to link to existing dialogue practice lessons at the content-contract/parser/validation boundary
 - [x] allow preparation packs to link to vocabulary entries at the content-contract/parser/validation boundary
 - [x] allow preparation packs to link to conversation starter packs at the content-contract/parser/validation boundary
 - [x] persist `EventPreparationPack` catalog records
@@ -1025,7 +1032,7 @@ Make social and organizer features safe enough to release publicly.
 #### Backlog
 
 - [x] define entitlement keys for scenario and conversation features
-  - Progress: Identity feature keys now explicitly cover scenario lessons, conversation starters, conversation events, event RSVP, learner profiles, partner matching, advanced scenario packs, and event preparation packs.
+  - Progress: Identity feature keys now explicitly cover dialogue practice lessons, conversation starters, conversation events, event RSVP, learner profiles, partner matching, advanced scenario packs, and event preparation packs.
 - [x] define entitlement keys for organizer features
   - Progress: Identity feature keys now explicitly cover organizer dashboard, profile management, event management, RSVP management, analytics, recurring events, featured placement, multiple admins, and branded profiles.
 - [x] keep core catalog browse and basic scenario access outside strict premium enforcement
@@ -1129,9 +1136,9 @@ Do not implement these in the first release unless there is a specific decision 
 ### Recommended Execution Order
 
 1. Product/documentation updates
-2. Scenario content contract
-3. Scenario import and query support
-4. Scenario mobile UI
+2. Dialogue content contract
+3. Dialogue import and query support
+4. Dialogue mobile UI
 5. Conversation starter packs
 6. Event and club directory
 7. Event preparation packs
@@ -1150,7 +1157,7 @@ Do not implement these in the first release unless there is a specific decision 
 
 The first public version of this expansion should be considered acceptable only when:
 
-- scenario lessons work in at least German + one meaning language
+- dialogue practice lessons work in at least German + one meaning language
 - dual-language display works consistently where content exists
 - at least 10 high-value practical scenarios exist
 - event directory can be browsed and filtered
