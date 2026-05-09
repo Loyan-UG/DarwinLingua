@@ -146,6 +146,7 @@ If you are new to the project, read the documents in this order:
 42. `71-Web-Test-Backlog.md`
 43. `72-Web-Seed-Coverage-And-Admin-Reports.md`
 44. `73-Transactional-Email-And-Account-Communication-Backlog.md`
+45. `74-Talk-Topic-Content-Package-Contract.md`
 
 ---
 
@@ -174,6 +175,7 @@ If you are new to the project, read the documents in this order:
 - `71-Web-Test-Backlog.md` defines the remaining Web automated and manual validation backlog owned by the separate test-development workflow.
 - `72-Web-Seed-Coverage-And-Admin-Reports.md` records Web seed coverage, admin report scope, and the operational-seed follow-up.
 - `73-Transactional-Email-And-Account-Communication-Backlog.md` defines the release-critical transactional email, account recovery, email confirmation, provider, diagnostics, localization, and security backlog.
+- `74-Talk-Topic-Content-Package-Contract.md` defines the Talk Topics JSON contract, controlled content types, CEFR article-length validation, vocabulary-reference rules, speaking goals, sensitivity metadata, and reusable future support-content ideas.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Rules vs Workflow

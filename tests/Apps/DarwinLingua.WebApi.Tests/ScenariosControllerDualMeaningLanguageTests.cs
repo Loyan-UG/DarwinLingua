@@ -4,25 +4,28 @@ using DarwinLingua.Web.Controllers;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
 namespace DarwinLingua.WebApi.Tests;
 
-public sealed class ScenariosControllerDualMeaningLanguageTests
+public sealed class DialoguesControllerDualMeaningLanguageTests
 {
     [Fact]
     public async Task Detail_ShouldPassResolvedMeaningLanguagesToApiAndViewModel()
     {
-        CapturingCatalogApiClient catalogApiClient = new(CreateScenario());
-        ScenariosController controller = new(
+        CapturingCatalogApiClient catalogApiClient = new(CreateDialogue());
+        DialoguesController controller = new(
             catalogApiClient,
             new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
-            new StaticFeatureAccessService("fa"));
+            new StaticFeatureAccessService("fa"),
+            new TestStringLocalizer(),
+            NullLogger<DialoguesController>.Instance);
 
         IActionResult actionResult = await controller.Detail("at-the-pharmacy", CancellationToken.None);
 
         ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
-        ScenarioDetailPageViewModel viewModel = Assert.IsType<ScenarioDetailPageViewModel>(viewResult.Model);
+        DialogueDetailPageViewModel viewModel = Assert.IsType<DialogueDetailPageViewModel>(viewResult.Model);
         Assert.Equal("at-the-pharmacy", catalogApiClient.Slug);
         Assert.Equal("en", catalogApiClient.PrimaryMeaningLanguageCode);
         Assert.Equal("fa", catalogApiClient.SecondaryMeaningLanguageCode);
@@ -33,16 +36,18 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
     [Fact]
     public async Task Detail_ShouldOmitSecondaryMeaningLanguage_WhenFeatureIsUnavailable()
     {
-        CapturingCatalogApiClient catalogApiClient = new(CreateScenario());
-        ScenariosController controller = new(
+        CapturingCatalogApiClient catalogApiClient = new(CreateDialogue());
+        DialoguesController controller = new(
             catalogApiClient,
             new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
-            new StaticFeatureAccessService(null));
+            new StaticFeatureAccessService(null),
+            new TestStringLocalizer(),
+            NullLogger<DialoguesController>.Instance);
 
         IActionResult actionResult = await controller.Detail("at-the-pharmacy", CancellationToken.None);
 
         ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
-        ScenarioDetailPageViewModel viewModel = Assert.IsType<ScenarioDetailPageViewModel>(viewResult.Model);
+        DialogueDetailPageViewModel viewModel = Assert.IsType<DialogueDetailPageViewModel>(viewResult.Model);
         Assert.Equal("en", catalogApiClient.PrimaryMeaningLanguageCode);
         Assert.Null(catalogApiClient.SecondaryMeaningLanguageCode);
         Assert.Null(viewModel.SecondaryMeaningLanguageCode);
@@ -51,21 +56,23 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
     [Fact]
     public async Task Detail_ShouldNotLoadPreparationPacks_WhenFeatureIsUnavailable()
     {
-        CapturingCatalogApiClient catalogApiClient = new(CreateScenario());
-        ScenariosController controller = new(
+        CapturingCatalogApiClient catalogApiClient = new(CreateDialogue());
+        DialoguesController controller = new(
             catalogApiClient,
             new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
-            new StaticFeatureAccessService(null, canUseEventPreparationPacks: false));
+            new StaticFeatureAccessService(null, canUseEventPreparationPacks: false),
+            new TestStringLocalizer(),
+            NullLogger<DialoguesController>.Instance);
 
         IActionResult actionResult = await controller.Detail("at-the-pharmacy", CancellationToken.None);
 
         ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
-        ScenarioDetailPageViewModel viewModel = Assert.IsType<ScenarioDetailPageViewModel>(viewResult.Model);
+        DialogueDetailPageViewModel viewModel = Assert.IsType<DialogueDetailPageViewModel>(viewResult.Model);
         Assert.Empty(viewModel.RelatedEventPreparationPacks);
         Assert.False(catalogApiClient.EventPreparationPacksWereRequested);
     }
 
-    private static ScenarioLessonDetailModel CreateScenario() =>
+    private static DialogueLessonDetailModel CreateDialogue() =>
         new(
             "at-the-pharmacy",
             "At the pharmacy",
@@ -74,11 +81,11 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
             "A1",
             "health",
             ["health"],
-            [new ScenarioDialogueTurnModel("learner", "Ich brauche Hilfe.", "I need help.", "من کمک لازم دارم.")],
-            [new ScenarioPhraseModel("Ich habe Kopfschmerzen.", "I have a headache.", "من سردرد دارم.", null)],
-            [new ScenarioQuestionModel("What do you need?", "What do you need?", "چه چیزی لازم داری؟", [new ScenarioAnswerModel("Hilfe", "help", "کمک", true, null)])]);
+            [new DialogueTurnModel("learner", "Ich brauche Hilfe.", "I need help.", "من کمک لازم دارم.")],
+            [new DialoguePhraseModel("Ich habe Kopfschmerzen.", "I have a headache.", "من سردرد دارم.", null)],
+            [new DialogueQuestionModel("What do you need?", "What do you need?", "چه چیزی لازم داری؟", [new DialogueAnswerModel("Hilfe", "help", "کمک", true, null)])]);
 
-    private sealed class CapturingCatalogApiClient(ScenarioLessonDetailModel scenario) : IWebCatalogApiClient
+    private sealed class CapturingCatalogApiClient(DialogueLessonDetailModel dialogue) : UnsupportedWebCatalogApiClient
     {
         public string? Slug { get; private set; }
 
@@ -88,9 +95,7 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
 
         public bool EventPreparationPacksWereRequested { get; private set; }
 
-        public Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ScenarioLessonDetailModel?> GetScenarioBySlugAsync(
+        public override Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(
             string slug,
             string primaryMeaningLanguageCode,
             string? secondaryMeaningLanguageCode,
@@ -99,60 +104,16 @@ public sealed class ScenariosControllerDualMeaningLanguageTests
             Slug = slug;
             PrimaryMeaningLanguageCode = primaryMeaningLanguageCode;
             SecondaryMeaningLanguageCode = secondaryMeaningLanguageCode;
-            return Task.FromResult<ScenarioLessonDetailModel?>(scenario);
+            return Task.FromResult<DialogueLessonDetailModel?>(dialogue);
         }
 
-        public Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
+        public override Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(string dialogueSlug, CancellationToken cancellationToken) => Task.FromResult<IReadOnlyList<ConversationStarterPackListItemModel>>([]);
 
-        public Task<IReadOnlyList<WordCollectionListItemModel>> GetCollectionsAsync(string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(string slug, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(ConversationStarterListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForScenarioAsync(string scenarioSlug, CancellationToken cancellationToken) => Task.FromResult<IReadOnlyList<ConversationStarterPackListItemModel>>([]);
-
-        public Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(string scenarioSlug, CancellationToken cancellationToken)
+        public override Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(string dialogueSlug, CancellationToken cancellationToken)
         {
             EventPreparationPacksWereRequested = true;
             return Task.FromResult<IReadOnlyList<EventPreparationPackListItemModel>>([]);
         }
-
-        public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(ConversationEventListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(string topicKey, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByCefrPageAsync(string cefrLevel, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> SearchWordsAsync(string query, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<WordDetailModel?> GetWordDetailsAsync(Guid publicId, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, string uiLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(IReadOnlyList<Guid> wordIds, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminDashboardViewModel> GetAdminDashboardAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminDraftWordsPageViewModel> GetAdminDraftWordsAsync(string? query, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminHistoryPageViewModel> GetAdminHistoryAsync(string? statusFilter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminRollbackPageViewModel> GetAdminRollbackPreviewAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(AdminSaveConversationEventRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(AdminSaveOrganizerProfileRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
     }
 
     private sealed class StaticLearningProfileAccessor(UserLearningProfileModel profile) : IWebLearningProfileAccessor

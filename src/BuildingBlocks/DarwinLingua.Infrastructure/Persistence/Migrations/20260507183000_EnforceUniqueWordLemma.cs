@@ -1,3 +1,5 @@
+using DarwinLingua.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -5,6 +7,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DarwinLingua.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
+    [DbContext(typeof(DarwinLinguaDbContext))]
+    [Migration("20260507183000_EnforceUniqueWordLemma")]
     public partial class EnforceUniqueWordLemma : Migration
     {
         /// <inheritdoc />

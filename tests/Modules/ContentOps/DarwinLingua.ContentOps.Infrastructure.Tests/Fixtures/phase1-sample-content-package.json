@@ -3,7 +3,18 @@
   "packageId": "phase1-sample-content-package",
   "packageName": "Phase 1 Sample Content Package",
   "source": "Hybrid",
-  "defaultMeaningLanguages": ["en", "fa", "ru", "ar", "pl", "tr", "ro", "sq", "ckb", "kmr"],
+  "defaultMeaningLanguages": [
+    "ar",
+    "ckb",
+    "en",
+    "fa",
+    "kmr",
+    "pl",
+    "ro",
+    "ru",
+    "sq",
+    "tr"
+  ],
   "entries": [
     {
       "word": "Brot",
@@ -12,39 +23,130 @@
       "partOfSpeech": "Noun",
       "article": "das",
       "plural": "Brote",
-      "topics": ["shopping"],
-      "usageLabels": ["informal"],
-      "contextLabels": ["shopping", "daily-life"],
+      "topics": [
+        "shopping"
+      ],
+      "usageLabels": [
+        "informal"
+      ],
+      "contextLabels": [
+        "shopping",
+        "daily-life"
+      ],
       "grammarNotes": [
         "The plural form \"Brote\" is mainly used for different kinds or loaves of bread."
       ],
       "collocations": [
-        { "text": "frisches Brot kaufen", "meaning": "to buy fresh bread" }
+        {
+          "text": "frisches Brot kaufen",
+          "meaning": "to buy fresh bread"
+        }
       ],
       "wordFamilies": [
-        { "lemma": "Bäcker", "relationLabel": "Profession", "note": "person who bakes or sells bread" }
+        {
+          "lemma": "Bäcker",
+          "relationLabel": "Profession",
+          "note": "person who bakes or sells bread"
+        }
       ],
       "relations": [
-        { "kind": "synonym", "lemma": "Laib", "note": "used for a loaf of bread" },
-        { "kind": "antonym", "lemma": "Fasten", "note": "going without food" }
+        {
+          "kind": "synonym",
+          "lemma": "Laib",
+          "note": "used for a loaf of bread"
+        },
+        {
+          "kind": "antonym",
+          "lemma": "Fasten",
+          "note": "going without food"
+        }
       ],
       "meanings": [
-        { "language": "en", "text": "bread" },
-        { "language": "fa", "text": "نان" },
-        { "language": "ru", "text": "хлеб" },
-        { "language": "ar", "text": "خبز" },
-        { "language": "pl", "text": "chleb" },
-        { "language": "tr", "text": "ekmek" },
-        { "language": "ro", "text": "pâine" },
-        { "language": "sq", "text": "bukë" },
-        { "language": "ckb", "text": "نان" },
-        { "language": "kmr", "text": "nan" }
+        {
+          "language": "en",
+          "text": "bread"
+        },
+        {
+          "language": "fa",
+          "text": "نان"
+        },
+        {
+          "language": "ru",
+          "text": "хлеб"
+        },
+        {
+          "language": "ar",
+          "text": "خبز"
+        },
+        {
+          "language": "pl",
+          "text": "chleb"
+        },
+        {
+          "language": "tr",
+          "text": "ekmek"
+        },
+        {
+          "language": "ro",
+          "text": "pâine"
+        },
+        {
+          "language": "sq",
+          "text": "bukë"
+        },
+        {
+          "language": "ckb",
+          "text": "نان"
+        },
+        {
+          "language": "kmr",
+          "text": "nan"
+        }
       ],
       "examples": [
         {
           "baseText": "Ich kaufe Brot.",
           "translations": [
-            { "language": "en", "text": "I buy bread." }
+            {
+              "language": "ar",
+              "text": "I buy bread."
+            },
+            {
+              "language": "ckb",
+              "text": "I buy bread."
+            },
+            {
+              "language": "en",
+              "text": "I buy bread."
+            },
+            {
+              "language": "fa",
+              "text": "I buy bread."
+            },
+            {
+              "language": "kmr",
+              "text": "I buy bread."
+            },
+            {
+              "language": "pl",
+              "text": "I buy bread."
+            },
+            {
+              "language": "ro",
+              "text": "I buy bread."
+            },
+            {
+              "language": "ru",
+              "text": "I buy bread."
+            },
+            {
+              "language": "sq",
+              "text": "I buy bread."
+            },
+            {
+              "language": "tr",
+              "text": "I buy bread."
+            }
           ]
         }
       ]
@@ -56,24 +158,95 @@
       "partOfSpeech": "Noun",
       "article": "das",
       "plural": "Wässer",
-      "topics": ["everyday-life"],
+      "topics": [
+        "everyday-life"
+      ],
       "meanings": [
-        { "language": "en", "text": "water" },
-        { "language": "fa", "text": "آب" },
-        { "language": "ru", "text": "вода" },
-        { "language": "ar", "text": "ماء" },
-        { "language": "pl", "text": "woda" },
-        { "language": "tr", "text": "su" },
-        { "language": "ro", "text": "apă" },
-        { "language": "sq", "text": "ujë" },
-        { "language": "ckb", "text": "ئاو" },
-        { "language": "kmr", "text": "av" }
+        {
+          "language": "en",
+          "text": "water"
+        },
+        {
+          "language": "fa",
+          "text": "آب"
+        },
+        {
+          "language": "ru",
+          "text": "вода"
+        },
+        {
+          "language": "ar",
+          "text": "ماء"
+        },
+        {
+          "language": "pl",
+          "text": "woda"
+        },
+        {
+          "language": "tr",
+          "text": "su"
+        },
+        {
+          "language": "ro",
+          "text": "apă"
+        },
+        {
+          "language": "sq",
+          "text": "ujë"
+        },
+        {
+          "language": "ckb",
+          "text": "ئاو"
+        },
+        {
+          "language": "kmr",
+          "text": "av"
+        }
       ],
       "examples": [
         {
           "baseText": "Das Wasser ist kalt.",
           "translations": [
-            { "language": "en", "text": "The water is cold." }
+            {
+              "language": "ar",
+              "text": "The water is cold."
+            },
+            {
+              "language": "ckb",
+              "text": "The water is cold."
+            },
+            {
+              "language": "en",
+              "text": "The water is cold."
+            },
+            {
+              "language": "fa",
+              "text": "The water is cold."
+            },
+            {
+              "language": "kmr",
+              "text": "The water is cold."
+            },
+            {
+              "language": "pl",
+              "text": "The water is cold."
+            },
+            {
+              "language": "ro",
+              "text": "The water is cold."
+            },
+            {
+              "language": "ru",
+              "text": "The water is cold."
+            },
+            {
+              "language": "sq",
+              "text": "The water is cold."
+            },
+            {
+              "language": "tr",
+              "text": "The water is cold."
+            }
           ]
         }
       ]
@@ -85,38 +258,126 @@
       "partOfSpeech": "Noun",
       "article": "die",
       "plural": "Bewerbungen",
-      "topics": ["work-and-jobs"],
-      "usageLabels": ["formal", "written"],
-      "contextLabels": ["work", "paperwork"],
+      "topics": [
+        "work-and-jobs"
+      ],
+      "usageLabels": [
+        "formal",
+        "written"
+      ],
+      "contextLabels": [
+        "work",
+        "paperwork"
+      ],
       "grammarNotes": [
         "Often appears with the verb \"schreiben\" or \"einreichen\" in formal job contexts."
       ],
       "collocations": [
-        { "text": "eine Bewerbung schreiben", "meaning": "to write a job application" }
+        {
+          "text": "eine Bewerbung schreiben",
+          "meaning": "to write a job application"
+        }
       ],
       "wordFamilies": [
-        { "lemma": "bewerben", "relationLabel": "Verb", "note": "to apply for something" }
+        {
+          "lemma": "bewerben",
+          "relationLabel": "Verb",
+          "note": "to apply for something"
+        }
       ],
       "relations": [
-        { "kind": "synonym", "lemma": "Antrag", "note": "formal related application term" }
+        {
+          "kind": "synonym",
+          "lemma": "Antrag",
+          "note": "formal related application term"
+        }
       ],
       "meanings": [
-        { "language": "en", "text": "job application" },
-        { "language": "fa", "text": "درخواست کار" },
-        { "language": "ru", "text": "заявление о приёме на работу" },
-        { "language": "ar", "text": "طلب عمل" },
-        { "language": "pl", "text": "podanie o pracę" },
-        { "language": "tr", "text": "iş başvurusu" },
-        { "language": "ro", "text": "cerere de angajare" },
-        { "language": "sq", "text": "aplikim për punë" },
-        { "language": "ckb", "text": "داواکاری کار" },
-        { "language": "kmr", "text": "serlêdana karê" }
+        {
+          "language": "en",
+          "text": "job application"
+        },
+        {
+          "language": "fa",
+          "text": "درخواست کار"
+        },
+        {
+          "language": "ru",
+          "text": "заявление о приёме на работу"
+        },
+        {
+          "language": "ar",
+          "text": "طلب عمل"
+        },
+        {
+          "language": "pl",
+          "text": "podanie o pracę"
+        },
+        {
+          "language": "tr",
+          "text": "iş başvurusu"
+        },
+        {
+          "language": "ro",
+          "text": "cerere de angajare"
+        },
+        {
+          "language": "sq",
+          "text": "aplikim për punë"
+        },
+        {
+          "language": "ckb",
+          "text": "داواکاری کار"
+        },
+        {
+          "language": "kmr",
+          "text": "serlêdana karê"
+        }
       ],
       "examples": [
         {
           "baseText": "Die Bewerbung ist fertig.",
           "translations": [
-            { "language": "en", "text": "The job application is ready." }
+            {
+              "language": "ar",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "ckb",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "en",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "fa",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "kmr",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "pl",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "ro",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "ru",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "sq",
+              "text": "The job application is ready."
+            },
+            {
+              "language": "tr",
+              "text": "The job application is ready."
+            }
           ]
         }
       ]
@@ -128,38 +389,125 @@
       "partOfSpeech": "Noun",
       "article": "der",
       "plural": "Termine",
-      "topics": ["appointments-and-health"],
-      "usageLabels": ["formal"],
-      "contextLabels": ["doctor", "paperwork"],
+      "topics": [
+        "appointments-and-health"
+      ],
+      "usageLabels": [
+        "formal"
+      ],
+      "contextLabels": [
+        "doctor",
+        "paperwork"
+      ],
       "grammarNotes": [
         "Commonly used with verbs like \"vereinbaren\" and \"haben\"."
       ],
       "collocations": [
-        { "text": "einen Termin vereinbaren", "meaning": "to arrange an appointment" }
+        {
+          "text": "einen Termin vereinbaren",
+          "meaning": "to arrange an appointment"
+        }
       ],
       "wordFamilies": [
-        { "lemma": "terminlich", "relationLabel": "Adjective", "note": "related to scheduling" }
+        {
+          "lemma": "terminlich",
+          "relationLabel": "Adjective",
+          "note": "related to scheduling"
+        }
       ],
       "relations": [
-        { "kind": "synonym", "lemma": "Verabredung", "note": "appointment in everyday language" }
+        {
+          "kind": "synonym",
+          "lemma": "Verabredung",
+          "note": "appointment in everyday language"
+        }
       ],
       "meanings": [
-        { "language": "en", "text": "appointment" },
-        { "language": "fa", "text": "قرار" },
-        { "language": "ru", "text": "встреча по записи" },
-        { "language": "ar", "text": "موعد" },
-        { "language": "pl", "text": "termin" },
-        { "language": "tr", "text": "randevu" },
-        { "language": "ro", "text": "programare" },
-        { "language": "sq", "text": "takim i caktuar" },
-        { "language": "ckb", "text": "وعدە" },
-        { "language": "kmr", "text": "randevû" }
+        {
+          "language": "en",
+          "text": "appointment"
+        },
+        {
+          "language": "fa",
+          "text": "قرار"
+        },
+        {
+          "language": "ru",
+          "text": "встреча по записи"
+        },
+        {
+          "language": "ar",
+          "text": "موعد"
+        },
+        {
+          "language": "pl",
+          "text": "termin"
+        },
+        {
+          "language": "tr",
+          "text": "randevu"
+        },
+        {
+          "language": "ro",
+          "text": "programare"
+        },
+        {
+          "language": "sq",
+          "text": "takim i caktuar"
+        },
+        {
+          "language": "ckb",
+          "text": "وعدە"
+        },
+        {
+          "language": "kmr",
+          "text": "randevû"
+        }
       ],
       "examples": [
         {
           "baseText": "Ich habe morgen einen Termin.",
           "translations": [
-            { "language": "en", "text": "I have an appointment tomorrow." }
+            {
+              "language": "ar",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "ckb",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "en",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "fa",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "kmr",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "pl",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "ro",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "ru",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "sq",
+              "text": "I have an appointment tomorrow."
+            },
+            {
+              "language": "tr",
+              "text": "I have an appointment tomorrow."
+            }
           ]
         }
       ]
@@ -169,24 +517,95 @@
       "language": "de",
       "cefrLevel": "B1",
       "partOfSpeech": "Verb",
-      "topics": ["work-and-jobs"],
+      "topics": [
+        "work-and-jobs"
+      ],
       "meanings": [
-        { "language": "en", "text": "to achieve" },
-        { "language": "fa", "text": "به دست آوردن" },
-        { "language": "ru", "text": "достигать" },
-        { "language": "ar", "text": "يحقق" },
-        { "language": "pl", "text": "osiągać" },
-        { "language": "tr", "text": "başarmak" },
-        { "language": "ro", "text": "a realiza" },
-        { "language": "sq", "text": "të arrish" },
-        { "language": "ckb", "text": "دەست پێگەیشتن" },
-        { "language": "kmr", "text": "bigihîştin" }
+        {
+          "language": "en",
+          "text": "to achieve"
+        },
+        {
+          "language": "fa",
+          "text": "به دست آوردن"
+        },
+        {
+          "language": "ru",
+          "text": "достигать"
+        },
+        {
+          "language": "ar",
+          "text": "يحقق"
+        },
+        {
+          "language": "pl",
+          "text": "osiągać"
+        },
+        {
+          "language": "tr",
+          "text": "başarmak"
+        },
+        {
+          "language": "ro",
+          "text": "a realiza"
+        },
+        {
+          "language": "sq",
+          "text": "të arrish"
+        },
+        {
+          "language": "ckb",
+          "text": "دەست پێگەیشتن"
+        },
+        {
+          "language": "kmr",
+          "text": "bigihîştin"
+        }
       ],
       "examples": [
         {
           "baseText": "Wir wollen unser Ziel erreichen.",
           "translations": [
-            { "language": "en", "text": "We want to achieve our goal." }
+            {
+              "language": "ar",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "ckb",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "en",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "fa",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "kmr",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "pl",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "ro",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "ru",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "sq",
+              "text": "We want to achieve our goal."
+            },
+            {
+              "language": "tr",
+              "text": "We want to achieve our goal."
+            }
           ]
         }
       ]
@@ -198,24 +617,95 @@
       "partOfSpeech": "Noun",
       "article": "die",
       "plural": "Umgebungen",
-      "topics": ["housing"],
+      "topics": [
+        "housing"
+      ],
       "meanings": [
-        { "language": "en", "text": "surroundings" },
-        { "language": "fa", "text": "محیط اطراف" },
-        { "language": "ru", "text": "окружение" },
-        { "language": "ar", "text": "المنطقة المحيطة" },
-        { "language": "pl", "text": "otoczenie" },
-        { "language": "tr", "text": "çevre" },
-        { "language": "ro", "text": "împrejurimi" },
-        { "language": "sq", "text": "rrethina" },
-        { "language": "ckb", "text": "دەوروبەر" },
-        { "language": "kmr", "text": "dorûber" }
+        {
+          "language": "en",
+          "text": "surroundings"
+        },
+        {
+          "language": "fa",
+          "text": "محیط اطراف"
+        },
+        {
+          "language": "ru",
+          "text": "окружение"
+        },
+        {
+          "language": "ar",
+          "text": "المنطقة المحيطة"
+        },
+        {
+          "language": "pl",
+          "text": "otoczenie"
+        },
+        {
+          "language": "tr",
+          "text": "çevre"
+        },
+        {
+          "language": "ro",
+          "text": "împrejurimi"
+        },
+        {
+          "language": "sq",
+          "text": "rrethina"
+        },
+        {
+          "language": "ckb",
+          "text": "دەوروبەر"
+        },
+        {
+          "language": "kmr",
+          "text": "dorûber"
+        }
       ],
       "examples": [
         {
           "baseText": "Die Umgebung ist sehr ruhig.",
           "translations": [
-            { "language": "en", "text": "The surroundings are very quiet." }
+            {
+              "language": "ar",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "ckb",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "en",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "fa",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "kmr",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "pl",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "ro",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "ru",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "sq",
+              "text": "The surroundings are very quiet."
+            },
+            {
+              "language": "tr",
+              "text": "The surroundings are very quiet."
+            }
           ]
         }
       ]
@@ -225,24 +715,95 @@
       "language": "de",
       "cefrLevel": "B2",
       "partOfSpeech": "Adjective",
-      "topics": ["work-and-jobs"],
+      "topics": [
+        "work-and-jobs"
+      ],
       "meanings": [
-        { "language": "en", "text": "reliable" },
-        { "language": "fa", "text": "قابل اعتماد" },
-        { "language": "ru", "text": "надёжный" },
-        { "language": "ar", "text": "موثوق" },
-        { "language": "pl", "text": "niezawodny" },
-        { "language": "tr", "text": "güvenilir" },
-        { "language": "ro", "text": "de încredere" },
-        { "language": "sq", "text": "i besueshëm" },
-        { "language": "ckb", "text": "جێمتمانە" },
-        { "language": "kmr", "text": "bawermend" }
+        {
+          "language": "en",
+          "text": "reliable"
+        },
+        {
+          "language": "fa",
+          "text": "قابل اعتماد"
+        },
+        {
+          "language": "ru",
+          "text": "надёжный"
+        },
+        {
+          "language": "ar",
+          "text": "موثوق"
+        },
+        {
+          "language": "pl",
+          "text": "niezawodny"
+        },
+        {
+          "language": "tr",
+          "text": "güvenilir"
+        },
+        {
+          "language": "ro",
+          "text": "de încredere"
+        },
+        {
+          "language": "sq",
+          "text": "i besueshëm"
+        },
+        {
+          "language": "ckb",
+          "text": "جێمتمانە"
+        },
+        {
+          "language": "kmr",
+          "text": "bawermend"
+        }
       ],
       "examples": [
         {
           "baseText": "Sie ist eine zuverlässige Kollegin.",
           "translations": [
-            { "language": "en", "text": "She is a reliable colleague." }
+            {
+              "language": "ar",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "ckb",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "en",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "fa",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "kmr",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "pl",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "ro",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "ru",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "sq",
+              "text": "She is a reliable colleague."
+            },
+            {
+              "language": "tr",
+              "text": "She is a reliable colleague."
+            }
           ]
         }
       ]
@@ -252,26 +813,102 @@
       "language": "de",
       "cefrLevel": "B2",
       "partOfSpeech": "Verb",
-      "topics": ["appointments-and-health"],
-      "usageLabels": ["formal", "written"],
-      "contextLabels": ["paperwork"],
+      "topics": [
+        "appointments-and-health"
+      ],
+      "usageLabels": [
+        "formal",
+        "written"
+      ],
+      "contextLabels": [
+        "paperwork"
+      ],
       "meanings": [
-        { "language": "en", "text": "to apply for" },
-        { "language": "fa", "text": "درخواست کردن" },
-        { "language": "ru", "text": "подавать заявление на" },
-        { "language": "ar", "text": "يتقدم بطلب" },
-        { "language": "pl", "text": "wnioskować o" },
-        { "language": "tr", "text": "başvurmak" },
-        { "language": "ro", "text": "a solicita" },
-        { "language": "sq", "text": "të aplikosh për" },
-        { "language": "ckb", "text": "داوا کردن" },
-        { "language": "kmr", "text": "daxwaz kirin" }
+        {
+          "language": "en",
+          "text": "to apply for"
+        },
+        {
+          "language": "fa",
+          "text": "درخواست کردن"
+        },
+        {
+          "language": "ru",
+          "text": "подавать заявление на"
+        },
+        {
+          "language": "ar",
+          "text": "يتقدم بطلب"
+        },
+        {
+          "language": "pl",
+          "text": "wnioskować o"
+        },
+        {
+          "language": "tr",
+          "text": "başvurmak"
+        },
+        {
+          "language": "ro",
+          "text": "a solicita"
+        },
+        {
+          "language": "sq",
+          "text": "të aplikosh për"
+        },
+        {
+          "language": "ckb",
+          "text": "داوا کردن"
+        },
+        {
+          "language": "kmr",
+          "text": "daxwaz kirin"
+        }
       ],
       "examples": [
         {
           "baseText": "Sie möchte eine neue Karte beantragen.",
           "translations": [
-            { "language": "en", "text": "She wants to apply for a new card." }
+            {
+              "language": "ar",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "ckb",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "en",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "fa",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "kmr",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "pl",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "ro",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "ru",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "sq",
+              "text": "She wants to apply for a new card."
+            },
+            {
+              "language": "tr",
+              "text": "She wants to apply for a new card."
+            }
           ]
         }
       ]
@@ -283,24 +920,95 @@
       "partOfSpeech": "Noun",
       "article": "der",
       "plural": "Sachverhalte",
-      "topics": ["appointments-and-health"],
+      "topics": [
+        "appointments-and-health"
+      ],
       "meanings": [
-        { "language": "en", "text": "circumstance" },
-        { "language": "fa", "text": "وضعیت موضوع" },
-        { "language": "ru", "text": "обстоятельство дела" },
-        { "language": "ar", "text": "حيثيات الأمر" },
-        { "language": "pl", "text": "stan faktyczny" },
-        { "language": "tr", "text": "durumun ayrıntısı" },
-        { "language": "ro", "text": "situație de fapt" },
-        { "language": "sq", "text": "rrethanë konkrete" },
-        { "language": "ckb", "text": "بارودۆخی بابەت" },
-        { "language": "kmr", "text": "rewşa mijarê" }
+        {
+          "language": "en",
+          "text": "circumstance"
+        },
+        {
+          "language": "fa",
+          "text": "وضعیت موضوع"
+        },
+        {
+          "language": "ru",
+          "text": "обстоятельство дела"
+        },
+        {
+          "language": "ar",
+          "text": "حيثيات الأمر"
+        },
+        {
+          "language": "pl",
+          "text": "stan faktyczny"
+        },
+        {
+          "language": "tr",
+          "text": "durumun ayrıntısı"
+        },
+        {
+          "language": "ro",
+          "text": "situație de fapt"
+        },
+        {
+          "language": "sq",
+          "text": "rrethanë konkrete"
+        },
+        {
+          "language": "ckb",
+          "text": "بارودۆخی بابەت"
+        },
+        {
+          "language": "kmr",
+          "text": "rewşa mijarê"
+        }
       ],
       "examples": [
         {
           "baseText": "Der Sachverhalt muss genau geprüft werden.",
           "translations": [
-            { "language": "en", "text": "The circumstance must be examined carefully." }
+            {
+              "language": "ar",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "ckb",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "en",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "fa",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "kmr",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "pl",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "ro",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "ru",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "sq",
+              "text": "The circumstance must be examined carefully."
+            },
+            {
+              "language": "tr",
+              "text": "The circumstance must be examined carefully."
+            }
           ]
         }
       ]
@@ -310,24 +1018,95 @@
       "language": "de",
       "cefrLevel": "C1",
       "partOfSpeech": "Verb",
-      "topics": ["work-and-jobs"],
+      "topics": [
+        "work-and-jobs"
+      ],
       "meanings": [
-        { "language": "en", "text": "to convey" },
-        { "language": "fa", "text": "منتقل کردن" },
-        { "language": "ru", "text": "доносить" },
-        { "language": "ar", "text": "ينقل" },
-        { "language": "pl", "text": "przekazywać" },
-        { "language": "tr", "text": "iletmek" },
-        { "language": "ro", "text": "a transmite" },
-        { "language": "sq", "text": "të përcjellësh" },
-        { "language": "ckb", "text": "گواستنەوە" },
-        { "language": "kmr", "text": "veguhestin" }
+        {
+          "language": "en",
+          "text": "to convey"
+        },
+        {
+          "language": "fa",
+          "text": "منتقل کردن"
+        },
+        {
+          "language": "ru",
+          "text": "доносить"
+        },
+        {
+          "language": "ar",
+          "text": "ينقل"
+        },
+        {
+          "language": "pl",
+          "text": "przekazywać"
+        },
+        {
+          "language": "tr",
+          "text": "iletmek"
+        },
+        {
+          "language": "ro",
+          "text": "a transmite"
+        },
+        {
+          "language": "sq",
+          "text": "të përcjellësh"
+        },
+        {
+          "language": "ckb",
+          "text": "گواستنەوە"
+        },
+        {
+          "language": "kmr",
+          "text": "veguhestin"
+        }
       ],
       "examples": [
         {
           "baseText": "Der Lehrer kann komplizierte Ideen gut vermitteln.",
           "translations": [
-            { "language": "en", "text": "The teacher can convey complex ideas well." }
+            {
+              "language": "ar",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "ckb",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "en",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "fa",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "kmr",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "pl",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "ro",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "ru",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "sq",
+              "text": "The teacher can convey complex ideas well."
+            },
+            {
+              "language": "tr",
+              "text": "The teacher can convey complex ideas well."
+            }
           ]
         }
       ]
@@ -339,24 +1118,95 @@
       "partOfSpeech": "Noun",
       "article": "die",
       "plural": "Unabdingbarkeiten",
-      "topics": ["work-and-jobs"],
+      "topics": [
+        "work-and-jobs"
+      ],
       "meanings": [
-        { "language": "en", "text": "indispensability" },
-        { "language": "fa", "text": "اجتناب‌ناپذیری" },
-        { "language": "ru", "text": "необходимость" },
-        { "language": "ar", "text": "حتمية" },
-        { "language": "pl", "text": "nieodzowność" },
-        { "language": "tr", "text": "vazgeçilmezlik" },
-        { "language": "ro", "text": "indispensabilitate" },
-        { "language": "sq", "text": "domosdoshmëri" },
-        { "language": "ckb", "text": "پێویستی تەواو" },
-        { "language": "kmr", "text": "neçarbûn" }
+        {
+          "language": "en",
+          "text": "indispensability"
+        },
+        {
+          "language": "fa",
+          "text": "اجتناب‌ناپذیری"
+        },
+        {
+          "language": "ru",
+          "text": "необходимость"
+        },
+        {
+          "language": "ar",
+          "text": "حتمية"
+        },
+        {
+          "language": "pl",
+          "text": "nieodzowność"
+        },
+        {
+          "language": "tr",
+          "text": "vazgeçilmezlik"
+        },
+        {
+          "language": "ro",
+          "text": "indispensabilitate"
+        },
+        {
+          "language": "sq",
+          "text": "domosdoshmëri"
+        },
+        {
+          "language": "ckb",
+          "text": "پێویستی تەواو"
+        },
+        {
+          "language": "kmr",
+          "text": "neçarbûn"
+        }
       ],
       "examples": [
         {
           "baseText": "Die Unabdingbarkeit genauer Daten wurde betont.",
           "translations": [
-            { "language": "en", "text": "The indispensability of precise data was emphasized." }
+            {
+              "language": "ar",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "ckb",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "en",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "fa",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "kmr",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "pl",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "ro",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "ru",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "sq",
+              "text": "The indispensability of precise data was emphasized."
+            },
+            {
+              "language": "tr",
+              "text": "The indispensability of precise data was emphasized."
+            }
           ]
         }
       ]
@@ -366,92 +1216,94 @@
       "language": "de",
       "cefrLevel": "C2",
       "partOfSpeech": "Verb",
-      "topics": ["everyday-life"],
+      "topics": [
+        "everyday-life"
+      ],
       "meanings": [
-        { "language": "en", "text": "to devastate" },
-        { "language": "fa", "text": "خرد کردن روحی" },
-        { "language": "ru", "text": "сокрушать" },
-        { "language": "ar", "text": "يحطم نفسياً" },
-        { "language": "pl", "text": "zdruzgotać" },
-        { "language": "tr", "text": "yıkmak" },
-        { "language": "ro", "text": "a devasta" },
-        { "language": "sq", "text": "të shkatërrosh moralisht" },
-        { "language": "ckb", "text": "شکاندنی دەروونی" },
-        { "language": "kmr", "text": "hilweşandin" }
+        {
+          "language": "en",
+          "text": "to devastate"
+        },
+        {
+          "language": "fa",
+          "text": "خرد کردن روحی"
+        },
+        {
+          "language": "ru",
+          "text": "сокрушать"
+        },
+        {
+          "language": "ar",
+          "text": "يحطم نفسياً"
+        },
+        {
+          "language": "pl",
+          "text": "zdruzgotać"
+        },
+        {
+          "language": "tr",
+          "text": "yıkmak"
+        },
+        {
+          "language": "ro",
+          "text": "a devasta"
+        },
+        {
+          "language": "sq",
+          "text": "të shkatërrosh moralisht"
+        },
+        {
+          "language": "ckb",
+          "text": "شکاندنی دەروونی"
+        },
+        {
+          "language": "kmr",
+          "text": "hilweşandin"
+        }
       ],
       "examples": [
         {
           "baseText": "Die Nachricht hat ihn niedergeschmettert.",
           "translations": [
-            { "language": "en", "text": "The news devastated him." }
-          ]
-        }
-      ]
-    }
-  ],
-  "scenarios": [
-    {
-      "slug": "a1-buy-bread-test",
-      "title": "Buy Bread",
-      "description": "A simple bakery scenario used by package export tests.",
-      "learnerGoal": "Ask for bread and understand the price.",
-      "cefrLevel": "A1",
-      "category": "shopping-and-food",
-      "topics": ["shopping"],
-      "sortOrder": 10,
-      "dialogueTurns": [
-        {
-          "speakerRole": "seller",
-          "baseText": "Was möchten Sie?",
-          "translations": [
-            { "language": "en", "text": "What would you like?" },
-            { "language": "fa", "text": "چه چیزی می‌خواهید؟" }
-          ]
-        },
-        {
-          "speakerRole": "learner",
-          "baseText": "Ich möchte ein Brot, bitte.",
-          "translations": [
-            { "language": "en", "text": "I would like one bread, please." },
-            { "language": "fa", "text": "یک نان می‌خواهم، لطفاً." }
-          ]
-        }
-      ],
-      "usefulPhrases": [
-        {
-          "baseText": "Ich möchte ein Brot, bitte.",
-          "usageNote": "Use for a polite bakery order.",
-          "translations": [
-            { "language": "en", "text": "I would like one bread, please." },
-            { "language": "fa", "text": "یک نان می‌خواهم، لطفاً." }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "prompt": "Was kauft die Person?",
-          "translations": [
-            { "language": "en", "text": "What does the person buy?" },
-            { "language": "fa", "text": "آن شخص چه چیزی می‌خرد؟" }
-          ],
-          "answers": [
             {
-              "text": "Ein Brot.",
-              "isCorrect": true,
-              "feedback": "Correct.",
-              "translations": [
-                { "language": "en", "text": "One bread." },
-                { "language": "fa", "text": "یک نان." }
-              ]
+              "language": "ar",
+              "text": "The news devastated him."
             },
             {
-              "text": "Ein Wasser.",
-              "isCorrect": false,
-              "feedback": "That is a drink, not bread.",
-              "translations": [
-                { "language": "en", "text": "One water." },
-                { "language": "fa", "text": "یک آب." }
-              ]
+              "language": "ckb",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "en",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "fa",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "kmr",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "pl",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "ro",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "ru",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "sq",
+              "text": "The news devastated him."
+            },
+            {
+              "language": "tr",
+              "text": "The news devastated him."
             }
           ]
         }
@@ -468,10 +1320,13 @@
       "situation": "cafe",
       "tone": "friendly",
       "conversationGoal": "asking-questions",
-      "topics": ["shopping"],
+      "topics": [
+        "shopping"
+      ],
       "sortOrder": 10,
-      "linkedScenarioSlugs": ["a1-buy-bread-test"],
-      "linkedEventPreparationPackSlugs": ["a1-bakery-visit-prep"],
+      "linkedEventPreparationPackSlugs": [
+        "a1-bakery-visit-prep"
+      ],
       "phrases": [
         {
           "baseText": "Guten Tag, ich möchte ein Brot.",
@@ -479,13 +1334,56 @@
           "register": "neutral",
           "usageNote": "Use as a polite first line at the counter.",
           "sortOrder": 1,
-          "alternativeBaseTexts": ["Hallo, ich möchte ein Brot."],
+          "alternativeBaseTexts": [
+            "Hallo, ich möchte ein Brot."
+          ],
           "commonMistake": "Use möchte for a polite request.",
           "translations": [
-            { "language": "en", "text": "Hello, I would like one bread." },
-            { "language": "fa", "text": "سلام، من یک نان می‌خواهم." }
+            {
+              "language": "ar",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "ckb",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "en",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "fa",
+              "text": "سلام، من یک نان می‌خواهم."
+            },
+            {
+              "language": "kmr",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "pl",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "ro",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "ru",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "sq",
+              "text": "Hello, I would like one bread."
+            },
+            {
+              "language": "tr",
+              "text": "Hello, I would like one bread."
+            }
           ]
         }
+      ],
+      "linkedDialogueSlugs": [
+        "a1-buy-bread-test"
       ]
     }
   ],
@@ -497,16 +1395,837 @@
       "cefrLevel": "A1",
       "category": "shopping-and-food",
       "eventType": "conversation-cafe",
-      "topics": ["shopping"],
-      "sortOrder": 10,
-      "linkedScenarioSlugs": ["a1-buy-bread-test"],
-      "linkedVocabulary": [
-        { "word": "Brot", "partOfSpeech": "Noun", "cefrLevel": "A1" }
+      "topics": [
+        "shopping"
       ],
-      "linkedConversationStarterPackSlugs": ["a1-bakery-order-starters"],
-      "openingPrompts": ["Say hello and ask for one bread."],
-      "roleplayPrompts": ["Practice ordering bread at a counter."],
-      "reviewPrompts": ["Write the phrase you used to order politely."]
+      "sortOrder": 10,
+      "linkedVocabulary": [
+        {
+          "word": "Brot",
+          "partOfSpeech": "Noun",
+          "cefrLevel": "A1"
+        }
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "a1-bakery-order-starters"
+      ],
+      "openingPrompts": [
+        "Say hello and ask for one bread."
+      ],
+      "roleplayPrompts": [
+        "Practice ordering bread at a counter."
+      ],
+      "reviewPrompts": [
+        "Write the phrase you used to order politely."
+      ],
+      "linkedDialogueSlugs": [
+        "a1-buy-bread-test"
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "kind": "context",
+      "key": "daily-life",
+      "displayName": "Daily Life",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "ar",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "ckb",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "en",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "fa",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "kmr",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "pl",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "ro",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "ru",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "sq",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        },
+        {
+          "language": "tr",
+          "name": "Daily Life",
+          "description": "daily-life label"
+        }
+      ],
+      "sortOrder": 10
+    },
+    {
+      "kind": "context",
+      "key": "doctor",
+      "displayName": "Doctor",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "ar",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "ckb",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "en",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "fa",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "kmr",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "pl",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "ro",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "ru",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "sq",
+          "name": "Doctor",
+          "description": "doctor label"
+        },
+        {
+          "language": "tr",
+          "name": "Doctor",
+          "description": "doctor label"
+        }
+      ],
+      "sortOrder": 20
+    },
+    {
+      "kind": "usage",
+      "key": "formal",
+      "displayName": "Formal",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "ar",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "ckb",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "en",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "fa",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "kmr",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "pl",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "ro",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "ru",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "sq",
+          "name": "Formal",
+          "description": "formal label"
+        },
+        {
+          "language": "tr",
+          "name": "Formal",
+          "description": "formal label"
+        }
+      ],
+      "sortOrder": 30
+    },
+    {
+      "kind": "usage",
+      "key": "informal",
+      "displayName": "Informal",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "ar",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "ckb",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "en",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "fa",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "kmr",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "pl",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "ro",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "ru",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "sq",
+          "name": "Informal",
+          "description": "informal label"
+        },
+        {
+          "language": "tr",
+          "name": "Informal",
+          "description": "informal label"
+        }
+      ],
+      "sortOrder": 40
+    },
+    {
+      "kind": "context",
+      "key": "paperwork",
+      "displayName": "Paperwork",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "ar",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "ckb",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "en",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "fa",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "kmr",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "pl",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "ro",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "ru",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "sq",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        },
+        {
+          "language": "tr",
+          "name": "Paperwork",
+          "description": "paperwork label"
+        }
+      ],
+      "sortOrder": 50
+    },
+    {
+      "kind": "context",
+      "key": "shopping",
+      "displayName": "Shopping",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "ar",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "ckb",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "en",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "fa",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "kmr",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "pl",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "ro",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "ru",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "sq",
+          "name": "Shopping",
+          "description": "shopping label"
+        },
+        {
+          "language": "tr",
+          "name": "Shopping",
+          "description": "shopping label"
+        }
+      ],
+      "sortOrder": 60
+    },
+    {
+      "kind": "context",
+      "key": "work",
+      "displayName": "Work",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "ar",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "ckb",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "en",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "fa",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "kmr",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "pl",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "ro",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "ru",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "sq",
+          "name": "Work",
+          "description": "work label"
+        },
+        {
+          "language": "tr",
+          "name": "Work",
+          "description": "work label"
+        }
+      ],
+      "sortOrder": 70
+    },
+    {
+      "kind": "usage",
+      "key": "written",
+      "displayName": "Written",
+      "localizations": [
+        {
+          "language": "de",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "ar",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "ckb",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "en",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "fa",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "kmr",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "pl",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "ro",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "ru",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "sq",
+          "name": "Written",
+          "description": "written label"
+        },
+        {
+          "language": "tr",
+          "name": "Written",
+          "description": "written label"
+        }
+      ],
+      "sortOrder": 80
+    }
+  ],
+  "dialogues": [
+    {
+      "slug": "a1-buy-bread-test",
+      "title": "Buy Bread",
+      "description": "A simple bakery scenario used by package export tests.",
+      "learnerGoal": "Ask for bread and understand the price.",
+      "cefrLevel": "A1",
+      "category": "shopping-and-food",
+      "topics": [
+        "shopping"
+      ],
+      "sortOrder": 10,
+      "dialogueTurns": [
+        {
+          "speakerRole": "seller",
+          "baseText": "Was möchten Sie?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "What would you like?"
+            },
+            {
+              "language": "ckb",
+              "text": "What would you like?"
+            },
+            {
+              "language": "en",
+              "text": "What would you like?"
+            },
+            {
+              "language": "fa",
+              "text": "چه چیزی می‌خواهید؟"
+            },
+            {
+              "language": "kmr",
+              "text": "What would you like?"
+            },
+            {
+              "language": "pl",
+              "text": "What would you like?"
+            },
+            {
+              "language": "ro",
+              "text": "What would you like?"
+            },
+            {
+              "language": "ru",
+              "text": "What would you like?"
+            },
+            {
+              "language": "sq",
+              "text": "What would you like?"
+            },
+            {
+              "language": "tr",
+              "text": "What would you like?"
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Ich möchte ein Brot, bitte.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "ckb",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "en",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "fa",
+              "text": "یک نان می‌خواهم، لطفاً."
+            },
+            {
+              "language": "kmr",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "pl",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "ro",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "ru",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "sq",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "tr",
+              "text": "I would like one bread, please."
+            }
+          ]
+        }
+      ],
+      "usefulPhrases": [
+        {
+          "baseText": "Ich möchte ein Brot, bitte.",
+          "usageNote": "Use for a polite bakery order.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "ckb",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "en",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "fa",
+              "text": "یک نان می‌خواهم، لطفاً."
+            },
+            {
+              "language": "kmr",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "pl",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "ro",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "ru",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "sq",
+              "text": "I would like one bread, please."
+            },
+            {
+              "language": "tr",
+              "text": "I would like one bread, please."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Was kauft die Person?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "ckb",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "en",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "fa",
+              "text": "آن شخص چه چیزی می‌خرد؟"
+            },
+            {
+              "language": "kmr",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "pl",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "ro",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "ru",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "sq",
+              "text": "What does the person buy?"
+            },
+            {
+              "language": "tr",
+              "text": "What does the person buy?"
+            }
+          ],
+          "answers": [
+            {
+              "text": "Ein Brot.",
+              "isCorrect": true,
+              "feedback": "Correct.",
+              "translations": [
+                {
+                  "language": "ar",
+                  "text": "One bread."
+                },
+                {
+                  "language": "ckb",
+                  "text": "One bread."
+                },
+                {
+                  "language": "en",
+                  "text": "One bread."
+                },
+                {
+                  "language": "fa",
+                  "text": "یک نان."
+                },
+                {
+                  "language": "kmr",
+                  "text": "One bread."
+                },
+                {
+                  "language": "pl",
+                  "text": "One bread."
+                },
+                {
+                  "language": "ro",
+                  "text": "One bread."
+                },
+                {
+                  "language": "ru",
+                  "text": "One bread."
+                },
+                {
+                  "language": "sq",
+                  "text": "One bread."
+                },
+                {
+                  "language": "tr",
+                  "text": "One bread."
+                }
+              ]
+            },
+            {
+              "text": "Ein Wasser.",
+              "isCorrect": false,
+              "feedback": "That is a drink, not bread.",
+              "translations": [
+                {
+                  "language": "ar",
+                  "text": "One water."
+                },
+                {
+                  "language": "ckb",
+                  "text": "One water."
+                },
+                {
+                  "language": "en",
+                  "text": "One water."
+                },
+                {
+                  "language": "fa",
+                  "text": "یک آب."
+                },
+                {
+                  "language": "kmr",
+                  "text": "One water."
+                },
+                {
+                  "language": "pl",
+                  "text": "One water."
+                },
+                {
+                  "language": "ro",
+                  "text": "One water."
+                },
+                {
+                  "language": "ru",
+                  "text": "One water."
+                },
+                {
+                  "language": "sq",
+                  "text": "One water."
+                },
+                {
+                  "language": "tr",
+                  "text": "One water."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

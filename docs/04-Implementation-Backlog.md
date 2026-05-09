@@ -175,9 +175,10 @@ Phase 1 is complete when the repository contains a usable local-first MAUI app a
 - [x] implement `ClearWordKnownState`
 - [x] implement `ClearWordDifficultState`
 - [x] implement `ImportContentPackage`
-- [x] implement Talk Topic import parsing, validation, persistence, query, WebApi read endpoints, and Web learner pages
+- [x] implement Talk Topic import parsing, validation, persistence, query, WebApi read endpoints, Web learner pages, and catalog package export
 - [ ] add mobile Talk Topic parity after the Web flow is signed off
-- [ ] expand automated Talk Topic coverage for persistence, filters, endpoints, rendering, localization, and package export
+- [x] add first automated Talk Topic import validation, persistence, export, and endpoint smoke coverage
+- [ ] expand automated Talk Topic coverage for Web rendering, localization, unresolved vocabulary links, and additional query filter combinations
 
 ### 12. MAUI Screens
 
@@ -602,9 +603,9 @@ Each dialogue practice lesson should support:
   - Test backlog: remaining Web coverage is itemized in `71-Web-Test-Backlog.md` and is owned by the separate test-development workflow.
 - [x] add initial sample dialogues for A1/A2 learners
 
-#### Future Scenario Feature
+#### Talk Topics
 
-The future `Scenarios` feature is separate from dialogue practice. It should contain a topic, article-style German text, discussion questions for group conversation, and linked vocabulary that points to canonical word detail URLs.
+`Talk Topics` are separate from dialogue practice. They contain a topic, article-style German text, warm-up and discussion questions for group conversation, speaking goals, optional sensitivity metadata, and linked vocabulary that points to canonical word detail URLs.
 
 ---
 

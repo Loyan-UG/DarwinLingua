@@ -5,6 +5,7 @@ using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
 namespace DarwinLingua.WebApi.Tests;
@@ -14,20 +15,21 @@ public sealed class WordsControllerDualMeaningLanguageTests
     [Fact]
     public async Task Detail_ShouldPassResolvedSecondaryMeaningLanguageToApiAndViewModel()
     {
-        Guid wordId = Guid.NewGuid();
-        CapturingCatalogApiClient catalogApiClient = new(CreateWordDetail(wordId));
+        CapturingCatalogApiClient catalogApiClient = new(CreateWordDetail(Guid.NewGuid()));
         StaticFeatureAccessService featureAccessService = new("fa");
         WordsController controller = new(
             catalogApiClient,
             new StaticFavoriteWordService(false),
-            new StaticWordStateService(wordId),
+            new StaticWordStateService(catalogApiClient.WordPublicId),
             new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
-            featureAccessService)
+            featureAccessService,
+            new TestStringLocalizer(),
+            NullLogger<WordsController>.Instance)
         {
-            Url = new StaticUrlHelper($"/words/{wordId:D}"),
+            Url = new StaticUrlHelper("/words/brot"),
         };
 
-        IActionResult actionResult = await controller.Detail(wordId, CancellationToken.None);
+        IActionResult actionResult = await controller.Detail("brot", CancellationToken.None);
 
         ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
         WordDetailPageViewModel viewModel = Assert.IsType<WordDetailPageViewModel>(viewResult.Model);
@@ -39,19 +41,20 @@ public sealed class WordsControllerDualMeaningLanguageTests
     [Fact]
     public async Task Detail_ShouldOmitSecondaryMeaningLanguage_WhenFeatureIsUnavailable()
     {
-        Guid wordId = Guid.NewGuid();
-        CapturingCatalogApiClient catalogApiClient = new(CreateWordDetail(wordId));
+        CapturingCatalogApiClient catalogApiClient = new(CreateWordDetail(Guid.NewGuid()));
         WordsController controller = new(
             catalogApiClient,
             new StaticFavoriteWordService(false),
-            new StaticWordStateService(wordId),
+            new StaticWordStateService(catalogApiClient.WordPublicId),
             new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
-            new StaticFeatureAccessService(null))
+            new StaticFeatureAccessService(null),
+            new TestStringLocalizer(),
+            NullLogger<WordsController>.Instance)
         {
-            Url = new StaticUrlHelper($"/words/{wordId:D}"),
+            Url = new StaticUrlHelper("/words/brot"),
         };
 
-        IActionResult actionResult = await controller.Detail(wordId, CancellationToken.None);
+        IActionResult actionResult = await controller.Detail("brot", CancellationToken.None);
 
         ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
         WordDetailPageViewModel viewModel = Assert.IsType<WordDetailPageViewModel>(viewResult.Model);
@@ -84,14 +87,16 @@ public sealed class WordsControllerDualMeaningLanguageTests
             [new WordSenseDetailModel(null, "bread", "نان", [new ExampleSentenceDetailModel("Ich kaufe Brot.", "I buy bread.", "من نان می خرم.")])]);
     }
 
-    private sealed class CapturingCatalogApiClient(WordDetailModel wordDetail) : IWebCatalogApiClient
+    private sealed class CapturingCatalogApiClient(WordDetailModel wordDetail) : UnsupportedWebCatalogApiClient
     {
+        public Guid WordPublicId => wordDetail.PublicId;
+
         public string? PrimaryMeaningLanguageCode { get; private set; }
 
         public string? SecondaryMeaningLanguageCode { get; private set; }
 
-        public Task<WordDetailModel?> GetWordDetailsAsync(
-            Guid publicId,
+        public override Task<WordDetailModel?> GetWordDetailsBySlugAsync(
+            string slug,
             string primaryMeaningLanguageCode,
             string? secondaryMeaningLanguageCode,
             string uiLanguageCode,
@@ -101,56 +106,6 @@ public sealed class WordsControllerDualMeaningLanguageTests
             SecondaryMeaningLanguageCode = secondaryMeaningLanguageCode;
             return Task.FromResult<WordDetailModel?>(wordDetail);
         }
-
-        public Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordCollectionListItemModel>> GetCollectionsAsync(string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(string slug, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ScenarioLessonDetailModel?> GetScenarioBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(ConversationStarterListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForScenarioAsync(string scenarioSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(string scenarioSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(ConversationEventListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(string topicKey, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByCefrPageAsync(string cefrLevel, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> SearchWordsAsync(string query, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(IReadOnlyList<Guid> wordIds, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminDashboardViewModel> GetAdminDashboardAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminDraftWordsPageViewModel> GetAdminDraftWordsAsync(string? query, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminHistoryPageViewModel> GetAdminHistoryAsync(string? statusFilter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminRollbackPageViewModel> GetAdminRollbackPreviewAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(AdminSaveConversationEventRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(AdminSaveOrganizerProfileRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
     }
 
     private sealed class StaticLearningProfileAccessor(UserLearningProfileModel profile) : IWebLearningProfileAccessor
@@ -179,6 +134,9 @@ public sealed class WordsControllerDualMeaningLanguageTests
         public Task<bool> IsFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult(isFavorite);
 
         public Task ToggleFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.CompletedTask;
+
+        public Task<IReadOnlySet<Guid>> GetFavoriteWordIdsAsync(IReadOnlyCollection<Guid> wordPublicIds, CancellationToken cancellationToken) =>
+            Task.FromResult<IReadOnlySet<Guid>>(isFavorite ? wordPublicIds.ToHashSet() : new HashSet<Guid>());
 
         public Task<IReadOnlyList<FavoriteWordListItemModel>> GetFavoriteWordsAsync(string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
     }

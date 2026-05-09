@@ -1,3 +1,5 @@
+using DarwinLingua.SharedKernel.Globalization;
+
 namespace DarwinLingua.ContentOps.Application.Models;
 
 /// <summary>
@@ -13,6 +15,27 @@ public sealed record ParsedContentPackageModel(
     IReadOnlyList<ParsedContentLabelDefinitionModel> Labels,
     IReadOnlyList<ParsedContentCollectionModel> Collections)
 {
+    public ParsedContentPackageModel(
+        string packageVersion,
+        string packageId,
+        string packageName,
+        string? source,
+        IReadOnlyList<string> defaultMeaningLanguages,
+        IReadOnlyList<ParsedContentEntryModel> entries,
+        IReadOnlyList<ParsedContentCollectionModel> collections)
+        : this(packageVersion, packageId, packageName, source, defaultMeaningLanguages, entries, CreateCompatibilityLabels(), collections)
+    {
+    }
+
+    private static IReadOnlyList<ParsedContentLabelDefinitionModel> CreateCompatibilityLabels()
+    {
+        ParsedLocalizedTextModel[] localizations = ContentLanguageRequirements.RequiredLocalizationLanguageCodes
+            .Select(languageCode => new ParsedLocalizedTextModel(languageCode, "General", null))
+            .ToArray();
+
+        return [new ParsedContentLabelDefinitionModel("Usage", "general", "General", localizations, 10)];
+    }
+
     /// <summary>
     /// Gets parsed dialogue lessons included in the package.
     /// </summary>

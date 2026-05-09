@@ -126,24 +126,24 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     /// <summary>
-    /// Verifies that dual meaning-language packages surface incomplete translation coverage without blocking import.
+    /// Verifies that imports reject entries missing required meaning-language coverage.
     /// </summary>
     [Fact]
-    public async Task ImportAsync_ShouldWarn_WhenDualLanguageCoverageIsIncomplete()
+    public async Task ImportAsync_ShouldMarkEntryInvalid_WhenRequiredMeaningCoverageIsIncomplete()
     {
         ParsedContentPackageModel parsedPackage = new(
             "1.0",
             "test-package",
             "Test Package",
             "Manual",
-            ["en", "fa"],
-            [CreateValidEntry("Brot", "shopping")],
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [CreateEntryWithEnglishOnly("Brot", "shopping")],
             []);
 
         await using ServiceProvider serviceProvider = BuildServiceProvider(
             new StubFileReader("ignored"),
             new StubParser(_ => parsedPackage),
-            new FakeRepository(meaningLanguages: new HashSet<LanguageCode> { LanguageCode.From("en"), LanguageCode.From("fa") }));
+            new FakeRepository());
 
         IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
 
@@ -153,15 +153,9 @@ public sealed class ContentImportServiceApplicationTests
 
         Assert.True(result.IsSuccess);
         Assert.Equal("CompletedWithWarnings", result.Status);
-        Assert.Equal(1, result.ImportedEntries);
-        Assert.Equal(1, result.WarningCount);
         Assert.Contains(result.Issues, issue =>
-            issue.Severity == "Warning" &&
-            issue.Message.Contains("meaning translations", StringComparison.Ordinal) &&
-            issue.Message.Contains("fa", StringComparison.Ordinal));
-        Assert.Contains(result.Issues, issue =>
-            issue.Severity == "Warning" &&
-            issue.Message.Contains("example", StringComparison.Ordinal) &&
+            issue.Severity == "Error" &&
+            issue.Message.Contains("Missing required meaning languages", StringComparison.Ordinal) &&
             issue.Message.Contains("fa", StringComparison.Ordinal));
     }
 
@@ -531,25 +525,25 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     /// <summary>
-    /// Verifies that scenario lessons are validated at import boundaries before persistence support is added.
+    /// Verifies that dialogue lessons are validated at import boundaries before persistence support is added.
     /// </summary>
     [Fact]
-    public async Task ImportAsync_ShouldFail_WhenScenarioContractIsInvalid()
+    public async Task ImportAsync_ShouldFail_WhenDialogueContractIsInvalid()
     {
         ParsedContentPackageModel parsedPackage = new(
             "1.0",
-            "scenario-invalid-package",
-            "Scenario Invalid Package",
+            "dialogue-invalid-package",
+            "Dialogue Invalid Package",
             "Hybrid",
             ["en"],
             [CreateValidEntry("Brot", "shopping")],
             [])
         {
-            Scenarios =
+            Dialogues =
             [
-                new ParsedScenarioLessonModel(
-                    "doctor scenario",
-                    "Doctor Scenario",
+                new ParsedDialogueLessonModel(
+                    "doctor dialogue",
+                    "Doctor Dialogue",
                     "Prepare for a doctor appointment.",
                     "Ask for an appointment.",
                     "A1",
@@ -559,10 +553,10 @@ public sealed class ContentImportServiceApplicationTests
                     [],
                     [],
                     [
-                        new ParsedScenarioQuestionModel(
+                        new ParsedDialogueQuestionModel(
                             "Was braucht die Person?",
                             [new ParsedContentMeaningModel("en", "What does the person need?")],
-                            [new ParsedScenarioAnswerModel("Einen Termin.", [new ParsedContentMeaningModel("en", "An appointment.")], true, null)])
+                            [new ParsedDialogueAnswerModel("Einen Termin.", [new ParsedContentMeaningModel("en", "An appointment.")], true, null)])
                     ])
             ],
         };
@@ -575,14 +569,14 @@ public sealed class ContentImportServiceApplicationTests
         IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
 
         ImportContentPackageResult result = await service.ImportAsync(
-            new ImportContentPackageRequest("scenario-invalid.json"),
+            new ImportContentPackageRequest("dialogue-invalid.json"),
             CancellationToken.None);
 
         Assert.False(result.IsSuccess);
         Assert.Equal("Failed", result.Status);
         Assert.Contains(result.Issues, issue =>
             issue.Severity == "Error" &&
-            issue.Message.Contains("Scenario", StringComparison.Ordinal) &&
+            issue.Message.Contains("Dialogue", StringComparison.Ordinal) &&
             issue.Message.Contains("kebab-case", StringComparison.Ordinal));
         Assert.Contains(result.Issues, issue =>
             issue.Severity == "Error" &&
@@ -617,7 +611,7 @@ public sealed class ContentImportServiceApplicationTests
                     "introduction",
                     ["missing-topic"],
                     1,
-                    ["bad scenario"],
+                    ["bad-dialogue"],
                     [],
                     [
                         new ParsedConversationStarterPhraseModel(
@@ -681,7 +675,7 @@ public sealed class ContentImportServiceApplicationTests
                     "",
                     ["missing-topic"],
                     1,
-                    ["bad scenario"],
+                    ["bad-dialogue"],
                     [new ParsedEventPreparationVocabularyReferenceModel("", "UnknownPart", "Z9")],
                     ["bad starter"],
                     [""],
@@ -713,6 +707,164 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains(result.Issues, issue =>
             issue.Severity == "Error" &&
             issue.Message.Contains("linkedVocabulary", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation rejects articles below the CEFR minimum length.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenTalkTopicArticleIsTooShort()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic() with
+            {
+                Article = new ParsedTalkTopicArticleModel(
+                    "Zu kurz.",
+                    [new ParsedContentMeaningModel("en", "Too short.")]),
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-too-short.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Equal("Failed", result.Status);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("article.baseText", StringComparison.Ordinal) &&
+            issue.Message.Contains("at least 1000", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation rejects unknown content types.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenTalkTopicContentTypeIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic() with { ContentType = "worksheet" });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-invalid-content-type.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("contentType 'worksheet'", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation rejects unknown discussion question types.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenTalkTopicQuestionTypeIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic() with
+            {
+                DiscussionQuestions =
+                [
+                    new ParsedTalkTopicDiscussionQuestionModel(
+                        "Was denkst du?",
+                        "grammar-drill",
+                        [new ParsedContentMeaningModel("en", "What do you think?")],
+                        10),
+                ],
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-invalid-question-type.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("questionType is invalid", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation rejects unknown speaking goals.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenTalkTopicSpeakingGoalIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic() with { SpeakingGoals = ["memorize-grammar"] });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-invalid-speaking-goal.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("speakingGoal 'memorize-grammar' is invalid", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that valid Talk Topics are mapped to domain aggregates for persistence.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldPersistTalkTopicFields()
+    {
+        FakeRepository repository = new();
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(CreateValidTalkTopic());
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-valid.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        TalkTopic topic = Assert.Single(repository.ImportedTalkTopics);
+        Assert.Equal("a1-aliens", topic.Slug);
+        Assert.Equal("do-aliens-exist", topic.TopicGroupKey);
+        Assert.Equal(TalkTopicContentType.Article, topic.ContentType);
+        Assert.Equal(CefrLevel.A1, topic.CefrLevel);
+        Assert.Equal("science", topic.Category);
+        Assert.False(topic.IsSensitive);
+        Assert.Equal(5, topic.EstimatedReadingMinutes);
+        Assert.Equal(20, topic.EstimatedDiscussionMinutes);
+        Assert.NotEmpty(topic.ArticleTranslations);
+        Assert.Equal(2, topic.WarmupQuestions.Count);
+        Assert.Single(topic.DiscussionQuestions);
+        Assert.Single(topic.VocabularyItems);
+        Assert.Contains(topic.SpeakingGoals, goal => goal.SpeakingGoal == TalkTopicSpeakingGoal.ExpressOpinion);
     }
 
     /// <summary>
@@ -913,6 +1065,38 @@ public sealed class ContentImportServiceApplicationTests
 
     private static ParsedContentEntryModel CreateValidEntry(string word, string topicKey)
     {
+        ParsedContentMeaningModel[] meanings = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(languageCode => new ParsedContentMeaningModel(languageCode, $"meaning {languageCode}"))
+            .ToArray();
+
+        ParsedContentMeaningModel[] exampleTranslations = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(languageCode => new ParsedContentMeaningModel(languageCode, $"example {languageCode}"))
+            .ToArray();
+
+        return new ParsedContentEntryModel(
+            word,
+            "de",
+            "A1",
+            "Noun",
+            [],
+            [topicKey],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            meanings,
+            [new ParsedContentExampleModel("Ich kaufe Brot.", exampleTranslations)],
+            "der",
+            "Brote",
+            null,
+            null,
+            null);
+    }
+
+    private static ParsedContentEntryModel CreateEntryWithEnglishOnly(string word, string topicKey)
+    {
         return new ParsedContentEntryModel(
             word,
             "de",
@@ -933,6 +1117,107 @@ public sealed class ContentImportServiceApplicationTests
             null,
             null,
             null);
+    }
+
+    private static ParsedContentPackageModel CreatePackageWithTalkTopic(ParsedTalkTopicModel talkTopic)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "talk-topic-test-package",
+            "Talk Topic Test Package",
+            "Manual",
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [CreateStrictValidEntry("Welt", "shopping")],
+            [])
+        {
+            TalkTopics = [talkTopic],
+        };
+    }
+
+    private static ParsedContentEntryModel CreateStrictValidEntry(string word, string topicKey)
+    {
+        ParsedContentMeaningModel[] meanings = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(languageCode => new ParsedContentMeaningModel(languageCode, $"meaning {languageCode}"))
+            .ToArray();
+
+        ParsedContentMeaningModel[] exampleTranslations = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(languageCode => new ParsedContentMeaningModel(languageCode, $"example {languageCode}"))
+            .ToArray();
+
+        return new ParsedContentEntryModel(
+            word,
+            "de",
+            "A1",
+            "Noun",
+            [],
+            [topicKey],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            meanings,
+            [new ParsedContentExampleModel("Ich sehe die Welt.", exampleTranslations)],
+            "die",
+            null,
+            null,
+            null,
+            null);
+    }
+
+    private static ParsedTalkTopicModel CreateValidTalkTopic()
+    {
+        string article = string.Concat(Enumerable.Repeat(
+            "Viele Menschen schauen am Abend in den Himmel. Sie sehen Sterne, den Mond und manchmal ein helles Licht. " +
+            "Dann fragen sie sich: Gibt es Leben auf anderen Planeten? Diese Frage ist spannend, aber auch einfach. " +
+            "Wir wissen, dass das Weltall sehr gross ist. Es gibt viele Sterne und viele Planeten. Vielleicht gibt es dort Wasser. " +
+            "Vielleicht gibt es dort kleine Tiere, Pflanzen oder intelligente Wesen. Niemand in unserer Gruppe muss eine richtige Antwort haben. " +
+            "Wir koennen nur denken, fragen und miteinander sprechen. Einige Menschen glauben, dass Ausserirdische freundlich sind. " +
+            "Andere Menschen sind vorsichtig und sagen: Wir wissen zu wenig. In diesem Text geht es nicht um einen Test. " +
+            "Es geht um Ideen, Meinungen und Gruende. Die Gruppe kann langsam sprechen, einfache Saetze benutzen und nachfragen. ",
+            2));
+
+        return new ParsedTalkTopicModel(
+            "a1-aliens",
+            "do-aliens-exist",
+            "Gibt es Ausserirdische?",
+            "A simple Talk Topic about aliens and life in space.",
+            "A1",
+            "science",
+            ["shopping"],
+            "article",
+            new ParsedTalkTopicArticleModel(
+                article,
+                [new ParsedContentMeaningModel("en", "A simple article about aliens and life in space.")]),
+            [
+                new ParsedTalkTopicQuestionModel(
+                    "Magst du Filme ueber Ausserirdische?",
+                    [new ParsedContentMeaningModel("en", "Do you like films about aliens?")],
+                    10),
+                new ParsedTalkTopicQuestionModel(
+                    "Schaust du gern in den Nachthimmel?",
+                    [new ParsedContentMeaningModel("en", "Do you like looking at the night sky?")],
+                    20),
+            ],
+            [
+                new ParsedTalkTopicDiscussionQuestionModel(
+                    "Glaubst du, dass es Ausserirdische gibt?",
+                    "opinion",
+                    [new ParsedContentMeaningModel("en", "Do you believe aliens exist?")],
+                    10),
+            ],
+            [
+                new ParsedTalkTopicVocabularyItemModel("das Weltall", "das-weltall", "A2", 10),
+            ],
+            ["express-opinion", "give-reasons"],
+            5,
+            20,
+            false,
+            null,
+            false,
+            10,
+            true);
     }
 
     private sealed class ThrowingFileReader : IContentImportFileReader
@@ -973,6 +1258,8 @@ public sealed class ContentImportServiceApplicationTests
         IReadOnlyList<WordEntry>? existingWords = null,
         IReadOnlySet<LanguageCode>? meaningLanguages = null) : IContentImportRepository
     {
+        public IReadOnlyList<TalkTopic> ImportedTalkTopics { get; private set; } = [];
+
         public Task<IReadOnlyDictionary<string, Topic>> GetActiveTopicsByKeyAsync(CancellationToken cancellationToken)
         {
             Topic topic = new(Guid.NewGuid(), "shopping", 10, true, DateTime.UtcNow);
@@ -988,7 +1275,10 @@ public sealed class ContentImportServiceApplicationTests
 
         public Task<IReadOnlySet<LanguageCode>> GetActiveMeaningLanguagesAsync(CancellationToken cancellationToken)
         {
-            IReadOnlySet<LanguageCode> languages = meaningLanguages ?? new HashSet<LanguageCode> { LanguageCode.From("en") };
+            IReadOnlySet<LanguageCode> languages = meaningLanguages ??
+                ContentLanguageRequirements.RequiredMeaningLanguageCodes
+                    .Select(LanguageCode.From)
+                    .ToHashSet();
             return Task.FromResult(languages);
         }
 
@@ -999,8 +1289,6 @@ public sealed class ContentImportServiceApplicationTests
 
         public Task<bool> WordExistsAsync(
             string normalizedLemma,
-            PartOfSpeech partOfSpeech,
-            CefrLevel cefrLevel,
             CancellationToken cancellationToken)
         {
             return Task.FromResult(wordExists);
@@ -1016,13 +1304,16 @@ public sealed class ContentImportServiceApplicationTests
 
         public Task PersistImportAsync(
             ContentPackage contentPackage,
+            IReadOnlyList<LabelDefinition> importedLabelDefinitions,
             IReadOnlyList<WordEntry> importedWords,
             IReadOnlyList<WordCollection> importedCollections,
-            IReadOnlyList<ScenarioLesson> importedScenarios,
+            IReadOnlyList<DialogueLesson> importedDialogues,
+            IReadOnlyList<TalkTopic> importedTalkTopics,
             IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
             IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
             CancellationToken cancellationToken)
         {
+            ImportedTalkTopics = importedTalkTopics;
             return Task.CompletedTask;
         }
     }

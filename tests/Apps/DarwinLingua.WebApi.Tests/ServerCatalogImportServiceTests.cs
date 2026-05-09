@@ -86,7 +86,7 @@ public sealed class ServerCatalogImportServiceTests
                 new AdminImportCatalogRequest(fixturePath, "darwin-deutsch"),
                 CancellationToken.None);
 
-            Assert.True(response.IsSuccess);
+            Assert.True(response.IsSuccess, string.Join(Environment.NewLine, response.IssueMessages));
             Assert.Equal(12, response.ImportedEntries);
             Assert.Equal(8, response.StagedPackageIds.Count);
             Assert.False(string.IsNullOrWhiteSpace(response.DraftPublicationBatchId));
@@ -112,25 +112,25 @@ public sealed class ServerCatalogImportServiceTests
             string fullCatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.StagedPackageIds.Single(packageId => packageId.Contains("catalog-full", StringComparison.Ordinal)));
             Assert.True(File.Exists($"{fullCatalogPath}.json"));
             using JsonDocument fullCatalogJson = JsonDocument.Parse(await File.ReadAllTextAsync($"{fullCatalogPath}.json"));
-            JsonElement fullCatalogScenarios = fullCatalogJson.RootElement.GetProperty("Scenarios");
-            Assert.Equal(1, fullCatalogScenarios.GetArrayLength());
-            Assert.Equal("a1-buy-bread-test", fullCatalogScenarios[0].GetProperty("Slug").GetString());
+            JsonElement fullCatalogDialogues = fullCatalogJson.RootElement.GetProperty("Dialogues");
+            Assert.Equal(1, fullCatalogDialogues.GetArrayLength());
+            Assert.Equal("a1-buy-bread-test", fullCatalogDialogues[0].GetProperty("Slug").GetString());
             JsonElement fullCatalogStarterPacks = fullCatalogJson.RootElement.GetProperty("ConversationStarterPacks");
             Assert.Equal(1, fullCatalogStarterPacks.GetArrayLength());
             Assert.Equal("a1-bakery-order-starters", fullCatalogStarterPacks[0].GetProperty("Slug").GetString());
-            Assert.Equal("a1-buy-bread-test", fullCatalogStarterPacks[0].GetProperty("LinkedScenarioSlugs")[0].GetString());
+            Assert.Equal("a1-buy-bread-test", fullCatalogStarterPacks[0].GetProperty("LinkedDialogueSlugs")[0].GetString());
             Assert.Equal("a1-bakery-visit-prep", fullCatalogStarterPacks[0].GetProperty("LinkedEventPreparationPackSlugs")[0].GetString());
             JsonElement fullCatalogPreparationPacks = fullCatalogJson.RootElement.GetProperty("EventPreparationPacks");
             Assert.Equal(1, fullCatalogPreparationPacks.GetArrayLength());
             Assert.Equal("a1-bakery-visit-prep", fullCatalogPreparationPacks[0].GetProperty("Slug").GetString());
-            Assert.Equal("a1-buy-bread-test", fullCatalogPreparationPacks[0].GetProperty("LinkedScenarioSlugs")[0].GetString());
+            Assert.Equal("a1-buy-bread-test", fullCatalogPreparationPacks[0].GetProperty("LinkedDialogueSlugs")[0].GetString());
             Assert.Equal("Brot", fullCatalogPreparationPacks[0].GetProperty("LinkedVocabulary")[0].GetProperty("Word").GetString());
             Assert.Equal("a1-bakery-order-starters", fullCatalogPreparationPacks[0].GetProperty("LinkedConversationStarterPackSlugs")[0].GetString());
             Assert.Equal("Say hello and ask for one bread.", fullCatalogPreparationPacks[0].GetProperty("OpeningPrompts")[0].GetString());
 
             string a1CatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.StagedPackageIds.Single(packageId => packageId.Contains("catalog-a1", StringComparison.Ordinal)));
             using JsonDocument a1CatalogJson = JsonDocument.Parse(await File.ReadAllTextAsync($"{a1CatalogPath}.json"));
-            Assert.Equal(1, a1CatalogJson.RootElement.GetProperty("Scenarios").GetArrayLength());
+            Assert.Equal(1, a1CatalogJson.RootElement.GetProperty("Dialogues").GetArrayLength());
             Assert.Equal(1, a1CatalogJson.RootElement.GetProperty("ConversationStarterPacks").GetArrayLength());
             Assert.Equal(1, a1CatalogJson.RootElement.GetProperty("EventPreparationPacks").GetArrayLength());
 

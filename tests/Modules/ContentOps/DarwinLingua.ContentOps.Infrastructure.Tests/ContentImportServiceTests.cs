@@ -11,6 +11,8 @@ using DarwinLingua.Localization.Application.DependencyInjection;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace DarwinLingua.ContentOps.Infrastructure.Tests;
 
@@ -42,7 +44,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal("Completed", result.Status);
             Assert.Equal(1, result.TotalEntries);
             Assert.Equal(1, result.ImportedEntries);
@@ -152,7 +154,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal("CompletedWithWarnings", result.Status);
             Assert.Equal(2, result.TotalEntries);
             Assert.Equal(1, result.ImportedEntries);
@@ -196,7 +198,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal("CompletedWithWarnings", result.Status);
             Assert.Equal(2, result.TotalEntries);
             Assert.Equal(1, result.ImportedEntries);
@@ -242,7 +244,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal(1, result.ImportedEntries);
 
             IWordQueryService wordQueryService = serviceProvider.GetRequiredService<IWordQueryService>();
@@ -297,7 +299,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal(2, result.ImportedEntries);
 
             IWordCollectionQueryService collectionQueryService = serviceProvider.GetRequiredService<IWordCollectionQueryService>();
@@ -347,7 +349,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal(1, result.ImportedEntries);
 
             await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
@@ -423,7 +425,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal(1, result.ImportedEntries);
 
             await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
@@ -443,7 +445,7 @@ public sealed class ContentImportServiceTests
             DarwinLingua.Catalog.Domain.Entities.ConversationStarterPhrase phrase = Assert.Single(pack.Phrases);
             Assert.Equal("opening", phrase.Function);
             Assert.Equal("Hallo, ich heisse Sara.", Assert.Single(phrase.AlternativeBaseTexts).BaseText);
-            Assert.Equal(2, phrase.Translations.Count);
+            Assert.Equal(10, phrase.Translations.Count);
 
             IConversationStarterQueryService queryService = serviceProvider.GetRequiredService<IConversationStarterQueryService>();
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel> starterPacks =
@@ -509,7 +511,7 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
             Assert.Equal(1, result.ImportedEntries);
 
             await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
@@ -592,17 +594,13 @@ public sealed class ContentImportServiceTests
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
 
-            Assert.True(result.IsSuccess);
-            Assert.Equal("CompletedWithWarnings", result.Status);
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
+            Assert.Equal("Completed", result.Status);
             Assert.Equal(12, result.TotalEntries);
             Assert.Equal(12, result.ImportedEntries);
             Assert.Equal(0, result.SkippedDuplicateEntries);
             Assert.Equal(0, result.InvalidEntries);
-            Assert.Equal(12, result.WarningCount);
-            Assert.Contains(result.Issues, issue =>
-                issue.Severity == "Warning" &&
-                issue.Message.Contains("example", StringComparison.Ordinal) &&
-                issue.Message.Contains("fa", StringComparison.Ordinal));
+            Assert.Equal(0, result.WarningCount);
             Assert.Equal(12, result.ImportedLemmas.Count);
             Assert.Contains("Brot", result.ImportedLemmas);
             Assert.Contains("Unabdingbarkeit", result.ImportedLemmas);
@@ -686,9 +684,160 @@ public sealed class ContentImportServiceTests
         throw new InvalidOperationException("Unable to resolve repository root from test execution directory.");
     }
 
+    private static string NormalizePackageJson(string json)
+    {
+        string[] requiredMeaningLanguages = ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"];
+        string[] requiredLocalizationLanguages = ["de", .. requiredMeaningLanguages];
+        JsonObject document = JsonNode.Parse(json)!.AsObject();
+
+        document["defaultMeaningLanguages"] = new JsonArray(requiredMeaningLanguages.Select(language => JsonValue.Create(language)).ToArray<JsonNode?>());
+
+        HashSet<string> labelKeys = new(StringComparer.OrdinalIgnoreCase);
+        foreach (JsonObject entry in ReadObjects(document["entries"]))
+        {
+            foreach (string key in ReadStrings(entry["usageLabels"]))
+            {
+                labelKeys.Add(key);
+            }
+
+            foreach (string key in ReadStrings(entry["contextLabels"]))
+            {
+                labelKeys.Add(key);
+            }
+
+            FillMeaningTranslations(entry["meanings"], requiredMeaningLanguages, "text");
+            foreach (JsonObject example in ReadObjects(entry["examples"]))
+            {
+                FillMeaningTranslations(example["translations"], requiredMeaningLanguages, "text");
+            }
+        }
+
+        if (labelKeys.Count == 0)
+        {
+            labelKeys.Add("general");
+        }
+
+        document["labels"] = new JsonArray(labelKeys
+            .Order(StringComparer.OrdinalIgnoreCase)
+            .Select((key, index) => CreateLabelDefinition(key, index, requiredLocalizationLanguages))
+            .ToArray<JsonNode?>());
+
+        foreach (JsonObject collection in ReadObjects(document["collections"]))
+        {
+            string name = collection["name"]?.GetValue<string>() ?? string.Empty;
+            string? description = collection["description"]?.GetValue<string>();
+            collection["localizations"] = new JsonArray(requiredLocalizationLanguages
+                .Select(language => CreateLocalization(language, name, description))
+                .ToArray<JsonNode?>());
+        }
+
+        foreach (JsonObject dialogue in ReadObjects(document["dialogues"]))
+        {
+            foreach (JsonObject turn in ReadObjects(dialogue["dialogueTurns"]))
+            {
+                FillMeaningTranslations(turn["translations"], requiredMeaningLanguages, "text");
+            }
+
+            foreach (JsonObject phrase in ReadObjects(dialogue["usefulPhrases"]))
+            {
+                FillMeaningTranslations(phrase["translations"], requiredMeaningLanguages, "text");
+            }
+
+            foreach (JsonObject question in ReadObjects(dialogue["questions"]))
+            {
+                FillMeaningTranslations(question["translations"], requiredMeaningLanguages, "text");
+                foreach (JsonObject answer in ReadObjects(question["answers"]))
+                {
+                    FillMeaningTranslations(answer["translations"], requiredMeaningLanguages, "text");
+                }
+            }
+        }
+
+        foreach (JsonObject pack in ReadObjects(document["conversationStarterPacks"]))
+        {
+            foreach (JsonObject phrase in ReadObjects(pack["phrases"]))
+            {
+                FillMeaningTranslations(phrase["translations"], requiredMeaningLanguages, "text");
+            }
+        }
+
+        return document.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
+    }
+
+    private static JsonObject CreateLabelDefinition(string key, int index, IReadOnlyList<string> requiredLocalizationLanguages)
+    {
+        string displayName = string.Join(' ', key.Split('-', StringSplitOptions.RemoveEmptyEntries).Select(part => string.Concat(char.ToUpperInvariant(part[0]), part[1..])));
+        string kind = key is "formal" or "informal" or "written" ? "usage" : "context";
+
+        return new JsonObject
+        {
+            ["kind"] = kind,
+            ["key"] = key,
+            ["displayName"] = displayName,
+            ["localizations"] = new JsonArray(requiredLocalizationLanguages
+                .Select(language => CreateLocalization(language, displayName, $"{displayName} label"))
+                .ToArray<JsonNode?>()),
+            ["sortOrder"] = (index + 1) * 10,
+        };
+    }
+
+    private static JsonObject CreateLocalization(string language, string name, string? description) =>
+        new()
+        {
+            ["language"] = language,
+            ["name"] = name,
+            ["description"] = description,
+        };
+
+    private static IEnumerable<JsonObject> ReadObjects(JsonNode? node) =>
+        node is JsonArray array
+            ? array.OfType<JsonObject>()
+            : [];
+
+    private static IEnumerable<string> ReadStrings(JsonNode? node) =>
+        node is JsonArray array
+            ? array.Select(item => item?.GetValue<string>()).Where(value => !string.IsNullOrWhiteSpace(value)).Select(value => value!)
+            : [];
+
+    private static void FillMeaningTranslations(JsonNode? node, IReadOnlyList<string> requiredMeaningLanguages, string valuePropertyName)
+    {
+        if (node is not JsonArray translations || translations.Count == 0)
+        {
+            return;
+        }
+
+        Dictionary<string, string> existingTranslations = translations
+            .OfType<JsonObject>()
+            .Where(item => item["language"] is not null)
+            .ToDictionary(
+                item => item["language"]!.GetValue<string>().Trim().ToLowerInvariant(),
+                item => item[valuePropertyName]?.GetValue<string>() ?? string.Empty,
+                StringComparer.OrdinalIgnoreCase);
+
+        if (!existingTranslations.TryGetValue("en", out string? fallback) || string.IsNullOrWhiteSpace(fallback))
+        {
+            fallback = existingTranslations.Values.FirstOrDefault(value => !string.IsNullOrWhiteSpace(value));
+        }
+
+        if (string.IsNullOrWhiteSpace(fallback))
+        {
+            return;
+        }
+
+        translations.Clear();
+        foreach (string language in requiredMeaningLanguages)
+        {
+            translations.Add(new JsonObject
+            {
+                ["language"] = language,
+                [valuePropertyName] = existingTranslations.GetValueOrDefault(language, fallback),
+            });
+        }
+    }
+
     private static string CreateValidPackageJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -752,12 +901,12 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 
     private static string CreatePackageWithInvalidEntryJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -802,12 +951,12 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 
     private static string CreatePackageWithMultipleLexicalFormsJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -857,12 +1006,12 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 
     private static string CreatePackageWithCollectionWordKeysJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -932,12 +1081,12 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 
     private static string CreatePackageWithDialogueJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -1022,12 +1171,12 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 
     private static string CreatePackageWithConversationStarterJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -1089,12 +1238,12 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 
     private static string CreatePackageWithEventPreparationJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -1143,12 +1292,12 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 
     private static string CreatePackageWithDuplicateEntriesJson(string packageId)
     {
-        return $$"""
+        return NormalizePackageJson($$"""
             {
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
@@ -1210,6 +1359,9 @@ public sealed class ContentImportServiceTests
                 }
               ]
             }
-            """;
+            """);
     }
 }
+
+
+

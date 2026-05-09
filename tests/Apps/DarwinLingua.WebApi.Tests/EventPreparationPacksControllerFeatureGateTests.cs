@@ -3,6 +3,7 @@ using DarwinLingua.Web.Controllers;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
 namespace DarwinLingua.WebApi.Tests;
@@ -14,7 +15,9 @@ public sealed class EventPreparationPacksControllerFeatureGateTests
     {
         EventPreparationPacksController controller = new(
             new StaticCatalogApiClient(),
-            new StaticFeatureAccessService(canUseEventPreparationPacks: false));
+            new StaticFeatureAccessService(canUseEventPreparationPacks: false),
+            NullLogger<EventPreparationPacksController>.Instance,
+            new TestStringLocalizer());
 
         IActionResult actionResult = await controller.Detail("a1-cafe-first-meeting-prep", CancellationToken.None);
 
@@ -27,7 +30,9 @@ public sealed class EventPreparationPacksControllerFeatureGateTests
         StaticCatalogApiClient catalogApiClient = new(CreatePreparationPack());
         EventPreparationPacksController controller = new(
             catalogApiClient,
-            new StaticFeatureAccessService(canUseEventPreparationPacks: true));
+            new StaticFeatureAccessService(canUseEventPreparationPacks: true),
+            NullLogger<EventPreparationPacksController>.Instance,
+            new TestStringLocalizer());
 
         IActionResult actionResult = await controller.Detail("a1-cafe-first-meeting-prep", CancellationToken.None);
 
@@ -51,65 +56,15 @@ public sealed class EventPreparationPacksControllerFeatureGateTests
             [new EventPreparationVocabularyReferenceModel("Hallo", null, "A1")],
             [new EventPreparationPromptModel("opening", "Say hello and introduce yourself.")]);
 
-    private sealed class StaticCatalogApiClient(EventPreparationPackDetailModel? preparationPack = null) : IWebCatalogApiClient
+    private sealed class StaticCatalogApiClient(EventPreparationPackDetailModel? preparationPack = null) : UnsupportedWebCatalogApiClient
     {
         public string? RequestedSlug { get; private set; }
 
-        public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, CancellationToken cancellationToken)
+        public override Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, CancellationToken cancellationToken)
         {
             RequestedSlug = slug;
             return Task.FromResult(preparationPack);
         }
-
-        public Task<IReadOnlyList<TopicListItemModel>> GetTopicsAsync(string uiLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordCollectionListItemModel>> GetCollectionsAsync(string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(string slug, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ScenarioLessonListItemModel>> GetScenariosAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ScenarioLessonDetailModel?> GetScenarioBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(ConversationStarterListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForScenarioAsync(string scenarioSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForScenarioAsync(string scenarioSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(ConversationEventListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(string topicKey, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByCefrPageAsync(string cefrLevel, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> SearchWordsAsync(string query, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<WordDetailModel?> GetWordDetailsAsync(Guid publicId, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, string uiLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(IReadOnlyList<Guid> wordIds, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminDashboardViewModel> GetAdminDashboardAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminDraftWordsPageViewModel> GetAdminDraftWordsAsync(string? query, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminHistoryPageViewModel> GetAdminHistoryAsync(string? statusFilter, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<AdminRollbackPageViewModel> GetAdminRollbackPreviewAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(AdminSaveConversationEventRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
-
-        public Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(AdminSaveOrganizerProfileRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
     }
 
     private sealed class StaticFeatureAccessService(bool canUseEventPreparationPacks) : IWebEntitledFeatureAccessService

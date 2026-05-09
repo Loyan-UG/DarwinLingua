@@ -40,15 +40,16 @@ Latest local Web verification:
 ### Talk Topics
 
 - [x] Import parser accepts valid `talkTopics` package contracts.
-- [ ] Import validation rejects too-short German articles by CEFR level.
-- [ ] Import validation rejects invalid content type, question type, and speaking goal values.
-- [ ] Persistence stores article, translations, questions, vocabulary references, speaking goals, content type, and sensitivity fields.
+- [x] Import validation rejects too-short German articles by CEFR level.
+- [x] Import validation rejects invalid content type, question type, and speaking goal values.
+- [x] Persistence stores article, translations, questions, vocabulary references, speaking goals, content type, and sensitivity fields.
 - [ ] List query filters by CEFR level, category, topic, content type, speaking goal, and sensitivity.
 - [ ] Detail query resolves vocabulary references against the Word Catalog where possible.
-- [ ] WebApi list/detail endpoints return the expected Talk Topic payloads.
+- [x] WebApi list/detail endpoints return successful Talk Topic payloads in smoke coverage.
 - [ ] Web detail rendering does not fail when a vocabulary `wordSlug` cannot be resolved.
 - [ ] German and English localization keys cover Talk Topics, content types, speaking goals, and sensitivity warnings.
-- [ ] Mobile catalog package export includes Talk Topics where expected.
+- [x] Catalog package export includes Talk Topics where expected.
+- [ ] Mobile UI parity for Talk Topics after the Web flow is signed off.
 
 ### Dialogue Learning
 

@@ -142,6 +142,21 @@ public sealed class CatalogPackagePublisher(
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        List<TalkTopic> activeTalkTopics = await catalogDbContext.TalkTopics
+            .AsNoTracking()
+            .AsSplitQuery()
+            .Where(topic => topic.PublicationStatus == PublicationStatus.Active)
+            .Include(topic => topic.Topics)
+            .Include(topic => topic.ArticleTranslations)
+            .Include(topic => topic.Questions)
+                .ThenInclude(question => question.Translations)
+            .Include(topic => topic.VocabularyItems)
+            .Include(topic => topic.SpeakingGoals)
+            .OrderBy(topic => topic.SortOrder)
+            .ThenBy(topic => topic.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
         DateTimeOffset now = DateTimeOffset.UtcNow;
         string version = now.ToString("yyyy.MM.dd.HHmmss.fff");
         string versionToken = now.ToString("yyyyMMddHHmmssfff");
@@ -154,7 +169,8 @@ public sealed class CatalogPackagePublisher(
             words,
             activeDialogues,
             activeConversationStarterPacks,
-            activeEventPreparationPacks);
+            activeEventPreparationPacks,
+            activeTalkTopics);
         List<string> publishedPackageIds = [];
 
         foreach (PackagePublicationDefinition definition in definitions)
@@ -176,6 +192,7 @@ public sealed class CatalogPackagePublisher(
                 definition.Dialogues,
                 definition.ConversationStarterPacks,
                 definition.EventPreparationPacks,
+                definition.TalkTopics,
                 activeCollections,
                 topicKeys);
 
@@ -221,7 +238,8 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<WordEntry> words,
         IReadOnlyList<DialogueLesson> dialogues,
         IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
-        IReadOnlyList<EventPreparationPack> eventPreparationPacks)
+        IReadOnlyList<EventPreparationPack> eventPreparationPacks,
+        IReadOnlyList<TalkTopic> talkTopics)
     {
         List<PackagePublicationDefinition> definitions =
         [
@@ -234,7 +252,8 @@ public sealed class CatalogPackagePublisher(
                 words,
                 dialogues,
                 conversationStarterPacks,
-                eventPreparationPacks),
+                eventPreparationPacks,
+                talkTopics),
             new(
                 $"{clientProductKey}-catalog-full-{versionToken}",
                 "Darwin Lingua Catalog",
@@ -244,7 +263,8 @@ public sealed class CatalogPackagePublisher(
                 words,
                 dialogues,
                 conversationStarterPacks,
-                eventPreparationPacks),
+                eventPreparationPacks,
+                talkTopics),
         ];
 
         foreach (IGrouping<string, WordEntry> group in words
@@ -272,6 +292,9 @@ public sealed class CatalogPackagePublisher(
                     .ToArray(),
                 eventPreparationPacks
                     .Where(pack => string.Equals(pack.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
+                    .ToArray(),
+                talkTopics
+                    .Where(topic => string.Equals(topic.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
                     .ToArray()));
         }
 
@@ -290,6 +313,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<DialogueLesson> dialogues,
         IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
         IReadOnlyList<EventPreparationPack> eventPreparationPacks,
+        IReadOnlyList<TalkTopic> talkTopics,
         IReadOnlyList<WordCollection> activeCollections,
         IReadOnlyDictionary<Guid, string> topicKeys)
     {
@@ -311,6 +335,7 @@ public sealed class CatalogPackagePublisher(
             dialogues.Select(dialogue => CreateDialogue(dialogue, topicKeys)).ToArray(),
             conversationStarterPacks.Select(pack => CreateConversationStarterPack(pack, topicKeys)).ToArray(),
             eventPreparationPacks.Select(pack => CreateEventPreparationPack(pack, topicKeys)).ToArray(),
+            talkTopics.Select(topic => CreateTalkTopic(topic, topicKeys)).ToArray(),
             words.Select(word => CreateEntry(word, topicKeys)).ToArray());
     }
 
@@ -592,6 +617,58 @@ public sealed class CatalogPackagePublisher(
                 .ToArray());
     }
 
+    private static ExportedTalkTopic CreateTalkTopic(TalkTopic topic, IReadOnlyDictionary<Guid, string> topicKeys)
+    {
+        return new ExportedTalkTopic(
+            topic.Slug,
+            topic.TopicGroupKey,
+            topic.Title,
+            topic.Description,
+            topic.CefrLevel.ToString(),
+            topic.Category,
+            FormatTalkTopicContentType(topic.ContentType),
+            topic.Topics
+                .OrderByDescending(link => link.IsPrimary)
+                .ThenBy(link => link.CreatedAtUtc)
+                .Select(link => topicKeys[link.TopicId])
+                .ToArray(),
+            topic.ArticleBaseText,
+            CreateTranslations(topic.ArticleTranslations),
+            topic.WarmupQuestions
+                .OrderBy(question => question.SortOrder)
+                .Select(question => new ExportedTalkTopicWarmupQuestion(
+                    question.Prompt,
+                    CreateTranslations(question.Translations),
+                    question.SortOrder))
+                .ToArray(),
+            topic.DiscussionQuestions
+                .OrderBy(question => question.SortOrder)
+                .Select(question => new ExportedTalkTopicDiscussionQuestion(
+                    question.Prompt,
+                    question.QuestionType.HasValue ? FormatTalkTopicQuestionType(question.QuestionType.Value) : string.Empty,
+                    CreateTranslations(question.Translations),
+                    question.SortOrder))
+                .ToArray(),
+            topic.VocabularyItems
+                .OrderBy(item => item.SortOrder)
+                .Select(item => new ExportedTalkTopicVocabularyItem(
+                    item.Lemma,
+                    item.WordSlug,
+                    item.CefrLevel?.ToString(),
+                    item.SortOrder))
+                .ToArray(),
+            topic.SpeakingGoals
+                .OrderBy(goal => goal.SortOrder)
+                .Select(goal => FormatTalkTopicSpeakingGoal(goal.SpeakingGoal))
+                .ToArray(),
+            topic.IsSensitive,
+            topic.SensitivityNote,
+            topic.RecommendedForModeratedGroupsOnly,
+            topic.EstimatedReadingMinutes,
+            topic.EstimatedDiscussionMinutes,
+            topic.SortOrder);
+    }
+
     private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<DialogueTranslationBase> translations)
     {
         return translations
@@ -611,6 +688,60 @@ public sealed class CatalogPackagePublisher(
                 translation.Text))
             .ToArray();
     }
+
+    private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<TalkTopicTranslationBase> translations)
+    {
+        return translations
+            .OrderBy(translation => translation.LanguageCode.Value, StringComparer.Ordinal)
+            .Select(translation => new ExportedMeaning(
+                translation.LanguageCode.Value,
+                translation.Text))
+            .ToArray();
+    }
+
+    private static string FormatTalkTopicContentType(TalkTopicContentType contentType) =>
+        contentType switch
+        {
+            TalkTopicContentType.Article => "article",
+            TalkTopicContentType.BookSummary => "book-summary",
+            TalkTopicContentType.MovieSummary => "movie-summary",
+            TalkTopicContentType.Story => "story",
+            TalkTopicContentType.FactSheet => "fact-sheet",
+            TalkTopicContentType.OpinionText => "opinion-text",
+            TalkTopicContentType.Interview => "interview",
+            TalkTopicContentType.DebateText => "debate-text",
+            _ => contentType.ToString(),
+        };
+
+    private static string FormatTalkTopicQuestionType(TalkTopicQuestionType questionType) =>
+        questionType switch
+        {
+            TalkTopicQuestionType.Opinion => "opinion",
+            TalkTopicQuestionType.PersonalExperience => "personal-experience",
+            TalkTopicQuestionType.Prediction => "prediction",
+            TalkTopicQuestionType.Comparison => "comparison",
+            TalkTopicQuestionType.Imagination => "imagination",
+            TalkTopicQuestionType.Debate => "debate",
+            TalkTopicQuestionType.Ethics => "ethics",
+            TalkTopicQuestionType.Comprehension => "comprehension",
+            _ => questionType.ToString(),
+        };
+
+    private static string FormatTalkTopicSpeakingGoal(TalkTopicSpeakingGoal speakingGoal) =>
+        speakingGoal switch
+        {
+            TalkTopicSpeakingGoal.ExpressOpinion => "express-opinion",
+            TalkTopicSpeakingGoal.GiveReasons => "give-reasons",
+            TalkTopicSpeakingGoal.AgreeDisagree => "agree-disagree",
+            TalkTopicSpeakingGoal.AskFollowUpQuestions => "ask-follow-up-questions",
+            TalkTopicSpeakingGoal.CompareOptions => "compare-options",
+            TalkTopicSpeakingGoal.MakePredictions => "make-predictions",
+            TalkTopicSpeakingGoal.DescribeExperiences => "describe-experiences",
+            TalkTopicSpeakingGoal.ImaginePossibilities => "imagine-possibilities",
+            TalkTopicSpeakingGoal.DebatePolitely => "debate-politely",
+            TalkTopicSpeakingGoal.SummarizePosition => "summarize-position",
+            _ => speakingGoal.ToString(),
+        };
 
     private static string ComputeSha256(string content)
     {
@@ -674,7 +805,8 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<WordEntry> Words,
         IReadOnlyList<DialogueLesson> Dialogues,
         IReadOnlyList<ConversationStarterPack> ConversationStarterPacks,
-        IReadOnlyList<EventPreparationPack> EventPreparationPacks);
+        IReadOnlyList<EventPreparationPack> EventPreparationPacks,
+        IReadOnlyList<TalkTopic> TalkTopics);
 
     private sealed record ExportedContentPackage(
         string PackageVersion,
@@ -690,6 +822,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<ExportedDialogueLesson> Dialogues,
         IReadOnlyList<ExportedConversationStarterPack> ConversationStarterPacks,
         IReadOnlyList<ExportedEventPreparationPack> EventPreparationPacks,
+        IReadOnlyList<ExportedTalkTopic> TalkTopics,
         IReadOnlyList<ExportedContentEntry> Entries);
 
     private sealed record ExportedContentCollection(
@@ -822,4 +955,43 @@ public sealed class CatalogPackagePublisher(
         string Word,
         string? PartOfSpeech,
         string? CefrLevel);
+
+    private sealed record ExportedTalkTopic(
+        string Slug,
+        string TopicGroupKey,
+        string Title,
+        string Description,
+        string CefrLevel,
+        string Category,
+        string ContentType,
+        IReadOnlyList<string> Topics,
+        string ArticleBaseText,
+        IReadOnlyList<ExportedMeaning> ArticleTranslations,
+        IReadOnlyList<ExportedTalkTopicWarmupQuestion> WarmupQuestions,
+        IReadOnlyList<ExportedTalkTopicDiscussionQuestion> DiscussionQuestions,
+        IReadOnlyList<ExportedTalkTopicVocabularyItem> VocabularyItems,
+        IReadOnlyList<string> SpeakingGoals,
+        bool IsSensitive,
+        string? SensitivityNote,
+        bool RecommendedForModeratedGroupsOnly,
+        int EstimatedReadingMinutes,
+        int EstimatedDiscussionMinutes,
+        int SortOrder);
+
+    private sealed record ExportedTalkTopicWarmupQuestion(
+        string Prompt,
+        IReadOnlyList<ExportedMeaning> Translations,
+        int SortOrder);
+
+    private sealed record ExportedTalkTopicDiscussionQuestion(
+        string Prompt,
+        string QuestionType,
+        IReadOnlyList<ExportedMeaning> Translations,
+        int SortOrder);
+
+    private sealed record ExportedTalkTopicVocabularyItem(
+        string Lemma,
+        string? WordSlug,
+        string? CefrLevel,
+        int SortOrder);
 }

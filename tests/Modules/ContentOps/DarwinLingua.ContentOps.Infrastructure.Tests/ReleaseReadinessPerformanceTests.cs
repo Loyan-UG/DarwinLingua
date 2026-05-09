@@ -132,6 +132,8 @@ public sealed class ReleaseReadinessPerformanceTests
     private static string CreateStarterDatasetPackageJson(string packageId)
     {
         List<object> entries = [];
+        string[] requiredMeaningLanguages = ["ar", "ckb", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"];
+        string[] requiredLocalizationLanguages = ["de", .. requiredMeaningLanguages];
 
         for (int index = 1; index <= StarterDatasetEntryCount; index++)
         {
@@ -153,27 +155,21 @@ public sealed class ReleaseReadinessPerformanceTests
                 article = "das",
                 plural = $"Starterwoerter {token}",
                 topics = new[] { topicKey },
-                meanings = new[]
+                meanings = requiredMeaningLanguages.Select(language => new
                 {
-                    new
-                    {
-                        language = "en",
-                        text = $"starter word {token}",
-                    },
-                },
+                    language,
+                    text = $"starter word {token}",
+                }),
                 examples = new[]
                 {
                     new
                     {
                         baseText = $"Das ist Starterwort {token}.",
-                        translations = new[]
+                        translations = requiredMeaningLanguages.Select(language => new
                         {
-                            new
-                            {
-                                language = "en",
-                                text = $"This is starter word {token}.",
-                            },
-                        },
+                            language,
+                            text = $"This is starter word {token}.",
+                        }),
                     },
                 },
             });
@@ -185,7 +181,23 @@ public sealed class ReleaseReadinessPerformanceTests
             packageId,
             packageName = "Phase 1 Starter Performance Package",
             source = "Hybrid",
-            defaultMeaningLanguages = new[] { "en" },
+            defaultMeaningLanguages = requiredMeaningLanguages,
+            labels = new[]
+            {
+                new
+                {
+                    kind = "usage",
+                    key = "general",
+                    displayName = "General",
+                    localizations = requiredLocalizationLanguages.Select(language => new
+                    {
+                        language,
+                        name = "General",
+                        description = "General label",
+                    }),
+                    sortOrder = 10,
+                },
+            },
             entries,
         });
     }
