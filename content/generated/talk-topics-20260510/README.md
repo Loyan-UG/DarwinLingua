@@ -6,6 +6,9 @@ This package set was refreshed after the first bulk import to improve determinis
 topic/category pairing and avoid mechanically repeated title endings such as
 `im Alltag im Alltag`.
 
+The current v4 package files also use article templates with German category
+names in the article text instead of internal category keys.
+
 ## Contents
 
 - `de-talk-topics-20260510-001.json` through `de-talk-topics-20260510-010.json`

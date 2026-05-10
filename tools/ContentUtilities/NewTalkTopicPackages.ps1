@@ -172,6 +172,7 @@ function Get-ContentType([string]$level, [int]$index) {
 
 function Get-CategoryForSubject([string]$subject) {
     switch -Regex ($subject) {
+        "soziale Medien" { return "social-media" }
         "Weltall|Weltraum" { return "space" }
         "Roboter|Technik|Datenschutz|Computerspiele" { return "technology" }
         "künstliche Intelligenz|Apps" { return "artificial-intelligence" }
@@ -205,6 +206,14 @@ function Get-CategoryForSubject([string]$subject) {
     }
 }
 
+function Convert-ToTitleStart([string]$value) {
+    if ([string]::IsNullOrWhiteSpace($value)) {
+        return $value
+    }
+
+    return $value.Substring(0, 1).ToUpperInvariant() + $value.Substring(1)
+}
+
 function Join-TopicTitle([string]$subject, [string]$category, [int]$variantIndex) {
     $angles = if ($anglesByCategory.ContainsKey($category)) { $anglesByCategory[$category] } else { $anglesByCategory["everyday-life"] }
     $angle = $angles[$variantIndex % $angles.Count]
@@ -212,22 +221,143 @@ function Join-TopicTitle([string]$subject, [string]$category, [int]$variantIndex
     $subjectLower = $subject.ToLowerInvariant()
     $angleLower = $angle.ToLowerInvariant()
     if ($subjectLower.EndsWith($angleLower) -or $subjectLower.Contains($angleLower)) {
-        return $subject
+        return Convert-ToTitleStart $subject
     }
 
-    return "$subject $angle"
+    return Convert-ToTitleStart "$subject $angle"
+}
+
+function Get-CategoryDisplay([string]$category) {
+    switch ($category) {
+        "science" { return "Wissenschaft" }
+        "technology" { return "Technik" }
+        "artificial-intelligence" { return "künstliche Intelligenz" }
+        "environment" { return "Umwelt" }
+        "climate" { return "Klima" }
+        "space" { return "Weltraum" }
+        "health" { return "Gesundheit" }
+        "psychology" { return "Psychologie" }
+        "society" { return "Gesellschaft" }
+        "politics" { return "Politik" }
+        "democracy" { return "Demokratie" }
+        "migration" { return "Migration" }
+        "culture" { return "Kultur" }
+        "history" { return "Geschichte" }
+        "sports" { return "Sport" }
+        "football" { return "Fußball" }
+        "cinema" { return "Kino" }
+        "books" { return "Bücher" }
+        "music" { return "Musik" }
+        "art" { return "Kunst" }
+        "education" { return "Bildung" }
+        "work" { return "Arbeit" }
+        "family" { return "Familie" }
+        "friendship" { return "Freundschaft" }
+        "food" { return "Essen" }
+        "travel" { return "Reisen" }
+        "city-life" { return "Stadtleben" }
+        "money" { return "Geld" }
+        "media" { return "Medien" }
+        "social-media" { return "soziale Medien" }
+        "ethics" { return "Ethik" }
+        "future" { return "Zukunft" }
+        "germany-and-integration" { return "Deutschland und Integration" }
+        "language-learning" { return "Sprachenlernen" }
+        default { return "Alltag" }
+    }
+}
+
+function Fit-ArticleLength([string]$text, [string]$level) {
+    $target = Get-ArticleTarget $level
+    $minimum = $target - 100
+    $maximum = $target + 100
+    $normalized = ($text -replace "\s+", " ").Trim()
+
+    $bridgeSentences = @(
+        "Diese Frage hilft der Gruppe, eigene Beispiele zu sammeln und genauer nachzufragen.",
+        "So entsteht ein Gespräch, in dem verschiedene Erfahrungen nebeneinander stehen können.",
+        "Am Ende müssen nicht alle die gleiche Meinung haben, aber alle sollten ihre Gründe nennen.",
+        "Wer zuhört und nachfragt, kann das Thema aus einer neuen Perspektive sehen."
+    )
+
+    $index = 0
+    while ($normalized.Length -lt $minimum) {
+        $normalized = "$normalized $($bridgeSentences[$index % $bridgeSentences.Count])"
+        $index++
+    }
+
+    if ($normalized.Length -gt $maximum) {
+        $candidate = $normalized.Substring(0, $maximum)
+        $lastSentenceEnd = $candidate.LastIndexOf(".")
+        if ($lastSentenceEnd -ge ($minimum - 1)) {
+            $normalized = $candidate.Substring(0, $lastSentenceEnd + 1).Trim()
+        }
+        else {
+            $normalized = $candidate.Trim()
+        }
+    }
+
+    return $normalized
 }
 
 function New-Article([string]$title, [string]$category, [string]$level, [string]$contentType) {
-    $target = Get-ArticleTarget $level
-    $simple = "Das Thema ""$title"" passt gut zu einem Talk Topic. Die Gruppe liest einen kurzen deutschen Text und spricht danach miteinander. Jede Person kann eine Meinung sagen, ein Beispiel nennen und eine Frage stellen. Das Thema gehoert zur Kategorie $category. Es verbindet Alltag, Erfahrung und Fantasie. "
-    $advanced = "Das Talk Topic ""$title"" eröffnet eine differenzierte Diskussion in der Kategorie $category. Der Text gibt keine fertige Lösung vor, sondern beschreibt Beobachtungen, Spannungen und mögliche Folgen. Lernende können Positionen vergleichen, Gründe abwägen, Beispiele aus ihrem Umfeld einbringen und respektvoll widersprechen. Der Inhaltstyp $contentType unterstützt eine offene, aber strukturierte Gruppendiskussion. "
-    $seed = if ($level -in @("A1", "A2")) { $simple } else { $advanced }
-    $text = ""
-    while ($text.Length -lt $target) {
-        $text += $seed
+    $categoryDisplay = Get-CategoryDisplay $category
+    if ($level -in @("A1", "A2")) {
+        $sentences = @(
+            "$title ist ein Thema aus dem Bereich $categoryDisplay.",
+            "Viele Menschen kennen dazu kleine Situationen aus ihrem Alltag.",
+            "Man kann zuerst sagen, was man sieht, hört oder erlebt.",
+            "Dann kann jede Person eine einfache Meinung sagen.",
+            "Eine Person sagt: Ich finde das gut.",
+            "Eine andere Person sagt: Ich bin nicht sicher.",
+            "Wichtig ist, langsam zu sprechen und freundlich zu fragen.",
+            "Die Gruppe kann Beispiele sammeln und neue Wörter benutzen.",
+            "Manchmal gibt es keine richtige Antwort.",
+            "Das ist gut, denn so können alle weiterreden.",
+            "Wer möchte, kann auch von der Familie, der Schule, der Arbeit oder der Stadt erzählen.",
+            "So wird aus dem Text ein ruhiges Gespräch auf Deutsch."
+        )
     }
-    return $text.Substring(0, $target).Trim()
+    elseif ($level -in @("B1", "B2")) {
+        $sentences = @(
+            "$title gehört zum Bereich $categoryDisplay und eignet sich gut für eine offene Diskussion.",
+            "Das Thema wirkt zuerst einfach, wird aber interessanter, wenn man konkrete Situationen betrachtet.",
+            "Einige Menschen achten vor allem auf praktische Vorteile, andere denken stärker an mögliche Probleme.",
+            "In einer Gesprächsgruppe können Lernende persönliche Erfahrungen, Beobachtungen aus den Medien und Beispiele aus ihrem Umfeld verbinden.",
+            "Hilfreich ist es, nicht nur Zustimmung oder Ablehnung zu zeigen, sondern auch Gründe zu nennen.",
+            "Man kann fragen, welche Regeln fair wären, welche Rolle Gewohnheiten spielen und was sich in Zukunft ändern könnte.",
+            "Auch Vergleiche sind nützlich: Ist die Situation in einer Familie anders als am Arbeitsplatz oder in einer Stadt?",
+            "Der Text soll keine fertige Lösung geben.",
+            "Er soll helfen, genauer zu formulieren, nachzufragen und verschiedene Positionen respektvoll nebeneinanderzustellen.",
+            "Am Ende kann die Gruppe zusammenfassen, welche Argumente besonders überzeugend waren."
+        )
+    }
+    else {
+        $sentences = @(
+            "$title eröffnet im Bereich $categoryDisplay eine vielschichtige Debatte, weil persönliche Erfahrungen, gesellschaftliche Interessen und langfristige Folgen zusammenkommen.",
+            "Wer darüber spricht, muss oft zwischen Bequemlichkeit, Verantwortung, Gerechtigkeit und realistischen Handlungsmöglichkeiten abwägen.",
+            "Gerade deshalb eignet sich das Thema für fortgeschrittene Lernende, die nicht nur berichten, sondern Positionen präzise begründen möchten.",
+            "Eine produktive Diskussion kann fragen, welche Annahmen hinter typischen Meinungen stehen und welche Gruppen von bestimmten Entscheidungen profitieren oder belastet werden.",
+            "Dabei lohnt sich der Blick auf Alltag, Institutionen, Medien und wirtschaftliche Rahmenbedingungen.",
+            "Je nach Perspektive kann dieselbe Entwicklung als Chance, Risiko oder notwendiger Kompromiss erscheinen.",
+            "Der Inhaltstyp $contentType gibt der Gruppe einen Rahmen, aber die wichtigsten Fragen entstehen im Gespräch selbst.",
+            "Teilnehmende können Beispiele vergleichen, Gegenargumente formulieren und prüfen, ob ihre erste Einschätzung stabil bleibt.",
+            "Gute Moderation hilft, pauschale Aussagen zu vermeiden und unterschiedliche Erfahrungen ernst zu nehmen.",
+            "Ziel ist nicht ein schneller Konsens, sondern eine klare, faire und begründete Auseinandersetzung."
+        )
+    }
+
+    $text = ""
+    while ($text.Length -lt ((Get-ArticleTarget $level) + 80)) {
+        foreach ($sentence in $sentences) {
+            $text = "$text $sentence"
+            if ($text.Length -ge ((Get-ArticleTarget $level) + 80)) {
+                break
+            }
+        }
+    }
+
+    return Fit-ArticleLength $text $level
 }
 
 function New-WarmupQuestions([string]$title, [string]$level) {
@@ -387,8 +517,8 @@ for ($start = 0; $start -lt $groups.Count; $start += $GroupsPerPackage) {
 
     $package = [ordered]@{
         packageVersion = "1.0"
-        packageId = "de-talk-topics-20260510-v3-{0:D3}" -f $packageIndex
-        packageName = "Darwin Deutsch Talk Topics 2026-05-10 Editorial Refresh Batch {0:D3}" -f $packageIndex
+        packageId = "de-talk-topics-20260510-v4-{0:D3}" -f $packageIndex
+        packageName = "Darwin Deutsch Talk Topics 2026-05-10 Article Quality Refresh Batch {0:D3}" -f $packageIndex
         source = "Hybrid"
         defaultMeaningLanguages = @("en")
         entries = @()
@@ -396,9 +526,8 @@ for ($start = 0; $start -lt $groups.Count; $start += $GroupsPerPackage) {
     }
 
     $filePath = Join-Path $OutputPath ("de-talk-topics-20260510-{0:D3}.json" -f $packageIndex)
-    $package | ConvertTo-Json -Depth 100 | Set-Content -Path $filePath -Encoding utf8
-    $json = Get-Content -Path $filePath -Raw
-    [System.IO.File]::WriteAllText((Resolve-Path $filePath).Path, (Repair-Utf8Mojibake $json), [System.Text.Encoding]::UTF8)
+    $json = $package | ConvertTo-Json -Depth 100
+    [System.IO.File]::WriteAllText((Join-Path (Resolve-Path $OutputPath).Path ([System.IO.Path]::GetFileName($filePath))), (Repair-Utf8Mojibake $json), [System.Text.Encoding]::UTF8)
     $packageIndex++
 }
 
