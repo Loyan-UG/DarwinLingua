@@ -128,8 +128,62 @@ if ($TopicSet -eq "second") {
         @{ title = "Neue Wörter wiederholen"; category = "education"; place = "zu Hause"; action = "wiederholen"; object = "das Wort" }
     )
 }
+elseif ($TopicSet -eq "third") {
+    $topicSpecs = @(
+        @{ title = "Der Wecker klingelt"; category = "everyday-life"; place = "am Morgen"; action = "aufstehen"; object = "der Wecker" },
+        @{ title = "Brot und Käse"; category = "food"; place = "in der Küche"; action = "essen"; object = "das Brot" },
+        @{ title = "Zur Haltestelle gehen"; category = "travel"; place = "auf der Straße"; action = "gehen"; object = "die Haltestelle" },
+        @{ title = "Milch kaufen"; category = "shopping"; place = "im Supermarkt"; action = "kaufen"; object = "die Milch" },
+        @{ title = "Mein Bruder"; category = "family"; place = "zu Hause"; action = "sprechen"; object = "der Bruder" },
+        @{ title = "Eine kurze Frage"; category = "everyday-life"; place = "im Kurs"; action = "fragen"; object = "die Frage" },
+        @{ title = "Husten haben"; category = "health"; place = "zu Hause"; action = "sich ausruhen"; object = "der Husten" },
+        @{ title = "Das Wohnzimmer"; category = "housing"; place = "in der Wohnung"; action = "sitzen"; object = "das Sofa" },
+        @{ title = "Die Nachbarin grüßen"; category = "housing"; place = "im Haus"; action = "grüßen"; object = "die Nachbarin" },
+        @{ title = "Brötchen holen"; category = "shopping"; place = "in der Bäckerei"; action = "holen"; object = "das Brötchen" },
+        @{ title = "Arbeitsbeginn"; category = "work"; place = "bei der Arbeit"; action = "beginnen"; object = "die Arbeit" },
+        @{ title = "Der Stundenplan"; category = "education"; place = "im Kurs"; action = "lesen"; object = "der Plan" },
+        @{ title = "Ein Glas Wasser"; category = "health"; place = "zu Hause"; action = "trinken"; object = "das Glas" },
+        @{ title = "Fernsehen am Abend"; category = "everyday-life"; place = "zu Hause"; action = "fernsehen"; object = "der Fernseher" },
+        @{ title = "Eine Hose kaufen"; category = "shopping"; place = "im Geschäft"; action = "anprobieren"; object = "die Hose" },
+        @{ title = "Kuchen im Café"; category = "food"; place = "im Café"; action = "bestellen"; object = "der Kuchen" },
+        @{ title = "Am Gleis warten"; category = "travel"; place = "am Bahnhof"; action = "warten"; object = "das Gleis" },
+        @{ title = "Freitagabend"; category = "everyday-life"; place = "am Abend"; action = "planen"; object = "der Freitag" },
+        @{ title = "Eine Freundin treffen"; category = "family"; place = "in der Stadt"; action = "treffen"; object = "die Freundin" },
+        @{ title = "Eine Antwort schreiben"; category = "work"; place = "am Computer"; action = "schreiben"; object = "die Antwort" },
+        @{ title = "Bauchschmerzen haben"; category = "health"; place = "zu Hause"; action = "warten"; object = "der Bauch" },
+        @{ title = "Ein Satz im Kurs"; category = "education"; place = "im Unterricht"; action = "sprechen"; object = "der Satz" },
+        @{ title = "Eine Karte kaufen"; category = "shopping"; place = "im Laden"; action = "kaufen"; object = "die Karte" },
+        @{ title = "Nudeln kochen"; category = "food"; place = "in der Küche"; action = "kochen"; object = "die Nudeln" },
+        @{ title = "Den Tisch putzen"; category = "housing"; place = "zu Hause"; action = "putzen"; object = "der Tisch" },
+        @{ title = "Ein Platz im Bus"; category = "travel"; place = "im Bus"; action = "sitzen"; object = "der Platz" },
+        @{ title = "Die Telefonnummer sagen"; category = "everyday-life"; place = "im Büro"; action = "sagen"; object = "die Nummer" },
+        @{ title = "Eine Kollegin hilft"; category = "work"; place = "bei der Arbeit"; action = "helfen"; object = "die Kollegin" },
+        @{ title = "Laut lesen"; category = "education"; place = "im Kurs"; action = "lesen"; object = "der Text" },
+        @{ title = "Die Speisekarte lesen"; category = "food"; place = "im Restaurant"; action = "lesen"; object = "die Speisekarte" },
+        @{ title = "Äpfel kaufen"; category = "shopping"; place = "auf dem Markt"; action = "kaufen"; object = "der Apfel" },
+        @{ title = "Der Computer startet"; category = "work"; place = "im Büro"; action = "starten"; object = "der Computer" },
+        @{ title = "Schnee am Morgen"; category = "everyday-life"; place = "draußen"; action = "gehen"; object = "der Schnee" },
+        @{ title = "Eltern anrufen"; category = "family"; place = "zu Hause"; action = "anrufen"; object = "die Eltern" },
+        @{ title = "Reis mit Gemüse"; category = "food"; place = "zu Hause"; action = "kochen"; object = "der Reis" },
+        @{ title = "Ein Hotelzimmer"; category = "travel"; place = "im Hotel"; action = "schlafen"; object = "das Zimmer" },
+        @{ title = "Der Schlüssel fehlt"; category = "housing"; place = "zu Hause"; action = "suchen"; object = "der Schlüssel" },
+        @{ title = "Fieber messen"; category = "health"; place = "zu Hause"; action = "messen"; object = "das Fieber" },
+        @{ title = "Vokabeln üben"; category = "education"; place = "zu Hause"; action = "üben"; object = "die Vokabel" },
+        @{ title = "Ein Paket bringen"; category = "everyday-life"; place = "an der Tür"; action = "bringen"; object = "das Paket" },
+        @{ title = "Eine Mütze kaufen"; category = "shopping"; place = "im Geschäft"; action = "kaufen"; object = "die Mütze" },
+        @{ title = "Der Dienstplan"; category = "work"; place = "bei der Arbeit"; action = "lesen"; object = "der Dienstplan" },
+        @{ title = "Musik hören"; category = "everyday-life"; place = "zu Hause"; action = "hören"; object = "die Musik" },
+        @{ title = "Mit der Mutter sprechen"; category = "family"; place = "am Telefon"; action = "sprechen"; object = "die Mutter" },
+        @{ title = "Tomaten schneiden"; category = "food"; place = "in der Küche"; action = "schneiden"; object = "die Tomate" },
+        @{ title = "Eine Linie suchen"; category = "travel"; place = "in der Stadt"; action = "suchen"; object = "die Linie" },
+        @{ title = "Das Fenster öffnen"; category = "housing"; place = "in der Wohnung"; action = "öffnen"; object = "das Fenster" },
+        @{ title = "Leise sprechen"; category = "health"; place = "in der Praxis"; action = "sprechen"; object = "die Stimme" },
+        @{ title = "Zu spät kommen"; category = "work"; place = "zum Termin"; action = "kommen"; object = "die Zeit" },
+        @{ title = "Ein Wort erklären"; category = "education"; place = "im Kurs"; action = "erklären"; object = "das Wort" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first' or 'second'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', or 'third'."
 }
 
 $vocabularyByLevel = @{
