@@ -117,3 +117,10 @@ Eighth follow-up vocabulary bridge:
 - Added 5 additional high-impact Word Catalog entries: `die Stimme`, `die Unterstützung`, `das Fest`, `das Sprichwort`, `das Profil`
 - TalkTopic vocabulary resolution after the eighth bridge import: 22,030 of 22,212 items resolved (99.18%)
 - Distinct unresolved TalkTopic vocabulary lemmas after the eighth bridge import: 14
+
+Ninth follow-up vocabulary bridge:
+
+- Imported `content/generated/talk-topic-vocabulary-bridges-20260510/de-talk-topic-vocabulary-bridge-009.json`
+- Added 5 additional high-impact Word Catalog entries: `das Spiel`, `der Fußball`, `der Schiedsrichter`, `die Fairness`, `die Freundschaft`
+- TalkTopic vocabulary resolution after the ninth bridge import: 22,105 of 22,212 items resolved (99.52%)
+- Distinct unresolved TalkTopic vocabulary lemmas after the ninth bridge import: 9
