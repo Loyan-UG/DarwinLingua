@@ -446,8 +446,62 @@ elseif ($TopicSet -eq "seventh") {
         @{ title = "Familienregeln neu verhandeln"; category = "family" }
     )
 }
+elseif ($TopicSet -eq "eighth") {
+    $themeSpecs = @(
+        @{ title = "Digitale Terminplanung im Team"; category = "technology" },
+        @{ title = "Künstliche Intelligenz und persönliche Beratung"; category = "artificial-intelligence" },
+        @{ title = "Gemeinschaftsgärten im Viertel"; category = "environment" },
+        @{ title = "Klimaschutz und kleine Unternehmen"; category = "climate" },
+        @{ title = "Gesundheitskurse im Betrieb"; category = "health" },
+        @{ title = "Geduld beim Sprachenlernen"; category = "psychology" },
+        @{ title = "Demokratische Entscheidungen im Alltag"; category = "democracy" },
+        @{ title = "Migration und Nachbarschaftshilfe"; category = "migration" },
+        @{ title = "Alte Fotos und neue Geschichten"; category = "history" },
+        @{ title = "Sportangebote für Anfänger"; category = "sports" },
+        @{ title = "Fußballtraining und Teamgeist"; category = "football" },
+        @{ title = "Dokumentarserien und Diskussionen"; category = "cinema" },
+        @{ title = "Bücher aus anderen Ländern"; category = "books" },
+        @{ title = "Musik im Sprachunterricht"; category = "music" },
+        @{ title = "Kunsthandwerk und moderne Märkte"; category = "art" },
+        @{ title = "Berufsschulen und Praxisnähe"; category = "education" },
+        @{ title = "Fehlerkultur in Projekten"; category = "work" },
+        @{ title = "Freundschaften nach Konflikten"; category = "friendship" },
+        @{ title = "Familie und digitale Kommunikation"; category = "family" },
+        @{ title = "Essen bestellen oder selbst kochen"; category = "food" },
+        @{ title = "Reisen mit begrenztem Budget"; category = "travel" },
+        @{ title = "Ruhige Orte in lauten Städten"; category = "city-life" },
+        @{ title = "Geld sparen durch Teilen"; category = "money" },
+        @{ title = "Nachrichten verstehen ohne Überforderung"; category = "media" },
+        @{ title = "Soziale Medien und echte Nähe"; category = "social-media" },
+        @{ title = "Gerechte Aufgabenverteilung"; category = "ethics" },
+        @{ title = "Zukunft der Mobilität im Alltag"; category = "future" },
+        @{ title = "Wortschatz durch Gespräche erweitern"; category = "language-learning" },
+        @{ title = "Behördentermine gut vorbereiten"; category = "germany-and-integration" },
+        @{ title = "Experimente zu Hause erklären"; category = "science" },
+        @{ title = "Sternenhimmel in der Stadt"; category = "space" },
+        @{ title = "Digitale Notizen organisieren"; category = "technology" },
+        @{ title = "Automatisierte Empfehlungen im Alltag"; category = "artificial-intelligence" },
+        @{ title = "Kleidung länger tragen"; category = "environment" },
+        @{ title = "Klimaschutz in Mietshäusern"; category = "climate" },
+        @{ title = "Gesundheitsfragen im Familienkreis"; category = "health" },
+        @{ title = "Selbstkritik und Fortschritt"; category = "psychology" },
+        @{ title = "Abstimmungen in Online-Gruppen"; category = "democracy" },
+        @{ title = "Sprachcafés als Begegnungsorte"; category = "germany-and-integration" },
+        @{ title = "Neue Heimat und alte Gewohnheiten"; category = "migration" },
+        @{ title = "Sport im Park"; category = "sports" },
+        @{ title = "Fußball und Vorurteile"; category = "football" },
+        @{ title = "Lieblingsfilme im Freundeskreis"; category = "cinema" },
+        @{ title = "Bücher verschenken"; category = "books" },
+        @{ title = "Konzerte im Freien"; category = "music" },
+        @{ title = "Kunst im Alltag entdecken"; category = "art" },
+        @{ title = "Lernziele realistisch setzen"; category = "education" },
+        @{ title = "Kommunikation bei Stress"; category = "work" },
+        @{ title = "Freundschaft und neue Lebensphasen"; category = "friendship" },
+        @{ title = "Familienzeit ohne Bildschirm"; category = "family" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', or 'seventh'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', or 'eighth'."
 }
 
 $b2Contexts = @("in der Praxis", "in der Zukunft")
