@@ -22,6 +22,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\to
 
 ## 2026-05-10 Import Result
 
+Batch 001:
+
 - Files imported: 1
 - Entries imported: 5
 - Duplicates skipped: 0
@@ -29,3 +31,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\to
 - Published batch: `darwin-deutsch-20260510121056267`
 - TalkTopic vocabulary resolution after import: 20,564 of 22,212 items resolved (92.58%)
 - Distinct unresolved TalkTopic vocabulary lemmas after import: 49
+
+Batch 002:
+
+- Files imported: 1
+- Entries imported: 5
+- Duplicates skipped: 0
+- Invalid entries: 0
+- Published batch: `darwin-deutsch-20260510122055529`
+- TalkTopic vocabulary resolution after import: 21,000 of 22,212 items resolved (94.54%)
+- Distinct unresolved TalkTopic vocabulary lemmas after import: 44
