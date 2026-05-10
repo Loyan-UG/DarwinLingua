@@ -34,6 +34,7 @@ $errors = New-Object System.Collections.Generic.List[string]
 $slugs = New-Object System.Collections.Generic.HashSet[string]
 $groups = New-Object System.Collections.Generic.HashSet[string]
 $articleHashes = New-Object System.Collections.Generic.HashSet[string]
+$vocabularyLemmas = New-Object System.Collections.Generic.HashSet[string]
 $levelCounts = @{}
 $contentTypeCounts = @{}
 $topicCount = 0
@@ -139,6 +140,7 @@ foreach ($file in $files) {
             if ([string]$vocabularyItem.lemma -match $asciiGermanSpellingPattern) {
                 $errors.Add("'$($topic.slug)' contains a vocabulary lemma with ASCII German spelling; use canonical umlauts.")
             }
+            [void]$vocabularyLemmas.Add(([string]$vocabularyItem.lemma).Trim().ToLowerInvariant())
         }
         $speakingGoals = @($topic.speakingGoals)
         if ($speakingGoals.Count -lt 2 -or $speakingGoals.Count -gt 5) {
@@ -167,11 +169,17 @@ if ($errors.Count -gt 0) {
     exit 1
 }
 
+if ($topicCount -ge 300 -and $vocabularyLemmas.Count -lt 100) {
+    Write-Error "Generated Talk Topic vocabulary is too repetitive: only $($vocabularyLemmas.Count) distinct lemmas across $topicCount topics."
+    exit 1
+}
+
 [ordered]@{
     validationOk = $true
     jsonFiles = $files.Count
     topicGroups = $groups.Count
     talkTopics = $topicCount
+    distinctVocabularyLemmas = $vocabularyLemmas.Count
     cefrDistribution = $levelCounts
     contentTypeDistribution = $contentTypeCounts
 } | ConvertTo-Json -Depth 5

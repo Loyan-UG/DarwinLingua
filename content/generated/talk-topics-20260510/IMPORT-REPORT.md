@@ -15,6 +15,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\to
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\Server\Initialize-LocalServerContent.ps1 -ApiBaseUrl http://localhost:53945 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510 -AdminApiKey local-dev-admin-api-key-change-me
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\ContentUtilities\TestTalkTopicPackages.ps1 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\Server\Initialize-LocalServerContent.ps1 -ApiBaseUrl http://localhost:53945 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510 -AdminApiKey local-dev-admin-api-key-change-me
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\ContentUtilities\TestTalkTopicPackages.ps1 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\Server\Initialize-LocalServerContent.ps1 -ApiBaseUrl http://localhost:53945 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510 -AdminApiKey local-dev-admin-api-key-change-me
 ```
 
 Import result:
@@ -26,7 +28,8 @@ Import result:
 - Generated package files failed: 0
 - TalkTopic items generated: 900
 - Distinct generated topic groups: 300
-- Editorial refresh package ids: `de-talk-topics-20260510-v5-001` through `de-talk-topics-20260510-v5-010`
+- Editorial refresh package ids: `de-talk-topics-20260510-v6-001` through `de-talk-topics-20260510-v6-010`
+- Distinct generated vocabulary lemmas: 161
 
 Cleanup:
 
@@ -34,6 +37,7 @@ Cleanup:
 - Removed 900 generated v2 TalkTopics before importing the v3 editorial refresh. The baseline sample `a1-gibt-es-ausserirdische` was preserved.
 - Removed 900 generated v3 TalkTopics before importing the v4 article-quality refresh. The baseline sample `a1-gibt-es-ausserirdische` was preserved.
 - Removed 900 generated v4 TalkTopics before importing the v5 German-orthography refresh. The baseline sample `a1-gibt-es-ausserirdische` was preserved.
+- Removed 900 generated v5 TalkTopics before importing the v6 vocabulary-diversity refresh. The baseline sample `a1-gibt-es-ausserirdische` was preserved.
 
 Final WebApi verification:
 
@@ -52,3 +56,4 @@ Final WebApi verification:
 - Sample refreshed generated article starts with German category text: `Roboter im Alltag ist ein Thema aus dem Bereich Technik.`
 - Sample generated description uses canonical German spelling: `Ein Talk Topic für Diskussionen über Leben im Weltall in der Schule.`
 - Sample generated question uses canonical German spelling: `Wie könnte eine ungewöhnliche Lösung aussehen?`
+- Sample generated vocabulary starts with category-specific items: `der Roboter`, `das Gerät`, `die Technik`, `der Computer`, `die Software`, `der Datenschutz`

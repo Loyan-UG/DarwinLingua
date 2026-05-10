@@ -129,6 +129,40 @@ $vocabularyBase = @(
     @{ lemma = "digital"; wordSlug = "digital" }
 )
 
+$categoryVocabulary = @{
+    "space" = @("das Weltall", "der Planet", "der Stern", "die Forschung", "das Teleskop", "die Erde")
+    "technology" = @("der Roboter", "das Gerät", "die Technik", "der Computer", "die Software", "der Datenschutz")
+    "artificial-intelligence" = @("die künstliche Intelligenz", "der Algorithmus", "das Modell", "die Automatisierung", "die Daten", "der Prompt")
+    "environment" = @("die Umwelt", "das Wasser", "die Energie", "das Recycling", "der Abfall", "nachhaltig")
+    "climate" = @("das Klima", "das Wetter", "der Konsum", "die Veränderung", "die Verantwortung", "die Zukunft")
+    "health" = @("die Gesundheit", "die Pause", "die Pflege", "der Körper", "die Bewegung", "der Respekt")
+    "psychology" = @("der Stress", "das Gefühl", "der Streit", "die Gruppe", "die Erfahrung", "zuhören")
+    "democracy" = @("die Demokratie", "die Abstimmung", "die Meinung", "die Regel", "die Verantwortung", "die Beteiligung")
+    "migration" = @("die Migration", "die Sprache", "die Integration", "die Behörde", "der Aufenthalt", "die Gemeinschaft")
+    "history" = @("die Geschichte", "der Film", "die Erinnerung", "die Quelle", "die Vergangenheit", "der Vergleich")
+    "football" = @("der Fußball", "die Fairness", "die Mannschaft", "das Spiel", "der Verein", "der Schiedsrichter")
+    "sports" = @("der Sport", "die Bewegung", "die Gesundheit", "das Training", "das Team", "der Wettbewerb")
+    "cinema" = @("das Kino", "der Film", "die Szene", "die Figur", "das Gefühl", "die Geschichte")
+    "books" = @("das Buch", "die Bibliothek", "die Geschichte", "die Figur", "das Lesen", "die Zukunft")
+    "music" = @("die Musik", "das Konzert", "das Lied", "die Stimme", "die Bühne", "der Geschmack")
+    "art" = @("die Kunst", "das Museum", "der öffentliche Raum", "die Ausstellung", "das Bild", "die Stadt")
+    "education" = @("die Schule", "die Note", "das Lernen", "die App", "der Unterricht", "die Prüfung")
+    "work" = @("die Arbeit", "das Homeoffice", "der Beruf", "die Bewerbung", "der Kunde", "das Unternehmen")
+    "family" = @("die Familie", "das Haustier", "die Verantwortung", "der Alltag", "die Beziehung", "die Unterstützung")
+    "friendship" = @("die Freundschaft", "der Kontakt", "online", "vertrauen", "die Nachricht", "die Nähe")
+    "food" = @("das Essen", "die Region", "das Kochen", "die Mahlzeit", "der Geschmack", "die Verpackung")
+    "travel" = @("die Reise", "der Urlaub", "das Geld", "der Verkehr", "das Fahrrad", "der Zug")
+    "city-life" = @("die Stadt", "der Nachbar", "die Wohnung", "der öffentliche Platz", "die Miete", "der Verkehr")
+    "money" = @("das Geld", "das Glück", "die Armut", "die Chance", "der Preis", "die Ausgabe")
+    "media" = @("die Nachricht", "das Internet", "die Medien", "die Quelle", "der Bericht", "die Meinung")
+    "social-media" = @("soziale Medien", "das Profil", "der Kommentar", "die Nachricht", "die Privatsphäre", "teilen")
+    "ethics" = @("die Verantwortung", "die Fairness", "der Respekt", "gerecht", "die Entscheidung", "der Grund")
+    "future" = @("die Zukunft", "die Veränderung", "die Möglichkeit", "die Entwicklung", "das Risiko", "die Chance")
+    "germany-and-integration" = @("Deutschland", "die Integration", "das Fest", "das Sprichwort", "die Kultur", "die Sprache")
+    "language-learning" = @("das Sprachenlernen", "die Sprache", "der Fehler", "die Übung", "der Wortschatz", "sprechen")
+    "everyday-life" = @("der Alltag", "die Zeit", "die Familie", "die Stadt", "die Entscheidung", "das Gespräch")
+}
+
 function Convert-ToSlug([string]$value) {
     $normalized = $value.ToLowerInvariant()
     $normalized = $normalized.Replace("ä", "ae").Replace("ö", "oe").Replace("ü", "ue").Replace("ß", "ss")
@@ -411,16 +445,38 @@ function New-DiscussionQuestions([string]$title, [string]$level) {
     return $items
 }
 
-function New-VocabularyItems([string]$level, [int]$offset) {
+function New-VocabularyItems([string]$level, [int]$offset, [string]$category) {
     $count = Get-VocabularyCount $level
     $items = @()
-    for ($i = 0; $i -lt $count; $i++) {
-        $entry = $vocabularyBase[($offset + $i) % $vocabularyBase.Count]
+    $seen = New-Object System.Collections.Generic.HashSet[string]
+    $candidates = @()
+    if ($categoryVocabulary.ContainsKey($category)) {
+        foreach ($lemma in $categoryVocabulary[$category]) {
+            $candidates += @{ lemma = $lemma; wordSlug = Convert-ToSlug $lemma }
+        }
+    }
+    foreach ($entry in $vocabularyBase) {
+        $candidates += $entry
+    }
+
+    $candidateIndex = 0
+    while ($items.Count -lt $count) {
+        $entry = if ($candidateIndex -lt $candidates.Count) {
+            $candidates[$candidateIndex]
+        }
+        else {
+            $vocabularyBase[($offset + $candidateIndex) % $vocabularyBase.Count]
+        }
+        $candidateIndex++
+        $lemmaKey = ([string]$entry.lemma).Trim().ToLowerInvariant()
+        if (-not $seen.Add($lemmaKey)) {
+            continue
+        }
         $items += [ordered]@{
             lemma = $entry.lemma
             wordSlug = $entry.wordSlug
             cefrLevel = $level
-            sortOrder = ($i + 1) * 10
+            sortOrder = $items.Count * 10 + 10
         }
     }
     return $items
@@ -507,7 +563,7 @@ for ($start = 0; $start -lt $groups.Count; $start += $GroupsPerPackage) {
                 article = [ordered]@{ baseText = New-Article $group.title $group.category $level $contentType }
                 warmupQuestions = New-WarmupQuestions $group.title $level
                 discussionQuestions = New-DiscussionQuestions $group.title $level
-                vocabularyItems = New-VocabularyItems $level ([array]::IndexOf($groups, $group))
+                vocabularyItems = New-VocabularyItems $level ([array]::IndexOf($groups, $group)) $group.category
                 speakingGoals = New-SpeakingGoals $level
                 sortOrder = (([array]::IndexOf($groups, $group) + 1) * 10)
                 isPublished = $true
@@ -517,8 +573,8 @@ for ($start = 0; $start -lt $groups.Count; $start += $GroupsPerPackage) {
 
     $package = [ordered]@{
         packageVersion = "1.0"
-        packageId = "de-talk-topics-20260510-v5-{0:D3}" -f $packageIndex
-        packageName = "Darwin Deutsch Talk Topics 2026-05-10 German Orthography Refresh Batch {0:D3}" -f $packageIndex
+        packageId = "de-talk-topics-20260510-v6-{0:D3}" -f $packageIndex
+        packageName = "Darwin Deutsch Talk Topics 2026-05-10 Vocabulary Diversity Refresh Batch {0:D3}" -f $packageIndex
         source = "Hybrid"
         defaultMeaningLanguages = @("en")
         entries = @()

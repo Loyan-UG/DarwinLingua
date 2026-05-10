@@ -12,12 +12,17 @@ names in the article text instead of internal category keys.
 The current v5 package files also use canonical German spelling in generated
 descriptions and questions, for example `für`, `über`, `könnte`, and `würde`.
 
+The current v6 package files add category-specific vocabulary seeds before the
+shared discussion vocabulary, so important words are less repetitive and more
+closely related to each TalkTopic.
+
 ## Contents
 
 - `de-talk-topics-20260510-001.json` through `de-talk-topics-20260510-010.json`
 - 300 distinct `topicGroupKey` values
 - 900 TalkTopic items
 - 3 CEFR variants per topic group
+- 161 distinct vocabulary lemmas across the generated TalkTopic items
 
 ## Distribution
 
@@ -45,7 +50,7 @@ Content types:
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\ContentUtilities\TestTalkTopicPackages.ps1 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510
 ```
 
-The validator checks CEFR article character ranges, German-only articles and questions, discussion question counts by type, warm-up question counts, vocabulary count ranges, content types, speaking goals, duplicate slugs, distinct topic groups, repeated mechanical title endings, leaked internal/template fragments in article text, and common ASCII spellings where canonical German umlauts are expected.
+The validator checks CEFR article character ranges, German-only articles and questions, discussion question counts by type, warm-up question counts, vocabulary count ranges, content types, speaking goals, duplicate slugs, distinct topic groups, repeated mechanical title endings, leaked internal/template fragments in article text, common ASCII spellings where canonical German umlauts are expected, and minimum generated vocabulary diversity.
 
 ## Import
 
