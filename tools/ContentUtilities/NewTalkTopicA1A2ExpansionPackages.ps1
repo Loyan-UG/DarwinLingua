@@ -3,7 +3,8 @@ param(
     [int]$TopicsPerPackage = 30,
     [string]$PackageIdPrefix = "de-talk-topics-20260510-a1-a2-expansion-1-v1",
     [string]$PackageNamePrefix = "Darwin Deutsch Talk Topics A1-A2 Expansion 1 2026-05-10 v1",
-    [string]$GroupPrefix = "grundstufe-1"
+    [string]$GroupPrefix = "grundstufe-1",
+    [string]$TopicSet = "first"
 )
 
 $ErrorActionPreference = "Stop"
@@ -72,6 +73,64 @@ $topicSpecs = @(
     @{ title = "Pünktlich kommen"; category = "work"; place = "zum Termin"; action = "kommen"; object = "die Uhrzeit" },
     @{ title = "Lernen mit Karten"; category = "education"; place = "zu Hause"; action = "wiederholen"; object = "der Wortschatz" }
 )
+
+if ($TopicSet -eq "second") {
+    $topicSpecs = @(
+        @{ title = "Mein Nachmittag"; category = "everyday-life"; place = "zu Hause"; action = "Pause machen"; object = "die Zeit" },
+        @{ title = "Abendessen mit der Familie"; category = "food"; place = "am Tisch"; action = "essen"; object = "das Essen" },
+        @{ title = "Zum Bahnhof gehen"; category = "travel"; place = "am Bahnhof"; action = "warten"; object = "der Zug" },
+        @{ title = "Im Drogeriemarkt"; category = "shopping"; place = "im Geschäft"; action = "kaufen"; object = "die Seife" },
+        @{ title = "Meine Schwester"; category = "family"; place = "zu Hause"; action = "erzählen"; object = "die Schwester" },
+        @{ title = "Eine Nachricht lesen"; category = "everyday-life"; place = "am Handy"; action = "lesen"; object = "die Nachricht" },
+        @{ title = "In der Apotheke"; category = "health"; place = "in der Apotheke"; action = "fragen"; object = "die Medizin" },
+        @{ title = "Das Schlafzimmer"; category = "housing"; place = "in der Wohnung"; action = "schlafen"; object = "das Bett" },
+        @{ title = "Hilfe im Haus"; category = "housing"; place = "im Haus"; action = "helfen"; object = "die Hilfe" },
+        @{ title = "Beim Metzger"; category = "shopping"; place = "im Laden"; action = "bestellen"; object = "das Fleisch" },
+        @{ title = "Der Pausenraum"; category = "work"; place = "bei der Arbeit"; action = "sitzen"; object = "die Pause" },
+        @{ title = "Wörter im Heft"; category = "education"; place = "im Kurs"; action = "schreiben"; object = "das Heft" },
+        @{ title = "Fünf Minuten Sport"; category = "health"; place = "zu Hause"; action = "üben"; object = "die Bewegung" },
+        @{ title = "Vor dem Schlafen"; category = "everyday-life"; place = "am Abend"; action = "lesen"; object = "das Buch" },
+        @{ title = "Eine Jacke suchen"; category = "shopping"; place = "im Geschäft"; action = "suchen"; object = "die Jacke" },
+        @{ title = "Tee trinken"; category = "food"; place = "im Café"; action = "trinken"; object = "der Tee" },
+        @{ title = "Mit der Straßenbahn fahren"; category = "travel"; place = "in der Stadt"; action = "fahren"; object = "die Haltestelle" },
+        @{ title = "Samstag planen"; category = "everyday-life"; place = "am Wochenende"; action = "planen"; object = "der Samstag" },
+        @{ title = "Freunde einladen"; category = "family"; place = "zu Hause"; action = "einladen"; object = "der Freund" },
+        @{ title = "Eine SMS schreiben"; category = "work"; place = "am Handy"; action = "schreiben"; object = "der Text" },
+        @{ title = "Kopfschmerzen haben"; category = "health"; place = "zu Hause"; action = "sich ausruhen"; object = "der Kopf" },
+        @{ title = "Die Lehrerin fragen"; category = "education"; place = "im Kurs"; action = "fragen"; object = "die Lehrerin" },
+        @{ title = "Blumen kaufen"; category = "shopping"; place = "im Laden"; action = "kaufen"; object = "die Blume" },
+        @{ title = "Suppe kochen"; category = "food"; place = "in der Küche"; action = "kochen"; object = "die Suppe" },
+        @{ title = "Das Bad putzen"; category = "housing"; place = "zu Hause"; action = "putzen"; object = "das Bad" },
+        @{ title = "Im Taxi"; category = "travel"; place = "im Taxi"; action = "fahren"; object = "die Adresse" },
+        @{ title = "Geburtsdatum sagen"; category = "everyday-life"; place = "im Büro"; action = "sagen"; object = "das Datum" },
+        @{ title = "Eine Aufgabe bekommen"; category = "work"; place = "bei der Arbeit"; action = "arbeiten"; object = "die Aufgabe" },
+        @{ title = "Ein Bild beschreiben"; category = "education"; place = "im Kurs"; action = "sprechen"; object = "das Bild" },
+        @{ title = "Eine Pizza bestellen"; category = "food"; place = "im Restaurant"; action = "bestellen"; object = "die Pizza" },
+        @{ title = "Gemüse auf dem Markt"; category = "shopping"; place = "auf dem Markt"; action = "kaufen"; object = "das Gemüse" },
+        @{ title = "Ein neuer Kollege"; category = "work"; place = "im Büro"; action = "kennenlernen"; object = "der Kollege" },
+        @{ title = "Sonne und Wind"; category = "everyday-life"; place = "draußen"; action = "gehen"; object = "das Wetter" },
+        @{ title = "Großeltern besuchen"; category = "family"; place = "bei der Familie"; action = "besuchen"; object = "die Großeltern" },
+        @{ title = "Lieblingsgetränk"; category = "food"; place = "zu Hause"; action = "trinken"; object = "das Getränk" },
+        @{ title = "Ein Tagesausflug"; category = "travel"; place = "in einer Stadt"; action = "gehen"; object = "die Tasche" },
+        @{ title = "Der Briefkasten"; category = "housing"; place = "im Haus"; action = "öffnen"; object = "der Brief" },
+        @{ title = "Müde sein"; category = "health"; place = "zu Hause"; action = "schlafen"; object = "die Müdigkeit" },
+        @{ title = "Eine Übung machen"; category = "education"; place = "zu Hause"; action = "üben"; object = "die Übung" },
+        @{ title = "Einen Brief abholen"; category = "everyday-life"; place = "bei der Post"; action = "abholen"; object = "der Brief" },
+        @{ title = "Schuhe anprobieren"; category = "shopping"; place = "im Geschäft"; action = "anprobieren"; object = "der Schuh" },
+        @{ title = "Eine kurze Besprechung"; category = "work"; place = "bei der Arbeit"; action = "sprechen"; object = "die Besprechung" },
+        @{ title = "Ein freier Tag"; category = "everyday-life"; place = "zu Hause"; action = "sich erholen"; object = "der Tag" },
+        @{ title = "Mit dem Kind lesen"; category = "family"; place = "zu Hause"; action = "lesen"; object = "das Kind" },
+        @{ title = "Obst schneiden"; category = "food"; place = "in der Küche"; action = "schneiden"; object = "das Obst" },
+        @{ title = "Den Weg fragen"; category = "travel"; place = "in der Stadt"; action = "fragen"; object = "der Weg" },
+        @{ title = "Die Küche aufräumen"; category = "housing"; place = "zu Hause"; action = "aufräumen"; object = "die Küche" },
+        @{ title = "Täglich Wasser trinken"; category = "health"; place = "im Alltag"; action = "trinken"; object = "das Wasser" },
+        @{ title = "Früh zur Arbeit kommen"; category = "work"; place = "bei der Arbeit"; action = "ankommen"; object = "die Uhrzeit" },
+        @{ title = "Neue Wörter wiederholen"; category = "education"; place = "zu Hause"; action = "wiederholen"; object = "das Wort" }
+    )
+}
+elseif ($TopicSet -ne "first") {
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first' or 'second'."
+}
 
 $vocabularyByLevel = @{
     "A1" = @("der Alltag", "die Zeit", "die Familie", "das Essen", "die Stadt", "die Arbeit", "die Schule", "die Sprache", "die Frage", "die Antwort", "das Geld", "der Preis", "das Gespräch", "die Wohnung")
