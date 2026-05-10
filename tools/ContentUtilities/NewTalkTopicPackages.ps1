@@ -12,15 +12,6 @@ $levelSets = @(
     @("A2", "B1", "C1")
 )
 
-$categories = @(
-    "science", "technology", "artificial-intelligence", "environment", "climate", "space",
-    "health", "psychology", "society", "politics", "democracy", "migration", "culture",
-    "history", "sports", "football", "cinema", "books", "music", "art", "education",
-    "work", "family", "friendship", "food", "travel", "city-life", "money", "media",
-    "social-media", "ethics", "future", "everyday-life", "germany-and-integration",
-    "language-learning"
-)
-
 $topicKeysByCategory = @{
     "health" = @("appointments-and-health", "everyday-life")
     "psychology" = @("appointments-and-health", "everyday-life")
@@ -33,6 +24,44 @@ $topicKeysByCategory = @{
     "city-life" = @("housing", "everyday-life")
     "germany-and-integration" = @("everyday-life", "work-and-jobs")
     "education" = @("work-and-jobs", "everyday-life")
+}
+
+$anglesByCategory = @{
+    "science" = @("im Alltag", "in der Schule", "in den Medien", "in der Zukunft", "in Deutschland")
+    "technology" = @("im Alltag", "am Arbeitsplatz", "für junge Menschen", "in der Zukunft", "in der Familie")
+    "artificial-intelligence" = @("im Alltag", "am Arbeitsplatz", "in der Schule", "in den Medien", "in der Zukunft")
+    "environment" = @("im Alltag", "in der Stadt", "für die Umwelt", "in der Schule", "in Deutschland")
+    "climate" = @("im Alltag", "in der Stadt", "für junge Menschen", "für die Umwelt", "in der Zukunft")
+    "space" = @("in der Schule", "in den Medien", "für junge Menschen", "in der Zukunft", "in Deutschland")
+    "health" = @("im Alltag", "am Arbeitsplatz", "in der Familie", "in der Schule", "in Deutschland")
+    "psychology" = @("im Alltag", "in der Familie", "am Arbeitsplatz", "in der Schule", "in den Medien")
+    "society" = @("im Alltag", "in der Stadt", "in Deutschland", "in den Medien", "für junge Menschen")
+    "politics" = @("im Alltag", "in Deutschland", "in den Medien", "für junge Menschen", "in der Zukunft")
+    "democracy" = @("im Alltag", "in Deutschland", "in der Schule", "in den Medien", "in der Zukunft")
+    "migration" = @("im Alltag", "in Deutschland", "in der Stadt", "am Arbeitsplatz", "in der Schule")
+    "culture" = @("im Alltag", "in der Stadt", "in Deutschland", "für junge Menschen", "in den Medien")
+    "history" = @("in der Schule", "in den Medien", "in Deutschland", "in der Familie", "für junge Menschen")
+    "sports" = @("im Alltag", "in der Schule", "in der Stadt", "für junge Menschen", "in den Medien")
+    "football" = @("im Alltag", "in der Schule", "in den Medien", "in Deutschland", "für junge Menschen")
+    "cinema" = @("in den Medien", "für junge Menschen", "in Deutschland", "in der Schule", "in der Familie")
+    "books" = @("im Alltag", "in der Schule", "in der Familie", "in der Zukunft", "für junge Menschen")
+    "music" = @("im Alltag", "in der Stadt", "in der Familie", "für junge Menschen", "in den Medien")
+    "art" = @("im Alltag", "in der Stadt", "in der Schule", "in Deutschland", "für junge Menschen")
+    "education" = @("in der Schule", "im Alltag", "in Deutschland", "in der Zukunft", "für junge Menschen")
+    "work" = @("am Arbeitsplatz", "in Deutschland", "in der Zukunft", "in den Medien", "im Alltag")
+    "family" = @("im Alltag", "in Deutschland", "in der Stadt", "in der Zukunft", "in den Medien")
+    "friendship" = @("im Alltag", "in der Schule", "in der Stadt", "in den Medien", "in der Zukunft")
+    "food" = @("im Alltag", "in der Familie", "in der Stadt", "für die Umwelt", "in Deutschland")
+    "travel" = @("im Alltag", "in Deutschland", "für junge Menschen", "in der Zukunft", "für die Umwelt")
+    "city-life" = @("in der Stadt", "im Alltag", "in Deutschland", "für junge Menschen", "in der Zukunft")
+    "money" = @("im Alltag", "in der Familie", "am Arbeitsplatz", "in Deutschland", "für junge Menschen")
+    "media" = @("im Alltag", "in den Medien", "in der Schule", "für junge Menschen", "in der Zukunft")
+    "social-media" = @("im Alltag", "in der Schule", "in der Familie", "für junge Menschen", "in den Medien")
+    "ethics" = @("im Alltag", "am Arbeitsplatz", "in der Schule", "in den Medien", "in der Zukunft")
+    "future" = @("im Alltag", "in Deutschland", "am Arbeitsplatz", "in der Stadt", "für junge Menschen")
+    "everyday-life" = @("im Alltag", "in der Familie", "in der Stadt", "in Deutschland", "für junge Menschen")
+    "germany-and-integration" = @("in Deutschland", "im Alltag", "am Arbeitsplatz", "in der Stadt", "in der Schule")
+    "language-learning" = @("im Alltag", "in der Schule", "in Deutschland", "am Arbeitsplatz", "in der Zukunft")
 }
 
 $subjects = @(
@@ -50,11 +79,6 @@ $subjects = @(
     "Wetter und Pläne", "Recycling in der Schule", "Armut und Chancen", "Bewerbungsgespräche",
     "Kundenservice", "kleine Unternehmen", "öffentliche Plätze", "Bibliotheken", "Konzerte",
     "Ehrenamt im Verein", "Fahrradfahren", "kulturelle Feste", "Sprichwörter", "Lernen aus Fehlern"
-)
-
-$angles = @(
-    "im Alltag", "in der Zukunft", "in Deutschland", "in der Schule", "in der Familie",
-    "in der Stadt", "am Arbeitsplatz", "in den Medien", "für junge Menschen", "für die Umwelt"
 )
 
 $vocabularyBase = @(
@@ -144,6 +168,54 @@ function Get-ContentType([string]$level, [int]$index) {
         return @("article", "fact-sheet", "opinion-text", "interview", "movie-summary")[$index % 5]
     }
     return @("article", "debate-text", "book-summary", "movie-summary", "opinion-text", "interview")[$index % 6]
+}
+
+function Get-CategoryForSubject([string]$subject) {
+    switch -Regex ($subject) {
+        "Weltall|Weltraum" { return "space" }
+        "Roboter|Technik|Datenschutz|Computerspiele" { return "technology" }
+        "künstliche Intelligenz|Apps" { return "artificial-intelligence" }
+        "Energie|Wasser|Plastik|Recycling|Umwelt|Mode" { return "environment" }
+        "Klima|Wetter" { return "climate" }
+        "gesund|Pflege|Sport und Gesundheit" { return "health" }
+        "Stress|Streit|Gefühle|Fehler" { return "psychology" }
+        "Demokratie" { return "democracy" }
+        "Migration|Integration" { return "migration" }
+        "Geschichte" { return "history" }
+        "Fußball" { return "football" }
+        "Sport" { return "sports" }
+        "Kino" { return "cinema" }
+        "Bücher|Bibliotheken" { return "books" }
+        "Musik|Konzerte" { return "music" }
+        "Kunst|Museen" { return "art" }
+        "Schule|Lernen|Sprache" { return "education" }
+        "Arbeit|Berufe|Bewerbung|Kundenservice|Unternehmen" { return "work" }
+        "Familie|Haustiere" { return "family" }
+        "Freundschaft" { return "friendship" }
+        "Essen|Kochen" { return "food" }
+        "Reisen|Urlaub|Verkehrsmittel|Fahrrad" { return "travel" }
+        "Nachbarn|Wohnungen|Plätze" { return "city-life" }
+        "Geld|Armut" { return "money" }
+        "Nachrichten|Medien" { return "media" }
+        "soziale Medien" { return "social-media" }
+        "Verantwortung|Fairness|Respekt" { return "ethics" }
+        "Zukunft" { return "future" }
+        "Deutschland|Feste|Sprichwörter" { return "germany-and-integration" }
+        default { return "everyday-life" }
+    }
+}
+
+function Join-TopicTitle([string]$subject, [string]$category, [int]$variantIndex) {
+    $angles = if ($anglesByCategory.ContainsKey($category)) { $anglesByCategory[$category] } else { $anglesByCategory["everyday-life"] }
+    $angle = $angles[$variantIndex % $angles.Count]
+
+    $subjectLower = $subject.ToLowerInvariant()
+    $angleLower = $angle.ToLowerInvariant()
+    if ($subjectLower.EndsWith($angleLower) -or $subjectLower.Contains($angleLower)) {
+        return $subject
+    }
+
+    return "$subject $angle"
 }
 
 function New-Article([string]$title, [string]$category, [string]$level, [string]$contentType) {
@@ -262,10 +334,10 @@ Get-ChildItem -Path $OutputPath -Filter "*.json" -File -ErrorAction SilentlyCont
 
 $groups = @()
 for ($i = 0; $i -lt $TopicGroupCount; $i++) {
-    $category = $categories[$i % $categories.Count]
     $subject = $subjects[$i % $subjects.Count]
-    $angle = $angles[[math]::Floor($i / $subjects.Count) % $angles.Count]
-    $title = "$subject $angle"
+    $category = Get-CategoryForSubject $subject
+    $variantIndex = [math]::Floor($i / $subjects.Count)
+    $title = Join-TopicTitle $subject $category $variantIndex
     $groupKey = Convert-ToSlug $title
     if ($groups.groupKey -contains $groupKey) {
         $groupKey = "$groupKey-$($i + 1)"
@@ -315,8 +387,8 @@ for ($start = 0; $start -lt $groups.Count; $start += $GroupsPerPackage) {
 
     $package = [ordered]@{
         packageVersion = "1.0"
-        packageId = "de-talk-topics-20260510-v2-{0:D3}" -f $packageIndex
-        packageName = "Darwin Deutsch Talk Topics 2026-05-10 Batch {0:D3}" -f $packageIndex
+        packageId = "de-talk-topics-20260510-v3-{0:D3}" -f $packageIndex
+        packageName = "Darwin Deutsch Talk Topics 2026-05-10 Editorial Refresh Batch {0:D3}" -f $packageIndex
         source = "Hybrid"
         defaultMeaningLanguages = @("en")
         entries = @()

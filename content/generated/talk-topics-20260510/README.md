@@ -2,6 +2,10 @@
 
 Generated Talk Topics package set for the WebApi shared catalog.
 
+This package set was refreshed after the first bulk import to improve deterministic
+topic/category pairing and avoid mechanically repeated title endings such as
+`im Alltag im Alltag`.
+
 ## Contents
 
 - `de-talk-topics-20260510-001.json` through `de-talk-topics-20260510-010.json`
@@ -40,7 +44,7 @@ The validator checks CEFR article character ranges, German-only articles and que
 ## Import
 
 ```powershell
-dotnet run --project D:\_Projects\DarwinLingua\src\Apps\DarwinLingua.ImportTool\DarwinLingua.ImportTool.csproj -- --target shared --yes D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\Server\Initialize-LocalServerContent.ps1 -ApiBaseUrl http://localhost:53945 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510 -AdminApiKey local-dev-admin-api-key-change-me
 ```
 
 Talk Topic articles and questions intentionally do not contain translations. Important words are references only; meanings are resolved from the Word Catalog where possible.
