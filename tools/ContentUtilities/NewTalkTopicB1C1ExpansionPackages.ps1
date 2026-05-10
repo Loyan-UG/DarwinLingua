@@ -555,8 +555,62 @@ elseif ($TopicSet -eq "ninth") {
         @{ title = "Familiengespräche über Zukunft"; category = "family" }
     )
 }
+elseif ($TopicSet -eq "tenth") {
+    $themeSpecs = @(
+        @{ title = "Digitale Rechnungen gemeinsam prüfen"; category = "technology" },
+        @{ title = "Künstliche Intelligenz und Vertrauen"; category = "artificial-intelligence" },
+        @{ title = "Energiesparen in Gemeinschaftsräumen"; category = "environment" },
+        @{ title = "Klimaschutz und faire Kosten"; category = "climate" },
+        @{ title = "Gesundheitsvorsorge im Alltag"; category = "health" },
+        @{ title = "Gelassenheit in schwierigen Gesprächen"; category = "psychology" },
+        @{ title = "Demokratie in kleinen Gruppen"; category = "democracy" },
+        @{ title = "Migration und berufliche Sprache"; category = "migration" },
+        @{ title = "Lokale Geschichte im Alltag"; category = "history" },
+        @{ title = "Sportvereine und neue Mitglieder"; category = "sports" },
+        @{ title = "Fußball und gemeinsames Feiern"; category = "football" },
+        @{ title = "Filme über Familie und Arbeit"; category = "cinema" },
+        @{ title = "Bücher und persönliche Entwicklung"; category = "books" },
+        @{ title = "Musik und kulturelle Identität"; category = "music" },
+        @{ title = "Kunst im Arbeitsumfeld"; category = "art" },
+        @{ title = "Lernpläne für lange Ziele"; category = "education" },
+        @{ title = "Verantwortung in neuen Rollen"; category = "work" },
+        @{ title = "Freundschaft und Ehrlichkeit"; category = "friendship" },
+        @{ title = "Familienarbeit gerecht verteilen"; category = "family" },
+        @{ title = "Gesunde Routinen beim Essen"; category = "food" },
+        @{ title = "Reisen und persönliche Grenzen"; category = "travel" },
+        @{ title = "Stadtleben und Erholung"; category = "city-life" },
+        @{ title = "Geld und langfristige Planung"; category = "money" },
+        @{ title = "Medienbilder und Realität"; category = "media" },
+        @{ title = "Soziale Medien und Gruppendruck"; category = "social-media" },
+        @{ title = "Gerechtigkeit im Arbeitsalltag"; category = "ethics" },
+        @{ title = "Zukunft der Nachbarschaften"; category = "future" },
+        @{ title = "Sprechen trotz Unsicherheit"; category = "language-learning" },
+        @{ title = "Alltagsdeutsch bei Behörden"; category = "germany-and-integration" },
+        @{ title = "Wissenschaftliche Fragen im Gespräch"; category = "science" },
+        @{ title = "Leben mit Weltraumtechnik"; category = "space" },
+        @{ title = "Digitale Ordnung im Büro"; category = "technology" },
+        @{ title = "Automatische Zusammenfassungen nutzen"; category = "artificial-intelligence" },
+        @{ title = "Nachhaltige Geschenke"; category = "environment" },
+        @{ title = "Klimaschutz in der Nachbarschaft"; category = "climate" },
+        @{ title = "Gesundheitsentscheidungen erklären"; category = "health" },
+        @{ title = "Stress durch Vergleiche"; category = "psychology" },
+        @{ title = "Mitbestimmung in Kursen"; category = "democracy" },
+        @{ title = "Integration durch gemeinsame Projekte"; category = "germany-and-integration" },
+        @{ title = "Berufliche Neustarts"; category = "migration" },
+        @{ title = "Sport und Gewohnheiten"; category = "sports" },
+        @{ title = "Fußball und Vorbilder im Alltag"; category = "football" },
+        @{ title = "Filmabende mit Diskussion"; category = "cinema" },
+        @{ title = "Lesen als tägliche Routine"; category = "books" },
+        @{ title = "Musik und Motivation"; category = "music" },
+        @{ title = "Kunst und Teamarbeit"; category = "art" },
+        @{ title = "Weiterbildung ohne Zertifikat"; category = "education" },
+        @{ title = "Arbeitsalltag nach Veränderungen"; category = "work" },
+        @{ title = "Freundschaft und Verlässlichkeit"; category = "friendship" },
+        @{ title = "Familienentscheidungen bei Umzügen"; category = "family" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', or 'ninth'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', or 'tenth'."
 }
 
 $levels = @($LevelsCsv.Split(",", [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object { $_.Trim().ToUpperInvariant() })
