@@ -284,8 +284,62 @@ elseif ($TopicSet -eq "fourth") {
         @{ title = "Deutschland verstehen durch Alltagssprache"; category = "germany-and-integration" }
     )
 }
+elseif ($TopicSet -eq "fifth") {
+    $themeSpecs = @(
+        @{ title = "Digitale Verträge im Alltag"; category = "technology" },
+        @{ title = "Künstliche Intelligenz und Kreativität"; category = "artificial-intelligence" },
+        @{ title = "Recycling in Mehrfamilienhäusern"; category = "environment" },
+        @{ title = "Starkregen und Stadtplanung"; category = "climate" },
+        @{ title = "Gesundheit am Schreibtisch"; category = "health" },
+        @{ title = "Selbstvertrauen beim Sprechen"; category = "psychology" },
+        @{ title = "Bürgerräte und Kompromisse"; category = "democracy" },
+        @{ title = "Migration und Unternehmensgründung"; category = "migration" },
+        @{ title = "Geschichte von Alltagsgegenständen"; category = "history" },
+        @{ title = "Breitensport und Integration"; category = "sports" },
+        @{ title = "Fußball und Geld"; category = "football" },
+        @{ title = "Kinobesuche als Gemeinschaftserlebnis"; category = "cinema" },
+        @{ title = "Buchhandlungen als Kulturorte"; category = "books" },
+        @{ title = "Musik und politische Botschaften"; category = "music" },
+        @{ title = "Kunstmärkte und faire Bezahlung"; category = "art" },
+        @{ title = "Prüfungsangst und Lernstrategien"; category = "education" },
+        @{ title = "Feedbackkultur im Büro"; category = "work" },
+        @{ title = "Freundschaften nach der Ausbildung"; category = "friendship" },
+        @{ title = "Familienrat und gemeinsame Entscheidungen"; category = "family" },
+        @{ title = "Esskultur in internationalen Teams"; category = "food" },
+        @{ title = "Reisen mit Sprachbarrieren"; category = "travel" },
+        @{ title = "Leben in Hochhäusern"; category = "city-life" },
+        @{ title = "Geldgeschenke und Erwartungen"; category = "money" },
+        @{ title = "Lokaljournalismus im Internet"; category = "media" },
+        @{ title = "Selbstdarstellung in sozialen Medien"; category = "social-media" },
+        @{ title = "Verantwortung beim Teilen von Informationen"; category = "ethics" },
+        @{ title = "Zukunft kleiner Geschäfte"; category = "future" },
+        @{ title = "Dialekte und Standardsprache"; category = "language-learning" },
+        @{ title = "Alltagsregeln in Deutschland"; category = "germany-and-integration" },
+        @{ title = "Forschung im Alltag erklären"; category = "science" },
+        @{ title = "Marsmissionen und Zusammenleben"; category = "space" },
+        @{ title = "Digitale Sicherheit für Familien"; category = "technology" },
+        @{ title = "Automatisierung in Supermärkten"; category = "artificial-intelligence" },
+        @{ title = "Weniger Plastik im Badezimmer"; category = "environment" },
+        @{ title = "Klimaschutz in Vereinen"; category = "climate" },
+        @{ title = "Apothekenberatung verstehen"; category = "health" },
+        @{ title = "Streitkultur in Gruppen"; category = "psychology" },
+        @{ title = "Demokratie in der Schule"; category = "democracy" },
+        @{ title = "Mehrsprachige Kinder in der Kita"; category = "germany-and-integration" },
+        @{ title = "Ankommen in einem neuen Beruf"; category = "migration" },
+        @{ title = "Sportliche Ziele im Alltag"; category = "sports" },
+        @{ title = "Fußballturniere im Stadtteil"; category = "football" },
+        @{ title = "Serienmarathons und Freizeit"; category = "cinema" },
+        @{ title = "Lesekreise für Erwachsene"; category = "books" },
+        @{ title = "Musikstreaming und Künstler"; category = "music" },
+        @{ title = "Kunstkurse für Berufstätige"; category = "art" },
+        @{ title = "Weiterbildung mit wenig Zeit"; category = "education" },
+        @{ title = "Remote Work und Vertrauen"; category = "work" },
+        @{ title = "Freundschaft und Geld"; category = "friendship" },
+        @{ title = "Familienfeste planen"; category = "family" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', or 'fourth'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', or 'fifth'."
 }
 
 $b2Contexts = @("in der Praxis", "in der Zukunft")
