@@ -176,8 +176,62 @@ if ($TopicSet -eq "second") {
         @{ title = "Sprachenlernen mit Tandempartnern"; category = "language-learning" }
     )
 }
+elseif ($TopicSet -eq "third") {
+    $themeSpecs = @(
+        @{ title = "Digitale Rechnungen im Alltag"; category = "technology" },
+        @{ title = "Kundenbewertungen im Internet"; category = "media" },
+        @{ title = "Künstliche Intelligenz im Kundenservice"; category = "artificial-intelligence" },
+        @{ title = "Automatische Übersetzungen beim Lernen"; category = "language-learning" },
+        @{ title = "Datenschutz in sozialen Netzwerken"; category = "social-media" },
+        @{ title = "Gesunde Pausen am Arbeitsplatz"; category = "health" },
+        @{ title = "Achtsamkeit ohne Leistungsdruck"; category = "psychology" },
+        @{ title = "Pendeln zwischen Stadt und Land"; category = "city-life" },
+        @{ title = "Carsharing und persönliche Freiheit"; category = "travel" },
+        @{ title = "Lebensmittelverschwendung vermeiden"; category = "food" },
+        @{ title = "Mehrwegverpackungen im Supermarkt"; category = "environment" },
+        @{ title = "Hitzeschutz für ältere Menschen"; category = "climate" },
+        @{ title = "Weiterbildung während der Arbeitszeit"; category = "education" },
+        @{ title = "Probezeit und Erwartungen"; category = "work" },
+        @{ title = "Kritikgespräche im Team"; category = "work" },
+        @{ title = "Transparente Gehälter"; category = "money" },
+        @{ title = "Schulden und Scham"; category = "psychology" },
+        @{ title = "Digitale Wahlen im Verein"; category = "democracy" },
+        @{ title = "Mehrsprachigkeit in Behörden"; category = "germany-and-integration" },
+        @{ title = "Einbürgerung und Zugehörigkeit"; category = "migration" },
+        @{ title = "Historische Denkmäler im Alltag"; category = "history" },
+        @{ title = "Wissenschaft gegen Falschinformationen"; category = "science" },
+        @{ title = "Satelliten und Wettervorhersagen"; category = "space" },
+        @{ title = "Fairness bei Gruppenarbeiten"; category = "ethics" },
+        @{ title = "Zukunft der beruflichen Ausbildung"; category = "future" },
+        @{ title = "Elternabende und Mitbestimmung"; category = "family" },
+        @{ title = "Freundschaften über Generationen"; category = "friendship" },
+        @{ title = "Sport als zweite Chance"; category = "sports" },
+        @{ title = "Fußball und soziale Medien"; category = "football" },
+        @{ title = "Dokumentarfilme und Wirklichkeit"; category = "cinema" },
+        @{ title = "Hörbücher statt gedruckter Bücher"; category = "books" },
+        @{ title = "Musikfestivals und Nachhaltigkeit"; category = "music" },
+        @{ title = "Streetart und Stadtbild"; category = "art" },
+        @{ title = "Onlinekurse mit Zertifikat"; category = "education" },
+        @{ title = "Digitale Akten in Arztpraxen"; category = "health" },
+        @{ title = "Lernen durch Fehler"; category = "language-learning" },
+        @{ title = "Homeoffice in kleinen Wohnungen"; category = "city-life" },
+        @{ title = "Nachbarschaftshilfe bei Hitze"; category = "climate" },
+        @{ title = "Reisen zu Familienfesten"; category = "travel" },
+        @{ title = "Traditionelle Rezepte verändern"; category = "food" },
+        @{ title = "Gebrauchte Technik kaufen"; category = "technology" },
+        @{ title = "Algorithmen und Musikempfehlungen"; category = "artificial-intelligence" },
+        @{ title = "Kurze Nachrichten und lange Analysen"; category = "media" },
+        @{ title = "Private Fotos online teilen"; category = "social-media" },
+        @{ title = "Arbeitszeugnisse verstehen"; category = "work" },
+        @{ title = "Sparen für unsichere Zeiten"; category = "money" },
+        @{ title = "Politische Gespräche in Familien"; category = "democracy" },
+        @{ title = "Sprachkurse und Kinderbetreuung"; category = "germany-and-integration" },
+        @{ title = "Museen über Migration"; category = "migration" },
+        @{ title = "Berufe, die es noch nicht gibt"; category = "future" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first' or 'second'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', or 'third'."
 }
 
 $b2Contexts = @("in der Praxis", "in der Zukunft")
