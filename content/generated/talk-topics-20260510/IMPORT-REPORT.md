@@ -61,3 +61,10 @@ Final WebApi verification:
 - TalkTopic vocabulary resolution through the WebApi: 17,307 of 22,212 items resolved (77.92%)
 - Distinct unresolved TalkTopic vocabulary lemmas: 54
 - Highest-impact unresolved lemmas: `die Frage`, `vorstellen`, `verändern`, `der Respekt`, `das Risiko`
+
+Follow-up vocabulary bridge:
+
+- Imported `content/generated/talk-topic-vocabulary-bridges-20260510/de-talk-topic-vocabulary-bridge-001.json`
+- Added 5 high-impact Word Catalog entries for unresolved TalkTopic important-word references
+- TalkTopic vocabulary resolution after the bridge import: 20,564 of 22,212 items resolved (92.58%)
+- Distinct unresolved TalkTopic vocabulary lemmas after the bridge import: 49
