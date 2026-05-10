@@ -1,6 +1,11 @@
 param(
     [string]$OutputPath = "content/generated/talk-topics-20260510-b1-c1-expansion",
-    [int]$TopicsPerPackage = 30
+    [int]$TopicsPerPackage = 30,
+    [string]$TopicSet = "first",
+    [string]$PackageIdPrefix = "de-talk-topics-20260510-b1-c1-expansion-v2",
+    [string]$PackageNamePrefix = "Darwin Deutsch Talk Topics B1-C1 Expansion 2026-05-10 v2",
+    [string]$GroupPrefix = "mittelstufe",
+    [string]$B2GroupPrefix = "b2-vertiefung"
 )
 
 $ErrorActionPreference = "Stop"
@@ -116,6 +121,64 @@ $themeSpecs = @(
     @{ title = "Einkaufen mit kleinem Budget"; category = "money" },
     @{ title = "Zukunft der Innenstädte"; category = "future" }
 )
+
+if ($TopicSet -eq "second") {
+    $themeSpecs = @(
+        @{ title = "Digitale Sprechstunden beim Arzt"; category = "health" },
+        @{ title = "Lernen mit kurzen Videos"; category = "education" },
+        @{ title = "Künstliche Intelligenz und Hausaufgaben"; category = "artificial-intelligence" },
+        @{ title = "Roboter in Pflegeheimen"; category = "technology" },
+        @{ title = "Fahrradstraßen in der Stadt"; category = "city-life" },
+        @{ title = "Regionale Küche und Identität"; category = "food" },
+        @{ title = "Reisen ohne Flugzeug"; category = "travel" },
+        @{ title = "Secondhand-Mode und Konsum"; category = "environment" },
+        @{ title = "Klimaanpassung in Mietwohnungen"; category = "climate" },
+        @{ title = "Psychische Gesundheit im Studium"; category = "psychology" },
+        @{ title = "Bewerbungen ohne Foto"; category = "work" },
+        @{ title = "Vier-Tage-Woche im Unternehmen"; category = "work" },
+        @{ title = "Geld teilen in Beziehungen"; category = "money" },
+        @{ title = "Nachrichten auf TikTok"; category = "social-media" },
+        @{ title = "Podcasts statt Radio"; category = "media" },
+        @{ title = "Ehrenamt im Sportverein"; category = "sports" },
+        @{ title = "Frauenfußball in den Medien"; category = "football" },
+        @{ title = "Serien als Kulturspiegel"; category = "cinema" },
+        @{ title = "Bücher in einfacher Sprache"; category = "books" },
+        @{ title = "Straßenmusik und öffentlicher Raum"; category = "music" },
+        @{ title = "Kunst im Krankenhaus"; category = "art" },
+        @{ title = "Freundschaft nach einem Umzug"; category = "friendship" },
+        @{ title = "Alleinerziehende Familien"; category = "family" },
+        @{ title = "Digitale Behörden und Barrieren"; category = "germany-and-integration" },
+        @{ title = "Migration und Vereinsleben"; category = "migration" },
+        @{ title = "Bürgerbeteiligung im Stadtteil"; category = "democracy" },
+        @{ title = "Erinnerung an die eigene Schulzeit"; category = "history" },
+        @{ title = "Wissenschaftliche Mythen im Alltag"; category = "science" },
+        @{ title = "Leben auf einer Mondstation"; category = "space" },
+        @{ title = "Faire Entscheidungen in Gruppen"; category = "ethics" },
+        @{ title = "Zukunft des Bargelds"; category = "future" },
+        @{ title = "Deutsch sprechen im Alltag"; category = "language-learning" },
+        @{ title = "Digitale Kalender und Stress"; category = "technology" },
+        @{ title = "Gesundes Essen in Schulen"; category = "food" },
+        @{ title = "Tourismus in kleinen Städten"; category = "travel" },
+        @{ title = "Grüne Dächer gegen Hitze"; category = "climate" },
+        @{ title = "Reparaturcafés im Stadtteil"; category = "environment" },
+        @{ title = "Online-Therapie und Vertrauen"; category = "health" },
+        @{ title = "Konflikte in Wohngemeinschaften"; category = "psychology" },
+        @{ title = "Meetings mit internationalen Teams"; category = "work" },
+        @{ title = "Preise im Supermarkt verstehen"; category = "money" },
+        @{ title = "Kommentare im Internet moderieren"; category = "social-media" },
+        @{ title = "Lokale Zeitungen und Demokratie"; category = "media" },
+        @{ title = "Training ohne Leistungsdruck"; category = "sports" },
+        @{ title = "Fußballfans und Verantwortung"; category = "football" },
+        @{ title = "Filmabende in Sprachgruppen"; category = "cinema" },
+        @{ title = "Bibliotheken für neue Nachbarn"; category = "books" },
+        @{ title = "Musikgeschmack zwischen Generationen"; category = "music" },
+        @{ title = "Museen und digitale Führungen"; category = "art" },
+        @{ title = "Sprachenlernen mit Tandempartnern"; category = "language-learning" }
+    )
+}
+elseif ($TopicSet -ne "first") {
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first' or 'second'."
+}
 
 $b2Contexts = @("in der Praxis", "in der Zukunft")
 
@@ -437,7 +500,7 @@ $talkTopics = @()
 $index = 0
 foreach ($spec in $themeSpecs) {
     foreach ($level in @("B1", "B2", "C1")) {
-        $talkTopics += New-TalkTopic $spec $level "mittelstufe" $index
+        $talkTopics += New-TalkTopic $spec $level $GroupPrefix $index
         $index++
     }
 }
@@ -448,7 +511,7 @@ foreach ($spec in $themeSpecs) {
             title = "$($spec.title) $context"
             category = $spec.category
         }
-        $talkTopics += New-TalkTopic $b2Spec "B2" "b2-vertiefung" $index
+        $talkTopics += New-TalkTopic $b2Spec "B2" $B2GroupPrefix $index
         $index++
     }
 }
@@ -458,8 +521,8 @@ for ($offset = 0; $offset -lt $talkTopics.Count; $offset += $TopicsPerPackage) {
     $batch = @($talkTopics | Select-Object -Skip $offset -First $TopicsPerPackage)
     $package = [ordered]@{
         packageVersion = "1.0"
-        packageId = "de-talk-topics-20260510-b1-c1-expansion-v2-{0:D3}" -f $packageIndex
-        packageName = "Darwin Deutsch Talk Topics B1-C1 Expansion 2026-05-10 v2 Batch {0:D3}" -f $packageIndex
+        packageId = "$PackageIdPrefix-{0:D3}" -f $packageIndex
+        packageName = "$PackageNamePrefix Batch {0:D3}" -f $packageIndex
         source = "Hybrid"
         defaultMeaningLanguages = @("en")
         entries = @()
