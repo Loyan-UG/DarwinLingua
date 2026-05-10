@@ -42,7 +42,7 @@ Content types:
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\ContentUtilities\TestTalkTopicPackages.ps1 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510
 ```
 
-The validator checks CEFR article character ranges, German-only articles and questions, discussion question counts by type, warm-up question counts, vocabulary count ranges, content types, speaking goals, duplicate slugs, and distinct topic groups.
+The validator checks CEFR article character ranges, German-only articles and questions, discussion question counts by type, warm-up question counts, vocabulary count ranges, content types, speaking goals, duplicate slugs, distinct topic groups, repeated mechanical title endings, and leaked internal/template fragments in article text.
 
 ## Import
 

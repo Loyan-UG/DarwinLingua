@@ -16,6 +16,17 @@ $ranges = @{
 $allowedContentTypes = @("article", "book-summary", "movie-summary", "story", "fact-sheet", "opinion-text", "interview", "debate-text")
 $allowedQuestionTypes = @("opinion", "imagination", "prediction", "comparison")
 $allowedSpeakingGoals = @("express-opinion", "give-reasons", "agree-disagree", "ask-follow-up-questions", "compare-options", "make-predictions", "describe-experiences", "imagine-possibilities", "debate-politely", "summarize-position")
+$internalArticleFragments = @(
+    "category ",
+    "contentType",
+    "Talk Topic",
+    "artificial-intelligence",
+    "city-life",
+    "social-media",
+    "germany-and-integration",
+    "language-learning"
+)
+$repeatedTitleEndingPattern = "im Alltag im Alltag|in der Familie in der Familie|in der Zukunft in der Zukunft|in Deutschland in Deutschland|in der Schule in der Schule|am Arbeitsplatz am Arbeitsplatz|in den Medien in den Medien|für junge Menschen für junge Menschen|für die Umwelt für die Umwelt"
 
 $files = Get-ChildItem -Path $ContentPath -Filter "*.json" -File | Sort-Object Name
 $errors = New-Object System.Collections.Generic.List[string]
@@ -33,6 +44,16 @@ foreach ($file in $files) {
         if (-not $slugs.Add([string]$topic.slug)) {
             $errors.Add("Duplicate TalkTopic slug '$($topic.slug)' in $($file.Name).")
         }
+        $title = [string]$topic.title
+        if ([string]::IsNullOrWhiteSpace($title)) {
+            $errors.Add("'$($topic.slug)' must have a title.")
+        }
+        elseif ($title.Substring(0, 1) -cmatch "[a-zäöü]") {
+            $errors.Add("'$($topic.slug)' title should start with an uppercase character.")
+        }
+        if ($title -match $repeatedTitleEndingPattern) {
+            $errors.Add("'$($topic.slug)' title contains a repeated mechanical ending.")
+        }
         [void]$groups.Add([string]$topic.topicGroupKey)
         $level = [string]$topic.cefrLevel
         if (-not $ranges.ContainsKey($level)) {
@@ -43,6 +64,11 @@ foreach ($file in $files) {
         $article = ([string]$topic.article.baseText).Trim()
         if ($article -match "Ã|Â|�") {
             $errors.Add("'$($topic.slug)' article contains mojibake or replacement characters.")
+        }
+        foreach ($fragment in $internalArticleFragments) {
+            if ($article.Contains($fragment, [System.StringComparison]::Ordinal)) {
+                $errors.Add("'$($topic.slug)' article contains internal/template fragment '$fragment'.")
+            }
         }
         if ($article.Length -lt $range[0] -or $article.Length -gt $range[1]) {
             $errors.Add("'$($topic.slug)' article length $($article.Length) is outside $($range[0])-$($range[1]).")
