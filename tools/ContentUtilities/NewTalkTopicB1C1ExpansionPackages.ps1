@@ -230,8 +230,62 @@ elseif ($TopicSet -eq "third") {
         @{ title = "Berufe, die es noch nicht gibt"; category = "future" }
     )
 }
+elseif ($TopicSet -eq "fourth") {
+    $themeSpecs = @(
+        @{ title = "Digitale Quittungen und Kontrolle"; category = "technology" },
+        @{ title = "Künstliche Intelligenz in der Medizin"; category = "artificial-intelligence" },
+        @{ title = "Wasser sparen im Haushalt"; category = "environment" },
+        @{ title = "Klimafreundliche Schulwege"; category = "climate" },
+        @{ title = "Gesundheitsinformationen im Internet"; category = "health" },
+        @{ title = "Einsamkeit in Großstädten"; category = "psychology" },
+        @{ title = "Nachbarschaftsräte und Mitbestimmung"; category = "democracy" },
+        @{ title = "Migration und berufliche Netzwerke"; category = "migration" },
+        @{ title = "Familiengeschichten aufbewahren"; category = "history" },
+        @{ title = "Amateursport und Fairness"; category = "sports" },
+        @{ title = "Fußballvereine als soziale Orte"; category = "football" },
+        @{ title = "Kino ohne große Budgets"; category = "cinema" },
+        @{ title = "Bücher tauschen statt kaufen"; category = "books" },
+        @{ title = "Musik beim Arbeiten"; category = "music" },
+        @{ title = "Kunst in Schulen"; category = "art" },
+        @{ title = "Praktika und echte Verantwortung"; category = "education" },
+        @{ title = "Berufliche Grenzen setzen"; category = "work" },
+        @{ title = "Freundschaft am Arbeitsplatz"; category = "friendship" },
+        @{ title = "Pflege in der Familie"; category = "family" },
+        @{ title = "Vegetarisches Essen in Kantinen"; category = "food" },
+        @{ title = "Reisen mit wenig Gepäck"; category = "travel" },
+        @{ title = "Wohnen in geteilten Häusern"; category = "city-life" },
+        @{ title = "Taschengeld und Verantwortung"; category = "money" },
+        @{ title = "Newsletter und Informationsflut"; category = "media" },
+        @{ title = "Influencer und Vertrauen"; category = "social-media" },
+        @{ title = "Ethische Kaufentscheidungen"; category = "ethics" },
+        @{ title = "Zukunft der öffentlichen Bibliotheken"; category = "future" },
+        @{ title = "Fehler beim Deutschsprechen"; category = "language-learning" },
+        @{ title = "Willkommensfeste im Stadtteil"; category = "germany-and-integration" },
+        @{ title = "Citizen Science im Alltag"; category = "science" },
+        @{ title = "Weltraummüll und Verantwortung"; category = "space" },
+        @{ title = "Digitale Geräte länger nutzen"; category = "technology" },
+        @{ title = "Automatisierte Entscheidungen im Alltag"; category = "artificial-intelligence" },
+        @{ title = "Saubere Flüsse in der Stadt"; category = "environment" },
+        @{ title = "Kühle Orte im Sommer"; category = "climate" },
+        @{ title = "Vorsorgeuntersuchungen verstehen"; category = "health" },
+        @{ title = "Schlaf und digitale Medien"; category = "psychology" },
+        @{ title = "Jugendparlamente und echte Macht"; category = "democracy" },
+        @{ title = "Anerkennung ausländischer Abschlüsse"; category = "migration" },
+        @{ title = "Sportliche Vorbilder"; category = "sports" },
+        @{ title = "Fußball und lokale Identität"; category = "football" },
+        @{ title = "Filme in Originalsprache"; category = "cinema" },
+        @{ title = "Lesen auf dem Smartphone"; category = "books" },
+        @{ title = "Chöre und Gemeinschaft"; category = "music" },
+        @{ title = "Ausstellungen im öffentlichen Raum"; category = "art" },
+        @{ title = "Lebenslanges Lernen ohne Druck"; category = "education" },
+        @{ title = "Arbeitszeiten und Familienleben"; category = "work" },
+        @{ title = "Freundschaft trotz unterschiedlicher Meinungen"; category = "friendship" },
+        @{ title = "Essenspläne in Familien"; category = "food" },
+        @{ title = "Deutschland verstehen durch Alltagssprache"; category = "germany-and-integration" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', or 'third'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', or 'fourth'."
 }
 
 $b2Contexts = @("in der Praxis", "in der Zukunft")
