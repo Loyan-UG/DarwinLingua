@@ -51,3 +51,13 @@ Batch 003:
 - Published batch: `darwin-deutsch-20260510122619108`
 - TalkTopic vocabulary resolution after import: 21,273 of 22,212 items resolved (95.77%)
 - Distinct unresolved TalkTopic vocabulary lemmas after import: 39
+
+Batch 004:
+
+- Files imported: 1
+- Entries imported: 5
+- Duplicates skipped: 0
+- Invalid entries: 0
+- Published batch: `darwin-deutsch-20260510123247257`
+- TalkTopic vocabulary resolution after import: 21,456 of 22,212 items resolved (96.60%)
+- Distinct unresolved TalkTopic vocabulary lemmas after import: 34
