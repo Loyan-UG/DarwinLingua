@@ -48,8 +48,10 @@ Each package must contain:
 
 - package metadata
 - default meaning-language metadata
-- an array of vocabulary entries
-- an optional array of curated collections
+- an `entries` array, which may be empty when the package contains other content
+- optional arrays of curated collections or other supported content types
+
+A package must contain at least one content item overall. Vocabulary packages usually carry entries; collection-only packages may carry `entries: []` plus a populated `collections` array.
 
 ### 3.1 Required Package Fields
 
@@ -178,6 +180,8 @@ File naming should be readable and stable, but the real identity is the `package
 
 Packages may include an optional top-level `collections` array.
 
+Collection-only packages are valid. Use them when all referenced words already exist in the catalog or were imported by earlier files in the same folder import. Keep `entries: []` in these packages; do not add a duplicate vocabulary entry just to satisfy the root shape.
+
 Each collection may contain:
 
 - `slug` required
@@ -206,6 +210,33 @@ Example:
 
 ```json
 {
+  "collections": [
+    {
+      "slug": "book-a-unit-03",
+      "name": "Book A Unit 03",
+      "description": "Vocabulary for the third unit of Book A.",
+      "imageUrl": "/images/collections/book-a-unit-03.svg",
+      "sortOrder": 30,
+      "words": [
+        { "word": "Aufgabe", "partOfSpeech": "Noun", "cefrLevel": "B1" },
+        { "word": "Anforderung", "partOfSpeech": "Noun", "cefrLevel": "B2" }
+      ]
+    }
+  ]
+}
+```
+
+Collection-only package example:
+
+```json
+{
+  "packageVersion": "1.0",
+  "packageId": "book-a-unit-03-collections",
+  "packageName": "Book A Unit 03 Collections",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "labels": [],
+  "entries": [],
   "collections": [
     {
       "slug": "book-a-unit-03",
@@ -262,6 +293,7 @@ For new JSON packages, the recommended canonical shape is:
 - Controlled values such as topics and language codes must reference known reference data.
 - The package format must not silently coerce invalid values.
 - The package format is import-oriented, not edit-oriented.
+- A package with no vocabulary entries is valid only when it contains another supported content item, such as a collection.
 - Merge/update semantics are not part of the Phase 1 package contract.
 - Curated collection membership is the exception:
   collections may be updated predictably by `slug` because they are ordered study artifacts, not lexical-source records.

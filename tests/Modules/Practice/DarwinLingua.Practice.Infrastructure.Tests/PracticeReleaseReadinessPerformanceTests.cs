@@ -31,6 +31,20 @@ public sealed class PracticeReleaseReadinessPerformanceTests
 {
     private const int StarterDatasetEntryCount = 180;
     private const int ReviewSeedCount = 90;
+    private static readonly string[] RequiredMeaningLanguages =
+    [
+        "ar",
+        "ckb",
+        "en",
+        "fa",
+        "kmr",
+        "pl",
+        "ro",
+        "ru",
+        "sq",
+        "tr",
+    ];
+
     private static readonly string[] TopicKeys =
     [
         "everyday-life",
@@ -241,27 +255,25 @@ public sealed class PracticeReleaseReadinessPerformanceTests
                 article = "das",
                 plural = $"Praxiswoerter {token}",
                 topics = new[] { topicKey },
-                meanings = new[]
-                {
-                    new
+                meanings = RequiredMeaningLanguages
+                    .Select(language => new
                     {
-                        language = "en",
-                        text = $"practice word {token}",
-                    },
-                },
+                        language,
+                        text = $"{language} practice word {token}",
+                    })
+                    .ToArray(),
                 examples = new[]
                 {
                     new
                     {
                         baseText = $"Das ist Praxiswort {token}.",
-                        translations = new[]
-                        {
-                            new
+                        translations = RequiredMeaningLanguages
+                            .Select(language => new
                             {
-                                language = "en",
-                                text = $"This is practice word {token}.",
-                            },
-                        },
+                                language,
+                                text = $"{language} example for practice word {token}.",
+                            })
+                            .ToArray(),
                     },
                 },
             });
@@ -273,7 +285,7 @@ public sealed class PracticeReleaseReadinessPerformanceTests
             packageId,
             packageName = "Phase 2 Practice Performance Package",
             source = "Hybrid",
-            defaultMeaningLanguages = new[] { "en" },
+            defaultMeaningLanguages = RequiredMeaningLanguages,
             entries,
         });
     }

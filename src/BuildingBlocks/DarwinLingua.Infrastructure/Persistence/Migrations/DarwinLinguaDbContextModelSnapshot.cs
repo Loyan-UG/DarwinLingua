@@ -2365,9 +2365,12 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedLemma")
+                    b.HasIndex("NormalizedLemma", "PartOfSpeech", "PrimaryCefrLevel")
                         .IsUnique()
-                        .HasDatabaseName("UX_WordEntries_NormalizedLemma");
+                        .HasDatabaseName("IX_WordEntries_NormalizedLemma_PartOfSpeech_PrimaryCefrLevel");
+
+                    b.HasIndex("NormalizedLemma")
+                        .HasDatabaseName("IX_WordEntries_Search_NormalizedLemma");
 
                     b.HasIndex("PublicId")
                         .IsUnique();

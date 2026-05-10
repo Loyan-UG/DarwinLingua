@@ -280,6 +280,11 @@ public sealed class WordQueryServiceTests
             return Task.FromResult<WordEntry?>(null);
         }
 
+        public Task<WordEntry?> GetBySlugAsync(string slug, CancellationToken cancellationToken)
+        {
+            return Task.FromResult<WordEntry?>(null);
+        }
+
         public Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrAsync(
             CefrLevel cefrLevel,
             string meaningLanguageCode,

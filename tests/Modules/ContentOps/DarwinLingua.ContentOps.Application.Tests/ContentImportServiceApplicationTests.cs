@@ -521,7 +521,7 @@ public sealed class ContentImportServiceApplicationTests
 
         Assert.False(result.IsSuccess);
         Assert.Equal("Failed", result.Status);
-        Assert.Contains(result.Issues, issue => issue.Message.Contains("entry", StringComparison.OrdinalIgnoreCase));
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("content item", StringComparison.OrdinalIgnoreCase));
     }
 
     /// <summary>
@@ -1049,6 +1049,55 @@ public sealed class ContentImportServiceApplicationTests
         Assert.DoesNotContain(result.Issues, issue => issue.Severity == "Error");
     }
 
+    /// <summary>
+    /// Verifies that a package can update collections without carrying a duplicate vocabulary anchor entry.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldImportCollection_WhenPackageHasNoEntries()
+    {
+        WordEntry existingWord = new(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            "Brot",
+            LanguageCode.From("de"),
+            CefrLevel.A1,
+            PartOfSpeech.Noun,
+            PublicationStatus.Active,
+            ContentSourceType.Manual,
+            DateTime.UtcNow,
+            article: "der");
+
+        ParsedContentCollectionWordReferenceModel wordRef = new("Brot", "Noun", "A1");
+        ParsedContentCollectionModel collection = new("food-basics", "Food Basics", null, null, 1, [wordRef]);
+
+        ParsedContentPackageModel parsedPackage = new(
+            "1.0",
+            "test-collection-package",
+            "Test Collection Package",
+            "Manual",
+            ["en"],
+            [],
+            [],
+            [collection]);
+
+        FakeRepository repository = new(existingWords: [existingWord]);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("test.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal(0, result.TotalEntries);
+        Assert.Single(repository.ImportedCollections);
+        Assert.DoesNotContain(result.Issues, issue => issue.Severity == "Error");
+    }
+
     private static ServiceProvider BuildServiceProvider(
         IContentImportFileReader fileReader,
         IContentImportParser parser,
@@ -1260,6 +1309,8 @@ public sealed class ContentImportServiceApplicationTests
     {
         public IReadOnlyList<TalkTopic> ImportedTalkTopics { get; private set; } = [];
 
+        public IReadOnlyList<WordCollection> ImportedCollections { get; private set; } = [];
+
         public Task<IReadOnlyDictionary<string, Topic>> GetActiveTopicsByKeyAsync(CancellationToken cancellationToken)
         {
             Topic topic = new(Guid.NewGuid(), "shopping", 10, true, DateTime.UtcNow);
@@ -1314,6 +1365,7 @@ public sealed class ContentImportServiceApplicationTests
             CancellationToken cancellationToken)
         {
             ImportedTalkTopics = importedTalkTopics;
+            ImportedCollections = importedCollections;
             return Task.CompletedTask;
         }
     }

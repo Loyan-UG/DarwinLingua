@@ -18,11 +18,11 @@ public sealed class WebAdminShellStructureTests
         string dashboardViewSource = File.ReadAllText(dashboardViewPath);
 
         Assert.Contains("Darwin Lingua Admin", adminLayoutSource, StringComparison.Ordinal);
-        Assert.Contains(">Overview<", adminLayoutSource, StringComparison.Ordinal);
-        Assert.Contains(">Publishing<", adminLayoutSource, StringComparison.Ordinal);
-        Assert.Contains(">Diagnostics<", adminLayoutSource, StringComparison.Ordinal);
+        Assert.Contains("@T[\"Overview\"]", adminLayoutSource, StringComparison.Ordinal);
+        Assert.Contains("@T[\"Publishing\"]", adminLayoutSource, StringComparison.Ordinal);
+        Assert.Contains("@T[\"Diagnostics\"]", adminLayoutSource, StringComparison.Ordinal);
         Assert.Contains("_AdminLayout.cshtml", adminViewStartSource, StringComparison.Ordinal);
-        Assert.Contains("live catalog metrics", dashboardViewSource, StringComparison.Ordinal);
+        Assert.Contains("Admin overview", dashboardViewSource, StringComparison.Ordinal);
     }
 
     private static string ResolveRepositoryRoot()

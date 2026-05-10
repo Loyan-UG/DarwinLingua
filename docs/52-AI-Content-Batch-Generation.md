@@ -25,6 +25,7 @@ The current Phase 1 import pipeline only accepts:
 - meaning languages that already exist in the reference data
 - topic keys that already exist in the database
 - optional root-level `collections`
+- collection-only packages with `entries: []` when the referenced words already exist
 
 Supported meaning languages currently include:
 
@@ -92,6 +93,7 @@ Recommended minimum conventions for AI batches:
 - include at least two domain-relevant examples with both `en` and `fa` translations
 - keep examples domain-relevant when possible
 - when the batch belongs to a book or curated path, include a root-level `collections` array
+- for large collection updates, prefer word batches first and a final collection-only package with `entries: []`
 
 ## Recommended Package Template
 
@@ -194,6 +196,8 @@ Before importing a batch, ensure:
 - no duplicate lemma + primary part-of-speech + CEFR combination is generated within the same batch
 - collection slugs are kebab-case
 - collection word references resolve to exactly one word; when in doubt include `partOfSpeech` and `cefrLevel`
+- collection-only packages must still include `entries: []`
+- do not add a duplicate anchor entry to a collection-only package
 
 ## Recommended AI Prompting Rules
 
@@ -209,6 +213,7 @@ When asking an AI to generate the next batch, specify:
 - avoid duplicates against already-generated batches
 - if the batch belongs to a book, unit, or study path, generate one or more root-level `collections`
 - each collection word reference should include `word`, `partOfSpeech`, and `cefrLevel`
+- for broad study packs, generate/import word batches first, then add one final collection-only package after the word files
 
 ## Collection Authoring Pattern
 
@@ -223,6 +228,33 @@ Recommended shape:
 
 ```json
 {
+  "collections": [
+    {
+      "slug": "erp-rollout-book-a",
+      "name": "ERP Rollout Book A",
+      "description": "A curated list for rollout planning and ERP project communication.",
+      "imageUrl": "/images/collections/project-meetings-b2.svg",
+      "sortOrder": 60,
+      "words": [
+        { "word": "Aufgabe", "partOfSpeech": "Noun", "cefrLevel": "B1" },
+        { "word": "Anforderung", "partOfSpeech": "Noun", "cefrLevel": "B2" }
+      ]
+    }
+  ]
+}
+```
+
+For collection-only updates after the words already exist, use:
+
+```json
+{
+  "packageVersion": "1.0",
+  "packageId": "erp-rollout-book-a-collections",
+  "packageName": "ERP Rollout Book A Collections",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "labels": [],
+  "entries": [],
   "collections": [
     {
       "slug": "erp-rollout-book-a",

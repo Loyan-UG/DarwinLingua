@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-05-10T02:45:00",
+  "seedImport": {
+    "packageCount": 73,
+    "filesProcessed": 73,
+    "filesSucceeded": 73,
+    "filesFailed": 0,
+    "entriesTotal": 2134,
+    "importedEntries": 2092,
+    "skippedDuplicateEntries": 42,
+    "invalidEntries": 0,
+    "collectionCount": 40,
+    "assignmentCount": 4000,
+    "totalSeedCollectionCount": 44,
+    "totalSeedWordCount": 2531
+  },
+  "notes": [
+    "The collection package is now collection-only and contains no duplicate vocabulary anchor entry.",
+    "Collection-only packages are supported by the import service after validation was updated to require at least one content item, not necessarily a vocabulary entry.",
+    "A repeat import into the same seed database is rejected by package id to prevent accidental duplicate package records; validate clean imports against a fresh seed database."
+  ]
+}

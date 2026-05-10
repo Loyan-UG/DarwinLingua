@@ -109,7 +109,10 @@ internal sealed class ContentImportService : IContentImportService
         ValidateTalkTopics(parsedPackage.TalkTopics, topicsByKey, meaningLanguages, issues);
         ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
         ValidateEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, issues);
-        Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = ValidateLabels(parsedPackage.Labels, issues);
+        Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = ValidateLabels(
+            parsedPackage.Labels,
+            parsedPackage.Entries.Any(EntryReferencesLabels),
+            issues);
 
         if (issues.Any(issue => issue.EntryIndex is null && string.Equals(issue.Severity, "Error", StringComparison.Ordinal)))
         {
@@ -661,7 +664,7 @@ internal sealed class ContentImportService : IContentImportService
 
         List<WordEntry> resolvableWords = importedWords
             .Concat(existingWords)
-            .GroupBy(word => word.NormalizedLemma, StringComparer.Ordinal)
+            .GroupBy(word => word.Id)
             .Select(group => group.First())
             .ToList();
 
@@ -1518,6 +1521,7 @@ internal sealed class ContentImportService : IContentImportService
 
     private static Dictionary<WordLabelKind, HashSet<string>> ValidateLabels(
         IReadOnlyList<ParsedContentLabelDefinitionModel> labels,
+        bool labelsRequired,
         ICollection<ImportIssueModel> issues)
     {
         Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = new()
@@ -1528,7 +1532,11 @@ internal sealed class ContentImportService : IContentImportService
 
         if (labels.Count == 0)
         {
-            issues.Add(new ImportIssueModel(null, "Error", "The package labels array is required and must define localized label taxonomy before entries reference labels."));
+            if (labelsRequired)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", "The package labels array is required and must define localized label taxonomy before entries reference labels."));
+            }
+
             return allowedLabelsByKind;
         }
 
@@ -1578,6 +1586,12 @@ internal sealed class ContentImportService : IContentImportService
         }
 
         return allowedLabelsByKind;
+    }
+
+    private static bool EntryReferencesLabels(ParsedContentEntryModel entry)
+    {
+        return entry.UsageLabels.Any(label => !string.IsNullOrWhiteSpace(label)) ||
+               entry.ContextLabels.Any(label => !string.IsNullOrWhiteSpace(label));
     }
 
     private static void ValidateKebabReferences(
@@ -1647,9 +1661,14 @@ internal sealed class ContentImportService : IContentImportService
             issues.Add(new ImportIssueModel(null, "Error", "Package name is required."));
         }
 
-        if (parsedPackage.Entries.Count == 0)
+        if (parsedPackage.Entries.Count == 0 &&
+            parsedPackage.Collections.Count == 0 &&
+            parsedPackage.Dialogues.Count == 0 &&
+            parsedPackage.TalkTopics.Count == 0 &&
+            parsedPackage.ConversationStarterPacks.Count == 0 &&
+            parsedPackage.EventPreparationPacks.Count == 0)
         {
-            issues.Add(new ImportIssueModel(null, "Error", "The package must contain at least one entry."));
+            issues.Add(new ImportIssueModel(null, "Error", "The package must contain at least one content item."));
         }
 
         HashSet<string> collectionSlugs = [];

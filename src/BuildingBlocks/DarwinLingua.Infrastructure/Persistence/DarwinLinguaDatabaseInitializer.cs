@@ -208,7 +208,20 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         // read-path indexes are applied idempotently during every startup initialization.
         await dbContext.Database.ExecuteSqlRawAsync(
             """
-            CREATE UNIQUE INDEX IF NOT EXISTS UX_WordEntries_NormalizedLemma
+            DROP INDEX IF EXISTS UX_WordEntries_NormalizedLemma;
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE UNIQUE INDEX IF NOT EXISTS IX_WordEntries_NormalizedLemma_PartOfSpeech_PrimaryCefrLevel
+            ON WordEntries (NormalizedLemma, PartOfSpeech, PrimaryCefrLevel);
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE INDEX IF NOT EXISTS IX_WordEntries_Search_NormalizedLemma
             ON WordEntries (NormalizedLemma);
             """,
             cancellationToken).ConfigureAwait(false);

@@ -46,7 +46,7 @@ public sealed class ReferenceDataSeedingTests
 
             Assert.Equal(["ar", "ckb", "de", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"], activeLanguageCodes);
             Assert.Equal(5, topicCount);
-            Assert.Equal(10, topicLocalizationCount);
+            Assert.Equal(55, topicLocalizationCount);
         }
         finally
         {
@@ -93,7 +93,7 @@ public sealed class ReferenceDataSeedingTests
 
             Assert.Equal(["ar", "ckb", "de", "en", "fa", "kmr", "pl", "ro", "ru", "sq", "tr"], activeLanguageCodes);
             Assert.Equal(5, topicCount);
-            Assert.Equal(10, topicLocalizationCount);
+            Assert.Equal(55, topicLocalizationCount);
         }
         finally
         {

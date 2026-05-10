@@ -17,11 +17,11 @@ public sealed class WebLearnerShellStructureTests
         string homeViewSource = File.ReadAllText(homeViewPath);
         string recentViewSource = File.ReadAllText(recentViewPath);
 
-        Assert.Contains(">Browse<", layoutSource, StringComparison.Ordinal);
-        Assert.Contains(">Search<", layoutSource, StringComparison.Ordinal);
-        Assert.Contains(">Favorites<", layoutSource, StringComparison.Ordinal);
-        Assert.Contains(">Recent<", layoutSource, StringComparison.Ordinal);
-        Assert.Contains(">Settings<", layoutSource, StringComparison.Ordinal);
+        Assert.Contains(">@T[\"Browse\"]</a>", layoutSource, StringComparison.Ordinal);
+        Assert.Contains(">@T[\"Search\"]</a>", layoutSource, StringComparison.Ordinal);
+        Assert.Contains(">@T[\"Favorites\"]</a>", layoutSource, StringComparison.Ordinal);
+        Assert.Contains(">@T[\"Recent\"]</a>", layoutSource, StringComparison.Ordinal);
+        Assert.Contains("@T[\"Settings\"]", layoutSource, StringComparison.Ordinal);
         Assert.Contains("hx-get", homeViewSource, StringComparison.Ordinal);
         Assert.Contains("Recently viewed words", recentViewSource, StringComparison.Ordinal);
     }

@@ -327,6 +327,66 @@ public sealed class ContentImportServiceTests
     }
 
     /// <summary>
+    /// Verifies that collection-only packages can attach existing imported words without carrying a duplicate anchor entry.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldImportCollectionOnlyPackage()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string wordsPackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-words-{Guid.NewGuid():N}.json");
+        string collectionPackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-collection-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            await File.WriteAllTextAsync(wordsPackagePath, CreatePackageWithCollectionWordKeysJson("a1-shopping-collection-only-words"));
+            await File.WriteAllTextAsync(collectionPackagePath, CreateCollectionOnlyPackageJson("a1-shopping-collection-only-package"));
+
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult wordsResult = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(wordsPackagePath), CancellationToken.None);
+            ImportContentPackageResult collectionResult = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(collectionPackagePath), CancellationToken.None);
+
+            Assert.True(wordsResult.IsSuccess, string.Join(Environment.NewLine, wordsResult.Issues.Select(issue => issue.Message)));
+            Assert.True(collectionResult.IsSuccess, string.Join(Environment.NewLine, collectionResult.Issues.Select(issue => issue.Message)));
+            Assert.Equal(0, collectionResult.TotalEntries);
+            Assert.Equal(0, collectionResult.ImportedEntries);
+
+            IWordCollectionQueryService collectionQueryService = serviceProvider.GetRequiredService<IWordCollectionQueryService>();
+            DarwinLingua.Catalog.Application.Models.WordCollectionDetailModel? collection = await collectionQueryService
+                .GetPublishedCollectionBySlugAsync("a1-shopping-collection-only", "en", CancellationToken.None);
+
+            Assert.NotNull(collection);
+            Assert.Equal(2, collection!.Words.Count);
+            Assert.Contains(collection.Words, word => word.Lemma == "Brot");
+            Assert.Contains(collection.Words, word => word.Lemma == "Milch");
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(wordsPackagePath))
+            {
+                File.Delete(wordsPackagePath);
+            }
+
+            if (File.Exists(collectionPackagePath))
+            {
+                File.Delete(collectionPackagePath);
+            }
+        }
+    }
+
+    /// <summary>
     /// Verifies that valid Dialogue lessons from a content package are persisted with their nested content.
     /// </summary>
     [Fact]
@@ -1077,6 +1137,30 @@ public sealed class ContentImportServiceTests
                   "name": "A1 Shopping Word Keys",
                   "description": "Compact collection reference test.",
                   "image": "collections/a1-shopping-word-keys.png",
+                  "wordKeys": ["Brot", "Milch"]
+                }
+              ]
+            }
+            """);
+    }
+
+    private static string CreateCollectionOnlyPackageJson(string packageId)
+    {
+        return NormalizePackageJson($$"""
+            {
+              "packageVersion": "1.0",
+              "packageId": "{{packageId}}",
+              "packageName": "A1 Shopping Collection Only Test",
+              "source": "Hybrid",
+              "defaultMeaningLanguages": ["en"],
+              "labels": [],
+              "entries": [],
+              "collections": [
+                {
+                  "slug": "a1-shopping-collection-only",
+                  "name": "A1 Shopping Collection Only",
+                  "description": "Collection-only package reference test.",
+                  "image": "collections/a1-shopping-collection-only.png",
                   "wordKeys": ["Brot", "Milch"]
                 }
               ]

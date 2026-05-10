@@ -84,7 +84,7 @@ public sealed class DatabaseInitializationUseCaseTests
                 5,
                 await verificationContext.Topics.CountAsync(cancellationToken: CancellationToken.None));
             Assert.Equal(
-                10,
+                55,
                 await verificationContext.TopicLocalizations.CountAsync(cancellationToken: CancellationToken.None));
         }
         finally
@@ -132,7 +132,7 @@ public sealed class DatabaseInitializationUseCaseTests
                 5,
                 await verificationContext.Topics.CountAsync(cancellationToken: CancellationToken.None));
             Assert.Equal(
-                10,
+                55,
                 await verificationContext.TopicLocalizations.CountAsync(cancellationToken: CancellationToken.None));
         }
         finally

@@ -191,6 +191,11 @@ public sealed class WordDetailQueryServiceTests
             return Task.FromResult(word.PublicId == publicId ? word : null);
         }
 
+        public Task<WordEntry?> GetBySlugAsync(string slug, CancellationToken cancellationToken)
+        {
+            return Task.FromResult<WordEntry?>(null);
+        }
+
         public Task<IReadOnlyList<WordListItemModel>> GetActiveByCefrAsync(
             CefrLevel cefrLevel,
             string meaningLanguageCode,

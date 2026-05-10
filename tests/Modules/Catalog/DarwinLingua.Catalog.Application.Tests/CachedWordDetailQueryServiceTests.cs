@@ -147,6 +147,11 @@ public sealed class CachedWordDetailQueryServiceTests
             return Task.FromResult(Word.PublicId == publicId ? Word : null);
         }
 
+        public Task<WordEntry?> GetBySlugAsync(string slug, CancellationToken cancellationToken)
+        {
+            return Task.FromResult<WordEntry?>(null);
+        }
+
         public Task<IReadOnlyList<WordListItemModel>> GetActiveByTopicKeyAsync(
             string topicKey,
             string meaningLanguageCode,

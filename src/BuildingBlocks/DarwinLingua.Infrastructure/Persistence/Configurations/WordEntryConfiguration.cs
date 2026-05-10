@@ -90,8 +90,16 @@ internal sealed class WordEntryConfiguration : IEntityTypeConfiguration<WordEntr
             .IsUnique();
 
         builder.HasIndex(word => word.NormalizedLemma)
+            .HasDatabaseName("IX_WordEntries_Search_NormalizedLemma");
+
+        builder.HasIndex(word => new
+            {
+                word.NormalizedLemma,
+                word.PartOfSpeech,
+                word.PrimaryCefrLevel,
+            })
             .IsUnique()
-            .HasDatabaseName("UX_WordEntries_NormalizedLemma");
+            .HasDatabaseName("IX_WordEntries_NormalizedLemma_PartOfSpeech_PrimaryCefrLevel");
 
         builder.HasIndex(word => new
             {
