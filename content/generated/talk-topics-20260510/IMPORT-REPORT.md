@@ -96,3 +96,10 @@ Fifth follow-up vocabulary bridge:
 - Added 5 additional high-impact Word Catalog entries: `die Erde`, `das Glück`, `das Haustier`, `das Konzert`, `das Museum`
 - TalkTopic vocabulary resolution after the fifth bridge import: 21,607 of 22,212 items resolved (97.28%)
 - Distinct unresolved TalkTopic vocabulary lemmas after the fifth bridge import: 29
+
+Sixth follow-up vocabulary bridge:
+
+- Imported `content/generated/talk-topic-vocabulary-bridges-20260510/de-talk-topic-vocabulary-bridge-006.json`
+- Added 5 additional high-impact Word Catalog entries: `das Teleskop`, `der öffentliche Raum`, `der Prompt`, `die Armut`, `die Bühne`
+- TalkTopic vocabulary resolution after the sixth bridge import: 21,757 of 22,212 items resolved (97.95%)
+- Distinct unresolved TalkTopic vocabulary lemmas after the sixth bridge import: 24
