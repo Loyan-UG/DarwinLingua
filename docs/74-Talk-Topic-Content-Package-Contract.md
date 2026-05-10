@@ -4,7 +4,7 @@ Talk Topics are reading-based conversation materials for friendly learner groups
 
 ## JSON Shape
 
-Packages may include a top-level `talkTopics` array. Each item stores metadata, one German article body, optional article translations, warm-up questions, discussion questions, vocabulary references, speaking goals, sensitivity metadata, sort order, and publication state.
+Packages may include a top-level `talkTopics` array. Each item stores metadata, one German article body, German-only warm-up questions, German-only discussion questions, vocabulary references, speaking goals, sensitivity metadata, sort order, and publication state.
 
 Required fields:
 
@@ -40,20 +40,37 @@ Book summaries and movie summaries are especially intended for higher CEFR level
 
 ## Text Length Validation
 
-The normalized German `article.baseText` must meet the CEFR-specific minimum length. Leading and trailing whitespace is ignored. Translations are not used for this check.
+The normalized German `article.baseText` length is measured in characters, not words. Leading and trailing whitespace is ignored. The length is a target range, not only a minimum.
 
-- `A1`: 1000 characters
-- `A2`: 1500 characters
-- `B1`: 2000 characters
-- `B2`: 2500 characters
-- `C1`: 3000 characters
-- `C2`: 3500 characters
+- `A1`: target 1000 characters, acceptable range 900-1100
+- `A2`: target 1500 characters, acceptable range 1400-1600
+- `B1`: target 2000 characters, acceptable range 1900-2100
+- `B2`: target 2500 characters, acceptable range 2400-2600
+- `C1`: target 3000 characters, acceptable range 2900-3100
+- `C2`: target 3500 characters, acceptable range 3400-3600
+
+Article translations are not stored for Talk Topics. The main article is German-only for now.
 
 ## Questions
 
-Warm-up questions are first-class content and should usually contain at least two accessible, personal, or experience-based prompts. They are for speaking before reading, not comprehension.
+Warm-up questions are first-class content and must be German-only. They are for speaking before reading, not comprehension.
 
-Discussion questions are required. Allowed question types are `opinion`, `personal-experience`, `prediction`, `comparison`, `imagination`, `debate`, `ethics`, and `comprehension`. Opinion and speaking-oriented questions should dominate; comprehension questions may exist but should not be the main focus.
+- `A1`, `A2`, and `B1`: at least 3 warm-up questions.
+- `B2`, `C1`, and `C2`: at least 4 warm-up questions.
+
+Discussion questions are required and must be German-only. Allowed question types are:
+
+- `opinion`
+- `imagination`
+- `prediction`
+- `comparison`
+
+Each Talk Topic must include enough questions per type:
+
+- `A1`, `A2`, and `B1`: at least 2 questions per question type.
+- `B2`, `C1`, and `C2`: at least 3 questions per question type.
+
+Question translations are not stored for Talk Topics.
 
 ## Vocabulary
 
@@ -66,9 +83,31 @@ Talk Topics must not duplicate word meanings, explanations, or examples. Vocabul
 
 The Web detail page resolves meanings from the existing Word Catalog. Unresolved references render safely as plain text.
 
+Recommended vocabulary-reference counts:
+
+- `A1`: 12-18 items
+- `A2`: 15-22 items
+- `B1`: 18-26 items
+- `B2`: 22-32 items
+- `C1`: 26-38 items
+- `C2`: 30-45 items
+
 ## Speaking Goals
 
 Allowed speaking goals are `express-opinion`, `give-reasons`, `agree-disagree`, `ask-follow-up-questions`, `compare-options`, `make-predictions`, `describe-experiences`, `imagine-possibilities`, `debate-politely`, and `summarize-position`.
+
+Each Talk Topic must include 2-5 speaking goals. Higher-level topics should often include `debate-politely`, `summarize-position`, `compare-options`, and `give-reasons`.
+
+## CEFR Filtering And Variants
+
+The TalkTopic `cefrLevel` field is separate from vocabulary item levels and is used by the list API and Web page for filtering.
+
+A real-world topic may have multiple level variants. Use the same `topicGroupKey` for related variants and a level-specific `slug`, for example:
+
+- `topicGroupKey`: `alien-life`
+- `slug`: `a2-alien-life`
+- `slug`: `b2-alien-life`
+- `slug`: `c1-alien-life`
 
 ## Sensitivity
 

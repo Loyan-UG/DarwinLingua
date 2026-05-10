@@ -40,17 +40,11 @@ public sealed class ContentImportParserTalkTopicTests
                   "isSensitive": false,
                   "recommendedForModeratedGroupsOnly": false,
                   "article": {
-                    "baseText": "Ein langer deutscher Beispieltext.",
-                    "translations": [
-                      { "languageCode": "en", "text": "A long German sample text." }
-                    ]
+                    "baseText": "Ein langer deutscher Beispieltext."
                   },
                   "warmupQuestions": [
                     {
                       "prompt": "Schaust du gern in den Nachthimmel?",
-                      "translations": [
-                        { "languageCode": "en", "text": "Do you like looking at the night sky?" }
-                      ],
                       "sortOrder": 10
                     }
                   ],
@@ -58,9 +52,6 @@ public sealed class ContentImportParserTalkTopicTests
                     {
                       "prompt": "Glaubst du, dass es Ausserirdische gibt?",
                       "questionType": "opinion",
-                      "translations": [
-                        { "languageCode": "en", "text": "Do you believe aliens exist?" }
-                      ],
                       "sortOrder": 10
                     }
                   ],

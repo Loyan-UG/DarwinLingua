@@ -126,8 +126,7 @@ internal sealed class TalkTopicRepository(IDbContextFactory<DarwinLinguaDbContex
             .AsNoTracking()
             .AsSplitQuery()
             .Include(item => item.Topics)
-            .Include(item => item.ArticleTranslations)
-            .Include(item => item.Questions).ThenInclude(question => question.Translations)
+            .Include(item => item.Questions)
             .Include(item => item.VocabularyItems)
             .Include(item => item.SpeakingGoals)
             .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
@@ -166,8 +165,8 @@ internal sealed class TalkTopicRepository(IDbContextFactory<DarwinLinguaDbContex
             topic.Category,
             FormatContentType(topic.ContentType),
             topic.ArticleBaseText,
-            ResolvePrimaryMeaning(topic.ArticleTranslations, primaryLanguage),
-            ResolveSecondaryMeaning(topic.ArticleTranslations, secondaryLanguage),
+            null,
+            null,
             topic.EstimatedReadingMinutes,
             topic.EstimatedDiscussionMinutes,
             topic.IsSensitive,
@@ -186,16 +185,16 @@ internal sealed class TalkTopicRepository(IDbContextFactory<DarwinLinguaDbContex
                 .OrderBy(question => question.SortOrder)
                 .Select(question => new TalkTopicQuestionModel(
                     question.Prompt,
-                    ResolvePrimaryMeaning(question.Translations, primaryLanguage),
-                    ResolveSecondaryMeaning(question.Translations, secondaryLanguage)))
+                    null,
+                    null))
                 .ToArray(),
             topic.DiscussionQuestions
                 .OrderBy(question => question.SortOrder)
                 .Select(question => new TalkTopicDiscussionQuestionModel(
                     question.Prompt,
                     question.QuestionType.HasValue ? FormatQuestionType(question.QuestionType.Value) : string.Empty,
-                    ResolvePrimaryMeaning(question.Translations, primaryLanguage),
-                    ResolveSecondaryMeaning(question.Translations, secondaryLanguage)))
+                    null,
+                    null))
                 .ToArray(),
             vocabularyItems);
     }

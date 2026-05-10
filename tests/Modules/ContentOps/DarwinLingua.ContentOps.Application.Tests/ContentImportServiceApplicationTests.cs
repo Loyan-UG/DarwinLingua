@@ -710,17 +710,17 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     /// <summary>
-    /// Verifies that Talk Topic import validation rejects articles below the CEFR minimum length.
+    /// Verifies that Talk Topic import validation rejects A1 articles shorter than the character target range.
     /// </summary>
     [Fact]
-    public async Task ImportAsync_ShouldFail_WhenTalkTopicArticleIsTooShort()
+    public async Task ImportAsync_ShouldFail_WhenA1TalkTopicArticleIsShorterThanRange()
     {
         ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
             CreateValidTalkTopic() with
             {
                 Article = new ParsedTalkTopicArticleModel(
-                    "Zu kurz.",
-                    [new ParsedContentMeaningModel("en", "Too short.")]),
+                    CreateGermanArticle(899),
+                    []),
             });
 
         await using ServiceProvider serviceProvider = BuildServiceProvider(
@@ -739,7 +739,121 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains(result.Issues, issue =>
             issue.Severity == "Error" &&
             issue.Message.Contains("article.baseText", StringComparison.Ordinal) &&
-            issue.Message.Contains("at least 1000", StringComparison.Ordinal));
+            issue.Message.Contains("900-1100", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation rejects A1 articles longer than the character target range.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenA1TalkTopicArticleIsLongerThanRange()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic() with
+            {
+                Article = new ParsedTalkTopicArticleModel(CreateGermanArticle(1101), []),
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-too-long.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("900-1100", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation accepts an A1 article near the target length.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldAccept_WhenA1TalkTopicArticleIsInRange()
+    {
+        FakeRepository repository = new();
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic() with
+            {
+                Article = new ParsedTalkTopicArticleModel(CreateGermanArticle(1000), []),
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-a1-valid.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Assert.Single(repository.ImportedTalkTopics);
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation accepts a B2 article near the target length.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldAccept_WhenB2TalkTopicArticleIsInRange()
+    {
+        FakeRepository repository = new();
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic("B2") with
+            {
+                Article = new ParsedTalkTopicArticleModel(CreateGermanArticle(2500), []),
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-b2-valid.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Assert.Single(repository.ImportedTalkTopics);
+    }
+
+    /// <summary>
+    /// Verifies that a B2 Talk Topic cannot use an A1-sized article.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenB2TalkTopicArticleUsesA1Length()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic("B2") with
+            {
+                Article = new ParsedTalkTopicArticleModel(CreateGermanArticle(1000), []),
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-b2-too-short.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("2400-2600", StringComparison.Ordinal));
     }
 
     /// <summary>
@@ -769,6 +883,86 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     /// <summary>
+    /// Verifies that Talk Topic import validation rejects article translations.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenTalkTopicArticleHasTranslations()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            CreateValidTalkTopic() with
+            {
+                Article = new ParsedTalkTopicArticleModel(
+                    CreateGermanArticle(1000),
+                    [new ParsedContentMeaningModel("en", "Translation is not allowed.")]),
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-article-translation.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("article.translations is not supported", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation rejects warm-up and discussion question translations.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenTalkTopicQuestionsHaveTranslations()
+    {
+        ParsedTalkTopicModel validTopic = CreateValidTalkTopic();
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            validTopic with
+            {
+                WarmupQuestions =
+                [
+                    new ParsedTalkTopicQuestionModel(
+                        "Schaust du gern in den Nachthimmel?",
+                        [new ParsedContentMeaningModel("en", "Do you like looking at the night sky?")],
+                        10),
+                    .. validTopic.WarmupQuestions.Skip(1),
+                ],
+                DiscussionQuestions =
+                [
+                    new ParsedTalkTopicDiscussionQuestionModel(
+                        "Was denkst du über dieses Thema?",
+                        "opinion",
+                        [new ParsedContentMeaningModel("en", "What do you think about this topic?")],
+                        10),
+                    .. validTopic.DiscussionQuestions.Skip(1),
+                ],
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-question-translations.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("warmupQuestions[1].translations is not supported", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("discussionQuestions[1].translations is not supported", StringComparison.Ordinal));
+    }
+
+    /// <summary>
     /// Verifies that Talk Topic import validation rejects unknown discussion question types.
     /// </summary>
     [Fact]
@@ -782,7 +976,7 @@ public sealed class ContentImportServiceApplicationTests
                     new ParsedTalkTopicDiscussionQuestionModel(
                         "Was denkst du?",
                         "grammar-drill",
-                        [new ParsedContentMeaningModel("en", "What do you think?")],
+                        [],
                         10),
                 ],
             });
@@ -802,6 +996,117 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains(result.Issues, issue =>
             issue.Severity == "Error" &&
             issue.Message.Contains("questionType is invalid", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation requires the configured discussion question count per type.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenDiscussionQuestionTypeCountIsTooLow()
+    {
+        ParsedTalkTopicModel validTopic = CreateValidTalkTopic();
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            validTopic with
+            {
+                DiscussionQuestions = validTopic.DiscussionQuestions
+                    .Where(question => question.QuestionType != "comparison")
+                    .ToArray(),
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-missing-question-type.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("at least 2 'comparison' questions", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that B2 and higher Talk Topics require three discussion questions per configured type.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenB2DiscussionQuestionTypeCountIsTooLow()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(CreateValidTalkTopic("B2", questionsPerType: 2));
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-b2-question-count.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("at least 3 'opinion' questions", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation requires enough warm-up questions.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenWarmupQuestionCountIsTooLow()
+    {
+        ParsedTalkTopicModel validTopic = CreateValidTalkTopic();
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            validTopic with { WarmupQuestions = validTopic.WarmupQuestions.Take(2).ToArray() });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-warmup-count.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("warmupQuestions must contain at least 3", StringComparison.Ordinal));
+    }
+
+    /// <summary>
+    /// Verifies that Talk Topic import validation enforces vocabulary count ranges by CEFR level.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenVocabularyCountIsOutsideCefrRange()
+    {
+        ParsedTalkTopicModel validTopic = CreateValidTalkTopic();
+        ParsedContentPackageModel parsedPackage = CreatePackageWithTalkTopic(
+            validTopic with { VocabularyItems = validTopic.VocabularyItems.Take(11).ToArray() });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("talk-topic-vocabulary-count.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("vocabularyItems must contain 12-18", StringComparison.Ordinal));
     }
 
     /// <summary>
@@ -860,10 +1165,10 @@ public sealed class ContentImportServiceApplicationTests
         Assert.False(topic.IsSensitive);
         Assert.Equal(5, topic.EstimatedReadingMinutes);
         Assert.Equal(20, topic.EstimatedDiscussionMinutes);
-        Assert.NotEmpty(topic.ArticleTranslations);
-        Assert.Equal(2, topic.WarmupQuestions.Count);
-        Assert.Single(topic.DiscussionQuestions);
-        Assert.Single(topic.VocabularyItems);
+        Assert.Empty(topic.ArticleTranslations);
+        Assert.Equal(3, topic.WarmupQuestions.Count);
+        Assert.Equal(8, topic.DiscussionQuestions.Count);
+        Assert.Equal(12, topic.VocabularyItems.Count);
         Assert.Contains(topic.SpeakingGoals, goal => goal.SpeakingGoal == TalkTopicSpeakingGoal.ExpressOpinion);
     }
 
@@ -1215,51 +1520,45 @@ public sealed class ContentImportServiceApplicationTests
             null);
     }
 
-    private static ParsedTalkTopicModel CreateValidTalkTopic()
+    private static ParsedTalkTopicModel CreateValidTalkTopic(string cefrLevel = "A1", int? questionsPerType = null)
     {
-        string article = string.Concat(Enumerable.Repeat(
-            "Viele Menschen schauen am Abend in den Himmel. Sie sehen Sterne, den Mond und manchmal ein helles Licht. " +
-            "Dann fragen sie sich: Gibt es Leben auf anderen Planeten? Diese Frage ist spannend, aber auch einfach. " +
-            "Wir wissen, dass das Weltall sehr gross ist. Es gibt viele Sterne und viele Planeten. Vielleicht gibt es dort Wasser. " +
-            "Vielleicht gibt es dort kleine Tiere, Pflanzen oder intelligente Wesen. Niemand in unserer Gruppe muss eine richtige Antwort haben. " +
-            "Wir koennen nur denken, fragen und miteinander sprechen. Einige Menschen glauben, dass Ausserirdische freundlich sind. " +
-            "Andere Menschen sind vorsichtig und sagen: Wir wissen zu wenig. In diesem Text geht es nicht um einen Test. " +
-            "Es geht um Ideen, Meinungen und Gruende. Die Gruppe kann langsam sprechen, einfache Saetze benutzen und nachfragen. ",
-            2));
+        bool upperIntermediateOrHigher = cefrLevel is "B2" or "C1" or "C2";
+        int articleLength = cefrLevel switch
+        {
+            "A2" => 1500,
+            "B1" => 2000,
+            "B2" => 2500,
+            "C1" => 3000,
+            "C2" => 3500,
+            _ => 1000,
+        };
+        int vocabularyCount = cefrLevel switch
+        {
+            "A2" => 15,
+            "B1" => 18,
+            "B2" => 22,
+            "C1" => 26,
+            "C2" => 30,
+            _ => 12,
+        };
+        int effectiveQuestionsPerType = questionsPerType ?? (upperIntermediateOrHigher ? 3 : 2);
 
         return new ParsedTalkTopicModel(
             "a1-aliens",
             "do-aliens-exist",
             "Gibt es Ausserirdische?",
             "A simple Talk Topic about aliens and life in space.",
-            "A1",
+            cefrLevel,
             "science",
             ["shopping"],
             "article",
             new ParsedTalkTopicArticleModel(
-                article,
-                [new ParsedContentMeaningModel("en", "A simple article about aliens and life in space.")]),
-            [
-                new ParsedTalkTopicQuestionModel(
-                    "Magst du Filme ueber Ausserirdische?",
-                    [new ParsedContentMeaningModel("en", "Do you like films about aliens?")],
-                    10),
-                new ParsedTalkTopicQuestionModel(
-                    "Schaust du gern in den Nachthimmel?",
-                    [new ParsedContentMeaningModel("en", "Do you like looking at the night sky?")],
-                    20),
-            ],
-            [
-                new ParsedTalkTopicDiscussionQuestionModel(
-                    "Glaubst du, dass es Ausserirdische gibt?",
-                    "opinion",
-                    [new ParsedContentMeaningModel("en", "Do you believe aliens exist?")],
-                    10),
-            ],
-            [
-                new ParsedTalkTopicVocabularyItemModel("das Weltall", "das-weltall", "A2", 10),
-            ],
-            ["express-opinion", "give-reasons"],
+                CreateGermanArticle(articleLength),
+                []),
+            CreateTalkTopicWarmupQuestions(upperIntermediateOrHigher ? 4 : 3),
+            CreateTalkTopicDiscussionQuestions(effectiveQuestionsPerType),
+            CreateTalkTopicVocabularyItems(vocabularyCount, cefrLevel),
+            ["express-opinion", "give-reasons", "imagine-possibilities"],
             5,
             20,
             false,
@@ -1268,6 +1567,48 @@ public sealed class ContentImportServiceApplicationTests
             10,
             true);
     }
+
+    private static string CreateGermanArticle(int targetLength)
+    {
+        const string Seed = "Viele Menschen sprechen gern ueber das Weltall. Sie sehen Sterne, Planeten und den Mond. Sie fragen nach Leben, Forschung, Kontakt und Zukunft. In der Gruppe sagt jede Person ihre Meinung, nennt Gruende und stellt freundliche Fragen. ";
+        string text = string.Concat(Enumerable.Repeat(Seed, (targetLength / Seed.Length) + 2));
+        return text[..targetLength];
+    }
+
+    private static ParsedTalkTopicQuestionModel[] CreateTalkTopicWarmupQuestions(int count) =>
+        Enumerable.Range(1, count)
+            .Select(index => new ParsedTalkTopicQuestionModel($"Was denkst du am Anfang ueber Frage {index}?", [], index * 10))
+            .ToArray();
+
+    private static ParsedTalkTopicDiscussionQuestionModel[] CreateTalkTopicDiscussionQuestions(int countPerType)
+    {
+        string[] questionTypes = ["opinion", "imagination", "prediction", "comparison"];
+        List<ParsedTalkTopicDiscussionQuestionModel> questions = [];
+        int sortOrder = 10;
+        foreach (string questionType in questionTypes)
+        {
+            for (int index = 1; index <= countPerType; index++)
+            {
+                questions.Add(new ParsedTalkTopicDiscussionQuestionModel(
+                    $"Welche Idee hast du zu {questionType} Frage {index}?",
+                    questionType,
+                    [],
+                    sortOrder));
+                sortOrder += 10;
+            }
+        }
+
+        return questions.ToArray();
+    }
+
+    private static ParsedTalkTopicVocabularyItemModel[] CreateTalkTopicVocabularyItems(int count, string cefrLevel) =>
+        Enumerable.Range(1, count)
+            .Select(index => new ParsedTalkTopicVocabularyItemModel(
+                $"Wort {index}",
+                null,
+                cefrLevel,
+                index * 10))
+            .ToArray();
 
     private sealed class ThrowingFileReader : IContentImportFileReader
     {

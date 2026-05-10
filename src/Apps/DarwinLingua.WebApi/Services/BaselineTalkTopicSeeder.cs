@@ -1,7 +1,6 @@
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
-using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,30 +23,32 @@ internal sealed class BaselineTalkTopicSeeder(
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        bool exists = await dbContext.TalkTopics
-            .AsNoTracking()
-            .AnyAsync(topic => topic.Slug == SampleSlug, cancellationToken)
+        TalkTopic[] existingSamples = await dbContext.TalkTopics
+            .Where(topic => topic.Slug == SampleSlug)
+            .ToArrayAsync(cancellationToken)
             .ConfigureAwait(false);
-        if (exists)
-        {
-            return;
-        }
+        dbContext.TalkTopics.RemoveRange(existingSamples);
 
         Dictionary<string, Guid> topicIdsByKey = await dbContext.Topics
             .AsNoTracking()
-            .Where(topic => topic.Key == "technology-and-it" || topic.Key == "culture-and-media")
+            .Where(topic => topic.Key == "everyday-life")
             .ToDictionaryAsync(topic => topic.Key, topic => topic.Id, cancellationToken)
             .ConfigureAwait(false);
+
+        if (topicIdsByKey.Count == 0)
+        {
+            return;
+        }
 
         DateTime now = DateTime.UtcNow;
         TalkTopic topic = new(
             Guid.NewGuid(),
             SampleSlug,
             "gibt-es-ausserirdische",
-            "Gibt es Ausserirdische?",
-            "Ein einfacher Talk Topic ueber das Weltall, Sterne und die Frage, ob es Leben auf anderen Planeten gibt.",
+            "Gibt es Außerirdische?",
+            "Ein einfacher Talk Topic über Sterne, Planeten und die Frage, ob es Leben im Weltall gibt.",
             CefrLevel.A1,
-            "science-and-imagination",
+            "space",
             TalkTopicContentType.Article,
             SampleArticle,
             5,
@@ -59,33 +60,33 @@ internal sealed class BaselineTalkTopicSeeder(
             10,
             now);
 
-        bool primaryTopicAssigned = false;
-        foreach ((string key, Guid topicId) in topicIdsByKey.OrderBy(item => item.Key, StringComparer.Ordinal))
-        {
-            topic.AddTopic(Guid.NewGuid(), topicId, !primaryTopicAssigned, now);
-            primaryTopicAssigned = true;
-        }
+        topic.AddTopic(Guid.NewGuid(), topicIdsByKey["everyday-life"], true, now);
 
-        topic.AddArticleTranslation(Guid.NewGuid(), LanguageCode.From("en"), SampleArticleEnglish, now);
-        topic.AddWarmupQuestion(Guid.NewGuid(), 10, "Schaust du gern in den Nachthimmel?", now)
-            .AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "Do you like looking at the night sky?", now);
-        topic.AddWarmupQuestion(Guid.NewGuid(), 20, "Magst du Filme ueber Ausserirdische?", now)
-            .AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "Do you like films about aliens?", now);
-        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Opinion, 10, "Glaubst du, dass es Ausserirdische gibt?", now)
-            .AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "Do you believe aliens exist?", now);
-        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Imagination, 20, "Wie koennten Ausserirdische aussehen?", now)
-            .AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "What might aliens look like?", now);
-        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Debate, 30, "Sollten Menschen nach Ausserirdischen suchen?", now)
-            .AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "Should humans search for aliens?", now);
-        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Prediction, 40, "Was wuerde sich auf der Erde aendern, wenn wir Kontakt haetten?", now)
-            .AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), "What would change on Earth if we had contact?", now);
+        topic.AddWarmupQuestion(Guid.NewGuid(), 10, "Schaust du gern in den Himmel?", now);
+        topic.AddWarmupQuestion(Guid.NewGuid(), 20, "Magst du Sterne und Planeten?", now);
+        topic.AddWarmupQuestion(Guid.NewGuid(), 30, "Kennst du einen Film über das Weltall?", now);
+
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Opinion, 10, "Glaubst du, dass es Leben auf anderen Planeten gibt?", now);
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Opinion, 20, "Findest du das Thema spannend oder komisch?", now);
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Imagination, 30, "Wie könnten Außerirdische aussehen?", now);
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Imagination, 40, "Was würdest du einem Besucher aus dem Weltall zeigen?", now);
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Prediction, 50, "Werden Menschen einmal Leben auf einem anderen Planeten finden?", now);
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Prediction, 60, "Was passiert, wenn es einen klaren Kontakt gibt?", now);
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Comparison, 70, "Ist das Leben auf der Erde vielleicht besonders?", now);
+        topic.AddDiscussionQuestion(Guid.NewGuid(), TalkTopicQuestionType.Comparison, 80, "Was ist anders: ein Film über Aliens oder echte Forschung?", now);
 
         topic.AddVocabularyItem(Guid.NewGuid(), "der Himmel", "der-himmel", CefrLevel.A1, 10, now);
         topic.AddVocabularyItem(Guid.NewGuid(), "der Stern", "der-stern", CefrLevel.A1, 20, now);
-        topic.AddVocabularyItem(Guid.NewGuid(), "der Planet", "der-planet", CefrLevel.A2, 30, now);
-        topic.AddVocabularyItem(Guid.NewGuid(), "das Weltall", "das-weltall", CefrLevel.A2, 40, now);
-        topic.AddVocabularyItem(Guid.NewGuid(), "ausserirdisch", "ausserirdisch", CefrLevel.B1, 50, now);
-        topic.AddVocabularyItem(Guid.NewGuid(), "der Kontakt", "der-kontakt", CefrLevel.A2, 60, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "der Mond", "der-mond", CefrLevel.A1, 30, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "die Erde", "die-erde", CefrLevel.A1, 40, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "der Planet", "der-planet", CefrLevel.A2, 50, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "das Weltall", "das-weltall", CefrLevel.A2, 60, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "das Leben", "das-leben", CefrLevel.A1, 70, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "das Wasser", "das-wasser", CefrLevel.A1, 80, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "suchen", "suchen", CefrLevel.A1, 90, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "finden", "finden", CefrLevel.A1, 100, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "glauben", "glauben", CefrLevel.A1, 110, now);
+        topic.AddVocabularyItem(Guid.NewGuid(), "der Kontakt", "der-kontakt", CefrLevel.A2, 120, now);
 
         topic.AddSpeakingGoal(Guid.NewGuid(), TalkTopicSpeakingGoal.ExpressOpinion, 10, now);
         topic.AddSpeakingGoal(Guid.NewGuid(), TalkTopicSpeakingGoal.GiveReasons, 20, now);
@@ -97,22 +98,12 @@ internal sealed class BaselineTalkTopicSeeder(
     }
 
     private const string SampleArticle = """
-        Am Abend ist der Himmel oft dunkel. Viele Menschen schauen dann nach oben. Sie sehen den Mond und viele Sterne. Manche Sterne sind sehr hell. Andere Sterne sind klein und weit weg. Fuer viele Menschen ist der Nachthimmel schoen. Er ist ruhig, gross und ein bisschen geheimnisvoll.
+        Am Abend ist der Himmel dunkel. Viele Menschen sehen dann den Mond und viele Sterne. Sie fragen sich: Gibt es Leben auf anderen Planeten? Die Erde ist ein Planet. Hier gibt es Wasser, Luft, Tiere, Pflanzen und Menschen. Vielleicht gibt es im Weltall noch andere Orte mit Wasser und Licht.
 
-        Im Weltall gibt es viele Sterne und viele Planeten. Die Erde ist auch ein Planet. Auf der Erde leben Menschen, Tiere und Pflanzen. Wir haben Wasser, Luft, Licht und Waerme. Darum koennen wir hier leben. Aber die Erde ist nicht der einzige Planet. Es gibt sehr viele andere Planeten. Einige sind kalt. Einige sind heiss. Einige sind sehr gross. Einige sind sehr klein.
+        Niemand kennt die sichere Antwort. Wissenschaftler suchen mit Teleskopen und Computern. Sie suchen Zeichen von Leben. Vielleicht ist dieses Leben sehr klein. Vielleicht sieht es ganz anders aus als wir. Vielleicht gibt es auch kluge Wesen, die sprechen und bauen können.
 
-        Viele Menschen fragen: Gibt es Leben auf anderen Planeten? Gibt es Ausserirdische? Niemand weiss die Antwort sicher. Wissenschaftler suchen mit grossen Teleskopen und Computern. Sie hoeren Signale aus dem Weltall. Sie suchen Wasser auf anderen Planeten. Wasser ist wichtig, weil Leben oft Wasser braucht.
+        In einer Gruppe kann man gut darüber sprechen. Eine Person sagt: Ja, ich glaube daran, denn das Weltall ist sehr groß. Eine andere Person sagt: Ich bin nicht sicher, denn wir haben noch keinen Beweis. Wichtig ist, dass alle langsam sprechen und freundlich nachfragen.
 
-        Ausserirdische muessen nicht wie Menschen aussehen. Vielleicht sind sie klein. Vielleicht sind sie gross. Vielleicht haben sie andere Augen oder andere Koerper. Vielleicht sind sie ganz einfach und leben wie kleine Pflanzen oder Tiere. Vielleicht sind sie sehr klug und bauen eigene Staedte. Wir wissen es nicht. Darum ist die Frage spannend.
-
-        Manche Menschen denken, Ausserirdische waeren freundlich. Sie koennten uns neue Ideen geben. Vielleicht koennten wir von ihnen lernen. Andere Menschen sind vorsichtig. Sie sagen: Wir kennen sie nicht. Wir wissen nicht, ob ein Kontakt gut oder gefaehrlich ist. Beide Meinungen sind wichtig fuer ein Gespraech.
-
-        In einer Gruppe kann man gut ueber dieses Thema sprechen. Man kann sagen: Ich glaube, es gibt Ausserirdische, weil das Weltall sehr gross ist. Oder man kann sagen: Ich bin nicht sicher, weil wir noch keinen klaren Beweis haben. Man kann auch fragen: Wie wuerde die Welt reagieren? Wuerden Menschen Angst haben? Wuerden sie neugierig sein?
-
-        Das Thema hilft beim Sprechen. Man kann die eigene Meinung sagen, Gruende nennen und neue Ideen vorstellen. Man kann freundlich widersprechen und andere Fragen stellen. Am Ende muss niemand die richtige Antwort haben. Wichtig ist, dass alle sprechen, zuhoeren und zusammen ueber eine grosse Frage nachdenken.
-        """;
-
-    private const string SampleArticleEnglish = """
-        In the evening the sky is often dark. Many people look up and see the moon and many stars. The universe has many stars and planets. Earth is also a planet, and people, animals, and plants live here. Many people ask whether life exists on other planets. Scientists search for signals and water, but nobody knows the answer for sure. Aliens might not look like people. They might be simple, or they might be very intelligent. Some people think aliens would be friendly. Other people are careful because contact could also be difficult. This topic helps a group express opinions, give reasons, imagine possibilities, disagree politely, and ask follow-up questions.
+        Das Thema ist gut für Fantasie. Wie sieht ein Besucher aus dem Weltall aus? Was möchte er wissen? Was zeigen wir ihm zuerst: unsere Stadt, unsere Musik oder unser Essen? Am Ende gibt es keine richtige Lösung. Es zählt das Gespräch.
         """;
 }

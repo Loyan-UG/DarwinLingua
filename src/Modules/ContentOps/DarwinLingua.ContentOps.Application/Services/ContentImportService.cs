@@ -403,29 +403,25 @@ internal sealed class ContentImportService : IContentImportService
                 topic.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
             }
 
-            AddTalkTopicTranslations(topic.AddArticleTranslation, parsedTopic.Article.Translations, timestampUtc);
-
             for (int questionIndex = 0; questionIndex < parsedTopic.WarmupQuestions.Count; questionIndex++)
             {
                 ParsedTalkTopicQuestionModel parsedQuestion = parsedTopic.WarmupQuestions[questionIndex];
-                TalkTopicQuestion question = topic.AddWarmupQuestion(
+                topic.AddWarmupQuestion(
                     Guid.NewGuid(),
                     parsedQuestion.SortOrder <= 0 ? questionIndex + 1 : parsedQuestion.SortOrder,
                     parsedQuestion.Prompt,
                     timestampUtc);
-                AddTalkTopicTranslations(question.AddTranslation, parsedQuestion.Translations, timestampUtc);
             }
 
             for (int questionIndex = 0; questionIndex < parsedTopic.DiscussionQuestions.Count; questionIndex++)
             {
                 ParsedTalkTopicDiscussionQuestionModel parsedQuestion = parsedTopic.DiscussionQuestions[questionIndex];
-                TalkTopicQuestion question = topic.AddDiscussionQuestion(
+                topic.AddDiscussionQuestion(
                     Guid.NewGuid(),
                     ParseTalkTopicQuestionType(parsedQuestion.QuestionType),
                     parsedQuestion.SortOrder <= 0 ? questionIndex + 1 : parsedQuestion.SortOrder,
                     parsedQuestion.Prompt,
                     timestampUtc);
-                AddTalkTopicTranslations(question.AddTranslation, parsedQuestion.Translations, timestampUtc);
             }
 
             for (int vocabularyIndex = 0; vocabularyIndex < parsedTopic.VocabularyItems.Count; vocabularyIndex++)
@@ -459,21 +455,6 @@ internal sealed class ContentImportService : IContentImportService
             }
 
             importedTalkTopics.Add(topic);
-        }
-    }
-
-    private static void AddTalkTopicTranslations(
-        Action<Guid, LanguageCode, string, DateTime> addTranslation,
-        IReadOnlyList<ParsedContentMeaningModel> translations,
-        DateTime timestampUtc)
-    {
-        foreach (ParsedContentMeaningModel translation in translations)
-        {
-            addTranslation(
-                Guid.NewGuid(),
-                LanguageCode.From(NormalizeText(translation.Language).ToLowerInvariant()),
-                NormalizeText(translation.Text),
-                timestampUtc);
         }
     }
 
@@ -1878,22 +1859,22 @@ internal sealed class ContentImportService : IContentImportService
             }
             else if (Enum.TryParse(NormalizeText(topic.CefrLevel), true, out CefrLevel articleCefrLevel))
             {
-                int minimumLength = GetMinimumTalkTopicArticleLength(articleCefrLevel);
-                if (articleText.Length < minimumLength)
+                (int minimumLength, int maximumLength) = GetTalkTopicArticleLengthRange(articleCefrLevel);
+                if (articleText.Length < minimumLength || articleText.Length > maximumLength)
                 {
-                    errors.Add($"Talk topic article.baseText for {articleCefrLevel} must contain at least {minimumLength} normalized German characters; found {articleText.Length}.");
+                    errors.Add($"Talk topic article.baseText for {articleCefrLevel} must contain {minimumLength}-{maximumLength} normalized German characters; found {articleText.Length}.");
                 }
             }
 
-            ValidateOptionalMeaningTranslations(topic.Article.Translations, meaningLanguages, "Talk topic article.translations", errors);
-
-            if (topic.WarmupQuestions.Count == 0)
+            if (topic.Article.Translations.Count > 0)
             {
-                errors.Add("Talk topic warmupQuestions must contain at least one question.");
+                errors.Add("Talk topic article.translations is not supported; Talk Topic articles are German-only for now.");
             }
-            else if (topic.WarmupQuestions.Count < 2)
+
+            int minimumWarmupQuestionCount = IsUpperIntermediateOrHigher(cefrLevel) ? 4 : 3;
+            if (topic.WarmupQuestions.Count < minimumWarmupQuestionCount)
             {
-                warnings.Add("Talk topic warmupQuestions should contain at least two questions.");
+                errors.Add($"Talk topic warmupQuestions must contain at least {minimumWarmupQuestionCount} questions for {cefrLevel}.");
             }
 
             ValidateTalkTopicQuestions(topic.WarmupQuestions, meaningLanguages, "Talk topic warmupQuestions", errors);
@@ -1916,12 +1897,38 @@ internal sealed class ContentImportService : IContentImportService
                     errors.Add($"Talk topic discussionQuestions[{questionIndex + 1}] questionType is invalid.");
                 }
 
-                ValidateOptionalMeaningTranslations(question.Translations, meaningLanguages, $"Talk topic discussionQuestions[{questionIndex + 1}].translations", errors);
+                if (question.Translations.Count > 0)
+                {
+                    errors.Add($"Talk topic discussionQuestions[{questionIndex + 1}].translations is not supported; Talk Topic questions are German-only for now.");
+                }
+            }
+
+            if (Enum.TryParse(NormalizeText(topic.CefrLevel), true, out CefrLevel questionCefrLevel))
+            {
+                int minimumPerQuestionType = IsUpperIntermediateOrHigher(questionCefrLevel) ? 3 : 2;
+                string[] requiredQuestionTypes = ["opinion", "imagination", "prediction", "comparison"];
+                foreach (string requiredQuestionType in requiredQuestionTypes)
+                {
+                    int count = topic.DiscussionQuestions.Count(question =>
+                        string.Equals(NormalizeText(question.QuestionType).ToLowerInvariant(), requiredQuestionType, StringComparison.Ordinal));
+                    if (count < minimumPerQuestionType)
+                    {
+                        errors.Add($"Talk topic discussionQuestions must contain at least {minimumPerQuestionType} '{requiredQuestionType}' questions for {questionCefrLevel}; found {count}.");
+                    }
+                }
             }
 
             if (topic.VocabularyItems.Count == 0)
             {
                 errors.Add("Talk topic vocabularyItems must contain at least one item.");
+            }
+            else if (Enum.TryParse(NormalizeText(topic.CefrLevel), true, out CefrLevel vocabularyCefrLevel))
+            {
+                (int minimumVocabularyCount, int maximumVocabularyCount) = GetTalkTopicVocabularyCountRange(vocabularyCefrLevel);
+                if (topic.VocabularyItems.Count < minimumVocabularyCount || topic.VocabularyItems.Count > maximumVocabularyCount)
+                {
+                    errors.Add($"Talk topic vocabularyItems must contain {minimumVocabularyCount}-{maximumVocabularyCount} items for {vocabularyCefrLevel}; found {topic.VocabularyItems.Count}.");
+                }
             }
 
             for (int vocabularyIndex = 0; vocabularyIndex < topic.VocabularyItems.Count; vocabularyIndex++)
@@ -1953,6 +1960,10 @@ internal sealed class ContentImportService : IContentImportService
             if (speakingGoals.Length == 0)
             {
                 errors.Add("Talk topic speakingGoals must contain at least one value.");
+            }
+            else if (speakingGoals.Length < 2 || speakingGoals.Length > 5)
+            {
+                errors.Add($"Talk topic speakingGoals must contain 2-5 values; found {speakingGoals.Length}.");
             }
 
             foreach (string speakingGoal in speakingGoals)
@@ -2004,7 +2015,10 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add($"{fieldName}[{questionIndex + 1}] prompt is required.");
             }
 
-            ValidateOptionalMeaningTranslations(question.Translations, meaningLanguages, $"{fieldName}[{questionIndex + 1}].translations", errors);
+            if (question.Translations.Count > 0)
+            {
+                errors.Add($"{fieldName}[{questionIndex + 1}].translations is not supported; Talk Topic questions are German-only for now.");
+            }
         }
     }
 
@@ -2132,13 +2146,9 @@ internal sealed class ContentImportService : IContentImportService
         questionType = value.Trim().ToLowerInvariant() switch
         {
             "opinion" => TalkTopicQuestionType.Opinion,
-            "personal-experience" => TalkTopicQuestionType.PersonalExperience,
+            "imagination" => TalkTopicQuestionType.Imagination,
             "prediction" => TalkTopicQuestionType.Prediction,
             "comparison" => TalkTopicQuestionType.Comparison,
-            "imagination" => TalkTopicQuestionType.Imagination,
-            "debate" => TalkTopicQuestionType.Debate,
-            "ethics" => TalkTopicQuestionType.Ethics,
-            "comprehension" => TalkTopicQuestionType.Comprehension,
             _ => default,
         };
 
@@ -2170,17 +2180,32 @@ internal sealed class ContentImportService : IContentImportService
         return speakingGoal != default;
     }
 
-    private static int GetMinimumTalkTopicArticleLength(CefrLevel cefrLevel) =>
+    private static (int Minimum, int Maximum) GetTalkTopicArticleLengthRange(CefrLevel cefrLevel) =>
         cefrLevel switch
         {
-            CefrLevel.A1 => 1000,
-            CefrLevel.A2 => 1500,
-            CefrLevel.B1 => 2000,
-            CefrLevel.B2 => 2500,
-            CefrLevel.C1 => 3000,
-            CefrLevel.C2 => 3500,
-            _ => 2000,
+            CefrLevel.A1 => (900, 1100),
+            CefrLevel.A2 => (1400, 1600),
+            CefrLevel.B1 => (1900, 2100),
+            CefrLevel.B2 => (2400, 2600),
+            CefrLevel.C1 => (2900, 3100),
+            CefrLevel.C2 => (3400, 3600),
+            _ => (1900, 2100),
         };
+
+    private static (int Minimum, int Maximum) GetTalkTopicVocabularyCountRange(CefrLevel cefrLevel) =>
+        cefrLevel switch
+        {
+            CefrLevel.A1 => (12, 18),
+            CefrLevel.A2 => (15, 22),
+            CefrLevel.B1 => (18, 26),
+            CefrLevel.B2 => (22, 32),
+            CefrLevel.C1 => (26, 38),
+            CefrLevel.C2 => (30, 45),
+            _ => (18, 26),
+        };
+
+    private static bool IsUpperIntermediateOrHigher(CefrLevel cefrLevel) =>
+        cefrLevel is CefrLevel.B2 or CefrLevel.C1 or CefrLevel.C2;
 
     private static NormalizedLexicalForm[] ValidateLexicalForms(
         ParsedContentEntryModel entry,
