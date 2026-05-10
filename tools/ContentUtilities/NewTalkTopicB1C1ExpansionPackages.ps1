@@ -609,8 +609,62 @@ elseif ($TopicSet -eq "tenth") {
         @{ title = "Familienentscheidungen bei Umzügen"; category = "family" }
     )
 }
+elseif ($TopicSet -eq "eleventh") {
+    $themeSpecs = @(
+        @{ title = "Digitale Ablage für wichtige Dokumente"; category = "technology" },
+        @{ title = "Künstliche Intelligenz und Lernmotivation"; category = "artificial-intelligence" },
+        @{ title = "Nachhaltige Entscheidungen beim Einkaufen"; category = "environment" },
+        @{ title = "Klimaschutz und soziale Gerechtigkeit"; category = "climate" },
+        @{ title = "Gesundheitliche Grenzen ernst nehmen"; category = "health" },
+        @{ title = "Umgang mit Unsicherheit im Alltag"; category = "psychology" },
+        @{ title = "Demokratie in digitalen Gruppen"; category = "democracy" },
+        @{ title = "Migration und Freundschaften"; category = "migration" },
+        @{ title = "Geschichte am Arbeitsplatz erzählen"; category = "history" },
+        @{ title = "Sport und freiwilliges Engagement"; category = "sports" },
+        @{ title = "Fußball und Zusammenhalt im Viertel"; category = "football" },
+        @{ title = "Filme über soziale Veränderungen"; category = "cinema" },
+        @{ title = "Bücher als Gesprächsbrücken"; category = "books" },
+        @{ title = "Musik und Mehrsprachigkeit"; category = "music" },
+        @{ title = "Kunstaktionen für den guten Zweck"; category = "art" },
+        @{ title = "Lernen durch Projekte"; category = "education" },
+        @{ title = "Arbeitsaufgaben sinnvoll priorisieren"; category = "work" },
+        @{ title = "Freundschaft und Erwartungen"; category = "friendship" },
+        @{ title = "Familie und Rollenbilder"; category = "family" },
+        @{ title = "Essen als Teil der Erinnerung"; category = "food" },
+        @{ title = "Reisen und nachhaltige Entscheidungen"; category = "travel" },
+        @{ title = "Stadtleben und gegenseitige Rücksicht"; category = "city-life" },
+        @{ title = "Geld und persönliche Freiheit"; category = "money" },
+        @{ title = "Medienberichte kritisch lesen"; category = "media" },
+        @{ title = "Soziale Medien und politische Meinungen"; category = "social-media" },
+        @{ title = "Verantwortung bei gemeinsamen Entscheidungen"; category = "ethics" },
+        @{ title = "Zukunft der Pflegearbeit"; category = "future" },
+        @{ title = "Flüssiger sprechen durch Routinen"; category = "language-learning" },
+        @{ title = "Deutschland durch Vereine kennenlernen"; category = "germany-and-integration" },
+        @{ title = "Wissenschaftliche Ergebnisse im Alltag"; category = "science" },
+        @{ title = "Weltraum und internationale Regeln"; category = "space" },
+        @{ title = "Digitale Kalender und Familienorganisation"; category = "technology" },
+        @{ title = "Automatische Entscheidungen transparent machen"; category = "artificial-intelligence" },
+        @{ title = "Secondhand-Käufe gut planen"; category = "environment" },
+        @{ title = "Klimafreundlich wohnen"; category = "climate" },
+        @{ title = "Gesundheit und soziale Unterstützung"; category = "health" },
+        @{ title = "Mut zur langsamen Veränderung"; category = "psychology" },
+        @{ title = "Beteiligung bei Schulentscheidungen"; category = "democracy" },
+        @{ title = "Sprachmittlung in Familien"; category = "germany-and-integration" },
+        @{ title = "Migration und berufliche Netzwerke pflegen"; category = "migration" },
+        @{ title = "Sport und faire Chancen"; category = "sports" },
+        @{ title = "Fußball und lokale Verantwortung"; category = "football" },
+        @{ title = "Filmempfehlungen begründen"; category = "cinema" },
+        @{ title = "Bücher und gesellschaftliche Debatten"; category = "books" },
+        @{ title = "Musik und persönliche Geschichte"; category = "music" },
+        @{ title = "Kunst und gesellschaftliche Verantwortung"; category = "art" },
+        @{ title = "Kompetenzen im Lebenslauf beschreiben"; category = "education" },
+        @{ title = "Arbeitskultur in kleinen Teams"; category = "work" },
+        @{ title = "Freundschaft nach Meinungsverschiedenheiten"; category = "friendship" },
+        @{ title = "Familiengespräche über Geld"; category = "family" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', or 'tenth'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', or 'eleventh'."
 }
 
 $levels = @($LevelsCsv.Split(",", [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object { $_.Trim().ToUpperInvariant() })
