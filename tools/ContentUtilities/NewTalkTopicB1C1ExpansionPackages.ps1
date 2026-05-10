@@ -392,8 +392,62 @@ elseif ($TopicSet -eq "sixth") {
         @{ title = "Familienbudgets gemeinsam planen"; category = "money" }
     )
 }
+elseif ($TopicSet -eq "seventh") {
+    $themeSpecs = @(
+        @{ title = "Digitale Unterschriften im Berufsalltag"; category = "technology" },
+        @{ title = "Künstliche Intelligenz und faire Chancen"; category = "artificial-intelligence" },
+        @{ title = "Leihen statt Kaufen"; category = "environment" },
+        @{ title = "Klimaschutz bei Veranstaltungen"; category = "climate" },
+        @{ title = "Gesundheitschecks in der Firma"; category = "health" },
+        @{ title = "Umgang mit Kritik beim Lernen"; category = "psychology" },
+        @{ title = "Mehr Demokratie in Wohnprojekten"; category = "democracy" },
+        @{ title = "Migration und digitale Communities"; category = "migration" },
+        @{ title = "Geschichte von Nachbarschaften"; category = "history" },
+        @{ title = "Vereinssport und Lebensbalance"; category = "sports" },
+        @{ title = "Fußballschulen für Kinder"; category = "football" },
+        @{ title = "Kurzfilme als Gesprächsanlass"; category = "cinema" },
+        @{ title = "Lieblingsbücher neu lesen"; category = "books" },
+        @{ title = "Musikproben und Disziplin"; category = "music" },
+        @{ title = "Kunstpreise und Öffentlichkeit"; category = "art" },
+        @{ title = "Noten ohne Druck"; category = "education" },
+        @{ title = "Rollenwechsel im Team"; category = "work" },
+        @{ title = "Freundschaften in Sprachkursen"; category = "friendship" },
+        @{ title = "Generationen unter einem Dach"; category = "family" },
+        @{ title = "Pausenbrot und Essgewohnheiten"; category = "food" },
+        @{ title = "Allein reisen und Sicherheit"; category = "travel" },
+        @{ title = "Stadtviertel ohne Autos"; category = "city-life" },
+        @{ title = "Gemeinsame Kassen in Wohngemeinschaften"; category = "money" },
+        @{ title = "Medienpausen im Alltag"; category = "media" },
+        @{ title = "Anonyme Profile und Verantwortung"; category = "social-media" },
+        @{ title = "Ehrlichkeit bei Online-Bewertungen"; category = "ethics" },
+        @{ title = "Zukunft der Weiterbildung"; category = "future" },
+        @{ title = "Grammatik im Gespräch üben"; category = "language-learning" },
+        @{ title = "Deutsch am Arbeitsplatz verstehen"; category = "germany-and-integration" },
+        @{ title = "Forschung im Museum"; category = "science" },
+        @{ title = "Weltraumtourismus und Gerechtigkeit"; category = "space" },
+        @{ title = "Digitale Erinnerungen sichern"; category = "technology" },
+        @{ title = "Automatische Texte und Urheberrecht"; category = "artificial-intelligence" },
+        @{ title = "Reparatur statt Neukauf im Büro"; category = "environment" },
+        @{ title = "Klimadaten verständlich erklären"; category = "climate" },
+        @{ title = "Hausarzt oder Notaufnahme"; category = "health" },
+        @{ title = "Mut zum Nachfragen"; category = "psychology" },
+        @{ title = "Kommunalpolitik im Alltag"; category = "democracy" },
+        @{ title = "Mehrsprachige Beratungsstellen"; category = "germany-and-integration" },
+        @{ title = "Ankommen in einem neuen Verein"; category = "migration" },
+        @{ title = "Sport und soziale Regeln"; category = "sports" },
+        @{ title = "Fußballreisen und Umwelt"; category = "football" },
+        @{ title = "Filmfiguren als Vorbilder"; category = "cinema" },
+        @{ title = "Bücherregale und Persönlichkeit"; category = "books" },
+        @{ title = "Musik in öffentlichen Verkehrsmitteln"; category = "music" },
+        @{ title = "Kunst im digitalen Raum"; category = "art" },
+        @{ title = "Prüfungen fair gestalten"; category = "education" },
+        @{ title = "Neue Mitarbeitende einarbeiten"; category = "work" },
+        @{ title = "Freundschaft und Distanz"; category = "friendship" },
+        @{ title = "Familienregeln neu verhandeln"; category = "family" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', or 'sixth'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', or 'seventh'."
 }
 
 $b2Contexts = @("in der Praxis", "in der Zukunft")
