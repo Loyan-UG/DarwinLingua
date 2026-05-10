@@ -212,11 +212,7 @@ internal sealed class TalkTopicRepository(IDbContextFactory<DarwinLinguaDbContex
         }
 
         string[] normalizedLemmaCandidates = vocabularyItems
-            .SelectMany(item => new[]
-            {
-                item.WordSlug is null ? null : LemmaUrlSlug.ToNormalizedLemmaCandidate(item.WordSlug),
-                item.Lemma.Trim().ToLowerInvariant(),
-            })
+            .SelectMany(CreateVocabularyLookupCandidates)
             .Where(candidate => !string.IsNullOrWhiteSpace(candidate))
             .Distinct(StringComparer.Ordinal)
             .ToArray()!;
@@ -233,9 +229,10 @@ internal sealed class TalkTopicRepository(IDbContextFactory<DarwinLinguaDbContex
         return vocabularyItems
             .Select(item =>
             {
+                string[] itemLookupCandidates = CreateVocabularyLookupCandidates(item).ToArray();
                 WordEntry? word = words.FirstOrDefault(candidate =>
                     (item.WordSlug is not null && string.Equals(LemmaUrlSlug.FromLemma(candidate.Lemma), item.WordSlug, StringComparison.Ordinal)) ||
-                    string.Equals(candidate.NormalizedLemma, item.Lemma.Trim().ToLowerInvariant(), StringComparison.Ordinal));
+                    itemLookupCandidates.Contains(candidate.NormalizedLemma, StringComparer.Ordinal));
 
                 WordSense? sense = word?.Senses
                     .OrderByDescending(candidate => candidate.IsPrimarySense)
@@ -250,6 +247,45 @@ internal sealed class TalkTopicRepository(IDbContextFactory<DarwinLinguaDbContex
                     word is not null);
             })
             .ToArray();
+    }
+
+    private static IEnumerable<string> CreateVocabularyLookupCandidates(TalkTopicVocabularyItem item)
+    {
+        if (item.WordSlug is not null)
+        {
+            string slugCandidate = LemmaUrlSlug.ToNormalizedLemmaCandidate(item.WordSlug);
+            yield return slugCandidate;
+            string? strippedSlugCandidate = StripGermanArticle(slugCandidate);
+            if (strippedSlugCandidate is not null)
+            {
+                yield return strippedSlugCandidate;
+            }
+        }
+
+        string lemmaCandidate = NormalizeVocabularyLookupText(item.Lemma);
+        yield return lemmaCandidate;
+        string? strippedLemmaCandidate = StripGermanArticle(lemmaCandidate);
+        if (strippedLemmaCandidate is not null)
+        {
+            yield return strippedLemmaCandidate;
+        }
+    }
+
+    private static string NormalizeVocabularyLookupText(string value) =>
+        string.Join(' ', value.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries)).ToLowerInvariant();
+
+    private static string? StripGermanArticle(string normalizedLemma)
+    {
+        foreach (string article in new[] { "der ", "die ", "das " })
+        {
+            if (normalizedLemma.StartsWith(article, StringComparison.Ordinal))
+            {
+                string stripped = normalizedLemma[article.Length..].Trim();
+                return string.IsNullOrWhiteSpace(stripped) ? null : stripped;
+            }
+        }
+
+        return null;
     }
 
     private static string? ResolvePrimaryMeaning<TTranslation>(
