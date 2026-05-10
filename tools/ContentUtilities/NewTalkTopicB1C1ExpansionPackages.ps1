@@ -5,7 +5,8 @@ param(
     [string]$PackageIdPrefix = "de-talk-topics-20260510-b1-c1-expansion-v2",
     [string]$PackageNamePrefix = "Darwin Deutsch Talk Topics B1-C1 Expansion 2026-05-10 v2",
     [string]$GroupPrefix = "mittelstufe",
-    [string]$B2GroupPrefix = "b2-vertiefung"
+    [string]$B2GroupPrefix = "b2-vertiefung",
+    [string]$LevelsCsv = "B1,B2,C1"
 )
 
 $ErrorActionPreference = "Stop"
@@ -500,8 +501,69 @@ elseif ($TopicSet -eq "eighth") {
         @{ title = "Familienzeit ohne Bildschirm"; category = "family" }
     )
 }
+elseif ($TopicSet -eq "ninth") {
+    $themeSpecs = @(
+        @{ title = "Digitale Helfer im Haushalt"; category = "technology" },
+        @{ title = "Künstliche Intelligenz und menschliche Fehler"; category = "artificial-intelligence" },
+        @{ title = "Mülltrennung in großen Wohnanlagen"; category = "environment" },
+        @{ title = "Klimafreundliche Lieferdienste"; category = "climate" },
+        @{ title = "Gesundheitsapps und Eigenverantwortung"; category = "health" },
+        @{ title = "Selbstorganisation im Lernalltag"; category = "psychology" },
+        @{ title = "Demokratische Streitkultur"; category = "democracy" },
+        @{ title = "Migration und berufliche Anerkennung"; category = "migration" },
+        @{ title = "Erinnerungsorte in der Stadt"; category = "history" },
+        @{ title = "Sportangebote für ältere Menschen"; category = "sports" },
+        @{ title = "Fußballvereine und Nachwuchsarbeit"; category = "football" },
+        @{ title = "Filme über Arbeitswelten"; category = "cinema" },
+        @{ title = "Sachbücher im Sprachkurs"; category = "books" },
+        @{ title = "Musik und Konzentration"; category = "music" },
+        @{ title = "Kunstprojekte im Stadtteil"; category = "art" },
+        @{ title = "Lernberatung für Erwachsene"; category = "education" },
+        @{ title = "Selbstständigkeit und Sicherheit"; category = "work" },
+        @{ title = "Freundschaften in neuen Städten"; category = "friendship" },
+        @{ title = "Familie und Pflegeverantwortung"; category = "family" },
+        @{ title = "Gemeinsame Mahlzeiten im Alltag"; category = "food" },
+        @{ title = "Reisen und kulturelle Missverständnisse"; category = "travel" },
+        @{ title = "Wohnprojekte für verschiedene Generationen"; category = "city-life" },
+        @{ title = "Finanzielle Entscheidungen in Partnerschaften"; category = "money" },
+        @{ title = "Medienkompetenz im Alltag"; category = "media" },
+        @{ title = "Diskussionen in Kommentarspalten"; category = "social-media" },
+        @{ title = "Gerechtigkeit bei Ressourcen"; category = "ethics" },
+        @{ title = "Zukunft der sozialen Arbeit"; category = "future" },
+        @{ title = "Redewendungen richtig verwenden"; category = "language-learning" },
+        @{ title = "Integration durch Vereine"; category = "germany-and-integration" },
+        @{ title = "Wissenschaftliche Neugier im Alltag"; category = "science" },
+        @{ title = "Weltraumforschung und internationale Zusammenarbeit"; category = "space" },
+        @{ title = "Digitale Routinen am Morgen"; category = "technology" },
+        @{ title = "Automatisierung und Verantwortung"; category = "artificial-intelligence" },
+        @{ title = "Weniger Abfall bei Festen"; category = "environment" },
+        @{ title = "Klimakommunikation ohne Angst"; category = "climate" },
+        @{ title = "Patientenrechte verstehen"; category = "health" },
+        @{ title = "Lernstress vor wichtigen Prüfungen"; category = "psychology" },
+        @{ title = "Politische Bildung im Alltag"; category = "democracy" },
+        @{ title = "Mehrsprachige Elternabende"; category = "germany-and-integration" },
+        @{ title = "Neue Arbeit nach der Migration"; category = "migration" },
+        @{ title = "Sport und Gemeinschaftsgefühl"; category = "sports" },
+        @{ title = "Fußball und lokale Wirtschaft"; category = "football" },
+        @{ title = "Filmgespräche nach dem Kino"; category = "cinema" },
+        @{ title = "Bücher als Geschenke"; category = "books" },
+        @{ title = "Musik und Sprache"; category = "music" },
+        @{ title = "Kunst und persönliche Erinnerung"; category = "art" },
+        @{ title = "Kompetenzen sichtbar machen"; category = "education" },
+        @{ title = "Arbeitszufriedenheit ohne Perfektion"; category = "work" },
+        @{ title = "Freundschaft und gegenseitige Hilfe"; category = "friendship" },
+        @{ title = "Familiengespräche über Zukunft"; category = "family" }
+    )
+}
 elseif ($TopicSet -ne "first") {
-    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', or 'eighth'."
+    throw "Unsupported TopicSet '$TopicSet'. Use 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', or 'ninth'."
+}
+
+$levels = @($LevelsCsv.Split(",", [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object { $_.Trim().ToUpperInvariant() })
+foreach ($level in $levels) {
+    if ($level -notin @("B1", "B2", "C1")) {
+        throw "Unsupported level '$level'. This expansion generator supports B1, B2, and C1."
+    }
 }
 
 $b2Contexts = @("in der Praxis", "in der Zukunft")
@@ -823,20 +885,22 @@ New-Item -ItemType Directory -Path $OutputPath | Out-Null
 $talkTopics = @()
 $index = 0
 foreach ($spec in $themeSpecs) {
-    foreach ($level in @("B1", "B2", "C1")) {
+    foreach ($level in $levels) {
         $talkTopics += New-TalkTopic $spec $level $GroupPrefix $index
         $index++
     }
 }
 
-foreach ($spec in $themeSpecs) {
-    foreach ($context in $b2Contexts) {
-        $b2Spec = @{
-            title = "$($spec.title) $context"
-            category = $spec.category
+if ($levels -contains "B2") {
+    foreach ($spec in $themeSpecs) {
+        foreach ($context in $b2Contexts) {
+            $b2Spec = @{
+                title = "$($spec.title) $context"
+                category = $spec.category
+            }
+            $talkTopics += New-TalkTopic $b2Spec "B2" $B2GroupPrefix $index
+            $index++
         }
-        $talkTopics += New-TalkTopic $b2Spec "B2" $B2GroupPrefix $index
-        $index++
     }
 }
 
