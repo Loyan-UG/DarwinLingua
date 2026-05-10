@@ -26,6 +26,7 @@ $internalArticleFragments = @(
     "germany-and-integration",
     "language-learning"
 )
+$asciiGermanSpellingPattern = "\b(fuer|ueber|koennte|koenntest|wuerde|wuerdest|aendern|frueher|Laendern|Loesung|saehe|ungewoehnliche|begruenden)\b"
 $repeatedTitleEndingPattern = "im Alltag im Alltag|in der Familie in der Familie|in der Zukunft in der Zukunft|in Deutschland in Deutschland|in der Schule in der Schule|am Arbeitsplatz am Arbeitsplatz|in den Medien in den Medien|für junge Menschen für junge Menschen|für die Umwelt für die Umwelt"
 
 $files = Get-ChildItem -Path $ContentPath -Filter "*.json" -File | Sort-Object Name
@@ -54,6 +55,13 @@ foreach ($file in $files) {
         if ($title -match $repeatedTitleEndingPattern) {
             $errors.Add("'$($topic.slug)' title contains a repeated mechanical ending.")
         }
+        if ($title -match $asciiGermanSpellingPattern) {
+            $errors.Add("'$($topic.slug)' title contains ASCII German spelling; use canonical umlauts.")
+        }
+        $description = [string]$topic.description
+        if ($description -match $asciiGermanSpellingPattern) {
+            $errors.Add("'$($topic.slug)' description contains ASCII German spelling; use canonical umlauts.")
+        }
         [void]$groups.Add([string]$topic.topicGroupKey)
         $level = [string]$topic.cefrLevel
         if (-not $ranges.ContainsKey($level)) {
@@ -69,6 +77,9 @@ foreach ($file in $files) {
             if ($article.Contains($fragment, [System.StringComparison]::Ordinal)) {
                 $errors.Add("'$($topic.slug)' article contains internal/template fragment '$fragment'.")
             }
+        }
+        if ($article -match $asciiGermanSpellingPattern) {
+            $errors.Add("'$($topic.slug)' article contains ASCII German spelling; use canonical umlauts.")
         }
         if ($article.Length -lt $range[0] -or $article.Length -gt $range[1]) {
             $errors.Add("'$($topic.slug)' article length $($article.Length) is outside $($range[0])-$($range[1]).")
@@ -90,6 +101,9 @@ foreach ($file in $files) {
             if ([string]$question.prompt -match "Ã|Â|�") {
                 $errors.Add("'$($topic.slug)' contains a warmup question with mojibake or replacement characters.")
             }
+            if ([string]$question.prompt -match $asciiGermanSpellingPattern) {
+                $errors.Add("'$($topic.slug)' contains a warmup question with ASCII German spelling; use canonical umlauts.")
+            }
             if ($null -ne $question.translations -and @($question.translations).Count -gt 0) {
                 $errors.Add("'$($topic.slug)' contains warmup question translations.")
             }
@@ -103,6 +117,9 @@ foreach ($file in $files) {
         foreach ($question in @($topic.discussionQuestions)) {
             if ([string]$question.prompt -match "Ã|Â|�") {
                 $errors.Add("'$($topic.slug)' contains a discussion question with mojibake or replacement characters.")
+            }
+            if ([string]$question.prompt -match $asciiGermanSpellingPattern) {
+                $errors.Add("'$($topic.slug)' contains a discussion question with ASCII German spelling; use canonical umlauts.")
             }
             if ($allowedQuestionTypes -notcontains [string]$question.questionType) {
                 $errors.Add("'$($topic.slug)' has unsupported questionType '$($question.questionType)'.")
@@ -118,6 +135,9 @@ foreach ($file in $files) {
         foreach ($vocabularyItem in @($topic.vocabularyItems)) {
             if ([string]$vocabularyItem.lemma -match "Ã|Â|�") {
                 $errors.Add("'$($topic.slug)' contains a vocabulary lemma with mojibake or replacement characters.")
+            }
+            if ([string]$vocabularyItem.lemma -match $asciiGermanSpellingPattern) {
+                $errors.Add("'$($topic.slug)' contains a vocabulary lemma with ASCII German spelling; use canonical umlauts.")
             }
         }
         $speakingGoals = @($topic.speakingGoals)

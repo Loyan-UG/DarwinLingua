@@ -382,21 +382,21 @@ function New-DiscussionQuestions([string]$title, [string]$level) {
         "opinion" = @(
             "Welche Meinung hast du zu ""$title""?",
             "Was findest du an diesem Thema wichtig?",
-            "Welche Position koenntest du gut begruenden?"
+            "Welche Position könntest du gut begründen?"
         )
         "imagination" = @(
-            "Wie koennte eine ungewoehnliche Loesung aussehen?",
-            "Was wuerde sich aendern, wenn alle anders handeln?",
-            "Wie saehe dieses Thema in einer idealen Stadt aus?"
+            "Wie könnte eine ungewöhnliche Lösung aussehen?",
+            "Was würde sich ändern, wenn alle anders handeln?",
+            "Wie sähe dieses Thema in einer idealen Stadt aus?"
         )
         "prediction" = @(
             "Wie wird sich dieses Thema in zehn Jahren entwickeln?",
-            "Welche Folgen koennte es fuer junge Menschen geben?",
+            "Welche Folgen könnte es für junge Menschen geben?",
             "Welche neue Frage wird in Zukunft wichtiger?"
         )
         "comparison" = @(
-            "Wie ist die Situation in zwei verschiedenen Laendern?",
-            "Was ist heute anders als frueher?",
+            "Wie ist die Situation in zwei verschiedenen Ländern?",
+            "Was ist heute anders als früher?",
             "Welche Option hat mehr Vorteile und warum?"
         )
     }
@@ -494,7 +494,7 @@ for ($start = 0; $start -lt $groups.Count; $start += $GroupsPerPackage) {
                 slug = $slug
                 topicGroupKey = $group.groupKey
                 title = $group.title
-                description = "Ein Talk Topic fuer Diskussionen ueber $($group.title)."
+                description = "Ein Talk Topic für Diskussionen über $($group.title)."
                 cefrLevel = $level
                 category = $group.category
                 topics = @($group.topicKeys)
@@ -517,8 +517,8 @@ for ($start = 0; $start -lt $groups.Count; $start += $GroupsPerPackage) {
 
     $package = [ordered]@{
         packageVersion = "1.0"
-        packageId = "de-talk-topics-20260510-v4-{0:D3}" -f $packageIndex
-        packageName = "Darwin Deutsch Talk Topics 2026-05-10 Article Quality Refresh Batch {0:D3}" -f $packageIndex
+        packageId = "de-talk-topics-20260510-v5-{0:D3}" -f $packageIndex
+        packageName = "Darwin Deutsch Talk Topics 2026-05-10 German Orthography Refresh Batch {0:D3}" -f $packageIndex
         source = "Hybrid"
         defaultMeaningLanguages = @("en")
         entries = @()
