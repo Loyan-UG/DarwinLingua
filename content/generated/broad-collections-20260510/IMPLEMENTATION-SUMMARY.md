@@ -17,26 +17,29 @@ Generated on 2026-05-10 for DarwinLingua / Darwin Deutsch.
 
 The collection package is intentionally collection-only with `entries: []`, so it does not create a duplicate anchor word. Word batches are imported first, then the final `zz` collection package assigns the resolved words to collections.
 
-## Seed Import Result
+## Corrected WebApi Shared Import Result
 
 - Files processed: 73
 - Files succeeded: 73
 - Files failed: 0
 - Entries total: 2134
-- Entries imported: 2092
-- Existing duplicate entries reused by import: 42
+- Entries imported in the checked shared database: 5
+- Existing duplicate entries reused by import in the checked shared database: 2129
 - Invalid entries: 0
-- Collections imported or updated: 40
-- Collection assignments: 4000
+- Collections imported or updated after fix package: 40
+- Collection assignments after fix package: 4000
 
-## Direct Seed Database Verification
+The import target is the WebApi shared PostgreSQL catalog (`--target shared`), not the MAUI seed database.
 
-- Target collections found: 40
+## WebApi Endpoint Verification
+
+- Visible collections from `/api/catalog/collections?meaningLanguageCode=en`: 41
+- Existing `erp` collection retained: yes, 439 words
+- Removed legacy starter collections absent: yes
+- Target broad collections found: 40
 - Target collection assignments: 4000
 - Collections with a count other than 100: 0
 - Duplicate assignments inside a collection: 0
-- Seed word entries after import: 2531
-- Content packages in seed database: 97
 - Required composite word index present: yes
 - Required normalized lemma search index present: yes
 
@@ -64,13 +67,14 @@ All commands passed. `git diff --check` reports only normal CRLF line-ending nor
 ## Supporting Reports
 
 - `de-broad-collections-20260510-report.txt`: source selection and per-collection generated package counts.
-- `de-broad-collections-20260510-import-report.txt`: import result for a clean seed import.
-- `de-broad-collections-20260510-db-verification.txt`: direct seed database verification and per-collection reuse/import counts.
+- `WEBAPI-IMPORT-REPORT.md`: corrected shared WebApi import result and cleanup notes.
 - `README.md`: import and validation instructions for this package set.
 
 ## Notes
 
-- No existing database data was deleted.
+- The existing `erp` collection was retained.
+- The legacy starter collections `crm-sales-playlist`, `warehouse-procurement`, and `project-meetings-b2` were deleted from the WebApi shared database and removed from automatic collection seeding.
+- The MAUI seed database was restored so this broad collection content is not shipped through mobile seed.
 - Existing words were reused when the importer detected duplicate normalized lemmas.
 - Collection references include word, part of speech, and CEFR level.
 - All package IDs are present and unique.

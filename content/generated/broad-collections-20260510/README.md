@@ -16,32 +16,34 @@ Importable content package set for the DarwinLingua / Darwin Deutsch broad vocab
 The collections file is intentionally prefixed with `zz` so folder imports process all word batches first.
 Report and summary files do not use `.json`, so the import tool does not treat them as content packages.
 
-## Seed Import
+## WebApi Shared Database Import
 
 ```powershell
-dotnet run --project D:\_Projects\DarwinLingua\src\Apps\DarwinLingua.ImportTool\DarwinLingua.ImportTool.csproj -- --yes D:\_Projects\DarwinLingua\content\generated\broad-collections-20260510
+dotnet run --project D:\_Projects\DarwinLingua\src\Apps\DarwinLingua.ImportTool\DarwinLingua.ImportTool.csproj -- --target shared --yes D:\_Projects\DarwinLingua\content\generated\broad-collections-20260510
 ```
 
-Clean seed import result:
+Corrected WebApi shared-database import result:
 
 - Files processed: 73
 - Files succeeded: 73
 - Files failed: 0
 - Entries total: 2134
-- Entries imported: 2092
-- Duplicate skips: 42
+- Entries imported in the checked shared database: 5
+- Duplicate skips in the checked shared database: 2129
 - Invalid entries: 0
-- Collections imported/updated: 40
-- Collection assignments: 4000
+- Collections imported/updated after fix package: 40
+- Collection assignments after fix package: 4000
 
-Direct seed database verification:
+The WebApi collection endpoint verification at `http://localhost:53945/api/catalog/collections?meaningLanguageCode=en` returned:
 
-- Target collection slugs found: 40/40
+- Visible collections: 41 (`erp` plus 40 broad collections)
+- `erp` retained with 439 words
+- Removed starter collections absent: `crm-sales-playlist`, `warehouse-procurement`, `project-meetings-b2`
+- Target broad collection slugs found: 40/40
 - Collections with a word count other than 100: 0
-- Duplicate assignments inside a collection: 0
 - Total collection assignments: 4000
 
-`de-broad-collections-20260510-report.txt` reports reuse from existing generated content files in the repository. `de-broad-collections-20260510-db-verification.txt` reports reuse from the pre-import seed database versus words imported by this batch.
+`de-broad-collections-20260510-report.txt` reports reuse from existing generated content files in the repository. The older seed verification files are superseded by `WEBAPI-IMPORT-REPORT.md`.
 
 ## Validation
 
@@ -61,6 +63,7 @@ Latest validation results:
 
 ## Notes
 
+- These packages are intended for the WebApi shared catalog. They should not be imported into the MAUI seed database unless mobile seed content is explicitly requested.
 - Existing words are reused by normalized lemma where the importer skips duplicates.
 - Collection references include `word`, `partOfSpeech`, and `cefrLevel`.
 - Only existing topic keys are used.

@@ -18,30 +18,6 @@ internal sealed class CatalogWordCollectionSeeder(IDbContextFactory<DarwinLingua
             "/images/collections/erp-core-b1.svg",
             10,
             ["Aufgabe", "Benutzer", "Datensatz", "Formular", "speichern", "prüfen", "dokumentieren", "Freigabeworkflow"]),
-        new(
-            new Guid("A7E59E70-2E9D-4B04-B2E7-5F2D6A110002"),
-            "crm-sales-playlist",
-            "CRM and Sales Playlist",
-            "Focused vocabulary for demos, quotations, leads, contract conversations, objections, follow-up calls, and customer-facing discussions.",
-            "/images/collections/crm-sales-playlist.svg",
-            20,
-            ["Angebot", "Kunde", "Vertrieb", "Anfrage", "Lead-Quelle", "Verkaufschance", "Preisverhandlung", "nachfassen", "argumentieren", "überzeugend"]),
-        new(
-            new Guid("A7E59E70-2E9D-4B04-B2E7-5F2D6A110003"),
-            "warehouse-procurement",
-            "Warehouse and Procurement",
-            "A practical collection for stock, purchasing, supplier communication, goods receipt, transfers, picking, and inventory operations.",
-            "/images/collections/warehouse-procurement.svg",
-            30,
-            ["Lieferant", "Bestellung", "Lieferung", "Lagerbestand", "Beschaffung", "Kommissionierung", "Umlagerung", "Wareneingang", "Bestellanforderung", "nachbestellen"]),
-        new(
-            new Guid("A7E59E70-2E9D-4B04-B2E7-5F2D6A110004"),
-            "project-meetings-b2",
-            "Projects and Meetings B2",
-            "Useful words for requirement workshops, alignment meetings, status updates, rollout planning, and technical coordination with German-speaking colleagues.",
-            "/images/collections/project-meetings-b2.svg",
-            40,
-            ["Besprechung", "Anforderung", "Schnittstelle", "abstimmen", "priorisieren", "Präsentation", "Projektplan", "Statusbericht", "Risikobewertung", "zusammenfassen"]),
     ];
 
     public async Task SeedAsync(CancellationToken cancellationToken)
