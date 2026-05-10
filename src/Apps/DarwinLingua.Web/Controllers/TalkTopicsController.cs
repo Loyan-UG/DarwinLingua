@@ -28,7 +28,7 @@ public sealed class TalkTopicsController(
         CancellationToken cancellationToken)
     {
         TalkTopicListFilterModel filter = new(
-            WebRouteInput.NormalizeSlug(cefrLevel ?? string.Empty),
+            NormalizeCefrLevel(cefrLevel),
             WebRouteInput.NormalizeSlug(category ?? string.Empty),
             WebRouteInput.NormalizeSlug(topic ?? string.Empty),
             WebRouteInput.NormalizeSlug(contentType ?? string.Empty),
@@ -109,6 +109,19 @@ public sealed class TalkTopicsController(
             talkTopic,
             profile.PreferredMeaningLanguage1,
             effectiveSecondaryMeaningLanguageCode));
+    }
+
+    private static string? NormalizeCefrLevel(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string normalized = value.Trim().ToUpperInvariant();
+        return normalized is "A1" or "A2" or "B1" or "B2" or "C1" or "C2"
+            ? normalized
+            : null;
     }
 
     private ViewResult ServiceUnavailableView(string title, string message)

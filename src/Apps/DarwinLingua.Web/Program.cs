@@ -76,6 +76,8 @@ builder.Services.AddOutputCache(options =>
             "conversationGoal",
             "topicKey",
             "topic",
+            "contentType",
+            "speakingGoal",
             "q"));
 });
 builder.Services.Configure<MemoryCacheOptions>(options => options.SizeLimit = 512);
