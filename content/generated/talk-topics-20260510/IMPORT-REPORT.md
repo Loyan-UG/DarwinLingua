@@ -17,6 +17,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\to
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\Server\Initialize-LocalServerContent.ps1 -ApiBaseUrl http://localhost:53945 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510 -AdminApiKey local-dev-admin-api-key-change-me
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\ContentUtilities\TestTalkTopicPackages.ps1 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\Server\Initialize-LocalServerContent.ps1 -ApiBaseUrl http://localhost:53945 -ContentPath D:\_Projects\DarwinLingua\content\generated\talk-topics-20260510 -AdminApiKey local-dev-admin-api-key-change-me
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\ContentUtilities\TestTalkTopicVocabularyResolution.ps1 -ApiBaseUrl http://localhost:53945 -PrimaryMeaningLanguageCode en -SecondaryMeaningLanguageCode fa
 ```
 
 Import result:
@@ -57,3 +58,6 @@ Final WebApi verification:
 - Sample generated description uses canonical German spelling: `Ein Talk Topic für Diskussionen über Leben im Weltall in der Schule.`
 - Sample generated question uses canonical German spelling: `Wie könnte eine ungewöhnliche Lösung aussehen?`
 - Sample generated vocabulary starts with category-specific items: `der Roboter`, `das Gerät`, `die Technik`, `der Computer`, `die Software`, `der Datenschutz`
+- TalkTopic vocabulary resolution through the WebApi: 17,307 of 22,212 items resolved (77.92%)
+- Distinct unresolved TalkTopic vocabulary lemmas: 54
+- Highest-impact unresolved lemmas: `die Frage`, `vorstellen`, `verändern`, `der Respekt`, `das Risiko`

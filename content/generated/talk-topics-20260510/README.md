@@ -52,6 +52,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\to
 
 The validator checks CEFR article character ranges, German-only articles and questions, discussion question counts by type, warm-up question counts, vocabulary count ranges, content types, speaking goals, duplicate slugs, distinct topic groups, repeated mechanical title endings, leaked internal/template fragments in article text, common ASCII spellings where canonical German umlauts are expected, and minimum generated vocabulary diversity.
 
+After importing into the WebApi catalog, vocabulary resolution can be checked against the real API:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\_Projects\DarwinLingua\tools\ContentUtilities\TestTalkTopicVocabularyResolution.ps1 -ApiBaseUrl http://localhost:53945 -PrimaryMeaningLanguageCode en -SecondaryMeaningLanguageCode fa
+```
+
 ## Import
 
 ```powershell
