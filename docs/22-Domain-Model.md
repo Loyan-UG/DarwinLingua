@@ -99,6 +99,14 @@ Responsible for:
 
 Mainly phase 2.
 
+## 2.4 Dialogue Learning
+
+Dialogue lessons are role-based practical conversations used for real-life speaking tasks and exam preparation. A Dialogue is not a Talk Topic: Talk Topics are article-led discussion materials, while Dialogues model turn-by-turn interaction.
+
+DialogueLesson is a catalog aggregate with first-class `cefrLevel`, `category`, topic links, exam profiles, skill focus tags, task type, interaction mode, register, speaking functions, useful word references, estimated practice minutes, optional difficulty notes, optional exam relevance, dialogue turns, useful phrases, quick-check questions, and speaking prompts.
+
+Useful words store only references such as lemma, optional word slug/key, optional CEFR level, and sort order. Meanings and translations are resolved from the Word Catalog where possible. Dialogue quality is validated by minimum meaningful sentence counts per side: A1 5, A2 6, B1 7, B2 8, C1 9, and C2 10.
+
 ## 2.4 Resource Discovery Context
 
 Responsible for:

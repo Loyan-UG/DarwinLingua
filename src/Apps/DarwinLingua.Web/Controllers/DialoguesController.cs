@@ -19,16 +19,34 @@ public sealed class DialoguesController(
 {
     [HttpGet("", Name = "Dialogues_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
-    public async Task<IActionResult> Index(string? topic, string? q, CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(
+        string? cefrLevel,
+        string? category,
+        string? topic,
+        string? examProfile,
+        string? skillFocus,
+        string? taskType,
+        string? q,
+        CancellationToken cancellationToken)
     {
         IReadOnlyList<DialogueLessonListItemModel> dialogues;
+        DialogueLessonListFilterModel filter = new(
+            WebRouteInput.NormalizeSlug(cefrLevel ?? string.Empty),
+            WebRouteInput.NormalizeSlug(category ?? string.Empty),
+            WebRouteInput.NormalizeSlug(topic ?? string.Empty),
+            WebRouteInput.NormalizeSlug(examProfile ?? string.Empty),
+            WebRouteInput.NormalizeSlug(skillFocus ?? string.Empty),
+            WebRouteInput.NormalizeSlug(taskType ?? string.Empty),
+            null,
+            null,
+            string.IsNullOrWhiteSpace(q) ? null : q.Trim());
 
         try
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             dialogues = await catalogApiClient
-                .GetDialoguesAsync(catalogTimeout.Token)
+                .GetDialoguesAsync(filter, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -37,36 +55,16 @@ public sealed class DialoguesController(
             dialogues = [];
         }
 
-        string? normalizedTopic = WebRouteInput.NormalizeSlug(topic ?? string.Empty);
-        string? normalizedQuery = string.IsNullOrWhiteSpace(q) ? null : q.Trim();
         IReadOnlyList<string> topicKeys = dialogues
             .SelectMany(static dialogue => dialogue.TopicKeys)
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .OrderBy(static topicKey => topicKey)
             .ToArray();
 
-        IEnumerable<DialogueLessonListItemModel> filteredDialogues = dialogues;
-        if (!string.IsNullOrWhiteSpace(normalizedTopic))
-        {
-            filteredDialogues = filteredDialogues.Where(dialogue =>
-                dialogue.TopicKeys.Any(topicKey => topicKey.Equals(normalizedTopic, StringComparison.OrdinalIgnoreCase)));
-        }
-
-        if (!string.IsNullOrWhiteSpace(normalizedQuery))
-        {
-            filteredDialogues = filteredDialogues.Where(dialogue =>
-                dialogue.Title.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
-                dialogue.Description.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
-                dialogue.LearnerGoal.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
-                dialogue.Category.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
-                dialogue.TopicKeys.Any(topicKey => topicKey.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase)));
-        }
-
         return View(new DialogueIndexPageViewModel(
-            filteredDialogues.ToArray(),
+            dialogues,
             topicKeys,
-            normalizedTopic,
-            normalizedQuery));
+            filter));
     }
 
     [HttpGet("{slug}", Name = "Dialogues_Detail")]

@@ -654,12 +654,25 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "LearnerGoal" character varying(1024) NOT NULL,
                 "CefrLevel" character varying(8) NOT NULL,
                 "Category" character varying(128) NOT NULL,
+                "TaskType" character varying(128) NOT NULL DEFAULT 'exam-roleplay',
+                "InteractionMode" character varying(128) NOT NULL DEFAULT 'face-to-face',
+                "Register" character varying(64) NOT NULL DEFAULT 'neutral',
+                "EstimatedPracticeMinutes" integer NOT NULL DEFAULT 15,
+                "DifficultyNote" character varying(1024),
+                "ExamRelevance" character varying(1024),
                 "PublicationStatus" character varying(32) NOT NULL,
                 "SortOrder" integer NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "UpdatedAtUtc" timestamp with time zone NOT NULL,
                 CONSTRAINT "PK_DialogueLessons" PRIMARY KEY ("Id")
             );
+
+            ALTER TABLE "DialogueLessons" ADD COLUMN IF NOT EXISTS "TaskType" character varying(128) NOT NULL DEFAULT 'exam-roleplay';
+            ALTER TABLE "DialogueLessons" ADD COLUMN IF NOT EXISTS "InteractionMode" character varying(128) NOT NULL DEFAULT 'face-to-face';
+            ALTER TABLE "DialogueLessons" ADD COLUMN IF NOT EXISTS "Register" character varying(64) NOT NULL DEFAULT 'neutral';
+            ALTER TABLE "DialogueLessons" ADD COLUMN IF NOT EXISTS "EstimatedPracticeMinutes" integer NOT NULL DEFAULT 15;
+            ALTER TABLE "DialogueLessons" ADD COLUMN IF NOT EXISTS "DifficultyNote" character varying(1024);
+            ALTER TABLE "DialogueLessons" ADD COLUMN IF NOT EXISTS "ExamRelevance" character varying(1024);
 
             CREATE TABLE IF NOT EXISTS "DialogueLessonTopics" (
                 "Id" uuid NOT NULL,
@@ -726,6 +739,65 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                     FOREIGN KEY ("DialogueQuestionId") REFERENCES "DialogueQuestions" ("Id") ON DELETE CASCADE
             );
 
+            CREATE TABLE IF NOT EXISTS "DialogueExamProfiles" (
+                "Id" uuid NOT NULL,
+                "DialogueLessonId" uuid NOT NULL,
+                "ExamProfile" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_DialogueExamProfiles" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_DialogueExamProfiles_DialogueLessons_DialogueLessonId"
+                    FOREIGN KEY ("DialogueLessonId") REFERENCES "DialogueLessons" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "DialogueSkillFocus" (
+                "Id" uuid NOT NULL,
+                "DialogueLessonId" uuid NOT NULL,
+                "SkillFocus" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_DialogueSkillFocus" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_DialogueSkillFocus_DialogueLessons_DialogueLessonId"
+                    FOREIGN KEY ("DialogueLessonId") REFERENCES "DialogueLessons" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "DialogueSpeakingFunctions" (
+                "Id" uuid NOT NULL,
+                "DialogueLessonId" uuid NOT NULL,
+                "SpeakingFunction" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_DialogueSpeakingFunctions" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_DialogueSpeakingFunctions_DialogueLessons_DialogueLessonId"
+                    FOREIGN KEY ("DialogueLessonId") REFERENCES "DialogueLessons" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "DialogueUsefulWords" (
+                "Id" uuid NOT NULL,
+                "DialogueLessonId" uuid NOT NULL,
+                "Lemma" character varying(256) NOT NULL,
+                "WordSlug" character varying(256),
+                "CefrLevel" character varying(8),
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_DialogueUsefulWords" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_DialogueUsefulWords_DialogueLessons_DialogueLessonId"
+                    FOREIGN KEY ("DialogueLessonId") REFERENCES "DialogueLessons" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "DialogueSpeakingPrompts" (
+                "Id" uuid NOT NULL,
+                "DialogueLessonId" uuid NOT NULL,
+                "PromptType" character varying(128) NOT NULL,
+                "Prompt" character varying(2000) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_DialogueSpeakingPrompts" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_DialogueSpeakingPrompts_DialogueLessons_DialogueLessonId"
+                    FOREIGN KEY ("DialogueLessonId") REFERENCES "DialogueLessons" ("Id") ON DELETE CASCADE
+            );
+
             CREATE TABLE IF NOT EXISTS "DialogueTurnTranslations" (
                 "Id" uuid NOT NULL,
                 "OwnerId" uuid NOT NULL,
@@ -774,7 +846,24 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                     FOREIGN KEY ("OwnerId") REFERENCES "DialogueAnswers" ("Id") ON DELETE CASCADE
             );
 
+            CREATE TABLE IF NOT EXISTS "DialogueSpeakingPromptTranslations" (
+                "Id" uuid NOT NULL,
+                "OwnerId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_DialogueSpeakingPromptTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_DialogueSpeakingPromptTranslations_DialogueSpeakingPrompts_OwnerId"
+                    FOREIGN KEY ("OwnerId") REFERENCES "DialogueSpeakingPrompts" ("Id") ON DELETE CASCADE
+            );
+
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueLessons_Slug" ON "DialogueLessons" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueLessons_CefrLevel" ON "DialogueLessons" ("CefrLevel");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueLessons_Category" ON "DialogueLessons" ("Category");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueLessons_TaskType" ON "DialogueLessons" ("TaskType");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueLessons_InteractionMode" ON "DialogueLessons" ("InteractionMode");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueLessons_Register" ON "DialogueLessons" ("Register");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueLessonTopics_PrimaryPerLesson" ON "DialogueLessonTopics" ("DialogueLessonId") WHERE "IsPrimary" = TRUE;
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueLessonTopics_DialogueLessonId_TopicId" ON "DialogueLessonTopics" ("DialogueLessonId", "TopicId");
             CREATE INDEX IF NOT EXISTS "IX_DialogueLessonTopics_TopicId" ON "DialogueLessonTopics" ("TopicId");
@@ -786,6 +875,15 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueQuestionTranslations_OwnerId_LanguageCode" ON "DialogueQuestionTranslations" ("OwnerId", "LanguageCode");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueAnswers_DialogueQuestionId_SortOrder" ON "DialogueAnswers" ("DialogueQuestionId", "SortOrder");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueAnswerTranslations_OwnerId_LanguageCode" ON "DialogueAnswerTranslations" ("OwnerId", "LanguageCode");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueExamProfiles_ExamProfile" ON "DialogueExamProfiles" ("ExamProfile");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueExamProfiles_DialogueLessonId_ExamProfile" ON "DialogueExamProfiles" ("DialogueLessonId", "ExamProfile");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueSkillFocus_SkillFocus" ON "DialogueSkillFocus" ("SkillFocus");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueSkillFocus_DialogueLessonId_SkillFocus" ON "DialogueSkillFocus" ("DialogueLessonId", "SkillFocus");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueSpeakingFunctions_DialogueLessonId_SpeakingFunction" ON "DialogueSpeakingFunctions" ("DialogueLessonId", "SpeakingFunction");
+            CREATE INDEX IF NOT EXISTS "IX_DialogueUsefulWords_WordSlug" ON "DialogueUsefulWords" ("WordSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueUsefulWords_DialogueLessonId_SortOrder" ON "DialogueUsefulWords" ("DialogueLessonId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueSpeakingPrompts_DialogueLessonId_SortOrder" ON "DialogueSpeakingPrompts" ("DialogueLessonId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_DialogueSpeakingPromptTranslations_OwnerId_LanguageCode" ON "DialogueSpeakingPromptTranslations" ("OwnerId", "LanguageCode");
             """,
             cancellationToken).ConfigureAwait(false);
 

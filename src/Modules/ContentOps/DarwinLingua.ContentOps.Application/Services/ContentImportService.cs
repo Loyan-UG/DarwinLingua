@@ -7,6 +7,7 @@ using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
+using System.Text.RegularExpressions;
 
 namespace DarwinLingua.ContentOps.Application.Services;
 
@@ -16,6 +17,59 @@ namespace DarwinLingua.ContentOps.Application.Services;
 internal sealed class ContentImportService : IContentImportService
 {
     private const string SupportedPackageVersion = "1.0";
+
+    private static readonly HashSet<string> DialogueExamProfiles = new(StringComparer.Ordinal)
+    {
+        "goethe-a1", "goethe-a2", "goethe-b1", "goethe-b2", "goethe-c1", "goethe-c2",
+        "telc-a1", "telc-a2", "telc-b1", "telc-b2", "telc-c1",
+        "oeso-a1", "oeso-a2", "oeso-b1", "oeso-b2", "oeso-c1",
+        "dtz-a2-b1", "testdaf-b2-c1", "c1-hochschule",
+        "berufssprache-b1", "berufssprache-b2", "berufssprache-c1"
+    };
+
+    private static readonly HashSet<string> DialogueSkillFocus = new(StringComparer.Ordinal)
+    {
+        "speaking", "listening-support", "roleplay", "exam-speaking", "phone-call",
+        "formal-conversation", "informal-conversation", "workplace-communication",
+        "service-interaction", "appointment-management", "complaint-handling",
+        "discussion", "negotiation", "presentation-support"
+    };
+
+    private static readonly HashSet<string> DialogueTaskTypes = new(StringComparer.Ordinal)
+    {
+        "introduce-yourself", "ask-for-information", "make-appointment", "reschedule-appointment",
+        "explain-problem", "ask-for-help", "order-and-pay", "ask-for-directions",
+        "complain-politely", "give-opinion", "agree-disagree", "compare-options",
+        "make-suggestion", "refuse-politely", "negotiate-solution", "discuss-plan",
+        "describe-experience", "handle-misunderstanding", "workplace-meeting",
+        "job-interview", "exam-roleplay", "exam-discussion"
+    };
+
+    private static readonly HashSet<string> DialogueInteractionModes = new(StringComparer.Ordinal)
+    {
+        "face-to-face", "phone", "video-call", "workplace", "classroom", "service-counter",
+        "doctor-office", "government-office", "school-kindergarten", "exam-room",
+        "pair-work", "group-work"
+    };
+
+    private static readonly HashSet<string> DialogueRegisters = new(StringComparer.Ordinal)
+    {
+        "formal", "informal", "neutral", "mixed"
+    };
+
+    private static readonly HashSet<string> DialogueSpeakingFunctions = new(StringComparer.Ordinal)
+    {
+        "greet", "introduce", "ask-question", "answer-question", "request", "clarify",
+        "confirm", "correct", "apologize", "explain", "describe", "suggest", "agree",
+        "disagree", "compare", "justify", "complain", "negotiate", "summarize",
+        "close-conversation"
+    };
+
+    private static readonly HashSet<string> DialoguePromptTypes = new(StringComparer.Ordinal)
+    {
+        "comprehension", "speaking-prompt", "roleplay-task", "exam-prompt",
+        "follow-up-question", "self-correction", "vocabulary-check"
+    };
 
     private readonly IContentImportFileReader _contentImportFileReader;
     private readonly IContentImportParser _contentImportParser;
@@ -212,6 +266,15 @@ internal sealed class ContentImportService : IContentImportService
                 dialogue.SortOrder < 0 ? 0 : dialogue.SortOrder,
                 timestampUtc);
 
+            lesson.UpdateExamMetadata(
+                NormalizeText(dialogue.TaskType),
+                NormalizeText(dialogue.InteractionMode),
+                NormalizeText(dialogue.Register),
+                dialogue.EstimatedPracticeMinutes <= 0 ? 15 : dialogue.EstimatedPracticeMinutes,
+                dialogue.DifficultyNote,
+                dialogue.ExamRelevance,
+                timestampUtc);
+
             string[] topicKeys = dialogue.Topics
                 .Select(topic => NormalizeText(topic).ToLowerInvariant())
                 .Where(topic => !string.IsNullOrWhiteSpace(topic))
@@ -221,6 +284,67 @@ internal sealed class ContentImportService : IContentImportService
             for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
             {
                 lesson.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            string[] examProfiles = dialogue.ExamProfiles
+                .Select(profile => NormalizeText(profile).ToLowerInvariant())
+                .Where(profile => !string.IsNullOrWhiteSpace(profile))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int profileIndex = 0; profileIndex < examProfiles.Length; profileIndex++)
+            {
+                lesson.AddExamProfile(Guid.NewGuid(), examProfiles[profileIndex], (profileIndex + 1) * 10, timestampUtc);
+            }
+
+            string[] skillFocus = dialogue.SkillFocus
+                .Select(focus => NormalizeText(focus).ToLowerInvariant())
+                .Where(focus => !string.IsNullOrWhiteSpace(focus))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int focusIndex = 0; focusIndex < skillFocus.Length; focusIndex++)
+            {
+                lesson.AddSkillFocus(Guid.NewGuid(), skillFocus[focusIndex], (focusIndex + 1) * 10, timestampUtc);
+            }
+
+            string[] speakingFunctions = dialogue.SpeakingFunctions
+                .Select(function => NormalizeText(function).ToLowerInvariant())
+                .Where(function => !string.IsNullOrWhiteSpace(function))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int functionIndex = 0; functionIndex < speakingFunctions.Length; functionIndex++)
+            {
+                lesson.AddSpeakingFunction(Guid.NewGuid(), speakingFunctions[functionIndex], (functionIndex + 1) * 10, timestampUtc);
+            }
+
+            for (int wordIndex = 0; wordIndex < dialogue.UsefulWords.Count; wordIndex++)
+            {
+                ParsedDialogueUsefulWordModel word = dialogue.UsefulWords[wordIndex];
+                CefrLevel? cefrLevel = Enum.TryParse(NormalizeText(word.CefrLevel), true, out CefrLevel parsedWordCefr)
+                    ? parsedWordCefr
+                    : null;
+                lesson.AddUsefulWord(
+                    Guid.NewGuid(),
+                    word.Lemma,
+                    word.WordSlug,
+                    cefrLevel,
+                    word.SortOrder <= 0 ? (wordIndex + 1) * 10 : word.SortOrder,
+                    timestampUtc);
+            }
+
+            for (int promptIndex = 0; promptIndex < dialogue.SpeakingPrompts.Count; promptIndex++)
+            {
+                ParsedDialogueSpeakingPromptModel parsedPrompt = dialogue.SpeakingPrompts[promptIndex];
+                DialogueSpeakingPrompt prompt = lesson.AddSpeakingPrompt(
+                    Guid.NewGuid(),
+                    parsedPrompt.SortOrder <= 0 ? (promptIndex + 1) * 10 : parsedPrompt.SortOrder,
+                    parsedPrompt.PromptType,
+                    parsedPrompt.Prompt,
+                    timestampUtc);
+
+                AddDialogueTranslations(prompt.AddTranslation, parsedPrompt.Translations, timestampUtc);
             }
 
             for (int turnIndex = 0; turnIndex < dialogue.DialogueTurns.Count; turnIndex++)
@@ -1109,7 +1233,7 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add("Dialogue learnerGoal is required.");
             }
 
-            if (!Enum.TryParse(NormalizeText(dialogue.CefrLevel), true, out CefrLevel _))
+            if (!Enum.TryParse(NormalizeText(dialogue.CefrLevel), true, out CefrLevel parsedDialogueCefrLevel))
             {
                 errors.Add("Dialogue CEFR level is invalid.");
             }
@@ -1139,6 +1263,85 @@ internal sealed class ContentImportService : IContentImportService
                 }
             }
 
+            ValidateDialogueStringList(dialogue.ExamProfiles, DialogueExamProfiles, "examProfiles", true, errors);
+            ValidateDialogueStringList(dialogue.SkillFocus, DialogueSkillFocus, "skillFocus", true, errors);
+            ValidateDialogueStringList(dialogue.SpeakingFunctions, DialogueSpeakingFunctions, "speakingFunctions", true, errors);
+
+            string taskType = NormalizeText(dialogue.TaskType).ToLowerInvariant();
+            if (!DialogueTaskTypes.Contains(taskType))
+            {
+                errors.Add("Dialogue taskType is required and must be one of the supported dialogue task types.");
+            }
+
+            string interactionMode = NormalizeText(dialogue.InteractionMode).ToLowerInvariant();
+            if (!DialogueInteractionModes.Contains(interactionMode))
+            {
+                errors.Add("Dialogue interactionMode is required and must be one of the supported dialogue interaction modes.");
+            }
+
+            string register = NormalizeText(dialogue.Register).ToLowerInvariant();
+            if (!DialogueRegisters.Contains(register))
+            {
+                errors.Add("Dialogue register is required and must be formal, informal, neutral, or mixed.");
+            }
+
+            if (dialogue.EstimatedPracticeMinutes <= 0)
+            {
+                errors.Add("Dialogue estimatedPracticeMinutes must be greater than zero.");
+            }
+
+            if (dialogue.UsefulWords.Count == 0)
+            {
+                errors.Add("Dialogue usefulWords must contain at least one item.");
+            }
+
+            for (int wordIndex = 0; wordIndex < dialogue.UsefulWords.Count; wordIndex++)
+            {
+                ParsedDialogueUsefulWordModel word = dialogue.UsefulWords[wordIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(word.Lemma)))
+                {
+                    errors.Add($"Dialogue usefulWords[{wordIndex + 1}] lemma is required.");
+                }
+
+                string? wordSlug = NormalizeOptionalText(word.WordSlug);
+                if (wordSlug is not null && !ValidateKebabKey(wordSlug.ToLowerInvariant()))
+                {
+                    errors.Add($"Dialogue usefulWords[{wordIndex + 1}] wordSlug must use lowercase kebab-case.");
+                }
+
+                string? wordCefrLevel = NormalizeOptionalText(word.CefrLevel);
+                if (wordCefrLevel is not null && !Enum.TryParse(wordCefrLevel, true, out CefrLevel _))
+                {
+                    errors.Add($"Dialogue usefulWords[{wordIndex + 1}] cefrLevel is invalid.");
+                }
+            }
+
+            if (dialogue.SpeakingPrompts.Count == 0)
+            {
+                errors.Add("Dialogue speakingPrompts must contain at least one item.");
+            }
+
+            for (int promptIndex = 0; promptIndex < dialogue.SpeakingPrompts.Count; promptIndex++)
+            {
+                ParsedDialogueSpeakingPromptModel prompt = dialogue.SpeakingPrompts[promptIndex];
+                string promptType = NormalizeText(prompt.PromptType).ToLowerInvariant();
+                if (!DialoguePromptTypes.Contains(promptType))
+                {
+                    errors.Add($"Dialogue speakingPrompts[{promptIndex + 1}] promptType is invalid.");
+                }
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(prompt.Prompt)))
+                {
+                    errors.Add($"Dialogue speakingPrompts[{promptIndex + 1}] prompt is required.");
+                }
+
+                ValidateDialogueTranslations(
+                    prompt.Translations,
+                    meaningLanguages,
+                    $"Dialogue speakingPrompts[{promptIndex + 1}] translations",
+                    errors);
+            }
+
             if (dialogue.DialogueTurns.Count == 0)
             {
                 errors.Add("Dialogue dialogueTurns must contain at least one item.");
@@ -1164,6 +1367,11 @@ internal sealed class ContentImportService : IContentImportService
                     meaningLanguages,
                     $"Dialogue dialogueTurns[{turnIndex + 1}] translations",
                     errors);
+            }
+
+            if (Enum.TryParse(NormalizeText(dialogue.CefrLevel), true, out parsedDialogueCefrLevel))
+            {
+                ValidateDialogueSentenceCounts(dialogue, parsedDialogueCefrLevel, errors);
             }
 
             if (dialogue.UsefulPhrases.Count == 0)
@@ -1263,6 +1471,86 @@ internal sealed class ContentImportService : IContentImportService
         {
             errors.Add($"{fieldName}: {translationError}");
         }
+    }
+
+    private static void ValidateDialogueStringList(
+        IReadOnlyList<string> values,
+        IReadOnlySet<string> allowedValues,
+        string fieldName,
+        bool requireAtLeastOne,
+        ICollection<string> errors)
+    {
+        string[] normalizedValues = values
+            .Select(value => NormalizeText(value).ToLowerInvariant())
+            .Where(value => !string.IsNullOrWhiteSpace(value))
+            .ToArray();
+
+        if (requireAtLeastOne && normalizedValues.Length == 0)
+        {
+            errors.Add($"Dialogue {fieldName} must contain at least one item.");
+        }
+
+        foreach (string value in normalizedValues)
+        {
+            if (!ValidateKebabKey(value) || !allowedValues.Contains(value))
+            {
+                errors.Add($"Dialogue {fieldName} contains unsupported value '{value}'.");
+            }
+        }
+    }
+
+    private static void ValidateDialogueSentenceCounts(
+        ParsedDialogueLessonModel dialogue,
+        CefrLevel cefrLevel,
+        ICollection<string> errors)
+    {
+        int minimumSentenceCount = cefrLevel switch
+        {
+            CefrLevel.A1 => 5,
+            CefrLevel.A2 => 6,
+            CefrLevel.B1 => 7,
+            CefrLevel.B2 => 8,
+            CefrLevel.C1 => 9,
+            CefrLevel.C2 => 10,
+            _ => 7
+        };
+
+        Dictionary<string, int> sentenceCountsByRole = dialogue.DialogueTurns
+            .GroupBy(turn => NormalizeText(turn.SpeakerRole).ToLowerInvariant())
+            .Where(group => !string.IsNullOrWhiteSpace(group.Key))
+            .ToDictionary(
+                group => group.Key,
+                group => group.Sum(turn => CountDialogueSentences(turn.BaseText)),
+                StringComparer.Ordinal);
+
+        if (!sentenceCountsByRole.TryGetValue("learner", out int learnerSentenceCount) ||
+            learnerSentenceCount < minimumSentenceCount)
+        {
+            errors.Add($"Dialogue learner side must contain at least {minimumSentenceCount} meaningful sentences for {cefrLevel}.");
+        }
+
+        int strongestPartnerSentenceCount = sentenceCountsByRole
+            .Where(item => !string.Equals(item.Key, "learner", StringComparison.Ordinal))
+            .Select(item => item.Value)
+            .DefaultIfEmpty(0)
+            .Max();
+
+        if (strongestPartnerSentenceCount < minimumSentenceCount)
+        {
+            errors.Add($"Dialogue partner side must contain at least {minimumSentenceCount} meaningful sentences for {cefrLevel}.");
+        }
+    }
+
+    private static int CountDialogueSentences(string text)
+    {
+        string normalized = NormalizeText(text);
+        if (string.IsNullOrWhiteSpace(normalized))
+        {
+            return 0;
+        }
+
+        int sentenceCount = Regex.Matches(normalized, @"[.!?]+").Count;
+        return sentenceCount == 0 ? 1 : sentenceCount;
     }
 
     private static void ValidateConversationStarterPacks(

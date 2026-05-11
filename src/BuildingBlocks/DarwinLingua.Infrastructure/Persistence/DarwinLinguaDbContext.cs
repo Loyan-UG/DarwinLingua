@@ -118,6 +118,16 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<DialogueLessonTopic> DialogueLessonTopics => Set<DialogueLessonTopic>();
 
+    public DbSet<DialogueExamProfile> DialogueExamProfiles => Set<DialogueExamProfile>();
+
+    public DbSet<DialogueSkillFocus> DialogueSkillFocus => Set<DialogueSkillFocus>();
+
+    public DbSet<DialogueSpeakingFunction> DialogueSpeakingFunctions => Set<DialogueSpeakingFunction>();
+
+    public DbSet<DialogueUsefulWord> DialogueUsefulWords => Set<DialogueUsefulWord>();
+
+    public DbSet<DialogueSpeakingPrompt> DialogueSpeakingPrompts => Set<DialogueSpeakingPrompt>();
+
     public DbSet<DialogueTurn> DialogueTurns => Set<DialogueTurn>();
 
     public DbSet<DialoguePhrase> DialoguePhrases => Set<DialoguePhrase>();
@@ -238,6 +248,12 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new WordCollectionEntryConfiguration());
         modelBuilder.ApplyConfiguration(new DialogueLessonConfiguration());
         modelBuilder.ApplyConfiguration(new DialogueLessonTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueExamProfileConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueSkillFocusConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueSpeakingFunctionConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueUsefulWordConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueSpeakingPromptConfiguration());
+        modelBuilder.ApplyConfiguration(new DialogueSpeakingPromptTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new DialogueTurnConfiguration());
         modelBuilder.ApplyConfiguration(new DialogueTurnTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new DialoguePhraseConfiguration());

@@ -79,6 +79,16 @@ Turn content into a repeatable learning experience.
 
 ---
 
+## Dialogue Learning Extension
+
+Dialogue Learning is the practical conversation module for real-life tasks and exam preparation. Dialogues are role-based conversations, separate from Talk Topics, with first-class CEFR filtering, category/topic metadata, exam profile tags, skill focus tags, task type, interaction mode, register, speaking functions, useful word references, and speaking prompts.
+
+B1 and B2 are priority levels because they support Goethe, telc, DTZ, and Berufssprache speaking preparation. Starter content targets are A1 20, A2 30, B1 80, B2 80, C1 20, and C2 10 dialogues.
+
+Minimum meaningful sentence counts per side are A1 5, A2 6, B1 7, B2 8, C1 9, and C2 10. Useful words are references only; meanings come from the Word Catalog.
+
+---
+
 ## Phase 3 - Enhanced Content Intelligence
 
 ### Goals

@@ -10,26 +10,47 @@
     @if (Model.TopicKeys.Count > 0)
     {
         <div class="chip-grid">
-            <a class="chip-link @(string.IsNullOrWhiteSpace(Model.SelectedTopicKey) ? "is-active" : string.Empty)"
+            <a class="chip-link @(string.IsNullOrWhiteSpace(Model.Filter.TopicKey) ? "is-active" : string.Empty)"
                asp-controller="Dialogues"
                asp-action="Index"
-               asp-route-q="@Model.Query">@T["All topics"]</a>
+               asp-route-cefrLevel="@Model.Filter.CefrLevel"
+               asp-route-category="@Model.Filter.Category"
+               asp-route-examProfile="@Model.Filter.ExamProfile"
+               asp-route-skillFocus="@Model.Filter.SkillFocus"
+               asp-route-taskType="@Model.Filter.TaskType"
+               asp-route-q="@Model.Filter.Query">@T["All topics"]</a>
             @foreach (string topicKey in Model.TopicKeys)
             {
-                <a class="chip-link @(string.Equals(Model.SelectedTopicKey, topicKey, StringComparison.OrdinalIgnoreCase) ? "is-active" : string.Empty)"
+                <a class="chip-link @(string.Equals(Model.Filter.TopicKey, topicKey, StringComparison.OrdinalIgnoreCase) ? "is-active" : string.Empty)"
                    asp-controller="Dialogues"
                    asp-action="Index"
                    asp-route-topic="@topicKey"
-                   asp-route-q="@Model.Query">@topicKey</a>
+                   asp-route-cefrLevel="@Model.Filter.CefrLevel"
+                   asp-route-category="@Model.Filter.Category"
+                   asp-route-examProfile="@Model.Filter.ExamProfile"
+                   asp-route-skillFocus="@Model.Filter.SkillFocus"
+                   asp-route-taskType="@Model.Filter.TaskType"
+                   asp-route-q="@Model.Filter.Query">@topicKey</a>
             }
         </div>
     }
     <form class="search-form" method="get" asp-controller="Dialogues" asp-action="Index">
-        @if (!string.IsNullOrWhiteSpace(Model.SelectedTopicKey))
+        <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
+            <option value="">@T["All levels"]</option>
+            @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
+            {
+                <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+            }
+        </select>
+        <input class="search-input" type="text" name="category" value="@Model.Filter.Category" placeholder="@T["Category"]" />
+        <input class="search-input" type="text" name="examProfile" value="@Model.Filter.ExamProfile" placeholder="@T["Exam profile"]" />
+        <input class="search-input" type="text" name="skillFocus" value="@Model.Filter.SkillFocus" placeholder="@T["Skill focus"]" />
+        <input class="search-input" type="text" name="taskType" value="@Model.Filter.TaskType" placeholder="@T["Task type"]" />
+        @if (!string.IsNullOrWhiteSpace(Model.Filter.TopicKey))
         {
-            <input type="hidden" name="topic" value="@Model.SelectedTopicKey" />
+            <input type="hidden" name="topic" value="@Model.Filter.TopicKey" />
         }
-        <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search dialogues"]" />
+        <input class="search-input" type="search" name="q" value="@Model.Filter.Query" placeholder="@T["Search dialogues"]" />
         <button type="submit" class="button button--secondary">@T["Search"]</button>
     </form>
 </section>
@@ -46,7 +67,7 @@ else
             <article class="panel stack-md">
                 <div class="action-row collection-card__meta">
                     <span class="eyebrow">@dialogue.CefrLevel · @dialogue.Category</span>
-                    <span>@T["{0} topics", dialogue.TopicKeys.Count]</span>
+                    <span>@dialogue.TaskType · @dialogue.Register</span>
                 </div>
                 <h2 class="headline-sm">
                     <a asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogue.Slug">@dialogue.Title</a>
@@ -59,6 +80,19 @@ else
                         @foreach (string topicKey in dialogue.TopicKeys)
                         {
                             <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
+                        }
+                    </div>
+                }
+                @if (dialogue.ExamProfiles.Count > 0 || dialogue.SkillFocus.Count > 0)
+                {
+                    <div class="chip-grid">
+                        @foreach (string examProfile in dialogue.ExamProfiles.Take(3))
+                        {
+                            <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-examProfile="@examProfile">@examProfile</a>
+                        }
+                        @foreach (string focus in dialogue.SkillFocus.Take(3))
+                        {
+                            <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-skillFocus="@focus">@focus</a>
                         }
                     </div>
                 }

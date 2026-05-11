@@ -99,6 +99,10 @@ Main concepts inside this context:
 - WordTopic
 - Language reference usage for meaning/localization links
 
+Dialogue Learning remains inside the Content Catalog boundary for now because Dialogues are shared catalog content. It uses DialogueLesson, DialogueTurn, DialoguePhrase, DialogueQuestion, DialogueAnswer, DialogueSpeakingPrompt, and DialogueUsefulWord references. CEFR, category, topic, exam profile, skill focus, task type, interaction mode, and register are controlled metadata used by API/Web filters and package validation.
+
+Dialogue useful words are catalog references only; they must not duplicate word meanings. Talk Topics and Dialogues are separate learning surfaces: Talk Topics are article-led discussion materials, while Dialogues are role-based practical conversations for real-life tasks and exam preparation.
+
 ## 3.4 What Belongs Here
 
 Belongs here:

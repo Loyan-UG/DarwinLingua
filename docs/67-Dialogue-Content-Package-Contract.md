@@ -1,6 +1,6 @@
 # Dialogue Content Package Contract
 
-This document defines the Phase 6 JSON contract for dialogue lessons before persistence and UI work.
+This document defines the JSON contract for Dialogue lessons. Dialogues are role-based practical conversations for real-life tasks and exam preparation. They are different from Talk Topics, which are reading-based discussion items.
 
 ## Package Shape
 
@@ -18,7 +18,7 @@ Dialogue lessons live beside vocabulary entries and collections:
 }
 ```
 
-`entries` remains required for the current importer. Dialogue persistence will be added separately.
+`entries` remains required for the current importer and may be empty for dialogue-only packages.
 
 ## DialogueLesson
 
@@ -31,6 +31,15 @@ Required fields:
 - `cefrLevel`: one of `A1`, `A2`, `B1`, `B2`, `C1`, `C2`.
 - `category`: stable lowercase kebab-case dialogue category.
 - `topics`: one or more existing catalog topic keys.
+- `examProfiles`: one or more exam/profile tags such as `goethe-b1`, `telc-b2`, `dtz-a2-b1`, or `berufssprache-b2`. Use ASCII key `oeso-*` for ÖSD display labels.
+- `skillFocus`: one or more skill tags such as `speaking`, `roleplay`, `exam-speaking`, `phone-call`, `workplace-communication`, `discussion`, or `negotiation`.
+- `taskType`: one main task type, for example `reschedule-appointment`, `explain-problem`, `complain-politely`, `workplace-meeting`, `job-interview`, or `exam-discussion`.
+- `interactionMode`: one interaction setting, for example `face-to-face`, `phone`, `workplace`, `doctor-office`, `government-office`, `exam-room`, or `group-work`.
+- `register`: `formal`, `informal`, `neutral`, or `mixed`.
+- `speakingFunctions`: communicative functions such as `greet`, `request`, `explain`, `clarify`, `agree`, `disagree`, `negotiate`, `summarize`, and `close-conversation`.
+- `usefulWords`: ordered Word Catalog references only; meanings are resolved from the Word Catalog and are not duplicated in Dialogue payloads.
+- `speakingPrompts`: ordered speaking or exam prompts.
+- `estimatedPracticeMinutes`: expected practice time.
 - `dialogueTurns`: ordered dialogue turns.
 - `usefulPhrases`: reusable phrases for the dialogue.
 - `questions`: comprehension or preparation questions.
@@ -38,6 +47,31 @@ Required fields:
 Optional fields:
 
 - `sortOrder`: non-negative display order.
+- `difficultyNote`: concise learner-facing or internal difficulty note.
+- `examRelevance`: concise note explaining exam usefulness.
+
+## Useful Words
+
+Required fields:
+
+- `lemma`: German lemma or phrase.
+- `sortOrder`: display order.
+
+Optional fields:
+
+- `wordSlug`: preferred when the word exists in the Word Catalog.
+- `cefrLevel`: useful disambiguation.
+
+Useful words must not contain meanings or translations.
+
+## Speaking Prompts
+
+Required fields:
+
+- `promptType`: one of `comprehension`, `speaking-prompt`, `roleplay-task`, `exam-prompt`, `follow-up-question`, `self-correction`, or `vocabulary-check`.
+- `prompt`: German prompt.
+- `translations`: meaning-language translations when the current dialogue contract requires learner-facing prompt translations.
+- `sortOrder`: display order.
 
 ## DialogueTurn
 
@@ -81,10 +115,13 @@ Optional fields:
 ## CEFR And Topic Rules
 
 - A dialogue has exactly one primary CEFR level.
+- `cefrLevel` is first-class and directly filterable in API and Web.
 - Dialogue language is German by convention; embedded German text is stored as `baseText`, `prompt`, or `text`.
 - Dialogue `topics` must reference active catalog topic keys.
 - A1/A2 dialogues should use short dialogue turns and one clear learner goal.
-- B1+ dialogues may include longer turns, more nuanced roles, and more distractor answers.
+- B1/B2 are priority levels for exam-oriented generation.
+- B1+ dialogues may include longer turns, more nuanced roles, speaking prompts, and more distractor answers.
+- Minimum learner-side and partner-side sentence counts are A1: 5, A2: 6, B1: 7, B2: 8, C1: 9, C2: 10.
 
 ## Import Validation Rules
 
@@ -93,7 +130,11 @@ The importer should reject dialogue content when:
 - `slug`, `title`, `learnerGoal`, `cefrLevel`, `category`, or `topics` is missing.
 - `slug`, `category`, or `speakerRole` is not lowercase kebab-case.
 - `cefrLevel` is not a supported CEFR value.
+- exam profiles, skill focus tags, task type, interaction mode, register, prompt type, or speaking functions are unsupported.
 - a referenced topic key is unknown.
+- useful words are missing or store anything beyond references.
+- speaking prompts are missing or invalid.
+- learner-side or partner-side sentence counts are below the CEFR minimum.
 - a dialogue turn, phrase, question, or answer is missing German base text.
 - translations are empty, unsupported, duplicated by language, or missing text.
 - a question has fewer than two answers.

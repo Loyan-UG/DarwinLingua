@@ -5,8 +5,10 @@ namespace DarwinLingua.Catalog.Application.Services;
 
 internal sealed class DialogueLessonQueryService(IDialogueLessonRepository dialogueLessonRepository) : IDialogueLessonQueryService
 {
-    public Task<IReadOnlyList<DialogueLessonListItemModel>> GetPublishedDialoguesAsync(CancellationToken cancellationToken) =>
-        dialogueLessonRepository.GetPublishedDialoguesAsync(cancellationToken);
+    public Task<IReadOnlyList<DialogueLessonListItemModel>> GetPublishedDialoguesAsync(
+        DialogueLessonListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        dialogueLessonRepository.GetPublishedDialoguesAsync(filter, cancellationToken);
 
     public Task<DialogueLessonDetailModel?> GetPublishedDialogueBySlugAsync(
         string slug,

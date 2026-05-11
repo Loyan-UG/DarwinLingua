@@ -1933,7 +1933,7 @@
     {
       "slug": "a1-buy-bread-test",
       "title": "Buy Bread",
-      "description": "A simple bakery scenario used by package export tests.",
+      "description": "A simple bakery dialogue used by package export tests.",
       "learnerGoal": "Ask for bread and understand the price.",
       "cefrLevel": "A1",
       "category": "shopping-and-food",
@@ -1944,93 +1944,461 @@
       "dialogueTurns": [
         {
           "speakerRole": "seller",
-          "baseText": "Was möchten Sie?",
+          "baseText": "Guten Morgen, was möchten Sie?",
           "translations": [
             {
               "language": "ar",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "ckb",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "en",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "fa",
-              "text": "چه چیزی می‌خواهید؟"
+              "text": "صبح بخیر، چه چیزی می‌خواهید؟"
             },
             {
               "language": "kmr",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "pl",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "ro",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "ru",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "sq",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             },
             {
               "language": "tr",
-              "text": "What would you like?"
+              "text": "Good morning, what would you like?"
             }
           ]
         },
         {
           "speakerRole": "learner",
-          "baseText": "Ich möchte ein Brot, bitte.",
+          "baseText": "Guten Morgen, ich möchte ein Brot, bitte.",
           "translations": [
             {
               "language": "ar",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "ckb",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "en",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "fa",
-              "text": "یک نان می‌خواهم، لطفاً."
+              "text": "صبح بخیر، یک نان می‌خواهم، لطفاً."
             },
             {
               "language": "kmr",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "pl",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "ro",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "ru",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "sq",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
             },
             {
               "language": "tr",
-              "text": "I would like one bread, please."
+              "text": "Good morning, I would like one bread, please."
+            }
+          ]
+        },
+        {
+          "speakerRole": "seller",
+          "baseText": "Möchten Sie ein helles Brot oder ein dunkles Brot?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "ckb",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "en",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "fa",
+              "text": "نان روشن می‌خواهید یا نان تیره؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "pl",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "ro",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "ru",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "sq",
+              "text": "Would you like a light bread or a dark bread?"
+            },
+            {
+              "language": "tr",
+              "text": "Would you like a light bread or a dark bread?"
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Ich möchte ein dunkles Brot.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "ckb",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "en",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "fa",
+              "text": "یک نان تیره می‌خواهم."
+            },
+            {
+              "language": "kmr",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "pl",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "ro",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "ru",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "sq",
+              "text": "I would like a dark bread."
+            },
+            {
+              "language": "tr",
+              "text": "I would like a dark bread."
+            }
+          ]
+        },
+        {
+          "speakerRole": "seller",
+          "baseText": "Sonst noch etwas?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "Anything else?"
+            },
+            {
+              "language": "ckb",
+              "text": "Anything else?"
+            },
+            {
+              "language": "en",
+              "text": "Anything else?"
+            },
+            {
+              "language": "fa",
+              "text": "چیز دیگری هم می‌خواهید؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Anything else?"
+            },
+            {
+              "language": "pl",
+              "text": "Anything else?"
+            },
+            {
+              "language": "ro",
+              "text": "Anything else?"
+            },
+            {
+              "language": "ru",
+              "text": "Anything else?"
+            },
+            {
+              "language": "sq",
+              "text": "Anything else?"
+            },
+            {
+              "language": "tr",
+              "text": "Anything else?"
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Nein, danke, nur das Brot.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "ckb",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "en",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "fa",
+              "text": "نه، ممنون، فقط همان نان."
+            },
+            {
+              "language": "kmr",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "pl",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "ro",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "ru",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "sq",
+              "text": "No, thank you, only the bread."
+            },
+            {
+              "language": "tr",
+              "text": "No, thank you, only the bread."
+            }
+          ]
+        },
+        {
+          "speakerRole": "seller",
+          "baseText": "Das macht drei Euro zwanzig.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "ckb",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "en",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "fa",
+              "text": "می‌شود سه یورو و بیست سنت."
+            },
+            {
+              "language": "kmr",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "pl",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "ro",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "ru",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "sq",
+              "text": "That makes three euros twenty."
+            },
+            {
+              "language": "tr",
+              "text": "That makes three euros twenty."
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Kann ich mit Karte zahlen?",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "ckb",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "en",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانم با کارت پرداخت کنم؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "pl",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "ro",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "ru",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "sq",
+              "text": "Can I pay by card?"
+            },
+            {
+              "language": "tr",
+              "text": "Can I pay by card?"
+            }
+          ]
+        },
+        {
+          "speakerRole": "seller",
+          "baseText": "Ja, das geht, bitte hier.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "ckb",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "en",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "fa",
+              "text": "بله، می‌شود، لطفاً اینجا."
+            },
+            {
+              "language": "kmr",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "pl",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "ro",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "ru",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "sq",
+              "text": "Yes, that works, please here."
+            },
+            {
+              "language": "tr",
+              "text": "Yes, that works, please here."
+            }
+          ]
+        },
+        {
+          "speakerRole": "learner",
+          "baseText": "Danke schön, auf Wiedersehen.",
+          "translations": [
+            {
+              "language": "ar",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "ckb",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "en",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "fa",
+              "text": "خیلی ممنون، خداحافظ."
+            },
+            {
+              "language": "kmr",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "pl",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "ro",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "ru",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "sq",
+              "text": "Thank you very much, goodbye."
+            },
+            {
+              "language": "tr",
+              "text": "Thank you very much, goodbye."
             }
           ]
         }
@@ -2222,6 +2590,186 @@
                   "text": "One water."
                 }
               ]
+            }
+          ]
+        }
+      ],
+      "examProfiles": [
+        "goethe-a1",
+        "telc-a1"
+      ],
+      "skillFocus": [
+        "speaking",
+        "service-interaction",
+        "exam-speaking"
+      ],
+      "taskType": "order-and-pay",
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "speakingFunctions": [
+        "greet",
+        "request",
+        "answer-question",
+        "confirm",
+        "close-conversation"
+      ],
+      "estimatedPracticeMinutes": 10,
+      "difficultyNote": "Short A1 service dialogue with polite bakery phrases.",
+      "examRelevance": "Useful for A1 service-counter roleplay tasks.",
+      "usefulWords": [
+        {
+          "lemma": "das Brot",
+          "wordSlug": "das-brot",
+          "cefrLevel": "A1",
+          "sortOrder": 10
+        },
+        {
+          "lemma": "möchten",
+          "wordSlug": "moechten",
+          "cefrLevel": "A1",
+          "sortOrder": 20
+        },
+        {
+          "lemma": "bitte",
+          "wordSlug": "bitte",
+          "cefrLevel": "A1",
+          "sortOrder": 30
+        },
+        {
+          "lemma": "hell",
+          "wordSlug": "hell",
+          "cefrLevel": "A1",
+          "sortOrder": 40
+        },
+        {
+          "lemma": "dunkel",
+          "wordSlug": "dunkel",
+          "cefrLevel": "A1",
+          "sortOrder": 50
+        },
+        {
+          "lemma": "danke",
+          "wordSlug": "danke",
+          "cefrLevel": "A1",
+          "sortOrder": 60
+        },
+        {
+          "lemma": "nur",
+          "wordSlug": "nur",
+          "cefrLevel": "A1",
+          "sortOrder": 70
+        },
+        {
+          "lemma": "zahlen",
+          "wordSlug": "zahlen",
+          "cefrLevel": "A1",
+          "sortOrder": 80
+        },
+        {
+          "lemma": "die Karte",
+          "wordSlug": "die-karte",
+          "cefrLevel": "A1",
+          "sortOrder": 90
+        },
+        {
+          "lemma": "auf Wiedersehen",
+          "wordSlug": "auf-wiedersehen",
+          "cefrLevel": "A1",
+          "sortOrder": 100
+        }
+      ],
+      "speakingPrompts": [
+        {
+          "promptType": "speaking-prompt",
+          "prompt": "Bestellen Sie in einer Bäckerei ein Brot.",
+          "sortOrder": 10,
+          "translations": [
+            {
+              "language": "ar",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "ckb",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "en",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "fa",
+              "text": "در یک نانوایی یک نان سفارش دهید."
+            },
+            {
+              "language": "kmr",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "pl",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "ro",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "ru",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "sq",
+              "text": "Order bread in a bakery."
+            },
+            {
+              "language": "tr",
+              "text": "Order bread in a bakery."
+            }
+          ]
+        },
+        {
+          "promptType": "roleplay-task",
+          "prompt": "Fragen Sie nach dem Preis und bezahlen Sie mit Karte.",
+          "sortOrder": 20,
+          "translations": [
+            {
+              "language": "ar",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "ckb",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "en",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "fa",
+              "text": "قیمت را بپرسید و با کارت پرداخت کنید."
+            },
+            {
+              "language": "kmr",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "pl",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "ro",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "ru",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "sq",
+              "text": "Ask for the price and pay by card."
+            },
+            {
+              "language": "tr",
+              "text": "Ask for the price and pay by card."
             }
           ]
         }

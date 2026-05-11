@@ -315,9 +315,22 @@ app.MapGet(
 
 app.MapGet(
     "/api/catalog/dialogues",
-    async (IDialogueLessonQueryService dialogueQueryService, CancellationToken cancellationToken) =>
+    async (
+        string? cefrLevel,
+        string? category,
+        string? topicKey,
+        string? examProfile,
+        string? skillFocus,
+        string? taskType,
+        string? interactionMode,
+        string? register,
+        string? q,
+        IDialogueLessonQueryService dialogueQueryService,
+        CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await dialogueQueryService.GetPublishedDialoguesAsync(cancellationToken).ConfigureAwait(false))
+                async () => await dialogueQueryService.GetPublishedDialoguesAsync(
+                    new DialogueLessonListFilterModel(cefrLevel, category, topicKey, examProfile, skillFocus, taskType, interactionMode, register, q),
+                    cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

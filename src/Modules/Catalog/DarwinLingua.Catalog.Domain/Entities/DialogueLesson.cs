@@ -9,6 +9,11 @@ namespace DarwinLingua.Catalog.Domain.Entities;
 public sealed partial class DialogueLesson
 {
     private readonly List<DialogueLessonTopic> _topics = [];
+    private readonly List<DialogueExamProfile> _examProfiles = [];
+    private readonly List<DialogueSkillFocus> _skillFocus = [];
+    private readonly List<DialogueSpeakingFunction> _speakingFunctions = [];
+    private readonly List<DialogueUsefulWord> _usefulWords = [];
+    private readonly List<DialogueSpeakingPrompt> _speakingPrompts = [];
     private readonly List<DialogueTurn> _dialogueTurns = [];
     private readonly List<DialoguePhrase> _usefulPhrases = [];
     private readonly List<DialogueQuestion> _questions = [];
@@ -61,6 +66,18 @@ public sealed partial class DialogueLesson
 
     public string Category { get; private set; } = string.Empty;
 
+    public string TaskType { get; private set; } = "exam-roleplay";
+
+    public string InteractionMode { get; private set; } = "face-to-face";
+
+    public string Register { get; private set; } = "neutral";
+
+    public int EstimatedPracticeMinutes { get; private set; } = 15;
+
+    public string? DifficultyNote { get; private set; }
+
+    public string? ExamRelevance { get; private set; }
+
     public PublicationStatus PublicationStatus { get; private set; }
 
     public int SortOrder { get; private set; }
@@ -70,6 +87,16 @@ public sealed partial class DialogueLesson
     public DateTime UpdatedAtUtc { get; private set; }
 
     public IReadOnlyCollection<DialogueLessonTopic> Topics => _topics.AsReadOnly();
+
+    public IReadOnlyCollection<DialogueExamProfile> ExamProfiles => _examProfiles.AsReadOnly();
+
+    public IReadOnlyCollection<DialogueSkillFocus> SkillFocus => _skillFocus.AsReadOnly();
+
+    public IReadOnlyCollection<DialogueSpeakingFunction> SpeakingFunctions => _speakingFunctions.AsReadOnly();
+
+    public IReadOnlyCollection<DialogueUsefulWord> UsefulWords => _usefulWords.AsReadOnly();
+
+    public IReadOnlyCollection<DialogueSpeakingPrompt> SpeakingPrompts => _speakingPrompts.AsReadOnly();
 
     public IReadOnlyCollection<DialogueTurn> DialogueTurns => _dialogueTurns.AsReadOnly();
 
@@ -97,10 +124,60 @@ public sealed partial class DialogueLesson
         UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 
+    public void UpdateExamMetadata(
+        string taskType,
+        string interactionMode,
+        string register,
+        int estimatedPracticeMinutes,
+        string? difficultyNote,
+        string? examRelevance,
+        DateTime updatedAtUtc)
+    {
+        TaskType = NormalizeKey(taskType, "Dialogue task type");
+        InteractionMode = NormalizeKey(interactionMode, "Dialogue interaction mode");
+        Register = NormalizeKey(register, "Dialogue register");
+        EstimatedPracticeMinutes = NormalizePositiveMinutes(estimatedPracticeMinutes, nameof(estimatedPracticeMinutes));
+        DifficultyNote = NormalizeOptionalText(difficultyNote, nameof(difficultyNote), 1024);
+        ExamRelevance = NormalizeOptionalText(examRelevance, nameof(examRelevance), 1024);
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
     public void AddTopic(Guid id, Guid topicId, bool isPrimary, DateTime createdAtUtc)
     {
         _topics.Add(new DialogueLessonTopic(id, Id, topicId, isPrimary, createdAtUtc));
         UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public void AddExamProfile(Guid id, string examProfile, int sortOrder, DateTime createdAtUtc)
+    {
+        _examProfiles.Add(new DialogueExamProfile(id, Id, examProfile, sortOrder, createdAtUtc));
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public void AddSkillFocus(Guid id, string skillFocus, int sortOrder, DateTime createdAtUtc)
+    {
+        _skillFocus.Add(new DialogueSkillFocus(id, Id, skillFocus, sortOrder, createdAtUtc));
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public void AddSpeakingFunction(Guid id, string speakingFunction, int sortOrder, DateTime createdAtUtc)
+    {
+        _speakingFunctions.Add(new DialogueSpeakingFunction(id, Id, speakingFunction, sortOrder, createdAtUtc));
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public void AddUsefulWord(Guid id, string lemma, string? wordSlug, CefrLevel? cefrLevel, int sortOrder, DateTime createdAtUtc)
+    {
+        _usefulWords.Add(new DialogueUsefulWord(id, Id, lemma, wordSlug, cefrLevel, sortOrder, createdAtUtc));
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public DialogueSpeakingPrompt AddSpeakingPrompt(Guid id, int sortOrder, string promptType, string prompt, DateTime createdAtUtc)
+    {
+        DialogueSpeakingPrompt speakingPrompt = new(id, Id, sortOrder, promptType, prompt, createdAtUtc);
+        _speakingPrompts.Add(speakingPrompt);
+        UpdatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+        return speakingPrompt;
     }
 
     public DialogueTurn AddDialogueTurn(Guid id, int sortOrder, string speakerRole, string baseText, DateTime createdAtUtc)
@@ -185,6 +262,16 @@ public sealed partial class DialogueLesson
         return value;
     }
 
+    internal static int NormalizePositiveMinutes(int value, string parameterName)
+    {
+        if (value <= 0)
+        {
+            throw new DomainRuleException($"{parameterName} must be greater than zero.");
+        }
+
+        return value;
+    }
+
     internal static DateTime NormalizeUtc(DateTime value, string parameterName)
     {
         if (value == default)
@@ -197,6 +284,116 @@ public sealed partial class DialogueLesson
 
     [GeneratedRegex("^[a-z0-9]+(-[a-z0-9]+)*$", RegexOptions.Compiled)]
     private static partial Regex KeyPattern();
+}
+
+public sealed class DialogueExamProfile
+{
+    private DialogueExamProfile()
+    {
+    }
+
+    internal DialogueExamProfile(Guid id, Guid dialogueLessonId, string examProfile, int sortOrder, DateTime createdAtUtc)
+    {
+        Id = id == Guid.Empty ? throw new DomainRuleException("Dialogue exam profile identifier cannot be empty.") : id;
+        DialogueLessonId = dialogueLessonId == Guid.Empty ? throw new DomainRuleException("Dialogue exam profile lesson identifier cannot be empty.") : dialogueLessonId;
+        ExamProfile = DialogueLesson.NormalizeKey(examProfile, "Dialogue exam profile");
+        SortOrder = DialogueLesson.NormalizeSortOrder(sortOrder);
+        CreatedAtUtc = DialogueLesson.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public Guid Id { get; private set; }
+
+    public Guid DialogueLessonId { get; private set; }
+
+    public string ExamProfile { get; private set; } = string.Empty;
+
+    public int SortOrder { get; private set; }
+
+    public DateTime CreatedAtUtc { get; private set; }
+}
+
+public sealed class DialogueSkillFocus
+{
+    private DialogueSkillFocus()
+    {
+    }
+
+    internal DialogueSkillFocus(Guid id, Guid dialogueLessonId, string skillFocus, int sortOrder, DateTime createdAtUtc)
+    {
+        Id = id == Guid.Empty ? throw new DomainRuleException("Dialogue skill focus identifier cannot be empty.") : id;
+        DialogueLessonId = dialogueLessonId == Guid.Empty ? throw new DomainRuleException("Dialogue skill focus lesson identifier cannot be empty.") : dialogueLessonId;
+        SkillFocus = DialogueLesson.NormalizeKey(skillFocus, "Dialogue skill focus");
+        SortOrder = DialogueLesson.NormalizeSortOrder(sortOrder);
+        CreatedAtUtc = DialogueLesson.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public Guid Id { get; private set; }
+
+    public Guid DialogueLessonId { get; private set; }
+
+    public string SkillFocus { get; private set; } = string.Empty;
+
+    public int SortOrder { get; private set; }
+
+    public DateTime CreatedAtUtc { get; private set; }
+}
+
+public sealed class DialogueSpeakingFunction
+{
+    private DialogueSpeakingFunction()
+    {
+    }
+
+    internal DialogueSpeakingFunction(Guid id, Guid dialogueLessonId, string speakingFunction, int sortOrder, DateTime createdAtUtc)
+    {
+        Id = id == Guid.Empty ? throw new DomainRuleException("Dialogue speaking function identifier cannot be empty.") : id;
+        DialogueLessonId = dialogueLessonId == Guid.Empty ? throw new DomainRuleException("Dialogue speaking function lesson identifier cannot be empty.") : dialogueLessonId;
+        SpeakingFunction = DialogueLesson.NormalizeKey(speakingFunction, "Dialogue speaking function");
+        SortOrder = DialogueLesson.NormalizeSortOrder(sortOrder);
+        CreatedAtUtc = DialogueLesson.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public Guid Id { get; private set; }
+
+    public Guid DialogueLessonId { get; private set; }
+
+    public string SpeakingFunction { get; private set; } = string.Empty;
+
+    public int SortOrder { get; private set; }
+
+    public DateTime CreatedAtUtc { get; private set; }
+}
+
+public sealed class DialogueUsefulWord
+{
+    private DialogueUsefulWord()
+    {
+    }
+
+    internal DialogueUsefulWord(Guid id, Guid dialogueLessonId, string lemma, string? wordSlug, CefrLevel? cefrLevel, int sortOrder, DateTime createdAtUtc)
+    {
+        Id = id == Guid.Empty ? throw new DomainRuleException("Dialogue useful word identifier cannot be empty.") : id;
+        DialogueLessonId = dialogueLessonId == Guid.Empty ? throw new DomainRuleException("Dialogue useful word lesson identifier cannot be empty.") : dialogueLessonId;
+        Lemma = DialogueLesson.NormalizeRequiredText(lemma, nameof(lemma), 256);
+        WordSlug = string.IsNullOrWhiteSpace(wordSlug) ? null : DialogueLesson.NormalizeKey(wordSlug, "Dialogue useful word slug");
+        CefrLevel = cefrLevel;
+        SortOrder = DialogueLesson.NormalizeSortOrder(sortOrder);
+        CreatedAtUtc = DialogueLesson.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+
+    public Guid Id { get; private set; }
+
+    public Guid DialogueLessonId { get; private set; }
+
+    public string Lemma { get; private set; } = string.Empty;
+
+    public string? WordSlug { get; private set; }
+
+    public CefrLevel? CefrLevel { get; private set; }
+
+    public int SortOrder { get; private set; }
+
+    public DateTime CreatedAtUtc { get; private set; }
 }
 
 public sealed class DialogueLessonTopic
@@ -364,6 +561,48 @@ public sealed class DialogueQuestion
     }
 }
 
+public sealed class DialogueSpeakingPrompt
+{
+    private readonly List<DialogueSpeakingPromptTranslation> _translations = [];
+
+    private DialogueSpeakingPrompt()
+    {
+    }
+
+    internal DialogueSpeakingPrompt(Guid id, Guid dialogueLessonId, int sortOrder, string promptType, string prompt, DateTime createdAtUtc)
+    {
+        Id = id == Guid.Empty ? throw new DomainRuleException("Dialogue speaking prompt identifier cannot be empty.") : id;
+        DialogueLessonId = dialogueLessonId == Guid.Empty ? throw new DomainRuleException("Dialogue speaking prompt lesson identifier cannot be empty.") : dialogueLessonId;
+        SortOrder = DialogueLesson.NormalizeSortOrder(sortOrder);
+        PromptType = DialogueLesson.NormalizeKey(promptType, "Dialogue speaking prompt type");
+        Prompt = DialogueLesson.NormalizeRequiredText(prompt, nameof(prompt), 2000);
+        CreatedAtUtc = DialogueLesson.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+        UpdatedAtUtc = CreatedAtUtc;
+    }
+
+    public Guid Id { get; private set; }
+
+    public Guid DialogueLessonId { get; private set; }
+
+    public int SortOrder { get; private set; }
+
+    public string PromptType { get; private set; } = string.Empty;
+
+    public string Prompt { get; private set; } = string.Empty;
+
+    public DateTime CreatedAtUtc { get; private set; }
+
+    public DateTime UpdatedAtUtc { get; private set; }
+
+    public IReadOnlyCollection<DialogueSpeakingPromptTranslation> Translations => _translations.AsReadOnly();
+
+    public void AddTranslation(Guid id, LanguageCode languageCode, string text, DateTime createdAtUtc)
+    {
+        _translations.Add(new DialogueSpeakingPromptTranslation(id, Id, languageCode, text, createdAtUtc));
+        UpdatedAtUtc = DialogueLesson.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
+    }
+}
+
 public sealed class DialogueAnswer
 {
     private readonly List<DialogueAnswerTranslation> _translations = [];
@@ -463,6 +702,20 @@ public sealed class DialogueAnswerTranslation : DialogueTranslationBase
     }
 
     public Guid DialogueAnswerId => OwnerId;
+}
+
+public sealed class DialogueSpeakingPromptTranslation : DialogueTranslationBase
+{
+    private DialogueSpeakingPromptTranslation()
+    {
+    }
+
+    internal DialogueSpeakingPromptTranslation(Guid id, Guid ownerId, LanguageCode languageCode, string text, DateTime createdAtUtc)
+        : base(id, ownerId, languageCode, text, createdAtUtc)
+    {
+    }
+
+    public Guid DialogueSpeakingPromptId => OwnerId;
 }
 
 public abstract class DialogueTranslationBase

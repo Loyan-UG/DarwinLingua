@@ -23,7 +23,9 @@ public interface IWebCatalogApiClient
         string meaningLanguageCode,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(CancellationToken cancellationToken);
+    Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(
+        DialogueLessonListFilterModel filter,
+        CancellationToken cancellationToken);
 
     Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(
         string slug,
@@ -494,9 +496,23 @@ internal sealed class WebCatalogApiClient(
             BuildPath($"/api/catalog/collections/{Uri.EscapeDataString(slug)}", [new("meaningLanguageCode", meaningLanguageCode)]),
             cancellationToken);
 
-    public Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(CancellationToken cancellationToken) =>
+    public Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(
+        DialogueLessonListFilterModel filter,
+        CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<DialogueLessonListItemModel>>(
-            "/api/catalog/dialogues",
+            BuildPath(
+                "/api/catalog/dialogues",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("category", filter.Category),
+                    new("topicKey", filter.TopicKey),
+                    new("examProfile", filter.ExamProfile),
+                    new("skillFocus", filter.SkillFocus),
+                    new("taskType", filter.TaskType),
+                    new("interactionMode", filter.InteractionMode),
+                    new("register", filter.Register),
+                    new("q", filter.Query)
+                ]),
             cancellationToken);
 
     public Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(

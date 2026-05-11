@@ -156,6 +156,25 @@ internal sealed class ContentImportParser : IContentImportParser
             dialogue.CefrLevel ?? string.Empty,
             dialogue.Category ?? string.Empty,
             (dialogue.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            (dialogue.ExamProfiles ?? []).Select(profile => profile ?? string.Empty).ToArray(),
+            (dialogue.SkillFocus ?? []).Select(focus => focus ?? string.Empty).ToArray(),
+            dialogue.TaskType ?? string.Empty,
+            dialogue.InteractionMode ?? string.Empty,
+            dialogue.Register ?? string.Empty,
+            (dialogue.SpeakingFunctions ?? []).Select(function => function ?? string.Empty).ToArray(),
+            dialogue.EstimatedPracticeMinutes ?? 15,
+            dialogue.DifficultyNote,
+            dialogue.ExamRelevance,
+            (dialogue.UsefulWords ?? []).Select(word => new ParsedDialogueUsefulWordModel(
+                word.Lemma ?? string.Empty,
+                word.WordSlug,
+                word.CefrLevel,
+                word.SortOrder ?? 0)).ToArray(),
+            (dialogue.SpeakingPrompts ?? []).Select(prompt => new ParsedDialogueSpeakingPromptModel(
+                prompt.PromptType ?? string.Empty,
+                prompt.Prompt ?? string.Empty,
+                MapTranslations(prompt.Translations),
+                prompt.SortOrder ?? 0)).ToArray(),
             dialogue.SortOrder ?? 0,
             (dialogue.DialogueTurns ?? []).Select(turn => new ParsedDialogueTurnModel(
                 turn.SpeakerRole ?? string.Empty,
@@ -460,6 +479,28 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public string?[]? Topics { get; set; }
 
+        public string?[]? ExamProfiles { get; set; }
+
+        public string?[]? SkillFocus { get; set; }
+
+        public string? TaskType { get; set; }
+
+        public string? InteractionMode { get; set; }
+
+        public string? Register { get; set; }
+
+        public string?[]? SpeakingFunctions { get; set; }
+
+        public int? EstimatedPracticeMinutes { get; set; }
+
+        public string? DifficultyNote { get; set; }
+
+        public string? ExamRelevance { get; set; }
+
+        public DialogueUsefulWordDocument[]? UsefulWords { get; set; }
+
+        public DialogueSpeakingPromptDocument[]? SpeakingPrompts { get; set; }
+
         public int? SortOrder { get; set; }
 
         public DialogueTurnDocument[]? DialogueTurns { get; set; }
@@ -467,6 +508,28 @@ internal sealed class ContentImportParser : IContentImportParser
         public DialoguePhraseDocument[]? UsefulPhrases { get; set; }
 
         public DialogueQuestionDocument[]? Questions { get; set; }
+    }
+
+    private sealed class DialogueUsefulWordDocument
+    {
+        public string? Lemma { get; set; }
+
+        public string? WordSlug { get; set; }
+
+        public string? CefrLevel { get; set; }
+
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class DialogueSpeakingPromptDocument
+    {
+        public string? PromptType { get; set; }
+
+        public string? Prompt { get; set; }
+
+        public ContentMeaningDocument[]? Translations { get; set; }
+
+        public int? SortOrder { get; set; }
     }
 
     private sealed class DialogueTurnDocument

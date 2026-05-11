@@ -1,5 +1,6 @@
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.DependencyInjection;
+using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -425,7 +426,7 @@ public sealed class ContentImportServiceTests
 
             Assert.Equal("doctor-appointment-a1", lesson.Slug);
             Assert.Single(lesson.Topics);
-            Assert.Single(lesson.DialogueTurns);
+            Assert.Equal(10, lesson.DialogueTurns.Count);
             Assert.Single(lesson.UsefulPhrases);
             DarwinLingua.Catalog.Domain.Entities.DialogueQuestion question = Assert.Single(lesson.Questions);
             Assert.Equal(2, question.Answers.Count);
@@ -433,7 +434,7 @@ public sealed class ContentImportServiceTests
 
             IDialogueLessonQueryService DialogueLessonQueryService = serviceProvider.GetRequiredService<IDialogueLessonQueryService>();
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.DialogueLessonListItemModel> Dialogues =
-                await DialogueLessonQueryService.GetPublishedDialoguesAsync(CancellationToken.None);
+                await DialogueLessonQueryService.GetPublishedDialoguesAsync(new DialogueLessonListFilterModel(null, null, null, null, null, null, null, null, null), CancellationToken.None);
             DarwinLingua.Catalog.Application.Models.DialogueLessonListItemModel DialogueListItem = Assert.Single(Dialogues);
             Assert.Equal("doctor-appointment-a1", DialogueListItem.Slug);
 
@@ -445,8 +446,10 @@ public sealed class ContentImportServiceTests
                     CancellationToken.None);
 
             Assert.NotNull(DialogueDetail);
-            Assert.Equal("I need an appointment.", Assert.Single(DialogueDetail!.DialogueTurns).PrimaryMeaning);
-            Assert.Equal("I need an appointment.", Assert.Single(DialogueDetail.DialogueTurns).SecondaryMeaning);
+            DarwinLingua.Catalog.Application.Models.DialogueTurnModel firstLearnerTurn = DialogueDetail!.DialogueTurns
+                .First(turn => turn.SpeakerRole == "learner");
+            Assert.Equal("I need an appointment.", firstLearnerTurn.PrimaryMeaning);
+            Assert.Equal("I need an appointment.", firstLearnerTurn.SecondaryMeaning);
         }
         finally
         {
@@ -1207,13 +1210,133 @@ public sealed class ContentImportServiceTests
                   "cefrLevel": "A1",
                   "category": "doctor-and-healthcare",
                   "topics": ["appointments-and-health"],
+                  "examProfiles": ["goethe-a1", "telc-a1"],
+                  "skillFocus": ["speaking", "phone-call", "exam-speaking"],
+                  "taskType": "make-appointment",
+                  "interactionMode": "phone",
+                  "register": "formal",
+                  "speakingFunctions": ["greet", "request", "confirm", "close-conversation"],
+                  "estimatedPracticeMinutes": 10,
+                  "difficultyNote": "Short A1 phone dialogue with polite appointment phrases.",
+                  "examRelevance": "Useful for A1 appointment roleplay tasks.",
                   "sortOrder": 1,
                   "dialogueTurns": [
+                    {
+                      "speakerRole": "receptionist",
+                      "baseText": "Guten Morgen, Praxis Müller.",
+                      "translations": [
+                        { "language": "en", "text": "Good morning, Müller practice." }
+                      ]
+                    },
                     {
                       "speakerRole": "learner",
                       "baseText": "Ich brauche einen Termin.",
                       "translations": [
                         { "language": "en", "text": "I need an appointment." }
+                      ]
+                    },
+                    {
+                      "speakerRole": "receptionist",
+                      "baseText": "Haben Sie heute Schmerzen?",
+                      "translations": [
+                        { "language": "en", "text": "Do you have pain today?" }
+                      ]
+                    },
+                    {
+                      "speakerRole": "learner",
+                      "baseText": "Ja, mein Kopf tut weh.",
+                      "translations": [
+                        { "language": "en", "text": "Yes, my head hurts." }
+                      ]
+                    },
+                    {
+                      "speakerRole": "receptionist",
+                      "baseText": "Morgen um neun Uhr ist ein Termin frei.",
+                      "translations": [
+                        { "language": "en", "text": "Tomorrow at nine o'clock an appointment is available." }
+                      ]
+                    },
+                    {
+                      "speakerRole": "learner",
+                      "baseText": "Morgen um neun Uhr passt gut.",
+                      "translations": [
+                        { "language": "en", "text": "Tomorrow at nine o'clock works well." }
+                      ]
+                    },
+                    {
+                      "speakerRole": "receptionist",
+                      "baseText": "Wie ist Ihr Name?",
+                      "translations": [
+                        { "language": "en", "text": "What is your name?" }
+                      ]
+                    },
+                    {
+                      "speakerRole": "learner",
+                      "baseText": "Mein Name ist Sara Ali.",
+                      "translations": [
+                        { "language": "en", "text": "My name is Sara Ali." }
+                      ]
+                    },
+                    {
+                      "speakerRole": "receptionist",
+                      "baseText": "Bitte bringen Sie Ihre Karte mit.",
+                      "translations": [
+                        { "language": "en", "text": "Please bring your card with you." }
+                      ]
+                    },
+                    {
+                      "speakerRole": "learner",
+                      "baseText": "Danke, auf Wiederhören.",
+                      "translations": [
+                        { "language": "en", "text": "Thank you, goodbye on the phone." }
+                      ]
+                    }
+                  ],
+                  "usefulWords": [
+                    { "lemma": "der Termin", "wordSlug": "der-termin", "cefrLevel": "A1", "sortOrder": 10 },
+                    { "lemma": "die Praxis", "wordSlug": "die-praxis", "cefrLevel": "A1", "sortOrder": 20 },
+                    { "lemma": "der Schmerz", "wordSlug": "der-schmerz", "cefrLevel": "A1", "sortOrder": 30 },
+                    { "lemma": "morgen", "wordSlug": "morgen", "cefrLevel": "A1", "sortOrder": 40 },
+                    { "lemma": "passen", "wordSlug": "passen", "cefrLevel": "A1", "sortOrder": 50 },
+                    { "lemma": "der Name", "wordSlug": "der-name", "cefrLevel": "A1", "sortOrder": 60 },
+                    { "lemma": "die Karte", "wordSlug": "die-karte", "cefrLevel": "A1", "sortOrder": 70 },
+                    { "lemma": "mitbringen", "wordSlug": "mitbringen", "cefrLevel": "A1", "sortOrder": 80 },
+                    { "lemma": "danke", "wordSlug": "danke", "cefrLevel": "A1", "sortOrder": 90 },
+                    { "lemma": "auf Wiederhören", "wordSlug": "auf-wiederhoeren", "cefrLevel": "A1", "sortOrder": 100 }
+                  ],
+                  "speakingPrompts": [
+                    {
+                      "promptType": "speaking-prompt",
+                      "prompt": "Rufen Sie in einer Praxis an und fragen Sie nach einem Termin.",
+                      "sortOrder": 10,
+                      "translations": [
+                        { "language": "ar", "text": "Call a practice and ask for an appointment." },
+                        { "language": "ckb", "text": "Call a practice and ask for an appointment." },
+                        { "language": "en", "text": "Call a practice and ask for an appointment." },
+                        { "language": "fa", "text": "با یک مطب تماس بگیرید و درخواست وقت ملاقات کنید." },
+                        { "language": "kmr", "text": "Call a practice and ask for an appointment." },
+                        { "language": "pl", "text": "Call a practice and ask for an appointment." },
+                        { "language": "ro", "text": "Call a practice and ask for an appointment." },
+                        { "language": "ru", "text": "Call a practice and ask for an appointment." },
+                        { "language": "sq", "text": "Call a practice and ask for an appointment." },
+                        { "language": "tr", "text": "Call a practice and ask for an appointment." }
+                      ]
+                    },
+                    {
+                      "promptType": "roleplay-task",
+                      "prompt": "Sagen Sie Ihren Namen und bestätigen Sie die Uhrzeit.",
+                      "sortOrder": 20,
+                      "translations": [
+                        { "language": "ar", "text": "Say your name and confirm the time." },
+                        { "language": "ckb", "text": "Say your name and confirm the time." },
+                        { "language": "en", "text": "Say your name and confirm the time." },
+                        { "language": "fa", "text": "نام خود را بگویید و ساعت را تأیید کنید." },
+                        { "language": "kmr", "text": "Say your name and confirm the time." },
+                        { "language": "pl", "text": "Say your name and confirm the time." },
+                        { "language": "ro", "text": "Say your name and confirm the time." },
+                        { "language": "ru", "text": "Say your name and confirm the time." },
+                        { "language": "sq", "text": "Say your name and confirm the time." },
+                        { "language": "tr", "text": "Say your name and confirm the time." }
                       ]
                     }
                   ],

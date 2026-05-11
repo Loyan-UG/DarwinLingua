@@ -5,8 +5,7 @@ namespace DarwinLingua.Web.Models;
 public sealed record DialogueIndexPageViewModel(
     IReadOnlyList<DialogueLessonListItemModel> Dialogues,
     IReadOnlyList<string> TopicKeys,
-    string? SelectedTopicKey,
-    string? Query);
+    DialogueLessonListFilterModel Filter);
 
 public sealed record DialogueDetailPageViewModel(
     DialogueLessonDetailModel Dialogue,

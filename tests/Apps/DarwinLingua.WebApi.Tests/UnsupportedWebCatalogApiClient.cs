@@ -12,7 +12,7 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
 
     public virtual Task<WordCollectionDetailModel?> GetCollectionBySlugAsync(string slug, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(DialogueLessonListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 

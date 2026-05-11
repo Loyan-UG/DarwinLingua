@@ -55,7 +55,7 @@ public partial class DialoguesPage : ContentPage
         LoadingStateView.IsLoading = true;
 
         IReadOnlyList<DialogueLessonListItemModel> dialogues = await _dialogueLessonQueryService
-            .GetPublishedDialoguesAsync(cancellationToken)
+            .GetPublishedDialoguesAsync(new DialogueLessonListFilterModel(null, null, null, null, null, null, null, null, null), cancellationToken)
             .ConfigureAwait(true);
 
         _dialogues.Clear();

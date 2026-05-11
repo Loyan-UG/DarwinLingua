@@ -548,6 +548,36 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.ToTable("DialogueAnswerTranslations", (string)null);
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueExamProfile", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("DialogueLessonId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ExamProfile")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExamProfile")
+                        .HasDatabaseName("IX_DialogueExamProfiles_ExamProfile");
+
+                    b.HasIndex("DialogueLessonId", "ExamProfile")
+                        .IsUnique();
+
+                    b.ToTable("DialogueExamProfiles", (string)null);
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", b =>
                 {
                     b.Property<Guid>("Id")
@@ -571,6 +601,26 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("DifficultyNote")
+                        .HasMaxLength(1024)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("EstimatedPracticeMinutes")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(15);
+
+                    b.Property<string>("ExamRelevance")
+                        .HasMaxLength(1024)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("InteractionMode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("face-to-face");
+
                     b.Property<string>("LearnerGoal")
                         .IsRequired()
                         .HasMaxLength(1024)
@@ -581,6 +631,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Register")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("neutral");
+
                     b.Property<string>("Slug")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -588,6 +645,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("TaskType")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("exam-roleplay");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -599,8 +663,23 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Category")
+                        .HasDatabaseName("IX_DialogueLessons_Category");
+
+                    b.HasIndex("CefrLevel")
+                        .HasDatabaseName("IX_DialogueLessons_CefrLevel");
+
+                    b.HasIndex("InteractionMode")
+                        .HasDatabaseName("IX_DialogueLessons_InteractionMode");
+
+                    b.HasIndex("Register")
+                        .HasDatabaseName("IX_DialogueLessons_Register");
+
                     b.HasIndex("Slug")
                         .IsUnique();
+
+                    b.HasIndex("TaskType")
+                        .HasDatabaseName("IX_DialogueLessons_TaskType");
 
                     b.ToTable("DialogueLessons", (string)null);
                 });
@@ -766,6 +845,130 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.ToTable("DialogueQuestionTranslations", (string)null);
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSkillFocus", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("DialogueLessonId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SkillFocus")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SkillFocus")
+                        .HasDatabaseName("IX_DialogueSkillFocus_SkillFocus");
+
+                    b.HasIndex("DialogueLessonId", "SkillFocus")
+                        .IsUnique();
+
+                    b.ToTable("DialogueSkillFocus", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingFunction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("DialogueLessonId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SpeakingFunction")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DialogueLessonId", "SpeakingFunction")
+                        .IsUnique();
+
+                    b.ToTable("DialogueSpeakingFunctions", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingPrompt", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("DialogueLessonId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Prompt")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PromptType")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DialogueLessonId", "SortOrder")
+                        .IsUnique();
+
+                    b.ToTable("DialogueSpeakingPrompts", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingPromptTranslation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LanguageCode")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId", "LanguageCode")
+                        .IsUnique();
+
+                    b.ToTable("DialogueSpeakingPromptTranslations", (string)null);
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueTurn", b =>
                 {
                     b.Property<Guid>("Id")
@@ -831,6 +1034,44 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("DialogueTurnTranslations", (string)null);
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueUsefulWord", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CefrLevel")
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("DialogueLessonId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Lemma")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("WordSlug")
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WordSlug")
+                        .HasDatabaseName("IX_DialogueUsefulWords_WordSlug");
+
+                    b.HasIndex("DialogueLessonId", "SortOrder")
+                        .IsUnique();
+
+                    b.ToTable("DialogueUsefulWords", (string)null);
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.EventPreparationLinkedConversationStarterPack", b =>
@@ -2365,10 +2606,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedLemma", "PartOfSpeech", "PrimaryCefrLevel")
-                        .IsUnique()
-                        .HasDatabaseName("IX_WordEntries_NormalizedLemma_PartOfSpeech_PrimaryCefrLevel");
-
                     b.HasIndex("NormalizedLemma")
                         .HasDatabaseName("IX_WordEntries_Search_NormalizedLemma");
 
@@ -2380,6 +2617,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("PublicationStatus", "NormalizedLemma")
                         .HasDatabaseName("IX_WordEntries_Search_ActiveNormalizedLemma");
+
+                    b.HasIndex("NormalizedLemma", "PartOfSpeech", "PrimaryCefrLevel")
+                        .IsUnique()
+                        .HasDatabaseName("IX_WordEntries_NormalizedLemma_PartOfSpeech_PrimaryCefrLevel");
 
                     b.ToTable("WordEntries", (string)null);
                 });
@@ -3132,6 +3373,15 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueExamProfile", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", null)
+                        .WithMany("ExamProfiles")
+                        .HasForeignKey("DialogueLessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueLessonTopic", b =>
                 {
                     b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", null)
@@ -3183,6 +3433,42 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSkillFocus", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", null)
+                        .WithMany("SkillFocus")
+                        .HasForeignKey("DialogueLessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingFunction", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", null)
+                        .WithMany("SpeakingFunctions")
+                        .HasForeignKey("DialogueLessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingPrompt", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", null)
+                        .WithMany("SpeakingPrompts")
+                        .HasForeignKey("DialogueLessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingPromptTranslation", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingPrompt", null)
+                        .WithMany("Translations")
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueTurn", b =>
                 {
                     b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", null)
@@ -3197,6 +3483,15 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueTurn", null)
                         .WithMany("Translations")
                         .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueUsefulWord", b =>
+                {
+                    b.HasOne("DarwinLingua.Catalog.Domain.Entities.DialogueLesson", null)
+                        .WithMany("UsefulWords")
+                        .HasForeignKey("DialogueLessonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -3524,11 +3819,21 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                 {
                     b.Navigation("DialogueTurns");
 
+                    b.Navigation("ExamProfiles");
+
                     b.Navigation("Questions");
+
+                    b.Navigation("SkillFocus");
+
+                    b.Navigation("SpeakingFunctions");
+
+                    b.Navigation("SpeakingPrompts");
 
                     b.Navigation("Topics");
 
                     b.Navigation("UsefulPhrases");
+
+                    b.Navigation("UsefulWords");
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialoguePhrase", b =>
@@ -3540,6 +3845,11 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                 {
                     b.Navigation("Answers");
 
+                    b.Navigation("Translations");
+                });
+
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueSpeakingPrompt", b =>
+                {
                     b.Navigation("Translations");
                 });
 

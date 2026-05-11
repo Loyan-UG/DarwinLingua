@@ -4,7 +4,9 @@ namespace DarwinLingua.Catalog.Application.Abstractions;
 
 public interface IDialogueLessonRepository
 {
-    Task<IReadOnlyList<DialogueLessonListItemModel>> GetPublishedDialoguesAsync(CancellationToken cancellationToken);
+    Task<IReadOnlyList<DialogueLessonListItemModel>> GetPublishedDialoguesAsync(
+        DialogueLessonListFilterModel filter,
+        CancellationToken cancellationToken);
 
     Task<DialogueLessonDetailModel?> GetPublishedDialogueBySlugAsync(
         string slug,

@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Globalization;
+using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 
 namespace DarwinLingua.Catalog.Infrastructure.Repositories;
@@ -12,15 +13,21 @@ internal sealed class DialogueLessonRepository(IDbContextFactory<DarwinLinguaDbC
 {
     private static readonly LanguageCode EnglishFallbackLanguage = LanguageCode.From("en");
 
-    public async Task<IReadOnlyList<DialogueLessonListItemModel>> GetPublishedDialoguesAsync(CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<DialogueLessonListItemModel>> GetPublishedDialoguesAsync(
+        DialogueLessonListFilterModel filter,
+        CancellationToken cancellationToken)
     {
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        return await dbContext.DialogueLessons
+        IQueryable<DialogueLesson> query = dbContext.DialogueLessons
             .AsNoTracking()
-            .Where(lesson => lesson.PublicationStatus == PublicationStatus.Active)
+            .Where(lesson => lesson.PublicationStatus == PublicationStatus.Active);
+
+        query = ApplyFilter(query, dbContext, filter);
+
+        return await query
             .OrderBy(lesson => lesson.SortOrder)
             .ThenBy(lesson => lesson.Title)
             .Select(lesson => new DialogueLessonListItemModel(
@@ -34,7 +41,19 @@ internal sealed class DialogueLessonRepository(IDbContextFactory<DarwinLinguaDbC
                     .OrderByDescending(topic => topic.IsPrimary)
                     .ThenBy(topic => topic.CreatedAtUtc)
                     .Join(dbContext.Topics, link => link.TopicId, topic => topic.Id, (link, topic) => topic.Key)
-                    .ToArray()))
+                    .ToArray(),
+                lesson.ExamProfiles
+                    .OrderBy(profile => profile.SortOrder)
+                    .Select(profile => profile.ExamProfile)
+                    .ToArray(),
+                lesson.SkillFocus
+                    .OrderBy(focus => focus.SortOrder)
+                    .Select(focus => focus.SkillFocus)
+                    .ToArray(),
+                lesson.TaskType,
+                lesson.InteractionMode,
+                lesson.Register,
+                lesson.EstimatedPracticeMinutes))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
     }
@@ -57,6 +76,11 @@ internal sealed class DialogueLessonRepository(IDbContextFactory<DarwinLinguaDbC
             .AsNoTracking()
             .AsSplitQuery()
             .Include(item => item.Topics)
+            .Include(item => item.ExamProfiles)
+            .Include(item => item.SkillFocus)
+            .Include(item => item.SpeakingFunctions)
+            .Include(item => item.UsefulWords)
+            .Include(item => item.SpeakingPrompts).ThenInclude(prompt => prompt.Translations)
             .Include(item => item.DialogueTurns).ThenInclude(turn => turn.Translations)
             .Include(item => item.UsefulPhrases).ThenInclude(phrase => phrase.Translations)
             .Include(item => item.Questions).ThenInclude(question => question.Translations)
@@ -93,6 +117,41 @@ internal sealed class DialogueLessonRepository(IDbContextFactory<DarwinLinguaDbC
                 .ThenBy(topic => topic.CreatedAtUtc)
                 .Select(topic => topicKeysById[topic.TopicId])
                 .ToArray(),
+            lesson.ExamProfiles
+                .OrderBy(profile => profile.SortOrder)
+                .Select(profile => profile.ExamProfile)
+                .ToArray(),
+            lesson.SkillFocus
+                .OrderBy(focus => focus.SortOrder)
+                .Select(focus => focus.SkillFocus)
+                .ToArray(),
+            lesson.TaskType,
+            lesson.InteractionMode,
+            lesson.Register,
+            lesson.SpeakingFunctions
+                .OrderBy(function => function.SortOrder)
+                .Select(function => function.SpeakingFunction)
+                .ToArray(),
+            lesson.EstimatedPracticeMinutes,
+            lesson.DifficultyNote,
+            lesson.ExamRelevance,
+            lesson.UsefulWords
+                .OrderBy(word => word.SortOrder)
+                .Select(word => new DialogueUsefulWordModel(
+                    word.Lemma,
+                    word.WordSlug,
+                    word.CefrLevel.HasValue ? word.CefrLevel.Value.ToString() : null,
+                    word.SortOrder))
+                .ToArray(),
+            lesson.SpeakingPrompts
+                .OrderBy(prompt => prompt.SortOrder)
+                .Select(prompt => new DialogueSpeakingPromptModel(
+                    prompt.PromptType,
+                    prompt.Prompt,
+                    ResolvePrimaryMeaning(prompt.Translations, primaryLanguage),
+                    ResolveSecondaryMeaning(prompt.Translations, secondaryLanguage),
+                    prompt.SortOrder))
+                .ToArray(),
             lesson.DialogueTurns
                 .OrderBy(turn => turn.SortOrder)
                 .Select(turn => new DialogueTurnModel(
@@ -126,6 +185,79 @@ internal sealed class DialogueLessonRepository(IDbContextFactory<DarwinLinguaDbC
                         .ToArray()))
                 .ToArray());
     }
+
+    private static IQueryable<DialogueLesson> ApplyFilter(
+        IQueryable<DialogueLesson> query,
+        DarwinLinguaDbContext dbContext,
+        DialogueLessonListFilterModel filter)
+    {
+        string? cefrLevel = NormalizeOptional(filter.CefrLevel);
+        if (cefrLevel is not null && Enum.TryParse(cefrLevel, true, out CefrLevel parsedCefrLevel))
+        {
+            query = query.Where(lesson => lesson.CefrLevel == parsedCefrLevel);
+        }
+
+        string? category = NormalizeOptional(filter.Category);
+        if (category is not null)
+        {
+            query = query.Where(lesson => lesson.Category == category);
+        }
+
+        string? topicKey = NormalizeOptional(filter.TopicKey);
+        if (topicKey is not null)
+        {
+            query = query.Where(lesson => lesson.Topics.Any(link =>
+                dbContext.Topics.Any(topic => topic.Id == link.TopicId && topic.Key == topicKey)));
+        }
+
+        string? examProfile = NormalizeOptional(filter.ExamProfile);
+        if (examProfile is not null)
+        {
+            query = query.Where(lesson => lesson.ExamProfiles.Any(profile => profile.ExamProfile == examProfile));
+        }
+
+        string? skillFocus = NormalizeOptional(filter.SkillFocus);
+        if (skillFocus is not null)
+        {
+            query = query.Where(lesson => lesson.SkillFocus.Any(focus => focus.SkillFocus == skillFocus));
+        }
+
+        string? taskType = NormalizeOptional(filter.TaskType);
+        if (taskType is not null)
+        {
+            query = query.Where(lesson => lesson.TaskType == taskType);
+        }
+
+        string? interactionMode = NormalizeOptional(filter.InteractionMode);
+        if (interactionMode is not null)
+        {
+            query = query.Where(lesson => lesson.InteractionMode == interactionMode);
+        }
+
+        string? register = NormalizeOptional(filter.Register);
+        if (register is not null)
+        {
+            query = query.Where(lesson => lesson.Register == register);
+        }
+
+        string? searchQuery = string.IsNullOrWhiteSpace(filter.Query) ? null : filter.Query.Trim();
+        if (searchQuery is not null)
+        {
+            string normalizedSearchQuery = searchQuery.ToLowerInvariant();
+            query = query.Where(lesson =>
+                lesson.Title.ToLower().Contains(normalizedSearchQuery) ||
+                lesson.Description.ToLower().Contains(normalizedSearchQuery) ||
+                lesson.LearnerGoal.ToLower().Contains(normalizedSearchQuery) ||
+                lesson.Category.ToLower().Contains(normalizedSearchQuery) ||
+                lesson.ExamProfiles.Any(profile => profile.ExamProfile.ToLower().Contains(normalizedSearchQuery)) ||
+                lesson.SkillFocus.Any(focus => focus.SkillFocus.ToLower().Contains(normalizedSearchQuery)));
+        }
+
+        return query;
+    }
+
+    private static string? NormalizeOptional(string? value) =>
+        string.IsNullOrWhiteSpace(value) ? null : value.Trim().ToLowerInvariant();
 
     private static string? ResolvePrimaryMeaning<TTranslation>(
         IReadOnlyCollection<TTranslation> translations,

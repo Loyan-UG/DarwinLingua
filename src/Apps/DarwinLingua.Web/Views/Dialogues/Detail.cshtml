@@ -18,6 +18,28 @@
     <h1 class="headline-md">@Model.Dialogue.Title</h1>
     <p class="body-lg">@Model.Dialogue.Description</p>
     <p class="body-lg">@Model.Dialogue.LearnerGoal</p>
+    <div class="chip-grid">
+        <span class="chip-link">@Model.Dialogue.TaskType</span>
+        <span class="chip-link">@Model.Dialogue.InteractionMode</span>
+        <span class="chip-link">@Model.Dialogue.Register</span>
+        <span class="chip-link">@T["{0} minutes", Model.Dialogue.EstimatedPracticeMinutes]</span>
+        @foreach (string examProfile in Model.Dialogue.ExamProfiles)
+        {
+            <span class="chip-link">@examProfile</span>
+        }
+        @foreach (string focus in Model.Dialogue.SkillFocus)
+        {
+            <span class="chip-link">@focus</span>
+        }
+    </div>
+    @if (!string.IsNullOrWhiteSpace(Model.Dialogue.ExamRelevance))
+    {
+        <p>@Model.Dialogue.ExamRelevance</p>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.Dialogue.DifficultyNote))
+    {
+        <p>@Model.Dialogue.DifficultyNote</p>
+    }
     @if (Model.Dialogue.TopicKeys.Count > 0)
     {
         <div class="chip-grid">
@@ -28,6 +50,60 @@
         </div>
     }
 </section>
+
+@if (Model.Dialogue.UsefulWords.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Useful words"]</h2>
+        <div class="chip-grid">
+            @foreach (var word in Model.Dialogue.UsefulWords)
+            {
+                if (!string.IsNullOrWhiteSpace(word.WordSlug))
+                {
+                    <a class="chip-link" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@word.WordSlug">@word.Lemma</a>
+                }
+                else
+                {
+                    <span class="chip-link">@word.Lemma</span>
+                }
+            }
+        </div>
+    </section>
+}
+
+@if (Model.Dialogue.SpeakingPrompts.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Speaking prompts"]</h2>
+        <div class="stack-md">
+            @foreach (var prompt in Model.Dialogue.SpeakingPrompts)
+            {
+                <article class="detail-row">
+                    <span class="eyebrow">@prompt.PromptType</span>
+                    <div class="stack-md">
+                        <strong class="dialogue-german-text">@prompt.Prompt</strong>
+                        <div class="dialogue-translation-list">
+                            @if (!string.IsNullOrWhiteSpace(prompt.PrimaryMeaning))
+                            {
+                                <div class="dialogue-translation-line" dir="@primaryMeaningDirection">
+                                    <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                    <span>@prompt.PrimaryMeaning</span>
+                                </div>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(prompt.SecondaryMeaning))
+                            {
+                                <div class="dialogue-translation-line" dir="@secondaryMeaningDirection">
+                                    <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
+                                    <span>@prompt.SecondaryMeaning</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    </section>
+}
 
 @if (Model.RelatedStarterPacks.Count > 0)
 {

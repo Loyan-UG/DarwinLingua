@@ -28,6 +28,13 @@ Do not delete completed items. Mark them as completed so progress remains visibl
 
 ---
 
+## Current Dialogue Follow-Ups
+
+- [ ] Extend admin editing forms and MAUI list/detail screens to expose Dialogue exam metadata, useful word references, and speaking prompts with the same richness as the Web learner pages.
+- [ ] Replace templated starter translations for non-English/non-Persian Dialogue meaning languages with human-reviewed localized translations before public launch.
+
+---
+
 ## Phase 1 Target Outcome
 
 Phase 1 is complete when the repository contains a usable local-first MAUI app and a working import pipeline that together support:

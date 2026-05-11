@@ -56,14 +56,17 @@ Latest local Web verification:
 
 ### Dialogue Learning
 
-- [ ] Dialogue import rejects malformed dialogue packages with clear issue messages.
-- [ ] Dialogue import persists lesson metadata, topics, dialogue turns, useful phrases, questions, answers, and translations.
-- [ ] Dialogue list query returns only published dialogues in stable sort order.
+- [x] Dialogue import rejects malformed dialogue packages with clear issue messages for missing metadata, unsupported values, missing useful words, missing speaking prompts, and insufficient sentence counts.
+- [x] Dialogue import persists lesson metadata, topics, dialogue turns, useful phrases, questions, answers, translations, useful words, and speaking prompts.
+- [x] Dialogue list query returns only published dialogues in stable sort order and supports CEFR, category, topic, exam profile, skill focus, task type, interaction mode, register, and search filters.
 - [ ] Dialogue detail query applies primary and secondary meaning-language selection.
-- [ ] Web dialogue detail rendering shows dialogue, useful phrases, quick checks, related starter packs, and related preparation packs.
+- [x] Web dialogue detail rendering shows dialogue metadata, useful phrases, useful words, speaking prompts, quick checks, related starter packs, and related preparation packs.
+- [x] Web dialogue list includes prominent CEFR filtering and metadata badges.
 - [ ] Web roleplay sequence builder skips learner prompts and pairs each non-learner prompt with the next learner model answer.
 - [ ] Web roleplay page renders model answers, static feedback, and no-AI behavior.
 - [ ] Empty or unknown dialogue detail payloads return safe 404 behavior instead of Web 500 errors.
+- [ ] Human-review generated Dialogue translations before public launch; current starter generation preserves required language slots for import integrity.
+- [ ] Add full mobile Dialogue metadata/detail parity after Web sign-off.
 
 ### Conversation Starters
 
