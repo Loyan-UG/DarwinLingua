@@ -45,15 +45,20 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
     public void SearchIndexMigration_ShouldUsePostgresTrigramIndexes()
     {
         string migration = File.ReadAllText(GetSearchIndexMigrationPath());
+        string initializer = File.ReadAllText(GetDatabaseInitializerPath());
 
         Assert.Contains("CREATE EXTENSION IF NOT EXISTS pg_trgm", migration, StringComparison.Ordinal);
+        Assert.Contains("EnsurePostgresExtensionAsync(dbContext, \"pg_trgm\"", initializer, StringComparison.Ordinal);
         Assert.Contains("USING GIN", migration, StringComparison.Ordinal);
+        Assert.Contains("USING GIN", initializer, StringComparison.Ordinal);
         Assert.Contains("gin_trgm_ops", migration, StringComparison.Ordinal);
+        Assert.Contains("gin_trgm_ops", initializer, StringComparison.Ordinal);
         Assert.Contains("IX_WordEntries_Lemma_Trgm", migration, StringComparison.Ordinal);
         Assert.Contains("IX_GrammarTopics_Title_Trgm", migration, StringComparison.Ordinal);
         Assert.Contains("IX_ExpressionEntries_Text_Trgm", migration, StringComparison.Ordinal);
         Assert.Contains("IX_CourseLessons_SearchFilters", migration, StringComparison.Ordinal);
         Assert.Contains("IX_WritingTemplates_SearchFilters", migration, StringComparison.Ordinal);
+        Assert.Contains("ApplyPostgresUnifiedSearchIndexesAsync", initializer, StringComparison.Ordinal);
     }
 
     private static string GetProgramPath() =>
@@ -61,6 +66,9 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
 
     private static string GetSearchIndexMigrationPath() =>
         Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", "src", "BuildingBlocks", "DarwinLingua.Infrastructure", "Persistence", "Migrations", "20260512143000_AddUnifiedLearningSearchIndexes.cs"));
+
+    private static string GetDatabaseInitializerPath() =>
+        Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", "src", "BuildingBlocks", "DarwinLingua.Infrastructure", "Persistence", "DarwinLinguaDatabaseInitializer.cs"));
 
     private static string NormalizeWhitespace(string value) =>
         string.Join(" ", value.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));

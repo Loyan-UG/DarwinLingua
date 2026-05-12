@@ -57,6 +57,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         await PrepareSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureRetrofitSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await ApplySqliteOperationalIndexesAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await ApplyPostgresUnifiedSearchIndexesAsync(dbContext, cancellationToken).ConfigureAwait(false);
     }
 
     /// <inheritdoc />
@@ -287,6 +288,174 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
     }
 
     private static async Task ExecuteSqliteIndexIfTableExistsAsync(
+        DarwinLinguaDbContext dbContext,
+        string tableName,
+        string sql,
+        CancellationToken cancellationToken)
+    {
+        if (await TableExistsAsync(dbContext, tableName, cancellationToken).ConfigureAwait(false))
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(sql, cancellationToken).ConfigureAwait(false);
+        }
+    }
+
+    private static readonly (string IndexName, string TableName, string ColumnName)[] UnifiedSearchTrigramIndexes =
+    [
+        ("IX_WordEntries_Lemma_Trgm", "WordEntries", "Lemma"),
+        ("IX_WordEntries_NormalizedLemma_Trgm", "WordEntries", "NormalizedLemma"),
+        ("IX_GrammarTopics_Title_Trgm", "GrammarTopics", "Title"),
+        ("IX_GrammarTopics_Description_Trgm", "GrammarTopics", "ShortDescription"),
+        ("IX_GrammarTopics_Slug_Trgm", "GrammarTopics", "Slug"),
+        ("IX_ExpressionEntries_Text_Trgm", "ExpressionEntries", "ExpressionText"),
+        ("IX_ExpressionEntries_Meaning_Trgm", "ExpressionEntries", "ActualMeaningText"),
+        ("IX_ExpressionEntries_Slug_Trgm", "ExpressionEntries", "Slug"),
+        ("IX_DialogueLessons_Title_Trgm", "DialogueLessons", "Title"),
+        ("IX_DialogueLessons_Description_Trgm", "DialogueLessons", "Description"),
+        ("IX_DialogueLessons_Goal_Trgm", "DialogueLessons", "LearnerGoal"),
+        ("IX_DialogueLessons_Slug_Trgm", "DialogueLessons", "Slug"),
+        ("IX_TalkTopics_Title_Trgm", "TalkTopics", "Title"),
+        ("IX_TalkTopics_Description_Trgm", "TalkTopics", "Description"),
+        ("IX_TalkTopics_Slug_Trgm", "TalkTopics", "Slug"),
+        ("IX_Exercises_Title_Trgm", "Exercises", "Title"),
+        ("IX_Exercises_Instruction_Trgm", "Exercises", "Instruction"),
+        ("IX_Exercises_Slug_Trgm", "Exercises", "Slug"),
+        ("IX_CourseLessons_Title_Trgm", "CourseLessons", "Title"),
+        ("IX_CourseLessons_Description_Trgm", "CourseLessons", "ShortDescription"),
+        ("IX_CourseLessons_Narrative_Trgm", "CourseLessons", "Narrative"),
+        ("IX_CourseLessons_Slug_Trgm", "CourseLessons", "Slug"),
+        ("IX_ExamPrepUnits_Title_Trgm", "ExamPrepUnits", "Title"),
+        ("IX_ExamPrepUnits_Description_Trgm", "ExamPrepUnits", "ShortDescription"),
+        ("IX_ExamPrepUnits_Explanation_Trgm", "ExamPrepUnits", "Explanation"),
+        ("IX_ExamPrepUnits_Slug_Trgm", "ExamPrepUnits", "Slug"),
+        ("IX_WritingTemplates_Title_Trgm", "WritingTemplates", "Title"),
+        ("IX_WritingTemplates_Description_Trgm", "WritingTemplates", "ShortDescription"),
+        ("IX_WritingTemplates_Situation_Trgm", "WritingTemplates", "Situation"),
+        ("IX_WritingTemplates_Slug_Trgm", "WritingTemplates", "Slug"),
+        ("IX_CulturalNotes_Title_Trgm", "CulturalNotes", "Title"),
+        ("IX_CulturalNotes_Description_Trgm", "CulturalNotes", "ShortDescription"),
+        ("IX_CulturalNotes_Context_Trgm", "CulturalNotes", "Context"),
+        ("IX_CulturalNotes_Slug_Trgm", "CulturalNotes", "Slug"),
+        ("IX_ConversationEvents_Name_Trgm", "ConversationEvents", "Name"),
+        ("IX_ConversationEvents_Description_Trgm", "ConversationEvents", "Description"),
+        ("IX_ConversationEvents_Organizer_Trgm", "ConversationEvents", "OrganizerName"),
+        ("IX_ConversationEvents_Slug_Trgm", "ConversationEvents", "Slug"),
+        ("IX_OrganizerProfiles_Name_Trgm", "OrganizerProfiles", "DisplayName"),
+        ("IX_OrganizerProfiles_Description_Trgm", "OrganizerProfiles", "Description"),
+        ("IX_OrganizerProfiles_Slug_Trgm", "OrganizerProfiles", "Slug"),
+    ];
+
+    private static readonly (string IndexName, string TableName, string ColumnList)[] UnifiedSearchFilterIndexes =
+    [
+        ("IX_GrammarTopics_SearchFilters", "GrammarTopics", @"""PublicationStatus"", ""CefrLevel"", ""GrammarCategory"", ""SortOrder"""),
+        ("IX_ExpressionEntries_SearchFilters", "ExpressionEntries", @"""PublicationStatus"", ""CefrLevel"", ""ExpressionType"", ""Category"", ""SortOrder"""),
+        ("IX_Exercises_SearchFilters", "Exercises", @"""PublicationStatus"", ""CefrLevel"", ""ExerciseType"", ""TargetSkill"", ""SortOrder"""),
+        ("IX_CourseLessons_SearchFilters", "CourseLessons", @"""PublicationStatus"", ""CefrLevel"", ""CoursePathSlug"", ""ModuleSlug"", ""SortOrder"""),
+        ("IX_ExamPrepUnits_SearchFilters", "ExamPrepUnits", @"""PublicationStatus"", ""CefrLevel"", ""ExamProfileKey"", ""ExamSection"", ""TaskType"", ""SortOrder"""),
+        ("IX_WritingTemplates_SearchFilters", "WritingTemplates", @"""PublicationStatus"", ""CefrLevel"", ""Category"", ""Register"", ""SortOrder"""),
+        ("IX_CulturalNotes_SearchFilters", "CulturalNotes", @"""PublicationStatus"", ""CefrLevel"", ""Category"", ""SortOrder"""),
+    ];
+
+    private static async Task ApplyPostgresUnifiedSearchIndexesAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        bool trigramAvailable = await EnsurePostgresExtensionAsync(dbContext, "pg_trgm", cancellationToken)
+            .ConfigureAwait(false);
+
+        if (trigramAvailable)
+        {
+            foreach ((string indexName, string tableName, string columnName) in UnifiedSearchTrigramIndexes)
+            {
+                await CreatePostgresIndexIfTableExistsAsync(
+                    dbContext,
+                    tableName,
+                    $"""CREATE INDEX IF NOT EXISTS "{indexName}" ON "{tableName}" USING GIN ("{columnName}" gin_trgm_ops);""",
+                    cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        foreach ((string indexName, string tableName, string columnList) in UnifiedSearchFilterIndexes)
+        {
+            await CreatePostgresIndexIfTableExistsAsync(
+                dbContext,
+                tableName,
+                $"""CREATE INDEX IF NOT EXISTS "{indexName}" ON "{tableName}" ({columnList});""",
+                cancellationToken).ConfigureAwait(false);
+        }
+    }
+
+    private static async Task<bool> EnsurePostgresExtensionAsync(
+        DarwinLinguaDbContext dbContext,
+        string extensionName,
+        CancellationToken cancellationToken)
+    {
+        if (!string.Equals(extensionName, "pg_trgm", StringComparison.Ordinal))
+        {
+            throw new ArgumentOutOfRangeException(nameof(extensionName), extensionName, "Unsupported PostgreSQL extension.");
+        }
+
+        try
+        {
+            await dbContext.Database.ExecuteSqlRawAsync(
+                    "CREATE EXTENSION IF NOT EXISTS pg_trgm;",
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (DbException exception) when (exception.Message.Contains("permission denied", StringComparison.OrdinalIgnoreCase))
+        {
+            return await PostgresExtensionExistsAsync(dbContext, extensionName, cancellationToken).ConfigureAwait(false);
+        }
+
+        return await PostgresExtensionExistsAsync(dbContext, extensionName, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task<bool> PostgresExtensionExistsAsync(
+        DarwinLinguaDbContext dbContext,
+        string extensionName,
+        CancellationToken cancellationToken)
+    {
+        DbConnection connection = dbContext.Database.GetDbConnection();
+        bool shouldCloseConnection = connection.State != System.Data.ConnectionState.Open;
+
+        if (shouldCloseConnection)
+        {
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        try
+        {
+            await using DbCommand command = connection.CreateCommand();
+            command.CommandText = """
+                SELECT 1
+                FROM pg_extension
+                WHERE extname = @extensionName
+                LIMIT 1;
+                """;
+            DbParameter parameter = command.CreateParameter();
+            parameter.ParameterName = "@extensionName";
+            parameter.Value = extensionName;
+            command.Parameters.Add(parameter);
+
+            object? result = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+            return result is not null;
+        }
+        finally
+        {
+            if (shouldCloseConnection)
+            {
+                await connection.CloseAsync().ConfigureAwait(false);
+            }
+        }
+    }
+
+    private static async Task CreatePostgresIndexIfTableExistsAsync(
         DarwinLinguaDbContext dbContext,
         string tableName,
         string sql,

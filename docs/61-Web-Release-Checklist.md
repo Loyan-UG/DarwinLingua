@@ -19,7 +19,8 @@ Last updated: 2026-05-12.
 - Phase 7 parser tests passed for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Cultural Notes.
 - Phase 7 structural route/localization tests cover the Web learner routes, WebApi route registrations, and English/German resource keys for the Learning Portal release surface.
 - Exercise attempt hardening now separates stateless public evaluation from authenticated persisted attempts, with bounded submitted-answer JSON and endpoint rate limits.
-- Unified Learning Search now has application-level query limits and a PostgreSQL trigram-index migration for the bulk-content path.
+- Exercise runner input now provides structured controls for initial choice, single-answer, error-correction, sentence-ordering, and matching submissions, with advanced JSON kept as a fallback.
+- Unified Learning Search now has application-level query limits, a PostgreSQL trigram-index migration, and startup-applied trigram/filter indexes for existing shared database tables.
 - Local learner route smoke passed for the main browse, search, collection, scenario, conversation, organizer, install, privacy, and Identity pages.
 - Local authenticated admin route smoke passed for the dashboard, reports, analytics, diagnostics, content operations, catalog management, taxonomy, user, moderation, billing diagnostics, and email diagnostics pages.
 - No unhandled exception signature was found in smoke response bodies or server logs.
@@ -122,7 +123,7 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 - [ ] Cultural Notes readiness reviewed: category/context filters, neutral/safe content handling, WebApi/Web pages, linked-content behavior
 - [ ] Unified Search readiness reviewed: deterministic ranking, filters, result-type labels, empty-state behavior, preservation of existing word search
 - [ ] Unified Search rejects empty, too-short, too-long, and unsupported result-type queries consistently
-- [ ] Unified Search PostgreSQL trigram/filter indexes are applied or an explicit production fallback is documented
+- [ ] Unified Search PostgreSQL trigram/filter indexes are applied in the target environment, with `pg_trgm` installed or extension-creation privileges available
 - [ ] Unified Search seeded performance coverage passes before bulk Phase 7 content generation starts
 - [ ] Progress readiness reviewed: user state separated from content, authenticated persistence, anonymous fallback, deterministic recommendations
 - [ ] Admin reports readiness reviewed: coverage counts, unresolved links, missing translations, unpublished drafts, missing exercise coverage

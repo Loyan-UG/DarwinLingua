@@ -52,7 +52,15 @@ public sealed class ExercisesController(
 
     [HttpPost("{slug}", Name = "Exercises_Submit")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Submit(string slug, string submittedAnswerJson, CancellationToken cancellationToken)
+    public async Task<IActionResult> Submit(
+        string slug,
+        string? submittedAnswerJson,
+        string[]? selectedOptionIds,
+        string? answer,
+        string? correctedText,
+        string? orderedSegmentsText,
+        string? pairsText,
+        CancellationToken cancellationToken)
     {
         ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
         if (exercise is null)
@@ -60,36 +68,101 @@ public sealed class ExercisesController(
             return NotFound();
         }
 
-        if (string.IsNullOrWhiteSpace(submittedAnswerJson))
+        string normalizedSubmittedAnswerJson = BuildSubmittedAnswerJson(
+            exercise.ExerciseType,
+            submittedAnswerJson,
+            selectedOptionIds,
+            answer,
+            correctedText,
+            orderedSegmentsText,
+            pairsText);
+
+        if (string.IsNullOrWhiteSpace(normalizedSubmittedAnswerJson))
         {
             ModelState.AddModelError(nameof(submittedAnswerJson), localizer["Answer is required."].Value);
             return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson));
         }
 
-        if (!IsSubmittedAnswerJsonValid(submittedAnswerJson, out string? validationMessage))
+        if (!IsSubmittedAnswerJsonValid(normalizedSubmittedAnswerJson, out string? validationMessage))
         {
             ModelState.AddModelError(nameof(submittedAnswerJson), validationMessage);
-            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson));
+            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, normalizedSubmittedAnswerJson));
         }
 
         ExerciseAttemptResultModel? result;
         try
         {
             result = await catalogApiClient
-                .SubmitExerciseAttemptAsync(slug, new ExerciseAttemptRequestModel(submittedAnswerJson.Trim()), cancellationToken)
+                .SubmitExerciseAttemptAsync(slug, new ExerciseAttemptRequestModel(normalizedSubmittedAnswerJson.Trim()), cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or InvalidOperationException)
         {
             logger.LogWarning(ex, "Exercise answer evaluation failed for exercise {ExerciseSlug}.", slug);
             ModelState.AddModelError(nameof(submittedAnswerJson), localizer["The answer could not be evaluated right now."].Value);
-            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson));
+            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, normalizedSubmittedAnswerJson));
         }
 
         return result is null
             ? NotFound()
-            : View("Detail", new ExerciseRunnerPageViewModel(exercise, result, submittedAnswerJson));
+            : View("Detail", new ExerciseRunnerPageViewModel(exercise, result, normalizedSubmittedAnswerJson));
     }
+
+    private static string BuildSubmittedAnswerJson(
+        string exerciseType,
+        string? submittedAnswerJson,
+        string[]? selectedOptionIds,
+        string? answer,
+        string? correctedText,
+        string? orderedSegmentsText,
+        string? pairsText)
+    {
+        string type = exerciseType.Trim().ToLowerInvariant();
+        if (IsChoiceExercise(type) && selectedOptionIds is { Length: > 0 })
+        {
+            return JsonSerializer.Serialize(new
+            {
+                selectedOptionIds = selectedOptionIds.Where(value => !string.IsNullOrWhiteSpace(value)).Select(value => value.Trim()).ToArray(),
+            });
+        }
+
+        if (IsSingleAnswerExercise(type) && !string.IsNullOrWhiteSpace(answer))
+        {
+            return JsonSerializer.Serialize(new { answer = answer.Trim() });
+        }
+
+        if (string.Equals(type, "error-correction", StringComparison.Ordinal) && !string.IsNullOrWhiteSpace(correctedText))
+        {
+            return JsonSerializer.Serialize(new { correctedText = correctedText.Trim() });
+        }
+
+        if (string.Equals(type, "sentence-ordering", StringComparison.Ordinal) && !string.IsNullOrWhiteSpace(orderedSegmentsText))
+        {
+            return JsonSerializer.Serialize(new
+            {
+                orderedSegments = SplitLines(orderedSegmentsText),
+            });
+        }
+
+        if (string.Equals(type, "matching", StringComparison.Ordinal) && !string.IsNullOrWhiteSpace(pairsText))
+        {
+            return JsonSerializer.Serialize(new
+            {
+                pairs = SplitLines(pairsText),
+            });
+        }
+
+        return submittedAnswerJson?.Trim() ?? string.Empty;
+    }
+
+    private static bool IsChoiceExercise(string exerciseType) =>
+        exerciseType is "multiple-choice" or "article-selection" or "case-selection" or "vocabulary-choice" or "grammar-choice" or "dialogue-completion";
+
+    private static bool IsSingleAnswerExercise(string exerciseType) =>
+        exerciseType is "fill-in-the-blank" or "conjugation" or "translation-controlled";
+
+    private static string[] SplitLines(string value) =>
+        value.Split(["\r\n", "\n"], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
     private bool IsSubmittedAnswerJsonValid(string submittedAnswerJson, out string validationMessage)
     {

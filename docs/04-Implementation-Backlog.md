@@ -1250,7 +1250,7 @@ Content generation for new modules must not start until the corresponding implem
 - [x] reject missing authenticated user ids for persisted attempts instead of storing anonymous attempts
 - [x] bound and validate submitted-answer JSON before evaluation or persistence
 - [x] rate-limit exercise evaluation and attempt endpoints
-- [ ] broaden type-specific runner UI beyond generic JSON submission
+- [x] broaden runner UI beyond generic JSON submission for initial choice, single-answer, error-correction, sentence-ordering, and matching inputs
 - [ ] add tests for every initial exercise type after first real exercise package is available
 
 ### 7.5 Course Lessons / Learning Paths
@@ -1300,6 +1300,7 @@ Content generation for new modules must not start until the corresponding implem
 - [x] support CEFR/content type/category/topic filters at the API level
 - [x] add application query validation for empty, short, long, and unsupported result-type queries
 - [x] add PostgreSQL trigram/filter index migration for the bulk-content search path
+- [x] apply PostgreSQL trigram/filter indexes during shared database startup for existing search tables
 - [x] rate-limit the public unified search endpoint
 - [x] add initial application and structural tests for query validation, result projection, route hardening, and search indexes
 - [ ] add broader repository/WebApi/Web rendering coverage with seeded learning content

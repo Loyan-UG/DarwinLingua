@@ -18,13 +18,63 @@
 
 <section class="panel stack-md">
     <h2 class="headline-sm">@T["Prompt"]</h2>
-    <pre class="code-sample">@Model.Exercise.PromptJson</pre>
     <form class="stack-md" method="post" asp-controller="Exercises" asp-action="Submit" asp-route-slug="@Model.Exercise.Slug">
         @Html.AntiForgeryToken()
-        <label class="form-field">
-            <span>@T["Answer JSON"]</span>
-            <textarea name="submittedAnswerJson" rows="7" placeholder='{"answer":"..."}'>@Model.SubmittedAnswerJson</textarea>
-        </label>
+        @if (!string.IsNullOrWhiteSpace(Model.Prompt.Stem))
+        {
+            <p class="body-lg">@Model.Prompt.Stem</p>
+        }
+        @if (Model.Prompt.HasOptions)
+        {
+            <fieldset class="form-field">
+                <legend>@T["Choose answer"]</legend>
+                <div class="stack-sm">
+                    @foreach (var option in Model.Prompt.Options)
+                    {
+                        <label class="choice-row">
+                            <input type="checkbox" name="selectedOptionIds" value="@option.Id" />
+                            <span>@option.Text</span>
+                        </label>
+                    }
+                </div>
+            </fieldset>
+        }
+        else if (Model.Exercise.ExerciseType is "fill-in-the-blank" or "conjugation" or "translation-controlled")
+        {
+            <label class="form-field">
+                <span>@T["Answer"]</span>
+                <input name="answer" autocomplete="off" />
+            </label>
+        }
+        else if (Model.Exercise.ExerciseType == "error-correction")
+        {
+            <label class="form-field">
+                <span>@T["Corrected text"]</span>
+                <textarea name="correctedText" rows="3"></textarea>
+            </label>
+        }
+        else if (Model.Exercise.ExerciseType == "sentence-ordering")
+        {
+            <label class="form-field">
+                <span>@T["Ordered segments"]</span>
+                <textarea name="orderedSegmentsText" rows="6" placeholder="@T["One segment per line"]"></textarea>
+            </label>
+        }
+        else if (Model.Exercise.ExerciseType == "matching")
+        {
+            <label class="form-field">
+                <span>@T["Matched pairs"]</span>
+                <textarea name="pairsText" rows="6" placeholder="@T["One pair per line"]"></textarea>
+            </label>
+        }
+        <details class="stack-sm">
+            <summary>@T["Advanced JSON answer"]</summary>
+            <pre class="code-sample">@Model.Exercise.PromptJson</pre>
+            <label class="form-field">
+                <span>@T["Answer JSON"]</span>
+                <textarea name="submittedAnswerJson" rows="7" placeholder='{"answer":"..."}'>@Model.SubmittedAnswerJson</textarea>
+            </label>
+        </details>
         <button class="button button--primary" type="submit">@T["Check answer"]</button>
     </form>
 </section>

@@ -589,6 +589,20 @@ code {
   margin: 0;
 }
 
+.choice-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.choice-row input {
+  margin-top: 0.22rem;
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;

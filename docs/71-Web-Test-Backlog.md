@@ -225,13 +225,14 @@ Latest local Web verification:
 - [x] Answer key validation rejects missing or malformed deterministic answers.
 - [x] Deterministic feedback returns stable correct/incorrect outcomes.
 - [ ] Exercise set linking resolves valid owner references.
-- [x] Exercise runner behavior covers initial generic submission flow.
+- [x] Exercise runner behavior covers structured choice prompts and malformed prompt fallback.
 - [x] Authenticated attempt persistence stores the authenticated user id and never falls back to an `anonymous` user id.
 - [x] Public exercise evaluation is stateless and does not persist anonymous attempts.
 - [x] Malformed and oversized submitted-answer JSON is rejected before persistence.
 - [x] Exercise attempt and evaluation endpoints are covered by rate-limiting structural checks.
 - [x] Attempt results do not expose answer keys.
-- [ ] Type-specific runner controls cover each initial supported exercise type.
+- [x] Type-specific runner controls cover initial choice, single-answer, error-correction, sentence-ordering, and matching submission shapes.
+- [ ] Seeded runner coverage verifies each initial exercise type against real package examples.
 
 ### Course Lessons
 
@@ -283,6 +284,7 @@ Latest local Web verification:
 - [x] Release route hardening covers `/search` and `/api/catalog/search`.
 - [x] `/api/catalog/search` is covered by rate-limiting structural checks.
 - [x] PostgreSQL trigram and filter-index migration coverage exists for the bulk-content search path.
+- [x] Shared database startup applies PostgreSQL trigram/filter indexes for existing search tables and skips not-yet-created Phase 7 tables safely.
 - [ ] Result type projection distinguishes words, grammar, expressions, dialogues, Talk Topics, exercises, lessons, exam prep, writing templates, cultural notes, events, and organizers with seeded data.
 - [ ] Ranking behavior is deterministic for the same indexed content in repository/WebApi coverage.
 - [ ] CEFR/content type/category filters return expected mixed results.
