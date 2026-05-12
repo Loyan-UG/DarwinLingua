@@ -1892,6 +1892,54 @@ public static class AppStrings
     /// </summary>
     public static string DualMeaningLanguageLockedMessage => GetRequiredString(nameof(DualMeaningLanguageLockedMessage));
 
+    public static string LearningPortalTitle => GetRequiredString(nameof(LearningPortalTitle));
+    public static string LearningPortalHeadline => GetRequiredString(nameof(LearningPortalHeadline));
+    public static string LearningPortalDescription => GetRequiredString(nameof(LearningPortalDescription));
+    public static string LearningPortalGroupLearn => GetRequiredString(nameof(LearningPortalGroupLearn));
+    public static string LearningPortalGroupPractice => GetRequiredString(nameof(LearningPortalGroupPractice));
+    public static string LearningPortalGroupSpeak => GetRequiredString(nameof(LearningPortalGroupSpeak));
+    public static string LearningPortalGroupPrepare => GetRequiredString(nameof(LearningPortalGroupPrepare));
+    public static string LearningPortalGroupResources => GetRequiredString(nameof(LearningPortalGroupResources));
+    public static string LearningPortalItemWords => GetRequiredString(nameof(LearningPortalItemWords));
+    public static string LearningPortalItemGrammar => GetRequiredString(nameof(LearningPortalItemGrammar));
+    public static string LearningPortalItemExpressions => GetRequiredString(nameof(LearningPortalItemExpressions));
+    public static string LearningPortalItemCourses => GetRequiredString(nameof(LearningPortalItemCourses));
+    public static string LearningPortalItemPracticeReview => GetRequiredString(nameof(LearningPortalItemPracticeReview));
+    public static string LearningPortalItemExercises => GetRequiredString(nameof(LearningPortalItemExercises));
+    public static string LearningPortalItemDialogues => GetRequiredString(nameof(LearningPortalItemDialogues));
+    public static string LearningPortalItemTalkTopics => GetRequiredString(nameof(LearningPortalItemTalkTopics));
+    public static string LearningPortalItemConversationStarters => GetRequiredString(nameof(LearningPortalItemConversationStarters));
+    public static string LearningPortalItemExamPrep => GetRequiredString(nameof(LearningPortalItemExamPrep));
+    public static string LearningPortalItemWritingTemplates => GetRequiredString(nameof(LearningPortalItemWritingTemplates));
+    public static string LearningPortalItemCulturalNotes => GetRequiredString(nameof(LearningPortalItemCulturalNotes));
+    public static string LearningPortalItemSearch => GetRequiredString(nameof(LearningPortalItemSearch));
+    public static string LearningPortalItemSettings => GetRequiredString(nameof(LearningPortalItemSettings));
+    public static string LearningPortalEmptyState => GetRequiredString(nameof(LearningPortalEmptyState));
+    public static string LearningPortalNotFoundTitle => GetRequiredString(nameof(LearningPortalNotFoundTitle));
+    public static string LearningPortalNotFoundDescription => GetRequiredString(nameof(LearningPortalNotFoundDescription));
+    public static string LearningPortalSearchPlaceholder => GetRequiredString(nameof(LearningPortalSearchPlaceholder));
+    public static string LearningPortalSearchEmptyState => GetRequiredString(nameof(LearningPortalSearchEmptyState));
+    public static string LearningPortalAnyLevel => GetRequiredString(nameof(LearningPortalAnyLevel));
+    public static string LearningPortalAnyCategory => GetRequiredString(nameof(LearningPortalAnyCategory));
+    public static string LearningPortalGrammarDescription => GetRequiredString(nameof(LearningPortalGrammarDescription));
+    public static string LearningPortalExpressionsDescription => GetRequiredString(nameof(LearningPortalExpressionsDescription));
+    public static string LearningPortalExercisesDescription => GetRequiredString(nameof(LearningPortalExercisesDescription));
+    public static string LearningPortalCoursesDescription => GetRequiredString(nameof(LearningPortalCoursesDescription));
+    public static string LearningPortalWritingTemplatesDescription => GetRequiredString(nameof(LearningPortalWritingTemplatesDescription));
+    public static string LearningPortalCulturalNotesDescription => GetRequiredString(nameof(LearningPortalCulturalNotesDescription));
+    public static string LearningPortalExamPrepDescription => GetRequiredString(nameof(LearningPortalExamPrepDescription));
+    public static string LearningPortalTalkTopicsDescription => GetRequiredString(nameof(LearningPortalTalkTopicsDescription));
+    public static string LearningPortalSectionExplanation => GetRequiredString(nameof(LearningPortalSectionExplanation));
+    public static string LearningPortalSectionExamples => GetRequiredString(nameof(LearningPortalSectionExamples));
+    public static string LearningPortalSectionLinkedContent => GetRequiredString(nameof(LearningPortalSectionLinkedContent));
+    public static string LearningPortalSectionWarnings => GetRequiredString(nameof(LearningPortalSectionWarnings));
+    public static string LearningPortalSectionExercises => GetRequiredString(nameof(LearningPortalSectionExercises));
+    public static string LearningPortalSectionLessons => GetRequiredString(nameof(LearningPortalSectionLessons));
+    public static string LearningPortalSectionTemplate => GetRequiredString(nameof(LearningPortalSectionTemplate));
+    public static string LearningPortalSectionSample => GetRequiredString(nameof(LearningPortalSectionSample));
+    public static string LearningPortalSectionStrategy => GetRequiredString(nameof(LearningPortalSectionStrategy));
+    public static string LearningPortalSectionQuestions => GetRequiredString(nameof(LearningPortalSectionQuestions));
+
     /// <summary>
     /// Gets a required localized string by key.
     /// </summary>

@@ -1,0 +1,131 @@
+@using DarwinLingua.SharedKernel.Lexicon
+@model DarwinLingua.Web.Models.ExpressionDetailPageViewModel
+@{
+    ViewData["Title"] = Model.Expression.ExpressionText;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Expression.CefrLevel · @T[Model.Expression.ExpressionType] · @T[Model.Expression.Register]</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="Expressions" asp-action="Index">@T["All Expressions"]</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@Model.Expression.ExpressionText</h1>
+    <p class="body-lg" dir="@primaryMeaningDirection">@Model.Expression.ActualMeaning</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Expression.LiteralMeaning))
+    {
+        <p><strong>@T["Literal meaning"]:</strong> @Model.Expression.LiteralMeaning</p>
+    }
+    <div class="chip-grid">
+        <span class="chip-link">@T[Model.Expression.Category]</span>
+        @if (!string.IsNullOrWhiteSpace(Model.Expression.Region))
+        {
+            <span class="chip-link">@T["Region"]: @Model.Expression.Region</span>
+        }
+        @foreach (string topicKey in Model.Expression.TopicKeys)
+        {
+            <span class="chip-link">@topicKey</span>
+        }
+    </div>
+</section>
+
+@if (Model.Expression.Warnings.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Tone and context warnings"]</h2>
+        <div class="stack-sm" dir="@primaryMeaningDirection">
+            @foreach (var warning in Model.Expression.Warnings)
+            {
+                <article class="detail-row">
+                    <span class="eyebrow">@T[warning.WarningType]</span>
+                    <p>@warning.Text</p>
+                </article>
+            }
+        </div>
+    </section>
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.Expression.UsageExplanation))
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Usage"]</h2>
+        <p dir="@primaryMeaningDirection">@Model.Expression.UsageExplanation</p>
+    </section>
+}
+
+@if (Model.Expression.Examples.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["German examples"]</h2>
+        <div class="stack-md">
+            @foreach (var example in Model.Expression.Examples)
+            {
+                <article class="detail-row">
+                    <strong class="dialogue-german-text">@example.GermanText</strong>
+                    @if (!string.IsNullOrWhiteSpace(example.Translation))
+                    {
+                        <div class="dialogue-translation-line" dir="@primaryMeaningDirection">
+                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                            <span>@example.Translation</span>
+                        </div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(example.Note))
+                    {
+                        <p>@example.Note</p>
+                    }
+                </article>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.Expression.LinkedWords.Count > 0 || Model.Expression.RelatedExpressionSlugs.Count > 0 || Model.Expression.LinkedExerciseSlugs.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Linked practice"]</h2>
+        @if (Model.Expression.LinkedWords.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Words"]</h3>
+            <p>
+                @for (int index = 0; index < Model.Expression.LinkedWords.Count; index++)
+                {
+                    var word = Model.Expression.LinkedWords[index];
+                    if (!string.IsNullOrWhiteSpace(word.WordSlug))
+                    {
+                        <a asp-controller="Words" asp-action="Detail" asp-route-slug="@word.WordSlug">@word.Lemma</a>
+                    }
+                    else
+                    {
+                        <span>@word.Lemma</span>
+                    }
+                    @if (index < Model.Expression.LinkedWords.Count - 1)
+                    {
+                        <span>, </span>
+                    }
+                }
+            </p>
+        }
+        @if (Model.Expression.RelatedExpressionSlugs.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Related expressions"]</h3>
+            <div class="chip-grid">
+                @foreach (string slug in Model.Expression.RelatedExpressionSlugs)
+                {
+                    <a class="chip-link" asp-controller="Expressions" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                }
+            </div>
+        }
+        @if (Model.Expression.LinkedExerciseSlugs.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Exercises"]</h3>
+            <div class="chip-grid">
+                @foreach (string slug in Model.Expression.LinkedExerciseSlugs)
+                {
+                    <a class="chip-link" asp-controller="Exercises" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                }
+            </div>
+        }
+    </section>
+}

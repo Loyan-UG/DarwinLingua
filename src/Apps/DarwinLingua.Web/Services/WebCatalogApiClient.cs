@@ -43,6 +43,83 @@ public interface IWebCatalogApiClient
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<GrammarTopicListItemModel>> GetGrammarTopicsAsync(
+        GrammarTopicListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<GrammarTopicDetailModel?> GetGrammarTopicBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<ExpressionListItemModel>> GetExpressionsAsync(
+        ExpressionListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<ExpressionDetailModel?> GetExpressionBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
+        ExerciseSetListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<ExerciseDetailModel?> GetExerciseBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(
+        string slug,
+        ExerciseAttemptRequestModel request,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(
+        CoursePathListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<CoursePathDetailModel?> GetCourseBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
+        WritingTemplateListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(
+        CulturalNoteListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(
+        ExamPrepListFilterModel filter,
+        CancellationToken cancellationToken);
+
+    Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(
+        UnifiedLearningSearchFilterModel filter,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(
         ConversationStarterListFilterModel filter,
         CancellationToken cancellationToken);
@@ -556,6 +633,199 @@ internal sealed class WebCatalogApiClient(
                 [
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
                     new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
+                ]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<GrammarTopicListItemModel>> GetGrammarTopicsAsync(
+        GrammarTopicListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<GrammarTopicListItemModel>>(
+            BuildPath(
+                "/api/catalog/grammar",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("grammarCategory", filter.GrammarCategory),
+                    new("topicKey", filter.TopicKey),
+                    new("q", filter.Query)
+                ]),
+            cancellationToken);
+
+    public Task<GrammarTopicDetailModel?> GetGrammarTopicBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<GrammarTopicDetailModel>(
+            BuildPath(
+                $"/api/catalog/grammar/{Uri.EscapeDataString(slug)}",
+                [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<ExpressionListItemModel>> GetExpressionsAsync(
+        ExpressionListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ExpressionListItemModel>>(
+            BuildPath(
+                "/api/catalog/expressions",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("expressionType", filter.ExpressionType),
+                    new("register", filter.Register),
+                    new("category", filter.Category),
+                    new("topicKey", filter.TopicKey),
+                    new("isRisky", filter.IsRisky?.ToString()),
+                    new("q", filter.Query)
+                ]),
+            cancellationToken);
+
+    public Task<ExpressionDetailModel?> GetExpressionBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<ExpressionDetailModel>(
+            BuildPath(
+                $"/api/catalog/expressions/{Uri.EscapeDataString(slug)}",
+                [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
+        ExerciseSetListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ExerciseSetListItemModel>>(
+            BuildPath(
+                "/api/catalog/exercise-sets",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("ownerType", filter.OwnerType),
+                    new("ownerSlug", filter.OwnerSlug),
+                    new("q", filter.Query)
+                ]),
+            cancellationToken);
+
+    public Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<ExerciseSetDetailModel>($"/api/catalog/exercise-sets/{Uri.EscapeDataString(slug)}", cancellationToken);
+
+    public Task<ExerciseDetailModel?> GetExerciseBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<ExerciseDetailModel>($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}", cancellationToken);
+
+    public async Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(
+        string slug,
+        ExerciseAttemptRequestModel request,
+        CancellationToken cancellationToken)
+    {
+        using HttpResponseMessage response = await httpClient
+            .PostAsJsonAsync($"/api/learning/exercises/{Uri.EscapeDataString(slug)}/attempts", request, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            return null;
+        }
+
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<ExerciseAttemptResultModel>(JsonSerializerOptions.Web, cancellationToken).ConfigureAwait(false);
+    }
+
+    public Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(
+        CoursePathListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<CoursePathListItemModel>>(
+            BuildPath(
+                "/api/catalog/courses",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("q", filter.Query)
+                ]),
+            cancellationToken);
+
+    public Task<CoursePathDetailModel?> GetCourseBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<CoursePathDetailModel>($"/api/catalog/courses/{Uri.EscapeDataString(slug)}", cancellationToken);
+
+    public Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<CourseLessonDetailModel>($"/api/catalog/course-lessons/{Uri.EscapeDataString(slug)}", cancellationToken);
+
+    public Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
+        WritingTemplateListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<WritingTemplateListItemModel>>(
+            BuildPath(
+                "/api/catalog/writing-templates",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("category", filter.Category),
+                    new("register", filter.Register),
+                    new("situation", filter.Situation),
+                    new("q", filter.Query)
+                ]),
+            cancellationToken);
+
+    public Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<WritingTemplateDetailModel>($"/api/catalog/writing-templates/{Uri.EscapeDataString(slug)}", cancellationToken);
+
+    public Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(
+        CulturalNoteListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<CulturalNoteListItemModel>>(
+            BuildPath(
+                "/api/catalog/cultural-notes",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("category", filter.Category),
+                    new("context", filter.Context),
+                    new("q", filter.Query)
+                ]),
+            cancellationToken);
+
+    public Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<CulturalNoteDetailModel>($"/api/catalog/cultural-notes/{Uri.EscapeDataString(slug)}", cancellationToken);
+
+    public Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ExamProfileModel>>("/api/catalog/exam-profiles", cancellationToken);
+
+    public Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(
+        ExamPrepListFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ExamPrepUnitListItemModel>>(
+            BuildPath(
+                "/api/catalog/exam-prep",
+                [
+                    new("examProfile", filter.ExamProfile),
+                    new("cefrLevel", filter.CefrLevel),
+                    new("skillFocus", filter.SkillFocus),
+                    new("taskType", filter.TaskType),
+                    new("section", filter.Section),
+                    new("q", filter.Query)
+                ]),
+            cancellationToken);
+
+    public Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(
+        string slug,
+        CancellationToken cancellationToken) =>
+        GetAsync<ExamPrepUnitDetailModel>($"/api/catalog/exam-prep/{Uri.EscapeDataString(slug)}", cancellationToken);
+
+    public Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(
+        UnifiedLearningSearchFilterModel filter,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<UnifiedLearningSearchResultModel>>(
+            BuildPath(
+                "/api/catalog/search",
+                [
+                    new("q", filter.Query),
+                    new("cefrLevel", filter.CefrLevel),
+                    new("resultType", filter.ResultType),
+                    new("category", filter.Category),
+                    new("topicKey", filter.TopicKey)
                 ]),
             cancellationToken);
 
@@ -2524,7 +2794,8 @@ public sealed record AdminSystemReportResponse(
     AdminCatalogSystemReportResponse Catalog,
     AdminSocialSystemReportResponse Social,
     AdminModerationSystemReportResponse Moderation,
-    AdminOperationsSystemReportResponse Operations);
+    AdminOperationsSystemReportResponse Operations,
+    AdminLearningPortalSystemReportResponse LearningPortal);
 
 public sealed record AdminCatalogSystemReportResponse(
     int ActiveWordCount,
@@ -2557,6 +2828,39 @@ public sealed record AdminOperationsSystemReportResponse(
     int ImportedPackageCount,
     int FailedPackageCount,
     DateTime? LastImportAtUtc);
+
+public sealed record AdminLearningPortalSystemReportResponse(
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByType,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByCefr,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> GrammarByCategory,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByType,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByRegister,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByType,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByTargetSkill,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CourseLessonsByCourse,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CourseLessonsByCefr,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CourseLessonsByModule,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExamPrepByProfile,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> WritingTemplatesByCategory,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> WritingTemplatesByRegister,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CulturalNotesByCategory,
+    int UnresolvedLinkedWordCount,
+    int UnresolvedLinkedContentReferenceCount,
+    int MissingTranslationCount,
+    int UnpublishedDraftCount,
+    int GrammarTopicsMissingExercises,
+    int CourseLessonsMissingExerciseSets,
+    IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
+
+public sealed record AdminLearningPortalCountRowResponse(
+    string Key,
+    int Count);
+
+public sealed record AdminLearningPortalIssueRowResponse(
+    string Area,
+    string Owner,
+    string Issue,
+    string? Target);
 
 internal sealed record AdminCatalogImportsResponse(
     string? StatusFilter,

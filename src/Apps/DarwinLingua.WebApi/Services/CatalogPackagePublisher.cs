@@ -157,6 +157,125 @@ public sealed class CatalogPackagePublisher(
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        List<GrammarTopic> activeGrammarTopics = await catalogDbContext.GrammarTopics
+            .AsNoTracking()
+            .AsSplitQuery()
+            .Where(topic => topic.PublicationStatus == PublicationStatus.Active)
+            .Include(topic => topic.Topics)
+            .Include(topic => topic.Sections)
+                .ThenInclude(section => section.Translations)
+            .Include(topic => topic.Examples)
+                .ThenInclude(example => example.Translations)
+            .Include(topic => topic.CommonMistakes)
+                .ThenInclude(mistake => mistake.Translations)
+            .Include(topic => topic.RuleSummaries)
+                .ThenInclude(rule => rule.Translations)
+            .Include(topic => topic.ExceptionNotes)
+                .ThenInclude(note => note.Translations)
+            .Include(topic => topic.Prerequisites)
+            .Include(topic => topic.RelatedTopics)
+            .Include(topic => topic.LinkedWords)
+            .Include(topic => topic.LinkedDialogues)
+            .Include(topic => topic.LinkedTalkTopics)
+            .Include(topic => topic.LinkedExercises)
+            .OrderBy(topic => topic.SortOrder)
+            .ThenBy(topic => topic.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<ExpressionEntry> activeExpressions = await catalogDbContext.ExpressionEntries
+            .AsNoTracking()
+            .AsSplitQuery()
+            .Where(expression => expression.PublicationStatus == PublicationStatus.Active)
+            .Include(expression => expression.Topics)
+            .Include(expression => expression.Meanings)
+            .Include(expression => expression.Examples)
+                .ThenInclude(example => example.Translations)
+            .Include(expression => expression.Warnings)
+                .ThenInclude(warning => warning.Translations)
+            .Include(expression => expression.LinkedWords)
+            .Include(expression => expression.RelatedExpressions)
+            .Include(expression => expression.LinkedExercises)
+            .OrderBy(expression => expression.SortOrder)
+            .ThenBy(expression => expression.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<Exercise> activeExercises = await catalogDbContext.Exercises
+            .AsNoTracking()
+            .Where(exercise => exercise.PublicationStatus == PublicationStatus.Active)
+            .OrderBy(exercise => exercise.SortOrder)
+            .ThenBy(exercise => exercise.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<ExerciseSet> activeExerciseSets = await catalogDbContext.ExerciseSets
+            .AsNoTracking()
+            .AsSplitQuery()
+            .Where(set => set.PublicationStatus == PublicationStatus.Active)
+            .Include(set => set.Items)
+            .OrderBy(set => set.SortOrder)
+            .ThenBy(set => set.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<CoursePath> activeCoursePaths = await catalogDbContext.CoursePaths
+            .AsNoTracking()
+            .AsSplitQuery()
+            .Where(course => course.PublicationStatus == PublicationStatus.Active)
+            .Include(course => course.Modules)
+                .ThenInclude(module => module.Lessons)
+            .OrderBy(course => course.SortOrder)
+            .ThenBy(course => course.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<CourseModule> activeCourseModules = activeCoursePaths
+            .SelectMany(course => course.Modules)
+            .Where(module => module.PublicationStatus == PublicationStatus.Active)
+            .OrderBy(module => module.SortOrder)
+            .ThenBy(module => module.Slug)
+            .ToList();
+
+        List<CourseLesson> activeCourseLessons = activeCourseModules
+            .SelectMany(module => module.Lessons)
+            .Where(lesson => lesson.PublicationStatus == PublicationStatus.Active)
+            .OrderBy(lesson => lesson.SortOrder)
+            .ThenBy(lesson => lesson.Slug)
+            .ToList();
+
+        List<WritingTemplate> activeWritingTemplates = await catalogDbContext.WritingTemplates
+            .AsNoTracking()
+            .Where(template => template.PublicationStatus == PublicationStatus.Active)
+            .OrderBy(template => template.SortOrder)
+            .ThenBy(template => template.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<CulturalNote> activeCulturalNotes = await catalogDbContext.CulturalNotes
+            .AsNoTracking()
+            .Where(note => note.PublicationStatus == PublicationStatus.Active)
+            .OrderBy(note => note.SortOrder)
+            .ThenBy(note => note.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<ExamProfile> activeExamProfiles = await catalogDbContext.ExamProfiles
+            .AsNoTracking()
+            .Where(profile => profile.PublicationStatus == PublicationStatus.Active)
+            .OrderBy(profile => profile.SortOrder)
+            .ThenBy(profile => profile.Key)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        List<ExamPrepUnit> activeExamPrepUnits = await catalogDbContext.ExamPrepUnits
+            .AsNoTracking()
+            .Where(unit => unit.PublicationStatus == PublicationStatus.Active)
+            .OrderBy(unit => unit.SortOrder)
+            .ThenBy(unit => unit.Slug)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
         DateTimeOffset now = DateTimeOffset.UtcNow;
         string version = now.ToString("yyyy.MM.dd.HHmmss.fff");
         string versionToken = now.ToString("yyyyMMddHHmmssfff");
@@ -170,7 +289,18 @@ public sealed class CatalogPackagePublisher(
             activeDialogues,
             activeConversationStarterPacks,
             activeEventPreparationPacks,
-            activeTalkTopics);
+            activeTalkTopics,
+            activeGrammarTopics,
+            activeExpressions,
+            activeExercises,
+            activeExerciseSets,
+            activeCoursePaths,
+            activeCourseModules,
+            activeCourseLessons,
+            activeWritingTemplates,
+            activeCulturalNotes,
+            activeExamProfiles,
+            activeExamPrepUnits);
         List<string> publishedPackageIds = [];
 
         foreach (PackagePublicationDefinition definition in definitions)
@@ -193,6 +323,17 @@ public sealed class CatalogPackagePublisher(
                 definition.ConversationStarterPacks,
                 definition.EventPreparationPacks,
                 definition.TalkTopics,
+                definition.GrammarTopics,
+                definition.ExpressionEntries,
+                definition.Exercises,
+                definition.ExerciseSets,
+                definition.CoursePaths,
+                definition.CourseModules,
+                definition.CourseLessons,
+                definition.WritingTemplates,
+                definition.CulturalNotes,
+                definition.ExamProfiles,
+                definition.ExamPrepUnits,
                 activeCollections,
                 topicKeys);
 
@@ -215,7 +356,7 @@ public sealed class CatalogPackagePublisher(
                 SchemaVersion = options.Value.DefaultSchemaVersion,
                 MinimumAppSchemaVersion = options.Value.DefaultSchemaVersion,
                 Checksum = checksum,
-                EntryCount = definition.Words.Count,
+                EntryCount = definition.TotalEntryCount,
                 WordCount = definition.Words.Count,
                 CreatedAtUtc = now,
                 UpdatedAtUtc = now,
@@ -239,7 +380,18 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<DialogueLesson> dialogues,
         IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
         IReadOnlyList<EventPreparationPack> eventPreparationPacks,
-        IReadOnlyList<TalkTopic> talkTopics)
+        IReadOnlyList<TalkTopic> talkTopics,
+        IReadOnlyList<GrammarTopic> grammarTopics,
+        IReadOnlyList<ExpressionEntry> expressionEntries,
+        IReadOnlyList<Exercise> exercises,
+        IReadOnlyList<ExerciseSet> exerciseSets,
+        IReadOnlyList<CoursePath> coursePaths,
+        IReadOnlyList<CourseModule> courseModules,
+        IReadOnlyList<CourseLesson> courseLessons,
+        IReadOnlyList<WritingTemplate> writingTemplates,
+        IReadOnlyList<CulturalNote> culturalNotes,
+        IReadOnlyList<ExamProfile> examProfiles,
+        IReadOnlyList<ExamPrepUnit> examPrepUnits)
     {
         List<PackagePublicationDefinition> definitions =
         [
@@ -253,7 +405,18 @@ public sealed class CatalogPackagePublisher(
                 dialogues,
                 conversationStarterPacks,
                 eventPreparationPacks,
-                talkTopics),
+                talkTopics,
+                grammarTopics,
+                expressionEntries,
+                exercises,
+                exerciseSets,
+                coursePaths,
+                courseModules,
+                courseLessons,
+                writingTemplates,
+                culturalNotes,
+                examProfiles,
+                examPrepUnits),
             new(
                 $"{clientProductKey}-catalog-full-{versionToken}",
                 "Darwin Lingua Catalog",
@@ -264,7 +427,18 @@ public sealed class CatalogPackagePublisher(
                 dialogues,
                 conversationStarterPacks,
                 eventPreparationPacks,
-                talkTopics),
+                talkTopics,
+                grammarTopics,
+                expressionEntries,
+                exercises,
+                exerciseSets,
+                coursePaths,
+                courseModules,
+                courseLessons,
+                writingTemplates,
+                culturalNotes,
+                examProfiles,
+                examPrepUnits),
         ];
 
         foreach (IGrouping<string, WordEntry> group in words
@@ -295,7 +469,18 @@ public sealed class CatalogPackagePublisher(
                     .ToArray(),
                 talkTopics
                     .Where(topic => string.Equals(topic.CefrLevel.ToString(), group.Key, StringComparison.OrdinalIgnoreCase))
-                    .ToArray()));
+                    .ToArray(),
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []));
         }
 
         return definitions;
@@ -314,6 +499,17 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
         IReadOnlyList<EventPreparationPack> eventPreparationPacks,
         IReadOnlyList<TalkTopic> talkTopics,
+        IReadOnlyList<GrammarTopic> grammarTopics,
+        IReadOnlyList<ExpressionEntry> expressionEntries,
+        IReadOnlyList<Exercise> exercises,
+        IReadOnlyList<ExerciseSet> exerciseSets,
+        IReadOnlyList<CoursePath> coursePaths,
+        IReadOnlyList<CourseModule> courseModules,
+        IReadOnlyList<CourseLesson> courseLessons,
+        IReadOnlyList<WritingTemplate> writingTemplates,
+        IReadOnlyList<CulturalNote> culturalNotes,
+        IReadOnlyList<ExamProfile> examProfiles,
+        IReadOnlyList<ExamPrepUnit> examPrepUnits,
         IReadOnlyList<WordCollection> activeCollections,
         IReadOnlyDictionary<Guid, string> topicKeys)
     {
@@ -336,6 +532,17 @@ public sealed class CatalogPackagePublisher(
             conversationStarterPacks.Select(pack => CreateConversationStarterPack(pack, topicKeys)).ToArray(),
             eventPreparationPacks.Select(pack => CreateEventPreparationPack(pack, topicKeys)).ToArray(),
             talkTopics.Select(topic => CreateTalkTopic(topic, topicKeys)).ToArray(),
+            grammarTopics.Select(topic => CreateGrammarTopic(topic, topicKeys)).ToArray(),
+            expressionEntries.Select(entry => CreateExpressionEntry(entry, topicKeys)).ToArray(),
+            exercises.Select(CreateExercise).ToArray(),
+            exerciseSets.Select(CreateExerciseSet).ToArray(),
+            coursePaths.Select(CreateCoursePath).ToArray(),
+            courseModules.Select(CreateCourseModule).ToArray(),
+            courseLessons.Select(CreateCourseLesson).ToArray(),
+            writingTemplates.Select(CreateWritingTemplate).ToArray(),
+            culturalNotes.Select(CreateCulturalNote).ToArray(),
+            examProfiles.Select(CreateExamProfile).ToArray(),
+            examPrepUnits.Select(CreateExamPrepUnit).ToArray(),
             words.Select(word => CreateEntry(word, topicKeys)).ToArray());
     }
 
@@ -669,6 +876,279 @@ public sealed class CatalogPackagePublisher(
             topic.SortOrder);
     }
 
+    private static ExportedGrammarTopic CreateGrammarTopic(GrammarTopic topic, IReadOnlyDictionary<Guid, string> topicKeys)
+    {
+        return new ExportedGrammarTopic(
+            topic.Slug,
+            topic.Title,
+            topic.ShortDescription,
+            topic.CefrLevel.ToString(),
+            topic.GrammarCategory,
+            topic.Topics
+                .OrderByDescending(link => link.IsPrimary)
+                .ThenBy(link => link.CreatedAtUtc)
+                .Select(link => topicKeys[link.TopicId])
+                .ToArray(),
+            true,
+            topic.SortOrder,
+            topic.Sections
+                .OrderBy(section => section.SortOrder)
+                .Select(section => new ExportedGrammarSection(
+                    section.Heading,
+                    section.Explanation,
+                    section.Translations
+                        .OrderBy(translation => translation.LanguageCode.Value, StringComparer.Ordinal)
+                        .Select(translation => new ExportedGrammarSectionTranslation(
+                            translation.LanguageCode.Value,
+                            translation.Heading,
+                            translation.Text))
+                        .ToArray(),
+                    section.SortOrder))
+                .ToArray(),
+            topic.Examples
+                .OrderBy(example => example.SortOrder)
+                .Select(example => new ExportedGrammarExample(
+                    example.GermanText,
+                    example.Note,
+                    CreateTranslations(example.Translations),
+                    example.SortOrder))
+                .ToArray(),
+            topic.RuleSummaries
+                .OrderBy(item => item.SortOrder)
+                .Select(item => new ExportedGrammarTextItem(
+                    item.Text,
+                    CreateTranslations(item.Translations),
+                    item.SortOrder))
+                .ToArray(),
+            topic.CommonMistakes
+                .OrderBy(item => item.SortOrder)
+                .Select(item => new ExportedGrammarCommonMistake(
+                    item.WrongText,
+                    item.CorrectedText,
+                    item.Explanation,
+                    CreateTranslations(item.Translations),
+                    item.SortOrder))
+                .ToArray(),
+            topic.ExceptionNotes
+                .OrderBy(item => item.SortOrder)
+                .Select(item => new ExportedGrammarTextItem(
+                    item.Text,
+                    CreateTranslations(item.Translations),
+                    item.SortOrder))
+                .ToArray(),
+            topic.Prerequisites.OrderBy(link => link.SortOrder).Select(link => link.TargetSlug).ToArray(),
+            topic.RelatedTopics.OrderBy(link => link.SortOrder).Select(link => link.TargetSlug).ToArray(),
+            topic.LinkedWords
+                .OrderBy(link => link.SortOrder)
+                .Select(link => new ExportedLinkedWord(link.Lemma, link.WordSlug, link.SortOrder))
+                .ToArray(),
+            topic.LinkedDialogues.OrderBy(link => link.SortOrder).Select(link => link.TargetSlug).ToArray(),
+            topic.LinkedTalkTopics.OrderBy(link => link.SortOrder).Select(link => link.TargetSlug).ToArray(),
+            topic.LinkedExercises.OrderBy(link => link.SortOrder).Select(link => link.TargetSlug).ToArray());
+    }
+
+    private static ExportedExpressionEntry CreateExpressionEntry(ExpressionEntry entry, IReadOnlyDictionary<Guid, string> topicKeys)
+    {
+        return new ExportedExpressionEntry(
+            entry.Slug,
+            entry.ExpressionText,
+            entry.LiteralMeaningText,
+            entry.ActualMeaningText,
+            entry.UsageExplanation,
+            entry.CefrLevel.ToString(),
+            entry.ExpressionType,
+            entry.Register,
+            entry.Category,
+            null,
+            entry.Region,
+            entry.IsRisky,
+            entry.Topics
+                .OrderByDescending(link => link.IsPrimary)
+                .ThenBy(link => link.CreatedAtUtc)
+                .Select(link => topicKeys[link.TopicId])
+                .ToArray(),
+            true,
+            entry.SortOrder,
+            entry.Meanings
+                .OrderBy(meaning => meaning.LanguageCode.Value, StringComparer.Ordinal)
+                .Select(meaning => new ExportedExpressionMeaning(
+                    meaning.LanguageCode.Value,
+                    meaning.ActualMeaningText,
+                    meaning.ActualMeaningText,
+                    meaning.LiteralMeaningText,
+                    meaning.UsageExplanation))
+                .ToArray(),
+            entry.Examples
+                .OrderBy(example => example.SortOrder)
+                .Select(example => new ExportedExpressionExample(
+                    example.GermanText,
+                    example.Note,
+                    CreateTranslations(example.Translations),
+                    example.SortOrder))
+                .ToArray(),
+            entry.Warnings
+                .OrderBy(warning => warning.WarningType, StringComparer.Ordinal)
+                .Select(warning => new ExportedExpressionWarning(
+                    warning.WarningType,
+                    warning.Text,
+                    CreateTranslations(warning.Translations)))
+                .ToArray(),
+            entry.LinkedWords
+                .OrderBy(link => link.SortOrder)
+                .Select(link => new ExportedLinkedWord(link.Lemma, link.WordSlug, link.SortOrder))
+                .ToArray(),
+            entry.RelatedExpressions.OrderBy(link => link.SortOrder).Select(link => link.TargetSlug).ToArray(),
+            entry.LinkedExercises.OrderBy(link => link.SortOrder).Select(link => link.TargetSlug).ToArray());
+    }
+
+    private static ExportedExercise CreateExercise(Exercise exercise) =>
+        new(
+            exercise.Slug,
+            exercise.Title,
+            exercise.Instruction,
+            exercise.CefrLevel.ToString(),
+            exercise.ExerciseType,
+            exercise.TargetSkill,
+            exercise.OwnerType,
+            exercise.OwnerSlug,
+            ParseJsonElement(exercise.PromptJson),
+            ParseJsonElement(exercise.AnswerKeyJson),
+            exercise.CorrectExplanation,
+            exercise.IncorrectExplanation,
+            exercise.Hint,
+            exercise.CommonMistakeNote,
+            true,
+            exercise.SortOrder);
+
+    private static ExportedExerciseSet CreateExerciseSet(ExerciseSet set) =>
+        new(
+            set.Slug,
+            set.Title,
+            set.Description,
+            set.CefrLevel.ToString(),
+            set.OwnerType,
+            set.OwnerSlug,
+            set.Items.OrderBy(item => item.SortOrder).Select(item => item.ExerciseSlug).ToArray(),
+            true,
+            set.SortOrder);
+
+    private static ExportedCoursePath CreateCoursePath(CoursePath course) =>
+        new(
+            course.Slug,
+            course.Title,
+            course.Description,
+            course.CefrLevel?.ToString(),
+            course.CefrRange,
+            true,
+            course.SortOrder);
+
+    private static ExportedCourseModule CreateCourseModule(CourseModule module) =>
+        new(
+            module.Slug,
+            module.CoursePathSlug,
+            module.Title,
+            module.Description,
+            module.ModuleNumber,
+            module.CefrLevel.ToString(),
+            true,
+            module.SortOrder);
+
+    private static ExportedCourseLesson CreateCourseLesson(CourseLesson lesson) =>
+        new(
+            lesson.Slug,
+            lesson.CoursePathSlug,
+            lesson.ModuleSlug,
+            lesson.LessonNumber,
+            lesson.Title,
+            lesson.ShortDescription,
+            lesson.Narrative,
+            lesson.CefrLevel.ToString(),
+            lesson.EstimatedMinutes,
+            ParseStringArray(lesson.LearningGoalsJson),
+            ParseStringArray(lesson.PrerequisiteLessonSlugsJson),
+            lesson.NextLessonSlug,
+            ParseStringArray(lesson.LinkedGrammarTopicSlugsJson),
+            ParseStringArray(lesson.LinkedWordSlugsJson),
+            ParseStringArray(lesson.LinkedExpressionSlugsJson),
+            ParseStringArray(lesson.LinkedDialogueSlugsJson),
+            ParseStringArray(lesson.LinkedTalkTopicSlugsJson),
+            ParseStringArray(lesson.LinkedExerciseSetSlugsJson),
+            ParseStringArray(lesson.LinkedExamPrepSlugsJson),
+            lesson.ReviewSummary,
+            lesson.HomeworkTask,
+            true,
+            lesson.SortOrder);
+
+    private static ExportedWritingTemplate CreateWritingTemplate(WritingTemplate template) =>
+        new(
+            template.Slug,
+            template.Title,
+            template.ShortDescription,
+            template.CefrLevel.ToString(),
+            template.Category,
+            template.Situation,
+            template.Register,
+            template.TemplateText,
+            template.Explanation,
+            ParseStringArray(template.VariablesJson),
+            template.SampleFilledVersion,
+            ParseStringArray(template.LinkedGrammarTopicSlugsJson),
+            ParseStringArray(template.LinkedWordSlugsJson),
+            ParseStringArray(template.LinkedExpressionSlugsJson),
+            ParseStringArray(template.LinkedExerciseSlugsJson),
+            true,
+            template.SortOrder);
+
+    private static ExportedCulturalNote CreateCulturalNote(CulturalNote note) =>
+        new(
+            note.Slug,
+            note.Title,
+            note.ShortDescription,
+            note.CefrLevel.ToString(),
+            note.Category,
+            note.Context,
+            ParseStringArray(note.SectionsJson),
+            ParseJsonArray<ExportedCulturalNoteExample>(note.ExamplesJson),
+            ParseStringArray(note.DoNotesJson),
+            null,
+            ParseStringArray(note.DontNotesJson),
+            null,
+            note.SensitivityWarning,
+            ParseStringArray(note.LinkedDialogueSlugsJson),
+            ParseStringArray(note.LinkedExpressionSlugsJson),
+            ParseStringArray(note.LinkedWritingTemplateSlugsJson),
+            ParseStringArray(note.LinkedTalkTopicSlugsJson),
+            ParseStringArray(note.LinkedCourseLessonSlugsJson),
+            true,
+            note.SortOrder);
+
+    private static ExportedExamProfile CreateExamProfile(ExamProfile profile) =>
+        new(profile.Key, profile.DisplayName, profile.CefrRange, profile.Description, true, profile.SortOrder);
+
+    private static ExportedExamPrepUnit CreateExamPrepUnit(ExamPrepUnit unit) =>
+        new(
+            unit.Slug,
+            unit.ExamProfileKey,
+            unit.Title,
+            unit.ShortDescription,
+            unit.CefrLevel.ToString(),
+            unit.ExamSection,
+            null,
+            unit.TaskType,
+            unit.SkillFocus,
+            unit.Explanation,
+            ParseStringArray(unit.StrategyNotesJson),
+            ParseStringArray(unit.ChecklistJson),
+            ParseStringArray(unit.LinkedDialogueSlugsJson),
+            ParseStringArray(unit.LinkedTalkTopicSlugsJson),
+            ParseStringArray(unit.LinkedGrammarTopicSlugsJson),
+            ParseStringArray(unit.LinkedExpressionSlugsJson),
+            ParseStringArray(unit.LinkedWritingTemplateSlugsJson),
+            ParseStringArray(unit.LinkedExerciseSlugsJson),
+            ParseStringArray(unit.LinkedCourseLessonSlugsJson),
+            true,
+            unit.SortOrder);
+
     private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<DialogueTranslationBase> translations)
     {
         return translations
@@ -697,6 +1177,51 @@ public sealed class CatalogPackagePublisher(
                 translation.LanguageCode.Value,
                 translation.Text))
             .ToArray();
+    }
+
+    private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<GrammarTranslationBase> translations)
+    {
+        return translations
+            .OrderBy(translation => translation.LanguageCode.Value, StringComparer.Ordinal)
+            .Select(translation => new ExportedMeaning(
+                translation.LanguageCode.Value,
+                translation.Text))
+            .ToArray();
+    }
+
+    private static IReadOnlyList<ExportedMeaning> CreateTranslations(IEnumerable<ExpressionTranslationBase> translations)
+    {
+        return translations
+            .OrderBy(translation => translation.LanguageCode.Value, StringComparer.Ordinal)
+            .Select(translation => new ExportedMeaning(
+                translation.LanguageCode.Value,
+                translation.Text))
+            .ToArray();
+    }
+
+    private static IReadOnlyList<string> ParseStringArray(string json) => ParseJsonArray<string>(json);
+
+    private static IReadOnlyList<T> ParseJsonArray<T>(string json)
+    {
+        if (string.IsNullOrWhiteSpace(json))
+        {
+            return [];
+        }
+
+        try
+        {
+            return JsonSerializer.Deserialize<T[]>(json) ?? [];
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
+    }
+
+    private static JsonElement ParseJsonElement(string json)
+    {
+        using JsonDocument document = JsonDocument.Parse(json);
+        return document.RootElement.Clone();
     }
 
     private static string FormatTalkTopicContentType(TalkTopicContentType contentType) =>
@@ -806,7 +1331,37 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<DialogueLesson> Dialogues,
         IReadOnlyList<ConversationStarterPack> ConversationStarterPacks,
         IReadOnlyList<EventPreparationPack> EventPreparationPacks,
-        IReadOnlyList<TalkTopic> TalkTopics);
+        IReadOnlyList<TalkTopic> TalkTopics,
+        IReadOnlyList<GrammarTopic> GrammarTopics,
+        IReadOnlyList<ExpressionEntry> ExpressionEntries,
+        IReadOnlyList<Exercise> Exercises,
+        IReadOnlyList<ExerciseSet> ExerciseSets,
+        IReadOnlyList<CoursePath> CoursePaths,
+        IReadOnlyList<CourseModule> CourseModules,
+        IReadOnlyList<CourseLesson> CourseLessons,
+        IReadOnlyList<WritingTemplate> WritingTemplates,
+        IReadOnlyList<CulturalNote> CulturalNotes,
+        IReadOnlyList<ExamProfile> ExamProfiles,
+        IReadOnlyList<ExamPrepUnit> ExamPrepUnits)
+    {
+        public int TotalEntryCount =>
+            Words.Count +
+            Dialogues.Count +
+            ConversationStarterPacks.Count +
+            EventPreparationPacks.Count +
+            TalkTopics.Count +
+            GrammarTopics.Count +
+            ExpressionEntries.Count +
+            Exercises.Count +
+            ExerciseSets.Count +
+            CoursePaths.Count +
+            CourseModules.Count +
+            CourseLessons.Count +
+            WritingTemplates.Count +
+            CulturalNotes.Count +
+            ExamProfiles.Count +
+            ExamPrepUnits.Count;
+    }
 
     private sealed record ExportedContentPackage(
         string PackageVersion,
@@ -823,6 +1378,17 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<ExportedConversationStarterPack> ConversationStarterPacks,
         IReadOnlyList<ExportedEventPreparationPack> EventPreparationPacks,
         IReadOnlyList<ExportedTalkTopic> TalkTopics,
+        IReadOnlyList<ExportedGrammarTopic> GrammarTopics,
+        IReadOnlyList<ExportedExpressionEntry> ExpressionEntries,
+        IReadOnlyList<ExportedExercise> Exercises,
+        IReadOnlyList<ExportedExerciseSet> ExerciseSets,
+        IReadOnlyList<ExportedCoursePath> CoursePaths,
+        IReadOnlyList<ExportedCourseModule> CourseModules,
+        IReadOnlyList<ExportedCourseLesson> CourseLessons,
+        IReadOnlyList<ExportedWritingTemplate> WritingTemplates,
+        IReadOnlyList<ExportedCulturalNote> CulturalNotes,
+        IReadOnlyList<ExportedExamProfile> ExamProfiles,
+        IReadOnlyList<ExportedExamPrepUnit> ExamPrepUnits,
         IReadOnlyList<ExportedContentEntry> Entries);
 
     private sealed record ExportedContentCollection(
@@ -993,5 +1559,242 @@ public sealed class CatalogPackagePublisher(
         string Lemma,
         string? WordSlug,
         string? CefrLevel,
+        int SortOrder);
+
+    private sealed record ExportedGrammarTopic(
+        string Slug,
+        string Title,
+        string ShortDescription,
+        string CefrLevel,
+        string GrammarCategory,
+        IReadOnlyList<string> Topics,
+        bool IsPublished,
+        int SortOrder,
+        IReadOnlyList<ExportedGrammarSection> Sections,
+        IReadOnlyList<ExportedGrammarExample> Examples,
+        IReadOnlyList<ExportedGrammarTextItem> RuleSummaries,
+        IReadOnlyList<ExportedGrammarCommonMistake> CommonMistakes,
+        IReadOnlyList<ExportedGrammarTextItem> ExceptionNotes,
+        IReadOnlyList<string> PrerequisiteSlugs,
+        IReadOnlyList<string> RelatedTopicSlugs,
+        IReadOnlyList<ExportedLinkedWord> LinkedWords,
+        IReadOnlyList<string> LinkedDialogueSlugs,
+        IReadOnlyList<string> LinkedTalkTopicSlugs,
+        IReadOnlyList<string> LinkedExerciseSlugs);
+
+    private sealed record ExportedGrammarSection(
+        string Heading,
+        string Explanation,
+        IReadOnlyList<ExportedGrammarSectionTranslation> Translations,
+        int SortOrder);
+
+    private sealed record ExportedGrammarSectionTranslation(string Language, string Heading, string Text);
+
+    private sealed record ExportedGrammarExample(
+        string GermanText,
+        string? Note,
+        IReadOnlyList<ExportedMeaning> Translations,
+        int SortOrder);
+
+    private sealed record ExportedGrammarTextItem(
+        string Text,
+        IReadOnlyList<ExportedMeaning> Translations,
+        int SortOrder);
+
+    private sealed record ExportedGrammarCommonMistake(
+        string WrongText,
+        string CorrectedText,
+        string Explanation,
+        IReadOnlyList<ExportedMeaning> Translations,
+        int SortOrder);
+
+    private sealed record ExportedExpressionEntry(
+        string Slug,
+        string ExpressionText,
+        string? LiteralMeaningText,
+        string ActualMeaningText,
+        string? UsageExplanation,
+        string CefrLevel,
+        string ExpressionType,
+        string Register,
+        string Category,
+        string? Context,
+        string? Region,
+        bool IsRisky,
+        IReadOnlyList<string> Topics,
+        bool IsPublished,
+        int SortOrder,
+        IReadOnlyList<ExportedExpressionMeaning> Meanings,
+        IReadOnlyList<ExportedExpressionExample> Examples,
+        IReadOnlyList<ExportedExpressionWarning> Warnings,
+        IReadOnlyList<ExportedLinkedWord> LinkedWords,
+        IReadOnlyList<string> RelatedExpressionSlugs,
+        IReadOnlyList<string> LinkedExerciseSlugs);
+
+    private sealed record ExportedExpressionMeaning(
+        string Language,
+        string Text,
+        string ActualMeaningText,
+        string? LiteralMeaningText,
+        string? UsageExplanation);
+
+    private sealed record ExportedExpressionExample(
+        string GermanText,
+        string? Note,
+        IReadOnlyList<ExportedMeaning> Translations,
+        int SortOrder);
+
+    private sealed record ExportedExpressionWarning(
+        string WarningType,
+        string Text,
+        IReadOnlyList<ExportedMeaning> Translations);
+
+    private sealed record ExportedLinkedWord(string Lemma, string? WordSlug, int SortOrder);
+
+    private sealed record ExportedExercise(
+        string Slug,
+        string Title,
+        string Instruction,
+        string CefrLevel,
+        string ExerciseType,
+        string TargetSkill,
+        string OwnerType,
+        string? OwnerSlug,
+        JsonElement Prompt,
+        JsonElement AnswerKey,
+        string CorrectExplanation,
+        string IncorrectExplanation,
+        string? Hint,
+        string? CommonMistakeNote,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedExerciseSet(
+        string Slug,
+        string Title,
+        string Description,
+        string CefrLevel,
+        string OwnerType,
+        string? OwnerSlug,
+        IReadOnlyList<string> ExerciseSlugs,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedCoursePath(
+        string Slug,
+        string Title,
+        string Description,
+        string? CefrLevel,
+        string CefrRange,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedCourseModule(
+        string Slug,
+        string CoursePathSlug,
+        string Title,
+        string Description,
+        int ModuleNumber,
+        string CefrLevel,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedCourseLesson(
+        string Slug,
+        string CoursePathSlug,
+        string ModuleSlug,
+        int LessonNumber,
+        string Title,
+        string ShortDescription,
+        string Narrative,
+        string CefrLevel,
+        int EstimatedMinutes,
+        IReadOnlyList<string> LearningGoals,
+        IReadOnlyList<string> PrerequisiteLessonSlugs,
+        string? NextLessonSlug,
+        IReadOnlyList<string> LinkedGrammarTopicSlugs,
+        IReadOnlyList<string> LinkedWordSlugs,
+        IReadOnlyList<string> LinkedExpressionSlugs,
+        IReadOnlyList<string> LinkedDialogueSlugs,
+        IReadOnlyList<string> LinkedTalkTopicSlugs,
+        IReadOnlyList<string> LinkedExerciseSetSlugs,
+        IReadOnlyList<string> LinkedExamPrepSlugs,
+        string? ReviewSummary,
+        string? HomeworkTask,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedWritingTemplate(
+        string Slug,
+        string Title,
+        string ShortDescription,
+        string CefrLevel,
+        string Category,
+        string Situation,
+        string Register,
+        string TemplateText,
+        string Explanation,
+        IReadOnlyList<string> ReplaceableVariables,
+        string SampleFilledVersion,
+        IReadOnlyList<string> LinkedGrammarTopicSlugs,
+        IReadOnlyList<string> LinkedWordSlugs,
+        IReadOnlyList<string> LinkedExpressionSlugs,
+        IReadOnlyList<string> LinkedExerciseSlugs,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedCulturalNote(
+        string Slug,
+        string Title,
+        string ShortDescription,
+        string CefrLevel,
+        string Category,
+        string Context,
+        IReadOnlyList<string> Sections,
+        IReadOnlyList<ExportedCulturalNoteExample> Examples,
+        IReadOnlyList<string> DoNotes,
+        IReadOnlyList<string>? Dos,
+        IReadOnlyList<string> DontNotes,
+        IReadOnlyList<string>? Donts,
+        string? SensitivityWarning,
+        IReadOnlyList<string> LinkedDialogueSlugs,
+        IReadOnlyList<string> LinkedExpressionSlugs,
+        IReadOnlyList<string> LinkedWritingTemplateSlugs,
+        IReadOnlyList<string> LinkedTalkTopicSlugs,
+        IReadOnlyList<string> LinkedCourseLessonSlugs,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedCulturalNoteExample(string? GermanText, string? Explanation);
+
+    private sealed record ExportedExamProfile(
+        string Key,
+        string DisplayName,
+        string CefrRange,
+        string Description,
+        bool IsPublished,
+        int SortOrder);
+
+    private sealed record ExportedExamPrepUnit(
+        string Slug,
+        string ExamProfileKey,
+        string Title,
+        string ShortDescription,
+        string CefrLevel,
+        string ExamSection,
+        string? Section,
+        string TaskType,
+        string SkillFocus,
+        string Explanation,
+        IReadOnlyList<string> StrategyNotes,
+        IReadOnlyList<string> Checklist,
+        IReadOnlyList<string> LinkedDialogueSlugs,
+        IReadOnlyList<string> LinkedTalkTopicSlugs,
+        IReadOnlyList<string> LinkedGrammarTopicSlugs,
+        IReadOnlyList<string> LinkedExpressionSlugs,
+        IReadOnlyList<string> LinkedWritingTemplateSlugs,
+        IReadOnlyList<string> LinkedExerciseSlugs,
+        IReadOnlyList<string> LinkedCourseLessonSlugs,
+        bool IsPublished,
         int SortOrder);
 }

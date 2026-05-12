@@ -15,6 +15,8 @@ public static class WebProductAnalyticsEvents
     public const string DialogueViewed = "dialogue.viewed";
     public const string DialogueCompleted = "dialogue.completed";
     public const string TalkTopicViewed = "talk-topic.viewed";
+    public const string GrammarTopicViewed = "grammar-topic.viewed";
+    public const string ExpressionViewed = "expression.viewed";
     public const string RoleplayViewed = "roleplay.viewed";
     public const string ConversationStarterViewed = "conversation-starter.viewed";
     public const string FavoriteSaved = "favorite.saved";

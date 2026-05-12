@@ -1,0 +1,48 @@
+@model DarwinLingua.Web.Models.AdminWritingTemplatesPageViewModel
+@{
+    ViewData["Title"] = T["Writing Templates"];
+}
+
+<section class="admin-panel stack-md">
+    <div class="admin-section-heading">
+        <div>
+            <span class="eyebrow">@T["Content"]</span>
+            <h1>@T["Writing Templates"]</h1>
+        </div>
+        <a class="button button--secondary button--compact" asp-area="" asp-controller="WritingTemplates" asp-action="Index">@T["Open learner view"]</a>
+    </div>
+
+    @if (Model.Templates.Count == 0)
+    {
+        <p>@T["No writing templates have been imported yet."]</p>
+    }
+    else
+    {
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>@T["Title"]</th>
+                        <th>@T["CEFR level"]</th>
+                        <th>@T["Category"]</th>
+                        <th>@T["Register"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var template in Model.Templates)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="" asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@template.Slug">@template.Title</a>
+                                <small>@template.Slug</small>
+                            </td>
+                            <td>@template.CefrLevel</td>
+                            <td>@T[template.Category]</td>
+                            <td>@T[template.Register == "workplace" ? "Workplace" : template.Register]</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

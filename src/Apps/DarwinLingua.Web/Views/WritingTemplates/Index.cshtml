@@ -1,0 +1,55 @@
+@model DarwinLingua.Web.Models.WritingTemplateIndexPageViewModel
+@{
+    ViewData["Title"] = T["Writing Templates"];
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Resources"]</span>
+    <h1 class="headline-md">@T["Writing Templates"]</h1>
+    <p class="body-lg">@T["Practical German message and exam-writing templates with variables, examples, and linked learning content."]</p>
+    <form class="search-form" method="get" asp-controller="WritingTemplates" asp-action="Index">
+        <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search writing templates"]" aria-label="@T["Search writing templates"]" />
+        <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
+            <option value="">@T["All levels"]</option>
+            @foreach (string level in Model.CefrLevels)
+            {
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+            }
+        </select>
+        <select class="search-input" name="category" aria-label="@T["Category"]">
+            <option value="">@T["All categories"]</option>
+            @foreach (string category in Model.Categories)
+            {
+                <option value="@category" selected="@(string.Equals(Model.SelectedCategory, category, StringComparison.OrdinalIgnoreCase))">@T[category]</option>
+            }
+        </select>
+        <select class="search-input" name="register" aria-label="@T["Register"]">
+            <option value="">@T["All registers"]</option>
+            @foreach (string register in Model.Registers)
+            {
+                <option value="@register" selected="@(string.Equals(Model.SelectedRegister, register, StringComparison.OrdinalIgnoreCase))">@T[register == "workplace" ? "Workplace" : register]</option>
+            }
+        </select>
+        <button type="submit" class="button button--secondary">@T["Filter"]</button>
+    </form>
+</section>
+
+@if (Model.Templates.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Writing templates are being prepared"].Value, T["Dynamic writing templates will appear here after the first validated template package is imported."].Value)' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var template in Model.Templates)
+        {
+            <article class="panel stack-md">
+                <span class="eyebrow">@template.CefrLevel · @T[template.Category] · @T[template.Register == "workplace" ? "Workplace" : template.Register]</span>
+                <h2 class="headline-sm"><a asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@template.Slug">@template.Title</a></h2>
+                <p>@template.ShortDescription</p>
+                <p>@template.Situation</p>
+                <a class="button button--secondary" asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@template.Slug">@T["Open writing template"]</a>
+            </article>
+        }
+    </section>
+}

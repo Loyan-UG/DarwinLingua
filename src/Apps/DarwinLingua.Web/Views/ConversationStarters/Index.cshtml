@@ -15,7 +15,7 @@
             <span>@T["CEFR"]</span>
             <select name="cefrLevel">
                 <option value="">@T["All"]</option>
-                @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
+                @foreach (string level in LearningPortalFilterConventions.CefrLevels)
                 {
                     <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
                 }

@@ -35,6 +35,8 @@ public sealed class ReportsController(
             BuildModerationMetrics(report.Moderation),
             BuildOperationsMetrics(report.Operations),
             BuildEmailMetrics(emailSummary),
+            BuildLearningPortalQualityMetrics(report.LearningPortal),
+            report.LearningPortal,
             analyticsService.GetSummary()
                 .OrderByDescending(item => item.Count)
                 .ThenBy(item => item.EventName, StringComparer.Ordinal)
@@ -50,6 +52,16 @@ public sealed class ReportsController(
             new("Dialogues", catalog.DialogueLessonCount.ToString(), "Dialogue lessons available for guided practice."),
             new("Starter packs", catalog.ConversationStarterPackCount.ToString(), "Conversation starter packs available to learners."),
             new("Preparation packs", catalog.EventPreparationPackCount.ToString(), "Event preparation packs linked to dialogues and events."),
+        ];
+
+    private static IReadOnlyList<AdminSystemReportMetricViewModel> BuildLearningPortalQualityMetrics(AdminLearningPortalSystemReportResponse learningPortal) =>
+        [
+            new("Unresolved linked words", learningPortal.UnresolvedLinkedWordCount.ToString(), "Linked word references that do not resolve to a known catalog word key."),
+            new("Unresolved content links", learningPortal.UnresolvedLinkedContentReferenceCount.ToString(), "Cross-content slug references that do not resolve to implemented learning content."),
+            new("Missing translations", learningPortal.MissingTranslationCount.ToString(), "Localized child records without learner-language translation rows."),
+            new("Unpublished drafts", learningPortal.UnpublishedDraftCount.ToString(), "Learning Portal content rows not marked Active."),
+            new("Grammar without exercises", learningPortal.GrammarTopicsMissingExercises.ToString(), "Grammar topics without linked exercises."),
+            new("Lessons without exercise sets", learningPortal.CourseLessonsMissingExerciseSets.ToString(), "Course lessons without linked exercise sets."),
         ];
 
     private static IReadOnlyList<AdminSystemReportMetricViewModel> BuildSocialMetrics(AdminSocialSystemReportResponse social) =>

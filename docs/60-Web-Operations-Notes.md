@@ -71,6 +71,25 @@ This telemetry should stay proportional and privacy-aware. Avoid collecting unne
 
 ---
 
+## Learning Portal Operations
+
+Admin Reports includes a Learning Portal subsection for Web-first Phase 7 operations.
+
+Operators should review it after imports, before Web sign-off, and before any bulk content generation. The report covers:
+
+- content counts by type and CEFR
+- grammar, expression, exercise, course, exam prep, writing template, and cultural note coverage
+- unresolved linked words and cross-content references
+- missing translation rows
+- unpublished drafts
+- grammar topics without linked exercises
+- course lessons without linked exercise sets
+- seed coverage by CEFR, course, and module
+
+The report is for content quality and operational readiness only. It must not expose private learner progress or account data.
+
+---
+
 ## Transactional Email Operations
 
 Operational rules:

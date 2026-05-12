@@ -229,3 +229,42 @@ This phase adds dialogue-based learning, conversation preparation, event discove
 
 - `63-Market-Product-And-Organizer-Strategy.md`
 - `04-Implementation-Backlog.md` (`Phase 6 Backlog`)
+
+---
+
+## Phase 7 - Complete Learning Portal
+
+### Goals
+
+- turn Darwin Lingua into a complete German-learning portal
+- expand beyond vocabulary, dialogues, Talk Topics, and events into a structured learning system
+- implement Web-first and move mobile parity after Web sign-off
+- avoid hardcoded educational pages
+- keep all educational content dynamic and importable
+
+### Features
+
+- Grammar Guide
+- Everyday Expressions
+- Exercise Engine
+- Course Lessons / Learning Paths
+- Exam Preparation
+- Writing Templates
+- Cultural Notes
+- Unified Learning Search
+- Progress and Personalization
+- Admin and Operations reports for content quality
+- Mobile parity after Web implementation is stable
+
+### Success Criteria
+
+- grammar, expressions, lessons, exercises, exam prep, writing templates, and cultural notes are content-driven
+- Web pages and Web API contracts exist for implemented modules
+- content can be imported, validated, searched, filtered, linked, and tested
+- modules link to existing Words, Dialogues, Talk Topics, and Exercises instead of duplicating content
+- mobile parity is explicitly tracked and not silently ignored
+- bulk content generation starts only after contracts, validation, and rendering are stable
+
+### Reference Document
+
+- `76-Learning-Portal-Roadmap-And-Backlog.md`

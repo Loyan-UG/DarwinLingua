@@ -71,6 +71,98 @@ internal sealed class ContentImportService : IContentImportService
         "follow-up-question", "self-correction", "vocabulary-check"
     };
 
+    private static readonly HashSet<string> GrammarCategories = new(StringComparer.Ordinal)
+    {
+        "articles", "nouns", "gender", "plural", "pronouns", "verbs", "modal-verbs",
+        "tenses", "separable-verbs", "reflexive-verbs", "cases", "nominative",
+        "accusative", "dative", "genitive", "adjective-declension", "prepositions",
+        "word-order", "subordinate-clauses", "connectors", "negation", "questions",
+        "imperative", "passive", "konjunktiv", "reported-speech", "punctuation"
+    };
+
+    private static readonly HashSet<string> ExpressionTypes = new(StringComparer.Ordinal)
+    {
+        "idiom", "colloquial-phrase", "proverb", "fixed-expression", "slang",
+        "cultural-phrase", "false-friend", "regional-expression", "polite-formula",
+        "warning-phrase"
+    };
+
+    private static readonly HashSet<string> ExpressionRegisters = new(StringComparer.Ordinal)
+    {
+        "formal", "informal", "neutral", "colloquial", "slang", "rude", "polite",
+        "workplace-safe", "friends-only", "regional"
+    };
+
+    private static readonly HashSet<string> RiskyExpressionRegisters = new(StringComparer.Ordinal)
+    {
+        "slang", "rude", "friends-only"
+    };
+
+    private static readonly HashSet<string> RiskyExpressionTypes = new(StringComparer.Ordinal)
+    {
+        "slang", "warning-phrase"
+    };
+
+    private static readonly HashSet<string> ExerciseTypes = new(StringComparer.Ordinal)
+    {
+        "multiple-choice", "fill-in-the-blank", "matching", "sentence-ordering",
+        "error-correction", "article-selection", "case-selection", "conjugation",
+        "translation-controlled", "dialogue-completion", "vocabulary-choice", "grammar-choice"
+    };
+
+    private static readonly HashSet<string> ExerciseTargetSkills = new(StringComparer.Ordinal)
+    {
+        "grammar", "vocabulary", "reading", "listening", "speaking", "writing",
+        "pronunciation", "exam-preparation"
+    };
+
+    private static readonly HashSet<string> ExerciseOwnerTypes = new(StringComparer.Ordinal)
+    {
+        "word", "grammar-topic", "expression", "dialogue", "talk-topic",
+        "course-lesson", "exam-prep-unit"
+    };
+
+    private static readonly HashSet<string> WritingTemplateCategories = new(StringComparer.Ordinal)
+    {
+        "email-to-school", "email-to-kindergarten", "message-to-landlord",
+        "doctor-appointment-request", "appointment-reschedule", "sick-note-to-employer",
+        "complaint", "application-email", "cancellation", "insurance-message",
+        "government-office-message", "exam-email", "exam-opinion-text"
+    };
+
+    private static readonly HashSet<string> WritingTemplateRegisters = new(StringComparer.Ordinal)
+    {
+        "formal", "informal", "neutral", "official", "workplace", "exam"
+    };
+
+    private static readonly HashSet<string> CulturalNoteCategories = new(StringComparer.Ordinal)
+    {
+        "du-vs-sie", "politeness", "directness", "small-talk", "workplace-culture",
+        "office-communication", "school-kindergarten", "doctor-visit", "appointments",
+        "punctuality", "complaints", "bureaucracy", "conversation-cafe-etiquette"
+    };
+
+    private static readonly HashSet<string> ExamPrepProfiles = new(StringComparer.Ordinal)
+    {
+        "goethe-a1", "goethe-a2", "goethe-b1", "goethe-b2",
+        "telc-a1", "telc-a2", "telc-b1", "telc-b2",
+        "dtz-a2-b1", "berufssprache-b1", "berufssprache-b2",
+        "c1-hochschule", "testdaf"
+    };
+
+    private static readonly HashSet<string> ExamPrepSections = new(StringComparer.Ordinal)
+    {
+        "speaking", "writing", "reading", "listening", "grammar-vocabulary",
+        "overview", "strategy", "mock-task"
+    };
+
+    private static readonly HashSet<string> ExamPrepTaskTypes = new(StringComparer.Ordinal)
+    {
+        "overview", "strategy", "roleplay", "discussion", "presentation", "email",
+        "opinion-text", "form-filling", "reading-task", "listening-task",
+        "grammar-vocabulary", "mock-task", "scoring-checklist"
+    };
+
     private readonly IContentImportFileReader _contentImportFileReader;
     private readonly IContentImportParser _contentImportParser;
     private readonly IContentImportRepository _contentImportRepository;
@@ -161,6 +253,13 @@ internal sealed class ContentImportService : IContentImportService
 
         ValidateDialogues(parsedPackage.Dialogues, topicsByKey, meaningLanguages, issues);
         ValidateTalkTopics(parsedPackage.TalkTopics, topicsByKey, meaningLanguages, issues);
+        ValidateGrammarTopics(parsedPackage.GrammarTopics, topicsByKey, meaningLanguages, issues);
+        ValidateExpressionEntries(parsedPackage.ExpressionEntries, topicsByKey, meaningLanguages, issues);
+        ValidateExercises(parsedPackage.Exercises, parsedPackage.ExerciseSets, issues);
+        ValidateCourses(parsedPackage.CoursePaths, parsedPackage.CourseModules, parsedPackage.CourseLessons, issues);
+        ValidateWritingTemplates(parsedPackage.WritingTemplates, issues);
+        ValidateCulturalNotes(parsedPackage.CulturalNotes, issues);
+        ValidateExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, issues);
         ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
         ValidateEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, issues);
         Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = ValidateLabels(
@@ -190,6 +289,17 @@ internal sealed class ContentImportService : IContentImportService
         List<WordCollection> importedCollections = [];
         List<DialogueLesson> importedDialogues = [];
         List<TalkTopic> importedTalkTopics = [];
+        List<GrammarTopic> importedGrammarTopics = [];
+        List<ExpressionEntry> importedExpressions = [];
+        List<Exercise> importedExercises = [];
+        List<ExerciseSet> importedExerciseSets = [];
+        List<CoursePath> importedCoursePaths = [];
+        List<CourseModule> importedCourseModules = [];
+        List<CourseLesson> importedCourseLessons = [];
+        List<WritingTemplate> importedWritingTemplates = [];
+        List<CulturalNote> importedCulturalNotes = [];
+        List<ExamProfile> importedExamProfiles = [];
+        List<ExamPrepUnit> importedExamPrepUnits = [];
         List<ConversationStarterPack> importedConversationStarterPacks = [];
         List<EventPreparationPack> importedEventPreparationPacks = [];
 
@@ -220,13 +330,21 @@ internal sealed class ContentImportService : IContentImportService
 
         ProcessDialogues(parsedPackage.Dialogues, topicsByKey, importedDialogues);
         ProcessTalkTopics(parsedPackage.TalkTopics, topicsByKey, importedTalkTopics);
+        ProcessGrammarTopics(parsedPackage.GrammarTopics, topicsByKey, importedGrammarTopics);
+        ProcessExpressionEntries(parsedPackage.ExpressionEntries, topicsByKey, importedExpressions);
+        ProcessExercises(parsedPackage.Exercises, importedExercises);
+        ProcessExerciseSets(parsedPackage.ExerciseSets, importedExerciseSets);
+        ProcessCourses(parsedPackage.CoursePaths, parsedPackage.CourseModules, parsedPackage.CourseLessons, importedCoursePaths, importedCourseModules, importedCourseLessons);
+        ProcessWritingTemplates(parsedPackage.WritingTemplates, importedWritingTemplates);
+        ProcessCulturalNotes(parsedPackage.CulturalNotes, importedCulturalNotes);
+        ProcessExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, importedExamProfiles, importedExamPrepUnits);
         ProcessConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, importedConversationStarterPacks);
         ProcessEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, importedEventPreparationPacks);
 
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedDialogues, importedTalkTopics, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
+            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedDialogues, importedTalkTopics, importedGrammarTopics, importedExpressions, importedExercises, importedExerciseSets, importedCoursePaths, importedCourseModules, importedCourseLessons, importedWritingTemplates, importedCulturalNotes, importedExamProfiles, importedExamPrepUnits, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -597,6 +715,268 @@ internal sealed class ContentImportService : IContentImportService
         }
     }
 
+    private static void ProcessGrammarTopics(
+        IReadOnlyList<ParsedGrammarTopicModel> grammarTopics,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<GrammarTopic> importedGrammarTopics)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedGrammarTopicModel parsedTopic in grammarTopics)
+        {
+            GrammarTopic topic = new(
+                Guid.NewGuid(),
+                NormalizeText(parsedTopic.Slug),
+                NormalizeText(parsedTopic.Title),
+                NormalizeText(parsedTopic.ShortDescription),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedTopic.CefrLevel), true),
+                NormalizeText(parsedTopic.GrammarCategory),
+                parsedTopic.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedTopic.SortOrder < 0 ? 0 : parsedTopic.SortOrder,
+                timestampUtc);
+
+            string[] topicKeys = parsedTopic.Topics
+                .Select(item => NormalizeText(item).ToLowerInvariant())
+                .Where(item => !string.IsNullOrWhiteSpace(item))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
+            {
+                topic.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            for (int sectionIndex = 0; sectionIndex < parsedTopic.Sections.Count; sectionIndex++)
+            {
+                ParsedGrammarSectionModel parsedSection = parsedTopic.Sections[sectionIndex];
+                GrammarSection section = topic.AddSection(
+                    Guid.NewGuid(),
+                    parsedSection.SortOrder <= 0 ? (sectionIndex + 1) * 10 : parsedSection.SortOrder,
+                    NormalizeText(parsedSection.Heading),
+                    NormalizeText(parsedSection.Explanation),
+                    timestampUtc);
+
+                foreach (ParsedGrammarSectionTranslationModel translation in parsedSection.Translations)
+                {
+                    section.AddTranslation(
+                        Guid.NewGuid(),
+                        LanguageCode.From(NormalizeText(translation.Language).ToLowerInvariant()),
+                        NormalizeText(translation.Heading),
+                        NormalizeText(translation.Text),
+                        timestampUtc);
+                }
+            }
+
+            for (int exampleIndex = 0; exampleIndex < parsedTopic.Examples.Count; exampleIndex++)
+            {
+                ParsedGrammarExampleModel parsedExample = parsedTopic.Examples[exampleIndex];
+                GrammarExample example = topic.AddExample(
+                    Guid.NewGuid(),
+                    parsedExample.SortOrder <= 0 ? (exampleIndex + 1) * 10 : parsedExample.SortOrder,
+                    NormalizeText(parsedExample.GermanText),
+                    NormalizeOptionalText(parsedExample.Note),
+                    timestampUtc);
+                AddGrammarTranslations(example.AddTranslation, parsedExample.Translations, timestampUtc);
+            }
+
+            for (int ruleIndex = 0; ruleIndex < parsedTopic.RuleSummaries.Count; ruleIndex++)
+            {
+                ParsedGrammarTextItemModel parsedRule = parsedTopic.RuleSummaries[ruleIndex];
+                GrammarRuleSummary rule = topic.AddRuleSummary(
+                    Guid.NewGuid(),
+                    parsedRule.SortOrder <= 0 ? (ruleIndex + 1) * 10 : parsedRule.SortOrder,
+                    NormalizeText(parsedRule.Text),
+                    timestampUtc);
+                AddGrammarTranslations(rule.AddTranslation, parsedRule.Translations, timestampUtc);
+            }
+
+            for (int mistakeIndex = 0; mistakeIndex < parsedTopic.CommonMistakes.Count; mistakeIndex++)
+            {
+                ParsedGrammarCommonMistakeModel parsedMistake = parsedTopic.CommonMistakes[mistakeIndex];
+                GrammarCommonMistake mistake = topic.AddCommonMistake(
+                    Guid.NewGuid(),
+                    parsedMistake.SortOrder <= 0 ? (mistakeIndex + 1) * 10 : parsedMistake.SortOrder,
+                    NormalizeText(parsedMistake.WrongText),
+                    NormalizeText(parsedMistake.CorrectedText),
+                    NormalizeText(parsedMistake.Explanation),
+                    timestampUtc);
+                AddGrammarTranslations(mistake.AddTranslation, parsedMistake.Translations, timestampUtc);
+            }
+
+            for (int noteIndex = 0; noteIndex < parsedTopic.ExceptionNotes.Count; noteIndex++)
+            {
+                ParsedGrammarTextItemModel parsedNote = parsedTopic.ExceptionNotes[noteIndex];
+                GrammarExceptionNote note = topic.AddExceptionNote(
+                    Guid.NewGuid(),
+                    parsedNote.SortOrder <= 0 ? (noteIndex + 1) * 10 : parsedNote.SortOrder,
+                    NormalizeText(parsedNote.Text),
+                    timestampUtc);
+                AddGrammarTranslations(note.AddTranslation, parsedNote.Translations, timestampUtc);
+            }
+
+            AddGrammarSlugLinks(parsedTopic.PrerequisiteSlugs, topic.AddPrerequisite, timestampUtc);
+            AddGrammarSlugLinks(parsedTopic.RelatedTopicSlugs, topic.AddRelatedTopic, timestampUtc);
+            AddGrammarSlugLinks(parsedTopic.LinkedDialogueSlugs, topic.AddLinkedDialogue, timestampUtc);
+            AddGrammarSlugLinks(parsedTopic.LinkedTalkTopicSlugs, topic.AddLinkedTalkTopic, timestampUtc);
+            AddGrammarSlugLinks(parsedTopic.LinkedExerciseSlugs, topic.AddLinkedExercise, timestampUtc);
+
+            for (int wordIndex = 0; wordIndex < parsedTopic.LinkedWords.Count; wordIndex++)
+            {
+                ParsedGrammarLinkedWordModel word = parsedTopic.LinkedWords[wordIndex];
+                topic.AddLinkedWord(
+                    Guid.NewGuid(),
+                    NormalizeText(word.Lemma),
+                    NormalizeOptionalText(word.WordSlug),
+                    word.SortOrder <= 0 ? (wordIndex + 1) * 10 : word.SortOrder,
+                    timestampUtc);
+            }
+
+            importedGrammarTopics.Add(topic);
+        }
+    }
+
+    private static void AddGrammarSlugLinks(
+        IReadOnlyList<string> slugs,
+        Action<Guid, string, int, DateTime> addLink,
+        DateTime timestampUtc)
+    {
+        for (int index = 0; index < slugs.Count; index++)
+        {
+            addLink(Guid.NewGuid(), NormalizeText(slugs[index]), (index + 1) * 10, timestampUtc);
+        }
+    }
+
+    private static void AddGrammarTranslations(
+        Action<Guid, LanguageCode, string, DateTime> addTranslation,
+        IReadOnlyList<ParsedContentMeaningModel> translations,
+        DateTime timestampUtc)
+    {
+        foreach (ParsedContentMeaningModel translation in translations)
+        {
+            addTranslation(
+                Guid.NewGuid(),
+                LanguageCode.From(NormalizeText(translation.Language).ToLowerInvariant()),
+                NormalizeText(translation.Text),
+                timestampUtc);
+        }
+    }
+
+    private static void ProcessExpressionEntries(
+        IReadOnlyList<ParsedExpressionEntryModel> expressions,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<ExpressionEntry> importedExpressions)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedExpressionEntryModel parsedExpression in expressions)
+        {
+            ExpressionEntry expression = new(
+                Guid.NewGuid(),
+                NormalizeText(parsedExpression.Slug),
+                NormalizeText(parsedExpression.ExpressionText),
+                NormalizeOptionalText(parsedExpression.LiteralMeaningText),
+                NormalizeText(parsedExpression.ActualMeaningText),
+                NormalizeOptionalText(parsedExpression.UsageExplanation),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedExpression.CefrLevel), true),
+                NormalizeText(parsedExpression.ExpressionType).ToLowerInvariant(),
+                NormalizeText(parsedExpression.Register).ToLowerInvariant(),
+                NormalizeText(parsedExpression.Category).ToLowerInvariant(),
+                NormalizeOptionalText(parsedExpression.Region)?.ToLowerInvariant(),
+                parsedExpression.IsRisky,
+                parsedExpression.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedExpression.SortOrder < 0 ? 0 : parsedExpression.SortOrder,
+                timestampUtc);
+
+            string[] topicKeys = parsedExpression.Topics
+                .Select(item => NormalizeText(item).ToLowerInvariant())
+                .Where(item => !string.IsNullOrWhiteSpace(item))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
+            {
+                expression.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            foreach (ParsedExpressionMeaningModel parsedMeaning in parsedExpression.Meanings)
+            {
+                expression.AddMeaning(
+                    Guid.NewGuid(),
+                    LanguageCode.From(NormalizeText(parsedMeaning.Language).ToLowerInvariant()),
+                    NormalizeText(parsedMeaning.ActualMeaningText),
+                    NormalizeOptionalText(parsedMeaning.LiteralMeaningText),
+                    NormalizeOptionalText(parsedMeaning.UsageExplanation),
+                    timestampUtc);
+            }
+
+            for (int exampleIndex = 0; exampleIndex < parsedExpression.Examples.Count; exampleIndex++)
+            {
+                ParsedExpressionExampleModel parsedExample = parsedExpression.Examples[exampleIndex];
+                ExpressionExample example = expression.AddExample(
+                    Guid.NewGuid(),
+                    parsedExample.SortOrder <= 0 ? (exampleIndex + 1) * 10 : parsedExample.SortOrder,
+                    NormalizeText(parsedExample.GermanText),
+                    NormalizeOptionalText(parsedExample.Note),
+                    timestampUtc);
+
+                AddExpressionTranslations(example.AddTranslation, parsedExample.Translations, timestampUtc);
+            }
+
+            foreach (ParsedExpressionWarningModel parsedWarning in parsedExpression.Warnings)
+            {
+                ExpressionWarning warning = expression.AddWarning(
+                    Guid.NewGuid(),
+                    NormalizeText(parsedWarning.WarningType).ToLowerInvariant(),
+                    NormalizeText(parsedWarning.Text),
+                    timestampUtc);
+
+                AddExpressionTranslations(warning.AddTranslation, parsedWarning.Translations, timestampUtc);
+            }
+
+            for (int wordIndex = 0; wordIndex < parsedExpression.LinkedWords.Count; wordIndex++)
+            {
+                ParsedExpressionLinkedWordModel word = parsedExpression.LinkedWords[wordIndex];
+                expression.AddLinkedWord(
+                    Guid.NewGuid(),
+                    NormalizeText(word.Lemma),
+                    NormalizeOptionalText(word.WordSlug)?.ToLowerInvariant(),
+                    word.SortOrder <= 0 ? (wordIndex + 1) * 10 : word.SortOrder,
+                    timestampUtc);
+            }
+
+            AddExpressionSlugLinks(parsedExpression.RelatedExpressionSlugs, expression.AddRelatedExpression, timestampUtc);
+            AddExpressionSlugLinks(parsedExpression.LinkedExerciseSlugs, expression.AddLinkedExercise, timestampUtc);
+
+            importedExpressions.Add(expression);
+        }
+    }
+
+    private static void AddExpressionSlugLinks(
+        IReadOnlyList<string> slugs,
+        Action<Guid, string, int, DateTime> addLink,
+        DateTime timestampUtc)
+    {
+        for (int index = 0; index < slugs.Count; index++)
+        {
+            addLink(Guid.NewGuid(), NormalizeText(slugs[index]).ToLowerInvariant(), (index + 1) * 10, timestampUtc);
+        }
+    }
+
+    private static void AddExpressionTranslations(
+        Action<Guid, LanguageCode, string, DateTime> addTranslation,
+        IReadOnlyList<ParsedContentMeaningModel> translations,
+        DateTime timestampUtc)
+    {
+        foreach (ParsedContentMeaningModel translation in translations)
+        {
+            addTranslation(
+                Guid.NewGuid(),
+                LanguageCode.From(NormalizeText(translation.Language).ToLowerInvariant()),
+                NormalizeText(translation.Text),
+                timestampUtc);
+        }
+    }
+
     private static void ProcessEventPreparationPacks(
         IReadOnlyList<ParsedEventPreparationPackModel> eventPreparationPacks,
         IReadOnlyDictionary<string, Topic> topicsByKey,
@@ -692,6 +1072,240 @@ internal sealed class ContentImportService : IContentImportService
                 promptIndex + 1,
                 NormalizeText(prompts[promptIndex]),
                 timestampUtc);
+        }
+    }
+
+    private static void ProcessExercises(IReadOnlyList<ParsedExerciseModel> exercises, ICollection<Exercise> importedExercises)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+        foreach (ParsedExerciseModel parsedExercise in exercises)
+        {
+            importedExercises.Add(new Exercise(
+                Guid.NewGuid(),
+                NormalizeText(parsedExercise.Slug),
+                NormalizeText(parsedExercise.Title),
+                NormalizeText(parsedExercise.Instruction),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedExercise.CefrLevel), true),
+                NormalizeText(parsedExercise.ExerciseType).ToLowerInvariant(),
+                NormalizeText(parsedExercise.TargetSkill).ToLowerInvariant(),
+                NormalizeText(parsedExercise.OwnerType).ToLowerInvariant(),
+                NormalizeOptionalText(parsedExercise.OwnerSlug)?.ToLowerInvariant(),
+                NormalizeText(parsedExercise.PromptJson),
+                NormalizeText(parsedExercise.AnswerKeyJson),
+                NormalizeText(parsedExercise.CorrectExplanation),
+                NormalizeText(parsedExercise.IncorrectExplanation),
+                NormalizeOptionalText(parsedExercise.Hint),
+                NormalizeOptionalText(parsedExercise.CommonMistakeNote),
+                parsedExercise.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedExercise.SortOrder,
+                timestampUtc));
+        }
+    }
+
+    private static void ProcessExerciseSets(IReadOnlyList<ParsedExerciseSetModel> exerciseSets, ICollection<ExerciseSet> importedExerciseSets)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+        foreach (ParsedExerciseSetModel parsedSet in exerciseSets)
+        {
+            ExerciseSet set = new(
+                Guid.NewGuid(),
+                NormalizeText(parsedSet.Slug),
+                NormalizeText(parsedSet.Title),
+                NormalizeText(parsedSet.Description),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedSet.CefrLevel), true),
+                NormalizeText(parsedSet.OwnerType).ToLowerInvariant(),
+                NormalizeOptionalText(parsedSet.OwnerSlug)?.ToLowerInvariant(),
+                parsedSet.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedSet.SortOrder,
+                timestampUtc);
+
+            for (int index = 0; index < parsedSet.ExerciseSlugs.Count; index++)
+            {
+                set.AddExercise(Guid.NewGuid(), NormalizeText(parsedSet.ExerciseSlugs[index]), (index + 1) * 10, timestampUtc);
+            }
+
+            importedExerciseSets.Add(set);
+        }
+    }
+
+    private static void ProcessCourses(
+        IReadOnlyList<ParsedCoursePathModel> coursePaths,
+        IReadOnlyList<ParsedCourseModuleModel> courseModules,
+        IReadOnlyList<ParsedCourseLessonModel> courseLessons,
+        ICollection<CoursePath> importedCoursePaths,
+        ICollection<CourseModule> importedCourseModules,
+        ICollection<CourseLesson> importedCourseLessons)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+        foreach (ParsedCoursePathModel parsedCourse in coursePaths)
+        {
+            CefrLevel? cefrLevel = Enum.TryParse(NormalizeText(parsedCourse.CefrLevel), true, out CefrLevel parsedCefr)
+                ? parsedCefr
+                : null;
+            importedCoursePaths.Add(new CoursePath(
+                Guid.NewGuid(),
+                NormalizeText(parsedCourse.Slug),
+                NormalizeText(parsedCourse.Title),
+                NormalizeText(parsedCourse.Description),
+                cefrLevel,
+                NormalizeOptionalText(parsedCourse.CefrRange),
+                parsedCourse.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedCourse.SortOrder,
+                timestampUtc));
+        }
+
+        foreach (ParsedCourseModuleModel parsedModule in courseModules)
+        {
+            importedCourseModules.Add(new CourseModule(
+                Guid.NewGuid(),
+                NormalizeText(parsedModule.CoursePathSlug),
+                NormalizeText(parsedModule.Slug),
+                NormalizeText(parsedModule.Title),
+                NormalizeText(parsedModule.Description),
+                parsedModule.ModuleNumber,
+                Enum.Parse<CefrLevel>(NormalizeText(parsedModule.CefrLevel), true),
+                parsedModule.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedModule.SortOrder,
+                timestampUtc));
+        }
+
+        foreach (ParsedCourseLessonModel parsedLesson in courseLessons)
+        {
+            importedCourseLessons.Add(new CourseLesson(
+                Guid.NewGuid(),
+                NormalizeText(parsedLesson.CoursePathSlug),
+                NormalizeText(parsedLesson.ModuleSlug),
+                NormalizeText(parsedLesson.Slug),
+                parsedLesson.LessonNumber,
+                NormalizeText(parsedLesson.Title),
+                NormalizeText(parsedLesson.ShortDescription),
+                NormalizeText(parsedLesson.Narrative),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedLesson.CefrLevel), true),
+                parsedLesson.EstimatedMinutes,
+                SerializeStringArray(parsedLesson.LearningGoals),
+                SerializeSlugArray(parsedLesson.PrerequisiteLessonSlugs),
+                NormalizeOptionalText(parsedLesson.NextLessonSlug)?.ToLowerInvariant(),
+                SerializeSlugArray(parsedLesson.LinkedGrammarTopicSlugs),
+                SerializeSlugArray(parsedLesson.LinkedWordSlugs),
+                SerializeSlugArray(parsedLesson.LinkedExpressionSlugs),
+                SerializeSlugArray(parsedLesson.LinkedDialogueSlugs),
+                SerializeSlugArray(parsedLesson.LinkedTalkTopicSlugs),
+                SerializeSlugArray(parsedLesson.LinkedExerciseSetSlugs),
+                SerializeSlugArray(parsedLesson.LinkedExamPrepSlugs),
+                NormalizeOptionalText(parsedLesson.ReviewSummary),
+                NormalizeOptionalText(parsedLesson.HomeworkTask),
+                parsedLesson.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedLesson.SortOrder,
+                timestampUtc));
+        }
+    }
+
+    private static void ProcessWritingTemplates(
+        IReadOnlyList<ParsedWritingTemplateModel> writingTemplates,
+        ICollection<WritingTemplate> importedWritingTemplates)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+        foreach (ParsedWritingTemplateModel parsedTemplate in writingTemplates)
+        {
+            importedWritingTemplates.Add(new WritingTemplate(
+                Guid.NewGuid(),
+                NormalizeText(parsedTemplate.Slug),
+                NormalizeText(parsedTemplate.Title),
+                NormalizeText(parsedTemplate.ShortDescription),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedTemplate.CefrLevel), true),
+                NormalizeText(parsedTemplate.Category).ToLowerInvariant(),
+                NormalizeText(parsedTemplate.Situation),
+                NormalizeText(parsedTemplate.Register).ToLowerInvariant(),
+                NormalizeText(parsedTemplate.TemplateText),
+                NormalizeText(parsedTemplate.Explanation),
+                SerializeStringArray(parsedTemplate.ReplaceableVariables),
+                NormalizeText(parsedTemplate.SampleFilledVersion),
+                SerializeSlugArray(parsedTemplate.LinkedGrammarTopicSlugs),
+                SerializeSlugArray(parsedTemplate.LinkedWordSlugs),
+                SerializeSlugArray(parsedTemplate.LinkedExpressionSlugs),
+                SerializeSlugArray(parsedTemplate.LinkedExerciseSlugs),
+                parsedTemplate.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedTemplate.SortOrder,
+                timestampUtc));
+        }
+    }
+
+    private static void ProcessCulturalNotes(
+        IReadOnlyList<ParsedCulturalNoteModel> culturalNotes,
+        ICollection<CulturalNote> importedCulturalNotes)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+        foreach (ParsedCulturalNoteModel parsedNote in culturalNotes)
+        {
+            importedCulturalNotes.Add(new CulturalNote(
+                Guid.NewGuid(),
+                NormalizeText(parsedNote.Slug),
+                NormalizeText(parsedNote.Title),
+                NormalizeText(parsedNote.ShortDescription),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedNote.CefrLevel), true),
+                NormalizeText(parsedNote.Category).ToLowerInvariant(),
+                NormalizeText(parsedNote.Context),
+                SerializeStringArray(parsedNote.Sections),
+                SerializeCulturalNoteExamples(parsedNote.Examples),
+                SerializeStringArray(parsedNote.DoNotes),
+                SerializeStringArray(parsedNote.DontNotes),
+                NormalizeOptionalText(parsedNote.SensitivityWarning),
+                SerializeSlugArray(parsedNote.LinkedDialogueSlugs),
+                SerializeSlugArray(parsedNote.LinkedExpressionSlugs),
+                SerializeSlugArray(parsedNote.LinkedWritingTemplateSlugs),
+                SerializeSlugArray(parsedNote.LinkedTalkTopicSlugs),
+                SerializeSlugArray(parsedNote.LinkedCourseLessonSlugs),
+                parsedNote.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedNote.SortOrder,
+                timestampUtc));
+        }
+    }
+
+    private static void ProcessExamPrep(
+        IReadOnlyList<ParsedExamProfileModel> examProfiles,
+        IReadOnlyList<ParsedExamPrepUnitModel> examPrepUnits,
+        ICollection<ExamProfile> importedExamProfiles,
+        ICollection<ExamPrepUnit> importedExamPrepUnits)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+        foreach (ParsedExamProfileModel parsedProfile in examProfiles)
+        {
+            importedExamProfiles.Add(new ExamProfile(
+                Guid.NewGuid(),
+                NormalizeText(parsedProfile.Key),
+                NormalizeText(parsedProfile.DisplayName),
+                NormalizeText(parsedProfile.CefrRange),
+                NormalizeText(parsedProfile.Description),
+                parsedProfile.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedProfile.SortOrder,
+                timestampUtc));
+        }
+
+        foreach (ParsedExamPrepUnitModel parsedUnit in examPrepUnits)
+        {
+            importedExamPrepUnits.Add(new ExamPrepUnit(
+                Guid.NewGuid(),
+                NormalizeText(parsedUnit.Slug),
+                NormalizeText(parsedUnit.ExamProfileKey),
+                NormalizeText(parsedUnit.Title),
+                NormalizeText(parsedUnit.ShortDescription),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedUnit.CefrLevel), true),
+                NormalizeText(parsedUnit.ExamSection).ToLowerInvariant(),
+                NormalizeText(parsedUnit.TaskType).ToLowerInvariant(),
+                NormalizeText(parsedUnit.SkillFocus).ToLowerInvariant(),
+                NormalizeText(parsedUnit.Explanation),
+                SerializeStringArray(parsedUnit.StrategyNotes),
+                SerializeStringArray(parsedUnit.Checklist),
+                SerializeSlugArray(parsedUnit.LinkedDialogueSlugs),
+                SerializeSlugArray(parsedUnit.LinkedTalkTopicSlugs),
+                SerializeSlugArray(parsedUnit.LinkedGrammarTopicSlugs),
+                SerializeSlugArray(parsedUnit.LinkedExpressionSlugs),
+                SerializeSlugArray(parsedUnit.LinkedWritingTemplateSlugs),
+                SerializeSlugArray(parsedUnit.LinkedExerciseSlugs),
+                SerializeSlugArray(parsedUnit.LinkedCourseLessonSlugs),
+                parsedUnit.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedUnit.SortOrder,
+                timestampUtc));
         }
     }
 
@@ -1934,6 +2548,17 @@ internal sealed class ContentImportService : IContentImportService
             parsedPackage.Collections.Count == 0 &&
             parsedPackage.Dialogues.Count == 0 &&
             parsedPackage.TalkTopics.Count == 0 &&
+            parsedPackage.GrammarTopics.Count == 0 &&
+            parsedPackage.ExpressionEntries.Count == 0 &&
+            parsedPackage.Exercises.Count == 0 &&
+            parsedPackage.ExerciseSets.Count == 0 &&
+            parsedPackage.CoursePaths.Count == 0 &&
+            parsedPackage.CourseModules.Count == 0 &&
+            parsedPackage.CourseLessons.Count == 0 &&
+            parsedPackage.WritingTemplates.Count == 0 &&
+            parsedPackage.CulturalNotes.Count == 0 &&
+            parsedPackage.ExamProfiles.Count == 0 &&
+            parsedPackage.ExamPrepUnits.Count == 0 &&
             parsedPackage.ConversationStarterPacks.Count == 0 &&
             parsedPackage.EventPreparationPacks.Count == 0)
         {
@@ -2288,6 +2913,853 @@ internal sealed class ContentImportService : IContentImportService
             }
         }
     }
+
+    private static void ValidateGrammarTopics(
+        IReadOnlyList<ParsedGrammarTopicModel> grammarTopics,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> slugs = [];
+
+        for (int index = 0; index < grammarTopics.Count; index++)
+        {
+            ParsedGrammarTopicModel topic = grammarTopics[index];
+            List<string> errors = [];
+            List<string> warnings = [];
+            string slug = NormalizeText(topic.Slug).ToLowerInvariant();
+
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add("Grammar topic slug is required and must use lowercase kebab-case.");
+            }
+            else if (!slugs.Add(slug))
+            {
+                errors.Add($"Duplicate grammar topic slug '{slug}' is not allowed inside one package.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(topic.Title)))
+            {
+                errors.Add("Grammar topic title is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(topic.ShortDescription)))
+            {
+                errors.Add("Grammar topic shortDescription is required.");
+            }
+
+            if (!Enum.TryParse(NormalizeText(topic.CefrLevel), true, out CefrLevel _))
+            {
+                errors.Add("Grammar topic CEFR level is invalid.");
+            }
+
+            string grammarCategory = NormalizeText(topic.GrammarCategory).ToLowerInvariant();
+            if (!GrammarCategories.Contains(grammarCategory))
+            {
+                errors.Add($"Grammar topic grammarCategory '{grammarCategory}' is not supported.");
+            }
+
+            string[] topicKeys = topic.Topics
+                .Select(item => NormalizeText(item).ToLowerInvariant())
+                .Where(item => !string.IsNullOrWhiteSpace(item))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            foreach (string topicKey in topicKeys)
+            {
+                if (!topicsByKey.ContainsKey(topicKey))
+                {
+                    errors.Add($"Grammar topic references unknown topic key '{topicKey}'.");
+                }
+            }
+
+            if (topic.Sections.Count == 0)
+            {
+                errors.Add("Grammar topic sections must contain at least one explanation section.");
+            }
+
+            for (int sectionIndex = 0; sectionIndex < topic.Sections.Count; sectionIndex++)
+            {
+                ParsedGrammarSectionModel section = topic.Sections[sectionIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(section.Heading)))
+                {
+                    errors.Add($"Grammar topic sections[{sectionIndex + 1}] heading is required.");
+                }
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(section.Explanation)))
+                {
+                    errors.Add($"Grammar topic sections[{sectionIndex + 1}] explanation is required.");
+                }
+
+                ValidateGrammarSectionTranslations(section.Translations, meaningLanguages, $"Grammar topic sections[{sectionIndex + 1}].translations", errors);
+            }
+
+            for (int exampleIndex = 0; exampleIndex < topic.Examples.Count; exampleIndex++)
+            {
+                ParsedGrammarExampleModel example = topic.Examples[exampleIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(example.GermanText)))
+                {
+                    errors.Add($"Grammar topic examples[{exampleIndex + 1}] germanText is required.");
+                }
+
+                ValidateOptionalMeaningTranslations(example.Translations, meaningLanguages, $"Grammar topic examples[{exampleIndex + 1}].translations", errors);
+            }
+
+            ValidateGrammarTextItems(topic.RuleSummaries, meaningLanguages, "Grammar topic ruleSummaries", errors);
+            ValidateGrammarTextItems(topic.ExceptionNotes, meaningLanguages, "Grammar topic exceptionNotes", errors);
+
+            for (int mistakeIndex = 0; mistakeIndex < topic.CommonMistakes.Count; mistakeIndex++)
+            {
+                ParsedGrammarCommonMistakeModel mistake = topic.CommonMistakes[mistakeIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(mistake.WrongText)))
+                {
+                    errors.Add($"Grammar topic commonMistakes[{mistakeIndex + 1}] wrongText is required.");
+                }
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(mistake.CorrectedText)))
+                {
+                    errors.Add($"Grammar topic commonMistakes[{mistakeIndex + 1}] correctedText is required.");
+                }
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(mistake.Explanation)))
+                {
+                    errors.Add($"Grammar topic commonMistakes[{mistakeIndex + 1}] explanation is required.");
+                }
+
+                ValidateOptionalMeaningTranslations(mistake.Translations, meaningLanguages, $"Grammar topic commonMistakes[{mistakeIndex + 1}].translations", errors);
+            }
+
+            ValidateGrammarSlugList(topic.PrerequisiteSlugs, "Grammar topic prerequisiteSlugs", errors);
+            ValidateGrammarSlugList(topic.RelatedTopicSlugs, "Grammar topic relatedTopicSlugs", errors);
+            ValidateGrammarSlugList(topic.LinkedDialogueSlugs, "Grammar topic linkedDialogueSlugs", errors);
+            ValidateGrammarSlugList(topic.LinkedTalkTopicSlugs, "Grammar topic linkedTalkTopicSlugs", errors);
+            ValidateGrammarSlugList(topic.LinkedExerciseSlugs, "Grammar topic linkedExerciseSlugs", warnings);
+
+            foreach (ParsedGrammarLinkedWordModel word in topic.LinkedWords)
+            {
+                if (string.IsNullOrWhiteSpace(NormalizeText(word.Lemma)))
+                {
+                    errors.Add("Grammar topic linkedWords cannot contain an empty lemma.");
+                }
+
+                string? wordSlug = NormalizeOptionalText(word.WordSlug)?.ToLowerInvariant();
+                if (wordSlug is not null && !ValidateKebabKey(wordSlug))
+                {
+                    errors.Add($"Grammar topic linkedWords wordSlug '{wordSlug}' must use lowercase kebab-case.");
+                }
+            }
+
+            foreach (string error in errors)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"grammarTopics[{index + 1}]: {error}"));
+            }
+
+            foreach (string warning in warnings)
+            {
+                issues.Add(new ImportIssueModel(null, "Warning", $"grammarTopics[{index + 1}]: {warning}"));
+            }
+        }
+    }
+
+    private static void ValidateExpressionEntries(
+        IReadOnlyList<ParsedExpressionEntryModel> expressions,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> slugs = [];
+
+        for (int index = 0; index < expressions.Count; index++)
+        {
+            ParsedExpressionEntryModel expression = expressions[index];
+            List<string> errors = [];
+            List<string> warnings = [];
+            string slug = NormalizeText(expression.Slug).ToLowerInvariant();
+
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add("Expression slug is required and must use lowercase kebab-case.");
+            }
+            else if (!slugs.Add(slug))
+            {
+                errors.Add($"Duplicate expression slug '{slug}' is not allowed inside one package.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(expression.ExpressionText)))
+            {
+                errors.Add("Expression expressionText is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(NormalizeText(expression.ActualMeaningText)))
+            {
+                errors.Add("Expression actualMeaningText is required.");
+            }
+
+            if (!Enum.TryParse(NormalizeText(expression.CefrLevel), true, out CefrLevel _))
+            {
+                errors.Add("Expression CEFR level is invalid.");
+            }
+
+            string expressionType = NormalizeText(expression.ExpressionType).ToLowerInvariant();
+            if (!ExpressionTypes.Contains(expressionType))
+            {
+                errors.Add($"Expression expressionType '{expressionType}' is not supported.");
+            }
+
+            string register = NormalizeText(expression.Register).ToLowerInvariant();
+            if (!ExpressionRegisters.Contains(register))
+            {
+                errors.Add($"Expression register '{register}' is not supported.");
+            }
+
+            string category = NormalizeText(expression.Category).ToLowerInvariant();
+            if (!ValidateKebabKey(category))
+            {
+                errors.Add("Expression category is required and must use lowercase kebab-case.");
+            }
+
+            string[] topicKeys = expression.Topics
+                .Select(item => NormalizeText(item).ToLowerInvariant())
+                .Where(item => !string.IsNullOrWhiteSpace(item))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            foreach (string topicKey in topicKeys)
+            {
+                if (!topicsByKey.ContainsKey(topicKey))
+                {
+                    errors.Add($"Expression references unknown topic key '{topicKey}'.");
+                }
+            }
+
+            ValidateExpressionMeanings(expression.Meanings, meaningLanguages, errors);
+
+            for (int exampleIndex = 0; exampleIndex < expression.Examples.Count; exampleIndex++)
+            {
+                ParsedExpressionExampleModel example = expression.Examples[exampleIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(example.GermanText)))
+                {
+                    errors.Add($"Expression examples[{exampleIndex + 1}] germanText is required.");
+                }
+
+                ValidateOptionalMeaningTranslations(example.Translations, meaningLanguages, $"Expression examples[{exampleIndex + 1}].translations", errors);
+            }
+
+            for (int warningIndex = 0; warningIndex < expression.Warnings.Count; warningIndex++)
+            {
+                ParsedExpressionWarningModel warning = expression.Warnings[warningIndex];
+                if (string.IsNullOrWhiteSpace(NormalizeText(warning.WarningType)))
+                {
+                    errors.Add($"Expression warnings[{warningIndex + 1}] warningType is required.");
+                }
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(warning.Text)))
+                {
+                    errors.Add($"Expression warnings[{warningIndex + 1}] text is required.");
+                }
+
+                ValidateOptionalMeaningTranslations(warning.Translations, meaningLanguages, $"Expression warnings[{warningIndex + 1}].translations", errors);
+            }
+
+            foreach (ParsedExpressionLinkedWordModel word in expression.LinkedWords)
+            {
+                if (string.IsNullOrWhiteSpace(NormalizeText(word.Lemma)))
+                {
+                    errors.Add("Expression linkedWords cannot contain an empty lemma.");
+                }
+
+                string? wordSlug = NormalizeOptionalText(word.WordSlug)?.ToLowerInvariant();
+                if (wordSlug is not null && !ValidateKebabKey(wordSlug))
+                {
+                    errors.Add($"Expression linkedWords wordSlug '{wordSlug}' must use lowercase kebab-case.");
+                }
+            }
+
+            ValidateGrammarSlugList(expression.RelatedExpressionSlugs, "Expression relatedExpressionSlugs", errors);
+            ValidateGrammarSlugList(expression.LinkedExerciseSlugs, "Expression linkedExerciseSlugs", warnings);
+
+            bool requiresWarning = expression.IsRisky ||
+                RiskyExpressionRegisters.Contains(register) ||
+                RiskyExpressionTypes.Contains(expressionType);
+
+            if (requiresWarning && expression.Warnings.All(warning => string.IsNullOrWhiteSpace(NormalizeText(warning.Text))))
+            {
+                errors.Add("Risky expressions require at least one warning with text.");
+            }
+
+            foreach (string error in errors)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"expressionEntries[{index + 1}]: {error}"));
+            }
+
+            foreach (string warning in warnings)
+            {
+                issues.Add(new ImportIssueModel(null, "Warning", $"expressionEntries[{index + 1}]: {warning}"));
+            }
+        }
+    }
+
+    private static void ValidateExpressionMeanings(
+        IReadOnlyList<ParsedExpressionMeaningModel> meanings,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<string> errors)
+    {
+        HashSet<LanguageCode> seenLanguages = [];
+
+        for (int index = 0; index < meanings.Count; index++)
+        {
+            ParsedExpressionMeaningModel meaning = meanings[index];
+            string language = NormalizeText(meaning.Language).ToLowerInvariant();
+            string actualMeaning = NormalizeText(meaning.ActualMeaningText);
+
+            if (string.IsNullOrWhiteSpace(language) || string.IsNullOrWhiteSpace(actualMeaning))
+            {
+                errors.Add($"Expression meanings[{index + 1}] language and actualMeaningText are required when meanings are provided.");
+                continue;
+            }
+
+            LanguageCode languageCode;
+            try
+            {
+                languageCode = LanguageCode.From(language);
+            }
+            catch (DomainRuleException exception)
+            {
+                errors.Add($"Expression meanings[{index + 1}] language is invalid: {exception.Message}");
+                continue;
+            }
+
+            if (!meaningLanguages.Contains(languageCode))
+            {
+                errors.Add($"Expression meanings[{index + 1}] language '{language}' is not an active meaning language.");
+                continue;
+            }
+
+            if (!seenLanguages.Add(languageCode))
+            {
+                errors.Add($"Expression meanings contains duplicate language '{language}'.");
+            }
+        }
+    }
+
+    private static void ValidateGrammarSectionTranslations(
+        IReadOnlyList<ParsedGrammarSectionTranslationModel> translations,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        HashSet<LanguageCode> seenLanguages = [];
+        for (int index = 0; index < translations.Count; index++)
+        {
+            ParsedGrammarSectionTranslationModel translation = translations[index];
+            string language = NormalizeText(translation.Language).ToLowerInvariant();
+
+            if (string.IsNullOrWhiteSpace(language) ||
+                string.IsNullOrWhiteSpace(NormalizeText(translation.Heading)) ||
+                string.IsNullOrWhiteSpace(NormalizeText(translation.Text)))
+            {
+                errors.Add($"{fieldName}[{index + 1}] language, heading, and text are required when translations are provided.");
+                continue;
+            }
+
+            LanguageCode languageCode;
+            try
+            {
+                languageCode = LanguageCode.From(language);
+            }
+            catch (DomainRuleException exception)
+            {
+                errors.Add($"{fieldName}[{index + 1}] language is invalid: {exception.Message}");
+                continue;
+            }
+
+            if (!meaningLanguages.Contains(languageCode))
+            {
+                errors.Add($"{fieldName}[{index + 1}] language '{language}' is not an active meaning language.");
+                continue;
+            }
+
+            if (!seenLanguages.Add(languageCode))
+            {
+                errors.Add($"{fieldName} contains duplicate language '{language}'.");
+            }
+        }
+    }
+
+    private static void ValidateExercises(
+        IReadOnlyList<ParsedExerciseModel> exercises,
+        IReadOnlyList<ParsedExerciseSetModel> exerciseSets,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> exerciseSlugs = [];
+        for (int index = 0; index < exercises.Count; index++)
+        {
+            ParsedExerciseModel exercise = exercises[index];
+            List<string> errors = [];
+            string slug = NormalizeText(exercise.Slug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Exercise slug is required and must use lowercase kebab-case.");
+            else if (!exerciseSlugs.Add(slug)) errors.Add($"Duplicate exercise slug '{slug}' is not allowed inside one package.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(exercise.Title))) errors.Add("Exercise title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(exercise.Instruction))) errors.Add("Exercise instruction is required.");
+            if (!Enum.TryParse(NormalizeText(exercise.CefrLevel), true, out CefrLevel _)) errors.Add("Exercise CEFR level is invalid.");
+            string exerciseType = NormalizeText(exercise.ExerciseType).ToLowerInvariant();
+            if (!ExerciseTypes.Contains(exerciseType)) errors.Add($"Exercise exerciseType '{exerciseType}' is not supported.");
+            string targetSkill = NormalizeText(exercise.TargetSkill).ToLowerInvariant();
+            if (!ExerciseTargetSkills.Contains(targetSkill)) errors.Add($"Exercise targetSkill '{targetSkill}' is not supported.");
+            string ownerType = NormalizeText(exercise.OwnerType).ToLowerInvariant();
+            if (!ExerciseOwnerTypes.Contains(ownerType)) errors.Add($"Exercise ownerType '{ownerType}' is not supported.");
+            string? ownerSlug = NormalizeOptionalText(exercise.OwnerSlug)?.ToLowerInvariant();
+            if (ownerSlug is not null && !ValidateKebabKey(ownerSlug)) errors.Add("Exercise ownerSlug must use lowercase kebab-case.");
+            ValidateJsonObject(exercise.PromptJson, "Exercise prompt", errors);
+            ValidateJsonObject(exercise.AnswerKeyJson, "Exercise answerKey", errors);
+            ValidateExerciseAnswerKey(exerciseType, exercise.AnswerKeyJson, errors);
+            if (string.IsNullOrWhiteSpace(NormalizeText(exercise.CorrectExplanation))) errors.Add("Exercise correctExplanation is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(exercise.IncorrectExplanation))) errors.Add("Exercise incorrectExplanation is required.");
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"exercises[{index + 1}]: {error}"));
+        }
+
+        HashSet<string> setSlugs = [];
+        for (int index = 0; index < exerciseSets.Count; index++)
+        {
+            ParsedExerciseSetModel set = exerciseSets[index];
+            List<string> errors = [];
+            string slug = NormalizeText(set.Slug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Exercise set slug is required and must use lowercase kebab-case.");
+            else if (!setSlugs.Add(slug)) errors.Add($"Duplicate exercise set slug '{slug}' is not allowed inside one package.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(set.Title))) errors.Add("Exercise set title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(set.Description))) errors.Add("Exercise set description is required.");
+            if (!Enum.TryParse(NormalizeText(set.CefrLevel), true, out CefrLevel _)) errors.Add("Exercise set CEFR level is invalid.");
+            string ownerType = NormalizeText(set.OwnerType).ToLowerInvariant();
+            if (!ExerciseOwnerTypes.Contains(ownerType)) errors.Add($"Exercise set ownerType '{ownerType}' is not supported.");
+            if (set.ExerciseSlugs.Count == 0) errors.Add("Exercise set exerciseSlugs must contain at least one exercise slug.");
+            ValidateGrammarSlugList(set.ExerciseSlugs, "Exercise set exerciseSlugs", errors);
+            foreach (string exerciseSlug in set.ExerciseSlugs.Select(item => NormalizeText(item).ToLowerInvariant()))
+            {
+                if (ValidateKebabKey(exerciseSlug) && !exerciseSlugs.Contains(exerciseSlug))
+                {
+                    errors.Add($"Exercise set references unknown exercise slug '{exerciseSlug}'.");
+                }
+            }
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"exerciseSets[{index + 1}]: {error}"));
+        }
+    }
+
+    private static void ValidateCourses(
+        IReadOnlyList<ParsedCoursePathModel> coursePaths,
+        IReadOnlyList<ParsedCourseModuleModel> courseModules,
+        IReadOnlyList<ParsedCourseLessonModel> courseLessons,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> courseSlugs = [];
+        for (int index = 0; index < coursePaths.Count; index++)
+        {
+            ParsedCoursePathModel course = coursePaths[index];
+            List<string> errors = [];
+            string slug = NormalizeText(course.Slug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Course slug is required and must use lowercase kebab-case.");
+            else if (!courseSlugs.Add(slug)) errors.Add($"Duplicate course slug '{slug}' is not allowed inside one package.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(course.Title))) errors.Add("Course title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(course.Description))) errors.Add("Course description is required.");
+            string cefrLevel = NormalizeText(course.CefrLevel);
+            string cefrRange = NormalizeText(course.CefrRange);
+            if (string.IsNullOrWhiteSpace(cefrLevel) && string.IsNullOrWhiteSpace(cefrRange)) errors.Add("Course cefrLevel or cefrRange is required.");
+            if (!string.IsNullOrWhiteSpace(cefrLevel) && !Enum.TryParse(cefrLevel, true, out CefrLevel _)) errors.Add("Course CEFR level is invalid.");
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"coursePaths[{index + 1}]: {error}"));
+        }
+
+        HashSet<string> moduleSlugs = [];
+        for (int index = 0; index < courseModules.Count; index++)
+        {
+            ParsedCourseModuleModel module = courseModules[index];
+            List<string> errors = [];
+            string slug = NormalizeText(module.Slug).ToLowerInvariant();
+            string courseSlug = NormalizeText(module.CoursePathSlug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Course module slug is required and must use lowercase kebab-case.");
+            else if (!moduleSlugs.Add(slug)) errors.Add($"Duplicate course module slug '{slug}' is not allowed inside one package.");
+            if (!ValidateKebabKey(courseSlug)) errors.Add("Course module coursePathSlug is required and must use lowercase kebab-case.");
+            else if (!courseSlugs.Contains(courseSlug)) errors.Add($"Course module references unknown course path slug '{courseSlug}'.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(module.Title))) errors.Add("Course module title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(module.Description))) errors.Add("Course module description is required.");
+            if (module.ModuleNumber <= 0) errors.Add("Course module moduleNumber must be positive.");
+            if (!Enum.TryParse(NormalizeText(module.CefrLevel), true, out CefrLevel _)) errors.Add("Course module CEFR level is invalid.");
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"courseModules[{index + 1}]: {error}"));
+        }
+
+        HashSet<string> lessonSlugs = [];
+        foreach (ParsedCourseLessonModel lesson in courseLessons)
+        {
+            string lessonSlug = NormalizeText(lesson.Slug).ToLowerInvariant();
+            if (ValidateKebabKey(lessonSlug)) lessonSlugs.Add(lessonSlug);
+        }
+
+        HashSet<string> seenLessonSlugs = [];
+        for (int index = 0; index < courseLessons.Count; index++)
+        {
+            ParsedCourseLessonModel lesson = courseLessons[index];
+            List<string> errors = [];
+            string slug = NormalizeText(lesson.Slug).ToLowerInvariant();
+            string courseSlug = NormalizeText(lesson.CoursePathSlug).ToLowerInvariant();
+            string moduleSlug = NormalizeText(lesson.ModuleSlug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Course lesson slug is required and must use lowercase kebab-case.");
+            else if (!seenLessonSlugs.Add(slug)) errors.Add($"Duplicate course lesson slug '{slug}' is not allowed inside one package.");
+            if (!ValidateKebabKey(courseSlug)) errors.Add("Course lesson coursePathSlug is required and must use lowercase kebab-case.");
+            else if (!courseSlugs.Contains(courseSlug)) errors.Add($"Course lesson references unknown course path slug '{courseSlug}'.");
+            if (!ValidateKebabKey(moduleSlug)) errors.Add("Course lesson moduleSlug is required and must use lowercase kebab-case.");
+            else if (!moduleSlugs.Contains(moduleSlug)) errors.Add($"Course lesson references unknown module slug '{moduleSlug}'.");
+            if (lesson.LessonNumber <= 0) errors.Add("Course lesson lessonNumber must be positive.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(lesson.Title))) errors.Add("Course lesson title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(lesson.ShortDescription))) errors.Add("Course lesson shortDescription is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(lesson.Narrative))) errors.Add("Course lesson narrative is required.");
+            if (!Enum.TryParse(NormalizeText(lesson.CefrLevel), true, out CefrLevel _)) errors.Add("Course lesson CEFR level is invalid.");
+            if (lesson.EstimatedMinutes <= 0) errors.Add("Course lesson estimatedMinutes must be positive.");
+            ValidateLearningGoals(lesson.LearningGoals, errors);
+            ValidateGrammarSlugList(lesson.PrerequisiteLessonSlugs, "Course lesson prerequisiteLessonSlugs", errors);
+            ValidateGrammarSlugList(lesson.LinkedGrammarTopicSlugs, "Course lesson linkedGrammarTopicSlugs", errors);
+            ValidateGrammarSlugList(lesson.LinkedWordSlugs, "Course lesson linkedWordSlugs", errors);
+            ValidateGrammarSlugList(lesson.LinkedExpressionSlugs, "Course lesson linkedExpressionSlugs", errors);
+            ValidateGrammarSlugList(lesson.LinkedDialogueSlugs, "Course lesson linkedDialogueSlugs", errors);
+            ValidateGrammarSlugList(lesson.LinkedTalkTopicSlugs, "Course lesson linkedTalkTopicSlugs", errors);
+            ValidateGrammarSlugList(lesson.LinkedExerciseSetSlugs, "Course lesson linkedExerciseSetSlugs", errors);
+            ValidateGrammarSlugList(lesson.LinkedExamPrepSlugs, "Course lesson linkedExamPrepSlugs", errors);
+            ValidateOptionalLessonSlug(lesson.NextLessonSlug, "Course lesson nextLessonSlug", errors);
+            foreach (string prerequisiteSlug in lesson.PrerequisiteLessonSlugs.Select(item => NormalizeText(item).ToLowerInvariant()))
+            {
+                if (ValidateKebabKey(prerequisiteSlug) && !lessonSlugs.Contains(prerequisiteSlug)) errors.Add($"Course lesson references unknown prerequisite lesson slug '{prerequisiteSlug}'.");
+                if (string.Equals(prerequisiteSlug, slug, StringComparison.Ordinal)) errors.Add("Course lesson cannot list itself as a prerequisite.");
+            }
+            string? nextLessonSlug = NormalizeOptionalText(lesson.NextLessonSlug)?.ToLowerInvariant();
+            if (nextLessonSlug is not null && !lessonSlugs.Contains(nextLessonSlug)) errors.Add($"Course lesson references unknown next lesson slug '{nextLessonSlug}'.");
+            if (string.Equals(nextLessonSlug, slug, StringComparison.Ordinal)) errors.Add("Course lesson cannot list itself as next lesson.");
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"courseLessons[{index + 1}]: {error}"));
+        }
+    }
+
+    private static void ValidateLearningGoals(IReadOnlyList<string> learningGoals, ICollection<string> errors)
+    {
+        if (learningGoals.Count == 0)
+        {
+            errors.Add("Course lesson learningGoals must contain at least one item.");
+            return;
+        }
+
+        HashSet<string> seen = new(StringComparer.Ordinal);
+        foreach (string goal in learningGoals)
+        {
+            string normalizedGoal = NormalizeText(goal);
+            if (string.IsNullOrWhiteSpace(normalizedGoal))
+            {
+                errors.Add("Course lesson learningGoals cannot contain empty items.");
+                continue;
+            }
+
+            if (!seen.Add(normalizedGoal))
+            {
+                errors.Add($"Course lesson learningGoals contains duplicate item '{normalizedGoal}'.");
+            }
+        }
+    }
+
+    private static void ValidateWritingTemplates(
+        IReadOnlyList<ParsedWritingTemplateModel> writingTemplates,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> templateSlugs = [];
+        for (int index = 0; index < writingTemplates.Count; index++)
+        {
+            ParsedWritingTemplateModel template = writingTemplates[index];
+            List<string> errors = [];
+            string slug = NormalizeText(template.Slug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Writing template slug is required and must use lowercase kebab-case.");
+            else if (!templateSlugs.Add(slug)) errors.Add($"Duplicate writing template slug '{slug}' is not allowed inside one package.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(template.Title))) errors.Add("Writing template title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(template.ShortDescription))) errors.Add("Writing template shortDescription is required.");
+            if (!Enum.TryParse(NormalizeText(template.CefrLevel), true, out CefrLevel _)) errors.Add("Writing template CEFR level is invalid.");
+            string category = NormalizeText(template.Category).ToLowerInvariant();
+            if (!WritingTemplateCategories.Contains(category)) errors.Add($"Writing template category '{category}' is not supported.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(template.Situation))) errors.Add("Writing template situation is required.");
+            string register = NormalizeText(template.Register).ToLowerInvariant();
+            if (!WritingTemplateRegisters.Contains(register)) errors.Add($"Writing template register '{register}' is not supported.");
+            string templateText = NormalizeText(template.TemplateText);
+            if (string.IsNullOrWhiteSpace(templateText)) errors.Add("Writing template templateText is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(template.Explanation))) errors.Add("Writing template explanation is required.");
+            ValidateTemplateVariables(template.ReplaceableVariables, templateText, errors);
+            if (string.IsNullOrWhiteSpace(NormalizeText(template.SampleFilledVersion))) errors.Add("Writing template sampleFilledVersion is required.");
+            ValidateGrammarSlugList(template.LinkedGrammarTopicSlugs, "Writing template linkedGrammarTopicSlugs", errors);
+            ValidateGrammarSlugList(template.LinkedWordSlugs, "Writing template linkedWordSlugs", errors);
+            ValidateGrammarSlugList(template.LinkedExpressionSlugs, "Writing template linkedExpressionSlugs", errors);
+            ValidateGrammarSlugList(template.LinkedExerciseSlugs, "Writing template linkedExerciseSlugs", errors);
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"writingTemplates[{index + 1}]: {error}"));
+        }
+    }
+
+    private static void ValidateTemplateVariables(IReadOnlyList<string> variables, string templateText, ICollection<string> errors)
+    {
+        HashSet<string> seen = new(StringComparer.Ordinal);
+        foreach (string variable in variables)
+        {
+            string normalized = NormalizeText(variable);
+            if (!ValidateKebabKey(normalized.ToLowerInvariant()))
+            {
+                errors.Add($"Writing template variable '{normalized}' must use lowercase kebab-case.");
+                continue;
+            }
+
+            if (!seen.Add(normalized))
+            {
+                errors.Add($"Writing template variables contains duplicate item '{normalized}'.");
+                continue;
+            }
+
+            if (!templateText.Contains($"{{{{{normalized}}}}}", StringComparison.Ordinal))
+            {
+                errors.Add($"Writing template variable '{normalized}' is not used in templateText.");
+            }
+        }
+    }
+
+    private static void ValidateCulturalNotes(
+        IReadOnlyList<ParsedCulturalNoteModel> culturalNotes,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> noteSlugs = [];
+        for (int index = 0; index < culturalNotes.Count; index++)
+        {
+            ParsedCulturalNoteModel note = culturalNotes[index];
+            List<string> errors = [];
+            string slug = NormalizeText(note.Slug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Cultural note slug is required and must use lowercase kebab-case.");
+            else if (!noteSlugs.Add(slug)) errors.Add($"Duplicate cultural note slug '{slug}' is not allowed inside one package.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(note.Title))) errors.Add("Cultural note title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(note.ShortDescription))) errors.Add("Cultural note shortDescription is required.");
+            if (!Enum.TryParse(NormalizeText(note.CefrLevel), true, out CefrLevel _)) errors.Add("Cultural note CEFR level is invalid.");
+            string category = NormalizeText(note.Category).ToLowerInvariant();
+            if (!CulturalNoteCategories.Contains(category)) errors.Add($"Cultural note category '{category}' is not supported.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(note.Context))) errors.Add("Cultural note context is required.");
+            ValidateRequiredTextList(note.Sections, "Cultural note sections", errors);
+            ValidateCulturalNoteExamples(note.Examples, errors);
+            ValidateOptionalTextList(note.DoNotes, "Cultural note doNotes", errors);
+            ValidateOptionalTextList(note.DontNotes, "Cultural note dontNotes", errors);
+            ValidateGrammarSlugList(note.LinkedDialogueSlugs, "Cultural note linkedDialogueSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedExpressionSlugs, "Cultural note linkedExpressionSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedWritingTemplateSlugs, "Cultural note linkedWritingTemplateSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedTalkTopicSlugs, "Cultural note linkedTalkTopicSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedCourseLessonSlugs, "Cultural note linkedCourseLessonSlugs", errors);
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"culturalNotes[{index + 1}]: {error}"));
+        }
+    }
+
+    private static void ValidateCulturalNoteExamples(IReadOnlyList<ParsedCulturalNoteExampleModel> examples, ICollection<string> errors)
+    {
+        for (int index = 0; index < examples.Count; index++)
+        {
+            ParsedCulturalNoteExampleModel example = examples[index];
+            if (string.IsNullOrWhiteSpace(NormalizeText(example.GermanText)))
+            {
+                errors.Add($"Cultural note examples[{index + 1}] germanText is required.");
+            }
+        }
+    }
+
+    private static void ValidateRequiredTextList(IReadOnlyList<string> values, string fieldName, ICollection<string> errors)
+    {
+        if (values.Count == 0)
+        {
+            errors.Add($"{fieldName} must contain at least one item.");
+            return;
+        }
+
+        ValidateOptionalTextList(values, fieldName, errors);
+    }
+
+    private static void ValidateOptionalTextList(IReadOnlyList<string> values, string fieldName, ICollection<string> errors)
+    {
+        for (int index = 0; index < values.Count; index++)
+        {
+            if (string.IsNullOrWhiteSpace(NormalizeText(values[index])))
+            {
+                errors.Add($"{fieldName}[{index + 1}] cannot be empty.");
+            }
+        }
+    }
+
+    private static void ValidateExamPrep(
+        IReadOnlyList<ParsedExamProfileModel> examProfiles,
+        IReadOnlyList<ParsedExamPrepUnitModel> examPrepUnits,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> profilesInPackage = [];
+        for (int index = 0; index < examProfiles.Count; index++)
+        {
+            ParsedExamProfileModel profile = examProfiles[index];
+            List<string> errors = [];
+            string key = NormalizeText(profile.Key).ToLowerInvariant();
+            if (!ExamPrepProfiles.Contains(key)) errors.Add($"Exam profile key '{key}' is not supported.");
+            else if (!profilesInPackage.Add(key)) errors.Add($"Duplicate exam profile key '{key}' is not allowed inside one package.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(profile.DisplayName))) errors.Add("Exam profile displayName is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(profile.CefrRange))) errors.Add("Exam profile cefrRange is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(profile.Description))) errors.Add("Exam profile description is required.");
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"examProfiles[{index + 1}]: {error}"));
+        }
+
+        HashSet<string> unitSlugs = [];
+        HashSet<string> validProfiles = new(ExamPrepProfiles, StringComparer.Ordinal);
+        foreach (string packageProfile in profilesInPackage) validProfiles.Add(packageProfile);
+        for (int index = 0; index < examPrepUnits.Count; index++)
+        {
+            ParsedExamPrepUnitModel unit = examPrepUnits[index];
+            List<string> errors = [];
+            string slug = NormalizeText(unit.Slug).ToLowerInvariant();
+            if (!ValidateKebabKey(slug)) errors.Add("Exam prep unit slug is required and must use lowercase kebab-case.");
+            else if (!unitSlugs.Add(slug)) errors.Add($"Duplicate exam prep unit slug '{slug}' is not allowed inside one package.");
+            string profileKey = NormalizeText(unit.ExamProfileKey).ToLowerInvariant();
+            if (!validProfiles.Contains(profileKey)) errors.Add($"Exam prep unit examProfileKey '{profileKey}' is not supported.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(unit.Title))) errors.Add("Exam prep unit title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(unit.ShortDescription))) errors.Add("Exam prep unit shortDescription is required.");
+            if (!Enum.TryParse(NormalizeText(unit.CefrLevel), true, out CefrLevel _)) errors.Add("Exam prep unit CEFR level is invalid.");
+            string section = NormalizeText(unit.ExamSection).ToLowerInvariant();
+            if (!ExamPrepSections.Contains(section)) errors.Add($"Exam prep unit examSection '{section}' is not supported.");
+            string taskType = NormalizeText(unit.TaskType).ToLowerInvariant();
+            if (!ExamPrepTaskTypes.Contains(taskType)) errors.Add($"Exam prep unit taskType '{taskType}' is not supported.");
+            string skillFocus = NormalizeText(unit.SkillFocus).ToLowerInvariant();
+            if (!ExerciseTargetSkills.Contains(skillFocus)) errors.Add($"Exam prep unit skillFocus '{skillFocus}' is not supported.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(unit.Explanation))) errors.Add("Exam prep unit explanation is required.");
+            ValidateOptionalTextList(unit.StrategyNotes, "Exam prep unit strategyNotes", errors);
+            ValidateOptionalTextList(unit.Checklist, "Exam prep unit checklist", errors);
+            ValidateGrammarSlugList(unit.LinkedDialogueSlugs, "Exam prep unit linkedDialogueSlugs", errors);
+            ValidateGrammarSlugList(unit.LinkedTalkTopicSlugs, "Exam prep unit linkedTalkTopicSlugs", errors);
+            ValidateGrammarSlugList(unit.LinkedGrammarTopicSlugs, "Exam prep unit linkedGrammarTopicSlugs", errors);
+            ValidateGrammarSlugList(unit.LinkedExpressionSlugs, "Exam prep unit linkedExpressionSlugs", errors);
+            ValidateGrammarSlugList(unit.LinkedWritingTemplateSlugs, "Exam prep unit linkedWritingTemplateSlugs", errors);
+            ValidateGrammarSlugList(unit.LinkedExerciseSlugs, "Exam prep unit linkedExerciseSlugs", errors);
+            ValidateGrammarSlugList(unit.LinkedCourseLessonSlugs, "Exam prep unit linkedCourseLessonSlugs", errors);
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"examPrepUnits[{index + 1}]: {error}"));
+        }
+    }
+
+    private static void ValidateOptionalLessonSlug(string? slug, string fieldName, ICollection<string> errors)
+    {
+        string? normalized = NormalizeOptionalText(slug)?.ToLowerInvariant();
+        if (normalized is not null && !ValidateKebabKey(normalized))
+        {
+            errors.Add($"{fieldName} must use lowercase kebab-case.");
+        }
+    }
+
+    private static void ValidateExerciseAnswerKey(string exerciseType, string answerKeyJson, ICollection<string> errors)
+    {
+        try
+        {
+            using System.Text.Json.JsonDocument document = System.Text.Json.JsonDocument.Parse(answerKeyJson);
+            System.Text.Json.JsonElement root = document.RootElement;
+            switch (exerciseType)
+            {
+                case "multiple-choice":
+                case "article-selection":
+                case "case-selection":
+                case "vocabulary-choice":
+                case "grammar-choice":
+                case "dialogue-completion":
+                    RequireJsonArray(root, "correctOptionIds", "Exercise answerKey correctOptionIds is required.", errors);
+                    break;
+                case "fill-in-the-blank":
+                case "conjugation":
+                case "translation-controlled":
+                    RequireJsonArray(root, "acceptedAnswers", "Exercise answerKey acceptedAnswers is required.", errors);
+                    break;
+                case "matching":
+                    RequireJsonArray(root, "pairs", "Exercise answerKey pairs is required.", errors);
+                    break;
+                case "sentence-ordering":
+                    RequireJsonArray(root, "orderedSegments", "Exercise answerKey orderedSegments is required.", errors);
+                    break;
+                case "error-correction":
+                    if (!root.TryGetProperty("correctedText", out System.Text.Json.JsonElement correctedText) || correctedText.ValueKind != System.Text.Json.JsonValueKind.String || string.IsNullOrWhiteSpace(correctedText.GetString()))
+                    {
+                        errors.Add("Exercise answerKey correctedText is required.");
+                    }
+                    break;
+            }
+        }
+        catch (System.Text.Json.JsonException exception)
+        {
+            errors.Add($"Exercise answerKey is not valid JSON: {exception.Message}");
+        }
+    }
+
+    private static void ValidateJsonObject(string json, string fieldName, ICollection<string> errors)
+    {
+        try
+        {
+            using System.Text.Json.JsonDocument document = System.Text.Json.JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != System.Text.Json.JsonValueKind.Object)
+            {
+                errors.Add($"{fieldName} must be a JSON object.");
+            }
+        }
+        catch (System.Text.Json.JsonException exception)
+        {
+            errors.Add($"{fieldName} is not valid JSON: {exception.Message}");
+        }
+    }
+
+    private static void RequireJsonArray(System.Text.Json.JsonElement root, string propertyName, string message, ICollection<string> errors)
+    {
+        if (!root.TryGetProperty(propertyName, out System.Text.Json.JsonElement value) ||
+            value.ValueKind != System.Text.Json.JsonValueKind.Array ||
+            value.GetArrayLength() == 0)
+        {
+            errors.Add(message);
+        }
+    }
+
+    private static void ValidateGrammarTextItems(
+        IReadOnlyList<ParsedGrammarTextItemModel> items,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        for (int index = 0; index < items.Count; index++)
+        {
+            ParsedGrammarTextItemModel item = items[index];
+            if (string.IsNullOrWhiteSpace(NormalizeText(item.Text)))
+            {
+                errors.Add($"{fieldName}[{index + 1}] text is required.");
+            }
+
+            ValidateOptionalMeaningTranslations(item.Translations, meaningLanguages, $"{fieldName}[{index + 1}].translations", errors);
+        }
+    }
+
+    private static void ValidateGrammarSlugList(IReadOnlyList<string> slugs, string fieldName, ICollection<string> errors)
+    {
+        HashSet<string> seen = new(StringComparer.Ordinal);
+        foreach (string value in slugs)
+        {
+            string slug = NormalizeText(value).ToLowerInvariant();
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add($"{fieldName} contains invalid slug '{slug}'.");
+                continue;
+            }
+
+            if (!seen.Add(slug))
+            {
+                errors.Add($"{fieldName} contains duplicate slug '{slug}'.");
+            }
+        }
+    }
+
+    private static string SerializeStringArray(IReadOnlyList<string> values) =>
+        System.Text.Json.JsonSerializer.Serialize(values.Select(NormalizeText).Where(value => !string.IsNullOrWhiteSpace(value)).ToArray());
+
+    private static string SerializeCulturalNoteExamples(IReadOnlyList<ParsedCulturalNoteExampleModel> examples) =>
+        System.Text.Json.JsonSerializer.Serialize(examples
+            .Where(example => !string.IsNullOrWhiteSpace(NormalizeText(example.GermanText)))
+            .Select(example => new { GermanText = NormalizeText(example.GermanText), Explanation = NormalizeOptionalText(example.Explanation) })
+            .ToArray());
+
+    private static string SerializeSlugArray(IReadOnlyList<string> values) =>
+        System.Text.Json.JsonSerializer.Serialize(values.Select(value => NormalizeText(value).ToLowerInvariant()).Where(ValidateKebabKey).ToArray());
 
     private static void ValidateTalkTopicQuestions(
         IReadOnlyList<ParsedTalkTopicQuestionModel> questions,

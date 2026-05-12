@@ -1493,6 +1493,45 @@ Moderation concepts should be available before public profiles, matching, or org
 
 ---
 
+# 11B. Phase 7 Learning Portal Domain Concepts
+
+Phase 7 expands Darwin Lingua into a complete Web-first learning portal. The detailed roadmap lives in `76-Learning-Portal-Roadmap-And-Backlog.md`; this section records only the domain concepts and boundaries.
+
+## 11B.1 Content Concepts
+
+- `GrammarTopic` represents implemented structured grammar reference content with sections, examples, common mistakes, rule summaries, exception notes, prerequisites, related grammar topics, linked words, linked dialogues, linked Talk Topics, and linked exercise slugs.
+- `ExpressionEntry` represents implemented idioms, proverbs, colloquial phrases, fixed expressions, cultural phrases, warning phrases, examples, warnings, linked words, related expressions, and linked exercise slugs. Expressions are separate from Words because their actual meaning can differ from the literal meaning of individual words.
+- `Exercise` represents an implemented reusable deterministic practice item with an exercise type, answer key, feedback model, CEFR level, target skill, and optional linked content owner.
+- `ExerciseSet` groups implemented exercises for a grammar topic, expression, dialogue, Talk Topic, course lesson, exam unit, or other learning surface.
+- `CoursePath`, `CourseModule`, and `CourseLesson` represent implemented structured learning paths. Course lessons orchestrate references to grammar, words, expressions, dialogues, Talk Topics, exercise sets, and future exam-prep units instead of duplicating that content.
+- `ExamProfile` and `ExamPrepUnit` represent implemented exam taxonomies and original preparation units linked to dialogues, exercises, grammar topics, expressions, writing templates, Talk Topics, and course lessons.
+- `WritingTemplate` represents implemented practical German message/email and exam-writing templates with variables, filled examples, register, linked grammar, linked words, linked expressions, and linked exercises.
+- `CulturalNote` represents implemented German communication and culture guidance with body sections, practical examples, optional do/don't notes, sensitivity warnings, and links to dialogues, expressions, writing templates, Talk Topics, and course lessons.
+- `UnifiedLearningSearchResult` is an implemented projection model for deterministic search results across words, grammar, expressions, dialogues, Talk Topics, exercises, lessons, exam prep, writing templates, cultural notes, events, and organizers.
+
+## 11B.2 User State Concept
+
+- `UserContentProgress` is implemented as the cross-content Learning Portal progress record. It stores only user id, content owner type, owner slug, progress state, view timestamps, completion timestamp, and counters.
+- `UserExerciseAttempt` tracks submitted deterministic exercise attempts separately from shared exercise definitions.
+
+User progress must remain separate from content entities. Content records are shared and importable; progress records are per user.
+Supported `UserContentProgress` owner types are `word`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise`, `exercise-set`, `course`, `course-module`, `course-lesson`, `exam-prep-unit`, `writing-template`, and `cultural-note`.
+Supported progress states are `not-started`, `viewed`, `in-progress`, `completed`, `needs-review`, and `skipped`.
+Basic personalization is deterministic: it can recommend next incomplete course lessons and grammar topics, but it must not introduce AI ranking until explicit product rules exist.
+
+## 11B.3 Phase 7 Domain Rules
+
+- Educational content must be content-driven and importable.
+- Course lessons should reference grammar, words, expressions, dialogues, Talk Topics, and exercises instead of duplicating them.
+- Exercises are reusable and may attach to different content owner types.
+- Words remain the source of lexical meanings; expressions may link to words but do not own word meanings.
+- Web is the first implementation surface; mobile parity comes later after Web/API contracts, validation, and rendering are stable.
+- Unified learning search is a projection over owned content records. It does not own content and does not replace WordEntry search semantics.
+- Grammar Guide is the first implemented Phase 7 content module and uses the contract in `77-Grammar-Content-Package-Contract.md`.
+- Everyday Expressions is the second implemented Phase 7 content module and uses the contract in `78-Expression-Content-Package-Contract.md`.
+
+---
+
 # 12. Identity and User Boundary
 
 The domain should not tightly couple itself to a specific identity provider.
@@ -1662,6 +1701,19 @@ If you want to design broadly from the start, these are the most likely long-ter
 - ScenarioStep
 - DialoguePhrase
 - ScenarioVocabularyLink
+- GrammarTopic
+- ExpressionEntry
+- Exercise
+- ExerciseSet
+- CoursePath
+- CourseModule
+- CourseLesson
+- ExamProfile
+- ExamPrepUnit
+- WritingTemplate
+- CulturalNote
+- UnifiedLearningSearchResult
+- UserContentProgress
 - EventListing
 - EventPreparationPack
 - OrganizerProfile

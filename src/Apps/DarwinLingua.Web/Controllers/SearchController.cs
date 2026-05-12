@@ -18,9 +18,14 @@ public sealed class SearchController(
     IStringLocalizer<SharedResource> localizer) : Controller
 {
     private const int MaxSearchQueryLength = 128;
+    private static readonly string[] ResultTypes =
+    [
+        "word", "grammar", "expression", "dialogue", "talk-topic", "exercise",
+        "course-lesson", "exam-prep", "writing-template", "cultural-note", "event", "organizer"
+    ];
 
     [HttpGet("", Name = "Search_Index")]
-    public async Task<IActionResult> Index(string? q, CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(string? q, string? resultType, string? cefrLevel, CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         string query = NormalizeQuery(q);
@@ -41,10 +46,16 @@ public sealed class SearchController(
                 secondaryMeaningLanguageCode,
                 cancellationToken)
             .ConfigureAwait(false);
+        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, cancellationToken).ConfigureAwait(false);
 
         return View(new SearchPageViewModel(
             query,
             results,
+            learningResults,
+            ResultTypes,
+            LearningPortalFilterConventions.CefrLevels,
+            NormalizeResultType(resultType),
+            LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel),
             profile.PreferredMeaningLanguage1,
             secondaryMeaningLanguageCode,
             TempData["StatusMessage"] as string,
@@ -52,7 +63,7 @@ public sealed class SearchController(
     }
 
     [HttpGet("results", Name = "Search_Results")]
-    public async Task<IActionResult> Results(string? q, CancellationToken cancellationToken)
+    public async Task<IActionResult> Results(string? q, string? resultType, string? cefrLevel, CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         string query = NormalizeQuery(q);
@@ -73,10 +84,16 @@ public sealed class SearchController(
                 secondaryMeaningLanguageCode,
                 cancellationToken)
             .ConfigureAwait(false);
+        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, cancellationToken).ConfigureAwait(false);
 
         return PartialView("_SearchResults", new SearchPageViewModel(
             query,
             results,
+            learningResults,
+            ResultTypes,
+            LearningPortalFilterConventions.CefrLevels,
+            NormalizeResultType(resultType),
+            LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel),
             profile.PreferredMeaningLanguage1,
             secondaryMeaningLanguageCode,
             null,
@@ -173,6 +190,38 @@ public sealed class SearchController(
         }
     }
 
+    private async Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningSafelyAsync(
+        string query,
+        string? resultType,
+        string? cefrLevel,
+        CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(query))
+        {
+            return [];
+        }
+
+        try
+        {
+            using CancellationTokenSource searchTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            searchTimeout.CancelAfter(TimeSpan.FromSeconds(3));
+            return await catalogApiClient.SearchLearningContentAsync(
+                    new UnifiedLearningSearchFilterModel(
+                        query,
+                        LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel),
+                        NormalizeResultType(resultType),
+                        null,
+                        null),
+                    searchTimeout.Token)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        {
+            logger.LogWarning(ex, "Unified learning search results could not be loaded for query {Query}.", query);
+            return [];
+        }
+    }
+
     private static string NormalizeQuery(string? value)
     {
         if (string.IsNullOrWhiteSpace(value))
@@ -182,5 +231,16 @@ public sealed class SearchController(
 
         string trimmed = value.Trim();
         return trimmed.Length <= MaxSearchQueryLength ? trimmed : trimmed[..MaxSearchQueryLength];
+    }
+
+    private static string? NormalizeResultType(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string normalized = value.Trim().ToLowerInvariant();
+        return ResultTypes.Contains(normalized, StringComparer.Ordinal) ? normalized : null;
     }
 }

@@ -1,0 +1,55 @@
+@model DarwinLingua.Web.Models.WritingTemplateDetailPageViewModel
+@{
+    ViewData["Title"] = Model.Template.Title;
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@Model.Template.CefrLevel · @T[Model.Template.Category] · @T[Model.Template.Register == "workplace" ? "Workplace" : Model.Template.Register]</span>
+    <h1 class="headline-md">@Model.Template.Title</h1>
+    <p class="body-lg">@Model.Template.ShortDescription</p>
+    <p><strong>@T["Situation"]:</strong> @Model.Template.Situation</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Template text"]</h2>
+        <pre class="content-code">@Model.Template.TemplateText</pre>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Sample filled version"]</h2>
+        <pre class="content-code">@Model.Template.SampleFilledVersion</pre>
+    </article>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Variables"]</h2>
+        @if (Model.Template.Variables.Count == 0)
+        {
+            <p>@T["No variables"]</p>
+        }
+        else
+        {
+            <ul>
+                @foreach (string variable in Model.Template.Variables)
+                {
+                    <li><code>{{@variable}}</code></li>
+                }
+            </ul>
+        }
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Explanation"]</h2>
+        <p>@Model.Template.Explanation</p>
+    </article>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Linked content"]</h2>
+    <div class="grid-two-col">
+        <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Template.LinkedGrammarTopicSlugs)' />
+        <partial name="_SlugList" model='(T["Words"].Value, Model.Template.LinkedWordSlugs)' />
+        <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Template.LinkedExpressionSlugs)' />
+        <partial name="_SlugList" model='(T["Exercises"].Value, Model.Template.LinkedExerciseSlugs)' />
+    </div>
+</section>

@@ -146,6 +146,52 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<TalkTopicSpeakingGoalLink> TalkTopicSpeakingGoals => Set<TalkTopicSpeakingGoalLink>();
 
+    public DbSet<GrammarTopic> GrammarTopics => Set<GrammarTopic>();
+
+    public DbSet<GrammarTopicTopic> GrammarTopicTopics => Set<GrammarTopicTopic>();
+
+    public DbSet<GrammarSection> GrammarSections => Set<GrammarSection>();
+
+    public DbSet<GrammarExample> GrammarExamples => Set<GrammarExample>();
+
+    public DbSet<GrammarCommonMistake> GrammarCommonMistakes => Set<GrammarCommonMistake>();
+
+    public DbSet<GrammarRuleSummary> GrammarRuleSummaries => Set<GrammarRuleSummary>();
+
+    public DbSet<GrammarExceptionNote> GrammarExceptionNotes => Set<GrammarExceptionNote>();
+
+    public DbSet<ExpressionEntry> ExpressionEntries => Set<ExpressionEntry>();
+
+    public DbSet<ExpressionTopic> ExpressionTopics => Set<ExpressionTopic>();
+
+    public DbSet<ExpressionMeaning> ExpressionMeanings => Set<ExpressionMeaning>();
+
+    public DbSet<ExpressionExample> ExpressionExamples => Set<ExpressionExample>();
+
+    public DbSet<ExpressionWarning> ExpressionWarnings => Set<ExpressionWarning>();
+
+    public DbSet<Exercise> Exercises => Set<Exercise>();
+
+    public DbSet<ExerciseSet> ExerciseSets => Set<ExerciseSet>();
+
+    public DbSet<ExerciseSetItem> ExerciseSetItems => Set<ExerciseSetItem>();
+
+    public DbSet<UserExerciseAttempt> UserExerciseAttempts => Set<UserExerciseAttempt>();
+
+    public DbSet<CoursePath> CoursePaths => Set<CoursePath>();
+
+    public DbSet<CourseModule> CourseModules => Set<CourseModule>();
+
+    public DbSet<CourseLesson> CourseLessons => Set<CourseLesson>();
+
+    public DbSet<WritingTemplate> WritingTemplates => Set<WritingTemplate>();
+
+    public DbSet<CulturalNote> CulturalNotes => Set<CulturalNote>();
+
+    public DbSet<ExamProfile> ExamProfiles => Set<ExamProfile>();
+
+    public DbSet<ExamPrepUnit> ExamPrepUnits => Set<ExamPrepUnit>();
+
     public DbSet<ConversationStarterPack> ConversationStarterPacks => Set<ConversationStarterPack>();
 
     public DbSet<ConversationStarterPackTopic> ConversationStarterPackTopics => Set<ConversationStarterPackTopic>();
@@ -218,6 +264,11 @@ public sealed class DarwinLinguaDbContext : DbContext
     public DbSet<UserWordState> UserWordStates => Set<UserWordState>();
 
     /// <summary>
+    /// Gets cross-content Learning Portal progress rows.
+    /// </summary>
+    public DbSet<UserContentProgress> UserContentProgress => Set<UserContentProgress>();
+
+    /// <summary>
     /// Gets the persisted learner review-state rows.
     /// </summary>
     public DbSet<PracticeReviewState> PracticeReviewStates => Set<PracticeReviewState>();
@@ -269,6 +320,45 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new TalkTopicQuestionTranslationConfiguration());
         modelBuilder.ApplyConfiguration(new TalkTopicVocabularyItemConfiguration());
         modelBuilder.ApplyConfiguration(new TalkTopicSpeakingGoalLinkConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarTopicTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarSectionConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarSectionTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarExampleConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarExampleTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarCommonMistakeConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarCommonMistakeTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarRuleSummaryConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarRuleSummaryTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarExceptionNoteConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarExceptionNoteTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarPrerequisiteLinkConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarRelatedTopicLinkConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarLinkedWordConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarLinkedDialogueConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarLinkedTalkTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new GrammarLinkedExerciseConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionEntryConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionTopicConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionMeaningConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionExampleConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionExampleTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionWarningConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionWarningTranslationConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionLinkedWordConfiguration());
+        modelBuilder.ApplyConfiguration(new RelatedExpressionLinkConfiguration());
+        modelBuilder.ApplyConfiguration(new ExpressionLinkedExerciseConfiguration());
+        modelBuilder.ApplyConfiguration(new ExerciseConfiguration());
+        modelBuilder.ApplyConfiguration(new ExerciseSetConfiguration());
+        modelBuilder.ApplyConfiguration(new ExerciseSetItemConfiguration());
+        modelBuilder.ApplyConfiguration(new UserExerciseAttemptConfiguration());
+        modelBuilder.ApplyConfiguration(new CoursePathConfiguration());
+        modelBuilder.ApplyConfiguration(new CourseModuleConfiguration());
+        modelBuilder.ApplyConfiguration(new CourseLessonConfiguration());
+        modelBuilder.ApplyConfiguration(new WritingTemplateConfiguration());
+        modelBuilder.ApplyConfiguration(new CulturalNoteConfiguration());
+        modelBuilder.ApplyConfiguration(new ExamProfileConfiguration());
+        modelBuilder.ApplyConfiguration(new ExamPrepUnitConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPackConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPackTopicConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterLinkedDialogueConfiguration());
@@ -313,6 +403,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new UserLearningProfileConfiguration());
         modelBuilder.ApplyConfiguration(new UserFavoriteWordConfiguration());
         modelBuilder.ApplyConfiguration(new UserWordStateConfiguration());
+        modelBuilder.ApplyConfiguration(new UserContentProgressConfiguration());
         modelBuilder.ApplyConfiguration(new PracticeReviewStateConfiguration());
         modelBuilder.ApplyConfiguration(new PracticeAttemptConfiguration());
 

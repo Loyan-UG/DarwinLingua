@@ -1,0 +1,61 @@
+@model DarwinLingua.Web.Models.CourseLessonPageViewModel
+@{
+    ViewData["Title"] = Model.Lesson.Title;
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@Model.Lesson.CefrLevel · @T["Lesson"] @Model.Lesson.LessonNumber · @T["{0} minutes", Model.Lesson.EstimatedMinutes]</span>
+    <h1 class="headline-md">@Model.Lesson.Title</h1>
+    <p class="body-lg">@Model.Lesson.ShortDescription</p>
+    @if (Model.Progress is not null)
+    {
+        <div class="chip-grid" aria-label="@T["Learning progress"]">
+            <span class="chip-link chip-link--static">@T["Learning progress"]: @T[Model.Progress.State]</span>
+        </div>
+    }
+    <p>@Model.Lesson.Narrative</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Learning goals"]</h2>
+        <ul>
+            @foreach (string goal in Model.Lesson.LearningGoals)
+            {
+                <li>@goal</li>
+            }
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Review"]</h2>
+        <p>@(Model.Lesson.ReviewSummary ?? T["Review is not available for this lesson yet."].Value)</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Lesson.HomeworkTask))
+        {
+            <h3>@T["Practice task"]</h3>
+            <p>@Model.Lesson.HomeworkTask</p>
+        }
+    </article>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Linked content"]</h2>
+    <div class="grid-two-col">
+        <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Lesson.LinkedGrammarTopicSlugs, "Grammar")' />
+        <partial name="_SlugList" model='(T["Words"].Value, Model.Lesson.LinkedWordSlugs, "Browse")' />
+        <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Lesson.LinkedExpressionSlugs, "Expressions")' />
+        <partial name="_SlugList" model='(T["Dialogues"].Value, Model.Lesson.LinkedDialogueSlugs, "Dialogues")' />
+        <partial name="_SlugList" model='(T["Talk Topics"].Value, Model.Lesson.LinkedTalkTopicSlugs, "TalkTopics")' />
+        <partial name="_SlugList" model='(T["Exercise sets"].Value, Model.Lesson.LinkedExerciseSetSlugs, "Exercises")' />
+    </div>
+</section>
+
+<nav class="pagination-nav" aria-label="@T["Lesson navigation"]">
+    @if (Model.Lesson.PrerequisiteLessonSlugs.Count > 0)
+    {
+        <span>@T["Prerequisites"]: @string.Join(", ", Model.Lesson.PrerequisiteLessonSlugs)</span>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.Lesson.NextLessonSlug))
+    {
+        <a class="button button--secondary" asp-controller="Courses" asp-action="Lesson" asp-route-courseSlug="@Model.Lesson.CoursePathSlug" asp-route-lessonSlug="@Model.Lesson.NextLessonSlug">@T["Next lesson"]</a>
+    }
+</nav>

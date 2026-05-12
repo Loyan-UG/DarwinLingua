@@ -9,6 +9,10 @@ using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
 using DarwinLingua.Identity;
 using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
+using DarwinLingua.Learning.Application.Abstractions;
+using DarwinLingua.Learning.Application.DependencyInjection;
+using DarwinLingua.Learning.Application.Models;
+using DarwinLingua.Learning.Infrastructure.DependencyInjection;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using DarwinLingua.SharedKernel.Exceptions;
 using DarwinLingua.WebApi.Configuration;
@@ -95,6 +99,8 @@ builder.Services
     .AddDarwinLinguaInfrastructureForPostgres(sharedCatalogConnectionString)
     .AddCatalogApplication()
     .AddCatalogInfrastructure()
+    .AddLearningApplication()
+    .AddLearningInfrastructure()
     .AddContentOpsApplication()
     .AddContentOpsInfrastructure()
     .AddLocalizationInfrastructure();
@@ -370,6 +376,295 @@ app.MapGet(
                     slug,
                     primaryMeaningLanguageCode,
                     secondaryMeaningLanguageCode,
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/grammar",
+    async (
+        string? cefrLevel,
+        string? grammarCategory,
+        string? topicKey,
+        string? q,
+        IGrammarTopicQueryService grammarQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await grammarQueryService.GetPublishedGrammarTopicsAsync(
+                    new GrammarTopicListFilterModel(cefrLevel, grammarCategory, topicKey, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/grammar/{slug}",
+    async (
+        string slug,
+        string primaryMeaningLanguageCode,
+        IGrammarTopicQueryService grammarQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await grammarQueryService.GetPublishedGrammarTopicBySlugAsync(
+                    slug,
+                    primaryMeaningLanguageCode,
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/expressions",
+    async (
+        string? cefrLevel,
+        string? expressionType,
+        string? register,
+        string? category,
+        string? topicKey,
+        bool? isRisky,
+        string? q,
+        IExpressionQueryService expressionQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await expressionQueryService.GetPublishedExpressionsAsync(
+                    new ExpressionListFilterModel(cefrLevel, expressionType, register, category, topicKey, isRisky, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/expressions/{slug}",
+    async (
+        string slug,
+        string primaryMeaningLanguageCode,
+        IExpressionQueryService expressionQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await expressionQueryService.GetPublishedExpressionBySlugAsync(
+                    slug,
+                    primaryMeaningLanguageCode,
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/exercise-sets",
+    async (
+        string? cefrLevel,
+        string? ownerType,
+        string? ownerSlug,
+        string? q,
+        IExerciseQueryService exerciseQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await exerciseQueryService.GetPublishedExerciseSetsAsync(
+                    new ExerciseSetListFilterModel(cefrLevel, ownerType, ownerSlug, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/exercise-sets/{slug}",
+    async (
+        string slug,
+        IExerciseQueryService exerciseQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await exerciseQueryService.GetPublishedExerciseSetBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/exercises/{slug}",
+    async (
+        string slug,
+        IExerciseQueryService exerciseQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await exerciseQueryService.GetPublishedExerciseBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapPost(
+    "/api/learning/exercises/{slug}/attempts",
+    async (
+        string slug,
+        ExerciseAttemptRequestModel request,
+        IExerciseAttemptService attemptService,
+        HttpContext httpContext,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await attemptService.SubmitAttemptAsync(
+                    slug,
+                    request,
+                    httpContext.User.Identity?.Name ?? "anonymous",
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+        "/api/learning/progress/summary",
+        async (
+            ClaimsPrincipal principal,
+            IUserContentProgressService progressService,
+            CancellationToken cancellationToken) =>
+            await ResolveQueryRequestAsync(
+                    async () => await progressService
+                        .GetSummaryAsync(GetRequiredUserId(principal), cancellationToken)
+                        .ConfigureAwait(false))
+                .ConfigureAwait(false))
+    .RequireAuthorization();
+
+app.MapPost(
+        "/api/learning/progress/content",
+        async (
+            UpdateUserContentProgressRequestModel request,
+            ClaimsPrincipal principal,
+            IUserContentProgressService progressService,
+            CancellationToken cancellationToken) =>
+            await ResolveQueryRequestAsync(
+                    async () => await progressService
+                        .UpdateContentProgressAsync(GetRequiredUserId(principal), request, cancellationToken)
+                        .ConfigureAwait(false))
+                .ConfigureAwait(false))
+    .RequireAuthorization();
+
+app.MapGet(
+        "/api/learning/recommendations",
+        async (
+            ClaimsPrincipal principal,
+            int? take,
+            IUserContentProgressService progressService,
+            CancellationToken cancellationToken) =>
+            await ResolveQueryRequestAsync(
+                    async () => await progressService
+                        .GetRecommendationsAsync(GetRequiredUserId(principal), Math.Clamp(take ?? 6, 1, 20), cancellationToken)
+                        .ConfigureAwait(false))
+                .ConfigureAwait(false))
+    .RequireAuthorization();
+
+app.MapGet(
+    "/api/catalog/courses",
+    async (
+        string? cefrLevel,
+        string? q,
+        ICourseQueryService courseQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await courseQueryService.GetPublishedCoursePathsAsync(
+                    new CoursePathListFilterModel(cefrLevel, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/courses/{slug}",
+    async (
+        string slug,
+        ICourseQueryService courseQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await courseQueryService.GetPublishedCoursePathBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/course-lessons/{slug}",
+    async (
+        string slug,
+        ICourseQueryService courseQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await courseQueryService.GetPublishedCourseLessonBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/writing-templates",
+    async (
+        string? cefrLevel,
+        string? category,
+        string? register,
+        string? situation,
+        string? q,
+        IWritingTemplateQueryService writingTemplateQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await writingTemplateQueryService.GetPublishedWritingTemplatesAsync(
+                    new WritingTemplateListFilterModel(cefrLevel, category, register, situation, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/writing-templates/{slug}",
+    async (
+        string slug,
+        IWritingTemplateQueryService writingTemplateQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await writingTemplateQueryService.GetPublishedWritingTemplateBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/cultural-notes",
+    async (
+        string? cefrLevel,
+        string? category,
+        string? context,
+        string? q,
+        ICulturalNoteQueryService culturalNoteQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await culturalNoteQueryService.GetPublishedCulturalNotesAsync(
+                    new CulturalNoteListFilterModel(cefrLevel, category, context, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/cultural-notes/{slug}",
+    async (
+        string slug,
+        ICulturalNoteQueryService culturalNoteQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await culturalNoteQueryService.GetPublishedCulturalNoteBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/exam-profiles",
+    async (
+        IExamPrepQueryService examPrepQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await examPrepQueryService.GetPublishedExamProfilesAsync(cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/exam-prep",
+    async (
+        string? examProfile,
+        string? cefrLevel,
+        string? skillFocus,
+        string? taskType,
+        string? section,
+        string? q,
+        IExamPrepQueryService examPrepQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await examPrepQueryService.GetPublishedExamPrepUnitsAsync(
+                    new ExamPrepListFilterModel(examProfile, cefrLevel, skillFocus, taskType, section, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/exam-prep/{slug}",
+    async (
+        string slug,
+        IExamPrepQueryService examPrepQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await examPrepQueryService.GetPublishedExamPrepUnitBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/search",
+    async (
+        string? q,
+        string? cefrLevel,
+        string? resultType,
+        string? category,
+        string? topicKey,
+        IUnifiedLearningSearchService searchService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await searchService.SearchAsync(
+                    new UnifiedLearningSearchFilterModel(q, cefrLevel, resultType, category, topicKey),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -1694,6 +1989,17 @@ static string? TryGetPrincipalEmail(ClaimsPrincipal principal)
     return !string.IsNullOrWhiteSpace(candidate) && candidate.Contains('@', StringComparison.Ordinal)
         ? candidate
         : null;
+}
+
+static string GetRequiredUserId(ClaimsPrincipal principal)
+{
+    string? userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+    if (string.IsNullOrWhiteSpace(userId))
+    {
+        throw new DomainRuleException("Authenticated user id is required.");
+    }
+
+    return userId;
 }
 
 static string GetNormalizedEmailParameter(HttpRequest request, string queryParameterName)

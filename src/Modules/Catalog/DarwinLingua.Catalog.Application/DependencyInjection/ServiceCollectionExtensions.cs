@@ -21,6 +21,15 @@ public static class ServiceCollectionExtensions
 
         services.AddMemoryCache();
         services.AddScoped<ITopicQueryService, TopicQueryService>();
+        services.AddScoped<IGrammarTopicQueryService, GrammarTopicQueryService>();
+        services.AddScoped<IExpressionQueryService, ExpressionQueryService>();
+        services.AddScoped<IExerciseQueryService, ExerciseQueryService>();
+        services.AddScoped<IExerciseAttemptService, ExerciseAttemptService>();
+        services.AddScoped<ICourseQueryService, CourseQueryService>();
+        services.AddScoped<IWritingTemplateQueryService, WritingTemplateQueryService>();
+        services.AddScoped<ICulturalNoteQueryService, CulturalNoteQueryService>();
+        services.AddScoped<IExamPrepQueryService, ExamPrepQueryService>();
+        services.AddScoped<IUnifiedLearningSearchService, UnifiedLearningSearchService>();
         services.AddScoped<IWordCollectionQueryService, WordCollectionQueryService>();
         services.AddScoped<IDialogueLessonQueryService, DialogueLessonQueryService>();
         services.AddScoped<ITalkTopicQueryService, TalkTopicQueryService>();

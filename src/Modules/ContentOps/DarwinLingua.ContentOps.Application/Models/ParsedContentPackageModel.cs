@@ -47,6 +47,34 @@ public sealed record ParsedContentPackageModel(
     public IReadOnlyList<ParsedTalkTopicModel> TalkTopics { get; init; } = [];
 
     /// <summary>
+    /// Gets parsed grammar topics included in the package.
+    /// </summary>
+    public IReadOnlyList<ParsedGrammarTopicModel> GrammarTopics { get; init; } = [];
+
+    /// <summary>
+    /// Gets parsed expression entries included in the package.
+    /// </summary>
+    public IReadOnlyList<ParsedExpressionEntryModel> ExpressionEntries { get; init; } = [];
+
+    public IReadOnlyList<ParsedExerciseModel> Exercises { get; init; } = [];
+
+    public IReadOnlyList<ParsedExerciseSetModel> ExerciseSets { get; init; } = [];
+
+    public IReadOnlyList<ParsedCoursePathModel> CoursePaths { get; init; } = [];
+
+    public IReadOnlyList<ParsedCourseModuleModel> CourseModules { get; init; } = [];
+
+    public IReadOnlyList<ParsedCourseLessonModel> CourseLessons { get; init; } = [];
+
+    public IReadOnlyList<ParsedWritingTemplateModel> WritingTemplates { get; init; } = [];
+
+    public IReadOnlyList<ParsedCulturalNoteModel> CulturalNotes { get; init; } = [];
+
+    public IReadOnlyList<ParsedExamProfileModel> ExamProfiles { get; init; } = [];
+
+    public IReadOnlyList<ParsedExamPrepUnitModel> ExamPrepUnits { get; init; } = [];
+
+    /// <summary>
     /// Gets parsed conversation starter packs included in the package.
     /// </summary>
     public IReadOnlyList<ParsedConversationStarterPackModel> ConversationStarterPacks { get; init; } = [];

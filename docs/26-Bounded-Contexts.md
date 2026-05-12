@@ -52,6 +52,15 @@ The product should be divided into the following bounded contexts:
 - Publishing and Distribution
 - Resource Discovery
 - Dialogue Learning
+- Grammar / Learning Reference
+- Expressions
+- Exercises / Practice
+- Courses / Learning Paths
+- Exam Preparation
+- Writing Templates
+- Cultural Notes
+- Unified Learning Search
+- Learning Progress
 - Events and Organizers
 - Profiles and Matching
 - Moderation
@@ -661,6 +670,68 @@ Public profiles, matching, organizer self-service listings, and user-generated p
 
 ---
 
+# 8E. Phase 7 Learning Portal Contexts
+
+Phase 7 is Web-first. Mobile consumes the stable Web/API content model later, after Web sign-off and validation.
+
+## 8E.1 Grammar / Learning Reference
+
+Owns the implemented `GrammarTopic` aggregate and its structured explanations, examples, common mistakes, rule summaries, exception notes, prerequisites, and related-topic links.
+
+Grammar may link to Catalog words, Dialogues, Talk Topics, and future Exercises, but it must not own word meanings. The current Web-first implementation stores exercise references as unresolved-safe slugs until the Exercise Engine exists.
+
+## 8E.2 Expressions
+
+Owns the implemented `ExpressionEntry` aggregate, expression type, register, context/category, tone warnings, examples, related expressions, linked exercise slugs, and expression-specific meaning.
+
+Expressions can link to Words, but Words remain owned by Catalog. This separation is required because expression meaning can differ from literal word meaning. The current Web-first implementation stores related expressions and exercise references as unresolved-safe slugs until broader cross-content resolution and the Exercise Engine exist.
+
+## 8E.3 Exercises / Practice
+
+Owns the implemented reusable `Exercise`, `ExerciseSet`, exercise answer keys, deterministic feedback, exercise attempts, and exercise runner behavior.
+
+Exercises may attach to grammar, words, expressions, dialogues, Talk Topics, course lessons, exam prep, and writing templates through explicit owner references. Exercise definitions remain shared content; `UserExerciseAttempt` rows remain user-specific state.
+
+## 8E.4 Courses / Learning Paths
+
+Owns the implemented `CoursePath`, `CourseModule`, and `CourseLesson` aggregates.
+
+Course Lessons orchestrate links to Grammar, Words, Expressions, Dialogues, Talk Topics, Exercises, and Exam Prep. They should not duplicate full grammar articles, word meanings, expression explanations, or dialogue content.
+
+## 8E.5 Exam Preparation
+
+Owns the implemented `ExamProfile` taxonomy, exam-section/task-type rules, and `ExamPrepUnit` aggregate.
+
+Exam Prep links to Dialogues, Exercises, Grammar, Expressions, Writing Templates, Talk Topics, and Course Lessons without owning those content records.
+
+## 8E.6 Writing Templates
+
+Owns the implemented `WritingTemplate` aggregate, template variables, filled examples, register, and practical writing categories.
+
+Writing Templates may link to Grammar, Words, Expressions, Exercises, and Cultural Notes.
+
+## 8E.7 Cultural Notes
+
+Owns the implemented `CulturalNote` aggregate, communication-norm sections, practical examples, do/don't notes, sensitivity warnings, and controlled cultural-note categories.
+
+Cultural Notes may link to Dialogues, Expressions, Writing Templates, Talk Topics, and Course Lessons.
+
+## 8E.8 Unified Learning Search
+
+Owns the implemented search result projection, deterministic ranking rules, and cross-content filters.
+
+Unified Search reads from owning contexts and returns lightweight result projections. It must not become the owner of content records or replace existing word search behavior.
+
+## 8E.9 Learning Progress
+
+Owns the implemented `UserContentProgress` records for cross-content Learning Portal state.
+
+Progress owns user state only: user id, controlled content owner type, owner slug, state, view/completion timestamps, and counters. It must not store shared educational content, word meanings, grammar explanations, expression meanings, or lesson bodies.
+
+Progress can read Catalog-owned content for deterministic recommendations such as next incomplete course lessons and grammar topics. Catalog remains the owner of those content records. Mobile consumes the stable Web/API progress model later.
+
+---
+
 # 9. Context Dependency Summary
 
 ## 9.1 Main Dependency Graph
@@ -677,6 +748,31 @@ Recommended dependency direction:
 - Resource Discovery -> Localization Support
 - Dialogue Learning -> Content Catalog
 - Dialogue Learning -> Localization Support
+- Grammar / Learning Reference -> Content Catalog
+- Grammar / Learning Reference -> Exercises / Practice
+- Expressions -> Content Catalog
+- Expressions -> Exercises / Practice
+- Exercises / Practice -> Content Catalog
+- Exercises / Practice -> Learning Profile
+- Courses / Learning Paths -> Grammar / Learning Reference
+- Courses / Learning Paths -> Expressions
+- Courses / Learning Paths -> Dialogue Learning
+- Courses / Learning Paths -> Exercises / Practice
+- Exam Preparation -> Dialogue Learning
+- Exam Preparation -> Exercises / Practice
+- Exam Preparation -> Grammar / Learning Reference
+- Exam Preparation -> Writing Templates
+- Writing Templates -> Grammar / Learning Reference
+- Writing Templates -> Content Catalog
+- Cultural Notes -> Expressions
+- Cultural Notes -> Dialogue Learning
+- Unified Learning Search -> Content Catalog
+- Unified Learning Search -> Grammar / Learning Reference
+- Unified Learning Search -> Expressions
+- Unified Learning Search -> Exercises / Practice
+- Unified Learning Search -> Courses / Learning Paths
+- Learning Progress -> Content Catalog
+- Learning Progress -> Learning Profile
 - Events and Organizers -> Dialogue Learning
 - Events and Organizers -> Localization Support
 - Events and Organizers -> Moderation
@@ -699,6 +795,15 @@ The most changeable are:
 - Publishing and Distribution
 - Resource Discovery UI behavior
 - Dialogue Learning authoring
+- Grammar and learning-reference authoring
+- Expression authoring
+- Exercise definitions and attempts
+- Course path orchestration
+- Exam-preparation authoring
+- Writing-template authoring
+- Cultural-note authoring
+- Unified learning search ranking
+- cross-content progress and personalization
 - Events and organizer workflows
 - Profiles and matching workflows
 - Moderation operations
@@ -894,6 +999,22 @@ This is normal and healthy.
 - roleplay
 - preparation pack
 
+## 16.6A Phase 7 Learning Portal Language
+
+- grammar topic
+- expression
+- exercise
+- exercise set
+- course path
+- course module
+- course lesson
+- exam profile
+- exam prep unit
+- writing template
+- cultural note
+- unified search result
+- content progress
+
 ## 16.7 Events and Organizers Language
 
 - event
@@ -1019,6 +1140,15 @@ Darwin Deutsch should be treated as a modular monolith with clear bounded contex
 - Practice
 - Resource Discovery
 - Dialogue Learning
+- Grammar / Learning Reference
+- Expressions
+- Exercises / Practice
+- Courses / Learning Paths
+- Exam Preparation
+- Writing Templates
+- Cultural Notes
+- Unified Learning Search
+- Learning Progress
 - Events and Organizers
 - Profiles and Matching
 - Moderation

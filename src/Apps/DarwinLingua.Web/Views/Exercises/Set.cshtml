@@ -1,0 +1,25 @@
+@model DarwinLingua.Web.Models.ExerciseSetPageViewModel
+@{
+    ViewData["Title"] = Model.ExerciseSet.Title;
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.ExerciseSet.CefrLevel · @T[Model.ExerciseSet.OwnerType]</span>
+        <a class="button button--secondary button--compact" asp-controller="Exercises" asp-action="Index">@T["All exercise sets"]</a>
+    </div>
+    <h1 class="headline-md">@Model.ExerciseSet.Title</h1>
+    <p class="body-lg">@Model.ExerciseSet.Description</p>
+</section>
+
+<section class="grid-two-col">
+    @foreach (var exercise in Model.ExerciseSet.Exercises)
+    {
+        <article class="panel stack-md">
+            <span class="eyebrow">@T[exercise.ExerciseType] · @T[exercise.TargetSkill]</span>
+            <h2 class="headline-sm"><a asp-controller="Exercises" asp-action="Detail" asp-route-slug="@exercise.Slug">@exercise.Title</a></h2>
+            <p>@exercise.Instruction</p>
+            <a class="button button--secondary" asp-controller="Exercises" asp-action="Detail" asp-route-slug="@exercise.Slug">@T["Start exercise"]</a>
+        </article>
+    }
+</section>

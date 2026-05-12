@@ -549,6 +549,17 @@ public sealed class ContentImportServiceApplicationTests
                     "A1",
                     "doctor-and-healthcare",
                     ["missing-topic"],
+                    [],
+                    [],
+                    "ask-for-information",
+                    "doctor-office",
+                    "formal",
+                    ["ask-question", "answer-question"],
+                    15,
+                    null,
+                    null,
+                    [],
+                    [],
                     1,
                     [],
                     [],
@@ -1403,6 +1414,148 @@ public sealed class ContentImportServiceApplicationTests
         Assert.DoesNotContain(result.Issues, issue => issue.Severity == "Error");
     }
 
+    [Fact]
+    public async Task ImportAsync_ShouldImportExpressionEntry_WhenContractIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(CreateValidExpression());
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        ExpressionEntry expression = Assert.Single(repository.ImportedExpressions);
+        Assert.Equal("a2-alles-klar", expression.Slug);
+    }
+
+    [Theory]
+    [InlineData("bad-type", "neutral", "Expression expressionType 'bad-type' is not supported.")]
+    [InlineData("fixed-expression", "bad-register", "Expression register 'bad-register' is not supported.")]
+    public async Task ImportAsync_ShouldRejectExpressionEntry_WhenControlledValueIsInvalid(
+        string expressionType,
+        string register,
+        string expectedMessage)
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with { ExpressionType = expressionType, Register = register });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains(expectedMessage, StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExpressionEntry_WhenRiskyExpressionMissingWarning()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with { Register = "rude", IsRisky = true, Warnings = [] });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Risky expressions require at least one warning with text.", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldImportCulturalNote_WhenContractIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCulturalNote(CreateValidCulturalNote());
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("cultural-notes.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        CulturalNote note = Assert.Single(repository.ImportedCulturalNotes);
+        Assert.Equal("a2-du-vs-sie-at-work", note.Slug);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectCulturalNote_WhenCategoryIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCulturalNote(
+            CreateValidCulturalNote() with { Category = "bad-category" });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("cultural-notes.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Cultural note category 'bad-category' is not supported.", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldImportExamPrep_WhenContractIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExamPrep(CreateValidExamProfile(), CreateValidExamPrepUnit());
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exam-prep.json"), CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal("goethe-a2", Assert.Single(repository.ImportedExamProfiles).Key);
+        Assert.Equal("a2-goethe-speaking-roleplay", Assert.Single(repository.ImportedExamPrepUnits).Slug);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExamPrep_WhenProfileIsInvalid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExamPrep(
+            CreateValidExamProfile() with { Key = "bad-profile" },
+            CreateValidExamPrepUnit() with { ExamProfileKey = "bad-profile" });
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exam-prep.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Exam profile key 'bad-profile' is not supported.", StringComparison.Ordinal));
+    }
+
     private static ServiceProvider BuildServiceProvider(
         IContentImportFileReader fileReader,
         IContentImportParser parser,
@@ -1415,6 +1568,123 @@ public sealed class ContentImportServiceApplicationTests
         services.AddSingleton(repository);
 
         return services.BuildServiceProvider();
+    }
+
+    private static ParsedContentPackageModel CreatePackageWithExpression(ParsedExpressionEntryModel expression)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "expression-test-package",
+            "Expression Test Package",
+            "Manual",
+            ["en"],
+            [],
+            [])
+        {
+            ExpressionEntries = [expression],
+        };
+    }
+
+    private static ParsedContentPackageModel CreatePackageWithCulturalNote(ParsedCulturalNoteModel note)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "cultural-note-test-package",
+            "Cultural Note Test Package",
+            "Manual",
+            ["en"],
+            [],
+            [])
+        {
+            CulturalNotes = [note],
+        };
+    }
+
+    private static ParsedContentPackageModel CreatePackageWithExamPrep(ParsedExamProfileModel profile, ParsedExamPrepUnitModel unit)
+    {
+        return new ParsedContentPackageModel("1.0", "exam-prep-test-package", "Exam Prep Test Package", "Manual", ["en"], [], [])
+        {
+            ExamProfiles = [profile],
+            ExamPrepUnits = [unit],
+        };
+    }
+
+    private static ParsedExpressionEntryModel CreateValidExpression()
+    {
+        return new ParsedExpressionEntryModel(
+            "a2-alles-klar",
+            "Alles klar.",
+            "Everything clear.",
+            "All good or understood.",
+            "Used to confirm understanding.",
+            "A2",
+            "fixed-expression",
+            "neutral",
+            "daily-life",
+            "de",
+            false,
+            ["shopping"],
+            true,
+            10,
+            [new ParsedExpressionMeaningModel("en", "All good or understood.", "Everything clear.", "A neutral confirmation phrase.")],
+            [new ParsedExpressionExampleModel("Alles klar, wir treffen uns um acht.", null, [new ParsedContentMeaningModel("en", "All good, we meet at eight.")], 10)],
+            [new ParsedExpressionWarningModel("tone", "Avoid in very formal letters.", [new ParsedContentMeaningModel("en", "Avoid in very formal letters.")])],
+            [new ParsedExpressionLinkedWordModel("klar", "klar", 10)],
+            ["verstanden"],
+            ["a2-confirmation-phrases"]);
+    }
+
+    private static ParsedCulturalNoteModel CreateValidCulturalNote()
+    {
+        return new ParsedCulturalNoteModel(
+            "a2-du-vs-sie-at-work",
+            "Du vs. Sie at work",
+            "A practical note about address forms.",
+            "A2",
+            "du-vs-sie",
+            "Workplace introductions",
+            ["Use Sie until a colleague offers du."],
+            [new ParsedCulturalNoteExampleModel("Sollen wir uns duzen?", "A polite question about switching to du.")],
+            ["Start with Sie in formal settings."],
+            ["Do not switch to du automatically."],
+            "Address forms can feel personal in hierarchical contexts.",
+            ["a2-workplace-introduction"],
+            ["sollen-wir-uns-duzen"],
+            ["a2-formal-work-email"],
+            ["a2-workplace-small-talk"],
+            ["a2-workplace-communication"],
+            true,
+            10);
+    }
+
+    private static ParsedExamProfileModel CreateValidExamProfile()
+    {
+        return new ParsedExamProfileModel("goethe-a2", "Goethe A2", "A2", "Goethe A2 preparation.", true, 10);
+    }
+
+    private static ParsedExamPrepUnitModel CreateValidExamPrepUnit()
+    {
+        return new ParsedExamPrepUnitModel(
+            "a2-goethe-speaking-roleplay",
+            "goethe-a2",
+            "Speaking roleplay strategy",
+            "Prepare a short A2 roleplay.",
+            "A2",
+            "speaking",
+            "roleplay",
+            "exam-preparation",
+            "Use short, clear questions and answers.",
+            ["Ask for clarification when needed."],
+            ["Answer the prompt directly."],
+            ["a2-appointment-roleplay"],
+            ["a2-appointments"],
+            ["a2-question-word-order"],
+            ["koennten-sie-bitte"],
+            ["a2-appointment-reschedule"],
+            ["a2-speaking-roleplay-practice"],
+            ["a2-appointments-lesson"],
+            true,
+            20);
     }
 
     private static ParsedContentEntryModel CreateValidEntry(string word, string topicKey)
@@ -1652,6 +1922,14 @@ public sealed class ContentImportServiceApplicationTests
 
         public IReadOnlyList<WordCollection> ImportedCollections { get; private set; } = [];
 
+        public IReadOnlyList<ExpressionEntry> ImportedExpressions { get; private set; } = [];
+
+        public IReadOnlyList<CulturalNote> ImportedCulturalNotes { get; private set; } = [];
+
+        public IReadOnlyList<ExamProfile> ImportedExamProfiles { get; private set; } = [];
+
+        public IReadOnlyList<ExamPrepUnit> ImportedExamPrepUnits { get; private set; } = [];
+
         public Task<IReadOnlyDictionary<string, Topic>> GetActiveTopicsByKeyAsync(CancellationToken cancellationToken)
         {
             Topic topic = new(Guid.NewGuid(), "shopping", 10, true, DateTime.UtcNow);
@@ -1701,12 +1979,27 @@ public sealed class ContentImportServiceApplicationTests
             IReadOnlyList<WordCollection> importedCollections,
             IReadOnlyList<DialogueLesson> importedDialogues,
             IReadOnlyList<TalkTopic> importedTalkTopics,
+            IReadOnlyList<GrammarTopic> importedGrammarTopics,
+            IReadOnlyList<ExpressionEntry> importedExpressions,
+            IReadOnlyList<Exercise> importedExercises,
+            IReadOnlyList<ExerciseSet> importedExerciseSets,
+            IReadOnlyList<CoursePath> importedCoursePaths,
+            IReadOnlyList<CourseModule> importedCourseModules,
+            IReadOnlyList<CourseLesson> importedCourseLessons,
+            IReadOnlyList<WritingTemplate> importedWritingTemplates,
+            IReadOnlyList<CulturalNote> importedCulturalNotes,
+            IReadOnlyList<ExamProfile> importedExamProfiles,
+            IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
             IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
             IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
             CancellationToken cancellationToken)
         {
             ImportedTalkTopics = importedTalkTopics;
             ImportedCollections = importedCollections;
+            ImportedExpressions = importedExpressions;
+            ImportedCulturalNotes = importedCulturalNotes;
+            ImportedExamProfiles = importedExamProfiles;
+            ImportedExamPrepUnits = importedExamPrepUnits;
             return Task.CompletedTask;
         }
     }

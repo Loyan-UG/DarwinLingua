@@ -14,9 +14,9 @@ public partial class AppShell : Shell
     private bool _isNormalizingHomeSelection;
     private readonly ShellContent _homeContent;
     private readonly ShellContent _practiceContent;
-    private readonly ShellContent _browseContent;
-    private readonly ShellContent _favoritesContent;
-    private readonly ShellContent _settingsContent;
+    private readonly ShellContent _speakContent;
+    private readonly ShellContent _prepareContent;
+    private readonly ShellContent _resourcesContent;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AppShell"/> class.
@@ -39,7 +39,7 @@ public partial class AppShell : Shell
         _homeContent = new ShellContent
         {
             Route = "home",
-            ContentTemplate = CreatePageTemplate<HomePage>(),
+            ContentTemplate = CreatePageTemplate<LearningPortalPage>(),
         };
 
         _practiceContent = new ShellContent
@@ -48,24 +48,29 @@ public partial class AppShell : Shell
             ContentTemplate = CreatePageTemplate<PracticePage>(),
         };
 
-        _browseContent = new ShellContent
+        _speakContent = new ShellContent
         {
-            Route = "browse",
+            Route = "speak",
+            ContentTemplate = CreatePageTemplate<DialoguesPage>(),
+        };
+
+        _prepareContent = new ShellContent
+        {
+            Route = "prepare",
+            ContentTemplate = CreatePageTemplate<ConversationStartersPage>(),
+        };
+
+        _resourcesContent = new ShellContent
+        {
+            Route = "resources",
             ContentTemplate = CreatePageTemplate<TopicsPage>(),
         };
 
-        _favoritesContent = new ShellContent
-        {
-            Route = "favorites",
-            ContentTemplate = CreatePageTemplate<FavoritesPage>(),
-        };
-
-        _settingsContent = new ShellContent
-        {
-            Route = "settings",
-            ContentTemplate = CreatePageTemplate<SettingsPage>(),
-        };
-
+        Routing.RegisterRoute(nameof(LearningPortalPage), typeof(LearningPortalPage));
+        Routing.RegisterRoute(nameof(LearningPortalListPage), typeof(LearningPortalListPage));
+        Routing.RegisterRoute(nameof(LearningPortalDetailPage), typeof(LearningPortalDetailPage));
+        Routing.RegisterRoute(nameof(LearningPortalSearchPage), typeof(LearningPortalSearchPage));
+        Routing.RegisterRoute(nameof(TopicsPage), typeof(TopicsPage));
         Routing.RegisterRoute(nameof(TopicWordsPage), typeof(TopicWordsPage));
         Routing.RegisterRoute(nameof(CollectionsPage), typeof(CollectionsPage));
         Routing.RegisterRoute(nameof(CollectionWordsPage), typeof(CollectionWordsPage));
@@ -80,6 +85,8 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(PracticeSessionPage), typeof(PracticeSessionPage));
         Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
         Routing.RegisterRoute(nameof(AccountPage), typeof(AccountPage));
+        Routing.RegisterRoute(nameof(FavoritesPage), typeof(FavoritesPage));
+        Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
 
         Items.Add(new TabBar
         {
@@ -87,9 +94,9 @@ public partial class AppShell : Shell
             {
                 _homeContent,
                 _practiceContent,
-                _browseContent,
-                _favoritesContent,
-                _settingsContent,
+                _speakContent,
+                _prepareContent,
+                _resourcesContent,
             },
         });
 
@@ -133,11 +140,11 @@ public partial class AppShell : Shell
     private void ApplyLocalizedShellText()
     {
         Title = AppStrings.AppTitle;
-        _homeContent.Title = AppStrings.HomeTabTitle;
+        _homeContent.Title = AppStrings.LearningPortalGroupLearn;
         _practiceContent.Title = AppStrings.PracticeTabTitle;
-        _browseContent.Title = AppStrings.BrowseTabTitle;
-        _favoritesContent.Title = AppStrings.FavoritesTabTitle;
-        _settingsContent.Title = AppStrings.SettingsTabTitle;
+        _speakContent.Title = AppStrings.LearningPortalGroupSpeak;
+        _prepareContent.Title = AppStrings.LearningPortalGroupPrepare;
+        _resourcesContent.Title = AppStrings.LearningPortalGroupResources;
     }
 
     private async void OnShellNavigated(object? sender, ShellNavigatedEventArgs e)

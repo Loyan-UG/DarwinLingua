@@ -54,6 +54,17 @@ internal sealed class ContentImportParser : IContentImportParser
         {
             Dialogues = (document.Dialogues ?? []).Select(Map).ToArray(),
             TalkTopics = (document.TalkTopics ?? []).Select(Map).ToArray(),
+            GrammarTopics = (document.GrammarTopics ?? []).Select(Map).ToArray(),
+            ExpressionEntries = (document.ExpressionEntries ?? []).Select(Map).ToArray(),
+            Exercises = (document.Exercises ?? []).Select(Map).ToArray(),
+            ExerciseSets = (document.ExerciseSets ?? []).Select(Map).ToArray(),
+            CoursePaths = (document.CoursePaths ?? []).Select(Map).ToArray(),
+            CourseModules = (document.CourseModules ?? []).Select(Map).ToArray(),
+            CourseLessons = (document.CourseLessons ?? []).Select(Map).ToArray(),
+            WritingTemplates = (document.WritingTemplates ?? []).Select(Map).ToArray(),
+            CulturalNotes = (document.CulturalNotes ?? []).Select(Map).ToArray(),
+            ExamProfiles = (document.ExamProfiles ?? []).Select(Map).ToArray(),
+            ExamPrepUnits = (document.ExamPrepUnits ?? []).Select(Map).ToArray(),
             ConversationStarterPacks = (document.ConversationStarterPacks ?? []).Select(Map).ToArray(),
             EventPreparationPacks = (document.EventPreparationPacks ?? []).Select(Map).ToArray(),
         };
@@ -260,6 +271,94 @@ internal sealed class ContentImportParser : IContentImportParser
             topic.IsPublished ?? true);
     }
 
+    private static ParsedGrammarTopicModel Map(GrammarTopicDocument topic)
+    {
+        return new ParsedGrammarTopicModel(
+            topic.Slug ?? string.Empty,
+            topic.Title ?? string.Empty,
+            topic.ShortDescription ?? string.Empty,
+            topic.CefrLevel ?? string.Empty,
+            topic.GrammarCategory ?? string.Empty,
+            (topic.Topics ?? []).Select(item => item ?? string.Empty).ToArray(),
+            topic.IsPublished ?? true,
+            topic.SortOrder ?? 0,
+            (topic.Sections ?? []).Select(section => new ParsedGrammarSectionModel(
+                section.Heading ?? string.Empty,
+                section.Explanation ?? string.Empty,
+                (section.Translations ?? []).Select(translation => new ParsedGrammarSectionTranslationModel(
+                    translation.Language ?? string.Empty,
+                    translation.Heading ?? string.Empty,
+                    translation.Text ?? string.Empty)).ToArray(),
+                section.SortOrder ?? 0)).ToArray(),
+            (topic.Examples ?? []).Select(example => new ParsedGrammarExampleModel(
+                example.GermanText ?? string.Empty,
+                example.Note,
+                MapTranslations(example.Translations),
+                example.SortOrder ?? 0)).ToArray(),
+            (topic.RuleSummaries ?? []).Select(item => new ParsedGrammarTextItemModel(
+                item.Text ?? string.Empty,
+                MapTranslations(item.Translations),
+                item.SortOrder ?? 0)).ToArray(),
+            (topic.CommonMistakes ?? []).Select(item => new ParsedGrammarCommonMistakeModel(
+                item.WrongText ?? string.Empty,
+                item.CorrectedText ?? string.Empty,
+                item.Explanation ?? string.Empty,
+                MapTranslations(item.Translations),
+                item.SortOrder ?? 0)).ToArray(),
+            (topic.ExceptionNotes ?? []).Select(item => new ParsedGrammarTextItemModel(
+                item.Text ?? string.Empty,
+                MapTranslations(item.Translations),
+                item.SortOrder ?? 0)).ToArray(),
+            (topic.PrerequisiteSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (topic.RelatedTopicSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (topic.LinkedWords ?? []).Select(word => new ParsedGrammarLinkedWordModel(
+                word.Lemma ?? string.Empty,
+                word.WordSlug,
+                word.SortOrder ?? 0)).ToArray(),
+            (topic.LinkedDialogueSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (topic.LinkedTalkTopicSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (topic.LinkedExerciseSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray());
+    }
+
+    private static ParsedExpressionEntryModel Map(ExpressionEntryDocument expression)
+    {
+        return new ParsedExpressionEntryModel(
+            expression.Slug ?? string.Empty,
+            expression.ExpressionText ?? string.Empty,
+            expression.LiteralMeaningText,
+            expression.ActualMeaningText ?? string.Empty,
+            expression.UsageExplanation,
+            expression.CefrLevel ?? string.Empty,
+            expression.ExpressionType ?? string.Empty,
+            expression.Register ?? string.Empty,
+            expression.Category ?? expression.Context ?? string.Empty,
+            expression.Region,
+            expression.IsRisky ?? false,
+            (expression.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            expression.IsPublished ?? true,
+            expression.SortOrder ?? 0,
+            (expression.Meanings ?? []).Select(meaning => new ParsedExpressionMeaningModel(
+                meaning.Language ?? string.Empty,
+                meaning.ActualMeaningText ?? meaning.Text ?? string.Empty,
+                meaning.LiteralMeaningText,
+                meaning.UsageExplanation)).ToArray(),
+            (expression.Examples ?? []).Select(example => new ParsedExpressionExampleModel(
+                example.GermanText ?? string.Empty,
+                example.Note,
+                MapTranslations(example.Translations),
+                example.SortOrder ?? 0)).ToArray(),
+            (expression.Warnings ?? []).Select(warning => new ParsedExpressionWarningModel(
+                warning.WarningType ?? string.Empty,
+                warning.Text ?? string.Empty,
+                MapTranslations(warning.Translations))).ToArray(),
+            (expression.LinkedWords ?? []).Select(word => new ParsedExpressionLinkedWordModel(
+                word.Lemma ?? string.Empty,
+                word.WordSlug,
+                word.SortOrder ?? 0)).ToArray(),
+            (expression.RelatedExpressionSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            (expression.LinkedExerciseSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray());
+    }
+
     private static ParsedEventPreparationPackModel Map(EventPreparationPackDocument pack)
     {
         return new ParsedEventPreparationPackModel(
@@ -281,6 +380,168 @@ internal sealed class ContentImportParser : IContentImportParser
             (pack.RoleplayPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray(),
             (pack.ReviewPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray());
     }
+
+    private static ParsedExerciseModel Map(ExerciseDocument exercise)
+    {
+        return new ParsedExerciseModel(
+            exercise.Slug ?? string.Empty,
+            exercise.Title ?? string.Empty,
+            exercise.Instruction ?? string.Empty,
+            exercise.CefrLevel ?? string.Empty,
+            exercise.ExerciseType ?? string.Empty,
+            exercise.TargetSkill ?? string.Empty,
+            exercise.OwnerType ?? string.Empty,
+            exercise.OwnerSlug,
+            SerializeRaw(exercise.Prompt),
+            SerializeRaw(exercise.AnswerKey),
+            exercise.CorrectExplanation ?? string.Empty,
+            exercise.IncorrectExplanation ?? string.Empty,
+            exercise.Hint,
+            exercise.CommonMistakeNote,
+            exercise.IsPublished ?? true,
+            exercise.SortOrder ?? 0);
+    }
+
+    private static ParsedExerciseSetModel Map(ExerciseSetDocument set)
+    {
+        return new ParsedExerciseSetModel(
+            set.Slug ?? string.Empty,
+            set.Title ?? string.Empty,
+            set.Description ?? string.Empty,
+            set.CefrLevel ?? string.Empty,
+            set.OwnerType ?? string.Empty,
+            set.OwnerSlug,
+            (set.ExerciseSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            set.IsPublished ?? true,
+            set.SortOrder ?? 0);
+    }
+
+    private static ParsedCoursePathModel Map(CoursePathDocument course) =>
+        new(
+            course.Slug ?? string.Empty,
+            course.Title ?? string.Empty,
+            course.Description ?? string.Empty,
+            course.CefrLevel,
+            course.CefrRange,
+            course.IsPublished ?? true,
+            course.SortOrder ?? 0);
+
+    private static ParsedCourseModuleModel Map(CourseModuleDocument module) =>
+        new(
+            module.Slug ?? string.Empty,
+            module.CoursePathSlug ?? string.Empty,
+            module.Title ?? string.Empty,
+            module.Description ?? string.Empty,
+            module.ModuleNumber ?? 0,
+            module.CefrLevel ?? string.Empty,
+            module.IsPublished ?? true,
+            module.SortOrder ?? 0);
+
+    private static ParsedCourseLessonModel Map(CourseLessonDocument lesson) =>
+        new(
+            lesson.Slug ?? string.Empty,
+            lesson.CoursePathSlug ?? string.Empty,
+            lesson.ModuleSlug ?? string.Empty,
+            lesson.LessonNumber ?? 0,
+            lesson.Title ?? string.Empty,
+            lesson.ShortDescription ?? string.Empty,
+            lesson.Narrative ?? string.Empty,
+            lesson.CefrLevel ?? string.Empty,
+            lesson.EstimatedMinutes ?? 0,
+            (lesson.LearningGoals ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.PrerequisiteLessonSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            lesson.NextLessonSlug,
+            (lesson.LinkedGrammarTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.LinkedWordSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.LinkedExpressionSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.LinkedDialogueSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.LinkedTalkTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.LinkedExerciseSetSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.LinkedExamPrepSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            lesson.ReviewSummary,
+            lesson.HomeworkTask,
+            lesson.IsPublished ?? true,
+            lesson.SortOrder ?? 0);
+
+    private static ParsedWritingTemplateModel Map(WritingTemplateDocument template) =>
+        new(
+            template.Slug ?? string.Empty,
+            template.Title ?? string.Empty,
+            template.ShortDescription ?? string.Empty,
+            template.CefrLevel ?? string.Empty,
+            template.Category ?? string.Empty,
+            template.Situation ?? string.Empty,
+            template.Register ?? string.Empty,
+            template.TemplateText ?? string.Empty,
+            template.Explanation ?? string.Empty,
+            (template.ReplaceableVariables ?? template.Variables ?? []).Select(item => item ?? string.Empty).ToArray(),
+            template.SampleFilledVersion ?? string.Empty,
+            (template.LinkedGrammarTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (template.LinkedWordSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (template.LinkedExpressionSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (template.LinkedExerciseSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            template.IsPublished ?? true,
+            template.SortOrder ?? 0);
+
+    private static ParsedCulturalNoteModel Map(CulturalNoteDocument note) =>
+        new(
+            note.Slug ?? string.Empty,
+            note.Title ?? string.Empty,
+            note.ShortDescription ?? string.Empty,
+            note.CefrLevel ?? string.Empty,
+            note.Category ?? string.Empty,
+            note.Context ?? string.Empty,
+            (note.Sections ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (note.Examples ?? []).Select(example => new ParsedCulturalNoteExampleModel(
+                example.GermanText ?? string.Empty,
+                example.Explanation)).ToArray(),
+            (note.DoNotes ?? note.Dos ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (note.DontNotes ?? note.Donts ?? []).Select(item => item ?? string.Empty).ToArray(),
+            note.SensitivityWarning,
+            (note.LinkedDialogueSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (note.LinkedExpressionSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (note.LinkedWritingTemplateSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (note.LinkedTalkTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (note.LinkedCourseLessonSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            note.IsPublished ?? true,
+            note.SortOrder ?? 0);
+
+    private static ParsedExamProfileModel Map(ExamProfileDocument profile) =>
+        new(
+            profile.Key ?? string.Empty,
+            profile.DisplayName ?? string.Empty,
+            profile.CefrRange ?? string.Empty,
+            profile.Description ?? string.Empty,
+            profile.IsPublished ?? true,
+            profile.SortOrder ?? 0);
+
+    private static ParsedExamPrepUnitModel Map(ExamPrepUnitDocument unit) =>
+        new(
+            unit.Slug ?? string.Empty,
+            unit.ExamProfileKey ?? string.Empty,
+            unit.Title ?? string.Empty,
+            unit.ShortDescription ?? string.Empty,
+            unit.CefrLevel ?? string.Empty,
+            unit.ExamSection ?? unit.Section ?? string.Empty,
+            unit.TaskType ?? string.Empty,
+            unit.SkillFocus ?? string.Empty,
+            unit.Explanation ?? string.Empty,
+            (unit.StrategyNotes ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.Checklist ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedDialogueSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedTalkTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedGrammarTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedExpressionSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedWritingTemplateSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedExerciseSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedCourseLessonSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            unit.IsPublished ?? true,
+            unit.SortOrder ?? 0);
+
+    private static string SerializeRaw(JsonElement? element) =>
+        element.HasValue && element.Value.ValueKind is not JsonValueKind.Undefined and not JsonValueKind.Null
+            ? element.Value.GetRawText()
+            : "{}";
 
     private static ParsedContentMeaningModel[] MapTranslations(ContentMeaningDocument[]? translations)
     {
@@ -312,6 +573,28 @@ internal sealed class ContentImportParser : IContentImportParser
         public DialogueLessonDocument[]? Dialogues { get; set; }
 
         public TalkTopicDocument[]? TalkTopics { get; set; }
+
+        public GrammarTopicDocument[]? GrammarTopics { get; set; }
+
+        public ExpressionEntryDocument[]? ExpressionEntries { get; set; }
+
+        public ExerciseDocument[]? Exercises { get; set; }
+
+        public ExerciseSetDocument[]? ExerciseSets { get; set; }
+
+        public CoursePathDocument[]? CoursePaths { get; set; }
+
+        public CourseModuleDocument[]? CourseModules { get; set; }
+
+        public CourseLessonDocument[]? CourseLessons { get; set; }
+
+        public WritingTemplateDocument[]? WritingTemplates { get; set; }
+
+        public CulturalNoteDocument[]? CulturalNotes { get; set; }
+
+        public ExamProfileDocument[]? ExamProfiles { get; set; }
+
+        public ExamPrepUnitDocument[]? ExamPrepUnits { get; set; }
 
         public ConversationStarterPackDocument[]? ConversationStarterPacks { get; set; }
 
@@ -730,6 +1013,131 @@ internal sealed class ContentImportParser : IContentImportParser
         public string?[]? ReviewPrompts { get; set; }
     }
 
+    private sealed class GrammarTopicDocument
+    {
+        public string? Slug { get; set; }
+        public string? Title { get; set; }
+        public string? ShortDescription { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? GrammarCategory { get; set; }
+        public string?[]? Topics { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+        public GrammarSectionDocument[]? Sections { get; set; }
+        public GrammarExampleDocument[]? Examples { get; set; }
+        public GrammarTextItemDocument[]? RuleSummaries { get; set; }
+        public GrammarCommonMistakeDocument[]? CommonMistakes { get; set; }
+        public GrammarTextItemDocument[]? ExceptionNotes { get; set; }
+        public string?[]? PrerequisiteSlugs { get; set; }
+        public string?[]? RelatedTopicSlugs { get; set; }
+        public GrammarLinkedWordDocument[]? LinkedWords { get; set; }
+        public string?[]? LinkedDialogueSlugs { get; set; }
+        public string?[]? LinkedTalkTopicSlugs { get; set; }
+        public string?[]? LinkedExerciseSlugs { get; set; }
+    }
+
+    private sealed class GrammarSectionDocument
+    {
+        public string? Heading { get; set; }
+        public string? Explanation { get; set; }
+        public GrammarSectionTranslationDocument[]? Translations { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class GrammarSectionTranslationDocument
+    {
+        public string? Language { get; set; }
+        public string? Heading { get; set; }
+        public string? Text { get; set; }
+    }
+
+    private sealed class GrammarExampleDocument
+    {
+        public string? GermanText { get; set; }
+        public string? Note { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class GrammarTextItemDocument
+    {
+        public string? Text { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class GrammarCommonMistakeDocument
+    {
+        public string? WrongText { get; set; }
+        public string? CorrectedText { get; set; }
+        public string? Explanation { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class GrammarLinkedWordDocument
+    {
+        public string? Lemma { get; set; }
+        public string? WordSlug { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class ExpressionEntryDocument
+    {
+        public string? Slug { get; set; }
+        public string? ExpressionText { get; set; }
+        public string? LiteralMeaningText { get; set; }
+        public string? ActualMeaningText { get; set; }
+        public string? UsageExplanation { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? ExpressionType { get; set; }
+        public string? Register { get; set; }
+        public string? Category { get; set; }
+        public string? Context { get; set; }
+        public string? Region { get; set; }
+        public bool? IsRisky { get; set; }
+        public string?[]? Topics { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+        public ExpressionMeaningDocument[]? Meanings { get; set; }
+        public ExpressionExampleDocument[]? Examples { get; set; }
+        public ExpressionWarningDocument[]? Warnings { get; set; }
+        public ExpressionLinkedWordDocument[]? LinkedWords { get; set; }
+        public string?[]? RelatedExpressionSlugs { get; set; }
+        public string?[]? LinkedExerciseSlugs { get; set; }
+    }
+
+    private sealed class ExpressionMeaningDocument
+    {
+        public string? Language { get; set; }
+        public string? Text { get; set; }
+        public string? ActualMeaningText { get; set; }
+        public string? LiteralMeaningText { get; set; }
+        public string? UsageExplanation { get; set; }
+    }
+
+    private sealed class ExpressionExampleDocument
+    {
+        public string? GermanText { get; set; }
+        public string? Note { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class ExpressionWarningDocument
+    {
+        public string? WarningType { get; set; }
+        public string? Text { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+    }
+
+    private sealed class ExpressionLinkedWordDocument
+    {
+        public string? Lemma { get; set; }
+        public string? WordSlug { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
     private sealed class EventPreparationVocabularyReferenceDocument
     {
         public string? Word { get; set; }
@@ -737,5 +1145,175 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? PartOfSpeech { get; set; }
 
         public string? CefrLevel { get; set; }
+    }
+
+    private sealed class ExerciseDocument
+    {
+        public string? Slug { get; set; }
+        public string? Title { get; set; }
+        public string? Instruction { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? ExerciseType { get; set; }
+        public string? TargetSkill { get; set; }
+        public string? OwnerType { get; set; }
+        public string? OwnerSlug { get; set; }
+        public JsonElement? Prompt { get; set; }
+        public JsonElement? AnswerKey { get; set; }
+        public string? CorrectExplanation { get; set; }
+        public string? IncorrectExplanation { get; set; }
+        public string? Hint { get; set; }
+        public string? CommonMistakeNote { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class ExerciseSetDocument
+    {
+        public string? Slug { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? OwnerType { get; set; }
+        public string? OwnerSlug { get; set; }
+        public string?[]? ExerciseSlugs { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class CoursePathDocument
+    {
+        public string? Slug { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? CefrRange { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class CourseModuleDocument
+    {
+        public string? Slug { get; set; }
+        public string? CoursePathSlug { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public int? ModuleNumber { get; set; }
+        public string? CefrLevel { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class CourseLessonDocument
+    {
+        public string? Slug { get; set; }
+        public string? CoursePathSlug { get; set; }
+        public string? ModuleSlug { get; set; }
+        public int? LessonNumber { get; set; }
+        public string? Title { get; set; }
+        public string? ShortDescription { get; set; }
+        public string? Narrative { get; set; }
+        public string? CefrLevel { get; set; }
+        public int? EstimatedMinutes { get; set; }
+        public string?[]? LearningGoals { get; set; }
+        public string?[]? PrerequisiteLessonSlugs { get; set; }
+        public string? NextLessonSlug { get; set; }
+        public string?[]? LinkedGrammarTopicSlugs { get; set; }
+        public string?[]? LinkedWordSlugs { get; set; }
+        public string?[]? LinkedExpressionSlugs { get; set; }
+        public string?[]? LinkedDialogueSlugs { get; set; }
+        public string?[]? LinkedTalkTopicSlugs { get; set; }
+        public string?[]? LinkedExerciseSetSlugs { get; set; }
+        public string?[]? LinkedExamPrepSlugs { get; set; }
+        public string? ReviewSummary { get; set; }
+        public string? HomeworkTask { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class WritingTemplateDocument
+    {
+        public string? Slug { get; set; }
+        public string? Title { get; set; }
+        public string? ShortDescription { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? Category { get; set; }
+        public string? Situation { get; set; }
+        public string? Register { get; set; }
+        public string? TemplateText { get; set; }
+        public string? Explanation { get; set; }
+        public string?[]? ReplaceableVariables { get; set; }
+        public string?[]? Variables { get; set; }
+        public string? SampleFilledVersion { get; set; }
+        public string?[]? LinkedGrammarTopicSlugs { get; set; }
+        public string?[]? LinkedWordSlugs { get; set; }
+        public string?[]? LinkedExpressionSlugs { get; set; }
+        public string?[]? LinkedExerciseSlugs { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class CulturalNoteDocument
+    {
+        public string? Slug { get; set; }
+        public string? Title { get; set; }
+        public string? ShortDescription { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? Category { get; set; }
+        public string? Context { get; set; }
+        public string?[]? Sections { get; set; }
+        public CulturalNoteExampleDocument[]? Examples { get; set; }
+        public string?[]? DoNotes { get; set; }
+        public string?[]? Dos { get; set; }
+        public string?[]? DontNotes { get; set; }
+        public string?[]? Donts { get; set; }
+        public string? SensitivityWarning { get; set; }
+        public string?[]? LinkedDialogueSlugs { get; set; }
+        public string?[]? LinkedExpressionSlugs { get; set; }
+        public string?[]? LinkedWritingTemplateSlugs { get; set; }
+        public string?[]? LinkedTalkTopicSlugs { get; set; }
+        public string?[]? LinkedCourseLessonSlugs { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class CulturalNoteExampleDocument
+    {
+        public string? GermanText { get; set; }
+        public string? Explanation { get; set; }
+    }
+
+    private sealed class ExamProfileDocument
+    {
+        public string? Key { get; set; }
+        public string? DisplayName { get; set; }
+        public string? CefrRange { get; set; }
+        public string? Description { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class ExamPrepUnitDocument
+    {
+        public string? Slug { get; set; }
+        public string? ExamProfileKey { get; set; }
+        public string? Title { get; set; }
+        public string? ShortDescription { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? ExamSection { get; set; }
+        public string? Section { get; set; }
+        public string? TaskType { get; set; }
+        public string? SkillFocus { get; set; }
+        public string? Explanation { get; set; }
+        public string?[]? StrategyNotes { get; set; }
+        public string?[]? Checklist { get; set; }
+        public string?[]? LinkedDialogueSlugs { get; set; }
+        public string?[]? LinkedTalkTopicSlugs { get; set; }
+        public string?[]? LinkedGrammarTopicSlugs { get; set; }
+        public string?[]? LinkedExpressionSlugs { get; set; }
+        public string?[]? LinkedWritingTemplateSlugs { get; set; }
+        public string?[]? LinkedExerciseSlugs { get; set; }
+        public string?[]? LinkedCourseLessonSlugs { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
     }
 }

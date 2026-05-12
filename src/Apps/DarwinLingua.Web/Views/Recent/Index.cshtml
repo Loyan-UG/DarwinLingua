@@ -9,4 +9,29 @@
     <p class="body-lg">@T["Return to words you opened recently and continue your study without searching again."]</p>
 </section>
 
+@if (Model.LearningProgress is not null)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Learning progress"]</h2>
+        <div class="meta-grid">
+            <div class="meta-chip">
+                <strong>@T["Tracked"]</strong>
+                <span>@Model.LearningProgress.TotalTracked</span>
+            </div>
+            <div class="meta-chip">
+                <strong>@T["In progress"]</strong>
+                <span>@Model.LearningProgress.InProgressCount</span>
+            </div>
+            <div class="meta-chip">
+                <strong>@T["Completed"]</strong>
+                <span>@Model.LearningProgress.CompletedCount</span>
+            </div>
+            <div class="meta-chip">
+                <strong>@T["Needs review"]</strong>
+                <span>@Model.LearningProgress.NeedsReviewCount</span>
+            </div>
+        </div>
+    </section>
+}
+
 <partial name="_RecentActivityPanel" model="Model" />

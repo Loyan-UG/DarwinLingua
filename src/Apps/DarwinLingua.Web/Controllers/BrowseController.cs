@@ -39,7 +39,7 @@ public sealed class BrowseController(
 
         BrowseIndexViewModel viewModel = new(
             topics,
-            ["A1", "A2", "B1", "B2", "C1", "C2"],
+            LearningPortalFilterConventions.CefrLevels,
             profile.UiLanguageCode,
             profile.PreferredMeaningLanguage1);
 

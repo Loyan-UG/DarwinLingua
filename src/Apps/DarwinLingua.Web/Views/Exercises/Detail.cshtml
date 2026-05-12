@@ -1,0 +1,42 @@
+@model DarwinLingua.Web.Models.ExerciseRunnerPageViewModel
+@{
+    ViewData["Title"] = Model.Exercise.Title;
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Exercise.CefrLevel · @T[Model.Exercise.ExerciseType] · @T[Model.Exercise.TargetSkill]</span>
+        <a class="button button--secondary button--compact" asp-controller="Exercises" asp-action="Index">@T["All exercise sets"]</a>
+    </div>
+    <h1 class="headline-md">@Model.Exercise.Title</h1>
+    <p class="body-lg">@Model.Exercise.Instruction</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Exercise.Hint))
+    {
+        <p><strong>@T["Hint"]:</strong> @Model.Exercise.Hint</p>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Prompt"]</h2>
+    <pre class="code-sample">@Model.Exercise.PromptJson</pre>
+    <form class="stack-md" method="post" asp-controller="Exercises" asp-action="Submit" asp-route-slug="@Model.Exercise.Slug">
+        @Html.AntiForgeryToken()
+        <label class="form-field">
+            <span>@T["Answer JSON"]</span>
+            <textarea name="submittedAnswerJson" rows="7" placeholder='{"answer":"..."}'>@Model.SubmittedAnswerJson</textarea>
+        </label>
+        <button class="button button--primary" type="submit">@T["Check answer"]</button>
+    </form>
+</section>
+
+@if (Model.Result is not null)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@(Model.Result.IsCorrect ? T["correct"] : T["Try again"])</h2>
+        <p>@Model.Result.Explanation</p>
+        @if (!Model.Result.IsCorrect && !string.IsNullOrWhiteSpace(Model.Result.CommonMistakeNote))
+        {
+            <p><strong>@T["Common mistake"]:</strong> @Model.Result.CommonMistakeNote</p>
+        }
+    </section>
+}

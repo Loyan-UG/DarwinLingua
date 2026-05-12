@@ -21,6 +21,14 @@ public static class ServiceCollectionExtensions
         ArgumentNullException.ThrowIfNull(services);
 
         services.AddScoped<ITopicRepository, TopicRepository>();
+        services.AddScoped<IGrammarTopicRepository, GrammarTopicRepository>();
+        services.AddScoped<IExpressionRepository, ExpressionRepository>();
+        services.AddScoped<IExerciseRepository, ExerciseRepository>();
+        services.AddScoped<ICourseRepository, CourseRepository>();
+        services.AddScoped<IWritingTemplateRepository, WritingTemplateRepository>();
+        services.AddScoped<ICulturalNoteRepository, CulturalNoteRepository>();
+        services.AddScoped<IExamPrepRepository, ExamPrepRepository>();
+        services.AddScoped<IUnifiedLearningSearchRepository, UnifiedLearningSearchRepository>();
         services.AddScoped<IWordEntryRepository, WordEntryRepository>();
         services.AddScoped<IWordCollectionRepository, WordCollectionRepository>();
         services.AddScoped<IDialogueLessonRepository, DialogueLessonRepository>();

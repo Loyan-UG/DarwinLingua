@@ -1,0 +1,49 @@
+@model DarwinLingua.Web.Models.ExamPrepDetailPageViewModel
+@{
+    ViewData["Title"] = Model.Unit.Title;
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@Model.Unit.CefrLevel · @Model.Unit.ExamProfileKey · @T[Model.Unit.ExamSection] · @T[Model.Unit.TaskType]</span>
+    <h1 class="headline-md">@Model.Unit.Title</h1>
+    <p class="body-lg">@Model.Unit.ShortDescription</p>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Task explanation"]</h2>
+    <p>@Model.Unit.Explanation</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Strategy notes"]</h2>
+        <ul>
+            @foreach (string note in Model.Unit.StrategyNotes)
+            {
+                <li>@note</li>
+            }
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Scoring checklist"]</h2>
+        <ul>
+            @foreach (string item in Model.Unit.Checklist)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </article>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Linked practice materials"]</h2>
+    <div class="grid-two-col">
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Dialogues"].Value, Model.Unit.LinkedDialogueSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Writing Templates"].Value, Model.Unit.LinkedWritingTemplateSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Grammar Guide"].Value, Model.Unit.LinkedGrammarTopicSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Exercises"].Value, Model.Unit.LinkedExerciseSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Talk Topics"].Value, Model.Unit.LinkedTalkTopicSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Everyday Expressions"].Value, Model.Unit.LinkedExpressionSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Course Lessons"].Value, Model.Unit.LinkedCourseLessonSlugs)' />
+    </div>
+</section>

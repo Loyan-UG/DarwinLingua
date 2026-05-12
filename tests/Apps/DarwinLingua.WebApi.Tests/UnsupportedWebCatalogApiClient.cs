@@ -20,6 +20,44 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
 
     public virtual Task<TalkTopicDetailModel?> GetTalkTopicBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
+    public virtual Task<IReadOnlyList<GrammarTopicListItemModel>> GetGrammarTopicsAsync(GrammarTopicListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<GrammarTopicDetailModel?> GetGrammarTopicBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<ExpressionListItemModel>> GetExpressionsAsync(ExpressionListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<ExpressionDetailModel?> GetExpressionBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(ExerciseSetListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<ExerciseDetailModel?> GetExerciseBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(string slug, ExerciseAttemptRequestModel request, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(CoursePathListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<CoursePathDetailModel?> GetCourseBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(WritingTemplateListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(CulturalNoteListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(ExamPrepListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(UnifiedLearningSearchFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
     public virtual Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(ConversationStarterListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(string dialogueSlug, CancellationToken cancellationToken) => throw new NotSupportedException();

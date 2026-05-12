@@ -37,6 +37,7 @@ Before starting, confirm:
   - full database
   - catalog full area
   - one CEFR slice such as `A1`
+- for Phase 7 parity builds, the full database or catalog full package includes Learning Portal content arrays for implemented modules
 - the mobile build is configured to use the intended Web API base URL
 - the device already contains some local user state:
   - at least one favorite
@@ -102,6 +103,8 @@ Apply `Update All Content` against a server that has a newer published full pack
 - favorites remain intact
 - known/difficult state remains intact
 - practice state remains intact
+- Phase 7 Learning Portal list/detail/search surfaces still open after the update
+- imported Phase 7 module content is available when the published package contains it
 
 ### Result
 
@@ -130,6 +133,7 @@ Apply the catalog-area update when a newer published catalog package exists.
 - only catalog content is refreshed
 - learner state remains intact
 - diagnostics move to the newly applied package/version/checksum
+- Phase 7 Learning Portal content from the catalog-full package is readable locally
 
 ### Result
 
@@ -159,6 +163,7 @@ Apply a single CEFR update, such as `A1`, when that slice has a newer published 
 - the selected level shows updated content
 - favorites/known/difficult/practice state remains intact
 - diagnostics for that CEFR slice move to the new package/version/checksum
+- Phase 7 module content is not expected to change from CEFR slice updates until per-module slice validation is implemented
 
 ### Result
 

@@ -25,6 +25,15 @@ Remaining release gates:
 
 Latest local Web verification:
 
+- 2026-05-12: `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
+- 2026-05-12: `DarwinLingua.Web` build passed with 0 warnings and 0 errors after duplicate localization key cleanup.
+- 2026-05-12: `DarwinLingua.WebApi.Tests` passed 36/36.
+- 2026-05-12: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 23/23, including Phase 7 parser contract tests.
+- 2026-05-12: `DarwinLingua.Catalog.Application.Tests` passed 21/21.
+- 2026-05-12: `DarwinLingua.Learning.Application.Tests` passed 29/29.
+- 2026-05-12: `DarwinLingua.Learning.Domain.Tests` passed 47/47.
+- 2026-05-12: `DarwinLingua.Localization.Application.Tests` passed 24/24, including Phase 7 Web route, WebApi route, and English/German localization-key hardening checks.
+- 2026-05-12: full `DarwinLingua.slnx` build passed with 0 warnings and 0 errors when run sequentially with `-m:1`.
 - 2026-05-01: `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
 - 2026-05-01: `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors after stopping the local smoke host that was locking build outputs.
 - 2026-05-01: local GET smoke passed for the main learner routes: `/`, `/browse`, `/browse/cefr/A1`, `/search`, `/search?q=auto`, unknown-search suggestion state, `/collections`, `/dialogues`, `/conversation-starters`, `/conversation-events`, `/organizers`, `/install`, `/privacy`, and the Identity account pages.
@@ -114,11 +123,14 @@ Latest local Web verification:
 
 ### Admin Reporting And Seed Coverage
 
-- [ ] Admin system report endpoint returns catalog, social-learning, moderation, and operations counts from the server database.
-- [ ] Web Admin Reports page combines system report counts, Identity user count, and Web analytics counters.
+- [x] Admin system report endpoint returns catalog, social-learning, moderation, operations, and Learning Portal counts from the server database.
+- [x] Web Admin Reports page combines system report counts, Identity user count, Web analytics counters, and Learning Portal quality/coverage tables.
+- [x] Admin Reports authorization requires the Admin policy.
+- [x] Learning Portal report test covers content counts, CEFR coverage, unresolved content links, missing translations, and missing exercise coverage.
 - [ ] Admin dashboard links to Reports and the implemented management pages.
 - [ ] Web seed fixtures include multiple records for dialogues, starters, preparation packs, organizers, events, RSVPs, claims, learner profiles, partner requests, reports, blocks, and moderation audits.
 - [ ] Operational seed loading path is validated once a dedicated event-directory/safety seed applier exists.
+- [ ] Web rendering coverage exists for the Learning Portal coverage and issue-sample tables.
 
 ### Entitlements And Feature Gates
 
@@ -166,6 +178,133 @@ Latest local Web verification:
 - [ ] Empty optional Identity and catalog connection strings fall back to the shared server-content database.
 - [ ] WebCatalogApiClient treats empty successful detail responses as `null`.
 - [ ] Local server bootstrap handles both folder imports and single-file imports under `Set-StrictMode`.
+
+## Learning Portal Expansion
+
+### Foundation
+
+- [x] Web learner navigation groups implemented routes under Learn, Practice, Speak, Prepare, and Resources.
+- [x] Web learner navigation avoids dead routes for future Phase 7 modules.
+- [x] Phase 7 Web learner routes are covered by structural route tests for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, Cultural Notes, and Unified Search.
+- [x] Phase 7 WebApi route registrations are covered by structural route tests for module list/detail endpoints, exercise attempts, unified search, progress summary/update, and recommendations.
+- [x] Phase 7 English/German localization resource keys are covered by structural tests for the release route surface.
+- [x] Shared CEFR filter conventions expose stable A1-C2 values for reusable Web filters.
+- [ ] Cross-content linking helper coverage once a real Phase 7 module consumes the model.
+- [x] Admin/system report coverage exists for persisted Phase 7 module counts and quality metrics.
+
+### Grammar Guide
+
+- [x] Parser coverage exists for the GrammarTopic content contract shape.
+- [x] Navigation/localization smoke coverage includes the live Grammar Guide route.
+- [x] Release route hardening covers `/grammar` and `/api/catalog/grammar`.
+- [ ] Import validation covers required grammar metadata, sections, examples, and linked content references.
+- [ ] List/detail queries return published grammar topics in stable order.
+- [ ] CEFR/category/topic/search filters return expected grammar topics.
+- [ ] Linked words/dialogues/Talk Topics/exercises render where available.
+- [ ] Localized explanation rendering follows learner language preferences.
+- [ ] Unresolved links fail safely without Web 500 errors.
+
+### Everyday Expressions
+
+- [x] Parser coverage exists for the ExpressionEntry content contract shape.
+- [x] Navigation/localization smoke coverage includes the live Everyday Expressions route.
+- [x] Release route hardening covers `/expressions` and `/api/catalog/expressions`.
+- [x] Expression type/register validation rejects unsupported values.
+- [x] Risky expression validation rejects entries without required warning text.
+- [ ] List/detail queries return published expressions in stable order.
+- [ ] CEFR/type/register/context filters return expected expressions.
+- [ ] Risky expression warnings render for unsafe tone or context.
+- [ ] Linked words and related expressions render where available.
+- [ ] Unresolved links fail safely without Web 500 errors.
+
+### Exercise Engine
+
+- [x] Parser coverage exists for the Exercise and ExerciseSet content contract shape.
+- [x] Release route hardening covers `/exercises`, exercise-set/detail endpoints, and exercise attempt submission route registration.
+- [x] Exercise type validation rejects unsupported types.
+- [x] Answer key validation rejects missing or malformed deterministic answers.
+- [x] Deterministic feedback returns stable correct/incorrect outcomes.
+- [ ] Exercise set linking resolves valid owner references.
+- [x] Exercise runner behavior covers initial generic submission flow.
+- [x] Attempt persistence works for submitted deterministic answers.
+- [ ] Type-specific runner controls cover each initial supported exercise type.
+
+### Course Lessons
+
+- [x] Parser coverage exists for the CoursePath/CourseModule/CourseLesson content contract shape.
+- [x] Release route hardening covers `/courses`, course list/detail endpoints, and course lesson detail route registration.
+- [ ] Lesson/module/course ordering is stable.
+- [ ] Linked content rendering covers grammar, words, expressions, dialogues, Talk Topics, and exercises.
+- [ ] Prerequisite and next-lesson navigation resolves correctly.
+- [ ] WebApi list/detail endpoint coverage exists.
+- [ ] Progress tracking works where implemented.
+
+### Exam Preparation
+
+- [x] Parser coverage exists for the Exam Prep content contract shape.
+- [x] Import validation covers supported profile taxonomy.
+- [x] Navigation/localization shell includes Exam Prep.
+- [x] Release route hardening covers `/exam-prep`, exam profile, and exam prep list/detail route registrations.
+- [ ] Exam profile taxonomy validates supported profiles and task types in Web API coverage.
+- [ ] Exam unit linking resolves dialogues, exercises, grammar, writing templates, and Talk Topics.
+- [ ] Exam filter behavior covers profile, CEFR, and task type.
+- [ ] Sample task rendering works for initial exam-prep units.
+
+### Writing Templates
+
+- [x] Parser coverage exists for the WritingTemplate content contract shape.
+- [x] Variable validation requires declared placeholders to exist in template text.
+- [x] Release route hardening covers `/writing-templates` and writing-template list/detail route registrations.
+- [ ] Variable rendering substitutes supported placeholders safely.
+- [ ] Sample filled version rendering works for published templates.
+- [ ] Linked grammar/words/exercises render where available.
+- [ ] WebApi list/detail endpoint coverage exists.
+
+### Cultural Notes
+
+- [x] Parser coverage exists for the CulturalNote content contract shape.
+- [x] Navigation/localization shell includes Cultural Notes.
+- [x] Release route hardening covers `/cultural-notes` and cultural-note list/detail route registrations.
+- [ ] List/detail queries return published cultural notes in stable order.
+- [ ] Filtering covers CEFR/category/context where supported.
+- [ ] WebApi list/detail endpoint coverage exists.
+- [ ] Web list/detail rendering coverage exists.
+- [ ] Linked content rendering covers dialogues, expressions, writing templates, and course lessons.
+
+### Unified Search
+
+- [x] Application-level empty query handling avoids repository calls.
+- [x] Application-level result projection returns repository results unchanged.
+- [x] Release route hardening covers `/search` and `/api/catalog/search`.
+- [ ] Result type projection distinguishes words, grammar, expressions, dialogues, Talk Topics, exercises, lessons, exam prep, writing templates, cultural notes, events, and organizers with seeded data.
+- [ ] Ranking behavior is deterministic for the same indexed content in repository/WebApi coverage.
+- [ ] CEFR/content type/category filters return expected mixed results.
+- [ ] WebApi endpoint coverage exists for `/api/catalog/search`.
+- [ ] Web rendering coverage exists for learning result cards and filters.
+- [ ] Missing content references fail safely.
+
+### Progress And Personalization
+
+- [x] Domain tests cover supported owner types and progress state transitions.
+- [x] Application tests cover viewed/completed updates, summary counts, and deterministic recommendation exclusion for completed content.
+- [x] Release route hardening covers progress summary/update and recommendations route registrations.
+- [ ] WebApi endpoint coverage exists for authenticated `/api/learning/progress/summary`.
+- [ ] WebApi endpoint coverage exists for authenticated `/api/learning/progress/content`.
+- [ ] WebApi endpoint coverage exists for `/api/learning/recommendations`.
+- [ ] Anonymous Web users fall back to existing guest actor behavior without breaking recent activity.
+- [ ] Course lesson pages render viewed/completed state where progress exists.
+- [ ] Recent activity dashboard renders cross-content progress summary.
+- [ ] Recommendations remain deterministic and do not use AI ranking.
+
+### Mobile Parity Tracking
+
+- [x] Web sign-off is recorded before MAUI parity starts.
+- [x] Mobile package export structural coverage confirms Phase 7 arrays are present in full/catalog-full packages.
+- [x] MAUI route/localization structural coverage confirms Learning Portal list/detail/search routes and Learn/Practice/Speak/Prepare/Resources navigation labels.
+- [x] Full mobile replacement script coverage confirms Phase 7 content tables are copied from remote package imports.
+- [ ] Add seeded mobile package export tests that import a package with all Phase 7 module types into a local SQLite database.
+- [ ] Add MAUI smoke coverage for opening Learning Portal list/detail/search pages on target devices.
+- [ ] Add manual mobile validation worksheet entries for Phase 7 offline behavior and local package update behavior.
 
 ## Manual Validation Backlog
 

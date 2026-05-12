@@ -10,10 +10,14 @@ Use it for both the learner-facing root site and the admin area.
 
 ## Latest Local Evidence
 
-Last updated: 2026-05-01.
+Last updated: 2026-05-12.
 
 - Local `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
-- Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors after stopping the smoke host that was locking output DLLs.
+- Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
+- Full `DarwinLingua.slnx` build passed with 0 warnings and 0 errors when run sequentially with `-m:1`.
+- Phase 7 WebApi tests passed for the current admin/report and Learning Portal endpoint surface.
+- Phase 7 parser tests passed for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Cultural Notes.
+- Phase 7 structural route/localization tests cover the Web learner routes, WebApi route registrations, and English/German resource keys for the Learning Portal release surface.
 - Local learner route smoke passed for the main browse, search, collection, scenario, conversation, organizer, install, privacy, and Identity pages.
 - Local authenticated admin route smoke passed for the dashboard, reports, analytics, diagnostics, content operations, catalog management, taxonomy, user, moderation, billing diagnostics, and email diagnostics pages.
 - No unhandled exception signature was found in smoke response bodies or server logs.
@@ -52,6 +56,7 @@ Last updated: 2026-05-01.
 - [ ] admin overview loads
 - [ ] publishing page loads
 - [ ] diagnostics page loads
+- [ ] reports page loads Learning Portal coverage and quality checks
 - [ ] transactional email diagnostics page loads
 - [ ] admin/learner separation is preserved
 
@@ -92,6 +97,7 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 - [ ] database connectivity verified
 - [ ] security headers verified
 - [ ] logging baseline verified
+- [ ] Learning Portal unresolved-link, missing-translation, unpublished-draft, and seed coverage reports reviewed
 - [ ] production email provider configured
 - [ ] sender address and reply-to address configured
 - [ ] SPF, DKIM, and DMARC verified for the sender domain
@@ -100,7 +106,24 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 
 ---
 
-## G. Sign-Off
+## G. Phase 7 Learning Portal Release Gates
+
+- [ ] Grammar Guide readiness reviewed: import validation, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
+- [ ] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
+- [ ] Exercise Engine readiness reviewed: deterministic answer evaluation, answer-key safety, attempts, WebApi runner endpoints, Web runner behavior
+- [ ] Course Lessons readiness reviewed: course/module/lesson ordering, linked-content projections, lesson routes, progress hooks where implemented
+- [ ] Exam Prep readiness reviewed: profile taxonomy, filters, linked-content projections, WebApi/Web pages, original authored-content policy
+- [ ] Writing Templates readiness reviewed: variables, sample filled versions, filters, WebApi/Web pages, linked-content behavior
+- [ ] Cultural Notes readiness reviewed: category/context filters, neutral/safe content handling, WebApi/Web pages, linked-content behavior
+- [ ] Unified Search readiness reviewed: deterministic ranking, filters, result-type labels, empty-state behavior, preservation of existing word search
+- [ ] Progress readiness reviewed: user state separated from content, authenticated persistence, anonymous fallback, deterministic recommendations
+- [ ] Admin reports readiness reviewed: coverage counts, unresolved links, missing translations, unpublished drafts, missing exercise coverage
+- [ ] Mobile parity is explicitly tracked as post-Web work and is not required for this Web release
+- [ ] Bulk Phase 7 content generation remains blocked until module contracts, validation, rendering, admin reports, and release checks are stable
+
+---
+
+## H. Sign-Off
 
 - Release owner:
 - Validation owner:

@@ -1,0 +1,41 @@
+@model DarwinLingua.Web.Models.CourseIndexPageViewModel
+@{
+    ViewData["Title"] = T["Courses"];
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Learn"]</span>
+    <h1 class="headline-md">@T["Courses"]</h1>
+    <p class="body-lg">@T["Structured CEFR learning paths built from linked grammar, words, expressions, dialogues, Talk Topics, and exercises."]</p>
+    <form class="search-form" method="get" asp-controller="Courses" asp-action="Index">
+        <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search courses"]" aria-label="@T["Search courses"]" />
+        <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
+            <option value="">@T["All levels"]</option>
+            @foreach (string level in Model.CefrLevels)
+            {
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+            }
+        </select>
+        <button type="submit" class="button button--secondary">@T["Filter"]</button>
+    </form>
+</section>
+
+@if (Model.Courses.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Courses are being prepared"].Value, T["Dynamic course lessons will appear here after the first validated course package is imported."].Value)' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var course in Model.Courses)
+        {
+            <article class="panel stack-md">
+                <span class="eyebrow">@(course.CefrLevel ?? course.CefrRange)</span>
+                <h2 class="headline-sm"><a asp-controller="Courses" asp-action="Detail" asp-route-slug="@course.Slug">@course.Title</a></h2>
+                <p>@course.Description</p>
+                <p>@T["{0} modules", course.ModuleCount] · @T["{0} lessons", course.LessonCount]</p>
+                <a class="button button--secondary" asp-controller="Courses" asp-action="Detail" asp-route-slug="@course.Slug">@T["Open course"]</a>
+            </article>
+        }
+    </section>
+}

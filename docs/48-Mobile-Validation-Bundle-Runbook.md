@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This runbook explains how to prepare one bundle for the remaining manual mobile validation work across Phase 1, Phase 2, Phase 3, and the Phase 5 remote-update flow.
+This runbook explains how to prepare one bundle for the remaining manual mobile validation work across Phase 1, Phase 2, Phase 3, the Phase 5 remote-update flow, and Phase 7 Learning Portal parity.
 
 Use it when you want a single evidence folder per build under test instead of opening the worksheets directly from `docs/`.
 
@@ -38,6 +38,7 @@ It includes:
 - `Phase2PracticeValidationWorksheet.md`
 - `Phase3MobileUxValidationWorksheet.md`
 - `Phase5RemoteUpdateValidationWorksheet.md`
+- Phase 7 Learning Portal parity notes, when validating a build that includes the Phase 7 MAUI surfaces
 - `MobileValidationSummary.md`
 
 ---
@@ -48,7 +49,22 @@ It includes:
 2. Run the Phase 2 Practice worksheet.
 3. Run the Phase 3 Mobile UX worksheet.
 4. Run the Phase 5 remote-update worksheet.
-5. Record the final recommendation and accepted issues in `MobileValidationSummary.md`.
+5. For Phase 7 builds, validate the Learning Portal checklist below.
+6. Record the final recommendation and accepted issues in `MobileValidationSummary.md`.
+
+---
+
+## Phase 7 Learning Portal Parity Checklist
+
+Use this checklist only after Web sign-off and a mobile build that includes Phase 7 package export support.
+
+- Learn, Practice, Speak, Prepare, and Resources navigation labels render in the selected UI language.
+- Grammar, Expressions, Exercise Sets, Courses, Exam Prep, Writing Templates, Cultural Notes, Talk Topics, and Learning Search open without crashes.
+- List/detail pages read local package content and show safe empty states when no Phase 7 content exists.
+- Full database or catalog-full remote update applies Phase 7 tables without removing favorites, word state, practice state, or account settings.
+- CEFR slice updates are treated as word/current-conversation scoped until Phase 7 per-module slice validation is implemented.
+- Offline mode keeps already imported Phase 7 content readable and fails remote-update checks safely.
+- Mobile exercise runner and cross-content progress sync remain explicit follow-up items unless implemented in the build under test.
 
 ---
 

@@ -1,0 +1,200 @@
+@using DarwinLingua.SharedKernel.Lexicon
+@model DarwinLingua.Web.Models.GrammarDetailPageViewModel
+@{
+    ViewData["Title"] = Model.GrammarTopic.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+}
+
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.GrammarTopic.CefrLevel · @T[Model.GrammarTopic.GrammarCategory]</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="Grammar" asp-action="Index">@T["All Grammar Topics"]</a>
+        </div>
+    </div>
+    <h1 class="headline-md">@Model.GrammarTopic.Title</h1>
+    <p class="body-lg">@Model.GrammarTopic.ShortDescription</p>
+    @if (Model.GrammarTopic.TopicKeys.Count > 0)
+    {
+        <div class="chip-grid">
+            @foreach (string topicKey in Model.GrammarTopic.TopicKeys)
+            {
+                <span class="chip-link">@topicKey</span>
+            }
+        </div>
+    }
+</section>
+
+@if (Model.GrammarTopic.Sections.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Explanation"]</h2>
+        <div class="stack-md" dir="@primaryMeaningDirection">
+            @foreach (var grammarSection in Model.GrammarTopic.Sections)
+            {
+                <article class="detail-row">
+                    <h3 class="headline-sm">@grammarSection.Heading</h3>
+                    @foreach (string paragraph in grammarSection.Explanation.Split(["\r\n\r\n", "\n\n"], StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        <p>@paragraph.Trim()</p>
+                    }
+                </article>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.GrammarTopic.Examples.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["German examples"]</h2>
+        <div class="stack-md">
+            @foreach (var example in Model.GrammarTopic.Examples)
+            {
+                <article class="detail-row">
+                    <strong class="dialogue-german-text">@example.GermanText</strong>
+                    @if (!string.IsNullOrWhiteSpace(example.Translation))
+                    {
+                        <div class="dialogue-translation-line" dir="@primaryMeaningDirection">
+                            <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                            <span>@example.Translation</span>
+                        </div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(example.Note))
+                    {
+                        <p>@example.Note</p>
+                    }
+                </article>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.GrammarTopic.RuleSummaries.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Mini rules"]</h2>
+        <ul class="stack-sm" dir="@primaryMeaningDirection">
+            @foreach (var rule in Model.GrammarTopic.RuleSummaries)
+            {
+                <li>@rule.Text</li>
+            }
+        </ul>
+    </section>
+}
+
+@if (Model.GrammarTopic.CommonMistakes.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Common mistakes"]</h2>
+        <div class="stack-md">
+            @foreach (var mistake in Model.GrammarTopic.CommonMistakes)
+            {
+                <article class="detail-row">
+                    <p><strong>@T["Avoid"]:</strong> <span class="dialogue-german-text">@mistake.WrongText</span></p>
+                    <p><strong>@T["Use"]:</strong> <span class="dialogue-german-text">@mistake.CorrectedText</span></p>
+                    <p dir="@primaryMeaningDirection">@mistake.Explanation</p>
+                </article>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.GrammarTopic.ExceptionNotes.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Exceptions"]</h2>
+        <ul class="stack-sm" dir="@primaryMeaningDirection">
+            @foreach (var note in Model.GrammarTopic.ExceptionNotes)
+            {
+                <li>@note.Text</li>
+            }
+        </ul>
+    </section>
+}
+
+@if (Model.GrammarTopic.LinkedWords.Count > 0 || Model.GrammarTopic.LinkedDialogueSlugs.Count > 0 || Model.GrammarTopic.LinkedTalkTopicSlugs.Count > 0 || Model.GrammarTopic.LinkedExerciseSlugs.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Linked practice"]</h2>
+        @if (Model.GrammarTopic.LinkedWords.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Words"]</h3>
+            <p>
+                @for (int index = 0; index < Model.GrammarTopic.LinkedWords.Count; index++)
+                {
+                    var word = Model.GrammarTopic.LinkedWords[index];
+                    if (!string.IsNullOrWhiteSpace(word.WordSlug))
+                    {
+                        <a asp-controller="Words" asp-action="Detail" asp-route-slug="@word.WordSlug">@word.Lemma</a>
+                    }
+                    else
+                    {
+                        <span>@word.Lemma</span>
+                    }
+                    @if (index < Model.GrammarTopic.LinkedWords.Count - 1)
+                    {
+                        <span>, </span>
+                    }
+                }
+            </p>
+        }
+        @if (Model.GrammarTopic.LinkedDialogueSlugs.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Dialogues"]</h3>
+            <div class="chip-grid">
+                @foreach (string slug in Model.GrammarTopic.LinkedDialogueSlugs)
+                {
+                    <a class="chip-link" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                }
+            </div>
+        }
+        @if (Model.GrammarTopic.LinkedTalkTopicSlugs.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Talk Topics"]</h3>
+            <div class="chip-grid">
+                @foreach (string slug in Model.GrammarTopic.LinkedTalkTopicSlugs)
+                {
+                    <a class="chip-link" asp-controller="TalkTopics" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                }
+            </div>
+        }
+        @if (Model.GrammarTopic.LinkedExerciseSlugs.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Exercises"]</h3>
+            <div class="chip-grid">
+                @foreach (string slug in Model.GrammarTopic.LinkedExerciseSlugs)
+                {
+                    <a class="chip-link" asp-controller="Exercises" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                }
+            </div>
+        }
+    </section>
+}
+
+@if (Model.GrammarTopic.PrerequisiteSlugs.Count > 0 || Model.GrammarTopic.RelatedTopicSlugs.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Next topics"]</h2>
+        @if (Model.GrammarTopic.PrerequisiteSlugs.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Prerequisites"]</h3>
+            <div class="chip-grid">
+                @foreach (string slug in Model.GrammarTopic.PrerequisiteSlugs)
+                {
+                    <a class="chip-link" asp-controller="Grammar" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                }
+            </div>
+        }
+        @if (Model.GrammarTopic.RelatedTopicSlugs.Count > 0)
+        {
+            <h3 class="eyebrow">@T["Related grammar"]</h3>
+            <div class="chip-grid">
+                @foreach (string slug in Model.GrammarTopic.RelatedTopicSlugs)
+                {
+                    <a class="chip-link" asp-controller="Grammar" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                }
+            </div>
+        }
+    </section>
+}

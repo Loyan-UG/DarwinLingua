@@ -25,12 +25,56 @@
         <div class="shell-container shell-nav">
             <partial name="_AppHeader" />
             <nav class="shell-links" aria-label="@T["Primary"]">
-                <a asp-area="" asp-controller="Browse" asp-action="Index">@T["Browse"]</a>
-                <a asp-area="" asp-controller="Collections" asp-action="Index">@T["Collections"]</a>
-                <a asp-area="" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a>
-                <a asp-area="" asp-controller="TalkTopics" asp-action="Index">@T["Talk Topics"]</a>
-                <a asp-area="" asp-controller="Search" asp-action="Index">@T["Search"]</a>
-                <a asp-area="" asp-controller="Favorites" asp-action="Index">@T["Favorites"]</a>
+                <details class="account-menu learning-nav-group">
+                    <summary class="nav-button">@T["Learn"]</summary>
+                    <div class="account-menu__panel">
+                        <a asp-area="" asp-controller="Browse" asp-action="Index">@T["Browse"]</a>
+                        <a asp-area="" asp-controller="Grammar" asp-action="Index">@T["Grammar Guide"]</a>
+                        <a asp-area="" asp-controller="Expressions" asp-action="Index">@T["Everyday Expressions"]</a>
+                        <a asp-area="" asp-controller="Courses" asp-action="Index">@T["Courses"]</a>
+                        <a asp-area="" asp-controller="Collections" asp-action="Index">@T["Collections"]</a>
+                        <a asp-area="" asp-controller="Search" asp-action="Index">@T["Search"]</a>
+                    </div>
+                </details>
+                <details class="account-menu learning-nav-group">
+                    <summary class="nav-button">@T["Practice"]</summary>
+                    <div class="account-menu__panel">
+                        <a asp-area="" asp-controller="Exercises" asp-action="Index">@T["Exercises"]</a>
+                        <a asp-area="" asp-controller="Favorites" asp-action="Index">@T["Favorites"]</a>
+                        <a asp-area="" asp-controller="Recent" asp-action="Index">@T["Recent"]</a>
+                    </div>
+                </details>
+                <details class="account-menu learning-nav-group">
+                    <summary class="nav-button">@T["Speak"]</summary>
+                    <div class="account-menu__panel">
+                        <a asp-area="" asp-controller="TalkTopics" asp-action="Index">@T["Talk Topics"]</a>
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">@T["Partners"]</a>
+                        }
+                    </div>
+                </details>
+                <details class="account-menu learning-nav-group">
+                    <summary class="nav-button">@T["Prepare"]</summary>
+                    <div class="account-menu__panel">
+                        <a asp-area="" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a>
+                        <a asp-area="" asp-controller="ConversationStarters" asp-action="Index">@T["Conversation Starters"]</a>
+                        <a asp-area="" asp-controller="ExamPrep" asp-action="Index">@T["Exam Prep"]</a>
+                    </div>
+                </details>
+                <details class="account-menu learning-nav-group">
+                    <summary class="nav-button">@T["Resources"]</summary>
+                    <div class="account-menu__panel">
+                        <a asp-area="" asp-controller="ConversationEvents" asp-action="Index">@T["Events"]</a>
+                        <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index">@T["Organizers"]</a>
+                        <a asp-area="" asp-controller="WritingTemplates" asp-action="Index">@T["Writing Templates"]</a>
+                        <a asp-area="" asp-controller="CulturalNotes" asp-action="Index">@T["Cultural Notes"]</a>
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <a asp-area="" asp-controller="OrganizerDashboard" asp-action="Index">@T["Organizer dashboard"]</a>
+                        }
+                    </div>
+                </details>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <a class="nav-icon-link" asp-area="" asp-controller="Settings" asp-action="Index" aria-label="@T["Settings"]" title="@T["Settings"]">
@@ -105,9 +149,16 @@
                 }
                 <a asp-area="" asp-controller="Browse" asp-action="Index">@T["Browse"]</a>
                 <a asp-area="" asp-controller="Collections" asp-action="Index">@T["Collections"]</a>
+                <a asp-area="" asp-controller="Expressions" asp-action="Index">@T["Everyday Expressions"]</a>
+                <a asp-area="" asp-controller="Courses" asp-action="Index">@T["Courses"]</a>
+                <a asp-area="" asp-controller="Exercises" asp-action="Index">@T["Exercises"]</a>
+                <a asp-area="" asp-controller="WritingTemplates" asp-action="Index">@T["Writing Templates"]</a>
+                <a asp-area="" asp-controller="ExamPrep" asp-action="Index">@T["Exam Prep"]</a>
+                <a asp-area="" asp-controller="CulturalNotes" asp-action="Index">@T["Cultural Notes"]</a>
                 <a asp-area="" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a>
                 <a asp-area="" asp-controller="TalkTopics" asp-action="Index">@T["Talk Topics"]</a>
                 <a asp-area="" asp-controller="ConversationStarters" asp-action="Index">@T["Starters"]</a>
+                <a asp-area="" asp-controller="Search" asp-action="Index">@T["Search"]</a>
                 <a asp-area="" asp-controller="ConversationEvents" asp-action="Index">@T["Events"]</a>
                 <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index">@T["Organizers"]</a>
                 <a asp-area="" asp-controller="Recent" asp-action="Index">@T["Recent"]</a>

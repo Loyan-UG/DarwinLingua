@@ -8,6 +8,8 @@ The first core of the product is vocabulary learning with multilingual meanings,
 
 The long-term vision expands beyond vocabulary learning into a broader practical platform that supports learners in real-world situations such as work, government offices, healthcare, transportation, housing, education, social integration, and guided conversation practice.
 
+Darwin Lingua is expanding into a complete German-learning portal with Web-first implementation, dynamic educational content, reusable exercises, structured courses, exam preparation, and later mobile parity.
+
 The application will be built for:
 
 - Android
@@ -225,6 +227,7 @@ Examples:
 - organizer dashboard
 - safe partner matching
 - personalized review
+- grammar guide, expressions, exercises, structured courses, exam preparation, writing templates, cultural notes, and unified learning search
 - web platform
 - admin panel
 - AI-assisted content workflows

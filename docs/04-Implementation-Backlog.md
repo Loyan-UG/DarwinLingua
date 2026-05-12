@@ -1193,6 +1193,159 @@ Before starting a new implementation slice:
 
 ---
 
+## Phase 7 Backlog - Complete Learning Portal
+
+`76-Learning-Portal-Roadmap-And-Backlog.md` is the source of truth for Phase 7 planning. This section keeps the project-wide backlog aligned without duplicating the full roadmap.
+
+Content generation for new modules must not start until the corresponding implementation, validation rules, and Web rendering are stable.
+
+### 7.1 Learning Portal Foundation
+
+- [x] define shared learning portal navigation
+  - Progress: Web learner navigation groups existing routes under Learn, Practice, Speak, Prepare, and Resources without exposing future dead routes.
+- [ ] define cross-content linking model
+- [ ] define reusable linked-word reference model
+- [x] define unified CEFR/category/topic filter conventions
+  - Progress: CEFR values use a shared Web convention helper; category/topic conventions stay module-specific until implementation starts.
+- [x] define Web-first/mobile-later parity rule
+- [ ] add admin/system report placeholders
+  - Note: keep placeholders documentation-only until real Phase 7 module content exists.
+- [x] add test backlog entries
+
+### 7.2 Grammar Guide
+
+- [x] implement GrammarTopic model
+- [x] implement import/validation
+- [x] implement Web API list/detail
+- [x] implement Web pages
+- [x] add admin visibility
+- [x] add tests
+- [x] add content contract when implementation starts
+- [ ] add broader query/WebApi rendering coverage after first real grammar content package is available
+- [ ] add mobile package export TODO after Web sign-off
+
+### 7.3 Everyday Expressions
+
+- [x] implement ExpressionEntry model
+- [x] implement idiom/proverb/colloquial metadata
+- [x] implement import/validation
+- [x] implement Web API list/detail
+- [x] implement Web pages
+- [x] add safety/tone warnings
+- [x] add tests
+- [x] add content contract when implementation starts
+- [ ] add broader query/WebApi rendering coverage after first real expression content package is available
+- [ ] add mobile package export TODO after Web sign-off
+
+### 7.4 Exercise Engine
+
+- [x] implement reusable Exercise and ExerciseSet models
+- [x] support initial exercise types
+- [x] support deterministic feedback
+- [x] support links to grammar, words, expressions, dialogues, Talk Topics, and lessons
+- [x] add Web exercise runner
+- [x] add initial tests
+- [x] add content contract when implementation starts
+- [ ] broaden type-specific runner UI beyond generic JSON submission
+- [ ] add tests for every initial exercise type after first real exercise package is available
+
+### 7.5 Course Lessons / Learning Paths
+
+- [x] implement CoursePath, CourseModule, CourseLesson
+- [x] link lessons to grammar, words, expressions, dialogues, Talk Topics, and exercises
+- [x] add Web course/lesson pages
+- [ ] add lesson progress tracking
+- [x] add initial parser/Web/navigation tests
+- [x] add content contract in `80-Course-Content-Package-Contract.md`
+- [ ] add broader linked-content projection and WebApi rendering coverage after the first real course package is available
+
+### 7.6 Exam Preparation
+
+- [x] implement exam profile taxonomy
+- [x] implement exam prep unit model
+- [x] link to dialogues, exercises, grammar, expressions, writing templates, Talk Topics, and course lessons
+- [x] add Web exam prep pages
+- [x] add initial parser/import/navigation/localization tests
+- [x] add content contract in `83-Exam-Prep-Content-Package-Contract.md`
+- [ ] add broader list/detail query, Web API, Web rendering, and linked-content coverage after first real exam-prep package is available
+
+### 7.7 Writing Templates
+
+- [x] implement WritingTemplate model
+- [x] support variables and filled examples
+- [x] link to grammar, words, expressions, and exercises
+- [x] add Web pages
+- [x] add initial parser/navigation/localization tests
+- [x] add content contract in `81-Writing-Template-Content-Package-Contract.md`
+- [ ] add broader validation, query, Web API, and Web rendering coverage after first real writing-template package is available
+
+### 7.8 Cultural Notes
+
+- [x] implement CulturalNote model
+- [x] link to dialogues, expressions, writing templates, Talk Topics, and course lessons
+- [x] add Web pages
+- [x] add initial parser/navigation/localization tests
+- [x] add content contract in `82-Cultural-Note-Content-Package-Contract.md`
+- [ ] add broader validation, query, Web API, and Web rendering coverage after first real cultural-note package is available
+
+### 7.9 Unified Learning Search
+
+- [x] define unified search result model
+- [x] implement cross-content search endpoint
+- [x] extend Web search experience without replacing existing word search
+- [x] support CEFR/content type/category/topic filters at the API level
+- [x] add initial application tests for empty query and result projection
+- [ ] add broader repository/WebApi/Web rendering coverage with seeded learning content
+
+### 7.10 Progress And Personalization
+
+- [x] implement `UserContentProgress` as user state separated from content entities
+- [x] track viewed/completed/needs-review/skipped states for controlled Learning Portal owner types
+- [x] add WebApi progress summary/update endpoints
+- [x] extend Web recent activity with a basic Learning Portal progress summary
+- [x] show course-lesson viewed state where lessons exist
+- [x] add deterministic recommendation service for next course lessons and incomplete grammar topics
+- [x] add domain/application tests for state transitions, owner validation, summaries, and deterministic recommendations
+- [ ] add WebApi endpoint tests for authenticated progress workflows
+- [ ] add Web rendering tests for course lesson progress and dashboard summary
+- [ ] add broader personalization signals from weak exercises and difficult words
+
+### 7.11 Admin And Operations
+
+- [x] add admin content overview
+- [x] add content quality reports
+- [x] add unresolved-link reports
+- [x] add missing-translation reports
+- [x] add CEFR/module seed coverage reports
+- [ ] add import validation summaries per Phase 7 package type
+- [ ] add filtered drill-down/export for Learning Portal quality issues
+
+### 7.12 Mobile Parity
+
+- [x] update full/all mobile package export after Web sign-off for grammar, expressions, exercises, courses, exam prep, writing templates, cultural notes, linked references, and unified search inputs
+  - Progress: full database and catalog-full packages now include Phase 7 arrays; CEFR slice packages remain word/current-conversation scoped until per-module slice validation is added.
+- [x] refactor MAUI navigation after Web model is stable
+  - Progress: shell navigation now exposes Learn, Practice, Speak, Prepare, and Resources surfaces with a Learning Portal hub.
+- [x] add MAUI dynamic list/detail/search surfaces backed by local Catalog query services
+  - Progress: generic list/detail pages cover Grammar, Expressions, Exercise Sets, Courses, Exam Prep, Writing Templates, Cultural Notes, and Talk Topics; unified learning search has a mobile route.
+- [x] update full-replacement local package apply path for Phase 7 content tables
+- [ ] implement mobile exercise runner for individual exercise attempts
+- [ ] integrate cross-content progress/sync on mobile when account sync is ready
+- [ ] add full manual validation worksheet bundle support for Phase 7 mobile parity
+
+### 7.13 Web Release Hardening
+
+- [x] run WebApi and Web builds for Phase 7 Web release hardening
+- [x] run current WebApi, ContentOps parser, Catalog application, Learning application/domain, and Localization test suites
+- [x] add structural route checks for Phase 7 Web learner routes and WebApi route registrations
+- [x] add structural localization checks for Phase 7 English/German release-surface keys
+- [x] update Web release checklist with Phase 7 module readiness gates
+- [ ] complete manual browser smoke against a running Web/WebApi environment with validated sample content
+- [ ] complete seeded WebApi filter/detail tests for every Phase 7 module
+- [ ] keep MAUI parity deferred until Web sign-off is recorded
+
+---
+
 ## Backlog Maintenance Rule
 
 Before starting a new implementation slice:

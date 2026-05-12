@@ -1,0 +1,50 @@
+@model DarwinLingua.Web.Models.AdminExpressionsPageViewModel
+@{
+    ViewData["Title"] = T["Everyday Expressions"];
+}
+
+<section class="admin-panel stack-md">
+    <div class="admin-section-heading">
+        <div>
+            <span class="eyebrow">@T["Content"]</span>
+            <h1>@T["Everyday Expressions"]</h1>
+        </div>
+        <a class="button button--secondary button--compact" asp-area="" asp-controller="Expressions" asp-action="Index">@T["Open learner view"]</a>
+    </div>
+
+    @if (Model.Expressions.Count == 0)
+    {
+        <p>@T["No expressions have been imported yet."]</p>
+    }
+    else
+    {
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>@T["Expression"]</th>
+                        <th>@T["CEFR level"]</th>
+                        <th>@T["Expression type"]</th>
+                        <th>@T["Expression register"]</th>
+                        <th>@T["Warnings"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var expression in Model.Expressions)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="" asp-controller="Expressions" asp-action="Detail" asp-route-slug="@expression.Slug">@expression.ExpressionText</a>
+                                <small>@expression.Slug</small>
+                            </td>
+                            <td>@expression.CefrLevel</td>
+                            <td>@T[expression.ExpressionType]</td>
+                            <td>@T[expression.Register]</td>
+                            <td>@(expression.IsRisky ? T["Tone warning"].Value : string.Join(", ", expression.WarningTypes))</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

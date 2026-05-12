@@ -8,6 +8,24 @@
         ("Moderation", Model.ModerationMetrics),
         ("Operations", Model.OperationsMetrics),
         ("Transactional email", Model.EmailMetrics),
+        ("Learning Portal quality", Model.LearningPortalQualityMetrics),
+    };
+    var learningPortalTables = new (string Title, IReadOnlyList<AdminLearningPortalCountRowResponse> Rows)[]
+    {
+        ("Content count by type", Model.LearningPortal.CountsByType),
+        ("Content count by CEFR", Model.LearningPortal.CountsByCefr),
+        ("Grammar topics by category", Model.LearningPortal.GrammarByCategory),
+        ("Expressions by type", Model.LearningPortal.ExpressionsByType),
+        ("Expressions by register", Model.LearningPortal.ExpressionsByRegister),
+        ("Exercises by type", Model.LearningPortal.ExercisesByType),
+        ("Exercises by target skill", Model.LearningPortal.ExercisesByTargetSkill),
+        ("Course lessons by course", Model.LearningPortal.CourseLessonsByCourse),
+        ("Course lessons by CEFR", Model.LearningPortal.CourseLessonsByCefr),
+        ("Course lessons by module", Model.LearningPortal.CourseLessonsByModule),
+        ("Exam prep units by profile", Model.LearningPortal.ExamPrepByProfile),
+        ("Writing templates by category", Model.LearningPortal.WritingTemplatesByCategory),
+        ("Writing templates by register", Model.LearningPortal.WritingTemplatesByRegister),
+        ("Cultural notes by category", Model.LearningPortal.CulturalNotesByCategory),
     };
 }
 
@@ -22,6 +40,7 @@
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Users", Model.IdentityUserCount.ToString(), "Identity users in the Web admin/user store.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.ModerationMetrics.First(item => item.Label == "Pending reports").Value, "Moderation reports waiting for review.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Email failures", Model.EmailMetrics.First(item => item.Label == "Failed in 24h").Value, "Transactional email delivery failures in the last 24 hours.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Learning issues", (Model.LearningPortal.UnresolvedLinkedWordCount + Model.LearningPortal.UnresolvedLinkedContentReferenceCount + Model.LearningPortal.MissingTranslationCount).ToString(), "Learning Portal references and translations needing operator review.")' />
 </div>
 
 <nav class="admin-anchor-nav" aria-label="System report sections">
@@ -29,6 +48,8 @@
     {
         <a href="#@metricSection.Title.ToLowerInvariant().Replace(" ", "-")">@metricSection.Title</a>
     }
+    <a href="#learning-portal-coverage">Learning Portal coverage</a>
+    <a href="#learning-portal-issues">Learning Portal issues</a>
     <a href="#analytics">Analytics</a>
 </nav>
 
@@ -54,6 +75,73 @@
                 </table>
             </div>
         </article>
+    }
+</section>
+
+<section class="panel stack-lg">
+    <h2 id="learning-portal-coverage" class="headline-sm">Learning Portal coverage</h2>
+    <p class="body-sm">Operator coverage view for implemented Learning Portal modules. Counts are grouped by content type, CEFR, category, register, target skill, course, module, and exam profile.</p>
+    <div class="grid-two-col">
+        @foreach (var table in learningPortalTables)
+        {
+            <article class="panel stack-md">
+                <h3 class="headline-sm">@table.Title</h3>
+                @if (table.Rows.Count == 0)
+                {
+                    <p class="body-sm">No rows available yet.</p>
+                }
+                else
+                {
+                    <div class="table-scroll">
+                        <table class="data-table admin-data-grid">
+                            <tbody>
+                                @foreach (var row in table.Rows)
+                                {
+                                    <tr>
+                                        <th>@row.Key</th>
+                                        <td><strong>@row.Count</strong></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </article>
+        }
+    </div>
+</section>
+
+<section class="panel stack-lg">
+    <h2 id="learning-portal-issues" class="headline-sm">Learning Portal issue samples</h2>
+    @if (Model.LearningPortal.SampleIssues.Count == 0)
+    {
+        <p class="body-sm">No unresolved Learning Portal link samples are currently reported.</p>
+    }
+    else
+    {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Owner</th>
+                        <th>Issue</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var issue in Model.LearningPortal.SampleIssues)
+                    {
+                        <tr>
+                            <td>@issue.Area</td>
+                            <td>@issue.Owner</td>
+                            <td>@issue.Issue</td>
+                            <td>@(issue.Target ?? "n/a")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </section>
 

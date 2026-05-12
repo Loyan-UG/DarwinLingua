@@ -6,7 +6,7 @@
 <section class="panel stack-lg">
     <span class="eyebrow">@T["Search"]</span>
     <h1 class="headline-md">@T["Search German lemmas"]</h1>
-    <p class="body-lg">@T["Find vocabulary quickly by lemma and open the full word detail for meaning, examples, pronunciation, and study actions."]</p>
+    <p class="body-lg">@T["Find vocabulary and learning content across the German learning portal."]</p>
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
         <div class="status-banner status-banner--success">@Model.StatusMessage</div>
@@ -26,8 +26,23 @@
             hx-get="@Url.Action("Results", "Search")"
             hx-trigger="keyup changed delay:250ms, search"
             hx-target="#search-results"
+            hx-include="closest form"
             hx-indicator="#search-indicator"
             autocomplete="off" />
+        <select class="search-input" name="resultType" aria-label="@T["Content type"]" hx-get="@Url.Action("Results", "Search")" hx-trigger="change" hx-target="#search-results" hx-include="closest form">
+            <option value="">@T["All content types"]</option>
+            @foreach (string resultType in Model.ResultTypes)
+            {
+                <option value="@resultType" selected="@(string.Equals(Model.SelectedResultType, resultType, StringComparison.OrdinalIgnoreCase))">@T[resultType]</option>
+            }
+        </select>
+        <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]" hx-get="@Url.Action("Results", "Search")" hx-trigger="change" hx-target="#search-results" hx-include="closest form">
+            <option value="">@T["All levels"]</option>
+            @foreach (string level in Model.CefrLevels)
+            {
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+            }
+        </select>
         <button type="submit" class="button button--primary">@T["Search"]</button>
     </form>
     <div id="search-indicator" class="eyebrow htmx-indicator">@T["Updating results..."]</div>

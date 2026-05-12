@@ -4,10 +4,10 @@
 {
     <section class="panel stack-md">
         <h2 class="headline-sm">@T["Start searching"]</h2>
-        <p class="body-lg">@T["Type a German lemma to search the catalog."]</p>
+        <p class="body-lg">@T["Type a German word, title, topic, or phrase to search the learning portal."]</p>
     </section>
 }
-else if (Model.Results.Count == 0)
+else if (Model.Results.Count == 0 && Model.LearningResults.Count == 0)
 {
     <section class="panel stack-lg">
         <h2 class="headline-sm">@T["No matches"]</h2>
@@ -27,10 +27,33 @@ else if (Model.Results.Count == 0)
 }
 else
 {
-    <section class="grid-two-col" data-word-list-container>
-        @foreach (var word in Model.Results)
-        {
-            <partial name="_WordCard" model="word" />
-        }
-    </section>
+    @if (Model.LearningResults.Count > 0)
+    {
+        <section class="panel stack-md">
+            <h2 class="headline-sm">@T["Learning results"]</h2>
+            <div class="grid-two-col">
+                @foreach (var result in Model.LearningResults)
+                {
+                    <article class="stack-sm">
+                        <span class="eyebrow">@T[result.ResultType]@(!string.IsNullOrWhiteSpace(result.CefrLevel) ? $" · {result.CefrLevel}" : string.Empty)@(!string.IsNullOrWhiteSpace(result.Category) ? $" · {T[result.Category]}" : string.Empty)</span>
+                        <h3><a href="@result.Url">@result.Title</a></h3>
+                        <p>@result.ShortSnippet</p>
+                        @if (result.MatchedFields.Count > 0)
+                        {
+                            <p class="body-sm">@T["Matched"] @string.Join(", ", result.MatchedFields.Select(field => T[field].Value))</p>
+                        }
+                    </article>
+                }
+            </div>
+        </section>
+    }
+    @if (Model.Results.Count > 0)
+    {
+        <section class="grid-two-col" data-word-list-container>
+            @foreach (var word in Model.Results)
+            {
+                <partial name="_WordCard" model="word" />
+            }
+        </section>
+    }
 }

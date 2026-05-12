@@ -21,6 +21,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IUserLearningProfileService, UserLearningProfileService>();
         services.AddScoped<IUserFavoriteWordService, UserFavoriteWordService>();
         services.AddScoped<IUserWordStateService, UserWordStateService>();
+        services.AddScoped<IUserContentProgressService, UserContentProgressService>();
 
         return services;
     }

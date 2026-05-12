@@ -1,0 +1,48 @@
+@model DarwinLingua.Web.Models.AdminGrammarPageViewModel
+@{
+    ViewData["Title"] = T["Grammar Guide"];
+}
+
+<section class="admin-panel stack-md">
+    <div class="admin-section-heading">
+        <div>
+            <span class="eyebrow">@T["Content"]</span>
+            <h1>@T["Grammar Guide"]</h1>
+        </div>
+        <a class="button button--secondary button--compact" asp-area="" asp-controller="Grammar" asp-action="Index">@T["Open learner view"]</a>
+    </div>
+
+    @if (Model.GrammarTopics.Count == 0)
+    {
+        <p>@T["No grammar topics have been imported yet."]</p>
+    }
+    else
+    {
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>@T["Title"]</th>
+                        <th>@T["CEFR level"]</th>
+                        <th>@T["Grammar category"]</th>
+                        <th>@T["Topics"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var topic in Model.GrammarTopics)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="" asp-controller="Grammar" asp-action="Detail" asp-route-slug="@topic.Slug">@topic.Title</a>
+                                <small>@topic.Slug</small>
+                            </td>
+                            <td>@topic.CefrLevel</td>
+                            <td>@T[topic.GrammarCategory]</td>
+                            <td>@string.Join(", ", topic.TopicKeys)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

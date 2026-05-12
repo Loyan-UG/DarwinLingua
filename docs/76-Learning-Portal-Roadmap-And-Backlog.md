@@ -142,7 +142,7 @@ Recommended future cleanup:
 
 Add this file:
 
-- `docs/75-Learning-Portal-Roadmap-And-Backlog.md`
+- `docs/76-Learning-Portal-Roadmap-And-Backlog.md`
 
 Update:
 
@@ -734,123 +734,158 @@ The portal should track learner progress across content types without mixing use
 
 ### Phase 7.1: Learning Portal Foundation
 
-- [ ] define shared learning portal navigation structure
+- [x] define shared learning portal navigation structure
+  - Progress: Web learner navigation is grouped as Learn, Practice, Speak, Prepare, and Resources using only implemented routes.
 - [ ] add content-type taxonomy for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Cultural Notes
 - [ ] define cross-content linking model
 - [ ] define reusable linked-word reference model
-- [ ] define unified CEFR/category/topic filter conventions
-- [ ] define Web-first/mobile-later parity rule in docs
+- [x] define unified CEFR/category/topic filter conventions
+  - Progress: Web CEFR filter levels now use a shared convention helper; category/topic conventions remain module-specific until each module starts.
+- [x] define Web-first/mobile-later parity rule in docs
 - [ ] add admin/system report placeholders for new content families
-- [ ] add test backlog entries for all new modules
+  - Note: keep placeholders documentation-only until a Phase 7 module has real persisted content to report.
+- [x] add test backlog entries for all new modules
+  - Progress: `71-Web-Test-Backlog.md` contains Learning Portal Expansion coverage for foundation and future Phase 7 modules.
 
 ### Phase 7.2: Grammar Guide
 
-- [ ] implement `GrammarTopic` domain model
-- [ ] implement grammar child sections/examples/common mistakes/rule summaries
-- [ ] add EF Core mappings and migration
-- [ ] add import parser and validation support
-- [ ] add Web API list/detail endpoints
-- [ ] add Web list/detail pages
-- [ ] add filters by CEFR/category/topic
-- [ ] add linked words/dialogues/Talk Topics/exercises support
-- [ ] add admin visibility or management surface
-- [ ] add tests for import, validation, query, Web API, and Web rendering
-- [ ] document grammar content contract only when implementation starts
+- [x] implement `GrammarTopic` domain model
+- [x] implement grammar child sections/examples/common mistakes/rule summaries
+- [x] add EF Core mappings and migration
+- [x] add import parser and validation support
+- [x] add Web API list/detail endpoints
+- [x] add Web list/detail pages
+- [x] add filters by CEFR/category/topic/search
+- [x] add linked words/dialogues/Talk Topics/exercises support
+- [x] add admin visibility surface
+- [x] add initial parser/navigation/localization tests
+- [x] document grammar content contract in `77-Grammar-Content-Package-Contract.md`
+- [ ] add broader query/WebApi rendering coverage after first real grammar content package is available
+- [ ] keep mobile parity tracked after Web sign-off
 
 ### Phase 7.3: Everyday Expressions
 
-- [ ] implement `ExpressionEntry` domain model
-- [ ] implement expression examples, warnings, related expressions, linked words
-- [ ] add EF Core mappings and migration
-- [ ] add import parser and validation support
-- [ ] add Web API list/detail endpoints
-- [ ] add Web list/detail pages
-- [ ] add filters by CEFR/type/register/context/topic
-- [ ] add safety warnings for risky expressions
-- [ ] add admin visibility or management surface
-- [ ] add tests for import, validation, query, Web API, and Web rendering
-- [ ] document expression content contract only when implementation starts
+- [x] implement `ExpressionEntry` domain model
+- [x] implement expression examples, warnings, related expressions, linked words
+- [x] add EF Core mappings and migration
+- [x] add import parser and validation support
+- [x] add Web API list/detail endpoints
+- [x] add Web list/detail pages
+- [x] add filters by CEFR/type/register/context/topic
+- [x] add safety warnings for risky expressions
+- [x] add admin visibility or management surface
+- [x] add initial tests for parser contract and Web navigation/localization
+- [x] document expression content contract in `78-Expression-Content-Package-Contract.md`
+- [ ] add broader validation, query, Web API, and Web rendering coverage after first real expression content package is available
+- [ ] keep mobile parity tracked after Web sign-off
 
 ### Phase 7.4: Exercise Engine
 
-- [ ] implement `Exercise` and `ExerciseSet` models
-- [ ] support initial exercise types
-- [ ] support deterministic answer keys and feedback
-- [ ] support links to grammar, words, expressions, dialogues, Talk Topics, and lessons
-- [ ] add learner exercise attempts
-- [ ] add Web API endpoints
-- [ ] add Web exercise runner UI
-- [ ] add admin/import support
-- [ ] add tests for each initial exercise type
-- [ ] document exercise content contract only when implementation starts
+- [x] implement `Exercise` and `ExerciseSet` models
+- [x] support initial exercise types
+- [x] support deterministic answer keys and feedback
+- [x] support links to grammar, words, expressions, dialogues, Talk Topics, and lessons
+- [x] add learner exercise attempts
+- [x] add Web API endpoints
+- [x] add Web exercise runner UI
+- [x] add admin/import support
+- [x] add initial tests for parser and deterministic answer evaluation
+- [x] document exercise content contract in `79-Exercise-Content-Package-Contract.md`
+- [ ] broaden type-specific runner UI beyond generic JSON submission
+- [ ] add tests for every initial exercise type after first real exercise package is available
 
 ### Phase 7.5: Course Lessons And Learning Paths
 
-- [ ] implement `CoursePath`, `CourseModule`, and `CourseLesson`
-- [ ] support CEFR-level course tracks
-- [ ] link lessons to grammar, words, expressions, dialogues, Talk Topics, and exercises
-- [ ] add Web course/lesson pages
+- [x] implement `CoursePath`, `CourseModule`, and `CourseLesson`
+- [x] support CEFR-level course tracks
+- [x] link lessons to grammar, words, expressions, dialogues, Talk Topics, and exercises
+- [x] add Web course/lesson pages
 - [ ] add lesson progress tracking
-- [ ] add admin/import support
-- [ ] add tests for lesson queries, linked content, and progress
-- [ ] document course content contract only when implementation starts
+- [x] add admin/import support
+- [x] add initial tests for course content parsing and Web navigation/localization
+- [x] document course content contract in `80-Course-Content-Package-Contract.md`
+- [ ] add broader linked-content projection, Web API, persistence, and progress coverage after the first real course package is available
 
 ### Phase 7.6: Exam Preparation
 
-- [ ] implement exam profile taxonomy
-- [ ] implement exam prep unit model
-- [ ] link exam prep to dialogues, exercises, grammar, writing templates, and Talk Topics
-- [ ] add Web exam prep pages
-- [ ] add exam-specific filters and landing pages
-- [ ] add tests for exam profile linking and filtering
+- [x] implement exam profile taxonomy
+- [x] implement exam prep unit model
+- [x] link exam prep to dialogues, exercises, grammar, expressions, writing templates, Talk Topics, and course lessons
+- [x] add Web exam prep pages
+- [x] add exam-specific filters and profile routes
+- [x] add initial parser/import/navigation/localization tests
+- [x] document exam prep content contract in `83-Exam-Prep-Content-Package-Contract.md`
+- [ ] add broader Web API, rendering, linked-content, and filter coverage after first real exam-prep package is available
 
 ### Phase 7.7: Writing Templates
 
-- [ ] implement writing template model
-- [ ] support template variables and sample filled versions
-- [ ] link to grammar, words, expressions, and exercises
-- [ ] add Web list/detail pages
-- [ ] add tests for template rendering and linked content
+- [x] implement writing template model
+- [x] support template variables and sample filled versions
+- [x] link to grammar, words, expressions, and exercises
+- [x] add Web list/detail pages
+- [x] add initial tests for template parsing, navigation, and localization
+- [x] document writing template content contract in `81-Writing-Template-Content-Package-Contract.md`
+- [ ] add broader template rendering, Web API, and linked-content coverage after first real writing-template package is available
 
 ### Phase 7.8: Cultural Notes
 
-- [ ] implement cultural note model
-- [ ] add Web list/detail pages
-- [ ] link to dialogues, expressions, writing templates, and course lessons
-- [ ] add tests for filtering and rendering
+- [x] implement cultural note model
+- [x] add Web list/detail pages
+- [x] link to dialogues, expressions, writing templates, Talk Topics, and course lessons
+- [x] add initial tests for cultural-note parsing, navigation, and localization
+- [x] document cultural note content contract in `82-Cultural-Note-Content-Package-Contract.md`
+- [ ] add broader filtering, Web API, Web rendering, and linked-content coverage after first real cultural-note package is available
 
 ### Phase 7.9: Unified Learning Search
 
-- [ ] define unified search result model
-- [ ] implement cross-content search endpoint
-- [ ] add Web search page/tab for all learning content
-- [ ] support filters by CEFR/content type/category/topic
-- [ ] add tests for ranking and result projection
+- [x] define unified search result model
+- [x] implement cross-content search endpoint
+- [x] extend Web search page for all implemented learning content while preserving word-search behavior
+- [x] support filters by CEFR/content type/category/topic in the API
+- [x] add initial tests for empty-query behavior and result projection
+- [ ] add seeded repository, WebApi, Web rendering, and ranking coverage
 
 ### Phase 7.10: Progress And Personalization
 
-- [ ] implement cross-content progress model
-- [ ] track viewed/completed states for grammar, expressions, lessons, and exercises
-- [ ] extend learner dashboard/recent activity
-- [ ] add recommendations based on CEFR focus and weak areas
-- [ ] add tests for progress state transitions
+- [x] implement cross-content progress model
+  - Progress: `UserContentProgress` stores user-specific state by controlled owner type and slug without copying content data.
+- [x] track viewed/completed states for implemented content
+  - Progress: course lesson detail views record a `viewed` state, and the model supports viewed, in-progress, completed, needs-review, and skipped.
+- [x] extend learner dashboard/recent activity
+  - Progress: Web recent activity includes a compact Learning Portal progress summary.
+- [x] add basic deterministic recommendations
+  - Progress: recommendation service suggests next incomplete course lessons and grammar topics without AI ranking.
+- [x] add tests for progress state transitions
+  - Progress: domain/application tests cover state transitions, owner validation, summaries, and completed-content exclusion.
+- [ ] add WebApi endpoint tests for authenticated progress workflows
+- [ ] add Web rendering tests for progress indicators
+- [ ] add weak-exercise and difficult-word recommendation signals
 
 ### Phase 7.11: Admin And Operations
 
-- [ ] add admin content overview for new modules
-- [ ] add admin import and validation summaries
-- [ ] add content quality reports
-- [ ] add reports for missing links, unresolved words, missing exercises, missing translations, and unpublished drafts
-- [ ] add seed coverage reports per CEFR/module
+- [x] add admin content overview for new modules
+  - Progress: Admin system report now includes Learning Portal counts by type, CEFR, category, register, target skill, course, module, and exam profile.
+- [x] add content quality reports
+  - Progress: Admin Reports includes Learning Portal quality metrics and issue samples.
+- [x] add reports for missing links, unresolved words, missing exercises, missing translations, and unpublished drafts
+  - Progress: system report summarizes unresolved linked words, unresolved cross-content references, missing translations, unpublished drafts, grammar topics without exercises, and lessons without exercise sets.
+- [x] add seed coverage reports per CEFR/module
+  - Progress: coverage tables include CEFR and course-module counts for implemented modules.
+- [ ] add import validation summaries per Phase 7 module package after import diagnostics are expanded
+- [ ] add full unresolved-link drill-down pages with filters and export
 
 ### Phase 7.12: Mobile Parity
 
-- [ ] define mobile navigation update after Web sign-off
-- [ ] update mobile content package export for grammar, expressions, exercises, courses, exam prep, writing templates, and cultural notes
-- [ ] refactor MAUI list/detail pages to match Web content model
+- [x] define mobile navigation update after Web sign-off
+  - Progress: MAUI shell now aligns the primary learner navigation around Learn, Practice, Speak, Prepare, and Resources.
+- [x] update mobile content package export for grammar, expressions, exercises, courses, exam prep, writing templates, and cultural notes
+  - Progress: full/all mobile packages carry Phase 7 content arrays and linked references; CEFR slices remain constrained until per-module slice validation is expanded.
+- [x] refactor MAUI list/detail pages to match Web content model
+  - Progress: mobile has dynamic list/detail surfaces backed by local Catalog query services for the implemented Learning Portal modules, plus unified learning search.
 - [ ] add mobile exercise runner where appropriate
 - [ ] add mobile progress sync where account support is ready
 - [ ] add mobile validation worksheets after Web implementation is stable
+  - Note: current work adds structural test coverage; target-device validation worksheets still need explicit Phase 7 checklist rows.
 
 ---
 
@@ -873,6 +908,8 @@ Recommended build order:
 
 Content generation for new modules should start only after the module contracts, validation rules, and Web rendering are stable.
 
+Foundation convention: Phase 7 Web navigation must not expose dead routes for modules that do not exist yet. New module links should be added only when the Web route, Web API contract, validation path, and release tests exist.
+
 ---
 
 ## Release Readiness Rules
@@ -891,6 +928,13 @@ A new learning-portal module is not release-ready until:
 - tests cover import, query, rendering, and validation
 - docs are updated
 - mobile parity is explicitly completed or backlog-tracked
+
+Current Web hardening status:
+
+- Web and WebApi builds are the release gate for Phase 7 Web sign-off; MAUI parity remains explicitly post-Web.
+- Structural hardening tests cover the Phase 7 learner routes, WebApi route registrations, and English/German localization resource keys.
+- Admin reports surface persisted Phase 7 coverage and quality metrics, including unresolved links, missing translations, unpublished drafts, and missing exercise coverage.
+- Bulk content generation must remain blocked until the release checklist gates in `61-Web-Release-Checklist.md` are reviewed against real validated content packages.
 
 ---
 

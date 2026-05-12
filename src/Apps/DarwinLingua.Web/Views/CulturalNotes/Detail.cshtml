@@ -1,0 +1,76 @@
+@model DarwinLingua.Web.Models.CulturalNoteDetailPageViewModel
+@{
+    ViewData["Title"] = Model.Note.Title;
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@Model.Note.CefrLevel · @T[Model.Note.Category]</span>
+    <h1 class="headline-md">@Model.Note.Title</h1>
+    <p class="body-lg">@Model.Note.ShortDescription</p>
+    <p><strong>@T["Context"]:</strong> @Model.Note.Context</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Note.SensitivityWarning))
+    {
+        <p class="status-badge status-badge--warning">@Model.Note.SensitivityWarning</p>
+    }
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Practical explanation"]</h2>
+    @foreach (string noteSection in Model.Note.Sections)
+    {
+        <p>@noteSection</p>
+    }
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Examples"]</h2>
+        @if (Model.Note.Examples.Count == 0)
+        {
+            <p>@T["No examples"]</p>
+        }
+        else
+        {
+            <ul>
+                @foreach (var example in Model.Note.Examples)
+                {
+                    <li>
+                        <strong>@example.GermanText</strong>
+                        @if (!string.IsNullOrWhiteSpace(example.Explanation))
+                        {
+                            <span>@example.Explanation</span>
+                        }
+                    </li>
+                }
+            </ul>
+        }
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Do and don't notes"]</h2>
+        <h3>@T["Do"]</h3>
+        <ul>
+            @foreach (string item in Model.Note.DoNotes)
+            {
+                <li>@item</li>
+            }
+        </ul>
+        <h3>@T["Don't"]</h3>
+        <ul>
+            @foreach (string item in Model.Note.DontNotes)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </article>
+</section>
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Linked content"]</h2>
+    <div class="grid-two-col">
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Dialogues"].Value, Model.Note.LinkedDialogueSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Everyday Expressions"].Value, Model.Note.LinkedExpressionSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Writing Templates"].Value, Model.Note.LinkedWritingTemplateSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Talk Topics"].Value, Model.Note.LinkedTalkTopicSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Course Lessons"].Value, Model.Note.LinkedCourseLessonSlugs)' />
+    </div>
+</section>

@@ -20,6 +20,7 @@ This document should be read together with:
 - `25-Phase-1-Domain-Cut.md`
 - `63-Market-Product-And-Organizer-Strategy.md`
 - `04-Implementation-Backlog.md` (`Phase 6 Backlog`)
+- `76-Learning-Portal-Roadmap-And-Backlog.md`
 
 ---
 
@@ -167,6 +168,10 @@ These features must not ship publicly without:
 - rate limits
 - privacy review
 - no unrestricted open chat in the first matching MVP
+
+### 4.6 Complete Learning Portal
+
+Darwin Lingua is expanding into a complete German-learning portal with Web-first implementation, dynamic educational content, reusable exercises, structured courses, exam preparation, and later mobile parity.
 
 ---
 

@@ -1,0 +1,89 @@
+using DarwinLingua.ContentOps.Application.Abstractions;
+using DarwinLingua.ContentOps.Application.Models;
+using DarwinLingua.ContentOps.Infrastructure.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using DarwinLingua.ContentOps.Infrastructure.Services;
+
+namespace DarwinLingua.ContentOps.Infrastructure.Tests;
+
+public sealed class ContentImportParserExpressionEntryTests
+{
+    [Fact]
+    public async Task ParseAsync_ShouldParseExpressionEntryContract()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+
+        ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+            """
+            {
+              "packageVersion": "1.0",
+              "packageId": "expression-contract-test",
+              "packageName": "Expression Contract Test",
+              "defaultMeaningLanguages": ["en"],
+              "entries": [],
+              "expressionEntries": [
+                {
+                  "slug": "a2-alles-klar",
+                  "expressionText": "Alles klar.",
+                  "literalMeaningText": "Everything clear.",
+                  "actualMeaningText": "All good or understood.",
+                  "usageExplanation": "Used to confirm understanding or agreement.",
+                  "cefrLevel": "A2",
+                  "expressionType": "fixed-expression",
+                  "register": "neutral",
+                  "category": "daily-life",
+                  "region": "de",
+                  "topics": ["daily-life"],
+                  "isPublished": true,
+                  "sortOrder": 10,
+                  "meanings": [
+                    {
+                      "language": "en",
+                      "actualMeaningText": "All good or understood.",
+                      "literalMeaningText": "Everything clear.",
+                      "usageExplanation": "A neutral confirmation phrase."
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "germanText": "Alles klar, wir treffen uns um acht.",
+                      "translations": [
+                        { "language": "en", "text": "All good, we meet at eight." }
+                      ],
+                      "sortOrder": 10
+                    }
+                  ],
+                  "warnings": [
+                    {
+                      "warningType": "tone",
+                      "text": "Avoid in very formal letters.",
+                      "translations": [
+                        { "language": "en", "text": "Avoid in very formal letters." }
+                      ]
+                    }
+                  ],
+                  "linkedWords": [
+                    { "lemma": "klar", "wordSlug": "klar", "sortOrder": 10 }
+                  ],
+                  "relatedExpressionSlugs": ["verstanden"],
+                  "linkedExerciseSlugs": ["a2-confirmation-phrases"]
+                }
+              ]
+            }
+            """,
+            CancellationToken.None);
+
+        ParsedExpressionEntryModel expression = Assert.Single(parsedPackage.ExpressionEntries);
+        Assert.Equal("a2-alles-klar", expression.Slug);
+        Assert.Equal("fixed-expression", expression.ExpressionType);
+        Assert.Equal("neutral", expression.Register);
+        Assert.Equal("All good or understood.", Assert.Single(expression.Meanings).ActualMeaningText);
+        Assert.Equal("Alles klar, wir treffen uns um acht.", Assert.Single(expression.Examples).GermanText);
+        Assert.Equal("klar", Assert.Single(expression.LinkedWords).WordSlug);
+        Assert.Equal("verstanden", Assert.Single(expression.RelatedExpressionSlugs));
+    }
+}

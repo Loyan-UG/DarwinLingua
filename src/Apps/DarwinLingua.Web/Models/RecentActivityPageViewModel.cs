@@ -1,7 +1,10 @@
+using DarwinLingua.Learning.Application.Models;
+
 namespace DarwinLingua.Web.Models;
 
 public sealed record RecentActivityPageViewModel(
-    IReadOnlyList<RecentWordActivityItemViewModel> Items);
+    IReadOnlyList<RecentWordActivityItemViewModel> Items,
+    LearningProgressSummaryModel? LearningProgress);
 
 public sealed record RecentWordActivityItemViewModel(
     Guid PublicId,

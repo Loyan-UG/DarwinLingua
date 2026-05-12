@@ -10,6 +10,8 @@ public sealed record AdminSystemReportPageViewModel(
     IReadOnlyList<AdminSystemReportMetricViewModel> ModerationMetrics,
     IReadOnlyList<AdminSystemReportMetricViewModel> OperationsMetrics,
     IReadOnlyList<AdminSystemReportMetricViewModel> EmailMetrics,
+    IReadOnlyList<AdminSystemReportMetricViewModel> LearningPortalQualityMetrics,
+    AdminLearningPortalSystemReportResponse LearningPortal,
     IReadOnlyList<WebProductAnalyticsSummaryItem> AnalyticsItems);
 
 public sealed record AdminSystemReportMetricViewModel(

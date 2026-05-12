@@ -1,0 +1,50 @@
+@model DarwinLingua.Web.Models.AdminExerciseSetsPageViewModel
+@{
+    ViewData["Title"] = T["Exercise sets"];
+}
+
+<section class="admin-panel stack-md">
+    <div class="admin-section-heading">
+        <div>
+            <span class="eyebrow">@T["Content"]</span>
+            <h1>@T["Exercise sets"]</h1>
+        </div>
+        <a class="button button--secondary button--compact" asp-area="" asp-controller="Exercises" asp-action="Index">@T["Open learner view"]</a>
+    </div>
+
+    @if (Model.ExerciseSets.Count == 0)
+    {
+        <p>@T["No exercise sets have been imported yet."]</p>
+    }
+    else
+    {
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>@T["Title"]</th>
+                        <th>@T["CEFR level"]</th>
+                        <th>@T["Content type"]</th>
+                        <th>@T["Linked content"]</th>
+                        <th>@T["Exercises"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exerciseSet in Model.ExerciseSets)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="" asp-controller="Exercises" asp-action="Set" asp-route-slug="@exerciseSet.Slug">@exerciseSet.Title</a>
+                                <small>@exerciseSet.Slug</small>
+                            </td>
+                            <td>@exerciseSet.CefrLevel</td>
+                            <td>@T[exerciseSet.OwnerType]</td>
+                            <td>@(exerciseSet.OwnerSlug ?? T["Unlinked"].Value)</td>
+                            <td>@exerciseSet.ExerciseCount</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

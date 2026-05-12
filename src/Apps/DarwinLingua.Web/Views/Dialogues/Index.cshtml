@@ -37,7 +37,7 @@
     <form class="search-form" method="get" asp-controller="Dialogues" asp-action="Index">
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
-            @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
+            @foreach (string level in LearningPortalFilterConventions.CefrLevels)
             {
                 <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
             }

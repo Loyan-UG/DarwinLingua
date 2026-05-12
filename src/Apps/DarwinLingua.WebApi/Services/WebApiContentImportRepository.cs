@@ -110,6 +110,17 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         IReadOnlyList<WordCollection> importedCollections,
         IReadOnlyList<DialogueLesson> importedDialogues,
         IReadOnlyList<TalkTopic> importedTalkTopics,
+        IReadOnlyList<GrammarTopic> importedGrammarTopics,
+        IReadOnlyList<ExpressionEntry> importedExpressions,
+        IReadOnlyList<Exercise> importedExercises,
+        IReadOnlyList<ExerciseSet> importedExerciseSets,
+        IReadOnlyList<CoursePath> importedCoursePaths,
+        IReadOnlyList<CourseModule> importedCourseModules,
+        IReadOnlyList<CourseLesson> importedCourseLessons,
+        IReadOnlyList<WritingTemplate> importedWritingTemplates,
+        IReadOnlyList<CulturalNote> importedCulturalNotes,
+        IReadOnlyList<ExamProfile> importedExamProfiles,
+        IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
         IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
         IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
         CancellationToken cancellationToken)
@@ -120,6 +131,17 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         ArgumentNullException.ThrowIfNull(importedCollections);
         ArgumentNullException.ThrowIfNull(importedDialogues);
         ArgumentNullException.ThrowIfNull(importedTalkTopics);
+        ArgumentNullException.ThrowIfNull(importedGrammarTopics);
+        ArgumentNullException.ThrowIfNull(importedExpressions);
+        ArgumentNullException.ThrowIfNull(importedExercises);
+        ArgumentNullException.ThrowIfNull(importedExerciseSets);
+        ArgumentNullException.ThrowIfNull(importedCoursePaths);
+        ArgumentNullException.ThrowIfNull(importedCourseModules);
+        ArgumentNullException.ThrowIfNull(importedCourseLessons);
+        ArgumentNullException.ThrowIfNull(importedWritingTemplates);
+        ArgumentNullException.ThrowIfNull(importedCulturalNotes);
+        ArgumentNullException.ThrowIfNull(importedExamProfiles);
+        ArgumentNullException.ThrowIfNull(importedExamPrepUnits);
         ArgumentNullException.ThrowIfNull(importedConversationStarterPacks);
         ArgumentNullException.ThrowIfNull(importedEventPreparationPacks);
 
@@ -275,6 +297,164 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
             }
 
             dbContext.TalkTopics.AddRange(importedTalkTopics);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedGrammarTopics.Count > 0)
+        {
+            string[] importedSlugs = importedGrammarTopics
+                .Select(item => item.Slug)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            List<GrammarTopic> existingGrammarTopics = await dbContext.GrammarTopics
+                .Where(topic => importedSlugs.Contains(topic.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            if (existingGrammarTopics.Count > 0)
+            {
+                dbContext.GrammarTopics.RemoveRange(existingGrammarTopics);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.GrammarTopics.AddRange(importedGrammarTopics);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedExpressions.Count > 0)
+        {
+            string[] importedSlugs = importedExpressions
+                .Select(item => item.Slug)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            List<ExpressionEntry> existingExpressions = await dbContext.ExpressionEntries
+                .Where(expression => importedSlugs.Contains(expression.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            if (existingExpressions.Count > 0)
+            {
+                dbContext.ExpressionEntries.RemoveRange(existingExpressions);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.ExpressionEntries.AddRange(importedExpressions);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedExercises.Count > 0)
+        {
+            string[] importedSlugs = importedExercises.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            List<Exercise> existingExercises = await dbContext.Exercises.Where(exercise => importedSlugs.Contains(exercise.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            if (existingExercises.Count > 0)
+            {
+                dbContext.Exercises.RemoveRange(existingExercises);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+            dbContext.Exercises.AddRange(importedExercises);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedExerciseSets.Count > 0)
+        {
+            string[] importedSlugs = importedExerciseSets.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            List<ExerciseSet> existingSets = await dbContext.ExerciseSets.Where(set => importedSlugs.Contains(set.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            if (existingSets.Count > 0)
+            {
+                dbContext.ExerciseSets.RemoveRange(existingSets);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+            dbContext.ExerciseSets.AddRange(importedExerciseSets);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedCoursePaths.Count > 0)
+        {
+            string[] importedSlugs = importedCoursePaths.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            List<CoursePath> existingCourses = await dbContext.CoursePaths.Where(course => importedSlugs.Contains(course.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            if (existingCourses.Count > 0)
+            {
+                dbContext.CoursePaths.RemoveRange(existingCourses);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.CoursePaths.AddRange(importedCoursePaths);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+            Dictionary<string, Guid> courseIdsBySlug = importedCoursePaths.ToDictionary(course => course.Slug, course => course.Id, StringComparer.OrdinalIgnoreCase);
+            foreach (CourseModule module in importedCourseModules)
+            {
+                module.AttachToCoursePath(courseIdsBySlug[module.CoursePathSlug]);
+            }
+
+            dbContext.CourseModules.AddRange(importedCourseModules);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+            Dictionary<string, Guid> moduleIdsBySlug = importedCourseModules.ToDictionary(module => module.Slug, module => module.Id, StringComparer.OrdinalIgnoreCase);
+            foreach (CourseLesson lesson in importedCourseLessons)
+            {
+                lesson.AttachToCourseModule(moduleIdsBySlug[lesson.ModuleSlug]);
+            }
+
+            dbContext.CourseLessons.AddRange(importedCourseLessons);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedWritingTemplates.Count > 0)
+        {
+            string[] importedSlugs = importedWritingTemplates.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            List<WritingTemplate> existingTemplates = await dbContext.WritingTemplates.Where(template => importedSlugs.Contains(template.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            if (existingTemplates.Count > 0)
+            {
+                dbContext.WritingTemplates.RemoveRange(existingTemplates);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.WritingTemplates.AddRange(importedWritingTemplates);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedCulturalNotes.Count > 0)
+        {
+            string[] importedSlugs = importedCulturalNotes.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            List<CulturalNote> existingNotes = await dbContext.CulturalNotes.Where(note => importedSlugs.Contains(note.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            if (existingNotes.Count > 0)
+            {
+                dbContext.CulturalNotes.RemoveRange(existingNotes);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.CulturalNotes.AddRange(importedCulturalNotes);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedExamProfiles.Count > 0)
+        {
+            string[] importedKeys = importedExamProfiles.Select(item => item.Key).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            List<ExamProfile> existingProfiles = await dbContext.ExamProfiles.Where(profile => importedKeys.Contains(profile.Key)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            if (existingProfiles.Count > 0)
+            {
+                dbContext.ExamProfiles.RemoveRange(existingProfiles);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.ExamProfiles.AddRange(importedExamProfiles);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedExamPrepUnits.Count > 0)
+        {
+            string[] importedSlugs = importedExamPrepUnits.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            List<ExamPrepUnit> existingUnits = await dbContext.ExamPrepUnits.Where(unit => importedSlugs.Contains(unit.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            if (existingUnits.Count > 0)
+            {
+                dbContext.ExamPrepUnits.RemoveRange(existingUnits);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.ExamPrepUnits.AddRange(importedExamPrepUnits);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 

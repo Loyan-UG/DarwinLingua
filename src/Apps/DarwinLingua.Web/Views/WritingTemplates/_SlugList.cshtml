@@ -1,0 +1,18 @@
+@model (string Title, IReadOnlyList<string> Slugs)
+
+<div class="stack-sm">
+    <h3>@Model.Title</h3>
+    @if (Model.Slugs.Count == 0)
+    {
+        <p>@T["None linked"]</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (string slug in Model.Slugs)
+            {
+                <li><code>@slug</code></li>
+            }
+        </ul>
+    }
+</div>
