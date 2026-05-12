@@ -87,6 +87,7 @@ All project documentation should remain in English.
 - `71-Web-Test-Backlog.md`
 - `72-Web-Seed-Coverage-And-Admin-Reports.md`
 - `73-Transactional-Email-And-Account-Communication-Backlog.md`
+- `75-Stripe-Billing-Validation-Playbook.md`
 - `74-Talk-Topic-Content-Package-Contract.md`
 - `76-Learning-Portal-Roadmap-And-Backlog.md`
 - `77-Grammar-Content-Package-Contract.md`
@@ -154,15 +155,16 @@ If you are new to the project, read the documents in this order:
 42. `71-Web-Test-Backlog.md`
 43. `72-Web-Seed-Coverage-And-Admin-Reports.md`
 44. `73-Transactional-Email-And-Account-Communication-Backlog.md`
-45. `74-Talk-Topic-Content-Package-Contract.md`
-46. `76-Learning-Portal-Roadmap-And-Backlog.md`
-47. `77-Grammar-Content-Package-Contract.md`
-48. `78-Expression-Content-Package-Contract.md`
-49. `79-Exercise-Content-Package-Contract.md`
-50. `80-Course-Content-Package-Contract.md`
-51. `81-Writing-Template-Content-Package-Contract.md`
-52. `82-Cultural-Note-Content-Package-Contract.md`
-53. `83-Exam-Prep-Content-Package-Contract.md`
+45. `75-Stripe-Billing-Validation-Playbook.md`
+46. `74-Talk-Topic-Content-Package-Contract.md`
+47. `76-Learning-Portal-Roadmap-And-Backlog.md`
+48. `77-Grammar-Content-Package-Contract.md`
+49. `78-Expression-Content-Package-Contract.md`
+50. `79-Exercise-Content-Package-Contract.md`
+51. `80-Course-Content-Package-Contract.md`
+52. `81-Writing-Template-Content-Package-Contract.md`
+53. `82-Cultural-Note-Content-Package-Contract.md`
+54. `83-Exam-Prep-Content-Package-Contract.md`
 
 ---
 
@@ -191,6 +193,7 @@ If you are new to the project, read the documents in this order:
 - `71-Web-Test-Backlog.md` defines the remaining Web automated and manual validation backlog owned by the separate test-development workflow.
 - `72-Web-Seed-Coverage-And-Admin-Reports.md` records Web seed coverage, admin report scope, and the operational-seed follow-up.
 - `73-Transactional-Email-And-Account-Communication-Backlog.md` defines the release-critical transactional email, account recovery, email confirmation, provider, diagnostics, localization, and security backlog.
+- `75-Stripe-Billing-Validation-Playbook.md` defines the local and staging validation flow for Stripe Checkout, webhooks, Premium entitlement, Customer Portal, billing diagnostics, and billing notification emails.
 - `74-Talk-Topic-Content-Package-Contract.md` defines the Talk Topics JSON contract, controlled content types, CEFR article-length validation, vocabulary-reference rules, speaking goals, sensitivity metadata, and reusable future support-content ideas.
 - `76-Learning-Portal-Roadmap-And-Backlog.md` defines the Web-first roadmap and backlog for Grammar Guide, Everyday Expressions, Exercise Engine, Course Lessons, Exam Prep, Writing Templates, Cultural Notes, Unified Search, Progress/Personalization, Admin Operations, and later Mobile parity.
 - `77-Grammar-Content-Package-Contract.md` defines the Phase 7 Grammar Guide JSON contract now that the dynamic GrammarTopic implementation has started.
@@ -207,6 +210,11 @@ If you are new to the project, read the documents in this order:
 - `76-Learning-Portal-Roadmap-And-Backlog.md` is the single roadmap/backlog source for Phase 7.
 - Do not create extra planning documents for individual Phase 7 modules such as Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, or Cultural Notes.
 - Dedicated content-contract documents should be created only when implementation starts for that module; `77-Grammar-Content-Package-Contract.md`, `78-Expression-Content-Package-Contract.md`, `79-Exercise-Content-Package-Contract.md`, `80-Course-Content-Package-Contract.md`, `81-Writing-Template-Content-Package-Contract.md`, `82-Cultural-Note-Content-Package-Contract.md`, and `83-Exam-Prep-Content-Package-Contract.md` are implementation contract examples.
+
+### Numbering Cleanup Follow-Up
+
+- Two `74-*` documents currently exist: `74-Production-Operations-Setup-Checklist.md` and `74-Talk-Topic-Content-Package-Contract.md`.
+- Do not delete either file during feature work. Resolve the duplicate numbering in a dedicated documentation cleanup task.
 
 ### Rules vs Workflow
 

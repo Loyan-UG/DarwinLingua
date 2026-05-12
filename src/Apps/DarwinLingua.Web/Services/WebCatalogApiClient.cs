@@ -717,7 +717,7 @@ internal sealed class WebCatalogApiClient(
         CancellationToken cancellationToken)
     {
         using HttpResponseMessage response = await httpClient
-            .PostAsJsonAsync($"/api/learning/exercises/{Uri.EscapeDataString(slug)}/attempts", request, cancellationToken)
+            .PostAsJsonAsync($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}/evaluate", request, cancellationToken)
             .ConfigureAwait(false);
 
         if (response.StatusCode == System.Net.HttpStatusCode.NotFound)

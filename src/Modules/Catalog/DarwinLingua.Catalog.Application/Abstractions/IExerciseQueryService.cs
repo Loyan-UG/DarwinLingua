@@ -16,4 +16,6 @@ public interface IExerciseQueryService
 public interface IExerciseAttemptService
 {
     Task<ExerciseAttemptResultModel?> SubmitAttemptAsync(string slug, ExerciseAttemptRequestModel request, string userId, CancellationToken cancellationToken);
+
+    Task<ExerciseAttemptResultModel?> EvaluateAttemptAsync(string slug, ExerciseAttemptRequestModel request, CancellationToken cancellationToken);
 }

@@ -226,7 +226,11 @@ Latest local Web verification:
 - [x] Deterministic feedback returns stable correct/incorrect outcomes.
 - [ ] Exercise set linking resolves valid owner references.
 - [x] Exercise runner behavior covers initial generic submission flow.
-- [x] Attempt persistence works for submitted deterministic answers.
+- [x] Authenticated attempt persistence stores the authenticated user id and never falls back to an `anonymous` user id.
+- [x] Public exercise evaluation is stateless and does not persist anonymous attempts.
+- [x] Malformed and oversized submitted-answer JSON is rejected before persistence.
+- [x] Exercise attempt and evaluation endpoints are covered by rate-limiting structural checks.
+- [x] Attempt results do not expose answer keys.
 - [ ] Type-specific runner controls cover each initial supported exercise type.
 
 ### Course Lessons
@@ -274,14 +278,18 @@ Latest local Web verification:
 ### Unified Search
 
 - [x] Application-level empty query handling avoids repository calls.
+- [x] Application-level short, long, and unsupported result-type query handling is covered.
 - [x] Application-level result projection returns repository results unchanged.
 - [x] Release route hardening covers `/search` and `/api/catalog/search`.
+- [x] `/api/catalog/search` is covered by rate-limiting structural checks.
+- [x] PostgreSQL trigram and filter-index migration coverage exists for the bulk-content search path.
 - [ ] Result type projection distinguishes words, grammar, expressions, dialogues, Talk Topics, exercises, lessons, exam prep, writing templates, cultural notes, events, and organizers with seeded data.
 - [ ] Ranking behavior is deterministic for the same indexed content in repository/WebApi coverage.
 - [ ] CEFR/content type/category filters return expected mixed results.
 - [ ] WebApi endpoint coverage exists for `/api/catalog/search`.
 - [ ] Web rendering coverage exists for learning result cards and filters.
 - [ ] Missing content references fail safely.
+- [ ] Seeded performance coverage verifies bounded result counts and acceptable query plans before bulk content generation.
 
 ### Progress And Personalization
 

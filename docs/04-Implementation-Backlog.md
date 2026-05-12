@@ -1246,6 +1246,10 @@ Content generation for new modules must not start until the corresponding implem
 - [x] add Web exercise runner
 - [x] add initial tests
 - [x] add content contract when implementation starts
+- [x] separate stateless public exercise evaluation from authenticated persisted attempts
+- [x] reject missing authenticated user ids for persisted attempts instead of storing anonymous attempts
+- [x] bound and validate submitted-answer JSON before evaluation or persistence
+- [x] rate-limit exercise evaluation and attempt endpoints
 - [ ] broaden type-specific runner UI beyond generic JSON submission
 - [ ] add tests for every initial exercise type after first real exercise package is available
 
@@ -1294,8 +1298,12 @@ Content generation for new modules must not start until the corresponding implem
 - [x] implement cross-content search endpoint
 - [x] extend Web search experience without replacing existing word search
 - [x] support CEFR/content type/category/topic filters at the API level
-- [x] add initial application tests for empty query and result projection
+- [x] add application query validation for empty, short, long, and unsupported result-type queries
+- [x] add PostgreSQL trigram/filter index migration for the bulk-content search path
+- [x] rate-limit the public unified search endpoint
+- [x] add initial application and structural tests for query validation, result projection, route hardening, and search indexes
 - [ ] add broader repository/WebApi/Web rendering coverage with seeded learning content
+- [ ] add seeded performance coverage before bulk Phase 7 content generation
 
 ### 7.10 Progress And Personalization
 

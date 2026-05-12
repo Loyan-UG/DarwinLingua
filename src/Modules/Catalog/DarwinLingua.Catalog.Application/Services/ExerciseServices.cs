@@ -2,6 +2,7 @@ using System.Text.Json;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Exceptions;
 
 namespace DarwinLingua.Catalog.Application.Services;
 
@@ -22,6 +23,8 @@ internal sealed class ExerciseQueryService(IExerciseRepository repository) : IEx
 
 internal sealed class ExerciseAttemptService(IExerciseRepository repository) : IExerciseAttemptService
 {
+    private const int MaxSubmittedAnswerJsonLength = 4096;
+
     public async Task<ExerciseAttemptResultModel?> SubmitAttemptAsync(
         string slug,
         ExerciseAttemptRequestModel request,
@@ -30,21 +33,23 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
     {
         ArgumentNullException.ThrowIfNull(request);
 
+        string normalizedUserId = NormalizeRequiredUserId(userId);
+        string submittedAnswerJson = NormalizeSubmittedAnswerJson(request.SubmittedAnswerJson);
         Exercise? exercise = await repository.GetPublishedExerciseEntityBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
         if (exercise is null)
         {
             return null;
         }
 
-        bool isCorrect = ExerciseAnswerEvaluator.Evaluate(exercise.ExerciseType, exercise.AnswerKeyJson, request.SubmittedAnswerJson);
+        bool isCorrect = ExerciseAnswerEvaluator.Evaluate(exercise.ExerciseType, exercise.AnswerKeyJson, submittedAnswerJson);
         string explanation = isCorrect ? exercise.CorrectExplanation : exercise.IncorrectExplanation;
         DateTime attemptedAtUtc = DateTime.UtcNow;
 
         UserExerciseAttempt attempt = new(
             Guid.NewGuid(),
-            string.IsNullOrWhiteSpace(userId) ? "anonymous" : userId,
+            normalizedUserId,
             exercise.Slug,
-            request.SubmittedAnswerJson,
+            submittedAnswerJson,
             isCorrect,
             explanation,
             attemptedAtUtc);
@@ -58,6 +63,72 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
             exercise.Hint,
             exercise.CommonMistakeNote,
             attemptedAtUtc);
+    }
+
+    public async Task<ExerciseAttemptResultModel?> EvaluateAttemptAsync(
+        string slug,
+        ExerciseAttemptRequestModel request,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+
+        string submittedAnswerJson = NormalizeSubmittedAnswerJson(request.SubmittedAnswerJson);
+        Exercise? exercise = await repository.GetPublishedExerciseEntityBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
+        if (exercise is null)
+        {
+            return null;
+        }
+
+        bool isCorrect = ExerciseAnswerEvaluator.Evaluate(exercise.ExerciseType, exercise.AnswerKeyJson, submittedAnswerJson);
+        string explanation = isCorrect ? exercise.CorrectExplanation : exercise.IncorrectExplanation;
+
+        return new ExerciseAttemptResultModel(
+            exercise.Slug,
+            isCorrect,
+            explanation,
+            exercise.Hint,
+            exercise.CommonMistakeNote,
+            DateTime.UtcNow);
+    }
+
+    private static string NormalizeRequiredUserId(string userId)
+    {
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            throw new DomainRuleException("Authenticated user id is required for persisted exercise attempts.");
+        }
+
+        return userId.Trim();
+    }
+
+    private static string NormalizeSubmittedAnswerJson(string submittedAnswerJson)
+    {
+        if (string.IsNullOrWhiteSpace(submittedAnswerJson))
+        {
+            throw new DomainRuleException("Submitted answer JSON is required.");
+        }
+
+        string trimmed = submittedAnswerJson.Trim();
+        if (trimmed.Length > MaxSubmittedAnswerJsonLength)
+        {
+            throw new DomainRuleException($"Submitted answer JSON must be {MaxSubmittedAnswerJsonLength} characters or fewer.");
+        }
+
+        try
+        {
+            using JsonDocument submitted = JsonDocument.Parse(trimmed);
+            JsonValueKind kind = submitted.RootElement.ValueKind;
+            if (kind is not (JsonValueKind.Object or JsonValueKind.Array))
+            {
+                throw new DomainRuleException("Submitted answer JSON must be an object or array.");
+            }
+
+            return JsonSerializer.Serialize(submitted.RootElement);
+        }
+        catch (JsonException)
+        {
+            throw new DomainRuleException("Submitted answer JSON is malformed.");
+        }
     }
 }
 

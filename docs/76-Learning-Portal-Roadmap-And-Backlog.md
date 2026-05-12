@@ -791,6 +791,10 @@ The portal should track learner progress across content types without mixing use
 - [x] add admin/import support
 - [x] add initial tests for parser and deterministic answer evaluation
 - [x] document exercise content contract in `79-Exercise-Content-Package-Contract.md`
+- [x] separate stateless public exercise evaluation from authenticated persisted attempts
+- [x] require authenticated user ids for persisted attempts; never store fallback anonymous attempts
+- [x] bound and validate submitted-answer JSON before evaluation or persistence
+- [x] rate-limit exercise evaluation and attempt endpoints
 - [ ] broaden type-specific runner UI beyond generic JSON submission
 - [ ] add tests for every initial exercise type after first real exercise package is available
 
@@ -842,8 +846,12 @@ The portal should track learner progress across content types without mixing use
 - [x] implement cross-content search endpoint
 - [x] extend Web search page for all implemented learning content while preserving word-search behavior
 - [x] support filters by CEFR/content type/category/topic in the API
-- [x] add initial tests for empty-query behavior and result projection
+- [x] add query validation for empty, too-short, too-long, and unsupported result-type queries
+- [x] add PostgreSQL trigram/filter index migration for production bulk-content readiness
+- [x] rate-limit the public search endpoint
+- [x] add initial tests for query validation, result projection, route hardening, and search-index migration coverage
 - [ ] add seeded repository, WebApi, Web rendering, and ranking coverage
+- [ ] add seeded performance coverage before bulk content generation starts
 
 ### Phase 7.10: Progress And Personalization
 
@@ -934,6 +942,8 @@ Current Web hardening status:
 - Web and WebApi builds are the release gate for Phase 7 Web sign-off; MAUI parity remains explicitly post-Web.
 - Structural hardening tests cover the Phase 7 learner routes, WebApi route registrations, and English/German localization resource keys.
 - Admin reports surface persisted Phase 7 coverage and quality metrics, including unresolved links, missing translations, unpublished drafts, and missing exercise coverage.
+- Exercise attempt hardening requires authorization for persisted attempts, keeps anonymous evaluation stateless, validates submitted-answer JSON, and applies endpoint rate limits.
+- Unified Search hardening adds query constraints, endpoint rate limiting, and PostgreSQL trigram/filter indexes for the bulk-content path.
 - Bulk content generation must remain blocked until the release checklist gates in `61-Web-Release-Checklist.md` are reviewed against real validated content packages.
 
 ---

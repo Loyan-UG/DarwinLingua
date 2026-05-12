@@ -5,6 +5,7 @@ using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.Extensions.Localization;
+using System.Text.Json;
 
 namespace DarwinLingua.Web.Controllers;
 
@@ -14,6 +15,8 @@ public sealed class ExercisesController(
     IStringLocalizer<SharedResource> localizer,
     ILogger<ExercisesController> logger) : Controller
 {
+    private const int MaxSubmittedAnswerJsonLength = 4096;
+
     [HttpGet("", Name = "Exercises_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Index(string? cefrLevel, string? q, CancellationToken cancellationToken)
@@ -63,12 +66,57 @@ public sealed class ExercisesController(
             return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson));
         }
 
-        ExerciseAttemptResultModel? result = await catalogApiClient
-            .SubmitExerciseAttemptAsync(slug, new ExerciseAttemptRequestModel(submittedAnswerJson), cancellationToken)
-            .ConfigureAwait(false);
+        if (!IsSubmittedAnswerJsonValid(submittedAnswerJson, out string? validationMessage))
+        {
+            ModelState.AddModelError(nameof(submittedAnswerJson), validationMessage);
+            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson));
+        }
+
+        ExerciseAttemptResultModel? result;
+        try
+        {
+            result = await catalogApiClient
+                .SubmitExerciseAttemptAsync(slug, new ExerciseAttemptRequestModel(submittedAnswerJson.Trim()), cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or InvalidOperationException)
+        {
+            logger.LogWarning(ex, "Exercise answer evaluation failed for exercise {ExerciseSlug}.", slug);
+            ModelState.AddModelError(nameof(submittedAnswerJson), localizer["The answer could not be evaluated right now."].Value);
+            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson));
+        }
 
         return result is null
             ? NotFound()
             : View("Detail", new ExerciseRunnerPageViewModel(exercise, result, submittedAnswerJson));
+    }
+
+    private bool IsSubmittedAnswerJsonValid(string submittedAnswerJson, out string validationMessage)
+    {
+        validationMessage = string.Empty;
+        string trimmed = submittedAnswerJson.Trim();
+        if (trimmed.Length > MaxSubmittedAnswerJsonLength)
+        {
+            validationMessage = localizer["Answer data is too large."].Value;
+            return false;
+        }
+
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(trimmed);
+            JsonValueKind kind = document.RootElement.ValueKind;
+            if (kind is JsonValueKind.Object or JsonValueKind.Array)
+            {
+                return true;
+            }
+
+            validationMessage = localizer["Answer data must be a JSON object or array."].Value;
+            return false;
+        }
+        catch (JsonException)
+        {
+            validationMessage = localizer["Answer data is not valid JSON."].Value;
+            return false;
+        }
     }
 }

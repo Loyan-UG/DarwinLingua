@@ -17,7 +17,7 @@ public sealed class SearchController(
     ILogger<SearchController> logger,
     IStringLocalizer<SharedResource> localizer) : Controller
 {
-    private const int MaxSearchQueryLength = 128;
+    private const int MaxSearchQueryLength = 100;
     private static readonly string[] ResultTypes =
     [
         "word", "grammar", "expression", "dialogue", "talk-topic", "exercise",

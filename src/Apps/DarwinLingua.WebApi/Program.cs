@@ -21,11 +21,13 @@ using DarwinLingua.WebApi.Persistence;
 using DarwinLingua.WebApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.RateLimiting;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -94,6 +96,29 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Admin", policy => policy.RequireRole(DarwinLinguaRoles.Admin));
 });
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddPolicy("ExerciseAttempts", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            ResolveRateLimitPartitionKey(context),
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 20,
+                Window = TimeSpan.FromMinutes(1),
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                QueueLimit = 0,
+            }));
+    options.AddPolicy("CatalogSearch", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            ResolveRateLimitPartitionKey(context),
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 60,
+                Window = TimeSpan.FromMinutes(1),
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                QueueLimit = 0,
+            }));
+});
 
 builder.Services
     .AddDarwinLinguaInfrastructureForPostgres(sharedCatalogConnectionString)
@@ -159,6 +184,7 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 app.UseAuthentication();
 app.Use(EnforceAdminApiAccessAsync);
 app.UseAuthorization();
+app.UseRateLimiter();
 
 RouteGroupBuilder authGroup = app.MapGroup("/api/auth");
 authGroup.MapIdentityApi<DarwinLinguaIdentityUser>();
@@ -476,20 +502,37 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapPost(
+        "/api/catalog/exercises/{slug}/evaluate",
+        async (
+            string slug,
+            ExerciseAttemptRequestModel request,
+            IExerciseAttemptService attemptService,
+            CancellationToken cancellationToken) =>
+            await ResolveQueryRequestAsync(
+                    async () => await attemptService.EvaluateAttemptAsync(
+                        slug,
+                        request,
+                        cancellationToken).ConfigureAwait(false))
+                .ConfigureAwait(false))
+    .RequireRateLimiting("ExerciseAttempts");
+
+app.MapPost(
     "/api/learning/exercises/{slug}/attempts",
     async (
         string slug,
         ExerciseAttemptRequestModel request,
         IExerciseAttemptService attemptService,
-        HttpContext httpContext,
+        ClaimsPrincipal principal,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await attemptService.SubmitAttemptAsync(
                     slug,
                     request,
-                    httpContext.User.Identity?.Name ?? "anonymous",
+                    GetRequiredUserId(principal),
                     cancellationToken).ConfigureAwait(false))
-            .ConfigureAwait(false));
+            .ConfigureAwait(false))
+    .RequireAuthorization()
+    .RequireRateLimiting("ExerciseAttempts");
 
 app.MapGet(
         "/api/learning/progress/summary",
@@ -666,7 +709,8 @@ app.MapGet(
                 async () => await searchService.SearchAsync(
                     new UnifiedLearningSearchFilterModel(q, cefrLevel, resultType, category, topicKey),
                     cancellationToken).ConfigureAwait(false))
-            .ConfigureAwait(false));
+            .ConfigureAwait(false))
+    .RequireRateLimiting("CatalogSearch");
 
 app.MapGet(
     "/api/catalog/conversation-starters",
@@ -2000,6 +2044,17 @@ static string GetRequiredUserId(ClaimsPrincipal principal)
     }
 
     return userId;
+}
+
+static string ResolveRateLimitPartitionKey(HttpContext context)
+{
+    string? userId = context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+    if (!string.IsNullOrWhiteSpace(userId))
+    {
+        return $"user:{userId}";
+    }
+
+    return $"ip:{context.Connection.RemoteIpAddress?.ToString() ?? "unknown"}";
 }
 
 static string GetNormalizedEmailParameter(HttpRequest request, string queryParameterName)
