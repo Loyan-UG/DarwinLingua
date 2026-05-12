@@ -82,4 +82,42 @@ public sealed class ContentImportParserGrammarTopicTests
         Assert.Equal("der Kaffee", Assert.Single(grammarTopic.LinkedWords).Lemma);
         Assert.Equal("a1-indefinite-articles", Assert.Single(grammarTopic.RelatedTopicSlugs));
     }
+
+    [Fact]
+    public async Task ParseAsync_ShouldParseRichGrammarPilotContract()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+        string repositoryRoot = ResolveRepositoryRoot();
+        string packagePath = Path.Combine(repositoryRoot, "content", "learning-portal", "grammar", "packages", "grammar-a1-pilot-personal-pronouns-v1.proposed.json");
+
+        ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+            await File.ReadAllTextAsync(packagePath),
+            CancellationToken.None);
+
+        ParsedGrammarTopicModel grammarTopic = Assert.Single(parsedPackage.GrammarTopics);
+        Assert.Equal("a1-personal-pronouns-ich-du-er-sie-es", grammarTopic.Slug);
+        Assert.Equal(1, grammarTopic.ContentRevision);
+        Assert.Contains("fa", grammarTopic.TitleLocalized.Keys);
+        Assert.Contains("ar", grammarTopic.ShortDescriptionLocalized.Keys);
+        ParsedGrammarSectionModel tableSection = Assert.Single(grammarTopic.Sections, section => section.SectionKey == "core-table");
+        Assert.Contains("en", tableSection.LocalizedBlocksJson.Keys);
+        Assert.Contains("\"table\"", tableSection.LocalizedBlocksJson["en"], StringComparison.Ordinal);
+        Assert.Contains(grammarTopic.RuleSummaries, rule => rule.Translations.Any(translation => translation.Language == "fa"));
+        Assert.DoesNotContain(grammarTopic.LinkedWords, word => word.Lemma.Contains("meaning", StringComparison.OrdinalIgnoreCase));
+    }
+
+    private static string ResolveRepositoryRoot()
+    {
+        DirectoryInfo? directory = new(AppContext.BaseDirectory);
+        while (directory is not null && !File.Exists(Path.Combine(directory.FullName, "DarwinLingua.slnx")))
+        {
+            directory = directory.Parent;
+        }
+
+        return directory?.FullName ?? throw new InvalidOperationException("Repository root could not be resolved.");
+    }
 }

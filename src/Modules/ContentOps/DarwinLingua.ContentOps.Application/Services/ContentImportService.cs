@@ -7,6 +7,7 @@ using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 
 namespace DarwinLingua.ContentOps.Application.Services;
@@ -78,6 +79,11 @@ internal sealed class ContentImportService : IContentImportService
         "accusative", "dative", "genitive", "adjective-declension", "prepositions",
         "word-order", "subordinate-clauses", "connectors", "negation", "questions",
         "imperative", "passive", "konjunktiv", "reported-speech", "punctuation"
+    };
+
+    private static readonly HashSet<string> GrammarRichBlockTypes = new(StringComparer.Ordinal)
+    {
+        "paragraph", "table", "callout", "rule-list", "example-list", "mistake-pair", "image-slot"
     };
 
     private static readonly HashSet<string> ExpressionTypes = new(StringComparer.Ordinal)
@@ -642,7 +648,10 @@ internal sealed class ContentImportService : IContentImportService
 
             for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
             {
-                topic.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+                if (topicsByKey.TryGetValue(topicKeys[topicIndex], out Topic? linkedTopic))
+                {
+                    topic.AddTopic(Guid.NewGuid(), linkedTopic.Id, topicIndex == 0, timestampUtc);
+                }
             }
 
             for (int questionIndex = 0; questionIndex < parsedTopic.WarmupQuestions.Count; questionIndex++)
@@ -734,6 +743,12 @@ internal sealed class ContentImportService : IContentImportService
                 parsedTopic.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedTopic.SortOrder < 0 ? 0 : parsedTopic.SortOrder,
                 timestampUtc);
+            topic.SetRichContentMetadata(
+                parsedTopic.ContentRevision,
+                SerializeLocalizedTextDictionary(parsedTopic.TitleLocalized),
+                SerializeLocalizedTextDictionary(parsedTopic.ShortDescriptionLocalized),
+                parsedTopic.ImageSlotsJson,
+                timestampUtc);
 
             string[] topicKeys = parsedTopic.Topics
                 .Select(item => NormalizeText(item).ToLowerInvariant())
@@ -743,7 +758,10 @@ internal sealed class ContentImportService : IContentImportService
 
             for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
             {
-                topic.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+                if (topicsByKey.TryGetValue(topicKeys[topicIndex], out Topic? linkedTopic))
+                {
+                    topic.AddTopic(Guid.NewGuid(), linkedTopic.Id, topicIndex == 0, timestampUtc);
+                }
             }
 
             for (int sectionIndex = 0; sectionIndex < parsedTopic.Sections.Count; sectionIndex++)
@@ -754,7 +772,9 @@ internal sealed class ContentImportService : IContentImportService
                     parsedSection.SortOrder <= 0 ? (sectionIndex + 1) * 10 : parsedSection.SortOrder,
                     NormalizeText(parsedSection.Heading),
                     NormalizeText(parsedSection.Explanation),
-                    timestampUtc);
+                    timestampUtc,
+                    NormalizeOptionalText(parsedSection.SectionKey),
+                    SerializeLocalizedBlocks(parsedSection.LocalizedBlocksJson));
 
                 foreach (ParsedGrammarSectionTranslationModel translation in parsedSection.Translations)
                 {
@@ -859,6 +879,49 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeText(translation.Text),
                 timestampUtc);
         }
+    }
+
+    private static string? SerializeLocalizedTextDictionary(IReadOnlyDictionary<string, string> values)
+    {
+        Dictionary<string, string> normalized = values
+            .Select(pair => new KeyValuePair<string, string>(
+                NormalizeText(pair.Key).ToLowerInvariant(),
+                NormalizeText(pair.Value)))
+            .Where(pair => !string.IsNullOrWhiteSpace(pair.Key) && !string.IsNullOrWhiteSpace(pair.Value))
+            .GroupBy(pair => pair.Key, StringComparer.Ordinal)
+            .ToDictionary(group => group.Key, group => group.First().Value, StringComparer.Ordinal);
+
+        return normalized.Count == 0 ? null : JsonSerializer.Serialize(normalized);
+    }
+
+    private static string? SerializeLocalizedBlocks(IReadOnlyDictionary<string, string> blocksByLanguage)
+    {
+        if (blocksByLanguage.Count == 0)
+        {
+            return null;
+        }
+
+        using MemoryStream stream = new();
+        using (Utf8JsonWriter writer = new(stream))
+        {
+            writer.WriteStartObject();
+            foreach ((string language, string rawBlocks) in blocksByLanguage.OrderBy(pair => pair.Key, StringComparer.Ordinal))
+            {
+                string normalizedLanguage = NormalizeText(language).ToLowerInvariant();
+                if (string.IsNullOrWhiteSpace(normalizedLanguage) || string.IsNullOrWhiteSpace(rawBlocks))
+                {
+                    continue;
+                }
+
+                writer.WritePropertyName(normalizedLanguage);
+                using JsonDocument document = JsonDocument.Parse(rawBlocks);
+                document.RootElement.WriteTo(writer);
+            }
+
+            writer.WriteEndObject();
+        }
+
+        return System.Text.Encoding.UTF8.GetString(stream.ToArray());
     }
 
     private static void ProcessExpressionEntries(
@@ -2948,6 +3011,9 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add("Grammar topic shortDescription is required.");
             }
 
+            ValidateLocalizedTextDictionary(topic.TitleLocalized, meaningLanguages, "Grammar topic titleLocalized", errors);
+            ValidateLocalizedTextDictionary(topic.ShortDescriptionLocalized, meaningLanguages, "Grammar topic shortDescriptionLocalized", errors);
+
             if (!Enum.TryParse(NormalizeText(topic.CefrLevel), true, out CefrLevel _))
             {
                 errors.Add("Grammar topic CEFR level is invalid.");
@@ -2969,7 +3035,7 @@ internal sealed class ContentImportService : IContentImportService
             {
                 if (!topicsByKey.ContainsKey(topicKey))
                 {
-                    errors.Add($"Grammar topic references unknown topic key '{topicKey}'.");
+                    warnings.Add($"Grammar topic references unknown topic key '{topicKey}'.");
                 }
             }
 
@@ -2981,6 +3047,13 @@ internal sealed class ContentImportService : IContentImportService
             for (int sectionIndex = 0; sectionIndex < topic.Sections.Count; sectionIndex++)
             {
                 ParsedGrammarSectionModel section = topic.Sections[sectionIndex];
+                bool hasRichBlocks = section.LocalizedBlocksJson.Count > 0;
+                string sectionKey = NormalizeText(section.SectionKey).ToLowerInvariant();
+                if (hasRichBlocks && !ValidateKebabKey(sectionKey))
+                {
+                    errors.Add($"Grammar topic sections[{sectionIndex + 1}] sectionKey is required and must use lowercase kebab-case.");
+                }
+
                 if (string.IsNullOrWhiteSpace(NormalizeText(section.Heading)))
                 {
                     errors.Add($"Grammar topic sections[{sectionIndex + 1}] heading is required.");
@@ -2992,6 +3065,7 @@ internal sealed class ContentImportService : IContentImportService
                 }
 
                 ValidateGrammarSectionTranslations(section.Translations, meaningLanguages, $"Grammar topic sections[{sectionIndex + 1}].translations", errors);
+                ValidateGrammarLocalizedBlocks(section.LocalizedBlocksJson, meaningLanguages, $"Grammar topic sections[{sectionIndex + 1}].localizedBlocks", errors);
             }
 
             for (int exampleIndex = 0; exampleIndex < topic.Examples.Count; exampleIndex++)
@@ -3780,6 +3854,167 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add($"{fieldName}[{questionIndex + 1}].translations is not supported; Talk Topic questions are German-only for now.");
             }
         }
+    }
+
+    private static void ValidateLocalizedTextDictionary(
+        IReadOnlyDictionary<string, string> values,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        foreach ((string language, string text) in values)
+        {
+            if (string.IsNullOrWhiteSpace(NormalizeText(text)))
+            {
+                errors.Add($"{fieldName} contains an empty value for language '{language}'.");
+                continue;
+            }
+
+            ValidateMeaningLanguage(language, meaningLanguages, fieldName, errors);
+        }
+    }
+
+    private static void ValidateGrammarLocalizedBlocks(
+        IReadOnlyDictionary<string, string> blocksByLanguage,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        foreach ((string language, string rawBlocks) in blocksByLanguage)
+        {
+            if (!ValidateMeaningLanguage(language, meaningLanguages, fieldName, errors))
+            {
+                continue;
+            }
+
+            JsonDocument document;
+            try
+            {
+                document = JsonDocument.Parse(rawBlocks);
+            }
+            catch (JsonException exception)
+            {
+                errors.Add($"{fieldName}.{language} is not valid JSON: {exception.Message}");
+                continue;
+            }
+
+            using (document)
+            {
+                if (document.RootElement.ValueKind != JsonValueKind.Array)
+                {
+                    errors.Add($"{fieldName}.{language} must be an array of blocks.");
+                    continue;
+                }
+
+                int blockIndex = 0;
+                foreach (JsonElement block in document.RootElement.EnumerateArray())
+                {
+                    blockIndex++;
+                    ValidateGrammarBlock(block, $"{fieldName}.{language}[{blockIndex}]", errors);
+                }
+            }
+        }
+    }
+
+    private static void ValidateGrammarBlock(JsonElement block, string fieldName, ICollection<string> errors)
+    {
+        if (block.ValueKind != JsonValueKind.Object)
+        {
+            errors.Add($"{fieldName} must be an object.");
+            return;
+        }
+
+        string type = ReadStringProperty(block, "type");
+        if (!GrammarRichBlockTypes.Contains(type))
+        {
+            errors.Add($"{fieldName} has unsupported block type '{type}'.");
+            return;
+        }
+
+        switch (type)
+        {
+            case "paragraph":
+                RequireBlockString(block, "text", fieldName, errors);
+                break;
+            case "table":
+                RequireBlockString(block, "caption", fieldName, errors);
+                RequireNonEmptyArray(block, "columns", fieldName, errors);
+                RequireNonEmptyArray(block, "rows", fieldName, errors);
+                break;
+            case "callout":
+                RequireBlockString(block, "style", fieldName, errors);
+                RequireBlockString(block, "text", fieldName, errors);
+                break;
+            case "rule-list":
+            case "example-list":
+                RequireNonEmptyArray(block, "items", fieldName, errors);
+                break;
+            case "mistake-pair":
+                RequireBlockString(block, "wrong", fieldName, errors);
+                RequireBlockString(block, "correct", fieldName, errors);
+                break;
+            case "image-slot":
+                if (string.IsNullOrWhiteSpace(ReadStringProperty(block, "assetKey")) &&
+                    string.IsNullOrWhiteSpace(ReadStringProperty(block, "imageSlotKey")))
+                {
+                    errors.Add($"{fieldName} requires assetKey or imageSlotKey.");
+                }
+                break;
+        }
+    }
+
+    private static string ReadStringProperty(JsonElement element, string propertyName) =>
+        element.TryGetProperty(propertyName, out JsonElement property) && property.ValueKind == JsonValueKind.String
+            ? NormalizeText(property.GetString())
+            : string.Empty;
+
+    private static void RequireBlockString(JsonElement block, string propertyName, string fieldName, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(ReadStringProperty(block, propertyName)))
+        {
+            errors.Add($"{fieldName}.{propertyName} is required.");
+        }
+    }
+
+    private static void RequireNonEmptyArray(JsonElement block, string propertyName, string fieldName, ICollection<string> errors)
+    {
+        if (!block.TryGetProperty(propertyName, out JsonElement property) ||
+            property.ValueKind != JsonValueKind.Array ||
+            property.GetArrayLength() == 0)
+        {
+            errors.Add($"{fieldName}.{propertyName} must be a non-empty array.");
+        }
+    }
+
+    private static bool ValidateMeaningLanguage(
+        string language,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        string normalizedLanguage = NormalizeText(language).ToLowerInvariant();
+        if (string.IsNullOrWhiteSpace(normalizedLanguage))
+        {
+            errors.Add($"{fieldName} contains an empty language code.");
+            return false;
+        }
+
+        try
+        {
+            LanguageCode languageCode = LanguageCode.From(normalizedLanguage);
+            if (!meaningLanguages.Contains(languageCode))
+            {
+                errors.Add($"{fieldName} language '{normalizedLanguage}' is not an active meaning language.");
+                return false;
+            }
+        }
+        catch (DomainRuleException exception)
+        {
+            errors.Add($"{fieldName} language is invalid: {exception.Message}");
+            return false;
+        }
+
+        return true;
     }
 
     private static void ValidateOptionalMeaningTranslations(

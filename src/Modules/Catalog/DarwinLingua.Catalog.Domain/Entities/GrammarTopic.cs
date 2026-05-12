@@ -67,6 +67,14 @@ public sealed class GrammarTopic
 
     public string ShortDescription { get; private set; }
 
+    public int? ContentRevision { get; private set; }
+
+    public string? TitleLocalizedJson { get; private set; }
+
+    public string? ShortDescriptionLocalizedJson { get; private set; }
+
+    public string? ImageSlotsJson { get; private set; }
+
     public CefrLevel CefrLevel { get; private set; }
 
     public string GrammarCategory { get; private set; }
@@ -103,6 +111,20 @@ public sealed class GrammarTopic
 
     public IReadOnlyCollection<GrammarLinkedExercise> LinkedExercises => _linkedExercises;
 
+    public void SetRichContentMetadata(
+        int? contentRevision,
+        string? titleLocalizedJson,
+        string? shortDescriptionLocalizedJson,
+        string? imageSlotsJson,
+        DateTime timestampUtc)
+    {
+        ContentRevision = contentRevision;
+        TitleLocalizedJson = NormalizeOptionalJson(titleLocalizedJson, "Grammar topic localized title JSON", 16000);
+        ShortDescriptionLocalizedJson = NormalizeOptionalJson(shortDescriptionLocalizedJson, "Grammar topic localized short description JSON", 32000);
+        ImageSlotsJson = NormalizeOptionalJson(imageSlotsJson, "Grammar topic image slots JSON", 32000);
+        UpdatedAtUtc = timestampUtc;
+    }
+
     public void AddTopic(Guid id, Guid topicId, bool isPrimary, DateTime timestampUtc)
     {
         if (topicId == Guid.Empty)
@@ -118,9 +140,16 @@ public sealed class GrammarTopic
         _topics.Add(new GrammarTopicTopic(id, Id, topicId, isPrimary, timestampUtc));
     }
 
-    public GrammarSection AddSection(Guid id, int sortOrder, string heading, string explanation, DateTime timestampUtc)
+    public GrammarSection AddSection(
+        Guid id,
+        int sortOrder,
+        string heading,
+        string explanation,
+        DateTime timestampUtc,
+        string? sectionKey = null,
+        string? localizedBlocksJson = null)
     {
-        GrammarSection section = new(id, Id, sortOrder, heading, explanation, timestampUtc);
+        GrammarSection section = new(id, Id, sortOrder, heading, explanation, timestampUtc, sectionKey, localizedBlocksJson);
         _sections.Add(section);
         return section;
     }
@@ -200,6 +229,22 @@ public sealed class GrammarTopic
 
     internal static string? NormalizeOptionalKebabKey(string? value, string fieldName) =>
         string.IsNullOrWhiteSpace(value) ? null : NormalizeKebabKey(value, fieldName);
+
+    internal static string? NormalizeOptionalJson(string? value, string fieldName, int maxLength)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string normalized = value.Trim();
+        if (normalized.Length > maxLength)
+        {
+            throw new DomainRuleException($"{fieldName} must not exceed {maxLength} characters.");
+        }
+
+        return normalized;
+    }
 }
 
 public sealed class GrammarTopicTopic
@@ -227,13 +272,23 @@ public sealed class GrammarSection
     private readonly List<GrammarSectionTranslation> _translations = [];
     private GrammarSection() { Heading = string.Empty; Explanation = string.Empty; }
 
-    internal GrammarSection(Guid id, Guid grammarTopicId, int sortOrder, string heading, string explanation, DateTime timestampUtc)
+    internal GrammarSection(
+        Guid id,
+        Guid grammarTopicId,
+        int sortOrder,
+        string heading,
+        string explanation,
+        DateTime timestampUtc,
+        string? sectionKey = null,
+        string? localizedBlocksJson = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Grammar section id is required.") : id;
         GrammarTopicId = grammarTopicId;
         SortOrder = Math.Max(0, sortOrder);
+        SectionKey = string.IsNullOrWhiteSpace(sectionKey) ? null : GrammarTopic.NormalizeKebabKey(sectionKey, "Grammar section key");
         Heading = GrammarTopic.RequireText(heading, "Grammar section heading", 256);
         Explanation = GrammarTopic.RequireText(explanation, "Grammar section explanation", 12000);
+        LocalizedBlocksJson = GrammarTopic.NormalizeOptionalJson(localizedBlocksJson, "Grammar section localized blocks JSON", 64000);
         CreatedAtUtc = timestampUtc;
         UpdatedAtUtc = timestampUtc;
     }
@@ -241,8 +296,10 @@ public sealed class GrammarSection
     public Guid Id { get; private set; }
     public Guid GrammarTopicId { get; private set; }
     public int SortOrder { get; private set; }
+    public string? SectionKey { get; private set; }
     public string Heading { get; private set; }
     public string Explanation { get; private set; }
+    public string? LocalizedBlocksJson { get; private set; }
     public DateTime CreatedAtUtc { get; private set; }
     public DateTime UpdatedAtUtc { get; private set; }
     public IReadOnlyCollection<GrammarSectionTranslation> Translations => _translations;

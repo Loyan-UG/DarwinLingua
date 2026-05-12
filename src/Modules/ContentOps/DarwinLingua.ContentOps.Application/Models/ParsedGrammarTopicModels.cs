@@ -2,8 +2,11 @@ namespace DarwinLingua.ContentOps.Application.Models;
 
 public sealed record ParsedGrammarTopicModel(
     string Slug,
+    int? ContentRevision,
     string Title,
     string ShortDescription,
+    IReadOnlyDictionary<string, string> TitleLocalized,
+    IReadOnlyDictionary<string, string> ShortDescriptionLocalized,
     string CefrLevel,
     string GrammarCategory,
     IReadOnlyList<string> Topics,
@@ -19,12 +22,15 @@ public sealed record ParsedGrammarTopicModel(
     IReadOnlyList<ParsedGrammarLinkedWordModel> LinkedWords,
     IReadOnlyList<string> LinkedDialogueSlugs,
     IReadOnlyList<string> LinkedTalkTopicSlugs,
-    IReadOnlyList<string> LinkedExerciseSlugs);
+    IReadOnlyList<string> LinkedExerciseSlugs,
+    string? ImageSlotsJson);
 
 public sealed record ParsedGrammarSectionModel(
+    string SectionKey,
     string Heading,
     string Explanation,
     IReadOnlyList<ParsedGrammarSectionTranslationModel> Translations,
+    IReadOnlyDictionary<string, string> LocalizedBlocksJson,
     int SortOrder);
 
 public sealed record ParsedGrammarSectionTranslationModel(

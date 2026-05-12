@@ -222,6 +222,146 @@ public sealed class ContentImportServiceTests
         }
     }
 
+    [Fact]
+    public async Task ImportAsync_ShouldImportRichGrammarPilotAndUpsertBySlug()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-grammar-rich-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(ResolveRepositoryRoot(), "content", "learning-portal", "grammar", "packages", "grammar-a1-pilot-personal-pronouns-v1.proposed.json");
+        string updatePackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-grammar-rich-update-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult result = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(packagePath), CancellationToken.None);
+
+            Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
+
+            IGrammarTopicQueryService grammarQueryService = serviceProvider.GetRequiredService<IGrammarTopicQueryService>();
+            GrammarTopicDetailModel? faDetail = await grammarQueryService.GetPublishedGrammarTopicBySlugAsync(
+                "a1-personal-pronouns-ich-du-er-sie-es",
+                "fa",
+                CancellationToken.None);
+
+            Assert.NotNull(faDetail);
+            Assert.Contains("ضمیر", faDetail!.Title, StringComparison.Ordinal);
+            Assert.Contains("ضمیر", faDetail.ShortDescription, StringComparison.Ordinal);
+            GrammarSectionModel tableSection = Assert.Single(faDetail.Sections, section => section.SectionKey == "core-table");
+            Assert.Contains(tableSection.Blocks, block => block.Type == "table" && block.Columns.Count > 0 && block.Rows.Count > 0);
+            Assert.All(faDetail.LinkedWords, word => Assert.True(string.IsNullOrWhiteSpace(word.WordSlug) || !word.WordSlug.Contains(' ', StringComparison.Ordinal)));
+
+            JsonNode updatePackage = JsonNode.Parse(await File.ReadAllTextAsync(packagePath))!;
+            updatePackage["packageId"] = "grammar-a1-pilot-personal-pronouns-v1-update-test";
+            updatePackage["grammarTopics"]![0]!["contentRevision"] = 2;
+            updatePackage["grammarTopics"]![0]!["titleLocalized"]!["en"] = "Updated personal pronouns";
+            await File.WriteAllTextAsync(updatePackagePath, updatePackage.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+
+            ImportContentPackageResult updateResult = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(updatePackagePath), CancellationToken.None);
+
+            Assert.True(updateResult.IsSuccess, string.Join(Environment.NewLine, updateResult.Issues.Select(issue => issue.Message)));
+
+            await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
+                .GetRequiredService<IDbContextFactory<DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext>>()
+                .CreateDbContext();
+            Assert.Equal(1, await dbContext.GrammarTopics.CountAsync(topic => topic.Slug == "a1-personal-pronouns-ich-du-er-sie-es"));
+
+            GrammarTopicDetailModel? enDetail = await grammarQueryService.GetPublishedGrammarTopicBySlugAsync(
+                "a1-personal-pronouns-ich-du-er-sie-es",
+                "en",
+                CancellationToken.None);
+            Assert.Equal("Updated personal pronouns", enDetail?.Title);
+            Assert.Equal(2, enDetail?.ContentRevision);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(databasePath))
+            {
+                TryDeleteFile(databasePath);
+            }
+
+            if (File.Exists(updatePackagePath))
+            {
+                File.Delete(updatePackagePath);
+            }
+        }
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectInvalidRichGrammarBlocks()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-grammar-rich-invalid-{Guid.NewGuid():N}.db");
+        string packagePath = Path.Combine(ResolveRepositoryRoot(), "content", "learning-portal", "grammar", "packages", "grammar-a1-pilot-personal-pronouns-v1.proposed.json");
+        string invalidPackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-grammar-rich-invalid-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            JsonNode package = JsonNode.Parse(await File.ReadAllTextAsync(packagePath))!;
+            package["packageId"] = "grammar-a1-pilot-invalid-rich-blocks-test";
+            JsonNode topic = package["grammarTopics"]![0]!;
+            topic["titleLocalized"]!["zz"] = "Unsupported language";
+            JsonNode section = topic["sections"]![1]!;
+            section["sectionKey"] = "";
+            section["localizedBlocks"]!["en"]![0]!["type"] = "unknown-block";
+            section["localizedBlocks"]!["en"]![0]!["rows"] = new JsonArray();
+            await File.WriteAllTextAsync(invalidPackagePath, package.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+
+            serviceProvider = BuildServiceProvider(databasePath);
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult result = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(invalidPackagePath), CancellationToken.None);
+
+            Assert.False(result.IsSuccess);
+            string issueText = string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message));
+            Assert.Contains("sectionKey is required", issueText, StringComparison.Ordinal);
+            Assert.Contains("unsupported block type 'unknown-block'", issueText, StringComparison.Ordinal);
+            Assert.Contains("language 'zz' is not an active meaning language", issueText, StringComparison.Ordinal);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(databasePath))
+            {
+                TryDeleteFile(databasePath);
+            }
+
+            if (File.Exists(invalidPackagePath))
+            {
+                File.Delete(invalidPackagePath);
+            }
+        }
+    }
+
+    private static void TryDeleteFile(string path)
+    {
+        try
+        {
+            File.Delete(path);
+        }
+        catch (IOException)
+        {
+        }
+    }
+
     /// <summary>
     /// Verifies that lexicalForms import populates additional lexical roles while preserving the primary role.
     /// </summary>

@@ -1221,7 +1221,9 @@ Content generation for new modules must not start until the corresponding implem
 - [x] add admin visibility
 - [x] add tests
 - [x] add content contract when implementation starts
-- [ ] add broader query/WebApi rendering coverage after first real grammar content package is available
+- [x] add rich localized grammar blocks, localized title/description, content revision, image-slot references, and pilot package import support
+- [x] import and render the first reviewed pilot grammar package
+- [ ] add broader validation coverage for every rich grammar block type after more reviewed pilot packages are available
 - [ ] add mobile package export TODO after Web sign-off
 
 ### 7.3 Everyday Expressions

@@ -37,7 +37,7 @@ internal sealed class ContentImportParser : IContentImportParser
             throw new InvalidDataException("The package file does not contain a valid root object.");
         }
 
-        if (document.Entries is null)
+        if (document.Entries is null && document.GrammarTopics is null)
         {
             throw new InvalidDataException("The package file must contain an entries array.");
         }
@@ -47,8 +47,8 @@ internal sealed class ContentImportParser : IContentImportParser
             document.PackageId ?? string.Empty,
             document.PackageName ?? string.Empty,
             document.Source,
-            (document.DefaultMeaningLanguages ?? []).Select(language => language ?? string.Empty).ToArray(),
-            document.Entries.Select(Map).ToArray(),
+            (document.DefaultMeaningLanguages ?? document.TargetLanguages ?? []).Select(language => language ?? string.Empty).ToArray(),
+            (document.Entries ?? []).Select(Map).ToArray(),
             (document.Labels ?? []).Select(Map).ToArray(),
             (document.Collections ?? []).Select(Map).ToArray())
         {
@@ -273,37 +273,44 @@ internal sealed class ContentImportParser : IContentImportParser
 
     private static ParsedGrammarTopicModel Map(GrammarTopicDocument topic)
     {
+        IReadOnlyDictionary<string, string> titleLocalized = MapLocalizedTextObject(topic.TitleLocalized);
+        IReadOnlyDictionary<string, string> shortDescriptionLocalized = MapLocalizedTextObject(topic.ShortDescriptionLocalized);
+        string fallbackTitle = topic.Title ?? GetFallbackLocalizedText(titleLocalized);
+        string fallbackShortDescription = topic.ShortDescription ?? GetFallbackLocalizedText(shortDescriptionLocalized);
+
         return new ParsedGrammarTopicModel(
             topic.Slug ?? string.Empty,
-            topic.Title ?? string.Empty,
-            topic.ShortDescription ?? string.Empty,
+            topic.ContentRevision,
+            fallbackTitle,
+            fallbackShortDescription,
+            titleLocalized,
+            shortDescriptionLocalized,
             topic.CefrLevel ?? string.Empty,
             topic.GrammarCategory ?? string.Empty,
             (topic.Topics ?? []).Select(item => item ?? string.Empty).ToArray(),
             topic.IsPublished ?? true,
             topic.SortOrder ?? 0,
             (topic.Sections ?? []).Select(section => new ParsedGrammarSectionModel(
-                section.Heading ?? string.Empty,
-                section.Explanation ?? string.Empty,
+                section.SectionKey ?? string.Empty,
+                section.Heading ?? ResolveSectionHeading(section),
+                section.Explanation ?? ResolveSectionExplanation(section),
                 (section.Translations ?? []).Select(translation => new ParsedGrammarSectionTranslationModel(
                     translation.Language ?? string.Empty,
                     translation.Heading ?? string.Empty,
                     translation.Text ?? string.Empty)).ToArray(),
+                MapLocalizedBlocks(section.LocalizedBlocks),
                 section.SortOrder ?? 0)).ToArray(),
             (topic.Examples ?? []).Select(example => new ParsedGrammarExampleModel(
                 example.GermanText ?? string.Empty,
                 example.Note,
-                MapTranslations(example.Translations),
+                MapFlexibleTranslations(example.Translations),
                 example.SortOrder ?? 0)).ToArray(),
-            (topic.RuleSummaries ?? []).Select(item => new ParsedGrammarTextItemModel(
-                item.Text ?? string.Empty,
-                MapTranslations(item.Translations),
-                item.SortOrder ?? 0)).ToArray(),
+            MapGrammarTextItems(topic.RuleSummaries, topic.RuleSummariesLocalized),
             (topic.CommonMistakes ?? []).Select(item => new ParsedGrammarCommonMistakeModel(
-                item.WrongText ?? string.Empty,
-                item.CorrectedText ?? string.Empty,
-                item.Explanation ?? string.Empty,
-                MapTranslations(item.Translations),
+                item.WrongText ?? item.WrongGerman ?? string.Empty,
+                item.CorrectedText ?? item.CorrectGerman ?? string.Empty,
+                item.Explanation ?? GetFallbackLocalizedText(MapLocalizedTextObject(item.ExplanationLocalized)),
+                MapFlexibleTranslations(item.Translations, item.ExplanationLocalized),
                 item.SortOrder ?? 0)).ToArray(),
             (topic.ExceptionNotes ?? []).Select(item => new ParsedGrammarTextItemModel(
                 item.Text ?? string.Empty,
@@ -317,7 +324,8 @@ internal sealed class ContentImportParser : IContentImportParser
                 word.SortOrder ?? 0)).ToArray(),
             (topic.LinkedDialogueSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
             (topic.LinkedTalkTopicSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
-            (topic.LinkedExerciseSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray());
+            (topic.LinkedExerciseSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            SerializeOptionalArray(topic.ImageSlots));
     }
 
     private static ParsedExpressionEntryModel Map(ExpressionEntryDocument expression)
@@ -543,6 +551,181 @@ internal sealed class ContentImportParser : IContentImportParser
             ? element.Value.GetRawText()
             : "{}";
 
+    private static string? SerializeOptionalArray(JsonElement? element) =>
+        element.HasValue && element.Value.ValueKind is JsonValueKind.Array
+            ? element.Value.GetRawText()
+            : null;
+
+    private static IReadOnlyDictionary<string, string> MapLocalizedTextObject(JsonElement? element)
+    {
+        if (!element.HasValue || element.Value.ValueKind is JsonValueKind.Undefined or JsonValueKind.Null)
+        {
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        if (element.Value.ValueKind is not JsonValueKind.Object)
+        {
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        Dictionary<string, string> values = new(StringComparer.OrdinalIgnoreCase);
+        foreach (JsonProperty property in element.Value.EnumerateObject())
+        {
+            values[property.Name] = property.Value.ValueKind == JsonValueKind.String
+                ? property.Value.GetString() ?? string.Empty
+                : property.Value.GetRawText();
+        }
+
+        return values;
+    }
+
+    private static IReadOnlyDictionary<string, string> MapLocalizedBlocks(JsonElement? element)
+    {
+        if (!element.HasValue || element.Value.ValueKind is JsonValueKind.Undefined or JsonValueKind.Null)
+        {
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        if (element.Value.ValueKind is not JsonValueKind.Object)
+        {
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        Dictionary<string, string> values = new(StringComparer.OrdinalIgnoreCase);
+        foreach (JsonProperty property in element.Value.EnumerateObject())
+        {
+            values[property.Name] = property.Value.GetRawText();
+        }
+
+        return values;
+    }
+
+    private static string GetFallbackLocalizedText(IReadOnlyDictionary<string, string> values)
+    {
+        if (values.TryGetValue("en", out string? english) && !string.IsNullOrWhiteSpace(english))
+        {
+            return english;
+        }
+
+        return values.Values.FirstOrDefault(value => !string.IsNullOrWhiteSpace(value)) ?? string.Empty;
+    }
+
+    private static string ResolveSectionHeading(GrammarSectionDocument section)
+    {
+        IReadOnlyDictionary<string, string> blocks = MapLocalizedBlocks(section.LocalizedBlocks);
+        return string.IsNullOrWhiteSpace(section.SectionKey)
+            ? "Grammar section"
+            : section.SectionKey.Replace('-', ' ');
+    }
+
+    private static string ResolveSectionExplanation(GrammarSectionDocument section)
+    {
+        IReadOnlyDictionary<string, string> blocks = MapLocalizedBlocks(section.LocalizedBlocks);
+        foreach (string rawBlocks in blocks.Values)
+        {
+            using JsonDocument document = JsonDocument.Parse(rawBlocks);
+            foreach (JsonElement block in document.RootElement.EnumerateArray())
+            {
+                if (block.TryGetProperty("text", out JsonElement text) && text.ValueKind == JsonValueKind.String)
+                {
+                    string? value = text.GetString();
+                    if (!string.IsNullOrWhiteSpace(value))
+                    {
+                        return value;
+                    }
+                }
+            }
+        }
+
+        return "Grammar section";
+    }
+
+    private static ParsedGrammarTextItemModel[] MapGrammarTextItems(
+        GrammarTextItemDocument[]? textItems,
+        JsonElement? localizedItems)
+    {
+        ParsedGrammarTextItemModel[] oldShape = (textItems ?? []).Select(item => new ParsedGrammarTextItemModel(
+            item.Text ?? string.Empty,
+            MapTranslations(item.Translations),
+            item.SortOrder ?? 0)).ToArray();
+
+        IReadOnlyDictionary<string, string[]> localized = MapLocalizedStringArrays(localizedItems);
+        if (localized.Count == 0)
+        {
+            return oldShape;
+        }
+
+        int count = localized.Values.Select(values => values.Length).DefaultIfEmpty(0).Max();
+        ParsedGrammarTextItemModel[] result = new ParsedGrammarTextItemModel[count];
+        for (int index = 0; index < count; index++)
+        {
+            ParsedContentMeaningModel[] translations = localized
+                .Where(pair => index < pair.Value.Length)
+                .Select(pair => new ParsedContentMeaningModel(pair.Key, pair.Value[index]))
+                .ToArray();
+
+            string text = translations.FirstOrDefault(item => string.Equals(item.Language, "en", StringComparison.OrdinalIgnoreCase))?.Text
+                ?? translations.FirstOrDefault()?.Text
+                ?? string.Empty;
+            result[index] = new ParsedGrammarTextItemModel(text, translations, (index + 1) * 10);
+        }
+
+        return result;
+    }
+
+    private static IReadOnlyDictionary<string, string[]> MapLocalizedStringArrays(JsonElement? element)
+    {
+        if (!element.HasValue || element.Value.ValueKind is not JsonValueKind.Object)
+        {
+            return new Dictionary<string, string[]>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        Dictionary<string, string[]> values = new(StringComparer.OrdinalIgnoreCase);
+        foreach (JsonProperty property in element.Value.EnumerateObject())
+        {
+            if (property.Value.ValueKind == JsonValueKind.Array)
+            {
+                values[property.Name] = property.Value.EnumerateArray()
+                    .Where(item => item.ValueKind == JsonValueKind.String)
+                    .Select(item => item.GetString() ?? string.Empty)
+                    .ToArray();
+            }
+        }
+
+        return values;
+    }
+
+    private static ParsedContentMeaningModel[] MapFlexibleTranslations(JsonElement? translations, JsonElement? localizedObject = null)
+    {
+        if (localizedObject.HasValue && localizedObject.Value.ValueKind == JsonValueKind.Object)
+        {
+            return MapLocalizedTextObject(localizedObject)
+                .Select(pair => new ParsedContentMeaningModel(pair.Key, pair.Value))
+                .ToArray();
+        }
+
+        if (!translations.HasValue || translations.Value.ValueKind is JsonValueKind.Undefined or JsonValueKind.Null)
+        {
+            return [];
+        }
+
+        if (translations.Value.ValueKind == JsonValueKind.Object)
+        {
+            return MapLocalizedTextObject(translations)
+                .Select(pair => new ParsedContentMeaningModel(pair.Key, pair.Value))
+                .ToArray();
+        }
+
+        if (translations.Value.ValueKind == JsonValueKind.Array)
+        {
+            return translations.Value.Deserialize<ContentMeaningDocument[]>(SerializerOptions) is { } items
+                ? MapTranslations(items)
+                : [];
+        }
+
+        return [];
+    }
+
     private static ParsedContentMeaningModel[] MapTranslations(ContentMeaningDocument[]? translations)
     {
         return (translations ?? [])
@@ -563,6 +746,8 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? Source { get; set; }
 
         public string?[]? DefaultMeaningLanguages { get; set; }
+
+        public string?[]? TargetLanguages { get; set; }
 
         public ContentEntryDocument[]? Entries { get; set; }
 
@@ -1016,8 +1201,11 @@ internal sealed class ContentImportParser : IContentImportParser
     private sealed class GrammarTopicDocument
     {
         public string? Slug { get; set; }
+        public int? ContentRevision { get; set; }
         public string? Title { get; set; }
+        public JsonElement? TitleLocalized { get; set; }
         public string? ShortDescription { get; set; }
+        public JsonElement? ShortDescriptionLocalized { get; set; }
         public string? CefrLevel { get; set; }
         public string? GrammarCategory { get; set; }
         public string?[]? Topics { get; set; }
@@ -1034,13 +1222,17 @@ internal sealed class ContentImportParser : IContentImportParser
         public string?[]? LinkedDialogueSlugs { get; set; }
         public string?[]? LinkedTalkTopicSlugs { get; set; }
         public string?[]? LinkedExerciseSlugs { get; set; }
+        public JsonElement? RuleSummariesLocalized { get; set; }
+        public JsonElement? ImageSlots { get; set; }
     }
 
     private sealed class GrammarSectionDocument
     {
+        public string? SectionKey { get; set; }
         public string? Heading { get; set; }
         public string? Explanation { get; set; }
         public GrammarSectionTranslationDocument[]? Translations { get; set; }
+        public JsonElement? LocalizedBlocks { get; set; }
         public int? SortOrder { get; set; }
     }
 
@@ -1055,7 +1247,7 @@ internal sealed class ContentImportParser : IContentImportParser
     {
         public string? GermanText { get; set; }
         public string? Note { get; set; }
-        public ContentMeaningDocument[]? Translations { get; set; }
+        public JsonElement? Translations { get; set; }
         public int? SortOrder { get; set; }
     }
 
@@ -1069,9 +1261,12 @@ internal sealed class ContentImportParser : IContentImportParser
     private sealed class GrammarCommonMistakeDocument
     {
         public string? WrongText { get; set; }
+        public string? WrongGerman { get; set; }
         public string? CorrectedText { get; set; }
+        public string? CorrectGerman { get; set; }
         public string? Explanation { get; set; }
-        public ContentMeaningDocument[]? Translations { get; set; }
+        public JsonElement? ExplanationLocalized { get; set; }
+        public JsonElement? Translations { get; set; }
         public int? SortOrder { get; set; }
     }
 

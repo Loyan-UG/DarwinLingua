@@ -6,6 +6,7 @@ using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace DarwinLingua.Catalog.Infrastructure.Repositories;
 
@@ -122,8 +123,9 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
 
         return new GrammarTopicDetailModel(
             topic.Slug,
-            topic.Title,
-            topic.ShortDescription,
+            ResolveLocalizedText(topic.TitleLocalizedJson, primaryLanguage, topic.Title),
+            ResolveLocalizedText(topic.ShortDescriptionLocalizedJson, primaryLanguage, topic.ShortDescription),
+            topic.ContentRevision,
             topic.CefrLevel.ToString(),
             topic.GrammarCategory,
             GetTopicKeys(topic.Topics, topicKeysById),
@@ -137,18 +139,199 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
             topic.LinkedTalkTopics.OrderBy(item => item.SortOrder).Select(item => item.TargetSlug).ToArray(),
             topic.LinkedExercises.OrderBy(item => item.SortOrder).Select(item => item.TargetSlug).ToArray(),
             topic.Prerequisites.OrderBy(item => item.SortOrder).Select(item => item.TargetSlug).ToArray(),
-            topic.RelatedTopics.OrderBy(item => item.SortOrder).Select(item => item.TargetSlug).ToArray());
+            topic.RelatedTopics.OrderBy(item => item.SortOrder).Select(item => item.TargetSlug).ToArray(),
+            ParseImageSlots(topic.ImageSlotsJson));
     }
 
     private static GrammarSectionModel MapSection(GrammarSection section, LanguageCode primaryLanguage)
     {
         GrammarSectionTranslation? translation = ResolveTranslation(section.Translations, primaryLanguage);
+        IReadOnlyList<GrammarContentBlockModel> blocks = ResolveRichBlocks(section.LocalizedBlocksJson, primaryLanguage);
         return new GrammarSectionModel(
+            section.SectionKey,
             translation?.Heading ?? section.Heading,
             translation?.Text ?? section.Explanation,
+            blocks,
             primaryLanguage.Value,
-            translation is null || translation.LanguageCode != primaryLanguage);
+            blocks.Count > 0
+                ? !HasLocalizedBlocksForLanguage(section.LocalizedBlocksJson, primaryLanguage)
+                : translation is null || translation.LanguageCode != primaryLanguage);
     }
+
+    private static string ResolveLocalizedText(string? localizedJson, LanguageCode primaryLanguage, string baseText)
+    {
+        Dictionary<string, string> values = DeserializeStringDictionary(localizedJson);
+        if (values.TryGetValue(primaryLanguage.Value, out string? primary) && !string.IsNullOrWhiteSpace(primary))
+        {
+            return primary;
+        }
+
+        if (values.TryGetValue(EnglishFallbackLanguage.Value, out string? english) && !string.IsNullOrWhiteSpace(english))
+        {
+            return english;
+        }
+
+        return string.IsNullOrWhiteSpace(baseText)
+            ? values.Values.FirstOrDefault(value => !string.IsNullOrWhiteSpace(value)) ?? string.Empty
+            : baseText;
+    }
+
+    private static IReadOnlyList<GrammarContentBlockModel> ResolveRichBlocks(string? localizedBlocksJson, LanguageCode primaryLanguage)
+    {
+        if (string.IsNullOrWhiteSpace(localizedBlocksJson))
+        {
+            return [];
+        }
+
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(localizedBlocksJson);
+            if (document.RootElement.ValueKind != JsonValueKind.Object)
+            {
+                return [];
+            }
+
+            JsonElement? blocks = TryGetProperty(document.RootElement, primaryLanguage.Value)
+                ?? TryGetProperty(document.RootElement, EnglishFallbackLanguage.Value)
+                ?? document.RootElement.EnumerateObject().FirstOrDefault().Value;
+
+            return blocks.HasValue && blocks.Value.ValueKind == JsonValueKind.Array
+                ? blocks.Value.EnumerateArray().Select(ParseBlock).Where(block => block is not null).Cast<GrammarContentBlockModel>().ToArray()
+                : [];
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
+    }
+
+    private static bool HasLocalizedBlocksForLanguage(string? localizedBlocksJson, LanguageCode language)
+    {
+        if (string.IsNullOrWhiteSpace(localizedBlocksJson))
+        {
+            return false;
+        }
+
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(localizedBlocksJson);
+            return document.RootElement.ValueKind == JsonValueKind.Object &&
+                TryGetProperty(document.RootElement, language.Value).HasValue;
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static GrammarContentBlockModel? ParseBlock(JsonElement block)
+    {
+        if (block.ValueKind != JsonValueKind.Object)
+        {
+            return null;
+        }
+
+        string? type = ReadString(block, "type");
+        if (string.IsNullOrWhiteSpace(type))
+        {
+            return null;
+        }
+
+        return new GrammarContentBlockModel(
+            type,
+            ReadString(block, "text"),
+            ReadString(block, "style"),
+            ReadString(block, "caption"),
+            ReadStringArray(block, "columns"),
+            ReadTableRows(block, "rows"),
+            ReadStringArray(block, "items"),
+            ReadString(block, "wrong"),
+            ReadString(block, "correct"),
+            ReadString(block, "assetKey"),
+            ReadString(block, "imageSlotKey"));
+    }
+
+    private static IReadOnlyList<GrammarImageSlotModel> ParseImageSlots(string? imageSlotsJson)
+    {
+        if (string.IsNullOrWhiteSpace(imageSlotsJson))
+        {
+            return [];
+        }
+
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(imageSlotsJson);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return [];
+            }
+
+            return document.RootElement.EnumerateArray()
+                .Where(item => item.ValueKind == JsonValueKind.Object)
+                .Select(item => new GrammarImageSlotModel(
+                    ReadString(item, "imageSlotKey") ?? string.Empty,
+                    ReadString(item, "assetKey"),
+                    ReadString(item, "imageFileName"),
+                    ReadString(item, "altText")))
+                .Where(item => !string.IsNullOrWhiteSpace(item.ImageSlotKey) || !string.IsNullOrWhiteSpace(item.AssetKey))
+                .ToArray();
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
+    }
+
+    private static Dictionary<string, string> DeserializeStringDictionary(string? json)
+    {
+        if (string.IsNullOrWhiteSpace(json))
+        {
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        try
+        {
+            return JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+        catch (JsonException)
+        {
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+    }
+
+    private static JsonElement? TryGetProperty(JsonElement element, string propertyName)
+    {
+        foreach (JsonProperty property in element.EnumerateObject())
+        {
+            if (string.Equals(property.Name, propertyName, StringComparison.OrdinalIgnoreCase))
+            {
+                return property.Value;
+            }
+        }
+
+        return null;
+    }
+
+    private static string? ReadString(JsonElement element, string propertyName) =>
+        element.TryGetProperty(propertyName, out JsonElement property) && property.ValueKind == JsonValueKind.String
+            ? property.GetString()
+            : null;
+
+    private static string[] ReadStringArray(JsonElement element, string propertyName) =>
+        element.TryGetProperty(propertyName, out JsonElement property) && property.ValueKind == JsonValueKind.Array
+            ? property.EnumerateArray().Where(item => item.ValueKind == JsonValueKind.String).Select(item => item.GetString() ?? string.Empty).ToArray()
+            : [];
+
+    private static IReadOnlyList<IReadOnlyList<string>> ReadTableRows(JsonElement element, string propertyName) =>
+        element.TryGetProperty(propertyName, out JsonElement property) && property.ValueKind == JsonValueKind.Array
+            ? property.EnumerateArray()
+                .Where(row => row.ValueKind == JsonValueKind.Array)
+                .Select(row => (IReadOnlyList<string>)row.EnumerateArray()
+                    .Where(cell => cell.ValueKind == JsonValueKind.String)
+                    .Select(cell => cell.GetString() ?? string.Empty)
+                    .ToArray())
+                .ToArray()
+            : [];
 
     private static GrammarExampleModel MapExample(GrammarExample example, LanguageCode primaryLanguage)
     {

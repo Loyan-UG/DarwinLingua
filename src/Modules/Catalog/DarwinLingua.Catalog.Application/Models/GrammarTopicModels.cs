@@ -18,6 +18,7 @@ public sealed record GrammarTopicDetailModel(
     string Slug,
     string Title,
     string ShortDescription,
+    int? ContentRevision,
     string CefrLevel,
     string GrammarCategory,
     IReadOnlyList<string> TopicKeys,
@@ -31,11 +32,14 @@ public sealed record GrammarTopicDetailModel(
     IReadOnlyList<string> LinkedTalkTopicSlugs,
     IReadOnlyList<string> LinkedExerciseSlugs,
     IReadOnlyList<string> PrerequisiteSlugs,
-    IReadOnlyList<string> RelatedTopicSlugs);
+    IReadOnlyList<string> RelatedTopicSlugs,
+    IReadOnlyList<GrammarImageSlotModel> ImageSlots);
 
 public sealed record GrammarSectionModel(
+    string? SectionKey,
     string Heading,
     string Explanation,
+    IReadOnlyList<GrammarContentBlockModel> Blocks,
     string? RequestedLanguageCode,
     bool UsedFallback);
 
@@ -61,3 +65,22 @@ public sealed record GrammarCommonMistakeModel(
 public sealed record GrammarLinkedWordModel(
     string Lemma,
     string? WordSlug);
+
+public sealed record GrammarImageSlotModel(
+    string ImageSlotKey,
+    string? AssetKey,
+    string? ImageFileName,
+    string? AltText);
+
+public sealed record GrammarContentBlockModel(
+    string Type,
+    string? Text,
+    string? Style,
+    string? Caption,
+    IReadOnlyList<string> Columns,
+    IReadOnlyList<IReadOnlyList<string>> Rows,
+    IReadOnlyList<string> Items,
+    string? Wrong,
+    string? Correct,
+    string? AssetKey,
+    string? ImageSlotKey);

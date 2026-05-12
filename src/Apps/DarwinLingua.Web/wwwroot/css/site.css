@@ -603,6 +603,39 @@ code {
   margin-top: 0.22rem;
 }
 
+.grammar-table-wrap {
+  overflow-x: auto;
+}
+
+.grammar-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.grammar-table th,
+.grammar-table td {
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.75rem;
+  text-align: start;
+  vertical-align: top;
+}
+
+.grammar-table th {
+  background: rgba(15, 23, 42, 0.45);
+  font-weight: 700;
+}
+
+.grammar-callout,
+.grammar-mistake-pair,
+.grammar-image-slot {
+  border: 1px solid var(--border);
+  border-inline-start: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  background: rgba(15, 23, 42, 0.45);
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;

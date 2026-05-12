@@ -15,6 +15,10 @@ internal sealed class GrammarTopicConfiguration : IEntityTypeConfiguration<Gramm
         builder.Property(topic => topic.Slug).HasMaxLength(128).IsRequired();
         builder.Property(topic => topic.Title).HasMaxLength(256).IsRequired();
         builder.Property(topic => topic.ShortDescription).HasMaxLength(1024).IsRequired();
+        builder.Property(topic => topic.ContentRevision);
+        builder.Property(topic => topic.TitleLocalizedJson).HasColumnType("text");
+        builder.Property(topic => topic.ShortDescriptionLocalizedJson).HasColumnType("text");
+        builder.Property(topic => topic.ImageSlotsJson).HasColumnType("text");
         builder.Property(topic => topic.CefrLevel).HasConversion<string>().HasMaxLength(8).IsRequired();
         builder.Property(topic => topic.GrammarCategory).HasMaxLength(128).IsRequired();
         builder.Property(topic => topic.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
@@ -65,8 +69,10 @@ internal sealed class GrammarSectionConfiguration : IEntityTypeConfiguration<Gra
         builder.Property(section => section.Id).ValueGeneratedNever();
         builder.Property(section => section.GrammarTopicId).IsRequired();
         builder.Property(section => section.SortOrder).IsRequired();
+        builder.Property(section => section.SectionKey).HasMaxLength(128);
         builder.Property(section => section.Heading).HasMaxLength(256).IsRequired();
         builder.Property(section => section.Explanation).HasMaxLength(12000).IsRequired();
+        builder.Property(section => section.LocalizedBlocksJson).HasColumnType("text");
         builder.Property(section => section.CreatedAtUtc).IsRequired();
         builder.Property(section => section.UpdatedAtUtc).IsRequired();
         builder.HasIndex(section => new { section.GrammarTopicId, section.SortOrder }).IsUnique();

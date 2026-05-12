@@ -34,9 +34,88 @@
             {
                 <article class="detail-row">
                     <h3 class="headline-sm">@grammarSection.Heading</h3>
-                    @foreach (string paragraph in grammarSection.Explanation.Split(["\r\n\r\n", "\n\n"], StringSplitOptions.RemoveEmptyEntries))
+                    @if (grammarSection.Blocks.Count > 0)
                     {
-                        <p>@paragraph.Trim()</p>
+                        foreach (var block in grammarSection.Blocks)
+                        {
+                            switch (block.Type)
+                            {
+                                case "paragraph":
+                                    if (!string.IsNullOrWhiteSpace(block.Text))
+                                    {
+                                        <p>@block.Text</p>
+                                    }
+                                    break;
+                                case "table":
+                                    <div class="grammar-table-wrap">
+                                        @if (!string.IsNullOrWhiteSpace(block.Caption))
+                                        {
+                                            <p class="eyebrow">@block.Caption</p>
+                                        }
+                                        <table class="grammar-table">
+                                            <thead>
+                                                <tr>
+                                                    @foreach (string column in block.Columns)
+                                                    {
+                                                        <th>@column</th>
+                                                    }
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var row in block.Rows)
+                                                {
+                                                    <tr>
+                                                        @foreach (string cell in row)
+                                                        {
+                                                            <td>@cell</td>
+                                                        }
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    break;
+                                case "callout":
+                                    if (!string.IsNullOrWhiteSpace(block.Text))
+                                    {
+                                        <aside class="grammar-callout grammar-callout--@block.Style">@block.Text</aside>
+                                    }
+                                    break;
+                                case "rule-list":
+                                case "example-list":
+                                    <ul class="stack-sm">
+                                        @foreach (string item in block.Items)
+                                        {
+                                            <li>@item</li>
+                                        }
+                                    </ul>
+                                    break;
+                                case "mistake-pair":
+                                    <div class="grammar-mistake-pair">
+                                        @if (!string.IsNullOrWhiteSpace(block.Wrong))
+                                        {
+                                            <p><strong>@T["Avoid"]:</strong> <span class="dialogue-german-text">@block.Wrong</span></p>
+                                        }
+                                        @if (!string.IsNullOrWhiteSpace(block.Correct))
+                                        {
+                                            <p><strong>@T["Use"]:</strong> <span class="dialogue-german-text">@block.Correct</span></p>
+                                        }
+                                    </div>
+                                    break;
+                                case "image-slot":
+                                    <div class="grammar-image-slot">
+                                        <span class="eyebrow">@T["Image"]</span>
+                                    </div>
+                                    break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (string paragraph in grammarSection.Explanation.Split(["\r\n\r\n", "\n\n"], StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            <p>@paragraph.Trim()</p>
+                        }
                     }
                 </article>
             }

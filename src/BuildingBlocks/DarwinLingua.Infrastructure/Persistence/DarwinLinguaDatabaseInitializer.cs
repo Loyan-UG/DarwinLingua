@@ -673,6 +673,189 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
 
         await EnsurePhase6CatalogSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsurePhase6OperationalSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureGrammarGuideSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureGrammarRichContentSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureGrammarGuideSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite() ||
+            await TableExistsAsync(dbContext, "GrammarTopics", cancellationToken).ConfigureAwait(false))
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "GrammarTopics" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "ShortDescription" character varying(1024) NOT NULL,
+                "ContentRevision" integer,
+                "TitleLocalizedJson" text,
+                "ShortDescriptionLocalizedJson" text,
+                "ImageSlotsJson" text,
+                "CefrLevel" character varying(8) NOT NULL,
+                "GrammarCategory" character varying(128) NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarTopics" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarCommonMistakes" (
+                "Id" uuid NOT NULL,
+                "GrammarTopicId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "WrongText" character varying(1024) NOT NULL,
+                "CorrectedText" character varying(1024) NOT NULL,
+                "Explanation" character varying(4000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarCommonMistakes" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_GrammarCommonMistakes_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarExamples" (
+                "Id" uuid NOT NULL,
+                "GrammarTopicId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "GermanText" character varying(1024) NOT NULL,
+                "Note" character varying(512),
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarExamples" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_GrammarExamples_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarExceptionNotes" (
+                "Id" uuid NOT NULL,
+                "GrammarTopicId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarExceptionNotes" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_GrammarExceptionNotes_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarRuleSummaries" (
+                "Id" uuid NOT NULL,
+                "GrammarTopicId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarRuleSummaries" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_GrammarRuleSummaries_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarSections" (
+                "Id" uuid NOT NULL,
+                "GrammarTopicId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "SectionKey" character varying(128),
+                "Heading" character varying(256) NOT NULL,
+                "Explanation" character varying(12000) NOT NULL,
+                "LocalizedBlocksJson" text,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarSections" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_GrammarSections_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarLinkedDialogues" ("Id" uuid NOT NULL, "GrammarTopicId" uuid NOT NULL, "TargetSlug" character varying(128) NOT NULL, "SortOrder" integer NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarLinkedDialogues" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarLinkedDialogues_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarLinkedExercises" ("Id" uuid NOT NULL, "GrammarTopicId" uuid NOT NULL, "TargetSlug" character varying(128) NOT NULL, "SortOrder" integer NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarLinkedExercises" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarLinkedExercises_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarLinkedTalkTopics" ("Id" uuid NOT NULL, "GrammarTopicId" uuid NOT NULL, "TargetSlug" character varying(128) NOT NULL, "SortOrder" integer NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarLinkedTalkTopics" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarLinkedTalkTopics_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarPrerequisiteLinks" ("Id" uuid NOT NULL, "GrammarTopicId" uuid NOT NULL, "TargetSlug" character varying(128) NOT NULL, "SortOrder" integer NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarPrerequisiteLinks" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarPrerequisiteLinks_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarRelatedTopicLinks" ("Id" uuid NOT NULL, "GrammarTopicId" uuid NOT NULL, "TargetSlug" character varying(128) NOT NULL, "SortOrder" integer NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarRelatedTopicLinks" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarRelatedTopicLinks_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE);
+
+            CREATE TABLE IF NOT EXISTS "GrammarLinkedWords" (
+                "Id" uuid NOT NULL,
+                "GrammarTopicId" uuid NOT NULL,
+                "Lemma" character varying(128) NOT NULL,
+                "WordSlug" character varying(128),
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarLinkedWords" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_GrammarLinkedWords_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarTopicTopics" (
+                "Id" uuid NOT NULL,
+                "GrammarTopicId" uuid NOT NULL,
+                "TopicId" uuid NOT NULL,
+                "IsPrimary" boolean NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_GrammarTopicTopics" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_GrammarTopicTopics_GrammarTopics_GrammarTopicId" FOREIGN KEY ("GrammarTopicId") REFERENCES "GrammarTopics" ("Id") ON DELETE CASCADE,
+                CONSTRAINT "FK_GrammarTopicTopics_Topics_TopicId" FOREIGN KEY ("TopicId") REFERENCES "Topics" ("Id") ON DELETE RESTRICT
+            );
+
+            CREATE TABLE IF NOT EXISTS "GrammarCommonMistakeTranslations" ("Id" uuid NOT NULL, "OwnerId" uuid NOT NULL, "LanguageCode" character varying(16) NOT NULL, "Text" character varying(12000) NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, "UpdatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarCommonMistakeTranslations" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarCommonMistakeTranslations_GrammarCommonMistakes_OwnerId" FOREIGN KEY ("OwnerId") REFERENCES "GrammarCommonMistakes" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarExampleTranslations" ("Id" uuid NOT NULL, "OwnerId" uuid NOT NULL, "LanguageCode" character varying(16) NOT NULL, "Text" character varying(12000) NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, "UpdatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarExampleTranslations" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarExampleTranslations_GrammarExamples_OwnerId" FOREIGN KEY ("OwnerId") REFERENCES "GrammarExamples" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarExceptionNoteTranslations" ("Id" uuid NOT NULL, "OwnerId" uuid NOT NULL, "LanguageCode" character varying(16) NOT NULL, "Text" character varying(12000) NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, "UpdatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarExceptionNoteTranslations" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarExceptionNoteTranslations_GrammarExceptionNotes_OwnerId" FOREIGN KEY ("OwnerId") REFERENCES "GrammarExceptionNotes" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarRuleSummaryTranslations" ("Id" uuid NOT NULL, "OwnerId" uuid NOT NULL, "LanguageCode" character varying(16) NOT NULL, "Text" character varying(12000) NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, "UpdatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarRuleSummaryTranslations" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarRuleSummaryTranslations_GrammarRuleSummaries_OwnerId" FOREIGN KEY ("OwnerId") REFERENCES "GrammarRuleSummaries" ("Id") ON DELETE CASCADE);
+            CREATE TABLE IF NOT EXISTS "GrammarSectionTranslations" ("Id" uuid NOT NULL, "Heading" character varying(256) NOT NULL, "OwnerId" uuid NOT NULL, "LanguageCode" character varying(16) NOT NULL, "Text" character varying(12000) NOT NULL, "CreatedAtUtc" timestamp with time zone NOT NULL, "UpdatedAtUtc" timestamp with time zone NOT NULL, CONSTRAINT "PK_GrammarSectionTranslations" PRIMARY KEY ("Id"), CONSTRAINT "FK_GrammarSectionTranslations_GrammarSections_OwnerId" FOREIGN KEY ("OwnerId") REFERENCES "GrammarSections" ("Id") ON DELETE CASCADE);
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarTopics_Slug" ON "GrammarTopics" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_GrammarTopics_CefrLevel_GrammarCategory" ON "GrammarTopics" ("CefrLevel", "GrammarCategory");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarSections_GrammarTopicId_SortOrder" ON "GrammarSections" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarExamples_GrammarTopicId_SortOrder" ON "GrammarExamples" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarCommonMistakes_GrammarTopicId_SortOrder" ON "GrammarCommonMistakes" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarRuleSummaries_GrammarTopicId_SortOrder" ON "GrammarRuleSummaries" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarExceptionNotes_GrammarTopicId_SortOrder" ON "GrammarExceptionNotes" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarLinkedWords_GrammarTopicId_SortOrder" ON "GrammarLinkedWords" ("GrammarTopicId", "SortOrder");
+            CREATE INDEX IF NOT EXISTS "IX_GrammarLinkedWords_WordSlug" ON "GrammarLinkedWords" ("WordSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarTopicTopics_GrammarTopicId_TopicId" ON "GrammarTopicTopics" ("GrammarTopicId", "TopicId");
+            CREATE INDEX IF NOT EXISTS "IX_GrammarTopicTopics_TopicId" ON "GrammarTopicTopics" ("TopicId");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarSectionTranslations_OwnerId_LanguageCode" ON "GrammarSectionTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarExampleTranslations_OwnerId_LanguageCode" ON "GrammarExampleTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarCommonMistakeTranslations_OwnerId_LanguageCode" ON "GrammarCommonMistakeTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarRuleSummaryTranslations_OwnerId_LanguageCode" ON "GrammarRuleSummaryTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarExceptionNoteTranslations_OwnerId_LanguageCode" ON "GrammarExceptionNoteTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarLinkedDialogues_GrammarTopicId_TargetSlug" ON "GrammarLinkedDialogues" ("GrammarTopicId", "TargetSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarLinkedDialogues_GrammarTopicId_SortOrder" ON "GrammarLinkedDialogues" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarLinkedTalkTopics_GrammarTopicId_TargetSlug" ON "GrammarLinkedTalkTopics" ("GrammarTopicId", "TargetSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarLinkedTalkTopics_GrammarTopicId_SortOrder" ON "GrammarLinkedTalkTopics" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarLinkedExercises_GrammarTopicId_TargetSlug" ON "GrammarLinkedExercises" ("GrammarTopicId", "TargetSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarLinkedExercises_GrammarTopicId_SortOrder" ON "GrammarLinkedExercises" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarPrerequisiteLinks_GrammarTopicId_TargetSlug" ON "GrammarPrerequisiteLinks" ("GrammarTopicId", "TargetSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarPrerequisiteLinks_GrammarTopicId_SortOrder" ON "GrammarPrerequisiteLinks" ("GrammarTopicId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarRelatedTopicLinks_GrammarTopicId_TargetSlug" ON "GrammarRelatedTopicLinks" ("GrammarTopicId", "TargetSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_GrammarRelatedTopicLinks_GrammarTopicId_SortOrder" ON "GrammarRelatedTopicLinks" ("GrammarTopicId", "SortOrder");
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureGrammarRichContentSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite() ||
+            !await TableExistsAsync(dbContext, "GrammarTopics", cancellationToken).ConfigureAwait(false))
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            ALTER TABLE "GrammarTopics" ADD COLUMN IF NOT EXISTS "ContentRevision" integer;
+            ALTER TABLE "GrammarTopics" ADD COLUMN IF NOT EXISTS "TitleLocalizedJson" text;
+            ALTER TABLE "GrammarTopics" ADD COLUMN IF NOT EXISTS "ShortDescriptionLocalizedJson" text;
+            ALTER TABLE "GrammarTopics" ADD COLUMN IF NOT EXISTS "ImageSlotsJson" text;
+            ALTER TABLE "GrammarSections" ADD COLUMN IF NOT EXISTS "SectionKey" character varying(128);
+            ALTER TABLE "GrammarSections" ADD COLUMN IF NOT EXISTS "LocalizedBlocksJson" text;
+            """,
+            cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task EnsureTalkTopicRetrofitSchemaAsync(

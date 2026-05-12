@@ -195,11 +195,13 @@ Latest local Web verification:
 ### Grammar Guide
 
 - [x] Parser coverage exists for the GrammarTopic content contract shape.
+- [x] Parser/import coverage exists for the rich localized Grammar pilot package, including localized title/description and table blocks.
 - [x] Navigation/localization smoke coverage includes the live Grammar Guide route.
 - [x] Release route hardening covers `/grammar` and `/api/catalog/grammar`.
-- [ ] Import validation covers required grammar metadata, sections, examples, and linked content references.
-- [ ] List/detail queries return published grammar topics in stable order.
+- [x] Import validation covers required rich section keys, supported block types, localized block language codes, and table/callout block shape.
+- [x] List/detail query coverage includes the first rich pilot topic and localized fallback behavior.
 - [ ] CEFR/category/topic/search filters return expected grammar topics.
+- [x] Web/API rendering handles paragraph, table, and callout rich blocks from the pilot package.
 - [ ] Linked words/dialogues/Talk Topics/exercises render where available.
 - [ ] Localized explanation rendering follows learner language preferences.
 - [ ] Unresolved links fail safely without Web 500 errors.

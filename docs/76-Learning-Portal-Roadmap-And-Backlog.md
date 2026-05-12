@@ -760,7 +760,9 @@ The portal should track learner progress across content types without mixing use
 - [x] add admin visibility surface
 - [x] add initial parser/navigation/localization tests
 - [x] document grammar content contract in `77-Grammar-Content-Package-Contract.md`
-- [ ] add broader query/WebApi rendering coverage after first real grammar content package is available
+- [x] support rich localized grammar blocks, localized title/description, content revision diagnostics, image-slot references, and slug-based pilot upsert
+- [x] import and render the first reviewed A1 personal-pronouns pilot package
+- [ ] add broader validation coverage for every rich block type after more reviewed pilot packages are available
 - [ ] keep mobile parity tracked after Web sign-off
 
 ### Phase 7.3: Everyday Expressions
