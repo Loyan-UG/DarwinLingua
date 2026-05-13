@@ -10,7 +10,7 @@ Use it for both the learner-facing root site and the admin area.
 
 ## Latest Local Evidence
 
-Last updated: 2026-05-12.
+Last updated: 2026-05-13.
 
 - Local `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
 - Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
@@ -21,6 +21,8 @@ Last updated: 2026-05-12.
 - Exercise attempt hardening now separates stateless public evaluation from authenticated persisted attempts, with bounded submitted-answer JSON and endpoint rate limits.
 - Exercise runner input now provides structured controls for initial choice, single-answer, error-correction, sentence-ordering, and matching submissions, with advanced JSON kept as a fallback.
 - Unified Learning Search now has application-level query limits, a PostgreSQL trigram-index migration, and startup-applied trigram/filter indexes for existing shared database tables.
+- `DarwinLingua.Web` no longer registers or initializes a local SQLite learning/content database; Web user/account state requires PostgreSQL/Npgsql through `WebIdentityDbContext`.
+- WebApi mobile content distribution now supports module-scoped `catalog-module` manifests/downloads for selective mobile first-run content selection.
 - Local learner route smoke passed for the main browse, search, collection, scenario, conversation, organizer, install, privacy, and Identity pages.
 - Local authenticated admin route smoke passed for the dashboard, reports, analytics, diagnostics, content operations, catalog management, taxonomy, user, moderation, billing diagnostics, and email diagnostics pages.
 - No unhandled exception signature was found in smoke response bodies or server logs.
@@ -98,6 +100,7 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 
 - [ ] production configuration applied
 - [ ] database connectivity verified
+- [ ] Web PostgreSQL/Npgsql identity connection string is configured; no local `darwin-lingua.web.db` startup path is used
 - [ ] security headers verified
 - [ ] logging baseline verified
 - [ ] Learning Portal unresolved-link, missing-translation, unpublished-draft, and seed coverage reports reviewed

@@ -1,4 +1,3 @@
-using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Data;
@@ -19,9 +18,28 @@ public interface IWebUserPreferenceService
 
 internal sealed class WebUserPreferenceService(
     IWebActorContextAccessor actorContextAccessor,
-    WebIdentityDbContext dbContext,
-    ILearningPreferenceLanguageValidator learningPreferenceLanguageValidator) : IWebUserPreferenceService
+    WebIdentityDbContext dbContext) : IWebUserPreferenceService
 {
+    private static readonly HashSet<string> SupportedUiLanguageCodes = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "en",
+        "de",
+    };
+
+    private static readonly HashSet<string> SupportedMeaningLanguageCodes = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "ar",
+        "ckb",
+        "en",
+        "fa",
+        "kmr",
+        "pl",
+        "ro",
+        "ru",
+        "sq",
+        "tr",
+    };
+
     public async Task<UserLearningProfileModel> GetProfileAsync(CancellationToken cancellationToken)
     {
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
@@ -105,12 +123,14 @@ internal sealed class WebUserPreferenceService(
         LanguageCode uiLanguage = LanguageCode.From(uiLanguageCode);
         LanguageCode primaryMeaningLanguage = LanguageCode.From(primaryMeaningLanguageCode);
 
-        if (!await learningPreferenceLanguageValidator.SupportsUserInterfaceAsync(uiLanguage, cancellationToken).ConfigureAwait(false))
+        cancellationToken.ThrowIfCancellationRequested();
+
+        if (!SupportedUiLanguageCodes.Contains(uiLanguage.Value))
         {
             throw new InvalidOperationException($"Unsupported UI language code '{uiLanguageCode}'.");
         }
 
-        if (!await learningPreferenceLanguageValidator.SupportsMeaningsAsync(primaryMeaningLanguage, cancellationToken).ConfigureAwait(false))
+        if (!SupportedMeaningLanguageCodes.Contains(primaryMeaningLanguage.Value))
         {
             throw new InvalidOperationException($"Unsupported meaning language code '{primaryMeaningLanguageCode}'.");
         }
@@ -119,7 +139,7 @@ internal sealed class WebUserPreferenceService(
         {
             LanguageCode secondaryMeaningLanguage = LanguageCode.From(secondaryMeaningLanguageCode);
 
-            if (!await learningPreferenceLanguageValidator.SupportsMeaningsAsync(secondaryMeaningLanguage, cancellationToken).ConfigureAwait(false))
+            if (!SupportedMeaningLanguageCodes.Contains(secondaryMeaningLanguage.Value))
             {
                 throw new InvalidOperationException($"Unsupported secondary meaning language code '{secondaryMeaningLanguageCode}'.");
             }

@@ -88,7 +88,7 @@ public sealed class ServerCatalogImportServiceTests
 
             Assert.True(response.IsSuccess, string.Join(Environment.NewLine, response.IssueMessages));
             Assert.Equal(12, response.ImportedEntries);
-            Assert.Equal(8, response.StagedPackageIds.Count);
+            Assert.Equal(21, response.StagedPackageIds.Count);
             Assert.False(string.IsNullOrWhiteSpace(response.DraftPublicationBatchId));
 
             await using (DarwinLinguaDbContext catalogDbContext = await serviceProvider
@@ -105,8 +105,8 @@ public sealed class ServerCatalogImportServiceTests
             {
                 ServerContentDbContext serverDbContext = statusScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
                 Assert.Single(await serverDbContext.ContentImportReceipts.ToListAsync());
-                Assert.Equal(8, await serverDbContext.PublishedPackages.CountAsync());
-                Assert.Equal(8, await serverDbContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Draft));
+                Assert.Equal(21, await serverDbContext.PublishedPackages.CountAsync());
+                Assert.Equal(21, await serverDbContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Draft));
             }
 
             string fullCatalogPath = Path.Combine(packageRootPath, "darwin-deutsch", response.StagedPackageIds.Single(packageId => packageId.Contains("catalog-full", StringComparison.Ordinal)));
@@ -142,13 +142,13 @@ public sealed class ServerCatalogImportServiceTests
                     CancellationToken.None);
 
                 Assert.True(publishResponse.IsSuccess);
-                Assert.Equal(8, publishResponse.PublishedPackageIds.Count);
+                Assert.Equal(21, publishResponse.PublishedPackageIds.Count);
             }
 
             await using (AsyncServiceScope publishedScope = serviceProvider.CreateAsyncScope())
             {
                 ServerContentDbContext publishedContext = publishedScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
-                Assert.Equal(8, await publishedContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Published));
+                Assert.Equal(21, await publishedContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Published));
                 Assert.Equal(0, await publishedContext.PublishedPackages.CountAsync(package => package.PublicationStatus == PackagePublicationStatus.Draft));
             }
         }

@@ -1223,6 +1223,7 @@ Content generation for new modules must not start until the corresponding implem
 - [x] add content contract when implementation starts
 - [x] add rich localized grammar blocks, localized title/description, content revision, image-slot references, and pilot package import support
 - [x] import and render the first reviewed pilot grammar package
+- [x] generate, validate, and import `grammar-a1-c2-validation-batch-001.json` with 12 topics across A1-C2
 - [ ] add broader validation coverage for every rich grammar block type after more reviewed pilot packages are available
 - [ ] add mobile package export TODO after Web sign-off
 
@@ -1334,12 +1335,19 @@ Content generation for new modules must not start until the corresponding implem
 ### 7.12 Mobile Parity
 
 - [x] update full/all mobile package export after Web sign-off for grammar, expressions, exercises, courses, exam prep, writing templates, cultural notes, linked references, and unified search inputs
-  - Progress: full database and catalog-full packages now include Phase 7 arrays; CEFR slice packages remain word/current-conversation scoped until per-module slice validation is added.
+  - Progress: full database and catalog-full packages now include Phase 7 arrays; CEFR slice packages remain word/current-conversation scoped.
+- [x] publish module-scoped mobile packages for selective first-run downloads
+  - Progress: WebApi now exposes `catalog-module` manifests/downloads for `words`, `dialogues`, `talk-topics`, `grammar`, `expressions`, `exercises`, `courses`, `exam-prep`, `writing-templates`, `cultural-notes`, `events`, `organizers`, and `conversation-starters`.
+- [x] remove Web runtime dependency on local SQLite learning/content databases
+  - Progress: DarwinLingua.Web requires PostgreSQL/Npgsql for `WebIdentityDbContext` and no longer registers the shared SQLite infrastructure initializer.
+- [x] make packaged seed optional legacy fallback instead of mandatory MAUI first-start initialization
+  - Progress: first startup initializes the local schema and then offers module selection from WebApi packages; skipping content leaves an empty but usable local database.
 - [x] refactor MAUI navigation after Web model is stable
   - Progress: shell navigation now exposes Learn, Practice, Speak, Prepare, and Resources surfaces with a Learning Portal hub.
 - [x] add MAUI dynamic list/detail/search surfaces backed by local Catalog query services
   - Progress: generic list/detail pages cover Grammar, Expressions, Exercise Sets, Courses, Exam Prep, Writing Templates, Cultural Notes, and Talk Topics; unified learning search has a mobile route.
 - [x] update full-replacement local package apply path for Phase 7 content tables
+- [x] add module-replacement local package apply path that preserves unrelated modules and user state
 - [ ] implement mobile exercise runner for individual exercise attempts
 - [ ] integrate cross-content progress/sync on mobile when account sync is ready
 - [ ] add full manual validation worksheet bundle support for Phase 7 mobile parity

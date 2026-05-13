@@ -75,6 +75,21 @@ public sealed class ConfiguredMobileContentManifestService : IMobileContentManif
     }
 
     /// <inheritdoc />
+    public MobileContentManifestResponse GetModuleManifest(string? clientProductKey, string moduleKey)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(moduleKey);
+
+        ClientProductOptions product = ResolveProduct(clientProductKey);
+        string normalizedSliceKey = $"module:{moduleKey.Trim().ToLowerInvariant()}";
+        IReadOnlyList<PublishedContentPackageResponse> packages = ResolvePackages(
+            product.Key,
+            areaKey: "catalog",
+            sliceKey: normalizedSliceKey);
+
+        return BuildManifest(product, "catalog", normalizedSliceKey, packages);
+    }
+
+    /// <inheritdoc />
     public PublishedContentPackageResponse GetPackage(string? clientProductKey, string packageId)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(packageId);

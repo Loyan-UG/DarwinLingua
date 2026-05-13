@@ -86,6 +86,7 @@ public static class MauiProgram
             .AddSingleton(remoteContentUpdateOptions)
             .AddSingleton(_ => CreateRemoteUpdateHttpClient(remoteContentUpdateOptions))
             .AddSingleton<IRemoteContentUpdateService, RemoteContentUpdateService>()
+            .AddSingleton<IFirstRunContentSelectionService, FirstRunContentSelectionService>()
             .AddSingleton(mobileAuthOptions)
             .AddSingleton(_ => CreateMobileAuthHttpClient(mobileAuthOptions))
             .AddSingleton<IMobileAuthSessionStore, SecureStorageMobileAuthSessionStore>()

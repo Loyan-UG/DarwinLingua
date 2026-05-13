@@ -26,4 +26,9 @@ public interface IMobileContentPackageDeliveryService
     /// Resolves the latest CEFR package for the catalog area.
     /// </summary>
     ContentPackageDownloadDescriptor GetLatestCefrPackage(string? clientProductKey, string level, int? clientSchemaVersion);
+
+    /// <summary>
+    /// Resolves the latest module-scoped package for the catalog area.
+    /// </summary>
+    ContentPackageDownloadDescriptor GetLatestModulePackage(string? clientProductKey, string moduleKey, int? clientSchemaVersion);
 }

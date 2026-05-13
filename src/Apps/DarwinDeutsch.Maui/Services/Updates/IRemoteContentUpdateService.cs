@@ -22,6 +22,11 @@ public interface IRemoteContentUpdateService
         string cefrLevel,
         CancellationToken cancellationToken);
 
+    Task<RemoteContentUpdateStatus> GetModuleUpdateStatusAsync(
+        string databasePath,
+        string moduleKey,
+        CancellationToken cancellationToken);
+
     Task<RemoteContentUpdateResult> ApplyFullUpdateAsync(
         string databasePath,
         CancellationToken cancellationToken);
@@ -34,5 +39,10 @@ public interface IRemoteContentUpdateService
     Task<RemoteContentUpdateResult> ApplyCefrUpdateAsync(
         string databasePath,
         string cefrLevel,
+        CancellationToken cancellationToken);
+
+    Task<RemoteContentUpdateResult> ApplyModuleUpdateAsync(
+        string databasePath,
+        string moduleKey,
         CancellationToken cancellationToken);
 }

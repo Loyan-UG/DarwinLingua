@@ -1,6 +1,4 @@
 using DarwinLingua.Learning.Application.Abstractions;
-using DarwinLingua.Localization.Application.Abstractions;
-using DarwinLingua.Localization.Application.Models;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using DarwinLingua.Web.Localization;
@@ -14,10 +12,24 @@ namespace DarwinLingua.Web.Controllers;
 [Route("settings")]
 public sealed class SettingsController(
     IWebUserPreferenceService webUserPreferenceService,
-    ILanguageQueryService languageQueryService,
     IWebEntitledFeatureAccessService featureAccessService,
     IStringLocalizer<SharedResource> localizer) : Controller
 {
+    private static readonly IReadOnlyList<SupportedWebLanguage> SupportedLanguages =
+    [
+        new("en", "English", "English", SupportsUserInterface: true, SupportsMeanings: true),
+        new("de", "German", "Deutsch", SupportsUserInterface: true, SupportsMeanings: false),
+        new("fa", "Persian", "فارسی", SupportsUserInterface: false, SupportsMeanings: true),
+        new("ar", "Arabic", "العربية", SupportsUserInterface: false, SupportsMeanings: true),
+        new("tr", "Turkish", "Türkçe", SupportsUserInterface: false, SupportsMeanings: true),
+        new("ru", "Russian", "Русский", SupportsUserInterface: false, SupportsMeanings: true),
+        new("ckb", "Kurdish Sorani", "کوردیی ناوەندی", SupportsUserInterface: false, SupportsMeanings: true),
+        new("kmr", "Kurdish Kurmanji", "Kurmancî", SupportsUserInterface: false, SupportsMeanings: true),
+        new("pl", "Polish", "Polski", SupportsUserInterface: false, SupportsMeanings: true),
+        new("ro", "Romanian", "Română", SupportsUserInterface: false, SupportsMeanings: true),
+        new("sq", "Albanian", "Shqip", SupportsUserInterface: false, SupportsMeanings: true)
+    ];
+
     [HttpGet("", Name = "Settings_Index")]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
@@ -32,9 +44,7 @@ public sealed class SettingsController(
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(SettingsUpdateInputModel input, CancellationToken cancellationToken)
     {
-        IReadOnlyList<SupportedLanguageModel> languages = await languageQueryService
-            .GetActiveLanguagesAsync(cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<SupportedWebLanguage> languages = SupportedLanguages;
 
         if (!ModelState.IsValid || !HasSupportedLanguageSelection(input, languages))
         {
@@ -87,7 +97,7 @@ public sealed class SettingsController(
         string? effectiveSecondaryMeaningLanguageCode = canUseDualMeaningLanguage
             ? profile.PreferredMeaningLanguage2
             : null;
-        IReadOnlyList<SupportedLanguageModel> languages = await languageQueryService.GetActiveLanguagesAsync(cancellationToken);
+        IReadOnlyList<SupportedWebLanguage> languages = SupportedLanguages;
 
         SettingsUpdateInputModel formInput = input ?? new SettingsUpdateInputModel
         {
@@ -137,7 +147,7 @@ public sealed class SettingsController(
 
     private static bool HasSupportedLanguageSelection(
         SettingsUpdateInputModel input,
-        IReadOnlyList<SupportedLanguageModel> languages)
+        IReadOnlyList<SupportedWebLanguage> languages)
     {
         bool hasUiLanguage = languages.Any(language =>
             language.SupportsUserInterface &&
@@ -162,4 +172,11 @@ public sealed class SettingsController(
 
         return value.Trim();
     }
+
+    private sealed record SupportedWebLanguage(
+        string Code,
+        string EnglishName,
+        string NativeName,
+        bool SupportsUserInterface,
+        bool SupportsMeanings);
 }

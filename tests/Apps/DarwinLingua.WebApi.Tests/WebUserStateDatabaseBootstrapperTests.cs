@@ -9,7 +9,7 @@ namespace DarwinLingua.WebApi.Tests;
 public sealed class WebUserStateDatabaseBootstrapperTests
 {
     [Fact]
-    public async Task InitializeAsync_CreatesWebUserStateTablesWhenIdentityTablesAlreadyExist()
+    public async Task InitializeAsync_RejectsNonPostgresProvider()
     {
         await using SqliteConnection connection = new("Data Source=:memory:");
         await connection.OpenAsync();
@@ -19,38 +19,10 @@ public sealed class WebUserStateDatabaseBootstrapperTests
             .Options;
 
         await using WebIdentityDbContext dbContext = new(options);
-        await dbContext.Database.ExecuteSqlRawAsync(
-            """
-            CREATE TABLE "AspNetUsers" (
-                "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetUsers" PRIMARY KEY
-            );
-            """);
-
         WebUserStateDatabaseBootstrapper bootstrapper = new(dbContext);
-        await bootstrapper.InitializeAsync(CancellationToken.None);
-        await bootstrapper.InitializeAsync(CancellationToken.None);
 
-        string[] tableNames =
-        [
-            "WebUserPreferences",
-            "WebUserFavoriteWords",
-            "WebUserWordStates",
-        ];
-
-        foreach (string tableName in tableNames)
-        {
-            int count = await CountTableAsync(connection, tableName);
-            Assert.Equal(1, count);
-        }
-    }
-
-    private static async Task<int> CountTableAsync(SqliteConnection connection, string tableName)
-    {
-        await using SqliteCommand command = connection.CreateCommand();
-        command.CommandText = "SELECT COUNT(*) FROM sqlite_master WHERE type = 'table' AND name = $tableName";
-        command.Parameters.AddWithValue("$tableName", tableName);
-
-        object? result = await command.ExecuteScalarAsync();
-        return Convert.ToInt32(result);
+        InvalidOperationException exception = await Assert.ThrowsAsync<InvalidOperationException>(() =>
+            bootstrapper.InitializeAsync(CancellationToken.None));
+        Assert.Contains("PostgreSQL", exception.Message, StringComparison.OrdinalIgnoreCase);
     }
 }

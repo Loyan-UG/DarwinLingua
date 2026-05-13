@@ -1417,6 +1417,12 @@ public static class AppStrings
     /// </summary>
     public static string SettingsRemoteCatalogAreaTitle => GetRequiredString(nameof(SettingsRemoteCatalogAreaTitle));
 
+    public static string SettingsRemoteModuleSectionLabel => GetRequiredString(nameof(SettingsRemoteModuleSectionLabel));
+
+    public static string SettingsRemoteModuleApplyButton => GetRequiredString(nameof(SettingsRemoteModuleApplyButton));
+
+    public static string SettingsRemoteModuleActionTitle => GetRequiredString(nameof(SettingsRemoteModuleActionTitle));
+
     /// <summary>
     /// Gets the localized section label for CEFR-slice remote updates.
     /// </summary>
@@ -1661,6 +1667,26 @@ public static class AppStrings
     /// Gets the localized dismiss-button caption for packaged content update dialogs.
     /// </summary>
     public static string SettingsContentUpdatesDismissButton => GetRequiredString(nameof(SettingsContentUpdatesDismissButton));
+
+    public static string FirstRunContentSelectionTitle => GetRequiredString(nameof(FirstRunContentSelectionTitle));
+
+    public static string FirstRunContentSelectionMessage => GetRequiredString(nameof(FirstRunContentSelectionMessage));
+
+    public static string FirstRunContentSelectionChooseButton => GetRequiredString(nameof(FirstRunContentSelectionChooseButton));
+
+    public static string FirstRunContentSelectionSkipButton => GetRequiredString(nameof(FirstRunContentSelectionSkipButton));
+
+    public static string FirstRunContentSelectionActionTitle => GetRequiredString(nameof(FirstRunContentSelectionActionTitle));
+
+    public static string FirstRunContentSelectionDoneButton => GetRequiredString(nameof(FirstRunContentSelectionDoneButton));
+
+    public static string FirstRunContentSelectionDownloadTitle => GetRequiredString(nameof(FirstRunContentSelectionDownloadTitle));
+
+    public static string FirstRunContentSelectionDownloadMessageFormat => GetRequiredString(nameof(FirstRunContentSelectionDownloadMessageFormat));
+
+    public static string FirstRunContentSelectionPartialFailureTitle => GetRequiredString(nameof(FirstRunContentSelectionPartialFailureTitle));
+
+    public static string FirstRunContentSelectionPartialFailureMessageFormat => GetRequiredString(nameof(FirstRunContentSelectionPartialFailureMessageFormat));
 
     /// <summary>
     /// Gets the localized detail label for IPA pronunciation.

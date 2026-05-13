@@ -62,7 +62,9 @@ Use this checklist only after Web sign-off and a mobile build that includes Phas
 - Grammar, Expressions, Exercise Sets, Courses, Exam Prep, Writing Templates, Cultural Notes, Talk Topics, and Learning Search open without crashes.
 - List/detail pages read local package content and show safe empty states when no Phase 7 content exists.
 - Full database or catalog-full remote update applies Phase 7 tables without removing favorites, word state, practice state, or account settings.
-- CEFR slice updates are treated as word/current-conversation scoped until Phase 7 per-module slice validation is implemented.
+- First-run onboarding offers content module selection and skip leaves an empty but usable local database.
+- Module-scoped updates can download selected `catalog-module` packages without removing unrelated module content or user state.
+- CEFR slice updates remain word/current-conversation scoped; Learning Portal module updates use module-scoped packages.
 - Offline mode keeps already imported Phase 7 content readable and fails remote-update checks safely.
 - Mobile exercise runner and cross-content progress sync remain explicit follow-up items unless implemented in the build under test.
 

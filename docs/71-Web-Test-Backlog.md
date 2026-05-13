@@ -202,6 +202,7 @@ Latest local Web verification:
 - [x] List/detail query coverage includes the first rich pilot topic and localized fallback behavior.
 - [ ] CEFR/category/topic/search filters return expected grammar topics.
 - [x] Web/API rendering handles paragraph, table, and callout rich blocks from the pilot package.
+- [x] Cross-level validation batch coverage confirms two imported rich Grammar topics per CEFR level from A1 through C2.
 - [ ] Linked words/dialogues/Talk Topics/exercises render where available.
 - [ ] Localized explanation rendering follows learner language preferences.
 - [ ] Unresolved links fail safely without Web 500 errors.
@@ -312,8 +313,13 @@ Latest local Web verification:
 
 - [x] Web sign-off is recorded before MAUI parity starts.
 - [x] Mobile package export structural coverage confirms Phase 7 arrays are present in full/catalog-full packages.
+- [x] Web startup structural coverage confirms the Web app does not register local SQLite learning/content initialization.
+- [x] WebApi manifest/package tests cover module-scoped `catalog-module` packages.
 - [x] MAUI route/localization structural coverage confirms Learning Portal list/detail/search routes and Learn/Practice/Speak/Prepare/Resources navigation labels.
 - [x] Full mobile replacement script coverage confirms Phase 7 content tables are copied from remote package imports.
+- [x] Module replacement script coverage confirms MAUI can request and apply selective module packages.
+- [ ] Add seeded module-slice package tests that import one selected module without removing unrelated local modules.
+- [ ] Add first-run onboarding UI automation for choose/skip flows.
 - [ ] Add seeded mobile package export tests that import a package with all Phase 7 module types into a local SQLite database.
 - [ ] Add MAUI smoke coverage for opening Learning Portal list/detail/search pages on target devices.
 - [ ] Add manual mobile validation worksheet entries for Phase 7 offline behavior and local package update behavior.

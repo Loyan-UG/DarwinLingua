@@ -51,6 +51,9 @@ internal sealed class RemoteContentUpdateService(
     public Task<RemoteContentUpdateStatus> GetCefrUpdateStatusAsync(string databasePath, string cefrLevel, CancellationToken cancellationToken) =>
         GetUpdateStatusCoreAsync(databasePath, RemoteUpdateScope.ForCefrLevel(cefrLevel), cancellationToken);
 
+    public Task<RemoteContentUpdateStatus> GetModuleUpdateStatusAsync(string databasePath, string moduleKey, CancellationToken cancellationToken) =>
+        GetUpdateStatusCoreAsync(databasePath, RemoteUpdateScope.ForModule(moduleKey), cancellationToken);
+
     public Task<RemoteContentUpdateResult> ApplyFullUpdateAsync(string databasePath, CancellationToken cancellationToken) =>
         ApplyUpdateCoreAsync(databasePath, RemoteUpdateScope.FullDatabase, cancellationToken);
 
@@ -59,6 +62,9 @@ internal sealed class RemoteContentUpdateService(
 
     public Task<RemoteContentUpdateResult> ApplyCefrUpdateAsync(string databasePath, string cefrLevel, CancellationToken cancellationToken) =>
         ApplyUpdateCoreAsync(databasePath, RemoteUpdateScope.ForCefrLevel(cefrLevel), cancellationToken);
+
+    public Task<RemoteContentUpdateResult> ApplyModuleUpdateAsync(string databasePath, string moduleKey, CancellationToken cancellationToken) =>
+        ApplyUpdateCoreAsync(databasePath, RemoteUpdateScope.ForModule(moduleKey), cancellationToken);
 
     private async Task<RemoteContentUpdateStatus> GetUpdateStatusCoreAsync(
         string databasePath,
@@ -263,6 +269,7 @@ internal sealed class RemoteContentUpdateService(
                 {
                     ReplaceMode.FullDatabase => ReplaceAllContentTablesAsync(databasePath, tempDatabasePath, cancellationToken),
                     ReplaceMode.CefrLevel => ReplaceCefrLevelContentAsync(databasePath, tempDatabasePath, scope.CefrLevel, cancellationToken),
+                    ReplaceMode.Module => ReplaceModuleContentAsync(databasePath, tempDatabasePath, scope.ModuleKey, cancellationToken),
                     _ => throw new InvalidOperationException($"The update scope '{scope.ScopeKey}' is not supported.")
                 },
                 cancellationToken,
@@ -690,6 +697,69 @@ internal sealed class RemoteContentUpdateService(
         await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
     }
 
+    private static async Task ReplaceModuleContentAsync(string localDatabasePath, string tempDatabasePath, string moduleKey, CancellationToken cancellationToken)
+    {
+        string[] tables = ResolveModuleTables(moduleKey);
+
+        await using SqliteConnection localConnection = new($"Data Source={localDatabasePath}");
+        await localConnection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        await using DbTransaction transaction = await localConnection.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
+
+        await ExecuteNonQueryAsync(localConnection, transaction, "ATTACH DATABASE $tempPath AS remote;", cancellationToken, CreateParameter("$tempPath", tempDatabasePath)).ConfigureAwait(false);
+        await ExecuteNonQueryAsync(localConnection, transaction, "PRAGMA foreign_keys = OFF;", cancellationToken).ConfigureAwait(false);
+        await UpsertReferenceTablesAsync(localConnection, transaction, cancellationToken).ConfigureAwait(false);
+
+        foreach (string tableName in tables)
+        {
+            await ExecuteNonQueryAsync(localConnection, transaction, $"DELETE FROM {tableName};", cancellationToken).ConfigureAwait(false);
+        }
+
+        foreach (string tableName in tables.Reverse())
+        {
+            await ExecuteNonQueryAsync(localConnection, transaction, $"INSERT INTO {tableName} SELECT * FROM remote.{tableName};", cancellationToken).ConfigureAwait(false);
+        }
+
+        await ExecuteNonQueryAsync(localConnection, transaction, "INSERT OR REPLACE INTO ContentPackages SELECT * FROM remote.ContentPackages;", cancellationToken).ConfigureAwait(false);
+        await ExecuteNonQueryAsync(localConnection, transaction, "INSERT OR REPLACE INTO ContentPackageEntries SELECT * FROM remote.ContentPackageEntries;", cancellationToken).ConfigureAwait(false);
+        await ExecuteNonQueryAsync(localConnection, transaction, "PRAGMA foreign_keys = ON;", cancellationToken).ConfigureAwait(false);
+        await ExecuteNonQueryAsync(localConnection, transaction, "DETACH DATABASE remote;", cancellationToken).ConfigureAwait(false);
+        await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task UpsertReferenceTablesAsync(SqliteConnection localConnection, DbTransaction transaction, CancellationToken cancellationToken)
+    {
+        await ExecuteNonQueryAsync(
+            localConnection,
+            transaction,
+            """
+            INSERT OR REPLACE INTO Languages SELECT * FROM remote.Languages;
+            INSERT OR REPLACE INTO Topics SELECT * FROM remote.Topics;
+            INSERT OR REPLACE INTO TopicLocalizations SELECT * FROM remote.TopicLocalizations;
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static string[] ResolveModuleTables(string moduleKey)
+    {
+        return moduleKey switch
+        {
+            "words" => WordModuleTables,
+            "dialogues" => DialogueModuleTables,
+            "conversation-starters" => ConversationStarterModuleTables,
+            "talk-topics" => TalkTopicModuleTables,
+            "grammar" => GrammarModuleTables,
+            "expressions" => ExpressionModuleTables,
+            "exercises" => ExerciseModuleTables,
+            "courses" => CourseModuleTables,
+            "exam-prep" => ExamPrepModuleTables,
+            "writing-templates" => WritingTemplateModuleTables,
+            "cultural-notes" => CulturalNoteModuleTables,
+            "events" => EventModuleTables,
+            "organizers" => [],
+            _ => throw new InvalidOperationException($"The content module '{moduleKey}' is not supported for local replacement."),
+        };
+    }
+
     private static async Task<string> GetLocalPackageIdAsync(string databasePath, RemoteUpdateScope scope, CancellationToken cancellationToken)
     {
         if (scope == RemoteUpdateScope.FullDatabase)
@@ -934,11 +1004,11 @@ internal sealed class RemoteContentUpdateService(
 
     private static string BuildPreferenceKey(RemoteUpdateScope scope, string suffix) => $"remote-content-{scope.ScopeKey}-{suffix}";
 
-    private enum ReplaceMode { FullDatabase, CefrLevel }
+    private enum ReplaceMode { FullDatabase, CefrLevel, Module }
 
-    private sealed record RemoteUpdateScope(string ScopeKey, string ContentAreaKey, string SliceKey, string PackageType, ReplaceMode ReplaceMode, string CefrLevel)
+    private sealed record RemoteUpdateScope(string ScopeKey, string ContentAreaKey, string SliceKey, string PackageType, ReplaceMode ReplaceMode, string CefrLevel, string ModuleKey)
     {
-        public static readonly RemoteUpdateScope FullDatabase = new("all-full", "all", "full", "full-database", ReplaceMode.FullDatabase, string.Empty);
+        public static readonly RemoteUpdateScope FullDatabase = new("all-full", "all", "full", "full-database", ReplaceMode.FullDatabase, string.Empty, string.Empty);
 
         public static RemoteUpdateScope ForArea(string areaKey)
         {
@@ -948,13 +1018,19 @@ internal sealed class RemoteContentUpdateService(
                 throw new InvalidOperationException($"The content area '{areaKey}' is not supported for local mobile updates yet.");
             }
 
-            return new RemoteUpdateScope($"{normalizedAreaKey}-full", normalizedAreaKey, "full", $"full-{normalizedAreaKey}", ReplaceMode.FullDatabase, string.Empty);
+            return new RemoteUpdateScope($"{normalizedAreaKey}-full", normalizedAreaKey, "full", $"full-{normalizedAreaKey}", ReplaceMode.FullDatabase, string.Empty, string.Empty);
         }
 
         public static RemoteUpdateScope ForCefrLevel(string cefrLevel)
         {
             string normalizedLevel = cefrLevel.Trim().ToLowerInvariant();
-            return new RemoteUpdateScope($"catalog-cefr-{normalizedLevel}", "catalog", $"cefr:{normalizedLevel}", "catalog-cefr", ReplaceMode.CefrLevel, normalizedLevel.ToUpperInvariant());
+            return new RemoteUpdateScope($"catalog-cefr-{normalizedLevel}", "catalog", $"cefr:{normalizedLevel}", "catalog-cefr", ReplaceMode.CefrLevel, normalizedLevel.ToUpperInvariant(), string.Empty);
+        }
+
+        public static RemoteUpdateScope ForModule(string moduleKey)
+        {
+            string normalizedModuleKey = NormalizeModuleKey(moduleKey);
+            return new RemoteUpdateScope($"catalog-module-{normalizedModuleKey}", "catalog", $"module:{normalizedModuleKey}", "catalog-module", ReplaceMode.Module, string.Empty, normalizedModuleKey);
         }
 
         public static RemoteUpdateScope ForReceipt(string contentAreaKey, string sliceKey, string packageType) =>
@@ -962,6 +1038,8 @@ internal sealed class RemoteContentUpdateService(
                 ? FullDatabase
                 : sliceKey.StartsWith("cefr:", StringComparison.OrdinalIgnoreCase)
                     ? ForCefrLevel(sliceKey["cefr:".Length..])
+                    : sliceKey.StartsWith("module:", StringComparison.OrdinalIgnoreCase)
+                        ? ForModule(sliceKey["module:".Length..])
                     : ForArea(contentAreaKey);
 
         public bool Matches(RemoteContentPackageModel package) =>
@@ -975,6 +1053,7 @@ internal sealed class RemoteContentUpdateService(
             string clientProductKey = Uri.EscapeDataString(remoteOptions.ClientProductKey);
             if (this == FullDatabase) { return $"{baseUrl}/api/mobile/content/manifest?clientProductKey={clientProductKey}"; }
             if (ReplaceMode == ReplaceMode.CefrLevel) { return $"{baseUrl}/api/mobile/content/areas/catalog/cefr/{Uri.EscapeDataString(CefrLevel)}/manifest?clientProductKey={clientProductKey}"; }
+            if (ReplaceMode == ReplaceMode.Module) { return $"{baseUrl}/api/mobile/content/areas/catalog/modules/{Uri.EscapeDataString(ModuleKey)}/manifest?clientProductKey={clientProductKey}"; }
             return $"{baseUrl}/api/mobile/content/areas/{Uri.EscapeDataString(ContentAreaKey)}/manifest?clientProductKey={clientProductKey}";
         }
 
@@ -984,9 +1063,155 @@ internal sealed class RemoteContentUpdateService(
             string clientProductKey = Uri.EscapeDataString(remoteOptions.ClientProductKey);
             return $"{baseUrl}/api/mobile/content/packages/{Uri.EscapeDataString(packageId)}/download?clientProductKey={clientProductKey}&clientSchemaVersion={remoteOptions.ClientSchemaVersion}";
         }
+
+        private static string NormalizeModuleKey(string moduleKey)
+        {
+            string normalized = moduleKey.Trim().ToLowerInvariant();
+            return normalized switch
+            {
+                "words" or "dialogues" or "talk-topics" or "grammar" or "expressions" or "exercises" or "courses" or "exam-prep" or "writing-templates" or "cultural-notes" or "events" or "organizers" or "conversation-starters" => normalized,
+                _ => throw new InvalidOperationException($"The content module '{moduleKey}' is not supported for local mobile updates."),
+            };
+        }
     }
 
     private sealed record CachedManifestEntry(RemoteContentManifestModel? Manifest, DateTimeOffset FetchedAtUtc);
+
+    private static readonly string[] WordModuleTables =
+    [
+        "ExampleTranslations",
+        "ExampleSentences",
+        "SenseTranslations",
+        "WordSenses",
+        "WordTopics",
+        "WordLabels",
+        "WordLexicalForms",
+        "WordGrammarNotes",
+        "WordCollocations",
+        "WordFamilyMembers",
+        "WordRelations",
+        "WordCollectionEntries",
+        "WordCollections",
+        "WordEntries",
+    ];
+
+    private static readonly string[] DialogueModuleTables =
+    [
+        "DialogueTurnTranslations",
+        "DialoguePhraseTranslations",
+        "DialogueQuestionTranslations",
+        "DialogueAnswerTranslations",
+        "DialogueSpeakingPromptTranslations",
+        "DialogueTurns",
+        "DialoguePhrases",
+        "DialogueAnswers",
+        "DialogueQuestions",
+        "DialogueSpeakingPrompts",
+        "DialogueUsefulWords",
+        "DialogueSpeakingFunctions",
+        "DialogueSkillFocus",
+        "DialogueExamProfiles",
+        "DialogueLessonTopics",
+        "DialogueLessons",
+    ];
+
+    private static readonly string[] ConversationStarterModuleTables =
+    [
+        "ConversationStarterPhraseTranslations",
+        "ConversationStarterPhraseAlternatives",
+        "ConversationStarterPhrases",
+        "ConversationStarterLinkedEventPreparationPacks",
+        "ConversationStarterLinkedDialogues",
+        "ConversationStarterPackTopics",
+        "ConversationStarterPacks",
+    ];
+
+    private static readonly string[] EventModuleTables =
+    [
+        "EventPreparationPrompts",
+        "EventPreparationVocabularyReferences",
+        "EventPreparationLinkedConversationStarterPacks",
+        "EventPreparationLinkedDialogues",
+        "EventPreparationPackTopics",
+        "EventPreparationPacks",
+    ];
+
+    private static readonly string[] TalkTopicModuleTables =
+    [
+        "TalkTopicArticleTranslations",
+        "TalkTopicQuestionTranslations",
+        "TalkTopicQuestions",
+        "TalkTopicSpeakingGoals",
+        "TalkTopicTopics",
+        "TalkTopicVocabularyItems",
+        "TalkTopics",
+    ];
+
+    private static readonly string[] GrammarModuleTables =
+    [
+        "GrammarSectionTranslations",
+        "GrammarExampleTranslations",
+        "GrammarCommonMistakeTranslations",
+        "GrammarRuleSummaryTranslations",
+        "GrammarExceptionNoteTranslations",
+        "GrammarSections",
+        "GrammarExamples",
+        "GrammarCommonMistakes",
+        "GrammarRuleSummaries",
+        "GrammarExceptionNotes",
+        "GrammarLinkedDialogues",
+        "GrammarLinkedExercises",
+        "GrammarLinkedTalkTopics",
+        "GrammarLinkedWords",
+        "GrammarPrerequisiteLinks",
+        "GrammarRelatedTopicLinks",
+        "GrammarTopicTopics",
+        "GrammarTopics",
+    ];
+
+    private static readonly string[] ExpressionModuleTables =
+    [
+        "ExpressionExampleTranslations",
+        "ExpressionWarningTranslations",
+        "ExpressionExamples",
+        "ExpressionWarnings",
+        "ExpressionLinkedExercises",
+        "ExpressionLinkedWords",
+        "ExpressionMeanings",
+        "ExpressionTopics",
+        "RelatedExpressionLinks",
+        "ExpressionEntries",
+    ];
+
+    private static readonly string[] ExerciseModuleTables =
+    [
+        "ExerciseSetItems",
+        "ExerciseSets",
+        "Exercises",
+    ];
+
+    private static readonly string[] CourseModuleTables =
+    [
+        "CourseLessons",
+        "CourseModules",
+        "CoursePaths",
+    ];
+
+    private static readonly string[] WritingTemplateModuleTables =
+    [
+        "WritingTemplates",
+    ];
+
+    private static readonly string[] CulturalNoteModuleTables =
+    [
+        "CulturalNotes",
+    ];
+
+    private static readonly string[] ExamPrepModuleTables =
+    [
+        "ExamPrepUnits",
+        "ExamProfiles",
+    ];
 
     private const string FullReplaceScript =
         """

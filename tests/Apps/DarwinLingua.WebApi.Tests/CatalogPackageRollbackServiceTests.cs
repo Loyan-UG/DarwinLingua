@@ -62,16 +62,16 @@ public sealed class CatalogPackageRollbackServiceTests
 
             Assert.True(rollbackResponse.IsSuccess);
             Assert.Equal(firstImport.DraftPublicationBatchId, rollbackResponse.PublicationBatchId);
-            Assert.Equal(8, rollbackResponse.ReactivatedPackageIds.Count);
-            Assert.Equal(8, rollbackResponse.SupersededPackageIds.Count);
+            Assert.Equal(21, rollbackResponse.ReactivatedPackageIds.Count);
+            Assert.Equal(21, rollbackResponse.SupersededPackageIds.Count);
 
             await using AsyncServiceScope verificationScope = serviceProvider.CreateAsyncScope();
             ServerContentDbContext dbContext = verificationScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
 
-            Assert.Equal(8, await dbContext.PublishedPackages.CountAsync(package =>
+            Assert.Equal(21, await dbContext.PublishedPackages.CountAsync(package =>
                 package.PublicationBatchId == firstImport.DraftPublicationBatchId &&
                 package.PublicationStatus == PackagePublicationStatus.Published));
-            Assert.Equal(8, await dbContext.PublishedPackages.CountAsync(package =>
+            Assert.Equal(21, await dbContext.PublishedPackages.CountAsync(package =>
                 package.PublicationBatchId == secondBatch.PublicationBatchId &&
                 package.PublicationStatus == PackagePublicationStatus.Superseded));
         }

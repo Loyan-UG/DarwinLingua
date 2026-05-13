@@ -60,7 +60,7 @@ public sealed class CatalogPackageDraftQueryServiceTests
             Assert.Equal(2, batches.Count);
             Assert.Equal(secondBatch.PublicationBatchId, batches[0].PublicationBatchId);
             Assert.Equal(nameof(PackagePublicationStatus.Draft), batches[0].PublicationStatus);
-            Assert.Equal(8, batches[0].PackageCount);
+            Assert.Equal(21, batches[0].PackageCount);
             Assert.True(batches[0].TotalWordCount > 0);
             Assert.NotEmpty(batches[0].Packages);
             Assert.All(batches[0].Packages, package => Assert.False(string.IsNullOrWhiteSpace(package.Checksum)));

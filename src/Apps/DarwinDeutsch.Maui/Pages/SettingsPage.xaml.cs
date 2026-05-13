@@ -19,6 +19,21 @@ namespace DarwinDeutsch.Maui.Pages;
 public partial class SettingsPage : ContentPage
 {
     private static readonly string[] CefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
+    private static readonly ContentModuleOption[] ModuleOptions =
+    [
+        new("words", "Words"),
+        new("grammar", "Grammar Guide"),
+        new("expressions", "Everyday Expressions"),
+        new("dialogues", "Dialogues"),
+        new("talk-topics", "Talk Topics"),
+        new("exercises", "Exercises"),
+        new("courses", "Courses"),
+        new("exam-prep", "Exam Preparation"),
+        new("writing-templates", "Writing Templates"),
+        new("cultural-notes", "Cultural Notes"),
+        new("events", "Events"),
+        new("conversation-starters", "Conversation Starters"),
+    ];
 
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly IMobileAuthService _mobileAuthService;
@@ -41,6 +56,7 @@ public partial class SettingsPage : ContentPage
         FullRemote,
         CatalogRemote,
         CefrRemote,
+        ModuleRemote,
         Seed,
         Neutral,
     }
@@ -197,6 +213,7 @@ public partial class SettingsPage : ContentPage
         ContentUpdatesSectionLabel.Text = AppStrings.SettingsContentUpdatesSectionLabel;
         RemoteContentUpdatesSectionLabel.Text = AppStrings.SettingsRemoteContentUpdatesSectionLabel;
         CatalogAreaUpdatesSectionLabel.Text = AppStrings.SettingsRemoteCatalogAreaSectionLabel;
+        ModuleUpdatesSectionLabel.Text = AppStrings.SettingsRemoteModuleSectionLabel;
         CefrLevelUpdatesSectionLabel.Text = AppStrings.SettingsRemoteCefrLevelsSectionLabel;
         PackagedSeedUpdatesSectionLabel.Text = AppStrings.SettingsPackagedSeedUpdatesSectionLabel;
         ContentUpdateStatusSectionView.SectionTitle = AppStrings.SettingsContentUpdatesStatusLabel;
@@ -207,6 +224,7 @@ public partial class SettingsPage : ContentPage
         SelectedCefrUpdateSectionView.SectionTitle = _selectedCefrLevel;
         ApplyUpdateButtonPresentation(ApplyRemoteUpdateButton, AppStrings.SettingsRemoteContentUpdatesApplyButton, UpdateButtonIntent.FullRemote, UpdateButtonVisualState.Available);
         ApplyUpdateButtonPresentation(ApplyCatalogAreaUpdateButton, string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, AppStrings.SettingsRemoteCatalogAreaTitle), UpdateButtonIntent.CatalogRemote, UpdateButtonVisualState.Available);
+        ApplyUpdateButtonPresentation(ApplyModuleUpdateButton, AppStrings.SettingsRemoteModuleApplyButton, UpdateButtonIntent.ModuleRemote, UpdateButtonVisualState.Available);
         ApplyUpdateButtonPresentation(ApplySelectedCefrLevelUpdateButton, string.Format(AppStrings.SettingsRemoteContentScopeApplyButtonFormat, _selectedCefrLevel), UpdateButtonIntent.CefrRemote, UpdateButtonVisualState.Available);
         ApplyUpdateButtonPresentation(ApplySeedUpdateButton, AppStrings.SettingsContentUpdatesApplyButton, UpdateButtonIntent.Seed, UpdateButtonVisualState.Available);
     }
@@ -320,9 +338,11 @@ public partial class SettingsPage : ContentPage
         SelectedCefrUpdateSectionView.SectionValue = loadingText;
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
+        ApplyModuleUpdateButton.IsEnabled = false;
         ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
         ApplyUpdateButtonPresentation(ApplyRemoteUpdateButton, AppStrings.CommonStateLoading, UpdateButtonIntent.FullRemote, UpdateButtonVisualState.Disabled);
         ApplyUpdateButtonPresentation(ApplyCatalogAreaUpdateButton, AppStrings.CommonStateLoading, UpdateButtonIntent.CatalogRemote, UpdateButtonVisualState.Disabled);
+        ApplyUpdateButtonPresentation(ApplyModuleUpdateButton, AppStrings.CommonStateLoading, UpdateButtonIntent.ModuleRemote, UpdateButtonVisualState.Disabled);
         ApplyUpdateButtonPresentation(ApplySelectedCefrLevelUpdateButton, AppStrings.CommonStateLoading, UpdateButtonIntent.CefrRemote, UpdateButtonVisualState.Disabled);
     }
 
@@ -339,10 +359,12 @@ public partial class SettingsPage : ContentPage
 
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
+        ApplyModuleUpdateButton.IsEnabled = false;
         ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
         ApplySeedUpdateButton.IsEnabled = false;
         ApplyUpdateButtonPresentation(ApplyRemoteUpdateButton, AppStrings.CommonStateError, UpdateButtonIntent.FullRemote, UpdateButtonVisualState.Disabled);
         ApplyUpdateButtonPresentation(ApplyCatalogAreaUpdateButton, AppStrings.CommonStateError, UpdateButtonIntent.CatalogRemote, UpdateButtonVisualState.Disabled);
+        ApplyUpdateButtonPresentation(ApplyModuleUpdateButton, AppStrings.CommonStateError, UpdateButtonIntent.ModuleRemote, UpdateButtonVisualState.Disabled);
         ApplyUpdateButtonPresentation(ApplySelectedCefrLevelUpdateButton, AppStrings.CommonStateError, UpdateButtonIntent.CefrRemote, UpdateButtonVisualState.Disabled);
         ApplyUpdateButtonPresentation(ApplySeedUpdateButton, AppStrings.CommonStateError, UpdateButtonIntent.Seed, UpdateButtonVisualState.Disabled);
     }
@@ -379,6 +401,15 @@ public partial class SettingsPage : ContentPage
             !catalogAreaUpdateStatus.IsRemoteConfigured || !catalogAreaUpdateStatus.IsServerReachable
                 ? UpdateButtonVisualState.Disabled
                 : catalogAreaUpdateStatus.IsUpdateAvailable ? UpdateButtonVisualState.Available : UpdateButtonVisualState.Current);
+
+        ApplyModuleUpdateButton.IsEnabled = catalogAreaUpdateStatus.IsRemoteConfigured && catalogAreaUpdateStatus.IsServerReachable && !_isApplyingRemoteUpdate;
+        ApplyUpdateButtonPresentation(
+            ApplyModuleUpdateButton,
+            AppStrings.SettingsRemoteModuleApplyButton,
+            UpdateButtonIntent.ModuleRemote,
+            !catalogAreaUpdateStatus.IsRemoteConfigured || !catalogAreaUpdateStatus.IsServerReachable
+                ? UpdateButtonVisualState.Disabled
+                : UpdateButtonVisualState.Available);
 
         if (!catalogAreaUpdateStatus.IsRemoteConfigured || !catalogAreaUpdateStatus.IsServerReachable)
         {
@@ -436,6 +467,40 @@ public partial class SettingsPage : ContentPage
                 () => _remoteContentUpdateService.ApplyAreaUpdateAsync(GetLocalDatabasePath(), "catalog", CancellationToken.None),
                 ApplyCatalogAreaUpdateButton,
                 string.Format(AppStrings.SettingsRemoteContentScopeApplyingButtonFormat, AppStrings.SettingsRemoteCatalogAreaTitle))
+            .ConfigureAwait(true);
+    }
+
+    private async void OnApplyModuleUpdateButtonClicked(object? sender, EventArgs e)
+    {
+        string? selectedDisplayName = await DisplayActionSheetAsync(
+                AppStrings.SettingsRemoteModuleActionTitle,
+                AppStrings.FirstRunContentSelectionSkipButton,
+                null,
+                ModuleOptions.Select(static option => option.DisplayName).ToArray())
+            .ConfigureAwait(true);
+
+        if (string.IsNullOrWhiteSpace(selectedDisplayName) ||
+            string.Equals(selectedDisplayName, AppStrings.FirstRunContentSelectionSkipButton, StringComparison.Ordinal))
+        {
+            return;
+        }
+
+        ContentModuleOption? selectedModule = ModuleOptions.FirstOrDefault(option => option.DisplayName == selectedDisplayName);
+        if (selectedModule is null)
+        {
+            return;
+        }
+
+        if (!await ConfirmRemoteUpdateAsync(selectedModule.DisplayName).ConfigureAwait(true))
+        {
+            return;
+        }
+
+        await ApplyScopedRemoteUpdateAsync(
+                selectedModule.DisplayName,
+                () => _remoteContentUpdateService.ApplyModuleUpdateAsync(GetLocalDatabasePath(), selectedModule.Key, CancellationToken.None),
+                ApplyModuleUpdateButton,
+                string.Format(AppStrings.SettingsRemoteContentScopeApplyingButtonFormat, selectedModule.DisplayName))
             .ConfigureAwait(true);
     }
 
@@ -611,6 +676,7 @@ public partial class SettingsPage : ContentPage
         _isApplyingRemoteUpdate = true;
         ApplyRemoteUpdateButton.IsEnabled = false;
         ApplyCatalogAreaUpdateButton.IsEnabled = false;
+        ApplyModuleUpdateButton.IsEnabled = false;
         ApplySelectedCefrLevelUpdateButton.IsEnabled = false;
         ApplyUpdateButtonPresentation(targetButton, busyButtonText, ResolveUpdateButtonIntent(targetButton), UpdateButtonVisualState.Busy);
 
@@ -1087,6 +1153,8 @@ public partial class SettingsPage : ContentPage
     /// </summary>
     private sealed record CefrLevelChipItem(string Level);
 
+    private sealed record ContentModuleOption(string Key, string DisplayName);
+
     private void ApplyUpdateButtonPresentation(SfButton button, string text, UpdateButtonIntent intent, UpdateButtonVisualState state)
     {
         button.Text = text;
@@ -1104,6 +1172,7 @@ public partial class SettingsPage : ContentPage
             {
                 UpdateButtonIntent.FullRemote => "SyncfusionPrimaryButtonStyle",
                 UpdateButtonIntent.CatalogRemote => "SyncfusionInfoButtonStyle",
+                UpdateButtonIntent.ModuleRemote => "SyncfusionPrimaryButtonStyle",
                 UpdateButtonIntent.CefrRemote => "SyncfusionSuccessButtonStyle",
                 UpdateButtonIntent.Seed => "SyncfusionWarningButtonStyle",
                 _ => "SyncfusionPrimaryButtonStyle",
@@ -1123,6 +1192,11 @@ public partial class SettingsPage : ContentPage
         if (ReferenceEquals(button, ApplyCatalogAreaUpdateButton))
         {
             return UpdateButtonIntent.CatalogRemote;
+        }
+
+        if (ReferenceEquals(button, ApplyModuleUpdateButton))
+        {
+            return UpdateButtonIntent.ModuleRemote;
         }
 
         if (ReferenceEquals(button, ApplySelectedCefrLevelUpdateButton))

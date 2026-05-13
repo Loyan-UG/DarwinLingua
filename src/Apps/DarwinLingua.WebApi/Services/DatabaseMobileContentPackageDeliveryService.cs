@@ -62,6 +62,18 @@ public sealed class DatabaseMobileContentPackageDeliveryService(
         return MapDescriptor(package);
     }
 
+    /// <inheritdoc />
+    public ContentPackageDownloadDescriptor GetLatestModulePackage(string? clientProductKey, string moduleKey, int? clientSchemaVersion)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(moduleKey);
+
+        ClientProductEntity product = ResolveProduct(clientProductKey);
+        string sliceKey = $"module:{moduleKey.Trim().ToLowerInvariant()}";
+        PublishedPackageEntity package = ResolveLatestPackage(product.Key, "catalog", sliceKey);
+        EnsureCompatibility(package, clientSchemaVersion);
+        return MapDescriptor(package);
+    }
+
     private ClientProductEntity ResolveProduct(string? clientProductKey)
     {
         List<ClientProductEntity> activeProducts = dbContext.ClientProducts

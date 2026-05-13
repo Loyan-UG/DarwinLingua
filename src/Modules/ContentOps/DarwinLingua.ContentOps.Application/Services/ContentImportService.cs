@@ -3044,6 +3044,7 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add("Grammar topic sections must contain at least one explanation section.");
             }
 
+            HashSet<string> richSectionKeys = new(StringComparer.Ordinal);
             for (int sectionIndex = 0; sectionIndex < topic.Sections.Count; sectionIndex++)
             {
                 ParsedGrammarSectionModel section = topic.Sections[sectionIndex];
@@ -3052,6 +3053,10 @@ internal sealed class ContentImportService : IContentImportService
                 if (hasRichBlocks && !ValidateKebabKey(sectionKey))
                 {
                     errors.Add($"Grammar topic sections[{sectionIndex + 1}] sectionKey is required and must use lowercase kebab-case.");
+                }
+                else if (hasRichBlocks && !richSectionKeys.Add(sectionKey))
+                {
+                    errors.Add($"Grammar topic sections[{sectionIndex + 1}] sectionKey '{sectionKey}' is duplicated.");
                 }
 
                 if (string.IsNullOrWhiteSpace(NormalizeText(section.Heading)))

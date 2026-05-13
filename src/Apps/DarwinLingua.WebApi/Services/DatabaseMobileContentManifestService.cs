@@ -66,6 +66,17 @@ public sealed class DatabaseMobileContentManifestService(
     }
 
     /// <inheritdoc />
+    public MobileContentManifestResponse GetModuleManifest(string? clientProductKey, string moduleKey)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(moduleKey);
+
+        ClientProductEntity product = ResolveProduct(clientProductKey);
+        string normalizedSliceKey = $"module:{moduleKey.Trim().ToLowerInvariant()}";
+        List<PublishedPackageEntity> packages = ResolvePackages(product.Key, areaKey: "catalog", sliceKey: normalizedSliceKey);
+        return BuildManifest(product, "catalog", normalizedSliceKey, packages);
+    }
+
+    /// <inheritdoc />
     public PublishedContentPackageResponse GetPackage(string? clientProductKey, string packageId)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(packageId);

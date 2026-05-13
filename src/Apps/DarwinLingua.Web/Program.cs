@@ -1,11 +1,4 @@
-using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Identity;
-using DarwinLingua.Infrastructure.Persistence.Abstractions;
-using DarwinLingua.Learning.Application.Abstractions;
-using DarwinLingua.Learning.Application.DependencyInjection;
-using DarwinLingua.Learning.Infrastructure.DependencyInjection;
-using DarwinLingua.Localization.Application.DependencyInjection;
-using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Localization;
@@ -151,28 +144,13 @@ builder.Services.AddWebCatalogApiClient(builder.Configuration);
 string? webIdentityConnectionString = builder.Configuration.GetConnectionString("IdentityAdmin")
     ?? builder.Configuration.GetConnectionString("Identity")
     ?? builder.Configuration.GetConnectionString("WebIdentity");
-string appDataDirectory = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
-string webLearningDatabasePath = Path.Combine(appDataDirectory, "darwin-lingua.web.db");
-
-if (!string.IsNullOrWhiteSpace(webIdentityConnectionString))
+if (string.IsNullOrWhiteSpace(webIdentityConnectionString))
 {
-    builder.Services.AddDbContext<WebIdentityDbContext>(options =>
-        options.UseNpgsql(webIdentityConnectionString));
-}
-else
-{
-    string identityDatabasePath = Path.Combine(appDataDirectory, "darwin-lingua.web-identity.db");
-
-    builder.Services.AddDbContext<WebIdentityDbContext>(options =>
-        options.UseSqlite($"Data Source={identityDatabasePath}"));
+    throw new InvalidOperationException("A PostgreSQL Identity or WebIdentity connection string must be configured for DarwinLingua.Web.");
 }
 
-builder.Services
-    .AddDarwinLinguaInfrastructure(options => options.DatabasePath = webLearningDatabasePath)
-    .AddLearningApplication()
-    .AddLearningInfrastructure()
-    .AddLocalizationApplication()
-    .AddLocalizationInfrastructure();
+builder.Services.AddDbContext<WebIdentityDbContext>(options =>
+    options.UseNpgsql(webIdentityConnectionString));
 
 builder.Services
     .AddDefaultIdentity<DarwinLinguaIdentityUser>(options =>
@@ -206,11 +184,9 @@ var app = builder.Build();
 
 await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 {
-    IDatabaseInitializer databaseInitializer = bootstrapScope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     IDarwinLinguaIdentityBootstrapper identityBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
     IWebUserStateDatabaseBootstrapper webUserStateBootstrapper = bootstrapScope.ServiceProvider.GetRequiredService<IWebUserStateDatabaseBootstrapper>();
 
-    await databaseInitializer.InitializeAsync(CancellationToken.None);
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
     await webUserStateBootstrapper.InitializeAsync(CancellationToken.None);
 }

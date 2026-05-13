@@ -15,8 +15,8 @@ public sealed class ConfiguredMobileContentManifestServiceTests
         var manifest = service.GetGlobalManifest(null);
 
         Assert.Equal("darwin-deutsch", manifest.ClientProductKey);
-        Assert.Equal(2, manifest.TotalPackageCount);
-        Assert.Equal(53, manifest.TotalWordCount);
+        Assert.Equal(3, manifest.TotalPackageCount);
+        Assert.Equal(58, manifest.TotalWordCount);
     }
 
     [Fact]
@@ -30,6 +30,7 @@ public sealed class ConfiguredMobileContentManifestServiceTests
         Assert.Equal("catalog", areas[0].ContentAreaKey);
         Assert.Contains("full", areas[0].SliceKeys);
         Assert.Contains("cefr:a1", areas[0].SliceKeys);
+        Assert.Contains("module:grammar", areas[0].SliceKeys);
     }
 
     [Fact]
@@ -42,6 +43,19 @@ public sealed class ConfiguredMobileContentManifestServiceTests
         Assert.Single(manifest.Packages);
         Assert.Equal("cefr:a1", manifest.SliceKey);
         Assert.Equal("darwin-deutsch-catalog-a1-v1", manifest.Packages[0].PackageId);
+    }
+
+    [Fact]
+    public void GetModuleManifest_ReturnsOnlyRequestedModuleSlice()
+    {
+        ConfiguredMobileContentManifestService service = CreateService();
+
+        var manifest = service.GetModuleManifest("darwin-deutsch", "Grammar");
+
+        Assert.Single(manifest.Packages);
+        Assert.Equal("catalog", manifest.ContentAreaKey);
+        Assert.Equal("module:grammar", manifest.SliceKey);
+        Assert.Equal("darwin-deutsch-catalog-module-grammar-v1", manifest.Packages[0].PackageId);
     }
 
     [Fact]
@@ -100,6 +114,23 @@ public sealed class ConfiguredMobileContentManifestServiceTests
             WordCount = 12,
             CreatedAtUtc = new DateTimeOffset(2026, 03, 30, 10, 0, 0, TimeSpan.Zero),
             RelativeDownloadPath = "/downloads/packages/darwin-deutsch-catalog-a1-v1.json",
+        });
+
+        options.Packages.Add(new PublishedPackageOptions
+        {
+            PackageId = "darwin-deutsch-catalog-module-grammar-v1",
+            ClientProductKey = "darwin-deutsch",
+            ContentAreaKey = "catalog",
+            SliceKey = "module:grammar",
+            PackageType = "catalog-module",
+            Version = "2026.03.30.1",
+            SchemaVersion = 1,
+            MinimumAppSchemaVersion = 1,
+            Checksum = "checksum-grammar",
+            EntryCount = 5,
+            WordCount = 5,
+            CreatedAtUtc = new DateTimeOffset(2026, 03, 30, 10, 0, 0, TimeSpan.Zero),
+            RelativeDownloadPath = "/downloads/packages/darwin-deutsch-catalog-module-grammar-v1.json",
         });
 
         return new ConfiguredMobileContentManifestService(Options.Create(options));

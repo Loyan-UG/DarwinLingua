@@ -483,7 +483,111 @@ public sealed class CatalogPackagePublisher(
                 []));
         }
 
+        AddModuleDefinitions(
+            definitions,
+            clientProductKey,
+            versionToken,
+            words,
+            dialogues,
+            conversationStarterPacks,
+            eventPreparationPacks,
+            talkTopics,
+            grammarTopics,
+            expressionEntries,
+            exercises,
+            exerciseSets,
+            coursePaths,
+            courseModules,
+            courseLessons,
+            writingTemplates,
+            culturalNotes,
+            examProfiles,
+            examPrepUnits);
+
         return definitions;
+    }
+
+    private static void AddModuleDefinitions(
+        List<PackagePublicationDefinition> definitions,
+        string clientProductKey,
+        string versionToken,
+        IReadOnlyList<WordEntry> words,
+        IReadOnlyList<DialogueLesson> dialogues,
+        IReadOnlyList<ConversationStarterPack> conversationStarterPacks,
+        IReadOnlyList<EventPreparationPack> eventPreparationPacks,
+        IReadOnlyList<TalkTopic> talkTopics,
+        IReadOnlyList<GrammarTopic> grammarTopics,
+        IReadOnlyList<ExpressionEntry> expressionEntries,
+        IReadOnlyList<Exercise> exercises,
+        IReadOnlyList<ExerciseSet> exerciseSets,
+        IReadOnlyList<CoursePath> coursePaths,
+        IReadOnlyList<CourseModule> courseModules,
+        IReadOnlyList<CourseLesson> courseLessons,
+        IReadOnlyList<WritingTemplate> writingTemplates,
+        IReadOnlyList<CulturalNote> culturalNotes,
+        IReadOnlyList<ExamProfile> examProfiles,
+        IReadOnlyList<ExamPrepUnit> examPrepUnits)
+    {
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "words", "Words", words: words);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "dialogues", "Dialogues", dialogues: dialogues);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "talk-topics", "Talk Topics", talkTopics: talkTopics);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "grammar", "Grammar Guide", grammarTopics: grammarTopics);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "expressions", "Everyday Expressions", expressionEntries: expressionEntries);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "exercises", "Exercises", exercises: exercises, exerciseSets: exerciseSets);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "courses", "Courses", coursePaths: coursePaths, courseModules: courseModules, courseLessons: courseLessons);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "exam-prep", "Exam Preparation", examProfiles: examProfiles, examPrepUnits: examPrepUnits);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "writing-templates", "Writing Templates", writingTemplates: writingTemplates);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "cultural-notes", "Cultural Notes", culturalNotes: culturalNotes);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "events", "Events", eventPreparationPacks: eventPreparationPacks);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "organizers", "Organizers");
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "conversation-starters", "Conversation Starters", conversationStarterPacks: conversationStarterPacks);
+    }
+
+    private static void AddModuleDefinition(
+        List<PackagePublicationDefinition> definitions,
+        string clientProductKey,
+        string versionToken,
+        string moduleKey,
+        string moduleName,
+        IReadOnlyList<WordEntry>? words = null,
+        IReadOnlyList<DialogueLesson>? dialogues = null,
+        IReadOnlyList<ConversationStarterPack>? conversationStarterPacks = null,
+        IReadOnlyList<EventPreparationPack>? eventPreparationPacks = null,
+        IReadOnlyList<TalkTopic>? talkTopics = null,
+        IReadOnlyList<GrammarTopic>? grammarTopics = null,
+        IReadOnlyList<ExpressionEntry>? expressionEntries = null,
+        IReadOnlyList<Exercise>? exercises = null,
+        IReadOnlyList<ExerciseSet>? exerciseSets = null,
+        IReadOnlyList<CoursePath>? coursePaths = null,
+        IReadOnlyList<CourseModule>? courseModules = null,
+        IReadOnlyList<CourseLesson>? courseLessons = null,
+        IReadOnlyList<WritingTemplate>? writingTemplates = null,
+        IReadOnlyList<CulturalNote>? culturalNotes = null,
+        IReadOnlyList<ExamProfile>? examProfiles = null,
+        IReadOnlyList<ExamPrepUnit>? examPrepUnits = null)
+    {
+        definitions.Add(new PackagePublicationDefinition(
+            $"{clientProductKey}-catalog-module-{moduleKey}-{versionToken}",
+            $"Darwin Lingua {moduleName}",
+            "catalog-module",
+            "catalog",
+            $"module:{moduleKey}",
+            words ?? [],
+            dialogues ?? [],
+            conversationStarterPacks ?? [],
+            eventPreparationPacks ?? [],
+            talkTopics ?? [],
+            grammarTopics ?? [],
+            expressionEntries ?? [],
+            exercises ?? [],
+            exerciseSets ?? [],
+            coursePaths ?? [],
+            courseModules ?? [],
+            courseLessons ?? [],
+            writingTemplates ?? [],
+            culturalNotes ?? [],
+            examProfiles ?? [],
+            examPrepUnits ?? []));
     }
 
     private static ExportedContentPackage CreatePackagePayload(

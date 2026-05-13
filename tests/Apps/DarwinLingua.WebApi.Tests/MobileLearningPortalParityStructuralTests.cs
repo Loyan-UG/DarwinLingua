@@ -33,6 +33,42 @@ public sealed class MobileLearningPortalParityStructuralTests
     }
 
     [Fact]
+    public void MobileRemoteUpdate_SupportsModuleScopedPackageApply()
+    {
+        string source = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinDeutsch.Maui", "Services", "Updates", "RemoteContentUpdateService.cs"));
+
+        Assert.Contains("ReplaceMode.Module", source);
+        Assert.Contains("ForModule", source);
+        Assert.Contains("/api/mobile/content/areas/catalog/modules/", source);
+        Assert.Contains("ReplaceModuleContentAsync", source);
+    }
+
+    [Fact]
+    public void MauiStartup_DoesNotApplyPackagedSeedAutomatically()
+    {
+        string startupSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinDeutsch.Maui", "Services", "Startup", "AppStartupInitializationService.cs"));
+        string deferredSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinDeutsch.Maui", "Services", "Startup", "DeferredStartupMaintenanceService.cs"));
+
+        Assert.DoesNotContain("EnsureSeedDatabaseAsync", startupSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("ApplySeedUpdateAsync", deferredSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("ISeedDatabaseProvisioningService", deferredSource, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void WebStartup_DoesNotRegisterLocalSqliteLearningDatabase()
+    {
+        string programSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Program.cs"));
+        string projectSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "DarwinLingua.Web.csproj"));
+        string bootstrapperSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Services", "WebUserStateDatabaseBootstrapper.cs"));
+
+        Assert.DoesNotContain("AddDarwinLinguaInfrastructure", programSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("IDatabaseInitializer", programSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("UseSqlite", programSource, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Microsoft.EntityFrameworkCore.Sqlite", projectSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("Sqlite", bootstrapperSource, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
     public void MauiLearningPortal_RegistersMobileRoutesAndLocalizedNavigation()
     {
         string shellSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinDeutsch.Maui", "AppShell.xaml.cs"));

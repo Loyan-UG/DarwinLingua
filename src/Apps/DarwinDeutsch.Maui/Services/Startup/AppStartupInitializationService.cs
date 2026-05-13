@@ -14,7 +14,6 @@ internal sealed class AppStartupInitializationService : IAppStartupInitializatio
 {
     private readonly ILogger<AppStartupInitializationService> _logger;
     private readonly IPerformanceTelemetryService _performanceTelemetryService;
-    private readonly ISeedDatabaseProvisioningService _seedDatabaseProvisioningService;
     private readonly IDatabaseInitializer _databaseInitializer;
     private readonly IAppLocalizationService _appLocalizationService;
     private readonly SemaphoreSlim _gate = new(1, 1);
@@ -26,19 +25,16 @@ internal sealed class AppStartupInitializationService : IAppStartupInitializatio
     public AppStartupInitializationService(
         ILogger<AppStartupInitializationService> logger,
         IPerformanceTelemetryService performanceTelemetryService,
-        ISeedDatabaseProvisioningService seedDatabaseProvisioningService,
         IDatabaseInitializer databaseInitializer,
         IAppLocalizationService appLocalizationService)
     {
         ArgumentNullException.ThrowIfNull(logger);
         ArgumentNullException.ThrowIfNull(performanceTelemetryService);
-        ArgumentNullException.ThrowIfNull(seedDatabaseProvisioningService);
         ArgumentNullException.ThrowIfNull(databaseInitializer);
         ArgumentNullException.ThrowIfNull(appLocalizationService);
 
         _logger = logger;
         _performanceTelemetryService = performanceTelemetryService;
-        _seedDatabaseProvisioningService = seedDatabaseProvisioningService;
         _databaseInitializer = databaseInitializer;
         _appLocalizationService = appLocalizationService;
     }
@@ -76,12 +72,6 @@ internal sealed class AppStartupInitializationService : IAppStartupInitializatio
         try
         {
             Stopwatch stepStopwatch = Stopwatch.StartNew();
-            await _seedDatabaseProvisioningService
-                .EnsureSeedDatabaseAsync(databasePath, cancellationToken)
-                .ConfigureAwait(false);
-            _logger.LogInformation("Startup ensured packaged seed database in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
-
-            stepStopwatch.Restart();
             await _databaseInitializer.InitializeAsync(cancellationToken).ConfigureAwait(false);
             _logger.LogInformation("Startup initialized local database in {ElapsedMs} ms.", stepStopwatch.ElapsedMilliseconds);
 

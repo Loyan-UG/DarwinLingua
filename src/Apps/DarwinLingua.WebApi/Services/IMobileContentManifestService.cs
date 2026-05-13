@@ -28,6 +28,11 @@ public interface IMobileContentManifestService
     MobileContentManifestResponse GetCefrManifest(string? clientProductKey, string level);
 
     /// <summary>
+    /// Returns one module-scoped manifest for the catalog area.
+    /// </summary>
+    MobileContentManifestResponse GetModuleManifest(string? clientProductKey, string moduleKey);
+
+    /// <summary>
     /// Returns one package by identifier.
     /// </summary>
     PublishedContentPackageResponse GetPackage(string? clientProductKey, string packageId);

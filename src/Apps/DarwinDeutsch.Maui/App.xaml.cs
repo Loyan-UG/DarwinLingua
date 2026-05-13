@@ -14,6 +14,7 @@ public partial class App : Application
 {
     private readonly IServiceProvider _serviceProvider;
     private readonly IAppOnboardingService _appOnboardingService;
+    private readonly IFirstRunContentSelectionService _firstRunContentSelectionService;
     private AppShell? _appShell;
     private StartupPage? _startupPage;
     private WelcomePage? _welcomePage;
@@ -25,15 +26,18 @@ public partial class App : Application
     /// <param name="appOnboardingService">The service that tracks onboarding completion.</param>
     public App(
         IServiceProvider serviceProvider,
-        IAppOnboardingService appOnboardingService)
+        IAppOnboardingService appOnboardingService,
+        IFirstRunContentSelectionService firstRunContentSelectionService)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
         ArgumentNullException.ThrowIfNull(appOnboardingService);
+        ArgumentNullException.ThrowIfNull(firstRunContentSelectionService);
 
         InitializeComponent();
 
         _serviceProvider = serviceProvider;
         _appOnboardingService = appOnboardingService;
+        _firstRunContentSelectionService = firstRunContentSelectionService;
     }
 
     /// <summary>
@@ -49,12 +53,19 @@ public partial class App : Application
         return window;
     }
 
-    private void OnStartupCompleted(object? sender, EventArgs e)
+    private async void OnStartupCompleted(object? sender, EventArgs e)
     {
         Window? activeWindow = Windows.FirstOrDefault();
         if (activeWindow is null)
         {
             return;
+        }
+
+        if (activeWindow.Page is Page hostPage)
+        {
+            await _firstRunContentSelectionService
+                .EnsureCompletedAsync(hostPage, CancellationToken.None)
+                .ConfigureAwait(true);
         }
 
         activeWindow.Page = _appOnboardingService.ShouldShowWelcomeExperience()

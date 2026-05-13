@@ -92,6 +92,52 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
     }
 
     [Fact]
+    public async Task GetLatestModulePackage_ReturnsExistingPayloadAsync()
+    {
+        await using SqliteConnection connection = new("Data Source=:memory:");
+        await connection.OpenAsync();
+
+        DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
+            .UseSqlite(connection)
+            .Options;
+
+        string tempRoot = Path.Combine(Path.GetTempPath(), $"darwin-lingue-module-delivery-tests-{Guid.NewGuid():N}");
+        string packageDir = Path.Combine(tempRoot, "assets", "ServerContent", "PublishedPackages", "darwin-deutsch");
+        Directory.CreateDirectory(packageDir);
+        File.WriteAllText(Path.Combine(packageDir, "darwin-deutsch-catalog-module-grammar-v1.json"), "{}");
+
+        try
+        {
+            ServerContentOptions options = CreateOptions();
+            TestWebHostEnvironment environment = new()
+            {
+                ContentRootPath = tempRoot,
+            };
+
+            await using (ServerContentDbContext seedContext = new(dbOptions))
+            {
+                ServerContentDatabaseBootstrapper bootstrapper = new(seedContext, Options.Create(options));
+                await bootstrapper.InitializeAsync(CancellationToken.None);
+            }
+
+            await using (ServerContentDbContext queryContext = new(dbOptions))
+            {
+                DatabaseMobileContentPackageDeliveryService service = new(queryContext, Options.Create(options), environment);
+
+                var descriptor = service.GetLatestModulePackage("darwin-deutsch", "Grammar", clientSchemaVersion: 1);
+
+                Assert.Equal("darwin-deutsch-catalog-module-grammar-v1", descriptor.PackageId);
+                Assert.True(File.Exists(descriptor.FilePath));
+            }
+        }
+        finally
+        {
+            Directory.Delete(tempRoot, recursive: true);
+        }
+    }
+
+
+    [Fact]
     public async Task GetLatestFullPackage_ThrowsInvalidOperation_WhenClientProductKeyIsMissingAndMultipleProductsAreActiveAsync()
     {
         await using SqliteConnection connection = new("Data Source=:memory:");
@@ -199,6 +245,23 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
             WordCount = 12,
             CreatedAtUtc = new DateTimeOffset(2026, 03, 30, 10, 0, 0, TimeSpan.Zero),
             RelativeDownloadPath = "darwin-deutsch/darwin-deutsch-catalog-a1-v1.json",
+        });
+
+        options.Packages.Add(new PublishedPackageOptions
+        {
+            PackageId = "darwin-deutsch-catalog-module-grammar-v1",
+            ClientProductKey = "darwin-deutsch",
+            ContentAreaKey = "catalog",
+            SliceKey = "module:grammar",
+            PackageType = "catalog-module",
+            Version = "2026.03.30.1",
+            SchemaVersion = 1,
+            MinimumAppSchemaVersion = 1,
+            Checksum = "checksum-grammar",
+            EntryCount = 5,
+            WordCount = 5,
+            CreatedAtUtc = new DateTimeOffset(2026, 03, 30, 10, 0, 0, TimeSpan.Zero),
+            RelativeDownloadPath = "darwin-deutsch/darwin-deutsch-catalog-module-grammar-v1.json",
         });
 
         return options;

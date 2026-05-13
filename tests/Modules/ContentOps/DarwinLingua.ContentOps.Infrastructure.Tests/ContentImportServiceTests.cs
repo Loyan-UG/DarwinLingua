@@ -316,6 +316,8 @@ public sealed class ContentImportServiceTests
             section["sectionKey"] = "";
             section["localizedBlocks"]!["en"]![0]!["type"] = "unknown-block";
             section["localizedBlocks"]!["en"]![0]!["rows"] = new JsonArray();
+            JsonNode duplicateSectionPackage = JsonNode.Parse(package.ToJsonString())!;
+            duplicateSectionPackage["grammarTopics"]![0]!["sections"]![1]!["sectionKey"] = "what-they-are";
             await File.WriteAllTextAsync(invalidPackagePath, package.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
 
             serviceProvider = BuildServiceProvider(databasePath);
@@ -331,6 +333,26 @@ public sealed class ContentImportServiceTests
             Assert.Contains("sectionKey is required", issueText, StringComparison.Ordinal);
             Assert.Contains("unsupported block type 'unknown-block'", issueText, StringComparison.Ordinal);
             Assert.Contains("language 'zz' is not an active meaning language", issueText, StringComparison.Ordinal);
+
+            string duplicatePackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-grammar-rich-duplicate-section-{Guid.NewGuid():N}.json");
+            try
+            {
+                duplicateSectionPackage["packageId"] = "grammar-a1-pilot-duplicate-section-test";
+                await File.WriteAllTextAsync(duplicatePackagePath, duplicateSectionPackage.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+
+                ImportContentPackageResult duplicateResult = await contentImportService
+                    .ImportAsync(new ImportContentPackageRequest(duplicatePackagePath), CancellationToken.None);
+
+                Assert.False(duplicateResult.IsSuccess);
+                Assert.Contains("sectionKey 'what-they-are' is duplicated", string.Join(Environment.NewLine, duplicateResult.Issues.Select(issue => issue.Message)), StringComparison.Ordinal);
+            }
+            finally
+            {
+                if (File.Exists(duplicatePackagePath))
+                {
+                    File.Delete(duplicatePackagePath);
+                }
+            }
         }
         finally
         {

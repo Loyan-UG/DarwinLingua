@@ -33,8 +33,8 @@ public sealed class DatabaseMobileContentManifestServiceTests
         await using (ServerContentDbContext dbContext = new(dbOptions))
         {
             Assert.Equal(1, await dbContext.ClientProducts.CountAsync());
-            Assert.Equal(2, await dbContext.ContentStreams.CountAsync());
-            Assert.Equal(2, await dbContext.PublishedPackages.CountAsync());
+            Assert.Equal(3, await dbContext.ContentStreams.CountAsync());
+            Assert.Equal(3, await dbContext.PublishedPackages.CountAsync());
         }
     }
 
@@ -67,6 +67,38 @@ public sealed class DatabaseMobileContentManifestServiceTests
             Assert.Equal("darwin-deutsch-catalog-a1-v1", manifest.Packages[0].PackageId);
         }
     }
+
+    [Fact]
+    public async Task DatabaseService_ReturnsModuleScopedPackagesAsync()
+    {
+        await using SqliteConnection connection = new("Data Source=:memory:");
+        await connection.OpenAsync();
+
+        DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
+            .UseSqlite(connection)
+            .Options;
+
+        ServerContentOptions options = CreateOptions();
+
+        await using (ServerContentDbContext seedContext = new(dbOptions))
+        {
+            ServerContentDatabaseBootstrapper bootstrapper = new(seedContext, Options.Create(options));
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+        }
+
+        await using (ServerContentDbContext queryContext = new(dbOptions))
+        {
+            DatabaseMobileContentManifestService service = new(queryContext, Options.Create(options));
+
+            var manifest = service.GetModuleManifest("darwin-deutsch", "Grammar");
+
+            Assert.Single(manifest.Packages);
+            Assert.Equal("catalog", manifest.ContentAreaKey);
+            Assert.Equal("module:grammar", manifest.SliceKey);
+            Assert.Equal("darwin-deutsch-catalog-module-grammar-v1", manifest.Packages[0].PackageId);
+        }
+    }
+
 
     [Fact]
     public async Task DatabaseService_ExcludesDraftPackagesFromGlobalManifestAsync()
@@ -200,6 +232,23 @@ public sealed class DatabaseMobileContentManifestServiceTests
             WordCount = 12,
             CreatedAtUtc = new DateTimeOffset(2026, 03, 30, 10, 0, 0, TimeSpan.Zero),
             RelativeDownloadPath = "/downloads/packages/darwin-deutsch-catalog-a1-v1.json",
+        });
+
+        options.Packages.Add(new PublishedPackageOptions
+        {
+            PackageId = "darwin-deutsch-catalog-module-grammar-v1",
+            ClientProductKey = "darwin-deutsch",
+            ContentAreaKey = "catalog",
+            SliceKey = "module:grammar",
+            PackageType = "catalog-module",
+            Version = "2026.03.30.1",
+            SchemaVersion = 1,
+            MinimumAppSchemaVersion = 1,
+            Checksum = "checksum-grammar",
+            EntryCount = 5,
+            WordCount = 5,
+            CreatedAtUtc = new DateTimeOffset(2026, 03, 30, 10, 0, 0, TimeSpan.Zero),
+            RelativeDownloadPath = "/downloads/packages/darwin-deutsch-catalog-module-grammar-v1.json",
         });
 
         return options;

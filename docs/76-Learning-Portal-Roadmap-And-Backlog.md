@@ -762,6 +762,7 @@ The portal should track learner progress across content types without mixing use
 - [x] document grammar content contract in `77-Grammar-Content-Package-Contract.md`
 - [x] support rich localized grammar blocks, localized title/description, content revision diagnostics, image-slot references, and slug-based pilot upsert
 - [x] import and render the first reviewed A1 personal-pronouns pilot package
+- [x] generate, validate, and import `grammar-a1-c2-validation-batch-001.json` with 12 cross-level rich Grammar topics
 - [ ] add broader validation coverage for every rich block type after more reviewed pilot packages are available
 - [ ] keep mobile parity tracked after Web sign-off
 
@@ -890,7 +891,13 @@ The portal should track learner progress across content types without mixing use
 - [x] define mobile navigation update after Web sign-off
   - Progress: MAUI shell now aligns the primary learner navigation around Learn, Practice, Speak, Prepare, and Resources.
 - [x] update mobile content package export for grammar, expressions, exercises, courses, exam prep, writing templates, and cultural notes
-  - Progress: full/all mobile packages carry Phase 7 content arrays and linked references; CEFR slices remain constrained until per-module slice validation is expanded.
+  - Progress: full/all mobile packages carry Phase 7 content arrays and linked references; WebApi also publishes `catalog-module` slices for selective module downloads.
+- [x] remove Web local SQLite learning/content startup path
+  - Progress: DarwinLingua.Web no longer registers the shared SQLite infrastructure initializer or local `darwin-lingua.web.db` path; Web user state uses PostgreSQL through `WebIdentityDbContext`.
+- [x] add first-run mobile module selection
+  - Progress: MAUI initializes an empty local schema, lets the learner choose content modules from WebApi package manifests, and keeps packaged seed as a legacy fallback outside the default startup path.
+- [x] add module-scoped mobile package apply behavior
+  - Progress: `ReplaceMode.Module` refreshes selected module tables while preserving unrelated modules and user state.
 - [x] refactor MAUI list/detail pages to match Web content model
   - Progress: mobile has dynamic list/detail surfaces backed by local Catalog query services for the implemented Learning Portal modules, plus unified learning search.
 - [ ] add mobile exercise runner where appropriate

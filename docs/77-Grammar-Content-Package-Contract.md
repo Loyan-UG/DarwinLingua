@@ -120,6 +120,7 @@ Missing image assets must not fail import or break rendering. The imported conte
 - `grammarCategory` must be one of the controlled categories.
 - `sections` must contain at least one item.
 - Rich sections require `sectionKey`.
+- A topic cannot contain duplicate rich `sectionKey` values; localized section identity is `topic slug + sectionKey + languageCode`.
 - `localizedBlocks` language codes must be active meaning languages.
 - Rich block JSON must match the supported block contract.
 - Examples require `germanText`.

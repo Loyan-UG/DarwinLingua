@@ -38,6 +38,7 @@ Before starting, confirm:
   - catalog full area
   - one CEFR slice such as `A1`
 - for Phase 7 parity builds, the full database or catalog full package includes Learning Portal content arrays for implemented modules
+- for selective first-run/module validation, at least one `catalog-module` package exists, such as `module:grammar` or `module:words`
 - the mobile build is configured to use the intended Web API base URL
 - the device already contains some local user state:
   - at least one favorite
@@ -54,6 +55,7 @@ Record the currently published package IDs:
 - B2 package:
 - C1 package:
 - C2 package:
+- Module package:
 
 ---
 
@@ -72,6 +74,8 @@ Mark each row:
 | Setup | Scope/checksum/schema diagnostics are visible for full update |  |  |
 | Setup | Scope/checksum/schema diagnostics are visible for catalog area update |  |  |
 | Setup | Scope/checksum/schema diagnostics are visible for CEFR update actions |  |  |
+| Setup | First-run module selection can be completed or skipped safely on a clean install |  |  |
+| Setup | Settings exposes a module update action when the Web API is reachable |  |  |
 
 ---
 
@@ -163,7 +167,7 @@ Apply a single CEFR update, such as `A1`, when that slice has a newer published 
 - the selected level shows updated content
 - favorites/known/difficult/practice state remains intact
 - diagnostics for that CEFR slice move to the new package/version/checksum
-- Phase 7 module content is not expected to change from CEFR slice updates until per-module slice validation is implemented
+- Phase 7 module content is not expected to change from CEFR slice updates; module content uses module-scoped updates
 
 ### Result
 
@@ -177,6 +181,36 @@ Repeat as needed:
 - `B2` result:
 - `C1` result:
 - `C2` result:
+
+---
+
+## Module Slice Update
+
+### Scenario
+
+Apply a single module update, such as `grammar`, when that module has a newer published `catalog-module` package.
+
+### Steps
+
+1. Open `Settings`.
+2. Tap the module update action.
+3. Select one module.
+4. Confirm the update.
+5. Open the corresponding Learning Portal list/detail page.
+6. Open an unrelated module page that was previously imported.
+
+### Expected Result
+
+- the selected module refreshes successfully
+- unrelated module content remains available
+- favorites/known/difficult/practice state remains intact
+- missing linked content renders as a safe placeholder or disabled link
+- diagnostics for the selected module package are recorded where package receipts are visible
+
+### Result
+
+- Result:
+- Notes:
 
 ---
 

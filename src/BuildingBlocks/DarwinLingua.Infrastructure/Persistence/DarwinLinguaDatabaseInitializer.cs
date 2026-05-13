@@ -16,6 +16,7 @@ namespace DarwinLingua.Infrastructure.Persistence;
 internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
 {
     private const int DefaultBusyTimeoutSeconds = 5;
+    private static readonly TimeSpan StaleSqliteMigrationLockAge = TimeSpan.FromMinutes(30);
     private readonly IDbContextFactory<DarwinLinguaDbContext> _dbContextFactory;
     private readonly IReadOnlyCollection<IDatabaseSeeder> _databaseSeeders;
     private readonly SqliteDatabaseOptions? _sqliteDatabaseOptions;
@@ -96,7 +97,60 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
 
         await BaselineLegacyEnsureCreatedDatabaseAsync(dbContext, availableMigrations, cancellationToken)
             .ConfigureAwait(false);
+        await ClearStaleSqliteMigrationLockAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await dbContext.Database.MigrateAsync(cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task ClearStaleSqliteMigrationLockAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        if (!dbContext.Database.IsSqlite() ||
+            !await TableExistsAsync(dbContext, "__EFMigrationsLock", cancellationToken).ConfigureAwait(false))
+        {
+            return;
+        }
+
+        DbConnection connection = dbContext.Database.GetDbConnection();
+        bool shouldCloseConnection = connection.State != System.Data.ConnectionState.Open;
+
+        if (shouldCloseConnection)
+        {
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        try
+        {
+            await using DbCommand selectCommand = connection.CreateCommand();
+            selectCommand.CommandText = """
+                SELECT "Timestamp"
+                FROM "__EFMigrationsLock"
+                WHERE "Id" = 1
+                LIMIT 1;
+                """;
+
+            object? timestampValue = await selectCommand.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+            if (timestampValue is null ||
+                !DateTimeOffset.TryParse(Convert.ToString(timestampValue), out DateTimeOffset lockTimestamp) ||
+                DateTimeOffset.UtcNow - lockTimestamp.ToUniversalTime() < StaleSqliteMigrationLockAge)
+            {
+                return;
+            }
+
+            await using DbCommand deleteCommand = connection.CreateCommand();
+            deleteCommand.CommandText = """
+                DELETE FROM "__EFMigrationsLock"
+                WHERE "Id" = 1;
+                """;
+            await deleteCommand.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            if (shouldCloseConnection)
+            {
+                await connection.CloseAsync().ConfigureAwait(false);
+            }
+        }
     }
 
     /// <summary>

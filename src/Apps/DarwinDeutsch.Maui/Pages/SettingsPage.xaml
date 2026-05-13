@@ -113,6 +113,12 @@
                                               Clicked="OnApplyCatalogAreaUpdateButtonClicked" />
                             <controls:DetailSectionView x:Name="CatalogAreaUpdateSectionView" />
 
+                            <Label x:Name="ModuleUpdatesSectionLabel"
+                                   Style="{DynamicResource Caption}" />
+                            <buttons:SfButton x:Name="ApplyModuleUpdateButton"
+                                              Style="{StaticResource SyncfusionPrimaryButtonStyle}"
+                                              Clicked="OnApplyModuleUpdateButtonClicked" />
+
                             <Label x:Name="CefrLevelUpdatesSectionLabel"
                                    Style="{DynamicResource Caption}" />
                             <chips:SfChipGroup x:Name="CefrLevelChipGroup"

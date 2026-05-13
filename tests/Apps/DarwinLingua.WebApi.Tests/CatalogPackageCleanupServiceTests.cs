@@ -62,8 +62,8 @@ public sealed class CatalogPackageCleanupServiceTests
             await using (AsyncServiceScope verificationScope = serviceProvider.CreateAsyncScope())
             {
                 ServerContentDbContext dbContext = verificationScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
-                Assert.Equal(8, await dbContext.PublishedPackages.CountAsync(package => package.PublicationBatchId == supersededBatchId));
-                Assert.Equal(8, await dbContext.PublishedPackages.CountAsync(package => package.PublicationBatchId == supersededBatchId && package.PublicationStatus == PackagePublicationStatus.Superseded));
+                Assert.Equal(21, await dbContext.PublishedPackages.CountAsync(package => package.PublicationBatchId == supersededBatchId));
+                Assert.Equal(21, await dbContext.PublishedPackages.CountAsync(package => package.PublicationBatchId == supersededBatchId && package.PublicationStatus == PackagePublicationStatus.Superseded));
             }
 
             string samplePayloadPath = Path.Combine(packageRootPath, "darwin-deutsch", $"{firstImport.StagedPackageIds[0]}.json");
@@ -75,14 +75,14 @@ public sealed class CatalogPackageCleanupServiceTests
                 CancellationToken.None);
 
             Assert.True(deleteResponse.IsSuccess);
-            Assert.Equal(8, deleteResponse.DeletedPackageCount);
+            Assert.Equal(21, deleteResponse.DeletedPackageCount);
             Assert.False(File.Exists(samplePayloadPath));
 
             await using (AsyncServiceScope verificationScope = serviceProvider.CreateAsyncScope())
             {
                 ServerContentDbContext dbContext = verificationScope.ServiceProvider.GetRequiredService<ServerContentDbContext>();
                 Assert.Equal(0, await dbContext.PublishedPackages.CountAsync(package => package.PublicationBatchId == supersededBatchId));
-                Assert.Equal(8, await dbContext.PublishedPackages.CountAsync(package => package.PublicationBatchId == secondBatch.PublicationBatchId && package.PublicationStatus == PackagePublicationStatus.Published));
+                Assert.Equal(21, await dbContext.PublishedPackages.CountAsync(package => package.PublicationBatchId == secondBatch.PublicationBatchId && package.PublicationStatus == PackagePublicationStatus.Published));
             }
         }
         finally

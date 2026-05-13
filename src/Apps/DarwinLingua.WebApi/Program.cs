@@ -1617,6 +1617,11 @@ app.MapGet(
         ResolveQueryRequest(() => manifestService.GetCefrManifest(clientProductKey, level)));
 
 app.MapGet(
+    "/api/mobile/content/areas/catalog/modules/{moduleKey}/manifest",
+    (string moduleKey, string? clientProductKey, IMobileContentManifestService manifestService) =>
+        ResolveQueryRequest(() => manifestService.GetModuleManifest(clientProductKey, moduleKey)));
+
+app.MapGet(
     "/api/mobile/content/packages/{packageId}",
     (string packageId, string? clientProductKey, IMobileContentManifestService manifestService) =>
         ResolveQueryRequest(() => manifestService.GetPackage(clientProductKey, packageId)));
@@ -1734,6 +1739,11 @@ app.MapGet(
     "/api/mobile/content/areas/catalog/cefr/{level}/download",
     (string level, string? clientProductKey, int? clientSchemaVersion, IMobileContentPackageDeliveryService deliveryService) =>
         ResolvePackageDownload(() => deliveryService.GetLatestCefrPackage(clientProductKey, level, clientSchemaVersion)));
+
+app.MapGet(
+    "/api/mobile/content/areas/catalog/modules/{moduleKey}/download",
+    (string moduleKey, string? clientProductKey, int? clientSchemaVersion, IMobileContentPackageDeliveryService deliveryService) =>
+        ResolvePackageDownload(() => deliveryService.GetLatestModulePackage(clientProductKey, moduleKey, clientSchemaVersion)));
 
 app.MapGet(
     "/health",
