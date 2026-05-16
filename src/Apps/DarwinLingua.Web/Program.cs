@@ -4,11 +4,13 @@ using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Localization;
 using Microsoft.AspNetCore.ResponseCompression;
 using DarwinLingua.Web.Services;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using System.Globalization;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -100,6 +102,14 @@ builder.Services.Configure<EmailChangeTokenProviderOptions>(options =>
 {
     int minutes = builder.Configuration.GetValue("TransactionalEmail:EmailChangeTokenMinutes", 60);
     options.TokenLifespan = TimeSpan.FromMinutes(minutes);
+});
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto |
+        ForwardedHeaders.XForwardedHost;
+    options.KnownProxies.Add(IPAddress.Parse("192.168.178.22"));
 });
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
@@ -197,6 +207,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 app.UseResponseCompression();
 app.Use(async (context, next) =>

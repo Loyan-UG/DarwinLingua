@@ -134,7 +134,7 @@ public static class MauiProgram
 
     private static string GetDefaultRemoteContentBaseUrl()
     {
-        return "https://gently-purifier-amnesty.ngrok-free.dev";
+        return "https://linguaapi.vafadar.pro";
     }
 
     private static RemoteContentUpdateOptions CreateRemoteContentUpdateOptions()
@@ -142,9 +142,9 @@ public static class MauiProgram
         return new RemoteContentUpdateOptions
         {
             BaseUrl = GetDefaultRemoteContentBaseUrl(),
-            IgnoreTlsCertificateErrors = true,
-            BrowserWarningBypassHeaderName = "ngrok-skip-browser-warning",
-            BrowserWarningBypassHeaderValue = "1",
+            IgnoreTlsCertificateErrors = false,
+            BrowserWarningBypassHeaderName = string.Empty,
+            BrowserWarningBypassHeaderValue = string.Empty,
             ClientProductKey = "darwin-deutsch",
             ClientSchemaVersion = 1,
             StatusRequestTimeoutSeconds = 1,

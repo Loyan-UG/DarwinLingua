@@ -20,10 +20,12 @@ using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
 using DarwinLingua.WebApi.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Net;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -49,6 +51,14 @@ builder.Services
     .ValidateOnStart();
 builder.Services.Configure<DarwinLinguaIdentityBootstrapOptions>(builder.Configuration.GetSection("IdentityBootstrap"));
 builder.Services.Configure<DarwinLinguaEntitlementOptions>(builder.Configuration.GetSection("Entitlements"));
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto |
+        ForwardedHeaders.XForwardedHost;
+    options.KnownProxies.Add(IPAddress.Parse("192.168.178.22"));
+});
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaIdentityBootstrapOptions>, DarwinLinguaIdentityBootstrapOptionsPostConfigure>();
 builder.Services.AddSingleton<Microsoft.Extensions.Options.IPostConfigureOptions<DarwinLinguaEntitlementOptions>, DarwinLinguaEntitlementOptionsPostConfigure>();
 
@@ -181,6 +191,7 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
     await identityBootstrapper.InitializeAsync(CancellationToken.None);
 }
 
+app.UseForwardedHeaders();
 app.UseAuthentication();
 app.Use(EnforceAdminApiAccessAsync);
 app.UseAuthorization();
