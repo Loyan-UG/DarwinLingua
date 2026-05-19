@@ -1,0 +1,818 @@
+{
+  "schema": "darwin-lingua-grammar-content-v2-proposed",
+  "packageVersion": "1.0",
+  "packageId": "grammar-a1-pilot-personal-pronouns-v1",
+  "packageName": "Grammar A1 Pilot - Personal Pronouns",
+  "source": "ChatGPT-authored pilot content",
+  "targetLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "upsertMode": "by-slug",
+  "grammarTopics": [
+    {
+      "slug": "a1-personal-pronouns-ich-du-er-sie-es",
+      "contentRevision": 1,
+      "title": "Personal pronouns: ich, du, er, sie, es",
+      "titleLocalized": {
+        "en": "Personal pronouns: ich, du, er, sie, es",
+        "fa": "ضمیرهای شخصی: ich, du, er, sie, es",
+        "ar": "الضمائر الشخصية: ich, du, er, sie, es",
+        "tr": "Kişi zamirleri: ich, du, er, sie, es",
+        "ru": "Личные местоимения: ich, du, er, sie, es",
+        "ckb": "جێناوی کەسی: ich, du, er, sie, es",
+        "kmr": "Cînavên kesî: ich, du, er, sie, es",
+        "pl": "Zaimki osobowe: ich, du, er, sie, es",
+        "ro": "Pronumele personale: ich, du, er, sie, es",
+        "sq": "Përemrat vetorë: ich, du, er, sie, es"
+      },
+      "shortDescriptionLocalized": {
+        "en": "Learn the basic German subject pronouns and how they connect to simple present-tense verbs.",
+        "fa": "ضمیرهای اصلی فاعلی آلمانی را یاد بگیرید و ببینید چطور با فعل‌های ساده زمان حال می‌آیند.",
+        "ar": "تعلّم الضمائر الألمانية الأساسية في موقع الفاعل وكيف ترتبط بالأفعال البسيطة في المضارع.",
+        "tr": "Almancadaki temel özne zamirlerini ve bunların basit şimdiki zaman fiilleriyle nasıl kullanıldığını öğrenin.",
+        "ru": "Выучите основные немецкие местоимения-подлежащие и их связь с простыми глаголами в настоящем времени.",
+        "ckb": "جێناوە سەرەکییەکانی فاعلی بە ئەڵمانی فێربە و ببینە چۆن لەگەڵ کردارە سادەکانی ئێستا دێن.",
+        "kmr": "Cînavên bingehîn ên bikerê bi almanî fêr bibin û bibînin ew çawa bi lêkerên sade yên dema niha re tên.",
+        "pl": "Poznaj podstawowe niemieckie zaimki podmiotowe i ich związek z prostymi czasownikami w czasie teraźniejszym.",
+        "ro": "Învață pronumele de bază cu rol de subiect în germană și cum se leagă de verbele simple la prezent.",
+        "sq": "Mëso përemrat bazë të kryefjalës në gjermanisht dhe si lidhen me foljet e thjeshta në kohën e tashme."
+      },
+      "cefrLevel": "A1",
+      "grammarCategory": "pronouns",
+      "topics": [
+        "daily-conversation"
+      ],
+      "isPublished": true,
+      "sortOrder": 10,
+      "sections": [
+        {
+          "sectionKey": "what-they-are",
+          "sortOrder": 10,
+          "localizedBlocks": {
+            "en": [
+              {
+                "type": "paragraph",
+                "text": "Personal pronouns are small words that replace a person or thing as the subject of a sentence. In German, the most important A1 pronouns are ich, du, er, sie, es, wir, ihr, and sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "At A1, first learn which pronoun matches which person. The verb ending will usually change with the pronoun."
+              }
+            ],
+            "fa": [
+              {
+                "type": "paragraph",
+                "text": "ضمیر شخصی کلمه‌ای کوتاه است که به جای شخص یا چیز در نقش فاعل جمله می‌آید. در آلمانی، مهم‌ترین ضمیرهای سطح A1 عبارت‌اند از: ich, du, er, sie, es, wir, ihr و sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "برای فارسی‌زبان‌ها نکته مهم این است که در آلمانی فعل معمولاً با ضمیر تغییر می‌کند؛ چیزی که در فارسی به این شکل دیده نمی‌شود."
+              }
+            ],
+            "ar": [
+              {
+                "type": "paragraph",
+                "text": "الضمير الشخصي كلمة قصيرة تأتي بدل الشخص أو الشيء في موقع الفاعل. أهم الضمائر في مستوى A1 هي: ich, du, er, sie, es, wir, ihr و sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "انتبه: في الألمانية يتغير غالبًا شكل الفعل حسب الضمير، لذلك لا تتعلم الضمير وحده بل مع الفعل."
+              }
+            ],
+            "tr": [
+              {
+                "type": "paragraph",
+                "text": "Kişi zamiri, cümlede özne olan kişi veya şeyin yerine geçen kısa bir kelimedir. A1 düzeyinde en önemli zamirler: ich, du, er, sie, es, wir, ihr ve sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "Türkçede özne çoğu zaman söylenmeyebilir; Almancada ise başlangıçta özneyi açıkça kullanmak öğrenmeyi kolaylaştırır."
+              }
+            ],
+            "ru": [
+              {
+                "type": "paragraph",
+                "text": "Личное местоимение заменяет человека или предмет в роли подлежащего. На уровне A1 важны: ich, du, er, sie, es, wir, ihr и sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "В немецком форма глагола часто зависит от местоимения, поэтому учите местоимение вместе с формой глагола."
+              }
+            ],
+            "ckb": [
+              {
+                "type": "paragraph",
+                "text": "جێناوی کەسی وشەیەکی کورته کە لە شوێنی کەس یان شتێک وەک فاعل دێت. لە ئاستی A1 گرنگترینەکان بریتین لە: ich, du, er, sie, es, wir, ihr و sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "لە ئەڵمانی کردار زۆرجار بە پێی جێناو دەگۆڕێت، بۆیە جێناو و کردار پێکەوە فێربە."
+              }
+            ],
+            "kmr": [
+              {
+                "type": "paragraph",
+                "text": "Cînavê kesî peyvek kurt e ku li şûna kesek an tiştek wek biker tê. Di asta A1 de yên herî girîng ev in: ich, du, er, sie, es, wir, ihr û sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "Di almanî de lêker gelek caran li gorî cînavê diguhere; ji ber vê yekê cînav û lêkerê bi hev re fêr bibin."
+              }
+            ],
+            "pl": [
+              {
+                "type": "paragraph",
+                "text": "Zaimek osobowy zastępuje osobę lub rzecz jako podmiot zdania. Na poziomie A1 najważniejsze są: ich, du, er, sie, es, wir, ihr oraz sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "W niemieckim forma czasownika zwykle zależy od zaimka, dlatego ucz się zaimków razem z końcówkami czasowników."
+              }
+            ],
+            "ro": [
+              {
+                "type": "paragraph",
+                "text": "Pronumele personal înlocuiește o persoană sau un lucru ca subiect al propoziției. La nivel A1 sunt importante: ich, du, er, sie, es, wir, ihr și sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "În germană, forma verbului se schimbă de obicei după pronume, deci învață pronumele împreună cu verbul."
+              }
+            ],
+            "sq": [
+              {
+                "type": "paragraph",
+                "text": "Përemri vetor zëvendëson një person ose një send si kryefjalë e fjalisë. Në nivelin A1 më të rëndësishmit janë: ich, du, er, sie, es, wir, ihr dhe sie/Sie."
+              },
+              {
+                "type": "callout",
+                "style": "tip",
+                "text": "Në gjermanisht forma e foljes zakonisht ndryshon sipas përemrit, prandaj mëso përemrin bashkë me foljen."
+              }
+            ]
+          }
+        },
+        {
+          "sectionKey": "core-table",
+          "sortOrder": 20,
+          "localizedBlocks": {
+            "en": [
+              {
+                "type": "table",
+                "caption": "Basic subject pronouns",
+                "columns": [
+                  "German",
+                  "Use"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "I"
+                  ],
+                  [
+                    "du",
+                    "you, informal singular"
+                  ],
+                  [
+                    "er",
+                    "he"
+                  ],
+                  [
+                    "sie",
+                    "she"
+                  ],
+                  [
+                    "es",
+                    "it"
+                  ],
+                  [
+                    "wir",
+                    "we"
+                  ],
+                  [
+                    "ihr",
+                    "you, informal plural"
+                  ],
+                  [
+                    "sie",
+                    "they"
+                  ],
+                  [
+                    "Sie",
+                    "you, formal"
+                  ]
+                ]
+              }
+            ],
+            "fa": [
+              {
+                "type": "table",
+                "caption": "ضمیرهای فاعلی پایه",
+                "columns": [
+                  "آلمانی",
+                  "کاربرد"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "من"
+                  ],
+                  [
+                    "du",
+                    "تو، غیررسمی"
+                  ],
+                  [
+                    "er",
+                    "او، مذکر"
+                  ],
+                  [
+                    "sie",
+                    "او، مؤنث"
+                  ],
+                  [
+                    "es",
+                    "آن / او برای خنثی"
+                  ],
+                  [
+                    "wir",
+                    "ما"
+                  ],
+                  [
+                    "ihr",
+                    "شما، جمع غیررسمی"
+                  ],
+                  [
+                    "sie",
+                    "آنها"
+                  ],
+                  [
+                    "Sie",
+                    "شما، رسمی"
+                  ]
+                ]
+              }
+            ],
+            "ar": [
+              {
+                "type": "table",
+                "caption": "الضمائر الأساسية في موقع الفاعل",
+                "columns": [
+                  "الألمانية",
+                  "الاستخدام"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "أنا"
+                  ],
+                  [
+                    "du",
+                    "أنت، مفرد غير رسمي"
+                  ],
+                  [
+                    "er",
+                    "هو"
+                  ],
+                  [
+                    "sie",
+                    "هي"
+                  ],
+                  [
+                    "es",
+                    "هو/هي لشيء محايد"
+                  ],
+                  [
+                    "wir",
+                    "نحن"
+                  ],
+                  [
+                    "ihr",
+                    "أنتم بصيغة غير رسمية"
+                  ],
+                  [
+                    "sie",
+                    "هم/هن"
+                  ],
+                  [
+                    "Sie",
+                    "أنت/أنتم بصيغة رسمية"
+                  ]
+                ]
+              }
+            ],
+            "tr": [
+              {
+                "type": "table",
+                "caption": "Temel özne zamirleri",
+                "columns": [
+                  "Almanca",
+                  "Kullanım"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "ben"
+                  ],
+                  [
+                    "du",
+                    "sen, samimi tekil"
+                  ],
+                  [
+                    "er",
+                    "o, erkek"
+                  ],
+                  [
+                    "sie",
+                    "o, kadın"
+                  ],
+                  [
+                    "es",
+                    "o, nötr"
+                  ],
+                  [
+                    "wir",
+                    "biz"
+                  ],
+                  [
+                    "ihr",
+                    "siz, samimi çoğul"
+                  ],
+                  [
+                    "sie",
+                    "onlar"
+                  ],
+                  [
+                    "Sie",
+                    "siz, resmi"
+                  ]
+                ]
+              }
+            ],
+            "ru": [
+              {
+                "type": "table",
+                "caption": "Основные местоимения-подлежащие",
+                "columns": [
+                  "Немецкий",
+                  "Значение"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "я"
+                  ],
+                  [
+                    "du",
+                    "ты, неформально"
+                  ],
+                  [
+                    "er",
+                    "он"
+                  ],
+                  [
+                    "sie",
+                    "она"
+                  ],
+                  [
+                    "es",
+                    "оно"
+                  ],
+                  [
+                    "wir",
+                    "мы"
+                  ],
+                  [
+                    "ihr",
+                    "вы, неформально множественное"
+                  ],
+                  [
+                    "sie",
+                    "они"
+                  ],
+                  [
+                    "Sie",
+                    "Вы, официально"
+                  ]
+                ]
+              }
+            ],
+            "ckb": [
+              {
+                "type": "table",
+                "caption": "جێناوە بنەڕەتییەکانی فاعل",
+                "columns": [
+                  "ئەڵمانی",
+                  "بەکارهێنان"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "من"
+                  ],
+                  [
+                    "du",
+                    "تۆ، نافەرمی"
+                  ],
+                  [
+                    "er",
+                    "ئەو، نێر"
+                  ],
+                  [
+                    "sie",
+                    "ئەو، مێ"
+                  ],
+                  [
+                    "es",
+                    "ئەو/ئەوە بۆ بێلایەن"
+                  ],
+                  [
+                    "wir",
+                    "ئێمە"
+                  ],
+                  [
+                    "ihr",
+                    "ئێوە، نافەرمی"
+                  ],
+                  [
+                    "sie",
+                    "ئەوان"
+                  ],
+                  [
+                    "Sie",
+                    "ئێوە، فەرمی"
+                  ]
+                ]
+              }
+            ],
+            "kmr": [
+              {
+                "type": "table",
+                "caption": "Cînavên bingehîn ên bikerê",
+                "columns": [
+                  "Almanî",
+                  "Bikaranîn"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "ez"
+                  ],
+                  [
+                    "du",
+                    "tu, nefermî"
+                  ],
+                  [
+                    "er",
+                    "ew, nêr"
+                  ],
+                  [
+                    "sie",
+                    "ew, mê"
+                  ],
+                  [
+                    "es",
+                    "ew/tiştê bêalî"
+                  ],
+                  [
+                    "wir",
+                    "em"
+                  ],
+                  [
+                    "ihr",
+                    "hûn, nefermî pirhejmar"
+                  ],
+                  [
+                    "sie",
+                    "ewan"
+                  ],
+                  [
+                    "Sie",
+                    "hûn, fermî"
+                  ]
+                ]
+              }
+            ],
+            "pl": [
+              {
+                "type": "table",
+                "caption": "Podstawowe zaimki podmiotowe",
+                "columns": [
+                  "Niemiecki",
+                  "Znaczenie"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "ja"
+                  ],
+                  [
+                    "du",
+                    "ty, nieformalnie"
+                  ],
+                  [
+                    "er",
+                    "on"
+                  ],
+                  [
+                    "sie",
+                    "ona"
+                  ],
+                  [
+                    "es",
+                    "ono"
+                  ],
+                  [
+                    "wir",
+                    "my"
+                  ],
+                  [
+                    "ihr",
+                    "wy, nieformalnie"
+                  ],
+                  [
+                    "sie",
+                    "oni/one"
+                  ],
+                  [
+                    "Sie",
+                    "Pan/Pani/Państwo, formalnie"
+                  ]
+                ]
+              }
+            ],
+            "ro": [
+              {
+                "type": "table",
+                "caption": "Pronume de bază ca subiect",
+                "columns": [
+                  "Germană",
+                  "Folosire"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "eu"
+                  ],
+                  [
+                    "du",
+                    "tu, informal"
+                  ],
+                  [
+                    "er",
+                    "el"
+                  ],
+                  [
+                    "sie",
+                    "ea"
+                  ],
+                  [
+                    "es",
+                    "el/ea pentru neutru"
+                  ],
+                  [
+                    "wir",
+                    "noi"
+                  ],
+                  [
+                    "ihr",
+                    "voi, informal"
+                  ],
+                  [
+                    "sie",
+                    "ei/ele"
+                  ],
+                  [
+                    "Sie",
+                    "dumneavoastră, formal"
+                  ]
+                ]
+              }
+            ],
+            "sq": [
+              {
+                "type": "table",
+                "caption": "Përemrat bazë si kryefjalë",
+                "columns": [
+                  "Gjermanisht",
+                  "Përdorimi"
+                ],
+                "rows": [
+                  [
+                    "ich",
+                    "unë"
+                  ],
+                  [
+                    "du",
+                    "ti, joformale"
+                  ],
+                  [
+                    "er",
+                    "ai"
+                  ],
+                  [
+                    "sie",
+                    "ajo"
+                  ],
+                  [
+                    "es",
+                    "ai/ajo për gjë neutrale"
+                  ],
+                  [
+                    "wir",
+                    "ne"
+                  ],
+                  [
+                    "ihr",
+                    "ju, shumës joformal"
+                  ],
+                  [
+                    "sie",
+                    "ata/ato"
+                  ],
+                  [
+                    "Sie",
+                    "ju, formale"
+                  ]
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "examples": [
+        {
+          "germanText": "Ich heiße Sara.",
+          "translations": {
+            "en": "My name is Sara.",
+            "fa": "اسم من سارا است.",
+            "ar": "اسمي سارة.",
+            "tr": "Benim adım Sara.",
+            "ru": "Меня зовут Сара.",
+            "ckb": "ناوم سارا یە.",
+            "kmr": "Navê min Sara ye.",
+            "pl": "Mam na imię Sara.",
+            "ro": "Mă numesc Sara.",
+            "sq": "Quhem Sara."
+          },
+          "sortOrder": 10
+        },
+        {
+          "germanText": "Du wohnst in Berlin.",
+          "translations": {
+            "en": "You live in Berlin.",
+            "fa": "تو در برلین زندگی می‌کنی.",
+            "ar": "أنت تعيش في برلين.",
+            "tr": "Sen Berlin'de yaşıyorsun.",
+            "ru": "Ты живёшь в Берлине.",
+            "ckb": "تۆ لە بەرلین دەژیت.",
+            "kmr": "Tu li Berlînê dijî.",
+            "pl": "Mieszkasz w Berlinie.",
+            "ro": "Locuiești în Berlin.",
+            "sq": "Ti jeton në Berlin."
+          },
+          "sortOrder": 20
+        }
+      ],
+      "ruleSummariesLocalized": {
+        "en": [
+          "A subject pronoun shows who or what does the action.",
+          "The German verb ending often changes with the pronoun.",
+          "Formal Sie is always written with a capital S."
+        ],
+        "fa": [
+          "ضمیر فاعلی نشان می‌دهد چه کسی یا چه چیزی کار را انجام می‌دهد.",
+          "در آلمانی پایان فعل معمولاً با ضمیر تغییر می‌کند.",
+          "ضمیر رسمی Sie همیشه با S بزرگ نوشته می‌شود."
+        ],
+        "ar": [
+          "ضمير الفاعل يوضح من يقوم بالفعل.",
+          "نهاية الفعل في الألمانية تتغير غالبًا حسب الضمير.",
+          "الضمير الرسمي Sie يكتب دائمًا بحرف S كبير."
+        ],
+        "tr": [
+          "Özne zamiri eylemi kimin yaptığını gösterir.",
+          "Almancada fiil eki çoğu zaman zamire göre değişir.",
+          "Resmi Sie her zaman büyük S ile yazılır."
+        ],
+        "ru": [
+          "Местоимение-подлежащее показывает, кто выполняет действие.",
+          "Окончание немецкого глагола часто зависит от местоимения.",
+          "Официальное Sie всегда пишется с большой буквы."
+        ],
+        "ckb": [
+          "جێناوی فاعل پیشان دەدات کێ کارەکە دەکات.",
+          "کۆتایی کردار لە ئەڵمانی زۆرجار بە پێی جێناو دەگۆڕێت.",
+          "جێناوی فەرمی Sie هەمیشە بە S گەورە دەنووسرێت."
+        ],
+        "kmr": [
+          "Cînavê bikerê nîşan dide ka kî karê dike.",
+          "Dawiya lêkerê di almanî de gelek caran li gorî cînavê diguhere.",
+          "Cînavê fermî Sie her tim bi S mezin tê nivîsandin."
+        ],
+        "pl": [
+          "Zaimek podmiotowy pokazuje, kto wykonuje czynność.",
+          "Końcówka niemieckiego czasownika często zmienia się w zależności od zaimka.",
+          "Formalne Sie pisze się zawsze wielką literą."
+        ],
+        "ro": [
+          "Pronumele-subiect arată cine face acțiunea.",
+          "Finalul verbului german se schimbă adesea după pronume.",
+          "Pronumele formal Sie se scrie întotdeauna cu S mare."
+        ],
+        "sq": [
+          "Përemri si kryefjalë tregon kush e bën veprimin.",
+          "Mbarimi i foljes në gjermanisht shpesh ndryshon sipas përemrit.",
+          "Sie formale shkruhet gjithmonë me S të madhe."
+        ]
+      },
+      "commonMistakes": [
+        {
+          "wrongGerman": "Ich wohnen in Berlin.",
+          "correctGerman": "Ich wohne in Berlin.",
+          "explanationLocalized": {
+            "en": "With ich, the verb usually ends in -e.",
+            "fa": "با ich، فعل معمولاً به -e ختم می‌شود.",
+            "ar": "مع ich ينتهي الفعل غالبًا بـ -e.",
+            "tr": "ich ile fiil genellikle -e ile biter.",
+            "ru": "С ich глагол обычно заканчивается на -e.",
+            "ckb": "لەگەڵ ich، کردار زۆرجار بە -e کۆتایی دێت.",
+            "kmr": "Bi ich re lêker gelek caran bi -e diqede.",
+            "pl": "Z ich czasownik zwykle kończy się na -e.",
+            "ro": "Cu ich, verbul se termină de obicei în -e.",
+            "sq": "Me ich, folja zakonisht mbaron me -e."
+          },
+          "sortOrder": 10
+        }
+      ],
+      "linkedWords": [
+        {
+          "lemma": "ich",
+          "wordSlug": "ich",
+          "cefrLevel": "A1",
+          "sortOrder": 10
+        },
+        {
+          "lemma": "du",
+          "wordSlug": "du",
+          "cefrLevel": "A1",
+          "sortOrder": 20
+        },
+        {
+          "lemma": "er",
+          "wordSlug": "er",
+          "cefrLevel": "A1",
+          "sortOrder": 30
+        },
+        {
+          "lemma": "sie",
+          "wordSlug": "sie",
+          "cefrLevel": "A1",
+          "sortOrder": 40
+        },
+        {
+          "lemma": "es",
+          "wordSlug": "es",
+          "cefrLevel": "A1",
+          "sortOrder": 50
+        },
+        {
+          "lemma": "wir",
+          "wordSlug": "wir",
+          "cefrLevel": "A1",
+          "sortOrder": 60
+        },
+        {
+          "lemma": "ihr",
+          "wordSlug": "ihr",
+          "cefrLevel": "A1",
+          "sortOrder": 70
+        }
+      ],
+      "prerequisiteSlugs": [],
+      "relatedTopicSlugs": [
+        "a1-sein-in-praesens",
+        "a1-regular-verbs-in-praesens",
+        "a1-pronoun-and-verb-agreement"
+      ],
+      "imageSlots": []
+    }
+  ]
+}

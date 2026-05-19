@@ -746,6 +746,8 @@ The portal should track learner progress across content types without mixing use
   - Note: keep placeholders documentation-only until a Phase 7 module has real persisted content to report.
 - [x] add test backlog entries for all new modules
   - Progress: `71-Web-Test-Backlog.md` contains Learning Portal Expansion coverage for foundation and future Phase 7 modules.
+- [x] document recurring content-generation lessons
+  - Progress: `84-Content-Generation-Lessons-Learned.md` records prompt, localization, import, rendering, and validation lessons to check before future bulk content generation.
 
 ### Phase 7.2: Grammar Guide
 
@@ -760,9 +762,16 @@ The portal should track learner progress across content types without mixing use
 - [x] add admin visibility surface
 - [x] add initial parser/navigation/localization tests
 - [x] document grammar content contract in `77-Grammar-Content-Package-Contract.md`
+- [x] document grammar prompt/content generation lessons in `84-Content-Generation-Lessons-Learned.md`
 - [x] support rich localized grammar blocks, localized title/description, content revision diagnostics, image-slot references, and slug-based pilot upsert
 - [x] import and render the first reviewed A1 personal-pronouns pilot package
-- [x] generate, validate, and import `grammar-a1-c2-validation-batch-001.json` with 12 cross-level rich Grammar topics
+- [x] archive temporary pilot and cross-level validation packages outside the official import package path
+- [x] start official Grammar content generation with `grammar-a1-core-v1.json`
+  - Progress: the official A1 core package now includes personal pronouns, sein, haben, regular verbs, verb position, yes/no questions, W-questions, definite articles, indefinite articles, noun gender basics, plural basics, nominative case, simple accusative introduction, kein vs nicht basics, possessive pronouns, basic adjective position, basic prepositions, numbers/grammar use, time expressions, word order with time/place, simple modal verbs, polite requests with möchte, imperative basics, separable verbs introduction, simple conjunctions und/aber, pronoun and verb agreement, formal Sie, du versus Sie grammar basics, basic sentence negation, question-answer sentence patterns, articles with food, drinks, and shopping nouns, basic location phrases, basic appointment phrases, common A1 grammar mistakes, and the final A1 grammar review map with 10 learner languages, rich sections, examples, rules, common mistakes, and linked word references.
+- [x] start official A2 Grammar content generation with `grammar-a2-core-v1.json`
+  - Progress: the official A2 core package now starts with Perfekt with haben, Perfekt with sein, common irregular participles, Präteritum of sein/haben, modal verbs in more detail, dative case basics, accusative vs dative basics, dative pronouns, accusative pronouns, possessive pronouns in cases, Wechselpräpositionen introduction, prepositions with dative, prepositions with accusative, separable verbs in Perfekt, reflexive verbs introduction, dass clauses, weil clauses, wenn for conditions, denn vs weil, sentence order in subordinate clauses, comparative forms, superlative basics, adjective endings introduction, indirect questions introduction, imperative formal/informal, time clauses with bevor/nachdem, zu + infinitive introduction, man as general subject, es gibt, polite forms with würde, simple email grammar, grammar for phone calls, grammar for appointments, grammar for doctor visits, grammar for school/kindergarten communication, common A2 mistakes, the A2 connectors overview, the A2 case review, the A2 verb review, and the final A2 grammar review map, including 10 learner languages, rich sections, examples, rules, common mistakes, and linked word references.
+- [x] start official B1 Grammar content generation with `grammar-b1-core-v1.json`
+  - Progress: the official B1 core package now starts with relative clauses basics, relative pronouns in nominative and accusative, relative pronouns in dative, Konjunktiv II for polite requests, Konjunktiv II with wäre/hätte/würde, passive voice introduction, werden as auxiliary, infinitive with zu, um ... zu, damit vs um ... zu, weil/obwohl/trotzdem, als vs wenn, nachdem/bevor/während, indirect questions, reported requests/polite questions, adjective declension after definite article, adjective declension after indefinite article, adjective declension without article, genitive introduction, prepositional verbs introduction, verb + preposition combinations, noun-verb phrases, connectors for opinion, connectors for contrast, connectors for cause/effect, sentence order with multiple clauses, formal email sentence structure, complaint sentence patterns, giving reasons clearly, agreeing/disagreeing grammatically, describing experiences in the past, and talking about plans and conditions, including 10 learner languages, rich sections, examples, rules, common mistakes, and linked word references.
 - [ ] add broader validation coverage for every rich block type after more reviewed pilot packages are available
 - [ ] keep mobile parity tracked after Web sign-off
 

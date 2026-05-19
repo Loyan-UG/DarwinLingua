@@ -97,6 +97,7 @@ All project documentation should remain in English.
 - `81-Writing-Template-Content-Package-Contract.md`
 - `82-Cultural-Note-Content-Package-Contract.md`
 - `83-Exam-Prep-Content-Package-Contract.md`
+- `84-Content-Generation-Lessons-Learned.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -165,6 +166,7 @@ If you are new to the project, read the documents in this order:
 52. `81-Writing-Template-Content-Package-Contract.md`
 53. `82-Cultural-Note-Content-Package-Contract.md`
 54. `83-Exam-Prep-Content-Package-Contract.md`
+55. `84-Content-Generation-Lessons-Learned.md`
 
 ---
 
@@ -203,6 +205,7 @@ If you are new to the project, read the documents in this order:
 - `81-Writing-Template-Content-Package-Contract.md` defines the Phase 7 Writing Templates JSON contract now that dynamic template implementation has started.
 - `82-Cultural-Note-Content-Package-Contract.md` defines the Phase 7 Cultural Notes JSON contract now that dynamic cultural-note implementation has started.
 - `83-Exam-Prep-Content-Package-Contract.md` defines the Phase 7 Exam Preparation JSON contract now that dynamic exam-prep implementation has started.
+- `84-Content-Generation-Lessons-Learned.md` records prompt, localization, import, rendering, and validation lessons that must be checked before future bulk content generation.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Learning Portal Planning Rule

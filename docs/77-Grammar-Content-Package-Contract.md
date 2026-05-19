@@ -4,9 +4,13 @@ This document defines the Phase 7 Grammar Guide package contract. Grammar conten
 
 Reference roadmap: `76-Learning-Portal-Roadmap-And-Backlog.md`.
 
+Content-generation lessons and recurring prompt-quality rules are tracked in `84-Content-Generation-Lessons-Learned.md`.
+
 ## Package Location
 
 Grammar topics are included in the shared content package root under `grammarTopics`.
+
+The first official A1 package is `content/learning-portal/grammar/packages/grammar-a1-core-v1.json`. Temporary pilot and validation packages should stay outside the official package path, for example under `content/learning-portal/grammar/packages/archive/validation/`.
 
 ```json
 {
@@ -22,7 +26,7 @@ Grammar topics are included in the shared content package root under `grammarTop
 }
 ```
 
-The legacy package shape with `defaultMeaningLanguages`, base `sections[].heading`, base `sections[].explanation`, and array-based `translations` remains supported for backward compatibility.
+The legacy package shape with `defaultMeaningLanguages`, base `sections[].heading`, base `sections[].explanation`, and array-based `translations` remains supported for backward compatibility. Official newly generated Grammar Guide content must include section `translations` for every target language so the section navigation and section headings render in the selected content language instead of falling back to the base English `heading`.
 
 ## GrammarTopic Fields
 
@@ -39,7 +43,7 @@ The legacy package shape with `defaultMeaningLanguages`, base `sections[].headin
 - `sortOrder`: optional numeric ordering.
 - `sections`: required, at least one explanation section.
 - `examples`: optional German examples with translations.
-- `ruleSummaries`: optional concise rules.
+- `ruleSummaries`: optional concise rules. Each item may use base `text`, legacy `translations`, or `localizedText` keyed by learner language code.
 - `commonMistakes`: optional wrong/correct pairs and explanation.
 - `exceptionNotes`: optional exception notes.
 - `linkedWords`: optional word references by lemma and optional word slug.
@@ -50,7 +54,7 @@ The legacy package shape with `defaultMeaningLanguages`, base `sections[].headin
 - `relatedTopicSlugs`: optional related GrammarTopic slugs.
 - `imageSlots`: optional image asset references for future/available visual assets.
 
-Import uses upsert-by-slug behavior for grammar topics. Re-importing a new package that contains an existing `slug` replaces the previous stored topic graph for that slug and does not create duplicate topics.
+Import uses upsert-by-slug behavior for grammar topics. Re-importing a package that contains an existing `slug` replaces the previous stored topic graph for that slug and does not create duplicate topics. Grammar-only packages may be re-imported with the same source `packageId`; the import audit record receives a generated `-reimport-` package id while the grammar topic identity remains the stable `slug`.
 
 ## Controlled Categories
 
@@ -58,12 +62,21 @@ Import uses upsert-by-slug behavior for grammar topics. Re-importing a new packa
 
 ## Rich Localized Sections
 
-Sections may use the legacy base explanation shape, or the rich localized block shape. Rich sections require `sectionKey`, `sortOrder`, and `localizedBlocks`.
+Sections may use the legacy base explanation shape, or the rich localized block shape. Rich sections require `sectionKey`, `sortOrder`, `localizedBlocks`, and localized section `translations` for official content.
 
 ```json
 {
   "sectionKey": "core-table",
   "sortOrder": 20,
+  "heading": "Core table",
+  "explanation": "Base English fallback.",
+  "translations": [
+    {
+      "language": "fa",
+      "heading": "جدول اصلی",
+      "text": "متن توضیحی فارسی برای همین بخش."
+    }
+  ],
   "localizedBlocks": {
     "en": [
       {
@@ -133,3 +146,5 @@ Missing image assets must not fail import or break rendering. The imported conte
 ## Generation Rule
 
 Do not generate bulk grammar content until the implementation, import validation, Web API, and Web rendering have been validated with a small reviewed package.
+
+Before any grammar regeneration pass, run the grammar prompt audit/sync tool and review `84-Content-Generation-Lessons-Learned.md`.

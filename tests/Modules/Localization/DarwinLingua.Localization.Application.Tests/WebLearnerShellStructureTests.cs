@@ -108,6 +108,29 @@ public sealed class WebLearnerShellStructureTests
     }
 
     [Fact]
+    public void GrammarDetailView_ShouldUseDedicatedLearningLayout()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string grammarDetailPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Grammar/Detail.cshtml");
+        string stylePath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Styles/tailwind.css");
+
+        string grammarDetailSource = File.ReadAllText(grammarDetailPath);
+        string styleSource = File.ReadAllText(stylePath);
+
+        Assert.Contains("grammar-detail-hero", grammarDetailSource, StringComparison.Ordinal);
+        Assert.Contains("grammar-detail-layout", grammarDetailSource, StringComparison.Ordinal);
+        Assert.Contains("grammar-topic-nav", grammarDetailSource, StringComparison.Ordinal);
+        Assert.Contains("grammar-section panel", grammarDetailSource, StringComparison.Ordinal);
+        Assert.Contains("grammar-example-card", grammarDetailSource, StringComparison.Ordinal);
+        Assert.Contains("grammar-mistake-card", grammarDetailSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("<article class=\"detail-row\">", grammarDetailSource, StringComparison.Ordinal);
+        Assert.Contains(".grammar-detail-layout", styleSource, StringComparison.Ordinal);
+        Assert.Contains(".grammar-table-wrap", styleSource, StringComparison.Ordinal);
+        Assert.Contains(".grammar-example-grid", styleSource, StringComparison.Ordinal);
+        Assert.Contains(".grammar-mistake-grid", styleSource, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void LearningPortalLocalization_ShouldContainEnglishAndGermanKeysForReleaseRoutes()
     {
         string repositoryRoot = ResolveRepositoryRoot();

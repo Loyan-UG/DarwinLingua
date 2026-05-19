@@ -5,35 +5,62 @@
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
-<section class="panel stack-lg">
-    <div class="detail-toolbar">
-        <span class="eyebrow">@Model.GrammarTopic.CefrLevel · @T[Model.GrammarTopic.GrammarCategory]</span>
-        <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="Grammar" asp-action="Index">@T["All Grammar Topics"]</a>
+<section class="grammar-detail-hero">
+    <div class="grammar-detail-hero__main">
+        <div class="detail-toolbar">
+            <span class="eyebrow">@Model.GrammarTopic.CefrLevel · @T[Model.GrammarTopic.GrammarCategory]</span>
+            <div class="detail-toolbar__actions">
+                <a class="button button--secondary button--compact" asp-controller="Grammar" asp-action="Index">@T["All Grammar Topics"]</a>
+            </div>
         </div>
+        <h1 class="headline-md">@Model.GrammarTopic.Title</h1>
+        <p class="body-lg">@Model.GrammarTopic.ShortDescription</p>
+        @if (Model.GrammarTopic.TopicKeys.Count > 0)
+        {
+            <div class="chip-grid">
+                @foreach (string topicKey in Model.GrammarTopic.TopicKeys)
+                {
+                    <span class="chip-link">@topicKey</span>
+                }
+            </div>
+        }
     </div>
-    <h1 class="headline-md">@Model.GrammarTopic.Title</h1>
-    <p class="body-lg">@Model.GrammarTopic.ShortDescription</p>
-    @if (Model.GrammarTopic.TopicKeys.Count > 0)
-    {
-        <div class="chip-grid">
-            @foreach (string topicKey in Model.GrammarTopic.TopicKeys)
-            {
-                <span class="chip-link">@topicKey</span>
-            }
+    <aside class="grammar-detail-hero__summary" aria-label="@T["Topic summary"]">
+        <div>
+            <span>@T["Sections"]</span>
+            <strong>@Model.GrammarTopic.Sections.Count</strong>
         </div>
-    }
+        <div>
+            <span>@T["Examples"]</span>
+            <strong>@Model.GrammarTopic.Examples.Count</strong>
+        </div>
+        <div>
+            <span>@T["Common mistakes"]</span>
+            <strong>@Model.GrammarTopic.CommonMistakes.Count</strong>
+        </div>
+    </aside>
 </section>
 
 @if (Model.GrammarTopic.Sections.Count > 0)
 {
-    <section class="panel stack-md">
-        <h2 class="headline-sm">@T["Explanation"]</h2>
-        <div class="stack-md" dir="@primaryMeaningDirection">
+    <section class="grammar-detail-layout">
+        <aside class="grammar-topic-nav panel" aria-label="@T["Lesson sections"]">
+            <h2 class="eyebrow">@T["Explanation"]</h2>
+            <ol>
+                @foreach (var grammarSection in Model.GrammarTopic.Sections)
+                {
+                    <li><a href="#section-@grammarSection.SectionKey">@grammarSection.Heading</a></li>
+                }
+            </ol>
+        </aside>
+        <div class="grammar-topic-content" dir="@primaryMeaningDirection">
             @foreach (var grammarSection in Model.GrammarTopic.Sections)
             {
-                <article class="detail-row">
-                    <h3 class="headline-sm">@grammarSection.Heading</h3>
+                <article class="grammar-section panel" id="section-@grammarSection.SectionKey">
+                    <header class="grammar-section__header">
+                        <span class="eyebrow">@T["Explanation"]</span>
+                        <h3 class="headline-sm">@grammarSection.Heading</h3>
+                    </header>
                     @if (grammarSection.Blocks.Count > 0)
                     {
                         foreach (var block in grammarSection.Blocks)
@@ -43,14 +70,14 @@
                                 case "paragraph":
                                     if (!string.IsNullOrWhiteSpace(block.Text))
                                     {
-                                        <p>@block.Text</p>
+                                        <p class="grammar-paragraph">@block.Text</p>
                                     }
                                     break;
                                 case "table":
-                                    <div class="grammar-table-wrap">
+                                    <figure class="grammar-table-wrap">
                                         @if (!string.IsNullOrWhiteSpace(block.Caption))
                                         {
-                                            <p class="eyebrow">@block.Caption</p>
+                                            <figcaption>@block.Caption</figcaption>
                                         }
                                         <table class="grammar-table">
                                             <thead>
@@ -73,7 +100,7 @@
                                                 }
                                             </tbody>
                                         </table>
-                                    </div>
+                                    </figure>
                                     break;
                                 case "callout":
                                     if (!string.IsNullOrWhiteSpace(block.Text))
@@ -83,7 +110,7 @@
                                     break;
                                 case "rule-list":
                                 case "example-list":
-                                    <ul class="stack-sm">
+                                    <ul class="grammar-bullet-list">
                                         @foreach (string item in block.Items)
                                         {
                                             <li>@item</li>
@@ -114,7 +141,7 @@
                     {
                         foreach (string paragraph in grammarSection.Explanation.Split(["\r\n\r\n", "\n\n"], StringSplitOptions.RemoveEmptyEntries))
                         {
-                            <p>@paragraph.Trim()</p>
+                            <p class="grammar-paragraph">@paragraph.Trim()</p>
                         }
                     }
                 </article>
@@ -125,12 +152,15 @@
 
 @if (Model.GrammarTopic.Examples.Count > 0)
 {
-    <section class="panel stack-md">
-        <h2 class="headline-sm">@T["German examples"]</h2>
-        <div class="stack-md">
+    <section class="panel grammar-reference-section">
+        <div class="section-heading">
+            <h2 class="headline-sm">@T["German examples"]</h2>
+            <span class="eyebrow">@Model.GrammarTopic.Examples.Count</span>
+        </div>
+        <div class="grammar-example-grid">
             @foreach (var example in Model.GrammarTopic.Examples)
             {
-                <article class="detail-row">
+                <article class="grammar-example-card">
                     <strong class="dialogue-german-text">@example.GermanText</strong>
                     @if (!string.IsNullOrWhiteSpace(example.Translation))
                     {
@@ -151,9 +181,12 @@
 
 @if (Model.GrammarTopic.RuleSummaries.Count > 0)
 {
-    <section class="panel stack-md">
-        <h2 class="headline-sm">@T["Mini rules"]</h2>
-        <ul class="stack-sm" dir="@primaryMeaningDirection">
+    <section class="panel grammar-reference-section">
+        <div class="section-heading">
+            <h2 class="headline-sm">@T["Mini rules"]</h2>
+            <span class="eyebrow">@Model.GrammarTopic.RuleSummaries.Count</span>
+        </div>
+        <ul class="grammar-rule-grid" dir="@primaryMeaningDirection">
             @foreach (var rule in Model.GrammarTopic.RuleSummaries)
             {
                 <li>@rule.Text</li>
@@ -164,12 +197,15 @@
 
 @if (Model.GrammarTopic.CommonMistakes.Count > 0)
 {
-    <section class="panel stack-md">
-        <h2 class="headline-sm">@T["Common mistakes"]</h2>
-        <div class="stack-md">
+    <section class="panel grammar-reference-section">
+        <div class="section-heading">
+            <h2 class="headline-sm">@T["Common mistakes"]</h2>
+            <span class="eyebrow">@Model.GrammarTopic.CommonMistakes.Count</span>
+        </div>
+        <div class="grammar-mistake-grid">
             @foreach (var mistake in Model.GrammarTopic.CommonMistakes)
             {
-                <article class="detail-row">
+                <article class="grammar-mistake-card">
                     <p><strong>@T["Avoid"]:</strong> <span class="dialogue-german-text">@mistake.WrongText</span></p>
                     <p><strong>@T["Use"]:</strong> <span class="dialogue-german-text">@mistake.CorrectedText</span></p>
                     <p dir="@primaryMeaningDirection">@mistake.Explanation</p>

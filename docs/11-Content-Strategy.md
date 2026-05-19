@@ -38,6 +38,7 @@ AI generates the first draft and a human corrects or improves the result before 
 - topic tags must be relevant
 - duplicate entries should be rejected or flagged
 - high-value metadata should be optional but supported
+- content generation must follow the active module contract and the recurring lessons in `84-Content-Generation-Lessons-Learned.md`
 
 ---
 

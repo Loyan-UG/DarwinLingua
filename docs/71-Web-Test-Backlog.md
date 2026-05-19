@@ -25,6 +25,269 @@ Remaining release gates:
 
 Latest local Web verification:
 
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 talking about plans and conditions topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-talking-about-plans-and-conditions?primaryMeaningLanguageCode=fa`, `/grammar/b1-talking-about-plans-and-conditions`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 talking about plans and conditions topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 describing experiences in the past topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-describing-experiences-in-the-past?primaryMeaningLanguageCode=fa`, `/grammar/b1-describing-experiences-in-the-past`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 describing experiences in the past topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 agreeing and disagreeing grammatically topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-agreeing-and-disagreeing-grammatically?primaryMeaningLanguageCode=fa`, `/grammar/b1-agreeing-and-disagreeing-grammatically`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 agreeing and disagreeing grammatically topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 giving reasons clearly topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-giving-reasons-clearly?primaryMeaningLanguageCode=fa`, `/grammar/b1-giving-reasons-clearly`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 giving reasons clearly topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 complaint sentence patterns topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-complaint-sentence-patterns?primaryMeaningLanguageCode=fa`, `/grammar/b1-complaint-sentence-patterns`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 complaint sentence patterns topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 formal email sentence structure topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-formal-email-sentence-structure?primaryMeaningLanguageCode=fa`, `/grammar/b1-formal-email-sentence-structure`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 formal email sentence structure topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 sentence order with multiple clauses topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-sentence-order-with-multiple-clauses?primaryMeaningLanguageCode=fa`, `/grammar/b1-sentence-order-with-multiple-clauses`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 sentence order with multiple clauses topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 connectors for cause/effect topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-connectors-for-cause-and-effect?primaryMeaningLanguageCode=fa`, `/grammar/b1-connectors-for-cause-and-effect`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 connectors for cause/effect topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 connectors for contrast topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-connectors-for-contrast?primaryMeaningLanguageCode=fa`, `/grammar/b1-connectors-for-contrast`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 connectors for contrast topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 connectors for opinion topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-connectors-for-opinion?primaryMeaningLanguageCode=fa`, `/grammar/b1-connectors-for-opinion`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 connectors for opinion topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 noun-verb phrases topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-noun-verb-phrases?primaryMeaningLanguageCode=fa`, `/grammar/b1-noun-verb-phrases`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 noun-verb phrases topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 verb + preposition combinations topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-verb-plus-preposition-combinations?primaryMeaningLanguageCode=fa`, `/grammar/b1-verb-plus-preposition-combinations`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 verb + preposition combinations topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 prepositional verbs introduction topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-prepositional-verbs-introduction?primaryMeaningLanguageCode=fa`, `/grammar/b1-prepositional-verbs-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 prepositional verbs introduction topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 genitive introduction topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-genitive-introduction?primaryMeaningLanguageCode=fa`, `/grammar/b1-genitive-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 genitive introduction topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 adjective declension without article topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-adjective-declension-without-article?primaryMeaningLanguageCode=fa`, `/grammar/b1-adjective-declension-without-article`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 adjective declension without article topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 adjective declension after indefinite article topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-adjective-declension-after-indefinite-article?primaryMeaningLanguageCode=fa`, `/grammar/b1-adjective-declension-after-indefinite-article`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 adjective declension after indefinite article topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 adjective declension after definite article topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-adjective-declension-after-definite-article?primaryMeaningLanguageCode=fa`, `/grammar/b1-adjective-declension-after-definite-article`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 adjective declension after definite article topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 reported requests and polite questions topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-reported-requests-and-polite-questions?primaryMeaningLanguageCode=fa`, `/grammar/b1-reported-requests-and-polite-questions`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 reported requests and polite questions topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 indirect questions topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-indirect-questions?primaryMeaningLanguageCode=fa`, `/grammar/b1-indirect-questions`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 indirect questions topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 nachdem/bevor/während topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-nachdem-bevor-waehrend?primaryMeaningLanguageCode=fa`, `/grammar/b1-nachdem-bevor-waehrend`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 nachdem/bevor/während topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 als vs wenn topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-als-versus-wenn?primaryMeaningLanguageCode=fa`, `/grammar/b1-als-versus-wenn`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 als vs wenn topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 weil/obwohl/trotzdem topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-weil-obwohl-trotzdem?primaryMeaningLanguageCode=fa`, `/grammar/b1-weil-obwohl-trotzdem`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 weil/obwohl/trotzdem topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 damit vs um ... zu topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-damit-versus-um-zu?primaryMeaningLanguageCode=fa`, `/grammar/b1-damit-versus-um-zu`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 damit vs um ... zu topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 um ... zu topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-um-zu?primaryMeaningLanguageCode=fa`, `/grammar/b1-um-zu`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 um ... zu topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 infinitive with zu topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-infinitive-with-zu?primaryMeaningLanguageCode=fa`, `/grammar/b1-infinitive-with-zu`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 infinitive with zu topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 werden as auxiliary topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-werden-as-auxiliary?primaryMeaningLanguageCode=fa`, `/grammar/b1-werden-as-auxiliary`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 werden as auxiliary topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 passive voice introduction topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-passive-voice-introduction?primaryMeaningLanguageCode=fa`, `/grammar/b1-passive-voice-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 passive voice introduction topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 Konjunktiv II with wäre/hätte/würde topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-konjunktiv-ii-with-waere-haette-wuerde?primaryMeaningLanguageCode=fa`, `/grammar/b1-konjunktiv-ii-with-waere-haette-wuerde`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 Konjunktiv II with wäre/hätte/würde topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 Konjunktiv II for polite requests topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-konjunktiv-ii-for-polite-requests?primaryMeaningLanguageCode=fa`, `/grammar/b1-konjunktiv-ii-for-polite-requests`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 Konjunktiv II for polite requests topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 relative pronouns in dative topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-relative-pronouns-in-dative?primaryMeaningLanguageCode=fa`, `/grammar/b1-relative-pronouns-in-dative`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 relative pronouns in dative topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 relative pronouns in nominative and accusative topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-relative-pronouns-in-nominative-and-accusative?primaryMeaningLanguageCode=fa`, `/grammar/b1-relative-pronouns-in-nominative-and-accusative`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 relative pronouns in nominative and accusative topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 relative clauses basics topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-relative-clauses-basics?primaryMeaningLanguageCode=fa`, `/grammar/b1-relative-clauses-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 relative clauses basics topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the final official A2 grammar review map topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-a2-grammar-review-map?primaryMeaningLanguageCode=fa`, `/grammar/a2-a2-grammar-review-map`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the final official A2 grammar review map topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 verb review topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-a2-verb-review?primaryMeaningLanguageCode=fa`, `/grammar/a2-a2-verb-review`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 verb review topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 case review topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-a2-case-review?primaryMeaningLanguageCode=fa`, `/grammar/a2-a2-case-review`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 case review topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 connectors overview topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-a2-connectors-overview?primaryMeaningLanguageCode=fa`, `/grammar/a2-a2-connectors-overview`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 connectors overview topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 common mistakes topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-common-a2-mistakes?primaryMeaningLanguageCode=fa`, `/grammar/a2-common-a2-mistakes`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 common mistakes topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 grammar for school/kindergarten communication topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-grammar-for-school-and-kindergarten-communication?primaryMeaningLanguageCode=fa`, `/grammar/a2-grammar-for-school-and-kindergarten-communication`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 grammar for school/kindergarten communication topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 grammar for doctor visits topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-grammar-for-doctor-visits?primaryMeaningLanguageCode=fa`, `/grammar/a2-grammar-for-doctor-visits`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 grammar for doctor visits topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 grammar for appointments topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-grammar-for-appointments?primaryMeaningLanguageCode=fa`, `/grammar/a2-grammar-for-appointments`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 grammar for appointments topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 grammar for phone calls topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-grammar-for-phone-calls?primaryMeaningLanguageCode=fa`, `/grammar/a2-grammar-for-phone-calls`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 grammar for phone calls topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 simple email grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-simple-email-grammar?primaryMeaningLanguageCode=fa`, `/grammar/a2-simple-email-grammar`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 simple email grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 polite forms with würde Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-polite-forms-with-wuerde?primaryMeaningLanguageCode=fa`, `/grammar/a2-polite-forms-with-wuerde`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 polite forms with würde Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 es gibt Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-es-gibt?primaryMeaningLanguageCode=fa`, `/grammar/a2-es-gibt`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 es gibt Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 man as general subject Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-man-as-general-subject?primaryMeaningLanguageCode=fa`, `/grammar/a2-man-as-general-subject`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 man as general subject Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 zu + infinitive introduction Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-zu-plus-infinitive-introduction?primaryMeaningLanguageCode=fa`, `/grammar/a2-zu-plus-infinitive-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 zu + infinitive introduction Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 time clauses with bevor/nachdem Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-time-clauses-bevor-and-nachdem-introduction?primaryMeaningLanguageCode=fa`, `/grammar/a2-time-clauses-bevor-and-nachdem-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 time clauses with bevor/nachdem Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 imperative formal and informal Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-imperative-formal-and-informal?primaryMeaningLanguageCode=fa`, `/grammar/a2-imperative-formal-and-informal`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 imperative formal and informal Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 indirect questions introduction Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-indirect-questions-introduction?primaryMeaningLanguageCode=fa`, `/grammar/a2-indirect-questions-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 indirect questions introduction Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 adjective endings introduction Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-adjective-endings-introduction?primaryMeaningLanguageCode=fa`, `/grammar/a2-adjective-endings-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 adjective endings introduction Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 superlative basics Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-superlative-basics?primaryMeaningLanguageCode=fa`, `/grammar/a2-superlative-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 superlative basics Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 comparative forms Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-comparative-forms?primaryMeaningLanguageCode=fa`, `/grammar/a2-comparative-forms`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 comparative forms Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 sentence order in subordinate clauses Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-sentence-order-in-subordinate-clauses?primaryMeaningLanguageCode=fa`, `/grammar/a2-sentence-order-in-subordinate-clauses`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 sentence order in subordinate clauses Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 denn vs weil Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-denn-versus-weil?primaryMeaningLanguageCode=fa`, `/grammar/a2-denn-versus-weil`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 denn vs weil Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 wenn for conditions Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-wenn-for-conditions?primaryMeaningLanguageCode=fa`, `/grammar/a2-wenn-for-conditions`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 wenn for conditions Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 weil clauses Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-weil-clauses?primaryMeaningLanguageCode=fa`, `/grammar/a2-weil-clauses`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 weil clauses Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 dass clauses Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-dass-clauses?primaryMeaningLanguageCode=fa`, `/grammar/a2-dass-clauses`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 dass clauses Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 reflexive verbs introduction Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-reflexive-verbs-introduction?primaryMeaningLanguageCode=fa`, `/grammar/a2-reflexive-verbs-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 reflexive verbs introduction Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 separable verbs in Perfekt Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-separable-verbs-in-perfekt?primaryMeaningLanguageCode=fa`, `/grammar/a2-separable-verbs-in-perfekt`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 separable verbs in Perfekt Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 prepositions with accusative Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-prepositions-with-accusative?primaryMeaningLanguageCode=fa`, `/grammar/a2-prepositions-with-accusative`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 prepositions with accusative Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 prepositions with dative Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-prepositions-with-dative?primaryMeaningLanguageCode=fa`, `/grammar/a2-prepositions-with-dative`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 prepositions with dative Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 Wechselpräpositionen introduction Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-wechselpraepositionen-introduction?primaryMeaningLanguageCode=fa`, `/grammar/a2-wechselpraepositionen-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 Wechselpräpositionen introduction Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 possessive pronouns in cases Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-possessive-pronouns-in-cases?primaryMeaningLanguageCode=fa`, `/grammar/a2-possessive-pronouns-in-cases`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 possessive pronouns in cases Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 accusative pronouns Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-accusative-pronouns?primaryMeaningLanguageCode=fa`, `/grammar/a2-accusative-pronouns`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 accusative pronouns Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 dative pronouns Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-dative-pronouns?primaryMeaningLanguageCode=fa`, `/grammar/a2-dative-pronouns`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 dative pronouns Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 accusative vs dative basics Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-accusative-versus-dative-basics?primaryMeaningLanguageCode=fa`, `/grammar/a2-accusative-versus-dative-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 accusative vs dative basics Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 dative case basics Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-dative-case-basics?primaryMeaningLanguageCode=fa`, `/grammar/a2-dative-case-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 dative case basics Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 modal verbs in more detail Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-modal-verbs-in-more-detail?primaryMeaningLanguageCode=fa`, `/grammar/a2-modal-verbs-in-more-detail`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 modal verbs in more detail Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 Präteritum of sein and haben Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 common irregular participles Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official A2 Perfekt with sein Grammar topic.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 28/28 after adding the official A2 Perfekt with haben Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a2-perfekt-with-haben?primaryMeaningLanguageCode=fa`, `/grammar/a2-perfekt-with-haben`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official final A1 grammar review map topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-a1-grammar-review-map?primaryMeaningLanguageCode=fa`, `/grammar/a1-a1-grammar-review-map`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 common A1 grammar mistakes Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-common-a1-grammar-mistakes?primaryMeaningLanguageCode=fa`, `/grammar/a1-common-a1-grammar-mistakes`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 basic appointment phrases Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-basic-appointment-phrases?primaryMeaningLanguageCode=fa`, `/grammar/a1-basic-appointment-phrases`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 basic location phrases Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-basic-location-phrases?primaryMeaningLanguageCode=fa`, `/grammar/a1-basic-location-phrases`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 articles with food, drinks, and shopping nouns Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-articles-with-food-drinks-and-shopping-nouns?primaryMeaningLanguageCode=fa`, `/grammar/a1-articles-with-food-drinks-and-shopping-nouns`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 question-answer sentence patterns Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-question-answer-sentence-patterns?primaryMeaningLanguageCode=fa`, `/grammar/a1-question-answer-sentence-patterns`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 basic sentence negation Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-basic-sentence-negation?primaryMeaningLanguageCode=fa`, `/grammar/a1-basic-sentence-negation`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 du versus Sie grammar basics Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-du-versus-sie-grammar-basics?primaryMeaningLanguageCode=fa`, `/grammar/a1-du-versus-sie-grammar-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 formal Sie Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-formal-sie?primaryMeaningLanguageCode=fa`, `/grammar/a1-formal-sie`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 pronoun and verb agreement Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-pronoun-and-verb-agreement?primaryMeaningLanguageCode=fa`, `/grammar/a1-pronoun-and-verb-agreement`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 simple conjunctions und/aber Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-simple-conjunctions-und-aber?primaryMeaningLanguageCode=fa`, `/grammar/a1-simple-conjunctions-und-aber`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 word order with time and place Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-word-order-with-time-and-place?primaryMeaningLanguageCode=fa`, `/grammar/a1-word-order-with-time-and-place`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 time expressions Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-time-expressions-heute-morgen-gestern?primaryMeaningLanguageCode=fa`, `/grammar/a1-time-expressions-heute-morgen-gestern`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 numbers and grammar use Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-numbers-and-grammar-use?primaryMeaningLanguageCode=fa`, `/grammar/a1-numbers-and-grammar-use`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 basic prepositions Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-basic-prepositions-in-aus-nach-bei?primaryMeaningLanguageCode=fa`, `/grammar/a1-basic-prepositions-in-aus-nach-bei`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 basic adjective position Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-basic-adjective-position?primaryMeaningLanguageCode=fa`, `/grammar/a1-basic-adjective-position`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 possessive pronouns Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-possessive-pronouns-mein-dein?primaryMeaningLanguageCode=fa`, `/grammar/a1-possessive-pronouns-mein-dein`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 kein vs nicht basics Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-kein-versus-nicht-basics?primaryMeaningLanguageCode=fa`, `/grammar/a1-kein-versus-nicht-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 simple accusative introduction Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-simple-accusative-introduction?primaryMeaningLanguageCode=fa`, `/grammar/a1-simple-accusative-introduction`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 nominative case Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-nominative-case?primaryMeaningLanguageCode=fa`, `/grammar/a1-nominative-case`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 plural basics Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-plural-basics?primaryMeaningLanguageCode=fa`, `/grammar/a1-plural-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 noun gender basics Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-noun-gender-basics?primaryMeaningLanguageCode=fa`, `/grammar/a1-noun-gender-basics`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 indefinite articles Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-indefinite-articles-ein-eine?primaryMeaningLanguageCode=fa`, `/grammar/a1-indefinite-articles-ein-eine`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 definite articles Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-definite-articles-der-die-das?primaryMeaningLanguageCode=fa`, `/grammar/a1-definite-articles-der-die-das`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 W-questions Grammar topic.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-w-questions-wer-was-wo-wann-wie?primaryMeaningLanguageCode=fa`, `/grammar/a1-w-questions-wer-was-wo-wann-wie`, and `/grammar`.
+- 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 26/26 after adding the official A1 yes/no questions Grammar topic.
+- 2026-05-17: `DarwinLingua.Catalog.Application.Tests` passed 31/31.
+- 2026-05-17: `DarwinLingua.WebApi.Tests` passed 51/51 with `--no-build`; rebuild was blocked by running local `DarwinLingua.Web.exe` and `DarwinLingua.WebApi.exe` processes locking debug outputs.
+- 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/a1-yes-no-questions?primaryMeaningLanguageCode=fa`, `/grammar/a1-yes-no-questions`, and `/grammar`.
 - 2026-05-12: `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
 - 2026-05-12: `DarwinLingua.Web` build passed with 0 warnings and 0 errors after duplicate localization key cleanup.
 - 2026-05-12: `DarwinLingua.WebApi.Tests` passed 36/36.
@@ -196,13 +459,14 @@ Latest local Web verification:
 
 - [x] Parser coverage exists for the GrammarTopic content contract shape.
 - [x] Parser/import coverage exists for the rich localized Grammar pilot package, including localized title/description and table blocks.
+- [x] Parser/import coverage exists for the first official A1 Grammar package, including all 10 languages, 6 sections, 20 examples, and 10 common mistakes.
 - [x] Navigation/localization smoke coverage includes the live Grammar Guide route.
 - [x] Release route hardening covers `/grammar` and `/api/catalog/grammar`.
 - [x] Import validation covers required rich section keys, supported block types, localized block language codes, and table/callout block shape.
 - [x] List/detail query coverage includes the first rich pilot topic and localized fallback behavior.
 - [ ] CEFR/category/topic/search filters return expected grammar topics.
-- [x] Web/API rendering handles paragraph, table, and callout rich blocks from the pilot package.
-- [x] Cross-level validation batch coverage confirms two imported rich Grammar topics per CEFR level from A1 through C2.
+- [x] Web/API rendering handles paragraph, table, and callout rich blocks from the official A1 personal-pronouns package.
+- [ ] Add a future reviewed cross-level validation batch after the official A1 core package establishes the production content pattern.
 - [ ] Linked words/dialogues/Talk Topics/exercises render where available.
 - [ ] Localized explanation rendering follows learner language preferences.
 - [ ] Unresolved links fail safely without Web 500 errors.

@@ -230,7 +230,8 @@ internal sealed class ContentImportService : IContentImportService
             return CreateFatalFailureResult(parsedPackage.PackageId, issues, parsedPackage.PackageName, parsedPackage.Entries.Count);
         }
 
-        if (await _contentImportRepository.PackageExistsAsync(parsedPackage.PackageId, cancellationToken).ConfigureAwait(false))
+        bool packageExists = await _contentImportRepository.PackageExistsAsync(parsedPackage.PackageId, cancellationToken).ConfigureAwait(false);
+        if (packageExists && !CanReimportPackageByContentSlug(parsedPackage))
         {
             issues.Add(new ImportIssueModel(null, "Error", $"A content package with id '{parsedPackage.PackageId}' already exists."));
             return CreateFatalFailureResult(parsedPackage.PackageId, issues, parsedPackage.PackageName, parsedPackage.Entries.Count);
@@ -280,7 +281,7 @@ internal sealed class ContentImportService : IContentImportService
 
         ContentPackage contentPackage = new(
             Guid.NewGuid(),
-            parsedPackage.PackageId,
+            packageExists ? CreateReimportPackageId(parsedPackage.PackageId, DateTime.UtcNow) : parsedPackage.PackageId,
             parsedPackage.PackageVersion,
             parsedPackage.PackageName,
             ResolveSourceType(parsedPackage.Source),
@@ -2584,6 +2585,46 @@ internal sealed class ContentImportService : IContentImportService
         return isValid &&
             !value.StartsWith("-", StringComparison.Ordinal) &&
             !value.EndsWith("-", StringComparison.Ordinal);
+    }
+
+    private static bool CanReimportPackageByContentSlug(ParsedContentPackageModel parsedPackage)
+    {
+        if (parsedPackage.Entries.Count > 0 ||
+            parsedPackage.Labels.Count > 0 ||
+            parsedPackage.Collections.Count > 0)
+        {
+            return false;
+        }
+
+        return parsedPackage.Dialogues.Count > 0 ||
+            parsedPackage.TalkTopics.Count > 0 ||
+            parsedPackage.GrammarTopics.Count > 0 ||
+            parsedPackage.ExpressionEntries.Count > 0 ||
+            parsedPackage.Exercises.Count > 0 ||
+            parsedPackage.ExerciseSets.Count > 0 ||
+            parsedPackage.CoursePaths.Count > 0 ||
+            parsedPackage.CourseModules.Count > 0 ||
+            parsedPackage.CourseLessons.Count > 0 ||
+            parsedPackage.WritingTemplates.Count > 0 ||
+            parsedPackage.CulturalNotes.Count > 0 ||
+            parsedPackage.ExamProfiles.Count > 0 ||
+            parsedPackage.ExamPrepUnits.Count > 0 ||
+            parsedPackage.ConversationStarterPacks.Count > 0 ||
+            parsedPackage.EventPreparationPacks.Count > 0;
+    }
+
+    private static string CreateReimportPackageId(string packageId, DateTime timestampUtc)
+    {
+        string normalizedPackageId = packageId.Trim();
+        string suffix = $"-reimport-{timestampUtc:yyyyMMddHHmmssfff}";
+        int maximumPrefixLength = Math.Max(1, 128 - suffix.Length);
+
+        if (normalizedPackageId.Length > maximumPrefixLength)
+        {
+            normalizedPackageId = normalizedPackageId[..maximumPrefixLength].TrimEnd('-');
+        }
+
+        return normalizedPackageId + suffix;
     }
 
     private static void ValidatePackage(ParsedContentPackageModel parsedPackage, ICollection<ImportIssueModel> issues)

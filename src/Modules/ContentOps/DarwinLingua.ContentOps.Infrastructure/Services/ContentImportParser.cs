@@ -645,8 +645,12 @@ internal sealed class ContentImportParser : IContentImportParser
         JsonElement? localizedItems)
     {
         ParsedGrammarTextItemModel[] oldShape = (textItems ?? []).Select(item => new ParsedGrammarTextItemModel(
-            item.Text ?? string.Empty,
-            MapTranslations(item.Translations),
+            item.Text
+                ?? GetFallbackLocalizedText(MapLocalizedTextObject(item.LocalizedText))
+                ?? string.Empty,
+            item.LocalizedText.HasValue
+                ? MapFlexibleTranslations(null, item.LocalizedText)
+                : MapTranslations(item.Translations),
             item.SortOrder ?? 0)).ToArray();
 
         IReadOnlyDictionary<string, string[]> localized = MapLocalizedStringArrays(localizedItems);
@@ -1254,6 +1258,7 @@ internal sealed class ContentImportParser : IContentImportParser
     private sealed class GrammarTextItemDocument
     {
         public string? Text { get; set; }
+        public JsonElement? LocalizedText { get; set; }
         public ContentMeaningDocument[]? Translations { get; set; }
         public int? SortOrder { get; set; }
     }

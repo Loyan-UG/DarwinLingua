@@ -172,6 +172,7 @@ Important rules include:
 - [Import Rules](docs/14-Import-Rules.md)
 - [Topic Seed Ideas](docs/15-Topic-Seed-Ideas.md)
 - [Import Workflow](docs/34-Import-Workflow.md)
+- [Content Generation Lessons Learned](docs/84-Content-Generation-Lessons-Learned.md)
 
 ### Domain and Architecture
 
