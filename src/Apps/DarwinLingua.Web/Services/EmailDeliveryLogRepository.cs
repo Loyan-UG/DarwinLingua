@@ -522,14 +522,16 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
         string.Equals(providerEvent, "invalid", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "invalid_email", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "error", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase);
+        string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "complaint", StringComparison.OrdinalIgnoreCase);
 
     private static bool IsPermanentSuppressionEvent(string providerEvent) =>
         string.Equals(providerEvent, "hard_bounce", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "blocked", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "invalid", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "invalid_email", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase);
+        string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "complaint", StringComparison.OrdinalIgnoreCase);
 
     private async Task UpsertSuppressionAsync(
         string recipientEmailHash,

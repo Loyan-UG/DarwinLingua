@@ -6,6 +6,30 @@ This document defines the Phase 6 contract for scripted roleplay practice.
 
 Roleplay is an MVP practice layer on top of dialogue practice lessons. It must work without AI, without chat, and without learner-generated content being sent to a model.
 
+## Current Implementation Status
+
+Last updated: 2026-05-21.
+
+This contract describes the target standalone `RoleplayScenario` content shape, but standalone roleplay packages are not importable yet.
+
+Current supported behavior:
+
+- Dialogue content can be used as source material for future roleplay scenarios.
+- Event Preparation Packs can include simple `roleplayPrompts`.
+- The Web MVP may derive basic practice from existing Dialogue turns.
+
+Blocked before standalone roleplay content generation:
+
+- parser support for `roleplayScenarios`
+- application validation and idempotent import
+- domain persistence and repository queries
+- Web API list/detail endpoints
+- Web rendering
+- search/admin visibility
+- parser/import/Web tests
+
+Do not generate standalone `RoleplayScenario` packages until the above support exists.
+
 ## `RoleplayScenario`
 
 A `RoleplayScenario` is a structured practice flow connected to one `DialogueLesson`.

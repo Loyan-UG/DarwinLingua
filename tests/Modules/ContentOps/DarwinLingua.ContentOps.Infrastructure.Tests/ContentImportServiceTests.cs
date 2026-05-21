@@ -4094,8 +4094,9 @@ public sealed class ContentImportServiceTests
             section["sectionKey"] = "";
             section["localizedBlocks"]!["en"]![0]!["type"] = "unknown-block";
             section["localizedBlocks"]!["en"]![0]!["rows"] = new JsonArray();
-            JsonNode duplicateSectionPackage = JsonNode.Parse(package.ToJsonString())!;
-            duplicateSectionPackage["grammarTopics"]![0]!["sections"]![1]!["sectionKey"] = "what-are-personal-pronouns";
+            JsonNode duplicateSectionPackage = JsonNode.Parse(await File.ReadAllTextAsync(packagePath))!;
+            string duplicatedSectionKey = duplicateSectionPackage["grammarTopics"]![0]!["sections"]![0]!["sectionKey"]!.GetValue<string>();
+            duplicateSectionPackage["grammarTopics"]![0]!["sections"]![1]!["sectionKey"] = duplicatedSectionKey;
             await File.WriteAllTextAsync(invalidPackagePath, package.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
 
             serviceProvider = BuildServiceProvider(databasePath);
@@ -4122,7 +4123,7 @@ public sealed class ContentImportServiceTests
                     .ImportAsync(new ImportContentPackageRequest(duplicatePackagePath), CancellationToken.None);
 
                 Assert.False(duplicateResult.IsSuccess);
-                Assert.Contains("sectionKey 'what-are-personal-pronouns' is duplicated", string.Join(Environment.NewLine, duplicateResult.Issues.Select(issue => issue.Message)), StringComparison.Ordinal);
+                Assert.Contains($"sectionKey '{duplicatedSectionKey}' is duplicated", string.Join(Environment.NewLine, duplicateResult.Issues.Select(issue => issue.Message)), StringComparison.Ordinal);
             }
             finally
             {

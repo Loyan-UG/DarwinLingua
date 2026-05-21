@@ -352,8 +352,31 @@ internal static class Program
 
         return Directory
             .EnumerateFiles(sourceDirectory, "*.json", SearchOption.AllDirectories)
+            .Where(ShouldIncludeJsonFile)
             .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
             .ToArray();
+    }
+
+    private static bool ShouldIncludeJsonFile(string jsonFilePath)
+    {
+        string fileName = Path.GetFileName(jsonFilePath);
+        if (fileName.EndsWith(".proposed.json", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        string? directory = Path.GetDirectoryName(jsonFilePath);
+        while (!string.IsNullOrWhiteSpace(directory))
+        {
+            if (string.Equals(Path.GetFileName(directory), "archive", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            directory = Path.GetDirectoryName(directory);
+        }
+
+        return true;
     }
 
     private static bool ConfirmImport()

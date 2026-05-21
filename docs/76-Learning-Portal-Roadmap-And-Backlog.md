@@ -23,6 +23,28 @@ This is the single planning source for the learning-portal expansion. Do not cre
 
 ---
 
+## Current Implementation Snapshot
+
+Last updated: 2026-05-21.
+
+- Grammar Guide A1-C2 content is generated and validated against the official syllabus and package contract. The latest validation report is `artifacts/validation/grammar-a1-c2-validation-report.md` and records 225 topics with zero issues.
+- Post-Grammar Conversation audit blockers are repaired. The latest conversation audit report is `artifacts/validation/conversation-content-audit-report.md` and records zero P0 blockers, zero unresolved Dialogue word references, and zero unresolved Talk Topic word references.
+- Existing Conversation content remains protected. Dialogues and Talk Topics were not deleted; only malformed JSON, malformed word references, duplicate useful-word references, and weak active seed dialogue metadata were repaired.
+- A small importable Conversation support baseline exists at `content/generated/conversation-support/conversation-support-baseline-v1.json`. It contains 6 Conversation Starter Packs and 8 Event Preparation Packs across A1-C2 with all target learner languages.
+- Standalone RoleplayScenario content is blocked until dedicated parser, import validation, persistence, Web API, Web rendering, search, admin visibility, and tests exist. Event Preparation Packs may contain simple `roleplayPrompts`, but standalone roleplay packages must not be generated yet.
+- Transactional email has a Brevo API provider path, sandbox behavior, webhook event handling, delivery logs, diagnostics, and suppression handling. Production launch still requires operational Brevo configuration outside source control, verified sender domain, SPF/DKIM/DMARC, webhook secret, and provider DPA review.
+- Mobile/MAUI parity remains later-stage work. Do not modify mobile learning content surfaces until Web/API contracts, imports, rendering, search, admin visibility, and tests are stable.
+
+Immediate next order:
+
+1. Keep validation reports green after any content repair.
+2. Implement RoleplayScenario infrastructure before standalone Roleplay content generation.
+3. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
+4. Generate the first real Expressions package and validate import, Web API, Web rendering, search, and admin visibility before bulk Expressions generation.
+5. Start Exercises only after Grammar, Conversation, and Expressions are stable enough to link to.
+
+---
+
 ## Product Direction
 
 Darwin Lingua should become a complete practical German-learning portal, not a collection of isolated features.
@@ -772,6 +794,12 @@ The portal should track learner progress across content types without mixing use
   - Progress: the official A2 core package now starts with Perfekt with haben, Perfekt with sein, common irregular participles, Präteritum of sein/haben, modal verbs in more detail, dative case basics, accusative vs dative basics, dative pronouns, accusative pronouns, possessive pronouns in cases, Wechselpräpositionen introduction, prepositions with dative, prepositions with accusative, separable verbs in Perfekt, reflexive verbs introduction, dass clauses, weil clauses, wenn for conditions, denn vs weil, sentence order in subordinate clauses, comparative forms, superlative basics, adjective endings introduction, indirect questions introduction, imperative formal/informal, time clauses with bevor/nachdem, zu + infinitive introduction, man as general subject, es gibt, polite forms with würde, simple email grammar, grammar for phone calls, grammar for appointments, grammar for doctor visits, grammar for school/kindergarten communication, common A2 mistakes, the A2 connectors overview, the A2 case review, the A2 verb review, and the final A2 grammar review map, including 10 learner languages, rich sections, examples, rules, common mistakes, and linked word references.
 - [x] start official B1 Grammar content generation with `grammar-b1-core-v1.json`
   - Progress: the official B1 core package now starts with relative clauses basics, relative pronouns in nominative and accusative, relative pronouns in dative, Konjunktiv II for polite requests, Konjunktiv II with wäre/hätte/würde, passive voice introduction, werden as auxiliary, infinitive with zu, um ... zu, damit vs um ... zu, weil/obwohl/trotzdem, als vs wenn, nachdem/bevor/während, indirect questions, reported requests/polite questions, adjective declension after definite article, adjective declension after indefinite article, adjective declension without article, genitive introduction, prepositional verbs introduction, verb + preposition combinations, noun-verb phrases, connectors for opinion, connectors for contrast, connectors for cause/effect, sentence order with multiple clauses, formal email sentence structure, complaint sentence patterns, giving reasons clearly, agreeing/disagreeing grammatically, describing experiences in the past, and talking about plans and conditions, including 10 learner languages, rich sections, examples, rules, common mistakes, and linked word references.
+- [x] run dedicated Grammar A1-C2 validation and repair pass against the syllabus and package contract
+  - Progress: `artifacts/validation/grammar-a1-c2-validation-report.md` records the post-generation coverage pass for all six official Grammar packages. The next content audit should cover existing Dialogues, Talk Topics, and Conversation content before generating more module content. Bulk generation for other modules remains blocked until each module has a stable contract, import validation, Web API validation, Web rendering validation, admin visibility, and release-test coverage.
+- [x] repair post-Grammar Conversation audit blockers before new bulk content generation
+  - Progress: `artifacts/validation/conversation-content-audit-report.md` now reports zero P0 blockers and zero unresolved Dialogue/Talk Topic word references after JSON repair, linked-word normalization, and duplicate useful-word cleanup. `content/generated/conversation-support/conversation-support-baseline-v1.json` adds a small importable baseline for Conversation Starter Packs and Event Preparation Packs across A1-C2.
+- [ ] implement dedicated RoleplayScenario parser/import/persistence before generating standalone roleplay packages
+  - Note: `70-Roleplay-Content-Package-Contract.md` defines the desired contract, but current importer support only covers `roleplayPrompts` inside Event Preparation Packs. Do not generate standalone RoleplayScenario content until parser, domain persistence, Web API, rendering, search, admin visibility, and tests exist.
 - [ ] add broader validation coverage for every rich block type after more reviewed pilot packages are available
 - [ ] keep mobile parity tracked after Web sign-off
 

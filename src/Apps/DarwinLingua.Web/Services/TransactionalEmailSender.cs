@@ -141,6 +141,10 @@ public sealed class TransactionalEmailSender(
             ["X-DarwinLingua-Template"] = message.TemplateKey,
             ["X-DarwinLingua-CorrelationId"] = message.CorrelationId ?? string.Empty,
         };
+        if (emailOptions.BrevoSandboxMode)
+        {
+            headers["X-Sib-Sandbox"] = "drop";
+        }
 
         BrevoSendEmailRequest payload = new(
             new BrevoEmailAddress(emailOptions.FromEmail, emailOptions.FromName),
@@ -159,7 +163,7 @@ public sealed class TransactionalEmailSender(
         string responseBody = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
         if (!response.IsSuccessStatusCode)
         {
-            throw new InvalidOperationException($"Brevo API returned {(int)response.StatusCode} ({response.ReasonPhrase ?? "no reason phrase"}).");
+            throw new InvalidOperationException(BuildBrevoFailureMessage(response, responseBody));
         }
 
         BrevoSendEmailResponse? sendResponse = JsonSerializer.Deserialize<BrevoSendEmailResponse>(
@@ -210,6 +214,35 @@ public sealed class TransactionalEmailSender(
                 ? "disabled"
                 : "file";
 
+    private static string BuildBrevoFailureMessage(HttpResponseMessage response, string responseBody)
+    {
+        string statusText = $"Brevo API returned {(int)response.StatusCode} ({response.ReasonPhrase ?? "no reason phrase"}).";
+        if (string.IsNullOrWhiteSpace(responseBody))
+        {
+            return statusText;
+        }
+
+        try
+        {
+            BrevoErrorResponse? errorResponse = JsonSerializer.Deserialize<BrevoErrorResponse>(
+                responseBody,
+                BrevoJsonSerializerOptions);
+            string? code = string.IsNullOrWhiteSpace(errorResponse?.Code) ? null : errorResponse.Code;
+            string? message = string.IsNullOrWhiteSpace(errorResponse?.Message) ? null : errorResponse.Message;
+            return (code, message) switch
+            {
+                (not null, not null) => $"{statusText} Brevo error {code}: {message}",
+                (not null, null) => $"{statusText} Brevo error {code}.",
+                (null, not null) => $"{statusText} {message}",
+                _ => statusText,
+            };
+        }
+        catch (JsonException)
+        {
+            return statusText;
+        }
+    }
+
     private static string[] SanitizeBrevoTags(string scenarioKey) =>
         [
             "darwinlingua",
@@ -236,4 +269,6 @@ public sealed class TransactionalEmailSender(
     private sealed record BrevoEmailAddress(string Email, string? Name);
 
     private sealed record BrevoSendEmailResponse(string? MessageId);
+
+    private sealed record BrevoErrorResponse(string? Code, string? Message);
 }

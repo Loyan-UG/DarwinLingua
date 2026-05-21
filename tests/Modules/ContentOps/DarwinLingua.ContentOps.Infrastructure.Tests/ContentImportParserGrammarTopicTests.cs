@@ -160,7 +160,7 @@ public sealed class ContentImportParserGrammarTopicTests
             await File.ReadAllTextAsync(packagePath),
             CancellationToken.None);
 
-        Assert.Equal(40, parsedPackage.GrammarTopics.Count);
+        Assert.Equal(35, parsedPackage.GrammarTopics.Count);
         ParsedGrammarTopicModel grammarTopic = Assert.Single(
             parsedPackage.GrammarTopics,
             topic => topic.Slug == "a1-personal-pronouns-ich-du-er-sie-es");
@@ -2827,7 +2827,7 @@ public sealed class ContentImportParserGrammarTopicTests
         Assert.Contains("a2-common-irregular-participles", separablePerfektTopic.PrerequisiteSlugs);
         Assert.Contains("a1-word-order-with-time-and-place", separablePerfektTopic.PrerequisiteSlugs);
         Assert.Contains("b1-describing-experiences-in-the-past", separablePerfektTopic.RelatedTopicSlugs);
-        Assert.Contains("b1-verb-tense-review", separablePerfektTopic.RelatedTopicSlugs);
+        Assert.Contains("b1-b1-verb-tense-review", separablePerfektTopic.RelatedTopicSlugs);
         Assert.Contains("a2-praeteritum-of-sein-and-haben", separablePerfektTopic.RelatedTopicSlugs);
 
         ParsedGrammarSectionModel regularSeparablePerfektSection = Assert.Single(separablePerfektTopic.Sections, section => section.SectionKey == "form-or-structure-table");
@@ -5967,7 +5967,7 @@ public sealed class ContentImportParserGrammarTopicTests
         Assert.Contains("a2-modal-verbs-in-more-detail", pastModalTopic.PrerequisiteSlugs);
         Assert.Contains("a2-sentence-order-in-subordinate-clauses", pastModalTopic.PrerequisiteSlugs);
         Assert.Contains("b1-describing-experiences-in-the-past", pastModalTopic.PrerequisiteSlugs);
-        Assert.Contains("b1-verb-tense-review", pastModalTopic.RelatedTopicSlugs);
+        Assert.Contains("b1-b1-verb-tense-review", pastModalTopic.RelatedTopicSlugs);
         Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", pastModalTopic.RelatedTopicSlugs);
 
         ParsedGrammarSectionModel modalFormsSection = Assert.Single(pastModalTopic.Sections, section => section.SectionKey == "form-or-structure-table");
@@ -6713,6 +6713,6702 @@ public sealed class ContentImportParserGrammarTopicTests
             string serialized = JsonSerializer.Serialize(word);
             Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
         });
+    }
+
+    [Fact]
+    public async Task ParseAsync_ShouldParseOfficialB2GrammarCoreContract()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+        string packagePath = Path.Combine(ResolveRepositoryRoot(), "content", "learning-portal", "grammar", "packages", "grammar-b2-core-v1.json");
+
+        ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+            await File.ReadAllTextAsync(packagePath),
+            CancellationToken.None);
+
+        string[] languages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+
+        Assert.Equal(45, parsedPackage.GrammarTopics.Count);
+
+        ParsedGrammarTopicModel topic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-advanced-relative-clauses");
+        Assert.Equal(1, topic.ContentRevision);
+        Assert.Equal("B2", topic.CefrLevel);
+        Assert.Equal("subordinate-clauses", topic.GrammarCategory);
+        Assert.Equal(16, topic.Sections.Count);
+        Assert.True(topic.Examples.Count >= 150);
+        Assert.True(topic.CommonMistakes.Count >= 55);
+        Assert.True(topic.RuleSummaries.Count >= 26);
+        Assert.True(topic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-relative-clauses-basics", topic.PrerequisiteSlugs);
+        Assert.Contains("b1-relative-pronouns-in-nominative-and-accusative", topic.PrerequisiteSlugs);
+        Assert.Contains("b1-relative-pronouns-in-dative", topic.PrerequisiteSlugs);
+        Assert.Contains("b1-genitive-introduction", topic.PrerequisiteSlugs);
+        Assert.Contains("b2-relative-clauses-with-was-and-wo", topic.RelatedTopicSlugs);
+        Assert.Contains("b2-complex-sentence-order", topic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel coreSection = Assert.Single(topic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formSection = Assert.Single(topic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel focusSection = Assert.Single(topic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel prepositionSection = Assert.Single(topic.Sections, section => section.SectionKey == "preposition-plus-relative-pronoun");
+        ParsedGrammarSectionModel genitiveSection = Assert.Single(topic.Sections, section => section.SectionKey == "genitive-relative-forms");
+        ParsedGrammarSectionModel comparisonSection = Assert.Single(topic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel patternsSection = Assert.Single(topic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel practiceSection = Assert.Single(topic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(topic.TitleLocalized.ContainsKey(language));
+            Assert.True(topic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(topic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(topic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", coreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", focusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", patternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", practiceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(topic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(topic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(topic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(topic.Examples, example => example.GermanText == "Die Kollegin, mit der ich gestern gesprochen habe, arbeitet im Büro.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Die Firma, deren Angebot wir prüfen, hat schnell geantwortet.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Das Formular, das geprüft werden muss, liegt im Anhang.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Das wurde bestätigt, was für uns wichtig ist.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Der Kollege, mit den ich spreche, ist freundlich.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Der Vertrag, den ich habe unterschrieben, gilt ab Montag.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Die Firma, dessen Angebot passt, antwortet schnell.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Das ist der Kunde mit dem ich gesprochen habe.");
+        Assert.All(topic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel wasWoTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-relative-clauses-with-was-and-wo");
+        Assert.Equal(1, wasWoTopic.ContentRevision);
+        Assert.Equal("B2", wasWoTopic.CefrLevel);
+        Assert.Equal("subordinate-clauses", wasWoTopic.GrammarCategory);
+        Assert.Equal(17, wasWoTopic.Sections.Count);
+        Assert.True(wasWoTopic.Examples.Count >= 150);
+        Assert.True(wasWoTopic.CommonMistakes.Count >= 55);
+        Assert.True(wasWoTopic.RuleSummaries.Count >= 26);
+        Assert.True(wasWoTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-advanced-relative-clauses", wasWoTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-relative-clauses-basics", wasWoTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-complex-sentence-order", wasWoTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel wasWoCoreSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel wasWoFormSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel wasWoFocusSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel wasAfterIndefiniteSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "was-after-indefinite-references");
+        ParsedGrammarSectionModel wasAfterSentenceSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "was-after-whole-sentence");
+        ParsedGrammarSectionModel woForPlacesSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "wo-for-places");
+        ParsedGrammarSectionModel wasVsDasSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "was-vs-das");
+        ParsedGrammarSectionModel woVsInDemSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "wo-vs-in-dem");
+        ParsedGrammarSectionModel wasWoComparisonSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel wasWoPatternsSection = Assert.Single(wasWoTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(wasWoTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(wasWoTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(wasWoTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(wasWoTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", wasWoCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wasWoFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wasWoFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wasAfterIndefiniteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wasAfterSentenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", woForPlacesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wasVsDasSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", woVsInDemSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wasWoComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wasWoPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(wasWoTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(wasWoTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(wasWoTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(wasWoTopic.Examples, example => example.GermanText == "Alles, was ich brauche, ist ein klarer Plan.");
+        Assert.Contains(wasWoTopic.Examples, example => example.GermanText == "Der Termin wurde verschoben, was für mich schwierig ist.");
+        Assert.Contains(wasWoTopic.Examples, example => example.GermanText == "Es gibt Situationen, wo man schnell entscheiden muss.");
+        Assert.Contains(wasWoTopic.Examples, example => example.GermanText == "Das Formular, das fehlt, liegt vielleicht im Büro.");
+        Assert.Contains(wasWoTopic.CommonMistakes, mistake => mistake.WrongText == "Alles, das ich brauche, ist Zeit.");
+        Assert.Contains(wasWoTopic.CommonMistakes, mistake => mistake.WrongText == "Das Formular, was fehlt, liegt im Büro.");
+        Assert.Contains(wasWoTopic.CommonMistakes, mistake => mistake.WrongText == "Die Stadt, was ich wohne, ist groß.");
+        Assert.Contains(wasWoTopic.CommonMistakes, mistake => mistake.WrongText == "Alles, was brauche ich, ist Zeit.");
+        Assert.All(wasWoTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel passiveModalTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-passive-with-modal-verbs");
+        Assert.Equal(1, passiveModalTopic.ContentRevision);
+        Assert.Equal("B2", passiveModalTopic.CefrLevel);
+        Assert.Equal("passive", passiveModalTopic.GrammarCategory);
+        Assert.Equal(18, passiveModalTopic.Sections.Count);
+        Assert.True(passiveModalTopic.Examples.Count >= 150);
+        Assert.True(passiveModalTopic.CommonMistakes.Count >= 55);
+        Assert.True(passiveModalTopic.RuleSummaries.Count >= 26);
+        Assert.True(passiveModalTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-passive-voice-introduction", passiveModalTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-werden-as-auxiliary", passiveModalTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-zustandspassiv-versus-vorgangspassiv", passiveModalTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel passiveModalCoreSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel passiveModalFormSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel passiveModalFocusSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel mussPassiveSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "muss-passive");
+        ParsedGrammarSectionModel kannPassiveSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "kann-passive");
+        ParsedGrammarSectionModel darfPassiveSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "darf-passive");
+        ParsedGrammarSectionModel subordinatePassiveSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "subordinate-clause-order");
+        ParsedGrammarSectionModel passiveVsManSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "passive-vs-man");
+        ParsedGrammarSectionModel passiveModalComparisonSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel passiveModalPatternsSection = Assert.Single(passiveModalTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(passiveModalTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(passiveModalTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(passiveModalTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(passiveModalTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", passiveModalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveModalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveModalFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", mussPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", kannPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", darfPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", subordinatePassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveVsManSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveModalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveModalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(passiveModalTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(passiveModalTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(passiveModalTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(passiveModalTopic.Examples, example => example.GermanText == "Das Formular muss geprüft werden.");
+        Assert.Contains(passiveModalTopic.Examples, example => example.GermanText == "Die Rechnung kann online bezahlt werden.");
+        Assert.Contains(passiveModalTopic.Examples, example => example.GermanText == "Hier darf nicht geraucht werden.");
+        Assert.Contains(passiveModalTopic.Examples, example => example.GermanText == "Ich weiß nicht, ob der Antrag geprüft werden muss.");
+        Assert.Contains(passiveModalTopic.CommonMistakes, mistake => mistake.WrongText == "Das Formular muss prüfen werden.");
+        Assert.Contains(passiveModalTopic.CommonMistakes, mistake => mistake.WrongText == "Der Vertrag muss werden unterschrieben.");
+        Assert.Contains(passiveModalTopic.CommonMistakes, mistake => mistake.WrongText == "Ich glaube, dass der Antrag muss geprüft werden.");
+        Assert.Contains(passiveModalTopic.CommonMistakes, mistake => mistake.WrongText == "Die Unterlagen muss geschickt werden.");
+        Assert.All(passiveModalTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel zustandVorgangTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-zustandspassiv-versus-vorgangspassiv");
+        Assert.Equal(1, zustandVorgangTopic.ContentRevision);
+        Assert.Equal("B2", zustandVorgangTopic.CefrLevel);
+        Assert.Equal("passive", zustandVorgangTopic.GrammarCategory);
+        Assert.Equal(18, zustandVorgangTopic.Sections.Count);
+        Assert.True(zustandVorgangTopic.Examples.Count >= 150);
+        Assert.True(zustandVorgangTopic.CommonMistakes.Count >= 55);
+        Assert.True(zustandVorgangTopic.RuleSummaries.Count >= 26);
+        Assert.True(zustandVorgangTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-passive-voice-introduction", zustandVorgangTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-werden-as-auxiliary", zustandVorgangTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-passive-with-modal-verbs", zustandVorgangTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-passive-alternatives", zustandVorgangTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel zustandCoreSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel zustandFormSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel zustandFocusSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel vorgangSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "vorgangspassiv");
+        ParsedGrammarSectionModel zustandSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "zustandspassiv");
+        ParsedGrammarSectionModel werdenVsSeinSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "werden-vs-sein");
+        ParsedGrammarSectionModel timeReferenceSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "time-reference");
+        ParsedGrammarSectionModel zustandPassiveVsManSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "passive-vs-man");
+        ParsedGrammarSectionModel zustandComparisonSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel zustandPatternsSection = Assert.Single(zustandVorgangTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(zustandVorgangTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(zustandVorgangTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(zustandVorgangTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(zustandVorgangTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", zustandCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zustandFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zustandFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", vorgangSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zustandSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", werdenVsSeinSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", timeReferenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zustandPassiveVsManSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zustandComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zustandPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(zustandVorgangTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(zustandVorgangTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(zustandVorgangTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(zustandVorgangTopic.Examples, example => example.GermanText == "Die Tür wird geöffnet.");
+        Assert.Contains(zustandVorgangTopic.Examples, example => example.GermanText == "Die Tür ist geöffnet.");
+        Assert.Contains(zustandVorgangTopic.Examples, example => example.GermanText == "Die Rechnung wird gerade geprüft.");
+        Assert.Contains(zustandVorgangTopic.Examples, example => example.GermanText == "Die Rechnung ist schon geprüft.");
+        Assert.Contains(zustandVorgangTopic.CommonMistakes, mistake => mistake.WrongText == "Die Tür ist geöffnet wird.");
+        Assert.Contains(zustandVorgangTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag ist gerade bearbeitet.");
+        Assert.Contains(zustandVorgangTopic.CommonMistakes, mistake => mistake.WrongText == "Die Rechnung wird schon geprüft.");
+        Assert.Contains(zustandVorgangTopic.CommonMistakes, mistake => mistake.WrongText == "Das Zimmer gereinigt ist.");
+        Assert.All(zustandVorgangTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel konjunktivAdvancedTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-konjunktiv-ii-advanced");
+        Assert.Equal(1, konjunktivAdvancedTopic.ContentRevision);
+        Assert.Equal("B2", konjunktivAdvancedTopic.CefrLevel);
+        Assert.Equal("konjunktiv", konjunktivAdvancedTopic.GrammarCategory);
+        Assert.Equal(18, konjunktivAdvancedTopic.Sections.Count);
+        Assert.True(konjunktivAdvancedTopic.Examples.Count >= 150);
+        Assert.True(konjunktivAdvancedTopic.CommonMistakes.Count >= 55);
+        Assert.True(konjunktivAdvancedTopic.RuleSummaries.Count >= 26);
+        Assert.True(konjunktivAdvancedTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", konjunktivAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-for-polite-requests", konjunktivAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-talking-about-plans-and-conditions", konjunktivAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-hypothetical-statements", konjunktivAdvancedTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel konjunktivCoreSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel konjunktivFormSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel konjunktivFocusSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel waereHaetteSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "waere-and-haette");
+        ParsedGrammarSectionModel wuerdeSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "wuerde-plus-infinitive");
+        ParsedGrammarSectionModel koennteSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "koennte-and-modal-forms");
+        ParsedGrammarSectionModel wennSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "wenn-clauses");
+        ParsedGrammarSectionModel clauseFirstSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "clause-first-patterns");
+        ParsedGrammarSectionModel politeRegisterSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "polite-register");
+        ParsedGrammarSectionModel konjunktivComparisonSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel konjunktivPatternsSection = Assert.Single(konjunktivAdvancedTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(konjunktivAdvancedTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(konjunktivAdvancedTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(konjunktivAdvancedTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(konjunktivAdvancedTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", konjunktivCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waereHaetteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wuerdeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", koennteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wennSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", clauseFirstSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", politeRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(konjunktivAdvancedTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(konjunktivAdvancedTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(konjunktivAdvancedTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(konjunktivAdvancedTopic.Examples, example => example.GermanText == "Wenn ich mehr Zeit hätte, würde ich helfen.");
+        Assert.Contains(konjunktivAdvancedTopic.Examples, example => example.GermanText == "Wäre es möglich, die Unterlagen später zu schicken?");
+        Assert.Contains(konjunktivAdvancedTopic.Examples, example => example.GermanText == "Könnten wir das morgen besprechen?");
+        Assert.Contains(konjunktivAdvancedTopic.Examples, example => example.GermanText == "Ich wäre Ihnen dankbar, wenn Sie mir antworten könnten.");
+        Assert.Contains(konjunktivAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Ich würde gern einen Termin.");
+        Assert.Contains(konjunktivAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn ich hätte Zeit, würde ich kommen.");
+        Assert.Contains(konjunktivAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn ich Zeit hätte, ich würde kommen.");
+        Assert.Contains(konjunktivAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Ich hätte krank.");
+        Assert.All(konjunktivAdvancedTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel hypotheticalTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-hypothetical-statements");
+        Assert.Equal(1, hypotheticalTopic.ContentRevision);
+        Assert.Equal("B2", hypotheticalTopic.CefrLevel);
+        Assert.Equal("konjunktiv", hypotheticalTopic.GrammarCategory);
+        Assert.Equal(18, hypotheticalTopic.Sections.Count);
+        Assert.True(hypotheticalTopic.Examples.Count >= 150);
+        Assert.True(hypotheticalTopic.CommonMistakes.Count >= 55);
+        Assert.True(hypotheticalTopic.RuleSummaries.Count >= 26);
+        Assert.True(hypotheticalTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", hypotheticalTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-talking-about-plans-and-conditions", hypotheticalTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-konjunktiv-ii-advanced", hypotheticalTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-expressing-criticism-politely", hypotheticalTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel hypotheticalCoreSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel hypotheticalFormSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel hypotheticalFocusSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel realUnrealSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "real-hypothetical-vs-unreal");
+        ParsedGrammarSectionModel hypotheticalWennSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "wenn-clauses");
+        ParsedGrammarSectionModel hypotheticalWuerdeSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "wuerde-plus-infinitive");
+        ParsedGrammarSectionModel directFormsSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "waere-haette-koennte");
+        ParsedGrammarSectionModel consequencesSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "hypothetical-consequences");
+        ParsedGrammarSectionModel pastHypotheticalSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "past-hypotheticals-preview");
+        ParsedGrammarSectionModel hypotheticalComparisonSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel hypotheticalPatternsSection = Assert.Single(hypotheticalTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(hypotheticalTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(hypotheticalTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(hypotheticalTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(hypotheticalTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", hypotheticalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hypotheticalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hypotheticalFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", realUnrealSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hypotheticalWennSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hypotheticalWuerdeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directFormsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", consequencesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pastHypotheticalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hypotheticalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hypotheticalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(hypotheticalTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(hypotheticalTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(hypotheticalTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(hypotheticalTopic.Examples, example => example.GermanText == "Wenn ich mehr Zeit hätte, würde ich den Antrag sorgfältiger prüfen.");
+        Assert.Contains(hypotheticalTopic.Examples, example => example.GermanText == "Wenn die Wohnung günstiger wäre, würden wir sie nehmen.");
+        Assert.Contains(hypotheticalTopic.Examples, example => example.GermanText == "Könnte man den Termin auf nächste Woche verschieben?");
+        Assert.Contains(hypotheticalTopic.Examples, example => example.GermanText == "Hätte ich das früher gewusst, hätte ich anders geplant.");
+        Assert.Contains(hypotheticalTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn ich mehr Zeit hätte, ich würde helfen.");
+        Assert.Contains(hypotheticalTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn ich hätte mehr Zeit, würde ich helfen.");
+        Assert.Contains(hypotheticalTopic.CommonMistakes, mistake => mistake.WrongText == "Ich würde den Antrag sorgfältiger.");
+        Assert.Contains(hypotheticalTopic.CommonMistakes, mistake => mistake.WrongText == "Ich hätte krank.");
+        Assert.All(hypotheticalTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel reportedSpeechTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-reported-speech-introduction");
+        Assert.Equal(1, reportedSpeechTopic.ContentRevision);
+        Assert.Equal("B2", reportedSpeechTopic.CefrLevel);
+        Assert.Equal("reported-speech", reportedSpeechTopic.GrammarCategory);
+        Assert.Equal(18, reportedSpeechTopic.Sections.Count);
+        Assert.True(reportedSpeechTopic.Examples.Count >= 150);
+        Assert.True(reportedSpeechTopic.CommonMistakes.Count >= 55);
+        Assert.True(reportedSpeechTopic.RuleSummaries.Count >= 26);
+        Assert.True(reportedSpeechTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-indirect-questions", reportedSpeechTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-reported-requests-and-polite-questions", reportedSpeechTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", reportedSpeechTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-konjunktiv-i-for-reported-speech", reportedSpeechTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel reportedVerbsSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "reporting-verbs");
+        ParsedGrammarSectionModel reportedCoreSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel reportedFormSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel reportedFocusSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel dassSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "dass-statements");
+        ParsedGrammarSectionModel obSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "ob-questions");
+        ParsedGrammarSectionModel wQuestionSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "w-question-clauses");
+        ParsedGrammarSectionModel reportedRequestsSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "reported-requests");
+        ParsedGrammarSectionModel directVsReportedSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "direct-vs-reported");
+        ParsedGrammarSectionModel formalReportingSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "formal-written-reporting");
+        ParsedGrammarSectionModel personTimeSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "person-and-time-shifts");
+        ParsedGrammarSectionModel reportedComparisonSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel reportedPatternsSection = Assert.Single(reportedSpeechTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(reportedSpeechTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(reportedSpeechTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(reportedSpeechTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(reportedSpeechTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", reportedVerbsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dassSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", obSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wQuestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedRequestsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directVsReportedSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalReportingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", personTimeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(reportedSpeechTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(reportedSpeechTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(reportedSpeechTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(reportedSpeechTopic.Examples, example => example.GermanText == "Er sagt, dass der Termin morgen stattfindet.");
+        Assert.Contains(reportedSpeechTopic.Examples, example => example.GermanText == "Sie fragt, ob der Termin bestätigt ist.");
+        Assert.Contains(reportedSpeechTopic.Examples, example => example.GermanText == "Er möchte wissen, wann der Kurs beginnt.");
+        Assert.Contains(reportedSpeechTopic.Examples, example => example.GermanText == "Sie bittet mich, das Formular auszufüllen.");
+        Assert.Contains(reportedSpeechTopic.CommonMistakes, mistake => mistake.WrongText == "Er sagt, dass der Termin findet morgen statt.");
+        Assert.Contains(reportedSpeechTopic.CommonMistakes, mistake => mistake.WrongText == "Sie fragt, ob kommt der Bus.");
+        Assert.Contains(reportedSpeechTopic.CommonMistakes, mistake => mistake.WrongText == "Er fragt, wann beginnt der Kurs.");
+        Assert.Contains(reportedSpeechTopic.CommonMistakes, mistake => mistake.WrongText == "Sie bittet mich, ich fülle das Formular aus.");
+        Assert.All(reportedSpeechTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel nominalizationTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-nominalization-basics");
+        Assert.Equal(1, nominalizationTopic.ContentRevision);
+        Assert.Equal("B2", nominalizationTopic.CefrLevel);
+        Assert.Equal("nouns", nominalizationTopic.GrammarCategory);
+        Assert.Equal(18, nominalizationTopic.Sections.Count);
+        Assert.True(nominalizationTopic.Examples.Count >= 150);
+        Assert.True(nominalizationTopic.CommonMistakes.Count >= 55);
+        Assert.True(nominalizationTopic.RuleSummaries.Count >= 26);
+        Assert.True(nominalizationTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-genitive-introduction", nominalizationTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-adjective-declension-after-definite-article", nominalizationTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-formal-email-sentence-structure", nominalizationTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-nominal-style-in-formal-german", nominalizationTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel nominalCoreSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel nominalFormSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel nominalFocusSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel verbToNounSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "verb-to-noun");
+        ParsedGrammarSectionModel adjectiveToNounSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "adjective-to-noun");
+        ParsedGrammarSectionModel genitiveNounPhraseSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "genitive-noun-phrases");
+        ParsedGrammarSectionModel prepositionalNounPhraseSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "prepositional-noun-phrases");
+        ParsedGrammarSectionModel compoundNounSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "compound-nouns");
+        ParsedGrammarSectionModel verbalNominalSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "verbal-vs-nominal-style");
+        ParsedGrammarSectionModel articleEndingSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "article-and-adjective-endings");
+        ParsedGrammarSectionModel formalEmailNominalSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "formal-email-use");
+        ParsedGrammarSectionModel nominalComparisonSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel nominalPatternsSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(nominalizationTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(nominalizationTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(nominalizationTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(nominalizationTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", nominalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", verbToNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveToNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveNounPhraseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionalNounPhraseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", compoundNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", verbalNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", articleEndingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalEmailNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(nominalizationTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(nominalizationTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(nominalizationTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(nominalizationTopic.Examples, example => example.GermanText == "die Prüfung des Antrags dauert zwei Tage.");
+        Assert.Contains(nominalizationTopic.Examples, example => example.GermanText == "die Bestätigung des Termins fehlt noch.");
+        Assert.Contains(nominalizationTopic.Examples, example => example.GermanText == "Die Antragsprüfung dauert länger.");
+        Assert.Contains(nominalizationTopic.Examples, example => example.GermanText == "Zur Klärung schicken wir Ihnen eine Nachricht.");
+        Assert.Contains(nominalizationTopic.CommonMistakes, mistake => mistake.WrongText == "Prüfung des Antrag");
+        Assert.Contains(nominalizationTopic.CommonMistakes, mistake => mistake.WrongText == "nach die Prüfung");
+        Assert.Contains(nominalizationTopic.CommonMistakes, mistake => mistake.WrongText == "zur verbessern");
+        Assert.Contains(nominalizationTopic.CommonMistakes, mistake => mistake.WrongText == "die Bestätigung den Termin");
+        Assert.All(nominalizationTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel nominalStyleTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-nominal-style-in-formal-german");
+        Assert.Equal(1, nominalStyleTopic.ContentRevision);
+        Assert.Equal("B2", nominalStyleTopic.CefrLevel);
+        Assert.Equal("nouns", nominalStyleTopic.GrammarCategory);
+        Assert.Equal(17, nominalStyleTopic.Sections.Count);
+        Assert.True(nominalStyleTopic.Examples.Count >= 150);
+        Assert.True(nominalStyleTopic.CommonMistakes.Count >= 55);
+        Assert.True(nominalStyleTopic.RuleSummaries.Count >= 26);
+        Assert.True(nominalStyleTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-nominalization-basics", nominalStyleTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-formal-email-sentence-structure", nominalStyleTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-genitive-introduction", nominalStyleTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-nominalization", nominalStyleTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel nominalStyleCoreSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel nominalStyleFormSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel nominalStyleFocusSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel processNounsSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "process-nouns");
+        ParsedGrammarSectionModel genitiveChainsSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "genitive-chains");
+        ParsedGrammarSectionModel prepositionalStyleSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "prepositional-style");
+        ParsedGrammarSectionModel compoundDensitySection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "compound-density");
+        ParsedGrammarSectionModel passiveLikeNominalSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "passive-like-nominal-style");
+        ParsedGrammarSectionModel formalEmailPatternSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "formal-email-patterns");
+        ParsedGrammarSectionModel avoidDensitySection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "when-to-avoid-density");
+        ParsedGrammarSectionModel nominalStyleComparisonSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel nominalStylePatternsSection = Assert.Single(nominalStyleTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(nominalStyleTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(nominalStyleTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(nominalStyleTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(nominalStyleTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", nominalStyleCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalStyleFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalStyleFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", processNounsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveChainsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionalStyleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", compoundDensitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveLikeNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalEmailPatternSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", avoidDensitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalStyleComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalStylePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(nominalStyleTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(nominalStyleTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(nominalStyleTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(nominalStyleTopic.Examples, example => example.GermanText == "Nach Prüfung Ihrer Unterlagen erhalten Sie eine schriftliche Rückmeldung.");
+        Assert.Contains(nominalStyleTopic.Examples, example => example.GermanText == "Zur weiteren Bearbeitung bitten wir um eine kurze Nachricht.");
+        Assert.Contains(nominalStyleTopic.Examples, example => example.GermanText == "Bei Rückfragen stehen wir gern zur Verfügung.");
+        Assert.Contains(nominalStyleTopic.Examples, example => example.GermanText == "Wir prüfen Ihre Unterlagen.");
+        Assert.Contains(nominalStyleTopic.CommonMistakes, mistake => mistake.WrongText == "nach die Prüfung Ihrer Unterlagen");
+        Assert.Contains(nominalStyleTopic.CommonMistakes, mistake => mistake.WrongText == "zur weitere Bearbeitung");
+        Assert.Contains(nominalStyleTopic.CommonMistakes, mistake => mistake.WrongText == "die Bearbeitung Antrag");
+        Assert.Contains(nominalStyleTopic.CommonMistakes, mistake => mistake.WrongText == "Kursanmeldebestätigungsprozessinformation");
+        Assert.All(nominalStyleTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel argumentConnectorsTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-advanced-connectors-for-argumentation");
+        Assert.Equal(1, argumentConnectorsTopic.ContentRevision);
+        Assert.Equal("B2", argumentConnectorsTopic.CefrLevel);
+        Assert.Equal("connectors", argumentConnectorsTopic.GrammarCategory);
+        Assert.Equal(16, argumentConnectorsTopic.Sections.Count);
+        Assert.True(argumentConnectorsTopic.Examples.Count >= 150);
+        Assert.True(argumentConnectorsTopic.CommonMistakes.Count >= 55);
+        Assert.True(argumentConnectorsTopic.RuleSummaries.Count >= 26);
+        Assert.True(argumentConnectorsTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-connectors-for-opinion", argumentConnectorsTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-cause-and-effect", argumentConnectorsTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-einerseits-andererseits", argumentConnectorsTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-zwar-aber", argumentConnectorsTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel argumentCoreSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel argumentFormSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel argumentFocusSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel argumentCauseResultSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "cause-and-result-direction");
+        ParsedGrammarSectionModel argumentContrastSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "contrast-and-concession");
+        ParsedGrammarSectionModel argumentAddingSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "adding-and-ranking-arguments");
+        ParsedGrammarSectionModel argumentRegisterSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "register-and-formality");
+        ParsedGrammarSectionModel argumentPunctuationSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "punctuation-and-sentence-boundaries");
+        ParsedGrammarSectionModel argumentComparisonSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel argumentPatternsSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel argumentMapSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "mini-argument-map");
+        ParsedGrammarSectionModel argumentPracticeSection = Assert.Single(argumentConnectorsTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(argumentConnectorsTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(argumentConnectorsTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(argumentConnectorsTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(argumentConnectorsTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", argumentCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentCauseResultSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentAddingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentPunctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(argumentConnectorsTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(argumentConnectorsTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(argumentConnectorsTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(argumentConnectorsTopic.Examples, example => example.GermanText == "Die Lösung spart Zeit. Außerdem braucht das Team weniger Abstimmungen.");
+        Assert.Contains(argumentConnectorsTopic.Examples, example => example.GermanText == "Die Lösung spart Zeit. Folglich braucht das Team weniger Abstimmungen.");
+        Assert.Contains(argumentConnectorsTopic.Examples, example => example.GermanText == "Obwohl die Lösung Zeit spart, braucht das Team weniger Abstimmungen.");
+        Assert.Contains(argumentConnectorsTopic.Examples, example => example.GermanText == "Einerseits spart die Lösung Zeit, andererseits braucht das Team weniger Abstimmungen.");
+        Assert.Contains(argumentConnectorsTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb wir brauchen mehr Zeit.");
+        Assert.Contains(argumentConnectorsTopic.CommonMistakes, mistake => mistake.WrongText == "Obwohl die Lösung ist teuer, hilft sie.");
+        Assert.Contains(argumentConnectorsTopic.CommonMistakes, mistake => mistake.WrongText == "Einerseits ist es teuer.");
+        Assert.Contains(argumentConnectorsTopic.CommonMistakes, mistake => mistake.WrongText == "Darüber hinaus es verbessert die Planung.");
+        Assert.All(argumentConnectorsTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel einerseitsTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-einerseits-andererseits");
+        Assert.Equal(1, einerseitsTopic.ContentRevision);
+        Assert.Equal("B2", einerseitsTopic.CefrLevel);
+        Assert.Equal("connectors", einerseitsTopic.GrammarCategory);
+        Assert.Equal(15, einerseitsTopic.Sections.Count);
+        Assert.True(einerseitsTopic.Examples.Count >= 150);
+        Assert.True(einerseitsTopic.CommonMistakes.Count >= 55);
+        Assert.True(einerseitsTopic.RuleSummaries.Count >= 26);
+        Assert.True(einerseitsTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", einerseitsTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-contrast", einerseitsTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-zwar-aber", einerseitsTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel einerseitsCoreSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel einerseitsFormSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel einerseitsFocusSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel einerseitsParallelSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "parallel-structure");
+        ParsedGrammarSectionModel einerseitsComparisonSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel einerseitsPatternsSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel einerseitsMapSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "argument-map");
+        ParsedGrammarSectionModel einerseitsPracticeSection = Assert.Single(einerseitsTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(einerseitsTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(einerseitsTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(einerseitsTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(einerseitsTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", einerseitsCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsParallelSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(einerseitsTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(einerseitsTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(einerseitsTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(einerseitsTopic.Examples, example => example.GermanText == "Einerseits spart die Lösung Zeit, andererseits braucht das Team klare Regeln.");
+        Assert.Contains(einerseitsTopic.Examples, example => example.GermanText == "Auf der einen Seite spart die Lösung Zeit, auf der anderen Seite braucht das Team klare Regeln.");
+        Assert.Contains(einerseitsTopic.Examples, example => example.GermanText == "Zwar spart die Lösung Zeit, aber das Team braucht klare Regeln.");
+        Assert.Contains(einerseitsTopic.Examples, example => example.GermanText == "Während die Lösung Zeit spart, braucht das Team klare Regeln.");
+        Assert.Contains(einerseitsTopic.CommonMistakes, mistake => mistake.WrongText == "Einerseits die Lösung spart Zeit, andererseits das Team braucht Regeln.");
+        Assert.Contains(einerseitsTopic.CommonMistakes, mistake => mistake.WrongText == "Einerseits spart die Lösung Zeit.");
+        Assert.Contains(einerseitsTopic.CommonMistakes, mistake => mistake.WrongText == "Auf der einen Seite es hilft, auf der anderen Seite es kostet Zeit.");
+        Assert.Contains(einerseitsTopic.CommonMistakes, mistake => mistake.WrongText == "Einerseits steht die Wohnung zentral andererseits ist sie teuer.");
+        Assert.All(einerseitsTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel zwarAberTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-zwar-aber");
+        Assert.Equal(1, zwarAberTopic.ContentRevision);
+        Assert.Equal("B2", zwarAberTopic.CefrLevel);
+        Assert.Equal("connectors", zwarAberTopic.GrammarCategory);
+        Assert.Equal(15, zwarAberTopic.Sections.Count);
+        Assert.True(zwarAberTopic.Examples.Count >= 150);
+        Assert.True(zwarAberTopic.CommonMistakes.Count >= 55);
+        Assert.True(zwarAberTopic.RuleSummaries.Count >= 26);
+        Assert.True(zwarAberTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", zwarAberTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-einerseits-andererseits", zwarAberTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-einerseits-andererseits", zwarAberTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel zwarCoreSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel zwarFormSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel zwarFocusSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel zwarAdmittedSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "admitted-point");
+        ParsedGrammarSectionModel zwarCounterpointSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "stronger-counterpoint");
+        ParsedGrammarSectionModel zwarComparisonSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel zwarPatternsSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel zwarMapSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "argument-map");
+        ParsedGrammarSectionModel zwarPracticeSection = Assert.Single(zwarAberTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(zwarAberTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(zwarAberTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(zwarAberTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(zwarAberTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", zwarCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarAdmittedSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarCounterpointSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(zwarAberTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(zwarAberTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(zwarAberTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(zwarAberTopic.Examples, example => example.GermanText == "Zwar ist der Kurs teuer, aber er hilft mir sehr.");
+        Assert.Contains(zwarAberTopic.Examples, example => example.GermanText == "Der Kurs ist zwar teuer, aber er hilft mir sehr.");
+        Assert.Contains(zwarAberTopic.Examples, example => example.GermanText == "Obwohl der Kurs teuer ist, hilft er mir sehr.");
+        Assert.Contains(zwarAberTopic.Examples, example => example.GermanText == "Meiner Meinung nach ist der Kurs zwar teuer, aber er hilft mir sehr.");
+        Assert.Contains(zwarAberTopic.CommonMistakes, mistake => mistake.WrongText == "Zwar der Kurs ist teuer, aber er hilft.");
+        Assert.Contains(zwarAberTopic.CommonMistakes, mistake => mistake.WrongText == "Zwar ist der Kurs teuer, aber hilft er.");
+        Assert.Contains(zwarAberTopic.CommonMistakes, mistake => mistake.WrongText == "Der Kurs zwar teuer, aber er hilft.");
+        Assert.Contains(zwarAberTopic.CommonMistakes, mistake => mistake.WrongText == "Zwar ist die Wohnung klein aber sie liegt zentral.");
+        Assert.All(zwarAberTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel jeDestoTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-je-desto-advanced");
+        Assert.Equal(1, jeDestoTopic.ContentRevision);
+        Assert.Equal("B2", jeDestoTopic.CefrLevel);
+        Assert.Equal("connectors", jeDestoTopic.GrammarCategory);
+        Assert.Equal(15, jeDestoTopic.Sections.Count);
+        Assert.True(jeDestoTopic.Examples.Count >= 150);
+        Assert.True(jeDestoTopic.CommonMistakes.Count >= 55);
+        Assert.True(jeDestoTopic.RuleSummaries.Count >= 26);
+        Assert.True(jeDestoTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", jeDestoTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", jeDestoTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-einerseits-andererseits", jeDestoTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-zwar-aber", jeDestoTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel jeDestoCoreSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel jeDestoFormSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel jeDestoFocusSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel jeDestoComparativeSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "comparative-forms");
+        ParsedGrammarSectionModel jeClauseSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "je-clause-verb-final");
+        ParsedGrammarSectionModel destoClauseSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "desto-clause-v2");
+        ParsedGrammarSectionModel umsoSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "umso-variant");
+        ParsedGrammarSectionModel jeDestoComparisonSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel jeDestoPatternsSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel jeDestoMapSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "argument-map");
+        ParsedGrammarSectionModel jeDestoPracticeSection = Assert.Single(jeDestoTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(jeDestoTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(jeDestoTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(jeDestoTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(jeDestoTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", jeDestoCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoComparativeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeClauseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", destoClauseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", umsoSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(jeDestoTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(jeDestoTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(jeDestoTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(jeDestoTopic.Examples, example => example.GermanText == "Je länger ich lerne, desto sicherer werde ich.");
+        Assert.Contains(jeDestoTopic.Examples, example => example.GermanText == "Je klarer die Regeln sind, desto besser arbeitet das Team.");
+        Assert.Contains(jeDestoTopic.Examples, example => example.GermanText == "Je früher wir planen, umso weniger Probleme entstehen.");
+        Assert.Contains(jeDestoTopic.Examples, example => example.GermanText == "Je genauer die Angaben sind, desto schneller kann der Antrag bearbeitet werden.");
+        Assert.Contains(jeDestoTopic.CommonMistakes, mistake => mistake.WrongText == "Je mehr ich lerne, desto ich verstehe besser.");
+        Assert.Contains(jeDestoTopic.CommonMistakes, mistake => mistake.WrongText == "Je klarer sind die Regeln, desto besser arbeitet das Team.");
+        Assert.Contains(jeDestoTopic.CommonMistakes, mistake => mistake.WrongText == "Je früher wir planen, desto weniger entstehen Probleme.");
+        Assert.Contains(jeDestoTopic.CommonMistakes, mistake => mistake.WrongText == "Je genauer die Angaben sind, desto schneller der Antrag bearbeitet werden kann.");
+        Assert.All(jeDestoTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel waehrendWohingegenTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-waehrend-versus-wohingegen");
+        Assert.Equal(1, waehrendWohingegenTopic.ContentRevision);
+        Assert.Equal("B2", waehrendWohingegenTopic.CefrLevel);
+        Assert.Equal("connectors", waehrendWohingegenTopic.GrammarCategory);
+        Assert.Equal(15, waehrendWohingegenTopic.Sections.Count);
+        Assert.True(waehrendWohingegenTopic.Examples.Count >= 150);
+        Assert.True(waehrendWohingegenTopic.CommonMistakes.Count >= 55);
+        Assert.True(waehrendWohingegenTopic.RuleSummaries.Count >= 26);
+        Assert.True(waehrendWohingegenTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-weil-obwohl-trotzdem", waehrendWohingegenTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-contrast", waehrendWohingegenTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", waehrendWohingegenTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-einerseits-andererseits", waehrendWohingegenTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel waehrendCoreSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel waehrendFormSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel waehrendFocusSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel waehrendTimeSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "waehrend-as-time");
+        ParsedGrammarSectionModel waehrendContrastSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "waehrend-as-contrast");
+        ParsedGrammarSectionModel wohingegenContrastSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "wohingegen-as-contrast");
+        ParsedGrammarSectionModel waehrendRegisterSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "register-and-style");
+        ParsedGrammarSectionModel waehrendComparisonSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel waehrendPatternsSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel waehrendMapSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "argument-map");
+        ParsedGrammarSectionModel waehrendPracticeSection = Assert.Single(waehrendWohingegenTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(waehrendWohingegenTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(waehrendWohingegenTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(waehrendWohingegenTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(waehrendWohingegenTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", waehrendCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendTimeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wohingegenContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(waehrendWohingegenTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(waehrendWohingegenTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(waehrendWohingegenTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(waehrendWohingegenTopic.Examples, example => example.GermanText == "Während ich arbeite, hört mein Sohn Musik.");
+        Assert.Contains(waehrendWohingegenTopic.Examples, example => example.GermanText == "Während der erste Vorschlag günstig ist, ist der zweite nachhaltiger.");
+        Assert.Contains(waehrendWohingegenTopic.Examples, example => example.GermanText == "Der erste Vorschlag ist günstig, wohingegen der zweite nachhaltiger ist.");
+        Assert.Contains(waehrendWohingegenTopic.Examples, example => example.GermanText == "Die Nachfrage steigt, wohingegen das Angebot gleich bleibt.");
+        Assert.Contains(waehrendWohingegenTopic.CommonMistakes, mistake => mistake.WrongText == "Während ich arbeite, mein Sohn hört Musik.");
+        Assert.Contains(waehrendWohingegenTopic.CommonMistakes, mistake => mistake.WrongText == "Der erste Vorschlag ist günstig, wohingegen ist der zweite nachhaltiger.");
+        Assert.Contains(waehrendWohingegenTopic.CommonMistakes, mistake => mistake.WrongText == "Wohingegen ich arbeite, hört mein Sohn Musik.");
+        Assert.Contains(waehrendWohingegenTopic.CommonMistakes, mistake => mistake.WrongText == "Die Nachfrage steigt, wohingegen das Angebot bleibt gleich.");
+        Assert.All(waehrendWohingegenTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel consequenceTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-consequence-connectors-folglich-daher-deshalb");
+        Assert.Equal(1, consequenceTopic.ContentRevision);
+        Assert.Equal("B2", consequenceTopic.CefrLevel);
+        Assert.Equal("connectors", consequenceTopic.GrammarCategory);
+        Assert.Equal(15, consequenceTopic.Sections.Count);
+        Assert.True(consequenceTopic.Examples.Count >= 150);
+        Assert.True(consequenceTopic.CommonMistakes.Count >= 55);
+        Assert.True(consequenceTopic.RuleSummaries.Count >= 26);
+        Assert.True(consequenceTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-connectors-for-cause-and-effect", consequenceTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-giving-reasons-clearly", consequenceTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", consequenceTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-cause-connectors-aufgrund-wegen-da", consequenceTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel consequenceCoreSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel consequenceFormSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel consequenceFocusSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel deshalbSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "deshalb-neutral-result");
+        ParsedGrammarSectionModel daherSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "daher-formal-result");
+        ParsedGrammarSectionModel folglichSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "folglich-logical-result");
+        ParsedGrammarSectionModel directionSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "cause-versus-result-direction");
+        ParsedGrammarSectionModel consequenceRegisterSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "register-and-style");
+        ParsedGrammarSectionModel consequenceComparisonSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel consequencePatternsSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel consequencePracticeSection = Assert.Single(consequenceTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(consequenceTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(consequenceTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(consequenceTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(consequenceTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", consequenceCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", consequenceFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", consequenceFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", deshalbSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", daherSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", folglichSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", consequenceRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", consequenceComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", consequencePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", consequencePracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(consequenceTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(consequenceTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(consequenceTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(consequenceTopic.Examples, example => example.GermanText == "Der Bus fällt aus. Deshalb komme ich später.");
+        Assert.Contains(consequenceTopic.Examples, example => example.GermanText == "Die Daten sind unvollständig. Daher verzögert sich die Bearbeitung.");
+        Assert.Contains(consequenceTopic.Examples, example => example.GermanText == "Die Frist ist abgelaufen. Folglich müssen wir einen neuen Antrag stellen.");
+        Assert.Contains(consequenceTopic.Examples, example => example.GermanText == "Die Nachfrage steigt. Folglich brauchen wir mehr Personal.");
+        Assert.Contains(consequenceTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb ich komme später.");
+        Assert.Contains(consequenceTopic.CommonMistakes, mistake => mistake.WrongText == "Daher wir brauchen mehr Personal.");
+        Assert.Contains(consequenceTopic.CommonMistakes, mistake => mistake.WrongText == "Folglich der Antrag kann nicht bearbeitet werden.");
+        Assert.Contains(consequenceTopic.CommonMistakes, mistake => mistake.WrongText == "Aus diesem Grund ich bitte um Rückmeldung.");
+        Assert.All(consequenceTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel causeTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-cause-connectors-aufgrund-wegen-da");
+        Assert.Equal(1, causeTopic.ContentRevision);
+        Assert.Equal("B2", causeTopic.CefrLevel);
+        Assert.Equal("connectors", causeTopic.GrammarCategory);
+        Assert.Equal(15, causeTopic.Sections.Count);
+        Assert.True(causeTopic.Examples.Count >= 150);
+        Assert.True(causeTopic.CommonMistakes.Count >= 55);
+        Assert.True(causeTopic.RuleSummaries.Count >= 26);
+        Assert.True(causeTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-connectors-for-cause-and-effect", causeTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-giving-reasons-clearly", causeTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-genitive-introduction", causeTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-consequence-connectors-folglich-daher-deshalb", causeTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", causeTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel causeCoreSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel causeFormSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel causeFocusSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel aufgrundSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "aufgrund-formal-cause");
+        ParsedGrammarSectionModel wegenSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "wegen-cause-phrase");
+        ParsedGrammarSectionModel daSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "da-subordinate-cause");
+        ParsedGrammarSectionModel genitiveDativeSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "genitive-and-dative-note");
+        ParsedGrammarSectionModel causeDirectionSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "cause-versus-result-direction");
+        ParsedGrammarSectionModel causeRegisterSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "register-and-style");
+        ParsedGrammarSectionModel causeComparisonSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel causePatternsSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel causePracticeSection = Assert.Single(causeTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(causeTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(causeTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(causeTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(causeTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", causeCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causeFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causeFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", aufgrundSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wegenSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", daSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveDativeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causeDirectionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causeRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causeComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causePracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(causeTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(causeTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(causeTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(causeTopic.Examples, example => example.GermanText == "Aufgrund des Wetters fällt der Termin aus.");
+        Assert.Contains(causeTopic.Examples, example => example.GermanText == "Wegen der Krankheit bleibt sie zu Hause.");
+        Assert.Contains(causeTopic.Examples, example => example.GermanText == "Da der Bus ausfällt, komme ich später.");
+        Assert.Contains(causeTopic.Examples, example => example.GermanText == "Da die Unterlagen fehlen, verzögert sich die Bearbeitung.");
+        Assert.Contains(causeTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund das Wetter fällt der Termin aus.");
+        Assert.Contains(causeTopic.CommonMistakes, mistake => mistake.WrongText == "Wegen ich krank bin, bleibe ich zu Hause.");
+        Assert.Contains(causeTopic.CommonMistakes, mistake => mistake.WrongText == "Da der Krankheit bleibe ich zu Hause.");
+        Assert.Contains(causeTopic.CommonMistakes, mistake => mistake.WrongText == "Da der Bus ausfällt, ich komme später.");
+        Assert.All(causeTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel formalPrepositionTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-prepositional-phrases-in-formal-writing");
+        Assert.Equal(1, formalPrepositionTopic.ContentRevision);
+        Assert.Equal("B2", formalPrepositionTopic.CefrLevel);
+        Assert.Equal("prepositions", formalPrepositionTopic.GrammarCategory);
+        Assert.Equal(15, formalPrepositionTopic.Sections.Count);
+        Assert.True(formalPrepositionTopic.Examples.Count >= 150);
+        Assert.True(formalPrepositionTopic.CommonMistakes.Count >= 55);
+        Assert.True(formalPrepositionTopic.RuleSummaries.Count >= 26);
+        Assert.True(formalPrepositionTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-prepositional-verbs-introduction", formalPrepositionTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-verb-plus-preposition-combinations", formalPrepositionTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-formal-email-sentence-structure", formalPrepositionTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-cause-connectors-aufgrund-wegen-da", formalPrepositionTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-advanced-prepositional-structures", formalPrepositionTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel formalPrepositionCoreSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formalPrepositionFormSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel formalPrepositionFocusSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel meaningUseSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "meaning-and-use");
+        ParsedGrammarSectionModel nounPhraseSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "noun-phrase-not-clause");
+        ParsedGrammarSectionModel genitivePhraseSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "genitive-prepositional-phrases");
+        ParsedGrammarSectionModel dativePhraseSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "dative-prepositional-phrases");
+        ParsedGrammarSectionModel emailsReportsSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "emails-and-reports");
+        ParsedGrammarSectionModel formalPrepositionComparisonSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel formalPrepositionPatternsSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel formalPrepositionPracticeSection = Assert.Single(formalPrepositionTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(formalPrepositionTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(formalPrepositionTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(formalPrepositionTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(formalPrepositionTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", formalPrepositionCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalPrepositionFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalPrepositionFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", meaningUseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nounPhraseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitivePhraseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativePhraseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", emailsReportsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalPrepositionComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalPrepositionPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalPrepositionPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(formalPrepositionTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(formalPrepositionTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(formalPrepositionTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(formalPrepositionTopic.Examples, example => example.GermanText == "In Bezug auf Ihre Anfrage senden wir Ihnen die Unterlagen.");
+        Assert.Contains(formalPrepositionTopic.Examples, example => example.GermanText == "Im Rahmen des Projekts prüfen wir die Daten.");
+        Assert.Contains(formalPrepositionTopic.Examples, example => example.GermanText == "Gemäß dem Vertrag endet die Frist am Freitag.");
+        Assert.Contains(formalPrepositionTopic.Examples, example => example.GermanText == "Unter Berücksichtigung der Frist schicken wir die Antwort heute.");
+        Assert.Contains(formalPrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "In Bezug auf Ihre Anfrage, wir senden die Unterlagen.");
+        Assert.Contains(formalPrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "Im Rahmen das Projekt prüfen wir die Daten.");
+        Assert.Contains(formalPrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "Gemäß der Vertrag endet die Frist am Freitag.");
+        Assert.Contains(formalPrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund ich krank bin, kann ich nicht kommen.");
+        Assert.All(formalPrepositionTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel participleAdjectiveTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-participle-adjectives");
+        Assert.Equal(1, participleAdjectiveTopic.ContentRevision);
+        Assert.Equal("B2", participleAdjectiveTopic.CefrLevel);
+        Assert.Equal("adjective-declension", participleAdjectiveTopic.GrammarCategory);
+        Assert.Equal(15, participleAdjectiveTopic.Sections.Count);
+        Assert.True(participleAdjectiveTopic.Examples.Count >= 150);
+        Assert.True(participleAdjectiveTopic.CommonMistakes.Count >= 55);
+        Assert.True(participleAdjectiveTopic.RuleSummaries.Count >= 26);
+        Assert.True(participleAdjectiveTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-adjective-declension-after-definite-article", participleAdjectiveTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-adjective-declension-after-indefinite-article", participleAdjectiveTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-adjective-declension-without-article", participleAdjectiveTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-participle-constructions-introduction", participleAdjectiveTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-adjective-declension-advanced-review", participleAdjectiveTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel participleCoreSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel participleFormSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel participleFocusSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel partizipISection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "partizip-i-active-meaning");
+        ParsedGrammarSectionModel partizipIISection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "partizip-ii-result-or-passive-meaning");
+        ParsedGrammarSectionModel definiteArticleSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "after-definite-article");
+        ParsedGrammarSectionModel indefiniteArticleSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "after-indefinite-article");
+        ParsedGrammarSectionModel withoutArticleSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "without-article");
+        ParsedGrammarSectionModel participleMeaningSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "meaning-and-use");
+        ParsedGrammarSectionModel participleComparisonSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel participlePatternsSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel participlePracticeSection = Assert.Single(participleAdjectiveTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(participleAdjectiveTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(participleAdjectiveTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(participleAdjectiveTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(participleAdjectiveTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", participleCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipISection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipIISection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", definiteArticleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", indefiniteArticleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", withoutArticleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleMeaningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participlePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participlePracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(participleAdjectiveTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(participleAdjectiveTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(participleAdjectiveTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(participleAdjectiveTopic.Examples, example => example.GermanText == "Die wartenden Kunden bleiben ruhig.");
+        Assert.Contains(participleAdjectiveTopic.Examples, example => example.GermanText == "Der unterschriebene Vertrag liegt im Anhang.");
+        Assert.Contains(participleAdjectiveTopic.Examples, example => example.GermanText == "Die fehlenden Unterlagen müssen nachgereicht werden.");
+        Assert.Contains(participleAdjectiveTopic.Examples, example => example.GermanText == "Mit steigenden Preisen müssen wir rechnen.");
+        Assert.Contains(participleAdjectiveTopic.CommonMistakes, mistake => mistake.WrongText == "die wartend Kunden");
+        Assert.Contains(participleAdjectiveTopic.CommonMistakes, mistake => mistake.WrongText == "der unterschrieben Vertrag");
+        Assert.Contains(participleAdjectiveTopic.CommonMistakes, mistake => mistake.WrongText == "ein unterschriebene Vertrag");
+        Assert.Contains(participleAdjectiveTopic.CommonMistakes, mistake => mistake.WrongText == "den unterschriebene Vertrag");
+        Assert.All(participleAdjectiveTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel participleConstructionTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-participle-constructions-introduction");
+        Assert.Equal(1, participleConstructionTopic.ContentRevision);
+        Assert.Equal("B2", participleConstructionTopic.CefrLevel);
+        Assert.Equal("adjective-declension", participleConstructionTopic.GrammarCategory);
+        Assert.Equal(15, participleConstructionTopic.Sections.Count);
+        Assert.True(participleConstructionTopic.Examples.Count >= 150);
+        Assert.True(participleConstructionTopic.CommonMistakes.Count >= 55);
+        Assert.True(participleConstructionTopic.RuleSummaries.Count >= 26);
+        Assert.True(participleConstructionTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-participle-adjectives", participleConstructionTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-relative-clauses-basics", participleConstructionTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-adjective-declension-advanced-review", participleConstructionTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-partizip-i-and-partizip-ii-as-adjectives", participleConstructionTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel participleConstructionCoreSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel participleConstructionFormSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel participleConstructionFocusSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel expandedBeforeNounSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "expanded-before-noun");
+        ParsedGrammarSectionModel participleIConstructionSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "partizip-i-constructions");
+        ParsedGrammarSectionModel participleIIConstructionSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "partizip-ii-constructions");
+        ParsedGrammarSectionModel relativeComparisonSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "relative-clause-comparison");
+        ParsedGrammarSectionModel punctuationReadabilitySection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "punctuation-and-readability");
+        ParsedGrammarSectionModel participleConstructionMeaningSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "meaning-and-use");
+        ParsedGrammarSectionModel participleConstructionComparisonSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel participleConstructionPatternsSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel participleConstructionPracticeSection = Assert.Single(participleConstructionTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(participleConstructionTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(participleConstructionTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(participleConstructionTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(participleConstructionTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", participleConstructionCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleConstructionFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleConstructionFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", expandedBeforeNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleIConstructionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleIIConstructionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", relativeComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationReadabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleConstructionMeaningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleConstructionComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleConstructionPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleConstructionPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(participleConstructionTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(participleConstructionTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(participleConstructionTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(participleConstructionTopic.Examples, example => example.GermanText == "Die im Anhang gesendeten Unterlagen sind vollständig.");
+        Assert.Contains(participleConstructionTopic.Examples, example => example.GermanText == "Der seit Montag laufende Kurs ist gut organisiert.");
+        Assert.Contains(participleConstructionTopic.Examples, example => example.GermanText == "Die im Bericht genannten Gründe sind nachvollziehbar.");
+        Assert.Contains(participleConstructionTopic.Examples, example => example.GermanText == "Die zur Verfügung gestellten Informationen reichen aus.");
+        Assert.Contains(participleConstructionTopic.CommonMistakes, mistake => mistake.WrongText == "die gesendeten im Anhang Unterlagen");
+        Assert.Contains(participleConstructionTopic.CommonMistakes, mistake => mistake.WrongText == "die im Anhang gesendete Unterlagen");
+        Assert.Contains(participleConstructionTopic.CommonMistakes, mistake => mistake.WrongText == "der laufende seit Montag Kurs");
+        Assert.Contains(participleConstructionTopic.CommonMistakes, mistake => mistake.WrongText == "die genannten im Bericht Gründe");
+        Assert.All(participleConstructionTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel infinitiveAdvancedTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-infinitive-clauses-advanced");
+        Assert.Equal(1, infinitiveAdvancedTopic.ContentRevision);
+        Assert.Equal("B2", infinitiveAdvancedTopic.CefrLevel);
+        Assert.Equal("verbs", infinitiveAdvancedTopic.GrammarCategory);
+        Assert.Equal(18, infinitiveAdvancedTopic.Sections.Count);
+        Assert.True(infinitiveAdvancedTopic.Examples.Count >= 150);
+        Assert.True(infinitiveAdvancedTopic.CommonMistakes.Count >= 55);
+        Assert.True(infinitiveAdvancedTopic.RuleSummaries.Count >= 26);
+        Assert.True(infinitiveAdvancedTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-infinitive-with-zu", infinitiveAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-um-zu", infinitiveAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-damit-versus-um-zu", infinitiveAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-complex-sentence-order", infinitiveAdvancedTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-infinitive-and-passive-combinations", infinitiveAdvancedTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel infinitiveAdvancedCoreSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel infinitiveAdvancedFormSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel purposeUmZuSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "purpose-with-um-zu");
+        ParsedGrammarSectionModel ohneZuSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "without-doing-with-ohne-zu");
+        ParsedGrammarSectionModel stattZuSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "instead-of-with-statt-zu");
+        ParsedGrammarSectionModel nounFramesSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "noun-frames-with-zu");
+        ParsedGrammarSectionModel adjectiveFramesSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "adjective-frames-with-zu");
+        ParsedGrammarSectionModel separableZuSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "separable-verbs-and-zu");
+        ParsedGrammarSectionModel infinitiveAdvancedFocusSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel infinitiveAdvancedComparisonSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel sameSubjectSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "same-subject-and-different-subject");
+        ParsedGrammarSectionModel formalSeinZuSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "formal-sein-zu");
+        ParsedGrammarSectionModel infinitiveAdvancedPatternsSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel infinitiveAdvancedPracticeSection = Assert.Single(infinitiveAdvancedTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(infinitiveAdvancedTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(infinitiveAdvancedTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(infinitiveAdvancedTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(infinitiveAdvancedTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", infinitiveAdvancedCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitiveAdvancedFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", purposeUmZuSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ohneZuSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", stattZuSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nounFramesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveFramesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", separableZuSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitiveAdvancedFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitiveAdvancedComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sameSubjectSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalSeinZuSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitiveAdvancedPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitiveAdvancedPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(infinitiveAdvancedTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(infinitiveAdvancedTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(infinitiveAdvancedTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(infinitiveAdvancedTopic.Examples, example => example.GermanText == "Ich hoffe, teilnehmen zu können.");
+        Assert.Contains(infinitiveAdvancedTopic.Examples, example => example.GermanText == "Der Antrag ist bis Freitag einzureichen.");
+        Assert.Contains(infinitiveAdvancedTopic.Examples, example => example.GermanText == "Bitte denken Sie daran, den Ausweis mitzubringen.");
+        Assert.Contains(infinitiveAdvancedTopic.Examples, example => example.GermanText == "Ich schreibe Ihnen, um den Termin zu verschieben.");
+        Assert.Contains(infinitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Ich versuche, den Termin verschieben.");
+        Assert.Contains(infinitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Ich plane, zu anrufen.");
+        Assert.Contains(infinitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Ich helfe Ihnen, um Sie das Formular ausfüllen.");
+        Assert.Contains(infinitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag ist bis Freitag einreichen.");
+        Assert.All(infinitiveAdvancedTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel dativeGenitivePrepositionTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-dative-and-genitive-prepositions");
+        Assert.Equal(1, dativeGenitivePrepositionTopic.ContentRevision);
+        Assert.Equal("B2", dativeGenitivePrepositionTopic.CefrLevel);
+        Assert.Equal("prepositions", dativeGenitivePrepositionTopic.GrammarCategory);
+        Assert.Equal(17, dativeGenitivePrepositionTopic.Sections.Count);
+        Assert.True(dativeGenitivePrepositionTopic.Examples.Count >= 150);
+        Assert.True(dativeGenitivePrepositionTopic.CommonMistakes.Count >= 55);
+        Assert.True(dativeGenitivePrepositionTopic.RuleSummaries.Count >= 26);
+        Assert.True(dativeGenitivePrepositionTopic.LinkedWords.Count >= 100);
+        Assert.Contains("a2-prepositions-with-dative", dativeGenitivePrepositionTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-genitive-introduction", dativeGenitivePrepositionTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-prepositional-phrases-in-formal-writing", dativeGenitivePrepositionTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-genitive-in-formal-german", dativeGenitivePrepositionTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-advanced-prepositional-structures", dativeGenitivePrepositionTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel dativeGenitiveCoreSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel dativeGenitiveFormSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel dativeGenitiveFocusSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel dativePrepositionsSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "dative-prepositions");
+        ParsedGrammarSectionModel genitivePrepositionsSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "genitive-prepositions");
+        ParsedGrammarSectionModel formalGenitiveRegisterSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "formal-genitive-register");
+        ParsedGrammarSectionModel wegenTrotzWaehrendSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "wegen-trotz-waehrend");
+        ParsedGrammarSectionModel aufgrundInnerhalbSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "aufgrund-innerhalb-ausserhalb");
+        ParsedGrammarSectionModel formalDativePrepositionsSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "dative-formal-prepositions");
+        ParsedGrammarSectionModel dativeGenitiveComparisonSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel questionsReferencesSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "questions-and-references");
+        ParsedGrammarSectionModel dativeGenitivePatternsSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel dativeGenitivePracticeSection = Assert.Single(dativeGenitivePrepositionTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(dativeGenitivePrepositionTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(dativeGenitivePrepositionTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(dativeGenitivePrepositionTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(dativeGenitivePrepositionTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", dativeGenitiveCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativeGenitiveFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativeGenitiveFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativePrepositionsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitivePrepositionsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGenitiveRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wegenTrotzWaehrendSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", aufgrundInnerhalbSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalDativePrepositionsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativeGenitiveComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", questionsReferencesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativeGenitivePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativeGenitivePracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(dativeGenitivePrepositionTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(dativeGenitivePrepositionTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(dativeGenitivePrepositionTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(dativeGenitivePrepositionTopic.Examples, example => example.GermanText == "Wegen des schlechten Wetters fällt der Kurs aus.");
+        Assert.Contains(dativeGenitivePrepositionTopic.Examples, example => example.GermanText == "Gemäß dem Vertrag endet die Frist am Freitag.");
+        Assert.Contains(dativeGenitivePrepositionTopic.Examples, example => example.GermanText == "Innerhalb eines Monats erhalten Sie eine Antwort.");
+        Assert.Contains(dativeGenitivePrepositionTopic.Examples, example => example.GermanText == "Dem Bericht zufolge steigen die Kosten.");
+        Assert.Contains(dativeGenitivePrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "wegen dem Termin");
+        Assert.Contains(dativeGenitivePrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "gemäß der Vertrag");
+        Assert.Contains(dativeGenitivePrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "aufgrund ich krank bin");
+        Assert.Contains(dativeGenitivePrepositionTopic.CommonMistakes, mistake => mistake.WrongText == "Wegen des Wetters, fällt der Kurs aus.");
+        Assert.All(dativeGenitivePrepositionTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel formalGenitiveTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-genitive-in-formal-german");
+        Assert.Equal(1, formalGenitiveTopic.ContentRevision);
+        Assert.Equal("B2", formalGenitiveTopic.CefrLevel);
+        Assert.Equal("genitive", formalGenitiveTopic.GrammarCategory);
+        Assert.Equal(16, formalGenitiveTopic.Sections.Count);
+        Assert.True(formalGenitiveTopic.Examples.Count >= 150);
+        Assert.True(formalGenitiveTopic.CommonMistakes.Count >= 55);
+        Assert.True(formalGenitiveTopic.RuleSummaries.Count >= 26);
+        Assert.True(formalGenitiveTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-genitive-introduction", formalGenitiveTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-dative-and-genitive-prepositions", formalGenitiveTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-nominal-style-in-formal-german", formalGenitiveTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-genitive-advanced", formalGenitiveTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-formal-style-in-essays", formalGenitiveTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel formalGenitiveCoreSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formalGenitiveFormSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel formalGenitiveFocusSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel possessionRelationshipSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "possession-and-relationship");
+        ParsedGrammarSectionModel formalNounPhrasesSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "formal-noun-phrases");
+        ParsedGrammarSectionModel genitivePrepositionReviewSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "genitive-prepositions-review");
+        ParsedGrammarSectionModel nounEndingSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "noun-ending-s-es");
+        ParsedGrammarSectionModel adjectiveEndingSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "adjective-endings-in-genitive");
+        ParsedGrammarSectionModel genitiveVsVonSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "genitive-vs-von");
+        ParsedGrammarSectionModel formalGenitiveComparisonSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel formalGenitivePatternsSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel formalGenitivePracticeSection = Assert.Single(formalGenitiveTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(formalGenitiveTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(formalGenitiveTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(formalGenitiveTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(formalGenitiveTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", formalGenitiveCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGenitiveFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGenitiveFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", possessionRelationshipSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalNounPhrasesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitivePrepositionReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nounEndingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveEndingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveVsVonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGenitiveComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGenitivePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGenitivePracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(formalGenitiveTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(formalGenitiveTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(formalGenitiveTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(formalGenitiveTopic.Examples, example => example.GermanText == "Die Bearbeitung des Antrags ist wichtig.");
+        Assert.Contains(formalGenitiveTopic.Examples, example => example.GermanText == "Die Prüfung der Unterlagen ist wichtig.");
+        Assert.Contains(formalGenitiveTopic.Examples, example => example.GermanText == "Die Form \"wegen des wichtigen Termins\" klingt formell.");
+        Assert.Contains(formalGenitiveTopic.Examples, example => example.GermanText == "Der Genitiv in \"die Änderung des Vertrags\" macht den Satz kompakt.");
+        Assert.Contains(formalGenitiveTopic.CommonMistakes, mistake => mistake.WrongText == "die Bearbeitung der Antrag");
+        Assert.Contains(formalGenitiveTopic.CommonMistakes, mistake => mistake.WrongText == "wegen dem wichtigen Termin");
+        Assert.Contains(formalGenitiveTopic.CommonMistakes, mistake => mistake.WrongText == "Die Prüfung der Unterlagen, dauert lange.");
+        Assert.Contains(formalGenitiveTopic.CommonMistakes, mistake => mistake.WrongText == "die Änderung der Vertrag");
+        Assert.All(formalGenitiveTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel adjectiveDeclensionReviewTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-adjective-declension-advanced-review");
+        Assert.Equal(1, adjectiveDeclensionReviewTopic.ContentRevision);
+        Assert.Equal("B2", adjectiveDeclensionReviewTopic.CefrLevel);
+        Assert.Equal("adjective-declension", adjectiveDeclensionReviewTopic.GrammarCategory);
+        Assert.Equal(16, adjectiveDeclensionReviewTopic.Sections.Count);
+        Assert.True(adjectiveDeclensionReviewTopic.Examples.Count >= 150);
+        Assert.True(adjectiveDeclensionReviewTopic.CommonMistakes.Count >= 55);
+        Assert.True(adjectiveDeclensionReviewTopic.RuleSummaries.Count >= 26);
+        Assert.True(adjectiveDeclensionReviewTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-adjective-declension-after-definite-article", adjectiveDeclensionReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-adjective-declension-after-indefinite-article", adjectiveDeclensionReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-adjective-declension-without-article", adjectiveDeclensionReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-b1-case-review", adjectiveDeclensionReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-participle-adjectives", adjectiveDeclensionReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-participle-constructions-introduction", adjectiveDeclensionReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-nominal-style-in-formal-german", adjectiveDeclensionReviewTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel adjectiveDeclensionCoreSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel adjectiveDeclensionFormSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel adjectiveDeclensionFocusSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel weakArticleSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "weak-after-definite-article");
+        ParsedGrammarSectionModel mixedEinSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "mixed-after-ein-words");
+        ParsedGrammarSectionModel strongNoArticleSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "strong-without-article");
+        ParsedGrammarSectionModel dativeGenitiveReviewSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "dative-and-genitive-review");
+        ParsedGrammarSectionModel pluralFormsSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "plural-forms");
+        ParsedGrammarSectionModel formalAdjectivePhrasesSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "formal-noun-phrases");
+        ParsedGrammarSectionModel adjectiveDeclensionComparisonSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel adjectiveDeclensionPatternsSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel adjectiveDeclensionPracticeSection = Assert.Single(adjectiveDeclensionReviewTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(adjectiveDeclensionReviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(adjectiveDeclensionReviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(adjectiveDeclensionReviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(adjectiveDeclensionReviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", adjectiveDeclensionCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveDeclensionFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveDeclensionFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", weakArticleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", mixedEinSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", strongNoArticleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativeGenitiveReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pluralFormsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalAdjectivePhrasesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveDeclensionComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveDeclensionPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveDeclensionPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(adjectiveDeclensionReviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(adjectiveDeclensionReviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(adjectiveDeclensionReviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(adjectiveDeclensionReviewTopic.Examples, example => example.GermanText == "Die Nominalgruppe \"der wichtige Termin\" ist im Büro nützlich.");
+        Assert.Contains(adjectiveDeclensionReviewTopic.Examples, example => example.GermanText == "Die Endung in \"wegen des wichtigen Termins\" zeigt Kasus und Artikeltyp.");
+        Assert.Contains(adjectiveDeclensionReviewTopic.Examples, example => example.GermanText == "Die Phrase \"die fehlenden Unterlagen\" ist für formelle Texte nützlich.");
+        Assert.Contains(adjectiveDeclensionReviewTopic.Examples, example => example.GermanText == "In \"ein neues Formular\" darf die Adjektivendung nicht fehlen.");
+        Assert.Contains(adjectiveDeclensionReviewTopic.CommonMistakes, mistake => mistake.WrongText == "der wichtig Termin");
+        Assert.Contains(adjectiveDeclensionReviewTopic.CommonMistakes, mistake => mistake.WrongText == "ein wichtige Termin");
+        Assert.Contains(adjectiveDeclensionReviewTopic.CommonMistakes, mistake => mistake.WrongText == "mit wichtig Termin");
+        Assert.Contains(adjectiveDeclensionReviewTopic.CommonMistakes, mistake => mistake.WrongText == "wegen dem wichtigen Termin");
+        Assert.All(adjectiveDeclensionReviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel complexSentenceOrderTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-complex-sentence-order");
+        Assert.Equal(1, complexSentenceOrderTopic.ContentRevision);
+        Assert.Equal("B2", complexSentenceOrderTopic.CefrLevel);
+        Assert.Equal("word-order", complexSentenceOrderTopic.GrammarCategory);
+        Assert.Equal(18, complexSentenceOrderTopic.Sections.Count);
+        Assert.True(complexSentenceOrderTopic.Examples.Count >= 150);
+        Assert.True(complexSentenceOrderTopic.CommonMistakes.Count >= 55);
+        Assert.True(complexSentenceOrderTopic.RuleSummaries.Count >= 26);
+        Assert.True(complexSentenceOrderTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", complexSentenceOrderTopic.PrerequisiteSlugs);
+        Assert.Contains("a2-sentence-order-in-subordinate-clauses", complexSentenceOrderTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-relative-clauses-basics", complexSentenceOrderTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-sentence-rhythm-in-long-clauses", complexSentenceOrderTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", complexSentenceOrderTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-complex-subordination", complexSentenceOrderTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel complexCoreSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel complexFormSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel complexFocusSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel mainClauseV2Section = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "main-clause-v2");
+        ParsedGrammarSectionModel subordinateOrderSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "subordinate-clause-order");
+        ParsedGrammarSectionModel complexRelativeSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "relative-clauses-in-long-sentences");
+        ParsedGrammarSectionModel modalPerfectSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "modal-and-perfect-in-subordinate-clauses");
+        ParsedGrammarSectionModel sentenceBracketSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "sentence-bracket");
+        ParsedGrammarSectionModel punctuationSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "punctuation-and-readable-length");
+        ParsedGrammarSectionModel complexComparisonSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel complexPatternsSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel complexPracticeSection = Assert.Single(complexSentenceOrderTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(complexSentenceOrderTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(complexSentenceOrderTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(complexSentenceOrderTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(complexSentenceOrderTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", complexCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", complexFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", mainClauseV2Section.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", subordinateOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", complexRelativeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", modalPerfectSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", sentenceBracketSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", punctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(complexSentenceOrderTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(complexSentenceOrderTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(complexSentenceOrderTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(complexSentenceOrderTopic.Examples, example => example.GermanText == "Ich bleibe heute zu Hause, weil ich krank bin.");
+        Assert.Contains(complexSentenceOrderTopic.Examples, example => example.GermanText == "Weil ich krank bin, bleibe ich heute zu Hause.");
+        Assert.Contains(complexSentenceOrderTopic.Examples, example => example.GermanText == "Ich gehe zum Kurs, obwohl ich müde bin.");
+        Assert.Contains(complexSentenceOrderTopic.Examples, example => example.GermanText == "Der Kollege, der heute im Büro arbeitet, hilft mir bei dem Bericht im Büro.");
+        Assert.Contains(complexSentenceOrderTopic.CommonMistakes, mistake => mistake.WrongText == "Weil ich krank bin, ich bleibe zu Hause.");
+        Assert.Contains(complexSentenceOrderTopic.CommonMistakes, mistake => mistake.WrongText == "Ich glaube, dass er kommt morgen.");
+        Assert.Contains(complexSentenceOrderTopic.CommonMistakes, mistake => mistake.WrongText == "Trotzdem ich gehe zur Arbeit.");
+        Assert.Contains(complexSentenceOrderTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag, der muss geprüft werden, ist wichtig.");
+        Assert.All(complexSentenceOrderTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel sentenceRhythmTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-sentence-rhythm-in-long-clauses");
+        Assert.Equal(1, sentenceRhythmTopic.ContentRevision);
+        Assert.Equal("B2", sentenceRhythmTopic.CefrLevel);
+        Assert.Equal("word-order", sentenceRhythmTopic.GrammarCategory);
+        Assert.Equal(18, sentenceRhythmTopic.Sections.Count);
+        Assert.True(sentenceRhythmTopic.Examples.Count >= 150);
+        Assert.True(sentenceRhythmTopic.CommonMistakes.Count >= 55);
+        Assert.True(sentenceRhythmTopic.RuleSummaries.Count >= 26);
+        Assert.True(sentenceRhythmTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-complex-sentence-order", sentenceRhythmTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", sentenceRhythmTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-formal-email-sentence-structure", sentenceRhythmTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", sentenceRhythmTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-prepositional-phrases-in-formal-writing", sentenceRhythmTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-complex-subordination", sentenceRhythmTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel rhythmCoreSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel rhythmFormSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel rhythmFocusSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel leftFieldSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "left-field-control");
+        ParsedGrammarSectionModel middleFieldSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "middle-field-order");
+        ParsedGrammarSectionModel rightBracketSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "right-bracket-weight");
+        ParsedGrammarSectionModel longSubordinateRhythmSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "long-subordinate-clauses");
+        ParsedGrammarSectionModel splitLongSentenceSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "splitting-long-sentences");
+        ParsedGrammarSectionModel rhythmComparisonSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel rhythmPatternsSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel rhythmPracticeSection = Assert.Single(sentenceRhythmTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(sentenceRhythmTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(sentenceRhythmTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(sentenceRhythmTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(sentenceRhythmTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", rhythmCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhythmFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", rhythmFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", leftFieldSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", middleFieldSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", rightBracketSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"paragraph\"", longSubordinateRhythmSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", splitLongSentenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhythmComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhythmPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhythmPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(sentenceRhythmTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(sentenceRhythmTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(sentenceRhythmTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(sentenceRhythmTopic.Examples, example => example.GermanText == "Heute sende ich Ihnen die Unterlagen per E-Mail, weil der Termin morgen stattfindet.");
+        Assert.Contains(sentenceRhythmTopic.Examples, example => example.GermanText == "Der Antrag, den Sie gestern geschickt haben, wird morgen geprüft.");
+        Assert.Contains(sentenceRhythmTopic.Examples, example => example.GermanText == "Ich kann den Vertrag erst unterschreiben, nachdem ich in Ruhe alle Anlagen geprüft habe.");
+        Assert.Contains(sentenceRhythmTopic.Examples, example => example.GermanText == "Der Termin wurde schriftlich bestätigt. Trotzdem fehlt mir noch die schriftliche Zusage.");
+        Assert.Contains(sentenceRhythmTopic.CommonMistakes, mistake => mistake.WrongText == "Ich schreibe Ihnen wegen des Termins, den wir gestern telefonisch besprochen haben und der für die Planung wichtig ist, weil die Frist morgen endet, heute.");
+        Assert.Contains(sentenceRhythmTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag, der gestern eingereicht wurde, der noch geprüft werden muss, ist wichtig.");
+        Assert.Contains(sentenceRhythmTopic.CommonMistakes, mistake => mistake.WrongText == "Heute wegen der neuen Frist ich schreibe Ihnen.");
+        Assert.Contains(sentenceRhythmTopic.CommonMistakes, mistake => mistake.WrongText == "Die Bestätigung fehlt, obwohl der Termin bestätigt wurde, trotzdem.");
+        Assert.All(sentenceRhythmTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel argumentationGrammarTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-argumentation-grammar");
+        Assert.Equal(1, argumentationGrammarTopic.ContentRevision);
+        Assert.Equal("B2", argumentationGrammarTopic.CefrLevel);
+        Assert.Equal("connectors", argumentationGrammarTopic.GrammarCategory);
+        Assert.Equal(18, argumentationGrammarTopic.Sections.Count);
+        Assert.True(argumentationGrammarTopic.Examples.Count >= 150);
+        Assert.True(argumentationGrammarTopic.CommonMistakes.Count >= 55);
+        Assert.True(argumentationGrammarTopic.RuleSummaries.Count >= 26);
+        Assert.True(argumentationGrammarTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-connectors-for-opinion", argumentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-giving-reasons-clearly", argumentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-cause-and-effect", argumentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-contrast", argumentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", argumentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-einerseits-andererseits", argumentationGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-zwar-aber", argumentationGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-consequence-connectors-folglich-daher-deshalb", argumentationGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-cause-connectors-aufgrund-wegen-da", argumentationGrammarTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel argumentationCoreSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel argumentationStructureSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel argumentationWordOrderSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel argumentationReasonSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "cause-and-reason");
+        ParsedGrammarSectionModel argumentationResultSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "result-and-consequence");
+        ParsedGrammarSectionModel argumentationContrastSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "contrast-and-concession");
+        ParsedGrammarSectionModel argumentationComparisonSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel argumentationPatternsSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel argumentationChecklistSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "connector-choice-checklist");
+        ParsedGrammarSectionModel argumentationPracticeSection = Assert.Single(argumentationGrammarTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(argumentationGrammarTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(argumentationGrammarTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(argumentationGrammarTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(argumentationGrammarTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", argumentationCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationReasonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationResultSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationChecklistSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(argumentationGrammarTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(argumentationGrammarTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(argumentationGrammarTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(argumentationGrammarTopic.Examples, example => example.GermanText == "Ich finde den Vorschlag überzeugend, weil er praktisch ist.");
+        Assert.Contains(argumentationGrammarTopic.Examples, example => example.GermanText == "Der Vorschlag ist praktisch. Deshalb finde ich ihn überzeugend.");
+        Assert.Contains(argumentationGrammarTopic.Examples, example => example.GermanText == "Obwohl der Vorschlag praktisch ist, sehe ich noch ein Problem.");
+        Assert.Contains(argumentationGrammarTopic.Examples, example => example.GermanText == "Einerseits ist der Vorschlag praktisch, andererseits ist er teuer.");
+        Assert.Contains(argumentationGrammarTopic.Examples, example => example.GermanText == "Nicht nur der Preis des Vorschlags ist wichtig, sondern auch die Qualität.");
+        Assert.Contains(argumentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Weil die Lösung ist fair, stimme ich zu.");
+        Assert.Contains(argumentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb ich stimme zu.");
+        Assert.Contains(argumentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Trotzdem wir handeln jetzt.");
+        Assert.Contains(argumentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Nicht nur der Preis ist wichtig, aber auch die Qualität.");
+        Assert.All(argumentationGrammarTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel expressingProbabilityTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-expressing-probability");
+        Assert.Equal(1, expressingProbabilityTopic.ContentRevision);
+        Assert.Equal("B2", expressingProbabilityTopic.CefrLevel);
+        Assert.Equal("modal-verbs", expressingProbabilityTopic.GrammarCategory);
+        Assert.Equal(17, expressingProbabilityTopic.Sections.Count);
+        Assert.True(expressingProbabilityTopic.Examples.Count >= 150);
+        Assert.True(expressingProbabilityTopic.CommonMistakes.Count >= 55);
+        Assert.True(expressingProbabilityTopic.RuleSummaries.Count >= 26);
+        Assert.True(expressingProbabilityTopic.LinkedWords.Count >= 100);
+        Assert.Contains("a2-modal-verbs-in-more-detail", expressingProbabilityTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-modal-verbs-in-the-past", expressingProbabilityTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", expressingProbabilityTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-konjunktiv-ii-advanced", expressingProbabilityTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", expressingProbabilityTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-hypothetical-statements", expressingProbabilityTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-reported-speech-introduction", expressingProbabilityTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-modal-particles-overview", expressingProbabilityTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel probabilityCoreSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel probabilityStructureSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel probabilityWordOrderSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel probabilityScaleSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "probability-scale");
+        ParsedGrammarSectionModel probabilityAdverbSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "wahrscheinlich-and-vermutlich");
+        ParsedGrammarSectionModel probabilityDuerfteSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "duerfte");
+        ParsedGrammarSectionModel probabilityPastSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "past-probability");
+        ParsedGrammarSectionModel probabilityComparisonSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel probabilityPatternsSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel probabilityRegisterSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "register-and-politeness");
+        ParsedGrammarSectionModel probabilityPracticeSection = Assert.Single(expressingProbabilityTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(expressingProbabilityTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(expressingProbabilityTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(expressingProbabilityTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(expressingProbabilityTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", probabilityCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityScaleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityAdverbSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityDuerfteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityPastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", probabilityRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", probabilityPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(expressingProbabilityTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(expressingProbabilityTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(expressingProbabilityTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(expressingProbabilityTopic.Examples, example => example.GermanText == "Der Bus dürfte verspätet sein.");
+        Assert.Contains(expressingProbabilityTopic.Examples, example => example.GermanText == "Der Termin wird wahrscheinlich morgen stattfinden.");
+        Assert.Contains(expressingProbabilityTopic.Examples, example => example.GermanText == "Die E-Mail dürfte angekommen sein.");
+        Assert.Contains(expressingProbabilityTopic.Examples, example => example.GermanText == "Ich frage nach, weil der Antrag wahrscheinlich vollständig ist.");
+        Assert.Contains(expressingProbabilityTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bus dürfte spät.");
+        Assert.Contains(expressingProbabilityTopic.CommonMistakes, mistake => mistake.WrongText == "Wahrscheinlich der Bus kommt später.");
+        Assert.Contains(expressingProbabilityTopic.CommonMistakes, mistake => mistake.WrongText == "Die E-Mail dürfte angekommen.");
+        Assert.Contains(expressingProbabilityTopic.CommonMistakes, mistake => mistake.WrongText == "Weil der Antrag dürfte heute ankommen, frage ich nach.");
+        Assert.All(expressingProbabilityTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel expressingDoubtTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-expressing-doubt");
+        Assert.Equal(1, expressingDoubtTopic.ContentRevision);
+        Assert.Equal("B2", expressingDoubtTopic.CefrLevel);
+        Assert.Equal("konjunktiv", expressingDoubtTopic.GrammarCategory);
+        Assert.Equal(17, expressingDoubtTopic.Sections.Count);
+        Assert.True(expressingDoubtTopic.Examples.Count >= 150);
+        Assert.True(expressingDoubtTopic.CommonMistakes.Count >= 55);
+        Assert.True(expressingDoubtTopic.RuleSummaries.Count >= 26);
+        Assert.True(expressingDoubtTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-konjunktiv-ii-for-polite-requests", expressingDoubtTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", expressingDoubtTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-reported-requests-and-polite-questions", expressingDoubtTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-agreeing-and-disagreeing-grammatically", expressingDoubtTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-konjunktiv-ii-advanced", expressingDoubtTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-expressing-probability", expressingDoubtTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-expressing-criticism-politely", expressingDoubtTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-indirect-criticism", expressingDoubtTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-hypothetical-statements", expressingDoubtTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-reported-speech-introduction", expressingDoubtTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel doubtCoreSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel doubtStructureSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel doubtWordOrderSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel doubtDassObSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "dass-and-ob");
+        ParsedGrammarSectionModel doubtKoennteSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "koennte-es-sein");
+        ParsedGrammarSectionModel doubtKonjunktivSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "waere-haette-wuerde-koennte");
+        ParsedGrammarSectionModel doubtFormalSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "formal-doubt");
+        ParsedGrammarSectionModel doubtWennSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "wenn-clauses");
+        ParsedGrammarSectionModel doubtComparisonSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel doubtPatternsSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel doubtRegisterSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "register-and-tone");
+        ParsedGrammarSectionModel doubtPracticeSection = Assert.Single(expressingDoubtTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(expressingDoubtTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(expressingDoubtTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(expressingDoubtTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(expressingDoubtTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", doubtCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtDassObSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtKoennteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtKonjunktivSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtFormalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtWennSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", doubtRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", doubtPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(expressingDoubtTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(expressingDoubtTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(expressingDoubtTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(expressingDoubtTopic.Examples, example => example.GermanText == "Ich bezweifle, dass die Rechnung stimmt.");
+        Assert.Contains(expressingDoubtTopic.Examples, example => example.GermanText == "Ich bin nicht sicher, ob die Rechnung stimmt.");
+        Assert.Contains(expressingDoubtTopic.Examples, example => example.GermanText == "Könnte es sein, dass ein Fehler vorliegt?");
+        Assert.Contains(expressingDoubtTopic.Examples, example => example.GermanText == "Ich würde den Termin anders einschätzen.");
+        Assert.Contains(expressingDoubtTopic.Examples, example => example.GermanText == "Wenn die Lösung ausreichen würde, müssten wir genauer prüfen.");
+        Assert.Contains(expressingDoubtTopic.CommonMistakes, mistake => mistake.WrongText == "Ich bezweifle, dass die Rechnung stimmt nicht.");
+        Assert.Contains(expressingDoubtTopic.CommonMistakes, mistake => mistake.WrongText == "Ich bin nicht sicher, ob stimmt die Rechnung.");
+        Assert.Contains(expressingDoubtTopic.CommonMistakes, mistake => mistake.WrongText == "Könnte sein, dass die Rechnung stimmt?");
+        Assert.Contains(expressingDoubtTopic.CommonMistakes, mistake => mistake.WrongText == "Ich würde das anders sehe.");
+        Assert.Contains(expressingDoubtTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn das stimmen würde, wir müssten neu prüfen.");
+        Assert.All(expressingDoubtTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel criticismTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-expressing-criticism-politely");
+        Assert.Equal(1, criticismTopic.ContentRevision);
+        Assert.Equal("B2", criticismTopic.CefrLevel);
+        Assert.Equal("word-order", criticismTopic.GrammarCategory);
+        Assert.Equal(18, criticismTopic.Sections.Count);
+        Assert.True(criticismTopic.Examples.Count >= 150);
+        Assert.True(criticismTopic.CommonMistakes.Count >= 55);
+        Assert.True(criticismTopic.RuleSummaries.Count >= 26);
+        Assert.True(criticismTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-formal-email-sentence-structure", criticismTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-complaint-sentence-patterns", criticismTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-for-polite-requests", criticismTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-agreeing-and-disagreeing-grammatically", criticismTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", criticismTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-indirect-criticism", criticismTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-formal-complaint-grammar", criticismTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel criticismCoreSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel criticismStructureSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel criticismWordOrderSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel criticismMeaningSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "meaning-and-use");
+        ParsedGrammarSectionModel criticismComparisonSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel criticismPatternsSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel criticismDassSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "dass-clauses-for-criticism");
+        ParsedGrammarSectionModel criticismWennSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "wenn-clauses-for-suggestions");
+        ParsedGrammarSectionModel criticismKonjunktivSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "konjunktiv-ii-softening");
+        ParsedGrammarSectionModel criticismObSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "ob-and-questions");
+        ParsedGrammarSectionModel criticismEmailSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "formal-email-criticism");
+        ParsedGrammarSectionModel criticismPassiveSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "criticism-with-passive");
+        ParsedGrammarSectionModel criticismNominalSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "criticism-with-nominal-style");
+        ParsedGrammarSectionModel criticismToneSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "avoiding-aggressive-wording");
+        ParsedGrammarSectionModel criticismPracticeSection = Assert.Single(criticismTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(criticismTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(criticismTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(criticismTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(criticismTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", criticismCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismMeaningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismDassSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismWennSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismKonjunktivSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismObSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismEmailSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", criticismToneSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", criticismPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(criticismTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(criticismTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(criticismTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(criticismTopic.Examples, example => example.GermanText == "Mir ist aufgefallen, dass die Rechnung nicht nachvollziehbar ist.");
+        Assert.Contains(criticismTopic.Examples, example => example.GermanText == "Es wäre besser, wenn wir den Bericht noch einmal prüfen würden.");
+        Assert.Contains(criticismTopic.Examples, example => example.GermanText == "Könnten wir die Rechnung bitte noch einmal besprechen?");
+        Assert.Contains(criticismTopic.Examples, example => example.GermanText == "Aus meiner Sicht sollte die Lösung überarbeitet werden.");
+        Assert.Contains(criticismTopic.CommonMistakes, mistake => mistake.WrongText == "Ich finde problematisch, dass die Antwort fehlt.");
+        Assert.Contains(criticismTopic.CommonMistakes, mistake => mistake.WrongText == "Ich finde es problematisch, dass fehlt die Antwort.");
+        Assert.Contains(criticismTopic.CommonMistakes, mistake => mistake.WrongText == "Könnten wir bitte prüfen die Rechnung?");
+        Assert.Contains(criticismTopic.CommonMistakes, mistake => mistake.WrongText == "Sie müssen das sofort korrigieren.");
+        Assert.Contains(criticismTopic.CommonMistakes, mistake => mistake.WrongText == "Ich frage mich, wenn die Lösung reicht.");
+        Assert.All(criticismTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel comparingOptionsTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-comparing-options-grammatically");
+        Assert.Equal(1, comparingOptionsTopic.ContentRevision);
+        Assert.Equal("B2", comparingOptionsTopic.CefrLevel);
+        Assert.Equal("connectors", comparingOptionsTopic.GrammarCategory);
+        Assert.Equal(18, comparingOptionsTopic.Sections.Count);
+        Assert.True(comparingOptionsTopic.Examples.Count >= 150);
+        Assert.True(comparingOptionsTopic.CommonMistakes.Count >= 55);
+        Assert.True(comparingOptionsTopic.RuleSummaries.Count >= 26);
+        Assert.True(comparingOptionsTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-connectors-for-opinion", comparingOptionsTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-contrast", comparingOptionsTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-cause-and-effect", comparingOptionsTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", comparingOptionsTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-einerseits-andererseits", comparingOptionsTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-zwar-aber", comparingOptionsTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-waehrend-versus-wohingegen", comparingOptionsTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", comparingOptionsTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel comparingCoreSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel comparingStructureSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel comparingWordOrderSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel comparingComparisonSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel comparingPatternsSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel comparingPracticeSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "practice-advice");
+        ParsedGrammarSectionModel entwederOderSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "entweder-oder");
+        ParsedGrammarSectionModel sowohlAlsAuchSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "sowohl-als-auch");
+        ParsedGrammarSectionModel einerseitsAndererseitsSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "einerseits-andererseits");
+        ParsedGrammarSectionModel waehrendWohingegenSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "waehrend-wohingegen");
+        ParsedGrammarSectionModel formalComparisonSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "formal-comparison-phrases");
+        ParsedGrammarSectionModel preferenceSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "preference-patterns");
+        ParsedGrammarSectionModel jeNachdemSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "je-nachdem-ob");
+        ParsedGrammarSectionModel mistakeWarningSection = Assert.Single(comparingOptionsTopic.Sections, section => section.SectionKey == "mistake-warning");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(comparingOptionsTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(comparingOptionsTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(comparingOptionsTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(comparingOptionsTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", comparingCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparingStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparingWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparingComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparingPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparingPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", entwederOderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sowohlAlsAuchSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", einerseitsAndererseitsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waehrendWohingegenSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", preferenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeNachdemSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", mistakeWarningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", mistakeWarningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(comparingOptionsTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(comparingOptionsTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(comparingOptionsTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(comparingOptionsTopic.Examples, example => example.GermanText == "Zur Auswahl stehen entweder der Zug oder der Bus.");
+        Assert.Contains(comparingOptionsTopic.Examples, example => example.GermanText == "Sowohl der Zug als auch der Bus haben Vorteile.");
+        Assert.Contains(comparingOptionsTopic.Examples, example => example.GermanText == "Einerseits ist der Zug schneller, andererseits ist der Bus billiger.");
+        Assert.Contains(comparingOptionsTopic.Examples, example => example.GermanText == "Der Zug ist schneller, während der Bus billiger ist.");
+        Assert.Contains(comparingOptionsTopic.Examples, example => example.GermanText == "Ich entscheide mich eher für den Zug als für den Bus.");
+        Assert.Contains(comparingOptionsTopic.CommonMistakes, mistake => mistake.WrongText == "Während der Zug ist schneller, ist der Bus billiger.");
+        Assert.Contains(comparingOptionsTopic.CommonMistakes, mistake => mistake.WrongText == "Sowohl der Preis auch die Lage sind wichtig.");
+        Assert.Contains(comparingOptionsTopic.CommonMistakes, mistake => mistake.WrongText == "Ich fahre lieber mit dem Zug wie mit dem Bus.");
+        Assert.Contains(comparingOptionsTopic.CommonMistakes, mistake => mistake.WrongText == "Statt warten, rufe ich an.");
+        Assert.Contains(comparingOptionsTopic.CommonMistakes, mistake => mistake.WrongText == "Je nachdem, ob ist der Termin frei, buchen wir.");
+        Assert.All(comparingOptionsTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel meetingTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-workplace-meeting-grammar");
+        Assert.Equal(1, meetingTopic.ContentRevision);
+        Assert.Equal("B2", meetingTopic.CefrLevel);
+        Assert.Equal("word-order", meetingTopic.GrammarCategory);
+        Assert.Equal(18, meetingTopic.Sections.Count);
+        Assert.True(meetingTopic.Examples.Count >= 150);
+        Assert.True(meetingTopic.CommonMistakes.Count >= 55);
+        Assert.True(meetingTopic.RuleSummaries.Count >= 26);
+        Assert.True(meetingTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", meetingTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-formal-email-sentence-structure", meetingTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-reported-requests-and-polite-questions", meetingTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-passive-with-modal-verbs", meetingTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-job-interview-grammar", meetingTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-grammar-for-negotiation", meetingTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel meetingCoreSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel meetingStructureSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel meetingWordOrderSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel meetingComparisonSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel meetingPatternsSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel meetingPracticeSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "practice-advice");
+        ParsedGrammarSectionModel agendaSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "agenda-and-opening");
+        ParsedGrammarSectionModel proposalSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "proposals-with-dass");
+        ParsedGrammarSectionModel clarificationSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "clarification-questions");
+        ParsedGrammarSectionModel objectionSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "polite-objections");
+        ParsedGrammarSectionModel nextStepsSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "conditions-and-next-steps");
+        ParsedGrammarSectionModel passiveDecisionSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "passive-decisions");
+        ParsedGrammarSectionModel minutesSection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "minutes-and-follow-up");
+        ParsedGrammarSectionModel readabilitySection = Assert.Single(meetingTopic.Sections, section => section.SectionKey == "readability-in-long-meeting-sentences");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(meetingTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(meetingTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(meetingTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(meetingTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", meetingCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", meetingStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", meetingWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", meetingWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", meetingComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", meetingPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", meetingPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", meetingPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", agendaSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", proposalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", clarificationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", objectionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nextStepsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveDecisionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", minutesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", readabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", readabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(meetingTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(meetingTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(meetingTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(meetingTopic.Examples, example => example.GermanText == "Ich schlage vor, dass wir die Frist verlängern.");
+        Assert.Contains(meetingTopic.Examples, example => example.GermanText == "Könnten Sie bitte kurz erklären, warum die Verlängerung sinnvoll ist?");
+        Assert.Contains(meetingTopic.Examples, example => example.GermanText == "Wenn alle einverstanden sind, halten wir die Verlängerung im Protokoll fest.");
+        Assert.Contains(meetingTopic.Examples, example => example.GermanText == "Es wurde entschieden, dass wir die Frist verlängern.");
+        Assert.Contains(meetingTopic.Examples, example => example.GermanText == "Zum Schluss fasse ich zusammen, welche Aufgaben bis Freitag erledigt werden müssen.");
+        Assert.Contains(meetingTopic.CommonMistakes, mistake => mistake.WrongText == "Ich schlage vor, dass wir verschieben den Termin.");
+        Assert.Contains(meetingTopic.CommonMistakes, mistake => mistake.WrongText == "Könnten Sie erklären, warum ist die Lösung besser?");
+        Assert.Contains(meetingTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn alle einverstanden sind, wir halten das fest.");
+        Assert.Contains(meetingTopic.CommonMistakes, mistake => mistake.WrongText == "Nachdem wir haben die Zahlen geprüft, können wir abstimmen.");
+        Assert.Contains(meetingTopic.CommonMistakes, mistake => mistake.WrongText == "Wir halten fest, dass die Frist wird verlängert.");
+        Assert.All(meetingTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel jobInterviewTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-job-interview-grammar");
+        Assert.Equal(1, jobInterviewTopic.ContentRevision);
+        Assert.Equal("B2", jobInterviewTopic.CefrLevel);
+        Assert.Equal("questions", jobInterviewTopic.GrammarCategory);
+        Assert.Equal(18, jobInterviewTopic.Sections.Count);
+        Assert.True(jobInterviewTopic.Examples.Count >= 150);
+        Assert.True(jobInterviewTopic.CommonMistakes.Count >= 55);
+        Assert.True(jobInterviewTopic.RuleSummaries.Count >= 26);
+        Assert.True(jobInterviewTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-indirect-questions", jobInterviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-reported-requests-and-polite-questions", jobInterviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-for-polite-requests", jobInterviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-formal-email-sentence-structure", jobInterviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-workplace-meeting-grammar", jobInterviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-formal-complaint-grammar", jobInterviewTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel jobInterviewCoreSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel jobInterviewStructureSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel jobInterviewWordOrderSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel jobInterviewComparisonSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel jobInterviewPatternsSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel jobInterviewPracticeSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "practice-advice");
+        ParsedGrammarSectionModel directInterviewSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "direct-interview-questions");
+        ParsedGrammarSectionModel obInterviewSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "indirect-questions-with-ob");
+        ParsedGrammarSectionModel wInterviewSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "w-questions-in-interviews");
+        ParsedGrammarSectionModel politeQuestionSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "polite-question-frames");
+        ParsedGrammarSectionModel answerStructureSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "answer-structure");
+        ParsedGrammarSectionModel strengthsExperienceSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "strengths-and-experience-answers");
+        ParsedGrammarSectionModel availabilitySection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "availability-and-conditions");
+        ParsedGrammarSectionModel closingSection = Assert.Single(jobInterviewTopic.Sections, section => section.SectionKey == "closing-and-follow-up");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(jobInterviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(jobInterviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(jobInterviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(jobInterviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", jobInterviewCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jobInterviewStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jobInterviewWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", jobInterviewWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jobInterviewComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jobInterviewPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jobInterviewPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", jobInterviewPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directInterviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", obInterviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wInterviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", politeQuestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", politeQuestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", answerStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", strengthsExperienceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", availabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", closingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(jobInterviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(jobInterviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(jobInterviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(jobInterviewTopic.Examples, example => example.GermanText == "Können Sie bitte erklären, warum Sie sich für die Stelle interessieren?");
+        Assert.Contains(jobInterviewTopic.Examples, example => example.GermanText == "Ich würde gern wissen, ob die Stelle auch langfristig geplant ist.");
+        Assert.Contains(jobInterviewTopic.Examples, example => example.GermanText == "Könnten Sie mir sagen, wann der Arbeitsbeginn geplant ist?");
+        Assert.Contains(jobInterviewTopic.Examples, example => example.GermanText == "Eine Stärke von mir ist, dass ich bei den Aufgaben strukturiert arbeite.");
+        Assert.Contains(jobInterviewTopic.Examples, example => example.GermanText == "Darf ich fragen, wie der weitere Ablauf für die Stelle aussieht?");
+        Assert.Contains(jobInterviewTopic.CommonMistakes, mistake => mistake.WrongText == "Können Sie sagen, warum ist die Stelle interessant?");
+        Assert.Contains(jobInterviewTopic.CommonMistakes, mistake => mistake.WrongText == "Ich möchte wissen, ob ist die Stelle noch frei.");
+        Assert.Contains(jobInterviewTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn es möglich ist, ich würde gern anfangen.");
+        Assert.Contains(jobInterviewTopic.CommonMistakes, mistake => mistake.WrongText == "Ich freue mich für Ihre Rückmeldung.");
+        Assert.Contains(jobInterviewTopic.CommonMistakes, mistake => mistake.WrongText == "Darf ich fragen, wie sieht der weitere Ablauf aus?");
+        Assert.All(jobInterviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel formalComplaintTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-formal-complaint-grammar");
+        Assert.Equal(1, formalComplaintTopic.ContentRevision);
+        Assert.Equal("B2", formalComplaintTopic.CefrLevel);
+        Assert.Equal("word-order", formalComplaintTopic.GrammarCategory);
+        Assert.Equal(18, formalComplaintTopic.Sections.Count);
+        Assert.True(formalComplaintTopic.Examples.Count >= 150);
+        Assert.True(formalComplaintTopic.CommonMistakes.Count >= 55);
+        Assert.True(formalComplaintTopic.RuleSummaries.Count >= 26);
+        Assert.True(formalComplaintTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-complaint-sentence-patterns", formalComplaintTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-formal-email-sentence-structure", formalComplaintTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-cause-and-effect", formalComplaintTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", formalComplaintTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-expressing-criticism-politely", formalComplaintTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-indirect-criticism", formalComplaintTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel complaintCoreSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel complaintStructureSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel complaintWordOrderSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel complaintComparisonSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel complaintPatternsSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel complaintPracticeSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "practice-advice");
+        ParsedGrammarSectionModel problemStatementSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "problem-statement");
+        ParsedGrammarSectionModel factsEvidenceSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "facts-dates-and-evidence");
+        ParsedGrammarSectionModel reasonConsequenceSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "reason-and-consequence");
+        ParsedGrammarSectionModel politeRequestGrammarSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "polite-request-grammar");
+        ParsedGrammarSectionModel passiveNominalSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "passive-and-nominal-style");
+        ParsedGrammarSectionModel attachmentsReferenceSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "attachments-and-reference");
+        ParsedGrammarSectionModel phoneComplaintSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "phone-and-call-complaints");
+        ParsedGrammarSectionModel longComplaintSection = Assert.Single(formalComplaintTopic.Sections, section => section.SectionKey == "readability-in-long-complaints");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(formalComplaintTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(formalComplaintTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(formalComplaintTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(formalComplaintTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", complaintCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complaintStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complaintWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", complaintWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complaintComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complaintPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complaintPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", problemStatementSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", factsEvidenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reasonConsequenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", politeRequestGrammarSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", politeRequestGrammarSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", attachmentsReferenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", phoneComplaintSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longComplaintSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", longComplaintSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(formalComplaintTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(formalComplaintTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(formalComplaintTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(formalComplaintTopic.Examples, example => example.GermanText == "Ich habe festgestellt, dass die Heizung nicht funktioniert.");
+        Assert.Contains(formalComplaintTopic.Examples, example => example.GermanText == "Da die Lieferung noch nicht angekommen ist, kann ich die Ware nicht nutzen.");
+        Assert.Contains(formalComplaintTopic.Examples, example => example.GermanText == "Aus diesem Grund bitte ich Sie, die Rechnung zeitnah zu korrigieren.");
+        Assert.Contains(formalComplaintTopic.Examples, example => example.GermanText == "Könnten Sie mir bitte mitteilen, wann die Unterlagen bearbeitet werden?");
+        Assert.Contains(formalComplaintTopic.Examples, example => example.GermanText == "Ich wäre Ihnen dankbar, wenn Sie mir bis Freitag eine Rückmeldung zur Heizung geben könnten.");
+        Assert.Contains(formalComplaintTopic.CommonMistakes, mistake => mistake.WrongText == "Ich habe festgestellt, dass die Heizung funktioniert nicht.");
+        Assert.Contains(formalComplaintTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb ich bitte Sie um eine Rückmeldung.");
+        Assert.Contains(formalComplaintTopic.CommonMistakes, mistake => mistake.WrongText == "Könnten Sie bitte reparieren die Heizung?");
+        Assert.Contains(formalComplaintTopic.CommonMistakes, mistake => mistake.WrongText == "Ich freue mich für Ihre Rückmeldung.");
+        Assert.Contains(formalComplaintTopic.CommonMistakes, mistake => mistake.WrongText == "Könnten Sie mir sagen, wann wird die Rechnung korrigiert?");
+        Assert.All(formalComplaintTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel academicParagraphTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-academic-style-paragraph-grammar");
+        Assert.Equal(1, academicParagraphTopic.ContentRevision);
+        Assert.Equal("B2", academicParagraphTopic.CefrLevel);
+        Assert.Equal("word-order", academicParagraphTopic.GrammarCategory);
+        Assert.Equal(16, academicParagraphTopic.Sections.Count);
+        Assert.True(academicParagraphTopic.Examples.Count >= 150);
+        Assert.True(academicParagraphTopic.CommonMistakes.Count >= 55);
+        Assert.True(academicParagraphTopic.RuleSummaries.Count >= 26);
+        Assert.True(academicParagraphTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", academicParagraphTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-complex-sentence-order", academicParagraphTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-sentence-rhythm-in-long-clauses", academicParagraphTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-b2-exam-writing-structures", academicParagraphTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel academicStructureSection = Assert.Single(academicParagraphTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel academicWordOrderSection = Assert.Single(academicParagraphTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel academicConnectorSection = Assert.Single(academicParagraphTopic.Sections, section => section.SectionKey == "connector-flow");
+        ParsedGrammarSectionModel academicComparisonSection = Assert.Single(academicParagraphTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel academicPatternsSection = Assert.Single(academicParagraphTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel academicPracticeSection = Assert.Single(academicParagraphTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(academicParagraphTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(academicParagraphTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(academicParagraphTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(academicParagraphTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", academicStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", academicWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicConnectorSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(academicParagraphTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(academicParagraphTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(academicParagraphTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(academicParagraphTopic.Examples, example => example.GermanText == "Ein wichtiger Punkt ist, dass flexible Arbeitszeiten die Vereinbarkeit von Beruf und Familie verbessern.");
+        Assert.Contains(academicParagraphTopic.CommonMistakes, mistake => mistake.WrongText == "Ich denke, dass flexible Arbeitszeiten sind wichtig.");
+        Assert.Contains(academicParagraphTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb viele Menschen nutzen den Bus.");
+        Assert.All(academicParagraphTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel b2WritingTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-b2-exam-writing-structures");
+        Assert.Equal(1, b2WritingTopic.ContentRevision);
+        Assert.Equal("B2", b2WritingTopic.CefrLevel);
+        Assert.Equal("word-order", b2WritingTopic.GrammarCategory);
+        Assert.Equal(16, b2WritingTopic.Sections.Count);
+        Assert.True(b2WritingTopic.Examples.Count >= 150);
+        Assert.True(b2WritingTopic.CommonMistakes.Count >= 55);
+        Assert.True(b2WritingTopic.RuleSummaries.Count >= 26);
+        Assert.True(b2WritingTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-academic-style-paragraph-grammar", b2WritingTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", b2WritingTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-formal-complaint-grammar", b2WritingTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel writingStructureSection = Assert.Single(b2WritingTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel writingIntroSection = Assert.Single(b2WritingTopic.Sections, section => section.SectionKey == "introduction-sentences");
+        ParsedGrammarSectionModel writingReasonSection = Assert.Single(b2WritingTopic.Sections, section => section.SectionKey == "reasons-and-evidence");
+        ParsedGrammarSectionModel writingContrastSection = Assert.Single(b2WritingTopic.Sections, section => section.SectionKey == "contrast-and-limitation");
+        ParsedGrammarSectionModel writingConclusionSection = Assert.Single(b2WritingTopic.Sections, section => section.SectionKey == "conclusion-sentences");
+        ParsedGrammarSectionModel writingPracticeSection = Assert.Single(b2WritingTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(b2WritingTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(b2WritingTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(b2WritingTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(b2WritingTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", writingStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", writingIntroSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", writingReasonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", writingContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", writingConclusionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", writingPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(b2WritingTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(b2WritingTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(b2WritingTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(b2WritingTopic.Examples, example => example.GermanText == "Meiner Meinung nach machen klare Absätze die Argumentation verständlicher.");
+        Assert.Contains(b2WritingTopic.CommonMistakes, mistake => mistake.WrongText == "Meiner Meinung nach, klare Absätze sind wichtig.");
+        Assert.Contains(b2WritingTopic.CommonMistakes, mistake => mistake.WrongText == "Ich denke, dass klare Beispiele sind wichtig.");
+        Assert.All(b2WritingTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel b2SpeakingTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-b2-exam-speaking-structures");
+        Assert.Equal(1, b2SpeakingTopic.ContentRevision);
+        Assert.Equal("B2", b2SpeakingTopic.CefrLevel);
+        Assert.Equal("connectors", b2SpeakingTopic.GrammarCategory);
+        Assert.Equal(17, b2SpeakingTopic.Sections.Count);
+        Assert.True(b2SpeakingTopic.Examples.Count >= 150);
+        Assert.True(b2SpeakingTopic.CommonMistakes.Count >= 55);
+        Assert.True(b2SpeakingTopic.RuleSummaries.Count >= 26);
+        Assert.True(b2SpeakingTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-connectors-for-opinion", b2SpeakingTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-agreeing-and-disagreeing-grammatically", b2SpeakingTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", b2SpeakingTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-b2-exam-writing-structures", b2SpeakingTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel speakingStructureSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel speakingWordOrderSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel speakingReasonSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "giving-reasons");
+        ParsedGrammarSectionModel speakingAgreementSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "agreeing-and-disagreeing");
+        ParsedGrammarSectionModel speakingContrastSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "contrast-and-concession");
+        ParsedGrammarSectionModel speakingComparisonSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel speakingPatternsSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel speakingPracticeSection = Assert.Single(b2SpeakingTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(b2SpeakingTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(b2SpeakingTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(b2SpeakingTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(b2SpeakingTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", speakingStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", speakingWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", speakingWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", speakingReasonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", speakingAgreementSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", speakingContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", speakingComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", speakingPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", speakingPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(b2SpeakingTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(b2SpeakingTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(b2SpeakingTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(b2SpeakingTopic.Examples, example => example.GermanText == "Meiner Meinung nach ist klare Struktur in Gesprächen für eine gute Diskussion wichtig.");
+        Assert.Contains(b2SpeakingTopic.Examples, example => example.GermanText == "Ich bin der Meinung, dass klare Struktur in Gesprächen im Alltag eine große Rolle spielt.");
+        Assert.Contains(b2SpeakingTopic.CommonMistakes, mistake => mistake.WrongText == "Meiner Meinung nach, Klare Struktur in Gesprächen ist wichtig.");
+        Assert.Contains(b2SpeakingTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb ich finde klare Struktur wichtig.");
+        Assert.Contains(b2SpeakingTopic.CommonMistakes, mistake => mistake.WrongText == "Obwohl klare Struktur in Gesprächen wichtig ist, ich sehe ein Problem.");
+        Assert.All(b2SpeakingTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel presentationTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-grammar-for-presentations");
+        Assert.Equal(1, presentationTopic.ContentRevision);
+        Assert.Equal("B2", presentationTopic.CefrLevel);
+        Assert.Equal("connectors", presentationTopic.GrammarCategory);
+        Assert.Equal(17, presentationTopic.Sections.Count);
+        Assert.True(presentationTopic.Examples.Count >= 150);
+        Assert.True(presentationTopic.CommonMistakes.Count >= 55);
+        Assert.True(presentationTopic.RuleSummaries.Count >= 26);
+        Assert.True(presentationTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-b2-exam-speaking-structures", presentationTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-grammar-for-negotiation", presentationTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-argumentation-grammar", presentationTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel presentationStructureSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel presentationWordOrderSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel presentationOpeningSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "opening-and-agenda");
+        ParsedGrammarSectionModel presentationTransitionSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "transition-sentences");
+        ParsedGrammarSectionModel presentationReasonSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "giving-reasons-and-results");
+        ParsedGrammarSectionModel presentationContrastSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "contrast-and-limits");
+        ParsedGrammarSectionModel presentationVisualSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "referring-to-visuals");
+        ParsedGrammarSectionModel presentationSummarySection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "summarizing-and-concluding");
+        ParsedGrammarSectionModel presentationQuestionsSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "questions-and-answers");
+        ParsedGrammarSectionModel presentationComparisonSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel presentationPatternsSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel presentationPracticeSection = Assert.Single(presentationTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(presentationTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(presentationTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(presentationTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(presentationTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", presentationStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", presentationWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationOpeningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationTransitionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationReasonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationVisualSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationSummarySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationQuestionsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", presentationPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(presentationTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(presentationTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(presentationTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(presentationTopic.Examples, example => example.GermanText == "In meiner Präsentation geht es um digitale Kommunikation.");
+        Assert.Contains(presentationTopic.Examples, example => example.GermanText == "Auf der Folie sieht man die wichtigsten Argumente zum Thema digitale Kommunikation am Arbeitsplatz.");
+        Assert.Contains(presentationTopic.Examples, example => example.GermanText == "Zusammenfassend lässt sich sagen, dass das Thema digitale Kommunikation am Arbeitsplatz differenziert betrachtet werden sollte.");
+        Assert.Contains(presentationTopic.CommonMistakes, mistake => mistake.WrongText == "In meiner Präsentation geht um digitale Kommunikation.");
+        Assert.Contains(presentationTopic.CommonMistakes, mistake => mistake.WrongText == "Zuerst ich erkläre das Thema digitale Kommunikation am Arbeitsplatz.");
+        Assert.Contains(presentationTopic.CommonMistakes, mistake => mistake.WrongText == "Ein wichtiger Punkt ist, dass das Thema digitale Kommunikation am Arbeitsplatz ist aktuell.");
+        Assert.All(presentationTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel negotiationTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-grammar-for-negotiation");
+        Assert.Equal(1, negotiationTopic.ContentRevision);
+        Assert.Equal("B2", negotiationTopic.CefrLevel);
+        Assert.Equal("konjunktiv", negotiationTopic.GrammarCategory);
+        Assert.Equal(17, negotiationTopic.Sections.Count);
+        Assert.True(negotiationTopic.Examples.Count >= 150);
+        Assert.True(negotiationTopic.CommonMistakes.Count >= 55);
+        Assert.True(negotiationTopic.RuleSummaries.Count >= 26);
+        Assert.True(negotiationTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", negotiationTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-konjunktiv-ii-advanced", negotiationTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-grammar-for-presentations", negotiationTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel negotiationStructureSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel negotiationWordOrderSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel negotiationKoennteSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "koennte-for-options");
+        ParsedGrammarSectionModel negotiationWuerdeSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "wuerde-for-proposals");
+        ParsedGrammarSectionModel haetteWaereSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "haette-and-waere");
+        ParsedGrammarSectionModel wennNegotiationSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "wenn-clauses-in-negotiation");
+        ParsedGrammarSectionModel compromiseSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "compromise-and-counterproposal");
+        ParsedGrammarSectionModel disagreementSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "softening-disagreement");
+        ParsedGrammarSectionModel emailNegotiationSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "formal-email-negotiation");
+        ParsedGrammarSectionModel negotiationComparisonSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel negotiationPatternsSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel negotiationPracticeSection = Assert.Single(negotiationTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(negotiationTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(negotiationTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(negotiationTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(negotiationTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", negotiationStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", negotiationWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", negotiationWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", negotiationKoennteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", negotiationWuerdeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", haetteWaereSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wennNegotiationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", compromiseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", disagreementSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", emailNegotiationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", negotiationComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", negotiationPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", negotiationPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(negotiationTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(negotiationTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(negotiationTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(negotiationTopic.Examples, example => example.GermanText == "Könnten wir den Termin verschieben?");
+        Assert.Contains(negotiationTopic.Examples, example => example.GermanText == "Wäre es möglich, den Termin zu verschieben?");
+        Assert.Contains(negotiationTopic.Examples, example => example.GermanText == "Wenn Sie einverstanden wären, könnten wir den Termin verschieben.");
+        Assert.Contains(negotiationTopic.CommonMistakes, mistake => mistake.WrongText == "Wäre es möglich, wir den Termin verschieben?");
+        Assert.Contains(negotiationTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn Sie einverstanden wären, wir könnten den Termin verschieben.");
+        Assert.Contains(negotiationTopic.CommonMistakes, mistake => mistake.CorrectedText == "Wäre es möglich, den Termin zu verschieben?");
+        Assert.All(negotiationTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel modalParticlesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-modal-particles-overview");
+        Assert.Equal(1, modalParticlesTopic.ContentRevision);
+        Assert.Equal("B2", modalParticlesTopic.CefrLevel);
+        Assert.Equal("connectors", modalParticlesTopic.GrammarCategory);
+        Assert.Equal(17, modalParticlesTopic.Sections.Count);
+        Assert.True(modalParticlesTopic.Examples.Count >= 150);
+        Assert.True(modalParticlesTopic.CommonMistakes.Count >= 55);
+        Assert.True(modalParticlesTopic.RuleSummaries.Count >= 26);
+        Assert.True(modalParticlesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-b2-exam-speaking-structures", modalParticlesTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-grammar-for-presentations", modalParticlesTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-expressing-criticism-politely", modalParticlesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel modalStructureSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel modalPositionSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel jaSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "ja-shared-knowledge");
+        ParsedGrammarSectionModel dochSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "doch-reminder-contrast");
+        ParsedGrammarSectionModel malSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "mal-softening-requests");
+        ParsedGrammarSectionModel dennSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "denn-in-questions");
+        ParsedGrammarSectionModel haltEbenSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "halt-and-eben-acceptance");
+        ParsedGrammarSectionModel wohlEigentlichSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "wohl-and-eigentlich");
+        ParsedGrammarSectionModel registerSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "register-and-caution");
+        ParsedGrammarSectionModel modalComparisonSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel modalPatternsSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel modalPracticeSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(modalParticlesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(modalParticlesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(modalParticlesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(modalParticlesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", modalStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalPositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jaSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dochSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", malSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dennSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", haltEbenSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wohlEigentlichSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", registerSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(modalParticlesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(modalParticlesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(modalParticlesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(modalParticlesTopic.Examples, example => example.GermanText == "Du weißt ja, dass der Termin wichtig ist.");
+        Assert.Contains(modalParticlesTopic.Examples, example => example.GermanText == "Kannst du mir mal helfen?");
+        Assert.Contains(modalParticlesTopic.Examples, example => example.GermanText == "Was machst du denn hier?");
+        Assert.Contains(modalParticlesTopic.CommonMistakes, mistake => mistake.WrongText == "Ja, du weißt, dass der Termin wichtig ist.");
+        Assert.Contains(modalParticlesTopic.CommonMistakes, mistake => mistake.CorrectedText == "Du weißt ja, dass der Termin wichtig ist.");
+        Assert.Contains(modalParticlesTopic.CommonMistakes, mistake => mistake.WrongText == "Kannst du mir erklären mal, dass der Termin wichtig ist?");
+        Assert.All(modalParticlesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel indirectCriticismTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-indirect-criticism");
+        Assert.Equal(1, indirectCriticismTopic.ContentRevision);
+        Assert.Equal("B2", indirectCriticismTopic.CefrLevel);
+        Assert.Equal("konjunktiv", indirectCriticismTopic.GrammarCategory);
+        Assert.Equal(17, indirectCriticismTopic.Sections.Count);
+        Assert.True(indirectCriticismTopic.Examples.Count >= 150);
+        Assert.True(indirectCriticismTopic.CommonMistakes.Count >= 55);
+        Assert.True(indirectCriticismTopic.RuleSummaries.Count >= 26);
+        Assert.True(indirectCriticismTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-expressing-criticism-politely", indirectCriticismTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", indirectCriticismTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-grammar-for-negotiation", indirectCriticismTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-argumentation-grammar", indirectCriticismTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel indirectStructureSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel indirectWordOrderSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel waereHilfreichSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "waere-hilfreich");
+        ParsedGrammarSectionModel koennteSuggestionSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "koennte-suggestions");
+        ParsedGrammarSectionModel haetteGewuenschtSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "haette-mir-gewuenscht");
+        ParsedGrammarSectionModel wuerdeVorschlagenSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "wuerde-vorschlagen");
+        ParsedGrammarSectionModel aufgefallenSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "mir-ist-aufgefallen");
+        ParsedGrammarSectionModel softeningSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "softening-direct-criticism");
+        ParsedGrammarSectionModel emailFeedbackSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "formal-email-feedback");
+        ParsedGrammarSectionModel indirectComparisonSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel indirectPatternsSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel indirectPracticeSection = Assert.Single(indirectCriticismTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(indirectCriticismTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(indirectCriticismTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(indirectCriticismTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(indirectCriticismTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", indirectStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", indirectWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", indirectWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", waereHilfreichSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", koennteSuggestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", haetteGewuenschtSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wuerdeVorschlagenSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", aufgefallenSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", softeningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", emailFeedbackSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", indirectComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", indirectPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", indirectPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(indirectCriticismTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(indirectCriticismTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(indirectCriticismTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(indirectCriticismTopic.Examples, example => example.GermanText == "Es wäre hilfreich, wenn wir den Bericht klarer formulieren könnten.");
+        Assert.Contains(indirectCriticismTopic.Examples, example => example.GermanText == "Ich würde vorschlagen, den Bericht klarer zu formulieren.");
+        Assert.Contains(indirectCriticismTopic.Examples, example => example.GermanText == "Mir ist aufgefallen, dass wir die Beispiele genauer erklären könnten.");
+        Assert.Contains(indirectCriticismTopic.CommonMistakes, mistake => mistake.WrongText == "Es wäre hilfreich, wir den Bericht klarer formulieren.");
+        Assert.Contains(indirectCriticismTopic.CommonMistakes, mistake => mistake.WrongText == "Ich würde vorschlagen, den Bericht klarer formulieren.");
+        Assert.Contains(indirectCriticismTopic.CommonMistakes, mistake => mistake.WrongText == "Mir ist aufgefallen, dass wir könnten die Beispiele genauer erklären.");
+        Assert.All(indirectCriticismTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel b2CommonMistakesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-b2-common-mistakes");
+        Assert.Equal(1, b2CommonMistakesTopic.ContentRevision);
+        Assert.Equal("B2", b2CommonMistakesTopic.CefrLevel);
+        Assert.Equal("cases", b2CommonMistakesTopic.GrammarCategory);
+        Assert.Equal(17, b2CommonMistakesTopic.Sections.Count);
+        Assert.True(b2CommonMistakesTopic.Examples.Count >= 150);
+        Assert.True(b2CommonMistakesTopic.CommonMistakes.Count >= 55);
+        Assert.True(b2CommonMistakesTopic.RuleSummaries.Count >= 26);
+        Assert.True(b2CommonMistakesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-b1-case-review", b2CommonMistakesTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-b2-connectors-review", b2CommonMistakesTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-b2-passive-and-konjunktiv-review", b2CommonMistakesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel commonMistakesCoreSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel commonMistakesStructureSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel commonMistakesCaseFocusSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel directObjectMistakesSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "accusative-after-direct-object");
+        ParsedGrammarSectionModel dativePrepositionMistakesSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "dative-after-prepositions");
+        ParsedGrammarSectionModel genitiveMistakesSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "genitive-and-formal-phrases");
+        ParsedGrammarSectionModel passiveSubjectMistakesSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "passive-subject-case");
+        ParsedGrammarSectionModel relativePronounMistakesSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "relative-pronoun-case");
+        ParsedGrammarSectionModel sameNounCaseSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "same-noun-different-case");
+        ParsedGrammarSectionModel commonMistakesComparisonSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel commonMistakesPatternsSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel editingChecklistSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "editing-checklist");
+        ParsedGrammarSectionModel commonMistakesPracticeSection = Assert.Single(b2CommonMistakesTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(b2CommonMistakesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(b2CommonMistakesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(b2CommonMistakesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(b2CommonMistakesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", commonMistakesCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", commonMistakesStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", commonMistakesCaseFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", commonMistakesCaseFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directObjectMistakesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dativePrepositionMistakesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveMistakesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveSubjectMistakesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", relativePronounMistakesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sameNounCaseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", commonMistakesComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", commonMistakesPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", editingChecklistSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", commonMistakesPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(b2CommonMistakesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(b2CommonMistakesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(b2CommonMistakesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(b2CommonMistakesTopic.Examples, example => example.GermanText == "Ich prüfe den Bericht heute noch einmal.");
+        Assert.Contains(b2CommonMistakesTopic.Examples, example => example.GermanText == "Der Bericht wird heute geprüft.");
+        Assert.Contains(b2CommonMistakesTopic.Examples, example => example.GermanText == "Das ist der Bericht, den ich heute brauche.");
+        Assert.Contains(b2CommonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Ich prüfe der Bericht heute.");
+        Assert.Contains(b2CommonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Mit den Bericht habe ich eine Frage.");
+        Assert.Contains(b2CommonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Wegen den Bericht melde ich mich.");
+        Assert.Contains(b2CommonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Dem Bericht wird heute geprüft.");
+        Assert.All(b2CommonMistakesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel b2ConnectorsReviewTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-b2-connectors-review");
+        Assert.Equal(1, b2ConnectorsReviewTopic.ContentRevision);
+        Assert.Equal("B2", b2ConnectorsReviewTopic.CefrLevel);
+        Assert.Equal("connectors", b2ConnectorsReviewTopic.GrammarCategory);
+        Assert.Equal(17, b2ConnectorsReviewTopic.Sections.Count);
+        Assert.True(b2ConnectorsReviewTopic.Examples.Count >= 150);
+        Assert.True(b2ConnectorsReviewTopic.CommonMistakes.Count >= 55);
+        Assert.True(b2ConnectorsReviewTopic.RuleSummaries.Count >= 26);
+        Assert.True(b2ConnectorsReviewTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-connectors-for-cause-and-effect", b2ConnectorsReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-contrast", b2ConnectorsReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-giving-reasons-clearly", b2ConnectorsReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", b2ConnectorsReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", b2ConnectorsReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", b2ConnectorsReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-consequence-connectors-folglich-daher-deshalb", b2ConnectorsReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-cause-connectors-aufgrund-wegen-da", b2ConnectorsReviewTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel connectorsCoreSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel connectorsStructureSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel connectorsWordOrderSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel weilDennDeshalbSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "weil-denn-deshalb");
+        ParsedGrammarSectionModel obwohlTrotzdemDennochSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "obwohl-trotzdem-dennoch");
+        ParsedGrammarSectionModel zwarAberSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "zwar-aber-einerseits-andererseits");
+        ParsedGrammarSectionModel purposeReasonSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "damit-um-zu-and-weil");
+        ParsedGrammarSectionModel resultRegisterSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "deshalb-deswegen-darum-aus-diesem-grund");
+        ParsedGrammarSectionModel connectorsRegisterSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "register-and-formality");
+        ParsedGrammarSectionModel pairedConnectorsSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "paired-examples");
+        ParsedGrammarSectionModel connectorsComparisonSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel connectorsPatternsSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel connectorsPracticeSection = Assert.Single(b2ConnectorsReviewTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(b2ConnectorsReviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(b2ConnectorsReviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(b2ConnectorsReviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(b2ConnectorsReviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", connectorsCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorsStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorsWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", weilDennDeshalbSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", obwohlTrotzdemDennochSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarAberSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", purposeReasonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", resultRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorsRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pairedConnectorsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorsComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorsPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorsPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(b2ConnectorsReviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(b2ConnectorsReviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(b2ConnectorsReviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(b2ConnectorsReviewTopic.Examples, example => example.GermanText == "Ich bleibe zu Hause, weil ich krank bin.");
+        Assert.Contains(b2ConnectorsReviewTopic.Examples, example => example.GermanText == "Ich bin krank. Deshalb bleibe ich zu Hause.");
+        Assert.Contains(b2ConnectorsReviewTopic.Examples, example => example.GermanText == "Obwohl ich müde bin, gehe ich zum Kurs.");
+        Assert.Contains(b2ConnectorsReviewTopic.Examples, example => example.GermanText == "Zwar ist der Kurs teuer, aber er ist sehr hilfreich.");
+        Assert.Contains(b2ConnectorsReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Ich komme nicht, weil ich bin krank.");
+        Assert.Contains(b2ConnectorsReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb ich komme nicht.");
+        Assert.Contains(b2ConnectorsReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Trotzdem ich gehe zur Arbeit.");
+        Assert.All(b2ConnectorsReviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel b2PassiveKonjunktivReviewTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-b2-passive-and-konjunktiv-review");
+        Assert.Equal(1, b2PassiveKonjunktivReviewTopic.ContentRevision);
+        Assert.Equal("B2", b2PassiveKonjunktivReviewTopic.CefrLevel);
+        Assert.Equal("passive", b2PassiveKonjunktivReviewTopic.GrammarCategory);
+        Assert.Equal(17, b2PassiveKonjunktivReviewTopic.Sections.Count);
+        Assert.True(b2PassiveKonjunktivReviewTopic.Examples.Count >= 150);
+        Assert.True(b2PassiveKonjunktivReviewTopic.CommonMistakes.Count >= 55);
+        Assert.True(b2PassiveKonjunktivReviewTopic.RuleSummaries.Count >= 26);
+        Assert.True(b2PassiveKonjunktivReviewTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-passive-voice-introduction", b2PassiveKonjunktivReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-werden-as-auxiliary", b2PassiveKonjunktivReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", b2PassiveKonjunktivReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-passive-with-modal-verbs", b2PassiveKonjunktivReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-zustandspassiv-versus-vorgangspassiv", b2PassiveKonjunktivReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-konjunktiv-ii-advanced", b2PassiveKonjunktivReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-b2-common-mistakes", b2PassiveKonjunktivReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-b2-formal-grammar-review", b2PassiveKonjunktivReviewTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel passiveReviewCoreSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel passiveReviewStructureSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel passiveReviewWordOrderSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel processPassiveReviewSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "process-passive-review");
+        ParsedGrammarSectionModel modalPassiveReviewSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "passive-with-modal-verbs");
+        ParsedGrammarSectionModel zustandReviewSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "zustandspassiv-versus-vorgangspassiv");
+        ParsedGrammarSectionModel passiveManReviewSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "passive-versus-man");
+        ParsedGrammarSectionModel actorReviewSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "actor-with-von-and-durch");
+        ParsedGrammarSectionModel konjunktivReviewSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "konjunktiv-ii-review");
+        ParsedGrammarSectionModel passiveKonjunktivTogetherSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "passive-and-konjunktiv-together");
+        ParsedGrammarSectionModel passiveReviewComparisonSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel passiveReviewPatternsSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel passiveReviewPracticeSection = Assert.Single(b2PassiveKonjunktivReviewTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(b2PassiveKonjunktivReviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(b2PassiveKonjunktivReviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(b2PassiveKonjunktivReviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(b2PassiveKonjunktivReviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", passiveReviewCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveReviewStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveReviewWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", processPassiveReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalPassiveReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zustandReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveManReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", actorReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveKonjunktivTogetherSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveReviewComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveReviewPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveReviewPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(b2PassiveKonjunktivReviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(b2PassiveKonjunktivReviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(b2PassiveKonjunktivReviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(b2PassiveKonjunktivReviewTopic.Examples, example => example.GermanText == "Der Antrag wird heute geprüft.");
+        Assert.Contains(b2PassiveKonjunktivReviewTopic.Examples, example => example.GermanText == "Der Antrag muss heute geprüft werden.");
+        Assert.Contains(b2PassiveKonjunktivReviewTopic.Examples, example => example.GermanText == "Könnte der Termin bitte bestätigt werden?");
+        Assert.Contains(b2PassiveKonjunktivReviewTopic.Examples, example => example.GermanText == "Es wäre hilfreich, wenn die Unterlagen ergänzt würden.");
+        Assert.Contains(b2PassiveKonjunktivReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag wird prüfen.");
+        Assert.Contains(b2PassiveKonjunktivReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Der Termin muss bestätigt.");
+        Assert.Contains(b2PassiveKonjunktivReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Könnte der Antrag prüfen werden?");
+        Assert.All(b2PassiveKonjunktivReviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel b2FormalGrammarReviewTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-b2-formal-grammar-review");
+        Assert.Equal(1, b2FormalGrammarReviewTopic.ContentRevision);
+        Assert.Equal("B2", b2FormalGrammarReviewTopic.CefrLevel);
+        Assert.Equal("word-order", b2FormalGrammarReviewTopic.GrammarCategory);
+        Assert.Equal(18, b2FormalGrammarReviewTopic.Sections.Count);
+        Assert.True(b2FormalGrammarReviewTopic.Examples.Count >= 150);
+        Assert.True(b2FormalGrammarReviewTopic.CommonMistakes.Count >= 55);
+        Assert.True(b2FormalGrammarReviewTopic.RuleSummaries.Count >= 26);
+        Assert.True(b2FormalGrammarReviewTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-formal-email-sentence-structure", b2FormalGrammarReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", b2FormalGrammarReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-complaint-sentence-patterns", b2FormalGrammarReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-sentence-rhythm-in-long-clauses", b2FormalGrammarReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-formal-complaint-grammar", b2FormalGrammarReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-academic-style-paragraph-grammar", b2FormalGrammarReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-prepositional-phrases-in-formal-writing", b2FormalGrammarReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-b2-grammar-review-map", b2FormalGrammarReviewTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel formalGrammarCoreSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formalGrammarStructureSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel formalGrammarWordOrderSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel sentenceSlotReviewSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "sentence-slot-review");
+        ParsedGrammarSectionModel subordinateControlSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "subordinate-clause-control");
+        ParsedGrammarSectionModel formalGrammarSentenceBracketSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "sentence-bracket");
+        ParsedGrammarSectionModel formalConnectorsSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "formal-connectors");
+        ParsedGrammarSectionModel nominalStyleSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "nominal-style-and-prepositional-phrases");
+        ParsedGrammarSectionModel passiveImpersonalSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "passive-and-impersonal-style");
+        ParsedGrammarSectionModel formalGrammarPunctuationSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "punctuation-and-commas");
+        ParsedGrammarSectionModel formalGrammarReadabilitySection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "readability-in-long-sentences");
+        ParsedGrammarSectionModel formalGrammarComparisonSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel formalGrammarPatternsSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel formalGrammarPracticeSection = Assert.Single(b2FormalGrammarReviewTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(b2FormalGrammarReviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(b2FormalGrammarReviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(b2FormalGrammarReviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(b2FormalGrammarReviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", formalGrammarCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sentenceSlotReviewSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", subordinateControlSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarSentenceBracketSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalConnectorsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalStyleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveImpersonalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarPunctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarReadabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalGrammarPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(b2FormalGrammarReviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(b2FormalGrammarReviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(b2FormalGrammarReviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(b2FormalGrammarReviewTopic.Examples, example => example.GermanText == "Ich schreibe Ihnen, weil die Unterlagen fehlen.");
+        Assert.Contains(b2FormalGrammarReviewTopic.Examples, example => example.GermanText == "Aus diesem Grund bitte ich um Rückmeldung.");
+        Assert.Contains(b2FormalGrammarReviewTopic.Examples, example => example.GermanText == "Wenn Sie Fragen haben, melden Sie sich bitte jederzeit.");
+        Assert.Contains(b2FormalGrammarReviewTopic.Examples, example => example.GermanText == "Die Unterlagen, die Sie angefordert haben, finden Sie im Anhang.");
+        Assert.Contains(b2FormalGrammarReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Aus diesem Grund ich bitte um Rückmeldung.");
+        Assert.Contains(b2FormalGrammarReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Ich schreibe Ihnen, weil die Unterlagen fehlen noch.");
+        Assert.Contains(b2FormalGrammarReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Die Unterlagen, die ich habe geschickt, finden Sie im Anhang.");
+        Assert.All(b2FormalGrammarReviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel b2GrammarReviewMapTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "b2-b2-grammar-review-map");
+        Assert.Equal(1, b2GrammarReviewMapTopic.ContentRevision);
+        Assert.Equal("B2", b2GrammarReviewMapTopic.CefrLevel);
+        Assert.Equal("word-order", b2GrammarReviewMapTopic.GrammarCategory);
+        Assert.Equal(17, b2GrammarReviewMapTopic.Sections.Count);
+        Assert.True(b2GrammarReviewMapTopic.Examples.Count >= 150);
+        Assert.True(b2GrammarReviewMapTopic.CommonMistakes.Count >= 55);
+        Assert.True(b2GrammarReviewMapTopic.RuleSummaries.Count >= 26);
+        Assert.True(b2GrammarReviewMapTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-b2-common-mistakes", b2GrammarReviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-b2-connectors-review", b2GrammarReviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-b2-passive-and-konjunktiv-review", b2GrammarReviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-b2-formal-grammar-review", b2GrammarReviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-complex-sentence-order", b2GrammarReviewMapTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-sentence-rhythm-in-long-clauses", b2GrammarReviewMapTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-argumentation-grammar", b2GrammarReviewMapTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-complex-subordination", b2GrammarReviewMapTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel grammarMapCoreSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel grammarMapStructureSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel grammarMapWordOrderSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel clauseMapSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "clause-map");
+        ParsedGrammarSectionModel connectorMapSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "connector-map");
+        ParsedGrammarSectionModel casePrepositionMapSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "case-and-preposition-map");
+        ParsedGrammarSectionModel passiveKonjunktivMapSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "passive-and-konjunktiv-map");
+        ParsedGrammarSectionModel nominalFormalMapSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "nominal-and-formal-style-map");
+        ParsedGrammarSectionModel sentenceRhythmMapSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "sentence-rhythm-map");
+        ParsedGrammarSectionModel punctuationMapSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "punctuation-map");
+        ParsedGrammarSectionModel grammarMapComparisonSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel grammarMapPatternsSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel grammarMapPracticeSection = Assert.Single(b2GrammarReviewMapTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(b2GrammarReviewMapTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(b2GrammarReviewMapTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(b2GrammarReviewMapTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(b2GrammarReviewMapTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", grammarMapCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", grammarMapStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", grammarMapWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", clauseMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", casePrepositionMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveKonjunktivMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalFormalMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sentenceRhythmMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", grammarMapComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", grammarMapPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", grammarMapPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(b2GrammarReviewMapTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(b2GrammarReviewMapTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(b2GrammarReviewMapTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(b2GrammarReviewMapTopic.Examples, example => example.GermanText == "Ich melde mich, weil die Unterlagen fehlen.");
+        Assert.Contains(b2GrammarReviewMapTopic.Examples, example => example.GermanText == "Aus diesem Grund bitte ich um Rückmeldung.");
+        Assert.Contains(b2GrammarReviewMapTopic.Examples, example => example.GermanText == "Der Antrag, den ich prüfen muss, ist wichtig.");
+        Assert.Contains(b2GrammarReviewMapTopic.Examples, example => example.GermanText == "Der Antrag könnte schneller bearbeitet werden, wenn die Angaben vollständig wären.");
+        Assert.Contains(b2GrammarReviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Weil die Unterlagen fehlen, ich melde mich.");
+        Assert.Contains(b2GrammarReviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Aus diesem Grund ich bitte um Rückmeldung.");
+        Assert.Contains(b2GrammarReviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag wird prüfen.");
+        Assert.All(b2GrammarReviewMapTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+    }
+
+    [Fact]
+    public async Task ParseAsync_ShouldParseOfficialC1GrammarCoreContract()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+        string packagePath = Path.Combine(ResolveRepositoryRoot(), "content", "learning-portal", "grammar", "packages", "grammar-c1-core-v1.json");
+
+        ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+            await File.ReadAllTextAsync(packagePath),
+            CancellationToken.None);
+
+        string[] languages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+
+        Assert.Equal(35, parsedPackage.GrammarTopics.Count);
+
+        ParsedGrammarTopicModel topic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-konjunktiv-i-for-reported-speech");
+        Assert.Equal(1, topic.ContentRevision);
+        Assert.Equal("C1", topic.CefrLevel);
+        Assert.Equal("reported-speech", topic.GrammarCategory);
+        Assert.Equal(17, topic.Sections.Count);
+        Assert.True(topic.Examples.Count >= 150);
+        Assert.True(topic.CommonMistakes.Count >= 55);
+        Assert.True(topic.RuleSummaries.Count >= 26);
+        Assert.True(topic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-indirect-questions", topic.PrerequisiteSlugs);
+        Assert.Contains("b1-reported-requests-and-polite-questions", topic.PrerequisiteSlugs);
+        Assert.Contains("b2-b2-formal-grammar-review", topic.PrerequisiteSlugs);
+        Assert.Contains("c1-konjunktiv-i-versus-konjunktiv-ii", topic.RelatedTopicSlugs);
+        Assert.Contains("c1-indirect-speech-in-journalism-and-formal-contexts", topic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel coreSection = Assert.Single(topic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formSection = Assert.Single(topic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel wordOrderSection = Assert.Single(topic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel formTableSection = Assert.Single(topic.Sections, section => section.SectionKey == "konjunktiv-i-form-table");
+        ParsedGrammarSectionModel verbsSection = Assert.Single(topic.Sections, section => section.SectionKey == "reporting-verbs");
+        ParsedGrammarSectionModel questionSection = Assert.Single(topic.Sections, section => section.SectionKey == "dass-ob-w-question-reporting");
+        ParsedGrammarSectionModel directSection = Assert.Single(topic.Sections, section => section.SectionKey == "direct-to-reported-speech");
+        ParsedGrammarSectionModel comparisonSection = Assert.Single(topic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel patternsSection = Assert.Single(topic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel practiceSection = Assert.Single(topic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(topic.TitleLocalized.ContainsKey(language));
+            Assert.True(topic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(topic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(topic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", coreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formTableSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", verbsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", questionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", patternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", practiceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(topic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(topic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(topic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(topic.Examples, example => example.GermanText == "Der Sprecher sagt, er sei mit dem Ergebnis zufrieden.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Sie erklärte, der Antrag werde geprüft.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Der Artikel berichtet, dass der Vertrag unterschrieben worden sei.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Sie fragte, ob der Termin verschoben werde.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Er sagt, dass er sei krank.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Sie fragte, ob wird der Termin verschoben.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Der Artikel berichtet, dass der Vertrag sei unterschrieben worden.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Die Zeitung schreibt, der Zug ist verspätet angekommen.");
+        Assert.All(topic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel konjunktivComparisonTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-konjunktiv-i-versus-konjunktiv-ii");
+        Assert.Equal(1, konjunktivComparisonTopic.ContentRevision);
+        Assert.Equal("C1", konjunktivComparisonTopic.CefrLevel);
+        Assert.Equal("reported-speech", konjunktivComparisonTopic.GrammarCategory);
+        Assert.Equal(16, konjunktivComparisonTopic.Sections.Count);
+        Assert.True(konjunktivComparisonTopic.Examples.Count >= 150);
+        Assert.True(konjunktivComparisonTopic.CommonMistakes.Count >= 55);
+        Assert.True(konjunktivComparisonTopic.RuleSummaries.Count >= 26);
+        Assert.True(konjunktivComparisonTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-konjunktiv-i-for-reported-speech", konjunktivComparisonTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-konjunktiv-ii-with-waere-haette-wuerde", konjunktivComparisonTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-indirect-speech-in-journalism-and-formal-contexts", konjunktivComparisonTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel comparisonCoreSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel comparisonFormSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel comparisonWordOrderSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel clearFormsSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "konjunktiv-i-clear-forms");
+        ParsedGrammarSectionModel replacementFormsSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "konjunktiv-ii-replacement-forms");
+        ParsedGrammarSectionModel sameFormProblemSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "same-form-problem");
+        ParsedGrammarSectionModel comparisonQuestionSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "reported-speech-with-dass-ob-w");
+        ParsedGrammarSectionModel directComparisonSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "direct-to-indirect-comparison");
+        ParsedGrammarSectionModel comparisonTableSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel comparisonPatternsSection = Assert.Single(konjunktivComparisonTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(konjunktivComparisonTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(konjunktivComparisonTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(konjunktivComparisonTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(konjunktivComparisonTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", comparisonCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", clearFormsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", replacementFormsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sameFormProblemSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonQuestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonTableSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(konjunktivComparisonTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(konjunktivComparisonTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(konjunktivComparisonTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(konjunktivComparisonTopic.Examples, example => example.GermanText == "Sie erklärten, sie hätten keine Zeit.");
+        Assert.Contains(konjunktivComparisonTopic.Examples, example => example.GermanText == "Die Firma teilt mit, der Antrag werde geprüft.");
+        Assert.Contains(konjunktivComparisonTopic.Examples, example => example.GermanText == "Die Kunden sagten, sie könnten später kommen.");
+        Assert.Contains(konjunktivComparisonTopic.CommonMistakes, mistake => mistake.WrongText == "Sie sagten, sie haben keine Zeit.");
+        Assert.Contains(konjunktivComparisonTopic.CommonMistakes, mistake => mistake.WrongText == "Er sagte, er hätte keine Zeit.");
+        Assert.Contains(konjunktivComparisonTopic.CommonMistakes, mistake => mistake.WrongText == "Die Firma erklärte, der Antrag würde geprüft.");
+        Assert.All(konjunktivComparisonTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel journalismTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-indirect-speech-in-journalism-and-formal-contexts");
+        Assert.Equal(1, journalismTopic.ContentRevision);
+        Assert.Equal("C1", journalismTopic.CefrLevel);
+        Assert.Equal("reported-speech", journalismTopic.GrammarCategory);
+        Assert.Equal(16, journalismTopic.Sections.Count);
+        Assert.True(journalismTopic.Examples.Count >= 150);
+        Assert.True(journalismTopic.CommonMistakes.Count >= 55);
+        Assert.True(journalismTopic.RuleSummaries.Count >= 26);
+        Assert.True(journalismTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-konjunktiv-i-for-reported-speech", journalismTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-konjunktiv-i-versus-konjunktiv-ii", journalismTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-reported-opinions", journalismTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel journalismCoreSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel journalismFormSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel journalismWordOrderSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel sourceAttributionSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "source-attribution");
+        ParsedGrammarSectionModel reportingVerbsSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "reporting-verbs-in-formal-texts");
+        ParsedGrammarSectionModel journalismQuestionSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "dass-ob-w-question-clauses");
+        ParsedGrammarSectionModel journalisticKonjunktivSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "konjunktiv-in-journalistic-reporting");
+        ParsedGrammarSectionModel directQuoteSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "direct-quote-vs-indirect-report");
+        ParsedGrammarSectionModel journalismComparisonSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel journalismPatternsSection = Assert.Single(journalismTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(journalismTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(journalismTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(journalismTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(journalismTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", journalismCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalismFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalismWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sourceAttributionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportingVerbsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalismQuestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticKonjunktivSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", directQuoteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalismComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalismPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(journalismTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(journalismTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(journalismTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(journalismTopic.Examples, example => example.GermanText == "Die Zeitung berichtet, der Antrag werde geprüft.");
+        Assert.Contains(journalismTopic.Examples, example => example.GermanText == "Der Bericht schreibt, dass die Zahlen gestiegen seien.");
+        Assert.Contains(journalismTopic.Examples, example => example.GermanText == "Nach Angaben der Behörde sei der Antrag vollständig.");
+        Assert.Contains(journalismTopic.CommonMistakes, mistake => mistake.WrongText == "Die Zeitung berichtet, der Antrag wird geprüft.");
+        Assert.Contains(journalismTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht schreibt, dass die Zahlen seien gestiegen.");
+        Assert.Contains(journalismTopic.CommonMistakes, mistake => mistake.WrongText == "Der Pressestelle zufolge, sei die Lage stabil.");
+        Assert.All(journalismTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel nominalizationTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-advanced-nominalization");
+        Assert.Equal(1, nominalizationTopic.ContentRevision);
+        Assert.Equal("C1", nominalizationTopic.CefrLevel);
+        Assert.Equal("nouns", nominalizationTopic.GrammarCategory);
+        Assert.Equal(16, nominalizationTopic.Sections.Count);
+        Assert.True(nominalizationTopic.Examples.Count >= 150);
+        Assert.True(nominalizationTopic.CommonMistakes.Count >= 55);
+        Assert.True(nominalizationTopic.RuleSummaries.Count >= 26);
+        Assert.True(nominalizationTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-genitive-introduction", nominalizationTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-adjective-declension-without-article", nominalizationTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", nominalizationTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel nominalizationCoreSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel nominalizationFormSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel nominalizationCaseSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel verbToNounSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "verb-to-noun-nominalization");
+        ParsedGrammarSectionModel adjectiveToNounSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "adjective-to-noun-nominalization");
+        ParsedGrammarSectionModel genitivePhrasesSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "genitive-and-prepositional-noun-phrases");
+        ParsedGrammarSectionModel compoundNounsSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "compound-nouns-in-formal-style");
+        ParsedGrammarSectionModel nominalizationPrepositionSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "nominalization-with-prepositions");
+        ParsedGrammarSectionModel nominalizationComparisonSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel nominalizationPatternsSection = Assert.Single(nominalizationTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(nominalizationTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(nominalizationTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(nominalizationTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(nominalizationTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", nominalizationCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalizationFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalizationCaseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", verbToNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adjectiveToNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitivePhrasesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", compoundNounsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalizationPrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalizationComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalizationPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(nominalizationTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(nominalizationTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(nominalizationTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(nominalizationTopic.Examples, example => example.GermanText == "Die sorgfältige Prüfung des Antrags dauert zwei Wochen.");
+        Assert.Contains(nominalizationTopic.Examples, example => example.GermanText == "Nach Abschluss der Prüfung erhalten Sie eine Rückmeldung.");
+        Assert.Contains(nominalizationTopic.Examples, example => example.GermanText == "Zur Verbesserung der Kommunikation wurden neue Regeln eingeführt.");
+        Assert.Contains(nominalizationTopic.CommonMistakes, mistake => mistake.WrongText == "Die Prüfung den Antrag dauert zwei Wochen.");
+        Assert.Contains(nominalizationTopic.CommonMistakes, mistake => mistake.WrongText == "Nach Abschluss die Prüfung erhalten Sie eine Rückmeldung.");
+        Assert.Contains(nominalizationTopic.CommonMistakes, mistake => mistake.WrongText == "Die Antrag Prüfung ist abgeschlossen.");
+        Assert.All(nominalizationTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel nominalVerbalTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-nominal-style-versus-verbal-style");
+        Assert.Equal(1, nominalVerbalTopic.ContentRevision);
+        Assert.Equal("C1", nominalVerbalTopic.CefrLevel);
+        Assert.Equal("word-order", nominalVerbalTopic.GrammarCategory);
+        Assert.Equal(16, nominalVerbalTopic.Sections.Count);
+        Assert.True(nominalVerbalTopic.Examples.Count >= 150);
+        Assert.True(nominalVerbalTopic.CommonMistakes.Count >= 55);
+        Assert.True(nominalVerbalTopic.RuleSummaries.Count >= 26);
+        Assert.True(nominalVerbalTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-advanced-nominalization", nominalVerbalTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-complex-sentence-order", nominalVerbalTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-complex-subordination", nominalVerbalTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel nominalVerbalCoreSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel nominalVerbalFormSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel nominalVerbalFocusSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel nominalStyleSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "nominal-style");
+        ParsedGrammarSectionModel verbalStyleSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "verbal-style");
+        ParsedGrammarSectionModel bracketSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "sentence-bracket");
+        ParsedGrammarSectionModel subordinateReadabilitySection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "subordinate-clause-readability");
+        ParsedGrammarSectionModel punctuationSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "punctuation-and-clause-boundaries");
+        ParsedGrammarSectionModel nominalVerbalComparisonSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel nominalVerbalPatternsSection = Assert.Single(nominalVerbalTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(nominalVerbalTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(nominalVerbalTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(nominalVerbalTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(nominalVerbalTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", nominalVerbalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalVerbalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalVerbalFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalStyleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", verbalStyleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", bracketSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", subordinateReadabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalVerbalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalVerbalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(nominalVerbalTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(nominalVerbalTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(nominalVerbalTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(nominalVerbalTopic.Examples, example => example.GermanText == "Nach Prüfung des Antrags informieren wir Sie schriftlich.");
+        Assert.Contains(nominalVerbalTopic.Examples, example => example.GermanText == "Nachdem wir den Antrag geprüft haben, informieren wir Sie schriftlich.");
+        Assert.Contains(nominalVerbalTopic.Examples, example => example.GermanText == "Zur Verbesserung der Abläufe ändern wir den Plan.");
+        Assert.Contains(nominalVerbalTopic.CommonMistakes, mistake => mistake.WrongText == "Nach Prüfung des Antrags wir informieren Sie.");
+        Assert.Contains(nominalVerbalTopic.CommonMistakes, mistake => mistake.WrongText == "Nachdem wir den Antrag geprüft haben, wir informieren Sie.");
+        Assert.Contains(nominalVerbalTopic.CommonMistakes, mistake => mistake.WrongText == "Wir haben geprüft den Antrag sorgfältig.");
+        Assert.All(nominalVerbalTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel passiveAlternativesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-advanced-passive-alternatives");
+        Assert.Equal(1, passiveAlternativesTopic.ContentRevision);
+        Assert.Equal("C1", passiveAlternativesTopic.CefrLevel);
+        Assert.Equal("passive", passiveAlternativesTopic.GrammarCategory);
+        Assert.Equal(16, passiveAlternativesTopic.Sections.Count);
+        Assert.True(passiveAlternativesTopic.Examples.Count >= 150);
+        Assert.True(passiveAlternativesTopic.CommonMistakes.Count >= 55);
+        Assert.True(passiveAlternativesTopic.RuleSummaries.Count >= 26);
+        Assert.True(passiveAlternativesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-passive-voice-introduction", passiveAlternativesTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-passive-with-modal-verbs", passiveAlternativesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-infinitive-and-passive-combinations", passiveAlternativesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel passiveAlternativesCoreSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel passiveAlternativesFormSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel passiveAlternativesWordOrderSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel werdenPassiveSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "werden-passive-review");
+        ParsedGrammarSectionModel manSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "man-constructions");
+        ParsedGrammarSectionModel sichLassenSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "sich-lassen");
+        ParsedGrammarSectionModel seinZuSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "sein-zu-infinitive");
+        ParsedGrammarSectionModel participleAdjectivesSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "participle-adjectives");
+        ParsedGrammarSectionModel actorFocusSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "actor-focus-and-register");
+        ParsedGrammarSectionModel passiveAlternativesComparisonSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel passiveAlternativesPatternsSection = Assert.Single(passiveAlternativesTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(passiveAlternativesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(passiveAlternativesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(passiveAlternativesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(passiveAlternativesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", passiveAlternativesCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveAlternativesFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveAlternativesWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", werdenPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", manSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", seinZuSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participleAdjectivesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", actorFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveAlternativesComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveAlternativesPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(passiveAlternativesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(passiveAlternativesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(passiveAlternativesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(passiveAlternativesTopic.Examples, example => example.GermanText == "Der Antrag wird geprüft.");
+        Assert.Contains(passiveAlternativesTopic.Examples, example => example.GermanText == "Der Antrag lässt sich online prüfen.");
+        Assert.Contains(passiveAlternativesTopic.Examples, example => example.GermanText == "Der Antrag ist bis Freitag zu prüfen.");
+        Assert.Contains(passiveAlternativesTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag lässt online prüfen.");
+        Assert.Contains(passiveAlternativesTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag ist bis Freitag prüfen.");
+        Assert.Contains(passiveAlternativesTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag muss werden geprüft.");
+        Assert.All(passiveAlternativesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel sichLassenTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-sich-lassen-plus-infinitive");
+        Assert.Equal(1, sichLassenTopic.ContentRevision);
+        Assert.Equal("C1", sichLassenTopic.CefrLevel);
+        Assert.Equal("verbs", sichLassenTopic.GrammarCategory);
+        Assert.Equal(16, sichLassenTopic.Sections.Count);
+        Assert.True(sichLassenTopic.Examples.Count >= 150);
+        Assert.True(sichLassenTopic.CommonMistakes.Count >= 55);
+        Assert.True(sichLassenTopic.RuleSummaries.Count >= 26);
+        Assert.True(sichLassenTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-lassen-basics", sichLassenTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-passive-voice-introduction", sichLassenTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-passive-alternatives", sichLassenTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-es-laesst-sich", sichLassenTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel sichLassenCoreSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel sichLassenFormSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel sichLassenWordOrderSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel sichLassenPassiveSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "passive-like-use");
+        ParsedGrammarSectionModel sichLassenFeasibilitySection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "ability-and-feasibility");
+        ParsedGrammarSectionModel sichLassenNegationSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "negation-and-limits");
+        ParsedGrammarSectionModel sichLassenTenseSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "tense-and-modal-contexts");
+        ParsedGrammarSectionModel sichLassenSeparableSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "separable-verbs");
+        ParsedGrammarSectionModel sichLassenComparisonSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel sichLassenPatternsSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel sichLassenPracticeSection = Assert.Single(sichLassenTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(sichLassenTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(sichLassenTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(sichLassenTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(sichLassenTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", sichLassenCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenFeasibilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenNegationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenTenseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenSeparableSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sichLassenPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(sichLassenTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(sichLassenTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(sichLassenTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(sichLassenTopic.Examples, example => example.GermanText == "Das Problem lässt sich lösen.");
+        Assert.Contains(sichLassenTopic.Examples, example => example.GermanText == "Der Antrag lässt sich online einreichen.");
+        Assert.Contains(sichLassenTopic.Examples, example => example.GermanText == "Das Formular hat sich problemlos ausfüllen lassen.");
+        Assert.Contains(sichLassenTopic.Examples, example => example.GermanText == "Die Tür lässt sich nicht abschließen.");
+        Assert.Contains(sichLassenTopic.CommonMistakes, mistake => mistake.WrongText == "Das Problem lässt lösen.");
+        Assert.Contains(sichLassenTopic.CommonMistakes, mistake => mistake.WrongText == "Die Daten lässt sich exportieren.");
+        Assert.Contains(sichLassenTopic.CommonMistakes, mistake => mistake.WrongText == "Das Problem hat sich gelöst lassen.");
+        Assert.All(sichLassenTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel esLaesstSichTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-es-laesst-sich");
+        Assert.Equal(1, esLaesstSichTopic.ContentRevision);
+        Assert.Equal("C1", esLaesstSichTopic.CefrLevel);
+        Assert.Equal("verbs", esLaesstSichTopic.GrammarCategory);
+        Assert.Equal(16, esLaesstSichTopic.Sections.Count);
+        Assert.True(esLaesstSichTopic.Examples.Count >= 150);
+        Assert.True(esLaesstSichTopic.CommonMistakes.Count >= 55);
+        Assert.True(esLaesstSichTopic.RuleSummaries.Count >= 26);
+        Assert.True(esLaesstSichTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-sich-lassen-plus-infinitive", esLaesstSichTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-indirect-questions", esLaesstSichTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-passive-alternatives", esLaesstSichTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-complex-subordination", esLaesstSichTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel esLaesstSichCoreSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel esLaesstSichFormSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel esLaesstSichWordOrderSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel impersonalEsSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "impersonal-es");
+        ParsedGrammarSectionModel contentClausesSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "dass-ob-and-w-clauses");
+        ParsedGrammarSectionModel adverbsSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "adverbs-and-degree");
+        ParsedGrammarSectionModel cautionSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "negation-and-caution");
+        ParsedGrammarSectionModel argumentationSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "formal-argumentation");
+        ParsedGrammarSectionModel esLaesstSichComparisonSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel esLaesstSichPatternsSection = Assert.Single(esLaesstSichTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(esLaesstSichTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(esLaesstSichTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(esLaesstSichTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(esLaesstSichTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", esLaesstSichCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", esLaesstSichFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", esLaesstSichWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", impersonalEsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", contentClausesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", adverbsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", cautionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", esLaesstSichComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", esLaesstSichPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(esLaesstSichTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(esLaesstSichTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(esLaesstSichTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(esLaesstSichTopic.Examples, example => example.GermanText == "Es lässt sich feststellen, dass die Kosten gestiegen sind.");
+        Assert.Contains(esLaesstSichTopic.Examples, example => example.GermanText == "Es lässt sich zeigen, dass die Methode funktioniert.");
+        Assert.Contains(esLaesstSichTopic.Examples, example => example.GermanText == "Es lässt sich kaum beurteilen, ob der Plan langfristig trägt.");
+        Assert.Contains(esLaesstSichTopic.Examples, example => example.GermanText == "Es lässt sich nicht ausschließen, dass weitere Daten nötig sind.");
+        Assert.Contains(esLaesstSichTopic.CommonMistakes, mistake => mistake.WrongText == "Es lässt sich festgestellt, dass die Kosten steigen.");
+        Assert.Contains(esLaesstSichTopic.CommonMistakes, mistake => mistake.WrongText == "Es lässt sich sagen, dass ist der Plan realistisch.");
+        Assert.Contains(esLaesstSichTopic.CommonMistakes, mistake => mistake.WrongText == "Es lässt sich darüber streiten, dass das sinnvoll ist.");
+        Assert.All(esLaesstSichTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel complexSubordinationTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-complex-subordination");
+        Assert.Equal(1, complexSubordinationTopic.ContentRevision);
+        Assert.Equal("C1", complexSubordinationTopic.CefrLevel);
+        Assert.Equal("subordinate-clauses", complexSubordinationTopic.GrammarCategory);
+        Assert.Equal(16, complexSubordinationTopic.Sections.Count);
+        Assert.True(complexSubordinationTopic.Examples.Count >= 150);
+        Assert.True(complexSubordinationTopic.CommonMistakes.Count >= 55);
+        Assert.True(complexSubordinationTopic.RuleSummaries.Count >= 26);
+        Assert.True(complexSubordinationTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-sentence-order-with-multiple-clauses", complexSubordinationTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-complex-sentence-order", complexSubordinationTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-embedded-clauses", complexSubordinationTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-reduced-clauses", complexSubordinationTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel complexSubordinationCoreSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel complexSubordinationFormSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel complexSubordinationWordOrderSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel nestedSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "nested-subordinate-clauses");
+        ParsedGrammarSectionModel clauseFirstSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "clause-first-inversion");
+        ParsedGrammarSectionModel relativePlusSubordinateSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "relative-plus-subordinate");
+        ParsedGrammarSectionModel connectorChoiceSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "connector-choice");
+        ParsedGrammarSectionModel complexSubordinationPunctuationSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "punctuation-and-boundaries");
+        ParsedGrammarSectionModel complexSubordinationComparisonSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel complexSubordinationPatternsSection = Assert.Single(complexSubordinationTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(complexSubordinationTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(complexSubordinationTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(complexSubordinationTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(complexSubordinationTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", complexSubordinationCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexSubordinationFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexSubordinationWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nestedSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", clauseFirstSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", relativePlusSubordinateSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorChoiceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexSubordinationPunctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexSubordinationComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexSubordinationPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(complexSubordinationTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(complexSubordinationTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(complexSubordinationTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(complexSubordinationTopic.Examples, example => example.GermanText == "Ich denke, dass der Plan funktioniert, weil die Daten stabil sind.");
+        Assert.Contains(complexSubordinationTopic.Examples, example => example.GermanText == "Weil die Daten stabil sind, funktioniert der Plan.");
+        Assert.Contains(complexSubordinationTopic.Examples, example => example.GermanText == "Der Bericht, der zeigt, dass die Kosten steigen, wurde gestern diskutiert.");
+        Assert.Contains(complexSubordinationTopic.Examples, example => example.GermanText == "Wir verbessern den Ablauf, indem wir die Schritte vereinfachen.");
+        Assert.Contains(complexSubordinationTopic.CommonMistakes, mistake => mistake.WrongText == "Weil die Daten stabil sind, der Plan funktioniert.");
+        Assert.Contains(complexSubordinationTopic.CommonMistakes, mistake => mistake.WrongText == "Ich denke, dass der Plan funktioniert, weil die Daten sind stabil.");
+        Assert.Contains(complexSubordinationTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht, der zeigt, dass die Kosten steigen wurde diskutiert.");
+        Assert.All(complexSubordinationTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel embeddedClausesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-embedded-clauses");
+        Assert.Equal(1, embeddedClausesTopic.ContentRevision);
+        Assert.Equal("C1", embeddedClausesTopic.CefrLevel);
+        Assert.Equal("subordinate-clauses", embeddedClausesTopic.GrammarCategory);
+        Assert.Equal(16, embeddedClausesTopic.Sections.Count);
+        Assert.True(embeddedClausesTopic.Examples.Count >= 150);
+        Assert.True(embeddedClausesTopic.CommonMistakes.Count >= 55);
+        Assert.True(embeddedClausesTopic.RuleSummaries.Count >= 26);
+        Assert.True(embeddedClausesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-complex-subordination", embeddedClausesTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-complex-sentence-order", embeddedClausesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-reduced-clauses", embeddedClausesTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-advanced-participial-constructions", embeddedClausesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel embeddedCoreSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel embeddedFormSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel embeddedWordOrderSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel embeddedDassSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "embedded-dass-clauses");
+        ParsedGrammarSectionModel embeddedQuestionSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "embedded-ob-and-w-questions");
+        ParsedGrammarSectionModel embeddedRelativeSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "relative-clause-embedding");
+        ParsedGrammarSectionModel embeddedNounSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "noun-phrase-embedding");
+        ParsedGrammarSectionModel embeddedCommaSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "commas-and-boundaries");
+        ParsedGrammarSectionModel embeddedComparisonSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel embeddedPatternsSection = Assert.Single(embeddedClausesTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(embeddedClausesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(embeddedClausesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(embeddedClausesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(embeddedClausesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", embeddedCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedDassSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedQuestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedRelativeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedCommaSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", embeddedPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(embeddedClausesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(embeddedClausesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(embeddedClausesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(embeddedClausesTopic.Examples, example => example.GermanText == "Die zentrale Frage, ob der Plan funktioniert, bleibt offen.");
+        Assert.Contains(embeddedClausesTopic.Examples, example => example.GermanText == "Der Bericht, der zeigt, dass die Kosten steigen, ist wichtig.");
+        Assert.Contains(embeddedClausesTopic.Examples, example => example.GermanText == "Die Annahme, dass alle Unterlagen vollständig sind, ist riskant.");
+        Assert.Contains(embeddedClausesTopic.Examples, example => example.GermanText == "Unklar ist, wie sich die Situation entwickelt.");
+        Assert.Contains(embeddedClausesTopic.CommonMistakes, mistake => mistake.WrongText == "Die Frage ob der Plan funktioniert, bleibt offen.");
+        Assert.Contains(embeddedClausesTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht, der zeigt, dass steigen die Kosten, ist wichtig.");
+        Assert.Contains(embeddedClausesTopic.CommonMistakes, mistake => mistake.WrongText == "Ich denke, dass die Frage, ob der Termin passt noch offen ist.");
+        Assert.All(embeddedClausesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel participialTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-advanced-participial-constructions");
+        Assert.Equal(1, participialTopic.ContentRevision);
+        Assert.Equal("C1", participialTopic.CefrLevel);
+        Assert.Equal("adjective-declension", participialTopic.GrammarCategory);
+        Assert.Equal(16, participialTopic.Sections.Count);
+        Assert.True(participialTopic.Examples.Count >= 150);
+        Assert.True(participialTopic.CommonMistakes.Count >= 55);
+        Assert.True(participialTopic.RuleSummaries.Count >= 26);
+        Assert.True(participialTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-adjective-declension-advanced-review", participialTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", participialTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-reduced-clauses", participialTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-embedded-clauses", participialTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel participialCoreSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel participialFormSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel participialPartizipISection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "partizip-i-active-meaning");
+        ParsedGrammarSectionModel participialPartizipIISection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "partizip-ii-passive-result-meaning");
+        ParsedGrammarSectionModel participialCaseSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel participialExpandedSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "expanded-participial-attributes");
+        ParsedGrammarSectionModel participialComparisonSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel participialEndingSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "adjective-ending-patterns");
+        ParsedGrammarSectionModel participialPatternsSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel participialPracticeSection = Assert.Single(participialTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(participialTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(participialTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(participialTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(participialTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", participialCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialPartizipISection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialPartizipIISection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialCaseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialExpandedSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialEndingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participialPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(participialTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(participialTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(participialTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(participialTopic.Examples, example => example.GermanText == "Die wartenden Kunden stehen vor dem Schalter.");
+        Assert.Contains(participialTopic.Examples, example => example.GermanText == "Die gestern eingereichten Unterlagen sind vollständig.");
+        Assert.Contains(participialTopic.Examples, example => example.GermanText == "Der gestern unterschriebene Vertrag gilt ab Juni.");
+        Assert.Contains(participialTopic.Examples, example => example.GermanText == "Die im Bericht genannten Zahlen sind wichtig.");
+        Assert.Contains(participialTopic.CommonMistakes, mistake => mistake.WrongText == "der wartende Kunden");
+        Assert.Contains(participialTopic.CommonMistakes, mistake => mistake.WrongText == "die prüfenden Unterlagen liegen im Ordner");
+        Assert.Contains(participialTopic.CommonMistakes, mistake => mistake.WrongText == "die Unterlagen gestern eingereichten");
+        Assert.All(participialTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel partizipAdjectivesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-partizip-i-and-partizip-ii-as-adjectives");
+        Assert.Equal(1, partizipAdjectivesTopic.ContentRevision);
+        Assert.Equal("C1", partizipAdjectivesTopic.CefrLevel);
+        Assert.Equal("adjective-declension", partizipAdjectivesTopic.GrammarCategory);
+        Assert.Equal(16, partizipAdjectivesTopic.Sections.Count);
+        Assert.True(partizipAdjectivesTopic.Examples.Count >= 150);
+        Assert.True(partizipAdjectivesTopic.CommonMistakes.Count >= 55);
+        Assert.True(partizipAdjectivesTopic.RuleSummaries.Count >= 26);
+        Assert.True(partizipAdjectivesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-advanced-participial-constructions", partizipAdjectivesTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-adjective-declension-advanced-review", partizipAdjectivesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-reduced-clauses", partizipAdjectivesTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", partizipAdjectivesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel partizipCoreSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel partizipFormSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel partizipISection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "partizip-i-adjectives");
+        ParsedGrammarSectionModel partizipIISection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "partizip-ii-adjectives");
+        ParsedGrammarSectionModel partizipMeaningSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "active-vs-passive-meaning");
+        ParsedGrammarSectionModel partizipEndingSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "adjective-ending-system");
+        ParsedGrammarSectionModel partizipCaseSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel partizipRelativeSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "partizip-vs-relative-clause");
+        ParsedGrammarSectionModel partizipPatternsSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel partizipChecklistSection = Assert.Single(partizipAdjectivesTopic.Sections, section => section.SectionKey == "meaning-checklist");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(partizipAdjectivesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(partizipAdjectivesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(partizipAdjectivesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(partizipAdjectivesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", partizipCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipISection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipIISection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipMeaningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipEndingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipCaseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipRelativeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", partizipChecklistSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(partizipAdjectivesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(partizipAdjectivesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(partizipAdjectivesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(partizipAdjectivesTopic.Examples, example => example.GermanText == "Die steigenden Kosten unterscheiden sich von den gestiegenen Kosten.");
+        Assert.Contains(partizipAdjectivesTopic.Examples, example => example.GermanText == "Die geprüften Unterlagen liegen bereit.");
+        Assert.Contains(partizipAdjectivesTopic.Examples, example => example.GermanText == "Die wartenden Kunden erhalten Wasser.");
+        Assert.Contains(partizipAdjectivesTopic.Examples, example => example.GermanText == "Das ausgefüllte Formular ist gültig.");
+        Assert.Contains(partizipAdjectivesTopic.CommonMistakes, mistake => mistake.WrongText == "die geprüfenden Unterlagen");
+        Assert.Contains(partizipAdjectivesTopic.CommonMistakes, mistake => mistake.WrongText == "die öffnende Tür steht offen");
+        Assert.Contains(partizipAdjectivesTopic.CommonMistakes, mistake => mistake.WrongText == "die gestiegenen Kosten steigen weiter");
+        Assert.All(partizipAdjectivesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel reducedClausesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-reduced-clauses");
+        Assert.Equal(1, reducedClausesTopic.ContentRevision);
+        Assert.Equal("C1", reducedClausesTopic.CefrLevel);
+        Assert.Equal("subordinate-clauses", reducedClausesTopic.GrammarCategory);
+        Assert.Equal(16, reducedClausesTopic.Sections.Count);
+        Assert.True(reducedClausesTopic.Examples.Count >= 150);
+        Assert.True(reducedClausesTopic.CommonMistakes.Count >= 55);
+        Assert.True(reducedClausesTopic.RuleSummaries.Count >= 26);
+        Assert.True(reducedClausesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-complex-subordination", reducedClausesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-participial-constructions", reducedClausesTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-infinitive-clauses-advanced", reducedClausesTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", reducedClausesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel reducedCoreSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel reducedFormSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel reducedInfinitiveSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "infinitive-reductions");
+        ParsedGrammarSectionModel reducedOhneSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "ohne-zu");
+        ParsedGrammarSectionModel reducedStattSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "statt-zu");
+        ParsedGrammarSectionModel reducedUmSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "um-zu-purpose");
+        ParsedGrammarSectionModel reducedNominalSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "nominal-reductions");
+        ParsedGrammarSectionModel reducedWordOrderSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel reducedComparisonSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel reducedPatternsSection = Assert.Single(reducedClausesTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(reducedClausesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(reducedClausesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(reducedClausesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(reducedClausesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", reducedCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedInfinitiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedOhneSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedStattSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedUmSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reducedPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(reducedClausesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(reducedClausesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(reducedClausesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(reducedClausesTopic.Examples, example => example.GermanText == "Ich rufe an, um den Termin zu bestätigen.");
+        Assert.Contains(reducedClausesTopic.Examples, example => example.GermanText == "Sie unterschrieb, ohne den Vertrag zu lesen.");
+        Assert.Contains(reducedClausesTopic.Examples, example => example.GermanText == "Nach Prüfung der Unterlagen erhalten Sie eine Antwort.");
+        Assert.Contains(reducedClausesTopic.Examples, example => example.GermanText == "Die gestern geprüften Unterlagen liegen bereit.");
+        Assert.Contains(reducedClausesTopic.CommonMistakes, mistake => mistake.WrongText == "Ich rufe an, um ich bestätige den Termin.");
+        Assert.Contains(reducedClausesTopic.CommonMistakes, mistake => mistake.WrongText == "Ich lerne Deutsch, um mein Sohn bessere Chancen hat.");
+        Assert.Contains(reducedClausesTopic.CommonMistakes, mistake => mistake.WrongText == "Nach die Prüfung der Unterlagen erhalten Sie eine Antwort.");
+        Assert.All(reducedClausesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel academicConnectorsTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-advanced-academic-connectors");
+        Assert.Equal(1, academicConnectorsTopic.ContentRevision);
+        Assert.Equal("C1", academicConnectorsTopic.CefrLevel);
+        Assert.Equal("connectors", academicConnectorsTopic.GrammarCategory);
+        Assert.Equal(16, academicConnectorsTopic.Sections.Count);
+        Assert.True(academicConnectorsTopic.Examples.Count >= 150);
+        Assert.True(academicConnectorsTopic.CommonMistakes.Count >= 55);
+        Assert.True(academicConnectorsTopic.RuleSummaries.Count >= 26);
+        Assert.True(academicConnectorsTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-advanced-connectors-for-argumentation", academicConnectorsTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-consequence-connectors-folglich-daher-deshalb", academicConnectorsTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", academicConnectorsTopic.RelatedTopicSlugs);
+        Assert.Contains("c2-fine-differences-in-connectors", academicConnectorsTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel academicCoreSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel academicFormSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel academicWordOrderSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel academicCauseSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "cause-connectors");
+        ParsedGrammarSectionModel academicConsequenceSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "consequence-connectors");
+        ParsedGrammarSectionModel academicContrastSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "contrast-connectors");
+        ParsedGrammarSectionModel academicAdditionSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "addition-connectors");
+        ParsedGrammarSectionModel academicConditionSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "condition-and-qualification");
+        ParsedGrammarSectionModel academicDirectionSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "connector-direction");
+        ParsedGrammarSectionModel academicComparisonSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel academicPatternsSection = Assert.Single(academicConnectorsTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(academicConnectorsTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(academicConnectorsTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(academicConnectorsTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(academicConnectorsTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", academicCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicCauseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicConsequenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicAdditionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicConditionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicDirectionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(academicConnectorsTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(academicConnectorsTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(academicConnectorsTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(academicConnectorsTopic.Examples, example => example.GermanText == "Die Daten sind unvollständig; folglich bleibt die Aussage begrenzt.");
+        Assert.Contains(academicConnectorsTopic.Examples, example => example.GermanText == "Zudem wurden qualitative Interviews geführt.");
+        Assert.Contains(academicConnectorsTopic.Examples, example => example.GermanText == "Während die erste Quelle konkrete Zahlen nennt, bleibt die zweite allgemein.");
+        Assert.Contains(academicConnectorsTopic.Examples, example => example.GermanText == "Aufgrund der Datenlage ist Vorsicht geboten.");
+        Assert.Contains(academicConnectorsTopic.CommonMistakes, mistake => mistake.WrongText == "Folglich die Aussage bleibt begrenzt.");
+        Assert.Contains(academicConnectorsTopic.CommonMistakes, mistake => mistake.WrongText == "Während die Kosten steigen, der Nutzen bleibt unklar.");
+        Assert.Contains(academicConnectorsTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund die Daten fehlen, bleibt die These offen.");
+        Assert.All(academicConnectorsTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel concessionStructuresTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-concession-structures");
+        Assert.Equal(1, concessionStructuresTopic.ContentRevision);
+        Assert.Equal("C1", concessionStructuresTopic.CefrLevel);
+        Assert.Equal("connectors", concessionStructuresTopic.GrammarCategory);
+        Assert.Equal(16, concessionStructuresTopic.Sections.Count);
+        Assert.True(concessionStructuresTopic.Examples.Count >= 150);
+        Assert.True(concessionStructuresTopic.CommonMistakes.Count >= 55);
+        Assert.True(concessionStructuresTopic.RuleSummaries.Count >= 26);
+        Assert.True(concessionStructuresTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-advanced-academic-connectors", concessionStructuresTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-contrast", concessionStructuresTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", concessionStructuresTopic.RelatedTopicSlugs);
+        Assert.Contains("c2-fine-differences-in-connectors", concessionStructuresTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel concessionCoreSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel concessionFormSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel concessionWordOrderSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel obwohlSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "obwohl");
+        ParsedGrammarSectionModel obgleichWenngleichSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "obgleich-and-wenngleich");
+        ParsedGrammarSectionModel trotzUngeachtetSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "trotz-and-ungeachtet");
+        ParsedGrammarSectionModel dennochGleichwohlSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "dennoch-and-gleichwohl");
+        ParsedGrammarSectionModel zwarJedochSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "zwar-jedoch");
+        ParsedGrammarSectionModel concessionMeaningSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "meaning-and-use");
+        ParsedGrammarSectionModel concessionComparisonSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel concessionPatternsSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel concessionPracticeSection = Assert.Single(concessionStructuresTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(concessionStructuresTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(concessionStructuresTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(concessionStructuresTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(concessionStructuresTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", concessionCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", concessionFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", concessionWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", obwohlSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", obgleichWenngleichSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", trotzUngeachtetSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dennochGleichwohlSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zwarJedochSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", concessionMeaningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", concessionComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", concessionPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", concessionPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(concessionStructuresTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(concessionStructuresTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(concessionStructuresTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(concessionStructuresTopic.Examples, example => example.GermanText == "Obwohl die Daten knapp sind, bleibt ein Trend erkennbar.");
+        Assert.Contains(concessionStructuresTopic.Examples, example => example.GermanText == "Trotz knapper Daten bleibt ein Trend erkennbar.");
+        Assert.Contains(concessionStructuresTopic.Examples, example => example.GermanText == "Die Daten sind knapp. Dennoch bleibt ein Trend erkennbar.");
+        Assert.Contains(concessionStructuresTopic.Examples, example => example.GermanText == "Zwar sind die Daten knapp, jedoch ist ein Trend erkennbar.");
+        Assert.Contains(concessionStructuresTopic.CommonMistakes, mistake => mistake.WrongText == "Obwohl die Daten sind knapp, bleibt ein Trend erkennbar.");
+        Assert.Contains(concessionStructuresTopic.CommonMistakes, mistake => mistake.WrongText == "Die Daten sind knapp. Dennoch ein Trend bleibt erkennbar.");
+        Assert.Contains(concessionStructuresTopic.CommonMistakes, mistake => mistake.WrongText == "Trotz die Daten sind knapp, bleibt ein Trend erkennbar.");
+        Assert.Contains(concessionStructuresTopic.CommonMistakes, mistake => mistake.WrongText == "Trotz kurze Frist reichen wir den Antrag ein.");
+        Assert.DoesNotContain(concessionStructuresTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(concessionStructuresTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel causalChainsTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-causal-chains-in-formal-writing");
+        Assert.Equal(1, causalChainsTopic.ContentRevision);
+        Assert.Equal("C1", causalChainsTopic.CefrLevel);
+        Assert.Equal("connectors", causalChainsTopic.GrammarCategory);
+        Assert.Equal(16, causalChainsTopic.Sections.Count);
+        Assert.True(causalChainsTopic.Examples.Count >= 150);
+        Assert.True(causalChainsTopic.CommonMistakes.Count >= 55);
+        Assert.True(causalChainsTopic.RuleSummaries.Count >= 26);
+        Assert.True(causalChainsTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-advanced-academic-connectors", causalChainsTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-connectors-for-cause-and-effect", causalChainsTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", causalChainsTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-cause-connectors-aufgrund-wegen-da", causalChainsTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel causalCoreSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel causalFormSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel causalWordOrderSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel daWeilSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "cause-clauses-da-weil");
+        ParsedGrammarSectionModel nominalCauseSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "nominal-cause-phrases");
+        ParsedGrammarSectionModel resultConnectorsSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "result-connectors");
+        ParsedGrammarSectionModel multiStepSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "multi-step-causal-chains");
+        ParsedGrammarSectionModel wodurchSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "dadurch-wodurch-was-dazu-fuehrt");
+        ParsedGrammarSectionModel causalRegisterSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "register-and-precision");
+        ParsedGrammarSectionModel avoidingLongChainsSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "avoiding-overlong-chains");
+        ParsedGrammarSectionModel causalComparisonSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel causalPatternsSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel causalPracticeSection = Assert.Single(causalChainsTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(causalChainsTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(causalChainsTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(causalChainsTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(causalChainsTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", causalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causalWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", daWeilSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalCauseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", resultConnectorsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", multiStepSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wodurchSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causalRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", avoidingLongChainsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causalPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(causalChainsTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(causalChainsTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(causalChainsTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(causalChainsTopic.Examples, example => example.GermanText == "Da die Unterlagen unvollständig sind, verzögert sich die Prüfung.");
+        Assert.Contains(causalChainsTopic.Examples, example => example.GermanText == "Die Prüfung verzögert sich, weil die Unterlagen unvollständig sind.");
+        Assert.Contains(causalChainsTopic.Examples, example => example.GermanText == "Aufgrund unvollständiger Unterlagen verzögert sich die Prüfung.");
+        Assert.Contains(causalChainsTopic.Examples, example => example.GermanText == "Die Unterlagen fehlen. Dadurch verzögert sich die Prüfung.");
+        Assert.Contains(causalChainsTopic.Examples, example => example.GermanText == "Der Termin wurde geändert, was dazu führt, dass neue Einladungen verschickt werden.");
+        Assert.Contains(causalChainsTopic.CommonMistakes, mistake => mistake.WrongText == "Da die Unterlagen sind unvollständig, verzögert sich die Prüfung.");
+        Assert.Contains(causalChainsTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb die Prüfung verzögert sich.");
+        Assert.Contains(causalChainsTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund die Unterlagen fehlen, verzögert sich die Prüfung.");
+        Assert.Contains(causalChainsTopic.CommonMistakes, mistake => mistake.WrongText == "Dies führt dazu, dass der Termin wird verschoben.");
+        Assert.DoesNotContain(causalChainsTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(causalChainsTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel hedgingTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-hedging-and-cautious-language");
+        Assert.Equal(1, hedgingTopic.ContentRevision);
+        Assert.Equal("C1", hedgingTopic.CefrLevel);
+        Assert.Equal("konjunktiv", hedgingTopic.GrammarCategory);
+        Assert.Equal(16, hedgingTopic.Sections.Count);
+        Assert.True(hedgingTopic.Examples.Count >= 150);
+        Assert.True(hedgingTopic.CommonMistakes.Count >= 55);
+        Assert.True(hedgingTopic.RuleSummaries.Count >= 26);
+        Assert.True(hedgingTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-expressing-doubt", hedgingTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-expressing-probability", hedgingTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-konjunktiv-ii-advanced", hedgingTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", hedgingTopic.RelatedTopicSlugs);
+        Assert.Contains("c2-subtle-modal-verb-nuance", hedgingTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel hedgingCoreSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel hedgingFormSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel hedgingWordOrderSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel konjunktivSofteningSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "konjunktiv-ii-softening");
+        ParsedGrammarSectionModel cautiousModalSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "cautious-modal-verbs");
+        ParsedGrammarSectionModel scheinenWirkenSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "scheinen-and-wirken");
+        ParsedGrammarSectionModel denkbarMoeglichSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "denkbar-moeglich-frames");
+        ParsedGrammarSectionModel duerfteSollteSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "duerfte-and-sollte");
+        ParsedGrammarSectionModel wennConditionSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "wenn-clauses-for-conditions");
+        ParsedGrammarSectionModel writtenRegisterSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "formal-written-register");
+        ParsedGrammarSectionModel hedgingComparisonSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel hedgingPatternsSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel hedgingPracticeSection = Assert.Single(hedgingTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(hedgingTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(hedgingTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(hedgingTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(hedgingTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", hedgingCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hedgingFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hedgingWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivSofteningSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", cautiousModalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", scheinenWirkenSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", denkbarMoeglichSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", duerfteSollteSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wennConditionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", writtenRegisterSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hedgingComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hedgingPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hedgingPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(hedgingTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(hedgingTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(hedgingTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(hedgingTopic.Examples, example => example.GermanText == "Es könnte sein, dass der Ablauf länger dauert.");
+        Assert.Contains(hedgingTopic.Examples, example => example.GermanText == "Es wäre denkbar, dass weitere Daten nötig sind.");
+        Assert.Contains(hedgingTopic.Examples, example => example.GermanText == "Die Beispiele scheinen eine Tendenz zu zeigen.");
+        Assert.Contains(hedgingTopic.Examples, example => example.GermanText == "Sollte der Hinweis relevant sein, müsste er genauer erklärt werden.");
+        Assert.Contains(hedgingTopic.CommonMistakes, mistake => mistake.WrongText == "Es könnte sein, dass der Ablauf dauert länger.");
+        Assert.Contains(hedgingTopic.CommonMistakes, mistake => mistake.WrongText == "Ich würde vorschlagen, den Termin prüfen.");
+        Assert.Contains(hedgingTopic.CommonMistakes, mistake => mistake.WrongText == "Die Daten scheinen zeigen eine Tendenz.");
+        Assert.Contains(hedgingTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn das zuträfe, der Plan müsste angepasst werden.");
+        Assert.DoesNotContain(hedgingTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(hedgingTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel nuanceTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-expressing-nuance-and-limitation");
+        Assert.Equal(1, nuanceTopic.ContentRevision);
+        Assert.Equal("C1", nuanceTopic.CefrLevel);
+        Assert.Equal("connectors", nuanceTopic.GrammarCategory);
+        Assert.Equal(16, nuanceTopic.Sections.Count);
+        Assert.True(nuanceTopic.Examples.Count >= 150);
+        Assert.True(nuanceTopic.CommonMistakes.Count >= 55);
+        Assert.True(nuanceTopic.RuleSummaries.Count >= 26);
+        Assert.True(nuanceTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-advanced-academic-connectors", nuanceTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-hedging-and-cautious-language", nuanceTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", nuanceTopic.RelatedTopicSlugs);
+        Assert.Contains("c2-fine-differences-in-connectors", nuanceTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel nuanceCoreSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel nuanceFormSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel nuanceWordOrderSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel nuanceZwarSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "zwar-aber-jedoch");
+        ParsedGrammarSectionModel nuanceScopeSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "nur-insofern-als");
+        ParsedGrammarSectionModel nuanceConditionSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "soweit-and-sofern");
+        ParsedGrammarSectionModel nuanceExceptionSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "exceptions-with-abgesehen-von");
+        ParsedGrammarSectionModel nuanceComparisonSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel nuancePatternsSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel nuancePracticeSection = Assert.Single(nuanceTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(nuanceTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(nuanceTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(nuanceTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(nuanceTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", nuanceCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuanceFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuanceWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuanceZwarSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuanceScopeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuanceConditionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuanceExceptionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuanceComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuancePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nuancePracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(nuanceTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(nuanceTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(nuanceTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(nuanceTopic.Examples, example => example.GermanText == "Der Ansatz überzeugt teilweise, jedoch bleibt die Aussage begrenzt.");
+        Assert.Contains(nuanceTopic.Examples, example => example.GermanText == "Die Aussage gilt nur, wenn der Kontext genannt wird.");
+        Assert.Contains(nuanceTopic.Examples, example => example.GermanText == "Das ist insofern richtig, als die Beispiele den Kern zeigen.");
+        Assert.Contains(nuanceTopic.Examples, example => example.GermanText == "Abgesehen von dieser Einschränkung ist die Formulierung passend.");
+        Assert.Contains(nuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Zwar ist die Kritik berechtigt, jedoch der Ton wirkt zu direkt.");
+        Assert.Contains(nuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Das gilt nur insofern, als die Daten sind vollständig.");
+        Assert.Contains(nuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Abgesehen diese Einschränkung ist die Formulierung passend.");
+        Assert.Contains(nuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Was die Formulierung betrifft, sie bleibt ungenau.");
+        Assert.DoesNotContain(nuanceTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(nuanceTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel registerTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-register-shifting");
+        Assert.Equal(1, registerTopic.ContentRevision);
+        Assert.Equal("C1", registerTopic.CefrLevel);
+        Assert.Equal("word-order", registerTopic.GrammarCategory);
+        Assert.Equal(17, registerTopic.Sections.Count);
+        Assert.True(registerTopic.Examples.Count >= 150);
+        Assert.True(registerTopic.CommonMistakes.Count >= 55);
+        Assert.True(registerTopic.RuleSummaries.Count >= 26);
+        Assert.True(registerTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", registerTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-academic-connectors", registerTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-formal-style-in-essays", registerTopic.RelatedTopicSlugs);
+        Assert.Contains("c2-register-and-syntactic-choice", registerTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel registerCoreSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel registerFormSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel registerWordOrderSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel registerConversationalSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "conversational-register");
+        ParsedGrammarSectionModel registerFormalSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "neutral-formal-register");
+        ParsedGrammarSectionModel registerAcademicSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "academic-register");
+        ParsedGrammarSectionModel registerNominalSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "verbal-to-nominal-style");
+        ParsedGrammarSectionModel registerRequestSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "direct-to-formal-request");
+        ParsedGrammarSectionModel registerComparisonSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel registerPatternsSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(registerTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(registerTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(registerTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(registerTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", registerCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerConversationalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerFormalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerAcademicSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerRequestSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(registerTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(registerTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(registerTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(registerTopic.Examples, example => example.GermanText == "Ich brauche die Unterlagen.");
+        Assert.Contains(registerTopic.Examples, example => example.GermanText == "Ich benötige die Unterlagen für die weitere Bearbeitung.");
+        Assert.Contains(registerTopic.Examples, example => example.GermanText == "Die Prüfung des Antrags erfolgt derzeit.");
+        Assert.Contains(registerTopic.Examples, example => example.GermanText == "Könnten Sie mir bitte die Unterlagen schicken?");
+        Assert.Contains(registerTopic.CommonMistakes, mistake => mistake.WrongText == "Morgen ich sende Ihnen die Unterlagen.");
+        Assert.Contains(registerTopic.CommonMistakes, mistake => mistake.WrongText == "Ich schreibe Ihnen, weil ich habe eine Frage.");
+        Assert.Contains(registerTopic.CommonMistakes, mistake => mistake.WrongText == "Könnten Sie bitte prüfen das Formular?");
+        Assert.Contains(registerTopic.CommonMistakes, mistake => mistake.WrongText == "Die Prüfung der Antrag erfolgt heute.");
+        Assert.DoesNotContain(registerTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(registerTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel essayTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-formal-style-in-essays");
+        Assert.Equal(1, essayTopic.ContentRevision);
+        Assert.Equal("C1", essayTopic.CefrLevel);
+        Assert.Equal("word-order", essayTopic.GrammarCategory);
+        Assert.Equal(18, essayTopic.Sections.Count);
+        Assert.True(essayTopic.Examples.Count >= 150);
+        Assert.True(essayTopic.CommonMistakes.Count >= 55);
+        Assert.True(essayTopic.RuleSummaries.Count >= 26);
+        Assert.True(essayTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-register-shifting", essayTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", essayTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-argumentation-grammar", essayTopic.RelatedTopicSlugs);
+        Assert.Contains("c2-academic-high-register-syntax", essayTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel essayCoreSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel essayFormSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel essayWordOrderSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel essayThesisSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "thesis-sentences");
+        ParsedGrammarSectionModel essayReasonSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "reason-and-evidence-sentences");
+        ParsedGrammarSectionModel essayContrastSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "contrast-and-concession");
+        ParsedGrammarSectionModel essayConclusionSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "result-and-conclusion-sentences");
+        ParsedGrammarSectionModel essayNominalSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "nominal-style-in-essays");
+        ParsedGrammarSectionModel essayComparisonSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel essayPatternsSection = Assert.Single(essayTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(essayTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(essayTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(essayTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(essayTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", essayCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayThesisSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayReasonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayConclusionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", essayPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(essayTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(essayTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(essayTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(essayTopic.Examples, example => example.GermanText == "Es lässt sich festhalten, dass die Frage komplex ist.");
+        Assert.Contains(essayTopic.Examples, example => example.GermanText == "Daraus ergibt sich, dass eine differenzierte Bewertung nötig ist.");
+        Assert.Contains(essayTopic.Examples, example => example.GermanText == "Die Bewertung des Ansatzes bleibt schwierig.");
+        Assert.Contains(essayTopic.Examples, example => example.GermanText == "Zusammenfassend lässt sich sagen, dass die These nur teilweise überzeugt.");
+        Assert.Contains(essayTopic.CommonMistakes, mistake => mistake.WrongText == "Aus diesem Grund die Frage bleibt offen.");
+        Assert.Contains(essayTopic.CommonMistakes, mistake => mistake.WrongText == "Es lässt sich festhalten, dass die Frage ist komplex.");
+        Assert.Contains(essayTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund die Beispiele ist die These plausibel.");
+        Assert.Contains(essayTopic.CommonMistakes, mistake => mistake.WrongText == "Der Ansatz ist voll super und total wichtig.");
+        Assert.DoesNotContain(essayTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(essayTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel academicArgumentTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-academic-argument-grammar");
+        Assert.Equal(1, academicArgumentTopic.ContentRevision);
+        Assert.Equal("C1", academicArgumentTopic.CefrLevel);
+        Assert.Equal("connectors", academicArgumentTopic.GrammarCategory);
+        Assert.Equal(18, academicArgumentTopic.Sections.Count);
+        Assert.True(academicArgumentTopic.Examples.Count >= 150);
+        Assert.True(academicArgumentTopic.CommonMistakes.Count >= 55);
+        Assert.True(academicArgumentTopic.RuleSummaries.Count >= 26);
+        Assert.True(academicArgumentTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-formal-style-in-essays", academicArgumentTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-academic-connectors", academicArgumentTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-expressing-nuance-and-limitation", academicArgumentTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-argumentation-grammar", academicArgumentTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel argumentCoreSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel argumentFormSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel argumentWordOrderSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel claimSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "claim-frames");
+        ParsedGrammarSectionModel evidenceSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "evidence-frames");
+        ParsedGrammarSectionModel reasonChainSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "reason-chains");
+        ParsedGrammarSectionModel counterargumentSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "counterargument-frames");
+        ParsedGrammarSectionModel limitationSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "concession-and-limitation");
+        ParsedGrammarSectionModel argumentConclusionSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "result-and-conclusion");
+        ParsedGrammarSectionModel argumentPatternsSection = Assert.Single(academicArgumentTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(academicArgumentTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(academicArgumentTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(academicArgumentTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(academicArgumentTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", argumentCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", claimSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", evidenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reasonChainSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", counterargumentSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", limitationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentConclusionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", argumentPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(academicArgumentTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(academicArgumentTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(academicArgumentTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(academicArgumentTopic.Examples, example => example.GermanText == "Es spricht vieles dafür, dass der Ansatz sinnvoll ist.");
+        Assert.Contains(academicArgumentTopic.Examples, example => example.GermanText == "Dem steht entgegen, dass ein Aspekt fehlt.");
+        Assert.Contains(academicArgumentTopic.Examples, example => example.GermanText == "Daraus ergibt sich, dass die These begrenzt ist.");
+        Assert.Contains(academicArgumentTopic.Examples, example => example.GermanText == "Die genaue Prüfung des Ansatzes bleibt erforderlich.");
+        Assert.Contains(academicArgumentTopic.CommonMistakes, mistake => mistake.WrongText == "Es spricht vieles dafür, dass der Ansatz ist sinnvoll.");
+        Assert.Contains(academicArgumentTopic.CommonMistakes, mistake => mistake.WrongText == "Da ein Beispiel fehlt, die These bleibt begrenzt.");
+        Assert.Contains(academicArgumentTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund dass ein Beispiel fehlt, bleibt die These offen.");
+        Assert.Contains(academicArgumentTopic.CommonMistakes, mistake => mistake.WrongText == "Die Bewertung der Argument bleibt schwierig.");
+        Assert.DoesNotContain(academicArgumentTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(academicArgumentTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel comparisonTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-complex-comparison-structures");
+        Assert.Equal(1, comparisonTopic.ContentRevision);
+        Assert.Equal("C1", comparisonTopic.CefrLevel);
+        Assert.Equal("connectors", comparisonTopic.GrammarCategory);
+        Assert.Equal(18, comparisonTopic.Sections.Count);
+        Assert.True(comparisonTopic.Examples.Count >= 150);
+        Assert.True(comparisonTopic.CommonMistakes.Count >= 55);
+        Assert.True(comparisonTopic.RuleSummaries.Count >= 26);
+        Assert.True(comparisonTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b2-comparing-options-grammatically", comparisonTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-expressing-nuance-and-limitation", comparisonTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-fine-differences-in-connectors", comparisonTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-argumentation-grammar", comparisonTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel complexComparisonCoreSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel complexComparisonFormSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel complexComparisonWordOrderSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel jeDestoSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "je-desto");
+        ParsedGrammarSectionModel alsObSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "als-ob-and-als-wenn");
+        ParsedGrammarSectionModel focusCorrectionSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "nicht-so-sehr-als-vielmehr");
+        ParsedGrammarSectionModel whereasSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "waehrend-and-wohingegen");
+        ParsedGrammarSectionModel nominalComparisonSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "nominal-comparisons");
+        ParsedGrammarSectionModel complexComparisonTableSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel complexComparisonPatternsSection = Assert.Single(comparisonTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(comparisonTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(comparisonTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(comparisonTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(comparisonTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", complexComparisonCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexComparisonFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexComparisonWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", jeDestoSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", alsObSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", focusCorrectionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", whereasSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexComparisonTableSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", complexComparisonPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(comparisonTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(comparisonTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(comparisonTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(comparisonTopic.Examples, example => example.GermanText == "Je genauer die Begriffe sind, desto stärker wirkt die These.");
+        Assert.Contains(comparisonTopic.Examples, example => example.GermanText == "Der Text wirkt, als ob der Schluss bereits feststünde.");
+        Assert.Contains(comparisonTopic.Examples, example => example.GermanText == "Es geht nicht so sehr um die Länge, als vielmehr um die Klarheit.");
+        Assert.Contains(comparisonTopic.Examples, example => example.GermanText == "Im Vergleich zu diesem Ansatz ist der zweite präziser.");
+        Assert.Contains(comparisonTopic.CommonMistakes, mistake => mistake.WrongText == "Je die Begriffe genauer sind, desto wirkt die These stärker.");
+        Assert.Contains(comparisonTopic.CommonMistakes, mistake => mistake.WrongText == "Der Text wirkt, als ob steht der Schluss fest.");
+        Assert.Contains(comparisonTopic.CommonMistakes, mistake => mistake.WrongText == "Im Vergleich zu den Ansatz ist der zweite präziser.");
+        Assert.Contains(comparisonTopic.CommonMistakes, mistake => mistake.WrongText == "Nicht so sehr die Person, sondern vielmehr um die Methode geht es.");
+        Assert.DoesNotContain(comparisonTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(comparisonTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel prepositionalTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-advanced-prepositional-structures");
+        Assert.Equal(1, prepositionalTopic.ContentRevision);
+        Assert.Equal("C1", prepositionalTopic.CefrLevel);
+        Assert.Equal("prepositions", prepositionalTopic.GrammarCategory);
+        Assert.Equal(17, prepositionalTopic.Sections.Count);
+        Assert.True(prepositionalTopic.Examples.Count >= 150);
+        Assert.True(prepositionalTopic.CommonMistakes.Count >= 55);
+        Assert.True(prepositionalTopic.RuleSummaries.Count >= 26);
+        Assert.True(prepositionalTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-prepositional-verbs-introduction", prepositionalTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-verb-plus-preposition-combinations", prepositionalTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-prepositional-phrases-in-formal-writing", prepositionalTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-complex-subordination", prepositionalTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel prepositionCoreSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel prepositionFormSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel prepositionWordOrderSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel formalPrepositionSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "formal-prepositional-phrases");
+        ParsedGrammarSectionModel verbPrepositionSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "verb-preposition-chunks");
+        ParsedGrammarSectionModel nounAdjectivePrepositionSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "noun-adjective-preposition-chunks");
+        ParsedGrammarSectionModel casePrepositionSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "case-after-prepositions");
+        ParsedGrammarSectionModel questionPrepositionSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "person-and-thing-questions");
+        ParsedGrammarSectionModel daWoPrepositionSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "preposition-plus-da-wo-forms");
+        ParsedGrammarSectionModel prepositionComparisonSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel prepositionPatternsSection = Assert.Single(prepositionalTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(prepositionalTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(prepositionalTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(prepositionalTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(prepositionalTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", prepositionCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalPrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", verbPrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nounAdjectivePrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", casePrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", questionPrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", daWoPrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(prepositionalTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(prepositionalTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(prepositionalTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(prepositionalTopic.Examples, example => example.GermanText == "In Bezug auf diese Frage bleibt die Lage unklar.");
+        Assert.Contains(prepositionalTopic.Examples, example => example.GermanText == "Aufgrund des Ergebnisses muss der Bericht überarbeitet werden.");
+        Assert.Contains(prepositionalTopic.Examples, example => example.GermanText == "Der Hinweis bezieht sich auf den Vertrag.");
+        Assert.Contains(prepositionalTopic.Examples, example => example.GermanText == "Worauf bezieht sich die Kritik?");
+        Assert.Contains(prepositionalTopic.CommonMistakes, mistake => mistake.WrongText == "In Bezug auf dem Vertrag habe ich eine Frage.");
+        Assert.Contains(prepositionalTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund die Verzögerung verschieben wir den Termin.");
+        Assert.Contains(prepositionalTopic.CommonMistakes, mistake => mistake.WrongText == "Der Hinweis bezieht sich an den Vertrag.");
+        Assert.Contains(prepositionalTopic.CommonMistakes, mistake => mistake.WrongText == "Auf was bezieht sich die Kritik?");
+        Assert.DoesNotContain(prepositionalTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(prepositionalTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel genitiveAdvancedTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-genitive-advanced");
+        Assert.Equal(1, genitiveAdvancedTopic.ContentRevision);
+        Assert.Equal("C1", genitiveAdvancedTopic.CefrLevel);
+        Assert.Equal("genitive", genitiveAdvancedTopic.GrammarCategory);
+        Assert.Equal(16, genitiveAdvancedTopic.Sections.Count);
+        Assert.True(genitiveAdvancedTopic.Examples.Count >= 150);
+        Assert.True(genitiveAdvancedTopic.CommonMistakes.Count >= 55);
+        Assert.True(genitiveAdvancedTopic.RuleSummaries.Count >= 26);
+        Assert.True(genitiveAdvancedTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-genitive-introduction", genitiveAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-genitive-in-formal-german", genitiveAdvancedTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", genitiveAdvancedTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-advanced-prepositional-structures", genitiveAdvancedTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel genitiveCoreSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel genitiveFormSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel genitiveWordOrderSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel articleNounEndingSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "article-and-noun-endings");
+        ParsedGrammarSectionModel genitiveAttributeSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "genitive-attributes");
+        ParsedGrammarSectionModel genitivePrepositionSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "genitive-prepositions");
+        ParsedGrammarSectionModel formalNominalSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "formal-nominal-style");
+        ParsedGrammarSectionModel genitiveVonSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "genitive-versus-von");
+        ParsedGrammarSectionModel genitiveComparisonSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel genitivePatternsSection = Assert.Single(genitiveAdvancedTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(genitiveAdvancedTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(genitiveAdvancedTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(genitiveAdvancedTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(genitiveAdvancedTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", genitiveCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", articleNounEndingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveAttributeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitivePrepositionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveVonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitivePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(genitiveAdvancedTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(genitiveAdvancedTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(genitiveAdvancedTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(genitiveAdvancedTopic.Examples, example => example.GermanText == "Die Prüfung des Antrags dauert mehrere Wochen.");
+        Assert.Contains(genitiveAdvancedTopic.Examples, example => example.GermanText == "Aufgrund des Ergebnisses muss der Bericht überarbeitet werden.");
+        Assert.Contains(genitiveAdvancedTopic.Examples, example => example.GermanText == "Innerhalb der Frist müssen die Unterlagen eingereicht werden.");
+        Assert.Contains(genitiveAdvancedTopic.Examples, example => example.GermanText == "Die Entscheidung der Behörde wurde schriftlich mitgeteilt.");
+        Assert.Contains(genitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Die Prüfung der Antrag dauert lange.");
+        Assert.Contains(genitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund dem Ergebnis muss der Bericht geändert werden.");
+        Assert.Contains(genitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Während des Gespräch wurde die Frage nicht beantwortet.");
+        Assert.Contains(genitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == "Die Entscheidung von der Behörde wurde schriftlich mitgeteilt.");
+        Assert.DoesNotContain(genitiveAdvancedTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.All(genitiveAdvancedTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel collapsedSentenceTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-collapsed-sentence-structures");
+        Assert.Equal(1, collapsedSentenceTopic.ContentRevision);
+        Assert.Equal("C1", collapsedSentenceTopic.CefrLevel);
+        Assert.Equal("word-order", collapsedSentenceTopic.GrammarCategory);
+        Assert.Equal(16, collapsedSentenceTopic.Sections.Count);
+        Assert.True(collapsedSentenceTopic.Examples.Count >= 150);
+        Assert.True(collapsedSentenceTopic.CommonMistakes.Count >= 55);
+        Assert.True(collapsedSentenceTopic.RuleSummaries.Count >= 26);
+        Assert.True(collapsedSentenceTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-complex-subordination", collapsedSentenceTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-embedded-clauses", collapsedSentenceTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-reduced-clauses", collapsedSentenceTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", collapsedSentenceTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-participial-constructions", collapsedSentenceTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-formal-style-in-essays", collapsedSentenceTopic.RelatedTopicSlugs);
+        Assert.Contains("b2-complex-sentence-order", collapsedSentenceTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel collapsedCoreSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel collapsedFormSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel collapsedFocusSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel sentenceBracketSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "sentence-bracket-in-compressed-sentences");
+        ParsedGrammarSectionModel insertedRelativeSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "inserted-relative-clauses");
+        ParsedGrammarSectionModel participlePhraseSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "participle-phrases-inside-noun-groups");
+        ParsedGrammarSectionModel nominalCompressionSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "nominal-compression");
+        ParsedGrammarSectionModel collapsedPunctuationSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "punctuation-and-boundaries");
+        ParsedGrammarSectionModel readabilitySection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "keeping-readability");
+        ParsedGrammarSectionModel collapsedComparisonSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel collapsedPatternsSection = Assert.Single(collapsedSentenceTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(collapsedSentenceTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(collapsedSentenceTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(collapsedSentenceTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(collapsedSentenceTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", collapsedCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", collapsedFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", collapsedFocusSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sentenceBracketSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", insertedRelativeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", participlePhraseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalCompressionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", collapsedPunctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", readabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", collapsedComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", collapsedPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(collapsedSentenceTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(collapsedSentenceTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(collapsedSentenceTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(collapsedSentenceTopic.Examples, example => example.GermanText == "Nach Prüfung der Unterlagen wurde der Antrag genehmigt.");
+        Assert.Contains(collapsedSentenceTopic.Examples, example => example.GermanText == "Der Bericht, der gestern erschien, behandelt die Frage ausführlich.");
+        Assert.Contains(collapsedSentenceTopic.Examples, example => example.GermanText == "Der von der Behörde geprüfte Antrag wurde genehmigt.");
+        Assert.Contains(collapsedSentenceTopic.Examples, example => example.GermanText == "Die Prüfung des Antrags dauert mehrere Wochen.");
+        Assert.Contains(collapsedSentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Nach Prüfung der Unterlagen der Antrag wurde genehmigt.");
+        Assert.Contains(collapsedSentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht, der erschien gestern, behandelt die Frage.");
+        Assert.Contains(collapsedSentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Der sorgfältig prüfen Antrag wurde genehmigt.");
+        Assert.Contains(collapsedSentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Die Behörde kündigt an eine Änderung der Regelung.");
+        Assert.DoesNotContain(collapsedSentenceTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(collapsedSentenceTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(collapsedSentenceTopic.Examples, example => example.GermanText.Contains("do not continue", StringComparison.OrdinalIgnoreCase));
+        Assert.All(collapsedSentenceTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel infinitivePassiveTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-infinitive-and-passive-combinations");
+        Assert.Equal(1, infinitivePassiveTopic.ContentRevision);
+        Assert.Equal("C1", infinitivePassiveTopic.CefrLevel);
+        Assert.Equal("passive", infinitivePassiveTopic.GrammarCategory);
+        Assert.Equal(16, infinitivePassiveTopic.Sections.Count);
+        Assert.True(infinitivePassiveTopic.Examples.Count >= 150);
+        Assert.True(infinitivePassiveTopic.CommonMistakes.Count >= 55);
+        Assert.True(infinitivePassiveTopic.RuleSummaries.Count >= 26);
+        Assert.True(infinitivePassiveTopic.LinkedWords.Count >= 100);
+        Assert.Contains("b1-passive-voice-introduction", infinitivePassiveTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-werden-as-auxiliary", infinitivePassiveTopic.PrerequisiteSlugs);
+        Assert.Contains("b2-passive-with-modal-verbs", infinitivePassiveTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-passive-alternatives", infinitivePassiveTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-sich-lassen-plus-infinitive", infinitivePassiveTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-es-laesst-sich", infinitivePassiveTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-complex-subordination", infinitivePassiveTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel infinitivePassiveCoreSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel infinitivePassiveFormSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel infinitivePassiveWordOrderSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel modalPassiveSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "passive-with-modal-verbs");
+        ParsedGrammarSectionModel zuInfinitivePassiveSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "passive-with-zu-infinitive");
+        ParsedGrammarSectionModel passiveAfterZuSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "passive-after-zu-phrases");
+        ParsedGrammarSectionModel actorVonDurchSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "actor-with-von-or-durch");
+        ParsedGrammarSectionModel infinitivePassiveComparisonSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel infinitivePassivePatternsSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel infinitivePassivePracticeSection = Assert.Single(infinitivePassiveTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(infinitivePassiveTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(infinitivePassiveTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(infinitivePassiveTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(infinitivePassiveTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", infinitivePassiveCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitivePassiveFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitivePassiveWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", zuInfinitivePassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveAfterZuSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", actorVonDurchSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitivePassiveComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitivePassivePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", infinitivePassivePracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(infinitivePassiveTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(infinitivePassiveTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(infinitivePassiveTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(infinitivePassiveTopic.Examples, example => example.GermanText == "Der Antrag muss vor der Sitzung geprüft werden.");
+        Assert.Contains(infinitivePassiveTopic.Examples, example => example.GermanText == "Die Daten dürfen nicht ohne Zustimmung veröffentlicht werden.");
+        Assert.Contains(infinitivePassiveTopic.Examples, example => example.GermanText == "Der Antrag ist vor der Entscheidung zu prüfen.");
+        Assert.Contains(infinitivePassiveTopic.Examples, example => example.GermanText == "Das Formular ist noch auszufüllen.");
+        Assert.Contains(infinitivePassiveTopic.Examples, example => example.GermanText == "Der Antrag wurde eingereicht, um später geprüft zu werden.");
+        Assert.Contains(infinitivePassiveTopic.Examples, example => example.GermanText == "Der Antrag muss von der zuständigen Behörde geprüft werden.");
+        Assert.Contains(infinitivePassiveTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag muss prüfen werden.");
+        Assert.Contains(infinitivePassiveTopic.CommonMistakes, mistake => mistake.WrongText == "weil der Antrag muss geprüft werden");
+        Assert.Contains(infinitivePassiveTopic.CommonMistakes, mistake => mistake.WrongText == "ohne genannt werden");
+        Assert.Contains(infinitivePassiveTopic.CommonMistakes, mistake => mistake.WrongText == "Die Entscheidung muss von die Leitung bestätigt werden.");
+        Assert.DoesNotContain(infinitivePassiveTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(infinitivePassiveTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(infinitivePassiveTopic.Examples, example => example.GermanText.Contains("Punkt ", StringComparison.Ordinal));
+        Assert.All(infinitivePassiveTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel reportedOpinionsTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-reported-opinions");
+        Assert.Equal(1, reportedOpinionsTopic.ContentRevision);
+        Assert.Equal("C1", reportedOpinionsTopic.CefrLevel);
+        Assert.Equal("reported-speech", reportedOpinionsTopic.GrammarCategory);
+        Assert.Equal(16, reportedOpinionsTopic.Sections.Count);
+        Assert.True(reportedOpinionsTopic.Examples.Count >= 150);
+        Assert.True(reportedOpinionsTopic.CommonMistakes.Count >= 55);
+        Assert.True(reportedOpinionsTopic.RuleSummaries.Count >= 26);
+        Assert.True(reportedOpinionsTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-konjunktiv-i-for-reported-speech", reportedOpinionsTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-konjunktiv-i-versus-konjunktiv-ii", reportedOpinionsTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-indirect-speech-in-journalism-and-formal-contexts", reportedOpinionsTopic.PrerequisiteSlugs);
+        Assert.Contains("b1-indirect-questions", reportedOpinionsTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-formal-style-in-essays", reportedOpinionsTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-academic-argument-grammar", reportedOpinionsTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-hedging-and-cautious-language", reportedOpinionsTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel reportedOpinionsCoreSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel reportedOpinionsFormSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel reportedOpinionsWordOrderSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel reportedOpinionsVerbsSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "reporting-verbs");
+        ParsedGrammarSectionModel reportedDassSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "dass-clauses");
+        ParsedGrammarSectionModel reportedKonjunktivSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "konjunktiv-i-in-reported-opinions");
+        ParsedGrammarSectionModel reportedQuestionSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "indirect-question-opinions");
+        ParsedGrammarSectionModel sourcePhraseSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "source-phrases");
+        ParsedGrammarSectionModel reportedComparisonSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel reportedPatternsSection = Assert.Single(reportedOpinionsTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(reportedOpinionsTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(reportedOpinionsTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(reportedOpinionsTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(reportedOpinionsTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", reportedOpinionsCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedOpinionsFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedOpinionsWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedOpinionsVerbsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedDassSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedKonjunktivSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedQuestionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sourcePhraseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(reportedOpinionsTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(reportedOpinionsTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(reportedOpinionsTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(reportedOpinionsTopic.Examples, example => example.GermanText == "Die Expertin meint, dass die Maßnahme notwendig sei.");
+        Assert.Contains(reportedOpinionsTopic.Examples, example => example.GermanText == "Die Expertin meint, die Maßnahme sei notwendig.");
+        Assert.Contains(reportedOpinionsTopic.Examples, example => example.GermanText == "Der Bericht weist darauf hin, dass die Risiken erheblich seien.");
+        Assert.Contains(reportedOpinionsTopic.Examples, example => example.GermanText == "Die Leitung fragt, ob der Ablauf geändert werden müsse.");
+        Assert.Contains(reportedOpinionsTopic.Examples, example => example.GermanText == "Dem Bericht zufolge seien die Risiken erheblich.");
+        Assert.Contains(reportedOpinionsTopic.CommonMistakes, mistake => mistake.WrongText == "Er meint, dass die Maßnahme ist notwendig.");
+        Assert.Contains(reportedOpinionsTopic.CommonMistakes, mistake => mistake.WrongText == "Die Kommission fragt, ob ist der Vorschlag tragfähig.");
+        Assert.Contains(reportedOpinionsTopic.CommonMistakes, mistake => mistake.WrongText == "Nach Ansicht von die Expertin ist der Plan sinnvoll.");
+        Assert.Contains(reportedOpinionsTopic.CommonMistakes, mistake => mistake.WrongText == "Der Autor betont die Regelung sei sinnvoll.");
+        Assert.DoesNotContain(reportedOpinionsTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(reportedOpinionsTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(reportedOpinionsTopic.Examples, example => example.GermanText.Contains("Quelle ", StringComparison.Ordinal));
+        Assert.All(reportedOpinionsTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel formalSummariesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-formal-summaries");
+        Assert.Equal(1, formalSummariesTopic.ContentRevision);
+        Assert.Equal("C1", formalSummariesTopic.CefrLevel);
+        Assert.Equal("word-order", formalSummariesTopic.GrammarCategory);
+        Assert.Equal(16, formalSummariesTopic.Sections.Count);
+        Assert.True(formalSummariesTopic.Examples.Count >= 150);
+        Assert.True(formalSummariesTopic.CommonMistakes.Count >= 55);
+        Assert.True(formalSummariesTopic.RuleSummaries.Count >= 26);
+        Assert.True(formalSummariesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-formal-style-in-essays", formalSummariesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", formalSummariesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-complex-subordination", formalSummariesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-reported-opinions", formalSummariesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", formalSummariesTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-hedging-and-cautious-language", formalSummariesTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-register-shifting", formalSummariesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel formalSummariesCoreSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formalSummariesFormSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel formalSummariesWordOrderSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel sourceTopicSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "source-and-topic-sentences");
+        ParsedGrammarSectionModel summaryVerbsSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "summary-verbs");
+        ParsedGrammarSectionModel summaryClauseSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "dass-ob-wie-clauses");
+        ParsedGrammarSectionModel summaryNominalSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "nominal-style-in-summaries");
+        ParsedGrammarSectionModel summaryFlowSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "sentence-flow");
+        ParsedGrammarSectionModel formalSummariesComparisonSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel formalSummariesPatternsSection = Assert.Single(formalSummariesTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(formalSummariesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(formalSummariesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(formalSummariesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(formalSummariesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", formalSummariesCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalSummariesFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalSummariesWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", sourceTopicSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", summaryVerbsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", summaryClauseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", summaryNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", summaryFlowSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalSummariesComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalSummariesPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(formalSummariesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(formalSummariesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(formalSummariesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(formalSummariesTopic.Examples, example => example.GermanText == "Der Text behandelt die soziale Verantwortung.");
+        Assert.Contains(formalSummariesTopic.Examples, example => example.GermanText == "Im Mittelpunkt stehen die Folgen der Entscheidung.");
+        Assert.Contains(formalSummariesTopic.Examples, example => example.GermanText == "Zusammenfassend lässt sich sagen, dass die Maßnahme notwendig ist.");
+        Assert.Contains(formalSummariesTopic.Examples, example => example.GermanText == "Der Bericht kommt zu dem Schluss, dass die Regelung überarbeitet werden sollte.");
+        Assert.Contains(formalSummariesTopic.CommonMistakes, mistake => mistake.WrongText == "In dem Text handelt um soziale Verantwortung.");
+        Assert.Contains(formalSummariesTopic.CommonMistakes, mistake => mistake.WrongText == "Der Autor beschreibt, dass die Maßnahme ist notwendig.");
+        Assert.Contains(formalSummariesTopic.CommonMistakes, mistake => mistake.WrongText == "Zusammenfassend lässt sagen, dass der Text neutral bleibt.");
+        Assert.DoesNotContain(formalSummariesTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(formalSummariesTopic.CommonMistakes, mistake => mistake.WrongText.Contains(" 20.", StringComparison.Ordinal));
+        Assert.DoesNotContain(formalSummariesTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.All(formalSummariesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel presentationGrammarTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-c1-presentation-grammar");
+        Assert.Equal(1, presentationGrammarTopic.ContentRevision);
+        Assert.Equal("C1", presentationGrammarTopic.CefrLevel);
+        Assert.Equal("connectors", presentationGrammarTopic.GrammarCategory);
+        Assert.Equal(16, presentationGrammarTopic.Sections.Count);
+        Assert.True(presentationGrammarTopic.Examples.Count >= 150);
+        Assert.True(presentationGrammarTopic.CommonMistakes.Count >= 55);
+        Assert.True(presentationGrammarTopic.RuleSummaries.Count >= 26);
+        Assert.True(presentationGrammarTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-formal-summaries", presentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", presentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-academic-connectors", presentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-hedging-and-cautious-language", presentationGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-c1-discussion-grammar", presentationGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-c1-writing-exam-grammar", presentationGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-register-shifting", presentationGrammarTopic.RelatedTopicSlugs);
+
+        string[] presentationTableSectionKeys =
+        [
+            "core-patterns",
+            "form-or-structure-table",
+            "word-order-or-case-focus",
+            "opening-and-structure",
+            "sequencing-points",
+            "cause-result-connectors",
+            "contrast-and-concession",
+            "limiting-and-hedging",
+            "transition-and-reference",
+            "comparison-table",
+            "common-patterns",
+            "practice-advice"
+        ];
+
+        Assert.All(presentationTableSectionKeys, sectionKey =>
+        {
+            ParsedGrammarSectionModel section = Assert.Single(presentationGrammarTopic.Sections, grammarSection => grammarSection.SectionKey == sectionKey);
+            Assert.All(languages, language => Assert.Contains("\"table\"", section.LocalizedBlocksJson[language], StringComparison.Ordinal));
+        });
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(presentationGrammarTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(presentationGrammarTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(presentationGrammarTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(presentationGrammarTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.All(presentationGrammarTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(presentationGrammarTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(presentationGrammarTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(presentationGrammarTopic.Examples, example => example.GermanText == "Zunächst erläutere ich die Ausgangslage.");
+        Assert.Contains(presentationGrammarTopic.Examples, example => example.GermanText == "Das ist wichtig, weil die Kosten steigen.");
+        Assert.Contains(presentationGrammarTopic.Examples, example => example.GermanText == "Deshalb muss dieser Aspekt genauer betrachtet werden.");
+        Assert.Contains(presentationGrammarTopic.Examples, example => example.GermanText == "Einerseits bietet die Lösung Vorteile, andererseits entstehen neue Kosten.");
+        Assert.Contains(presentationGrammarTopic.Examples, example => example.GermanText == "Zusammenfassend lässt sich sagen, dass mehrere Faktoren zusammenwirken.");
+        Assert.Contains(presentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb ich komme zum nächsten Punkt.");
+        Assert.Contains(presentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Obwohl die Lösung ist teuer, bleibt sie sinnvoll.");
+        Assert.Contains(presentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Einerseits ist die Lösung teuer, andererseits sie ist nötig.");
+        Assert.Contains(presentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Zusammenfassend lässt sagen, dass die Frage offen bleibt.");
+        Assert.DoesNotContain(presentationGrammarTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(presentationGrammarTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(presentationGrammarTopic.Examples, example => example.GermanText.Contains("spielt die Kosten", StringComparison.Ordinal));
+        Assert.DoesNotContain(presentationGrammarTopic.Examples, example => example.GermanText.Contains("die Kosten zentral ist", StringComparison.Ordinal));
+        Assert.All(presentationGrammarTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel discussionGrammarTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-c1-discussion-grammar");
+        Assert.Equal(1, discussionGrammarTopic.ContentRevision);
+        Assert.Equal("C1", discussionGrammarTopic.CefrLevel);
+        Assert.Equal("connectors", discussionGrammarTopic.GrammarCategory);
+        Assert.Equal(16, discussionGrammarTopic.Sections.Count);
+        Assert.True(discussionGrammarTopic.Examples.Count >= 150);
+        Assert.True(discussionGrammarTopic.CommonMistakes.Count >= 55);
+        Assert.True(discussionGrammarTopic.RuleSummaries.Count >= 26);
+        Assert.True(discussionGrammarTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-c1-presentation-grammar", discussionGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-academic-argument-grammar", discussionGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-academic-connectors", discussionGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-hedging-and-cautious-language", discussionGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-c1-writing-exam-grammar", discussionGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-expressing-nuance-and-limitation", discussionGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-register-shifting", discussionGrammarTopic.RelatedTopicSlugs);
+
+        string[] discussionTableSectionKeys =
+        [
+            "core-patterns",
+            "form-or-structure-table",
+            "word-order-or-case-focus",
+            "agreement-frames",
+            "disagreement-frames",
+            "partial-agreement",
+            "concession-and-counterargument",
+            "asking-for-clarification",
+            "evidence-and-reference",
+            "comparison-table",
+            "common-patterns",
+            "practice-advice"
+        ];
+
+        Assert.All(discussionTableSectionKeys, sectionKey =>
+        {
+            ParsedGrammarSectionModel section = Assert.Single(discussionGrammarTopic.Sections, grammarSection => grammarSection.SectionKey == sectionKey);
+            Assert.All(languages, language => Assert.Contains("\"table\"", section.LocalizedBlocksJson[language], StringComparison.Ordinal));
+        });
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(discussionGrammarTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(discussionGrammarTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(discussionGrammarTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(discussionGrammarTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.All(discussionGrammarTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(discussionGrammarTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(discussionGrammarTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(discussionGrammarTopic.Examples, example => example.GermanText == "Ich stimme diesem Argument zu.");
+        Assert.Contains(discussionGrammarTopic.Examples, example => example.GermanText == "Dagegen lässt sich einwenden, dass die Folgen unklar bleiben.");
+        Assert.Contains(discussionGrammarTopic.Examples, example => example.GermanText == "Einerseits ist die Lösung praktisch, andererseits entstehen neue Risiken.");
+        Assert.Contains(discussionGrammarTopic.Examples, example => example.GermanText == "Könnten Sie erklären, warum dieser Punkt wichtiger ist?");
+        Assert.Contains(discussionGrammarTopic.Examples, example => example.GermanText == "Ich stimme zu, weil die Daten nicht vollständig sind.");
+        Assert.Contains(discussionGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Ich stimme mit dir zu.");
+        Assert.Contains(discussionGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Meiner Meinung nach, das ist falsch.");
+        Assert.Contains(discussionGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb ich sehe das anders.");
+        Assert.Contains(discussionGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Können Sie erklären, warum ist das wichtig?");
+        Assert.DoesNotContain(discussionGrammarTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(discussionGrammarTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(discussionGrammarTopic.Examples, example => example.GermanText.Contains("spielt die Kosten", StringComparison.Ordinal));
+        Assert.DoesNotContain(discussionGrammarTopic.Examples, example => example.GermanText.Contains("die Kosten wichtig ist", StringComparison.Ordinal));
+        Assert.All(discussionGrammarTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel writingExamGrammarTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-c1-writing-exam-grammar");
+        Assert.Equal(1, writingExamGrammarTopic.ContentRevision);
+        Assert.Equal("C1", writingExamGrammarTopic.CefrLevel);
+        Assert.Equal("word-order", writingExamGrammarTopic.GrammarCategory);
+        Assert.Equal(17, writingExamGrammarTopic.Sections.Count);
+        Assert.True(writingExamGrammarTopic.Examples.Count >= 150);
+        Assert.True(writingExamGrammarTopic.CommonMistakes.Count >= 55);
+        Assert.True(writingExamGrammarTopic.RuleSummaries.Count >= 26);
+        Assert.True(writingExamGrammarTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-c1-presentation-grammar", writingExamGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-c1-discussion-grammar", writingExamGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-complex-subordination", writingExamGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-embedded-clauses", writingExamGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-formal-style-in-essays", writingExamGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-academic-argument-grammar", writingExamGrammarTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-register-shifting", writingExamGrammarTopic.RelatedTopicSlugs);
+
+        string[] writingExamTableSectionKeys =
+        [
+            "core-patterns",
+            "form-or-structure-table",
+            "word-order-or-case-focus",
+            "sentence-slots",
+            "subordinate-clause-control",
+            "clause-first-sentences",
+            "sentence-bracket",
+            "relative-and-embedded-clauses",
+            "punctuation-and-commas",
+            "paragraph-flow",
+            "comparison-table",
+            "common-patterns",
+            "practice-advice"
+        ];
+
+        Assert.All(writingExamTableSectionKeys, sectionKey =>
+        {
+            ParsedGrammarSectionModel section = Assert.Single(writingExamGrammarTopic.Sections, grammarSection => grammarSection.SectionKey == sectionKey);
+            Assert.All(languages, language => Assert.Contains("\"table\"", section.LocalizedBlocksJson[language], StringComparison.Ordinal));
+        });
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(writingExamGrammarTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(writingExamGrammarTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(writingExamGrammarTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(writingExamGrammarTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.All(writingExamGrammarTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(writingExamGrammarTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(writingExamGrammarTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(writingExamGrammarTopic.Examples, example => example.GermanText == "Meiner Meinung nach ist der Vorschlag überzeugend.");
+        Assert.Contains(writingExamGrammarTopic.Examples, example => example.GermanText == "Aus diesem Grund sollte die Maßnahme überprüft werden.");
+        Assert.Contains(writingExamGrammarTopic.Examples, example => example.GermanText == "Wenn die Daten fehlen, bleibt die Aussage schwach.");
+        Assert.Contains(writingExamGrammarTopic.Examples, example => example.GermanText == "Der Vorschlag, der oft genannt wird, ist umstritten.");
+        Assert.Contains(writingExamGrammarTopic.Examples, example => example.GermanText == "Daraus ergibt sich, dass weitere Schritte nötig sind.");
+        Assert.Contains(writingExamGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Meiner Meinung nach, der Vorschlag ist sinnvoll.");
+        Assert.Contains(writingExamGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn die Daten fehlen, die Aussage bleibt schwach.");
+        Assert.Contains(writingExamGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Ich denke, dass der Vorschlag ist sinnvoll.");
+        Assert.Contains(writingExamGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Der Text wirkt klar weil die Struktur einfach ist.");
+        Assert.DoesNotContain(writingExamGrammarTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(writingExamGrammarTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(writingExamGrammarTopic.Examples, example => example.GermanText.Contains("Meiner Meinung nach,", StringComparison.Ordinal));
+        Assert.DoesNotContain(writingExamGrammarTopic.Examples, example => example.GermanText.Contains("Deshalb der", StringComparison.Ordinal));
+        Assert.All(writingExamGrammarTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel commonMistakesTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-c1-common-mistakes");
+        Assert.Equal(1, commonMistakesTopic.ContentRevision);
+        Assert.Equal("C1", commonMistakesTopic.CefrLevel);
+        Assert.Equal("word-order", commonMistakesTopic.GrammarCategory);
+        Assert.Equal(16, commonMistakesTopic.Sections.Count);
+        Assert.True(commonMistakesTopic.Examples.Count >= 150);
+        Assert.True(commonMistakesTopic.CommonMistakes.Count >= 55);
+        Assert.True(commonMistakesTopic.RuleSummaries.Count >= 26);
+        Assert.True(commonMistakesTopic.LinkedWords.Count >= 100);
+        Assert.Contains("c1-c1-writing-exam-grammar", commonMistakesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-complex-subordination", commonMistakesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-embedded-clauses", commonMistakesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-register-shifting", commonMistakesTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-formal-style-in-essays", commonMistakesTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-academic-argument-grammar", commonMistakesTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", commonMistakesTopic.RelatedTopicSlugs);
+
+        string[] commonMistakesTableSectionKeys =
+        [
+            "core-patterns",
+            "form-or-structure-table",
+            "word-order-or-case-focus",
+            "subordination-mistakes",
+            "sentence-bracket-mistakes",
+            "comma-and-punctuation-mistakes",
+            "nominal-style-mistakes",
+            "register-mistakes",
+            "readability-mistakes",
+            "comparison-table",
+            "common-patterns",
+            "practice-advice"
+        ];
+
+        Assert.All(commonMistakesTableSectionKeys, sectionKey =>
+        {
+            ParsedGrammarSectionModel section = Assert.Single(commonMistakesTopic.Sections, grammarSection => grammarSection.SectionKey == sectionKey);
+            Assert.All(languages, language => Assert.Contains("\"table\"", section.LocalizedBlocksJson[language], StringComparison.Ordinal));
+        });
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(commonMistakesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(commonMistakesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(commonMistakesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(commonMistakesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.All(commonMistakesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(commonMistakesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(commonMistakesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(commonMistakesTopic.Examples, example => example.GermanText == "Deshalb ist eine Prüfung nötig.");
+        Assert.Contains(commonMistakesTopic.Examples, example => example.GermanText == "Wenn die Daten fehlen, bleibt die Aussage schwach.");
+        Assert.Contains(commonMistakesTopic.Examples, example => example.GermanText == "Die Maßnahme sollte genauer überprüft werden.");
+        Assert.Contains(commonMistakesTopic.Examples, example => example.GermanText == "Ich möchte darauf hinweisen, dass die Daten begrenzt sind.");
+        Assert.Contains(commonMistakesTopic.Examples, example => example.GermanText == "Der Punkt, dass die Kosten steigen, ist wichtig.");
+        Assert.Contains(commonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb der Vorschlag ist sinnvoll.");
+        Assert.Contains(commonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Weil die Daten sind unklar, bleibt die Aussage schwach.");
+        Assert.Contains(commonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Die Maßnahme sollte überprüft genauer werden.");
+        Assert.Contains(commonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == "Der Text wirkt klar weil die Struktur einfach ist.");
+        Assert.DoesNotContain(commonMistakesTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(commonMistakesTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(commonMistakesTopic.Examples, example => example.GermanText.Contains("Deshalb der", StringComparison.Ordinal));
+        Assert.DoesNotContain(commonMistakesTopic.Examples, example => example.GermanText.Contains("Allerdings die", StringComparison.Ordinal));
+        Assert.All(commonMistakesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel registerReviewTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-c1-register-review");
+        Assert.Equal(1, registerReviewTopic.ContentRevision);
+        Assert.Equal("C1", registerReviewTopic.CefrLevel);
+        Assert.Equal("word-order", registerReviewTopic.GrammarCategory);
+        Assert.Equal(18, registerReviewTopic.Sections.Count);
+        Assert.True(registerReviewTopic.Examples.Count >= 150);
+        Assert.True(registerReviewTopic.CommonMistakes.Count >= 55);
+        Assert.True(registerReviewTopic.RuleSummaries.Count >= 26);
+        Assert.True(registerReviewTopic.LinkedWords.Count >= 100);
+
+        Assert.Contains("c1-register-shifting", registerReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-formal-style-in-essays", registerReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-c1-writing-exam-grammar", registerReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-hedging-and-cautious-language", registerReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", registerReviewTopic.RelatedTopicSlugs);
+
+        string[] registerReviewTableSectionKeys =
+        [
+            "core-patterns",
+            "form-or-structure-table",
+            "word-order-or-case-focus",
+            "comparison-table",
+            "du-sie-register",
+            "politeness-and-konjunktiv",
+            "nominal-versus-verbal-style",
+            "passive-and-actor-focus",
+            "connectors-and-register",
+            "hedging-and-precision",
+            "readability-in-long-sentences",
+            "register-in-emails-and-reports",
+            "practice-advice"
+        ];
+
+        Assert.All(registerReviewTableSectionKeys, sectionKey =>
+        {
+            ParsedGrammarSectionModel section = Assert.Single(registerReviewTopic.Sections, grammarSection => grammarSection.SectionKey == sectionKey);
+            Assert.All(languages, language => Assert.Contains("\"table\"", section.LocalizedBlocksJson[language], StringComparison.Ordinal));
+        });
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(registerReviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(registerReviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(registerReviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(registerReviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.All(registerReviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(registerReviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(registerReviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Könnten Sie mir bitte die Unterlagen senden?");
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Der Antrag wird derzeit bearbeitet.");
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Meines Erachtens ist diese Lösung sinnvoll.");
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Diese Aussage lässt sich so nicht vollständig bestätigen.");
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Ein guter C1-Satz ist nicht nur korrekt, sondern auch angemessen.");
+
+        Assert.Contains(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Aus diesem Grund ich bitte um Verständnis.");
+        Assert.Contains(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Sehr geehrte Frau Keller, kannst du mir antworten?");
+        Assert.Contains(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund ich krank bin, kann ich nicht kommen.");
+        Assert.Contains(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Jedoch die Daten sind unklar.");
+
+        Assert.DoesNotContain(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(registerReviewTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(registerReviewTopic.Examples, example => example.GermanText.Contains("Jedoch die", StringComparison.Ordinal));
+        Assert.DoesNotContain(registerReviewTopic.Examples, example => example.GermanText.Contains("Allerdings die", StringComparison.Ordinal));
+        Assert.All(registerReviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel academicReviewTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-c1-academic-grammar-review");
+        Assert.Equal(1, academicReviewTopic.ContentRevision);
+        Assert.Equal("C1", academicReviewTopic.CefrLevel);
+        Assert.Equal("connectors", academicReviewTopic.GrammarCategory);
+        Assert.Equal(18, academicReviewTopic.Sections.Count);
+        Assert.True(academicReviewTopic.Examples.Count >= 150);
+        Assert.True(academicReviewTopic.CommonMistakes.Count >= 55);
+        Assert.True(academicReviewTopic.RuleSummaries.Count >= 26);
+        Assert.True(academicReviewTopic.LinkedWords.Count >= 100);
+
+        Assert.Contains("c1-academic-argument-grammar", academicReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-academic-connectors", academicReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-causal-chains-in-formal-writing", academicReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-hedging-and-cautious-language", academicReviewTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-nominal-style-versus-verbal-style", academicReviewTopic.RelatedTopicSlugs);
+
+        string[] academicReviewTableSectionKeys =
+        [
+            "core-patterns",
+            "form-or-structure-table",
+            "word-order-or-case-focus",
+            "meaning-and-use",
+            "comparison-table",
+            "common-patterns",
+            "nominal-style-in-academic-texts",
+            "reported-speech-in-academic-texts",
+            "hedging-in-academic-arguments",
+            "cause-and-result-chains",
+            "contrast-and-concession",
+            "limitations-and-scope",
+            "paragraph-cohesion",
+            "readability-and-sentence-length",
+            "practice-advice"
+        ];
+
+        Assert.All(academicReviewTableSectionKeys, sectionKey =>
+        {
+            ParsedGrammarSectionModel section = Assert.Single(academicReviewTopic.Sections, grammarSection => grammarSection.SectionKey == sectionKey);
+            Assert.All(languages, language => Assert.Contains("\"table\"", section.LocalizedBlocksJson[language], StringComparison.Ordinal));
+        });
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(academicReviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(academicReviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(academicReviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(academicReviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.All(academicReviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(academicReviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(academicReviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(academicReviewTopic.Examples, example => example.GermanText == "Da die Daten begrenzt sind, bleibt die Aussage vorsichtig.");
+        Assert.Contains(academicReviewTopic.Examples, example => example.GermanText == "Daraus ergibt sich, dass weitere Forschung nötig ist.");
+        Assert.Contains(academicReviewTopic.Examples, example => example.GermanText == "Die Autorin betont, die Maßnahme sei notwendig.");
+        Assert.Contains(academicReviewTopic.Examples, example => example.GermanText == "Zwar ist der Ansatz sinnvoll, jedoch bleibt die Umsetzung offen.");
+        Assert.Contains(academicReviewTopic.Examples, example => example.GermanText == "Das akademische Register verlangt präzise Konnektoren und kontrollierte Satzlänge.");
+
+        Assert.Contains(academicReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb die These ist plausibel.");
+        Assert.Contains(academicReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Aufgrund die Daten begrenzt sind, bleibt die Aussage vorsichtig.");
+        Assert.Contains(academicReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Die Autorin betont, dass die Maßnahme sei notwendig.");
+        Assert.Contains(academicReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Die Finanzierung ist unklar, sodass die Umsetzung muss verschoben werden.");
+
+        Assert.DoesNotContain(academicReviewTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(academicReviewTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(academicReviewTopic.Examples, example => example.GermanText.Contains("Deshalb die", StringComparison.Ordinal));
+        Assert.DoesNotContain(academicReviewTopic.Examples, example => example.GermanText.Contains("Allerdings die", StringComparison.Ordinal));
+        Assert.All(academicReviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel reviewMapTopic = Assert.Single(parsedPackage.GrammarTopics, topic => topic.Slug == "c1-c1-grammar-review-map");
+        Assert.Equal(1, reviewMapTopic.ContentRevision);
+        Assert.Equal("C1", reviewMapTopic.CefrLevel);
+        Assert.Equal("word-order", reviewMapTopic.GrammarCategory);
+        Assert.Equal(16, reviewMapTopic.Sections.Count);
+        Assert.True(reviewMapTopic.Examples.Count >= 150);
+        Assert.True(reviewMapTopic.CommonMistakes.Count >= 55);
+        Assert.True(reviewMapTopic.RuleSummaries.Count >= 26);
+        Assert.True(reviewMapTopic.LinkedWords.Count >= 100);
+
+        Assert.Contains("c1-c1-common-mistakes", reviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-c1-register-review", reviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-c1-academic-grammar-review", reviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-c1-writing-exam-grammar", reviewMapTopic.RelatedTopicSlugs);
+        Assert.Contains("c1-academic-argument-grammar", reviewMapTopic.RelatedTopicSlugs);
+
+        string[] reviewMapTableSectionKeys =
+        [
+            "core-patterns",
+            "form-or-structure-table",
+            "word-order-or-case-focus",
+            "comparison-table",
+            "common-patterns",
+            "clause-map",
+            "connector-map",
+            "register-map",
+            "case-and-reference-map",
+            "tense-and-mood-map",
+            "readability-map",
+            "practice-advice"
+        ];
+
+        Assert.All(reviewMapTableSectionKeys, sectionKey =>
+        {
+            ParsedGrammarSectionModel section = Assert.Single(reviewMapTopic.Sections, grammarSection => grammarSection.SectionKey == sectionKey);
+            Assert.All(languages, language => Assert.Contains("\"table\"", section.LocalizedBlocksJson[language], StringComparison.Ordinal));
+        });
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(reviewMapTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(reviewMapTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(reviewMapTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(reviewMapTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.All(reviewMapTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(reviewMapTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(reviewMapTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(reviewMapTopic.Examples, example => example.GermanText == "Weil die Daten begrenzt sind, bleibt die Aussage vorsichtig.");
+        Assert.Contains(reviewMapTopic.Examples, example => example.GermanText == "Die Autorin betont, die Nachfrage sei gestiegen.");
+        Assert.Contains(reviewMapTopic.Examples, example => example.GermanText == "Ein guter C1-Satz ist nicht nur korrekt, sondern auch angemessen.");
+        Assert.Contains(reviewMapTopic.Examples, example => example.GermanText == "Die Review-Map hilft, diese Entscheidungen in einer festen Reihenfolge zu treffen.");
+
+        Assert.Contains(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Weil die Daten sind begrenzt, bleibt die Aussage vorsichtig.");
+        Assert.Contains(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Deshalb die Aussage bleibt vorsichtig.");
+        Assert.Contains(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Der Vorschlag, der ich prüfe, ist teuer.");
+        Assert.Contains(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Die Review-Map hilft, zu treffen diese Entscheidungen.");
+
+        Assert.DoesNotContain(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == mistake.CorrectedText);
+        Assert.DoesNotContain(reviewMapTopic.Examples, example => example.GermanText.Contains("Checkpoint", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(reviewMapTopic.Examples, example => example.GermanText.Contains("Deshalb die", StringComparison.Ordinal));
+        Assert.DoesNotContain(reviewMapTopic.Examples, example => example.GermanText.Contains("Allerdings die", StringComparison.Ordinal));
+        Assert.All(reviewMapTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+    }
+
+    [Fact]
+    public async Task ParseAsync_ShouldParseOfficialC2GrammarCoreContract()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+        string packagePath = Path.Combine(ResolveRepositoryRoot(), "content", "learning-portal", "grammar", "packages", "grammar-c2-core-v1.json");
+
+        ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+            await File.ReadAllTextAsync(packagePath),
+            CancellationToken.None);
+
+        string[] languages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+
+        ParsedGrammarTopicModel topic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-stylistic-variation-in-german-grammar");
+
+        Assert.Equal(1, topic.ContentRevision);
+        Assert.Equal("C2", topic.CefrLevel);
+        Assert.Equal("word-order", topic.GrammarCategory);
+        Assert.Equal(16, topic.Sections.Count);
+        Assert.True(topic.Examples.Count >= 140);
+        Assert.True(topic.CommonMistakes.Count >= 50);
+        Assert.True(topic.RuleSummaries.Count >= 24);
+        Assert.True(topic.LinkedWords.Count >= 90);
+        Assert.Contains("c1-register-shifting", topic.PrerequisiteSlugs);
+        Assert.Contains("c2-register-and-syntactic-choice", topic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel coreSection = Assert.Single(topic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formSection = Assert.Single(topic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel wordOrderSection = Assert.Single(topic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel comparisonSection = Assert.Single(topic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel patternsSection = Assert.Single(topic.Sections, section => section.SectionKey == "common-patterns");
+        ParsedGrammarSectionModel practiceSection = Assert.Single(topic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(topic.TitleLocalized.ContainsKey(language));
+            Assert.True(topic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(topic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(topic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", coreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", wordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", comparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", patternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", practiceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(topic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(topic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(topic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(topic.Examples, example => example.GermanText == "Den Vorschlag halte ich für überzeugend.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Weil die Frist knapp ist, handeln wir sofort.");
+        Assert.Contains(topic.Examples, example => example.GermanText == "Nicht die Länge, sondern die Struktur erschwert das Lesen.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Weil die Frist knapp ist, wir handeln sofort.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Den Vorschlag ich halte für überzeugend.");
+        Assert.Contains(topic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag der gestern eingereicht wurde wird heute geprüft.");
+        Assert.All(topic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel registerTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-register-and-syntactic-choice");
+
+        Assert.Equal(1, registerTopic.ContentRevision);
+        Assert.Equal("C2", registerTopic.CefrLevel);
+        Assert.Equal("word-order", registerTopic.GrammarCategory);
+        Assert.Equal(16, registerTopic.Sections.Count);
+        Assert.True(registerTopic.Examples.Count >= 140);
+        Assert.True(registerTopic.CommonMistakes.Count >= 50);
+        Assert.True(registerTopic.RuleSummaries.Count >= 24);
+        Assert.True(registerTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-stylistic-variation-in-german-grammar", registerTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-rhetorical-sentence-structures", registerTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel registerCoreSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel registerFormSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel registerWordOrderSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel registerEverydaySection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "everyday-versus-formal-syntax");
+        ParsedGrammarSectionModel registerComparisonSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel registerPatternsSection = Assert.Single(registerTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(registerTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(registerTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(registerTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(registerTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", registerCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerEverydaySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", registerPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(registerTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(registerTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(registerTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(registerTopic.Examples, example => example.GermanText == "Ich werde Ihnen die Unterlagen morgen zusenden.");
+        Assert.Contains(registerTopic.Examples, example => example.GermanText == "Die Übermittlung der Unterlagen erfolgt morgen.");
+        Assert.Contains(registerTopic.Examples, example => example.GermanText == "Aus dem Ergebnis ergibt sich, dass die Annahme zu eng war.");
+        Assert.Contains(registerTopic.CommonMistakes, mistake => mistake.WrongText == "Ich wäre dankbar, Sie antworten mir.");
+        Assert.Contains(registerTopic.CommonMistakes, mistake => mistake.WrongText == "Nach Eingang der Unterlagen der Antrag wird geprüft.");
+        Assert.Contains(registerTopic.CommonMistakes, mistake => mistake.WrongText == "Der Satz ist akademisch, weil er lang.");
+        Assert.All(registerTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel rhetoricalTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-rhetorical-sentence-structures");
+
+        Assert.Equal(1, rhetoricalTopic.ContentRevision);
+        Assert.Equal("C2", rhetoricalTopic.CefrLevel);
+        Assert.Equal("word-order", rhetoricalTopic.GrammarCategory);
+        Assert.Equal(16, rhetoricalTopic.Sections.Count);
+        Assert.True(rhetoricalTopic.Examples.Count >= 140);
+        Assert.True(rhetoricalTopic.CommonMistakes.Count >= 50);
+        Assert.True(rhetoricalTopic.RuleSummaries.Count >= 24);
+        Assert.True(rhetoricalTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-register-and-syntactic-choice", rhetoricalTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-advanced-punctuation-and-rhythm", rhetoricalTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel rhetoricalCoreSection = Assert.Single(rhetoricalTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel rhetoricalFormSection = Assert.Single(rhetoricalTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel rhetoricalWordOrderSection = Assert.Single(rhetoricalTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel rhetoricalFrontingSection = Assert.Single(rhetoricalTopic.Sections, section => section.SectionKey == "fronting-for-emphasis");
+        ParsedGrammarSectionModel rhetoricalComparisonSection = Assert.Single(rhetoricalTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel rhetoricalPatternsSection = Assert.Single(rhetoricalTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(rhetoricalTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(rhetoricalTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(rhetoricalTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(rhetoricalTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", rhetoricalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhetoricalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhetoricalWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhetoricalFrontingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhetoricalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", rhetoricalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(rhetoricalTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(rhetoricalTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(rhetoricalTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(rhetoricalTopic.Examples, example => example.GermanText == "Diesen Punkt sollten wir nicht übergehen.");
+        Assert.Contains(rhetoricalTopic.Examples, example => example.GermanText == "Nicht die Länge, sondern der Aufbau entscheidet.");
+        Assert.Contains(rhetoricalTopic.Examples, example => example.GermanText == "Zwar klingt der Satz elegant, doch bleibt er unklar.");
+        Assert.Contains(rhetoricalTopic.CommonMistakes, mistake => mistake.WrongText == "Diesen Punkt wir sollten nicht übergehen.");
+        Assert.Contains(rhetoricalTopic.CommonMistakes, mistake => mistake.WrongText == "Nicht die Länge, aber der Aufbau entscheidet.");
+        Assert.Contains(rhetoricalTopic.CommonMistakes, mistake => mistake.WrongText == "Je stärker ist der Gegensatz, desto klarer muss die Struktur sein.");
+        Assert.All(rhetoricalTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel ellipsisTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-advanced-ellipsis");
+
+        Assert.Equal(1, ellipsisTopic.ContentRevision);
+        Assert.Equal("C2", ellipsisTopic.CefrLevel);
+        Assert.Equal("word-order", ellipsisTopic.GrammarCategory);
+        Assert.Equal(16, ellipsisTopic.Sections.Count);
+        Assert.True(ellipsisTopic.Examples.Count >= 140);
+        Assert.True(ellipsisTopic.CommonMistakes.Count >= 50);
+        Assert.True(ellipsisTopic.RuleSummaries.Count >= 24);
+        Assert.True(ellipsisTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-rhetorical-sentence-structures", ellipsisTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-implicit-references-and-cohesion", ellipsisTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel ellipsisCoreSection = Assert.Single(ellipsisTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel ellipsisFormSection = Assert.Single(ellipsisTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel ellipsisWordOrderSection = Assert.Single(ellipsisTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel ellipsisCoordinationSection = Assert.Single(ellipsisTopic.Sections, section => section.SectionKey == "ellipsis-in-coordination");
+        ParsedGrammarSectionModel ellipsisComparisonSection = Assert.Single(ellipsisTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel ellipsisPatternsSection = Assert.Single(ellipsisTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(ellipsisTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(ellipsisTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(ellipsisTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(ellipsisTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", ellipsisCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ellipsisFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ellipsisWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ellipsisCoordinationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ellipsisComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ellipsisPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(ellipsisTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(ellipsisTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(ellipsisTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(ellipsisTopic.Examples, example => example.GermanText == "Wenn möglich, senden Sie mir die Antwort bis Freitag.");
+        Assert.Contains(ellipsisTopic.Examples, example => example.GermanText == "Ich nehme den frühen Zug, du den späteren.");
+        Assert.Contains(ellipsisTopic.Examples, example => example.GermanText == "Je früher, desto besser.");
+        Assert.Contains(ellipsisTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn möglich, Sie senden die Antwort bis Freitag.");
+        Assert.Contains(ellipsisTopic.CommonMistakes, mistake => mistake.WrongText == "Je früher, desto ist besser.");
+        Assert.Contains(ellipsisTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag, weil unvollständig.");
+        Assert.All(ellipsisTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel cohesionTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-implicit-references-and-cohesion");
+
+        Assert.Equal(1, cohesionTopic.ContentRevision);
+        Assert.Equal("C2", cohesionTopic.CefrLevel);
+        Assert.Equal("connectors", cohesionTopic.GrammarCategory);
+        Assert.Equal(16, cohesionTopic.Sections.Count);
+        Assert.True(cohesionTopic.Examples.Count >= 140);
+        Assert.True(cohesionTopic.CommonMistakes.Count >= 50);
+        Assert.True(cohesionTopic.RuleSummaries.Count >= 24);
+        Assert.True(cohesionTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-advanced-ellipsis", cohesionTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-fine-differences-in-connectors", cohesionTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel cohesionCoreSection = Assert.Single(cohesionTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel cohesionFormSection = Assert.Single(cohesionTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel cohesionWordOrderSection = Assert.Single(cohesionTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel cohesionDaSection = Assert.Single(cohesionTopic.Sections, section => section.SectionKey == "da-compounds");
+        ParsedGrammarSectionModel cohesionComparisonSection = Assert.Single(cohesionTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel cohesionPatternsSection = Assert.Single(cohesionTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(cohesionTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(cohesionTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(cohesionTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(cohesionTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", cohesionCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", cohesionFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", cohesionWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", cohesionDaSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", cohesionComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", cohesionPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(cohesionTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(cohesionTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(cohesionTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(cohesionTopic.Examples, example => example.GermanText == "Der Antrag ist unvollständig. Dies erklärt die Verzögerung.");
+        Assert.Contains(cohesionTopic.Examples, example => example.GermanText == "Die Daten wurden geprüft. Dadurch wurde der Fehler sichtbar.");
+        Assert.Contains(cohesionTopic.Examples, example => example.GermanText == "Der Text wurde gekürzt, wobei der Sinn erhalten blieb.");
+        Assert.Contains(cohesionTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag ist unvollständig. Dadurch erklärt die Verzögerung.");
+        Assert.Contains(cohesionTopic.CommonMistakes, mistake => mistake.WrongText == "Die Lösung ist teuer. Dadurch bleibt sie langfristig sinnvoll.");
+        Assert.Contains(cohesionTopic.CommonMistakes, mistake => mistake.WrongText == "Der zentrale Begriff wird eingeführt. Darauf baut auf die weitere Argumentation.");
+        Assert.All(cohesionTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel parallelTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-complex-parallel-structures");
+
+        Assert.Equal(1, parallelTopic.ContentRevision);
+        Assert.Equal("C2", parallelTopic.CefrLevel);
+        Assert.Equal("word-order", parallelTopic.GrammarCategory);
+        Assert.Equal(16, parallelTopic.Sections.Count);
+        Assert.True(parallelTopic.Examples.Count >= 140);
+        Assert.True(parallelTopic.CommonMistakes.Count >= 50);
+        Assert.True(parallelTopic.RuleSummaries.Count >= 24);
+        Assert.True(parallelTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-rhetorical-sentence-structures", parallelTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-long-sentence-control", parallelTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel parallelCoreSection = Assert.Single(parallelTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel parallelFormSection = Assert.Single(parallelTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel parallelWordOrderSection = Assert.Single(parallelTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel parallelNounSection = Assert.Single(parallelTopic.Sections, section => section.SectionKey == "parallel-noun-phrases");
+        ParsedGrammarSectionModel parallelComparisonSection = Assert.Single(parallelTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel parallelPatternsSection = Assert.Single(parallelTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(parallelTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(parallelTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(parallelTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(parallelTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", parallelCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", parallelFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", parallelWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", parallelNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", parallelComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", parallelPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(parallelTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(parallelTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(parallelTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(parallelTopic.Examples, example => example.GermanText == "Wir brauchen Geduld und Mitarbeit.");
+        Assert.Contains(parallelTopic.Examples, example => example.GermanText == "Nicht nur die Kosten, sondern auch die Folgen zählen.");
+        Assert.Contains(parallelTopic.Examples, example => example.GermanText == "Je genauer die Analyse ist, desto überzeugender wirkt das Ergebnis.");
+        Assert.Contains(parallelTopic.CommonMistakes, mistake => mistake.WrongText == "Wir brauchen Geduld und dass alle mitarbeiten.");
+        Assert.Contains(parallelTopic.CommonMistakes, mistake => mistake.WrongText == "Nicht nur die Kosten, sondern auch dass die Folgen zählen.");
+        Assert.Contains(parallelTopic.CommonMistakes, mistake => mistake.WrongText == "Der Text ist nicht nur präzise, sondern auch hat gute Struktur.");
+        Assert.All(parallelTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel modalNuanceTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-subtle-modal-verb-nuance");
+
+        Assert.Equal(1, modalNuanceTopic.ContentRevision);
+        Assert.Equal("C2", modalNuanceTopic.CefrLevel);
+        Assert.Equal("modal-verbs", modalNuanceTopic.GrammarCategory);
+        Assert.Equal(16, modalNuanceTopic.Sections.Count);
+        Assert.True(modalNuanceTopic.Examples.Count >= 140);
+        Assert.True(modalNuanceTopic.CommonMistakes.Count >= 50);
+        Assert.True(modalNuanceTopic.RuleSummaries.Count >= 24);
+        Assert.True(modalNuanceTopic.LinkedWords.Count >= 90);
+        Assert.Contains("b1-modal-verbs-in-the-past", modalNuanceTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-advanced-modal-particles", modalNuanceTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel modalCoreSection = Assert.Single(modalNuanceTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel modalFormSection = Assert.Single(modalNuanceTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel modalWordOrderSection = Assert.Single(modalNuanceTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel modalProbabilitySection = Assert.Single(modalNuanceTopic.Sections, section => section.SectionKey == "probability-with-duerfte-muesste-koennte");
+        ParsedGrammarSectionModel modalComparisonSection = Assert.Single(modalNuanceTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel modalPatternsSection = Assert.Single(modalNuanceTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(modalNuanceTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(modalNuanceTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(modalNuanceTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(modalNuanceTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", modalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalProbabilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(modalNuanceTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(modalNuanceTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(modalNuanceTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(modalNuanceTopic.Examples, example => example.GermanText == "Das könnte missverstanden werden.");
+        Assert.Contains(modalNuanceTopic.Examples, example => example.GermanText == "Das dürfte der Hauptgrund sein.");
+        Assert.Contains(modalNuanceTopic.Examples, example => example.GermanText == "Er will davon nichts gewusst haben.");
+        Assert.Contains(modalNuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Das könnte missverstanden.");
+        Assert.Contains(modalNuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht soll morgen vorliegt.");
+        Assert.Contains(modalNuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Sie brauchen das Formular nicht erneut ausfüllen.");
+        Assert.All(modalNuanceTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel modalParticlesTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-advanced-modal-particles");
+
+        Assert.Equal(1, modalParticlesTopic.ContentRevision);
+        Assert.Equal("C2", modalParticlesTopic.CefrLevel);
+        Assert.Equal("connectors", modalParticlesTopic.GrammarCategory);
+        Assert.Equal(16, modalParticlesTopic.Sections.Count);
+        Assert.True(modalParticlesTopic.Examples.Count >= 140);
+        Assert.True(modalParticlesTopic.CommonMistakes.Count >= 50);
+        Assert.True(modalParticlesTopic.RuleSummaries.Count >= 24);
+        Assert.True(modalParticlesTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-subtle-modal-verb-nuance", modalParticlesTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-irony-and-indirectness-in-syntax", modalParticlesTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel particleCoreSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel particleFormSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel particleWordOrderSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel particleDochJaSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "doch-ja-and-known-information");
+        ParsedGrammarSectionModel particleComparisonSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel particlePatternsSection = Assert.Single(modalParticlesTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(modalParticlesTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(modalParticlesTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(modalParticlesTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(modalParticlesTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", particleCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", particleFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", particleWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", particleDochJaSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", particleComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", particlePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(modalParticlesTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(modalParticlesTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(modalParticlesTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(modalParticlesTopic.Examples, example => example.GermanText == "Das haben wir doch besprochen.");
+        Assert.Contains(modalParticlesTopic.Examples, example => example.GermanText == "Was bedeutet das denn genau?");
+        Assert.Contains(modalParticlesTopic.Examples, example => example.GermanText == "Das dürfte wohl kaum ausreichen.");
+        Assert.Contains(modalParticlesTopic.CommonMistakes, mistake => mistake.WrongText == "Das ist der ja entscheidende Punkt.");
+        Assert.Contains(modalParticlesTopic.CommonMistakes, mistake => mistake.WrongText == "Was denn bedeutet das genau?");
+        Assert.Contains(modalParticlesTopic.CommonMistakes, mistake => mistake.WrongText == "Ich bitte Sie halt um Rückmeldung.");
+        Assert.All(modalParticlesTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel ironyTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-irony-and-indirectness-in-syntax");
+
+        Assert.Equal(1, ironyTopic.ContentRevision);
+        Assert.Equal("C2", ironyTopic.CefrLevel);
+        Assert.Equal("word-order", ironyTopic.GrammarCategory);
+        Assert.Equal(17, ironyTopic.Sections.Count);
+        Assert.True(ironyTopic.Examples.Count >= 140);
+        Assert.True(ironyTopic.CommonMistakes.Count >= 50);
+        Assert.True(ironyTopic.RuleSummaries.Count >= 24);
+        Assert.True(ironyTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-advanced-modal-particles", ironyTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-stylistic-variation-in-german-grammar", ironyTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel ironyCoreSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel ironyFormSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel ironyWordOrderSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel ironyFrontingSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "fronting-for-emphasis");
+        ParsedGrammarSectionModel ironyRhetoricalSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "rhetorical-questions");
+        ParsedGrammarSectionModel ironyAlsObSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "als-ob-and-wenn-das-mal");
+        ParsedGrammarSectionModel ironyComparisonSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel ironyPatternsSection = Assert.Single(ironyTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(ironyTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(ironyTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(ironyTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(ironyTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", ironyCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ironyFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ironyWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ironyFrontingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ironyRhetoricalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ironyAlsObSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ironyComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ironyPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(ironyTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(ironyTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(ironyTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(ironyTopic.Examples, example => example.GermanText == "Ausgerechnet jetzt fällt der Server aus.");
+        Assert.Contains(ironyTopic.Examples, example => example.GermanText == "Als ob das so einfach wäre.");
+        Assert.Contains(ironyTopic.Examples, example => example.GermanText == "Wie soll das denn funktionieren?");
+        Assert.Contains(ironyTopic.CommonMistakes, mistake => mistake.WrongText == "Ausgerechnet jetzt der Server fällt aus.");
+        Assert.Contains(ironyTopic.CommonMistakes, mistake => mistake.WrongText == "Als ob das wäre so einfach.");
+        Assert.Contains(ironyTopic.CommonMistakes, mistake => mistake.WrongText == "Wie das denn funktionieren soll?");
+        Assert.All(ironyTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel legalStyleTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-legal-style-sentence-structures");
+
+        Assert.Equal(1, legalStyleTopic.ContentRevision);
+        Assert.Equal("C2", legalStyleTopic.CefrLevel);
+        Assert.Equal("word-order", legalStyleTopic.GrammarCategory);
+        Assert.Equal(17, legalStyleTopic.Sections.Count);
+        Assert.True(legalStyleTopic.Examples.Count >= 140);
+        Assert.True(legalStyleTopic.CommonMistakes.Count >= 50);
+        Assert.True(legalStyleTopic.RuleSummaries.Count >= 24);
+        Assert.True(legalStyleTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-register-and-syntactic-choice", legalStyleTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-academic-high-register-syntax", legalStyleTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel legalCoreSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel legalFormSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel legalWordOrderSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel legalPassiveSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "passive-and-ist-zu");
+        ParsedGrammarSectionModel legalNominalSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "nominal-style");
+        ParsedGrammarSectionModel legalConditionalSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "conditional-connectors");
+        ParsedGrammarSectionModel legalSupportSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "legal-style-not-legal-advice");
+        ParsedGrammarSectionModel legalComparisonSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel legalPatternsSection = Assert.Single(legalStyleTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(legalStyleTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(legalStyleTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(legalStyleTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(legalStyleTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", legalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", legalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", legalWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", legalPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", legalNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", legalConditionalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"callout\"", legalSupportSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", legalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", legalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(legalStyleTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(legalStyleTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(legalStyleTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(legalStyleTopic.Examples, example => example.GermanText == "Die Unterlagen sind bis Freitag einzureichen.");
+        Assert.Contains(legalStyleTopic.Examples, example => example.GermanText == "Sofern die Unterlagen vollständig vorliegen, wird der Antrag geprüft.");
+        Assert.Contains(legalStyleTopic.Examples, example => example.GermanText == "Nach Prüfung der Unterlagen erfolgt die Rückmeldung.");
+        Assert.Contains(legalStyleTopic.CommonMistakes, mistake => mistake.WrongText == "Sofern die Unterlagen vollständig vorliegen, der Antrag wird geprüft.");
+        Assert.Contains(legalStyleTopic.CommonMistakes, mistake => mistake.WrongText == "Der Nachweis ist fristgerecht vor zu legen.");
+        Assert.Contains(legalStyleTopic.CommonMistakes, mistake => mistake.WrongText == "Dieser Satz erklärt Rechtsfolgen sicher.");
+        Assert.All(legalStyleTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel academicHighRegisterTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-academic-high-register-syntax");
+
+        Assert.Equal(1, academicHighRegisterTopic.ContentRevision);
+        Assert.Equal("C2", academicHighRegisterTopic.CefrLevel);
+        Assert.Equal("word-order", academicHighRegisterTopic.GrammarCategory);
+        Assert.Equal(17, academicHighRegisterTopic.Sections.Count);
+        Assert.True(academicHighRegisterTopic.Examples.Count >= 140);
+        Assert.True(academicHighRegisterTopic.CommonMistakes.Count >= 50);
+        Assert.True(academicHighRegisterTopic.RuleSummaries.Count >= 24);
+        Assert.True(academicHighRegisterTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-register-and-syntactic-choice", academicHighRegisterTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-journalistic-compression", academicHighRegisterTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel academicCoreSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel academicFormSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel academicWordOrderSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel academicNominalSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "nominal-style-and-abstraction");
+        ParsedGrammarSectionModel academicEmbeddingSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "embedded-subordination");
+        ParsedGrammarSectionModel academicParticipialSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "participial-phrases");
+        ParsedGrammarSectionModel academicConnectorSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "connector-density");
+        ParsedGrammarSectionModel academicComparisonSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel academicPatternsSection = Assert.Single(academicHighRegisterTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(academicHighRegisterTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(academicHighRegisterTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(academicHighRegisterTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(academicHighRegisterTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", academicCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicEmbeddingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicParticipialSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicConnectorSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", academicPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(academicHighRegisterTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(academicHighRegisterTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(academicHighRegisterTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(academicHighRegisterTopic.Examples, example => example.GermanText == "Die Analyse zeigt, dass die Annahme tragfähig ist.");
+        Assert.Contains(academicHighRegisterTopic.Examples, example => example.GermanText == "Ausgehend von diesen Daten lässt sich die These präzisieren.");
+        Assert.Contains(academicHighRegisterTopic.Examples, example => example.GermanText == "Die auf den Daten beruhende These ist plausibel.");
+        Assert.Contains(academicHighRegisterTopic.CommonMistakes, mistake => mistake.WrongText == "Die Analyse zeigt, dass die Annahme ist tragfähig.");
+        Assert.Contains(academicHighRegisterTopic.CommonMistakes, mistake => mistake.WrongText == "Ausgehend von diesen Daten die These lässt sich präzisieren.");
+        Assert.Contains(academicHighRegisterTopic.CommonMistakes, mistake => mistake.WrongText == "Die Frage ob die Methode übertragbar ist bleibt zentral.");
+        Assert.All(academicHighRegisterTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel journalisticCompressionTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-journalistic-compression");
+
+        Assert.Equal(1, journalisticCompressionTopic.ContentRevision);
+        Assert.Equal("C2", journalisticCompressionTopic.CefrLevel);
+        Assert.Equal("word-order", journalisticCompressionTopic.GrammarCategory);
+        Assert.Equal(17, journalisticCompressionTopic.Sections.Count);
+        Assert.True(journalisticCompressionTopic.Examples.Count >= 140);
+        Assert.True(journalisticCompressionTopic.CommonMistakes.Count >= 50);
+        Assert.True(journalisticCompressionTopic.RuleSummaries.Count >= 24);
+        Assert.True(journalisticCompressionTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-academic-high-register-syntax", journalisticCompressionTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-literary-sentence-structures", journalisticCompressionTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel journalisticCoreSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel journalisticFormSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel journalisticWordOrderSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel journalisticHeadlineSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "headline-ellipsis");
+        ParsedGrammarSectionModel journalisticNominalSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "nominal-compression");
+        ParsedGrammarSectionModel journalisticParticipleSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "participle-and-attribute-chains");
+        ParsedGrammarSectionModel journalisticPunctuationSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "colon-dash-and-apposition");
+        ParsedGrammarSectionModel journalisticAttributionSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "reported-and-attributed-information");
+        ParsedGrammarSectionModel journalisticComparisonSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel journalisticPatternsSection = Assert.Single(journalisticCompressionTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(journalisticCompressionTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(journalisticCompressionTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(journalisticCompressionTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(journalisticCompressionTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", journalisticCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticHeadlineSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticNominalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticParticipleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticPunctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticAttributionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", journalisticPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(journalisticCompressionTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(journalisticCompressionTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(journalisticCompressionTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(journalisticCompressionTopic.Examples, example => example.GermanText == "Regierung unter Druck nach neuen Zahlen.");
+        Assert.Contains(journalisticCompressionTopic.Examples, example => example.GermanText == "Neue Zahlen: Regierung reagiert mit Prüfauftrag.");
+        Assert.Contains(journalisticCompressionTopic.Examples, example => example.GermanText == "Die von Experten kritisierte Reform wird überarbeitet.");
+        Assert.Contains(journalisticCompressionTopic.CommonMistakes, mistake => mistake.WrongText == "Die Regierung ist unter Druck nach neuen Zahlen.");
+        Assert.Contains(journalisticCompressionTopic.CommonMistakes, mistake => mistake.WrongText == "Neue Zahlen Regierung reagiert mit Prüfauftrag.");
+        Assert.Contains(journalisticCompressionTopic.CommonMistakes, mistake => mistake.WrongText == "Die seit Monaten diskutiert Lösung steht zur Debatte.");
+        Assert.All(journalisticCompressionTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel literarySentenceTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-literary-sentence-structures");
+
+        Assert.Equal(1, literarySentenceTopic.ContentRevision);
+        Assert.Equal("C2", literarySentenceTopic.CefrLevel);
+        Assert.Equal("word-order", literarySentenceTopic.GrammarCategory);
+        Assert.Equal(17, literarySentenceTopic.Sections.Count);
+        Assert.True(literarySentenceTopic.Examples.Count >= 140);
+        Assert.True(literarySentenceTopic.CommonMistakes.Count >= 50);
+        Assert.True(literarySentenceTopic.RuleSummaries.Count >= 24);
+        Assert.True(literarySentenceTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-rhetorical-sentence-structures", literarySentenceTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-advanced-punctuation-and-rhythm", literarySentenceTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel literaryCoreSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel literaryFormSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel literaryWordOrderSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel literaryFrontingSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "fronting-for-emphasis");
+        ParsedGrammarSectionModel literaryDelaySection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "delayed-subject-or-verb");
+        ParsedGrammarSectionModel literaryInsertionSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "insertions-and-parentheses");
+        ParsedGrammarSectionModel literaryFragmentSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "fragments-and-ellipsis");
+        ParsedGrammarSectionModel literaryParallelSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "parallelism-and-repetition");
+        ParsedGrammarSectionModel literaryComparisonSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel literaryPatternsSection = Assert.Single(literarySentenceTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(literarySentenceTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(literarySentenceTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(literarySentenceTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(literarySentenceTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", literaryCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryFrontingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryDelaySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryInsertionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryFragmentSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryParallelSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", literaryPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(literarySentenceTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(literarySentenceTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(literarySentenceTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(literarySentenceTopic.Examples, example => example.GermanText == "Langsam kam der Morgen über die Dächer.");
+        Assert.Contains(literarySentenceTopic.Examples, example => example.GermanText == "Dass er schwieg, verstand sie erst später.");
+        Assert.Contains(literarySentenceTopic.Examples, example => example.GermanText == "Nicht die Antwort suchte er, sondern den Mut zur Frage.");
+        Assert.Contains(literarySentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Langsam der Morgen kam über die Dächer.");
+        Assert.Contains(literarySentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Dass er schwieg, sie verstand erst später.");
+        Assert.Contains(literarySentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Still Straße. Leer Fenster.");
+        Assert.All(literarySentenceTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel punctuationRhythmTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-advanced-punctuation-and-rhythm");
+
+        Assert.Equal(1, punctuationRhythmTopic.ContentRevision);
+        Assert.Equal("C2", punctuationRhythmTopic.CefrLevel);
+        Assert.Equal("punctuation", punctuationRhythmTopic.GrammarCategory);
+        Assert.Equal(18, punctuationRhythmTopic.Sections.Count);
+        Assert.True(punctuationRhythmTopic.Examples.Count >= 140);
+        Assert.True(punctuationRhythmTopic.CommonMistakes.Count >= 50);
+        Assert.True(punctuationRhythmTopic.RuleSummaries.Count >= 24);
+        Assert.True(punctuationRhythmTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-literary-sentence-structures", punctuationRhythmTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-long-sentence-control", punctuationRhythmTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel punctuationCoreSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel punctuationFormSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel punctuationWordOrderSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel punctuationCommaSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "comma-boundaries");
+        ParsedGrammarSectionModel punctuationDashSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "insertions-and-dashes");
+        ParsedGrammarSectionModel punctuationColonSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "colon-and-explanation");
+        ParsedGrammarSectionModel punctuationSemicolonSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "semicolon-and-balanced-clauses");
+        ParsedGrammarSectionModel punctuationRelativeSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "punctuation-with-relative-clauses");
+        ParsedGrammarSectionModel punctuationRhythmSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "rhythm-in-long-sentences");
+        ParsedGrammarSectionModel punctuationPatternsSection = Assert.Single(punctuationRhythmTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(punctuationRhythmTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(punctuationRhythmTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(punctuationRhythmTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(punctuationRhythmTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", punctuationCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationCommaSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationDashSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationColonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationSemicolonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationRelativeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationRhythmSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(punctuationRhythmTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(punctuationRhythmTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(punctuationRhythmTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(punctuationRhythmTopic.Examples, example => example.GermanText == "Wenn der Bericht vorliegt, entscheiden wir über das weitere Vorgehen.");
+        Assert.Contains(punctuationRhythmTopic.Examples, example => example.GermanText == "Die Lösung ist möglich; sie erfordert jedoch Zeit.");
+        Assert.Contains(punctuationRhythmTopic.Examples, example => example.GermanText == "Kurz gesagt: Der Text braucht klare Pausen.");
+        Assert.Contains(punctuationRhythmTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn der Bericht vorliegt entscheiden wir über das weitere Vorgehen.");
+        Assert.Contains(punctuationRhythmTopic.CommonMistakes, mistake => mistake.WrongText == "Der Vorschlag der lange diskutiert wurde bleibt umstritten.");
+        Assert.Contains(punctuationRhythmTopic.CommonMistakes, mistake => mistake.WrongText == "Kurz gesagt der Text braucht klare Pausen.");
+        Assert.All(punctuationRhythmTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel longSentenceTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-long-sentence-control");
+
+        Assert.Equal(1, longSentenceTopic.ContentRevision);
+        Assert.Equal("C2", longSentenceTopic.CefrLevel);
+        Assert.Equal("word-order", longSentenceTopic.GrammarCategory);
+        Assert.Equal(18, longSentenceTopic.Sections.Count);
+        Assert.True(longSentenceTopic.Examples.Count >= 140);
+        Assert.True(longSentenceTopic.CommonMistakes.Count >= 50);
+        Assert.True(longSentenceTopic.RuleSummaries.Count >= 24);
+        Assert.True(longSentenceTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-advanced-punctuation-and-rhythm", longSentenceTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-ambiguity-and-disambiguation", longSentenceTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel longSentenceCoreSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel longSentenceFormSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel longSentenceWordOrderSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel longSentenceMainClaimSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "main-claim-anchor");
+        ParsedGrammarSectionModel longSentenceClauseMapSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "clause-map");
+        ParsedGrammarSectionModel longSentenceFiniteVerbSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "finite-verb-tracking");
+        ParsedGrammarSectionModel longSentenceInformationWeightSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "information-weight");
+        ParsedGrammarSectionModel longSentencePunctuationSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "punctuation-plan");
+        ParsedGrammarSectionModel longSentenceSplitSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "when-to-split-sentences");
+        ParsedGrammarSectionModel longSentencePatternsSection = Assert.Single(longSentenceTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(longSentenceTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(longSentenceTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(longSentenceTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(longSentenceTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", longSentenceCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentenceFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentenceWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentenceMainClaimSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentenceClauseMapSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentenceFiniteVerbSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentenceInformationWeightSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentencePunctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentenceSplitSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", longSentencePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(longSentenceTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(longSentenceTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(longSentenceTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(longSentenceTopic.Examples, example => example.GermanText == "Der Bericht zeigt, dass die Maßnahme wirkt, obwohl die Daten noch begrenzt sind.");
+        Assert.Contains(longSentenceTopic.Examples, example => example.GermanText == "Wenn die Unterlagen vollständig vorliegen, kann der Antrag geprüft und anschließend weitergeleitet werden.");
+        Assert.Contains(longSentenceTopic.Examples, example => example.GermanText == "Nicht die Länge des Satzes entscheidet, sondern die Kontrolle über seine Teile.");
+        Assert.Contains(longSentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht zeigt, dass die Maßnahme wirkt, obwohl die Daten sind noch begrenzt.");
+        Assert.Contains(longSentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Wenn die Unterlagen vollständig vorliegen, der Antrag kann geprüft werden.");
+        Assert.Contains(longSentenceTopic.CommonMistakes, mistake => mistake.WrongText == "Der Text verliert an Klarheit, wenn mehrere Nebensätze verbunden werden ohne Hierarchie.");
+        Assert.All(longSentenceTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel advancedPassiveTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-advanced-passive-and-agent-omission");
+
+        Assert.Equal(1, advancedPassiveTopic.ContentRevision);
+        Assert.Equal("C2", advancedPassiveTopic.CefrLevel);
+        Assert.Equal("passive", advancedPassiveTopic.GrammarCategory);
+        Assert.Equal(18, advancedPassiveTopic.Sections.Count);
+        Assert.True(advancedPassiveTopic.Examples.Count >= 140);
+        Assert.True(advancedPassiveTopic.CommonMistakes.Count >= 50);
+        Assert.True(advancedPassiveTopic.RuleSummaries.Count >= 24);
+        Assert.True(advancedPassiveTopic.LinkedWords.Count >= 90);
+        Assert.Contains("b2-passive-with-modal-verbs", advancedPassiveTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-advanced-passive-alternatives", advancedPassiveTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel advancedPassiveCoreSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel advancedPassiveFormSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel advancedPassiveWordOrderSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel advancedPassiveOmissionSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "agent-omission");
+        ParsedGrammarSectionModel advancedPassiveIncludeAgentSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "when-to-include-agent");
+        ParsedGrammarSectionModel advancedPassiveVonDurchSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "von-and-durch");
+        ParsedGrammarSectionModel advancedPassiveManSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "passive-vs-man");
+        ParsedGrammarSectionModel advancedPassiveModalSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "tense-and-modal-passive");
+        ParsedGrammarSectionModel advancedPassiveComparisonSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel advancedPassivePatternsSection = Assert.Single(advancedPassiveTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(advancedPassiveTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(advancedPassiveTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(advancedPassiveTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(advancedPassiveTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", advancedPassiveCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveOmissionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveIncludeAgentSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveVonDurchSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveManSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveModalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassiveComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", advancedPassivePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(advancedPassiveTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(advancedPassiveTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(advancedPassiveTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(advancedPassiveTopic.Examples, example => example.GermanText == "Der Antrag wird geprüft, ohne dass die zuständige Person im Schreiben genannt wird.");
+        Assert.Contains(advancedPassiveTopic.Examples, example => example.GermanText == "Die Verzögerung wurde durch technische Probleme verursacht, nicht durch eine einzelne Entscheidung.");
+        Assert.Contains(advancedPassiveTopic.Examples, example => example.GermanText == "Man hat den Termin verschoben; im Protokoll wird jedoch nur festgehalten, dass der Termin verschoben wurde.");
+        Assert.Contains(advancedPassiveTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag wird prüfen.");
+        Assert.Contains(advancedPassiveTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag muss geprüft.");
+        Assert.Contains(advancedPassiveTopic.CommonMistakes, mistake => mistake.WrongText == "Die Verzögerung wurde von technische Probleme verursacht.");
+        Assert.All(advancedPassiveTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel nominalExpertTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-nominal-style-in-expert-texts");
+
+        Assert.Equal(1, nominalExpertTopic.ContentRevision);
+        Assert.Equal("C2", nominalExpertTopic.CefrLevel);
+        Assert.Equal("nouns", nominalExpertTopic.GrammarCategory);
+        Assert.Equal(18, nominalExpertTopic.Sections.Count);
+        Assert.True(nominalExpertTopic.Examples.Count >= 140);
+        Assert.True(nominalExpertTopic.CommonMistakes.Count >= 50);
+        Assert.True(nominalExpertTopic.RuleSummaries.Count >= 24);
+        Assert.True(nominalExpertTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c1-advanced-nominalization", nominalExpertTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-academic-high-register-syntax", nominalExpertTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel nominalCoreSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel nominalFormSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel nominalWordOrderSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel nominalizationSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "nominalization-from-verbs");
+        ParsedGrammarSectionModel genitiveChainSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "genitive-chains");
+        ParsedGrammarSectionModel prepositionalNounSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "prepositional-noun-phrases");
+        ParsedGrammarSectionModel compoundExpertSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "compounds-in-expert-texts");
+        ParsedGrammarSectionModel nominalVsVerbalSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "nominal-style-versus-verbal-style");
+        ParsedGrammarSectionModel nominalComparisonSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel nominalPatternsSection = Assert.Single(nominalExpertTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(nominalExpertTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(nominalExpertTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(nominalExpertTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(nominalExpertTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", nominalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalizationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", genitiveChainSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", prepositionalNounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", compoundExpertSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalVsVerbalSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(nominalExpertTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(nominalExpertTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(nominalExpertTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(nominalExpertTopic.Examples, example => example.GermanText == "Die Prüfung des Antrags erfolgt nach Eingang der vollständigen Unterlagen.");
+        Assert.Contains(nominalExpertTopic.Examples, example => example.GermanText == "Bei der Durchführung der Maßnahme müssen die Datenschutzanforderungen beachtet werden.");
+        Assert.Contains(nominalExpertTopic.Examples, example => example.GermanText == "Eine Rückkehr zur verbalen Form macht den zeitlichen Ablauf der Ereignisse oft klarer.");
+        Assert.Contains(nominalExpertTopic.CommonMistakes, mistake => mistake.WrongText == "Die Prüfung der Antrag erfolgt morgen.");
+        Assert.Contains(nominalExpertTopic.CommonMistakes, mistake => mistake.WrongText == "Zur vermeiden unnötiger Verzögerungen wurde ein Verfahren eingeführt.");
+        Assert.Contains(nominalExpertTopic.CommonMistakes, mistake => mistake.WrongText == "Die Durchführung der Maßnahme der Behörde der Region der Planung ist unklar.");
+        Assert.All(nominalExpertTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel connectorNuanceTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-fine-differences-in-connectors");
+
+        Assert.Equal(1, connectorNuanceTopic.ContentRevision);
+        Assert.Equal("C2", connectorNuanceTopic.CefrLevel);
+        Assert.Equal("connectors", connectorNuanceTopic.GrammarCategory);
+        Assert.Equal(18, connectorNuanceTopic.Sections.Count);
+        Assert.True(connectorNuanceTopic.Examples.Count >= 140);
+        Assert.True(connectorNuanceTopic.CommonMistakes.Count >= 50);
+        Assert.True(connectorNuanceTopic.RuleSummaries.Count >= 24);
+        Assert.True(connectorNuanceTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c1-advanced-academic-connectors", connectorNuanceTopic.PrerequisiteSlugs);
+        Assert.Contains("c1-causal-chains-in-formal-writing", connectorNuanceTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel connectorCoreSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel connectorFormSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel connectorWordOrderSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel connectorCauseSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "cause-connectors");
+        ParsedGrammarSectionModel connectorResultSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "result-connectors");
+        ParsedGrammarSectionModel connectorContrastSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "contrast-connectors");
+        ParsedGrammarSectionModel connectorConcessionSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "concession-versus-correction");
+        ParsedGrammarSectionModel connectorDaWeilDennSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "da-weil-denn");
+        ParsedGrammarSectionModel connectorComparisonSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel connectorPatternsSection = Assert.Single(connectorNuanceTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(connectorNuanceTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(connectorNuanceTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(connectorNuanceTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(connectorNuanceTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", connectorCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorCauseSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorResultSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorContrastSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorConcessionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorDaWeilDennSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", connectorPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(connectorNuanceTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(connectorNuanceTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(connectorNuanceTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(connectorNuanceTopic.Examples, example => example.GermanText == "Die Maßnahme wurde angepasst, weil die bisherigen Daten keine stabile Grundlage boten.");
+        Assert.Contains(connectorNuanceTopic.Examples, example => example.GermanText == "Die bisherigen Daten boten keine stabile Grundlage; folglich wurde die Maßnahme angepasst.");
+        Assert.Contains(connectorNuanceTopic.Examples, example => example.GermanText == "Der Bericht kritisiert nicht die Methode, sondern ihre unklare Anwendung.");
+        Assert.Contains(connectorNuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Die Maßnahme wurde angepasst, weil die Daten boten keine Grundlage.");
+        Assert.Contains(connectorNuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Die Daten boten keine Grundlage; deshalb die Maßnahme wurde angepasst.");
+        Assert.Contains(connectorNuanceTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht kritisiert nicht die Methode, aber ihre Anwendung.");
+        Assert.All(connectorNuanceTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel complexReportedSpeechTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-complex-reported-speech");
+
+        Assert.Equal(1, complexReportedSpeechTopic.ContentRevision);
+        Assert.Equal("C2", complexReportedSpeechTopic.CefrLevel);
+        Assert.Equal("reported-speech", complexReportedSpeechTopic.GrammarCategory);
+        Assert.Equal(18, complexReportedSpeechTopic.Sections.Count);
+        Assert.True(complexReportedSpeechTopic.Examples.Count >= 140);
+        Assert.True(complexReportedSpeechTopic.CommonMistakes.Count >= 50);
+        Assert.True(complexReportedSpeechTopic.RuleSummaries.Count >= 24);
+        Assert.True(complexReportedSpeechTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c1-konjunktiv-i-for-reported-speech", complexReportedSpeechTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-irony-and-indirectness-in-syntax", complexReportedSpeechTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel reportedCoreSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel reportedFormSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel reportedWordOrderSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel reportingVerbsSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "reporting-verbs");
+        ParsedGrammarSectionModel dassClausesSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "dass-clauses");
+        ParsedGrammarSectionModel reportedQuestionsSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "ob-and-w-question-reporting");
+        ParsedGrammarSectionModel konjunktivOneSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "konjunktiv-i-for-distance");
+        ParsedGrammarSectionModel konjunktivTwoSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "konjunktiv-ii-for-uncertainty");
+        ParsedGrammarSectionModel reportedComparisonSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel reportedPatternsSection = Assert.Single(complexReportedSpeechTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(complexReportedSpeechTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(complexReportedSpeechTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(complexReportedSpeechTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(complexReportedSpeechTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", reportedCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportingVerbsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", dassClausesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedQuestionsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivOneSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", konjunktivTwoSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reportedPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(complexReportedSpeechTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(complexReportedSpeechTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(complexReportedSpeechTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(complexReportedSpeechTopic.Examples, example => example.GermanText == "Die Sprecherin erklärte, die Daten seien nachträglich überprüft worden.");
+        Assert.Contains(complexReportedSpeechTopic.Examples, example => example.GermanText == "Die Kommission wollte wissen, ob die Angaben vollständig seien.");
+        Assert.Contains(complexReportedSpeechTopic.Examples, example => example.GermanText == "Der Text unterscheidet klar zwischen dem, was behauptet wurde, und dem, was belegt ist.");
+        Assert.Contains(complexReportedSpeechTopic.CommonMistakes, mistake => mistake.WrongText == "Die Sprecherin erklärte, die Daten sind überprüft worden.");
+        Assert.Contains(complexReportedSpeechTopic.CommonMistakes, mistake => mistake.WrongText == "Die Kommission wollte wissen, ob seien die Angaben vollständig.");
+        Assert.Contains(complexReportedSpeechTopic.CommonMistakes, mistake => mistake.WrongText == "Die Vertreterin erklärte, ich kann den Zeitplan nicht bestätigen.");
+        Assert.All(complexReportedSpeechTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel ambiguityTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-ambiguity-and-disambiguation");
+
+        Assert.Equal(1, ambiguityTopic.ContentRevision);
+        Assert.Equal("C2", ambiguityTopic.CefrLevel);
+        Assert.Equal("word-order", ambiguityTopic.GrammarCategory);
+        Assert.Equal(18, ambiguityTopic.Sections.Count);
+        Assert.True(ambiguityTopic.Examples.Count >= 140);
+        Assert.True(ambiguityTopic.CommonMistakes.Count >= 50);
+        Assert.True(ambiguityTopic.RuleSummaries.Count >= 24);
+        Assert.True(ambiguityTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-long-sentence-control", ambiguityTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-implicit-references-and-cohesion", ambiguityTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel ambiguityCoreSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel ambiguityFormSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel ambiguityWordOrderSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel pronounReferenceSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "pronoun-reference");
+        ParsedGrammarSectionModel modifierAttachmentSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "modifier-attachment");
+        ParsedGrammarSectionModel punctuationBoundarySection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "punctuation-and-clause-boundaries");
+        ParsedGrammarSectionModel negationScopeSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "negation-scope");
+        ParsedGrammarSectionModel nominalGroupSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "long-nominal-groups");
+        ParsedGrammarSectionModel ambiguityComparisonSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel ambiguityPatternsSection = Assert.Single(ambiguityTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(ambiguityTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(ambiguityTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(ambiguityTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(ambiguityTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", ambiguityCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ambiguityFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ambiguityWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pronounReferenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", modifierAttachmentSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationBoundarySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", negationScopeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalGroupSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ambiguityComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", ambiguityPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(ambiguityTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(ambiguityTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(ambiguityTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(ambiguityTopic.Examples, example => example.GermanText == "Der Antrag wurde mit dem Gutachten geprüft, das unvollständig war.");
+        Assert.Contains(ambiguityTopic.Examples, example => example.GermanText == "Die Studie kritisiert die Analyse, deren Methode unklar bleibt.");
+        Assert.Contains(ambiguityTopic.Examples, example => example.GermanText == "Jede Ergänzung sollte nah bei dem Wort stehen, auf das sie sich bezieht.");
+        Assert.Contains(ambiguityTopic.CommonMistakes, mistake => mistake.WrongText == "Die Studie kritisiert die Methode der Analyse, die unklar bleibt.");
+        Assert.Contains(ambiguityTopic.CommonMistakes, mistake => mistake.WrongText == "Nicht alle Vorschläge wurden deshalb abgelehnt.");
+        Assert.Contains(ambiguityTopic.CommonMistakes, mistake => mistake.WrongText == "Die Prüfung der Änderung des Plans der Behörde ist abgeschlossen.");
+        Assert.All(ambiguityTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel debateGrammarTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-c2-debate-grammar");
+
+        Assert.Equal(1, debateGrammarTopic.ContentRevision);
+        Assert.Equal("C2", debateGrammarTopic.CefrLevel);
+        Assert.Equal("connectors", debateGrammarTopic.GrammarCategory);
+        Assert.Equal(18, debateGrammarTopic.Sections.Count);
+        Assert.True(debateGrammarTopic.Examples.Count >= 140);
+        Assert.True(debateGrammarTopic.CommonMistakes.Count >= 50);
+        Assert.True(debateGrammarTopic.RuleSummaries.Count >= 24);
+        Assert.True(debateGrammarTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c1-c1-discussion-grammar", debateGrammarTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-rhetorical-sentence-structures", debateGrammarTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel debateCoreSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel debateFormSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel debateWordOrderSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel concessionSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "concession-before-rebuttal");
+        ParsedGrammarSectionModel qualifiedAgreementSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "qualified-agreement");
+        ParsedGrammarSectionModel causeDirectionSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "cause-and-consequence-direction");
+        ParsedGrammarSectionModel counterargumentsSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "counterarguments");
+        ParsedGrammarSectionModel hedgingSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "hedging-and-distance");
+        ParsedGrammarSectionModel debateComparisonSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel debatePatternsSection = Assert.Single(debateGrammarTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(debateGrammarTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(debateGrammarTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(debateGrammarTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(debateGrammarTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", debateCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", debateFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", debateWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", concessionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", qualifiedAgreementSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", causeDirectionSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", counterargumentsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", hedgingSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", debateComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", debatePatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(debateGrammarTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(debateGrammarTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(debateGrammarTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(debateGrammarTopic.Examples, example => example.GermanText == "Zwar ist der Einwand nachvollziehbar, doch trägt er nur begrenzt.");
+        Assert.Contains(debateGrammarTopic.Examples, example => example.GermanText == "Insofern stimme ich zu, als der Begriff genauer definiert werden muss.");
+        Assert.Contains(debateGrammarTopic.Examples, example => example.GermanText == "Der Punkt ist nicht, ob das Ziel wünschenswert ist, sondern ob der Weg tragfähig ist.");
+        Assert.Contains(debateGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Allerdings die Schlussfolgerung bleibt zu weitgehend.");
+        Assert.Contains(debateGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Obwohl der Einwand ist nachvollziehbar, trägt er nur begrenzt.");
+        Assert.Contains(debateGrammarTopic.CommonMistakes, mistake => mistake.WrongText == "Zwar ist der Einwand nachvollziehbar.");
+        Assert.All(debateGrammarTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel formalWritingTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-c2-formal-writing-grammar");
+
+        Assert.Equal(1, formalWritingTopic.ContentRevision);
+        Assert.Equal("C2", formalWritingTopic.CefrLevel);
+        Assert.Equal("word-order", formalWritingTopic.GrammarCategory);
+        Assert.Equal(18, formalWritingTopic.Sections.Count);
+        Assert.True(formalWritingTopic.Examples.Count >= 140);
+        Assert.True(formalWritingTopic.CommonMistakes.Count >= 50);
+        Assert.True(formalWritingTopic.RuleSummaries.Count >= 24);
+        Assert.True(formalWritingTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-long-sentence-control", formalWritingTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-ambiguity-and-disambiguation", formalWritingTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel formalCoreSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel formalFormSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel formalWordOrderSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel subordinateHierarchySection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "subordinate-hierarchy");
+        ParsedGrammarSectionModel nominalStyleSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "nominal-style");
+        ParsedGrammarSectionModel passiveResponsibilitySection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "passive-and-responsibility");
+        ParsedGrammarSectionModel punctuationBoundariesSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "punctuation-boundaries");
+        ParsedGrammarSectionModel formalConnectorsSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "formal-connectors");
+        ParsedGrammarSectionModel formalComparisonSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel formalPatternsSection = Assert.Single(formalWritingTopic.Sections, section => section.SectionKey == "common-patterns");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(formalWritingTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(formalWritingTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(formalWritingTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(formalWritingTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", formalCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalFormSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", subordinateHierarchySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", nominalStyleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", passiveResponsibilitySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", punctuationBoundariesSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalConnectorsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", formalPatternsSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(formalWritingTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(formalWritingTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(formalWritingTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(formalWritingTopic.Examples, example => example.GermanText == "Sofern die Unterlagen vollständig vorliegen, kann der Antrag geprüft werden.");
+        Assert.Contains(formalWritingTopic.Examples, example => example.GermanText == "Nach Eingang der vollständigen Unterlagen erfolgt die Prüfung des Antrags.");
+        Assert.Contains(formalWritingTopic.Examples, example => example.GermanText == "Das Schreiben unterscheidet klar zwischen Sachverhalt, Bewertung und Bitte.");
+        Assert.Contains(formalWritingTopic.CommonMistakes, mistake => mistake.WrongText == "Sofern die Unterlagen vollständig vorliegen, der Antrag kann geprüft werden.");
+        Assert.Contains(formalWritingTopic.CommonMistakes, mistake => mistake.WrongText == "Die Behörde teilte mit, dass die Prüfung sei abgeschlossen.");
+        Assert.Contains(formalWritingTopic.CommonMistakes, mistake => mistake.WrongText == "Der Antrag kann geprüft werden, obwohl die Unterlagen vollständig sind.");
+        Assert.All(formalWritingTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel commonPitfallsTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-c2-common-pitfalls");
+
+        Assert.Equal(1, commonPitfallsTopic.ContentRevision);
+        Assert.Equal("C2", commonPitfallsTopic.CefrLevel);
+        Assert.Equal("word-order", commonPitfallsTopic.GrammarCategory);
+        Assert.Equal(17, commonPitfallsTopic.Sections.Count);
+        Assert.True(commonPitfallsTopic.Examples.Count >= 140);
+        Assert.True(commonPitfallsTopic.CommonMistakes.Count >= 50);
+        Assert.True(commonPitfallsTopic.RuleSummaries.Count >= 24);
+        Assert.True(commonPitfallsTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-long-sentence-control", commonPitfallsTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-c2-register-review", commonPitfallsTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel pitfallsCoreSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel pitfallsStructureSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel pitfallsWordOrderSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel pitfallsComparisonSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel pitfallsSentenceBracketSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "sentence-bracket");
+        ParsedGrammarSectionModel pitfallsSubordinateStackSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "subordinate-clause-stack");
+        ParsedGrammarSectionModel pitfallsRelativeReferenceSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "relative-reference");
+        ParsedGrammarSectionModel pitfallsConnectorOverloadSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "connector-overload");
+        ParsedGrammarSectionModel pitfallsReviewRoutineSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "review-routine");
+        ParsedGrammarSectionModel pitfallsPracticeSection = Assert.Single(commonPitfallsTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(commonPitfallsTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(commonPitfallsTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(commonPitfallsTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(commonPitfallsTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", pitfallsCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsSentenceBracketSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsSubordinateStackSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsRelativeReferenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsConnectorOverloadSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsReviewRoutineSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", pitfallsPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(commonPitfallsTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(commonPitfallsTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(commonPitfallsTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(commonPitfallsTopic.Examples, example => example.GermanText == "Obwohl der Bericht ausführlich begründet wurde, bleibt ein zentraler Einwand offen. Der Kontext ist der Bericht.");
+        Assert.Contains(commonPitfallsTopic.Examples, example => example.GermanText == "Wer den Antrag zitiert, sollte den Bezug des Pronomens eindeutig machen. Der Kontext ist der Antrag.");
+        Assert.Contains(commonPitfallsTopic.Examples, example => example.GermanText == "Die Kritik richtet sich nicht gegen den Vertrag, sondern gegen dessen unklare Begründung. Der Kontext ist der Vertrag.");
+        Assert.Contains(commonPitfallsTopic.CommonMistakes, mistake => mistake.WrongText == "Weil die Frist endet, der Antrag muss heute eingehen.");
+        Assert.Contains(commonPitfallsTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht, der enthält neue Daten, wurde veröffentlicht.");
+        Assert.Contains(commonPitfallsTopic.CommonMistakes, mistake => mistake.WrongText == "Trotzdem die Zahlen fehlen, wird entschieden.");
+        Assert.All(commonPitfallsTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel registerReviewTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-c2-register-review");
+
+        Assert.Equal(1, registerReviewTopic.ContentRevision);
+        Assert.Equal("C2", registerReviewTopic.CefrLevel);
+        Assert.Equal("word-order", registerReviewTopic.GrammarCategory);
+        Assert.Equal(17, registerReviewTopic.Sections.Count);
+        Assert.True(registerReviewTopic.Examples.Count >= 140);
+        Assert.True(registerReviewTopic.CommonMistakes.Count >= 50);
+        Assert.True(registerReviewTopic.RuleSummaries.Count >= 24);
+        Assert.True(registerReviewTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-c2-common-pitfalls", registerReviewTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-c2-grammar-review-map", registerReviewTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel c2RegisterCoreSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel c2RegisterStructureSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel c2RegisterWordOrderSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel c2RegisterComparisonSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel c2RegisterNominalStyleSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "nominal-style");
+        ParsedGrammarSectionModel c2RegisterPassiveSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "passive-and-distance");
+        ParsedGrammarSectionModel c2RegisterConnectorSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "connector-register");
+        ParsedGrammarSectionModel c2RegisterPronounSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "pronoun-and-politeness");
+        ParsedGrammarSectionModel c2RegisterPunctuationSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "punctuation-and-tone");
+        ParsedGrammarSectionModel c2RegisterPracticeSection = Assert.Single(registerReviewTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(registerReviewTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(registerReviewTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(registerReviewTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(registerReviewTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", c2RegisterCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterNominalStyleSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterPassiveSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterConnectorSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterPronounSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterPunctuationSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", c2RegisterPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(registerReviewTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(registerReviewTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(registerReviewTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Die E-Mail wird morgen erneut geprüft.");
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Die erneute Prüfung erfolgt morgen und betrifft die E-Mail.");
+        Assert.Contains(registerReviewTopic.Examples, example => example.GermanText == "Aus diesem Grund kann der Antrag derzeit nicht abschließend bewertet werden.");
+        Assert.Contains(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Ich will, dass Sie mir sofort antworten.");
+        Assert.Contains(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Die Prüfung der Durchführung der Bearbeitung erfolgt.");
+        Assert.Contains(registerReviewTopic.CommonMistakes, mistake => mistake.WrongText == "Aus diesem Grund ich bitte um Rückmeldung.");
+        Assert.All(registerReviewTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+
+        ParsedGrammarTopicModel reviewMapTopic = Assert.Single(
+            parsedPackage.GrammarTopics,
+            topic => topic.Slug == "c2-c2-grammar-review-map");
+
+        Assert.Equal(1, reviewMapTopic.ContentRevision);
+        Assert.Equal("C2", reviewMapTopic.CefrLevel);
+        Assert.Equal("word-order", reviewMapTopic.GrammarCategory);
+        Assert.Equal(18, reviewMapTopic.Sections.Count);
+        Assert.True(reviewMapTopic.Examples.Count >= 140);
+        Assert.True(reviewMapTopic.CommonMistakes.Count >= 50);
+        Assert.True(reviewMapTopic.RuleSummaries.Count >= 24);
+        Assert.True(reviewMapTopic.LinkedWords.Count >= 90);
+        Assert.Contains("c2-c2-common-pitfalls", reviewMapTopic.PrerequisiteSlugs);
+        Assert.Contains("c2-c2-formal-writing-grammar", reviewMapTopic.RelatedTopicSlugs);
+
+        ParsedGrammarSectionModel reviewMapCoreSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "core-patterns");
+        ParsedGrammarSectionModel reviewMapStructureSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "form-or-structure-table");
+        ParsedGrammarSectionModel reviewMapWordOrderSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "word-order-or-case-focus");
+        ParsedGrammarSectionModel reviewMapComparisonSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "comparison-table");
+        ParsedGrammarSectionModel reviewMapFiniteVerbSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "finite-verb-map");
+        ParsedGrammarSectionModel reviewMapClauseHierarchySection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "clause-hierarchy-map");
+        ParsedGrammarSectionModel reviewMapSentenceBracketSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "sentence-bracket-map");
+        ParsedGrammarSectionModel reviewMapConnectorSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "connector-map");
+        ParsedGrammarSectionModel reviewMapReferenceSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "reference-map");
+        ParsedGrammarSectionModel reviewMapPracticeSection = Assert.Single(reviewMapTopic.Sections, section => section.SectionKey == "practice-advice");
+
+        Assert.All(languages, language =>
+        {
+            Assert.True(reviewMapTopic.TitleLocalized.ContainsKey(language));
+            Assert.True(reviewMapTopic.ShortDescriptionLocalized.ContainsKey(language));
+            Assert.All(reviewMapTopic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+            Assert.All(reviewMapTopic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language)));
+            Assert.Contains("\"table\"", reviewMapCoreSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapStructureSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapWordOrderSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapComparisonSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapFiniteVerbSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapClauseHierarchySection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapSentenceBracketSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapConnectorSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapReferenceSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.Contains("\"table\"", reviewMapPracticeSection.LocalizedBlocksJson[language], StringComparison.Ordinal);
+            Assert.All(reviewMapTopic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+            Assert.All(reviewMapTopic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            Assert.All(reviewMapTopic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+        });
+
+        Assert.Contains(reviewMapTopic.Examples, example => example.GermanText == "Prüfe zuerst die Verbposition, dann den Bezug des Pronomens.");
+        Assert.Contains(reviewMapTopic.Examples, example => example.GermanText == "Wenn der Bericht vorliegt, beginnt die inhaltliche Prüfung.");
+        Assert.Contains(reviewMapTopic.Examples, example => example.GermanText == "Der Antrag kann nach Eingang der Unterlagen geprüft werden.");
+        Assert.Contains(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Weil die Begründung fehlt, der Satz bleibt unklar.");
+        Assert.Contains(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Ich glaube, dass der Satz ist verständlich.");
+        Assert.Contains(reviewMapTopic.CommonMistakes, mistake => mistake.WrongText == "Der Bericht, der enthält neue Angaben, wurde geprüft.");
+        Assert.All(reviewMapTopic.LinkedWords, word =>
+        {
+            string serialized = JsonSerializer.Serialize(word);
+            Assert.DoesNotContain("meaning", serialized, StringComparison.OrdinalIgnoreCase);
+        });
+    }
+
+    [Fact]
+    public async Task ParseAsync_ShouldValidateAllOfficialA1C2GrammarPackagesAgainstSyllabus()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+        string repositoryRoot = ResolveRepositoryRoot();
+        string syllabusPath = Path.Combine(repositoryRoot, "content", "learning-portal", "grammar", "syllabus", "grammar-syllabus-a1-c2-v1.json");
+        using JsonDocument syllabusDocument = JsonDocument.Parse(await File.ReadAllTextAsync(syllabusPath));
+        Dictionary<string, (string Title, string CefrLevel, string GrammarCategory)> syllabusBySlug = syllabusDocument.RootElement
+            .GetProperty("topics")
+            .EnumerateArray()
+            .ToDictionary(
+                topic => topic.GetProperty("slug").GetString() ?? string.Empty,
+                topic => (
+                    topic.GetProperty("titleEn").GetString() ?? string.Empty,
+                    topic.GetProperty("cefrLevel").GetString() ?? string.Empty,
+                    topic.GetProperty("grammarCategory").GetString() ?? string.Empty));
+
+        string[] languages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+        string[] packageFileNames =
+        [
+            "grammar-a1-core-v1.json",
+            "grammar-a2-core-v1.json",
+            "grammar-b1-core-v1.json",
+            "grammar-b2-core-v1.json",
+            "grammar-c1-core-v1.json",
+            "grammar-c2-core-v1.json",
+        ];
+        HashSet<string> allowedCategories =
+        [
+            "articles", "nouns", "gender", "plural", "pronouns", "verbs", "modal-verbs", "tenses",
+            "separable-verbs", "reflexive-verbs", "cases", "nominative", "accusative", "dative",
+            "genitive", "adjective-declension", "prepositions", "word-order", "subordinate-clauses",
+            "connectors", "negation", "questions", "imperative", "passive", "konjunktiv",
+            "reported-speech", "punctuation",
+        ];
+        HashSet<string> knownBlockTypes =
+        [
+            "paragraph", "table", "callout", "rule-list", "example-list", "mistake-pair", "image-slot",
+        ];
+        Dictionary<string, int> expectedCountsByLevel = new()
+        {
+            ["A1"] = 35,
+            ["A2"] = 40,
+            ["B1"] = 45,
+            ["B2"] = 45,
+            ["C1"] = 35,
+            ["C2"] = 25,
+        };
+
+        List<ParsedGrammarTopicModel> allTopics = [];
+        foreach (string packageFileName in packageFileNames)
+        {
+            string expectedLevel = packageFileName[8..10].ToUpperInvariant();
+            string packagePath = Path.Combine(repositoryRoot, "content", "learning-portal", "grammar", "packages", packageFileName);
+            ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+                await File.ReadAllTextAsync(packagePath),
+                CancellationToken.None);
+
+            Assert.Equal(expectedCountsByLevel[expectedLevel], parsedPackage.GrammarTopics.Count);
+            Assert.All(parsedPackage.GrammarTopics, topic => Assert.Equal(expectedLevel, topic.CefrLevel));
+            allTopics.AddRange(parsedPackage.GrammarTopics);
+        }
+
+        Assert.Equal(225, allTopics.Count);
+        Assert.Equal(225, allTopics.Select(topic => topic.Slug).Distinct(StringComparer.Ordinal).Count());
+        Assert.Empty(syllabusBySlug.Keys.Except(allTopics.Select(topic => topic.Slug), StringComparer.Ordinal));
+        Assert.Empty(allTopics.Select(topic => topic.Slug).Except(syllabusBySlug.Keys, StringComparer.Ordinal));
+
+        HashSet<string> allSlugs = allTopics.Select(topic => topic.Slug).ToHashSet(StringComparer.Ordinal);
+        foreach (ParsedGrammarTopicModel topic in allTopics)
+        {
+            Assert.Matches("^[a-z0-9]+(?:-[a-z0-9]+)*$", topic.Slug);
+            Assert.True(syllabusBySlug.TryGetValue(topic.Slug, out (string Title, string CefrLevel, string GrammarCategory) syllabusTopic));
+            Assert.Equal(syllabusTopic.Title, topic.Title);
+            Assert.Equal(syllabusTopic.CefrLevel, topic.CefrLevel);
+            Assert.Equal(syllabusTopic.GrammarCategory, topic.GrammarCategory);
+            Assert.Contains(topic.GrammarCategory, allowedCategories);
+            Assert.False(string.IsNullOrWhiteSpace(topic.ShortDescription));
+            Assert.NotEmpty(topic.Sections);
+            Assert.All(languages, language =>
+            {
+                Assert.True(topic.TitleLocalized.ContainsKey(language), $"{topic.Slug} missing titleLocalized {language}");
+                Assert.True(topic.ShortDescriptionLocalized.ContainsKey(language), $"{topic.Slug} missing shortDescriptionLocalized {language}");
+                Assert.All(topic.Sections, section => Assert.Contains(section.Translations, translation => translation.Language == language));
+                Assert.All(topic.Sections, section => Assert.True(section.LocalizedBlocksJson.ContainsKey(language), $"{topic.Slug}/{section.SectionKey} missing localizedBlocks {language}"));
+                Assert.All(topic.Examples, example => Assert.Contains(example.Translations, translation => translation.Language == language));
+                Assert.All(topic.RuleSummaries, rule => Assert.Contains(rule.Translations, translation => translation.Language == language));
+                Assert.All(topic.CommonMistakes, mistake => Assert.Contains(mistake.Translations, translation => translation.Language == language));
+            });
+
+            Assert.Equal(
+                topic.Sections.Count,
+                topic.Sections.Select(section => section.SectionKey).Distinct(StringComparer.Ordinal).Count());
+            Assert.All(topic.LinkedWords, word =>
+            {
+                Assert.False(string.IsNullOrWhiteSpace(word.Lemma));
+                Assert.DoesNotContain("meaning", JsonSerializer.Serialize(word), StringComparison.OrdinalIgnoreCase);
+            });
+            Assert.All(topic.PrerequisiteSlugs.Concat(topic.RelatedTopicSlugs), linkedSlug =>
+            {
+                Assert.Matches("^[a-z0-9]+(?:-[a-z0-9]+)*$", linkedSlug);
+                Assert.True(allSlugs.Contains(linkedSlug) || syllabusBySlug.ContainsKey(linkedSlug), $"{topic.Slug} references unresolved grammar slug {linkedSlug}");
+            });
+            Assert.All(topic.CommonMistakes, mistake => Assert.NotEqual(mistake.WrongText, mistake.CorrectedText));
+
+            foreach (ParsedGrammarSectionModel section in topic.Sections)
+            {
+                foreach (string blocksJson in section.LocalizedBlocksJson.Values)
+                {
+                    using JsonDocument blocksDocument = JsonDocument.Parse(blocksJson);
+                    Assert.Equal(JsonValueKind.Array, blocksDocument.RootElement.ValueKind);
+                    foreach (JsonElement block in blocksDocument.RootElement.EnumerateArray())
+                    {
+                        string blockType = block.GetProperty("type").GetString() ?? string.Empty;
+                        Assert.Contains(blockType, knownBlockTypes);
+                        if (blockType == "table")
+                        {
+                            int columnCount = block.GetProperty("columns").GetArrayLength();
+                            Assert.True(columnCount > 0);
+                            foreach (JsonElement row in block.GetProperty("rows").EnumerateArray())
+                            {
+                                Assert.Equal(JsonValueKind.Array, row.ValueKind);
+                                Assert.Equal(columnCount, row.GetArrayLength());
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static string ResolveRepositoryRoot()

@@ -50,7 +50,7 @@ Local development helper:
 - [ ] Configure Brevo webhook security with Bearer auth and set the bearer token to `TransactionalEmail__BrevoWebhookSecret`.
 - [ ] If Bearer auth is not available, configure a custom header `X-DarwinLingua-Brevo-Webhook-Secret` with the same secret.
 - [ ] Avoid query-string webhook secrets except for short local/manual diagnostics because URLs can be logged by infrastructure.
-- [ ] Enable Brevo webhook events for delivered, hard bounce, soft bounce, blocked, invalid, error, spam, opened, and clicked where supported.
+- [ ] Enable Brevo webhook events for delivered, deferred, hard bounce, soft bounce, blocked, invalid, error, spam, complaint, opened, and clicked where supported.
 - [ ] Confirm webhook calls reach the public HTTPS origin.
 - [ ] Confirm `admin/email-diagnostics` shows provider message ids and provider events.
 - [ ] Confirm failed Brevo delivery events update delivery logs without storing email tokens or recovery URLs.

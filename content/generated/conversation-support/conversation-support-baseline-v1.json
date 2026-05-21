@@ -1,0 +1,1981 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "conversation-support-baseline-v1",
+  "packageName": "Conversation Support Baseline v1",
+  "source": "Generated",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "conversationStarterPacks": [
+    {
+      "slug": "a1-first-meeting-starters",
+      "title": "First Meeting Starters",
+      "description": "Very simple phrases for starting and ending a first conversation.",
+      "cefrLevel": "A1",
+      "category": "first-meetings",
+      "situation": "first-meeting",
+      "tone": "friendly",
+      "conversationGoal": "introduction",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 10,
+      "linkedDialogueSlugs": [
+        "a1-cafe-order",
+        "a1-ask-for-directions"
+      ],
+      "phrases": [
+        {
+          "baseText": "Hallo, ich heiße ...",
+          "function": "opening",
+          "register": "neutral",
+          "sortOrder": 1,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Hello, my name is ..."
+            },
+            {
+              "language": "fa",
+              "text": "سلام، اسم من ... است."
+            },
+            {
+              "language": "ar",
+              "text": "مرحباً، اسمي ..."
+            },
+            {
+              "language": "tr",
+              "text": "Merhaba, benim adım ..."
+            },
+            {
+              "language": "ru",
+              "text": "Здравствуйте, меня зовут ..."
+            },
+            {
+              "language": "ckb",
+              "text": "سڵاو، ناوم ...ە."
+            },
+            {
+              "language": "kmr",
+              "text": "Silav, navê min ... e."
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry, nazywam się ..."
+            },
+            {
+              "language": "ro",
+              "text": "Bună ziua, mă numesc ..."
+            },
+            {
+              "language": "sq",
+              "text": "Përshëndetje, quhem ..."
+            }
+          ],
+          "usageNote": "Use when you introduce yourself for the first time."
+        },
+        {
+          "baseText": "Und wie heißen Sie?",
+          "function": "follow-up-question",
+          "register": "formal",
+          "sortOrder": 2,
+          "translations": [
+            {
+              "language": "en",
+              "text": "And what is your name?"
+            },
+            {
+              "language": "fa",
+              "text": "و اسم شما چیست؟"
+            },
+            {
+              "language": "ar",
+              "text": "وما اسم حضرتك؟"
+            },
+            {
+              "language": "tr",
+              "text": "Peki sizin adınız nedir?"
+            },
+            {
+              "language": "ru",
+              "text": "А как вас зовут?"
+            },
+            {
+              "language": "ckb",
+              "text": "ناوی ئێوە چییە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Navê we çi ye?"
+            },
+            {
+              "language": "pl",
+              "text": "A jak się Pan/Pani nazywa?"
+            },
+            {
+              "language": "ro",
+              "text": "Și cum vă numiți?"
+            },
+            {
+              "language": "sq",
+              "text": "Po ju si quheni?"
+            }
+          ],
+          "usageNote": "Use Sie when the situation is formal or unknown."
+        },
+        {
+          "baseText": "Können Sie das bitte wiederholen?",
+          "function": "clarification",
+          "register": "formal",
+          "sortOrder": 3,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Could you please repeat that?"
+            },
+            {
+              "language": "fa",
+              "text": "ممکن است لطفاً آن را تکرار کنید؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل يمكن أن تكرر ذلك من فضلك؟"
+            },
+            {
+              "language": "tr",
+              "text": "Bunu lütfen tekrar eder misiniz?"
+            },
+            {
+              "language": "ru",
+              "text": "Не могли бы вы повторить это, пожалуйста?"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانیت تکایە دووبارەی بکەیتەوە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe dikarin wê dubare bikin?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy może Pan/Pani to powtórzyć?"
+            },
+            {
+              "language": "ro",
+              "text": "Puteți repeta, vă rog?"
+            },
+            {
+              "language": "sq",
+              "text": "Mund ta përsërisni, ju lutem?"
+            }
+          ],
+          "usageNote": "Useful when you did not understand the name or answer."
+        },
+        {
+          "baseText": "Danke, das hilft mir.",
+          "function": "reaction",
+          "register": "neutral",
+          "sortOrder": 4,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you, that helps me."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون، این به من کمک می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "شكراً، هذا يساعدني."
+            },
+            {
+              "language": "tr",
+              "text": "Teşekkür ederim, bu bana yardımcı oluyor."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо, это мне помогает."
+            },
+            {
+              "language": "ckb",
+              "text": "سوپاس، ئەمە یارمەتیم دەدات."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas, ev alîkariya min dike."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję, to mi pomaga."
+            },
+            {
+              "language": "ro",
+              "text": "Mulțumesc, asta mă ajută."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit, kjo më ndihmon."
+            }
+          ],
+          "usageNote": "A short friendly reaction."
+        },
+        {
+          "baseText": "Danke für das Gespräch. Einen schönen Tag noch.",
+          "function": "closing",
+          "register": "formal",
+          "sortOrder": 5,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thanks for the conversation. Have a nice day."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون از گفتگو. روز خوبی داشته باشید."
+            },
+            {
+              "language": "ar",
+              "text": "شكراً على الحديث. أتمنى لك يوماً سعيداً."
+            },
+            {
+              "language": "tr",
+              "text": "Sohbet için teşekkürler. İyi günler."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо за разговор. Хорошего дня."
+            },
+            {
+              "language": "ckb",
+              "text": "سوپاس بۆ گفتوگۆکە. ڕۆژێکی خۆشت هەبێت."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas ji bo axaftinê. Roja we xweş be."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję za rozmowę. Miłego dnia."
+            },
+            {
+              "language": "ro",
+              "text": "Mulțumesc pentru conversație. O zi bună."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit për bisedën. Ditën e mirë."
+            }
+          ],
+          "usageNote": "Use to end the conversation politely."
+        }
+      ]
+    },
+    {
+      "slug": "a2-everyday-follow-up-starters",
+      "title": "Everyday Follow-up Starters",
+      "description": "Simple follow-up phrases for appointments, services, and daily situations.",
+      "cefrLevel": "A2",
+      "category": "everyday-conversation",
+      "situation": "service",
+      "tone": "friendly",
+      "conversationGoal": "asking-questions",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 20,
+      "linkedDialogueSlugs": [
+        "a2-doctor-appointment"
+      ],
+      "phrases": [
+        {
+          "baseText": "Ich möchte einen Termin vereinbaren.",
+          "function": "opening",
+          "register": "formal",
+          "sortOrder": 1,
+          "translations": [
+            {
+              "language": "en",
+              "text": "I would like to make an appointment."
+            },
+            {
+              "language": "fa",
+              "text": "می‌خواهم یک وقت تعیین کنم."
+            },
+            {
+              "language": "ar",
+              "text": "أود تحديد موعد."
+            },
+            {
+              "language": "tr",
+              "text": "Bir randevu almak istiyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Я хотел бы записаться на приём."
+            },
+            {
+              "language": "ckb",
+              "text": "دەمەوێت کاتێک دیاری بکەم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ez dixwazim demekî randevûyê saz bikim."
+            },
+            {
+              "language": "pl",
+              "text": "Chciałbym/Chciałabym umówić termin."
+            },
+            {
+              "language": "ro",
+              "text": "Aș dori să fac o programare."
+            },
+            {
+              "language": "sq",
+              "text": "Do të doja të caktoj një takim."
+            }
+          ],
+          "usageNote": "Useful on the phone or at a reception desk."
+        },
+        {
+          "baseText": "Passt Ihnen diese Uhrzeit?",
+          "function": "follow-up-question",
+          "register": "formal",
+          "sortOrder": 2,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Does this time work for you?"
+            },
+            {
+              "language": "fa",
+              "text": "این زمان برای شما مناسب است؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل يناسبك هذا الوقت؟"
+            },
+            {
+              "language": "tr",
+              "text": "Bu saat sizin için uygun mu?"
+            },
+            {
+              "language": "ru",
+              "text": "Вам подходит это время?"
+            },
+            {
+              "language": "ckb",
+              "text": "ئەم کاتە بۆ ئێوە گونجاوە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ev dem ji bo we guncan e?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy ten termin Panu/Pani odpowiada?"
+            },
+            {
+              "language": "ro",
+              "text": "Vă convine această oră?"
+            },
+            {
+              "language": "sq",
+              "text": "A ju përshtatet kjo orë?"
+            }
+          ],
+          "usageNote": "Use when checking a proposed time."
+        },
+        {
+          "baseText": "Ich komme vielleicht ein paar Minuten später.",
+          "function": "clarification",
+          "register": "neutral",
+          "sortOrder": 3,
+          "translations": [
+            {
+              "language": "en",
+              "text": "I may be a few minutes late."
+            },
+            {
+              "language": "fa",
+              "text": "ممکن است چند دقیقه دیر برسم."
+            },
+            {
+              "language": "ar",
+              "text": "قد أتأخر بضع دقائق."
+            },
+            {
+              "language": "tr",
+              "text": "Birkaç dakika gecikebilirim."
+            },
+            {
+              "language": "ru",
+              "text": "Я могу опоздать на несколько минут."
+            },
+            {
+              "language": "ckb",
+              "text": "لەوانەیە چەند خولەکێک دواتر بگەم."
+            },
+            {
+              "language": "kmr",
+              "text": "Dibe ku ez çend deqeyan dereng bim."
+            },
+            {
+              "language": "pl",
+              "text": "Mogę się spóźnić kilka minut."
+            },
+            {
+              "language": "ro",
+              "text": "S-ar putea să întârzii câteva minute."
+            },
+            {
+              "language": "sq",
+              "text": "Mund të vonohem disa minuta."
+            }
+          ],
+          "usageNote": "Use when you need to warn about a small delay."
+        },
+        {
+          "baseText": "Welche Unterlagen soll ich mitbringen?",
+          "function": "follow-up-question",
+          "register": "formal",
+          "sortOrder": 4,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Which documents should I bring?"
+            },
+            {
+              "language": "fa",
+              "text": "چه مدارکی باید همراه بیاورم؟"
+            },
+            {
+              "language": "ar",
+              "text": "ما الوثائق التي يجب أن أحضرها؟"
+            },
+            {
+              "language": "tr",
+              "text": "Hangi belgeleri getirmeliyim?"
+            },
+            {
+              "language": "ru",
+              "text": "Какие документы мне нужно принести?"
+            },
+            {
+              "language": "ckb",
+              "text": "کام بەڵگەنامەکان پێویستە بهێنم؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Divê ez kîjan belgeyan bînim?"
+            },
+            {
+              "language": "pl",
+              "text": "Jakie dokumenty powinienem/powinnam przynieść?"
+            },
+            {
+              "language": "ro",
+              "text": "Ce documente trebuie să aduc?"
+            },
+            {
+              "language": "sq",
+              "text": "Cilat dokumente duhet të sjell?"
+            }
+          ],
+          "usageNote": "Use before an appointment at an office, school, or doctor."
+        },
+        {
+          "baseText": "Dann komme ich zum vereinbarten Termin.",
+          "function": "next-step",
+          "register": "formal",
+          "sortOrder": 5,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Then I will come at the agreed time."
+            },
+            {
+              "language": "fa",
+              "text": "پس در زمان توافق‌شده می‌آیم."
+            },
+            {
+              "language": "ar",
+              "text": "إذن سأحضر في الموعد المتفق عليه."
+            },
+            {
+              "language": "tr",
+              "text": "O zaman kararlaştırılan saatte geleceğim."
+            },
+            {
+              "language": "ru",
+              "text": "Тогда я приду в согласованное время."
+            },
+            {
+              "language": "ckb",
+              "text": "کەواتە لە کاتی ڕێککەوتوودا دێم."
+            },
+            {
+              "language": "kmr",
+              "text": "Wê demê ez di dema lihevhatî de têm."
+            },
+            {
+              "language": "pl",
+              "text": "W takim razie przyjdę o ustalonej godzinie."
+            },
+            {
+              "language": "ro",
+              "text": "Atunci voi veni la ora stabilită."
+            },
+            {
+              "language": "sq",
+              "text": "Atëherë do të vij në orarin e rënë dakord."
+            }
+          ],
+          "usageNote": "Use to confirm the next action."
+        }
+      ]
+    },
+    {
+      "slug": "b1-practical-appointment-starters",
+      "title": "Practical Appointment Starters",
+      "description": "B1 phrases for clarifying appointments, documents, and next steps.",
+      "cefrLevel": "B1",
+      "category": "appointments",
+      "situation": "appointment",
+      "tone": "formal",
+      "conversationGoal": "arranging-next-contact",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 30,
+      "linkedDialogueSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Ich möchte kurz klären, ob der Termin noch passt.",
+          "function": "opening",
+          "register": "formal",
+          "sortOrder": 1,
+          "translations": [
+            {
+              "language": "en",
+              "text": "I would like to briefly clarify whether the appointment still works."
+            },
+            {
+              "language": "fa",
+              "text": "می‌خواهم کوتاه روشن کنم که آیا وقت هنوز مناسب است."
+            },
+            {
+              "language": "ar",
+              "text": "أود أن أوضح باختصار ما إذا كان الموعد ما زال مناسباً."
+            },
+            {
+              "language": "tr",
+              "text": "Randevunun hâlâ uygun olup olmadığını kısaca netleştirmek istiyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Я хотел бы кратко уточнить, подходит ли ещё время приёма."
+            },
+            {
+              "language": "ckb",
+              "text": "دەمەوێت بە کورتی ڕوون بکەمەوە کە ئایا کاتەکە هێشتا گونجاوە."
+            },
+            {
+              "language": "kmr",
+              "text": "Ez dixwazim bi kurtî zelal bikim ka randevû hîn guncan e."
+            },
+            {
+              "language": "pl",
+              "text": "Chciałbym/Chciałabym krótko wyjaśnić, czy termin nadal pasuje."
+            },
+            {
+              "language": "ro",
+              "text": "Aș dori să clarific pe scurt dacă programarea mai este potrivită."
+            },
+            {
+              "language": "sq",
+              "text": "Do të doja të sqaroj shkurt nëse takimi ende përshtatet."
+            }
+          ],
+          "usageNote": "A polite way to open a practical appointment call."
+        },
+        {
+          "baseText": "Könnten Sie mir bitte sagen, welche Unterlagen fehlen?",
+          "function": "follow-up-question",
+          "register": "formal",
+          "sortOrder": 2,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Could you please tell me which documents are missing?"
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً می‌توانید بگویید کدام مدارک کم است؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل يمكن أن تخبرني من فضلك ما الوثائق الناقصة؟"
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen hangi belgelerin eksik olduğunu söyleyebilir misiniz?"
+            },
+            {
+              "language": "ru",
+              "text": "Не могли бы вы сказать, каких документов не хватает?"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانن تکایە بڵێن کام بەڵگەنامە کەمە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe dikarin bibêjin kîjan belge kêm in?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy może Pan/Pani powiedzieć, jakich dokumentów brakuje?"
+            },
+            {
+              "language": "ro",
+              "text": "Îmi puteți spune, vă rog, ce documente lipsesc?"
+            },
+            {
+              "language": "sq",
+              "text": "A mund të më thoni, ju lutem, cilat dokumente mungojnë?"
+            }
+          ],
+          "usageNote": "Indirect question with verb-final order."
+        },
+        {
+          "baseText": "Falls etwas fehlt, reiche ich es nach.",
+          "function": "next-step",
+          "register": "formal",
+          "sortOrder": 3,
+          "translations": [
+            {
+              "language": "en",
+              "text": "If something is missing, I will submit it later."
+            },
+            {
+              "language": "fa",
+              "text": "اگر چیزی کم باشد، بعداً آن را ارائه می‌کنم."
+            },
+            {
+              "language": "ar",
+              "text": "إذا كان هناك شيء ناقص فسأقدمه لاحقاً."
+            },
+            {
+              "language": "tr",
+              "text": "Bir şey eksikse daha sonra teslim ederim."
+            },
+            {
+              "language": "ru",
+              "text": "Если чего-то не хватает, я донесу это позже."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەگەر شتێک کەم بێت، دواتر پێشکەشی دەکەم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ger tiştek kêm be, ez wê paşê radest dikim."
+            },
+            {
+              "language": "pl",
+              "text": "Jeśli czegoś brakuje, dostarczę to później."
+            },
+            {
+              "language": "ro",
+              "text": "Dacă lipsește ceva, îl voi depune ulterior."
+            },
+            {
+              "language": "sq",
+              "text": "Nëse diçka mungon, do ta dorëzoj më vonë."
+            }
+          ],
+          "usageNote": "Use for documents and offices."
+        },
+        {
+          "baseText": "Darf ich Ihnen dazu noch eine Frage stellen?",
+          "function": "follow-up-question",
+          "register": "formal",
+          "sortOrder": 4,
+          "translations": [
+            {
+              "language": "en",
+              "text": "May I ask you one more question about that?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانم درباره آن یک سؤال دیگر از شما بپرسم؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل يجوز أن أطرح عليك سؤالاً آخر حول ذلك؟"
+            },
+            {
+              "language": "tr",
+              "text": "Bununla ilgili size bir soru daha sorabilir miyim?"
+            },
+            {
+              "language": "ru",
+              "text": "Можно задать вам ещё один вопрос по этому поводу?"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانم لەبارەی ئەوە پرسیارێکی تر لێتان بکەم؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ez dikarim li ser vê pirsek din ji we bikim?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy mogę zadać Panu/Pani jeszcze jedno pytanie w tej sprawie?"
+            },
+            {
+              "language": "ro",
+              "text": "Vă pot adresa încă o întrebare despre acest lucru?"
+            },
+            {
+              "language": "sq",
+              "text": "A mund t’ju bëj edhe një pyetje për këtë?"
+            }
+          ],
+          "usageNote": "Keeps the conversation polite and controlled."
+        },
+        {
+          "baseText": "Vielen Dank, dann weiß ich Bescheid.",
+          "function": "closing",
+          "register": "formal",
+          "sortOrder": 5,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you, then I know what to do."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون، پس می‌دانم چه کار کنم."
+            },
+            {
+              "language": "ar",
+              "text": "شكراً، إذن أصبحت أعرف ما يجب فعله."
+            },
+            {
+              "language": "tr",
+              "text": "Çok teşekkürler, o zaman ne yapacağımı biliyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо, теперь я знаю, что делать."
+            },
+            {
+              "language": "ckb",
+              "text": "زۆر سوپاس، کەواتە دەزانم چی بکەم."
+            },
+            {
+              "language": "kmr",
+              "text": "Gelek spas, wê demê ez dizanim çi bikim."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję, teraz wiem, co robić."
+            },
+            {
+              "language": "ro",
+              "text": "Mulțumesc, acum știu ce am de făcut."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit, tani e di çfarë duhet të bëj."
+            }
+          ],
+          "usageNote": "Natural closing after receiving information."
+        }
+      ]
+    },
+    {
+      "slug": "b2-workplace-discussion-starters",
+      "title": "Workplace Discussion Starters",
+      "description": "Structured phrases for giving views, asking for input, and reaching next steps.",
+      "cefrLevel": "B2",
+      "category": "workplace-discussion",
+      "situation": "work",
+      "tone": "formal",
+      "conversationGoal": "continuing-conversation",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 40,
+      "linkedDialogueSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Aus meiner Sicht ist diese Lösung praktisch.",
+          "function": "reaction",
+          "register": "formal",
+          "sortOrder": 1,
+          "translations": [
+            {
+              "language": "en",
+              "text": "From my point of view, this solution is practical."
+            },
+            {
+              "language": "fa",
+              "text": "از نظر من این راه‌حل عملی است."
+            },
+            {
+              "language": "ar",
+              "text": "من وجهة نظري هذا الحل عملي."
+            },
+            {
+              "language": "tr",
+              "text": "Bana göre bu çözüm pratik."
+            },
+            {
+              "language": "ru",
+              "text": "На мой взгляд, это практичное решение."
+            },
+            {
+              "language": "ckb",
+              "text": "لە ڕوانگەی منەوە، ئەم چارەسەرە کردارییە."
+            },
+            {
+              "language": "kmr",
+              "text": "Li gorî min ev çareserî pratîk e."
+            },
+            {
+              "language": "pl",
+              "text": "Moim zdaniem to rozwiązanie jest praktyczne."
+            },
+            {
+              "language": "ro",
+              "text": "Din punctul meu de vedere, această soluție este practică."
+            },
+            {
+              "language": "sq",
+              "text": "Sipas mendimit tim, kjo zgjidhje është praktike."
+            }
+          ],
+          "usageNote": "Use to give a clear but measured opinion."
+        },
+        {
+          "baseText": "Wie sehen Sie das?",
+          "function": "follow-up-question",
+          "register": "formal",
+          "sortOrder": 2,
+          "translations": [
+            {
+              "language": "en",
+              "text": "How do you see it?"
+            },
+            {
+              "language": "fa",
+              "text": "شما این موضوع را چطور می‌بینید؟"
+            },
+            {
+              "language": "ar",
+              "text": "كيف ترى هذا الأمر؟"
+            },
+            {
+              "language": "tr",
+              "text": "Siz bunu nasıl görüyorsunuz?"
+            },
+            {
+              "language": "ru",
+              "text": "Как вы это видите?"
+            },
+            {
+              "language": "ckb",
+              "text": "ئێوە چۆن دەیبینن؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Hûn vê çawa dibînin?"
+            },
+            {
+              "language": "pl",
+              "text": "Jak Pan/Pani to widzi?"
+            },
+            {
+              "language": "ro",
+              "text": "Cum vedeți acest lucru?"
+            },
+            {
+              "language": "sq",
+              "text": "Si e shihni ju këtë?"
+            }
+          ],
+          "usageNote": "Invites the other person into the discussion."
+        },
+        {
+          "baseText": "Ich verstehe Ihren Punkt, aber ich sehe eine Schwierigkeit.",
+          "function": "reaction",
+          "register": "formal",
+          "sortOrder": 3,
+          "translations": [
+            {
+              "language": "en",
+              "text": "I understand your point, but I see one difficulty."
+            },
+            {
+              "language": "fa",
+              "text": "نکته شما را می‌فهمم، اما یک دشواری می‌بینم."
+            },
+            {
+              "language": "ar",
+              "text": "أفهم وجهة نظرك، لكنني أرى صعوبة واحدة."
+            },
+            {
+              "language": "tr",
+              "text": "Görüşünüzü anlıyorum ama bir zorluk görüyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Я понимаю вашу точку зрения, но вижу одну трудность."
+            },
+            {
+              "language": "ckb",
+              "text": "خاڵەکەت تێدەگەم، بەڵام قورساییەک دەبینم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ez xalê we fam dikim, lê zehmetiyek dibînim."
+            },
+            {
+              "language": "pl",
+              "text": "Rozumiem Pana/Pani punkt widzenia, ale widzę jedną trudność."
+            },
+            {
+              "language": "ro",
+              "text": "Înțeleg punctul dumneavoastră, dar văd o dificultate."
+            },
+            {
+              "language": "sq",
+              "text": "E kuptoj pikën tuaj, por shoh një vështirësi."
+            }
+          ],
+          "usageNote": "Polite disagreement without sounding aggressive."
+        },
+        {
+          "baseText": "Könnten wir die Vor- und Nachteile kurz sammeln?",
+          "function": "transition",
+          "register": "formal",
+          "sortOrder": 4,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Could we briefly collect the advantages and disadvantages?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌توانیم کوتاه مزایا و معایب را جمع‌بندی کنیم؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل يمكن أن نجمع باختصار المزايا والعيوب؟"
+            },
+            {
+              "language": "tr",
+              "text": "Avantajları ve dezavantajları kısaca toplayabilir miyiz?"
+            },
+            {
+              "language": "ru",
+              "text": "Можем кратко собрать плюсы и минусы?"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانین بە کورتی سوود و زیانەکان کۆبکەینەوە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Em dikarin bi kurtî avantaj û dezavantajan kom bikin?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy możemy krótko zebrać zalety i wady?"
+            },
+            {
+              "language": "ro",
+              "text": "Putem să adunăm pe scurt avantajele și dezavantajele?"
+            },
+            {
+              "language": "sq",
+              "text": "A mund t’i mbledhim shkurt përparësitë dhe mangësitë?"
+            }
+          ],
+          "usageNote": "Helps keep a discussion organized."
+        },
+        {
+          "baseText": "Der nächste Schritt wäre also ...",
+          "function": "next-step",
+          "register": "formal",
+          "sortOrder": 5,
+          "translations": [
+            {
+              "language": "en",
+              "text": "So the next step would be ..."
+            },
+            {
+              "language": "fa",
+              "text": "پس قدم بعدی ... خواهد بود."
+            },
+            {
+              "language": "ar",
+              "text": "إذن ستكون الخطوة التالية ..."
+            },
+            {
+              "language": "tr",
+              "text": "O halde bir sonraki adım ... olur."
+            },
+            {
+              "language": "ru",
+              "text": "Итак, следующим шагом будет ..."
+            },
+            {
+              "language": "ckb",
+              "text": "کەواتە هەنگاوی دواتر دەبێت ..."
+            },
+            {
+              "language": "kmr",
+              "text": "Wê demê gava din dê ... be."
+            },
+            {
+              "language": "pl",
+              "text": "Zatem następnym krokiem byłoby ..."
+            },
+            {
+              "language": "ro",
+              "text": "Așadar, următorul pas ar fi ..."
+            },
+            {
+              "language": "sq",
+              "text": "Pra hapi tjetër do të ishte ..."
+            }
+          ],
+          "usageNote": "Use to summarize a decision or action."
+        }
+      ]
+    },
+    {
+      "slug": "c1-formal-networking-starters",
+      "title": "Formal Networking Starters",
+      "description": "Advanced polite phrases for professional events and structured follow-up.",
+      "cefrLevel": "C1",
+      "category": "networking",
+      "situation": "work-event",
+      "tone": "formal",
+      "conversationGoal": "arranging-next-contact",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 50,
+      "linkedDialogueSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Darf ich mich kurz vorstellen?",
+          "function": "opening",
+          "register": "formal",
+          "sortOrder": 1,
+          "translations": [
+            {
+              "language": "en",
+              "text": "May I briefly introduce myself?"
+            },
+            {
+              "language": "fa",
+              "text": "اجازه می‌دهید کوتاه خودم را معرفی کنم؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل تسمح لي أن أعرّف عن نفسي باختصار؟"
+            },
+            {
+              "language": "tr",
+              "text": "Kendimi kısaca tanıtabilir miyim?"
+            },
+            {
+              "language": "ru",
+              "text": "Можно кратко представиться?"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتوانم بە کورتی خۆم بناسێنم؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ez dikarim bi kurtî xwe bidim nasîn?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy mogę się krótko przedstawić?"
+            },
+            {
+              "language": "ro",
+              "text": "Pot să mă prezint pe scurt?"
+            },
+            {
+              "language": "sq",
+              "text": "A mund të prezantohem shkurt?"
+            }
+          ],
+          "usageNote": "Useful at professional events."
+        },
+        {
+          "baseText": "Mich interessiert besonders, wie Sie dieses Thema einschätzen.",
+          "function": "follow-up-question",
+          "register": "formal",
+          "sortOrder": 2,
+          "translations": [
+            {
+              "language": "en",
+              "text": "I am especially interested in how you assess this topic."
+            },
+            {
+              "language": "fa",
+              "text": "برایم جالب است که شما این موضوع را چطور ارزیابی می‌کنید."
+            },
+            {
+              "language": "ar",
+              "text": "يهمني بشكل خاص كيف تقيّمون هذا الموضوع."
+            },
+            {
+              "language": "tr",
+              "text": "Bu konuyu nasıl değerlendirdiğiniz özellikle ilgimi çekiyor."
+            },
+            {
+              "language": "ru",
+              "text": "Мне особенно интересно, как вы оцениваете эту тему."
+            },
+            {
+              "language": "ckb",
+              "text": "بەتایبەتی گرنگە بۆم بزانم ئێوە ئەم بابەتە چۆن هەڵدەسەنگێنن."
+            },
+            {
+              "language": "kmr",
+              "text": "Bi taybetî meraq dikim hûn vê mijarê çawa dinirxînin."
+            },
+            {
+              "language": "pl",
+              "text": "Szczególnie interesuje mnie, jak ocenia Pan/Pani ten temat."
+            },
+            {
+              "language": "ro",
+              "text": "Mă interesează în special cum evaluați această temă."
+            },
+            {
+              "language": "sq",
+              "text": "Më intereson veçanërisht si e vlerësoni këtë temë."
+            }
+          ],
+          "usageNote": "Formal way to invite an expert view."
+        },
+        {
+          "baseText": "Das ist ein wichtiger Hinweis; daran würde ich gern anknüpfen.",
+          "function": "transition",
+          "register": "formal",
+          "sortOrder": 3,
+          "translations": [
+            {
+              "language": "en",
+              "text": "That is an important point; I would like to build on it."
+            },
+            {
+              "language": "fa",
+              "text": "این نکته مهمی است؛ مایلم به آن وصل شوم."
+            },
+            {
+              "language": "ar",
+              "text": "هذه ملاحظة مهمة؛ أود أن أبني عليها."
+            },
+            {
+              "language": "tr",
+              "text": "Bu önemli bir nokta; buna bağlanmak isterim."
+            },
+            {
+              "language": "ru",
+              "text": "Это важное замечание; я хотел бы развить его."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەمە خاڵێکی گرنگە؛ دەمەوێت لەسەری درێژە بدەم."
+            },
+            {
+              "language": "kmr",
+              "text": "Ev nîşanek girîng e; ez dixwazim li ser wê bidomînim."
+            },
+            {
+              "language": "pl",
+              "text": "To ważna uwaga; chciałbym/chciałabym do niej nawiązać."
+            },
+            {
+              "language": "ro",
+              "text": "Acesta este un punct important; aș dori să continui de aici."
+            },
+            {
+              "language": "sq",
+              "text": "Kjo është një vërejtje e rëndësishme; do të doja ta vazhdoja."
+            }
+          ],
+          "usageNote": "Use to connect your response to the other speaker."
+        },
+        {
+          "baseText": "Wäre es möglich, den Austausch per E-Mail fortzusetzen?",
+          "function": "next-step",
+          "register": "formal",
+          "sortOrder": 4,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Would it be possible to continue the exchange by email?"
+            },
+            {
+              "language": "fa",
+              "text": "ممکن است این تبادل را از طریق ایمیل ادامه دهیم؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل من الممكن متابعة التواصل عبر البريد الإلكتروني؟"
+            },
+            {
+              "language": "tr",
+              "text": "Görüşmeyi e-posta üzerinden sürdürmek mümkün olur mu?"
+            },
+            {
+              "language": "ru",
+              "text": "Можно было бы продолжить обмен по электронной почте?"
+            },
+            {
+              "language": "ckb",
+              "text": "ئایا دەکرێت ئاڵوگۆڕەکە بە ئیمەیڵ بەردەوام بکەین؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Gelo mimkun e em danûstandinê bi e-nameyê bidomînin?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy byłoby możliwe kontynuowanie wymiany mailowo?"
+            },
+            {
+              "language": "ro",
+              "text": "Ar fi posibil să continuăm schimbul prin e-mail?"
+            },
+            {
+              "language": "sq",
+              "text": "A do të ishte e mundur ta vazhdojmë shkëmbimin me email?"
+            }
+          ],
+          "usageNote": "Polite follow-up request."
+        },
+        {
+          "baseText": "Vielen Dank für das anregende Gespräch.",
+          "function": "closing",
+          "register": "formal",
+          "sortOrder": 5,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you for the stimulating conversation."
+            },
+            {
+              "language": "fa",
+              "text": "از گفتگوی پربار ممنونم."
+            },
+            {
+              "language": "ar",
+              "text": "شكراً على الحديث المثري."
+            },
+            {
+              "language": "tr",
+              "text": "Ufuk açıcı sohbet için teşekkür ederim."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо за содержательный разговор."
+            },
+            {
+              "language": "ckb",
+              "text": "سوپاس بۆ گفتوگۆیەکی بیرورووژێنەر."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas ji bo axaftineke balkêş."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję za inspirującą rozmowę."
+            },
+            {
+              "language": "ro",
+              "text": "Vă mulțumesc pentru conversația stimulatoare."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit për bisedën nxitëse."
+            }
+          ],
+          "usageNote": "Professional closing."
+        }
+      ]
+    },
+    {
+      "slug": "c2-nuanced-debate-starters",
+      "title": "Nuanced Debate Starters",
+      "description": "Precise phrases for advanced discussion, qualification, and synthesis.",
+      "cefrLevel": "C2",
+      "category": "advanced-debate",
+      "situation": "seminar",
+      "tone": "formal",
+      "conversationGoal": "continuing-conversation",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 60,
+      "linkedDialogueSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Ich würde die Frage zunächst etwas eingrenzen.",
+          "function": "transition",
+          "register": "formal",
+          "sortOrder": 1,
+          "translations": [
+            {
+              "language": "en",
+              "text": "I would first narrow the question somewhat."
+            },
+            {
+              "language": "fa",
+              "text": "ابتدا سؤال را کمی محدودتر می‌کنم."
+            },
+            {
+              "language": "ar",
+              "text": "سأحاول أولاً تضييق نطاق السؤال قليلاً."
+            },
+            {
+              "language": "tr",
+              "text": "Önce soruyu biraz daraltmak isterim."
+            },
+            {
+              "language": "ru",
+              "text": "Сначала я бы немного сузил вопрос."
+            },
+            {
+              "language": "ckb",
+              "text": "سەرەتا پرسیارەکە کەمێک دیاریتر دەکەم."
+            },
+            {
+              "language": "kmr",
+              "text": "Pêşî ez ê pirsê hinek teng bikim."
+            },
+            {
+              "language": "pl",
+              "text": "Najpierw nieco zawęziłbym/zawęziłabym pytanie."
+            },
+            {
+              "language": "ro",
+              "text": "Mai întâi aș restrânge puțin întrebarea."
+            },
+            {
+              "language": "sq",
+              "text": "Së pari do ta ngushtoja pak pyetjen."
+            }
+          ],
+          "usageNote": "Use before a precise answer."
+        },
+        {
+          "baseText": "Unter bestimmten Bedingungen halte ich das für plausibel.",
+          "function": "reaction",
+          "register": "formal",
+          "sortOrder": 2,
+          "translations": [
+            {
+              "language": "en",
+              "text": "Under certain conditions, I consider that plausible."
+            },
+            {
+              "language": "fa",
+              "text": "در شرایط مشخصی، این را قابل قبول می‌دانم."
+            },
+            {
+              "language": "ar",
+              "text": "في ظروف معينة أرى ذلك مقنعاً."
+            },
+            {
+              "language": "tr",
+              "text": "Belirli koşullarda bunu makul buluyorum."
+            },
+            {
+              "language": "ru",
+              "text": "При определённых условиях я считаю это правдоподобным."
+            },
+            {
+              "language": "ckb",
+              "text": "لە هەندێک مەرجدا، ئەمە بە گونجاو دەزانم."
+            },
+            {
+              "language": "kmr",
+              "text": "Di hin mercan de ez vê maqûl dibînim."
+            },
+            {
+              "language": "pl",
+              "text": "W pewnych warunkach uważam to za wiarygodne."
+            },
+            {
+              "language": "ro",
+              "text": "În anumite condiții, consider acest lucru plauzibil."
+            },
+            {
+              "language": "sq",
+              "text": "Në kushte të caktuara, e konsideroj të besueshme."
+            }
+          ],
+          "usageNote": "For careful agreement."
+        },
+        {
+          "baseText": "Gleichzeitig sollte man die Gegenposition ernst nehmen.",
+          "function": "partial-agreement",
+          "register": "formal",
+          "sortOrder": 3,
+          "translations": [
+            {
+              "language": "en",
+              "text": "At the same time, one should take the opposing position seriously."
+            },
+            {
+              "language": "fa",
+              "text": "هم‌زمان باید دیدگاه مقابل را جدی گرفت."
+            },
+            {
+              "language": "ar",
+              "text": "في الوقت نفسه ينبغي أخذ الموقف المقابل بجدية."
+            },
+            {
+              "language": "tr",
+              "text": "Aynı zamanda karşı görüşü ciddiye almak gerekir."
+            },
+            {
+              "language": "ru",
+              "text": "В то же время нужно серьёзно отнестись к противоположной позиции."
+            },
+            {
+              "language": "ckb",
+              "text": "لە هەمان کاتدا پێویستە بۆچوونی بەرامبەر بە جدی وەربگیرێت."
+            },
+            {
+              "language": "kmr",
+              "text": "Di heman demê de divê helwesta dijber bi cidiyet were girtin."
+            },
+            {
+              "language": "pl",
+              "text": "Jednocześnie należy poważnie potraktować stanowisko przeciwne."
+            },
+            {
+              "language": "ro",
+              "text": "În același timp, poziția opusă trebuie luată în serios."
+            },
+            {
+              "language": "sq",
+              "text": "Njëkohësisht duhet marrë seriozisht pozicioni i kundërt."
+            }
+          ],
+          "usageNote": "Signals balanced reasoning."
+        },
+        {
+          "baseText": "Der entscheidende Punkt scheint mir zu sein, dass ...",
+          "function": "transition",
+          "register": "formal",
+          "sortOrder": 4,
+          "translations": [
+            {
+              "language": "en",
+              "text": "The decisive point seems to me to be that ..."
+            },
+            {
+              "language": "fa",
+              "text": "به نظر من نکته تعیین‌کننده این است که ..."
+            },
+            {
+              "language": "ar",
+              "text": "تبدو لي النقطة الحاسمة هي أن ..."
+            },
+            {
+              "language": "tr",
+              "text": "Bana göre belirleyici nokta şu ki ..."
+            },
+            {
+              "language": "ru",
+              "text": "Ключевой момент, на мой взгляд, состоит в том, что ..."
+            },
+            {
+              "language": "ckb",
+              "text": "خاڵی بڕیاردهەر بە بۆچوونی من ئەوەیە کە ..."
+            },
+            {
+              "language": "kmr",
+              "text": "Xala biryarder li gorî min ev e ku ..."
+            },
+            {
+              "language": "pl",
+              "text": "Decydujący punkt wydaje mi się taki, że ..."
+            },
+            {
+              "language": "ro",
+              "text": "Punctul decisiv mi se pare a fi că ..."
+            },
+            {
+              "language": "sq",
+              "text": "Pika vendimtare më duket se është që ..."
+            }
+          ],
+          "usageNote": "Use before a thesis."
+        },
+        {
+          "baseText": "Damit komme ich zu einer vorsichtigen Schlussfolgerung.",
+          "function": "closing",
+          "register": "formal",
+          "sortOrder": 5,
+          "translations": [
+            {
+              "language": "en",
+              "text": "With that, I arrive at a cautious conclusion."
+            },
+            {
+              "language": "fa",
+              "text": "با این حساب به یک نتیجه‌گیری محتاطانه می‌رسم."
+            },
+            {
+              "language": "ar",
+              "text": "وبذلك أصل إلى استنتاج حذر."
+            },
+            {
+              "language": "tr",
+              "text": "Böylece temkinli bir sonuca varıyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Таким образом, я прихожу к осторожному выводу."
+            },
+            {
+              "language": "ckb",
+              "text": "بەمە دەگەمە دەرئەنجامێکی وریایانە."
+            },
+            {
+              "language": "kmr",
+              "text": "Bi vê yekê ez digihîjim encameke hişyarane."
+            },
+            {
+              "language": "pl",
+              "text": "W ten sposób dochodzę do ostrożnego wniosku."
+            },
+            {
+              "language": "ro",
+              "text": "Astfel ajung la o concluzie prudentă."
+            },
+            {
+              "language": "sq",
+              "text": "Kështu arrij në një përfundim të kujdesshëm."
+            }
+          ],
+          "usageNote": "Good for ending an advanced answer."
+        }
+      ]
+    }
+  ],
+  "eventPreparationPacks": [
+    {
+      "slug": "a1-language-cafe-first-visit",
+      "title": "First Language Cafe Visit",
+      "description": "Prepare for a first friendly language cafe visit with simple introductions.",
+      "cefrLevel": "A1",
+      "category": "conversation-cafe",
+      "eventType": "conversation-cafe",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 10,
+      "linkedDialogueSlugs": [
+        "a1-cafe-order",
+        "a1-ask-for-directions"
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "a1-first-meeting-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Hallo",
+          "cefrLevel": "A1"
+        },
+        {
+          "word": "Name",
+          "cefrLevel": "A1"
+        },
+        {
+          "word": "Frage",
+          "cefrLevel": "A1"
+        },
+        {
+          "word": "Hilfe",
+          "cefrLevel": "A1"
+        }
+      ],
+      "openingPrompts": [
+        "Hallo, ich heiße ...",
+        "Ich lerne Deutsch.",
+        "Können Sie das bitte wiederholen?"
+      ],
+      "roleplayPrompts": [
+        "Stellen Sie sich vor und fragen Sie eine Person nach dem Namen.",
+        "Bestellen Sie ein Getränk und bedanken Sie sich."
+      ],
+      "reviewPrompts": [
+        "Welche Frage hat gut funktioniert?",
+        "Welches Wort möchten Sie noch üben?"
+      ]
+    },
+    {
+      "slug": "a2-doctor-appointment-prep",
+      "title": "Doctor Appointment Prep",
+      "description": "Prepare for making or confirming a simple doctor appointment.",
+      "cefrLevel": "A2",
+      "category": "healthcare",
+      "eventType": "doctor-appointment",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 20,
+      "linkedDialogueSlugs": [
+        "a2-doctor-appointment"
+      ],
+      "linkedConversationStarterPackSlugs": [
+        "a2-everyday-follow-up-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Termin",
+          "cefrLevel": "A2"
+        },
+        {
+          "word": "Arzt",
+          "cefrLevel": "A2"
+        },
+        {
+          "word": "Schmerzen",
+          "cefrLevel": "A2"
+        },
+        {
+          "word": "Krankenkasse",
+          "cefrLevel": "A2"
+        }
+      ],
+      "openingPrompts": [
+        "Ich möchte einen Termin vereinbaren.",
+        "Ich habe seit gestern Schmerzen.",
+        "Welche Unterlagen soll ich mitbringen?"
+      ],
+      "roleplayPrompts": [
+        "Rufen Sie in der Praxis an und vereinbaren Sie einen Termin.",
+        "Erklären Sie kurz ein einfaches Symptom."
+      ],
+      "reviewPrompts": [
+        "Konnte ich den Grund klar sagen?",
+        "Habe ich den Termin wiederholt?"
+      ]
+    },
+    {
+      "slug": "b1-landlord-meeting-prep",
+      "title": "Landlord Meeting Prep",
+      "description": "Prepare for a practical conversation with a landlord about an apartment problem.",
+      "cefrLevel": "B1",
+      "category": "housing",
+      "eventType": "landlord-meeting",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 30,
+      "linkedDialogueSlugs": [],
+      "linkedConversationStarterPackSlugs": [
+        "b1-practical-appointment-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Wohnung",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Vermieter",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Heizung",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Reparatur",
+          "cefrLevel": "B1"
+        }
+      ],
+      "openingPrompts": [
+        "Leider gibt es ein Problem mit der Heizung.",
+        "Seit gestern funktioniert sie nicht richtig.",
+        "Könnten Sie bitte einen Termin für die Reparatur nennen?"
+      ],
+      "roleplayPrompts": [
+        "Beschreiben Sie ein Wohnungsproblem sachlich.",
+        "Bitten Sie höflich um eine Lösung und einen Termin."
+      ],
+      "reviewPrompts": [
+        "War die Beschwerde höflich?",
+        "Habe ich Datum und Problem genannt?"
+      ]
+    },
+    {
+      "slug": "b1-school-kindergarten-meeting-prep",
+      "title": "School Or Kindergarten Meeting Prep",
+      "description": "Prepare for a meeting about a child, documents, or a school appointment.",
+      "cefrLevel": "B1",
+      "category": "school-kindergarten",
+      "eventType": "parent-meeting",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 40,
+      "linkedDialogueSlugs": [],
+      "linkedConversationStarterPackSlugs": [
+        "b1-practical-appointment-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Schule",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Kindergarten",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Termin",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Unterlagen",
+          "cefrLevel": "B1"
+        }
+      ],
+      "openingPrompts": [
+        "Ich habe eine Frage zum Termin.",
+        "Welche Unterlagen fehlen noch?",
+        "Falls etwas fehlt, reiche ich es nach."
+      ],
+      "roleplayPrompts": [
+        "Fragen Sie nach fehlenden Unterlagen.",
+        "Klären Sie einen Termin mit der Schule oder dem Kindergarten."
+      ],
+      "reviewPrompts": [
+        "Habe ich Sie/Ihnen richtig benutzt?",
+        "Habe ich eine klare nächste Handlung vereinbart?"
+      ]
+    },
+    {
+      "slug": "b1-public-office-appointment-prep",
+      "title": "Public Office Appointment Prep",
+      "description": "Prepare for a formal appointment at a public office.",
+      "cefrLevel": "B1",
+      "category": "public-office",
+      "eventType": "public-office-appointment",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 50,
+      "linkedDialogueSlugs": [],
+      "linkedConversationStarterPackSlugs": [
+        "b1-practical-appointment-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Behörde",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Termin",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Ausweis",
+          "cefrLevel": "B1"
+        },
+        {
+          "word": "Formular",
+          "cefrLevel": "B1"
+        }
+      ],
+      "openingPrompts": [
+        "Ich möchte kurz klären, ob der Termin noch passt.",
+        "Könnten Sie mir bitte sagen, welche Unterlagen fehlen?",
+        "Vielen Dank, dann weiß ich Bescheid."
+      ],
+      "roleplayPrompts": [
+        "Rufen Sie bei einer Behörde an und fragen Sie nach Unterlagen.",
+        "Bitten Sie um eine kurze Bestätigung des Termins."
+      ],
+      "reviewPrompts": [
+        "Habe ich indirekte Fragen korrekt benutzt?",
+        "War mein Ton formal genug?"
+      ]
+    },
+    {
+      "slug": "b2-job-interview-prep",
+      "title": "Job Interview Prep",
+      "description": "Prepare for a structured job interview with clear answers and follow-up questions.",
+      "cefrLevel": "B2",
+      "category": "job-interview",
+      "eventType": "job-interview",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 60,
+      "linkedDialogueSlugs": [],
+      "linkedConversationStarterPackSlugs": [
+        "b2-workplace-discussion-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Bewerbung",
+          "cefrLevel": "B2"
+        },
+        {
+          "word": "Erfahrung",
+          "cefrLevel": "B2"
+        },
+        {
+          "word": "Stärke",
+          "cefrLevel": "B2"
+        },
+        {
+          "word": "Team",
+          "cefrLevel": "B2"
+        }
+      ],
+      "openingPrompts": [
+        "Ich würde gern kurz meine Erfahrung beschreiben.",
+        "Aus meiner Sicht passt diese Stelle gut zu meinem Profil.",
+        "Darf ich dazu noch eine Frage stellen?"
+      ],
+      "roleplayPrompts": [
+        "Beschreiben Sie eine berufliche Erfahrung mit einem konkreten Beispiel.",
+        "Stellen Sie am Ende eine passende Rückfrage."
+      ],
+      "reviewPrompts": [
+        "War mein Beispiel konkret?",
+        "Habe ich zu direkt oder zu lang geantwortet?"
+      ]
+    },
+    {
+      "slug": "b2-workplace-negotiation-prep",
+      "title": "Workplace Negotiation Prep",
+      "description": "Prepare for discussing schedules, workload, or responsibilities at work.",
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "eventType": "workshop",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 70,
+      "linkedDialogueSlugs": [],
+      "linkedConversationStarterPackSlugs": [
+        "b2-workplace-discussion-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Lösung",
+          "cefrLevel": "B2"
+        },
+        {
+          "word": "Vorteil",
+          "cefrLevel": "B2"
+        },
+        {
+          "word": "Nachteil",
+          "cefrLevel": "B2"
+        },
+        {
+          "word": "Aufgabe",
+          "cefrLevel": "B2"
+        }
+      ],
+      "openingPrompts": [
+        "Aus meiner Sicht ist diese Lösung praktisch.",
+        "Ich verstehe Ihren Punkt, aber ich sehe eine Schwierigkeit.",
+        "Der nächste Schritt wäre also ..."
+      ],
+      "roleplayPrompts": [
+        "Diskutieren Sie eine Arbeitsaufgabe und schlagen Sie eine Lösung vor.",
+        "Reagieren Sie höflich auf einen Einwand."
+      ],
+      "reviewPrompts": [
+        "Habe ich Vor- und Nachteile genannt?",
+        "Gab es am Ende einen klaren nächsten Schritt?"
+      ]
+    },
+    {
+      "slug": "c1-professional-networking-prep",
+      "title": "Professional Networking Prep",
+      "description": "Prepare for formal networking, expert exchange, and written follow-up.",
+      "cefrLevel": "C1",
+      "category": "networking",
+      "eventType": "work-event",
+      "topics": [
+        "everyday-life"
+      ],
+      "sortOrder": 80,
+      "linkedDialogueSlugs": [],
+      "linkedConversationStarterPackSlugs": [
+        "c1-formal-networking-starters"
+      ],
+      "linkedVocabulary": [
+        {
+          "word": "Austausch",
+          "cefrLevel": "C1"
+        },
+        {
+          "word": "Kontakt",
+          "cefrLevel": "C1"
+        },
+        {
+          "word": "Thema",
+          "cefrLevel": "C1"
+        },
+        {
+          "word": "E-Mail",
+          "cefrLevel": "C1"
+        }
+      ],
+      "openingPrompts": [
+        "Darf ich mich kurz vorstellen?",
+        "Mich interessiert besonders, wie Sie dieses Thema einschätzen.",
+        "Wäre es möglich, den Austausch per E-Mail fortzusetzen?"
+      ],
+      "roleplayPrompts": [
+        "Stellen Sie sich auf einer Fachveranstaltung kurz vor.",
+        "Bitten Sie höflich um weiteren Kontakt per E-Mail."
+      ],
+      "reviewPrompts": [
+        "Habe ich die andere Person aktiv einbezogen?",
+        "War der Follow-up-Wunsch höflich formuliert?"
+      ]
+    }
+  ]
+}

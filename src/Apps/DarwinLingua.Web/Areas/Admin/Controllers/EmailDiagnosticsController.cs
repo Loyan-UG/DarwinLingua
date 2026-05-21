@@ -354,6 +354,7 @@ public sealed class EmailDiagnosticsController(
         string.Equals(providerEvent, "request", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "sent", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "delivered", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "deferred", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "soft_bounce", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "hard_bounce", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "blocked", StringComparison.OrdinalIgnoreCase) ||
@@ -361,6 +362,7 @@ public sealed class EmailDiagnosticsController(
         string.Equals(providerEvent, "invalid_email", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "error", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "complaint", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "opened", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "unique_opened", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "click", StringComparison.OrdinalIgnoreCase) ||
@@ -371,7 +373,8 @@ public sealed class EmailDiagnosticsController(
         string.Equals(suppressionReason, "brevo:blocked", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(suppressionReason, "brevo:invalid", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(suppressionReason, "brevo:invalid_email", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(suppressionReason, "brevo:spam", StringComparison.OrdinalIgnoreCase);
+        string.Equals(suppressionReason, "brevo:spam", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(suppressionReason, "brevo:complaint", StringComparison.OrdinalIgnoreCase);
 
     private static string? TrimToNull(string? value, int maxLength)
     {

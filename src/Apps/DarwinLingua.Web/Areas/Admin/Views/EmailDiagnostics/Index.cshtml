@@ -120,7 +120,7 @@
             <strong>@(Model.SuppressionSummary.LastCreatedAtUtc?.UtcDateTime.ToString("u") ?? T["None"])</strong>
         </article>
     </div>
-    <p class="body-sm">@T["Permanent Brevo events such as hard bounce, blocked, invalid email, and spam add a hashed recipient to the internal suppression list. Raw recipient email addresses are not stored here."]</p>
+    <p class="body-sm">@T["Permanent Brevo events such as hard bounce, blocked, invalid email, spam, and complaint add a hashed recipient to the internal suppression list. Raw recipient email addresses are not stored here."]</p>
     @if (!string.IsNullOrWhiteSpace(Model.SuppressionSummary.LastReason))
     {
         <p class="body-sm">@T["Last reason"]: @Model.SuppressionSummary.LastReason</p>
@@ -134,7 +134,7 @@
             @T["Suppression reason"]
             <select name="suppressionReason">
                 <option value="">@T["All"]</option>
-                @foreach (string reason in new[] { "brevo:hard_bounce", "brevo:blocked", "brevo:invalid", "brevo:invalid_email", "brevo:spam" })
+                @foreach (string reason in new[] { "brevo:hard_bounce", "brevo:blocked", "brevo:invalid", "brevo:invalid_email", "brevo:spam", "brevo:complaint" })
                 {
                     <option value="@reason" selected="@(string.Equals(Model.SuppressionReason, reason, StringComparison.OrdinalIgnoreCase))">@reason</option>
                 }

@@ -53,6 +53,18 @@ The public product must not be released without at least:
 - rate limiting for email-triggering endpoints
 - tests for token generation, token validation, expired tokens, invalid tokens, and successful account recovery
 
+## Current Implementation Snapshot
+
+The web app now has a production-provider path for transactional email:
+
+- `TransactionalEmail:Mode=BrevoApi` sends through Brevo's transactional API.
+- Brevo sandbox mode sends the `X-Sib-Sandbox: drop` request header and payload header so staging tests can avoid real delivery.
+- Delivery logs store provider message ids and webhook events for diagnostics.
+- Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
+- Admin email diagnostics can inspect delivery logs, manual provider events, and suppressions.
+
+Operational work still required before production launch: configure a real Brevo API key and webhook secret outside source control, verify the sender domain, set SPF/DKIM/DMARC, configure the Brevo transactional webhook URL, and review the provider DPA.
+
 ---
 
 ## Status Tracking Rule
@@ -179,6 +191,15 @@ The first implementation should support one production provider and one local de
 
 The implementation must not hard-code provider-specific logic into controllers, Razor pages, handlers, or domain entities.
 
+Current implementation notes:
+
+- [x] Brevo API mode posts transactional messages to `/v3/smtp/email`.
+- [x] Brevo API authentication uses the `api-key` header.
+- [x] Brevo sandbox mode sends `X-Sib-Sandbox: drop`.
+- [x] Brevo webhook events update delivery logs.
+- [x] Permanent Brevo events create internal recipient suppressions.
+- [x] Brevo API failure responses are summarized from provider `code` and `message` fields when available.
+
 ---
 
 ## 4. Domain and Persistence Requirements
@@ -222,6 +243,7 @@ Suggested fields:
 - [x] define Admin-only cleanup job or manual cleanup endpoint for old logs
 - [x] add admin diagnostics page for recent email delivery status
 - [x] define internal suppression behavior for permanent provider failures
+- [x] handle Brevo complaint events as permanent suppressions
 
 ---
 
@@ -419,7 +441,10 @@ For the first release, use web-hosted confirmation and password-reset pages from
 - [ ] email message factory creates expected scenario keys
 - [ ] template renderer returns localized English and German output
 - [ ] missing template or missing localization fails safely
-- [ ] provider options validation catches missing production settings
+- [x] provider options validation catches missing production settings
+- [x] Brevo API sender posts the expected payload, API key header, and sandbox header
+- [x] Brevo API sender returns useful provider error summaries
+- [x] Brevo complaint events mark delivery failed and suppress the recipient
 
 ### Integration Tests
 
