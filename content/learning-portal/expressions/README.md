@@ -12,6 +12,12 @@ Current official small batches:
 - `expressions-a2-core-v1.json`
 - `expressions-b1-core-v1.json`
 - `expressions-b2-core-v1.json`
+- `expressions-b2-core-02-v1.json`
+- `expressions-b2-core-03-v1.json`
+- `expressions-c1-core-v1.json`
+- `expressions-c1-core-02-v1.json`
+- `expressions-c2-core-v1.json`
+- `expressions-c2-core-02-v1.json`
 
 Before creating or regenerating Expressions content, review:
 
@@ -34,9 +40,17 @@ Validation:
 
 ```powershell
 node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a1-a2-core-01-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a1-core-v1.json
 node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a2-core-v1.json
 node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-b1-core-v1.json
 node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-b2-core-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-b2-core-02-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-b2-core-03-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-c1-core-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-c1-core-02-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-c2-core-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-c2-core-02-v1.json
 node tools/Content/Audit-ExpressionContentQuality.js
 dotnet test tests/Modules/ContentOps/DarwinLingua.ContentOps.Infrastructure.Tests/DarwinLingua.ContentOps.Infrastructure.Tests.csproj
 dotnet test tests/Modules/ContentOps/DarwinLingua.ContentOps.Application.Tests/DarwinLingua.ContentOps.Application.Tests.csproj

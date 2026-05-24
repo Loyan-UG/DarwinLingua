@@ -211,6 +211,13 @@ When a content-quality problem is found, add a short note here with:
 - Why it happened: The Expression contract did not distinguish ordinary literal sentences from idioms, pragmatic formulas, non-literal expressions, cultural phrases, and false friends.
 - Prevention rule: Every new Expression entry needs an eligibility classification. Reject published `ordinary-literal`, require literal versus actual meaning for `non-literal` and `semi-idiomatic`, require a `teachingReason`, require at least two contextual German examples for classified official content, and run `node tools/Content/Audit-ExpressionContentQuality.js` before accepting another batch. The gate must report zero issues before any next small Expressions batch is generated.
 
+### 2026-05-24: Expression examples must not use generic meaning-only translations
+
+- What failed: A generated B2 Expressions batch initially used structurally valid but too-generic example translations and repeated usage text. The package passed structural validation, but the learner-facing examples did not explain the German sentence context well enough.
+- Where it appeared: `expressions-b2-core-03-v1.json` during pre-final smoke review of the Persian detail API projection.
+- Why it happened: The generator treated localized example translations as reusable meaning labels instead of contextual learner-facing translations. The quality gate caught missing fields and English fallback, but not this softer pedagogical issue.
+- Prevention rule: For future Expressions batches, review at least two detail API samples in a non-English learner language before final import sign-off. Example translations must either translate the German sentence context naturally or explicitly state that they explain the idiomatic use in that example. Repeated usage text should be varied by context, category, and tone.
+
 ### 2026-05-24: Adult-language learning content needs access state, not a checkbox-only shortcut
 
 - What failed: Expressions planning initially treated `+18` as a simple profile flag, which is not enough for explicit adult or pornographic content in Germany.
