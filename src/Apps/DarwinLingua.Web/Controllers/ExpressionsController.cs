@@ -28,6 +28,8 @@ public sealed class ExpressionsController(
         string? q,
         CancellationToken cancellationToken)
     {
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+
         ExpressionListFilterModel filter = new(
             LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel),
             WebRouteInput.NormalizeSlug(expressionType ?? string.Empty),
@@ -35,7 +37,8 @@ public sealed class ExpressionsController(
             WebRouteInput.NormalizeSlug(category ?? string.Empty),
             WebRouteInput.NormalizeSlug(topic ?? string.Empty),
             includeRisky ? null : false,
-            string.IsNullOrWhiteSpace(q) ? null : q.Trim());
+            string.IsNullOrWhiteSpace(q) ? null : q.Trim(),
+            profile.PreferredMeaningLanguage1);
 
         IReadOnlyList<ExpressionListItemModel> expressions;
         try
@@ -44,7 +47,7 @@ public sealed class ExpressionsController(
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             expressions = await catalogApiClient.GetExpressionsAsync(filter, catalogTimeout.Token).ConfigureAwait(false);
         }
-        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && IsCatalogApiFailure(ex))
         {
             logger.LogWarning(ex, "Expressions could not be loaded.");
             expressions = [];
@@ -87,7 +90,7 @@ public sealed class ExpressionsController(
                 .GetExpressionBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
-        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested && IsCatalogApiFailure(ex))
         {
             logger.LogWarning(ex, "Expression detail could not be loaded for {Slug}.", normalizedSlug);
             Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
@@ -108,5 +111,7 @@ public sealed class ExpressionsController(
 
         return View(new ExpressionDetailPageViewModel(expression, profile.PreferredMeaningLanguage1));
     }
-}
 
+    private static bool IsCatalogApiFailure(Exception exception) =>
+        exception is HttpRequestException or OperationCanceledException or InvalidOperationException;
+}

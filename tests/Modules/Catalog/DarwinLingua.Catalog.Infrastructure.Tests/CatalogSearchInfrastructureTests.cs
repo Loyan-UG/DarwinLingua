@@ -155,9 +155,150 @@ public sealed class CatalogSearchInfrastructureTests
         }
     }
 
+    [Fact]
+    public async Task GetPublishedExpressionsAsync_ShouldUseRequestedMeaningLanguageAndFilters()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-expression-list-{Guid.NewGuid():N}.db");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+            await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                DateTime nowUtc = DateTime.UtcNow;
+                Topic topic = CreateTopic("shopping-and-services", nowUtc);
+                ExpressionEntry expression = CreateExpression("ich-haette-gern", "Ich hätte gern ...", "I would like ...", "من ... می‌خواهم.", nowUtc);
+                expression.AddTopic(Guid.NewGuid(), topic.Id, true, nowUtc);
+
+                dbContext.Topics.Add(topic);
+                dbContext.ExpressionEntries.Add(expression);
+                await dbContext.SaveChangesAsync(CancellationToken.None);
+            }
+
+            IExpressionRepository repository = serviceProvider.GetRequiredService<IExpressionRepository>();
+            IReadOnlyList<ExpressionListItemModel> expressions = await repository.GetPublishedExpressionsAsync(
+                new ExpressionListFilterModel("A2", "polite-formula", "polite", "shopping-and-service", "shopping-and-services", false, "gern", "fa"),
+                CancellationToken.None);
+
+            ExpressionListItemModel item = Assert.Single(expressions);
+            Assert.Equal("ich-haette-gern", item.Slug);
+            Assert.Equal("من ... می‌خواهم.", item.ActualMeaning);
+            Assert.Contains("shopping-and-services", item.TopicKeys);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            TryDeleteFile(databasePath);
+        }
+    }
+
+    [Fact]
+    public async Task GetPublishedExpressionBySlugAsync_ShouldProjectWarningsAndLinksSafely()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-expression-detail-{Guid.NewGuid():N}.db");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+            await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                DateTime nowUtc = DateTime.UtcNow;
+                ExpressionEntry expression = CreateExpression("na-ja", "Na ja.", "Well, not completely.", "خب، کاملاً نه.", nowUtc, isRisky: true);
+                ExpressionExample example = expression.AddExample(Guid.NewGuid(), 10, "Na ja, die Wohnung ist sehr klein.", null, nowUtc);
+                example.AddTranslation(Guid.NewGuid(), LanguageCode.From("fa"), "خب، خانه خیلی کوچک است.", nowUtc);
+                ExpressionWarning warning = expression.AddWarning(Guid.NewGuid(), "tone", "Use carefully.", nowUtc);
+                warning.AddTranslation(Guid.NewGuid(), LanguageCode.From("fa"), "با دقت استفاده کن.", nowUtc);
+                expression.AddLinkedWord(Guid.NewGuid(), "die Wohnung", null, 10, nowUtc);
+                expression.AddRelatedExpression(Guid.NewGuid(), "alles-klar", 10, nowUtc);
+                expression.AddLinkedExercise(Guid.NewGuid(), "a2-expression-tone-practice", 10, nowUtc);
+
+                dbContext.ExpressionEntries.Add(expression);
+                await dbContext.SaveChangesAsync(CancellationToken.None);
+            }
+
+            IExpressionRepository repository = serviceProvider.GetRequiredService<IExpressionRepository>();
+            ExpressionDetailModel? detail = await repository.GetPublishedExpressionBySlugAsync("na-ja", "fa", CancellationToken.None);
+
+            Assert.NotNull(detail);
+            Assert.Equal("خب، کاملاً نه.", detail.ActualMeaning);
+            Assert.Equal("با دقت استفاده کن.", Assert.Single(detail.Warnings).Text);
+            Assert.Equal("خب، خانه خیلی کوچک است.", Assert.Single(detail.Examples).Translation);
+            Assert.Equal("die Wohnung", Assert.Single(detail.LinkedWords).Lemma);
+            Assert.Equal("alles-klar", Assert.Single(detail.RelatedExpressionSlugs));
+            Assert.Equal("a2-expression-tone-practice", Assert.Single(detail.LinkedExerciseSlugs));
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            TryDeleteFile(databasePath);
+        }
+    }
+
+    [Fact]
+    public async Task UnifiedLearningSearchRepository_ShouldReturnExpressionResults()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-expression-search-{Guid.NewGuid():N}.db");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+            await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                DateTime nowUtc = DateTime.UtcNow;
+                dbContext.ExpressionEntries.Add(CreateExpression("einen-moment-bitte", "Einen Moment bitte.", "Please wait briefly.", "لطفاً کمی صبر کنید.", nowUtc));
+                await dbContext.SaveChangesAsync(CancellationToken.None);
+            }
+
+            IUnifiedLearningSearchRepository repository = serviceProvider.GetRequiredService<IUnifiedLearningSearchRepository>();
+            IReadOnlyList<UnifiedLearningSearchResultModel> results = await repository.SearchAsync(
+                new UnifiedLearningSearchFilterModel("Moment", "A1", "expression", null, null),
+                CancellationToken.None);
+
+            UnifiedLearningSearchResultModel result = Assert.Single(results);
+            Assert.Equal("expression", result.ResultType);
+            Assert.Equal("Einen Moment bitte.", result.Title);
+            Assert.Equal("/expressions/einen-moment-bitte", result.Url);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            TryDeleteFile(databasePath);
+        }
+    }
+
     /// <summary>
-    /// Verifies that inactive lexical entries are not materialized through the detail repository path.
-    /// </summary>
+     /// Verifies that inactive lexical entries are not materialized through the detail repository path.
+     /// </summary>
     [Fact]
     public async Task GetByPublicIdAsync_ShouldIgnoreInactiveWordEntries()
     {
@@ -499,6 +640,44 @@ public sealed class CatalogSearchInfrastructureTests
         sense.AddTranslation(Guid.NewGuid(), LanguageCode.From("en"), translationText, true, nowUtc);
 
         return word;
+    }
+
+    private static Topic CreateTopic(string key, DateTime nowUtc)
+    {
+        Topic topic = new(Guid.NewGuid(), key, 10, true, nowUtc);
+        topic.AddOrUpdateLocalization(Guid.NewGuid(), LanguageCode.From("en"), key, nowUtc);
+        return topic;
+    }
+
+    private static ExpressionEntry CreateExpression(
+        string slug,
+        string expressionText,
+        string englishMeaning,
+        string persianMeaning,
+        DateTime nowUtc,
+        bool isRisky = false)
+    {
+        ExpressionEntry expression = new(
+            Guid.NewGuid(),
+            slug,
+            expressionText,
+            null,
+            englishMeaning,
+            "Use this expression in a specific everyday context.",
+            slug == "einen-moment-bitte" ? CefrLevel.A1 : CefrLevel.A2,
+            slug == "na-ja" ? "colloquial-phrase" : "polite-formula",
+            slug == "na-ja" ? "colloquial" : "polite",
+            slug == "ich-haette-gern" ? "shopping-and-service" : "daily-life",
+            "de",
+            isRisky,
+            PublicationStatus.Active,
+            10,
+            nowUtc);
+
+        expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("en"), englishMeaning, null, "Use it in everyday German.", nowUtc);
+        expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("fa"), persianMeaning, null, "در موقعیت روزمره آلمانی استفاده می‌شود.", nowUtc);
+
+        return expression;
     }
 
     /// <summary>

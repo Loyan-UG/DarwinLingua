@@ -455,11 +455,12 @@ app.MapGet(
         string? topicKey,
         bool? isRisky,
         string? q,
+        string? primaryMeaningLanguageCode,
         IExpressionQueryService expressionQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await expressionQueryService.GetPublishedExpressionsAsync(
-                    new ExpressionListFilterModel(cefrLevel, expressionType, register, category, topicKey, isRisky, q),
+                    new ExpressionListFilterModel(cefrLevel, expressionType, register, category, topicKey, isRisky, q, primaryMeaningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 

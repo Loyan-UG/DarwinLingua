@@ -42,6 +42,9 @@ public sealed class DatabaseInitializationUseCaseTests
             Assert.Equal(
                 0,
                 await verificationContext.Topics.CountAsync(cancellationToken: CancellationToken.None));
+            Assert.Equal(
+                0,
+                await verificationContext.ExpressionEntries.CountAsync(cancellationToken: CancellationToken.None));
         }
         finally
         {
@@ -52,6 +55,28 @@ public sealed class DatabaseInitializationUseCaseTests
 
             TryDeleteFile(databasePath);
         }
+    }
+
+    /// <summary>
+    /// Verifies that server startup retrofits Expressions tables for existing PostgreSQL databases.
+    /// </summary>
+    [Fact]
+    public void DatabaseInitializer_ShouldRetainPostgresExpressionEntryRetrofitSchema()
+    {
+        string sourcePath = Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "BuildingBlocks",
+            "DarwinLingua.Infrastructure",
+            "Persistence",
+            "DarwinLinguaDatabaseInitializer.cs");
+        string source = File.ReadAllText(sourcePath);
+
+        Assert.Contains("EnsureExpressionEntrySchemaAsync", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExpressionEntries\"", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExpressionMeanings\"", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExpressionExampleTranslations\"", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE UNIQUE INDEX IF NOT EXISTS \"IX_ExpressionEntries_Slug\"", source, StringComparison.Ordinal);
     }
 
     /// <summary>
@@ -160,6 +185,29 @@ public sealed class DatabaseInitializationUseCaseTests
             .AddLocalizationInfrastructure();
 
         return services.BuildServiceProvider();
+    }
+
+    /// <summary>
+    /// Finds the repository root without depending on the test output path.
+    /// </summary>
+    private static string FindRepositoryRoot()
+    {
+        foreach (string startPath in new[] { AppContext.BaseDirectory, Directory.GetCurrentDirectory() })
+        {
+            DirectoryInfo? directory = new(startPath);
+
+            while (directory is not null)
+            {
+                if (File.Exists(Path.Combine(directory.FullName, "DarwinLingua.slnx")))
+                {
+                    return directory.FullName;
+                }
+
+                directory = directory.Parent;
+            }
+        }
+
+        throw new DirectoryNotFoundException("Could not find the DarwinLingua repository root.");
     }
 
     /// <summary>

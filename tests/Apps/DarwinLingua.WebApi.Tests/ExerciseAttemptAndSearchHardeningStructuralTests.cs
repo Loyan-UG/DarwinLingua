@@ -62,13 +62,46 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
     }
 
     private static string GetProgramPath() =>
-        Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", "src", "Apps", "DarwinLingua.WebApi", "Program.cs"));
+        Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.WebApi", "Program.cs");
 
     private static string GetSearchIndexMigrationPath() =>
-        Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", "src", "BuildingBlocks", "DarwinLingua.Infrastructure", "Persistence", "Migrations", "20260512143000_AddUnifiedLearningSearchIndexes.cs"));
+        Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "BuildingBlocks",
+            "DarwinLingua.Infrastructure",
+            "Persistence",
+            "Migrations",
+            "20260512143000_AddUnifiedLearningSearchIndexes.cs");
 
     private static string GetDatabaseInitializerPath() =>
-        Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", "src", "BuildingBlocks", "DarwinLingua.Infrastructure", "Persistence", "DarwinLinguaDatabaseInitializer.cs"));
+        Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "BuildingBlocks",
+            "DarwinLingua.Infrastructure",
+            "Persistence",
+            "DarwinLinguaDatabaseInitializer.cs");
+
+    private static string FindRepositoryRoot()
+    {
+        foreach (string startPath in new[] { AppContext.BaseDirectory, Directory.GetCurrentDirectory() })
+        {
+            DirectoryInfo? directory = new(startPath);
+
+            while (directory is not null)
+            {
+                if (File.Exists(Path.Combine(directory.FullName, "DarwinLingua.slnx")))
+                {
+                    return directory.FullName;
+                }
+
+                directory = directory.Parent;
+            }
+        }
+
+        throw new DirectoryNotFoundException("Could not find the DarwinLingua repository root.");
+    }
 
     private static string NormalizeWhitespace(string value) =>
         string.Join(" ", value.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));

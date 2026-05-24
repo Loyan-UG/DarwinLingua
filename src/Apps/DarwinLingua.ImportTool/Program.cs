@@ -413,6 +413,8 @@ internal static class Program
 
         foreach (string jsonFilePath in jsonFilePaths)
         {
+            summary.TotalPackageItems += CountPackageContentItems(jsonFilePath);
+
             ImportContentPackageResult result = await contentImportService
                 .ImportAsync(new ImportContentPackageRequest(jsonFilePath), cancellationToken)
                 .ConfigureAwait(false);
@@ -477,10 +479,11 @@ internal static class Program
         Console.WriteLine($"Files processed: {summary.TotalFiles}");
         Console.WriteLine($"Files succeeded: {summary.SuccessfulFiles}");
         Console.WriteLine($"Files failed: {summary.FailedFiles}");
-        Console.WriteLine($"Entries total: {summary.TotalEntries}");
-        Console.WriteLine($"Entries imported: {summary.ImportedEntries}");
-        Console.WriteLine($"Entries skipped as duplicates: {summary.SkippedDuplicateEntries}");
-        Console.WriteLine($"Entries invalid: {summary.InvalidEntries}");
+        Console.WriteLine($"Package content items total: {summary.TotalPackageItems}");
+        Console.WriteLine($"Word entries total: {summary.TotalEntries}");
+        Console.WriteLine($"Word entries imported: {summary.ImportedEntries}");
+        Console.WriteLine($"Word entries skipped as duplicates: {summary.SkippedDuplicateEntries}");
+        Console.WriteLine($"Word entries invalid: {summary.InvalidEntries}");
         Console.WriteLine($"Warnings: {summary.WarningCount}");
 
         if (summary.FailedFileSummaries.Count > 0)
@@ -511,6 +514,46 @@ internal static class Program
         return $"{Path.GetFileName(jsonFilePath)}{entryPrefix}: {issue.Severity}: {issue.Message}";
     }
 
+    private static int CountPackageContentItems(string jsonFilePath)
+    {
+        using FileStream stream = File.OpenRead(jsonFilePath);
+        using JsonDocument document = JsonDocument.Parse(stream);
+
+        string[] contentArrayNames =
+        [
+            "entries",
+            "collections",
+            "dialogueLessons",
+            "dialogues",
+            "talkTopics",
+            "grammarTopics",
+            "expressionEntries",
+            "exercises",
+            "exerciseSets",
+            "coursePaths",
+            "courseModules",
+            "courseLessons",
+            "writingTemplates",
+            "culturalNotes",
+            "examProfiles",
+            "examPrepUnits",
+            "conversationStarterPacks",
+            "eventPreparationPacks"
+        ];
+
+        int total = 0;
+        foreach (string contentArrayName in contentArrayNames)
+        {
+            if (document.RootElement.TryGetProperty(contentArrayName, out JsonElement element) &&
+                element.ValueKind == JsonValueKind.Array)
+            {
+                total += element.GetArrayLength();
+            }
+        }
+
+        return total;
+    }
+
     private static ImportTarget ParseTarget(string value)
     {
         string normalized = value.Trim().ToLowerInvariant();
@@ -536,6 +579,8 @@ internal static class Program
         public int SuccessfulFiles { get; set; }
 
         public int FailedFiles { get; set; }
+
+        public int TotalPackageItems { get; set; }
 
         public int TotalEntries { get; set; }
 

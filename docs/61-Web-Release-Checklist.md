@@ -14,6 +14,8 @@ Last updated: 2026-05-13.
 
 - Local `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
 - Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
+- Everyday Expressions pilot smoke on 2026-05-24 passed against local Web/API services backed by `darwinlingua_shared`: Expression list/detail, Web list/detail, Unified Search, and admin system report all returned HTTP 200 after importing `expressions-a1-a2-core-pilot-v1.json`.
+- Everyday Expressions small batch 01 smoke on 2026-05-24 passed after importing `expressions-a1-a2-core-01-v1.json`: Web/API list/detail, Unified Search, and admin system report returned HTTP 200 with 37 total expressions, 0 missing translations, and 0 unresolved expression linked words.
 - Full `DarwinLingua.slnx` build passed with 0 warnings and 0 errors when run sequentially with `-m:1`.
 - Phase 7 WebApi tests passed for the current admin/report and Learning Portal endpoint surface.
 - Phase 7 parser tests passed for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Cultural Notes.

@@ -25,12 +25,14 @@ This is the single planning source for the learning-portal expansion. Do not cre
 
 ## Current Implementation Snapshot
 
-Last updated: 2026-05-21.
+Last updated: 2026-05-24.
 
 - Grammar Guide A1-C2 content is generated and validated against the official syllabus and package contract. The latest validation report is `artifacts/validation/grammar-a1-c2-validation-report.md` and records 225 topics with zero issues.
 - Post-Grammar Conversation audit blockers are repaired. The latest conversation audit report is `artifacts/validation/conversation-content-audit-report.md` and records zero P0 blockers, zero unresolved Dialogue word references, and zero unresolved Talk Topic word references.
 - Existing Conversation content remains protected. Dialogues and Talk Topics were not deleted; only malformed JSON, malformed word references, duplicate useful-word references, and weak active seed dialogue metadata were repaired.
 - A small importable Conversation support baseline exists at `content/generated/conversation-support/conversation-support-baseline-v1.json`. It contains 6 Conversation Starter Packs and 8 Event Preparation Packs across A1-C2 with all target learner languages.
+- The first real Everyday Expressions pilot package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json`. It contains 12 A1/A2-focused expressions with all target learner languages and is covered by parser, import-validation, repository/query, Unified Search, Web route/render-structure, admin-report tests, shared PostgreSQL import, and local Web/API/admin smoke validation.
+- The next small Everyday Expressions package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-01-v1.json`. It contains 25 A1/A2 practical expressions with all target learner languages, passed the Expressions quality gate, imported into `darwinlingua_shared`, and passed Web/API/detail/search/admin report smoke checks on 2026-05-24. Bulk Expressions generation remains blocked; proceed only with another small reviewed batch after the same gates pass.
 - Standalone RoleplayScenario content is blocked until dedicated parser, import validation, persistence, Web API, Web rendering, search, admin visibility, and tests exist. Event Preparation Packs may contain simple `roleplayPrompts`, but standalone roleplay packages must not be generated yet.
 - Transactional email has a Brevo API provider path, sandbox behavior, webhook event handling, delivery logs, diagnostics, and suppression handling. Production launch still requires operational Brevo configuration outside source control, verified sender domain, SPF/DKIM/DMARC, webhook secret, and provider DPA review.
 - Mobile/MAUI parity remains later-stage work. Do not modify mobile learning content surfaces until Web/API contracts, imports, rendering, search, admin visibility, and tests are stable.
@@ -40,7 +42,7 @@ Immediate next order:
 1. Keep validation reports green after any content repair.
 2. Implement RoleplayScenario infrastructure before standalone Roleplay content generation.
 3. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
-4. Generate the first real Expressions package and validate import, Web API, Web rendering, search, and admin visibility before bulk Expressions generation.
+4. Generate any further Everyday Expressions content only as a small reviewed batch after re-running the quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
 5. Start Exercises only after Grammar, Conversation, and Expressions are stable enough to link to.
 
 ---
@@ -816,7 +818,8 @@ The portal should track learner progress across content types without mixing use
 - [x] add admin visibility or management surface
 - [x] add initial tests for parser contract and Web navigation/localization
 - [x] document expression content contract in `78-Expression-Content-Package-Contract.md`
-- [ ] add broader validation, query, Web API, and Web rendering coverage after first real expression content package is available
+- [x] add broader validation, query, Web API, and Web rendering coverage after first real expression content package is available
+  - Progress: the first pilot package imports into shared PostgreSQL, `/expressions`, `/expressions/alles-klar`, `/api/catalog/expressions`, `/api/catalog/expressions/alles-klar`, `/api/catalog/search`, and `/api/admin/catalog/system-report` smoke successfully against local Web/API services. Admin reporting now treats not-yet-created Phase 7 module tables as empty instead of failing the entire report.
 - [ ] keep mobile parity tracked after Web sign-off
 
 ### Phase 7.4: Exercise Engine

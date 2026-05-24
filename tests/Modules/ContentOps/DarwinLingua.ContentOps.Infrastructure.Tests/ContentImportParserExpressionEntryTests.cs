@@ -9,6 +9,87 @@ namespace DarwinLingua.ContentOps.Infrastructure.Tests;
 public sealed class ContentImportParserExpressionEntryTests
 {
     [Fact]
+    public async Task ParseAsync_ShouldParseOfficialExpressionPilotPackage()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+        string packagePath = Path.Combine(
+            ResolveRepositoryRoot(),
+            "content",
+            "learning-portal",
+            "expressions",
+            "packages",
+            "expressions-a1-a2-core-pilot-v1.json");
+
+        ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+            await File.ReadAllTextAsync(packagePath, CancellationToken.None),
+            CancellationToken.None);
+
+        Assert.Equal("expressions-a1-a2-core-pilot-v1", parsedPackage.PackageId);
+        Assert.Equal(12, parsedPackage.ExpressionEntries.Count);
+
+        string[] requiredLanguages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+        foreach (ParsedExpressionEntryModel expression in parsedPackage.ExpressionEntries)
+        {
+            Assert.Equal(requiredLanguages, expression.Meanings.Select(meaning => meaning.Language).ToArray());
+            Assert.NotEmpty(expression.Examples);
+            Assert.All(expression.Examples, example =>
+                Assert.Equal(requiredLanguages, example.Translations.Select(translation => translation.Language).ToArray()));
+            Assert.All(expression.LinkedWords, word =>
+            {
+                Assert.False(string.IsNullOrWhiteSpace(word.Lemma));
+                Assert.Null(word.WordSlug);
+            });
+        }
+
+        ParsedExpressionEntryModel riskyExpression = Assert.Single(parsedPackage.ExpressionEntries, expression => expression.IsRisky);
+        Assert.Equal("na-ja", riskyExpression.Slug);
+        Assert.NotEmpty(riskyExpression.Warnings);
+        Assert.Equal(requiredLanguages, Assert.Single(riskyExpression.Warnings).Translations.Select(translation => translation.Language).ToArray());
+    }
+
+    [Fact]
+    public async Task ParseAsync_ShouldParseAllOfficialExpressionPackages()
+    {
+        await using ServiceProvider serviceProvider = new ServiceCollection()
+            .AddContentOpsInfrastructure()
+            .BuildServiceProvider();
+
+        IContentImportParser parser = serviceProvider.GetRequiredService<IContentImportParser>();
+        string packagesPath = Path.Combine(
+            ResolveRepositoryRoot(),
+            "content",
+            "learning-portal",
+            "expressions",
+            "packages");
+
+        string[] requiredLanguages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+        string[] packagePaths = Directory.GetFiles(packagesPath, "*.json", SearchOption.TopDirectoryOnly);
+
+        Assert.NotEmpty(packagePaths);
+
+        foreach (string packagePath in packagePaths)
+        {
+            ParsedContentPackageModel parsedPackage = await parser.ParseAsync(
+                await File.ReadAllTextAsync(packagePath, CancellationToken.None),
+                CancellationToken.None);
+
+            Assert.NotEmpty(parsedPackage.ExpressionEntries);
+            Assert.All(parsedPackage.ExpressionEntries, expression =>
+            {
+                Assert.Equal(requiredLanguages, expression.Meanings.Select(meaning => meaning.Language).ToArray());
+                Assert.NotEmpty(expression.Examples);
+                Assert.All(expression.Examples, example =>
+                    Assert.Equal(requiredLanguages, example.Translations.Select(translation => translation.Language).ToArray()));
+                Assert.All(expression.LinkedWords, word => Assert.False(string.IsNullOrWhiteSpace(word.Lemma)));
+            });
+        }
+    }
+
+    [Fact]
     public async Task ParseAsync_ShouldParseExpressionEntryContract()
     {
         await using ServiceProvider serviceProvider = new ServiceCollection()
@@ -85,5 +166,23 @@ public sealed class ContentImportParserExpressionEntryTests
         Assert.Equal("Alles klar, wir treffen uns um acht.", Assert.Single(expression.Examples).GermanText);
         Assert.Equal("klar", Assert.Single(expression.LinkedWords).WordSlug);
         Assert.Equal("verstanden", Assert.Single(expression.RelatedExpressionSlugs));
+    }
+
+    private static string ResolveRepositoryRoot()
+    {
+        DirectoryInfo? currentDirectory = new(AppContext.BaseDirectory);
+
+        while (currentDirectory is not null)
+        {
+            string candidateSolutionPath = Path.Combine(currentDirectory.FullName, "DarwinLingua.slnx");
+            if (File.Exists(candidateSolutionPath))
+            {
+                return currentDirectory.FullName;
+            }
+
+            currentDirectory = currentDirectory.Parent;
+        }
+
+        throw new DirectoryNotFoundException("Unable to resolve the repository root.");
     }
 }

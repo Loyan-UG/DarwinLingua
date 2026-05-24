@@ -729,6 +729,184 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         await EnsurePhase6OperationalSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureGrammarGuideSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureGrammarRichContentSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureExpressionEntrySchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureExpressionEntrySchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "ExpressionEntries" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "ExpressionText" character varying(512) NOT NULL,
+                "LiteralMeaningText" character varying(1024),
+                "ActualMeaningText" character varying(4000) NOT NULL,
+                "UsageExplanation" character varying(4000),
+                "CefrLevel" character varying(8) NOT NULL,
+                "ExpressionType" character varying(64) NOT NULL,
+                "Register" character varying(64) NOT NULL,
+                "Category" character varying(128) NOT NULL,
+                "Region" character varying(128),
+                "IsRisky" boolean NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionEntries" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionExamples" (
+                "Id" uuid NOT NULL,
+                "ExpressionEntryId" uuid NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "GermanText" character varying(1024) NOT NULL,
+                "Note" character varying(512),
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionExamples" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionExamples_ExpressionEntries_ExpressionEntryId"
+                    FOREIGN KEY ("ExpressionEntryId") REFERENCES "ExpressionEntries" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionMeanings" (
+                "Id" uuid NOT NULL,
+                "ExpressionEntryId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "ActualMeaningText" character varying(4000) NOT NULL,
+                "LiteralMeaningText" character varying(1024),
+                "UsageExplanation" character varying(4000),
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionMeanings" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionMeanings_ExpressionEntries_ExpressionEntryId"
+                    FOREIGN KEY ("ExpressionEntryId") REFERENCES "ExpressionEntries" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionWarnings" (
+                "Id" uuid NOT NULL,
+                "ExpressionEntryId" uuid NOT NULL,
+                "WarningType" character varying(64) NOT NULL,
+                "Text" character varying(2000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionWarnings" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionWarnings_ExpressionEntries_ExpressionEntryId"
+                    FOREIGN KEY ("ExpressionEntryId") REFERENCES "ExpressionEntries" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionExampleTranslations" (
+                "Id" uuid NOT NULL,
+                "OwnerId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(4000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionExampleTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionExampleTranslations_ExpressionExamples_OwnerId"
+                    FOREIGN KEY ("OwnerId") REFERENCES "ExpressionExamples" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionWarningTranslations" (
+                "Id" uuid NOT NULL,
+                "OwnerId" uuid NOT NULL,
+                "LanguageCode" character varying(16) NOT NULL,
+                "Text" character varying(4000) NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionWarningTranslations" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionWarningTranslations_ExpressionWarnings_OwnerId"
+                    FOREIGN KEY ("OwnerId") REFERENCES "ExpressionWarnings" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionLinkedWords" (
+                "Id" uuid NOT NULL,
+                "ExpressionEntryId" uuid NOT NULL,
+                "Lemma" character varying(128) NOT NULL,
+                "WordSlug" character varying(128),
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionLinkedWords" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionLinkedWords_ExpressionEntries_ExpressionEntryId"
+                    FOREIGN KEY ("ExpressionEntryId") REFERENCES "ExpressionEntries" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionLinkedExercises" (
+                "Id" uuid NOT NULL,
+                "ExpressionEntryId" uuid NOT NULL,
+                "TargetSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionLinkedExercises" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionLinkedExercises_ExpressionEntries_ExpressionEntryId"
+                    FOREIGN KEY ("ExpressionEntryId") REFERENCES "ExpressionEntries" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "RelatedExpressionLinks" (
+                "Id" uuid NOT NULL,
+                "ExpressionEntryId" uuid NOT NULL,
+                "TargetSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_RelatedExpressionLinks" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_RelatedExpressionLinks_ExpressionEntries_ExpressionEntryId"
+                    FOREIGN KEY ("ExpressionEntryId") REFERENCES "ExpressionEntries" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExpressionTopics" (
+                "Id" uuid NOT NULL,
+                "ExpressionEntryId" uuid NOT NULL,
+                "TopicId" uuid NOT NULL,
+                "IsPrimary" boolean NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExpressionTopics" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExpressionTopics_ExpressionEntries_ExpressionEntryId"
+                    FOREIGN KEY ("ExpressionEntryId") REFERENCES "ExpressionEntries" ("Id") ON DELETE CASCADE,
+                CONSTRAINT "FK_ExpressionTopics_Topics_TopicId"
+                    FOREIGN KEY ("TopicId") REFERENCES "Topics" ("Id") ON DELETE RESTRICT
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionEntries_Slug"
+                ON "ExpressionEntries" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ExpressionEntries_CefrLevel_ExpressionType_Register_Category"
+                ON "ExpressionEntries" ("CefrLevel", "ExpressionType", "Register", "Category");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionExamples_ExpressionEntryId_SortOrder"
+                ON "ExpressionExamples" ("ExpressionEntryId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionMeanings_ExpressionEntryId_LanguageCode"
+                ON "ExpressionMeanings" ("ExpressionEntryId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionWarnings_ExpressionEntryId_WarningType"
+                ON "ExpressionWarnings" ("ExpressionEntryId", "WarningType");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionExampleTranslations_OwnerId_LanguageCode"
+                ON "ExpressionExampleTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionWarningTranslations_OwnerId_LanguageCode"
+                ON "ExpressionWarningTranslations" ("OwnerId", "LanguageCode");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionLinkedWords_ExpressionEntryId_SortOrder"
+                ON "ExpressionLinkedWords" ("ExpressionEntryId", "SortOrder");
+            CREATE INDEX IF NOT EXISTS "IX_ExpressionLinkedWords_WordSlug"
+                ON "ExpressionLinkedWords" ("WordSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionLinkedExercises_ExpressionEntryId_TargetSlug"
+                ON "ExpressionLinkedExercises" ("ExpressionEntryId", "TargetSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionLinkedExercises_ExpressionEntryId_SortOrder"
+                ON "ExpressionLinkedExercises" ("ExpressionEntryId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_RelatedExpressionLinks_ExpressionEntryId_TargetSlug"
+                ON "RelatedExpressionLinks" ("ExpressionEntryId", "TargetSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_RelatedExpressionLinks_ExpressionEntryId_SortOrder"
+                ON "RelatedExpressionLinks" ("ExpressionEntryId", "SortOrder");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExpressionTopics_ExpressionEntryId_TopicId"
+                ON "ExpressionTopics" ("ExpressionEntryId", "TopicId");
+            CREATE INDEX IF NOT EXISTS "IX_ExpressionTopics_TopicId"
+                ON "ExpressionTopics" ("TopicId");
+            """,
+            cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task EnsureGrammarGuideSchemaAsync(

@@ -673,7 +673,8 @@ internal sealed class WebCatalogApiClient(
                     new("category", filter.Category),
                     new("topicKey", filter.TopicKey),
                     new("isRisky", filter.IsRisky?.ToString()),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("primaryMeaningLanguageCode", filter.PrimaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 

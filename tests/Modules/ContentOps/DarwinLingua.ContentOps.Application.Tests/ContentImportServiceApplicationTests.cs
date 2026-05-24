@@ -1435,6 +1435,30 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Equal("a2-alles-klar", expression.Slug);
     }
 
+    [Fact]
+    public async Task ImportAsync_ShouldImportExpressionEntry_WhenAllPilotLanguagesArePresent()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(CreatePilotStyleExpression());
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions-pilot.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
+        ExpressionEntry expression = Assert.Single(repository.ImportedExpressions);
+        Assert.Equal("koennten-sie-mir-bitte-helfen", expression.Slug);
+        Assert.Equal(10, expression.Meanings.Count);
+        Assert.Equal(10, Assert.Single(expression.Examples).Translations.Count);
+        Assert.Equal(10, Assert.Single(expression.Warnings).Translations.Count);
+    }
+
     [Theory]
     [InlineData("bad-type", "neutral", "Expression expressionType 'bad-type' is not supported.")]
     [InlineData("fixed-expression", "bad-register", "Expression register 'bad-register' is not supported.")]
@@ -1632,6 +1656,104 @@ public sealed class ContentImportServiceApplicationTests
             [new ParsedExpressionLinkedWordModel("klar", "klar", 10)],
             ["verstanden"],
             ["a2-confirmation-phrases"]);
+    }
+
+    private static ParsedExpressionEntryModel CreatePilotStyleExpression()
+    {
+        string[] languages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+        Dictionary<string, string> meanings = new(StringComparer.Ordinal)
+        {
+            ["en"] = "A polite request for help.",
+            ["fa"] = "درخواست کمک به شکل مؤدبانه است.",
+            ["ar"] = "طلب مساعدة بصيغة مهذبة.",
+            ["tr"] = "Kibar bir yardım isteme cümlesidir.",
+            ["ru"] = "Вежливая просьба о помощи.",
+            ["ckb"] = "داواکارییەکی ڕێزدارانەی یارمەتییە.",
+            ["kmr"] = "Ev daxwazeke bi rêz ji bo alîkariyê ye.",
+            ["pl"] = "To uprzejma prośba o pomoc.",
+            ["ro"] = "Este o cerere politicoasă de ajutor.",
+            ["sq"] = "Është një kërkesë e sjellshme për ndihmë."
+        };
+        Dictionary<string, string> usages = new(StringComparer.Ordinal)
+        {
+            ["en"] = "Use it in simple formal situations.",
+            ["fa"] = "در موقعیت‌های رسمی ساده استفاده می‌شود.",
+            ["ar"] = "تُستخدم في مواقف رسمية بسيطة.",
+            ["tr"] = "Basit resmi durumlarda kullanılır.",
+            ["ru"] = "Используется в простых формальных ситуациях.",
+            ["ckb"] = "لە دۆخی فەرمی سادەدا بەکاری دەهێنرێت.",
+            ["kmr"] = "Di rewşên fermî yên hêsan de tê bikaranîn.",
+            ["pl"] = "Używa się w prostych sytuacjach formalnych.",
+            ["ro"] = "Se folosește în situații formale simple.",
+            ["sq"] = "Përdoret në situata të thjeshta formale."
+        };
+        Dictionary<string, string> examples = new(StringComparer.Ordinal)
+        {
+            ["en"] = "Excuse me, could you please help me?",
+            ["fa"] = "ببخشید، ممکن است لطفاً به من کمک کنید؟",
+            ["ar"] = "عذرًا، هل يمكنكم مساعدتي من فضلكم؟",
+            ["tr"] = "Affedersiniz, bana lütfen yardım edebilir misiniz?",
+            ["ru"] = "Извините, не могли бы вы мне помочь?",
+            ["ckb"] = "ببورە، دەتوانن تکایە یارمەتیم بدەن؟",
+            ["kmr"] = "Bibore, hûn dikarin ji kerema xwe alîkariya min bikin?",
+            ["pl"] = "Przepraszam, czy mogliby mi państwo pomóc?",
+            ["ro"] = "Scuzați-mă, m-ați putea ajuta, vă rog?",
+            ["sq"] = "Më falni, a mund të më ndihmoni ju lutem?"
+        };
+        Dictionary<string, string> warnings = new(StringComparer.Ordinal)
+        {
+            ["en"] = "Use formal address with Sie.",
+            ["fa"] = "در این ساختار از خطاب رسمی Sie استفاده می‌شود.",
+            ["ar"] = "تُستخدم هنا صيغة المخاطبة الرسمية Sie.",
+            ["tr"] = "Bu yapıda resmi Sie hitabı kullanılır.",
+            ["ru"] = "В этой конструкции используется формальное обращение Sie.",
+            ["ckb"] = "لەم پێکهاتەیەدا بانگکردنی فەرمی Sie بەکار دێت.",
+            ["kmr"] = "Di vê avahiyê de bangkirina fermî Sie tê bikaranîn.",
+            ["pl"] = "W tej strukturze używa się formalnego zwrotu Sie.",
+            ["ro"] = "În această structură se folosește adresarea formală Sie.",
+            ["sq"] = "Në këtë strukturë përdoret forma zyrtare Sie."
+        };
+
+        return new ParsedExpressionEntryModel(
+            "koennten-sie-mir-bitte-helfen",
+            "Könnten Sie mir bitte helfen?",
+            null,
+            "A polite request for help.",
+            "Use it with staff, offices, doctors, teachers, or strangers.",
+            "A2",
+            "polite-formula",
+            "formal",
+            "asking-for-help",
+            "de",
+            false,
+            ["shopping"],
+            true,
+            10,
+            languages.Select(language => new ParsedExpressionMeaningModel(
+                language,
+                meanings[language],
+                null,
+                usages[language])).ToArray(),
+            [
+                new ParsedExpressionExampleModel(
+                    "Entschuldigung, könnten Sie mir bitte helfen?",
+                    null,
+                    languages.Select(language => new ParsedContentMeaningModel(
+                        language,
+                        examples[language])).ToArray(),
+                    10)
+            ],
+            [
+                new ParsedExpressionWarningModel(
+                    "tone",
+                    "Use formal address with Sie.",
+                    languages.Select(language => new ParsedContentMeaningModel(
+                        language,
+                        warnings[language])).ToArray())
+            ],
+            [new ParsedExpressionLinkedWordModel("helfen", null, 10)],
+            [],
+            []);
     }
 
     private static ParsedCulturalNoteModel CreateValidCulturalNote()

@@ -154,3 +154,52 @@ When a content-quality problem is found, add a short note here with:
 - Where it appeared: `docs/70-Roleplay-Content-Package-Contract.md` defines the desired contract, while code search found no standalone RoleplayScenario importer.
 - Why it happened: The contract was documented ahead of full implementation.
 - Prevention rule: Implement parser, application validation, persistence, Web API, Web rendering, search/admin visibility, and tests before generating standalone roleplay packages. Until then, keep roleplay-like practice inside Event Preparation `roleplayPrompts`.
+
+### 2026-05-23: Expression list pages must use learner-language meanings
+
+- What failed: The Everyday Expressions detail endpoint localized meanings by requested learner language, but the list endpoint projected the base `actualMeaningText`, which is normally English.
+- Where it appeared: The first real Expressions pilot review showed that `/expressions` would show English meanings even when the learner profile preferred another meaning language.
+- Why it happened: The list query did not accept or forward `primaryMeaningLanguageCode`, while detail already did.
+- Prevention rule: Expression list requests now carry `primaryMeaningLanguageCode`; repository tests verify localized list projection. New learning modules must check list and detail localization, not only detail pages.
+
+### 2026-05-23: Provider-specific search functions need local-test coverage
+
+- What failed: New Expression repository/search tests on SQLite exposed `EF.Functions.ILike` translation failures in Expression list/search paths.
+- Where it appeared: `GetPublishedExpressionsAsync` and `UnifiedLearningSearchRepository.SearchExpressionsAsync` failed in SQLite-backed tests.
+- Why it happened: The implementation used PostgreSQL-specific matching without a provider-neutral fallback for local test coverage.
+- Prevention rule: For new content modules, add repository/search tests before bulk content generation. If the project supports SQLite-backed tests, keep module search filters provider-neutral unless a provider-specific path has a tested fallback.
+
+### 2026-05-23: Expressions need a dedicated pre-import content quality gate
+
+- What failed: The Expression contract had structural validation, but no focused pilot content gate for English fallback leakage, repeated generic explanations, internal QA text, warning localization, or linked-word meaning leaks.
+- Where it appeared: The first real Expressions pilot added `tools/Content/Validate-ExpressionPilot.js` before accepting the package.
+- Why it happened: Parser/import validation intentionally validates contract shape and controlled values; it does not prove learner-facing localization quality.
+- Prevention rule: Run `node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json` before importing or expanding Expressions content. Bulk Expressions generation remains blocked until the pilot passes this gate plus import, Web/API, search, and admin validation.
+
+### 2026-05-23: Production-like PostgreSQL schema drift must be validated before enabling pages
+
+- What failed: The `/expressions` page called the Web API successfully, but the API returned 500 in production because the existing PostgreSQL catalog database did not contain the newer `ExpressionEntries` table.
+- Where it appeared: `https://lingua.vafadar.pro/expressions` failed when `/api/catalog/expressions?isRisky=False&primaryMeaningLanguageCode=fa` queried the missing table.
+- Why it happened: Local tests covered parser/import/query behavior and SQLite initialization, but did not prove that an already-existing PostgreSQL database would be retrofitted with the new module schema at startup.
+- Prevention rule: For every new Learning Portal module, validate an existing PostgreSQL database path, not only clean SQLite tests. If the server uses startup retrofit schema, add an idempotent PostgreSQL retrofit plus tests/structural checks before exposing public Web routes.
+
+### 2026-05-24: Admin reports must tolerate not-yet-created module tables
+
+- What failed: The Everyday Expressions learner/API smoke passed, but `/api/admin/catalog/system-report` returned 500 on the shared PostgreSQL database because other Phase 7 tables such as `Exercises`, `WritingTemplates`, and `CulturalNotes` were not present yet.
+- Where it appeared: The local target/dev smoke for the Expressions pilot failed at the admin report endpoint after the pilot import.
+- Why it happened: The admin report assumed every planned Learning Portal module table existed and also started multiple queries on the same `DbContext` concurrently.
+- Prevention rule: Admin quality reports must treat missing optional module tables as empty coverage, not as fatal errors. Query a single `DbContext` sequentially or use separate contexts for parallel work. Add tests that drop a future-module table and verify the report still returns counts for already-imported modules.
+
+### 2026-05-24: Local Web smoke must override late-loaded local settings deliberately
+
+- What failed: A local Web smoke run still called the public API even after setting `WebApi__BaseUrl=http://localhost:5099`.
+- Where it appeared: `DarwinLingua.Web` loaded `appsettings.Development.Local.json` after the default environment variables, so the public API URL in that file won during Development smoke.
+- Why it happened: The smoke process used the normal Development environment without accounting for the repository's late-loaded local settings file.
+- Prevention rule: For local smoke against a temporary WebApi instance, either use a dedicated non-Development environment with explicit env overrides or update the local-only config deliberately. Do not trust route smoke until logs show the Web client is calling the intended API origin.
+
+### 2026-05-24: Expression topic keys must match the active Catalog topics
+
+- What failed: The first import attempt for `expressions-a1-a2-core-01-v1.json` failed because several `topics` values used natural planning labels such as `phone-calls`, `appointments`, `work`, and `public-office` that are not active Catalog topic keys.
+- Where it appeared: `DarwinLingua.ImportTool` rejected the new Expressions batch before writing it to `darwinlingua_shared`.
+- Why it happened: The content contract validates expression shape and localization, but topic references are resolved against the current `Topics` table. Content-generation labels must not be invented from prompt wording.
+- Prevention rule: Before importing a new Expressions batch, compare all `topics` values with the active Catalog topic keys, or omit optional topics when the `category` already carries the context. Import validation must keep rejecting unknown topic keys.

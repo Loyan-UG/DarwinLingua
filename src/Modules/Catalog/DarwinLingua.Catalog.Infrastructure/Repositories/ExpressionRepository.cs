@@ -24,8 +24,11 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
         IQueryable<ExpressionEntry> query = dbContext.ExpressionEntries
             .AsNoTracking()
             .Include(expression => expression.Topics)
+            .Include(expression => expression.Meanings)
             .Include(expression => expression.Warnings)
             .Where(expression => expression.PublicationStatus == PublicationStatus.Active);
+
+        LanguageCode primaryLanguage = ResolveRequestedLanguage(filter.PrimaryMeaningLanguageCode);
 
         if (Enum.TryParse(filter.CefrLevel, true, out CefrLevel cefrLevel))
         {
@@ -58,10 +61,11 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
         string? search = NormalizeOptionalSearch(filter.Query);
         if (search is not null)
         {
+            string normalizedSearch = search.ToLowerInvariant();
             query = query.Where(expression =>
-                EF.Functions.ILike(expression.ExpressionText, $"%{search}%") ||
-                EF.Functions.ILike(expression.ActualMeaningText, $"%{search}%") ||
-                EF.Functions.ILike(expression.Slug, $"%{search}%"));
+                expression.ExpressionText.ToLower().Contains(normalizedSearch) ||
+                expression.ActualMeaningText.ToLower().Contains(normalizedSearch) ||
+                expression.Slug.ToLower().Contains(normalizedSearch));
         }
 
         List<ExpressionEntry> expressions = await query
@@ -85,19 +89,24 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
         }
 
         return filtered
-            .Select(expression => new ExpressionListItemModel(
-                expression.Slug,
-                expression.ExpressionText,
-                expression.ActualMeaningText,
-                expression.LiteralMeaningText,
-                expression.CefrLevel.ToString(),
-                expression.ExpressionType,
-                expression.Register,
-                expression.Category,
-                expression.Region,
-                expression.IsRisky,
-                GetTopicKeys(expression.Topics, topicKeysById),
-                expression.Warnings.OrderBy(warning => warning.WarningType).Select(warning => warning.WarningType).ToArray()))
+            .Select(expression =>
+            {
+                ExpressionMeaning? meaning = ResolveMeaning(expression.Meanings, primaryLanguage);
+
+                return new ExpressionListItemModel(
+                    expression.Slug,
+                    expression.ExpressionText,
+                    meaning?.ActualMeaningText ?? expression.ActualMeaningText,
+                    meaning?.LiteralMeaningText ?? expression.LiteralMeaningText,
+                    expression.CefrLevel.ToString(),
+                    expression.ExpressionType,
+                    expression.Register,
+                    expression.Category,
+                    expression.Region,
+                    expression.IsRisky,
+                    GetTopicKeys(expression.Topics, topicKeysById),
+                    expression.Warnings.OrderBy(warning => warning.WarningType).Select(warning => warning.WarningType).ToArray());
+            })
             .ToArray();
     }
 
@@ -161,6 +170,23 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
             .Where(meaning => meaning.LanguageCode == primaryLanguage || meaning.LanguageCode == EnglishFallbackLanguage)
             .OrderBy(meaning => meaning.LanguageCode == primaryLanguage ? 0 : 1)
             .FirstOrDefault();
+
+    private static LanguageCode ResolveRequestedLanguage(string? languageCode)
+    {
+        if (string.IsNullOrWhiteSpace(languageCode))
+        {
+            return EnglishFallbackLanguage;
+        }
+
+        try
+        {
+            return LanguageCode.From(languageCode.Trim().ToLowerInvariant());
+        }
+        catch
+        {
+            return EnglishFallbackLanguage;
+        }
+    }
 
     private static ExpressionExampleModel MapExample(ExpressionExample example, LanguageCode primaryLanguage)
     {

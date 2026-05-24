@@ -25,6 +25,11 @@ Remaining release gates:
 
 Latest local Web verification:
 
+- 2026-05-23: First real Everyday Expressions pilot package added at `content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json`; `node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json` passed.
+- 2026-05-23: Expression parser/import/repository/search/admin/report structural coverage updated. `DarwinLingua.ContentOps.Infrastructure.Tests` passed 37/37, `DarwinLingua.ContentOps.Application.Tests` passed 71/71, `DarwinLingua.Catalog.Infrastructure.Tests` passed 28/28, `DarwinLingua.WebApi.Tests` passed 57/57, and filtered `WebLearnerShellStructureTests` passed 5/5.
+- 2026-05-23: Full `DarwinLingua.Localization.Application.Tests` still has two unrelated MAUI smoke failures (`AppStrings.HomeTabTitle`, `EnsureSeedDatabaseAsync`). Mobile/MAUI remains outside the current Expressions pilot scope.
+- 2026-05-24: Everyday Expressions pilot was re-imported into the shared PostgreSQL catalog with `Package content items total: 12`, then smoke-tested through local Web/API services. `/expressions`, `/expressions/alles-klar`, `/api/catalog/expressions`, `/api/catalog/expressions/alles-klar`, `/api/catalog/search`, and `/api/admin/catalog/system-report` returned HTTP 200 with Expression results/counts. Admin report hardening now treats not-yet-created Phase 7 tables as empty instead of failing the whole report.
+- 2026-05-24: Small Everyday Expressions batch `expressions-a1-a2-core-01-v1.json` was created with 25 expressions, validated with `tools/Content/Validate-ExpressionPilot.js`, imported into `darwinlingua_shared`, and smoke-tested through public-routed local services. `/expressions`, `/expressions/vielen-dank-im-voraus`, `/api/catalog/expressions`, `/api/catalog/expressions/vielen-dank-im-voraus`, `/api/catalog/search`, `/search`, and `/api/admin/catalog/system-report` returned HTTP 200. Admin report showed `expression` count 37, missing translations 0, and unresolved linked words 0.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 talking about plans and conditions topic.
 - 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-talking-about-plans-and-conditions?primaryMeaningLanguageCode=fa`, `/grammar/b1-talking-about-plans-and-conditions`, and `/grammar`.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 talking about plans and conditions topic.
@@ -478,11 +483,17 @@ Latest local Web verification:
 - [x] Release route hardening covers `/expressions` and `/api/catalog/expressions`.
 - [x] Expression type/register validation rejects unsupported values.
 - [x] Risky expression validation rejects entries without required warning text.
-- [ ] List/detail queries return published expressions in stable order.
-- [ ] CEFR/type/register/context filters return expected expressions.
-- [ ] Risky expression warnings render for unsafe tone or context.
-- [ ] Linked words and related expressions render where available.
-- [ ] Unresolved links fail safely without Web 500 errors.
+- [x] Parser coverage imports the first official pilot Expressions package from disk.
+- [x] Import validation coverage accepts pilot-style all-language expression data.
+- [x] List/detail queries return published expressions in stable order.
+- [x] CEFR/type/register/context filters return expected expressions.
+- [x] Risky expression warnings render structurally for unsafe tone or context.
+- [x] Linked words and related expressions render structurally where available.
+- [x] Unresolved related expression and linked exercise slugs project safely without repository failures.
+- [x] Unified Search repository coverage returns Expression results from seeded content.
+- [x] Admin report coverage includes Expression counts by type and register.
+- [x] Live Web/API smoke for the imported pilot package remains required before bulk Expressions generation.
+  - Evidence: local target/dev services backed by `darwinlingua_shared` returned Expression list/detail/search/admin report data after the pilot import. Public `linguaapi.vafadar.pro`/`lingua.vafadar.pro` returned 502 during this pass and should be checked separately as an environment/reverse-proxy issue.
 
 ### Exercise Engine
 

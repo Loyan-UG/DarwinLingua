@@ -105,6 +105,8 @@ public sealed class WebLearnerShellStructureTests
         {
             Assert.Contains(expectedRoute, webApiProgramSource, StringComparison.Ordinal);
         }
+
+        Assert.Contains("primaryMeaningLanguageCode", webApiProgramSource, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -128,6 +130,32 @@ public sealed class WebLearnerShellStructureTests
         Assert.Contains(".grammar-table-wrap", styleSource, StringComparison.Ordinal);
         Assert.Contains(".grammar-example-grid", styleSource, StringComparison.Ordinal);
         Assert.Contains(".grammar-mistake-grid", styleSource, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ExpressionViews_ShouldRenderWarningsLinksAndLocalizedListMeanings()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string controllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/ExpressionsController.cs");
+        string clientPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Services/WebCatalogApiClient.cs");
+        string detailPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Expressions/Detail.cshtml");
+        string indexPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Expressions/Index.cshtml");
+
+        string controllerSource = File.ReadAllText(controllerPath);
+        string clientSource = File.ReadAllText(clientPath);
+        string detailSource = File.ReadAllText(detailPath);
+        string indexSource = File.ReadAllText(indexPath);
+
+        Assert.Contains("learningProfileAccessor.GetProfileAsync", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("profile.PreferredMeaningLanguage1", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("InvalidOperationException", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("IsCatalogApiFailure", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("primaryMeaningLanguageCode", clientSource, StringComparison.Ordinal);
+        Assert.Contains("Tone and context warnings", detailSource, StringComparison.Ordinal);
+        Assert.Contains("Linked practice", detailSource, StringComparison.Ordinal);
+        Assert.Contains("Related expressions", detailSource, StringComparison.Ordinal);
+        Assert.Contains("LinkedWords", detailSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("hardcoded", indexSource, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]

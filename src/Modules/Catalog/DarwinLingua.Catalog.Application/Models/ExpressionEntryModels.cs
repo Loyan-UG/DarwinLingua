@@ -7,7 +7,8 @@ public sealed record ExpressionListFilterModel(
     string? Category,
     string? TopicKey,
     bool? IsRisky,
-    string? Query);
+    string? Query,
+    string? PrimaryMeaningLanguageCode = null);
 
 public sealed record ExpressionListItemModel(
     string Slug,

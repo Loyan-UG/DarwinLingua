@@ -79,7 +79,8 @@ internal sealed class UnifiedLearningSearchRepository(IDbContextFactory<DarwinLi
         if (cefrLevel.HasValue) items = items.Where(item => item.CefrLevel == cefrLevel.Value);
         if (category is not null) items = items.Where(item => item.Category == category || item.ExpressionType == category);
         if (topicKey is not null) items = items.Where(item => item.Topics.Any(link => dbContext.Topics.Any(topic => topic.Id == link.TopicId && topic.Key == topicKey)));
-        items = items.Where(item => EF.Functions.ILike(item.ExpressionText, $"%{query}%") || EF.Functions.ILike(item.ActualMeaningText, $"%{query}%") || EF.Functions.ILike(item.Slug, $"%{query}%"));
+        string normalizedQuery = query.ToLowerInvariant();
+        items = items.Where(item => item.ExpressionText.ToLower().Contains(normalizedQuery) || item.ActualMeaningText.ToLower().Contains(normalizedQuery) || item.Slug.ToLower().Contains(normalizedQuery));
         return await items.OrderBy(item => item.SortOrder).Take(MaxResultsPerType).Select(item => new UnifiedLearningSearchResultModel("expression", item.ExpressionText, item.ActualMeaningText, item.CefrLevel.ToString(), item.ExpressionType, item.Topics.Join(dbContext.Topics, link => link.TopicId, topic => topic.Id, (link, topic) => topic.Key).ToArray(), $"/expressions/{item.Slug}", Score(query, item.ExpressionText, item.Slug, item.ActualMeaningText, item.SortOrder), MatchFields(query, item.ExpressionText, item.Slug, item.ActualMeaningText))).ToListAsync(cancellationToken).ConfigureAwait(false);
     }
 
