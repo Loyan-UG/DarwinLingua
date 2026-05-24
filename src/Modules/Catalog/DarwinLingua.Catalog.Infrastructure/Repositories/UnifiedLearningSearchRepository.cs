@@ -75,7 +75,10 @@ internal sealed class UnifiedLearningSearchRepository(IDbContextFactory<DarwinLi
 
     private static async Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchExpressionsAsync(DarwinLinguaDbContext dbContext, string query, CefrLevel? cefrLevel, string? category, string? topicKey, CancellationToken cancellationToken)
     {
-        IQueryable<ExpressionEntry> items = dbContext.ExpressionEntries.AsNoTracking().Where(item => item.PublicationStatus == PublicationStatus.Active);
+        IQueryable<ExpressionEntry> items = dbContext.ExpressionEntries
+            .AsNoTracking()
+            .Where(item => item.PublicationStatus == PublicationStatus.Active)
+            .Where(item => !item.RequiresAdultAccess && item.SafetyRating != "explicit-adult");
         if (cefrLevel.HasValue) items = items.Where(item => item.CefrLevel == cefrLevel.Value);
         if (category is not null) items = items.Where(item => item.Category == category || item.ExpressionType == category);
         if (topicKey is not null) items = items.Where(item => item.Topics.Any(link => dbContext.Topics.Any(topic => topic.Id == link.TopicId && topic.Key == topicKey)));

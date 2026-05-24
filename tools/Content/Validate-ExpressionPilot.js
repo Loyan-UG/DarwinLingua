@@ -31,6 +31,38 @@ const registers = new Set([
 ]);
 const riskyRegisters = new Set(["slang", "rude", "friends-only"]);
 const riskyTypes = new Set(["slang", "warning-phrase"]);
+const meaningTransparencyValues = new Set([
+  "non-literal",
+  "semi-idiomatic",
+  "pragmatic-formula",
+  "literal-fixed-formula",
+  "ordinary-literal"
+]);
+const safetyRatings = new Set([
+  "general",
+  "mild-rude",
+  "strong-rude",
+  "sexual-context",
+  "explicit-adult",
+  "discriminatory-slur",
+  "politically-sensitive"
+]);
+const riskySafetyRatings = new Set([
+  "mild-rude",
+  "strong-rude",
+  "sexual-context",
+  "explicit-adult",
+  "discriminatory-slur",
+  "politically-sensitive"
+]);
+const minimumAges = new Set([0, 16, 18]);
+const adultContentCategories = new Set([
+  "rude-slang",
+  "sexual-language",
+  "explicit-sexual-language",
+  "discriminatory-language",
+  "politically-sensitive-language"
+]);
 const kebabCase = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const processLeakPattern = /\b(checkpoint|do not continue|validate this|qa note|prompt instruction|internal note|todo|tba|lorem ipsum)\b|نقطه بررسی|ادامه نده|یادداشت داخلی|دستور پرامپت/i;
 const englishFallbackPhrases = [
@@ -166,13 +198,27 @@ for (const [index, expression] of expressions.entries()) {
   if (slugs.has(slug)) fail(`${prefix}.slug '${slug}' is duplicated.`);
   slugs.add(slug);
 
-  for (const field of ["expressionText", "actualMeaningText", "cefrLevel", "expressionType", "register", "category"]) {
+  for (const field of ["expressionText", "actualMeaningText", "usageExplanation", "teachingReason", "cefrLevel", "expressionType", "register", "category", "meaningTransparency", "safetyRating"]) {
     if (!text(expression[field])) fail(`${prefix}.${field} is required.`);
   }
 
   if (!expressionTypes.has(text(expression.expressionType))) fail(`${prefix}.expressionType '${expression.expressionType}' is unsupported.`);
   if (!registers.has(text(expression.register))) fail(`${prefix}.register '${expression.register}' is unsupported.`);
   if (!kebabCase.test(text(expression.category))) fail(`${prefix}.category must use lowercase kebab-case.`);
+  if (!meaningTransparencyValues.has(text(expression.meaningTransparency))) fail(`${prefix}.meaningTransparency '${expression.meaningTransparency}' is unsupported.`);
+  if (expression.meaningTransparency === "ordinary-literal" && expression.isPublished !== false) fail(`${prefix} is published but classified as ordinary-literal.`);
+  if ((expression.meaningTransparency === "non-literal" || expression.meaningTransparency === "semi-idiomatic") && !text(expression.literalMeaningText)) {
+    fail(`${prefix}.literalMeaningText is required for non-literal and semi-idiomatic entries.`);
+  }
+  if (!safetyRatings.has(text(expression.safetyRating))) fail(`${prefix}.safetyRating '${expression.safetyRating}' is unsupported.`);
+  if (!minimumAges.has(expression.minimumAge)) fail(`${prefix}.minimumAge must be 0, 16, or 18.`);
+  if (expression.requiresAdultAccess === true && expression.minimumAge < 18) fail(`${prefix}.requiresAdultAccess requires minimumAge 18.`);
+  if (expression.safetyRating === "explicit-adult" && (expression.requiresAdultAccess !== true || expression.minimumAge !== 18)) {
+    fail(`${prefix}.explicit-adult requires requiresAdultAccess true and minimumAge 18.`);
+  }
+  if (expression.adultContentCategory !== undefined && !adultContentCategories.has(text(expression.adultContentCategory))) {
+    fail(`${prefix}.adultContentCategory '${expression.adultContentCategory}' is unsupported.`);
+  }
 
   for (const field of ["expressionText", "literalMeaningText", "actualMeaningText", "usageExplanation"]) {
     if (text(expression[field]) && processLeakPattern.test(expression[field])) {
@@ -180,8 +226,12 @@ for (const [index, expression] of expressions.entries()) {
     }
   }
 
-  const risky = expression.isRisky === true || riskyRegisters.has(text(expression.register)) || riskyTypes.has(text(expression.expressionType));
-  if (risky && (!Array.isArray(expression.warnings) || expression.warnings.length === 0)) {
+  const warnings = [
+    ...(Array.isArray(expression.warnings) ? expression.warnings : []),
+    ...(Array.isArray(expression.contentWarnings) ? expression.contentWarnings : [])
+  ];
+  const risky = expression.isRisky === true || riskyRegisters.has(text(expression.register)) || riskyTypes.has(text(expression.expressionType)) || riskySafetyRatings.has(text(expression.safetyRating));
+  if (risky && warnings.length === 0) {
     fail(`${prefix} is risky but has no warnings.`);
   }
 
@@ -213,8 +263,8 @@ for (const [index, expression] of expressions.entries()) {
     }
   }
 
-  if (!Array.isArray(expression.examples) || expression.examples.length === 0) {
-    fail(`${prefix}.examples must contain at least one item.`);
+  if (!Array.isArray(expression.examples) || expression.examples.length === 0 || (expression.isPublished !== false && expression.examples.length < 2)) {
+    fail(`${prefix}.examples must contain ${expression.isPublished === false ? "at least one item" : "at least two items"}.`);
   } else {
     for (const [exampleIndex, example] of expression.examples.entries()) {
       if (!text(example.germanText)) fail(`${prefix}.examples[${exampleIndex + 1}].germanText is required.`);
@@ -222,8 +272,8 @@ for (const [index, expression] of expressions.entries()) {
     }
   }
 
-  if (Array.isArray(expression.warnings)) {
-    for (const [warningIndex, warning] of expression.warnings.entries()) {
+  if (warnings.length > 0) {
+    for (const [warningIndex, warning] of warnings.entries()) {
       if (!kebabCase.test(text(warning.warningType))) fail(`${prefix}.warnings[${warningIndex + 1}].warningType must use lowercase kebab-case.`);
       validateLanguageText("en", warning.text, `${prefix}.warnings[${warningIndex + 1}].text`, warning.text);
       const englishWarning = new Map([["en", warning.text]]);

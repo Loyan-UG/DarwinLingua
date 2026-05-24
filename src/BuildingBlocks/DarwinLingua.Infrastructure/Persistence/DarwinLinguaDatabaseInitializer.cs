@@ -758,6 +758,12 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "Category" character varying(128) NOT NULL,
                 "Region" character varying(128),
                 "IsRisky" boolean NOT NULL,
+                "MeaningTransparency" character varying(64),
+                "TeachingReason" character varying(2000),
+                "SafetyRating" character varying(64) NOT NULL DEFAULT 'general',
+                "MinimumAge" integer NOT NULL DEFAULT 0,
+                "RequiresAdultAccess" boolean NOT NULL DEFAULT FALSE,
+                "AdultContentCategory" character varying(64),
                 "PublicationStatus" character varying(32) NOT NULL,
                 "SortOrder" integer NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
@@ -905,6 +911,20 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 ON "ExpressionTopics" ("ExpressionEntryId", "TopicId");
             CREATE INDEX IF NOT EXISTS "IX_ExpressionTopics_TopicId"
                 ON "ExpressionTopics" ("TopicId");
+            """,
+            cancellationToken).ConfigureAwait(false);
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "MeaningTransparency" character varying(64);
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "TeachingReason" character varying(2000);
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "SafetyRating" character varying(64) NOT NULL DEFAULT 'general';
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "MinimumAge" integer NOT NULL DEFAULT 0;
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "RequiresAdultAccess" boolean NOT NULL DEFAULT FALSE;
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "AdultContentCategory" character varying(64);
+            UPDATE "ExpressionEntries"
+            SET "SafetyRating" = 'general'
+            WHERE "SafetyRating" IS NULL OR btrim("SafetyRating") = '';
             """,
             cancellationToken).ConfigureAwait(false);
     }

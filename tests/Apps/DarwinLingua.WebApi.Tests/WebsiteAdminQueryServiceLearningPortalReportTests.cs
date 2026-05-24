@@ -35,10 +35,16 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             Assert.Contains(report.LearningPortal.GrammarByCategory, row => row.Key == "articles" && row.Count == 1);
             Assert.Contains(report.LearningPortal.ExpressionsByType, row => row.Key == "fixed-expression" && row.Count == 1);
             Assert.Contains(report.LearningPortal.ExpressionsByRegister, row => row.Key == "neutral" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.ExpressionsByMeaningTransparency, row => row.Key == "pragmatic-formula" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.ExpressionsBySafetyRating, row => row.Key == "general" && row.Count == 1);
             Assert.Contains(report.LearningPortal.ExercisesByType, row => row.Key == "multiple-choice" && row.Count == 1);
             Assert.Equal(1, report.LearningPortal.MissingTranslationCount);
             Assert.Equal(1, report.LearningPortal.UnresolvedLinkedContentReferenceCount);
             Assert.Equal(1, report.LearningPortal.GrammarTopicsMissingExercises);
+            Assert.Equal(0, report.LearningPortal.ExpressionEntriesMissingEligibilityMetadata);
+            Assert.Equal(0, report.LearningPortal.ExpressionEntriesWithOrdinaryLiteralLeakage);
+            Assert.Equal(0, report.LearningPortal.ExpressionEntriesMissingTeachingReason);
+            Assert.Equal(1, report.LearningPortal.ExpressionEntriesWithFewerThanTwoExamples);
             Assert.NotEmpty(report.LearningPortal.SampleIssues);
         }
         finally
@@ -162,7 +168,12 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             false,
             PublicationStatus.Active,
             10,
-            now);
+            now,
+            "pragmatic-formula",
+            "It is a conventional confirmation formula.",
+            "general",
+            0,
+            false);
         expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("en"), "Understood or okay.", "Everything clear.", "Use it to confirm a simple plan.", now);
 
         dbContext.GrammarTopics.Add(grammarTopic);

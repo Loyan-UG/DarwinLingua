@@ -8,6 +8,7 @@ public sealed record SettingsPageViewModel(
     IReadOnlyList<SelectListItem> UiLanguageOptions,
     IReadOnlyList<SelectListItem> MeaningLanguageOptions,
     IReadOnlyList<SelectListItem> SecondaryMeaningLanguageOptions,
+    IReadOnlyList<SelectListItem> AdultContentAccessStateOptions,
     string? StatusMessage,
     bool CanUseDualMeaningLanguage,
     string? DualMeaningLanguageLockedMessage,
@@ -25,4 +26,10 @@ public sealed class SettingsUpdateInputModel
 
     [StringLength(8)]
     public string? SecondaryMeaningLanguageCode { get; init; }
+
+    public bool AllowsRudeSlangContent { get; init; }
+
+    [Required]
+    [StringLength(64)]
+    public string AdultContentAccessState { get; init; } = "not-requested";
 }

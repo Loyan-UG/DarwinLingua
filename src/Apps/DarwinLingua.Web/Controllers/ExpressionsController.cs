@@ -44,7 +44,7 @@ public sealed class ExpressionsController(
         try
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
+            catalogTimeout.CancelAfter(TimeSpan.FromSeconds(10));
             expressions = await catalogApiClient.GetExpressionsAsync(filter, catalogTimeout.Token).ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && IsCatalogApiFailure(ex))

@@ -26,7 +26,8 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
             .Include(expression => expression.Topics)
             .Include(expression => expression.Meanings)
             .Include(expression => expression.Warnings)
-            .Where(expression => expression.PublicationStatus == PublicationStatus.Active);
+            .Where(expression => expression.PublicationStatus == PublicationStatus.Active)
+            .Where(expression => !expression.RequiresAdultAccess && expression.SafetyRating != "explicit-adult");
 
         LanguageCode primaryLanguage = ResolveRequestedLanguage(filter.PrimaryMeaningLanguageCode);
 
@@ -104,6 +105,12 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
                     expression.Category,
                     expression.Region,
                     expression.IsRisky,
+                    expression.MeaningTransparency,
+                    expression.TeachingReason,
+                    expression.SafetyRating,
+                    expression.MinimumAge,
+                    expression.RequiresAdultAccess,
+                    expression.AdultContentCategory,
                     GetTopicKeys(expression.Topics, topicKeysById),
                     expression.Warnings.OrderBy(warning => warning.WarningType).Select(warning => warning.WarningType).ToArray());
             })
@@ -133,6 +140,7 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
             .Include(item => item.RelatedExpressions)
             .Include(item => item.LinkedExercises)
             .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
+            .Where(item => !item.RequiresAdultAccess && item.SafetyRating != "explicit-adult")
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -157,6 +165,12 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
             expression.Category,
             expression.Region,
             expression.IsRisky,
+            expression.MeaningTransparency,
+            expression.TeachingReason,
+            expression.SafetyRating,
+            expression.MinimumAge,
+            expression.RequiresAdultAccess,
+            expression.AdultContentCategory,
             GetTopicKeys(expression.Topics, topicKeysById),
             expression.Examples.OrderBy(item => item.SortOrder).Select(item => MapExample(item, primaryLanguage)).ToArray(),
             expression.Warnings.OrderBy(item => item.WarningType).Select(item => MapWarning(item, primaryLanguage)).ToArray(),

@@ -39,6 +39,8 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
             entity.Property(preference => preference.UiLanguageCode).HasMaxLength(16).IsRequired();
             entity.Property(preference => preference.PrimaryMeaningLanguageCode).HasMaxLength(16).IsRequired();
             entity.Property(preference => preference.SecondaryMeaningLanguageCode).HasMaxLength(16);
+            entity.Property(preference => preference.AllowsRudeSlangContent).HasDefaultValue(false).IsRequired();
+            entity.Property(preference => preference.AdultContentAccessState).HasMaxLength(64).HasDefaultValue(AdultContentAccessStates.NotRequested).IsRequired();
             entity.HasIndex(preference => preference.ActorId).IsUnique();
         });
 

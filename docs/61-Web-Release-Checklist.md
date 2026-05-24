@@ -16,6 +16,7 @@ Last updated: 2026-05-13.
 - Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
 - Everyday Expressions pilot smoke on 2026-05-24 passed against local Web/API services backed by `darwinlingua_shared`: Expression list/detail, Web list/detail, Unified Search, and admin system report all returned HTTP 200 after importing `expressions-a1-a2-core-pilot-v1.json`.
 - Everyday Expressions small batch 01 smoke on 2026-05-24 passed after importing `expressions-a1-a2-core-01-v1.json`: Web/API list/detail, Unified Search, and admin system report returned HTTP 200 with 37 total expressions, 0 missing translations, and 0 unresolved expression linked words.
+- Everyday Expressions stricter eligibility cleanup on 2026-05-24 passed with `tools/Content/Audit-ExpressionContentQuality.js`: 0 content-quality issues, 32 published public Expressions, 5 unpublished ordinary-literal archive findings, 0 admin ordinary-literal leakage, 0 missing eligibility metadata, 0 low example counts, and 0 missing risky-content warnings.
 - Full `DarwinLingua.slnx` build passed with 0 warnings and 0 errors when run sequentially with `-m:1`.
 - Phase 7 WebApi tests passed for the current admin/report and Learning Portal endpoint surface.
 - Phase 7 parser tests passed for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Cultural Notes.
@@ -118,6 +119,11 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 
 - [ ] Grammar Guide readiness reviewed: import validation, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
+- [ ] Everyday Expressions eligibility reviewed: no published ordinary literal sentence leakage, `meaningTransparency` present for new batches, teaching reason present, and at least two contextual German examples
+- [ ] Sensitive/adult Expressions are hidden from anonymous and ineligible users
+- [ ] Unified Search excludes adult-only Expressions unless the user is eligible
+- [ ] Admin reports show Expression counts by safety rating, age requirement/adult-access state, missing warnings, missing teaching reasons, and ordinary-literal leakage
+- [ ] Mobile package export excludes adult-only Expressions until mobile eligibility enforcement is ready
 - [ ] Exercise Engine readiness reviewed: deterministic answer evaluation, answer-key safety, attempts, WebApi runner endpoints, Web runner behavior
 - [ ] Exercise attempt persistence requires authorization and stores only authenticated user ids
 - [ ] Public exercise evaluation is stateless, rate-limited, and does not persist anonymous progress

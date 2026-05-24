@@ -296,6 +296,65 @@ public sealed class CatalogSearchInfrastructureTests
         }
     }
 
+    [Fact]
+    public async Task ExpressionRepositories_ShouldHideAdultOnlyExpressionsByDefault()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-expression-adult-filter-{Guid.NewGuid():N}.db");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+            await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                DateTime nowUtc = DateTime.UtcNow;
+                dbContext.ExpressionEntries.Add(CreateExpression("safe-formula", "Alles klar.", "Understood.", "متوجه شدم.", nowUtc));
+                dbContext.ExpressionEntries.Add(CreateExpression(
+                    "restricted-expression",
+                    "Restricted.",
+                    "Restricted.",
+                    "محدود.",
+                    nowUtc,
+                    requiresAdultAccess: true,
+                    safetyRating: "explicit-adult"));
+                await dbContext.SaveChangesAsync(CancellationToken.None);
+            }
+
+            IExpressionRepository expressionRepository = serviceProvider.GetRequiredService<IExpressionRepository>();
+            IReadOnlyList<ExpressionListItemModel> expressions = await expressionRepository.GetPublishedExpressionsAsync(
+                new ExpressionListFilterModel(null, null, null, null, null, null, null, "fa"),
+                CancellationToken.None);
+            ExpressionDetailModel? restrictedDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
+                "restricted-expression",
+                "fa",
+                CancellationToken.None);
+
+            IUnifiedLearningSearchRepository searchRepository = serviceProvider.GetRequiredService<IUnifiedLearningSearchRepository>();
+            IReadOnlyList<UnifiedLearningSearchResultModel> searchResults = await searchRepository.SearchAsync(
+                new UnifiedLearningSearchFilterModel("Restricted", null, "expression", null, null),
+                CancellationToken.None);
+
+            Assert.Contains(expressions, item => item.Slug == "safe-formula");
+            Assert.DoesNotContain(expressions, item => item.Slug == "restricted-expression");
+            Assert.Null(restrictedDetail);
+            Assert.Empty(searchResults);
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            TryDeleteFile(databasePath);
+        }
+    }
+
     /// <summary>
      /// Verifies that inactive lexical entries are not materialized through the detail repository path.
      /// </summary>
@@ -655,7 +714,9 @@ public sealed class CatalogSearchInfrastructureTests
         string englishMeaning,
         string persianMeaning,
         DateTime nowUtc,
-        bool isRisky = false)
+        bool isRisky = false,
+        bool requiresAdultAccess = false,
+        string safetyRating = "general")
     {
         ExpressionEntry expression = new(
             Guid.NewGuid(),
@@ -672,7 +733,12 @@ public sealed class CatalogSearchInfrastructureTests
             isRisky,
             PublicationStatus.Active,
             10,
-            nowUtc);
+            nowUtc,
+            "pragmatic-formula",
+            "It has a conventional pragmatic use.",
+            safetyRating,
+            requiresAdultAccess ? 18 : 0,
+            requiresAdultAccess);
 
         expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("en"), englishMeaning, null, "Use it in everyday German.", nowUtc);
         expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("fa"), persianMeaning, null, "در موقعیت روزمره آلمانی استفاده می‌شود.", nowUtc);

@@ -2836,6 +2836,8 @@ public sealed record AdminLearningPortalSystemReportResponse(
     IReadOnlyList<AdminLearningPortalCountRowResponse> GrammarByCategory,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByType,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByRegister,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByMeaningTransparency,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsBySafetyRating,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByType,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByTargetSkill,
     IReadOnlyList<AdminLearningPortalCountRowResponse> CourseLessonsByCourse,
@@ -2851,6 +2853,12 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int UnpublishedDraftCount,
     int GrammarTopicsMissingExercises,
     int CourseLessonsMissingExerciseSets,
+    int ExpressionEntriesMissingEligibilityMetadata,
+    int ExpressionEntriesWithOrdinaryLiteralLeakage,
+    int ExpressionEntriesMissingTeachingReason,
+    int ExpressionEntriesWithFewerThanTwoExamples,
+    int ExpressionEntriesMissingWarningsForRiskyContent,
+    int ExpressionEntriesRequiringAdultAccess,
     IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
 
 public sealed record AdminLearningPortalCountRowResponse(

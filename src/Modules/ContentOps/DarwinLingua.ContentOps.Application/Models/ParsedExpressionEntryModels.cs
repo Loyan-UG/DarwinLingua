@@ -20,7 +20,13 @@ public sealed record ParsedExpressionEntryModel(
     IReadOnlyList<ParsedExpressionWarningModel> Warnings,
     IReadOnlyList<ParsedExpressionLinkedWordModel> LinkedWords,
     IReadOnlyList<string> RelatedExpressionSlugs,
-    IReadOnlyList<string> LinkedExerciseSlugs);
+    IReadOnlyList<string> LinkedExerciseSlugs,
+    string? MeaningTransparency = null,
+    string? TeachingReason = null,
+    string SafetyRating = "general",
+    int MinimumAge = 0,
+    bool RequiresAdultAccess = false,
+    string? AdultContentCategory = null);
 
 public sealed record ParsedExpressionMeaningModel(
     string Language,

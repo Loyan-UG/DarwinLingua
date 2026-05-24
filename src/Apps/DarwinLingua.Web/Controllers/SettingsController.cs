@@ -2,6 +2,7 @@ using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using DarwinLingua.Web.Localization;
+using DarwinLingua.Web.Data;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -67,6 +68,8 @@ public sealed class SettingsController(
             input.UiLanguageCode.Trim(),
             input.PrimaryMeaningLanguageCode.Trim(),
             secondaryMeaningLanguageCode,
+            input.AllowsRudeSlangContent,
+            input.AdultContentAccessState,
             cancellationToken);
 
         Response.Cookies.Append(
@@ -103,7 +106,9 @@ public sealed class SettingsController(
         {
             UiLanguageCode = profile.UiLanguageCode,
             PrimaryMeaningLanguageCode = profile.PreferredMeaningLanguage1,
-            SecondaryMeaningLanguageCode = effectiveSecondaryMeaningLanguageCode
+            SecondaryMeaningLanguageCode = effectiveSecondaryMeaningLanguageCode,
+            AllowsRudeSlangContent = profile.AllowsRudeSlangContent,
+            AdultContentAccessState = profile.AdultContentAccessState
         };
 
         IReadOnlyList<SelectListItem> uiLanguageOptions = languages
@@ -134,11 +139,18 @@ public sealed class SettingsController(
                 language.Code,
                 string.Equals(language.Code, formInput.SecondaryMeaningLanguageCode, StringComparison.OrdinalIgnoreCase))));
 
+        IReadOnlyList<SelectListItem> adultAccessOptions =
+        [
+            new(localizer["Do not request adult content access"].Value, AdultContentAccessStates.NotRequested, string.Equals(formInput.AdultContentAccessState, AdultContentAccessStates.NotRequested, StringComparison.OrdinalIgnoreCase)),
+            new(localizer["I self-declare that I am 18 or older"].Value, AdultContentAccessStates.SelfDeclaredAdult, string.Equals(formInput.AdultContentAccessState, AdultContentAccessStates.SelfDeclaredAdult, StringComparison.OrdinalIgnoreCase)),
+        ];
+
         return new SettingsPageViewModel(
             formInput,
             uiLanguageOptions,
             meaningLanguageOptions,
             secondaryMeaningOptions,
+            adultAccessOptions,
             statusMessage,
             canUseDualMeaningLanguage,
             canUseDualMeaningLanguage ? null : localizer["A trial or premium plan is required to enable a second meaning language."].Value,
@@ -159,8 +171,11 @@ public sealed class SettingsController(
             languages.Any(language =>
                 language.SupportsMeanings &&
                 string.Equals(language.Code, input.SecondaryMeaningLanguageCode, StringComparison.OrdinalIgnoreCase));
+        bool hasAdultAccessState = input.AdultContentAccessState is not null &&
+            (string.Equals(input.AdultContentAccessState, AdultContentAccessStates.NotRequested, StringComparison.OrdinalIgnoreCase) ||
+             string.Equals(input.AdultContentAccessState, AdultContentAccessStates.SelfDeclaredAdult, StringComparison.OrdinalIgnoreCase));
 
-        return hasUiLanguage && hasPrimaryMeaningLanguage && hasSecondaryMeaningLanguage;
+        return hasUiLanguage && hasPrimaryMeaningLanguage && hasSecondaryMeaningLanguage && hasAdultAccessState;
     }
 
     private static string? TrimToNull(string? value)

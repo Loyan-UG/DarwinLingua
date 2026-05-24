@@ -1507,6 +1507,119 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     [Fact]
+    public async Task ImportAsync_ShouldRejectExpressionEntry_WhenPublishedOrdinaryLiteral()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with
+            {
+                MeaningTransparency = "ordinary-literal",
+                TeachingReason = "This sentence is only a direct situational sentence.",
+                Examples = CreateTwoExpressionExamples()
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Published Expressions cannot use meaningTransparency 'ordinary-literal'", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExpressionEntry_WhenNonLiteralMissingLiteralMeaning()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with
+            {
+                MeaningTransparency = "non-literal",
+                LiteralMeaningText = null,
+                TeachingReason = "The real meaning is not compositional.",
+                Examples = CreateTwoExpressionExamples()
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("literalMeaningText is required", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldImportExpressionEntry_WhenPragmaticFormulaIsClassified()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with
+            {
+                MeaningTransparency = "pragmatic-formula",
+                TeachingReason = "It is a conventional confirmation formula, not a normal sentence-bank item.",
+                SafetyRating = "general",
+                Examples = CreateTwoExpressionExamples()
+            });
+        FakeRepository repository = new();
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
+        ExpressionEntry expression = Assert.Single(repository.ImportedExpressions);
+        Assert.Equal("pragmatic-formula", expression.MeaningTransparency);
+        Assert.Equal("general", expression.SafetyRating);
+        Assert.Equal(2, expression.Examples.Count);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExpressionEntry_WhenExplicitAdultMetadataIsUnsafe()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with
+            {
+                MeaningTransparency = "pragmatic-formula",
+                TeachingReason = "This phrase has restricted adult context.",
+                SafetyRating = "explicit-adult",
+                MinimumAge = 16,
+                RequiresAdultAccess = false,
+                Examples = CreateTwoExpressionExamples()
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Explicit-adult expressions require requiresAdultAccess true and minimumAge 18.", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public async Task ImportAsync_ShouldImportCulturalNote_WhenContractIsValid()
     {
         ParsedContentPackageModel parsedPackage = CreatePackageWithCulturalNote(CreateValidCulturalNote());
@@ -1657,6 +1770,12 @@ public sealed class ContentImportServiceApplicationTests
             ["verstanden"],
             ["a2-confirmation-phrases"]);
     }
+
+    private static ParsedExpressionExampleModel[] CreateTwoExpressionExamples() =>
+    [
+        new("Alles klar, wir treffen uns um acht.", null, [new ParsedContentMeaningModel("en", "All good, we meet at eight.")], 10),
+        new("Alles klar, ich bringe die Unterlagen mit.", null, [new ParsedContentMeaningModel("en", "Understood, I will bring the documents.")], 20)
+    ];
 
     private static ParsedExpressionEntryModel CreatePilotStyleExpression()
     {

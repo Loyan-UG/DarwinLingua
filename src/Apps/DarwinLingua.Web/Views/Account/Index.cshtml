@@ -63,6 +63,8 @@
             <li>@T["UI language"]: @Model.Profile.UiLanguageCode</li>
             <li>@T["Primary meaning language"]: @Model.Profile.PreferredMeaningLanguage1</li>
             <li>@T["Secondary meaning language"]: @(Model.Profile.PreferredMeaningLanguage2 ?? T["None"].Value)</li>
+            <li>@T["Rude/slang learning preference"]: @(Model.Profile.AllowsRudeSlangContent ? T["Enabled"].Value : T["Disabled"].Value)</li>
+            <li>@T["Adult content access state"]: @Model.Profile.AdultContentAccessState</li>
         </ul>
     </article>
     <article class="panel stack-md">

@@ -138,3 +138,12 @@ When the web host misbehaves:
 6. confirm service worker cache is not serving stale shell assets
 7. confirm transactional email diagnostics for `Failed` or repeated `Queued` delivery attempts
 8. confirm SMTP/provider credentials and sender-domain DNS when account recovery emails fail
+
+## Local Public Tunnel Notes
+
+The local Cloudflare-routed public domains require the same ports used by the checked-in launch profiles:
+
+- `DarwinLingua.Web`: `https://0.0.0.0:7501` and `http://0.0.0.0:5192`
+- `DarwinLingua.WebApi`: `https://0.0.0.0:53944` and `http://0.0.0.0:53945`
+
+For private local-only smoke, `http://localhost:5192` and `http://localhost:5099` may still be used when Web is configured to call the API on `5099`. For public-routed smoke through `lingua.vafadar.pro` and `linguaapi.vafadar.pro`, start the launch-profile ports or ensure the tunnel ingress points at the active local ports. A public `502 Bad Gateway` with healthy localhost responses usually means the tunnel origin port is not running or the Web host is calling a local API port that is not active.

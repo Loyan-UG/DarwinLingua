@@ -34,6 +34,8 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "UiLanguageCode" character varying(16) NOT NULL,
                 "PrimaryMeaningLanguageCode" character varying(16) NOT NULL,
                 "SecondaryMeaningLanguageCode" character varying(16) NULL,
+                "AllowsRudeSlangContent" boolean NOT NULL DEFAULT FALSE,
+                "AdultContentAccessState" character varying(64) NOT NULL DEFAULT 'not-requested',
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "UpdatedAtUtc" timestamp with time zone NOT NULL
             );
@@ -152,6 +154,8 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN IF NOT EXISTS "ProviderLastEvent" character varying(64) NULL;
             ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN IF NOT EXISTS "ProviderLastEventAtUtc" timestamp with time zone NULL;
             ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN IF NOT EXISTS "ProviderLastEventReason" character varying(512) NULL;
+            ALTER TABLE "WebUserPreferences" ADD COLUMN IF NOT EXISTS "AllowsRudeSlangContent" boolean NOT NULL DEFAULT FALSE;
+            ALTER TABLE "WebUserPreferences" ADD COLUMN IF NOT EXISTS "AdultContentAccessState" character varying(64) NOT NULL DEFAULT 'not-requested';
             """,
             cancellationToken)
             .ConfigureAwait(false);

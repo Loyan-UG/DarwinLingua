@@ -43,7 +43,13 @@ public sealed class ExpressionEntry
         bool isRisky,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string? meaningTransparency = null,
+        string? teachingReason = null,
+        string? safetyRating = null,
+        int minimumAge = 0,
+        bool requiresAdultAccess = false,
+        string? adultContentCategory = null)
     {
         if (id == Guid.Empty)
         {
@@ -62,6 +68,12 @@ public sealed class ExpressionEntry
         Category = NormalizeKebabKey(category, "Expression category");
         Region = NormalizeOptionalText(region, 128, "Expression region");
         IsRisky = isRisky;
+        MeaningTransparency = NormalizeOptionalKebabKey(meaningTransparency, "Expression meaning transparency");
+        TeachingReason = NormalizeOptionalText(teachingReason, 2000, "Expression teaching reason");
+        SafetyRating = NormalizeOptionalKebabKey(safetyRating, "Expression safety rating") ?? "general";
+        MinimumAge = minimumAge is 16 or 18 ? minimumAge : 0;
+        RequiresAdultAccess = requiresAdultAccess;
+        AdultContentCategory = NormalizeOptionalKebabKey(adultContentCategory, "Expression adult content category");
         PublicationStatus = publicationStatus;
         SortOrder = Math.Max(0, sortOrder);
         CreatedAtUtc = timestampUtc;
@@ -80,6 +92,12 @@ public sealed class ExpressionEntry
     public string Category { get; private set; }
     public string? Region { get; private set; }
     public bool IsRisky { get; private set; }
+    public string? MeaningTransparency { get; private set; }
+    public string? TeachingReason { get; private set; }
+    public string SafetyRating { get; private set; } = "general";
+    public int MinimumAge { get; private set; }
+    public bool RequiresAdultAccess { get; private set; }
+    public string? AdultContentCategory { get; private set; }
     public PublicationStatus PublicationStatus { get; private set; }
     public int SortOrder { get; private set; }
     public DateTime CreatedAtUtc { get; private set; }

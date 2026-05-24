@@ -32,7 +32,12 @@ Last updated: 2026-05-24.
 - Existing Conversation content remains protected. Dialogues and Talk Topics were not deleted; only malformed JSON, malformed word references, duplicate useful-word references, and weak active seed dialogue metadata were repaired.
 - A small importable Conversation support baseline exists at `content/generated/conversation-support/conversation-support-baseline-v1.json`. It contains 6 Conversation Starter Packs and 8 Event Preparation Packs across A1-C2 with all target learner languages.
 - The first real Everyday Expressions pilot package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json`. It contains 12 A1/A2-focused expressions with all target learner languages and is covered by parser, import-validation, repository/query, Unified Search, Web route/render-structure, admin-report tests, shared PostgreSQL import, and local Web/API/admin smoke validation.
-- The next small Everyday Expressions package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-01-v1.json`. It contains 25 A1/A2 practical expressions with all target learner languages, passed the Expressions quality gate, imported into `darwinlingua_shared`, and passed Web/API/detail/search/admin report smoke checks on 2026-05-24. Bulk Expressions generation remains blocked; proceed only with another small reviewed batch after the same gates pass.
+- The next small Everyday Expressions package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-01-v1.json`. It contains 25 A1/A2 practical expression candidates with all target learner languages. After the stricter eligibility pass, 23 entries remain published and 2 ordinary-literal entries are unpublished archive findings.
+- The A2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-a2-core-v1.json`. It contains 30 published A2 idioms, semi-idiomatic phrases, and pragmatic formulas with all target learner languages; no ordinary-literal entry is published.
+- The B1 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b1-core-v1.json`. It contains 40 published B1 idioms, semi-idiomatic phrases, pragmatic formulas, and mild-frustration expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The B2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b2-core-v1.json`. It contains 40 published B2 idioms, semi-idiomatic phrases, workplace/social nuance expressions, and mild-frustration expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- Everyday Expressions now has a stricter eligibility policy: it is for expressions whose real meaning, tone, or social function is not obvious from literal words. It is not a general sentence bank. Ordinary literal situational sentences belong in Dialogues, Courses, Exercises, Writing Templates, or Grammar examples. `tools/Content/Audit-ExpressionContentQuality.js` generated `artifacts/validation/expression-content-quality-report.md`; the latest pass reports zero issues. Five ordinary-literal entries across earlier packages are unpublished archive findings.
+- The reviewed Everyday Expressions packages imported into `darwinlingua_shared` on 2026-05-24 with zero import warnings. After the B1 core import, the shared database contains 137 Expression records: 132 active and 5 draft ordinary-literal archive findings. Local and public-routed Web/API smoke returned HTTP 200 for `/expressions`, `/expressions/ich-stehe-auf-dem-schlauch`, `/expressions/jetzt-mal-butter-bei-die-fische`, `/api/catalog/expressions`, `/api/catalog/expressions/ich-stehe-auf-dem-schlauch?primaryMeaningLanguageCode=fa`, `/api/catalog/search?q=Schlauch&resultType=expression`, and `/api/admin/catalog/system-report`. Admin quality counters showed zero ordinary-literal leakage, zero missing eligibility metadata, zero low example counts, zero missing translations, zero unresolved word links, and zero missing risky-content warnings.
 - Standalone RoleplayScenario content is blocked until dedicated parser, import validation, persistence, Web API, Web rendering, search, admin visibility, and tests exist. Event Preparation Packs may contain simple `roleplayPrompts`, but standalone roleplay packages must not be generated yet.
 - Transactional email has a Brevo API provider path, sandbox behavior, webhook event handling, delivery logs, diagnostics, and suppression handling. Production launch still requires operational Brevo configuration outside source control, verified sender domain, SPF/DKIM/DMARC, webhook secret, and provider DPA review.
 - Mobile/MAUI parity remains later-stage work. Do not modify mobile learning content surfaces until Web/API contracts, imports, rendering, search, admin visibility, and tests are stable.
@@ -40,9 +45,9 @@ Last updated: 2026-05-24.
 Immediate next order:
 
 1. Keep validation reports green after any content repair.
-2. Implement RoleplayScenario infrastructure before standalone Roleplay content generation.
-3. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
-4. Generate any further Everyday Expressions content only as a small reviewed batch after re-running the quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
+2. Generate any further Everyday Expressions content only as a small reviewed batch after re-running the strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
+3. Implement RoleplayScenario infrastructure before standalone Roleplay content generation.
+4. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
 5. Start Exercises only after Grammar, Conversation, and Expressions are stable enough to link to.
 
 ---
@@ -295,9 +300,11 @@ The exact display mode should follow the existing dual-language UX rules where a
 
 ### Product Purpose
 
-Everyday Expressions teaches idioms, colloquial phrases, informal expressions, fixed phrases, cultural expressions, and proverbs.
+Everyday Expressions teaches idioms, colloquial phrases, informal expressions, fixed pragmatic formulas, cultural expressions, false friends, regional phrases, and proverbs.
 
 This module is separate from Words because expression meaning is often not equal to the literal meaning of the individual words.
+
+It is also separate from Dialogues, Courses, Exercises, Writing Templates, and Grammar examples. Do not use it as a bank of ordinary literal sentences such as appointment reports, problem reports, or simple classroom sentences. A literal phrase may belong here only when it is a conventional formula with a social/pragmatic function that needs explanation.
 
 ### Recommended UI Names
 
@@ -330,12 +337,18 @@ Initial controlled types:
 - expression text
 - literal meaning text where useful
 - actual meaning text
+- meaning transparency classification
+- usage explanation
+- teaching reason
 - CEFR level
 - expression type
 - register
 - context/category
 - topic keys
 - region where applicable
+- safety rating
+- minimum age
+- adult access requirement
 - publication status
 - sort order
 
@@ -374,6 +387,19 @@ Each expression detail page should show:
 ### Safety Rule
 
 Expressions that are rude, sexual, discriminatory, politically sensitive, or easy to misuse must have warnings and should be filtered or marked clearly.
+
+Explicit adult content must not be visible to anonymous users, minors, self-declared-only users, or users without an approved adult-access state. Do not launch explicit adult or pornographic language-learning content in production without legal review and an approved age-verification concept. Store the minimum access state needed; do not store full birthdates unless a reviewed provider workflow requires it.
+
+Follow-up backlog:
+
+- [x] add Expression eligibility validation and quality reporting for ordinary-literal leakage
+- [x] add safety metadata fields for `meaningTransparency`, `safetyRating`, `minimumAge`, and `requiresAdultAccess`
+- [x] implement a durable Web profile/settings model for rude/slang preferences and adult-content access state (`not-requested`, `self-declared-adult`, `age-verified-adult`, `blocked`)
+  - Progress: Web user preferences now persist rude/slang learning preference and adult-content access state. Learner settings may store `self-declared-adult`, but this does not unlock explicit adult content; future provider-backed `age-verified-adult` access remains blocked until legal review and approved age verification.
+- [x] hide adult-only Expressions from public list/detail/search by default
+- [x] add admin quality counts for meaning transparency, safety rating, adult-only count, missing teaching reasons, ordinary-literal leakage, and missing warnings
+- [ ] add user-eligible list/search/detail filtering once legal adult-access policy is approved
+- [ ] ensure mobile export excludes adult-only Expressions until mobile eligibility enforcement is ready
 
 ---
 

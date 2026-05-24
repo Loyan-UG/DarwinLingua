@@ -13,6 +13,8 @@ public interface IWebUserPreferenceService
         string uiLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
+        bool allowsRudeSlangContent,
+        string adultContentAccessState,
         CancellationToken cancellationToken);
 }
 
@@ -65,6 +67,8 @@ internal sealed class WebUserPreferenceService(
             ActorId = actor.ActorId,
             UiLanguageCode = "en",
             PrimaryMeaningLanguageCode = "en",
+            AllowsRudeSlangContent = false,
+            AdultContentAccessState = AdultContentAccessStates.NotRequested,
             CreatedAtUtc = DateTime.UtcNow,
             UpdatedAtUtc = DateTime.UtcNow
         };
@@ -79,9 +83,11 @@ internal sealed class WebUserPreferenceService(
         string uiLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
+        bool allowsRudeSlangContent,
+        string adultContentAccessState,
         CancellationToken cancellationToken)
     {
-        await ValidateAsync(uiLanguageCode, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken)
+        await ValidateAsync(uiLanguageCode, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, adultContentAccessState, cancellationToken)
             .ConfigureAwait(false);
 
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
@@ -107,6 +113,8 @@ internal sealed class WebUserPreferenceService(
         preference.SecondaryMeaningLanguageCode = string.IsNullOrWhiteSpace(secondaryMeaningLanguageCode)
             ? null
             : secondaryMeaningLanguageCode.Trim().ToLowerInvariant();
+        preference.AllowsRudeSlangContent = allowsRudeSlangContent;
+        preference.AdultContentAccessState = ResolveUserWritableAdultAccessState(adultContentAccessState, preference.AdultContentAccessState);
         preference.UpdatedAtUtc = DateTime.UtcNow;
 
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
@@ -118,6 +126,7 @@ internal sealed class WebUserPreferenceService(
         string uiLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
+        string adultContentAccessState,
         CancellationToken cancellationToken)
     {
         LanguageCode uiLanguage = LanguageCode.From(uiLanguageCode);
@@ -144,6 +153,12 @@ internal sealed class WebUserPreferenceService(
                 throw new InvalidOperationException($"Unsupported secondary meaning language code '{secondaryMeaningLanguageCode}'.");
             }
         }
+
+        string normalizedAdultState = NormalizeAdultContentAccessState(adultContentAccessState);
+        if (normalizedAdultState is not AdultContentAccessStates.NotRequested and not AdultContentAccessStates.SelfDeclaredAdult)
+        {
+            throw new InvalidOperationException("Only not-requested and self-declared-adult adult-content states can be set from learner settings.");
+        }
     }
 
     private static UserLearningProfileModel Map(string actorId, WebUserPreference preference) =>
@@ -151,12 +166,36 @@ internal sealed class WebUserPreferenceService(
             actorId,
             preference.PrimaryMeaningLanguageCode,
             preference.SecondaryMeaningLanguageCode,
-            preference.UiLanguageCode);
+            preference.UiLanguageCode,
+            preference.AllowsRudeSlangContent,
+            NormalizeAdultContentAccessState(preference.AdultContentAccessState));
 
     private static UserLearningProfileModel CreateDefaultProfile(string actorId) =>
         new(
             actorId,
             "en",
             null,
-            "en");
+            "en",
+            false,
+            AdultContentAccessStates.NotRequested);
+
+    private static string ResolveUserWritableAdultAccessState(string requestedState, string currentState)
+    {
+        string normalizedCurrent = NormalizeAdultContentAccessState(currentState);
+        if (normalizedCurrent is AdultContentAccessStates.AgeVerifiedAdult or AdultContentAccessStates.Blocked)
+        {
+            return normalizedCurrent;
+        }
+
+        return NormalizeAdultContentAccessState(requestedState);
+    }
+
+    private static string NormalizeAdultContentAccessState(string? value) =>
+        value?.Trim().ToLowerInvariant() switch
+        {
+            AdultContentAccessStates.SelfDeclaredAdult => AdultContentAccessStates.SelfDeclaredAdult,
+            AdultContentAccessStates.AgeVerifiedAdult => AdultContentAccessStates.AgeVerifiedAdult,
+            AdultContentAccessStates.Blocked => AdultContentAccessStates.Blocked,
+            _ => AdultContentAccessStates.NotRequested,
+        };
 }

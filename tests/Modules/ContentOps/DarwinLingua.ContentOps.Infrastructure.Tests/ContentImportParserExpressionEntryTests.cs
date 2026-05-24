@@ -113,6 +113,11 @@ public sealed class ContentImportParserExpressionEntryTests
                   "literalMeaningText": "Everything clear.",
                   "actualMeaningText": "All good or understood.",
                   "usageExplanation": "Used to confirm understanding or agreement.",
+                  "meaningTransparency": "pragmatic-formula",
+                  "teachingReason": "It is a conventional confirmation formula.",
+                  "safetyRating": "general",
+                  "minimumAge": 0,
+                  "requiresAdultAccess": false,
                   "cefrLevel": "A2",
                   "expressionType": "fixed-expression",
                   "register": "neutral",
@@ -162,6 +167,11 @@ public sealed class ContentImportParserExpressionEntryTests
         Assert.Equal("a2-alles-klar", expression.Slug);
         Assert.Equal("fixed-expression", expression.ExpressionType);
         Assert.Equal("neutral", expression.Register);
+        Assert.Equal("pragmatic-formula", expression.MeaningTransparency);
+        Assert.Equal("It is a conventional confirmation formula.", expression.TeachingReason);
+        Assert.Equal("general", expression.SafetyRating);
+        Assert.Equal(0, expression.MinimumAge);
+        Assert.False(expression.RequiresAdultAccess);
         Assert.Equal("All good or understood.", Assert.Single(expression.Meanings).ActualMeaningText);
         Assert.Equal("Alles klar, wir treffen uns um acht.", Assert.Single(expression.Examples).GermanText);
         Assert.Equal("klar", Assert.Single(expression.LinkedWords).WordSlug);

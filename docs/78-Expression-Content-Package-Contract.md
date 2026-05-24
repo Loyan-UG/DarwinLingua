@@ -6,7 +6,32 @@ This document defines the JSON/import contract for the Phase 7 Everyday Expressi
 
 Everyday Expressions are dynamic, importable learning content. They must not be stored as WordEntry-only records, and they must not duplicate Word meanings. They may link to Words by lemma or slug when useful.
 
+Everyday Expressions is not a general sentence bank. Ordinary literal sentences such as `Die Heizung funktioniert nicht.`, `Ich brauche einen Termin.`, or `Ich gehe zum Arzt.` belong in Dialogues, Courses, Exercises, Writing Templates, or Grammar examples unless they have a conventional pragmatic, idiomatic, cultural, or non-literal use that must be taught as an expression.
+
 The roadmap source of truth remains `76-Learning-Portal-Roadmap-And-Backlog.md`.
+
+## Expression Eligibility Rule
+
+Allowed in official Expression packages:
+
+- non-literal idioms
+- semi-idiomatic colloquial phrases
+- fixed social formulas with conventional pragmatic usage
+- polite formulas
+- proverbs
+- cultural phrases
+- false friends
+- regional expressions
+- slang, rude, warning, or adult expressions only with safety metadata and access controls
+
+Not allowed in published official Expression packages:
+
+- ordinary literal sentences whose meaning is directly compositional
+- normal situational sentences better taught in Dialogues, Courses, Exercises, or Writing Templates
+- utility sentences such as "The heating does not work" unless the phrase has a conventional non-literal or pragmatic meaning
+- generic translations or simple classroom sentences
+
+Every official Expression entry must explain why it belongs in Expressions rather than normal lessons or Dialogues.
 
 ## Package Shape
 
@@ -34,13 +59,20 @@ Required:
 - `expressionType`: controlled expression type
 - `register`: controlled register
 - `category`: lowercase kebab-case category/context key
+- `meaningTransparency`: controlled transparency classification
+- `usageExplanation`: context/tone explanation
+- `teachingReason`: why this belongs in Expressions
+- `safetyRating`: controlled safety classification
+- `minimumAge`
+- `requiresAdultAccess`
 
 Optional:
 
 - `literalMeaningText`
-- `usageExplanation`
 - `region`
 - `isRisky`
+- `adultContentCategory`
+- `contentWarnings`
 - `topics`
 - `isPublished`
 - `sortOrder`
@@ -79,6 +111,34 @@ Registers:
 - `friends-only`
 - `regional`
 
+Meaning transparency:
+
+- `non-literal`
+- `semi-idiomatic`
+- `pragmatic-formula`
+- `literal-fixed-formula`
+- `ordinary-literal`
+
+Published official content must reject `ordinary-literal`. Legacy records without this metadata may remain renderable only as quality-report findings until repaired.
+
+Safety ratings:
+
+- `general`
+- `mild-rude`
+- `strong-rude`
+- `sexual-context`
+- `explicit-adult`
+- `discriminatory-slur`
+- `politically-sensitive`
+
+Minimum ages:
+
+- `0`
+- `16`
+- `18`
+
+Adult content categories are optional controlled keys for restricted educational content, such as `rude-slang`, `sexual-language`, `explicit-sexual-language`, `discriminatory-language`, or `politically-sensitive-language`.
+
 ## Localization
 
 `meanings` provide learner-language actual meaning, literal meaning, and usage explanation variants.
@@ -92,6 +152,12 @@ Supported language codes must already be active platform meaning languages. Dupl
 Expressions that are risky, rude, slang-heavy, friends-only, warning phrases, discriminatory, sexual, highly political, or easy to misuse must include warning metadata.
 
 The importer rejects risky expressions that do not include at least one warning with text.
+
+`explicit-adult`, pornographic, or strongly sexual content must not be visible to anonymous users, minors, self-declared-only users, or unverified users. In Germany, a simple checkbox is not sufficient for pornographic or legally restricted adult content. Production launch of explicit adult content requires legal review and an approved age-verification/closed-user-group concept.
+
+Implementation guidance for Germany: public documentation from NLM, KJM, and FSM describes closed adult user groups as requiring adult identification plus per-use authentication for content that may be offered only to adults. Treat `self-declared-adult` as a stored preference and not as sufficient production access for explicit adult/pornographic content. Approved future states should use the minimal needed claim, such as a verified-over-18 status, rather than storing full birthdates unless a reviewed provider flow requires it.
+
+Educational rude or slang content may be marked and filtered separately from explicit adult content. Discriminatory slurs may only be included for comprehension and safety education, with strong warnings, neutral explanation, no endorsement, and restricted visibility if needed. Sexual content involving minors, coercion, exploitation, or illegal content is never allowed.
 
 ## Linking Rules
 
@@ -114,6 +180,11 @@ They must not include word definitions or copied word meanings.
   "literalMeaningText": "Everything clear.",
   "actualMeaningText": "All good or understood.",
   "usageExplanation": "Used to confirm understanding or agreement.",
+  "meaningTransparency": "pragmatic-formula",
+  "teachingReason": "It is a conventional confirmation formula whose social function is broader than the literal words.",
+  "safetyRating": "general",
+  "minimumAge": 0,
+  "requiresAdultAccess": false,
   "cefrLevel": "A2",
   "expressionType": "fixed-expression",
   "register": "neutral",
@@ -136,6 +207,13 @@ They must not include word definitions or copied word meanings.
         { "language": "en", "text": "All good, we meet at eight." }
       ],
       "sortOrder": 10
+    },
+    {
+      "germanText": "Alles klar, ich bringe die Unterlagen morgen mit.",
+      "translations": [
+        { "language": "en", "text": "Understood, I will bring the documents tomorrow." }
+      ],
+      "sortOrder": 20
     }
   ],
   "linkedWords": [
@@ -155,11 +233,20 @@ They must not include word definitions or copied word meanings.
 - expression type valid
 - register valid
 - category required and kebab-case
+- `meaningTransparency` must use the controlled set
+- published `ordinary-literal` entries are rejected
+- `literalMeaningText` is required for `non-literal` and `semi-idiomatic`
+- `usageExplanation` and `teachingReason` are required for classified official content
+- published classified official content needs at least two German examples unless a documented exception exists
+- German examples must show realistic contexts and must not repeat the same generic frame
+- `safetyRating`, `minimumAge`, and `requiresAdultAccess` must be valid and consistent
+- `explicit-adult` requires `minimumAge: 18` and `requiresAdultAccess: true`
 - examples require German text
 - linked words store only lemma/slug references, not meanings
 - duplicate translation language codes rejected
 - unsupported translation language codes rejected
 - risky expressions require warning text
+- adult-only content is hidden from public learner surfaces by default until profile eligibility and legal review gates are complete
 
 ## Content Generation Rule
 

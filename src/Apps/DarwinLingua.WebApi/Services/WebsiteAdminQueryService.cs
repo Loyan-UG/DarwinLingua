@@ -649,6 +649,18 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             dbContext.ExpressionEntries.AsNoTracking(),
             expression => expression.Register,
             cancellationToken).ConfigureAwait(false);
+        List<AdminLearningPortalCountRowResponse> expressionsByMeaningTransparency = await CountByIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking(),
+            expression => expression.MeaningTransparency ?? "missing",
+            cancellationToken).ConfigureAwait(false);
+        List<AdminLearningPortalCountRowResponse> expressionsBySafetyRating = await CountByIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking(),
+            expression => expression.SafetyRating,
+            cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> exercisesByType = await CountByIfTableExistsAsync(
             tableAvailability,
             "Exercises",
@@ -713,6 +725,8 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             grammarByCategory,
             expressionsByType,
             expressionsByRegister,
+            expressionsByMeaningTransparency,
+            expressionsBySafetyRating,
             exercisesByType,
             exercisesBySkill,
             lessonsByCourse,
@@ -728,6 +742,12 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             qualitySummary.UnpublishedDraftCount,
             qualitySummary.GrammarTopicsMissingExercises,
             qualitySummary.CourseLessonsMissingExerciseSets,
+            qualitySummary.ExpressionEntriesMissingEligibilityMetadata,
+            qualitySummary.ExpressionEntriesWithOrdinaryLiteralLeakage,
+            qualitySummary.ExpressionEntriesMissingTeachingReason,
+            qualitySummary.ExpressionEntriesWithFewerThanTwoExamples,
+            qualitySummary.ExpressionEntriesMissingWarningsForRiskyContent,
+            qualitySummary.ExpressionEntriesRequiringAdultAccess,
             qualitySummary.SampleIssues);
     }
 
@@ -952,6 +972,55 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             ? await dbContext.CourseLessons.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
             : [];
         int lessonsWithoutExerciseSets = lessons.Count(static lesson => ReadStringArray(lesson.LinkedExerciseSetSlugsJson).Count == 0);
+        int expressionsMissingEligibilityMetadata = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.MeaningTransparency == null || item.MeaningTransparency == string.Empty),
+            cancellationToken).ConfigureAwait(false);
+        int ordinaryLiteralLeakage = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.PublicationStatus == PublicationStatus.Active && item.MeaningTransparency == "ordinary-literal"),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsMissingTeachingReason = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.MeaningTransparency != null && item.MeaningTransparency != string.Empty && (item.TeachingReason == null || item.TeachingReason == string.Empty)),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsWithFewerThanTwoExamples = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.PublicationStatus == PublicationStatus.Active && item.MeaningTransparency != null && item.Examples.Count < 2),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsMissingWarningsForRiskyContent = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+                (item.IsRisky ||
+                    item.Register == "slang" ||
+                    item.Register == "rude" ||
+                    item.Register == "friends-only" ||
+                    item.ExpressionType == "slang" ||
+                    item.ExpressionType == "warning-phrase" ||
+                    item.SafetyRating == "mild-rude" ||
+                    item.SafetyRating == "strong-rude" ||
+                    item.SafetyRating == "sexual-context" ||
+                    item.SafetyRating == "explicit-adult" ||
+                    item.SafetyRating == "discriminatory-slur" ||
+                    item.SafetyRating == "politically-sensitive") &&
+                !item.Warnings.Any()),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsRequiringAdultAccess = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.RequiresAdultAccess || item.SafetyRating == "explicit-adult"),
+            cancellationToken).ConfigureAwait(false);
+
+        AddQualityIssue(expressionsMissingEligibilityMetadata, "Expression eligibility", "all", "Missing meaningTransparency metadata", issues);
+        AddQualityIssue(ordinaryLiteralLeakage, "Expression eligibility", "published", "Published ordinary-literal expression leakage", issues);
+        AddQualityIssue(expressionsMissingTeachingReason, "Expression eligibility", "all", "Missing teachingReason", issues);
+        AddQualityIssue(expressionsWithFewerThanTwoExamples, "Expression examples", "published", "Fewer than two examples", issues);
+        AddQualityIssue(expressionsMissingWarningsForRiskyContent, "Expression safety", "all", "Missing warning for risky/sensitive expression", issues);
 
         return new LearningPortalQualitySummary(
             unresolvedWordCount,
@@ -960,7 +1029,28 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             draftCount,
             grammarWithoutExercises,
             lessonsWithoutExerciseSets,
+            expressionsMissingEligibilityMetadata,
+            ordinaryLiteralLeakage,
+            expressionsMissingTeachingReason,
+            expressionsWithFewerThanTwoExamples,
+            expressionsMissingWarningsForRiskyContent,
+            expressionsRequiringAdultAccess,
             issues.Take(30).ToArray());
+    }
+
+    private static void AddQualityIssue(
+        int count,
+        string area,
+        string owner,
+        string issue,
+        List<AdminLearningPortalIssueRowResponse> issues)
+    {
+        if (count <= 0 || issues.Count >= 30)
+        {
+            return;
+        }
+
+        issues.Add(new AdminLearningPortalIssueRowResponse(area, owner, issue, count.ToString(System.Globalization.CultureInfo.InvariantCulture)));
     }
 
     private static async Task<HashSet<string>> GetSlugSetIfTableExistsAsync(
@@ -1388,5 +1478,11 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int UnpublishedDraftCount,
         int GrammarTopicsMissingExercises,
         int CourseLessonsMissingExerciseSets,
+        int ExpressionEntriesMissingEligibilityMetadata,
+        int ExpressionEntriesWithOrdinaryLiteralLeakage,
+        int ExpressionEntriesMissingTeachingReason,
+        int ExpressionEntriesWithFewerThanTwoExamples,
+        int ExpressionEntriesMissingWarningsForRiskyContent,
+        int ExpressionEntriesRequiringAdultAccess,
         IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
 }

@@ -203,3 +203,17 @@ When a content-quality problem is found, add a short note here with:
 - Where it appeared: `DarwinLingua.ImportTool` rejected the new Expressions batch before writing it to `darwinlingua_shared`.
 - Why it happened: The content contract validates expression shape and localization, but topic references are resolved against the current `Topics` table. Content-generation labels must not be invented from prompt wording.
 - Prevention rule: Before importing a new Expressions batch, compare all `topics` values with the active Catalog topic keys, or omit optional topics when the `category` already carries the context. Import validation must keep rejecting unknown topic keys.
+
+### 2026-05-24: Expressions must not become an ordinary sentence bank
+
+- What failed: The first Everyday Expressions content path accepted ordinary literal sentences that were technically valid JSON but pedagogically belonged in Dialogues, Courses, Exercises, Writing Templates, or Grammar examples.
+- Where it appeared: Everyday Expressions pilot and small-batch content included practical literal sentences such as problem reports and appointment statements.
+- Why it happened: The Expression contract did not distinguish ordinary literal sentences from idioms, pragmatic formulas, non-literal expressions, cultural phrases, and false friends.
+- Prevention rule: Every new Expression entry needs an eligibility classification. Reject published `ordinary-literal`, require literal versus actual meaning for `non-literal` and `semi-idiomatic`, require a `teachingReason`, require at least two contextual German examples for classified official content, and run `node tools/Content/Audit-ExpressionContentQuality.js` before accepting another batch. The gate must report zero issues before any next small Expressions batch is generated.
+
+### 2026-05-24: Adult-language learning content needs access state, not a checkbox-only shortcut
+
+- What failed: Expressions planning initially treated `+18` as a simple profile flag, which is not enough for explicit adult or pornographic content in Germany.
+- Where it appeared: Everyday Expressions adult/sensitive content planning.
+- Why it happened: The content contract had safety ratings, but profile/access-state requirements were not explicit enough for future adult-language generation.
+- Prevention rule: Store a separate adult-content access state (`not-requested`, `self-declared-adult`, `age-verified-adult`, `blocked`) and keep rude/slang preference separate from explicit adult access. `self-declared-adult` must not unlock explicit adult/pornographic content in production. Explicit adult content generation remains blocked until legal review, approved age verification, list/detail/search filtering, admin reporting, and release gates are all verified.

@@ -109,6 +109,28 @@ internal sealed class ContentImportService : IContentImportService
         "slang", "warning-phrase"
     };
 
+    private static readonly HashSet<string> ExpressionMeaningTransparencyValues = new(StringComparer.Ordinal)
+    {
+        "non-literal", "semi-idiomatic", "pragmatic-formula", "literal-fixed-formula", "ordinary-literal"
+    };
+
+    private static readonly HashSet<string> ExpressionSafetyRatings = new(StringComparer.Ordinal)
+    {
+        "general", "mild-rude", "strong-rude", "sexual-context", "explicit-adult", "discriminatory-slur", "politically-sensitive"
+    };
+
+    private static readonly HashSet<string> RiskyExpressionSafetyRatings = new(StringComparer.Ordinal)
+    {
+        "mild-rude", "strong-rude", "sexual-context", "explicit-adult", "discriminatory-slur", "politically-sensitive"
+    };
+
+    private static readonly HashSet<int> ExpressionMinimumAges = [0, 16, 18];
+
+    private static readonly HashSet<string> ExpressionAdultContentCategories = new(StringComparer.Ordinal)
+    {
+        "rude-slang", "sexual-language", "explicit-sexual-language", "discriminatory-language", "politically-sensitive-language"
+    };
+
     private static readonly HashSet<string> ExerciseTypes = new(StringComparer.Ordinal)
     {
         "multiple-choice", "fill-in-the-blank", "matching", "sentence-ordering",
@@ -949,7 +971,13 @@ internal sealed class ContentImportService : IContentImportService
                 parsedExpression.IsRisky,
                 parsedExpression.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedExpression.SortOrder < 0 ? 0 : parsedExpression.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                NormalizeOptionalText(parsedExpression.MeaningTransparency)?.ToLowerInvariant(),
+                NormalizeOptionalText(parsedExpression.TeachingReason),
+                NormalizeOptionalText(parsedExpression.SafetyRating)?.ToLowerInvariant(),
+                parsedExpression.MinimumAge,
+                parsedExpression.RequiresAdultAccess,
+                NormalizeOptionalText(parsedExpression.AdultContentCategory)?.ToLowerInvariant());
 
             string[] topicKeys = parsedExpression.Topics
                 .Select(item => NormalizeText(item).ToLowerInvariant())
@@ -3232,6 +3260,71 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add($"Expression register '{register}' is not supported.");
             }
 
+            string? meaningTransparency = NormalizeOptionalText(expression.MeaningTransparency)?.ToLowerInvariant();
+            if (meaningTransparency is null)
+            {
+                warnings.Add("Expression meaningTransparency is missing; legacy entries remain importable but must be classified before new official batches.");
+            }
+            else if (!ExpressionMeaningTransparencyValues.Contains(meaningTransparency))
+            {
+                errors.Add($"Expression meaningTransparency '{meaningTransparency}' is not supported.");
+            }
+            else
+            {
+                if (meaningTransparency == "ordinary-literal" && expression.IsPublished)
+                {
+                    errors.Add("Published Expressions cannot use meaningTransparency 'ordinary-literal'; ordinary literal sentences belong in Dialogues, Courses, Exercises, or Writing Templates.");
+                }
+
+                if (meaningTransparency is "non-literal" or "semi-idiomatic" &&
+                    string.IsNullOrWhiteSpace(NormalizeText(expression.LiteralMeaningText)))
+                {
+                    errors.Add("Expression literalMeaningText is required for non-literal and semi-idiomatic expressions.");
+                }
+
+                if (string.IsNullOrWhiteSpace(NormalizeText(expression.TeachingReason)))
+                {
+                    errors.Add("Expression teachingReason is required when meaningTransparency is provided.");
+                }
+
+                if (expression.Examples.Count < 2 && expression.IsPublished)
+                {
+                    errors.Add("Published Expressions with meaningTransparency metadata require at least two German examples.");
+                }
+            }
+
+            string safetyRating = NormalizeText(expression.SafetyRating).ToLowerInvariant();
+            if (string.IsNullOrWhiteSpace(safetyRating))
+            {
+                safetyRating = "general";
+            }
+
+            if (!ExpressionSafetyRatings.Contains(safetyRating))
+            {
+                errors.Add($"Expression safetyRating '{safetyRating}' is not supported.");
+            }
+
+            if (!ExpressionMinimumAges.Contains(expression.MinimumAge))
+            {
+                errors.Add("Expression minimumAge must be 0, 16, or 18.");
+            }
+
+            if (safetyRating == "explicit-adult" && (!expression.RequiresAdultAccess || expression.MinimumAge != 18))
+            {
+                errors.Add("Explicit-adult expressions require requiresAdultAccess true and minimumAge 18.");
+            }
+
+            if (expression.RequiresAdultAccess && expression.MinimumAge < 18)
+            {
+                errors.Add("Expressions that require adult access must use minimumAge 18.");
+            }
+
+            string? adultContentCategory = NormalizeOptionalText(expression.AdultContentCategory)?.ToLowerInvariant();
+            if (adultContentCategory is not null && !ExpressionAdultContentCategories.Contains(adultContentCategory))
+            {
+                errors.Add($"Expression adultContentCategory '{adultContentCategory}' is not supported.");
+            }
+
             string category = NormalizeText(expression.Category).ToLowerInvariant();
             if (!ValidateKebabKey(category))
             {
@@ -3300,7 +3393,8 @@ internal sealed class ContentImportService : IContentImportService
 
             bool requiresWarning = expression.IsRisky ||
                 RiskyExpressionRegisters.Contains(register) ||
-                RiskyExpressionTypes.Contains(expressionType);
+                RiskyExpressionTypes.Contains(expressionType) ||
+                RiskyExpressionSafetyRatings.Contains(safetyRating);
 
             if (requiresWarning && expression.Warnings.All(warning => string.IsNullOrWhiteSpace(NormalizeText(warning.Text))))
             {

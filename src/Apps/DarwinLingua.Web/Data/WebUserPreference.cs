@@ -12,6 +12,10 @@ public sealed class WebUserPreference
 
     public string? SecondaryMeaningLanguageCode { get; set; }
 
+    public bool AllowsRudeSlangContent { get; set; }
+
+    public string AdultContentAccessState { get; set; } = "not-requested";
+
     public DateTime CreatedAtUtc { get; set; }
 
     public DateTime UpdatedAtUtc { get; set; }

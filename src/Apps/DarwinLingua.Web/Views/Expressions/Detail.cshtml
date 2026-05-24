@@ -28,6 +28,14 @@
         {
             <span class="chip-link">@topicKey</span>
         }
+        @if (!string.IsNullOrWhiteSpace(Model.Expression.MeaningTransparency))
+        {
+            <span class="chip-link">@T["Meaning"] · @T[Model.Expression.MeaningTransparency]</span>
+        }
+        @if (!string.Equals(Model.Expression.SafetyRating, "general", StringComparison.Ordinal))
+        {
+            <span class="chip-link">@T["Safety"] · @T[Model.Expression.SafetyRating]</span>
+        }
     </div>
 </section>
 
@@ -44,6 +52,14 @@
                 </article>
             }
         </div>
+    </section>
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.Expression.TeachingReason))
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Why this is an expression"]</h2>
+        <p dir="@primaryMeaningDirection">@Model.Expression.TeachingReason</p>
     </section>
 }
 

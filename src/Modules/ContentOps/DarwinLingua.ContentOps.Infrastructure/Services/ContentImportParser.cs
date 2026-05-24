@@ -355,7 +355,7 @@ internal sealed class ContentImportParser : IContentImportParser
                 example.Note,
                 MapTranslations(example.Translations),
                 example.SortOrder ?? 0)).ToArray(),
-            (expression.Warnings ?? []).Select(warning => new ParsedExpressionWarningModel(
+            ((expression.Warnings ?? []).Concat(expression.ContentWarnings ?? [])).Select(warning => new ParsedExpressionWarningModel(
                 warning.WarningType ?? string.Empty,
                 warning.Text ?? string.Empty,
                 MapTranslations(warning.Translations))).ToArray(),
@@ -364,7 +364,13 @@ internal sealed class ContentImportParser : IContentImportParser
                 word.WordSlug,
                 word.SortOrder ?? 0)).ToArray(),
             (expression.RelatedExpressionSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
-            (expression.LinkedExerciseSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray());
+            (expression.LinkedExerciseSlugs ?? []).Select(slug => slug ?? string.Empty).ToArray(),
+            expression.MeaningTransparency,
+            expression.TeachingReason,
+            expression.SafetyRating ?? "general",
+            expression.MinimumAge ?? 0,
+            expression.RequiresAdultAccess ?? false,
+            expression.AdultContentCategory);
     }
 
     private static ParsedEventPreparationPackModel Map(EventPreparationPackDocument pack)
@@ -1296,12 +1302,19 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? Context { get; set; }
         public string? Region { get; set; }
         public bool? IsRisky { get; set; }
+        public string? MeaningTransparency { get; set; }
+        public string? TeachingReason { get; set; }
+        public string? SafetyRating { get; set; }
+        public int? MinimumAge { get; set; }
+        public bool? RequiresAdultAccess { get; set; }
+        public string? AdultContentCategory { get; set; }
         public string?[]? Topics { get; set; }
         public bool? IsPublished { get; set; }
         public int? SortOrder { get; set; }
         public ExpressionMeaningDocument[]? Meanings { get; set; }
         public ExpressionExampleDocument[]? Examples { get; set; }
         public ExpressionWarningDocument[]? Warnings { get; set; }
+        public ExpressionWarningDocument[]? ContentWarnings { get; set; }
         public ExpressionLinkedWordDocument[]? LinkedWords { get; set; }
         public string?[]? RelatedExpressionSlugs { get; set; }
         public string?[]? LinkedExerciseSlugs { get; set; }

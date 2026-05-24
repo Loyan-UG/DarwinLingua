@@ -39,6 +39,19 @@
                     <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Billing" asp-action="Index">@T["View billing"]</a></span>
                 }
             </label>
+
+            <label class="field">
+                <span>@T["Adult content access state"]</span>
+                <select asp-for="Input.AdultContentAccessState" asp-items="Model.AdultContentAccessStateOptions"></select>
+                <small class="body-sm">@T["Self-declaration does not unlock explicit adult content. Explicit adult content requires legal review and approved age verification before release."]</small>
+                <span asp-validation-for="Input.AdultContentAccessState" class="validation-message"></span>
+            </label>
+
+            <label class="field field--checkbox">
+                <input asp-for="Input.AllowsRudeSlangContent" />
+                <span>@T["Show educational rude or slang language when it is safely marked."]</span>
+                <small class="body-sm">@T["This preference is separate from explicit adult content access."]</small>
+            </label>
         </div>
 
         <div class="action-row">
