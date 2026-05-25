@@ -8,6 +8,8 @@ Sensitive Educational Language is language-learning content that may include rud
 
 This policy applies first to Everyday Expressions and should be reused by later modules before they generate sensitive language-learning content.
 
+Current implementation scope is Web-only. Mobile parity and mobile package enforcement remain deferred until the Web/API/content-operation path is signed off.
+
 ## Scope
 
 Allowed Sensitive Educational Language:
@@ -59,6 +61,30 @@ The setting must also explain what it does not do:
 - it does not remove usage warnings
 
 Anonymous users and users without this setting see only general content.
+
+The setting is separate from account registration. Registration may require Terms of Use acceptance and Privacy Policy notice acknowledgement, but it must not enable Sensitive Educational Language by default.
+
+## Registration And Legal Notice
+
+Account registration must provide clear links to the Terms of Use and Privacy Policy before account creation.
+
+The registration flow may require:
+
+- Terms of Use acceptance
+- Privacy Policy notice acknowledgement
+
+Privacy notice acknowledgement is not a marketing or optional-content consent. Do not describe it as consent unless the product has explicitly chosen consent as the legal basis for that processing purpose.
+
+Policy acceptance records should be versioned and minimal:
+
+- user id
+- policy key
+- policy version
+- accepted-at UTC timestamp
+- source
+- locale/culture when available
+
+Do not store full birth dates, identity documents, raw IP addresses, or user-agent fingerprints for this Sensitive Educational Language feature.
 
 ## Metadata
 
@@ -187,6 +213,8 @@ Admin reports must not expose private learner settings or profile data.
 
 Until mobile has equivalent opt-in filtering and warning rendering, mobile catalog export must exclude entries that require Sensitive Educational Language opt-in.
 
+Do not implement mobile parity in the current Web-side slice. Track mobile filtering as a deferred release gate after Web sign-off.
+
 Mobile export must always exclude:
 
 - `explicit-adult`
@@ -206,4 +234,3 @@ For this feature:
 - keep any future verified-over-18 state as a minimal status claim from a reviewed provider
 
 If explicit adult content is ever considered, it needs a separate legal, privacy, provider, and age-verification design before any content generation starts.
-

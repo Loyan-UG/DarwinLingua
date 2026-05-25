@@ -84,6 +84,9 @@ Last updated: 2026-05-13.
 This section is a release blocker. See `73-Transactional-Email-And-Account-Communication-Backlog.md`.
 
 - [ ] email confirmation is sent after registration
+- [ ] registration requires Terms of Use acceptance
+- [ ] registration shows a clear Privacy Policy notice link and acknowledgement without mislabeling the Privacy Policy as optional marketing consent
+- [ ] versioned policy acceptance records are stored for account registration acknowledgements
 - [ ] confirmation callback works
 - [ ] resend confirmation flow works
 - [ ] forgot-password request works without account enumeration
@@ -121,6 +124,7 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 - [ ] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions eligibility reviewed: no published ordinary literal sentence leakage, `meaningTransparency` present for new batches, teaching reason present, and at least two contextual German examples
 - [ ] Sensitive Educational Language policy reviewed
+- [ ] registration/legal notice coverage reviewed for Terms, Privacy, and Sensitive Educational Language default-off behavior
 - [ ] Settings/profile explanation for Sensitive Educational Language is clear, localized, and does not claim age verification
 - [ ] Sensitive Educational Language entries are hidden from anonymous users and users without opt-in
 - [ ] Explicit-adult and blocked-illegal Expressions remain blocked even when Sensitive Educational Language is enabled

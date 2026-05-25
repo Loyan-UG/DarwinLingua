@@ -45,6 +45,7 @@ Last updated: 2026-05-25.
 - The first mixed Everyday Expressions supplement exists at `content/learning-portal/expressions/packages/expressions-mixed-supplement-01-v1.json`. It contains 14 additional A2-C1 idioms, cultural phrases, and social/workplace expressions that were not already published; no ordinary-literal entry is published and no explicit-adult content is included.
 - Everyday Expressions now has a stricter eligibility policy: it is for expressions whose real meaning, tone, or social function is not obvious from literal words. It is not a general sentence bank. Ordinary literal situational sentences belong in Dialogues, Courses, Exercises, Writing Templates, or Grammar examples. `tools/Content/Audit-ExpressionContentQuality.js` generated `artifacts/validation/expression-content-quality-report.md`; the latest pass reports zero issues. Five ordinary-literal entries across earlier packages are unpublished archive findings.
 - Everyday Expressions now has a Sensitive Educational Language policy in `docs/85-Sensitive-Educational-Language-Policy.md`. Sensitive educational entries are hidden by default, warning-labeled, opt-in controlled, and non-pornographic. The current system rejects explicit-adult, blocked-illegal, verified-adult-required, and blocked/slur educational entries until a separate legal/access workflow exists.
+- Web registration now has a Terms of Use acceptance and Privacy Policy notice acknowledgement path with versioned policy-acceptance records. Sensitive Educational Language remains off by default and is enabled only later through Settings; that preference is not age verification and does not unlock explicit-adult content.
 - The reviewed Everyday Expressions packages imported into `darwinlingua_shared` on 2026-05-25 with zero import warnings. After the first mixed supplement import, the shared database contains 431 Expression records: 426 active and 5 draft ordinary-literal archive findings. Public-routed Web/API smoke returned HTTP 200 for `/expressions`, `/expressions/hals-und-beinbruch`, `/expressions/die-faeden-ziehen`, `/api/catalog/expressions`, `/api/catalog/expressions/hals-und-beinbruch?primaryMeaningLanguageCode=fa`, and `/api/catalog/search?q=Groschen&resultType=expression`. The public admin report endpoint now requires credentials and returns 401 without them; admin report query tests and the strict content audit remain green, with zero ordinary-literal leakage, zero missing eligibility metadata, zero low example counts, zero missing translations, zero unresolved word/content links, and zero missing risky-content warnings.
 - Standalone RoleplayScenario content is blocked until dedicated parser, import validation, persistence, Web API, Web rendering, search, admin visibility, and tests exist. Event Preparation Packs may contain simple `roleplayPrompts`, but standalone roleplay packages must not be generated yet.
 - Transactional email has a Brevo API provider path, sandbox behavior, webhook event handling, delivery logs, diagnostics, and suppression handling. Production launch still requires operational Brevo configuration outside source control, verified sender domain, SPF/DKIM/DMARC, webhook secret, and provider DPA review.
@@ -53,10 +54,11 @@ Last updated: 2026-05-25.
 Immediate next order:
 
 1. Keep validation reports green after any content repair.
-2. Generate any further Everyday Expressions content only as a small reviewed batch after re-running the strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
-3. Implement RoleplayScenario infrastructure before standalone Roleplay content generation.
-4. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
-5. Start Exercises only after Grammar, Conversation, and Expressions are stable enough to link to.
+2. Keep the Web-side Sensitive Educational Language and registration/legal acknowledgement gates covered by tests before adding more sensitive content.
+3. Generate any further Everyday Expressions content only as a small reviewed batch after re-running the strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
+4. Implement RoleplayScenario infrastructure before standalone Roleplay content generation.
+5. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
+6. Start Exercises only after Grammar, Conversation, and Expressions are stable enough to link to.
 
 ---
 

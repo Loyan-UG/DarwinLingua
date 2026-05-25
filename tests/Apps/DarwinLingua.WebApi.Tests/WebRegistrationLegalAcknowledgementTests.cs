@@ -91,7 +91,7 @@ public sealed class WebRegistrationLegalAcknowledgementTests
 
     private static string FindRepositoryRoot()
     {
-        DirectoryInfo directory = new(AppContext.BaseDirectory);
+        DirectoryInfo? directory = new(AppContext.BaseDirectory);
         while (directory is not null && !File.Exists(Path.Combine(directory.FullName, "DarwinLingua.slnx")))
         {
             directory = directory.Parent;

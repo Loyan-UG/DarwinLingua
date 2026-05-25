@@ -23,6 +23,8 @@ Remaining release gates:
 - manual browser/device validation listed in the Web validation worksheets
 - mobile parity work, after Web sign-off
 
+Registration/legal acknowledgement coverage must remain part of the Web-side release gate. Registration must require Terms of Use acceptance, show a Privacy Policy notice acknowledgement, store versioned policy acceptance records, and keep Sensitive Educational Language disabled by default.
+
 Latest local Web verification:
 
 - 2026-05-23: First real Everyday Expressions pilot package added at `content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json`; `node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json` passed.
