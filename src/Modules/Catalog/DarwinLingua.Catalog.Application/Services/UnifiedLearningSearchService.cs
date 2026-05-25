@@ -41,7 +41,7 @@ internal sealed class UnifiedLearningSearchService(IUnifiedLearningSearchReposit
         string? cefrLevel = NormalizeOptionalFilter(filter.CefrLevel, nameof(filter.CefrLevel));
         string? category = NormalizeOptionalFilter(filter.Category, nameof(filter.Category));
         string? topicKey = NormalizeOptionalFilter(filter.TopicKey, nameof(filter.TopicKey));
-        return new UnifiedLearningSearchFilterModel(query, cefrLevel, resultType, category, topicKey);
+        return new UnifiedLearningSearchFilterModel(query, cefrLevel, resultType, category, topicKey, filter.IncludeSensitiveEducationalLanguage);
     }
 
     private static string? NormalizeSearchQuery(string? value)

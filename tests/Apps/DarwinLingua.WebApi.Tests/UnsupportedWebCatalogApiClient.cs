@@ -26,7 +26,7 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
 
     public virtual Task<IReadOnlyList<ExpressionListItemModel>> GetExpressionsAsync(ExpressionListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<ExpressionDetailModel?> GetExpressionBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<ExpressionDetailModel?> GetExpressionBySlugAsync(string slug, string primaryMeaningLanguageCode, bool includeSensitiveEducationalLanguage, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(ExerciseSetListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 

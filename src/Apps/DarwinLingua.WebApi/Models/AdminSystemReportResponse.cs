@@ -48,6 +48,8 @@ public sealed record AdminLearningPortalSystemReportResponse(
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByRegister,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByMeaningTransparency,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsBySafetyRating,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsBySensitiveContentKind,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByUsagePolicy,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByType,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByTargetSkill,
     IReadOnlyList<AdminLearningPortalCountRowResponse> CourseLessonsByCourse,
@@ -69,6 +71,11 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int ExpressionEntriesWithFewerThanTwoExamples,
     int ExpressionEntriesMissingWarningsForRiskyContent,
     int ExpressionEntriesRequiringAdultAccess,
+    int ExpressionEntriesRequiringSensitiveOptIn,
+    int ExpressionEntriesRequiringVerifiedAdult,
+    int ExpressionEntriesBlockedOrExplicitAdult,
+    int ExpressionEntriesMissingSensitiveUsagePolicy,
+    int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
     IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
 
 public sealed record AdminLearningPortalCountRowResponse(

@@ -12,4 +12,10 @@ public interface IExpressionQueryService
         string slug,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
+
+    Task<ExpressionDetailModel?> GetPublishedExpressionBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        bool includeSensitiveEducationalLanguage,
+        CancellationToken cancellationToken);
 }

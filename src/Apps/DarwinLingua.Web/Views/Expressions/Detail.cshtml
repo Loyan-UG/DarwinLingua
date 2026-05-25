@@ -36,6 +36,14 @@
         {
             <span class="chip-link">@T["Safety"] · @T[Model.Expression.SafetyRating]</span>
         }
+        @if (!string.Equals(Model.Expression.SensitiveContentKind, "none", StringComparison.Ordinal))
+        {
+            <span class="chip-link">@T["Sensitive Educational Language"] · @T[Model.Expression.SensitiveContentKind]</span>
+        }
+        @if (!string.Equals(Model.Expression.UsagePolicy, "safe-to-use", StringComparison.Ordinal))
+        {
+            <span class="chip-link">@T["Usage policy"] · @T[Model.Expression.UsagePolicy]</span>
+        }
     </div>
 </section>
 
@@ -52,6 +60,27 @@
                 </article>
             }
         </div>
+    </section>
+}
+
+@if (!string.Equals(Model.Expression.UsagePolicy, "safe-to-use", StringComparison.Ordinal))
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Usage policy"]</h2>
+        <p dir="@primaryMeaningDirection">
+            @if (string.Equals(Model.Expression.UsagePolicy, "understand-only", StringComparison.Ordinal))
+            {
+                @T["Understand this expression when you hear it, but do not use it casually."]
+            }
+            else if (string.Equals(Model.Expression.UsagePolicy, "do-not-use", StringComparison.Ordinal))
+            {
+                @T["This expression is for recognition only and should not be used by learners."]
+            }
+            else
+            {
+                @T["Use this expression carefully and pay attention to tone, context, and relationship."]
+            }
+        </p>
     </section>
 }
 

@@ -14,7 +14,7 @@ public sealed class ExpressionsController(IWebCatalogApiClient catalogApiClient)
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<ExpressionListItemModel> expressions = await catalogApiClient
-            .GetExpressionsAsync(new ExpressionListFilterModel(null, null, null, null, null, null, null), cancellationToken)
+            .GetExpressionsAsync(new ExpressionListFilterModel(null, null, null, null, null, null, null, null, true), cancellationToken)
             .ConfigureAwait(false);
 
         return View(new AdminExpressionsPageViewModel(expressions));

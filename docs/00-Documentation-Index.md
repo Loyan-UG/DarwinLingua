@@ -98,6 +98,7 @@ All project documentation should remain in English.
 - `82-Cultural-Note-Content-Package-Contract.md`
 - `83-Exam-Prep-Content-Package-Contract.md`
 - `84-Content-Generation-Lessons-Learned.md`
+- `85-Sensitive-Educational-Language-Policy.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -167,6 +168,7 @@ If you are new to the project, read the documents in this order:
 53. `82-Cultural-Note-Content-Package-Contract.md`
 54. `83-Exam-Prep-Content-Package-Contract.md`
 55. `84-Content-Generation-Lessons-Learned.md`
+56. `85-Sensitive-Educational-Language-Policy.md`
 
 ---
 
@@ -206,6 +208,7 @@ If you are new to the project, read the documents in this order:
 - `82-Cultural-Note-Content-Package-Contract.md` defines the Phase 7 Cultural Notes JSON contract now that dynamic cultural-note implementation has started.
 - `83-Exam-Prep-Content-Package-Contract.md` defines the Phase 7 Exam Preparation JSON contract now that dynamic exam-prep implementation has started.
 - `84-Content-Generation-Lessons-Learned.md` records prompt, localization, import, rendering, and validation lessons that must be checked before future bulk content generation.
+- `85-Sensitive-Educational-Language-Policy.md` defines the product, content, filtering, privacy, and release policy for warning-labeled rude/slang/romantic/social educational language without allowing pornographic or explicit adult content.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Learning Portal Planning Rule

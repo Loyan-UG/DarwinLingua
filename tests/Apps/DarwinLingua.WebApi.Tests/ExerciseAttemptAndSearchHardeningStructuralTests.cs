@@ -42,6 +42,18 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
     }
 
     [Fact]
+    public void Program_ShouldNotAllowPublicQueryStringToUnlockSensitiveEducationalLanguage()
+    {
+        string program = File.ReadAllText(GetProgramPath());
+        string normalized = NormalizeWhitespace(program);
+
+        Assert.Contains("IsSensitiveEducationalLanguageRequestAllowed", program, StringComparison.Ordinal);
+        Assert.Contains("IsMatchingSecret(suppliedKey, options.ApiKey)", normalized, StringComparison.Ordinal);
+        Assert.Contains("IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage)", program, StringComparison.Ordinal);
+        Assert.DoesNotContain("includeSensitiveEducationalLanguage == true", program, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void SearchIndexMigration_ShouldUsePostgresTrigramIndexes()
     {
         string migration = File.ReadAllText(GetSearchIndexMigrationPath());

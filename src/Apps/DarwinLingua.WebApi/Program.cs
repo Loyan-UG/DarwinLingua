@@ -456,11 +456,22 @@ app.MapGet(
         bool? isRisky,
         string? q,
         string? primaryMeaningLanguageCode,
+        bool? includeSensitiveEducationalLanguage,
+        HttpContext httpContext,
         IExpressionQueryService expressionQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await expressionQueryService.GetPublishedExpressionsAsync(
-                    new ExpressionListFilterModel(cefrLevel, expressionType, register, category, topicKey, isRisky, q, primaryMeaningLanguageCode),
+                    new ExpressionListFilterModel(
+                        cefrLevel,
+                        expressionType,
+                        register,
+                        category,
+                        topicKey,
+                        isRisky,
+                        q,
+                        primaryMeaningLanguageCode,
+                        IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage)),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -469,12 +480,15 @@ app.MapGet(
     async (
         string slug,
         string primaryMeaningLanguageCode,
+        bool? includeSensitiveEducationalLanguage,
+        HttpContext httpContext,
         IExpressionQueryService expressionQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await expressionQueryService.GetPublishedExpressionBySlugAsync(
                     slug,
                     primaryMeaningLanguageCode,
+                    IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -715,11 +729,19 @@ app.MapGet(
         string? resultType,
         string? category,
         string? topicKey,
+        bool? includeSensitiveEducationalLanguage,
+        HttpContext httpContext,
         IUnifiedLearningSearchService searchService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await searchService.SearchAsync(
-                    new UnifiedLearningSearchFilterModel(q, cefrLevel, resultType, category, topicKey),
+                    new UnifiedLearningSearchFilterModel(
+                        q,
+                        cefrLevel,
+                        resultType,
+                        category,
+                        topicKey,
+                        IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage)),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false))
     .RequireRateLimiting("CatalogSearch");
@@ -2011,6 +2033,32 @@ static async Task EnforceAdminApiAccessAsync(HttpContext context, RequestDelegat
     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
     await context.Response.WriteAsync("Admin API credentials are required.", context.RequestAborted)
         .ConfigureAwait(false);
+}
+
+static bool IsSensitiveEducationalLanguageRequestAllowed(HttpContext context, bool? requested)
+{
+    if (requested != true)
+    {
+        return false;
+    }
+
+    if (context.User.Identity?.IsAuthenticated == true &&
+        context.User.IsInRole(DarwinLinguaRoles.Admin))
+    {
+        return true;
+    }
+
+    AdminApiAccessOptions options = context.RequestServices
+        .GetRequiredService<IOptions<AdminApiAccessOptions>>()
+        .Value;
+
+    if (string.IsNullOrWhiteSpace(options.ApiKey))
+    {
+        return false;
+    }
+
+    string? suppliedKey = context.Request.Headers[options.HeaderName].FirstOrDefault();
+    return IsMatchingSecret(suppliedKey, options.ApiKey);
 }
 
 static async Task<Dictionary<string, string[]>> LoadRolesByUserIdAsync(

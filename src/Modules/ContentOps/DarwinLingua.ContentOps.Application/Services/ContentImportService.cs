@@ -116,20 +116,34 @@ internal sealed class ContentImportService : IContentImportService
 
     private static readonly HashSet<string> ExpressionSafetyRatings = new(StringComparer.Ordinal)
     {
-        "general", "mild-rude", "strong-rude", "sexual-context", "explicit-adult", "discriminatory-slur", "politically-sensitive"
+        "general", "mild-rude", "strong-rude", "sexual-educational", "romantic-social", "discriminatory-slur", "politically-sensitive", "explicit-adult", "blocked-illegal"
     };
 
     private static readonly HashSet<string> RiskyExpressionSafetyRatings = new(StringComparer.Ordinal)
     {
-        "mild-rude", "strong-rude", "sexual-context", "explicit-adult", "discriminatory-slur", "politically-sensitive"
+        "mild-rude", "strong-rude", "sexual-educational", "romantic-social", "discriminatory-slur", "politically-sensitive", "explicit-adult", "blocked-illegal"
     };
 
-    private static readonly HashSet<int> ExpressionMinimumAges = [0, 16, 18];
+    private static readonly HashSet<int> ExpressionMinimumAges = [0, 12, 16, 18];
+
+    private static readonly HashSet<string> ExpressionSensitiveContentKinds = new(StringComparer.Ordinal)
+    {
+        "none", "swear-word", "insult", "rude-colloquial", "mild-emotional", "romantic-social", "sexual-educational-neutral", "slur-educational", "blocked"
+    };
+
+    private static readonly HashSet<string> ExpressionUsagePolicies = new(StringComparer.Ordinal)
+    {
+        "safe-to-use", "use-with-care", "understand-only", "do-not-use", "blocked"
+    };
 
     private static readonly HashSet<string> ExpressionAdultContentCategories = new(StringComparer.Ordinal)
     {
         "rude-slang", "sexual-language", "explicit-sexual-language", "discriminatory-language", "politically-sensitive-language"
     };
+
+    private static readonly Regex ForbiddenSensitiveExpressionPattern = new(
+        "(pornograph|pornograf|arousing|eroticized|graphic sexual|minor sexual|child sexual|rape|coercion|exploitation|bestial|animal sexual|hate incitement|nazi propaganda|illegal instruction)",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
     private static readonly HashSet<string> ExerciseTypes = new(StringComparer.Ordinal)
     {
@@ -977,7 +991,11 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeOptionalText(parsedExpression.SafetyRating)?.ToLowerInvariant(),
                 parsedExpression.MinimumAge,
                 parsedExpression.RequiresAdultAccess,
-                NormalizeOptionalText(parsedExpression.AdultContentCategory)?.ToLowerInvariant());
+                NormalizeOptionalText(parsedExpression.AdultContentCategory)?.ToLowerInvariant(),
+                NormalizeOptionalText(parsedExpression.SensitiveContentKind)?.ToLowerInvariant(),
+                parsedExpression.RequiresSensitiveOptIn,
+                parsedExpression.RequiresVerifiedAdult,
+                NormalizeOptionalText(parsedExpression.UsagePolicy)?.ToLowerInvariant());
 
             string[] topicKeys = parsedExpression.Topics
                 .Select(item => NormalizeText(item).ToLowerInvariant())
@@ -3243,6 +3261,11 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add("Expression actualMeaningText is required.");
             }
 
+            ValidateForbiddenSensitiveExpressionText("Expression learner-facing text", expression.ExpressionText, errors);
+            ValidateForbiddenSensitiveExpressionText("Expression actualMeaningText", expression.ActualMeaningText, errors);
+            ValidateForbiddenSensitiveExpressionText("Expression literalMeaningText", expression.LiteralMeaningText, errors);
+            ValidateForbiddenSensitiveExpressionText("Expression usageExplanation", expression.UsageExplanation, errors);
+
             if (!Enum.TryParse(NormalizeText(expression.CefrLevel), true, out CefrLevel _))
             {
                 errors.Add("Expression CEFR level is invalid.");
@@ -3306,12 +3329,17 @@ internal sealed class ContentImportService : IContentImportService
 
             if (!ExpressionMinimumAges.Contains(expression.MinimumAge))
             {
-                errors.Add("Expression minimumAge must be 0, 16, or 18.");
+                errors.Add("Expression minimumAge must be 0, 12, 16, or 18.");
             }
 
-            if (safetyRating == "explicit-adult" && (!expression.RequiresAdultAccess || expression.MinimumAge != 18))
+            if (safetyRating is "blocked-illegal")
             {
-                errors.Add("Explicit-adult expressions require requiresAdultAccess true and minimumAge 18.");
+                errors.Add("Blocked-illegal Expressions cannot be imported.");
+            }
+
+            if (safetyRating is "explicit-adult")
+            {
+                errors.Add("Explicit-adult Expressions are blocked until a legal review and verified adult-access system exist.");
             }
 
             if (expression.RequiresAdultAccess && expression.MinimumAge < 18)
@@ -3319,10 +3347,78 @@ internal sealed class ContentImportService : IContentImportService
                 errors.Add("Expressions that require adult access must use minimumAge 18.");
             }
 
+            if (expression.RequiresVerifiedAdult)
+            {
+                errors.Add("Expressions that require verified adult access cannot be imported because no verified-adult system exists.");
+            }
+
             string? adultContentCategory = NormalizeOptionalText(expression.AdultContentCategory)?.ToLowerInvariant();
             if (adultContentCategory is not null && !ExpressionAdultContentCategories.Contains(adultContentCategory))
             {
                 errors.Add($"Expression adultContentCategory '{adultContentCategory}' is not supported.");
+            }
+
+            string sensitiveContentKind = NormalizeText(expression.SensitiveContentKind).ToLowerInvariant();
+            if (string.IsNullOrWhiteSpace(sensitiveContentKind))
+            {
+                sensitiveContentKind = "none";
+            }
+
+            if (!ExpressionSensitiveContentKinds.Contains(sensitiveContentKind))
+            {
+                errors.Add($"Expression sensitiveContentKind '{sensitiveContentKind}' is not supported.");
+            }
+
+            string usagePolicy = NormalizeText(expression.UsagePolicy).ToLowerInvariant();
+            if (string.IsNullOrWhiteSpace(usagePolicy))
+            {
+                usagePolicy = "safe-to-use";
+            }
+
+            if (!ExpressionUsagePolicies.Contains(usagePolicy))
+            {
+                errors.Add($"Expression usagePolicy '{usagePolicy}' is not supported.");
+            }
+
+            if (sensitiveContentKind is "blocked" or "slur-educational")
+            {
+                errors.Add("Blocked and slur-educational Expressions cannot be imported without a separate manual-review package.");
+            }
+
+            if (usagePolicy == "blocked")
+            {
+                errors.Add("Expressions with usagePolicy 'blocked' cannot be imported as learner-facing content.");
+            }
+
+            bool isSensitiveEducational =
+                safetyRating != "general" ||
+                sensitiveContentKind != "none" ||
+                expression.MinimumAge > 0 ||
+                usagePolicy is "use-with-care" or "understand-only" or "do-not-use";
+
+            if (isSensitiveEducational && !expression.RequiresSensitiveOptIn)
+            {
+                errors.Add("Sensitive Educational Language entries require requiresSensitiveOptIn true.");
+            }
+
+            if (!isSensitiveEducational && expression.RequiresSensitiveOptIn)
+            {
+                warnings.Add("Expression requiresSensitiveOptIn is true even though the entry is not classified as sensitive.");
+            }
+
+            if (safetyRating == "general" && sensitiveContentKind != "none")
+            {
+                errors.Add("Expressions with a non-none sensitiveContentKind must use a non-general safetyRating.");
+            }
+
+            if (safetyRating is "mild-rude" or "strong-rude" && sensitiveContentKind is not ("swear-word" or "insult" or "rude-colloquial" or "mild-emotional"))
+            {
+                errors.Add("Rude Expressions must use an appropriate sensitiveContentKind such as swear-word, insult, rude-colloquial, or mild-emotional.");
+            }
+
+            if (safetyRating == "sexual-educational" && sensitiveContentKind != "sexual-educational-neutral")
+            {
+                errors.Add("Sexual-educational Expressions must use sensitiveContentKind 'sexual-educational-neutral'.");
             }
 
             string category = NormalizeText(expression.Category).ToLowerInvariant();
@@ -3355,6 +3451,7 @@ internal sealed class ContentImportService : IContentImportService
                     errors.Add($"Expression examples[{exampleIndex + 1}] germanText is required.");
                 }
 
+                ValidateForbiddenSensitiveExpressionText($"Expression examples[{exampleIndex + 1}].germanText", example.GermanText, errors);
                 ValidateOptionalMeaningTranslations(example.Translations, meaningLanguages, $"Expression examples[{exampleIndex + 1}].translations", errors);
             }
 
@@ -3371,6 +3468,7 @@ internal sealed class ContentImportService : IContentImportService
                     errors.Add($"Expression warnings[{warningIndex + 1}] text is required.");
                 }
 
+                ValidateForbiddenSensitiveExpressionText($"Expression warnings[{warningIndex + 1}].text", warning.Text, errors);
                 ValidateOptionalMeaningTranslations(warning.Translations, meaningLanguages, $"Expression warnings[{warningIndex + 1}].translations", errors);
             }
 
@@ -3394,11 +3492,13 @@ internal sealed class ContentImportService : IContentImportService
             bool requiresWarning = expression.IsRisky ||
                 RiskyExpressionRegisters.Contains(register) ||
                 RiskyExpressionTypes.Contains(expressionType) ||
-                RiskyExpressionSafetyRatings.Contains(safetyRating);
+                RiskyExpressionSafetyRatings.Contains(safetyRating) ||
+                sensitiveContentKind != "none" ||
+                usagePolicy is "use-with-care" or "understand-only" or "do-not-use" or "blocked";
 
             if (requiresWarning && expression.Warnings.All(warning => string.IsNullOrWhiteSpace(NormalizeText(warning.Text))))
             {
-                errors.Add("Risky expressions require at least one warning with text.");
+                errors.Add("Risky or sensitive Expressions require at least one warning with text.");
             }
 
             foreach (string error in errors)
@@ -4733,6 +4833,19 @@ internal sealed class ContentImportService : IContentImportService
     private static string? NormalizeOptionalText(string? value)
     {
         return string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+    }
+
+    private static void ValidateForbiddenSensitiveExpressionText(string fieldName, string? value, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return;
+        }
+
+        if (ForbiddenSensitiveExpressionPattern.IsMatch(value))
+        {
+            errors.Add($"{fieldName} contains blocked pornographic, exploitative, coercive, minor-related, hate-inciting, or illegal content.");
+        }
     }
 
     private static ImportContentPackageResult CreateFatalFailureResult(

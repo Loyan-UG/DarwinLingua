@@ -1503,7 +1503,7 @@ public sealed class ContentImportServiceApplicationTests
             CancellationToken.None);
 
         Assert.False(result.IsSuccess);
-        Assert.Contains(result.Issues, issue => issue.Message.Contains("Risky expressions require at least one warning with text.", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Risky or sensitive Expressions require at least one warning with text.", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -1591,6 +1591,106 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     [Fact]
+    public async Task ImportAsync_ShouldImportExpressionEntry_WhenSensitiveEducationalMetadataIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with
+            {
+                MeaningTransparency = "semi-idiomatic",
+                TeachingReason = "The phrase has a conventional rude/emotional function that learners need to recognize.",
+                SafetyRating = "mild-rude",
+                MinimumAge = 16,
+                SensitiveContentKind = "rude-colloquial",
+                RequiresSensitiveOptIn = true,
+                RequiresVerifiedAdult = false,
+                UsagePolicy = "use-with-care",
+                Examples = CreateTwoExpressionExamples()
+            });
+        FakeRepository repository = new();
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
+        ExpressionEntry expression = Assert.Single(repository.ImportedExpressions);
+        Assert.Equal("mild-rude", expression.SafetyRating);
+        Assert.Equal("rude-colloquial", expression.SensitiveContentKind);
+        Assert.True(expression.RequiresSensitiveOptIn);
+        Assert.False(expression.RequiresVerifiedAdult);
+        Assert.Equal("use-with-care", expression.UsagePolicy);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExpressionEntry_WhenSensitiveEducationalWarningIsMissing()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with
+            {
+                MeaningTransparency = "semi-idiomatic",
+                TeachingReason = "The phrase has a conventional rude/emotional function that learners need to recognize.",
+                SafetyRating = "mild-rude",
+                MinimumAge = 16,
+                SensitiveContentKind = "rude-colloquial",
+                RequiresSensitiveOptIn = true,
+                UsagePolicy = "use-with-care",
+                Warnings = [],
+                Examples = CreateTwoExpressionExamples()
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Risky or sensitive Expressions require at least one warning with text.", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExpressionEntry_WhenBlockedIllegal()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
+            CreateValidExpression() with
+            {
+                MeaningTransparency = "pragmatic-formula",
+                TeachingReason = "This intentionally invalid case verifies safety blocking.",
+                SafetyRating = "blocked-illegal",
+                SensitiveContentKind = "blocked",
+                RequiresSensitiveOptIn = true,
+                UsagePolicy = "blocked",
+                Examples = CreateTwoExpressionExamples()
+            });
+
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("expressions.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Blocked-illegal Expressions cannot be imported.", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public async Task ImportAsync_ShouldRejectExpressionEntry_WhenExplicitAdultMetadataIsUnsafe()
     {
         ParsedContentPackageModel parsedPackage = CreatePackageWithExpression(
@@ -1616,7 +1716,7 @@ public sealed class ContentImportServiceApplicationTests
             CancellationToken.None);
 
         Assert.False(result.IsSuccess);
-        Assert.Contains(result.Issues, issue => issue.Message.Contains("Explicit-adult expressions require requiresAdultAccess true and minimumAge 18.", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Explicit-adult Expressions are blocked until a legal review and verified adult-access system exist.", StringComparison.Ordinal));
     }
 
     [Fact]

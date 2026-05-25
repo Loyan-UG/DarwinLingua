@@ -38,7 +38,8 @@ public sealed class ExpressionsController(
             WebRouteInput.NormalizeSlug(topic ?? string.Empty),
             includeRisky ? null : false,
             string.IsNullOrWhiteSpace(q) ? null : q.Trim(),
-            profile.PreferredMeaningLanguage1);
+            profile.PreferredMeaningLanguage1,
+            profile.AllowsRudeSlangContent);
 
         IReadOnlyList<ExpressionListItemModel> expressions;
         try
@@ -87,7 +88,7 @@ public sealed class ExpressionsController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             expression = await catalogApiClient
-                .GetExpressionBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1, catalogTimeout.Token)
+                .GetExpressionBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1, profile.AllowsRudeSlangContent, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && IsCatalogApiFailure(ex))

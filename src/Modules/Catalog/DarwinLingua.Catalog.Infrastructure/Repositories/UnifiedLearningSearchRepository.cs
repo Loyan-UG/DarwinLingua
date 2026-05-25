@@ -30,7 +30,7 @@ internal sealed class UnifiedLearningSearchRepository(IDbContextFactory<DarwinLi
 
         if (ShouldSearch(resultType, "word")) results.AddRange(await SearchWordsAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "grammar")) results.AddRange(await SearchGrammarAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
-        if (ShouldSearch(resultType, "expression")) results.AddRange(await SearchExpressionsAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
+        if (ShouldSearch(resultType, "expression")) results.AddRange(await SearchExpressionsAsync(dbContext, query, cefrLevel, category, topicKey, filter.IncludeSensitiveEducationalLanguage, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "dialogue")) results.AddRange(await SearchDialoguesAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "talk-topic")) results.AddRange(await SearchTalkTopicsAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "exercise")) results.AddRange(await SearchExercisesAsync(dbContext, query, cefrLevel, category, cancellationToken).ConfigureAwait(false));
@@ -73,12 +73,38 @@ internal sealed class UnifiedLearningSearchRepository(IDbContextFactory<DarwinLi
         return await items.OrderBy(item => item.SortOrder).Take(MaxResultsPerType).Select(item => new UnifiedLearningSearchResultModel("grammar", item.Title, item.ShortDescription, item.CefrLevel.ToString(), item.GrammarCategory, item.Topics.Join(dbContext.Topics, link => link.TopicId, topic => topic.Id, (link, topic) => topic.Key).ToArray(), $"/grammar/{item.Slug}", Score(query, item.Title, item.Slug, item.ShortDescription, item.SortOrder), MatchFields(query, item.Title, item.Slug, item.ShortDescription))).ToListAsync(cancellationToken).ConfigureAwait(false);
     }
 
-    private static async Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchExpressionsAsync(DarwinLinguaDbContext dbContext, string query, CefrLevel? cefrLevel, string? category, string? topicKey, CancellationToken cancellationToken)
+    private static async Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchExpressionsAsync(DarwinLinguaDbContext dbContext, string query, CefrLevel? cefrLevel, string? category, string? topicKey, bool includeSensitiveEducationalLanguage, CancellationToken cancellationToken)
     {
         IQueryable<ExpressionEntry> items = dbContext.ExpressionEntries
             .AsNoTracking()
             .Where(item => item.PublicationStatus == PublicationStatus.Active)
-            .Where(item => !item.RequiresAdultAccess && item.SafetyRating != "explicit-adult");
+            .Where(item =>
+                !item.RequiresAdultAccess &&
+                !item.RequiresVerifiedAdult &&
+                item.SafetyRating != ExpressionSensitivityPolicy.SafetyExplicitAdult &&
+                item.SafetyRating != ExpressionSensitivityPolicy.SafetyBlockedIllegal &&
+                item.SafetyRating != ExpressionSensitivityPolicy.SafetyDiscriminatorySlur &&
+                item.SensitiveContentKind != ExpressionSensitivityPolicy.SensitiveBlocked &&
+                item.SensitiveContentKind != ExpressionSensitivityPolicy.SensitiveSlurEducational &&
+                item.UsagePolicy != ExpressionSensitivityPolicy.UsageBlocked);
+        if (!includeSensitiveEducationalLanguage)
+        {
+            items = items.Where(item =>
+                !item.RequiresSensitiveOptIn &&
+                item.SafetyRating == ExpressionSensitivityPolicy.SafetyGeneral &&
+                item.SensitiveContentKind == ExpressionSensitivityPolicy.SensitiveNone &&
+                item.MinimumAge == 0 &&
+                item.UsagePolicy == ExpressionSensitivityPolicy.UsageSafeToUse);
+        }
+        else
+        {
+            items = items.Where(item =>
+                item.SafetyRating == ExpressionSensitivityPolicy.SafetyGeneral ||
+                item.SafetyRating == ExpressionSensitivityPolicy.SafetyMildRude ||
+                item.SafetyRating == ExpressionSensitivityPolicy.SafetyStrongRude ||
+                item.SafetyRating == ExpressionSensitivityPolicy.SafetyRomanticSocial ||
+                item.SafetyRating == ExpressionSensitivityPolicy.SafetySexualEducational);
+        }
         if (cefrLevel.HasValue) items = items.Where(item => item.CefrLevel == cefrLevel.Value);
         if (category is not null) items = items.Where(item => item.Category == category || item.ExpressionType == category);
         if (topicKey is not null) items = items.Where(item => item.Topics.Any(link => dbContext.Topics.Any(topic => topic.Id == link.TopicId && topic.Key == topicKey)));

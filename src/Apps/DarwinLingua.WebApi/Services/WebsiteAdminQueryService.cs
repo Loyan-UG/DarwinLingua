@@ -661,6 +661,18 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             dbContext.ExpressionEntries.AsNoTracking(),
             expression => expression.SafetyRating,
             cancellationToken).ConfigureAwait(false);
+        List<AdminLearningPortalCountRowResponse> expressionsBySensitiveContentKind = await CountByIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking(),
+            expression => expression.SensitiveContentKind,
+            cancellationToken).ConfigureAwait(false);
+        List<AdminLearningPortalCountRowResponse> expressionsByUsagePolicy = await CountByIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking(),
+            expression => expression.UsagePolicy,
+            cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> exercisesByType = await CountByIfTableExistsAsync(
             tableAvailability,
             "Exercises",
@@ -727,6 +739,8 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             expressionsByRegister,
             expressionsByMeaningTransparency,
             expressionsBySafetyRating,
+            expressionsBySensitiveContentKind,
+            expressionsByUsagePolicy,
             exercisesByType,
             exercisesBySkill,
             lessonsByCourse,
@@ -748,6 +762,11 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             qualitySummary.ExpressionEntriesWithFewerThanTwoExamples,
             qualitySummary.ExpressionEntriesMissingWarningsForRiskyContent,
             qualitySummary.ExpressionEntriesRequiringAdultAccess,
+            qualitySummary.ExpressionEntriesRequiringSensitiveOptIn,
+            qualitySummary.ExpressionEntriesRequiringVerifiedAdult,
+            qualitySummary.ExpressionEntriesBlockedOrExplicitAdult,
+            qualitySummary.ExpressionEntriesMissingSensitiveUsagePolicy,
+            qualitySummary.ExpressionEntriesOldRiskyMissingSensitiveMetadata,
             qualitySummary.SampleIssues);
     }
 
@@ -1004,10 +1023,17 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                     item.ExpressionType == "warning-phrase" ||
                     item.SafetyRating == "mild-rude" ||
                     item.SafetyRating == "strong-rude" ||
-                    item.SafetyRating == "sexual-context" ||
+                    item.SafetyRating == "sexual-educational" ||
+                    item.SafetyRating == "romantic-social" ||
                     item.SafetyRating == "explicit-adult" ||
+                    item.SafetyRating == "blocked-illegal" ||
                     item.SafetyRating == "discriminatory-slur" ||
-                    item.SafetyRating == "politically-sensitive") &&
+                    item.SafetyRating == "politically-sensitive" ||
+                    item.SensitiveContentKind != "none" ||
+                    item.UsagePolicy == "use-with-care" ||
+                    item.UsagePolicy == "understand-only" ||
+                    item.UsagePolicy == "do-not-use" ||
+                    item.UsagePolicy == "blocked") &&
                 !item.Warnings.Any()),
             cancellationToken).ConfigureAwait(false);
         int expressionsRequiringAdultAccess = await CountIfTableExistsAsync(
@@ -1015,12 +1041,59 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             "ExpressionEntries",
             dbContext.ExpressionEntries.AsNoTracking().Where(item => item.RequiresAdultAccess || item.SafetyRating == "explicit-adult"),
             cancellationToken).ConfigureAwait(false);
+        int expressionsRequiringSensitiveOptIn = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.RequiresSensitiveOptIn),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsRequiringVerifiedAdult = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.RequiresVerifiedAdult),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsBlockedOrExplicitAdult = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+                item.SafetyRating == "explicit-adult" ||
+                item.SafetyRating == "blocked-illegal" ||
+                item.SensitiveContentKind == "blocked" ||
+                item.UsagePolicy == "blocked"),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsMissingSensitiveUsagePolicy = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+                (item.RequiresSensitiveOptIn ||
+                    item.SafetyRating != "general" ||
+                    item.SensitiveContentKind != "none" ||
+                    item.MinimumAge > 0) &&
+                (item.UsagePolicy == null || item.UsagePolicy == string.Empty || item.UsagePolicy == "safe-to-use")),
+            cancellationToken).ConfigureAwait(false);
+        int expressionsOldRiskyMissingSensitiveMetadata = await CountIfTableExistsAsync(
+            tableAvailability,
+            "ExpressionEntries",
+            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+                (item.IsRisky ||
+                    item.SafetyRating == "mild-rude" ||
+                    item.SafetyRating == "strong-rude" ||
+                    item.Register == "rude" ||
+                    item.Register == "slang" ||
+                    item.ExpressionType == "slang" ||
+                    item.ExpressionType == "warning-phrase") &&
+                item.SensitiveContentKind == "none" &&
+                !item.RequiresSensitiveOptIn),
+            cancellationToken).ConfigureAwait(false);
 
         AddQualityIssue(expressionsMissingEligibilityMetadata, "Expression eligibility", "all", "Missing meaningTransparency metadata", issues);
         AddQualityIssue(ordinaryLiteralLeakage, "Expression eligibility", "published", "Published ordinary-literal expression leakage", issues);
         AddQualityIssue(expressionsMissingTeachingReason, "Expression eligibility", "all", "Missing teachingReason", issues);
         AddQualityIssue(expressionsWithFewerThanTwoExamples, "Expression examples", "published", "Fewer than two examples", issues);
         AddQualityIssue(expressionsMissingWarningsForRiskyContent, "Expression safety", "all", "Missing warning for risky/sensitive expression", issues);
+        AddQualityIssue(expressionsRequiringVerifiedAdult, "Expression safety", "all", "Requires verified adult access but no verified-adult system exists", issues);
+        AddQualityIssue(expressionsBlockedOrExplicitAdult, "Expression safety", "all", "Blocked or explicit-adult entries present", issues);
+        AddQualityIssue(expressionsMissingSensitiveUsagePolicy, "Expression safety", "all", "Sensitive entry missing usagePolicy", issues);
+        AddQualityIssue(expressionsOldRiskyMissingSensitiveMetadata, "Expression safety", "all", "Risky entry missing sensitive metadata", issues);
 
         return new LearningPortalQualitySummary(
             unresolvedWordCount,
@@ -1035,6 +1108,11 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             expressionsWithFewerThanTwoExamples,
             expressionsMissingWarningsForRiskyContent,
             expressionsRequiringAdultAccess,
+            expressionsRequiringSensitiveOptIn,
+            expressionsRequiringVerifiedAdult,
+            expressionsBlockedOrExplicitAdult,
+            expressionsMissingSensitiveUsagePolicy,
+            expressionsOldRiskyMissingSensitiveMetadata,
             issues.Take(30).ToArray());
     }
 
@@ -1484,5 +1562,10 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int ExpressionEntriesWithFewerThanTwoExamples,
         int ExpressionEntriesMissingWarningsForRiskyContent,
         int ExpressionEntriesRequiringAdultAccess,
+        int ExpressionEntriesRequiringSensitiveOptIn,
+        int ExpressionEntriesRequiringVerifiedAdult,
+        int ExpressionEntriesBlockedOrExplicitAdult,
+        int ExpressionEntriesMissingSensitiveUsagePolicy,
+        int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
         IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
 }

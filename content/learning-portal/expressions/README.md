@@ -18,6 +18,7 @@ Current official small batches:
 - `expressions-c1-core-02-v1.json`
 - `expressions-c2-core-v1.json`
 - `expressions-c2-core-02-v1.json`
+- `expressions-mixed-supplement-01-v1.json`
 
 Before creating or regenerating Expressions content, review:
 
@@ -51,6 +52,7 @@ node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressio
 node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-c1-core-02-v1.json
 node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-c2-core-v1.json
 node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-c2-core-02-v1.json
+node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-mixed-supplement-01-v1.json
 node tools/Content/Audit-ExpressionContentQuality.js
 dotnet test tests/Modules/ContentOps/DarwinLingua.ContentOps.Infrastructure.Tests/DarwinLingua.ContentOps.Infrastructure.Tests.csproj
 dotnet test tests/Modules/ContentOps/DarwinLingua.ContentOps.Application.Tests/DarwinLingua.ContentOps.Application.Tests.csproj

@@ -2147,12 +2147,29 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasColumnType("INTEGER")
                         .HasDefaultValue(false);
 
+                    b.Property<bool>("RequiresSensitiveOptIn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("RequiresVerifiedAdult")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("SafetyRating")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(64)
                         .HasColumnType("TEXT")
                         .HasDefaultValue("general");
+
+                    b.Property<string>("SensitiveContentKind")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("none");
 
                     b.Property<string>("Slug")
                         .IsRequired()
@@ -2172,6 +2189,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("UsageExplanation")
                         .HasMaxLength(4000)
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("UsagePolicy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("safe-to-use");
 
                     b.HasKey("Id");
 

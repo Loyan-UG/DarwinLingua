@@ -59,6 +59,7 @@ public interface IWebCatalogApiClient
     Task<ExpressionDetailModel?> GetExpressionBySlugAsync(
         string slug,
         string primaryMeaningLanguageCode,
+        bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
@@ -674,18 +675,23 @@ internal sealed class WebCatalogApiClient(
                     new("topicKey", filter.TopicKey),
                     new("isRisky", filter.IsRisky?.ToString()),
                     new("q", filter.Query),
-                    new("primaryMeaningLanguageCode", filter.PrimaryMeaningLanguageCode)
+                    new("primaryMeaningLanguageCode", filter.PrimaryMeaningLanguageCode),
+                    new("includeSensitiveEducationalLanguage", filter.IncludeSensitiveEducationalLanguage.ToString())
                 ]),
             cancellationToken);
 
     public Task<ExpressionDetailModel?> GetExpressionBySlugAsync(
         string slug,
         string primaryMeaningLanguageCode,
+        bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken) =>
         GetAsync<ExpressionDetailModel>(
             BuildPath(
                 $"/api/catalog/expressions/{Uri.EscapeDataString(slug)}",
-                [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+                [
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
+                    new("includeSensitiveEducationalLanguage", includeSensitiveEducationalLanguage.ToString())
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
@@ -826,7 +832,8 @@ internal sealed class WebCatalogApiClient(
                     new("cefrLevel", filter.CefrLevel),
                     new("resultType", filter.ResultType),
                     new("category", filter.Category),
-                    new("topicKey", filter.TopicKey)
+                    new("topicKey", filter.TopicKey),
+                    new("includeSensitiveEducationalLanguage", filter.IncludeSensitiveEducationalLanguage.ToString())
                 ]),
             cancellationToken);
 
@@ -2838,6 +2845,8 @@ public sealed record AdminLearningPortalSystemReportResponse(
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByRegister,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByMeaningTransparency,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsBySafetyRating,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsBySensitiveContentKind,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> ExpressionsByUsagePolicy,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByType,
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExercisesByTargetSkill,
     IReadOnlyList<AdminLearningPortalCountRowResponse> CourseLessonsByCourse,
@@ -2859,6 +2868,11 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int ExpressionEntriesWithFewerThanTwoExamples,
     int ExpressionEntriesMissingWarningsForRiskyContent,
     int ExpressionEntriesRequiringAdultAccess,
+    int ExpressionEntriesRequiringSensitiveOptIn,
+    int ExpressionEntriesRequiringVerifiedAdult,
+    int ExpressionEntriesBlockedOrExplicitAdult,
+    int ExpressionEntriesMissingSensitiveUsagePolicy,
+    int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
     IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
 
 public sealed record AdminLearningPortalCountRowResponse(

@@ -8,7 +8,8 @@ public sealed record ExpressionListFilterModel(
     string? TopicKey,
     bool? IsRisky,
     string? Query,
-    string? PrimaryMeaningLanguageCode = null);
+    string? PrimaryMeaningLanguageCode = null,
+    bool IncludeSensitiveEducationalLanguage = false);
 
 public sealed record ExpressionListItemModel(
     string Slug,
@@ -27,6 +28,10 @@ public sealed record ExpressionListItemModel(
     int MinimumAge,
     bool RequiresAdultAccess,
     string? AdultContentCategory,
+    string SensitiveContentKind,
+    bool RequiresSensitiveOptIn,
+    bool RequiresVerifiedAdult,
+    string UsagePolicy,
     IReadOnlyList<string> TopicKeys,
     IReadOnlyList<string> WarningTypes);
 
@@ -48,6 +53,10 @@ public sealed record ExpressionDetailModel(
     int MinimumAge,
     bool RequiresAdultAccess,
     string? AdultContentCategory,
+    string SensitiveContentKind,
+    bool RequiresSensitiveOptIn,
+    bool RequiresVerifiedAdult,
+    string UsagePolicy,
     IReadOnlyList<string> TopicKeys,
     IReadOnlyList<ExpressionExampleModel> Examples,
     IReadOnlyList<ExpressionWarningModel> Warnings,

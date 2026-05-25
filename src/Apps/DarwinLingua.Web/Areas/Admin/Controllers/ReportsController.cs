@@ -62,6 +62,10 @@ public sealed class ReportsController(
             new("Unpublished drafts", learningPortal.UnpublishedDraftCount.ToString(), "Learning Portal content rows not marked Active."),
             new("Grammar without exercises", learningPortal.GrammarTopicsMissingExercises.ToString(), "Grammar topics without linked exercises."),
             new("Lessons without exercise sets", learningPortal.CourseLessonsMissingExerciseSets.ToString(), "Course lessons without linked exercise sets."),
+            new("Sensitive opt-in expressions", learningPortal.ExpressionEntriesRequiringSensitiveOptIn.ToString(), "Expression entries hidden unless Sensitive Educational Language is enabled."),
+            new("Verified-adult blocked expressions", learningPortal.ExpressionEntriesRequiringVerifiedAdult.ToString(), "Expression entries requiring verified adult access; these remain hidden because no verified-adult system exists."),
+            new("Blocked or explicit expressions", learningPortal.ExpressionEntriesBlockedOrExplicitAdult.ToString(), "Expression entries classified as blocked-illegal, explicit-adult, or blocked usage policy."),
+            new("Sensitive policy gaps", (learningPortal.ExpressionEntriesMissingSensitiveUsagePolicy + learningPortal.ExpressionEntriesOldRiskyMissingSensitiveMetadata).ToString(), "Sensitive or risky expression entries missing the new metadata or usage policy."),
         ];
 
     private static IReadOnlyList<AdminSystemReportMetricViewModel> BuildSocialMetrics(AdminSocialSystemReportResponse social) =>

@@ -355,6 +355,107 @@ public sealed class CatalogSearchInfrastructureTests
         }
     }
 
+    [Fact]
+    public async Task ExpressionRepositories_ShouldShowSensitiveEducationalLanguageOnlyWhenOptedIn()
+    {
+        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-expression-sensitive-filter-{Guid.NewGuid():N}.db");
+        ServiceProvider? serviceProvider = null;
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(databasePath);
+            await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                DateTime nowUtc = DateTime.UtcNow;
+                ExpressionEntry sensitive = CreateExpression(
+                    "sensitive-formula",
+                    "Mir reicht's.",
+                    "I have had enough.",
+                    "دیگر برایم کافی است.",
+                    nowUtc,
+                    isRisky: true,
+                    safetyRating: "mild-rude",
+                    minimumAge: 16,
+                    sensitiveContentKind: "rude-colloquial",
+                    requiresSensitiveOptIn: true,
+                    usagePolicy: "use-with-care");
+                sensitive.AddWarning(Guid.NewGuid(), "tone", "Use with care.", nowUtc);
+
+                ExpressionEntry verifiedAdultOnly = CreateExpression(
+                    "verified-adult-only",
+                    "Verified only.",
+                    "Restricted.",
+                    "محدود.",
+                    nowUtc,
+                    safetyRating: "mild-rude",
+                    minimumAge: 18,
+                    sensitiveContentKind: "rude-colloquial",
+                    requiresSensitiveOptIn: true,
+                    requiresVerifiedAdult: true,
+                    usagePolicy: "use-with-care");
+
+                dbContext.ExpressionEntries.Add(CreateExpression("safe-formula", "Alles klar.", "Understood.", "متوجه شدم.", nowUtc));
+                dbContext.ExpressionEntries.Add(sensitive);
+                dbContext.ExpressionEntries.Add(verifiedAdultOnly);
+                await dbContext.SaveChangesAsync(CancellationToken.None);
+            }
+
+            IExpressionRepository expressionRepository = serviceProvider.GetRequiredService<IExpressionRepository>();
+            IReadOnlyList<ExpressionListItemModel> defaultExpressions = await expressionRepository.GetPublishedExpressionsAsync(
+                new ExpressionListFilterModel(null, null, null, null, null, null, null, "fa"),
+                CancellationToken.None);
+            IReadOnlyList<ExpressionListItemModel> optedInExpressions = await expressionRepository.GetPublishedExpressionsAsync(
+                new ExpressionListFilterModel(null, null, null, null, null, null, null, "fa", IncludeSensitiveEducationalLanguage: true),
+                CancellationToken.None);
+            ExpressionDetailModel? defaultDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
+                "sensitive-formula",
+                "fa",
+                CancellationToken.None);
+            ExpressionDetailModel? optedInDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
+                "sensitive-formula",
+                "fa",
+                true,
+                CancellationToken.None);
+            ExpressionDetailModel? verifiedAdultDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
+                "verified-adult-only",
+                "fa",
+                true,
+                CancellationToken.None);
+
+            IUnifiedLearningSearchRepository searchRepository = serviceProvider.GetRequiredService<IUnifiedLearningSearchRepository>();
+            IReadOnlyList<UnifiedLearningSearchResultModel> defaultSearch = await searchRepository.SearchAsync(
+                new UnifiedLearningSearchFilterModel("reicht", null, "expression", null, null),
+                CancellationToken.None);
+            IReadOnlyList<UnifiedLearningSearchResultModel> optedInSearch = await searchRepository.SearchAsync(
+                new UnifiedLearningSearchFilterModel("reicht", null, "expression", null, null, IncludeSensitiveEducationalLanguage: true),
+                CancellationToken.None);
+
+            Assert.DoesNotContain(defaultExpressions, item => item.Slug == "sensitive-formula");
+            Assert.Contains(optedInExpressions, item => item.Slug == "sensitive-formula");
+            Assert.DoesNotContain(optedInExpressions, item => item.Slug == "verified-adult-only");
+            Assert.Null(defaultDetail);
+            Assert.NotNull(optedInDetail);
+            Assert.Equal("use-with-care", optedInDetail.UsagePolicy);
+            Assert.Null(verifiedAdultDetail);
+            Assert.Empty(defaultSearch);
+            Assert.Contains(optedInSearch, item => item.Url == "/expressions/sensitive-formula");
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            TryDeleteFile(databasePath);
+        }
+    }
+
     /// <summary>
      /// Verifies that inactive lexical entries are not materialized through the detail repository path.
      /// </summary>
@@ -716,7 +817,12 @@ public sealed class CatalogSearchInfrastructureTests
         DateTime nowUtc,
         bool isRisky = false,
         bool requiresAdultAccess = false,
-        string safetyRating = "general")
+        string safetyRating = "general",
+        int? minimumAge = null,
+        string? sensitiveContentKind = null,
+        bool requiresSensitiveOptIn = false,
+        bool requiresVerifiedAdult = false,
+        string? usagePolicy = null)
     {
         ExpressionEntry expression = new(
             Guid.NewGuid(),
@@ -737,8 +843,13 @@ public sealed class CatalogSearchInfrastructureTests
             "pragmatic-formula",
             "It has a conventional pragmatic use.",
             safetyRating,
-            requiresAdultAccess ? 18 : 0,
-            requiresAdultAccess);
+            minimumAge ?? (requiresAdultAccess ? 18 : 0),
+            requiresAdultAccess,
+            null,
+            sensitiveContentKind,
+            requiresSensitiveOptIn,
+            requiresVerifiedAdult,
+            usagePolicy);
 
         expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("en"), englishMeaning, null, "Use it in everyday German.", nowUtc);
         expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("fa"), persianMeaning, null, "در موقعیت روزمره آلمانی استفاده می‌شود.", nowUtc);

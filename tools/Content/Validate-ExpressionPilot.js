@@ -42,20 +42,42 @@ const safetyRatings = new Set([
   "general",
   "mild-rude",
   "strong-rude",
-  "sexual-context",
+  "sexual-educational",
+  "romantic-social",
   "explicit-adult",
+  "blocked-illegal",
   "discriminatory-slur",
   "politically-sensitive"
 ]);
 const riskySafetyRatings = new Set([
   "mild-rude",
   "strong-rude",
-  "sexual-context",
+  "sexual-educational",
+  "romantic-social",
   "explicit-adult",
+  "blocked-illegal",
   "discriminatory-slur",
   "politically-sensitive"
 ]);
-const minimumAges = new Set([0, 16, 18]);
+const minimumAges = new Set([0, 12, 16, 18]);
+const sensitiveContentKinds = new Set([
+  "none",
+  "swear-word",
+  "insult",
+  "rude-colloquial",
+  "mild-emotional",
+  "romantic-social",
+  "sexual-educational-neutral",
+  "slur-educational",
+  "blocked"
+]);
+const usagePolicies = new Set([
+  "safe-to-use",
+  "use-with-care",
+  "understand-only",
+  "do-not-use",
+  "blocked"
+]);
 const adultContentCategories = new Set([
   "rude-slang",
   "sexual-language",
@@ -211,14 +233,30 @@ for (const [index, expression] of expressions.entries()) {
     fail(`${prefix}.literalMeaningText is required for non-literal and semi-idiomatic entries.`);
   }
   if (!safetyRatings.has(text(expression.safetyRating))) fail(`${prefix}.safetyRating '${expression.safetyRating}' is unsupported.`);
-  if (!minimumAges.has(expression.minimumAge)) fail(`${prefix}.minimumAge must be 0, 16, or 18.`);
+  if (!minimumAges.has(expression.minimumAge)) fail(`${prefix}.minimumAge must be 0, 12, 16, or 18.`);
   if (expression.requiresAdultAccess === true && expression.minimumAge < 18) fail(`${prefix}.requiresAdultAccess requires minimumAge 18.`);
-  if (expression.safetyRating === "explicit-adult" && (expression.requiresAdultAccess !== true || expression.minimumAge !== 18)) {
-    fail(`${prefix}.explicit-adult requires requiresAdultAccess true and minimumAge 18.`);
+  if (expression.safetyRating === "explicit-adult") {
+    fail(`${prefix}.explicit-adult is blocked until legal review and verified adult access exist.`);
+  }
+  if (expression.safetyRating === "blocked-illegal") {
+    fail(`${prefix}.blocked-illegal cannot be imported.`);
+  }
+  if (expression.requiresVerifiedAdult === true) {
+    fail(`${prefix}.requiresVerifiedAdult cannot be true because no verified-adult system exists.`);
   }
   if (expression.adultContentCategory !== undefined && !adultContentCategories.has(text(expression.adultContentCategory))) {
     fail(`${prefix}.adultContentCategory '${expression.adultContentCategory}' is unsupported.`);
   }
+  const sensitiveContentKind = text(expression.sensitiveContentKind || "none");
+  if (!sensitiveContentKinds.has(sensitiveContentKind)) fail(`${prefix}.sensitiveContentKind '${sensitiveContentKind}' is unsupported.`);
+  const usagePolicy = text(expression.usagePolicy || "safe-to-use");
+  if (!usagePolicies.has(usagePolicy)) fail(`${prefix}.usagePolicy '${usagePolicy}' is unsupported.`);
+  if (["blocked", "slur-educational"].includes(sensitiveContentKind)) fail(`${prefix}.sensitiveContentKind '${sensitiveContentKind}' is blocked without manual review.`);
+  if (usagePolicy === "blocked") fail(`${prefix}.usagePolicy blocked cannot be imported.`);
+  const sensitive = expression.safetyRating !== "general" || sensitiveContentKind !== "none" || expression.minimumAge > 0 || ["use-with-care", "understand-only", "do-not-use"].includes(usagePolicy);
+  if (sensitive && expression.requiresSensitiveOptIn !== true) fail(`${prefix}.requiresSensitiveOptIn must be true for Sensitive Educational Language.`);
+  if (expression.safetyRating === "general" && sensitiveContentKind !== "none") fail(`${prefix}.non-none sensitiveContentKind requires non-general safetyRating.`);
+  if (sensitive && usagePolicy === "safe-to-use") fail(`${prefix}.sensitive entry requires a non-default usagePolicy.`);
 
   for (const field of ["expressionText", "literalMeaningText", "actualMeaningText", "usageExplanation"]) {
     if (text(expression[field]) && processLeakPattern.test(expression[field])) {
@@ -230,7 +268,7 @@ for (const [index, expression] of expressions.entries()) {
     ...(Array.isArray(expression.warnings) ? expression.warnings : []),
     ...(Array.isArray(expression.contentWarnings) ? expression.contentWarnings : [])
   ];
-  const risky = expression.isRisky === true || riskyRegisters.has(text(expression.register)) || riskyTypes.has(text(expression.expressionType)) || riskySafetyRatings.has(text(expression.safetyRating));
+  const risky = expression.isRisky === true || riskyRegisters.has(text(expression.register)) || riskyTypes.has(text(expression.expressionType)) || riskySafetyRatings.has(text(expression.safetyRating)) || sensitiveContentKind !== "none" || ["use-with-care", "understand-only", "do-not-use", "blocked"].includes(usagePolicy);
   if (risky && warnings.length === 0) {
     fail(`${prefix} is risky but has no warnings.`);
   }

@@ -18,12 +18,32 @@ const allowedSafetyRatings = new Set([
   "general",
   "mild-rude",
   "strong-rude",
-  "sexual-context",
+  "sexual-educational",
+  "romantic-social",
   "explicit-adult",
+  "blocked-illegal",
   "discriminatory-slur",
   "politically-sensitive",
 ]);
-const allowedMinimumAges = new Set([0, 16, 18]);
+const allowedMinimumAges = new Set([0, 12, 16, 18]);
+const allowedSensitiveContentKinds = new Set([
+  "none",
+  "swear-word",
+  "insult",
+  "rude-colloquial",
+  "mild-emotional",
+  "romantic-social",
+  "sexual-educational-neutral",
+  "slur-educational",
+  "blocked",
+]);
+const allowedUsagePolicies = new Set([
+  "safe-to-use",
+  "use-with-care",
+  "understand-only",
+  "do-not-use",
+  "blocked",
+]);
 const allowedAdultContentCategories = new Set([
   "rude-slang",
   "sexual-language",
@@ -93,22 +113,43 @@ function auditEntry(packageId, entry, issues) {
   if (!allowedSafetyRatings.has(safetyRating)) {
     issues.push([owner, "P0", `Unsupported safetyRating '${safetyRating}'`]);
   }
-  if (!allowedMinimumAges.has(entry.minimumAge ?? 0)) {
-    issues.push([owner, "P0", "Unsupported minimumAge; expected 0, 16, or 18"]);
-  }
   if (entry.requiresAdultAccess === true && (entry.minimumAge ?? 0) < 18) {
     issues.push([owner, "P0", "Adult-access expression must use minimumAge 18"]);
   }
   if (entry.adultContentCategory !== undefined && !allowedAdultContentCategories.has(entry.adultContentCategory)) {
     issues.push([owner, "P0", `Unsupported adultContentCategory '${entry.adultContentCategory}'`]);
   }
+  if (!allowedMinimumAges.has(entry.minimumAge ?? 0)) {
+    issues.push([owner, "P0", "Unsupported minimumAge; expected 0, 12, 16, or 18"]);
+  }
+  const sensitiveContentKind = entry.sensitiveContentKind || "none";
+  if (!allowedSensitiveContentKinds.has(sensitiveContentKind)) {
+    issues.push([owner, "P0", `Unsupported sensitiveContentKind '${sensitiveContentKind}'`]);
+  }
+  const usagePolicy = entry.usagePolicy || "safe-to-use";
+  if (!allowedUsagePolicies.has(usagePolicy)) {
+    issues.push([owner, "P0", `Unsupported usagePolicy '${usagePolicy}'`]);
+  }
+  if (["explicit-adult", "blocked-illegal"].includes(safetyRating) || ["blocked", "slur-educational"].includes(sensitiveContentKind) || entry.requiresVerifiedAdult === true || usagePolicy === "blocked") {
+    issues.push([owner, "P0", "Blocked, explicit-adult, slur-educational, or verified-adult content cannot be accepted in official packages"]);
+  }
+  const isSensitive = safetyRating !== "general" || sensitiveContentKind !== "none" || (entry.minimumAge ?? 0) > 0 || ["use-with-care", "understand-only", "do-not-use"].includes(usagePolicy);
+  if (isSensitive && entry.requiresSensitiveOptIn !== true) {
+    issues.push([owner, "P0", "Sensitive Educational Language requires requiresSensitiveOptIn true"]);
+  }
+  if (safetyRating === "general" && sensitiveContentKind !== "none") {
+    issues.push([owner, "P0", "Non-none sensitiveContentKind requires non-general safetyRating"]);
+  }
+  if (isSensitive && usagePolicy === "safe-to-use") {
+    issues.push([owner, "P0", "Sensitive Educational Language requires an explicit non-default usagePolicy"]);
+  }
   const warnings = [...(entry.warnings || []), ...(entry.contentWarnings || [])];
-  const requiresWarning = entry.isRisky === true || ["mild-rude", "strong-rude", "sexual-context", "explicit-adult", "discriminatory-slur", "politically-sensitive"].includes(safetyRating);
+  const requiresWarning = entry.isRisky === true || ["mild-rude", "strong-rude", "sexual-educational", "romantic-social", "explicit-adult", "blocked-illegal", "discriminatory-slur", "politically-sensitive"].includes(safetyRating) || sensitiveContentKind !== "none" || ["use-with-care", "understand-only", "do-not-use", "blocked"].includes(usagePolicy);
   if (requiresWarning && !warnings.some(warning => typeof warning.text === "string" && warning.text.trim())) {
     issues.push([owner, "P0", "Risky/sensitive expression is missing warning metadata"]);
   }
-  if (safetyRating === "explicit-adult" && (entry.requiresAdultAccess !== true || entry.minimumAge !== 18)) {
-    issues.push([owner, "P0", "Explicit-adult expression must require adult access and minimumAge 18"]);
+  if (safetyRating === "explicit-adult") {
+    issues.push([owner, "P0", "Explicit-adult expressions are blocked until legal review and verified adult access exist"]);
   }
   const meaningLanguages = new Set((entry.meanings || []).map(meaning => meaning.language));
   for (const language of requiredLanguages) {

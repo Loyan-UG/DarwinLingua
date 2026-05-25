@@ -63,8 +63,12 @@ Required:
 - `usageExplanation`: context/tone explanation
 - `teachingReason`: why this belongs in Expressions
 - `safetyRating`: controlled safety classification
+- `sensitiveContentKind`: controlled sensitive-education classification
 - `minimumAge`
 - `requiresAdultAccess`
+- `requiresSensitiveOptIn`
+- `requiresVerifiedAdult`
+- `usagePolicy`
 
 Optional:
 
@@ -126,16 +130,39 @@ Safety ratings:
 - `general`
 - `mild-rude`
 - `strong-rude`
-- `sexual-context`
+- `sexual-educational`
+- `romantic-social`
 - `explicit-adult`
 - `discriminatory-slur`
 - `politically-sensitive`
+- `blocked-illegal`
+
+Sensitive content kinds:
+
+- `none`
+- `swear-word`
+- `insult`
+- `rude-colloquial`
+- `mild-emotional`
+- `romantic-social`
+- `sexual-educational-neutral`
+- `slur-educational`
+- `blocked`
 
 Minimum ages:
 
 - `0`
+- `12`
 - `16`
 - `18`
+
+Usage policies:
+
+- `safe-to-use`
+- `use-with-care`
+- `understand-only`
+- `do-not-use`
+- `blocked`
 
 Adult content categories are optional controlled keys for restricted educational content, such as `rude-slang`, `sexual-language`, `explicit-sexual-language`, `discriminatory-language`, or `politically-sensitive-language`.
 
@@ -153,11 +180,29 @@ Expressions that are risky, rude, slang-heavy, friends-only, warning phrases, di
 
 The importer rejects risky expressions that do not include at least one warning with text.
 
+Sensitive Educational Language is the product term for warning-labeled educational content such as common rude words, insults, slang, mild emotional or romantic/social phrases, and neutral non-graphic sexual-language comprehension. It is for comprehension first and must not encourage learners to casually use insults or risky phrases.
+
+Sensitive Educational Language is not pornographic content. Official content must not generate pornographic, arousing, graphic sexual, exploitative, coercive, minor-related, illegal, hate-inciting, Nazi-propaganda, or harm-facilitating content.
+
 `explicit-adult`, pornographic, or strongly sexual content must not be visible to anonymous users, minors, self-declared-only users, or unverified users. In Germany, a simple checkbox is not sufficient for pornographic or legally restricted adult content. Production launch of explicit adult content requires legal review and an approved age-verification/closed-user-group concept.
 
 Implementation guidance for Germany: public documentation from NLM, KJM, and FSM describes closed adult user groups as requiring adult identification plus per-use authentication for content that may be offered only to adults. Treat `self-declared-adult` as a stored preference and not as sufficient production access for explicit adult/pornographic content. Approved future states should use the minimal needed claim, such as a verified-over-18 status, rather than storing full birthdates unless a reviewed provider flow requires it.
 
 Educational rude or slang content may be marked and filtered separately from explicit adult content. Discriminatory slurs may only be included for comprehension and safety education, with strong warnings, neutral explanation, no endorsement, and restricted visibility if needed. Sexual content involving minors, coercion, exploitation, or illegal content is never allowed.
+
+Current implementation rules:
+
+- `blocked-illegal` is rejected.
+- `explicit-adult` is rejected until legal review and verified-adult access exist.
+- `requiresVerifiedAdult: true` is rejected in official generated content until a verified-adult system exists.
+- `discriminatory-slur` and `slur-educational` are blocked by default unless a future manually reviewed safety package explicitly enables them.
+- non-general sensitive entries must set `requiresSensitiveOptIn: true`.
+- non-general sensitive entries must include warnings and a non-default `usagePolicy`.
+- `sexual-educational` must be neutral, non-graphic, non-arousing, and use `sensitiveContentKind: sexual-educational-neutral`.
+- `romantic-social` may be included only when mild, non-graphic, and socially useful.
+- mobile export excludes Sensitive Educational Language by default until mobile has equivalent opt-in filtering and warning rendering.
+
+See `85-Sensitive-Educational-Language-Policy.md` for the cross-module policy, privacy, filtering, and release requirements.
 
 ## Linking Rules
 
@@ -183,8 +228,12 @@ They must not include word definitions or copied word meanings.
   "meaningTransparency": "pragmatic-formula",
   "teachingReason": "It is a conventional confirmation formula whose social function is broader than the literal words.",
   "safetyRating": "general",
+  "sensitiveContentKind": "none",
   "minimumAge": 0,
   "requiresAdultAccess": false,
+  "requiresSensitiveOptIn": false,
+  "requiresVerifiedAdult": false,
+  "usagePolicy": "safe-to-use",
   "cefrLevel": "A2",
   "expressionType": "fixed-expression",
   "register": "neutral",
@@ -240,7 +289,9 @@ They must not include word definitions or copied word meanings.
 - published classified official content needs at least two German examples unless a documented exception exists
 - German examples must show realistic contexts and must not repeat the same generic frame
 - `safetyRating`, `minimumAge`, and `requiresAdultAccess` must be valid and consistent
-- `explicit-adult` requires `minimumAge: 18` and `requiresAdultAccess: true`
+- `sensitiveContentKind`, `requiresSensitiveOptIn`, `requiresVerifiedAdult`, and `usagePolicy` must be valid and consistent
+- `blocked-illegal`, `explicit-adult`, blocked sensitive kinds, blocked usage policies, and verified-adult-required official generated entries are rejected until a dedicated legal/access system exists
+- sensitive entries require warnings, `requiresSensitiveOptIn: true`, and a non-default usage policy
 - examples require German text
 - linked words store only lemma/slug references, not meanings
 - duplicate translation language codes rejected

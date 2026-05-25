@@ -120,10 +120,14 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 - [ ] Grammar Guide readiness reviewed: import validation, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions eligibility reviewed: no published ordinary literal sentence leakage, `meaningTransparency` present for new batches, teaching reason present, and at least two contextual German examples
-- [ ] Sensitive/adult Expressions are hidden from anonymous and ineligible users
-- [ ] Unified Search excludes adult-only Expressions unless the user is eligible
-- [ ] Admin reports show Expression counts by safety rating, age requirement/adult-access state, missing warnings, missing teaching reasons, and ordinary-literal leakage
-- [ ] Mobile package export excludes adult-only Expressions until mobile eligibility enforcement is ready
+- [ ] Sensitive Educational Language policy reviewed
+- [ ] Settings/profile explanation for Sensitive Educational Language is clear, localized, and does not claim age verification
+- [ ] Sensitive Educational Language entries are hidden from anonymous users and users without opt-in
+- [ ] Explicit-adult and blocked-illegal Expressions remain blocked even when Sensitive Educational Language is enabled
+- [ ] Web/API/search filtering for Sensitive Educational Language is verified
+- [ ] Unified Search excludes sensitive and adult-only Expressions by default
+- [ ] Admin reports show Expression counts by safety rating, sensitive content kind, age requirement, opt-in requirement, missing warnings, missing teaching reasons, and ordinary-literal leakage
+- [ ] Mobile package export excludes Sensitive Educational Language until mobile eligibility enforcement and warning rendering are ready
 - [ ] Exercise Engine readiness reviewed: deterministic answer evaluation, answer-key safety, attempts, WebApi runner endpoints, Web runner behavior
 - [ ] Exercise attempt persistence requires authorization and stores only authenticated user ids
 - [ ] Public exercise evaluation is stateless, rate-limited, and does not persist anonymous progress

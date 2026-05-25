@@ -26,7 +26,11 @@ public sealed record ParsedExpressionEntryModel(
     string SafetyRating = "general",
     int MinimumAge = 0,
     bool RequiresAdultAccess = false,
-    string? AdultContentCategory = null);
+    string? AdultContentCategory = null,
+    string SensitiveContentKind = "none",
+    bool RequiresSensitiveOptIn = false,
+    bool RequiresVerifiedAdult = false,
+    string UsagePolicy = "safe-to-use");
 
 public sealed record ParsedExpressionMeaningModel(
     string Language,

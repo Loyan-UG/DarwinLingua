@@ -40,17 +40,13 @@
                 }
             </label>
 
-            <label class="field">
-                <span>@T["Adult content access state"]</span>
-                <select asp-for="Input.AdultContentAccessState" asp-items="Model.AdultContentAccessStateOptions"></select>
-                <small class="body-sm">@T["Self-declaration does not unlock explicit adult content. Explicit adult content requires legal review and approved age verification before release."]</small>
-                <span asp-validation-for="Input.AdultContentAccessState" class="validation-message"></span>
-            </label>
-
+            <input type="hidden" asp-for="Input.AdultContentAccessState" />
             <label class="field field--checkbox">
                 <input asp-for="Input.AllowsRudeSlangContent" />
-                <span>@T["Show educational rude or slang language when it is safely marked."]</span>
-                <small class="body-sm">@T["This preference is separate from explicit adult content access."]</small>
+                <span>@T["Show sensitive educational language"]</span>
+                <small class="body-sm">@T["Sensitive Educational Language may include rude words, insults, slang, and mild relationship or emotional expressions for learning and comprehension."]</small>
+                <small class="body-sm">@T["It does not show pornographic or explicit adult content and it does not verify age."]</small>
+                <small class="body-sm">@T["Sensitive entries include warnings and should be used carefully."]</small>
             </label>
         </div>
 

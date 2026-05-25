@@ -36,6 +36,8 @@ public sealed class ContentImportParserExpressionEntryTests
         {
             Assert.Equal(requiredLanguages, expression.Meanings.Select(meaning => meaning.Language).ToArray());
             Assert.NotEmpty(expression.Examples);
+            Assert.False(string.IsNullOrWhiteSpace(expression.SensitiveContentKind));
+            Assert.False(string.IsNullOrWhiteSpace(expression.UsagePolicy));
             Assert.All(expression.Examples, example =>
                 Assert.Equal(requiredLanguages, example.Translations.Select(translation => translation.Language).ToArray()));
             Assert.All(expression.LinkedWords, word =>
@@ -82,6 +84,8 @@ public sealed class ContentImportParserExpressionEntryTests
             {
                 Assert.Equal(requiredLanguages, expression.Meanings.Select(meaning => meaning.Language).ToArray());
                 Assert.NotEmpty(expression.Examples);
+                Assert.False(string.IsNullOrWhiteSpace(expression.SensitiveContentKind));
+                Assert.False(string.IsNullOrWhiteSpace(expression.UsagePolicy));
                 Assert.All(expression.Examples, example =>
                     Assert.Equal(requiredLanguages, example.Translations.Select(translation => translation.Language).ToArray()));
                 Assert.All(expression.LinkedWords, word => Assert.False(string.IsNullOrWhiteSpace(word.Lemma)));
@@ -118,6 +122,10 @@ public sealed class ContentImportParserExpressionEntryTests
                   "safetyRating": "general",
                   "minimumAge": 0,
                   "requiresAdultAccess": false,
+                  "sensitiveContentKind": "none",
+                  "requiresSensitiveOptIn": false,
+                  "requiresVerifiedAdult": false,
+                  "usagePolicy": "safe-to-use",
                   "cefrLevel": "A2",
                   "expressionType": "fixed-expression",
                   "register": "neutral",
@@ -172,6 +180,10 @@ public sealed class ContentImportParserExpressionEntryTests
         Assert.Equal("general", expression.SafetyRating);
         Assert.Equal(0, expression.MinimumAge);
         Assert.False(expression.RequiresAdultAccess);
+        Assert.Equal("none", expression.SensitiveContentKind);
+        Assert.False(expression.RequiresSensitiveOptIn);
+        Assert.False(expression.RequiresVerifiedAdult);
+        Assert.Equal("safe-to-use", expression.UsagePolicy);
         Assert.Equal("All good or understood.", Assert.Single(expression.Meanings).ActualMeaningText);
         Assert.Equal("Alles klar, wir treffen uns um acht.", Assert.Single(expression.Examples).GermanText);
         Assert.Equal("klar", Assert.Single(expression.LinkedWords).WordSlug);

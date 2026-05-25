@@ -5,7 +5,8 @@ public sealed record UnifiedLearningSearchFilterModel(
     string? CefrLevel,
     string? ResultType,
     string? Category,
-    string? TopicKey);
+    string? TopicKey,
+    bool IncludeSensitiveEducationalLanguage = false);
 
 public sealed record UnifiedLearningSearchResultModel(
     string ResultType,

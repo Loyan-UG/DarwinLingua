@@ -29,6 +29,10 @@ internal sealed class ExpressionEntryConfiguration : IEntityTypeConfiguration<Ex
         builder.Property(expression => expression.MinimumAge).HasDefaultValue(0).IsRequired();
         builder.Property(expression => expression.RequiresAdultAccess).HasDefaultValue(false).IsRequired();
         builder.Property(expression => expression.AdultContentCategory).HasMaxLength(64);
+        builder.Property(expression => expression.SensitiveContentKind).HasMaxLength(64).HasDefaultValue("none").IsRequired();
+        builder.Property(expression => expression.RequiresSensitiveOptIn).HasDefaultValue(false).IsRequired();
+        builder.Property(expression => expression.RequiresVerifiedAdult).HasDefaultValue(false).IsRequired();
+        builder.Property(expression => expression.UsagePolicy).HasMaxLength(64).HasDefaultValue("safe-to-use").IsRequired();
         builder.Property(expression => expression.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
         builder.Property(expression => expression.SortOrder).IsRequired();
         builder.Property(expression => expression.CreatedAtUtc).IsRequired();

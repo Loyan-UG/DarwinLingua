@@ -26,8 +26,9 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
             .Include(expression => expression.Topics)
             .Include(expression => expression.Meanings)
             .Include(expression => expression.Warnings)
-            .Where(expression => expression.PublicationStatus == PublicationStatus.Active)
-            .Where(expression => !expression.RequiresAdultAccess && expression.SafetyRating != "explicit-adult");
+            .Where(expression => expression.PublicationStatus == PublicationStatus.Active);
+
+        query = ApplyLearnerVisibility(query, filter.IncludeSensitiveEducationalLanguage);
 
         LanguageCode primaryLanguage = ResolveRequestedLanguage(filter.PrimaryMeaningLanguageCode);
 
@@ -111,15 +112,26 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
                     expression.MinimumAge,
                     expression.RequiresAdultAccess,
                     expression.AdultContentCategory,
+                    expression.SensitiveContentKind,
+                    expression.RequiresSensitiveOptIn,
+                    expression.RequiresVerifiedAdult,
+                    expression.UsagePolicy,
                     GetTopicKeys(expression.Topics, topicKeysById),
                     expression.Warnings.OrderBy(warning => warning.WarningType).Select(warning => warning.WarningType).ToArray());
             })
             .ToArray();
     }
 
+    public Task<ExpressionDetailModel?> GetPublishedExpressionBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetPublishedExpressionBySlugAsync(slug, primaryMeaningLanguageCode, false, cancellationToken);
+
     public async Task<ExpressionDetailModel?> GetPublishedExpressionBySlugAsync(
         string slug,
         string primaryMeaningLanguageCode,
+        bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(slug);
@@ -140,11 +152,18 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
             .Include(item => item.RelatedExpressions)
             .Include(item => item.LinkedExercises)
             .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
-            .Where(item => !item.RequiresAdultAccess && item.SafetyRating != "explicit-adult")
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        if (expression is null)
+        if (expression is null ||
+            !ExpressionSensitivityPolicy.IsVisibleToLearner(
+                expression.SafetyRating,
+                expression.SensitiveContentKind,
+                expression.RequiresSensitiveOptIn,
+                expression.RequiresAdultAccess,
+                expression.RequiresVerifiedAdult,
+                expression.UsagePolicy,
+                includeSensitiveEducationalLanguage))
         {
             return null;
         }
@@ -171,6 +190,10 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
             expression.MinimumAge,
             expression.RequiresAdultAccess,
             expression.AdultContentCategory,
+            expression.SensitiveContentKind,
+            expression.RequiresSensitiveOptIn,
+            expression.RequiresVerifiedAdult,
+            expression.UsagePolicy,
             GetTopicKeys(expression.Topics, topicKeysById),
             expression.Examples.OrderBy(item => item.SortOrder).Select(item => MapExample(item, primaryLanguage)).ToArray(),
             expression.Warnings.OrderBy(item => item.WarningType).Select(item => MapWarning(item, primaryLanguage)).ToArray(),
@@ -251,4 +274,40 @@ internal sealed class ExpressionRepository(IDbContextFactory<DarwinLinguaDbConte
 
     private static string? NormalizeOptionalSearch(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private static IQueryable<ExpressionEntry> ApplyLearnerVisibility(
+        IQueryable<ExpressionEntry> query,
+        bool includeSensitiveEducationalLanguage)
+    {
+        query = query.Where(expression =>
+            !expression.RequiresAdultAccess &&
+            !expression.RequiresVerifiedAdult &&
+            expression.SafetyRating != ExpressionSensitivityPolicy.SafetyExplicitAdult &&
+            expression.SafetyRating != ExpressionSensitivityPolicy.SafetyBlockedIllegal &&
+            expression.SafetyRating != ExpressionSensitivityPolicy.SafetyDiscriminatorySlur &&
+            expression.SensitiveContentKind != ExpressionSensitivityPolicy.SensitiveBlocked &&
+            expression.SensitiveContentKind != ExpressionSensitivityPolicy.SensitiveSlurEducational &&
+            expression.UsagePolicy != ExpressionSensitivityPolicy.UsageBlocked);
+
+        if (!includeSensitiveEducationalLanguage)
+        {
+            query = query.Where(expression =>
+                !expression.RequiresSensitiveOptIn &&
+                expression.SafetyRating == ExpressionSensitivityPolicy.SafetyGeneral &&
+                expression.SensitiveContentKind == ExpressionSensitivityPolicy.SensitiveNone &&
+                expression.MinimumAge == 0 &&
+                expression.UsagePolicy == ExpressionSensitivityPolicy.UsageSafeToUse);
+        }
+        else
+        {
+            query = query.Where(expression =>
+                expression.SafetyRating == ExpressionSensitivityPolicy.SafetyGeneral ||
+                expression.SafetyRating == ExpressionSensitivityPolicy.SafetyMildRude ||
+                expression.SafetyRating == ExpressionSensitivityPolicy.SafetyStrongRude ||
+                expression.SafetyRating == ExpressionSensitivityPolicy.SafetyRomanticSocial ||
+                expression.SafetyRating == ExpressionSensitivityPolicy.SafetySexualEducational);
+        }
+
+        return query;
+    }
 }

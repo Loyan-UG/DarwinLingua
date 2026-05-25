@@ -49,7 +49,11 @@ public sealed class ExpressionEntry
         string? safetyRating = null,
         int minimumAge = 0,
         bool requiresAdultAccess = false,
-        string? adultContentCategory = null)
+        string? adultContentCategory = null,
+        string? sensitiveContentKind = null,
+        bool requiresSensitiveOptIn = false,
+        bool requiresVerifiedAdult = false,
+        string? usagePolicy = null)
     {
         if (id == Guid.Empty)
         {
@@ -71,9 +75,13 @@ public sealed class ExpressionEntry
         MeaningTransparency = NormalizeOptionalKebabKey(meaningTransparency, "Expression meaning transparency");
         TeachingReason = NormalizeOptionalText(teachingReason, 2000, "Expression teaching reason");
         SafetyRating = NormalizeOptionalKebabKey(safetyRating, "Expression safety rating") ?? "general";
-        MinimumAge = minimumAge is 16 or 18 ? minimumAge : 0;
+        MinimumAge = minimumAge is 12 or 16 or 18 ? minimumAge : 0;
         RequiresAdultAccess = requiresAdultAccess;
         AdultContentCategory = NormalizeOptionalKebabKey(adultContentCategory, "Expression adult content category");
+        SensitiveContentKind = NormalizeOptionalKebabKey(sensitiveContentKind, "Expression sensitive content kind") ?? "none";
+        RequiresSensitiveOptIn = requiresSensitiveOptIn;
+        RequiresVerifiedAdult = requiresVerifiedAdult;
+        UsagePolicy = NormalizeOptionalKebabKey(usagePolicy, "Expression usage policy") ?? "safe-to-use";
         PublicationStatus = publicationStatus;
         SortOrder = Math.Max(0, sortOrder);
         CreatedAtUtc = timestampUtc;
@@ -98,6 +106,10 @@ public sealed class ExpressionEntry
     public int MinimumAge { get; private set; }
     public bool RequiresAdultAccess { get; private set; }
     public string? AdultContentCategory { get; private set; }
+    public string SensitiveContentKind { get; private set; } = "none";
+    public bool RequiresSensitiveOptIn { get; private set; }
+    public bool RequiresVerifiedAdult { get; private set; }
+    public string UsagePolicy { get; private set; } = "safe-to-use";
     public PublicationStatus PublicationStatus { get; private set; }
     public int SortOrder { get; private set; }
     public DateTime CreatedAtUtc { get; private set; }

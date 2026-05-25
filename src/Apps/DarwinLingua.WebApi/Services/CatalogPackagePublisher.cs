@@ -187,6 +187,14 @@ public sealed class CatalogPackagePublisher(
             .AsNoTracking()
             .AsSplitQuery()
             .Where(expression => expression.PublicationStatus == PublicationStatus.Active)
+            .Where(expression =>
+                !expression.RequiresAdultAccess &&
+                !expression.RequiresVerifiedAdult &&
+                !expression.RequiresSensitiveOptIn &&
+                expression.SafetyRating == ExpressionSensitivityPolicy.SafetyGeneral &&
+                expression.SensitiveContentKind == ExpressionSensitivityPolicy.SensitiveNone &&
+                expression.MinimumAge == 0 &&
+                expression.UsagePolicy == ExpressionSensitivityPolicy.UsageSafeToUse)
             .Include(expression => expression.Topics)
             .Include(expression => expression.Meanings)
             .Include(expression => expression.Examples)
@@ -1066,6 +1074,16 @@ public sealed class CatalogPackagePublisher(
             null,
             entry.Region,
             entry.IsRisky,
+            entry.MeaningTransparency,
+            entry.TeachingReason,
+            entry.SafetyRating,
+            entry.MinimumAge,
+            entry.RequiresAdultAccess,
+            entry.AdultContentCategory,
+            entry.SensitiveContentKind,
+            entry.RequiresSensitiveOptIn,
+            entry.RequiresVerifiedAdult,
+            entry.UsagePolicy,
             entry.Topics
                 .OrderByDescending(link => link.IsPrimary)
                 .ThenBy(link => link.CreatedAtUtc)
@@ -1725,6 +1743,16 @@ public sealed class CatalogPackagePublisher(
         string? Context,
         string? Region,
         bool IsRisky,
+        string? MeaningTransparency,
+        string? TeachingReason,
+        string SafetyRating,
+        int MinimumAge,
+        bool RequiresAdultAccess,
+        string? AdultContentCategory,
+        string SensitiveContentKind,
+        bool RequiresSensitiveOptIn,
+        bool RequiresVerifiedAdult,
+        string UsagePolicy,
         IReadOnlyList<string> Topics,
         bool IsPublished,
         int SortOrder,

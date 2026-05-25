@@ -224,3 +224,10 @@ When a content-quality problem is found, add a short note here with:
 - Where it appeared: Everyday Expressions adult/sensitive content planning.
 - Why it happened: The content contract had safety ratings, but profile/access-state requirements were not explicit enough for future adult-language generation.
 - Prevention rule: Store a separate adult-content access state (`not-requested`, `self-declared-adult`, `age-verified-adult`, `blocked`) and keep rude/slang preference separate from explicit adult access. `self-declared-adult` must not unlock explicit adult/pornographic content in production. Explicit adult content generation remains blocked until legal review, approved age verification, list/detail/search filtering, admin reporting, and release gates are all verified.
+
+### 2026-05-25: Sensitive educational language needs metadata and opt-in before generation
+
+- What failed: Future Expressions planning risked mixing educational rude/slang/romantic language with explicit adult content under a broad `+18` label.
+- Where it appeared: Everyday Expressions sensitive-language planning.
+- Why it happened: The product vocabulary did not clearly separate Sensitive Educational Language for comprehension from pornographic or legally restricted adult content.
+- Prevention rule: Use the product term Sensitive Educational Language for warning-labeled educational rude/slang/romantic/social content. Do not generate sensitive batches until metadata, warnings, opt-in filtering, admin reports, mobile export exclusion, and content quality gates exist. Do not generate pornographic, arousing, graphic, exploitative, coercive, minor-related, hate-inciting, Nazi-propaganda, or illegal content.

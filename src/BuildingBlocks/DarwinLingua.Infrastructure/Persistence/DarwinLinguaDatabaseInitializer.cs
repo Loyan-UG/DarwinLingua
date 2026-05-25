@@ -764,6 +764,10 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "MinimumAge" integer NOT NULL DEFAULT 0,
                 "RequiresAdultAccess" boolean NOT NULL DEFAULT FALSE,
                 "AdultContentCategory" character varying(64),
+                "SensitiveContentKind" character varying(64) NOT NULL DEFAULT 'none',
+                "RequiresSensitiveOptIn" boolean NOT NULL DEFAULT FALSE,
+                "RequiresVerifiedAdult" boolean NOT NULL DEFAULT FALSE,
+                "UsagePolicy" character varying(64) NOT NULL DEFAULT 'safe-to-use',
                 "PublicationStatus" character varying(32) NOT NULL,
                 "SortOrder" integer NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
@@ -922,9 +926,19 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "MinimumAge" integer NOT NULL DEFAULT 0;
             ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "RequiresAdultAccess" boolean NOT NULL DEFAULT FALSE;
             ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "AdultContentCategory" character varying(64);
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "SensitiveContentKind" character varying(64) NOT NULL DEFAULT 'none';
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "RequiresSensitiveOptIn" boolean NOT NULL DEFAULT FALSE;
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "RequiresVerifiedAdult" boolean NOT NULL DEFAULT FALSE;
+            ALTER TABLE "ExpressionEntries" ADD COLUMN IF NOT EXISTS "UsagePolicy" character varying(64) NOT NULL DEFAULT 'safe-to-use';
             UPDATE "ExpressionEntries"
             SET "SafetyRating" = 'general'
             WHERE "SafetyRating" IS NULL OR btrim("SafetyRating") = '';
+            UPDATE "ExpressionEntries"
+            SET "SensitiveContentKind" = 'none'
+            WHERE "SensitiveContentKind" IS NULL OR btrim("SensitiveContentKind") = '';
+            UPDATE "ExpressionEntries"
+            SET "UsagePolicy" = 'safe-to-use'
+            WHERE "UsagePolicy" IS NULL OR btrim("UsagePolicy") = '';
             """,
             cancellationToken).ConfigureAwait(false);
     }

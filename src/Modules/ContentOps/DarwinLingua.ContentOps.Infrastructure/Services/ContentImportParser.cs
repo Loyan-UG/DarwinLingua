@@ -370,7 +370,11 @@ internal sealed class ContentImportParser : IContentImportParser
             expression.SafetyRating ?? "general",
             expression.MinimumAge ?? 0,
             expression.RequiresAdultAccess ?? false,
-            expression.AdultContentCategory);
+            expression.AdultContentCategory,
+            expression.SensitiveContentKind ?? "none",
+            expression.RequiresSensitiveOptIn ?? false,
+            expression.RequiresVerifiedAdult ?? false,
+            expression.UsagePolicy ?? "safe-to-use");
     }
 
     private static ParsedEventPreparationPackModel Map(EventPreparationPackDocument pack)
@@ -1308,6 +1312,10 @@ internal sealed class ContentImportParser : IContentImportParser
         public int? MinimumAge { get; set; }
         public bool? RequiresAdultAccess { get; set; }
         public string? AdultContentCategory { get; set; }
+        public string? SensitiveContentKind { get; set; }
+        public bool? RequiresSensitiveOptIn { get; set; }
+        public bool? RequiresVerifiedAdult { get; set; }
+        public string? UsagePolicy { get; set; }
         public string?[]? Topics { get; set; }
         public bool? IsPublished { get; set; }
         public int? SortOrder { get; set; }

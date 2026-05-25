@@ -15,4 +15,11 @@ internal sealed class ExpressionQueryService(IExpressionRepository repository) :
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         repository.GetPublishedExpressionBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
+
+    public Task<ExpressionDetailModel?> GetPublishedExpressionBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        bool includeSensitiveEducationalLanguage,
+        CancellationToken cancellationToken) =>
+        repository.GetPublishedExpressionBySlugAsync(slug, primaryMeaningLanguageCode, includeSensitiveEducationalLanguage, cancellationToken);
 }

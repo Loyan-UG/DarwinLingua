@@ -46,7 +46,7 @@ public sealed class SearchController(
                 secondaryMeaningLanguageCode,
                 cancellationToken)
             .ConfigureAwait(false);
-        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, cancellationToken).ConfigureAwait(false);
+        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, profile.AllowsRudeSlangContent, cancellationToken).ConfigureAwait(false);
 
         return View(new SearchPageViewModel(
             query,
@@ -84,7 +84,7 @@ public sealed class SearchController(
                 secondaryMeaningLanguageCode,
                 cancellationToken)
             .ConfigureAwait(false);
-        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, cancellationToken).ConfigureAwait(false);
+        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, profile.AllowsRudeSlangContent, cancellationToken).ConfigureAwait(false);
 
         return PartialView("_SearchResults", new SearchPageViewModel(
             query,
@@ -194,6 +194,7 @@ public sealed class SearchController(
         string query,
         string? resultType,
         string? cefrLevel,
+        bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(query))
@@ -211,7 +212,8 @@ public sealed class SearchController(
                         LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel),
                         NormalizeResultType(resultType),
                         null,
-                        null),
+                        null,
+                        includeSensitiveEducationalLanguage),
                     searchTimeout.Token)
                 .ConfigureAwait(false);
         }
