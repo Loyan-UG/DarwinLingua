@@ -384,6 +384,35 @@ app.MapGet(
             .ConfigureAwait(false));
 
 app.MapGet(
+    "/api/catalog/roleplays",
+    async (
+        string? cefrLevel,
+        string? category,
+        string? topicKey,
+        string? examProfile,
+        string? skillFocus,
+        string? taskType,
+        string? interactionMode,
+        string? register,
+        string? q,
+        string? primaryMeaningLanguageCode,
+        IRoleplayScenarioQueryService roleplayQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await roleplayQueryService.GetPublishedRoleplayScenariosAsync(
+                    new RoleplayScenarioListFilterModel(cefrLevel, category, topicKey, examProfile, skillFocus, taskType, interactionMode, register, q),
+                    primaryMeaningLanguageCode ?? "en",
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/roleplays/{slug}",
+    async (string slug, string? primaryMeaningLanguageCode, IRoleplayScenarioQueryService roleplayQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await roleplayQueryService.GetPublishedRoleplayScenarioBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
     "/api/catalog/talk-topics",
     async (
         string? cefrLevel,

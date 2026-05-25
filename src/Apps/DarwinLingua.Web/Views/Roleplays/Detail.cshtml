@@ -1,0 +1,102 @@
+@model DarwinLingua.Web.Models.RoleplayDetailPageViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<DarwinLingua.Web.Localization.SharedResource> T
+
+@{
+    ViewData["Title"] = Model.Roleplay.Title;
+}
+
+<section class="page-section">
+    <a asp-controller="Roleplays" asp-action="Index" class="back-link">@T["Back to roleplays"]</a>
+    <div class="page-section__header">
+        <div>
+            <p class="eyebrow">@Model.Roleplay.CefrLevel · @Model.Roleplay.Category · @Model.Roleplay.TaskType</p>
+            <h1>@Model.Roleplay.Title</h1>
+            <p>@Model.Roleplay.Description</p>
+        </div>
+    </div>
+
+    <section class="content-panel">
+        <h2>@T["Goal"]</h2>
+        <p>@Model.Roleplay.LearnerGoal</p>
+        <dl class="definition-list">
+            <dt>@T["Mode"]</dt>
+            <dd>@Model.Roleplay.InteractionMode</dd>
+            <dt>@T["Register"]</dt>
+            <dd>@Model.Roleplay.Register</dd>
+            <dt>@T["Practice time"]</dt>
+            <dd>@Model.Roleplay.EstimatedPracticeMinutes @T["minutes"]</dd>
+        </dl>
+    </section>
+
+    @if (Model.Roleplay.ImageSlots.Count > 0)
+    {
+        <section class="content-panel">
+            <h2>@T["Scene"]</h2>
+            @foreach (var imageSlot in Model.Roleplay.ImageSlots)
+            {
+                if (!string.IsNullOrWhiteSpace(imageSlot.AssetPath))
+                {
+                    <img src="@imageSlot.AssetPath" alt="@(imageSlot.LearnerLanguageAltText ?? imageSlot.AltText)" />
+                }
+                else
+                {
+                    <p class="muted">@imageSlot.AltText</p>
+                }
+            }
+        </section>
+    }
+
+    <section class="content-panel">
+        <h2>@T["Roles"]</h2>
+        <ul class="list">
+            @foreach (var role in Model.Roleplay.Roles)
+            {
+                <li><strong>@role.DisplayName</strong>@(string.IsNullOrWhiteSpace(role.LearnerLanguageDisplayName) ? string.Empty : $" — {role.LearnerLanguageDisplayName}")</li>
+            }
+        </ul>
+    </section>
+
+    <section class="content-panel">
+        <h2>@T["Script"]</h2>
+        @foreach (var turn in Model.Roleplay.Turns.OrderBy(turn => turn.SortOrder))
+        {
+            <article class="dialogue-turn">
+                <p class="dialogue-turn__speaker">@turn.SpeakerRole</p>
+                <p>@turn.BaseText</p>
+                @if (!string.IsNullOrWhiteSpace(turn.LearnerLanguageText))
+                {
+                    <p class="muted">@turn.LearnerLanguageText</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(turn.ToneNote))
+                {
+                    <p class="muted">@turn.ToneNote</p>
+                }
+
+                @{
+                    var choices = Model.Roleplay.AnswerChoices.FirstOrDefault(group => group.TurnSortOrder == turn.SortOrder);
+                    var feedbackItems = Model.Roleplay.StaticFeedback.Where(feedback => feedback.TurnSortOrder == turn.SortOrder).ToArray();
+                }
+                @if (choices is not null)
+                {
+                    <div class="choice-list">
+                        @foreach (var choice in choices.Choices)
+                        {
+                            <div class="choice-list__item">
+                                <strong>@choice.Text</strong>
+                                @if (!string.IsNullOrWhiteSpace(choice.LearnerLanguageText))
+                                {
+                                    <p class="muted">@choice.LearnerLanguageText</p>
+                                }
+                                <p>@choice.Feedback</p>
+                            </div>
+                        }
+                    </div>
+                }
+                @foreach (var feedback in feedbackItems)
+                {
+                    <p class="callout">@feedback.Text</p>
+                }
+            </article>
+        }
+    </section>
+</section>

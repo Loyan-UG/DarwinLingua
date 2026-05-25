@@ -305,6 +305,7 @@ internal sealed class ContentImportService : IContentImportService
         ValidateExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, issues);
         ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
         ValidateEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, issues);
+        ValidateRoleplayScenarios(parsedPackage.RoleplayScenarios, topicsByKey, meaningLanguages, issues);
         Dictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind = ValidateLabels(
             parsedPackage.Labels,
             parsedPackage.Entries.Any(EntryReferencesLabels),
@@ -345,6 +346,7 @@ internal sealed class ContentImportService : IContentImportService
         List<ExamPrepUnit> importedExamPrepUnits = [];
         List<ConversationStarterPack> importedConversationStarterPacks = [];
         List<EventPreparationPack> importedEventPreparationPacks = [];
+        List<RoleplayScenario> importedRoleplayScenarios = [];
 
         ProcessLabelDefinitions(parsedPackage.Labels, importedLabelDefinitions);
 
@@ -383,11 +385,12 @@ internal sealed class ContentImportService : IContentImportService
         ProcessExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, importedExamProfiles, importedExamPrepUnits);
         ProcessConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, importedConversationStarterPacks);
         ProcessEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, importedEventPreparationPacks);
+        ProcessRoleplayScenarios(parsedPackage.RoleplayScenarios, topicsByKey, importedRoleplayScenarios);
 
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedDialogues, importedTalkTopics, importedGrammarTopics, importedExpressions, importedExercises, importedExerciseSets, importedCoursePaths, importedCourseModules, importedCourseLessons, importedWritingTemplates, importedCulturalNotes, importedExamProfiles, importedExamPrepUnits, importedConversationStarterPacks, importedEventPreparationPacks, cancellationToken)
+            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedDialogues, importedTalkTopics, importedGrammarTopics, importedExpressions, importedExercises, importedExerciseSets, importedCoursePaths, importedCourseModules, importedCourseLessons, importedWritingTemplates, importedCulturalNotes, importedExamProfiles, importedExamPrepUnits, importedConversationStarterPacks, importedEventPreparationPacks, importedRoleplayScenarios, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -1184,6 +1187,108 @@ internal sealed class ContentImportService : IContentImportService
                 timestampUtc);
         }
     }
+
+    private static void ProcessRoleplayScenarios(
+        IReadOnlyList<ParsedRoleplayScenarioModel> roleplayScenarios,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        ICollection<RoleplayScenario> importedRoleplayScenarios)
+    {
+        DateTime timestampUtc = DateTime.UtcNow;
+
+        foreach (ParsedRoleplayScenarioModel parsedScenario in roleplayScenarios)
+        {
+            RoleplayScenario scenario = new(
+                Guid.NewGuid(),
+                NormalizeText(parsedScenario.Slug),
+                NormalizeOptionalText(parsedScenario.LinkedDialogueSlug),
+                NormalizeText(parsedScenario.Title),
+                NormalizeText(parsedScenario.Description),
+                NormalizeText(parsedScenario.LearnerGoal),
+                Enum.Parse<CefrLevel>(NormalizeText(parsedScenario.CefrLevel), true),
+                NormalizeText(parsedScenario.Category),
+                NormalizeText(parsedScenario.TaskType),
+                NormalizeText(parsedScenario.InteractionMode),
+                NormalizeText(parsedScenario.Register),
+                parsedScenario.EstimatedPracticeMinutes,
+                JsonSerializer.Serialize(NormalizeKeys(parsedScenario.ExamProfiles)),
+                JsonSerializer.Serialize(NormalizeKeys(parsedScenario.SkillFocus)),
+                JsonSerializer.Serialize(parsedScenario.Roles.Select(role => new
+                {
+                    roleKey = NormalizeText(role.RoleKey).ToLowerInvariant(),
+                    displayName = NormalizeText(role.DisplayName),
+                    translations = NormalizeTranslations(role.Translations),
+                })),
+                JsonSerializer.Serialize(parsedScenario.Turns.OrderBy(turn => turn.SortOrder).Select(turn => new
+                {
+                    turn.SortOrder,
+                    speakerRole = NormalizeText(turn.SpeakerRole).ToLowerInvariant(),
+                    baseText = NormalizeText(turn.BaseText),
+                    translations = NormalizeTranslations(turn.Translations),
+                    function = NormalizeOptionalText(turn.Function),
+                    toneNote = NormalizeOptionalText(turn.ToneNote),
+                    expectedLearnerAction = NormalizeOptionalText(turn.ExpectedLearnerAction),
+                })),
+                JsonSerializer.Serialize(parsedScenario.AnswerChoices.OrderBy(group => group.TurnSortOrder).Select(group => new
+                {
+                    group.TurnSortOrder,
+                    choices = group.Choices.Select(choice => new
+                    {
+                        id = NormalizeText(choice.Id).ToLowerInvariant(),
+                        text = NormalizeText(choice.Text),
+                        translations = NormalizeTranslations(choice.Translations),
+                        choice.IsCorrect,
+                        feedback = NormalizeText(choice.Feedback),
+                        feedbackTranslations = NormalizeTranslations(choice.FeedbackTranslations),
+                        explanationKey = NormalizeOptionalText(choice.ExplanationKey),
+                    }),
+                })),
+                JsonSerializer.Serialize(parsedScenario.StaticFeedback.OrderBy(feedback => feedback.TurnSortOrder).Select(feedback => new
+                {
+                    feedback.TurnSortOrder,
+                    feedbackType = NormalizeText(feedback.FeedbackType).ToLowerInvariant(),
+                    text = NormalizeText(feedback.Text),
+                    translations = NormalizeTranslations(feedback.Translations),
+                })),
+                JsonSerializer.Serialize(parsedScenario.ImageSlots.Select(slot => new
+                {
+                    slotKey = NormalizeText(slot.SlotKey).ToLowerInvariant(),
+                    placement = NormalizeText(slot.Placement).ToLowerInvariant(),
+                    purpose = NormalizeText(slot.Purpose),
+                    altText = NormalizeText(slot.AltText),
+                    altTextTranslations = NormalizeTranslations(slot.AltTextTranslations),
+                    imagePrompt = NormalizeText(slot.ImagePrompt),
+                    assetPath = NormalizeOptionalText(slot.AssetPath),
+                    slot.IsRequired,
+                })),
+                parsedScenario.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
+                parsedScenario.SortOrder,
+                timestampUtc);
+
+            string[] topicKeys = NormalizeKeys(parsedScenario.Topics);
+            for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
+            {
+                scenario.AddTopic(Guid.NewGuid(), topicsByKey[topicKeys[topicIndex]].Id, topicIndex == 0, timestampUtc);
+            }
+
+            importedRoleplayScenarios.Add(scenario);
+        }
+    }
+
+    private static string[] NormalizeKeys(IEnumerable<string> values) =>
+        values
+            .Select(value => NormalizeText(value).ToLowerInvariant())
+            .Where(value => !string.IsNullOrWhiteSpace(value))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+    private static object[] NormalizeTranslations(IEnumerable<ParsedContentMeaningModel> translations) =>
+        translations
+            .Select(translation => new
+            {
+                language = NormalizeText(translation.Language).ToLowerInvariant(),
+                text = NormalizeText(translation.Text),
+            })
+            .ToArray();
 
     private static void ProcessExercises(IReadOnlyList<ParsedExerciseModel> exercises, ICollection<Exercise> importedExercises)
     {
@@ -2512,6 +2617,236 @@ internal sealed class ContentImportService : IContentImportService
         }
     }
 
+    private static void ValidateRoleplayScenarios(
+        IReadOnlyList<ParsedRoleplayScenarioModel> scenarios,
+        IReadOnlyDictionary<string, Topic> topicsByKey,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<ImportIssueModel> issues)
+    {
+        HashSet<string> slugs = [];
+
+        for (int index = 0; index < scenarios.Count; index++)
+        {
+            ParsedRoleplayScenarioModel scenario = scenarios[index];
+            List<string> errors = [];
+            string slug = NormalizeText(scenario.Slug).ToLowerInvariant();
+
+            if (!ValidateKebabKey(slug))
+            {
+                errors.Add("Roleplay scenario slug is required and must use lowercase kebab-case.");
+            }
+            else if (!slugs.Add(slug))
+            {
+                errors.Add($"Duplicate roleplay scenario slug '{slug}' is not allowed inside one package.");
+            }
+
+            if (NormalizeOptionalText(scenario.LinkedDialogueSlug) is { } linkedDialogueSlug && !ValidateKebabKey(linkedDialogueSlug.ToLowerInvariant()))
+            {
+                errors.Add("Roleplay scenario linkedDialogueSlug must use lowercase kebab-case.");
+            }
+
+            ValidateRequiredText(scenario.Title, "title", errors);
+            ValidateRequiredText(scenario.Description, "description", errors);
+            ValidateRequiredText(scenario.LearnerGoal, "learnerGoal", errors);
+
+            if (!Enum.TryParse(NormalizeText(scenario.CefrLevel), true, out CefrLevel _))
+            {
+                errors.Add("Roleplay scenario CEFR level is invalid.");
+            }
+
+            ValidateRoleplayKebabField(scenario.Category, "category", errors);
+            ValidateControlledKebabValue(scenario.TaskType, DialogueTaskTypes, "Roleplay scenario taskType", errors);
+            ValidateControlledKebabValue(scenario.InteractionMode, DialogueInteractionModes, "Roleplay scenario interactionMode", errors);
+            ValidateControlledKebabValue(scenario.Register, DialogueRegisters, "Roleplay scenario register", errors);
+
+            ValidateKebabReferences(scenario.ExamProfiles, "examProfiles", "Roleplay scenario", errors);
+            ValidateKebabReferences(scenario.SkillFocus, "skillFocus", "Roleplay scenario", errors);
+            ValidateControlledReferenceList(scenario.ExamProfiles, DialogueExamProfiles, "examProfiles", "Roleplay scenario", false, errors);
+            ValidateControlledReferenceList(scenario.SkillFocus, DialogueSkillFocus, "skillFocus", "Roleplay scenario", true, errors);
+
+            string[] topicKeys = scenario.Topics.Select(topic => NormalizeText(topic).ToLowerInvariant()).Where(topic => !string.IsNullOrWhiteSpace(topic)).Distinct(StringComparer.Ordinal).ToArray();
+            if (topicKeys.Length == 0)
+            {
+                errors.Add("Roleplay scenario topics must contain at least one topic key.");
+            }
+
+            foreach (string topicKey in topicKeys)
+            {
+                if (!topicsByKey.ContainsKey(topicKey))
+                {
+                    errors.Add($"Roleplay scenario references unknown topic key '{topicKey}'.");
+                }
+            }
+
+            if (scenario.Roles.Count < 2)
+            {
+                errors.Add("Roleplay scenario roles must contain at least two roles.");
+            }
+
+            HashSet<string> roleKeys = [];
+            foreach (ParsedRoleplayRoleModel role in scenario.Roles)
+            {
+                string roleKey = NormalizeText(role.RoleKey).ToLowerInvariant();
+                if (!ValidateKebabKey(roleKey))
+                {
+                    errors.Add("Roleplay scenario role roleKey must use lowercase kebab-case.");
+                }
+                else
+                {
+                    roleKeys.Add(roleKey);
+                }
+
+                ValidateRequiredText(role.DisplayName, "role displayName", errors);
+                ValidateDialogueTranslations(role.Translations, meaningLanguages, "Roleplay role translations", errors);
+            }
+
+            ValidateRoleplayTurns(scenario.Turns, roleKeys, meaningLanguages, errors);
+            ValidateRoleplayAnswerChoices(scenario.AnswerChoices, scenario.Turns, meaningLanguages, errors);
+            ValidateRoleplayStaticFeedback(scenario.StaticFeedback, scenario.Turns, meaningLanguages, errors);
+            ValidateRoleplayImageSlots(scenario.ImageSlots, meaningLanguages, errors);
+
+            if (errors.Count > 0)
+            {
+                issues.Add(new ImportIssueModel(null, "Error", $"Roleplay scenario {index + 1} '{slug}': {string.Join(" ", errors)}"));
+            }
+        }
+    }
+
+    private static void ValidateRoleplayTurns(
+        IReadOnlyList<ParsedRoleplayTurnModel> turns,
+        IReadOnlySet<string> roleKeys,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<string> errors)
+    {
+        if (turns.Count < 2)
+        {
+            errors.Add("Roleplay scenario turns must contain at least two turns.");
+            return;
+        }
+
+        HashSet<int> sortOrders = [];
+        bool hasLearnerTurn = false;
+        bool hasNonLearnerTurn = false;
+        foreach (ParsedRoleplayTurnModel turn in turns)
+        {
+            if (turn.SortOrder <= 0 || !sortOrders.Add(turn.SortOrder))
+            {
+                errors.Add("Roleplay scenario turns must have unique positive sortOrder values.");
+            }
+
+            string speakerRole = NormalizeText(turn.SpeakerRole).ToLowerInvariant();
+            if (!roleKeys.Contains(speakerRole))
+            {
+                errors.Add($"Roleplay scenario turn references unknown speakerRole '{speakerRole}'.");
+            }
+
+            hasLearnerTurn |= speakerRole == "learner";
+            hasNonLearnerTurn |= speakerRole != "learner";
+            ValidateRequiredText(turn.BaseText, "turn baseText", errors);
+            ValidateDialogueTranslations(turn.Translations, meaningLanguages, "Roleplay turn translations", errors);
+        }
+
+        if (!hasLearnerTurn || !hasNonLearnerTurn)
+        {
+            errors.Add("Roleplay scenario must include at least one learner turn and one non-learner turn.");
+        }
+    }
+
+    private static void ValidateRoleplayAnswerChoices(
+        IReadOnlyList<ParsedRoleplayAnswerChoiceGroupModel> groups,
+        IReadOnlyList<ParsedRoleplayTurnModel> turns,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<string> errors)
+    {
+        HashSet<int> turnSortOrders = turns.Select(turn => turn.SortOrder).ToHashSet();
+        foreach (ParsedRoleplayAnswerChoiceGroupModel group in groups)
+        {
+            if (!turnSortOrders.Contains(group.TurnSortOrder))
+            {
+                errors.Add($"Roleplay answerChoices references unknown turnSortOrder '{group.TurnSortOrder}'.");
+            }
+
+            if (group.Choices.Count < 2 || !group.Choices.Any(choice => choice.IsCorrect))
+            {
+                errors.Add("Each roleplay answerChoices group must contain at least two choices and at least one correct choice.");
+            }
+
+            foreach (ParsedRoleplayAnswerChoiceModel choice in group.Choices)
+            {
+                ValidateRoleplayKebabField(choice.Id, "answer choice id", errors);
+                ValidateRequiredText(choice.Text, "answer choice text", errors);
+                ValidateRequiredText(choice.Feedback, "answer choice feedback", errors);
+                ValidateDialogueTranslations(choice.Translations, meaningLanguages, "Roleplay answer choice translations", errors);
+                ValidateDialogueTranslations(choice.FeedbackTranslations, meaningLanguages, "Roleplay answer choice feedbackTranslations", errors);
+            }
+        }
+    }
+
+    private static void ValidateRoleplayStaticFeedback(
+        IReadOnlyList<ParsedRoleplayStaticFeedbackModel> feedbackItems,
+        IReadOnlyList<ParsedRoleplayTurnModel> turns,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<string> errors)
+    {
+        HashSet<int> turnSortOrders = turns.Select(turn => turn.SortOrder).ToHashSet();
+        foreach (ParsedRoleplayStaticFeedbackModel feedback in feedbackItems)
+        {
+            if (!turnSortOrders.Contains(feedback.TurnSortOrder))
+            {
+                errors.Add($"Roleplay staticFeedback references unknown turnSortOrder '{feedback.TurnSortOrder}'.");
+            }
+
+            ValidateRoleplayKebabField(feedback.FeedbackType, "static feedback feedbackType", errors);
+            ValidateRequiredText(feedback.Text, "static feedback text", errors);
+            ValidateDialogueTranslations(feedback.Translations, meaningLanguages, "Roleplay static feedback translations", errors);
+        }
+    }
+
+    private static void ValidateRoleplayImageSlots(
+        IReadOnlyList<ParsedRoleplayImageSlotModel> imageSlots,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        ICollection<string> errors)
+    {
+        foreach (ParsedRoleplayImageSlotModel imageSlot in imageSlots)
+        {
+            ValidateRoleplayKebabField(imageSlot.SlotKey, "image slot slotKey", errors);
+            ValidateRoleplayKebabField(imageSlot.Placement, "image slot placement", errors);
+            ValidateRequiredText(imageSlot.Purpose, "image slot purpose", errors);
+            ValidateRequiredText(imageSlot.AltText, "image slot altText", errors);
+            ValidateRequiredText(imageSlot.ImagePrompt, "image slot imagePrompt", errors);
+            ValidateDialogueTranslations(imageSlot.AltTextTranslations, meaningLanguages, "Roleplay image slot altTextTranslations", errors);
+        }
+    }
+
+    private static void ValidateRequiredText(string value, string fieldName, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(NormalizeText(value)))
+        {
+            errors.Add($"Roleplay scenario {fieldName} is required.");
+        }
+    }
+
+    private static void ValidateRoleplayKebabField(string value, string fieldName, ICollection<string> errors)
+    {
+        if (!ValidateKebabKey(NormalizeText(value).ToLowerInvariant()))
+        {
+            errors.Add($"Roleplay scenario {fieldName} is required and must use lowercase kebab-case.");
+        }
+    }
+
+    private static void ValidateControlledKebabValue(
+        string value,
+        IReadOnlySet<string> allowedValues,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        string normalized = NormalizeText(value).ToLowerInvariant();
+        if (!ValidateKebabKey(normalized) || !allowedValues.Contains(normalized))
+        {
+            errors.Add($"{fieldName} contains unsupported value '{normalized}'.");
+        }
+    }
+
     private static Dictionary<WordLabelKind, HashSet<string>> ValidateLabels(
         IReadOnlyList<ParsedContentLabelDefinitionModel> labels,
         bool labelsRequired,
@@ -2602,6 +2937,34 @@ internal sealed class ContentImportService : IContentImportService
         }
     }
 
+    private static void ValidateControlledReferenceList(
+        IReadOnlyList<string> references,
+        IReadOnlySet<string> allowedValues,
+        string fieldName,
+        string ownerLabel,
+        bool requireAtLeastOne,
+        ICollection<string> errors)
+    {
+        string[] normalizedReferences = references
+            .Select(value => NormalizeText(value).ToLowerInvariant())
+            .Where(value => !string.IsNullOrWhiteSpace(value))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        if (requireAtLeastOne && normalizedReferences.Length == 0)
+        {
+            errors.Add($"{ownerLabel} {fieldName} must contain at least one item.");
+        }
+
+        foreach (string reference in normalizedReferences)
+        {
+            if (!allowedValues.Contains(reference))
+            {
+                errors.Add($"{ownerLabel} {fieldName} contains unsupported value '{reference}'.");
+            }
+        }
+    }
+
     private static void ValidatePromptList(
         IReadOnlyList<string> prompts,
         string fieldName,
@@ -2656,7 +3019,8 @@ internal sealed class ContentImportService : IContentImportService
             parsedPackage.ExamProfiles.Count > 0 ||
             parsedPackage.ExamPrepUnits.Count > 0 ||
             parsedPackage.ConversationStarterPacks.Count > 0 ||
-            parsedPackage.EventPreparationPacks.Count > 0;
+            parsedPackage.EventPreparationPacks.Count > 0 ||
+            parsedPackage.RoleplayScenarios.Count > 0;
     }
 
     private static string CreateReimportPackageId(string packageId, DateTime timestampUtc)
@@ -2710,7 +3074,8 @@ internal sealed class ContentImportService : IContentImportService
             parsedPackage.ExamProfiles.Count == 0 &&
             parsedPackage.ExamPrepUnits.Count == 0 &&
             parsedPackage.ConversationStarterPacks.Count == 0 &&
-            parsedPackage.EventPreparationPacks.Count == 0)
+            parsedPackage.EventPreparationPacks.Count == 0 &&
+            parsedPackage.RoleplayScenarios.Count == 0)
         {
             issues.Add(new ImportIssueModel(null, "Error", "The package must contain at least one content item."));
         }

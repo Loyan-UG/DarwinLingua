@@ -40,6 +40,7 @@
                     <summary class="nav-button">@T["Practice"]</summary>
                     <div class="account-menu__panel">
                         <a asp-area="" asp-controller="Exercises" asp-action="Index">@T["Exercises"]</a>
+                        <a asp-area="" asp-controller="Roleplays" asp-action="Index">@T["Roleplays"]</a>
                         <a asp-area="" asp-controller="Favorites" asp-action="Index">@T["Favorites"]</a>
                         <a asp-area="" asp-controller="Recent" asp-action="Index">@T["Recent"]</a>
                     </div>
@@ -152,6 +153,7 @@
                 <a asp-area="" asp-controller="Expressions" asp-action="Index">@T["Everyday Expressions"]</a>
                 <a asp-area="" asp-controller="Courses" asp-action="Index">@T["Courses"]</a>
                 <a asp-area="" asp-controller="Exercises" asp-action="Index">@T["Exercises"]</a>
+                <a asp-area="" asp-controller="Roleplays" asp-action="Index">@T["Roleplays"]</a>
                 <a asp-area="" asp-controller="WritingTemplates" asp-action="Index">@T["Writing Templates"]</a>
                 <a asp-area="" asp-controller="ExamPrep" asp-action="Index">@T["Exam Prep"]</a>
                 <a asp-area="" asp-controller="CulturalNotes" asp-action="Index">@T["Cultural Notes"]</a>
@@ -169,6 +171,10 @@
                 }
                 <a asp-area="" asp-controller="Home" asp-action="Install">@T["Install guide"]</a>
                 <a asp-area="" asp-controller="Home" asp-action="Privacy">@T["Privacy"]</a>
+                <a asp-area="" asp-controller="Home" asp-action="Terms">@T["Terms"]</a>
+                <a asp-area="" asp-controller="Home" asp-action="Legal">@T["Legal Notice"]</a>
+                <a asp-area="" asp-controller="Home" asp-action="Cookies">@T["Cookies"]</a>
+                <a asp-area="" asp-controller="Home" asp-action="Contact">@T["Contact"]</a>
                 @if (User.IsInRole("Admin"))
                 {
                     <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">@T["Admin"]</a>

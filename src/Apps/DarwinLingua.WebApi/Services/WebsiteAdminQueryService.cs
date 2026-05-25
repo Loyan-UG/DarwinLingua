@@ -862,6 +862,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             new("exam-prep-unit", await CountIfTableExistsAsync(tableAvailability, "ExamPrepUnits", dbContext.ExamPrepUnits.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
             new("writing-template", await CountIfTableExistsAsync(tableAvailability, "WritingTemplates", dbContext.WritingTemplates.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
             new("cultural-note", await CountIfTableExistsAsync(tableAvailability, "CulturalNotes", dbContext.CulturalNotes.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
+            new("roleplay", await CountIfTableExistsAsync(tableAvailability, "RoleplayScenarios", dbContext.RoleplayScenarios.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
         ];
 
         return rows;
@@ -890,6 +891,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "ExamPrepUnits", dbContext.ExamPrepUnits.AsNoTracking(), unit => unit.CefrLevel, cancellationToken).ConfigureAwait(false));
         rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "WritingTemplates", dbContext.WritingTemplates.AsNoTracking(), template => template.CefrLevel, cancellationToken).ConfigureAwait(false));
         rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "CulturalNotes", dbContext.CulturalNotes.AsNoTracking(), note => note.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "RoleplayScenarios", dbContext.RoleplayScenarios.AsNoTracking(), scenario => scenario.CefrLevel, cancellationToken).ConfigureAwait(false));
 
         return rows
             .GroupBy(static row => row.Key, StringComparer.Ordinal)

@@ -126,6 +126,33 @@ Provider readiness checklist:
 
 ---
 
+## Legal And Privacy Operations
+
+The Web legal/compliance baseline is defined in `86-Web-Legal-Compliance-Baseline.md`. Operators must treat it as an engineering checklist, not final legal advice.
+
+Before production release:
+
+- configure real `LegalNotice` operator values for provider name, address, contact email, responsible person, registration details, VAT id where applicable, and data-protection contact
+- review `/legal` or `/impressum`, `/privacy`, `/terms`, `/cookies`, and `/contact`
+- update policy versions when Terms or Privacy text changes
+- confirm registration still records versioned policy acceptance records for Terms and Privacy notice acknowledgement
+- re-run the cookie/storage inventory after script, telemetry, billing, PWA, authentication, or analytics changes
+- keep non-essential cookies/storage disabled until opt-in if they are introduced
+- define the data-subject request owner, identity confirmation process, response timeline, and export/deletion tooling status
+- review breach triage responsibilities against GDPR Articles 33 and 34 expectations
+- review transactional email provider processing and DPA status before enabling production provider mode
+- review Stripe provider, subscription, cancellation/refund, and legal text before enabling billing
+- keep Sensitive Educational Language opt-in separate from registration and document that it is not age verification
+- keep mobile legal/privacy/store-compliance work deferred until Web sign-off
+
+Policy acceptance audit:
+
+- registration source records should use `terms-of-use` and `privacy-notice`
+- records should include policy version, accepted-at UTC timestamp, source, and locale/culture
+- avoid storing raw IP addresses, full user agents, full birthdates, or identity documents for this baseline unless a later legal review explicitly designs that processing
+
+---
+
 ## Incident Triage Checklist
 
 When the web host misbehaves:

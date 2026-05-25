@@ -2271,6 +2271,8 @@ public sealed class ContentImportServiceApplicationTests
 
         public IReadOnlyList<ExamPrepUnit> ImportedExamPrepUnits { get; private set; } = [];
 
+        public IReadOnlyList<RoleplayScenario> ImportedRoleplayScenarios { get; private set; } = [];
+
         public Task<IReadOnlyDictionary<string, Topic>> GetActiveTopicsByKeyAsync(CancellationToken cancellationToken)
         {
             Topic topic = new(Guid.NewGuid(), "shopping", 10, true, DateTime.UtcNow);
@@ -2333,6 +2335,7 @@ public sealed class ContentImportServiceApplicationTests
             IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
             IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
             IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
+            IReadOnlyList<RoleplayScenario> importedRoleplayScenarios,
             CancellationToken cancellationToken)
         {
             ImportedTalkTopics = importedTalkTopics;
@@ -2341,6 +2344,7 @@ public sealed class ContentImportServiceApplicationTests
             ImportedCulturalNotes = importedCulturalNotes;
             ImportedExamProfiles = importedExamProfiles;
             ImportedExamPrepUnits = importedExamPrepUnits;
+            ImportedRoleplayScenarios = importedRoleplayScenarios;
             return Task.CompletedTask;
         }
     }

@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = T["Cookie / Storage Notice"];
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Privacy"]</span>
+    <h1 class="headline-md">@T["Cookie / Storage Notice"]</h1>
+    <p class="body-lg">@T["Darwin Lingua currently uses only necessary cookies, learner preference storage, and first-party PWA cache behavior needed to run the Web service."]</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Strictly necessary cookies"]</h2>
+        <ul class="feature-list">
+            <li>@T["Identity authentication cookies keep signed-in sessions working."]</li>
+            <li>@T["Anti-forgery cookies and tokens protect forms from cross-site request forgery."]</li>
+            <li>@T["Culture preference cookies remember the selected interface language."]</li>
+        </ul>
+    </article>
+
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Browser storage and cache"]</h2>
+        <ul class="feature-list">
+            <li>@T["Session storage keeps short-lived word-list navigation context inside the current browser session."]</li>
+            <li>@T["The service worker caches only first-party PWA shell assets such as the manifest and icons."]</li>
+            <li>@T["Darwin Lingua does not currently use marketing cookies or third-party analytics scripts."]</li>
+        </ul>
+    </article>
+
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Consent decision"]</h2>
+        <p class="body-sm">@T["Because the current Web baseline does not activate non-essential analytics or marketing storage, no cookie banner is shown. If non-essential storage is added later, it must be blocked until opt-in and withdrawal must be as easy as giving consent."]</p>
+    </article>
+
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Operational review"]</h2>
+        <ul class="feature-list">
+            <li>@T["Review the cookie and storage inventory before every production release."]</li>
+            <li>@T["Review Stripe, email provider, telemetry, and PWA behavior whenever those integrations change."]</li>
+            <li>@T["This notice is a draft operational baseline and needs legal review before public production launch."]</li>
+        </ul>
+    </article>
+</section>

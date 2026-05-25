@@ -25,6 +25,8 @@ Remaining release gates:
 
 Registration/legal acknowledgement coverage must remain part of the Web-side release gate. Registration must require Terms of Use acceptance, show a Privacy Policy notice acknowledgement, store versioned policy acceptance records, and keep Sensitive Educational Language disabled by default.
 
+Web legal/compliance baseline coverage must remain Web-only until Web sign-off. Public legal pages must render, footer links must expose Privacy/Terms/Legal/Cookies/Contact, cookie/storage inventory must match the checked-in scripts, non-essential storage must stay blocked until opt-in if introduced, and mobile legal/store-compliance work remains deferred.
+
 Latest local Web verification:
 
 - 2026-05-23: First real Everyday Expressions pilot package added at `content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json`; `node tools/Content/Validate-ExpressionPilot.js content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json` passed.
@@ -43,6 +45,7 @@ Latest local Web verification:
 - 2026-05-25: C2 Everyday Expressions package `expressions-c2-core-v1.json` was created with 40 published high-context idiom/cultural/irony entries, including 13 mild-rude/social-risk entries with warning metadata and no explicit-adult content. Package validation and `tools/Content/Audit-ExpressionContentQuality.js` passed with 0 issues across 11 packages. Import into `darwinlingua_shared` succeeded with 40 content items and 0 warnings after correcting one unknown topic key before the successful import. Public-routed smoke returned HTTP 200 for `/expressions`, `/expressions/das-schlaegt-dem-fass-den-boden-aus`, `/expressions/perlen-vor-die-saeue-werfen`, `/api/catalog/expressions`, `/api/catalog/expressions/das-schlaegt-dem-fass-den-boden-aus?primaryMeaningLanguageCode=fa`, `/api/catalog/search?q=Fass&resultType=expression`, and `/api/admin/catalog/system-report`. Admin report showed 377 Expression records, 372 active records, 40 active C2 records, missing translations 0, unresolved linked words/content references 0, and zero Expressions quality counters.
 - 2026-05-25: Second C2 Everyday Expressions package `expressions-c2-core-02-v1.json` was created with 40 published high-context idiom/rhetorical/cultural entries, including 11 mild-rude/social-risk entries with warning metadata and no explicit-adult content. Package validation and `tools/Content/Audit-ExpressionContentQuality.js` passed with 0 issues across 12 packages. Import into `darwinlingua_shared` succeeded with 40 content items and 0 warnings. Public-routed smoke returned HTTP 200 for `/expressions`, `/expressions/den-gordischen-knoten-durchschlagen`, `/expressions/auf-toenernen-fuessen-stehen`, `/api/catalog/expressions`, `/api/catalog/expressions/den-gordischen-knoten-durchschlagen?primaryMeaningLanguageCode=fa`, `/api/catalog/search?q=Gordischen&resultType=expression`, and `/api/admin/catalog/system-report`. Admin report showed 417 Expression records, 412 active records, 80 active C2 records, missing translations 0, unresolved linked words/content references 0, and zero Expressions quality counters.
 - 2026-05-25: Mixed Everyday Expressions supplement `expressions-mixed-supplement-01-v1.json` was created with 14 additional A2-C1 idiom/cultural/social expressions that were absent from the existing packages, including 1 social-risk entry with warning metadata and no explicit-adult content. Package validation and `tools/Content/Audit-ExpressionContentQuality.js` passed with 0 issues across 13 packages. Import into `darwinlingua_shared` succeeded with 14 content items and 0 warnings. Public-routed learner/API smoke returned HTTP 200 for `/expressions`, `/expressions/hals-und-beinbruch`, `/expressions/die-faeden-ziehen`, `/api/catalog/expressions/hals-und-beinbruch?primaryMeaningLanguageCode=fa`, and `/api/catalog/search?q=Groschen&resultType=expression`. The admin endpoint returned 401 without credentials as expected; `WebsiteAdminQueryServiceLearningPortalReportTests` passed 2/2 and the strict audit reported zero Expressions quality issues.
+- 2026-05-25: Web legal/compliance baseline added public `/legal`/`/impressum`, `/cookies`/`/cookie-policy`, and `/contact` pages, footer links, `docs/86-Web-Legal-Compliance-Baseline.md`, and `artifacts/validation/web-cookie-storage-inventory.md`. Structural tests cover routes, footer links, registration acknowledgements, policy acceptance records, Sensitive Educational Language settings copy, and the no-banner cookie/storage decision for the current strictly necessary/preference-storage baseline.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 talking about plans and conditions topic.
 - 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-talking-about-plans-and-conditions?primaryMeaningLanguageCode=fa`, `/grammar/b1-talking-about-plans-and-conditions`, and `/grammar`.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 talking about plans and conditions topic.
@@ -357,6 +360,18 @@ Latest local Web verification:
 - [ ] Empty or unknown dialogue detail payloads return safe 404 behavior instead of Web 500 errors.
 - [ ] Human-review generated Dialogue translations before public launch; current starter generation preserves required language slots for import integrity.
 - [ ] Add full mobile Dialogue metadata/detail parity after Web sign-off.
+
+### Standalone RoleplayScenario
+
+- [x] Parser accepts the top-level `roleplayScenarios` array and maps `linkedDialogueSlug` / compatibility `scenarioSlug`.
+- [ ] Application import test persists a valid standalone RoleplayScenario package.
+- [ ] Application validation rejects invalid CEFR, malformed slugs, duplicate turn sort orders, missing playable sequence, missing translations, and answer-choice groups without a correct choice.
+- [ ] Repository list/detail tests cover CEFR, category, topic, exam profile, skill focus, task type, interaction mode, register, and search filters.
+- [ ] WebApi list/detail route tests cover `/api/catalog/roleplays` and `/api/catalog/roleplays/{slug}`.
+- [ ] Web structural tests cover `/roleplays`, `/roleplays/{slug}`, deterministic answer choices, static feedback, and missing image assets without broken images.
+- [ ] Unified Learning Search tests include the `roleplay` result type.
+- [ ] Admin report tests include RoleplayScenario counts and quality signals for missing translations, unpublished drafts, missing image assets, and invalid playable sequence.
+- [ ] Local shared-database import and smoke must pass before the first roleplay pilot package is generated.
 
 ### Conversation Starters
 

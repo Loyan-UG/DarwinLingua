@@ -202,7 +202,7 @@ Current implementation rules:
 - `romantic-social` may be included only when mild, non-graphic, and socially useful.
 - mobile export excludes Sensitive Educational Language by default until mobile has equivalent opt-in filtering and warning rendering.
 
-See `85-Sensitive-Educational-Language-Policy.md` for the cross-module policy, privacy, filtering, and release requirements.
+See `85-Sensitive-Educational-Language-Policy.md` for the cross-module policy, privacy, filtering, and release requirements. See `86-Web-Legal-Compliance-Baseline.md` for the Web registration, legal page, cookie/storage, GDPR/TDDDG/DDG, and legal-review release gates that must stay in place before sensitive educational content is expanded.
 
 ## Linking Rules
 

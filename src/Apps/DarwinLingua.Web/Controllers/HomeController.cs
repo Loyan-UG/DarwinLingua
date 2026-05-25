@@ -56,6 +56,26 @@ public class HomeController(
         return View();
     }
 
+    [HttpGet("legal", Name = "Home_Legal")]
+    [HttpGet("impressum", Name = "Home_Impressum")]
+    public IActionResult Legal()
+    {
+        return View();
+    }
+
+    [HttpGet("cookies", Name = "Home_Cookies")]
+    [HttpGet("cookie-policy", Name = "Home_CookiePolicy")]
+    public IActionResult Cookies()
+    {
+        return View();
+    }
+
+    [HttpGet("contact", Name = "Home_Contact")]
+    public IActionResult Contact()
+    {
+        return View();
+    }
+
     [HttpGet("error", Name = "Home_Error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

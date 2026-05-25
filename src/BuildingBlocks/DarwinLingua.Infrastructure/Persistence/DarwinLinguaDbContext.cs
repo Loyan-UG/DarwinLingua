@@ -204,6 +204,10 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<EventPreparationPrompt> EventPreparationPrompts => Set<EventPreparationPrompt>();
 
+    public DbSet<RoleplayScenario> RoleplayScenarios => Set<RoleplayScenario>();
+
+    public DbSet<RoleplayScenarioTopic> RoleplayScenarioTopics => Set<RoleplayScenarioTopic>();
+
     public DbSet<ConversationEvent> ConversationEvents => Set<ConversationEvent>();
 
     public DbSet<ConversationEventLevel> ConversationEventLevels => Set<ConversationEventLevel>();
@@ -372,6 +376,8 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new EventPreparationLinkedConversationStarterPackConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationVocabularyReferenceConfiguration());
         modelBuilder.ApplyConfiguration(new EventPreparationPromptConfiguration());
+        modelBuilder.ApplyConfiguration(new RoleplayScenarioConfiguration());
+        modelBuilder.ApplyConfiguration(new RoleplayScenarioTopicConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationEventConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationEventLevelConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationEventHelperLanguageConfiguration());

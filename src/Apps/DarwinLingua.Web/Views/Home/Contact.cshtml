@@ -1,0 +1,37 @@
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = T["Contact"];
+
+    string supportEmail = string.IsNullOrWhiteSpace(Configuration["LegalNotice:Email"])
+        ? "Not configured - legal review required before production."
+        : Configuration["LegalNotice:Email"]!;
+    string privacyContact = string.IsNullOrWhiteSpace(Configuration["LegalNotice:DataProtectionContact"])
+        ? supportEmail
+        : Configuration["LegalNotice:DataProtectionContact"]!;
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Support"]</span>
+    <h1 class="headline-md">@T["Contact"]</h1>
+    <p class="body-lg">@T["Use this page as the operational contact and support placeholder until production legal details are configured."]</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Support contact"]</h2>
+        <p class="body-sm">@supportEmail</p>
+        <ul class="feature-list">
+            <li>@T["Use this contact for account access, registration, email confirmation, password reset, and learning-service support."]</li>
+            <li>@T["Do not send passwords, recovery tokens, identity documents, or sensitive unnecessary personal data by email."]</li>
+        </ul>
+    </article>
+
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Privacy requests"]</h2>
+        <p class="body-sm">@privacyContact</p>
+        <ul class="feature-list">
+            <li>@T["Use this contact for access, rectification, deletion, restriction, objection, portability, and other privacy requests."]</li>
+            <li>@T["Production handling of data-subject requests must follow the reviewed privacy process and retention rules."]</li>
+        </ul>
+    </article>
+</section>

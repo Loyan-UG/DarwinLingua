@@ -35,6 +35,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ITalkTopicRepository, TalkTopicRepository>();
         services.AddScoped<IConversationStarterRepository, ConversationStarterRepository>();
         services.AddScoped<IEventPreparationRepository, EventPreparationRepository>();
+        services.AddScoped<IRoleplayScenarioRepository, RoleplayScenarioRepository>();
         services.AddScoped<IConversationEventRepository, ConversationEventRepository>();
         services.AddScoped<IOrganizerProfileRepository, OrganizerProfileRepository>();
         services.AddSingleton<IDatabaseSeeder, CatalogReferenceDataSeeder>();

@@ -67,6 +67,7 @@ internal sealed class ContentImportParser : IContentImportParser
             ExamPrepUnits = (document.ExamPrepUnits ?? []).Select(Map).ToArray(),
             ConversationStarterPacks = (document.ConversationStarterPacks ?? []).Select(Map).ToArray(),
             EventPreparationPacks = (document.EventPreparationPacks ?? []).Select(Map).ToArray(),
+            RoleplayScenarios = (document.RoleplayScenarios ?? []).Select(Map).ToArray(),
         };
 
         return Task.FromResult(parsedPackage);
@@ -397,6 +398,63 @@ internal sealed class ContentImportParser : IContentImportParser
             (pack.OpeningPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray(),
             (pack.RoleplayPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray(),
             (pack.ReviewPrompts ?? []).Select(prompt => prompt ?? string.Empty).ToArray());
+    }
+
+    private static ParsedRoleplayScenarioModel Map(RoleplayScenarioDocument scenario)
+    {
+        return new ParsedRoleplayScenarioModel(
+            scenario.Slug ?? string.Empty,
+            scenario.LinkedDialogueSlug ?? scenario.ScenarioSlug,
+            scenario.Title ?? string.Empty,
+            scenario.Description ?? string.Empty,
+            scenario.LearnerGoal ?? string.Empty,
+            scenario.CefrLevel ?? string.Empty,
+            scenario.Category ?? string.Empty,
+            (scenario.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
+            (scenario.ExamProfiles ?? []).Select(profile => profile ?? string.Empty).ToArray(),
+            (scenario.SkillFocus ?? []).Select(focus => focus ?? string.Empty).ToArray(),
+            scenario.TaskType ?? string.Empty,
+            scenario.InteractionMode ?? string.Empty,
+            scenario.Register ?? string.Empty,
+            scenario.EstimatedPracticeMinutes ?? 10,
+            (scenario.Roles ?? []).Select(role => new ParsedRoleplayRoleModel(
+                role.RoleKey ?? string.Empty,
+                role.DisplayName ?? string.Empty,
+                MapTranslations(role.Translations))).ToArray(),
+            (scenario.Turns ?? []).Select(turn => new ParsedRoleplayTurnModel(
+                turn.SortOrder ?? 0,
+                turn.SpeakerRole ?? string.Empty,
+                turn.BaseText ?? string.Empty,
+                MapTranslations(turn.Translations),
+                turn.Function,
+                turn.ToneNote,
+                turn.ExpectedLearnerAction)).ToArray(),
+            (scenario.AnswerChoices ?? []).Select(group => new ParsedRoleplayAnswerChoiceGroupModel(
+                group.TurnSortOrder ?? 0,
+                (group.Choices ?? []).Select(choice => new ParsedRoleplayAnswerChoiceModel(
+                    choice.Id ?? string.Empty,
+                    choice.Text ?? string.Empty,
+                    MapTranslations(choice.Translations),
+                    choice.IsCorrect ?? false,
+                    choice.Feedback ?? string.Empty,
+                    MapTranslations(choice.FeedbackTranslations),
+                    choice.ExplanationKey)).ToArray())).ToArray(),
+            (scenario.StaticFeedback ?? []).Select(feedback => new ParsedRoleplayStaticFeedbackModel(
+                feedback.TurnSortOrder ?? 0,
+                feedback.FeedbackType ?? string.Empty,
+                feedback.Text ?? string.Empty,
+                MapTranslations(feedback.Translations))).ToArray(),
+            (scenario.ImageSlots ?? []).Select(slot => new ParsedRoleplayImageSlotModel(
+                slot.SlotKey ?? string.Empty,
+                slot.Placement ?? string.Empty,
+                slot.Purpose ?? string.Empty,
+                slot.AltText ?? string.Empty,
+                MapTranslations(slot.AltTextTranslations),
+                slot.ImagePrompt ?? string.Empty,
+                slot.AssetPath,
+                slot.IsRequired ?? false)).ToArray(),
+            scenario.IsPublished ?? true,
+            scenario.SortOrder ?? 0);
     }
 
     private static ParsedExerciseModel Map(ExerciseDocument exercise)
@@ -798,6 +856,8 @@ internal sealed class ContentImportParser : IContentImportParser
         public ConversationStarterPackDocument[]? ConversationStarterPacks { get; set; }
 
         public EventPreparationPackDocument[]? EventPreparationPacks { get; set; }
+
+        public RoleplayScenarioDocument[]? RoleplayScenarios { get; set; }
     }
 
     private sealed class ContentEntryDocument
@@ -1366,6 +1426,87 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? PartOfSpeech { get; set; }
 
         public string? CefrLevel { get; set; }
+    }
+
+    private sealed class RoleplayScenarioDocument
+    {
+        public string? Slug { get; set; }
+        public string? LinkedDialogueSlug { get; set; }
+        public string? ScenarioSlug { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? LearnerGoal { get; set; }
+        public string? CefrLevel { get; set; }
+        public string? Category { get; set; }
+        public string?[]? Topics { get; set; }
+        public string?[]? ExamProfiles { get; set; }
+        public string?[]? SkillFocus { get; set; }
+        public string? TaskType { get; set; }
+        public string? InteractionMode { get; set; }
+        public string? Register { get; set; }
+        public int? EstimatedPracticeMinutes { get; set; }
+        public RoleplayRoleDocument[]? Roles { get; set; }
+        public RoleplayTurnDocument[]? Turns { get; set; }
+        public RoleplayAnswerChoiceGroupDocument[]? AnswerChoices { get; set; }
+        public RoleplayStaticFeedbackDocument[]? StaticFeedback { get; set; }
+        public RoleplayImageSlotDocument[]? ImageSlots { get; set; }
+        public bool? IsPublished { get; set; }
+        public int? SortOrder { get; set; }
+    }
+
+    private sealed class RoleplayRoleDocument
+    {
+        public string? RoleKey { get; set; }
+        public string? DisplayName { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+    }
+
+    private sealed class RoleplayTurnDocument
+    {
+        public int? SortOrder { get; set; }
+        public string? SpeakerRole { get; set; }
+        public string? BaseText { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+        public string? Function { get; set; }
+        public string? ToneNote { get; set; }
+        public string? ExpectedLearnerAction { get; set; }
+    }
+
+    private sealed class RoleplayAnswerChoiceGroupDocument
+    {
+        public int? TurnSortOrder { get; set; }
+        public RoleplayAnswerChoiceDocument[]? Choices { get; set; }
+    }
+
+    private sealed class RoleplayAnswerChoiceDocument
+    {
+        public string? Id { get; set; }
+        public string? Text { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+        public bool? IsCorrect { get; set; }
+        public string? Feedback { get; set; }
+        public ContentMeaningDocument[]? FeedbackTranslations { get; set; }
+        public string? ExplanationKey { get; set; }
+    }
+
+    private sealed class RoleplayStaticFeedbackDocument
+    {
+        public int? TurnSortOrder { get; set; }
+        public string? FeedbackType { get; set; }
+        public string? Text { get; set; }
+        public ContentMeaningDocument[]? Translations { get; set; }
+    }
+
+    private sealed class RoleplayImageSlotDocument
+    {
+        public string? SlotKey { get; set; }
+        public string? Placement { get; set; }
+        public string? Purpose { get; set; }
+        public string? AltText { get; set; }
+        public ContentMeaningDocument[]? AltTextTranslations { get; set; }
+        public string? ImagePrompt { get; set; }
+        public string? AssetPath { get; set; }
+        public bool? IsRequired { get; set; }
     }
 
     private sealed class ExerciseDocument

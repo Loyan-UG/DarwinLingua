@@ -136,6 +136,7 @@ internal sealed class ContentImportRepository : IContentImportRepository
         IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
         IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
         IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
+        IReadOnlyList<RoleplayScenario> importedRoleplayScenarios,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(contentPackage);
@@ -157,6 +158,7 @@ internal sealed class ContentImportRepository : IContentImportRepository
         ArgumentNullException.ThrowIfNull(importedExamPrepUnits);
         ArgumentNullException.ThrowIfNull(importedConversationStarterPacks);
         ArgumentNullException.ThrowIfNull(importedEventPreparationPacks);
+        ArgumentNullException.ThrowIfNull(importedRoleplayScenarios);
 
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -493,6 +495,24 @@ internal sealed class ContentImportRepository : IContentImportRepository
             }
 
             dbContext.EventPreparationPacks.AddRange(importedEventPreparationPacks);
+            await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        if (importedRoleplayScenarios.Count > 0)
+        {
+            string[] importedSlugs = importedRoleplayScenarios.Select(scenario => scenario.Slug).ToArray();
+            List<RoleplayScenario> existingRoleplayScenarios = await dbContext.RoleplayScenarios
+                .Where(scenario => importedSlugs.Contains(scenario.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
+
+            if (existingRoleplayScenarios.Count > 0)
+            {
+                dbContext.RoleplayScenarios.RemoveRange(existingRoleplayScenarios);
+                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            dbContext.RoleplayScenarios.AddRange(importedRoleplayScenarios);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 

@@ -102,6 +102,30 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 
 ---
 
+## E2. Legal And Compliance Baseline
+
+This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
+
+- [ ] Legal Notice / Impressum page renders and has reviewed production operator data
+- [ ] Privacy Policy page is reviewed and includes account, learning, policy acceptance, sensitive preference, transactional email, billing-provider, retention, and data-subject-rights coverage
+- [ ] Terms of Use page is reviewed and linked from registration
+- [ ] Cookie / Storage Notice page renders and matches the latest cookie/storage inventory
+- [ ] Contact page provides support and privacy-request routing
+- [ ] footer links include Privacy, Terms, Legal Notice, Cookie / Storage Notice, and Contact
+- [ ] non-essential cookies, browser storage, analytics, or marketing scripts are blocked until opt-in if introduced
+- [ ] cookie/storage consent withdrawal is as easy as opt-in if a future consent manager is required
+- [ ] data-subject request owner and process are documented
+- [ ] account deletion/export/rectification plan is documented
+- [ ] policy acceptance records are available for required registration acknowledgements
+- [ ] Sensitive Educational Language opt-in remains separate from registration, off by default, and reversible
+- [ ] explicit adult/pornographic content remains blocked until legal review and approved age-verification/closed-user-group design
+- [ ] transactional email provider processing/DPA requirements are reviewed
+- [ ] billing provider legal text, cancellation/refund flow, and Stripe processing are reviewed if billing is enabled
+- [ ] production legal owner/sign-off is recorded
+- [ ] mobile legal/privacy/store-compliance work remains deferred until the Web phase is signed off
+
+---
+
 ## F. Operational Readiness
 
 - [ ] production configuration applied
@@ -123,6 +147,7 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 - [ ] Grammar Guide readiness reviewed: import validation, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions eligibility reviewed: no published ordinary literal sentence leakage, `meaningTransparency` present for new batches, teaching reason present, and at least two contextual German examples
+- [ ] Standalone RoleplayScenario readiness reviewed: parser/import validation, persistence, WebApi list/detail, Web list/detail, Unified Search, admin visibility, deterministic no-AI behavior, image-slot missing-asset behavior, and local import/smoke all pass before pilot content generation
 - [ ] Sensitive Educational Language policy reviewed
 - [ ] registration/legal notice coverage reviewed for Terms, Privacy, and Sensitive Educational Language default-off behavior
 - [ ] Settings/profile explanation for Sensitive Educational Language is clear, localized, and does not claim age verification

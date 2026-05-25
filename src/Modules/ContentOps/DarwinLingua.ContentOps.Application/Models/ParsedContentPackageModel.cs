@@ -83,4 +83,9 @@ public sealed record ParsedContentPackageModel(
     /// Gets parsed event preparation packs included in the package.
     /// </summary>
     public IReadOnlyList<ParsedEventPreparationPackModel> EventPreparationPacks { get; init; } = [];
+
+    /// <summary>
+    /// Gets parsed standalone roleplay scenarios included in the package.
+    /// </summary>
+    public IReadOnlyList<ParsedRoleplayScenarioModel> RoleplayScenarios { get; init; } = [];
 }

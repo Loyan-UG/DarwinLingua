@@ -730,6 +730,71 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         await EnsureGrammarGuideSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureGrammarRichContentSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureExpressionEntrySchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureRoleplayScenarioSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureRoleplayScenarioSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "RoleplayScenarios" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "LinkedDialogueSlug" character varying(128),
+                "Title" character varying(256) NOT NULL,
+                "Description" character varying(4000) NOT NULL,
+                "LearnerGoal" character varying(2000) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "Category" character varying(128) NOT NULL,
+                "TaskType" character varying(128) NOT NULL,
+                "InteractionMode" character varying(128) NOT NULL,
+                "Register" character varying(64) NOT NULL,
+                "EstimatedPracticeMinutes" integer NOT NULL,
+                "ExamProfilesJson" text NOT NULL,
+                "SkillFocusJson" text NOT NULL,
+                "RolesJson" text NOT NULL,
+                "TurnsJson" text NOT NULL,
+                "AnswerChoicesJson" text NOT NULL,
+                "StaticFeedbackJson" text NOT NULL,
+                "ImageSlotsJson" text NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_RoleplayScenarios" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "RoleplayScenarioTopics" (
+                "Id" uuid NOT NULL,
+                "RoleplayScenarioId" uuid NOT NULL,
+                "TopicId" uuid NOT NULL,
+                "IsPrimary" boolean NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_RoleplayScenarioTopics" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_RoleplayScenarioTopics_RoleplayScenarios_RoleplayScenarioId"
+                    FOREIGN KEY ("RoleplayScenarioId") REFERENCES "RoleplayScenarios" ("Id") ON DELETE CASCADE,
+                CONSTRAINT "FK_RoleplayScenarioTopics_Topics_TopicId"
+                    FOREIGN KEY ("TopicId") REFERENCES "Topics" ("Id") ON DELETE RESTRICT
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_RoleplayScenarios_Slug" ON "RoleplayScenarios" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_RoleplayScenarios_CefrLevel_Category_TaskType_InteractionMode_Register"
+                ON "RoleplayScenarios" ("CefrLevel", "Category", "TaskType", "InteractionMode", "Register");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_RoleplayScenarioTopics_RoleplayScenarioId_TopicId"
+                ON "RoleplayScenarioTopics" ("RoleplayScenarioId", "TopicId");
+            CREATE INDEX IF NOT EXISTS "IX_RoleplayScenarioTopics_TopicId"
+                ON "RoleplayScenarioTopics" ("TopicId");
+            """,
+            cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task EnsureExpressionEntrySchemaAsync(

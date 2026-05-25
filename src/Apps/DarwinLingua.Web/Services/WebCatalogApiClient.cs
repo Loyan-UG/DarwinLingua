@@ -33,6 +33,16 @@ public interface IWebCatalogApiClient
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<RoleplayScenarioListItemModel>> GetRoleplaysAsync(
+        RoleplayScenarioListFilterModel filter,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
+
+    Task<RoleplayScenarioDetailModel?> GetRoleplayBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
+
     Task<IReadOnlyList<TalkTopicListItemModel>> GetTalkTopicsAsync(
         TalkTopicListFilterModel filter,
         CancellationToken cancellationToken);
@@ -658,6 +668,37 @@ internal sealed class WebCatalogApiClient(
         GetAsync<GrammarTopicDetailModel>(
             BuildPath(
                 $"/api/catalog/grammar/{Uri.EscapeDataString(slug)}",
+                [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
+
+    public Task<IReadOnlyList<RoleplayScenarioListItemModel>> GetRoleplaysAsync(
+        RoleplayScenarioListFilterModel filter,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<RoleplayScenarioListItemModel>>(
+            BuildPath(
+                "/api/catalog/roleplays",
+                [
+                    new("cefrLevel", filter.CefrLevel),
+                    new("category", filter.Category),
+                    new("topicKey", filter.TopicKey),
+                    new("examProfile", filter.ExamProfile),
+                    new("skillFocus", filter.SkillFocus),
+                    new("taskType", filter.TaskType),
+                    new("interactionMode", filter.InteractionMode),
+                    new("register", filter.Register),
+                    new("q", filter.Query),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
+            cancellationToken);
+
+    public Task<RoleplayScenarioDetailModel?> GetRoleplayBySlugAsync(
+        string slug,
+        string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetAsync<RoleplayScenarioDetailModel>(
+            BuildPath(
+                $"/api/catalog/roleplays/{Uri.EscapeDataString(slug)}",
                 [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
             cancellationToken);
 

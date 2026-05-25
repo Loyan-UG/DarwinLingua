@@ -35,6 +35,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ITalkTopicQueryService, TalkTopicQueryService>();
         services.AddScoped<IConversationStarterQueryService, ConversationStarterQueryService>();
         services.AddScoped<IEventPreparationQueryService, EventPreparationQueryService>();
+        services.AddScoped<IRoleplayScenarioQueryService, RoleplayScenarioQueryService>();
         services.AddScoped<IConversationEventQueryService, ConversationEventQueryService>();
         services.AddScoped<IOrganizerProfileQueryService, OrganizerProfileQueryService>();
         services.AddScoped<WordDetailQueryService>();

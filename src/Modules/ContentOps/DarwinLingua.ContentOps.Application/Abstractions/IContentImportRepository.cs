@@ -62,5 +62,6 @@ public interface IContentImportRepository
         IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
         IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
         IReadOnlyList<EventPreparationPack> importedEventPreparationPacks,
+        IReadOnlyList<RoleplayScenario> importedRoleplayScenarios,
         CancellationToken cancellationToken);
 }

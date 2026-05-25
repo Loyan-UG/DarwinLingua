@@ -1,0 +1,73 @@
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = T["Legal Notice"];
+
+    static string ReadConfiguredValue(IConfiguration configuration, string key) =>
+        string.IsNullOrWhiteSpace(configuration[key])
+            ? "Not configured - legal review required before production."
+            : configuration[key]!;
+
+    string providerName = ReadConfiguredValue(Configuration, "LegalNotice:ProviderName");
+    string address = ReadConfiguredValue(Configuration, "LegalNotice:Address");
+    string email = ReadConfiguredValue(Configuration, "LegalNotice:Email");
+    string phone = ReadConfiguredValue(Configuration, "LegalNotice:Phone");
+    string responsiblePerson = ReadConfiguredValue(Configuration, "LegalNotice:ResponsiblePerson");
+    string registerInfo = ReadConfiguredValue(Configuration, "LegalNotice:RegisterInfo");
+    string vatId = ReadConfiguredValue(Configuration, "LegalNotice:VatId");
+    string dataProtectionContact = ReadConfiguredValue(Configuration, "LegalNotice:DataProtectionContact");
+}
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Legal"]</span>
+    <h1 class="headline-md">@T["Legal Notice"]</h1>
+    <p class="body-lg">@T["This draft legal notice uses operator configuration placeholders. Do not launch production without reviewed provider details."]</p>
+</section>
+
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Provider information"]</h2>
+        <dl class="definition-list">
+            <dt>@T["Provider name"]</dt>
+            <dd>@providerName</dd>
+            <dt>@T["Address"]</dt>
+            <dd>@address</dd>
+            <dt>@T["Email"]</dt>
+            <dd>@email</dd>
+            <dt>@T["Phone"]</dt>
+            <dd>@phone</dd>
+        </dl>
+    </article>
+
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Responsible and registration details"]</h2>
+        <dl class="definition-list">
+            <dt>@T["Responsible person"]</dt>
+            <dd>@responsiblePerson</dd>
+            <dt>@T["Register information"]</dt>
+            <dd>@registerInfo</dd>
+            <dt>@T["VAT ID"]</dt>
+            <dd>@vatId</dd>
+            <dt>@T["Data protection contact"]</dt>
+            <dd>@dataProtectionContact</dd>
+        </dl>
+    </article>
+
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Legal review status"]</h2>
+        <ul class="feature-list">
+            <li>@T["This page is a Web legal baseline, not final legal advice."]</li>
+            <li>@T["Production must configure real operator information before public launch."]</li>
+            <li>@T["Terms, Privacy, Cookie/Storage Notice, and Sensitive Educational Language policy require owner review before release."]</li>
+        </ul>
+    </article>
+
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Related pages"]</h2>
+        <ul class="feature-list">
+            <li><a asp-controller="Home" asp-action="Terms">@T["Terms of Use"]</a></li>
+            <li><a asp-controller="Home" asp-action="Privacy">@T["Privacy Policy"]</a></li>
+            <li><a asp-controller="Home" asp-action="Cookies">@T["Cookie / Storage Notice"]</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">@T["Contact"]</a></li>
+        </ul>
+    </article>
+</section>

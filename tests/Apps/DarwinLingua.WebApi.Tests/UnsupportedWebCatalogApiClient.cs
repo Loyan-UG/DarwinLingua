@@ -16,6 +16,10 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
 
     public virtual Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
+    public virtual Task<IReadOnlyList<RoleplayScenarioListItemModel>> GetRoleplaysAsync(RoleplayScenarioListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<RoleplayScenarioDetailModel?> GetRoleplayBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
+
     public virtual Task<IReadOnlyList<TalkTopicListItemModel>> GetTalkTopicsAsync(TalkTopicListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<TalkTopicDetailModel?> GetTalkTopicBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();

@@ -32,6 +32,7 @@ internal sealed class UnifiedLearningSearchRepository(IDbContextFactory<DarwinLi
         if (ShouldSearch(resultType, "grammar")) results.AddRange(await SearchGrammarAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "expression")) results.AddRange(await SearchExpressionsAsync(dbContext, query, cefrLevel, category, topicKey, filter.IncludeSensitiveEducationalLanguage, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "dialogue")) results.AddRange(await SearchDialoguesAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
+        if (ShouldSearch(resultType, "roleplay")) results.AddRange(await SearchRoleplaysAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "talk-topic")) results.AddRange(await SearchTalkTopicsAsync(dbContext, query, cefrLevel, category, topicKey, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "exercise")) results.AddRange(await SearchExercisesAsync(dbContext, query, cefrLevel, category, cancellationToken).ConfigureAwait(false));
         if (ShouldSearch(resultType, "course-lesson")) results.AddRange(await SearchCourseLessonsAsync(dbContext, query, cefrLevel, category, cancellationToken).ConfigureAwait(false));
@@ -121,6 +122,16 @@ internal sealed class UnifiedLearningSearchRepository(IDbContextFactory<DarwinLi
         if (topicKey is not null) items = items.Where(item => item.Topics.Any(link => dbContext.Topics.Any(topic => topic.Id == link.TopicId && topic.Key == topicKey)));
         items = items.Where(item => EF.Functions.ILike(item.Title, $"%{query}%") || EF.Functions.ILike(item.Description, $"%{query}%") || EF.Functions.ILike(item.LearnerGoal, $"%{query}%") || EF.Functions.ILike(item.Slug, $"%{query}%"));
         return await items.OrderBy(item => item.SortOrder).Take(MaxResultsPerType).Select(item => new UnifiedLearningSearchResultModel("dialogue", item.Title, item.Description, item.CefrLevel.ToString(), item.Category, item.Topics.Join(dbContext.Topics, link => link.TopicId, topic => topic.Id, (link, topic) => topic.Key).ToArray(), $"/dialogues/{item.Slug}", Score(query, item.Title, item.Slug, item.Description, item.SortOrder), MatchFields(query, item.Title, item.Slug, item.Description))).ToListAsync(cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchRoleplaysAsync(DarwinLinguaDbContext dbContext, string query, CefrLevel? cefrLevel, string? category, string? topicKey, CancellationToken cancellationToken)
+    {
+        IQueryable<RoleplayScenario> items = dbContext.RoleplayScenarios.AsNoTracking().Where(item => item.PublicationStatus == PublicationStatus.Active);
+        if (cefrLevel.HasValue) items = items.Where(item => item.CefrLevel == cefrLevel.Value);
+        if (category is not null) items = items.Where(item => item.Category == category || item.TaskType == category || item.InteractionMode == category);
+        if (topicKey is not null) items = items.Where(item => item.Topics.Any(link => dbContext.Topics.Any(topic => topic.Id == link.TopicId && topic.Key == topicKey)));
+        items = items.Where(item => EF.Functions.ILike(item.Title, $"%{query}%") || EF.Functions.ILike(item.Description, $"%{query}%") || EF.Functions.ILike(item.LearnerGoal, $"%{query}%") || EF.Functions.ILike(item.Slug, $"%{query}%"));
+        return await items.OrderBy(item => item.SortOrder).Take(MaxResultsPerType).Select(item => new UnifiedLearningSearchResultModel("roleplay", item.Title, item.LearnerGoal, item.CefrLevel.ToString(), item.TaskType, item.Topics.Join(dbContext.Topics, link => link.TopicId, topic => topic.Id, (link, topic) => topic.Key).ToArray(), $"/roleplays/{item.Slug}", Score(query, item.Title, item.Slug, item.LearnerGoal, item.SortOrder), MatchFields(query, item.Title, item.Slug, item.LearnerGoal))).ToListAsync(cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchTalkTopicsAsync(DarwinLinguaDbContext dbContext, string query, CefrLevel? cefrLevel, string? category, string? topicKey, CancellationToken cancellationToken)
