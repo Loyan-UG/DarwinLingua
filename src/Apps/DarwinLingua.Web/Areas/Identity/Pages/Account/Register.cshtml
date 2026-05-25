@@ -34,6 +34,28 @@
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
 
+            <div class="field field--checkbox">
+                <input asp-for="Input.AcceptTermsOfUse" />
+                <span>
+                    @T["I agree to the Terms of Use."]
+                    <a asp-controller="Home" asp-action="Terms" target="_blank" rel="noopener">@T["Read Terms of Use"]</a>
+                </span>
+                <span asp-validation-for="Input.AcceptTermsOfUse" class="text-danger"></span>
+            </div>
+
+            <div class="field field--checkbox">
+                <input asp-for="Input.AcknowledgePrivacyNotice" />
+                <span>
+                    @T["I understand that Darwin Lingua processes account and learning data as described in the Privacy Policy."]
+                    <a asp-controller="Home" asp-action="Privacy" target="_blank" rel="noopener">@T["Read Privacy Policy"]</a>
+                </span>
+                <span asp-validation-for="Input.AcknowledgePrivacyNotice" class="text-danger"></span>
+            </div>
+
+            <p class="body-sm">
+                @T["Sensitive Educational Language is off by default and can be enabled later in Settings. This preference is not age verification and does not unlock explicit adult content."]
+            </p>
+
             <div class="action-row auth-actions">
                 <button type="submit" class="button button--primary">@T["Continue"]</button>
                 <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Login">@T["Sign in"]</a>

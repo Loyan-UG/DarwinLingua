@@ -50,6 +50,12 @@ public class HomeController(
         return View();
     }
 
+    [HttpGet("terms", Name = "Home_Terms")]
+    public IActionResult Terms()
+    {
+        return View();
+    }
+
     [HttpGet("error", Name = "Home_Error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

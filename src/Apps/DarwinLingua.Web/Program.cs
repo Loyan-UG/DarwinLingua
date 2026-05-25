@@ -134,6 +134,7 @@ builder.Services.AddScoped<IWebFavoriteWordService, WebFavoriteWordService>();
 builder.Services.AddScoped<IWebUserWordStateService, WebUserWordStateService>();
 builder.Services.AddScoped<IWebWordSuggestionService, WebWordSuggestionService>();
 builder.Services.AddScoped<IWebUserStateDatabaseBootstrapper, WebUserStateDatabaseBootstrapper>();
+builder.Services.AddScoped<IPolicyAcceptanceService, PolicyAcceptanceService>();
 builder.Services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<WebIdentityDbContext>>();
 builder.Services.AddScoped<IUserEntitlementService, UserEntitlementService<WebIdentityDbContext>>();
 builder.Services.AddScoped<IEmailTemplateRenderer, TransactionalEmailTemplateRenderer>();

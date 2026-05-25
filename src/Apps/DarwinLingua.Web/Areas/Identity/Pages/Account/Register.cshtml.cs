@@ -15,6 +15,7 @@ public sealed class RegisterModel(
     IUserEntitlementService userEntitlementService,
     IAccountEmailService accountEmailService,
     IAccountEmailRateLimiter rateLimiter,
+    IPolicyAcceptanceService policyAcceptanceService,
     IOptions<TransactionalEmailOptions> emailOptions) : PageModel
 {
     [BindProperty]
@@ -33,6 +34,7 @@ public sealed class RegisterModel(
     {
         ReturnUrl = NormalizeReturnUrl(ReturnUrl);
         ModelState.Remove(nameof(ReturnUrl));
+        ValidateRequiredAcknowledgements();
         if (!ModelState.IsValid)
         {
             return Page();
@@ -75,6 +77,9 @@ public sealed class RegisterModel(
 
         await userManager.AddToRoleAsync(user, DarwinLinguaRoles.Learner).ConfigureAwait(false);
         await userEntitlementService.GetCurrentAsync(user.Id, cancellationToken).ConfigureAwait(false);
+        await policyAcceptanceService
+            .RecordRegistrationAcceptancesAsync(user.Id, ResolveCulture(), cancellationToken)
+            .ConfigureAwait(false);
 
         if (rateLimiter.TryConsume("register-confirmation", email, 3, TimeSpan.FromMinutes(30)))
         {
@@ -127,6 +132,23 @@ public sealed class RegisterModel(
     private string NormalizeReturnUrl(string? returnUrl) =>
         Url.IsLocalUrl(returnUrl) ? returnUrl : Url.Content("~/");
 
+    private void ValidateRequiredAcknowledgements()
+    {
+        if (!Input.AcceptTermsOfUse)
+        {
+            ModelState.AddModelError(
+                $"{nameof(Input)}.{nameof(Input.AcceptTermsOfUse)}",
+                "You must accept the Terms of Use to create an account.");
+        }
+
+        if (!Input.AcknowledgePrivacyNotice)
+        {
+            ModelState.AddModelError(
+                $"{nameof(Input)}.{nameof(Input.AcknowledgePrivacyNotice)}",
+                "You must acknowledge the Privacy Policy notice to create an account.");
+        }
+    }
+
     public sealed class RegisterInputModel
     {
         [Required]
@@ -144,5 +166,11 @@ public sealed class RegisterModel(
         [Compare(nameof(Password))]
         [Display(Name = "Confirm password")]
         public string ConfirmPassword { get; set; } = string.Empty;
+
+        [Display(Name = "I agree to the Terms of Use.")]
+        public bool AcceptTermsOfUse { get; set; }
+
+        [Display(Name = "I understand that Darwin Lingua processes account and learning data as described in the Privacy Policy.")]
+        public bool AcknowledgePrivacyNotice { get; set; }
     }
 }

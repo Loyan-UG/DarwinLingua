@@ -25,6 +25,8 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
 
     public DbSet<WebWordSuggestion> WebWordSuggestions => Set<WebWordSuggestion>();
 
+    public DbSet<WebPolicyAcceptance> PolicyAcceptances => Set<WebPolicyAcceptance>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
@@ -172,6 +174,22 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
                 .HasDatabaseName("IX_WebWordSuggestions_NormalizedWord");
             entity.HasIndex(suggestion => new { suggestion.ActorId, suggestion.NormalizedSuggestedWord })
                 .HasDatabaseName("IX_WebWordSuggestions_Actor_Word");
+        });
+
+        builder.Entity<WebPolicyAcceptance>(entity =>
+        {
+            entity.ToTable("WebPolicyAcceptances");
+            entity.HasKey(acceptance => acceptance.Id);
+            entity.Property(acceptance => acceptance.UserId).HasMaxLength(450).IsRequired();
+            entity.Property(acceptance => acceptance.PolicyKey).HasMaxLength(128).IsRequired();
+            entity.Property(acceptance => acceptance.PolicyVersion).HasMaxLength(64).IsRequired();
+            entity.Property(acceptance => acceptance.Source).HasMaxLength(64).IsRequired();
+            entity.Property(acceptance => acceptance.Culture).HasMaxLength(16);
+            entity.HasIndex(acceptance => new { acceptance.UserId, acceptance.PolicyKey, acceptance.PolicyVersion })
+                .IsUnique()
+                .HasDatabaseName("IX_WebPolicyAcceptances_User_Policy_Version");
+            entity.HasIndex(acceptance => new { acceptance.PolicyKey, acceptance.PolicyVersion, acceptance.AcceptedAtUtc })
+                .HasDatabaseName("IX_WebPolicyAcceptances_Policy_AcceptedAtUtc");
         });
     }
 }

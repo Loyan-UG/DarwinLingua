@@ -145,6 +145,16 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "UpdatedAtUtc" timestamp with time zone NOT NULL,
                 "DecidedAtUtc" timestamp with time zone NULL
             );
+
+            CREATE TABLE IF NOT EXISTS "WebPolicyAcceptances" (
+                "Id" uuid NOT NULL CONSTRAINT "PK_WebPolicyAcceptances" PRIMARY KEY,
+                "UserId" character varying(450) NOT NULL,
+                "PolicyKey" character varying(128) NOT NULL,
+                "PolicyVersion" character varying(64) NOT NULL,
+                "AcceptedAtUtc" timestamp with time zone NOT NULL,
+                "Source" character varying(64) NOT NULL,
+                "Culture" character varying(16) NULL
+            );
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -204,6 +214,10 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebWordSuggestions" ("NormalizedSuggestedWord");
             CREATE INDEX IF NOT EXISTS "IX_WebWordSuggestions_Actor_Word"
             ON "WebWordSuggestions" ("ActorId", "NormalizedSuggestedWord");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebPolicyAcceptances_User_Policy_Version"
+            ON "WebPolicyAcceptances" ("UserId", "PolicyKey", "PolicyVersion");
+            CREATE INDEX IF NOT EXISTS "IX_WebPolicyAcceptances_Policy_AcceptedAtUtc"
+            ON "WebPolicyAcceptances" ("PolicyKey", "PolicyVersion", "AcceptedAtUtc");
             """,
             cancellationToken)
             .ConfigureAwait(false);
