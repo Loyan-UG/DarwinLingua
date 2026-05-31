@@ -1,3 +1,4 @@
+using System.Text.Json;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence;
@@ -18,12 +19,12 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
     [Fact]
     public async Task GetSystemReportAsync_ShouldIncludeLearningPortalCountsAndQualitySignals()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-admin-report-{Guid.NewGuid():N}.db");
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_admin_report");
         ServiceProvider? serviceProvider = null;
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(database.ConnectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
             await SeedLearningPortalContentAsync(serviceProvider, CancellationToken.None);
 
@@ -31,7 +32,9 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             AdminSystemReportResponse report = await service.GetSystemReportAsync(CancellationToken.None);
 
             Assert.Contains(report.LearningPortal.CountsByType, row => row.Key == "grammar-topic" && row.Count == 2);
+            Assert.Contains(report.LearningPortal.CountsByType, row => row.Key == "roleplay" && row.Count == 1);
             Assert.Contains(report.LearningPortal.CountsByCefr, row => row.Key == "A1" && row.Count >= 1);
+            Assert.Contains(report.LearningPortal.CountsByCefr, row => row.Key == "B1" && row.Count >= 1);
             Assert.Contains(report.LearningPortal.GrammarByCategory, row => row.Key == "articles" && row.Count == 1);
             Assert.Contains(report.LearningPortal.ExpressionsByType, row => row.Key == "fixed-expression" && row.Count == 1);
             Assert.Contains(report.LearningPortal.ExpressionsByRegister, row => row.Key == "neutral" && row.Count == 1);
@@ -54,19 +57,18 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
         }
     }
 
     [Fact]
     public async Task GetSystemReportAsync_ShouldTreatMissingLearningPortalTablesAsEmpty()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-admin-report-missing-table-{Guid.NewGuid():N}.db");
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_admin_report");
         ServiceProvider? serviceProvider = null;
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(database.ConnectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
             await SeedLearningPortalContentAsync(serviceProvider, CancellationToken.None);
             await DropTableAsync(serviceProvider, "Exercises", CancellationToken.None);
@@ -85,15 +87,14 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
         }
     }
 
-    private static ServiceProvider BuildServiceProvider(string databasePath)
+    private static ServiceProvider BuildServiceProvider(string connectionString)
     {
         ServiceCollection services = new();
         services
-            .AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath)
+            .AddDarwinLinguaInfrastructureForPostgres(connectionString)
             .AddScoped<IWebsiteAdminQueryService, WebsiteAdminQueryService>();
 
         return services.BuildServiceProvider();
@@ -176,10 +177,38 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             false);
         expression.AddMeaning(Guid.NewGuid(), LanguageCode.From("en"), "Understood or okay.", "Everything clear.", "Use it to confirm a simple plan.", now);
 
+        RoleplayScenario roleplayScenario = new(
+            Guid.NewGuid(),
+            "b1-polito-complaint-roleplay",
+            null,
+            "Polite complaint roleplay",
+            "[]",
+            "A deterministic roleplay for making a polite complaint.",
+            "[]",
+            "Explain a problem and choose a polite next step.",
+            "[]",
+            CefrLevel.B1,
+            "customer-service",
+            "complain-politely",
+            "service-counter",
+            "formal",
+            12,
+            JsonSerializer.Serialize(new[] { "goethe-b1" }, new JsonSerializerOptions(JsonSerializerDefaults.Web)),
+            JsonSerializer.Serialize(new[] { "speaking", "roleplay", "complaint-handling" }, new JsonSerializerOptions(JsonSerializerDefaults.Web)),
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            PublicationStatus.Active,
+            30,
+            now);
+
         dbContext.GrammarTopics.Add(grammarTopic);
         dbContext.GrammarTopics.Add(grammarTopicWithoutExercise);
         dbContext.Exercises.Add(exercise);
         dbContext.ExpressionEntries.Add(expression);
+        dbContext.RoleplayScenarios.Add(roleplayScenario);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
     }
 
@@ -204,17 +233,4 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             .ConfigureAwait(false);
     }
 
-    private static void TryDeleteFile(string path)
-    {
-        try
-        {
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }
-        }
-        catch (IOException)
-        {
-        }
-    }
 }

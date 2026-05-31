@@ -1202,8 +1202,11 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeText(parsedScenario.Slug),
                 NormalizeOptionalText(parsedScenario.LinkedDialogueSlug),
                 NormalizeText(parsedScenario.Title),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedScenario.TitleTranslations)),
                 NormalizeText(parsedScenario.Description),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedScenario.DescriptionTranslations)),
                 NormalizeText(parsedScenario.LearnerGoal),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedScenario.LearnerGoalTranslations)),
                 Enum.Parse<CefrLevel>(NormalizeText(parsedScenario.CefrLevel), true),
                 NormalizeText(parsedScenario.Category),
                 NormalizeText(parsedScenario.TaskType),
@@ -2646,8 +2649,11 @@ internal sealed class ContentImportService : IContentImportService
             }
 
             ValidateRequiredText(scenario.Title, "title", errors);
+            ValidateDialogueTranslations(scenario.TitleTranslations, meaningLanguages, "Roleplay titleTranslations", errors);
             ValidateRequiredText(scenario.Description, "description", errors);
+            ValidateDialogueTranslations(scenario.DescriptionTranslations, meaningLanguages, "Roleplay descriptionTranslations", errors);
             ValidateRequiredText(scenario.LearnerGoal, "learnerGoal", errors);
+            ValidateDialogueTranslations(scenario.LearnerGoalTranslations, meaningLanguages, "Roleplay learnerGoalTranslations", errors);
 
             if (!Enum.TryParse(NormalizeText(scenario.CefrLevel), true, out CefrLevel _))
             {
@@ -2702,6 +2708,7 @@ internal sealed class ContentImportService : IContentImportService
 
             ValidateRoleplayTurns(scenario.Turns, roleKeys, meaningLanguages, errors);
             ValidateRoleplayAnswerChoices(scenario.AnswerChoices, scenario.Turns, meaningLanguages, errors);
+            ValidateRoleplayPlayableSequence(scenario.Turns, scenario.AnswerChoices, errors);
             ValidateRoleplayStaticFeedback(scenario.StaticFeedback, scenario.Turns, meaningLanguages, errors);
             ValidateRoleplayImageSlots(scenario.ImageSlots, meaningLanguages, errors);
 
@@ -2779,6 +2786,36 @@ internal sealed class ContentImportService : IContentImportService
                 ValidateDialogueTranslations(choice.Translations, meaningLanguages, "Roleplay answer choice translations", errors);
                 ValidateDialogueTranslations(choice.FeedbackTranslations, meaningLanguages, "Roleplay answer choice feedbackTranslations", errors);
             }
+        }
+    }
+
+    private static void ValidateRoleplayPlayableSequence(
+        IReadOnlyList<ParsedRoleplayTurnModel> turns,
+        IReadOnlyList<ParsedRoleplayAnswerChoiceGroupModel> answerChoiceGroups,
+        ICollection<string> errors)
+    {
+        ParsedRoleplayTurnModel[] orderedTurns = turns.OrderBy(turn => turn.SortOrder).ToArray();
+        bool hasPromptedLearnerTurn = orderedTurns
+            .Zip(orderedTurns.Skip(1), (current, next) => new { Current = current, Next = next })
+            .Any(pair =>
+                !string.Equals(NormalizeText(pair.Current.SpeakerRole), "learner", StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(NormalizeText(pair.Next.SpeakerRole), "learner", StringComparison.OrdinalIgnoreCase));
+
+        if (!hasPromptedLearnerTurn)
+        {
+            errors.Add("Roleplay scenario must include at least one non-learner prompt followed by a learner turn.");
+        }
+
+        HashSet<int> answerChoiceTurnSortOrders = answerChoiceGroups
+            .Select(group => group.TurnSortOrder)
+            .ToHashSet();
+
+        if (orderedTurns.Any(turn =>
+                string.Equals(NormalizeText(turn.SpeakerRole), "learner", StringComparison.OrdinalIgnoreCase) &&
+                string.IsNullOrWhiteSpace(NormalizeOptionalText(turn.ExpectedLearnerAction)) &&
+                !answerChoiceTurnSortOrders.Contains(turn.SortOrder)))
+        {
+            errors.Add("Roleplay scenario learner turns require expectedLearnerAction or answerChoices.");
         }
     }
 

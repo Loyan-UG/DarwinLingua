@@ -16,12 +16,12 @@ public sealed class OrganizerProfileAdminServiceTests
     [Fact]
     public async Task SaveAsync_ShouldCreatePublishedOrganizerProfile()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-admin-organizers-{Guid.NewGuid():N}.db");
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_admin_organizers");
         ServiceProvider? serviceProvider = null;
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(database.ConnectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
 
             IOrganizerProfileAdminService adminService = serviceProvider.GetRequiredService<IOrganizerProfileAdminService>();
@@ -46,19 +46,18 @@ public sealed class OrganizerProfileAdminServiceTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
         }
     }
 
     [Fact]
     public async Task SaveAsync_ShouldRejectUnsupportedOrganizerType()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-admin-organizers-invalid-{Guid.NewGuid():N}.db");
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_admin_organizers");
         ServiceProvider? serviceProvider = null;
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(database.ConnectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
 
             IOrganizerProfileAdminService adminService = serviceProvider.GetRequiredService<IOrganizerProfileAdminService>();
@@ -75,15 +74,14 @@ public sealed class OrganizerProfileAdminServiceTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
         }
     }
 
-    private static ServiceProvider BuildServiceProvider(string databasePath)
+    private static ServiceProvider BuildServiceProvider(string connectionString)
     {
         ServiceCollection services = new();
         services
-            .AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath)
+            .AddDarwinLinguaInfrastructureForPostgres(connectionString)
             .AddCatalogApplication()
             .AddCatalogInfrastructure();
         services.AddScoped<IOrganizerProfileAdminService, OrganizerProfileAdminService>();
@@ -110,19 +108,4 @@ public sealed class OrganizerProfileAdminServiceTests
             "free-organizer",
             3);
 
-    private static void TryDeleteFile(string path)
-    {
-        if (!File.Exists(path))
-        {
-            return;
-        }
-
-        try
-        {
-            File.Delete(path);
-        }
-        catch (IOException)
-        {
-        }
-    }
 }

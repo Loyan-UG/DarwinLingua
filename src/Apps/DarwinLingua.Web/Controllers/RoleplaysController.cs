@@ -11,11 +11,12 @@ namespace DarwinLingua.Web.Controllers;
 [Route("roleplays")]
 public sealed class RoleplaysController(
     IWebCatalogApiClient catalogApiClient,
+    IWebLearningProfileAccessor learningProfileAccessor,
     ILogger<RoleplaysController> logger,
     IStringLocalizer<SharedResource> localizer) : Controller
 {
     [HttpGet("")]
-    [OutputCache(Duration = 60, VaryByQueryKeys = ["cefrLevel", "category", "examProfile", "taskType", "interactionMode", "register", "q"])]
+    [OutputCache(NoStore = true)]
     public async Task<IActionResult> Index(
         string? cefrLevel,
         string? category,
@@ -29,14 +30,16 @@ public sealed class RoleplaysController(
         CancellationToken cancellationToken)
     {
         RoleplayScenarioListFilterModel filter = new(cefrLevel, category, topicKey, examProfile, skillFocus, taskType, interactionMode, register, q);
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
 
         try
         {
             IReadOnlyList<RoleplayScenarioListItemModel> roleplays = await catalogApiClient
-                .GetRoleplaysAsync(filter, ResolveMeaningLanguage(), cancellationToken)
+                .GetRoleplaysAsync(filter, primaryMeaningLanguageCode, cancellationToken)
                 .ConfigureAwait(false);
 
-            return View(new RoleplayIndexPageViewModel(roleplays, filter));
+            return View(new RoleplayIndexPageViewModel(roleplays, filter, primaryMeaningLanguageCode));
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
@@ -48,7 +51,7 @@ public sealed class RoleplaysController(
     }
 
     [HttpGet("{slug}", Name = "Roleplays_Detail")]
-    [OutputCache(Duration = 60, VaryByRouteValueNames = ["slug"])]
+    [OutputCache(NoStore = true)]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
@@ -59,11 +62,13 @@ public sealed class RoleplaysController(
 
         try
         {
+            var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+            string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
             RoleplayScenarioDetailModel? roleplay = await catalogApiClient
-                .GetRoleplayBySlugAsync(normalizedSlug, ResolveMeaningLanguage(), cancellationToken)
+                .GetRoleplayBySlugAsync(normalizedSlug, primaryMeaningLanguageCode, cancellationToken)
                 .ConfigureAwait(false);
 
-            return roleplay is null ? NotFound() : View(new RoleplayDetailPageViewModel(roleplay));
+            return roleplay is null ? NotFound() : View(new RoleplayDetailPageViewModel(roleplay, primaryMeaningLanguageCode));
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
@@ -74,10 +79,10 @@ public sealed class RoleplaysController(
         }
     }
 
-    private string ResolveMeaningLanguage() =>
+    private string ResolveMeaningLanguage(string profileLanguageCode) =>
         Request.Query.TryGetValue("primaryMeaningLanguageCode", out Microsoft.Extensions.Primitives.StringValues value) && !string.IsNullOrWhiteSpace(value)
             ? value.ToString()
-            : "en";
+            : profileLanguageCode;
 
     private ViewResult ServiceUnavailableView(string title, string message)
     {

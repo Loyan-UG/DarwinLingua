@@ -18,8 +18,11 @@ public sealed partial class RoleplayScenario
         string slug,
         string? linkedDialogueSlug,
         string title,
+        string titleTranslationsJson,
         string description,
+        string descriptionTranslationsJson,
         string learnerGoal,
+        string learnerGoalTranslationsJson,
         CefrLevel cefrLevel,
         string category,
         string taskType,
@@ -41,8 +44,11 @@ public sealed partial class RoleplayScenario
         Slug = NormalizeKey(slug, "Roleplay scenario slug");
         LinkedDialogueSlug = NormalizeOptionalKey(linkedDialogueSlug, "Roleplay linked dialogue slug");
         Title = NormalizeRequiredText(title, "Roleplay title", 256);
+        TitleTranslationsJson = NormalizeJsonArray(titleTranslationsJson);
         Description = NormalizeRequiredText(description, "Roleplay description", 4000);
+        DescriptionTranslationsJson = NormalizeJsonArray(descriptionTranslationsJson);
         LearnerGoal = NormalizeRequiredText(learnerGoal, "Roleplay learner goal", 2000);
+        LearnerGoalTranslationsJson = NormalizeJsonArray(learnerGoalTranslationsJson);
         CefrLevel = cefrLevel;
         Category = NormalizeKey(category, "Roleplay category");
         TaskType = NormalizeKey(taskType, "Roleplay task type");
@@ -66,8 +72,11 @@ public sealed partial class RoleplayScenario
     public string Slug { get; private set; } = string.Empty;
     public string? LinkedDialogueSlug { get; private set; }
     public string Title { get; private set; } = string.Empty;
+    public string TitleTranslationsJson { get; private set; } = "[]";
     public string Description { get; private set; } = string.Empty;
+    public string DescriptionTranslationsJson { get; private set; } = "[]";
     public string LearnerGoal { get; private set; } = string.Empty;
+    public string LearnerGoalTranslationsJson { get; private set; } = "[]";
     public CefrLevel CefrLevel { get; private set; }
     public string Category { get; private set; } = string.Empty;
     public string TaskType { get; private set; } = string.Empty;

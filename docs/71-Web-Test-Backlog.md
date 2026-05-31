@@ -364,14 +364,18 @@ Latest local Web verification:
 ### Standalone RoleplayScenario
 
 - [x] Parser accepts the top-level `roleplayScenarios` array and maps `linkedDialogueSlug` / compatibility `scenarioSlug`.
-- [ ] Application import test persists a valid standalone RoleplayScenario package.
-- [ ] Application validation rejects invalid CEFR, malformed slugs, duplicate turn sort orders, missing playable sequence, missing translations, and answer-choice groups without a correct choice.
-- [ ] Repository list/detail tests cover CEFR, category, topic, exam profile, skill focus, task type, interaction mode, register, and search filters.
-- [ ] WebApi list/detail route tests cover `/api/catalog/roleplays` and `/api/catalog/roleplays/{slug}`.
-- [ ] Web structural tests cover `/roleplays`, `/roleplays/{slug}`, deterministic answer choices, static feedback, and missing image assets without broken images.
-- [ ] Unified Learning Search tests include the `roleplay` result type.
-- [ ] Admin report tests include RoleplayScenario counts and quality signals for missing translations, unpublished drafts, missing image assets, and invalid playable sequence.
-- [ ] Local shared-database import and smoke must pass before the first roleplay pilot package is generated.
+- [x] Application import test persists a valid standalone RoleplayScenario package.
+- [x] Application validation rejects invalid CEFR, malformed slugs, duplicate turn sort orders, missing playable sequence, missing translations, answer-choice groups without a correct choice, invalid skill focus, and invalid exam profile.
+- [x] Repository list/detail tests cover CEFR, category, topic, exam profile, skill focus, task type, interaction mode, register, and search filters.
+- [x] WebApi route structural tests cover `/api/catalog/roleplays` and `/api/catalog/roleplays/{slug}`.
+- [x] Web structural tests cover `/roleplays`, `/roleplays/{slug}`, deterministic answer choices, static feedback, and missing image assets without broken images or learner-visible image prompts.
+- [x] Unified Learning Search tests include the `roleplay` result type.
+- [x] Admin report tests include RoleplayScenario count visibility by type and CEFR.
+- [x] PostgreSQL integration tests cover RoleplayScenario repository filtering, detail projection, and Unified Learning Search using PostgreSQL-native search semantics.
+- [x] Local shared-database import and Web/API/search smoke passed before and after the first roleplay pilot package import.
+- [ ] Add deeper admin quality counters for RoleplayScenario missing translations, unpublished drafts, missing image assets, and invalid playable sequence after more reviewed packages exist.
+- [x] Migrate Web/API-critical SQLite-backed tests to PostgreSQL when the behavior under test depends on PostgreSQL provider semantics.
+  - Evidence: WebApi service tests, Identity bootstrapper tests, RoleplayScenario repository/search tests, admin-report tests, server-content manifest/delivery tests, and catalog publication lifecycle tests now use temporary PostgreSQL databases. The remaining SQLite mentions in WebApi tests are structural assertions that Web startup does not register SQLite.
 
 ### Conversation Starters
 

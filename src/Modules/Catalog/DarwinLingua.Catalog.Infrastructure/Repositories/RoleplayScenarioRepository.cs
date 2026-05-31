@@ -64,8 +64,11 @@ internal sealed class RoleplayScenarioRepository(IDbContextFactory<DarwinLinguaD
                 scenario.Slug,
                 scenario.LinkedDialogueSlug,
                 scenario.Title,
+                ResolveText(scenario.TitleTranslationsJson, ResolveRequestedLanguage(primaryMeaningLanguageCode)),
                 scenario.Description,
+                ResolveText(scenario.DescriptionTranslationsJson, ResolveRequestedLanguage(primaryMeaningLanguageCode)),
                 scenario.LearnerGoal,
+                ResolveText(scenario.LearnerGoalTranslationsJson, ResolveRequestedLanguage(primaryMeaningLanguageCode)),
                 scenario.CefrLevel.ToString(),
                 scenario.Category,
                 scenario.TaskType,
@@ -110,8 +113,11 @@ internal sealed class RoleplayScenarioRepository(IDbContextFactory<DarwinLinguaD
             scenario.Slug,
             scenario.LinkedDialogueSlug,
             scenario.Title,
+            ResolveText(scenario.TitleTranslationsJson, primaryLanguage),
             scenario.Description,
+            ResolveText(scenario.DescriptionTranslationsJson, primaryLanguage),
             scenario.LearnerGoal,
+            ResolveText(scenario.LearnerGoalTranslationsJson, primaryLanguage),
             scenario.CefrLevel.ToString(),
             scenario.Category,
             scenario.TaskType,
@@ -230,6 +236,9 @@ internal sealed class RoleplayScenarioRepository(IDbContextFactory<DarwinLinguaD
     private static RoleplayScenarioImageSlotModel MapImageSlot(StoredImageSlot slot, LanguageCode primaryLanguage) =>
         new(slot.SlotKey ?? string.Empty, slot.Placement ?? string.Empty, slot.Purpose ?? string.Empty, slot.AltText ?? string.Empty, ResolveText(slot.AltTextTranslations, primaryLanguage), slot.ImagePrompt ?? string.Empty, slot.AssetPath, slot.IsRequired);
 
+    private static string? ResolveText(string json, LanguageCode primaryLanguage) =>
+        ResolveText(ReadStoredArray<StoredTranslation>(json), primaryLanguage);
+
     private static string? ResolveText(IReadOnlyList<StoredTranslation>? translations, LanguageCode primaryLanguage) =>
         (translations ?? [])
             .Select(translation => new
@@ -237,8 +246,7 @@ internal sealed class RoleplayScenarioRepository(IDbContextFactory<DarwinLinguaD
                 Translation = translation,
                 Language = TryResolveLanguage(translation.Language)
             })
-            .Where(item => item.Language == primaryLanguage || item.Language == EnglishFallbackLanguage)
-            .OrderBy(item => item.Language == primaryLanguage ? 0 : 1)
+            .Where(item => item.Language == primaryLanguage)
             .Select(item => item.Translation.Text)
             .FirstOrDefault();
 

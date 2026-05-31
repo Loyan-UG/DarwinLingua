@@ -9,7 +9,7 @@ using System.Text;
 namespace DarwinLingua.Catalog.Infrastructure.Seed;
 
 /// <summary>
-/// Seeds the stable Phase 1 topic reference data into the shared SQLite database.
+/// Seeds the stable Phase 1 topic reference data into the shared catalog database.
 /// </summary>
 internal sealed class CatalogReferenceDataSeeder : IDatabaseSeeder
 {

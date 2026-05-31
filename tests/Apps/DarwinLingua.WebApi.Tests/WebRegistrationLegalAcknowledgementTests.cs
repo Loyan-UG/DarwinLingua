@@ -1,6 +1,5 @@
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Services;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
@@ -11,15 +10,14 @@ public sealed class WebRegistrationLegalAcknowledgementTests
     [Fact]
     public async Task PolicyAcceptanceService_RecordsVersionedRegistrationAcceptances()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_web_identity_policy");
 
         DbContextOptions<WebIdentityDbContext> options = new DbContextOptionsBuilder<WebIdentityDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         await using WebIdentityDbContext dbContext = new(options);
-        await dbContext.Database.EnsureCreatedAsync();
+        await new WebUserStateDatabaseBootstrapper(dbContext).InitializeAsync(CancellationToken.None);
 
         PolicyAcceptanceService service = new(dbContext);
 

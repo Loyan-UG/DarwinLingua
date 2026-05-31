@@ -29,9 +29,12 @@ public sealed class ContentImportParserRoleplayScenarioTests
                 {
                   "slug": "a1-conversation-cafe-introduction",
                   "linkedDialogueSlug": "cafe-first-meeting-a1",
-                  "title": "Introduce yourself at a conversation cafe",
-                  "description": "Practice a short deterministic conversation cafe introduction.",
-                  "learnerGoal": "Say your name and ask one simple follow-up question.",
+                  "title": "Sich im Sprachcafe vorstellen",
+                  "titleTranslations": [{ "language": "en", "text": "Introduce yourself at a conversation cafe" }],
+                  "description": "Uebe eine kurze, gesteuerte Vorstellung im Sprachcafe.",
+                  "descriptionTranslations": [{ "language": "en", "text": "Practice a short deterministic conversation cafe introduction." }],
+                  "learnerGoal": "Sage deinen Namen und stelle eine einfache Rueckfrage.",
+                  "learnerGoalTranslations": [{ "language": "en", "text": "Say your name and ask one simple follow-up question." }],
                   "cefrLevel": "A1",
                   "category": "conversation-cafe",
                   "topics": ["everyday-life"],
@@ -75,6 +78,8 @@ public sealed class ContentImportParserRoleplayScenarioTests
         ParsedRoleplayScenarioModel scenario = Assert.Single(parsedPackage.RoleplayScenarios);
         Assert.Equal("a1-conversation-cafe-introduction", scenario.Slug);
         Assert.Equal("cafe-first-meeting-a1", scenario.LinkedDialogueSlug);
+        Assert.Equal("Sich im Sprachcafe vorstellen", scenario.Title);
+        Assert.Equal("Introduce yourself at a conversation cafe", Assert.Single(scenario.TitleTranslations).Text);
         Assert.Equal(["speaking", "roleplay"], scenario.SkillFocus);
         Assert.Equal(2, scenario.Turns.Count);
         Assert.Equal(2, Assert.Single(scenario.AnswerChoices).Choices.Count);

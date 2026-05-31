@@ -53,6 +53,7 @@ const allowedAdultContentCategories = new Set([
 ]);
 const requiredLanguages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
 const processLeakPattern = /\b(checkpoint|do not continue|validate this|qa note|prompt instruction|internal note)\b/i;
+const generatedPlaceholderPattern = /(^|[^\p{L}])(undefined|null|NaN)(?=$|[^\p{L}])|\[object Object\]/u;
 const knownOrdinaryLiteralSlugs = new Set([
   "die-heizung-funktioniert-nicht",
   "ich-brauche-einen-termin",
@@ -168,6 +169,12 @@ function auditEntry(packageId, entry, issues) {
   for (const text of collectTexts(entry)) {
     if (processLeakPattern.test(text)) {
       issues.push([owner, "P0", "Learner-facing text contains internal process/checkpoint wording"]);
+      break;
+    }
+  }
+  for (const text of collectTexts(entry)) {
+    if (generatedPlaceholderPattern.test(text)) {
+      issues.push([owner, "P0", "Learner-facing text contains generated placeholder wording"]);
       break;
     }
   }

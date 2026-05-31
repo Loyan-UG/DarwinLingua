@@ -2,6 +2,8 @@
 
 This document defines the Phase 6 JSON contract for event preparation packs before event-directory UI work.
 
+Event Preparation Packs can include lightweight `roleplayPrompts`, but those prompts are not standalone RoleplayScenario content. They are short preparation instructions for a real-life event context. Standalone scripted roleplays use the top-level `roleplayScenarios` array and are governed by `docs/70-Roleplay-Content-Package-Contract.md`.
+
 ## Package Shape
 
 Event preparation packs live beside vocabulary entries, collections, dialogue lessons, and conversation starter packs:
@@ -39,7 +41,7 @@ Optional fields:
 - `linkedConversationStarterPackSlugs`: conversation starter packs useful for this event.
 - `linkedVocabulary`: vocabulary references using `word`, optional `partOfSpeech`, and optional `cefrLevel`.
 - `openingPrompts`: short German prompts learners can try at the event.
-- `roleplayPrompts`: short roleplay instructions.
+- `roleplayPrompts`: short roleplay instructions for event preparation. These are plain prompts, not persisted standalone roleplay scenarios.
 - `reviewPrompts`: short post-event review prompts.
 
 ## Validation Rules

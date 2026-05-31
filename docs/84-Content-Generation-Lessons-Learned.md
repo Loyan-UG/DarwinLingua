@@ -71,7 +71,7 @@ Use it together with the active content contract for the module being generated.
 - `linkedWords`, `usefulWords`, and Talk Topic vocabulary references must stay references only. Do not duplicate word meanings inside conversation content.
 - Normalize malformed word references before content generation. The repair tool `tools/Content/Repair-ConversationContentLinks.js` currently fixes known nominalized-verb reference mismatches such as `das-essen` to `essen`, then deduplicates repeated useful-word references inside each Dialogue.
 - Conversation Starter and Event Preparation content can be generated now because parser, import, persistence, Web/API surfaces, and tests exist. Use small baseline/gap-fill packages first, not blind bulk generation.
-- Standalone RoleplayScenario content must not be generated yet. The roleplay contract exists, but dedicated parser/import/persistence/Web/search/admin/test support is still missing. Until then, only `roleplayPrompts` inside Event Preparation Packs are importable.
+- Standalone RoleplayScenario content may only be generated as reviewed small batches after parser/import/persistence/Web/search/admin/test support is green. The first A1-B2 pilot package passed those gates on 2026-05-25; bulk roleplay generation remains blocked.
 - After any repair, rerun the conversation audit and check that P0 blockers, unresolved Dialogue word references, unresolved Talk Topic references, and contract issue counts remain zero.
 
 ## Maintenance Rule
@@ -153,7 +153,7 @@ When a content-quality problem is found, add a short note here with:
 - What failed: The roadmap called for Roleplay gap-fill after Conversation audit, but the repository currently only supports `roleplayPrompts` inside Event Preparation Packs. There is no dedicated RoleplayScenario parser/import/persistence path yet.
 - Where it appeared: `docs/70-Roleplay-Content-Package-Contract.md` defines the desired contract, while code search found no standalone RoleplayScenario importer.
 - Why it happened: The contract was documented ahead of full implementation.
-- Prevention rule: Implement parser, application validation, persistence, Web API, Web rendering, search/admin visibility, and tests before generating standalone roleplay packages. Until then, keep roleplay-like practice inside Event Preparation `roleplayPrompts`.
+- Prevention rule: Implement parser, application validation, persistence, Web API, Web rendering, search/admin visibility, and tests before generating standalone roleplay packages. After those gates pass, create only reviewed small pilot packages, import them into the shared development database, run Web/API/search/admin smoke, and keep Dialogue-derived Roleplay and Event Preparation `roleplayPrompts` separate from standalone `RoleplayScenario` content.
 
 ### 2026-05-23: Expression list pages must use learner-language meanings
 
@@ -162,12 +162,12 @@ When a content-quality problem is found, add a short note here with:
 - Why it happened: The list query did not accept or forward `primaryMeaningLanguageCode`, while detail already did.
 - Prevention rule: Expression list requests now carry `primaryMeaningLanguageCode`; repository tests verify localized list projection. New learning modules must check list and detail localization, not only detail pages.
 
-### 2026-05-23: Provider-specific search functions need local-test coverage
+### 2026-05-23: Provider-specific search functions need production-provider coverage
 
-- What failed: New Expression repository/search tests on SQLite exposed `EF.Functions.ILike` translation failures in Expression list/search paths.
+- What failed: Early Expression repository/search tests mixed PostgreSQL-style search behavior with SQLite-backed local fixtures.
 - Where it appeared: `GetPublishedExpressionsAsync` and `UnifiedLearningSearchRepository.SearchExpressionsAsync` failed in SQLite-backed tests.
-- Why it happened: The implementation used PostgreSQL-specific matching without a provider-neutral fallback for local test coverage.
-- Prevention rule: For new content modules, add repository/search tests before bulk content generation. If the project supports SQLite-backed tests, keep module search filters provider-neutral unless a provider-specific path has a tested fallback.
+- Why it happened: The Web/API production path is PostgreSQL, but some legacy/local tests used SQLite and created pressure to make production queries provider-neutral.
+- Prevention rule: Do not weaken Web/API production search semantics to satisfy SQLite-backed tests. For Web/API module search, keep PostgreSQL-native behavior and add PostgreSQL integration tests. SQLite-backed fixtures may remain only for mobile/local surfaces where SQLite is the actual runtime store and they do not define Web/API production behavior.
 
 ### 2026-05-23: Expressions need a dedicated pre-import content quality gate
 
@@ -231,3 +231,38 @@ When a content-quality problem is found, add a short note here with:
 - Where it appeared: Everyday Expressions sensitive-language planning.
 - Why it happened: The product vocabulary did not clearly separate Sensitive Educational Language for comprehension from pornographic or legally restricted adult content.
 - Prevention rule: Use the product term Sensitive Educational Language for warning-labeled educational rude/slang/romantic/social content. Do not generate sensitive batches until metadata, warnings, opt-in filtering, admin reports, registration/legal notice coverage, mobile export exclusion, and content quality gates exist. A simple profile checkbox is a reversible learning preference, not age verification. Do not generate pornographic, arousing, graphic, exploitative, coercive, minor-related, hate-inciting, Nazi-propaganda, or illegal content.
+
+### 2026-05-26: RoleplayScenario metadata must be German-first and learner-language aware
+
+- What failed: The first standalone RoleplayScenario pilot used English `title`, `description`, and `learnerGoal` values even though these are primary learner-facing content fields. The Web/API detail path could localize turns and choices, but the top-level metadata still appeared in English for users whose selected learner language was Persian.
+- Where it appeared: `/roleplays` and `/roleplays/{slug}` for the first standalone RoleplayScenario pilot.
+- Why it happened: The RoleplayScenario contract and persistence model initially treated top-level metadata as plain strings and did not require `titleTranslations`, `descriptionTranslations`, or `learnerGoalTranslations`.
+- Prevention rule: Official RoleplayScenario packages must keep source `title`, `description`, and `learnerGoal` in German and include learner-language translations for active meaning languages. Web/API projection must show the German source plus the user's selected learner-language translation and must not fall back to English when another learner language is selected.
+
+### 2026-05-26: Roleplay answer choices must teach weaker alternatives, not repeat or distract
+
+- What failed: The Roleplay detail page repeated the correct scripted learner answer under `Choose a response`, then often showed an obviously irrelevant wrong option such as `Ich weiss nicht.`. This did not help learners understand why a plausible answer would lose points or sound incomplete.
+- Where it appeared: Answer-choice moments in the first standalone RoleplayScenario pilot.
+- Why it happened: The content generation prompt focused on satisfying the deterministic answer-choice contract instead of defining the learner-facing purpose of wrong choices. The UI then rendered every choice, including the already visible model answer.
+- Prevention rule: Keep a correct choice in JSON for deterministic validation, but learner-facing UI should emphasize weaker/not-recommended alternatives and static feedback. Incorrect choices must be plausible but insufficient for the scenario: too short, missing a reason, too direct for the register, unclear, or incomplete. Do not use irrelevant filler such as `Ich weiss nicht.` as the default wrong answer.
+
+### 2026-05-26: Roleplay title planning must be persisted before generation
+
+- What failed: Roleplay generation moved too quickly from infrastructure validation to full pilot content, which made it easier to miss title suitability, duplicate coverage, and CEFR progression issues.
+- Where it appeared: The first RoleplayScenario pilot replacement and the A1 planning pass.
+- Why it happened: There was no persistent reviewed title backlog for standalone RoleplayScenario content.
+- Prevention rule: Before generating full RoleplayScenario content, create or update a level-specific title backlog under `artifacts/planning/`. For A1, use `artifacts/planning/roleplay-a1-title-candidates.md` as the source for small-batch selection, and mark already imported titles to avoid duplicate generation.
+
+### 2026-05-26: Roleplay packages need a pre-import required-field check
+
+- What failed: The first A1 RoleplayScenario core batch initially omitted `cefrLevel` on all generated scenarios. Import validation rejected the file before writing rows, but the issue should have been caught by a local package preflight.
+- Where it appeared: `roleplays-a1-core-01-v1.json` during the first import attempt.
+- Why it happened: The generator applied common package fields and translations, but did not run a required-field checklist before invoking the shared database import.
+- Prevention rule: Before importing any RoleplayScenario package, run a package-specific preflight that checks `slug`, `title`, `description`, `learnerGoal`, `cefrLevel`, `category`, `topics`, `taskType`, `interactionMode`, `register`, `roles`, `turns`, `answerChoices`, `staticFeedback`, image-slot safety, and all active learner-language translations. Import validation remains the final gate, but it should not be the first place missing required fields are discovered.
+
+### 2026-05-26: Roleplay controlled values must be checked before import
+
+- What failed: An A1 RoleplayScenario batch used natural planning labels such as `clarify-information`, `small-talk`, `order-food-drink`, `social-interaction`, `shopping`, and `customer-service` for `taskType` or `skillFocus`.
+- Where it appeared: `roleplays-a1-core-06-v1.json` during the first import attempt.
+- Why it happened: The content plan used pedagogical labels that sounded reasonable, but the RoleplayScenario importer accepts only the controlled values already defined for catalog filtering and reporting.
+- Prevention rule: Before importing any RoleplayScenario package, compare `taskType`, `skillFocus`, `interactionMode`, `register`, topics, and exam profiles against the active controlled values from previously accepted packages and the contract. Natural planning labels may be used in notes, but official JSON must use only importer-supported controlled values.

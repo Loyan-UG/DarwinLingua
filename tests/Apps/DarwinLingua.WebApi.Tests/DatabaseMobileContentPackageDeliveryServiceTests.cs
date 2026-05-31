@@ -2,7 +2,6 @@ using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Persistence;
 using DarwinLingua.WebApi.Services;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -16,11 +15,10 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
     [Fact]
     public async Task GetLatestFullPackage_ReturnsExistingPayloadAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_delivery");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         string tempRoot = Path.Combine(Path.GetTempPath(), $"darwin-lingue-delivery-tests-{Guid.NewGuid():N}");
@@ -61,11 +59,10 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
     [Fact]
     public async Task GetLatestCefrPackage_RejectsIncompatibleClientSchemaAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_delivery");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         ServerContentOptions options = CreateOptions();
@@ -94,11 +91,10 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
     [Fact]
     public async Task GetLatestModulePackage_ReturnsExistingPayloadAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_delivery");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         string tempRoot = Path.Combine(Path.GetTempPath(), $"darwin-lingue-module-delivery-tests-{Guid.NewGuid():N}");
@@ -140,11 +136,10 @@ public sealed class DatabaseMobileContentPackageDeliveryServiceTests
     [Fact]
     public async Task GetLatestFullPackage_ThrowsInvalidOperation_WhenClientProductKeyIsMissingAndMultipleProductsAreActiveAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_delivery");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         ServerContentOptions options = CreateOptions();

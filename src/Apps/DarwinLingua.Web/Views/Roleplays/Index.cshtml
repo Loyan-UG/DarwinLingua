@@ -1,69 +1,74 @@
 @model DarwinLingua.Web.Models.RoleplayIndexPageViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<DarwinLingua.Web.Localization.SharedResource> T
+@using DarwinLingua.SharedKernel.Lexicon
 
 @{
     ViewData["Title"] = T["Roleplays"];
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
-<section class="page-section">
-    <div class="page-section__header">
-        <div>
-            <p class="eyebrow">@T["Learning Portal"]</p>
-            <h1>@T["Roleplays"]</h1>
-            <p>@T["Practice scripted situations with deterministic answer choices and static feedback."]</p>
-        </div>
-    </div>
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Learning Portal"]</span>
+    <h1 class="headline-md">@T["Roleplays"]</h1>
+    <p class="body-lg">@T["Practice scripted situations with deterministic answer choices and static feedback."]</p>
 
-    <form method="get" class="filter-bar">
-        <label>
-            <span>@T["CEFR"]</span>
-            <select name="cefrLevel">
-                <option value="">@T["All"]</option>
-                @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
-                {
-                    <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
-                }
-            </select>
-        </label>
-        <label>
-            <span>@T["Category"]</span>
-            <input name="category" value="@Model.Filter.Category" />
-        </label>
-        <label>
-            <span>@T["Exam profile"]</span>
-            <input name="examProfile" value="@Model.Filter.ExamProfile" />
-        </label>
-        <label>
-            <span>@T["Task type"]</span>
-            <input name="taskType" value="@Model.Filter.TaskType" />
-        </label>
-        <label>
-            <span>@T["Search"]</span>
-            <input name="q" value="@Model.Filter.Query" />
-        </label>
-        <button type="submit" class="button button--primary">@T["Apply filters"]</button>
-    </form>
-
-    @if (Model.Roleplays.Count == 0)
-    {
-        <p class="muted">@T["No roleplays match these filters yet."]</p>
-    }
-    else
-    {
-        <div class="card-grid">
-            @foreach (var roleplay in Model.Roleplays)
+    <form method="get" class="search-form" asp-controller="Roleplays" asp-action="Index">
+        <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
+            <option value="">@T["All levels"]</option>
+            @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
             {
-                <article class="content-card">
-                    <div class="content-card__meta">
-                        <span>@roleplay.CefrLevel</span>
-                        <span>@roleplay.Category</span>
-                        <span>@roleplay.TaskType</span>
-                    </div>
-                    <h2><a asp-controller="Roleplays" asp-action="Detail" asp-route-slug="@roleplay.Slug">@roleplay.Title</a></h2>
-                    <p>@roleplay.Description</p>
-                    <p class="muted">@roleplay.LearnerGoal</p>
-                </article>
+                <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
             }
-        </div>
-    }
+        </select>
+        <input class="search-input" name="category" value="@Model.Filter.Category" placeholder="@T["Category"]" aria-label="@T["Category"]" />
+        <input class="search-input" name="examProfile" value="@Model.Filter.ExamProfile" placeholder="@T["Exam profile"]" aria-label="@T["Exam profile"]" />
+        <input class="search-input" name="taskType" value="@Model.Filter.TaskType" placeholder="@T["Task type"]" aria-label="@T["Task type"]" />
+        <input class="search-input" type="search" name="q" value="@Model.Filter.Query" placeholder="@T["Search roleplays"]" aria-label="@T["Search roleplays"]" />
+        <button type="submit" class="button button--secondary">@T["Filter"]</button>
+    </form>
 </section>
+
+@if (Model.Roleplays.Count == 0)
+{
+    <partial name="~/Views/Shared/_AsyncStatePanel.cshtml" model='new DarwinLingua.Web.Models.AsyncStatePanelViewModel(T["Roleplays are being prepared"].Value, T["No roleplays match these filters yet."].Value)' />
+}
+else
+{
+    <section class="grid-two-col">
+        @foreach (var roleplay in Model.Roleplays)
+        {
+            <article class="panel stack-md">
+                <span class="eyebrow">@roleplay.CefrLevel · @T[roleplay.Category] · @T[roleplay.TaskType]</span>
+                <h2 class="headline-sm">
+                    <a asp-controller="Roleplays" asp-action="Detail" asp-route-slug="@roleplay.Slug">@roleplay.Title</a>
+                </h2>
+                @if (!string.IsNullOrWhiteSpace(roleplay.LearnerLanguageTitle))
+                {
+                    <p class="scenario-translation-line" dir="@primaryMeaningDirection">@roleplay.LearnerLanguageTitle</p>
+                }
+                <p>@roleplay.Description</p>
+                @if (!string.IsNullOrWhiteSpace(roleplay.LearnerLanguageDescription))
+                {
+                    <p class="scenario-translation-line" dir="@primaryMeaningDirection">@roleplay.LearnerLanguageDescription</p>
+                }
+                <p><strong>@T["Goal"]:</strong> @roleplay.LearnerGoal</p>
+                @if (!string.IsNullOrWhiteSpace(roleplay.LearnerLanguageGoal))
+                {
+                    <p class="scenario-translation-line" dir="@primaryMeaningDirection">@roleplay.LearnerLanguageGoal</p>
+                }
+                <div class="chip-grid">
+                    <span class="chip-link chip-link--static">@T[roleplay.InteractionMode]</span>
+                    <span class="chip-link chip-link--static">@T[roleplay.Register]</span>
+                    <span class="chip-link chip-link--static">@roleplay.EstimatedPracticeMinutes @T["minutes"]</span>
+                    @foreach (string examProfile in roleplay.ExamProfiles)
+                    {
+                        <span class="chip-link chip-link--static">@examProfile</span>
+                    }
+                </div>
+                <div class="action-row">
+                    <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-action="Detail" asp-route-slug="@roleplay.Slug">@T["Start roleplay"]</a>
+                </div>
+            </article>
+        }
+    </section>
+}

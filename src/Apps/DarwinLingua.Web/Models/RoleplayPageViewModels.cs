@@ -4,7 +4,9 @@ namespace DarwinLingua.Web.Models;
 
 public sealed record RoleplayIndexPageViewModel(
     IReadOnlyList<RoleplayScenarioListItemModel> Roleplays,
-    RoleplayScenarioListFilterModel Filter);
+    RoleplayScenarioListFilterModel Filter,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record RoleplayDetailPageViewModel(
-    RoleplayScenarioDetailModel Roleplay);
+    RoleplayScenarioDetailModel Roleplay,
+    string PrimaryMeaningLanguageCode);

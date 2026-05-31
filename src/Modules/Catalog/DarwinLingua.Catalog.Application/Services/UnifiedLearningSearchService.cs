@@ -15,6 +15,7 @@ internal sealed class UnifiedLearningSearchService(IUnifiedLearningSearchReposit
         "grammar",
         "expression",
         "dialogue",
+        "roleplay",
         "talk-topic",
         "exercise",
         "course-lesson",

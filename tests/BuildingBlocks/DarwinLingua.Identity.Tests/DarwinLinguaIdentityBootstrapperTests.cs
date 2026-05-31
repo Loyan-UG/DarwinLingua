@@ -13,12 +13,9 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
     [Fact]
     public async Task InitializeAsync_CreatesSeedUsersRolesAndTrialEntitlements()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.db");
-
-        try
-        {
-            await using ServiceProvider services = BuildServices(
-                databasePath,
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity");
+        await using ServiceProvider services = BuildServices(
+                database.ConnectionString,
                 new DarwinLinguaIdentityBootstrapOptions
                 {
                     RequireSeedAccounts = true,
@@ -58,22 +55,14 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
             Assert.Contains(DarwinLinguaFeatureKeys.EventPreparationPacks, learnerEntitlement.EnabledFeatures);
             Assert.NotNull(learnerEntitlement.TrialEndsAtUtc);
             Assert.Contains(learnerAuditEvents, auditEvent => auditEvent.EventType == "initial-trial");
-        }
-        finally
-        {
-            TryDeleteFile(databasePath);
-        }
     }
 
     [Fact]
     public async Task InitializeAsync_CreatesIdentityTablesWhenDatabaseAlreadyHasOtherTables()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.db");
-
-        try
-        {
-            await using ServiceProvider services = BuildServices(
-                databasePath,
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity");
+        await using ServiceProvider services = BuildServices(
+                database.ConnectionString,
                 new DarwinLinguaIdentityBootstrapOptions
                 {
                     SeedAdminEmail = "admin@example.local",
@@ -97,22 +86,14 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
 
             Assert.True(await roleManager.RoleExistsAsync(DarwinLinguaRoles.Admin));
             Assert.NotNull(await userManager.FindByEmailAsync("admin@example.local"));
-        }
-        finally
-        {
-            TryDeleteFile(databasePath);
-        }
     }
 
     [Fact]
     public async Task InitializeAsync_ThrowsWhenRequiredSeedAccountsAreMissing()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.db");
-
-        try
-        {
-            await using ServiceProvider services = BuildServices(
-                databasePath,
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity");
+        await using ServiceProvider services = BuildServices(
+                database.ConnectionString,
                 new DarwinLinguaIdentityBootstrapOptions
                 {
                     RequireSeedAccounts = true,
@@ -125,11 +106,6 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
 
             Assert.Contains(nameof(DarwinLinguaIdentityBootstrapOptions.SeedAdminEmail), exception.Message);
             Assert.Contains(DarwinLinguaIdentityEnvironmentVariables.SeedAdminEmail, exception.Message);
-        }
-        finally
-        {
-            TryDeleteFile(databasePath);
-        }
     }
 
     [Fact]
@@ -177,12 +153,9 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
     [Fact]
     public async Task SetTierAsync_RecordsAuditEventsForManualChangesAndExpiration()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.db");
-
-        try
-        {
-            await using ServiceProvider services = BuildServices(
-                databasePath,
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity");
+        await using ServiceProvider services = BuildServices(
+                database.ConnectionString,
                 new DarwinLinguaIdentityBootstrapOptions(),
                 new DarwinLinguaEntitlementOptions
                 {
@@ -223,15 +196,10 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
             Assert.Contains(auditEvents, auditEvent => auditEvent.EventType == "initial-free");
             Assert.Contains(auditEvents, auditEvent => auditEvent.EventType == "tier-changed" && auditEvent.UpdatedBy == "test-admin");
             Assert.Contains(auditEvents, auditEvent => auditEvent.EventType == "premium-expired");
-        }
-        finally
-        {
-            TryDeleteFile(databasePath);
-        }
     }
 
     private static ServiceProvider BuildServices(
-        string databasePath,
+        string connectionString,
         DarwinLinguaIdentityBootstrapOptions bootstrapOptions,
         DarwinLinguaEntitlementOptions entitlementOptions)
     {
@@ -242,7 +210,7 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
         services.AddSingleton<IHostEnvironment>(new TestHostEnvironment());
         services.AddSingleton<IOptions<DarwinLinguaIdentityBootstrapOptions>>(Options.Create(bootstrapOptions));
         services.AddSingleton<IOptions<DarwinLinguaEntitlementOptions>>(Options.Create(entitlementOptions));
-        services.AddDbContext<TestIdentityDbContext>(options => options.UseSqlite($"Data Source={databasePath}"));
+        services.AddDbContext<TestIdentityDbContext>(options => options.UseNpgsql(connectionString));
         services
             .AddIdentityCore<DarwinLinguaIdentityUser>(options =>
             {
@@ -264,25 +232,6 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
     private static void SetEnvironmentVariable(string key, string? value)
     {
         Environment.SetEnvironmentVariable(key, value);
-    }
-
-    private static void TryDeleteFile(string path)
-    {
-        if (!File.Exists(path))
-        {
-            return;
-        }
-
-        try
-        {
-            File.Delete(path);
-        }
-        catch (IOException)
-        {
-        }
-        catch (UnauthorizedAccessException)
-        {
-        }
     }
 
     private sealed class TestIdentityDbContext(DbContextOptions<TestIdentityDbContext> options)

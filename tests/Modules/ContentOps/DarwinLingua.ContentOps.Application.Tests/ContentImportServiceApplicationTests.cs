@@ -720,6 +720,108 @@ public sealed class ContentImportServiceApplicationTests
             issue.Message.Contains("linkedVocabulary", StringComparison.Ordinal));
     }
 
+    [Fact]
+    public async Task ImportAsync_ShouldImportRoleplayScenario_WhenContractIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithRoleplayScenario(CreateValidRoleplayScenario());
+        FakeRepository repository = new(meaningLanguages: TestMeaningLanguages());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("roleplays.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal("Completed", result.Status);
+        RoleplayScenario scenario = Assert.Single(repository.ImportedRoleplayScenarios);
+        Assert.Equal("a1-shop-help-roleplay", scenario.Slug);
+        Assert.Equal(PublicationStatus.Active, scenario.PublicationStatus);
+        Assert.Equal("ask-for-help", scenario.TaskType);
+        Assert.Single(scenario.Topics);
+    }
+
+    [Theory]
+    [InlineData("invalid-cefr", "Roleplay scenario CEFR level is invalid")]
+    [InlineData("bad-slug", "Roleplay scenario slug is required and must use lowercase kebab-case")]
+    [InlineData("duplicate-turn-sort-order", "Roleplay scenario turns must have unique positive sortOrder values")]
+    [InlineData("missing-playable-sequence", "non-learner prompt followed by a learner turn")]
+    [InlineData("missing-translations", "Missing required meaning languages")]
+    [InlineData("answer-choice-without-correct-option", "at least two choices and at least one correct choice")]
+    [InlineData("invalid-skill-focus", "skillFocus contains unsupported value")]
+    [InlineData("invalid-exam-profile", "examProfiles contains unsupported value")]
+    public async Task ImportAsync_ShouldFail_WhenRoleplayScenarioContractIsInvalid(
+        string invalidCase,
+        string expectedMessage)
+    {
+        ParsedRoleplayScenarioModel scenario = invalidCase switch
+        {
+            "invalid-cefr" => CreateValidRoleplayScenario() with { CefrLevel = "Z9" },
+            "bad-slug" => CreateValidRoleplayScenario() with { Slug = "Bad Slug" },
+            "duplicate-turn-sort-order" => CreateValidRoleplayScenario() with
+            {
+                Turns =
+                [
+                    CreateRoleplayTurn(1, "staff", "Guten Tag, wie kann ich helfen?"),
+                    CreateRoleplayTurn(1, "learner", "Ich brauche Hilfe.", expectedLearnerAction: "ask-for-help")
+                ],
+            },
+            "missing-playable-sequence" => CreateValidRoleplayScenario() with
+            {
+                Turns =
+                [
+                    CreateRoleplayTurn(1, "learner", "Ich brauche Hilfe.", expectedLearnerAction: "ask-for-help"),
+                    CreateRoleplayTurn(2, "staff", "Natürlich, ich helfe Ihnen.")
+                ],
+            },
+            "missing-translations" => CreateValidRoleplayScenario() with
+            {
+                Roles =
+                [
+                    new ParsedRoleplayRoleModel("learner", "Learner", [new ParsedContentMeaningModel("en", "Learner")]),
+                    CreateRoleplayRole("staff", "Staff")
+                ],
+            },
+            "answer-choice-without-correct-option" => CreateValidRoleplayScenario() with
+            {
+                AnswerChoices =
+                [
+                    new ParsedRoleplayAnswerChoiceGroupModel(
+                        2,
+                        [
+                            CreateAnswerChoice("a", "Tschuess.", false),
+                            CreateAnswerChoice("b", "Keine Zeit.", false)
+                        ])
+                ],
+            },
+            "invalid-skill-focus" => CreateValidRoleplayScenario() with { SkillFocus = ["free-chat"] },
+            "invalid-exam-profile" => CreateValidRoleplayScenario() with { ExamProfiles = ["made-up-exam"] },
+            _ => throw new ArgumentOutOfRangeException(nameof(invalidCase), invalidCase, "Unknown roleplay invalid case."),
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithRoleplayScenario(scenario);
+        FakeRepository repository = new(meaningLanguages: TestMeaningLanguages());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("roleplays-invalid.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Empty(repository.ImportedRoleplayScenarios);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains(expectedMessage, StringComparison.Ordinal));
+    }
+
     /// <summary>
     /// Verifies that Talk Topic import validation rejects A1 articles shorter than the character target range.
     /// </summary>
@@ -1821,6 +1923,115 @@ public sealed class ContentImportServiceApplicationTests
             ExpressionEntries = [expression],
         };
     }
+
+    private static ParsedContentPackageModel CreatePackageWithRoleplayScenario(ParsedRoleplayScenarioModel scenario)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "roleplay-test-package",
+            "Roleplay Test Package",
+            "Manual",
+            ["en", "fa"],
+            [],
+            [])
+        {
+            RoleplayScenarios = [scenario],
+        };
+    }
+
+    private static ParsedRoleplayScenarioModel CreateValidRoleplayScenario()
+    {
+        return new ParsedRoleplayScenarioModel(
+            "a1-shop-help-roleplay",
+            null,
+            "Im Laden um Hilfe bitten",
+            TestTranslations("Ask for help in a shop", "در فروشگاه کمک خواستن"),
+            "Uebe eine kurze, gesteuerte Bitte um Hilfe an einem Schalter.",
+            TestTranslations("Practice a short scripted help request at a counter.", "یک درخواست کمک کوتاه و هدایت‌شده در پیشخوان را تمرین کن."),
+            "Bitte um Hilfe und waehle eine hoefliche Antwort.",
+            TestTranslations("Ask for help and choose a polite response.", "کمک بخواه و یک پاسخ مؤدبانه انتخاب کن."),
+            "A1",
+            "shopping-and-services",
+            ["shopping"],
+            ["goethe-a1"],
+            ["speaking", "roleplay", "service-interaction"],
+            "ask-for-help",
+            "service-counter",
+            "formal",
+            8,
+            [CreateRoleplayRole("learner", "Learner"), CreateRoleplayRole("staff", "Staff")],
+            [
+                CreateRoleplayTurn(1, "staff", "Guten Tag, wie kann ich Ihnen helfen?"),
+                CreateRoleplayTurn(2, "learner", "Koennen Sie mir bitte helfen?", expectedLearnerAction: "ask-for-help"),
+                CreateRoleplayTurn(3, "staff", "Natuerlich. Was suchen Sie?")
+            ],
+            [
+                new ParsedRoleplayAnswerChoiceGroupModel(
+                    2,
+                    [
+                        CreateAnswerChoice("a", "Koennen Sie mir bitte helfen?", true),
+                        CreateAnswerChoice("b", "Tschuess.", false)
+                    ])
+            ],
+            [new ParsedRoleplayStaticFeedbackModel(2, "politeness", "Use bitte for a polite request.", TestTranslations("Use bitte for a polite request.", "برای درخواست مؤدبانه از bitte استفاده کن."))],
+            [
+                new ParsedRoleplayImageSlotModel(
+                    "scene",
+                    "header",
+                    "Show the counter setting.",
+                    "A learner asks for help at a shop counter.",
+                    TestTranslations("A learner asks for help at a shop counter.", "زبان‌آموزی در پیشخوان مغازه کمک می‌خواهد."),
+                    "Clean educational illustration of an adult learner asking for help at a German shop counter, no logos, no text.",
+                    null,
+                    false)
+            ],
+            true,
+            10);
+    }
+
+    private static ParsedRoleplayRoleModel CreateRoleplayRole(string roleKey, string displayName) =>
+        new(roleKey, displayName, TestTranslations(displayName, displayName == "Learner" ? "زبان‌آموز" : "کارمند"));
+
+    private static ParsedRoleplayTurnModel CreateRoleplayTurn(
+        int sortOrder,
+        string speakerRole,
+        string baseText,
+        string? expectedLearnerAction = null) =>
+        new(
+            sortOrder,
+            speakerRole,
+            baseText,
+            TestTranslations($"{baseText} translation", $"ترجمه {sortOrder}"),
+            "request",
+            null,
+            expectedLearnerAction);
+
+    private static ParsedRoleplayAnswerChoiceModel CreateAnswerChoice(
+        string id,
+        string text,
+        bool isCorrect) =>
+        new(
+            id,
+            text,
+            TestTranslations($"{text} translation", $"ترجمه گزینه {id}"),
+            isCorrect,
+            isCorrect ? "This is a suitable response." : "This does not fit the task.",
+            TestTranslations(
+                isCorrect ? "This is a suitable response." : "This does not fit the task.",
+                isCorrect ? "این پاسخ مناسب است." : "این پاسخ با تمرین هماهنگ نیست."),
+            null);
+
+    private static IReadOnlySet<LanguageCode> TestMeaningLanguages() =>
+        ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(LanguageCode.From)
+            .ToHashSet();
+
+    private static ParsedContentMeaningModel[] TestTranslations(string english, string persian) =>
+        ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(languageCode => new ParsedContentMeaningModel(
+                languageCode,
+                languageCode == "fa" ? persian : $"{english} ({languageCode})"))
+            .ToArray();
 
     private static ParsedContentPackageModel CreatePackageWithCulturalNote(ParsedCulturalNoteModel note)
     {

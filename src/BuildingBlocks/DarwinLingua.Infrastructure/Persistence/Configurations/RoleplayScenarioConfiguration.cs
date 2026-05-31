@@ -14,8 +14,11 @@ internal sealed class RoleplayScenarioConfiguration : IEntityTypeConfiguration<R
         builder.Property(scenario => scenario.Slug).HasMaxLength(128).IsRequired();
         builder.Property(scenario => scenario.LinkedDialogueSlug).HasMaxLength(128);
         builder.Property(scenario => scenario.Title).HasMaxLength(256).IsRequired();
+        builder.Property(scenario => scenario.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(scenario => scenario.Description).HasMaxLength(4000).IsRequired();
+        builder.Property(scenario => scenario.DescriptionTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(scenario => scenario.LearnerGoal).HasMaxLength(2000).IsRequired();
+        builder.Property(scenario => scenario.LearnerGoalTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(scenario => scenario.CefrLevel).HasConversion<string>().HasMaxLength(8).IsRequired();
         builder.Property(scenario => scenario.Category).HasMaxLength(128).IsRequired();
         builder.Property(scenario => scenario.TaskType).HasMaxLength(128).IsRequired();

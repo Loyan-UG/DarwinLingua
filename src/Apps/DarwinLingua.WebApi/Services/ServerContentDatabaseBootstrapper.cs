@@ -412,21 +412,6 @@ public sealed class ServerContentDatabaseBootstrapper(
         }
 
         await using DbCommand command = connection.CreateCommand();
-        if (dbContext.Database.IsSqlite())
-        {
-            command.CommandText = $"PRAGMA table_info(\"{tableName}\");";
-            await using DbDataReader reader = await command.ExecuteReaderAsync(cancellationToken).ConfigureAwait(false);
-            while (await reader.ReadAsync(cancellationToken).ConfigureAwait(false))
-            {
-                if (string.Equals(reader.GetString(1), columnName, StringComparison.OrdinalIgnoreCase))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         command.CommandText =
             """
             SELECT 1
@@ -459,29 +444,16 @@ public sealed class ServerContentDatabaseBootstrapper(
         }
 
         await using DbCommand command = connection.CreateCommand();
-        if (dbContext.Database.IsSqlite())
-        {
-            command.CommandText =
-                """
-                SELECT 1
-                FROM sqlite_master
-                WHERE type = 'table'
-                  AND name = $tableName;
-                """;
-        }
-        else
-        {
-            command.CommandText =
-                """
-                SELECT 1
-                FROM information_schema.tables
-                WHERE table_schema = 'public'
-                  AND table_name = @tableName;
-                """;
-        }
+        command.CommandText =
+            """
+            SELECT 1
+            FROM information_schema.tables
+            WHERE table_schema = 'public'
+              AND table_name = @tableName;
+            """;
 
         DbParameter tableParameter = command.CreateParameter();
-        tableParameter.ParameterName = dbContext.Database.IsSqlite() ? "$tableName" : "@tableName";
+        tableParameter.ParameterName = "@tableName";
         tableParameter.Value = tableName;
         command.Parameters.Add(tableParameter);
 
@@ -489,31 +461,29 @@ public sealed class ServerContentDatabaseBootstrapper(
         return result is not null;
     }
 
-    private async Task ExecuteColumnAddAsync(string sqliteSql, string postgresSql, CancellationToken cancellationToken)
+    private async Task ExecuteColumnAddAsync(string legacyLocalSql, string postgresSql, CancellationToken cancellationToken)
     {
-        if (dbContext.Database.IsSqlite())
-        {
-            await dbContext.Database.ExecuteSqlRawAsync(sqliteSql, cancellationToken).ConfigureAwait(false);
-            return;
-        }
+        _ = legacyLocalSql;
 
         if (dbContext.Database.IsNpgsql())
         {
             await dbContext.Database.ExecuteSqlRawAsync(postgresSql, cancellationToken).ConfigureAwait(false);
+            return;
         }
+
+        throw new InvalidOperationException("DarwinLingua.WebApi requires the PostgreSQL Npgsql provider for server-content persistence.");
     }
 
-    private async Task ExecuteCreateTableAsync(string sqliteSql, string postgresSql, CancellationToken cancellationToken)
+    private async Task ExecuteCreateTableAsync(string legacyLocalSql, string postgresSql, CancellationToken cancellationToken)
     {
-        if (dbContext.Database.IsSqlite())
-        {
-            await dbContext.Database.ExecuteSqlRawAsync(sqliteSql, cancellationToken).ConfigureAwait(false);
-            return;
-        }
+        _ = legacyLocalSql;
 
         if (dbContext.Database.IsNpgsql())
         {
             await dbContext.Database.ExecuteSqlRawAsync(postgresSql, cancellationToken).ConfigureAwait(false);
+            return;
         }
+
+        throw new InvalidOperationException("DarwinLingua.WebApi requires the PostgreSQL Npgsql provider for server-content persistence.");
     }
 }

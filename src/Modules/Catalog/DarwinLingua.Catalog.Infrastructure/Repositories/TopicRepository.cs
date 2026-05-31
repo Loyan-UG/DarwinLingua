@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DarwinLingua.Catalog.Infrastructure.Repositories;
 
 /// <summary>
-/// Reads topic aggregates from the shared SQLite database.
+/// Reads topic aggregates from the shared catalog database.
 /// </summary>
 internal sealed class TopicRepository : ITopicRepository
 {

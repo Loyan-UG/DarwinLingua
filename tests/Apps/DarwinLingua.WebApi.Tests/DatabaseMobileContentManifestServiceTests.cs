@@ -3,7 +3,6 @@ using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
 using DarwinLingua.WebApi.Persistence.Entities;
 using DarwinLingua.WebApi.Services;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Xunit;
@@ -15,11 +14,10 @@ public sealed class DatabaseMobileContentManifestServiceTests
     [Fact]
     public async Task Bootstrapper_SeedsConfiguredProductsAndPackagesAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_manifest");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         ServerContentOptions options = CreateOptions();
@@ -41,11 +39,10 @@ public sealed class DatabaseMobileContentManifestServiceTests
     [Fact]
     public async Task DatabaseService_ReturnsCefrScopedPackagesAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_manifest");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         ServerContentOptions options = CreateOptions();
@@ -71,11 +68,10 @@ public sealed class DatabaseMobileContentManifestServiceTests
     [Fact]
     public async Task DatabaseService_ReturnsModuleScopedPackagesAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_manifest");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         ServerContentOptions options = CreateOptions();
@@ -103,11 +99,10 @@ public sealed class DatabaseMobileContentManifestServiceTests
     [Fact]
     public async Task DatabaseService_ExcludesDraftPackagesFromGlobalManifestAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_manifest");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         ServerContentOptions options = CreateOptions();
@@ -153,11 +148,10 @@ public sealed class DatabaseMobileContentManifestServiceTests
     [Fact]
     public async Task DatabaseService_ThrowsInvalidOperation_WhenClientProductKeyIsMissingAndMultipleProductsAreActiveAsync()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_webapi_manifest");
 
         DbContextOptions<ServerContentDbContext> dbOptions = new DbContextOptionsBuilder<ServerContentDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         ServerContentOptions options = CreateOptions();

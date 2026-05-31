@@ -406,8 +406,11 @@ internal sealed class ContentImportParser : IContentImportParser
             scenario.Slug ?? string.Empty,
             scenario.LinkedDialogueSlug ?? scenario.ScenarioSlug,
             scenario.Title ?? string.Empty,
+            MapTranslations(scenario.TitleTranslations),
             scenario.Description ?? string.Empty,
+            MapTranslations(scenario.DescriptionTranslations),
             scenario.LearnerGoal ?? string.Empty,
+            MapTranslations(scenario.LearnerGoalTranslations),
             scenario.CefrLevel ?? string.Empty,
             scenario.Category ?? string.Empty,
             (scenario.Topics ?? []).Select(topic => topic ?? string.Empty).ToArray(),
@@ -1434,8 +1437,11 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? LinkedDialogueSlug { get; set; }
         public string? ScenarioSlug { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? Description { get; set; }
+        public ContentMeaningDocument[]? DescriptionTranslations { get; set; }
         public string? LearnerGoal { get; set; }
+        public ContentMeaningDocument[]? LearnerGoalTranslations { get; set; }
         public string? CefrLevel { get; set; }
         public string? Category { get; set; }
         public string?[]? Topics { get; set; }

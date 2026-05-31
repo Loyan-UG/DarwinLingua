@@ -147,7 +147,8 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] Grammar Guide readiness reviewed: import validation, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
 - [ ] Everyday Expressions eligibility reviewed: no published ordinary literal sentence leakage, `meaningTransparency` present for new batches, teaching reason present, and at least two contextual German examples
-- [ ] Standalone RoleplayScenario readiness reviewed: parser/import validation, persistence, WebApi list/detail, Web list/detail, Unified Search, admin visibility, deterministic no-AI behavior, image-slot missing-asset behavior, and local import/smoke all pass before pilot content generation
+- [ ] Standalone RoleplayScenario readiness reviewed: parser/import validation, persistence, WebApi list/detail, Web list/detail, Unified Search, admin visibility, deterministic no-AI behavior, image-slot missing-asset behavior, and local import/smoke all pass before any post-pilot batch generation
+  - Evidence: the first A1-B2 pilot package imported into `darwinlingua_shared` with zero warnings on 2026-05-25; local `/roleplays`, detail, `/api/catalog/roleplays`, detail API, `/api/catalog/search?resultType=roleplay`, and authenticated `/api/admin/catalog/system-report` smoke returned HTTP 200. Service-level admin report tests cover RoleplayScenario count visibility.
 - [ ] Sensitive Educational Language policy reviewed
 - [ ] registration/legal notice coverage reviewed for Terms, Privacy, and Sensitive Educational Language default-off behavior
 - [ ] Settings/profile explanation for Sensitive Educational Language is clear, localized, and does not claim age verification

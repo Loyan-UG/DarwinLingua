@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace DarwinLingua.Infrastructure.Persistence;
 
 /// <summary>
-/// Creates the local SQLite database and executes all registered seed workflows.
+/// Initializes the configured shared catalog database and executes all registered seed workflows.
 /// </summary>
 internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
 {
@@ -219,7 +219,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
     }
 
     /// <summary>
-    /// Checks whether the current SQLite database already contains every mapped table in the current model.
+    /// Checks whether the current database already contains every mapped table in the current model.
     /// </summary>
     private static async Task<bool> DatabaseMatchesCurrentModelTablesAsync(
         DarwinLinguaDbContext dbContext,
@@ -751,8 +751,11 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "Slug" character varying(128) NOT NULL,
                 "LinkedDialogueSlug" character varying(128),
                 "Title" character varying(256) NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
                 "Description" character varying(4000) NOT NULL,
+                "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
                 "LearnerGoal" character varying(2000) NOT NULL,
+                "LearnerGoalTranslationsJson" text NOT NULL DEFAULT '[]',
                 "CefrLevel" character varying(8) NOT NULL,
                 "Category" character varying(128) NOT NULL,
                 "TaskType" character varying(128) NOT NULL,
@@ -793,6 +796,10 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 ON "RoleplayScenarioTopics" ("RoleplayScenarioId", "TopicId");
             CREATE INDEX IF NOT EXISTS "IX_RoleplayScenarioTopics_TopicId"
                 ON "RoleplayScenarioTopics" ("TopicId");
+
+            ALTER TABLE "RoleplayScenarios" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "RoleplayScenarios" ADD COLUMN IF NOT EXISTS "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "RoleplayScenarios" ADD COLUMN IF NOT EXISTS "LearnerGoalTranslationsJson" text NOT NULL DEFAULT '[]';
             """,
             cancellationToken).ConfigureAwait(false);
     }

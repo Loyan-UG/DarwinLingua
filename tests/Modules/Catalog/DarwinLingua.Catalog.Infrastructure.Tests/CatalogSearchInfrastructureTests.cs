@@ -15,7 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace DarwinLingua.Catalog.Infrastructure.Tests;
 
 /// <summary>
-/// Verifies the SQLite-backed catalog search strategy and its operational indexes.
+/// Verifies the legacy temporary SQLite catalog fixture and its operational indexes.
+/// PostgreSQL-specific Web/API query behavior is covered by dedicated PostgreSQL integration tests.
 /// </summary>
 public sealed class CatalogSearchInfrastructureTests
 {
@@ -670,7 +671,7 @@ public sealed class CatalogSearchInfrastructureTests
     }
 
     /// <summary>
-    /// Builds the shared DI container used by the SQLite-backed repository tests.
+    /// Builds the shared DI container used by the legacy temporary SQLite repository fixture.
     /// </summary>
     /// <param name="databasePath">The temporary database file path.</param>
     /// <returns>The configured service provider.</returns>

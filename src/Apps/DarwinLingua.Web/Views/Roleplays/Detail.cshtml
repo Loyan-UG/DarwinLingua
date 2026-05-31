@@ -1,102 +1,164 @@
+@using DarwinLingua.SharedKernel.Lexicon
 @model DarwinLingua.Web.Models.RoleplayDetailPageViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<DarwinLingua.Web.Localization.SharedResource> T
 
 @{
     ViewData["Title"] = Model.Roleplay.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
-<section class="page-section">
-    <a asp-controller="Roleplays" asp-action="Index" class="back-link">@T["Back to roleplays"]</a>
-    <div class="page-section__header">
-        <div>
-            <p class="eyebrow">@Model.Roleplay.CefrLevel · @Model.Roleplay.Category · @Model.Roleplay.TaskType</p>
-            <h1>@Model.Roleplay.Title</h1>
-            <p>@Model.Roleplay.Description</p>
+<section class="panel stack-lg">
+    <div class="detail-toolbar">
+        <span class="eyebrow">@Model.Roleplay.CefrLevel · @T[Model.Roleplay.Category] · @T[Model.Roleplay.TaskType]</span>
+        <div class="detail-toolbar__actions">
+            <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-action="Index">@T["All Roleplays"]</a>
         </div>
     </div>
-
-    <section class="content-panel">
-        <h2>@T["Goal"]</h2>
-        <p>@Model.Roleplay.LearnerGoal</p>
-        <dl class="definition-list">
-            <dt>@T["Mode"]</dt>
-            <dd>@Model.Roleplay.InteractionMode</dd>
-            <dt>@T["Register"]</dt>
-            <dd>@Model.Roleplay.Register</dd>
-            <dt>@T["Practice time"]</dt>
-            <dd>@Model.Roleplay.EstimatedPracticeMinutes @T["minutes"]</dd>
-        </dl>
-    </section>
-
-    @if (Model.Roleplay.ImageSlots.Count > 0)
+    <h1 class="headline-md">@Model.Roleplay.Title</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.Roleplay.LearnerLanguageTitle))
     {
-        <section class="content-panel">
-            <h2>@T["Scene"]</h2>
-            @foreach (var imageSlot in Model.Roleplay.ImageSlots)
-            {
-                if (!string.IsNullOrWhiteSpace(imageSlot.AssetPath))
-                {
-                    <img src="@imageSlot.AssetPath" alt="@(imageSlot.LearnerLanguageAltText ?? imageSlot.AltText)" />
-                }
-                else
-                {
-                    <p class="muted">@imageSlot.AltText</p>
-                }
-            }
-        </section>
+        <p class="scenario-translation-line" dir="@primaryMeaningDirection">@Model.Roleplay.LearnerLanguageTitle</p>
     }
+    <p class="body-lg">@Model.Roleplay.Description</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Roleplay.LearnerLanguageDescription))
+    {
+        <p class="scenario-translation-line" dir="@primaryMeaningDirection">@Model.Roleplay.LearnerLanguageDescription</p>
+    }
+    <div class="chip-grid">
+        <span class="chip-link chip-link--static">@T[Model.Roleplay.InteractionMode]</span>
+        <span class="chip-link chip-link--static">@T[Model.Roleplay.Register]</span>
+        <span class="chip-link chip-link--static">@Model.Roleplay.EstimatedPracticeMinutes @T["minutes"]</span>
+        @foreach (string topicKey in Model.Roleplay.TopicKeys)
+        {
+            <span class="chip-link chip-link--static">@topicKey</span>
+        }
+        @foreach (string examProfile in Model.Roleplay.ExamProfiles)
+        {
+            <span class="chip-link chip-link--static">@examProfile</span>
+        }
+    </div>
+</section>
 
-    <section class="content-panel">
-        <h2>@T["Roles"]</h2>
-        <ul class="list">
+<section class="grid-two-col">
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Goal"]</h2>
+        <p>@Model.Roleplay.LearnerGoal</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Roleplay.LearnerLanguageGoal))
+        {
+            <p class="scenario-translation-line" dir="@primaryMeaningDirection">@Model.Roleplay.LearnerLanguageGoal</p>
+        }
+    </article>
+    <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Roles"]</h2>
+        <div class="chip-grid">
             @foreach (var role in Model.Roleplay.Roles)
             {
-                <li><strong>@role.DisplayName</strong>@(string.IsNullOrWhiteSpace(role.LearnerLanguageDisplayName) ? string.Empty : $" — {role.LearnerLanguageDisplayName}")</li>
+                <span class="chip-link chip-link--static">
+                    @role.DisplayName
+                    @if (!string.IsNullOrWhiteSpace(role.LearnerLanguageDisplayName))
+                    {
+                        <span dir="@primaryMeaningDirection">&nbsp;· @role.LearnerLanguageDisplayName</span>
+                    }
+                </span>
             }
-        </ul>
-    </section>
+        </div>
+    </article>
+</section>
 
-    <section class="content-panel">
-        <h2>@T["Script"]</h2>
+@if (Model.Roleplay.ImageSlots.Count > 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Scene"]</h2>
+        <div class="grid-two-col">
+            @foreach (var imageSlot in Model.Roleplay.ImageSlots)
+            {
+                <article class="grammar-image-slot">
+                    @if (!string.IsNullOrWhiteSpace(imageSlot.AssetPath))
+                    {
+                        <img src="@imageSlot.AssetPath" alt="@(imageSlot.LearnerLanguageAltText ?? imageSlot.AltText)" />
+                    }
+                    else
+                    {
+                        <strong>@imageSlot.AltText</strong>
+                        @if (!string.IsNullOrWhiteSpace(imageSlot.LearnerLanguageAltText))
+                        {
+                            <p dir="@primaryMeaningDirection">@imageSlot.LearnerLanguageAltText</p>
+                        }
+                    }
+                </article>
+            }
+        </div>
+    </section>
+}
+
+<section class="panel stack-md">
+    <h2 class="headline-sm">@T["Script"]</h2>
+    <div class="stack-md">
         @foreach (var turn in Model.Roleplay.Turns.OrderBy(turn => turn.SortOrder))
         {
-            <article class="dialogue-turn">
-                <p class="dialogue-turn__speaker">@turn.SpeakerRole</p>
-                <p>@turn.BaseText</p>
-                @if (!string.IsNullOrWhiteSpace(turn.LearnerLanguageText))
-                {
-                    <p class="muted">@turn.LearnerLanguageText</p>
-                }
-                @if (!string.IsNullOrWhiteSpace(turn.ToneNote))
-                {
-                    <p class="muted">@turn.ToneNote</p>
-                }
+            bool isLearnerTurn = string.Equals(turn.SpeakerRole, "learner", StringComparison.OrdinalIgnoreCase);
+            var choices = Model.Roleplay.AnswerChoices.FirstOrDefault(group => group.TurnSortOrder == turn.SortOrder);
+            var weakerChoices = choices?.Choices.Where(choice => !choice.IsCorrect).ToArray() ?? [];
+            var feedbackItems = Model.Roleplay.StaticFeedback.Where(feedback => feedback.TurnSortOrder == turn.SortOrder).ToArray();
 
-                @{
-                    var choices = Model.Roleplay.AnswerChoices.FirstOrDefault(group => group.TurnSortOrder == turn.SortOrder);
-                    var feedbackItems = Model.Roleplay.StaticFeedback.Where(feedback => feedback.TurnSortOrder == turn.SortOrder).ToArray();
-                }
-                @if (choices is not null)
-                {
-                    <div class="choice-list">
-                        @foreach (var choice in choices.Choices)
+            <article class="scenario-dialogue-turn @(isLearnerTurn ? "scenario-dialogue-turn--secondary" : "scenario-dialogue-turn--primary")">
+                <div class="detail-example">
+                    <span class="status-pill">@T[turn.SpeakerRole]</span>
+                    <div class="stack-sm">
+                        <strong class="scenario-german-text">@turn.BaseText</strong>
+                        @if (!string.IsNullOrWhiteSpace(turn.LearnerLanguageText))
                         {
-                            <div class="choice-list__item">
-                                <strong>@choice.Text</strong>
-                                @if (!string.IsNullOrWhiteSpace(choice.LearnerLanguageText))
-                                {
-                                    <p class="muted">@choice.LearnerLanguageText</p>
-                                }
-                                <p>@choice.Feedback</p>
+                            <div class="scenario-translation-line" dir="@primaryMeaningDirection">
+                                <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
+                                <span>@turn.LearnerLanguageText</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(turn.ToneNote))
+                        {
+                            <p>@turn.ToneNote</p>
+                        }
+                    </div>
+                </div>
+
+                @if (weakerChoices.Length > 0)
+                {
+                    <div class="stack-sm">
+                        <span class="eyebrow">@T["Not recommended answer"]</span>
+                        @foreach (var choice in weakerChoices)
+                        {
+                            <div class="choice-row">
+                                <div class="stack-sm">
+                                    <strong>@choice.Text</strong>
+                                    @if (!string.IsNullOrWhiteSpace(choice.LearnerLanguageText))
+                                    {
+                                        <p dir="@primaryMeaningDirection">@choice.LearnerLanguageText</p>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(choice.Feedback))
+                                    {
+                                        <p>@choice.Feedback</p>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(choice.LearnerLanguageFeedback))
+                                    {
+                                        <p dir="@primaryMeaningDirection">@choice.LearnerLanguageFeedback</p>
+                                    }
+                                </div>
                             </div>
                         }
                     </div>
                 }
+
                 @foreach (var feedback in feedbackItems)
                 {
-                    <p class="callout">@feedback.Text</p>
+                    <div class="status-banner">
+                        <strong>@T[feedback.FeedbackType]</strong>
+                        <p>@feedback.Text</p>
+                        @if (!string.IsNullOrWhiteSpace(feedback.LearnerLanguageText))
+                        {
+                            <p dir="@primaryMeaningDirection">@feedback.LearnerLanguageText</p>
+                        }
+                    </div>
                 }
             </article>
         }
-    </section>
+    </div>
 </section>

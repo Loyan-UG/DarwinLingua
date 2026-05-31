@@ -1475,6 +1475,8 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             "ExamPrepUnits",
             "WritingTemplates",
             "CulturalNotes",
+            "RoleplayScenarios",
+            "RoleplayScenarioTopics",
         ];
 
         Dictionary<string, bool> result = new(StringComparer.Ordinal);
@@ -1506,23 +1508,17 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         DbConnection connection = dbContext.Database.GetDbConnection();
         await using DbCommand command = connection.CreateCommand();
         DbParameter parameter = command.CreateParameter();
-        parameter.ParameterName = providerName?.Contains("Npgsql", StringComparison.OrdinalIgnoreCase) == true ? "tableName" : "@tableName";
-        parameter.Value = providerName?.Contains("Npgsql", StringComparison.OrdinalIgnoreCase) == true
-            ? $"\"{tableName}\""
-            : tableName;
+        parameter.ParameterName = "tableName";
+        parameter.Value = $"\"{tableName}\"";
         command.Parameters.Add(parameter);
 
         if (providerName?.Contains("Npgsql", StringComparison.OrdinalIgnoreCase) == true)
         {
             command.CommandText = "SELECT to_regclass(@tableName) IS NOT NULL";
         }
-        else if (providerName?.Contains("Sqlite", StringComparison.OrdinalIgnoreCase) == true)
-        {
-            command.CommandText = "SELECT EXISTS(SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = @tableName)";
-        }
         else
         {
-            return true;
+            throw new InvalidOperationException("DarwinLingua.WebApi requires the PostgreSQL Npgsql provider for admin reporting.");
         }
 
         object? value = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);

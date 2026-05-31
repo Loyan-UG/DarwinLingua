@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DarwinLingua.Catalog.Infrastructure.Repositories;
 
 /// <summary>
-/// Reads lexical entry aggregates from the shared SQLite database.
+/// Reads lexical entry aggregates from the shared catalog database.
 /// </summary>
 internal sealed class WordEntryRepository : IWordEntryRepository
 {

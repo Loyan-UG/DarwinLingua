@@ -4,7 +4,6 @@ using System.Text.Json;
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -85,14 +84,13 @@ public sealed class TransactionalEmailBrevoTests
     [Fact]
     public async Task MarkProviderEventAsync_ComplaintMarksDeliveryFailedAndSuppressesRecipient()
     {
-        await using SqliteConnection connection = new("Data Source=:memory:");
-        await connection.OpenAsync();
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_web_email");
         DbContextOptions<WebIdentityDbContext> options = new DbContextOptionsBuilder<WebIdentityDbContext>()
-            .UseSqlite(connection)
+            .UseNpgsql(database.ConnectionString)
             .Options;
 
         await using WebIdentityDbContext dbContext = new(options);
-        await dbContext.Database.EnsureCreatedAsync();
+        await new WebUserStateDatabaseBootstrapper(dbContext).InitializeAsync(CancellationToken.None);
         EmailDeliveryLogRepository repository = new(dbContext);
         WebEmailDeliveryLog log = await repository.AddQueuedAsync(
             CreateMessage(),

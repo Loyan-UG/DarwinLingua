@@ -2,6 +2,8 @@
 
 This document defines the JSON contract for Dialogue lessons. Dialogues are role-based practical conversations for real-life tasks and exam preparation. They are different from Talk Topics, which are reading-based discussion items.
 
+Dialogue packages may include roleplay-related metadata, but a Dialogue is not a standalone RoleplayScenario. `skillFocus: "roleplay"` and speaking prompts with `promptType: "roleplay-task"` mark a Dialogue as useful for roleplay-style practice. The Web can derive a simple practice page from `dialogueTurns` at `/dialogues/{slug}/roleplay`. Standalone scripted roleplays live in top-level `roleplayScenarios` packages and are governed by `docs/70-Roleplay-Content-Package-Contract.md`.
+
 ## Package Shape
 
 Dialogue lessons live beside vocabulary entries and collections:

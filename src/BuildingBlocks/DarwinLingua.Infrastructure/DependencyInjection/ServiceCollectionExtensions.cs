@@ -12,7 +12,7 @@ namespace DarwinLingua.Infrastructure.DependencyInjection;
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Adds the shared SQLite-backed infrastructure services.
+    /// Adds the local SQLite-backed infrastructure services for non-Web hosts and legacy/mobile workflows.
     /// </summary>
     /// <param name="services">The service collection being configured.</param>
     /// <param name="configureOptions">The callback that provides the database path.</param>
